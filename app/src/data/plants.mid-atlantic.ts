@@ -15,17 +15,18 @@
 //
 // This file is deliberately data-only and heavily commented so a non-programmer
 // can audit a row. See DATA_SOURCES.md for licensing of each upstream source.
-import type { EcoScores, Plant } from "../types";
+import type { RawPlant, RegionMeta } from "./region";
 
-export type RawPlant = Omit<Plant, "scores"> & {
-  scores: Omit<EcoScores, "host">;
-};
+export type { RawPlant };
 
-export const REGION = {
+export const REGION: RegionMeta = {
   id: "mid-atlantic",
   name: "Mid-Atlantic / Northeast Piedmont",
   reference: "Pennsylvania (USDA zones 6b–7a)",
   note: "Native status is asserted at the state/ecoregion level for this region. Outside it, treat recommendations as untested.",
+  // Coarse box over the Piedmont/Northeast the seed list is tuned to: roughly
+  // Virginia up through southern New England, west to the Appalachians.
+  bounds: { minLat: 36.5, maxLat: 45.5, minLon: -83.5, maxLon: -71.0 },
 };
 
 export const SEED_RAW: RawPlant[] = [

@@ -16,16 +16,68 @@ called out and the dependency is kept optional.
 | **USDA PLANTS Database** | Native status, distribution | Referenced for the seed data | US Government public domain | ✅ Safe. |
 | **Tallamy host-plant counts / NWF Native Plant Finder** | Lepidoptera host-species counts (the host score) | Used to populate the seed dataset by genus | ⚠️ The underlying research (Narango, Tallamy et al.) is published science; the NWF tool's database is not offered under an explicit open-data licence | ⚠️ **Facts, used at genus level, with attribution.** Host *counts* are factual figures from published ecology, cited in each row's `basis`. We do not copy NWF's database wholesale or mirror their tool. If NWF later asserts terms, the counts can be re-sourced from the primary literature. Flagged here rather than assumed safe. |
 | **Lady Bird Johnson Wildflower Center** | Size, bloom, culture notes | Referenced for the seed data | Educational reference; individual facts (mature size, bloom month) are not copyrightable | ✅ Facts referenced, not text copied. |
-| **Xerces Society regional lists** | Pollinator / establishment context | Referenced | Publications are copyrighted; we use the factual associations, not the prose | ✅ Facts referenced. |
+| **OregonFlora / Oregon Flora Project** | PNW native status, range, culture (west-side dataset) | Referenced for the PNW seed data | Facts (native status, range, size) are not copyrightable; the site/text is | ✅ Facts referenced. |
+| **Burke Herbarium Image Collection (WTU), U. of Washington** | PNW native status & distribution | Referenced for the PNW seed data | Herbarium records; individual factual data are not copyrightable | ✅ Facts referenced. |
+| **E-Flora BC (UBC)** | PNW native status & range (northern edge) | Referenced for the PNW seed data | Facts referenced, not prose | ✅ Facts referenced. |
+| **Xerces Society regional lists (incl. Maritime NW)** | Pollinator / establishment context, both regions | Referenced | Publications are copyrighted; we use the factual associations, not the prose | ✅ Facts referenced. |
+| **USFS Silvics / Fire Effects Information System (FEIS)** | Size / growth for trees (esp. PNW conifers) | Referenced | US Government public domain | ✅ Safe. |
 | **EPA Level III/IV Ecoregions** | Ecoregion label | *Not yet integrated* — a coarse lat/lon bounding box is used as a placeholder | US Government public domain | ⏳ Deferred to Phase 2 (a real GetFeatureInfo call). Current label is clearly marked "(broad)". |
 | **BONAP county distribution** | County-level native status | *Not yet integrated* | ⚠️ BONAP maps have restrictive reuse terms | ⛔ **Do not scrape or embed.** Phase 2 should use USDA PLANTS county data (public domain) for county resolution instead. Noted so we don't build on it by accident. |
 | **Basemap tiles** (for the location map) | — | *Not used* | OSM/other tile terms + offline concerns | ⏳ Phase 1 uses a schematic metric grid instead of external tiles, to stay offline-first and avoid tile-usage terms. |
 
+## Scaling the catalog: canonical taxonomy & distribution backbones
+
+The seed lists are hand-authored today. To grow honestly to every U.S. region —
+and eventually the world — we need a *canonical name spine* (so "the same plant"
+means one thing across sources) and a *native-distribution source* (so "native
+*here*" is a checkable fact, not our opinion). These are the sources to build on,
+all either public domain or openly licensed with attribution:
+
+**Taxonomic backbone (the name spine)**
+
+| Source | Scope | Licence | Role |
+|---|---|---|---|
+| **World Checklist of Vascular Plants (WCVP)** / Plants of the World Online (POWO), Kew | Global | **CC BY 4.0** (downloadable via Kew FTP + GBIF as a Darwin Core Archive) | **The recommended global spine.** Accepted names + synonymy for all vascular plants, expert-reviewed. |
+| **GBIF Backbone Taxonomy** | Global | CC BY 4.0 | Stable `usageKey`s to reconcile any source's names to one id; the practical crosswalk hub. |
+| **ITIS** (Integrated Taxonomic Information System) | Global, N. America–strong | US Gov **public domain** | TSN identifiers; good North American coverage, easy to redistribute. |
+| **USDA PLANTS Database** | U.S. + territories | US Gov **public domain** | U.S. spine: the `Symbol` code (e.g. `QUGA4`), accepted names, growth habit. |
+| **World Flora Online (WFO)** | Global | CC BY | Consortium successor to The Plant List; alternate/cross-check backbone. |
+
+**Native status & distribution (the "native *here*" fact)**
+
+| Source | Scope | Licence | Role |
+|---|---|---|---|
+| **USDA PLANTS** | U.S., **state-level** native/introduced/invasive | **Public domain** | The backbone for U.S. regions. State resolution now; a Phase-2 path to county via its distribution data. |
+| **WCVP native ranges** | Global, by TDWG "botanical country" (WGSRPD level 3) | **CC BY 4.0** | The global answer: native-vs-introduced range per region for essentially every species. |
+| **GBIF occurrences** (incl. research-grade iNaturalist) | Global point observations | CC BY / CC0 (per record) | Validate that a species actually occurs at/near a spot; ground-truth the range polygons. |
+| **EPA Level III/IV Ecoregions** | U.S. | US Gov **public domain** | Real ecoregion boundaries to replace our coarse bounding boxes (already flagged as Phase 2). |
+| **RESOLVE / WWF Terrestrial Ecoregions of the World** | Global | CC BY 4.0 | Ecoregion context outside the U.S. |
+| ~~BONAP county maps~~ | U.S. county | ⛔ restrictive | **Do not use** — reason unchanged (see table above). Use USDA PLANTS county data instead. |
+
+**Wildlife-value inputs (the eco-score)**
+
+| Source | Scope | Licence | Role |
+|---|---|---|---|
+| **HOSTS — a Database of the World's Lepidopteran Host Plants** (NHM London) | Global | Free for research use; attribute | Primary-literature host associations to re-source the Lepidoptera counts globally, reducing reliance on NWF's terms-uncertain figures. |
+| **Tallamy / NWF Native Plant Finder** | U.S., by ZIP | ⚠️ terms uncertain (flagged above) | Cross-check only; counts are used as published facts at genus level, cited per row. |
+| **Xerces Society** regional lists | U.S. regions | prose © / facts usable | Pollinator & establishment associations. |
+
+**Recommended approach.** Adopt **WCVP/POWO (CC BY)** as the global name spine and
+native-range source, reconcile identifiers through the **GBIF backbone**, and
+prefer **USDA PLANTS (public domain)** for U.S. native status and its `Symbol`
+as our per-plant key. Attribution for the CC BY sources (WCVP, GBIF, Open-Meteo,
+SoilGrids, RESOLVE) is cheap and non-viral, so none of them can hold the app
+hostage. This keeps every future region assembled from the same public backbones
+the Phase-1 data already leans on, rather than from any single restrictive
+provider.
+
 ## Principles applied
 
-- **"Native" means native *here*.** The seed dataset asserts native status at the
-  state/ecoregion level (Pennsylvania / Mid-Atlantic), not "native to North
-  America." County-level resolution via USDA PLANTS is a Phase 2 item.
+- **"Native" means native *here*.** Each seed dataset asserts native status at the
+  state/ecoregion level for its own region (Pennsylvania / Mid-Atlantic; maritime
+  Pacific Northwest), not "native to North America." The app picks the list from
+  your coordinates and refuses to show another region's plants for an uncovered
+  spot. County-level resolution via USDA PLANTS is a Phase 2 item.
 - **Facts vs. expression.** Mature sizes, bloom months, and host-species counts
   are facts and are cited per row (`basis` field). We reference them; we do not
   copy anyone's descriptive text or mirror a database.

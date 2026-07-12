@@ -186,9 +186,13 @@ export function zoneFromMinTemp(tF: number): string {
   return `${clampInt(n, 1, 13)}${half}`;
 }
 
-// Coarse ecoregion label. Our Phase-1 dataset is Mid-Atlantic / Northeast, so
-// we only assert the broad region when the point is plausibly within it.
+// Coarse ecoregion label. A real EPA Level III/IV lookup is a Phase-2 item; for
+// now we assert only the broad region a point plausibly falls in, matched to the
+// areas we carry plant lists for, and always mark it "(broad)".
 function ecoregionGuess(lat: number, lon: number): string | null {
+  if (lat >= 42 && lat <= 49 && lon >= -124.9 && lon <= -120.5) {
+    return "Marine West Coast Forest (broad)";
+  }
   if (lat >= 24 && lat <= 49 && lon >= -100 && lon <= -66) {
     return "Eastern Temperate Forest (broad)";
   }

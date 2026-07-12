@@ -68,8 +68,11 @@ Transparent and re-weightable. Final position = **eco-score × site-fit**:
 
 - [x] Geolocation → soil/climate/zone fetch → confirm screen
 - [x] Sky-scan sun measurement, **with the manual fallback working first**
-- [x] 36-plant seed dataset for one region with real size-over-time and
-      ecosystem-service numbers
+- [x] Region-aware plant catalog: the app selects the seed list from the spot's
+      coordinates and says plainly when it has no list for an area yet
+- [x] 36-plant Mid-Atlantic seed dataset with real size-over-time and
+      ecosystem-service numbers, plus a 24-plant Pacific Northwest (west-of-Cascades)
+      list for on-the-ground testing
 - [x] Ranked results with the to-scale size visualization (human silhouette)
 - [x] Re-weightable ranking sliders + presets
 - [x] Offline + installable (hand-written service worker, web manifest, icons)
@@ -81,6 +84,11 @@ photos, nurseries/e-commerce, bed-layout designer.
 
 ## Open questions / Phase 2
 
+- **Canonical catalog backbone** for scaling past hand-authored lists: adopt
+  Kew's **WCVP/POWO** (CC BY 4.0) as the global name + native-range spine,
+  reconcile ids through the **GBIF backbone**, and key U.S. plants on the
+  **USDA PLANTS** symbol (public domain). Full rationale and the source table are
+  in `DATA_SOURCES.md` → "Scaling the catalog."
 - **County-level native status** via USDA PLANTS (public domain) — *not* BONAP,
   whose maps have restrictive terms (see `DATA_SOURCES.md`).
 - **Real EPA ecoregion** lookup (currently a coarse bounding box).

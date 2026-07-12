@@ -1,6 +1,6 @@
 import { el, clear, toast } from "../ui";
 import { navigate, store, persistPrefs } from "../state";
-import { loadPlants } from "../lib/plants";
+import { loadPlants, regionForSite, REGIONS } from "../lib/plants";
 import { rankPlants, siteMoisture } from "../lib/ranking";
 import type { Weights } from "../types";
 import { plantCard } from "../components/plant-card";
@@ -20,9 +20,19 @@ const PRESETS: { name: string; weights: Weights }[] = [
 
 export function renderResults(main: HTMLElement): void {
   clear(main);
-  if (store.draft.lat == null) return void navigate("location");
+  if (store.draft.lat == null || store.draft.lon == null) return void navigate("location");
 
-  const plants = loadPlants();
+  // Pick the plant list from the spot's coordinates. Outside every covered
+  // region we have no honest recommendations to give, so we say so plainly
+  // rather than showing another region's plants.
+  const region = regionForSite(store.draft.lat, store.draft.lon);
+  if (!region) {
+    renderNoRegion(main);
+    return;
+  }
+
+  const plants = loadPlants(region);
+  const regionName = region.meta.name;
   const listEl = el("div", { "aria-live": "polite" });
 
   function rerender(): void {
@@ -40,7 +50,7 @@ export function renderResults(main: HTMLElement): void {
       el("p", { style: "margin:0.5rem 0 1rem;font-weight:650" }, `${ranked.length} native plants fit this spot's climate — ${goodCount} are a good or workable match. Best matches first.`)
     );
     if (!ranked.length) {
-      listEl.append(el("div", { class: "note warn" }, "No plants in this region's seed list are hardy at this spot's winter temperature. This dataset only covers the Mid-Atlantic / Northeast for now."));
+      listEl.append(el("div", { class: "note warn" }, `No plants in the ${regionName} seed list are hardy at this spot's winter temperature.`));
     }
     shown.forEach((r) => listEl.append(plantCard(r, store.weights)));
     if (ranked.length > shown.length) {
@@ -114,6 +124,7 @@ export function renderResults(main: HTMLElement): void {
 
   main.append(
     el("h2", { class: "step-title" }, "Plants for this spot"),
+    el("p", { class: "region-tag", style: "margin:0 0 0.5rem;font-size:0.9rem;color:var(--ink-soft)" }, `📍 ${region.meta.name}`),
     el("p", { class: "step-lede" }, conditions),
     el("div", { class: "result-controls" }, [weights, filters]),
     el("div", { class: "btn-row", style: "margin-top:0" }, [
@@ -166,4 +177,26 @@ export function renderResults(main: HTMLElement): void {
 function cryptoId(): string {
   if ("randomUUID" in crypto) return crypto.randomUUID();
   return "spot-" + Math.abs(Date.now() ^ (performance.now() * 1000)).toString(36);
+}
+
+// Shown when the spot is outside every region we have a plant list for. The
+// sun/soil/climate readings still worked — we just won't fake a plant list.
+function renderNoRegion(main: HTMLElement): void {
+  main.append(
+    el("h2", { class: "step-title" }, "No plant list for this area yet"),
+    el("p", { class: "step-lede" }, [
+      "Indigene measured the sun, soil and climate for this spot, but its plant recommendations are still tuned region by region — and this spot is outside the areas covered so far. ",
+      "Showing you another region's plants would be dishonest, so we don't.",
+    ]),
+    el("div", { class: "card" }, [
+      el("h3", {}, "Regions covered so far"),
+      el("ul", { style: "margin:0.5rem 0 0;padding-left:1.2rem" },
+        REGIONS.map((r) => el("li", { style: "margin-bottom:0.3rem" }, `${r.meta.name} — ${r.meta.reference}`))
+      ),
+    ]),
+    el("div", { class: "btn-row", style: "margin-top:1rem" }, [
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("location") }, "Pick a different spot"),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, "Home"),
+    ])
+  );
 }

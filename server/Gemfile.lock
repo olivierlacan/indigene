@@ -1,0 +1,181 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    base64 (0.3.0)
+    bigdecimal (3.3.1)
+    concurrent-ruby (1.3.7)
+    csv (3.3.5)
+    dry-auto_inject (1.2.1)
+      dry-core (~> 1.1)
+      zeitwerk (~> 2.6)
+    dry-cli (1.4.1)
+    dry-configurable (1.4.0)
+      dry-core (~> 1.0)
+      zeitwerk (~> 2.6)
+    dry-core (1.2.0)
+      concurrent-ruby (~> 1.0)
+      logger
+      zeitwerk (~> 2.6)
+    dry-events (1.1.0)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 1.1)
+    dry-files (1.1.0)
+    dry-inflector (1.3.1)
+    dry-logger (1.2.2)
+      logger
+    dry-monitor (1.0.1)
+      dry-configurable (~> 1.0, < 2)
+      dry-core (~> 1.0, < 2)
+      dry-events (~> 1.0, < 2)
+    dry-system (1.2.5)
+      dry-auto_inject (~> 1.1)
+      dry-configurable (~> 1.3)
+      dry-core (~> 1.1)
+      dry-inflector (~> 1.1)
+    dry-transformer (1.1.0)
+      bigdecimal
+      zeitwerk (~> 2.6)
+    erb (6.0.4)
+    hanami (2.3.2)
+      bundler (>= 2.0)
+      dry-configurable (~> 1.0, >= 1.2.0, < 2)
+      dry-core (~> 1.0, < 2)
+      dry-inflector (~> 1.0, >= 1.1.0, < 2)
+      dry-logger (~> 1.2, < 2)
+      dry-monitor (~> 1.0, >= 1.0.1, < 2)
+      dry-system (~> 1.1)
+      hanami-cli (>= 2.3.1)
+      hanami-utils (>= 2.3.0)
+      json (>= 2.7.2)
+      rack-session
+      zeitwerk (~> 2.6)
+    hanami-cli (3.0.0)
+      bundler (>= 2.1)
+      dry-cli (~> 1.0, >= 1.4.0)
+      dry-files (~> 1.0, >= 1.0.2)
+      dry-inflector (~> 1.0)
+      irb
+      rackup
+      rake (~> 13.0)
+      zeitwerk (~> 2.6)
+    hanami-controller (2.3.2)
+      dry-configurable (~> 1.0, < 2)
+      dry-core (~> 1.0)
+      hanami-utils (~> 2.3.0)
+      rack (>= 2.2.16)
+      zeitwerk (~> 2.6)
+    hanami-router (2.3.1)
+      csv (~> 3.3)
+      mustermann (~> 3.0)
+      mustermann-contrib (~> 3.0)
+      rack (>= 2.2.16)
+    hanami-utils (2.3.0)
+      bigdecimal (~> 3.1)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 1.0, < 2)
+      dry-transformer (~> 1.0, < 2)
+    hansi (0.2.1)
+    io-console (0.8.2)
+    irb (1.18.0)
+      pp (>= 0.6.0)
+      prism (>= 1.3.0)
+      rdoc (>= 4.0.0)
+      reline (>= 0.4.2)
+    json (2.20.0)
+    logger (1.7.0)
+    mustermann (3.1.1)
+    mustermann-contrib (3.1.1)
+      hansi (~> 0.2.0)
+      mustermann (= 3.1.1)
+    nio4r (2.7.5)
+    pp (0.6.4)
+      prettyprint
+    prettyprint (0.2.0)
+    prism (1.9.0)
+    puma (6.6.1)
+      nio4r (~> 2.0)
+    rack (3.2.6)
+    rack-session (2.1.2)
+      base64 (>= 0.1.0)
+      rack (>= 3.0.0)
+    rack-test (2.2.0)
+      rack (>= 1.3)
+    rackup (2.3.1)
+      rack (>= 3)
+    rake (13.4.2)
+    rbs (4.0.3)
+      logger
+      prism (>= 1.6.0)
+      tsort
+    rdoc (8.0.0)
+      erb
+      prism (>= 1.6.0)
+      rbs (>= 4.0.0)
+      tsort
+    reline (0.6.3)
+      io-console (~> 0.5)
+    tsort (0.2.0)
+    zeitwerk (2.8.2)
+
+PLATFORMS
+  ruby
+  x86_64-linux
+
+DEPENDENCIES
+  hanami (~> 2.2)
+  hanami-controller (~> 2.2)
+  hanami-router (~> 2.2)
+  puma (~> 6.4)
+  rack-test
+  rake
+
+CHECKSUMS
+  base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
+  bigdecimal (3.3.1) sha256=eaa01e228be54c4f9f53bf3cc34fe3d5e845c31963e7fcc5bedb05a4e7d52218
+  concurrent-ruby (1.3.7) sha256=4412caec3a5ea2e5fdc52076724c071a81f2c0593d83b2ac8cbb8ca63b3151b0
+  csv (3.3.5) sha256=6e5134ac3383ef728b7f02725d9872934f523cb40b961479f69cf3afa6c8e73f
+  dry-auto_inject (1.2.1) sha256=dedddc8a13fcdf320def7d6741ce7d6da48d749c6d43175ef0072c0be2ba47c8
+  dry-cli (1.4.1) sha256=b8015bb76c708aa8705a36faf694973e75eeeffca39b89c8e172dc6f66a7d874
+  dry-configurable (1.4.0) sha256=e35d1b5f3c081753ef361f564919db79000f32cfa6f20ee3a3ba5921b41b73ce
+  dry-core (1.2.0) sha256=0cc5a7da88df397f153947eeeae42e876e999c1e30900f3c536fb173854e96a1
+  dry-events (1.1.0) sha256=53f13960daf02cc06c2ea6cdf3209e29b0dd400f8977a8020834a68c044a78de
+  dry-files (1.1.0) sha256=4fe91d007ad78d303b7f3a8a2321bbfc554fcc01aa11a6b37246658bbf8d41de
+  dry-inflector (1.3.1) sha256=7fb0c2bb04f67638f25c52e7ba39ab435d922a3a5c3cd196120f63accb682dcc
+  dry-logger (1.2.2) sha256=eaf91bbc131135b2148d779fb22b8aff4a1b1ad616c721dab6d113beaa5e41c7
+  dry-monitor (1.0.1) sha256=4ac8ed1f85b14bfde1aa0bce9496d7d2fc699c5a4a1131010c8014d5f9e7a309
+  dry-system (1.2.5) sha256=a02f57c18cbcc6c9c4ea99a7eed0afc830263d2051c855a46a7229ea3708d143
+  dry-transformer (1.1.0) sha256=87bfe22a708aa69f3e6e76a6119aba0b42999f154e4fe7c261d4673720534da3
+  erb (6.0.4) sha256=38e3803694be357fe2bfe312487c74beaf9fb4e5beb3e22498952fe1645b95d9
+  hanami (2.3.2) sha256=2f1e7e10d760bd0c3929bcb55a42f38281bd5da507e40b98e62282f52f452e3b
+  hanami-cli (3.0.0) sha256=9d51bb7b0f0b4eaf67ea1dc8b27774428ee831647b107d2e9f6ad3317b1598ec
+  hanami-controller (2.3.2) sha256=2821a3284ac394324f23e31012d2d9f679730c105b9bc593dc5e2b7b1c68b1cc
+  hanami-router (2.3.1) sha256=81b3665cb851de5703bd2fea3f375eccb2af871288cf130ab0fbc42b3b8ae31f
+  hanami-utils (2.3.0) sha256=aa00f6c377ab4ad2cbe57d989781bace348c9f234201bc60715058dc6e220999
+  hansi (0.2.1) sha256=7e27dfd729f1692a3a7690fc0ef3af9d5e3cfc0285bb135cae7e56180e4805db
+  io-console (0.8.2) sha256=d6e3ae7a7cc7574f4b8893b4fca2162e57a825b223a177b7afa236c5ef9814cc
+  irb (1.18.0) sha256=de9454a0703a54704b9811a5ef31a60c86949fbf4013fcf244fabc7c775248e3
+  json (2.20.0) sha256=9362bc6e55a952b056abf9167cf053358181c904cb70cd6eee0808ea830fc32b
+  logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
+  mustermann (3.1.1) sha256=4c6170c7234d5499c345562ba7c7dfe73e1754286dcc1abb053064d66a127198
+  mustermann-contrib (3.1.1) sha256=c3ecf24f71668222e7554721fa6957d9dfe504997fd8c12a8557d8c39a82a81d
+  nio4r (2.7.5) sha256=6c90168e48fb5f8e768419c93abb94ba2b892a1d0602cb06eef16d8b7df1dca1
+  pp (0.6.4) sha256=dfcb0fce700c41456265922884f9fe195d7fbb0674a3578e6c0f69588e82b570
+  prettyprint (0.2.0) sha256=2bc9e15581a94742064a3cc8b0fb9d45aae3d03a1baa6ef80922627a0766f193
+  prism (1.9.0) sha256=7b530c6a9f92c24300014919c9dcbc055bf4cdf51ec30aed099b06cd6674ef85
+  puma (6.6.1) sha256=b9b56e4a4ea75d1bfa6d9e1972ee2c9f43d0883f011826d914e8e37b3694ea1e
+  rack (3.2.6) sha256=5ed78e1f73b2e25679bec7d45ee2d4483cc4146eb1be0264fc4d94cb5ef212c2
+  rack-session (2.1.2) sha256=595434f8c0c3473ae7d7ac56ecda6cc6dfd9d37c0b2b5255330aa1576967ffe8
+  rack-test (2.2.0) sha256=005a36692c306ac0b4a9350355ee080fd09ddef1148a5f8b2ac636c720f5c463
+  rackup (2.3.1) sha256=6c79c26753778e90983761d677a48937ee3192b3ffef6bc963c0950f94688868
+  rake (13.4.2) sha256=cb825b2bd5f1f8e91ca37bddb4b9aaf345551b4731da62949be002fa89283701
+  rbs (4.0.3) sha256=5a7bf70e2628549d9a1f44eae447b2cfe55968a9c60cfff52693a4bdcc020e14
+  rdoc (8.0.0) sha256=03bf8c08a9639658855a0cfd77c0abca8325c227693f7f33f82957811348c469
+  reline (0.6.3) sha256=1198b04973565b36ec0f11542ab3f5cfeeec34823f4e54cebde90968092b1835
+  tsort (0.2.0) sha256=9650a793f6859a43b6641671278f79cfead60ac714148aabe4e3f0060480089f
+  zeitwerk (2.8.2) sha256=7212a61311083c604184b1ea2574b9aa05cd14f855a0841c06985cabe9181d12
+
+RUBY VERSION
+  ruby 3.3.6
+
+BUNDLED WITH
+  4.0.9

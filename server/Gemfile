@@ -1,0 +1,18 @@
+source "https://rubygems.org"
+
+ruby "3.3.6"
+
+# Hanami 2.2 — a thin JSON API. Its job in Phase 1 is to fetch site data
+# (soil, elevation, climate) server-side, so the browser doesn't hit CORS
+# limits and any future API keys stay off the client. The plant catalog stays
+# bundled in the offline PWA; this server does NOT duplicate it.
+gem "hanami", "~> 2.2"
+gem "hanami-router", "~> 2.2"
+gem "hanami-controller", "~> 2.2"
+
+gem "puma", "~> 6.4"
+gem "rake"
+
+group :development, :test do
+  gem "rack-test"
+end

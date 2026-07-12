@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#1f6b3b" />
+    <meta
+      name="description"
+      content="Stand in a spot, and find native plants that will actually thrive there — ranked by what they do for the local ecosystem."
+    />
+    <title>Indigene — native plants for exactly where you stand</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="app-header">
+      <h1 class="app-title">
+        <span aria-hidden="true">🌱</span> Indigene
+      </h1>
+      <button
+        id="offline-badge"
+        class="offline-badge"
+        type="button"
+        hidden
+        aria-live="polite"
+      >
+        Offline — using saved data
+      </button>
+    </header>
+
+    <!-- Progress rail: which step of the flow you are on. -->
+    <nav class="steps" aria-label="Progress">
+      <ol id="steps" class="steps-list"></ol>
+    </nav>
+
+    <main id="main" class="app-main" tabindex="-1"></main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

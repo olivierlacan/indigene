@@ -19,6 +19,8 @@ called out and the dependency is kept optional.
 | **OregonFlora / Oregon Flora Project** | PNW native status, range, culture (west-side dataset) | Referenced for the PNW seed data | Facts (native status, range, size) are not copyrightable; the site/text is | ✅ Facts referenced. |
 | **Burke Herbarium Image Collection (WTU), U. of Washington** | PNW native status & distribution | Referenced for the PNW seed data | Herbarium records; individual factual data are not copyrightable | ✅ Facts referenced. |
 | **E-Flora BC (UBC)** | PNW native status & range (northern edge) | Referenced for the PNW seed data | Facts referenced, not prose | ✅ Facts referenced. |
+| **Atlas of Florida Plants (USF Institute for Systematic Botany)** | Florida native status & distribution | Referenced for the Florida seed data | The atlas is the standard FL source; individual distribution facts are not copyrightable | ✅ Facts referenced. |
+| **Florida Native Plant Society (FNPS) / UF-IFAS / FANN** | Florida culture, native status, wildlife value | Referenced for the Florida seed data | Publications © ; we use the factual associations, not the prose | ✅ Facts referenced. |
 | **Xerces Society regional lists (incl. Maritime NW)** | Pollinator / establishment context, both regions | Referenced | Publications are copyrighted; we use the factual associations, not the prose | ✅ Facts referenced. |
 | **USFS Silvics / Fire Effects Information System (FEIS)** | Size / growth for trees (esp. PNW conifers) | Referenced | US Government public domain | ✅ Safe. |
 | **EPA Level III/IV Ecoregions** | Ecoregion label | *Not yet integrated* — a coarse lat/lon bounding box is used as a placeholder | US Government public domain | ⏳ Deferred to Phase 2 (a real GetFeatureInfo call). Current label is clearly marked "(broad)". |
@@ -75,9 +77,12 @@ provider.
 
 - **"Native" means native *here*.** Each seed dataset asserts native status at the
   state/ecoregion level for its own region (Pennsylvania / Mid-Atlantic; maritime
-  Pacific Northwest), not "native to North America." The app picks the list from
-  your coordinates and refuses to show another region's plants for an uncovered
-  spot. County-level resolution via USDA PLANTS is a Phase 2 item.
+  Pacific Northwest; peninsular Florida), not "native to North America." The app
+  picks the list from your coordinates and refuses to show another region's plants
+  for an uncovered spot. Real EPA-ecoregion resolution — which would also let the
+  single Florida list split cleanly into a temperate panhandle and a subtropical
+  south — is planned in `docs/ecoregion-plan.md`. County-level status via USDA
+  PLANTS is a Phase 2 item.
 - **Facts vs. expression.** Mature sizes, bloom months, and host-species counts
   are facts and are cited per row (`basis` field). We reference them; we do not
   copy anyone's descriptive text or mirror a database.

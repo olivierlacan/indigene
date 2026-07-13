@@ -70,9 +70,9 @@ Transparent and re-weightable. Final position = **eco-score × site-fit**:
 - [x] Sky-scan sun measurement, **with the manual fallback working first**
 - [x] Region-aware plant catalog: the app selects the seed list from the spot's
       coordinates and says plainly when it has no list for an area yet
-- [x] 36-plant Mid-Atlantic seed dataset with real size-over-time and
-      ecosystem-service numbers, plus a 24-plant Pacific Northwest (west-of-Cascades)
-      list for on-the-ground testing
+- [x] Three regional seed datasets with real size-over-time and ecosystem-service
+      numbers — 40-plant Mid-Atlantic, 24-plant Pacific Northwest (west-of-Cascades),
+      and 23-plant Florida (peninsula/central) — for on-the-ground testing
 - [x] Ranked results with the to-scale size visualization (human silhouette)
 - [x] Re-weightable ranking sliders + presets
 - [x] Offline + installable (hand-written service worker, web manifest, icons)
@@ -91,7 +91,9 @@ photos, nurseries/e-commerce, bed-layout designer.
   in `DATA_SOURCES.md` → "Scaling the catalog."
 - **County-level native status** via USDA PLANTS (public domain) — *not* BONAP,
   whose maps have restrictive terms (see `DATA_SOURCES.md`).
-- **Real EPA ecoregion** lookup (currently a coarse bounding box).
+- **Real EPA ecoregion** lookup to replace the coarse bounding boxes, for both
+  the ecoregion label and region selection — planned in detail in
+  [`docs/ecoregion-plan.md`](docs/ecoregion-plan.md).
 - **Real plant photos** (cards currently draw a form-based silhouette).
 - **Host-count provenance**: re-source Lepidoptera counts from the primary
   literature if NWF asserts data terms (flagged, not assumed safe).

@@ -49,10 +49,11 @@ whole flow via the manual sun picker — works on desktop over plain `localhost`
    filters. Saved to IndexedDB, local-first.
 
 Plant recommendations are **tuned region by region**, and the app picks the
-right list from where you're standing. Two regions ship today:
+right list from where you're standing. Three regions ship today:
 
-- **Mid-Atlantic / Northeast Piedmont** (36 species, Pennsylvania reference)
+- **Mid-Atlantic / Northeast Piedmont** (40 species, Pennsylvania reference)
 - **Pacific Northwest, west of the Cascades** (24 species, Portland–Seattle reference)
+- **Florida, peninsula & central** (23 species, central-Florida reference)
 
 Outside a covered region the sun/soil/climate readings still work; the app says
 plainly when it has no plant list for your spot yet. Adding a region is a data

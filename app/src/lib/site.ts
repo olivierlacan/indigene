@@ -193,6 +193,9 @@ function ecoregionGuess(lat: number, lon: number): string | null {
   if (lat >= 42 && lat <= 49 && lon >= -124.9 && lon <= -120.5) {
     return "Marine West Coast Forest (broad)";
   }
+  if (lat >= 24.4 && lat <= 31 && lon >= -87.7 && lon <= -79.8) {
+    return "Southern Coastal Plain (broad)";
+  }
   if (lat >= 24 && lat <= 49 && lon >= -100 && lon <= -66) {
     return "Eastern Temperate Forest (broad)";
   }

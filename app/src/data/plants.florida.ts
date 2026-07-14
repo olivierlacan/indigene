@@ -1,12 +1,11 @@
-// Seed dataset — Florida, using the central peninsula (Orlando latitude, USDA
-// zone 9b) as the reference. Florida spans a long climate gradient — a temperate
-// panhandle (zones 8a–8b) through a subtropical peninsula to the near-tropical
-// Keys (zones 10b–11a) — and its flora shifts just as much. This list favors
-// species that are genuinely native and reliable across much of the peninsula
-// and central Florida; where a plant is really a south-Florida (frost-tender) or
-// north-Florida plant, its `zones` and notes say so. It is a solid *starter*
-// list, not exhaustive; the honest split of Florida into a temperate-north and
-// subtropical-south region is a future step (see docs/ecoregion-plan.md).
+// Seed dataset — north & central Florida, using the central peninsula (Orlando
+// latitude, USDA zone 9b) as the reference. Florida spans a long climate
+// gradient, so it is split into two regions along the EPA Southern Florida
+// Coastal Plain ecoregion (76) / ~27.2° N seam: this list covers the temperate
+// panhandle and warm-temperate peninsula down to about Lake Okeechobee, and
+// `plants.florida-south.ts` covers the subtropical south and the Keys. Where a
+// plant here is really a south-Florida (frost-tender) or north-Florida plant,
+// its `zones` and notes say so. A solid *starter* list, not exhaustive.
 //
 // Numbers and their provenance:
 //  - hostLepCount: genus-level Lepidoptera larval-host counts (Tallamy / NWF),
@@ -27,20 +26,18 @@ import type { RawPlant, RegionMeta } from "./region";
 export type { RawPlant };
 
 export const REGION: RegionMeta = {
-  id: "florida",
-  name: "Florida (peninsula & central)",
-  reference: "Central Florida peninsula (USDA zone 9b)",
-  note: "Native status is asserted for peninsular/central Florida. The temperate panhandle (north) and frost-free south Florida / Keys grow partly different floras — where a plant is really a north- or south-Florida species, its hardiness zones and notes say so.",
-  // Coarse box over Florida, from the Keys (~24.4° N) to the Georgia line
-  // (~31° N), and from the western panhandle (~-87.7) to the Atlantic coast.
-  bounds: { minLat: 24.4, maxLat: 31.0, minLon: -87.7, maxLon: -79.8 },
-  // Florida's three EPA Level III ecoregions: Southeastern Plains (65, the
-  // panhandle/north interior), Southern Coastal Plain (75, most of the
-  // peninsula), and Southern Florida Coastal Plain (76, the Everglades and
-  // Keys). Gated by the box so it never claims the parts of 65/75 that reach
-  // into Georgia/Alabama. Code 76 is also the natural seam for a future split
-  // into a temperate-north and a subtropical-south Florida list.
-  ecoregionsL3: ["65", "75", "76"],
+  id: "florida-central",
+  name: "Florida (north & central)",
+  reference: "Central Florida (USDA zone 9b; spans ~8b–9b)",
+  note: "Native status is asserted for the panhandle and warm-temperate peninsula, roughly from the Georgia line down to Lake Okeechobee. The subtropical south and the Keys have their own list. Where a plant is really a north- or south-Florida species, its hardiness zones and notes say so.",
+  // North & central Florida: from the ~27.2° N seam (roughly Lake Okeechobee,
+  // the base of the subtropical zone) up to the Georgia line (~31° N), west to
+  // the panhandle. The box abuts — never overlaps — the south-Florida box.
+  bounds: { minLat: 27.2, maxLat: 31.0, minLon: -87.7, maxLon: -79.8 },
+  // The two temperate EPA Level III ecoregions here: Southeastern Plains (65,
+  // panhandle/north interior) and Southern Coastal Plain (75, the peninsula).
+  // Box-gated so it never claims the parts of 65/75 that reach into GA/AL.
+  ecoregionsL3: ["65", "75"],
 };
 
 export const SEED_RAW: RawPlant[] = [

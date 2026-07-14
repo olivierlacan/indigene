@@ -70,9 +70,10 @@ Transparent and re-weightable. Final position = **eco-score × site-fit**:
 - [x] Sky-scan sun measurement, **with the manual fallback working first**
 - [x] Region-aware plant catalog: the app selects the seed list from the spot's
       coordinates and says plainly when it has no list for an area yet
-- [x] Three regional seed datasets with real size-over-time and ecosystem-service
+- [x] Four regional seed datasets with real size-over-time and ecosystem-service
       numbers — 40-plant Mid-Atlantic, 24-plant Pacific Northwest (west-of-Cascades),
-      and 23-plant Florida (peninsula/central) — for on-the-ground testing
+      23-plant north/central Florida, and 21-plant south Florida & the Keys — for
+      on-the-ground testing
 - [x] Ranked results with the to-scale size visualization (human silhouette)
 - [x] Re-weightable ranking sliders + presets
 - [x] Offline + installable (hand-written service worker, web manifest, icons)
@@ -93,10 +94,12 @@ photos, nurseries/e-commerce, bed-layout designer.
   whose maps have restrictive terms (see `DATA_SOURCES.md`).
 - **Real EPA ecoregion** lookup (public domain) — *Phases A & B shipped*: the
   confirm screen shows real Omernik Level III/IV names, and region selection is
-  refined by the spot's Level III ecoregion (so a spot east of the Cascade crest
-  no longer gets the west-side list), with a box fallback offline. Remaining:
-  Mid-Atlantic ecoregion codes and optional offline polygons — see
-  [`docs/ecoregion-plan.md`](docs/ecoregion-plan.md).
+  refined by the spot's Level III ecoregion — so a spot east of the Cascade crest
+  no longer gets the west-side list, and Florida splits along the Southern Florida
+  Coastal Plain (76) seam into a temperate north/central list and a subtropical
+  south/Keys list. Box fallback offline. Deliberately deferred: Mid-Atlantic
+  ecoregion codes (box works; no edge bug) and bundled offline polygons (would
+  fight the tiny-bundle ethos). See [`docs/ecoregion-plan.md`](docs/ecoregion-plan.md).
 - **Real plant photos** (cards currently draw a form-based silhouette).
 - **Host-count provenance**: re-source Lepidoptera counts from the primary
   literature if NWF asserts data terms (flagged, not assumed safe).

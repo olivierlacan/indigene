@@ -6,12 +6,14 @@
 import type { RegionDef } from "./region";
 import { REGION as MID_ATLANTIC, SEED_RAW as MID_ATLANTIC_SEED } from "./plants.mid-atlantic";
 import { REGION as PNW, SEED_RAW as PNW_SEED } from "./plants.pnw";
-import { REGION as FLORIDA, SEED_RAW as FLORIDA_SEED } from "./plants.florida";
+import { REGION as FLORIDA_CENTRAL, SEED_RAW as FLORIDA_CENTRAL_SEED } from "./plants.florida";
+import { REGION as FLORIDA_SOUTH, SEED_RAW as FLORIDA_SOUTH_SEED } from "./plants.florida-south";
 
 export const REGIONS: RegionDef[] = [
   { meta: MID_ATLANTIC, seed: MID_ATLANTIC_SEED },
   { meta: PNW, seed: PNW_SEED },
-  { meta: FLORIDA, seed: FLORIDA_SEED },
+  { meta: FLORIDA_CENTRAL, seed: FLORIDA_CENTRAL_SEED },
+  { meta: FLORIDA_SOUTH, seed: FLORIDA_SOUTH_SEED },
 ];
 
 /**

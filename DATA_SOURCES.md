@@ -21,6 +21,7 @@ called out and the dependency is kept optional.
 | **E-Flora BC (UBC)** | PNW native status & range (northern edge) | Referenced for the PNW seed data | Facts referenced, not prose | ✅ Facts referenced. |
 | **Atlas of Florida Plants (USF Institute for Systematic Botany)** | Florida native status & distribution | Referenced for the Florida seed data | The atlas is the standard FL source; individual distribution facts are not copyrightable | ✅ Facts referenced. |
 | **Florida Native Plant Society (FNPS) / UF-IFAS / FANN** | Florida culture, native status, wildlife value | Referenced for the Florida seed data | Publications © ; we use the factual associations, not the prose | ✅ Facts referenced. |
+| **Institute for Regional Conservation — "Natives For Your Neighborhood" (IRC)** | South-Florida native status, range & culture | Referenced for the south-Florida seed data | The largest south-FL native database; individual facts are not copyrightable | ✅ Facts referenced. |
 | **Xerces Society regional lists (incl. Maritime NW)** | Pollinator / establishment context, both regions | Referenced | Publications are copyrighted; we use the factual associations, not the prose | ✅ Facts referenced. |
 | **USFS Silvics / Fire Effects Information System (FEIS)** | Size / growth for trees (esp. PNW conifers) | Referenced | US Government public domain | ✅ Safe. |
 | **EPA Level III/IV Ecoregions** (Omernik) | Ecoregion label (Level III + finer Level IV) | Live point query to the EPA ArcGIS service (`gispub.epa.gov/.../USEPA_Ecoregions_Level_III_and_IV`), best-effort | US Government public domain | ✅ **Integrated (Phase A, label only).** Real Level III/IV names shown on the confirm screen; falls back to the coarse bounding-box guess (marked "(broad)") when offline/outside CONUS. Using it for *region selection* is Phase B — see `docs/ecoregion-plan.md`. |
@@ -77,12 +78,12 @@ provider.
 
 - **"Native" means native *here*.** Each seed dataset asserts native status at the
   state/ecoregion level for its own region (Pennsylvania / Mid-Atlantic; maritime
-  Pacific Northwest; peninsular Florida), not "native to North America." The app
-  picks the list from your coordinates and refuses to show another region's plants
-  for an uncovered spot. Real EPA-ecoregion resolution — which would also let the
-  single Florida list split cleanly into a temperate panhandle and a subtropical
-  south — is planned in `docs/ecoregion-plan.md`. County-level status via USDA
-  PLANTS is a Phase 2 item.
+  Pacific Northwest; north/central Florida; subtropical south Florida & the Keys),
+  not "native to North America." The app picks the list from your coordinates —
+  refined by the spot's real EPA ecoregion when online — and refuses to show
+  another region's plants for an uncovered spot. That ecoregion refinement is what
+  splits Florida cleanly along the Southern Florida Coastal Plain (76) seam; see
+  `docs/ecoregion-plan.md`. County-level status via USDA PLANTS is a Phase 2 item.
 - **Facts vs. expression.** Mature sizes, bloom months, and host-species counts
   are facts and are cited per row (`basis` field). We reference them; we do not
   copy anyone's descriptive text or mirror a database.

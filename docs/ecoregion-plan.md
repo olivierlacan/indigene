@@ -1,12 +1,15 @@
 # Plan: real EPA ecoregions (Phase 2)
 
 **Status:** Phase A (real ecoregion *labels*) and Phase B (ecoregion-refined
-region *selection*) are **implemented**. `fetchEcoregion` in `app/src/lib/site.ts`
-(mirrored in `server/app/site_fetcher.rb`) queries the live EPA service; the
-confirm screen shows the real Level III/IV names; and `regionForSite` refines the
-bounding-box match by the spot's Level III code (PNW and Florida declare their
-ecoregions). Everything falls back to the box offline. Phase C (offline polygons)
-and adding Level III codes for the Mid-Atlantic region remain planned, below. This replaces the coarse lat/lon bounding boxes
+region *selection*) are **implemented**, including the Florida split. `fetchEcoregion`
+in `app/src/lib/site.ts` (mirrored in `server/app/site_fetcher.rb`) queries the
+live EPA service; the confirm screen shows the real Level III/IV names; and
+`regionForSite` refines the bounding-box match by the spot's Level III code. PNW,
+north/central Florida and south Florida declare their ecoregions; Florida is now
+two regions split along the Southern Florida Coastal Plain (76) seam. Everything
+falls back to the box offline. **Deliberately deferred:** Level III codes for the
+Mid-Atlantic (its box works and has no edge bug) and Phase C offline polygons
+(they fight the tiny-bundle, service-worker-based offline model). Details below. This replaces the coarse lat/lon bounding boxes
 that currently (a) label a spot's ecoregion on the confirm screen and (b) decide
 which region's plant list applies. Boxes are honest but blunt: a point just east
 of the Cascade crest still resolves to the Pacific Northwest west-side list, and
@@ -107,32 +110,45 @@ fetch is kicked off at location-confirm), so it passes it straight in; with no
 resolved site the box decides, so nothing regresses offline.
 
 Declared code sets: **PNW** = 1/2/3/4/78 (excludes 9, the eastern Cascades);
-**Florida** = 65/75/76 (box-gated so it never reaches into GA/AL). **Mid-Atlantic**
-is intentionally left box-only for now — its box has no known edge bug, and
-enumerating its ~dozen Appalachian/Piedmont/coastal L3 codes correctly is its own
-task; omitting the field means the box decides, exactly as before.
+**north/central Florida** = 65/75; **south Florida & the Keys** = 75/76.
+**Mid-Atlantic** is intentionally left box-only — its box has no known edge bug,
+and enumerating its ~dozen Appalachian/Piedmont/coastal L3 codes correctly is its
+own task with real regression risk (a missed code would send valid points to "no
+list"); omitting the field means the box decides, exactly as before.
 
-Draft L3 code sets to fill in at build time (verify against the atlas):
-- **PNW west-side:** Coast Range (1), Puget Lowland (2), Willamette Valley (3),
-  and the west slope of the Cascades (part of 4/78) — *excludes* Eastern
-  Cascades Slopes & Foothills (9), which is why Bend would correctly stop
-  resolving to PNW.
-- **Mid-Atlantic / Piedmont:** Piedmont (45), Northern Piedmont (64), Blue Ridge
-  (66), Ridge and Valley (67), Northeastern Coastal Zone (59), Middle Atlantic
-  Coastal Plain (63), Atlantic Coastal Pine Barrens (84), Northeastern Highlands
-  (58).
-- **Florida:** Southern Coastal Plain (75) and Southern Florida Coastal Plain
-  (76). This is also the natural seam to later **split Florida** into a temperate
-  panhandle list and a subtropical south-Florida list — the current single list's
-  honesty caveat becomes a clean ecoregion boundary.
+**The Florida split (done).** Florida is two regions divided at a ~27.2° N seam
+(roughly Lake Okeechobee, the base of the subtropical zone) with abutting,
+non-overlapping boxes: `florida` (north/central, codes 65/75) and `florida-south`
+(south & Keys, codes 75/76, its own subtropical seed list — gumbo limbo, seagrape,
+cocoplum, coontie/Atala host, corkystem passionvine, etc.). Both claim 75, so the
+peninsula's Southern Coastal Plain is partitioned north/south by the box seam,
+while 76 (Southern Florida Coastal Plain) is unique to the south list and 65 to
+the north. Online the ecoregion decides; offline the lat seam is the coarse
+fallback, matching the conventional "South Florida" line.
 
-### 3. (Optional, later) Fully-offline accurate selection
-The live query is online-only. If we want ecoregion-accurate selection with no
-signal, bundle a **simplified TopoJSON of only the L3 polygons overlapping
-covered regions** (not all 84) and do point-in-polygon on-device. Scoped and
-simplified, this can stay small, but it still fights the ~35 KB bundle ethos, so
-it's an enhancement to weigh per-region, not a default. First cut ships §1+§2
-(live + box fallback).
+Shipped L3 code sets (in the region data files):
+- **PNW west-side** (`pnw`): Coast Range (1), Puget Lowland (2), Willamette
+  Valley (3), Cascades (4), Klamath Mountains (78) — *excludes* Eastern Cascades
+  Slopes & Foothills (9), so Bend correctly stops resolving to PNW.
+- **North/central Florida** (`florida`): Southeastern Plains (65), Southern
+  Coastal Plain (75).
+- **South Florida & the Keys** (`florida-south`): Southern Coastal Plain (75),
+  Southern Florida Coastal Plain (76).
+- **Mid-Atlantic** (`mid-atlantic`): none declared — box-only (see above). The
+  reference set if it's ever added: Piedmont (45), Northern Piedmont (64), Blue
+  Ridge (66), Ridge and Valley (67), Central Appalachians (69), North Central
+  Appalachians (62), Northeastern Highlands (58), Northeastern Coastal Zone (59),
+  Middle Atlantic Coastal Plain (63), Atlantic Coastal Pine Barrens (84), plus
+  the Allegheny Plateau/Great Lakes fringes — verify against the atlas before use.
+
+### 3. Fully-offline accurate selection — deferred by decision
+The live query is online-only. Ecoregion-accurate selection with no signal would
+mean bundling a **simplified TopoJSON of the L3 polygons overlapping covered
+regions** and doing point-in-polygon on-device. Even scoped and simplified that
+adds hundreds of KB, against the ~35 KB-gzipped, service-worker-based offline
+model, and the box fallback already gives correct-enough offline selection. So
+this is **deferred as a deliberate decision**, not pending work — revisit only on
+a concrete need. The shipped product is §1 (labels) + §2 (selection).
 
 ## Phasing
 - **A — display only:** ✅ **done.** `fetchEcoregion` + richer `SiteData`
@@ -142,10 +158,16 @@ it's an enhancement to weigh per-region, not a default. First cut ships §1+§2
   there) and should be smoke-tested in a real browser.
 - **B — selection:** ✅ **done.** `ecoregionsL3` on regions; `regionForSite`
   refines the box match by L3 code (box gate + code refine), box fallback
-  retained offline. PNW and Florida declare codes; Mid-Atlantic left box-only.
-  Selection logic is unit-tested (online refine, offline fallback, cross-region
-  bleed, the Bend/east-of-Cascades fix). Remaining: Mid-Atlantic L3 codes.
-- **C — optional offline:** bundled simplified polygons for covered regions.
+  retained offline. PNW and both Florida regions declare codes; the Florida
+  split ships. Selection logic is unit-tested (online refine, offline fallback,
+  cross-region bleed, the Bend/east-of-Cascades fix, the FL north/south seam).
+- **C — offline polygons:** ⛔ **deferred by decision, not a to-do.** Bundling
+  even simplified L3 polygons adds hundreds of KB, against the ~35 KB-gzipped,
+  service-worker-based offline model. The box fallback already gives correct-
+  enough offline selection. Revisit only if a concrete need appears; if so, scope
+  it to just the covered regions' polygons, not all 84.
+- **Follow-up (optional):** Mid-Atlantic L3 codes — only worth doing with the
+  full, verified code list, since the box already works there.
 
 ## Testing
 - Known-point → expected L3: Portland→Willamette Valley (3), Seattle→Puget

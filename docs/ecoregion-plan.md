@@ -1,6 +1,10 @@
 # Plan: real EPA ecoregions (Phase 2)
 
-**Status:** planned, not built. This replaces the coarse lat/lon bounding boxes
+**Status:** Phase A (real ecoregion *labels*) is **implemented** — `fetchEcoregion`
+in `app/src/lib/site.ts` (with a mirror in `server/app/site_fetcher.rb`) queries
+the live EPA service and the confirm screen shows the real Level III/IV names,
+falling back to the bounding-box guess offline. Phases B (ecoregion-based region
+selection) and C (offline polygons) remain planned, below. This replaces the coarse lat/lon bounding boxes
 that currently (a) label a spot's ecoregion on the confirm screen and (b) decide
 which region's plant list applies. Boxes are honest but blunt: a point just east
 of the Cascade crest still resolves to the Pacific Northwest west-side list, and
@@ -119,8 +123,11 @@ it's an enhancement to weigh per-region, not a default. First cut ships §1+§2
 (live + box fallback).
 
 ## Phasing
-- **A — display only:** `fetchEcoregion` + richer `SiteData`, show the real L3/L4
-  name on confirm. No selection change. Low risk, immediately useful.
+- **A — display only:** ✅ **done.** `fetchEcoregion` + richer `SiteData`
+  (`ecoregionInfo`), real L3/L4 names on confirm, box fallback retained. Pure
+  parser (`parseEcoregion`) is unit-tested; the live HTTP path could not be
+  exercised from the build sandbox (outbound to `gispub.epa.gov` is blocked
+  there) and should be smoke-tested in a real browser.
 - **B — selection:** add `ecoregionsL3` to regions, upgrade `regionForSite`, box
   fallback retained. Fixes the east-of-Cascades and panhandle edge cases.
 - **C — optional offline:** bundled simplified polygons for covered regions.

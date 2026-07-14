@@ -98,6 +98,21 @@ export interface SunEstimate {
   source: "scan" | "manual" | "override";
 }
 
+/**
+ * A real EPA (Omernik) ecoregion, from the live lookup. Public-domain data.
+ * Level III is the useful resolution for plant regions; Level IV is the finer
+ * local subdivision, shown as detail. Level I/II are the broad North American
+ * roll-ups, kept for future use (e.g. region selection).
+ */
+export interface EcoregionInfo {
+  l1Name: string | null; // North America Level I, e.g. "Marine West Coast Forest"
+  l2Name: string | null; // North America Level II
+  l3Code: string; // US Level III code, e.g. "3"
+  l3Name: string; // US Level III name, e.g. "Willamette Valley"
+  l4Code: string | null; // US Level IV code, e.g. "3a"
+  l4Name: string | null; // US Level IV name
+}
+
 export interface SiteData {
   lat: number;
   lon: number;
@@ -113,7 +128,10 @@ export interface SiteData {
     source: string; // which dataset answered
     confidence: "mapped" | "coarse" | "unknown";
   };
+  /** Plain display label for the region (real EPA name, or a coarse box guess). */
   ecoregion: string | null;
+  /** Structured EPA ecoregion when the live lookup succeeded; null on fallback. */
+  ecoregionInfo?: EcoregionInfo | null;
   /** True when values came from cache/offline fallback rather than live fetch. */
   fromCache: boolean;
 }

@@ -91,8 +91,9 @@ photos, nurseries/e-commerce, bed-layout designer.
   in `DATA_SOURCES.md` → "Scaling the catalog."
 - **County-level native status** via USDA PLANTS (public domain) — *not* BONAP,
   whose maps have restrictive terms (see `DATA_SOURCES.md`).
-- **Real EPA ecoregion** lookup to replace the coarse bounding boxes, for both
-  the ecoregion label and region selection — planned in detail in
+- **Real EPA ecoregion** lookup (public domain) — *Phase A shipped*: the confirm
+  screen now shows real Omernik Level III/IV names, with a box fallback offline.
+  Using ecoregions for *region selection* (Phase B) is still planned in
   [`docs/ecoregion-plan.md`](docs/ecoregion-plan.md).
 - **Real plant photos** (cards currently draw a form-based silhouette).
 - **Host-count provenance**: re-source Lepidoptera counts from the primary

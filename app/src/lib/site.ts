@@ -2,7 +2,7 @@
 // best-effort: a failure degrades to null rather than blocking the flow, and
 // the confirm screen lets the user correct anything. Soil especially is always
 // presented as "the map says…", never as measured fact (see honesty rules).
-import type { SiteData } from "../types";
+import type { EcoregionInfo, SiteData } from "../types";
 
 const TIMEOUT_MS = 12000;
 
@@ -19,10 +19,11 @@ async function fetchJson(url: string, opts: RequestInit = {}): Promise<any> {
 }
 
 export async function fetchSite(lat: number, lon: number): Promise<SiteData> {
-  const [soil, elev, climate] = await Promise.all([
+  const [soil, elev, climate, eco] = await Promise.all([
     fetchSoil(lat, lon).catch(() => null),
     fetchElevationSlope(lat, lon).catch(() => null),
     fetchClimate(lat, lon).catch(() => null),
+    fetchEcoregion(lat, lon).catch(() => null),
   ]);
 
   return {
@@ -40,7 +41,8 @@ export async function fetchSite(lat: number, lon: number): Promise<SiteData> {
       source: "unavailable",
       confidence: "unknown",
     },
-    ecoregion: ecoregionGuess(lat, lon),
+    ecoregion: ecoregionLabel(eco, lat, lon),
+    ecoregionInfo: eco,
     fromCache: false,
   };
 }
@@ -186,9 +188,62 @@ export function zoneFromMinTemp(tF: number): string {
   return `${clampInt(n, 1, 13)}${half}`;
 }
 
-// Coarse ecoregion label. A real EPA Level III/IV lookup is a Phase-2 item; for
-// now we assert only the broad region a point plausibly falls in, matched to the
-// areas we carry plant lists for, and always mark it "(broad)".
+// --- Ecoregion: real EPA (Omernik) Level III/IV via the EPA ArcGIS service ---
+// Public-domain data. A point-in-polygon query on the Level IV layer returns the
+// full hierarchy (Level I–IV) in one call. Best-effort like the others: on any
+// failure (offline, CORS, a coastline point that hits no polygon, or outside the
+// conterminous US) we fall back to the coarse bounding-box guess below.
+// Phase A (see docs/ecoregion-plan.md): this drives the *label* only; region
+// selection still uses bounding boxes until Phase B.
+const ECOREGION_QUERY_URL =
+  "https://gispub.epa.gov/arcgis/rest/services/ORD/USEPA_Ecoregions_Level_III_and_IV/MapServer/7/query";
+
+async function fetchEcoregion(
+  lat: number,
+  lon: number
+): Promise<EcoregionInfo | null> {
+  const url =
+    `${ECOREGION_QUERY_URL}?geometry=${lon},${lat}&geometryType=esriGeometryPoint` +
+    `&inSR=4326&spatialRel=esriSpatialRelIntersects` +
+    `&outFields=US_L4CODE,US_L4NAME,US_L3CODE,US_L3NAME,NA_L2NAME,NA_L1NAME` +
+    `&returnGeometry=false&f=json`;
+  const data = await fetchJson(url);
+  return parseEcoregion(data);
+}
+
+// Pure parser for the EPA ArcGIS response, split out so it can be tested without
+// the network. Requires at least a Level III name+code; anything less is treated
+// as no result. The Level I/II roll-ups arrive in ALL CAPS, so we title-case
+// them for display; the US Level III/IV names are already title case.
+export function parseEcoregion(data: any): EcoregionInfo | null {
+  const attrs = data?.features?.[0]?.attributes;
+  if (!attrs) return null;
+  const l3Name = str(attrs.US_L3NAME);
+  const l3Code = str(attrs.US_L3CODE);
+  if (!l3Name || !l3Code) return null;
+  return {
+    l1Name: toTitle(str(attrs.NA_L1NAME)),
+    l2Name: toTitle(str(attrs.NA_L2NAME)),
+    l3Code,
+    l3Name,
+    l4Code: str(attrs.US_L4CODE),
+    l4Name: str(attrs.US_L4NAME),
+  };
+}
+
+// Display label: the real Level III name when we have it, else the coarse box.
+export function ecoregionLabel(
+  info: EcoregionInfo | null,
+  lat: number,
+  lon: number
+): string | null {
+  if (info) return `${info.l3Name} (EPA Level III ecoregion)`;
+  return ecoregionGuess(lat, lon);
+}
+
+// Coarse fallback used only when the live lookup fails. Asserts just the broad
+// region a point plausibly falls in, matched to the areas we carry plant lists
+// for, and always marked "(broad)".
 function ecoregionGuess(lat: number, lon: number): string | null {
   if (lat >= 42 && lat <= 49 && lon >= -124.9 && lon <= -120.5) {
     return "Marine West Coast Forest (broad)";
@@ -200,6 +255,17 @@ function ecoregionGuess(lat: number, lon: number): string | null {
     return "Eastern Temperate Forest (broad)";
   }
   return null;
+}
+
+function str(v: unknown): string | null {
+  if (typeof v !== "string") return v == null ? null : String(v).trim() || null;
+  const t = v.trim();
+  return t.length ? t : null;
+}
+
+function toTitle(s: string | null): string | null {
+  if (!s) return null;
+  return s.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 function round1(x: number): number {

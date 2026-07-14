@@ -38,7 +38,7 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
     ]),
 
     el("p", { style: "margin-top:2rem;font-size:0.85rem;opacity:0.75" }, [
-      "Open-source (MIT). Data from USDA, USGS, ISRIC SoilGrids, Open-Meteo, and Tallamy/NWF host-plant research. ",
+      "Open-source (MIT). Data from USDA, USGS, EPA ecoregions, ISRIC SoilGrids, Open-Meteo, and Tallamy/NWF host-plant research. ",
       "It gives its best honest estimate and always tells you how sure it is.",
     ])
   );

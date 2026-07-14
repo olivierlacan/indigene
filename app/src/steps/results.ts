@@ -22,10 +22,11 @@ export function renderResults(main: HTMLElement): void {
   clear(main);
   if (store.draft.lat == null || store.draft.lon == null) return void navigate("location");
 
-  // Pick the plant list from the spot's coordinates. Outside every covered
-  // region we have no honest recommendations to give, so we say so plainly
-  // rather than showing another region's plants.
-  const region = regionForSite(store.draft.lat, store.draft.lon);
+  // Pick the plant list from the spot's coordinates, refined by its real EPA
+  // ecoregion when we have one. Outside every covered region we have no honest
+  // recommendations to give, so we say so plainly rather than showing another
+  // region's plants.
+  const region = regionForSite(store.draft.lat, store.draft.lon, store.draft.site);
   if (!region) {
     renderNoRegion(main);
     return;

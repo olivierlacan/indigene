@@ -36,6 +36,19 @@ export interface RegionMeta {
    * every region's box, the app says it has no list yet rather than guessing.
    */
   bounds: RegionBounds;
+
+  /**
+   * EPA (Omernik) Level III ecoregion codes this seed list actually represents,
+   * e.g. ["1","2","3"]. When present AND a live EPA lookup gave us the spot's
+   * L3 code, selection *refines within the box*: the point must be both inside
+   * `bounds` and in one of these ecoregions. This is what lets a point just east
+   * of the Cascade crest (same box, different ecoregion) correctly fall through.
+   * Omitted → the box alone decides (and offline, the box always decides, since
+   * there's no live code). Kept as a refinement of `bounds`, never a replacement:
+   * some L3 ecoregions (e.g. 75, Southern Coastal Plain) span several states, so
+   * the box still prevents one region's list bleeding into a neighbor's.
+   */
+  ecoregionsL3?: string[];
 }
 
 export interface RegionDef {

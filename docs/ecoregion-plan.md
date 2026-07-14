@@ -1,10 +1,12 @@
 # Plan: real EPA ecoregions (Phase 2)
 
-**Status:** Phase A (real ecoregion *labels*) is **implemented** — `fetchEcoregion`
-in `app/src/lib/site.ts` (with a mirror in `server/app/site_fetcher.rb`) queries
-the live EPA service and the confirm screen shows the real Level III/IV names,
-falling back to the bounding-box guess offline. Phases B (ecoregion-based region
-selection) and C (offline polygons) remain planned, below. This replaces the coarse lat/lon bounding boxes
+**Status:** Phase A (real ecoregion *labels*) and Phase B (ecoregion-refined
+region *selection*) are **implemented**. `fetchEcoregion` in `app/src/lib/site.ts`
+(mirrored in `server/app/site_fetcher.rb`) queries the live EPA service; the
+confirm screen shows the real Level III/IV names; and `regionForSite` refines the
+bounding-box match by the spot's Level III code (PNW and Florida declare their
+ecoregions). Everything falls back to the box offline. Phase C (offline polygons)
+and adding Level III codes for the Mid-Atlantic region remain planned, below. This replaces the coarse lat/lon bounding boxes
 that currently (a) label a spot's ecoregion on the confirm screen and (b) decide
 which region's plant list applies. Boxes are honest but blunt: a point just east
 of the Cascade crest still resolves to the Pacific Northwest west-side list, and
@@ -72,33 +74,43 @@ of the current "(broad)" label.
   already documented as "CORS can be flaky").
 - **Cache** the result with the saved spot so an offline reopen keeps the label.
 
-### 2. Make region selection ecoregion-based (the real win)
-Add an `ecoregions` field to `RegionMeta` listing the EPA Level III codes each
-seed list actually represents, and upgrade `regionForSite` to prefer a code
-match, falling back to the bounding box when ecoregion data is absent (offline,
-non-CONUS, or a coastline point that hits no polygon):
+### 2. Make region selection ecoregion-based (the real win) — implemented
+Add an `ecoregionsL3` field to `RegionMeta` listing the EPA Level III codes each
+seed list represents, and upgrade `regionForSite(lat, lon, site?)` to refine the
+box match by that code.
+
+**Implemented rule — box *then* code, not code alone.** The original sketch here
+matched on code first and returned "no list" for any known-but-uncovered code.
+That breaks down because several L3 ecoregions span multiple regions' turf — e.g.
+75 (Southern Coastal Plain) covers peninsular Florida *and* coastal Georgia/the
+Carolinas — so a bare code match would let Florida's frost-tender list claim a
+Savannah spot. The shipped rule keeps the box as the gate and uses the code only
+to *refine within it*:
 
 ```ts
-interface RegionMeta {
-  …
-  bounds: RegionBounds;      // kept as the offline fallback
-  ecoregionsL3?: string[];   // e.g. PNW west-side: ["1","2","3"] (+ parts of 78)
-}
-
-function regionForSite(lat, lon, site?): RegionDef | null {
-  const code = site?.ecoregion?.l3Code;
-  if (code) {
-    const byEco = REGIONS.find(r => r.meta.ecoregionsL3?.includes(code));
-    if (byEco) return byEco;          // ecologically real match
-    return null;                       // known ecoregion, not one we cover → honest "no list"
+export function regionForSite(lat, lon, site?): RegionDef | null {
+  const boxed = regionForCoords(lat, lon);        // boxes never overlap → ≤1 candidate
+  if (!boxed) return null;
+  const codes = boxed.meta.ecoregionsL3;
+  const l3 = site?.ecoregionInfo?.l3Code ?? null;
+  if (l3 && codes && codes.length) {
+    return codes.includes(l3) ? boxed : null;     // in box, wrong ecoregion → no list
   }
-  return regionForCoords(lat, lon);    // no ecoregion data → box fallback
+  return boxed;                                    // offline / region has no codes → box decides
 }
 ```
 
+This still delivers the target fix (a point in the PNW box but ecoregion 9,
+east of the crest, falls through to "no list") without the cross-region bleed.
 `renderResults` already has `store.draft.site` by the time it runs (the site
-fetch is kicked off at location-confirm), so this stays synchronous in the happy
-path; if the site promise hasn't resolved, await it or fall back to the box.
+fetch is kicked off at location-confirm), so it passes it straight in; with no
+resolved site the box decides, so nothing regresses offline.
+
+Declared code sets: **PNW** = 1/2/3/4/78 (excludes 9, the eastern Cascades);
+**Florida** = 65/75/76 (box-gated so it never reaches into GA/AL). **Mid-Atlantic**
+is intentionally left box-only for now — its box has no known edge bug, and
+enumerating its ~dozen Appalachian/Piedmont/coastal L3 codes correctly is its own
+task; omitting the field means the box decides, exactly as before.
 
 Draft L3 code sets to fill in at build time (verify against the atlas):
 - **PNW west-side:** Coast Range (1), Puget Lowland (2), Willamette Valley (3),
@@ -128,8 +140,11 @@ it's an enhancement to weigh per-region, not a default. First cut ships §1+§2
   parser (`parseEcoregion`) is unit-tested; the live HTTP path could not be
   exercised from the build sandbox (outbound to `gispub.epa.gov` is blocked
   there) and should be smoke-tested in a real browser.
-- **B — selection:** add `ecoregionsL3` to regions, upgrade `regionForSite`, box
-  fallback retained. Fixes the east-of-Cascades and panhandle edge cases.
+- **B — selection:** ✅ **done.** `ecoregionsL3` on regions; `regionForSite`
+  refines the box match by L3 code (box gate + code refine), box fallback
+  retained offline. PNW and Florida declare codes; Mid-Atlantic left box-only.
+  Selection logic is unit-tested (online refine, offline fallback, cross-region
+  bleed, the Bend/east-of-Cascades fix). Remaining: Mid-Atlantic L3 codes.
 - **C — optional offline:** bundled simplified polygons for covered regions.
 
 ## Testing

@@ -34,6 +34,13 @@ export const REGION: RegionMeta = {
   // Coarse box over Florida, from the Keys (~24.4° N) to the Georgia line
   // (~31° N), and from the western panhandle (~-87.7) to the Atlantic coast.
   bounds: { minLat: 24.4, maxLat: 31.0, minLon: -87.7, maxLon: -79.8 },
+  // Florida's three EPA Level III ecoregions: Southeastern Plains (65, the
+  // panhandle/north interior), Southern Coastal Plain (75, most of the
+  // peninsula), and Southern Florida Coastal Plain (76, the Everglades and
+  // Keys). Gated by the box so it never claims the parts of 65/75 that reach
+  // into Georgia/Alabama. Code 76 is also the natural seam for a future split
+  // into a temperate-north and a subtropical-south Florida list.
+  ecoregionsL3: ["65", "75", "76"],
 };
 
 export const SEED_RAW: RawPlant[] = [

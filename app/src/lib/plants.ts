@@ -3,7 +3,7 @@
 // host-species count in the data (honest, checkable) and normalize it here on a
 // log scale, because the difference between 5 and 50 host species matters far
 // more than the difference between 450 and 500.
-import type { EcoScores, Plant } from "../types";
+import type { EcoScores, Plant, SiteData } from "../types";
 import type { RawPlant, RegionDef } from "../data/region";
 import { REGIONS, regionForCoords } from "../data/regions";
 
@@ -32,9 +32,30 @@ export function loadPlants(region: RegionDef): Plant[] {
   return built;
 }
 
-/** Which covered region a spot falls in, or null if we have no list for it. */
-export function regionForSite(lat: number, lon: number): RegionDef | null {
-  return regionForCoords(lat, lon);
+/**
+ * Which covered region a spot falls in, or null if we have no list for it.
+ *
+ * The coarse bounding box picks the candidate region (boxes never overlap).
+ * Then, *if* a live EPA lookup gave us the spot's Level III ecoregion and the
+ * region declares which ecoregions it covers, the code must match too — this is
+ * what makes a point in the box but the wrong ecoregion (e.g. east of the
+ * Cascade crest) fall through to "no list" instead of getting a poorly-fitting
+ * one. With no live ecoregion (offline, or outside the conterminous US) the box
+ * alone decides, exactly as before, so nothing regresses without a signal.
+ */
+export function regionForSite(
+  lat: number,
+  lon: number,
+  site?: SiteData | null
+): RegionDef | null {
+  const boxed = regionForCoords(lat, lon);
+  if (!boxed) return null;
+  const codes = boxed.meta.ecoregionsL3;
+  const l3 = site?.ecoregionInfo?.l3Code ?? null;
+  if (l3 && codes && codes.length) {
+    return codes.includes(l3) ? boxed : null;
+  }
+  return boxed;
 }
 
 export { REGIONS };

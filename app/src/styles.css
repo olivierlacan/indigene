@@ -734,6 +734,15 @@ input[type="range"] {
   background: var(--brand);
   color: #fff;
 }
+/* The keystone arch glyph sits in running text and badges at text size. */
+.keystone-icon {
+  vertical-align: -0.15em;
+}
+
+.stat-dialog-source {
+  font-size: 0.85rem;
+  margin: 0 0 0.9rem;
+}
 .badge.nowater {
   background: var(--warn-bg);
   color: var(--warn-ink);

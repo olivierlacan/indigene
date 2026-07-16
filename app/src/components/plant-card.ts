@@ -6,7 +6,8 @@ import type { Weights } from "../types";
 import { el } from "../ui";
 import { drawSizeViz } from "./size-viz";
 import { statGrid } from "./stat-card";
-import { scoreLabels, confidencePlain, growthPlain } from "../lib/plain";
+import { scoreLabels, confidencePlain, growthPlain, DATA_SOURCES_URL } from "../lib/plain";
+import { keystoneIcon } from "./keystone-icon";
 
 const monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -15,7 +16,7 @@ export function plantCard(r: Ranked, weights: Weights): HTMLElement {
 
   const badges = el("div", {}, [
     p.keystone
-      ? el("span", { class: "badge keystone", title: "A keystone plant supports far more wildlife than most — losing it would unravel the local food web." }, "★ Keystone plant")
+      ? el("span", { class: "badge keystone", title: "A keystone plant supports far more wildlife than most — losing it would unravel the local food web." }, [keystoneIcon(), " Keystone plant"])
       : null,
     p.noWaterEstablish
       ? el("span", { class: "badge nowater", title: "Expected to establish and survive with no watering after planting, in an average year." }, "Survives with no watering")
@@ -85,7 +86,10 @@ export function plantCard(r: Ranked, weights: Weights): HTMLElement {
       el("strong", {}, `Confidence: ${p.confidence}. `),
       confidencePlain(p.confidence),
       " ",
-      el("span", { style: "opacity:0.8" }, `Source: ${p.basis}`),
+      el("span", { style: "opacity:0.8" }, [
+        `Source: ${p.basis} `,
+        el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, "All sources & licensing →"),
+      ]),
     ]),
   ]);
 

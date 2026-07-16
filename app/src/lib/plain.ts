@@ -3,6 +3,11 @@
 // species" can act on. Everything jargon-y funnels through here.
 import type { MoistureBand, SizeSnapshot } from "../types";
 
+/** The full audit of every dataset behind the numbers — linked wherever we
+ * cite a figure (host counts especially) so claims stay checkable. */
+export const DATA_SOURCES_URL =
+  "https://github.com/olivierlacan/indigene/blob/main/DATA_SOURCES.md";
+
 export function sunLabel(hours: number): string {
   if (hours >= 6) return "full sun";
   if (hours >= 4) return "part sun";

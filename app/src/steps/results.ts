@@ -4,6 +4,7 @@ import { loadPlants, regionForSite, REGIONS } from "../lib/plants";
 import { rankPlants, siteMoisture } from "../lib/ranking";
 import type { Weights } from "../types";
 import { plantCard } from "../components/plant-card";
+import { whyThis } from "../components/learn";
 import { scoreLabels } from "../lib/plain";
 import { saveSpot } from "../db";
 
@@ -127,6 +128,10 @@ export function renderResults(main: HTMLElement): void {
     el("h2", { class: "step-title" }, "Plants for this spot"),
     el("p", { class: "region-tag", style: "margin:0 0 0.5rem;font-size:0.9rem;color:var(--ink-soft)" }, `📍 ${region.meta.name}`),
     el("p", { class: "step-lede" }, conditions),
+    whyThis("How does this ranking work?", [
+      "Each plant's wildlife value — caterpillars hosted, pollinators and birds fed, rain soaked up — is weighed against how well it fits this spot's sun, moisture, and winter cold. ",
+      "Nothing is a black box: open any plant's score to see every number and where it came from.",
+    ]),
     el("div", { class: "result-controls" }, [weights, filters]),
     el("div", { class: "btn-row", style: "margin-top:0" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("confirm") }, "Back"),

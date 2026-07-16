@@ -3,6 +3,7 @@ import { navigate, store } from "../state";
 import { manualSunEstimate } from "../lib/solar";
 import { sunPlain } from "../lib/plain";
 import { sunIcon } from "../components/sun-icon";
+import { whyThis } from "../components/learn";
 
 // Step 2: sun. The manual path is FIRST and fully sufficient — some users will
 // never grant camera access. The camera scan is offered as an optional upgrade.
@@ -67,7 +68,11 @@ export function renderSun(main: HTMLElement): void {
 
   main.append(
     el("h2", { class: "step-title" }, "How much sun does this spot get?"),
-    el("p", { class: "step-lede" }, "Sun is the single biggest thing that decides what will grow here. Pick the closest description — you can refine it with the camera afterward."),
+    el("p", { class: "step-lede" }, "Pick the closest match — the sky scan below can sharpen it."),
+    whyThis("Why do we ask about sun first?", [
+      "Hours of direct sun decide more about what will thrive than anything else you can measure. ",
+      "And shade isn't a flaw — there's a native for every light level, from prairie flowers to forest-floor ferns. The light just decides which ones.",
+    ]),
 
     ...choiceButtons,
 

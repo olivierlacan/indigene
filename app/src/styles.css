@@ -276,6 +276,29 @@ a {
   color: inherit;
 }
 
+/* --- Just-in-time education asides ("why this matters") --- */
+.learn {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+.learn summary {
+  cursor: pointer;
+  min-height: var(--tap);
+  display: flex;
+  align-items: center;
+  font-weight: 650;
+  color: var(--brand);
+  width: fit-content;
+}
+.learn summary::before {
+  content: "🌱";
+  margin-right: 0.45rem;
+}
+.learn p {
+  margin: 0 0 0.4rem;
+  color: var(--ink-soft);
+}
+
 /* --- Buttons --- */
 .btn {
   display: inline-flex;

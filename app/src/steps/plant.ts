@@ -9,7 +9,7 @@ import { fetchSite } from "../lib/site";
 import { manualSunEstimate } from "../lib/solar";
 import { findPlant, assessSpot, plantShareUrl } from "../lib/explore";
 import type { PlantEntry, Suitability } from "../lib/explore";
-import { scoreLabels, confidencePlain } from "../lib/plain";
+import { scoreLabels, confidencePlain, growthPlain } from "../lib/plain";
 import { silhouetteFor } from "../components/plant-card";
 import { statGrid } from "../components/stat-card";
 import { drawSizeViz } from "../components/size-viz";
@@ -95,7 +95,7 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
       statGrid(p),
       canvas,
       el("div", { class: "size-caption" }, [
-        `Drawn to scale beside a 5′6″ person. Eventually reaches about ${fmtSize(p.matureHeightFt)} tall and ${fmtSize(p.matureSpreadFt)} wide.`,
+        `Drawn to scale beside a 5′6″ person. Eventually reaches about ${fmtSize(p.matureHeightFt)} tall and ${fmtSize(p.matureSpreadFt)} wide. ${growthPlain(p)}`,
       ]),
       el("div", { class: "plant-body" }, [
         el("p", { class: "kv" }, [el("span", { class: "k" }, "What it does for you & wildlife: "), p.givesNote]),

@@ -2,6 +2,7 @@ import { el, clear, toast } from "../ui";
 import { navigate, store, setSitePromise } from "../state";
 import { fetchSite } from "../lib/site";
 import { TILE_SIZE, getTile, metersPerPixel, tileCoords } from "../lib/tiles";
+import { whyThis } from "../components/learn";
 
 // Neighborhood scale (~2 km across the canvas). Enough to see you're in the
 // right place, deliberately no closer: ecoregions, soil grids, and climate
@@ -188,6 +189,10 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
   main.append(
     el("h2", { class: "step-title" }, "Where are you standing?"),
     el("p", { class: "step-lede" }, "Get your location, then check the map — if the pin isn't where you're really standing, drag to nudge it, or type exact coordinates below."),
+    whyThis("Why does the exact spot matter?", [
+      "“Native” always means native to somewhere. ",
+      "Your coordinates pick which regional plant list applies and pull the soil, climate, and ecoregion records for this exact place — the same species can be a keystone in one region and a stranger in the next.",
+    ]),
     locateBtn,
     el("div", { style: "margin:0.9rem 0" }, [mapWrap]),
     status,

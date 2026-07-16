@@ -1,7 +1,7 @@
 // Plain-language layer. The rule from the brief: never surface a term without
 // explaining it inline, in words a 70-year-old who has never heard "keystone
 // species" can act on. Everything jargon-y funnels through here.
-import type { MoistureBand } from "../types";
+import type { MoistureBand, SizeSnapshot } from "../types";
 
 export function sunLabel(hours: number): string {
   if (hours >= 6) return "full sun";
@@ -104,6 +104,43 @@ export const scoreLabels: Record<string, { name: string; plain: string }> = {
     plain: "How likely it is to make it with no watering or fuss after you plant it.",
   },
 };
+
+/**
+ * Growth expectations derived from the plant's own size records (typical
+ * field growth at years 1/3/5/10, from the sources cited in its `basis`) —
+ * so "fast" and "slow" are claims the data can back, not nursery-tag optimism.
+ */
+export function growthPlain(p: {
+  size: SizeSnapshot[];
+  matureHeightFt: number;
+}): string {
+  const last = p.size[p.size.length - 1];
+  if (!last || !p.matureHeightFt) return "";
+  const y3 = p.size.find((s) => s.year === 3);
+  const at3 = y3 ? y3.heightFt / p.matureHeightFt : 0;
+  const atLast = last.heightFt / p.matureHeightFt;
+  if (at3 >= 0.85) {
+    return "Quick to settle in: expect close to this full size within about three years.";
+  }
+  if (atLast >= 0.85) {
+    return `A steady grower: close to full size by year ${last.year}.`;
+  }
+  if (atLast >= 0.45) {
+    return `In no hurry: about ${fracWord(atLast)} of its final height by year ${last.year}, still filling in for years after.`;
+  }
+  return `Slow and long-lived: roughly ${ftWord(last.heightFt)} by year ${last.year} on its way to ${ftWord(p.matureHeightFt)} — planted as much for the next generation as for you.`;
+}
+
+function fracWord(f: number): string {
+  if (f >= 0.7) return "three-quarters";
+  if (f >= 0.55) return "two-thirds";
+  return "half";
+}
+
+function ftWord(v: number): string {
+  if (v < 1) return `${Math.round(v * 12)} inches`;
+  return `${v % 1 === 0 ? v : v.toFixed(1)} ft`;
+}
 
 export function confidencePlain(c: "high" | "medium" | "low"): string {
   switch (c) {

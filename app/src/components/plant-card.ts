@@ -5,6 +5,7 @@ import type { Ranked } from "../lib/ranking";
 import type { Weights } from "../types";
 import { el } from "../ui";
 import { drawSizeViz } from "./size-viz";
+import { statGrid } from "./stat-card";
 import { scoreLabels, confidencePlain } from "../lib/plain";
 
 const monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -88,7 +89,7 @@ export function plantCard(r: Ranked, weights: Weights): HTMLElement {
     ]),
   ]);
 
-  return el("article", { class: "plant" }, [head, match, canvas, sizeCaption, body]);
+  return el("article", { class: "plant" }, [head, match, statGrid(p), canvas, sizeCaption, body]);
 }
 
 function moistureShort(b: string): string {

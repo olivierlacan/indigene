@@ -11,6 +11,7 @@ import { findPlant, assessSpot, plantShareUrl } from "../lib/explore";
 import type { PlantEntry, Suitability } from "../lib/explore";
 import { scoreLabels, confidencePlain } from "../lib/plain";
 import { silhouetteFor } from "../components/plant-card";
+import { statGrid } from "../components/stat-card";
 import { drawSizeViz } from "../components/size-viz";
 import type { Plant, SiteData, SunEstimate } from "../types";
 
@@ -91,6 +92,7 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
         ]),
       ]),
       el("p", { class: "kv", style: "margin-top:0.75rem" }, [el("span", { class: "k" }, "Why it belongs here: "), p.nativeNote]),
+      statGrid(p),
       canvas,
       el("div", { class: "size-caption" }, [
         `Drawn to scale beside a 5′6″ person. Eventually reaches about ${fmtSize(p.matureHeightFt)} tall and ${fmtSize(p.matureSpreadFt)} wide.`,

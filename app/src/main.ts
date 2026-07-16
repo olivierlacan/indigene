@@ -75,6 +75,21 @@ function renderStepRail(active: string): void {
   (document.querySelector(".steps") as HTMLElement).style.display = idx >= 0 ? "block" : "none";
 }
 
+/** Which header nav link, if any, a step belongs to. Flow steps map to none. */
+const SECTION_OF: Record<string, string> = {
+  plants: "explore",
+  regions: "explore",
+  saved: "saved",
+};
+
+function updateSiteNav(step: string): void {
+  const section = SECTION_OF[step];
+  document.querySelectorAll<HTMLAnchorElement>(".site-nav a").forEach((a) => {
+    if (a.dataset.section === section) a.setAttribute("aria-current", "page");
+    else a.removeAttribute("aria-current");
+  });
+}
+
 const BASE_TITLE = document.title;
 
 async function route(): Promise<void> {
@@ -82,6 +97,7 @@ async function route(): Promise<void> {
   if (cleanup) { cleanup(); cleanup = null; }
   document.title = BASE_TITLE; // plant pages set their own; everything else resets
   renderStepRail(step);
+  updateSiteNav(step);
   const fn = param ? (step === "plants" ? renderPlant : renderRegion) : STEPS[step].fn;
   const result = fn(main, param);
   if (typeof result === "function") cleanup = result;

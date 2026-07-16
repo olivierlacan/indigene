@@ -342,6 +342,19 @@ a {
   border-color: var(--brand);
   background: var(--brand-bg);
 }
+/* A choice with a leading glyph (e.g. the sun-exposure icons). */
+.choice-with-glyph {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+.choice-glyph {
+  flex: none;
+  width: 2.6rem;
+  height: 2.6rem;
+  display: grid;
+  place-items: center;
+}
 /* Compact toggle buttons (e.g. the sun picker on a plant page) reuse the same
    pressed treatment as the big .choice cards. */
 .btn[aria-pressed="true"] {

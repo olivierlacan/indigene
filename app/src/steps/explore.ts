@@ -26,11 +26,13 @@ export function renderExplore(main: HTMLElement): void {
       // explains what a profile gives you.
       return el("div", { class: "card", style: "margin-bottom:0.8rem" }, [
         el("p", { class: "region-tag", style: "margin:0 0 0.4rem;font-size:0.85rem;color:var(--ink-soft)" }, [
+          "📍 ",
           el("a", {
             href: `#/regions/${region.meta.id}`,
             style: "color:inherit;font-weight:650",
             "aria-label": `${region.meta.name} — all ${count} natives`,
-          }, `📍 ${region.meta.name} · 🌿 ${count}`),
+          }, region.meta.name),
+          ` · 🌿 ${count}`,
         ]),
         el("a", {
           class: "explore-card",

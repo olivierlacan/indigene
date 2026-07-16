@@ -10,6 +10,7 @@ import { navigate } from "../state";
 import { REGIONS, loadPlants } from "../lib/plants";
 import type { RegionDef } from "../lib/plants";
 import { silhouetteFor } from "../components/plant-card";
+import { keystoneIcon } from "../components/keystone-icon";
 import type { Plant, PlantForm } from "../types";
 
 const FORM_ORDER: PlantForm[] = ["tree", "shrub", "perennial", "grass", "vine", "groundcover", "fern"];
@@ -186,7 +187,14 @@ function plantRow(p: Plant): HTMLElement {
     el("div", { style: "min-width:0" }, [
       el("div", { style: "font-weight:700" }, [
         p.common,
-        p.keystone ? el("span", { title: "Keystone plant — supports far more wildlife than most" }, " ★") : null,
+        p.keystone
+          ? el("span", {
+              title: "Keystone plant — supports far more wildlife than most",
+              role: "img",
+              "aria-label": "Keystone plant",
+              style: "margin-left:0.3rem;color:var(--brand)",
+            }, [keystoneIcon(13)])
+          : null,
       ]),
       el("div", { class: "plant-latin", style: "font-size:0.85rem" }, p.latin),
       el("div", {

@@ -628,6 +628,20 @@ input[type="range"] {
   background: var(--surface);
   padding: 0.5rem 0.9rem;
 }
+/* The whole controls block is sticky, so a panel taller than the screen could
+   never show its bottom. Open panels scroll internally instead, with the
+   summary pinned so the way out never scrolls away. */
+.weights details[open] {
+  max-height: calc(100vh - 6rem);
+  max-height: calc(100dvh - 6rem);
+  overflow-y: auto;
+}
+.weights details[open] > summary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--surface);
+}
 .weights summary {
   cursor: pointer;
   font-weight: 700;
@@ -635,11 +649,26 @@ input[type="range"] {
   display: flex;
   align-items: center;
 }
+/* Open/closed state at a glance — the summary is also the close control. */
+.weights summary::after {
+  content: "▾";
+  margin-left: auto;
+  color: var(--ink-soft);
+  transition: transform 0.15s ease-out;
+}
+.weights details[open] > summary::after {
+  transform: rotate(180deg);
+}
 .weight-row {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0.15rem;
-  margin: 0.5rem 0 0.9rem;
+  gap: 0.1rem;
+  margin: 0.25rem 0 0.55rem;
+}
+/* Slightly shorter sliders inside the panel (still ≥44px touch targets) so
+   seven of them don't fill the whole screen. */
+.weights input[type="range"] {
+  height: 2.5rem;
 }
 .weight-row .weight-head {
   display: flex;
@@ -704,6 +733,15 @@ input[type="range"] {
 .badge.keystone {
   background: var(--brand);
   color: #fff;
+}
+/* The keystone arch glyph sits in running text and badges at text size. */
+.keystone-icon {
+  vertical-align: -0.15em;
+}
+
+.stat-dialog-source {
+  font-size: 0.85rem;
+  margin: 0 0 0.9rem;
 }
 .badge.nowater {
   background: var(--warn-bg);

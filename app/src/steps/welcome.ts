@@ -4,6 +4,7 @@ import { listSpots } from "../db";
 import { REGIONS } from "../lib/plants";
 import { featuredPlant } from "../lib/explore";
 import { whyThis } from "../components/learn";
+import { DATA_SOURCES_URL } from "../lib/plain";
 
 export async function renderWelcome(main: HTMLElement): Promise<void> {
   clear(main);
@@ -65,8 +66,9 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
     ]),
 
     el("p", { style: "margin-top:2rem;font-size:0.85rem;opacity:0.75" }, [
-      "Open-source (MIT). Data from USDA, USGS, EPA ecoregions, ISRIC SoilGrids, Open-Meteo, and Tallamy/NWF host-plant research. ",
-      "It gives its best honest estimate and always tells you how sure it is.",
+      "Open-source (MIT). Data from USDA, USGS, EPA ecoregions, ISRIC SoilGrids, Open-Meteo, and Tallamy/NWF host-plant research — ",
+      el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, "full source list & licensing"),
+      ". It gives its best honest estimate and always tells you how sure it is.",
     ])
   );
 }

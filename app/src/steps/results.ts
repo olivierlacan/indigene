@@ -95,14 +95,19 @@ export function renderResults(main: HTMLElement): void {
     PRESETS.map((p) => el("button", { class: "btn btn-secondary", style: "flex:0 1 auto;min-height:2.4rem;padding:0.4rem 0.7rem;font-size:0.9rem", onClick: () => { applyWeights(p.weights); toast(`Re-sorted for: ${p.name}`); } }, p.name))
   );
 
-  const weights = el("div", { class: "weights" }, [
-    el("details", { open: false }, [
-      el("summary", {}, "⚖️ What matters most to you? (re-sort the list)"),
-      el("p", { style: "font-size:0.9rem;color:var(--ink-soft)" }, "Pick a quick preset, or drag the sliders. The list re-sorts instantly."),
-      presetRow,
-      ...sliderRows.map((s) => s.row),
-    ]),
+  // The re-sort panel opens tall on a phone, so it closes three ways: the
+  // summary, a Done button at the bottom, and the chevron makes state obvious.
+  const weightsPanel = el("details", { open: false }, [
+    el("summary", {}, "⚖️ What matters most?"),
+    presetRow,
+    ...sliderRows.map((s) => s.row),
+    el("button", {
+      class: "btn btn-primary btn-block",
+      style: "margin:0.25rem 0 0.5rem",
+      onClick: () => { (weightsPanel as HTMLDetailsElement).open = false; },
+    }, "Done — show the plants"),
   ]);
+  const weights = el("div", { class: "weights" }, [weightsPanel]);
 
   // --- Filters (incl. guerrilla mode) ---
   const filterDefs: { key: keyof typeof store.filters; label: string }[] = [

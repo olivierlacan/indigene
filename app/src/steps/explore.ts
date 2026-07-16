@@ -7,6 +7,7 @@ import { navigate } from "../state";
 import { REGIONS, loadPlants } from "../lib/plants";
 import { featuredPlant } from "../lib/explore";
 import { silhouetteFor } from "../components/plant-card";
+import { keystoneIcon } from "../components/keystone-icon";
 
 export function renderExplore(main: HTMLElement): void {
   clear(main);
@@ -45,7 +46,7 @@ export function renderExplore(main: HTMLElement): void {
               el("h3", { class: "plant-name", style: "margin:0" }, p.common),
               el("div", { class: "plant-latin" }, p.latin),
               p.keystone
-                ? el("span", { class: "badge keystone" }, "★ Keystone plant")
+                ? el("span", { class: "badge keystone" }, [keystoneIcon(), " Keystone plant"])
                 : null,
             ]),
           ]),

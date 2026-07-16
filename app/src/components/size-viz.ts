@@ -28,7 +28,34 @@ const bloomColors: Record<string, string> = {
 export function drawSizeViz(canvas: HTMLCanvasElement, plant: Plant): void {
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
   const cssW = canvas.clientWidth || 340;
-  const cssH = 210;
+
+  const padL = 34; // room for the feet axis
+  const padR = 8;
+  const padTop = 10;
+  const padBottom = 26; // ground labels
+
+  const cols = 5; // "You" + 4 ages
+  const colW = (cssW - padL - padR) / cols;
+
+  const last = plant.size[plant.size.length - 1];
+  const maxHeightFt = Math.max(last.heightFt, HUMAN_FT, 6);
+  const maxSpreadFt = Math.max(...plant.size.map((s) => s.spreadFt), 2);
+
+  // One scale for both axes so the picture is honest. For plants wider than
+  // tall the column width is the binding constraint — in that case a fixed
+  // canvas height would leave a band of dead air above the drawing, so the
+  // canvas shrinks to what the drawing actually needs. The widest snapshot may
+  // use almost the whole column (adjacent years can very nearly touch) so the
+  // shared scale stays as large as possible on narrow screens.
+  const hScale = (colW * 0.94) / maxSpreadFt;
+  const vScaleAt = (h: number) => (h - padTop - padBottom) / (maxHeightFt * 1.12);
+  let cssH = 210;
+  const pxPerFt = Math.min(vScaleAt(cssH), hScale);
+  cssH = Math.max(
+    120, // keep the axis and labels legible even for squat groundcovers
+    Math.min(cssH, Math.ceil(maxHeightFt * 1.12 * pxPerFt + padTop + padBottom))
+  );
+
   canvas.width = Math.round(cssW * dpr);
   canvas.height = Math.round(cssH * dpr);
   canvas.style.height = cssH + "px";
@@ -40,23 +67,7 @@ export function drawSizeViz(canvas: HTMLCanvasElement, plant: Plant): void {
   const line = cssVar("--line", "#cfcabb");
   const brand = cssVar("--brand", "#175e33");
 
-  const padL = 34; // room for the feet axis
-  const padR = 8;
-  const padTop = 10;
-  const groundY = cssH - 26;
-  const usableH = groundY - padTop;
-
-  const cols = 5; // "You" + 4 ages
-  const colW = (cssW - padL - padR) / cols;
-
-  const last = plant.size[plant.size.length - 1];
-  const maxHeightFt = Math.max(last.heightFt, HUMAN_FT, 6);
-  const maxSpreadFt = Math.max(...plant.size.map((s) => s.spreadFt), 2);
-
-  // One scale for both axes so the picture is honest.
-  const vScale = usableH / (maxHeightFt * 1.12);
-  const hScale = (colW * 0.82) / maxSpreadFt;
-  const pxPerFt = Math.min(vScale, hScale);
+  const groundY = cssH - padBottom;
 
   // Feet gridlines + labels.
   ctx.strokeStyle = line;

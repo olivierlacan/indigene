@@ -9,8 +9,9 @@ import { fetchSite } from "../lib/site";
 import { manualSunEstimate } from "../lib/solar";
 import { findPlant, assessSpot, plantShareUrl } from "../lib/explore";
 import type { PlantEntry, Suitability } from "../lib/explore";
-import { scoreLabels, confidencePlain, growthPlain } from "../lib/plain";
+import { scoreLabels, confidencePlain, growthPlain, DATA_SOURCES_URL } from "../lib/plain";
 import { silhouetteFor } from "../components/plant-card";
+import { keystoneIcon } from "../components/keystone-icon";
 import { statGrid } from "../components/stat-card";
 import { drawSizeViz } from "../components/size-viz";
 import type { Plant, SiteData, SunEstimate } from "../types";
@@ -42,7 +43,7 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
   function profile(p: Plant, all: PlantEntry[]): HTMLElement {
     const badges = el("div", {}, [
       p.keystone
-        ? el("span", { class: "badge keystone", title: "A keystone plant supports far more wildlife than most — losing it would unravel the local food web." }, "★ Keystone plant")
+        ? el("span", { class: "badge keystone", title: "A keystone plant supports far more wildlife than most — losing it would unravel the local food web." }, [keystoneIcon(), " Keystone plant"])
         : null,
       p.noWaterEstablish
         ? el("span", { class: "badge nowater" }, "Survives with no watering")
@@ -109,7 +110,10 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
           el("strong", {}, `Confidence: ${p.confidence}. `),
           confidencePlain(p.confidence),
           " ",
-          el("span", { style: "opacity:0.8" }, `Source: ${p.basis}`),
+          el("span", { style: "opacity:0.8" }, [
+            `Source: ${p.basis} `,
+            el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, "All sources & licensing →"),
+          ]),
         ]),
         shareBtn,
       ]),

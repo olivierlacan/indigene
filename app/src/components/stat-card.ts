@@ -10,7 +10,7 @@
 // education, one metric at a time.
 import type { Plant } from "../types";
 import { el } from "../ui";
-import { sunLabel, growthPlain } from "../lib/plain";
+import { sunLabel, growthPlain, DATA_SOURCES_URL } from "../lib/plain";
 
 const monthShort = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -21,6 +21,8 @@ interface Stat {
   sub?: string;
   /** What the metric means and why it matters for natives (the tap-to-open dialog). */
   explain: string;
+  /** Citation for the figure, shown in the dialog (e.g. the host count's basis). */
+  source?: string;
 }
 
 export function statGrid(p: Plant): HTMLElement {
@@ -31,12 +33,21 @@ export function statGrid(p: Plant): HTMLElement {
   });
 
   const open = (s: Stat): void => {
-    dialog.replaceChildren(
+    const parts: HTMLElement[] = [
       el("h3", { style: "margin:0 0 0.2rem" }, [el("span", { "aria-hidden": "true" }, `${s.icon} `), s.label]),
       el("p", { class: "stat-dialog-value" }, `${s.value}${s.sub ? ` — ${s.sub}` : ""}`),
       el("p", { style: "margin:0.5rem 0 0.9rem" }, s.explain),
+    ];
+    if (s.source) {
+      parts.push(el("p", { class: "stat-dialog-source" }, [el("strong", {}, "Source: "), s.source]));
+    }
+    parts.push(
+      el("p", { class: "stat-dialog-source" }, [
+        el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, "How every number is sourced →"),
+      ]),
       el("button", { class: "btn btn-secondary btn-block", onClick: () => dialog.close() }, "Got it")
     );
+    dialog.replaceChildren(...parts);
     dialog.showModal();
   };
 
@@ -111,6 +122,7 @@ function statsFor(p: Plant): Stat[] {
       value: `${p.hostLepCount} species`,
       sub: p.keystone ? "keystone plant" : "food-web value",
       explain: `How many butterfly and moth species can raise their caterpillars on this plant. Caterpillars are what nearly all baby songbirds are fed, so this is the best single measure of how much life a plant supports — and it's exactly where non-native plants score near zero.${p.keystone ? " This one is a keystone: it hosts far more species than most, and local food webs lean on it." : ""}`,
+      source: p.basis,
     },
     p.bloom
       ? {

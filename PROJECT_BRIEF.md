@@ -68,8 +68,12 @@ Transparent and re-weightable. Final position = **eco-score × site-fit**:
 
 - [x] Geolocation → soil/climate/zone fetch → confirm screen
 - [x] Sky-scan sun measurement, **with the manual fallback working first**
-- [x] 36-plant seed dataset for one region with real size-over-time and
-      ecosystem-service numbers
+- [x] Region-aware plant catalog: the app selects the seed list from the spot's
+      coordinates and says plainly when it has no list for an area yet
+- [x] Four regional seed datasets with real size-over-time and ecosystem-service
+      numbers — 40-plant Mid-Atlantic, 24-plant Pacific Northwest (west-of-Cascades),
+      23-plant north/central Florida, and 21-plant south Florida & the Keys — for
+      on-the-ground testing
 - [x] Ranked results with the to-scale size visualization (human silhouette)
 - [x] Re-weightable ranking sliders + presets
 - [x] Offline + installable (hand-written service worker, web manifest, icons)
@@ -81,9 +85,21 @@ photos, nurseries/e-commerce, bed-layout designer.
 
 ## Open questions / Phase 2
 
+- **Canonical catalog backbone** for scaling past hand-authored lists: adopt
+  Kew's **WCVP/POWO** (CC BY 4.0) as the global name + native-range spine,
+  reconcile ids through the **GBIF backbone**, and key U.S. plants on the
+  **USDA PLANTS** symbol (public domain). Full rationale and the source table are
+  in `DATA_SOURCES.md` → "Scaling the catalog."
 - **County-level native status** via USDA PLANTS (public domain) — *not* BONAP,
   whose maps have restrictive terms (see `DATA_SOURCES.md`).
-- **Real EPA ecoregion** lookup (currently a coarse bounding box).
+- **Real EPA ecoregion** lookup (public domain) — *Phases A & B shipped*: the
+  confirm screen shows real Omernik Level III/IV names, and region selection is
+  refined by the spot's Level III ecoregion — so a spot east of the Cascade crest
+  no longer gets the west-side list, and Florida splits along the Southern Florida
+  Coastal Plain (76) seam into a temperate north/central list and a subtropical
+  south/Keys list. Box fallback offline. Deliberately deferred: Mid-Atlantic
+  ecoregion codes (box works; no edge bug) and bundled offline polygons (would
+  fight the tiny-bundle ethos). See [`docs/ecoregion-plan.md`](docs/ecoregion-plan.md).
 - **Real plant photos** (cards currently draw a form-based silhouette).
 - **Host-count provenance**: re-source Lepidoptera counts from the primary
   literature if NWF asserts data terms (flagged, not assumed safe).

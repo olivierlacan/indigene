@@ -1,7 +1,7 @@
 import { el, clear } from "../ui";
 import { navigate, resetDraft } from "../state";
 import { listSpots } from "../db";
-import { REGION } from "../lib/plants";
+import { REGIONS } from "../lib/plants";
 
 export async function renderWelcome(main: HTMLElement): Promise<void> {
   clear(main);
@@ -17,11 +17,12 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
       "Everything stays on your phone, and it keeps working with no signal once you've loaded a spot.",
     ]),
     el("div", { class: "card" }, [
-      el("h3", {}, "Right now this covers one region"),
-      el("p", {}, [
-        `Plant recommendations are tuned for the ${REGION.name} (${REGION.reference}). `,
-        "Outside that area the sun and soil readings still work, but treat the plant list as untested.",
-      ]),
+      el("h3", {}, REGIONS.length > 1 ? "Regions covered so far" : "Right now this covers one region"),
+      el("p", {}, "Plant recommendations are tuned region by region. The app picks the right list from where you're standing:"),
+      el("ul", { style: "margin:0.4rem 0 0.6rem;padding-left:1.2rem" },
+        REGIONS.map((r) => el("li", { style: "margin-bottom:0.3rem" }, `${r.meta.name} — ${r.meta.reference}`))
+      ),
+      el("p", { style: "margin:0" }, "Outside these areas the sun and soil readings still work, and the app tells you plainly when it has no plant list for your spot yet."),
     ]),
     el("button", {
       class: "btn btn-primary btn-block",
@@ -37,7 +38,7 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
     ]),
 
     el("p", { style: "margin-top:2rem;font-size:0.85rem;opacity:0.75" }, [
-      "Open-source (MIT). Data from USDA, USGS, ISRIC SoilGrids, Open-Meteo, and Tallamy/NWF host-plant research. ",
+      "Open-source (MIT). Data from USDA, USGS, EPA ecoregions, ISRIC SoilGrids, Open-Meteo, and Tallamy/NWF host-plant research. ",
       "It gives its best honest estimate and always tells you how sure it is.",
     ])
   );

@@ -48,8 +48,20 @@ whole flow via the manual sun picker — works on desktop over plain `localhost`
    honesty flags, and confidence. Re-weightable sliders + guerrilla-mode
    filters. Saved to IndexedDB, local-first.
 
-Seed data covers **36 native species of the Mid-Atlantic / Northeast Piedmont**;
-more regions to follow.
+Plant recommendations are **tuned region by region**, and the app picks the
+right list from where you're standing — refined, when online, by the spot's real
+EPA ecoregion. Four regions ship today:
+
+- **Mid-Atlantic / Northeast Piedmont** (40 species, Pennsylvania reference)
+- **Pacific Northwest, west of the Cascades** (24 species, Portland–Seattle reference)
+- **Florida, north & central** (23 species, central-Florida reference)
+- **Florida, south & the Keys** (21 species, greater-Miami reference)
+
+Outside a covered region the sun/soil/climate readings still work; the app says
+plainly when it has no plant list for your spot yet. Adding a region is a data
+file plus one line in `app/src/data/regions.ts` — see `DATA_SOURCES.md` for the
+taxonomy and distribution backbones we'll build the national and global catalog
+on, and `docs/ecoregion-plan.md` for how region selection uses EPA ecoregions.
 
 ## License
 

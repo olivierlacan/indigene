@@ -14,6 +14,7 @@ module Indigene
       soil    = safe { fetch_soil(lat, lon) }
       elev    = safe { fetch_elevation_slope(lat, lon) }
       climate = safe { fetch_climate(lat, lon) }
+      eco     = safe { fetch_ecoregion(lat, lon) }
 
       {
         lat:, lon:,
@@ -26,7 +27,8 @@ module Indigene
           texture: nil, drainage: nil, phEstimate: nil,
           source: "unavailable", confidence: "unknown"
         },
-        ecoregion: ecoregion_guess(lat, lon),
+        ecoregion: ecoregion_label(eco, lat, lon),
+        ecoregionInfo: eco,
         fromCache: false
       }
     end
@@ -158,10 +160,59 @@ module Indigene
       "#{n.clamp(1, 13)}#{half}"
     end
 
+    # --- Ecoregion: real EPA (Omernik) Level III/IV via the EPA ArcGIS service ---
+    # Server-side, so no CORS concern. One point-in-polygon query on the Level IV
+    # layer returns the full Level I–IV hierarchy. Best-effort; nil on failure.
+    ECOREGION_QUERY_URL =
+      "https://gispub.epa.gov/arcgis/rest/services/ORD/USEPA_Ecoregions_Level_III_and_IV/MapServer/7/query".freeze
+
+    def fetch_ecoregion(lat, lon)
+      url = "#{ECOREGION_QUERY_URL}?geometry=#{lon},#{lat}&geometryType=esriGeometryPoint" \
+            "&inSR=4326&spatialRel=esriSpatialRelIntersects" \
+            "&outFields=US_L4CODE,US_L4NAME,US_L3CODE,US_L3NAME,NA_L2NAME,NA_L1NAME" \
+            "&returnGeometry=false&f=json"
+      data = get_json(url)
+      attrs = data.dig("features", 0, "attributes")
+      return nil unless attrs
+
+      l3_name = presence(attrs["US_L3NAME"])
+      l3_code = presence(attrs["US_L3CODE"])
+      return nil unless l3_name && l3_code
+
+      {
+        l1Name: to_title(presence(attrs["NA_L1NAME"])),
+        l2Name: to_title(presence(attrs["NA_L2NAME"])),
+        l3Code: l3_code,
+        l3Name: l3_name,
+        l4Code: presence(attrs["US_L4CODE"]),
+        l4Name: presence(attrs["US_L4NAME"])
+      }
+    end
+
+    def ecoregion_label(eco, lat, lon)
+      return "#{eco[:l3Name]} (EPA Level III ecoregion)" if eco
+
+      ecoregion_guess(lat, lon)
+    end
+
+    # Coarse fallback used only when the live lookup fails.
     def ecoregion_guess(lat, lon)
-      if lat.between?(24, 49) && lon.between?(-100, -66)
-        "Eastern Temperate Forest (broad)"
-      end
+      return "Marine West Coast Forest (broad)" if lat.between?(42, 49) && lon.between?(-124.9, -120.5)
+      return "Southern Coastal Plain (broad)" if lat.between?(24.4, 31) && lon.between?(-87.7, -79.8)
+      return "Eastern Temperate Forest (broad)" if lat.between?(24, 49) && lon.between?(-100, -66)
+
+      nil
+    end
+
+    def presence(val)
+      s = val.to_s.strip
+      s.empty? ? nil : s
+    end
+
+    def to_title(str)
+      return nil unless str
+
+      str.downcase.gsub(/\b\w/, &:upcase)
     end
   end
 end

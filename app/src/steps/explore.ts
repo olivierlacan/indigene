@@ -20,15 +20,17 @@ export function renderExplore(main: HTMLElement): void {
       const p = featuredPlant(region);
       const count = loadPlants(region).length;
       // One link per destination, each kept short: the region tag doubles as
-      // the "browse the whole roster" link (its text is unique per card), and
-      // the plant card's call to action is just "Full profile" — the lede
-      // above already explains what a profile gives you.
+      // the "browse the whole roster" link (its text is unique per card, with
+      // the roster size shown as 🌿 + count rather than words), and the plant
+      // card's call to action is just "Full profile" — the lede above already
+      // explains what a profile gives you.
       return el("div", { class: "card", style: "margin-bottom:0.8rem" }, [
         el("p", { class: "region-tag", style: "margin:0 0 0.4rem;font-size:0.85rem;color:var(--ink-soft)" }, [
           el("a", {
             href: `#/regions/${region.meta.id}`,
             style: "color:inherit;font-weight:650",
-          }, `📍 ${region.meta.name} · ${count} natives →`),
+            "aria-label": `${region.meta.name} — all ${count} natives`,
+          }, `📍 ${region.meta.name} · 🌿 ${count}`),
         ]),
         el("a", {
           class: "explore-card",
@@ -46,7 +48,7 @@ export function renderExplore(main: HTMLElement): void {
             ]),
           ]),
           el("p", { style: "margin:0.5rem 0 0.3rem" }, p.givesNote),
-          el("p", { style: "margin:0;font-weight:650;color:var(--brand, #175e33)" }, "Full profile →"),
+          el("p", { style: "margin:0;font-weight:650;color:var(--brand, #175e33)" }, "Full profile"),
         ]),
       ]);
     }),

@@ -78,7 +78,9 @@ async function boot(): Promise<void> {
   await route();
   // Register the hand-written service worker for offline + installability.
   if ("serviceWorker" in navigator && import.meta.env.PROD) {
-    navigator.serviceWorker.register("/sw.js").catch(() => {});
+    navigator.serviceWorker
+      .register(`${import.meta.env.BASE_URL}sw.js`)
+      .catch(() => {});
   }
 }
 

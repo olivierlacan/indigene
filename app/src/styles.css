@@ -309,6 +309,12 @@ a {
   border-color: var(--brand);
   background: var(--brand-bg);
 }
+/* Compact toggle buttons (e.g. the sun picker on a plant page) reuse the same
+   pressed treatment as the big .choice cards. */
+.btn[aria-pressed="true"] {
+  border-color: var(--brand);
+  background: var(--brand-bg);
+}
 .choice .choice-title {
   font-weight: 700;
   display: block;

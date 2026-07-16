@@ -27,6 +27,9 @@ export const REGION: RegionMeta = {
   // Coarse box over the Piedmont/Northeast the seed list is tuned to: roughly
   // Virginia up through southern New England, west to the Appalachians.
   bounds: { minLat: 36.5, maxLat: 45.5, minLon: -83.5, maxLon: -71.0 },
+  // White Oak: the East's single most consequential wildlife plant, and the
+  // clearest possible introduction to what "keystone" means.
+  featuredPlantId: "quercus-alba",
 };
 
 export const SEED_RAW: RawPlant[] = [

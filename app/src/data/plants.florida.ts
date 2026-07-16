@@ -38,6 +38,9 @@ export const REGION: RegionMeta = {
   // panhandle/north interior) and Southern Coastal Plain (75, the peninsula).
   // Box-gated so it never claims the parts of 65/75 that reach into GA/AL.
   ecoregionsL3: ["65", "75"],
+  // American Beautyberry: unmistakable purple fruit, easy in a yard, and a
+  // bird buffet — the friendliest door into Florida natives.
+  featuredPlantId: "callicarpa-americana",
 };
 
 export const SEED_RAW: RawPlant[] = [

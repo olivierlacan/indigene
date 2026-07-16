@@ -2,6 +2,7 @@ import { el, clear } from "../ui";
 import { navigate, resetDraft } from "../state";
 import { listSpots } from "../db";
 import { REGIONS } from "../lib/plants";
+import { featuredPlant } from "../lib/explore";
 
 export async function renderWelcome(main: HTMLElement): Promise<void> {
   clear(main);
@@ -31,6 +32,23 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
         navigate("location");
       },
     }, "Start — where are you standing?"),
+
+    // The plant-first path: start from a plant instead of a spot. One showcase
+    // native per region; each opens a shareable page with a spot checker.
+    el("div", { class: "card", style: "margin-top:1rem" }, [
+      el("h3", {}, "Or start from a plant"),
+      el("p", {}, "Meet one standout native from each region, then check whether the spot you have in mind would suit it:"),
+      el("ul", { style: "margin:0.4rem 0 0.6rem;padding-left:1.2rem" },
+        REGIONS.map((r) => {
+          const p = featuredPlant(r);
+          return el("li", { style: "margin-bottom:0.35rem" }, [
+            el("a", { href: `#/plants/${p.id}`, style: "font-weight:650" }, p.common),
+            ` — ${r.meta.name}`,
+          ]);
+        })
+      ),
+      el("button", { class: "btn btn-secondary btn-block", onClick: () => navigate("plants") }, "🌿 Explore the natives"),
+    ]),
 
     el("div", { style: spots.length ? "margin-top:1.5rem" : "display:none" }, [
       el("h3", {}, "Your saved spots"),

@@ -7,8 +7,10 @@ import { renderScan } from "./steps/skyscan";
 import { renderConfirm } from "./steps/confirm";
 import { renderResults } from "./steps/results";
 import { renderSaved } from "./steps/saved";
+import { renderExplore } from "./steps/explore";
+import { renderPlant } from "./steps/plant";
 
-type StepFn = (main: HTMLElement) => void | (() => void) | Promise<void>;
+type StepFn = (main: HTMLElement, param?: string) => void | (() => void) | Promise<void>;
 
 const STEPS: Record<string, { fn: StepFn; label: string; inFlow: boolean }> = {
   "": { fn: renderWelcome, label: "Start", inFlow: false },
@@ -18,6 +20,7 @@ const STEPS: Record<string, { fn: StepFn; label: string; inFlow: boolean }> = {
   confirm: { fn: renderConfirm, label: "Soil", inFlow: true },
   results: { fn: renderResults, label: "Plants", inFlow: true },
   saved: { fn: renderSaved, label: "Saved", inFlow: false },
+  plants: { fn: renderExplore, label: "Explore", inFlow: false },
 };
 
 const FLOW = ["location", "sun", "confirm", "results"];
@@ -26,9 +29,31 @@ const main = document.getElementById("main") as HTMLElement;
 const stepsList = document.getElementById("steps") as HTMLOListElement;
 let cleanup: (() => void) | null = null;
 
-function currentStep(): string {
+/** The active route: a step key, plus a param for `#/plants/<slug>` pages. */
+function currentRoute(): { step: string; param?: string } {
   const hash = location.hash.replace(/^#\/?/, "");
-  return hash in STEPS ? hash : "";
+  const [head, ...rest] = hash.split("/");
+  if (head === "plants" && rest.length) {
+    return { step: "plants", param: decodeURIComponent(rest.join("/")) };
+  }
+  return { step: head in STEPS ? head : "" };
+}
+
+/**
+ * Canonical plant URLs are real paths (…/plants/<slug>) so they read well and
+ * share cleanly, but the app routes on the hash. Online, GitHub Pages serves
+ * 404.html for those paths and it redirects here; offline, the service worker
+ * answers the navigation with the cached shell directly. Either way, fold any
+ * path beyond the app base into the equivalent hash route on boot.
+ */
+function normalizePathRoute(): void {
+  const base = import.meta.env.BASE_URL;
+  const extra = location.pathname.startsWith(base)
+    ? location.pathname.slice(base.length)
+    : "";
+  if (extra && !location.hash) {
+    history.replaceState(null, "", base + "#/" + extra.replace(/\/+$/, ""));
+  }
 }
 
 function renderStepRail(active: string): void {
@@ -48,11 +73,15 @@ function renderStepRail(active: string): void {
   (document.querySelector(".steps") as HTMLElement).style.display = idx >= 0 ? "block" : "none";
 }
 
+const BASE_TITLE = document.title;
+
 async function route(): Promise<void> {
-  const step = currentStep();
+  const { step, param } = currentRoute();
   if (cleanup) { cleanup(); cleanup = null; }
+  document.title = BASE_TITLE; // plant pages set their own; everything else resets
   renderStepRail(step);
-  const result = STEPS[step].fn(main);
+  const fn = step === "plants" && param ? renderPlant : STEPS[step].fn;
+  const result = fn(main, param);
   if (typeof result === "function") cleanup = result;
   else if (result instanceof Promise) {
     const r = await result;
@@ -73,6 +102,7 @@ window.addEventListener("online", updateOnline);
 window.addEventListener("offline", updateOnline);
 
 async function boot(): Promise<void> {
+  normalizePathRoute();
   await loadPrefs().catch(() => {});
   updateOnline();
   await route();

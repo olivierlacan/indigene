@@ -1,0 +1,28 @@
+<!doctype html>
+<!--
+  GitHub Pages serves this for any path that isn't a real file — which is
+  exactly what a canonical plant URL like /indigene/plants/quercus-alba is.
+  The app is a single page routed on the hash, so this bounces the path into
+  the equivalent hash route (main.ts normalizes the rest). location.replace
+  keeps this 404 out of the back button.
+
+  SEGMENTS_TO_KEEP is 1 because a *project* Pages site lives under /<repo>/.
+  If this app ever moves to a custom domain or a user/org site (served from
+  the domain root), change it to 0.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Indigene</title>
+    <script>
+      var SEGMENTS_TO_KEEP = 1;
+      var parts = location.pathname.split("/").filter(Boolean);
+      var base = "/" + parts.slice(0, SEGMENTS_TO_KEEP).join("/") + "/";
+      var rest = parts.slice(SEGMENTS_TO_KEEP).join("/");
+      location.replace(base + (rest ? "#/" + rest : "") + location.search);
+    </script>
+  </head>
+  <body>
+    <p>Taking you to the plant… <a href="/">Indigene home</a></p>
+  </body>
+</html>

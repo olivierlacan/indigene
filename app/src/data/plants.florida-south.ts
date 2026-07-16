@@ -39,6 +39,9 @@ export const REGION: RegionMeta = {
   // the peninsula's south. Ecoregion 76 is the seam that separates this list
   // from the temperate north & central one.
   ecoregionsL3: ["75", "76"],
+  // Gumbo Limbo: the signature tree of South Florida hammocks — instantly
+  // recognizable by its peeling copper bark.
+  featuredPlantId: "bursera-simaruba",
 };
 
 export const SEED_RAW: RawPlant[] = [

@@ -38,6 +38,14 @@ export interface RegionMeta {
   bounds: RegionBounds;
 
   /**
+   * The one plant this region leads with when someone is browsing plants rather
+   * than checking a spot — its showcase pick on the explore page. An editorial
+   * choice (charismatic, plantable, tells the region's story), not a computed
+   * one. Optional: without it the region's highest-host keystone plant stands in.
+   */
+  featuredPlantId?: string;
+
+  /**
    * EPA (Omernik) Level III ecoregion codes this seed list actually represents,
    * e.g. ["1","2","3"]. When present AND a live EPA lookup gave us the spot's
    * L3 code, selection *refines within the box*: the point must be both inside

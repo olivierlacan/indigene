@@ -106,8 +106,9 @@ function sizeAria(p: { size: { year: number; heightFt: number; spreadFt: number 
 }
 
 // A simple drawn silhouette so a card is meaningful offline with no photo.
-// (Real photos are a Phase-2 addition — see the honesty notes.)
-function silhouetteFor(form: string): SVGSVGElement {
+// (Real photos are a Phase-2 addition — see the honesty notes.) Shared with
+// the explore/plant pages so a species looks the same everywhere.
+export function silhouetteFor(form: string): SVGSVGElement {
   const ns = "http://www.w3.org/2000/svg";
   const svg = document.createElementNS(ns, "svg");
   svg.setAttribute("viewBox", "0 0 48 48");

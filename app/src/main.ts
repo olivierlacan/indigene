@@ -9,6 +9,7 @@ import { renderResults } from "./steps/results";
 import { renderSaved } from "./steps/saved";
 import { renderExplore } from "./steps/explore";
 import { renderPlant } from "./steps/plant";
+import { renderRegion } from "./steps/region";
 
 type StepFn = (main: HTMLElement, param?: string) => void | (() => void) | Promise<void>;
 
@@ -21,6 +22,7 @@ const STEPS: Record<string, { fn: StepFn; label: string; inFlow: boolean }> = {
   results: { fn: renderResults, label: "Plants", inFlow: true },
   saved: { fn: renderSaved, label: "Saved", inFlow: false },
   plants: { fn: renderExplore, label: "Explore", inFlow: false },
+  regions: { fn: renderExplore, label: "Explore", inFlow: false },
 };
 
 const FLOW = ["location", "sun", "confirm", "results"];
@@ -29,12 +31,12 @@ const main = document.getElementById("main") as HTMLElement;
 const stepsList = document.getElementById("steps") as HTMLOListElement;
 let cleanup: (() => void) | null = null;
 
-/** The active route: a step key, plus a param for `#/plants/<slug>` pages. */
+/** The active route: a step key, plus a param for `#/plants/<slug>` and `#/regions/<id>` pages. */
 function currentRoute(): { step: string; param?: string } {
   const hash = location.hash.replace(/^#\/?/, "");
   const [head, ...rest] = hash.split("/");
-  if (head === "plants" && rest.length) {
-    return { step: "plants", param: decodeURIComponent(rest.join("/")) };
+  if ((head === "plants" || head === "regions") && rest.length) {
+    return { step: head, param: decodeURIComponent(rest.join("/")) };
   }
   return { step: head in STEPS ? head : "" };
 }
@@ -80,7 +82,7 @@ async function route(): Promise<void> {
   if (cleanup) { cleanup(); cleanup = null; }
   document.title = BASE_TITLE; // plant pages set their own; everything else resets
   renderStepRail(step);
-  const fn = step === "plants" && param ? renderPlant : STEPS[step].fn;
+  const fn = param ? (step === "plants" ? renderPlant : renderRegion) : STEPS[step].fn;
   const result = fn(main, param);
   if (typeof result === "function") cleanup = result;
   else if (result instanceof Promise) {

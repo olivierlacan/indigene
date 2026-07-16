@@ -11,6 +11,7 @@ import { findPlant, assessSpot, plantShareUrl } from "../lib/explore";
 import type { PlantEntry, Suitability } from "../lib/explore";
 import { scoreLabels, confidencePlain } from "../lib/plain";
 import { silhouetteFor } from "../components/plant-card";
+import { statGrid } from "../components/stat-card";
 import { drawSizeViz } from "../components/size-viz";
 import type { Plant, SiteData, SunEstimate } from "../types";
 
@@ -75,8 +76,13 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
     const shareBtn = el("button", { class: "btn btn-secondary", onClick: () => share(p) }, "🔗 Share this plant");
 
     return el("article", { class: "plant" }, [
-      el("p", { class: "region-tag", style: "margin:0 0 0.4rem;font-size:0.9rem;color:var(--ink-soft)" },
-        `📍 Native to: ${all.map((e) => e.region.meta.name).join(" · ")}`),
+      el("p", { class: "region-tag", style: "margin:0 0 0.4rem;font-size:0.9rem;color:var(--ink-soft)" }, [
+        "📍 Native to: ",
+        ...all.flatMap((e, i) => [
+          i > 0 ? " · " : null,
+          el("a", { href: `#/regions/${e.region.meta.id}` }, e.region.meta.name),
+        ]),
+      ]),
       el("div", { class: "plant-head" }, [
         el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
         el("div", {}, [
@@ -86,6 +92,7 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
         ]),
       ]),
       el("p", { class: "kv", style: "margin-top:0.75rem" }, [el("span", { class: "k" }, "Why it belongs here: "), p.nativeNote]),
+      statGrid(p),
       canvas,
       el("div", { class: "size-caption" }, [
         `Drawn to scale beside a 5′6″ person. Eventually reaches about ${fmtSize(p.matureHeightFt)} tall and ${fmtSize(p.matureSpreadFt)} wide.`,

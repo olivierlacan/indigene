@@ -4,7 +4,7 @@
 // the plant's own shareable page.
 import { el, clear } from "../ui";
 import { navigate } from "../state";
-import { REGIONS } from "../lib/plants";
+import { REGIONS, loadPlants } from "../lib/plants";
 import { featuredPlant } from "../lib/explore";
 import { silhouetteFor } from "../components/plant-card";
 
@@ -18,24 +18,31 @@ export function renderExplore(main: HTMLElement): void {
     ]),
     ...REGIONS.map((region) => {
       const p = featuredPlant(region);
-      return el("a", {
-        class: "card explore-card",
-        href: `#/plants/${p.id}`,
-        style: "display:block;text-decoration:none;color:inherit;margin-bottom:0.8rem",
-      }, [
+      const count = loadPlants(region).length;
+      return el("div", { class: "card", style: "margin-bottom:0.8rem" }, [
         el("p", { class: "region-tag", style: "margin:0 0 0.4rem;font-size:0.85rem;color:var(--ink-soft)" }, `📍 ${region.meta.name}`),
-        el("div", { class: "plant-head" }, [
-          el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
-          el("div", {}, [
-            el("h3", { class: "plant-name", style: "margin:0" }, p.common),
-            el("div", { class: "plant-latin" }, p.latin),
-            p.keystone
-              ? el("span", { class: "badge keystone" }, "★ Keystone plant")
-              : null,
+        el("a", {
+          class: "explore-card",
+          href: `#/plants/${p.id}`,
+          style: "display:block;text-decoration:none;color:inherit",
+        }, [
+          el("div", { class: "plant-head" }, [
+            el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
+            el("div", {}, [
+              el("h3", { class: "plant-name", style: "margin:0" }, p.common),
+              el("div", { class: "plant-latin" }, p.latin),
+              p.keystone
+                ? el("span", { class: "badge keystone" }, "★ Keystone plant")
+                : null,
+            ]),
           ]),
+          el("p", { style: "margin:0.5rem 0 0.3rem" }, p.givesNote),
+          el("p", { style: "margin:0;font-weight:650;color:var(--brand, #175e33)" }, "See the full profile & check your spot →"),
         ]),
-        el("p", { style: "margin:0.5rem 0 0.3rem" }, p.givesNote),
-        el("p", { style: "margin:0;font-weight:650;color:var(--brand, #175e33)" }, "See the full profile & check your spot →"),
+        el("a", {
+          href: `#/regions/${region.meta.id}`,
+          style: "display:block;margin-top:0.5rem;font-weight:650",
+        }, `Browse all ${count} natives of this region →`),
       ]);
     }),
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [

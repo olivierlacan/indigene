@@ -75,8 +75,13 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
     const shareBtn = el("button", { class: "btn btn-secondary", onClick: () => share(p) }, "🔗 Share this plant");
 
     return el("article", { class: "plant" }, [
-      el("p", { class: "region-tag", style: "margin:0 0 0.4rem;font-size:0.9rem;color:var(--ink-soft)" },
-        `📍 Native to: ${all.map((e) => e.region.meta.name).join(" · ")}`),
+      el("p", { class: "region-tag", style: "margin:0 0 0.4rem;font-size:0.9rem;color:var(--ink-soft)" }, [
+        "📍 Native to: ",
+        ...all.flatMap((e, i) => [
+          i > 0 ? " · " : null,
+          el("a", { href: `#/regions/${e.region.meta.id}` }, e.region.meta.name),
+        ]),
+      ]),
       el("div", { class: "plant-head" }, [
         el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
         el("div", {}, [

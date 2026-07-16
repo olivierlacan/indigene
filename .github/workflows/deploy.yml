@@ -1,0 +1,68 @@
+# Deploys the PWA (app/) to GitHub Pages on every push to main.
+#
+# The app is fully client-side — it talks to SoilGrids, USGS, and Open-Meteo
+# straight from the browser — so Pages hosts the entire product for free.
+# The optional Ruby API (server/) is not deployed here.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time; let an in-flight deploy finish rather than cancelling.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      # `npm run build` also runs `tsc --noEmit`, so type errors block deploys.
+      # BASE_PATH makes built URLs resolve under /<repo>/ on project Pages;
+      # configure-pages emits it empty when a custom domain is set, and Vite
+      # needs the trailing slash either way.
+      - name: Build
+        working-directory: app
+        env:
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}/
+        run: npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: app/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

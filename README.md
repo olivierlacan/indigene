@@ -35,6 +35,17 @@ cd server && bundle install && bundle exec puma -p 2300 config.ru
 Camera + compass features need HTTPS and a real phone; everything else — the
 whole flow via the manual sun picker — works on desktop over plain `localhost`.
 
+## Deployment
+
+The PWA deploys to **GitHub Pages** — free, HTTPS, no server to run — via
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) on every push to
+`main`. The app talks to its data sources (SoilGrids, USGS, Open-Meteo)
+directly from the browser, so Pages hosts the entire product; the optional
+`server/` API is not required and not deployed.
+
+One-time setup: in the repo's **Settings → Pages**, set the source to
+**GitHub Actions** (the workflow also attempts to enable this itself).
+
 ## What it does
 
 1. **Location** — high-accuracy geolocation with a draggable pin.

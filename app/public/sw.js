@@ -16,12 +16,16 @@ const VERSION = "indigene-v1";
 const SHELL_CACHE = `${VERSION}-shell`;
 const DATA_CACHE = `${VERSION}-data`;
 
+// The app may be served from a subpath (e.g. GitHub Pages /<repo>/). This
+// worker always sits at the app root, so derive the base from its own URL.
+const BASE = new URL("./", self.location.href).pathname;
+
 const SHELL_ASSETS = [
-  "/",
-  "/index.html",
-  "/manifest.webmanifest",
-  "/icons/icon-192.png",
-  "/icons/icon-512.png",
+  BASE,
+  `${BASE}index.html`,
+  `${BASE}manifest.webmanifest`,
+  `${BASE}icons/icon-192.png`,
+  `${BASE}icons/icon-512.png`,
 ];
 
 // Hosts whose GET responses we cache for offline reuse of a looked-up spot.
@@ -66,7 +70,7 @@ self.addEventListener("fetch", (event) => {
   if (request.mode === "navigate") {
     event.respondWith(
       fetch(request).catch(() =>
-        caches.match("/index.html").then((r) => r || caches.match("/"))
+        caches.match(`${BASE}index.html`).then((r) => r || caches.match(BASE))
       )
     );
     return;

@@ -21,7 +21,10 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
       el("h3", {}, REGIONS.length > 1 ? "Regions covered so far" : "Right now this covers one region"),
       el("p", {}, "Plant recommendations are tuned region by region. The app picks the right list from where you're standing:"),
       el("ul", { style: "margin:0.4rem 0 0.6rem;padding-left:1.2rem" },
-        REGIONS.map((r) => el("li", { style: "margin-bottom:0.3rem" }, `${r.meta.name} — ${r.meta.reference}`))
+        REGIONS.map((r) => el("li", { style: "margin-bottom:0.3rem" }, [
+          el("a", { href: `#/regions/${r.meta.id}`, style: "font-weight:650" }, r.meta.name),
+          ` — ${r.meta.reference}`,
+        ]))
       ),
       el("p", { style: "margin:0" }, "Outside these areas the sun and soil readings still work, and the app tells you plainly when it has no plant list for your spot yet."),
     ]),
@@ -43,7 +46,8 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
           const p = featuredPlant(r);
           return el("li", { style: "margin-bottom:0.35rem" }, [
             el("a", { href: `#/plants/${p.id}`, style: "font-weight:650" }, p.common),
-            ` — ${r.meta.name}`,
+            " — ",
+            el("a", { href: `#/regions/${r.meta.id}` }, r.meta.name),
           ]);
         })
       ),

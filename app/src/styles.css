@@ -276,6 +276,29 @@ a {
   color: inherit;
 }
 
+/* --- Just-in-time education asides ("why this matters") --- */
+.learn {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+.learn summary {
+  cursor: pointer;
+  min-height: var(--tap);
+  display: flex;
+  align-items: center;
+  font-weight: 650;
+  color: var(--brand);
+  width: fit-content;
+}
+.learn summary::before {
+  content: "🌱";
+  margin-right: 0.45rem;
+}
+.learn p {
+  margin: 0 0 0.4rem;
+  color: var(--ink-soft);
+}
+
 /* --- Buttons --- */
 .btn {
   display: inline-flex;
@@ -341,6 +364,19 @@ a {
 .choice[aria-pressed="true"] {
   border-color: var(--brand);
   background: var(--brand-bg);
+}
+/* A choice with a leading glyph (e.g. the sun-exposure icons). */
+.choice-with-glyph {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+.choice-glyph {
+  flex: none;
+  width: 2.6rem;
+  height: 2.6rem;
+  display: grid;
+  place-items: center;
 }
 /* Compact toggle buttons (e.g. the sun picker on a plant page) reuse the same
    pressed treatment as the big .choice cards. */
@@ -458,6 +494,19 @@ input[type="range"] {
   font-variant-numeric: tabular-nums;
   font-size: 0.95rem;
   color: var(--ink-soft);
+}
+/* OSM attribution, pinned to the map's corner (required by the tile policy).
+   Fixed light colors: it sits on map imagery, not on the app theme. */
+.map-attrib {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  padding: 0.05rem 0.5rem;
+  background: rgba(255, 255, 255, 0.85);
+  color: #333;
+  border-top-left-radius: 8px;
 }
 
 /* --- Sky scan --- */

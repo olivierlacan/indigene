@@ -3,6 +3,7 @@ import { navigate, resetDraft } from "../state";
 import { listSpots } from "../db";
 import { REGIONS } from "../lib/plants";
 import { featuredPlant } from "../lib/explore";
+import { whyThis } from "../components/learn";
 
 export async function renderWelcome(main: HTMLElement): Promise<void> {
   clear(main);
@@ -16,6 +17,10 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
     el("div", { class: "note info" }, [
       el("strong", {}, "No account, nothing to sign up for. "),
       "Everything stays on your phone, and it keeps working with no signal once you've loaded a spot.",
+    ]),
+    whyThis("Why native plants?", [
+      "Most caterpillars can only eat the plants they evolved alongside, and nearly every backyard bird raises its chicks on caterpillars. ",
+      "So a native plant isn't just decoration — it's the bottom of the local food web, back in business the season you plant it.",
     ]),
     el("div", { class: "card" }, [
       el("h3", {}, REGIONS.length > 1 ? "Regions covered so far" : "Right now this covers one region"),

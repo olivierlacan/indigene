@@ -6,7 +6,7 @@ import type { Weights } from "../types";
 import { el } from "../ui";
 import { drawSizeViz } from "./size-viz";
 import { statGrid } from "./stat-card";
-import { scoreLabels, confidencePlain } from "../lib/plain";
+import { scoreLabels, confidencePlain, growthPlain } from "../lib/plain";
 
 const monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -47,7 +47,7 @@ export function plantCard(r: Ranked, weights: Weights): HTMLElement {
   // Draw after it's in the DOM (needs clientWidth); scheduled via microtask.
   queueMicrotask(() => drawSizeViz(canvas, p));
   const sizeCaption = el("div", { class: "size-caption" }, [
-    `Drawn to scale beside a 5′6″ person. Eventually reaches about ${fmtSize(p.matureHeightFt)} tall and ${fmtSize(p.matureSpreadFt)} wide.`,
+    `Drawn to scale beside a 5′6″ person. Eventually reaches about ${fmtSize(p.matureHeightFt)} tall and ${fmtSize(p.matureSpreadFt)} wide. ${growthPlain(p)}`,
   ]);
 
   // Transparent score breakdown (weighted total shown, then each part).

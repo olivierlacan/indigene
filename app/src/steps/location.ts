@@ -1,11 +1,19 @@
 import { el, clear, toast } from "../ui";
 import { navigate, store, setSitePromise } from "../state";
 import { fetchSite } from "../lib/site";
+import { TILE_SIZE, getTile, metersPerPixel, tileCoords } from "../lib/tiles";
+import { whyThis } from "../components/learn";
+
+// Neighborhood scale (~2 km across the canvas). Enough to see you're in the
+// right place, deliberately no closer: ecoregions, soil grids, and climate
+// normals are all far coarser than a house lot, so house-level zoom would
+// promise precision the data doesn't have.
+const MAP_ZOOM = 15;
 
 // Step 1: "Where are you standing?" High-accuracy geolocation, with a draggable
 // pin to nudge the exact point and a manual lat/lon entry when location is
 // denied. Nothing downstream works without a coordinate, so this is a gate.
-export function renderLocation(main: HTMLElement): void {
+export function renderLocation(main: HTMLElement): void | (() => void) {
   clear(main);
 
   let lat = store.draft.lat ?? 40.4406; // Pittsburgh, PA as a regional default
@@ -17,7 +25,18 @@ export function renderLocation(main: HTMLElement): void {
 
   const status = el("p", { class: "coords", role: "status", "aria-live": "polite" }, "No location yet.");
   const canvas = el("canvas", { width: 600, height: 320, "aria-hidden": "true" });
-  const mapWrap = el("div", { class: "map" }, [canvas, el("div", { class: "pin", "aria-hidden": "true" }, "📍")]);
+  // Required OSM attribution; only shown while tiles are actually on screen.
+  const attrib = el("a", {
+    class: "map-attrib",
+    href: "https://www.openstreetmap.org/copyright",
+    target: "_blank",
+    rel: "noopener",
+    hidden: true,
+  }, "© OpenStreetMap contributors");
+  const mapWrap = el("div", { class: "map" }, [canvas, el("div", { class: "pin", "aria-hidden": "true" }, "📍"), attrib]);
+  // Whether the last draw managed to show tiles; the drag scale follows the
+  // layer the user is actually looking at (map tiles vs. the 5 m grid).
+  let tilesShown = false;
 
   const latInput = el("input", { type: "number", step: "0.00001", value: String(lat), "aria-label": "Latitude" }) as HTMLInputElement;
   const lonInput = el("input", { type: "number", step: "0.00001", value: String(lon), "aria-label": "Longitude" }) as HTMLInputElement;
@@ -39,6 +58,13 @@ export function renderLocation(main: HTMLElement): void {
     drawMap();
   }
 
+  // Coalesce the redraws triggered by tiles arriving mid-drag.
+  let raf = 0;
+  function scheduleRedraw(): void {
+    if (raf) return;
+    raf = requestAnimationFrame(() => { raf = 0; drawMap(); });
+  }
+
   function drawMap(): void {
     const ctx = canvas.getContext("2d")!;
     const w = canvas.width, h = canvas.height;
@@ -46,34 +72,70 @@ export function renderLocation(main: HTMLElement): void {
     const line = getComputedStyle(document.documentElement).getPropertyValue("--line").trim() || "#ccc";
     ctx.fillStyle = bg;
     ctx.fillRect(0, 0, w, h);
-    // A simple metric grid: each cell = 5 m, so drag distance reads as real.
+    // The schematic fallback: a metric grid (each cell = 5 m) that shows until
+    // tiles arrive, and is the whole map when offline or tiles won't load.
     ctx.strokeStyle = line;
     ctx.lineWidth = 1;
     const cell = 30;
-    const cxp = w / 2 - (offE / 5) * cell;
-    const cyp = h / 2 + (offN / 5) * cell;
-    for (let x = cxp % cell; x < w; x += cell) {
+    const gx = w / 2 - (offE / 5) * cell;
+    const gy = h / 2 + (offN / 5) * cell;
+    for (let x = gx % cell; x < w; x += cell) {
       ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
     }
-    for (let y = cyp % cell; y < h; y += cell) {
+    for (let y = gy % cell; y < h; y += cell) {
       ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
     }
-    // Fix marker (where GPS put you) vs the nudged pin (screen centre).
+
+    // OpenStreetMap tiles at one fixed neighborhood zoom, centred on the pin.
+    let drewTiles = false;
+    if (navigator.onLine) {
+      const c = tileCoords(effLat(), effLon(), MAP_ZOOM);
+      const cx = c.x * TILE_SIZE, cy = c.y * TILE_SIZE; // centre in world px
+      // One shared rounded origin so adjacent tiles never show seams.
+      const ox = Math.round(w / 2 - cx);
+      const oy = Math.round(h / 2 - cy);
+      const x0 = Math.floor((cx - w / 2) / TILE_SIZE), x1 = Math.floor((cx + w / 2) / TILE_SIZE);
+      const y0 = Math.floor((cy - h / 2) / TILE_SIZE), y1 = Math.floor((cy + h / 2) / TILE_SIZE);
+      for (let tx = x0; tx <= x1; tx++) {
+        for (let ty = y0; ty <= y1; ty++) {
+          const img = getTile(MAP_ZOOM, tx, ty, scheduleRedraw);
+          if (img) {
+            ctx.drawImage(img, tx * TILE_SIZE + ox, ty * TILE_SIZE + oy);
+            drewTiles = true;
+          }
+        }
+      }
+    }
+    tilesShown = drewTiles;
+    attrib.hidden = !drewTiles;
+
+    // Fix marker (where GPS put you) vs the nudged pin (screen centre), placed
+    // at the scale of whichever layer is showing.
+    const px = drewTiles ? metersPerPixel(effLat(), MAP_ZOOM) : 5 / cell;
+    const fx = w / 2 - offE / px;
+    const fy = h / 2 + offN / px;
+    ctx.font = "13px system-ui";
+    if (drewTiles) {
+      // A halo keeps the marker readable over map imagery.
+      ctx.strokeStyle = "rgba(255,255,255,0.9)";
+      ctx.lineWidth = 3;
+      ctx.strokeText("GPS fix", fx + 9, fy + 4);
+    }
     ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue("--focus").trim() || "#1a53c4";
-    ctx.globalAlpha = 0.6;
+    ctx.globalAlpha = drewTiles ? 0.9 : 0.6;
     ctx.beginPath();
-    ctx.arc(cxp, cyp, 6, 0, Math.PI * 2);
+    ctx.arc(fx, fy, 6, 0, Math.PI * 2);
     ctx.fill();
     ctx.globalAlpha = 1;
-    ctx.font = "13px system-ui";
-    ctx.fillText("GPS fix", cxp + 9, cyp + 4);
+    ctx.fillText("GPS fix", fx + 9, fy + 4);
   }
 
   // Drag to nudge the pin (the pin stays centred; the world moves under it).
   let dragging = false;
   let lastX = 0, lastY = 0;
-  const cellMeters = 5 / 30; // metres per screen pixel at this zoom
+  const gridMeters = 5 / 30; // metres per canvas pixel on the fallback grid
   const onDown = (e: PointerEvent) => {
+    if ((e.target as Element).closest?.("a")) return; // attribution link stays clickable
     dragging = true;
     lastX = e.clientX; lastY = e.clientY;
     (e.target as Element).setPointerCapture?.(e.pointerId);
@@ -81,8 +143,11 @@ export function renderLocation(main: HTMLElement): void {
   const onMove = (e: PointerEvent) => {
     if (!dragging) return;
     const rect = canvas.getBoundingClientRect();
-    const scale = (canvas.width / rect.width) * cellMeters;
-    offE += (e.clientX - lastX) * scale;
+    const perPx = tilesShown ? metersPerPixel(effLat(), MAP_ZOOM) : gridMeters;
+    const scale = (canvas.width / rect.width) * perPx;
+    // Dragging moves the world under the pin: drag right → pin lands further
+    // west, drag down → further north.
+    offE -= (e.clientX - lastX) * scale;
     offN += (e.clientY - lastY) * scale;
     lastX = e.clientX; lastY = e.clientY;
     updateStatus();
@@ -123,7 +188,11 @@ export function renderLocation(main: HTMLElement): void {
 
   main.append(
     el("h2", { class: "step-title" }, "Where are you standing?"),
-    el("p", { class: "step-lede" }, "Get your location, then drag the pin if you want to fine-tune the exact spot — the driveway strip and the lawn ten feet away can be very different."),
+    el("p", { class: "step-lede" }, "Get your location, then check the map — if the pin isn't where you're really standing, drag to nudge it, or type exact coordinates below."),
+    whyThis("Why does the exact spot matter?", [
+      "“Native” always means native to somewhere. ",
+      "Your coordinates pick which regional plant list applies and pull the soil, climate, and ecoregion records for this exact place — the same species can be a keystone in one region and a stranger in the next.",
+    ]),
     locateBtn,
     el("div", { style: "margin:0.9rem 0" }, [mapWrap]),
     status,
@@ -170,4 +239,11 @@ export function renderLocation(main: HTMLElement): void {
   );
 
   updateStatus();
+
+  // Coming back online mid-visit: fetch tiles for the current view.
+  window.addEventListener("online", scheduleRedraw);
+  return () => {
+    window.removeEventListener("online", scheduleRedraw);
+    if (raf) cancelAnimationFrame(raf);
+  };
 }

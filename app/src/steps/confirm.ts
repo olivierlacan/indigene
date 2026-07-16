@@ -9,6 +9,7 @@ import {
   moisturePlain,
   sunPlain,
 } from "../lib/plain";
+import { whyThis } from "../components/learn";
 
 // Step 3+4+5: confirm the site. Site data is coarse — soil map units cover
 // acres — so everything is shown as "the map says…", with a 60-second ribbon
@@ -80,6 +81,10 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
   const moistureCard = el("div", { class: "card" }, [
     el("h3", {}, "How wet does this spot stay?"),
     el("p", {}, "This is the single most useful thing you can correct. Pick what matches after a heavy rain."),
+    whyThis("Why not just improve the soil?", [
+      "Natives are already adapted to the soil you have — dry sand, heavy clay, soggy hollows all have their specialists. ",
+      "The trick is picking a plant to fit the soil, not hauling in amendments to fit the plant. Answer honestly and the right ones rise to the top.",
+    ]),
     ...bands.map((b) => {
       const btn = el("button", {
         class: "choice",

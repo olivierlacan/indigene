@@ -2,6 +2,8 @@ import { el, clear } from "../ui";
 import { navigate, store } from "../state";
 import { manualSunEstimate } from "../lib/solar";
 import { sunPlain } from "../lib/plain";
+import { sunIcon } from "../components/sun-icon";
+import { whyThis } from "../components/learn";
 
 // Step 2: sun. The manual path is FIRST and fully sufficient — some users will
 // never grant camera access. The camera scan is offered as an optional upgrade.
@@ -34,7 +36,7 @@ export function renderSun(main: HTMLElement): void {
 
   const choiceButtons = buckets.map((b) =>
     el("button", {
-      class: "choice",
+      class: "choice choice-with-glyph",
       "aria-pressed": store.draft.sun?.source !== "scan" && isSelected(b.key) ? "true" : "false",
       onClick: () => {
         store.draft.sun = manualSunEstimate(b.key);
@@ -43,8 +45,11 @@ export function renderSun(main: HTMLElement): void {
         renderResult();
       },
     }, [
-      el("span", { class: "choice-title" }, b.title),
-      el("span", { class: "choice-sub" }, b.sub),
+      el("span", { class: "choice-glyph", "aria-hidden": "true" }, [sunIcon(b.key)]),
+      el("span", {}, [
+        el("span", { class: "choice-title" }, b.title),
+        el("span", { class: "choice-sub" }, b.sub),
+      ]),
     ])
   );
 
@@ -63,7 +68,11 @@ export function renderSun(main: HTMLElement): void {
 
   main.append(
     el("h2", { class: "step-title" }, "How much sun does this spot get?"),
-    el("p", { class: "step-lede" }, "Sun is the single biggest thing that decides what will grow here. Pick the closest description — you can refine it with the camera afterward."),
+    el("p", { class: "step-lede" }, "Pick the closest match — the sky scan below can sharpen it."),
+    whyThis("Why do we ask about sun first?", [
+      "Hours of direct sun decide more about what will thrive than anything else you can measure. ",
+      "And shade isn't a flaw — there's a native for every light level, from prairie flowers to forest-floor ferns. The light just decides which ones.",
+    ]),
 
     ...choiceButtons,
 
@@ -71,8 +80,8 @@ export function renderSun(main: HTMLElement): void {
       el("label", { for: "decid", style: "display:flex;gap:0.6rem;align-items:flex-start;font-weight:600" }, [
         deciduousToggle,
         el("span", {}, [
-          "Are there trees directly overhead that drop their leaves in winter?",
-          el("span", { style: "display:block;font-weight:400;color:var(--ink-soft);font-size:0.9rem;margin-top:0.2rem" }, "If so, this spot is much sunnier in early spring and late fall than it looks in summer — we'll account for it."),
+          "🍂 Trees overhead that go bare in winter?",
+          el("span", { style: "display:block;font-weight:400;color:var(--ink-soft);font-size:0.9rem;margin-top:0.2rem" }, "Bare branches make spring and fall much sunnier — we'll account for it."),
         ]),
       ]),
     ]),

@@ -20,6 +20,14 @@ export interface Draft {
   horizon: HorizonMask | null;
   deciduousOverhead: boolean;
   moistureOverride: MoistureBand | null;
+  /**
+   * Region id the user picked by hand ("I know my ecoregion") instead of
+   * letting coordinates decide. When set with no coordinates, the flow runs
+   * without any site lookup — sun and moisture come from the user, and the
+   * results screen says the list was their choice. Cleared whenever the user
+   * confirms a real location, which switches selection back to automatic.
+   */
+  regionOverride: string | null;
   editingId: string | null;
 }
 
@@ -36,6 +44,7 @@ export const store: {
     horizon: null,
     deciduousOverhead: false,
     moistureOverride: null,
+    regionOverride: null,
     editingId: null,
   },
   weights: { ...DEFAULT_WEIGHTS },
@@ -74,6 +83,7 @@ export function resetDraft(): void {
     horizon: null,
     deciduousOverhead: false,
     moistureOverride: null,
+    regionOverride: null,
     editingId: null,
   };
 }

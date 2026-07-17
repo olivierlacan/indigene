@@ -1,6 +1,8 @@
 import { el, clear, toast } from "../ui";
 import { navigate, store, setSitePromise } from "../state";
 import { fetchSite } from "../lib/site";
+import { searchPlaces, placeLabel } from "../lib/geocode";
+import { REGIONS } from "../lib/plants";
 import { TILE_SIZE, getTile, metersPerPixel, tileCoords } from "../lib/tiles";
 import { whyThis } from "../components/learn";
 
@@ -11,16 +13,18 @@ import { whyThis } from "../components/learn";
 // doesn't have.
 const MAP_ZOOM = 14;
 
-// Step 1: "Where are you standing?" High-accuracy geolocation, with a draggable
-// pin to nudge the exact point and a manual lat/lon entry when location is
-// denied. Nothing downstream works without a coordinate, so this is a gate.
+// Step 1: "Where are you standing?" High-accuracy geolocation leads; the
+// fallbacks are a town/ZIP search (no permissions needed) and, for people who
+// already know their region, picking the plant list directly. Nothing here
+// asks anyone to know coordinates. The pin is adjusted by dragging, tapping,
+// or arrow keys — three ways to the same nudge.
 export function renderLocation(main: HTMLElement): void | (() => void) {
   clear(main);
 
   let lat = store.draft.lat ?? 40.4406; // Pittsburgh, PA as a regional default
   let lon = store.draft.lon ?? -79.9959;
   let accuracy: number | null = null;
-  // Offset (metres) applied by dragging the pin, relative to the fix.
+  // Offset (metres) applied by nudging the pin, relative to the fix.
   let offN = 0;
   let offE = 0;
 
@@ -34,13 +38,15 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
     rel: "noopener",
     hidden: true,
   }, "© OpenStreetMap contributors");
-  const mapWrap = el("div", { class: "map" }, [canvas, el("div", { class: "pin", "aria-hidden": "true" }, "📍"), attrib]);
+  const mapWrap = el("div", {
+    class: "map",
+    tabindex: 0,
+    role: "application",
+    "aria-label": "Map. The pin stays in the centre. Drag or tap to move the spot under it, or use the arrow keys to nudge it — hold Shift for bigger steps.",
+  }, [canvas, el("div", { class: "pin", "aria-hidden": "true" }, "📍"), attrib]);
   // Whether the last draw managed to show tiles; the drag scale follows the
   // layer the user is actually looking at (map tiles vs. the 5 m grid).
   let tilesShown = false;
-
-  const latInput = el("input", { type: "number", step: "0.00001", value: String(lat), "aria-label": "Latitude" }) as HTMLInputElement;
-  const lonInput = el("input", { type: "number", step: "0.00001", value: String(lon), "aria-label": "Longitude" }) as HTMLInputElement;
 
   function effLat(): number {
     return lat + offN / 111320;
@@ -54,8 +60,6 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
     const acc = accuracy != null ? ` · GPS accuracy ±${Math.round(accuracy)} m` : "";
     const moved = off > 1 ? ` · nudged ${Math.round(off)} m` : "";
     status.textContent = `${effLat().toFixed(5)}, ${effLon().toFixed(5)}${acc}${moved}`;
-    latInput.value = effLat().toFixed(5);
-    lonInput.value = effLon().toFixed(5);
     drawMap();
   }
 
@@ -131,39 +135,74 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
     ctx.fillText("GPS fix", fx + 9, fy + 4);
   }
 
+  // Metres per CSS pixel at the scale of whichever map layer is showing.
+  function metersPerCssPx(): number {
+    const rect = canvas.getBoundingClientRect();
+    const perCanvasPx = tilesShown ? metersPerPixel(effLat(), MAP_ZOOM) : 5 / 30;
+    return (canvas.width / rect.width) * perCanvasPx;
+  }
+
   // Drag to nudge the pin (the pin stays centred; the world moves under it).
+  // A press that never really moves is a tap instead: the tapped point slides
+  // under the pin. Tapping is the single-pointer, no-drag way to the same nudge.
   let dragging = false;
   let lastX = 0, lastY = 0;
-  const gridMeters = 5 / 30; // metres per canvas pixel on the fallback grid
+  let downX = 0, downY = 0;
+  let movedPx = 0;
   const onDown = (e: PointerEvent) => {
     if ((e.target as Element).closest?.("a")) return; // attribution link stays clickable
     dragging = true;
-    lastX = e.clientX; lastY = e.clientY;
+    lastX = downX = e.clientX;
+    lastY = downY = e.clientY;
+    movedPx = 0;
     (e.target as Element).setPointerCapture?.(e.pointerId);
   };
   const onMove = (e: PointerEvent) => {
     if (!dragging) return;
-    const rect = canvas.getBoundingClientRect();
-    const perPx = tilesShown ? metersPerPixel(effLat(), MAP_ZOOM) : gridMeters;
-    const scale = (canvas.width / rect.width) * perPx;
+    const scale = metersPerCssPx();
     // Dragging moves the world under the pin: drag right → pin lands further
     // west, drag down → further north.
     offE -= (e.clientX - lastX) * scale;
     offN += (e.clientY - lastY) * scale;
     lastX = e.clientX; lastY = e.clientY;
+    movedPx = Math.max(movedPx, Math.hypot(e.clientX - downX, e.clientY - downY));
     updateStatus();
   };
-  const onUp = () => { dragging = false; };
+  const onUp = (e: PointerEvent) => {
+    if (dragging && movedPx < 8) {
+      // A tap: bring the tapped point to the centre pin.
+      const rect = canvas.getBoundingClientRect();
+      const scale = metersPerCssPx();
+      offE += (e.clientX - rect.left - rect.width / 2) * scale;
+      offN -= (e.clientY - rect.top - rect.height / 2) * scale;
+      updateStatus();
+    }
+    dragging = false;
+  };
   mapWrap.addEventListener("pointerdown", onDown);
   mapWrap.addEventListener("pointermove", onMove);
   mapWrap.addEventListener("pointerup", onUp);
-  mapWrap.addEventListener("pointercancel", onUp);
+  mapWrap.addEventListener("pointercancel", () => { dragging = false; });
+
+  // Arrow keys nudge the pin — the keyboard path to what dragging does.
+  mapWrap.addEventListener("keydown", (e: KeyboardEvent) => {
+    const step = e.shiftKey ? 25 : 5; // metres
+    switch (e.key) {
+      case "ArrowUp": offN += step; break;
+      case "ArrowDown": offN -= step; break;
+      case "ArrowRight": offE += step; break;
+      case "ArrowLeft": offE -= step; break;
+      default: return;
+    }
+    e.preventDefault();
+    updateStatus();
+  });
 
   const locateBtn = el("button", { class: "btn btn-primary btn-block", onClick: locate }, "📍 Use my location");
 
   function locate(): void {
     if (!("geolocation" in navigator)) {
-      toast("This device can't share location — type it in below.");
+      toast("This device can't share location — search for your town below.");
       return;
     }
     locateBtn.textContent = "Locating…";
@@ -181,15 +220,108 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
       (err) => {
         locateBtn.textContent = "📍 Use my location";
         (locateBtn as HTMLButtonElement).disabled = false;
-        toast(err.code === err.PERMISSION_DENIED ? "Location denied — type your spot in below instead." : "Couldn't get a fix — try again or type it in.");
+        toast(err.code === err.PERMISSION_DENIED ? "Location denied — search for your town below instead." : "Couldn't get a fix — try again or search for your town below.");
       },
       { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
     );
   }
 
+  // --- Town / ZIP search: the manual fallback. No permissions, no jargon. ---
+  const searchInput = el("input", {
+    type: "search",
+    id: "place-q",
+    autocomplete: "off",
+    placeholder: "e.g. State College, or 16801",
+  }) as HTMLInputElement;
+  const searchBtn = el("button", { class: "btn btn-secondary" }, "Search") as HTMLButtonElement;
+  const searchOut = el("div", { "aria-live": "polite" });
+
+  async function doSearch(): Promise<void> {
+    const q = searchInput.value.trim();
+    if (!q) return;
+    clear(searchOut);
+    searchBtn.disabled = true;
+    searchBtn.textContent = "Searching…";
+    try {
+      const places = await searchPlaces(q);
+      clear(searchOut);
+      if (!places.length) {
+        searchOut.append(el("div", { class: "note warn" }, "Couldn't find that name. Try the town and state together — like “Springfield Pennsylvania” — or the ZIP code on your mail."));
+        return;
+      }
+      searchOut.append(
+        ...places.map((p) =>
+          el("button", {
+            class: "choice",
+            onClick: () => {
+              lat = p.lat; lon = p.lon;
+              offN = 0; offE = 0; accuracy = null;
+              clear(searchOut);
+              searchOut.append(el("div", { class: "note info" }, [
+                el("strong", {}, `Pin set to the middle of ${p.name}. `),
+                "That's close enough to pick your region and plant list — for the sharpest sun and soil readings, drag the map until the pin sits on the spot you'll actually plant.",
+              ]));
+              updateStatus();
+              mapWrap.scrollIntoView({ block: "nearest" });
+            },
+          }, [
+            el("span", { class: "choice-title" }, placeLabel(p)),
+            el("span", { class: "choice-sub" }, `${p.lat.toFixed(3)}, ${p.lon.toFixed(3)}`),
+          ])
+        )
+      );
+    } catch {
+      clear(searchOut);
+      searchOut.append(el("div", { class: "note warn" }, "The place search needs a signal and we couldn't reach it. If GPS works, use “Use my location” above — or pick your region by hand below."));
+    } finally {
+      searchBtn.disabled = false;
+      searchBtn.textContent = "Search";
+    }
+  }
+
+  const searchCard = el("div", { class: "card" }, [
+    el("h3", {}, "No GPS? Search for where you are"),
+    el("form", {
+      onSubmit: (e: Event) => { e.preventDefault(); void doSearch(); },
+    }, [
+      el("div", { class: "field", style: "margin-bottom:0.6rem" }, [
+        el("label", { for: "place-q" }, "Your town, city, or ZIP code"),
+        searchInput,
+      ]),
+      searchBtn,
+    ]),
+    searchOut,
+  ]);
+
+  // --- The escape hatch: pick a region by hand, no map point at all. ---
+  const regionCard = el("details", { class: "card" }, [
+    el("summary", { style: "min-height:3rem;display:flex;align-items:center;font-weight:700;cursor:pointer" }, "🗺️ Know your region? Pick it yourself"),
+    el("p", {}, [
+      "If you already know which of our regions — or which EPA ecoregion — you're in, you can skip the map. ",
+      "Fair warning: without a map point we can't look up your soil, rainfall, or winter cold, so you'll answer the sun and moisture questions yourself and the plant list leans on what you tell us.",
+    ]),
+    ...REGIONS.map((r) =>
+      el("button", {
+        class: "choice",
+        onClick: () => {
+          store.draft.lat = null;
+          store.draft.lon = null;
+          store.draft.site = null;
+          store.draft.regionOverride = r.meta.id;
+          setSitePromise(null);
+          toast(`Using the ${r.meta.name} list — your pick.`);
+          navigate("sun");
+        },
+      }, [
+        el("span", { class: "choice-title" }, r.meta.name),
+        el("span", { class: "choice-sub" }, r.meta.reference),
+      ])
+    ),
+  ]);
+
   main.append(
     el("h2", { class: "step-title" }, "Where are you standing?"),
-    el("p", { class: "step-lede" }, "Get your location, then check the map — if the pin isn't where you're really standing, drag to nudge it, or type exact coordinates below."),
+    el("p", { class: "step-lede" }, "Get your location, then check the map — if the pin isn't where you're really standing, drag or tap to nudge it. No GPS? Search for your town below."),
     whyThis("Why does the exact spot matter?", [
       "“Native” always means native to somewhere. ",
       "Your coordinates pick which regional plant list applies and pull the soil, climate, and ecoregion records for this exact place — the same species can be a keystone in one region and a stranger in the next.",
@@ -197,27 +329,8 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
     locateBtn,
     el("div", { style: "margin:0.9rem 0" }, [mapWrap]),
     status,
-    el("details", { style: "margin-top:0.75rem" }, [
-      el("summary", { style: "min-height:3rem;display:flex;align-items:center;font-weight:650" }, "Type coordinates instead"),
-      el("div", { class: "field", style: "margin-top:0.5rem" }, [
-        el("label", { for: "lat" }, "Latitude"),
-        Object.assign(latInput, { id: "lat" }),
-      ]),
-      el("div", { class: "field" }, [
-        el("label", { for: "lon" }, "Longitude"),
-        Object.assign(lonInput, { id: "lon" }),
-      ]),
-      el("button", {
-        class: "btn btn-secondary",
-        onClick: () => {
-          const la = parseFloat(latInput.value), lo = parseFloat(lonInput.value);
-          if (Number.isFinite(la) && Number.isFinite(lo)) {
-            lat = la; lon = lo; offN = 0; offE = 0; accuracy = null; updateStatus();
-            toast("Coordinates set.");
-          }
-        },
-      }, "Use these coordinates"),
-    ]),
+    searchCard,
+    regionCard,
     el("div", { class: "btn-row" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, "Back"),
       el("button", {
@@ -226,6 +339,8 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
           const fLat = effLat(), fLon = effLon();
           store.draft.lat = fLat;
           store.draft.lon = fLon;
+          // A confirmed map point puts region selection back on automatic.
+          store.draft.regionOverride = null;
           // Start fetching soil/climate/elevation now, in parallel with the sun step.
           setSitePromise(
             fetchSite(fLat, fLon).then((s) => {

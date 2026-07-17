@@ -157,5 +157,7 @@ export interface SavedSpot {
   horizon: HorizonMask | null;
   soilOverride?: { texture: string; moisture: MoistureBand } | null;
   deciduousOverhead?: boolean;
+  /** Region id the user picked by hand for this spot (e.g. just over a boundary). */
+  regionOverride?: string | null;
   weights: Weights;
 }

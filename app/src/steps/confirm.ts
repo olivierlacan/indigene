@@ -17,17 +17,19 @@ import { whyThis } from "../components/learn";
 // than the map does.
 export async function renderConfirm(main: HTMLElement): Promise<void> {
   clear(main);
-  if (store.draft.lat == null) return void navigate("location");
+  const hasCoords = store.draft.lat != null;
+  if (!hasCoords && !store.draft.regionOverride) return void navigate("location");
 
   main.append(el("h2", { class: "step-title" }, "Here's what we think about this spot"));
-  const loading = el("p", { class: "coords" }, [el("span", { class: "spinner", style: "border-color:rgba(0,0,0,0.2);border-top-color:var(--brand);display:inline-block;vertical-align:middle" }), " Looking up soil, elevation, and climate…"]);
-  main.append(loading);
-
-  const promise = getSitePromise();
-  if (promise) {
-    try { await promise; } catch { /* fall through with whatever we have */ }
+  if (hasCoords) {
+    const loading = el("p", { class: "coords" }, [el("span", { class: "spinner", style: "border-color:rgba(0,0,0,0.2);border-top-color:var(--brand);display:inline-block;vertical-align:middle" }), " Looking up soil, elevation, and climate…"]);
+    main.append(loading);
+    const promise = getSitePromise();
+    if (promise) {
+      try { await promise; } catch { /* fall through with whatever we have */ }
+    }
+    loading.remove();
   }
-  loading.remove();
 
   const site = store.draft.site;
   const sun = store.draft.sun;
@@ -43,7 +45,10 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
   }
 
   if (!site) {
-    main.append(el("div", { class: "note warn" }, "We couldn't reach the soil/climate services (no signal, or they're down). You can still get recommendations — just set the moisture below from what you can see, and we'll skip the parts we couldn't look up."));
+    main.append(el("div", { class: "note warn" },
+      hasCoords
+        ? "We couldn't reach the soil/climate services (no signal, or they're down). You can still get recommendations — just set the moisture below from what you can see, and we'll skip the parts we couldn't look up."
+        : "You picked your region yourself, so there's no map point to look up soil, rainfall, or winter cold from. That's fine — set the moisture below from what you can see, and the ranking will lean on your sun and moisture answers."));
   }
 
   // What we looked up, in plain words.
@@ -64,7 +69,7 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
     el("h3", {}, "Soil (from the map — worth checking)"),
     site && site.soil.texture
       ? kv("The soil map says", `${texturePlain(site.soil.texture)}. ${site.soil.drainage ?? ""}`)
-      : el("p", {}, "We couldn't get a soil reading for this point."),
+      : el("p", {}, "We don't have a soil reading here — the 60-second check below tells you what you've got."),
     site && site.soil.phEstimate != null ? kv("Acidity", phPlain(site.soil.phEstimate)) : null,
     el("div", { class: "note warn" }, [
       el("strong", {}, "The soil map is coarse. "),

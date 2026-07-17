@@ -34,6 +34,7 @@ export async function renderSaved(main: HTMLElement): Promise<void> {
               lat: s.lat, lon: s.lon, site: s.site, sun: s.sun, horizon: s.horizon,
               deciduousOverhead: s.deciduousOverhead ?? false,
               moistureOverride: s.soilOverride?.moisture ?? null,
+              regionOverride: s.regionOverride ?? null,
               editingId: s.id,
             };
             store.weights = { ...s.weights };

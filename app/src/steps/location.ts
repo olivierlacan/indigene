@@ -4,11 +4,12 @@ import { fetchSite } from "../lib/site";
 import { TILE_SIZE, getTile, metersPerPixel, tileCoords } from "../lib/tiles";
 import { whyThis } from "../components/learn";
 
-// Neighborhood scale (~2 km across the canvas). Enough to see you're in the
-// right place, deliberately no closer: ecoregions, soil grids, and climate
-// normals are all far coarser than a house lot, so house-level zoom would
-// promise precision the data doesn't have.
-const MAP_ZOOM = 15;
+// District scale (~4 km across the canvas). Wide enough to catch landmarks
+// people actually recognize — parks, highways, water — and deliberately no
+// closer: ecoregions, soil grids, and climate normals are all far coarser
+// than a house lot, so house-level zoom would promise precision the data
+// doesn't have.
+const MAP_ZOOM = 14;
 
 // Step 1: "Where are you standing?" High-accuracy geolocation, with a draggable
 // pin to nudge the exact point and a manual lat/lon entry when location is

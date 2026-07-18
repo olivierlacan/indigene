@@ -101,34 +101,46 @@ export function slopePlain(deg: number | null): string {
   return "a steep slope — holding the soil in place matters a lot here";
 }
 
-export const scoreLabels: Record<string, { name: string; plain: string }> = {
+// Each ecosystem benefit carries one fixed icon (emoji — the app's icon
+// idiom) so the benefit is recognizable at a glance anywhere it appears:
+// score breakdowns, the re-rank sliders, everywhere. The caterpillar
+// matches the stat-grid's host tile — same fact, same face. Render icons
+// aria-hidden; the name is the accessible label.
+export const scoreLabels: Record<string, { icon: string; name: string; plain: string }> = {
   host: {
+    icon: "🐛",
     name: "Feeds baby butterflies & moths",
     plain:
       "How many kinds of caterpillars can eat this plant. Caterpillars are the food that baby birds are raised on, so this is the single biggest measure of how much life a plant supports.",
   },
   pollinator: {
+    icon: "🐝",
     name: "Feeds bees & butterflies",
     plain: "Nectar and pollen for adult bees and butterflies, and how long it blooms.",
   },
   bird: {
+    icon: "🐦",
     name: "Feeds & shelters birds",
     plain: "Berries, seeds, and places to nest — plus the caterpillars it raises.",
   },
   stormwater: {
+    icon: "🌧️",
     name: "Soaks up rain",
     plain: "Deep roots that let rainwater sink in instead of running off.",
   },
   erosion: {
+    icon: "⛰️",
     name: "Holds soil in place",
     plain: "Roots that grip a slope and stop it washing away.",
   },
   carbon: {
+    icon: "🪵",
     name: "Stores carbon",
     plain:
       "Carbon pulled out of the air into wood and roots. Honestly small for one yard — included, but don't expect miracles.",
   },
   establishment: {
+    icon: "🌵",
     name: "Survives on its own",
     plain: "How likely it is to make it with no watering or fuss after you plant it.",
   },

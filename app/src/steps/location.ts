@@ -328,7 +328,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
 
   // --- The escape hatch: pick a region by hand, no map point at all. ---
   const regionCard = el("details", { class: "card" }, [
-    el("summary", { style: "min-height:3rem;display:flex;align-items:center;font-weight:700;cursor:pointer" }, "🗺️ Know your region? Pick it yourself"),
+    el("summary", {}, "🗺️ Know your region? Pick it yourself"),
     el("p", {}, [
       "If you already know which of our regions — or which EPA ecoregion — you're in, you can skip the map. ",
       "Fair warning: without a map point we can't look up your soil, rainfall, or winter cold, so you'll answer the sun and moisture questions yourself and the plant list leans on what you tell us.",

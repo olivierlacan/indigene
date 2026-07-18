@@ -96,7 +96,7 @@ export function renderSun(main: HTMLElement): void {
     // coordinate — the quick pick above is the whole story.
     ...(hasCoords
       ? [el("details", { class: "card" }, [
-          el("summary", { style: "min-height:3rem;display:flex;align-items:center;font-weight:700;cursor:pointer" }, "📷 Scan the sky for a sharper estimate (optional)"),
+          el("summary", {}, "📷 Scan the sky for a sharper estimate (optional)"),
           el("p", {}, "Point your phone at the skyline and slowly turn all the way around. We'll trace how high the trees and rooftops rise and calculate the real sun hours for this exact spot. Needs camera and motion access — you can skip it entirely."),
           el("button", { class: "btn btn-secondary btn-block", onClick: () => navigate("scan") }, "Start sky scan"),
         ])]

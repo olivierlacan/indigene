@@ -87,7 +87,10 @@ export function renderResults(main: HTMLElement): void {
       },
     }) as HTMLInputElement;
     return { input, row: el("div", { class: "weight-row" }, [
-      el("div", { class: "weight-head" }, [el("span", {}, label.name), valSpan]),
+      el("div", { class: "weight-head" }, [
+        el("span", {}, [el("span", { "aria-hidden": "true" }, `${label.icon} `), label.name]),
+        valSpan,
+      ]),
       input,
     ]) };
   });

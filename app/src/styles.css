@@ -290,16 +290,38 @@ a {
   color: inherit;
 }
 
+/* --- Disclosures --- */
+/* The one affordance for anything that opens: a chevron on the right that
+   flips when open. Every <summary> gets it for free — no "(tap to open)"
+   text, and no browser-default triangle competing with it. */
+summary {
+  cursor: pointer;
+  min-height: var(--tap);
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::after {
+  content: "▾";
+  margin-left: auto;
+  padding-left: 0.5rem;
+  color: var(--ink-soft);
+  transition: transform 0.15s ease-out;
+}
+details[open] > summary::after {
+  transform: rotate(180deg);
+}
+
 /* --- Just-in-time education asides ("why this matters") --- */
 .learn {
   margin: 0 0 1rem;
   font-size: 0.95rem;
 }
 .learn summary {
-  cursor: pointer;
-  min-height: var(--tap);
-  display: flex;
-  align-items: center;
   font-weight: 650;
   color: var(--brand);
   width: fit-content;
@@ -642,23 +664,6 @@ input[type="range"] {
   top: 0;
   z-index: 1;
   background: var(--surface);
-}
-.weights summary {
-  cursor: pointer;
-  font-weight: 700;
-  min-height: var(--tap);
-  display: flex;
-  align-items: center;
-}
-/* Open/closed state at a glance — the summary is also the close control. */
-.weights summary::after {
-  content: "▾";
-  margin-left: auto;
-  color: var(--ink-soft);
-  transition: transform 0.15s ease-out;
-}
-.weights details[open] > summary::after {
-  transform: rotate(180deg);
 }
 .weight-row {
   display: grid;

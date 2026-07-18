@@ -58,7 +58,10 @@ export function plantCard(r: Ranked, weights: Weights): HTMLElement {
     const label = scoreLabels[key];
     return el("li", { class: "score-item" }, [
       el("div", { class: "score-head" }, [
-        el("span", {}, label.name + (w >= 4 ? " ★ (you're weighting this high)" : "")),
+        el("span", {}, [
+          el("span", { "aria-hidden": "true" }, `${label.icon} `),
+          label.name + (w >= 4 ? " ★ (you're weighting this high)" : ""),
+        ]),
         el("span", {}, `${val}${key === "host" ? ` · ${p.hostLepCount} species` : ""}`),
       ]),
       el("div", { class: "score-bar" }, [el("span", { style: `width:${val}%` })]),
@@ -67,9 +70,7 @@ export function plantCard(r: Ranked, weights: Weights): HTMLElement {
   });
 
   const scores = el("details", {}, [
-    el("summary", { style: "cursor:pointer;font-weight:700;min-height:3rem;display:flex;align-items:center;" }, [
-      `Why it ranks here — eco value ${r.ecoScore}/100 (tap to open)`,
-    ]),
+    el("summary", {}, `🦋 Why it ranks here — eco value ${r.ecoScore}/100`),
     el("ul", { class: "score-list" }, scoreParts),
   ]);
 

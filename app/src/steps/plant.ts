@@ -67,7 +67,7 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
       const label = scoreLabels[key];
       return el("li", { class: "score-item" }, [
         el("div", { class: "score-head" }, [
-          el("span", {}, label.name),
+          el("span", {}, [el("span", { "aria-hidden": "true" }, `${label.icon} `), label.name]),
           el("span", {}, `${val}${key === "host" ? ` · ${p.hostLepCount} species` : ""}`),
         ]),
         el("div", { class: "score-bar" }, [el("span", { style: `width:${val}%` })]),
@@ -104,7 +104,7 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
         el("p", { class: "kv" }, [el("span", { class: "k" }, "What it needs from you: "), p.careNote]),
         el("p", { class: "kv" }, [el("span", { class: "k" }, "Bloom & moisture: "), `${bloom} Prefers soil that's ${p.moisture.map(moistureShort).join(" or ")}.`]),
         el("details", {}, [
-          el("summary", { style: "cursor:pointer;font-weight:700;min-height:3rem;display:flex;align-items:center;" }, "What it does for the ecosystem (tap to open)"),
+          el("summary", {}, "🦋 What it does for the ecosystem"),
           el("ul", { class: "score-list" }, scoreParts),
         ]),
         el("p", { class: "confidence" }, [
@@ -320,7 +320,7 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
       el("p", { style: "margin:0.6rem 0 0;font-weight:650" }, "How much sun does that spot get?"),
       sunRow,
       el("details", { style: "margin-top:0.4rem" }, [
-        el("summary", { style: "min-height:2.6rem;display:flex;align-items:center;font-weight:650" }, "No GPS? Search for where you are"),
+        el("summary", {}, "🔎 No GPS? Search for where you are"),
         el("form", {
           onSubmit: (e: Event) => { e.preventDefault(); void doSearch(); },
         }, [

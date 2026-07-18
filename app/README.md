@@ -64,12 +64,16 @@ src/
   steps/               One module per screen
 public/
   manifest.webmanifest, sw.js (hand-written), icons/
+scripts/
+  inject-sw-precache.mjs   Post-build: embeds the deploy's file list in sw.js
 ```
 
 ## Design decisions
 
 - **No framework, no runtime deps** — the DOM is enough, and it keeps the bundle
-  tiny and legible. The service worker is hand-written, not generated.
+  tiny and legible. The service worker is hand-written, not generated; a small
+  post-build script only injects the deploy's file list so the whole shell
+  (including hashed CSS/JS) precaches atomically per deploy.
 - **Offline-first** — the seed catalog is bundled; sun is computed locally
   (NOAA algorithm, no API); looked-up site data is cached so a spot works
   forever once loaded.

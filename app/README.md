@@ -25,8 +25,10 @@ over plain `localhost`.
 
 ## The flow
 
-1. **Location** — high-accuracy geolocation with a draggable pin (metric grid,
-   no external tiles) and manual lat/lon entry.
+1. **Location** — high-accuracy geolocation with a nudgeable pin (drag, tap,
+   or arrow keys). No GPS? Search your town or ZIP (Open-Meteo geocoding, no
+   key) — or skip the map entirely and pick your region by hand, plainly
+   marked as your choice. Nobody is ever asked to type coordinates.
 2. **Sun** — the **manual picker leads** (three plain choices); an optional
    camera sky-scan refines it. The app is fully usable with camera/compass
    denied.

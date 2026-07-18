@@ -67,6 +67,9 @@ Transparent and re-weightable. Final position = **eco-score × site-fit**:
 ## Phase 1 status — built & verified end-to-end
 
 - [x] Geolocation → soil/climate/zone fetch → confirm screen
+- [x] No-GPS fallbacks that never ask for coordinates: town/ZIP search
+      (Open-Meteo geocoding, keyless) and a pick-your-region-by-hand path,
+      plainly labelled as the user's choice
 - [x] Sky-scan sun measurement, **with the manual fallback working first**
 - [x] Region-aware plant catalog: the app selects the seed list from the spot's
       coordinates and says plainly when it has no list for an area yet

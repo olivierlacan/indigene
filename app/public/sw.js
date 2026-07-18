@@ -34,6 +34,7 @@ const DATA_HOSTS = [
   "epqs.nationalmap.gov",
   "api.open-meteo.com",
   "archive-api.open-meteo.com",
+  "geocoding-api.open-meteo.com",
 ];
 
 self.addEventListener("install", (event) => {

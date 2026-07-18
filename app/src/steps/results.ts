@@ -21,13 +21,20 @@ const PRESETS: { name: string; weights: Weights }[] = [
 
 export function renderResults(main: HTMLElement): void {
   clear(main);
-  if (store.draft.lat == null || store.draft.lon == null) return void navigate("location");
+  const hasCoords = store.draft.lat != null && store.draft.lon != null;
+  if (!hasCoords && !store.draft.regionOverride) return void navigate("location");
 
   // Pick the plant list from the spot's coordinates, refined by its real EPA
-  // ecoregion when we have one. Outside every covered region we have no honest
-  // recommendations to give, so we say so plainly rather than showing another
-  // region's plants.
-  const region = regionForSite(store.draft.lat, store.draft.lon, store.draft.site);
+  // ecoregion when we have one — unless the user picked a region by hand, in
+  // which case their choice wins and the tag below says so. Outside every
+  // covered region we have no honest recommendations to give, so we say so
+  // plainly rather than showing another region's plants.
+  const chosen = store.draft.regionOverride
+    ? REGIONS.find((r) => r.meta.id === store.draft.regionOverride) ?? null
+    : null;
+  const region = chosen ?? (hasCoords
+    ? regionForSite(store.draft.lat!, store.draft.lon!, store.draft.site)
+    : null);
   if (!region) {
     renderNoRegion(main);
     return;
@@ -48,8 +55,13 @@ export function renderResults(main: HTMLElement): void {
     clear(listEl);
     const shown = ranked.slice(0, 25);
     const goodCount = ranked.filter((r) => r.match !== "poor").length;
+    // Only claim a climate check when a looked-up zone actually filtered the
+    // list; on the hand-picked-region path nothing was checked against winter.
+    const fitClause = store.draft.site?.zone
+      ? "fit this spot's climate"
+      : "are in this region's list";
     listEl.append(
-      el("p", { style: "margin:0.5rem 0 1rem;font-weight:650" }, `${ranked.length} native plants fit this spot's climate — ${goodCount} are a good or workable match. Best matches first.`)
+      el("p", { style: "margin:0.5rem 0 1rem;font-weight:650" }, `${ranked.length} native plants ${fitClause} — ${goodCount} are a good or workable match. Best matches first.`)
     );
     if (!ranked.length) {
       listEl.append(el("div", { class: "note warn" }, `No plants in the ${regionName} seed list are hardy at this spot's winter temperature.`));
@@ -131,7 +143,8 @@ export function renderResults(main: HTMLElement): void {
 
   main.append(
     el("h2", { class: "step-title" }, "Plants for this spot"),
-    el("p", { class: "region-tag", style: "margin:0 0 0.5rem;font-size:0.9rem;color:var(--ink-soft)" }, `📍 ${region.meta.name}`),
+    el("p", { class: "region-tag", style: "margin:0 0 0.5rem;font-size:0.9rem;color:var(--ink-soft)" },
+      chosen ? `📍 ${region.meta.name} — your pick, not measured from a location` : `📍 ${region.meta.name}`),
     el("p", { class: "step-lede" }, conditions),
     whyThis("How does this ranking work?", [
       "Each plant's wildlife value — caterpillars hosted, pollinators and birds fed, rain soaked up — is weighed against how well it fits this spot's sun, moisture, and winter cold. ",
@@ -140,7 +153,9 @@ export function renderResults(main: HTMLElement): void {
     el("div", { class: "result-controls" }, [weights, filters]),
     el("div", { class: "btn-row", style: "margin-top:0" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("confirm") }, "Back"),
-      el("button", { class: "btn btn-primary", onClick: doSave }, "💾 Save this spot"),
+      // A saved spot IS a coordinate — with a hand-picked region there's no
+      // spot to save, so the button honestly isn't there.
+      ...(hasCoords ? [el("button", { class: "btn btn-primary", onClick: doSave }, "💾 Save this spot")] : []),
     ]),
     listEl
   );
@@ -156,7 +171,10 @@ export function renderResults(main: HTMLElement): void {
       `${m === "dry" ? "dry" : m === "wet" ? "wet" : "evenly moist"} soil`,
       zone ? `zone ${zone}` : null,
     ].filter(Boolean);
-    return `Matched to: ${parts.join(" · ")}. Everything below is native to this region and hardy through your winters.`;
+    // Only claim winter-hardiness when we actually know the winter — with no
+    // looked-up zone (hand-picked region, or the lookup failed) we don't.
+    const hardy = zone ? " and hardy through your winters" : "";
+    return `Matched to: ${parts.join(" · ")}. Everything below is native to this region${hardy}.`;
   }
 
   async function doSave(): Promise<void> {
@@ -174,6 +192,7 @@ export function renderResults(main: HTMLElement): void {
       horizon: store.draft.horizon,
       soilOverride: null,
       deciduousOverhead: store.draft.deciduousOverhead,
+      regionOverride: store.draft.regionOverride,
       weights: { ...store.weights },
     });
     store.draft.editingId = id;
@@ -192,6 +211,8 @@ function cryptoId(): string {
 
 // Shown when the spot is outside every region we have a plant list for. The
 // sun/soil/climate readings still worked — we just won't fake a plant list.
+// We won't *guess* another region's plants, but a person who knows their area
+// straddles one of our lists can choose it — their call, plainly labelled.
 function renderNoRegion(main: HTMLElement): void {
   main.append(
     el("h2", { class: "step-title" }, "No plant list for this area yet"),
@@ -201,8 +222,18 @@ function renderNoRegion(main: HTMLElement): void {
     ]),
     el("div", { class: "card" }, [
       el("h3", {}, "Regions covered so far"),
-      el("ul", { style: "margin:0.5rem 0 0;padding-left:1.2rem" },
-        REGIONS.map((r) => el("li", { style: "margin-bottom:0.3rem" }, `${r.meta.name} — ${r.meta.reference}`))
+      el("p", {}, "If you know your area actually matches one of these — say, you're just over a boundary — you can use its list. We'll mark it as your pick, and its plants should be treated as untested for your exact area."),
+      ...REGIONS.map((r) =>
+        el("button", {
+          class: "choice",
+          onClick: () => {
+            store.draft.regionOverride = r.meta.id;
+            renderResults(main);
+          },
+        }, [
+          el("span", { class: "choice-title" }, r.meta.name),
+          el("span", { class: "choice-sub" }, r.meta.reference),
+        ])
       ),
     ]),
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [

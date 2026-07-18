@@ -107,13 +107,19 @@ export function assessSpot(
   // Winter hardiness is a hard gate, same as in rankPlants.
   const zone = site?.zone ?? (site?.zoneMinTempF != null ? zoneFromMinTemp(site.zoneMinTempF) : null);
   const zoneNum = zone ? parseInt(zone, 10) : null;
+  // Common parlance first — "how cold winters get" — with the zone label in
+  // parentheses as the term plant tags use, never leading.
+  const winterCold =
+    site?.zoneMinTempF != null
+      ? `winter nights around ${site.zoneMinTempF}°F (USDA zone ${zone})`
+      : `this spot's winter cold (USDA zone ${zone})`;
   if (zoneNum != null && Number.isFinite(zoneNum)) {
     if (zoneNum < plant.zones.min) {
       return {
         level: "unsuitable",
         headline: "Winters here are too cold for it",
         reasons: [
-          `This spot is USDA zone ${zone}, and ${plant.common} is only hardy down to zone ${plant.zones.min}. A normal winter would kill it.`,
+          `${plant.common} can't survive ${winterCold} — it's only hardy down to zone ${plant.zones.min}. A normal winter would kill it.`,
         ],
         entry,
         fit: null,
@@ -124,15 +130,15 @@ export function assessSpot(
         level: "unsuitable",
         headline: "Winters here aren't cold enough for it",
         reasons: [
-          `This spot is USDA zone ${zone}, warmer than ${plant.common} can handle (it needs zone ${plant.zones.max} or colder to get the winter rest it expects).`,
+          `${plant.common} needs a colder winter rest than ${winterCold} gives — it wants zone ${plant.zones.max} or colder.`,
         ],
         entry,
         fit: null,
       };
     }
-    reasons.push(`Hardy through this spot's winters (zone ${zone}).`);
+    reasons.push(`Tough enough for ${winterCold}.`);
   } else {
-    reasons.push("Couldn't confirm the winter-cold zone here — the rest of the verdict assumes it's fine.");
+    reasons.push("Couldn't confirm how cold winters get here — the rest of the verdict assumes it's fine.");
   }
 
   const moisture = siteMoisture(site, moistureOverride);

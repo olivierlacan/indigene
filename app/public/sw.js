@@ -35,6 +35,7 @@ const DATA_HOSTS = [
   "api.open-meteo.com",
   "archive-api.open-meteo.com",
   "geocoding-api.open-meteo.com",
+  "nominatim.openstreetmap.org",
 ];
 
 self.addEventListener("install", (event) => {

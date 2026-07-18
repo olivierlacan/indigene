@@ -13,6 +13,7 @@ import type {
   Weights,
 } from "../types";
 import { zoneFromMinTemp } from "./site";
+import { moistureWord } from "./plain";
 
 export const DEFAULT_WEIGHTS: Weights = {
   host: 5, // caterpillar/moth host value is the strongest food-web proxy
@@ -118,8 +119,8 @@ export function computeFit(
   const accepts = plant.moisture.map((b) => order.indexOf(b));
   const dist = Math.min(...accepts.map((a) => Math.abs(a - mi)));
   let moistFit = dist === 0 ? 1 : dist === 1 ? 0.6 : 0.3;
-  if (dist === 0) reasons.push(`Handles the moisture here (${moisture}).`);
-  else reasons.push(`Moisture is ${dist === 1 ? "a bit" : "quite"} off — this spot is ${moisture}.`);
+  if (dist === 0) reasons.push(`Handles the moisture here (${moistureWord(moisture)} soil).`);
+  else reasons.push(`Moisture is ${dist === 1 ? "a bit" : "quite"} off — this spot's soil is ${moistureWord(moisture)}, and it prefers ${plant.moisture.map(moistureWord).join(" or ")}.`);
 
   // pH.
   let phFit = 1;

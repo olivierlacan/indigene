@@ -57,6 +57,40 @@ export async function searchPlaces(query: string): Promise<GeoPlace[]> {
   }
 }
 
+// Reverse geocoding (coordinates → nearest town) for *display only* — no
+// verdict or lookup depends on it. Open-Meteo's geocoder has no reverse
+// endpoint, so this uses OSM's Nominatim — no new provider: the app already
+// depends on (and credits) OpenStreetMap for its map tiles. Usage sits well
+// within the Nominatim policy: one request per explicit user action, never
+// polling or autocomplete. Best-effort: on any failure callers fall back to
+// showing coordinates.
+const REVERSE_URL = "https://nominatim.openstreetmap.org/reverse";
+
+/** "Seattle, Washington" for a coordinate, or null when it can't be resolved. */
+export async function nearestPlaceName(lat: number, lon: number): Promise<string | null> {
+  // zoom=10 asks for city/town granularity — street addresses would be more
+  // precision than anything downstream has.
+  const url = `${REVERSE_URL}?lat=${lat}&lon=${lon}&format=jsonv2&zoom=10&accept-language=en`;
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
+  try {
+    const res = await fetch(url, { signal: ctrl.signal });
+    if (!res.ok) return null;
+    const d = await res.json();
+    const a = d?.address ?? {};
+    const town =
+      str(a.city) ?? str(a.town) ?? str(a.village) ?? str(a.hamlet) ??
+      str(a.municipality) ?? str(a.county);
+    const state = str(a.state) ?? str(a.region);
+    if (town && state) return `${town}, ${state}`;
+    return town ?? state ?? str(d?.name);
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 function str(v: unknown): string | null {
   if (typeof v !== "string") return null;
   const t = v.trim();

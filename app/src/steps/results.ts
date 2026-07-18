@@ -5,7 +5,7 @@ import { rankPlants, siteMoisture } from "../lib/ranking";
 import type { Weights } from "../types";
 import { plantCard } from "../components/plant-card";
 import { whyThis } from "../components/learn";
-import { scoreLabels, ISSUES_URL } from "../lib/plain";
+import { scoreLabels, ISSUES_URL, ZONE_INFO_URL, MOISTURE_INFO_URL, moistureWord } from "../lib/plain";
 import { saveSpot } from "../db";
 
 const WEIGHT_KEYS: (keyof Weights)[] = ["host", "pollinator", "bird", "stormwater", "erosion", "carbon", "establishment"];
@@ -162,19 +162,37 @@ export function renderResults(main: HTMLElement): void {
 
   rerender();
 
-  function summarize(): string {
+  // Common parlance first, the technical term in parentheses with a link —
+  // "zone 8b" and "mesic" are never shown bare (see the plain-language rule).
+  function summarize(): (string | HTMLElement)[] {
+    const link = (href: string, text: string): HTMLElement =>
+      el("a", { href, target: "_blank", rel: "noopener" }, text);
     const sun = store.draft.sun;
     const m = siteMoisture(store.draft.site, store.draft.moistureOverride);
-    const zone = store.draft.site?.zone;
-    const parts = [
-      sun ? `${sun.label} (~${sun.hours}h sun)` : null,
-      `${m === "dry" ? "dry" : m === "wet" ? "wet" : "evenly moist"} soil`,
-      zone ? `zone ${zone}` : null,
-    ].filter(Boolean);
+    const site = store.draft.site;
+    const zone = site?.zone;
+
+    const parts: (string | HTMLElement)[][] = [];
+    if (sun) parts.push([`${sun.label} (~${sun.hours}h sun)`]);
+    parts.push(
+      m === "mesic"
+        ? ["evenly moist soil (", link(MOISTURE_INFO_URL, "“mesic”"), " in plant guides)"]
+        : [`${moistureWord(m)} soil`]
+    );
+    if (zone) {
+      parts.push(
+        site?.zoneMinTempF != null
+          ? [`winters to about ${site.zoneMinTempF}°F (`, link(ZONE_INFO_URL, `USDA zone ${zone}`), ")"]
+          : [link(ZONE_INFO_URL, `USDA zone ${zone}`)]
+      );
+    }
+
+    const out: (string | HTMLElement)[] = ["Matched to: "];
+    parts.forEach((p, i) => { if (i) out.push(" · "); out.push(...p); });
     // Only claim winter-hardiness when we actually know the winter — with no
     // looked-up zone (hand-picked region, or the lookup failed) we don't.
-    const hardy = zone ? " and hardy through your winters" : "";
-    return `Matched to: ${parts.join(" · ")}. Everything below is native to this region${hardy}.`;
+    out.push(`. Everything below is native to this region${zone ? " and hardy through your winters" : ""}.`);
+    return out;
   }
 
   async function doSave(): Promise<void> {

@@ -14,6 +14,22 @@ export const DATA_SOURCES_URL =
  * add a region yourself (a data file plus two registry lines). */
 export const ISSUES_URL = "https://github.com/olivierlacan/indigene/issues";
 
+/** The official USDA hardiness-zone map. Linked wherever a zone label (e.g.
+ * "8b") is shown, so the term is never bare jargon — the rule is common
+ * parlance first ("winters down to about 15°F"), the zone in parentheses. */
+export const ZONE_INFO_URL = "https://planthardiness.ars.usda.gov/";
+
+/** Explainer for the moisture bands ("mesic" and its dry/wet siblings).
+ * Same rule: say "evenly moist" first; "mesic" only ever in parentheses. */
+export const MOISTURE_INFO_URL = "https://en.wikipedia.org/wiki/Mesic_habitat";
+
+/** The common-parlance word for a moisture band. Use this — never the raw
+ * band value — anywhere a person reads it; "mesic" means nothing at a garden
+ * center. */
+export function moistureWord(band: MoistureBand): string {
+  return band === "dry" ? "dry" : band === "wet" ? "wet" : "evenly moist";
+}
+
 export function sunLabel(hours: number): string {
   if (hours >= 6) return "full sun";
   if (hours >= 4) return "part sun";
@@ -45,13 +61,15 @@ export function moisturePlain(band: MoistureBand): string {
   }
 }
 
+// Common parlance leads; the zone label sits in parentheses as the term
+// plant tags use — never the other way around.
 export function zonePlain(zone: string | null, minTempF: number | null): string {
-  if (!zone) return "We couldn't pin down your winter-cold zone.";
-  const t =
+  if (!zone) return "We couldn't pin down how cold your winters get.";
+  const cold =
     minTempF != null
-      ? `your coldest winter nights get down to about ${minTempF}°F`
-      : "this is your winter-cold zone";
-  return `Zone ${zone} — ${t}. A plant is "hardy" here if it survives that cold.`;
+      ? `Your coldest winter nights get down to about ${minTempF}°F`
+      : "This is how cold your winters get";
+  return `${cold} — plant tags call that "USDA zone ${zone}". A plant is "hardy" here if it survives that cold.`;
 }
 
 export function phPlain(ph: number | null): string {

@@ -5,7 +5,7 @@ import { rankPlants, siteMoisture } from "../lib/ranking";
 import type { Weights } from "../types";
 import { plantCard } from "../components/plant-card";
 import { whyThis } from "../components/learn";
-import { scoreLabels } from "../lib/plain";
+import { scoreLabels, ISSUES_URL } from "../lib/plain";
 import { saveSpot } from "../db";
 
 const WEIGHT_KEYS: (keyof Weights)[] = ["host", "pollinator", "bird", "stormwater", "erosion", "carbon", "establishment"];
@@ -219,6 +219,19 @@ function renderNoRegion(main: HTMLElement): void {
     el("p", { class: "step-lede" }, [
       "Indigene measured the sun, soil and climate for this spot, but its plant recommendations are still tuned region by region — and this spot is outside the areas covered so far. ",
       "Showing you another region's plants would be dishonest, so we don't.",
+    ]),
+    el("div", { class: "card" }, [
+      el("h3", {}, "What you can still do"),
+      el("ul", { style: "margin:0.5rem 0 0;padding-left:1.2rem" }, [
+        el("li", { style: "margin-bottom:0.4rem" }, [
+          el("a", { href: "#/plants", style: "font-weight:650" }, "Browse the full catalog"),
+          " from the covered regions — as examples of the recommendations Indigene gives, not as plants for this spot.",
+        ]),
+        el("li", {}, [
+          el("a", { href: ISSUES_URL, target: "_blank", rel: "noopener", style: "font-weight:650" }, "Ask for your area on GitHub"),
+          " — open an issue with your ZIP or town so we know where to grow next. Or add the region yourself: it's one plant-data file plus two registry lines, and contributions are welcome.",
+        ]),
+      ]),
     ]),
     el("div", { class: "card" }, [
       el("h3", {}, "Regions covered so far"),

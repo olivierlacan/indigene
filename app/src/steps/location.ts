@@ -3,8 +3,26 @@ import { navigate, store, setSitePromise } from "../state";
 import { fetchSite } from "../lib/site";
 import { searchPlaces, placeLabel } from "../lib/geocode";
 import { REGIONS } from "../lib/plants";
+import { regionForCoords } from "../data/regions";
+import { ISSUES_URL } from "../lib/plain";
 import { TILE_SIZE, getTile, metersPerPixel, tileCoords } from "../lib/tiles";
 import { whyThis } from "../components/learn";
+
+// The out-of-coverage message, shown the moment a person selects a location
+// (GPS fix or search pick) outside every covered region — not sprung on them
+// four screens later. A dead end always comes with doors: browse the covered
+// regions' catalogs as examples, or ask on GitHub for this area (or add it —
+// a region is one data file plus two registry lines).
+function coverageWarning(lead: string): HTMLElement {
+  return el("div", { class: "note warn" }, [
+    el("strong", {}, lead + " "),
+    "Indigene's plant lists are tuned region by region, and this spot is outside all of them — so we'd have nothing honest to recommend here. The sun and soil readings still work. Meanwhile you can:",
+    el("ul", { style: "margin:0.4rem 0 0;padding-left:1.2rem" }, [
+      el("li", {}, [el("a", { href: "#/plants" }, "Browse the covered regions' native plants"), " to see the kind of recommendations Indigene gives."]),
+      el("li", {}, [el("a", { href: ISSUES_URL, target: "_blank", rel: "noopener" }, "Ask for your area on GitHub"), " — open an issue with your ZIP or town. Or add the region yourself: it's one plant-data file plus two registry lines."]),
+    ]),
+  ]);
+}
 
 // District scale (~4 km across the canvas). Wide enough to catch landmarks
 // people actually recognize — parks, highways, water — and deliberately no
@@ -29,6 +47,8 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
   let offE = 0;
 
   const status = el("p", { class: "coords", role: "status", "aria-live": "polite" }, "No location yet.");
+  // Coverage feedback for a GPS fix; search picks show theirs by the search box.
+  const coverageOut = el("div", { "aria-live": "polite" });
   const canvas = el("canvas", { width: 600, height: 320, "aria-hidden": "true" });
   // Required OSM attribution; only shown while tiles are actually on screen.
   const attrib = el("a", {
@@ -215,6 +235,10 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
         offN = 0; offE = 0;
         locateBtn.textContent = "📍 Update my location";
         (locateBtn as HTMLButtonElement).disabled = false;
+        clear(coverageOut);
+        if (!regionForCoords(lat, lon)) {
+          coverageOut.append(coverageWarning("We don't have a plant list for this area yet."));
+        }
         updateStatus();
       },
       (err) => {
@@ -257,10 +281,15 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
               lat = p.lat; lon = p.lon;
               offN = 0; offE = 0; accuracy = null;
               clear(searchOut);
-              searchOut.append(el("div", { class: "note info" }, [
-                el("strong", {}, `Pin set to the middle of ${p.name}. `),
-                "That's close enough to pick your region and plant list — for the sharpest sun and soil readings, drag the map until the pin sits on the spot you'll actually plant.",
-              ]));
+              clear(coverageOut); // a search pick supersedes any GPS-fix warning
+              searchOut.append(
+                regionForCoords(p.lat, p.lon)
+                  ? el("div", { class: "note info" }, [
+                      el("strong", {}, `Pin set to the middle of ${p.name}. `),
+                      "That's close enough to pick your region and plant list — for the sharpest sun and soil readings, drag the map until the pin sits on the spot you'll actually plant.",
+                    ])
+                  : coverageWarning(`Pin set to the middle of ${p.name} — but we don't have a plant list for this area yet.`)
+              );
               updateStatus();
               mapWrap.scrollIntoView({ block: "nearest" });
             },
@@ -329,6 +358,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
     locateBtn,
     el("div", { style: "margin:0.9rem 0" }, [mapWrap]),
     status,
+    coverageOut,
     searchCard,
     regionCard,
     el("div", { class: "btn-row" }, [

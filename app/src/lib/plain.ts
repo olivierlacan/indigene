@@ -8,6 +8,12 @@ import type { MoistureBand, SizeSnapshot } from "../types";
 export const DATA_SOURCES_URL =
   "https://github.com/olivierlacan/indigene/blob/main/DATA_SOURCES.md";
 
+/** Where to ask for a new area to be covered — or contribute its plant list.
+ * Linked wherever the app has to say "no list for your area yet", so the
+ * dead end always comes with a door: open an issue with your ZIP/town, or
+ * add a region yourself (a data file plus two registry lines). */
+export const ISSUES_URL = "https://github.com/olivierlacan/indigene/issues";
+
 export function sunLabel(hours: number): string {
   if (hours >= 6) return "full sun";
   if (hours >= 4) return "part sun";

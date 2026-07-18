@@ -256,8 +256,10 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
     id: "place-q",
     autocomplete: "off",
     placeholder: "e.g. State College, or 16801",
+    // Shares a row with the button: shrinkable, takes the leftover width.
+    style: "flex:1 1 auto;min-width:0",
   }) as HTMLInputElement;
-  const searchBtn = el("button", { class: "btn btn-secondary" }, "Search") as HTMLButtonElement;
+  const searchBtn = el("button", { class: "btn btn-secondary", style: "flex:none" }, "Search") as HTMLButtonElement;
   const searchOut = el("div", { "aria-live": "polite" });
 
   async function doSearch(): Promise<void> {
@@ -315,9 +317,8 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
     }, [
       el("div", { class: "field", style: "margin-bottom:0.6rem" }, [
         el("label", { for: "place-q" }, "Your town, city, or ZIP code"),
-        searchInput,
+        el("div", { style: "display:flex;gap:0.5rem" }, [searchInput, searchBtn]),
       ]),
-      searchBtn,
     ]),
     searchOut,
   ]);

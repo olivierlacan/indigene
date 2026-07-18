@@ -288,7 +288,10 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
                 regionForCoords(p.lat, p.lon)
                   ? el("div", { class: "note info" }, [
                       el("strong", {}, `Pin set to the middle of ${p.name}. `),
-                      "That's close enough to pick your region and plant list — for the sharpest sun and soil readings, drag the map until the pin sits on the spot you'll actually plant.",
+                      // Say only what the pin's precision actually buys: the
+                      // soil/slope lookups (a ~250 m grid). Sun never comes
+                      // from the map, and climate/region are far coarser.
+                      "That's enough to pick your region, climate, and plant list — and the sun estimate comes from you in the next step, not from the map. Only the soil and slope lookups care about the exact spot, so if you're far from the middle of town, drag the pin roughly onto your yard.",
                     ])
                   : coverageWarning(`Pin set to the middle of ${p.name} — but we don't have a plant list for this area yet.`)
               );

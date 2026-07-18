@@ -512,6 +512,7 @@ label {
 }
 input[type="text"],
 input[type="number"],
+input[type="search"],
 select {
   width: 100%;
   min-height: var(--tap);

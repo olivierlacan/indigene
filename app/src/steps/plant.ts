@@ -6,6 +6,7 @@
 import { el, clear, toast } from "../ui";
 import { navigate, store, resetDraft } from "../state";
 import { fetchSite } from "../lib/site";
+import { searchPlaces, placeLabel, nearestPlaceName } from "../lib/geocode";
 import { manualSunEstimate } from "../lib/solar";
 import { findPlant, assessSpot, plantShareUrl } from "../lib/explore";
 import type { PlantEntry, Suitability } from "../lib/explore";
@@ -138,9 +139,19 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
     let site: SiteData | null = null;
     let sun: SunEstimate | null = null;
     let lastVerdict: Suitability | null = null;
+    // The town shown for the chosen spot — from the search pick, or reverse-
+    // geocoded from a GPS fix. Display only; coordinates are the fallback.
+    let spotName: string | null = null;
+    let lookingUp = false;
 
     const verdictEl = el("div", { "aria-live": "polite" });
     const status = el("p", { class: "coords", role: "status", "aria-live": "polite" }, "No spot chosen yet.");
+
+    function renderStatus(): void {
+      if (lat == null || lon == null) return;
+      const where = spotName ?? `${lat.toFixed(5)}, ${lon.toFixed(5)}`;
+      status.textContent = lookingUp ? `${where} — checking soil & climate…` : where;
+    }
 
     const sunButtons: { key: "full" | "half" | "shade" | null; label: string }[] = [
       { key: null, label: "Not sure" },
@@ -166,12 +177,58 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
 
     const locateBtn = el("button", { class: "btn btn-primary btn-block", onClick: locate }, "📍 Check my location for this plant") as HTMLButtonElement;
 
-    const latInput = el("input", { type: "number", step: "0.00001", "aria-label": "Latitude", id: "plant-lat" }) as HTMLInputElement;
-    const lonInput = el("input", { type: "number", step: "0.00001", "aria-label": "Longitude", id: "plant-lon" }) as HTMLInputElement;
+    // The no-GPS fallback: the same town/ZIP search as the main flow — nobody
+    // is asked to know coordinates. A pick names the spot directly (its
+    // centroid is plenty for a region/climate/soil-grid check).
+    const searchInput = el("input", {
+      type: "search",
+      id: "plant-place-q",
+      autocomplete: "off",
+      placeholder: "e.g. State College, or 16801",
+      style: "flex:1 1 auto;min-width:0",
+    }) as HTMLInputElement;
+    const searchBtn = el("button", { class: "btn btn-secondary", style: "flex:none" }, "Search") as HTMLButtonElement;
+    const searchOut = el("div", { "aria-live": "polite" });
+
+    async function doSearch(): Promise<void> {
+      const q = searchInput.value.trim();
+      if (!q) return;
+      clear(searchOut);
+      searchBtn.disabled = true;
+      searchBtn.textContent = "Searching…";
+      try {
+        const places = await searchPlaces(q);
+        clear(searchOut);
+        if (!places.length) {
+          searchOut.append(el("div", { class: "note warn" }, "Couldn't find that name. Try the town and state together — like “Springfield Pennsylvania” — or a ZIP code."));
+          return;
+        }
+        searchOut.append(
+          ...places.map((p) =>
+            el("button", {
+              class: "choice",
+              onClick: () => {
+                clear(searchOut);
+                setSpot(p.lat, p.lon, placeLabel(p));
+              },
+            }, [
+              el("span", { class: "choice-title" }, placeLabel(p)),
+              el("span", { class: "choice-sub" }, `${p.lat.toFixed(3)}, ${p.lon.toFixed(3)}`),
+            ])
+          )
+        );
+      } catch {
+        clear(searchOut);
+        searchOut.append(el("div", { class: "note warn" }, "The place search needs a signal and we couldn't reach it. If GPS works, use the location button above."));
+      } finally {
+        searchBtn.disabled = false;
+        searchBtn.textContent = "Search";
+      }
+    }
 
     function locate(): void {
       if (!("geolocation" in navigator)) {
-        toast("This device can't share location — type coordinates below.");
+        toast("This device can't share location — search for your town below.");
         return;
       }
       locateBtn.textContent = "Locating…";
@@ -185,23 +242,37 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
         (err) => {
           locateBtn.disabled = false;
           locateBtn.textContent = "📍 Check my location for this plant";
-          toast(err.code === err.PERMISSION_DENIED ? "Location denied — type coordinates below instead." : "Couldn't get a fix — try again or type coordinates.");
+          toast(err.code === err.PERMISSION_DENIED ? "Location denied — search for your town below instead." : "Couldn't get a fix — try again or search for your town below.");
         },
         { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
       );
     }
 
-    function setSpot(la: number, lo: number): void {
+    function setSpot(la: number, lo: number, knownName?: string): void {
       lat = la;
       lon = lo;
       site = null;
-      status.textContent = `${la.toFixed(5)}, ${lo.toFixed(5)} — looking up soil & climate…`;
+      spotName = knownName ?? null;
+      lookingUp = true;
+      renderStatus();
       clear(verdictEl);
+      if (!knownName) {
+        // GPS gave us numbers; put a town name on them (display-only nicety —
+        // coordinates remain the fallback, and the verdict never depends on it).
+        nearestPlaceName(la, lo).then((n) => {
+          if (n && lat === la && lon === lo) {
+            spotName = `Near ${n}`;
+            renderStatus();
+          }
+        });
+      }
       fetchSite(la, lo)
         .then((s) => { site = s; })
         .catch(() => { site = null; })
         .finally(() => {
-          status.textContent = `${la.toFixed(5)}, ${lo.toFixed(5)}`;
+          if (lat !== la || lon !== lo) return; // a newer spot superseded this one
+          lookingUp = false;
+          renderStatus();
           evaluate();
         });
     }
@@ -242,24 +313,23 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
     return el("section", { class: "card", style: "margin-top:1rem" }, [
       el("h3", { style: "margin-top:0" }, `Want to plant a ${plant.common.toLowerCase()}? Check your spot`),
       el("p", { style: "margin:0.3rem 0 0.6rem" }, [
-        `Stand where you'd plant it (or type the coordinates) and Indigene checks the soil, climate and region against what this plant needs — native to ${region.meta.name} and beyond, it still has to like your exact spot.`,
+        `Stand where you'd plant it (or search for your town below) and Indigene checks the soil, climate and region against what this plant needs — native to ${region.meta.name} and beyond, it still has to like your exact spot.`,
       ]),
       locateBtn,
       status,
       el("p", { style: "margin:0.6rem 0 0;font-weight:650" }, "How much sun does that spot get?"),
       sunRow,
       el("details", { style: "margin-top:0.4rem" }, [
-        el("summary", { style: "min-height:2.6rem;display:flex;align-items:center;font-weight:650" }, "Type coordinates instead"),
-        el("div", { class: "field", style: "margin-top:0.5rem" }, [el("label", { for: "plant-lat" }, "Latitude"), latInput]),
-        el("div", { class: "field" }, [el("label", { for: "plant-lon" }, "Longitude"), lonInput]),
-        el("button", {
-          class: "btn btn-secondary",
-          onClick: () => {
-            const la = parseFloat(latInput.value), lo = parseFloat(lonInput.value);
-            if (Number.isFinite(la) && Number.isFinite(lo)) setSpot(la, lo);
-            else toast("Enter both numbers first.");
-          },
-        }, "Check these coordinates"),
+        el("summary", { style: "min-height:2.6rem;display:flex;align-items:center;font-weight:650" }, "No GPS? Search for where you are"),
+        el("form", {
+          onSubmit: (e: Event) => { e.preventDefault(); void doSearch(); },
+        }, [
+          el("div", { class: "field", style: "margin-top:0.5rem" }, [
+            el("label", { for: "plant-place-q" }, "Your town, city, or ZIP code"),
+            el("div", { style: "display:flex;gap:0.5rem" }, [searchInput, searchBtn]),
+          ]),
+        ]),
+        searchOut,
       ]),
       verdictEl,
     ]);

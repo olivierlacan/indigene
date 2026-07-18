@@ -57,6 +57,33 @@ export async function searchPlaces(query: string): Promise<GeoPlace[]> {
   }
 }
 
+// Reverse geocoding (coordinates → nearest town) for *display only* — no
+// verdict or lookup depends on it. Open-Meteo has no reverse endpoint, so
+// this uses BigDataCloud's free client-side reverse geocoder (no key, CORS,
+// explicitly offered for browser use). Best-effort: on any failure callers
+// fall back to showing coordinates.
+const REVERSE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
+
+/** "Seattle, Washington" for a coordinate, or null when it can't be resolved. */
+export async function nearestPlaceName(lat: number, lon: number): Promise<string | null> {
+  const url = `${REVERSE_URL}?latitude=${lat}&longitude=${lon}&localityLanguage=en`;
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
+  try {
+    const res = await fetch(url, { signal: ctrl.signal });
+    if (!res.ok) return null;
+    const d = await res.json();
+    const town = str(d?.city) ?? str(d?.locality);
+    const state = str(d?.principalSubdivision);
+    if (town && state) return `${town}, ${state}`;
+    return town ?? state;
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 function str(v: unknown): string | null {
   if (typeof v !== "string") return null;
   const t = v.trim();

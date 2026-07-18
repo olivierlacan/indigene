@@ -35,6 +35,7 @@ const DATA_HOSTS = [
   "api.open-meteo.com",
   "archive-api.open-meteo.com",
   "geocoding-api.open-meteo.com",
+  "api.bigdatacloud.net",
 ];
 
 self.addEventListener("install", (event) => {

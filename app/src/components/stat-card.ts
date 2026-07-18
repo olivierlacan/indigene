@@ -10,7 +10,7 @@
 // education, one metric at a time.
 import type { Plant } from "../types";
 import { el } from "../ui";
-import { sunLabel, growthPlain, DATA_SOURCES_URL } from "../lib/plain";
+import { sunLabel, growthPlain, DATA_SOURCES_URL, ZONE_INFO_URL, MOISTURE_INFO_URL } from "../lib/plain";
 
 const monthShort = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -23,6 +23,9 @@ interface Stat {
   explain: string;
   /** Citation for the figure, shown in the dialog (e.g. the host count's basis). */
   source?: string;
+  /** Optional "learn more" link for the term itself (e.g. the USDA zone map). */
+  moreUrl?: string;
+  moreLabel?: string;
 }
 
 export function statGrid(p: Plant): HTMLElement {
@@ -40,6 +43,11 @@ export function statGrid(p: Plant): HTMLElement {
     ];
     if (s.source) {
       parts.push(el("p", { class: "stat-dialog-source" }, [el("strong", {}, "Source: "), s.source]));
+    }
+    if (s.moreUrl && s.moreLabel) {
+      parts.push(el("p", { class: "stat-dialog-source" }, [
+        el("a", { href: s.moreUrl, target: "_blank", rel: "noopener" }, s.moreLabel),
+      ]));
     }
     parts.push(
       el("p", { class: "stat-dialog-source" }, [
@@ -86,7 +94,9 @@ function statsFor(p: Plant): Stat[] {
       label: "Moisture",
       value: p.moisture.map(moistureWord).join(" · "),
       sub: "soil it accepts",
-      explain: `How wet the soil stays after rain — not how often you water. Natives specialize: a dry-slope plant rots in a wet hollow, and a swamp-edge plant crisps on sand. Match the moisture your spot already has and you replace a watering schedule with nothing.`,
+      explain: `How wet the soil stays after rain — not how often you water. Natives specialize: a dry-slope plant rots in a wet hollow, and a swamp-edge plant crisps on sand. Match the moisture your spot already has and you replace a watering schedule with nothing. (Plant guides call evenly moist soil "mesic".)`,
+      moreUrl: MOISTURE_INFO_URL,
+      moreLabel: "More about moisture types →",
     },
     {
       icon: "❄️",
@@ -94,6 +104,8 @@ function statsFor(p: Plant): Stat[] {
       value: p.zones.min === p.zones.max ? `${p.zones.min}` : `${p.zones.min}–${p.zones.max}`,
       sub: "USDA winter cold",
       explain: `USDA zones measure winter's coldest night in 10°F steps. If your zone falls inside this plant's range, normal winters won't kill it — and a plant native to your area is almost always comfortably inside its home zone. No blankets, no burlap.`,
+      moreUrl: ZONE_INFO_URL,
+      moreLabel: "Find your zone on the USDA map →",
     },
     {
       icon: "🧪",

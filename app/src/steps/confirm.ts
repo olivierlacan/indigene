@@ -8,6 +8,7 @@ import {
   slopePlain,
   moisturePlain,
   sunPlain,
+  ZONE_INFO_URL,
 } from "../lib/plain";
 import { whyThis } from "../components/learn";
 
@@ -54,7 +55,10 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
   // What we looked up, in plain words.
   const rows: (HTMLElement | null)[] = [];
   if (site) {
-    rows.push(kv("Winter cold", zonePlain(site.zone, site.zoneMinTempF)));
+    rows.push(kv("Winter cold", [
+      zonePlain(site.zone, site.zoneMinTempF),
+      ...(site.zone ? [" ", el("a", { href: ZONE_INFO_URL, target: "_blank", rel: "noopener" }, "See the USDA zone map →")] : []),
+    ]));
     rows.push(site.annualRainIn != null ? kv("Rainfall", `About ${site.annualRainIn} inches of rain a year.`) : null);
     rows.push(site.elevationFt != null ? kv("Elevation & slope", `${site.elevationFt} ft up${site.slopeDeg != null ? `, on ${slopePlain(site.slopeDeg)}` : ""}.`) : null);
     rows.push(site.ecoregion ? kv("Region", `${site.ecoregion}.`) : null);
@@ -124,8 +128,8 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
   ]));
 }
 
-function kv(k: string, v: string): HTMLElement {
-  return el("p", { class: "kv" }, [el("span", { class: "k" }, k + ": "), v]);
+function kv(k: string, v: string | (string | HTMLElement)[]): HTMLElement {
+  return el("p", { class: "kv" }, [el("span", { class: "k" }, k + ": "), ...(Array.isArray(v) ? v : [v])]);
 }
 
 function guessMoisture(drainage: string): MoistureBand {

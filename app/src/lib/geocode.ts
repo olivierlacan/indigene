@@ -58,25 +58,32 @@ export async function searchPlaces(query: string): Promise<GeoPlace[]> {
 }
 
 // Reverse geocoding (coordinates → nearest town) for *display only* — no
-// verdict or lookup depends on it. Open-Meteo has no reverse endpoint, so
-// this uses BigDataCloud's free client-side reverse geocoder (no key, CORS,
-// explicitly offered for browser use). Best-effort: on any failure callers
-// fall back to showing coordinates.
-const REVERSE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
+// verdict or lookup depends on it. Open-Meteo's geocoder has no reverse
+// endpoint, so this uses OSM's Nominatim — no new provider: the app already
+// depends on (and credits) OpenStreetMap for its map tiles. Usage sits well
+// within the Nominatim policy: one request per explicit user action, never
+// polling or autocomplete. Best-effort: on any failure callers fall back to
+// showing coordinates.
+const REVERSE_URL = "https://nominatim.openstreetmap.org/reverse";
 
 /** "Seattle, Washington" for a coordinate, or null when it can't be resolved. */
 export async function nearestPlaceName(lat: number, lon: number): Promise<string | null> {
-  const url = `${REVERSE_URL}?latitude=${lat}&longitude=${lon}&localityLanguage=en`;
+  // zoom=10 asks for city/town granularity — street addresses would be more
+  // precision than anything downstream has.
+  const url = `${REVERSE_URL}?lat=${lat}&lon=${lon}&format=jsonv2&zoom=10&accept-language=en`;
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
   try {
     const res = await fetch(url, { signal: ctrl.signal });
     if (!res.ok) return null;
     const d = await res.json();
-    const town = str(d?.city) ?? str(d?.locality);
-    const state = str(d?.principalSubdivision);
+    const a = d?.address ?? {};
+    const town =
+      str(a.city) ?? str(a.town) ?? str(a.village) ?? str(a.hamlet) ??
+      str(a.municipality) ?? str(a.county);
+    const state = str(a.state) ?? str(a.region);
     if (town && state) return `${town}, ${state}`;
-    return town ?? state;
+    return town ?? state ?? str(d?.name);
   } catch {
     return null;
   } finally {

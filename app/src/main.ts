@@ -15,7 +15,7 @@ type StepFn = (main: HTMLElement, param?: string) => void | (() => void) | Promi
 
 const STEPS: Record<string, { fn: StepFn; label: string; inFlow: boolean }> = {
   "": { fn: renderWelcome, label: "Start", inFlow: false },
-  location: { fn: renderLocation, label: "Location", inFlow: true },
+  location: { fn: renderLocation, label: "Spot", inFlow: true },
   sun: { fn: renderSun, label: "Sun", inFlow: true },
   scan: { fn: renderScan, label: "Sun", inFlow: true },
   confirm: { fn: renderConfirm, label: "Soil", inFlow: true },

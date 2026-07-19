@@ -11,9 +11,9 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
   const spots = await listSpots().catch(() => []);
 
   main.append(
-    el("h2", { class: "step-title" }, "Find the right native plants for exactly where you're standing"),
+    el("h2", { class: "step-title" }, "Bring the birds and butterflies back — starting exactly where you're standing"),
     el("p", { class: "step-lede" }, [
-      "Native plants are what your local birds, bees, and butterflies eat — without them, the food web in your yard goes hungry. Stand in the spot you want to plant, and this app measures how much sun it gets, looks up the soil and climate, and shows you the natives that will actually thrive there — ranked by how much life they feed.",
+      "Most yards are green but empty: lawns and imported ornamentals that local wildlife can't eat. Native plants are what your birds, bees, and butterflies actually live on. Stand in the spot you want to plant, and this app measures the sun, looks up the soil and climate, and shows you the natives that will thrive there — ranked by how much life they feed.",
     ]),
     el("div", { class: "note info" }, [
       el("strong", {}, "No account, nothing to sign up for. "),
@@ -21,7 +21,7 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
     ]),
     whyThis("Why native plants?", [
       "Most caterpillars can only eat the plants they evolved alongside, and nearly every backyard bird raises its chicks on caterpillars. No natives means no caterpillars, and no caterpillars means no baby birds. ",
-      "A lawn or an imported ornamental feeds almost nothing; a native plant is the bottom of the local food web, back in business the season you plant it.",
+      "A native plant is the bottom of the local food web — and it's back in business the season you plant it.",
     ]),
     el("div", { class: "card" }, [
       el("h3", {}, REGIONS.length > 1 ? "Regions covered so far" : "Right now this covers one region"),

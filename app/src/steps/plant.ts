@@ -323,7 +323,7 @@ export function renderPlant(main: HTMLElement, param?: string): void {
       el("p", { style: "margin:0.6rem 0 0;font-weight:650" }, "How much sun does that spot get?"),
       sunRow,
       el("details", { style: "margin-top:0.4rem" }, [
-        el("summary", {}, "🔎 No GPS? Search for where you are"),
+        el("summary", {}, "🔎 No GPS? Search by town"),
         el("form", {
           onSubmit: (e: Event) => { e.preventDefault(); void doSearch(); },
         }, [
@@ -390,7 +390,7 @@ function propagationSection(p: Plant): HTMLDetailsElement {
       el("p", { class: "score-why" }, g.plain),
     ]);
   });
-  return sectionCard("propagation", p.id, "🪴 Already have one? How to grow more", [
+  return sectionCard("propagation", p.id, "🪴 How to grow more", [
     el("p", { class: "kv", style: "margin-top:0.5rem" }, [
       el("span", { class: "k" }, "For this plant: "),
       note,

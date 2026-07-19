@@ -26,3 +26,50 @@ reading the diff first:
 
 Keep it concise. The goal is that someone can read the description and know what
 they'd be merging before they open a single file.
+
+### Include before/after screenshots for anything visible
+
+Whenever a change affects something the user can see — copy, layout, colors,
+new UI — the MR description must show it, not just describe it. The procedure:
+
+1. **Build both versions.** Build the "after" from your branch as usual. For
+   the "before", check out the base in a scratch worktree and build there:
+
+   ```sh
+   git fetch origin main
+   git worktree add "$SCRATCH/before" origin/main
+   cd "$SCRATCH/before/app" && npm install && npx vite build
+   ```
+
+2. **Serve both `dist/` folders** on different ports, e.g.
+   `http-server -p 4173 -s` (before) and `-p 4174` (after).
+
+3. **Capture with Playwright's CLI** at a phone viewport (this is a
+   mobile-first PWA), in both color schemes, for each affected route:
+
+   ```sh
+   playwright screenshot --viewport-size=390,844 --color-scheme=dark \
+     --full-page --wait-for-timeout=2500 \
+     "http://127.0.0.1:4173/#/<route>" before-dark.png
+   ```
+
+   Repeat with `--color-scheme=light` and against the after port. Use
+   `--full-page` unless the change is tiny; then a viewport crop is kinder.
+
+4. **Commit the images to the PR branch** under
+   `docs/screenshots/pr-<number>/` with names like `before-dark.png` /
+   `after-dark.png`. They ride along with the PR and serve as a visual
+   changelog after merge.
+
+5. **Embed them in the PR description** as a Before/After table, using raw
+   URLs pinned to the commit SHA (not the branch name) so they keep rendering
+   as the branch moves:
+
+   ```markdown
+   | Before | After |
+   |---|---|
+   | <img src="https://raw.githubusercontent.com/olivierlacan/indigene/<sha>/docs/screenshots/pr-<n>/before-dark.png" width="390"> | <img src="https://raw.githubusercontent.com/olivierlacan/indigene/<sha>/docs/screenshots/pr-<n>/after-dark.png" width="390"> |
+   ```
+
+Verify the screenshots actually show the change before embedding them — a
+stale build or wrong port produces two identical images that look like proof.

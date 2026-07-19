@@ -156,7 +156,6 @@ function categoryChips(region: RegionDef, plants: Plant[], current: PlantForm | 
       class: "btn btn-secondary",
       style: chipStyle,
       href: categoryHref(region, f),
-      "aria-pressed": f === current ? "true" : "false",
       "aria-current": f === current ? "page" : undefined,
     }, `${FORM_LABELS[f]} (${count})`));
   }

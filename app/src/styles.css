@@ -16,16 +16,26 @@
   --ink: #14140f; /* ~16:1 on --bg */
   --ink-soft: #3d3d34; /* still AAA on --bg for body text */
   --line: #cfcabb;
+  /* Boundary color for interactive controls (inputs, secondary buttons,
+     choice cards, step dots): ≥3:1 against both --bg and --surface per
+     WCAG 1.4.11. --line stays for decorative hairlines only. */
+  --line-strong: #837e6b;
   --brand: #175e33;
+  /* Text/icons sitting ON a --brand fill. ≥7:1 against --brand in both
+     themes — white in light, deep green ink in dark (where --brand is a
+     light green and white text would drop to ~2:1). */
+  --on-brand: #ffffff;
+  /* Active-pill background in the header nav; paired with --on-brand text. */
+  --nav-pill: rgba(0, 0, 0, 0.25);
   --brand-ink: #0d3d20;
   --brand-bg: #e2efe4;
-  --accent: #8a4b12;
+  --accent: #7c430f; /* ≥7:1 on --surface and --bg */
   --warn-bg: #fbe9d0;
   --warn-ink: #6b3608;
   --danger-bg: #f7dcd8;
   --danger-ink: #7a1f16;
   --good: #175e33;
-  --focus: #1a53c4;
+  --focus: #1747b3; /* ≥7:1 on --surface and --bg */
   --radius: 14px;
   --tap: 3rem; /* 48px minimum tap target */
   --maxw: 34rem;
@@ -42,7 +52,10 @@
     --ink: #f2f1e8;
     --ink-soft: #cdcdbd;
     --line: #3c4232;
+    --line-strong: #727b5f;
     --brand: #7ec894;
+    --on-brand: #082b16;
+    --nav-pill: rgba(255, 255, 255, 0.32);
     --brand-ink: #b9e6c6;
     --brand-bg: #1f3326;
     --accent: #e2a86a;
@@ -121,12 +134,12 @@ a {
   padding: 0.6rem 1rem calc(0.6rem);
   padding-top: max(0.6rem, env(safe-area-inset-top));
   background: var(--brand);
-  color: #fff;
+  color: var(--on-brand);
 }
 .app-title {
   font-size: 1.25rem;
   margin: 0;
-  color: #fff;
+  color: var(--on-brand);
   letter-spacing: 0.2px;
 }
 /* The title doubles as the escape hatch: from anywhere, tap it to go home.
@@ -160,7 +173,7 @@ a {
   align-items: center;
 }
 .site-nav a {
-  color: #fff;
+  color: var(--on-brand);
   text-decoration: none;
   font-weight: 650;
   font-size: 0.95rem;
@@ -171,7 +184,7 @@ a {
   border-radius: 999px;
 }
 .site-nav a[aria-current="page"] {
-  background: rgba(255, 255, 255, 0.22);
+  background: var(--nav-pill);
 }
 .site-nav a:hover {
   text-decoration: underline;
@@ -179,7 +192,7 @@ a {
 .offline-badge {
   font-size: 0.85rem;
   background: #fff;
-  color: var(--brand-ink);
+  color: #0d3d20; /* fixed pairing: the badge bg is #fff in both themes */
   border: 0;
   border-radius: 999px;
   padding: 0.35rem 0.7rem;
@@ -214,7 +227,7 @@ a {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 999px;
-  border: 2px solid var(--line);
+  border: 2px solid var(--line-strong);
   display: grid;
   place-items: center;
   font-weight: 700;
@@ -225,7 +238,7 @@ a {
 .steps-list li[data-state="done"] .dot {
   background: var(--brand);
   border-color: var(--brand);
-  color: #fff;
+  color: var(--on-brand);
 }
 .steps-list li[data-state="current"] {
   color: var(--ink);
@@ -362,12 +375,12 @@ details[open] > summary::after {
 }
 .btn-primary {
   background: var(--brand);
-  color: #fff;
+  color: var(--on-brand);
 }
 .btn-secondary {
   background: var(--surface);
   color: var(--ink);
-  border-color: var(--line);
+  border-color: var(--line-strong);
 }
 .btn-ghost {
   background: transparent;
@@ -399,7 +412,7 @@ details[open] > summary::after {
   width: 100%;
   text-align: left;
   background: var(--surface);
-  border: 2px solid var(--line);
+  border: 2px solid var(--line-strong);
   border-radius: var(--radius);
   padding: 1rem;
   margin-bottom: 0.75rem;
@@ -425,8 +438,11 @@ details[open] > summary::after {
   place-items: center;
 }
 /* Compact toggle buttons (e.g. the sun picker on a plant page) reuse the same
-   pressed treatment as the big .choice cards. */
-.btn[aria-pressed="true"] {
+   pressed treatment as the big .choice cards. Link-chips that mark the current
+   page (region category nav) use aria-current, the valid attribute for links,
+   and get the same look. */
+.btn[aria-pressed="true"],
+.btn[aria-current="page"] {
   border-color: var(--brand);
   background: var(--brand-bg);
 }
@@ -474,13 +490,13 @@ details[open] > summary::after {
   color: var(--ink-soft);
   letter-spacing: 0.01em;
 }
-/* The tap-affordance: a small info mark on every tile. */
+/* The tap-affordance: a small info mark on every tile. Full-strength color:
+   dimming small glyphs with opacity is what disappears first in sunlight. */
 .stat-k::after {
   content: "ⓘ";
   content: "ⓘ" / "";
   font-weight: 400;
   color: var(--focus);
-  opacity: 0.75;
 }
 .stat-v {
   display: block;
@@ -550,7 +566,7 @@ select {
   min-height: var(--tap);
   font-size: 1.05rem;
   padding: 0.55rem 0.7rem;
-  border: 2px solid var(--line);
+  border: 2px solid var(--line-strong);
   border-radius: 10px;
   background: var(--surface);
   color: var(--ink);
@@ -630,7 +646,7 @@ input[type="range"] {
   right: 0;
   bottom: 0;
   padding: 0.75rem;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.65));
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.78));
   color: #fff;
   font-size: 0.95rem;
 }
@@ -748,7 +764,7 @@ input[type="range"] {
 }
 .badge.keystone {
   background: var(--brand);
-  color: #fff;
+  color: var(--on-brand);
 }
 /* The keystone arch glyph sits in running text and badges at text size. */
 .keystone-icon {
@@ -885,8 +901,8 @@ input[type="range"] {
 .spinner {
   width: 1.4rem;
   height: 1.4rem;
-  border: 3px solid rgba(255, 255, 255, 0.4);
-  border-top-color: #fff;
+  border: 3px solid color-mix(in srgb, currentColor 35%, transparent);
+  border-top-color: currentColor;
   border-radius: 999px;
   animation: spin 0.8s linear infinite;
 }

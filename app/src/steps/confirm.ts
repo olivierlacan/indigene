@@ -23,7 +23,7 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
 
   main.append(el("h2", { class: "step-title" }, "Here's what we think about this spot"));
   if (hasCoords) {
-    const loading = el("p", { class: "coords" }, [el("span", { class: "spinner", style: "border-color:rgba(0,0,0,0.2);border-top-color:var(--brand);display:inline-block;vertical-align:middle" }), " Looking up soil, elevation, and climate…"]);
+    const loading = el("p", { class: "coords" }, [el("span", { class: "spinner", style: "border-top-color:var(--brand);display:inline-block;vertical-align:middle" }), " Looking up soil, elevation, and climate…"]);
     main.append(loading);
     const promise = getSitePromise();
     if (promise) {
@@ -40,7 +40,7 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
     main.append(el("div", { class: "note info" }, [
       el("strong", {}, "Sun: "),
       `${sunPlain(sun.hours)} `,
-      el("span", { style: "opacity:0.85" }, `(roughly ${sun.low}–${sun.high} hours; ${sun.source === "scan" ? "measured by scan" : "your quick pick"}).`),
+      `(roughly ${sun.low}–${sun.high} hours; ${sun.source === "scan" ? "measured by scan" : "your quick pick"}).`,
       el("button", { class: "btn btn-ghost", style: "display:block;margin-top:0.3rem;padding-left:0", onClick: () => navigate("sun") }, "Change the sun estimate"),
     ]));
   }

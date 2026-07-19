@@ -74,6 +74,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "The top wildlife tree in Florida: hundreds of caterpillar species, acorns for jays, woodpeckers, turkeys and squirrels, evergreen shelter, and limbs that become gardens of resurrection fern, bromeliads and Spanish moss.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: oak genus (Tallamy/NWF).",
+    propagation: {
+      methods: ["seed-warm", "seed-direct"],
+      note: "Gather the fresh acorns in fall and sow them right away — a live oak acorn wants to sprout immediately and has no need for a winter chill. Drop them in water and toss the floaters, keep the sinkers, and never let them dry out. It sends down a deep taproot early, so start it where it will stay.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "pinus-palustris",
@@ -104,6 +109,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "The foundation of the longleaf ecosystem: seeds and cover for birds and gopher tortoises, hundreds of caterpillars on the pines, and the open, sunny canopy that lets a diverse groundcover thrive beneath it.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: pine genus (Tallamy/NWF).",
+    propagation: {
+      methods: ["seed-warm"],
+      note: "Collect the seed from ripe cones in fall and sow it fresh the same season — it comes up quickly and needs no chilling. The seed is short-lived, so don't let it sit and dry out in a drawer over winter.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "taxodium-distichum",
@@ -134,6 +144,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "A superb stormwater and streambank tree: it soaks up flooding, holds wet soil, shelters wading birds and anhingas, and lives for centuries.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: conifer, low.",
+    propagation: {
+      methods: ["seed-warm", "seed-direct"],
+      note: "Gather the round cones in fall and crumble them apart to free the seed. Sow it fresh on wet ground or in mud — a good soak first helps — and keep it constantly moist. No winter chilling is needed.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "magnolia-grandiflora",
@@ -164,6 +179,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Huge, lemon-scented flowers pollinated by beetles and bees, red seeds that birds and squirrels eat, and dense evergreen cover and nesting sites.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Magnolia genus (NWF).",
+    propagation: {
+      methods: ["seed-cold-moist"],
+      note: "When the cones split open in fall, pick out the seeds and rub off the fleshy red coat (soaking softens it) — that coat stops them sprouting. Sow fresh and never let them dry; a short spell of cool, damp weather over winter helps them wake up in spring.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "acer-rubrum",
@@ -194,6 +214,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Red flowers open in the depths of Florida winter — the first nectar and pollen of the year — its seeds feed birds, and it hosts hundreds of caterpillars.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: maple genus (Tallamy/NWF).",
+    propagation: {
+      methods: ["seed-warm"],
+      note: "The little winged 'helicopter' seeds ripen in spring — catch them as they turn brown and sow them right away. Red maple is the easy one: its spring seed sprouts within days in warm soil, with no chilling needed.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "sabal-palmetto",
@@ -224,6 +249,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Summer flower plumes swarm with bees; the black fruit feeds robins, mockingbirds, raccoons and more; and the crown and boot-covered trunk shelter bats, frogs and nesting birds.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: palm, low; wildlife value: FNPS / UF-IFAS.",
+    propagation: {
+      methods: ["seed-warm"],
+      note: "Cabbage palm comes from seed only — a palm cannot be divided or grown from a cutting. Gather the black fruit when ripe, squeeze and wash the pulp off the seed, and sow it fresh, warm and moist. Be patient: it is slow to sprout and slow to grow.",
+      basis: "USFS Native Plant Network; UF/IFAS.",
+    },
   },
   {
     id: "chionanthus-virginicus",
@@ -254,6 +284,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Clouds of fragrant, fringe-like white flowers in spring for bees; female trees carry blue fruit that birds strip quickly.",
     confidence: "medium",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Chionanthus/Oleaceae, low.",
+    propagation: {
+      methods: ["seed-double-dormant"],
+      note: "This one tests your patience. Clean the pulp off the blue fruit and sow the seed, but expect it to sit for two seasons — it needs a warm spell and then a cool one before the root and shoot come, so it can take a year and a half or more. Sow it and forget it, and don't give up too soon.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
 
   // ---------------- SHRUBS ----------------
@@ -286,6 +321,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "One of Florida's best wildlife plants: its early flowers are a premier nectar source (the famous palmetto honey), the fruit feeds bears, gopher tortoises, birds and more, and the dense clumps shelter countless small animals.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Wildlife/pollinator value: FNPS / UF-IFAS / Xerces.",
+    propagation: {
+      methods: ["seed-warm"],
+      note: "Saw palmetto grows from seed only — it will not divide or root from a cutting. Wash the pulp off the ripe fruit and sow the seed fresh and warm. Be warned that it is famously slow, taking months to sprout and years to make a plant, so buy a small one if you can't wait.",
+      basis: "USFS Native Plant Network; UF/IFAS.",
+    },
   },
   {
     id: "callicarpa-americana",
@@ -316,6 +356,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Summer flowers for pollinators, then the show-stopping clusters of magenta berries that mockingbirds, cardinals and dozens of birds (and raccoons) devour in fall.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Callicarpa, moderate estimate.",
+    propagation: {
+      methods: ["seed-warm", "cuttings-softwood"],
+      note: "About as easy as natives get. Mash the ripe magenta berries, rinse the seeds out, and sow them warm — they barely need any coaxing. Or snip a few soft green shoots in spring or summer and they root quickly.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "hamelia-patens",
@@ -346,6 +391,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "A nonstop nectar factory: tubular red-orange flowers feed hummingbirds, zebra longwings, Gulf fritillaries and sulphurs spring to fall, and the dark berries feed birds.",
     confidence: "high",
     basis: "Native status/range (var. patens): Atlas of Florida Plants (USF), FNPS. Host count: Hamelia, low; nectar value high.",
+    propagation: {
+      methods: ["cuttings-softwood", "cuttings-semi-hardwood", "seed-warm"],
+      note: "The simplest route is a cutting — snip a soft or just-firming shoot in the warm months and it roots readily. You can also squeeze the seed from the ripe dark berries and sow it warm. Take cuttings from a plant you know is the true native, not a nursery 'dwarf' firebush.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "ilex-vomitoria",
@@ -376,6 +426,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Spring flowers for bees, then heavy crops of translucent red berries that cedar waxwings, robins, mockingbirds and bluebirds feed on through winter; dense cover for nesting.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Ilex genus (NWF).",
+    propagation: {
+      methods: ["cuttings-semi-hardwood", "seed-warm"],
+      note: "Cuttings are much the easier way — take firming shoots in late summer and root them, and you'll know whether you have a berry-bearing female. Seed works too but is very slow, often sitting a year or more before it comes up. Remember you need a male nearby for a female to fruit.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "viburnum-obovatum",
@@ -406,6 +461,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "A flush of tiny white flowers very early in the year feeds emerging bees and butterflies, the fruit feeds birds, and it hosts many caterpillars.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Viburnum genus (NWF).",
+    propagation: {
+      methods: ["cuttings-semi-hardwood", "seed-warm"],
+      note: "Easiest from a cutting — take a just-firming shoot in early summer and root it. Seed is possible from the cleaned black fruit but is slow and fussy, so most gardeners stick with cuttings.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "myrcianthes-fragrans",
@@ -436,6 +496,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Fragrant white flowers for pollinators and red-orange berries that mockingbirds, catbirds and other songbirds love, on a handsome evergreen with year-round structure.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), FNPS. Host count: Myrtaceae, low; bird value high.",
+    propagation: {
+      methods: ["seed-warm", "cuttings-semi-hardwood"],
+      note: "Pick the ripe red-orange fruit, clean the pulp off the seed, and sow it fresh and warm — it doesn't keep, so don't let it dry out. Firming cuttings taken in the warm season will also root.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
 
   // ---------------- PERENNIALS ----------------
@@ -468,6 +533,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Near year-round red flowers feed hummingbirds and butterflies and are a favorite of bumblebees; a reliable, carefree nectar staple.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), FNPS. Pollinator value: UF-IFAS / Xerces.",
+    propagation: {
+      methods: ["seed-warm", "cuttings-softwood"],
+      note: "One of the simplest wildflowers to grow — scatter the seed on warm soil and it sprouts readily, then reseeds itself all over the yard once it's happy. A soft shoot snipped and stuck in soil also roots in no time.",
+      basis: "USFS Native Plant Network; Florida Native Plant Society.",
+    },
   },
   {
     id: "coreopsis-leavenworthii",
@@ -498,6 +568,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Cheerful yellow daisies over a long season feed small native bees, hoverflies and butterflies, then finches take the seed. The quintessential Florida wildflower.",
     confidence: "medium",
     basis: "Native status/range: Atlas of Florida Plants (USF), FNPS. Host count: Coreopsis, low-moderate.",
+    propagation: {
+      methods: ["seed-surface-light"],
+      note: "Grow it from seed — it's short-lived, so let it self-sow to keep it going year after year. Press the fine seed onto the soil surface and don't bury it, since it needs light to sprout, and keep it warm and moist.",
+      basis: "USFS Native Plant Network; Florida Native Plant Society.",
+    },
   },
   {
     id: "asclepias-tuberosa",
@@ -528,6 +603,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "A monarch and queen caterpillar host and a magnet for every butterfly and native bee, on a tidy, well-behaved plant.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Asclepias hosts monarchs (specialist); tropical-milkweed caution per UF-IFAS / Xerces.",
+    propagation: {
+      methods: ["seed-cold-moist"],
+      note: "Start it from seed — its deep taproot hates being dug or split, so don't try to divide it. Sow in fall, or give the seed a few weeks of cool, damp chilling in the fridge before spring sowing, and plant the seedlings young where they'll stay for good.",
+      basis: "USFS Native Plant Network.",
+    },
   },
   {
     id: "liatris-gracilis",
@@ -558,6 +638,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "One of the best fall nectar plants in Florida: its purple spikes are covered with butterflies (including migrating monarchs) and native bees, and finches take the seed.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), FNPS. Pollinator value: Xerces / UF-IFAS.",
+    propagation: {
+      methods: ["seed-cold-moist", "division"],
+      note: "Grow it from seed sown in fall, or give the seed a few weeks of cool, damp chilling in the fridge before sowing — that head start improves germination. Established plants make little underground corms that can be lifted and split in late winter.",
+      basis: "USFS Native Plant Network.",
+    },
   },
   {
     id: "monarda-punctata",
@@ -588,6 +673,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "An exceptional pollinator plant — its unusual spotted flowers and pink bracts draw a huge range of native bees, wasps and butterflies to poor, dry soil where little else blooms.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Monarda, moderate estimate. Pollinator value: Xerces.",
+    propagation: {
+      methods: ["seed-surface-light", "division"],
+      note: "Easy from seed — press the tiny seed onto warm soil without covering it, since it needs light, and it will self-sow to keep coming back. You can also split an established clump in spring to make more.",
+      basis: "USFS Native Plant Network.",
+    },
   },
 
   // ---------------- GRASSES ----------------
@@ -620,6 +710,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Airy clouds of pink flower plumes in fall, seeds and cover for small birds, and dense roots that hold sandy or eroding soil; shelters ground-nesting bees and hosts skippers.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: native grass, skipper host, low-moderate.",
+    propagation: {
+      methods: ["seed-warm", "division"],
+      note: "A warm-season grass — sow the seed on warm soil in spring or summer and it comes up without any chilling. The quickest way to more plants is to dig an established clump in spring and pull it apart into rooted divisions.",
+      basis: "USFS Native Plant Network; UF/IFAS.",
+    },
   },
   {
     id: "tripsacum-dactyloides",
@@ -650,6 +745,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "A robust cover and erosion plant: it armors wet, eroding edges, shelters and feeds birds and small wildlife, and hosts skipper butterflies.",
     confidence: "medium",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: native grass, skipper host, low-moderate.",
+    propagation: {
+      methods: ["seed-warm", "division"],
+      note: "Another warm-season grass — sow the big seed on warm soil in spring and it germinates without chilling. Because it makes such large clumps, dividing an established plant in spring is the fast and reliable way to get more.",
+      basis: "USFS Native Plant Network; UF/IFAS.",
+    },
   },
 
   // ---------------- VINE ----------------
@@ -682,6 +782,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "The larval host for Gulf fritillary and the zebra longwing — Florida's state butterfly — plus the julia; its extraordinary purple flowers feed carpenter and bumblebees, and the 'maypop' fruit feeds wildlife.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host of heliconian butterflies (specialist); FNPS / UF-IFAS.",
+    propagation: {
+      methods: ["seed-scarify", "suckers", "cuttings-softwood"],
+      note: "The hard seed sprouts far better if you nick or scuff the coat and soak it overnight before sowing it warm. Easier still, this vine runs underground and pops up new rooted sprouts nearby — dig one and move it. Soft cuttings root in the warm months too.",
+      basis: "USFS Native Plant Network.",
+    },
   },
 
   // ---------------- GROUNDCOVERS ----------------
@@ -714,6 +819,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Fixes its own nitrogen, holds soil against erosion, and covers itself in pink powderpuff flowers that feed bees and host little sulphur and skipper butterflies — a lawn that actually works for wildlife.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. N-fixer; pollinator/host value: FNPS / UF-IFAS.",
+    propagation: {
+      methods: ["seed-scarify", "runners"],
+      note: "Being a legume, its seed has a hard coat — nick or scuff it and give it an overnight soak before sowing warm and it comes up much better. Even simpler, this carpet spreads by runners that root as they go, so you can lift and pot up the rooted pieces.",
+      basis: "USFS Native Plant Network; UF/IFAS.",
+    },
   },
   {
     id: "helianthus-debilis",
@@ -744,5 +854,10 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Near year-round yellow daisies feed native bees and butterflies, seeds feed finches, and the sprawling mat holds dune and sandy soil against erosion; hosts painted lady and other caterpillars.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Helianthus genus (NWF).",
+    propagation: {
+      methods: ["seed-surface-light", "cuttings-softwood"],
+      note: "Dead easy from seed — press it onto warm, sandy soil without burying it, since it wants light, and it will self-sow freely from then on. Soft shoot cuttings also root quickly if you want an instant patch.",
+      basis: "USFS Native Plant Network; Florida Native Plant Society.",
+    },
   },
 ];

@@ -63,6 +63,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "The single most valuable tree for wildlife here: hundreds of caterpillar species, acorns for dozens of birds and mammals, and generations of shade.",
     confidence: "high",
     basis: "Host count: oak genus, NWF/Tallamy. Size: USDA PLANTS / Silvics of North America.",
+    propagation: {
+      methods: ["seed-warm", "seed-direct"],
+      note: "Gather plump acorns as they drop in fall and float them in water — toss any that bob up, as they're empty or wormy. White oak acorns sprout the same autumn, so don't let them dry out; plant each one an inch deep right where you want the tree, since the taproot hates being moved.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "quercus-rubra",
@@ -93,6 +98,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Hundreds of caterpillar species and heavy acorn crops; a fast route to an oak's food-web benefits.",
     confidence: "high",
     basis: "Host count: oak genus, NWF/Tallamy. Size: Silvics of North America.",
+    propagation: {
+      methods: ["seed-cold-moist"],
+      note: "Collect fallen acorns in autumn and float-test them, discarding any that float. Unlike white oak, red oak acorns need a cold, damp winter before they'll sprout — mix them with moist sand in a bag in the fridge for the winter, or just sow them outdoors in fall and let nature chill them. Keep them from drying out, and plant where the taproot can stay put.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "acer-rubrum",
@@ -123,6 +133,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Early red flowers feed the first bees of spring, seeds feed birds, and it hosts hundreds of caterpillars.",
     confidence: "high",
     basis: "Host count: maple genus, NWF/Tallamy.",
+    propagation: {
+      methods: ["seed-warm"],
+      note: "Red maple's winged seeds ripen in late spring, much earlier than most trees. Catch them as they turn tan and sow them right away in a pot or bed — they sprout within a couple of weeks and need no winter chilling, but they must not dry out first.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "betula-nigra",
@@ -153,6 +168,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Peeling cinnamon bark, hundreds of caterpillar species, and roots that hold a stream bank together.",
     confidence: "high",
     basis: "Host count: birch genus, NWF/Tallamy.",
+    propagation: {
+      methods: ["seed-warm", "seed-surface-light"],
+      note: "River birch is one of the few trees whose tiny seed ripens in late spring rather than fall — gather the little cones as they brown and crumble out the seed. Scatter it on the surface of moist potting mix and don't bury it, since it needs light to sprout; sown fresh it comes up quickly with no chilling.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "prunus-serotina",
@@ -183,6 +203,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Second only to oaks for caterpillars; clouds of spring flowers and summer fruit for dozens of bird species.",
     confidence: "high",
     basis: "Host count: cherry/plum genus, NWF/Tallamy.",
+    propagation: {
+      methods: ["seed-cold-moist"],
+      note: "Squish the ripe summer fruit and rinse the pulp off the pits — the flesh contains sprouting inhibitors. Give the cleaned pits a long, cold, damp winter (outdoors in a pot, or several months in moist sand in the fridge) before they'll come up. Honestly, this tree self-sows so freely from bird-dropped pits that you'll often find seedlings for free.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "cercis-canadensis",
@@ -213,6 +238,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Rosy-pink flowers bloom right on the branches in early spring, feeding queen bumblebees when little else is open.",
     confidence: "high",
     basis: "Wildflower Center; host count Fabaceae/Cercis, NWF.",
+    propagation: {
+      methods: ["seed-scarify", "seed-cold-moist"],
+      note: "Redbud seed has both a hard, waterproof coat and a dormant embryo, so it needs two treatments: first nick or rub each seed on sandpaper (or dunk briefly in hot water) so moisture can get in, then give it a cold, damp winter in the fridge before sowing. It grows a taproot, so start seed where the tree will live rather than trying to divide or move it.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "amelanchier-canadensis",
@@ -243,6 +273,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Early white flowers for bees, June berries loved by birds (and people), and fiery fall color.",
     confidence: "high",
     basis: "Wildflower Center; host count Amelanchier, NWF.",
+    propagation: {
+      methods: ["seed-cold-moist"],
+      note: "Pick the June berries when they're deep purple, mash them, and rinse the tiny seeds free of pulp. They need a cold, damp winter to break dormancy, so sow them outdoors in fall or chill them in moist sand in the fridge for a few months before spring sowing. Be patient — germination is often slow and uneven.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "cornus-florida",
@@ -273,6 +308,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "High-fat berries that migrating birds prize, plus the classic spring flowers.",
     confidence: "high",
     basis: "Wildflower Center; host count Cornus, NWF.",
+    propagation: {
+      methods: ["seed-cold-moist", "cuttings-semi-hardwood"],
+      note: "Clean the pulp off the bright red fall berries and give the seed a long, cold, damp winter before it will sprout. If you'd rather skip the wait, take cuttings of this year's shoots in early summer once they've begun to firm up, and root them under cover with steady moisture.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "hamamelis-virginiana",
@@ -303,6 +343,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Ribbon-like yellow flowers open in late fall when nothing else does, feeding late-season moths.",
     confidence: "medium",
     basis: "Wildflower Center; host count Hamamelis, NWF.",
+    propagation: {
+      methods: ["seed-double-dormant", "layering"],
+      note: "Witch hazel seed is famously slow: it usually needs two winters, with a warm spell in between, before it sprouts, so sow it outdoors and be patient across a couple of years. An easier route is to pin a low branch down to the soil in spring and let it root in place before cutting it free the following year.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
 
   // ---------------- SHRUBS ----------------
@@ -335,6 +380,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "A keystone shrub: hundreds of caterpillars, spring flowers for specialist bees, and berries for you and the birds.",
     confidence: "high",
     basis: "Host count: Vaccinium genus, NWF/Tallamy.",
+    propagation: {
+      methods: ["cuttings-softwood", "cuttings-semi-hardwood", "seed-cold-moist"],
+      note: "The reliable way is cuttings: snip soft green shoot tips in early summer, or slightly firmer shoots a bit later, and root them in a peaty, acidic mix kept moist. Seed works too — squash ripe berries, rinse the pulp away, and give the seed a cold, damp winter — but seedlings need acidic soil and are slow to reach picking size.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "ilex-verticillata",
@@ -365,6 +415,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Bare red-berried branches light up the winter garden and feed robins and waxwings in late winter.",
     confidence: "high",
     basis: "Wildflower Center; host count Ilex, NWF.",
+    propagation: {
+      methods: ["cuttings-semi-hardwood", "seed-double-dormant"],
+      note: "Remember this holly is either male or female, so seed only forms on a female that has a male nearby. The easy route is cuttings — take this year's shoots in summer as they firm up and root them under cover. Seed is a long haul: it often needs two winters to sprout, so most gardeners skip it.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "cephalanthus-occidentalis",
@@ -395,6 +450,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Pincushion flowers swarm with butterflies and bees; ducks eat the seeds. A rain-garden workhorse.",
     confidence: "high",
     basis: "Wildflower Center / Xerces.",
+    propagation: {
+      methods: ["cuttings-hardwood", "cuttings-softwood"],
+      note: "Buttonbush roots very willingly. In winter, cut pencil-thick leafless twigs into hand-length pieces and push them into damp ground, or in early summer root soft green shoot tips in moist mix. Either way it likes to stay wet while rooting, which suits this water-lover perfectly.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "physocarpus-opulifolius",
@@ -425,6 +485,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Peeling bark for winter interest, white flowers for bees, and roots that lock down a slope.",
     confidence: "high",
     basis: "Wildflower Center; host count Physocarpus, NWF.",
+    propagation: {
+      methods: ["cuttings-softwood", "cuttings-hardwood"],
+      note: "Ninebark is easy from cuttings. Root soft green shoot tips in early summer in a pot of moist mix, or push leafless dormant twigs into the ground in late fall. Both take readily, giving you copies of the exact plant you have.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "viburnum-dentatum",
@@ -455,6 +520,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Flat white flower clusters for pollinators and blue-black fruit that fuels fall bird migration.",
     confidence: "high",
     basis: "Wildflower Center; host count Viburnum, NWF.",
+    propagation: {
+      methods: ["cuttings-softwood", "seed-double-dormant"],
+      note: "The quick way is early-summer cuttings of soft green shoots, rooted in moist mix under cover. Seed is stubborn — it typically needs a warm spell followed by a cold winter (two seasons) before sprouting. Remember that a lone arrowwood sets little fruit; plant a second, unrelated one nearby for good berries.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "cornus-sericea",
@@ -485,6 +555,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Brilliant red winter stems, berries for birds, and one of the best plants for stabilizing wet, eroding ground.",
     confidence: "high",
     basis: "Wildflower Center; host count Cornus, NWF.",
+    propagation: {
+      methods: ["cuttings-hardwood", "layering", "cuttings-softwood"],
+      note: "This is one of the easiest shrubs to multiply. Push leafless dormant twigs into damp ground in late fall and most will root, or take soft shoot tips in early summer. It also layers on its own — wherever a low stem touches moist soil it roots, so you can simply dig up and move those rooted pieces.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "ceanothus-americanus",
@@ -515,6 +590,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Fixes its own nitrogen, thrives on the poorest dry soil, and covers itself in bee-covered white puffs.",
     confidence: "medium",
     basis: "Wildflower Center / Xerces; host count Ceanothus, NWF.",
+    propagation: {
+      methods: ["seed-scarify", "seed-cold-moist"],
+      note: "The seed has a rock-hard coat, so nick it with sandpaper or pour just-boiled water over it and let it soak overnight, then give it a cold, damp winter before sowing. Because it grows a deep taproot and resents being moved, raise it from seed and get it into its final spot early rather than trying to divide an established plant.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "corylus-americana",
@@ -545,6 +625,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Edible nuts for you and wildlife, early catkins for the first pollen of spring, and lots of caterpillars.",
     confidence: "medium",
     basis: "Wildflower Center; host count Corylus, NWF.",
+    propagation: {
+      methods: ["suckers", "seed-cold-moist"],
+      note: "The simplest way is to dig up the rooted suckers this thicket-former throws up around its base and replant them. From seed, gather the nuts in fall before squirrels do, protect them from rodents, and give them a cold, damp winter — they need that chill to sprout in spring.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
 
   // ---------------- PERENNIALS ----------------
@@ -577,6 +662,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "A monarch caterpillar host and a magnet for every butterfly around, on a tidy, well-behaved plant.",
     confidence: "high",
     basis: "Wildflower Center / Xerces; Asclepias hosts monarchs (specialist).",
+    propagation: {
+      methods: ["seed-cold-moist"],
+      note: "Collect the flat brown seeds in fall as the pods split, before the silk floats them away. They need about a month of cold, damp chilling — sow outdoors in fall, or refrigerate them in a moist paper towel for 30 days before spring sowing. Don't try to dig and divide it: the deep, brittle taproot resents disturbance, so seed is the only good route.",
+      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+    },
   },
   {
     id: "asclepias-incarnata",
@@ -607,6 +697,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "A monarch host that also draws swarms of bees and butterflies to its fragrant pink flowers.",
     confidence: "high",
     basis: "Wildflower Center / Xerces.",
+    propagation: {
+      methods: ["seed-cold-moist", "division"],
+      note: "Gather seed from the split pods in fall and give it about a month of cold, damp chilling (fall sowing does this for you) to get good germination. Unlike its taprooted cousin, swamp milkweed also takes division — lift and split a clump in early spring as it starts into growth.",
+      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+    },
   },
   {
     id: "echinacea-purpurea",
@@ -637,6 +732,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Months of butterfly-covered blooms, then seed heads that feed goldfinches into the winter.",
     confidence: "high",
     basis: "Wildflower Center.",
+    propagation: {
+      methods: ["seed-cold-moist", "division"],
+      note: "Twist the dry, spiky seed heads apart in fall to free the seed, which germinates best after about a month of cold, damp chilling — easiest done by sowing outdoors before winter. Established clumps also divide readily in early spring. Leave a few seed heads standing and it will quietly self-sow, too.",
+      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+    },
   },
   {
     id: "rudbeckia-fulgida",
@@ -667,6 +767,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "A long, golden late-summer show for pollinators and finches, on a plant that thrives on neglect.",
     confidence: "high",
     basis: "Wildflower Center.",
+    propagation: {
+      methods: ["seed-cold-moist", "division"],
+      note: "Shake the small seeds from the dry cones in fall; they come up best after about a month of cold, damp chilling, so fall-sow them or refrigerate in moist sand before spring. The clumps divide easily in early spring, and if you leave seed heads standing you'll get volunteer seedlings around the parent.",
+      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+    },
   },
   {
     id: "monarda-fistulosa",
@@ -697,6 +802,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Lavender crowns alive with bees, butterflies, and hummingbird moths; the leaves make a fragrant tea.",
     confidence: "high",
     basis: "Wildflower Center / Xerces.",
+    propagation: {
+      methods: ["division", "seed-cold-moist"],
+      note: "Easiest of all is division: this bee balm spreads by shallow roots, so in spring you can lift a clump and pull it into several rooted pieces. From seed, shake it from the dry seed heads and give it about a month of cold, damp chilling, or simply sow outdoors in fall.",
+      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+    },
   },
   {
     id: "symphyotrichum-novae-angliae",
@@ -727,6 +837,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "A keystone: it hosts 100+ caterpillars and its late purple flowers are a critical last fuel stop for migrating monarchs and bees.",
     confidence: "high",
     basis: "Host count: Symphyotrichum genus, NWF/Tallamy.",
+    propagation: {
+      methods: ["division", "seed-cold-moist"],
+      note: "The simplest method is to divide an established clump in spring, splitting the crown into rooted chunks. From the fluffy seed heads, collect seed in late fall and give it about a month of cold, damp chilling (fall sowing does this) for good sprouting. Left standing, it also self-sows around the garden.",
+      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+    },
   },
   {
     id: "solidago-rugosa",
@@ -757,6 +872,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "A keystone that hosts 100+ caterpillars and blankets fall with pollen and nectar when pollinators need it most.",
     confidence: "high",
     basis: "Host count: Solidago genus, NWF/Tallamy.",
+    propagation: {
+      methods: ["division", "seed-cold-moist"],
+      note: "Easiest is division: lift the clump in early spring and split off rooted pieces from the edges. From seed, collect the fluffy heads in late fall and give the seed about a month of cold, damp chilling — fall sowing outdoors handles that naturally. It will also gently self-sow if a few seed heads are left up.",
+      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+    },
   },
   {
     id: "eutrochium-purpureum",
@@ -787,6 +907,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Big mauve flower domes that butterflies cover in late summer, on a bold architectural plant.",
     confidence: "high",
     basis: "Wildflower Center.",
+    propagation: {
+      methods: ["seed-cold-moist", "division"],
+      note: "Collect the tiny seed as the dry heads ripen in late summer. It sprouts best after about a month of cold, damp chilling, so sow it outdoors in fall or refrigerate it in moist sand over winter. A mature clump can also be lifted and divided in early spring for a few extra plants.",
+      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+    },
   },
   {
     id: "aquilegia-canadensis",
@@ -817,6 +942,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Nodding red-and-yellow lanterns that arrive just as ruby-throated hummingbirds return in spring.",
     confidence: "high",
     basis: "Wildflower Center.",
+    propagation: {
+      methods: ["seed-surface-light", "seed-cold-moist"],
+      note: "Gather the small black seeds from the papery pods in early summer. Press them onto the surface of the soil without burying them — they need light to sprout — and give them a cold, damp spell first (fall sowing does both jobs). Columbine is short-lived but self-sows dependably, so once you have it, it tends to stay.",
+      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+    },
   },
   {
     id: "penstemon-digitalis",
@@ -847,6 +977,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "White bell flowers for spring bees, then rusty seed stalks for winter structure. Very low fuss.",
     confidence: "high",
     basis: "Wildflower Center / Xerces.",
+    propagation: {
+      methods: ["seed-cold-moist", "division"],
+      note: "The fine seed ripens in the dry pods by fall; give it about a month of cold, damp chilling — easiest by sowing outdoors before winter — for good germination. The evergreen rosettes can also be lifted and split in early spring to make a few more plants.",
+      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+    },
   },
   {
     id: "zizia-aurea",
@@ -877,6 +1012,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Early yellow flowers feed small native bees, and it's a host plant for black swallowtail caterpillars.",
     confidence: "medium",
     basis: "Wildflower Center; black swallowtail host.",
+    propagation: {
+      methods: ["seed-cold-moist"],
+      note: "Sow the seed fresh — collect it in early summer as the flat pods dry and get it into the ground while still new, since it germinates poorly once it has dried and aged. It needs a cold, damp winter to sprout, so fall-sown or fresh-sown seed comes up the following spring. It self-sows gently once settled in.",
+      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+    },
   },
   {
     id: "baptisia-australis",
@@ -907,6 +1047,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Spikes of blue pea-flowers for bumblebees, it fixes its own nitrogen, and hosts several skipper butterflies.",
     confidence: "high",
     basis: "Wildflower Center / Xerces.",
+    propagation: {
+      methods: ["seed-scarify", "seed-cold-moist"],
+      note: "The hard, round seeds sprout much better if you first nick or sand the coat, or soak them in just-boiled water overnight, then give them a cold, damp winter. Because it grows a deep taproot it doesn't like being dug up or divided, so raise it from seed and plant it where it will stay for years.",
+      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+    },
   },
   {
     id: "lobelia-cardinalis",
@@ -937,6 +1082,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Vivid red spires that hummingbirds cannot resist; the standout plant for a wet, part-shady spot.",
     confidence: "high",
     basis: "Wildflower Center.",
+    propagation: {
+      methods: ["seed-surface-light", "division"],
+      note: "The seed is nearly dust-fine: scatter it on the surface of moist soil and don't cover it, since it needs light to germinate. It self-sows readily wherever the ground stays damp, and stems that flop over and touch wet soil will root, so you can lift and move those rooted pieces too.",
+      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+    },
   },
   {
     id: "geranium-maculatum",
@@ -967,6 +1117,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Pink spring flowers for early native bees, followed by a tidy groundcover of maple-shaped leaves.",
     confidence: "medium",
     basis: "Wildflower Center.",
+    propagation: {
+      methods: ["division", "seed-cold-moist"],
+      note: "Easiest is to lift and split the spreading clump in spring — it forms a slow mound of rooted crowns. From seed, collect it as the summer pods fling it out, and give it a cold, damp winter (fall sowing works) before it sprouts.",
+      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+    },
   },
 
   // ---------------- GRASSES ----------------
@@ -999,6 +1154,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Blue-green summer blades turn mahogany-orange in fall; hosts skipper butterflies, shelters birds, and locks down dry slopes.",
     confidence: "high",
     basis: "Wildflower Center / Xerces; skipper host.",
+    propagation: {
+      methods: ["seed-direct", "division"],
+      note: "This is a warm-season grass, so sow the fluffy seed in late spring once the soil has warmed and it will sprout without any chilling — just keep the surface from drying out until it's up. Established bunches can also be dug and split in spring as new growth begins.",
+      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+    },
   },
   {
     id: "panicum-virgatum",
@@ -1029,6 +1189,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "An upright screen of airy seed heads that birds mob in winter, with roots that soak up runoff and hold soil.",
     confidence: "high",
     basis: "Wildflower Center / Xerces.",
+    propagation: {
+      methods: ["seed-direct", "division"],
+      note: "A warm-season grass — sow the seed in late spring into warm soil and it germinates quickly with little or no chilling needed. A mature clump can also be dug and pulled apart into rooted divisions in spring as it starts back into growth.",
+      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+    },
   },
   {
     id: "andropogon-gerardii",
@@ -1059,6 +1224,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Turkey-foot seed heads and copper fall color; premier soil-building, carbon-storing, erosion-stopping roots.",
     confidence: "high",
     basis: "Wildflower Center / Xerces.",
+    propagation: {
+      methods: ["seed-direct", "division"],
+      note: "Another warm-season grass: sow the seed in late spring once the ground is warm and it comes up promptly without chilling. Big established clumps also divide well in spring — dig one up and tear it into rooted chunks to spread it around.",
+      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+    },
   },
   {
     id: "carex-pensylvanica",
@@ -1089,6 +1259,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "A fine-textured green groundcover that hosts many little skippers and needs no mowing, watering, or feeding.",
     confidence: "medium",
     basis: "Wildflower Center; Carex hosts numerous skippers.",
+    propagation: {
+      methods: ["division"],
+      note: "By far the easiest way is division: this sedge creeps along by underground runners, so in spring you can lift a patch and pull it into many small rooted pieces to plant out and knit together. Seed is slow and finicky, so most gardeners skip it and just divide.",
+      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+    },
   },
 
   // ---------------- VINES ----------------
@@ -1121,6 +1296,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Scarlet fall color, high-fat berries dozens of birds depend on, and a larval host for showy sphinx moths.",
     confidence: "high",
     basis: "Wildflower Center; sphinx moth host.",
+    propagation: {
+      methods: ["cuttings-softwood", "cuttings-hardwood", "layering"],
+      note: "Almost too easy: root soft green shoots in summer or leafless dormant lengths of vine in winter, and most will take in moist soil. It also layers on its own — anywhere a trailing stem touches the ground it roots, so you can simply sever and lift those rooted sections.",
+      basis: "USFS Native Plant Network.",
+    },
   },
   {
     id: "lonicera-sempervirens",
@@ -1151,6 +1331,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Coral trumpets bloom for months, feeding hummingbirds; the red berries then feed songbirds.",
     confidence: "high",
     basis: "Wildflower Center.",
+    propagation: {
+      methods: ["cuttings-semi-hardwood", "cuttings-hardwood"],
+      note: "Coral honeysuckle roots easily from cuttings — take pieces of this year's shoots in summer as they firm up, or leafless dormant lengths in winter, and root them in moist mix. This gives you an exact copy of a well-behaved native, none of the invasive Japanese honeysuckle's habits.",
+      basis: "USFS Native Plant Network.",
+    },
   },
 
   // ---------------- GROUNDCOVERS & FERN ----------------
@@ -1183,6 +1368,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "White spring flowers for bees, tiny sweet berries for birds and people, and a low groundcover that hosts many caterpillars.",
     confidence: "high",
     basis: "Wildflower Center; host count Fragaria/Rosaceae, NWF.",
+    propagation: {
+      methods: ["runners", "division"],
+      note: "The simplest plant here to multiply: it sends out runners that sprout little plantlets along their length. Pin one down onto soil (or a small pot) until it roots, then snip it free from the parent and move it. You can also just lift and split an established patch.",
+      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+    },
   },
   {
     id: "packera-aurea",
@@ -1213,6 +1403,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Cheerful yellow spring flowers held above an evergreen carpet that smothers weeds in shade.",
     confidence: "medium",
     basis: "Wildflower Center.",
+    propagation: {
+      methods: ["division", "seed-surface-light"],
+      note: "Easiest is division — this groundcover spreads into mats, so in spring lift a section and pull it apart into rooted pieces to replant. It also self-sows freely; you can scatter the fluffy seed on the surface of damp soil in fall and let volunteers fill in.",
+      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+    },
   },
   {
     id: "polystichum-acrostichoides",
@@ -1243,5 +1438,10 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Stays green all winter, its fronds catching leaves and slowing erosion on a wooded bank; shelter for small wildlife.",
     confidence: "medium",
     basis: "Wildflower Center. Ferns support very few caterpillars — included for erosion and shade cover, not food-web value.",
+    propagation: {
+      methods: ["division", "spores"],
+      note: "By far the easiest way is to dig an established clump in early spring and split the crown into rooted pieces. Ferns make no seed — they grow from dust-like spores on the backs of the fronds, which you can sow onto damp, sterile soil, but that's a slow, fiddly project best left to the patient.",
+      basis: "USFS Native Plant Network.",
+    },
   },
 ];

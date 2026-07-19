@@ -1,7 +1,7 @@
 // Plain-language layer. The rule from the brief: never surface a term without
 // explaining it inline, in words a 70-year-old who has never heard "keystone
 // species" can act on. Everything jargon-y funnels through here.
-import type { MoistureBand, SizeSnapshot } from "../types";
+import type { MoistureBand, PropagationMethod, SizeSnapshot } from "../types";
 
 /** The full audit of every dataset behind the numbers — linked wherever we
  * cite a figure (host counts especially) so claims stay checkable. */
@@ -22,6 +22,13 @@ export const ZONE_INFO_URL = "https://planthardiness.ars.usda.gov/";
 /** Explainer for the moisture bands ("mesic" and its dry/wet siblings).
  * Same rule: say "evenly moist" first; "mesic" only ever in parentheses. */
 export const MOISTURE_INFO_URL = "https://en.wikipedia.org/wiki/Mesic_habitat";
+
+/** The dependable, species-by-species propagation source we lean on: the USDA
+ * Forest Service's Native Plant Network Propagation Protocol Database. It's a
+ * government resource written by the people who grow these plants for
+ * restoration, so "how to make more of it" stays a checkable fact, not folklore.
+ * Linked wherever propagation tips are shown, alongside each row's own `basis`. */
+export const PROPAGATION_SOURCE_URL = "https://npn.rngr.net/propagation/protocols";
 
 /** The common-parlance word for a moisture band. Use this — never the raw
  * band value — anywhere a person reads it; "mesic" means nothing at a garden
@@ -131,6 +138,94 @@ export const scoreLabels: Record<string, { name: string; plain: string }> = {
   establishment: {
     name: "Survives on its own",
     plain: "How likely it is to make it with no watering or fuss after you plant it.",
+  },
+};
+
+/**
+ * Every propagation method, glossed once. `name` is the short "what you'd call
+ * it" (the gardening term kept in parentheses, never bare); `plain` is the
+ * "what you actually do" a first-timer can follow with kitchen-drawer tools.
+ * The plant page shows only the methods a given plant lists, each with this
+ * explanation, so the same term never gets described two different ways.
+ */
+export const propagationMethods: Record<
+  PropagationMethod,
+  { name: string; plain: string }
+> = {
+  "seed-direct": {
+    name: "Sow the seed as-is (direct sowing)",
+    plain:
+      "The easy case: clean the seed, then sow it about as deep as it is wide in a pot or a cleared patch of ground and keep it damp. No tricks needed.",
+  },
+  "seed-cold-moist": {
+    name: "Give the seed a cold, damp winter first (cold-moist stratification)",
+    plain:
+      "Many native seeds won't wake up until they've felt a real winter, so you fake one. Mix the seed with a handful of damp sand or a moist paper towel, seal it in a labeled zip bag, and leave it in the fridge for the number of weeks noted — then sow. Or skip the fridge entirely: sow it outdoors in a pot in fall and let actual winter do the job.",
+  },
+  "seed-double-dormant": {
+    name: "Expect a two-winter wait (double dormancy)",
+    plain:
+      "The stubborn ones: the root comes out after one winter but the leaf shoot waits for a second. Sow in a pot outdoors, keep it in a shady, protected spot, don't give up when nothing shows the first spring, and stay patient — green usually appears in the second year.",
+  },
+  "seed-scarify": {
+    name: "Nick or scuff the hard seed coat first (scarification)",
+    plain:
+      "Some seeds (beans and their relatives especially) are sealed in a waterproof shell that has to be breached before water can get in. Rub each seed a few strokes on fine sandpaper, or nick the coat with a knife, until you just see the paler inside — then soak overnight and sow. Careful scuffing, not crushing.",
+  },
+  "seed-surface-light": {
+    name: "Press tiny seed on the surface — it needs light (surface sowing)",
+    plain:
+      "Dust-fine seed that must see daylight to sprout, so don't bury it. Scatter it on top of damp soil, press it down so it makes contact, and don't cover it. Keep the surface from drying out by misting or covering with clear plastic until it germinates.",
+  },
+  "seed-warm": {
+    name: "Sow fresh and keep it warm (no chilling needed)",
+    plain:
+      "The warm-climate case: no winter chill required. Sow the fresh, cleaned seed and keep it warm and damp — it usually sprouts within a few weeks. Fresh matters; many of these lose the ability to sprout if the seed dries out and sits.",
+  },
+  "cuttings-softwood": {
+    name: "Root a soft green shoot (softwood cutting)",
+    plain:
+      "In late spring or early summer, snip a 4–6 inch piece of soft, bendy new growth, strip the lower leaves, and push the cut end into damp potting mix or perlite. Keep it humid and out of harsh sun (a clear bag or bottle over the pot helps) until roots form in a few weeks.",
+  },
+  "cuttings-semi-hardwood": {
+    name: "Root a firming-up shoot (semi-hardwood cutting)",
+    plain:
+      "Mid-to-late summer, take a 4–6 inch piece of this year's growth that has started to stiffen and turn woody at the base. Strip the lower leaves, set the cut end in damp mix, and keep it humid. Slower to root than soft cuttings but sturdier — good for many shrubs and broadleaf evergreens.",
+  },
+  "cuttings-hardwood": {
+    name: "Root a bare winter twig (hardwood cutting)",
+    plain:
+      "The simplest cutting of all for willows, dogwoods and their kind: while the plant is leafless and dormant, cut pencil-thick pieces about a foot long, push the lower half into damp ground or a pot, and wait. Many root by spring with no fuss at all.",
+  },
+  division: {
+    name: "Dig and split the clump (division)",
+    plain:
+      "For clump-forming perennials and grasses: in early spring or fall, dig up the whole plant, then pull or cut the crown into several pieces, each with its own roots and a few shoots. Replant the pieces right away at the same depth and water them in. Also rejuvenates a tired, hollow-centered clump.",
+  },
+  layering: {
+    name: "Root a branch while it's still attached (layering)",
+    plain:
+      "A near-foolproof trick: bend a low, flexible branch down to the ground, scratch the bark where it touches, pin it down with a rock or wire, and mound soil over that spot. It grows roots there while the parent keeps it alive; a season or two later, cut it free and dig up your new plant.",
+  },
+  "root-cuttings": {
+    name: "Grow new plants from root pieces (root cuttings)",
+    plain:
+      "For plants that sprout readily from their roots: in late fall or winter, dig and cut finger-length pieces of pencil-thick root, lay them horizontally in a tray of damp mix under about an inch of soil, and keep them warm. New shoots rise from the buried pieces.",
+  },
+  suckers: {
+    name: "Dig up the shoots it sends up around itself (suckers)",
+    plain:
+      "Thicket-formers throw up new rooted shoots a short way from the trunk. In early spring, slice down between a sucker and the parent with a spade, lift the sucker with its own roots attached, and replant it. Free plants, and it tidies the clump.",
+  },
+  runners: {
+    name: "Pot up the babies on its runners (stolons)",
+    plain:
+      "Strawberries and other creepers send out horizontal stems that root little plantlets along the way. Once a plantlet has its own roots, snip the runner connecting it to the parent, dig it up, and move it — or pin it into a small pot first, then cut it loose.",
+  },
+  spores: {
+    name: "Sow the dust from the frond backs (spores)",
+    plain:
+      "Ferns make no seed — they scatter dust-fine spores from brown patches under mature fronds. Slower and fussier, but doable: lay a ripe frond on paper for a day to collect the brown dust, scatter it on the surface of damp sterile mix, cover with clear plastic, and keep it bright and moist. A green film appears first, then tiny ferns over months. Most gardeners find dividing an existing clump far easier.",
   },
 };
 

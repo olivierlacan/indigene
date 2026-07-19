@@ -10,6 +10,42 @@ export type PlantForm =
   | "groundcover"
   | "fern";
 
+/**
+ * How to make more of a plant you already have — from seed you save, or from
+ * the living plant itself. A small controlled vocabulary so every method is
+ * explained in exactly one place (`plain.ts`) and can't be described two
+ * different ways across 100+ rows. Each key is glossed in plain words wherever
+ * it's shown; the rule is the same as everywhere else in the app — never a
+ * gardening term without the plain-language "what you actually do" beside it.
+ */
+export type PropagationMethod =
+  // ---- from seed ----
+  | "seed-direct" // sow the cleaned seed with no special treatment
+  | "seed-cold-moist" // seed needs a cold, damp spell (winter) before it sprouts
+  | "seed-double-dormant" // seed needs two seasons / warm-then-cold before it sprouts
+  | "seed-scarify" // hard seed coat must be nicked or worn down first
+  | "seed-surface-light" // tiny seed, pressed on the surface; needs light to sprout
+  | "seed-warm" // sow fresh and keep warm; no chilling, sprouts quickly
+  // ---- from the living plant ----
+  | "cuttings-softwood" // rooted from soft, green, still-growing shoot tips
+  | "cuttings-semi-hardwood" // rooted from this year's shoots as they firm up
+  | "cuttings-hardwood" // rooted from leafless dormant twigs cut in winter
+  | "division" // dig the clump and pull/cut it into rooted pieces
+  | "layering" // root a low branch while it's still attached to the parent
+  | "root-cuttings" // grow new plants from short pieces of root
+  | "suckers" // dig up the rooted shoots a plant throws up around itself
+  | "runners" // pot up the baby plants on runners/stolons
+  | "spores"; // ferns: sow the dust-fine spores from the frond backs
+
+export interface Propagation {
+  /** Methods that work for this plant, easiest/most reliable first. */
+  methods: PropagationMethod[];
+  /** Plant-specific, plain-language how-to — timing, seed cleaning, quirks. */
+  note: string;
+  /** Where the method comes from — a dependable, citable propagation source. */
+  basis: string;
+}
+
 export interface SizeSnapshot {
   /** Years since planting. */
   year: number;
@@ -72,6 +108,9 @@ export interface Plant {
 
   confidence: "high" | "medium" | "low";
   basis: string; // where the numbers come from
+
+  /** How to reproduce it — save seed, or take from the plant you've got. */
+  propagation: Propagation;
 
   photoUrl?: string; // optional; card degrades to a drawn silhouette offline
 }

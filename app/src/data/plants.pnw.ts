@@ -76,6 +76,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "The single most valuable tree for west-side wildlife: hundreds of caterpillar species, acorns for jays, woodpeckers and mammals, and the backbone of Garry oak savanna.",
     confidence: "high",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: oak genus, western estimate (Tallamy/NWF).",
+    propagation: {
+      methods: ["seed-warm", "seed-direct"],
+      note: "Gather acorns as they drop in fall and float them in water — toss any that bob to the top, and sow the sinkers right away. White-oak acorns sprout that same autumn without any chilling, and they must never be allowed to dry out. Because of the deep taproot, start it in a tall pot or sow it straight where it will live.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "pseudotsuga-menziesii",
@@ -106,6 +111,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Seeds feed crossbills, siskins and chickadees; the dense canopy shelters owls and songbirds; and few trees store more carbon.",
     confidence: "high",
     basis: "Native status/range: USDA PLANTS. Size: USFS Silvics / FEIS. Host count: Pseudotsuga, conservative western estimate.",
+    propagation: {
+      methods: ["seed-cold-moist"],
+      note: "Collect cones as they ripen and turn brown in late summer, then dry them in a paper bag until they open and shake out the winged seed. About a month of cold, damp storage in the fridge before spring sowing gives you a more even stand of seedlings.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "thuja-plicata",
@@ -136,6 +146,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Evergreen year-round shelter for birds, dense screening, huge carbon storage, and roots that hold wet ground together.",
     confidence: "high",
     basis: "Native status/range: USDA PLANTS. Size: USFS FEIS. Host count: conifer, low (few Lepidoptera use it).",
+    propagation: {
+      methods: ["seed-cold-moist"],
+      note: "Pick the small cones as they ripen and brown in fall and dry them until they release their seed. A few weeks of cold, damp storage before sowing helps it come up more evenly, though this one germinates fairly willingly.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "acer-macrophyllum",
@@ -166,6 +181,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Early flowers feed the first bees of spring, samaras feed birds and rodents, and it hosts many caterpillars while draping itself in moss and licorice fern.",
     confidence: "high",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: maple genus, western estimate.",
+    propagation: {
+      methods: ["seed-cold-moist"],
+      note: "Collect the winged samaras once they ripen in fall. Either sow them outdoors right away and let the weather do the work, or give them a couple of months of cold, damp chilling in the fridge so they sprout in spring.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "populus-trichocarpa",
@@ -196,6 +216,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "One of the top caterpillar hosts in the West — food for warblers and vireos — plus balsam-scented spring buds and roots that armor a riverbank.",
     confidence: "high",
     basis: "Native status/range: USDA PLANTS. Host count: poplar/aspen genus, high western estimate (Tallamy/NWF).",
+    propagation: {
+      methods: ["cuttings-hardwood", "seed-surface-light"],
+      note: "The easiest tree here to start: cut pencil-thick dormant twigs in late winter and push them into damp ground, and they root on their own. The cottony seed is only alive for a few days, so if you go that route scatter it onto wet mud the moment it sheds.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "arbutus-menziesii",
@@ -226,6 +251,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Peeling cinnamon bark, urn-shaped flowers for bees, and red-orange berries that band-tailed pigeons, robins and waxwings depend on.",
     confidence: "medium",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Culture: notoriously sensitive to summer water. Host count: Arbutus, low-moderate estimate.",
+    propagation: {
+      methods: ["seed-cold-moist"],
+      note: "Scoop the seed from ripe fall berries, rinse off all the pulp, and give it about two months of cold, damp chilling. It hates having its roots disturbed, so start it in a deep pot or sow it right where it will grow and move it as little as possible.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "amelanchier-alnifolia",
@@ -256,6 +286,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Early white blossoms for emerging bees, sweet blue 'saskatoon' berries loved by birds and people, and fiery fall color.",
     confidence: "high",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Amelanchier genus (NWF).",
+    propagation: {
+      methods: ["seed-cold-moist", "suckers"],
+      note: "Clean the seed out of the ripe summer berries and give it a long cold, damp winter — it can be slow and may not all come up the first spring, so don't give up on the pot. Simpler still, dig the rooted suckers it throws up around the base and replant them.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "salix-scouleriana",
@@ -286,6 +321,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "A keystone: willows host more caterpillars than almost anything else here, feeding nesting birds, and the earliest catkins fuel queen bumblebees and mason bees when nothing else blooms.",
     confidence: "high",
     basis: "Native status/range: USDA PLANTS, E-Flora BC. Host count: willow genus, top western host (Tallamy/NWF).",
+    propagation: {
+      methods: ["cuttings-hardwood", "seed-surface-light"],
+      note: "Like other willows it roots almost effortlessly from dormant winter cuttings pushed into moist soil. Its fluffy seed lives only a few days, so if you collect it sow it onto wet ground immediately.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
 
   // ---------------- SHRUBS ----------------
@@ -318,6 +358,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Fragrant yellow late-winter flowers are one of the first nectar sources for bees; blue berries feed robins and waxwings; glossy evergreen leaves give year-round structure.",
     confidence: "high",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Berberis, low. Pollinator/bird value: Xerces Maritime NW.",
+    propagation: {
+      methods: ["seed-cold-moist", "suckers", "cuttings-semi-hardwood"],
+      note: "Mash the ripe blue berries, rinse the seed clean, and give it a cold, damp winter. It also spreads by underground suckers you can dig and move, and cuttings of firming-up shoots in late summer will root.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "ribes-sanguineum",
@@ -348,6 +393,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Its pink flower clusters open exactly when rufous hummingbirds return in spring, feeding them and early bees; the berries then feed songbirds.",
     confidence: "high",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Ribes, moderate estimate. Hummingbird timing: Xerces / Burke Herbarium.",
+    propagation: {
+      methods: ["cuttings-hardwood", "seed-cold-moist"],
+      note: "By far the easiest way is dormant hardwood cuttings taken in late fall or winter, which root readily in damp soil. Seed works too, but you'll need to clean it from the berries and give it a cold, damp winter first.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "holodiscus-discolor",
@@ -378,6 +428,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Foaming cream flower sprays swarm with native bees and butterflies in midsummer; dense twigs shelter and feed birds; deep roots hold a slope.",
     confidence: "high",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Holodiscus/Rosaceae, moderate estimate. Pollinator value: Xerces Maritime NW.",
+    propagation: {
+      methods: ["seed-surface-light", "cuttings-semi-hardwood"],
+      note: "The seed is dust-fine, so scatter it on the surface and don't bury it, and give it a cold, damp winter — germination can be stubborn and patchy. Cuttings of firming-up summer shoots are the other common route.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "symphoricarpos-albus",
@@ -408,6 +463,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Summer flowers feed hummingbirds and bees; the white winter berries feed quail, grouse and robins; and its roots knit up a difficult bank.",
     confidence: "high",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Symphoricarpos, moderate estimate.",
+    propagation: {
+      methods: ["suckers", "cuttings-hardwood", "seed-double-dormant"],
+      note: "Easiest by far is to dig the rooted suckers it spreads by, or take dormant hardwood cuttings in winter. Seed is slow and stubborn, often needing two winters before it comes up, so most people skip it.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "cornus-sericea",
@@ -438,6 +498,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Brilliant red winter stems, white flowers for pollinators, white berries for migrating birds, and one of the best plants for stabilizing wet, eroding ground.",
     confidence: "high",
     basis: "Native status/range: USDA PLANTS (native coast to coast). Host count: Cornus genus (NWF).",
+    propagation: {
+      methods: ["cuttings-hardwood", "layering"],
+      note: "About as easy as planting gets — push dormant hardwood cuttings into moist ground in winter and they root. Low branches that touch the soil also root on their own, and you can cut those free and move them.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "rosa-nutkana",
@@ -468,6 +533,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Large single pink roses feed bumblebees and other native bees; the hips feed birds and small mammals into winter; and the thicket gives nesting cover.",
     confidence: "high",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Rosa genus, moderate estimate.",
+    propagation: {
+      methods: ["suckers", "cuttings-hardwood", "seed-cold-moist"],
+      note: "Simplest is to dig the rooted suckers it sends up around itself, or take dormant hardwood cuttings in winter. Growing from the hips is slow: clean the seed out, give it a long cold, damp winter, and be patient with uneven germination.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
   {
     id: "gaultheria-shallon",
@@ -498,6 +568,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Urn-shaped flowers feed hummingbirds and bees, edible blue-black berries feed birds and people, and the evergreen thicket gives year-round cover on difficult shady ground.",
     confidence: "high",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Ericaceae/Gaultheria, moderate estimate.",
+    propagation: {
+      methods: ["cuttings-semi-hardwood", "layering", "seed-surface-light"],
+      note: "Take cuttings of firming-up shoots in summer, or dig the rooted layers and spreading shoots it forms along the ground. The seed is tiny — press it onto the surface of an acidic mix, keep it moist, and expect slow, uneven results.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+    },
   },
 
   // ---------------- PERENNIALS ----------------
@@ -530,6 +605,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Sheets of blue spring flowers feed queen bumblebees and mason bees, and it re-creates the vanishing wet-prairie habitat that once fed both people and pollinators.",
     confidence: "high",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Pollinator value: Xerces Maritime NW.",
+    propagation: {
+      methods: ["seed-cold-moist", "division"],
+      note: "Sow cleaned seed in fall and let it take the winter chill, but be patient — the bulbs take several years to reach blooming size. Quicker is to lift dormant clumps in summer and gently separate the little bulb offsets.",
+      basis: "USFS Native Plant Network; OregonFlora.",
+    },
   },
   {
     id: "achillea-millefolium",
@@ -560,6 +640,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Flat flower heads are a landing pad for a huge range of small native bees, hoverflies, wasps and butterflies all summer, on a plant that survives total neglect.",
     confidence: "high",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Achillea, moderate estimate. Pollinator value: Xerces.",
+    propagation: {
+      methods: ["seed-surface-light", "division"],
+      note: "The seed is tiny and needs light, so scatter it on the surface and barely cover it. Even easier, lift and pull apart the clumps in spring or fall — it divides without complaint and re-roots fast.",
+      basis: "USFS Native Plant Network.",
+    },
   },
   {
     id: "aquilegia-formosa",
@@ -590,6 +675,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Nodding red-and-yellow lanterns bloom just as rufous hummingbirds are nesting, and also draw long-tongued bumblebees.",
     confidence: "high",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Aquilegia genus (NWF).",
+    propagation: {
+      methods: ["seed-surface-light", "seed-cold-moist"],
+      note: "Surface-sow the fine seed where it gets light, and a cold, damp winter — or simply sowing outdoors in fall — helps it wake up. Once you have a plant it quietly self-sows, so leave a few seed heads to ripen and scatter.",
+      basis: "USFS Native Plant Network.",
+    },
   },
   {
     id: "penstemon-serrulatus",
@@ -620,6 +710,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Clusters of blue-purple tubes are a magnet for bumblebees, which are its main pollinators, plus other native bees.",
     confidence: "medium",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Penstemon, low estimate. Pollinator value: Xerces.",
+    propagation: {
+      methods: ["seed-cold-moist", "cuttings-softwood", "division"],
+      note: "Give the small seed a cold, damp winter before it will sprout. You can also take soft cuttings from fresh new growth in early summer, or lift and split established clumps in spring.",
+      basis: "USFS Native Plant Network.",
+    },
   },
   {
     id: "eriophyllum-lanatum",
@@ -650,6 +745,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Woolly silver foliage topped with golden daisies feeds native bees and butterflies through early summer on the poorest, driest ground.",
     confidence: "medium",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Eriophyllum/Asteraceae, low-moderate estimate. Pollinator value: Xerces.",
+    propagation: {
+      methods: ["seed-surface-light", "cuttings-softwood"],
+      note: "Scatter the seed on the surface so it gets light, and a cold, damp spell helps prompt it. Soft early-summer cuttings root well too. It's short-lived but self-sows, so let some seed drop to keep it going.",
+      basis: "USFS Native Plant Network.",
+    },
   },
 
   // ---------------- GRASS ----------------
@@ -682,6 +782,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Evergreen-ish blue-green tufts host skipper butterflies, shelter ground-nesting bees and birds, and hold dry prairie soil together — the living framework of restored oak savanna.",
     confidence: "medium",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU). Host count: native fescue, skipper host, low-moderate estimate.",
+    propagation: {
+      methods: ["seed-direct", "division"],
+      note: "Sow the seed in fall or spring — this cool-season bunchgrass needs little or no chilling and comes up readily on bare soil. Established tufts can also be dug and pulled apart into smaller divisions.",
+      basis: "USFS Native Plant Network; OregonFlora.",
+    },
   },
 
   // ---------------- VINE ----------------
@@ -714,6 +819,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Whorls of orange trumpets feed hummingbirds and the following red berries feed songbirds; a native replacement for aggressive ornamental vines.",
     confidence: "medium",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Lonicera genus (NWF).",
+    propagation: {
+      methods: ["cuttings-semi-hardwood", "layering", "seed-cold-moist"],
+      note: "Take cuttings of firming-up shoots in summer, or pin a low stem down to the soil to root where it touches. Seed from the berries needs cleaning and a cold, damp winter before it will sprout.",
+      basis: "USFS Native Plant Network.",
+    },
   },
 
   // ---------------- GROUNDCOVER & FERN ----------------
@@ -746,6 +856,11 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "White spring flowers for bees, small sweet berries for birds and people, and an evergreen-ish groundcover that hosts many caterpillars and holds sandy soil.",
     confidence: "high",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Fragaria genus (NWF).",
+    propagation: {
+      methods: ["runners"],
+      note: "The easiest thing in this whole list: it throws out runners that root little plantlets as they travel. Just snip off a rooted plantlet and pot it up or plant it where you want more.",
+      basis: "USFS Native Plant Network.",
+    },
   },
   {
     id: "polystichum-munitum",
@@ -776,5 +891,10 @@ export const SEED_RAW: RawPlant[] = [
     givesNote: "Stays green all winter, its big fronds catching leaf litter and slowing erosion on a shaded slope, and giving cover to salamanders and small wildlife. Ferns feed very few caterpillars — included for shade cover and erosion, not food-web value.",
     confidence: "high",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Ferns support very few Lepidoptera (honest low host value).",
+    propagation: {
+      methods: ["spores", "division"],
+      note: "It can be grown from the spores that ripen on the backs of the fronds, but that's slow and fiddly. Far easier is to dig an established clump in spring and split the crown into pieces, each with some roots and fronds.",
+      basis: "USFS Native Plant Network.",
+    },
   },
 ];

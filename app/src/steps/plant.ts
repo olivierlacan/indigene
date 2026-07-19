@@ -350,7 +350,7 @@ function propagationBlock(p: Plant): HTMLElement {
     ]);
   });
   return el("details", {}, [
-    el("summary", { style: "cursor:pointer;font-weight:700;min-height:3rem;display:flex;align-items:center;" }, "Already have one? How to grow more (tap to open)"),
+    el("summary", {}, "🪴 Already have one? How to grow more"),
     el("p", { class: "kv", style: "margin-top:0.5rem" }, [
       el("span", { class: "k" }, "For this plant: "),
       note,

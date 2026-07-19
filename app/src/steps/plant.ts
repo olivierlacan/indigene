@@ -10,7 +10,7 @@ import { searchPlaces, placeLabel, nearestPlaceName } from "../lib/geocode";
 import { manualSunEstimate } from "../lib/solar";
 import { findPlant, assessSpot, plantShareUrl } from "../lib/explore";
 import type { PlantEntry, Suitability } from "../lib/explore";
-import { scoreLabels, confidencePlain, growthPlain, DATA_SOURCES_URL } from "../lib/plain";
+import { scoreLabels, confidencePlain, growthPlain, propagationMethods, DATA_SOURCES_URL, PROPAGATION_SOURCE_URL } from "../lib/plain";
 import { silhouetteFor } from "../components/plant-card";
 import { keystoneIcon } from "../components/keystone-icon";
 import { statGrid } from "../components/stat-card";
@@ -107,6 +107,7 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
           el("summary", { style: "cursor:pointer;font-weight:700;min-height:3rem;display:flex;align-items:center;" }, "What it does for the ecosystem (tap to open)"),
           el("ul", { class: "score-list" }, scoreParts),
         ]),
+        propagationBlock(p),
         el("p", { class: "confidence" }, [
           el("strong", {}, `Confidence: ${p.confidence}. `),
           confidencePlain(p.confidence),
@@ -334,6 +335,34 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
       verdictEl,
     ]);
   }
+}
+
+// "Already have one? Here's how to make more." Every method the plant lists is
+// spelled out in plain words (from the shared glossary), so a term like
+// "stratification" never appears without the what-you-actually-do beside it.
+function propagationBlock(p: Plant): HTMLElement {
+  const { methods, note, basis } = p.propagation;
+  const methodItems = methods.map((m) => {
+    const g = propagationMethods[m];
+    return el("li", { class: "score-item" }, [
+      el("div", { class: "score-head" }, [el("span", {}, g.name)]),
+      el("p", { class: "score-why" }, g.plain),
+    ]);
+  });
+  return el("details", {}, [
+    el("summary", { style: "cursor:pointer;font-weight:700;min-height:3rem;display:flex;align-items:center;" }, "Already have one? How to grow more (tap to open)"),
+    el("p", { class: "kv", style: "margin-top:0.5rem" }, [
+      el("span", { class: "k" }, "For this plant: "),
+      note,
+    ]),
+    el("ul", { class: "score-list" }, methodItems),
+    el("p", { class: "confidence", style: "margin-top:0.4rem" }, [
+      el("span", { style: "opacity:0.8" }, [
+        `How-to source: ${basis} `,
+        el("a", { href: PROPAGATION_SOURCE_URL, target: "_blank", rel: "noopener" }, "USFS Native Plant Network →"),
+      ]),
+    ]),
+  ]);
 }
 
 function moistureShort(b: string): string {

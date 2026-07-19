@@ -19,11 +19,27 @@ import type { Plant, SiteData, SunEstimate } from "../types";
 
 const monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-export function renderPlant(main: HTMLElement, slug?: string): void {
+// The three collapsible/anchorable sections below the profile share one deep-
+// link scheme: #/plants/<slug>/<section>. A link straight to a section opens it
+// and scrolls it into view; opening a section reflects it back into the URL so
+// the link is there to copy. `spot` (the "Want to plant?" tool) is always open,
+// so it only ever scrolls.
+const SECTIONS = ["ecosystem", "propagation", "spot"] as const;
+type Section = (typeof SECTIONS)[number];
+const sectionDomId = (s: Section): string => `sec-${s}`;
+
+export function renderPlant(main: HTMLElement, param?: string): void {
   clear(main);
-  const entries = findPlant(slug ?? "");
+  // The route param is the slug, optionally followed by /<section>.
+  const raw = param ?? "";
+  const slash = raw.indexOf("/");
+  const slug = slash >= 0 ? raw.slice(0, slash) : raw;
+  const wanted = slash >= 0 ? raw.slice(slash + 1) : "";
+  const section = (SECTIONS as readonly string[]).includes(wanted) ? (wanted as Section) : null;
+
+  const entries = findPlant(slug);
   if (!entries.length) {
-    renderNotFound(main, slug ?? "");
+    renderNotFound(main, slug);
     return;
   }
 
@@ -34,12 +50,16 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
 
   main.append(
     profile(plant, entries),
+    ecosystemSection(plant),
+    propagationSection(plant),
     suitabilityChecker(entries),
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("plants") }, "← More natives"),
       el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, "Home"),
     ])
   );
+
+  if (section) revealSection(section);
 
   function profile(p: Plant, all: PlantEntry[]): HTMLElement {
     const badges = el("div", {}, [
@@ -61,19 +81,6 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
     const bloom = p.bloom
       ? `Blooms ${monthNames[p.bloom.startMonth]}–${monthNames[p.bloom.endMonth]} (${p.bloom.color}).`
       : "Grown for foliage, not flowers.";
-
-    const scoreParts = (Object.keys(scoreLabels) as (keyof typeof scoreLabels)[]).map((key) => {
-      const val = (p.scores as unknown as Record<string, number>)[key];
-      const label = scoreLabels[key];
-      return el("li", { class: "score-item" }, [
-        el("div", { class: "score-head" }, [
-          el("span", {}, [el("span", { "aria-hidden": "true" }, `${label.icon} `), label.name]),
-          el("span", {}, `${val}${key === "host" ? ` · ${p.hostLepCount} species` : ""}`),
-        ]),
-        el("div", { class: "score-bar" }, [el("span", { style: `width:${val}%` })]),
-        el("p", { class: "score-why" }, label.plain),
-      ]);
-    });
 
     const shareBtn = el("button", { class: "btn btn-secondary", onClick: () => share(p) }, "🔗 Share this plant");
 
@@ -103,11 +110,6 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
         el("p", { class: "kv" }, [el("span", { class: "k" }, "What it does for you & wildlife: "), p.givesNote]),
         el("p", { class: "kv" }, [el("span", { class: "k" }, "What it needs from you: "), p.careNote]),
         el("p", { class: "kv" }, [el("span", { class: "k" }, "Bloom & moisture: "), `${bloom} Prefers soil that's ${p.moisture.map(moistureShort).join(" or ")}.`]),
-        el("details", {}, [
-          el("summary", {}, "🦋 What it does for the ecosystem"),
-          el("ul", { class: "score-list" }, scoreParts),
-        ]),
-        propagationBlock(p),
         el("p", { class: "confidence" }, [
           el("strong", {}, `Confidence: ${p.confidence}. `),
           confidencePlain(p.confidence),
@@ -311,7 +313,7 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
       }
     }
 
-    return el("section", { class: "card", style: "margin-top:1rem" }, [
+    return el("section", { class: "card", id: sectionDomId("spot"), style: "margin-top:1rem" }, [
       el("h3", { style: "margin-top:0" }, `Want to plant a ${plant.common.toLowerCase()}? Check your spot`),
       el("p", { style: "margin:0.3rem 0 0.6rem" }, [
         `Stand where you'd plant it (or search for your town below) and Indigene checks the soil, climate and region against what this plant needs — native to ${region.meta.name} and beyond, it still has to like your exact spot.`,
@@ -337,10 +339,49 @@ export function renderPlant(main: HTMLElement, slug?: string): void {
   }
 }
 
+// A standalone, collapsible card — the same shape the "Want to plant?" tool
+// uses — that opens on its own deep link and writes that link back to the URL
+// when opened by hand. Kept collapsed by default so the profile stays scannable.
+function sectionCard(section: Section, slug: string, heading: string, body: HTMLElement[]): HTMLDetailsElement {
+  const details = el("details", { class: "card plant-section", id: sectionDomId(section) }, [
+    el("summary", {}, heading),
+    ...body,
+  ]);
+  const base = `#/plants/${slug}`;
+  details.addEventListener("toggle", () => {
+    if (details.open) {
+      history.replaceState(null, "", `${base}/${section}`);
+    } else if (location.hash === `${base}/${section}`) {
+      history.replaceState(null, "", base);
+    }
+  });
+  return details;
+}
+
+// The seven ecosystem-benefit scores, each with its fixed icon and plain-words
+// gloss. Its own card now, so it can be linked to and opened directly.
+function ecosystemSection(p: Plant): HTMLDetailsElement {
+  const scoreParts = (Object.keys(scoreLabels) as (keyof typeof scoreLabels)[]).map((key) => {
+    const val = (p.scores as unknown as Record<string, number>)[key];
+    const label = scoreLabels[key];
+    return el("li", { class: "score-item" }, [
+      el("div", { class: "score-head" }, [
+        el("span", {}, [el("span", { "aria-hidden": "true" }, `${label.icon} `), label.name]),
+        el("span", {}, `${val}${key === "host" ? ` · ${p.hostLepCount} species` : ""}`),
+      ]),
+      el("div", { class: "score-bar" }, [el("span", { style: `width:${val}%` })]),
+      el("p", { class: "score-why" }, label.plain),
+    ]);
+  });
+  return sectionCard("ecosystem", p.id, "🦋 What it does for the ecosystem", [
+    el("ul", { class: "score-list" }, scoreParts),
+  ]);
+}
+
 // "Already have one? Here's how to make more." Every method the plant lists is
 // spelled out in plain words (from the shared glossary), so a term like
 // "stratification" never appears without the what-you-actually-do beside it.
-function propagationBlock(p: Plant): HTMLElement {
+function propagationSection(p: Plant): HTMLDetailsElement {
   const { methods, note, basis } = p.propagation;
   const methodItems = methods.map((m) => {
     const g = propagationMethods[m];
@@ -349,8 +390,7 @@ function propagationBlock(p: Plant): HTMLElement {
       el("p", { class: "score-why" }, g.plain),
     ]);
   });
-  return el("details", {}, [
-    el("summary", {}, "🪴 Already have one? How to grow more"),
+  return sectionCard("propagation", p.id, "🪴 Already have one? How to grow more", [
     el("p", { class: "kv", style: "margin-top:0.5rem" }, [
       el("span", { class: "k" }, "For this plant: "),
       note,
@@ -363,6 +403,17 @@ function propagationBlock(p: Plant): HTMLElement {
       ]),
     ]),
   ]);
+}
+
+// Open the deep-linked section (if it collapses) and bring it into view. Runs
+// after the router's own scroll-to-top on the next frame, so it wins.
+function revealSection(section: Section): void {
+  requestAnimationFrame(() => {
+    const target = document.getElementById(sectionDomId(section));
+    if (!target) return;
+    if (target instanceof HTMLDetailsElement) target.open = true;
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 }
 
 function moistureShort(b: string): string {

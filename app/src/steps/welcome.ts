@@ -4,7 +4,7 @@ import { listSpots } from "../db";
 import { REGIONS } from "../lib/plants";
 import { featuredPlant } from "../lib/explore";
 import { whyThis } from "../components/learn";
-import { DATA_SOURCES_URL } from "../lib/plain";
+import { DATA_SOURCES_URL, ISSUES_URL } from "../lib/plain";
 
 export async function renderWelcome(main: HTMLElement): Promise<void> {
   clear(main);
@@ -13,15 +13,15 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
   main.append(
     el("h2", { class: "step-title" }, "Find the right native plants for exactly where you're standing"),
     el("p", { class: "step-lede" }, [
-      "Stand in the spot you want to plant. This app measures how much sun it gets, looks up the soil and climate, and shows you native plants that will actually thrive there — ranked by how much they help local wildlife.",
+      "Native plants are what your local birds, bees, and butterflies eat — without them, the food web in your yard goes hungry. Stand in the spot you want to plant, and this app measures how much sun it gets, looks up the soil and climate, and shows you the natives that will actually thrive there — ranked by how much life they feed.",
     ]),
     el("div", { class: "note info" }, [
       el("strong", {}, "No account, nothing to sign up for. "),
       "Everything stays on your phone, and it keeps working with no signal once you've loaded a spot.",
     ]),
     whyThis("Why native plants?", [
-      "Most caterpillars can only eat the plants they evolved alongside, and nearly every backyard bird raises its chicks on caterpillars. ",
-      "So a native plant isn't just decoration — it's the bottom of the local food web, back in business the season you plant it.",
+      "Most caterpillars can only eat the plants they evolved alongside, and nearly every backyard bird raises its chicks on caterpillars. No natives means no caterpillars, and no caterpillars means no baby birds. ",
+      "A lawn or an imported ornamental feeds almost nothing; a native plant is the bottom of the local food web, back in business the season you plant it.",
     ]),
     el("div", { class: "card" }, [
       el("h3", {}, REGIONS.length > 1 ? "Regions covered so far" : "Right now this covers one region"),
@@ -32,7 +32,11 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
           ` — ${r.meta.reference}`,
         ]))
       ),
-      el("p", { style: "margin:0" }, "Outside these areas the sun and soil readings still work, and the app tells you plainly when it has no plant list for your spot yet."),
+      el("p", { style: "margin:0" }, [
+        "Outside these areas the sun and soil readings still work, and the app tells you plainly when it has no plant list for your spot yet. Want your area next? ",
+        el("a", { href: ISSUES_URL, target: "_blank", rel: "noopener" }, "Suggest it on GitHub"),
+        " — open an issue with your ZIP or town so we know where to grow next.",
+      ]),
     ]),
     el("button", {
       class: "btn btn-primary btn-block",

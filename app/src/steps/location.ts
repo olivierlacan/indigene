@@ -314,7 +314,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
   }
 
   const searchCard = el("div", { class: "card" }, [
-    el("h3", {}, "No GPS? Search for where you are"),
+    el("h3", {}, "No GPS? Search by town"),
     el("form", {
       onSubmit: (e: Event) => { e.preventDefault(); void doSearch(); },
     }, [
@@ -328,7 +328,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
 
   // --- The escape hatch: pick a region by hand, no map point at all. ---
   const regionCard = el("details", { class: "card" }, [
-    el("summary", {}, "🗺️ Know your region? Pick it yourself"),
+    el("summary", {}, "🗺️ Pick your region"),
     el("p", {}, [
       "If you already know which of our regions — or which EPA ecoregion — you're in, you can skip the map. ",
       "Fair warning: without a map point we can't look up your soil, rainfall, or winter cold, so you'll answer the sun and moisture questions yourself and the plant list leans on what you tell us.",

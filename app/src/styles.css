@@ -316,6 +316,16 @@ details[open] > summary::after {
   transform: rotate(180deg);
 }
 
+/* Ecosystem & propagation: each its own collapsible card whose summary is its
+   heading — the same card treatment the "Want to plant?" tool uses, so the
+   sections below a plant read as siblings and each opens on its own deep link. */
+.plant-section > summary {
+  font-size: 1.17rem;
+}
+.plant-section[open] > summary {
+  margin-bottom: 0.6rem;
+}
+
 /* --- Just-in-time education asides ("why this matters") --- */
 .learn {
   margin: 0 0 1rem;

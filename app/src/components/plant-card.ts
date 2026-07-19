@@ -87,7 +87,7 @@ export function plantCard(r: Ranked, weights: Weights): HTMLElement {
       el("strong", {}, `Confidence: ${p.confidence}. `),
       confidencePlain(p.confidence),
       " ",
-      el("span", { style: "opacity:0.8" }, [
+      el("span", {}, [
         `Source: ${p.basis} `,
         el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, "All sources & licensing →"),
       ]),

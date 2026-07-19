@@ -69,7 +69,7 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
       el("button", { class: "btn btn-secondary btn-block", onClick: () => navigate("saved") }, `Open saved spots (${spots.length})`),
     ]),
 
-    el("p", { style: "margin-top:2rem;font-size:0.85rem;opacity:0.75" }, [
+    el("p", { style: "margin-top:2rem;font-size:0.85rem" }, [
       "Open-source (MIT). Data from USDA, USGS, EPA ecoregions, ISRIC SoilGrids, Open-Meteo, and Tallamy/NWF host-plant research — ",
       el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, "full source list & licensing"),
       ". It gives its best honest estimate and always tells you how sure it is.",

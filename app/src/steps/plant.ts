@@ -114,7 +114,7 @@ export function renderPlant(main: HTMLElement, param?: string): void {
           el("strong", {}, `Confidence: ${p.confidence}. `),
           confidencePlain(p.confidence),
           " ",
-          el("span", { style: "opacity:0.8" }, [
+          el("span", {}, [
             `Source: ${p.basis} `,
             el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, "All sources & licensing →"),
           ]),
@@ -397,7 +397,7 @@ function propagationSection(p: Plant): HTMLDetailsElement {
     ]),
     el("ul", { class: "score-list" }, methodItems),
     el("p", { class: "confidence", style: "margin-top:0.4rem" }, [
-      el("span", { style: "opacity:0.8" }, [
+      el("span", {}, [
         `How-to source: ${basis} `,
         el("a", { href: PROPAGATION_SOURCE_URL, target: "_blank", rel: "noopener" }, "USFS Native Plant Network →"),
       ]),

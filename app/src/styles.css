@@ -800,31 +800,73 @@ input[type="range"] {
   background: var(--surface-2);
   color: var(--ink-soft);
 }
-/* Tap-to-explain tie chips. Sized like a badge but a real button: the dotted
-   underline marks it as "there's more here", and it opens the term dialog. */
+/* Tap-to-explain tie chips: a colored pill with a white monochrome glyph and a
+   one-word label. A real button — the dotted underline under the label marks it
+   as "there's more here", and it opens the term dialog. */
 .tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
   font: inherit;
   font-size: 0.78rem;
   font-weight: 700;
-  padding: 0.15rem 0.5rem;
+  padding: 0.18rem 0.55rem;
   border: 0;
   border-radius: 999px;
   cursor: pointer;
   background: var(--surface-2);
   color: var(--ink-soft);
+}
+.tag .tag-label {
   text-decoration: underline dotted;
   text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
 }
-/* Host — the strongest support, in the brand green (matches the host badge). */
+.tie-glyph {
+  flex: 0 0 auto;
+  vertical-align: -0.12em; /* used when a glyph sits inline (e.g. plant-page chips) */
+}
+/* Per-kind pills: a muted color with a white glyph + label. Each clears ≥4.5:1
+   for white text (the pill is the background, so it holds in both themes). */
 .tag-host {
-  background: var(--brand);
-  color: var(--on-brand);
+  background: #2e7d46;
+  color: #fff;
 }
-/* "Essential" — a make-or-break tie. Gold, so it stands apart from the green
-   host chip beside it; the dark ink keeps ≥7:1 contrast in both themes. */
+.tag-nectar {
+  background: #b5501b;
+  color: #fff;
+}
+.tag-berries {
+  background: #7b4ea3;
+  color: #fff;
+}
+.tag-seeds {
+  background: #8a6a3b;
+  color: #fff;
+}
+.tag-shelter {
+  background: #2a7d78;
+  color: #fff;
+}
+/* "Specialist" — a muted indigo, distinct from the role pills. */
+.tag-narrow {
+  background: #5566b5;
+  color: #fff;
+}
+/* "Essential" — gold with dark ink, the one make-or-break flag; it stands apart
+   from the colored role pills beside it. */
 .tag-sole {
   background: #f2c94c;
   color: #3a2c00;
+}
+/* The term dialog's title glyph sits in the ink color beside the word. */
+.term-dialog-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.term-dialog-glyph {
+  display: inline-flex;
 }
 
 .size-viz {

@@ -25,6 +25,7 @@ import { relianceLabels, supportLabels, wildlifeKindLabels, DATA_SOURCES_URL } f
 import { speciesRecordUrl } from "../data/sources";
 import { citation } from "../components/citation";
 import { termTag } from "../components/term-dialog";
+import { supportIcon, relianceIcon } from "../components/support-icon";
 import { silhouetteFor } from "../components/plant-card";
 import { keystoneIcon } from "../components/keystone-icon";
 import type { SupportLink } from "../types";
@@ -253,16 +254,19 @@ function speciesLink(w: Parameters<typeof speciesRecordUrl>[0]): HTMLElement | n
   ]);
 }
 
-// The tie as one-word, tap-to-explain chips: the role ("Host", "Nectar") always,
-// then a strength chip only when it's notable — "Essential" (make-or-break) or
-// "Specialist". A generalist tie shows no strength chip, so an unmarked plant
-// reads as "one of many" without a word of clutter.
+// The tie as one-word, tap-to-explain chips with monochrome glyphs: the role
+// ("Host", "Nectar") always, then a strength chip only when it's notable —
+// "Essential" (make-or-break) or "Specialist". A generalist tie shows no
+// strength chip, so an unmarked plant reads as "one of many" without clutter.
+// Each chip carries its own pill color (see the `.tag-*` rules).
 function tieTags(link: SupportLink): HTMLElement[] {
-  const role = supportLabels[link.support];
-  const tags = [termTag(role, link.support === "host" ? "host" : "")];
+  const kind = link.support;
+  const role = { ...supportLabels[kind], glyph: () => supportIcon(kind) };
+  const tags = [termTag(role, kind)];
   const r = relianceOf(link);
   if (r !== "broad") {
-    tags.push(termTag(relianceLabels[r], r === "sole" ? "sole" : ""));
+    const strength = { ...relianceLabels[r], glyph: () => relianceIcon(r) as SVGElement };
+    tags.push(termTag(strength, r));
   }
   return tags;
 }

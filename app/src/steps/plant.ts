@@ -12,12 +12,13 @@ import { findPlant, assessSpot, plantShareUrl } from "../lib/explore";
 import type { PlantEntry, Suitability } from "../lib/explore";
 import { wildlifeForPlant, relianceOf } from "../lib/wildlife";
 import { supportLabels } from "../lib/plain";
+import { supportIcon } from "../components/support-icon";
 import { scoreLabels, confidencePlain, growthPlain, propagationMethods, DATA_SOURCES_URL, PROPAGATION_SOURCE_URL } from "../lib/plain";
 import { silhouetteFor } from "../components/plant-card";
 import { keystoneIcon } from "../components/keystone-icon";
 import { statGrid } from "../components/stat-card";
 import { drawSizeViz } from "../components/size-viz";
-import type { Plant, SiteData, SunEstimate } from "../types";
+import type { Plant, SiteData, SunEstimate, SupportKind } from "../types";
 
 const monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -424,7 +425,9 @@ function whoItFeeds(entries: PlantEntry[]): HTMLElement | null {
           w.sole ? el("span", { "aria-hidden": "true" }, "⭐ ") : null,
           el("span", { "aria-hidden": "true" }, `${w.icon} `),
           w.name,
-          el("span", { "aria-hidden": "true", style: "opacity:0.7" }, `  ${supportLabels[w.support as keyof typeof supportLabels].icon}`),
+          el("span", { "aria-hidden": "true", style: "opacity:0.7;margin-left:0.3rem;display:inline-flex" }, [
+            supportIcon(w.support as SupportKind, 13),
+          ]),
         ])
       )
     ),

@@ -171,12 +171,34 @@ export interface Wildlife {
 export type SupportKind = "host" | "nectar" | "berries" | "seeds" | "shelter";
 
 /**
- * One plant→animal tie: which animal, how the plant supports it, why, and where
- * the claim comes from. Lives in the region support map in `data/wildlife.ts`.
+ * How strongly the animal depends on THIS plant (or the plant group it stands
+ * in for). `support` says *how* the plant helps; this says *how much it matters*
+ * — the difference between a make-or-break tie and a nice-to-have.
+ *
+ *  - "sole"   The animal's only option: an obligate host with no substitute —
+ *             a monarch on milkweed, an atala on coontie. Lose it locally and
+ *             you lose the animal. The headline conservation ties.
+ *  - "narrow" A specialist restricted to a small group this plant belongs to
+ *             (sunflower-family specialist bees; a butterfly tied to one plant
+ *             family). Important, with only a few alternatives.
+ *  - "broad"  One of many the animal uses — valuable, but not make-or-break.
+ *
+ * Optional, defaulting to "broad" (see `relianceOf`): most ties — adult nectar,
+ * fruit, seed — are generalist, and defaulting to the weaker claim means we
+ * never overstate a dependence we didn't explicitly vouch for.
+ */
+export type SupportReliance = "sole" | "narrow" | "broad";
+
+/**
+ * One plant→animal tie: which animal, how the plant supports it, how much the
+ * animal depends on it, why, and where the claim comes from. Lives in the region
+ * support map in `data/wildlife.ts`.
  */
 export interface SupportLink {
   wildlifeId: string;
   support: SupportKind;
+  /** How much the animal depends on this plant. Omit for the "broad" default. */
+  reliance?: SupportReliance;
   /** Plant-specific, plain-language why/how. */
   note: string;
   /** A dependable, citable source for this relationship. */

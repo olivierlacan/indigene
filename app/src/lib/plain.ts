@@ -1,7 +1,7 @@
 // Plain-language layer. The rule from the brief: never surface a term without
 // explaining it inline, in words a 70-year-old who has never heard "keystone
 // species" can act on. Everything jargon-y funnels through here.
-import type { MoistureBand, PropagationMethod, SizeSnapshot, SupportKind, WildlifeKind } from "../types";
+import type { MoistureBand, PropagationMethod, SizeSnapshot, SupportKind, SupportReliance, WildlifeKind } from "../types";
 
 /** The full audit of every dataset behind the numbers — linked wherever we
  * cite a figure (host counts especially) so claims stay checkable. */
@@ -223,6 +223,40 @@ export const supportLabels: Record<
     verb: "Shelters it",
     icon: "🏠",
     plain: "Cover and habitat to nest, graze, roost, or ride out the season in.",
+  },
+};
+
+/**
+ * How much an animal depends on a plant, glossed once. `label` is the short chip
+ * text; `hostLabel` sharpens it when the tie is a larval host ("Its only host"
+ * reads truer than "Its only option" for a caterpillar plant); `plain` is the
+ * one-line why, shown as a tooltip. `weight` lets the UI style the make-or-break
+ * ties loud and the generalist ones quiet.
+ */
+export const relianceLabels: Record<
+  SupportReliance,
+  { icon: string; label: string; hostLabel: string; plain: string; weight: "strong" | "mid" | "soft" }
+> = {
+  sole: {
+    icon: "⭐",
+    label: "Its only source",
+    hostLabel: "Its only host",
+    plain: "No substitute — this plant (or its close kin) is the only one that will do. Lose it here and you lose the animal. These are the make-or-break ties.",
+    weight: "strong",
+  },
+  narrow: {
+    icon: "🎯",
+    label: "One of just a few",
+    hostLabel: "One of just a few hosts",
+    plain: "A specialist: it can use only a small group of plants, and this is one of them. Important, with few alternatives.",
+    weight: "mid",
+  },
+  broad: {
+    icon: "•",
+    label: "One of many it uses",
+    hostLabel: "One of many hosts",
+    plain: "Valuable, but the animal uses many plants — helpful without being make-or-break on its own.",
+    weight: "soft",
   },
 };
 

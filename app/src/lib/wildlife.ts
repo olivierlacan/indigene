@@ -10,10 +10,15 @@
 // path the rest of the app uses, so a wildlife page can never show a plant the
 // region roster doesn't — and a tie pointing at an unknown id is dropped, not
 // rendered as a broken row (guarded, and surfaced in dev by `auditSupport`).
-import type { Plant, SupportLink, Wildlife, WildlifeKind } from "../types";
+import type { Plant, SupportLink, SupportReliance, Wildlife, WildlifeKind } from "../types";
 import type { RegionDef } from "../data/region";
 import { REGIONS, loadPlants } from "./plants";
 import { SUPPORT, WILDLIFE } from "../data/wildlife";
+
+/** A tie's dependence strength, applying the documented "broad" default. */
+export function relianceOf(link: SupportLink): SupportReliance {
+  return link.reliance ?? "broad";
+}
 
 const wildlifeById = new Map(WILDLIFE.map((w) => [w.id, w]));
 

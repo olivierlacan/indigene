@@ -800,6 +800,19 @@ input[type="range"] {
   background: var(--surface-2);
   color: var(--ink-soft);
 }
+/* "Sole" dependence — a make-or-break tie. Gold, so it stands apart from the
+   green host badge beside it; the dark ink keeps ≥7:1 contrast in both themes. */
+.badge.sole {
+  background: #f2c94c;
+  color: #3a2c00;
+}
+/* The generalist "one of many" default: present but quiet — faint text, no chip. */
+.reliance-soft {
+  display: inline-block;
+  align-self: center;
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+}
 
 .size-viz {
   width: 100%;

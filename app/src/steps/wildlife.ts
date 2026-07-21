@@ -16,11 +16,12 @@ import {
   KIND_ORDER,
   getWildlife,
   plantsForWildlife,
+  relianceOf,
   wildlifeIndex,
   mappedWildlifeCount,
 } from "../lib/wildlife";
 import type { PlantSupport } from "../lib/wildlife";
-import { supportLabels, wildlifeKindLabels, DATA_SOURCES_URL } from "../lib/plain";
+import { relianceLabels, supportLabels, wildlifeKindLabels, DATA_SOURCES_URL } from "../lib/plain";
 import { speciesRecordUrl } from "../data/sources";
 import { citation } from "../components/citation";
 import { silhouetteFor } from "../components/plant-card";
@@ -122,6 +123,7 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
 
   const plantCount = supports.length;
   const hosts = supports.filter((s) => s.link.support === "host").length;
+  const soleCount = supports.filter((s) => relianceOf(s.link) === "sole").length;
 
   main.append(
     el("article", { class: "plant" }, [
@@ -150,6 +152,12 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
         `${plantCount} native ${plantCount === 1 ? "plant" : "plants"} in Indigene support the ${w.common.toLowerCase()}`,
         hosts ? `, ${hosts} of them as a caterpillar host — the strongest tie.` : ".",
       ]),
+      soleCount
+        ? el("p", { class: "note info", style: "margin:0.5rem 0 0" }, [
+            el("strong", {}, `⭐ It can't live without ${soleCount === 1 ? "this plant" : "these plants"}. `),
+            `${soleCount === 1 ? "This is" : `${soleCount} of these are`} its only option — remove ${soleCount === 1 ? "it" : "them"} and the ${w.common.toLowerCase()} has nowhere to go.`,
+          ])
+        : null,
     ]),
   );
 
@@ -162,7 +170,7 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
         ]),
         ...group.items
           .slice()
-          .sort(sortHostFirst)
+          .sort(sortByStrength)
           .map((s) => supportRow(s)),
       ]),
     );
@@ -180,8 +188,13 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
   );
 }
 
-// Host ties first (the strongest), then the rest, each alphabetical by plant.
-function sortHostFirst(a: PlantSupport, b: PlantSupport): number {
+// Strongest dependence first: sole > narrow > broad, then host over other
+// support kinds, then alphabetical — so the make-or-break plants lead.
+const RELIANCE_RANK = { sole: 0, narrow: 1, broad: 2 } as const;
+function sortByStrength(a: PlantSupport, b: PlantSupport): number {
+  const ar = RELIANCE_RANK[relianceOf(a.link)];
+  const br = RELIANCE_RANK[relianceOf(b.link)];
+  if (ar !== br) return ar - br;
   const ah = a.link.support === "host" ? 0 : 1;
   const bh = b.link.support === "host" ? 0 : 1;
   if (ah !== bh) return ah - bh;
@@ -211,7 +224,10 @@ function supportRow(s: PlantSupport): HTMLElement {
           : null,
       ]),
       el("div", { class: "plant-latin", style: "font-size:0.85rem" }, p.latin),
-      supportBadge(s.link),
+      el("div", { style: "display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.3rem" }, [
+        supportBadge(s.link),
+        relianceBadge(s.link),
+      ]),
       el("div", { style: "font-size:0.85rem;color:var(--ink-soft);margin-top:0.25rem" }, s.link.note),
       // Every relationship shows its source, with authority names linked out.
       el("div", { style: "font-size:0.75rem;color:var(--ink-soft);opacity:0.85;margin-top:0.2rem" }, [
@@ -242,8 +258,26 @@ function supportBadge(link: SupportLink): HTMLElement {
   return el("span", {
     class: cls,
     title: s.plain,
-    style: "margin-top:0.3rem",
   }, [el("span", { "aria-hidden": "true" }, `${s.icon} `), s.verb]);
+}
+
+// How much the animal depends on this plant, as a chip. The make-or-break
+// "sole" tie is loud (amber, starred); "narrow" is a quiet neutral chip; the
+// generalist "broad" default is faint text — present, but never oversold.
+function relianceBadge(link: SupportLink): HTMLElement {
+  const r = relianceOf(link);
+  const info = relianceLabels[r];
+  const label = link.support === "host" ? info.hostLabel : info.label;
+  if (r === "broad") {
+    return el("span", {
+      class: "reliance-soft",
+      title: info.plain,
+    }, `${info.icon} ${label}`);
+  }
+  return el("span", {
+    class: r === "sole" ? "badge sole" : "badge neutral",
+    title: info.plain,
+  }, [el("span", { "aria-hidden": "true" }, `${info.icon} `), label]);
 }
 
 function renderNotFound(main: HTMLElement, id: string): void {

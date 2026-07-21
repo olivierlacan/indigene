@@ -359,7 +359,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     "prunus-serotina": [
       { wildlifeId: "eastern-tiger-swallowtail", support: "host", note: "Wild cherry is one of the tiger swallowtail's main larval trees.", basis: "NWF Native Plant Finder; LBJ Wildflower Center." },
       { wildlifeId: "cecropia-moth", support: "host", note: "A classic host for cecropia and other giant silk moth caterpillars.", basis: "NWF Native Plant Finder / Tallamy." },
-      { wildlifeId: "viceroy", support: "host", note: "Cherries are among the willows-and-poplars family the viceroy also uses as a caterpillar host.", basis: "NWF Native Plant Finder." },
+      { wildlifeId: "viceroy", support: "host", reliance: "narrow", note: "Cherries are among the willows-and-poplars family the viceroy also uses as a caterpillar host.", basis: "NWF Native Plant Finder." },
       { wildlifeId: "berry-songbirds", support: "berries", note: "Summer cherries are devoured by dozens of songbirds, from thrushes to catbirds.", basis: "Cornell Lab; LBJ Wildflower Center." },
     ],
     "betula-nigra": [
@@ -370,24 +370,24 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "cecropia-moth", support: "host", note: "Maples are a staple host for cecropia caterpillars.", basis: "NWF Native Plant Finder / Tallamy." },
     ],
     "zizia-aurea": [
-      { wildlifeId: "eastern-black-swallowtail", support: "host", note: "A native carrot-family plant and a true host for black swallowtail caterpillars — not just a nectar stop.", basis: "LBJ Wildflower Center; Xerces." },
+      { wildlifeId: "eastern-black-swallowtail", support: "host", reliance: "narrow", note: "A native carrot-family plant and a true host for black swallowtail caterpillars — not just a nectar stop.", basis: "LBJ Wildflower Center; Xerces." },
       { wildlifeId: "bumble-bees", support: "nectar", note: "Early flat-topped yellow flowers are an accessible spring nectar source for emerging bees.", basis: "Xerces mid-Atlantic list." },
     ],
     "asclepias-tuberosa": [
-      { wildlifeId: "monarch", support: "host", note: "A milkweed — one of the only plants monarch caterpillars can eat, and a favorite egg-laying choice.", basis: "Xerces Society; Monarch Joint Venture." },
+      { wildlifeId: "monarch", support: "host", reliance: "sole", note: "A milkweed — one of the only plants monarch caterpillars can eat, and a favorite egg-laying choice.", basis: "Xerces Society; Monarch Joint Venture." },
       { wildlifeId: "bumble-bees", support: "nectar", note: "The bright orange flowers are a heavy nectar draw for bumble bees and many other pollinators.", basis: "Xerces Society." },
     ],
     "asclepias-incarnata": [
-      { wildlifeId: "monarch", support: "host", note: "A milkweed of damp ground and a key monarch host and nectar plant.", basis: "Xerces Society; Monarch Joint Venture." },
+      { wildlifeId: "monarch", support: "host", reliance: "sole", note: "A milkweed of damp ground and a key monarch host and nectar plant.", basis: "Xerces Society; Monarch Joint Venture." },
       { wildlifeId: "bumble-bees", support: "nectar", note: "Fragrant pink flower clusters are rich in nectar for bumble bees and butterflies.", basis: "Xerces Society." },
     ],
     "echinacea-purpurea": [
-      { wildlifeId: "sunflower-specialist-bees", support: "nectar", note: "A sunflower-family bloom whose pollen feeds the specialist bees that can use nothing else.", basis: "Fowler & Droege, Pollen Specialist Bees." },
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "A sunflower-family bloom whose pollen feeds the specialist bees that can use nothing else.", basis: "Fowler & Droege, Pollen Specialist Bees." },
       { wildlifeId: "american-goldfinch", support: "seeds", note: "Left standing, the spent cones are a favorite winter seed head for goldfinches.", basis: "Cornell Lab; LBJ Wildflower Center." },
       { wildlifeId: "bumble-bees", support: "nectar", note: "A long-blooming summer nectar source for bumble bees and butterflies.", basis: "Xerces Society." },
     ],
     "rudbeckia-fulgida": [
-      { wildlifeId: "sunflower-specialist-bees", support: "nectar", note: "A composite whose pollen supports sunflower-family specialist bees.", basis: "Fowler & Droege, Pollen Specialist Bees." },
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "A composite whose pollen supports sunflower-family specialist bees.", basis: "Fowler & Droege, Pollen Specialist Bees." },
       { wildlifeId: "american-goldfinch", support: "seeds", note: "Goldfinches work the dark seed heads through fall and winter.", basis: "Cornell Lab." },
     ],
     "monarda-fistulosa": [
@@ -396,12 +396,12 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "bumble-bees", support: "nectar", note: "Long-tongued bumble bees are among its heaviest visitors.", basis: "Xerces Society." },
     ],
     "symphyotrichum-novae-angliae": [
-      { wildlifeId: "sunflower-specialist-bees", support: "nectar", note: "Asters host a suite of aster-specialist bees; this is one of the best.", basis: "Fowler & Droege, Pollen Specialist Bees." },
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "Asters host a suite of aster-specialist bees; this is one of the best.", basis: "Fowler & Droege, Pollen Specialist Bees." },
       { wildlifeId: "monarch", support: "nectar", note: "Late purple bloom is critical fall fuel for southbound monarchs.", basis: "Xerces Society; Monarch Joint Venture." },
       { wildlifeId: "american-goldfinch", support: "seeds", note: "Fine seed heads feed goldfinches into winter.", basis: "Cornell Lab." },
     ],
     "solidago-rugosa": [
-      { wildlifeId: "sunflower-specialist-bees", support: "nectar", note: "Goldenrods carry more pollen-specialist bees than almost any other plant.", basis: "Fowler & Droege, Pollen Specialist Bees." },
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "Goldenrods carry more pollen-specialist bees than almost any other plant.", basis: "Fowler & Droege, Pollen Specialist Bees." },
       { wildlifeId: "monarch", support: "nectar", note: "A powerhouse of late-season nectar for migrating monarchs.", basis: "Xerces Society." },
     ],
     "eutrochium-purpureum": [
@@ -438,7 +438,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "berry-songbirds", support: "berries", note: "A winter-long larder for bluebirds, robins, and mockingbirds.", basis: "Cornell Lab." },
     ],
     "viburnum-dentatum": [
-      { wildlifeId: "hummingbird-clearwing", support: "host", note: "Viburnums are a documented larval host for the hummingbird clearwing moth.", basis: "NWF Native Plant Finder." },
+      { wildlifeId: "hummingbird-clearwing", support: "host", reliance: "narrow", note: "Viburnums are a documented larval host for the hummingbird clearwing moth.", basis: "NWF Native Plant Finder." },
       { wildlifeId: "cedar-waxwing", support: "berries", note: "Blue-black fall fruit is a favorite of waxwings and thrushes.", basis: "Cornell Lab." },
     ],
     "vaccinium-corymbosum": [
@@ -455,7 +455,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
 
   pnw: {
     "quercus-garryana": [
-      { wildlifeId: "propertius-duskywing", support: "host", note: "Garry (Oregon white) oak is the sole larval host for the propertius duskywing — no oak, no butterfly.", basis: "Xerces Society; Washington NHP oak-prairie work." },
+      { wildlifeId: "propertius-duskywing", support: "host", reliance: "sole", note: "Garry (Oregon white) oak is the sole larval host for the propertius duskywing — no oak, no butterfly.", basis: "Xerces Society; Washington NHP oak-prairie work." },
       { wildlifeId: "acorn-birds", support: "seeds", note: "Its acorns feed acorn woodpeckers, jays, and band-tailed pigeons in the West's oak country.", basis: "USDA PLANTS; Cornell Lab." },
       { wildlifeId: "acorn-mammals", support: "seeds", note: "Oak mast is fall food for squirrels, deer, and other mammals.", basis: "USDA PLANTS." },
     ],
@@ -471,7 +471,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "mason-bees", support: "nectar", note: "Its heavy early flower clusters feed newly emerged bees before most plants bloom.", basis: "Xerces Society." },
     ],
     "holodiscus-discolor": [
-      { wildlifeId: "pale-swallowtail", support: "host", note: "Oceanspray is a classic larval host for the pale swallowtail (and the Lorquin's admiral).", basis: "Xerces Society; NWF Native Plant Finder." },
+      { wildlifeId: "pale-swallowtail", support: "host", reliance: "narrow", note: "Oceanspray is a classic larval host for the pale swallowtail (and the Lorquin's admiral).", basis: "Xerces Society; NWF Native Plant Finder." },
       { wildlifeId: "bumble-bees", support: "nectar", note: "Foaming cream flower plumes are covered in bees in early summer.", basis: "Xerces Society." },
     ],
     "ribes-sanguineum": [
@@ -496,7 +496,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "bumble-bees", support: "nectar", note: "Flat flower heads are an easy landing pad worked by many small native bees and beneficial insects.", basis: "Xerces Society." },
     ],
     "eriophyllum-lanatum": [
-      { wildlifeId: "sunflower-specialist-bees", support: "nectar", note: "A western sunflower-family bloom supporting the region's aster/sunflower pollen specialists.", basis: "Fowler & Droege, Pollen Specialist Bees (West)." },
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "A western sunflower-family bloom supporting the region's aster/sunflower pollen specialists.", basis: "Fowler & Droege, Pollen Specialist Bees (West)." },
     ],
     "arbutus-menziesii": [
       { wildlifeId: "acorn-birds", support: "berries", note: "Madrone berries are a signature fall-winter food of band-tailed pigeons and are taken by robins and waxwings.", basis: "Audubon; USDA PLANTS." },
@@ -524,12 +524,12 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "acorn-mammals", support: "seeds", note: "A major mast tree for squirrels, deer, and other mammals.", basis: "UF/IFAS." },
     ],
     "asclepias-tuberosa": [
-      { wildlifeId: "monarch", support: "host", note: "A milkweed and monarch host; Florida sits on the monarch's migration and overwintering path.", basis: "Xerces Society; UF/IFAS." },
-      { wildlifeId: "queen-butterfly", support: "host", note: "Milkweeds are also the sole caterpillar food of the monarch's cousin, the queen.", basis: "UF/IFAS; Florida Native Plant Society." },
+      { wildlifeId: "monarch", support: "host", reliance: "sole", note: "A milkweed and monarch host; Florida sits on the monarch's migration and overwintering path.", basis: "Xerces Society; UF/IFAS." },
+      { wildlifeId: "queen-butterfly", support: "host", reliance: "sole", note: "Milkweeds are also the sole caterpillar food of the monarch's cousin, the queen.", basis: "UF/IFAS; Florida Native Plant Society." },
     ],
     "passiflora-incarnata": [
-      { wildlifeId: "gulf-fritillary", support: "host", note: "Passionvine is the gulf fritillary's caterpillar plant.", basis: "UF/IFAS; Florida Native Plant Society." },
-      { wildlifeId: "zebra-longwing", support: "host", note: "The host vine for Florida's state butterfly, the zebra longwing.", basis: "UF/IFAS." },
+      { wildlifeId: "gulf-fritillary", support: "host", reliance: "sole", note: "Passionvine is the gulf fritillary's caterpillar plant.", basis: "UF/IFAS; Florida Native Plant Society." },
+      { wildlifeId: "zebra-longwing", support: "host", reliance: "sole", note: "The host vine for Florida's state butterfly, the zebra longwing.", basis: "UF/IFAS." },
     ],
     "salvia-coccinea": [
       { wildlifeId: "ruby-throated-hummingbird", support: "nectar", note: "Scarlet tubular flowers bloom nearly year-round in Florida — reliable hummingbird fuel.", basis: "UF/IFAS; Audubon." },
@@ -556,14 +556,14 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "liatris-gracilis": [
       { wildlifeId: "monarch", support: "nectar", note: "Purple blazing-star spikes are prime fall nectar for migrating monarchs.", basis: "UF/IFAS; Xerces." },
-      { wildlifeId: "sunflower-specialist-bees", support: "nectar", note: "A sunflower-family bloom supporting specialist bees.", basis: "Fowler & Droege." },
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "A sunflower-family bloom supporting specialist bees.", basis: "Fowler & Droege." },
     ],
     "coreopsis-leavenworthii": [
-      { wildlifeId: "sunflower-specialist-bees", support: "nectar", note: "Florida's state wildflower group — its pollen feeds sunflower-family specialist bees.", basis: "Fowler & Droege; UF/IFAS." },
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "Florida's state wildflower group — its pollen feeds sunflower-family specialist bees.", basis: "Fowler & Droege; UF/IFAS." },
       { wildlifeId: "american-goldfinch", support: "seeds", note: "Wintering goldfinches take the small seeds.", basis: "Cornell Lab." },
     ],
     "helianthus-debilis": [
-      { wildlifeId: "sunflower-specialist-bees", support: "nectar", note: "A true sunflower — a keystone pollen source for sunflower specialist bees.", basis: "Fowler & Droege." },
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "A true sunflower — a keystone pollen source for sunflower specialist bees.", basis: "Fowler & Droege." },
       { wildlifeId: "gopher-tortoise", support: "shelter", note: "A low, open-ground plant of the sandy uplands gopher tortoises graze and dig in.", basis: "UF/IFAS; Florida gopher tortoise guidance." },
     ],
     "serenoa-repens": [
@@ -574,14 +574,14 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
 
   "florida-south": {
     "zamia-integrifolia": [
-      { wildlifeId: "atala", support: "host", note: "Coontie is the atala butterfly's only caterpillar plant — planting it is how the atala was brought back from near-extinction in South Florida.", basis: "UF/IFAS; Florida Museum of Natural History." },
+      { wildlifeId: "atala", support: "host", reliance: "sole", note: "Coontie is the atala butterfly's only caterpillar plant — planting it is how the atala was brought back from near-extinction in South Florida.", basis: "UF/IFAS; Florida Museum of Natural History." },
     ],
     "passiflora-suberosa": [
-      { wildlifeId: "zebra-longwing", support: "host", note: "Corkystem passionvine is a preferred host for the zebra longwing.", basis: "UF/IFAS." },
-      { wildlifeId: "gulf-fritillary", support: "host", note: "A caterpillar host for the gulf fritillary as well.", basis: "UF/IFAS." },
+      { wildlifeId: "zebra-longwing", support: "host", reliance: "sole", note: "Corkystem passionvine is a preferred host for the zebra longwing.", basis: "UF/IFAS." },
+      { wildlifeId: "gulf-fritillary", support: "host", reliance: "sole", note: "A caterpillar host for the gulf fritillary as well.", basis: "UF/IFAS." },
     ],
     "stachytarpheta-jamaicensis": [
-      { wildlifeId: "white-peacock", support: "host", note: "Blue porterweed is a larval host for the white peacock butterfly.", basis: "UF/IFAS; Florida Native Plant Society." },
+      { wildlifeId: "white-peacock", support: "host", reliance: "narrow", note: "Blue porterweed is a larval host for the white peacock butterfly.", basis: "UF/IFAS; Florida Native Plant Society." },
       { wildlifeId: "zebra-longwing", support: "nectar", note: "Its long blue flower spikes are a top nectar source for longwings and many other butterflies.", basis: "UF/IFAS." },
     ],
     "salvia-coccinea": [
@@ -615,7 +615,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "acorn-mammals", support: "seeds", note: "Mast for squirrels and other mammals.", basis: "UF/IFAS." },
     ],
     "helianthus-debilis": [
-      { wildlifeId: "sunflower-specialist-bees", support: "nectar", note: "Dune sunflower's pollen supports sunflower-family specialist bees along the coast.", basis: "Fowler & Droege; UF/IFAS." },
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "Dune sunflower's pollen supports sunflower-family specialist bees along the coast.", basis: "Fowler & Droege; UF/IFAS." },
     ],
   },
 };

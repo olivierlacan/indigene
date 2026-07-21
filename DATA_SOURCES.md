@@ -46,6 +46,15 @@ audit (`app/src/lib/wildlife.ts` → `auditSupport`):
 2. **Every plant↔animal tie cites a reliable source** (`SupportLink.basis`); the
    audit rejects a tie with no source.
 
+Each tie also records **how** the plant helps (`support`: larval host, nectar,
+berries, seeds, shelter) and **how much the animal depends on it**
+(`reliance`: `sole` = obligate/no substitute, like a monarch on milkweed or an
+atala on coontie; `narrow` = a specialist with only a few options; `broad` =
+one of many, the default). The make-or-break `sole` ties are surfaced first and
+flagged in the UI, so "milkweed is the monarch's *only* host" reads differently
+from "cherry is *one of* the tiger swallowtail's trees" — a distinction that
+previously lived only in prose.
+
 Both are shown in the UI, with authority names linked out
 (`app/src/data/sources.ts`, rendered by `components/citation.ts`). As with the
 plant data, we reference **factual ecological associations** (which animal uses

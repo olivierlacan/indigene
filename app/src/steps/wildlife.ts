@@ -141,25 +141,29 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
           el("span", { class: "badge nowater", title: w.nativeBasis }, "🌿 Native animal"),
         ]),
       ]),
-      el("p", { style: "margin-top:0.75rem" }, w.blurb),
-      // The native-status guarantee, sourced (authority names linked) — a native
-      // plant should be feeding a native animal, and we say where that comes from.
-      el("p", { class: "confidence", style: "margin-top:0.4rem" }, [
-        el("span", { "aria-hidden": "true" }, "🌿 "),
-        el("strong", {}, "A native animal. "),
-        ...citation(w.nativeBasis),
+      // The .plant card has no padding of its own (media can run full-bleed),
+      // so all the loose text lives in a .plant-body to get the usual gutters.
+      el("div", { class: "plant-body" }, [
+        el("p", { style: "margin:0" }, w.blurb),
+        // The native-status guarantee, sourced (authority names linked) — a native
+        // plant should be feeding a native animal, and we say where that comes from.
+        el("p", { class: "confidence", style: "margin:0.4rem 0 0" }, [
+          el("span", { "aria-hidden": "true" }, "🌿 "),
+          el("strong", {}, "A native animal. "),
+          ...citation(w.nativeBasis),
+        ]),
+        speciesLink(w),
+        el("p", { style: "margin:0.4rem 0 0;font-weight:650" }, [
+          `${plantCount} native ${plantCount === 1 ? "plant" : "plants"} in Indigene support the ${w.common.toLowerCase()}`,
+          hosts ? `, ${hosts} of them as a caterpillar host — the strongest tie.` : ".",
+        ]),
+        soleCount
+          ? el("p", { class: "note info", style: "margin:0.5rem 0 0" }, [
+              el("strong", {}, `⭐ It can't live without ${soleCount === 1 ? "this plant" : "these plants"}. `),
+              `${soleCount === 1 ? "This is" : `${soleCount} of these are`} its only option — remove ${soleCount === 1 ? "it" : "them"} and the ${w.common.toLowerCase()} has nowhere to go.`,
+            ])
+          : null,
       ]),
-      speciesLink(w),
-      el("p", { style: "margin:0.4rem 0 0;font-weight:650" }, [
-        `${plantCount} native ${plantCount === 1 ? "plant" : "plants"} in Indigene support the ${w.common.toLowerCase()}`,
-        hosts ? `, ${hosts} of them as a caterpillar host — the strongest tie.` : ".",
-      ]),
-      soleCount
-        ? el("p", { class: "note info", style: "margin:0.5rem 0 0" }, [
-            el("strong", {}, `⭐ It can't live without ${soleCount === 1 ? "this plant" : "these plants"}. `),
-            `${soleCount === 1 ? "This is" : `${soleCount} of these are`} its only option — remove ${soleCount === 1 ? "it" : "them"} and the ${w.common.toLowerCase()} has nowhere to go.`,
-          ])
-        : null,
     ]),
   );
 

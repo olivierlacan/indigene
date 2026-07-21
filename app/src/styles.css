@@ -154,6 +154,12 @@ a {
   margin: 0;
   color: var(--on-brand);
   letter-spacing: 0.2px;
+  /* The nav keeps its full width; the title yields space first, ellipsizing
+     only as a true last resort on the very narrowest screens (< ~330px). */
+  white-space: nowrap;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 /* The title doubles as the escape hatch: from anywhere, tap it to go home.
    No underline — instead a small bee buzzes in on hover/press, a wink at the
@@ -184,6 +190,7 @@ a {
   display: flex;
   gap: 0.15rem;
   align-items: center;
+  flex: 0 0 auto; /* the nav stays fully visible; the title yields space first */
 }
 .site-nav a {
   color: var(--on-brand);
@@ -202,6 +209,136 @@ a {
 .site-nav a:hover {
   text-decoration: underline;
 }
+
+/* --- Saved-locations menu (a disclosure, not a nav tab) --- */
+.nav-menu {
+  position: relative;
+}
+/* The button is styled to match the nav links. */
+.nav-menu-btn {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  color: var(--on-brand);
+  font-family: inherit;
+  font-weight: 650;
+  font-size: 0.95rem;
+  min-height: 2.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}
+.nav-menu-btn[aria-expanded="true"],
+.nav-menu-btn[aria-current="page"] {
+  background: var(--nav-pill);
+}
+/* The dropdown: overlays content, right-aligned under the button. */
+.nav-menu-panel[hidden] {
+  display: none; /* beat the display:flex below when closed */
+}
+.nav-menu-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.4rem);
+  min-width: 13rem;
+  max-width: min(20rem, calc(100vw - 1.5rem));
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.4rem;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  z-index: 20;
+}
+/* Scoped under .nav-menu-panel so they beat the header's `.site-nav a` color
+   (specificity 0,1,1) — otherwise these links inherit white-on-green onto the
+   pale panel and vanish. */
+.nav-menu-panel .nav-menu-item {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  border-radius: calc(var(--radius) - 4px);
+  padding: 0.5rem 0.6rem;
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+  font: inherit;
+}
+.nav-menu-panel .nav-menu-item:hover,
+.nav-menu-panel .nav-menu-item:focus-visible {
+  background: var(--surface-2);
+}
+.nav-menu-item-label {
+  font-weight: 650;
+}
+.nav-menu-item-sub {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+.nav-menu-status {
+  margin: 0;
+  padding: 0.5rem 0.6rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+.nav-menu-panel .nav-menu-all {
+  padding: 0.55rem 0.6rem;
+  margin-top: 0.15rem;
+  border-top: 1px solid var(--line);
+  font-weight: 650;
+  color: var(--focus);
+  text-decoration: none;
+}
+.nav-menu-panel .nav-menu-all:hover {
+  text-decoration: underline;
+}
+
+/* Narrow phones: shrink the title and drop the Saved label to its icon so the
+   header holds Explore + Wildlife + Saved on one line without crowding. */
+@media (max-width: 400px) {
+  .app-title {
+    font-size: 0.95rem;
+    letter-spacing: 0;
+  }
+  .site-nav {
+    gap: 0;
+  }
+  .site-nav a,
+  .nav-menu-btn {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.85rem;
+  }
+  .nav-menu-label {
+    /* Visually hidden; the button's aria-label still reads "Saved locations". */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+
+/* Smallest phones (~360px and down): tighten a touch more so the full
+   "Indigene" still fits beside the nav — only below ~330px does it ellipsize. */
+@media (max-width: 365px) {
+  .app-title {
+    font-size: 0.9rem;
+  }
+  .site-nav a,
+  .nav-menu-btn {
+    padding: 0.25rem 0.32rem;
+    font-size: 0.82rem;
+  }
+}
+
 .offline-badge {
   font-size: 0.85rem;
   background: #fff;

@@ -34,7 +34,27 @@
       <nav class="site-nav" aria-label="Sections">
         <a href="#/plants" data-section="explore">Explore</a>
         <a href="#/wildlife" data-section="wildlife">Wildlife</a>
-        <a href="#/saved" data-section="saved">Saved</a>
+        <div id="saved-menu" class="nav-menu">
+          <button
+            type="button"
+            class="nav-menu-btn"
+            data-section="saved"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            aria-controls="saved-menu-panel"
+            aria-label="Saved locations"
+          >
+            <span aria-hidden="true">🔖</span>
+            <span class="nav-menu-label">Saved</span>
+          </button>
+          <div
+            id="saved-menu-panel"
+            class="nav-menu-panel"
+            role="menu"
+            aria-label="Saved locations"
+            hidden
+          ></div>
+        </div>
       </nav>
     </header>
 

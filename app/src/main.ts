@@ -11,6 +11,7 @@ import { renderExplore } from "./steps/explore";
 import { renderPlant } from "./steps/plant";
 import { renderRegion } from "./steps/region";
 import { renderWildlifeIndex, renderWildlife } from "./steps/wildlife";
+import { initSavedMenu, closeSavedMenu } from "./components/saved-menu";
 
 type StepFn = (main: HTMLElement, param?: string) => void | (() => void) | Promise<void>;
 
@@ -90,9 +91,10 @@ const SECTION_OF: Record<string, string> = {
 
 function updateSiteNav(step: string): void {
   const section = SECTION_OF[step];
-  document.querySelectorAll<HTMLAnchorElement>(".site-nav a").forEach((a) => {
-    if (a.dataset.section === section) a.setAttribute("aria-current", "page");
-    else a.removeAttribute("aria-current");
+  // Both the plain links and the Saved menu button carry data-section.
+  document.querySelectorAll<HTMLElement>(".site-nav [data-section]").forEach((elm) => {
+    if (elm.dataset.section === section) elm.setAttribute("aria-current", "page");
+    else elm.removeAttribute("aria-current");
   });
 }
 
@@ -101,6 +103,7 @@ const BASE_TITLE = document.title;
 async function route(): Promise<void> {
   const { step, param } = currentRoute();
   if (cleanup) { cleanup(); cleanup = null; }
+  closeSavedMenu(); // a navigation always dismisses an open header menu
   document.title = BASE_TITLE; // plant pages set their own; everything else resets
   renderStepRail(step);
   updateSiteNav(step);
@@ -134,6 +137,7 @@ window.addEventListener("offline", updateOnline);
 async function boot(): Promise<void> {
   normalizePathRoute();
   await loadPrefs().catch(() => {});
+  initSavedMenu();
   updateOnline();
   await route();
   // Register the hand-written service worker for offline + installability.

@@ -1,5 +1,5 @@
 import { el, clear, toast } from "../ui";
-import { navigate, store } from "../state";
+import { navigate, openSavedSpot } from "../state";
 import { listSpots, deleteSpot } from "../db";
 import { sunPlain } from "../lib/plain";
 
@@ -29,17 +29,7 @@ export async function renderSaved(main: HTMLElement): Promise<void> {
       el("div", { style: "display:flex;gap:0.4rem;flex:none" }, [
         el("button", {
           class: "btn btn-secondary", style: "min-height:2.6rem;padding:0.4rem 0.7rem",
-          onClick: () => {
-            store.draft = {
-              lat: s.lat, lon: s.lon, site: s.site, sun: s.sun, horizon: s.horizon,
-              deciduousOverhead: s.deciduousOverhead ?? false,
-              moistureOverride: s.soilOverride?.moisture ?? null,
-              regionOverride: s.regionOverride ?? null,
-              editingId: s.id,
-            };
-            store.weights = { ...s.weights };
-            navigate("results");
-          },
+          onClick: () => openSavedSpot(s),
         }, "Open"),
         el("button", {
           class: "btn btn-ghost", style: "min-height:2.6rem;padding:0.4rem 0.5rem", "aria-label": `Delete ${s.label}`,

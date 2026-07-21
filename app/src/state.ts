@@ -4,6 +4,7 @@
 import type {
   HorizonMask,
   MoistureBand,
+  SavedSpot,
   SiteData,
   SunEstimate,
   Weights,
@@ -90,4 +91,25 @@ export function resetDraft(): void {
 
 export function navigate(step: string): void {
   location.hash = `#/${step}`;
+}
+
+/**
+ * Load a saved spot back into the working draft and jump to its plant list —
+ * the "Open" action, shared by the Saved page and the header's Saved menu so
+ * both reload a spot identically.
+ */
+export function openSavedSpot(s: SavedSpot): void {
+  store.draft = {
+    lat: s.lat,
+    lon: s.lon,
+    site: s.site,
+    sun: s.sun,
+    horizon: s.horizon,
+    deciduousOverhead: s.deciduousOverhead ?? false,
+    moistureOverride: s.soilOverride?.moisture ?? null,
+    regionOverride: s.regionOverride ?? null,
+    editingId: s.id,
+  };
+  store.weights = { ...s.weights };
+  navigate("results");
 }

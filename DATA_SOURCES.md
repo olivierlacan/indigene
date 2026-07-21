@@ -32,6 +32,50 @@ called out and the dependency is kept optional.
 | **BONAP county distribution** | County-level native status | *Not yet integrated* | ⚠️ BONAP maps have restrictive reuse terms | ⛔ **Do not scrape or embed.** Phase 2 should use USDA PLANTS county data (public domain) for county resolution instead. Noted so we don't build on it by accident. |
 | **Basemap tiles** (for the location map) | — | *Not used* | OSM/other tile terms + offline concerns | ⏳ Phase 1 uses a schematic metric grid instead of external tiles, to stay offline-first and avoid tile-usage terms. |
 
+## Wildlife relationships (browse-by-wildlife)
+
+The browse-by-wildlife feature names the specific **native** insects and animals
+each plant supports and how (larval host vs. nectar/berries/seeds/shelter). Two
+rules govern the data (`app/src/data/wildlife.ts`), both enforced by a dev-time
+audit (`app/src/lib/wildlife.ts` → `auditSupport`):
+
+1. **Every listed animal is itself native** (`Wildlife.native` is the literal
+   type `true`, with a sourced `nativeBasis`). The introduced European honey bee
+   (*Apis mellifera*) is deliberately excluded — the point is native plants
+   feeding native wildlife.
+2. **Every plant↔animal tie cites a reliable source** (`SupportLink.basis`); the
+   audit rejects a tie with no source.
+
+Both are shown in the UI, with authority names linked out
+(`app/src/data/sources.ts`, rendered by `components/citation.ts`). As with the
+plant data, we reference **factual ecological associations** (which animal uses
+which plant), written in our own plain words — not any source's prose.
+
+| Source | Used for | Access | Licence / terms | Verdict |
+|---|---|---|---|---|
+| **Butterflies and Moths of North America (BAMONA)** | Butterfly/moth identity, native status, host plants; the per-species **deep link** (`/species/Genus-species`) | Referenced; species URL built from the binomial | Records are user/expert-contributed; individual factual associations are not copyrightable | ✅ Facts referenced; deep-linked to the species page. |
+| **Cornell Lab of Ornithology — All About Birds** | Bird identity, diet/food facts; the per-species **deep link** (`/guide/Common_Name`) for single-species entries | Referenced; guide URL built from the common name | Educational reference; individual food/diet facts are not copyrightable | ✅ Facts referenced; deep-linked where a single species exists (groups link to the site). |
+| **Xerces Society** | Pollinator & specialist-bee associations, host records | Referenced | Publications © ; factual associations used, not prose | ✅ Facts referenced. |
+| **Fowler & Droege — Pollen Specialist Bees of the U.S.** | Which native bees are pollen-specialists on which plant families | Referenced | Published dataset; factual associations used | ✅ Facts referenced. |
+| **USGS Native Bee Inventory & Monitoring Lab** | Native-bee identity & status | Referenced | US Government public domain | ✅ Safe. |
+| **NWF Native Plant Finder / Tallamy** | Lepidoptera host associations (same source as the host score) | Referenced | ⚠️ see the host-count row above | ⚠️ Factual associations, attributed. |
+| **Lady Bird Johnson Wildflower Center** | Nectar/host/wildlife-value notes | Referenced | Facts referenced, not prose | ✅ Facts referenced. |
+| **Audubon (bird guide)** | Bird food & nectar associations | Referenced | Facts referenced | ✅ Facts referenced. |
+| **UF/IFAS · Florida Native Plant Society · Florida Museum of Natural History** | Florida wildlife associations; the atala↔coontie relationship | Referenced | Facts referenced, not prose | ✅ Facts referenced. |
+| **Monarch Joint Venture** | Monarch↔milkweed obligate relationship | Referenced | Facts referenced | ✅ Facts referenced. |
+| **USDA PLANTS · USDA Silvics of North America** | Mast/berry wildlife value for trees & shrubs | Referenced | US Government public domain | ✅ Safe. |
+| **USFWS · IUCN Red List · Smithsonian** | Native status of birds, mammals & the gopher tortoise | Referenced | Public-domain (USFWS) / factual status references | ✅ Facts referenced. |
+
+**On the deep links.** Authority names link to each source's canonical page.
+Species-level deep links use two well-established, deterministic schemes —
+BAMONA `…/species/Genus-species` for insects and All About Birds
+`…/guide/Common_Name` for single-species birds — built from the animal's own
+name (`speciesRecordUrl`). These URL *paths* were **not machine-verified from
+the build environment** (its egress policy blocks outbound web hosts); each site
+returns a searchable page if a slug ever drifts. Group entries (e.g. "Jays,
+turkeys & woodpeckers") and two-species entries have no single record and link
+to the authority instead.
+
 ## Scaling the catalog: canonical taxonomy & distribution backbones
 
 The seed lists are hand-authored today. To grow honestly to every U.S. region —

@@ -21,6 +21,8 @@ import {
 } from "../lib/wildlife";
 import type { PlantSupport } from "../lib/wildlife";
 import { supportLabels, wildlifeKindLabels, DATA_SOURCES_URL } from "../lib/plain";
+import { speciesRecordUrl } from "../data/sources";
+import { citation } from "../components/citation";
 import { silhouetteFor } from "../components/plant-card";
 import { keystoneIcon } from "../components/keystone-icon";
 import type { SupportLink } from "../types";
@@ -136,13 +138,14 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
         ]),
       ]),
       el("p", { style: "margin-top:0.75rem" }, w.blurb),
-      // The native-status guarantee, sourced — a native plant should be feeding a
-      // native animal, and we say where that claim comes from.
+      // The native-status guarantee, sourced (authority names linked) — a native
+      // plant should be feeding a native animal, and we say where that comes from.
       el("p", { class: "confidence", style: "margin-top:0.4rem" }, [
         el("span", { "aria-hidden": "true" }, "🌿 "),
         el("strong", {}, "A native animal. "),
-        w.nativeBasis,
+        ...citation(w.nativeBasis),
       ]),
+      speciesLink(w),
       el("p", { style: "margin:0.4rem 0 0;font-weight:650" }, [
         `${plantCount} native ${plantCount === 1 ? "plant" : "plants"} in Indigene support the ${w.common.toLowerCase()}`,
         hosts ? `, ${hosts} of them as a caterpillar host — the strongest tie.` : ".",
@@ -210,13 +213,25 @@ function supportRow(s: PlantSupport): HTMLElement {
       el("div", { class: "plant-latin", style: "font-size:0.85rem" }, p.latin),
       supportBadge(s.link),
       el("div", { style: "font-size:0.85rem;color:var(--ink-soft);margin-top:0.25rem" }, s.link.note),
-      // Every relationship shows its source — the claim stays checkable.
+      // Every relationship shows its source, with authority names linked out.
       el("div", { style: "font-size:0.75rem;color:var(--ink-soft);opacity:0.85;margin-top:0.2rem" }, [
         el("span", { "aria-hidden": "true" }, "🔎 "),
         "Source: ",
-        s.link.basis,
+        ...citation(s.link.basis),
       ]),
     ]),
+  ]);
+}
+
+// A deep link to the animal's own record where a stable scheme exists (BAMONA
+// for insects, All About Birds for single birds). Null for groups/multi-species.
+function speciesLink(w: Parameters<typeof speciesRecordUrl>[0]): HTMLElement | null {
+  const rec = speciesRecordUrl(w);
+  if (!rec) return null;
+  return el("p", { style: "margin:0.3rem 0 0;font-size:0.9rem" }, [
+    el("span", { "aria-hidden": "true" }, "🔗 "),
+    "See the species record: ",
+    el("a", { href: rec.url, target: "_blank", rel: "noopener", class: "src-link" }, `${rec.name} →`),
   ]);
 }
 

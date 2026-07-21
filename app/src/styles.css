@@ -102,6 +102,19 @@ a {
   color: var(--focus);
 }
 
+/* Inline source citations: a linked authority name reads as a link but stays
+   quiet inside the muted "Source:" line — underlined so it's recognizable even
+   where the surrounding text is already colored. */
+.src-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.src-link:hover,
+.src-link:focus-visible {
+  color: var(--focus);
+}
+
 :focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 2px;

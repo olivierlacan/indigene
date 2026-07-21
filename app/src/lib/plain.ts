@@ -1,7 +1,7 @@
 // Plain-language layer. The rule from the brief: never surface a term without
 // explaining it inline, in words a 70-year-old who has never heard "keystone
 // species" can act on. Everything jargon-y funnels through here.
-import type { MoistureBand, PropagationMethod, SizeSnapshot } from "../types";
+import type { MoistureBand, PropagationMethod, SizeSnapshot, SupportKind, WildlifeKind } from "../types";
 
 /** The full audit of every dataset behind the numbers — linked wherever we
  * cite a figure (host counts especially) so claims stay checkable. */
@@ -150,6 +150,79 @@ export const scoreLabels: Record<string, { icon: string; name: string; plain: st
     icon: "🌵",
     name: "Survives on its own",
     plain: "How likely it is to make it with no watering or fuss after you plant it.",
+  },
+};
+
+/**
+ * The kinds of wildlife the app lets you browse by — the section headings and
+ * the icon each group carries. Plain, everyday names; nobody has to know
+ * "Lepidoptera" to look for butterflies. `blurb` heads each section.
+ */
+export const wildlifeKindLabels: Record<
+  WildlifeKind,
+  { title: string; icon: string; blurb: string }
+> = {
+  butterfly: {
+    icon: "🦋",
+    title: "Butterflies",
+    blurb: "Choose a butterfly to see which natives raise its caterpillars or feed the adults.",
+  },
+  moth: {
+    icon: "🌙",
+    title: "Moths",
+    blurb: "The night shift — including the giant silk moths, whose caterpillars are prime baby-bird food.",
+  },
+  bee: {
+    icon: "🐝",
+    title: "Bees & other pollinators",
+    blurb: "Native bees, many of which can raise their young on only one family of flowers.",
+  },
+  bird: {
+    icon: "🐦",
+    title: "Birds",
+    blurb: "The berries, seeds, nectar, and caterpillars behind the birds you want in the yard.",
+  },
+  mammal: {
+    icon: "🐿️",
+    title: "Mammals & others",
+    blurb: "Acorns and fruit for the four-legged neighbors — and a reptile or two.",
+  },
+};
+
+/**
+ * How a plant supports an animal, glossed once. `verb` is the short label shown
+ * on a tie ("Raises its young"); `plain` is the one-line why. The `host` tie is
+ * called out as the strongest everywhere, because raising the next generation is
+ * a different, bigger promise than feeding a passing adult.
+ */
+export const supportLabels: Record<
+  SupportKind,
+  { verb: string; icon: string; plain: string }
+> = {
+  host: {
+    verb: "Raises its young",
+    icon: "🐛",
+    plain: "Caterpillars eat this plant's leaves — the strongest tie there is, because it's where the next generation actually comes from.",
+  },
+  nectar: {
+    verb: "Feeds the adults",
+    icon: "🌼",
+    plain: "Nectar and pollen the grown insects drink and gather.",
+  },
+  berries: {
+    verb: "Feeds it fruit",
+    icon: "🫐",
+    plain: "Berries or fruit it eats, especially through fall and winter.",
+  },
+  seeds: {
+    verb: "Feeds it seed",
+    icon: "🌰",
+    plain: "Seeds or nuts it eats — often what's left standing after the flowers fade.",
+  },
+  shelter: {
+    verb: "Shelters it",
+    icon: "🏠",
+    plain: "Cover and habitat to nest, graze, roost, or ride out the season in.",
   },
 };
 

@@ -117,6 +117,60 @@ export interface Plant {
 
 export type MoistureBand = "dry" | "mesic" | "wet";
 
+// ---------------------------------------------------------------------------
+// Wildlife: the "who does this feed" layer.
+//
+// The eco-scores above answer "how much life does this plant support" as a
+// number. This layer answers the question a gardener actually asks — "will it
+// bring *monarchs*? *hummingbirds*?" — by naming the specific, recognizable
+// insects and animals a plant supports. It's deliberately not the raw host
+// tally (an oak feeds hundreds of moth species); it's the notable, nameable,
+// well-documented relationships worth browsing by.
+//
+// The catalog (the animals themselves) lives once in `data/wildlife.ts`; the
+// per-region plant→animal ties live beside it in the same file, so the whole
+// "what supports what" claim is auditable in one place, the way a plant row is.
+// ---------------------------------------------------------------------------
+
+/** Broad group a supported animal belongs to — drives the browse index's
+ *  sections and the icon shown. Small and plain on purpose. */
+export type WildlifeKind = "butterfly" | "moth" | "bee" | "bird" | "mammal";
+
+/**
+ * A specific insect or animal that native plants support. Defined once, in the
+ * shared catalog, so "Monarch butterfly" is described in exactly one place and
+ * every plant that supports it points at the same entry.
+ */
+export interface Wildlife {
+  id: string; // stable slug, e.g. "monarch"
+  common: string; // "Monarch butterfly"
+  latin?: string; // "Danaus plexippus" — omitted for informal groups
+  kind: WildlifeKind;
+  icon: string; // emoji — the app's icon idiom
+  /** Plain words: what it is and why bringing it in matters. */
+  blurb: string;
+}
+
+/**
+ * How a plant supports an animal — the honest distinction between raising its
+ * young (a larval host, the strongest tie) and feeding or sheltering the adult.
+ * Each key is glossed in plain words wherever it's shown (see `plain.ts`).
+ */
+export type SupportKind = "host" | "nectar" | "berries" | "seeds" | "shelter";
+
+/**
+ * One plant→animal tie: which animal, how the plant supports it, why, and where
+ * the claim comes from. Lives in the region support map in `data/wildlife.ts`.
+ */
+export interface SupportLink {
+  wildlifeId: string;
+  support: SupportKind;
+  /** Plant-specific, plain-language why/how. */
+  note: string;
+  /** A dependable, citable source for this relationship. */
+  basis: string;
+}
+
 export interface HorizonMask {
   /** 72 samples, one per 5° of compass bearing, each an elevation angle (deg). */
   angles: number[];

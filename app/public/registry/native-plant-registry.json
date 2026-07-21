@@ -1,0 +1,1967 @@
+{
+  "schema": "native-plant-registry/0.1",
+  "identity": {
+    "localKey": "id (scientific-name slug, == catalog plant id)",
+    "anchor": "scientificName (accepted binomial)",
+    "external": [
+      "usdaSymbol (USDA PLANTS)",
+      "gbifKey (GBIF backbone usageKey)"
+    ],
+    "note": "External keys are null until reconciled; see registry.overrides.json."
+  },
+  "count": 96,
+  "entries": [
+    {
+      "id": "acer-macrophyllum",
+      "scientificName": "Acer macrophyllum",
+      "family": "Sapindaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Bigleaf Maple"
+      ],
+      "aliases": [
+        "acer macrophyllum",
+        "bigleaf maple"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "acer-rubrum",
+      "scientificName": "Acer rubrum",
+      "family": "Sapindaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Red Maple"
+      ],
+      "aliases": [
+        "acer rubrum",
+        "red maple"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic",
+        "florida-central"
+      ]
+    },
+    {
+      "id": "achillea-millefolium",
+      "scientificName": "Achillea millefolium",
+      "family": "Asteraceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Yarrow"
+      ],
+      "aliases": [
+        "achillea millefolium",
+        "yarrow"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "amelanchier-alnifolia",
+      "scientificName": "Amelanchier alnifolia",
+      "family": "Rosaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Saskatoon Serviceberry"
+      ],
+      "aliases": [
+        "amelanchier alnifolia",
+        "saskatoon serviceberry"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "amelanchier-canadensis",
+      "scientificName": "Amelanchier canadensis",
+      "family": "Rosaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Serviceberry"
+      ],
+      "aliases": [
+        "amelanchier canadensis",
+        "serviceberry"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "andropogon-gerardii",
+      "scientificName": "Andropogon gerardii",
+      "family": "Poaceae",
+      "form": "grass",
+      "rank": "species",
+      "commonNames": [
+        "Big Bluestem"
+      ],
+      "aliases": [
+        "andropogon gerardii",
+        "big bluestem"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "aquilegia-canadensis",
+      "scientificName": "Aquilegia canadensis",
+      "family": "Ranunculaceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Wild Columbine"
+      ],
+      "aliases": [
+        "aquilegia canadensis",
+        "wild columbine"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "aquilegia-formosa",
+      "scientificName": "Aquilegia formosa",
+      "family": "Ranunculaceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Western Columbine"
+      ],
+      "aliases": [
+        "aquilegia formosa",
+        "western columbine"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "arbutus-menziesii",
+      "scientificName": "Arbutus menziesii",
+      "family": "Ericaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Pacific Madrone"
+      ],
+      "aliases": [
+        "arbutus menziesii",
+        "pacific madrone"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "asclepias-incarnata",
+      "scientificName": "Asclepias incarnata",
+      "family": "Apocynaceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Swamp Milkweed"
+      ],
+      "aliases": [
+        "asclepias incarnata",
+        "swamp milkweed"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "asclepias-tuberosa",
+      "scientificName": "Asclepias tuberosa",
+      "family": "Apocynaceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Butterfly Weed"
+      ],
+      "aliases": [
+        "asclepias tuberosa",
+        "butterfly weed"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic",
+        "florida-central"
+      ]
+    },
+    {
+      "id": "baptisia-australis",
+      "scientificName": "Baptisia australis",
+      "family": "Fabaceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Blue Wild Indigo"
+      ],
+      "aliases": [
+        "baptisia australis",
+        "blue wild indigo"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "berberis-aquifolium",
+      "scientificName": "Berberis aquifolium",
+      "family": "Berberidaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Tall Oregon Grape"
+      ],
+      "aliases": [
+        "berberis aquifolium",
+        "tall oregon grape"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "betula-nigra",
+      "scientificName": "Betula nigra",
+      "family": "Betulaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "River Birch"
+      ],
+      "aliases": [
+        "betula nigra",
+        "river birch"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "bursera-simaruba",
+      "scientificName": "Bursera simaruba",
+      "family": "Burseraceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Gumbo Limbo"
+      ],
+      "aliases": [
+        "bursera simaruba",
+        "gumbo limbo"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-south"
+      ]
+    },
+    {
+      "id": "callicarpa-americana",
+      "scientificName": "Callicarpa americana",
+      "family": "Lamiaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "American Beautyberry"
+      ],
+      "aliases": [
+        "american beautyberry",
+        "callicarpa americana"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central"
+      ]
+    },
+    {
+      "id": "camassia-quamash",
+      "scientificName": "Camassia quamash",
+      "family": "Asparagaceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Common Camas"
+      ],
+      "aliases": [
+        "camassia quamash",
+        "common camas"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "carex-pensylvanica",
+      "scientificName": "Carex pensylvanica",
+      "family": "Cyperaceae",
+      "form": "grass",
+      "rank": "species",
+      "commonNames": [
+        "Pennsylvania Sedge"
+      ],
+      "aliases": [
+        "carex pensylvanica",
+        "pennsylvania sedge"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "ceanothus-americanus",
+      "scientificName": "Ceanothus americanus",
+      "family": "Rhamnaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "New Jersey Tea"
+      ],
+      "aliases": [
+        "ceanothus americanus",
+        "new jersey tea"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "cephalanthus-occidentalis",
+      "scientificName": "Cephalanthus occidentalis",
+      "family": "Rubiaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Buttonbush"
+      ],
+      "aliases": [
+        "buttonbush",
+        "cephalanthus occidentalis"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "cercis-canadensis",
+      "scientificName": "Cercis canadensis",
+      "family": "Fabaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Eastern Redbud"
+      ],
+      "aliases": [
+        "cercis canadensis",
+        "eastern redbud"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "chionanthus-virginicus",
+      "scientificName": "Chionanthus virginicus",
+      "family": "Oleaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Fringetree"
+      ],
+      "aliases": [
+        "chionanthus virginicus",
+        "fringetree"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central"
+      ]
+    },
+    {
+      "id": "chrysobalanus-icaco",
+      "scientificName": "Chrysobalanus icaco",
+      "family": "Chrysobalanaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Cocoplum"
+      ],
+      "aliases": [
+        "chrysobalanus icaco",
+        "cocoplum"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-south"
+      ]
+    },
+    {
+      "id": "coccoloba-diversifolia",
+      "scientificName": "Coccoloba diversifolia",
+      "family": "Polygonaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Pigeon Plum"
+      ],
+      "aliases": [
+        "coccoloba diversifolia",
+        "pigeon plum"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-south"
+      ]
+    },
+    {
+      "id": "coccoloba-uvifera",
+      "scientificName": "Coccoloba uvifera",
+      "family": "Polygonaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Seagrape"
+      ],
+      "aliases": [
+        "coccoloba uvifera",
+        "seagrape"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-south"
+      ]
+    },
+    {
+      "id": "conocarpus-erectus",
+      "scientificName": "Conocarpus erectus",
+      "family": "Combretaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Green Buttonwood"
+      ],
+      "aliases": [
+        "conocarpus erectus",
+        "green buttonwood"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-south"
+      ]
+    },
+    {
+      "id": "coreopsis-leavenworthii",
+      "scientificName": "Coreopsis leavenworthii",
+      "family": "Asteraceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Leavenworth's Tickseed"
+      ],
+      "aliases": [
+        "coreopsis leavenworthii",
+        "leavenworth's tickseed"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central"
+      ]
+    },
+    {
+      "id": "cornus-florida",
+      "scientificName": "Cornus florida",
+      "family": "Cornaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Flowering Dogwood"
+      ],
+      "aliases": [
+        "cornus florida",
+        "flowering dogwood"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "cornus-sericea",
+      "scientificName": "Cornus sericea",
+      "family": "Cornaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Red-osier Dogwood"
+      ],
+      "aliases": [
+        "cornus sericea",
+        "red-osier dogwood"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic",
+        "pnw"
+      ]
+    },
+    {
+      "id": "corylus-americana",
+      "scientificName": "Corylus americana",
+      "family": "Betulaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "American Hazelnut"
+      ],
+      "aliases": [
+        "american hazelnut",
+        "corylus americana"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "echinacea-purpurea",
+      "scientificName": "Echinacea purpurea",
+      "family": "Asteraceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Purple Coneflower"
+      ],
+      "aliases": [
+        "echinacea purpurea",
+        "purple coneflower"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "eriophyllum-lanatum",
+      "scientificName": "Eriophyllum lanatum",
+      "family": "Asteraceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Oregon Sunshine"
+      ],
+      "aliases": [
+        "eriophyllum lanatum",
+        "oregon sunshine"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "eutrochium-purpureum",
+      "scientificName": "Eutrochium purpureum",
+      "family": "Asteraceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Joe Pye Weed"
+      ],
+      "aliases": [
+        "eutrochium purpureum",
+        "joe pye weed"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "festuca-roemeri",
+      "scientificName": "Festuca roemeri",
+      "family": "Poaceae",
+      "form": "grass",
+      "rank": "species",
+      "commonNames": [
+        "Roemer's Fescue"
+      ],
+      "aliases": [
+        "festuca roemeri",
+        "roemer's fescue"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "fragaria-chiloensis",
+      "scientificName": "Fragaria chiloensis",
+      "family": "Rosaceae",
+      "form": "groundcover",
+      "rank": "species",
+      "commonNames": [
+        "Coastal Strawberry"
+      ],
+      "aliases": [
+        "coastal strawberry",
+        "fragaria chiloensis"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "fragaria-virginiana",
+      "scientificName": "Fragaria virginiana",
+      "family": "Rosaceae",
+      "form": "groundcover",
+      "rank": "species",
+      "commonNames": [
+        "Wild Strawberry"
+      ],
+      "aliases": [
+        "fragaria virginiana",
+        "wild strawberry"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "gaultheria-shallon",
+      "scientificName": "Gaultheria shallon",
+      "family": "Ericaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Salal"
+      ],
+      "aliases": [
+        "gaultheria shallon",
+        "salal"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "geranium-maculatum",
+      "scientificName": "Geranium maculatum",
+      "family": "Geraniaceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Wild Geranium"
+      ],
+      "aliases": [
+        "geranium maculatum",
+        "wild geranium"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "hamamelis-virginiana",
+      "scientificName": "Hamamelis virginiana",
+      "family": "Hamamelidaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Witch Hazel"
+      ],
+      "aliases": [
+        "hamamelis virginiana",
+        "witch hazel"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "hamelia-patens",
+      "scientificName": "Hamelia patens",
+      "family": "Rubiaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Firebush"
+      ],
+      "aliases": [
+        "firebush",
+        "hamelia patens"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central",
+        "florida-south"
+      ]
+    },
+    {
+      "id": "helianthus-debilis",
+      "scientificName": "Helianthus debilis",
+      "family": "Asteraceae",
+      "form": "groundcover",
+      "rank": "species",
+      "commonNames": [
+        "Beach",
+        "Dune Sunflower"
+      ],
+      "aliases": [
+        "beach",
+        "dune sunflower",
+        "helianthus debilis"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central",
+        "florida-south"
+      ]
+    },
+    {
+      "id": "holodiscus-discolor",
+      "scientificName": "Holodiscus discolor",
+      "family": "Rosaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Oceanspray"
+      ],
+      "aliases": [
+        "holodiscus discolor",
+        "oceanspray"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "ilex-verticillata",
+      "scientificName": "Ilex verticillata",
+      "family": "Aquifoliaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Winterberry Holly"
+      ],
+      "aliases": [
+        "ilex verticillata",
+        "winterberry holly"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "ilex-vomitoria",
+      "scientificName": "Ilex vomitoria",
+      "family": "Aquifoliaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Yaupon Holly"
+      ],
+      "aliases": [
+        "ilex vomitoria",
+        "yaupon holly"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central"
+      ]
+    },
+    {
+      "id": "liatris-gracilis",
+      "scientificName": "Liatris gracilis",
+      "family": "Asteraceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Slender Blazing Star"
+      ],
+      "aliases": [
+        "liatris gracilis",
+        "slender blazing star"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central"
+      ]
+    },
+    {
+      "id": "lobelia-cardinalis",
+      "scientificName": "Lobelia cardinalis",
+      "family": "Campanulaceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Cardinal Flower"
+      ],
+      "aliases": [
+        "cardinal flower",
+        "lobelia cardinalis"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "lonicera-ciliosa",
+      "scientificName": "Lonicera ciliosa",
+      "family": "Caprifoliaceae",
+      "form": "vine",
+      "rank": "species",
+      "commonNames": [
+        "Orange Honeysuckle"
+      ],
+      "aliases": [
+        "lonicera ciliosa",
+        "orange honeysuckle"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "lonicera-sempervirens",
+      "scientificName": "Lonicera sempervirens",
+      "family": "Caprifoliaceae",
+      "form": "vine",
+      "rank": "species",
+      "commonNames": [
+        "Coral Honeysuckle"
+      ],
+      "aliases": [
+        "coral honeysuckle",
+        "lonicera sempervirens"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "magnolia-grandiflora",
+      "scientificName": "Magnolia grandiflora",
+      "family": "Magnoliaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Southern Magnolia"
+      ],
+      "aliases": [
+        "magnolia grandiflora",
+        "southern magnolia"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central"
+      ]
+    },
+    {
+      "id": "mimosa-strigillosa",
+      "scientificName": "Mimosa strigillosa",
+      "family": "Fabaceae",
+      "form": "groundcover",
+      "rank": "species",
+      "commonNames": [
+        "Sunshine Mimosa",
+        "Powderpuff"
+      ],
+      "aliases": [
+        "mimosa strigillosa",
+        "powderpuff",
+        "sunshine mimosa"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central"
+      ]
+    },
+    {
+      "id": "monarda-fistulosa",
+      "scientificName": "Monarda fistulosa",
+      "family": "Lamiaceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Wild Bergamot"
+      ],
+      "aliases": [
+        "monarda fistulosa",
+        "wild bergamot"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "monarda-punctata",
+      "scientificName": "Monarda punctata",
+      "family": "Lamiaceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Spotted Beebalm",
+        "Dotted Horsemint"
+      ],
+      "aliases": [
+        "dotted horsemint",
+        "monarda punctata",
+        "spotted beebalm"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central"
+      ]
+    },
+    {
+      "id": "morella-cerifera",
+      "scientificName": "Morella cerifera",
+      "family": "Myricaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Wax Myrtle",
+        "Southern Bayberry"
+      ],
+      "aliases": [
+        "morella cerifera",
+        "southern bayberry",
+        "wax myrtle"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-south"
+      ]
+    },
+    {
+      "id": "muhlenbergia-capillaris",
+      "scientificName": "Muhlenbergia capillaris",
+      "family": "Poaceae",
+      "form": "grass",
+      "rank": "species",
+      "commonNames": [
+        "Pink Muhly Grass"
+      ],
+      "aliases": [
+        "muhlenbergia capillaris",
+        "pink muhly grass"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central",
+        "florida-south"
+      ]
+    },
+    {
+      "id": "myrcianthes-fragrans",
+      "scientificName": "Myrcianthes fragrans",
+      "family": "Myrtaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Simpson's Stopper"
+      ],
+      "aliases": [
+        "myrcianthes fragrans",
+        "simpson's stopper"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central",
+        "florida-south"
+      ]
+    },
+    {
+      "id": "packera-aurea",
+      "scientificName": "Packera aurea",
+      "family": "Asteraceae",
+      "form": "groundcover",
+      "rank": "species",
+      "commonNames": [
+        "Golden Groundsel"
+      ],
+      "aliases": [
+        "golden groundsel",
+        "packera aurea"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "panicum-virgatum",
+      "scientificName": "Panicum virgatum",
+      "family": "Poaceae",
+      "form": "grass",
+      "rank": "species",
+      "commonNames": [
+        "Switchgrass"
+      ],
+      "aliases": [
+        "panicum virgatum",
+        "switchgrass"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "parthenocissus-quinquefolia",
+      "scientificName": "Parthenocissus quinquefolia",
+      "family": "Vitaceae",
+      "form": "vine",
+      "rank": "species",
+      "commonNames": [
+        "Virginia Creeper"
+      ],
+      "aliases": [
+        "parthenocissus quinquefolia",
+        "virginia creeper"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "passiflora-incarnata",
+      "scientificName": "Passiflora incarnata",
+      "family": "Passifloraceae",
+      "form": "vine",
+      "rank": "species",
+      "commonNames": [
+        "Purple Passionflower",
+        "Maypop"
+      ],
+      "aliases": [
+        "maypop",
+        "passiflora incarnata",
+        "purple passionflower"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central"
+      ]
+    },
+    {
+      "id": "passiflora-suberosa",
+      "scientificName": "Passiflora suberosa",
+      "family": "Passifloraceae",
+      "form": "vine",
+      "rank": "species",
+      "commonNames": [
+        "Corkystem Passionflower"
+      ],
+      "aliases": [
+        "corkystem passionflower",
+        "passiflora suberosa"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-south"
+      ]
+    },
+    {
+      "id": "penstemon-digitalis",
+      "scientificName": "Penstemon digitalis",
+      "family": "Plantaginaceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Foxglove Beardtongue"
+      ],
+      "aliases": [
+        "foxglove beardtongue",
+        "penstemon digitalis"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "penstemon-serrulatus",
+      "scientificName": "Penstemon serrulatus",
+      "family": "Plantaginaceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Cascade Penstemon"
+      ],
+      "aliases": [
+        "cascade penstemon",
+        "penstemon serrulatus"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "physocarpus-opulifolius",
+      "scientificName": "Physocarpus opulifolius",
+      "family": "Rosaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Ninebark"
+      ],
+      "aliases": [
+        "ninebark",
+        "physocarpus opulifolius"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "pinus-palustris",
+      "scientificName": "Pinus palustris",
+      "family": "Pinaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Longleaf Pine"
+      ],
+      "aliases": [
+        "longleaf pine",
+        "pinus palustris"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central"
+      ]
+    },
+    {
+      "id": "polystichum-acrostichoides",
+      "scientificName": "Polystichum acrostichoides",
+      "family": "Dryopteridaceae",
+      "form": "fern",
+      "rank": "species",
+      "commonNames": [
+        "Christmas Fern"
+      ],
+      "aliases": [
+        "christmas fern",
+        "polystichum acrostichoides"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "polystichum-munitum",
+      "scientificName": "Polystichum munitum",
+      "family": "Dryopteridaceae",
+      "form": "fern",
+      "rank": "species",
+      "commonNames": [
+        "Western Sword Fern"
+      ],
+      "aliases": [
+        "polystichum munitum",
+        "western sword fern"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "populus-trichocarpa",
+      "scientificName": "Populus trichocarpa",
+      "family": "Salicaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Black Cottonwood"
+      ],
+      "aliases": [
+        "black cottonwood",
+        "populus trichocarpa"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "prunus-serotina",
+      "scientificName": "Prunus serotina",
+      "family": "Rosaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Black Cherry"
+      ],
+      "aliases": [
+        "black cherry",
+        "prunus serotina"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "pseudotsuga-menziesii",
+      "scientificName": "Pseudotsuga menziesii",
+      "family": "Pinaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Douglas-fir"
+      ],
+      "aliases": [
+        "douglas-fir",
+        "pseudotsuga menziesii"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "psychotria-nervosa",
+      "scientificName": "Psychotria nervosa",
+      "family": "Rubiaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Wild Coffee"
+      ],
+      "aliases": [
+        "psychotria nervosa",
+        "wild coffee"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-south"
+      ]
+    },
+    {
+      "id": "quercus-alba",
+      "scientificName": "Quercus alba",
+      "family": "Fagaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "White Oak"
+      ],
+      "aliases": [
+        "quercus alba",
+        "white oak"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "quercus-garryana",
+      "scientificName": "Quercus garryana",
+      "family": "Fagaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Oregon White Oak",
+        "Garry Oak"
+      ],
+      "aliases": [
+        "garry oak",
+        "oregon white oak",
+        "quercus garryana"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "quercus-rubra",
+      "scientificName": "Quercus rubra",
+      "family": "Fagaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Northern Red Oak"
+      ],
+      "aliases": [
+        "northern red oak",
+        "quercus rubra"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "quercus-virginiana",
+      "scientificName": "Quercus virginiana",
+      "family": "Fagaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Southern Live Oak"
+      ],
+      "aliases": [
+        "quercus virginiana",
+        "southern live oak"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central",
+        "florida-south"
+      ]
+    },
+    {
+      "id": "ribes-sanguineum",
+      "scientificName": "Ribes sanguineum",
+      "family": "Grossulariaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Red-flowering Currant"
+      ],
+      "aliases": [
+        "red-flowering currant",
+        "ribes sanguineum"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "rivina-humilis",
+      "scientificName": "Rivina humilis",
+      "family": "Petiveriaceae",
+      "form": "groundcover",
+      "rank": "species",
+      "commonNames": [
+        "Rougeplant",
+        "Bloodberry"
+      ],
+      "aliases": [
+        "bloodberry",
+        "rivina humilis",
+        "rougeplant"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-south"
+      ]
+    },
+    {
+      "id": "rosa-nutkana",
+      "scientificName": "Rosa nutkana",
+      "family": "Rosaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Nootka Rose"
+      ],
+      "aliases": [
+        "nootka rose",
+        "rosa nutkana"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "rudbeckia-fulgida",
+      "scientificName": "Rudbeckia fulgida",
+      "family": "Asteraceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Black-eyed Susan"
+      ],
+      "aliases": [
+        "black-eyed susan",
+        "rudbeckia fulgida"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "sabal-palmetto",
+      "scientificName": "Sabal palmetto",
+      "family": "Arecaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Cabbage Palm",
+        "Sabal Palm"
+      ],
+      "aliases": [
+        "cabbage palm",
+        "sabal palm",
+        "sabal palmetto"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central",
+        "florida-south"
+      ]
+    },
+    {
+      "id": "salix-scouleriana",
+      "scientificName": "Salix scouleriana",
+      "family": "Salicaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Scouler's Willow"
+      ],
+      "aliases": [
+        "salix scouleriana",
+        "scouler's willow"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "salvia-coccinea",
+      "scientificName": "Salvia coccinea",
+      "family": "Lamiaceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Tropical Sage",
+        "Scarlet Sage"
+      ],
+      "aliases": [
+        "salvia coccinea",
+        "scarlet sage",
+        "tropical sage"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central",
+        "florida-south"
+      ]
+    },
+    {
+      "id": "schizachyrium-scoparium",
+      "scientificName": "Schizachyrium scoparium",
+      "family": "Poaceae",
+      "form": "grass",
+      "rank": "species",
+      "commonNames": [
+        "Little Bluestem"
+      ],
+      "aliases": [
+        "little bluestem",
+        "schizachyrium scoparium"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "serenoa-repens",
+      "scientificName": "Serenoa repens",
+      "family": "Arecaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Saw Palmetto"
+      ],
+      "aliases": [
+        "saw palmetto",
+        "serenoa repens"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central",
+        "florida-south"
+      ]
+    },
+    {
+      "id": "solidago-rugosa",
+      "scientificName": "Solidago rugosa",
+      "family": "Asteraceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Wrinkleleaf Goldenrod"
+      ],
+      "aliases": [
+        "solidago rugosa",
+        "wrinkleleaf goldenrod"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "sophora-tomentosa-truncata",
+      "scientificName": "Sophora tomentosa var. truncata",
+      "family": "Fabaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Yellow Necklacepod"
+      ],
+      "aliases": [
+        "sophora tomentosa var. truncata",
+        "yellow necklacepod"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-south"
+      ]
+    },
+    {
+      "id": "stachytarpheta-jamaicensis",
+      "scientificName": "Stachytarpheta jamaicensis",
+      "family": "Verbenaceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Blue Porterweed"
+      ],
+      "aliases": [
+        "blue porterweed",
+        "stachytarpheta jamaicensis"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-south"
+      ]
+    },
+    {
+      "id": "symphoricarpos-albus",
+      "scientificName": "Symphoricarpos albus",
+      "family": "Caprifoliaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Common Snowberry"
+      ],
+      "aliases": [
+        "common snowberry",
+        "symphoricarpos albus"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "symphyotrichum-novae-angliae",
+      "scientificName": "Symphyotrichum novae-angliae",
+      "family": "Asteraceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "New England Aster"
+      ],
+      "aliases": [
+        "new england aster",
+        "symphyotrichum novae-angliae"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "taxodium-distichum",
+      "scientificName": "Taxodium distichum",
+      "family": "Cupressaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Bald Cypress"
+      ],
+      "aliases": [
+        "bald cypress",
+        "taxodium distichum"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central"
+      ]
+    },
+    {
+      "id": "thuja-plicata",
+      "scientificName": "Thuja plicata",
+      "family": "Cupressaceae",
+      "form": "tree",
+      "rank": "species",
+      "commonNames": [
+        "Western Redcedar"
+      ],
+      "aliases": [
+        "thuja plicata",
+        "western redcedar"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "id": "tripsacum-dactyloides",
+      "scientificName": "Tripsacum dactyloides",
+      "family": "Poaceae",
+      "form": "grass",
+      "rank": "species",
+      "commonNames": [
+        "Fakahatchee Grass",
+        "Eastern Gamagrass"
+      ],
+      "aliases": [
+        "eastern gamagrass",
+        "fakahatchee grass",
+        "tripsacum dactyloides"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central",
+        "florida-south"
+      ]
+    },
+    {
+      "id": "vaccinium-corymbosum",
+      "scientificName": "Vaccinium corymbosum",
+      "family": "Ericaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Highbush Blueberry"
+      ],
+      "aliases": [
+        "highbush blueberry",
+        "vaccinium corymbosum"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "viburnum-dentatum",
+      "scientificName": "Viburnum dentatum",
+      "family": "Adoxaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Arrowwood Viburnum"
+      ],
+      "aliases": [
+        "arrowwood viburnum",
+        "viburnum dentatum"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    },
+    {
+      "id": "viburnum-obovatum",
+      "scientificName": "Viburnum obovatum",
+      "family": "Adoxaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Walter's Viburnum"
+      ],
+      "aliases": [
+        "viburnum obovatum",
+        "walter's viburnum"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-central"
+      ]
+    },
+    {
+      "id": "zamia-integrifolia",
+      "scientificName": "Zamia integrifolia",
+      "family": "Zamiaceae",
+      "form": "shrub",
+      "rank": "species",
+      "commonNames": [
+        "Coontie"
+      ],
+      "aliases": [
+        "coontie",
+        "zamia integrifolia"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "florida-south"
+      ]
+    },
+    {
+      "id": "zizia-aurea",
+      "scientificName": "Zizia aurea",
+      "family": "Apiaceae",
+      "form": "perennial",
+      "rank": "species",
+      "commonNames": [
+        "Golden Alexanders"
+      ],
+      "aliases": [
+        "golden alexanders",
+        "zizia aurea"
+      ],
+      "usdaSymbol": null,
+      "gbifKey": null,
+      "cultivarOf": null,
+      "regions": [
+        "mid-atlantic"
+      ]
+    }
+  ]
+}

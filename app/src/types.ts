@@ -205,6 +205,56 @@ export interface SupportLink {
   basis: string;
 }
 
+// ---------------------------------------------------------------------------
+// Registry: the canonical identity layer.
+//
+// The plant lists answer "what should I plant here". The registry answers a
+// narrower, load-bearing question the rest of the system leans on: "is this the
+// same plant?" — across our own regions, across a nursery's messy product
+// names, and across other apps. It is deliberately an *identity* projection
+// (names, aliases, external keys), not a second copy of the eco-data: one entry
+// per taxon, keyed on a stable id, so a lookup resolves to exactly one thing.
+//
+// It is entirely client-side static data (like the plant lists and like tzdata
+// or the GBIF backbone dump — reference data ships as a file, not a service),
+// generated from the catalog by `scripts/build-registry.ts` and kept in sync by
+// `scripts/check-registry.ts`. External keys (USDA/GBIF) are reconciled in via
+// `data/registry.overrides.json`; until then the accepted scientific name is the
+// anchor. See `docs/nursery-availability-protocol.md` for why identity is the
+// foundation of availability and discoverability.
+// ---------------------------------------------------------------------------
+
+/** Resolution of a registry entry. Most are species; genus nodes let a buyer
+ *  ask for "a milkweed" as well as a specific one. */
+export type TaxonRank = "species" | "genus";
+
+export interface RegistryEntry {
+  /** Stable local key — the scientific-name slug, identical to the catalog's
+   *  plant `id`, so registry↔catalog is the same string. */
+  id: string;
+  /** Accepted binomial. The reconciliation anchor until external keys are filled. */
+  scientificName: string;
+  family: string;
+  form: PlantForm;
+  rank: TaxonRank;
+  /** Display names, primary first (e.g. ["Oregon White Oak", "Garry Oak"]). */
+  commonNames: string[];
+  /** Normalized (lowercased, single-spaced) strings that resolve to this entry —
+   *  every common name plus the scientific name. The name→id index is built from
+   *  these; a string two entries share is flagged ambiguous, never guessed. */
+  aliases: string[];
+  /** USDA PLANTS Symbol (e.g. "QUGA4"); null until reconciled. Public domain. */
+  usdaSymbol: string | null;
+  /** GBIF backbone usageKey; null until reconciled. The global crosswalk key. */
+  gbifKey: number | null;
+  /** If this is a cultivar/hybrid node, the id of the straight species it derives
+   *  from — so "Dwarf Firebush" is a distinct node pointing at "Firebush". */
+  cultivarOf: string | null;
+  /** Indigene region ids whose lists include this taxon (a taxon native to two
+   *  regions is one entry, listed in both). */
+  regions: string[];
+}
+
 export interface HorizonMask {
   /** 72 samples, one per 5° of compass bearing, each an elevation angle (deg). */
   angles: number[];

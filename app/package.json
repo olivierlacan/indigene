@@ -9,7 +9,9 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "registry:build": "node --experimental-strip-types scripts/build-registry.ts",
+    "registry:check": "node --experimental-strip-types scripts/check-registry.ts"
   },
   "devDependencies": {
     "typescript": "^5.6.3",

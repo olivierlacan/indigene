@@ -17,6 +17,17 @@ export function renderExplore(main: HTMLElement): void {
     el("p", { class: "step-lede" }, [
       "One standout plant from each region Indigene covers. Open one to see what it does for wildlife, how big it honestly gets, and whether the spot you have in mind would suit it.",
     ]),
+    el("a", {
+      href: "#/wildlife",
+      class: "card",
+      style: "display:flex;gap:0.6rem;align-items:center;text-decoration:none;color:inherit;margin-bottom:0.9rem",
+    }, [
+      el("span", { "aria-hidden": "true", style: "font-size:1.5rem;line-height:1" }, "🦋"),
+      el("span", {}, [
+        el("span", { style: "font-weight:700" }, "Or browse by wildlife → "),
+        el("span", { style: "color:var(--ink-soft)" }, "start from the monarch, hummingbird, or gopher tortoise you want, and find the plants that support it."),
+      ]),
+    ]),
     ...REGIONS.map((region) => {
       const p = featuredPlant(region);
       const count = loadPlants(region).length;

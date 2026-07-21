@@ -117,6 +117,94 @@ export interface Plant {
 
 export type MoistureBand = "dry" | "mesic" | "wet";
 
+// ---------------------------------------------------------------------------
+// Wildlife: the "who does this feed" layer.
+//
+// The eco-scores above answer "how much life does this plant support" as a
+// number. This layer answers the question a gardener actually asks — "will it
+// bring *monarchs*? *hummingbirds*?" — by naming the specific, recognizable
+// insects and animals a plant supports. It's deliberately not the raw host
+// tally (an oak feeds hundreds of moth species); it's the notable, nameable,
+// well-documented relationships worth browsing by.
+//
+// The catalog (the animals themselves) lives once in `data/wildlife.ts`; the
+// per-region plant→animal ties live beside it in the same file, so the whole
+// "what supports what" claim is auditable in one place, the way a plant row is.
+// ---------------------------------------------------------------------------
+
+/** Broad group a supported animal belongs to — drives the browse index's
+ *  sections and the icon shown. Small and plain on purpose. */
+export type WildlifeKind = "butterfly" | "moth" | "bee" | "bird" | "mammal";
+
+/**
+ * A specific insect or animal that native plants support. Defined once, in the
+ * shared catalog, so "Monarch butterfly" is described in exactly one place and
+ * every plant that supports it points at the same entry.
+ */
+export interface Wildlife {
+  id: string; // stable slug, e.g. "monarch"
+  common: string; // "Monarch butterfly"
+  latin?: string; // "Danaus plexippus" — omitted for informal groups
+  kind: WildlifeKind;
+  icon: string; // emoji — the app's icon idiom
+  /** Plain words: what it is and why bringing it in matters. */
+  blurb: string;
+  /**
+   * Every animal in this catalog must itself be native to the regions Indigene
+   * covers — the whole point is a native plant feeding a native animal, not a
+   * native plant that happens to also suit an introduced species (the honey bee
+   * is the classic one we leave out). This is a hard invariant: the field exists
+   * so the guarantee is explicit in the data, shown in the UI, and enforced by
+   * the dev audit, which refuses to let a non-native be listed. A citable source
+   * for the native status lives in `nativeBasis`.
+   */
+  native: true;
+  /** Where the animal is native and a dependable source saying so. */
+  nativeBasis: string;
+}
+
+/**
+ * How a plant supports an animal — the honest distinction between raising its
+ * young (a larval host, the strongest tie) and feeding or sheltering the adult.
+ * Each key is glossed in plain words wherever it's shown (see `plain.ts`).
+ */
+export type SupportKind = "host" | "nectar" | "berries" | "seeds" | "shelter";
+
+/**
+ * How strongly the animal depends on THIS plant (or the plant group it stands
+ * in for). `support` says *how* the plant helps; this says *how much it matters*
+ * — the difference between a make-or-break tie and a nice-to-have.
+ *
+ *  - "sole"   The animal's only option: an obligate host with no substitute —
+ *             a monarch on milkweed, an atala on coontie. Lose it locally and
+ *             you lose the animal. The headline conservation ties.
+ *  - "narrow" A specialist restricted to a small group this plant belongs to
+ *             (sunflower-family specialist bees; a butterfly tied to one plant
+ *             family). Important, with only a few alternatives.
+ *  - "broad"  One of many the animal uses — valuable, but not make-or-break.
+ *
+ * Optional, defaulting to "broad" (see `relianceOf`): most ties — adult nectar,
+ * fruit, seed — are generalist, and defaulting to the weaker claim means we
+ * never overstate a dependence we didn't explicitly vouch for.
+ */
+export type SupportReliance = "sole" | "narrow" | "broad";
+
+/**
+ * One plant→animal tie: which animal, how the plant supports it, how much the
+ * animal depends on it, why, and where the claim comes from. Lives in the region
+ * support map in `data/wildlife.ts`.
+ */
+export interface SupportLink {
+  wildlifeId: string;
+  support: SupportKind;
+  /** How much the animal depends on this plant. Omit for the "broad" default. */
+  reliance?: SupportReliance;
+  /** Plant-specific, plain-language why/how. */
+  note: string;
+  /** A dependable, citable source for this relationship. */
+  basis: string;
+}
+
 export interface HorizonMask {
   /** 72 samples, one per 5° of compass bearing, each an elevation angle (deg). */
   angles: number[];

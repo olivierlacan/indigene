@@ -102,6 +102,19 @@ a {
   color: var(--focus);
 }
 
+/* Inline source citations: a linked authority name reads as a link but stays
+   quiet inside the muted "Source:" line — underlined so it's recognizable even
+   where the surrounding text is already colored. */
+.src-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.src-link:hover,
+.src-link:focus-visible {
+  color: var(--focus);
+}
+
 :focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 2px;
@@ -786,6 +799,76 @@ input[type="range"] {
 .badge.neutral {
   background: var(--surface-2);
   color: var(--ink-soft);
+}
+/* Tap-to-explain tie chips: a colored pill with a white monochrome glyph and a
+   one-word label. A real button — the dotted underline under the label marks it
+   as "there's more here", and it opens the term dialog. */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.18rem 0.55rem;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  background: var(--surface-2);
+  color: var(--ink-soft);
+}
+.tag .tag-label {
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+.tie-glyph {
+  flex: 0 0 auto;
+  vertical-align: -0.12em; /* used when a glyph sits inline (e.g. plant-page chips) */
+}
+/* Per-kind pills: a deep, saturated color carrying a white glyph + label. Each
+   is dark enough that white clears ≥7:1 (well past the 4.5:1 floor), so the
+   monochrome glyph never blends into its pill; the pill is the background, so
+   the contrast holds identically in both themes. */
+.tag-host {
+  background: #215f35;
+  color: #fff;
+}
+.tag-nectar {
+  background: #8f3f15;
+  color: #fff;
+}
+.tag-berries {
+  background: #6b4291;
+  color: #fff;
+}
+.tag-seeds {
+  background: #6b5029;
+  color: #fff;
+}
+.tag-shelter {
+  background: #1f5b57;
+  color: #fff;
+}
+/* "Specialist" — a deep indigo, distinct from the role pills. */
+.tag-narrow {
+  background: #454ea0;
+  color: #fff;
+}
+/* "Essential" — gold with dark ink, the one make-or-break flag; it stands apart
+   from the colored role pills beside it. */
+.tag-sole {
+  background: #f2c94c;
+  color: #3a2c00;
+}
+/* The term dialog's title glyph sits in the ink color beside the word. */
+.term-dialog-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.term-dialog-glyph {
+  display: inline-flex;
 }
 
 .size-viz {

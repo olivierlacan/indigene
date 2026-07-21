@@ -1,7 +1,7 @@
 // Plain-language layer. The rule from the brief: never surface a term without
 // explaining it inline, in words a 70-year-old who has never heard "keystone
 // species" can act on. Everything jargon-y funnels through here.
-import type { MoistureBand, PropagationMethod, SizeSnapshot } from "../types";
+import type { MoistureBand, PropagationMethod, SizeSnapshot, SupportKind, SupportReliance, WildlifeKind } from "../types";
 
 /** The full audit of every dataset behind the numbers — linked wherever we
  * cite a figure (host counts especially) so claims stay checkable. */
@@ -150,6 +150,109 @@ export const scoreLabels: Record<string, { icon: string; name: string; plain: st
     icon: "🌵",
     name: "Survives on its own",
     plain: "How likely it is to make it with no watering or fuss after you plant it.",
+  },
+};
+
+/**
+ * The kinds of wildlife the app lets you browse by — the section headings and
+ * the icon each group carries. Plain, everyday names; nobody has to know
+ * "Lepidoptera" to look for butterflies. `blurb` heads each section.
+ */
+export const wildlifeKindLabels: Record<
+  WildlifeKind,
+  { title: string; icon: string; blurb: string }
+> = {
+  butterfly: {
+    icon: "🦋",
+    title: "Butterflies",
+    blurb: "Choose a butterfly to see which natives raise its caterpillars or feed the adults.",
+  },
+  moth: {
+    icon: "🌙",
+    title: "Moths",
+    blurb: "The night shift — including the giant silk moths, whose caterpillars are prime baby-bird food.",
+  },
+  bee: {
+    icon: "🐝",
+    title: "Bees & other pollinators",
+    blurb: "Native bees, many of which can raise their young on only one family of flowers.",
+  },
+  bird: {
+    icon: "🐦",
+    title: "Birds",
+    blurb: "The berries, seeds, nectar, and caterpillars behind the birds you want in the yard.",
+  },
+  mammal: {
+    icon: "🐿️",
+    title: "Mammals & others",
+    blurb: "Acorns and fruit for the four-legged neighbors — and a reptile or two.",
+  },
+};
+
+/**
+ * How a plant supports an animal, glossed once. `term` is the one-word chip
+ * ("Host", "Nectar") — kept to a single noun so it reads at a glance; `plain`
+ * is the tap-to-open explanation, which is where a word like "Host" that a
+ * beginner won't know gets unpacked. The `host` tie is the strongest, because
+ * raising the next generation is a bigger promise than feeding a passing adult.
+ */
+export const supportLabels: Record<
+  SupportKind,
+  { term: string; icon: string; plain: string }
+> = {
+  host: {
+    term: "Host",
+    icon: "🐛",
+    plain: "A host plant: caterpillars eat its leaves and grow up on it. This is the strongest kind of support — it's where the next generation of butterflies and moths comes from, and caterpillars are what nearly all baby songbirds are fed.",
+  },
+  nectar: {
+    term: "Nectar",
+    icon: "🌼",
+    plain: "Nectar and pollen for the grown insects — food for the adults, not a nursery for their young.",
+  },
+  berries: {
+    term: "Berries",
+    icon: "🫐",
+    plain: "Berries or fruit that birds and mammals eat, especially through fall and winter.",
+  },
+  seeds: {
+    term: "Seeds",
+    icon: "🌰",
+    plain: "Seeds or nuts that birds and mammals eat — often what's left standing after the flowers fade.",
+  },
+  shelter: {
+    term: "Shelter",
+    icon: "🏠",
+    plain: "Cover and habitat to nest, graze, roost, or ride out the season in.",
+  },
+};
+
+/**
+ * How much an animal depends on a plant, glossed once. `term` is the one-word
+ * chip; `plain` is the tap-to-open meaning. Only the two notable levels get a
+ * chip on screen — "Essential" (make-or-break) and "Specialist" (few options);
+ * the generalist "broad" default shows none, so an unmarked tie simply means
+ * "one of many". The `broad` entry is kept so that meaning can still be spelled
+ * out in a dialog when needed.
+ */
+export const relianceLabels: Record<
+  SupportReliance,
+  { icon: string; term: string; plain: string }
+> = {
+  sole: {
+    icon: "⭐",
+    term: "Essential",
+    plain: "This plant is the animal's only option — an obligate tie with no substitute. Lose it here and you lose the animal. These are the make-or-break relationships (a monarch needs milkweed; an atala needs coontie).",
+  },
+  narrow: {
+    icon: "🎯",
+    term: "Specialist",
+    plain: "A specialist relationship: the animal can use only a small group of plants, and this is one of them. Important, with just a few alternatives.",
+  },
+  broad: {
+    icon: "•",
+    term: "One of many",
+    plain: "Valuable, but the animal uses many plants — helpful without being make-or-break on its own. Tags like this are left off, so an unmarked plant means the animal has other options.",
   },
 };
 

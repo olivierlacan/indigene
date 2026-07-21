@@ -10,12 +10,15 @@ import { searchPlaces, placeLabel, nearestPlaceName } from "../lib/geocode";
 import { manualSunEstimate } from "../lib/solar";
 import { findPlant, assessSpot, plantShareUrl } from "../lib/explore";
 import type { PlantEntry, Suitability } from "../lib/explore";
+import { wildlifeForPlant, relianceOf } from "../lib/wildlife";
+import { supportLabels } from "../lib/plain";
+import { supportIcon } from "../components/support-icon";
 import { scoreLabels, confidencePlain, growthPlain, propagationMethods, DATA_SOURCES_URL, PROPAGATION_SOURCE_URL } from "../lib/plain";
 import { silhouetteFor } from "../components/plant-card";
 import { keystoneIcon } from "../components/keystone-icon";
 import { statGrid } from "../components/stat-card";
 import { drawSizeViz } from "../components/size-viz";
-import type { Plant, SiteData, SunEstimate } from "../types";
+import type { Plant, SiteData, SunEstimate, SupportKind } from "../types";
 
 const monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -50,7 +53,7 @@ export function renderPlant(main: HTMLElement, param?: string): void {
 
   main.append(
     profile(plant, entries),
-    ecosystemSection(plant),
+    ecosystemSection(plant, entries),
     propagationSection(plant),
     suitabilityChecker(entries),
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
@@ -359,8 +362,10 @@ function sectionCard(section: Section, slug: string, heading: string, body: HTML
 }
 
 // The seven ecosystem-benefit scores, each with its fixed icon and plain-words
-// gloss. Its own card now, so it can be linked to and opened directly.
-function ecosystemSection(p: Plant): HTMLDetailsElement {
+// gloss. Its own card now, so it can be linked to and opened directly. When the
+// plant has named wildlife ties, they lead the card — the specific creatures a
+// person can go looking for, above the abstract scores.
+function ecosystemSection(p: Plant, entries: PlantEntry[]): HTMLDetailsElement {
   const scoreParts = (Object.keys(scoreLabels) as (keyof typeof scoreLabels)[]).map((key) => {
     const val = (p.scores as unknown as Record<string, number>)[key];
     const label = scoreLabels[key];
@@ -373,8 +378,59 @@ function ecosystemSection(p: Plant): HTMLDetailsElement {
       el("p", { class: "score-why" }, label.plain),
     ]);
   });
+  const feeds = whoItFeeds(entries);
   return sectionCard("ecosystem", p.id, "🦋 What it does for the ecosystem", [
+    ...(feeds ? [feeds] : []),
     el("ul", { class: "score-list" }, scoreParts),
+  ]);
+}
+
+// The named insects and animals this plant supports — the concrete answer to
+// "will it bring monarchs?", drawn from the wildlife map. Each links to that
+// creature's page, where you can see every other native that supports it. A
+// plant native to more than one region shows the union of its ties, deduped by
+// creature (the strongest tie — a larval host — wins the label).
+function whoItFeeds(entries: PlantEntry[]): HTMLElement | null {
+  const supportRank: Record<string, number> = { host: 0, nectar: 1, berries: 2, seeds: 3, shelter: 4 };
+  // A star marks a plant this animal can't live without — the make-or-break tie.
+  const best = new Map<string, { name: string; icon: string; support: string; id: string; sole: boolean }>();
+  for (const e of entries) {
+    for (const { wildlife, link } of wildlifeForPlant(e.region.meta.id, e.plant.id)) {
+      const prev = best.get(wildlife.id);
+      const sole = (prev?.sole ?? false) || relianceOf(link) === "sole";
+      if (!prev || supportRank[link.support] < supportRank[prev.support]) {
+        best.set(wildlife.id, { name: wildlife.common, icon: wildlife.icon, support: link.support, id: wildlife.id, sole });
+      } else {
+        prev.sole = sole; // keep the star even if a weaker-labeled tie sorted first
+      }
+    }
+  }
+  if (!best.size) return null;
+  // Make-or-break ties first, then by support strength.
+  const items = [...best.values()].sort(
+    (a, b) => Number(b.sole) - Number(a.sole) || supportRank[a.support] - supportRank[b.support]
+  );
+  return el("div", { style: "margin:0 0 0.8rem" }, [
+    el("p", { class: "kv", style: "margin:0 0 0.4rem" }, [el("span", { class: "k" }, "Wildlife it brings in: ")]),
+    el("div", { style: "display:flex;flex-wrap:wrap;gap:0.4rem" },
+      items.map((w) =>
+        el("a", {
+          href: `#/wildlife/${w.id}`,
+          class: "btn btn-secondary",
+          style: "flex:0 1 auto;min-height:2.4rem;padding:0.35rem 0.65rem;font-size:0.9rem;text-decoration:none",
+          title: w.sole
+            ? `This plant is the ${w.name.toLowerCase()}'s only option — a make-or-break tie.`
+            : `${supportLabels[w.support as keyof typeof supportLabels].term} — ${supportLabels[w.support as keyof typeof supportLabels].plain}`,
+        }, [
+          w.sole ? el("span", { "aria-hidden": "true" }, "⭐ ") : null,
+          el("span", { "aria-hidden": "true" }, `${w.icon} `),
+          w.name,
+          el("span", { "aria-hidden": "true", style: "opacity:0.7;margin-left:0.3rem;display:inline-flex" }, [
+            supportIcon(w.support as SupportKind, 13),
+          ]),
+        ])
+      )
+    ),
   ]);
 }
 

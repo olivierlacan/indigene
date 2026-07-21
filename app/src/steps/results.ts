@@ -140,12 +140,41 @@ export function renderResults(main: HTMLElement): void {
     { key: "excludeAggressive", label: "✋ No aggressive spreaders" },
   ];
   // Size caps for tight spots — under a window, beside a walkway, a small bed.
-  // Judged against the plant's honest eventual size (matureHeightFt/SpreadFt),
-  // not the polite nursery-tag numbers, because the ceiling is what you live with.
-  const sizeDefs: { key: "maxHeightFt" | "maxSpreadFt"; label: string; options: number[] }[] = [
-    { key: "maxHeightFt", label: "📏 Won't grow taller than", options: [2, 4, 6, 10, 20] },
-    { key: "maxSpreadFt", label: "↔️ Won't spread wider than", options: [2, 4, 6, 10, 15] },
+  // Same checkbox rows as the filters above; the checkbox is the on/off, the
+  // little select is only the threshold. Judged against the plant's honest
+  // eventual size (matureHeightFt/SpreadFt), not the polite nursery-tag
+  // numbers, because the ceiling is what you live with.
+  const sizeDefs: { key: "maxHeightFt" | "maxSpreadFt"; icon: string; lead: string; tail: string; options: number[]; fallback: number }[] = [
+    { key: "maxHeightFt", icon: "📏", lead: "Stays under", tail: "tall", options: [4, 6, 10, 20], fallback: 6 },
+    { key: "maxSpreadFt", icon: "↔️", lead: "Stays under", tail: "wide", options: [4, 6, 10, 15], fallback: 6 },
   ];
+  const sizeRows = sizeDefs.map((s) => {
+    const select = el("select", {
+      style: "width:auto;flex:0 0 auto;min-height:2.4rem;padding:0.25rem 0.5rem;font-size:0.95rem",
+      "aria-label": `${s.lead} how many feet ${s.tail}`,
+      disabled: store.filters[s.key] == null,
+      onChange: () => {
+        if (store.filters[s.key] != null) {
+          store.filters[s.key] = Number(select.value);
+          persistPrefs();
+          rerender();
+        }
+      },
+    }, s.options.map((ft) =>
+      el("option", { value: String(ft), selected: (store.filters[s.key] ?? s.fallback) === ft }, `${ft} ft`)
+    )) as HTMLSelectElement;
+    return el("label", { style: "display:flex;gap:0.6rem;align-items:center;min-height:3rem;font-weight:500" }, [
+      el("input", { type: "checkbox", checked: store.filters[s.key] != null, onChange: (e) => {
+        store.filters[s.key] = (e.target as HTMLInputElement).checked ? Number(select.value) : null;
+        select.disabled = store.filters[s.key] == null;
+        persistPrefs();
+        rerender();
+      } }),
+      `${s.icon} ${s.lead}`,
+      select,
+      s.tail,
+    ]);
+  });
   const filters = el("details", { class: "weights", style: "margin-top:0.5rem" }, [
     el("summary", {}, "🔍 Filters"),
     el("div", { style: "margin-top:0.5rem" }, [
@@ -155,26 +184,7 @@ export function renderResults(main: HTMLElement): void {
           f.label,
         ])
       ),
-      ...sizeDefs.map((s) =>
-        el("label", { style: "display:flex;gap:0.6rem;align-items:center;min-height:3rem;font-weight:500;justify-content:space-between" }, [
-          el("span", {}, s.label),
-          el("select", {
-            style: "width:auto;flex:0 0 auto",
-            "aria-label": `${s.label} (at full size)`,
-            onChange: (e) => {
-              const v = (e.target as HTMLSelectElement).value;
-              store.filters[s.key] = v === "" ? null : Number(v);
-              persistPrefs();
-              rerender();
-            },
-          }, [
-            el("option", { value: "", selected: store.filters[s.key] == null }, "any size"),
-            ...s.options.map((ft) =>
-              el("option", { value: String(ft), selected: store.filters[s.key] === ft }, `${ft} ft`)
-            ),
-          ]),
-        ])
-      ),
+      ...sizeRows,
     ]),
   ]);
 

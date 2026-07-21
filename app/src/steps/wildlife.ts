@@ -24,6 +24,7 @@ import type { PlantSupport } from "../lib/wildlife";
 import { relianceLabels, supportLabels, wildlifeKindLabels, DATA_SOURCES_URL } from "../lib/plain";
 import { speciesRecordUrl } from "../data/sources";
 import { citation } from "../components/citation";
+import { termTag } from "../components/term-dialog";
 import { silhouetteFor } from "../components/plant-card";
 import { keystoneIcon } from "../components/keystone-icon";
 import type { SupportLink } from "../types";
@@ -201,19 +202,23 @@ function sortByStrength(a: PlantSupport, b: PlantSupport): number {
   return a.plant.common.localeCompare(b.plant.common);
 }
 
-// A plant row on an animal's page: recognizable plant, the tie's plain label,
-// and the plant-specific why — links to the plant's own profile.
+// A plant row on an animal's page. The card is a plain div (not a link) so the
+// tie chips can be real buttons; the plant name is the link to its profile.
 function supportRow(s: PlantSupport): HTMLElement {
   const p = s.plant;
-  return el("a", {
-    href: `#/plants/${p.id}`,
+  return el("div", {
     class: "card",
-    style: "display:flex;gap:0.7rem;align-items:flex-start;text-decoration:none;color:inherit;padding:0.6rem 0.8rem;margin-bottom:0.5rem",
+    style: "display:flex;gap:0.7rem;align-items:flex-start;padding:0.6rem 0.8rem;margin-bottom:0.5rem",
   }, [
-    el("div", { class: "plant-photo", "aria-hidden": "true", style: "flex:0 0 auto" }, [silhouetteFor(p.form)]),
+    el("a", {
+      href: `#/plants/${p.id}`,
+      class: "plant-photo",
+      "aria-label": `${p.common} — full profile`,
+      style: "flex:0 0 auto",
+    }, [silhouetteFor(p.form)]),
     el("div", { style: "min-width:0" }, [
       el("div", { style: "font-weight:700" }, [
-        p.common,
+        el("a", { href: `#/plants/${p.id}`, style: "color:inherit" }, p.common),
         p.keystone
           ? el("span", {
               title: "Keystone plant — supports far more wildlife than most",
@@ -224,11 +229,8 @@ function supportRow(s: PlantSupport): HTMLElement {
           : null,
       ]),
       el("div", { class: "plant-latin", style: "font-size:0.85rem" }, p.latin),
-      el("div", { style: "display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.3rem" }, [
-        supportBadge(s.link),
-        relianceBadge(s.link),
-      ]),
-      el("div", { style: "font-size:0.85rem;color:var(--ink-soft);margin-top:0.25rem" }, s.link.note),
+      el("div", { style: "display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.35rem" }, tieTags(s.link)),
+      el("div", { style: "font-size:0.85rem;color:var(--ink-soft);margin-top:0.3rem" }, s.link.note),
       // Every relationship shows its source, with authority names linked out.
       el("div", { style: "font-size:0.75rem;color:var(--ink-soft);opacity:0.85;margin-top:0.2rem" }, [
         el("span", { "aria-hidden": "true" }, "🔎 "),
@@ -251,33 +253,18 @@ function speciesLink(w: Parameters<typeof speciesRecordUrl>[0]): HTMLElement | n
   ]);
 }
 
-// The tie, as a small labeled chip: "🐛 Raises its young", "🌼 Feeds the adults".
-function supportBadge(link: SupportLink): HTMLElement {
-  const s = supportLabels[link.support];
-  const cls = link.support === "host" ? "badge keystone" : "badge neutral";
-  return el("span", {
-    class: cls,
-    title: s.plain,
-  }, [el("span", { "aria-hidden": "true" }, `${s.icon} `), s.verb]);
-}
-
-// How much the animal depends on this plant, as a chip. The make-or-break
-// "sole" tie is loud (amber, starred); "narrow" is a quiet neutral chip; the
-// generalist "broad" default is faint text — present, but never oversold.
-function relianceBadge(link: SupportLink): HTMLElement {
+// The tie as one-word, tap-to-explain chips: the role ("Host", "Nectar") always,
+// then a strength chip only when it's notable — "Essential" (make-or-break) or
+// "Specialist". A generalist tie shows no strength chip, so an unmarked plant
+// reads as "one of many" without a word of clutter.
+function tieTags(link: SupportLink): HTMLElement[] {
+  const role = supportLabels[link.support];
+  const tags = [termTag(role, link.support === "host" ? "host" : "")];
   const r = relianceOf(link);
-  const info = relianceLabels[r];
-  const label = link.support === "host" ? info.hostLabel : info.label;
-  if (r === "broad") {
-    return el("span", {
-      class: "reliance-soft",
-      title: info.plain,
-    }, `${info.icon} ${label}`);
+  if (r !== "broad") {
+    tags.push(termTag(relianceLabels[r], r === "sole" ? "sole" : ""));
   }
-  return el("span", {
-    class: r === "sole" ? "badge sole" : "badge neutral",
-    title: info.plain,
-  }, [el("span", { "aria-hidden": "true" }, `${info.icon} `), label]);
+  return tags;
 }
 
 function renderNotFound(main: HTMLElement, id: string): void {

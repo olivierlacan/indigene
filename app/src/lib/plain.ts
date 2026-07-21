@@ -190,73 +190,69 @@ export const wildlifeKindLabels: Record<
 };
 
 /**
- * How a plant supports an animal, glossed once. `verb` is the short label shown
- * on a tie ("Raises its young"); `plain` is the one-line why. The `host` tie is
- * called out as the strongest everywhere, because raising the next generation is
- * a different, bigger promise than feeding a passing adult.
+ * How a plant supports an animal, glossed once. `term` is the one-word chip
+ * ("Host", "Nectar") — kept to a single noun so it reads at a glance; `plain`
+ * is the tap-to-open explanation, which is where a word like "Host" that a
+ * beginner won't know gets unpacked. The `host` tie is the strongest, because
+ * raising the next generation is a bigger promise than feeding a passing adult.
  */
 export const supportLabels: Record<
   SupportKind,
-  { verb: string; icon: string; plain: string }
+  { term: string; icon: string; plain: string }
 > = {
   host: {
-    verb: "Raises its young",
+    term: "Host",
     icon: "🐛",
-    plain: "Caterpillars eat this plant's leaves — the strongest tie there is, because it's where the next generation actually comes from.",
+    plain: "A host plant: caterpillars eat its leaves and grow up on it. This is the strongest kind of support — it's where the next generation of butterflies and moths comes from, and caterpillars are what nearly all baby songbirds are fed.",
   },
   nectar: {
-    verb: "Feeds the adults",
+    term: "Nectar",
     icon: "🌼",
-    plain: "Nectar and pollen the grown insects drink and gather.",
+    plain: "Nectar and pollen for the grown insects — food for the adults, not a nursery for their young.",
   },
   berries: {
-    verb: "Feeds it fruit",
+    term: "Berries",
     icon: "🫐",
-    plain: "Berries or fruit it eats, especially through fall and winter.",
+    plain: "Berries or fruit that birds and mammals eat, especially through fall and winter.",
   },
   seeds: {
-    verb: "Feeds it seed",
+    term: "Seeds",
     icon: "🌰",
-    plain: "Seeds or nuts it eats — often what's left standing after the flowers fade.",
+    plain: "Seeds or nuts that birds and mammals eat — often what's left standing after the flowers fade.",
   },
   shelter: {
-    verb: "Shelters it",
+    term: "Shelter",
     icon: "🏠",
     plain: "Cover and habitat to nest, graze, roost, or ride out the season in.",
   },
 };
 
 /**
- * How much an animal depends on a plant, glossed once. `label` is the short chip
- * text; `hostLabel` sharpens it when the tie is a larval host ("Its only host"
- * reads truer than "Its only option" for a caterpillar plant); `plain` is the
- * one-line why, shown as a tooltip. `weight` lets the UI style the make-or-break
- * ties loud and the generalist ones quiet.
+ * How much an animal depends on a plant, glossed once. `term` is the one-word
+ * chip; `plain` is the tap-to-open meaning. Only the two notable levels get a
+ * chip on screen — "Essential" (make-or-break) and "Specialist" (few options);
+ * the generalist "broad" default shows none, so an unmarked tie simply means
+ * "one of many". The `broad` entry is kept so that meaning can still be spelled
+ * out in a dialog when needed.
  */
 export const relianceLabels: Record<
   SupportReliance,
-  { icon: string; label: string; hostLabel: string; plain: string; weight: "strong" | "mid" | "soft" }
+  { icon: string; term: string; plain: string }
 > = {
   sole: {
     icon: "⭐",
-    label: "Its only source",
-    hostLabel: "Its only host",
-    plain: "No substitute — this plant (or its close kin) is the only one that will do. Lose it here and you lose the animal. These are the make-or-break ties.",
-    weight: "strong",
+    term: "Essential",
+    plain: "This plant is the animal's only option — an obligate tie with no substitute. Lose it here and you lose the animal. These are the make-or-break relationships (a monarch needs milkweed; an atala needs coontie).",
   },
   narrow: {
     icon: "🎯",
-    label: "One of just a few",
-    hostLabel: "One of just a few hosts",
-    plain: "A specialist: it can use only a small group of plants, and this is one of them. Important, with few alternatives.",
-    weight: "mid",
+    term: "Specialist",
+    plain: "A specialist relationship: the animal can use only a small group of plants, and this is one of them. Important, with just a few alternatives.",
   },
   broad: {
     icon: "•",
-    label: "One of many it uses",
-    hostLabel: "One of many hosts",
-    plain: "Valuable, but the animal uses many plants — helpful without being make-or-break on its own.",
-    weight: "soft",
+    term: "One of many",
+    plain: "Valuable, but the animal uses many plants — helpful without being make-or-break on its own. Tags like this are left off, so an unmarked plant means the animal has other options.",
   },
 };
 

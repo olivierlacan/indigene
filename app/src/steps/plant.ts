@@ -419,7 +419,7 @@ function whoItFeeds(entries: PlantEntry[]): HTMLElement | null {
           style: "flex:0 1 auto;min-height:2.4rem;padding:0.35rem 0.65rem;font-size:0.9rem;text-decoration:none",
           title: w.sole
             ? `This plant is the ${w.name.toLowerCase()}'s only option — a make-or-break tie.`
-            : `${supportLabels[w.support as keyof typeof supportLabels].verb} — ${supportLabels[w.support as keyof typeof supportLabels].plain}`,
+            : `${supportLabels[w.support as keyof typeof supportLabels].term} — ${supportLabels[w.support as keyof typeof supportLabels].plain}`,
         }, [
           w.sole ? el("span", { "aria-hidden": "true" }, "⭐ ") : null,
           el("span", { "aria-hidden": "true" }, `${w.icon} `),

@@ -800,18 +800,31 @@ input[type="range"] {
   background: var(--surface-2);
   color: var(--ink-soft);
 }
-/* "Sole" dependence — a make-or-break tie. Gold, so it stands apart from the
-   green host badge beside it; the dark ink keeps ≥7:1 contrast in both themes. */
-.badge.sole {
+/* Tap-to-explain tie chips. Sized like a badge but a real button: the dotted
+   underline marks it as "there's more here", and it opens the term dialog. */
+.tag {
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  background: var(--surface-2);
+  color: var(--ink-soft);
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+}
+/* Host — the strongest support, in the brand green (matches the host badge). */
+.tag-host {
+  background: var(--brand);
+  color: var(--on-brand);
+}
+/* "Essential" — a make-or-break tie. Gold, so it stands apart from the green
+   host chip beside it; the dark ink keeps ≥7:1 contrast in both themes. */
+.tag-sole {
   background: #f2c94c;
   color: #3a2c00;
-}
-/* The generalist "one of many" default: present but quiet — faint text, no chip. */
-.reliance-soft {
-  display: inline-block;
-  align-self: center;
-  font-size: 0.76rem;
-  color: var(--ink-soft);
 }
 
 .size-viz {

@@ -154,12 +154,9 @@ a {
   margin: 0;
   color: var(--on-brand);
   letter-spacing: 0.2px;
-  /* The nav keeps its full width; the title yields space first, ellipsizing
-     only as a true last resort on the very narrowest screens (< ~330px). */
+  /* Never wrap or truncate the brand name — the nav shrinks to make room
+     (see the small-screen rules below), so "Indigene" always shows in full. */
   white-space: nowrap;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 /* The title doubles as the escape hatch: from anywhere, tap it to go home.
    No underline — instead a small bee buzzes in on hover/press, a wink at the
@@ -302,7 +299,11 @@ a {
 
 /* Narrow phones: shrink the title and drop the Saved label to its icon so the
    header holds Explore + Wildlife + Saved on one line without crowding. */
-@media (max-width: 400px) {
+/* Phones (up to ~500px, which covers the largest — iPhone Pro Max is 430):
+   collapse the Saved label to its icon and tighten sizes so the title, both
+   browse tabs, and the Saved menu fit on one line. Above this the header has
+   room for the full "🔖 Saved" label and larger type. */
+@media (max-width: 500px) {
   .app-title {
     font-size: 0.95rem;
     letter-spacing: 0;
@@ -327,7 +328,7 @@ a {
 }
 
 /* Smallest phones (~360px and down): tighten a touch more so the full
-   "Indigene" still fits beside the nav — only below ~330px does it ellipsize. */
+   "Indigene" still fits beside the nav. */
 @media (max-width: 365px) {
   .app-title {
     font-size: 0.9rem;
@@ -336,6 +337,18 @@ a {
   .nav-menu-btn {
     padding: 0.25rem 0.32rem;
     font-size: 0.82rem;
+  }
+}
+/* Very narrow (~340px and down, e.g. the original iPhone SE): shrink the nav
+   further so the whole brand name still fits without wrapping or truncating. */
+@media (max-width: 340px) {
+  .app-title {
+    font-size: 0.85rem;
+  }
+  .site-nav a,
+  .nav-menu-btn {
+    padding: 0.25rem 0.28rem;
+    font-size: 0.76rem;
   }
 }
 

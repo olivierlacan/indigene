@@ -31,6 +31,10 @@ export interface ActiveFilters {
   excludePetToxic: boolean;
   excludeAggressive: boolean;
   requireNoWater: boolean; // guerrilla mode: survives with zero aftercare
+  /** Mature-size ceilings in feet; null means no limit. Judged against the
+   *  plant's honest eventual size, not a young nursery specimen. */
+  maxHeightFt: number | null;
+  maxSpreadFt: number | null;
 }
 
 export const NO_FILTERS: ActiveFilters = {
@@ -39,6 +43,8 @@ export const NO_FILTERS: ActiveFilters = {
   excludePetToxic: false,
   excludeAggressive: false,
   requireNoWater: false,
+  maxHeightFt: null,
+  maxSpreadFt: null,
 };
 
 export interface Ranked {
@@ -162,6 +168,8 @@ export function rankPlants(
     if (ctx.filters.excludePetToxic && plant.filters.petToxic) continue;
     if (ctx.filters.excludeAggressive && plant.filters.aggressive) continue;
     if (ctx.filters.requireNoWater && !plant.noWaterEstablish) continue;
+    if (ctx.filters.maxHeightFt != null && plant.matureHeightFt > ctx.filters.maxHeightFt) continue;
+    if (ctx.filters.maxSpreadFt != null && plant.matureSpreadFt > ctx.filters.maxSpreadFt) continue;
 
     const eco = ecoScore(plant, ctx.weights);
     const { fit, reasons } = computeFit(plant, ctx.site, ctx.sun, moisture);

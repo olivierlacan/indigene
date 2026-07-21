@@ -64,7 +64,13 @@ export function renderResults(main: HTMLElement): void {
       el("p", { style: "margin:0.5rem 0 1rem;font-weight:650" }, `${ranked.length} native plants ${fitClause} — ${goodCount} are a good or workable match. Best matches first.`)
     );
     if (!ranked.length) {
-      listEl.append(el("div", { class: "note warn" }, `No plants in the ${regionName} seed list are hardy at this spot's winter temperature.`));
+      // Blame the right culprit: with any filter set, it's almost certainly the
+      // filters that emptied the list, not the climate.
+      const f = store.filters;
+      const anyFilter = f.requireNoWater || f.requireDeerResistant || f.excludeThorny || f.excludePetToxic || f.excludeAggressive || f.maxHeightFt != null || f.maxSpreadFt != null;
+      listEl.append(el("div", { class: "note warn" }, anyFilter
+        ? `No plants in the ${regionName} list pass every filter you set. Try loosening a filter — the size limits are the usual culprit.`
+        : `No plants in the ${regionName} seed list are hardy at this spot's winter temperature.`));
     }
     shown.forEach((r) => listEl.append(plantCard(r, store.weights)));
     if (ranked.length > shown.length) {
@@ -125,21 +131,51 @@ export function renderResults(main: HTMLElement): void {
   const weights = el("div", { class: "weights" }, [weightsPanel]);
 
   // --- Filters (incl. guerrilla mode) ---
-  const filterDefs: { key: keyof typeof store.filters; label: string }[] = [
+  type BoolFilterKey = "requireNoWater" | "requireDeerResistant" | "excludeThorny" | "excludePetToxic" | "excludeAggressive";
+  const filterDefs: { key: BoolFilterKey; label: string }[] = [
     { key: "requireNoWater", label: "🌾 Survives with zero watering (guerrilla mode)" },
     { key: "requireDeerResistant", label: "🦌 Deer tend to leave it alone" },
     { key: "excludeThorny", label: "🚫 No thorns" },
     { key: "excludePetToxic", label: "🐕 Safe around pets" },
     { key: "excludeAggressive", label: "✋ No aggressive spreaders" },
   ];
+  // Size caps for tight spots — under a window, beside a walkway, a small bed.
+  // Judged against the plant's honest eventual size (matureHeightFt/SpreadFt),
+  // not the polite nursery-tag numbers, because the ceiling is what you live with.
+  const sizeDefs: { key: "maxHeightFt" | "maxSpreadFt"; label: string; options: number[] }[] = [
+    { key: "maxHeightFt", label: "📏 Won't grow taller than", options: [2, 4, 6, 10, 20] },
+    { key: "maxSpreadFt", label: "↔️ Won't spread wider than", options: [2, 4, 6, 10, 15] },
+  ];
   const filters = el("details", { class: "weights", style: "margin-top:0.5rem" }, [
     el("summary", {}, "🔍 Filters"),
-    el("div", { style: "margin-top:0.5rem" }, filterDefs.map((f) =>
-      el("label", { style: "display:flex;gap:0.6rem;align-items:center;min-height:3rem;font-weight:500" }, [
-        el("input", { type: "checkbox", checked: store.filters[f.key], onChange: (e) => { store.filters[f.key] = (e.target as HTMLInputElement).checked; persistPrefs(); rerender(); } }),
-        f.label,
-      ])
-    )),
+    el("div", { style: "margin-top:0.5rem" }, [
+      ...filterDefs.map((f) =>
+        el("label", { style: "display:flex;gap:0.6rem;align-items:center;min-height:3rem;font-weight:500" }, [
+          el("input", { type: "checkbox", checked: store.filters[f.key], onChange: (e) => { store.filters[f.key] = (e.target as HTMLInputElement).checked; persistPrefs(); rerender(); } }),
+          f.label,
+        ])
+      ),
+      ...sizeDefs.map((s) =>
+        el("label", { style: "display:flex;gap:0.6rem;align-items:center;min-height:3rem;font-weight:500;justify-content:space-between" }, [
+          el("span", {}, s.label),
+          el("select", {
+            style: "width:auto;flex:0 0 auto",
+            "aria-label": `${s.label} (at full size)`,
+            onChange: (e) => {
+              const v = (e.target as HTMLSelectElement).value;
+              store.filters[s.key] = v === "" ? null : Number(v);
+              persistPrefs();
+              rerender();
+            },
+          }, [
+            el("option", { value: "", selected: store.filters[s.key] == null }, "any size"),
+            ...s.options.map((ft) =>
+              el("option", { value: String(ft), selected: store.filters[s.key] === ft }, `${ft} ft`)
+            ),
+          ]),
+        ])
+      ),
+    ]),
   ]);
 
   const conditions = summarize();

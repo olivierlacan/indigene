@@ -826,31 +826,33 @@ input[type="range"] {
   flex: 0 0 auto;
   vertical-align: -0.12em; /* used when a glyph sits inline (e.g. plant-page chips) */
 }
-/* Per-kind pills: a muted color with a white glyph + label. Each clears ≥4.5:1
-   for white text (the pill is the background, so it holds in both themes). */
+/* Per-kind pills: a deep, saturated color carrying a white glyph + label. Each
+   is dark enough that white clears ≥7:1 (well past the 4.5:1 floor), so the
+   monochrome glyph never blends into its pill; the pill is the background, so
+   the contrast holds identically in both themes. */
 .tag-host {
-  background: #2e7d46;
+  background: #215f35;
   color: #fff;
 }
 .tag-nectar {
-  background: #b5501b;
+  background: #8f3f15;
   color: #fff;
 }
 .tag-berries {
-  background: #7b4ea3;
+  background: #6b4291;
   color: #fff;
 }
 .tag-seeds {
-  background: #8a6a3b;
+  background: #6b5029;
   color: #fff;
 }
 .tag-shelter {
-  background: #2a7d78;
+  background: #1f5b57;
   color: #fff;
 }
-/* "Specialist" — a muted indigo, distinct from the role pills. */
+/* "Specialist" — a deep indigo, distinct from the role pills. */
 .tag-narrow {
-  background: #5566b5;
+  background: #454ea0;
   color: #fff;
 }
 /* "Essential" — gold with dark ink, the one make-or-break flag; it stands apart

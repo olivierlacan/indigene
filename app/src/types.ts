@@ -149,6 +149,18 @@ export interface Wildlife {
   icon: string; // emoji — the app's icon idiom
   /** Plain words: what it is and why bringing it in matters. */
   blurb: string;
+  /**
+   * Every animal in this catalog must itself be native to the regions Indigene
+   * covers — the whole point is a native plant feeding a native animal, not a
+   * native plant that happens to also suit an introduced species (the honey bee
+   * is the classic one we leave out). This is a hard invariant: the field exists
+   * so the guarantee is explicit in the data, shown in the UI, and enforced by
+   * the dev audit, which refuses to let a non-native be listed. A citable source
+   * for the native status lives in `nativeBasis`.
+   */
+  native: true;
+  /** Where the animal is native and a dependable source saying so. */
+  nativeBasis: string;
 }
 
 /**

@@ -113,6 +113,13 @@ export function mappedWildlifeCount(): number {
  */
 export function auditSupport(): string[] {
   const problems: string[] = [];
+  // The hard invariant: every listed animal must be native and cite where it's
+  // native. The `native: true` literal type already blocks this at compile
+  // time; this is the belt-and-suspenders runtime guarantee.
+  for (const w of WILDLIFE) {
+    if (w.native !== true) problems.push(`wildlife "${w.id}" is not marked native`);
+    if (!w.nativeBasis?.trim()) problems.push(`wildlife "${w.id}" has no native-status source`);
+  }
   for (const [regionId, byPlant] of Object.entries(SUPPORT)) {
     const region = regionById.get(regionId);
     if (!region) {
@@ -127,6 +134,11 @@ export function auditSupport(): string[] {
       for (const link of links) {
         if (!wildlifeById.has(link.wildlifeId)) {
           problems.push(`${regionId}/${plantId}: unknown wildlife "${link.wildlifeId}"`);
+        }
+        // Every plant↔animal relationship must cite a reliable source — the
+        // relationship is a claim, and claims here are checkable or they don't ship.
+        if (!link.basis?.trim()) {
+          problems.push(`${regionId}/${plantId}: tie to "${link.wildlifeId}" has no source`);
         }
       }
     }

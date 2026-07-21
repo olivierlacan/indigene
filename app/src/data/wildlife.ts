@@ -45,6 +45,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🦋",
     blurb:
       "The famous orange-and-black migrant. Its caterpillars can eat only one thing — milkweed — so no milkweed means no monarchs, full stop. The adults also refuel on many fall flowers on their long trip south.",
+    native: true,
+    nativeBasis: "Native across North America. Xerces Society; Butterflies and Moths of North America (BAMONA).",
   },
   {
     id: "queen-butterfly",
@@ -54,6 +56,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🦋",
     blurb:
       "The monarch's deep-mahogany southern cousin, common in Florida year-round. Like the monarch, its caterpillars feed only on milkweeds.",
+    native: true,
+    nativeBasis: "Native to the southern US and southward. BAMONA; UF/IFAS.",
   },
   {
     id: "eastern-black-swallowtail",
@@ -63,6 +67,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🦋",
     blurb:
       "A big dark swallowtail whose caterpillars eat plants in the carrot family — including native golden alexanders, not just the parsley in your garden.",
+    native: true,
+    nativeBasis: "Native to North America. BAMONA.",
   },
   {
     id: "eastern-tiger-swallowtail",
@@ -72,6 +78,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🦋",
     blurb:
       "The large yellow-and-black swallowtail of eastern yards. Its caterpillars grow up on the leaves of several native trees, especially wild cherry and birch.",
+    native: true,
+    nativeBasis: "Native to eastern North America. BAMONA.",
   },
   {
     id: "viceroy",
@@ -81,6 +89,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🦋",
     blurb:
       "The monarch look-alike — but its caterpillars grow up on willows, poplars, and cherries, overwintering rolled in a leaf they fasten to the twig.",
+    native: true,
+    nativeBasis: "Native to North America. BAMONA.",
   },
   {
     id: "gulf-fritillary",
@@ -90,6 +100,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🦋",
     blurb:
       "A brilliant orange butterfly with silver-spangled underwings. Its caterpillars feed only on passionflower vines.",
+    native: true,
+    nativeBasis: "Native and resident in the southern US. BAMONA; UF/IFAS.",
   },
   {
     id: "zebra-longwing",
@@ -99,6 +111,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🦋",
     blurb:
       "Florida's state butterfly — long black wings striped in pale yellow, drifting slowly through shady spots. Its caterpillars eat only passionflower vines; the adults are unusual in eating pollen, which lets them live for months.",
+    native: true,
+    nativeBasis: "Native and resident in Florida — the designated state butterfly. UF/IFAS; BAMONA.",
   },
   {
     id: "atala",
@@ -108,6 +122,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🦋",
     blurb:
       "A small jewel — velvet black with iridescent blue flecks and a scarlet belly — once thought extinct in Florida. It came back with its only host plant, the coontie. Plant coontie and you are quite literally rebuilding this butterfly.",
+    native: true,
+    nativeBasis: "Native to southeastern Florida. Florida Museum of Natural History; UF/IFAS.",
   },
   {
     id: "white-peacock",
@@ -117,6 +133,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🦋",
     blurb:
       "A pale, low-flying butterfly of sunny damp openings in Florida. Its caterpillars feed on porterweed and water-hyssop.",
+    native: true,
+    nativeBasis: "Native and resident in the southern US and tropics. BAMONA; UF/IFAS.",
   },
   {
     id: "western-tiger-swallowtail",
@@ -126,6 +144,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🦋",
     blurb:
       "The big yellow swallowtail of Pacific Northwest gardens and streamsides. Its caterpillars feed on the leaves of willows, cottonwoods, and bigleaf maple.",
+    native: true,
+    nativeBasis: "Native to western North America. BAMONA.",
   },
   {
     id: "pale-swallowtail",
@@ -135,6 +155,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🦋",
     blurb:
       "A cream-and-black swallowtail of drier western slopes. Its caterpillars grow up on oceanspray and ceanothus.",
+    native: true,
+    nativeBasis: "Native to western North America. BAMONA.",
   },
   {
     id: "propertius-duskywing",
@@ -144,6 +166,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🦋",
     blurb:
       "A small brown skipper tied to the West's Garry oak (Oregon white oak) prairies — its caterpillars eat only oak, and it fades as that rare habitat does.",
+    native: true,
+    nativeBasis: "Native to the West's oak habitats. Xerces Society; BAMONA.",
   },
   // ---------------- Moths ----------------
   {
@@ -154,6 +178,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🌙",
     blurb:
       "The pale-green, long-tailed giant that seems too beautiful to be real. The adults never eat — they live about a week on the reserves the caterpillar stored eating tree leaves like birch, walnut, and hickory.",
+    native: true,
+    nativeBasis: "Native to eastern North America. BAMONA.",
   },
   {
     id: "cecropia-moth",
@@ -163,6 +189,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🌙",
     blurb:
       "North America's largest native moth — a hand-sized, red-banded giant. Its caterpillars grow fat on the leaves of cherry, maple, birch, and other trees before spinning a big papery cocoon for winter.",
+    native: true,
+    nativeBasis: "Native to eastern and central North America. BAMONA.",
   },
   {
     id: "hummingbird-clearwing",
@@ -172,8 +200,13 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🌙",
     blurb:
       "A plump day-flying moth that hovers at flowers exactly like a tiny hummingbird, so most people never realize it's a moth. Its caterpillars feed on viburnum and honeysuckle; the adults sip nectar from tubular blooms.",
+    native: true,
+    nativeBasis: "Native to North America. BAMONA.",
   },
   // ---------------- Bees & other pollinators ----------------
+  // Every bee here is a NATIVE bee. The introduced European honey bee
+  // (Apis mellifera) is deliberately left out — the point is native plants
+  // feeding native pollinators, not propping up a managed non-native.
   {
     id: "bumble-bees",
     common: "Bumble bees",
@@ -182,6 +215,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐝",
     blurb:
       "The big fuzzy bees that fly cold and early. They can \"buzz-pollinate\" — shaking pollen loose with a shiver of their flight muscles — which some native flowers depend on. They nest in the ground and in old grass tussocks, and a spring-to-frost run of flowers keeps a colony fed.",
+    native: true,
+    nativeBasis: "Native bumble bees (Bombus) — unlike the introduced honey bee. Xerces Society; USGS Native Bee Inventory.",
   },
   {
     id: "sunflower-specialist-bees",
@@ -191,6 +226,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐝",
     blurb:
       "Dozens of native bees collect pollen from only the sunflower family — asters, coneflowers, goldenrods, sunflowers. If those plants vanish from a yard, these bees have nothing else to raise their young on, no matter how many other flowers bloom.",
+    native: true,
+    nativeBasis: "Native solitary bees. Fowler & Droege, Pollen Specialist Bees; USGS Native Bee Inventory.",
   },
   {
     id: "mason-bees",
@@ -200,6 +237,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐝",
     blurb:
       "Gentle, solitary early-spring bees — superb fruit pollinators — that emerge when the first native shrubs bloom. An early flower like red-flowering currant or willow is a lifeline the week they wake up.",
+    native: true,
+    nativeBasis: "Native Osmia and Andrena. Xerces Society; USGS Native Bee Inventory.",
   },
   // ---------------- Birds ----------------
   {
@@ -210,6 +249,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐦",
     blurb:
       "The East's only breeding hummingbird, drawn to red and orange tubular flowers it can reach and most insects can't. A succession of these blooms from spring through fall fuels both nesting and the long migration.",
+    native: true,
+    nativeBasis: "Native to eastern North America. Cornell Lab of Ornithology.",
   },
   {
     id: "annas-rufous-hummingbird",
@@ -219,6 +260,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐦",
     blurb:
       "The West's garden hummingbirds. The rufous times its spring migration to native currants and columbines coming into bloom, so an early red flower is fuel arriving exactly when it's needed.",
+    native: true,
+    nativeBasis: "Native to western North America. Cornell Lab of Ornithology.",
   },
   {
     id: "cedar-waxwing",
@@ -228,6 +271,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐦",
     blurb:
       "A sleek, sociable bird that lives on fruit and roves in flocks, stripping a serviceberry or dogwood clean in an afternoon. Berry shrubs that hold fruit into winter are what keep them around.",
+    native: true,
+    nativeBasis: "Native to North America. Cornell Lab of Ornithology.",
   },
   {
     id: "american-goldfinch",
@@ -237,6 +282,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐦",
     blurb:
       "The bright yellow \"wild canary\" that nests late, in summer, so it can feed its young the seeds of native asters and coneflowers. Leaving seed heads standing through fall and winter is its winter pantry.",
+    native: true,
+    nativeBasis: "Native to North America. Cornell Lab of Ornithology.",
   },
   {
     id: "yellow-rumped-warbler",
@@ -246,6 +293,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐦",
     blurb:
       "The one warbler that can digest waxy bayberry fruit, which lets it winter far further north — and all across the Southeast — than other warblers. Wax myrtle is the plant behind that trick (its old name was \"myrtle warbler\").",
+    native: true,
+    nativeBasis: "Native to North America. Cornell Lab of Ornithology.",
   },
   {
     id: "acorn-birds",
@@ -254,6 +303,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐦",
     blurb:
       "The acorn eaters. Blue jays in particular carry off and bury far more acorns than they ever eat, and the forgotten ones grow — so a jay isn't just fed by an oak, it plants the next one.",
+    native: true,
+    nativeBasis: "Native birds (blue jay, wild turkey, woodpeckers). Cornell Lab of Ornithology.",
   },
   {
     id: "berry-songbirds",
@@ -262,6 +313,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐦",
     blurb:
       "The everyday songbirds that raise families on insects and then switch to fruit — beautyberry, wild coffee, holly, seagrape — to fatten up and get through the leaner months.",
+    native: true,
+    nativeBasis: "Native birds (northern mockingbird, northern cardinal, thrushes). Cornell Lab of Ornithology.",
   },
   // ---------------- Mammals & others ----------------
   {
@@ -271,6 +324,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐿️",
     blurb:
       "Acorns and fleshy fruit are the fall calories that carry squirrels, chipmunks, deer, foxes, and even black bears into winter. A single mature oak or wild cherry is a food bank for the whole neighborhood of mammals.",
+    native: true,
+    nativeBasis: "Native mammals (tree squirrels, white-tailed deer, foxes, black bear). IUCN Red List; Smithsonian.",
   },
   {
     id: "gopher-tortoise",
@@ -280,6 +335,8 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐢",
     blurb:
       "A keystone digger of Florida's dry uplands whose long burrows shelter hundreds of other species. It grazes low native growth — saw palmetto berries, sunshine mimosa, dune sunflower — in the open, sandy pine flatwoods it needs.",
+    native: true,
+    nativeBasis: "Native to the southeastern US; a state-protected keystone species. USFWS; IUCN Red List.",
   },
 ];
 

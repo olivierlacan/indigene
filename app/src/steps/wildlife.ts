@@ -43,6 +43,10 @@ export function renderWildlifeIndex(main: HTMLElement): void {
     el("p", { class: "step-lede" }, [
       `Pick the insect or animal you want in your yard, and see which native plants support it — and how. ${total} creatures mapped so far, from monarchs to the gopher tortoise.`,
     ]),
+    el("p", { class: "note info", style: "margin-top:0" }, [
+      el("strong", {}, "🌿 Every animal here is itself native. "),
+      "The whole point is a native plant feeding native wildlife — so the introduced honey bee, for one, is left out. Each creature's page cites where it's native, and every plant tie cites its source.",
+    ]),
   );
 
   for (const kind of KIND_ORDER) {
@@ -74,8 +78,9 @@ function wildlifeCard(id: string, plantCount: number, regionCount: number): HTML
   const w = getWildlife(id);
   if (!w) return el("span", {});
   const reach =
-    `🌿 ${plantCount} ${plantCount === 1 ? "plant" : "plants"}` +
-    (regionCount > 1 ? ` · 📍 ${regionCount} regions` : "");
+    `🌱 ${plantCount} ${plantCount === 1 ? "plant" : "plants"}` +
+    (regionCount > 1 ? ` · 📍 ${regionCount} regions` : "") +
+    " · 🌿 native";
   return el("a", {
     href: `#/wildlife/${w.id}`,
     class: "card",
@@ -127,9 +132,17 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
         el("div", {}, [
           el("h2", { class: "plant-name", style: "margin:0" }, w.common),
           w.latin ? el("div", { class: "plant-latin" }, w.latin) : null,
+          el("span", { class: "badge nowater", title: w.nativeBasis }, "🌿 Native animal"),
         ]),
       ]),
       el("p", { style: "margin-top:0.75rem" }, w.blurb),
+      // The native-status guarantee, sourced — a native plant should be feeding a
+      // native animal, and we say where that claim comes from.
+      el("p", { class: "confidence", style: "margin-top:0.4rem" }, [
+        el("span", { "aria-hidden": "true" }, "🌿 "),
+        el("strong", {}, "A native animal. "),
+        w.nativeBasis,
+      ]),
       el("p", { style: "margin:0.4rem 0 0;font-weight:650" }, [
         `${plantCount} native ${plantCount === 1 ? "plant" : "plants"} in Indigene support the ${w.common.toLowerCase()}`,
         hosts ? `, ${hosts} of them as a caterpillar host — the strongest tie.` : ".",
@@ -197,6 +210,12 @@ function supportRow(s: PlantSupport): HTMLElement {
       el("div", { class: "plant-latin", style: "font-size:0.85rem" }, p.latin),
       supportBadge(s.link),
       el("div", { style: "font-size:0.85rem;color:var(--ink-soft);margin-top:0.25rem" }, s.link.note),
+      // Every relationship shows its source — the claim stays checkable.
+      el("div", { style: "font-size:0.75rem;color:var(--ink-soft);opacity:0.85;margin-top:0.2rem" }, [
+        el("span", { "aria-hidden": "true" }, "🔎 "),
+        "Source: ",
+        s.link.basis,
+      ]),
     ]),
   ]);
 }

@@ -8,6 +8,7 @@ import { renderConfirm } from "./steps/confirm";
 import { renderResults } from "./steps/results";
 import { renderSaved } from "./steps/saved";
 import { renderExplore } from "./steps/explore";
+import { renderSearch } from "./steps/search";
 import { renderPlant } from "./steps/plant";
 import { renderRegion } from "./steps/region";
 import { renderWildlifeIndex, renderWildlife } from "./steps/wildlife";
@@ -25,6 +26,7 @@ const STEPS: Record<string, { fn: StepFn; label: string; inFlow: boolean }> = {
   saved: { fn: renderSaved, label: "Saved", inFlow: false },
   plants: { fn: renderExplore, label: "Explore", inFlow: false },
   regions: { fn: renderExplore, label: "Explore", inFlow: false },
+  search: { fn: renderSearch, label: "Search", inFlow: false },
   wildlife: { fn: renderWildlifeIndex, label: "Wildlife", inFlow: false },
 };
 
@@ -35,7 +37,7 @@ const stepsList = document.getElementById("steps") as HTMLOListElement;
 let cleanup: (() => void) | null = null;
 
 /** Step keys that carry a param, e.g. `#/plants/<slug>`, `#/wildlife/<id>`. */
-const PARAM_STEPS = new Set(["plants", "regions", "wildlife"]);
+const PARAM_STEPS = new Set(["plants", "regions", "wildlife", "search"]);
 
 /** The active route: a step key, plus a param for the `<step>/<id>` pages. */
 function currentRoute(): { step: string; param?: string } {
@@ -85,6 +87,7 @@ function renderStepRail(active: string): void {
 const SECTION_OF: Record<string, string> = {
   plants: "explore",
   regions: "explore",
+  search: "search",
   wildlife: "wildlife",
   saved: "saved",
 };
@@ -112,7 +115,9 @@ async function route(): Promise<void> {
       ? renderPlant
       : step === "wildlife"
         ? renderWildlife
-        : renderRegion
+        : step === "search"
+          ? renderSearch
+          : renderRegion
     : STEPS[step].fn;
   const result = fn(main, param);
   if (typeof result === "function") cleanup = result;

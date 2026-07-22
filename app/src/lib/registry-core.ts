@@ -97,7 +97,9 @@ export function deepLinks(entry: RegistryEntry): Record<string, string | null> {
       ? `https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=${ids.itis}`
       : null,
     wikidata: ids.wikidata ? `https://www.wikidata.org/wiki/${ids.wikidata}` : null,
-    inaturalist: `https://www.inaturalist.org/taxa/search?q=${sci}`,
+    inaturalist: ids.inat
+      ? `https://www.inaturalist.org/taxa/${ids.inat}`
+      : `https://www.inaturalist.org/taxa/search?q=${sci}`,
   };
 }
 

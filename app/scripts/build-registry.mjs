@@ -20,7 +20,7 @@ import { openLoader } from "./_load-ts.mjs";
 
 // Identifier order in the output (stable diffs). indigene is always present;
 // external schemes appear only when reconciled. ipni/wfo can anchor primaryId.
-const SCHEME_ORDER = ["ipni", "wfo", "gbif", "usda", "itis", "wikidata", "indigene"];
+const SCHEME_ORDER = ["ipni", "wfo", "gbif", "usda", "itis", "inat", "wikidata", "indigene"];
 const ANCHOR_ORDER = ["ipni", "wfo"];
 
 const loader = await openLoader();

@@ -30,9 +30,10 @@ cross-reference ids so any system's key can find our entry:
 |---|---|
 | `ipni` | nomenclature; the anchor (POWO links derive from it) |
 | `wfo` | World Flora Online — alternate persistent anchor |
-| `gbif` | occurrences, iNaturalist, range maps (verified against GBIF; can drift, so xref only) |
+| `gbif` | occurrences & range maps (verified against GBIF; can drift, so xref only) |
 | `usda` | US native status / distribution |
 | `itis` | North-American taxonomy (public domain) |
+| `inat` | iNaturalist — a **direct** link to the species page (photos, nearby sightings) |
 | `wikidata` | the crosswalk hub used to populate the rest; Wikipedia, images |
 | `indigene` | our own catalog id — namespaced like the rest (the registry↔catalog join) |
 

@@ -1,22 +1,34 @@
 {
-  "schema": "native-plant-registry/0.1",
+  "schema": "native-plant-registry/0.2",
   "identity": {
-    "localKey": "id (scientific-name slug, == catalog plant id)",
-    "anchor": "scientificName (accepted binomial)",
-    "external": [
-      "usdaSymbol (USDA PLANTS)",
-      "gbifKey (GBIF backbone usageKey)"
+    "primaryId": "CURIE anchor (scheme:accession), e.g. ipni:77123-1 — null until reconciled",
+    "anchorSchemes": [
+      "ipni",
+      "wfo"
     ],
-    "note": "External keys are null until reconciled; see registry.overrides.json."
+    "identifiers": [
+      "ipni",
+      "wfo",
+      "gbif",
+      "usda",
+      "itis",
+      "wikidata",
+      "indigene"
+    ],
+    "note": "External identifiers are filled by scripts/reconcile.mjs; 'indigene' is our catalog id."
   },
   "count": 96,
+  "unreconciled": 96,
   "entries": [
     {
-      "id": "acer-macrophyllum",
+      "primaryId": null,
       "scientificName": "Acer macrophyllum",
       "family": "Sapindaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "acer-macrophyllum"
+      },
       "commonNames": [
         "Bigleaf Maple"
       ],
@@ -24,19 +36,20 @@
         "acer macrophyllum",
         "bigleaf maple"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "acer-rubrum",
+      "primaryId": null,
       "scientificName": "Acer rubrum",
       "family": "Sapindaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "acer-rubrum"
+      },
       "commonNames": [
         "Red Maple"
       ],
@@ -44,8 +57,6 @@
         "acer rubrum",
         "red maple"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic",
@@ -53,11 +64,14 @@
       ]
     },
     {
-      "id": "achillea-millefolium",
+      "primaryId": null,
       "scientificName": "Achillea millefolium",
       "family": "Asteraceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "achillea-millefolium"
+      },
       "commonNames": [
         "Yarrow"
       ],
@@ -65,19 +79,20 @@
         "achillea millefolium",
         "yarrow"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "amelanchier-alnifolia",
+      "primaryId": null,
       "scientificName": "Amelanchier alnifolia",
       "family": "Rosaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "amelanchier-alnifolia"
+      },
       "commonNames": [
         "Saskatoon Serviceberry"
       ],
@@ -85,19 +100,20 @@
         "amelanchier alnifolia",
         "saskatoon serviceberry"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "amelanchier-canadensis",
+      "primaryId": null,
       "scientificName": "Amelanchier canadensis",
       "family": "Rosaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "amelanchier-canadensis"
+      },
       "commonNames": [
         "Serviceberry"
       ],
@@ -105,19 +121,20 @@
         "amelanchier canadensis",
         "serviceberry"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "andropogon-gerardii",
+      "primaryId": null,
       "scientificName": "Andropogon gerardii",
       "family": "Poaceae",
       "form": "grass",
       "rank": "species",
+      "identifiers": {
+        "indigene": "andropogon-gerardii"
+      },
       "commonNames": [
         "Big Bluestem"
       ],
@@ -125,19 +142,20 @@
         "andropogon gerardii",
         "big bluestem"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "aquilegia-canadensis",
+      "primaryId": null,
       "scientificName": "Aquilegia canadensis",
       "family": "Ranunculaceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "aquilegia-canadensis"
+      },
       "commonNames": [
         "Wild Columbine"
       ],
@@ -145,19 +163,20 @@
         "aquilegia canadensis",
         "wild columbine"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "aquilegia-formosa",
+      "primaryId": null,
       "scientificName": "Aquilegia formosa",
       "family": "Ranunculaceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "aquilegia-formosa"
+      },
       "commonNames": [
         "Western Columbine"
       ],
@@ -165,19 +184,20 @@
         "aquilegia formosa",
         "western columbine"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "arbutus-menziesii",
+      "primaryId": null,
       "scientificName": "Arbutus menziesii",
       "family": "Ericaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "arbutus-menziesii"
+      },
       "commonNames": [
         "Pacific Madrone"
       ],
@@ -185,19 +205,20 @@
         "arbutus menziesii",
         "pacific madrone"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "asclepias-incarnata",
+      "primaryId": null,
       "scientificName": "Asclepias incarnata",
       "family": "Apocynaceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "asclepias-incarnata"
+      },
       "commonNames": [
         "Swamp Milkweed"
       ],
@@ -205,19 +226,20 @@
         "asclepias incarnata",
         "swamp milkweed"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "asclepias-tuberosa",
+      "primaryId": null,
       "scientificName": "Asclepias tuberosa",
       "family": "Apocynaceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "asclepias-tuberosa"
+      },
       "commonNames": [
         "Butterfly Weed"
       ],
@@ -225,8 +247,6 @@
         "asclepias tuberosa",
         "butterfly weed"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic",
@@ -234,11 +254,14 @@
       ]
     },
     {
-      "id": "baptisia-australis",
+      "primaryId": null,
       "scientificName": "Baptisia australis",
       "family": "Fabaceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "baptisia-australis"
+      },
       "commonNames": [
         "Blue Wild Indigo"
       ],
@@ -246,19 +269,20 @@
         "baptisia australis",
         "blue wild indigo"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "berberis-aquifolium",
+      "primaryId": null,
       "scientificName": "Berberis aquifolium",
       "family": "Berberidaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "berberis-aquifolium"
+      },
       "commonNames": [
         "Tall Oregon Grape"
       ],
@@ -266,19 +290,20 @@
         "berberis aquifolium",
         "tall oregon grape"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "betula-nigra",
+      "primaryId": null,
       "scientificName": "Betula nigra",
       "family": "Betulaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "betula-nigra"
+      },
       "commonNames": [
         "River Birch"
       ],
@@ -286,19 +311,20 @@
         "betula nigra",
         "river birch"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "bursera-simaruba",
+      "primaryId": null,
       "scientificName": "Bursera simaruba",
       "family": "Burseraceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "bursera-simaruba"
+      },
       "commonNames": [
         "Gumbo Limbo"
       ],
@@ -306,19 +332,20 @@
         "bursera simaruba",
         "gumbo limbo"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-south"
       ]
     },
     {
-      "id": "callicarpa-americana",
+      "primaryId": null,
       "scientificName": "Callicarpa americana",
       "family": "Lamiaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "callicarpa-americana"
+      },
       "commonNames": [
         "American Beautyberry"
       ],
@@ -326,19 +353,20 @@
         "american beautyberry",
         "callicarpa americana"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central"
       ]
     },
     {
-      "id": "camassia-quamash",
+      "primaryId": null,
       "scientificName": "Camassia quamash",
       "family": "Asparagaceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "camassia-quamash"
+      },
       "commonNames": [
         "Common Camas"
       ],
@@ -346,19 +374,20 @@
         "camassia quamash",
         "common camas"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "carex-pensylvanica",
+      "primaryId": null,
       "scientificName": "Carex pensylvanica",
       "family": "Cyperaceae",
       "form": "grass",
       "rank": "species",
+      "identifiers": {
+        "indigene": "carex-pensylvanica"
+      },
       "commonNames": [
         "Pennsylvania Sedge"
       ],
@@ -366,19 +395,20 @@
         "carex pensylvanica",
         "pennsylvania sedge"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "ceanothus-americanus",
+      "primaryId": null,
       "scientificName": "Ceanothus americanus",
       "family": "Rhamnaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "ceanothus-americanus"
+      },
       "commonNames": [
         "New Jersey Tea"
       ],
@@ -386,19 +416,20 @@
         "ceanothus americanus",
         "new jersey tea"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "cephalanthus-occidentalis",
+      "primaryId": null,
       "scientificName": "Cephalanthus occidentalis",
       "family": "Rubiaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "cephalanthus-occidentalis"
+      },
       "commonNames": [
         "Buttonbush"
       ],
@@ -406,19 +437,20 @@
         "buttonbush",
         "cephalanthus occidentalis"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "cercis-canadensis",
+      "primaryId": null,
       "scientificName": "Cercis canadensis",
       "family": "Fabaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "cercis-canadensis"
+      },
       "commonNames": [
         "Eastern Redbud"
       ],
@@ -426,19 +458,20 @@
         "cercis canadensis",
         "eastern redbud"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "chionanthus-virginicus",
+      "primaryId": null,
       "scientificName": "Chionanthus virginicus",
       "family": "Oleaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "chionanthus-virginicus"
+      },
       "commonNames": [
         "Fringetree"
       ],
@@ -446,19 +479,20 @@
         "chionanthus virginicus",
         "fringetree"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central"
       ]
     },
     {
-      "id": "chrysobalanus-icaco",
+      "primaryId": null,
       "scientificName": "Chrysobalanus icaco",
       "family": "Chrysobalanaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "chrysobalanus-icaco"
+      },
       "commonNames": [
         "Cocoplum"
       ],
@@ -466,19 +500,20 @@
         "chrysobalanus icaco",
         "cocoplum"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-south"
       ]
     },
     {
-      "id": "coccoloba-diversifolia",
+      "primaryId": null,
       "scientificName": "Coccoloba diversifolia",
       "family": "Polygonaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "coccoloba-diversifolia"
+      },
       "commonNames": [
         "Pigeon Plum"
       ],
@@ -486,19 +521,20 @@
         "coccoloba diversifolia",
         "pigeon plum"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-south"
       ]
     },
     {
-      "id": "coccoloba-uvifera",
+      "primaryId": null,
       "scientificName": "Coccoloba uvifera",
       "family": "Polygonaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "coccoloba-uvifera"
+      },
       "commonNames": [
         "Seagrape"
       ],
@@ -506,19 +542,20 @@
         "coccoloba uvifera",
         "seagrape"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-south"
       ]
     },
     {
-      "id": "conocarpus-erectus",
+      "primaryId": null,
       "scientificName": "Conocarpus erectus",
       "family": "Combretaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "conocarpus-erectus"
+      },
       "commonNames": [
         "Green Buttonwood"
       ],
@@ -526,19 +563,20 @@
         "conocarpus erectus",
         "green buttonwood"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-south"
       ]
     },
     {
-      "id": "coreopsis-leavenworthii",
+      "primaryId": null,
       "scientificName": "Coreopsis leavenworthii",
       "family": "Asteraceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "coreopsis-leavenworthii"
+      },
       "commonNames": [
         "Leavenworth's Tickseed"
       ],
@@ -546,19 +584,20 @@
         "coreopsis leavenworthii",
         "leavenworth's tickseed"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central"
       ]
     },
     {
-      "id": "cornus-florida",
+      "primaryId": null,
       "scientificName": "Cornus florida",
       "family": "Cornaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "cornus-florida"
+      },
       "commonNames": [
         "Flowering Dogwood"
       ],
@@ -566,19 +605,20 @@
         "cornus florida",
         "flowering dogwood"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "cornus-sericea",
+      "primaryId": null,
       "scientificName": "Cornus sericea",
       "family": "Cornaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "cornus-sericea"
+      },
       "commonNames": [
         "Red-osier Dogwood"
       ],
@@ -586,8 +626,6 @@
         "cornus sericea",
         "red-osier dogwood"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic",
@@ -595,11 +633,14 @@
       ]
     },
     {
-      "id": "corylus-americana",
+      "primaryId": null,
       "scientificName": "Corylus americana",
       "family": "Betulaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "corylus-americana"
+      },
       "commonNames": [
         "American Hazelnut"
       ],
@@ -607,19 +648,20 @@
         "american hazelnut",
         "corylus americana"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "echinacea-purpurea",
+      "primaryId": null,
       "scientificName": "Echinacea purpurea",
       "family": "Asteraceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "echinacea-purpurea"
+      },
       "commonNames": [
         "Purple Coneflower"
       ],
@@ -627,19 +669,20 @@
         "echinacea purpurea",
         "purple coneflower"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "eriophyllum-lanatum",
+      "primaryId": null,
       "scientificName": "Eriophyllum lanatum",
       "family": "Asteraceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "eriophyllum-lanatum"
+      },
       "commonNames": [
         "Oregon Sunshine"
       ],
@@ -647,19 +690,20 @@
         "eriophyllum lanatum",
         "oregon sunshine"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "eutrochium-purpureum",
+      "primaryId": null,
       "scientificName": "Eutrochium purpureum",
       "family": "Asteraceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "eutrochium-purpureum"
+      },
       "commonNames": [
         "Joe Pye Weed"
       ],
@@ -667,19 +711,20 @@
         "eutrochium purpureum",
         "joe pye weed"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "festuca-roemeri",
+      "primaryId": null,
       "scientificName": "Festuca roemeri",
       "family": "Poaceae",
       "form": "grass",
       "rank": "species",
+      "identifiers": {
+        "indigene": "festuca-roemeri"
+      },
       "commonNames": [
         "Roemer's Fescue"
       ],
@@ -687,19 +732,20 @@
         "festuca roemeri",
         "roemer's fescue"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "fragaria-chiloensis",
+      "primaryId": null,
       "scientificName": "Fragaria chiloensis",
       "family": "Rosaceae",
       "form": "groundcover",
       "rank": "species",
+      "identifiers": {
+        "indigene": "fragaria-chiloensis"
+      },
       "commonNames": [
         "Coastal Strawberry"
       ],
@@ -707,19 +753,20 @@
         "coastal strawberry",
         "fragaria chiloensis"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "fragaria-virginiana",
+      "primaryId": null,
       "scientificName": "Fragaria virginiana",
       "family": "Rosaceae",
       "form": "groundcover",
       "rank": "species",
+      "identifiers": {
+        "indigene": "fragaria-virginiana"
+      },
       "commonNames": [
         "Wild Strawberry"
       ],
@@ -727,19 +774,20 @@
         "fragaria virginiana",
         "wild strawberry"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "gaultheria-shallon",
+      "primaryId": null,
       "scientificName": "Gaultheria shallon",
       "family": "Ericaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "gaultheria-shallon"
+      },
       "commonNames": [
         "Salal"
       ],
@@ -747,19 +795,20 @@
         "gaultheria shallon",
         "salal"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "geranium-maculatum",
+      "primaryId": null,
       "scientificName": "Geranium maculatum",
       "family": "Geraniaceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "geranium-maculatum"
+      },
       "commonNames": [
         "Wild Geranium"
       ],
@@ -767,19 +816,20 @@
         "geranium maculatum",
         "wild geranium"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "hamamelis-virginiana",
+      "primaryId": null,
       "scientificName": "Hamamelis virginiana",
       "family": "Hamamelidaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "hamamelis-virginiana"
+      },
       "commonNames": [
         "Witch Hazel"
       ],
@@ -787,19 +837,20 @@
         "hamamelis virginiana",
         "witch hazel"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "hamelia-patens",
+      "primaryId": null,
       "scientificName": "Hamelia patens",
       "family": "Rubiaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "hamelia-patens"
+      },
       "commonNames": [
         "Firebush"
       ],
@@ -807,8 +858,6 @@
         "firebush",
         "hamelia patens"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central",
@@ -816,11 +865,14 @@
       ]
     },
     {
-      "id": "helianthus-debilis",
+      "primaryId": null,
       "scientificName": "Helianthus debilis",
       "family": "Asteraceae",
       "form": "groundcover",
       "rank": "species",
+      "identifiers": {
+        "indigene": "helianthus-debilis"
+      },
       "commonNames": [
         "Beach",
         "Dune Sunflower"
@@ -830,8 +882,6 @@
         "dune sunflower",
         "helianthus debilis"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central",
@@ -839,11 +889,14 @@
       ]
     },
     {
-      "id": "holodiscus-discolor",
+      "primaryId": null,
       "scientificName": "Holodiscus discolor",
       "family": "Rosaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "holodiscus-discolor"
+      },
       "commonNames": [
         "Oceanspray"
       ],
@@ -851,19 +904,20 @@
         "holodiscus discolor",
         "oceanspray"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "ilex-verticillata",
+      "primaryId": null,
       "scientificName": "Ilex verticillata",
       "family": "Aquifoliaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "ilex-verticillata"
+      },
       "commonNames": [
         "Winterberry Holly"
       ],
@@ -871,19 +925,20 @@
         "ilex verticillata",
         "winterberry holly"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "ilex-vomitoria",
+      "primaryId": null,
       "scientificName": "Ilex vomitoria",
       "family": "Aquifoliaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "ilex-vomitoria"
+      },
       "commonNames": [
         "Yaupon Holly"
       ],
@@ -891,19 +946,20 @@
         "ilex vomitoria",
         "yaupon holly"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central"
       ]
     },
     {
-      "id": "liatris-gracilis",
+      "primaryId": null,
       "scientificName": "Liatris gracilis",
       "family": "Asteraceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "liatris-gracilis"
+      },
       "commonNames": [
         "Slender Blazing Star"
       ],
@@ -911,19 +967,20 @@
         "liatris gracilis",
         "slender blazing star"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central"
       ]
     },
     {
-      "id": "lobelia-cardinalis",
+      "primaryId": null,
       "scientificName": "Lobelia cardinalis",
       "family": "Campanulaceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "lobelia-cardinalis"
+      },
       "commonNames": [
         "Cardinal Flower"
       ],
@@ -931,19 +988,20 @@
         "cardinal flower",
         "lobelia cardinalis"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "lonicera-ciliosa",
+      "primaryId": null,
       "scientificName": "Lonicera ciliosa",
       "family": "Caprifoliaceae",
       "form": "vine",
       "rank": "species",
+      "identifiers": {
+        "indigene": "lonicera-ciliosa"
+      },
       "commonNames": [
         "Orange Honeysuckle"
       ],
@@ -951,19 +1009,20 @@
         "lonicera ciliosa",
         "orange honeysuckle"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "lonicera-sempervirens",
+      "primaryId": null,
       "scientificName": "Lonicera sempervirens",
       "family": "Caprifoliaceae",
       "form": "vine",
       "rank": "species",
+      "identifiers": {
+        "indigene": "lonicera-sempervirens"
+      },
       "commonNames": [
         "Coral Honeysuckle"
       ],
@@ -971,19 +1030,20 @@
         "coral honeysuckle",
         "lonicera sempervirens"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "magnolia-grandiflora",
+      "primaryId": null,
       "scientificName": "Magnolia grandiflora",
       "family": "Magnoliaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "magnolia-grandiflora"
+      },
       "commonNames": [
         "Southern Magnolia"
       ],
@@ -991,19 +1051,20 @@
         "magnolia grandiflora",
         "southern magnolia"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central"
       ]
     },
     {
-      "id": "mimosa-strigillosa",
+      "primaryId": null,
       "scientificName": "Mimosa strigillosa",
       "family": "Fabaceae",
       "form": "groundcover",
       "rank": "species",
+      "identifiers": {
+        "indigene": "mimosa-strigillosa"
+      },
       "commonNames": [
         "Sunshine Mimosa",
         "Powderpuff"
@@ -1013,19 +1074,20 @@
         "powderpuff",
         "sunshine mimosa"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central"
       ]
     },
     {
-      "id": "monarda-fistulosa",
+      "primaryId": null,
       "scientificName": "Monarda fistulosa",
       "family": "Lamiaceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "monarda-fistulosa"
+      },
       "commonNames": [
         "Wild Bergamot"
       ],
@@ -1033,19 +1095,20 @@
         "monarda fistulosa",
         "wild bergamot"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "monarda-punctata",
+      "primaryId": null,
       "scientificName": "Monarda punctata",
       "family": "Lamiaceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "monarda-punctata"
+      },
       "commonNames": [
         "Spotted Beebalm",
         "Dotted Horsemint"
@@ -1055,19 +1118,20 @@
         "monarda punctata",
         "spotted beebalm"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central"
       ]
     },
     {
-      "id": "morella-cerifera",
+      "primaryId": null,
       "scientificName": "Morella cerifera",
       "family": "Myricaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "morella-cerifera"
+      },
       "commonNames": [
         "Wax Myrtle",
         "Southern Bayberry"
@@ -1077,19 +1141,20 @@
         "southern bayberry",
         "wax myrtle"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-south"
       ]
     },
     {
-      "id": "muhlenbergia-capillaris",
+      "primaryId": null,
       "scientificName": "Muhlenbergia capillaris",
       "family": "Poaceae",
       "form": "grass",
       "rank": "species",
+      "identifiers": {
+        "indigene": "muhlenbergia-capillaris"
+      },
       "commonNames": [
         "Pink Muhly Grass"
       ],
@@ -1097,8 +1162,6 @@
         "muhlenbergia capillaris",
         "pink muhly grass"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central",
@@ -1106,11 +1169,14 @@
       ]
     },
     {
-      "id": "myrcianthes-fragrans",
+      "primaryId": null,
       "scientificName": "Myrcianthes fragrans",
       "family": "Myrtaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "myrcianthes-fragrans"
+      },
       "commonNames": [
         "Simpson's Stopper"
       ],
@@ -1118,8 +1184,6 @@
         "myrcianthes fragrans",
         "simpson's stopper"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central",
@@ -1127,11 +1191,14 @@
       ]
     },
     {
-      "id": "packera-aurea",
+      "primaryId": null,
       "scientificName": "Packera aurea",
       "family": "Asteraceae",
       "form": "groundcover",
       "rank": "species",
+      "identifiers": {
+        "indigene": "packera-aurea"
+      },
       "commonNames": [
         "Golden Groundsel"
       ],
@@ -1139,19 +1206,20 @@
         "golden groundsel",
         "packera aurea"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "panicum-virgatum",
+      "primaryId": null,
       "scientificName": "Panicum virgatum",
       "family": "Poaceae",
       "form": "grass",
       "rank": "species",
+      "identifiers": {
+        "indigene": "panicum-virgatum"
+      },
       "commonNames": [
         "Switchgrass"
       ],
@@ -1159,19 +1227,20 @@
         "panicum virgatum",
         "switchgrass"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "parthenocissus-quinquefolia",
+      "primaryId": null,
       "scientificName": "Parthenocissus quinquefolia",
       "family": "Vitaceae",
       "form": "vine",
       "rank": "species",
+      "identifiers": {
+        "indigene": "parthenocissus-quinquefolia"
+      },
       "commonNames": [
         "Virginia Creeper"
       ],
@@ -1179,19 +1248,20 @@
         "parthenocissus quinquefolia",
         "virginia creeper"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "passiflora-incarnata",
+      "primaryId": null,
       "scientificName": "Passiflora incarnata",
       "family": "Passifloraceae",
       "form": "vine",
       "rank": "species",
+      "identifiers": {
+        "indigene": "passiflora-incarnata"
+      },
       "commonNames": [
         "Purple Passionflower",
         "Maypop"
@@ -1201,19 +1271,20 @@
         "passiflora incarnata",
         "purple passionflower"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central"
       ]
     },
     {
-      "id": "passiflora-suberosa",
+      "primaryId": null,
       "scientificName": "Passiflora suberosa",
       "family": "Passifloraceae",
       "form": "vine",
       "rank": "species",
+      "identifiers": {
+        "indigene": "passiflora-suberosa"
+      },
       "commonNames": [
         "Corkystem Passionflower"
       ],
@@ -1221,19 +1292,20 @@
         "corkystem passionflower",
         "passiflora suberosa"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-south"
       ]
     },
     {
-      "id": "penstemon-digitalis",
+      "primaryId": null,
       "scientificName": "Penstemon digitalis",
       "family": "Plantaginaceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "penstemon-digitalis"
+      },
       "commonNames": [
         "Foxglove Beardtongue"
       ],
@@ -1241,19 +1313,20 @@
         "foxglove beardtongue",
         "penstemon digitalis"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "penstemon-serrulatus",
+      "primaryId": null,
       "scientificName": "Penstemon serrulatus",
       "family": "Plantaginaceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "penstemon-serrulatus"
+      },
       "commonNames": [
         "Cascade Penstemon"
       ],
@@ -1261,19 +1334,20 @@
         "cascade penstemon",
         "penstemon serrulatus"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "physocarpus-opulifolius",
+      "primaryId": null,
       "scientificName": "Physocarpus opulifolius",
       "family": "Rosaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "physocarpus-opulifolius"
+      },
       "commonNames": [
         "Ninebark"
       ],
@@ -1281,19 +1355,20 @@
         "ninebark",
         "physocarpus opulifolius"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "pinus-palustris",
+      "primaryId": null,
       "scientificName": "Pinus palustris",
       "family": "Pinaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "pinus-palustris"
+      },
       "commonNames": [
         "Longleaf Pine"
       ],
@@ -1301,19 +1376,20 @@
         "longleaf pine",
         "pinus palustris"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central"
       ]
     },
     {
-      "id": "polystichum-acrostichoides",
+      "primaryId": null,
       "scientificName": "Polystichum acrostichoides",
       "family": "Dryopteridaceae",
       "form": "fern",
       "rank": "species",
+      "identifiers": {
+        "indigene": "polystichum-acrostichoides"
+      },
       "commonNames": [
         "Christmas Fern"
       ],
@@ -1321,19 +1397,20 @@
         "christmas fern",
         "polystichum acrostichoides"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "polystichum-munitum",
+      "primaryId": null,
       "scientificName": "Polystichum munitum",
       "family": "Dryopteridaceae",
       "form": "fern",
       "rank": "species",
+      "identifiers": {
+        "indigene": "polystichum-munitum"
+      },
       "commonNames": [
         "Western Sword Fern"
       ],
@@ -1341,19 +1418,20 @@
         "polystichum munitum",
         "western sword fern"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "populus-trichocarpa",
+      "primaryId": null,
       "scientificName": "Populus trichocarpa",
       "family": "Salicaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "populus-trichocarpa"
+      },
       "commonNames": [
         "Black Cottonwood"
       ],
@@ -1361,19 +1439,20 @@
         "black cottonwood",
         "populus trichocarpa"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "prunus-serotina",
+      "primaryId": null,
       "scientificName": "Prunus serotina",
       "family": "Rosaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "prunus-serotina"
+      },
       "commonNames": [
         "Black Cherry"
       ],
@@ -1381,19 +1460,20 @@
         "black cherry",
         "prunus serotina"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "pseudotsuga-menziesii",
+      "primaryId": null,
       "scientificName": "Pseudotsuga menziesii",
       "family": "Pinaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "pseudotsuga-menziesii"
+      },
       "commonNames": [
         "Douglas-fir"
       ],
@@ -1401,19 +1481,20 @@
         "douglas-fir",
         "pseudotsuga menziesii"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "psychotria-nervosa",
+      "primaryId": null,
       "scientificName": "Psychotria nervosa",
       "family": "Rubiaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "psychotria-nervosa"
+      },
       "commonNames": [
         "Wild Coffee"
       ],
@@ -1421,19 +1502,20 @@
         "psychotria nervosa",
         "wild coffee"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-south"
       ]
     },
     {
-      "id": "quercus-alba",
+      "primaryId": null,
       "scientificName": "Quercus alba",
       "family": "Fagaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "quercus-alba"
+      },
       "commonNames": [
         "White Oak"
       ],
@@ -1441,19 +1523,20 @@
         "quercus alba",
         "white oak"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "quercus-garryana",
+      "primaryId": null,
       "scientificName": "Quercus garryana",
       "family": "Fagaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "quercus-garryana"
+      },
       "commonNames": [
         "Oregon White Oak",
         "Garry Oak"
@@ -1463,19 +1546,20 @@
         "oregon white oak",
         "quercus garryana"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "quercus-rubra",
+      "primaryId": null,
       "scientificName": "Quercus rubra",
       "family": "Fagaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "quercus-rubra"
+      },
       "commonNames": [
         "Northern Red Oak"
       ],
@@ -1483,19 +1567,20 @@
         "northern red oak",
         "quercus rubra"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "quercus-virginiana",
+      "primaryId": null,
       "scientificName": "Quercus virginiana",
       "family": "Fagaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "quercus-virginiana"
+      },
       "commonNames": [
         "Southern Live Oak"
       ],
@@ -1503,8 +1588,6 @@
         "quercus virginiana",
         "southern live oak"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central",
@@ -1512,11 +1595,14 @@
       ]
     },
     {
-      "id": "ribes-sanguineum",
+      "primaryId": null,
       "scientificName": "Ribes sanguineum",
       "family": "Grossulariaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "ribes-sanguineum"
+      },
       "commonNames": [
         "Red-flowering Currant"
       ],
@@ -1524,19 +1610,20 @@
         "red-flowering currant",
         "ribes sanguineum"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "rivina-humilis",
+      "primaryId": null,
       "scientificName": "Rivina humilis",
       "family": "Petiveriaceae",
       "form": "groundcover",
       "rank": "species",
+      "identifiers": {
+        "indigene": "rivina-humilis"
+      },
       "commonNames": [
         "Rougeplant",
         "Bloodberry"
@@ -1546,19 +1633,20 @@
         "rivina humilis",
         "rougeplant"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-south"
       ]
     },
     {
-      "id": "rosa-nutkana",
+      "primaryId": null,
       "scientificName": "Rosa nutkana",
       "family": "Rosaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "rosa-nutkana"
+      },
       "commonNames": [
         "Nootka Rose"
       ],
@@ -1566,19 +1654,20 @@
         "nootka rose",
         "rosa nutkana"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "rudbeckia-fulgida",
+      "primaryId": null,
       "scientificName": "Rudbeckia fulgida",
       "family": "Asteraceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "rudbeckia-fulgida"
+      },
       "commonNames": [
         "Black-eyed Susan"
       ],
@@ -1586,19 +1675,20 @@
         "black-eyed susan",
         "rudbeckia fulgida"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "sabal-palmetto",
+      "primaryId": null,
       "scientificName": "Sabal palmetto",
       "family": "Arecaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "sabal-palmetto"
+      },
       "commonNames": [
         "Cabbage Palm",
         "Sabal Palm"
@@ -1608,8 +1698,6 @@
         "sabal palm",
         "sabal palmetto"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central",
@@ -1617,11 +1705,14 @@
       ]
     },
     {
-      "id": "salix-scouleriana",
+      "primaryId": null,
       "scientificName": "Salix scouleriana",
       "family": "Salicaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "salix-scouleriana"
+      },
       "commonNames": [
         "Scouler's Willow"
       ],
@@ -1629,19 +1720,20 @@
         "salix scouleriana",
         "scouler's willow"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "salvia-coccinea",
+      "primaryId": null,
       "scientificName": "Salvia coccinea",
       "family": "Lamiaceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "salvia-coccinea"
+      },
       "commonNames": [
         "Tropical Sage",
         "Scarlet Sage"
@@ -1651,8 +1743,6 @@
         "scarlet sage",
         "tropical sage"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central",
@@ -1660,11 +1750,14 @@
       ]
     },
     {
-      "id": "schizachyrium-scoparium",
+      "primaryId": null,
       "scientificName": "Schizachyrium scoparium",
       "family": "Poaceae",
       "form": "grass",
       "rank": "species",
+      "identifiers": {
+        "indigene": "schizachyrium-scoparium"
+      },
       "commonNames": [
         "Little Bluestem"
       ],
@@ -1672,19 +1765,20 @@
         "little bluestem",
         "schizachyrium scoparium"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "serenoa-repens",
+      "primaryId": null,
       "scientificName": "Serenoa repens",
       "family": "Arecaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "serenoa-repens"
+      },
       "commonNames": [
         "Saw Palmetto"
       ],
@@ -1692,8 +1786,6 @@
         "saw palmetto",
         "serenoa repens"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central",
@@ -1701,11 +1793,14 @@
       ]
     },
     {
-      "id": "solidago-rugosa",
+      "primaryId": null,
       "scientificName": "Solidago rugosa",
       "family": "Asteraceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "solidago-rugosa"
+      },
       "commonNames": [
         "Wrinkleleaf Goldenrod"
       ],
@@ -1713,19 +1808,20 @@
         "solidago rugosa",
         "wrinkleleaf goldenrod"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "sophora-tomentosa-truncata",
+      "primaryId": null,
       "scientificName": "Sophora tomentosa var. truncata",
       "family": "Fabaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "sophora-tomentosa-truncata"
+      },
       "commonNames": [
         "Yellow Necklacepod"
       ],
@@ -1733,19 +1829,20 @@
         "sophora tomentosa var. truncata",
         "yellow necklacepod"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-south"
       ]
     },
     {
-      "id": "stachytarpheta-jamaicensis",
+      "primaryId": null,
       "scientificName": "Stachytarpheta jamaicensis",
       "family": "Verbenaceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "stachytarpheta-jamaicensis"
+      },
       "commonNames": [
         "Blue Porterweed"
       ],
@@ -1753,19 +1850,20 @@
         "blue porterweed",
         "stachytarpheta jamaicensis"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-south"
       ]
     },
     {
-      "id": "symphoricarpos-albus",
+      "primaryId": null,
       "scientificName": "Symphoricarpos albus",
       "family": "Caprifoliaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "symphoricarpos-albus"
+      },
       "commonNames": [
         "Common Snowberry"
       ],
@@ -1773,19 +1871,20 @@
         "common snowberry",
         "symphoricarpos albus"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "symphyotrichum-novae-angliae",
+      "primaryId": null,
       "scientificName": "Symphyotrichum novae-angliae",
       "family": "Asteraceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "symphyotrichum-novae-angliae"
+      },
       "commonNames": [
         "New England Aster"
       ],
@@ -1793,19 +1892,20 @@
         "new england aster",
         "symphyotrichum novae-angliae"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "taxodium-distichum",
+      "primaryId": null,
       "scientificName": "Taxodium distichum",
       "family": "Cupressaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "taxodium-distichum"
+      },
       "commonNames": [
         "Bald Cypress"
       ],
@@ -1813,19 +1913,20 @@
         "bald cypress",
         "taxodium distichum"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central"
       ]
     },
     {
-      "id": "thuja-plicata",
+      "primaryId": null,
       "scientificName": "Thuja plicata",
       "family": "Cupressaceae",
       "form": "tree",
       "rank": "species",
+      "identifiers": {
+        "indigene": "thuja-plicata"
+      },
       "commonNames": [
         "Western Redcedar"
       ],
@@ -1833,19 +1934,20 @@
         "thuja plicata",
         "western redcedar"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "pnw"
       ]
     },
     {
-      "id": "tripsacum-dactyloides",
+      "primaryId": null,
       "scientificName": "Tripsacum dactyloides",
       "family": "Poaceae",
       "form": "grass",
       "rank": "species",
+      "identifiers": {
+        "indigene": "tripsacum-dactyloides"
+      },
       "commonNames": [
         "Fakahatchee Grass",
         "Eastern Gamagrass"
@@ -1855,8 +1957,6 @@
         "fakahatchee grass",
         "tripsacum dactyloides"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central",
@@ -1864,11 +1964,14 @@
       ]
     },
     {
-      "id": "vaccinium-corymbosum",
+      "primaryId": null,
       "scientificName": "Vaccinium corymbosum",
       "family": "Ericaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "vaccinium-corymbosum"
+      },
       "commonNames": [
         "Highbush Blueberry"
       ],
@@ -1876,19 +1979,20 @@
         "highbush blueberry",
         "vaccinium corymbosum"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "viburnum-dentatum",
+      "primaryId": null,
       "scientificName": "Viburnum dentatum",
       "family": "Adoxaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "viburnum-dentatum"
+      },
       "commonNames": [
         "Arrowwood Viburnum"
       ],
@@ -1896,19 +2000,20 @@
         "arrowwood viburnum",
         "viburnum dentatum"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
       ]
     },
     {
-      "id": "viburnum-obovatum",
+      "primaryId": null,
       "scientificName": "Viburnum obovatum",
       "family": "Adoxaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "viburnum-obovatum"
+      },
       "commonNames": [
         "Walter's Viburnum"
       ],
@@ -1916,19 +2021,20 @@
         "viburnum obovatum",
         "walter's viburnum"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-central"
       ]
     },
     {
-      "id": "zamia-integrifolia",
+      "primaryId": null,
       "scientificName": "Zamia integrifolia",
       "family": "Zamiaceae",
       "form": "shrub",
       "rank": "species",
+      "identifiers": {
+        "indigene": "zamia-integrifolia"
+      },
       "commonNames": [
         "Coontie"
       ],
@@ -1936,19 +2042,20 @@
         "coontie",
         "zamia integrifolia"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "florida-south"
       ]
     },
     {
-      "id": "zizia-aurea",
+      "primaryId": null,
       "scientificName": "Zizia aurea",
       "family": "Apiaceae",
       "form": "perennial",
       "rank": "species",
+      "identifiers": {
+        "indigene": "zizia-aurea"
+      },
       "commonNames": [
         "Golden Alexanders"
       ],
@@ -1956,8 +2063,6 @@
         "golden alexanders",
         "zizia aurea"
       ],
-      "usdaSymbol": null,
-      "gbifKey": null,
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"

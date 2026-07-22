@@ -1,0 +1,72 @@
+# Reconcile the registry's external identifiers (IPNI / WFO / GBIF / USDA / ITIS
+# / Wikidata) and open a PR with the result.
+#
+# The reconcile needs open internet (Wikidata + GBIF), which the local build
+# sandbox blocks — GitHub runners don't, so this is the natural home. It's a
+# SEPARATE job from the Pages deploy, so the deploy build stays hermetic: this
+# only produces a data change (registry.overrides.json + the regenerated
+# registry), which a human reviews and merges; the normal build then ships it.
+#
+# Trigger it from the Actions tab ("Run workflow") or let the quarterly schedule
+# catch taxonomic drift. Requires "Allow GitHub Actions to create and approve
+# pull requests" in the repo's Actions settings.
+name: Reconcile registry identifiers
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 1 1,4,7,10 *" # 06:00 UTC on the 1st, quarterly
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: registry-reconcile
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/* # latest LTS; the scripts run via Vite, not Node's TS support
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      - name: Reconcile identifiers (Wikidata + GBIF)
+        working-directory: app
+        run: npm run reconcile
+
+      - name: Regenerate the registry
+        working-directory: app
+        run: npm run registry:build
+
+      - name: Verify the registry
+        working-directory: app
+        run: npm run registry:check
+
+      - name: Open a PR with the reconciled identifiers
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: registry/reconcile
+          title: "Reconcile registry external identifiers"
+          commit-message: "Reconcile registry external identifiers (Wikidata + GBIF)"
+          body: |
+            Automated reconciliation of the registry's external identifiers
+            (IPNI / WFO / GBIF / USDA / ITIS / Wikidata) via the Wikidata hub,
+            with the GBIF usageKey verified against GBIF's match API.
+
+            Review the identifier diff before merging — especially any taxon
+            whose `primaryId` changed or that remains unreconciled.
+          add-paths: |
+            app/src/data/registry.overrides.json
+            app/src/data/registry.ts
+            app/public/registry/native-plant-registry.json

@@ -19,8 +19,11 @@ const CULTIVAR_MARKERS = /\bdwarf\b|'[^']+'|\bhybrid\b|\bcompacta\b|\bnana\b|\bv
 
 export interface RegistryIndex {
   entries: RegistryEntry[];
-  byId: Map<string, RegistryEntry>;
-  /** normalized scientific name → entry (the exact, unambiguous anchor). */
+  /** our catalog id (identifiers.indigene) → entry — the registry↔catalog join. */
+  byIndigene: Map<string, RegistryEntry>;
+  /** primaryId CURIE → entry (only for reconciled entries). */
+  byPrimary: Map<string, RegistryEntry>;
+  /** normalized scientific name → entry (the exact, unambiguous name anchor). */
   bySci: Map<string, RegistryEntry>;
   /** normalized alias → entries (>1 means the alias is ambiguous). */
   byAlias: Map<string, RegistryEntry[]>;
@@ -33,11 +36,14 @@ export type ResolveResult =
   | { kind: "none" };
 
 export function buildIndex(entries: RegistryEntry[]): RegistryIndex {
-  const byId = new Map<string, RegistryEntry>();
+  const byIndigene = new Map<string, RegistryEntry>();
+  const byPrimary = new Map<string, RegistryEntry>();
   const bySci = new Map<string, RegistryEntry>();
   const byAlias = new Map<string, RegistryEntry[]>();
   for (const e of entries) {
-    byId.set(e.id, e);
+    const local = e.identifiers.indigene;
+    if (local) byIndigene.set(local, e);
+    if (e.primaryId) byPrimary.set(e.primaryId, e);
     bySci.set(normalizeName(e.scientificName), e);
     for (const a of e.aliases) {
       const list = byAlias.get(a) ?? [];
@@ -45,11 +51,17 @@ export function buildIndex(entries: RegistryEntry[]): RegistryIndex {
       byAlias.set(a, list);
     }
   }
-  return { entries, byId, bySci, byAlias };
+  return { entries, byIndigene, byPrimary, bySci, byAlias };
 }
 
-export function entryById(index: RegistryIndex, id: string): RegistryEntry | undefined {
-  return index.byId.get(id);
+/** Get the registry entry for a catalog plant (by its `indigene` id / slug). */
+export function entryForPlant(index: RegistryIndex, plantId: string): RegistryEntry | undefined {
+  return index.byIndigene.get(plantId);
+}
+
+/** Get an entry by its `primaryId` CURIE (e.g. "ipni:77123-1"). */
+export function entryByPrimaryId(index: RegistryIndex, curie: string): RegistryEntry | undefined {
+  return index.byPrimary.get(curie);
 }
 
 /**
@@ -69,23 +81,23 @@ export function resolveName(index: RegistryIndex, name: string): ResolveResult {
   return { kind: "ambiguous", entries: hits };
 }
 
-/** Authoritative external links for an entry — usable today. When a numeric key
- *  is present it deep-links the record; otherwise it links a name search, so the
- *  link works before reconciliation. */
-export function deepLinks(entry: RegistryEntry): {
-  usdaPlants: string | null;
-  gbif: string;
-  powo: string;
-} {
+/** Authoritative external links for an entry, from its identifier bag. A record
+ *  link when the id is present; a name search as a graceful fallback so the link
+ *  works before reconciliation. `powo` is derived from the IPNI id. */
+export function deepLinks(entry: RegistryEntry): Record<string, string | null> {
+  const ids = entry.identifiers;
   const sci = encodeURIComponent(entry.scientificName);
   return {
-    usdaPlants: entry.usdaSymbol
-      ? `https://plants.usda.gov/plant-profile/${entry.usdaSymbol}`
+    ipni: ids.ipni ? `https://www.ipni.org/n/${ids.ipni}` : null,
+    powo: ids.ipni ? `https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:${ids.ipni}` : null,
+    wfo: ids.wfo ? `https://www.worldfloraonline.org/taxon/${ids.wfo}` : null,
+    gbif: ids.gbif ? `https://www.gbif.org/species/${ids.gbif}` : `https://www.gbif.org/species/search?q=${sci}`,
+    usda: ids.usda ? `https://plants.usda.gov/plant-profile/${ids.usda}` : null,
+    itis: ids.itis
+      ? `https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=${ids.itis}`
       : null,
-    gbif: entry.gbifKey
-      ? `https://www.gbif.org/species/${entry.gbifKey}`
-      : `https://www.gbif.org/species/search?q=${sci}`,
-    powo: `https://powo.science.kew.org/results?q=${sci}`,
+    wikidata: ids.wikidata ? `https://www.wikidata.org/wiki/${ids.wikidata}` : null,
+    inaturalist: `https://www.inaturalist.org/taxa/search?q=${sci}`,
   };
 }
 
@@ -101,30 +113,48 @@ export interface AuditResult {
   /** Aliases that resolve to more than one taxon — reported, not an error:
    *  the resolver returns `ambiguous` for these, which is correct behavior. */
   ambiguousAliases: { alias: string; ids: string[] }[];
+  /** `indigene` ids whose external anchor isn't reconciled yet (primaryId null).
+   *  Informational — the legitimate interim state before `npm run reconcile`. */
+  unreconciled: string[];
 }
 
 /**
  * Integrity audit — the registry's equivalent of the wildlife dev-audit.
- * Verifies self-consistency (unique ids, resolvable cultivar links) and, given
- * the catalog's coverage, that every listed plant has exactly one matching
- * entry in the regions that list it. Ambiguous aliases are surfaced separately.
+ * Verifies self-consistency (unique local ids, unique anchors, well-formed
+ * CURIEs, resolvable cultivar links) and, given the catalog's coverage, that
+ * every listed plant maps to exactly one entry in the regions that list it.
+ * Ambiguous aliases and unreconciled anchors are surfaced separately.
  */
 export function auditRegistry(entries: RegistryEntry[], coverage: CoverageItem[]): AuditResult {
   const issues: string[] = [];
   const index = buildIndex(entries);
 
-  const seenId = new Set<string>();
+  const seenLocal = new Set<string>();
+  const seenPrimary = new Set<string>();
   const seenSci = new Set<string>();
+  const unreconciled: string[] = [];
+
   for (const e of entries) {
-    if (seenId.has(e.id)) issues.push(`duplicate id: ${e.id}`);
-    seenId.add(e.id);
+    const local = e.identifiers.indigene;
+    if (!local) {
+      issues.push(`entry ${e.scientificName} has no indigene id`);
+    } else {
+      if (seenLocal.has(local)) issues.push(`duplicate indigene id: ${local}`);
+      seenLocal.add(local);
+    }
+    if (e.primaryId) {
+      if (!/^[a-z]+:.+/.test(e.primaryId)) issues.push(`primaryId not a CURIE: ${e.primaryId}`);
+      if (seenPrimary.has(e.primaryId)) issues.push(`duplicate primaryId: ${e.primaryId}`);
+      seenPrimary.add(e.primaryId);
+    } else {
+      unreconciled.push(local ?? e.scientificName);
+    }
     const sci = normalizeName(e.scientificName);
     if (seenSci.has(sci)) issues.push(`duplicate scientific name: ${e.scientificName}`);
     seenSci.add(sci);
-    if (e.cultivarOf && !index.byId.has(e.cultivarOf))
-      issues.push(`${e.id}: cultivarOf "${e.cultivarOf}" is not a registry id`);
-    if (!e.aliases.includes(normalizeName(e.scientificName)))
-      issues.push(`${e.id}: aliases missing its own scientific name`);
+    if (e.cultivarOf && !index.byIndigene.has(e.cultivarOf))
+      issues.push(`${local}: cultivarOf "${e.cultivarOf}" is not a registry indigene id`);
+    if (!e.aliases.includes(sci)) issues.push(`${local}: aliases missing its own scientific name`);
   }
 
   for (const c of coverage) {
@@ -133,15 +163,16 @@ export function auditRegistry(entries: RegistryEntry[], coverage: CoverageItem[]
       issues.push(`plant ${c.regionId}/${c.plantId} (${c.scientificName}) has no registry entry`);
       continue;
     }
-    if (e.id !== c.plantId)
-      issues.push(`plant ${c.plantId} maps to registry id ${e.id} (${c.scientificName})`);
+    if (e.identifiers.indigene !== c.plantId)
+      issues.push(`plant ${c.plantId} maps to indigene id ${e.identifiers.indigene} (${c.scientificName})`);
     if (!e.regions.includes(c.regionId))
-      issues.push(`${e.id}: region ${c.regionId} lists it but entry.regions omits it`);
+      issues.push(`${e.identifiers.indigene}: region ${c.regionId} lists it but entry.regions omits it`);
   }
 
   const ambiguousAliases: { alias: string; ids: string[] }[] = [];
   for (const [alias, hits] of index.byAlias)
-    if (hits.length > 1) ambiguousAliases.push({ alias, ids: hits.map((e) => e.id) });
+    if (hits.length > 1)
+      ambiguousAliases.push({ alias, ids: hits.map((e) => e.identifiers.indigene ?? e.scientificName) });
 
-  return { issues, ambiguousAliases };
+  return { issues, ambiguousAliases, unreconciled };
 }

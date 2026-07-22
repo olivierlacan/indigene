@@ -218,37 +218,61 @@ export interface SupportLink {
 // It is entirely client-side static data (like the plant lists and like tzdata
 // or the GBIF backbone dump — reference data ships as a file, not a service),
 // generated from the catalog by `scripts/build-registry.mjs` and kept in sync by
-// `scripts/check-registry.mjs`. External keys (USDA/GBIF) are reconciled in via
-// `data/registry.overrides.json`; until then the accepted scientific name is the
-// anchor. See `docs/nursery-availability-protocol.md` for why identity is the
-// foundation of availability and discoverability.
+// `scripts/check-registry.mjs`. The identity anchor is an external, globally-
+// recognized identifier (IPNI, via POWO/WCVP) carried as a CURIE in `primaryId`,
+// with a bag of cross-reference identifiers alongside it. Those external ids are
+// reconciled in by `scripts/reconcile.mjs` (writing `data/registry.overrides.json`);
+// until then only our own `indigene` id and the accepted name are known, and
+// `primaryId` is null. See `docs/nursery-availability-protocol.md` for why
+// identity is the foundation of availability and discoverability.
 // ---------------------------------------------------------------------------
 
 /** Resolution of a registry entry. Most are species; genus nodes let a buyer
  *  ask for "a milkweed" as well as a specific one. */
 export type TaxonRank = "species" | "genus";
 
+/**
+ * Identifier namespaces we carry. Every value is a bare accession within its
+ * scheme (e.g. `ipni` → "77123-1"); `primaryId` is the CURIE form (`ipni:77123-1`).
+ * `indigene` is our own catalog id — namespaced like every external one, so the
+ * registry never pretends a local slug is the identity. The external schemes are
+ * filled by reconciliation; `powo` is derived from `ipni` and needs no storage.
+ */
+export type IdScheme =
+  | "ipni" // International Plant Names Index — the anchor authority
+  | "wfo" // World Flora Online — alternate persistent taxon id / anchor fallback
+  | "gbif" // GBIF backbone usageKey — occurrences/iNaturalist (unstable; xref only)
+  | "usda" // USDA PLANTS Symbol — US native status/distribution
+  | "itis" // ITIS TSN — North American taxonomy, public domain
+  | "wikidata" // Wikidata QID — the crosswalk hub used to populate the rest
+  | "indigene"; // our own catalog id (the registry↔catalog join key)
+
+/** Schemes that can anchor `primaryId`, in priority order — persistent, global,
+ *  never-reused ids only (GBIF is deliberately excluded: its keys can shift). */
+export const ANCHOR_SCHEMES = ["ipni", "wfo"] as const;
+
 export interface RegistryEntry {
-  /** Stable local key — the scientific-name slug, identical to the catalog's
-   *  plant `id`, so registry↔catalog is the same string. */
-  id: string;
-  /** Accepted binomial. The reconciliation anchor until external keys are filled. */
+  /** The identity anchor as a CURIE (`scheme:accession`, e.g. "ipni:77123-1"),
+   *  self-describing and resolvable (identifiers.org). Null until reconciled —
+   *  never a local slug masquerading as the identity. */
+  primaryId: string | null;
+  /** Accepted binomial — human-readable display; may be re-interpreted as
+   *  taxonomy revises, which is exactly why it is not the key. */
   scientificName: string;
   family: string;
   form: PlantForm;
   rank: TaxonRank;
+  /** Cross-reference identifiers by scheme, each a bare accession. Always carries
+   *  `indigene` (our catalog id); external schemes are filled by reconciliation. */
+  identifiers: Partial<Record<IdScheme, string>>;
   /** Display names, primary first (e.g. ["Oregon White Oak", "Garry Oak"]). */
   commonNames: string[];
   /** Normalized (lowercased, single-spaced) strings that resolve to this entry —
-   *  every common name plus the scientific name. The name→id index is built from
+   *  every common name plus the scientific name. The name index is built from
    *  these; a string two entries share is flagged ambiguous, never guessed. */
   aliases: string[];
-  /** USDA PLANTS Symbol (e.g. "QUGA4"); null until reconciled. Public domain. */
-  usdaSymbol: string | null;
-  /** GBIF backbone usageKey; null until reconciled. The global crosswalk key. */
-  gbifKey: number | null;
-  /** If this is a cultivar/hybrid node, the id of the straight species it derives
-   *  from — so "Dwarf Firebush" is a distinct node pointing at "Firebush". */
+  /** If this is a cultivar/hybrid node, the `indigene` id of the straight species
+   *  it derives from — so "Dwarf Firebush" is a distinct node pointing at "Firebush". */
   cultivarOf: string | null;
   /** Indigene region ids whose lists include this taxon (a taxon native to two
    *  regions is one entry, listed in both). */

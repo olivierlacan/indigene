@@ -1,9 +1,15 @@
 {
-  "$schema-note": "Curated overrides merged into the generated registry by scripts/build-registry.mjs. Keyed by accepted scientific name. This is the git write-path for reconciled identifiers and hand-added aliases — edit here, re-run the generator, commit the result. Example shape (remove this note key when adding real entries):",
+  "$schema-note": "Curated overrides merged into the generated registry by scripts/build-registry.mjs, keyed by accepted scientific name. This is the git write-path for reconciled identifiers and hand-added aliases: scripts/reconcile.mjs writes real entries here, or edit by hand, then re-run `npm run registry:build` and commit. Keys starting with $ are ignored. Example shape (illustrative ids):",
   "$example": {
     "Quercus garryana": {
-      "usdaSymbol": "QUGA4",
-      "gbifKey": 2880539,
+      "identifiers": {
+        "ipni": "296012-1",
+        "wfo": "wfo-0000958200",
+        "gbif": "2880539",
+        "usda": "QUGA4",
+        "itis": "19334",
+        "wikidata": "Q591759"
+      },
       "extraAliases": ["oregon oak"],
       "cultivarOf": null
     }

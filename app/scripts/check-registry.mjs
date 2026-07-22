@@ -10,7 +10,7 @@ import { openLoader } from "./_load-ts.mjs";
 
 const loader = await openLoader();
 const { REGISTRY } = await loader.load("/src/data/registry.ts");
-const { buildIndex, resolveName, entryById, deepLinks, auditRegistry } = await loader.load(
+const { buildIndex, resolveName, entryForPlant, deepLinks, auditRegistry } = await loader.load(
   "/src/lib/registry-core.ts",
 );
 const coverage = [];
@@ -21,6 +21,7 @@ for (const id of ["mid-atlantic", "pnw", "florida", "florida-south"]) {
 await loader.close();
 
 const index = buildIndex(REGISTRY);
+const local = (r) => r?.identifiers?.indigene;
 let failures = 0;
 function check(label, cond, detail) {
   if (!cond) failures++;
@@ -38,18 +39,18 @@ check("dedup: fewer entries than catalog rows (cross-region taxa merged)", REGIS
 
 // --- Plant-first lookups ------------------------------------------------------
 const bySci = resolveName(index, "Quercus garryana");
-check("resolve by scientific name → match", bySci.kind === "match" && bySci.entry.id === "quercus-garryana", bySci);
+check("resolve by scientific name → match", bySci.kind === "match" && local(bySci.entry) === "quercus-garryana", bySci);
 
 const byCommon = resolveName(index, "Garry Oak");
-check("resolve by common alias → same taxon", byCommon.kind === "match" && byCommon.entry.id === "quercus-garryana", byCommon);
+check("resolve by common alias → same taxon", byCommon.kind === "match" && local(byCommon.entry) === "quercus-garryana", byCommon);
 
 const casey = resolveName(index, "  garry   OAK ");
-check("resolve is case/space-insensitive", casey.kind === "match" && casey.entry.id === "quercus-garryana", casey);
+check("resolve is case/space-insensitive", casey.kind === "match" && local(casey.entry) === "quercus-garryana", casey);
 
 check("resolve cultivar query → refused (not a straight-species match)", resolveName(index, "Quercus garryana 'Fastigiata'").kind === "cultivar");
 check("resolve unknown → none", resolveName(index, "Totally Made Up Plant").kind === "none");
 
-check("entryById round-trips", entryById(index, "quercus-garryana")?.scientificName === "Quercus garryana");
+check("entryForPlant round-trips (catalog id → entry)", entryForPlant(index, "quercus-garryana")?.scientificName === "Quercus garryana");
 
 // --- Ambiguity is surfaced, not guessed --------------------------------------
 check(
@@ -62,15 +63,22 @@ check(
 );
 console.log(`     (ambiguous aliases found: ${audit.ambiguousAliases.length})`);
 
+// --- Identity: honest external anchor, not a local slug in disguise ----------
+check("every entry carries its indigene (catalog) id", REGISTRY.every((x) => !!local(x)));
+check("primaryId is a CURIE when set, null otherwise", REGISTRY.every((x) => x.primaryId === null || /^[a-z]+:.+/.test(x.primaryId)));
+check("unreconciled taxa are reported (interim state before `npm run reconcile`)", audit.unreconciled.length === REGISTRY.filter((x) => !x.primaryId).length);
+console.log(`     (unreconciled: ${audit.unreconciled.length}/${REGISTRY.length} — awaiting external ids)`);
+
 // --- Deep links usable today --------------------------------------------------
-const e = entryById(index, "quercus-garryana");
+const e = entryForPlant(index, "quercus-garryana");
 const links = deepLinks(e);
-check("gbif deep link falls back to a name search when key is null", links.gbif.includes("Quercus%20garryana"));
-check("powo link is a name search", links.powo.startsWith("https://powo.science.kew.org"));
-check("usdaPlants link is null until a symbol is reconciled", links.usdaPlants === null);
+check("gbif link falls back to a name search when key is null", links.gbif.includes("Quercus%20garryana"));
+check("powo link is null until an IPNI id is reconciled", links.powo === null);
+check("usda link is null until a symbol is reconciled", links.usda === null);
+check("inaturalist name-search link always present", links.inaturalist.startsWith("https://www.inaturalist.org"));
 
 // --- Identity invariants ------------------------------------------------------
-check("ids are unique", new Set(REGISTRY.map((x) => x.id)).size === REGISTRY.length);
+check("indigene ids are unique", new Set(REGISTRY.map(local)).size === REGISTRY.length);
 check("scientific names are unique", new Set(REGISTRY.map((x) => x.scientificName.toLowerCase())).size === REGISTRY.length);
 check("every entry lists ≥1 region", REGISTRY.every((x) => x.regions.length >= 1));
 

@@ -23,7 +23,8 @@
       "usda": "ACMA3",
       "itis": "28748",
       "gbif": "3189835",
-      "wikidata": "Q599523"
+      "wikidata": "Q599523",
+      "inat": "48227"
     }
   },
   "Acer rubrum": {
@@ -33,7 +34,8 @@
       "usda": "ACRU",
       "itis": "28728",
       "gbif": "3189883",
-      "wikidata": "Q161364"
+      "wikidata": "Q161364",
+      "inat": "48098"
     }
   },
   "Achillea millefolium": {
@@ -43,7 +45,8 @@
       "usda": "ACMI2",
       "itis": "35423",
       "gbif": "3120060",
-      "wikidata": "Q25408"
+      "wikidata": "Q25408",
+      "inat": "52821"
     }
   },
   "Amelanchier alnifolia": {
@@ -53,7 +56,8 @@
       "usda": "AMAL2",
       "itis": "25109",
       "gbif": "8168485",
-      "wikidata": "Q164158"
+      "wikidata": "Q164158",
+      "inat": "75415"
     }
   },
   "Amelanchier canadensis": {
@@ -63,7 +67,8 @@
       "usda": "AMCA4",
       "itis": "25112",
       "gbif": "3023833",
-      "wikidata": "Q159030"
+      "wikidata": "Q159030",
+      "inat": "133382"
     }
   },
   "Aquilegia canadensis": {
@@ -73,7 +78,8 @@
       "usda": "AQCA",
       "itis": "18730",
       "gbif": "3033197",
-      "wikidata": "Q2846008"
+      "wikidata": "Q2846008",
+      "inat": "49868"
     }
   },
   "Aquilegia formosa": {
@@ -83,7 +89,8 @@
       "usda": "AQFO",
       "itis": "18738",
       "gbif": "3033169",
-      "wikidata": "Q1093527"
+      "wikidata": "Q1093527",
+      "inat": "48244"
     }
   },
   "Arbutus menziesii": {
@@ -93,7 +100,8 @@
       "usda": "ARME",
       "itis": "23627",
       "gbif": "2882802",
-      "wikidata": "Q469695"
+      "wikidata": "Q469695",
+      "inat": "51046"
     }
   },
   "Asclepias incarnata": {
@@ -103,7 +111,8 @@
       "usda": "ASIN",
       "itis": "30241",
       "gbif": "3170266",
-      "wikidata": "Q1057909"
+      "wikidata": "Q1057909",
+      "inat": "125381"
     }
   },
   "Asclepias tuberosa": {
@@ -113,7 +122,8 @@
       "usda": "ASTU",
       "itis": "30313",
       "gbif": "3170305",
-      "wikidata": "Q311131"
+      "wikidata": "Q311131",
+      "inat": "47912"
     }
   },
   "Baptisia australis": {
@@ -123,7 +133,8 @@
       "usda": "BAAU",
       "itis": "26468",
       "gbif": "2976091",
-      "wikidata": "Q916179"
+      "wikidata": "Q916179",
+      "inat": "83902"
     }
   },
   "Berberis aquifolium": {
@@ -142,7 +153,8 @@
       "usda": "BENI",
       "itis": "19480",
       "gbif": "5331532",
-      "wikidata": "Q1510231"
+      "wikidata": "Q1510231",
+      "inat": "117429"
     }
   },
   "Bursera simaruba": {
@@ -152,7 +164,8 @@
       "usda": "BUSI",
       "itis": "28766",
       "gbif": "3190450",
-      "wikidata": "Q164698"
+      "wikidata": "Q164698",
+      "inat": "130734"
     }
   },
   "Callicarpa americana": {
@@ -162,7 +175,8 @@
       "usda": "CAAM2",
       "itis": "32144",
       "gbif": "5341129",
-      "wikidata": "Q151067"
+      "wikidata": "Q151067",
+      "inat": "49193"
     }
   },
   "Camassia quamash": {
@@ -172,7 +186,8 @@
       "usda": "CAQU2",
       "itis": "42883",
       "gbif": "2769084",
-      "wikidata": "Q4992158"
+      "wikidata": "Q4992158",
+      "inat": "62220"
     }
   },
   "Carex pensylvanica": {
@@ -182,7 +197,8 @@
       "usda": "CAPE6",
       "itis": "39749",
       "gbif": "2724855",
-      "wikidata": "Q5039118"
+      "wikidata": "Q5039118",
+      "inat": "127326"
     }
   },
   "Ceanothus americanus": {
@@ -192,7 +208,8 @@
       "usda": "CEAM",
       "itis": "28454",
       "gbif": "3039318",
-      "wikidata": "Q5055704"
+      "wikidata": "Q5055704",
+      "inat": "129315"
     }
   },
   "Cephalanthus occidentalis": {
@@ -202,7 +219,8 @@
       "usda": "CEOC2",
       "itis": "34786",
       "gbif": "2923947",
-      "wikidata": "Q4992358"
+      "wikidata": "Q4992358",
+      "inat": "52763"
     }
   },
   "Cercis canadensis": {
@@ -212,7 +230,8 @@
       "usda": "CECA4",
       "itis": "25782",
       "gbif": "5353583",
-      "wikidata": "Q2452407"
+      "wikidata": "Q2452407",
+      "inat": "48502"
     }
   },
   "Chionanthus virginicus": {
@@ -222,7 +241,8 @@
       "usda": "CHVI3",
       "itis": "32950",
       "gbif": "3172303",
-      "wikidata": "Q140341"
+      "wikidata": "Q140341",
+      "inat": "54654"
     }
   },
   "Chrysobalanus icaco": {
@@ -232,7 +252,8 @@
       "usda": "CHIC",
       "itis": "25148",
       "gbif": "2985082",
-      "wikidata": "Q577669"
+      "wikidata": "Q577669",
+      "inat": "160544"
     }
   },
   "Coccoloba diversifolia": {
@@ -242,7 +263,8 @@
       "usda": "CODI8",
       "itis": "21038",
       "gbif": "2888824",
-      "wikidata": "Q291763"
+      "wikidata": "Q291763",
+      "inat": "160767"
     }
   },
   "Coccoloba uvifera": {
@@ -252,7 +274,8 @@
       "usda": "COUV",
       "itis": "21039",
       "gbif": "2888831",
-      "wikidata": "Q279494"
+      "wikidata": "Q279494",
+      "inat": "127284"
     }
   },
   "Conocarpus erectus": {
@@ -262,7 +285,8 @@
       "usda": "COER2",
       "itis": "27766",
       "gbif": "5421045",
-      "wikidata": "Q2520560"
+      "wikidata": "Q2520560",
+      "inat": "62850"
     }
   },
   "Coreopsis leavenworthii": {
@@ -272,7 +296,8 @@
       "usda": "COLE3",
       "itis": "37141",
       "gbif": "3133918",
-      "wikidata": "Q5170284"
+      "wikidata": "Q5170284",
+      "inat": "131152"
     }
   },
   "Cornus florida": {
@@ -282,7 +307,8 @@
       "usda": "COFL2",
       "itis": "27806",
       "gbif": "3082240",
-      "wikidata": "Q887221"
+      "wikidata": "Q887221",
+      "inat": "54777"
     }
   },
   "Cornus sericea": {
@@ -292,7 +318,8 @@
       "usda": "COSE16",
       "itis": "501637",
       "gbif": "3082244",
-      "wikidata": "Q164130"
+      "wikidata": "Q164130",
+      "inat": "53387"
     }
   },
   "Corylus americana": {
@@ -302,7 +329,8 @@
       "usda": "COAM3",
       "itis": "19506",
       "gbif": "2876060",
-      "wikidata": "Q468659"
+      "wikidata": "Q468659",
+      "inat": "54770"
     }
   },
   "Echinacea purpurea": {
@@ -312,7 +340,8 @@
       "usda": "ECPU",
       "itis": "37281",
       "gbif": "3150935",
-      "wikidata": "Q272661"
+      "wikidata": "Q272661",
+      "inat": "48627"
     }
   },
   "Eriophyllum lanatum": {
@@ -322,7 +351,8 @@
       "usda": "ERLA6",
       "itis": "37334",
       "gbif": "3130472",
-      "wikidata": "Q2592617"
+      "wikidata": "Q2592617",
+      "inat": "77049"
     }
   },
   "Eutrochium purpureum": {
@@ -332,7 +362,8 @@
       "usda": "EUPU21",
       "itis": "780334",
       "gbif": "3138192",
-      "wikidata": "Q19848832"
+      "wikidata": "Q19848832",
+      "inat": "85378"
     }
   },
   "Festuca roemeri": {
@@ -341,7 +372,8 @@
       "wfo": "wfo-0000871845",
       "itis": "513556",
       "gbif": "2704917",
-      "wikidata": "Q17364157"
+      "wikidata": "Q17364157",
+      "inat": "162962"
     }
   },
   "Fragaria chiloensis": {
@@ -351,7 +383,8 @@
       "usda": "FRCH",
       "itis": "24625",
       "gbif": "7738624",
-      "wikidata": "Q149467"
+      "wikidata": "Q149467",
+      "inat": "55367"
     }
   },
   "Fragaria virginiana": {
@@ -361,7 +394,8 @@
       "usda": "FRVI",
       "itis": "24639",
       "gbif": "7950792",
-      "wikidata": "Q978247"
+      "wikidata": "Q978247",
+      "inat": "77155"
     }
   },
   "Gaultheria shallon": {
@@ -371,7 +405,8 @@
       "usda": "GASH",
       "itis": "23658",
       "gbif": "2882758",
-      "wikidata": "Q941600"
+      "wikidata": "Q941600",
+      "inat": "48441"
     }
   },
   "Geranium maculatum": {
@@ -381,7 +416,8 @@
       "usda": "GEMA",
       "itis": "29107",
       "gbif": "7808016",
-      "wikidata": "Q5549871"
+      "wikidata": "Q5549871",
+      "inat": "47699"
     }
   },
   "Hamamelis virginiana": {
@@ -391,7 +427,8 @@
       "usda": "HAVI4",
       "itis": "19033",
       "gbif": "3152827",
-      "wikidata": "Q913129"
+      "wikidata": "Q913129",
+      "inat": "51970"
     }
   },
   "Hamelia patens": {
@@ -401,7 +438,8 @@
       "usda": "HAPA3",
       "itis": "35005",
       "gbif": "2902066",
-      "wikidata": "Q4919655"
+      "wikidata": "Q4919655",
+      "inat": "126305"
     }
   },
   "Helianthus debilis": {
@@ -411,7 +449,8 @@
       "usda": "HEDE4",
       "itis": "36628",
       "gbif": "3119191",
-      "wikidata": "Q12212016"
+      "wikidata": "Q12212016",
+      "inat": "126565"
     }
   },
   "Holodiscus discolor": {
@@ -421,7 +460,8 @@
       "usda": "HODI",
       "itis": "25177",
       "gbif": "2987780",
-      "wikidata": "Q3139473"
+      "wikidata": "Q3139473",
+      "inat": "53414"
     }
   },
   "Ilex verticillata": {
@@ -431,7 +471,8 @@
       "usda": "ILVE",
       "itis": "27985",
       "gbif": "5414267",
-      "wikidata": "Q3487324"
+      "wikidata": "Q3487324",
+      "inat": "61119"
     }
   },
   "Ilex vomitoria": {
@@ -441,7 +482,8 @@
       "usda": "ILVO",
       "itis": "27986",
       "gbif": "5414250",
-      "wikidata": "Q1010694"
+      "wikidata": "Q1010694",
+      "inat": "119955"
     }
   },
   "Liatris gracilis": {
@@ -451,7 +493,8 @@
       "usda": "LIGR9",
       "itis": "37924",
       "gbif": "3104338",
-      "wikidata": "Q15587178"
+      "wikidata": "Q15587178",
+      "inat": "164691"
     }
   },
   "Lobelia cardinalis": {
@@ -461,7 +504,8 @@
       "usda": "LOCA2",
       "itis": "34505",
       "gbif": "5408269",
-      "wikidata": "Q1396837"
+      "wikidata": "Q1396837",
+      "inat": "48038"
     }
   },
   "Lonicera ciliosa": {
@@ -471,7 +515,8 @@
       "usda": "LOCI3",
       "itis": "35288",
       "gbif": "8135635",
-      "wikidata": "Q2671010"
+      "wikidata": "Q2671010",
+      "inat": "77832"
     }
   },
   "Lonicera sempervirens": {
@@ -481,7 +526,8 @@
       "usda": "LOSE",
       "itis": "35303",
       "gbif": "5334239",
-      "wikidata": "Q161352"
+      "wikidata": "Q161352",
+      "inat": "119809"
     }
   },
   "Magnolia grandiflora": {
@@ -491,7 +537,8 @@
       "usda": "MAGR4",
       "itis": "18074",
       "gbif": "9605163",
-      "wikidata": "Q161116"
+      "wikidata": "Q161116",
+      "inat": "83074"
     }
   },
   "Mimosa strigillosa": {
@@ -501,7 +548,8 @@
       "usda": "MIST2",
       "itis": "26791",
       "gbif": "2969657",
-      "wikidata": "Q6862340"
+      "wikidata": "Q6862340",
+      "inat": "165400"
     }
   },
   "Monarda fistulosa": {
@@ -511,7 +559,8 @@
       "usda": "MOFI",
       "itis": "565311",
       "gbif": "5341411",
-      "wikidata": "Q1521039"
+      "wikidata": "Q1521039",
+      "inat": "85320"
     }
   },
   "Monarda punctata": {
@@ -521,7 +570,8 @@
       "usda": "MOPU",
       "itis": "32279",
       "gbif": "5341413",
-      "wikidata": "Q1760733"
+      "wikidata": "Q1760733",
+      "inat": "118776"
     }
   },
   "Morella cerifera": {
@@ -531,7 +581,8 @@
       "usda": "MOCE2",
       "itis": "507899",
       "gbif": "3168995",
-      "wikidata": "Q1109693"
+      "wikidata": "Q1109693",
+      "inat": "119956"
     }
   },
   "Muhlenbergia capillaris": {
@@ -541,7 +592,8 @@
       "usda": "MUCA2",
       "itis": "41902",
       "gbif": "2704016",
-      "wikidata": "Q13933854"
+      "wikidata": "Q13933854",
+      "inat": "165543"
     }
   },
   "Myrcianthes fragrans": {
@@ -551,7 +603,8 @@
       "usda": "MYFR",
       "itis": "27231",
       "gbif": "9920389",
-      "wikidata": "Q15381387"
+      "wikidata": "Q15381387",
+      "inat": "165599"
     }
   },
   "Packera aurea": {
@@ -561,7 +614,8 @@
       "usda": "PAAU3",
       "itis": "518139",
       "gbif": "3114043",
-      "wikidata": "Q7122951"
+      "wikidata": "Q7122951",
+      "inat": "116329"
     }
   },
   "Panicum virgatum": {
@@ -571,7 +625,8 @@
       "usda": "PAVI2",
       "itis": "40913",
       "gbif": "2705081",
-      "wikidata": "Q1466543"
+      "wikidata": "Q1466543",
+      "inat": "125727"
     }
   },
   "Parthenocissus quinquefolia": {
@@ -581,7 +636,8 @@
       "usda": "PAQU2",
       "itis": "28602",
       "gbif": "3039194",
-      "wikidata": "Q157968"
+      "wikidata": "Q157968",
+      "inat": "50278"
     }
   },
   "Passiflora incarnata": {
@@ -591,7 +647,8 @@
       "usda": "PAIN6",
       "itis": "504139",
       "gbif": "2874218",
-      "wikidata": "Q128939"
+      "wikidata": "Q128939",
+      "inat": "51453"
     }
   },
   "Passiflora suberosa": {
@@ -601,7 +658,8 @@
       "usda": "PASU3",
       "itis": "22232",
       "gbif": "2874173",
-      "wikidata": "Q2068761"
+      "wikidata": "Q2068761",
+      "inat": "129327"
     }
   },
   "Penstemon digitalis": {
@@ -611,7 +669,8 @@
       "usda": "PEDI",
       "itis": "33881",
       "gbif": "8251158",
-      "wikidata": "Q2174621"
+      "wikidata": "Q2174621",
+      "inat": "81942"
     }
   },
   "Penstemon serrulatus": {
@@ -621,7 +680,8 @@
       "usda": "PESE5",
       "itis": "33993",
       "gbif": "7670508",
-      "wikidata": "Q17514290"
+      "wikidata": "Q17514290",
+      "inat": "143674"
     }
   },
   "Physocarpus opulifolius": {
@@ -631,7 +691,8 @@
       "usda": "PHOP",
       "itis": "25282",
       "gbif": "2988354",
-      "wikidata": "Q159132"
+      "wikidata": "Q159132",
+      "inat": "129048"
     }
   },
   "Pinus palustris": {
@@ -641,7 +702,8 @@
       "usda": "PIPA2",
       "itis": "18038",
       "gbif": "5285816",
-      "wikidata": "Q148542"
+      "wikidata": "Q148542",
+      "inat": "81901"
     }
   },
   "Polystichum acrostichoides": {
@@ -651,7 +713,8 @@
       "usda": "POAC4",
       "itis": "17675",
       "gbif": "2651098",
-      "wikidata": "Q7226975"
+      "wikidata": "Q7226975",
+      "inat": "54412"
     }
   },
   "Polystichum munitum": {
@@ -661,7 +724,8 @@
       "usda": "POMU",
       "itis": "504530",
       "gbif": "2651122",
-      "wikidata": "Q2273822"
+      "wikidata": "Q2273822",
+      "inat": "47751"
     }
   },
   "Populus trichocarpa": {
@@ -670,7 +734,8 @@
       "wfo": "wfo-0000928244",
       "itis": "195735",
       "gbif": "6362904",
-      "wikidata": "Q149382"
+      "wikidata": "Q149382",
+      "inat": "78699"
     }
   },
   "Prunus serotina": {
@@ -680,7 +745,8 @@
       "usda": "PRSE2",
       "itis": "24764",
       "gbif": "3021850",
-      "wikidata": "Q158987"
+      "wikidata": "Q158987",
+      "inat": "54834"
     }
   },
   "Pseudotsuga menziesii": {
@@ -690,7 +756,8 @@
       "usda": "PSME",
       "itis": "183424",
       "gbif": "2685796",
-      "wikidata": "Q156687"
+      "wikidata": "Q156687",
+      "inat": "48256"
     }
   },
   "Psychotria nervosa": {
@@ -700,7 +767,8 @@
       "usda": "PSNE",
       "itis": "35092",
       "gbif": "2920385",
-      "wikidata": "Q3410207"
+      "wikidata": "Q3410207",
+      "inat": "51599"
     }
   },
   "Quercus alba": {
@@ -710,7 +778,8 @@
       "usda": "QUAL",
       "itis": "19290",
       "gbif": "2879737",
-      "wikidata": "Q469555"
+      "wikidata": "Q469555",
+      "inat": "54779"
     }
   },
   "Quercus garryana": {
@@ -720,7 +789,8 @@
       "usda": "QUGA4",
       "itis": "19340",
       "gbif": "2879260",
-      "wikidata": "Q2029492"
+      "wikidata": "Q2029492",
+      "inat": "68632"
     }
   },
   "Quercus rubra": {
@@ -730,7 +800,8 @@
       "usda": "QURU",
       "itis": "19408",
       "gbif": "2880539",
-      "wikidata": "Q147525"
+      "wikidata": "Q147525",
+      "inat": "49005"
     }
   },
   "Quercus virginiana": {
@@ -740,7 +811,8 @@
       "usda": "QUVI",
       "itis": "19283",
       "gbif": "2878092",
-      "wikidata": "Q1758722"
+      "wikidata": "Q1758722",
+      "inat": "49013"
     }
   },
   "Ribes sanguineum": {
@@ -750,7 +822,8 @@
       "usda": "RISA",
       "itis": "24498",
       "gbif": "2986130",
-      "wikidata": "Q149372"
+      "wikidata": "Q149372",
+      "inat": "53435"
     }
   },
   "Rivina humilis": {
@@ -760,7 +833,8 @@
       "usda": "RIHU2",
       "itis": "19534",
       "gbif": "3084027",
-      "wikidata": "Q886492"
+      "wikidata": "Q886492",
+      "inat": "133291"
     }
   },
   "Rosa nutkana": {
@@ -770,7 +844,8 @@
       "usda": "RONU",
       "itis": "24835",
       "gbif": "3011070",
-      "wikidata": "Q3106488"
+      "wikidata": "Q3106488",
+      "inat": "78883"
     }
   },
   "Rudbeckia fulgida": {
@@ -780,7 +855,8 @@
       "usda": "RUFU2",
       "itis": "36770",
       "gbif": "7344766",
-      "wikidata": "Q450250"
+      "wikidata": "Q450250",
+      "inat": "142654"
     }
   },
   "Sabal palmetto": {
@@ -790,7 +866,8 @@
       "usda": "SAPA",
       "itis": "42506",
       "gbif": "4925538",
-      "wikidata": "Q1088471"
+      "wikidata": "Q1088471",
+      "inat": "123481"
     }
   },
   "Salix scouleriana": {
@@ -800,7 +877,8 @@
       "usda": "SASC",
       "itis": "504980",
       "gbif": "7587287",
-      "wikidata": "Q5230132"
+      "wikidata": "Q5230132",
+      "inat": "71076"
     }
   },
   "Salvia coccinea": {
@@ -810,7 +888,8 @@
       "usda": "SACO5",
       "itis": "32682",
       "gbif": "9278365",
-      "wikidata": "Q1023573"
+      "wikidata": "Q1023573",
+      "inat": "128652"
     }
   },
   "Schizachyrium scoparium": {
@@ -820,7 +899,8 @@
       "usda": "SCSC",
       "itis": "42076",
       "gbif": "2704432",
-      "wikidata": "Q3013856"
+      "wikidata": "Q3013856",
+      "inat": "122603"
     }
   },
   "Serenoa repens": {
@@ -830,7 +910,8 @@
       "usda": "SERE2",
       "itis": "42508",
       "gbif": "2735055",
-      "wikidata": "Q927607"
+      "wikidata": "Q927607",
+      "inat": "83102"
     }
   },
   "Solidago rugosa": {
@@ -840,7 +921,8 @@
       "usda": "SORU2",
       "itis": "36299",
       "gbif": "5388967",
-      "wikidata": "Q3020839"
+      "wikidata": "Q3020839",
+      "inat": "128551"
     }
   },
   "Sophora tomentosa var. truncata": {
@@ -850,7 +932,8 @@
       "usda": "SOTOT",
       "itis": "530496",
       "gbif": "2958984",
-      "wikidata": "Q67197483"
+      "wikidata": "Q67197483",
+      "inat": "243022"
     }
   },
   "Stachytarpheta jamaicensis": {
@@ -860,7 +943,8 @@
       "usda": "STJA",
       "itis": "32204",
       "gbif": "2925463",
-      "wikidata": "Q3556295"
+      "wikidata": "Q3556295",
+      "inat": "169322"
     }
   },
   "Symphoricarpos albus": {
@@ -870,7 +954,8 @@
       "usda": "SYAL",
       "itis": "35332",
       "gbif": "8012439",
-      "wikidata": "Q158150"
+      "wikidata": "Q158150",
+      "inat": "48523"
     }
   },
   "Symphyotrichum novae-angliae": {
@@ -880,7 +965,8 @@
       "usda": "SYNO2",
       "itis": "522226",
       "gbif": "3151618",
-      "wikidata": "Q1894641"
+      "wikidata": "Q1894641",
+      "inat": "117443"
     }
   },
   "Taxodium distichum": {
@@ -890,7 +976,8 @@
       "usda": "TADI2",
       "itis": "18041",
       "gbif": "2684191",
-      "wikidata": "Q148950"
+      "wikidata": "Q148950",
+      "inat": "49666"
     }
   },
   "Thuja plicata": {
@@ -900,7 +987,8 @@
       "usda": "THPL",
       "itis": "18044",
       "gbif": "2684171",
-      "wikidata": "Q147417"
+      "wikidata": "Q147417",
+      "inat": "48252"
     }
   },
   "Tripsacum dactyloides": {
@@ -910,7 +998,8 @@
       "usda": "TRDA3",
       "itis": "41287",
       "gbif": "2705536",
-      "wikidata": "Q2421782"
+      "wikidata": "Q2421782",
+      "inat": "126563"
     }
   },
   "Vaccinium corymbosum": {
@@ -920,7 +1009,8 @@
       "usda": "VACO",
       "itis": "23573",
       "gbif": "2882849",
-      "wikidata": "Q468695"
+      "wikidata": "Q468695",
+      "inat": "52740"
     }
   },
   "Viburnum dentatum": {
@@ -930,7 +1020,8 @@
       "usda": "VIDE",
       "itis": "35251",
       "gbif": "2888594",
-      "wikidata": "Q4115036"
+      "wikidata": "Q4115036",
+      "inat": "82247"
     }
   },
   "Viburnum obovatum": {
@@ -940,7 +1031,8 @@
       "usda": "VIOB",
       "itis": "35269",
       "gbif": "2888620",
-      "wikidata": "Q17434645"
+      "wikidata": "Q17434645",
+      "inat": "170202"
     }
   },
   "Zamia integrifolia": {
@@ -949,7 +1041,8 @@
       "wfo": "wfo-0000429999",
       "itis": "523618",
       "gbif": "5284049",
-      "wikidata": "Q3506489"
+      "wikidata": "Q3506489",
+      "inat": "135560"
     }
   },
   "Zizia aurea": {
@@ -959,7 +1052,8 @@
       "usda": "ZIAU",
       "itis": "29906",
       "gbif": "3034521",
-      "wikidata": "Q926091"
+      "wikidata": "Q926091",
+      "inat": "83154"
     }
   }
 }

@@ -17,6 +17,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3189835",
       "usda": "ACMA3",
       "itis": "28748",
+      "inat": "48227",
       "wikidata": "Q599523",
       "indigene": "acer-macrophyllum"
     },
@@ -44,6 +45,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3189883",
       "usda": "ACRU",
       "itis": "28728",
+      "inat": "48098",
       "wikidata": "Q161364",
       "indigene": "acer-rubrum"
     },
@@ -72,6 +74,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3120060",
       "usda": "ACMI2",
       "itis": "35423",
+      "inat": "52821",
       "wikidata": "Q25408",
       "indigene": "achillea-millefolium"
     },
@@ -99,6 +102,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "8168485",
       "usda": "AMAL2",
       "itis": "25109",
+      "inat": "75415",
       "wikidata": "Q164158",
       "indigene": "amelanchier-alnifolia"
     },
@@ -126,6 +130,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3023833",
       "usda": "AMCA4",
       "itis": "25112",
+      "inat": "133382",
       "wikidata": "Q159030",
       "indigene": "amelanchier-canadensis"
     },
@@ -174,6 +179,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3033197",
       "usda": "AQCA",
       "itis": "18730",
+      "inat": "49868",
       "wikidata": "Q2846008",
       "indigene": "aquilegia-canadensis"
     },
@@ -201,6 +207,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3033169",
       "usda": "AQFO",
       "itis": "18738",
+      "inat": "48244",
       "wikidata": "Q1093527",
       "indigene": "aquilegia-formosa"
     },
@@ -228,6 +235,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2882802",
       "usda": "ARME",
       "itis": "23627",
+      "inat": "51046",
       "wikidata": "Q469695",
       "indigene": "arbutus-menziesii"
     },
@@ -255,6 +263,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3170266",
       "usda": "ASIN",
       "itis": "30241",
+      "inat": "125381",
       "wikidata": "Q1057909",
       "indigene": "asclepias-incarnata"
     },
@@ -282,6 +291,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3170305",
       "usda": "ASTU",
       "itis": "30313",
+      "inat": "47912",
       "wikidata": "Q311131",
       "indigene": "asclepias-tuberosa"
     },
@@ -310,6 +320,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2976091",
       "usda": "BAAU",
       "itis": "26468",
+      "inat": "83902",
       "wikidata": "Q916179",
       "indigene": "baptisia-australis"
     },
@@ -363,6 +374,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "5331532",
       "usda": "BENI",
       "itis": "19480",
+      "inat": "117429",
       "wikidata": "Q1510231",
       "indigene": "betula-nigra"
     },
@@ -390,6 +402,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3190450",
       "usda": "BUSI",
       "itis": "28766",
+      "inat": "130734",
       "wikidata": "Q164698",
       "indigene": "bursera-simaruba"
     },
@@ -417,6 +430,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "5341129",
       "usda": "CAAM2",
       "itis": "32144",
+      "inat": "49193",
       "wikidata": "Q151067",
       "indigene": "callicarpa-americana"
     },
@@ -444,6 +458,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2769084",
       "usda": "CAQU2",
       "itis": "42883",
+      "inat": "62220",
       "wikidata": "Q4992158",
       "indigene": "camassia-quamash"
     },
@@ -471,6 +486,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2724855",
       "usda": "CAPE6",
       "itis": "39749",
+      "inat": "127326",
       "wikidata": "Q5039118",
       "indigene": "carex-pensylvanica"
     },
@@ -498,6 +514,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3039318",
       "usda": "CEAM",
       "itis": "28454",
+      "inat": "129315",
       "wikidata": "Q5055704",
       "indigene": "ceanothus-americanus"
     },
@@ -525,6 +542,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2923947",
       "usda": "CEOC2",
       "itis": "34786",
+      "inat": "52763",
       "wikidata": "Q4992358",
       "indigene": "cephalanthus-occidentalis"
     },
@@ -552,6 +570,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "5353583",
       "usda": "CECA4",
       "itis": "25782",
+      "inat": "48502",
       "wikidata": "Q2452407",
       "indigene": "cercis-canadensis"
     },
@@ -579,6 +598,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3172303",
       "usda": "CHVI3",
       "itis": "32950",
+      "inat": "54654",
       "wikidata": "Q140341",
       "indigene": "chionanthus-virginicus"
     },
@@ -606,6 +626,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2985082",
       "usda": "CHIC",
       "itis": "25148",
+      "inat": "160544",
       "wikidata": "Q577669",
       "indigene": "chrysobalanus-icaco"
     },
@@ -633,6 +654,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2888824",
       "usda": "CODI8",
       "itis": "21038",
+      "inat": "160767",
       "wikidata": "Q291763",
       "indigene": "coccoloba-diversifolia"
     },
@@ -660,6 +682,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2888831",
       "usda": "COUV",
       "itis": "21039",
+      "inat": "127284",
       "wikidata": "Q279494",
       "indigene": "coccoloba-uvifera"
     },
@@ -687,6 +710,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "5421045",
       "usda": "COER2",
       "itis": "27766",
+      "inat": "62850",
       "wikidata": "Q2520560",
       "indigene": "conocarpus-erectus"
     },
@@ -714,6 +738,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3133918",
       "usda": "COLE3",
       "itis": "37141",
+      "inat": "131152",
       "wikidata": "Q5170284",
       "indigene": "coreopsis-leavenworthii"
     },
@@ -741,6 +766,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3082240",
       "usda": "COFL2",
       "itis": "27806",
+      "inat": "54777",
       "wikidata": "Q887221",
       "indigene": "cornus-florida"
     },
@@ -768,6 +794,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3082244",
       "usda": "COSE16",
       "itis": "501637",
+      "inat": "53387",
       "wikidata": "Q164130",
       "indigene": "cornus-sericea"
     },
@@ -796,6 +823,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2876060",
       "usda": "COAM3",
       "itis": "19506",
+      "inat": "54770",
       "wikidata": "Q468659",
       "indigene": "corylus-americana"
     },
@@ -823,6 +851,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3150935",
       "usda": "ECPU",
       "itis": "37281",
+      "inat": "48627",
       "wikidata": "Q272661",
       "indigene": "echinacea-purpurea"
     },
@@ -850,6 +879,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3130472",
       "usda": "ERLA6",
       "itis": "37334",
+      "inat": "77049",
       "wikidata": "Q2592617",
       "indigene": "eriophyllum-lanatum"
     },
@@ -877,6 +907,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3138192",
       "usda": "EUPU21",
       "itis": "780334",
+      "inat": "85378",
       "wikidata": "Q19848832",
       "indigene": "eutrochium-purpureum"
     },
@@ -903,6 +934,7 @@ export const REGISTRY: RegistryEntry[] = [
       "wfo": "wfo-0000871845",
       "gbif": "2704917",
       "itis": "513556",
+      "inat": "162962",
       "wikidata": "Q17364157",
       "indigene": "festuca-roemeri"
     },
@@ -930,6 +962,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "7738624",
       "usda": "FRCH",
       "itis": "24625",
+      "inat": "55367",
       "wikidata": "Q149467",
       "indigene": "fragaria-chiloensis"
     },
@@ -957,6 +990,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "7950792",
       "usda": "FRVI",
       "itis": "24639",
+      "inat": "77155",
       "wikidata": "Q978247",
       "indigene": "fragaria-virginiana"
     },
@@ -984,6 +1018,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2882758",
       "usda": "GASH",
       "itis": "23658",
+      "inat": "48441",
       "wikidata": "Q941600",
       "indigene": "gaultheria-shallon"
     },
@@ -1011,6 +1046,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "7808016",
       "usda": "GEMA",
       "itis": "29107",
+      "inat": "47699",
       "wikidata": "Q5549871",
       "indigene": "geranium-maculatum"
     },
@@ -1038,6 +1074,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3152827",
       "usda": "HAVI4",
       "itis": "19033",
+      "inat": "51970",
       "wikidata": "Q913129",
       "indigene": "hamamelis-virginiana"
     },
@@ -1065,6 +1102,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2902066",
       "usda": "HAPA3",
       "itis": "35005",
+      "inat": "126305",
       "wikidata": "Q4919655",
       "indigene": "hamelia-patens"
     },
@@ -1093,6 +1131,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3119191",
       "usda": "HEDE4",
       "itis": "36628",
+      "inat": "126565",
       "wikidata": "Q12212016",
       "indigene": "helianthus-debilis"
     },
@@ -1123,6 +1162,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2987780",
       "usda": "HODI",
       "itis": "25177",
+      "inat": "53414",
       "wikidata": "Q3139473",
       "indigene": "holodiscus-discolor"
     },
@@ -1150,6 +1190,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "5414267",
       "usda": "ILVE",
       "itis": "27985",
+      "inat": "61119",
       "wikidata": "Q3487324",
       "indigene": "ilex-verticillata"
     },
@@ -1177,6 +1218,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "5414250",
       "usda": "ILVO",
       "itis": "27986",
+      "inat": "119955",
       "wikidata": "Q1010694",
       "indigene": "ilex-vomitoria"
     },
@@ -1204,6 +1246,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3104338",
       "usda": "LIGR9",
       "itis": "37924",
+      "inat": "164691",
       "wikidata": "Q15587178",
       "indigene": "liatris-gracilis"
     },
@@ -1231,6 +1274,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "5408269",
       "usda": "LOCA2",
       "itis": "34505",
+      "inat": "48038",
       "wikidata": "Q1396837",
       "indigene": "lobelia-cardinalis"
     },
@@ -1258,6 +1302,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "8135635",
       "usda": "LOCI3",
       "itis": "35288",
+      "inat": "77832",
       "wikidata": "Q2671010",
       "indigene": "lonicera-ciliosa"
     },
@@ -1285,6 +1330,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "5334239",
       "usda": "LOSE",
       "itis": "35303",
+      "inat": "119809",
       "wikidata": "Q161352",
       "indigene": "lonicera-sempervirens"
     },
@@ -1312,6 +1358,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "9605163",
       "usda": "MAGR4",
       "itis": "18074",
+      "inat": "83074",
       "wikidata": "Q161116",
       "indigene": "magnolia-grandiflora"
     },
@@ -1339,6 +1386,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2969657",
       "usda": "MIST2",
       "itis": "26791",
+      "inat": "165400",
       "wikidata": "Q6862340",
       "indigene": "mimosa-strigillosa"
     },
@@ -1368,6 +1416,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "5341411",
       "usda": "MOFI",
       "itis": "565311",
+      "inat": "85320",
       "wikidata": "Q1521039",
       "indigene": "monarda-fistulosa"
     },
@@ -1395,6 +1444,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "5341413",
       "usda": "MOPU",
       "itis": "32279",
+      "inat": "118776",
       "wikidata": "Q1760733",
       "indigene": "monarda-punctata"
     },
@@ -1424,6 +1474,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3168995",
       "usda": "MOCE2",
       "itis": "507899",
+      "inat": "119956",
       "wikidata": "Q1109693",
       "indigene": "morella-cerifera"
     },
@@ -1453,6 +1504,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2704016",
       "usda": "MUCA2",
       "itis": "41902",
+      "inat": "165543",
       "wikidata": "Q13933854",
       "indigene": "muhlenbergia-capillaris"
     },
@@ -1481,6 +1533,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "9920389",
       "usda": "MYFR",
       "itis": "27231",
+      "inat": "165599",
       "wikidata": "Q15381387",
       "indigene": "myrcianthes-fragrans"
     },
@@ -1509,6 +1562,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3114043",
       "usda": "PAAU3",
       "itis": "518139",
+      "inat": "116329",
       "wikidata": "Q7122951",
       "indigene": "packera-aurea"
     },
@@ -1536,6 +1590,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2705081",
       "usda": "PAVI2",
       "itis": "40913",
+      "inat": "125727",
       "wikidata": "Q1466543",
       "indigene": "panicum-virgatum"
     },
@@ -1563,6 +1618,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3039194",
       "usda": "PAQU2",
       "itis": "28602",
+      "inat": "50278",
       "wikidata": "Q157968",
       "indigene": "parthenocissus-quinquefolia"
     },
@@ -1590,6 +1646,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2874218",
       "usda": "PAIN6",
       "itis": "504139",
+      "inat": "51453",
       "wikidata": "Q128939",
       "indigene": "passiflora-incarnata"
     },
@@ -1619,6 +1676,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2874173",
       "usda": "PASU3",
       "itis": "22232",
+      "inat": "129327",
       "wikidata": "Q2068761",
       "indigene": "passiflora-suberosa"
     },
@@ -1646,6 +1704,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "8251158",
       "usda": "PEDI",
       "itis": "33881",
+      "inat": "81942",
       "wikidata": "Q2174621",
       "indigene": "penstemon-digitalis"
     },
@@ -1673,6 +1732,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "7670508",
       "usda": "PESE5",
       "itis": "33993",
+      "inat": "143674",
       "wikidata": "Q17514290",
       "indigene": "penstemon-serrulatus"
     },
@@ -1700,6 +1760,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2988354",
       "usda": "PHOP",
       "itis": "25282",
+      "inat": "129048",
       "wikidata": "Q159132",
       "indigene": "physocarpus-opulifolius"
     },
@@ -1727,6 +1788,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "5285816",
       "usda": "PIPA2",
       "itis": "18038",
+      "inat": "81901",
       "wikidata": "Q148542",
       "indigene": "pinus-palustris"
     },
@@ -1754,6 +1816,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2651098",
       "usda": "POAC4",
       "itis": "17675",
+      "inat": "54412",
       "wikidata": "Q7226975",
       "indigene": "polystichum-acrostichoides"
     },
@@ -1781,6 +1844,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2651122",
       "usda": "POMU",
       "itis": "504530",
+      "inat": "47751",
       "wikidata": "Q2273822",
       "indigene": "polystichum-munitum"
     },
@@ -1807,6 +1871,7 @@ export const REGISTRY: RegistryEntry[] = [
       "wfo": "wfo-0000928244",
       "gbif": "6362904",
       "itis": "195735",
+      "inat": "78699",
       "wikidata": "Q149382",
       "indigene": "populus-trichocarpa"
     },
@@ -1834,6 +1899,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3021850",
       "usda": "PRSE2",
       "itis": "24764",
+      "inat": "54834",
       "wikidata": "Q158987",
       "indigene": "prunus-serotina"
     },
@@ -1861,6 +1927,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2685796",
       "usda": "PSME",
       "itis": "183424",
+      "inat": "48256",
       "wikidata": "Q156687",
       "indigene": "pseudotsuga-menziesii"
     },
@@ -1888,6 +1955,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2920385",
       "usda": "PSNE",
       "itis": "35092",
+      "inat": "51599",
       "wikidata": "Q3410207",
       "indigene": "psychotria-nervosa"
     },
@@ -1915,6 +1983,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2879737",
       "usda": "QUAL",
       "itis": "19290",
+      "inat": "54779",
       "wikidata": "Q469555",
       "indigene": "quercus-alba"
     },
@@ -1942,6 +2011,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2879260",
       "usda": "QUGA4",
       "itis": "19340",
+      "inat": "68632",
       "wikidata": "Q2029492",
       "indigene": "quercus-garryana"
     },
@@ -1971,6 +2041,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2880539",
       "usda": "QURU",
       "itis": "19408",
+      "inat": "49005",
       "wikidata": "Q147525",
       "indigene": "quercus-rubra"
     },
@@ -1998,6 +2069,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2878092",
       "usda": "QUVI",
       "itis": "19283",
+      "inat": "49013",
       "wikidata": "Q1758722",
       "indigene": "quercus-virginiana"
     },
@@ -2026,6 +2098,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2986130",
       "usda": "RISA",
       "itis": "24498",
+      "inat": "53435",
       "wikidata": "Q149372",
       "indigene": "ribes-sanguineum"
     },
@@ -2053,6 +2126,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3084027",
       "usda": "RIHU2",
       "itis": "19534",
+      "inat": "133291",
       "wikidata": "Q886492",
       "indigene": "rivina-humilis"
     },
@@ -2082,6 +2156,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3011070",
       "usda": "RONU",
       "itis": "24835",
+      "inat": "78883",
       "wikidata": "Q3106488",
       "indigene": "rosa-nutkana"
     },
@@ -2109,6 +2184,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "7344766",
       "usda": "RUFU2",
       "itis": "36770",
+      "inat": "142654",
       "wikidata": "Q450250",
       "indigene": "rudbeckia-fulgida"
     },
@@ -2136,6 +2212,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "4925538",
       "usda": "SAPA",
       "itis": "42506",
+      "inat": "123481",
       "wikidata": "Q1088471",
       "indigene": "sabal-palmetto"
     },
@@ -2166,6 +2243,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "7587287",
       "usda": "SASC",
       "itis": "504980",
+      "inat": "71076",
       "wikidata": "Q5230132",
       "indigene": "salix-scouleriana"
     },
@@ -2193,6 +2271,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "9278365",
       "usda": "SACO5",
       "itis": "32682",
+      "inat": "128652",
       "wikidata": "Q1023573",
       "indigene": "salvia-coccinea"
     },
@@ -2223,6 +2302,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2704432",
       "usda": "SCSC",
       "itis": "42076",
+      "inat": "122603",
       "wikidata": "Q3013856",
       "indigene": "schizachyrium-scoparium"
     },
@@ -2250,6 +2330,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2735055",
       "usda": "SERE2",
       "itis": "42508",
+      "inat": "83102",
       "wikidata": "Q927607",
       "indigene": "serenoa-repens"
     },
@@ -2278,6 +2359,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "5388967",
       "usda": "SORU2",
       "itis": "36299",
+      "inat": "128551",
       "wikidata": "Q3020839",
       "indigene": "solidago-rugosa"
     },
@@ -2305,6 +2387,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2958984",
       "usda": "SOTOT",
       "itis": "530496",
+      "inat": "243022",
       "wikidata": "Q67197483",
       "indigene": "sophora-tomentosa-truncata"
     },
@@ -2332,6 +2415,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2925463",
       "usda": "STJA",
       "itis": "32204",
+      "inat": "169322",
       "wikidata": "Q3556295",
       "indigene": "stachytarpheta-jamaicensis"
     },
@@ -2359,6 +2443,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "8012439",
       "usda": "SYAL",
       "itis": "35332",
+      "inat": "48523",
       "wikidata": "Q158150",
       "indigene": "symphoricarpos-albus"
     },
@@ -2386,6 +2471,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3151618",
       "usda": "SYNO2",
       "itis": "522226",
+      "inat": "117443",
       "wikidata": "Q1894641",
       "indigene": "symphyotrichum-novae-angliae"
     },
@@ -2413,6 +2499,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2684191",
       "usda": "TADI2",
       "itis": "18041",
+      "inat": "49666",
       "wikidata": "Q148950",
       "indigene": "taxodium-distichum"
     },
@@ -2440,6 +2527,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2684171",
       "usda": "THPL",
       "itis": "18044",
+      "inat": "48252",
       "wikidata": "Q147417",
       "indigene": "thuja-plicata"
     },
@@ -2467,6 +2555,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2705536",
       "usda": "TRDA3",
       "itis": "41287",
+      "inat": "126563",
       "wikidata": "Q2421782",
       "indigene": "tripsacum-dactyloides"
     },
@@ -2497,6 +2586,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2882849",
       "usda": "VACO",
       "itis": "23573",
+      "inat": "52740",
       "wikidata": "Q468695",
       "indigene": "vaccinium-corymbosum"
     },
@@ -2524,6 +2614,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2888594",
       "usda": "VIDE",
       "itis": "35251",
+      "inat": "82247",
       "wikidata": "Q4115036",
       "indigene": "viburnum-dentatum"
     },
@@ -2551,6 +2642,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "2888620",
       "usda": "VIOB",
       "itis": "35269",
+      "inat": "170202",
       "wikidata": "Q17434645",
       "indigene": "viburnum-obovatum"
     },
@@ -2577,6 +2669,7 @@ export const REGISTRY: RegistryEntry[] = [
       "wfo": "wfo-0000429999",
       "gbif": "5284049",
       "itis": "523618",
+      "inat": "135560",
       "wikidata": "Q3506489",
       "indigene": "zamia-integrifolia"
     },
@@ -2604,6 +2697,7 @@ export const REGISTRY: RegistryEntry[] = [
       "gbif": "3034521",
       "usda": "ZIAU",
       "itis": "29906",
+      "inat": "83154",
       "wikidata": "Q926091",
       "indigene": "zizia-aurea"
     },

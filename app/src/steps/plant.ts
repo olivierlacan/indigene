@@ -18,6 +18,7 @@ import { silhouetteFor } from "../components/plant-card";
 import { keystoneIcon } from "../components/keystone-icon";
 import { statGrid } from "../components/stat-card";
 import { drawSizeViz } from "../components/size-viz";
+import { entryForPlant, deepLinks } from "../lib/registry";
 import type { Plant, SiteData, SunEstimate, SupportKind } from "../types";
 
 const monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -27,7 +28,7 @@ const monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", 
 // and scrolls it into view; opening a section reflects it back into the URL so
 // the link is there to copy. `spot` (the "Want to plant?" tool) is always open,
 // so it only ever scrolls.
-const SECTIONS = ["ecosystem", "propagation", "spot"] as const;
+const SECTIONS = ["ecosystem", "propagation", "references", "spot"] as const;
 type Section = (typeof SECTIONS)[number];
 const sectionDomId = (s: Section): string => `sec-${s}`;
 
@@ -55,6 +56,7 @@ export function renderPlant(main: HTMLElement, param?: string): void {
     profile(plant, entries),
     ecosystemSection(plant, entries),
     propagationSection(plant),
+    referencesSection(plant),
     suitabilityChecker(entries),
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("plants") }, "← More natives"),
@@ -459,6 +461,49 @@ function propagationSection(p: Plant): HTMLDetailsElement {
       ]),
     ]),
   ]);
+}
+
+// Look this plant up in the authoritative botanical & observation databases.
+// The links come from the native-plant registry's identifier bag (lib/registry):
+// a stable record link where an id is reconciled, and a name search as a graceful
+// fallback where it isn't yet — so the section is useful today and gets richer as
+// identifiers are filled in. This is the registry's first user-facing use.
+function referencesSection(p: Plant): HTMLDetailsElement {
+  const entry = entryForPlant(p.id);
+  const links = entry ? deepLinks(entry) : null;
+  const SOURCES: { key: string; label: string; sub: string }[] = [
+    { key: "powo", label: "Plants of the World Online", sub: "Kew — accepted name & native range" },
+    { key: "ipni", label: "International Plant Names Index", sub: "the nomenclatural record" },
+    { key: "wfo", label: "World Flora Online", sub: "global taxon record" },
+    { key: "gbif", label: "GBIF", sub: "where it's been recorded growing" },
+    { key: "usda", label: "USDA PLANTS", sub: "U.S. native status & distribution" },
+    { key: "itis", label: "ITIS", sub: "North American taxonomy" },
+    { key: "inaturalist", label: "iNaturalist", sub: "photos & nearby sightings" },
+    { key: "wikidata", label: "Wikidata", sub: "cross-references & Wikipedia" },
+  ];
+  const items = SOURCES.filter((s) => links?.[s.key]).map((s) =>
+    el("li", { class: "score-item" }, [
+      el("div", { class: "score-head" }, [
+        el("a", { href: links![s.key] as string, target: "_blank", rel: "noopener" }, `${s.label} ↗`),
+      ]),
+      el("p", { class: "score-why" }, s.sub),
+    ]),
+  );
+  const body: HTMLElement[] = [
+    el("p", { style: "margin:0.5rem 0 0.3rem" },
+      `Find ${p.common} in the botanical and observation databases — the same plant, keyed by a shared identifier so you land on the right record.`),
+    el("ul", { class: "score-list" }, items),
+  ];
+  if (entry?.primaryId) {
+    body.push(
+      el("p", { class: "confidence", style: "margin-top:0.4rem" }, [
+        el("strong", {}, "Identity: "),
+        el("code", {}, entry.primaryId),
+        " — a persistent, global id (resolvable at identifiers.org).",
+      ]),
+    );
+  }
+  return sectionCard("references", p.id, "🔎 Look it up elsewhere", body);
 }
 
 // Open the deep-linked section (if it collapses) and bring it into view. Runs

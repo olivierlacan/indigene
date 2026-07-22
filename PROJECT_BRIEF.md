@@ -28,7 +28,7 @@ uncertainty; no gamification.
 
 | Question from the brief | Decision | Why |
 |---|---|---|
-| **Framework** | **None.** Vanilla TS + DOM + real web APIs, bundled by Vite. Zero runtime deps. | Per direction ("Do not use React… respect the DOM"). Keeps the bundle ~29 KB gzipped and the code legible. |
+| **Framework** | **None.** Vanilla TS + DOM + real web APIs, bundled by Vite. Zero runtime deps. | Per direction ("Do not use React… respect the DOM"). Keeps the bundle ~96 KB gzipped and the code legible. |
 | **Sky scan tech** | `getUserMedia` + `DeviceOrientationEvent` on a `<canvas>` overlay — **not** WebXR. | WebXR doesn't work in iOS Safari. |
 | **Sun math** | Local NOAA solar-position implementation (no API), integrated against the horizon mask. | Works fully offline; no dependency. |
 | **License** | **MIT.** | A civic tool on public data should maximize reuse; AGPL's network-copyleft would deter the land trusts / extension offices / other apps we want integrating. |

@@ -73,3 +73,25 @@ new UI — the MR description must show it, not just describe it. The procedure:
 
 Verify the screenshots actually show the change before embedding them — a
 stale build or wrong port produces two identical images that look like proof.
+
+## Keep the bundle-size figure honest
+
+Several docs quote the app's gzipped bundle size as a point of pride
+(`README.md`, `PROJECT_BRIEF.md`, `app/README.md`, and as a comparison in
+`docs/ecoregion-plan.md`). It's easy to let that number drift as the app grows —
+it already did once, sitting at "~28 KB" long after the real bundle had tripled.
+
+So: **whenever a change materially moves the bundle, re-measure and update every
+mention in the same PR.** Measure from a production build and cite the JS gzip
+figure Vite reports:
+
+```sh
+cd app && npm run build   # read the "gzip:" column for the JS chunk
+```
+
+"Materially" means a few KB or more — a new data file, a new dependency, a
+feature that pulls in a previously tree-shaken module (importing the registry did
+exactly this). Trivial edits don't need a re-measure. When you do update it,
+keep the wording's intent (e.g. the ecoregion-plan comparison still has to read
+as "polygons would dwarf the bundle") and use one consistent number across all
+the docs.

@@ -69,13 +69,20 @@ check("primaryId is a CURIE when set, null otherwise", REGISTRY.every((x) => x.p
 check("unreconciled taxa are reported (interim state before `npm run reconcile`)", audit.unreconciled.length === REGISTRY.filter((x) => !x.primaryId).length);
 console.log(`     (unreconciled: ${audit.unreconciled.length}/${REGISTRY.length} — awaiting external ids)`);
 
-// --- Deep links usable today --------------------------------------------------
-const e = entryForPlant(index, "quercus-garryana");
-const links = deepLinks(e);
-check("gbif link falls back to a name search when key is null", links.gbif.includes("Quercus%20garryana"));
-check("powo link is null until an IPNI id is reconciled", links.powo === null);
-check("usda link is null until a symbol is reconciled", links.usda === null);
-check("inaturalist name-search link always present", links.inaturalist.startsWith("https://www.inaturalist.org"));
+// --- Deep links: fallback vs record behavior ---------------------------------
+// Tested on synthetic entries, not a real taxon, so these don't depend on
+// whether reconciliation has filled a given plant's ids yet (a reconciled plant
+// gets record links, an unreconciled one gets name searches — both are correct).
+const bare = deepLinks({ scientificName: "Testus planta", identifiers: {} });
+check("deepLinks: gbif falls back to a name search when no key", bare.gbif.includes("Testus%20planta"), bare.gbif);
+check("deepLinks: powo is null without an IPNI id", bare.powo === null, bare.powo);
+check("deepLinks: usda is null without a symbol", bare.usda === null, bare.usda);
+check("deepLinks: inaturalist name-search link always present", bare.inaturalist.startsWith("https://www.inaturalist.org"), bare.inaturalist);
+
+const rich = deepLinks({ scientificName: "Testus planta", identifiers: { ipni: "77123-1", gbif: "12345", usda: "TEPL" } });
+check("deepLinks: gbif is a record link when a key is present", rich.gbif === "https://www.gbif.org/species/12345", rich.gbif);
+check("deepLinks: powo derives from the IPNI id", (rich.powo ?? "").includes("ipni.org:names:77123-1"), rich.powo);
+check("deepLinks: usda is a profile link when a symbol is present", rich.usda === "https://plants.usda.gov/plant-profile/TEPL", rich.usda);
 
 // --- Identity invariants ------------------------------------------------------
 check("indigene ids are unique", new Set(REGISTRY.map(local)).size === REGISTRY.length);

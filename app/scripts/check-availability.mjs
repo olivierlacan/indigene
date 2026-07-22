@@ -3,15 +3,19 @@
 // This repo has no test runner by design; integrity is enforced by small,
 // runnable audits (see `lib/wildlife.ts`'s dev audit). This is that pattern for
 // the availability adapters: feed each one a real-shaped fixture and assert the
-// normalized output. Run it with Node's type stripping (Node >= 22.6):
+// normalized output.
 //
-//   node --experimental-strip-types app/scripts/check-availability.ts
+//   npm run check:availability
 //
-// It exercises the three feed shapes a real nursery already publishes — a
-// Lightspeed/Google Shopping XML feed, schema.org Product JSON-LD, and a
-// Shopify products.json — and proves they collapse to one taxon-keyed record.
+// Plain JS + Vite's ssrLoadModule (via _load-ts.mjs) so it runs on any Node
+// version without native TypeScript support. It exercises the three feed shapes
+// a real nursery already publishes — a Lightspeed/Google Shopping XML feed,
+// schema.org Product JSON-LD, and a Shopify products.json — and proves they
+// collapse to one taxon-keyed record.
+import { openLoader } from "./_load-ts.mjs";
 
-import {
+const loader = await openLoader();
+const {
   extractJsonLd,
   offersFromJsonLd,
   offersFromGoogleShoppingXml,
@@ -19,13 +23,13 @@ import {
   resolveTaxon,
   detectPlatform,
   readerFor,
-  type CanonicalOffer,
-} from "../src/lib/availability.ts";
+} = await loader.load("/src/lib/availability.ts");
+await loader.close();
 
 const ctx = { nurseryId: "gonatives", observedAt: "2026-07-21T00:00:00Z" };
 
 let failures = 0;
-function check(label: string, cond: boolean, detail?: unknown) {
+function check(label, cond, detail) {
   const mark = cond ? "  ok" : "FAIL";
   if (!cond) failures++;
   console.log(`${mark}  ${label}${cond ? "" : `  → ${JSON.stringify(detail)}`}`);
@@ -111,7 +115,7 @@ check("dispatch: Lightspeed → google-shopping-xml", readerFor("lightspeed").ad
 check("dispatch: unknown → schema-jsonld floor (not scraping)", readerFor("unknown").adapter === "schema-jsonld");
 
 // --- One-record shape (doc §4.2) ---------------------------------------------
-const sample: CanonicalOffer | undefined = g[0];
+const sample = g[0];
 check(
   "shape: every offer is taxon-keyed + dated",
   !!sample && !!sample.taxon.scientificName && !!sample.offer.observedAt && sample.nurseryId === "gonatives",

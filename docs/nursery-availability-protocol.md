@@ -319,8 +319,8 @@ Each adapter is a pure function `source → CanonicalOffer[]`, selected by
 platform's structured surface, never scraped. A reference implementation of the
 first three adapters plus the platform detector lives in
 `app/src/lib/availability.ts` and is exercised by
-`app/scripts/check-availability.ts` against real-shaped fixtures
-(`node --experimental-strip-types app/scripts/check-availability.ts`).
+`app/scripts/check-availability.mjs` against real-shaped fixtures
+(`npm run check:availability`).
 
 | Adapter | Reads | Notes |
 |---|---|---|

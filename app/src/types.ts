@@ -244,6 +244,7 @@ export type IdScheme =
   | "gbif" // GBIF backbone usageKey — occurrences/iNaturalist (unstable; xref only)
   | "usda" // USDA PLANTS Symbol — US native status/distribution
   | "itis" // ITIS TSN — North American taxonomy, public domain
+  | "inat" // iNaturalist taxon id — direct link to the species page (photos, sightings)
   | "wikidata" // Wikidata QID — the crosswalk hub used to populate the rest
   | "indigene"; // our own catalog id (the registry↔catalog join key)
 

@@ -77,12 +77,13 @@ const bare = deepLinks({ scientificName: "Testus planta", identifiers: {} });
 check("deepLinks: gbif falls back to a name search when no key", bare.gbif.includes("Testus%20planta"), bare.gbif);
 check("deepLinks: powo is null without an IPNI id", bare.powo === null, bare.powo);
 check("deepLinks: usda is null without a symbol", bare.usda === null, bare.usda);
-check("deepLinks: inaturalist name-search link always present", bare.inaturalist.startsWith("https://www.inaturalist.org"), bare.inaturalist);
+check("deepLinks: inaturalist falls back to a name search without an inat id", bare.inaturalist.includes("/taxa/search?q=Testus%20planta"), bare.inaturalist);
 
-const rich = deepLinks({ scientificName: "Testus planta", identifiers: { ipni: "77123-1", gbif: "12345", usda: "TEPL" } });
+const rich = deepLinks({ scientificName: "Testus planta", identifiers: { ipni: "77123-1", gbif: "12345", usda: "TEPL", inat: "48662" } });
 check("deepLinks: gbif is a record link when a key is present", rich.gbif === "https://www.gbif.org/species/12345", rich.gbif);
 check("deepLinks: powo derives from the IPNI id", (rich.powo ?? "").includes("ipni.org:names:77123-1"), rich.powo);
 check("deepLinks: usda is a profile link when a symbol is present", rich.usda === "https://plants.usda.gov/plant-profile/TEPL", rich.usda);
+check("deepLinks: inaturalist is a direct taxon link when an inat id is present", rich.inaturalist === "https://www.inaturalist.org/taxa/48662", rich.inaturalist);
 
 // --- Identity invariants ------------------------------------------------------
 check("indigene ids are unique", new Set(REGISTRY.map(local)).size === REGISTRY.length);

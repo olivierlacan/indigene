@@ -38,6 +38,7 @@ const PROPS = {
   gbif: "P846", // GBIF taxon ID (re-verified against GBIF below)
   usda: "P1772", // USDA PLANTS ID
   itis: "P815", // ITIS TSN
+  inat: "P3151", // iNaturalist taxon ID (for a direct species-page link)
 };
 
 const args = process.argv.slice(2);
@@ -65,10 +66,11 @@ console.log(`Reconciling ${names.length} taxa …`);
 // --- 1) Wikidata: one query for the whole bag --------------------------------
 function sparqlFor(batch) {
   const values = batch.map((n) => `"${n.replace(/"/g, '\\"')}"`).join(" ");
+  const vars = Object.keys(PROPS).map((k) => `?${k}`).join(" ");
   const opt = Object.entries(PROPS)
     .map(([k, p]) => `  OPTIONAL { ?item wdt:${p} ?${k}. }`)
     .join("\n");
-  return `SELECT ?item ?taxonName ?ipni ?wfo ?gbif ?usda ?itis WHERE {
+  return `SELECT ?item ?taxonName ${vars} WHERE {
   VALUES ?taxonName { ${values} }
   ?item wdt:P225 ?taxonName .
 ${opt}
@@ -134,7 +136,7 @@ for (const name of names) {
   const rec = wd.get(name) ?? {};
   const gbif = (await gbifKey(name)) ?? rec.gbif; // GBIF's own key wins; fall back to Wikidata's
   const ids = {};
-  for (const k of ["ipni", "wfo", "usda", "itis"]) if (rec[k]) ids[k] = String(rec[k]);
+  for (const k of ["ipni", "wfo", "usda", "itis", "inat"]) if (rec[k]) ids[k] = String(rec[k]);
   if (gbif) ids.gbif = String(gbif);
   if (rec.wikidata) ids.wikidata = rec.wikidata;
 

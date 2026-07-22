@@ -19,7 +19,7 @@ See **[`PROJECT_BRIEF.md`](PROJECT_BRIEF.md)** for the vision and decisions, and
 
 | Path | What it is |
 |---|---|
-| [`app/`](app/) | The PWA — vanilla TypeScript on the DOM, no framework, zero runtime deps, ~28 KB gzipped. This is the product. Offline-first, installable. |
+| [`app/`](app/) | The PWA — vanilla TypeScript on the DOM, no framework, zero runtime deps, ~96 KB gzipped. This is the product. Offline-first, installable. |
 | [`server/`](server/) | A thin **Hanami 2** JSON API. Its job: fetch site data (soil/elevation/climate) server-side to dodge browser CORS and keep future API keys off the client. The PWA works without it. |
 
 ## Quick start

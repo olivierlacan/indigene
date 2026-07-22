@@ -1,7 +1,7 @@
 // Registry logic, with no data import of its own — pure functions over a
 // RegistryEntry[]. Kept data-free on purpose so it runs anywhere: the browser
 // (via `lib/registry.ts`, which binds it to the bundled REGISTRY) and Node (the
-// generator and `scripts/check-registry.ts`, which pass the generated array in).
+// generator and `scripts/check-registry.mjs`, which pass the generated array in).
 // This is what makes plant-first lookups reliable: one entry per taxon, and
 // ambiguity surfaced rather than guessed.
 

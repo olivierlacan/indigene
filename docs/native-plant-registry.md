@@ -25,8 +25,8 @@ reusable than an endpoint, not less.
 | `app/public/registry/native-plant-registry.json` | **Static artifact.** The same data as JSON, served by the PWA at a stable URL for any other app to consume. |
 | `app/src/lib/registry-core.ts` | Pure logic (index, `resolveName`, `deepLinks`, `auditRegistry`) — data-free, runs in browser and Node. |
 | `app/src/lib/registry.ts` | The core bound to the bundled data (`resolve()`, `lookupId()`), plus a DEV audit. Import this in the app. |
-| `app/scripts/build-registry.ts` | Generator: catalog → `registry.ts` + the JSON. |
-| `app/scripts/check-registry.ts` | Runnable audit (no test runner, like `check-availability.ts`). |
+| `app/scripts/build-registry.mjs` | Generator: catalog → `registry.ts` + the JSON. |
+| `app/scripts/check-registry.mjs` | Runnable audit (no test runner, like `check-availability.ts`). |
 
 ## The entry
 

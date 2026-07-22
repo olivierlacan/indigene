@@ -1,29 +1,28 @@
-// Runnable audit of the generated registry (the repo's no-test-runner pattern,
-// like check-availability.ts). Confirms the registry covers every catalog plant,
-// stays self-consistent, and that plant-first lookups resolve as intended.
+// Runnable audit of the generated registry (the repo's no-test-runner pattern).
+// Confirms the registry covers every catalog plant, stays self-consistent, and
+// that plant-first lookups resolve as intended.
 //
-//   node --experimental-strip-types scripts/check-registry.ts
+//   npm run registry:check
 //
-// Imports registry-core.ts, the generated registry.ts, and the region data files
-// directly (all carry only `import type`, so they resolve under Node).
+// Plain JS + Vite's ssrLoadModule (via _load-ts.mjs) so it runs on any Node
+// version without native TypeScript support.
+import { openLoader } from "./_load-ts.mjs";
 
-import { REGISTRY } from "../src/data/registry.ts";
-import { buildIndex, resolveName, entryById, deepLinks, auditRegistry } from "../src/lib/registry-core.ts";
-import { REGION as MA, SEED_RAW as MA_SEED } from "../src/data/plants.mid-atlantic.ts";
-import { REGION as PNW, SEED_RAW as PNW_SEED } from "../src/data/plants.pnw.ts";
-import { REGION as FL, SEED_RAW as FL_SEED } from "../src/data/plants.florida.ts";
-import { REGION as FLS, SEED_RAW as FLS_SEED } from "../src/data/plants.florida-south.ts";
-
-const coverage = [
-  { r: MA, s: MA_SEED },
-  { r: PNW, s: PNW_SEED },
-  { r: FL, s: FL_SEED },
-  { r: FLS, s: FLS_SEED },
-].flatMap(({ r, s }) => s.map((p) => ({ regionId: r.id, plantId: p.id, scientificName: p.latin })));
+const loader = await openLoader();
+const { REGISTRY } = await loader.load("/src/data/registry.ts");
+const { buildIndex, resolveName, entryById, deepLinks, auditRegistry } = await loader.load(
+  "/src/lib/registry-core.ts",
+);
+const coverage = [];
+for (const id of ["mid-atlantic", "pnw", "florida", "florida-south"]) {
+  const { REGION, SEED_RAW } = await loader.load(`/src/data/plants.${id}.ts`);
+  for (const p of SEED_RAW) coverage.push({ regionId: REGION.id, plantId: p.id, scientificName: p.latin });
+}
+await loader.close();
 
 const index = buildIndex(REGISTRY);
 let failures = 0;
-function check(label: string, cond: boolean, detail?: unknown) {
+function check(label, cond, detail) {
   if (!cond) failures++;
   console.log(`${cond ? "  ok" : "FAIL"}  ${label}${cond ? "" : `  → ${JSON.stringify(detail)}`}`);
 }
@@ -53,14 +52,18 @@ check("resolve unknown → none", resolveName(index, "Totally Made Up Plant").ki
 check("entryById round-trips", entryById(index, "quercus-garryana")?.scientificName === "Quercus garryana");
 
 // --- Ambiguity is surfaced, not guessed --------------------------------------
-check("ambiguous aliases (if any) each resolve to 'ambiguous'", audit.ambiguousAliases.every((a) => {
-  const r = resolveName(index, a.alias);
-  return r.kind === "ambiguous" && r.entries.length === a.ids.length;
-}), audit.ambiguousAliases);
+check(
+  "ambiguous aliases (if any) each resolve to 'ambiguous'",
+  audit.ambiguousAliases.every((a) => {
+    const r = resolveName(index, a.alias);
+    return r.kind === "ambiguous" && r.entries.length === a.ids.length;
+  }),
+  audit.ambiguousAliases,
+);
 console.log(`     (ambiguous aliases found: ${audit.ambiguousAliases.length})`);
 
 // --- Deep links usable today --------------------------------------------------
-const e = entryById(index, "quercus-garryana")!;
+const e = entryById(index, "quercus-garryana");
 const links = deepLinks(e);
 check("gbif deep link falls back to a name search when key is null", links.gbif.includes("Quercus%20garryana"));
 check("powo link is a name search", links.powo.startsWith("https://powo.science.kew.org"));

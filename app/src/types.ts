@@ -217,8 +217,8 @@ export interface SupportLink {
 //
 // It is entirely client-side static data (like the plant lists and like tzdata
 // or the GBIF backbone dump — reference data ships as a file, not a service),
-// generated from the catalog by `scripts/build-registry.ts` and kept in sync by
-// `scripts/check-registry.ts`. External keys (USDA/GBIF) are reconciled in via
+// generated from the catalog by `scripts/build-registry.mjs` and kept in sync by
+// `scripts/check-registry.mjs`. External keys (USDA/GBIF) are reconciled in via
 // `data/registry.overrides.json`; until then the accepted scientific name is the
 // anchor. See `docs/nursery-availability-protocol.md` for why identity is the
 // foundation of availability and discoverability.

@@ -53,7 +53,15 @@ jobs:
         working-directory: app
         run: npm run registry:check
 
+      # continue-on-error so a blocked PR-creation doesn't red-fail the whole
+      # run: the reconciled branch is still pushed (peter-evans pushes before it
+      # calls the PR API), and the summary step below surfaces the link. Opening
+      # the PR automatically requires "Allow GitHub Actions to create and approve
+      # pull requests" (Settings → Actions → General); without it, this step warns
+      # and you open the PR from the pushed branch in one click.
       - name: Open a PR with the reconciled identifiers
+        id: cpr
+        continue-on-error: true
         uses: peter-evans/create-pull-request@v6
         with:
           branch: registry/reconcile
@@ -70,3 +78,20 @@ jobs:
             app/src/data/registry.overrides.json
             app/src/data/registry.ts
             app/public/registry/native-plant-registry.json
+
+      - name: Summarize outcome
+        if: always()
+        run: |
+          if [ "${{ steps.cpr.outcome }}" = "success" ]; then
+            echo "✅ Reconciled identifiers PR: ${{ steps.cpr.outputs.pull-request-url }}" >> "$GITHUB_STEP_SUMMARY"
+          else
+            {
+              echo "### Reconcile ran, but couldn't open the PR automatically"
+              echo ""
+              echo "The reconciled branch \`registry/reconcile\` was pushed. Open the PR here:"
+              echo ""
+              echo "<${{ github.server_url }}/${{ github.repository }}/compare/main...registry/reconcile?expand=1>"
+              echo ""
+              echo "To open it automatically next time, enable **Settings → Actions → General → \"Allow GitHub Actions to create and approve pull requests\"**."
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi

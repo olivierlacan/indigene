@@ -30,6 +30,27 @@ export function entryByPrimaryId(curie: string): import("../types").RegistryEntr
   return core.entryByPrimaryId(registryIndex, curie);
 }
 
+/**
+ * Registry validator for the availability adapters (`lib/availability.ts`). Given
+ * a candidate binomial parsed out of a nursery listing, return the canonical
+ * `TaxonRef` — carrying whatever external ids we've reconciled — only if the
+ * registry vouches for that straight species; else null. This is the injection
+ * point that lets an adapter mine a binomial from messy free text *safely*: the
+ * registry, not a regex, decides, so a bad parse resolves to null instead of a
+ * guess. Pass as `AdapterContext.resolveKnown`. */
+export function taxonRefFor(candidateBinomial: string): import("./availability").TaxonRef | null {
+  const result = core.resolveName(registryIndex, candidateBinomial);
+  if (result.kind !== "match") return null;
+  const e = result.entry;
+  const usda = e.identifiers.usda;
+  const gbif = e.identifiers.gbif;
+  return {
+    scientificName: e.scientificName,
+    ...(usda ? { usdaSymbol: usda } : {}),
+    ...(gbif && Number.isFinite(Number(gbif)) ? { gbifKey: Number(gbif) } : {}),
+  };
+}
+
 // Dev-time integrity net, mirroring the wildlife audit: verify the registry
 // still covers every catalog plant and stays self-consistent. Prod builds strip
 // this branch.

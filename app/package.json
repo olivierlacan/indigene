@@ -12,10 +12,15 @@
     "typecheck": "tsc --noEmit",
     "registry:build": "node scripts/build-registry.mjs",
     "registry:check": "node scripts/check-registry.mjs",
-    "reconcile": "node scripts/reconcile.mjs"
+    "reconcile": "node scripts/reconcile.mjs",
+    "check:availability": "node scripts/check-availability.mjs",
+    "check:availability:live": "node scripts/check-availability-live.mjs"
   },
   "devDependencies": {
     "typescript": "^5.6.3",
     "vite": "^5.4.10"
+  },
+  "optionalDependencies": {
+    "playwright": "^1.48.0"
   }
 }

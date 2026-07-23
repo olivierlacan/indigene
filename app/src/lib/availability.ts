@@ -51,6 +51,31 @@ export interface CanonicalOffer {
   match: MatchInfo;
 }
 
+/** Why a nursery listing couldn't be turned into a taxon-keyed offer. This is
+ *  the raw material for the reconciliation loop (doc §7): rather than silently
+ *  dropping a listing, we hand the nursery a specific, actionable reason. */
+export type UnresolvedReason =
+  /** No binomial anywhere in the listing and no alias hit — we can't name it. */
+  | "no-binomial"
+  /** A plausible binomial was present but isn't a taxon we vouch for (not in the
+   *  registry). Often a typo, a synonym, or a species we simply don't cover. */
+  | "not-in-registry"
+  /** A cultivar/hybrid — deliberately refused; we only vouch for straight species. */
+  | "cultivar";
+
+/** One listing we saw but couldn't resolve, reported back so a nursery can fix
+ *  the name (or so we can add the taxon / alias). Mirrors doc §7's feedback CSV. */
+export interface UnresolvedListing {
+  nurseryId: string;
+  reason: UnresolvedReason;
+  /** The listing's name/title, verbatim — what the nursery would search for. */
+  name: string;
+  /** The binomial we parsed out but couldn't confirm, when there was one. */
+  candidateBinomial?: string;
+  url?: string;
+  observedAt: string;
+}
+
 /** Context threaded into every adapter so records are attributable and dated. */
 export interface AdapterContext {
   nurseryId: string;
@@ -58,6 +83,19 @@ export interface AdapterContext {
   observedAt: string;
   /** Optional common-name → scientific-name aliases (the cultivar-trap table). */
   aliases?: Record<string, string>;
+  /**
+   * Registry validator, injected by the caller so this file stays data-free.
+   * Given a candidate binomial, it returns the canonical `TaxonRef` if the
+   * registry vouches for that taxon, else null. This is what lets an adapter
+   * pull a binomial out of a nursery's free-text name *safely* — the registry,
+   * not a regex, is the arbiter, so `Arctostaphylos uva` (a bad parse of
+   * *uva-ursi*) is rejected rather than guessed. Absent → legacy behavior: only
+   * a listing that *starts* with a clean binomial resolves.
+   */
+  resolveKnown?: (candidateBinomial: string) => TaxonRef | null;
+  /** Sink for listings we couldn't resolve — the reconciliation feedback loop.
+   *  Adapters call this instead of dropping a listing on the floor. */
+  onUnresolved?: (listing: UnresolvedListing) => void;
 }
 
 // ---------------------------------------------------------------------------
@@ -72,7 +110,7 @@ export interface AdapterContext {
 // fingerprint the platform once, then dispatch to that platform's structured
 // reader. A handful of adapters covers the long tail.
 
-export type Platform = "shopify" | "lightspeed" | "woocommerce" | "square" | "unknown";
+export type Platform = "shopify" | "lightspeed" | "ecwid" | "woocommerce" | "square" | "unknown";
 
 /** Evidence for fingerprinting — any subset a caller has cheaply on hand. */
 export interface PlatformSignal {
@@ -99,6 +137,13 @@ export function detectPlatform(sig: PlatformSignal): Platform {
 
   if (sig.productsJsonOk || html.includes("cdn.shopify.com") || html.includes("shopify.theme") || hval.includes("x-shopify"))
     return "shopify";
+  // Ecwid (an Instant Site / "Ecwid by Lightspeed") must be checked BEFORE the
+  // Lightspeed tell: every Ecwid store stamps a "Made with Lightspeed" footer
+  // link, so the generic `lightspeedhq` marker would misfile it as Lightspeed
+  // eCom and route to a Google feed it never emits. Ecwid's own surface is a
+  // storefront JSON API + schema.org JSON-LD, so we floor it to JSON-LD.
+  if (html.includes("ec-instant-site") || html.includes("ecwid_html") || html.includes("app.ecwid.com") || html.includes("ecwidbylightspeed"))
+    return "ecwid";
   if (html.includes("shoplightspeed.com") || html.includes("lightspeedhq") || html.includes("lightspeed ecom"))
     return "lightspeed";
   if (html.includes("woocommerce") || html.includes("wp-content/plugins/woocommerce") || html.includes("/wp-json/"))
@@ -122,6 +167,11 @@ export function readerFor(platform: Platform): {
       // Lightspeed has no public products.json; its structured surface is the
       // merchant-generated Google Shopping feed URL (declared in the manifest).
       return { adapter: "google-shopping-xml", via: "manifest:inventory[].url" };
+    case "ecwid":
+      // Ecwid Instant Sites render product pages client-side but embed a full
+      // schema.org Product/Offer block once hydrated. That JSON-LD is the stable,
+      // per-product read — no merchant feed to configure.
+      return { adapter: "schema-jsonld", via: "product pages (schema.org JSON-LD)" };
     case "woocommerce":
       return { adapter: "woo-store-api", via: "/wp-json/wc/store/v1/products" };
     case "square":
@@ -158,25 +208,83 @@ function normalizeName(s: string): string {
   return s.trim().toLowerCase().replace(/\s+/g, " ");
 }
 
+/** The searchable free text for a listing: its distinct name fields, joined
+ *  once. Deduping matters — a JSON-LD product passes the same `name` as both
+ *  common and scientific hint, and joining it twice would fabricate a phantom
+ *  `'…'` span across two possessives ("Scouler's … Scouler's") that trips the
+ *  cultivar guard and wrongly drops a legitimate species. */
+function freeText(hint: { scientificName?: string; commonName?: string }): string {
+  return [...new Set([hint.commonName, hint.scientificName].filter(Boolean))].join(" ");
+}
+
+/**
+ * Pull candidate binomials out of a free-text name. Real nurseries rarely give
+ * you a clean `Genus species` field; GoNatives names a plant
+ * "Coneflower, Purple Echinacea purpurea 'Magnus'" — the binomial trails the
+ * common name. We scan for every `Genus species` window and also emit a
+ * hyphen-joined variant of the next token, so "Arctostaphylos uva ursi" yields
+ * both `Arctostaphylos uva` and `Arctostaphylos uva-ursi` as candidates. These
+ * are only *candidates*: nothing here is trusted until `resolveKnown` confirms
+ * it against the registry, so a wrong window is rejected, not guessed.
+ */
+export function extractBinomialCandidates(text: string): string[] {
+  const words = text.replace(/[.,]/g, " ").split(/\s+/).filter(Boolean);
+  const out: string[] = [];
+  const seen = new Set<string>();
+  const push = (s: string) => {
+    if (!seen.has(s)) {
+      seen.add(s);
+      out.push(s);
+    }
+  };
+  for (let i = 0; i < words.length - 1; i++) {
+    const genus = words[i];
+    const species = words[i + 1];
+    // Genus is Capitalized, species a *lowercase* epithet (≥3 letters, skipping
+    // connectors like "x"/"de"). The lowercase requirement is the signal that
+    // separates a real epithet from a Title-Cased common-name word: nurseries
+    // write "Erigeron peregrinus" but "Coyote Brush", so we won't mistake the
+    // latter for a binomial. Abbreviated genera ("A.") can't be confirmed, so
+    // we don't emit them.
+    if (!/^[A-Z][a-z]+$/.test(genus)) continue;
+    if (!/^[a-z-]{3,}$/.test(species)) continue;
+    push(`${genus} ${species}`);
+    const next = words[i + 2];
+    if (next && /^[a-z]{2,}$/.test(next)) push(`${genus} ${species}-${next}`);
+  }
+  return out;
+}
+
 /**
  * Resolve a nursery listing to a taxon, best-confidence first (doc §4.2):
- * an explicit scientific name wins; otherwise a common-name alias at lower
- * confidence; a cultivar-marked name or no match returns null (dropped, never
- * guessed).
+ * an explicit scientific name wins; otherwise a common-name alias; otherwise a
+ * binomial parsed out of the free-text name *and confirmed by the registry*.
+ * A cultivar-marked name or no confirmable match returns null — dropped, never
+ * guessed. `resolveKnown` (from the AdapterContext) is the registry validator;
+ * without it, only a listing that already starts with a clean binomial resolves.
  */
 export function resolveTaxon(
   hint: { scientificName?: string; commonName?: string },
   aliases: Record<string, string> = DEFAULT_ALIASES,
+  resolveKnown?: (candidateBinomial: string) => TaxonRef | null,
 ): { taxon: TaxonRef; match: MatchInfo } | null {
   const sci = hint.scientificName?.trim();
   if (sci && /^[A-Z][a-z]+ [a-z]/.test(sci)) {
     // A binomial is present. Cultivar epithets ("Hamelia patens 'Compacta'")
     // still disqualify — we only vouch for the straight species.
     if (CULTIVAR_MARKERS.test(sci)) return null;
-    return {
-      taxon: { scientificName: sci },
-      match: { method: "scientific-name", confidence: "high" },
-    };
+    // If a registry is wired in, prefer its canonical record (fills ids, folds
+    // synonyms); if it explicitly doesn't vouch for the name, fall through
+    // rather than assert a taxon we don't actually cover.
+    if (resolveKnown) {
+      const known = resolveKnown(sci);
+      if (known) return { taxon: known, match: { method: "scientific-name", confidence: "high" } };
+    } else {
+      return {
+        taxon: { scientificName: sci },
+        match: { method: "scientific-name", confidence: "high" },
+      };
+    }
   }
 
   const common = hint.commonName;
@@ -189,7 +297,33 @@ export function resolveTaxon(
       };
     }
   }
+
+  // Last resort: mine a binomial out of the free text and let the registry
+  // confirm it. Only fires when a validator is injected — this is the path that
+  // makes real, messily-named storefronts like GoNatives resolvable at all.
+  if (resolveKnown) {
+    const free = freeText(hint);
+    if (free && !CULTIVAR_MARKERS.test(free)) {
+      for (const cand of extractBinomialCandidates(free)) {
+        const known = resolveKnown(cand);
+        if (known) return { taxon: known, match: { method: "scientific-name", confidence: "medium" } };
+      }
+    }
+  }
   return null;
+}
+
+/** Classify *why* a listing failed to resolve, for the reconciliation report.
+ *  Ordered most- to least-specific: a cultivar marker beats a stray binomial. */
+export function classifyUnresolved(
+  hint: { scientificName?: string; commonName?: string },
+): { reason: UnresolvedReason; candidateBinomial?: string } {
+  const free = freeText(hint);
+  if (CULTIVAR_MARKERS.test(free)) return { reason: "cultivar" };
+  const cand = extractBinomialCandidates(free)[0];
+  return cand
+    ? { reason: "not-in-registry", candidateBinomial: cand }
+    : { reason: "no-binomial" };
 }
 
 // ---------------------------------------------------------------------------
@@ -214,6 +348,32 @@ function toPriceUSD(raw: unknown): number | undefined {
   if (raw == null) return undefined;
   const n = parseFloat(String(raw).replace(/[^0-9.]/g, ""));
   return Number.isFinite(n) ? n : undefined;
+}
+
+/**
+ * Resolve a listing's identity, or file an unresolved-listing report — the one
+ * chokepoint every adapter shares. On a miss it classifies *why* and calls
+ * `ctx.onUnresolved`, so a listing is never dropped without a paper trail the
+ * nursery can act on. `displayName` is what the report shows the merchant.
+ */
+function resolveOrReport(
+  hint: { scientificName?: string; commonName?: string },
+  ctx: AdapterContext,
+  displayName: string,
+  url?: string,
+): { taxon: TaxonRef; match: MatchInfo } | null {
+  const resolved = resolveTaxon(hint, ctx.aliases, ctx.resolveKnown);
+  if (resolved) return resolved;
+  if (ctx.onUnresolved) {
+    ctx.onUnresolved({
+      nurseryId: ctx.nurseryId,
+      ...classifyUnresolved(hint),
+      name: displayName,
+      url,
+      observedAt: ctx.observedAt,
+    });
+  }
+  return null;
 }
 
 // ---------------------------------------------------------------------------
@@ -251,12 +411,14 @@ export function offersFromJsonLd(nodes: unknown[], ctx: AdapterContext): Canonic
 
   const offers: CanonicalOffer[] = [];
   for (const p of products) {
-    const resolved = resolveTaxon(
+    const rawOffer = Array.isArray(p.offers) ? p.offers[0] : p.offers;
+    const resolved = resolveOrReport(
       { scientificName: p.name, commonName: p.name },
-      ctx.aliases,
+      ctx,
+      String(p.name ?? ""),
+      typeof rawOffer?.url === "string" ? rawOffer.url : p.url,
     );
     if (!resolved) continue;
-    const rawOffer = Array.isArray(p.offers) ? p.offers[0] : p.offers;
     if (!rawOffer) continue;
     offers.push({
       taxon: resolved.taxon,
@@ -300,12 +462,15 @@ export function offersFromGoogleShoppingXml(
   const items = xml.match(/<item[\s>][\s\S]*?<\/item>/gi) ?? [];
   for (const item of items) {
     // Prefer an explicit binomial if the feed carries one; fall back to title.
-    const resolved = resolveTaxon(
+    const title = tag(item, "g:title") || tag(item, "title") || "";
+    const resolved = resolveOrReport(
       {
         scientificName: tag(item, "g:mpn") || tag(item, "g:product_type"),
-        commonName: tag(item, "g:title") || tag(item, "title"),
+        commonName: title,
       },
-      ctx.aliases,
+      ctx,
+      title,
+      tag(item, "g:link") || tag(item, "link"),
     );
     if (!resolved) continue;
     offers.push({
@@ -337,11 +502,13 @@ export function offersFromShopifyProducts(
   if (!Array.isArray(products)) return [];
   const offers: CanonicalOffer[] = [];
   for (const p of products) {
-    const resolved = resolveTaxon(
+    const resolved = resolveOrReport(
       // Shopify stores the botanical name in `vendor`/`title`/`tags` variably;
       // title is the reliable common-name surface, vendor sometimes the latin.
       { scientificName: p.vendor, commonName: p.title },
-      ctx.aliases,
+      ctx,
+      String(p.title ?? ""),
+      p.handle ? `/products/${p.handle}` : undefined,
     );
     if (!resolved) continue;
     const v = Array.isArray(p.variants) ? p.variants[0] : undefined;

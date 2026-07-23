@@ -94,10 +94,12 @@ Grove (this proposal)      ✓ (emitted)      ✓ (USDA/GBIF)   ✓
    on the same spine, so a nursery offer and an Indigene plant are the same
    object by construction.
 
-2. **Heterogeneous storefronts.** GoNatives runs **Lightspeed**; the next
-   nursery runs Shopify, the next WooCommerce, the next Square, the next a
-   hand-built HTML page. A protocol that requires one platform is dead on
-   arrival. Grove must meet each where it already is (§3).
+2. **Heterogeneous storefronts.** GoNatives runs **Ecwid** (an "Ecwid by
+   Lightspeed" Instant Site — confirmed by fetching the live store, not the
+   Lightspeed eCom product it superficially resembles); the next nursery runs
+   Shopify, the next WooCommerce, the next Square, the next a hand-built HTML
+   page. A protocol that requires one platform is dead on arrival. Grove must
+   meet each where it already is (§3).
 
 3. **Direction.** Every existing effort is supply → seeker (find who has it).
    The valuable, missing half is seeker → grower (tell growers what people
@@ -108,14 +110,18 @@ Grove (this proposal)      ✓ (emitted)      ✓ (USDA/GBIF)   ✓
 
 ## 3. The key insight: nurseries already emit machine-readable stock
 
-You looked at GoNatives on Lightspeed and (correctly) saw no obvious RSS or JSON
-catalog. But "no obvious feed on the page" is not "no feed." Here's what each
+You looked at GoNatives and (correctly) saw no obvious RSS or JSON catalog on the
+page. But "no obvious feed on the page" is not "no feed." Fetching the live store
+confirms it: GoNatives is an **Ecwid Instant Site**, which renders product pages
+client-side but embeds a full `Product`/`Offer` JSON-LD block once hydrated —
+that per-product JSON-LD is the read, no merchant feed required. Here's what each
 common platform *already* produces, with zero new work from the nursery:
 
 | Platform | Already-machine-readable surface | Effort for nursery |
 |---|---|---|
 | **Shopify** | Public `/{store}/products.json` and `/collections/<h>/products.json` — no auth, full variants + `available` boolean. Plus `Product`/`Offer` JSON-LD on every product page. | **None.** It's already on. |
-| **Lightspeed eCom** (GoNatives) | A **Google Shopping XML feed** the merchant generates in-admin (a stable URL, regenerated ~every 5 h) carrying `g:id`, `g:title`, `g:price`, `g:availability`. Plus `Product`/`Offer` JSON-LD on product pages. | One-time: turn on the feed, paste its URL into `/.well-known/native-plants.json`. |
+| **Ecwid** (GoNatives) | `Product`/`Offer` JSON-LD embedded on each product page after client-side hydration (`price`, `availability`, `sku`, `url`). A storefront JSON API backs it. **No Google feed** — confirmed absent on the live store. | **None.** Read the JSON-LD floor. |
+| **Lightspeed eCom** | A **Google Shopping XML feed** the merchant generates in-admin (a stable URL, regenerated ~every 5 h) carrying `g:id`, `g:title`, `g:price`, `g:availability`. Plus `Product`/`Offer` JSON-LD on product pages. | One-time: turn on the feed, paste its URL into `/.well-known/native-plants.json`. |
 | **WooCommerce** | Store API (`/wp-json/wc/store/v1/products`) and any Google-feed plugin's XML. Plus JSON-LD. | Low. |
 | **Square Online** | `Product`/`Offer` JSON-LD in product pages; `sitemap.xml` enumerates them. | Low. |
 | **Hand-built site / PDF** | `schema.org/Product` JSON-LD if present; else fall back to the Retail-Plant-Catalog approach (crawl the posted list). | Low–medium. |
@@ -266,11 +272,24 @@ spine Indigene already uses:
 
 **Identity reconciliation pipeline**, best-confidence first:
 1. **SKU map** (`identity.map` in the manifest) → exact, `high`.
-2. **Scientific name** in the feed/JSON-LD → GBIF backbone match → `high`.
+2. **Scientific name** in the feed/JSON-LD → registry match → `high`.
 3. **Common name** → curated alias table (our own, MIT) → `medium`, and the
    "dwarf firebush ≠ firebush" cultivar traps get encoded here once.
-4. **No confident match** → dropped, never guessed. (Same rule the rest of the
-   app lives by: `DATA_SOURCES.md`, "when in doubt it's optional.")
+4. **Binomial mined from a free-text name, confirmed by the registry** →
+   `medium`. Real storefronts rarely give a clean `Genus species` field;
+   GoNatives names a plant `"Coneflower, Purple Echinacea purpurea 'Magnus'"`,
+   binomial trailing. The adapter scans for `Genus species` windows (plus a
+   hyphen-joined variant, so `"Arctostaphylos uva ursi"` also yields
+   *uva-ursi*) and accepts one **only if the registry vouches for that taxon** —
+   the registry, not a regex, is the arbiter, so a bad parse resolves to nothing
+   instead of a guess.
+5. **No confident match** → dropped, never guessed, **but reported**. Each
+   unresolved listing is emitted with a reason — `cultivar` (deliberately
+   refused), `not-in-registry` (a real binomial we don't yet cover, carried
+   through so a human can add it), or `no-binomial` (nothing nameable) — turning
+   silent drops into the nursery-facing reconciliation feedback the loop needs.
+   (Same rule the rest of the app lives by: `DATA_SOURCES.md`, "when in doubt
+   it's optional.")
 
 ### 4.3 Matchmaking — both directions
 
@@ -324,8 +343,8 @@ first three adapters plus the platform detector lives in
 
 | Adapter | Reads | Notes |
 |---|---|---|
-| `schema-jsonld` | `schema.org/Product`+`Offer` JSON-LD from a product page | **The universal floor.** Works on Shopify, Lightspeed, Square, Woo, hand-built. |
-| `google-shopping-xml` | RSS 2.0 feed with `xmlns:g` (`g:availability`, `g:price`, `g:link`) | **The Lightspeed answer** — GoNatives can emit this today. |
+| `schema-jsonld` | `schema.org/Product`+`Offer` JSON-LD from a product page | **The universal floor.** Works on Shopify, Ecwid, Lightspeed, Square, Woo, hand-built. What **GoNatives** (Ecwid) is actually read through. |
+| `google-shopping-xml` | RSS 2.0 feed with `xmlns:g` (`g:availability`, `g:price`, `g:link`) | **The Lightspeed eCom answer** — a merchant-generated feed, where one exists. |
 | `shopify-products-json` | public `/products.json` (`variants[].available`) | Zero nursery effort where present. |
 | `woo-store-api` | `/wp-json/wc/store/v1/products` | WooCommerce. |
 | `posted-list` (future) | crawl a PDF/sheet/page at a URL | The Retail-Plant-Catalog fallback, for nurseries with no storefront. |

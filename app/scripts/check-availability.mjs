@@ -17,6 +17,7 @@ import { openLoader } from "./_load-ts.mjs";
 const loader = await openLoader();
 const {
   extractJsonLd,
+  extractBinomialCandidates,
   offersFromJsonLd,
   offersFromGoogleShoppingXml,
   offersFromShopifyProducts,
@@ -24,6 +25,9 @@ const {
   detectPlatform,
   readerFor,
 } = await loader.load("/src/lib/availability.ts");
+// The registry validator that lets an adapter mine a binomial out of a
+// storefront's free-text name safely (see the live-data section below).
+const { taxonRefFor } = await loader.load("/src/lib/registry.ts");
 await loader.close();
 
 const ctx = { nurseryId: "gonatives", observedAt: "2026-07-21T00:00:00Z" };
@@ -113,6 +117,67 @@ check("detect: WooCommerce via wp-json marker", detectPlatform({ html: "<link hr
 check("detect: unknown beats a wrong guess", detectPlatform({ html: "<html>hand-built</html>" }) === "unknown");
 check("dispatch: Lightspeed → google-shopping-xml", readerFor("lightspeed").adapter === "google-shopping-xml");
 check("dispatch: unknown → schema-jsonld floor (not scraping)", readerFor("unknown").adapter === "schema-jsonld");
+
+// --- Live GoNatives regression fixtures --------------------------------------
+// Captured verbatim from https://gonativesnursery.company.site (an Ecwid Instant
+// Site). These froze the two bugs a live test surfaced: the store was misfiled
+// as Lightspeed (→ a Google feed it never emits), and its "Common, Qualifier
+// Genus species" naming defeated the binomial resolver. This section proves the
+// real pipeline: detect Ecwid, floor to JSON-LD, and resolve identity through
+// the registry — reporting every miss instead of dropping it.
+
+// Ecwid stamps a "Made with Lightspeed" footer, so it must be caught BEFORE the
+// Lightspeed marker or it misroutes.
+const ecwidHome = '<html id="ecwid_html"><meta name="generator" content="ec-instant-site">' +
+  '<a href="https://lightspeedhq.com/">Made with Lightspeed</a><script src="//app.ecwid.com/script.js"></script></html>';
+check("live/detect: Ecwid Instant Site (not Lightspeed)", detectPlatform({ html: ecwidHome }) === "ecwid", detectPlatform({ html: ecwidHome }));
+check("live/dispatch: Ecwid → schema-jsonld floor", readerFor("ecwid").adapter === "schema-jsonld");
+
+// Free-text name mining: the registry, not a regex, confirms the binomial.
+check("live/extract: pulls trailing binomial from a common-name-led title",
+  extractBinomialCandidates("Willow, Scouler's Salix scouleriana").includes("Salix scouleriana"));
+check("live/extract: offers a hyphen-joined variant (uva ursi → uva-ursi)",
+  extractBinomialCandidates("Kinnikinnick Arctostaphylos uva ursi").includes("Arctostaphylos uva-ursi"));
+check("live/extract: a Title-Cased common name is not mistaken for a binomial",
+  extractBinomialCandidates("Coyote Brush").length === 0);
+
+// Real product JSON-LD, run through the JSON-LD adapter with the registry wired
+// in. `name` is passed as both hint fields (as the adapter does) — the resolver
+// must not let the doubled possessive ("Scouler's … Scouler's") trip the
+// cultivar guard.
+const liveUnresolved = [];
+const liveCtx = {
+  nurseryId: "gonatives",
+  observedAt: "2026-07-22T00:00:00Z",
+  resolveKnown: taxonRefFor,
+  onUnresolved: (u) => liveUnresolved.push(u),
+};
+const liveProduct = (name, sku, price, url) => ({
+  "@type": "Product", name, sku,
+  offers: { "@type": "Offer", price, priceCurrency: "USD", availability: "http://schema.org/InStock", url },
+});
+
+// A species our seed catalog covers → resolves (registry-confirmed embedded binomial).
+const salix = offersFromJsonLd(
+  [liveProduct("Willow, Scouler's Salix scouleriana", "10631 - Base", "45.0", "/products/Willow-Scoulers-Salix-scouleriana-p794803653")],
+  liveCtx);
+check("live/resolve: registry-confirmed species resolves (not dropped as cultivar)", salix.length === 1, salix);
+check("live/resolve: canonical taxon + in-stock + price", salix[0]?.taxon.scientificName === "Salix scouleriana" && salix[0]?.offer.availability === "in_stock" && salix[0]?.offer.priceUSD === 45, salix[0]);
+check("live/resolve: mined-from-free-text is medium confidence", salix[0]?.match.confidence === "medium", salix[0]);
+
+// A cultivar → dropped, and reported as such.
+const magnus = offersFromJsonLd([liveProduct("Coneflower, Purple Echinacea purpurea 'Magnus'", "12050 - Base", "19.0", "/x")], liveCtx);
+check("live/reconcile: cultivar is dropped", magnus.length === 0, magnus);
+check("live/reconcile: cultivar drop is reported with reason", liveUnresolved.at(-1)?.reason === "cultivar", liveUnresolved.at(-1));
+
+// A real binomial our small catalog doesn't cover → dropped, but reported with
+// the parsed name so the nursery (or we) can reconcile it. This is the feedback
+// loop, not a silent miss.
+const vaccinium = offersFromJsonLd([liveProduct("Huckleberry, Evergreen Vaccinium ovatum", "10528 - Base", "39.0", "/y")], liveCtx);
+check("live/reconcile: uncovered taxon is dropped", vaccinium.length === 0, vaccinium);
+check("live/reconcile: reports not-in-registry + the binomial we saw",
+  liveUnresolved.at(-1)?.reason === "not-in-registry" && liveUnresolved.at(-1)?.candidateBinomial === "Vaccinium ovatum",
+  liveUnresolved.at(-1));
 
 // --- One-record shape (doc §4.2) ---------------------------------------------
 const sample = g[0];

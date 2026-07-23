@@ -11,9 +11,12 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
   const spots = await listSpots().catch(() => []);
 
   main.append(
-    el("h2", { class: "step-title" }, "Bring the birds and butterflies back — starting exactly where you're standing"),
+    el("h2", { class: "step-title" }, "Bring back birds & butterflies, here & now."),
     el("p", { class: "step-lede" }, [
-      "Most yards are green but empty: lawns and imported ornamentals that local wildlife can't eat. Native plants are what your birds, bees, and butterflies actually live on. Stand in the spot you want to plant, and this app measures the sun, looks up the soil and climate, and shows you the natives that will thrive there — ranked by how much life they feed.",
+      "Most yards are green but lifeless: lawns, shrubs, and flowers that local wildlife can't survive on yet require constant watering, pesticides, and fertilizers.",
+    ]),
+    el("p", { class: "step-lede" }, [
+      "Native plants evolved to feed and nurture birds, bees, and butterflies. Indigene helps you bring back the ecosystem they desperately need to survive & thrive.",
     ]),
     el("div", { class: "note info" }, [
       el("strong", {}, "No account, nothing to sign up for. "),

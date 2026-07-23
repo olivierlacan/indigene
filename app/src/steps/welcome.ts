@@ -19,8 +19,8 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
       "Native plants evolved to feed and nurture birds, bees, and butterflies. Indigene helps you bring back the ecosystem they desperately need to survive & thrive.",
     ]),
     el("div", { class: "note info" }, [
-      el("strong", {}, "No account, nothing to sign up for. "),
-      "Everything stays on your phone, and it keeps working with no signal once you've loaded a spot.",
+      el("strong", {}, "No account, no tracking. "),
+      "Everything stays in your browser and works offline.",
     ]),
     whyThis("Why native plants?", [
       "Most caterpillars can only eat the plants they evolved alongside, and nearly every backyard bird raises its chicks on caterpillars. No natives means no caterpillars, and no caterpillars means no baby birds. ",

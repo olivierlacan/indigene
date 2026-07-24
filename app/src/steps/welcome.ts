@@ -28,7 +28,7 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
     ]),
     el("div", { class: "card" }, [
       el("h3", {}, REGIONS.length > 1 ? "Regions covered so far" : "Right now this covers one region"),
-      el("p", {}, "Plant recommendations are tuned region by region. The app picks the right list from where you're standing:"),
+      el("p", {}, "Plant recommendations are tuned region by region — the app picks the right list based on where you're standing:"),
       el("ul", { style: "margin:0.4rem 0 0.6rem;padding-left:1.2rem" },
         REGIONS.map((r) => el("li", { style: "margin-bottom:0.3rem" }, [
           el("a", { href: `#/regions/${r.meta.id}`, style: "font-weight:650" }, r.meta.name),
@@ -36,9 +36,9 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
         ]))
       ),
       el("p", { style: "margin:0" }, [
-        "Outside these areas the sun and soil readings still work, and the app tells you plainly when it has no plant list for your spot yet. Want your area next? ",
-        el("a", { href: ISSUES_URL, target: "_blank", rel: "noopener" }, "Suggest it on GitHub"),
-        " — open an issue with your ZIP or town so we know where to grow next.",
+        "Outside these areas, sun and soil readings still work — just no plant list yet. Want yours next? ",
+        el("a", { href: ISSUES_URL, target: "_blank", rel: "noopener" }, "Suggest your area on GitHub"),
+        ".",
       ]),
     ]),
     el("button", {

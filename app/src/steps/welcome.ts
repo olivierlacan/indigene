@@ -47,13 +47,13 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
         resetDraft();
         navigate("location");
       },
-    }, "Start — where are you standing?"),
+    }, "Start here — where are you standing?"),
 
     // The plant-first path: start from a plant instead of a spot. One showcase
     // native per region; each opens a shareable page with a spot checker.
     el("div", { class: "card", style: "margin-top:1rem" }, [
       el("h3", {}, "Or start from a plant"),
-      el("p", {}, "Meet one standout native from each region, then check whether the spot you have in mind would suit it:"),
+      el("p", {}, "Meet one standout native from each region, then see if it would thrive in your spot:"),
       el("ul", { style: "margin:0.4rem 0 0.6rem;padding-left:1.2rem" },
         REGIONS.map((r) => {
           const p = featuredPlant(r);

@@ -23,8 +23,8 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
       "Everything stays in your browser and works offline.",
     ]),
     whyThis("Why native plants?", [
-      "Most caterpillars can only eat the plants they evolved alongside, and nearly every backyard bird raises its chicks on caterpillars. No natives means no caterpillars, and no caterpillars means no baby birds. ",
-      "A native plant is the bottom of the local food web — and it's back in business the season you plant it.",
+      "Most caterpillars can only eat the plants they evolved with, and nearly every backyard bird raises its chicks on caterpillars. No natives, no caterpillars, no baby birds. ",
+      "Plant a native, and the food web is back in business that same season.",
     ]),
     el("div", { class: "card" }, [
       el("h3", {}, REGIONS.length > 1 ? "Regions covered so far" : "Right now this covers one region"),

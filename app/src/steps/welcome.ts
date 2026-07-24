@@ -1,7 +1,6 @@
 import { el, clear } from "../ui";
 import { navigate, resetDraft } from "../state";
 import { listSpots } from "../db";
-import { whyThis } from "../components/learn";
 import { DATA_SOURCES_URL } from "../lib/plain";
 
 export async function renderWelcome(main: HTMLElement): Promise<void> {
@@ -20,10 +19,6 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
       el("strong", {}, "No account, no tracking. "),
       "Everything stays in your browser and works offline.",
     ]),
-    whyThis("Why native plants?", [
-      "Most caterpillars can only eat the plants they evolved with, and nearly every backyard bird raises its chicks on caterpillars. No natives, no caterpillars, no baby birds. ",
-      "Plant a native, and the food web is back in business that same season.",
-    ]),
     el("button", {
       class: "btn btn-primary btn-block",
       onClick: () => {
@@ -38,6 +33,11 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
       el("a", { href: "#/browse" }, "Browse regions & native plants"),
       " instead.",
     ]),
+
+    // The pitch for anyone not yet convinced — in plain sight, not a drawer.
+    el("h3", { style: "margin-top:1.8rem" }, "Why native plants?"),
+    el("p", {}, "Most caterpillars can only eat the plants they evolved with, and nearly every backyard bird raises its chicks on caterpillars. No natives, no caterpillars, no baby birds."),
+    el("p", {}, "Plant a native, and the food web is back in business that same season."),
 
     el("div", { style: spots.length ? "margin-top:1.5rem" : "display:none" }, [
       el("h3", {}, "Your saved spots"),

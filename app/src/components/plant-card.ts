@@ -51,7 +51,9 @@ export function plantCard(r: Ranked, weights: Weights): HTMLElement {
     `Drawn to scale beside a 5′6″ person. Eventually reaches about ${fmtSize(p.matureHeightFt)} tall and ${fmtSize(p.matureSpreadFt)} wide. ${growthPlain(p)}`,
   ]);
 
-  // Transparent score breakdown (weighted total shown, then each part).
+  // Transparent score breakdown (weighted total shown, then each part). The
+  // bars stay compact here — what each score means is spelled out once, on the
+  // plant's own profile page, not repeated on all 25 cards.
   const scoreParts = (Object.keys(scoreLabels) as (keyof typeof scoreLabels)[]).map((key) => {
     const val = (p.scores as unknown as Record<string, number>)[key];
     const w = (weights as unknown as Record<string, number>)[key];
@@ -65,12 +67,11 @@ export function plantCard(r: Ranked, weights: Weights): HTMLElement {
         el("span", {}, `${val}${key === "host" ? ` · ${p.hostLepCount} species` : ""}`),
       ]),
       el("div", { class: "score-bar" }, [el("span", { style: `width:${val}%` })]),
-      el("p", { class: "score-why" }, label.plain),
     ]);
   });
 
-  const scores = el("details", {}, [
-    el("summary", {}, `🦋 Why it ranks here — eco value ${r.ecoScore}/100`),
+  const scores = el("div", {}, [
+    el("p", { style: "font-weight:700;margin:0 0 0.2rem" }, `🦋 Why it ranks here — eco value ${r.ecoScore}/100`),
     el("ul", { class: "score-list" }, scoreParts),
   ]);
 

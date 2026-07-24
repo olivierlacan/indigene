@@ -467,9 +467,10 @@ a {
 }
 
 /* --- Disclosures --- */
-/* The one affordance for anything that opens: a chevron on the right that
-   flips when open. Every <summary> gets it for free — no "(tap to open)"
-   text, and no browser-default triangle competing with it. */
+/* The only things that still open and close are the sort/filter panels on the
+   results page — everything else renders in plain sight. Their summaries look
+   like real buttons, with an explicit Open/Close pill so the state and the
+   tap target are unmistakable. */
 summary {
   cursor: pointer;
   min-height: var(--tap);
@@ -482,37 +483,44 @@ summary::-webkit-details-marker {
   display: none;
 }
 summary::after {
-  content: "▾";
+  content: "Open ▾";
   margin-left: auto;
-  padding-left: 0.5rem;
-  color: var(--ink-soft);
-  transition: transform 0.15s ease-out;
+  flex: 0 0 auto;
+  font-size: 0.85rem;
+  font-weight: 650;
+  line-height: 1;
+  color: var(--brand);
+  border: 1.5px solid var(--brand);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
 }
 details[open] > summary::after {
-  transform: rotate(180deg);
+  content: "Close ▴";
+  color: var(--surface);
+  background: var(--brand);
 }
 
-/* Ecosystem & propagation: each its own collapsible card whose summary is its
-   heading — the same card treatment the "Want to plant?" tool uses, so the
-   sections below a plant read as siblings and each opens on its own deep link. */
-.plant-section > summary {
+/* Ecosystem & propagation: each its own card whose heading matches the "Want
+   to plant?" tool, so the sections below a plant read as siblings and each
+   scrolls into view on its own deep link. */
+.plant-section > h3 {
+  margin: 0 0 0.6rem;
   font-size: 1.17rem;
-}
-.plant-section[open] > summary {
-  margin-bottom: 0.6rem;
 }
 
 /* --- Just-in-time education asides ("why this matters") --- */
+/* Always visible — these used to be <details> drawers, but the pitch for the
+   unconvinced shouldn't hide behind a tap. */
 .learn {
   margin: 0 0 1rem;
   font-size: 0.95rem;
 }
-.learn summary {
+.learn .learn-q {
   font-weight: 650;
   color: var(--brand);
-  width: fit-content;
+  margin: 0 0 0.2rem;
 }
-.learn summary::before {
+.learn .learn-q::before {
   content: "🌱";
   margin-right: 0.45rem;
 }
@@ -834,7 +842,8 @@ input[type="range"] {
   background: var(--bg);
   padding: 0.5rem 0;
 }
-.weights details {
+.weights details,
+details.weights {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
@@ -843,12 +852,14 @@ input[type="range"] {
 /* The whole controls block is sticky, so a panel taller than the screen could
    never show its bottom. Open panels scroll internally instead, with the
    summary pinned so the way out never scrolls away. */
-.weights details[open] {
+.weights details[open],
+details.weights[open] {
   max-height: calc(100vh - 6rem);
   max-height: calc(100dvh - 6rem);
   overflow-y: auto;
 }
-.weights details[open] > summary {
+.weights details[open] > summary,
+details.weights[open] > summary {
   position: sticky;
   top: 0;
   z-index: 1;

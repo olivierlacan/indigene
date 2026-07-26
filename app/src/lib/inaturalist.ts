@@ -47,6 +47,11 @@ export interface NearbyQuery {
   radiusKm?: number;
   /** Max observations to request. Default `DEFAULT_PER_PAGE`, capped at 200. */
   perPage?: number;
+  /** iNaturalist taxon ids to restrict the query to. We pass the taxa native to
+   *  the user's region here, so iNaturalist only ever returns — and we only ever
+   *  cache — plants we can vouch for as local natives. Omit for an unscoped
+   *  "any plant" query (not used by the app; kept for the raw client). */
+  taxonIds?: readonly string[];
 }
 
 /** A single photo, trimmed to what we render and the credit we must show. */
@@ -97,7 +102,9 @@ export interface ObservationSummary {
  *   - `iconic_taxa=Plantae` — plants only,
  *   - `quality_grade=research` — community-verified IDs only,
  *   - `photos=true` — every result has at least one photo,
- *   - `lat`/`lng`/`radius` — bounded to the spot.
+ *   - `lat`/`lng`/`radius` — bounded to the spot,
+ *   - `taxon_id` — when given, restricts to those taxa (our region's natives),
+ *     so a non-native garden escape or invasive nearby is never returned.
  * We keep `per_page` modest and trim the payload ourselves (see
  * `summarizeObservations`) rather than storing anything raw.
  */
@@ -118,6 +125,9 @@ export function buildObservationsUrl(q: NearbyQuery): string {
     order_by: "observed_on",
     order: "desc",
   });
+  if (q.taxonIds && q.taxonIds.length) {
+    params.set("taxon_id", q.taxonIds.join(","));
+  }
   return `${API_BASE}?${params.toString()}`;
 }
 

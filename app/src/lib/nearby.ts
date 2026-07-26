@@ -18,6 +18,7 @@ import {
   type NearbyQuery,
   type ObservationSummary,
 } from "./inaturalist";
+import { entryByInatId } from "./registry";
 import {
   getCachedObservations,
   putCachedObservations,
@@ -79,7 +80,12 @@ export async function nearbyObservations(
     };
   }
 
-  const observations = await fetchNearbyPlantObservations({ ...q, radiusKm });
+  const fetched = await fetchNearbyPlantObservations({ ...q, radiusKm });
+  // Native-only guarantee: keep only observations whose taxon is one of our
+  // catalog natives. The query is already scoped to the region's taxa, but this
+  // makes it a property of the layer, not just the caller — nothing non-native
+  // ever reaches the cache or the screen, even if a query is left unscoped.
+  const observations = fetched.filter((o) => entryByInatId(String(o.taxonId)));
   // Best-effort write: a full/again quota-limited IndexedDB shouldn't sink the
   // feature — we still return the freshly fetched list.
   await putCachedObservations({

@@ -27,6 +27,9 @@ export interface RegistryIndex {
   bySci: Map<string, RegistryEntry>;
   /** normalized alias → entries (>1 means the alias is ambiguous). */
   byAlias: Map<string, RegistryEntry[]>;
+  /** iNaturalist taxon id → entry — the join from an observation back to our
+   *  catalog, so a nearby sighting can be recognised as one of our natives. */
+  byInat: Map<string, RegistryEntry>;
 }
 
 export type ResolveResult =
@@ -40,10 +43,12 @@ export function buildIndex(entries: RegistryEntry[]): RegistryIndex {
   const byPrimary = new Map<string, RegistryEntry>();
   const bySci = new Map<string, RegistryEntry>();
   const byAlias = new Map<string, RegistryEntry[]>();
+  const byInat = new Map<string, RegistryEntry>();
   for (const e of entries) {
     const local = e.identifiers.indigene;
     if (local) byIndigene.set(local, e);
     if (e.primaryId) byPrimary.set(e.primaryId, e);
+    if (e.identifiers.inat) byInat.set(e.identifiers.inat, e);
     bySci.set(normalizeName(e.scientificName), e);
     for (const a of e.aliases) {
       const list = byAlias.get(a) ?? [];
@@ -51,12 +56,31 @@ export function buildIndex(entries: RegistryEntry[]): RegistryIndex {
       byAlias.set(a, list);
     }
   }
-  return { entries, byIndigene, byPrimary, bySci, byAlias };
+  return { entries, byIndigene, byPrimary, bySci, byAlias, byInat };
 }
 
 /** Get the registry entry for a catalog plant (by its `indigene` id / slug). */
 export function entryForPlant(index: RegistryIndex, plantId: string): RegistryEntry | undefined {
   return index.byIndigene.get(plantId);
+}
+
+/** Get the entry for an iNaturalist taxon id, or undefined when the taxon isn't
+ *  one of our catalog natives — the "is this observation native to us?" check. */
+export function entryByInatId(index: RegistryIndex, inatId: string): RegistryEntry | undefined {
+  return index.byInat.get(inatId);
+}
+
+/** Every iNaturalist taxon id we hold that is native to at least one of the
+ *  given regions — the set to scope a nearby-observation query to, so we only
+ *  ever ask about (and cache) plants that belong there. */
+export function inatIdsForRegions(index: RegistryIndex, regionIds: readonly string[]): string[] {
+  const wanted = new Set(regionIds);
+  const ids: string[] = [];
+  for (const e of index.entries) {
+    const inat = e.identifiers.inat;
+    if (inat && e.regions.some((r) => wanted.has(r))) ids.push(inat);
+  }
+  return ids;
 }
 
 /** Get an entry by its `primaryId` CURIE (e.g. "ipni:77123-1"). */

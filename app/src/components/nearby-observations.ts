@@ -10,7 +10,9 @@
 //   - iNaturalist is credited on the section, and every photo carries its own
 //     observer + licence credit straight from the API.
 import { el, clear } from "../ui";
-import { entryForPlant } from "../lib/registry";
+import { entryForPlant, inatIdsForRegions } from "../lib/registry";
+import { regionForSite, REGIONS } from "../lib/plants";
+import type { RegionDef } from "../lib/plants";
 import { nearbyObservations, observationsForTaxon } from "../lib/nearby";
 import type { NearbyResult } from "../lib/nearby";
 import type { ObservationSummary } from "../lib/inaturalist";
@@ -42,7 +44,10 @@ function whereWhen(o: ObservationSummary): string {
  * Returns an element you can append to the plant page.
  */
 export function nearbyObservationsSection(plant: Plant): HTMLElement {
-  const inatId = entryForPlant(plant.id)?.identifiers.inat;
+  const entry = entryForPlant(plant.id);
+  const inatId = entry?.identifiers.inat;
+  // The regions our own data says this plant is native to.
+  const nativeRegionIds = entry?.regions ?? [];
 
   const out = el("div", { "aria-live": "polite" });
   const findBtn = el("button", {
@@ -73,12 +78,40 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
   }
 
   async function load(lat: number, lon: number): Promise<void> {
-    findBtn.textContent = "Asking iNaturalist…";
     clear(out);
+    // Only showcase where our own data vouches for the plant. Resolve the spot
+    // to an Indigene region (the same coordinate box the app uses, refined by
+    // EPA ecoregion when a site reading is available). Two honest gates:
+    //   1. Outside every region we cover → we have no native list, so we don't
+    //      present anything as a "local native".
+    //   2. Inside a region, but our data doesn't list this plant as native there
+    //      → we won't showcase it near you, even if iNaturalist has a (likely
+    //      planted or escaped) sighting. That would contradict the whole point.
+    const region = regionForSite(lat, lon);
+    if (!region) {
+      resetButton();
+      showNote("You're outside the regions Indigene has native-plant data for, so we can't vouch for what's truly native at your spot — and we won't dress up nearby sightings as local natives. The sun, soil and climate readings still work everywhere.");
+      return;
+    }
+    if (!inatId) {
+      resetButton();
+      showNote(`We don't have an iNaturalist taxon id for ${plant.common} yet, so we can't match it to verified sightings.`);
+      return;
+    }
+    if (!nativeRegionIds.includes(region.meta.id)) {
+      resetButton();
+      showNote(nativeElsewhereNote(region));
+      return;
+    }
+
+    findBtn.textContent = "Asking iNaturalist…";
     try {
-      const result = await nearbyObservations({ lat, lon });
+      // Scope the query to this region's natives, so iNaturalist only returns —
+      // and we only cache — plants that belong here.
+      const taxonIds = inatIdsForRegions([region.meta.id]);
+      const result = await nearbyObservations({ lat, lon, taxonIds });
       const mine = observationsForTaxon(result, inatId);
-      render(result, mine);
+      render(result, mine, region);
     } catch {
       showNote("We couldn't reach iNaturalist just now. It's called straight from your browser, so a flaky connection or a blocked request will stop it — try again later.");
     } finally {
@@ -87,14 +120,12 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
     }
   }
 
-  function render(result: NearbyResult, mine: ObservationSummary[]): void {
+  function render(result: NearbyResult, mine: ObservationSummary[], region: RegionDef): void {
     clear(out);
     if (!mine.length) {
-      // We got a nearby list but this species wasn't among the closest sightings.
-      const note = inatId
-        ? `No research-grade ${plant.common.toLowerCase()} sightings turned up among the ${result.observations.length} closest plant observations here. It may still grow nearby — it just hasn't been photographed and verified close by on iNaturalist.`
-        : `We don't have an iNaturalist taxon id for ${plant.common} yet, so we can't match it to nearby sightings.`;
-      out.append(el("p", { class: "note warn", style: "margin-top:0.6rem" }, note));
+      // Native here by our data — just not photographed-and-verified close by yet.
+      out.append(el("p", { class: "note warn", style: "margin-top:0.6rem" },
+        `${plant.common} is native to ${region.meta.name}, but no one has photographed and verified one close to you on iNaturalist yet. It's still worth planting — the local showcase just isn't there to point you to.`));
       out.append(freshnessLine(result));
       return;
     }
@@ -105,11 +136,26 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
     out.append(
       el("p", { style: "margin:0.6rem 0 0.4rem" }, [
         el("strong", {}, `Found ${mine.length} nearby `),
-        `research-grade sighting${mine.length === 1 ? "" : "s"} — real ${plant.common.toLowerCase()} someone verified and photographed close to you:`,
+        `research-grade sighting${mine.length === 1 ? "" : "s"} — real ${plant.common.toLowerCase()}, native to ${region.meta.name}, that someone verified and photographed close to you:`,
       ]),
     );
     out.append(el("div", { class: "obs-list" }, shown.map(observationCard)));
     out.append(freshnessLine(result));
+  }
+
+  // "Our data lists this as native to Florida, not the Pacific Northwest…"
+  function nativeElsewhereNote(region: RegionDef): string {
+    const names = nativeRegionIds
+      .map((id) => REGIONS.find((r) => r.meta.id === id)?.meta.name)
+      .filter(Boolean)
+      .join(" and ");
+    const belongs = names ? `native to ${names}` : "native to another region";
+    return `Our data lists ${plant.common} as ${belongs}, not ${region.meta.name}. It may turn up on iNaturalist near you as a planted or escaped specimen, but we won't showcase it as a local native where it doesn't belong — that's the opposite of what Indigene is for.`;
+  }
+
+  function resetButton(): void {
+    findBtn.disabled = false;
+    findBtn.textContent = `📷 See ${plant.common.toLowerCase()} growing near me`;
   }
 
   function observationCard(o: ObservationSummary): HTMLElement {

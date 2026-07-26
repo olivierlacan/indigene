@@ -1,12 +1,16 @@
 // Minimal IndexedDB wrapper — no dependency. Local-first: saved spots live here
-// and never leave the device. One store keyed by id, plus a tiny key/value
-// store for app preferences (weights, last spot).
+// and never leave the device. One store keyed by id, a tiny key/value store for
+// app preferences (weights, last spot), and a cache of trimmed iNaturalist
+// observations so the "growing near you" layer hits the network at most once
+// per area (see `lib/nearby.ts`).
 import type { SavedSpot } from "./types";
+import type { ObservationSummary } from "./lib/inaturalist";
 
 const DB_NAME = "indigene";
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 const SPOTS = "spots";
 const KV = "kv";
+const OBS = "observations";
 
 let dbp: Promise<IDBDatabase> | null = null;
 
@@ -21,6 +25,9 @@ function open(): Promise<IDBDatabase> {
       }
       if (!db.objectStoreNames.contains(KV)) {
         db.createObjectStore(KV);
+      }
+      if (!db.objectStoreNames.contains(OBS)) {
+        db.createObjectStore(OBS, { keyPath: "key" });
       }
     };
     req.onsuccess = () => resolve(req.result);
@@ -68,4 +75,32 @@ export async function kvGet<T>(key: string): Promise<T | undefined> {
 
 export async function kvSet<T>(key: string, value: T): Promise<void> {
   await tx(KV, "readwrite", (s) => s.put(value, key));
+}
+
+// --- iNaturalist observation cache ---------------------------------------
+// One record per geographic cell (see `lib/nearby.ts` for how the key is
+// formed). We store only the trimmed observation summaries — never the raw
+// iNaturalist payload — plus the point we searched from and when, so a read can
+// decide whether the cache is still fresh.
+export interface CachedObservations {
+  /** Cache key: rounded coordinates + radius, so nearby spots reuse one entry. */
+  key: string;
+  /** When the list was captured (epoch ms), for staleness checks. */
+  capturedAt: number;
+  /** The exact point searched, so distances stay meaningful on reuse. */
+  from: { lat: number; lon: number };
+  radiusKm: number;
+  observations: ObservationSummary[];
+}
+
+export async function getCachedObservations(
+  key: string,
+): Promise<CachedObservations | undefined> {
+  return tx(OBS, "readonly", (s) => s.get(key));
+}
+
+export async function putCachedObservations(
+  record: CachedObservations,
+): Promise<void> {
+  await tx(OBS, "readwrite", (s) => s.put(record));
 }

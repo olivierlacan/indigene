@@ -100,6 +100,32 @@ new UI — the MR description must show it, not just describe it. The procedure:
 Verify the screenshots actually show the change before embedding them — a
 stale build or wrong port produces two identical images that look like proof.
 
+## Every PR carries its changelog entry
+
+`CHANGELOG.md` (Keep a Changelog format) is the single source of the public
+**What's new** page at `/release-notes/` — the Pages deploy compiles it with
+`npm run release-notes` on every push to `main`. That gives the changelog three
+rules:
+
+- **Add an entry in the same PR as the change**, under `## [Unreleased]`. The
+  `Changelog` CI check reminds you; apply the `skip-changelog` label only when
+  nothing notable changed (screenshots, CI plumbing, typos).
+- **Write `Added` / `Changed` / `Fixed` bullets for everyone.** They're
+  published verbatim to a general audience — including kids and grandparents —
+  so use plain, warm words and explain any term of art in place. Reviewing the
+  entry in the PR *is* reviewing the release notes. Developer-facing detail
+  goes under `### Internal`, which is never published.
+- **Cut versions at feature boundaries, Maison-style.** When a coherent piece
+  of the product has landed, retitle `Unreleased` to `## [0.x] - YYYY-MM-DD`,
+  give it a bold one-line name on the next line, bump `app/package.json`'s
+  `version` to match, add the compare link at the bottom, and start a fresh
+  `Unreleased`. No fixed cadence, no conventional commits — the version number
+  just increments when a feature ships.
+
+Preview the page locally with `npm run release-notes` (writes
+`app/dist/release-notes/index.html`); the script fails loudly if the changelog
+doesn't parse, and the same check runs on every PR.
+
 ## Keep the bundle-size figure honest
 
 Several docs quote the app's gzipped bundle size as a point of pride

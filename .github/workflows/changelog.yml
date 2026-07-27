@@ -1,0 +1,47 @@
+# Reminds every PR to carry its CHANGELOG.md entry, since the public
+# "What's new" page is compiled from the changelog (see CHANGELOG.md's header
+# for the writing rules). Reviewing the entry in the PR is how release notes
+# get reviewed before they're published.
+#
+# Not every change is notable: apply the `skip-changelog` label (screenshots,
+# CI plumbing, typo fixes) and this check passes without an entry.
+name: Changelog
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+
+permissions:
+  contents: read
+
+jobs:
+  entry:
+    name: Changelog entry
+    runs-on: ubuntu-latest
+    steps:
+      - name: Skip via label
+        if: contains(github.event.pull_request.labels.*.name, 'skip-changelog')
+        run: echo "skip-changelog label applied — no entry required."
+
+      # For pull_request events HEAD is the test merge of the PR into its
+      # base, so `HEAD^1 → HEAD` is exactly what this PR changes. Depth 2
+      # makes that first parent available.
+      - uses: actions/checkout@v4
+        if: ${{ !contains(github.event.pull_request.labels.*.name, 'skip-changelog') }}
+        with:
+          fetch-depth: 2
+
+      - name: Check that the PR updates CHANGELOG.md
+        if: ${{ !contains(github.event.pull_request.labels.*.name, 'skip-changelog') }}
+        run: |
+          if git diff --name-only HEAD^1 HEAD | grep -qx 'CHANGELOG.md'; then
+            echo "CHANGELOG.md updated — thank you."
+          else
+            echo "::error::This PR doesn't update CHANGELOG.md. Add a plain-words entry under Unreleased (it becomes the public What's-new page), or apply the 'skip-changelog' label if nothing notable changed."
+            exit 1
+          fi
+
+      - name: Verify the changelog still compiles
+        if: ${{ !contains(github.event.pull_request.labels.*.name, 'skip-changelog') }}
+        working-directory: app
+        run: node scripts/build-release-notes.mjs --out /tmp/release-notes-check.html

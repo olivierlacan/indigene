@@ -1,0 +1,296 @@
+# Changelog
+
+All notable changes to Indigene are recorded here.
+
+The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+with two house rules:
+
+- **Versions are feature releases, not schedules.** A version is cut when a
+  coherent piece of the product lands — then it gets a number, a name, and a
+  date (the way [Maison](https://github.com/olivierlacan/maison) does it).
+  There is no fixed cadence and no conventional-commit machinery; just add
+  plain bullets to **Unreleased** as you go, and promote them to a numbered
+  release at a natural boundary.
+- **The public "What's new" page is compiled from this file.** Everything under
+  `Added` / `Changed` / `Fixed` is published verbatim for a general audience —
+  including kids and grandparents — so write those bullets in plain, warm
+  words. Developer-facing detail goes under `Internal`, which never leaves
+  this file. Reviewing a changelog entry in a PR *is* reviewing the release
+  notes.
+
+The bold line under each version heading is the release's name; it becomes the
+subtitle on the What's new page.
+
+## [Unreleased]
+
+### Added
+
+- A public **What's new** page: every release of Indigene described in plain
+  words, newest first, at `/release-notes/`. Nothing to install, no account —
+  it's just a web page you can share.
+
+### Internal
+
+- This `CHANGELOG.md` is the single source of the What's new page.
+  `app/scripts/build-release-notes.mjs` compiles it to a static, app-styled
+  HTML page; the Pages deploy workflow runs it on every push to `main`, so
+  notes republish themselves when a PR that touched the changelog merges.
+- A `Changelog entry` PR check reminds authors to update this file; apply the
+  `skip-changelog` label when a change genuinely has nothing notable in it.
+- `app/package.json`'s `version` tracks the latest cut release.
+
+## [0.10] - 2026-07-27
+
+**Everything in plain sight**
+
+### Added
+
+- A Browse page of its own: the regions we cover and "start from a plant" now
+  live one tap from the home page — for anyone who'd rather look around
+  without sharing their location.
+
+### Changed
+
+- Almost nothing hides behind a tap anymore. A plant's ecosystem, propagation,
+  and reference sections, the 60-second soil check, the sky-scan explanation,
+  and each result's score breakdown are now simply visible on the page. The
+  only fold-away panels left are the two big ones on results — "What matters
+  most?" and "Filters" — and those now have clear Open/Close buttons.
+- The home page gets to the point: the pitch, why native plants matter (in
+  plain view, no tap needed), the Start button, and a quiet link to browsing.
+- Words got shorter and warmer across the home page, including the promise
+  that matters most: "No account, no tracking. Everything stays in your
+  browser and works offline."
+
+### Fixed
+
+- Buttons on phones now keep their labels on one line — like "See it growing
+  near me" and "Check my location" — so they never break in half or shift
+  while you're reaching for them.
+
+## [0.9] - 2026-07-27
+
+**See them growing for real**
+
+### Added
+
+- Real photos of recommended plants growing near you, taken by people in your
+  area and shared on [iNaturalist](https://www.inaturalist.org). Open a
+  plant's page and tap "See it growing near you" — nothing loads until you ask.
+- Not standing there right now? Tap "Look it up where it's native" and pick a
+  region instead: you'll see photos of the plant from anywhere it naturally
+  grows, no location sharing needed.
+- Photos open in a full-screen viewer inside the app, so you can look closely
+  and then get right back to where you were.
+
+### Changed
+
+- Nearby photo results only show plants that are truly native around that
+  spot, so a garden escapee never sneaks into your recommendations.
+- Every photo credits the person who took it and links back to their original
+  sighting, and only photos their takers chose to share openly are shown.
+
+## [0.8] - 2026-07-22
+
+**One plant, one name**
+
+### Added
+
+- A built-in plant name book (a *registry*): every plant Indigene knows has
+  exactly one entry tying together its scientific name, its common names, and
+  its identity in the world's big plant databases.
+- A search page: type any name — common or scientific — and Indigene finds the
+  plant, or says honestly when a name could mean more than one plant.
+- Plant pages now show **references**: links to the very same plant at USDA,
+  GBIF, and other authorities, so you can double-check anything we say.
+- iNaturalist links now land directly on that exact species' page.
+
+### Internal
+
+- The registry is generated from the catalog (`npm run registry:build`) and
+  audited (`npm run registry:check`); it also ships as a hostable static JSON
+  artifact under `app/public/registry/`.
+- External identifiers (Wikidata + GBIF) are reconciled by a scheduled
+  workflow that writes to `registry.overrides.json` via PRs; the workflow was
+  hardened to not red-fail when PR creation is blocked, and `registry:check`
+  now survives reconciliation.
+- Corrected the long-stale bundle-size figure across the docs (~28 → ~96 KB
+  gzip) and documented keeping it honest in `CLAUDE.md`.
+
+## [0.7] - 2026-07-21
+
+**Meet the wildlife**
+
+### Added
+
+- Browse by wildlife: start from a butterfly, moth, bee, bird, or mammal and
+  see which native plants support it — because "which plants bring monarchs?"
+  is often the real question.
+- Every plant–animal tie says *how* the plant helps (caterpillar food, nectar,
+  berries, seeds, or shelter) and how much the animal depends on it — from
+  "this is its only host plant" to "one of many it can use".
+- Every wildlife relationship names its source, with links straight to the
+  species record where the source has one.
+- Plant pages show the wildlife each plant brings in, with links both ways.
+
+### Changed
+
+- You can now cap results by mature height and spread — handy for planting
+  under a window or a power line.
+- The header now fits every phone: "Saved" moved into a compact menu, and the
+  app's name is never cut off.
+- Relationship tags are one short word each; tap one to read the full meaning.
+
+### Fixed
+
+- Wildlife pages got the same comfortable margins as the rest of the app.
+
+## [0.6] - 2026-07-19
+
+**Readable by everyone**
+
+### Changed
+
+- The home page now leads with why native plants matter — what's at stake for
+  birds, butterflies, and clean water — before it explains what the app does,
+  and shows how to ask for your area if it isn't covered yet.
+- Every color in the app, in light mode and dark mode, now meets the strictest
+  readability standard there is (WCAG AAA contrast) — so text stays clear in
+  bright sunlight, and for readers whose eyes need more contrast.
+
+## [0.5] - 2026-07-18
+
+**Make more of them**
+
+### Added
+
+- Every plant now has "how to make more of it": plain-words tips for growing
+  new plants from seed, cuttings, or division — free plants for you, your
+  neighbors, and the birds.
+
+### Changed
+
+- Every expandable section in the app now looks and works the same way — once
+  you've opened one, you know how to open them all.
+- Section titles are shorter and clearer, and the first step is now simply
+  called "Spot".
+- You can share a link that opens a specific section of a plant's page, like
+  its propagation tips.
+
+## [0.4] - 2026-07-17
+
+**No GPS required**
+
+### Added
+
+- Type your town or ZIP code instead of sharing your location — or just pick
+  your region from a list. Nobody is ever asked for coordinates.
+- If Indigene doesn't have a plant list for a spot yet, it says so the moment
+  you pick it — and shows you what it does cover, plus where to request your
+  area.
+
+### Changed
+
+- Place lookups now come from OpenStreetMap, and the app always shows town
+  names, never raw numbers.
+- Garden jargon never stands alone: terms like "zone 8b" always come with a
+  plain-words translation and a link to learn more.
+
+### Fixed
+
+- The place-search button now sits right beside the search box, at a matching
+  size.
+- The map no longer promises that fine-tuning the pin sharpens the sun
+  estimate (it doesn't).
+
+## [0.3] - 2026-07-16
+
+**Explore and share**
+
+### Added
+
+- Explore pages: browse every plant Indigene knows without sharing your
+  location — and every plant, region, and category has its own address you can
+  share with anyone.
+- Full plant lists for each region at shareable addresses, with a switcher to
+  hop between regions.
+- A stat grid on every plant, like a trading card. Tap any stat to read what
+  it means in plain words.
+- The location map now draws real streets from OpenStreetMap (with a simple
+  grid when you're offline).
+- Short explanations appear right where a new idea first shows up, so you
+  learn as you go — and growth expectations now come from the data, not
+  guesses.
+
+### Changed
+
+- Getting around got easier: section navigation, a way back home from every
+  page, and region links right on the home page.
+- The re-sort panel can be closed, the growth chart is right-sized, keystone
+  species wear a little arch icon, and species counts show their sources.
+- The GPS map starts one zoom level farther out, so the neighborhood you see
+  is one you recognize.
+
+## [0.2] - 2026-07-15
+
+**More places, real boundaries**
+
+### Added
+
+- Three new regional plant lists: the Pacific Northwest west of the Cascades,
+  north & central Florida, and south Florida & the Keys — and the app picks
+  the right list from where you're standing.
+- Regions now follow real ecological boundaries (EPA ecoregions), not straight
+  lines on a map — so a spot just east of the Cascade crest no longer gets the
+  west-side list, and Florida splits where the subtropics truly begin. The
+  confirm screen names the actual ecoregion you're standing in.
+- Every plant's naming and classification is backed by named, linkable
+  taxonomy sources.
+- Indigene went live on the public web — free to visit in any browser, nothing
+  to install (though you can add it to your home screen).
+
+### Internal
+
+- Deploys to GitHub Pages via Actions on every push to `main`; the optional
+  Ruby API is not part of the deploy.
+
+## [0.1] - 2026-07-12
+
+**Stand in a spot**
+
+### Added
+
+- The first version of Indigene. Stand somewhere, share your location, and get
+  native plants that will truly thrive right there — ranked by what they do
+  for birds, butterflies, bees, soil, and water.
+- Sun, measured honestly: answer one simple question about your spot's sun, or
+  point your camera at the sky and let the app measure sun-hours itself. The
+  simple question always works; the camera is optional.
+- The ground gets checked, not assumed: the app says "the soil map says clay —
+  here's a 60-second hand test to see if that's true where you're standing."
+- Every plant shows how big it will really get in 1, 3, 5, and 10 years, drawn
+  to scale beside a person — no surprises a decade later.
+- The ranking is transparent and yours to adjust, with filters for deer
+  resistance, thorns, pet safety, and plants that survive with zero watering.
+- Saved spots stay on your phone. The whole app works offline, installs to
+  your home screen, and never asks for an account.
+- A starting list of 40 Mid-Atlantic / Northeast Piedmont natives with real
+  size-over-time and ecosystem numbers.
+
+### Internal
+
+- Vanilla TypeScript on the DOM — no framework, zero runtime dependencies —
+  bundled by Vite. A thin, optional Hanami 2 API (`server/`) proxies site
+  data; the PWA works without it.
+
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/f84450c...HEAD
+[0.10]: https://github.com/olivierlacan/indigene/compare/9453251...f84450c
+[0.9]: https://github.com/olivierlacan/indigene/compare/6e72889...9453251
+[0.8]: https://github.com/olivierlacan/indigene/compare/d45eda0...6e72889
+[0.7]: https://github.com/olivierlacan/indigene/compare/6affce6...d45eda0
+[0.6]: https://github.com/olivierlacan/indigene/compare/c8a56bc...6affce6
+[0.5]: https://github.com/olivierlacan/indigene/compare/a54ef90...c8a56bc
+[0.4]: https://github.com/olivierlacan/indigene/compare/253bede...a54ef90
+[0.3]: https://github.com/olivierlacan/indigene/compare/c0e70f6...253bede
+[0.2]: https://github.com/olivierlacan/indigene/compare/ac8be53...c0e70f6
+[0.1]: https://github.com/olivierlacan/indigene/commits/ac8be53

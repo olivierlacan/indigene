@@ -24,11 +24,9 @@ import type { Plant, SiteData, SunEstimate, SupportKind } from "../types";
 
 const monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-// The three collapsible/anchorable sections below the profile share one deep-
-// link scheme: #/plants/<slug>/<section>. A link straight to a section opens it
-// and scrolls it into view; opening a section reflects it back into the URL so
-// the link is there to copy. `spot` (the "Want to plant?" tool) is always open,
-// so it only ever scrolls.
+// The anchorable sections below the profile share one deep-link scheme:
+// #/plants/<slug>/<section>. A link straight to a section scrolls it into
+// view; every section is always open.
 const SECTIONS = ["ecosystem", "propagation", "references", "spot"] as const;
 type Section = (typeof SECTIONS)[number];
 const sectionDomId = (s: Section): string => `sec-${s}`;
@@ -329,8 +327,8 @@ export function renderPlant(main: HTMLElement, param?: string): void {
       status,
       el("p", { style: "margin:0.6rem 0 0;font-weight:650" }, "How much sun does that spot get?"),
       sunRow,
-      el("details", { style: "margin-top:0.4rem" }, [
-        el("summary", {}, "🔎 No GPS? Search by town"),
+      el("div", { style: "margin-top:0.4rem" }, [
+        el("p", { style: "font-weight:650;margin:0.6rem 0 0" }, "🔎 No GPS? Search by town"),
         el("form", {
           onSubmit: (e: Event) => { e.preventDefault(); void doSearch(); },
         }, [
@@ -346,30 +344,21 @@ export function renderPlant(main: HTMLElement, param?: string): void {
   }
 }
 
-// A standalone, collapsible card — the same shape the "Want to plant?" tool
-// uses — that opens on its own deep link and writes that link back to the URL
-// when opened by hand. Kept collapsed by default so the profile stays scannable.
-function sectionCard(section: Section, slug: string, heading: string, body: HTMLElement[]): HTMLDetailsElement {
-  const details = el("details", { class: "card plant-section", id: sectionDomId(section) }, [
-    el("summary", {}, heading),
+// A standalone card — the same shape the "Want to plant?" tool uses — that a
+// deep link scrolls into view. Always open: these used to collapse, but
+// content shouldn't hide behind a tap.
+function sectionCard(section: Section, heading: string, body: HTMLElement[]): HTMLElement {
+  return el("section", { class: "card plant-section", id: sectionDomId(section) }, [
+    el("h3", {}, heading),
     ...body,
   ]);
-  const base = `#/plants/${slug}`;
-  details.addEventListener("toggle", () => {
-    if (details.open) {
-      history.replaceState(null, "", `${base}/${section}`);
-    } else if (location.hash === `${base}/${section}`) {
-      history.replaceState(null, "", base);
-    }
-  });
-  return details;
 }
 
 // The seven ecosystem-benefit scores, each with its fixed icon and plain-words
 // gloss. Its own card now, so it can be linked to and opened directly. When the
 // plant has named wildlife ties, they lead the card — the specific creatures a
 // person can go looking for, above the abstract scores.
-function ecosystemSection(p: Plant, entries: PlantEntry[]): HTMLDetailsElement {
+function ecosystemSection(p: Plant, entries: PlantEntry[]): HTMLElement {
   const scoreParts = (Object.keys(scoreLabels) as (keyof typeof scoreLabels)[]).map((key) => {
     const val = (p.scores as unknown as Record<string, number>)[key];
     const label = scoreLabels[key];
@@ -383,7 +372,7 @@ function ecosystemSection(p: Plant, entries: PlantEntry[]): HTMLDetailsElement {
     ]);
   });
   const feeds = whoItFeeds(entries);
-  return sectionCard("ecosystem", p.id, "🦋 What it does for the ecosystem", [
+  return sectionCard("ecosystem", "🦋 What it does for the ecosystem", [
     ...(feeds ? [feeds] : []),
     el("ul", { class: "score-list" }, scoreParts),
   ]);
@@ -441,7 +430,7 @@ function whoItFeeds(entries: PlantEntry[]): HTMLElement | null {
 // "Already have one? Here's how to make more." Every method the plant lists is
 // spelled out in plain words (from the shared glossary), so a term like
 // "stratification" never appears without the what-you-actually-do beside it.
-function propagationSection(p: Plant): HTMLDetailsElement {
+function propagationSection(p: Plant): HTMLElement {
   const { methods, note, basis } = p.propagation;
   const methodItems = methods.map((m) => {
     const g = propagationMethods[m];
@@ -450,7 +439,7 @@ function propagationSection(p: Plant): HTMLDetailsElement {
       el("p", { class: "score-why" }, g.plain),
     ]);
   });
-  return sectionCard("propagation", p.id, "🪴 How to grow more", [
+  return sectionCard("propagation", "🪴 How to grow more", [
     el("p", { class: "kv", style: "margin-top:0.5rem" }, [
       el("span", { class: "k" }, "For this plant: "),
       note,
@@ -470,7 +459,7 @@ function propagationSection(p: Plant): HTMLDetailsElement {
 // a stable record link where an id is reconciled, and a name search as a graceful
 // fallback where it isn't yet — so the section is useful today and gets richer as
 // identifiers are filled in. This is the registry's first user-facing use.
-function referencesSection(p: Plant): HTMLDetailsElement {
+function referencesSection(p: Plant): HTMLElement {
   const entry = entryForPlant(p.id);
   const links = entry ? deepLinks(entry) : null;
   const SOURCES: { key: string; label: string; sub: string }[] = [
@@ -505,16 +494,15 @@ function referencesSection(p: Plant): HTMLDetailsElement {
       ]),
     );
   }
-  return sectionCard("references", p.id, "🔎 Look it up elsewhere", body);
+  return sectionCard("references", "🔎 Look it up elsewhere", body);
 }
 
-// Open the deep-linked section (if it collapses) and bring it into view. Runs
-// after the router's own scroll-to-top on the next frame, so it wins.
+// Bring the deep-linked section into view. Runs after the router's own
+// scroll-to-top on the next frame, so it wins.
 function revealSection(section: Section): void {
   requestAnimationFrame(() => {
     const target = document.getElementById(sectionDomId(section));
     if (!target) return;
-    if (target instanceof HTMLDetailsElement) target.open = true;
     target.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 }

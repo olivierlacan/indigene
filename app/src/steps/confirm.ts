@@ -139,8 +139,8 @@ function guessMoisture(drainage: string): MoistureBand {
 }
 
 function ribbonTest(): HTMLElement {
-  return el("details", {}, [
-    el("summary", {}, "🤲 The 60-second soil check"),
+  return el("div", {}, [
+    el("p", { style: "font-weight:700;margin:0.8rem 0 0.3rem" }, "🤲 The 60-second soil check"),
     el("ol", { style: "padding-left:1.2rem;line-height:1.6" }, [
       el("li", {}, "Grab a small handful of soil and dampen it so it's moist but not dripping."),
       el("li", {}, "Squeeze and knead it into a ball. If it won't hold together at all and feels gritty, it's sandy → choose Dry above."),

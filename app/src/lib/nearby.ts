@@ -46,9 +46,15 @@ export function cacheKey(lat: number, lon: number, radiusKm: number): string {
   return `${cell(lat)},${cell(lon)}@${radiusKm}`;
 }
 
-/** The cache key for a region lookup — one entry per region. */
+/** The cache key for a region lookup — one entry per region (its natives). */
 export function regionCacheKey(regionId: string): string {
   return `region:${regionId}`;
+}
+
+/** The cache key for one plant's sightings inside a region it's *not* native to
+ *  — a per-plant, per-region entry, kept separate from the region-natives list. */
+export function plantRegionCacheKey(regionId: string, inatId: string): string {
+  return `region:${regionId}:t${inatId}`;
 }
 
 /** True when a cache record is missing or older than the TTL. */
@@ -136,6 +142,26 @@ export async function regionObservations(
   return loadIndexed(
     { key: regionCacheKey(regionId), from: boundsCenter(bounds), regionId },
     () => fetchRegionPlantObservations({ bounds, taxonIds }),
+    now,
+  );
+}
+
+/**
+ * Sightings of *one* plant inside a region's box — used to look a plant up in a
+ * region it's *not* native to ("where else does it turn up?"). Scoped to just
+ * this taxon (not the region's natives), cached per plant+region so it never
+ * mingles with the region-natives list. The layer's native-only filter still
+ * applies, but this plant is one of our catalog natives, so it passes.
+ */
+export async function plantInRegionObservations(
+  regionId: string,
+  bounds: Bounds,
+  inatId: string,
+  now: number = Date.now(),
+): Promise<NearbyResult> {
+  return loadIndexed(
+    { key: plantRegionCacheKey(regionId, inatId), from: boundsCenter(bounds), regionId },
+    () => fetchRegionPlantObservations({ bounds, taxonIds: [inatId] }),
     now,
   );
 }

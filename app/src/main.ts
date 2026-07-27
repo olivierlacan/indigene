@@ -8,6 +8,7 @@ import { renderConfirm } from "./steps/confirm";
 import { renderResults } from "./steps/results";
 import { renderSaved } from "./steps/saved";
 import { renderExplore } from "./steps/explore";
+import { renderBrowse } from "./steps/browse";
 import { renderSearch } from "./steps/search";
 import { renderPlant } from "./steps/plant";
 import { renderRegion } from "./steps/region";
@@ -24,6 +25,7 @@ const STEPS: Record<string, { fn: StepFn; label: string; inFlow: boolean }> = {
   confirm: { fn: renderConfirm, label: "Soil", inFlow: true },
   results: { fn: renderResults, label: "Plants", inFlow: true },
   saved: { fn: renderSaved, label: "Saved", inFlow: false },
+  browse: { fn: renderBrowse, label: "Browse", inFlow: false },
   plants: { fn: renderExplore, label: "Explore", inFlow: false },
   regions: { fn: renderExplore, label: "Explore", inFlow: false },
   search: { fn: renderSearch, label: "Search", inFlow: false },
@@ -85,6 +87,7 @@ function renderStepRail(active: string): void {
 
 /** Which header nav link, if any, a step belongs to. Flow steps map to none. */
 const SECTION_OF: Record<string, string> = {
+  browse: "explore",
   plants: "explore",
   regions: "explore",
   search: "search",

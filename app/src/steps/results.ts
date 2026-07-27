@@ -197,7 +197,7 @@ export function renderResults(main: HTMLElement): void {
     el("p", { class: "step-lede" }, conditions),
     whyThis("How does this ranking work?", [
       "Each plant's wildlife value — caterpillars hosted, pollinators and birds fed, rain soaked up — is weighed against how well it fits this spot's sun, moisture, and winter cold. ",
-      "Nothing is a black box: open any plant's score to see every number and where it came from.",
+      "Nothing is a black box: every plant's score is broken out right on its card.",
     ]),
     el("div", { class: "result-controls" }, [weights, filters]),
     el("div", { class: "btn-row", style: "margin-top:0" }, [

@@ -78,18 +78,22 @@ export async function kvSet<T>(key: string, value: T): Promise<void> {
 }
 
 // --- iNaturalist observation cache ---------------------------------------
-// One record per geographic cell (see `lib/nearby.ts` for how the key is
-// formed). We store only the trimmed observation summaries — never the raw
-// iNaturalist payload — plus the point we searched from and when, so a read can
-// decide whether the cache is still fresh.
+// One record per lookup area (see `lib/nearby.ts` for how the key is formed):
+// a geographic cell for a "near me" lookup, or a region id for an "in this
+// region" lookup. We store only the trimmed observation summaries — never the
+// raw iNaturalist payload — plus the point we measured from and when, so a read
+// can decide whether the cache is still fresh.
 export interface CachedObservations {
-  /** Cache key: rounded coordinates + radius, so nearby spots reuse one entry. */
+  /** Cache key: cell+radius for a spot lookup, or `region:<id>` for a region. */
   key: string;
   /** When the list was captured (epoch ms), for staleness checks. */
   capturedAt: number;
-  /** The exact point searched, so distances stay meaningful on reuse. */
+  /** The point distances were measured from (the spot; a region's box center). */
   from: { lat: number; lon: number };
-  radiusKm: number;
+  /** Search radius (spot lookups only). */
+  radiusKm?: number;
+  /** The region id this list covers (region lookups only). */
+  regionId?: string;
   observations: ObservationSummary[];
 }
 

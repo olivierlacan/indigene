@@ -54,6 +54,29 @@ export interface NearbyQuery {
   taxonIds?: readonly string[];
 }
 
+/** A lat/lon bounding box — the coverage box of an Indigene region. Used to look
+ *  up sightings *within a region* without being there, instead of a point + radius. */
+export interface Bounds {
+  swLat: number;
+  swLon: number;
+  neLat: number;
+  neLon: number;
+}
+
+export interface RegionQuery {
+  bounds: Bounds;
+  /** Max observations to request. Default `DEFAULT_PER_PAGE`, capped at 200. */
+  perPage?: number;
+  /** Taxa to restrict to — the region's natives, same native-only guarantee. */
+  taxonIds?: readonly string[];
+}
+
+/** The center of a bounding box — a representative point for the region, used
+ *  only to label the lookup, never to compute a "distance from you". */
+export function boundsCenter(b: Bounds): { lat: number; lon: number } {
+  return { lat: (b.swLat + b.neLat) / 2, lon: (b.swLon + b.neLon) / 2 };
+}
+
 /** A single photo, trimmed to what we render and the credit we must show. */
 export interface ObservationPhoto {
   /** iNaturalist photo id. */
@@ -98,38 +121,50 @@ export interface ObservationSummary {
   photos: ObservationPhoto[];
 }
 
-/**
- * Build the request URL. Pure and exported so the query is inspectable and the
- * knobs are in one place. We ask iNaturalist for:
- *   - `iconic_taxa=Plantae` — plants only,
- *   - `quality_grade=research` — community-verified IDs only,
- *   - `photos=true` — every result has at least one photo,
- *   - `lat`/`lng`/`radius` — bounded to the spot,
- *   - `taxon_id` — when given, restricts to those taxa (our region's natives),
- *     so a non-native garden escape or invasive nearby is never returned.
- * We keep `per_page` modest and trim the payload ourselves (see
- * `summarizeObservations`) rather than storing anything raw.
- */
-export function buildObservationsUrl(q: NearbyQuery): string {
-  const radius = q.radiusKm ?? DEFAULT_RADIUS_KM;
-  const perPage = Math.min(q.perPage ?? DEFAULT_PER_PAGE, 200);
+// The filters every query shares, whatever the geography: plants only,
+// community-verified IDs only, every result photographed, a modest page size,
+// most-recent first, and the native-taxa scope when given. The trim
+// (`summarizeObservations`) is what actually shrinks the payload we keep.
+function commonParams(perPage: number | undefined, taxonIds: readonly string[] | undefined): URLSearchParams {
   const params = new URLSearchParams({
-    lat: String(q.lat),
-    lng: String(q.lon),
-    radius: String(radius),
     iconic_taxa: "Plantae",
     quality_grade: "research",
     photos: "true",
-    per_page: String(perPage),
-    // Nearest first isn't a first-class sort on this endpoint; we bound by
-    // radius and sort by our own computed distance after trimming. Order by
-    // most recently observed so a stale-but-cached list still reads as current.
+    per_page: String(Math.min(perPage ?? DEFAULT_PER_PAGE, 200)),
+    // For a point query we re-sort by our own computed distance afterwards; for
+    // a region query there's no "you" to measure from, so this recency order is
+    // the one the user actually sees. Either way a stale cache reads as current.
     order_by: "observed_on",
     order: "desc",
   });
-  if (q.taxonIds && q.taxonIds.length) {
-    params.set("taxon_id", q.taxonIds.join(","));
-  }
+  if (taxonIds && taxonIds.length) params.set("taxon_id", taxonIds.join(","));
+  return params;
+}
+
+/**
+ * Build a *point* request URL (spot + radius). Pure and exported so the query is
+ * inspectable. `lat`/`lng`/`radius` bound it to the spot; `taxon_id` (when given)
+ * restricts to those taxa so a non-native garden escape nearby is never returned.
+ */
+export function buildObservationsUrl(q: NearbyQuery): string {
+  const params = commonParams(q.perPage, q.taxonIds);
+  params.set("lat", String(q.lat));
+  params.set("lng", String(q.lon));
+  params.set("radius", String(q.radiusKm ?? DEFAULT_RADIUS_KM));
+  return `${API_BASE}?${params.toString()}`;
+}
+
+/**
+ * Build a *region* request URL bounded by a box (`nelat/nelng/swlat/swlng`) —
+ * for looking up sightings inside a region without being there. Same native-taxa
+ * scope, so it only ever returns plants that belong in that region.
+ */
+export function buildBoundsUrl(q: RegionQuery): string {
+  const params = commonParams(q.perPage, q.taxonIds);
+  params.set("swlat", String(q.bounds.swLat));
+  params.set("swlng", String(q.bounds.swLon));
+  params.set("nelat", String(q.bounds.neLat));
+  params.set("nelng", String(q.bounds.neLon));
   return `${API_BASE}?${params.toString()}`;
 }
 
@@ -204,14 +239,19 @@ function trimPhotos(raw: any): ObservationPhoto[] {
 }
 
 /**
- * Trim a raw iNaturalist `results` array to `ObservationSummary[]`, keyed to a
- * query point so each result carries its distance. Observations with no
- * licence-bearing photo, or no taxon id (the join key), are dropped. Nearest
- * first; obscured-location results (no distance) sort to the end.
+ * Trim a raw iNaturalist `results` array to `ObservationSummary[]`.
+ *
+ * `from` is the point to measure each sighting's distance against — the user's
+ * spot in a "near me" lookup. Pass `null` for a region lookup (you're *not*
+ * there, so "3 km away" would be meaningless): distances stay null and the list
+ * keeps the API's most-recent-first order instead of sorting by distance.
+ *
+ * Observations with no licence-bearing photo, or no taxon id (the join key), are
+ * dropped. With a point, nearest first; obscured-location results sort to the end.
  */
 export function summarizeObservations(
   results: unknown,
-  from: { lat: number; lon: number },
+  from: { lat: number; lon: number } | null,
 ): ObservationSummary[] {
   const rows: any[] = Array.isArray(results) ? results : [];
   const out: ObservationSummary[] = [];
@@ -229,11 +269,13 @@ export function summarizeObservations(
       place: str(r?.place_guess),
       lat: pt?.lat ?? null,
       lon: pt?.lon ?? null,
-      distanceKm: pt ? haversineKm(from.lat, from.lon, pt.lat, pt.lon) : null,
+      distanceKm: from && pt ? haversineKm(from.lat, from.lon, pt.lat, pt.lon) : null,
       observedOn: str(r?.observed_on),
       photos,
     });
   }
+  // Region lookup (no `from`): keep the API's recency order untouched.
+  if (!from) return out;
   return out.sort((a, b) => {
     if (a.distanceKm == null) return b.distanceKm == null ? 0 : 1;
     if (b.distanceKm == null) return -1;
@@ -256,6 +298,22 @@ export async function fetchNearbyPlantObservations(
   if (!res.ok) throw new Error(`iNaturalist ${res.status}`);
   const data = await res.json();
   return summarizeObservations(data?.results, { lat: q.lat, lon: q.lon });
+}
+
+/**
+ * Fetch and trim the research-grade plant observations inside a region's box —
+ * the "look it up in a specific ecoregion even if you're not there" path. Same
+ * one call, same trim; distances are left null (there's no "you" to measure
+ * from) and the list stays most-recent-first.
+ */
+export async function fetchRegionPlantObservations(
+  q: RegionQuery,
+  signal?: AbortSignal,
+): Promise<ObservationSummary[]> {
+  const res = await fetch(buildBoundsUrl(q), { signal });
+  if (!res.ok) throw new Error(`iNaturalist ${res.status}`);
+  const data = await res.json();
+  return summarizeObservations(data?.results, null);
 }
 
 /** Index a trimmed list by iNaturalist taxon id, each bucket nearest-first

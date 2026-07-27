@@ -60,8 +60,10 @@ export interface ObservationPhoto {
   id: number;
   /** ~75px square — the thumbnail in the strip. */
   thumbUrl: string;
-  /** ~500px — the larger view when a thumbnail is opened. */
+  /** ~500px — the mid view (and lightbox fallback on slow connections). */
   mediumUrl: string;
+  /** ~1024px — the crisp view shown in the lightbox. */
+  largeUrl: string;
   /** Licence code as iNaturalist reports it, e.g. "cc-by-nc" or "cc0". Photos
    *  with no licence ("all rights reserved") are dropped before we get here. */
   license: string;
@@ -152,7 +154,7 @@ export function haversineKm(
 // iNaturalist photo URLs embed the size as the final path segment
 // (…/photos/12345/square.jpg). Swap that token to ask for a different size.
 const SIZE_TOKEN = /\/(square|small|medium|large|original)\.(\w+)(\?.*)?$/;
-function photoUrlForSize(url: string, size: "square" | "medium"): string {
+function photoUrlForSize(url: string, size: "square" | "medium" | "large"): string {
   return url.replace(SIZE_TOKEN, `/${size}.$2$3`);
 }
 
@@ -193,6 +195,7 @@ function trimPhotos(raw: any): ObservationPhoto[] {
       id,
       thumbUrl: photoUrlForSize(url, "square"),
       mediumUrl: photoUrlForSize(url, "medium"),
+      largeUrl: photoUrlForSize(url, "large"),
       license,
       attribution: str(p?.attribution) ?? `© observer, ${license.toUpperCase()}`,
     });

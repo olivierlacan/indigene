@@ -25,7 +25,7 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
         resetDraft();
         navigate("location");
       },
-    }, "Start here — where are you standing?"),
+    }, "Start where you're standing"),
     // The escape hatch for people who'd rather not use their location: the
     // regions and featured-plants cards live on the browse page instead.
     el("p", { style: "margin-top:0.6rem;font-size:0.85rem;color:var(--ink-soft);text-align:center" }, [

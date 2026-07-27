@@ -13,28 +13,43 @@
 // It fails loudly on anything it can't parse — a malformed heading or an
 // unknown section name breaks the Pages deploy rather than publishing a
 // half-rendered page.
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { copyFileSync, existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const CHANGELOG = resolve(HERE, "../../CHANGELOG.md");
+const REPO = resolve(HERE, "../..");
+const CHANGELOG = resolve(REPO, "CHANGELOG.md");
 const outFlag = process.argv.indexOf("--out");
 const OUT =
   outFlag !== -1
     ? resolve(process.cwd(), process.argv[outFlag + 1])
     : resolve(HERE, "../dist/release-notes/index.html");
 
-// Keep a Changelog section → public heading. `null` = kept out of the page.
+// Keep a Changelog section → public heading. The page uses the changelog's
+// own vocabulary — KAC's change types are already plain words, and inventing
+// friendlier synonyms ("Improved") is exactly the drift KAC exists to
+// prevent. `null` = kept out of the page.
 const SECTIONS = {
-  Added: "New",
-  Changed: "Improved",
+  Added: "Added",
+  Changed: "Changed",
   Fixed: "Fixed",
   Removed: "Removed",
-  Deprecated: "Going away",
+  Deprecated: "Deprecated",
   Security: "Security",
   Internal: null,
 };
+
+// Repo-relative links/images (e.g. docs/screenshots/pr-36/thumb.png) resolve
+// against raw.githubusercontent so committed screenshots can be shown and
+// linked directly — GitHub serves them CDN-cached with correct content types.
+const RAW_BASE = "https://raw.githubusercontent.com/olivierlacan/indigene/main/";
+const resolveUrl = (url) =>
+  /^(https?:|mailto:|#|\/|\.\.?\/)/.test(url) ? url : RAW_BASE + url;
+
+// One optional thumbnail per release — a linked image on its own line in the
+// release's header zone: [![alt](thumb-path)](full-path)
+const THUMB = /^\[!\[(?<alt>[^\]]*)\]\((?<thumb>[^)\s]+)\)\]\((?<full>[^)\s]+)\)$/;
 
 const MONTHS = [
   "January", "February", "March", "April", "May", "June",
@@ -73,6 +88,8 @@ function parseChangelog(text) {
         version,
         date: `${MONTHS[Number(mo) - 1]} ${Number(d)}, ${y}`,
         name: null,
+        thumb: null,
+        shotLinks: null,
         sections: [],
       };
       releases.push(release);
@@ -109,6 +126,34 @@ function parseChangelog(text) {
       if (line !== "") expectName = false;
     }
 
+    // Header zone (between the version heading and its first `###`): may hold
+    // the thumbnail and, right after it, a line of screenshot text links
+    // (e.g. "[Before](…) · [After](…)"). At most ONE image per release — the
+    // don't-overcrowd rule, enforced.
+    if (release && section === null && release.sections.length === 0) {
+      const img = line.match(THUMB);
+      if (img) {
+        if (release.thumb) {
+          fail(
+            `release ${release.version} has more than one image — ` +
+              `the What's new page allows one thumbnail per release`,
+          );
+        }
+        release.thumb = { alt: img.groups.alt, thumb: img.groups.thumb, full: img.groups.full };
+        continue;
+      }
+      if (/^!\[/.test(line)) {
+        fail(
+          `release ${release.version}: bare image "${line}" — write it as a ` +
+            `linked thumbnail: [![alt](thumb.png)](full.png)`,
+        );
+      }
+      if (release.thumb && !release.shotLinks && /^\[/.test(line)) {
+        release.shotLinks = line;
+        continue;
+      }
+    }
+
     if (section) {
       if (/^- /.test(line)) section.items.push(line.slice(2));
       else if (/^\s+\S/.test(line) && section.items.length > 0) {
@@ -136,7 +181,7 @@ const escapeHtml = (s) =>
 /** Minimal inline markdown: links, bold, italic, code. Applied post-escape. */
 function inline(md) {
   return escapeHtml(md)
-    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>')
+    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, text, url) => `<a href="${resolveUrl(url)}">${text}</a>`)
     .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
     .replace(/\*([^*]+)\*/g, "<em>$1</em>")
     .replace(/`([^`]+)`/g, "<code>$1</code>");
@@ -154,6 +199,24 @@ function renderRelease(r) {
   if (r.name) parts.push(`<p class="release-name">${inline(r.name)}</p>`);
   parts.push(`<p class="release-date">${escapeHtml(r.date)}</p>`);
   parts.push(`</header>`);
+  if (r.thumb) {
+    // Thumbnails ship inside the page's own folder (they're small and the
+    // page should render before raw.githubusercontent has the file); the
+    // full-size screenshots stay direct-linked from the repo.
+    const source = resolve(REPO, r.thumb.thumb);
+    if (!existsSync(source)) {
+      fail(`release ${r.version}: thumbnail not found at ${r.thumb.thumb}`);
+    }
+    const local = `${anchor(r.version)}-thumb.png`;
+    mkdirSync(dirname(OUT), { recursive: true });
+    copyFileSync(source, resolve(dirname(OUT), local));
+    parts.push(
+      `<a class="thumb" href="${resolveUrl(r.thumb.full)}">` +
+        `<img src="${local}" alt="${escapeHtml(r.thumb.alt)}"` +
+        ` width="240" height="240" loading="lazy"></a>`,
+    );
+    if (r.shotLinks) parts.push(`<p class="shots">${inline(r.shotLinks)}</p>`);
+  }
   for (const s of r.sections) {
     if (s.items.length === 0) continue;
     parts.push(`<h3>${escapeHtml(s.title)}</h3>`);
@@ -211,6 +274,15 @@ a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 }
 .release-name { margin: 0.15rem 0 0; font-weight: 700; color: var(--ink); }
 .release-date { margin: 0.1rem 0 0; color: var(--ink-soft); font-size: 0.9rem; }
+.thumb { display: block; width: fit-content; margin: 0.85rem auto 0; }
+.thumb img {
+  display: block; max-width: 100%; height: auto; border-radius: 10px;
+  border: 1px solid var(--line);
+}
+.shots {
+  margin: 0.35rem 0 0; text-align: center; color: var(--ink-soft);
+  font-size: 0.85rem;
+}
 .release h3 {
   display: inline-block; margin: 1rem 0 0.25rem; padding: 0.1rem 0.6rem;
   background: var(--brand-bg); color: var(--brand-ink);

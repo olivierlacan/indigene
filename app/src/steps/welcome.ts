@@ -47,7 +47,11 @@ export async function renderWelcome(main: HTMLElement): Promise<void> {
     el("p", { style: "margin-top:2rem;font-size:0.85rem" }, [
       "Open-source (MIT), built on public scientific data — ",
       el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, "full source list & licensing"),
-      ". Every estimate comes with an honest confidence level.",
+      ". Every estimate comes with an honest confidence level. ",
+      // The static release-notes page compiled from CHANGELOG.md; it lives
+      // beside the app (dist/release-notes/), so build the URL off the base.
+      el("a", { href: `${import.meta.env.BASE_URL}release-notes/` }, "See what's new"),
+      ".",
     ])
   );
 }

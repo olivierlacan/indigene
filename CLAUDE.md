@@ -122,6 +122,30 @@ rules:
   `Unreleased`. No fixed cadence, no conventional commits — the version number
   just increments when a feature ships.
 
+Two more conventions the compiler understands:
+
+- **Link what you describe.** When an entry mentions something with an
+  address — a page, a section — link it with the full live URL
+  (`https://olivierlacan.github.io/indigene/#/wildlife`), so a reader who
+  didn't know the feature existed can go straight to it.
+- **One thumbnail per release, no more.** A release may show a single square
+  picture: make it from an existing PR screenshot with
+  `cd app && node scripts/make-thumb.mjs ../docs/screenshots/pr-<n>/<shot>.png`
+  (writes `thumb.png` beside the source — commit it), then reference it as a
+  linked image on its own line right under the release's bold name, with
+  Before/After as plain text links on the next line:
+
+  ```markdown
+  [![What the reader sees](docs/screenshots/pr-36/thumb.png)](docs/screenshots/pr-36/home-after-dark.png)
+  [Before](docs/screenshots/pr-36/home-before-dark.png) · [After](docs/screenshots/pr-36/home-after-dark.png)
+  ```
+
+  The compiler fails on a second image — that's the don't-overcrowd rule, not
+  a bug. Repo-relative paths render on GitHub as-is; on the published page the
+  small thumbnail is copied into the build (so the page renders even before
+  the file reaches `main`) while full-size screenshots are direct-linked from
+  `raw.githubusercontent.com` — no copying multi-MB images into the deploy.
+
 Preview the page locally with `npm run release-notes` (writes
 `app/dist/release-notes/index.html`); the script fails loudly if the changelog
 doesn't parse, and the same check runs on every PR.

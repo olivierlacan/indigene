@@ -16,6 +16,7 @@ import type { RegionDef } from "../lib/plants";
 import { nearbyObservations, observationsForTaxon } from "../lib/nearby";
 import type { NearbyResult } from "../lib/nearby";
 import type { ObservationSummary } from "../lib/inaturalist";
+import { openObservationLightbox } from "./lightbox";
 import type { Plant } from "../types";
 
 const INAT = "https://www.inaturalist.org";
@@ -161,13 +162,15 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
   function observationCard(o: ObservationSummary): HTMLElement {
     const photos = o.photos.slice(0, 4);
     const thumbs = el("div", { class: "obs-thumbs" },
-      photos.map((ph) =>
-        el("a", {
-          href: `${INAT}/photos/${ph.id}`,
-          target: "_blank",
-          rel: "noopener",
+      photos.map((ph, i) => {
+        // A button, not a link: tapping opens the photo in the in-app lightbox
+        // (which itself links back to the sighting) rather than redirecting.
+        const btn = el("button", {
+          type: "button",
           class: "obs-thumb",
-          title: ph.attribution,
+          title: `${ph.attribution} — tap to enlarge`,
+          "aria-label": `Enlarge photo ${i + 1} of ${o.taxonName ?? plant.common} by ${o.observer}`,
+          onClick: () => openObservationLightbox(o, i, plant.common, btn),
         }, [
           el("img", {
             src: ph.thumbUrl,
@@ -176,8 +179,9 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
             width: 76,
             height: 76,
           }),
-        ]),
-      ),
+        ]);
+        return btn;
+      }),
     );
     // The observation's own credit line: observer + where/when + a link to the
     // record. Photo-level licences are shown on hover (the title above) and on

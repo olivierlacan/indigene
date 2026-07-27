@@ -1191,12 +1191,24 @@ input[type="range"] {
   line-height: 0;
   border-radius: 8px;
   overflow: hidden;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.obs-thumb:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
 }
 .obs-thumb img {
   width: 76px;
   height: 76px;
   object-fit: cover;
   background: var(--line);
+  transition: transform 0.12s ease;
+}
+.obs-thumb:hover img {
+  transform: scale(1.05);
 }
 .obs-credit {
   margin: 0.45rem 0 0;
@@ -1211,4 +1223,107 @@ input[type="range"] {
   margin: 0.5rem 0 0;
   font-size: 0.8rem;
   color: var(--ink-soft);
+}
+
+/* --- iNaturalist photo lightbox --- */
+/* A full-screen overlay so a sighting's photo opens in place, never a redirect.
+   Dark scrim regardless of theme (it's over a photo); the credit + link-back to
+   the original sighting live in the footer and are always visible. */
+.lb-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.86);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(0.75rem, env(safe-area-inset-top)) 0.75rem max(0.75rem, env(safe-area-inset-bottom));
+}
+.lb-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  max-height: 100%;
+  width: 100%;
+  gap: 0.6rem;
+}
+.lb-close {
+  position: absolute;
+  top: -0.25rem;
+  right: 0;
+  z-index: 2;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.lb-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  flex: 1 1 auto;
+}
+.lb-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #111;
+}
+.lb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.lb-prev { left: 0.3rem; }
+.lb-next { right: 0.3rem; }
+.lb-nav:focus-visible,
+.lb-close:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+.lb-foot {
+  flex: none;
+  color: #f2f1e8;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: center;
+}
+.lb-title {
+  margin: 0;
+  font-style: italic;
+  font-size: 1rem;
+}
+.lb-credit {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #cdcdbd;
+}
+.lb-credit a {
+  color: #fff;
+  font-weight: 600;
+}
+.lb-source {
+  align-self: center;
+}
+.lb-counter {
+  font-size: 0.8rem;
+  color: #b7b7a8;
 }

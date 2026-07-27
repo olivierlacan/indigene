@@ -1,5 +1,31 @@
 # Working in this repo
 
+## Mobile-first UI: buttons stay on one line
+
+This is a mobile-first PWA — assume a narrow phone (≈360 px wide) is the common
+case, not the exception. **A button label should fit on a single line at that
+width.** A control that wraps to two lines reads as broken, eats vertical space,
+and grows/shrinks its own tap target as the label changes.
+
+So, when adding or editing a button:
+
+- **Keep the label short, and lean on context.** A button inside a "See it
+  growing near you" card doesn't need the plant's name in it — `See it growing
+  near me` beats `See white oak growing near me` (which also changes width per
+  plant). Don't repeat what the surrounding heading already says.
+- **Never interpolate a variable-length value into a label** (a plant common
+  name, a place) if a context-carried pronoun would do — the longest value is
+  the one that wraps.
+- **Check it at ≈360 px**, not just at your editor width. A quick way: build,
+  serve `dist/`, and measure — a button whose text spans more than one client
+  rect at 360 px is wrapping.
+
+The one allowed exception is a label that is an **irreducible proper name** —
+a region like "Mid-Atlantic / Northeast Piedmont" has no honest shorter form, so
+a wrap at the 360 px floor is acceptable there (it still fits at 390 px). That's
+the bar for "we absolutely have to": a name we can't shorten without lying,
+not a sentence we were too lazy to tighten.
+
 ## Shipping work: open a merge request at every natural stopping point
 
 Always open a merge request (PR) when the work reaches a natural completion

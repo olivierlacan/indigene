@@ -183,7 +183,7 @@ export function renderPlant(main: HTMLElement, param?: string): void {
       )
     );
 
-    const locateBtn = el("button", { class: "btn btn-primary btn-block", onClick: locate }, "📍 Check my location for this plant") as HTMLButtonElement;
+    const locateBtn = el("button", { class: "btn btn-primary btn-block", onClick: locate }, "📍 Check my location") as HTMLButtonElement;
 
     // The no-GPS fallback: the same town/ZIP search as the main flow — nobody
     // is asked to know coordinates. A pick names the spot directly (its
@@ -249,7 +249,7 @@ export function renderPlant(main: HTMLElement, param?: string): void {
         },
         (err) => {
           locateBtn.disabled = false;
-          locateBtn.textContent = "📍 Check my location for this plant";
+          locateBtn.textContent = "📍 Check my location";
           toast(err.code === err.PERMISSION_DENIED ? "Location denied — search for your town below instead." : "Couldn't get a fix — try again or search for your town below.");
         },
         { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }

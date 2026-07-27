@@ -46,6 +46,11 @@ directly from the browser, so Pages hosts the entire product; the optional
 One-time setup: in the repo's **Settings → Pages**, set the source to
 **GitHub Actions** (the workflow also attempts to enable this itself).
 
+The deploy also publishes a plain-words **What's new** page at
+`/release-notes/`, compiled from [`CHANGELOG.md`](CHANGELOG.md) — so release
+notes update themselves whenever a merged PR touched the changelog. The
+changelog's header explains the format; `CLAUDE.md` explains the workflow.
+
 ## What it does
 
 1. **Location** — high-accuracy geolocation with a draggable pin.

@@ -1,6 +1,6 @@
 {
   "name": "indigene",
-  "version": "0.1.0",
+  "version": "0.9.0",
   "private": true,
   "description": "Native Indigene — a mobile-first PWA that recommends locally native plants for the exact spot you're standing in.",
   "license": "MIT",
@@ -10,6 +10,7 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
+    "release-notes": "node scripts/build-release-notes.mjs",
     "registry:build": "node scripts/build-registry.mjs",
     "registry:check": "node scripts/check-registry.mjs",
     "reconcile": "node scripts/reconcile.mjs"

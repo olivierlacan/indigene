@@ -52,6 +52,14 @@ jobs:
           BASE_PATH: ${{ steps.pages.outputs.base_path }}/
         run: npm run build
 
+      # The public "What's new" page is compiled from the repo's CHANGELOG.md
+      # (see the rules at the top of that file). It lands in dist/ before the
+      # artifact upload, so notes republish on every merge that touched the
+      # changelog. A malformed changelog fails the deploy here, loudly.
+      - name: Build release notes from CHANGELOG.md
+        working-directory: app
+        run: npm run release-notes
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: app/dist

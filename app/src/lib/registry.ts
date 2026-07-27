@@ -25,6 +25,17 @@ export function entryForPlant(plantId: string): import("../types").RegistryEntry
   return core.entryForPlant(registryIndex, plantId);
 }
 
+/** The entry for an iNaturalist taxon id, or undefined when it isn't one of our
+ *  catalog natives — used to keep nearby observations to plants we can vouch for. */
+export function entryByInatId(inatId: string): import("../types").RegistryEntry | undefined {
+  return core.entryByInatId(registryIndex, inatId);
+}
+
+/** iNaturalist taxon ids native to any of the given regions. */
+export function inatIdsForRegions(regionIds: readonly string[]): string[] {
+  return core.inatIdsForRegions(registryIndex, regionIds);
+}
+
 /** Get an entry by its `primaryId` CURIE (e.g. "ipni:77123-1"). */
 export function entryByPrimaryId(curie: string): import("../types").RegistryEntry | undefined {
   return core.entryByPrimaryId(registryIndex, curie);

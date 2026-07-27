@@ -19,6 +19,7 @@ import { keystoneIcon } from "../components/keystone-icon";
 import { statGrid } from "../components/stat-card";
 import { drawSizeViz } from "../components/size-viz";
 import { entryForPlant, deepLinks } from "../lib/registry";
+import { nearbyObservationsSection } from "../components/nearby-observations";
 import type { Plant, SiteData, SunEstimate, SupportKind } from "../types";
 
 const monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -55,6 +56,7 @@ export function renderPlant(main: HTMLElement, param?: string): void {
   main.append(
     profile(plant, entries),
     ecosystemSection(plant, entries),
+    nearbyObservationsSection(plant),
     propagationSection(plant),
     referencesSection(plant),
     suitabilityChecker(entries),

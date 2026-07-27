@@ -57,7 +57,7 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
   const findBtn = el("button", {
     class: "btn btn-primary btn-block",
     onClick: run,
-  }, `📷 See ${plant.common.toLowerCase()} growing near me`) as HTMLButtonElement;
+  }, "📷 See it growing near me") as HTMLButtonElement;
 
   async function run(): Promise<void> {
     if (!("geolocation" in navigator)) {
@@ -70,7 +70,7 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
       (pos) => void load(pos.coords.latitude, pos.coords.longitude),
       (err) => {
         findBtn.disabled = false;
-        findBtn.textContent = `📷 See ${plant.common.toLowerCase()} growing near me`;
+        findBtn.textContent = "📷 See it growing near me";
         showNote(
           err.code === err.PERMISSION_DENIED
             ? "Location denied — we only use it to find sightings near you, and only when you tap this."
@@ -211,7 +211,7 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
 
   function resetButton(): void {
     findBtn.disabled = false;
-    findBtn.textContent = `📷 See ${plant.common.toLowerCase()} growing near me`;
+    findBtn.textContent = "📷 See it growing near me";
   }
 
   function observationCard(o: ObservationSummary): HTMLElement {

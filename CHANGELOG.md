@@ -39,6 +39,35 @@ subtitle on the What's new page.
   `skip-changelog` label when a change genuinely has nothing notable in it.
 - `app/package.json`'s `version` tracks the latest cut release.
 
+## [0.10] - 2026-07-27
+
+**Everything in plain sight**
+
+### Added
+
+- A Browse page of its own: the regions we cover and "start from a plant" now
+  live one tap from the home page — for anyone who'd rather look around
+  without sharing their location.
+
+### Changed
+
+- Almost nothing hides behind a tap anymore. A plant's ecosystem, propagation,
+  and reference sections, the 60-second soil check, the sky-scan explanation,
+  and each result's score breakdown are now simply visible on the page. The
+  only fold-away panels left are the two big ones on results — "What matters
+  most?" and "Filters" — and those now have clear Open/Close buttons.
+- The home page gets to the point: the pitch, why native plants matter (in
+  plain view, no tap needed), the Start button, and a quiet link to browsing.
+- Words got shorter and warmer across the home page, including the promise
+  that matters most: "No account, no tracking. Everything stays in your
+  browser and works offline."
+
+### Fixed
+
+- Buttons on phones now keep their labels on one line — like "See it growing
+  near me" and "Check my location" — so they never break in half or shift
+  while you're reaching for them.
+
 ## [0.9] - 2026-07-27
 
 **See them growing for real**
@@ -254,7 +283,8 @@ subtitle on the What's new page.
   bundled by Vite. A thin, optional Hanami 2 API (`server/`) proxies site
   data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/9453251...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/f84450c...HEAD
+[0.10]: https://github.com/olivierlacan/indigene/compare/9453251...f84450c
 [0.9]: https://github.com/olivierlacan/indigene/compare/6e72889...9453251
 [0.8]: https://github.com/olivierlacan/indigene/compare/d45eda0...6e72889
 [0.7]: https://github.com/olivierlacan/indigene/compare/6affce6...d45eda0

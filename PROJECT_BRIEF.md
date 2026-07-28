@@ -77,8 +77,9 @@ Transparent and re-weightable. Final position = **eco-score × site-fit**:
       numbers — 40-plant Mid-Atlantic, 24-plant Pacific Northwest (west-of-Cascades),
       23-plant north/central Florida, 21-plant south Florida & the Keys, and a
       first European region, 23-plant Atlantic France (Paris–Nantes–Bordeaux) — for
-      on-the-ground testing. The France list is a starter, with honest genus-level
-      host estimates pending a European host-count source; see
+      on-the-ground testing. The France list is a starter, with interim honest
+      genus-level host estimates pending a recompute from the openly-licensed
+      Gaytán 2026 European Lepidoptera–plant matrix (CC-BY); see
       [`docs/france-localization-plan.md`](docs/france-localization-plan.md)
 - [x] Ranked results with the to-scale size visualization (human silhouette)
 - [x] Re-weightable ranking sliders + presets

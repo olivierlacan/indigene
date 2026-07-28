@@ -51,6 +51,14 @@ subtitle on the What's new page.
   back to the coarse box offline. `EcoregionInfo` carries a `provider` + `code` +
   `name`, and a region declares the codes it covers under `meta.ecoregion`.
   See `docs/france-localization-plan.md`.
+- Internal: the European Lepidoptera host-count source is identified and open —
+  the Gaytán et al. 2026 species-level European Lepidoptera–plant interaction
+  matrix (CC-BY 4.0, `doi:10.1002/ece3.73004`), with DBIF (CEH/BRC, OGL) as a
+  GB cross-check. It replaces the earlier "no European equivalent exists"
+  assumption; the France region's host counts stay flagged genus-level estimates
+  until a `scripts/build-host-counts.mjs` recompute lands (keeping the shared
+  `HOST_ANCHOR`, so US scores don't move). Sources recorded in `DATA_SOURCES.md`
+  and `docs/france-localization-plan.md` §4.3.
 - A public [What's new page](https://olivierlacan.github.io/indigene/release-notes/):
   every release of Indigene described in plain words, newest first. Nothing to
   install, no account — it's just a web page you can share.

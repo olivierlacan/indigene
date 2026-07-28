@@ -9,16 +9,19 @@
 //
 // Numbers and their provenance — same honesty bar as every other region file:
 //  - hostLepCount: a genus-level count of Lepidoptera (butterflies & moths) that
-//    use the plant as a larval host. There is no European drop-in equivalent of
-//    the US Tallamy/NWF host tables yet (see docs/france-localization-plan.md
-//    §4.3), so these are **honest genus-level estimates**, anchored on the
-//    long-established British foliage-insect rankings (Southwood; Kennedy &
-//    Southwood; the Biological Records Centre "Database of Insects and their
-//    Food Plants"), in which oak, willow and birch lead, then Prunus/Crataegus,
-//    down to a handful for conifers and ferns — the same shape as in North
-//    America. Each row says so in `basis`, and `confidence` is set to reflect
-//    how much of a row is estimated. When a proper European host source is
-//    wired in, these numbers get revisited.
+//    use the plant as a larval host. These are currently **interim honest
+//    genus-level estimates**, anchored on the long-established British
+//    foliage-insect rankings (Southwood; Kennedy & Southwood; the Biological
+//    Records Centre "Database of Insects and their Food Plants"), in which oak,
+//    willow and birch lead, then Prunus/Crataegus, down to a handful for conifers
+//    and ferns — the same shape as in North America. Each row says so in `basis`,
+//    and `confidence` reflects how much of it is estimated.
+//    A real, openly-licensed European source exists and is the planned canonical
+//    replacement: the Gaytán et al. 2026 species-level European Lepidoptera–plant
+//    interaction matrix (CC-BY 4.0), aggregated to genus by a
+//    `scripts/build-host-counts.mjs` step, with DBIF (CEH/BRC) as a cross-check.
+//    See docs/france-localization-plan.md §4.3. Until that recompute lands these
+//    estimates stand, clearly flagged — never presented as measured counts.
 //  - size arrays: typical field growth on an average Atlantic-France site;
 //    mature*Ft is the honest eventual ceiling, often far larger than nursery
 //    tags admit. Kept in feet for now — metric units land with the localization
@@ -39,7 +42,7 @@ export const REGION: RegionMeta = {
   id: "france-atlantic",
   name: "Atlantic France",
   reference: "Paris–Nantes–Bordeaux lowlands, oceanic west & north (≈ USDA zones 8a–9a)",
-  note: "Native status is asserted for the Atlantic (oceanic) biogeographical region of metropolitan France — the mild, rainy west and north. The Mediterranean south, the Alps and Pyrenees, and the drier Continental east are different floras and are planned as their own regions; treat these recommendations as untested there. Host-insect figures are honest genus-level estimates pending a European host-count source.",
+  note: "Native status is asserted for the Atlantic (oceanic) biogeographical region of metropolitan France — the mild, rainy west and north. The Mediterranean south, the Alps and Pyrenees, and the drier Continental east are different floras and are planned as their own regions; treat these recommendations as untested there. Host-insect figures are interim genus-level estimates, pending a recompute from open European data.",
   // Coarse box over the Atlantic-influenced west & north of metropolitan France,
   // from the Pyrenean foot (~43° N) to the Channel/Belgian border (~51.2° N),
   // and from the Atlantic coast (~-5.2° E) inland to roughly the Rhône/eastern

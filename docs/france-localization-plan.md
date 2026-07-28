@@ -188,28 +188,53 @@ file needs, honestly sourced:
   propagation guidance. The `PropagationMethod` vocabulary itself is universal and
   needs only translation.
 
-### 4.3 The genuine gap: Lepidoptera host counts
+### 4.3 Lepidoptera host counts — the source is found, the recompute is pending
 The host score — the single strongest signal in the ranking — is derived in
 `lib/plants.ts` from a **raw Lepidoptera host-species count** per plant. In the US
-that count comes from the Tallamy / NWF native-plant-finder dataset. **There is no
-drop-in French equivalent of that count**, and this is the one number we cannot
-approximate without either mis-sourcing it or inventing it — both of which the
-app's ethos forbids.
+that count comes from the Tallamy / NWF native-plant-finder dataset. The France
+rows shipped with **honest genus-level estimates** as a stopgap; the earlier
+worry that *no European equivalent existed* turned out to be wrong. It does, and
+it's openly licensed (better than the US source, whose reuse terms `DATA_SOURCES.md`
+flags as uncertain).
 
-Candidate French/European sources to evaluate (a real task, flagged not assumed):
-- **INPN "relations trophiques" / plant–host associations** where present.
-- **Lepi'Net** and the **Papillons de France** literature for larval host plants
-  (hostplant→butterfly, which must be inverted and counted).
-- The **HOSTS database** (NHM London, world Lepidoptera hostplants) — global,
-  citable, invertible to a per-plant count.
-- European butterfly atlases (e.g. the *Distribution Atlas of European
-  Butterflies*) for the specialist/"sole/narrow/broad" reliance tags in
-  `data/wildlife.ts`.
+**Canonical source — Gaytán et al. 2026, *European Lepidoptera–Plant
+Associations: A Species-Level Interaction Matrix*** (Ecology & Evolution,
+[doi:10.1002/ece3.73004](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12906973/)).
+**5,152 Lepidoptera × 3,275 vascular-plant species, all of Europe (France
+included), species-level, machine-readable, CC-BY 4.0.** This is the direct
+Tallamy analogue: aggregate the matrix to plant genus and count distinct
+Lepidoptera to get a `hostLepCount` on the **same scale** the US regions use.
 
-**Decision needed:** which source becomes the canonical French host count, and at
-what confidence. Until that's settled, French rows should carry `confidence:
-"low"` and an honest `basis`, or the host component should be de-weighted for the
-French region — not silently filled with a US-shaped guess.
+**Cross-check — DBIF v2** (CEH/BRC *Database of Insects and their Food Plants*,
+[catalogue](https://catalogue.ceh.ac.uk/id/33a825f3-27cb-4b39-b59c-0f8182e8e2e4)):
+~47k herbivore–plant interactions for Great Britain, shipping a ready-made
+"insect species richness for each plant species" file. **Open Government Licence**
+(attribution: "Contains data supplied by NERC"), CSV. Britain-only, but the
+Atlantic-France flora overlaps almost entirely — a clean sanity check.
+
+**Backups / reconciliation:** **GloBI** (Global Biotic Interactions — CC-BY, REST
+API + full dumps, already ingests HOSTS and DBIF); **HOSTS** (NHM London, global);
+and *A checklist of European butterfly larval foodplants*
+([PMC10771928](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10771928/), Dryad
+[doi:10.5061/dryad.1vhhmgr12](https://datadryad.org/dataset/doi:10.5061/dryad.1vhhmgr12))
+— explicitly *larval*, butterflies — useful for the specialist/"sole/narrow/broad"
+reliance tags in `data/wildlife.ts`.
+
+**Integration plan (pending the data file):**
+- Add `scripts/build-host-counts.mjs` (mirroring `build-registry.mjs`): read the
+  matrix CSV → resolve plant names to our registry genera → count distinct
+  Lepidoptera per genus → emit `hostLepCount` per plant for every European region.
+- **Keep the shared `HOST_ANCHOR` (520)** in `lib/plants.ts` so cross-region
+  comparability holds and **US scores don't move** — European oak/willow land near
+  that anchor anyway, so no re-anchoring is needed.
+- Then swap each France row's `basis` from "genus-level estimate" to the real
+  citation and raise `confidence` where the count is now data-backed.
+
+**Verify before trusting:** confirm the matrix records *larval host* (herbivory)
+associations, not adult nectar — the paper frames it around host specialization,
+so it's larval host, but `hostLepCount` claims "caterpillars that eat this leaf,"
+which is a stronger claim than "any association." Until the recompute lands, the
+France rows keep their flagged estimates and honest `basis`.
 
 ---
 
@@ -265,8 +290,10 @@ front rather than guessing):
    screen.)
 2. **Which French region to seed first**, and its reference locale for the numbers
    (proposal: Atlantic / Île-de-France–Atlantic façade).
-3. **Host-count source (§4.3)** — the one true blocker for honest ranking. Which
-   dataset, and do we de-weight host for France until it's solid?
+3. **Host-count source (§4.3)** — *resolved:* the Gaytán 2026 European matrix
+   (CC-BY) is the canonical source, DBIF the cross-check. What remains is
+   mechanical: retrieve the file, run `build-host-counts.mjs`, replace the
+   flagged estimates. No de-weighting needed — the counts will be real.
 4. **Bilingual release notes / changelog?** The `/release-notes/` compiler is
    English-only today; a French edition may want a `fr` page.
 5. **Units** — metric for the French edition only, or a user unit toggle
@@ -286,6 +313,14 @@ is a real project — mostly honest data-sourcing, not a translation pass.
 - Tela Botanica — BDTFX (metropolitan France flora) —
   https://www.tela-botanica.org/
 - INPN, Muséum national d'Histoire naturelle — https://inpn.mnhn.fr/
-- NHM HOSTS — world Lepidoptera hostplants (for host counts) —
-  https://www.nhm.ac.uk/our-science/data/hostplants/
+- **Host counts (the Tallamy/NWF equivalent for Europe):**
+  - Gaytán et al. 2026, *European Lepidoptera–Plant Associations: A Species-Level
+    Interaction Matrix*, Ecology & Evolution, CC-BY 4.0 —
+    https://doi.org/10.1002/ece3.73004 — **the canonical source.**
+  - DBIF v2 (CEH/BRC), Open Government Licence —
+    https://catalogue.ceh.ac.uk/id/33a825f3-27cb-4b39-b59c-0f8182e8e2e4 — GB cross-check.
+  - GloBI (Global Biotic Interactions), CC-BY — https://www.globalbioticinteractions.org/
+  - NHM HOSTS — world Lepidoptera hostplants — https://www.nhm.ac.uk/our-science/data/hostplants/
+  - *A checklist of European butterfly larval foodplants* (Dryad, CC0/CC-BY) —
+    https://doi.org/10.5061/dryad.1vhhmgr12
 - RESOLVE/WWF terrestrial ecoregions (finer, CC BY) — see `DATA_SOURCES.md`.

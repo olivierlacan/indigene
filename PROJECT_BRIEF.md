@@ -28,7 +28,7 @@ uncertainty; no gamification.
 
 | Question from the brief | Decision | Why |
 |---|---|---|
-| **Framework** | **None.** Vanilla TS + DOM + real web APIs, bundled by Vite. Zero runtime deps. | Per direction ("Do not use React… respect the DOM"). Keeps the bundle ~105 KB gzipped and the code legible. |
+| **Framework** | **None.** Vanilla TS + DOM + real web APIs, bundled by Vite. Zero runtime deps. | Per direction ("Do not use React… respect the DOM"). Keeps the bundle ~115 KB gzipped and the code legible. |
 | **Sky scan tech** | `getUserMedia` + `DeviceOrientationEvent` on a `<canvas>` overlay — **not** WebXR. | WebXR doesn't work in iOS Safari. |
 | **Sun math** | Local NOAA solar-position implementation (no API), integrated against the horizon mask. | Works fully offline; no dependency. |
 | **License** | **MIT.** | A civic tool on public data should maximize reuse; AGPL's network-copyleft would deter the land trusts / extension offices / other apps we want integrating. |
@@ -73,10 +73,13 @@ Transparent and re-weightable. Final position = **eco-score × site-fit**:
 - [x] Sky-scan sun measurement, **with the manual fallback working first**
 - [x] Region-aware plant catalog: the app selects the seed list from the spot's
       coordinates and says plainly when it has no list for an area yet
-- [x] Four regional seed datasets with real size-over-time and ecosystem-service
+- [x] Five regional seed datasets with real size-over-time and ecosystem-service
       numbers — 40-plant Mid-Atlantic, 24-plant Pacific Northwest (west-of-Cascades),
-      23-plant north/central Florida, and 21-plant south Florida & the Keys — for
-      on-the-ground testing
+      23-plant north/central Florida, 21-plant south Florida & the Keys, and a
+      first European region, 23-plant Atlantic France (Paris–Nantes–Bordeaux) — for
+      on-the-ground testing. The France list is a starter, with honest genus-level
+      host estimates pending a European host-count source; see
+      [`docs/france-localization-plan.md`](docs/france-localization-plan.md)
 - [x] Ranked results with the to-scale size visualization (human silhouette)
 - [x] Re-weightable ranking sliders + presets
 - [x] Offline + installable (hand-written service worker, web manifest, icons)

@@ -19,7 +19,7 @@ See **[`PROJECT_BRIEF.md`](PROJECT_BRIEF.md)** for the vision and decisions, and
 
 | Path | What it is |
 |---|---|
-| [`app/`](app/) | The PWA — vanilla TypeScript on the DOM, no framework, zero runtime deps, ~105 KB gzipped. This is the product. Offline-first, installable. |
+| [`app/`](app/) | The PWA — vanilla TypeScript on the DOM, no framework, zero runtime deps, ~115 KB gzipped. This is the product. Offline-first, installable. |
 | [`server/`](server/) | A thin **Hanami 2** JSON API. Its job: fetch site data (soil/elevation/climate) server-side to dodge browser CORS and keep future API keys off the client. The PWA works without it. |
 
 ## Quick start
@@ -66,12 +66,15 @@ changelog's header explains the format; `CLAUDE.md` explains the workflow.
 
 Plant recommendations are **tuned region by region**, and the app picks the
 right list from where you're standing — refined, when online, by the spot's real
-EPA ecoregion. Four regions ship today:
+ecoregion (US EPA Omernik in the States, EEA biogeographical regions in Europe).
+Five regions ship today, across two continents:
 
 - **Mid-Atlantic / Northeast Piedmont** (40 species, Pennsylvania reference)
 - **Pacific Northwest, west of the Cascades** (24 species, Portland–Seattle reference)
 - **Florida, north & central** (23 species, central-Florida reference)
 - **Florida, south & the Keys** (21 species, greater-Miami reference)
+- **Atlantic France** (23 species, Paris–Nantes–Bordeaux reference) — the first
+  European region; the app's wording is still English for now
 
 Outside a covered region the sun/soil/climate readings still work; the app says
 plainly when it has no plant list for your spot yet. Adding a region is a data

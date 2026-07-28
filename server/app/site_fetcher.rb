@@ -101,11 +101,15 @@ module Indigene
       "moderate drainage"
     end
 
-    # --- Elevation & slope: USGS EPQS ---
+    # --- Elevation & slope: USGS EPQS in the US, Open-Meteo elevation elsewhere ---
+    # Both return feet here (Open-Meteo is converted from metres), so the slope
+    # math is identical whichever source answered.
+    M_TO_FT = 3.28084
+
     def fetch_elevation_slope(lat, lon)
       d = 0.0003
       points = [[lat, lon], [lat + d, lon], [lat - d, lon], [lat, lon + d], [lat, lon - d]]
-      vals = points.map { |la, lo| safe { epqs(la, lo) } }
+      vals = in_conus?(lat, lon) ? epqs_cross(points) : open_meteo_elev_cross(points)
       center, n, s, e, w = vals
       slope = nil
       if [n, s, e, w].all?
@@ -116,6 +120,11 @@ module Indigene
       { elevationFt: center&.round, slopeDeg: slope }
     end
 
+    # USGS EPQS, one query per point (US only). Feet.
+    def epqs_cross(points)
+      points.map { |la, lo| safe { epqs(la, lo) } }
+    end
+
     def epqs(lat, lon)
       url = "https://epqs.nationalmap.gov/v1/json?x=#{lon}&y=#{lat}&units=Feet&wkid=4326&includeDate=false"
       data = get_json(url)
@@ -123,6 +132,25 @@ module Indigene
       Float(v)
     rescue ArgumentError, TypeError
       nil
+    end
+
+    # Open-Meteo elevation (global, keyless): all five points in one call, m → ft.
+    def open_meteo_elev_cross(points)
+      lats = points.map { |p| p[0] }.join(",")
+      lons = points.map { |p| p[1] }.join(",")
+      data = get_json("https://api.open-meteo.com/v1/elevation?latitude=#{lats}&longitude=#{lons}")
+      arr = data["elevation"] || []
+      points.each_index.map { |i| arr[i].is_a?(Numeric) ? arr[i] * M_TO_FT : nil }
+    rescue StandardError
+      points.map { nil }
+    end
+
+    def in_conus?(lat, lon)
+      lat.between?(24, 50) && lon.between?(-125, -66)
+    end
+
+    def in_europe?(lat, lon)
+      lat.between?(34, 72) && lon.between?(-25, 45)
     end
 
     # --- Climate: Open-Meteo archive → zone + rainfall ---
@@ -160,14 +188,39 @@ module Indigene
       "#{n.clamp(1, 13)}#{half}"
     end
 
-    # --- Ecoregion: real EPA (Omernik) Level III/IV via the EPA ArcGIS service ---
-    # Server-side, so no CORS concern. One point-in-polygon query on the Level IV
-    # layer returns the full Level I–IV hierarchy. Best-effort; nil on failure.
-    ECOREGION_QUERY_URL =
+    # --- Ecoregion: EPA (US) or EEA (Europe) via ArcGIS, picked by coordinates ---
+    # Server-side, so no CORS concern. Best-effort; nil on failure, which the
+    # caller turns into the coarse box guess. Provider-tagged so the client sees
+    # one shape whichever service answered (mirrors app/src/lib/site.ts).
+    EPA_ECOREGION_QUERY_URL =
       "https://gispub.epa.gov/arcgis/rest/services/ORD/USEPA_Ecoregions_Level_III_and_IV/MapServer/7/query".freeze
+    EEA_ECOREGION_QUERY_URL =
+      "https://bio.discomap.eea.europa.eu/arcgis/rest/services/BioRegions/BiogeographicalRegions_WM/MapServer/0/query".freeze
+
+    # The eleven EEA biogeographical regions: [slug, display name, match].
+    EEA_REGIONS = [
+      ["alpine", "Alpine", /alpine/],
+      ["atlantic", "Atlantic", /atlantic/],
+      ["black-sea", "Black Sea", /black\s*sea/],
+      ["boreal", "Boreal", /boreal/],
+      ["continental", "Continental", /continental/],
+      ["mediterranean", "Mediterranean", /mediterran/],
+      ["pannonian", "Pannonian", /pannonian/],
+      ["steppic", "Steppic", /steppic/],
+      ["arctic", "Arctic", /arctic/],
+      ["anatolian", "Anatolian", /anatolian/],
+      ["macaronesia", "Macaronesia", /macaronesia/]
+    ].freeze
 
     def fetch_ecoregion(lat, lon)
-      url = "#{ECOREGION_QUERY_URL}?geometry=#{lon},#{lat}&geometryType=esriGeometryPoint" \
+      return fetch_ecoregion_eea(lat, lon) if in_europe?(lat, lon)
+      return fetch_ecoregion_epa(lat, lon) if in_conus?(lat, lon)
+
+      nil
+    end
+
+    def fetch_ecoregion_epa(lat, lon)
+      url = "#{EPA_ECOREGION_QUERY_URL}?geometry=#{lon},#{lat}&geometryType=esriGeometryPoint" \
             "&inSR=4326&spatialRel=esriSpatialRelIntersects" \
             "&outFields=US_L4CODE,US_L4NAME,US_L3CODE,US_L3NAME,NA_L2NAME,NA_L1NAME" \
             "&returnGeometry=false&f=json"
@@ -175,22 +228,47 @@ module Indigene
       attrs = data.dig("features", 0, "attributes")
       return nil unless attrs
 
-      l3_name = presence(attrs["US_L3NAME"])
-      l3_code = presence(attrs["US_L3CODE"])
-      return nil unless l3_name && l3_code
+      name = presence(attrs["US_L3NAME"])
+      code = presence(attrs["US_L3CODE"])
+      return nil unless name && code
 
+      l4_code = presence(attrs["US_L4CODE"])
+      l4_name = presence(attrs["US_L4NAME"])
       {
-        l1Name: to_title(presence(attrs["NA_L1NAME"])),
-        l2Name: to_title(presence(attrs["NA_L2NAME"])),
-        l3Code: l3_code,
-        l3Name: l3_name,
-        l4Code: presence(attrs["US_L4CODE"]),
-        l4Name: presence(attrs["US_L4NAME"])
+        provider: "epa-omernik",
+        code: code,
+        name: name,
+        hierarchy: [to_title(presence(attrs["NA_L1NAME"])), to_title(presence(attrs["NA_L2NAME"]))].compact,
+        detail: (l4_code && l4_name) ? { code: l4_code, name: l4_name } : nil
       }
     end
 
+    # EEA response: ask for all fields and scan for a recognizable region name,
+    # so it survives field-name differences between service versions.
+    def fetch_ecoregion_eea(lat, lon)
+      url = "#{EEA_ECOREGION_QUERY_URL}?geometry=#{lon},#{lat}&geometryType=esriGeometryPoint" \
+            "&inSR=4326&spatialRel=esriSpatialRelIntersects" \
+            "&outFields=*&returnGeometry=false&f=json"
+      data = get_json(url)
+      attrs = data.dig("features", 0, "attributes")
+      return nil unless attrs
+
+      attrs.each_value do |v|
+        s = presence(v.to_s)
+        next unless s
+
+        low = s.downcase
+        hit = EEA_REGIONS.find { |(_slug, _name, re)| low.match?(re) }
+        return { provider: "eea-biogeo", code: hit[0], name: hit[1], hierarchy: [], detail: nil } if hit
+      end
+      nil
+    end
+
     def ecoregion_label(eco, lat, lon)
-      return "#{eco[:l3Name]} (EPA Level III ecoregion)" if eco
+      if eco
+        suffix = eco[:provider] == "eea-biogeo" ? "EEA biogeographical region" : "EPA Level III ecoregion"
+        return "#{eco[:name]} (#{suffix})"
+      end
 
       ecoregion_guess(lat, lon)
     end
@@ -200,6 +278,10 @@ module Indigene
       return "Marine West Coast Forest (broad)" if lat.between?(42, 49) && lon.between?(-124.9, -120.5)
       return "Southern Coastal Plain (broad)" if lat.between?(24.4, 31) && lon.between?(-87.7, -79.8)
       return "Eastern Temperate Forest (broad)" if lat.between?(24, 49) && lon.between?(-100, -66)
+      if in_europe?(lat, lon)
+        return "Mediterranean (broad)" if lat <= 44.2 && lon.between?(2.5, 10.0)
+        return "Atlantic (broad)" if lat.between?(42.5, 51.6) && lon.between?(-5.5, 8.5)
+      end
 
       nil
     end

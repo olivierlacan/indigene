@@ -29,7 +29,12 @@ called out and the dependency is kept optional.
 | **Institute for Regional Conservation — "Natives For Your Neighborhood" (IRC)** | South-Florida native status, range & culture | Referenced for the south-Florida seed data | The largest south-FL native database; individual facts are not copyrightable | ✅ Facts referenced. |
 | **Xerces Society regional lists (incl. Maritime NW)** | Pollinator / establishment context, both regions | Referenced | Publications are copyrighted; we use the factual associations, not the prose | ✅ Facts referenced. |
 | **USFS Silvics / Fire Effects Information System (FEIS)** | Size / growth for trees (esp. PNW conifers) | Referenced | US Government public domain | ✅ Safe. |
-| **EPA Level III/IV Ecoregions** (Omernik) | Ecoregion label (Level III + finer Level IV) | Live point query to the EPA ArcGIS service (`gispub.epa.gov/.../USEPA_Ecoregions_Level_III_and_IV`), best-effort | US Government public domain | ✅ **Integrated (Phase A, label only).** Real Level III/IV names shown on the confirm screen; falls back to the coarse bounding-box guess (marked "(broad)") when offline/outside CONUS. Using it for *region selection* is Phase B — see `docs/ecoregion-plan.md`. |
+| **EPA Level III/IV Ecoregions** (Omernik) | Ecoregion label (Level III + finer Level IV) + US region selection | Live point query to the EPA ArcGIS service (`gispub.epa.gov/.../USEPA_Ecoregions_Level_III_and_IV`), best-effort | US Government public domain | ✅ **Integrated.** Real Level III/IV names on the confirm screen and used to refine region selection; falls back to the coarse box (marked "(broad)") offline/outside CONUS. See `docs/ecoregion-plan.md`. |
+| **EEA Biogeographical Regions of Europe** (2016) | Ecoregion label + European region selection (Atlantic / Continental / Alpine / Mediterranean…) | Live point query to the EEA ArcGIS service (`bio.discomap.eea.europa.eu/.../BioRegions/BiogeographicalRegions_WM`), best-effort | **CC-BY 4.0** (© European Environment Agency; admin boundaries © EuroGeographics) | ✅ **Integrated.** The Europe-side analogue of EPA ecoregions: picks/refines the France region and labels the confirm screen; falls back to the coarse box offline. Attribution: "EEA Biogeographical Regions of Europe (CC BY 4.0)". Field id/layer to confirm against the live service in-browser. See `docs/france-localization-plan.md`. |
+| **Tela Botanica — BDTFX** (Base de Données des Trachéophytes de France métropolitaine) | Native status, accepted names & French vernacular names for the France seed data | Referenced for the Atlantic France list | Reference taxonomy; individual facts are not copyrightable | ✅ Facts referenced. |
+| **INPN — Inventaire national du patrimoine naturel (MNHN)** | French native/indigénat status, distribution, protection status | Referenced for the Atlantic France list | National inventory; individual distribution facts are not copyrightable | ✅ Facts referenced. Bluebell etc. bought as cultivated stock — never wild-dug where protected. |
+| **BRC "Database of Insects and their Food Plants" / Southwood foliage-insect rankings** | Genus-level host-insect context for the European host estimates | Referenced (the basis for each France row's `hostLepCount`) | Facts referenced, not prose | ⚠️ **Estimates, flagged.** No European drop-in for the US Tallamy/NWF Lepidoptera tables yet; France host counts are honest genus-level estimates anchored on these rankings, each row's `confidence` set accordingly. See `docs/france-localization-plan.md` §4.3. |
+| **RHS "Plants for Pollinators", Buglife, Plantlife, Woodland Trust, Butterfly Conservation** | Pollinator value, propagation, notable wildlife ties for the France seed data | Referenced for the Atlantic France list | Publications © ; we use the factual associations, not the prose | ✅ Facts referenced. |
 | **BONAP county distribution** | County-level native status | *Not yet integrated* | ⚠️ BONAP maps have restrictive reuse terms | ⛔ **Do not scrape or embed.** Phase 2 should use USDA PLANTS county data (public domain) for county resolution instead. Noted so we don't build on it by accident. |
 | **Basemap tiles** (for the location map) | — | *Not used* | OSM/other tile terms + offline concerns | ⏳ Phase 1 uses a schematic metric grid instead of external tiles, to stay offline-first and avoid tile-usage terms. |
 
@@ -111,8 +116,9 @@ all either public domain or openly licensed with attribution:
 | **USDA PLANTS** | U.S., **state-level** native/introduced/invasive | **Public domain** | The backbone for U.S. regions. State resolution now; a Phase-2 path to county via its distribution data. |
 | **WCVP native ranges** | Global, by TDWG "botanical country" (WGSRPD level 3) | **CC BY 4.0** | The global answer: native-vs-introduced range per region for essentially every species. |
 | **GBIF occurrences** (incl. research-grade iNaturalist) | Global point observations | CC BY / CC0 (per record) | Validate that a species actually occurs at/near a spot; ground-truth the range polygons. |
-| **EPA Level III/IV Ecoregions** | U.S. | US Gov **public domain** | Real ecoregion boundaries to replace our coarse bounding boxes (already flagged as Phase 2). |
-| **RESOLVE / WWF Terrestrial Ecoregions of the World** | Global | CC BY 4.0 | Ecoregion context outside the U.S. |
+| **EPA Level III/IV Ecoregions** | U.S. | US Gov **public domain** | Real ecoregion boundaries that refine our coarse bounding boxes (integrated for US regions). |
+| **EEA Biogeographical Regions of Europe** | Europe | **CC BY 4.0** | The Europe-side equivalent — integrated for the France region (Atlantic/Continental/Alpine/Mediterranean). |
+| **RESOLVE / WWF Terrestrial Ecoregions of the World** | Global | CC BY 4.0 | Finer ecoregion context outside the U.S./Europe, if ever needed. |
 | ~~BONAP county maps~~ | U.S. county | ⛔ restrictive | **Do not use** — reason unchanged (see table above). Use USDA PLANTS county data instead. |
 
 **Wildlife-value inputs (the eco-score)**
@@ -136,12 +142,15 @@ provider.
 
 - **"Native" means native *here*.** Each seed dataset asserts native status at the
   state/ecoregion level for its own region (Pennsylvania / Mid-Atlantic; maritime
-  Pacific Northwest; north/central Florida; subtropical south Florida & the Keys),
-  not "native to North America." The app picks the list from your coordinates —
-  refined by the spot's real EPA ecoregion when online — and refuses to show
-  another region's plants for an uncovered spot. That ecoregion refinement is what
-  splits Florida cleanly along the Southern Florida Coastal Plain (76) seam; see
-  `docs/ecoregion-plan.md`. County-level status via USDA PLANTS is a Phase 2 item.
+  Pacific Northwest; north/central Florida; subtropical south Florida & the Keys;
+  the Atlantic biogeographical region of metropolitan France), not "native to a
+  continent." The app picks the list from your coordinates — refined by the spot's
+  real ecoregion when online (EPA Omernik in the US, EEA biogeographical regions in
+  Europe) — and refuses to show another region's plants for an uncovered spot. That
+  refinement is what splits Florida cleanly along the Southern Florida Coastal Plain
+  (76) seam and keeps a Mediterranean or Alpine French point out of the Atlantic
+  list; see `docs/ecoregion-plan.md` and `docs/france-localization-plan.md`.
+  County-level status via USDA PLANTS is a Phase 2 item.
 - **Facts vs. expression.** Mature sizes, bloom months, and host-species counts
   are facts and are cited per row (`basis` field). We reference them; we do not
   copy anyone's descriptive text or mirror a database.

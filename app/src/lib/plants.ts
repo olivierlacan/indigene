@@ -50,10 +50,12 @@ export function regionForSite(
 ): RegionDef | null {
   const boxed = regionForCoords(lat, lon);
   if (!boxed) return null;
-  const codes = boxed.meta.ecoregionsL3;
-  const l3 = site?.ecoregionInfo?.l3Code ?? null;
-  if (l3 && codes && codes.length) {
-    return codes.includes(l3) ? boxed : null;
+  const decl = boxed.meta.ecoregion;
+  const info = site?.ecoregionInfo ?? null;
+  // Refine only when the live lookup used the same classification the region
+  // declares — an Omernik code never gets tested against an EEA region set.
+  if (decl && decl.codes.length && info && info.provider === decl.provider) {
+    return decl.codes.includes(info.code) ? boxed : null;
   }
   return boxed;
 }

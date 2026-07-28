@@ -8,12 +8,17 @@ import { REGION as MID_ATLANTIC, SEED_RAW as MID_ATLANTIC_SEED } from "./plants.
 import { REGION as PNW, SEED_RAW as PNW_SEED } from "./plants.pnw";
 import { REGION as FLORIDA_CENTRAL, SEED_RAW as FLORIDA_CENTRAL_SEED } from "./plants.florida";
 import { REGION as FLORIDA_SOUTH, SEED_RAW as FLORIDA_SOUTH_SEED } from "./plants.florida-south";
+import { REGION as FRANCE_ATLANTIC, SEED_RAW as FRANCE_ATLANTIC_SEED } from "./plants.france-atlantic";
 
 export const REGIONS: RegionDef[] = [
   { meta: MID_ATLANTIC, seed: MID_ATLANTIC_SEED },
   { meta: PNW, seed: PNW_SEED },
   { meta: FLORIDA_CENTRAL, seed: FLORIDA_CENTRAL_SEED },
   { meta: FLORIDA_SOUTH, seed: FLORIDA_SOUTH_SEED },
+  // First European region — the Atlantic biogeographic zone of metropolitan
+  // France, and the first of a planned France/Europe cluster (Continental,
+  // Alpine, Mediterranean to follow). See docs/france-localization-plan.md.
+  { meta: FRANCE_ATLANTIC, seed: FRANCE_ATLANTIC_SEED },
 ];
 
 /**

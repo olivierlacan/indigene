@@ -1,13 +1,19 @@
 # Plan: a French edition of Indigene (localiser Indigene)
 
-**Status:** feasibility confirmed, not yet built. The question that gated this —
-*"can we find ecoregion data for France?"* — has a clear **yes** (see §1). But
-"localize into French" for *this* app is not one job, it's three independent
-ones, and only two of them are engineering. The third — a French native-plant
-seed list — is real botanical sourcing that **must not be invented**, because
-every number in Indigene is meant to be citable (the app's whole honesty stance).
-This doc records what's feasible, what it touches in the code, and the decisions
-that need a human before data gets authored.
+**Status:** the **region + ecoregion foundation has shipped** (Track 3's first
+region and the ecoregion plumbing); **language/units localization is next**
+(Tracks 1–2, not yet built). The question that gated this — *"can we find
+ecoregion data for France?"* — had a clear **yes** (see §1), and the app now:
+generalizes ecoregions across providers (US EPA Omernik + EEA Biogeographical
+Regions of Europe, picked by coordinates); reads elevation from a global source
+outside the US; and ships a first European region, **Atlantic France**
+(`app/src/data/plants.france-atlantic.ts`, 23 plants), selected via the EEA
+`atlantic` region code. The **UI is still English** and units are still
+imperial — that's the explicit next step. The remaining honest gap is the one
+below in §4.3: the French host counts are genuine genus-level *estimates* pending
+a real European host-count source, and **must not be silently inflated** into
+false precision — every number in Indigene is meant to be citable. This doc
+records what's done, what's feasible next, and the decisions that need a human.
 
 ## TL;DR
 

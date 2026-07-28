@@ -103,31 +103,26 @@ function drainageFor(texture: string): string {
   return "moderate drainage";
 }
 
-// --- Elevation & slope: USGS 3DEP point query, with a small cross for slope ---
+// --- Elevation & slope: a small cross of points, differenced for slope. ---
+// USGS 3DEP (EPQS) is the best source but conterminous-US only, so outside it
+// we fall back to Open-Meteo's global elevation API. Both return heights in feet
+// here (Open-Meteo is converted from metres), so the slope math is identical.
 async function fetchElevationSlope(
   lat: number,
   lon: number
 ): Promise<{ elevationFt: number | null; slopeDeg: number | null }> {
   const d = 0.0003; // ~33 m
-  const points = [
+  const points: [number, number][] = [
     [lat, lon],
     [lat + d, lon],
     [lat - d, lon],
     [lat, lon + d],
     [lat, lon - d],
   ];
-  const results = await Promise.allSettled(
-    points.map(([la, lo]) => epqs(la, lo))
-  );
-  const val = (i: number): number | null =>
-    results[i].status === "fulfilled"
-      ? (results[i] as PromiseFulfilledResult<number | null>).value
-      : null;
-  const center = val(0);
-  const n = val(1),
-    s = val(2),
-    e = val(3),
-    w = val(4);
+  const heights = inConus(lat, lon)
+    ? await epqsCross(points)
+    : await openMeteoElevCross(points);
+  const [center, n, s, e, w] = heights;
   let slopeDeg: number | null = null;
   if (n != null && s != null && e != null && w != null) {
     const spanM = 2 * d * 111320; // deg latitude → metres
@@ -137,12 +132,35 @@ async function fetchElevationSlope(
   return { elevationFt: center != null ? Math.round(center) : null, slopeDeg };
 }
 
+// USGS EPQS, one query per point (US only). Feet.
+async function epqsCross(points: [number, number][]): Promise<(number | null)[]> {
+  const results = await Promise.allSettled(points.map(([la, lo]) => epqs(la, lo)));
+  return results.map((r) => (r.status === "fulfilled" ? r.value : null));
+}
+
 async function epqs(lat: number, lon: number): Promise<number | null> {
   const url = `https://epqs.nationalmap.gov/v1/json?x=${lon}&y=${lat}&units=Feet&wkid=4326&includeDate=false`;
   const data = await fetchJson(url);
   const v = data?.value ?? data?.elevation;
   const num = typeof v === "string" ? parseFloat(v) : v;
   return typeof num === "number" && !Number.isNaN(num) ? num : null;
+}
+
+// Open-Meteo elevation (global, keyless): all five points in one call. Returns
+// metres, converted to feet so the shared slope math is unit-consistent.
+const M_TO_FT = 3.28084;
+async function openMeteoElevCross(points: [number, number][]): Promise<(number | null)[]> {
+  const lats = points.map((p) => p[0]).join(",");
+  const lons = points.map((p) => p[1]).join(",");
+  try {
+    const data = await fetchJson(
+      `https://api.open-meteo.com/v1/elevation?latitude=${lats}&longitude=${lons}`
+    );
+    const arr: unknown[] = Array.isArray(data?.elevation) ? data.elevation : [];
+    return points.map((_, i) => (typeof arr[i] === "number" ? (arr[i] as number) * M_TO_FT : null));
+  } catch {
+    return points.map(() => null);
+  }
 }
 
 // --- Climate normals → hardiness zone + annual rainfall (Open-Meteo, no key) ---
@@ -188,22 +206,40 @@ export function zoneFromMinTemp(tF: number): string {
   return `${clampInt(n, 1, 13)}${half}`;
 }
 
-// --- Ecoregion: real EPA (Omernik) Level III/IV via the EPA ArcGIS service ---
-// Public-domain data. A point-in-polygon query on the Level IV layer returns the
-// full hierarchy (Level I–IV) in one call. Best-effort like the others: on any
-// failure (offline, CORS, a coastline point that hits no polygon, or outside the
-// conterminous US) we fall back to the coarse bounding-box guess below.
-// Phase A (see docs/ecoregion-plan.md): this drives the *label* only; region
-// selection still uses bounding boxes until Phase B.
-const ECOREGION_QUERY_URL =
-  "https://gispub.epa.gov/arcgis/rest/services/ORD/USEPA_Ecoregions_Level_III_and_IV/MapServer/7/query";
-
+// --- Ecoregion: a real, provider-tagged classification via ArcGIS point query.
+// Two public services, picked by where the point is: US EPA (Omernik) for the
+// conterminous US (public domain), and EEA Biogeographical Regions of Europe for
+// Europe (CC-BY 4.0). Both are best-effort — on any failure (offline, CORS, a
+// coastline point that hits no polygon, outside coverage) we fall back to the
+// coarse box guess below, and region *selection* still works from the box alone.
+// See docs/ecoregion-plan.md and docs/france-localization-plan.md.
 async function fetchEcoregion(
   lat: number,
   lon: number
 ): Promise<EcoregionInfo | null> {
+  if (inEurope(lat, lon)) return fetchEcoregionEEA(lat, lon);
+  if (inConus(lat, lon)) return fetchEcoregionEPA(lat, lon);
+  return null;
+}
+
+// Rough coverage boxes that pick which service to ask (and, for elevation, which
+// height source). They only route the request — the polygon query is what's
+// authoritative; a miss falls back to the box guess.
+export function inConus(lat: number, lon: number): boolean {
+  return lat >= 24 && lat <= 50 && lon >= -125 && lon <= -66;
+}
+export function inEurope(lat: number, lon: number): boolean {
+  return lat >= 34 && lat <= 72 && lon >= -25 && lon <= 45;
+}
+
+// EPA Omernik: one point-in-polygon query on the Level IV layer returns the full
+// Level I–IV hierarchy in one call.
+const EPA_ECOREGION_QUERY_URL =
+  "https://gispub.epa.gov/arcgis/rest/services/ORD/USEPA_Ecoregions_Level_III_and_IV/MapServer/7/query";
+
+async function fetchEcoregionEPA(lat: number, lon: number): Promise<EcoregionInfo | null> {
   const url =
-    `${ECOREGION_QUERY_URL}?geometry=${lon},${lat}&geometryType=esriGeometryPoint` +
+    `${EPA_ECOREGION_QUERY_URL}?geometry=${lon},${lat}&geometryType=esriGeometryPoint` +
     `&inSR=4326&spatialRel=esriSpatialRelIntersects` +
     `&outFields=US_L4CODE,US_L4NAME,US_L3CODE,US_L3NAME,NA_L2NAME,NA_L1NAME` +
     `&returnGeometry=false&f=json`;
@@ -218,26 +254,85 @@ async function fetchEcoregion(
 export function parseEcoregion(data: any): EcoregionInfo | null {
   const attrs = data?.features?.[0]?.attributes;
   if (!attrs) return null;
-  const l3Name = str(attrs.US_L3NAME);
-  const l3Code = str(attrs.US_L3CODE);
-  if (!l3Name || !l3Code) return null;
+  const name = str(attrs.US_L3NAME);
+  const code = str(attrs.US_L3CODE);
+  if (!name || !code) return null;
+  const l4Code = str(attrs.US_L4CODE);
+  const l4Name = str(attrs.US_L4NAME);
   return {
-    l1Name: toTitle(str(attrs.NA_L1NAME)),
-    l2Name: toTitle(str(attrs.NA_L2NAME)),
-    l3Code,
-    l3Name,
-    l4Code: str(attrs.US_L4CODE),
-    l4Name: str(attrs.US_L4NAME),
+    provider: "epa-omernik",
+    code,
+    name,
+    hierarchy: [toTitle(str(attrs.NA_L1NAME)), toTitle(str(attrs.NA_L2NAME))].filter(
+      (s): s is string => !!s
+    ),
+    detail: l4Code && l4Name ? { code: l4Code, name: l4Name } : null,
   };
 }
 
-// Display label: the real Level III name when we have it, else the coarse box.
+// EEA Biogeographical Regions of Europe (2016), served from the EEA ArcGIS host.
+// The layer is a single flat set of large regions (Atlantic, Continental,
+// Alpine, Mediterranean…). We ask for all fields and scan them, because the
+// exact field name for the region varies by service version — the values are
+// distinctive enough to recognize by name. (Field id / layer number to be
+// confirmed against the live service in a browser, like the EPA path was.)
+const EEA_ECOREGION_QUERY_URL =
+  "https://bio.discomap.eea.europa.eu/arcgis/rest/services/BioRegions/BiogeographicalRegions_WM/MapServer/0/query";
+
+async function fetchEcoregionEEA(lat: number, lon: number): Promise<EcoregionInfo | null> {
+  const url =
+    `${EEA_ECOREGION_QUERY_URL}?geometry=${lon},${lat}&geometryType=esriGeometryPoint` +
+    `&inSR=4326&spatialRel=esriSpatialRelIntersects` +
+    `&outFields=*&returnGeometry=false&f=json`;
+  const data = await fetchJson(url);
+  return parseEcoregionEEA(data);
+}
+
+// The eleven EEA biogeographical regions, canonicalized from whatever spelling
+// the service returns to a stable slug (the selection code) and a clean name.
+const EEA_REGIONS: { slug: string; name: string; match: RegExp }[] = [
+  { slug: "alpine", name: "Alpine", match: /alpine/ },
+  { slug: "atlantic", name: "Atlantic", match: /atlantic/ },
+  { slug: "black-sea", name: "Black Sea", match: /black\s*sea/ },
+  { slug: "boreal", name: "Boreal", match: /boreal/ },
+  { slug: "continental", name: "Continental", match: /continental/ },
+  { slug: "mediterranean", name: "Mediterranean", match: /mediterran/ },
+  { slug: "pannonian", name: "Pannonian", match: /pannonian/ },
+  { slug: "steppic", name: "Steppic", match: /steppic/ },
+  { slug: "arctic", name: "Arctic", match: /arctic/ },
+  { slug: "anatolian", name: "Anatolian", match: /anatolian/ },
+  { slug: "macaronesia", name: "Macaronesia", match: /macaronesia/ },
+];
+
+// Pure parser for the EEA response — scans attribute values for a recognizable
+// region name, so it survives field-name differences between service versions.
+export function parseEcoregionEEA(data: any): EcoregionInfo | null {
+  const attrs = data?.features?.[0]?.attributes;
+  if (!attrs) return null;
+  for (const v of Object.values(attrs)) {
+    const s = str(typeof v === "string" ? v : v == null ? null : String(v));
+    if (!s) continue;
+    const low = s.toLowerCase();
+    const hit = EEA_REGIONS.find((r) => r.match.test(low));
+    if (hit) {
+      return { provider: "eea-biogeo", code: hit.slug, name: hit.name, hierarchy: [], detail: null };
+    }
+  }
+  return null;
+}
+
+// Display label: the real region name plus which classification it came from,
+// or the coarse box guess when the live lookup failed.
 export function ecoregionLabel(
   info: EcoregionInfo | null,
   lat: number,
   lon: number
 ): string | null {
-  if (info) return `${info.l3Name} (EPA Level III ecoregion)`;
+  if (info) {
+    const suffix =
+      info.provider === "eea-biogeo" ? "EEA biogeographical region" : "EPA Level III ecoregion";
+    return `${info.name} (${suffix})`;
+  }
   return ecoregionGuess(lat, lon);
 }
 
@@ -256,6 +351,12 @@ function ecoregionGuess(lat: number, lon: number): string | null {
   }
   if (lat >= 24 && lat <= 49 && lon >= -100 && lon <= -66) {
     return "Eastern Temperate Forest (broad)";
+  }
+  // Metropolitan France, coarse: the Mediterranean south vs the Atlantic
+  // west/north. Offline label only — selection still uses the box + live code.
+  if (inEurope(lat, lon)) {
+    if (lat <= 44.2 && lon >= 2.5 && lon <= 10.0) return "Mediterranean (broad)";
+    if (lat >= 42.5 && lat <= 51.6 && lon >= -5.5 && lon <= 8.5) return "Atlantic (broad)";
   }
   return null;
 }

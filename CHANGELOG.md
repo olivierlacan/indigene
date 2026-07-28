@@ -27,6 +27,30 @@ subtitle on the What's new page.
 
 ### Added
 
+- Indigene now reaches its first place outside the United States: the mild,
+  rainy Atlantic west and north of **France** — Paris, Nantes, Bordeaux, Rennes,
+  Lille and the countryside between. Stand in a spot there and you'll get
+  [native French plants](https://olivierlacan.github.io/indigene/#/regions/france-atlantic) —
+  oak and hawthorn, blackthorn and hazel, woodland bluebells, honeysuckle and
+  foxgloves — ranked for your exact spot, each with what it does for local birds,
+  bees and butterflies. It's a carefully chosen starter list that will grow, and
+  the Mediterranean south, the Alps, and eastern France are planned next. (The
+  app itself still speaks English for now — French wording is the next step.)
+- The app now understands Europe's natural regions, not only North America's.
+  Online, it checks the official European map of
+  [biogeographical regions](https://www.eea.europa.eu/en/datahub/eea-data-policy)
+  — Atlantic, Continental, Alpine, Mediterranean — to tell whether a French spot
+  is in the Atlantic zone this first list is really for, and says so plainly when
+  it isn't yet.
+- Elevation and slope now work anywhere in the world, not just the US: outside
+  the United States the app reads the land's height from a global source, so the
+  new French spots get the same "how high, how steep" reading.
+- Internal: the ecoregion layer is now provider-agnostic — a spot resolves to a
+  real ecoregion via US EPA (Omernik) in the conterminous US or the EEA
+  Biogeographical Regions service in Europe, chosen by coordinates, both falling
+  back to the coarse box offline. `EcoregionInfo` carries a `provider` + `code` +
+  `name`, and a region declares the codes it covers under `meta.ecoregion`.
+  See `docs/france-localization-plan.md`.
 - A public [What's new page](https://olivierlacan.github.io/indigene/release-notes/):
   every release of Indigene described in plain words, newest first. Nothing to
   install, no account — it's just a web page you can share.

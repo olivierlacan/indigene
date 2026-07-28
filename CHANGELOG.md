@@ -23,7 +23,19 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
-[![The What's new page, on a phone](docs/screenshots/pr-40/thumb.png)](docs/screenshots/pr-40/notes-fixed-dark.png)
+### Changed
+
+- Internal: `make-thumb.mjs` takes `--top <px>`, starting the square that many
+  source pixels down instead of at the very top of the capture. A release
+  whose feature sits below the fold of a full-page screenshot (0.12's "See it
+  near you" section) can now show the feature rather than the page header.
+
+## [0.12] - 2026-07-28
+
+**See it near you**
+
+[![A wildlife page's "See it near you" section, on a phone](docs/screenshots/pr-46/thumb.png)](docs/screenshots/pr-46/after-dark.png)
+[Before](docs/screenshots/pr-46/before-dark.png) · [After](docs/screenshots/pr-46/after-dark.png)
 
 ### Added
 
@@ -66,13 +78,6 @@ subtitle on the What's new page.
 - Internal: the Privacy & safety page and its contextual links go through a
   shared `components/privacy-link.ts`. Combined with the wildlife-sightings
   work above, the bundle is now ~111 KB gzipped.
-- A public [What's new page](https://olivierlacan.github.io/indigene/release-notes/):
-  every release of Indigene described in plain words, newest first. Nothing to
-  install, no account — it's just a web page you can share.
-- A "See what's new" link in the app's footer, so the notes are one tap away.
-- Each release on the What's new page can now show a small picture of what
-  changed, taken when the change was made. Tap it to see the full-size
-  screenshot; Before and After links sit underneath when both exist.
 - Every [region's page](https://olivierlacan.github.io/indigene/#/regions/mid-atlantic)
   now opens with the same kind of at-a-glance number tiles a plant's page has:
   how many native plants are on the list, how many kinds of caterpillars its
@@ -137,6 +142,25 @@ subtitle on the What's new page.
   folds down to just your choice (a "Show all regions" link brings the rest
   back), then press Next when you're sure — instead of being whisked to the
   next step the moment you tap.
+
+## [0.11] - 2026-07-28
+
+**Never a blank page**
+
+[![The What's new page, on a phone](docs/screenshots/pr-40/thumb.png)](docs/screenshots/pr-40/notes-fixed-dark.png)
+
+### Added
+
+- A public [What's new page](https://olivierlacan.github.io/indigene/release-notes/):
+  every release of Indigene described in plain words, newest first. Nothing to
+  install, no account — it's just a web page you can share.
+- A "See what's new" link in the app's footer, so the notes are one tap away.
+- Each release on the What's new page can now show a small picture of what
+  changed, taken when the change was made. Tap it to see the full-size
+  screenshot; Before and After links sit underneath when both exist.
+
+### Changed
+
 - The footer — the fine print about open source and data sources, plus the
   "See what's new" link — now appears at the bottom of every page, not just
   the home screen.
@@ -146,16 +170,16 @@ subtitle on the What's new page.
 - The growth chart's labels are a touch bigger and drawn in the page's
   strongest text color, so the feet markings and year captions are easy to
   read in both light and dark mode — even in bright sun.
-- The What's new page now uses the changelog's own headings — Added, Changed,
-  Fixed — instead of renaming them.
-- Release notes now link to the things they describe — like the
-  [wildlife browser](https://olivierlacan.github.io/indigene/#/wildlife) — so
-  you can go straight from reading about a feature to trying it.
 - When you [search for a plant](https://olivierlacan.github.io/indigene/#/search),
   each result now underlines the part of its name that matches what you typed,
   so you can see at a glance why it showed up. And when a plant matched through
   a name it's less commonly known by — like "Maypop" for Purple
   Passionflower — the result now says so with an "Also called" line.
+- The What's new page now uses the changelog's own headings — Added, Changed,
+  Fixed — instead of renaming them.
+- Release notes now link to the things they describe — like the
+  [wildlife browser](https://olivierlacan.github.io/indigene/#/wildlife) — so
+  you can go straight from reading about a feature to trying it.
 - Internal: this `CHANGELOG.md` is the single source of the What's new page.
   `app/scripts/build-release-notes.mjs` compiles it to a static, app-styled
   HTML page; the Pages deploy workflow runs it on every push to `main`, and a
@@ -174,16 +198,6 @@ subtitle on the What's new page.
 
 ### Fixed
 
-- The bottom row of the growth chart's labels — like "(5′6″)" under the
-  little person — was getting cut off by the caption below. The chart now
-  leaves proper room for both label rows.
-- The growth chart could be drawn with the wrong colors — pale, hard-to-read
-  labels on a light page — if your device switched between light and dark
-  looks after the page loaded. The chart now redraws itself when that
-  happens, and also when the screen size changes.
-- The app's top menu now wraps onto a second line when it truly runs out of
-  room — like with very large text settings — instead of quietly spilling off
-  the edge of the screen, where the Saved button could end up out of reach.
 - The home page could come up completely blank — most often in Safari, and
   especially with an older Indigene tab still open in another window. The
   app was waiting forever for its on-device storage to answer before showing
@@ -200,6 +214,16 @@ subtitle on the What's new page.
   same reason — the app checks its on-device photo cache before asking, and
   that check could hang forever. It now gives the cache a couple of seconds,
   then asks iNaturalist directly.
+- The bottom row of the growth chart's labels — like "(5′6″)" under the
+  little person — was getting cut off by the caption below. The chart now
+  leaves proper room for both label rows.
+- The growth chart could be drawn with the wrong colors — pale, hard-to-read
+  labels on a light page — if your device switched between light and dark
+  looks after the page loaded. The chart now redraws itself when that
+  happens, and also when the screen size changes.
+- The app's top menu now wraps onto a second line when it truly runs out of
+  room — like with very large text settings — instead of quietly spilling off
+  the edge of the screen, where the Saved button could end up out of reach.
 - Internal: the page can no longer scroll sideways (`overflow-x: clip` on
   `body`). The overflowing header was silently widening the document, which
   is what put a dark right-edge gutter and a floating 🔖 in every full-page
@@ -477,7 +501,9 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/f84450c...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/9240f9c...HEAD
+[0.12]: https://github.com/olivierlacan/indigene/compare/2aec57f...9240f9c
+[0.11]: https://github.com/olivierlacan/indigene/compare/f84450c...2aec57f
 [0.10]: https://github.com/olivierlacan/indigene/compare/9453251...f84450c
 [0.9]: https://github.com/olivierlacan/indigene/compare/6e72889...9453251
 [0.8]: https://github.com/olivierlacan/indigene/compare/d45eda0...6e72889

@@ -28,6 +28,9 @@ interface LightboxState {
 
 let overlay: HTMLElement | null = null;
 let state: LightboxState | null = null;
+// Bumped on every paint; an in-flight decode from a previous photo compares
+// against it and quietly drops out, so fast paging can't paint a stale photo.
+let paintToken = 0;
 
 /** Open the lightbox on one photo of a sighting, able to page through the rest. */
 export function openObservationLightbox(
@@ -109,7 +112,7 @@ function paint(): void {
   const { photos, index, observation, plantName } = state;
   const photo = photos[index];
 
-  img.src = photo.largeUrl || photo.mediumUrl;
+  showPhoto(img, photo.largeUrl || photo.mediumUrl);
   img.alt = `${observation.taxonName ?? plantName}, photographed by ${observation.observer}`;
 
   const many = photos.length > 1;
@@ -128,12 +131,36 @@ function paint(): void {
       el("a", { href: INAT, target: "_blank", rel: "noopener" }, "iNaturalist"),
     ]),
     el("a", {
-      class: "lb-source btn btn-secondary",
+      class: "lb-source",
       href: `${INAT}/observations/${observation.id}`,
       target: "_blank",
       rel: "noopener",
-    }, "View original sighting on iNaturalist ↗"),
+    }, "View original sighting ↗"),
   );
+}
+
+// Swap the stage to a new photo without the browser's progressive-JPEG jitter:
+// fetch and decode the image *off-screen* first, then show the finished frame
+// with a short fade. While it decodes, the stage keeps its size (the panel is
+// full-height) and shows a quiet pulsing placeholder instead of a half-painted
+// image. If decode() fails (unsupported, or a flaky fetch) we still set the
+// src — the browser retries in place and the alt text stands in.
+function showPhoto(img: HTMLImageElement, url: string): void {
+  const token = ++paintToken;
+  const stage = img.parentElement;
+  img.classList.remove("lb-img-ready");
+  stage?.classList.add("lb-loading");
+  const pre = new Image();
+  pre.src = url;
+  pre.decode().catch(() => {}).then(() => {
+    if (token !== paintToken || !overlay?.isConnected) return; // stale or closed
+    img.src = url;
+    stage?.classList.remove("lb-loading");
+    // Two frames so the opacity transition runs even for a cached image.
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      if (token === paintToken) img.classList.add("lb-img-ready");
+    }));
+  });
 }
 
 // "cc-by-nc" → "CC BY-NC"; "cc0" → "CC0". Anything unexpected is upper-cased as-is.

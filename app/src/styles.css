@@ -85,6 +85,14 @@ body {
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
   padding-bottom: env(safe-area-inset-bottom);
+  /* The document itself never scrolls sideways on a phone. Anything that
+     needs width scrolls inside its own container; an element accidentally
+     wider than the viewport is a bug, and without this guard it silently
+     widens the page — visible as a dark right gutter in full-page
+     screenshots, where the viewport-sized sticky header can't reach the
+     document's new edge. `clip` rather than `hidden`: it forbids scrolling
+     entirely instead of creating a scroll container. */
+  overflow-x: clip;
 }
 
 h1,
@@ -143,6 +151,12 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* The ≤500px rules below make title + nav fit phone font metrics exactly.
+     When fonts run wider (Linux screenshot environments, big accessibility
+     text), the nav must wrap under the title rather than overflow past the
+     viewport edge — overflow here pushed the whole document wider and put
+     the Saved button off-screen. */
+  flex-wrap: wrap;
   gap: 0.5rem;
   padding: 0.6rem 1rem calc(0.6rem);
   padding-top: max(0.6rem, env(safe-area-inset-top));

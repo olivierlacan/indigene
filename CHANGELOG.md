@@ -58,6 +58,20 @@ subtitle on the What's new page.
   are exactly Keep a Changelog's. A bullet prefixed `Internal:` (like this
   one) stays in the changelog and is cleaned out of the compiled page.
 
+### Fixed
+
+- The app's top menu now wraps onto a second line when it truly runs out of
+  room — like with very large text settings — instead of quietly spilling off
+  the edge of the screen, where the Saved button could end up out of reach.
+- Internal: the page can no longer scroll sideways (`overflow-x: clip` on
+  `body`). The overflowing header was silently widening the document, which
+  is what put a dark right-edge gutter and a floating 🔖 in every full-page
+  screenshot: the capture honors the document width while the sticky header
+  only spans the viewport. A fresh capture's width must now equal the
+  viewport width. The four release thumbnails that had the gutter baked in
+  (0.7–0.10) were regenerated with `make-thumb.mjs --crop`, which trims
+  legacy captures to their true viewport width.
+
 ## [0.10] - 2026-07-27
 
 **Everything in plain sight**

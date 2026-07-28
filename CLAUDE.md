@@ -100,6 +100,14 @@ new UI — the MR description must show it, not just describe it. The procedure:
 Verify the screenshots actually show the change before embedding them — a
 stale build or wrong port produces two identical images that look like proof.
 
+Also verify each capture's pixel width **equals the viewport width** (×2 if
+capturing at 2× DPR): full-page capture honors the *document* width, so a
+wider file means some element overflows the viewport sideways and the shot
+will show a dark right-edge gutter where the sticky header ends. That gutter
+is a page bug (`overflow-x: clip` on `body` should make it impossible) — if a
+capture comes out wide, find and fix the overflowing element; don't publish
+the shot.
+
 ## Every PR carries its changelog entry
 
 `CHANGELOG.md` (Keep a Changelog format) is the single source of the public

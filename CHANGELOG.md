@@ -23,12 +23,32 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Added
+
+- **Every release now has a page of its own.** The
+  [What's new page](https://olivierlacan.github.io/indigene/release-notes/)
+  is one long list, which made "look at what just shipped" impossible to
+  share — you could only send someone the whole page and tell them where to
+  scroll. Now each release also lives at its own address, like
+  [Version 0.12](https://olivierlacan.github.io/indigene/release-notes/0.12/):
+  tap a release's title to open it on its own, with a link back to all
+  releases and links on to the ones either side of it. The address stays put
+  as new releases pile up on top.
+
 ### Changed
 
 - Internal: `make-thumb.mjs` takes `--top <px>`, starting the square that many
   source pixels down instead of at the very top of the capture. A release
   whose feature sits below the fold of a full-page screenshot (0.12's "See it
   near you" section) can now show the feature rather than the page header.
+- Internal: `build-release-notes.mjs` writes `release-notes/<version>/` for
+  every release alongside the index, and both declare a `<link rel=canonical>`
+  built from a new `SITE` constant — so a release has one address rather than
+  competing with an anchor on the index. The release card renderer is shared:
+  on the index its heading links to the release's page, on that page it is the
+  `h1`. Thumbnails are copied once into the notes folder and reached from a
+  release page one directory up. The whole `dist/` is already uploaded by the
+  Pages deploy, so the subdirectories ship with no workflow change.
 
 ## [0.12] - 2026-07-28
 

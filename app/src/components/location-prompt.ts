@@ -12,6 +12,7 @@
 // suitability checker uses — no new provider, no new trust decision.
 import { el, clear } from "../ui";
 import { searchPlaces, placeLabel } from "../lib/geocode";
+import { privacyNote } from "./privacy-link";
 
 export interface LocationPromptConfig {
   /** Unique base for the input's id/label pair, so two prompts can coexist. */
@@ -142,5 +143,6 @@ export function locationPrompt(config: LocationPromptConfig): HTMLElement {
     ]),
     results,
     msg,
+    privacyNote("Whichever you choose, it's used only for this lookup and never leaves your device except as an anonymous request to iNaturalist"),
   ]);
 }

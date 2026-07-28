@@ -65,7 +65,7 @@ subtitle on the What's new page.
   [Privacy & safety](https://olivierlacan.github.io/indigene/#/privacy).
 - Internal: the Privacy & safety page and its contextual links go through a
   shared `components/privacy-link.ts`. Combined with the wildlife-sightings
-  work above, the bundle is now ~109 KB gzipped.
+  work above, the bundle is now ~111 KB gzipped.
 - A public [What's new page](https://olivierlacan.github.io/indigene/release-notes/):
   every release of Indigene described in plain words, newest first. Nothing to
   install, no account — it's just a web page you can share.

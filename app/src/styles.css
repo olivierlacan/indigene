@@ -1276,6 +1276,51 @@ details.weights[open] > summary {
   background: var(--line);
 }
 
+/* --- Privacy reassurance line (under a location/save control) --- */
+/* Quiet by design: it's a standing promise, not a warning, so it sits in muted
+   text and doesn't compete with the control above it. */
+.privacy-note {
+  margin: 0.4rem 0 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.privacy-note a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+}
+.privacy-note a:hover,
+.privacy-note a:focus-visible {
+  color: var(--focus);
+}
+
+/* --- Privacy & safety page --- */
+.privacy-page h3 {
+  margin: 1.4rem 0 0.3rem;
+}
+.privacy-page .lede-note {
+  margin-top: 0.8rem;
+}
+.privacy-page ul {
+  margin: 0.3rem 0 0;
+  padding-left: 1.2rem;
+}
+.privacy-page li {
+  margin: 0.35rem 0;
+  color: var(--ink-soft);
+}
+.privacy-page .who-list {
+  list-style: none;
+  padding-left: 0;
+}
+.privacy-page .who-list li {
+  margin: 0.5rem 0;
+}
+.privacy-page .who-list strong {
+  color: var(--ink);
+}
+
 /* --- iNaturalist "growing near you" observation strip --- */
 /* Each card is one nearby, research-grade sighting: a row of small square
    photos over a one-line credit that links back to the observer's record.

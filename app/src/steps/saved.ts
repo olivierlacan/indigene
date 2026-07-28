@@ -2,6 +2,7 @@ import { el, clear, toast } from "../ui";
 import { navigate, openSavedSpot } from "../state";
 import { listSpots, deleteSpot } from "../db";
 import { sunPlain } from "../lib/plain";
+import { privacyNote } from "../components/privacy-link";
 
 // Saved spots — local-first, no account. Open one to reload its readings and
 // jump back to the plant list, or delete it.
@@ -49,6 +50,7 @@ export async function renderSaved(main: HTMLElement): Promise<void> {
 
   main.append(
     list,
+    privacyNote("These spots live on this device only — they never leave it, and we can't see them"),
     el("button", { class: "btn btn-primary btn-block", style: "margin-top:1rem", onClick: () => navigate("location") }, "Find another spot")
   );
 }

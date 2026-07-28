@@ -7,6 +7,7 @@ import { regionForCoords } from "../data/regions";
 import { ISSUES_URL } from "../lib/plain";
 import { TILE_SIZE, getTile, metersPerPixel, tileCoords } from "../lib/tiles";
 import { whyThis } from "../components/learn";
+import { privacyNote } from "../components/privacy-link";
 
 // The out-of-coverage message, shown the moment a person selects a location
 // (GPS fix or search pick) outside every covered region — not sprung on them
@@ -412,6 +413,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
       "Your coordinates pick which regional plant list applies and pull the soil, climate, and ecoregion records for this exact place — the same species can be a keystone in one region and a stranger in the next.",
     ]),
     locateBtn,
+    privacyNote("Your location is used only to find what grows here, only when you tap, and never leaves your device except as anonymous lookups"),
     searchCard,
     mapBlock,
     regionCard,

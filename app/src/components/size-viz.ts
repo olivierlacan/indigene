@@ -25,14 +25,48 @@ const bloomColors: Record<string, string> = {
   brown: "#8d6e63",
 };
 
+// The canvas rasterizes the theme's colors once, so unlike the surrounding CSS
+// it goes stale when the device flips light/dark (iOS auto-appearance) or the
+// layout width changes (rotation). Track each canvas's plant and re-render on
+// those signals; listeners detach themselves once the canvas leaves the DOM.
+const drawn = new WeakMap<HTMLCanvasElement, Plant>();
+
 export function drawSizeViz(canvas: HTMLCanvasElement, plant: Plant): void {
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const alreadyWatched = drawn.has(canvas);
+  drawn.set(canvas, plant);
+  render(canvas, plant);
+  if (!alreadyWatched) watchForRedraw(canvas);
+}
+
+function watchForRedraw(canvas: HTMLCanvasElement): void {
+  const scheme = window.matchMedia("(prefers-color-scheme: dark)");
+  let lastW = canvas.clientWidth;
+  const stop = () => {
+    scheme.removeEventListener("change", onScheme);
+    ro.disconnect();
+  };
+  const onScheme = () => {
+    if (!canvas.isConnected) return stop();
+    render(canvas, drawn.get(canvas)!);
+  };
+  const ro = new ResizeObserver(() => {
+    if (!canvas.isConnected) return stop();
+    if (canvas.clientWidth === lastW) return; // height follows from our own render
+    lastW = canvas.clientWidth;
+    render(canvas, drawn.get(canvas)!);
+  });
+  scheme.addEventListener("change", onScheme);
+  ro.observe(canvas);
+}
+
+function render(canvas: HTMLCanvasElement, plant: Plant): void {
+  const dpr = Math.min(window.devicePixelRatio || 1, 3);
   const cssW = canvas.clientWidth || 340;
 
-  const padL = 34; // room for the feet axis
+  const padL = 36; // room for the feet axis
   const padR = 8;
   const padTop = 10;
-  const padBottom = 26; // ground labels
+  const padBottom = 38; // two full label rows below the ground line
 
   const cols = 5; // "You" + 4 ages
   const colW = (cssW - padL - padR) / cols;
@@ -49,10 +83,10 @@ export function drawSizeViz(canvas: HTMLCanvasElement, plant: Plant): void {
   // shared scale stays as large as possible on narrow screens.
   const hScale = (colW * 0.94) / maxSpreadFt;
   const vScaleAt = (h: number) => (h - padTop - padBottom) / (maxHeightFt * 1.12);
-  let cssH = 210;
+  let cssH = 222;
   const pxPerFt = Math.min(vScaleAt(cssH), hScale);
   cssH = Math.max(
-    120, // keep the axis and labels legible even for squat groundcovers
+    132, // keep the axis and labels legible even for squat groundcovers
     Math.min(cssH, Math.ceil(maxHeightFt * 1.12 * pxPerFt + padTop + padBottom))
   );
 
@@ -60,10 +94,13 @@ export function drawSizeViz(canvas: HTMLCanvasElement, plant: Plant): void {
   canvas.height = Math.round(cssH * dpr);
   canvas.style.height = cssH + "px";
   const ctx = canvas.getContext("2d")!;
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
   ctx.scale(dpr, dpr);
   ctx.clearRect(0, 0, cssW, cssH);
 
-  const ink = cssVar("--ink-soft", "#3d3d34");
+  // Full-strength ink for every label: the legend has to stay readable in
+  // bright sun, in both themes. --ink-soft was too faint for 12px canvas text.
+  const ink = cssVar("--ink", "#14140f");
   const line = cssVar("--line", "#cfcabb");
   const brand = cssVar("--brand", "#175e33");
 
@@ -72,19 +109,19 @@ export function drawSizeViz(canvas: HTMLCanvasElement, plant: Plant): void {
   // Feet gridlines + labels.
   ctx.strokeStyle = line;
   ctx.fillStyle = ink;
-  ctx.font = "11px system-ui, sans-serif";
+  ctx.font = "12px system-ui, sans-serif";
   ctx.textAlign = "right";
   ctx.textBaseline = "middle";
   const gridStep = niceStep(maxHeightFt);
   for (let ft = 0; ft <= maxHeightFt; ft += gridStep) {
     const y = groundY - ft * pxPerFt;
-    ctx.globalAlpha = 0.5;
+    ctx.globalAlpha = 0.6;
     ctx.beginPath();
     ctx.moveTo(padL, y);
     ctx.lineTo(cssW - padR, y);
     ctx.stroke();
     ctx.globalAlpha = 1;
-    ctx.fillText(ft === 0 ? "0" : `${ft}′`, padL - 4, y);
+    ctx.fillText(ft === 0 ? "0" : `${ft}′`, padL - 5, y);
   }
 
   // Ground line.
@@ -98,14 +135,15 @@ export function drawSizeViz(canvas: HTMLCanvasElement, plant: Plant): void {
 
   ctx.textAlign = "center";
 
-  // Column 0: the human reference.
+  // Column 0: the human reference, in ink so it adapts to the theme.
   const col0x = padL + colW * 0.5;
-  drawHuman(ctx, col0x, groundY, HUMAN_FT * pxPerFt);
+  drawHuman(ctx, col0x, groundY, HUMAN_FT * pxPerFt, ink);
   ctx.fillStyle = ink;
   ctx.textBaseline = "top";
-  ctx.font = "11px system-ui, sans-serif";
-  ctx.fillText("You", col0x, groundY + 4);
-  ctx.fillText("(5′6″)", col0x, groundY + 16);
+  ctx.font = "600 12px system-ui, sans-serif";
+  ctx.fillText("You", col0x, groundY + 5);
+  ctx.font = "12px system-ui, sans-serif";
+  ctx.fillText("(5′6″)", col0x, groundY + 20);
 
   // Columns 1..4: the plant at each age.
   const tint = plant.bloom ? bloomColors[plant.bloom.color] ?? brand : brand;
@@ -113,40 +151,74 @@ export function drawSizeViz(canvas: HTMLCanvasElement, plant: Plant): void {
     const cx = padL + colW * (1.5 + i);
     drawPlant(ctx, plant.form, cx, groundY, snap.heightFt * pxPerFt, snap.spreadFt * pxPerFt, brand, tint);
     ctx.fillStyle = ink;
-    ctx.font = "600 11px system-ui, sans-serif";
+    ctx.font = "600 12px system-ui, sans-serif";
     ctx.textBaseline = "top";
-    ctx.fillText(`Yr ${snap.year}`, cx, groundY + 4);
-    ctx.font = "11px system-ui, sans-serif";
-    ctx.fillText(fmtFt(snap.heightFt), cx, groundY + 16);
+    ctx.fillText(`Yr ${snap.year}`, cx, groundY + 5);
+    ctx.font = "12px system-ui, sans-serif";
+    ctx.fillText(fmtFt(snap.heightFt), cx, groundY + 20);
   });
 }
 
-function drawHuman(ctx: CanvasRenderingContext2D, x: number, groundY: number, h: number): void {
-  const headR = Math.max(2.5, h * 0.09);
-  const bodyTop = groundY - h;
-  ctx.fillStyle = "rgba(90,90,80,0.85)";
+// A standing figure with head, neck, shoulders, arms and legs — recognizably
+// a person both at the ~20px it gets next to a mature tree and at the ~90px it
+// gets beside a knee-high perennial.
+function drawHuman(ctx: CanvasRenderingContext2D, x: number, groundY: number, h: number, color: string): void {
+  const headR = Math.max(2.2, h * 0.075);
+  const top = groundY - h;
+  const shoulderY = top + headR * 2.4;
+  const hipY = groundY - h * 0.47;
+  const shoulderHalf = headR * 1.05;
+  const hipHalf = headR * 0.62;
+  const limbW = Math.max(1.4, headR * 0.62);
+
+  ctx.save();
+  ctx.fillStyle = color;
+  ctx.strokeStyle = color;
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+
   // head
   ctx.beginPath();
-  ctx.arc(x, bodyTop + headR, headR, 0, Math.PI * 2);
+  ctx.arc(x, top + headR, headR, 0, Math.PI * 2);
   ctx.fill();
-  // body (simple tapered torso + legs)
-  const shoulder = bodyTop + headR * 2;
-  const hip = groundY - h * 0.42;
+
+  // neck
+  ctx.lineWidth = Math.max(1.2, headR * 0.65);
   ctx.beginPath();
-  ctx.moveTo(x - headR * 0.9, shoulder);
-  ctx.lineTo(x + headR * 0.9, shoulder);
-  ctx.lineTo(x + headR * 0.6, hip);
-  ctx.lineTo(x - headR * 0.6, hip);
+  ctx.moveTo(x, top + headR * 1.7);
+  ctx.lineTo(x, shoulderY + 1);
+  ctx.stroke();
+
+  // torso: shoulders tapering to the hips (stroked thinly to round the corners)
+  ctx.lineWidth = Math.max(1, headR * 0.4);
+  ctx.beginPath();
+  ctx.moveTo(x - shoulderHalf, shoulderY);
+  ctx.lineTo(x + shoulderHalf, shoulderY);
+  ctx.lineTo(x + hipHalf, hipY);
+  ctx.lineTo(x - hipHalf, hipY);
   ctx.closePath();
   ctx.fill();
-  ctx.lineWidth = Math.max(1.5, headR * 0.5);
-  ctx.strokeStyle = "rgba(90,90,80,0.85)";
-  ctx.beginPath();
-  ctx.moveTo(x - headR * 0.4, hip);
-  ctx.lineTo(x - headR * 0.4, groundY);
-  ctx.moveTo(x + headR * 0.4, hip);
-  ctx.lineTo(x + headR * 0.4, groundY);
   ctx.stroke();
+
+  // arms, hanging from the shoulders with a slight outward angle
+  ctx.lineWidth = limbW;
+  ctx.beginPath();
+  ctx.moveTo(x - shoulderHalf * 0.8, shoulderY + limbW * 0.4);
+  ctx.lineTo(x - headR * 1.75, hipY + h * 0.01);
+  ctx.moveTo(x + shoulderHalf * 0.8, shoulderY + limbW * 0.4);
+  ctx.lineTo(x + headR * 1.75, hipY + h * 0.01);
+  ctx.stroke();
+
+  // legs, a slight A-stance
+  ctx.lineWidth = limbW * 1.25;
+  ctx.beginPath();
+  ctx.moveTo(x - hipHalf * 0.5, hipY);
+  ctx.lineTo(x - headR * 0.8, groundY);
+  ctx.moveTo(x + hipHalf * 0.5, hipY);
+  ctx.lineTo(x + headR * 0.8, groundY);
+  ctx.stroke();
+
+  ctx.restore();
 }
 
 function drawPlant(

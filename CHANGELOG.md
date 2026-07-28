@@ -40,6 +40,12 @@ subtitle on the What's new page.
 - The footer — the fine print about open source and data sources, plus the
   "See what's new" link — now appears at the bottom of every page, not just
   the home screen.
+- The little person standing beside each plant in the growth chart now looks
+  like a person — head, shoulders, arms and legs — instead of a featureless
+  post, at every size from towering oak to knee-high wildflower.
+- The growth chart's labels are a touch bigger and drawn in the page's
+  strongest text color, so the feet markings and year captions are easy to
+  read in both light and dark mode — even in bright sun.
 - The What's new page now uses the changelog's own headings — Added, Changed,
   Fixed — instead of renaming them.
 - Release notes now link to the things they describe — like the
@@ -63,6 +69,13 @@ subtitle on the What's new page.
 
 ### Fixed
 
+- The bottom row of the growth chart's labels — like "(5′6″)" under the
+  little person — was getting cut off by the caption below. The chart now
+  leaves proper room for both label rows.
+- The growth chart could be drawn with the wrong colors — pale, hard-to-read
+  labels on a light page — if your device switched between light and dark
+  looks after the page loaded. The chart now redraws itself when that
+  happens, and also when the screen size changes.
 - The app's top menu now wraps onto a second line when it truly runs out of
   room — like with very large text settings — instead of quietly spilling off
   the edge of the screen, where the Saved button could end up out of reach.

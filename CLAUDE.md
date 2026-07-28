@@ -58,6 +58,16 @@ they'd be merging before they open a single file.
 Whenever a change affects something the user can see — copy, layout, colors,
 new UI — the MR description must show it, not just describe it. The procedure:
 
+0. **Check the fonts first.** Screenshots must render with phone metrics, not
+   the container's DejaVu fallback (~10% wider — it changes layout). The
+   SessionStart hook (`.claude/hooks/session-start.sh`) sets this up in web
+   sessions; verify with `fc-match system-ui`, which must answer Roboto. If
+   it doesn't, run the hook once by hand:
+
+   ```sh
+   CLAUDE_CODE_REMOTE=true CLAUDE_PROJECT_DIR="$PWD" .claude/hooks/session-start.sh
+   ```
+
 1. **Build both versions.** Build the "after" from your branch as usual. For
    the "before", check out the base in a scratch worktree and build there:
 

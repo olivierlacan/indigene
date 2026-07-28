@@ -71,6 +71,14 @@ subtitle on the What's new page.
   viewport width. The four release thumbnails that had the gutter baked in
   (0.7–0.10) were regenerated with `make-thumb.mjs --crop`, which trims
   legacy captures to their true viewport width.
+- Internal: screenshots now render with real phone font metrics. The capture
+  container has none of the app's named fonts, so text fell through to DejaVu
+  Sans (~10% wider than a phone renders — which is what made the header
+  overflow, then wrap, in captures). A SessionStart hook
+  (`.claude/hooks/session-start.sh`) installs Roboto and points `system-ui`
+  at it, so headless Chromium lays out like an Android phone; the nav also
+  sits a touch tighter at phone widths, so it fits Roboto with room to spare
+  instead of by one pixel.
 
 ## [0.10] - 2026-07-27
 

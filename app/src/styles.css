@@ -327,7 +327,10 @@ a {
   }
   .site-nav a,
   .nav-menu-btn {
-    padding: 0.25rem 0.4rem;
+    /* 0.35rem sides (was 0.4): with Roboto metrics (Android, and the
+       screenshot environment) the four nav items fit 390px with ~8px to
+       spare instead of by a knife-edge 1px; iOS's narrower SF gains more. */
+    padding: 0.25rem 0.35rem;
     font-size: 0.85rem;
   }
   .nav-menu-label {

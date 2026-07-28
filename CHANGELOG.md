@@ -27,6 +27,26 @@ subtitle on the What's new page.
 
 ### Added
 
+- **See the wildlife near you.** Every creature in the
+  [wildlife browser](https://olivierlacan.github.io/indigene/#/wildlife) — the
+  monarch, the luna moth, the gopher tortoise — now has a "See it near you"
+  section. Tap it, share your location, and Indigene pulls real, community-
+  verified photos of that animal spotted close to you, or you can look it up in
+  a region where it's found without being there. The photos come live from
+  iNaturalist, called by your own browser, and each one is credited to the
+  person who took it — the same way the plant pages already show a plant
+  growing near you. (Some entries are broad groups, like "Jays, turkeys &
+  woodpeckers," that don't point at a single species; those don't offer the
+  lookup.)
+- Internal: the wildlife layer identifies each animal to iNaturalist by its
+  scientific name (already curated in the catalog), resolving it to a taxon id
+  at request time via iNaturalist's taxa endpoint — synonym-tolerant, and it
+  fails safe (an unresolvable name shows nothing rather than the wrong
+  creature). Sightings are cached per animal + area in IndexedDB for 7 days,
+  reusing the plant layer's cache machinery (`lib/inaturalist.ts`,
+  `lib/wildlife-sightings.ts`). The shared photo-card and credit rendering now
+  lives in `components/observation-ui.ts`, used by both the plant and wildlife
+  "near you" sections. Bundle is ~106 KB gzipped (up ~1 KB).
 - A public [What's new page](https://olivierlacan.github.io/indigene/release-notes/):
   every release of Indigene described in plain words, newest first. Nothing to
   install, no account — it's just a web page you can share.

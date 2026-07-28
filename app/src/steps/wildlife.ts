@@ -28,6 +28,7 @@ import { termTag } from "../components/term-dialog";
 import { supportIcon, relianceIcon } from "../components/support-icon";
 import { silhouetteFor } from "../components/plant-card";
 import { keystoneIcon } from "../components/keystone-icon";
+import { wildlifeNearbySection } from "../components/wildlife-nearby";
 import type { SupportLink } from "../types";
 
 // Shared honesty note: this is the notable, mapped wildlife — never a claim to
@@ -166,6 +167,11 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
       ]),
     ]),
   );
+
+  // "See it near you" — real iNaturalist sightings of this animal near the user
+  // (or in a region it's found in). Null for informal groups with no single taxon.
+  const nearby = wildlifeNearbySection(w);
+  if (nearby) main.append(nearby);
 
   for (const group of byRegion) {
     main.append(

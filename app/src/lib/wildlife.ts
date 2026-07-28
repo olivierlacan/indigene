@@ -82,6 +82,15 @@ export function wildlifeForPlant(regionId: string, plantId: string): WildlifeFor
   return out;
 }
 
+/** The regions Indigene documents this animal in — i.e. the regions whose plant
+ *  lists carry at least one tie to it — in the app's usual region order. Used to
+ *  offer "look it up where it's found" buttons on the wildlife page, the same way
+ *  a plant offers its native regions. */
+export function regionsForWildlife(wildlifeId: string): RegionDef[] {
+  const ids = new Set(plantsForWildlife(wildlifeId).map((s) => s.region.meta.id));
+  return REGIONS.filter((r) => ids.has(r.meta.id));
+}
+
 /** One row of the browse index: an animal plus how widely it's supported. */
 export interface WildlifeIndexRow {
   wildlife: Wildlife;

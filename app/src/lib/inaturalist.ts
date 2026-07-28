@@ -33,6 +33,7 @@
 // so anything we ever render can be shown with its credit intact.
 
 const API_BASE = "https://api.inaturalist.org/v1/observations";
+const TAXA_BASE = "https://api.inaturalist.org/v1/taxa";
 
 /** Default search radius around the spot, in kilometres. */
 export const DEFAULT_RADIUS_KM = 50;
@@ -52,6 +53,10 @@ export interface NearbyQuery {
    *  cache — plants we can vouch for as local natives. Omit for an unscoped
    *  "any plant" query (not used by the app; kept for the raw client). */
   taxonIds?: readonly string[];
+  /** iNaturalist iconic taxon to scope the search to (e.g. "Plantae" for the
+   *  plant layer, "Insecta"/"Aves"/… for the wildlife layer). Defaults to
+   *  "Plantae" — the plant layer that first used this client. */
+  iconicTaxa?: string;
 }
 
 /** A lat/lon bounding box — the coverage box of an Indigene region. Used to look
@@ -69,6 +74,8 @@ export interface RegionQuery {
   perPage?: number;
   /** Taxa to restrict to — the region's natives, same native-only guarantee. */
   taxonIds?: readonly string[];
+  /** iNaturalist iconic taxon to scope to. Defaults to "Plantae". */
+  iconicTaxa?: string;
 }
 
 /** The center of a bounding box — a representative point for the region, used
@@ -121,13 +128,18 @@ export interface ObservationSummary {
   photos: ObservationPhoto[];
 }
 
-// The filters every query shares, whatever the geography: plants only,
+// The filters every query shares, whatever the geography: one iconic taxon
+// (plants for the plant layer, an animal class for the wildlife layer),
 // community-verified IDs only, every result photographed, a modest page size,
-// most-recent first, and the native-taxa scope when given. The trim
+// most-recent first, and the taxon scope when given. The trim
 // (`summarizeObservations`) is what actually shrinks the payload we keep.
-function commonParams(perPage: number | undefined, taxonIds: readonly string[] | undefined): URLSearchParams {
+function commonParams(
+  perPage: number | undefined,
+  taxonIds: readonly string[] | undefined,
+  iconicTaxa: string | undefined,
+): URLSearchParams {
   const params = new URLSearchParams({
-    iconic_taxa: "Plantae",
+    iconic_taxa: iconicTaxa ?? "Plantae",
     quality_grade: "research",
     photos: "true",
     per_page: String(Math.min(perPage ?? DEFAULT_PER_PAGE, 200)),
@@ -147,7 +159,7 @@ function commonParams(perPage: number | undefined, taxonIds: readonly string[] |
  * restricts to those taxa so a non-native garden escape nearby is never returned.
  */
 export function buildObservationsUrl(q: NearbyQuery): string {
-  const params = commonParams(q.perPage, q.taxonIds);
+  const params = commonParams(q.perPage, q.taxonIds, q.iconicTaxa);
   params.set("lat", String(q.lat));
   params.set("lng", String(q.lon));
   params.set("radius", String(q.radiusKm ?? DEFAULT_RADIUS_KM));
@@ -160,7 +172,7 @@ export function buildObservationsUrl(q: NearbyQuery): string {
  * scope, so it only ever returns plants that belong in that region.
  */
 export function buildBoundsUrl(q: RegionQuery): string {
-  const params = commonParams(q.perPage, q.taxonIds);
+  const params = commonParams(q.perPage, q.taxonIds, q.iconicTaxa);
   params.set("swlat", String(q.bounds.swLat));
   params.set("swlng", String(q.bounds.swLon));
   params.set("nelat", String(q.bounds.neLat));
@@ -284,13 +296,14 @@ export function summarizeObservations(
 }
 
 /**
- * Fetch and trim the nearby research-grade plant observations for a spot. One
- * network call; the returned array is already trimmed, distance-tagged, and
- * sorted nearest-first — ready to cache. Rejects only on network/HTTP failure,
- * so callers can distinguish "no signal" from "nothing growing nearby" (an
- * empty array). `signal` lets a caller time it out or abandon it.
+ * Fetch and trim the nearby research-grade observations for a spot — plants
+ * (the plant layer) or one animal's sightings (the wildlife layer), depending
+ * on how `q` is scoped. One network call; the returned array is already
+ * trimmed, distance-tagged, and sorted nearest-first — ready to cache. Rejects
+ * only on network/HTTP failure, so callers can distinguish "no signal" from
+ * "nothing nearby" (an empty array). `signal` lets a caller time it out.
  */
-export async function fetchNearbyPlantObservations(
+export async function fetchNearbyObservations(
   q: NearbyQuery,
   signal?: AbortSignal,
 ): Promise<ObservationSummary[]> {
@@ -301,12 +314,12 @@ export async function fetchNearbyPlantObservations(
 }
 
 /**
- * Fetch and trim the research-grade plant observations inside a region's box —
- * the "look it up in a specific ecoregion even if you're not there" path. Same
- * one call, same trim; distances are left null (there's no "you" to measure
- * from) and the list stays most-recent-first.
+ * Fetch and trim the research-grade observations inside a region's box — the
+ * "look it up in a specific ecoregion even if you're not there" path. Same one
+ * call, same trim; distances are left null (there's no "you" to measure from)
+ * and the list stays most-recent-first.
  */
-export async function fetchRegionPlantObservations(
+export async function fetchRegionObservations(
   q: RegionQuery,
   signal?: AbortSignal,
 ): Promise<ObservationSummary[]> {
@@ -329,4 +342,73 @@ export function indexByTaxon(
     else index.set(o.taxonId, [o]);
   }
   return index;
+}
+
+// ---------------------------------------------------------------------------
+// Name → taxon id resolution (the wildlife layer).
+//
+// Plants carry a reconciled numeric iNaturalist id in the registry, so the plant
+// layer queries observations directly by `taxon_id`. The wildlife catalog has no
+// such reconciliation; it carries the animal's *scientific name* (already curated
+// and sourced). We turn that name into a taxon id here, at request time, by
+// asking iNaturalist's own taxa endpoint — which follows its synonymy, so a
+// renamed taxon (e.g. the gulf fritillary, moved from Agraulis to Dione) still
+// resolves. Resolving to an id and then querying `taxon_id` is deliberate: the
+// observations endpoint's free-text `taxon_name` filter silently returns
+// *everything* when a name doesn't match, which for us would mean showing random
+// creatures as if they were the one asked for. Going through an id fails safe —
+// an unresolvable name yields null, and the caller shows nothing.
+// ---------------------------------------------------------------------------
+
+/** Build the taxa-search URL for a scientific name, scoped to one iconic taxon
+ *  so a cross-kingdom homonym can't win. Pure and exported for inspection. */
+export function buildTaxaUrl(name: string, iconicTaxa: string): string {
+  const params = new URLSearchParams({
+    q: name,
+    iconic_taxa: iconicTaxa,
+    is_active: "true",
+    per_page: "10",
+  });
+  return `${TAXA_BASE}?${params.toString()}`;
+}
+
+/**
+ * Pick the taxon id that best matches a scientific name from a taxa-search
+ * `results` array, or null if nothing plausible matches. Pure, so the choice is
+ * testable without a network call. The preference order:
+ *   1. an active taxon whose accepted name equals the query exactly,
+ *   2. else an active taxon of the expected rank (a genus name → a genus; a
+ *      binomial → a species), which is where a synonym search lands (the query
+ *      name is a synonym, the accepted name differs),
+ *   3. else the first active result.
+ * The iconic-taxon filter was already applied in the query, so every candidate
+ * here is in the right group of life.
+ */
+export function pickTaxon(results: unknown, name: string): number | null {
+  const rows: any[] = Array.isArray(results) ? results : [];
+  const active = rows.filter((r) => r?.is_active !== false && num(r?.id) != null);
+  if (!active.length) return null;
+  const want = name.trim().toLowerCase();
+  const expectedRank = want.includes(" ") ? "species" : "genus";
+  const exact = active.find((r) => str(r?.name)?.toLowerCase() === want);
+  if (exact) return num(exact.id);
+  const byRank = active.find((r) => str(r?.rank) === expectedRank);
+  if (byRank) return num(byRank.id);
+  return num(active[0].id);
+}
+
+/**
+ * Resolve a scientific name to an iNaturalist taxon id, or null if it can't be
+ * matched. One network call to the taxa endpoint; rejects only on network/HTTP
+ * failure, so a caller can tell "no signal" from "no such taxon" (null).
+ */
+export async function resolveTaxon(
+  name: string,
+  iconicTaxa: string,
+  signal?: AbortSignal,
+): Promise<number | null> {
+  const res = await fetch(buildTaxaUrl(name, iconicTaxa), { signal });
+  if (!res.ok) throw new Error(`iNaturalist taxa ${res.status}`);
+  const data = await res.json();
+  return pickTaxon(data?.results, name);
 }

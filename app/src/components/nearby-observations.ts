@@ -16,31 +16,11 @@ import type { RegionDef } from "../lib/plants";
 import { nearbyObservations, regionObservations, observationsForTaxon } from "../lib/nearby";
 import type { NearbyResult } from "../lib/nearby";
 import type { Bounds, ObservationSummary } from "../lib/inaturalist";
-import { openObservationLightbox } from "./lightbox";
+import { observationCard, freshnessLine } from "./observation-ui";
 import type { Plant } from "../types";
 
 /** "Where are we looking?" — near the user, or inside a named region's box. */
 type Mode = "near" | "region";
-
-const INAT = "https://www.inaturalist.org";
-
-const monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-/** "~3 km away · seen Jun 2023" — the honest context line under a photo set. */
-function whereWhen(o: ObservationSummary): string {
-  const bits: string[] = [];
-  if (o.distanceKm != null) {
-    bits.push(o.distanceKm < 1 ? "under 1 km away" : `~${Math.round(o.distanceKm)} km away`);
-  } else if (o.place) {
-    bits.push(o.place);
-  }
-  if (o.observedOn) {
-    const [y, m] = o.observedOn.split("-");
-    const mm = Number(m);
-    bits.push(`seen ${mm >= 1 && mm <= 12 ? monthNames[mm] + " " : ""}${y}`);
-  }
-  return bits.join(" · ");
-}
 
 /**
  * Build the section. It's self-contained: give it the plant and it wires up its
@@ -155,7 +135,7 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
         mode === "near"
           ? `${plant.common} is native to ${region.meta.name}, but no one has photographed and verified one close to you on iNaturalist yet. It's still worth planting — the local showcase just isn't there to point you to.`
           : `No research-grade ${plant.common.toLowerCase()} sightings with photos have been logged in ${region.meta.name} on iNaturalist yet. It's native there — the community just hasn't captured one.`));
-      out.append(freshnessLine(result));
+      out.append(freshnessLine(result.fromCache));
       return;
     }
 
@@ -170,8 +150,8 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
              `research-grade sighting${mine.length === 1 ? "" : "s"} of ${plant.common.toLowerCase()} in ${region.meta.name} — verified and photographed by the iNaturalist community (you don't have to be there):`],
       ),
     );
-    out.append(el("div", { class: "obs-list" }, shown.map(observationCard)));
-    out.append(freshnessLine(result));
+    out.append(el("div", { class: "obs-list" }, shown.map((o) => observationCard(o, plant.common))));
+    out.append(freshnessLine(result.fromCache));
   }
 
   // The plant's native regions, as tappable "look it up there" buttons. Empty
@@ -212,53 +192,6 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
   function resetButton(): void {
     findBtn.disabled = false;
     findBtn.textContent = "📷 See it growing near me";
-  }
-
-  function observationCard(o: ObservationSummary): HTMLElement {
-    const photos = o.photos.slice(0, 4);
-    const thumbs = el("div", { class: "obs-thumbs" },
-      photos.map((ph, i) => {
-        // A button, not a link: tapping opens the photo in the in-app lightbox
-        // (which itself links back to the sighting) rather than redirecting.
-        const btn = el("button", {
-          type: "button",
-          class: "obs-thumb",
-          title: `${ph.attribution} — tap to enlarge`,
-          "aria-label": `Enlarge photo ${i + 1} of ${o.taxonName ?? plant.common} by ${o.observer}`,
-          onClick: () => openObservationLightbox(o, i, plant.common, btn),
-        }, [
-          el("img", {
-            src: ph.thumbUrl,
-            loading: "lazy",
-            alt: `${o.taxonName ?? plant.common} photographed by ${o.observer}`,
-            width: 76,
-            height: 76,
-          }),
-        ]);
-        return btn;
-      }),
-    );
-    // The observation's own credit line: observer + where/when + a link to the
-    // record. Photo-level licences are shown on hover (the title above) and on
-    // the section-wide credit; here we keep the card scannable.
-    const credit = el("p", { class: "obs-credit" }, [
-      el("a", { href: `${INAT}/observations/${o.id}`, target: "_blank", rel: "noopener" },
-        `© ${o.observer}`),
-      whereWhen(o) ? ` · ${whereWhen(o)}` : "",
-    ]);
-    return el("figure", { class: "obs-card" }, [thumbs, credit]);
-  }
-
-  function freshnessLine(result: NearbyResult): HTMLElement {
-    return el("p", { class: "obs-attribution" }, [
-      "Sightings & photos from ",
-      el("a", { href: INAT, target: "_blank", rel: "noopener" }, "iNaturalist"),
-      ", each © its observer under the licence shown. ",
-      result.fromCache
-        ? "Loaded from this device's cache — "
-        : "Fetched just now by your browser — ",
-      "your browser calls iNaturalist directly, so they see your request, not ours.",
-    ]);
   }
 
   function showNote(msg: string): void {

@@ -23,7 +23,7 @@ export const REGION: RegionMeta = {
   id: "mid-atlantic",
   name: "Mid-Atlantic / Northeast Piedmont",
   reference: "Pennsylvania (USDA zones 6b–7a)",
-  note: "Native status is asserted at the state/ecoregion level for this region. Outside it, treat recommendations as untested.",
+  note: "Native here means native to this region specifically. Outside it, treat these picks as untested.",
   // Coarse box over the Piedmont/Northeast the seed list is tuned to: roughly
   // Virginia up through southern New England, west to the Appalachians.
   bounds: { minLat: 36.5, maxLat: 45.5, minLon: -83.5, maxLon: -71.0 },

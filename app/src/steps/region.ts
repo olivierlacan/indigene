@@ -11,6 +11,7 @@ import { REGIONS, loadPlants } from "../lib/plants";
 import type { RegionDef } from "../lib/plants";
 import { silhouetteFor } from "../components/plant-card";
 import { keystoneIcon } from "../components/keystone-icon";
+import { regionStatGrid } from "../components/region-stats";
 import type { Plant, PlantForm } from "../types";
 
 const FORM_ORDER: PlantForm[] = ["tree", "shrub", "perennial", "grass", "vine", "groundcover", "fern"];
@@ -60,24 +61,33 @@ export function renderRegion(main: HTMLElement, param?: string): void {
 
   document.title = `Natives of ${region.meta.name} — Indigene`;
 
+  const allRows: FilterRow[] = [];
+  const sections: FilterSection[] = [];
   const groups = FORM_ORDER.map((f) => {
     const inForm = sortedByCommon(plants, f);
     if (!inForm.length) return null;
-    return el("section", {}, [
+    const rows = inForm.map(filterRow);
+    const node = el("section", {}, [
       el("h3", { style: "margin:1.1rem 0 0.4rem" }, [
-        el("a", { href: categoryHref(region, f), style: "color:inherit" }, `${FORM_LABELS[f]} (${inForm.length})`),
+        el("a", { href: categoryHref(region, f), style: "color:inherit" }, [
+          formIcon(f),
+          ` ${FORM_LABELS[f]} (${inForm.length})`,
+        ]),
       ]),
-      ...inForm.map(plantRow),
+      ...rows.map((r) => r.node),
     ]);
+    allRows.push(...rows);
+    sections.push({ node, rows });
+    return node;
   }).filter((g): g is HTMLElement => g !== null);
 
   main.append(
-    el("h2", { class: "step-title" }, `Every native we know for ${region.meta.name}`),
-    el("p", { class: "step-lede" }, [
-      `${plants.length} plants, all vetted as native to this region — ${region.meta.reference}. `,
-      "Open any of them to see the full profile and check whether your spot suits it.",
-    ]),
+    el("h2", { class: "step-title" }, region.meta.name),
+    el("p", { class: "step-lede" },
+      `Every native we know for ${region.meta.reference} — tap any plant for its full profile.`),
+    regionStatGrid(region, plants),
     el("p", { style: "font-size:0.9rem;color:var(--ink-soft)" }, region.meta.note),
+    filterField(allRows, sections),
     categoryChips(region, plants, null),
     ...groups,
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
@@ -118,19 +128,22 @@ function renderCategory(
       ])
     : null;
 
+  const rows = inForm.map(filterRow);
+
   main.append(
     el("p", { class: "region-tag", style: "margin:0 0 0.3rem;font-size:0.9rem;color:var(--ink-soft)" }, [
       "📍 ",
       el("a", { href: `#/regions/${region.meta.id}` }, region.meta.name),
     ]),
-    el("h2", { class: "step-title" }, `${label} native to this region`),
+    el("h2", { class: "step-title" }, label),
     inForm.length
       ? el("p", { class: "step-lede" },
-          `${inForm.length} ${inForm.length === 1 ? "plant" : "plants"}, all vetted as native — ${region.meta.reference}. Open any of them to see the full profile and check whether your spot suits it.`)
+          `${inForm.length} native ${inForm.length === 1 ? "plant" : "plants"} for ${region.meta.reference} — tap any for its full profile.`)
       : el("p", { class: "step-lede" },
           `Our ${region.meta.name} list has no ${label.toLowerCase()} yet — the seed lists are curated and grow carefully. Try another category, or the same category in a region below.`),
+    ...(rows.length > 1 ? [filterField(rows, [])] : []),
     categoryChips(region, plants, form),
-    ...inForm.map(plantRow),
+    ...rows.map((r) => r.node),
     ...(switcher ? [switcher] : []),
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate(`regions/${region.meta.id}`) }, "← All natives of this region"),
@@ -157,12 +170,21 @@ function categoryChips(region: RegionDef, plants: Plant[], current: PlantForm | 
       style: chipStyle,
       href: categoryHref(region, f),
       "aria-current": f === current ? "page" : undefined,
-    }, `${FORM_LABELS[f]} (${count})`));
+    }, [formIcon(f), ` ${FORM_LABELS[f]} (${count})`]));
   }
   return el("nav", { "aria-label": "Plant categories", style: "display:flex;flex-wrap:wrap;gap:0.4rem;margin:0.6rem 0 0.8rem" }, chips);
 }
 
-const chipStyle = "flex:0 1 auto;min-height:2.4rem;padding:0.4rem 0.7rem;font-size:0.9rem;text-decoration:none";
+// `gap:0.3rem` overrides .btn's roomy 0.5rem so a chip's icon hugs its label.
+const chipStyle = "flex:0 1 auto;min-height:2.4rem;padding:0.4rem 0.6rem;font-size:0.9rem;text-decoration:none;gap:0.3rem";
+
+/** A category's silhouette at chip/heading size — same drawing as the rows. */
+function formIcon(f: PlantForm): SVGSVGElement {
+  const svg = silhouetteFor(f, 17);
+  svg.setAttribute("aria-hidden", "true");
+  svg.style.verticalAlign = "-0.18em";
+  return svg;
+}
 
 function categoryHref(region: RegionDef, form: PlantForm): string {
   return `#/regions/${region.meta.id}/${FORM_SLUGS[form]}`;
@@ -172,6 +194,70 @@ function sortedByCommon(plants: Plant[], form: PlantForm): Plant[] {
   return plants
     .filter((p) => p.form === form)
     .sort((a, b) => a.common.localeCompare(b.common));
+}
+
+// ---- In-page filtering: type a name, the list narrows as you type ----
+// This filters the rows already on the page (no routing, no registry lookup) so
+// nobody has to reach for Ctrl+F or bounce out to the search page just to find
+// one plant in a 40-row roster.
+
+const norm = (s: string): string => s.trim().toLowerCase().replace(/\s+/g, " ");
+
+interface FilterRow {
+  /** Everything a match can hit: common + scientific name, normalized. */
+  hay: string;
+  node: HTMLElement;
+}
+
+/** A form group on the roster page — hidden whole when no row in it matches. */
+interface FilterSection {
+  node: HTMLElement;
+  rows: FilterRow[];
+}
+
+function filterRow(p: Plant): FilterRow {
+  return { hay: norm(`${p.common} ${p.latin}`), node: plantRow(p) };
+}
+
+function filterField(rows: FilterRow[], sections: FilterSection[]): HTMLElement {
+  const input = el("input", {
+    type: "search",
+    "aria-label": "Filter this list by plant name",
+    placeholder: "Filter by name…",
+    autocomplete: "off",
+    autocapitalize: "none",
+    spellcheck: false,
+    style: "width:100%",
+  }) as HTMLInputElement;
+  const status = el("p", { role: "status", class: "coords", style: "margin:0.35rem 0 0" });
+
+  const apply = (): void => {
+    const nq = norm(input.value);
+    let shown = 0;
+    for (const r of rows) {
+      const hit = !nq || r.hay.includes(nq);
+      // Rows carry an inline display:flex, so toggle that rather than [hidden].
+      r.node.style.display = hit ? "flex" : "none";
+      if (hit) shown++;
+    }
+    for (const s of sections) {
+      s.node.style.display = s.rows.some((r) => r.node.style.display !== "none") ? "" : "none";
+    }
+    clear(status);
+    if (!nq) return;
+    if (shown) {
+      status.append(`${shown} of ${rows.length} match.`);
+    } else {
+      status.append(
+        "Nothing here matches — ",
+        el("a", { href: `#/search/${encodeURIComponent(input.value.trim())}` }, "search every region"),
+        " instead."
+      );
+    }
+  };
+  input.addEventListener("input", apply);
+
+  return el("div", { style: "margin:0 0 0.6rem" }, [input, status]);
 }
 
 // A compact, scannable row: enough to recognize the plant and want to tap it,

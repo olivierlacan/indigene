@@ -111,6 +111,26 @@ export function mappedWildlifeCount(): number {
 }
 
 /**
+ * Distinct catalog animals with at least one documented tie to a plant in this
+ * region's roster — the region page's "wildlife these plants support" figure.
+ * Same defensive joins as everywhere else: a tie pointing at a plant the roster
+ * doesn't carry, or an animal the catalog doesn't know, counts for nothing.
+ */
+export function wildlifeCountForRegion(regionId: string): number {
+  const region = regionById.get(regionId);
+  if (!region) return 0;
+  const roster = new Set(loadPlants(region).map((p) => p.id));
+  const seen = new Set<string>();
+  for (const [plantId, links] of Object.entries(SUPPORT[regionId] ?? {})) {
+    if (!roster.has(plantId)) continue;
+    for (const link of links) {
+      if (wildlifeById.has(link.wildlifeId)) seen.add(link.wildlifeId);
+    }
+  }
+  return seen.size;
+}
+
+/**
  * Dev-only integrity check: every plant id referenced in SUPPORT must exist in
  * its region's roster, and every wildlifeId must be in the catalog. Called once
  * at module load in dev so a typo in a tie is caught immediately, not silently

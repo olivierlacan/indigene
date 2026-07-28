@@ -34,9 +34,31 @@ subtitle on the What's new page.
 - Each release on the What's new page can now show a small picture of what
   changed, taken when the change was made. Tap it to see the full-size
   screenshot; Before and After links sit underneath when both exist.
+- Every [region's page](https://olivierlacan.github.io/indigene/#/regions/mid-atlantic)
+  now opens with the same kind of at-a-glance number tiles a plant's page has:
+  how many native plants are on the list, how many kinds of caterpillars its
+  best plant can feed (up to 511 species on white oak alone in the
+  Mid-Atlantic), how many animals we can tie to the list by name, and how many
+  keystone plants it holds. Tap any tile for a plain-words explanation of what
+  the number means and where it comes from.
+- A filter box on region pages: start typing a name — common or scientific —
+  and the plant list narrows as you type, no more hunting through 40 rows or
+  bouncing out to the search page.
+- The category buttons on region pages (Trees, Shrubs, Ferns…) now each carry
+  their little plant silhouette, matching the drawings on the plant rows below.
 
 ### Changed
 
+- Region pages now lead with just the region's name — "Mid-Atlantic /
+  Northeast Piedmont" instead of "Every native we know for Mid-Atlantic /
+  Northeast Piedmont" — and say the rest in one short line underneath.
+- The showcase cards on [Meet the natives](https://olivierlacan.github.io/indigene/#/plants)
+  are more compact: the keystone mark now sits beside the plant's name as a
+  small arch, and "Full profile →" tucks in at the end of the description
+  instead of taking a line of its own.
+- The fine print about what "native" means on a region's page is shorter and
+  plainer: native here means native to this region specifically — outside it,
+  treat the picks as untested.
 - The footer — the fine print about open source and data sources, plus the
   "See what's new" link — now appears at the bottom of every page, not just
   the home screen.

@@ -1255,6 +1255,27 @@ details.weights[open] > summary {
   }
 }
 
+/* --- "or" divider between two equally-weighted choices (location prompt) --- */
+/* A line — "or" — line rule, so sharing GPS and typing a ZIP read as peers,
+   not primary-and-fallback. */
+.or-sep {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.7rem 0;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.or-sep::before,
+.or-sep::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: var(--line);
+}
+
 /* --- iNaturalist "growing near you" observation strip --- */
 /* Each card is one nearby, research-grade sighting: a row of small square
    photos over a one-line credit that links back to the observer's record.

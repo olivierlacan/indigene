@@ -20,6 +20,7 @@ import { statGrid } from "../components/stat-card";
 import { drawSizeViz } from "../components/size-viz";
 import { entryForPlant, deepLinks } from "../lib/registry";
 import { nearbyObservationsSection } from "../components/nearby-observations";
+import { privacyNote } from "../components/privacy-link";
 import type { Plant, SiteData, SunEstimate, SupportKind } from "../types";
 
 const monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -324,6 +325,7 @@ export function renderPlant(main: HTMLElement, param?: string): void {
         `Stand where you'd plant it (or search for your town below) and Indigene checks the soil, climate and region against what this plant needs — native to ${region.meta.name} and beyond, it still has to like your exact spot.`,
       ]),
       locateBtn,
+      privacyNote("Used only to check this spot, only when you tap — your location never leaves your device except as anonymous lookups"),
       status,
       el("p", { style: "margin:0.6rem 0 0;font-weight:650" }, "How much sun does that spot get?"),
       sunRow,

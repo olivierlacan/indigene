@@ -23,10 +23,17 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
-[![The What's new page, on a phone](docs/screenshots/pr-40/thumb.png)](docs/screenshots/pr-40/notes-fixed-dark.png)
-
 ### Added
 
+- **Every release now has a page of its own.** The
+  [What's new page](https://olivierlacan.github.io/indigene/release-notes/)
+  is one long list, which made "look at what just shipped" impossible to
+  share — you could only send someone the whole page and tell them where to
+  scroll. Now each release also lives at its own address, like
+  [Version 0.12](https://olivierlacan.github.io/indigene/release-notes/0.12/):
+  tap a release's title to open it on its own, with a link back to all
+  releases and links on to the ones either side of it. The address stays put
+  as new releases pile up on top.
 - Indigene now reaches its first place outside the United States: the mild,
   rainy Atlantic west and north of **France** — Paris, Nantes, Bordeaux, Rennes,
   Lille and the countryside between. Stand in a spot there and you'll get
@@ -59,6 +66,143 @@ subtitle on the What's new page.
   until a `scripts/build-host-counts.mjs` recompute lands (keeping the shared
   `HOST_ANCHOR`, so US scores don't move). Sources recorded in `DATA_SOURCES.md`
   and `docs/france-localization-plan.md` §4.3.
+
+### Changed
+
+- Internal: `make-thumb.mjs` takes `--top <px>`, starting the square that many
+  source pixels down instead of at the very top of the capture. A release
+  whose feature sits below the fold of a full-page screenshot (0.12's "See it
+  near you" section) can now show the feature rather than the page header.
+- Internal: `build-release-notes.mjs` writes `release-notes/<version>/` for
+  every release alongside the index, and both declare a `<link rel=canonical>`
+  built from a new `SITE` constant — so a release has one address rather than
+  competing with an anchor on the index. The release card renderer is shared:
+  on the index its heading links to the release's page, on that page it is the
+  `h1`. Thumbnails are copied once into the notes folder and reached from a
+  release page one directory up. The whole `dist/` is already uploaded by the
+  Pages deploy, so the subdirectories ship with no workflow change.
+
+## [0.12] - 2026-07-28
+
+**See it near you**
+
+[![A wildlife page's "See it near you" section, on a phone](docs/screenshots/pr-46/thumb.png)](docs/screenshots/pr-46/after-dark.png)
+[Before](docs/screenshots/pr-46/before-dark.png) · [After](docs/screenshots/pr-46/after-dark.png)
+
+### Added
+
+- **See the wildlife near you.** Every creature in the
+  [wildlife browser](https://olivierlacan.github.io/indigene/#/wildlife) — the
+  monarch, the luna moth, the gopher tortoise — now has a "See it near you"
+  section. Share your location *or* just type a ZIP code, and Indigene pulls
+  real, community-verified photos of that animal spotted near there, or you can
+  look it up in a region where it's found without being there. The photos come
+  live from iNaturalist, called by your own browser, and each one is credited
+  to the person who took it — the same way the plant pages already show a plant
+  growing near you. (Some entries are broad groups, like "Jays, turkeys &
+  woodpeckers," that don't point at a single species; those don't offer the
+  lookup.)
+- **Don't want to share your exact location? Type a ZIP code instead.** Both
+  "See it near you" (on wildlife pages) and "See it growing near you" (on plant
+  pages) now offer sharing your location and entering a ZIP code (or town) as
+  two equal choices — so you can see what's growing and flying near a place
+  without handing over precise location, and it works the same on a desktop
+  with no GPS.
+- Internal: the wildlife layer identifies each animal to iNaturalist by its
+  scientific name (already curated in the catalog), resolving it to a taxon id
+  at request time via iNaturalist's taxa endpoint — synonym-tolerant, and it
+  fails safe (an unresolvable name shows nothing rather than the wrong
+  creature). Sightings are cached per animal + area in IndexedDB for 7 days,
+  reusing the plant layer's cache machinery (`lib/inaturalist.ts`,
+  `lib/wildlife-sightings.ts`). The shared photo-card and credit rendering now
+  lives in `components/observation-ui.ts`, used by both the plant and wildlife
+  "near you" sections; the ZIP/location choice is a shared
+  `components/location-prompt.ts` used by both, feeding the existing Open-Meteo
+  geocoder.
+- **A Privacy & safety page**, in plain words for everyone — including kids and
+  the grown-ups looking out for them. It lays out the whole story: no account,
+  no tracking, no ads; your saved spots stay on your device; your location is
+  used only when you tap, and you can always type a ZIP code instead of sharing
+  it; and exactly which public science services your browser talks to, and what
+  each is told. Reach it from the footer on any page, and from a short "🔒 …"
+  note right where the app asks for your location or saves a spot. See it at
+  [Privacy & safety](https://olivierlacan.github.io/indigene/#/privacy).
+- Internal: the Privacy & safety page and its contextual links go through a
+  shared `components/privacy-link.ts`. Combined with the wildlife-sightings
+  work above, the bundle is now ~111 KB gzipped.
+- Every [region's page](https://olivierlacan.github.io/indigene/#/regions/mid-atlantic)
+  now opens with the same kind of at-a-glance number tiles a plant's page has:
+  how many native plants are on the list, how many kinds of caterpillars its
+  best plant can feed (up to 511 species on white oak alone in the
+  Mid-Atlantic), how many kinds of wildlife we can tie to the list by name,
+  and how many keystone plants it holds. Tap any tile for a plain-words
+  explanation of what the number means and where it comes from.
+- A filter box on region pages: start typing a name — common or scientific —
+  and the plant list narrows as you type, no more hunting through 40 rows or
+  bouncing out to the search page.
+- The category buttons on region pages (Trees, Shrubs, Ferns…) now each carry
+  their little plant silhouette, matching the drawings on the plant rows below.
+
+### Changed
+
+- **One tap now takes you through every sighting's photos, not just one
+  person's.** When a plant or animal page finds several sightings near you, the
+  photo viewer used to stop at the edge of the sighting you tapped — to see the
+  next person's pictures you had to close it and start again. Now the arrows
+  (and the ← → keys) carry straight on into the next sighting, all the way
+  through everything on the page. It always tells you where you are — "9 / 11 ·
+  sighting 3 of 4" — and as you cross from one sighting to the next, the credit
+  underneath changes with it: the new photographer's name, their licence, where
+  and when they saw it, and a link to that sighting on iNaturalist.
+- **Bigger, tidier photo thumbnails.** A sighting's little square photos now sit
+  three to a row and fill the width of the card, instead of being a fixed small
+  size that left a lonely fourth picture stranded on a second row. When a
+  sighting has more pictures than fit, the last one wears a small "+2" badge —
+  tap it and the viewer will page through all of them.
+- Internal: `observation-ui.ts` now exports `observationList()` rather than a
+  per-card builder, which is what lets a thumbnail hand the lightbox the whole
+  set of sightings on screen; the lightbox holds a flattened reel of
+  `{photo, observation}` frames and rebuilds its credit block per frame.
+  `whereWhen()` moved to `lib/inaturalist.ts` (both the card and the lightbox
+  print it now, and components → lib keeps the imports one-way). New
+  `app/scripts/shoot-sightings.mjs` screenshots the "near you" sections with
+  iNaturalist's API and photos stubbed, for containers with no route to it.
+- Opening a sighting photo is smoother now. The photo viewer that pops up when
+  you tap an iNaturalist picture (on a plant's or an animal's page) used to
+  open small, then jump taller and draw the photo in stuttery strips as it
+  arrived. Now the viewer opens at its full size right away, shows a small
+  spinning circle while the photo travels, and the finished picture fades in
+  gently. The link back to the original sighting on iNaturalist is now a quiet
+  underlined link under the photographer's credit instead of a big button.
+- Region pages now lead with just the region's name — "Mid-Atlantic /
+  Northeast Piedmont" instead of "Every native we know for Mid-Atlantic /
+  Northeast Piedmont" — and say the rest in one short line underneath.
+- The showcase cards on [Meet the natives](https://olivierlacan.github.io/indigene/#/plants)
+  are more compact: the keystone mark now sits beside the plant's name as a
+  small arch, and "Full profile →" tucks in at the end of the description
+  instead of taking a line of its own.
+- The fine print about what "native" means on a region's page is shorter and
+  plainer: native here means native to this region specifically — outside it,
+  treat the picks as untested.
+- The [Where are you standing?](https://olivierlacan.github.io/indigene/#/location)
+  step now shows one way of setting your spot at a time. Using your device's
+  location leads, and a small link — "Don't want to use your location? Use a
+  ZIP code or pick a region instead." — swaps in the town search or the region
+  list when you ask for it, with a matching link to switch back. Less to
+  scroll past, and the Next button is always close by.
+- Picking your region by hand is now two taps: choose a region and the list
+  folds down to just your choice (a "Show all regions" link brings the rest
+  back), then press Next when you're sure — instead of being whisked to the
+  next step the moment you tap.
+
+## [0.11] - 2026-07-28
+
+**Never a blank page**
+
+[![The What's new page, on a phone](docs/screenshots/pr-40/thumb.png)](docs/screenshots/pr-40/notes-fixed-dark.png)
+
+### Added
+
 - A public [What's new page](https://olivierlacan.github.io/indigene/release-notes/):
   every release of Indigene described in plain words, newest first. Nothing to
   install, no account — it's just a web page you can share.
@@ -78,16 +222,16 @@ subtitle on the What's new page.
 - The growth chart's labels are a touch bigger and drawn in the page's
   strongest text color, so the feet markings and year captions are easy to
   read in both light and dark mode — even in bright sun.
-- The What's new page now uses the changelog's own headings — Added, Changed,
-  Fixed — instead of renaming them.
-- Release notes now link to the things they describe — like the
-  [wildlife browser](https://olivierlacan.github.io/indigene/#/wildlife) — so
-  you can go straight from reading about a feature to trying it.
 - When you [search for a plant](https://olivierlacan.github.io/indigene/#/search),
   each result now underlines the part of its name that matches what you typed,
   so you can see at a glance why it showed up. And when a plant matched through
   a name it's less commonly known by — like "Maypop" for Purple
   Passionflower — the result now says so with an "Also called" line.
+- The What's new page now uses the changelog's own headings — Added, Changed,
+  Fixed — instead of renaming them.
+- Release notes now link to the things they describe — like the
+  [wildlife browser](https://olivierlacan.github.io/indigene/#/wildlife) — so
+  you can go straight from reading about a feature to trying it.
 - Internal: this `CHANGELOG.md` is the single source of the What's new page.
   `app/scripts/build-release-notes.mjs` compiles it to a static, app-styled
   HTML page; the Pages deploy workflow runs it on every push to `main`, and a
@@ -106,16 +250,6 @@ subtitle on the What's new page.
 
 ### Fixed
 
-- The bottom row of the growth chart's labels — like "(5′6″)" under the
-  little person — was getting cut off by the caption below. The chart now
-  leaves proper room for both label rows.
-- The growth chart could be drawn with the wrong colors — pale, hard-to-read
-  labels on a light page — if your device switched between light and dark
-  looks after the page loaded. The chart now redraws itself when that
-  happens, and also when the screen size changes.
-- The app's top menu now wraps onto a second line when it truly runs out of
-  room — like with very large text settings — instead of quietly spilling off
-  the edge of the screen, where the Saved button could end up out of reach.
 - The home page could come up completely blank — most often in Safari, and
   especially with an older Indigene tab still open in another window. The
   app was waiting forever for its on-device storage to answer before showing
@@ -132,6 +266,16 @@ subtitle on the What's new page.
   same reason — the app checks its on-device photo cache before asking, and
   that check could hang forever. It now gives the cache a couple of seconds,
   then asks iNaturalist directly.
+- The bottom row of the growth chart's labels — like "(5′6″)" under the
+  little person — was getting cut off by the caption below. The chart now
+  leaves proper room for both label rows.
+- The growth chart could be drawn with the wrong colors — pale, hard-to-read
+  labels on a light page — if your device switched between light and dark
+  looks after the page loaded. The chart now redraws itself when that
+  happens, and also when the screen size changes.
+- The app's top menu now wraps onto a second line when it truly runs out of
+  room — like with very large text settings — instead of quietly spilling off
+  the edge of the screen, where the Saved button could end up out of reach.
 - Internal: the page can no longer scroll sideways (`overflow-x: clip` on
   `body`). The overflowing header was silently widening the document, which
   is what put a dark right-edge gutter and a floating 🔖 in every full-page
@@ -409,7 +553,9 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/f84450c...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/fa0dd4c...HEAD
+[0.12]: https://github.com/olivierlacan/indigene/compare/2aec57f...fa0dd4c
+[0.11]: https://github.com/olivierlacan/indigene/compare/f84450c...2aec57f
 [0.10]: https://github.com/olivierlacan/indigene/compare/9453251...f84450c
 [0.9]: https://github.com/olivierlacan/indigene/compare/6e72889...9453251
 [0.8]: https://github.com/olivierlacan/indigene/compare/d45eda0...6e72889

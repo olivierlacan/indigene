@@ -34,9 +34,12 @@ export function renderExplore(main: HTMLElement): void {
       // One link per destination, each kept short: the region tag doubles as
       // the "browse the whole roster" link (its text is unique per card, with
       // the roster size shown as 🌿 + count rather than words), and the plant
-      // card's call to action is just "Full profile" — the lede above already
-      // explains what a profile gives you.
-      return el("div", { class: "card", style: "margin-bottom:0.8rem" }, [
+      // card's call to action is "Full profile →", inlined at the end of the
+      // blurb rather than on a line of its own — the lede above already
+      // explains what a profile gives you. Keystone status is the small arch
+      // glyph beside the name (same idiom as the region roster rows), so the
+      // card stays three text lines tall.
+      return el("div", { class: "card", style: "margin-bottom:0.6rem;padding:0.8rem 1rem" }, [
         el("p", { class: "region-tag", style: "margin:0 0 0.4rem;font-size:0.85rem;color:var(--ink-soft)" }, [
           "📍 ",
           el("a", {
@@ -51,18 +54,28 @@ export function renderExplore(main: HTMLElement): void {
           href: `#/plants/${p.id}`,
           style: "display:block;text-decoration:none;color:inherit",
         }, [
-          el("div", { class: "plant-head" }, [
-            el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
+          el("div", { class: "plant-head", style: "padding:0;gap:0.7rem" }, [
+            el("div", { class: "plant-photo", "aria-hidden": "true", style: "width:3.4rem;height:3.4rem" }, [silhouetteFor(p.form)]),
             el("div", {}, [
-              el("h3", { class: "plant-name", style: "margin:0" }, p.common),
+              el("h3", { class: "plant-name", style: "margin:0" }, [
+                p.common,
+                p.keystone
+                  ? el("span", {
+                      title: "Keystone plant — supports far more wildlife than most",
+                      role: "img",
+                      "aria-label": "Keystone plant",
+                      style: "margin-left:0.35rem;color:var(--brand)",
+                    }, [keystoneIcon(14)])
+                  : null,
+              ]),
               el("div", { class: "plant-latin" }, p.latin),
-              p.keystone
-                ? el("span", { class: "badge keystone" }, [keystoneIcon(), " Keystone plant"])
-                : null,
             ]),
           ]),
-          el("p", { style: "margin:0.5rem 0 0.3rem" }, p.givesNote),
-          el("p", { style: "margin:0;font-weight:650;color:var(--brand, #175e33)" }, "Full profile"),
+          el("p", { style: "margin:0.45rem 0 0" }, [
+            p.givesNote,
+            " ",
+            el("span", { style: "font-weight:650;color:var(--brand, #175e33);white-space:nowrap" }, "Full profile →"),
+          ]),
         ]),
       ]);
     }),

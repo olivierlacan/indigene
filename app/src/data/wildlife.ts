@@ -47,6 +47,7 @@ export const WILDLIFE: Wildlife[] = [
       "The famous orange-and-black migrant. Its caterpillars can eat only one thing — milkweed — so no milkweed means no monarchs, full stop. The adults also refuel on many fall flowers on their long trip south.",
     native: true,
     nativeBasis: "Native across North America. Xerces Society; Butterflies and Moths of North America (BAMONA).",
+    inat: { name: "Danaus plexippus", iconic: "Insecta" },
   },
   {
     id: "queen-butterfly",
@@ -58,6 +59,7 @@ export const WILDLIFE: Wildlife[] = [
       "The monarch's deep-mahogany southern cousin, common in Florida year-round. Like the monarch, its caterpillars feed only on milkweeds.",
     native: true,
     nativeBasis: "Native to the southern US and southward. BAMONA; UF/IFAS.",
+    inat: { name: "Danaus gilippus", iconic: "Insecta" },
   },
   {
     id: "eastern-black-swallowtail",
@@ -69,6 +71,7 @@ export const WILDLIFE: Wildlife[] = [
       "A big dark swallowtail whose caterpillars eat plants in the carrot family — including native golden alexanders, not just the parsley in your garden.",
     native: true,
     nativeBasis: "Native to North America. BAMONA.",
+    inat: { name: "Papilio polyxenes", iconic: "Insecta" },
   },
   {
     id: "eastern-tiger-swallowtail",
@@ -80,6 +83,7 @@ export const WILDLIFE: Wildlife[] = [
       "The large yellow-and-black swallowtail of eastern yards. Its caterpillars grow up on the leaves of several native trees, especially wild cherry and birch.",
     native: true,
     nativeBasis: "Native to eastern North America. BAMONA.",
+    inat: { name: "Papilio glaucus", iconic: "Insecta" },
   },
   {
     id: "viceroy",
@@ -91,6 +95,7 @@ export const WILDLIFE: Wildlife[] = [
       "The monarch look-alike — but its caterpillars grow up on willows, poplars, and cherries, overwintering rolled in a leaf they fasten to the twig.",
     native: true,
     nativeBasis: "Native to North America. BAMONA.",
+    inat: { name: "Limenitis archippus", iconic: "Insecta" },
   },
   {
     id: "gulf-fritillary",
@@ -102,6 +107,7 @@ export const WILDLIFE: Wildlife[] = [
       "A brilliant orange butterfly with silver-spangled underwings. Its caterpillars feed only on passionflower vines.",
     native: true,
     nativeBasis: "Native and resident in the southern US. BAMONA; UF/IFAS.",
+    inat: { name: "Agraulis vanillae", iconic: "Insecta" },
   },
   {
     id: "zebra-longwing",
@@ -113,6 +119,7 @@ export const WILDLIFE: Wildlife[] = [
       "Florida's state butterfly — long black wings striped in pale yellow, drifting slowly through shady spots. Its caterpillars eat only passionflower vines; the adults are unusual in eating pollen, which lets them live for months.",
     native: true,
     nativeBasis: "Native and resident in Florida — the designated state butterfly. UF/IFAS; BAMONA.",
+    inat: { name: "Heliconius charithonia", iconic: "Insecta" },
   },
   {
     id: "atala",
@@ -124,6 +131,7 @@ export const WILDLIFE: Wildlife[] = [
       "A small jewel — velvet black with iridescent blue flecks and a scarlet belly — once thought extinct in Florida. It came back with its only host plant, the coontie. Plant coontie and you are quite literally rebuilding this butterfly.",
     native: true,
     nativeBasis: "Native to southeastern Florida. Florida Museum of Natural History; UF/IFAS.",
+    inat: { name: "Eumaeus atala", iconic: "Insecta" },
   },
   {
     id: "white-peacock",
@@ -135,6 +143,7 @@ export const WILDLIFE: Wildlife[] = [
       "A pale, low-flying butterfly of sunny damp openings in Florida. Its caterpillars feed on porterweed and water-hyssop.",
     native: true,
     nativeBasis: "Native and resident in the southern US and tropics. BAMONA; UF/IFAS.",
+    inat: { name: "Anartia jatrophae", iconic: "Insecta" },
   },
   {
     id: "western-tiger-swallowtail",
@@ -146,6 +155,7 @@ export const WILDLIFE: Wildlife[] = [
       "The big yellow swallowtail of Pacific Northwest gardens and streamsides. Its caterpillars feed on the leaves of willows, cottonwoods, and bigleaf maple.",
     native: true,
     nativeBasis: "Native to western North America. BAMONA.",
+    inat: { name: "Papilio rutulus", iconic: "Insecta" },
   },
   {
     id: "pale-swallowtail",
@@ -157,6 +167,7 @@ export const WILDLIFE: Wildlife[] = [
       "A cream-and-black swallowtail of drier western slopes. Its caterpillars grow up on oceanspray and ceanothus.",
     native: true,
     nativeBasis: "Native to western North America. BAMONA.",
+    inat: { name: "Papilio eurymedon", iconic: "Insecta" },
   },
   {
     id: "propertius-duskywing",
@@ -168,6 +179,7 @@ export const WILDLIFE: Wildlife[] = [
       "A small brown skipper tied to the West's Garry oak (Oregon white oak) prairies — its caterpillars eat only oak, and it fades as that rare habitat does.",
     native: true,
     nativeBasis: "Native to the West's oak habitats. Xerces Society; BAMONA.",
+    inat: { name: "Erynnis propertius", iconic: "Insecta" },
   },
   // ---------------- Moths ----------------
   {
@@ -180,6 +192,7 @@ export const WILDLIFE: Wildlife[] = [
       "The pale-green, long-tailed giant that seems too beautiful to be real. The adults never eat — they live about a week on the reserves the caterpillar stored eating tree leaves like birch, walnut, and hickory.",
     native: true,
     nativeBasis: "Native to eastern North America. BAMONA.",
+    inat: { name: "Actias luna", iconic: "Insecta" },
   },
   {
     id: "cecropia-moth",
@@ -191,6 +204,7 @@ export const WILDLIFE: Wildlife[] = [
       "North America's largest native moth — a hand-sized, red-banded giant. Its caterpillars grow fat on the leaves of cherry, maple, birch, and other trees before spinning a big papery cocoon for winter.",
     native: true,
     nativeBasis: "Native to eastern and central North America. BAMONA.",
+    inat: { name: "Hyalophora cecropia", iconic: "Insecta" },
   },
   {
     id: "hummingbird-clearwing",
@@ -202,6 +216,7 @@ export const WILDLIFE: Wildlife[] = [
       "A plump day-flying moth that hovers at flowers exactly like a tiny hummingbird, so most people never realize it's a moth. Its caterpillars feed on viburnum and honeysuckle; the adults sip nectar from tubular blooms.",
     native: true,
     nativeBasis: "Native to North America. BAMONA.",
+    inat: { name: "Hemaris thysbe", iconic: "Insecta" },
   },
   // ---------------- Bees & other pollinators ----------------
   // Every bee here is a NATIVE bee. The introduced European honey bee
@@ -217,6 +232,9 @@ export const WILDLIFE: Wildlife[] = [
       "The big fuzzy bees that fly cold and early. They can \"buzz-pollinate\" — shaking pollen loose with a shiver of their flight muscles — which some native flowers depend on. They nest in the ground and in old grass tussocks, and a spring-to-frost run of flowers keeps a colony fed.",
     native: true,
     nativeBasis: "Native bumble bees (Bombus) — unlike the introduced honey bee. Xerces Society; USGS Native Bee Inventory.",
+    // A genus scope: iNaturalist returns every Bombus species, so "bumble bees
+    // near you" honestly means the whole genus, not one arbitrary member.
+    inat: { name: "Bombus", iconic: "Insecta" },
   },
   {
     id: "sunflower-specialist-bees",
@@ -251,6 +269,7 @@ export const WILDLIFE: Wildlife[] = [
       "The East's only breeding hummingbird, drawn to red and orange tubular flowers it can reach and most insects can't. A succession of these blooms from spring through fall fuels both nesting and the long migration.",
     native: true,
     nativeBasis: "Native to eastern North America. Cornell Lab of Ornithology.",
+    inat: { name: "Archilochus colubris", iconic: "Aves" },
   },
   {
     id: "annas-rufous-hummingbird",
@@ -273,6 +292,7 @@ export const WILDLIFE: Wildlife[] = [
       "A sleek, sociable bird that lives on fruit and roves in flocks, stripping a serviceberry or dogwood clean in an afternoon. Berry shrubs that hold fruit into winter are what keep them around.",
     native: true,
     nativeBasis: "Native to North America. Cornell Lab of Ornithology.",
+    inat: { name: "Bombycilla cedrorum", iconic: "Aves" },
   },
   {
     id: "american-goldfinch",
@@ -284,6 +304,7 @@ export const WILDLIFE: Wildlife[] = [
       "The bright yellow \"wild canary\" that nests late, in summer, so it can feed its young the seeds of native asters and coneflowers. Leaving seed heads standing through fall and winter is its winter pantry.",
     native: true,
     nativeBasis: "Native to North America. Cornell Lab of Ornithology.",
+    inat: { name: "Spinus tristis", iconic: "Aves" },
   },
   {
     id: "yellow-rumped-warbler",
@@ -295,6 +316,7 @@ export const WILDLIFE: Wildlife[] = [
       "The one warbler that can digest waxy bayberry fruit, which lets it winter far further north — and all across the Southeast — than other warblers. Wax myrtle is the plant behind that trick (its old name was \"myrtle warbler\").",
     native: true,
     nativeBasis: "Native to North America. Cornell Lab of Ornithology.",
+    inat: { name: "Setophaga coronata", iconic: "Aves" },
   },
   {
     id: "acorn-birds",
@@ -337,6 +359,9 @@ export const WILDLIFE: Wildlife[] = [
       "A keystone digger of Florida's dry uplands whose long burrows shelter hundreds of other species. It grazes low native growth — saw palmetto berries, sunshine mimosa, dune sunflower — in the open, sandy pine flatwoods it needs.",
     native: true,
     nativeBasis: "Native to the southeastern US; a state-protected keystone species. USFWS; IUCN Red List.",
+    // Kind is "mammal" (it browses under "Mammals & others"), but it's a reptile —
+    // hence the explicit Reptilia iconic taxon, which `kind` can't supply.
+    inat: { name: "Gopherus polyphemus", iconic: "Reptilia" },
   },
 ];
 

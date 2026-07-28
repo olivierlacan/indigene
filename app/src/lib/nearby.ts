@@ -16,8 +16,8 @@
 // Freshness: observations accrete slowly and we're showing "here's roughly what
 // this looks like", not a live feed, so a week-old cache is fine.
 import {
-  fetchNearbyPlantObservations,
-  fetchRegionPlantObservations,
+  fetchNearbyObservations,
+  fetchRegionObservations,
   boundsCenter,
   indexByTaxon,
   DEFAULT_RADIUS_KM,
@@ -117,7 +117,7 @@ export async function nearbyObservations(
   const radiusKm = q.radiusKm ?? DEFAULT_RADIUS_KM;
   return loadIndexed(
     { key: cacheKey(q.lat, q.lon, radiusKm), from: { lat: q.lat, lon: q.lon }, radiusKm },
-    () => fetchNearbyPlantObservations({ ...q, radiusKm }),
+    () => fetchNearbyObservations({ ...q, radiusKm }),
     now,
   );
 }
@@ -135,7 +135,7 @@ export async function regionObservations(
 ): Promise<NearbyResult> {
   return loadIndexed(
     { key: regionCacheKey(regionId), from: boundsCenter(bounds), regionId },
-    () => fetchRegionPlantObservations({ bounds, taxonIds }),
+    () => fetchRegionObservations({ bounds, taxonIds }),
     now,
   );
 }

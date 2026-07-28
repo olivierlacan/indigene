@@ -137,6 +137,35 @@ export type MoistureBand = "dry" | "mesic" | "wet";
 export type WildlifeKind = "butterfly" | "moth" | "bee" | "bird" | "mammal";
 
 /**
+ * An iNaturalist "iconic taxon" — the coarse kingdom/class bucket iNaturalist
+ * filters by. We carry it explicitly (rather than deriving it from `kind`)
+ * because the two don't always line up: the gopher tortoise browses under
+ * "Mammals & others" but is a reptile, so its iconic taxon is `Reptilia`.
+ */
+export type IconicTaxon = "Insecta" | "Aves" | "Mammalia" | "Reptilia";
+
+/**
+ * How to find this animal on iNaturalist for the "see it near you" sighting
+ * lookup. We store the animal's *scientific name*, not a numeric taxon id: the
+ * name is already curated and sourced in the catalog, and we resolve it to a
+ * taxon id at request time (see `lib/inaturalist.ts` → `resolveTaxon`). That
+ * resolution follows iNaturalist's own synonymy, so a renamed taxon still finds
+ * its sightings, and it fails safe — an unresolvable name shows nothing rather
+ * than the wrong creature. Some catalog entries are informal groups ("Jays,
+ * turkeys & woodpeckers", two hummingbirds in one card) with no single taxon;
+ * those omit this and simply don't offer the lookup, exactly as they get no
+ * single species-record link today.
+ */
+export interface InatScope {
+  /** The scientific name to resolve — a species binomial ("Danaus plexippus")
+   *  or a genus ("Bombus", for all bumble bees). */
+  name: string;
+  /** The iconic taxon that disambiguates the name across kingdoms and scopes
+   *  the sighting query to the right group of life. */
+  iconic: IconicTaxon;
+}
+
+/**
  * A specific insect or animal that native plants support. Defined once, in the
  * shared catalog, so "Monarch butterfly" is described in exactly one place and
  * every plant that supports it points at the same entry.
@@ -161,6 +190,10 @@ export interface Wildlife {
   native: true;
   /** Where the animal is native and a dependable source saying so. */
   nativeBasis: string;
+  /** How to look this animal up in iNaturalist's sightings (see `InatScope`).
+   *  Omitted for informal groups that don't map to a single taxon — they get no
+   *  "see it near you" lookup, the same way they get no single species record. */
+  inat?: InatScope;
 }
 
 /**

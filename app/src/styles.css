@@ -575,6 +575,9 @@ details[open] > summary::after {
 }
 
 /* --- Buttons --- */
+.btn[hidden] {
+  display: none; /* beat the display:inline-flex below when hidden */
+}
 .btn {
   display: inline-flex;
   align-items: center;
@@ -640,6 +643,26 @@ details[open] > summary::after {
   border-color: var(--brand);
   background: var(--brand-bg);
 }
+/* Buttons that read as inline links — the location step's picker-mode switch
+   ("Use a ZIP code", "pick a region", "Use GPS location") and the collapsed
+   region list's "Show all regions". They act like buttons (no navigation) but
+   sit inside a sentence, so they dress as links. */
+.linklike {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: var(--focus);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+/* The sentence that swaps between location pickers. */
+.picker-switch {
+  margin: 1rem 0 0;
+}
+
 /* A choice with a leading glyph (e.g. the sun-exposure icons). */
 .choice-with-glyph {
   display: flex;
@@ -1232,6 +1255,72 @@ details.weights[open] > summary {
   }
 }
 
+/* --- "or" divider between two equally-weighted choices (location prompt) --- */
+/* A line — "or" — line rule, so sharing GPS and typing a ZIP read as peers,
+   not primary-and-fallback. */
+.or-sep {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.7rem 0;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.or-sep::before,
+.or-sep::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: var(--line);
+}
+
+/* --- Privacy reassurance line (under a location/save control) --- */
+/* Quiet by design: it's a standing promise, not a warning, so it sits in muted
+   text and doesn't compete with the control above it. */
+.privacy-note {
+  margin: 0.4rem 0 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.privacy-note a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+}
+.privacy-note a:hover,
+.privacy-note a:focus-visible {
+  color: var(--focus);
+}
+
+/* --- Privacy & safety page --- */
+.privacy-page h3 {
+  margin: 1.4rem 0 0.3rem;
+}
+.privacy-page .lede-note {
+  margin-top: 0.8rem;
+}
+.privacy-page ul {
+  margin: 0.3rem 0 0;
+  padding-left: 1.2rem;
+}
+.privacy-page li {
+  margin: 0.35rem 0;
+  color: var(--ink-soft);
+}
+.privacy-page .who-list {
+  list-style: none;
+  padding-left: 0;
+}
+.privacy-page .who-list li {
+  margin: 0.5rem 0;
+}
+.privacy-page .who-list strong {
+  color: var(--ink);
+}
+
 /* --- iNaturalist "growing near you" observation strip --- */
 /* Each card is one nearby, research-grade sighting: a row of small square
    photos over a one-line credit that links back to the observer's record.
@@ -1249,12 +1338,17 @@ details.weights[open] > summary {
   border: 1px solid var(--line);
   border-radius: calc(var(--radius) - 4px);
 }
+/* Three squares to a row, filling the card's width — on a phone that's a ~93px
+   thumbnail instead of a fixed 76px one, and never a ragged half-row left over.
+   The max-width stops them ballooning on a wide screen. */
 .obs-thumbs {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.4rem;
+  max-width: 21rem;
 }
 .obs-thumb {
+  position: relative;
   display: block;
   line-height: 0;
   border-radius: 8px;
@@ -1269,11 +1363,26 @@ details.weights[open] > summary {
   outline-offset: 2px;
 }
 .obs-thumb img {
-  width: 76px;
-  height: 76px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
   object-fit: cover;
   background: var(--line);
   transition: transform 0.12s ease;
+}
+/* "+2" on the last thumbnail: this sighting has more photos than fit, and the
+   lightbox will page through them. */
+.obs-thumb-more {
+  position: absolute;
+  right: 0.25rem;
+  bottom: 0.25rem;
+  padding: 0.05rem 0.35rem;
+  border-radius: 999px;
+  background: rgb(0 0 0 / 0.62);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 650;
+  line-height: 1.5;
 }
 .obs-thumb:hover img {
   transform: scale(1.05);
@@ -1306,13 +1415,19 @@ details.weights[open] > summary {
   align-items: center;
   justify-content: center;
   padding: max(0.75rem, env(safe-area-inset-top)) 0.75rem max(0.75rem, env(safe-area-inset-bottom));
+  animation: lb-fade-in 0.18s ease-out;
 }
+@keyframes lb-fade-in {
+  from { opacity: 0; }
+}
+/* Full height from the first frame — the photo stage claims its space *before*
+   the image arrives, so the panel never jumps taller mid-load. */
 .lb-panel {
   position: relative;
   display: flex;
   flex-direction: column;
   max-width: 900px;
-  max-height: 100%;
+  height: 100%;
   width: 100%;
   gap: 0.6rem;
 }
@@ -1338,12 +1453,38 @@ details.weights[open] > summary {
   min-height: 0;
   flex: 1 1 auto;
 }
+/* A quiet spinner while the photo decodes off-screen. The transition delay
+   means an already-cached photo never flashes it. */
+.lb-stage::after {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-top-color: rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.lb-stage.lb-loading::after {
+  opacity: 1;
+  transition-delay: 0.25s;
+  animation: spin 0.8s linear infinite;
+}
+/* The image only appears once fully decoded (see showPhoto in lightbox.ts):
+   hidden until then, then a short fade instead of a progressive top-down paint. */
 .lb-img {
   max-width: 100%;
   max-height: 72vh;
   object-fit: contain;
   border-radius: 8px;
   background: #111;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.lb-img.lb-img-ready {
+  opacity: 1;
 }
 .lb-nav {
   position: absolute;
@@ -1388,10 +1529,32 @@ details.weights[open] > summary {
   color: #fff;
   font-weight: 600;
 }
+/* The link back to the original sighting: quiet text, not a button — the
+   credit lines above already name iNaturalist; this is the tap-through. The
+   padding keeps a finger-sized target despite the small type. */
 .lb-source {
   align-self: center;
+  padding: 0.5rem 0.6rem;
+  font-size: 0.85rem;
+  color: #cdcdbd;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.lb-source:hover,
+.lb-source:focus-visible {
+  color: #fff;
 }
 .lb-counter {
   font-size: 0.8rem;
   color: #b7b7a8;
+}
+/* "sighting 2 of 4" — the reel runs across every sighting on the page, so the
+   reader is told which one they've paged into. Separated by a middle dot. */
+.lb-counter-obs::before {
+  content: " · ";
+}
+/* Where and when this one was seen, under the observer's credit — it changes
+   as you cross from one sighting to the next. */
+.lb-seen {
+  display: block;
 }

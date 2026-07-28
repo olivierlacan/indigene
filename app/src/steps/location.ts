@@ -32,8 +32,9 @@ function coverageWarning(lead: string): HTMLElement {
 const MAP_ZOOM = 14;
 
 // Step 1: "Where are you standing?" High-accuracy geolocation leads; the
-// fallbacks are a town/ZIP search (no permissions needed) and, for people who
-// already know their region, picking the plant list directly. Nothing here
+// fallbacks — a town/ZIP search (no permissions needed) and, for people who
+// already know their region, picking the plant list directly — sit behind a
+// plain-words switch link so only one picker shows at a time. Nothing here
 // asks anyone to know coordinates. The pin is adjusted by dragging, tapping,
 // or arrow keys — three ways to the same nudge.
 export function renderLocation(main: HTMLElement): void | (() => void) {
@@ -222,7 +223,8 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
 
   function locate(): void {
     if (!("geolocation" in navigator)) {
-      toast("This device can't share location — search for your town below.");
+      toast("This device can't share location — try the town search instead.");
+      setMode("zip");
       return;
     }
     locateBtn.textContent = "Locating…";
@@ -244,7 +246,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
       (err) => {
         locateBtn.textContent = "📍 Use my location";
         (locateBtn as HTMLButtonElement).disabled = false;
-        toast(err.code === err.PERMISSION_DENIED ? "Location denied — search for your town below instead." : "Couldn't get a fix — try again or search for your town below.");
+        toast(err.code === err.PERMISSION_DENIED ? "Location denied — try the town search instead." : "Couldn't get a fix — try again, or switch to the town search.");
       },
       { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
     );
@@ -306,7 +308,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
       );
     } catch {
       clear(searchOut);
-      searchOut.append(el("div", { class: "note warn" }, "The place search needs a signal and we couldn't reach it. If GPS works, use “Use my location” above — or pick your region by hand below."));
+      searchOut.append(el("div", { class: "note warn" }, "The place search needs a signal and we couldn't reach it. If GPS works, switch back to your location — or pick your region by hand instead."));
     } finally {
       searchBtn.disabled = false;
       searchBtn.textContent = "Search";
@@ -327,49 +329,113 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
   ]);
 
   // --- The escape hatch: pick a region by hand, no map point at all. ---
+  // Picking is a two-step: tap a region, the list collapses to just that
+  // choice (so the Next button is right there), and Next confirms it.
+  let selectedRegion: string | null = store.draft.regionOverride;
+  const regionList = el("div", {});
+
+  function renderRegionList(expanded: boolean): void {
+    clear(regionList);
+    const shown = expanded ? REGIONS : REGIONS.filter((r) => r.meta.id === selectedRegion);
+    regionList.append(
+      ...shown.map((r) =>
+        el("button", {
+          class: "choice",
+          "aria-pressed": r.meta.id === selectedRegion ? "true" : "false",
+          onClick: () => {
+            selectedRegion = r.meta.id;
+            renderRegionList(false);
+          },
+        }, [
+          el("span", { class: "choice-title" }, r.meta.name),
+          el("span", { class: "choice-sub" }, r.meta.reference),
+        ])
+      )
+    );
+    if (!expanded) {
+      regionList.append(
+        el("button", { class: "linklike", onClick: () => renderRegionList(true) }, "Not this one? Show all regions")
+      );
+    }
+  }
+  renderRegionList(selectedRegion == null);
+
   const regionCard = el("div", { class: "card" }, [
     el("h3", {}, "🗺️ Pick your region"),
     el("p", {}, [
       "If you already know which of our regions — or which EPA ecoregion — you're in, you can skip the map. ",
       "Fair warning: without a map point we can't look up your soil, rainfall, or winter cold, so you'll answer the sun and moisture questions yourself and the plant list leans on what you tell us.",
     ]),
-    ...REGIONS.map((r) =>
-      el("button", {
-        class: "choice",
-        onClick: () => {
-          store.draft.lat = null;
-          store.draft.lon = null;
-          store.draft.site = null;
-          store.draft.regionOverride = r.meta.id;
-          setSitePromise(null);
-          toast(`Using the ${r.meta.name} list — your pick.`);
-          navigate("sun");
-        },
-      }, [
-        el("span", { class: "choice-title" }, r.meta.name),
-        el("span", { class: "choice-sub" }, r.meta.reference),
-      ])
-    ),
+    regionList,
   ]);
+
+  // --- One way in at a time. GPS leads; the town search and the region list
+  // stay tucked behind a plain-words link so the screen holds a single task
+  // and the Next button stays close. The link always offers the way back.
+  type Mode = "gps" | "zip" | "region";
+  let mode: Mode = store.draft.regionOverride ? "region" : "gps";
+
+  const mapBlock = el("div", {}, [
+    el("div", { style: "margin:0.9rem 0" }, [mapWrap]),
+    status,
+    coverageOut,
+  ]);
+  const switcher = el("p", { class: "picker-switch" });
+
+  function renderSwitcher(): void {
+    clear(switcher);
+    const link = (label: string, m: Mode) =>
+      el("button", { class: "linklike", onClick: () => setMode(m) }, label);
+    if (mode === "gps") {
+      switcher.append("Don't want to use your location? ", link("Use a ZIP code", "zip"), " or ", link("pick a region", "region"), " instead.");
+    } else if (mode === "zip") {
+      switcher.append("Changed your mind? ", link("Use GPS location", "gps"), " or ", link("pick a region", "region"), " instead.");
+    } else {
+      switcher.append("Changed your mind? ", link("Use GPS location", "gps"), " or ", link("search by ZIP code", "zip"), " instead.");
+    }
+  }
+
+  function setMode(m: Mode): void {
+    mode = m;
+    locateBtn.hidden = m !== "gps";
+    searchCard.hidden = m !== "zip";
+    mapBlock.hidden = m === "region";
+    regionCard.hidden = m !== "region";
+    renderSwitcher();
+  }
 
   main.append(
     el("h2", { class: "step-title" }, "Where are you standing?"),
-    el("p", { class: "step-lede" }, "Get your location, then check the map — if the pin isn't where you're really standing, drag or tap to nudge it. No GPS? Search for your town below."),
+    el("p", { class: "step-lede" }, "Get your location, then check the map — if the pin isn't where you're really standing, drag or tap to nudge it."),
     whyThis("Why does the exact spot matter?", [
       "“Native” always means native to somewhere. ",
       "Your coordinates pick which regional plant list applies and pull the soil, climate, and ecoregion records for this exact place — the same species can be a keystone in one region and a stranger in the next.",
     ]),
     locateBtn,
-    el("div", { style: "margin:0.9rem 0" }, [mapWrap]),
-    status,
-    coverageOut,
     searchCard,
+    mapBlock,
     regionCard,
+    switcher,
     el("div", { class: "btn-row" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, "Back"),
       el("button", {
         class: "btn btn-primary",
         onClick: () => {
+          if (mode === "region") {
+            const r = REGIONS.find((x) => x.meta.id === selectedRegion);
+            if (!r) {
+              toast("Pick a region first.");
+              return;
+            }
+            store.draft.lat = null;
+            store.draft.lon = null;
+            store.draft.site = null;
+            store.draft.regionOverride = r.meta.id;
+            setSitePromise(null);
+            toast(`Using the ${r.meta.name} list — your pick.`);
+            navigate("sun");
+            return;
+          }
           const fLat = effLat(), fLon = effLon();
           store.draft.lat = fLat;
           store.draft.lon = fLon;
@@ -387,6 +453,8 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
       }, "Next: measure the sun →"),
     ])
   );
+
+  setMode(mode);
 
   updateStatus();
 

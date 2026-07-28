@@ -37,6 +37,16 @@ subtitle on the What's new page.
 
 ### Changed
 
+- The [Where are you standing?](https://olivierlacan.github.io/indigene/#/location)
+  step now shows one way of setting your spot at a time. Using your device's
+  location leads, and a small link — "Don't want to use your location? Use a
+  ZIP code or pick a region instead." — swaps in the town search or the region
+  list when you ask for it, with a matching link to switch back. Less to
+  scroll past, and the Next button is always close by.
+- Picking your region by hand is now two taps: choose a region and the list
+  folds down to just your choice (a "Show all regions" link brings the rest
+  back), then press Next when you're sure — instead of being whisked to the
+  next step the moment you tap.
 - The footer — the fine print about open source and data sources, plus the
   "See what's new" link — now appears at the bottom of every page, not just
   the home screen.

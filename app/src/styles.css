@@ -575,6 +575,9 @@ details[open] > summary::after {
 }
 
 /* --- Buttons --- */
+.btn[hidden] {
+  display: none; /* beat the display:inline-flex below when hidden */
+}
 .btn {
   display: inline-flex;
   align-items: center;
@@ -640,6 +643,26 @@ details[open] > summary::after {
   border-color: var(--brand);
   background: var(--brand-bg);
 }
+/* Buttons that read as inline links — the location step's picker-mode switch
+   ("Use a ZIP code", "pick a region", "Use GPS location") and the collapsed
+   region list's "Show all regions". They act like buttons (no navigation) but
+   sit inside a sentence, so they dress as links. */
+.linklike {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: var(--focus);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+/* The sentence that swaps between location pickers. */
+.picker-switch {
+  margin: 1rem 0 0;
+}
+
 /* A choice with a leading glyph (e.g. the sun-exposure icons). */
 .choice-with-glyph {
   display: flex;

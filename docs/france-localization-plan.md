@@ -9,11 +9,12 @@ Regions of Europe, picked by coordinates); reads elevation from a global source
 outside the US; and ships a first European region, **Atlantic France**
 (`app/src/data/plants.france-atlantic.ts`, 23 plants), selected via the EEA
 `atlantic` region code. The **UI is still English** and units are still
-imperial — that's the explicit next step. The remaining honest gap is the one
-below in §4.3: the French host counts are genuine genus-level *estimates* pending
-a real European host-count source, and **must not be silently inflated** into
-false precision — every number in Indigene is meant to be citable. This doc
-records what's done, what's feasible next, and the decisions that need a human.
+imperial — that's the explicit next step. **§4.3's gap is now closed:** the
+French host counts were genus-level estimates pending a real European source;
+they are now counted from the Gaytán et al. 2026 matrix (see
+`docs/host-counts-plan.md`), so every one of them is citable, which is the bar
+every number in Indigene is meant to clear. This doc records what's done, what's
+feasible next, and the decisions that need a human.
 
 ## TL;DR
 
@@ -30,8 +31,9 @@ records what's done, what's feasible next, and the decisions that need a human.
 - **The plant list is the binding constraint.** A region is "a data file plus one
   line in `regions.ts`" — but the data file is 20–40 plants with honest
   size-over-time, eco-scores, hardiness, and **Lepidoptera host counts**, each
-  with a citable basis. The French host-count source is the genuine gap and needs
-  a sourcing decision (§4.3). This is the part we cannot auto-generate.
+  with a citable basis. The host counts are the one part we *can* now generate —
+  they're computed from the Gaytán matrix (§4.3, closed). Everything else on a
+  row is still hand-sourced botanical work.
 - **Recommended first PR:** the ecoregion + i18n *foundation* (provider-agnostic
   ecoregions, EEA lookup, a `t()` layer with `fr`/`en` dictionaries, a language
   toggle), shipped with **one** French biogeographic region wired end-to-end but
@@ -118,7 +120,7 @@ Every visible string is inlined in `steps/*.ts`, `components/*.ts`, and
 especially `lib/plain.ts` (400 lines of idiomatic plain-language prose — the
 `scoreLabels`, `supportLabels`, `propagationMethods`, `sunPlain`, `moisturePlain`,
 etc.). Proposed approach, in keeping with "vanilla TS, zero runtime deps,
-~105 KB":
+~125 KB":
 
 - A tiny hand-rolled `lib/i18n.ts`: a `Lang = "en" | "fr"`, a `t(key, params?)`
   lookup over per-language dictionaries, a `formatList`/plural helper, and a
@@ -134,7 +136,7 @@ etc.). Proposed approach, in keeping with "vanilla TS, zero runtime deps,
   `navigator.language` but always user-overridable (same "sensors/guesses lie,
   the manual pick is primary" instinct the sun picker follows).
 - **Bundle-size rule applies** (`CLAUDE.md`): a second full dictionary is a few KB
-  — re-measure and update the ~105 KB figure everywhere it's quoted, in the same
+  — re-measure and update the ~125 KB figure everywhere it's quoted, in the same
   PR that adds it.
 
 ### 3.2 De-Americanization (units and framing)
@@ -193,7 +195,16 @@ file needs, honestly sourced:
   propagation guidance. The `PropagationMethod` vocabulary itself is universal and
   needs only translation.
 
-### 4.3 Lepidoptera host counts — the source is found, the recompute is pending
+### 4.3 Lepidoptera host counts — **done**
+
+> **Status: closed.** The recompute described below has landed. The 23 Atlantic
+> France rows now carry counts computed from the Gaytán matrix, not estimates;
+> `HOST_ANCHOR` stayed at 520 and no US score moved. What actually shipped, the
+> decisions behind it, and the one deliberately deferred piece (the DBIF
+> cross-check) are in **`docs/host-counts-plan.md`**. The rest of this section is
+> kept as the reasoning that got us there.
+
+
 The host score — the single strongest signal in the ranking — is derived in
 `lib/plants.ts` from a **raw Lepidoptera host-species count** per plant. In the US
 that count comes from the Tallamy / NWF native-plant-finder dataset. The France

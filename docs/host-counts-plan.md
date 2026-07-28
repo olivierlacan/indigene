@@ -1,10 +1,9 @@
 # Plan: real European host counts, and a page that invites checking
 
-**Status:** designed, not yet built. The source data is **downloaded** to
-`data/sources/eu-lep-plant-matrix/` (git-ignored) and has been validated against
-our catalog — every check below was run against the real files, not assumed.
-What's pending is the build script, the recomputed Atlantic France rows, and the
-new `#/sources` page. Ships as **one PR**. This closes the gap
+**Status: shipped.** `app/scripts/build-host-counts.mjs` exists, the derived
+`host-counts.json` is committed, all 23 Atlantic France rows carry computed
+counts, and `#/sources` is live. `HOST_ANCHOR` stayed at 520 and no US score
+moved. Still open by choice: the DBIF cross-check (§8). This closes the gap
 `docs/france-localization-plan.md` §4.3 left open.
 
 Two things land together, because they're the same argument.
@@ -32,7 +31,7 @@ alone is 34 MB) and re-fetched by hand from the DOI, per the convention in
 | File | Contents |
 |---|---|
 | `Lepidoptera–Plant Associations in Europe.csv` | the matrix: 5,152 Lepidoptera rows × 3,275 plant columns, `;`-separated, binary `1`/`0` |
-| `Ecosystems.csv` | per-plant occurrence across 9 European zones, plus a `Non-native` flag |
+| `Ecosystems.csv` | per-plant occurrence across 8 European zones, plus a `Non-native` flag |
 | `Taxonomy.xlsx` | `SPECIES → GENUS → FAMILY` for both Lepidoptera and plants, plus woody/herbaceous and life cycle |
 | `Gaytán Readme.md` | the dataset's own description |
 
@@ -130,7 +129,7 @@ future refresh breaks that.
 **Counting rule:** for a genus *G* and zone *Z*, the count is the number of
 distinct Lepidoptera rows carrying a `1` against **any** plant column whose genus
 is *G*, which is flagged present in *Z*, and which is **not** flagged
-`Non-native`. Computed for all 973 genera × 9 zones. Each cell also records the
+`Non-native`. Computed for all 973 genera × 8 zones. Each cell also records the
 zone-only count and the all-Europe total, so the effect of each filter stays
 inspectable rather than baked in.
 

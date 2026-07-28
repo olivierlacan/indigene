@@ -58,17 +58,41 @@ subtitle on the What's new page.
   back to the coarse box offline. `EcoregionInfo` carries a `provider` + `code` +
   `name`, and a region declares the codes it covers under `meta.ecoregion`.
   See `docs/france-localization-plan.md`.
-- Internal: the European Lepidoptera host-count source is identified and open —
-  the Gaytán et al. 2026 species-level European Lepidoptera–plant interaction
-  matrix (CC-BY 4.0, `doi:10.1002/ece3.73004`), with DBIF (CEH/BRC, OGL) as a
-  GB cross-check. It replaces the earlier "no European equivalent exists"
-  assumption; the France region's host counts stay flagged genus-level estimates
-  until a `scripts/build-host-counts.mjs` recompute lands (keeping the shared
-  `HOST_ANCHOR`, so US scores don't move). Sources recorded in `DATA_SOURCES.md`
-  and `docs/france-localization-plan.md` §4.3.
+- **A page that shows our working.**
+  [Where our numbers come from](https://olivierlacan.github.io/indigene/#/sources)
+  lays out, in plain words, where every figure in Indigene actually comes
+  from — and marks each one as counted from real data, worked out by the app,
+  or our own estimate. It also says what we're assuming, and names the numbers
+  we think are most likely to be wrong, starting with the 0–100 scores, which
+  are judgments we made rather than anything anyone measured. If you spot a
+  mistake, the page tells you how to tell us. We'd rather be corrected than
+  believed.
+- Internal: the European Lepidoptera host-count source is identified, open, and
+  now **integrated** — the Gaytán et al. 2026 species-level European
+  Lepidoptera–plant interaction matrix (CC-BY 4.0, `doi:10.1002/ece3.73004`),
+  which the dataset's own README confirms records *larval* hosts. A new
+  `scripts/build-host-counts.mjs` (`npm run host-counts`) reduces it to a
+  committed `data/sources/eu-lep-plant-matrix/host-counts.json` — 973 genera ×
+  8 European zones — and reports a region's rows without rewriting them. Counted
+  at genus level, filtered to members that grow in the region's zone and are
+  native to Europe; the unfiltered figure is kept wherever it differs. The
+  shared `HOST_ANCHOR` stays 520 and **no US score moved**. DBIF (CEH/BRC, OGL)
+  remains an unrun cross-check. See `docs/host-counts-plan.md`.
 
 ### Changed
 
+- **The French caterpillar counts are now counted, not estimated.** Every
+  [Atlantic France plant](https://olivierlacan.github.io/indigene/#/regions/france-atlantic)
+  shipped with an honest guess at how many kinds of caterpillar it feeds,
+  because no European tally was available to us. One is now — an open dataset
+  covering 5,152 European butterflies and moths — so the guesses are gone and
+  every plant carries a real figure, with the source named on its page. Almost
+  all of them went up: the guesses had been cautious. Blackthorn and wild
+  cherry turned out to feed 318 kinds of caterpillar rather than the 100 and
+  120 we'd estimated, and cowslip 35 rather than 6. A few went the other way —
+  holly feeds 7, not the 12 we'd guessed. Because these numbers help decide
+  which plants we recommend first, some French results are now in a different
+  order, and we think a fairer one.
 - Internal: `make-thumb.mjs` takes `--top <px>`, starting the square that many
   source pixels down instead of at the very top of the capture. A release
   whose feature sits below the fold of a full-page screenshot (0.12's "See it

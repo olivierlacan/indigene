@@ -6,7 +6,8 @@ import type { Weights } from "../types";
 import { el } from "../ui";
 import { drawSizeViz } from "./size-viz";
 import { statGrid } from "./stat-card";
-import { scoreLabels, confidencePlain, growthPlain, DATA_SOURCES_URL } from "../lib/plain";
+import { scoreLabels, confidencePlain, growthPlain, SOURCES_ROUTE } from "../lib/plain";
+import { citation } from "./citation";
 import { keystoneIcon } from "./keystone-icon";
 
 const monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -89,8 +90,10 @@ export function plantCard(r: Ranked, weights: Weights): HTMLElement {
       confidencePlain(p.confidence),
       " ",
       el("span", {}, [
-        `Source: ${p.basis} `,
-        el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, "All sources & licensing →"),
+        "Source: ",
+        ...citation(p.basis),
+        " ",
+        el("a", { href: SOURCES_ROUTE }, "How sure are we? →"),
       ]),
     ]),
   ]);

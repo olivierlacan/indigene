@@ -13,7 +13,8 @@ import type { PlantEntry, Suitability } from "../lib/explore";
 import { wildlifeForPlant, relianceOf } from "../lib/wildlife";
 import { supportLabels } from "../lib/plain";
 import { supportIcon } from "../components/support-icon";
-import { scoreLabels, confidencePlain, growthPlain, propagationMethods, DATA_SOURCES_URL, PROPAGATION_SOURCE_URL } from "../lib/plain";
+import { scoreLabels, confidencePlain, growthPlain, propagationMethods, PROPAGATION_SOURCE_URL, SOURCES_ROUTE } from "../lib/plain";
+import { citation } from "../components/citation";
 import { silhouetteFor } from "../components/plant-card";
 import { keystoneIcon } from "../components/keystone-icon";
 import { statGrid } from "../components/stat-card";
@@ -121,8 +122,10 @@ export function renderPlant(main: HTMLElement, param?: string): void {
           confidencePlain(p.confidence),
           " ",
           el("span", {}, [
-            `Source: ${p.basis} `,
-            el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, "All sources & licensing →"),
+            "Source: ",
+            ...citation(p.basis),
+            " ",
+            el("a", { href: SOURCES_ROUTE }, "How sure are we? →"),
           ]),
         ]),
         shareBtn,
@@ -449,7 +452,9 @@ function propagationSection(p: Plant): HTMLElement {
     el("ul", { class: "score-list" }, methodItems),
     el("p", { class: "confidence", style: "margin-top:0.4rem" }, [
       el("span", {}, [
-        `How-to source: ${basis} `,
+        "How-to source: ",
+        ...citation(basis),
+        " ",
         el("a", { href: PROPAGATION_SOURCE_URL, target: "_blank", rel: "noopener" }, "USFS Native Plant Network →"),
       ]),
     ]),

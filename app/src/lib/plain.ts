@@ -8,6 +8,11 @@ import type { MoistureBand, PropagationMethod, SizeSnapshot, SupportKind, Suppor
 export const DATA_SOURCES_URL =
   "https://github.com/olivierlacan/indigene/blob/main/DATA_SOURCES.md";
 
+/** The in-app plain-language companion to DATA_SOURCES_URL (`steps/sources.ts`):
+ * which numbers are counted, which are our judgment, and what to challenge
+ * first. Cited alongside a figure, it's the friendlier door of the two. */
+export const SOURCES_ROUTE = "#/sources";
+
 /** Where to ask for a new area to be covered — or contribute its plant list.
  * Linked wherever the app has to say "no list for your area yet", so the
  * dead end always comes with a door: open an issue with your ZIP/town, or

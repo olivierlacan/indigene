@@ -41,6 +41,14 @@ const INTERNAL = /^Internal:\s/;
 // against raw.githubusercontent so committed screenshots can be shown and
 // linked directly — GitHub serves them CDN-cached with correct content types.
 const RAW_BASE = "https://raw.githubusercontent.com/olivierlacan/indigene/main/";
+
+// Where the compiled notes live once deployed. Every release also gets a page
+// of its own at <version>/ — a stable, shareable address for one release
+// ("what shipped in 0.12") instead of an anchor partway down a growing list.
+// Both the index and each release page declare a canonical URL built from
+// this, so search engines and link previews credit one address per release
+// rather than treating the index and its anchors as duplicates.
+const SITE = "https://olivierlacan.github.io/indigene/release-notes/";
 const resolveUrl = (url) =>
   /^(https?:|mailto:|#|\/|\.\.?\/)/.test(url) ? url : RAW_BASE + url;
 
@@ -189,30 +197,45 @@ function inline(md) {
 
 const anchor = (version) => "v" + version.replaceAll(".", "-");
 
-function renderRelease(r) {
+// Thumbnails ship inside the notes folder (they're small and the page should
+// render before raw.githubusercontent has the file); the full-size screenshots
+// stay direct-linked from the repo. Copied once, shared by the index and the
+// release's own page — which reaches it one directory up.
+function copyThumb(r) {
+  const source = resolve(REPO, r.thumb.thumb);
+  if (!existsSync(source)) {
+    fail(`release ${r.version}: thumbnail not found at ${r.thumb.thumb}`);
+  }
+  const local = `${anchor(r.version)}-thumb.png`;
+  mkdirSync(dirname(OUT), { recursive: true });
+  copyFileSync(source, resolve(dirname(OUT), local));
+  return local;
+}
+
+/**
+ * One release's card. On the index (`standalone: false`) its heading links to
+ * the release's own page; on that page the heading is the page's `h1` and
+ * links nowhere. `assets` prefixes the copied thumbnail so a release page one
+ * directory down still finds it.
+ */
+function renderRelease(r, { standalone = false, assets = "" } = {}) {
   const parts = [];
+  const tag = standalone ? "h1" : "h2";
   parts.push(`<article class="release" id="${anchor(r.version)}">`);
   parts.push(`<header>`);
+  const title = `Version ${escapeHtml(r.version)}`;
   parts.push(
-    `<h2><a class="permalink" href="#${anchor(r.version)}">Version ${escapeHtml(r.version)}</a></h2>`,
+    standalone
+      ? `<${tag}>${title}</${tag}>`
+      : `<${tag}><a class="permalink" href="${encodeURIComponent(r.version)}/">${title}</a></${tag}>`,
   );
   if (r.name) parts.push(`<p class="release-name">${inline(r.name)}</p>`);
   parts.push(`<p class="release-date">${escapeHtml(r.date)}</p>`);
   parts.push(`</header>`);
   if (r.thumb) {
-    // Thumbnails ship inside the page's own folder (they're small and the
-    // page should render before raw.githubusercontent has the file); the
-    // full-size screenshots stay direct-linked from the repo.
-    const source = resolve(REPO, r.thumb.thumb);
-    if (!existsSync(source)) {
-      fail(`release ${r.version}: thumbnail not found at ${r.thumb.thumb}`);
-    }
-    const local = `${anchor(r.version)}-thumb.png`;
-    mkdirSync(dirname(OUT), { recursive: true });
-    copyFileSync(source, resolve(dirname(OUT), local));
     parts.push(
       `<a class="thumb" href="${resolveUrl(r.thumb.full)}">` +
-        `<img src="${local}" alt="${escapeHtml(r.thumb.alt)}"` +
+        `<img src="${assets}${r.thumb.local}" alt="${escapeHtml(r.thumb.alt)}"` +
         ` width="240" height="240" loading="lazy"></a>`,
     );
     if (r.shotLinks) parts.push(`<p class="shots">${inline(r.shotLinks)}</p>`);
@@ -228,14 +251,15 @@ function renderRelease(r) {
   return parts.join("\n");
 }
 
-function renderPage(releases) {
+function shell({ title, description, canonical, body }) {
   return `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>What's new — Indigene</title>
-<meta name="description" content="Everything new in Indigene, the free native-plant finder, described in plain words.">
+<title>${escapeHtml(title)}</title>
+<meta name="description" content="${escapeHtml(description)}">
+<link rel="canonical" href="${canonical}">
 <style>
 /* Tokens mirrored from app/src/styles.css so the page feels like the app. */
 :root {
@@ -267,11 +291,17 @@ a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
   background: var(--surface); border: 1px solid var(--line);
   border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.25rem 0;
 }
-.release h2 { margin: 0; font-size: 1.3rem; }
+.release h1, .release h2 { margin: 0; font-size: 1.3rem; }
 .release h2 .permalink { color: var(--brand-ink); text-decoration: none; }
 .release h2 .permalink:hover, .release h2 .permalink:focus-visible {
   text-decoration: underline;
 }
+/* Older/newer release links at the foot of a single release's page. */
+.pager {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1rem;
+  justify-content: space-between; margin: 1.25rem 0 0; font-size: 0.95rem;
+}
+.pager .newer { margin-left: auto; }
 .release-name { margin: 0.15rem 0 0; font-weight: 700; color: var(--ink); }
 .release-date { margin: 0.1rem 0 0; color: var(--ink-soft); font-size: 0.9rem; }
 .thumb { display: block; width: fit-content; margin: 0.85rem auto 0; }
@@ -300,13 +330,7 @@ footer { color: var(--ink-soft); margin-top: 2rem; font-size: 0.9rem; }
 </head>
 <body>
 <main>
-<h1>What&rsquo;s new in Indigene</h1>
-<p class="lede">Indigene is a free app that finds the plants that naturally
-belong where you live. This page lists everything new in the app, newest
-first, in plain words. The app updates itself, so whatever you read here is
-already yours.</p>
-<a class="back" href="../">&larr; Open Indigene</a>
-${releases.map(renderRelease).join("\n")}
+${body}
 <footer>
 <p>Indigene is free, open source, and built on public data.
 <a href="https://github.com/olivierlacan/indigene">See how it&rsquo;s made on GitHub</a>.</p>
@@ -317,9 +341,62 @@ ${releases.map(renderRelease).join("\n")}
 `;
 }
 
+function renderIndex(releases) {
+  return shell({
+    title: "What's new — Indigene",
+    description:
+      "Everything new in Indigene, the free native-plant finder, described in plain words.",
+    canonical: SITE,
+    body: `<h1>What&rsquo;s new in Indigene</h1>
+<p class="lede">Indigene is a free app that finds the plants that naturally
+belong where you live. This page lists everything new in the app, newest
+first, in plain words. The app updates itself, so whatever you read here is
+already yours.</p>
+<a class="back" href="../">&larr; Open Indigene</a>
+${releases.map((r) => renderRelease(r)).join("\n")}`,
+  });
+}
+
+// `releases` is newest-first, so the previous entry is the newer release.
+function renderReleasePage(r, newer, older) {
+  const pager = [];
+  if (older) {
+    pager.push(
+      `<a class="older" href="../${encodeURIComponent(older.version)}/">&larr; Version ${escapeHtml(older.version)}</a>`,
+    );
+  }
+  if (newer) {
+    pager.push(
+      `<a class="newer" href="../${encodeURIComponent(newer.version)}/">Version ${escapeHtml(newer.version)} &rarr;</a>`,
+    );
+  }
+  return shell({
+    title: `Version ${r.version}${r.name ? `: ${r.name}` : ""} — What's new in Indigene`,
+    description: r.name
+      ? `${r.name} — what changed in Indigene ${r.version}, released ${r.date}, in plain words.`
+      : `What changed in Indigene ${r.version}, released ${r.date}, in plain words.`,
+    canonical: `${SITE}${encodeURIComponent(r.version)}/`,
+    body: `<a class="back" href="../">&larr; All releases</a>
+${renderRelease(r, { standalone: true, assets: "../" })}
+${pager.length ? `<nav class="pager">\n${pager.join("\n")}\n</nav>` : ""}`,
+  });
+}
+
 const releases = parseChangelog(readFileSync(CHANGELOG, "utf8"));
 mkdirSync(dirname(OUT), { recursive: true });
-writeFileSync(OUT, renderPage(releases));
+for (const r of releases) if (r.thumb) r.thumb.local = copyThumb(r);
+writeFileSync(OUT, renderIndex(releases));
+for (const [i, r] of releases.entries()) {
+  const dir = resolve(dirname(OUT), r.version);
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(
+    resolve(dir, "index.html"),
+    renderReleasePage(r, releases[i - 1], releases[i + 1]),
+  );
+}
 console.log(
   `release notes: ${releases.length} versions (${releases[0].version} → ${releases[releases.length - 1].version}) → ${OUT}`,
+);
+console.log(
+  `release pages: ${releases.map((r) => r.version + "/").join(" ")}`,
 );

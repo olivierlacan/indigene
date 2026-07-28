@@ -521,8 +521,8 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/9240f9c...HEAD
-[0.12]: https://github.com/olivierlacan/indigene/compare/2aec57f...9240f9c
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/fa0dd4c...HEAD
+[0.12]: https://github.com/olivierlacan/indigene/compare/2aec57f...fa0dd4c
 [0.11]: https://github.com/olivierlacan/indigene/compare/f84450c...2aec57f
 [0.10]: https://github.com/olivierlacan/indigene/compare/9453251...f84450c
 [0.9]: https://github.com/olivierlacan/indigene/compare/6e72889...9453251

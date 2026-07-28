@@ -1,0 +1,17 @@
+# Large raw source downloads are fetched on demand (or by CI) — see each
+# subfolder's README — and are NOT committed. Small provenance/verification
+# snapshots (probe.json, *.md) ARE committed so upstream drift shows in diffs.
+*.csv
+*.tsv
+*.zip
+*.gz
+*.7z
+*.geojson
+*.gpkg
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.xlsx
+*.parquet

@@ -83,8 +83,10 @@ captured sample response, with a real-browser smoke test as the acceptance step 
 identical to how the EPA path shipped. **To retrieve and confirm both from an
 unblocked machine, run `node app/scripts/probe-eea.mjs`** — it lists the service's
 layers, probes a point in each French biogeographical region, and reports the
-polygon layer id and the field that holds the region name (writing
-`eea-probe.json`). Re-runnable any time the service changes.
+polygon layer id and the field that holds the region name (writing the snapshot
+to `data/sources/eea-biogeographical-regions/probe.json`). Re-runnable any time
+the service changes — see `data/sources/README.md` for the retrieved-data
+convention (and where a CI refresh job would write).
 
 **Caveat to carry, not hide:** EEA biogeographical regions are *coarse* (4 zones
 for a whole country). That's fine for picking a seed list, but the confirm screen

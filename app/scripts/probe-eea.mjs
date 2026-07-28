@@ -6,10 +6,20 @@
 //
 //   node app/scripts/probe-eea.mjs
 //
-// It prints a summary and writes eea-probe.json beside the repo root. Paste the
-// summary (or the json) back and the parser in app/src/lib/site.ts gets pinned
-// to the real layer + field, and the "confirm in-browser" caveat comes off.
-import { writeFileSync } from "node:fs";
+// It prints a summary and writes the provenance snapshot to
+// data/sources/eea-biogeographical-regions/probe.json (committed — see that
+// folder's README). Paste the summary (or the json) back and the parser in
+// app/src/lib/site.ts gets pinned to the real layer + field, and the "confirm
+// in-browser" caveat comes off.
+import { writeFileSync, mkdirSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
+
+// Resolve the output path from this script's location, so it lands in the right
+// place regardless of the working directory it's launched from.
+const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
+const OUT_DIR = join(REPO_ROOT, "data", "sources", "eea-biogeographical-regions");
+const OUT_FILE = join(OUT_DIR, "probe.json");
 
 const BASE =
   "https://bio.discomap.eea.europa.eu/arcgis/rest/services/BioRegions/BiogeographicalRegions_WM/MapServer";
@@ -66,7 +76,14 @@ function detectRegionField(attrs) {
 }
 
 async function main() {
-  const report = { base: BASE, ranAt: new Date().toISOString(), layers: [], probes: [] };
+  const report = {
+    source: "EEA Biogeographical Regions of Europe (2016)",
+    license: "CC-BY 4.0 (European Environment Agency)",
+    base: BASE,
+    ranAt: new Date().toISOString(),
+    layers: [],
+    probes: [],
+  };
 
   // 1) Layer list.
   console.log("→ Fetching layer list…");
@@ -122,8 +139,9 @@ async function main() {
     console.log("  " + JSON.stringify(report.probes[0].result.attrs));
   }
 
-  writeFileSync("eea-probe.json", JSON.stringify(report, null, 2));
-  console.log("\nWrote eea-probe.json — paste the CONCLUSION block (or that file) back.");
+  mkdirSync(OUT_DIR, { recursive: true });
+  writeFileSync(OUT_FILE, JSON.stringify(report, null, 2));
+  console.log(`\nWrote ${OUT_FILE} — commit it, or paste the CONCLUSION block back.`);
 }
 
 main().catch((e) => {

@@ -115,12 +115,12 @@ function sizeAria(p: { size: { year: number; heightFt: number; spreadFt: number 
 // A simple drawn silhouette so a card is meaningful offline with no photo.
 // (Real photos are a Phase-2 addition — see the honesty notes.) Shared with
 // the explore/plant pages so a species looks the same everywhere.
-export function silhouetteFor(form: string): SVGSVGElement {
+export function silhouetteFor(form: string, size = 40): SVGSVGElement {
   const ns = "http://www.w3.org/2000/svg";
   const svg = document.createElementNS(ns, "svg");
   svg.setAttribute("viewBox", "0 0 48 48");
-  svg.setAttribute("width", "40");
-  svg.setAttribute("height", "40");
+  svg.setAttribute("width", String(size));
+  svg.setAttribute("height", String(size));
   const paths: Record<string, string> = {
     tree: "M24 6c6 0 10 5 10 10 0 5-4 9-9 9v11h-2V25c-5 0-9-4-9-9C14 11 18 6 24 6z",
     shrub: "M12 34c-3 0-6-3-6-7s3-6 6-6c0-4 4-8 12-8s12 4 12 8c3 0 6 2 6 6s-3 7-6 7z",

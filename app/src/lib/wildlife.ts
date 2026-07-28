@@ -120,6 +120,26 @@ export function mappedWildlifeCount(): number {
 }
 
 /**
+ * Distinct catalog animals with at least one documented tie to a plant in this
+ * region's roster — the region page's "wildlife these plants support" figure.
+ * Same defensive joins as everywhere else: a tie pointing at a plant the roster
+ * doesn't carry, or an animal the catalog doesn't know, counts for nothing.
+ */
+export function wildlifeCountForRegion(regionId: string): number {
+  const region = regionById.get(regionId);
+  if (!region) return 0;
+  const roster = new Set(loadPlants(region).map((p) => p.id));
+  const seen = new Set<string>();
+  for (const [plantId, links] of Object.entries(SUPPORT[regionId] ?? {})) {
+    if (!roster.has(plantId)) continue;
+    for (const link of links) {
+      if (wildlifeById.has(link.wildlifeId)) seen.add(link.wildlifeId);
+    }
+  }
+  return seen.size;
+}
+
+/**
  * Dev-only integrity check: every plant id referenced in SUPPORT must exist in
  * its region's roster, and every wildlifeId must be in the catalog. Called once
  * at module load in dev so a typo in a tie is caught immediately, not silently
@@ -130,9 +150,22 @@ export function auditSupport(): string[] {
   // The hard invariant: every listed animal must be native and cite where it's
   // native. The `native: true` literal type already blocks this at compile
   // time; this is the belt-and-suspenders runtime guarantee.
+  const catalogIds = new Set<string>();
+  const latinSeen = new Map<string, string>();
   for (const w of WILDLIFE) {
     if (w.native !== true) problems.push(`wildlife "${w.id}" is not marked native`);
     if (!w.nativeBasis?.trim()) problems.push(`wildlife "${w.id}" has no native-status source`);
+    // The region stat tiles count catalog entries once each, so the same
+    // animal listed twice — under a repeated id (the Map above would silently
+    // keep only one) or the same binomial under two ids — would double count.
+    if (catalogIds.has(w.id)) problems.push(`wildlife id "${w.id}" appears twice in the catalog`);
+    catalogIds.add(w.id);
+    const latin = w.latin?.trim().toLowerCase();
+    if (latin) {
+      const prev = latinSeen.get(latin);
+      if (prev) problems.push(`wildlife "${w.id}" repeats the latin name of "${prev}" (${w.latin})`);
+      else latinSeen.set(latin, w.id);
+    }
   }
   for (const [regionId, byPlant] of Object.entries(SUPPORT)) {
     const region = regionById.get(regionId);
@@ -140,15 +173,32 @@ export function auditSupport(): string[] {
       problems.push(`SUPPORT references unknown region "${regionId}"`);
       continue;
     }
-    const ids = new Set(loadPlants(region).map((p) => p.id));
+    const roster = loadPlants(region);
+    const ids = new Set(roster.map((p) => p.id));
+    // A plant id repeated in a seed list would inflate every roster-derived
+    // figure (plant count, keystone count) and show the plant twice.
+    if (ids.size !== roster.length) {
+      const seen = new Set<string>();
+      for (const p of roster) {
+        if (seen.has(p.id)) problems.push(`${regionId}: plant "${p.id}" appears twice in the roster`);
+        seen.add(p.id);
+      }
+    }
     for (const [plantId, links] of Object.entries(byPlant)) {
       if (!ids.has(plantId)) {
         problems.push(`${regionId}: no plant "${plantId}" in roster`);
       }
+      const tied = new Set<string>();
       for (const link of links) {
         if (!wildlifeById.has(link.wildlifeId)) {
           problems.push(`${regionId}/${plantId}: unknown wildlife "${link.wildlifeId}"`);
         }
+        // Two ties from one plant to one animal is authoring noise: the plant
+        // page would show the animal twice (counts already dedupe via Sets).
+        if (tied.has(link.wildlifeId)) {
+          problems.push(`${regionId}/${plantId}: duplicate tie to "${link.wildlifeId}"`);
+        }
+        tied.add(link.wildlifeId);
         // Every plant↔animal relationship must cite a reliable source — the
         // relationship is a claim, and claims here are checkable or they don't ship.
         if (!link.basis?.trim()) {

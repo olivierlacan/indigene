@@ -25,8 +25,8 @@ import type { RegionDef } from "../lib/plants";
 import { regionsForWildlife } from "../lib/wildlife";
 import { wildlifeSightingsNear, wildlifeSightingsInRegion } from "../lib/wildlife-sightings";
 import type { SightingResult } from "../lib/wildlife-sightings";
-import type { Bounds, ObservationSummary } from "../lib/inaturalist";
-import { observationCard, freshnessLine } from "./observation-ui";
+import type { Bounds } from "../lib/inaturalist";
+import { observationList, freshnessLine } from "./observation-ui";
 import { locationPrompt } from "./location-prompt";
 import type { InatScope, Wildlife } from "../types";
 
@@ -125,7 +125,7 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
              `research-grade sighting${sightings.length === 1 ? "" : "s"} of ${name} in ${region.meta.name} — verified and photographed by the iNaturalist community (you don't have to be there):`],
       ),
     );
-    out.append(el("div", { class: "obs-list" }, shown.map((o: ObservationSummary) => observationCard(o, w.common))));
+    out.append(observationList(shown, w.common));
     out.append(freshnessLine(result.fromCache));
   }
 

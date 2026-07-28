@@ -88,6 +88,28 @@ subtitle on the What's new page.
 
 ### Changed
 
+- **One tap now takes you through every sighting's photos, not just one
+  person's.** When a plant or animal page finds several sightings near you, the
+  photo viewer used to stop at the edge of the sighting you tapped — to see the
+  next person's pictures you had to close it and start again. Now the arrows
+  (and the ← → keys) carry straight on into the next sighting, all the way
+  through everything on the page. It always tells you where you are — "9 / 11 ·
+  sighting 3 of 4" — and as you cross from one sighting to the next, the credit
+  underneath changes with it: the new photographer's name, their licence, where
+  and when they saw it, and a link to that sighting on iNaturalist.
+- **Bigger, tidier photo thumbnails.** A sighting's little square photos now sit
+  three to a row and fill the width of the card, instead of being a fixed small
+  size that left a lonely fourth picture stranded on a second row. When a
+  sighting has more pictures than fit, the last one wears a small "+2" badge —
+  tap it and the viewer will page through all of them.
+- Internal: `observation-ui.ts` now exports `observationList()` rather than a
+  per-card builder, which is what lets a thumbnail hand the lightbox the whole
+  set of sightings on screen; the lightbox holds a flattened reel of
+  `{photo, observation}` frames and rebuilds its credit block per frame.
+  `whereWhen()` moved to `lib/inaturalist.ts` (both the card and the lightbox
+  print it now, and components → lib keeps the imports one-way). New
+  `app/scripts/shoot-sightings.mjs` screenshots the "near you" sections with
+  iNaturalist's API and photos stubbed, for containers with no route to it.
 - Opening a sighting photo is smoother now. The photo viewer that pops up when
   you tap an iNaturalist picture (on a plant's or an animal's page) used to
   open small, then jump taller and draw the photo in stuttery strips as it

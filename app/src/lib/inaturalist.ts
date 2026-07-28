@@ -128,6 +128,29 @@ export interface ObservationSummary {
   photos: ObservationPhoto[];
 }
 
+const monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+/** "~3 km away · seen Jun 2023" — the honest context line for one sighting.
+ *  Distance when we measured it (a "near me" lookup), otherwise the coarse place
+ *  iNaturalist reports; then the month/year it was observed, when known. It
+ *  lives here, beside the shape it describes, because both the sighting card and
+ *  the lightbox print it — the lightbox needs it now that paging crosses from one
+ *  sighting to the next and the reader has to see *where they've landed*. */
+export function whereWhen(o: ObservationSummary): string {
+  const bits: string[] = [];
+  if (o.distanceKm != null) {
+    bits.push(o.distanceKm < 1 ? "under 1 km away" : `~${Math.round(o.distanceKm)} km away`);
+  } else if (o.place) {
+    bits.push(o.place);
+  }
+  if (o.observedOn) {
+    const [y, m] = o.observedOn.split("-");
+    const mm = Number(m);
+    bits.push(`seen ${mm >= 1 && mm <= 12 ? monthNames[mm] + " " : ""}${y}`);
+  }
+  return bits.join(" · ");
+}
+
 // The filters every query shares, whatever the geography: one iconic taxon
 // (plants for the plant layer, an animal class for the wildlife layer),
 // community-verified IDs only, every result photographed, a modest page size,

@@ -77,6 +77,13 @@ subtitle on the What's new page.
 
 ### Changed
 
+- Opening a sighting photo is smoother now. The photo viewer that pops up when
+  you tap an iNaturalist picture (on a plant's or an animal's page) used to
+  open small, then jump taller and draw the photo in stuttery strips as it
+  arrived. Now the viewer opens at its full size right away, shows a small
+  spinning circle while the photo travels, and the finished picture fades in
+  gently. The link back to the original sighting on iNaturalist is now a quiet
+  underlined link under the photographer's credit instead of a big button.
 - Region pages now lead with just the region's name — "Mid-Atlantic /
   Northeast Piedmont" instead of "Every native we know for Mid-Atlantic /
   Northeast Piedmont" — and say the rest in one short line underneath.

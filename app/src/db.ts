@@ -14,9 +14,23 @@ const OBS = "observations";
 
 let dbp: Promise<IDBDatabase> | null = null;
 
+/**
+ * How long an open() may sit with no event before we give up on it. Safari
+ * can leave a first indexedDB.open() hanging with NO event at all — not
+ * success, not error, not even blocked (e.g. when a suspended tab from
+ * before a schema bump still holds an old connection). Nothing that awaits
+ * such an open would ever settle, so every open gets a watchdog.
+ */
+const OPEN_TIMEOUT_MS = 2000;
+
 function open(): Promise<IDBDatabase> {
   if (dbp) return dbp;
   dbp = new Promise((resolve, reject) => {
+    let settled = false;
+    const watchdog = setTimeout(() => {
+      settled = true;
+      reject(new Error("IndexedDB open timed out"));
+    }, OPEN_TIMEOUT_MS);
     const req = indexedDB.open(DB_NAME, DB_VERSION);
     req.onupgradeneeded = () => {
       const db = req.result;
@@ -31,19 +45,28 @@ function open(): Promise<IDBDatabase> {
       }
     };
     req.onsuccess = () => {
+      clearTimeout(watchdog);
       const db = req.result;
+      // Success arriving after the watchdog fired: nobody is waiting on this
+      // connection anymore — close it so it can't block a future upgrade.
+      if (settled) return db.close();
       // If another tab later opens the database at a newer version, release
       // our connection so its upgrade can proceed instead of blocking forever.
       db.onversionchange = () => db.close();
       resolve(db);
     };
-    req.onerror = () => reject(req.error);
+    req.onerror = () => {
+      clearTimeout(watchdog);
+      reject(req.error);
+    };
     // A tab still holding an older-version connection (e.g. left open from
-    // before a schema bump) would otherwise stall this open() with no event
-    // ever firing — the whole app used to hang on that. Fail fast instead:
+    // before a schema bump) would otherwise stall this open() until that tab
+    // goes away — the whole app used to hang on that. Fail fast instead:
     // every caller already degrades gracefully.
-    req.onblocked = () =>
+    req.onblocked = () => {
+      clearTimeout(watchdog);
       reject(new Error("IndexedDB upgrade blocked by another open tab"));
+    };
   });
   // Don't cache a failure — once the blocking tab is closed (or a transient
   // error clears), the next call should get a fresh attempt.

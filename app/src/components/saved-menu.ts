@@ -64,7 +64,18 @@ async function populate(target: HTMLElement): Promise<void> {
   if (target.hidden) return; // closed again before the load finished
 
   if (spots === null) {
-    target.replaceChildren(el("p", { class: "nav-menu-status" }, "Couldn't load saved spots."));
+    // Storage answered with an error or not at all (db.open has a watchdog,
+    // so this settles within a couple of seconds either way). Leave a way
+    // back in: retrying re-opens the database from scratch.
+    target.replaceChildren(
+      el("p", { class: "nav-menu-status" }, "Couldn't open saved spots. Closing other Indigene tabs may help."),
+      el("button", {
+        type: "button",
+        role: "menuitem",
+        class: "nav-menu-all",
+        onClick: () => void populate(target),
+      }, "Try again"),
+    );
     return;
   }
   if (!spots.length) {

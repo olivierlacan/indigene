@@ -310,6 +310,18 @@ a {
 .nav-menu-panel .nav-menu-all:hover {
   text-decoration: underline;
 }
+/* The menu's "Try again" action is a <button>, but it should read exactly
+   like the link row above it. */
+.nav-menu-panel button.nav-menu-all {
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--line);
+  font-family: inherit;
+  font-size: inherit;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+}
 
 /* Narrow phones: shrink the title and drop the Saved label to its icon so the
    header holds Explore + Wildlife + Saved on one line without crowding. */

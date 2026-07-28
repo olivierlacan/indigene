@@ -71,6 +71,17 @@ subtitle on the What's new page.
   app was waiting forever for its on-device storage to answer before showing
   anything. It now draws the page right away and fills in your saved spots
   once storage responds.
+- The page now appears instantly on every load — the brief pause some
+  browsers still showed is gone, because nothing waits on on-device storage
+  before drawing anymore.
+- The Saved menu no longer sticks on "Loading…" when on-device storage won't
+  answer (Safari sometimes leaves it hanging). After a couple of seconds it
+  says it couldn't open your saved spots, suggests closing other Indigene
+  tabs, and offers a Try again button.
+- "See it growing near you" could get stuck at "Asking iNaturalist…" for the
+  same reason — the app checks its on-device photo cache before asking, and
+  that check could hang forever. It now gives the cache a couple of seconds,
+  then asks iNaturalist directly.
 - Internal: the page can no longer scroll sideways (`overflow-x: clip` on
   `body`). The overflowing header was silently widening the document, which
   is what put a dark right-edge gutter and a floating 🔖 in every full-page

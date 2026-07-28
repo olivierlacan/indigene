@@ -15,9 +15,12 @@ Zenodo). Save as e.g. `matrix.csv` in this folder. It is **git-ignored** (see
 `../.gitignore`) — do not commit the multi-thousand-row dataset; re-fetch it here
 when needed.
 
-No stable direct download URL is known yet, so retrieval is a manual grab from
-the DOI page rather than a script. Once the direct file URL is known, add a
-`fetch` step (like `app/scripts/probe-eea.mjs`) that writes into this folder.
+**Download page:** Zenodo record — https://zenodo.org/doi/10.5281/zenodo.16914288
+(concept DOI; resolves to the latest version). As of 2026-07-28 this URL was
+returning **HTTP 504** (Zenodo gateway timeout) — deferred; retry later. Once it's
+reachable, grab the CSV here manually, or add a `fetch` step (like
+`app/scripts/probe-eea.mjs`) that writes into this folder once the direct file
+URL is known.
 
 ## Consumed by (planned)
 

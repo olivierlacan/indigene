@@ -74,19 +74,18 @@ https://bio.discomap.eea.europa.eu/arcgis/rest/services/BioRegions/Biogeographic
   &outFields=code,name&returnGeometry=false&f=json
 ```
 
-The one honest unknown from a sandbox: the **exact layer id and field names**
-(`code`/`name` vs `short_name`/`PreString`…) must be confirmed against the live
-layer from a browser — the EEA host 403s automated fetchers and is blocked from
-the CI/agent egress, the same way `gispub.epa.gov` was during the EPA work (see
-`docs/ecoregion-plan.md`, Phase A note). So the parser lands unit-tested against a
-captured sample response, with a real-browser smoke test as the acceptance step —
-identical to how the EPA path shipped. **To retrieve and confirm both from an
-unblocked machine, run `node app/scripts/probe-eea.mjs`** — it lists the service's
-layers, probes a point in each French biogeographical region, and reports the
-polygon layer id and the field that holds the region name (writing the snapshot
-to `data/sources/eea-biogeographical-regions/probe.json`). Re-runnable any time
-the service changes — see `data/sources/README.md` for the retrieved-data
-convention (and where a CI refresh job would write).
+The layer id and field names are now **confirmed against the live service**
+(the EEA host 403s the CI/agent egress, so this was done from an unblocked
+machine — the same situation `gispub.epa.gov` was in during the EPA work). Layer
+**0** ("Biogeographical regions", polygons); the region slug is the **`short_name`**
+field (`atlantic`, `continental`, `alpine`, `mediterranean`), with `code`/`name`
+as prettier duplicates. The parser reads `short_name` and keeps a scan of the
+other returned fields as a rename fallback. **To re-confirm any time (or from
+CI), run `node app/scripts/probe-eea.mjs`** — it lists the layers, probes a point
+in each French biogeographical region, and writes the snapshot to
+`data/sources/eea-biogeographical-regions/probe.json` (committed as provenance;
+see `data/sources/README.md` for the convention and where a CI refresh would
+write).
 
 **Caveat to carry, not hide:** EEA biogeographical regions are *coarse* (4 zones
 for a whole country). That's fine for picking a seed list, but the confirm screen

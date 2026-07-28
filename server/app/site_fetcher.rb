@@ -243,25 +243,32 @@ module Indigene
       }
     end
 
-    # EEA response: ask for all fields and scan for a recognizable region name,
-    # so it survives field-name differences between service versions.
+    # EEA response. Layer 0 + field names confirmed against the live service (see
+    # data/sources/eea-biogeographical-regions/probe.json): the region slug is in
+    # `short_name`. Read that first, then fall back to scanning all returned
+    # fields so a future rename can't silently break the lookup.
     def fetch_ecoregion_eea(lat, lon)
       url = "#{EEA_ECOREGION_QUERY_URL}?geometry=#{lon},#{lat}&geometryType=esriGeometryPoint" \
             "&inSR=4326&spatialRel=esriSpatialRelIntersects" \
-            "&outFields=*&returnGeometry=false&f=json"
+            "&outFields=short_name,code,name&returnGeometry=false&f=json"
       data = get_json(url)
       attrs = data.dig("features", 0, "attributes")
       return nil unless attrs
 
-      attrs.each_value do |v|
-        s = presence(v.to_s)
-        next unless s
+      hit = match_eea_region(attrs["short_name"]) || attrs.each_value.lazy.map { |v| match_eea_region(v) }.find(&:itself)
+      return nil unless hit
 
-        low = s.downcase
-        hit = EEA_REGIONS.find { |(_slug, _name, re)| low.match?(re) }
-        return { provider: "eea-biogeo", code: hit[0], name: hit[1], hierarchy: [], detail: nil } if hit
-      end
-      nil
+      { provider: "eea-biogeo", code: hit[0], name: hit[1], hierarchy: [], detail: nil }
+    end
+
+    # Canonicalize one value (a short_name slug or any label) to [slug, name].
+    def match_eea_region(v)
+      s = presence(v.to_s)
+      return nil unless s
+
+      low = s.downcase
+      hit = EEA_REGIONS.find { |(_slug, _name, re)| low.match?(re) }
+      hit && [hit[0], hit[1]]
     end
 
     def ecoregion_label(eco, lat, lon)

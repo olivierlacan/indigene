@@ -271,11 +271,12 @@ export function parseEcoregion(data: any): EcoregionInfo | null {
 }
 
 // EEA Biogeographical Regions of Europe (2016), served from the EEA ArcGIS host.
-// The layer is a single flat set of large regions (Atlantic, Continental,
-// Alpine, Mediterranean…). We ask for all fields and scan them, because the
-// exact field name for the region varies by service version — the values are
-// distinctive enough to recognize by name. (Field id / layer number to be
-// confirmed against the live service in a browser, like the EPA path was.)
+// Layer 0 is a single flat set of large regions (Atlantic, Continental, Alpine,
+// Mediterranean…). Layer id and field names are *confirmed* against the live
+// service — see data/sources/eea-biogeographical-regions/probe.json: the region
+// slug lives in `short_name` ("atlantic", "continental", …), with `code` and
+// `name` as prettier duplicates. We request those three and read `short_name`,
+// keeping a scan of all returned fields as a fallback against a future rename.
 const EEA_ECOREGION_QUERY_URL =
   "https://bio.discomap.eea.europa.eu/arcgis/rest/services/BioRegions/BiogeographicalRegions_WM/MapServer/0/query";
 
@@ -283,7 +284,7 @@ async function fetchEcoregionEEA(lat: number, lon: number): Promise<EcoregionInf
   const url =
     `${EEA_ECOREGION_QUERY_URL}?geometry=${lon},${lat}&geometryType=esriGeometryPoint` +
     `&inSR=4326&spatialRel=esriSpatialRelIntersects` +
-    `&outFields=*&returnGeometry=false&f=json`;
+    `&outFields=short_name,code,name&returnGeometry=false&f=json`;
   const data = await fetchJson(url);
   return parseEcoregionEEA(data);
 }
@@ -304,19 +305,29 @@ const EEA_REGIONS: { slug: string; name: string; match: RegExp }[] = [
   { slug: "macaronesia", name: "Macaronesia", match: /macaronesia/ },
 ];
 
-// Pure parser for the EEA response — scans attribute values for a recognizable
-// region name, so it survives field-name differences between service versions.
+// Canonicalize one string (a `short_name` slug or any label) to a known region.
+function matchEeaRegion(v: unknown): { slug: string; name: string } | null {
+  const s = str(typeof v === "string" ? v : v == null ? null : String(v));
+  if (!s) return null;
+  const low = s.toLowerCase();
+  const hit = EEA_REGIONS.find((r) => r.match.test(low));
+  return hit ? { slug: hit.slug, name: hit.name } : null;
+}
+
+// Pure parser for the EEA response. Reads the confirmed `short_name` field first,
+// then falls back to scanning every attribute for a recognizable region name, so
+// a future field rename can't silently break the lookup.
 export function parseEcoregionEEA(data: any): EcoregionInfo | null {
   const attrs = data?.features?.[0]?.attributes;
   if (!attrs) return null;
+  const hit = matchEeaRegion(attrs.short_name) ?? scanForEeaRegion(attrs);
+  return hit ? { provider: "eea-biogeo", code: hit.slug, name: hit.name, hierarchy: [], detail: null } : null;
+}
+
+function scanForEeaRegion(attrs: Record<string, unknown>): { slug: string; name: string } | null {
   for (const v of Object.values(attrs)) {
-    const s = str(typeof v === "string" ? v : v == null ? null : String(v));
-    if (!s) continue;
-    const low = s.toLowerCase();
-    const hit = EEA_REGIONS.find((r) => r.match.test(low));
-    if (hit) {
-      return { provider: "eea-biogeo", code: hit.slug, name: hit.name, hierarchy: [], detail: null };
-    }
+    const hit = matchEeaRegion(v);
+    if (hit) return hit;
   }
   return null;
 }

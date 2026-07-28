@@ -30,8 +30,25 @@ function open(): Promise<IDBDatabase> {
         db.createObjectStore(OBS, { keyPath: "key" });
       }
     };
-    req.onsuccess = () => resolve(req.result);
+    req.onsuccess = () => {
+      const db = req.result;
+      // If another tab later opens the database at a newer version, release
+      // our connection so its upgrade can proceed instead of blocking forever.
+      db.onversionchange = () => db.close();
+      resolve(db);
+    };
     req.onerror = () => reject(req.error);
+    // A tab still holding an older-version connection (e.g. left open from
+    // before a schema bump) would otherwise stall this open() with no event
+    // ever firing — the whole app used to hang on that. Fail fast instead:
+    // every caller already degrades gracefully.
+    req.onblocked = () =>
+      reject(new Error("IndexedDB upgrade blocked by another open tab"));
+  });
+  // Don't cache a failure — once the blocking tab is closed (or a transient
+  // error clears), the next call should get a fresh attempt.
+  dbp.catch(() => {
+    dbp = null;
   });
   return dbp;
 }

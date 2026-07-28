@@ -66,6 +66,21 @@
 
     <main id="main" class="app-main" tabindex="-1"></main>
 
+    <!-- Site-wide footer: static so it shows on every page, even if a render
+         fails. %BASE_URL% is replaced by Vite at build time. -->
+    <footer class="app-footer">
+      <p>
+        Open-source (MIT), built on public scientific data —
+        <a
+          href="https://github.com/olivierlacan/indigene/blob/main/DATA_SOURCES.md"
+          target="_blank"
+          rel="noopener"
+          >full source list &amp; licensing</a
+        >. Every estimate comes with an honest confidence level.
+        <a href="%BASE_URL%release-notes/">See what's new</a>.
+      </p>
+    </footer>
+
     <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 
     <script type="module" src="/src/main.ts"></script>

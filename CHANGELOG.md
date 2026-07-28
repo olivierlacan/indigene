@@ -11,42 +11,65 @@ with two house rules:
   There is no fixed cadence and no conventional-commit machinery; just add
   plain bullets to **Unreleased** as you go, and promote them to a numbered
   release at a natural boundary.
-- **The public "What's new" page is compiled from this file.** Everything under
-  `Added` / `Changed` / `Fixed` is published verbatim for a general audience —
-  including kids and grandparents — so write those bullets in plain, warm
-  words. Developer-facing detail goes under `Internal`, which never leaves
-  this file. Reviewing a changelog entry in a PR *is* reviewing the release
-  notes.
+- **The public "What's new" page is compiled from this file.** Bullets are
+  published verbatim for a general audience — including kids and
+  grandparents — so write them in plain, warm words. Developer-facing
+  housekeeping belongs here too: start such a bullet with `Internal:` and the
+  compiler cleans it out of the page. Reviewing a changelog entry in a PR
+  *is* reviewing the release notes.
 
 The bold line under each version heading is the release's name; it becomes the
 subtitle on the What's new page.
 
 ## [Unreleased]
 
+[![The What's new page, on a phone](docs/screenshots/pr-38/thumb.png)](docs/screenshots/pr-38/release-notes-dark.png)
+
 ### Added
 
-- A public **What's new** page: every release of Indigene described in plain
-  words, newest first, at `/release-notes/`. Nothing to install, no account —
-  it's just a web page you can share.
+- A public [What's new page](https://olivierlacan.github.io/indigene/release-notes/):
+  every release of Indigene described in plain words, newest first. Nothing to
+  install, no account — it's just a web page you can share.
+- A "See what's new" link in the app's footer, so the notes are one tap away.
+- Each release on the What's new page can now show a small picture of what
+  changed, taken when the change was made. Tap it to see the full-size
+  screenshot; Before and After links sit underneath when both exist.
 
-### Internal
+### Changed
 
-- This `CHANGELOG.md` is the single source of the What's new page.
+- The What's new page now uses the changelog's own headings — Added, Changed,
+  Fixed — instead of renaming them.
+- Release notes now link to the things they describe — like the
+  [wildlife browser](https://olivierlacan.github.io/indigene/#/wildlife) — so
+  you can go straight from reading about a feature to trying it.
+- Internal: this `CHANGELOG.md` is the single source of the What's new page.
   `app/scripts/build-release-notes.mjs` compiles it to a static, app-styled
-  HTML page; the Pages deploy workflow runs it on every push to `main`, so
-  notes republish themselves when a PR that touched the changelog merges.
-- A `Changelog entry` PR check reminds authors to update this file; apply the
-  `skip-changelog` label when a change genuinely has nothing notable in it.
-- `app/package.json`'s `version` tracks the latest cut release.
+  HTML page; the Pages deploy workflow runs it on every push to `main`, and a
+  `Changelog entry` PR check reminds authors to update this file (apply the
+  `skip-changelog` label when nothing notable changed). `app/package.json`'s
+  `version` tracks the latest cut release.
+- Internal: one thumbnail per release, enforced by the compiler — a square
+  480px crop made with `node scripts/make-thumb.mjs <screenshot.png>`,
+  committed next to its source under `docs/screenshots/pr-<n>/`, referenced
+  as `[![alt](thumb)](full-screenshot)` under the release name. Thumbnails
+  are copied into the built page; full-size screenshots and other
+  repo-relative links are served straight from `raw.githubusercontent.com`.
+- Internal: there is no custom `Internal` changelog section — the sections
+  are exactly Keep a Changelog's. A bullet prefixed `Internal:` (like this
+  one) stays in the changelog and is cleaned out of the compiled page.
 
 ## [0.10] - 2026-07-27
 
 **Everything in plain sight**
 
+[![The home page: the pitch, the Start button, and everything in plain view](docs/screenshots/pr-36/thumb.png)](docs/screenshots/pr-36/home-after-dark.png)
+[Before](docs/screenshots/pr-36/home-before-dark.png) · [After](docs/screenshots/pr-36/home-after-dark.png)
+
 ### Added
 
-- A Browse page of its own: the regions we cover and "start from a plant" now
-  live one tap from the home page — for anyone who'd rather look around
+- A [Browse page](https://olivierlacan.github.io/indigene/#/browse) of its
+  own: the regions we cover and "start from a plant" now live one tap from
+  the home page — for anyone who'd rather look around
   without sharing their location.
 
 ### Changed
@@ -72,6 +95,9 @@ subtitle on the What's new page.
 
 **See them growing for real**
 
+[![A plant page, ready to show real photos taken nearby](docs/screenshots/pr-32/thumb.png)](docs/screenshots/pr-32/after-dark.png)
+[Before](docs/screenshots/pr-32/before-dark.png) · [After](docs/screenshots/pr-32/after-dark.png)
+
 ### Added
 
 - Real photos of recommended plants growing near you, taken by people in your
@@ -94,36 +120,44 @@ subtitle on the What's new page.
 
 **One plant, one name**
 
+[![The search page finding a plant by any of its names](docs/screenshots/pr-25/thumb.png)](docs/screenshots/pr-25/search-after-dark.png)
+[Before](docs/screenshots/pr-25/plant-refs-before-dark.png) · [After](docs/screenshots/pr-25/plant-refs-after-dark.png)
+
 ### Added
 
 - A built-in plant name book (a *registry*): every plant Indigene knows has
   exactly one entry tying together its scientific name, its common names, and
   its identity in the world's big plant databases.
-- A search page: type any name — common or scientific — and Indigene finds the
+- A [search page](https://olivierlacan.github.io/indigene/#/search): type any
+  name — common or scientific — and Indigene finds the
   plant, or says honestly when a name could mean more than one plant.
 - Plant pages now show **references**: links to the very same plant at USDA,
   GBIF, and other authorities, so you can double-check anything we say.
 - iNaturalist links now land directly on that exact species' page.
+- Internal: the registry is generated from the catalog (`npm run
+  registry:build`) and audited (`npm run registry:check`); it also ships as a
+  hostable static JSON artifact under `app/public/registry/`. External
+  identifiers (Wikidata + GBIF) are reconciled by a scheduled workflow that
+  writes to `registry.overrides.json` via PRs; the workflow was hardened to
+  not red-fail when PR creation is blocked, and `registry:check` now survives
+  reconciliation.
 
-### Internal
+### Fixed
 
-- The registry is generated from the catalog (`npm run registry:build`) and
-  audited (`npm run registry:check`); it also ships as a hostable static JSON
-  artifact under `app/public/registry/`.
-- External identifiers (Wikidata + GBIF) are reconciled by a scheduled
-  workflow that writes to `registry.overrides.json` via PRs; the workflow was
-  hardened to not red-fail when PR creation is blocked, and `registry:check`
-  now survives reconciliation.
-- Corrected the long-stale bundle-size figure across the docs (~28 → ~96 KB
-  gzip) and documented keeping it honest in `CLAUDE.md`.
+- Internal: corrected the long-stale bundle-size figure across the docs
+  (~28 → ~96 KB gzip) and documented keeping it honest in `CLAUDE.md`.
 
 ## [0.7] - 2026-07-21
 
 **Meet the wildlife**
 
+[![The wildlife index: butterflies, moths, bees, birds, and mammals](docs/screenshots/pr-18/thumb.png)](docs/screenshots/pr-18/wildlife-index-dark.png)
+[Before](docs/screenshots/pr-18/plant-milkweed-before-dark.png) · [After](docs/screenshots/pr-18/plant-milkweed-after-dark.png)
+
 ### Added
 
-- Browse by wildlife: start from a butterfly, moth, bee, bird, or mammal and
+- [Browse by wildlife](https://olivierlacan.github.io/indigene/#/wildlife):
+  start from a butterfly, moth, bee, bird, or mammal and
   see which native plants support it — because "which plants bring monarchs?"
   is often the real question.
 - Every plant–animal tie says *how* the plant helps (caterpillar food, nectar,
@@ -148,6 +182,9 @@ subtitle on the What's new page.
 ## [0.6] - 2026-07-19
 
 **Readable by everyone**
+
+[![The home page leading with why native plants matter](docs/screenshots/pr-17/thumb.png)](docs/screenshots/pr-17/welcome-after-dark.png)
+[Before](docs/screenshots/pr-17/welcome-before-dark.png) · [After](docs/screenshots/pr-17/welcome-after-dark.png)
 
 ### Changed
 
@@ -209,7 +246,8 @@ subtitle on the What's new page.
 
 ### Added
 
-- Explore pages: browse every plant Indigene knows without sharing your
+- [Explore pages](https://olivierlacan.github.io/indigene/#/explore): browse
+  every plant Indigene knows without sharing your
   location — and every plant, region, and category has its own address you can
   share with anyone.
 - Full plant lists for each region at shareable addresses, with a switcher to
@@ -248,11 +286,8 @@ subtitle on the What's new page.
   taxonomy sources.
 - Indigene went live on the public web — free to visit in any browser, nothing
   to install (though you can add it to your home screen).
-
-### Internal
-
-- Deploys to GitHub Pages via Actions on every push to `main`; the optional
-  Ruby API is not part of the deploy.
+- Internal: deploys to GitHub Pages via Actions on every push to `main`; the
+  optional Ruby API is not part of the deploy.
 
 ## [0.1] - 2026-07-12
 
@@ -276,12 +311,9 @@ subtitle on the What's new page.
   your home screen, and never asks for an account.
 - A starting list of 40 Mid-Atlantic / Northeast Piedmont natives with real
   size-over-time and ecosystem numbers.
-
-### Internal
-
-- Vanilla TypeScript on the DOM — no framework, zero runtime dependencies —
-  bundled by Vite. A thin, optional Hanami 2 API (`server/`) proxies site
-  data; the PWA works without it.
+- Internal: vanilla TypeScript on the DOM — no framework, zero runtime
+  dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
+  proxies site data; the PWA works without it.
 
 [Unreleased]: https://github.com/olivierlacan/indigene/compare/f84450c...HEAD
 [0.10]: https://github.com/olivierlacan/indigene/compare/9453251...f84450c

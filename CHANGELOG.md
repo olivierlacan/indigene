@@ -37,6 +37,9 @@ subtitle on the What's new page.
 
 ### Changed
 
+- The footer — the fine print about open source and data sources, plus the
+  "See what's new" link — now appears at the bottom of every page, not just
+  the home screen.
 - The What's new page now uses the changelog's own headings — Added, Changed,
   Fixed — instead of renaming them.
 - Release notes now link to the things they describe — like the
@@ -63,6 +66,11 @@ subtitle on the What's new page.
 - The app's top menu now wraps onto a second line when it truly runs out of
   room — like with very large text settings — instead of quietly spilling off
   the edge of the screen, where the Saved button could end up out of reach.
+- The home page could come up completely blank — most often in Safari, and
+  especially with an older Indigene tab still open in another window. The
+  app was waiting forever for its on-device storage to answer before showing
+  anything. It now draws the page right away and fills in your saved spots
+  once storage responds.
 - Internal: the page can no longer scroll sideways (`overflow-x: clip` on
   `body`). The overflowing header was silently widening the document, which
   is what put a dark right-edge gutter and a floating 🔖 in every full-page

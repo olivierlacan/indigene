@@ -144,7 +144,14 @@ window.addEventListener("offline", updateOnline);
 
 async function boot(): Promise<void> {
   normalizePathRoute();
-  await loadPrefs().catch(() => {});
+  // Prefs come from IndexedDB, which can stall without ever settling (Safari
+  // has a long-standing first-open bug, and an upgrade blocked by an old tab
+  // used to hang too). The first paint must not depend on it: give it a short
+  // window, then render with defaults — prefs only tune ranking weights.
+  await Promise.race([
+    loadPrefs().catch(() => {}),
+    new Promise((resolve) => setTimeout(resolve, 1500)),
+  ]);
   initSavedMenu();
   updateOnline();
   await route();

@@ -78,7 +78,10 @@ subtitle on the What's new page.
   (`.claude/hooks/session-start.sh`) installs Roboto and points `system-ui`
   at it, so headless Chromium lays out like an Android phone; the nav also
   sits a touch tighter at phone widths, so it fits Roboto with room to spare
-  instead of by one pixel.
+  instead of by one pixel. Screenshots are also hi-DPI now: a new
+  `scripts/shoot.mjs` (playwright joins the dev dependencies) captures at a
+  real phone's 3× pixel ratio, so embedded shots render crisp on retina
+  displays — with `--dpr 1` kept for very long full-page records.
 
 ## [0.10] - 2026-07-27
 

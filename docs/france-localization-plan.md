@@ -80,7 +80,11 @@ layer from a browser — the EEA host 403s automated fetchers and is blocked fro
 the CI/agent egress, the same way `gispub.epa.gov` was during the EPA work (see
 `docs/ecoregion-plan.md`, Phase A note). So the parser lands unit-tested against a
 captured sample response, with a real-browser smoke test as the acceptance step —
-identical to how the EPA path shipped.
+identical to how the EPA path shipped. **To retrieve and confirm both from an
+unblocked machine, run `node app/scripts/probe-eea.mjs`** — it lists the service's
+layers, probes a point in each French biogeographical region, and reports the
+polygon layer id and the field that holds the region name (writing
+`eea-probe.json`). Re-runnable any time the service changes.
 
 **Caveat to carry, not hide:** EEA biogeographical regions are *coarse* (4 zones
 for a whole country). That's fine for picking a seed list, but the confirm screen

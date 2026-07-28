@@ -54,7 +54,18 @@ subtitle on the What's new page.
   lives in `components/observation-ui.ts`, used by both the plant and wildlife
   "near you" sections; the ZIP/location choice is a shared
   `components/location-prompt.ts` used by both, feeding the existing Open-Meteo
-  geocoder. Bundle is ~106 KB gzipped (up ~1.5 KB).
+  geocoder.
+- **A Privacy & safety page**, in plain words for everyone — including kids and
+  the grown-ups looking out for them. It lays out the whole story: no account,
+  no tracking, no ads; your saved spots stay on your device; your location is
+  used only when you tap, and you can always type a ZIP code instead of sharing
+  it; and exactly which public science services your browser talks to, and what
+  each is told. Reach it from the footer on any page, and from a short "🔒 …"
+  note right where the app asks for your location or saves a spot. See it at
+  [Privacy & safety](https://olivierlacan.github.io/indigene/#/privacy).
+- Internal: the Privacy & safety page and its contextual links go through a
+  shared `components/privacy-link.ts`. Combined with the wildlife-sightings
+  work above, the bundle is now ~111 KB gzipped.
 - A public [What's new page](https://olivierlacan.github.io/indigene/release-notes/):
   every release of Indigene described in plain words, newest first. Nothing to
   install, no account — it's just a web page you can share.

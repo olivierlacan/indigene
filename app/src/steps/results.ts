@@ -5,6 +5,7 @@ import { rankPlants, siteMoisture } from "../lib/ranking";
 import type { Weights } from "../types";
 import { plantCard } from "../components/plant-card";
 import { whyThis } from "../components/learn";
+import { privacyNote } from "../components/privacy-link";
 import { scoreLabels, ISSUES_URL, ZONE_INFO_URL, MOISTURE_INFO_URL, moistureWord } from "../lib/plain";
 import { saveSpot } from "../db";
 
@@ -206,6 +207,7 @@ export function renderResults(main: HTMLElement): void {
       // spot to save, so the button honestly isn't there.
       ...(hasCoords ? [el("button", { class: "btn btn-primary", onClick: doSave }, "💾 Save this spot")] : []),
     ]),
+    ...(hasCoords ? [privacyNote("A saved spot stays on this device only — it never reaches a server, because there isn't one")] : []),
     listEl
   );
 

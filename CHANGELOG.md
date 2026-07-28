@@ -23,7 +23,7 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
-[![The What's new page, on a phone](docs/screenshots/pr-38/thumb.png)](docs/screenshots/pr-38/release-notes-dark.png)
+[![The What's new page, on a phone](docs/screenshots/pr-40/thumb.png)](docs/screenshots/pr-40/notes-fixed-dark.png)
 
 ### Added
 

@@ -16,11 +16,11 @@
 // cropping to the viewport width (390, or 780 at 2× DPR) removes it. A fresh
 // capture should never need this: its width should equal the viewport width,
 // and a wider one means the page overflows sideways (fix the page instead).
-import { execFileSync } from "node:child_process";
 import { mkdtempSync, rmSync, writeFileSync, existsSync, readFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
+import { chromium } from "playwright";
 
 const SIZE = 480;
 
@@ -53,12 +53,17 @@ writeFileSync(
 );
 
 try {
-  execFileSync(
-    "npx",
-    ["playwright", "screenshot", `--viewport-size=${SIZE},${SIZE}`,
-      "--wait-for-timeout=500", pathToFileURL(page).href, out],
-    { stdio: ["ignore", "ignore", "inherit"] },
+  // Same launch path as shoot.mjs: web sessions pre-install the browser
+  // outside playwright's registry; elsewhere playwright resolves its own.
+  const prebuilt = "/opt/pw-browsers/chromium";
+  const browser = await chromium.launch(
+    existsSync(prebuilt) ? { executablePath: prebuilt } : {},
   );
+  const tab = await browser.newPage({ viewport: { width: SIZE, height: SIZE } });
+  await tab.goto(pathToFileURL(page).href);
+  await tab.waitForTimeout(300);
+  await tab.screenshot({ path: out });
+  await browser.close();
 } finally {
   rmSync(dir, { recursive: true, force: true });
 }

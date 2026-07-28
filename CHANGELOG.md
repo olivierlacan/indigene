@@ -45,6 +45,11 @@ subtitle on the What's new page.
 - Release notes now link to the things they describe — like the
   [wildlife browser](https://olivierlacan.github.io/indigene/#/wildlife) — so
   you can go straight from reading about a feature to trying it.
+- When you [search for a plant](https://olivierlacan.github.io/indigene/#/search),
+  each result now underlines the part of its name that matches what you typed,
+  so you can see at a glance why it showed up. And when a plant matched through
+  a name it's less commonly known by — like "Maypop" for Purple
+  Passionflower — the result now says so with an "Also called" line.
 - Internal: this `CHANGELOG.md` is the single source of the What's new page.
   `app/scripts/build-release-notes.mjs` compiles it to a static, app-styled
   HTML page; the Pages deploy workflow runs it on every push to `main`, and a

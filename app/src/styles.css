@@ -961,6 +961,18 @@ details.weights[open] > summary {
   color: var(--ink-soft);
   font-size: 0.95rem;
 }
+/* The part of a result's name that matches the search query. Not the browser's
+   yellow <mark> — that fights both themes. Keeping the ink and underlining in
+   the brand color preserves AAA contrast, and can't be mistaken for a link:
+   result cards render their text undecorated. */
+.search-result mark {
+  background: none;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--brand);
+  text-decoration-thickness: 0.13em;
+  text-underline-offset: 0.15em;
+}
 .badge {
   display: inline-block;
   font-size: 0.78rem;

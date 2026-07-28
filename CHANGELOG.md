@@ -38,9 +38,9 @@ subtitle on the What's new page.
   now opens with the same kind of at-a-glance number tiles a plant's page has:
   how many native plants are on the list, how many kinds of caterpillars its
   best plant can feed (up to 511 species on white oak alone in the
-  Mid-Atlantic), how many animals we can tie to the list by name, and how many
-  keystone plants it holds. Tap any tile for a plain-words explanation of what
-  the number means and where it comes from.
+  Mid-Atlantic), how many kinds of wildlife we can tie to the list by name,
+  and how many keystone plants it holds. Tap any tile for a plain-words
+  explanation of what the number means and where it comes from.
 - A filter box on region pages: start typing a name — common or scientific —
   and the plant list narrows as you type, no more hunting through 40 rows or
   bouncing out to the search page.

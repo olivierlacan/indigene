@@ -107,10 +107,14 @@ function statsFor(region: RegionDef, plants: Plant[]): RegionStat[] {
     stats.push({
       icon: "🦋",
       label: "Wildlife ties",
-      value: `${wildlife} animals`,
-      sub: "documented, by name",
+      // "Kinds", not "animals": each catalog entry counts once, and some
+      // entries are a single species (the monarch) while others are a
+      // recognizable group (jays, turkeys & woodpeckers) — so a plain animal
+      // count would be both an under- and an over-statement at once.
+      value: String(wildlife),
+      sub: "kinds of wildlife, documented",
       explain:
-        `${wildlife} butterflies, moths, bees, birds, and mammals with a documented, citable tie to at least one plant on this list. These are the notable, nameable relationships — the real total is far larger; a single oak feeds more species than anyone could list.`,
+        `${wildlife} kinds of butterflies, moths, bees, birds, and mammals with a documented, citable tie to at least one plant on this list — each counted once, whether it's a single species like the monarch or a familiar group like the acorn-caching jays. These are the notable, nameable relationships — the real total is far larger; a single oak feeds more species than anyone could list.`,
       moreHref: "#/wildlife",
       moreLabel: "Browse plants by the wildlife they support →",
     });

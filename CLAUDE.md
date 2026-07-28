@@ -113,8 +113,10 @@ rules:
 - **Write `Added` / `Changed` / `Fixed` bullets for everyone.** They're
   published verbatim to a general audience — including kids and grandparents —
   so use plain, warm words and explain any term of art in place. Reviewing the
-  entry in the PR *is* reviewing the release notes. Developer-facing detail
-  goes under `### Internal`, which is never published.
+  entry in the PR *is* reviewing the release notes. Developer-facing
+  housekeeping goes in the same sections as a bullet starting with
+  `Internal:` — the compiler cleans those out of the page, and the sections
+  stay exactly Keep a Changelog's (no custom sections).
 - **Cut versions at feature boundaries, Maison-style.** When a coherent piece
   of the product has landed, retitle `Unreleased` to `## [0.x] - YYYY-MM-DD`,
   give it a bold one-line name on the next line, bump `app/package.json`'s

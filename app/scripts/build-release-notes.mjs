@@ -8,7 +8,9 @@
 // Added / Changed / Fixed / Removed / Deprecated / Security bullets of every
 // *released* version verbatim, so those bullets must already read well for a
 // general audience (that's the deal documented at the top of CHANGELOG.md).
-// The `Unreleased` section and any `Internal` sections never leave the repo.
+// The `Unreleased` section and bullets starting with "Internal:" (developer
+// housekeeping, recorded in the changelog but irrelevant to readers of the
+// page) never leave the repo.
 //
 // It fails loudly on anything it can't parse — a malformed heading or an
 // unknown section name breaks the Pages deploy rather than publishing a
@@ -26,19 +28,14 @@ const OUT =
     ? resolve(process.cwd(), process.argv[outFlag + 1])
     : resolve(HERE, "../dist/release-notes/index.html");
 
-// Keep a Changelog section → public heading. The page uses the changelog's
-// own vocabulary — KAC's change types are already plain words, and inventing
-// friendlier synonyms ("Improved") is exactly the drift KAC exists to
-// prevent. `null` = kept out of the page.
-const SECTIONS = {
-  Added: "Added",
-  Changed: "Changed",
-  Fixed: "Fixed",
-  Removed: "Removed",
-  Deprecated: "Deprecated",
-  Security: "Security",
-  Internal: null,
-};
+// Keep a Changelog change types, published under their own names — KAC's
+// vocabulary is already plain words, and inventing friendlier synonyms
+// ("Improved") is exactly the drift KAC exists to prevent.
+const SECTIONS = ["Added", "Changed", "Fixed", "Removed", "Deprecated", "Security"];
+
+// A bullet in any section can be marked as developer housekeeping; it stays
+// in the changelog and is cleaned out when compiling the public page.
+const INTERNAL = /^Internal:\s/;
 
 // Repo-relative links/images (e.g. docs/screenshots/pr-36/thumb.png) resolve
 // against raw.githubusercontent so committed screenshots can be shown and
@@ -100,19 +97,18 @@ function parseChangelog(text) {
     const h3 = line.match(/^### (.*)$/);
     if (h3) {
       expectName = false;
-      if (release === null) {
-        section = null; // Unreleased content: parsed, never published
-        continue;
-      }
-      if (!(h3[1] in SECTIONS)) {
+      if (!SECTIONS.includes(h3[1])) {
         fail(
-          `unknown section "### ${h3[1]}" under ${release.version} — ` +
-            `expected one of: ${Object.keys(SECTIONS).join(", ")}`,
+          `unknown section "### ${h3[1]}" under ${release?.version ?? "Unreleased"} — ` +
+            `expected one of: ${SECTIONS.join(", ")}`,
         );
       }
-      const title = SECTIONS[h3[1]];
-      section = title === null ? null : { title, items: [] };
-      if (section) release.sections.push(section);
+      if (release === null) {
+        section = null; // Unreleased content: validated, never published
+        continue;
+      }
+      section = { title: h3[1], items: [] };
+      release.sections.push(section);
       continue;
     }
 
@@ -165,6 +161,10 @@ function parseChangelog(text) {
 
   if (releases.length === 0) fail("no released versions found in CHANGELOG.md");
   for (const r of releases) {
+    // Clean developer housekeeping out of the public page. Filtering happens
+    // after parsing so a marked bullet's wrapped continuation lines stay
+    // attached to it, not to the previous bullet.
+    for (const s of r.sections) s.items = s.items.filter((i) => !INTERNAL.test(i));
     if (r.sections.every((s) => s.items.length === 0)) {
       fail(`release ${r.version} has no publishable bullets`);
     }

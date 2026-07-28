@@ -13,9 +13,11 @@ import { renderSearch } from "./steps/search";
 import { renderPlant } from "./steps/plant";
 import { renderRegion } from "./steps/region";
 import { renderWildlifeIndex, renderWildlife } from "./steps/wildlife";
+import { renderPreferences } from "./steps/preferences";
+import { loadSticky } from "./lib/sticky";
 import { initSavedMenu, closeSavedMenu } from "./components/saved-menu";
 
-type StepFn = (main: HTMLElement, param?: string) => void | (() => void) | Promise<void>;
+type StepFn = (main: HTMLElement, param?: string) => void | (() => void) | Promise<void | (() => void)>;
 
 const STEPS: Record<string, { fn: StepFn; label: string; inFlow: boolean }> = {
   "": { fn: renderWelcome, label: "Start", inFlow: false },
@@ -30,6 +32,7 @@ const STEPS: Record<string, { fn: StepFn; label: string; inFlow: boolean }> = {
   regions: { fn: renderExplore, label: "Explore", inFlow: false },
   search: { fn: renderSearch, label: "Search", inFlow: false },
   wildlife: { fn: renderWildlifeIndex, label: "Wildlife", inFlow: false },
+  preferences: { fn: renderPreferences, label: "Preferences", inFlow: false },
 };
 
 const FLOW = ["location", "sun", "confirm", "results"];
@@ -151,6 +154,10 @@ async function boot(): Promise<void> {
   // a fresh page can't be showing ranked results yet anyway (the results
   // step needs a confirmed spot, which a reload clears).
   void loadPrefs().catch(() => {});
+  // Sticky answers (last spot, sun, moisture) follow the same rule: load in
+  // the background, disclose wherever they're recalled (#/preferences lists
+  // them all). A slow IndexedDB just means nothing is remembered this visit.
+  void loadSticky().catch(() => {});
   initSavedMenu();
   updateOnline();
   await route();

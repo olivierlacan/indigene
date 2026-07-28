@@ -7,16 +7,20 @@ import {
   texturePlain,
   slopePlain,
   moisturePlain,
+  moistureWord,
   sunPlain,
   ZONE_INFO_URL,
 } from "../lib/plain";
 import { whyThis } from "../components/learn";
+import { rememberedNote } from "../components/remembered";
+import { sticky, stickyReady, rememberSticky } from "../lib/sticky";
 
 // Step 3+4+5: confirm the site. Site data is coarse — soil map units cover
 // acres — so everything is shown as "the map says…", with a 60-second ribbon
 // test the person can do to overrule it, because standing there they know more
 // than the map does.
 export async function renderConfirm(main: HTMLElement): Promise<void> {
+  await stickyReady(); // the remembered moisture answer shapes the initial UI
   clear(main);
   const hasCoords = store.draft.lat != null;
   if (!hasCoords && !store.draft.regionOverride) return void navigate("location");
@@ -83,10 +87,18 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
   ].filter(Boolean) as (HTMLElement)[]);
   main.append(soilCard);
 
-  // Moisture override — the most important correction for plant fit.
-  const current: MoistureBand = store.draft.moistureOverride ?? guessMoisture(site?.soil.drainage ?? "");
+  // Moisture override — the most important correction for plant fit. A fresh
+  // arrival starts from the remembered answer when there is one (disclosed in
+  // a note, with the map's own guess one tap away); otherwise from the map.
+  const mapGuess: MoistureBand = guessMoisture(site?.soil.drainage ?? "");
+  const rememberedMoist = store.draft.moistureOverride == null ? sticky().moisture : undefined;
+  const current: MoistureBand = store.draft.moistureOverride ?? rememberedMoist?.band ?? mapGuess;
   const moistureButtons: HTMLButtonElement[] = [];
   const bands: MoistureBand[] = ["dry", "mesic", "wet"];
+  function selectBand(b: MoistureBand): void {
+    store.draft.moistureOverride = b;
+    moistureButtons.forEach((mb, i) => mb.setAttribute("aria-pressed", bands[i] === b ? "true" : "false"));
+  }
   const moistureCard = el("div", { class: "card" }, [
     el("h3", {}, "How wet does this spot stay?"),
     el("p", {}, "This is the single most useful thing you can correct. Pick what matches after a heavy rain."),
@@ -94,14 +106,24 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
       "Natives are already adapted to the soil you have — dry sand, heavy clay, soggy hollows all have their specialists. ",
       "The trick is picking a plant to fit the soil, not hauling in amendments to fit the plant. Answer honestly and the right ones rise to the top.",
     ]),
+    ...(rememberedMoist
+      ? [rememberedNote(
+          [
+            `you said your spot stays ${moistureWord(rememberedMoist.band)}, so it's picked below.`,
+            ...(site && mapGuess !== rememberedMoist.band
+              ? [` The soil map's guess for this spot is ${moistureWord(mapGuess)}.`]
+              : []),
+          ],
+          site && mapGuess !== rememberedMoist.band
+            ? { label: `use the map's guess (${moistureWord(mapGuess)})`, onClick: () => selectBand(mapGuess) }
+            : undefined
+        )]
+      : []),
     ...bands.map((b) => {
       const btn = el("button", {
         class: "choice",
         "aria-pressed": b === current ? "true" : "false",
-        onClick: () => {
-          store.draft.moistureOverride = b;
-          moistureButtons.forEach((mb, i) => mb.setAttribute("aria-pressed", bands[i] === b ? "true" : "false"));
-        },
+        onClick: () => selectBand(b),
       }, [
         el("span", { class: "choice-title" }, b === "dry" ? "Dry" : b === "mesic" ? "Evenly moist" : "Wet"),
         el("span", { class: "choice-sub" }, moisturePlain(b)),
@@ -124,7 +146,13 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
 
   main.append(el("div", { class: "btn-row" }, [
     el("button", { class: "btn btn-secondary", onClick: () => navigate("sun") }, "Back"),
-    el("button", { class: "btn btn-primary", onClick: () => navigate("results") }, "See my plants →"),
+    el("button", { class: "btn btn-primary", onClick: () => {
+      // The confirmed moisture answer becomes the remembered one for next time.
+      if (store.draft.moistureOverride) {
+        rememberSticky({ moisture: { band: store.draft.moistureOverride, savedAt: Date.now() } });
+      }
+      navigate("results");
+    } }, "See my plants →"),
   ]));
 }
 

@@ -1,7 +1,8 @@
 import { el, clear, toast } from "../ui";
 import { navigate, store, persistPrefs } from "../state";
 import { loadPlants, regionForSite, REGIONS } from "../lib/plants";
-import { rankPlants, siteMoisture } from "../lib/ranking";
+import { rankPlants, siteMoisture, DEFAULT_WEIGHTS, NO_FILTERS } from "../lib/ranking";
+import { rememberedNote } from "../components/remembered";
 import type { Weights } from "../types";
 import { plantCard } from "../components/plant-card";
 import { whyThis } from "../components/learn";
@@ -199,6 +200,24 @@ export function renderResults(main: HTMLElement): void {
       "Each plant's wildlife value — caterpillars hosted, pollinators and birds fed, rain soaked up — is weighed against how well it fits this spot's sun, moisture, and winter cold. ",
       "Nothing is a black box: every plant's score is broken out right on its card.",
     ]),
+    // The sliders and filters persist as they're changed — so when they're
+    // not at the defaults, say so rather than silently showing a tuned list.
+    ...(WEIGHT_KEYS.some((k) => store.weights[k] !== DEFAULT_WEIGHTS[k])
+      || store.filters.requireNoWater || store.filters.requireDeerResistant
+      || store.filters.excludeThorny || store.filters.excludePetToxic
+      || store.filters.excludeAggressive || store.filters.maxHeightFt != null
+      || store.filters.maxSpreadFt != null
+      ? [rememberedNote(
+          ["your “What matters most?” sliders and filters are set the way you left them, so this list is sorted and trimmed to match. Adjust them below any time."],
+          { label: "reset to the defaults", onClick: () => {
+            store.weights = { ...DEFAULT_WEIGHTS };
+            store.filters = { ...NO_FILTERS };
+            void persistPrefs();
+            renderResults(main);
+            toast("Sliders and filters reset.");
+          } }
+        )]
+      : []),
     el("div", { class: "result-controls" }, [weights, filters]),
     el("div", { class: "btn-row", style: "margin-top:0" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("confirm") }, "Back"),

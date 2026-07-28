@@ -4,15 +4,32 @@ import { manualSunEstimate } from "../lib/solar";
 import { sunPlain } from "../lib/plain";
 import { sunIcon } from "../components/sun-icon";
 import { whyThis } from "../components/learn";
+import { rememberedNote } from "../components/remembered";
+import { sticky, stickyReady, rememberSticky, SUN_BUCKET_WORDS } from "../lib/sticky";
+import type { SunBucket } from "../lib/sticky";
 
 // Step 2: sun. The manual path is FIRST and fully sufficient — some users will
 // never grant camera access. The camera scan is offered as an optional upgrade.
-export function renderSun(main: HTMLElement): void {
+export async function renderSun(main: HTMLElement): Promise<void> {
+  await stickyReady(); // the remembered quick pick shapes the initial UI
   clear(main);
   // A hand-picked region is as good a ticket in as a coordinate — the manual
   // sun picker needs neither. Only the sky scan needs a real location.
   const hasCoords = store.draft.lat != null;
   if (!hasCoords && !store.draft.regionOverride) return void navigate("location");
+
+  // A fresh arrival (no sun answer in the draft yet) starts from the
+  // remembered quick pick, disclosed in a note above the choices — tapping a
+  // different answer right below is the way to change it.
+  const rememberedSun = store.draft.sun == null ? sticky().sun : undefined;
+  if (rememberedSun) {
+    store.draft.sun = manualSunEstimate(rememberedSun.bucket);
+    store.draft.horizon = {
+      angles: new Array(72).fill(rememberedSun.bucket === "full" ? 0 : rememberedSun.bucket === "half" ? 25 : 45),
+      source: "manual",
+    };
+    store.draft.deciduousOverhead = rememberedSun.deciduous;
+  }
 
   const buckets: { key: "full" | "half" | "shade"; title: string; sub: string }[] = [
     { key: "full", title: "Sunny most of the day", sub: "Direct sun for 6+ hours — open lawn, south side, no big trees close by." },
@@ -35,7 +52,15 @@ export function renderSun(main: HTMLElement): void {
           ? el("div", { style: "margin-top:0.4rem" }, "Measured from your sky scan.")
           : el("div", { style: "margin-top:0.4rem" }, hasCoords ? "From your quick pick — scan the sky below for a sharper estimate." : "From your quick pick."),
       ]),
-      el("button", { class: "btn btn-primary btn-block", onClick: () => navigate("confirm") }, "Next: check the soil & climate →")
+      el("button", { class: "btn btn-primary btn-block", onClick: () => {
+        // A quick pick becomes the remembered answer for next time; a scan
+        // measured this exact spot, so it's never carried anywhere else.
+        if (s.source !== "scan") {
+          const bucket = (["full", "half", "shade"] as SunBucket[]).find((k) => manualSunEstimate(k).label === s.label);
+          if (bucket) rememberSticky({ sun: { bucket, deciduous: store.draft.deciduousOverhead, savedAt: Date.now() } });
+        }
+        navigate("confirm");
+      } }, "Next: check the soil & climate →")
     );
   }
 
@@ -78,6 +103,12 @@ export function renderSun(main: HTMLElement): void {
       "Hours of direct sun decide more about what will thrive than anything else you can measure. ",
       "And shade isn't a flaw — there's a native for every light level, from prairie flowers to forest-floor ferns. The light just decides which ones.",
     ]),
+
+    ...(rememberedSun
+      ? [rememberedNote([
+          `you said your spot is ${SUN_BUCKET_WORDS[rememberedSun.bucket]}, so that answer is already picked. If this spot is different, just tap another one.`,
+        ])]
+      : []),
 
     ...choiceButtons,
 

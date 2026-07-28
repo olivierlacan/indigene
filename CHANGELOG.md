@@ -27,6 +27,20 @@ subtitle on the What's new page.
 
 ### Added
 
+- Indigene now remembers your answers between visits, so you don't have to
+  pick the same things over and over: your last confirmed spot (or hand-picked
+  region), how sunny you said your spot is, and how wet it stays. Your next
+  visit starts with those answers already picked — and whenever a remembered
+  answer is used, the page says so right where you can see it, with the way
+  to change or forget it one tap away.
+- A new [Preferences page](https://olivierlacan.github.io/indigene/#/preferences)
+  shows everything Indigene remembers, each in plain words with its own
+  Forget button — plus one button to forget it all. Everything is saved in
+  your browser on this device only; nothing is ever sent anywhere. It's
+  linked from the bottom of every page.
+- The plant list now tells you when it's sorted and filtered the way you left
+  it last time (those sliders and filters were already being saved quietly),
+  with a one-tap reset back to the defaults.
 - A public [What's new page](https://olivierlacan.github.io/indigene/release-notes/):
   every release of Indigene described in plain words, newest first. Nothing to
   install, no account — it's just a web page you can share.

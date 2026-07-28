@@ -7,6 +7,8 @@ import { regionForCoords } from "../data/regions";
 import { ISSUES_URL } from "../lib/plain";
 import { TILE_SIZE, getTile, metersPerPixel, tileCoords } from "../lib/tiles";
 import { whyThis } from "../components/learn";
+import { rememberedNote } from "../components/remembered";
+import { sticky, stickyReady, rememberSticky, forgetSticky } from "../lib/sticky";
 
 // The out-of-coverage message, shown the moment a person selects a location
 // (GPS fix or search pick) outside every covered region — not sprung on them
@@ -37,11 +39,18 @@ const MAP_ZOOM = 14;
 // plain-words switch link so only one picker shows at a time. Nothing here
 // asks anyone to know coordinates. The pin is adjusted by dragging, tapping,
 // or arrow keys — three ways to the same nudge.
-export function renderLocation(main: HTMLElement): void | (() => void) {
+export async function renderLocation(main: HTMLElement): Promise<void | (() => void)> {
+  await stickyReady(); // the remembered spot shapes the initial UI
   clear(main);
 
-  let lat = store.draft.lat ?? 40.4406; // Pittsburgh, PA as a regional default
-  let lon = store.draft.lon ?? -79.9959;
+  // A fresh visit (no spot in the draft yet) starts from the remembered spot,
+  // if there is one — the recall is disclosed in a note below, with the way
+  // out right in it. Mid-flow returns keep the draft's own values.
+  const freshEntry = store.draft.lat == null && store.draft.regionOverride == null;
+  const remembered = freshEntry ? sticky().location : undefined;
+
+  let lat = store.draft.lat ?? remembered?.lat ?? 40.4406; // Pittsburgh, PA as a regional default
+  let lon = store.draft.lon ?? remembered?.lon ?? -79.9959;
   let accuracy: number | null = null;
   // Offset (metres) applied by nudging the pin, relative to the fix.
   let offN = 0;
@@ -331,7 +340,8 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
   // --- The escape hatch: pick a region by hand, no map point at all. ---
   // Picking is a two-step: tap a region, the list collapses to just that
   // choice (so the Next button is right there), and Next confirms it.
-  let selectedRegion: string | null = store.draft.regionOverride;
+  let selectedRegion: string | null =
+    store.draft.regionOverride ?? (remembered?.mode === "region" ? remembered.regionId ?? null : null);
   const regionList = el("div", {});
 
   function renderRegionList(expanded: boolean): void {
@@ -373,7 +383,31 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
   // stay tucked behind a plain-words link so the screen holds a single task
   // and the Next button stays close. The link always offers the way back.
   type Mode = "gps" | "zip" | "region";
-  let mode: Mode = store.draft.regionOverride ? "region" : "gps";
+  let mode: Mode = store.draft.regionOverride ? "region" : remembered?.mode ?? "gps";
+
+  // The recall disclosure: when a remembered spot pre-fills this step, say so
+  // where the person will see it, and offer both ways out (Preferences, or
+  // starting fresh right here).
+  const rememberedOut = el("div", {});
+  if (remembered) {
+    const what: (string | HTMLElement)[] =
+      remembered.mode === "region"
+        ? [`you picked the ${REGIONS.find((r) => r.meta.id === remembered.regionId)?.meta.name ?? "same"} plant list, so it's selected below. If that's still right, just press Next.`]
+        : [`the map pin starts at your last confirmed spot (${remembered.lat?.toFixed(4)}, ${remembered.lon?.toFixed(4)}). If you're standing there again, just press Next.`];
+    rememberedOut.append(rememberedNote(what, {
+      label: "start fresh",
+      onClick: () => {
+        forgetSticky("location");
+        clear(rememberedOut);
+        lat = 40.4406; lon = -79.9959;
+        accuracy = null; offN = 0; offE = 0;
+        selectedRegion = null;
+        renderRegionList(true);
+        setMode("gps");
+        updateStatus();
+      },
+    }));
+  }
 
   const mapBlock = el("div", {}, [
     el("div", { style: "margin:0.9rem 0" }, [mapWrap]),
@@ -411,6 +445,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
       "“Native” always means native to somewhere. ",
       "Your coordinates pick which regional plant list applies and pull the soil, climate, and ecoregion records for this exact place — the same species can be a keystone in one region and a stranger in the next.",
     ]),
+    rememberedOut,
     locateBtn,
     searchCard,
     mapBlock,
@@ -432,6 +467,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
             store.draft.site = null;
             store.draft.regionOverride = r.meta.id;
             setSitePromise(null);
+            rememberSticky({ location: { mode: "region", regionId: r.meta.id, savedAt: Date.now() } });
             toast(`Using the ${r.meta.name} list — your pick.`);
             navigate("sun");
             return;
@@ -439,6 +475,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
           const fLat = effLat(), fLon = effLon();
           store.draft.lat = fLat;
           store.draft.lon = fLon;
+          rememberSticky({ location: { mode, lat: fLat, lon: fLon, savedAt: Date.now() } });
           // A confirmed map point puts region selection back on automatic.
           store.draft.regionOverride = null;
           // Start fetching soil/climate/elevation now, in parallel with the sun step.

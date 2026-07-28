@@ -58,6 +58,16 @@ they'd be merging before they open a single file.
 Whenever a change affects something the user can see — copy, layout, colors,
 new UI — the MR description must show it, not just describe it. The procedure:
 
+0. **Check the fonts first.** Screenshots must render with phone metrics, not
+   the container's DejaVu fallback (~10% wider — it changes layout). The
+   SessionStart hook (`.claude/hooks/session-start.sh`) sets this up in web
+   sessions; verify with `fc-match system-ui`, which must answer Roboto. If
+   it doesn't, run the hook once by hand:
+
+   ```sh
+   CLAUDE_CODE_REMOTE=true CLAUDE_PROJECT_DIR="$PWD" .claude/hooks/session-start.sh
+   ```
+
 1. **Build both versions.** Build the "after" from your branch as usual. For
    the "before", check out the base in a scratch worktree and build there:
 
@@ -70,17 +80,21 @@ new UI — the MR description must show it, not just describe it. The procedure:
 2. **Serve both `dist/` folders** on different ports, e.g.
    `http-server -p 4173 -s` (before) and `-p 4174` (after).
 
-3. **Capture with Playwright's CLI** at a phone viewport (this is a
-   mobile-first PWA), in both color schemes, for each affected route:
+3. **Capture with `app/scripts/shoot.mjs`** — phone viewport (390×844), real
+   iPhone pixel density (3×), full-page — in both color schemes, for each
+   affected route:
 
    ```sh
-   playwright screenshot --viewport-size=390,844 --color-scheme=dark \
-     --full-page --wait-for-timeout=2500 \
-     "http://127.0.0.1:4173/#/<route>" before-dark.png
+   cd app && node scripts/shoot.mjs \
+     "http://127.0.0.1:4173/#/<route>" before-dark.png --scheme dark
    ```
 
-   Repeat with `--color-scheme=light` and against the after port. Use
-   `--full-page` unless the change is tiny; then a viewport crop is kinder.
+   Repeat with `--scheme light` and against the after port. Use
+   `--no-full-page` when the change is tiny (a viewport crop is kinder), and
+   `--dpr 1` for very long pages (a results list or the release notes at 3×
+   makes a 30k-pixel-tall bitmap — huge files, and Chromium may clip it).
+   The script exists because the Playwright CLI can't set pixel ratio with
+   chromium — its iPhone descriptors force WebKit, which isn't installed.
 
 4. **Commit the images to the PR branch** under
    `docs/screenshots/pr-<number>/` with names like `before-dark.png` /
@@ -99,6 +113,15 @@ new UI — the MR description must show it, not just describe it. The procedure:
 
 Verify the screenshots actually show the change before embedding them — a
 stale build or wrong port produces two identical images that look like proof.
+
+Also verify each capture's pixel width **equals viewport width × DPR**
+(1170 at the defaults; 390 with `--dpr 1`): full-page capture honors the
+*document* width, so a wider file means some element overflows the viewport
+sideways and the shot will show a dark right-edge gutter where the sticky
+header ends. That gutter
+is a page bug (`overflow-x: clip` on `body` should make it impossible) — if a
+capture comes out wide, find and fix the overflowing element; don't publish
+the shot.
 
 ## Every PR carries its changelog entry
 

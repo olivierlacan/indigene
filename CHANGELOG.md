@@ -23,7 +23,7 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
-[![The What's new page, on a phone](docs/screenshots/pr-38/thumb.png)](docs/screenshots/pr-38/release-notes-dark.png)
+[![The What's new page, on a phone](docs/screenshots/pr-40/thumb.png)](docs/screenshots/pr-40/notes-fixed-dark.png)
 
 ### Added
 
@@ -57,6 +57,31 @@ subtitle on the What's new page.
 - Internal: there is no custom `Internal` changelog section — the sections
   are exactly Keep a Changelog's. A bullet prefixed `Internal:` (like this
   one) stays in the changelog and is cleaned out of the compiled page.
+
+### Fixed
+
+- The app's top menu now wraps onto a second line when it truly runs out of
+  room — like with very large text settings — instead of quietly spilling off
+  the edge of the screen, where the Saved button could end up out of reach.
+- Internal: the page can no longer scroll sideways (`overflow-x: clip` on
+  `body`). The overflowing header was silently widening the document, which
+  is what put a dark right-edge gutter and a floating 🔖 in every full-page
+  screenshot: the capture honors the document width while the sticky header
+  only spans the viewport. A fresh capture's width must now equal the
+  viewport width. The four release thumbnails that had the gutter baked in
+  (0.7–0.10) were regenerated with `make-thumb.mjs --crop`, which trims
+  legacy captures to their true viewport width.
+- Internal: screenshots now render with real phone font metrics. The capture
+  container has none of the app's named fonts, so text fell through to DejaVu
+  Sans (~10% wider than a phone renders — which is what made the header
+  overflow, then wrap, in captures). A SessionStart hook
+  (`.claude/hooks/session-start.sh`) installs Roboto and points `system-ui`
+  at it, so headless Chromium lays out like an Android phone; the nav also
+  sits a touch tighter at phone widths, so it fits Roboto with room to spare
+  instead of by one pixel. Screenshots are also hi-DPI now: a new
+  `scripts/shoot.mjs` (playwright joins the dev dependencies) captures at a
+  real phone's 3× pixel ratio, so embedded shots render crisp on retina
+  displays — with `--dpr 1` kept for very long full-page records.
 
 ## [0.10] - 2026-07-27
 

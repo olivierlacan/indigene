@@ -18,7 +18,7 @@ import type { RegionDef } from "../lib/plants";
 import { nearbyObservations, regionObservations, observationsForTaxon } from "../lib/nearby";
 import type { NearbyResult } from "../lib/nearby";
 import type { Bounds, ObservationSummary } from "../lib/inaturalist";
-import { observationCard, freshnessLine } from "./observation-ui";
+import { observationList, freshnessLine } from "./observation-ui";
 import { locationPrompt } from "./location-prompt";
 import type { Plant } from "../types";
 
@@ -136,7 +136,7 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
              `research-grade sighting${mine.length === 1 ? "" : "s"} of ${plant.common.toLowerCase()} in ${region.meta.name} — verified and photographed by the iNaturalist community (you don't have to be there):`],
       ),
     );
-    out.append(el("div", { class: "obs-list" }, shown.map((o) => observationCard(o, plant.common))));
+    out.append(observationList(shown, plant.common));
     out.append(freshnessLine(result.fromCache));
   }
 

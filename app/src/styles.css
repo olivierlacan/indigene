@@ -1338,12 +1338,17 @@ details.weights[open] > summary {
   border: 1px solid var(--line);
   border-radius: calc(var(--radius) - 4px);
 }
+/* Three squares to a row, filling the card's width — on a phone that's a ~93px
+   thumbnail instead of a fixed 76px one, and never a ragged half-row left over.
+   The max-width stops them ballooning on a wide screen. */
 .obs-thumbs {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.4rem;
+  max-width: 21rem;
 }
 .obs-thumb {
+  position: relative;
   display: block;
   line-height: 0;
   border-radius: 8px;
@@ -1358,11 +1363,26 @@ details.weights[open] > summary {
   outline-offset: 2px;
 }
 .obs-thumb img {
-  width: 76px;
-  height: 76px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
   object-fit: cover;
   background: var(--line);
   transition: transform 0.12s ease;
+}
+/* "+2" on the last thumbnail: this sighting has more photos than fit, and the
+   lightbox will page through them. */
+.obs-thumb-more {
+  position: absolute;
+  right: 0.25rem;
+  bottom: 0.25rem;
+  padding: 0.05rem 0.35rem;
+  border-radius: 999px;
+  background: rgb(0 0 0 / 0.62);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 650;
+  line-height: 1.5;
 }
 .obs-thumb:hover img {
   transform: scale(1.05);
@@ -1527,4 +1547,14 @@ details.weights[open] > summary {
 .lb-counter {
   font-size: 0.8rem;
   color: #b7b7a8;
+}
+/* "sighting 2 of 4" — the reel runs across every sighting on the page, so the
+   reader is told which one they've paged into. Separated by a middle dot. */
+.lb-counter-obs::before {
+  content: " · ";
+}
+/* Where and when this one was seen, under the observer's credit — it changes
+   as you cross from one sighting to the next. */
+.lb-seen {
+  display: block;
 }

@@ -6,54 +6,54 @@
 // can't drift apart, and the credit/licence handling stays in one place.
 import { el } from "../ui";
 import { openObservationLightbox } from "./lightbox";
+import { whereWhen } from "../lib/inaturalist";
 import type { ObservationSummary } from "../lib/inaturalist";
 
 const INAT = "https://www.inaturalist.org";
-const monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-/** "~3 km away · seen Jun 2023" — the honest context line under a photo set.
- *  Distance when we measured it (a "near me" lookup), otherwise the coarse place
- *  iNaturalist reports; then the month/year it was observed, when known. */
-export function whereWhen(o: ObservationSummary): string {
-  const bits: string[] = [];
-  if (o.distanceKm != null) {
-    bits.push(o.distanceKm < 1 ? "under 1 km away" : `~${Math.round(o.distanceKm)} km away`);
-  } else if (o.place) {
-    bits.push(o.place);
-  }
-  if (o.observedOn) {
-    const [y, m] = o.observedOn.split("-");
-    const mm = Number(m);
-    bits.push(`seen ${mm >= 1 && mm <= 12 ? monthNames[mm] + " " : ""}${y}`);
-  }
-  return bits.join(" · ");
-}
+/** Thumbnails shown per sighting. Three fills exactly one row on a phone, so a
+ *  card never ends in a ragged half-row; anything beyond them is reachable —
+ *  the lightbox pages through every photo of every sighting on screen, and the
+ *  last thumbnail wears a "+2" badge to say so. */
+const THUMBS_PER_CARD = 3;
 
 /**
  * One sighting as a card: its licence-bearing photos as tappable thumbnails over
  * an observer credit that links to the original record. `label` is the plain
  * name to fall back to when the sighting has no scientific name of its own (the
  * plant's or animal's common name), and is what the lightbox is titled with.
- * Tapping a thumbnail opens the in-app lightbox rather than redirecting away.
+ * Tapping a thumbnail opens the in-app lightbox rather than redirecting away,
+ * on this photo of this sighting — but able to page on through `group`, every
+ * sighting the section is showing.
  */
-export function observationCard(o: ObservationSummary, label: string): HTMLElement {
-  const photos = o.photos.slice(0, 4);
+function observationCard(
+  o: ObservationSummary,
+  label: string,
+  group: ObservationSummary[],
+  obsIndex: number,
+): HTMLElement {
+  const photos = o.photos.slice(0, THUMBS_PER_CARD);
+  const hidden = o.photos.length - photos.length;
   const thumbs = el("div", { class: "obs-thumbs" },
     photos.map((ph, i) => {
+      // The badge rides the last thumbnail, where the row runs out of room.
+      const more = hidden > 0 && i === photos.length - 1 ? hidden : 0;
       const btn = el("button", {
         type: "button",
         class: "obs-thumb",
         title: `${ph.attribution} — tap to enlarge`,
-        "aria-label": `Enlarge photo ${i + 1} of ${o.taxonName ?? label} by ${o.observer}`,
-        onClick: () => openObservationLightbox(o, i, label, btn),
+        "aria-label": `Enlarge photo ${i + 1} of ${o.taxonName ?? label} by ${o.observer}`
+          + (more ? `, and see ${more} more from this sighting` : ""),
+        onClick: () => openObservationLightbox(group, { observation: obsIndex, photo: i }, label, btn),
       }, [
         el("img", {
           src: ph.thumbUrl,
           loading: "lazy",
           alt: `${o.taxonName ?? label} photographed by ${o.observer}`,
-          width: 76,
-          height: 76,
+          width: 112,
+          height: 112,
         }),
+        more ? el("span", { class: "obs-thumb-more", "aria-hidden": "true" }, `+${more}`) : null,
       ]);
       return btn;
     }),
@@ -67,6 +67,18 @@ export function observationCard(o: ObservationSummary, label: string): HTMLEleme
     whereWhen(o) ? ` · ${whereWhen(o)}` : "",
   ]);
   return el("figure", { class: "obs-card" }, [thumbs, credit]);
+}
+
+/**
+ * Every sighting a section found, as a stack of cards — and as *one* photo reel.
+ * Building the list here (rather than mapping `observationCard` at each call
+ * site) is what lets a thumbnail hand the lightbox the whole set: open on the
+ * photo that was tapped, then page on through the other observers' photos
+ * instead of stopping at the edge of one card.
+ */
+export function observationList(observations: ObservationSummary[], label: string): HTMLElement {
+  return el("div", { class: "obs-list" },
+    observations.map((o, i) => observationCard(o, label, observations, i)));
 }
 
 /** The section-wide credit + freshness note: iNaturalist named and linked, the

@@ -144,14 +144,13 @@ window.addEventListener("offline", updateOnline);
 
 async function boot(): Promise<void> {
   normalizePathRoute();
-  // Prefs come from IndexedDB, which can stall without ever settling (Safari
-  // has a long-standing first-open bug, and an upgrade blocked by an old tab
-  // used to hang too). The first paint must not depend on it: give it a short
-  // window, then render with defaults — prefs only tune ranking weights.
-  await Promise.race([
-    loadPrefs().catch(() => {}),
-    new Promise((resolve) => setTimeout(resolve, 1500)),
-  ]);
+  // Prefs only tune ranking weights and filters, so the first paint never
+  // waits on them — not even briefly: IndexedDB can stall outright (Safari's
+  // first-open bug), and a blank page with a spinner is strictly worse than
+  // the page. They load in the background and apply from the next render on;
+  // a fresh page can't be showing ranked results yet anyway (the results
+  // step needs a confirmed spot, which a reload clears).
+  void loadPrefs().catch(() => {});
   initSavedMenu();
   updateOnline();
   await route();

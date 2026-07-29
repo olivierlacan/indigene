@@ -143,8 +143,10 @@ subtitle on the What's new page.
   like a label. Hover or tap-and-hold it and it explains what the zone means;
   on the French regions it also says that American zones are a translation
   there rather than the local way of talking about winter cold. The reference
-  places got shorter too, so the four French ones now read as a couple of city
-  names rather than a paragraph.
+  places got shorter too, so they all read as a couple of city names rather
+  than a paragraph — and on a big screen, where the region cards sit side by
+  side, the tags line up in a neat column down the right of each card instead
+  of landing in a different spot on every one.
 - **The little counts on each card sit at the bottom now, always in the same
   place.** They used to follow the text, so they landed at a different height
   on every card and you had to hunt for them. They're also shorter — an icon

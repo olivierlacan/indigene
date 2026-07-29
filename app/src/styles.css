@@ -1711,6 +1711,18 @@ body[data-layout="wide"] {
   margin: 0;
   line-height: 1.25;
 }
+/* Region names run from "Atlantic France" to "Pacific Northwest (west of the
+   Cascades)", so some wrap to two lines and some don't — which pushed every
+   row below them out of alignment with the neighbouring card. Reserving the
+   second line makes every card's header the same height, so the subtitles,
+   the rules, the starring plants and the stats all line up across a row.
+   Only once there's more than one column: in a single phone column there is
+   nothing to line up with, and an empty line would be pure waste. */
+@media (min-width: 46rem) {
+  .region-card-name {
+    min-height: 2.75rem; /* two lines at this size and line-height */
+  }
+}
 .region-card-name a {
   color: inherit;
 }
@@ -1859,21 +1871,51 @@ body[data-layout="wide"] .app-footer p {
   letter-spacing: 0.05em;
   opacity: 0.8;
 }
-/* The place half of a reference line, so the two can sit on one row and the
-   chip can drop below cleanly when there isn't room. */
+/* The place half of a reference line. */
 .zone-place {
   min-width: 0;
 }
-.region-card-ref,
+/* On the region page the line sits under the title, above the lede — one
+   region, so the chip simply follows the place. */
 .region-ref {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   row-gap: 0.15rem;
-}
-/* On the region page the line sits under the title, above the lede. */
-.region-ref {
   margin: 0 0 0.4rem;
   font-size: 0.95rem;
   color: var(--ink-soft);
+}
+
+/* On the Explore cards it's a different problem: eight cards side by side,
+   with place names from "Pennsylvania" to "Marseille, Montpellier & Nice".
+   Letting the chip follow the text put it in a different spot on every card
+   and dropped it below the place on the long ones — a ragged scatter of badges
+   instead of a column. */
+.region-card-ref {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  row-gap: 0.15rem;
+}
+/* Once the grid actually has columns, the row goes strictly one line: the
+   place takes what it needs, and the chip is pinned to the card's right edge
+   so the badges line up down the grid and every card's header is the same
+   height. Below that width there is a single column, nothing to line up with,
+   and a place name is worth more than a tidy edge — so it wraps instead of
+   truncating. */
+@media (min-width: 46rem) {
+  .region-card-ref {
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+  .region-card-ref .zone-place {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .region-card-ref .zone-chip {
+    flex: none;
+    margin-left: auto; /* pinned right, however short the place is */
+  }
 }

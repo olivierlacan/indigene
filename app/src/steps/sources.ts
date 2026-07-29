@@ -19,20 +19,32 @@ import { DATA_SOURCES_URL, ISSUES_URL } from "../lib/plain";
 const REPO_URL = "https://github.com/olivierlacan/indigene";
 const MATRIX_DOI = "https://doi.org/10.1002/ece3.73004";
 
-type Sureness = "counted" | "worked out" | "our estimate";
+type Sureness = "counted" | "calculated" | "estimated";
 
 /**
- * One "where this number comes from" row: what the number is, how sure we are,
- * and who it came from. The badge is the point — it's the difference between a
- * figure someone measured and a figure we judged.
+ * One "where this number comes from" row: what the number is, and who it came
+ * from. How sure we are isn't repeated per row — it's the heading the row sits
+ * under, so the reader learns each meaning once instead of decoding a badge
+ * eleven times.
  */
-function figure(name: string, sureness: Sureness, from: string): HTMLElement {
-  const kind = sureness === "our estimate" ? "guess" : sureness === "counted" ? "counted" : "derived";
+function figure(name: string, ...from: (string | Node)[]): HTMLElement {
   return el("li", {}, [
     el("strong", {}, name),
-    " ",
-    el("span", { class: `sureness sureness-${kind}` }, sureness),
-    el("span", { class: "sureness-from" }, ` ${from}`),
+    el("span", { class: "sureness-from" }, [" ", ...from]),
+  ]);
+}
+
+/**
+ * A group of figures that are all sure in the same way. The heading carries the
+ * kind, the line under it says what the kind means in plain words, and the
+ * groups run firmest first — counted, then calculated, then estimated — so the
+ * order itself is the ranking.
+ */
+function surenessGroup(kind: Sureness, heading: string, meaning: string, rows: HTMLElement[]): HTMLElement {
+  return el("section", { class: `sureness-group sureness-${kind}` }, [
+    el("h4", {}, heading),
+    el("p", { class: "sureness-meaning" }, meaning),
+    el("ul", { class: "who-list" }, rows),
   ]);
 }
 
@@ -58,27 +70,39 @@ export function renderSources(main: HTMLElement): void {
 
       el("h3", {}, "Every number, and how sure we are"),
       el("p", {},
-        "\"Counted\" means somebody tallied it in a published dataset and we read it off. \"Worked out\" means we calculated it from measurements, using a published method. \"Our estimate\" means a person weighed the evidence and picked a number — useful, but the softest kind here."),
-      el("ul", { class: "who-list" }, [
-        figure("Caterpillar host count", "counted",
+        "Every figure in the app comes to us in one of three ways, and they're not equally firm. Here they are grouped by which, firmest first."),
+
+      surenessGroup("counted", "Counted",
+        "Somebody tallied it in a published dataset, and we read it off. The firmest kind of number here.", [
+        figure("Caterpillar host count",
           "— in Europe, from the Gaytán 2026 Lepidoptera–plant matrix; in the US, from the Tallamy / National Wildlife Federation figures."),
-        figure("Native or not", "counted",
+        figure("Native or not",
           "— from the national botanical records: USDA PLANTS in the US, Tela Botanica and the INPN in France, plus regional floras."),
-        figure("Your ecoregion", "counted",
+        figure("Your ecoregion",
           "— the US EPA's ecoregion map, or the European Environment Agency's, asked about your exact point."),
-        figure("Your soil and its acidity", "counted",
+        figure("Your soil and its acidity",
           "— from SoilGrids, a global soil map. Coarse: it describes a 250-metre square, not your flower bed."),
-        figure("Rain and winter cold", "counted", "— from Open-Meteo's weather records for your area."),
-        figure("Elevation and slope", "counted", "— from national elevation data for your point."),
-        figure("Hours of sun", "worked out",
+        figure("Rain and winter cold", "— from Open-Meteo's weather records for your area."),
+        figure("Elevation and slope", "— from national elevation data for your point."),
+        figure("Which wildlife a plant feeds",
+          "— each plant-and-animal pairing cites a source, and the app refuses to show one that doesn't. How ",
+          el("em", {}, "much"),
+          " an animal depends on that plant is our reading of those sources."),
+      ]),
+
+      surenessGroup("calculated", "Calculated",
+        "Nobody published this figure for your spot, so the app works it out from measured numbers using a method someone else published. Same arithmetic every time — you could do it on paper and get what we got.", [
+        figure("Hours of sun",
           "— your device calculates where the sun goes over your spot across the year, using the standard NOAA method. No lookup, no network."),
-        figure("Hardiness zone", "worked out",
+        figure("Hardiness zone",
           "— from your recorded winter lows, using the published USDA zone definition, rather than reading an official map."),
-        figure("Which wildlife a plant feeds", "counted",
-          "— each plant-and-animal pairing cites a source, and the app refuses to show one that doesn't. How *much* an animal depends on that plant is our reading of those sources."),
-        figure("How big it gets, and how fast", "our estimate",
+      ]),
+
+      surenessGroup("estimated", "Estimated",
+        "A person on our side weighed the evidence and picked a number. Useful, and the softest kind here — these are the ones to doubt first.", [
+        figure("How big it gets, and how fast",
           "— typical growth on an average site, from floras and forestry references. Real plants vary enormously."),
-        figure("The six 0–100 scores", "our estimate",
+        figure("The six 0–100 scores",
           "— pollinators, birds, soaking up rain, holding soil, storing carbon, ease of establishing. Informed by the sources on each plant's page, but these are judgments we made, on a scale we invented."),
       ]),
 

@@ -1297,7 +1297,7 @@ details.weights[open] > summary {
 
 /* --- Privacy & safety, and Where our numbers come from --- */
 /* Both are plain-prose explainer pages and share this base; `.sources-page`
-   adds the "how sure are we" badge used to mark each figure. */
+   adds the "how sure are we" grouping that sorts each figure. */
 .privacy-page h3 {
   margin: 1.4rem 0 0.3rem;
 }
@@ -1333,33 +1333,43 @@ details.weights[open] > summary {
   margin: 0.6rem 0;
 }
 
-/* How sure we are about a figure. Three states, deliberately not colour-coded
-   red/green: an estimate isn't a failure, it's a different kind of number. The
-   badge must stay legible against both themes, so it borrows the same tokens
-   the rest of the app uses rather than fixed colours. */
-.sureness {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  padding: 0.1rem 0.4rem;
-  border-radius: 0.6rem;
-  border: 1px solid var(--line-strong);
-  color: var(--ink-soft);
-  white-space: nowrap;
-  vertical-align: 0.05em;
+/* How sure we are about a figure. The sources page sorts its figures into three
+   groups — counted, calculated, estimated — under a heading each, rather than
+   tagging every row with a badge: a badge repeated eleven times is eleven small
+   readings, a heading is one. Deliberately not colour-coded red/green either:
+   an estimate isn't a failure, it's a different kind of number. The rule down
+   the left side carries the distinction, borrowing the same tokens the rest of
+   the app uses rather than fixed colours, so it stays legible in both themes. */
+.sureness-group {
+  margin: 1.1rem 0 0;
+  padding-left: 0.7rem;
+  border-left: 2px solid var(--line-strong);
+}
+.sureness-group h4 {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.2;
+  color: var(--ink);
+}
+.sureness-group .sureness-meaning {
+  margin: 0.2rem 0 0.5rem;
+  font-size: 0.92rem;
 }
 .sureness-counted {
-  border-color: var(--accent);
+  border-left-color: var(--accent);
+}
+.sureness-counted h4 {
   color: var(--accent);
 }
-.sureness-derived {
-  border-color: var(--focus);
+.sureness-calculated {
+  border-left-color: var(--focus);
+}
+.sureness-calculated h4 {
   color: var(--focus);
 }
-.sureness-guess {
-  border-style: dashed;
+/* Estimated: the dashed rule says "softer" without saying "worse". */
+.sureness-estimated {
+  border-left-style: dashed;
 }
 .sureness-from {
   color: var(--ink-soft);

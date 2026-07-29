@@ -93,6 +93,19 @@ subtitle on the What's new page.
   holly feeds 7, not the 12 we'd guessed. Because these numbers help decide
   which plants we recommend first, some French results are now in a different
   order, and we think a fairer one.
+- **"Where our numbers come from" is easier to read, and says "calculated"
+  instead of "worked out".** The
+  [page that tells you how sure we are](https://olivierlacan.github.io/indigene/#/sources)
+  used to be one long list where every line ended in a little capsule —
+  COUNTED, WORKED OUT, OUR ESTIMATE — so you had to read eleven capsules to
+  work out which numbers were solid. Now the numbers are sorted into three
+  groups under plain headings — **Counted**, **Calculated**, **Estimated** —
+  firmest first, with one sentence under each heading saying what it means.
+  You can see at a glance that most of what the app tells you was counted by
+  somebody, and that the 0–100 scores are our own judgment. "Worked out" is
+  gone: the honest word is **calculated**, meaning the app does the sum itself
+  from measured numbers, using a method someone else published, so you could
+  redo it on paper and get what we got.
 - Internal: `make-thumb.mjs` takes `--top <px>`, starting the square that many
   source pixels down instead of at the very top of the capture. A release
   whose feature sits below the fold of a full-page screenshot (0.12's "See it

@@ -13,7 +13,7 @@
 //      CORS-enabled, key-free public API would be the wrong trade. Calling from
 //      the browser also means iNaturalist sees the *real* request: the user's
 //      own IP and, in the `Referer` header the browser sets automatically, our
-//      app's origin (e.g. `https://olivierlacan.github.io/`). That is the clear,
+//      app's origin (e.g. `https://indigene.app/`). That is the clear,
 //      honest "who is calling" signal iNaturalist asks API users to provide. We
 //      can't set a custom `User-Agent` from `fetch` (browsers forbid it), so the
 //      Referer *is* our identification — which is why we never route this through

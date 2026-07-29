@@ -43,13 +43,15 @@ jobs:
         run: npm ci
 
       # `npm run build` also runs `tsc --noEmit`, so type errors block deploys.
-      # BASE_PATH makes built URLs resolve under /<repo>/ on project Pages;
-      # configure-pages emits it empty when a custom domain is set, and Vite
-      # needs the trailing slash either way.
+      # The site lives at the root of its own domain (indigene.app), so built
+      # URLs are root-absolute. This used to read configure-pages' `base_path`,
+      # which resolves to /indigene on a project Pages site — those URLs 404 on
+      # the custom domain, because the files sit at /assets, not /indigene/assets.
+      # Hardcoding the root keeps the build honest whatever that API reports.
       - name: Build
         working-directory: app
         env:
-          BASE_PATH: ${{ steps.pages.outputs.base_path }}/
+          BASE_PATH: /
         run: npm run build
 
       # The public "What's new" page is compiled from the repo's CHANGELOG.md

@@ -1295,7 +1295,9 @@ details.weights[open] > summary {
   color: var(--focus);
 }
 
-/* --- Privacy & safety page --- */
+/* --- Privacy & safety, and Where our numbers come from --- */
+/* Both are plain-prose explainer pages and share this base; `.sources-page`
+   adds the "how sure are we" badge used to mark each figure. */
 .privacy-page h3 {
   margin: 1.4rem 0 0.3rem;
 }
@@ -1319,6 +1321,48 @@ details.weights[open] > summary {
 }
 .privacy-page .who-list strong {
   color: var(--ink);
+}
+
+/* Ordered list on the sources page: the "what we'd challenge first" ranking,
+   where the numbering is the meaning, so it keeps markers unlike the ul above. */
+.sources-page ol {
+  margin: 0.3rem 0 0;
+  padding-left: 1.3rem;
+}
+.sources-page ol li {
+  margin: 0.6rem 0;
+}
+
+/* How sure we are about a figure. Three states, deliberately not colour-coded
+   red/green: an estimate isn't a failure, it's a different kind of number. The
+   badge must stay legible against both themes, so it borrows the same tokens
+   the rest of the app uses rather than fixed colours. */
+.sureness {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--line-strong);
+  color: var(--ink-soft);
+  white-space: nowrap;
+  vertical-align: 0.05em;
+}
+.sureness-counted {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.sureness-derived {
+  border-color: var(--focus);
+  color: var(--focus);
+}
+.sureness-guess {
+  border-style: dashed;
+}
+.sureness-from {
+  color: var(--ink-soft);
 }
 
 /* --- iNaturalist "growing near you" observation strip --- */

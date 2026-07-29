@@ -1,0 +1,161 @@
+{
+  "source": "EEA Biogeographical Regions of Europe (2016)",
+  "license": "CC-BY 4.0 (European Environment Agency)",
+  "base": "https://bio.discomap.eea.europa.eu/arcgis/rest/services/BioRegions/BiogeographicalRegions_WM/MapServer",
+  "ranAt": "2026-07-28T15:46:23.573Z",
+  "layers": [
+    {
+      "id": 0,
+      "name": "Biogeographical regions",
+      "geometryType": "esriGeometryPolygon"
+    }
+  ],
+  "probes": [
+    {
+      "name": "Paris",
+      "lat": 48.8566,
+      "lon": 2.3522,
+      "expect": "Atlantic",
+      "result": {
+        "layer": 0,
+        "field": "short_name",
+        "value": "atlantic",
+        "attrs": {
+          "OBJECTID": 4,
+          "short_name": "atlantic",
+          "pre_2012": "ATL",
+          "code": "Atlantic",
+          "name": "Atlantic Bio-geographical Region"
+        }
+      }
+    },
+    {
+      "name": "Bordeaux",
+      "lat": 44.8378,
+      "lon": -0.5792,
+      "expect": "Atlantic",
+      "result": {
+        "layer": 0,
+        "field": "short_name",
+        "value": "atlantic",
+        "attrs": {
+          "OBJECTID": 4,
+          "short_name": "atlantic",
+          "pre_2012": "ATL",
+          "code": "Atlantic",
+          "name": "Atlantic Bio-geographical Region"
+        }
+      }
+    },
+    {
+      "name": "Strasbourg",
+      "lat": 48.5734,
+      "lon": 7.7521,
+      "expect": "Continental",
+      "result": {
+        "layer": 0,
+        "field": "short_name",
+        "value": "continental",
+        "attrs": {
+          "OBJECTID": 7,
+          "short_name": "continental",
+          "pre_2012": "CON",
+          "code": "Continental",
+          "name": "Continental Bio-geographical Region"
+        }
+      }
+    },
+    {
+      "name": "Lyon",
+      "lat": 45.764,
+      "lon": 4.8357,
+      "expect": "Continental",
+      "result": {
+        "layer": 0,
+        "field": "short_name",
+        "value": "continental",
+        "attrs": {
+          "OBJECTID": 7,
+          "short_name": "continental",
+          "pre_2012": "CON",
+          "code": "Continental",
+          "name": "Continental Bio-geographical Region"
+        }
+      }
+    },
+    {
+      "name": "Marseille",
+      "lat": 43.2965,
+      "lon": 5.3698,
+      "expect": "Mediterranean",
+      "result": {
+        "layer": 0,
+        "field": "short_name",
+        "value": "mediterranean",
+        "attrs": {
+          "OBJECTID": 9,
+          "short_name": "mediterranean",
+          "pre_2012": "MED",
+          "code": "Mediterranean",
+          "name": "Mediterranean Bio-geographical Region"
+        }
+      }
+    },
+    {
+      "name": "Ajaccio (Corsica)",
+      "lat": 41.9192,
+      "lon": 8.7386,
+      "expect": "Mediterranean",
+      "result": {
+        "layer": 0,
+        "field": "short_name",
+        "value": "mediterranean",
+        "attrs": {
+          "OBJECTID": 9,
+          "short_name": "mediterranean",
+          "pre_2012": "MED",
+          "code": "Mediterranean",
+          "name": "Mediterranean Bio-geographical Region"
+        }
+      }
+    },
+    {
+      "name": "Chamonix (Alps)",
+      "lat": 45.9237,
+      "lon": 6.8694,
+      "expect": "Alpine",
+      "result": {
+        "layer": 0,
+        "field": "short_name",
+        "value": "alpine",
+        "attrs": {
+          "OBJECTID": 1,
+          "short_name": "alpine",
+          "pre_2012": "ALP",
+          "code": "Alpine",
+          "name": "Alpine Bio-geographical Region"
+        }
+      }
+    },
+    {
+      "name": "Gavarnie (Pyrenees)",
+      "lat": 42.7357,
+      "lon": 0.0089,
+      "expect": "Alpine",
+      "result": {
+        "layer": 0,
+        "field": "short_name",
+        "value": "alpine",
+        "attrs": {
+          "OBJECTID": 1,
+          "short_name": "alpine",
+          "pre_2012": "ALP",
+          "code": "Alpine",
+          "name": "Alpine Bio-geographical Region"
+        }
+      }
+    }
+  ],
+  "detectedLayer": 0,
+  "detectedField": "short_name"
+}

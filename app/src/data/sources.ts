@@ -50,6 +50,17 @@ export const SOURCE_LINKS: SourceSite[] = [
   { name: "Smithsonian", url: "https://naturalhistory.si.edu/" },
   { name: "USFWS", url: "https://www.fws.gov/" },
   { name: "WSU Extension", url: "https://extension.wsu.edu/" },
+  // European authorities, cited by the France rows. The Gaytán matrix is the
+  // source of every European host count, so it links to the paper itself.
+  { name: "Gaytán et al. 2026 European matrix", url: "https://doi.org/10.1002/ece3.73004" },
+  { name: "Tela Botanica", url: "https://www.tela-botanica.org/" },
+  { name: "INPN", url: "https://inpn.mnhn.fr/" },
+  { name: "RHS Plants for Pollinators", url: "https://www.rhs.org.uk/wildlife/plants-for-pollinators" },
+  { name: "Butterfly Conservation", url: "https://butterfly-conservation.org/" },
+  { name: "Woodland Trust", url: "https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/" },
+  { name: "Buglife", url: "https://www.buglife.org.uk/" },
+  { name: "Plantlife", url: "https://www.plantlife.org.uk/" },
+  { name: "RHS", url: "https://www.rhs.org.uk/" },
 ];
 
 const BAMONA_SPECIES = "https://www.butterfliesandmoths.org/species/";

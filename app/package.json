@@ -11,6 +11,7 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "release-notes": "node scripts/build-release-notes.mjs",
+    "host-counts": "node scripts/build-host-counts.mjs",
     "registry:build": "node scripts/build-registry.mjs",
     "registry:check": "node scripts/check-registry.mjs",
     "reconcile": "node scripts/reconcile.mjs"

@@ -6,6 +6,13 @@ of the Phase 1 build. **None of these are scraped**; each is a documented public
 API or an openly licensed dataset. Where reuse terms are uncertain, that is
 called out and the dependency is kept optional.
 
+This document is the licensing audit, written for a developer. Its plain-language
+companion — which of our numbers are counted, which are our own judgment, what
+we're assuming, and where we think we're most likely wrong — is the in-app page
+at [`#/sources`](https://olivierlacan.github.io/indigene/#/sources)
+(`app/src/steps/sources.ts`). Anything claimed here should be consistent with
+what that page tells the public.
+
 | Source | Used for | Access | Licence / terms | Verdict |
 |---|---|---|---|---|
 | **NOAA solar position algorithm** | Sun path & sun-hours, computed on-device | Reimplemented locally (`src/lib/solar.ts`) | Public-domain US Government work; the algorithm is published, not a service | ✅ Safe. No network, works offline. |
@@ -29,7 +36,14 @@ called out and the dependency is kept optional.
 | **Institute for Regional Conservation — "Natives For Your Neighborhood" (IRC)** | South-Florida native status, range & culture | Referenced for the south-Florida seed data | The largest south-FL native database; individual facts are not copyrightable | ✅ Facts referenced. |
 | **Xerces Society regional lists (incl. Maritime NW)** | Pollinator / establishment context, both regions | Referenced | Publications are copyrighted; we use the factual associations, not the prose | ✅ Facts referenced. |
 | **USFS Silvics / Fire Effects Information System (FEIS)** | Size / growth for trees (esp. PNW conifers) | Referenced | US Government public domain | ✅ Safe. |
-| **EPA Level III/IV Ecoregions** (Omernik) | Ecoregion label (Level III + finer Level IV) | Live point query to the EPA ArcGIS service (`gispub.epa.gov/.../USEPA_Ecoregions_Level_III_and_IV`), best-effort | US Government public domain | ✅ **Integrated (Phase A, label only).** Real Level III/IV names shown on the confirm screen; falls back to the coarse bounding-box guess (marked "(broad)") when offline/outside CONUS. Using it for *region selection* is Phase B — see `docs/ecoregion-plan.md`. |
+| **EPA Level III/IV Ecoregions** (Omernik) | Ecoregion label (Level III + finer Level IV) + US region selection | Live point query to the EPA ArcGIS service (`gispub.epa.gov/.../USEPA_Ecoregions_Level_III_and_IV`), best-effort | US Government public domain | ✅ **Integrated.** Real Level III/IV names on the confirm screen and used to refine region selection; falls back to the coarse box (marked "(broad)") offline/outside CONUS. See `docs/ecoregion-plan.md`. |
+| **EEA Biogeographical Regions of Europe** (2016) | Ecoregion label + European region selection (Atlantic / Continental / Alpine / Mediterranean…) | Live point query to the EEA ArcGIS service (`bio.discomap.eea.europa.eu/.../BioRegions/BiogeographicalRegions_WM`), best-effort | **CC-BY 4.0** (© European Environment Agency; admin boundaries © EuroGeographics) | ✅ **Integrated.** The Europe-side analogue of EPA ecoregions: picks/refines the France region and labels the confirm screen; falls back to the coarse box offline. Attribution: "EEA Biogeographical Regions of Europe (CC BY 4.0)". Layer 0 + the `short_name` field are confirmed against the live service (`data/sources/eea-biogeographical-regions/probe.json`). See `docs/france-localization-plan.md`. |
+| **Tela Botanica — BDTFX** (Base de Données des Trachéophytes de France métropolitaine) | Native status, accepted names & French vernacular names for the France seed data | Referenced for the Atlantic France list | Reference taxonomy; individual facts are not copyrightable | ✅ Facts referenced. |
+| **INPN — Inventaire national du patrimoine naturel (MNHN)** | French native/indigénat status, distribution, protection status | Referenced for the Atlantic France list | National inventory; individual distribution facts are not copyrightable | ✅ Facts referenced. Bluebell etc. bought as cultivated stock — never wild-dug where protected. |
+| **European Lepidoptera–Plant matrix** (Gaytán et al. 2026, *Ecology & Evolution* [doi:10.1002/ece3.73004](https://doi.org/10.1002/ece3.73004)) | The European `hostLepCount` — Lepidoptera host-species counts per plant genus (the Tallamy/NWF equivalent for Europe) | Dataset downloaded from the DOI into `data/sources/eu-lep-plant-matrix/` (git-ignored) and reduced by `app/scripts/build-host-counts.mjs` to a committed `host-counts.json` | **CC-BY 4.0**, machine-readable | ✅ **Integrated.** 5,152 Lepidoptera × 3,275 plants, all Europe, species-level, and it records **larval hosts** (the dataset's README says so) — which is what `hostLepCount` claims. Counted at **genus** level, so European figures sit on the same scale as the US Tallamy ones and the shared `HOST_ANCHOR` (520) still holds — the top European count is 391, so **no US score moved**. Members are filtered to those growing in the region's European zone *and* native to Europe, so a native plant isn't credited with caterpillars recorded only on introduced ornamental relatives (native honeysuckle: 57, not 111). Both figures are kept in `host-counts.json` and named in each row's `basis` where they differ. Cleaner terms than NWF. See `docs/host-counts-plan.md`. |
+| **DBIF v2** (CEH/BRC *Database of Insects and their Food Plants*) | GB cross-check for the European host counts — ships a per-plant "insect species richness" file | *Identified, not yet run* — the intended independent check on the Gaytán counts | **Open Government Licence** ("Contains data supplied by NERC") | ⏳ Safe with attribution, and still the open follow-up. Great Britain only, but the Atlantic-France flora overlaps almost entirely, so it can corroborate our genus counts without sharing the Gaytán dataset's assumptions. Deliberately deferred (`docs/host-counts-plan.md` §8): no shipped number depends on it. |
+| **BRC DBIF / Southwood foliage-insect rankings** | Formerly the basis for the *interim* France host-count estimates | *No longer used for any shipped number* | Facts referenced, not prose | ✅ **Retired.** The France rows now carry counts computed from the Gaytán matrix above, so these rankings no longer stand behind any figure in the app. DBIF v2 (row above) remains the intended independent cross-check of those counts; it has not been run yet. |
+| **RHS "Plants for Pollinators", Buglife, Plantlife, Woodland Trust, Butterfly Conservation** | Pollinator value, propagation, notable wildlife ties for the France seed data | Referenced for the Atlantic France list | Publications © ; we use the factual associations, not the prose | ✅ Facts referenced. |
 | **BONAP county distribution** | County-level native status | *Not yet integrated* | ⚠️ BONAP maps have restrictive reuse terms | ⛔ **Do not scrape or embed.** Phase 2 should use USDA PLANTS county data (public domain) for county resolution instead. Noted so we don't build on it by accident. |
 | **Basemap tiles** (for the location map) | — | *Not used* | OSM/other tile terms + offline concerns | ⏳ Phase 1 uses a schematic metric grid instead of external tiles, to stay offline-first and avoid tile-usage terms. |
 
@@ -111,14 +125,18 @@ all either public domain or openly licensed with attribution:
 | **USDA PLANTS** | U.S., **state-level** native/introduced/invasive | **Public domain** | The backbone for U.S. regions. State resolution now; a Phase-2 path to county via its distribution data. |
 | **WCVP native ranges** | Global, by TDWG "botanical country" (WGSRPD level 3) | **CC BY 4.0** | The global answer: native-vs-introduced range per region for essentially every species. |
 | **GBIF occurrences** (incl. research-grade iNaturalist) | Global point observations | CC BY / CC0 (per record) | Validate that a species actually occurs at/near a spot; ground-truth the range polygons. |
-| **EPA Level III/IV Ecoregions** | U.S. | US Gov **public domain** | Real ecoregion boundaries to replace our coarse bounding boxes (already flagged as Phase 2). |
-| **RESOLVE / WWF Terrestrial Ecoregions of the World** | Global | CC BY 4.0 | Ecoregion context outside the U.S. |
+| **EPA Level III/IV Ecoregions** | U.S. | US Gov **public domain** | Real ecoregion boundaries that refine our coarse bounding boxes (integrated for US regions). |
+| **EEA Biogeographical Regions of Europe** | Europe | **CC BY 4.0** | The Europe-side equivalent — integrated for the France region (Atlantic/Continental/Alpine/Mediterranean). |
+| **RESOLVE / WWF Terrestrial Ecoregions of the World** | Global | CC BY 4.0 | Finer ecoregion context outside the U.S./Europe, if ever needed. |
 | ~~BONAP county maps~~ | U.S. county | ⛔ restrictive | **Do not use** — reason unchanged (see table above). Use USDA PLANTS county data instead. |
 
 **Wildlife-value inputs (the eco-score)**
 
 | Source | Scope | Licence | Role |
 |---|---|---|---|
+| **European Lepidoptera–Plant matrix** (Gaytán et al. 2026) | Europe | **CC BY 4.0** | The Europe-wide Tallamy equivalent: species-level Lep×plant associations, aggregated to genus for `hostLepCount`. Canonical for European regions (integration pending). |
+| **DBIF v2** (CEH/BRC) | Great Britain | **Open Government Licence** | Per-plant insect-richness cross-check for European counts; attribution "Contains data supplied by NERC". |
+| **GloBI — Global Biotic Interactions** | Global | CC BY (aggregate; per-source) | Open API + full dumps aggregating HOSTS, DBIF and more — the programmatic route to host associations, with reconciliation to GBIF ids. |
 | **HOSTS — a Database of the World's Lepidopteran Host Plants** (NHM London) | Global | Free for research use; attribute | Primary-literature host associations to re-source the Lepidoptera counts globally, reducing reliance on NWF's terms-uncertain figures. |
 | **Tallamy / NWF Native Plant Finder** | U.S., by ZIP | ⚠️ terms uncertain (flagged above) | Cross-check only; counts are used as published facts at genus level, cited per row. |
 | **Xerces Society** regional lists | U.S. regions | prose © / facts usable | Pollinator & establishment associations. |
@@ -136,12 +154,15 @@ provider.
 
 - **"Native" means native *here*.** Each seed dataset asserts native status at the
   state/ecoregion level for its own region (Pennsylvania / Mid-Atlantic; maritime
-  Pacific Northwest; north/central Florida; subtropical south Florida & the Keys),
-  not "native to North America." The app picks the list from your coordinates —
-  refined by the spot's real EPA ecoregion when online — and refuses to show
-  another region's plants for an uncovered spot. That ecoregion refinement is what
-  splits Florida cleanly along the Southern Florida Coastal Plain (76) seam; see
-  `docs/ecoregion-plan.md`. County-level status via USDA PLANTS is a Phase 2 item.
+  Pacific Northwest; north/central Florida; subtropical south Florida & the Keys;
+  the Atlantic biogeographical region of metropolitan France), not "native to a
+  continent." The app picks the list from your coordinates — refined by the spot's
+  real ecoregion when online (EPA Omernik in the US, EEA biogeographical regions in
+  Europe) — and refuses to show another region's plants for an uncovered spot. That
+  refinement is what splits Florida cleanly along the Southern Florida Coastal Plain
+  (76) seam and keeps a Mediterranean or Alpine French point out of the Atlantic
+  list; see `docs/ecoregion-plan.md` and `docs/france-localization-plan.md`.
+  County-level status via USDA PLANTS is a Phase 2 item.
 - **Facts vs. expression.** Mature sizes, bloom months, and host-species counts
   are facts and are cited per row (`basis` field). We reference them; we do not
   copy anyone's descriptive text or mirror a database.

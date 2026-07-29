@@ -39,7 +39,7 @@ export const REGION: RegionMeta = {
   // Deliberately excludes Eastern Cascades Slopes and Foothills (9) and the
   // interior dry ecoregions, so a point in the box but east of the crest (e.g.
   // Bend, in ecoregion 9) correctly gets no PNW list rather than a bad one.
-  ecoregionsL3: ["1", "2", "3", "4", "78"],
+  ecoregion: { provider: "epa-omernik", codes: ["1", "2", "3", "4", "78"] },
   // Red-flowering Currant: blooms when the first hummingbirds arrive — the
   // region's most charismatic case for planting native.
   featuredPlantId: "ribes-sanguineum",

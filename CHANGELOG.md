@@ -34,9 +34,65 @@ subtitle on the What's new page.
   tap a release's title to open it on its own, with a link back to all
   releases and links on to the ones either side of it. The address stays put
   as new releases pile up on top.
+- Indigene now reaches its first place outside the United States: the mild,
+  rainy Atlantic west and north of **France** — Paris, Nantes, Bordeaux, Rennes,
+  Lille and the countryside between. Stand in a spot there and you'll get
+  [native French plants](https://olivierlacan.github.io/indigene/#/regions/france-atlantic) —
+  oak and hawthorn, blackthorn and hazel, woodland bluebells, honeysuckle and
+  foxgloves — ranked for your exact spot, each with what it does for local birds,
+  bees and butterflies. It's a carefully chosen starter list that will grow, and
+  the Mediterranean south, the Alps, and eastern France are planned next. (The
+  app itself still speaks English for now — French wording is the next step.)
+- The app now understands Europe's natural regions, not only North America's.
+  Online, it checks the official European map of
+  [biogeographical regions](https://www.eea.europa.eu/en/datahub/eea-data-policy)
+  — Atlantic, Continental, Alpine, Mediterranean — to tell whether a French spot
+  is in the Atlantic zone this first list is really for, and says so plainly when
+  it isn't yet.
+- Elevation and slope now work anywhere in the world, not just the US: outside
+  the United States the app reads the land's height from a global source, so the
+  new French spots get the same "how high, how steep" reading.
+- Internal: the ecoregion layer is now provider-agnostic — a spot resolves to a
+  real ecoregion via US EPA (Omernik) in the conterminous US or the EEA
+  Biogeographical Regions service in Europe, chosen by coordinates, both falling
+  back to the coarse box offline. `EcoregionInfo` carries a `provider` + `code` +
+  `name`, and a region declares the codes it covers under `meta.ecoregion`.
+  See `docs/france-localization-plan.md`.
+- **A page that shows our working.**
+  [Where our numbers come from](https://olivierlacan.github.io/indigene/#/sources)
+  lays out, in plain words, where every figure in Indigene actually comes
+  from — and marks each one as counted from real data, worked out by the app,
+  or our own estimate. It also says what we're assuming, and names the numbers
+  we think are most likely to be wrong, starting with the 0–100 scores, which
+  are judgments we made rather than anything anyone measured. If you spot a
+  mistake, the page tells you how to tell us. We'd rather be corrected than
+  believed.
+- Internal: the European Lepidoptera host-count source is identified, open, and
+  now **integrated** — the Gaytán et al. 2026 species-level European
+  Lepidoptera–plant interaction matrix (CC-BY 4.0, `doi:10.1002/ece3.73004`),
+  which the dataset's own README confirms records *larval* hosts. A new
+  `scripts/build-host-counts.mjs` (`npm run host-counts`) reduces it to a
+  committed `data/sources/eu-lep-plant-matrix/host-counts.json` — 973 genera ×
+  8 European zones — and reports a region's rows without rewriting them. Counted
+  at genus level, filtered to members that grow in the region's zone and are
+  native to Europe; the unfiltered figure is kept wherever it differs. The
+  shared `HOST_ANCHOR` stays 520 and **no US score moved**. DBIF (CEH/BRC, OGL)
+  remains an unrun cross-check. See `docs/host-counts-plan.md`.
 
 ### Changed
 
+- **The French caterpillar counts are now counted, not estimated.** Every
+  [Atlantic France plant](https://olivierlacan.github.io/indigene/#/regions/france-atlantic)
+  shipped with an honest guess at how many kinds of caterpillar it feeds,
+  because no European tally was available to us. One is now — an open dataset
+  covering 5,152 European butterflies and moths — so the guesses are gone and
+  every plant carries a real figure, with the source named on its page. Almost
+  all of them went up: the guesses had been cautious. Blackthorn and wild
+  cherry turned out to feed 318 kinds of caterpillar rather than the 100 and
+  120 we'd estimated, and cowslip 35 rather than 6. A few went the other way —
+  holly feeds 7, not the 12 we'd guessed. Because these numbers help decide
+  which plants we recommend first, some French results are now in a different
+  order, and we think a fairer one.
 - Internal: `make-thumb.mjs` takes `--top <px>`, starting the square that many
   source pixels down instead of at the very top of the capture. A release
   whose feature sits below the fold of a full-page screenshot (0.12's "See it

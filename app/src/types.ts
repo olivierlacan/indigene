@@ -333,19 +333,34 @@ export interface SunEstimate {
   source: "scan" | "manual" | "override";
 }
 
+/** Which ecoregion classification answered the lookup. Each covers a different
+ *  part of the world, so the app picks one by coordinates and both fall back to
+ *  the coarse box offline:
+ *   - "epa-omernik": US EPA (Omernik) ecoregions — conterminous US, public domain.
+ *   - "eea-biogeo":  EEA Biogeographical Regions of Europe — CC-BY 4.0. Coarse
+ *     (Atlantic, Continental, Alpine, Mediterranean…), one flat level. */
+export type EcoregionProvider = "epa-omernik" | "eea-biogeo";
+
 /**
- * A real EPA (Omernik) ecoregion, from the live lookup. Public-domain data.
- * Level III is the useful resolution for plant regions; Level IV is the finer
- * local subdivision, shown as detail. Level I/II are the broad North American
- * roll-ups, kept for future use (e.g. region selection).
+ * A real ecoregion from a live lookup, normalized across providers so the rest
+ * of the app never hard-codes one country's scheme. `code` is the selection key
+ * (Omernik Level III code, or the EEA region slug); `name` is what we show.
+ * Public-domain (EPA) or CC-BY (EEA) — either way safe to query, cache, display.
  */
 export interface EcoregionInfo {
-  l1Name: string | null; // North America Level I, e.g. "Marine West Coast Forest"
-  l2Name: string | null; // North America Level II
-  l3Code: string; // US Level III code, e.g. "3"
-  l3Name: string; // US Level III name, e.g. "Willamette Valley"
-  l4Code: string | null; // US Level IV code, e.g. "3a"
-  l4Name: string | null; // US Level IV name
+  /** Which classification answered — decides the label suffix and the codes a
+   *  region declares to refine selection. */
+  provider: EcoregionProvider;
+  /** Selection key. Omernik Level III code ("3"); EEA region slug ("atlantic"). */
+  code: string;
+  /** Display name. "Willamette Valley"; "Atlantic". */
+  name: string;
+  /** Broad→specific roll-ups shown above `code` (Omernik Level I/II names).
+   *  Empty for EEA, which is a single flat level. */
+  hierarchy: string[];
+  /** A finer local subdivision when the provider has one (Omernik Level IV).
+   *  null for EEA. Display only — never used for selection. */
+  detail: { code: string; name: string } | null;
 }
 
 export interface SiteData {

@@ -3,7 +3,7 @@
 // adding a new one is adding a data file and registering it, nothing more (see
 // `regions.ts`). The rest of the app never hard-codes a region; it asks which
 // region a spot falls in and loads that list.
-import type { EcoScores, Plant } from "../types";
+import type { EcoScores, EcoregionProvider, Plant } from "../types";
 
 // A seed row omits the one score we compute rather than author by hand — the
 // caterpillar/moth host value, derived in `lib/plants.ts` from a raw, citable
@@ -46,17 +46,20 @@ export interface RegionMeta {
   featuredPlantId?: string;
 
   /**
-   * EPA (Omernik) Level III ecoregion codes this seed list actually represents,
-   * e.g. ["1","2","3"]. When present AND a live EPA lookup gave us the spot's
-   * L3 code, selection *refines within the box*: the point must be both inside
-   * `bounds` and in one of these ecoregions. This is what lets a point just east
-   * of the Cascade crest (same box, different ecoregion) correctly fall through.
+   * The real ecoregions this seed list represents, tagged with the provider that
+   * classifies them (EPA Omernik codes for US regions, EEA biogeographical-region
+   * slugs for European ones). When present AND a live lookup of the same provider
+   * gave us the spot's code, selection *refines within the box*: the point must be
+   * both inside `bounds` and in one of these ecoregions. This is what lets a point
+   * just east of the Cascade crest — same box, different ecoregion — correctly
+   * fall through, and likewise a Mediterranean point inside a broad France box.
    * Omitted → the box alone decides (and offline, the box always decides, since
-   * there's no live code). Kept as a refinement of `bounds`, never a replacement:
-   * some L3 ecoregions (e.g. 75, Southern Coastal Plain) span several states, so
-   * the box still prevents one region's list bleeding into a neighbor's.
+   * there's no live code). Always a refinement of `bounds`, never a replacement:
+   * some ecoregions span several regions' turf (Omernik 75, Southern Coastal
+   * Plain; EEA Atlantic across several countries), so the box still prevents one
+   * list bleeding into a neighbor's.
    */
-  ecoregionsL3?: string[];
+  ecoregion?: { provider: EcoregionProvider; codes: string[] };
 }
 
 export interface RegionDef {

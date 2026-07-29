@@ -38,7 +38,7 @@ export const REGION: RegionMeta = {
   // Keys) plus the subtropical end of Southern Coastal Plain (75). Box-gated to
   // the peninsula's south. Ecoregion 76 is the seam that separates this list
   // from the temperate north & central one.
-  ecoregionsL3: ["75", "76"],
+  ecoregion: { provider: "epa-omernik", codes: ["75", "76"] },
   // Gumbo Limbo: the signature tree of South Florida hammocks — instantly
   // recognizable by its peeling copper bark.
   featuredPlantId: "bursera-simaruba",

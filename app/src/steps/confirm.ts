@@ -62,7 +62,10 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
     rows.push(site.annualRainIn != null ? kv("Rainfall", `About ${site.annualRainIn} inches of rain a year.`) : null);
     rows.push(site.elevationFt != null ? kv("Elevation & slope", `${site.elevationFt} ft up${site.slopeDeg != null ? `, on ${slopePlain(site.slopeDeg)}` : ""}.`) : null);
     rows.push(site.ecoregion ? kv("Region", `${site.ecoregion}.`) : null);
-    rows.push(site.ecoregionInfo?.l4Name ? kv("Local area", `${site.ecoregionInfo.l4Name} (finer EPA Level IV).`) : null);
+    // Only some providers have a finer local subdivision (EPA Level IV); the EEA
+    // biogeographical regions are a single flat level, so this row is skipped.
+    const detail = site.ecoregionInfo?.detail;
+    rows.push(detail ? kv("Local area", `${detail.name} (finer EPA Level IV).`) : null);
   }
   if (rows.some(Boolean)) {
     main.append(el("div", { class: "card" }, [el("h3", {}, "Climate & land"), ...rows.filter(Boolean) as HTMLElement[]]));

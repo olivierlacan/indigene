@@ -14,6 +14,7 @@ import { renderPlant } from "./steps/plant";
 import { renderRegion } from "./steps/region";
 import { renderWildlifeIndex, renderWildlife } from "./steps/wildlife";
 import { renderPrivacy } from "./steps/privacy";
+import { renderSources } from "./steps/sources";
 import { initSavedMenu, closeSavedMenu } from "./components/saved-menu";
 
 type StepFn = (main: HTMLElement, param?: string) => void | (() => void) | Promise<void>;
@@ -32,6 +33,7 @@ const STEPS: Record<string, { fn: StepFn; label: string; inFlow: boolean }> = {
   search: { fn: renderSearch, label: "Search", inFlow: false },
   wildlife: { fn: renderWildlifeIndex, label: "Wildlife", inFlow: false },
   privacy: { fn: renderPrivacy, label: "Privacy", inFlow: false },
+  sources: { fn: renderSources, label: "Sources", inFlow: false },
 };
 
 const FLOW = ["location", "sun", "confirm", "results"];

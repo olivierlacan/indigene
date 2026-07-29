@@ -19,7 +19,7 @@ See **[`PROJECT_BRIEF.md`](PROJECT_BRIEF.md)** for the vision and decisions, and
 
 | Path | What it is |
 |---|---|
-| [`app/`](app/) | The PWA — vanilla TypeScript on the DOM, no framework, zero runtime deps, ~125 KB gzipped. This is the product. Offline-first, installable. |
+| [`app/`](app/) | The PWA — vanilla TypeScript on the DOM, no framework, zero runtime deps, ~179 KB gzipped. This is the product. Offline-first, installable. |
 | [`server/`](server/) | A thin **Hanami 2** JSON API. Its job: fetch site data (soil/elevation/climate) server-side to dodge browser CORS and keep future API keys off the client. The PWA works without it. |
 
 ## Quick start
@@ -67,14 +67,21 @@ changelog's header explains the format; `CLAUDE.md` explains the workflow.
 Plant recommendations are **tuned region by region**, and the app picks the
 right list from where you're standing — refined, when online, by the spot's real
 ecoregion (US EPA Omernik in the States, EEA biogeographical regions in Europe).
-Five regions ship today, across two continents:
+Eight regions ship today, across two continents — including the whole of
+metropolitan France:
 
 - **Mid-Atlantic / Northeast Piedmont** (40 species, Pennsylvania reference)
-- **Pacific Northwest, west of the Cascades** (24 species, Portland–Seattle reference)
+- **Pacific Northwest, west of the Cascades** (44 species, Portland–Seattle reference)
 - **Florida, north & central** (23 species, central-Florida reference)
 - **Florida, south & the Keys** (21 species, greater-Miami reference)
-- **Atlantic France** (23 species, Paris–Nantes–Bordeaux reference) — the first
-  European region; the app's wording is still English for now
+- **Atlantic France** (23 species, Paris–Nantes–Bordeaux reference)
+- **Continental France** (22 species, Dijon–Strasbourg–Lyon reference)
+- **Mediterranean France** (21 species, Provence, Languedoc & Corsica)
+- **The French Alps** (21 species, montane & subalpine, Grenoble–Briançon)
+
+The four French regions are the app's European foothold; their wording is still
+English for now. Their Lepidoptera host counts are computed from the openly
+licensed Gaytán 2026 European interaction matrix rather than estimated.
 
 Outside a covered region the sun/soil/climate readings still work; the app says
 plainly when it has no plant list for your spot yet. Adding a region is a data

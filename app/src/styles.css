@@ -157,8 +157,8 @@ a {
      viewport edge — overflow here pushed the whole document wider and put
      the Saved button off-screen. */
   flex-wrap: wrap;
-  gap: 0.5rem;
-  padding: 0.6rem 1rem calc(0.6rem);
+  gap: 0.3rem;
+  padding: 0.6rem 0.6rem calc(0.6rem);
   padding-top: max(0.6rem, env(safe-area-inset-top));
   background: var(--brand);
   color: var(--on-brand);
@@ -331,7 +331,7 @@ a {
    room for the full "🔖 Saved" label and larger type. */
 @media (max-width: 500px) {
   .app-title {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     letter-spacing: 0;
   }
   .site-nav {
@@ -339,11 +339,14 @@ a {
   }
   .site-nav a,
   .nav-menu-btn {
-    /* 0.35rem sides (was 0.4): with Roboto metrics (Android, and the
-       screenshot environment) the four nav items fit 390px with ~8px to
-       spare instead of by a knife-edge 1px; iOS's narrower SF gains more. */
-    padding: 0.25rem 0.35rem;
-    font-size: 0.85rem;
+    /* Measured, not eyeballed (scripts/_measure-header.mjs): title + all four
+       nav items must clear one line with real headroom, because iOS renders
+       SF and Apple color emoji (🌱, 🔖) wider than this Linux/Helvetica env —
+       the previous knife-edge fit here wrapped on a real iPhone. These sizes
+       leave ~36px slack at 390px and ~25px at 360px locally, which absorbs
+       that difference. */
+    padding: 0.25rem 0.28rem;
+    font-size: 0.8rem;
   }
   .nav-menu-label {
     /* Visually hidden; the button's aria-label still reads "Saved locations". */
@@ -360,24 +363,24 @@ a {
    "Indigene" still fits beside the nav. */
 @media (max-width: 365px) {
   .app-title {
-    font-size: 0.9rem;
+    font-size: 0.86rem;
   }
   .site-nav a,
   .nav-menu-btn {
-    padding: 0.25rem 0.32rem;
-    font-size: 0.82rem;
+    padding: 0.25rem 0.24rem;
+    font-size: 0.76rem;
   }
 }
 /* Very narrow (~340px and down, e.g. the original iPhone SE): shrink the nav
    further so the whole brand name still fits without wrapping or truncating. */
 @media (max-width: 340px) {
   .app-title {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
   .site-nav a,
   .nav-menu-btn {
-    padding: 0.25rem 0.28rem;
-    font-size: 0.76rem;
+    padding: 0.25rem 0.18rem;
+    font-size: 0.7rem;
   }
 }
 

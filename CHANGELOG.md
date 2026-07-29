@@ -119,6 +119,14 @@ subtitle on the What's new page.
   release page one directory up. The whole `dist/` is already uploaded by the
   Pages deploy, so the subdirectories ship with no workflow change.
 
+### Fixed
+
+- **The menu at the top of the app no longer spills onto a second line.** On
+  many phones the row of links — Explore, Search, Wildlife, and the bookmark —
+  had grown just wide enough to drop below the Indigene name, making the green
+  bar taller than it needed to be. The links now sit tidily on one line again,
+  from small phones up.
+
 ## [0.12] - 2026-07-28
 
 **See it near you**

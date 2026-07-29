@@ -46,7 +46,8 @@ export type { RawPlant };
 export const REGION: RegionMeta = {
   id: "france-atlantic",
   name: "Atlantic France",
-  reference: "Paris–Nantes–Bordeaux lowlands, oceanic west & north (≈ USDA zones 8a–9a)",
+  reference: "Paris, Nantes & Bordeaux",
+  zones: "≈8a–9a",
   note: "Native status is asserted for the Atlantic (oceanic) biogeographical region of metropolitan France — the mild, rainy west and north. The Mediterranean south, the Alps and Pyrenees, and the drier Continental east are different floras and are planned as their own regions; treat these recommendations as untested there. Host-insect figures are counted from the open European Lepidoptera–plant matrix (Gaytán et al. 2026) for native, oceanic-temperate relatives of each plant.",
   // Coarse box over the Atlantic-influenced west & north of metropolitan France,
   // from the Pyrenean foot (~43° N) to the Channel/Belgian border (~51.2° N),

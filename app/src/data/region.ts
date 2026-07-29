@@ -25,8 +25,21 @@ export interface RegionMeta {
   id: string;
   /** Human name shown in the UI, e.g. "Pacific Northwest (west of the Cascades)". */
   name: string;
-  /** The reference locale/zones the numbers are tuned to. */
+  /**
+   * The reference *place* the numbers are tuned to — "Pennsylvania",
+   * "Greater Miami & the Keys". Just the place: the hardiness range used to
+   * ride along in a parenthetical here, which made every line longer and
+   * buried the one part of it that is a standard, scannable value. That now
+   * lives in `zones` and is shown as its own chip.
+   */
   reference: string;
+  /**
+   * The USDA hardiness range the list is tuned to, as a bare range ready to
+   * follow the word "USDA" — "6b–7a", "10a–11a". European regions prefix a
+   * "≈" because USDA zones are a translation there, not the local convention:
+   * "≈8a–9a".
+   */
+  zones: string;
   /** Plain-language caveat about what "native here" means for this region. */
   note: string;
   /**

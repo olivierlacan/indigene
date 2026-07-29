@@ -22,7 +22,8 @@ export type { RawPlant };
 export const REGION: RegionMeta = {
   id: "mid-atlantic",
   name: "Mid-Atlantic / Northeast Piedmont",
-  reference: "Pennsylvania (USDA zones 6b–7a)",
+  reference: "Pennsylvania",
+  zones: "6b–7a",
   note: "Native here means native to this region specifically. Outside it, treat these picks as untested.",
   // Coarse box over the Piedmont/Northeast the seed list is tuned to: roughly
   // Virginia up through southern New England, west to the Appalachians.

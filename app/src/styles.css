@@ -1615,3 +1615,307 @@ details.weights[open] > summary {
 .lb-seen {
   display: block;
 }
+
+/* --- Wide pages (browse indexes on a laptop) ---------------------------- */
+/* Everything in this app is set to one narrow reading measure, which is right
+   for a plant profile and wrong for a list of cards: on a desktop the browse
+   indexes were a phone-width ribbon of cards down the middle with a screenful
+   of empty margin either side. `main.ts` marks those routes (Explore, the
+   region rosters, the wildlife index) and only they widen — the measure for
+   prose never changes. `--maxw` is what the main column, the step rail and the
+   footer all read, so overriding it here keeps the three aligned. */
+body[data-layout="wide"] {
+  --maxw: 62rem;
+}
+
+/* A list of self-contained cards that becomes columns when there's room. The
+   card floor is 19rem, so a phone always gets exactly one column (no card ever
+   squeezes below its natural width) and a 62rem page gets three. `auto-fit`
+   rather than a fixed count means the tablet widths in between get two
+   without another breakpoint. */
+.card-grid {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(19rem, 100%), 1fr));
+  align-items: start;
+}
+
+/* --- The bottom-of-card stats row --------------------------------------- */
+/* Shared by the region cards on Explore and the creature cards on Wildlife
+   (see components/card-stats.ts for why it's one component).
+
+   `margin-top: auto` is the point: the text above it varies in length, so a
+   row that simply follows the text sits at a different height on every card
+   and the eye has to hunt for it. Pinned to the bottom, a row of cards puts
+   its numbers on one line and reads like a table.
+
+   `nowrap` is the other point. Spelled-out labels ("44 natives · 6 keystones
+   · 11 wildlife ties") wrapped onto two lines at phone width, costing a line
+   of height on every card. Icon-and-number never wraps; the sentence lives in
+   the tooltip and in the accessible name. */
+.card-stats {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.9rem;
+  margin: 0;
+  margin-top: auto;
+  padding-top: 0.55rem;
+  font-size: 0.88rem;
+  font-weight: 650;
+  color: var(--brand-ink);
+}
+.card-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+  /* A tooltip is the only way to read these, so say so: the cursor changes,
+     and the row sits above any stretched card link that would eat the hover. */
+  cursor: help;
+  position: relative;
+  z-index: 1;
+}
+.card-stat-icon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95em;
+}
+/* The keystone arch is an inline SVG rather than an emoji, so it needs the
+   brand colour explicitly. */
+.card-stat-arch {
+  display: inline-flex;
+  color: var(--brand);
+}
+
+/* --- Explore: one card per region --------------------------------------- */
+/* The card is a region, not a plant. Reading order down the card is: where
+   this is → the one native starring on it → what the roster adds up to. The
+   whole card is the link to the region (the heading's anchor is stretched over
+   it), with the starring plant the one thing on top of that — so there are two
+   destinations and no third thing to aim at. */
+.region-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.9rem 1rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  /* Cards in a row end level with each other even when one region's name runs
+     to two lines and its neighbour's doesn't. */
+  height: 100%;
+}
+.region-card-name {
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.25;
+}
+/* Region names run from "Atlantic France" to "Pacific Northwest (west of the
+   Cascades)", so some wrap to two lines and some don't — which pushed every
+   row below them out of alignment with the neighbouring card. Reserving the
+   second line makes every card's header the same height, so the subtitles,
+   the rules, the starring plants and the stats all line up across a row.
+   Only once there's more than one column: in a single phone column there is
+   nothing to line up with, and an empty line would be pure waste. */
+@media (min-width: 46rem) {
+  .region-card-name {
+    min-height: 2.75rem; /* two lines at this size and line-height */
+  }
+}
+.region-card-name a {
+  color: inherit;
+}
+/* Stretch the heading's link over the whole card, so the card *is* the way
+   into the region — no second link at the bottom repeating it. Everything that
+   needs its own hover or click (the starring plant, the stat tooltips) lifts
+   itself above this with `z-index: 1`. */
+.region-card-name a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+}
+.region-card:hover {
+  border-color: var(--line-strong);
+}
+.region-card-ref {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+/* The starring plant: named, pictured, and given its one headline number —
+   but not explained. The paragraph that used to sit here is what the plant's
+   own page is for, and it made five regions read as five essays. */
+.region-card-star {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  margin-top: auto; /* pinned to the bottom, so cards in a row line up */
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--line);
+  /* Above the card's stretched link, so this one still goes to the plant. */
+  position: relative;
+  z-index: 1;
+}
+.region-card-star .plant-photo {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+.region-card-star-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.region-card-kicker {
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.region-card-plant {
+  font-weight: 700;
+  font-size: 1.02rem;
+  line-height: 1.2;
+}
+.region-card-star .plant-latin {
+  font-size: 0.85rem;
+}
+.region-card-host {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-top: 0.15rem;
+}
+.region-card-star:hover .region-card-plant,
+.region-card-star:focus-visible .region-card-plant {
+  text-decoration: underline;
+}
+/* The stats row sits below the starring plant, so it needs its own rule
+   rather than the shared `margin-top: auto` (which the star block already
+   claimed). */
+.region-card .card-stats {
+  margin-top: 0;
+  padding-top: 0.6rem;
+}
+
+/* --- Wildlife index: one card per creature ------------------------------ */
+/* Icon beside a name, a blurb of whatever length, and the reach figures level
+   with every other card's. */
+.wildlife-card {
+  display: flex;
+  gap: 0.7rem;
+  align-items: stretch;
+  text-decoration: none;
+  color: inherit;
+  padding: 0.7rem 0.85rem;
+  margin: 0;
+  height: 100%;
+}
+.wildlife-card-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+.wildlife-card-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+/* Prose keeps its measure even when the page around it widens: the *cards*
+   wanted the room, the sentences never did. */
+body[data-layout="wide"] .step-lede,
+body[data-layout="wide"] .note,
+body[data-layout="wide"] .confidence,
+body[data-layout="wide"] .app-footer p {
+  max-width: 36rem;
+}
+
+/* --- The USDA hardiness chip -------------------------------------------- */
+/* Split out of the reference string (see components/zone-chip.ts): the place
+   is prose, the zone is a value, and a value reads better as a badge than as a
+   parenthetical.
+
+   It's an outlined pill rather than a bare rule between the two halves. A
+   single vertical rule looks right while both fit on one line and stranded the
+   moment the chip wraps below the place — which it does on a phone, and on the
+   longer French reference lines. A closed shape reads as deliberate in either
+   position. */
+.zone-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  margin-left: 0.5rem;
+  padding: 0.02rem 0.5rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 0.85em;
+  font-weight: 650;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  /* A tooltip is the only place the caveat lives, so say it's hoverable — and
+     stay above any stretched card link that would otherwise eat the hover. */
+  cursor: help;
+  position: relative;
+  z-index: 1;
+}
+/* "USDA" is the scale's name, not part of the number — quieter, and the
+   letter-spacing keeps four capitals from reading as a shout. */
+.zone-chip-k {
+  font-weight: 700;
+  font-size: 0.82em;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+/* The place half of a reference line. */
+.zone-place {
+  min-width: 0;
+}
+/* On the region page the line sits under the title, above the lede — one
+   region, so the chip simply follows the place. */
+.region-ref {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  row-gap: 0.15rem;
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+/* On the Explore cards it's a different problem: eight cards side by side,
+   with place names from "Pennsylvania" to "Marseille, Montpellier & Nice".
+   Letting the chip follow the text put it in a different spot on every card
+   and dropped it below the place on the long ones — a ragged scatter of badges
+   instead of a column. */
+.region-card-ref {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  row-gap: 0.15rem;
+}
+/* Once the grid actually has columns, the row goes strictly one line: the
+   place takes what it needs, and the chip is pinned to the card's right edge
+   so the badges line up down the grid and every card's header is the same
+   height. Below that width there is a single column, nothing to line up with,
+   and a place name is worth more than a tidy edge — so it wraps instead of
+   truncating. */
+@media (min-width: 46rem) {
+  .region-card-ref {
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+  .region-card-ref .zone-place {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .region-card-ref .zone-chip {
+    flex: none;
+    margin-left: auto; /* pinned right, however short the place is */
+  }
+}

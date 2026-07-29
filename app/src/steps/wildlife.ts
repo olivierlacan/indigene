@@ -29,6 +29,7 @@ import { supportIcon, relianceIcon } from "../components/support-icon";
 import { silhouetteFor } from "../components/plant-card";
 import { keystoneIcon } from "../components/keystone-icon";
 import { wildlifeNearbySection } from "../components/wildlife-nearby";
+import { cardStats } from "../components/card-stats";
 import type { SupportLink } from "../types";
 
 // Shared honesty note: this is the notable, mapped wildlife — never a claim to
@@ -66,7 +67,11 @@ export function renderWildlifeIndex(main: HTMLElement): void {
           label.title,
         ]),
         el("p", { style: "margin:0 0 0.6rem;font-size:0.9rem;color:var(--ink-soft)" }, label.blurb),
-        ...inKind.map((row) => wildlifeCard(row.wildlife.id, row.plantCount, row.regionIds.length)),
+        // One column on a phone, columns on anything wider — the creature
+        // cards are self-contained, so a laptop should show a group at a
+        // glance rather than one card per screenful.
+        el("div", { class: "card-grid" },
+          inKind.map((row) => wildlifeCard(row.wildlife.id, row.plantCount, row.regionIds.length))),
       ]),
     );
   }
@@ -80,26 +85,40 @@ export function renderWildlifeIndex(main: HTMLElement): void {
   );
 }
 
+// A creature's card on the index. The blurbs are different lengths, so the
+// reach figures are pinned to the bottom of the card (`.card-stats`) rather
+// than left to flow after the text — in a grid that means every card's numbers
+// sit on the same line, and the eye reads down a column instead of hunting.
 function wildlifeCard(id: string, plantCount: number, regionCount: number): HTMLElement {
   const w = getWildlife(id);
   if (!w) return el("span", {});
-  const reach =
-    `🌱 ${plantCount} ${plantCount === 1 ? "plant" : "plants"}` +
-    (regionCount > 1 ? ` · 📍 ${regionCount} regions` : "") +
-    " · 🌿 native";
-  return el("a", {
-    href: `#/wildlife/${w.id}`,
-    class: "card",
-    style: "display:flex;gap:0.7rem;align-items:flex-start;text-decoration:none;color:inherit;padding:0.7rem 0.85rem;margin-bottom:0.5rem",
-  }, [
-    el("div", { "aria-hidden": "true", style: "font-size:1.6rem;line-height:1;flex:0 0 auto" }, w.icon),
-    el("div", { style: "min-width:0" }, [
-      el("div", { style: "font-weight:700" }, [
+  return el("a", { href: `#/wildlife/${w.id}`, class: "card wildlife-card" }, [
+    el("span", { class: "wildlife-card-icon", "aria-hidden": "true" }, w.icon),
+    el("span", { class: "wildlife-card-text" }, [
+      el("span", { style: "font-weight:700" }, [
         w.common,
         w.latin ? el("span", { class: "plant-latin", style: "font-weight:400;font-size:0.82rem" }, ` · ${w.latin}`) : null,
       ]),
-      el("div", { style: "font-size:0.85rem;color:var(--ink-soft);margin:0.15rem 0 0.3rem" }, w.blurb),
-      el("div", { style: "font-size:0.82rem;font-weight:650;color:var(--brand, #175e33)" }, reach),
+      el("span", { style: "font-size:0.85rem;color:var(--ink-soft);margin:0.15rem 0 0.3rem" }, w.blurb),
+      cardStats([
+        {
+          icon: "🌱",
+          value: String(plantCount),
+          label: `${plantCount} native ${plantCount === 1 ? "plant" : "plants"} in Indigene support the ${w.common.toLowerCase()}`,
+        },
+        regionCount > 1
+          ? {
+              icon: "📍",
+              value: String(regionCount),
+              label: `Found on the plant lists of ${regionCount} of Indigene's regions`,
+            }
+          : null,
+        {
+          icon: "🌿",
+          value: "native",
+          label: `The ${w.common.toLowerCase()} is itself a native animal — ${w.nativeBasis}`,
+        },
+      ]),
     ]),
   ]);
 }

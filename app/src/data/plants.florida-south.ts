@@ -29,7 +29,8 @@ export type { RawPlant };
 export const REGION: RegionMeta = {
   id: "florida-south",
   name: "Florida (south & the Keys)",
-  reference: "Greater Miami & the Keys (USDA zones 10a–11a)",
+  reference: "Greater Miami & the Keys",
+  zones: "10a–11a",
   note: "Native status is asserted for subtropical south Florida and the Keys, south of roughly Lake Okeechobee. Many species here are frost-tender and belong only in this region; north & central Florida has its own list.",
   // South Florida: from the Keys (~24.4° N) up to the ~27.2° N seam. Abuts —
   // never overlaps — the north & central Florida box.

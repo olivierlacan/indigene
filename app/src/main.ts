@@ -99,6 +99,28 @@ const SECTION_OF: Record<string, string> = {
   saved: "saved",
 };
 
+/**
+ * The pages that are a *list of independent cards* rather than a document.
+ *
+ * Everything else stays at the reading measure (`--maxw`, 34rem): a plant
+ * profile or an animal's page is prose, and prose set 1,000px wide is harder
+ * to read, not easier. But the browse indexes are grids of self-contained
+ * cards, and on a laptop a single 34rem column of them is a phone layout
+ * pretending to be a desktop one — a screenful of empty margin either side and
+ * five times the scrolling. Those widen, and their card grids reflow into
+ * columns (see `.card-grid`).
+ */
+const WIDE_STEPS = new Set(["plants", "regions", "wildlife"]);
+
+function updateLayout(step: string, param?: string): void {
+  // Only the parameter-less index of each: `#/plants/<slug>` is a profile and
+  // `#/wildlife/<id>` is an animal's story, both of which want the narrow
+  // measure. `#/regions/<id>` is the exception — it's a roster, all cards.
+  const wide =
+    WIDE_STEPS.has(step) && (!param || step === "regions");
+  document.body.dataset.layout = wide ? "wide" : "narrow";
+}
+
 function updateSiteNav(step: string): void {
   const section = SECTION_OF[step];
   // Both the plain links and the Saved menu button carry data-section.
@@ -117,6 +139,7 @@ async function route(): Promise<void> {
   document.title = BASE_TITLE; // plant pages set their own; everything else resets
   renderStepRail(step);
   updateSiteNav(step);
+  updateLayout(step, param);
   const fn = param
     ? step === "plants"
       ? renderPlant
@@ -132,11 +155,43 @@ async function route(): Promise<void> {
     const r = await result;
     if (typeof r === "function") cleanup = r;
   }
-  main.focus();
+  landAtTop();
+}
+
+/**
+ * Put a freshly rendered page at its top, and move focus into it.
+ *
+ * The order and the `preventScroll` are the whole point. Focusing an element
+ * scrolls it into view, and `#main` starts just below the sticky header — so a
+ * bare `main.focus()` measurably parks the document 61px down (the header's
+ * height) instead of at the top. A `scrollTo(0, 0)` *after* it hides that on
+ * Chromium, where the focus scroll is synchronous, but it's a race we don't
+ * need to be in: engines are free to defer focus scrolling to the next
+ * rendering opportunity, which lands it after the reset and leaves the page
+ * nudged down. Scrolling first and taking the scroll out of the focus call
+ * removes the race rather than winning it.
+ */
+function landAtTop(): void {
   window.scrollTo(0, 0);
+  main.focus({ preventScroll: true });
 }
 
 window.addEventListener("hashchange", route);
+
+/**
+ * A header link pointing at the section you're already in is a same-URL
+ * navigation: no `hashchange` fires, `route()` never runs, and the tap does
+ * nothing at all — so tapping "Wildlife" halfway down the wildlife index just
+ * ignores you. Treat that click as what it plainly means: take me back to the
+ * top of this page.
+ */
+document.querySelector(".site-nav")?.addEventListener("click", (e) => {
+  const link = (e.target as Element | null)?.closest("a[href^='#']");
+  if (!link) return;
+  if (link.getAttribute("href") !== location.hash) return;
+  e.preventDefault();
+  landAtTop();
+});
 
 // Offline indicator.
 const badge = document.getElementById("offline-badge") as HTMLButtonElement;

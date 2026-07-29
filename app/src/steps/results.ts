@@ -1,6 +1,7 @@
 import { el, clear, toast } from "../ui";
 import { navigate, store, persistPrefs } from "../state";
 import { loadPlants, regionForSite, REGIONS } from "../lib/plants";
+import { zoneChip } from "../components/zone-chip";
 import { rankPlants, siteMoisture } from "../lib/ranking";
 import type { Weights } from "../types";
 import { plantCard } from "../components/plant-card";
@@ -314,7 +315,7 @@ function renderNoRegion(main: HTMLElement): void {
           },
         }, [
           el("span", { class: "choice-title" }, r.meta.name),
-          el("span", { class: "choice-sub" }, r.meta.reference),
+          el("span", { class: "choice-sub" }, [r.meta.reference, " ", zoneChip(r.meta)]),
         ])
       ),
     ]),

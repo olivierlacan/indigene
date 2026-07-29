@@ -13,10 +13,12 @@ const { REGISTRY } = await loader.load("/src/data/registry.ts");
 const { buildIndex, resolveName, entryForPlant, deepLinks, auditRegistry } = await loader.load(
   "/src/lib/registry-core.ts",
 );
+// Same source of truth the app and the builder use, so the audit can never be
+// checking a smaller catalog than the one that shipped.
 const coverage = [];
-for (const id of ["mid-atlantic", "pnw", "florida", "florida-south"]) {
-  const { REGION, SEED_RAW } = await loader.load(`/src/data/plants.${id}.ts`);
-  for (const p of SEED_RAW) coverage.push({ regionId: REGION.id, plantId: p.id, scientificName: p.latin });
+const { REGIONS } = await loader.load("/src/data/regions.ts");
+for (const { meta, seed } of REGIONS) {
+  for (const p of seed) coverage.push({ regionId: meta.id, plantId: p.id, scientificName: p.latin });
 }
 await loader.close();
 

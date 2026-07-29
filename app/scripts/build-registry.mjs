@@ -23,12 +23,13 @@ import { openLoader } from "./_load-ts.mjs";
 const SCHEME_ORDER = ["ipni", "wfo", "gbif", "usda", "itis", "inat", "wikidata", "indigene"];
 const ANCHOR_ORDER = ["ipni", "wfo"];
 
+// Read the region set from the registry the app itself reads (data/regions.ts)
+// rather than a list repeated here. A hand-kept copy silently fell a region
+// behind the moment one was added — Atlantic France shipped and never reached
+// the registry — and a projection of the catalog that quietly omits part of the
+// catalog is worse than no projection at all.
 const loader = await openLoader();
-const REGIONS = [];
-for (const id of ["mid-atlantic", "pnw", "florida", "florida-south"]) {
-  const mod = await loader.load(`/src/data/plants.${id}.ts`);
-  REGIONS.push({ meta: mod.REGION, seed: mod.SEED_RAW });
-}
+const { REGIONS } = await loader.load("/src/data/regions.ts");
 await loader.close();
 
 const REGION_ORDER = REGIONS.map((r) => r.meta.id);

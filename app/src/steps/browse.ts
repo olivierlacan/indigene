@@ -5,6 +5,7 @@ import { el, clear } from "../ui";
 import { navigate } from "../state";
 import { REGIONS } from "../lib/plants";
 import { featuredPlant } from "../lib/explore";
+import { zoneChip } from "../components/zone-chip";
 import { ISSUES_URL } from "../lib/plain";
 
 export function renderBrowse(main: HTMLElement): void {
@@ -21,7 +22,8 @@ export function renderBrowse(main: HTMLElement): void {
       el("ul", { style: "margin:0.4rem 0 0.6rem;padding-left:1.2rem" },
         REGIONS.map((r) => el("li", { style: "margin-bottom:0.3rem" }, [
           el("a", { href: `#/regions/${r.meta.id}`, style: "font-weight:650" }, r.meta.name),
-          ` — ${r.meta.reference}`,
+          ` — ${r.meta.reference} `,
+          zoneChip(r.meta),
         ]))
       ),
       el("p", { style: "margin:0" }, [

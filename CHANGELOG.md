@@ -25,6 +25,13 @@ subtitle on the What's new page.
 
 ### Changed
 
+- The region cards on [Meet the natives](https://indigene.app/#/plants) no
+  longer carry a little "USDA 6b–7a" badge. Those numbers are a gardener's
+  shorthand for how cold a place gets in winter, and on a page whose only job
+  is "pick where you live" they were an answer to a question nobody had asked
+  yet. Each card now simply names its place. The badge is still on every
+  region's own page — right where you've settled on a region and started
+  asking what grows there.
 - Indigene has its own address now: **[indigene.app](https://indigene.app/)**.
   Older links to `olivierlacan.github.io/indigene` still work — they forward to
   the new one — and everything you saved stays where it is on your device.

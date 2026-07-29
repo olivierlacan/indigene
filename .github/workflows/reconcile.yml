@@ -1,21 +1,41 @@
 # Reconcile the registry's external identifiers (IPNI / WFO / GBIF / USDA / ITIS
-# / Wikidata) and open a PR with the result.
+# / iNaturalist / Wikidata) and open a PR with the result.
 #
-# The reconcile needs open internet (Wikidata + GBIF), which the local build
-# sandbox blocks — GitHub runners don't, so this is the natural home. It's a
-# SEPARATE job from the Pages deploy, so the deploy build stays hermetic: this
-# only produces a data change (registry.overrides.json + the regenerated
+# The reconcile needs open internet (Wikidata + GBIF + iNaturalist), which the
+# local build sandbox blocks — GitHub runners don't, so this is the natural home.
+# It's a SEPARATE job from the Pages deploy, so the deploy build stays hermetic:
+# this only produces a data change (registry.overrides.json + the regenerated
 # registry), which a human reviews and merges; the normal build then ships it.
 #
-# Trigger it from the Actions tab ("Run workflow") or let the quarterly schedule
-# catch taxonomic drift. Requires "Allow GitHub Actions to create and approve
-# pull requests" in the repo's Actions settings.
+# Trigger it from the Actions tab ("Run workflow") or let the schedules catch up:
+#   - quarterly, everything — taxonomic drift in the whole identifier bag;
+#   - monthly, "missing-inat" only — the cheap gap-fill. iNaturalist taxon ids
+#     are load-bearing (they're what joins a plant page to the real sightings
+#     on it), and a newly added region lands with none of them, so this notices
+#     within a month instead of waiting on the quarter. It's a no-op — no PR —
+#     when nothing is missing.
+#
+# Requires "Allow GitHub Actions to create and approve pull requests" in the
+# repo's Actions settings.
 name: Reconcile registry identifiers
 
 on:
   workflow_dispatch:
+    inputs:
+      scope:
+        description: "Which taxa to reconcile"
+        type: choice
+        default: all
+        options:
+          - all # every taxon, every identifier scheme
+          - missing-inat # only taxa with no iNaturalist taxon id yet
+      dry_run:
+        description: "Look up and report, but don't write or open a PR"
+        type: boolean
+        default: false
   schedule:
-    - cron: "0 6 1 1,4,7,10 *" # 06:00 UTC on the 1st, quarterly
+    - cron: "0 6 1 1,4,7,10 *" # 06:00 UTC on the 1st, quarterly — everything
+    - cron: "0 6 8 * *" # 06:00 UTC on the 8th, monthly — taxon-id gap-fill
 
 permissions:
   contents: write
@@ -28,6 +48,11 @@ concurrency:
 jobs:
   reconcile:
     runs-on: ubuntu-latest
+    env:
+      # workflow_dispatch carries an explicit scope; a schedule can't pass
+      # inputs, so the monthly cron is recognised by its own expression.
+      SCOPE: ${{ inputs.scope || (github.event.schedule == '0 6 8 * *' && 'missing-inat' || 'all') }}
+      DRY_RUN: ${{ inputs.dry_run || false }}
     steps:
       - uses: actions/checkout@v4
 
@@ -41,17 +66,40 @@ jobs:
         working-directory: app
         run: npm ci
 
-      - name: Reconcile identifiers (Wikidata + GBIF)
+      # Wikidata is the hub for the whole identifier bag; GBIF re-verifies its
+      # own usageKey; iNaturalist is asked directly for the taxon ids Wikidata's
+      # hand-curated P3151 doesn't have. --summary writes the reviewer-facing
+      # digest that becomes this run's PR body (and job summary).
+      - name: Reconcile identifiers (Wikidata + GBIF + iNaturalist)
         working-directory: app
-        run: npm run reconcile
+        run: |
+          args=()
+          if [ "$SCOPE" = "missing-inat" ]; then args+=(--missing inat); fi
+          if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
+          npm run reconcile -- "${args[@]}" --summary "$RUNNER_TEMP/reconcile-summary.md"
 
       - name: Regenerate the registry
+        if: env.DRY_RUN != 'true'
         working-directory: app
         run: npm run registry:build
 
       - name: Verify the registry
+        if: env.DRY_RUN != 'true'
         working-directory: app
         run: npm run registry:check
+
+      # The digest goes in the PR body so a reviewer sees what changed without
+      # reading a thousand-line JSON diff. Read into an output (not inlined)
+      # because the file is multi-line markdown.
+      - name: Read the reconcile summary
+        id: summary
+        if: always()
+        run: |
+          {
+            echo "text<<SUMMARY_EOF"
+            cat "$RUNNER_TEMP/reconcile-summary.md" 2>/dev/null || echo "_(no summary written)_"
+            echo "SUMMARY_EOF"
+          } >> "$GITHUB_OUTPUT"
 
       # continue-on-error so a blocked PR-creation doesn't red-fail the whole
       # run: the reconciled branch is still pushed (peter-evans pushes before it
@@ -61,19 +109,32 @@ jobs:
       # and you open the PR from the pushed branch in one click.
       - name: Open a PR with the reconciled identifiers
         id: cpr
+        if: env.DRY_RUN != 'true'
         continue-on-error: true
         uses: peter-evans/create-pull-request@v6
         with:
           branch: registry/reconcile
           title: "Reconcile registry external identifiers"
-          commit-message: "Reconcile registry external identifiers (Wikidata + GBIF)"
+          commit-message: "Reconcile registry external identifiers (Wikidata + GBIF + iNaturalist)"
           body: |
             Automated reconciliation of the registry's external identifiers
-            (IPNI / WFO / GBIF / USDA / ITIS / Wikidata) via the Wikidata hub,
-            with the GBIF usageKey verified against GBIF's match API.
+            (IPNI / WFO / GBIF / USDA / ITIS / iNaturalist / Wikidata) via the
+            Wikidata hub, with the GBIF usageKey verified against GBIF's match
+            API and any missing iNaturalist taxon id asked of iNaturalist itself.
+
+            Scope: `${{ env.SCOPE }}`.
+
+            ${{ steps.summary.outputs.text }}
 
             Review the identifier diff before merging — especially any taxon
-            whose `primaryId` changed or that remains unreconciled.
+            whose `primaryId` changed, any match iNaturalist filed under a
+            different accepted name, and anything still unreconciled.
+
+            **This is a data change with a visible effect:** every plant that
+            gains an `inat` id gets a working "See it growing near you" section
+            on its page. So the Changelog check on this PR is doing its job —
+            add the plain-words entry (which regions can now show sightings) as
+            part of reviewing, rather than labelling it away.
           add-paths: |
             app/src/data/registry.overrides.json
             app/src/data/registry.ts
@@ -82,7 +143,18 @@ jobs:
       - name: Summarize outcome
         if: always()
         run: |
-          if [ "${{ steps.cpr.outcome }}" = "success" ]; then
+          # `cat`, never an interpolated expression: the digest carries names
+          # that came back from an external API, and pasting those into a shell
+          # command is how you get a surprise.
+          {
+            echo "### Reconcile — scope \`$SCOPE\`"
+            echo ""
+            cat "$RUNNER_TEMP/reconcile-summary.md" 2>/dev/null || echo "_(no summary written)_"
+            echo ""
+          } >> "$GITHUB_STEP_SUMMARY"
+          if [ "$DRY_RUN" = "true" ]; then
+            echo "🔍 Dry run — nothing written, no PR opened." >> "$GITHUB_STEP_SUMMARY"
+          elif [ "${{ steps.cpr.outcome }}" = "success" ]; then
             echo "✅ Reconciled identifiers PR: ${{ steps.cpr.outputs.pull-request-url }}" >> "$GITHUB_STEP_SUMMARY"
           else
             {

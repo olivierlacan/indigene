@@ -23,6 +23,32 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Added
+
+- Internal: the identifier reconcile job can now ask iNaturalist directly for
+  the taxon ids Wikidata's hand-contributed property doesn't carry. Those ids
+  are what join a plant's page to the real sightings shown on it, so a missing
+  one means "See it growing near you" quietly has nothing to show. Run it from
+  Actions → "Reconcile registry identifiers" with scope `missing-inat` (or
+  `npm run reconcile -- --missing inat`) and it opens a PR with the result; a
+  monthly schedule now runs the same gap-fill on its own, so a newly added
+  region doesn't wait on the quarterly full pass.
+- Internal: a `Registry` check on pull requests that touch plant data. It
+  rebuilds the registry to catch a committed copy drifting from the catalog,
+  and annotates the PR with per-region iNaturalist coverage — the gap that let
+  21 of the Pacific Northwest's 44 natives, and every French region, ship with
+  no taxon ids and nothing to say so. `npm run registry:check` prints the same
+  table locally.
+
+### Fixed
+
+- Internal: reconcile no longer discards every identifier it found for a taxon
+  just because neither IPNI nor World Flora Online had an entry to anchor it
+  to. The anchor decides `primaryId`, not whether the rest of the bag is worth
+  keeping — a plant iNaturalist knows and IPNI doesn't still deserves its
+  sightings link.
+- Internal: `app/package-lock.json` caught up with the 0.13 version bump.
+
 ## [0.13] - 2026-07-29
 
 **More places, and a better way in**

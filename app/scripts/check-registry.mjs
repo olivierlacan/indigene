@@ -71,6 +71,29 @@ check("primaryId is a CURIE when set, null otherwise", REGISTRY.every((x) => x.p
 check("unreconciled taxa are reported (interim state before `npm run reconcile`)", audit.unreconciled.length === REGISTRY.filter((x) => !x.primaryId).length);
 console.log(`     (unreconciled: ${audit.unreconciled.length}/${REGISTRY.length} — awaiting external ids)`);
 
+// --- iNaturalist coverage, per region ----------------------------------------
+// Reported, not enforced: a region can legitimately ship its plant list before
+// the reconcile job has run. But a missing taxon id is not cosmetic — it's the
+// join between a plant page and the real sightings on it, so "See it growing
+// near you" quietly has nothing to show for every taxon counted here. Printed
+// per region because that's how the gap actually appears: a whole new region
+// lands unreconciled at once. Close it with the reconcile workflow (or
+// `npm run reconcile -- --missing inat`).
+const inatGaps = new Map(); // regionId → scientificName[]
+for (const e of REGISTRY) {
+  if (e.identifiers?.inat) continue;
+  for (const r of e.regions) inatGaps.set(r, [...(inatGaps.get(r) ?? []), e.scientificName]);
+}
+const totalByRegion = new Map();
+for (const e of REGISTRY) for (const r of e.regions) totalByRegion.set(r, (totalByRegion.get(r) ?? 0) + 1);
+const missingInat = REGISTRY.filter((x) => !x.identifiers?.inat).length;
+console.log(`\niNaturalist taxon ids: ${REGISTRY.length - missingInat}/${REGISTRY.length} present.`);
+for (const [regionId, total] of [...totalByRegion].sort()) {
+  const gaps = inatGaps.get(regionId)?.length ?? 0;
+  console.log(`  ${regionId.padEnd(22)} ${total - gaps}/${total}${gaps ? `  — missing: ${inatGaps.get(regionId).join(", ")}` : ""}`);
+}
+console.log(""); // blank line closes the block — CI lifts it out by that boundary
+
 // --- Deep links: fallback vs record behavior ---------------------------------
 // Tested on synthetic entries, not a real taxon, so these don't depend on
 // whether reconciliation has filled a given plant's ids yet (a reconciled plant

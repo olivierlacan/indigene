@@ -1640,12 +1640,61 @@ body[data-layout="wide"] {
   align-items: start;
 }
 
+/* --- The bottom-of-card stats row --------------------------------------- */
+/* Shared by the region cards on Explore and the creature cards on Wildlife
+   (see components/card-stats.ts for why it's one component).
+
+   `margin-top: auto` is the point: the text above it varies in length, so a
+   row that simply follows the text sits at a different height on every card
+   and the eye has to hunt for it. Pinned to the bottom, a row of cards puts
+   its numbers on one line and reads like a table.
+
+   `nowrap` is the other point. Spelled-out labels ("44 natives · 6 keystones
+   · 11 wildlife ties") wrapped onto two lines at phone width, costing a line
+   of height on every card. Icon-and-number never wraps; the sentence lives in
+   the tooltip and in the accessible name. */
+.card-stats {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.9rem;
+  margin: 0;
+  margin-top: auto;
+  padding-top: 0.55rem;
+  font-size: 0.88rem;
+  font-weight: 650;
+  color: var(--brand-ink);
+}
+.card-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+  /* A tooltip is the only way to read these, so say so: the cursor changes,
+     and the row sits above any stretched card link that would eat the hover. */
+  cursor: help;
+  position: relative;
+  z-index: 1;
+}
+.card-stat-icon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95em;
+}
+/* The keystone arch is an inline SVG rather than an emoji, so it needs the
+   brand colour explicitly. */
+.card-stat-arch {
+  display: inline-flex;
+  color: var(--brand);
+}
+
 /* --- Explore: one card per region --------------------------------------- */
 /* The card is a region, not a plant. Reading order down the card is: where
-   this is → what the roster adds up to → the one native starring on it →
-   the way in to the rest. Two destinations only (the roster, twice, and the
-   starring plant), so nothing on it is a guess about what you meant. */
+   this is → the one native starring on it → what the roster adds up to. The
+   whole card is the link to the region (the heading's anchor is stretched over
+   it), with the starring plant the one thing on top of that — so there are two
+   destinations and no third thing to aim at. */
 .region-card {
+  position: relative;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -1665,24 +1714,23 @@ body[data-layout="wide"] {
 .region-card-name a {
   color: inherit;
 }
+/* Stretch the heading's link over the whole card, so the card *is* the way
+   into the region — no second link at the bottom repeating it. Everything that
+   needs its own hover or click (the starring plant, the stat tooltips) lifts
+   itself above this with `z-index: 1`. */
+.region-card-name a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+}
+.region-card:hover {
+  border-color: var(--line-strong);
+}
 .region-card-ref {
   margin: 0;
   font-size: 0.85rem;
   color: var(--ink-soft);
-}
-/* Figures, not adjectives — and they wrap as whole phrases rather than
-   breaking "9 keystones" across two lines. */
-.region-card-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.15rem 0.7rem;
-  margin: 0.15rem 0 0;
-  font-size: 0.85rem;
-  font-weight: 650;
-  color: var(--brand-ink);
-}
-.region-card-stats > span {
-  white-space: nowrap;
 }
 
 /* The starring plant: named, pictured, and given its one headline number —
@@ -1697,6 +1745,9 @@ body[data-layout="wide"] {
   margin-top: auto; /* pinned to the bottom, so cards in a row line up */
   padding-top: 0.6rem;
   border-top: 1px solid var(--line);
+  /* Above the card's stretched link, so this one still goes to the plant. */
+  position: relative;
+  z-index: 1;
 }
 .region-card-star .plant-photo {
   width: 3.2rem;
@@ -1730,14 +1781,37 @@ body[data-layout="wide"] {
 .region-card-star:focus-visible .region-card-plant {
   text-decoration: underline;
 }
-/* Brand green, like every other "go deeper into the catalog" link — the
-   default link blue made the roster read as an aside rather than the card's
-   main way in. */
-.region-card-all {
-  font-size: 0.9rem;
-  font-weight: 650;
-  padding-top: 0.55rem;
-  color: var(--brand-ink);
+/* The stats row sits below the starring plant, so it needs its own rule
+   rather than the shared `margin-top: auto` (which the star block already
+   claimed). */
+.region-card .card-stats {
+  margin-top: 0;
+  padding-top: 0.6rem;
+}
+
+/* --- Wildlife index: one card per creature ------------------------------ */
+/* Icon beside a name, a blurb of whatever length, and the reach figures level
+   with every other card's. */
+.wildlife-card {
+  display: flex;
+  gap: 0.7rem;
+  align-items: stretch;
+  text-decoration: none;
+  color: inherit;
+  padding: 0.7rem 0.85rem;
+  margin: 0;
+  height: 100%;
+}
+.wildlife-card-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+.wildlife-card-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 /* Prose keeps its measure even when the page around it widens: the *cards*

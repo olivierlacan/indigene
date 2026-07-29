@@ -25,6 +25,43 @@ subtitle on the What's new page.
 
 ### Added
 
+- **All of France is covered now, not just the rainy west.** Three more parts
+  of the country have their own plant lists, each a genuinely different set of
+  plants rather than the same list shuffled:
+  [the Mediterranean south](https://olivierlacan.github.io/indigene/#/regions/france-mediterranean)
+  (Provence, the Languedoc coast and Corsica — holm oak, strawberry tree,
+  mastic, cistus, thyme and lavender, where the hard part of the year is the
+  dry summer, not the winter),
+  [the continental east](https://olivierlacan.github.io/indigene/#/regions/france-continental)
+  (Burgundy, Lorraine, Alsace and the Rhône — oak, beech, hornbeam, lime,
+  hawthorn and the chalk-meadow flowers that most French butterflies grow up
+  on), and
+  [the Alps](https://olivierlacan.github.io/indigene/#/regions/france-alpine)
+  (spruce, larch, arolla pine, bilberry, alpenrose and gentian, for gardens
+  high enough to have real snow). Stand anywhere in mainland France and the
+  app will now know which of the four lists is yours. The Pyrenees are
+  deliberately left out for now: they're a different set of plants again, and
+  we'd rather say "not yet" than guess.
+- **A lot more to plant in the Pacific Northwest.** The
+  [west-of-the-Cascades list](https://olivierlacan.github.io/indigene/#/regions/pnw)
+  grows from 24 plants to 44 — red alder, bitter cherry, vine maple, western
+  hemlock, Oregon ash and Pacific dogwood among the trees; salmonberry, red
+  elderberry, evergreen huckleberry, ninebark, twinberry and hazelnut among
+  the shrubs; and, for the first time in this region, a milkweed — showy
+  milkweed, the only thing a monarch caterpillar can eat, and the western
+  monarch badly needs more of it.
+- **Twenty new creatures on the
+  [wildlife pages](https://olivierlacan.github.io/indigene/#/wildlife)**, most
+  of them European, so browsing by animal now works for France too. Some of
+  the best stories in the whole app are in here: the
+  [large blue](https://olivierlacan.github.io/indigene/#/wildlife/large-blue),
+  whose caterpillar eats wild thyme for a few weeks and then gets carried into
+  an ants' nest, where it spends ten months eating the ants' own young; the
+  [spotted nutcracker](https://olivierlacan.github.io/indigene/#/wildlife/spotted-nutcracker),
+  which buries tens of thousands of pine seeds each autumn and plants the next
+  Alpine forest with the ones it forgets; and the
+  [two-tailed pasha](https://olivierlacan.github.io/indigene/#/wildlife/two-tailed-pasha),
+  Europe's biggest butterfly, which can raise its young on one plant only.
 - **Every release now has a page of its own.** The
   [What's new page](https://olivierlacan.github.io/indigene/release-notes/)
   is one long list, which made "look at what just shipped" impossible to
@@ -40,8 +77,9 @@ subtitle on the What's new page.
   [native French plants](https://olivierlacan.github.io/indigene/#/regions/france-atlantic) —
   oak and hawthorn, blackthorn and hazel, woodland bluebells, honeysuckle and
   foxgloves — ranked for your exact spot, each with what it does for local birds,
-  bees and butterflies. It's a carefully chosen starter list that will grow, and
-  the Mediterranean south, the Alps, and eastern France are planned next. (The
+  bees and butterflies. It's a carefully chosen starter list that will grow —
+  and the Mediterranean south, the Alps and eastern France have since landed
+  alongside it (see above), so the whole of mainland France is covered. (The
   app itself still speaks English for now — French wording is the next step.)
 - The app now understands Europe's natural regions, not only North America's.
   Online, it checks the official European map of
@@ -80,6 +118,30 @@ subtitle on the What's new page.
   remains an unrun cross-check. See `docs/host-counts-plan.md`.
 
 ### Changed
+
+- **[Explore](https://olivierlacan.github.io/indigene/#/plants) now leads with
+  places, not paragraphs.** It used to open with five plant descriptions, which
+  meant reading a lot before you got to the one thing you actually have to
+  choose: where you are. Each card is now a region — its name, the part of the
+  country it's tuned to, one native starring on the front of it, and three
+  small figures for what the list adds up to. The whole card takes you to that
+  region's plants. The full description of the starring plant lives on the
+  plant's own page, one tap away, which is where it belonged.
+- "Or browse by wildlife" has moved **below** the list of regions. It's a good
+  way in, but it was being offered before anyone had a chance to look at what
+  was behind the first door.
+- **Explore, the wildlife list and each region's plant list now use a big
+  screen properly.** On a laptop they were a phone-shaped ribbon down the
+  middle with empty space either side; now the cards spread into columns, so
+  you see a whole group at a glance instead of scrolling past one card at a
+  time. Sentences keep their comfortable reading width — it's the cards that
+  wanted the room.
+- **The little counts on each card sit at the bottom now, always in the same
+  place.** They used to follow the text, so they landed at a different height
+  on every card and you had to hunt for them. They're also shorter — an icon
+  and a number rather than a spelled-out label, which stops them wrapping onto
+  two lines on a phone. Hover or tap-and-hold any of them to read what it
+  means.
 
 - **The French caterpillar counts are now counted, not estimated.** Every
   [Atlantic France plant](https://olivierlacan.github.io/indigene/#/regions/france-atlantic)
@@ -126,6 +188,33 @@ subtitle on the What's new page.
   had grown just wide enough to drop below the Indigene name, making the green
   bar taller than it needed to be. The links now sit tidily on one line again,
   from small phones up.
+- **Tapping "Explore" or "Wildlife" at the top of the screen now always takes
+  you to the top of that page.** Two things were wrong: the page could end up
+  nudged down by about the height of the green bar, and tapping the name of the
+  section you were already in did nothing at all — so if you were halfway down
+  the wildlife list and tapped "Wildlife" hoping to get back to the top, you
+  stayed put.
+- Internal: `main.focus()` scrolls `#main` into view, and `#main` starts below
+  the sticky header — measurably parking the document 61px down. The
+  `scrollTo(0, 0)` on the next line masked it wherever focus scrolling is
+  synchronous; now the scroll happens first and the focus call passes
+  `preventScroll`. A delegated handler on `.site-nav` catches same-hash clicks,
+  which fire no `hashchange` and so never reached the router.
+- Internal: the registry builder and its audit each kept a hardcoded list of
+  regions, and both had silently fallen behind — Atlantic France shipped
+  without ever reaching the registry. Both now read `data/regions.ts`. The
+  registry goes from 116 to 198 taxa.
+- Internal: region coverage boxes may now overlap. France's four
+  biogeographical zones interlock and no set of rectangles separates them, so
+  `regionsForCoords` returns every candidate box and the live ecoregion code
+  picks between them; offline, the tightest box wins. Verified against 17
+  French cities in both modes, and Bend, Oregon still correctly falls through
+  to no list east of the Cascade crest.
+- Internal: `docs/coverage-plan.md` records how to decide which natives a
+  region needs next, and which open datasets (GBIF occurrences, USDA PLANTS
+  county data, WCVP, DBIF, GloBI, iNaturalist phenology) can carry which
+  field. The bundle figure quoted across the docs is re-measured: ~125 KB →
+  ~179 KB gzipped.
 
 ## [0.12] - 2026-07-28
 

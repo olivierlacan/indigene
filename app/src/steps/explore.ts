@@ -15,6 +15,7 @@ import { featuredPlant } from "../lib/explore";
 import { wildlifeCountForRegion } from "../lib/wildlife";
 import { silhouetteFor } from "../components/plant-card";
 import { keystoneIcon } from "../components/keystone-icon";
+import { cardStats } from "../components/card-stats";
 
 export function renderExplore(main: HTMLElement): void {
   clear(main);
@@ -49,9 +50,11 @@ export function renderExplore(main: HTMLElement): void {
 }
 
 /**
- * One region as a card. Two destinations, no more: the region's roster (the
- * heading and the footer link, both of which say the same thing so either tap
- * lands where you expect) and the starring plant's profile.
+ * One region as a card. The **whole card** is the way into the region's roster
+ * — the heading's link is stretched over it (see `.region-card-name a::after`)
+ * — so there's nothing to aim at and no footer link repeating what the heading
+ * already says. The starring plant sits above that overlay and keeps its own
+ * link to its profile; those two are the card's only destinations.
  */
 function regionCard(region: RegionDef): HTMLElement {
   const plants = loadPlants(region);
@@ -66,21 +69,6 @@ function regionCard(region: RegionDef): HTMLElement {
       el("a", { href: `#/regions/${region.meta.id}` }, region.meta.name),
     ]),
     el("p", { class: "region-card-ref" }, region.meta.reference),
-    // What the roster adds up to, as figures rather than adjectives. Each is a
-    // count the region page can show its working for, so nothing here is a new
-    // claim — it's the same data the roster's stat tiles explain in full.
-    el("p", { class: "region-card-stats" }, [
-      el("span", {}, [el("span", { "aria-hidden": "true" }, "🌿 "), `${count} natives`]),
-      keystones
-        ? el("span", {}, [
-            el("span", { "aria-hidden": "true", style: "display:inline-flex;vertical-align:-0.15em;color:var(--brand)" }, [keystoneIcon(13)]),
-            ` ${keystones} keystone${keystones === 1 ? "" : "s"}`,
-          ])
-        : null,
-      creatures
-        ? el("span", {}, [el("span", { "aria-hidden": "true" }, "🦋 "), `${creatures} wildlife ties`])
-        : null,
-    ]),
     el("a", { class: "region-card-star", href: `#/plants/${p.id}` }, [
       el("span", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
       el("span", { class: "region-card-star-text" }, [
@@ -103,12 +91,30 @@ function regionCard(region: RegionDef): HTMLElement {
         ]),
       ]),
     ]),
-    // Short on purpose, and context-carried: the card's heading already says
-    // which region this is, so the label never grows with the region's name.
-    el("a", {
-      class: "region-card-all",
-      href: `#/regions/${region.meta.id}`,
-      "aria-label": `All ${count} natives of ${region.meta.name}`,
-    }, `All ${count} natives →`),
+    // What the roster adds up to, as figures rather than adjectives — and the
+    // plant count among them, which is why the card needs no "all N natives"
+    // link. Nothing here is a new claim: it's the same data the region page's
+    // stat tiles explain in full.
+    cardStats([
+      {
+        icon: "🌿",
+        value: String(count),
+        label: `${count} native plants on Indigene's list for ${region.meta.name}`,
+      },
+      keystones
+        ? {
+            icon: () => el("span", { class: "card-stat-arch" }, [keystoneIcon(13)]),
+            value: String(keystones),
+            label: `${keystones} keystone plant${keystones === 1 ? "" : "s"} — the ones local food webs lean on hardest`,
+          }
+        : null,
+      creatures
+        ? {
+            icon: "🦋",
+            value: String(creatures),
+            label: `${creatures} kinds of wildlife with a documented tie to these plants`,
+          }
+        : null,
+    ]),
   ]);
 }

@@ -1822,3 +1822,58 @@ body[data-layout="wide"] .confidence,
 body[data-layout="wide"] .app-footer p {
   max-width: 36rem;
 }
+
+/* --- The USDA hardiness chip -------------------------------------------- */
+/* Split out of the reference string (see components/zone-chip.ts): the place
+   is prose, the zone is a value, and a value reads better as a badge than as a
+   parenthetical.
+
+   It's an outlined pill rather than a bare rule between the two halves. A
+   single vertical rule looks right while both fit on one line and stranded the
+   moment the chip wraps below the place — which it does on a phone, and on the
+   longer French reference lines. A closed shape reads as deliberate in either
+   position. */
+.zone-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  margin-left: 0.5rem;
+  padding: 0.02rem 0.5rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 0.85em;
+  font-weight: 650;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  /* A tooltip is the only place the caveat lives, so say it's hoverable — and
+     stay above any stretched card link that would otherwise eat the hover. */
+  cursor: help;
+  position: relative;
+  z-index: 1;
+}
+/* "USDA" is the scale's name, not part of the number — quieter, and the
+   letter-spacing keeps four capitals from reading as a shout. */
+.zone-chip-k {
+  font-weight: 700;
+  font-size: 0.82em;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+/* The place half of a reference line, so the two can sit on one row and the
+   chip can drop below cleanly when there isn't room. */
+.zone-place {
+  min-width: 0;
+}
+.region-card-ref,
+.region-ref {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  row-gap: 0.15rem;
+}
+/* On the region page the line sits under the title, above the lede. */
+.region-ref {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}

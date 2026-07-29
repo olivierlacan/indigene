@@ -27,7 +27,8 @@ export type { RawPlant };
 export const REGION: RegionMeta = {
   id: "pnw",
   name: "Pacific Northwest (west of the Cascades)",
-  reference: "Portland–Seattle lowlands (USDA zones 8a–9a)",
+  reference: "Portland–Seattle lowlands",
+  zones: "8a–9a",
   note: "Native status is asserted for the maritime, west-of-the-Cascades Pacific Northwest. East of the Cascade crest is a drier, different flora — treat these recommendations as untested there.",
   // Coarse box over western Oregon and Washington, from the Oregon–California
   // line (42° N) to the Canadian border (49° N), and from the coast inland to

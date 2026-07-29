@@ -136,6 +136,15 @@ subtitle on the What's new page.
   you see a whole group at a glance instead of scrolling past one card at a
   time. Sentences keep their comfortable reading width — it's the cards that
   wanted the room.
+- **The USDA hardiness zone is its own little badge now**, instead of trailing
+  along in brackets after the place. "Pennsylvania (USDA zones 6b–7a)" is now
+  "Pennsylvania" with a small `USDA 6b–7a` tag beside it — shorter, and the
+  number is easy to spot because it's the one thing on the line that looks
+  like a label. Hover or tap-and-hold it and it explains what the zone means;
+  on the French regions it also says that American zones are a translation
+  there rather than the local way of talking about winter cold. The reference
+  places got shorter too, so the four French ones now read as a couple of city
+  names rather than a paragraph.
 - **The little counts on each card sit at the bottom now, always in the same
   place.** They used to follow the text, so they landed at a different height
   on every card and you had to hunt for them. They're also shorter — an icon

@@ -48,7 +48,8 @@ export type { RawPlant };
 export const REGION: RegionMeta = {
   id: "france-continental",
   name: "Continental France",
-  reference: "Burgundy, Lorraine, Alsace & the Rhône corridor — Dijon to Strasbourg (≈ USDA zones 6b–8a)",
+  reference: "Dijon, Nancy & Strasbourg",
+  zones: "≈6b–8a",
   note: "Native status is asserted for the Continental biogeographical region of metropolitan France — the centre and east, with colder winters and hotter summers than the Atlantic coast. The oceanic west, the Mediterranean south and the Alps are different floras with their own lists; treat these recommendations as untested there. Host-insect figures are counted from the open European Lepidoptera–plant matrix (Gaytán et al. 2026) for native, continental-temperate relatives of each plant.",
   // Coarse box over the continental centre and east: Burgundy, Franche-Comté,
   // Lorraine, Alsace and the Rhône valley. It overlaps the Atlantic France box

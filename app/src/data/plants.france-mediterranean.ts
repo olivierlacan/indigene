@@ -49,7 +49,8 @@ export type { RawPlant };
 export const REGION: RegionMeta = {
   id: "france-mediterranean",
   name: "Mediterranean France",
-  reference: "Provence, Languedoc & Corsica — Marseille to Nice (≈ USDA zones 8b–10a)",
+  reference: "Marseille, Montpellier & Nice",
+  zones: "≈8b–10a",
   note: "Native status is asserted for the Mediterranean biogeographical region of metropolitan France — the hot, dry south and Corsica. The oceanic west, the Continental east and the Alps are different floras with their own lists; treat these recommendations as untested there. Host-insect figures are counted from the open European Lepidoptera–plant matrix (Gaytán et al. 2026) for native, Mediterranean-zone relatives of each plant.",
   // Coarse box over the French Mediterranean: the coast and its hinterland from
   // the Spanish border eastward to Menton, plus Corsica. It deliberately

@@ -12,6 +12,7 @@ import type { RegionDef } from "../lib/plants";
 import { silhouetteFor } from "../components/plant-card";
 import { keystoneIcon } from "../components/keystone-icon";
 import { regionStatGrid } from "../components/region-stats";
+import { regionRefLine, zoneChip } from "../components/zone-chip";
 import type { Plant, PlantForm } from "../types";
 
 const FORM_ORDER: PlantForm[] = ["tree", "shrub", "perennial", "grass", "vine", "groundcover", "fern"];
@@ -83,6 +84,9 @@ export function renderRegion(main: HTMLElement, param?: string): void {
 
   main.append(
     el("h2", { class: "step-title" }, region.meta.name),
+    // The place in the sentence, the hardiness range as its own badge beside
+    // it — same split as the region cards on Explore.
+    regionRefLine(region.meta, "region-ref"),
     el("p", { class: "step-lede" },
       `Every native we know for ${region.meta.reference} — tap any plant for its full profile.`),
     regionStatGrid(region, plants),
@@ -137,8 +141,11 @@ function renderCategory(
     ]),
     el("h2", { class: "step-title" }, label),
     inForm.length
-      ? el("p", { class: "step-lede" },
-          `${inForm.length} native ${inForm.length === 1 ? "plant" : "plants"} for ${region.meta.reference} — tap any for its full profile.`)
+      ? el("p", { class: "step-lede" }, [
+          `${inForm.length} native ${inForm.length === 1 ? "plant" : "plants"} for ${region.meta.reference} `,
+          zoneChip(region.meta),
+          " — tap any for its full profile.",
+        ])
       : el("p", { class: "step-lede" },
           `Our ${region.meta.name} list has no ${label.toLowerCase()} yet — the seed lists are curated and grow carefully. Try another category, or the same category in a region below.`),
     ...(rows.length > 1 ? [filterField(rows, [])] : []),

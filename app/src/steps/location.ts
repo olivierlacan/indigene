@@ -4,6 +4,7 @@ import { fetchSite } from "../lib/site";
 import { searchPlaces, placeLabel } from "../lib/geocode";
 import { REGIONS } from "../lib/plants";
 import { regionForCoords } from "../data/regions";
+import { zoneChip } from "../components/zone-chip";
 import { ISSUES_URL } from "../lib/plain";
 import { TILE_SIZE, getTile, metersPerPixel, tileCoords } from "../lib/tiles";
 import { whyThis } from "../components/learn";
@@ -349,7 +350,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
           },
         }, [
           el("span", { class: "choice-title" }, r.meta.name),
-          el("span", { class: "choice-sub" }, r.meta.reference),
+          el("span", { class: "choice-sub" }, [r.meta.reference, " ", zoneChip(r.meta)]),
         ])
       )
     );

@@ -151,7 +151,7 @@ Two more conventions the compiler understands:
 
 - **Link what you describe.** When an entry mentions something with an
   address — a page, a section — link it with the full live URL
-  (`https://olivierlacan.github.io/indigene/#/wildlife`), so a reader who
+  (`https://indigene.app/#/wildlife`), so a reader who
   didn't know the feature existed can go straight to it.
 - **One thumbnail per release, no more.** A release may show a single square
   picture: make it from an existing PR screenshot with

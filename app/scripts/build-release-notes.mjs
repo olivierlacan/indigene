@@ -48,7 +48,7 @@ const RAW_BASE = "https://raw.githubusercontent.com/olivierlacan/indigene/main/"
 // Both the index and each release page declare a canonical URL built from
 // this, so search engines and link previews credit one address per release
 // rather than treating the index and its anchors as duplicates.
-const SITE = "https://olivierlacan.github.io/indigene/release-notes/";
+const SITE = "https://indigene.app/release-notes/";
 const resolveUrl = (url) =>
   /^(https?:|mailto:|#|\/|\.\.?\/)/.test(url) ? url : RAW_BASE + url;
 

@@ -23,6 +23,31 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Changed
+
+- Indigene has its own address now: **[indigene.app](https://indigene.app/)**.
+  Older links to `olivierlacan.github.io/indigene` still work — they forward to
+  the new one — and everything you saved stays where it is on your device.
+
+### Fixed
+
+- The first pages published at [indigene.app](https://indigene.app/) arrived as
+  a bare list of blue links, with no colours, pictures, or layout. The page was
+  still asking for its styles and code at the old address, which lived one
+  folder deeper; on the new site those files sit at the top, so nothing
+  answered. They're asked for in the right place now, and the app looks and
+  works the way it always has.
+- Sharing a plant's own web address (like
+  [indigene.app/plants/quercus-alba](https://indigene.app/plants/quercus-alba))
+  works again on the new domain. Those addresses are handed back to the app on
+  arrival, and the hand-off was still assuming the old, one-folder-deeper site.
+- Internal: the deploy builds with `BASE_PATH: /` rather than reading
+  `configure-pages`' `base_path`, which reports `/indigene` for a project Pages
+  site and produced the 404ing `/indigene/assets/…` URLs. `app/public/CNAME`
+  now ships the custom domain in the artifact, `404.html` folds the whole path
+  into the hash route, and the release-notes pages declare their canonical URLs
+  under `indigene.app`.
+
 ### Added
 
 - Internal: the identifier reconcile job can now ask iNaturalist directly for
@@ -61,22 +86,22 @@ subtitle on the What's new page.
 - **All of France is covered now, not just the rainy west.** Three more parts
   of the country have their own plant lists, each a genuinely different set of
   plants rather than the same list shuffled:
-  [the Mediterranean south](https://olivierlacan.github.io/indigene/#/regions/france-mediterranean)
+  [the Mediterranean south](https://indigene.app/#/regions/france-mediterranean)
   (Provence, the Languedoc coast and Corsica — holm oak, strawberry tree,
   mastic, cistus, thyme and lavender, where the hard part of the year is the
   dry summer, not the winter),
-  [the continental east](https://olivierlacan.github.io/indigene/#/regions/france-continental)
+  [the continental east](https://indigene.app/#/regions/france-continental)
   (Burgundy, Lorraine, Alsace and the Rhône — oak, beech, hornbeam, lime,
   hawthorn and the chalk-meadow flowers that most French butterflies grow up
   on), and
-  [the Alps](https://olivierlacan.github.io/indigene/#/regions/france-alpine)
+  [the Alps](https://indigene.app/#/regions/france-alpine)
   (spruce, larch, arolla pine, bilberry, alpenrose and gentian, for gardens
   high enough to have real snow). Stand anywhere in mainland France and the
   app will now know which of the four lists is yours. The Pyrenees are
   deliberately left out for now: they're a different set of plants again, and
   we'd rather say "not yet" than guess.
 - **A lot more to plant in the Pacific Northwest.** The
-  [west-of-the-Cascades list](https://olivierlacan.github.io/indigene/#/regions/pnw)
+  [west-of-the-Cascades list](https://indigene.app/#/regions/pnw)
   grows from 24 plants to 44 — red alder, bitter cherry, vine maple, western
   hemlock, Oregon ash and Pacific dogwood among the trees; salmonberry, red
   elderberry, evergreen huckleberry, ninebark, twinberry and hazelnut among
@@ -84,30 +109,30 @@ subtitle on the What's new page.
   milkweed, the only thing a monarch caterpillar can eat, and the western
   monarch badly needs more of it.
 - **Twenty new creatures on the
-  [wildlife pages](https://olivierlacan.github.io/indigene/#/wildlife)**, most
+  [wildlife pages](https://indigene.app/#/wildlife)**, most
   of them European, so browsing by animal now works for France too. Some of
   the best stories in the whole app are in here: the
-  [large blue](https://olivierlacan.github.io/indigene/#/wildlife/large-blue),
+  [large blue](https://indigene.app/#/wildlife/large-blue),
   whose caterpillar eats wild thyme for a few weeks and then gets carried into
   an ants' nest, where it spends ten months eating the ants' own young; the
-  [spotted nutcracker](https://olivierlacan.github.io/indigene/#/wildlife/spotted-nutcracker),
+  [spotted nutcracker](https://indigene.app/#/wildlife/spotted-nutcracker),
   which buries tens of thousands of pine seeds each autumn and plants the next
   Alpine forest with the ones it forgets; and the
-  [two-tailed pasha](https://olivierlacan.github.io/indigene/#/wildlife/two-tailed-pasha),
+  [two-tailed pasha](https://indigene.app/#/wildlife/two-tailed-pasha),
   Europe's biggest butterfly, which can raise its young on one plant only.
 - **Every release now has a page of its own.** The
-  [What's new page](https://olivierlacan.github.io/indigene/release-notes/)
+  [What's new page](https://indigene.app/release-notes/)
   is one long list, which made "look at what just shipped" impossible to
   share — you could only send someone the whole page and tell them where to
   scroll. Now each release also lives at its own address, like
-  [Version 0.12](https://olivierlacan.github.io/indigene/release-notes/0.12/):
+  [Version 0.12](https://indigene.app/release-notes/0.12/):
   tap a release's title to open it on its own, with a link back to all
   releases and links on to the ones either side of it. The address stays put
   as new releases pile up on top.
 - Indigene now reaches its first place outside the United States: the mild,
   rainy Atlantic west and north of **France** — Paris, Nantes, Bordeaux, Rennes,
   Lille and the countryside between. Stand in a spot there and you'll get
-  [native French plants](https://olivierlacan.github.io/indigene/#/regions/france-atlantic) —
+  [native French plants](https://indigene.app/#/regions/france-atlantic) —
   oak and hawthorn, blackthorn and hazel, woodland bluebells, honeysuckle and
   foxgloves — ranked for your exact spot, each with what it does for local birds,
   bees and butterflies. It's a carefully chosen starter list that will grow —
@@ -130,7 +155,7 @@ subtitle on the What's new page.
   `name`, and a region declares the codes it covers under `meta.ecoregion`.
   See `docs/france-localization-plan.md`.
 - **A page that shows our working.**
-  [Where our numbers come from](https://olivierlacan.github.io/indigene/#/sources)
+  [Where our numbers come from](https://indigene.app/#/sources)
   lays out, in plain words, where every figure in Indigene actually comes
   from — and marks each one as counted from real data, worked out by the app,
   or our own estimate. It also says what we're assuming, and names the numbers
@@ -152,7 +177,7 @@ subtitle on the What's new page.
 
 ### Changed
 
-- **[Explore](https://olivierlacan.github.io/indigene/#/plants) now leads with
+- **[Explore](https://indigene.app/#/plants) now leads with
   places, not paragraphs.** It used to open with five plant descriptions, which
   meant reading a lot before you got to the one thing you actually have to
   choose: where you are. Each card is now a region — its name, the part of the
@@ -188,7 +213,7 @@ subtitle on the What's new page.
   means.
 
 - **The French caterpillar counts are now counted, not estimated.** Every
-  [Atlantic France plant](https://olivierlacan.github.io/indigene/#/regions/france-atlantic)
+  [Atlantic France plant](https://indigene.app/#/regions/france-atlantic)
   shipped with an honest guess at how many kinds of caterpillar it feeds,
   because no European tally was available to us. One is now — an open dataset
   covering 5,152 European butterflies and moths — so the guesses are gone and
@@ -201,7 +226,7 @@ subtitle on the What's new page.
   order, and we think a fairer one.
 - **"Where our numbers come from" is easier to read, and says "calculated"
   instead of "worked out".** The
-  [page that tells you how sure we are](https://olivierlacan.github.io/indigene/#/sources)
+  [page that tells you how sure we are](https://indigene.app/#/sources)
   used to be one long list where every line ended in a little capsule —
   COUNTED, WORKED OUT, OUR ESTIMATE — so you had to read eleven capsules to
   work out which numbers were solid. Now the numbers are sorted into three
@@ -270,7 +295,7 @@ subtitle on the What's new page.
 ### Added
 
 - **See the wildlife near you.** Every creature in the
-  [wildlife browser](https://olivierlacan.github.io/indigene/#/wildlife) — the
+  [wildlife browser](https://indigene.app/#/wildlife) — the
   monarch, the luna moth, the gopher tortoise — now has a "See it near you"
   section. Share your location *or* just type a ZIP code, and Indigene pulls
   real, community-verified photos of that animal spotted near there, or you can
@@ -304,11 +329,11 @@ subtitle on the What's new page.
   it; and exactly which public science services your browser talks to, and what
   each is told. Reach it from the footer on any page, and from a short "🔒 …"
   note right where the app asks for your location or saves a spot. See it at
-  [Privacy & safety](https://olivierlacan.github.io/indigene/#/privacy).
+  [Privacy & safety](https://indigene.app/#/privacy).
 - Internal: the Privacy & safety page and its contextual links go through a
   shared `components/privacy-link.ts`. Combined with the wildlife-sightings
   work above, the bundle is now ~111 KB gzipped.
-- Every [region's page](https://olivierlacan.github.io/indigene/#/regions/mid-atlantic)
+- Every [region's page](https://indigene.app/#/regions/mid-atlantic)
   now opens with the same kind of at-a-glance number tiles a plant's page has:
   how many native plants are on the list, how many kinds of caterpillars its
   best plant can feed (up to 511 species on white oak alone in the
@@ -355,14 +380,14 @@ subtitle on the What's new page.
 - Region pages now lead with just the region's name — "Mid-Atlantic /
   Northeast Piedmont" instead of "Every native we know for Mid-Atlantic /
   Northeast Piedmont" — and say the rest in one short line underneath.
-- The showcase cards on [Meet the natives](https://olivierlacan.github.io/indigene/#/plants)
+- The showcase cards on [Meet the natives](https://indigene.app/#/plants)
   are more compact: the keystone mark now sits beside the plant's name as a
   small arch, and "Full profile →" tucks in at the end of the description
   instead of taking a line of its own.
 - The fine print about what "native" means on a region's page is shorter and
   plainer: native here means native to this region specifically — outside it,
   treat the picks as untested.
-- The [Where are you standing?](https://olivierlacan.github.io/indigene/#/location)
+- The [Where are you standing?](https://indigene.app/#/location)
   step now shows one way of setting your spot at a time. Using your device's
   location leads, and a small link — "Don't want to use your location? Use a
   ZIP code or pick a region instead." — swaps in the town search or the region
@@ -381,7 +406,7 @@ subtitle on the What's new page.
 
 ### Added
 
-- A public [What's new page](https://olivierlacan.github.io/indigene/release-notes/):
+- A public [What's new page](https://indigene.app/release-notes/):
   every release of Indigene described in plain words, newest first. Nothing to
   install, no account — it's just a web page you can share.
 - A "See what's new" link in the app's footer, so the notes are one tap away.
@@ -400,7 +425,7 @@ subtitle on the What's new page.
 - The growth chart's labels are a touch bigger and drawn in the page's
   strongest text color, so the feet markings and year captions are easy to
   read in both light and dark mode — even in bright sun.
-- When you [search for a plant](https://olivierlacan.github.io/indigene/#/search),
+- When you [search for a plant](https://indigene.app/#/search),
   each result now underlines the part of its name that matches what you typed,
   so you can see at a glance why it showed up. And when a plant matched through
   a name it's less commonly known by — like "Maypop" for Purple
@@ -408,7 +433,7 @@ subtitle on the What's new page.
 - The What's new page now uses the changelog's own headings — Added, Changed,
   Fixed — instead of renaming them.
 - Release notes now link to the things they describe — like the
-  [wildlife browser](https://olivierlacan.github.io/indigene/#/wildlife) — so
+  [wildlife browser](https://indigene.app/#/wildlife) — so
   you can go straight from reading about a feature to trying it.
 - Internal: this `CHANGELOG.md` is the single source of the What's new page.
   `app/scripts/build-release-notes.mjs` compiles it to a static, app-styled
@@ -483,7 +508,7 @@ subtitle on the What's new page.
 
 ### Added
 
-- A [Browse page](https://olivierlacan.github.io/indigene/#/browse) of its
+- A [Browse page](https://indigene.app/#/browse) of its
   own: the regions we cover and "start from a plant" now live one tap from
   the home page — for anyone who'd rather look around
   without sharing their location.
@@ -544,7 +569,7 @@ subtitle on the What's new page.
 - A built-in plant name book (a *registry*): every plant Indigene knows has
   exactly one entry tying together its scientific name, its common names, and
   its identity in the world's big plant databases.
-- A [search page](https://olivierlacan.github.io/indigene/#/search): type any
+- A [search page](https://indigene.app/#/search): type any
   name — common or scientific — and Indigene finds the
   plant, or says honestly when a name could mean more than one plant.
 - Plant pages now show **references**: links to the very same plant at USDA,
@@ -572,7 +597,7 @@ subtitle on the What's new page.
 
 ### Added
 
-- [Browse by wildlife](https://olivierlacan.github.io/indigene/#/wildlife):
+- [Browse by wildlife](https://indigene.app/#/wildlife):
   start from a butterfly, moth, bee, bird, or mammal and
   see which native plants support it — because "which plants bring monarchs?"
   is often the real question.
@@ -662,7 +687,7 @@ subtitle on the What's new page.
 
 ### Added
 
-- [Explore pages](https://olivierlacan.github.io/indigene/#/explore): browse
+- [Explore pages](https://indigene.app/#/explore): browse
   every plant Indigene knows without sharing your
   location — and every plant, region, and category has its own address you can
   share with anyone.

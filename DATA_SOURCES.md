@@ -9,7 +9,7 @@ called out and the dependency is kept optional.
 This document is the licensing audit, written for a developer. Its plain-language
 companion — which of our numbers are counted, which are our own judgment, what
 we're assuming, and where we think we're most likely wrong — is the in-app page
-at [`#/sources`](https://olivierlacan.github.io/indigene/#/sources)
+at [`#/sources`](https://indigene.app/#/sources)
 (`app/src/steps/sources.ts`). Anything claimed here should be consistent with
 what that page tells the public.
 

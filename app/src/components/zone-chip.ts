@@ -1,5 +1,8 @@
 // The USDA hardiness range as a small chip, shown beside the place a region's
-// numbers are tuned to.
+// numbers are tuned to — on the pages where the zone is the answer to
+// something. Not on Explore: a grid of region cards is a "where are you?"
+// question, and a column of hardiness badges beside it answered a question
+// nobody had asked yet.
 //
 // It used to ride inside the reference string as a parenthetical —
 // "Pennsylvania (USDA zones 6b–7a)" — which made the line longer, buried the

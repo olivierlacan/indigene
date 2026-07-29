@@ -1886,36 +1886,7 @@ body[data-layout="wide"] .app-footer p {
   font-size: 0.95rem;
   color: var(--ink-soft);
 }
-
-/* On the Explore cards it's a different problem: eight cards side by side,
-   with place names from "Pennsylvania" to "Marseille, Montpellier & Nice".
-   Letting the chip follow the text put it in a different spot on every card
-   and dropped it below the place on the long ones — a ragged scatter of badges
-   instead of a column. */
-.region-card-ref {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  row-gap: 0.15rem;
-}
-/* Once the grid actually has columns, the row goes strictly one line: the
-   place takes what it needs, and the chip is pinned to the card's right edge
-   so the badges line up down the grid and every card's header is the same
-   height. Below that width there is a single column, nothing to line up with,
-   and a place name is worth more than a tidy edge — so it wraps instead of
-   truncating. */
-@media (min-width: 46rem) {
-  .region-card-ref {
-    flex-wrap: nowrap;
-    gap: 0.5rem;
-  }
-  .region-card-ref .zone-place {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .region-card-ref .zone-chip {
-    flex: none;
-    margin-left: auto; /* pinned right, however short the place is */
-  }
-}
+/* The Explore cards carried a chip too, pinned to the card's right edge so the
+   badges lined up down the grid. They don't any more — the cards name the
+   place and nothing else — so the line is plain text again (see
+   `.region-card-ref` above) and needs no flex row of its own. */

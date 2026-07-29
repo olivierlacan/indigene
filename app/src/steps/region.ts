@@ -85,7 +85,9 @@ export function renderRegion(main: HTMLElement, param?: string): void {
   main.append(
     el("h2", { class: "step-title" }, region.meta.name),
     // The place in the sentence, the hardiness range as its own badge beside
-    // it — same split as the region cards on Explore.
+    // it. This is where the zone belongs: the reader has picked their region
+    // and is now asking what grows in it. The Explore cards, where they were
+    // still choosing a place, name the place only.
     regionRefLine(region.meta, "region-ref"),
     el("p", { class: "step-lede" },
       `Every native we know for ${region.meta.reference} — tap any plant for its full profile.`),

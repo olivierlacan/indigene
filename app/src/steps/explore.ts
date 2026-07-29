@@ -16,7 +16,6 @@ import { wildlifeCountForRegion } from "../lib/wildlife";
 import { silhouetteFor } from "../components/plant-card";
 import { keystoneIcon } from "../components/keystone-icon";
 import { cardStats } from "../components/card-stats";
-import { regionRefLine } from "../components/zone-chip";
 
 export function renderExplore(main: HTMLElement): void {
   clear(main);
@@ -69,7 +68,12 @@ function regionCard(region: RegionDef): HTMLElement {
       el("span", { "aria-hidden": "true" }, "📍 "),
       el("a", { href: `#/regions/${region.meta.id}` }, region.meta.name),
     ]),
-    regionRefLine(region.meta, "region-card-ref"),
+    // Just the place. The hardiness chip that used to sit here was a
+    // gardening-catalogue term of art on a page whose whole job is "pick where
+    // you are" — eight badges down the grid, none of them the thing being
+    // chosen. It still rides along on the region page, where a reader who's
+    // already picked their place is asking what grows there.
+    el("p", { class: "region-card-ref" }, region.meta.reference),
     el("a", { class: "region-card-star", href: `#/plants/${p.id}` }, [
       el("span", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
       el("span", { class: "region-card-star-text" }, [

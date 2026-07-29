@@ -19,15 +19,22 @@
     "note": "External identifiers are filled by scripts/reconcile.mjs; 'indigene' is our catalog id."
   },
   "count": 198,
-  "unreconciled": 103,
+  "unreconciled": 1,
   "entries": [
     {
-      "primaryId": null,
+      "primaryId": "ipni:781250-1",
       "scientificName": "Acer campestre",
       "family": "Sapindaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "781250-1",
+        "wfo": "wfo-0000514040",
+        "gbif": "3189863",
+        "usda": "ACCA5",
+        "itis": "28739",
+        "inat": "56193",
+        "wikidata": "Q158785",
         "indigene": "acer-campestre"
       },
       "commonNames": [
@@ -45,12 +52,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:317375-2",
       "scientificName": "Acer circinatum",
       "family": "Sapindaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "317375-2",
+        "wfo": "wfo-0000514128",
+        "gbif": "3189884",
+        "usda": "ACCI",
+        "itis": "28740",
+        "inat": "48258",
+        "wikidata": "Q568923",
         "indigene": "acer-circinatum"
       },
       "commonNames": [
@@ -94,12 +108,17 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:781402-1",
       "scientificName": "Acer monspessulanum",
       "family": "Sapindaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "781402-1",
+        "wfo": "wfo-0000514593",
+        "gbif": "7262958",
+        "inat": "82598",
+        "wikidata": "Q161388",
         "indigene": "acer-monspessulanum"
       },
       "commonNames": [
@@ -117,12 +136,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:781462-1",
       "scientificName": "Acer pseudoplatanus",
       "family": "Sapindaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "781462-1",
+        "wfo": "wfo-0000514908",
+        "gbif": "3189870",
+        "usda": "ACPS",
+        "itis": "28756",
+        "inat": "119791",
+        "wikidata": "Q156944",
         "indigene": "acer-pseudoplatanus"
       },
       "commonNames": [
@@ -197,12 +223,18 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:30015316-2",
       "scientificName": "Alnus alnobetula",
       "family": "Betulaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "30015316-2",
+        "wfo": "wfo-0000944137",
+        "gbif": "8956987",
+        "itis": "184199",
+        "inat": "868167",
+        "wikidata": "Q20720096",
         "indigene": "alnus-alnobetula"
       },
       "commonNames": [
@@ -220,12 +252,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:30036759-2",
       "scientificName": "Alnus glutinosa",
       "family": "Betulaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "30036759-2",
+        "wfo": "wfo-0000945215",
+        "gbif": "2876213",
+        "usda": "ALGL2",
+        "itis": "19470",
+        "inat": "966205",
+        "wikidata": "Q156904",
         "indigene": "alnus-glutinosa"
       },
       "commonNames": [
@@ -241,12 +280,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:294986-1",
       "scientificName": "Alnus rubra",
       "family": "Betulaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "294986-1",
+        "wfo": "wfo-0000947467",
+        "gbif": "2876176",
+        "usda": "ALRU2",
+        "itis": "19474",
+        "inat": "56034",
+        "wikidata": "Q1818806",
         "indigene": "alnus-rubra"
       },
       "commonNames": [
@@ -318,12 +364,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:176437-1",
       "scientificName": "Anaphalis margaritacea",
       "family": "Asteraceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "176437-1",
+        "wfo": "wfo-0000092746",
+        "gbif": "4926336",
+        "usda": "ANMA",
+        "itis": "36529",
+        "inat": "52833",
+        "wikidata": "Q2365610",
         "indigene": "anaphalis-margaritacea"
       },
       "commonNames": [
@@ -345,6 +398,8 @@
       "form": "grass",
       "rank": "species",
       "identifiers": {
+        "gbif": "4932035",
+        "inat": "121968",
         "indigene": "andropogon-gerardii"
       },
       "commonNames": [
@@ -360,12 +415,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:128124-3",
       "scientificName": "Anthyllis vulneraria",
       "family": "Fabaceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "128124-3",
+        "wfo": "wfo-0000212115",
+        "gbif": "5352367",
+        "usda": "ANVU",
+        "itis": "26461",
+        "inat": "82685",
+        "wikidata": "Q126256",
         "indigene": "anthyllis-vulneraria"
       },
       "commonNames": [
@@ -467,12 +529,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:326526-1",
       "scientificName": "Arbutus unedo",
       "family": "Ericaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "326526-1",
+        "wfo": "wfo-0000543204",
+        "gbif": "2882803",
+        "usda": "ARUN4",
+        "itis": "23629",
+        "inat": "82689",
+        "wikidata": "Q329046",
         "indigene": "arbutus-unedo"
       },
       "commonNames": [
@@ -490,12 +559,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:1024084-2",
       "scientificName": "Arctostaphylos uva-ursi",
       "family": "Ericaceae",
       "form": "groundcover",
       "rank": "species",
       "identifiers": {
+        "ipni": "1024084-2",
+        "wfo": "wfo-0000543738",
+        "gbif": "2882580",
+        "usda": "ARUV",
+        "itis": "23530",
+        "inat": "68049",
+        "wikidata": "Q208032",
         "indigene": "arctostaphylos-uva-ursi"
       },
       "commonNames": [
@@ -541,12 +617,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:94654-1",
       "scientificName": "Asclepias speciosa",
       "family": "Apocynaceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "94654-1",
+        "wfo": "wfo-0000551772",
+        "gbif": "3170260",
+        "usda": "ASSP",
+        "itis": "30304",
+        "inat": "62292",
+        "wikidata": "Q311150",
         "indigene": "asclepias-speciosa"
       },
       "commonNames": [
@@ -629,6 +712,7 @@
         "wfo": "wfo-0000562782",
         "gbif": "3033868",
         "itis": "18816",
+        "inat": "126887",
         "wikidata": "Q126902242",
         "indigene": "berberis-aquifolium"
       },
@@ -673,12 +757,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:295174-1",
       "scientificName": "Betula pendula",
       "family": "Betulaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "295174-1",
+        "wfo": "wfo-0000335449",
+        "gbif": "5331916",
+        "usda": "BEPE3",
+        "itis": "19495",
+        "inat": "83992",
+        "wikidata": "Q156895",
         "indigene": "betula-pendula"
       },
       "commonNames": [
@@ -697,12 +788,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:67790-3",
       "scientificName": "Brachypodium pinnatum",
       "family": "Poaceae",
       "form": "grass",
       "rank": "species",
       "identifiers": {
+        "ipni": "67790-3",
+        "wfo": "wfo-0000854513",
+        "gbif": "5290142",
+        "usda": "BRPI",
+        "itis": "41333",
+        "inat": "75864",
+        "wikidata": "Q1642054",
         "indigene": "brachypodium-pinnatum"
       },
       "commonNames": [
@@ -720,12 +818,18 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:393178-1",
       "scientificName": "Brachypodium retusum",
       "family": "Poaceae",
       "form": "grass",
       "rank": "species",
       "identifiers": {
+        "ipni": "393178-1",
+        "wfo": "wfo-0000854576",
+        "gbif": "5676053",
+        "usda": "BRRE9",
+        "inat": "82863",
+        "wikidata": "Q8251485",
         "indigene": "brachypodium-retusum"
       },
       "commonNames": [
@@ -799,12 +903,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:327304-1",
       "scientificName": "Calluna vulgaris",
       "family": "Ericaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "327304-1",
+        "wfo": "wfo-0000580837",
+        "gbif": "2882482",
+        "usda": "CAVU",
+        "itis": "23634",
+        "inat": "119450",
+        "wikidata": "Q26615",
         "indigene": "calluna-vulgaris"
       },
       "commonNames": [
@@ -878,12 +989,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:295248-1",
       "scientificName": "Carpinus betulus",
       "family": "Betulaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "295248-1",
+        "wfo": "wfo-0000804581",
+        "gbif": "2875818",
+        "usda": "CABE8",
+        "itis": "184204",
+        "inat": "55801",
+        "wikidata": "Q158776",
         "indigene": "carpinus-betulus"
       },
       "commonNames": [
@@ -930,12 +1048,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:850999-1",
       "scientificName": "Celtis australis",
       "family": "Cannabaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "850999-1",
+        "wfo": "wfo-0000593422",
+        "gbif": "2984492",
+        "usda": "CEAU8",
+        "itis": "565053",
+        "inat": "76202",
+        "wikidata": "Q255375",
         "indigene": "celtis-australis"
       },
       "commonNames": [
@@ -953,12 +1078,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:57128-3",
       "scientificName": "Centaurea scabiosa",
       "family": "Asteraceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "57128-3",
+        "wfo": "wfo-0000013986",
+        "gbif": "8087525",
+        "usda": "CESC2",
+        "itis": "36971",
+        "inat": "84344",
+        "wikidata": "Q1569852",
         "indigene": "centaurea-scabiosa"
       },
       "commonNames": [
@@ -1088,12 +1220,17 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:168163-1",
       "scientificName": "Cistus albidus",
       "family": "Cistaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "168163-1",
+        "wfo": "wfo-0000607197",
+        "gbif": "7331435",
+        "inat": "82673",
+        "wikidata": "Q1763350",
         "indigene": "cistus-albidus"
       },
       "commonNames": [
@@ -1111,12 +1248,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:709687-1",
       "scientificName": "Clematis flammula",
       "family": "Ranunculaceae",
       "form": "vine",
       "rank": "species",
       "identifiers": {
+        "ipni": "709687-1",
+        "wfo": "wfo-0000609903",
+        "gbif": "3921611",
+        "usda": "CLFL8",
+        "itis": "821165",
+        "inat": "335853",
+        "wikidata": "Q909197",
         "indigene": "clematis-flammula"
       },
       "commonNames": [
@@ -1134,12 +1278,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:710194-1",
       "scientificName": "Clematis vitalba",
       "family": "Ranunculaceae",
       "form": "vine",
       "rank": "species",
       "identifiers": {
+        "ipni": "710194-1",
+        "wfo": "wfo-0000610926",
+        "gbif": "3033558",
+        "usda": "CLVI6",
+        "itis": "18717",
+        "inat": "160697",
+        "wikidata": "Q160100",
         "indigene": "clematis-vitalba"
       },
       "commonNames": [
@@ -1297,12 +1448,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:271612-1",
       "scientificName": "Cornus mas",
       "family": "Cornaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "271612-1",
+        "wfo": "wfo-0000924760",
+        "gbif": "3082263",
+        "usda": "COMA21",
+        "itis": "565094",
+        "inat": "55858",
+        "wikidata": "Q158642",
         "indigene": "cornus-mas"
       },
       "commonNames": [
@@ -1320,12 +1478,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:66154-2",
       "scientificName": "Cornus nuttallii",
       "family": "Cornaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "66154-2",
+        "wfo": "wfo-0000924781",
+        "gbif": "8288790",
+        "usda": "CONU4",
+        "itis": "27809",
+        "inat": "76447",
+        "wikidata": "Q220777",
         "indigene": "cornus-nuttallii"
       },
       "commonNames": [
@@ -1341,12 +1506,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:271661-1",
       "scientificName": "Cornus sanguinea",
       "family": "Cornaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "271661-1",
+        "wfo": "wfo-0000924828",
+        "gbif": "3082234",
+        "usda": "COSA81",
+        "itis": "501636",
+        "inat": "155124",
+        "wikidata": "Q161416",
         "indigene": "cornus-sanguinea"
       },
       "commonNames": [
@@ -1419,12 +1591,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:295446-1",
       "scientificName": "Corylus avellana",
       "family": "Betulaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "295446-1",
+        "wfo": "wfo-0000925259",
+        "gbif": "2875979",
+        "usda": "COAV80",
+        "itis": "501642",
+        "inat": "54491",
+        "wikidata": "Q124969",
         "indigene": "corylus-avellana"
       },
       "commonNames": [
@@ -1440,12 +1619,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:108018-1",
       "scientificName": "Corylus cornuta",
       "family": "Betulaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "108018-1",
+        "wfo": "wfo-0000925296",
+        "gbif": "2876032",
+        "usda": "COCO6",
+        "itis": "19507",
+        "inat": "53374",
+        "wikidata": "Q972950",
         "indigene": "corylus-cornuta"
       },
       "commonNames": [
@@ -1461,12 +1647,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:723644-1",
       "scientificName": "Crataegus laevigata",
       "family": "Rosaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "723644-1",
+        "wfo": "wfo-0001009174",
+        "gbif": "8252683",
+        "usda": "CRLA80",
+        "itis": "507255",
+        "inat": "54428",
+        "wikidata": "Q159553",
         "indigene": "crataegus-laevigata"
       },
       "commonNames": [
@@ -1484,12 +1677,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:723820-1",
       "scientificName": "Crataegus monogyna",
       "family": "Rosaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "723820-1",
+        "wfo": "wfo-0001009785",
+        "gbif": "9220780",
+        "usda": "CRMO3",
+        "itis": "24586",
+        "inat": "51147",
+        "wikidata": "Q161511",
         "indigene": "crataegus-monogyna"
       },
       "commonNames": [
@@ -1507,12 +1707,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:397953-1",
       "scientificName": "Deschampsia cespitosa",
       "family": "Poaceae",
       "form": "grass",
       "rank": "species",
       "identifiers": {
+        "ipni": "397953-1",
+        "wfo": "wfo-0000862467",
+        "gbif": "8059811",
+        "usda": "DECE",
+        "itis": "40586",
+        "inat": "76639",
+        "wikidata": "Q159722",
         "indigene": "deschampsia-cespitosa"
       },
       "commonNames": [
@@ -1528,12 +1735,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:802077-1",
       "scientificName": "Digitalis purpurea",
       "family": "Plantaginaceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "802077-1",
+        "wfo": "wfo-0000647394",
+        "gbif": "5414995",
+        "usda": "DIPU",
+        "itis": "33585",
+        "inat": "53983",
+        "wikidata": "Q157555",
         "indigene": "digitalis-purpurea"
       },
       "commonNames": [
@@ -1549,12 +1763,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:493388-1",
       "scientificName": "Dorycnium pentaphyllum",
       "family": "Fabaceae",
       "form": "groundcover",
       "rank": "species",
       "identifiers": {
+        "ipni": "493388-1",
+        "wfo": "wfo-0000212137",
+        "gbif": "2959128",
+        "usda": "DOPE2",
+        "itis": "820410",
+        "inat": "338632",
+        "wikidata": "Q2710476",
         "indigene": "dorycnium-pentaphyllum"
       },
       "commonNames": [
@@ -1572,12 +1793,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:724675-1",
       "scientificName": "Dryas octopetala",
       "family": "Rosaceae",
       "form": "groundcover",
       "rank": "species",
       "identifiers": {
+        "ipni": "724675-1",
+        "wfo": "wfo-0000996365",
+        "gbif": "4889932",
+        "usda": "DROC",
+        "itis": "24619",
+        "inat": "83541",
+        "wikidata": "Q161621",
         "indigene": "dryas-octopetala"
       },
       "commonNames": [
@@ -1595,12 +1823,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:17094880-1",
       "scientificName": "Dryopteris filix-mas",
       "family": "Dryopteridaceae",
       "form": "fern",
       "rank": "species",
       "identifiers": {
+        "ipni": "17094880-1",
+        "wfo": "wfo-0001109081",
+        "gbif": "5275132",
+        "usda": "DRFI2",
+        "itis": "17535",
+        "inat": "76721",
+        "wikidata": "Q322994",
         "indigene": "dryopteris-filix-mas"
       },
       "commonNames": [
@@ -1644,12 +1879,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:400271-1",
       "scientificName": "Elymus glaucus",
       "family": "Poaceae",
       "form": "grass",
       "rank": "species",
       "identifiers": {
+        "ipni": "400271-1",
+        "wfo": "wfo-0000866302",
+        "gbif": "5290269",
+        "usda": "ELGL",
+        "itis": "40684",
+        "inat": "52791",
+        "wikidata": "Q5368482",
         "indigene": "elymus-glaucus"
       },
       "commonNames": [
@@ -1693,12 +1935,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:160876-1",
       "scientificName": "Euonymus europaeus",
       "family": "Celastraceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "160876-1",
+        "wfo": "wfo-0000681728",
+        "gbif": "3169131",
+        "usda": "EUEU7",
+        "itis": "27949",
+        "inat": "55847",
+        "wikidata": "Q161379",
         "indigene": "euonymus-europaeus"
       },
       "commonNames": [
@@ -1716,12 +1965,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:346016-1",
       "scientificName": "Euphorbia characias",
       "family": "Euphorbiaceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "346016-1",
+        "wfo": "wfo-0000961343",
+        "gbif": "3067353",
+        "usda": "EUCH13",
+        "itis": "845464",
+        "inat": "181594",
+        "wikidata": "Q425890",
         "indigene": "euphorbia-characias"
       },
       "commonNames": [
@@ -1767,12 +2023,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:305836-2",
       "scientificName": "Fagus sylvatica",
       "family": "Fagaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "305836-2",
+        "wfo": "wfo-0000966507",
+        "gbif": "2882316",
+        "usda": "FASY",
+        "itis": "502590",
+        "inat": "54227",
+        "wikidata": "Q146149",
         "indigene": "fagus-sylvatica"
       },
       "commonNames": [
@@ -1790,12 +2053,18 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:403162-1",
       "scientificName": "Festuca nigrescens",
       "family": "Poaceae",
       "form": "grass",
       "rank": "species",
       "identifiers": {
+        "ipni": "403162-1",
+        "wfo": "wfo-0000871130",
+        "gbif": "4119612",
+        "itis": "790064",
+        "inat": "497838",
+        "wikidata": "Q161016",
         "indigene": "festuca-nigrescens"
       },
       "commonNames": [
@@ -1868,12 +2137,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:30074127-2",
       "scientificName": "Fragaria vesca",
       "family": "Rosaceae",
       "form": "groundcover",
       "rank": "species",
       "identifiers": {
+        "ipni": "30074127-2",
+        "wfo": "wfo-0000993770",
+        "gbif": "3029817",
+        "usda": "FRVE",
+        "itis": "24634",
+        "inat": "50298",
+        "wikidata": "Q146684",
         "indigene": "fragaria-vesca"
       },
       "commonNames": [
@@ -1917,12 +2193,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:717344-1",
       "scientificName": "Frangula alnus",
       "family": "Rhamnaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "717344-1",
+        "wfo": "wfo-0000691852",
+        "gbif": "3039454",
+        "usda": "FRAL4",
+        "itis": "504744",
+        "inat": "55972",
+        "wikidata": "Q146136",
         "indigene": "frangula-alnus"
       },
       "commonNames": [
@@ -1938,12 +2221,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:609072-1",
       "scientificName": "Fraxinus latifolia",
       "family": "Oleaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "609072-1",
+        "wfo": "wfo-0000832626",
+        "gbif": "3172343",
+        "usda": "FRLA",
+        "itis": "32944",
+        "inat": "63878",
+        "wikidata": "Q1581524",
         "indigene": "fraxinus-latifolia"
       },
       "commonNames": [
@@ -1959,12 +2249,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:609128-1",
       "scientificName": "Fraxinus ornus",
       "family": "Oleaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "609128-1",
+        "wfo": "wfo-0000832712",
+        "gbif": "3172347",
+        "usda": "FROR2",
+        "itis": "505982",
+        "inat": "319281",
+        "wikidata": "Q161421",
         "indigene": "fraxinus-ornus"
       },
       "commonNames": [
@@ -2010,12 +2307,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:368453-1",
       "scientificName": "Gentiana lutea",
       "family": "Gentianaceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "368453-1",
+        "wfo": "wfo-0000697915",
+        "gbif": "3170040",
+        "usda": "GELU2",
+        "itis": "505985",
+        "inat": "142299",
+        "wikidata": "Q158572",
         "indigene": "gentiana-lutea"
       },
       "commonNames": [
@@ -2118,12 +2422,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:90723-1",
       "scientificName": "Hedera helix",
       "family": "Araliaceae",
       "form": "vine",
       "rank": "species",
       "identifiers": {
+        "ipni": "90723-1",
+        "wfo": "wfo-0000979730",
+        "gbif": "8351737",
+        "usda": "HEHE",
+        "itis": "29393",
+        "inat": "55882",
+        "wikidata": "Q26354",
         "indigene": "hedera-helix"
       },
       "commonNames": [
@@ -2139,12 +2450,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:169032-1",
       "scientificName": "Helianthemum nummularium",
       "family": "Cistaceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "169032-1",
+        "wfo": "wfo-0000717621",
+        "gbif": "8890062",
+        "usda": "HENU5",
+        "itis": "834835",
+        "inat": "84278",
+        "wikidata": "Q164232",
         "indigene": "helianthemum-nummularium"
       },
       "commonNames": [
@@ -2193,12 +2511,17 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:213382-1",
       "scientificName": "Helichrysum stoechas",
       "family": "Asteraceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "213382-1",
+        "wfo": "wfo-0000000535",
+        "gbif": "3131494",
+        "inat": "82641",
+        "wikidata": "Q1636806",
         "indigene": "helichrysum-stoechas"
       },
       "commonNames": [
@@ -2244,12 +2567,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:303502-2",
       "scientificName": "Humulus lupulus",
       "family": "Cannabaceae",
       "form": "vine",
       "rank": "species",
       "identifiers": {
+        "ipni": "303502-2",
+        "wfo": "wfo-0000725866",
+        "gbif": "2984535",
+        "usda": "HULU",
+        "itis": "19160",
+        "inat": "53779",
+        "wikidata": "Q104212",
         "indigene": "humulus-lupulus"
       },
       "commonNames": [
@@ -2267,12 +2597,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:971733-1",
       "scientificName": "Hyacinthoides non-scripta",
       "family": "Asparagaceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "971733-1",
+        "wfo": "wfo-0000664295",
+        "gbif": "5304283",
+        "usda": "HYNO",
+        "itis": "810156",
+        "inat": "56132",
+        "wikidata": "Q164013",
         "indigene": "hyacinthoides-non-scripta"
       },
       "commonNames": [
@@ -2288,12 +2625,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:83051-1",
       "scientificName": "Ilex aquifolium",
       "family": "Aquifoliaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "83051-1",
+        "wfo": "wfo-0000729203",
+        "gbif": "5414222",
+        "usda": "ILAQ80",
+        "itis": "503154",
+        "inat": "53856",
+        "wikidata": "Q192190",
         "indigene": "ilex-aquifolium"
       },
       "commonNames": [
@@ -2365,12 +2709,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:30088655-2",
       "scientificName": "Juniperus communis",
       "family": "Cupressaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "30088655-2",
+        "wfo": "wfo-0000355532",
+        "gbif": "2684709",
+        "usda": "JUCO6",
+        "itis": "194820",
+        "inat": "58725",
+        "wikidata": "Q26325",
         "indigene": "juniperus-communis"
       },
       "commonNames": [
@@ -2388,12 +2739,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:262299-1",
       "scientificName": "Juniperus oxycedrus",
       "family": "Cupressaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "262299-1",
+        "wfo": "wfo-0000355658",
+        "gbif": "2684451",
+        "usda": "JUOX2",
+        "itis": "822545",
+        "inat": "133994",
+        "wikidata": "Q184300",
         "indigene": "juniperus-oxycedrus"
       },
       "commonNames": [
@@ -2411,12 +2769,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:319318-1",
       "scientificName": "Knautia arvensis",
       "family": "Caprifoliaceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "319318-1",
+        "wfo": "wfo-0000356720",
+        "gbif": "2888808",
+        "usda": "KNAR",
+        "itis": "35408",
+        "inat": "129115",
+        "wikidata": "Q27648",
         "indigene": "knautia-arvensis"
       },
       "commonNames": [
@@ -2434,12 +2799,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:262420-1",
       "scientificName": "Larix decidua",
       "family": "Pinaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "262420-1",
+        "wfo": "wfo-0000443338",
+        "gbif": "2686212",
+        "usda": "LADE2",
+        "itis": "183410",
+        "inat": "59747",
+        "wikidata": "Q146048",
         "indigene": "larix-decidua"
       },
       "commonNames": [
@@ -2457,12 +2829,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:449008-1",
       "scientificName": "Lavandula angustifolia",
       "family": "Lamiaceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "449008-1",
+        "wfo": "wfo-0000224116",
+        "gbif": "2927305",
+        "usda": "LAAN81",
+        "itis": "503344",
+        "inat": "133395",
+        "wikidata": "Q42081",
         "indigene": "lavandula-angustifolia"
       },
       "commonNames": [
@@ -2508,12 +2887,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:610130-1",
       "scientificName": "Ligustrum vulgare",
       "family": "Oleaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "610130-1",
+        "wfo": "wfo-0000815984",
+        "gbif": "3172300",
+        "usda": "LIVU",
+        "itis": "32980",
+        "inat": "119805",
+        "wikidata": "Q1848856",
         "indigene": "ligustrum-vulgare"
       },
       "commonNames": [
@@ -2587,12 +2973,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:148846-1",
       "scientificName": "Lonicera involucrata",
       "family": "Caprifoliaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "148846-1",
+        "wfo": "wfo-0001290592",
+        "gbif": "5334253",
+        "usda": "LOIN5",
+        "itis": "35297",
+        "inat": "60881",
+        "wikidata": "Q785106",
         "indigene": "lonicera-involucrata"
       },
       "commonNames": [
@@ -2608,12 +3001,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:149006-1",
       "scientificName": "Lonicera periclymenum",
       "family": "Caprifoliaceae",
       "form": "vine",
       "rank": "species",
       "identifiers": {
+        "ipni": "149006-1",
+        "wfo": "wfo-0000367818",
+        "gbif": "5334277",
+        "usda": "LOPE4",
+        "itis": "35301",
+        "inat": "55885",
+        "wikidata": "Q161584",
         "indigene": "lonicera-periclymenum"
       },
       "commonNames": [
@@ -2659,12 +3059,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:30179739-2",
       "scientificName": "Lotus corniculatus",
       "family": "Fabaceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "30179739-2",
+        "wfo": "wfo-0000212180",
+        "gbif": "5357013",
+        "usda": "LOCO6",
+        "itis": "26362",
+        "inat": "47435",
+        "wikidata": "Q29907",
         "indigene": "lotus-corniculatus"
       },
       "commonNames": [
@@ -2683,12 +3090,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:504939-1",
       "scientificName": "Lupinus polyphyllus",
       "family": "Fabaceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "504939-1",
+        "wfo": "wfo-0000213847",
+        "gbif": "2964355",
+        "usda": "LUPO2",
+        "itis": "25921",
+        "inat": "59549",
+        "wikidata": "Q159737",
         "indigene": "lupinus-polyphyllus"
       },
       "commonNames": [
@@ -2908,12 +3322,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:599719-1",
       "scientificName": "Myrtus communis",
       "family": "Myrtaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "599719-1",
+        "wfo": "wfo-0000248712",
+        "gbif": "3180085",
+        "usda": "MYCO9",
+        "itis": "506164",
+        "inat": "78159",
+        "wikidata": "Q6122027",
         "indigene": "myrtus-communis"
       },
       "commonNames": [
@@ -2931,12 +3352,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:453395-1",
       "scientificName": "Origanum vulgare",
       "family": "Lamiaceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "453395-1",
+        "wfo": "wfo-0000260765",
+        "gbif": "2926612",
+        "usda": "ORVU",
+        "itis": "32632",
+        "inat": "61396",
+        "wikidata": "Q134283",
         "indigene": "origanum-vulgare"
       },
       "commonNames": [
@@ -3152,12 +3580,17 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:610935-1",
       "scientificName": "Phillyrea angustifolia",
       "family": "Oleaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "610935-1",
+        "wfo": "wfo-0000817995",
+        "gbif": "7325947",
+        "inat": "82871",
+        "wikidata": "Q1891342",
         "indigene": "phillyrea-angustifolia"
       },
       "commonNames": [
@@ -3175,12 +3608,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:195615-2",
       "scientificName": "Physocarpus capitatus",
       "family": "Rosaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "195615-2",
+        "wfo": "wfo-0001013796",
+        "gbif": "2988390",
+        "usda": "PHCA11",
+        "itis": "25279",
+        "inat": "57249",
+        "wikidata": "Q7061692",
         "indigene": "physocarpus-capitatus"
       },
       "commonNames": [
@@ -3224,12 +3664,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:262609-1",
       "scientificName": "Picea abies",
       "family": "Pinaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "262609-1",
+        "wfo": "wfo-0000482030",
+        "gbif": "5284884",
+        "usda": "PIAB",
+        "itis": "183289",
+        "inat": "63567",
+        "wikidata": "Q145992",
         "indigene": "picea-abies"
       },
       "commonNames": [
@@ -3247,12 +3694,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:262848-1",
       "scientificName": "Pinus cembra",
       "family": "Pinaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "262848-1",
+        "wfo": "wfo-0000482273",
+        "gbif": "5285134",
+        "usda": "PICE2",
+        "itis": "506605",
+        "inat": "363921",
+        "wikidata": "Q147278",
         "indigene": "pinus-cembra"
       },
       "commonNames": [
@@ -3270,12 +3724,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:262982-1",
       "scientificName": "Pinus halepensis",
       "family": "Pinaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "262982-1",
+        "wfo": "wfo-0000481363",
+        "gbif": "5285604",
+        "usda": "PIHA7",
+        "itis": "506601",
+        "inat": "82722",
+        "wikidata": "Q211457",
         "indigene": "pinus-halepensis"
       },
       "commonNames": [
@@ -3321,12 +3782,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:263353-1",
       "scientificName": "Pinus sylvestris",
       "family": "Pinaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "263353-1",
+        "wfo": "wfo-0000481648",
+        "gbif": "5285637",
+        "usda": "PISY",
+        "itis": "183389",
+        "inat": "58722",
+        "wikidata": "Q133128",
         "indigene": "pinus-sylvestris"
       },
       "commonNames": [
@@ -3344,12 +3812,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:70253-1",
       "scientificName": "Pistacia lentiscus",
       "family": "Anacardiaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "70253-1",
+        "wfo": "wfo-0000394118",
+        "gbif": "3190583",
+        "usda": "PILE5",
+        "itis": "506468",
+        "inat": "82600",
+        "wikidata": "Q159812",
         "indigene": "pistacia-lentiscus"
       },
       "commonNames": [
@@ -3450,12 +3925,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:702751-1",
       "scientificName": "Primula veris",
       "family": "Primulaceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "702751-1",
+        "wfo": "wfo-0000482741",
+        "gbif": "8377689",
+        "usda": "PRVE2",
+        "itis": "24035",
+        "inat": "55819",
+        "wikidata": "Q157552",
         "indigene": "primula-veris"
       },
       "commonNames": [
@@ -3471,12 +3953,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:30093848-2",
       "scientificName": "Prunus avium",
       "family": "Rosaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "30093848-2",
+        "wfo": "wfo-0001005630",
+        "gbif": "3020791",
+        "usda": "PRAV",
+        "itis": "24770",
+        "inat": "61964",
+        "wikidata": "Q165137",
         "indigene": "prunus-avium"
       },
       "commonNames": [
@@ -3494,12 +3983,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:30051006-2",
       "scientificName": "Prunus emarginata",
       "family": "Rosaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "30051006-2",
+        "wfo": "wfo-0001013841",
+        "gbif": "7272137",
+        "usda": "PREM",
+        "itis": "24776",
+        "inat": "63905",
+        "wikidata": "Q591062",
         "indigene": "prunus-emarginata"
       },
       "commonNames": [
@@ -3515,12 +4011,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:729931-1",
       "scientificName": "Prunus mahaleb",
       "family": "Rosaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "729931-1",
+        "wfo": "wfo-0001013325",
+        "gbif": "3022789",
+        "usda": "PRMA",
+        "itis": "24789",
+        "inat": "126808",
+        "wikidata": "Q161920",
         "indigene": "prunus-mahaleb"
       },
       "commonNames": [
@@ -3566,12 +4069,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:730297-1",
       "scientificName": "Prunus spinosa",
       "family": "Rosaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "730297-1",
+        "wfo": "wfo-0001007437",
+        "gbif": "3023221",
+        "usda": "PRSP",
+        "itis": "24802",
+        "inat": "55811",
+        "wikidata": "Q129018",
         "indigene": "prunus-spinosa"
       },
       "commonNames": [
@@ -3703,12 +4213,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:296290-1",
       "scientificName": "Quercus ilex",
       "family": "Fagaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "296290-1",
+        "wfo": "wfo-0000291202",
+        "gbif": "2879098",
+        "usda": "QUIL2",
+        "itis": "506536",
+        "inat": "78805",
+        "wikidata": "Q218155",
         "indigene": "quercus-ilex"
       },
       "commonNames": [
@@ -3726,12 +4243,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:359961-1",
       "scientificName": "Quercus petraea",
       "family": "Fagaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "359961-1",
+        "wfo": "wfo-0000292459",
+        "gbif": "2880130",
+        "usda": "QUPE2",
+        "itis": "506539",
+        "inat": "200942",
+        "wikidata": "Q158608",
         "indigene": "quercus-petraea"
       },
       "commonNames": [
@@ -3749,12 +4273,17 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:326376-2",
       "scientificName": "Quercus pubescens",
       "family": "Fagaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "326376-2",
+        "wfo": "wfo-0000292685",
+        "gbif": "2881283",
+        "inat": "125849",
+        "wikidata": "Q161415",
         "indigene": "quercus-pubescens"
       },
       "commonNames": [
@@ -3772,12 +4301,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:296690-1",
       "scientificName": "Quercus robur",
       "family": "Fagaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "296690-1",
+        "wfo": "wfo-0000292858",
+        "gbif": "2878688",
+        "usda": "QURO2",
+        "itis": "19405",
+        "inat": "56133",
+        "wikidata": "Q165145",
         "indigene": "quercus-robur"
       },
       "commonNames": [
@@ -3852,12 +4388,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:718169-1",
       "scientificName": "Rhamnus alaternus",
       "family": "Rhamnaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "718169-1",
+        "wfo": "wfo-0000462513",
+        "gbif": "6371424",
+        "usda": "RHAL12",
+        "itis": "835340",
+        "inat": "82856",
+        "wikidata": "Q721200",
         "indigene": "rhamnus-alaternus"
       },
       "commonNames": [
@@ -3875,12 +4418,18 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:332420-1",
       "scientificName": "Rhododendron ferrugineum",
       "family": "Ericaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "332420-1",
+        "wfo": "wfo-0000400806",
+        "gbif": "2883073",
+        "itis": "23733",
+        "inat": "130539",
+        "wikidata": "Q1341190",
         "indigene": "rhododendron-ferrugineum"
       },
       "commonNames": [
@@ -3956,12 +4505,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:731955-1",
       "scientificName": "Rosa canina",
       "family": "Rosaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "731955-1",
+        "wfo": "wfo-0001005999",
+        "gbif": "3002461",
+        "usda": "ROCA3",
+        "itis": "24819",
+        "inat": "55884",
+        "wikidata": "Q146066",
         "indigene": "rosa-canina"
       },
       "commonNames": [
@@ -4007,12 +4563,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:223579-2",
       "scientificName": "Rubus spectabilis",
       "family": "Rosaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "223579-2",
+        "wfo": "wfo-0000984083",
+        "gbif": "2993761",
+        "usda": "RUSP",
+        "itis": "25051",
+        "inat": "47543",
+        "wikidata": "Q158361",
         "indigene": "rubus-spectabilis"
       },
       "commonNames": [
@@ -4087,12 +4650,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:777256-1",
       "scientificName": "Salix caprea",
       "family": "Salicaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "777256-1",
+        "wfo": "wfo-0000929313",
+        "gbif": "5372952",
+        "usda": "SACA22",
+        "itis": "22515",
+        "inat": "55846",
+        "wikidata": "Q159565",
         "indigene": "salix-caprea"
       },
       "commonNames": [
@@ -4172,12 +4742,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:457007-1",
       "scientificName": "Salvia pratensis",
       "family": "Lamiaceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "457007-1",
+        "wfo": "wfo-0000301989",
+        "gbif": "2927007",
+        "usda": "SAPR2",
+        "itis": "32735",
+        "inat": "85338",
+        "wikidata": "Q161772",
         "indigene": "salvia-pratensis"
       },
       "commonNames": [
@@ -4195,12 +4772,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:30122169-2",
       "scientificName": "Sambucus nigra",
       "family": "Adoxaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "30122169-2",
+        "wfo": "wfo-0000439308",
+        "gbif": "2888728",
+        "usda": "SANI4",
+        "itis": "35324",
+        "inat": "765394",
+        "wikidata": "Q22701",
         "indigene": "sambucus-nigra"
       },
       "commonNames": [
@@ -4216,12 +4800,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:30056767-2",
       "scientificName": "Sambucus racemosa",
       "family": "Adoxaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "30056767-2",
+        "wfo": "wfo-0000439333",
+        "gbif": "2888723",
+        "usda": "SARA2",
+        "itis": "35326",
+        "inat": "362526",
+        "wikidata": "Q157276",
         "indigene": "sambucus-racemosa"
       },
       "commonNames": [
@@ -4294,12 +4885,18 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:240318-2",
       "scientificName": "Solidago lepida",
       "family": "Asteraceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "240318-2",
+        "wfo": "wfo-0000136548",
+        "gbif": "6065181",
+        "itis": "521727",
+        "inat": "79152",
+        "wikidata": "Q19848957",
         "indigene": "solidago-lepida"
       },
       "commonNames": [
@@ -4371,12 +4968,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:741641-1",
       "scientificName": "Sorbus aucuparia",
       "family": "Rosaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "741641-1",
+        "wfo": "wfo-0001016186",
+        "gbif": "3012167",
+        "usda": "SOAU",
+        "itis": "25320",
+        "inat": "56063",
+        "wikidata": "Q146198",
         "indigene": "sorbus-aucuparia"
       },
       "commonNames": [
@@ -4397,12 +5001,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:742021-1",
       "scientificName": "Sorbus torminalis",
       "family": "Rosaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "742021-1",
+        "wfo": "wfo-0001014076",
+        "gbif": "3012567",
+        "usda": "SOTO9",
+        "itis": "836670",
+        "inat": "198879",
+        "wikidata": "Q147459",
         "indigene": "sorbus-torminalis"
       },
       "commonNames": [
@@ -4448,12 +5059,18 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:30048227-2",
       "scientificName": "Struthiopteris spicant",
       "family": "Blechnaceae",
       "form": "fern",
       "rank": "species",
       "identifiers": {
+        "ipni": "30048227-2",
+        "wfo": "wfo-0001110263",
+        "gbif": "5275365",
+        "itis": "522103",
+        "inat": "774894",
+        "wikidata": "Q59420181",
         "indigene": "struthiopteris-spicant"
       },
       "commonNames": [
@@ -4469,12 +5086,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:320331-1",
       "scientificName": "Succisa pratensis",
       "family": "Caprifoliaceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "320331-1",
+        "wfo": "wfo-0000500443",
+        "gbif": "2888811",
+        "usda": "SUPR",
+        "itis": "35415",
+        "inat": "131203",
+        "wikidata": "Q161697",
         "indigene": "succisa-pratensis"
       },
       "commonNames": [
@@ -4546,12 +5170,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:981907-1",
       "scientificName": "Symphyotrichum subspicatum",
       "family": "Asteraceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "981907-1",
+        "wfo": "wfo-0000126131",
+        "gbif": "3151704",
+        "usda": "SYSU4",
+        "itis": "522252",
+        "inat": "79303",
+        "wikidata": "Q15555329",
         "indigene": "symphyotrichum-subspicatum"
       },
       "commonNames": [
@@ -4623,12 +5254,18 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:461649-1",
       "scientificName": "Thymus serpyllum",
       "family": "Lamiaceae",
       "form": "groundcover",
       "rank": "species",
       "identifiers": {
+        "ipni": "461649-1",
+        "wfo": "wfo-0000324739",
+        "gbif": "6409622",
+        "itis": "32822",
+        "inat": "322051",
+        "wikidata": "Q147251",
         "indigene": "thymus-serpyllum"
       },
       "commonNames": [
@@ -4646,12 +5283,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:461765-1",
       "scientificName": "Thymus vulgaris",
       "family": "Lamiaceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "461765-1",
+        "wfo": "wfo-0000324951",
+        "gbif": "5341442",
+        "usda": "THVU",
+        "itis": "505501",
+        "inat": "85469",
+        "wikidata": "Q148668",
         "indigene": "thymus-vulgaris"
       },
       "commonNames": [
@@ -4669,12 +5313,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:835277-1",
       "scientificName": "Tilia cordata",
       "family": "Malvaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "835277-1",
+        "wfo": "wfo-0000457451",
+        "gbif": "3152047",
+        "usda": "TICO2",
+        "itis": "505507",
+        "inat": "132600",
+        "wikidata": "Q158746",
         "indigene": "tilia-cordata"
       },
       "commonNames": [
@@ -4723,12 +5374,18 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:306789-2",
       "scientificName": "Trollius europaeus",
       "family": "Ranunculaceae",
       "form": "perennial",
       "rank": "species",
       "identifiers": {
+        "ipni": "306789-2",
+        "wfo": "wfo-0000455242",
+        "gbif": "3033289",
+        "itis": "18805",
+        "inat": "59552",
+        "wikidata": "Q161636",
         "indigene": "trollius-europaeus"
       },
       "commonNames": [
@@ -4746,12 +5403,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:264010-1",
       "scientificName": "Tsuga heterophylla",
       "family": "Pinaceae",
       "form": "tree",
       "rank": "species",
       "identifiers": {
+        "ipni": "264010-1",
+        "wfo": "wfo-0000456392",
+        "gbif": "2687210",
+        "usda": "TSHE",
+        "itis": "183400",
+        "inat": "48254",
+        "wikidata": "Q1144409",
         "indigene": "tsuga-heterophylla"
       },
       "commonNames": [
@@ -4795,12 +5459,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:30006039-2",
       "scientificName": "Vaccinium myrtillus",
       "family": "Ericaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "30006039-2",
+        "wfo": "wfo-0000422209",
+        "gbif": "2882833",
+        "usda": "VAMY2",
+        "itis": "23605",
+        "inat": "127029",
+        "wikidata": "Q5413585",
         "indigene": "vaccinium-myrtillus"
       },
       "commonNames": [
@@ -4818,12 +5489,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:859071-1",
       "scientificName": "Vaccinium ovatum",
       "family": "Ericaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "859071-1",
+        "wfo": "wfo-0001047102",
+        "gbif": "2882838",
+        "usda": "VAOV2",
+        "itis": "23608",
+        "inat": "48349",
+        "wikidata": "Q7907967",
         "indigene": "vaccinium-ovatum"
       },
       "commonNames": [
@@ -4839,12 +5517,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:293975-2",
       "scientificName": "Vaccinium vitis-idaea",
       "family": "Ericaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "293975-2",
+        "wfo": "wfo-0000421966",
+        "gbif": "2882835",
+        "usda": "VAVI",
+        "itis": "505637",
+        "inat": "56312",
+        "wikidata": "Q93235",
         "indigene": "vaccinium-vitis-idaea"
       },
       "commonNames": [
@@ -4890,12 +5575,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:326265-2",
       "scientificName": "Viburnum lantana",
       "family": "Adoxaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "326265-2",
+        "wfo": "wfo-0000421166",
+        "gbif": "2888615",
+        "usda": "VILA",
+        "itis": "35264",
+        "inat": "124741",
+        "wikidata": "Q158508",
         "indigene": "viburnum-lantana"
       },
       "commonNames": [
@@ -4941,12 +5633,19 @@
       ]
     },
     {
-      "primaryId": null,
+      "primaryId": "ipni:326271-2",
       "scientificName": "Viburnum tinus",
       "family": "Adoxaceae",
       "form": "shrub",
       "rank": "species",
       "identifiers": {
+        "ipni": "326271-2",
+        "wfo": "wfo-0000422887",
+        "gbif": "2888585",
+        "usda": "VITI2",
+        "itis": "505680",
+        "inat": "82666",
+        "wikidata": "Q1321268",
         "indigene": "viburnum-tinus"
       },
       "commonNames": [

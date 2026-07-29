@@ -23,8 +23,29 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Added
+
+- Indigene has a proper little sprout icon in your browser tab now, instead of
+  the blank page symbol every site gets when it hasn't been given one.
+- Posting an Indigene link somewhere — a message to a friend, a group chat, a
+  social post — now shows a proper preview card with the name, a line about
+  what the app does, and the sprout, rather than a bare address or nothing at
+  all. For now every link shows the same card; showing the particular plant
+  you shared is coming.
+
 ### Changed
 
+- Mistyping an Indigene address used to quietly drop you on the front page, as
+  though that's where you'd meant to go. Now there's a real
+  **"We couldn't find that page"** page that says what happened and offers
+  three ways back in — [the regions and their plants](https://indigene.app/#/plants),
+  [search](https://indigene.app/#/search), and
+  [browse by wildlife](https://indigene.app/#/wildlife). Links to real pages
+  still go straight through, exactly as before.
+- The app's icon had square corners with a faint ghost of a curve near them —
+  a rounding that was drawn but never actually cut out. The corners are round
+  now, on the tab icon and the one you get when you install Indigene to your
+  home screen.
 - The region cards on [Meet the natives](https://indigene.app/#/plants) no
   longer carry a little "USDA 6b–7a" badge. Those numbers are a gardener's
   shorthand for how cold a place gets in winter, and on a page whose only job

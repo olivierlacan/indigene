@@ -74,7 +74,7 @@ export function renderRegion(main: HTMLElement, param?: string): void {
           ` ${FORM_LABELS[f]} (${inForm.length})`,
         ]),
       ]),
-      ...rows.map((r) => r.node),
+      el("div", { class: "card-grid" }, rows.map((r) => r.node)),
     ]);
     allRows.push(...rows);
     sections.push({ node, rows });
@@ -143,7 +143,7 @@ function renderCategory(
           `Our ${region.meta.name} list has no ${label.toLowerCase()} yet — the seed lists are curated and grow carefully. Try another category, or the same category in a region below.`),
     ...(rows.length > 1 ? [filterField(rows, [])] : []),
     categoryChips(region, plants, form),
-    ...rows.map((r) => r.node),
+    el("div", { class: "card-grid" }, rows.map((r) => r.node)),
     ...(switcher ? [switcher] : []),
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate(`regions/${region.meta.id}`) }, "← All natives of this region"),
@@ -227,7 +227,9 @@ function filterField(rows: FilterRow[], sections: FilterSection[]): HTMLElement 
     autocomplete: "off",
     autocapitalize: "none",
     spellcheck: false,
-    style: "width:100%",
+    // Full width on a phone, but a text field the width of a laptop is a
+    // target with nothing in it — cap it once the page goes wide.
+    style: "width:100%;max-width:24rem",
   }) as HTMLInputElement;
   const status = el("p", { role: "status", class: "coords", style: "margin:0.35rem 0 0" });
 
@@ -266,7 +268,7 @@ function plantRow(p: Plant): HTMLElement {
   return el("a", {
     href: `#/plants/${p.id}`,
     class: "card",
-    style: "display:flex;gap:0.7rem;align-items:center;text-decoration:none;color:inherit;padding:0.6rem 0.8rem;margin-bottom:0.5rem",
+    style: "display:flex;gap:0.7rem;align-items:center;text-decoration:none;color:inherit;padding:0.6rem 0.8rem;margin:0;height:100%",
   }, [
     el("div", { class: "plant-photo", "aria-hidden": "true", style: "flex:0 0 auto" }, [silhouetteFor(p.form)]),
     el("div", { style: "min-width:0" }, [

@@ -1615,3 +1615,136 @@ details.weights[open] > summary {
 .lb-seen {
   display: block;
 }
+
+/* --- Wide pages (browse indexes on a laptop) ---------------------------- */
+/* Everything in this app is set to one narrow reading measure, which is right
+   for a plant profile and wrong for a list of cards: on a desktop the browse
+   indexes were a phone-width ribbon of cards down the middle with a screenful
+   of empty margin either side. `main.ts` marks those routes (Explore, the
+   region rosters, the wildlife index) and only they widen — the measure for
+   prose never changes. `--maxw` is what the main column, the step rail and the
+   footer all read, so overriding it here keeps the three aligned. */
+body[data-layout="wide"] {
+  --maxw: 62rem;
+}
+
+/* A list of self-contained cards that becomes columns when there's room. The
+   card floor is 19rem, so a phone always gets exactly one column (no card ever
+   squeezes below its natural width) and a 62rem page gets three. `auto-fit`
+   rather than a fixed count means the tablet widths in between get two
+   without another breakpoint. */
+.card-grid {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(19rem, 100%), 1fr));
+  align-items: start;
+}
+
+/* --- Explore: one card per region --------------------------------------- */
+/* The card is a region, not a plant. Reading order down the card is: where
+   this is → what the roster adds up to → the one native starring on it →
+   the way in to the rest. Two destinations only (the roster, twice, and the
+   starring plant), so nothing on it is a guess about what you meant. */
+.region-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.9rem 1rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  /* Cards in a row end level with each other even when one region's name runs
+     to two lines and its neighbour's doesn't. */
+  height: 100%;
+}
+.region-card-name {
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.25;
+}
+.region-card-name a {
+  color: inherit;
+}
+.region-card-ref {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+/* Figures, not adjectives — and they wrap as whole phrases rather than
+   breaking "9 keystones" across two lines. */
+.region-card-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.7rem;
+  margin: 0.15rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 650;
+  color: var(--brand-ink);
+}
+.region-card-stats > span {
+  white-space: nowrap;
+}
+
+/* The starring plant: named, pictured, and given its one headline number —
+   but not explained. The paragraph that used to sit here is what the plant's
+   own page is for, and it made five regions read as five essays. */
+.region-card-star {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  margin-top: auto; /* pinned to the bottom, so cards in a row line up */
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--line);
+}
+.region-card-star .plant-photo {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+.region-card-star-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.region-card-kicker {
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.region-card-plant {
+  font-weight: 700;
+  font-size: 1.02rem;
+  line-height: 1.2;
+}
+.region-card-star .plant-latin {
+  font-size: 0.85rem;
+}
+.region-card-host {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-top: 0.15rem;
+}
+.region-card-star:hover .region-card-plant,
+.region-card-star:focus-visible .region-card-plant {
+  text-decoration: underline;
+}
+/* Brand green, like every other "go deeper into the catalog" link — the
+   default link blue made the roster read as an aside rather than the card's
+   main way in. */
+.region-card-all {
+  font-size: 0.9rem;
+  font-weight: 650;
+  padding-top: 0.55rem;
+  color: var(--brand-ink);
+}
+
+/* Prose keeps its measure even when the page around it widens: the *cards*
+   wanted the room, the sentences never did. */
+body[data-layout="wide"] .step-lede,
+body[data-layout="wide"] .note,
+body[data-layout="wide"] .confidence,
+body[data-layout="wide"] .app-footer p {
+  max-width: 36rem;
+}

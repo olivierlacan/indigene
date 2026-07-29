@@ -66,7 +66,11 @@ export function renderWildlifeIndex(main: HTMLElement): void {
           label.title,
         ]),
         el("p", { style: "margin:0 0 0.6rem;font-size:0.9rem;color:var(--ink-soft)" }, label.blurb),
-        ...inKind.map((row) => wildlifeCard(row.wildlife.id, row.plantCount, row.regionIds.length)),
+        // One column on a phone, columns on anything wider — the creature
+        // cards are self-contained, so a laptop should show a group at a
+        // glance rather than one card per screenful.
+        el("div", { class: "card-grid" },
+          inKind.map((row) => wildlifeCard(row.wildlife.id, row.plantCount, row.regionIds.length))),
       ]),
     );
   }
@@ -90,7 +94,7 @@ function wildlifeCard(id: string, plantCount: number, regionCount: number): HTML
   return el("a", {
     href: `#/wildlife/${w.id}`,
     class: "card",
-    style: "display:flex;gap:0.7rem;align-items:flex-start;text-decoration:none;color:inherit;padding:0.7rem 0.85rem;margin-bottom:0.5rem",
+    style: "display:flex;gap:0.7rem;align-items:flex-start;text-decoration:none;color:inherit;padding:0.7rem 0.85rem;margin:0;height:100%",
   }, [
     el("div", { "aria-hidden": "true", style: "font-size:1.6rem;line-height:1;flex:0 0 auto" }, w.icon),
     el("div", { style: "min-width:0" }, [

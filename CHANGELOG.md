@@ -23,6 +23,13 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+## [0.13] - 2026-07-29
+
+**More places, and a better way in**
+
+[![The Explore page: one card per region, each with a starring native](docs/screenshots/pr-56/thumb.png)](docs/screenshots/pr-56/explore-after-dark.png)
+[Before](docs/screenshots/pr-56/explore-before-dark.png) · [After](docs/screenshots/pr-56/explore-after-dark.png)
+
 ### Added
 
 - **All of France is covered now, not just the rainy west.** Three more parts
@@ -698,7 +705,8 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/fa0dd4c...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/d81160b...HEAD
+[0.13]: https://github.com/olivierlacan/indigene/compare/fa0dd4c...d81160b
 [0.12]: https://github.com/olivierlacan/indigene/compare/2aec57f...fa0dd4c
 [0.11]: https://github.com/olivierlacan/indigene/compare/f84450c...2aec57f
 [0.10]: https://github.com/olivierlacan/indigene/compare/9453251...f84450c

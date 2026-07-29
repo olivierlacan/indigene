@@ -1,6 +1,6 @@
 {
   "name": "indigene",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "private": true,
   "description": "Native Indigene — a mobile-first PWA that recommends locally native plants for the exact spot you're standing in.",
   "license": "MIT",

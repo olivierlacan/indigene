@@ -1,0 +1,84 @@
+# Keeps the registry honest on every PR that touches plant data.
+#
+# Two things it catches, both of which have actually happened:
+#
+#   1. **Registry drift.** `src/data/registry.ts` and the public JSON are
+#      generated from the region plant lists. Add a native, forget to run
+#      `npm run registry:build`, and the committed registry no longer matches
+#      the catalog it claims to project. Rebuilding here and diffing says so.
+#
+#   2. **Missing iNaturalist taxon ids.** Those ids join a plant page to the
+#      real sightings shown on it, and they can only be fetched with open
+#      internet — so a new region ships with none of them and nothing complains.
+#      That's how the Pacific Northwest's twenty new natives, and all of France,
+#      ended up with a "See it growing near you" section that had nothing to
+#      show. This annotates the PR instead of failing it (shipping a list before
+#      the ids are fetched is legitimate) and points at the job that fixes it:
+#      Actions → "Reconcile registry identifiers" → scope `missing-inat`.
+name: Registry
+
+on:
+  pull_request:
+    paths:
+      - "app/src/data/**"
+      - "app/src/lib/registry*.ts"
+      - "app/scripts/build-registry.mjs"
+      - "app/scripts/check-registry.mjs"
+      - ".github/workflows/registry.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Registry check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      - name: Rebuild the registry and check for drift
+        working-directory: app
+        run: |
+          npm run registry:build
+          if ! git diff --quiet -- src/data/registry.ts public/registry/native-plant-registry.json; then
+            echo "::error::The committed registry doesn't match what the catalog generates. Run \`npm run registry:build\` and commit the result."
+            git --no-pager diff --stat -- src/data/registry.ts public/registry/native-plant-registry.json
+            exit 1
+          fi
+          echo "Registry is up to date with the catalog."
+
+      - name: Audit the registry
+        id: audit
+        working-directory: app
+        run: |
+          npm run registry:check | tee "$RUNNER_TEMP/registry-check.txt"
+
+      # Reported, not enforced — see the header. The per-region coverage lines
+      # come from check-registry.mjs, so there's one implementation of "which
+      # taxa are missing an id" and the local run says exactly what CI says.
+      - name: Report iNaturalist taxon-id coverage
+        if: always()
+        working-directory: app
+        run: |
+          report="$RUNNER_TEMP/registry-check.txt"
+          [ -f "$report" ] || exit 0
+          {
+            echo "### iNaturalist taxon-id coverage"
+            echo ""
+            echo '```'
+            sed -n '/^iNaturalist taxon ids:/,/^$/p' "$report"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          if grep -q "^  .*— missing:" "$report"; then
+            echo "::warning::Some natives have no iNaturalist taxon id, so their \"See it growing near you\" section has nothing to show. Fill them in: Actions → \"Reconcile registry identifiers\" → Run workflow → scope \`missing-inat\`."
+          fi

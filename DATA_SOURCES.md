@@ -104,6 +104,38 @@ returns a searchable page if a slug ever drifts. Group entries (e.g. "Jays,
 turkeys & woodpeckers") and two-species entries have no single record and link
 to the authority instead.
 
+## Vernacular names (the localized plant & animal names)
+
+A plant's name in French is **not a translation of its English name** — it's the
+name the people who live with it gave it, recorded in a national reference list.
+So Indigene *looks each one up* rather than translating it, and a taxon no list
+has named displays its scientific name instead of an invented one. The lookup
+layer is [`app/src/lib/names.ts`](app/src/lib/names.ts); the tables are
+`app/src/locales/taxa.<lang>.ts`, and every row records which authority it came
+from.
+
+| Source | Covers | Licence | Notes |
+|---|---|---|---|
+| **TAXREF** (INPN / Muséum national d'Histoire naturelle) — [referentiel-taxonomique-taxref](https://inpn.mnhn.fr/programme/referentiel-taxonomique-taxref) | the flora **and fauna** of France and its overseas territories; `frenchVernacularName` | Licence Ouverte / Etalab (open, attribution) | The authority for anything native to France, plants and animals alike. Where several names are listed, the one the référentiel leads with is used. |
+| **Tela Botanica — BDTFX** — [bdtfx](https://www.tela-botanica.org/bdtfx/) | flora of metropolitan France, with the vernacular names French botanists actually use | CC BY-SA 4.0 | Cross-check on TAXREF for plants. |
+| **VASCAN** (Database of Vascular Plants of Canada, Université de Montréal) — [data.canadensys.net/vascan](https://data.canadensys.net/vascan/) | standard French names for **North American** plants | CC BY 4.0 | The gap TAXREF cannot fill: a Pacific Northwest native is unknown to the French flora, but Québec has named it. |
+| **Wikidata** — [wikidata.org](https://www.wikidata.org/) | `P1843` (taxon common name, `fr`) and the `fr` label | CC0 | Crosswalk of last resort, for taxa neither national list covers (the Caribbean and Florida species, a few insects). Already the hub `scripts/reconcile.mjs` resolves every taxon through, so the join is free. |
+
+**How the claim stays honest.** The tables are hand-seeded from those lists, and
+[`app/scripts/check-vernacular.mjs`](app/scripts/check-vernacular.mjs) re-asks
+each authority and reports every row its own source doesn't back. It needs open
+internet (all four hosts refuse the build sandbox's egress), so it runs
+quarterly in CI — [`.github/workflows/vernacular.yml`](.github/workflows/vernacular.yml)
+— and commits its snapshot to
+[`data/sources/vernacular-names/`](data/sources/vernacular-names/). A
+*disagreement* fails the job; a *gap* does not, because plenty of North American
+natives have simply never been named in French and showing the Latin is the
+honest answer.
+
+**Deliberately not used: machine translation.** It produces plausible names that
+no reference list backs — exactly the confident fabrication this document exists
+to prevent.
+
 ## Scaling the catalog: canonical taxonomy & distribution backbones
 
 The seed lists are hand-authored today. To grow honestly to every U.S. region —

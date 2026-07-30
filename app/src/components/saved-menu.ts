@@ -10,6 +10,7 @@
 import { el } from "../ui";
 import { listSpots } from "../db";
 import { openSavedSpot } from "../state";
+import { t } from "../lib/i18n";
 
 const MAX_IN_MENU = 6;
 
@@ -59,7 +60,7 @@ export function closeSavedMenu(): void {
 }
 
 async function populate(target: HTMLElement): Promise<void> {
-  target.replaceChildren(el("p", { class: "nav-menu-status" }, "Loading…"));
+  target.replaceChildren(el("p", { class: "nav-menu-status" }, t("savedMenu.loading")));
   const spots = await listSpots().catch(() => null);
   if (target.hidden) return; // closed again before the load finished
 
@@ -68,20 +69,20 @@ async function populate(target: HTMLElement): Promise<void> {
     // so this settles within a couple of seconds either way). Leave a way
     // back in: retrying re-opens the database from scratch.
     target.replaceChildren(
-      el("p", { class: "nav-menu-status" }, "Couldn't open saved spots. Closing other Indigene tabs may help."),
+      el("p", { class: "nav-menu-status" }, t("savedMenu.error")),
       el("button", {
         type: "button",
         role: "menuitem",
         class: "nav-menu-all",
         onClick: () => void populate(target),
-      }, "Try again"),
+      }, t("savedMenu.retry")),
     );
     return;
   }
   if (!spots.length) {
     target.replaceChildren(
-      el("p", { class: "nav-menu-status" }, "No saved spots yet."),
-      el("a", { href: "#/location", role: "menuitem", class: "nav-menu-all" }, "📍 Find a spot to save"),
+      el("p", { class: "nav-menu-status" }, t("savedMenu.empty")),
+      el("a", { href: "#/location", role: "menuitem", class: "nav-menu-all" }, t("savedMenu.findSpot")),
     );
     return;
   }
@@ -104,6 +105,6 @@ async function populate(target: HTMLElement): Promise<void> {
   target.replaceChildren(
     ...items,
     el("a", { href: "#/saved", role: "menuitem", class: "nav-menu-all" },
-      spots.length > MAX_IN_MENU ? `See all ${spots.length} saved →` : "Manage saved →"),
+      spots.length > MAX_IN_MENU ? t("savedMenu.seeAll", { n: spots.length }) : t("savedMenu.manage")),
   );
 }

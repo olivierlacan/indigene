@@ -4,6 +4,7 @@
 // route and the wording here means every one of those reassurances points at the
 // same page and reads the same way.
 import { el } from "../ui";
+import { t } from "../lib/i18n";
 
 /** The in-app route for the Privacy & safety page. */
 export const PRIVACY_ROUTE = "#/privacy";
@@ -13,7 +14,7 @@ export const PRIVACY_ROUTE = "#/privacy";
  * meant to sit right under the control it's about (a location button, a save
  * button). `lead` is the plain-words promise; the link carries the details.
  */
-export function privacyNote(lead: string, linkText = "How your data is handled"): HTMLElement {
+export function privacyNote(lead: string, linkText = t("privacy.howHandled")): HTMLElement {
   return el("p", { class: "privacy-note" }, [
     el("span", { "aria-hidden": "true" }, "🔒 "),
     `${lead} `,

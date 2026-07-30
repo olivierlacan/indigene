@@ -4,6 +4,7 @@ import { manualSunEstimate } from "../lib/solar";
 import { sunPlain } from "../lib/plain";
 import { sunIcon } from "../components/sun-icon";
 import { whyThis } from "../components/learn";
+import { t, fmtNumber } from "../lib/i18n";
 
 // Step 2: sun. The manual path is FIRST and fully sufficient — some users will
 // never grant camera access. The camera scan is offered as an optional upgrade.
@@ -15,9 +16,9 @@ export function renderSun(main: HTMLElement): void {
   if (!hasCoords && !store.draft.regionOverride) return void navigate("location");
 
   const buckets: { key: "full" | "half" | "shade"; title: string; sub: string }[] = [
-    { key: "full", title: "Sunny most of the day", sub: "Direct sun for 6+ hours — open lawn, south side, no big trees close by." },
-    { key: "half", title: "Sun for about half the day", sub: "A few hours of direct sun, shade the rest — near a building or scattered trees." },
-    { key: "shade", title: "Mostly shady", sub: "Little direct sun — under trees, north side, or hemmed in by walls." },
+    { key: "full", title: t("sun.full"), sub: t("sun.fullSub") },
+    { key: "half", title: t("sun.half"), sub: t("sun.halfSub") },
+    { key: "shade", title: t("sun.shade"), sub: t("sun.shadeSub") },
   ];
 
   const result = el("div", { "aria-live": "polite" });
@@ -28,14 +29,18 @@ export function renderSun(main: HTMLElement): void {
     if (!s) return;
     result.append(
       el("div", { class: "note info" }, [
-        el("strong", {}, "This spot gets "),
+        el("strong", {}, t("sun.thisSpotGets")),
         `${sunPlain(s.hours)}. `,
-        el("span", {}, `Best guess ${s.hours} hours, likely somewhere between ${s.low} and ${s.high}.`),
+        el("span", {}, t("sun.bestGuess", {
+          hours: fmtNumber(s.hours),
+          low: fmtNumber(s.low),
+          high: fmtNumber(s.high),
+        })),
         s.source === "scan"
-          ? el("div", { style: "margin-top:0.4rem" }, "Measured from your sky scan.")
-          : el("div", { style: "margin-top:0.4rem" }, hasCoords ? "From your quick pick — scan the sky below for a sharper estimate." : "From your quick pick."),
+          ? el("div", { style: "margin-top:0.4rem" }, t("sun.fromScan"))
+          : el("div", { style: "margin-top:0.4rem" }, hasCoords ? t("sun.fromPickWithScan") : t("sun.fromPick")),
       ]),
-      el("button", { class: "btn btn-primary btn-block", onClick: () => navigate("confirm") }, "Next: check the soil & climate →")
+      el("button", { class: "btn btn-primary btn-block", onClick: () => navigate("confirm") }, t("sun.next"))
     );
   }
 
@@ -58,10 +63,14 @@ export function renderSun(main: HTMLElement): void {
     ])
   );
 
+  // Matched on the estimate's *hours*, not on its label: the label is a
+  // sentence in whatever language was active when the estimate was made (it
+  // rides along in saved spots), so comparing labels would quietly forget the
+  // user's pick the moment they switched languages.
   function isSelected(key: string): boolean {
     const s = store.draft.sun;
     if (!s || s.source === "scan") return false;
-    return s.label === manualSunEstimate(key as "full" | "half" | "shade").label;
+    return s.hours === manualSunEstimate(key as "full" | "half" | "shade").hours;
   }
 
   const deciduousToggle = el("input", {
@@ -72,12 +81,9 @@ export function renderSun(main: HTMLElement): void {
   }) as HTMLInputElement;
 
   main.append(
-    el("h2", { class: "step-title" }, "How much sun does this spot get?"),
-    el("p", { class: "step-lede" }, hasCoords ? "Pick the closest match — the sky scan below can sharpen it." : "Pick the closest match."),
-    whyThis("Why do we ask about sun first?", [
-      "Hours of direct sun decide more about what will thrive than anything else you can measure. ",
-      "And shade isn't a flaw — there's a native for every light level, from prairie flowers to forest-floor ferns. The light just decides which ones.",
-    ]),
+    el("h2", { class: "step-title" }, t("sun.title")),
+    el("p", { class: "step-lede" }, hasCoords ? t("sun.ledeWithScan") : t("sun.lede")),
+    whyThis(t("sun.whyTitle"), t("sun.why")),
 
     ...choiceButtons,
 
@@ -85,8 +91,8 @@ export function renderSun(main: HTMLElement): void {
       el("label", { for: "decid", style: "display:flex;gap:0.6rem;align-items:flex-start;font-weight:600" }, [
         deciduousToggle,
         el("span", {}, [
-          "🍂 Trees overhead that go bare in winter?",
-          el("span", { style: "display:block;font-weight:400;color:var(--ink-soft);font-size:0.9rem;margin-top:0.2rem" }, "Bare branches make spring and fall much sunnier — we'll account for it."),
+          t("sun.deciduous"),
+          el("span", { style: "display:block;font-weight:400;color:var(--ink-soft);font-size:0.9rem;margin-top:0.2rem" }, t("sun.deciduousSub")),
         ]),
       ]),
     ]),
@@ -96,16 +102,16 @@ export function renderSun(main: HTMLElement): void {
     // coordinate — the quick pick above is the whole story.
     ...(hasCoords
       ? [el("div", { class: "card" }, [
-          el("h3", {}, "📷 Scan the sky for a sharper estimate"),
-          el("p", {}, "Point your phone at the skyline and slowly turn all the way around. We'll trace how high the trees and rooftops rise and calculate the real sun hours for this exact spot. Needs camera and motion access — you can skip it entirely."),
-          el("button", { class: "btn btn-secondary btn-block", onClick: () => navigate("scan") }, "Start sky scan"),
+          el("h3", {}, t("sun.scanTitle")),
+          el("p", {}, t("sun.scanLede")),
+          el("button", { class: "btn btn-secondary btn-block", onClick: () => navigate("scan") }, t("sun.scanStart")),
         ])]
       : []),
 
     result,
 
     el("div", { class: "btn-row" }, [
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("location") }, "Back"),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("location") }, t("sun.back")),
     ])
   );
 

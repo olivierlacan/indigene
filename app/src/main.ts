@@ -15,25 +15,37 @@ import { renderRegion } from "./steps/region";
 import { renderWildlifeIndex, renderWildlife } from "./steps/wildlife";
 import { renderPrivacy } from "./steps/privacy";
 import { renderSources } from "./steps/sources";
+import { renderSettings } from "./steps/settings";
+import { renderAbout } from "./steps/about";
 import { initSavedMenu, closeSavedMenu } from "./components/saved-menu";
+import { applyDocumentLang, onLangChange, t } from "./lib/i18n";
+import type { TKey } from "./locales/en";
+import { onUnitsChange } from "./lib/units";
+import { renderChrome } from "./components/chrome";
 
 type StepFn = (main: HTMLElement, param?: string) => void | (() => void) | Promise<void>;
 
-const STEPS: Record<string, { fn: StepFn; label: string; inFlow: boolean }> = {
-  "": { fn: renderWelcome, label: "Start", inFlow: false },
-  location: { fn: renderLocation, label: "Spot", inFlow: true },
-  sun: { fn: renderSun, label: "Sun", inFlow: true },
-  scan: { fn: renderScan, label: "Sun", inFlow: true },
-  confirm: { fn: renderConfirm, label: "Soil", inFlow: true },
-  results: { fn: renderResults, label: "Plants", inFlow: true },
-  saved: { fn: renderSaved, label: "Saved", inFlow: false },
-  browse: { fn: renderBrowse, label: "Browse", inFlow: false },
-  plants: { fn: renderExplore, label: "Explore", inFlow: false },
-  regions: { fn: renderExplore, label: "Explore", inFlow: false },
-  search: { fn: renderSearch, label: "Search", inFlow: false },
-  wildlife: { fn: renderWildlifeIndex, label: "Wildlife", inFlow: false },
-  privacy: { fn: renderPrivacy, label: "Privacy", inFlow: false },
-  sources: { fn: renderSources, label: "Sources", inFlow: false },
+// `labelKey` rather than `label`: the rail is redrawn on every navigation and
+// on every language change, so the words have to be looked up at render time.
+// A string captured here would be frozen in whatever language happened to be
+// active when this module first ran.
+const STEPS: Record<string, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = {
+  "": { fn: renderWelcome, labelKey: "steps.start", inFlow: false },
+  location: { fn: renderLocation, labelKey: "steps.spot", inFlow: true },
+  sun: { fn: renderSun, labelKey: "steps.sun", inFlow: true },
+  scan: { fn: renderScan, labelKey: "steps.sun", inFlow: true },
+  confirm: { fn: renderConfirm, labelKey: "steps.soil", inFlow: true },
+  results: { fn: renderResults, labelKey: "steps.plants", inFlow: true },
+  saved: { fn: renderSaved, labelKey: "steps.saved", inFlow: false },
+  browse: { fn: renderBrowse, labelKey: "steps.browse", inFlow: false },
+  plants: { fn: renderExplore, labelKey: "steps.explore", inFlow: false },
+  regions: { fn: renderExplore, labelKey: "steps.explore", inFlow: false },
+  search: { fn: renderSearch, labelKey: "steps.search", inFlow: false },
+  wildlife: { fn: renderWildlifeIndex, labelKey: "steps.wildlife", inFlow: false },
+  privacy: { fn: renderPrivacy, labelKey: "steps.privacy", inFlow: false },
+  sources: { fn: renderSources, labelKey: "steps.sources", inFlow: false },
+  settings: { fn: renderSettings, labelKey: "steps.settings", inFlow: false },
+  about: { fn: renderAbout, labelKey: "steps.about", inFlow: false },
 };
 
 const FLOW = ["location", "sun", "confirm", "results"];
@@ -83,7 +95,7 @@ function renderStepRail(active: string): void {
     const dot = document.createElement("span");
     dot.className = "dot";
     dot.textContent = state === "done" ? "✓" : String(i + 1);
-    li.append(dot, document.createTextNode(STEPS[key].label));
+    li.append(dot, document.createTextNode(t(STEPS[key].labelKey)));
     stepsList.append(li);
   });
   (document.querySelector(".steps") as HTMLElement).style.display = idx >= 0 ? "block" : "none";
@@ -130,13 +142,11 @@ function updateSiteNav(step: string): void {
   });
 }
 
-const BASE_TITLE = document.title;
-
 async function route(): Promise<void> {
   const { step, param } = currentRoute();
   if (cleanup) { cleanup(); cleanup = null; }
   closeSavedMenu(); // a navigation always dismisses an open header menu
-  document.title = BASE_TITLE; // plant pages set their own; everything else resets
+  document.title = t("app.title"); // plant pages set their own; everything else resets
   renderStepRail(step);
   updateSiteNav(step);
   updateLayout(step, param);
@@ -201,8 +211,27 @@ function updateOnline(): void {
 window.addEventListener("online", updateOnline);
 window.addEventListener("offline", updateOnline);
 
+/**
+ * Re-render everything after a language or units switch.
+ *
+ * A reload would be simpler and is wrong: the working draft (your coordinates,
+ * your sun estimate, the moisture you just corrected) lives in memory, and
+ * throwing it away because someone changed a setting mid-flow would be a
+ * cruel way to answer "show me this in French". Re-running the current route
+ * redraws every word and every measurement while the draft stays put.
+ */
+function rerenderAll(): void {
+  applyDocumentLang();
+  renderChrome();
+  void route();
+}
+
 async function boot(): Promise<void> {
   normalizePathRoute();
+  applyDocumentLang();
+  renderChrome();
+  onLangChange(rerenderAll);
+  onUnitsChange(rerenderAll);
   // Prefs only tune ranking weights and filters, so the first paint never
   // waits on them — not even briefly: IndexedDB can stall outright (Safari's
   // first-open bug), and a blank page with a spinner is strictly worse than

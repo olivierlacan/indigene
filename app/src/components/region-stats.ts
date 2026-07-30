@@ -11,6 +11,8 @@ import { el } from "../ui";
 import { wildlifeCountForRegion } from "../lib/wildlife";
 import { keystoneIcon } from "./keystone-icon";
 import { DATA_SOURCES_URL } from "../lib/plain";
+import { t, fmtNumber } from "../lib/i18n";
+import { commonName, regionName } from "../lib/names";
 
 interface RegionStat {
   /** Emoji icon, or a factory for an inline SVG (the keystone arch). */
@@ -49,20 +51,20 @@ export function regionStatGrid(region: RegionDef, plants: Plant[]): HTMLElement 
           ])]
         : []),
       el("p", { class: "stat-dialog-source" }, [
-        el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, "How every number is sourced →"),
+        el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, t("stat.howSourced")),
       ]),
-      el("button", { class: "btn btn-secondary btn-block", onClick: () => dialog.close() }, "Got it")
+      el("button", { class: "btn btn-secondary btn-block", onClick: () => dialog.close() }, t("stat.gotIt"))
     );
     dialog.showModal();
   };
 
-  return el("div", { class: "stat-grid", "aria-label": `${region.meta.name} at a glance` }, [
+  return el("div", { class: "stat-grid", "aria-label": t("stat.glance", { name: regionName(region.meta) }) }, [
     ...stats.map((s) =>
       el("button", {
         class: "stat-tile",
         type: "button",
         "aria-haspopup": "dialog",
-        "aria-label": `${s.label}: ${s.value}${s.sub ? `, ${s.sub}` : ""}. Tap to learn what this means.`,
+        "aria-label": t("stat.tileAria", { label: s.label, value: s.value, sub: s.sub ? `, ${s.sub}` : "" }),
         onClick: () => open(s),
       }, [
         el("span", { class: "stat-k", "aria-hidden": "true" }, [
@@ -88,45 +90,44 @@ function statsFor(region: RegionDef, plants: Plant[]): RegionStat[] {
   const stats: RegionStat[] = [
     {
       icon: "🌿",
-      label: "Native plants",
-      value: String(plants.length),
-      sub: "curated for this region",
-      explain:
-        "The plants on this region's hand-built list, each checked as native to it against the sources cited on its profile. It's a curated starting lineup that grows carefully — not a census of everything that grows here.",
+      label: t("regionStat.plants.label"),
+      value: fmtNumber(plants.length),
+      sub: t("regionStat.plants.sub"),
+      explain: t("regionStat.plants.explain"),
     },
     {
       icon: "🐛",
-      label: "Caterpillar hosts",
-      value: `up to ${topHost.hostLepCount}`,
-      sub: `species on ${topHost.common.toLowerCase()} alone`,
-      explain:
-        `How many butterfly and moth species can raise their caterpillars on a single plant — ${topHost.common.toLowerCase()} tops this list at ${topHost.hostLepCount}. Caterpillars are what nearly all baby songbirds are fed, so this is the best single measure of how much life a planting supports. (Counts overlap between plants, so we don't add them up.)`,
+      label: t("regionStat.hosts.label"),
+      value: t("regionStat.hosts.value", { n: fmtNumber(topHost.hostLepCount) }),
+      sub: t("regionStat.hosts.sub", { plant: commonName(topHost) }),
+      explain: t("regionStat.hosts.explain", {
+        plant: commonName(topHost),
+        n: fmtNumber(topHost.hostLepCount),
+      }),
     },
   ];
   if (wildlife > 0) {
     stats.push({
       icon: "🦋",
-      label: "Wildlife ties",
+      label: t("regionStat.wildlife.label"),
       // "Kinds", not "animals": each catalog entry counts once, and some
       // entries are a single species (the monarch) while others are a
       // recognizable group (jays, turkeys & woodpeckers) — so a plain animal
       // count would be both an under- and an over-statement at once.
-      value: String(wildlife),
-      sub: "kinds of wildlife, documented",
-      explain:
-        `${wildlife} kinds of butterflies, moths, bees, birds, and mammals with a documented, citable tie to at least one plant on this list — each counted once, whether it's a single species like the monarch or a familiar group like the acorn-caching jays. These are the notable, nameable relationships — the real total is far larger; a single oak feeds more species than anyone could list.`,
+      value: fmtNumber(wildlife),
+      sub: t("regionStat.wildlife.sub"),
+      explain: t("regionStat.wildlife.explain", { n: fmtNumber(wildlife) }),
       moreHref: "#/wildlife",
-      moreLabel: "Browse plants by the wildlife they support →",
+      moreLabel: t("regionStat.wildlife.more"),
     });
   }
   if (keystones.length > 0) {
     stats.push({
       icon: () => el("span", { style: "display:inline-flex;color:var(--brand)" }, [keystoneIcon(13)]),
-      label: "Keystone plants",
-      value: String(keystones.length),
-      sub: "food webs lean on these",
-      explain:
-        `${keystones.length} of this region's plants are keystones — like the wedge at the crown of a stone arch, each supports far more wildlife than most, and losing one would unravel a food web far bigger than itself.`,
+      label: t("regionStat.keystone.label"),
+      value: fmtNumber(keystones.length),
+      sub: t("regionStat.keystone.sub"),
+      explain: t("regionStat.keystone.explain", { n: fmtNumber(keystones.length) }),
     });
   }
   return stats;

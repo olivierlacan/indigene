@@ -25,6 +25,38 @@ subtitle on the What's new page.
 
 ### Added
 
+- **Indigene speaks French.** Every word of the app — the screens, the buttons,
+  the plain-language explanations, the privacy and sources pages — is now
+  available in French as well as English. It picks your language from your
+  phone or browser the first time, and you can change it whenever you like from
+  **Réglages / Settings**, reachable from the bottom of every page.
+- **You choose your own units, whatever language you read in.** Heights,
+  rainfall and winter cold can be shown in metres and °C, or in feet and °F,
+  and the choice is completely separate from the language. A French speaker
+  gardening in Ohio can read in French and measure in feet; an American in
+  Bordeaux can read in English and measure in metres. Left alone, it simply
+  follows whatever your phone's region uses. See
+  [Settings](https://indigene.app/#/settings).
+- **Plants and animals are called by their French names.** *Quercus robur* is
+  "Chêne pédonculé", not a translation of "Pedunculate Oak" — because that's
+  the name recorded for it in France's own national reference list. The names
+  come from TAXREF (the Muséum national d'Histoire naturelle), Tela Botanica,
+  and — for North American plants that France has never needed to name — the
+  Canadian VASCAN list. Where nobody has given a plant a French name, we show
+  its scientific name rather than inventing one, and the page says so. Where
+  each name comes from is set out on the
+  [Where our numbers come from](https://indigene.app/#/sources) page.
+- The size drawing, the plant cards and the "no taller than…" filters all read
+  in your units: a tree is "24 m × 21 m" or "80 ft × 70 ft", and the ruler up
+  the side of the drawing is marked in whole metres or whole feet — never in
+  the awkward converted numbers you'd get from just swapping the label.
+- **An [About page](https://indigene.app/#/about)**, linked from the bottom of
+  every page. It says why Indigene exists — most gardens are green and nearly
+  lifeless, and one native plant restarts the food web the same season — who
+  it's for, and the five things it refuses to do: never use a word it hasn't
+  explained, always show its error bars, never state a number it can't trace to
+  somebody else, never ask anything of you, and keep working where the signal
+  doesn't.
 - Indigene has a proper little sprout icon in your browser tab now, instead of
   the blank page symbol every site gets when it hasn't been given one.
 - Posting an Indigene link somewhere — a message to a friend, a group chat, a
@@ -35,6 +67,31 @@ subtitle on the What's new page.
 
 ### Changed
 
+- The French plant descriptions for **Atlantic France** — Paris, Nantes and
+  Bordeaux — are written in French. The other regions' descriptions are still
+  in English while we work through them, and any page showing English text says
+  so plainly rather than leaving you to notice.
+- Internal: a hand-rolled `lib/i18n.ts` (~2 KB, no dependency) over typed
+  dictionaries in `app/src/locales/`. English is the key set and every other
+  locale is typed against it, so a missing or misspelt key is a compile error,
+  not a blank on someone's phone. `lib/units.ts` converts at the display edge —
+  the catalog keeps storing feet and °F exactly as sourced, so a units switch
+  can never corrupt data.
+- Internal: `app/scripts/check-vernacular.mjs` re-asks TAXREF, VASCAN and
+  Wikidata whether the names we display are the names they give, and
+  `.github/workflows/vernacular.yml` runs it quarterly (the build sandbox's
+  egress blocks all three hosts). A name its own source doesn't back fails the
+  job; a gap does not.
+- Internal: `scripts/shoot.mjs` takes `--locale`, so screenshots can be captured
+  as a phone in that region would render them — language *and* default units.
+- Internal: the bundle is now ~240 KB gzipped (was ~179 KB) — two full
+  dictionaries, the name tables and the French prose overlay. Re-measured and
+  updated in `README.md`, `PROJECT_BRIEF.md`, `app/README.md` and
+  `docs/ecoregion-plan.md`.
+- Internal: the language and units pickers live in
+  `components/prefs-controls.ts` rather than inside a screen, so the fuller
+  settings screen being built separately can import them and delete the thin
+  `steps/settings.ts` shell in one line.
 - Mistyping an Indigene address used to quietly drop you on the front page, as
   though that's where you'd meant to go. Now there's a real
   **"We couldn't find that page"** page that says what happened and offers

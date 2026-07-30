@@ -1,20 +1,38 @@
 # Plan: a French edition of Indigene (localiser Indigene)
 
-**Status:** the **region + ecoregion foundation has shipped** (Track 3's first
-region and the ecoregion plumbing); **language/units localization is next**
-(Tracks 1–2, not yet built). The question that gated this — *"can we find
-ecoregion data for France?"* — had a clear **yes** (see §1), and the app now:
-generalizes ecoregions across providers (US EPA Omernik + EEA Biogeographical
-Regions of Europe, picked by coordinates); reads elevation from a global source
-outside the US; and ships a first European region, **Atlantic France**
-(`app/src/data/plants.france-atlantic.ts`, 23 plants), selected via the EEA
-`atlantic` region code. The **UI is still English** and units are still
-imperial — that's the explicit next step. **§4.3's gap is now closed:** the
-French host counts were genus-level estimates pending a real European source;
-they are now counted from the Gaytán et al. 2026 matrix (see
-`docs/host-counts-plan.md`), so every one of them is citable, which is the bar
-every number in Indigene is meant to clear. This doc records what's done, what's
-feasible next, and the decisions that need a human.
+**Status:** **Tracks 1 and 2 have shipped.** The region + ecoregion foundation
+landed first (Track 3's first regions); the UI is now bilingual and the units are
+the reader's own choice. What exists today:
+
+- **A language layer** — [`app/src/lib/i18n.ts`](../app/src/lib/i18n.ts), ~2 KB,
+  no dependency, over typed dictionaries in `app/src/locales/`. English is the
+  key set and French is typed against it, so a missing key is a compile error
+  rather than a blank on someone's phone.
+- **A units layer** — [`app/src/lib/units.ts`](../app/src/lib/units.ts). Metric
+  or imperial, **switchable independently of the language** (§6 decision 5,
+  resolved: a user toggle everywhere, not metric-for-the-French-edition). The
+  catalog still stores feet and °F; conversion happens once, at the moment a
+  number becomes text.
+- **Localized names, looked up rather than translated** — TAXREF, Tela Botanica,
+  VASCAN and Wikidata, with a quarterly CI verification job. See
+  `DATA_SOURCES.md` → "Vernacular names".
+- **Localized region metadata and catalog prose**, as overlays that fall back to
+  English and *say so on the page* when they do.
+
+**What's left**, and deliberately so: the catalog's prose is ~33,000 words of
+hand-written botanical writing, and only the Atlantic France roster is translated
+so far. The seam is built and the gap is stated in-app; the other three French
+regions and the North American rosters are follow-up work, not blockers.
+
+The question that gated all of this — *"can we find ecoregion data for France?"* —
+had a clear **yes** (see §1). §4.3's gap is also closed: the French host counts
+were genus-level estimates pending a real European source; they are now counted
+from the Gaytán et al. 2026 matrix (see `docs/host-counts-plan.md`), so every one
+of them is citable, which is the bar every number in Indigene is meant to clear.
+
+> The sections below are kept as the reasoning that got us here. Where they say
+> "not yet built" of Tracks 1–2, read "built as described"; where they pose a
+> decision, the answer now lives in §6.
 
 ## TL;DR
 
@@ -303,7 +321,10 @@ front rather than guessing):
 
 1. **Scope of a first edition** — the full app in French, or the core spot→results
    flow first? (Recommend: core flow screen-complete, so there's no half-French
-   screen.)
+   screen.) — **resolved: the whole UI at once.** Every screen's strings moved
+   together, so there is no half-French screen anywhere. The one place a mix
+   remains is *catalog prose*, which is data rather than UI, and the app names
+   that gap on the page instead of hiding it.
 2. **Which French region to seed first**, and its reference locale for the numbers
    (proposal: Atlantic / Île-de-France–Atlantic façade).
 3. **Host-count source (§4.3)** — *resolved:* the Gaytán 2026 European matrix
@@ -313,7 +334,12 @@ front rather than guessing):
 4. **Bilingual release notes / changelog?** The `/release-notes/` compiler is
    English-only today; a French edition may want a `fr` page.
 5. **Units** — metric for the French edition only, or a user unit toggle
-   everywhere (US regions included)?
+   everywhere (US regions included)? — **resolved: a toggle everywhere,
+   independent of language.** The pairing people assume ("French means metric")
+   is wrong often enough to matter: a French speaker gardening in Ohio buys
+   plants tagged in feet, and an American in Bordeaux is handed metres by every
+   nursery in town. The default follows the *device's region* rather than the UI
+   language, which gets both of them right before they touch a setting.
 
 None of these block confirming the headline: **the ecoregion data for France
 exists, it's openly licensed, and it fits the architecture.** The work after that

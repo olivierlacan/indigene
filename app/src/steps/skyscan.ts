@@ -6,6 +6,7 @@ import {
 } from "../lib/orientation";
 import { HorizonRecorder } from "../lib/horizon";
 import { estimateSunHours } from "../lib/solar";
+import { t, fmtNumber } from "../lib/i18n";
 
 // Step 2b (optional): the AR-ish sky scan. Built on getUserMedia +
 // DeviceOrientationEvent (NOT WebXR, which Safari/iOS lacks). Degrades to the
@@ -28,7 +29,7 @@ export function renderScan(main: HTMLElement): () => void {
   const video = el("video", { playsinline: "", muted: "", autoplay: "" }) as HTMLVideoElement;
   video.muted = true;
   const overlay = el("canvas") as HTMLCanvasElement;
-  const hud = el("div", { class: "scan-hud" }, "Point at the skyline and turn slowly…");
+  const hud = el("div", { class: "scan-hud" }, t("scan.hud"));
   const progressBar = el("span", { style: "width:0%" });
   const scanner = el("div", { class: "scanner" }, [
     video,
@@ -36,14 +37,14 @@ export function renderScan(main: HTMLElement): () => void {
     el("div", { class: "scan-hud" }, [hud, el("div", { class: "scan-progress" }, [progressBar])]),
   ]);
 
-  const useBtn = el("button", { class: "btn btn-primary btn-block", disabled: true, onClick: finish }, "Turn all the way around first…");
+  const useBtn = el("button", { class: "btn btn-primary btn-block", disabled: true, onClick: finish }, t("scan.turnFirst"));
 
   const intro = el("div", {}, [
-    el("h2", { class: "step-title" }, "Scan your sky"),
-    el("p", { class: "step-lede" }, "Hold your phone up and aim the crosshair at the top of the trees, roofs, or fences around you. Slowly spin a full circle, keeping the crosshair on the skyline. We'll work out how much sun this spot really gets."),
-    el("div", { class: "note info" }, "Needs camera and motion access. It all stays on your phone — no video is saved or sent anywhere."),
-    el("button", { class: "btn btn-primary btn-block", onClick: begin }, "Enable camera & motion"),
-    el("button", { class: "btn btn-ghost btn-block", onClick: () => navigate("sun") }, "Skip — I'll use the quick pick"),
+    el("h2", { class: "step-title" }, t("scan.title")),
+    el("p", { class: "step-lede" }, t("scan.lede")),
+    el("div", { class: "note info" }, t("scan.permissionNote")),
+    el("button", { class: "btn btn-primary btn-block", onClick: begin }, t("scan.enable")),
+    el("button", { class: "btn btn-ghost btn-block", onClick: () => navigate("sun") }, t("scan.skip")),
   ]);
   main.append(intro);
 
@@ -82,9 +83,9 @@ export function renderScan(main: HTMLElement): () => void {
     main.append(
       scanner,
       el("p", { class: "coords", id: "scan-read", "aria-live": "off", style: "margin:0.6rem 0" }, ""),
-      last.trueCompass ? el("div") : el("div", { class: "note warn" }, "Heads up: this phone's compass is derived from motion sensors and can drift. If the sun estimate looks wrong, use the quick pick instead."),
+      last.trueCompass ? el("div") : el("div", { class: "note warn" }, t("scan.compassWarn")),
       useBtn,
-      el("button", { class: "btn btn-ghost btn-block", onClick: () => navigate("sun") }, "Cancel scan")
+      el("button", { class: "btn btn-ghost btn-block", onClick: () => navigate("sun") }, t("scan.cancel"))
     );
     loop();
   }
@@ -94,12 +95,17 @@ export function renderScan(main: HTMLElement): () => void {
     const cov = recorder.coverage();
     progressBar.style.width = `${Math.round(cov * 100)}%`;
     const read = document.getElementById("scan-read");
-    if (read) read.textContent = `Facing ${compassName(last.bearing)} (${Math.round(last.bearing)}°) · skyline ${Math.round(Math.max(0, last.elevation))}° up · ${Math.round(cov * 100)}% of the circle scanned`;
+    if (read) read.textContent = t("scan.reading", {
+      dir: compassName(last.bearing),
+      deg: fmtNumber(Math.round(last.bearing)),
+      up: fmtNumber(Math.round(Math.max(0, last.elevation))),
+      pct: fmtNumber(Math.round(cov * 100)),
+    });
     if (cov >= 0.75) {
       (useBtn as HTMLButtonElement).disabled = false;
-      useBtn.textContent = "Use this scan →";
+      useBtn.textContent = t("scan.use");
     } else {
-      useBtn.textContent = `Keep turning… ${Math.round(cov * 100)}%`;
+      useBtn.textContent = t("scan.keepTurning", { pct: fmtNumber(Math.round(cov * 100)) });
     }
     raf = requestAnimationFrame(loop);
   }
@@ -151,25 +157,25 @@ export function renderScan(main: HTMLElement): () => void {
       source: "scan",
     });
     cleanup();
-    toast("Sun estimate updated from your scan.");
+    toast(t("scan.updated"));
     navigate("sun");
   }
 
   function showCameraFallback(): void {
     clear(main);
     main.append(
-      el("h2", { class: "step-title" }, "Camera isn't available"),
-      el("div", { class: "note warn" }, "We couldn't open the camera — it may be blocked, or this browser doesn't allow it. That's completely fine; the quick pick works just as well for most spots."),
-      el("button", { class: "btn btn-primary btn-block", onClick: () => navigate("sun") }, "Use the quick sun pick instead")
+      el("h2", { class: "step-title" }, t("scan.noCameraTitle")),
+      el("div", { class: "note warn" }, t("scan.noCamera")),
+      el("button", { class: "btn btn-primary btn-block", onClick: () => navigate("sun") }, t("scan.useQuickPick"))
     );
   }
 
   function showMotionFallback(): void {
     clear(main);
     main.append(
-      el("h2", { class: "step-title" }, "Motion sensors aren't available"),
-      el("div", { class: "note warn" }, "Your camera works, but this phone won't share its compass/motion, so we can't measure sun angles reliably. Rather than guess, use the quick pick — you know this spot better than a shaky sensor does."),
-      el("button", { class: "btn btn-primary btn-block", onClick: () => navigate("sun") }, "Use the quick sun pick instead")
+      el("h2", { class: "step-title" }, t("scan.noMotionTitle")),
+      el("div", { class: "note warn" }, t("scan.noMotion")),
+      el("button", { class: "btn btn-primary btn-block", onClick: () => navigate("sun") }, t("scan.useQuickPick"))
     );
   }
 
@@ -190,7 +196,10 @@ export function renderScan(main: HTMLElement): () => void {
   return cleanup;
 }
 
+/** The eight compass points, abbreviated the way each language does it —
+ *  "SW" in English is "SO" (sud-ouest) in French. */
 function compassName(deg: number): string {
-  const names = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
-  return names[Math.round(deg / 45) % 8];
+  const keys = ["compass.N", "compass.NE", "compass.E", "compass.SE",
+                "compass.S", "compass.SW", "compass.W", "compass.NW"] as const;
+  return t(keys[Math.round(deg / 45) % 8]);
 }

@@ -11,9 +11,9 @@ import { manualSunEstimate } from "../lib/solar";
 import { findPlant, assessSpot, plantShareUrl } from "../lib/explore";
 import type { PlantEntry, Suitability } from "../lib/explore";
 import { wildlifeForPlant, relianceOf } from "../lib/wildlife";
-import { supportLabels } from "../lib/plain";
+import { supportLabel } from "../lib/plain";
 import { supportIcon } from "../components/support-icon";
-import { scoreLabels, confidencePlain, growthPlain, propagationMethods, PROPAGATION_SOURCE_URL, SOURCES_ROUTE } from "../lib/plain";
+import { SCORE_KEYS, scoreLabel, bloomColorWord, confidencePlain, growthPlain, moistureWord, propagationMethod, PROPAGATION_SOURCE_URL, SOURCES_ROUTE } from "../lib/plain";
 import { citation } from "../components/citation";
 import { silhouetteFor } from "../components/plant-card";
 import { keystoneIcon } from "../components/keystone-icon";
@@ -23,8 +23,10 @@ import { entryForPlant, deepLinks } from "../lib/registry";
 import { nearbyObservationsSection } from "../components/nearby-observations";
 import { privacyNote } from "../components/privacy-link";
 import type { Plant, SiteData, SunEstimate, SupportKind } from "../types";
-
-const monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+import { t, fmtNumber, fmtList, monthName } from "../lib/i18n";
+import { length, humanHeightLabel } from "../lib/units";
+import { commonName, nameLines, regionName } from "../lib/names";
+import { prose, propagationNote, isUntranslated } from "../lib/prose";
 
 // The anchorable sections below the profile share one deep-link scheme:
 // #/plants/<slug>/<section>. A link straight to a section scrolls it into
@@ -51,7 +53,7 @@ export function renderPlant(main: HTMLElement, param?: string): void {
   // Default to the first region's row for display; the suitability check picks
   // the row matching the reader's actual location.
   const { plant, region } = entries[0];
-  document.title = `${plant.common} (${plant.latin}) — Indigene`;
+  document.title = t("plant.docTitle", { name: commonName(plant), latin: plant.latin });
 
   main.append(
     profile(plant, entries),
@@ -61,8 +63,8 @@ export function renderPlant(main: HTMLElement, param?: string): void {
     referencesSection(plant),
     suitabilityChecker(entries),
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("plants") }, "← More natives"),
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, "Home"),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("plants") }, t("plant.more")),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("browse.home")),
     ])
   );
 
@@ -71,61 +73,76 @@ export function renderPlant(main: HTMLElement, param?: string): void {
   function profile(p: Plant, all: PlantEntry[]): HTMLElement {
     const badges = el("div", {}, [
       p.keystone
-        ? el("span", { class: "badge keystone", title: "A keystone plant supports far more wildlife than most — losing it would unravel the local food web." }, [keystoneIcon(), " Keystone plant"])
+        ? el("span", { class: "badge keystone", title: t("badge.keystoneTitle") }, [keystoneIcon(), " " + t("badge.keystone")])
         : null,
       p.noWaterEstablish
-        ? el("span", { class: "badge nowater" }, "Survives with no watering")
-        : el("span", { class: "badge caution" }, "Needs water to establish"),
-      p.filters.petToxic ? el("span", { class: "badge caution" }, "Toxic if eaten") : null,
-      p.filters.thorny ? el("span", { class: "badge caution" }, "Thorny") : null,
-      p.filters.aggressive ? el("span", { class: "badge caution" }, "Spreads — give it room") : null,
-      p.filters.deerResistant ? el("span", { class: "badge neutral" }, "Deer tend to leave it alone") : null,
+        ? el("span", { class: "badge nowater" }, t("badge.noWater"))
+        : el("span", { class: "badge caution" }, t("badge.needsWater")),
+      p.filters.petToxic ? el("span", { class: "badge caution" }, t("badge.petToxic")) : null,
+      p.filters.thorny ? el("span", { class: "badge caution" }, t("badge.thorny")) : null,
+      p.filters.aggressive ? el("span", { class: "badge caution" }, t("badge.aggressive")) : null,
+      p.filters.deerResistant ? el("span", { class: "badge neutral" }, t("badge.deerResistant")) : null,
     ]);
 
-    const canvas = el("canvas", { class: "size-viz", role: "img", "aria-label": `Size of ${p.common} over time` });
+    const canvas = el("canvas", { class: "size-viz", role: "img", "aria-label": t("plant.sizeAria", { name: commonName(p) }) });
     queueMicrotask(() => drawSizeViz(canvas, p));
 
     const bloom = p.bloom
-      ? `Blooms ${monthNames[p.bloom.startMonth]}–${monthNames[p.bloom.endMonth]} (${p.bloom.color}).`
-      : "Grown for foliage, not flowers.";
+      ? t("card.bloomRange", {
+          from: monthName(p.bloom.startMonth, "short"),
+          to: monthName(p.bloom.endMonth, "short"),
+          color: bloomColorWord(p.bloom.color),
+        })
+      : t("card.foliage");
 
-    const shareBtn = el("button", { class: "btn btn-secondary", onClick: () => share(p) }, "🔗 Share this plant");
+    const shareBtn = el("button", { class: "btn btn-secondary", onClick: () => share(p) }, t("plant.share"));
+    const names = nameLines(p);
 
     return el("article", { class: "plant" }, [
       el("p", { class: "region-tag", style: "margin:0 0 0.4rem;font-size:0.9rem;color:var(--ink-soft)" }, [
-        "📍 Native to: ",
+        t("plant.nativeTo"),
         ...all.flatMap((e, i) => [
           i > 0 ? " · " : null,
-          el("a", { href: `#/regions/${e.region.meta.id}` }, e.region.meta.name),
+          el("a", { href: `#/regions/${e.region.meta.id}` }, regionName(e.region.meta)),
         ]),
       ]),
       el("div", { class: "plant-head" }, [
         el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
         el("div", {}, [
-          el("h2", { class: "plant-name", style: "margin:0" }, p.common),
-          el("div", { class: "plant-latin" }, p.latin),
+          el("h2", { class: "plant-name", style: "margin:0" }, names.title),
+          el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" }, names.sub),
           badges,
         ]),
       ]),
-      el("p", { class: "kv", style: "margin-top:0.75rem" }, [el("span", { class: "k" }, "Why it belongs here: "), p.nativeNote]),
+      el("p", { class: "kv", style: "margin-top:0.75rem" }, [el("span", { class: "k" }, t("plant.whyBelongs")), prose(p, "nativeNote")]),
+      // Said once, at the top, rather than on every paragraph: some of the
+      // catalog's writing is still in English (see lib/prose).
+      isUntranslated(p) ? el("p", { class: "note info", style: "margin:0.5rem 0" }, t("names.untranslated")) : null,
       statGrid(p),
       canvas,
       el("div", { class: "size-caption" }, [
-        `Drawn to scale beside a 5′6″ person. Eventually reaches about ${fmtSize(p.matureHeightFt)} tall and ${fmtSize(p.matureSpreadFt)} wide. ${growthPlain(p)}`,
+        `${t("card.sizeCaption", {
+          human: humanHeightLabel(),
+          height: length(p.matureHeightFt),
+          spread: length(p.matureSpreadFt),
+        })} ${growthPlain(p)}`,
       ]),
       el("div", { class: "plant-body" }, [
-        el("p", { class: "kv" }, [el("span", { class: "k" }, "What it does for you & wildlife: "), p.givesNote]),
-        el("p", { class: "kv" }, [el("span", { class: "k" }, "What it needs from you: "), p.careNote]),
-        el("p", { class: "kv" }, [el("span", { class: "k" }, "Bloom & moisture: "), `${bloom} Prefers soil that's ${p.moisture.map(moistureShort).join(" or ")}.`]),
+        el("p", { class: "kv" }, [el("span", { class: "k" }, t("card.gives")), prose(p, "givesNote")]),
+        el("p", { class: "kv" }, [el("span", { class: "k" }, t("card.needs")), prose(p, "careNote")]),
+        el("p", { class: "kv" }, [
+          el("span", { class: "k" }, t("card.bloomMoisture")),
+          `${bloom} ${t("card.prefersSoil", { bands: fmtList(p.moisture.map(moistureWord)) })}`,
+        ]),
         el("p", { class: "confidence" }, [
-          el("strong", {}, `Confidence: ${p.confidence}. `),
+          el("strong", {}, t("card.confidence", { level: t(`confidence.word.${p.confidence}` as const) })),
           confidencePlain(p.confidence),
           " ",
           el("span", {}, [
-            "Source: ",
+            t("card.source"),
             ...citation(p.basis),
             " ",
-            el("a", { href: SOURCES_ROUTE }, "How sure are we? →"),
+            el("a", { href: SOURCES_ROUTE }, t("card.howSure")),
           ]),
         ]),
         shareBtn,
@@ -135,13 +152,17 @@ export function renderPlant(main: HTMLElement, param?: string): void {
 
   async function share(p: Plant): Promise<void> {
     const url = plantShareUrl(p.id);
-    const data = { title: `${p.common} — Indigene`, text: `${p.common} (${p.latin}) — a native plant worth knowing. Check if your spot suits it:`, url };
+    const data = {
+      title: t("plant.shareTitle", { name: commonName(p) }),
+      text: t("plant.shareText", { name: commonName(p), latin: p.latin }),
+      url,
+    };
     if (navigator.share) {
       await navigator.share(data).catch(() => {});
       return;
     }
     await navigator.clipboard?.writeText(url).catch(() => {});
-    toast("Link copied — paste it anywhere.");
+    toast(t("plant.linkCopied"));
   }
 
   // ---- "Will it work where you want to plant it?" ----
@@ -157,19 +178,19 @@ export function renderPlant(main: HTMLElement, param?: string): void {
     let lookingUp = false;
 
     const verdictEl = el("div", { "aria-live": "polite" });
-    const status = el("p", { class: "coords", role: "status", "aria-live": "polite" }, "No spot chosen yet.");
+    const status = el("p", { class: "coords", role: "status", "aria-live": "polite" }, t("plant.noSpot"));
 
     function renderStatus(): void {
       if (lat == null || lon == null) return;
       const where = spotName ?? `${lat.toFixed(5)}, ${lon.toFixed(5)}`;
-      status.textContent = lookingUp ? `${where} — checking soil & climate…` : where;
+      status.textContent = lookingUp ? t("plant.checkingSpot", { where }) : where;
     }
 
     const sunButtons: { key: "full" | "half" | "shade" | null; label: string }[] = [
-      { key: null, label: "Not sure" },
-      { key: "full", label: "☀️ Sunny most of the day" },
-      { key: "half", label: "⛅ Sun about half the day" },
-      { key: "shade", label: "🌳 Mostly shade" },
+      { key: null, label: t("plant.sunUnsure") },
+      { key: "full", label: t("plant.sunFull") },
+      { key: "half", label: t("plant.sunHalf") },
+      { key: "shade", label: t("plant.sunShade") },
     ];
     const sunRow = el("div", { style: "display:flex;flex-wrap:wrap;gap:0.4rem;margin:0.5rem 0" },
       sunButtons.map((b) =>
@@ -187,7 +208,7 @@ export function renderPlant(main: HTMLElement, param?: string): void {
       )
     );
 
-    const locateBtn = el("button", { class: "btn btn-primary btn-block", onClick: locate }, "📍 Check my location") as HTMLButtonElement;
+    const locateBtn = el("button", { class: "btn btn-primary btn-block", onClick: locate }, t("plant.checkLocation")) as HTMLButtonElement;
 
     // The no-GPS fallback: the same town/ZIP search as the main flow — nobody
     // is asked to know coordinates. A pick names the spot directly (its
@@ -196,10 +217,10 @@ export function renderPlant(main: HTMLElement, param?: string): void {
       type: "search",
       id: "plant-place-q",
       autocomplete: "off",
-      placeholder: "e.g. State College, or 16801",
+      placeholder: t("location.searchPlaceholder"),
       style: "flex:1 1 auto;min-width:0",
     }) as HTMLInputElement;
-    const searchBtn = el("button", { class: "btn btn-secondary", style: "flex:none" }, "Search") as HTMLButtonElement;
+    const searchBtn = el("button", { class: "btn btn-secondary", style: "flex:none" }, t("location.search")) as HTMLButtonElement;
     const searchOut = el("div", { "aria-live": "polite" });
 
     async function doSearch(): Promise<void> {
@@ -207,12 +228,12 @@ export function renderPlant(main: HTMLElement, param?: string): void {
       if (!q) return;
       clear(searchOut);
       searchBtn.disabled = true;
-      searchBtn.textContent = "Searching…";
+      searchBtn.textContent = t("location.searching");
       try {
         const places = await searchPlaces(q);
         clear(searchOut);
         if (!places.length) {
-          searchOut.append(el("div", { class: "note warn" }, "Couldn't find that name. Try the town and state together — like “Springfield Pennsylvania” — or a ZIP code."));
+          searchOut.append(el("div", { class: "note warn" }, t("location.searchNoResults")));
           return;
         }
         searchOut.append(
@@ -231,30 +252,30 @@ export function renderPlant(main: HTMLElement, param?: string): void {
         );
       } catch {
         clear(searchOut);
-        searchOut.append(el("div", { class: "note warn" }, "The place search needs a signal and we couldn't reach it. If GPS works, use the location button above."));
+        searchOut.append(el("div", { class: "note warn" }, t("plant.searchOffline")));
       } finally {
         searchBtn.disabled = false;
-        searchBtn.textContent = "Search";
+        searchBtn.textContent = t("location.search");
       }
     }
 
     function locate(): void {
       if (!("geolocation" in navigator)) {
-        toast("This device can't share location — search for your town below.");
+        toast(t("plant.noGeolocation"));
         return;
       }
-      locateBtn.textContent = "Locating…";
+      locateBtn.textContent = t("location.locating");
       locateBtn.disabled = true;
       navigator.geolocation.getCurrentPosition(
         (pos) => {
           locateBtn.disabled = false;
-          locateBtn.textContent = "📍 Update my location";
+          locateBtn.textContent = t("location.update");
           setSpot(pos.coords.latitude, pos.coords.longitude);
         },
         (err) => {
           locateBtn.disabled = false;
-          locateBtn.textContent = "📍 Check my location";
-          toast(err.code === err.PERMISSION_DENIED ? "Location denied — search for your town below instead." : "Couldn't get a fix — try again or search for your town below.");
+          locateBtn.textContent = t("plant.checkLocation");
+          toast(err.code === err.PERMISSION_DENIED ? t("plant.denied") : t("plant.noFix"));
         },
         { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
       );
@@ -273,7 +294,7 @@ export function renderPlant(main: HTMLElement, param?: string): void {
         // coordinates remain the fallback, and the verdict never depends on it).
         nearestPlaceName(la, lo).then((n) => {
           if (n && lat === la && lon === lo) {
-            spotName = `Near ${n}`;
+            spotName = t("plant.near", { place: n });
             renderStatus();
           }
         });
@@ -317,28 +338,29 @@ export function renderPlant(main: HTMLElement, param?: string): void {
                 store.draft.sun = sun;
                 navigate("results");
               },
-            }, "See everything that thrives at this spot →")
+            }, t("plant.seeEverything"))
         );
       }
     }
 
     return el("section", { class: "card", id: sectionDomId("spot"), style: "margin-top:1rem" }, [
-      el("h3", { style: "margin-top:0" }, `Want to plant a ${plant.common.toLowerCase()}? Check your spot`),
-      el("p", { style: "margin:0.3rem 0 0.6rem" }, [
-        `Stand where you'd plant it (or search for your town below) and Indigene checks the soil, climate and region against what this plant needs — native to ${region.meta.name} and beyond, it still has to like your exact spot.`,
-      ]),
+      // No plant name in the heading: it changes width per plant and would
+      // wrap the card title on a phone. The page is already about this plant.
+      el("h3", { style: "margin-top:0" }, t("plant.checkSpotTitle")),
+      el("p", { style: "margin:0.3rem 0 0.6rem" },
+        t("plant.checkSpotLede", { region: regionName(region.meta) })),
       locateBtn,
-      privacyNote("Used only to check this spot, only when you tap — your location never leaves your device except as anonymous lookups"),
+      privacyNote(t("plant.checkPrivacy")),
       status,
-      el("p", { style: "margin:0.6rem 0 0;font-weight:650" }, "How much sun does that spot get?"),
+      el("p", { style: "margin:0.6rem 0 0;font-weight:650" }, t("plant.sunQuestion")),
       sunRow,
       el("div", { style: "margin-top:0.4rem" }, [
-        el("p", { style: "font-weight:650;margin:0.6rem 0 0" }, "🔎 No GPS? Search by town"),
+        el("p", { style: "font-weight:650;margin:0.6rem 0 0" }, t("plant.noGpsSearch")),
         el("form", {
           onSubmit: (e: Event) => { e.preventDefault(); void doSearch(); },
         }, [
           el("div", { class: "field", style: "margin-top:0.5rem" }, [
-            el("label", { for: "plant-place-q" }, "Your town, city, or ZIP code"),
+            el("label", { for: "plant-place-q" }, t("location.searchLabel")),
             el("div", { style: "display:flex;gap:0.5rem" }, [searchInput, searchBtn]),
           ]),
         ]),
@@ -364,20 +386,20 @@ function sectionCard(section: Section, heading: string, body: HTMLElement[]): HT
 // plant has named wildlife ties, they lead the card — the specific creatures a
 // person can go looking for, above the abstract scores.
 function ecosystemSection(p: Plant, entries: PlantEntry[]): HTMLElement {
-  const scoreParts = (Object.keys(scoreLabels) as (keyof typeof scoreLabels)[]).map((key) => {
+  const scoreParts = SCORE_KEYS.map((key) => {
     const val = (p.scores as unknown as Record<string, number>)[key];
-    const label = scoreLabels[key];
+    const label = scoreLabel(key);
     return el("li", { class: "score-item" }, [
       el("div", { class: "score-head" }, [
         el("span", {}, [el("span", { "aria-hidden": "true" }, `${label.icon} `), label.name]),
-        el("span", {}, `${val}${key === "host" ? ` · ${p.hostLepCount} species` : ""}`),
+        el("span", {}, `${fmtNumber(val)}${key === "host" ? ` · ${t("card.hostSpecies", { n: fmtNumber(p.hostLepCount) })}` : ""}`),
       ]),
       el("div", { class: "score-bar" }, [el("span", { style: `width:${val}%` })]),
       el("p", { class: "score-why" }, label.plain),
     ]);
   });
   const feeds = whoItFeeds(entries);
-  return sectionCard("ecosystem", "🦋 What it does for the ecosystem", [
+  return sectionCard("ecosystem", t("plant.ecosystemTitle"), [
     ...(feeds ? [feeds] : []),
     el("ul", { class: "score-list" }, scoreParts),
   ]);
@@ -397,7 +419,7 @@ function whoItFeeds(entries: PlantEntry[]): HTMLElement | null {
       const prev = best.get(wildlife.id);
       const sole = (prev?.sole ?? false) || relianceOf(link) === "sole";
       if (!prev || supportRank[link.support] < supportRank[prev.support]) {
-        best.set(wildlife.id, { name: wildlife.common, icon: wildlife.icon, support: link.support, id: wildlife.id, sole });
+        best.set(wildlife.id, { name: commonName(wildlife), icon: wildlife.icon, support: link.support, id: wildlife.id, sole });
       } else {
         prev.sole = sole; // keep the star even if a weaker-labeled tie sorted first
       }
@@ -409,7 +431,7 @@ function whoItFeeds(entries: PlantEntry[]): HTMLElement | null {
     (a, b) => Number(b.sole) - Number(a.sole) || supportRank[a.support] - supportRank[b.support]
   );
   return el("div", { style: "margin:0 0 0.8rem" }, [
-    el("p", { class: "kv", style: "margin:0 0 0.4rem" }, [el("span", { class: "k" }, "Wildlife it brings in: ")]),
+    el("p", { class: "kv", style: "margin:0 0 0.4rem" }, [el("span", { class: "k" }, t("plant.wildlifeItBrings"))]),
     el("div", { style: "display:flex;flex-wrap:wrap;gap:0.4rem" },
       items.map((w) =>
         el("a", {
@@ -417,8 +439,8 @@ function whoItFeeds(entries: PlantEntry[]): HTMLElement | null {
           class: "btn btn-secondary",
           style: "flex:0 1 auto;min-height:2.4rem;padding:0.35rem 0.65rem;font-size:0.9rem;text-decoration:none",
           title: w.sole
-            ? `This plant is the ${w.name.toLowerCase()}'s only option — a make-or-break tie.`
-            : `${supportLabels[w.support as keyof typeof supportLabels].term} — ${supportLabels[w.support as keyof typeof supportLabels].plain}`,
+            ? t("plant.soleTie", { name: w.name })
+            : `${supportLabel(w.support as SupportKind).term} — ${supportLabel(w.support as SupportKind).plain}`,
         }, [
           w.sole ? el("span", { "aria-hidden": "true" }, "⭐ ") : null,
           el("span", { "aria-hidden": "true" }, `${w.icon} `),
@@ -436,26 +458,26 @@ function whoItFeeds(entries: PlantEntry[]): HTMLElement | null {
 // spelled out in plain words (from the shared glossary), so a term like
 // "stratification" never appears without the what-you-actually-do beside it.
 function propagationSection(p: Plant): HTMLElement {
-  const { methods, note, basis } = p.propagation;
+  const { methods, basis } = p.propagation;
   const methodItems = methods.map((m) => {
-    const g = propagationMethods[m];
+    const g = propagationMethod(m);
     return el("li", { class: "score-item" }, [
       el("div", { class: "score-head" }, [el("span", {}, g.name)]),
       el("p", { class: "score-why" }, g.plain),
     ]);
   });
-  return sectionCard("propagation", "🪴 How to grow more", [
+  return sectionCard("propagation", t("plant.propagationTitle"), [
     el("p", { class: "kv", style: "margin-top:0.5rem" }, [
-      el("span", { class: "k" }, "For this plant: "),
-      note,
+      el("span", { class: "k" }, t("plant.forThisPlant")),
+      propagationNote(p),
     ]),
     el("ul", { class: "score-list" }, methodItems),
     el("p", { class: "confidence", style: "margin-top:0.4rem" }, [
       el("span", {}, [
-        "How-to source: ",
+        t("plant.howToSource"),
         ...citation(basis),
         " ",
-        el("a", { href: PROPAGATION_SOURCE_URL, target: "_blank", rel: "noopener" }, "USFS Native Plant Network →"),
+        el("a", { href: PROPAGATION_SOURCE_URL, target: "_blank", rel: "noopener" }, t("plant.usfsLink")),
       ]),
     ]),
   ]);
@@ -469,15 +491,17 @@ function propagationSection(p: Plant): HTMLElement {
 function referencesSection(p: Plant): HTMLElement {
   const entry = entryForPlant(p.id);
   const links = entry ? deepLinks(entry) : null;
+  // The database *names* are proper nouns and stay as they are; only the
+  // one-line description of what each is good for gets translated.
   const SOURCES: { key: string; label: string; sub: string }[] = [
-    { key: "powo", label: "Plants of the World Online", sub: "Kew — accepted name & native range" },
-    { key: "ipni", label: "International Plant Names Index", sub: "the nomenclatural record" },
-    { key: "wfo", label: "World Flora Online", sub: "global taxon record" },
-    { key: "gbif", label: "GBIF", sub: "where it's been recorded growing" },
-    { key: "usda", label: "USDA PLANTS", sub: "U.S. native status & distribution" },
-    { key: "itis", label: "ITIS", sub: "North American taxonomy" },
-    { key: "inaturalist", label: "iNaturalist", sub: "photos & nearby sightings" },
-    { key: "wikidata", label: "Wikidata", sub: "cross-references & Wikipedia" },
+    { key: "powo", label: "Plants of the World Online", sub: t("ref.powo") },
+    { key: "ipni", label: "International Plant Names Index", sub: t("ref.ipni") },
+    { key: "wfo", label: "World Flora Online", sub: t("ref.wfo") },
+    { key: "gbif", label: "GBIF", sub: t("ref.gbif") },
+    { key: "usda", label: "USDA PLANTS", sub: t("ref.usda") },
+    { key: "itis", label: "ITIS", sub: t("ref.itis") },
+    { key: "inaturalist", label: "iNaturalist", sub: t("ref.inaturalist") },
+    { key: "wikidata", label: "Wikidata", sub: t("ref.wikidata") },
   ];
   const items = SOURCES.filter((s) => links?.[s.key]).map((s) =>
     el("li", { class: "score-item" }, [
@@ -488,20 +512,19 @@ function referencesSection(p: Plant): HTMLElement {
     ]),
   );
   const body: HTMLElement[] = [
-    el("p", { style: "margin:0.5rem 0 0.3rem" },
-      `Find ${p.common} in the botanical and observation databases — the same plant, keyed by a shared identifier so you land on the right record.`),
+    el("p", { style: "margin:0.5rem 0 0.3rem" }, t("ref.lede", { name: commonName(p) })),
     el("ul", { class: "score-list" }, items),
   ];
   if (entry?.primaryId) {
     body.push(
       el("p", { class: "confidence", style: "margin-top:0.4rem" }, [
-        el("strong", {}, "Identity: "),
+        el("strong", {}, t("ref.identity")),
         el("code", {}, entry.primaryId),
-        " — a persistent, global id (resolvable at identifiers.org).",
+        t("ref.identityRest"),
       ]),
     );
   }
-  return sectionCard("references", "🔎 Look it up elsewhere", body);
+  return sectionCard("references", t("ref.title"), body);
 }
 
 // Bring the deep-linked section into view. Runs after the router's own
@@ -514,24 +537,13 @@ function revealSection(section: Section): void {
   });
 }
 
-function moistureShort(b: string): string {
-  return b === "dry" ? "dry" : b === "wet" ? "wet" : "evenly moist";
-}
-
-function fmtSize(ft: number): string {
-  if (ft < 1) return `${Math.round(ft * 12)} inches`;
-  return `${ft % 1 === 0 ? ft : ft.toFixed(1)} ft`;
-}
-
 function renderNotFound(main: HTMLElement, slug: string): void {
   main.append(
-    el("h2", { class: "step-title" }, "We don't know that plant yet"),
-    el("p", { class: "step-lede" }, [
-      `Nothing in Indigene's regional lists matches “${slug}”. The lists are deliberately curated — every entry is checked for native status and honest numbers — so they grow carefully.`,
-    ]),
+    el("h2", { class: "step-title" }, t("plant.notFoundTitle")),
+    el("p", { class: "step-lede" }, t("plant.notFoundLede", { slug })),
     el("div", { class: "btn-row" }, [
-      el("button", { class: "btn btn-primary", onClick: () => navigate("plants") }, "Browse the natives we do know"),
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, "Home"),
+      el("button", { class: "btn btn-primary", onClick: () => navigate("plants") }, t("plant.notFoundBrowse")),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("browse.home")),
     ])
   );
 }

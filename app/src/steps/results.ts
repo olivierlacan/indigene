@@ -7,18 +7,32 @@ import type { Weights } from "../types";
 import { plantCard } from "../components/plant-card";
 import { whyThis } from "../components/learn";
 import { privacyNote } from "../components/privacy-link";
-import { scoreLabels, ISSUES_URL, ZONE_INFO_URL, MOISTURE_INFO_URL, moistureWord } from "../lib/plain";
+import {
+  SCORE_KEYS,
+  scoreLabel,
+  sunLabel,
+  ISSUES_URL,
+  ZONE_INFO_URL,
+  MOISTURE_INFO_URL,
+  moistureWord,
+} from "../lib/plain";
 import { saveSpot } from "../db";
+import { t, tx, fmtNumber } from "../lib/i18n";
+import type { TKey } from "../locales/en";
+import { maxHeightChoices, maxSpreadChoices, temperature } from "../lib/units";
+import { regionName, regionReference } from "../lib/names";
 
-const WEIGHT_KEYS: (keyof Weights)[] = ["host", "pollinator", "bird", "stormwater", "erosion", "carbon", "establishment"];
+const WEIGHT_KEYS: (keyof Weights)[] = [...SCORE_KEYS];
 
-const PRESETS: { name: string; weights: Weights }[] = [
-  { name: "Balanced", weights: { host: 3, pollinator: 3, bird: 3, stormwater: 2, erosion: 2, carbon: 1, establishment: 3 } },
-  { name: "Butterflies & moths", weights: { host: 5, pollinator: 5, bird: 3, stormwater: 1, erosion: 1, carbon: 1, establishment: 2 } },
-  { name: "Birds", weights: { host: 4, pollinator: 2, bird: 5, stormwater: 1, erosion: 1, carbon: 1, establishment: 2 } },
-  { name: "Stop erosion", weights: { host: 1, pollinator: 1, bird: 1, stormwater: 4, erosion: 5, carbon: 2, establishment: 4 } },
-  { name: "Soak up rain", weights: { host: 1, pollinator: 2, bird: 1, stormwater: 5, erosion: 3, carbon: 2, establishment: 3 } },
-  { name: "Easiest to grow", weights: { host: 2, pollinator: 2, bird: 2, stormwater: 1, erosion: 1, carbon: 1, establishment: 5 } },
+// The preset *weights* are a product decision and don't vary by language; only
+// the button's name does, so each preset carries its dictionary key.
+const PRESETS: { key: TKey; weights: Weights }[] = [
+  { key: "preset.balanced", weights: { host: 3, pollinator: 3, bird: 3, stormwater: 2, erosion: 2, carbon: 1, establishment: 3 } },
+  { key: "preset.butterflies", weights: { host: 5, pollinator: 5, bird: 3, stormwater: 1, erosion: 1, carbon: 1, establishment: 2 } },
+  { key: "preset.birds", weights: { host: 4, pollinator: 2, bird: 5, stormwater: 1, erosion: 1, carbon: 1, establishment: 2 } },
+  { key: "preset.erosion", weights: { host: 1, pollinator: 1, bird: 1, stormwater: 4, erosion: 5, carbon: 2, establishment: 4 } },
+  { key: "preset.rain", weights: { host: 1, pollinator: 2, bird: 1, stormwater: 5, erosion: 3, carbon: 2, establishment: 3 } },
+  { key: "preset.easiest", weights: { host: 2, pollinator: 2, bird: 2, stormwater: 1, erosion: 1, carbon: 1, establishment: 5 } },
 ];
 
 export function renderResults(main: HTMLElement): void {
@@ -43,7 +57,7 @@ export function renderResults(main: HTMLElement): void {
   }
 
   const plants = loadPlants(region);
-  const regionName = region.meta.name;
+  const name = regionName(region.meta);
   const listEl = el("div", { "aria-live": "polite" });
 
   function rerender(): void {
@@ -59,37 +73,40 @@ export function renderResults(main: HTMLElement): void {
     const goodCount = ranked.filter((r) => r.match !== "poor").length;
     // Only claim a climate check when a looked-up zone actually filtered the
     // list; on the hand-picked-region path nothing was checked against winter.
-    const fitClause = store.draft.site?.zone
-      ? "fit this spot's climate"
-      : "are in this region's list";
+    const fitClause = store.draft.site?.zone ? t("results.fitClimate") : t("results.fitList");
     listEl.append(
-      el("p", { style: "margin:0.5rem 0 1rem;font-weight:650" }, `${ranked.length} native plants ${fitClause} — ${goodCount} are a good or workable match. Best matches first.`)
+      el("p", { style: "margin:0.5rem 0 1rem;font-weight:650" },
+        t("results.count", {
+          n: fmtNumber(ranked.length),
+          fit: fitClause,
+          good: fmtNumber(goodCount),
+        }))
     );
     if (!ranked.length) {
       // Blame the right culprit: with any filter set, it's almost certainly the
       // filters that emptied the list, not the climate.
       const f = store.filters;
       const anyFilter = f.requireNoWater || f.requireDeerResistant || f.excludeThorny || f.excludePetToxic || f.excludeAggressive || f.maxHeightFt != null || f.maxSpreadFt != null;
-      listEl.append(el("div", { class: "note warn" }, anyFilter
-        ? `No plants in the ${regionName} list pass every filter you set. Try loosening a filter — the size limits are the usual culprit.`
-        : `No plants in the ${regionName} seed list are hardy at this spot's winter temperature.`));
+      listEl.append(el("div", { class: "note warn" },
+        anyFilter ? t("results.noneFiltered", { region: name }) : t("results.noneHardy", { region: name })));
     }
     shown.forEach((r) => listEl.append(plantCard(r, store.weights)));
     if (ranked.length > shown.length) {
-      listEl.append(el("p", { style: "text-align:center;color:var(--ink-soft)" }, `Showing the top ${shown.length}. Adjust the sliders above to resurface the rest.`));
+      listEl.append(el("p", { style: "text-align:center;color:var(--ink-soft)" },
+        t("results.showingTop", { n: fmtNumber(shown.length) })));
     }
   }
 
   // --- Sliders ---
   const sliderRows = WEIGHT_KEYS.map((key) => {
-    const label = scoreLabels[key];
-    const valSpan = el("span", {}, String(store.weights[key]));
+    const label = scoreLabel(key);
+    const valSpan = el("span", {}, fmtNumber(store.weights[key]));
     const input = el("input", {
       type: "range", min: "0", max: "5", step: "1", value: String(store.weights[key]),
-      "aria-label": `Importance of: ${label.name}`,
+      "aria-label": t("results.sliderAria", { name: label.name }),
       onInput: (e) => {
         store.weights[key] = Number((e.target as HTMLInputElement).value);
-        valSpan.textContent = String(store.weights[key]);
+        valSpan.textContent = fmtNumber(store.weights[key]);
         persistPrefs();
         rerender();
       },
@@ -108,53 +125,72 @@ export function renderResults(main: HTMLElement): void {
     sliderRows.forEach(({ input }, i) => {
       const k = WEIGHT_KEYS[i];
       input.value = String(w[k]);
-      (input.previousElementSibling?.lastElementChild as HTMLElement).textContent = String(w[k]);
+      (input.previousElementSibling?.lastElementChild as HTMLElement).textContent = fmtNumber(w[k]);
     });
     persistPrefs();
     rerender();
   }
 
   const presetRow = el("div", { style: "display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.6rem" },
-    PRESETS.map((p) => el("button", { class: "btn btn-secondary", style: "flex:0 1 auto;min-height:2.4rem;padding:0.4rem 0.7rem;font-size:0.9rem", onClick: () => { applyWeights(p.weights); toast(`Re-sorted for: ${p.name}`); } }, p.name))
+    PRESETS.map((p) => el("button", {
+      class: "btn btn-secondary",
+      style: "flex:0 1 auto;min-height:2.4rem;padding:0.4rem 0.7rem;font-size:0.9rem",
+      onClick: () => { applyWeights(p.weights); toast(t("results.resorted", { name: t(p.key) })); },
+    }, t(p.key)))
   );
 
   // The re-sort panel opens tall on a phone, so it closes three ways: the
   // summary, a Done button at the bottom, and the chevron makes state obvious.
   const weightsPanel = el("details", { open: false }, [
-    el("summary", {}, "⚖️ What matters most?"),
+    el("summary", {}, t("results.weightsSummary")),
     presetRow,
     ...sliderRows.map((s) => s.row),
     el("button", {
       class: "btn btn-primary btn-block",
       style: "margin:0.25rem 0 0.5rem",
       onClick: () => { (weightsPanel as HTMLDetailsElement).open = false; },
-    }, "Done — show the plants"),
+    }, t("results.done")),
   ]);
   const weights = el("div", { class: "weights" }, [weightsPanel]);
 
   // --- Filters (incl. guerrilla mode) ---
   type BoolFilterKey = "requireNoWater" | "requireDeerResistant" | "excludeThorny" | "excludePetToxic" | "excludeAggressive";
   const filterDefs: { key: BoolFilterKey; label: string }[] = [
-    { key: "requireNoWater", label: "🌾 Survives with zero watering (guerrilla mode)" },
-    { key: "requireDeerResistant", label: "🦌 Deer tend to leave it alone" },
-    { key: "excludeThorny", label: "🚫 No thorns" },
-    { key: "excludePetToxic", label: "🐕 Safe around pets" },
-    { key: "excludeAggressive", label: "✋ No aggressive spreaders" },
+    { key: "requireNoWater", label: t("filter.noWater") },
+    { key: "requireDeerResistant", label: t("filter.deer") },
+    { key: "excludeThorny", label: t("filter.thorns") },
+    { key: "excludePetToxic", label: t("filter.petSafe") },
+    { key: "excludeAggressive", label: t("filter.aggressive") },
   ];
   // Size caps for tight spots — under a window, beside a walkway, a small bed.
   // Same checkbox rows as the filters above; the checkbox is the on/off, the
   // little select is only the threshold. Judged against the plant's honest
   // eventual size (matureHeightFt/SpreadFt), not the polite nursery-tag
   // numbers, because the ceiling is what you live with.
-  const sizeDefs: { key: "maxHeightFt" | "maxSpreadFt"; icon: string; lead: string; tail: string; options: number[]; fallback: number }[] = [
-    { key: "maxHeightFt", icon: "📏", lead: "Stays under", tail: "tall", options: [4, 6, 10, 20], fallback: 6 },
-    { key: "maxSpreadFt", icon: "↔️", lead: "Stays under", tail: "wide", options: [4, 6, 10, 15], fallback: 6 },
+  //
+  // The stored value stays in feet, but the ladder offered is round numbers in
+  // the reader's *own* units (see `maxHeightChoices`) — a filter labelled
+  // "1.8 m" reads as a bug even though it's exactly 6 ft.
+  const sizeDefs: {
+    key: "maxHeightFt" | "maxSpreadFt";
+    icon: string;
+    lead: string;
+    tail: string;
+    aria: string;
+    choices: { ft: number; label: string }[];
+  }[] = [
+    { key: "maxHeightFt", icon: "📏", lead: t("filter.size.lead"), tail: t("filter.height.tail"), aria: t("filter.height.aria"), choices: maxHeightChoices() },
+    { key: "maxSpreadFt", icon: "↔️", lead: t("filter.size.lead"), tail: t("filter.spread.tail"), aria: t("filter.spread.aria"), choices: maxSpreadChoices() },
   ];
   const sizeRows = sizeDefs.map((s) => {
+    // Keep whatever was stored selected even after a units switch moved the
+    // ladder: pick the nearest rung rather than silently resetting the filter.
+    const stored = store.filters[s.key];
+    const selectedFt = stored == null ? s.choices[1].ft : nearest(s.choices, stored);
     const select = el("select", {
       style: "width:auto;flex:0 0 auto;min-height:2.4rem;padding:0.25rem 0.5rem;font-size:0.95rem",
-      "aria-label": `${s.lead} how many feet ${s.tail}`,
-      disabled: store.filters[s.key] == null,
+      "aria-label": s.aria,
+      disabled: stored == null,
       onChange: () => {
         if (store.filters[s.key] != null) {
           store.filters[s.key] = Number(select.value);
@@ -162,11 +198,11 @@ export function renderResults(main: HTMLElement): void {
           rerender();
         }
       },
-    }, s.options.map((ft) =>
-      el("option", { value: String(ft), selected: (store.filters[s.key] ?? s.fallback) === ft }, `${ft} ft`)
+    }, s.choices.map((c) =>
+      el("option", { value: String(c.ft), selected: c.ft === selectedFt }, c.label)
     )) as HTMLSelectElement;
     return el("label", { style: "display:flex;gap:0.6rem;align-items:center;min-height:3rem;font-weight:500" }, [
-      el("input", { type: "checkbox", checked: store.filters[s.key] != null, onChange: (e) => {
+      el("input", { type: "checkbox", checked: stored != null, onChange: (e) => {
         store.filters[s.key] = (e.target as HTMLInputElement).checked ? Number(select.value) : null;
         select.disabled = store.filters[s.key] == null;
         persistPrefs();
@@ -178,7 +214,7 @@ export function renderResults(main: HTMLElement): void {
     ]);
   });
   const filters = el("details", { class: "weights", style: "margin-top:0.5rem" }, [
-    el("summary", {}, "🔍 Filters"),
+    el("summary", {}, t("filter.summary")),
     el("div", { style: "margin-top:0.5rem" }, [
       ...filterDefs.map((f) =>
         el("label", { style: "display:flex;gap:0.6rem;align-items:center;min-height:3rem;font-weight:500" }, [
@@ -193,22 +229,19 @@ export function renderResults(main: HTMLElement): void {
   const conditions = summarize();
 
   main.append(
-    el("h2", { class: "step-title" }, "Plants for this spot"),
+    el("h2", { class: "step-title" }, t("results.title")),
     el("p", { class: "region-tag", style: "margin:0 0 0.5rem;font-size:0.9rem;color:var(--ink-soft)" },
-      chosen ? `📍 ${region.meta.name} — your pick, not measured from a location` : `📍 ${region.meta.name}`),
+      chosen ? t("results.regionTagPick", { region: name }) : t("results.regionTag", { region: name })),
     el("p", { class: "step-lede" }, conditions),
-    whyThis("How does this ranking work?", [
-      "Each plant's wildlife value — caterpillars hosted, pollinators and birds fed, rain soaked up — is weighed against how well it fits this spot's sun, moisture, and winter cold. ",
-      "Nothing is a black box: every plant's score is broken out right on its card.",
-    ]),
+    whyThis(t("results.whyTitle"), t("results.why")),
     el("div", { class: "result-controls" }, [weights, filters]),
     el("div", { class: "btn-row", style: "margin-top:0" }, [
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("confirm") }, "Back"),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("confirm") }, t("results.back")),
       // A saved spot IS a coordinate — with a hand-picked region there's no
       // spot to save, so the button honestly isn't there.
-      ...(hasCoords ? [el("button", { class: "btn btn-primary", onClick: doSave }, "💾 Save this spot")] : []),
+      ...(hasCoords ? [el("button", { class: "btn btn-primary", onClick: doSave }, t("results.save"))] : []),
     ]),
-    ...(hasCoords ? [privacyNote("A saved spot stays on this device only — it never reaches a server, because there isn't one")] : []),
+    ...(hasCoords ? [privacyNote(t("results.privacy"))] : []),
     listEl
   );
 
@@ -216,7 +249,7 @@ export function renderResults(main: HTMLElement): void {
 
   // Common parlance first, the technical term in parentheses with a link —
   // "zone 8b" and "mesic" are never shown bare (see the plain-language rule).
-  function summarize(): (string | HTMLElement)[] {
+  function summarize(): (string | Node)[] {
     const link = (href: string, text: string): HTMLElement =>
       el("a", { href, target: "_blank", rel: "noopener" }, text);
     const sun = store.draft.sun;
@@ -224,31 +257,35 @@ export function renderResults(main: HTMLElement): void {
     const site = store.draft.site;
     const zone = site?.zone;
 
-    const parts: (string | HTMLElement)[][] = [];
-    if (sun) parts.push([`${sun.label} (~${sun.hours}h sun)`]);
+    const parts: (string | Node)[][] = [];
+    // Recomputed from the hours rather than read off `sun.label`: that label
+    // was written when the estimate was made, possibly in another language and
+    // possibly several sessions ago (it rides along in saved spots).
+    if (sun) parts.push([t("results.sunSummary", { label: sunLabel(sun.hours), hours: fmtNumber(sun.hours) })]);
     parts.push(
       m === "mesic"
-        ? ["evenly moist soil (", link(MOISTURE_INFO_URL, "“mesic”"), " in plant guides)"]
-        : [`${moistureWord(m)} soil`]
+        ? tx("results.mesicSoil", { link: link(MOISTURE_INFO_URL, t("results.mesicTerm")) })
+        : [t("results.soilBand", { word: moistureWord(m) })]
     );
     if (zone) {
+      const zoneLink = link(ZONE_INFO_URL, t("results.zoneLink", { zone }));
       parts.push(
         site?.zoneMinTempF != null
-          ? [`winters to about ${site.zoneMinTempF}°F (`, link(ZONE_INFO_URL, `USDA zone ${zone}`), ")"]
-          : [link(ZONE_INFO_URL, `USDA zone ${zone}`)]
+          ? tx("results.wintersTo", { link: zoneLink }, { temp: temperature(site.zoneMinTempF) })
+          : [zoneLink]
       );
     }
 
-    const out: (string | HTMLElement)[] = ["Matched to: "];
+    const out: (string | Node)[] = [t("results.matchedTo")];
     parts.forEach((p, i) => { if (i) out.push(" · "); out.push(...p); });
     // Only claim winter-hardiness when we actually know the winter — with no
     // looked-up zone (hand-picked region, or the lookup failed) we don't.
-    out.push(`. Everything below is native to this region${zone ? " and hardy through your winters" : ""}.`);
+    out.push(t("results.nativeAll", { hardy: zone ? t("results.andHardy") : "" }));
     return out;
   }
 
   async function doSave(): Promise<void> {
-    const label = prompt("Name this spot (e.g. \"front strip by driveway\")", defaultLabel());
+    const label = prompt(t("results.savePrompt"), defaultLabel());
     if (label == null) return;
     const id = store.draft.editingId ?? cryptoId();
     await saveSpot({
@@ -266,12 +303,21 @@ export function renderResults(main: HTMLElement): void {
       weights: { ...store.weights },
     });
     store.draft.editingId = id;
-    toast("Saved to this device.");
+    toast(t("results.saved"));
   }
 
   function defaultLabel(): string {
-    return `Spot at ${store.draft.lat!.toFixed(4)}, ${store.draft.lon!.toFixed(4)}`;
+    return t("results.defaultLabel", {
+      lat: store.draft.lat!.toFixed(4),
+      lon: store.draft.lon!.toFixed(4),
+    });
   }
+}
+
+/** The rung of the ladder closest to a stored value, in feet. */
+function nearest(choices: { ft: number }[], value: number): number {
+  return choices.reduce((best, c) =>
+    Math.abs(c.ft - value) < Math.abs(best - value) ? c.ft : best, choices[0].ft);
 }
 
 function cryptoId(): string {
@@ -285,27 +331,24 @@ function cryptoId(): string {
 // straddles one of our lists can choose it — their call, plainly labelled.
 function renderNoRegion(main: HTMLElement): void {
   main.append(
-    el("h2", { class: "step-title" }, "No plant list for this area yet"),
-    el("p", { class: "step-lede" }, [
-      "Indigene measured the sun, soil and climate for this spot, but its plant recommendations are still tuned region by region — and this spot is outside the areas covered so far. ",
-      "Showing you another region's plants would be dishonest, so we don't.",
-    ]),
+    el("h2", { class: "step-title" }, t("noRegion.title")),
+    el("p", { class: "step-lede" }, t("noRegion.lede")),
     el("div", { class: "card" }, [
-      el("h3", {}, "What you can still do"),
+      el("h3", {}, t("noRegion.whatTitle")),
       el("ul", { style: "margin:0.5rem 0 0;padding-left:1.2rem" }, [
         el("li", { style: "margin-bottom:0.4rem" }, [
-          el("a", { href: "#/plants", style: "font-weight:650" }, "Browse the full catalog"),
-          " from the covered regions — as examples of the recommendations Indigene gives, not as plants for this spot.",
+          el("a", { href: "#/plants", style: "font-weight:650" }, t("noRegion.browse")),
+          t("noRegion.browseRest"),
         ]),
         el("li", {}, [
-          el("a", { href: ISSUES_URL, target: "_blank", rel: "noopener", style: "font-weight:650" }, "Ask for your area on GitHub"),
-          " — open an issue with your ZIP or town so we know where to grow next. Or add the region yourself: it's one plant-data file plus two registry lines, and contributions are welcome.",
+          el("a", { href: ISSUES_URL, target: "_blank", rel: "noopener", style: "font-weight:650" }, t("noRegion.ask")),
+          t("noRegion.askRest"),
         ]),
       ]),
     ]),
     el("div", { class: "card" }, [
-      el("h3", {}, "Regions covered so far"),
-      el("p", {}, "If you know your area actually matches one of these — say, you're just over a boundary — you can use its list. We'll mark it as your pick, and its plants should be treated as untested for your exact area."),
+      el("h3", {}, t("noRegion.regionsTitle")),
+      el("p", {}, t("noRegion.regionsLede")),
       ...REGIONS.map((r) =>
         el("button", {
           class: "choice",
@@ -314,14 +357,14 @@ function renderNoRegion(main: HTMLElement): void {
             renderResults(main);
           },
         }, [
-          el("span", { class: "choice-title" }, r.meta.name),
-          el("span", { class: "choice-sub" }, [r.meta.reference, " ", zoneChip(r.meta)]),
+          el("span", { class: "choice-title" }, regionName(r.meta)),
+          el("span", { class: "choice-sub" }, [regionReference(r.meta), " ", zoneChip(r.meta)]),
         ])
       ),
     ]),
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("location") }, "Pick a different spot"),
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, "Home"),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("location") }, t("noRegion.pickDifferent")),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("browse.home")),
     ])
   );
 }

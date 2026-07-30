@@ -14,17 +14,14 @@ import { keystoneIcon } from "../components/keystone-icon";
 import { regionStatGrid } from "../components/region-stats";
 import { regionRefLine, zoneChip } from "../components/zone-chip";
 import type { Plant, PlantForm } from "../types";
+import { t, tn, fmtNumber, getLang } from "../lib/i18n";
+import { commonName, nameLines, regionName, regionNote, regionReference, localNameCoverage } from "../lib/names";
+import { prose } from "../lib/prose";
 
 const FORM_ORDER: PlantForm[] = ["tree", "shrub", "perennial", "grass", "vine", "groundcover", "fern"];
-const FORM_LABELS: Record<PlantForm, string> = {
-  tree: "Trees",
-  shrub: "Shrubs",
-  perennial: "Perennials & wildflowers",
-  grass: "Grasses & sedges",
-  vine: "Vines",
-  groundcover: "Groundcovers",
-  fern: "Ferns",
-};
+/** The category headings. A function, not a record: a record built at import
+ *  time would be stuck in whichever language loaded first. */
+const formLabel = (f: PlantForm): string => t(`form.${f}` as const);
 /** URL slug for each form — plural, human, stable ("…/regions/pnw/trees"). */
 const FORM_SLUGS: Record<PlantForm, string> = {
   tree: "trees",
@@ -44,12 +41,12 @@ export function renderRegion(main: HTMLElement, param?: string): void {
   const [id, catSlug] = (param ?? "").split("/");
   const region = REGIONS.find((r) => r.meta.id === id);
   if (!region) {
-    renderNotFound(main, "That link doesn't match any region Indigene covers.");
+    renderNotFound(main, t("region.noSuchRegion"));
     return;
   }
   const form = catSlug ? SLUG_TO_FORM.get(catSlug) : undefined;
   if (catSlug && !form) {
-    renderNotFound(main, `“${catSlug}” isn't a plant category we know — try one of the groups below.`, region);
+    renderNotFound(main, t("region.noSuchCategory", { slug: catSlug }), region);
     return;
   }
 
@@ -60,7 +57,7 @@ export function renderRegion(main: HTMLElement, param?: string): void {
     return;
   }
 
-  document.title = `Natives of ${region.meta.name} — Indigene`;
+  document.title = t("region.docTitle", { region: regionName(region.meta) });
 
   const allRows: FilterRow[] = [];
   const sections: FilterSection[] = [];
@@ -72,7 +69,7 @@ export function renderRegion(main: HTMLElement, param?: string): void {
       el("h3", { style: "margin:1.1rem 0 0.4rem" }, [
         el("a", { href: categoryHref(region, f), style: "color:inherit" }, [
           formIcon(f),
-          ` ${FORM_LABELS[f]} (${inForm.length})`,
+          ` ${formLabel(f)} (${fmtNumber(inForm.length)})`,
         ]),
       ]),
       el("div", { class: "card-grid" }, rows.map((r) => r.node)),
@@ -83,24 +80,38 @@ export function renderRegion(main: HTMLElement, param?: string): void {
   }).filter((g): g is HTMLElement => g !== null);
 
   main.append(
-    el("h2", { class: "step-title" }, region.meta.name),
+    el("h2", { class: "step-title" }, regionName(region.meta)),
     // The place in the sentence, the hardiness range as its own badge beside
     // it. This is where the zone belongs: the reader has picked their region
     // and is now asking what grows in it. The Explore cards, where they were
     // still choosing a place, name the place only.
     regionRefLine(region.meta, "region-ref"),
     el("p", { class: "step-lede" },
-      `Every native we know for ${region.meta.reference} — tap any plant for its full profile.`),
+      t("region.lede", { reference: regionReference(region.meta) })),
     regionStatGrid(region, plants),
-    el("p", { style: "font-size:0.9rem;color:var(--ink-soft)" }, region.meta.note),
+    el("p", { style: "font-size:0.9rem;color:var(--ink-soft)" }, regionNote(region.meta)),
+    ...(namingNote(plants) ? [namingNote(plants) as HTMLElement] : []),
     filterField(allRows, sections),
     categoryChips(region, plants, null),
     ...groups,
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("plants") }, "← Featured natives"),
-      el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, "Rank these for my spot"),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("plants") }, t("region.featured")),
+      el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("wildlife.rankForSpot")),
     ])
   );
+}
+
+/**
+ * Said once per roster: how many of these plants we can name in the reader's
+ * language. A page where two thirds of the headings are Latin needs to explain
+ * itself — the alternative (inventing French names for Florida natives) is the
+ * one thing we won't do.
+ */
+function namingNote(plants: Plant[]): HTMLElement | null {
+  const { named, total } = localNameCoverage(plants);
+  if (named === total) return null;
+  return el("p", { class: "note info", style: "margin:0.4rem 0 0.8rem" },
+    t("names.partlyNamed", { named: fmtNumber(named), total: fmtNumber(total) }));
 }
 
 // One category of one region — a straight-to-the-point shareable page, with a
@@ -112,8 +123,8 @@ function renderCategory(
   form: PlantForm
 ): void {
   const inForm = sortedByCommon(plants, form);
-  const label = FORM_LABELS[form];
-  document.title = `${label} native to ${region.meta.name} — Indigene`;
+  const label = formLabel(form);
+  document.title = t("region.categoryDocTitle", { label, region: regionName(region.meta) });
 
   // The same category elsewhere — only regions that actually have one.
   const elsewhere = REGIONS.filter(
@@ -121,14 +132,14 @@ function renderCategory(
   );
   const switcher = elsewhere.length
     ? el("div", { class: "card", style: "margin-top:1rem" }, [
-        el("p", { style: "margin:0 0 0.4rem;font-weight:650" }, `${label} in another region:`),
+        el("p", { style: "margin:0 0 0.4rem;font-weight:650" }, t("region.elsewhere", { label })),
         el("div", { style: "display:flex;flex-wrap:wrap;gap:0.4rem" },
           elsewhere.map((r) =>
             el("a", {
               class: "btn btn-secondary",
               style: "flex:0 1 auto;min-height:2.4rem;padding:0.4rem 0.7rem;font-size:0.9rem;text-decoration:none",
               href: categoryHref(r, form),
-            }, `${r.meta.name} (${loadPlants(r).filter((p) => p.form === form).length})`)
+            }, `${regionName(r.meta)} (${fmtNumber(loadPlants(r).filter((p) => p.form === form).length)})`)
           )
         ),
       ])
@@ -139,24 +150,28 @@ function renderCategory(
   main.append(
     el("p", { class: "region-tag", style: "margin:0 0 0.3rem;font-size:0.9rem;color:var(--ink-soft)" }, [
       "📍 ",
-      el("a", { href: `#/regions/${region.meta.id}` }, region.meta.name),
+      el("a", { href: `#/regions/${region.meta.id}` }, regionName(region.meta)),
     ]),
     el("h2", { class: "step-title" }, label),
     inForm.length
       ? el("p", { class: "step-lede" }, [
-          `${inForm.length} native ${inForm.length === 1 ? "plant" : "plants"} for ${region.meta.reference} `,
+          tn("region.categoryCount", inForm.length, {
+            n: fmtNumber(inForm.length),
+            reference: regionReference(region.meta),
+          }),
+          " ",
           zoneChip(region.meta),
-          " — tap any for its full profile.",
+          t("region.tapAny"),
         ])
       : el("p", { class: "step-lede" },
-          `Our ${region.meta.name} list has no ${label.toLowerCase()} yet — the seed lists are curated and grow carefully. Try another category, or the same category in a region below.`),
+          t("region.emptyCategory", { region: regionName(region.meta), label: label.toLowerCase() })),
     ...(rows.length > 1 ? [filterField(rows, [])] : []),
     categoryChips(region, plants, form),
     el("div", { class: "card-grid" }, rows.map((r) => r.node)),
     ...(switcher ? [switcher] : []),
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
-      el("button", { class: "btn btn-secondary", onClick: () => navigate(`regions/${region.meta.id}`) }, "← All natives of this region"),
-      el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, "Rank these for my spot"),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate(`regions/${region.meta.id}`) }, t("region.allOfRegion")),
+      el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("wildlife.rankForSpot")),
     ])
   );
 }
@@ -169,7 +184,7 @@ function categoryChips(region: RegionDef, plants: Plant[], current: PlantForm | 
       class: "btn btn-secondary",
       style: chipStyle,
       href: `#/regions/${region.meta.id}`,
-    }, `All (${plants.length})`));
+    }, t("region.allChip", { n: fmtNumber(plants.length) })));
   }
   for (const f of FORM_ORDER) {
     const count = plants.filter((p) => p.form === f).length;
@@ -179,9 +194,9 @@ function categoryChips(region: RegionDef, plants: Plant[], current: PlantForm | 
       style: chipStyle,
       href: categoryHref(region, f),
       "aria-current": f === current ? "page" : undefined,
-    }, [formIcon(f), ` ${FORM_LABELS[f]} (${count})`]));
+    }, [formIcon(f), ` ${formLabel(f)} (${fmtNumber(count)})`]));
   }
-  return el("nav", { "aria-label": "Plant categories", style: "display:flex;flex-wrap:wrap;gap:0.4rem;margin:0.6rem 0 0.8rem" }, chips);
+  return el("nav", { "aria-label": t("region.categoriesNav"), style: "display:flex;flex-wrap:wrap;gap:0.4rem;margin:0.6rem 0 0.8rem" }, chips);
 }
 
 // `gap:0.3rem` overrides .btn's roomy 0.5rem so a chip's icon hugs its label.
@@ -199,10 +214,12 @@ function categoryHref(region: RegionDef, form: PlantForm): string {
   return `#/regions/${region.meta.id}/${FORM_SLUGS[form]}`;
 }
 
+/** Alphabetical by the name the reader actually sees, in their own collation:
+ *  "Épicéa" files under E in French, not after Z. */
 function sortedByCommon(plants: Plant[], form: PlantForm): Plant[] {
   return plants
     .filter((p) => p.form === form)
-    .sort((a, b) => a.common.localeCompare(b.common));
+    .sort((a, b) => commonName(a).localeCompare(commonName(b), getLang()));
 }
 
 // ---- In-page filtering: type a name, the list narrows as you type ----
@@ -224,15 +241,17 @@ interface FilterSection {
   rows: FilterRow[];
 }
 
+// The haystack carries the English name too, not only the displayed one: a
+// French reader who knows a plant as "red maple" should still find it.
 function filterRow(p: Plant): FilterRow {
-  return { hay: norm(`${p.common} ${p.latin}`), node: plantRow(p) };
+  return { hay: norm(`${commonName(p)} ${p.common} ${p.latin}`), node: plantRow(p) };
 }
 
 function filterField(rows: FilterRow[], sections: FilterSection[]): HTMLElement {
   const input = el("input", {
     type: "search",
-    "aria-label": "Filter this list by plant name",
-    placeholder: "Filter by name…",
+    "aria-label": t("region.filterAria"),
+    placeholder: t("region.filterPlaceholder"),
     autocomplete: "off",
     autocapitalize: "none",
     spellcheck: false,
@@ -257,12 +276,12 @@ function filterField(rows: FilterRow[], sections: FilterSection[]): HTMLElement 
     clear(status);
     if (!nq) return;
     if (shown) {
-      status.append(`${shown} of ${rows.length} match.`);
+      status.append(t("region.filterCount", { shown: fmtNumber(shown), total: fmtNumber(rows.length) }));
     } else {
       status.append(
-        "Nothing here matches — ",
-        el("a", { href: `#/search/${encodeURIComponent(input.value.trim())}` }, "search every region"),
-        " instead."
+        t("region.filterNone"),
+        el("a", { href: `#/search/${encodeURIComponent(input.value.trim())}` }, t("region.filterSearchAll")),
+        t("region.filterNoneRest")
       );
     }
   };
@@ -274,6 +293,7 @@ function filterField(rows: FilterRow[], sections: FilterSection[]): HTMLElement 
 // A compact, scannable row: enough to recognize the plant and want to tap it,
 // with the full story living on the plant's own page.
 function plantRow(p: Plant): HTMLElement {
+  const names = nameLines(p);
   return el("a", {
     href: `#/plants/${p.id}`,
     class: "card",
@@ -282,32 +302,32 @@ function plantRow(p: Plant): HTMLElement {
     el("div", { class: "plant-photo", "aria-hidden": "true", style: "flex:0 0 auto" }, [silhouetteFor(p.form)]),
     el("div", { style: "min-width:0" }, [
       el("div", { style: "font-weight:700" }, [
-        p.common,
+        names.title,
         p.keystone
           ? el("span", {
-              title: "Keystone plant — supports far more wildlife than most",
+              title: t("explore.keystoneTitle"),
               role: "img",
-              "aria-label": "Keystone plant",
+              "aria-label": t("explore.keystoneLabel"),
               style: "margin-left:0.3rem;color:var(--brand)",
             }, [keystoneIcon(13)])
           : null,
       ]),
-      el("div", { class: "plant-latin", style: "font-size:0.85rem" }, p.latin),
+      el("div", { class: "plant-latin", style: "font-size:0.85rem" }, names.sub),
       el("div", {
         style: "font-size:0.85rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis",
-      }, p.givesNote),
+      }, prose(p, "givesNote")),
     ]),
   ]);
 }
 
 function renderNotFound(main: HTMLElement, why: string, region?: RegionDef): void {
   main.append(
-    el("h2", { class: "step-title" }, "Nothing at this address"),
+    el("h2", { class: "step-title" }, t("region.nothingHere")),
     el("p", { class: "step-lede" }, why),
     ...(region ? [categoryChips(region, loadPlants(region), null)] : []),
     el("div", { class: "btn-row" }, [
-      el("button", { class: "btn btn-primary", onClick: () => navigate("plants") }, "Browse the natives"),
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, "Home"),
+      el("button", { class: "btn btn-primary", onClick: () => navigate("plants") }, t("region.browseNatives")),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("browse.home")),
     ])
   );
 }

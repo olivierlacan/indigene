@@ -5,6 +5,7 @@
 // the section-wide iNaturalist credit below. Keeping it here means the two layers
 // can't drift apart, and the credit/licence handling stays in one place.
 import { el } from "../ui";
+import { t } from "../lib/i18n";
 import { openObservationLightbox } from "./lightbox";
 import { whereWhen } from "../lib/inaturalist";
 import type { ObservationSummary } from "../lib/inaturalist";
@@ -86,12 +87,10 @@ export function observationList(observations: ObservationSummary[], label: strin
  *  transparency line. `fromCache` flips only the "fetched now vs. from cache" clause. */
 export function freshnessLine(fromCache: boolean): HTMLElement {
   return el("p", { class: "obs-attribution" }, [
-    "Sightings & photos from ",
+    t("obs.creditLead"),
     el("a", { href: INAT, target: "_blank", rel: "noopener" }, "iNaturalist"),
-    ", each © its observer under the licence shown. ",
-    fromCache
-      ? "Loaded from this device's cache — "
-      : "Fetched just now by your browser — ",
-    "your browser calls iNaturalist directly, so they see your request, not ours.",
+    t("obs.creditMid"),
+    t(fromCache ? "obs.fromCache" : "obs.fetchedNow"),
+    t("obs.creditEnd"),
   ]);
 }

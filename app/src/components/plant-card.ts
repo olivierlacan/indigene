@@ -2,43 +2,46 @@
 // ecosystem score is never a black box, honesty flags are prominent, and the
 // site-match reasoning is spelled out in plain words.
 import type { Ranked } from "../lib/ranking";
-import type { Weights } from "../types";
+import type { Plant, Weights } from "../types";
 import { el } from "../ui";
 import { drawSizeViz } from "./size-viz";
 import { statGrid } from "./stat-card";
-import { scoreLabels, confidencePlain, growthPlain, SOURCES_ROUTE } from "../lib/plain";
+import { SCORE_KEYS, scoreLabel, bloomColorWord, confidencePlain, growthPlain, moistureWord, SOURCES_ROUTE } from "../lib/plain";
 import { citation } from "./citation";
 import { keystoneIcon } from "./keystone-icon";
-
-const monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+import { t, fmtNumber, fmtList, monthName } from "../lib/i18n";
+import { length, humanHeightLabel } from "../lib/units";
+import { nameLines, commonName } from "../lib/names";
+import { prose } from "../lib/prose";
 
 export function plantCard(r: Ranked, weights: Weights): HTMLElement {
   const p = r.plant;
 
   const badges = el("div", {}, [
     p.keystone
-      ? el("span", { class: "badge keystone", title: "A keystone plant supports far more wildlife than most — losing it would unravel the local food web." }, [keystoneIcon(), " Keystone plant"])
+      ? el("span", { class: "badge keystone", title: t("badge.keystoneTitle") }, [keystoneIcon(), " " + t("badge.keystone")])
       : null,
     p.noWaterEstablish
-      ? el("span", { class: "badge nowater", title: "Expected to establish and survive with no watering after planting, in an average year." }, "Survives with no watering")
-      : el("span", { class: "badge caution" }, "Needs water to establish"),
-    p.filters.petToxic ? el("span", { class: "badge caution" }, "Toxic if eaten") : null,
-    p.filters.thorny ? el("span", { class: "badge caution" }, "Thorny") : null,
-    p.filters.aggressive ? el("span", { class: "badge caution" }, "Spreads — give it room") : null,
-    p.filters.deerResistant ? el("span", { class: "badge neutral" }, "Deer tend to leave it alone") : null,
+      ? el("span", { class: "badge nowater", title: t("badge.noWaterTitle") }, t("badge.noWater"))
+      : el("span", { class: "badge caution" }, t("badge.needsWater")),
+    p.filters.petToxic ? el("span", { class: "badge caution" }, t("badge.petToxic")) : null,
+    p.filters.thorny ? el("span", { class: "badge caution" }, t("badge.thorny")) : null,
+    p.filters.aggressive ? el("span", { class: "badge caution" }, t("badge.aggressive")) : null,
+    p.filters.deerResistant ? el("span", { class: "badge neutral" }, t("badge.deerResistant")) : null,
   ]);
 
+  const names = nameLines(p);
   const head = el("div", { class: "plant-head" }, [
     el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
     el("div", {}, [
-      el("h3", { class: "plant-name" }, p.common),
-      el("div", { class: "plant-latin" }, p.latin),
+      el("h3", { class: "plant-name" }, names.title),
+      el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" }, names.sub),
       badges,
     ]),
   ]);
 
   // Site-match summary.
-  const matchWord = r.match === "good" ? "Good match for this spot" : r.match === "ok" ? "Workable here" : "Poor match — here's why";
+  const matchWord = t(`match.${r.match}` as const);
   const match = el("div", { class: `note ${r.match === "good" ? "info" : r.match === "ok" ? "warn" : "danger"}` }, [
     el("strong", {}, matchWord),
     el("ul", { style: "margin:0.4rem 0 0; padding-left:1.1rem;" }, r.reasons.map((why) => el("li", {}, why))),
@@ -49,51 +52,62 @@ export function plantCard(r: Ranked, weights: Weights): HTMLElement {
   // Draw after it's in the DOM (needs clientWidth); scheduled via microtask.
   queueMicrotask(() => drawSizeViz(canvas, p));
   const sizeCaption = el("div", { class: "size-caption" }, [
-    `Drawn to scale beside a 5′6″ person. Eventually reaches about ${fmtSize(p.matureHeightFt)} tall and ${fmtSize(p.matureSpreadFt)} wide. ${growthPlain(p)}`,
+    `${t("card.sizeCaption", {
+      human: humanHeightLabel(),
+      height: length(p.matureHeightFt),
+      spread: length(p.matureSpreadFt),
+    })} ${growthPlain(p)}`,
   ]);
 
   // Transparent score breakdown (weighted total shown, then each part). The
   // bars stay compact here — what each score means is spelled out once, on the
   // plant's own profile page, not repeated on all 25 cards.
-  const scoreParts = (Object.keys(scoreLabels) as (keyof typeof scoreLabels)[]).map((key) => {
+  const scoreParts = SCORE_KEYS.map((key) => {
     const val = (p.scores as unknown as Record<string, number>)[key];
     const w = (weights as unknown as Record<string, number>)[key];
-    const label = scoreLabels[key];
+    const label = scoreLabel(key);
     return el("li", { class: "score-item" }, [
       el("div", { class: "score-head" }, [
         el("span", {}, [
           el("span", { "aria-hidden": "true" }, `${label.icon} `),
-          label.name + (w >= 4 ? " ★ (you're weighting this high)" : ""),
+          label.name + (w >= 4 ? ` ${t("card.weightedHigh")}` : ""),
         ]),
-        el("span", {}, `${val}${key === "host" ? ` · ${p.hostLepCount} species` : ""}`),
+        el("span", {}, `${fmtNumber(val)}${key === "host" ? ` · ${t("card.hostSpecies", { n: fmtNumber(p.hostLepCount) })}` : ""}`),
       ]),
       el("div", { class: "score-bar" }, [el("span", { style: `width:${val}%` })]),
     ]);
   });
 
   const scores = el("div", {}, [
-    el("p", { style: "font-weight:700;margin:0 0 0.2rem" }, `🦋 Why it ranks here — eco value ${r.ecoScore}/100`),
+    el("p", { style: "font-weight:700;margin:0 0 0.2rem" }, t("card.whyRanks", { score: fmtNumber(r.ecoScore) })),
     el("ul", { class: "score-list" }, scoreParts),
   ]);
 
   const bloom = p.bloom
-    ? `Blooms ${monthNames[p.bloom.startMonth]}–${monthNames[p.bloom.endMonth]} (${p.bloom.color}).`
-    : "Grown for foliage, not flowers.";
+    ? t("card.bloomRange", {
+        from: monthName(p.bloom.startMonth, "short"),
+        to: monthName(p.bloom.endMonth, "short"),
+        color: bloomColorWord(p.bloom.color),
+      })
+    : t("card.foliage");
 
   const body = el("div", { class: "plant-body" }, [
-    el("p", { class: "kv" }, [el("span", { class: "k" }, "What it does for you & wildlife: "), p.givesNote]),
-    el("p", { class: "kv" }, [el("span", { class: "k" }, "What it needs from you: "), p.careNote]),
-    el("p", { class: "kv" }, [el("span", { class: "k" }, "Bloom & moisture: "), `${bloom} Prefers soil that's ${p.moisture.map(moistureShort).join(" or ")}.`]),
+    el("p", { class: "kv" }, [el("span", { class: "k" }, t("card.gives")), prose(p, "givesNote")]),
+    el("p", { class: "kv" }, [el("span", { class: "k" }, t("card.needs")), prose(p, "careNote")]),
+    el("p", { class: "kv" }, [
+      el("span", { class: "k" }, t("card.bloomMoisture")),
+      `${bloom} ${t("card.prefersSoil", { bands: fmtList(p.moisture.map(moistureWord)) })}`,
+    ]),
     scores,
     el("p", { class: "confidence" }, [
-      el("strong", {}, `Confidence: ${p.confidence}. `),
+      el("strong", {}, t("card.confidence", { level: t(`confidence.word.${p.confidence}` as const) })),
       confidencePlain(p.confidence),
       " ",
       el("span", {}, [
-        "Source: ",
+        t("card.source"),
         ...citation(p.basis),
         " ",
-        el("a", { href: SOURCES_ROUTE }, "How sure are we? →"),
+        el("a", { href: SOURCES_ROUTE }, t("card.howSure")),
       ]),
     ]),
   ]);
@@ -101,18 +115,11 @@ export function plantCard(r: Ranked, weights: Weights): HTMLElement {
   return el("article", { class: "plant" }, [head, match, statGrid(p), canvas, sizeCaption, body]);
 }
 
-function moistureShort(b: string): string {
-  return b === "dry" ? "dry" : b === "wet" ? "wet" : "evenly moist";
-}
-
-function fmtSize(ft: number): string {
-  if (ft < 1) return `${Math.round(ft * 12)} inches`;
-  return `${ft % 1 === 0 ? ft : ft.toFixed(1)} ft`;
-}
-
-function sizeAria(p: { size: { year: number; heightFt: number; spreadFt: number }[]; common: string }): string {
-  const parts = p.size.map((s) => `year ${s.year}: ${fmtSize(s.heightFt)} tall`);
-  return `Size of ${p.common} over time — ${parts.join(", ")}.`;
+function sizeAria(p: Plant): string {
+  const parts = p.size.map((s) =>
+    t("card.sizeAriaPart", { year: s.year, height: length(s.heightFt) })
+  );
+  return t("card.sizeAria", { name: commonName(p), parts: parts.join(", ") });
 }
 
 // A simple drawn silhouette so a card is meaningful offline with no photo.

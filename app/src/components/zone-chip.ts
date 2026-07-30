@@ -15,14 +15,18 @@
 // rather than leaving the squiggle to be guessed at.
 import type { RegionMeta } from "../data/region";
 import { el } from "../ui";
+import { t } from "../lib/i18n";
+import { regionReference } from "../lib/names";
 
 export function zoneChip(meta: RegionMeta): HTMLElement {
   const approx = meta.zones.startsWith("≈");
   const range = approx ? meta.zones.slice(1) : meta.zones;
   const label = approx
-    ? `Roughly USDA hardiness zones ${range} — the American scale is a translation here, not the local convention, so treat it as a guide to winter cold.`
-    : `USDA hardiness zones ${range} — the winter cold this region's plant list is tuned to.`;
+    ? t("zoneChip.approx", { range })
+    : t("zoneChip.exact", { range });
   return el("span", { class: "zone-chip", title: label, role: "img", "aria-label": label }, [
+    // "USDA" is the name of the scale, not a word — it stays put in every
+    // language, the way "°C" does.
     el("span", { class: "zone-chip-k" }, "USDA"),
     meta.zones,
   ]);
@@ -31,7 +35,7 @@ export function zoneChip(meta: RegionMeta): HTMLElement {
 /** "Pennsylvania │ USDA 6b–7a" — the place, then the badge. */
 export function regionRefLine(meta: RegionMeta, className: string): HTMLElement {
   return el("p", { class: className }, [
-    el("span", { class: "zone-place" }, meta.reference),
+    el("span", { class: "zone-place" }, regionReference(meta)),
     zoneChip(meta),
   ]);
 }

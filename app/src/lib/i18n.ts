@@ -1,0 +1,219 @@
+// The language layer. Hand-rolled, ~2 KB, no dependency — the same instinct as
+// the rest of the app (vanilla TS, real DOM, nothing you can't read in one
+// sitting).
+//
+// Three rules shape it:
+//
+//  1. **English is the key set.** `locales/en.ts` is the source of truth; every
+//     other locale is typed against it (`Dict`), so a missing or misspelt key
+//     is a compile error, not a blank on someone's screen. There is no runtime
+//     "key not found" path to discover in production.
+//  2. **The choice is the user's, the guess is only a default.** We read
+//     `navigator.language` once, and from the moment someone picks a language
+//     by hand that pick wins forever. Same instinct as the sun picker: the
+//     sensor is a suggestion, the human is the answer.
+//  3. **Language and units are separate settings.** A French speaker in Ohio
+//     wants French and feet; an American in Paris wants English and metres.
+//     Nothing here reaches into `units.ts`, and `units.ts` only reads the
+//     language to format numbers (1,000.5 vs 1 000,5) — never to pick a system.
+import { en } from "../locales/en";
+import { fr } from "../locales/fr";
+import type { Dict, TKey } from "../locales/en";
+
+export type Lang = "en" | "fr";
+
+/** Every language the app ships, with the name each calls itself. A language
+ *  picker that says "French" to a French speaker is a picker they can't read. */
+export const LANGUAGES: { code: Lang; endonym: string }[] = [
+  { code: "en", endonym: "English" },
+  { code: "fr", endonym: "Français" },
+];
+
+const DICTS: Record<Lang, Dict> = { en, fr };
+
+const STORAGE_KEY = "indigene:lang";
+
+function isLang(v: string | null | undefined): v is Lang {
+  return v === "en" || v === "fr";
+}
+
+/**
+ * The starting language: an explicit past choice, else the browser's own
+ * preference list, else English. `navigator.languages` is ordered by how much
+ * the person wants each one, so we walk it in order and take the first we
+ * actually speak — "fr-CA" and "fr" both mean French to us.
+ */
+function detect(): Lang {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (isLang(saved)) return saved;
+  } catch {
+    // Private-mode Safari throws on localStorage. A language pick that doesn't
+    // persist is a small loss; a blank app is a total one.
+  }
+  const wanted = navigator.languages?.length ? navigator.languages : [navigator.language];
+  for (const tag of wanted) {
+    const base = String(tag).toLowerCase().split("-")[0];
+    if (isLang(base)) return base;
+  }
+  return "en";
+}
+
+let current: Lang = detect();
+const listeners = new Set<() => void>();
+
+export function getLang(): Lang {
+  return current;
+}
+
+/** The BCP 47 tag to hand `Intl` and to stamp on `<html lang>`. */
+export function langTag(): string {
+  return current;
+}
+
+export function setLang(next: Lang): void {
+  if (next === current) return;
+  current = next;
+  try {
+    localStorage.setItem(STORAGE_KEY, next);
+  } catch {
+    // See detect(): persistence is best-effort, the switch still works.
+  }
+  applyDocumentLang();
+  listeners.forEach((fn) => fn());
+}
+
+/** Keep `<html lang>` honest — it's what screen readers pick a voice from and
+ *  what the browser hyphenates by, so it has to track the actual UI language. */
+export function applyDocumentLang(): void {
+  document.documentElement.lang = current;
+}
+
+/** Re-render hook. `main.ts` subscribes and re-runs the current route, which
+ *  redraws every screen in the new language without losing the in-memory draft
+ *  a page reload would throw away. */
+export function onLangChange(fn: () => void): () => void {
+  listeners.add(fn);
+  return () => listeners.delete(fn);
+}
+
+export type Params = Record<string, string | number>;
+
+/**
+ * The keys `tn()` accepts: the *stem* of a plural pair, derived from the
+ * dictionary rather than listed by hand. `"welcome.openSaved.one"` in `en.ts`
+ * is what makes `tn("welcome.openSaved", n)` type-check — so a plural stem
+ * with only one of its two halves written is a compile error at the call site.
+ */
+type PluralBase<K> = K extends `${infer Base}.one` ? Base : never;
+export type TPluralKey = PluralBase<TKey>;
+
+/** Substitute `{name}` placeholders. Unknown placeholders are left alone rather
+ *  than blanked, so a typo shows up as `{oops}` in review instead of vanishing. */
+function interpolate(template: string, params?: Params): string {
+  if (!params) return template;
+  return template.replace(/\{(\w+)\}/g, (whole, name: string) =>
+    name in params ? String(params[name]) : whole
+  );
+}
+
+/** Look a key up in the active language, falling back to English. The fallback
+ *  can't fire today (the types guarantee coverage) but it means a locale file
+ *  half-written on a branch degrades to English rather than to blank. */
+export function t(key: TKey, params?: Params): string {
+  const dict = DICTS[current];
+  return interpolate(dict[key] ?? en[key], params);
+}
+
+/**
+ * Look up a key that isn't in the type — for values that come from *data*
+ * rather than from code, where a new one can land in a catalog file without a
+ * matching dictionary entry (bloom colours are the case that needs this).
+ *
+ * Returns `undefined` rather than a blank so the caller can fall back to the
+ * raw data value: an untranslated "greenish-yellow" is a small wart, an empty
+ * space where a flower colour should be is a bug.
+ */
+export function tOptional(key: string): string | undefined {
+  const dict = DICTS[current] as Record<string, string | undefined>;
+  return dict[key] ?? (en as Record<string, string | undefined>)[key];
+}
+
+/**
+ * Plural-aware lookup: `key` names a pair of entries, `<key>.one` and
+ * `<key>.other`, and `{n}` is filled in for you.
+ *
+ * The two languages disagree about zero — English says "0 plants", French says
+ * "0 plante" — so the rule is per-language rather than a shared `n === 1`.
+ * That's the whole of CLDR's rules for en and fr; anything more elaborate is a
+ * library we don't need.
+ */
+export function tn(key: TPluralKey, n: number, params?: Params): string {
+  const one = current === "fr" ? Math.abs(n) < 2 : n === 1;
+  const full = `${key}.${one ? "one" : "other"}` as TKey;
+  return t(full, { n, ...params });
+}
+
+/**
+ * The rich-text form: a translated template that has real DOM in the middle of
+ * it — a link, a `<strong>`, a button. Returns the pieces in order, ready to
+ * hand straight to `el(...)` or `append(...)`.
+ *
+ *   tx("confirm.zone", { link: el("a", { href }, "USDA zone 7a") })
+ *   // "Winters here get down to about −12 °C ({link})." →
+ *   // ["Winters here get down to about −12 °C (", <a>, ")."]
+ *
+ * This exists so a translator can move the link to wherever the sentence wants
+ * it. Splitting a sentence into "before" and "after" halves in the code hard-
+ * codes English word order, and French almost never agrees with it.
+ */
+export function tx(key: TKey, nodes: Record<string, Node | string>, params?: Params): (Node | string)[] {
+  const template = interpolate(DICTS[current][key] ?? en[key], params);
+  const out: (Node | string)[] = [];
+  let last = 0;
+  const re = /\{(\w+)\}/g;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(template))) {
+    const node = nodes[m[1]];
+    if (node === undefined) continue; // not a slot we were given — leave the text
+    if (m.index > last) out.push(template.slice(last, m.index));
+    out.push(node);
+    last = m.index + m[0].length;
+  }
+  if (last < template.length) out.push(template.slice(last));
+  return out;
+}
+
+// ---------------------------------------------------------------------------
+// Locale-aware formatting. These follow the *language*, not the unit system:
+// "1,070 mm" in English and "1 070 mm" in French are the same measurement
+// written the way each reader expects to see a number.
+// ---------------------------------------------------------------------------
+
+const numberCache = new Map<string, Intl.NumberFormat>();
+
+export function fmtNumber(value: number, maxFractionDigits = 0): string {
+  const cacheKey = `${current}:${maxFractionDigits}`;
+  let f = numberCache.get(cacheKey);
+  if (!f) {
+    f = new Intl.NumberFormat(current, { maximumFractionDigits: maxFractionDigits });
+    numberCache.set(cacheKey, f);
+  }
+  return f.format(value);
+}
+
+/** "oak, willow and cherry" / "chêne, saule et cerisier". */
+export function fmtList(items: string[]): string {
+  return new Intl.ListFormat(current, { style: "long", type: "conjunction" }).format(items);
+}
+
+/** A date in the reader's own convention — "3 Feb 2026" / "3 févr. 2026". */
+export function fmtDate(ms: number): string {
+  return new Intl.DateTimeFormat(current, { dateStyle: "medium" }).format(new Date(ms));
+}
+
+/** Month names for the bloom-period line, in the reader's language. */
+export function monthName(month1to12: number, style: "long" | "short" = "long"): string {
+  const d = new Date(Date.UTC(2001, Math.max(0, Math.min(11, month1to12 - 1)), 1));
+  return new Intl.DateTimeFormat(current, { month: style, timeZone: "UTC" }).format(d);
+}

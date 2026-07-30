@@ -16,6 +16,8 @@ import { wildlifeCountForRegion } from "../lib/wildlife";
 import { silhouetteFor } from "../components/plant-card";
 import { keystoneIcon } from "../components/keystone-icon";
 import { cardStats } from "../components/card-stats";
+import { t, tn, fmtNumber } from "../lib/i18n";
+import { nameLines, regionName, regionReference } from "../lib/names";
 
 export function renderExplore(main: HTMLElement): void {
   clear(main);
@@ -23,10 +25,9 @@ export function renderExplore(main: HTMLElement): void {
   const totalPlants = REGIONS.reduce((n, r) => n + loadPlants(r).length, 0);
 
   main.append(
-    el("h2", { class: "step-title" }, "Meet the natives"),
-    el("p", { class: "step-lede" }, [
-      `${totalPlants} native plants across the ${REGIONS.length} regions Indigene covers so far. Open the one you live in to see its whole roster — or tap the plant on the front of a card to meet it.`,
-    ]),
+    el("h2", { class: "step-title" }, t("explore.title")),
+    el("p", { class: "step-lede" },
+      t("explore.lede", { plants: fmtNumber(totalPlants), regions: fmtNumber(REGIONS.length) })),
     el("div", { class: "card-grid" }, REGIONS.map(regionCard)),
     // Deliberately *after* the regions: browsing by animal is a fine way in,
     // but it's the second question. Offering it first asked the reader to
@@ -38,13 +39,13 @@ export function renderExplore(main: HTMLElement): void {
     }, [
       el("span", { "aria-hidden": "true", style: "font-size:1.5rem;line-height:1" }, "🦋"),
       el("span", {}, [
-        el("span", { style: "font-weight:700" }, "Or browse by wildlife → "),
-        el("span", { style: "color:var(--ink-soft)" }, "start from the monarch, hummingbird, or gopher tortoise you want, and find the plants that support it."),
+        el("span", { style: "font-weight:700" }, t("explore.byWildlife")),
+        el("span", { style: "color:var(--ink-soft)" }, t("explore.byWildlifeSub")),
       ]),
     ]),
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, "Home"),
-      el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, "Start from a spot instead"),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("browse.home")),
+      el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("browse.startFromSpot")),
     ])
   );
 }
@@ -59,40 +60,42 @@ export function renderExplore(main: HTMLElement): void {
 function regionCard(region: RegionDef): HTMLElement {
   const plants = loadPlants(region);
   const p = featuredPlant(region);
+  const name = regionName(region.meta);
   const count = plants.length;
   const keystones = plants.filter((k) => k.keystone).length;
   const creatures = wildlifeCountForRegion(region.meta.id);
+  const star = nameLines(p);
 
   return el("article", { class: "region-card" }, [
     el("h3", { class: "region-card-name" }, [
       el("span", { "aria-hidden": "true" }, "📍 "),
-      el("a", { href: `#/regions/${region.meta.id}` }, region.meta.name),
+      el("a", { href: `#/regions/${region.meta.id}` }, name),
     ]),
     // Just the place. The hardiness chip that used to sit here was a
     // gardening-catalogue term of art on a page whose whole job is "pick where
     // you are" — eight badges down the grid, none of them the thing being
     // chosen. It still rides along on the region page, where a reader who's
     // already picked their place is asking what grows there.
-    el("p", { class: "region-card-ref" }, region.meta.reference),
+    el("p", { class: "region-card-ref" }, regionReference(region.meta)),
     el("a", { class: "region-card-star", href: `#/plants/${p.id}` }, [
       el("span", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
       el("span", { class: "region-card-star-text" }, [
-        el("span", { class: "region-card-kicker" }, "Starring"),
+        el("span", { class: "region-card-kicker" }, t("explore.starring")),
         el("span", { class: "region-card-plant" }, [
-          p.common,
+          star.title,
           p.keystone
             ? el("span", {
-                title: "Keystone plant — supports far more wildlife than most",
+                title: t("explore.keystoneTitle"),
                 role: "img",
-                "aria-label": "Keystone plant",
+                "aria-label": t("explore.keystoneLabel"),
                 style: "margin-left:0.3rem;color:var(--brand)",
               }, [keystoneIcon(13)])
             : null,
         ]),
-        el("span", { class: "plant-latin" }, p.latin),
+        el("span", { class: "plant-latin" }, star.sub),
         el("span", { class: "region-card-host" }, [
           el("span", { "aria-hidden": "true" }, "🐛 "),
-          `${p.hostLepCount} caterpillar species`,
+          t("explore.caterpillarSpecies", { n: fmtNumber(p.hostLepCount) }),
         ]),
       ]),
     ]),
@@ -103,21 +106,21 @@ function regionCard(region: RegionDef): HTMLElement {
     cardStats([
       {
         icon: "🌿",
-        value: String(count),
-        label: `${count} native plants on Indigene's list for ${region.meta.name}`,
+        value: fmtNumber(count),
+        label: t("explore.statPlants", { n: fmtNumber(count), region: name }),
       },
       keystones
         ? {
             icon: () => el("span", { class: "card-stat-arch" }, [keystoneIcon(13)]),
-            value: String(keystones),
-            label: `${keystones} keystone plant${keystones === 1 ? "" : "s"} — the ones local food webs lean on hardest`,
+            value: fmtNumber(keystones),
+            label: tn("explore.statKeystone", keystones, { n: fmtNumber(keystones) }),
           }
         : null,
       creatures
         ? {
             icon: "🦋",
-            value: String(creatures),
-            label: `${creatures} kinds of wildlife with a documented tie to these plants`,
+            value: fmtNumber(creatures),
+            label: t("explore.statWildlife", { n: fmtNumber(creatures) }),
           }
         : null,
     ]),

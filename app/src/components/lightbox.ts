@@ -21,6 +21,7 @@
 // the close button all dismiss it; body scroll is locked while it's open and
 // focus is restored to the thumbnail on close.
 import { el } from "../ui";
+import { t, fmtNumber } from "../lib/i18n";
 import { whereWhen } from "../lib/inaturalist";
 import type { ObservationPhoto, ObservationSummary } from "../lib/inaturalist";
 
@@ -121,16 +122,16 @@ function buildOverlay(): HTMLElement {
   const caption = el("div", { class: "lb-caption" });
   const counter = el("span", { class: "lb-counter" });
 
-  const prev = el("button", { class: "lb-nav lb-prev", "aria-label": "Previous photo", onClick: () => step(-1) }, "‹");
-  const next = el("button", { class: "lb-nav lb-next", "aria-label": "Next photo", onClick: () => step(1) }, "›");
-  const closeBtn = el("button", { class: "lb-close", "aria-label": "Close", onClick: close }, "✕");
+  const prev = el("button", { class: "lb-nav lb-prev", "aria-label": t("lightbox.prev"), onClick: () => step(-1) }, "‹");
+  const next = el("button", { class: "lb-nav lb-next", "aria-label": t("lightbox.next"), onClick: () => step(1) }, "›");
+  const closeBtn = el("button", { class: "lb-close", "aria-label": t("lightbox.close"), onClick: close }, "✕");
 
   const stage = el("div", { class: "lb-stage" }, [prev, img, next]);
   const panel = el("div", {
     class: "lb-panel",
     role: "dialog",
     "aria-modal": "true",
-    "aria-label": "Photo viewer",
+    "aria-label": t("lightbox.viewer"),
     // Clicks inside the panel must not fall through to the backdrop's close.
     onClick: (e: Event) => e.stopPropagation(),
   }, [closeBtn, stage, el("div", { class: "lb-foot" }, [caption, counter])]);
@@ -158,9 +159,10 @@ function paint(): void {
   // Two counts, because the reel spans sightings: where this photo sits in the
   // whole set, and which sighting it belongs to.
   const counts: (string | Node)[] = [];
-  if (many) counts.push(`${index + 1} / ${frames.length}`);
+  if (many) counts.push(`${fmtNumber(index + 1)} / ${fmtNumber(frames.length)}`);
   if (state.observations > 1) {
-    counts.push(el("span", { class: "lb-counter-obs" }, `sighting ${obsIndex + 1} of ${state.observations}`));
+    counts.push(el("span", { class: "lb-counter-obs" },
+      t("lightbox.sightingOf", { i: fmtNumber(obsIndex + 1), n: fmtNumber(state.observations) })));
   }
   counter.replaceChildren(...counts);
 
@@ -182,7 +184,7 @@ function paint(): void {
       href: `${INAT}/observations/${observation.id}`,
       target: "_blank",
       rel: "noopener",
-    }, "View original sighting ↗"),
+    }, t("lightbox.viewOriginal")),
   );
 }
 

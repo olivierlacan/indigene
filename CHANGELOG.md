@@ -50,6 +50,13 @@ subtitle on the What's new page.
   in your units: a tree is "24 m × 21 m" or "80 ft × 70 ft", and the ruler up
   the side of the drawing is marked in whole metres or whole feet — never in
   the awkward converted numbers you'd get from just swapping the label.
+- **An [About page](https://indigene.app/#/about)**, linked from the bottom of
+  every page. It says why Indigene exists — most gardens are green and nearly
+  lifeless, and one native plant restarts the food web the same season — who
+  it's for, and the five things it refuses to do: never use a word it hasn't
+  explained, always show its error bars, never state a number it can't trace to
+  somebody else, never ask anything of you, and keep working where the signal
+  doesn't.
 - Indigene has a proper little sprout icon in your browser tab now, instead of
   the blank page symbol every site gets when it hasn't been given one.
 - Posting an Indigene link somewhere — a message to a friend, a group chat, a
@@ -77,10 +84,14 @@ subtitle on the What's new page.
   job; a gap does not.
 - Internal: `scripts/shoot.mjs` takes `--locale`, so screenshots can be captured
   as a phone in that region would render them — language *and* default units.
-- Internal: the bundle is now ~236 KB gzipped (was ~179 KB) — two full
+- Internal: the bundle is now ~240 KB gzipped (was ~179 KB) — two full
   dictionaries, the name tables and the French prose overlay. Re-measured and
   updated in `README.md`, `PROJECT_BRIEF.md`, `app/README.md` and
   `docs/ecoregion-plan.md`.
+- Internal: the language and units pickers live in
+  `components/prefs-controls.ts` rather than inside a screen, so the fuller
+  settings screen being built separately can import them and delete the thin
+  `steps/settings.ts` shell in one line.
 - Mistyping an Indigene address used to quietly drop you on the front page, as
   though that's where you'd meant to go. Now there's a real
   **"We couldn't find that page"** page that says what happened and offers

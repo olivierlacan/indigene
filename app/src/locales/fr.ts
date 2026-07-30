@@ -41,7 +41,8 @@ export const fr: Dict = {
   "nav.savedLocations": "Lieux enregistrés",
   "nav.settings": "Réglages",
   "footer.text":
-    "Libre (licence MIT), bâti sur des données scientifiques publiques — {sources}, et à quel point nous en sommes sûrs. {releaseNotes}. {privacy}.",
+    "Libre (licence MIT), bâti sur des données scientifiques publiques — {sources}, et à quel point nous en sommes sûrs. {about}. {releaseNotes}. {privacy}.",
+  "footer.about": "À propos",
   "footer.sources": "d'où viennent nos chiffres",
   "footer.releaseNotes": "Voir les nouveautés",
   "footer.privacy": "Vie privée et sécurité",
@@ -58,6 +59,7 @@ export const fr: Dict = {
   "steps.wildlife": "Faune",
   "steps.privacy": "Vie privée",
   "steps.sources": "Sources",
+  "steps.about": "À propos",
   "steps.settings": "Réglages",
 
   // ---------------------------------------------------------------------
@@ -1197,5 +1199,56 @@ export const fr: Dict = {
   "ecoregion.broad.easternTemperate": "Forêt tempérée de l'Est (approximatif)",
   "ecoregion.broad.mediterranean": "Méditerranéenne (approximatif)",
   "ecoregion.broad.atlantic": "Atlantique (approximatif)",
+
+  // ---------------------------------------------------------------------
+  // À propos.
+  // ---------------------------------------------------------------------
+  "about.docTitle": "À propos d'Indigene",
+  "about.title": "À propos d'Indigene",
+  "about.lede":
+    "Un indigène est natif d'un lieu. Cette application mesure le soleil là où vous vous tenez, consulte le sol et le climat de ces coordonnées précises, et vous rend les plantes qui appartiennent à cet endroit — avec des mots simples d'un bout à l'autre.",
+  "about.hereEm": "ici",
+  "about.whyTitle": "Pourquoi cela existe",
+  "about.why1":
+    "La plupart des jardins sont verts et presque sans vie. Les pelouses, les arbustes et les fleurs venus d'autres continents ont belle allure et ne nourrissent presque rien : les chenilles dont sont nourris presque tous les oisillons ne peuvent manger que les plantes avec lesquelles elles ont évolué. Pas de plantes indigènes, pas de chenilles, pas d'oisillons — et cette soustraction silencieuse se produit à l'échelle de pays entiers, un jardin bien tenu à la fois.",
+  "about.why2":
+    "Le remède est étonnamment peu coûteux et étonnamment rapide. Plantez une seule indigène et la chaîne alimentaire redémarre dès la même saison. Ce qui manquait, ce n'était pas la bonne volonté : c'était une réponse claire à « qu'est-ce que je plante {here}, dans ce coin précis de mon jardin ? », qui n'exige pas de parler déjà la langue des catalogues de pépinière. C'est cette réponse qu'Indigene essaie d'être.",
+  "about.forTitle": "Pour qui c'est fait",
+  "about.forLede": "L'application est faite, délibérément, pour des gens qui ne sont pas des spécialistes :",
+  "about.for1":
+    "Les débutants, qui n'ont jamais entendu « mi-ombre » ni « espèce clé de voûte » et ne devraient pas avoir à les apprendre avant d'obtenir une réponse utile.",
+  "about.for2":
+    "Les jardiniers de guérilla, qui n'ont qu'une seule occasion et aucun suivi, et à qui il faut dire franchement ce qui survivra tout seul.",
+  "about.for3":
+    "Les jardiniers plus âgés qui découvrent les indigènes, et qui méritent qu'on leur dise « voici ce que cette plante vous apporte » plutôt qu'on leur fasse la leçon.",
+  "about.forEnd":
+    "C'est pourquoi elle s'utilise d'une seule main, dehors, les mains sales et avec une mauvaise connexion — et pourquoi chaque terme de jardinage est expliqué sur place, à chaque fois, au lieu d'être supposé connu.",
+  "about.stancesTitle": "Ce qu'elle refuse de faire",
+  "about.stancesLede":
+    "Ce ne sont pas des valeurs affichées au mur : chacune est une décision que vous pouvez voir l'application appliquer, et la raison pour laquelle elle se comporte ainsi.",
+  "about.stance.plain": "Elle n'emploie jamais un terme qu'elle n'a pas expliqué.",
+  "about.stance.plainBody":
+    "Les mots courants passent devant, le terme technique suit entre parenthèses — « des hivers descendant jusqu'à −12 °C environ (zone USDA 8a) », jamais l'inverse. Si un mot vous envoie chercher ailleurs, c'est un échec.",
+  "about.stance.uncertain": "Elle vous montre ses marges d'erreur.",
+  "about.stance.uncertainBody":
+    "L'estimation du soleil est une fourchette, pas une décimale, parce que les capteurs mentent et que la réponse honnête est une plage. Le relevé de sol est toujours présenté comme « la carte dit ceci — voici un test de soixante secondes pour vérifier si c'est vrai là où vous êtes », parce qu'un carré de carte des sols est plus grand que votre jardin entier. Sur place, vous en savez plus que la carte, et l'application est faite pour vous laisser la contredire.",
+  "about.stance.sourced": "Chaque chiffre doit pouvoir être rattaché à quelqu'un d'autre.",
+  "about.stance.sourcedBody":
+    "Chaque plante porte ses sources et une note de confiance en mots simples, et quand un chiffre relève de notre jugement plutôt que d'un comptage, la page des sources le dit et nomme ceux que nous contesterions en premier. Rien n'est inventé pour combler un trou — une plante sans nom français affiche son nom scientifique plutôt qu'une invention plausible.",
+  "about.stance.yours": "Elle n'attend rien de vous.",
+  "about.stance.yoursBody":
+    "Pas de compte, pas d'inscription, pas de publicité, pas de statistiques, rien de vendu. Les lieux enregistrés restent dans votre navigateur, sur votre appareil, parce qu'il n'existe aucun serveur où les envoyer. Il n'y a rien à acheter, et aucun moyen pour un inconnu de vous contacter par ce biais.",
+  "about.stance.offline": "Elle fonctionne là où sont les jardins.",
+  "about.stance.offlineBody":
+    "Conçue pour marcher hors ligne et pour s'installer sur l'écran d'accueil, parce que le fond d'un jardin est précisément l'endroit où le réseau disparaît. Tout sauf les consultations en direct continue de fonctionner sans aucune connexion.",
+  "about.freeTitle": "Libre, et libre de réemploi",
+  "about.free":
+    "Indigene est un logiciel libre sous {licence}. C'est un choix délibéré face à une licence plus restrictive : c'est un outil d'intérêt public bâti sur de la science publique, et un conservatoire, une chambre d'agriculture, une commune ou une autre application doivent pouvoir le reprendre, l'adapter et le faire tourner sans demander la permission à personne.",
+  "about.mit": "licence MIT",
+  "about.freeMoney":
+    "Il n'y a pas d'entreprise derrière et rien n'est monétisé. C'est aussi pour cela que l'application est un petit téléchargement qui tourne dans votre navigateur, plutôt qu'un service que quelqu'un devrait continuer de payer.",
+  "about.helpTitle": "Aidez à l'améliorer",
+  "about.help":
+    "La chose la plus utile que vous puissiez envoyer, c'est une correction accompagnée d'une source. Tout — les données sur les plantes, les scripts, chaque ligne qui transforme un chiffre en recommandation — est public sur {repo}, et si quelque chose vous paraît faux, vous pouvez {issue}. Demander la couverture de votre propre région est tout aussi bienvenu : c'est ainsi que la carte s'agrandit.",
 
 };

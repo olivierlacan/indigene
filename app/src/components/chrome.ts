@@ -47,6 +47,7 @@ function renderFooter(): void {
     p.replaceChildren(
       ...tx("footer.text", {
         sources: el("a", { href: "#/sources" }, t("footer.sources")),
+        about: el("a", { href: "#/about" }, t("footer.about")),
         releaseNotes: el(
           "a",
           { href: existingNotes?.getAttribute("href") ?? "release-notes/" },

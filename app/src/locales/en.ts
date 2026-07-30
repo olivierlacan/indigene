@@ -42,7 +42,8 @@ export const en = {
   "nav.savedLocations": "Saved locations",
   "nav.settings": "Settings",
   "footer.text":
-    "Open-source (MIT), built on public scientific data — {sources}, and how sure we are of each one. {releaseNotes}. {privacy}.",
+    "Open-source (MIT), built on public scientific data — {sources}, and how sure we are of each one. {about}. {releaseNotes}. {privacy}.",
+  "footer.about": "About",
   "footer.sources": "where our numbers come from",
   "footer.releaseNotes": "See what's new",
   "footer.privacy": "Privacy & safety",
@@ -59,6 +60,7 @@ export const en = {
   "steps.wildlife": "Wildlife",
   "steps.privacy": "Privacy",
   "steps.sources": "Sources",
+  "steps.about": "About",
   "steps.settings": "Settings",
 
   // ---------------------------------------------------------------------
@@ -1161,6 +1163,59 @@ export const en = {
   "ecoregion.broad.easternTemperate": "Eastern Temperate Forest (broad)",
   "ecoregion.broad.mediterranean": "Mediterranean (broad)",
   "ecoregion.broad.atlantic": "Atlantic (broad)",
+
+  // ---------------------------------------------------------------------
+  // About. The third of the "how does this work" pages: #/privacy says how we
+  // treat you, #/sources says how much to trust the numbers, this one says why
+  // the thing exists at all.
+  // ---------------------------------------------------------------------
+  "about.docTitle": "About Indigene",
+  "about.title": "About Indigene",
+  "about.lede":
+    "An indigene is a native of a place. This app measures the sun where you're standing, looks up the soil and climate for those exact coordinates, and gives you back the plants that belong there — with plain words the whole way.",
+  "about.hereEm": "here",
+  "about.whyTitle": "Why this exists",
+  "about.why1":
+    "Most gardens are green and nearly lifeless. Lawns, and shrubs and flowers from other continents, look fine and feed almost nothing: the caterpillars that nearly every baby songbird is raised on can only eat the plants they evolved alongside. No native plants, no caterpillars, no baby birds — and that quiet subtraction is happening across whole countries at once, one tidy garden at a time.",
+  "about.why2":
+    "The remedy is unusually cheap and unusually fast. Plant one native and the food web restarts the same season. What was missing wasn't the will — it was a straight answer to “what should I plant {here}, in this actual corner of my actual garden?” that didn't require you to already speak the language of plant catalogues. That answer is what Indigene tries to be.",
+  "about.forTitle": "Who it's for",
+  "about.forLede": "It's built, deliberately, for people who are not experts:",
+  "about.for1":
+    "Beginners, who have never heard \"part shade\" or \"keystone species\" and shouldn't have to before getting a useful answer.",
+  "about.for2":
+    "Guerrilla gardeners, who get one shot with no aftercare and need to be told plainly what will survive alone.",
+  "about.for3":
+    "Older gardeners new to natives, who deserve to be met with \"here's what this does for you\" rather than with ideology.",
+  "about.forEnd":
+    "Which is why it works one-handed, outdoors, with dirty hands and a bad connection — and why every gardening term is explained in place, every time, instead of being assumed.",
+  "about.stancesTitle": "What it refuses to do",
+  "about.stancesLede":
+    "These aren't values on a wall; each one is a decision you can see the app making, and the reason it behaves the way it does.",
+  "about.stance.plain": "It never uses a term it hasn't explained.",
+  "about.stance.plainBody":
+    "Common words lead and the technical term follows in brackets — \"winters down to about −12 °C (USDA zone 8a)\", never the other way round. If a word would send you to a search engine, it has failed.",
+  "about.stance.uncertain": "It shows you its error bars.",
+  "about.stance.uncertainBody":
+    "The sun estimate is a range, not a decimal, because sensors lie and the honest answer is a band. The soil reading is always framed as “the map says X — here's a 60-second check to see whether that's true where you're standing”, because a soil map square is bigger than your whole garden. Standing there, you know more than the map does, and the app is built to let you overrule it.",
+  "about.stance.sourced": "Every number has to be traceable to somebody else.",
+  "about.stance.sourcedBody":
+    "Each plant carries its sources and a plain confidence note, and where a figure is our judgment rather than a count, the Sources page says so and names the ones we'd challenge first. Nothing is invented to fill a gap — a plant with no French name shows its scientific name rather than a plausible-sounding guess.",
+  "about.stance.yours": "It doesn't want anything from you.",
+  "about.stance.yoursBody":
+    "No account, no sign-up, no advertising, no analytics, nothing sold. Saved spots stay in your browser on your device, because there is no server for them to go to. There is nothing to buy, and no way for a stranger to contact you through it.",
+  "about.stance.offline": "It works where gardens are.",
+  "about.stance.offlineBody":
+    "Offline-first and installable, because the far end of a garden is exactly where a signal disappears. Everything but the live lookups keeps working with no connection at all.",
+  "about.freeTitle": "Free, and free to reuse",
+  "about.free":
+    "Indigene is open source under the {licence}. That's a deliberate choice over a more restrictive licence: this is a civic tool built on public science, and a land trust, an extension office, a council or another app should be able to take it, adapt it, and run it without asking anyone's permission.",
+  "about.mit": "MIT licence",
+  "about.freeMoney":
+    "There is no company here and nothing is monetised. That is also why the app is a single small download that runs in your browser rather than a service someone has to keep paying for.",
+  "about.helpTitle": "Help make it better",
+  "about.help":
+    "The most useful thing you can send is a correction with a source behind it. All of it — the plant data, the scripts, every line that turns a number into a recommendation — is public at {repo}, and if something looks wrong you can {issue}. Asking for your own region to be covered is welcome too; that's how the map grows.",
 } as const;
 
 /** Every valid string key. Derived, so it can never drift from the strings. */

@@ -16,6 +16,7 @@ import { renderWildlifeIndex, renderWildlife } from "./steps/wildlife";
 import { renderPrivacy } from "./steps/privacy";
 import { renderSources } from "./steps/sources";
 import { renderSettings } from "./steps/settings";
+import { renderAbout } from "./steps/about";
 import { initSavedMenu, closeSavedMenu } from "./components/saved-menu";
 import { applyDocumentLang, onLangChange, t } from "./lib/i18n";
 import type { TKey } from "./locales/en";
@@ -44,6 +45,7 @@ const STEPS: Record<string, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = {
   privacy: { fn: renderPrivacy, labelKey: "steps.privacy", inFlow: false },
   sources: { fn: renderSources, labelKey: "steps.sources", inFlow: false },
   settings: { fn: renderSettings, labelKey: "steps.settings", inFlow: false },
+  about: { fn: renderAbout, labelKey: "steps.about", inFlow: false },
 };
 
 const FLOW = ["location", "sun", "confirm", "results"];

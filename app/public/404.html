@@ -1,26 +1,186 @@
 <!doctype html>
-<!--
-  GitHub Pages serves this for any path that isn't a real file — which is
-  exactly what a canonical plant URL like /plants/quercus-alba is. The app is
-  a single page routed on the hash, so this bounces the path into the
-  equivalent hash route (main.ts normalizes the rest). location.replace keeps
-  this 404 out of the back button.
-
-  The site is served from the root of its own domain, so the whole path is the
-  route. If it ever moved back under a subpath (a *project* Pages site lives
-  under /<repo>/), the leading segment would have to be kept as the base here
-  instead of dropped into the hash.
--->
 <html lang="en">
+  <!--
+    GitHub Pages serves this file for any path that isn't a real file. Two very
+    different things land here, and they want opposite treatment:
+
+    1. A canonical app URL — /plants/quercus-alba, /regions/pnw, /wildlife/monarch.
+       The app is a single page routed on the hash, so this bounces the path
+       into the equivalent hash route (main.ts normalizes the rest).
+       location.replace keeps this stop out of the back button.
+
+    2. An address that isn't ours at all — a typo, a stale link, a scanner
+       poking at /wp-login.php. These used to be bounced too, and since the
+       router falls back to the welcome step for anything it doesn't know, a
+       mistyped URL quietly showed the homepage as if nothing were wrong. Now
+       they get this page, which says what happened and offers the ways in.
+
+    The ROUTES list below is what tells them apart, so it has to match STEPS in
+    src/main.ts. A route added there and forgotten here still works — it just
+    arrives via this page instead of silently, which is the safe direction to
+    be wrong in.
+
+    The site is served from the root of its own domain, so the whole path is
+    the route. If it ever moved back under a subpath (a *project* Pages site
+    lives under /<repo>/), the leading segment would have to be kept as the
+    base here instead of dropped into the hash.
+
+    Everything is inline: the built stylesheet's name carries a content hash,
+    and this file has to render on its own before any of the app loads.
+  -->
   <head>
     <meta charset="utf-8" />
-    <title>Indigene</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#1f6b3b" />
+    <title>Page not found — Indigene</title>
+    <meta name="robots" content="noindex" />
+    <meta
+      name="description"
+      content="Stand in a spot, and find native plants that will actually thrive there — ranked by what they do for the local ecosystem."
+    />
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+
+    <!--
+      The share card matters more here than anywhere. Every plant link the app
+      hands out (see plantShareUrl in src/lib/explore.ts) is a real path, so
+      this is the file an unfurler is served when someone posts one — it used
+      to carry no tags at all, and those links previewed as nothing.
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Indigene" />
+    <meta property="og:url" content="https://indigene.app/" />
+    <meta property="og:title" content="Indigene — native plants for exactly where you stand" />
+    <meta
+      property="og:description"
+      content="Stand in a spot, and find native plants that will actually thrive there — ranked by what they do for the local ecosystem."
+    />
+    <meta property="og:image" content="https://indigene.app/og/share-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Indigene — native plants for exactly where you stand"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Indigene — native plants for exactly where you stand" />
+    <meta
+      name="twitter:description"
+      content="Stand in a spot, and find native plants that will actually thrive there — ranked by what they do for the local ecosystem."
+    />
+    <meta name="twitter:image" content="https://indigene.app/og/share-card.png" />
+
     <script>
-      var rest = location.pathname.split("/").filter(Boolean).join("/");
-      location.replace("/" + (rest ? "#/" + rest : "") + location.search);
+      // Keep this in sync with STEPS in src/main.ts.
+      var ROUTES = [
+        "location", "sun", "scan", "confirm", "results", "saved", "browse",
+        "plants", "regions", "search", "wildlife", "privacy", "sources"
+      ];
+      var parts = location.pathname.split("/").filter(Boolean);
+      if (parts.length && ROUTES.indexOf(parts[0]) !== -1) {
+        location.replace("/#/" + parts.join("/") + location.search);
+      } else {
+        // Not one of ours: stay here and show the page. It's hidden until this
+        // runs, so a redirect never flashes "not found" on its way through.
+        document.documentElement.setAttribute("data-state", "notfound");
+      }
     </script>
+
+    <style>
+      :root {
+        --bg: #f7f5ef;
+        --ink: #14140f;
+        --ink-soft: #3d3d34;
+        --brand: #175e33;
+        --surface: #fff;
+        --line: #d9d6c8;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #14160f;
+          --ink: #f2f1e8;
+          --ink-soft: #cdcdbd;
+          --brand: #7ec894;
+          --surface: #1c1f17;
+          --line: #333a2c;
+        }
+      }
+      * { box-sizing: border-box; }
+      body { visibility: hidden; }
+      [data-state="notfound"] body { visibility: visible; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1.25rem;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        line-height: 1.55;
+        -webkit-text-size-adjust: 100%;
+      }
+      main { width: 100%; max-width: 30rem; }
+      .mark { display: block; width: 56px; height: 56px; margin-bottom: 1.1rem; }
+      h1 { font-size: 1.6rem; line-height: 1.2; margin: 0 0 0.6rem; }
+      p { margin: 0 0 1.1rem; color: var(--ink-soft); }
+      ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.5rem; }
+      a.card {
+        display: block;
+        padding: 0.7rem 0.9rem;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--surface);
+        color: inherit;
+        text-decoration: none;
+        font-weight: 650;
+      }
+      a.card span {
+        display: block;
+        font-weight: 400;
+        color: var(--ink-soft);
+        font-size: 0.9rem;
+      }
+      a.card:hover { border-color: var(--brand); }
+      .home { display: inline-block; margin-top: 1.1rem; color: var(--brand); font-weight: 650; }
+    </style>
+    <noscript><style>body { visibility: visible; }</style></noscript>
   </head>
   <body>
-    <p>Taking you to the plant… <a href="/">Indigene home</a></p>
+    <main>
+      <svg class="mark" viewBox="0 0 100 100" role="img" aria-label="Indigene">
+        <rect width="100" height="100" rx="22" fill="#1f6b3b" />
+        <rect x="47" y="42" width="6" height="40" fill="#7ac28c" />
+        <ellipse cx="36" cy="44" rx="17" ry="8.5" fill="#a7e0b5" transform="rotate(-40.1 36 44)" />
+        <ellipse cx="64" cy="44" rx="17" ry="8.5" fill="#a7e0b5" transform="rotate(40.1 64 44)" />
+      </svg>
+      <h1>We couldn't find that page</h1>
+      <p>
+        The address might have a typo in it, or it might be a link to something
+        that has moved since. Nothing is broken on your end — here's the way
+        back in:
+      </p>
+      <ul>
+        <li>
+          <a class="card" href="/#/plants">
+            Meet the natives <span>Every region we cover, and its plants</span>
+          </a>
+        </li>
+        <li>
+          <a class="card" href="/#/search">
+            Search <span>Look up a plant by name</span>
+          </a>
+        </li>
+        <li>
+          <a class="card" href="/#/wildlife">
+            Browse by wildlife <span>Start from a butterfly, bee, or bird</span>
+          </a>
+        </li>
+      </ul>
+      <a class="home" href="/">← Indigene home</a>
+    </main>
   </body>
 </html>

@@ -801,6 +801,21 @@ export const en = {
   "wildlife.notFoundLede":
     "Nothing in Indigene's wildlife list matches “{id}”. The list is curated — every tie is checked and sourced — so it grows carefully.",
   "wildlife.notFoundBrowse": "Browse the wildlife we do track",
+  "wildlife.groupDocTitle": "Native plants for {group} — Indigene",
+  "wildlife.groupLede": "{n} mapped so far. {blurb}",
+  "wildlife.emptyGroup":
+    "We haven't mapped any {group} yet — every tie is checked and sourced before it lands, so the list grows carefully.",
+  "wildlife.allChip": "All ({n})",
+  "wildlife.groupsNav": "Wildlife groups",
+  "wildlife.filterAria": "Filter this list by animal name",
+  "wildlife.filterPlaceholder": "Filter by name…",
+  "wildlife.filterCount.one": "{shown} of {total} creatures match “{q}”.",
+  "wildlife.filterCount.other": "{shown} of {total} creatures match “{q}”.",
+  "wildlife.filterNoneGroup": "No {group} here match “{q}” — ",
+  "wildlife.filterSeeAll": "see all the wildlife",
+  "wildlife.filterNoneIndex": "No creature we've mapped matches “{q}” yet — ",
+  "wildlife.filterSearchPlants": "search the plants",
+  "wildlife.filterNoneRest": " instead.",
 
   // ---------------------------------------------------------------------
   // Region rosters.
@@ -829,7 +844,8 @@ export const en = {
   "region.categoriesNav": "Plant categories",
   "region.filterAria": "Filter this list by plant name",
   "region.filterPlaceholder": "Filter by name…",
-  "region.filterCount": "{shown} of {total} match.",
+  "region.filterCount.one": "{shown} of {total} plants match “{q}”.",
+  "region.filterCount.other": "{shown} of {total} plants match “{q}”.",
   "region.filterNone": "Nothing here matches — ",
   "region.filterSearchAll": "search every region",
   "region.filterNoneRest": " instead.",

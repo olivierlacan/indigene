@@ -57,6 +57,18 @@ subtitle on the What's new page.
   explained, always show its error bars, never state a number it can't trace to
   somebody else, never ask anything of you, and keep working where the signal
   doesn't.
+- [Browse by wildlife](https://indigene.app/#/wildlife) now has a **"Filter by
+  name…" box** at the top, the same one the plant lists have. Type "swallow"
+  and the page keeps only the swallowtails; type "hummingbird" and you get the
+  bird and the moth named after it.
+- Each group of creatures also has **its own page** now — just the
+  [butterflies](https://indigene.app/#/wildlife/butterflies), just the
+  [moths](https://indigene.app/#/wildlife/moths), just the
+  [bees](https://indigene.app/#/wildlife/bees),
+  [birds](https://indigene.app/#/wildlife/birds), or
+  [mammals & others](https://indigene.app/#/wildlife/mammals). A row of buttons
+  hops between them, so "show me only the moths" is one tap and a link you can
+  send to someone.
 - Indigene has a proper little sprout icon in your browser tab now, instead of
   the blank page symbol every site gets when it hasn't been given one.
 - Posting an Indigene link somewhere — a message to a friend, a group chat, a
@@ -67,6 +79,22 @@ subtitle on the What's new page.
 
 ### Changed
 
+- When you filter a region's plant list — say you type "oak" on
+  [Florida (north & central)](https://indigene.app/#/regions/florida-central) —
+  the part of each name you typed is now **underlined in green**, exactly the
+  way it already was on the [search page](https://indigene.app/#/search). The
+  little line under the list says the same thing in both places too ("1 of 23
+  plants match “oak”."), so the two ways of looking for a plant no longer
+  behave like two different features.
+- Internal: the filter box, its counting line, and the match underlining now
+  come from one shared component (`components/filter-field.ts`) used by the
+  region rosters, the wildlife index, and — for the highlighting — the search
+  page, instead of three near-copies. It holds no words of its own: every
+  sentence is passed in already translated, because a count line doesn't
+  survive being assembled from a noun slot in French.
+- Internal: `scripts/shoot.mjs` takes a `--fill` flag, so a screenshot can be
+  taken of a page whose interesting state only exists once something has been
+  typed into it.
 - The French plant descriptions for **Atlantic France** — Paris, Nantes and
   Bordeaux — are written in French. The other regions' descriptions are still
   in English while we work through them, and any page showing English text says

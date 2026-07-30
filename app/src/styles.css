@@ -999,11 +999,13 @@ details.weights[open] > summary {
   color: var(--ink-soft);
   font-size: 0.95rem;
 }
-/* The part of a result's name that matches the search query. Not the browser's
-   yellow <mark> — that fights both themes. Keeping the ink and underlining in
-   the brand color preserves AAA contrast, and can't be mistaken for a link:
-   result cards render their text undecorated. */
-.search-result mark {
+/* The part of a name that matches what you typed — on a search result, and
+   equally on a card narrowed by an in-page filter (a region's roster, the
+   wildlife index). Not the browser's yellow <mark> — that fights both themes.
+   Keeping the ink and underlining in the brand color preserves AAA contrast,
+   and can't be mistaken for a link: result cards render their text
+   undecorated. */
+.card mark {
   background: none;
   color: inherit;
   text-decoration: underline;

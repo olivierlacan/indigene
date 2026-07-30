@@ -20,6 +20,9 @@ import type { NearbyResult } from "../lib/nearby";
 import type { Bounds, ObservationSummary } from "../lib/inaturalist";
 import { observationList, freshnessLine } from "./observation-ui";
 import { locationPrompt } from "./location-prompt";
+import { t, tn, fmtNumber } from "../lib/i18n";
+import { commonName, regionName } from "../lib/names";
+import { fmtList } from "../lib/i18n";
 import type { Plant } from "../types";
 
 /** "Where are we looking?" — near a chosen spot, or inside a named region's box. */
@@ -40,7 +43,7 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
 
   const prompt = locationPrompt({
     idBase: `plant-${plant.id}`,
-    gpsLabel: "Use my location",
+    gpsLabel: t("nearby.useMyLocation"),
     onResolve: (lat, lon, label) => void load(lat, lon, label),
   });
 
@@ -50,7 +53,7 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
   }
   function showBusy(): void {
     clear(out);
-    out.append(el("p", { class: "note", style: "margin-top:0.6rem" }, "Asking iNaturalist…"));
+    out.append(el("p", { class: "note", style: "margin-top:0.6rem" }, t("nearby.asking")));
   }
 
   async function load(lat: number, lon: number, label?: string): Promise<void> {
@@ -64,11 +67,11 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
     //      planted or escaped) sighting. That would contradict the whole point.
     const region = regionForSite(lat, lon);
     if (!region) {
-      showNote(`${label ? `${label} is` : "You're"} outside the regions Indigene has native-plant data for, so we can't vouch for what's truly native there — and we won't dress up nearby sightings as local natives. The sun, soil and climate readings still work everywhere.`);
+      showNote(label ? t("nearby.outsidePlace", { place: label }) : t("nearby.outsideYou"));
       return;
     }
     if (!inatId) {
-      showNote(`We don't have an iNaturalist taxon id for ${plant.common} yet, so we can't match it to verified sightings.`);
+      showNote(t("nearby.noTaxonId", { name: commonName(plant) }));
       return;
     }
     if (!nativeRegionIds.includes(region.meta.id)) {
@@ -85,7 +88,7 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
       const mine = observationsForTaxon(result, inatId);
       renderResults(result, mine, region, "near", label);
     } catch {
-      showNote("We couldn't reach iNaturalist just now. It's called straight from your browser, so a flaky connection or a blocked request will stop it — try again later.");
+      showNote(t("nearby.unreachable"));
     }
   }
 
@@ -93,12 +96,12 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
   // inside that region's coverage box, scoped to its native taxa.
   async function loadRegion(region: RegionDef, btn: HTMLButtonElement): Promise<void> {
     if (!inatId) {
-      showNote(`We don't have an iNaturalist taxon id for ${plant.common} yet, so we can't match it to verified sightings.`);
+      showNote(t("nearby.noTaxonId", { name: commonName(plant) }));
       return;
     }
     const label = btn.textContent ?? "";
     btn.disabled = true;
-    btn.textContent = "Asking iNaturalist…";
+    btn.textContent = t("nearby.asking");
     showBusy();
     try {
       const taxonIds = inatIdsForRegions([region.meta.id]);
@@ -106,7 +109,7 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
       const mine = observationsForTaxon(result, inatId);
       renderResults(result, mine, region, "region");
     } catch {
-      showNote("We couldn't reach iNaturalist just now. It's called straight from your browser, so a flaky connection or a blocked request will stop it — try again later.");
+      showNote(t("nearby.unreachable"));
     } finally {
       btn.disabled = false;
       btn.textContent = label;
@@ -115,12 +118,13 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
 
   function renderResults(result: NearbyResult, mine: ObservationSummary[], region: RegionDef, mode: Mode, label?: string): void {
     clear(out);
-    const where = label ? `near ${label}` : "close to you";
+    const where = label ? t("nearby.nearPlace", { place: label }) : t("nearby.closeToYou");
+    const name = commonName(plant);
     if (!mine.length) {
       out.append(el("p", { class: "note warn", style: "margin-top:0.6rem" },
         mode === "near"
-          ? `${plant.common} is native to ${region.meta.name}, but no one has photographed and verified one ${where} on iNaturalist yet. It's still worth planting — the local showcase just isn't there to point you to.`
-          : `No research-grade ${plant.common.toLowerCase()} sightings with photos have been logged in ${region.meta.name} on iNaturalist yet. It's native there — the community just hasn't captured one.`));
+          ? t("nearby.noneNear", { name, region: regionName(region.meta), where })
+          : t("nearby.noneInRegion", { name, region: regionName(region.meta) })));
       out.append(freshnessLine(result.fromCache));
       return;
     }
@@ -130,13 +134,13 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
     out.append(
       el("p", { style: "margin:0.6rem 0 0.4rem" },
         mode === "near"
-          ? [el("strong", {}, `Found ${mine.length} nearby `),
-             `research-grade sighting${mine.length === 1 ? "" : "s"} — real ${plant.common.toLowerCase()}, native to ${region.meta.name}, that someone verified and photographed ${where}:`]
-          : [el("strong", {}, `Found ${mine.length} `),
-             `research-grade sighting${mine.length === 1 ? "" : "s"} of ${plant.common.toLowerCase()} in ${region.meta.name} — verified and photographed by the iNaturalist community (you don't have to be there):`],
+          ? [el("strong", {}, t("nearby.foundNear", { n: fmtNumber(mine.length) })),
+             tn("nearby.foundNearRest", mine.length, { name, region: regionName(region.meta), where })]
+          : [el("strong", {}, t("nearby.found", { n: fmtNumber(mine.length) })),
+             tn("nearby.foundRest", mine.length, { name, region: regionName(region.meta) })],
       ),
     );
-    out.append(observationList(shown, plant.common));
+    out.append(observationList(shown, name));
     out.append(freshnessLine(result.fromCache));
   }
 
@@ -150,7 +154,7 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
       .filter((r): r is RegionDef => Boolean(r));
     if (!regions.length) return null;
     return el("div", { style: "margin-top:0.8rem" }, [
-      el("p", { style: "margin:0 0 0.4rem;font-weight:650" }, "Not there right now? Look it up where it's native:"),
+      el("p", { style: "margin:0 0 0.4rem;font-weight:650" }, t("nearby.notThereNative")),
       el("div", { style: "display:flex;flex-wrap:wrap;gap:0.4rem" },
         regions.map((r) => {
           const btn = el("button", {
@@ -158,7 +162,7 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
             class: "btn btn-secondary",
             style: "flex:1 1 auto;min-height:2.6rem;padding:0.4rem 0.7rem;font-size:0.9rem",
             onClick: () => void loadRegion(r, btn),
-          }, `🗺️ ${r.meta.name}`) as HTMLButtonElement;
+          }, `🗺️ ${regionName(r.meta)}`) as HTMLButtonElement;
           return btn;
         }),
       ),
@@ -168,18 +172,24 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
   // "Our data lists this as native to Florida, not the Pacific Northwest…"
   function nativeElsewhereNote(region: RegionDef): string {
     const names = nativeRegionIds
-      .map((id) => REGIONS.find((r) => r.meta.id === id)?.meta.name)
-      .filter(Boolean)
-      .join(" and ");
-    const belongs = names ? `native to ${names}` : "native to another region";
-    return `Our data lists ${plant.common} as ${belongs}, not ${region.meta.name}. It may turn up on iNaturalist there as a planted or escaped specimen, but we won't showcase it as a local native where it doesn't belong — that's the opposite of what Indigene is for.`;
+      .map((id) => REGIONS.find((r) => r.meta.id === id))
+      .filter((r): r is RegionDef => Boolean(r))
+      .map((r) => regionName(r.meta));
+    const belongs = names.length
+      ? t("nearby.nativeToList", { list: fmtList(names) })
+      : t("nearby.nativeToOther");
+    return t("nearby.nativeElsewhere", {
+      name: commonName(plant),
+      belongs,
+      region: regionName(region.meta),
+    });
   }
 
   return el("section", { class: "card", style: "margin-top:1rem" }, [
-    el("h3", { style: "margin-top:0" }, "See it growing near you"),
-    el("p", { style: "margin:0.3rem 0 0.6rem" }, [
-      `The drawing above is to scale, but nothing beats seeing a mature ${plant.common.toLowerCase()} in the ground. Share your location or enter a ZIP code and we'll pull real, community-verified photos of ones growing near there — or look it up in a region it's native to, even if you're not there. Either way the photos come live from iNaturalist, called by your own browser and credited to the people who took them.`,
-    ]),
+    // No plant name in the heading — the page is already about this plant, and
+    // interpolating one would change the heading's width per species.
+    el("h3", { style: "margin-top:0" }, t("nearby.seeItGrowing")),
+    el("p", { style: "margin:0.3rem 0 0.6rem" }, t("nearby.seeItGrowingLede", { name: commonName(plant) })),
     prompt,
     regionButtons(),
     out,

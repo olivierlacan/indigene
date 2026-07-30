@@ -56,7 +56,7 @@
     <link rel="stylesheet" href="/src/styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to main content</a>
+    <a class="skip-link" id="skip-link" href="#main">Skip to main content</a>
     <header class="app-header">
       <h1 class="app-title">
         <a href="#/"><span aria-hidden="true">🌱</span> Indigene</a>
@@ -70,10 +70,10 @@
       >
         Offline — using saved data
       </button>
-      <nav class="site-nav" aria-label="Sections">
-        <a href="#/plants" data-section="explore">Explore</a>
-        <a href="#/search" data-section="search">Search</a>
-        <a href="#/wildlife" data-section="wildlife">Wildlife</a>
+      <nav class="site-nav" id="site-nav" aria-label="Sections">
+        <a href="#/plants" data-section="explore" data-i18n="nav.explore">Explore</a>
+        <a href="#/search" data-section="search" data-i18n="nav.search">Search</a>
+        <a href="#/wildlife" data-section="wildlife" data-i18n="nav.wildlife">Wildlife</a>
         <div id="saved-menu" class="nav-menu">
           <button
             type="button"
@@ -85,7 +85,7 @@
             aria-label="Saved locations"
           >
             <span aria-hidden="true">🔖</span>
-            <span class="nav-menu-label">Saved</span>
+            <span class="nav-menu-label" data-i18n="nav.saved">Saved</span>
           </button>
           <div
             id="saved-menu-panel"
@@ -99,7 +99,7 @@
     </header>
 
     <!-- Progress rail: which step of the flow you are on. -->
-    <nav class="steps" aria-label="Progress">
+    <nav class="steps" id="steps-rail" aria-label="Progress">
       <ol id="steps" class="steps-list"></ol>
     </nav>
 
@@ -108,11 +108,22 @@
     <!-- Site-wide footer: static so it shows on every page, even if a render
          fails. %BASE_URL% is replaced by Vite at build time. -->
     <footer class="app-footer">
-      <p>
+      <p id="footer-text">
         Open-source (MIT), built on public scientific data —
         <a href="#/sources">where our numbers come from</a>, and how sure we are
         of each one. <a href="%BASE_URL%release-notes/">See what's new</a>.
         <a href="#/privacy">Privacy &amp; safety</a>.
+      </p>
+      <!-- Language & units. The footer is on every page, so the switch is
+           always reachable; the welcome screen repeats it inline so a
+           first-time visitor meets it without scrolling. It is deliberately
+           NOT in the header: that row is measured to fit title + four items
+           on a 360 px phone with ~25 px to spare, and a sixth control would
+           spend all of it (see the ≤500px rules in styles.css). -->
+      <p class="footer-prefs">
+        <a href="#/settings" id="prefs-link"
+          ><span aria-hidden="true">🌐</span> <span id="prefs-summary">English · Imperial</span></a
+        >
       </p>
     </footer>
 

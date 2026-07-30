@@ -21,7 +21,7 @@ import {
   mappedWildlifeCount,
 } from "../lib/wildlife";
 import type { PlantSupport } from "../lib/wildlife";
-import { relianceLabels, supportLabels, wildlifeKindLabels, DATA_SOURCES_URL } from "../lib/plain";
+import { relianceLabel, supportLabel, wildlifeKindLabel, DATA_SOURCES_URL } from "../lib/plain";
 import { speciesRecordUrl } from "../data/sources";
 import { citation } from "../components/citation";
 import { termTag } from "../components/term-dialog";
@@ -31,35 +31,37 @@ import { keystoneIcon } from "../components/keystone-icon";
 import { wildlifeNearbySection } from "../components/wildlife-nearby";
 import { cardStats } from "../components/card-stats";
 import type { SupportLink } from "../types";
+import { t, tn, fmtNumber, getLang } from "../lib/i18n";
+import { commonName, nameLines, regionName } from "../lib/names";
+import { wildlifeBlurb, supportNote } from "../lib/prose";
 
 // Shared honesty note: this is the notable, mapped wildlife — never a claim to
-// be the whole food web. Shown on both the index and every animal's page.
-const COVERAGE_NOTE =
-  "These are the notable, well-documented wildlife ties we've mapped so far — not every insect a plant supports. A single oak is a caterpillar host to hundreds of moth species; here we name the ones worth choosing a plant for. Every tie shows its source, and the list grows as carefully as the plant lists do.";
+// be the whole food web. Shown on both the index and every animal's page. A
+// function, not a constant: a constant would be frozen in whatever language
+// was active when this module first loaded.
+const coverageNote = (): string => t("wildlife.coverageNote");
 
 // ---- #/wildlife — the index ----
 export function renderWildlifeIndex(main: HTMLElement): void {
   clear(main);
-  document.title = "Browse native plants by the wildlife they support — Indigene";
+  document.title = t("wildlife.indexDocTitle");
 
   const rows = wildlifeIndex();
   const total = mappedWildlifeCount();
 
   main.append(
-    el("h2", { class: "step-title" }, "Browse by wildlife"),
-    el("p", { class: "step-lede" }, [
-      `Pick the insect or animal you want in your yard, and see which native plants support it — and how. ${total} creatures mapped so far, from monarchs to the gopher tortoise.`,
-    ]),
+    el("h2", { class: "step-title" }, t("wildlife.indexTitle")),
+    el("p", { class: "step-lede" }, t("wildlife.indexLede", { n: fmtNumber(total) })),
     el("p", { class: "note info", style: "margin-top:0" }, [
-      el("strong", {}, "🌿 Every animal here is itself native. "),
-      "The whole point is a native plant feeding native wildlife — so the introduced honey bee, for one, is left out. Each creature's page cites where it's native, and every plant tie cites its source.",
+      el("strong", {}, t("wildlife.allNative")),
+      t("wildlife.allNativeRest"),
     ]),
   );
 
   for (const kind of KIND_ORDER) {
     const inKind = rows.filter((r) => r.wildlife.kind === kind);
     if (!inKind.length) continue;
-    const label = wildlifeKindLabels[kind];
+    const label = wildlifeKindLabel(kind);
     main.append(
       el("section", {}, [
         el("h3", { style: "margin:1.2rem 0 0.2rem" }, [
@@ -77,10 +79,10 @@ export function renderWildlifeIndex(main: HTMLElement): void {
   }
 
   main.append(
-    el("p", { class: "note", style: "margin-top:1.25rem" }, COVERAGE_NOTE),
+    el("p", { class: "note", style: "margin-top:1.25rem" }, coverageNote()),
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("plants") }, "← Browse plants instead"),
-      el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, "Start from a spot"),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("plants") }, t("wildlife.browsePlants")),
+      el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("wildlife.startFromSpot")),
     ]),
   );
 }
@@ -92,31 +94,32 @@ export function renderWildlifeIndex(main: HTMLElement): void {
 function wildlifeCard(id: string, plantCount: number, regionCount: number): HTMLElement {
   const w = getWildlife(id);
   if (!w) return el("span", {});
+  const names = nameLines(w);
   return el("a", { href: `#/wildlife/${w.id}`, class: "card wildlife-card" }, [
     el("span", { class: "wildlife-card-icon", "aria-hidden": "true" }, w.icon),
     el("span", { class: "wildlife-card-text" }, [
       el("span", { style: "font-weight:700" }, [
-        w.common,
-        w.latin ? el("span", { class: "plant-latin", style: "font-weight:400;font-size:0.82rem" }, ` · ${w.latin}`) : null,
+        names.title,
+        names.sub ? el("span", { class: "plant-latin", style: "font-weight:400;font-size:0.82rem" }, ` · ${names.sub}`) : null,
       ]),
-      el("span", { style: "font-size:0.85rem;color:var(--ink-soft);margin:0.15rem 0 0.3rem" }, w.blurb),
+      el("span", { style: "font-size:0.85rem;color:var(--ink-soft);margin:0.15rem 0 0.3rem" }, wildlifeBlurb(w)),
       cardStats([
         {
           icon: "🌱",
-          value: String(plantCount),
-          label: `${plantCount} native ${plantCount === 1 ? "plant" : "plants"} in Indigene support the ${w.common.toLowerCase()}`,
+          value: fmtNumber(plantCount),
+          label: tn("wildlife.supportedBy", plantCount, { n: fmtNumber(plantCount), animal: names.title }),
         },
         regionCount > 1
           ? {
               icon: "📍",
-              value: String(regionCount),
-              label: `Found on the plant lists of ${regionCount} of Indigene's regions`,
+              value: fmtNumber(regionCount),
+              label: t("wildlife.onRegionLists", { n: fmtNumber(regionCount) }),
             }
           : null,
         {
           icon: "🌿",
-          value: "native",
-          label: `The ${w.common.toLowerCase()} is itself a native animal — ${w.nativeBasis}`,
+          value: t("wildlife.nativeShort"),
+          label: t("wildlife.isNative", { animal: names.title, basis: w.nativeBasis }),
         },
       ]),
     ]),
@@ -132,10 +135,11 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
     renderNotFound(main, id);
     return;
   }
-  document.title = `Native plants that support the ${w.common} — Indigene`;
+  document.title = t("wildlife.docTitle", { animal: commonName(w) });
 
   const supports = plantsForWildlife(w.id);
-  const label = wildlifeKindLabels[w.kind];
+  const label = wildlifeKindLabel(w.kind);
+  const names = nameLines(w);
 
   // Group the supporting plants by region, in the app's usual region order.
   const byRegion = REGIONS.map((r) => ({
@@ -150,37 +154,37 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
   main.append(
     el("article", { class: "plant" }, [
       el("p", { class: "region-tag", style: "margin:0 0 0.4rem;font-size:0.9rem;color:var(--ink-soft)" }, [
-        el("a", { href: "#/wildlife" }, `← All wildlife`),
+        el("a", { href: "#/wildlife" }, t("wildlife.allWildlife")),
         `  ·  ${label.icon} ${label.title}`,
       ]),
       el("div", { class: "plant-head" }, [
         el("div", { "aria-hidden": "true", style: "font-size:2.4rem;line-height:1;flex:0 0 auto" }, w.icon),
         el("div", {}, [
-          el("h2", { class: "plant-name", style: "margin:0" }, w.common),
-          w.latin ? el("div", { class: "plant-latin" }, w.latin) : null,
-          el("span", { class: "badge nowater", title: w.nativeBasis }, "🌿 Native animal"),
+          el("h2", { class: "plant-name", style: "margin:0" }, names.title),
+          names.sub ? el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" }, names.sub) : null,
+          el("span", { class: "badge nowater", title: w.nativeBasis }, t("wildlife.nativeBadge")),
         ]),
       ]),
       // The .plant card has no padding of its own (media can run full-bleed),
       // so all the loose text lives in a .plant-body to get the usual gutters.
       el("div", { class: "plant-body" }, [
-        el("p", { style: "margin:0" }, w.blurb),
+        el("p", { style: "margin:0" }, wildlifeBlurb(w)),
         // The native-status guarantee, sourced (authority names linked) — a native
         // plant should be feeding a native animal, and we say where that comes from.
         el("p", { class: "confidence", style: "margin:0.4rem 0 0" }, [
           el("span", { "aria-hidden": "true" }, "🌿 "),
-          el("strong", {}, "A native animal. "),
+          el("strong", {}, t("wildlife.aNativeAnimal")),
           ...citation(w.nativeBasis),
         ]),
         speciesLink(w),
         el("p", { style: "margin:0.4rem 0 0;font-weight:650" }, [
-          `${plantCount} native ${plantCount === 1 ? "plant" : "plants"} in Indigene support the ${w.common.toLowerCase()}`,
-          hosts ? `, ${hosts} of them as a caterpillar host — the strongest tie.` : ".",
+          tn("wildlife.supportedBy", plantCount, { n: fmtNumber(plantCount), animal: names.title }),
+          hosts ? tn("wildlife.ofThemHosts", hosts, { n: fmtNumber(hosts) }) : ".",
         ]),
         soleCount
           ? el("p", { class: "note info", style: "margin:0.5rem 0 0" }, [
-              el("strong", {}, `⭐ It can't live without ${soleCount === 1 ? "this plant" : "these plants"}. `),
-              `${soleCount === 1 ? "This is" : `${soleCount} of these are`} its only option — remove ${soleCount === 1 ? "it" : "them"} and the ${w.common.toLowerCase()} has nowhere to go.`,
+              el("strong", {}, tn("wildlife.cantLiveWithout", soleCount)),
+              tn("wildlife.onlyOption", soleCount, { n: fmtNumber(soleCount), animal: names.title }),
             ])
           : null,
       ]),
@@ -197,7 +201,7 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
       el("section", {}, [
         el("h3", { style: "margin:1.1rem 0 0.5rem" }, [
           "📍 ",
-          el("a", { href: `#/regions/${group.region.meta.id}`, style: "color:inherit" }, group.region.meta.name),
+          el("a", { href: `#/regions/${group.region.meta.id}`, style: "color:inherit" }, regionName(group.region.meta)),
         ]),
         ...group.items
           .slice()
@@ -208,13 +212,13 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
   }
 
   main.append(
-    el("p", { class: "note", style: "margin-top:1.25rem" }, COVERAGE_NOTE),
+    el("p", { class: "note", style: "margin-top:1.25rem" }, coverageNote()),
     el("p", { class: "confidence", style: "margin-top:0.5rem" }, [
-      el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, "All sources & licensing →"),
+      el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, t("wildlife.allSources")),
     ]),
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("wildlife") }, "← All wildlife"),
-      el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, "Rank these for my spot"),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("wildlife") }, t("wildlife.allWildlife")),
+      el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("wildlife.rankForSpot")),
     ]),
   );
 }
@@ -229,13 +233,16 @@ function sortByStrength(a: PlantSupport, b: PlantSupport): number {
   const ah = a.link.support === "host" ? 0 : 1;
   const bh = b.link.support === "host" ? 0 : 1;
   if (ah !== bh) return ah - bh;
-  return a.plant.common.localeCompare(b.plant.common);
+  // Sorted by the name the reader actually sees, in their own collation —
+  // "Épicéa" files under E in French, not after Z.
+  return commonName(a.plant).localeCompare(commonName(b.plant), getLang());
 }
 
 // A plant row on an animal's page. The card is a plain div (not a link) so the
 // tie chips can be real buttons; the plant name is the link to its profile.
 function supportRow(s: PlantSupport): HTMLElement {
   const p = s.plant;
+  const names = nameLines(p);
   return el("div", {
     class: "card",
     style: "display:flex;gap:0.7rem;align-items:flex-start;padding:0.6rem 0.8rem;margin-bottom:0.5rem",
@@ -243,28 +250,28 @@ function supportRow(s: PlantSupport): HTMLElement {
     el("a", {
       href: `#/plants/${p.id}`,
       class: "plant-photo",
-      "aria-label": `${p.common} — full profile`,
+      "aria-label": t("wildlife.fullProfile", { name: names.title }),
       style: "flex:0 0 auto",
     }, [silhouetteFor(p.form)]),
     el("div", { style: "min-width:0" }, [
       el("div", { style: "font-weight:700" }, [
-        el("a", { href: `#/plants/${p.id}`, style: "color:inherit" }, p.common),
+        el("a", { href: `#/plants/${p.id}`, style: "color:inherit" }, names.title),
         p.keystone
           ? el("span", {
-              title: "Keystone plant — supports far more wildlife than most",
+              title: t("explore.keystoneTitle"),
               role: "img",
-              "aria-label": "Keystone plant",
+              "aria-label": t("explore.keystoneLabel"),
               style: "margin-left:0.3rem;color:var(--brand)",
             }, [keystoneIcon(13)])
           : null,
       ]),
-      el("div", { class: "plant-latin", style: "font-size:0.85rem" }, p.latin),
+      el("div", { class: "plant-latin", style: "font-size:0.85rem" }, names.sub),
       el("div", { style: "display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.35rem" }, tieTags(s.link)),
-      el("div", { style: "font-size:0.85rem;color:var(--ink-soft);margin-top:0.3rem" }, s.link.note),
+      el("div", { style: "font-size:0.85rem;color:var(--ink-soft);margin-top:0.3rem" }, supportNote(p.latin, s.link)),
       // Every relationship shows its source, with authority names linked out.
       el("div", { style: "font-size:0.75rem;color:var(--ink-soft);opacity:0.85;margin-top:0.2rem" }, [
         el("span", { "aria-hidden": "true" }, "🔎 "),
-        "Source: ",
+        t("card.source"),
         ...citation(s.link.basis),
       ]),
     ]),
@@ -278,7 +285,7 @@ function speciesLink(w: Parameters<typeof speciesRecordUrl>[0]): HTMLElement | n
   if (!rec) return null;
   return el("p", { style: "margin:0.3rem 0 0;font-size:0.9rem" }, [
     el("span", { "aria-hidden": "true" }, "🔗 "),
-    "See the species record: ",
+    t("wildlife.speciesRecord"),
     el("a", { href: rec.url, target: "_blank", rel: "noopener", class: "src-link" }, `${rec.name} →`),
   ]);
 }
@@ -290,11 +297,11 @@ function speciesLink(w: Parameters<typeof speciesRecordUrl>[0]): HTMLElement | n
 // Each chip carries its own pill color (see the `.tag-*` rules).
 function tieTags(link: SupportLink): HTMLElement[] {
   const kind = link.support;
-  const role = { ...supportLabels[kind], glyph: () => supportIcon(kind) };
+  const role = { ...supportLabel(kind), glyph: () => supportIcon(kind) };
   const tags = [termTag(role, kind)];
   const r = relianceOf(link);
   if (r !== "broad") {
-    const strength = { ...relianceLabels[r], glyph: () => relianceIcon(r) as SVGElement };
+    const strength = { ...relianceLabel(r), glyph: () => relianceIcon(r) as SVGElement };
     tags.push(termTag(strength, r));
   }
   return tags;
@@ -302,13 +309,11 @@ function tieTags(link: SupportLink): HTMLElement[] {
 
 function renderNotFound(main: HTMLElement, id: string): void {
   main.append(
-    el("h2", { class: "step-title" }, "We don't track that creature yet"),
-    el("p", { class: "step-lede" }, [
-      `Nothing in Indigene's wildlife list matches “${id}”. The list is curated — every tie is checked and sourced — so it grows carefully.`,
-    ]),
+    el("h2", { class: "step-title" }, t("wildlife.notFoundTitle")),
+    el("p", { class: "step-lede" }, t("wildlife.notFoundLede", { id })),
     el("div", { class: "btn-row" }, [
-      el("button", { class: "btn btn-primary", onClick: () => navigate("wildlife") }, "Browse the wildlife we do track"),
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("plants") }, "Browse plants"),
+      el("button", { class: "btn btn-primary", onClick: () => navigate("wildlife") }, t("wildlife.notFoundBrowse")),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("plants") }, t("wildlife.browsePlantsShort")),
     ]),
   );
 }

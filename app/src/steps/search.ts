@@ -9,8 +9,13 @@ import { REGISTRY } from "../lib/registry";
 import { REGIONS } from "../lib/plants";
 import { silhouetteFor } from "../components/plant-card";
 import type { PlantForm } from "../types";
+import { t, fmtNumber, getLang } from "../lib/i18n";
+import { regionName, searchAliases, localName } from "../lib/names";
 
-const regionName = new Map(REGIONS.map((r) => [r.meta.id, r.meta.name] as const));
+const regionLabel = (id: string): string => {
+  const r = REGIONS.find((x) => x.meta.id === id);
+  return r ? regionName(r.meta) : id;
+};
 const norm = (s: string): string => s.trim().toLowerCase().replace(/\s+/g, " ");
 
 type Row = {
@@ -28,28 +33,36 @@ type Row = {
 // plant by any of the ways someone might type it. `alts` keeps the names that
 // can match but aren't displayed (second common names, aliases), so a result
 // can show which hidden name it matched on.
-const ROWS: Row[] = REGISTRY.map((e) => {
-  const common = e.commonNames[0] ?? e.scientificName;
-  const shown = new Set([norm(common), norm(e.scientificName)]);
-  const alts: string[] = [];
-  for (const name of [...e.commonNames.slice(1), ...e.aliases]) {
-    const n = norm(name);
-    if (shown.has(n)) continue;
-    shown.add(n);
-    alts.push(name);
-  }
-  return {
-    slug: e.identifiers.indigene ?? "",
-    common,
-    latin: e.scientificName,
-    form: e.form,
-    regions: e.regions,
-    hay: norm([...e.commonNames, e.scientificName, ...e.aliases].join(" ")),
-    alts,
-  };
-})
-  .filter((r) => r.slug)
-  .sort((a, b) => a.common.localeCompare(b.common));
+//
+// Rebuilt whenever the language changes, because the *displayed* name and the
+// sort order both follow it. The haystack does not: it always contains every
+// language's name plus the scientific one, so switching to French never makes a
+// plant you could find in English un-findable.
+function buildRows(): Row[] {
+  return REGISTRY.map((e) => {
+    const taxon = { common: e.commonNames[0] ?? e.scientificName, latin: e.scientificName };
+    const common = localName(taxon)?.name ?? taxon.common;
+    const shown = new Set([norm(common), norm(e.scientificName)]);
+    const alts: string[] = [];
+    for (const name of [...e.commonNames, ...e.aliases, ...searchAliases(taxon)]) {
+      const n = norm(name);
+      if (shown.has(n)) continue;
+      shown.add(n);
+      alts.push(name);
+    }
+    return {
+      slug: e.identifiers.indigene ?? "",
+      common,
+      latin: e.scientificName,
+      form: e.form,
+      regions: e.regions,
+      hay: norm([common, ...e.commonNames, e.scientificName, ...e.aliases, ...searchAliases(taxon)].join(" ")),
+      alts,
+    };
+  })
+    .filter((r) => r.slug)
+    .sort((a, b) => a.common.localeCompare(b.common, getLang()));
+}
 
 // Wrap every occurrence of the (already-normalized) query in <mark>, so a
 // result shows *why* it matched. Case-insensitive; display names are
@@ -70,6 +83,7 @@ function highlight(text: string, nq: string): (string | Node)[] {
 
 export function renderSearch(main: HTMLElement, param?: string): void {
   clear(main);
+  const ROWS = buildRows();
 
   const input = el("input", {
     type: "search",
@@ -77,7 +91,7 @@ export function renderSearch(main: HTMLElement, param?: string): void {
     autocomplete: "off",
     autocapitalize: "none",
     spellcheck: false,
-    placeholder: "e.g. milkweed, oak, or Asclepias",
+    placeholder: t("search.placeholder"),
     style: "width:100%",
   }) as HTMLInputElement;
   const count = el("p", { id: "search-count", class: "coords", style: "margin:0.5rem 0 0.8rem" }, "");
@@ -106,9 +120,9 @@ export function renderSearch(main: HTMLElement, param?: string): void {
           el("span", { class: "plant-name", style: "display:block;font-weight:700" }, highlight(r.common, nq)),
           el("span", { class: "plant-latin", style: "display:block" }, highlight(r.latin, nq)),
           alt && el("span", { style: "display:block;font-size:0.8rem;color:var(--ink-soft)" },
-            ["Also called “", ...highlight(alt, nq), "”"]),
+            [t("search.alsoCalled"), ...highlight(alt, nq), t("search.alsoCalledEnd")]),
           el("span", { style: "display:block;font-size:0.8rem;color:var(--ink-soft)" },
-            r.regions.map((id) => regionName.get(id) ?? id).join(" · ")),
+            r.regions.map(regionLabel).join(" · ")),
         ]),
       ]),
     ]);
@@ -118,17 +132,17 @@ export function renderSearch(main: HTMLElement, param?: string): void {
     const nq = norm(q);
     const matches = (nq ? ROWS.filter((r) => r.hay.includes(nq)) : ROWS)
       .slice()
-      .sort((a, b) => rank(a, nq) - rank(b, nq) || a.common.localeCompare(b.common));
+      .sort((a, b) => rank(a, nq) - rank(b, nq) || a.common.localeCompare(b.common, getLang()));
     count.textContent = nq
-      ? `${matches.length} of ${ROWS.length} native plants match “${q.trim()}”.`
-      : `Search ${ROWS.length} native plants across ${REGIONS.length} regions.`;
+      ? t("search.matchCount", { n: fmtNumber(matches.length), total: fmtNumber(ROWS.length), q: q.trim() })
+      : t("search.idle", { total: fmtNumber(ROWS.length), regions: fmtNumber(REGIONS.length) });
     clear(results);
     if (!matches.length) {
       results.append(
         el("div", { class: "note warn" }, [
-          `No plant in Indigene's lists matches “${q.trim()}”. The lists are curated per region, so they grow carefully — `,
-          el("a", { href: "#/plants" }, "browse the natives we know"),
-          ".",
+          t("search.noneLead", { q: q.trim() }),
+          el("a", { href: "#/plants" }, t("search.noneLink")),
+          t("search.noneEnd"),
         ]),
       );
       return;
@@ -144,15 +158,14 @@ export function renderSearch(main: HTMLElement, param?: string): void {
   });
 
   main.append(
-    el("h2", { class: "step-title" }, "Search native plants"),
-    el("p", { class: "step-lede" },
-      "Type a plant's name — common or scientific — and open its page. It searches Indigene's native-plant registry, so a name resolves the same way here as everywhere in the app."),
-    el("div", { class: "field" }, [el("label", { for: "plant-q" }, "Plant name"), input]),
+    el("h2", { class: "step-title" }, t("search.title")),
+    el("p", { class: "step-lede" }, t("search.lede")),
+    el("div", { class: "field" }, [el("label", { for: "plant-q" }, t("search.label")), input]),
     count,
     results,
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("plants") }, "Browse instead"),
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, "Home"),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("plants") }, t("search.browseInstead")),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("browse.home")),
     ]),
   );
 

@@ -11,6 +11,8 @@ import {
   ZONE_INFO_URL,
 } from "../lib/plain";
 import { whyThis } from "../components/learn";
+import { t, fmtNumber } from "../lib/i18n";
+import { elevation, rainfall } from "../lib/units";
 
 // Step 3+4+5: confirm the site. Site data is coarse — soil map units cover
 // acres — so everything is shown as "the map says…", with a 60-second ribbon
@@ -21,9 +23,9 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
   const hasCoords = store.draft.lat != null;
   if (!hasCoords && !store.draft.regionOverride) return void navigate("location");
 
-  main.append(el("h2", { class: "step-title" }, "Here's what we think about this spot"));
+  main.append(el("h2", { class: "step-title" }, t("confirm.title")));
   if (hasCoords) {
-    const loading = el("p", { class: "coords" }, [el("span", { class: "spinner", style: "border-top-color:var(--brand);display:inline-block;vertical-align:middle" }), " Looking up soil, elevation, and climate…"]);
+    const loading = el("p", { class: "coords" }, [el("span", { class: "spinner", style: "border-top-color:var(--brand);display:inline-block;vertical-align:middle" }), t("confirm.loading")]);
     main.append(loading);
     const promise = getSitePromise();
     if (promise) {
@@ -38,49 +40,58 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
   // Sun summary.
   if (sun) {
     main.append(el("div", { class: "note info" }, [
-      el("strong", {}, "Sun: "),
+      el("strong", {}, t("confirm.sun")),
       `${sunPlain(sun.hours)} `,
-      `(roughly ${sun.low}–${sun.high} hours; ${sun.source === "scan" ? "measured by scan" : "your quick pick"}).`,
-      el("button", { class: "btn btn-ghost", style: "display:block;margin-top:0.3rem;padding-left:0", onClick: () => navigate("sun") }, "Change the sun estimate"),
+      t("confirm.sunRange", {
+        low: fmtNumber(sun.low),
+        high: fmtNumber(sun.high),
+        source: t(sun.source === "scan" ? "confirm.sunFromScan" : "confirm.sunFromPick"),
+      }),
+      el("button", { class: "btn btn-ghost", style: "display:block;margin-top:0.3rem;padding-left:0", onClick: () => navigate("sun") }, t("confirm.changeSun")),
     ]));
   }
 
   if (!site) {
     main.append(el("div", { class: "note warn" },
-      hasCoords
-        ? "We couldn't reach the soil/climate services (no signal, or they're down). You can still get recommendations — just set the moisture below from what you can see, and we'll skip the parts we couldn't look up."
-        : "You picked your region yourself, so there's no map point to look up soil, rainfall, or winter cold from. That's fine — set the moisture below from what you can see, and the ranking will lean on your sun and moisture answers."));
+      t(hasCoords ? "confirm.noSiteOnline" : "confirm.noSiteManual")));
   }
 
   // What we looked up, in plain words.
   const rows: (HTMLElement | null)[] = [];
   if (site) {
-    rows.push(kv("Winter cold", [
+    rows.push(kv(t("confirm.winterCold"), [
       zonePlain(site.zone, site.zoneMinTempF),
-      ...(site.zone ? [" ", el("a", { href: ZONE_INFO_URL, target: "_blank", rel: "noopener" }, "See the USDA zone map →")] : []),
+      ...(site.zone ? [" ", el("a", { href: ZONE_INFO_URL, target: "_blank", rel: "noopener" }, t("confirm.zoneMapLink"))] : []),
     ]));
-    rows.push(site.annualRainIn != null ? kv("Rainfall", `About ${site.annualRainIn} inches of rain a year.`) : null);
-    rows.push(site.elevationFt != null ? kv("Elevation & slope", `${site.elevationFt} ft up${site.slopeDeg != null ? `, on ${slopePlain(site.slopeDeg)}` : ""}.`) : null);
-    rows.push(site.ecoregion ? kv("Region", `${site.ecoregion}.`) : null);
+    rows.push(site.annualRainIn != null
+      ? kv(t("confirm.rainfall"), t("confirm.rainfallValue", { amount: rainfall(site.annualRainIn) }))
+      : null);
+    rows.push(site.elevationFt != null
+      ? kv(t("confirm.elevation"), t("confirm.elevationValue", {
+          height: elevation(site.elevationFt),
+          slope: site.slopeDeg != null ? t("confirm.elevationSlope", { slope: slopePlain(site.slopeDeg) }) : "",
+        }))
+      : null);
+    rows.push(site.ecoregion ? kv(t("confirm.region"), `${site.ecoregion}.`) : null);
     // Only some providers have a finer local subdivision (EPA Level IV); the EEA
     // biogeographical regions are a single flat level, so this row is skipped.
     const detail = site.ecoregionInfo?.detail;
-    rows.push(detail ? kv("Local area", `${detail.name} (finer EPA Level IV).`) : null);
+    rows.push(detail ? kv(t("confirm.localArea"), t("confirm.localAreaValue", { name: detail.name })) : null);
   }
   if (rows.some(Boolean)) {
-    main.append(el("div", { class: "card" }, [el("h3", {}, "Climate & land"), ...rows.filter(Boolean) as HTMLElement[]]));
+    main.append(el("div", { class: "card" }, [el("h3", {}, t("confirm.climateTitle")), ...rows.filter(Boolean) as HTMLElement[]]));
   }
 
   // Soil — always framed as coarse, with the ribbon test to override.
   const soilCard = el("div", { class: "card" }, [
-    el("h3", {}, "Soil (from the map — worth checking)"),
+    el("h3", {}, t("confirm.soilTitle")),
     site && site.soil.texture
-      ? kv("The soil map says", `${texturePlain(site.soil.texture)}. ${site.soil.drainage ?? ""}`)
-      : el("p", {}, "We don't have a soil reading here — the 60-second check below tells you what you've got."),
-    site && site.soil.phEstimate != null ? kv("Acidity", phPlain(site.soil.phEstimate)) : null,
+      ? kv(t("confirm.soilSays"), `${texturePlain(site.soil.texture)}. ${site.soil.drainage ?? ""}`)
+      : el("p", {}, t("confirm.soilNone")),
+    site && site.soil.phEstimate != null ? kv(t("confirm.acidity"), phPlain(site.soil.phEstimate)) : null,
     el("div", { class: "note warn" }, [
-      el("strong", {}, "The soil map is coarse. "),
-      "It can cover several acres and won't know that the strip by your driveway is packed clay fill. Do the 60-second check below and trust what you find over the map.",
+      el("strong", {}, t("confirm.soilCoarse")),
+      t("confirm.soilCoarseRest"),
     ]),
     ribbonTest(),
   ].filter(Boolean) as (HTMLElement)[]);
@@ -91,12 +102,9 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
   const moistureButtons: HTMLButtonElement[] = [];
   const bands: MoistureBand[] = ["dry", "mesic", "wet"];
   const moistureCard = el("div", { class: "card" }, [
-    el("h3", {}, "How wet does this spot stay?"),
-    el("p", {}, "This is the single most useful thing you can correct. Pick what matches after a heavy rain."),
-    whyThis("Why not just improve the soil?", [
-      "Natives are already adapted to the soil you have — dry sand, heavy clay, soggy hollows all have their specialists. ",
-      "The trick is picking a plant to fit the soil, not hauling in amendments to fit the plant. Answer honestly and the right ones rise to the top.",
-    ]),
+    el("h3", {}, t("confirm.moistureTitle")),
+    el("p", {}, t("confirm.moistureLede")),
+    whyThis(t("confirm.moistureWhyTitle"), t("confirm.moistureWhy")),
     ...bands.map((b) => {
       const btn = el("button", {
         class: "choice",
@@ -106,7 +114,7 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
           moistureButtons.forEach((mb, i) => mb.setAttribute("aria-pressed", bands[i] === b ? "true" : "false"));
         },
       }, [
-        el("span", { class: "choice-title" }, b === "dry" ? "Dry" : b === "mesic" ? "Evenly moist" : "Wet"),
+        el("span", { class: "choice-title" }, t(`confirm.${b}` as const)),
         el("span", { class: "choice-sub" }, moisturePlain(b)),
       ]) as HTMLButtonElement;
       moistureButtons.push(btn);
@@ -121,18 +129,20 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
   main.append(el("div", { class: "card" }, [
     el("label", { for: "decid2", style: "display:flex;gap:0.6rem;align-items:flex-start;font-weight:600" }, [
       decid,
-      el("span", {}, "Trees overhead that drop their leaves in winter (makes the spot sunnier in spring/fall)."),
+      el("span", {}, t("confirm.deciduous")),
     ]),
   ]));
 
   main.append(el("div", { class: "btn-row" }, [
-    el("button", { class: "btn btn-secondary", onClick: () => navigate("sun") }, "Back"),
-    el("button", { class: "btn btn-primary", onClick: () => navigate("results") }, "See my plants →"),
+    el("button", { class: "btn btn-secondary", onClick: () => navigate("sun") }, t("confirm.back")),
+    el("button", { class: "btn btn-primary", onClick: () => navigate("results") }, t("confirm.next")),
   ]));
 }
 
-function kv(k: string, v: string | (string | HTMLElement)[]): HTMLElement {
-  return el("p", { class: "kv" }, [el("span", { class: "k" }, k + ": "), ...(Array.isArray(v) ? v : [v])]);
+function kv(k: string, v: string | (string | Node)[]): HTMLElement {
+    // The colon is part of the label rather than the template, because French
+  // sets a narrow no-break space before it and English sets none.
+  return el("p", { class: "kv" }, [el("span", { class: "k" }, t("confirm.kvLabel", { k })), ...(Array.isArray(v) ? v : [v])]);
 }
 
 function guessMoisture(drainage: string): MoistureBand {
@@ -143,13 +153,13 @@ function guessMoisture(drainage: string): MoistureBand {
 
 function ribbonTest(): HTMLElement {
   return el("div", {}, [
-    el("p", { style: "font-weight:700;margin:0.8rem 0 0.3rem" }, "🤲 The 60-second soil check"),
+    el("p", { style: "font-weight:700;margin:0.8rem 0 0.3rem" }, t("confirm.ribbonTitle")),
     el("ol", { style: "padding-left:1.2rem;line-height:1.6" }, [
-      el("li", {}, "Grab a small handful of soil and dampen it so it's moist but not dripping."),
-      el("li", {}, "Squeeze and knead it into a ball. If it won't hold together at all and feels gritty, it's sandy → choose Dry above."),
-      el("li", {}, "Press it out between your thumb and finger into a flat ribbon."),
-      el("li", {}, "A short ribbon that breaks quickly and feels smooth = loam/silt → Evenly moist. A long, bendy, sticky ribbon = clay → often stays Wet."),
+      el("li", {}, t("confirm.ribbon1")),
+      el("li", {}, t("confirm.ribbon2")),
+      el("li", {}, t("confirm.ribbon3")),
+      el("li", {}, t("confirm.ribbon4")),
     ]),
-    el("p", { style: "font-size:0.9rem;color:var(--ink-soft)" }, "Whatever you find in your hand beats the map. Set the moisture below to match it."),
+    el("p", { style: "font-size:0.9rem;color:var(--ink-soft)" }, t("confirm.ribbonNote")),
   ]);
 }

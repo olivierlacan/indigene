@@ -7,6 +7,7 @@
 // that used to wrap a whole card in a link expose a plain link (e.g. the plant
 // name) instead, leaving these chips free to be buttons.
 import { el } from "../ui";
+import { t } from "../lib/i18n";
 
 export interface TermInfo {
   /** Emoji fallback, used when no `glyph` is supplied. */
@@ -48,7 +49,7 @@ export function openTermDialog(info: TermInfo): void {
     ]),
     el("p", { style: "margin:0 0 0.9rem" }, info.plain),
     ...(info.extra ?? []),
-    el("button", { class: "btn btn-secondary btn-block", onClick: () => d.close() }, "Got it")
+    el("button", { class: "btn btn-secondary btn-block", onClick: () => d.close() }, t("stat.gotIt"))
   );
   d.showModal();
 }
@@ -63,7 +64,7 @@ export function termTag(info: TermInfo, variant = ""): HTMLButtonElement {
     type: "button",
     class: `tag${variant ? ` tag-${variant}` : ""}`,
     "aria-haspopup": "dialog",
-    "aria-label": `${info.term}. Tap to learn what this means.`,
+    "aria-label": t("term.tapToLearn", { term: info.term }),
     onClick: (e: Event) => {
       e.preventDefault();
       e.stopPropagation();

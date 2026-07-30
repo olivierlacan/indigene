@@ -2,9 +2,16 @@
 // not "3–5 ft" but an honest, to-scale picture of how big this plant actually
 // gets at years 1, 3, 5, and 10 — with a 5'6" human silhouette for reference,
 // drawn at the SAME feet-per-pixel scale so the comparison is truthful.
+//
+// The geometry stays in feet throughout, because that's what the catalog
+// stores; only the axis ticks and the labels convert. What *does* change with
+// the reader's units is where the gridlines fall — a metric reader gets lines
+// every 1, 2, 5 or 10 metres, not at the metric equivalents of round feet,
+// because an axis labelled "1.5 m, 3.0 m, 4.6 m" is an axis nobody can read at
+// a glance.
 import type { Plant } from "../types";
-
-const HUMAN_FT = 5.5;
+import { HUMAN_FT, getUnits, humanHeightLabel, lengthTick } from "../lib/units";
+import { t, fmtNumber, getLang } from "../lib/i18n";
 
 const bloomColors: Record<string, string> = {
   red: "#c62828",
@@ -112,16 +119,15 @@ function render(canvas: HTMLCanvasElement, plant: Plant): void {
   ctx.font = "12px system-ui, sans-serif";
   ctx.textAlign = "right";
   ctx.textBaseline = "middle";
-  const gridStep = niceStep(maxHeightFt);
-  for (let ft = 0; ft <= maxHeightFt; ft += gridStep) {
-    const y = groundY - ft * pxPerFt;
+  for (const tick of gridTicks(maxHeightFt)) {
+    const y = groundY - tick.ft * pxPerFt;
     ctx.globalAlpha = 0.6;
     ctx.beginPath();
     ctx.moveTo(padL, y);
     ctx.lineTo(cssW - padR, y);
     ctx.stroke();
     ctx.globalAlpha = 1;
-    ctx.fillText(ft === 0 ? "0" : `${ft}′`, padL - 5, y);
+    ctx.fillText(tick.label, padL - 5, y);
   }
 
   // Ground line.
@@ -141,9 +147,9 @@ function render(canvas: HTMLCanvasElement, plant: Plant): void {
   ctx.fillStyle = ink;
   ctx.textBaseline = "top";
   ctx.font = "600 12px system-ui, sans-serif";
-  ctx.fillText("You", col0x, groundY + 5);
+  ctx.fillText(t("sizeViz.you"), col0x, groundY + 5);
   ctx.font = "12px system-ui, sans-serif";
-  ctx.fillText("(5′6″)", col0x, groundY + 20);
+  ctx.fillText(`(${humanHeightLabel()})`, col0x, groundY + 20);
 
   // Columns 1..4: the plant at each age.
   const tint = plant.bloom ? bloomColors[plant.bloom.color] ?? brand : brand;
@@ -153,9 +159,9 @@ function render(canvas: HTMLCanvasElement, plant: Plant): void {
     ctx.fillStyle = ink;
     ctx.font = "600 12px system-ui, sans-serif";
     ctx.textBaseline = "top";
-    ctx.fillText(`Yr ${snap.year}`, cx, groundY + 5);
+    ctx.fillText(t("sizeViz.year", { n: snap.year }), cx, groundY + 5);
     ctx.font = "12px system-ui, sans-serif";
-    ctx.fillText(fmtFt(snap.heightFt), cx, groundY + 20);
+    ctx.fillText(lengthTick(snap.heightFt), cx, groundY + 20);
   });
 }
 
@@ -315,16 +321,50 @@ function drawPlant(
   ctx.restore();
 }
 
-function niceStep(maxFt: number): number {
-  if (maxFt <= 3) return 1;
-  if (maxFt <= 8) return 2;
-  if (maxFt <= 20) return 5;
-  if (maxFt <= 45) return 10;
-  return 20;
+/**
+ * The horizontal gridlines: round numbers **in the reader's own units**, with
+ * the position still computed in feet so the drawing's scale never shifts.
+ *
+ * Converting round feet to metres would print "0.9 m, 1.8 m, 3.0 m" up the
+ * side of the chart — technically the same lines, unreadable as an axis. So
+ * each system picks its own ladder and we convert the *step*, not the label.
+ */
+function gridTicks(maxHeightFt: number): { ft: number; label: string }[] {
+  const metric = getUnits() === "metric";
+  const FT_PER_M = 3.280839895;
+  const maxUnits = metric ? maxHeightFt / FT_PER_M : maxHeightFt;
+  const step = niceStep(maxUnits, metric);
+  const out: { ft: number; label: string }[] = [];
+  for (let v = 0; v <= maxUnits + 1e-9; v += step) {
+    const ft = metric ? v * FT_PER_M : v;
+    out.push({
+      ft,
+      label: v === 0 ? "0" : metric ? `${fmtNumber(v, 1)}${unitGap()}m` : `${v}′`,
+    });
+  }
+  return out;
 }
 
-function fmtFt(ft: number): string {
-  return ft < 1 ? `${Math.round(ft * 12)}″` : `${ft % 1 === 0 ? ft : ft.toFixed(1)}′`;
+/** The gap between a number and its unit symbol. French typography wants a
+ *  narrow no-break space; English an ordinary one. Never nothing: "3m" is not
+ *  a measurement anyone writes. */
+function unitGap(): string {
+  return getLang() === "fr" ? "\u202f" : " ";
+}
+
+function niceStep(max: number, metric: boolean): number {
+  if (metric) {
+    if (max <= 1.5) return 0.5;
+    if (max <= 4) return 1;
+    if (max <= 12) return 2;
+    if (max <= 30) return 5;
+    return 10;
+  }
+  if (max <= 3) return 1;
+  if (max <= 8) return 2;
+  if (max <= 20) return 5;
+  if (max <= 45) return 10;
+  return 20;
 }
 
 function cssVar(name: string, fallback: string): string {

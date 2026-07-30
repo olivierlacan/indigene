@@ -7,49 +7,49 @@ import { REGIONS } from "../lib/plants";
 import { featuredPlant } from "../lib/explore";
 import { zoneChip } from "../components/zone-chip";
 import { ISSUES_URL } from "../lib/plain";
+import { t, tn, tx } from "../lib/i18n";
+import { commonName, regionName, regionReference } from "../lib/names";
 
 export function renderBrowse(main: HTMLElement): void {
   clear(main);
 
   main.append(
-    el("h2", { class: "step-title" }, "Browse regions & native plants"),
-    el("p", { class: "step-lede" }, [
-      "No location needed — start from a region or a standout plant instead.",
-    ]),
+    el("h2", { class: "step-title" }, t("browse.title")),
+    el("p", { class: "step-lede" }, t("browse.lede")),
     el("div", { class: "card" }, [
-      el("h3", {}, REGIONS.length > 1 ? "Regions covered so far" : "Right now this covers one region"),
-      el("p", {}, "Plant recommendations are tuned region by region — pick the one that matches where you'll plant:"),
+      el("h3", {}, tn("browse.regionsTitle", REGIONS.length)),
+      el("p", {}, t("browse.regionsLede")),
       el("ul", { style: "margin:0.4rem 0 0.6rem;padding-left:1.2rem" },
         REGIONS.map((r) => el("li", { style: "margin-bottom:0.3rem" }, [
-          el("a", { href: `#/regions/${r.meta.id}`, style: "font-weight:650" }, r.meta.name),
-          ` — ${r.meta.reference} `,
+          el("a", { href: `#/regions/${r.meta.id}`, style: "font-weight:650" }, regionName(r.meta)),
+          ` — ${regionReference(r.meta)} `,
           zoneChip(r.meta),
         ]))
       ),
-      el("p", { style: "margin:0" }, [
-        "Outside these areas, sun and soil readings still work — just no plant list yet. Want yours next? ",
-        el("a", { href: ISSUES_URL, target: "_blank", rel: "noopener" }, "Suggest your area on GitHub"),
-        ".",
-      ]),
+      el("p", { style: "margin:0" },
+        tx("browse.outside", {
+          link: el("a", { href: ISSUES_URL, target: "_blank", rel: "noopener" }, t("browse.outsideLink")),
+        })
+      ),
     ]),
     el("div", { class: "card", style: "margin-top:1rem" }, [
-      el("h3", {}, "Or start from a plant"),
-      el("p", {}, "Meet one standout native from each region, then see if it would thrive in your spot:"),
+      el("h3", {}, t("browse.plantTitle")),
+      el("p", {}, t("browse.plantLede")),
       el("ul", { style: "margin:0.4rem 0 0.6rem;padding-left:1.2rem" },
         REGIONS.map((r) => {
           const p = featuredPlant(r);
           return el("li", { style: "margin-bottom:0.35rem" }, [
-            el("a", { href: `#/plants/${p.id}`, style: "font-weight:650" }, p.common),
+            el("a", { href: `#/plants/${p.id}`, style: "font-weight:650" }, commonName(p)),
             " — ",
-            el("a", { href: `#/regions/${r.meta.id}` }, r.meta.name),
+            el("a", { href: `#/regions/${r.meta.id}` }, regionName(r.meta)),
           ]);
         })
       ),
-      el("button", { class: "btn btn-secondary btn-block", onClick: () => navigate("plants") }, "🌿 Explore the natives"),
+      el("button", { class: "btn btn-secondary btn-block", onClick: () => navigate("plants") }, t("browse.exploreBtn")),
     ]),
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, "Home"),
-      el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, "Start from a spot instead"),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("browse.home")),
+      el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("browse.startFromSpot")),
     ])
   );
 }

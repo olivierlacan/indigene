@@ -29,6 +29,8 @@ import type { Bounds } from "../lib/inaturalist";
 import { observationList, freshnessLine } from "./observation-ui";
 import { locationPrompt } from "./location-prompt";
 import type { InatScope, Wildlife } from "../types";
+import { t, tn, fmtNumber } from "../lib/i18n";
+import { commonName, regionName } from "../lib/names";
 
 /** "Where are we looking?" — near a chosen spot, or inside a named region's box. */
 type Mode = "near" | "region";
@@ -51,7 +53,7 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
 
   const prompt = locationPrompt({
     idBase: `wl-${w.id}`,
-    gpsLabel: "Use my location",
+    gpsLabel: t("nearby.useMyLocation"),
     onResolve: (lat, lon, label) => void loadNear(lat, lon, label),
   });
 
@@ -61,7 +63,7 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
   }
   function showBusy(): void {
     clear(out);
-    out.append(el("p", { class: "note", style: "margin-top:0.6rem" }, "Asking iNaturalist…"));
+    out.append(el("p", { class: "note", style: "margin-top:0.6rem" }, t("nearby.asking")));
   }
 
   async function loadNear(lat: number, lon: number, label?: string): Promise<void> {
@@ -70,7 +72,7 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
     // footing, so we point the user at looking it up in a region it's found in.
     const region = regionForSite(lat, lon);
     if (!region) {
-      showNote(`${label ? `${label} is` : "You're"} outside the regions Indigene covers, so we can't do a nearby lookup there. You can still look it up in a region where it's found, below.`);
+      showNote(label ? t("wlNearby.outsidePlace", { place: label }) : t("wlNearby.outsideYou"));
       return;
     }
     showBusy();
@@ -78,7 +80,7 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
       const result = await wildlifeSightingsNear(scope, w.id, lat, lon);
       renderResults(result, "near", region, label);
     } catch {
-      showNote("We couldn't reach iNaturalist just now. It's called straight from your browser, so a flaky connection or a blocked request will stop it — try again later.");
+      showNote(t("nearby.unreachable"));
     }
   }
 
@@ -87,13 +89,13 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
   async function loadRegion(region: RegionDef, btn: HTMLButtonElement): Promise<void> {
     const label = btn.textContent ?? "";
     btn.disabled = true;
-    btn.textContent = "Asking iNaturalist…";
+    btn.textContent = t("nearby.asking");
     showBusy();
     try {
       const result = await wildlifeSightingsInRegion(scope, w.id, region.meta.id, toBounds(region));
       renderResults(result, "region", region);
     } catch {
-      showNote("We couldn't reach iNaturalist just now. It's called straight from your browser, so a flaky connection or a blocked request will stop it — try again later.");
+      showNote(t("nearby.unreachable"));
     } finally {
       btn.disabled = false;
       btn.textContent = label;
@@ -102,14 +104,14 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
 
   function renderResults(result: SightingResult, mode: Mode, region: RegionDef, label?: string): void {
     clear(out);
-    const name = w.common.toLowerCase();
-    const where = label ? `near ${label}` : "close to you";
+    const name = commonName(w);
+    const where = label ? t("nearby.nearPlace", { place: label }) : t("nearby.closeToYou");
     const sightings = result.observations;
     if (!sightings.length) {
       out.append(el("p", { class: "note warn", style: "margin-top:0.6rem" },
         mode === "near"
-          ? `No one has photographed and verified a ${name} ${where} on iNaturalist yet — that just means the community hasn't logged one here, not that it's absent.`
-          : `No research-grade ${name} sightings with photos have been logged in ${region.meta.name} on iNaturalist yet — the community just hasn't captured one.`));
+          ? t("wlNearby.noneNear", { name, where })
+          : t("wlNearby.noneInRegion", { name, region: regionName(region.meta) })));
       out.append(freshnessLine(result.fromCache));
       return;
     }
@@ -119,13 +121,13 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
     out.append(
       el("p", { style: "margin:0.6rem 0 0.4rem" },
         mode === "near"
-          ? [el("strong", {}, `Found ${sightings.length} `),
-             `research-grade sighting${sightings.length === 1 ? "" : "s"} — a real ${name} someone verified and photographed ${where}:`]
-          : [el("strong", {}, `Found ${sightings.length} `),
-             `research-grade sighting${sightings.length === 1 ? "" : "s"} of ${name} in ${region.meta.name} — verified and photographed by the iNaturalist community (you don't have to be there):`],
+          ? [el("strong", {}, t("nearby.found", { n: fmtNumber(sightings.length) })),
+             tn("wlNearby.foundNearRest", sightings.length, { name, where })]
+          : [el("strong", {}, t("nearby.found", { n: fmtNumber(sightings.length) })),
+             tn("wlNearby.foundRest", sightings.length, { name, region: regionName(region.meta) })],
       ),
     );
-    out.append(observationList(shown, w.common));
+    out.append(observationList(shown, name));
     out.append(freshnessLine(result.fromCache));
   }
 
@@ -135,7 +137,7 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
     const regions = regionsForWildlife(w.id);
     if (!regions.length) return null;
     return el("div", { style: "margin-top:0.8rem" }, [
-      el("p", { style: "margin:0 0 0.4rem;font-weight:650" }, "Not there right now? Look it up where it's found:"),
+      el("p", { style: "margin:0 0 0.4rem;font-weight:650" }, t("wlNearby.notThereFound")),
       el("div", { style: "display:flex;flex-wrap:wrap;gap:0.4rem" },
         regions.map((r) => {
           const btn = el("button", {
@@ -143,7 +145,7 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
             class: "btn btn-secondary",
             style: "flex:1 1 auto;min-height:2.6rem;padding:0.4rem 0.7rem;font-size:0.9rem",
             onClick: () => void loadRegion(r, btn),
-          }, `🗺️ ${r.meta.name}`) as HTMLButtonElement;
+          }, `🗺️ ${regionName(r.meta)}`) as HTMLButtonElement;
           return btn;
         }),
       ),
@@ -151,10 +153,8 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
   }
 
   return el("section", { class: "card", style: "margin-top:1rem" }, [
-    el("h3", { style: "margin-top:0" }, "See it near you"),
-    el("p", { style: "margin:0.3rem 0 0.6rem" }, [
-      `Nothing beats seeing a real ${w.common.toLowerCase()}. Share your location or enter a ZIP code, and we'll pull community-verified iNaturalist photos of ones spotted near there — or look it up in a region where it's found, even if you're not there. Either way the photos come live from iNaturalist, called by your own browser and credited to the people who took them.`,
-    ]),
+    el("h3", { style: "margin-top:0" }, t("wlNearby.seeItNear")),
+    el("p", { style: "margin:0.3rem 0 0.6rem" }, t("wlNearby.seeItNearLede", { name: commonName(w) })),
     prompt,
     regionButtons(),
     out,

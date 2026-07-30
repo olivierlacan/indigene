@@ -6,7 +6,7 @@ import { el } from "../ui";
 
 export function whyThis(
   question: string,
-  answer: (string | HTMLElement)[] | string
+  answer: (string | Node)[] | string
 ): HTMLElement {
   return el("aside", { class: "learn" }, [
     el("p", { class: "learn-q" }, question),

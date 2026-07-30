@@ -13,6 +13,7 @@
 import { el, clear } from "../ui";
 import { searchPlaces, placeLabel } from "../lib/geocode";
 import { privacyNote } from "./privacy-link";
+import { t } from "../lib/i18n";
 
 export interface LocationPromptConfig {
   /** Unique base for the input's id/label pair, so two prompts can coexist. */
@@ -55,11 +56,11 @@ export function locationPrompt(config: LocationPromptConfig): HTMLElement {
   function useGps(): void {
     clear(msg);
     if (!("geolocation" in navigator)) {
-      note("This device can't share a location — enter a ZIP code or town below instead.");
+      note(t("prompt.noGeolocation"));
       return;
     }
     gpsBtn.disabled = true;
-    gpsBtn.textContent = "Getting your location…";
+    gpsBtn.textContent = t("prompt.getting");
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         resetGps();
@@ -69,8 +70,8 @@ export function locationPrompt(config: LocationPromptConfig): HTMLElement {
         resetGps();
         note(
           err.code === err.PERMISSION_DENIED
-            ? "Location denied — that's fine; enter a ZIP code or town below instead."
-            : "Couldn't get your location. Try again, or enter a ZIP code or town below.",
+            ? t("prompt.denied")
+            : t("prompt.noFix"),
         );
       },
       { enableHighAccuracy: true, timeout: 15000, maximumAge: 300000 },
@@ -82,14 +83,14 @@ export function locationPrompt(config: LocationPromptConfig): HTMLElement {
     type: "search",
     id: `${idBase}-place`,
     autocomplete: "off",
-    placeholder: "e.g. 16801, or State College",
+    placeholder: t("prompt.placeholder"),
     style: "flex:1 1 auto;min-width:0",
   }) as HTMLInputElement;
   const searchBtn = el("button", {
     type: "submit",
     class: "btn btn-secondary",
     style: "flex:none",
-  }, "Search") as HTMLButtonElement;
+  }, t("location.search")) as HTMLButtonElement;
   const results = el("div", { "aria-live": "polite" });
 
   async function doSearch(): Promise<void> {
@@ -98,12 +99,12 @@ export function locationPrompt(config: LocationPromptConfig): HTMLElement {
     clear(msg);
     clear(results);
     searchBtn.disabled = true;
-    searchBtn.textContent = "Searching…";
+    searchBtn.textContent = t("location.searching");
     try {
       const places = await searchPlaces(q);
       clear(results);
       if (!places.length) {
-        note("Couldn't find that ZIP code or place. Try a nearby town with its state — like “State College Pennsylvania” — or a 5-digit ZIP.");
+        note(t("prompt.notFound"));
         return;
       }
       results.append(
@@ -123,26 +124,26 @@ export function locationPrompt(config: LocationPromptConfig): HTMLElement {
         ),
       );
     } catch {
-      note("The place search needs a signal and we couldn't reach it. If your device has GPS, use the location button above.");
+      note(t("prompt.offline"));
     } finally {
       searchBtn.disabled = false;
-      searchBtn.textContent = "Search";
+      searchBtn.textContent = t("location.search");
     }
   }
 
   return el("div", {}, [
     gpsBtn,
-    el("p", { class: "or-sep", "aria-hidden": "true" }, "or"),
+    el("p", { class: "or-sep", "aria-hidden": "true" }, t("prompt.or")),
     el("form", {
       onSubmit: (e: Event) => { e.preventDefault(); void doSearch(); },
     }, [
       el("div", { class: "field" }, [
-        el("label", { for: `${idBase}-place` }, "Enter a ZIP code or town"),
+        el("label", { for: `${idBase}-place` }, t("prompt.label")),
         el("div", { style: "display:flex;gap:0.5rem" }, [input, searchBtn]),
       ]),
     ]),
     results,
     msg,
-    privacyNote("Whichever you choose, it's used only for this lookup and never leaves your device except as an anonymous request to iNaturalist"),
+    privacyNote(t("prompt.privacy")),
   ]);
 }

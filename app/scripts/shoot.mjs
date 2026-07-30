@@ -10,6 +10,10 @@
 //   --viewport WxH        CSS viewport            (default: 390x844)
 //   --no-full-page        viewport crop instead of the whole page
 //   --wait ms             settle time after load  (default: 1500)
+//   --locale TAG          browser locale          (default: en-US) — drives
+//                         navigator.language, so it picks the app's default
+//                         language *and* its default unit system, the same way
+//                         a real phone in that region would
 //
 // Exists because the Playwright CLI can't set device pixel ratio directly —
 // its iPhone device descriptors force WebKit, which isn't installed here.
@@ -33,10 +37,11 @@ const dpr = Number(flag("--dpr", "3"));
 const [vw, vh] = flag("--viewport", "390x844").split("x").map(Number);
 const fullPage = !has("--no-full-page");
 const wait = Number(flag("--wait", "1500"));
+const locale = flag("--locale", "en-US");
 const [url, out] = args;
 
 if (!url || !out || !(dpr > 0) || !(vw > 0) || !(vh > 0)) {
-  console.error("usage: node scripts/shoot.mjs <url> <out.png> [--scheme dark|light] [--dpr N] [--viewport WxH] [--no-full-page] [--wait ms]");
+  console.error("usage: node scripts/shoot.mjs <url> <out.png> [--scheme dark|light] [--dpr N] [--viewport WxH] [--no-full-page] [--wait ms] [--locale TAG]");
   process.exit(1);
 }
 
@@ -50,6 +55,7 @@ const context = await browser.newContext({
   viewport: { width: vw, height: vh },
   deviceScaleFactor: dpr,
   colorScheme: scheme,
+  locale,
   isMobile: true,
   hasTouch: true,
 });
@@ -58,4 +64,4 @@ await page.goto(url, { waitUntil: "networkidle" });
 await page.waitForTimeout(wait);
 await page.screenshot({ path: out, fullPage });
 await browser.close();
-console.log(`shot: ${url} → ${out} (${vw}x${vh} @${dpr}x, ${scheme}${fullPage ? ", full-page" : ""})`);
+console.log(`shot: ${url} → ${out} (${vw}x${vh} @${dpr}x, ${scheme}, ${locale}${fullPage ? ", full-page" : ""})`);

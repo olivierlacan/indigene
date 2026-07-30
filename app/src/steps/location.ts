@@ -9,6 +9,8 @@ import { ISSUES_URL } from "../lib/plain";
 import { TILE_SIZE, getTile, metersPerPixel, tileCoords } from "../lib/tiles";
 import { whyThis } from "../components/learn";
 import { privacyNote } from "../components/privacy-link";
+import { t, tx, fmtNumber } from "../lib/i18n";
+import { regionName, regionReference } from "../lib/names";
 
 // The out-of-coverage message, shown the moment a person selects a location
 // (GPS fix or search pick) outside every covered region — not sprung on them
@@ -18,10 +20,10 @@ import { privacyNote } from "../components/privacy-link";
 function coverageWarning(lead: string): HTMLElement {
   return el("div", { class: "note warn" }, [
     el("strong", {}, lead + " "),
-    "Indigene's plant lists are tuned region by region, and this spot is outside all of them — so we'd have nothing honest to recommend here. The sun and soil readings still work. Meanwhile you can:",
+    t("location.coverage"),
     el("ul", { style: "margin:0.4rem 0 0;padding-left:1.2rem" }, [
-      el("li", {}, [el("a", { href: "#/plants" }, "Browse the covered regions' native plants"), " to see the kind of recommendations Indigene gives."]),
-      el("li", {}, [el("a", { href: ISSUES_URL, target: "_blank", rel: "noopener" }, "Ask for your area on GitHub"), " — open an issue with your ZIP or town. Or add the region yourself: it's one plant-data file plus two registry lines."]),
+      el("li", {}, [el("a", { href: "#/plants" }, t("location.coverageBrowse")), t("location.coverageBrowseRest")]),
+      el("li", {}, [el("a", { href: ISSUES_URL, target: "_blank", rel: "noopener" }, t("location.coverageAsk")), t("location.coverageAskRest")]),
     ]),
   ]);
 }
@@ -49,7 +51,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
   let offN = 0;
   let offE = 0;
 
-  const status = el("p", { class: "coords", role: "status", "aria-live": "polite" }, "No location yet.");
+  const status = el("p", { class: "coords", role: "status", "aria-live": "polite" }, t("location.none"));
   // Coverage feedback for a GPS fix; search picks show theirs by the search box.
   const coverageOut = el("div", { "aria-live": "polite" });
   const canvas = el("canvas", { width: 600, height: 320, "aria-hidden": "true" });
@@ -60,12 +62,12 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
     target: "_blank",
     rel: "noopener",
     hidden: true,
-  }, "© OpenStreetMap contributors");
+  }, t("location.osmAttribution"));
   const mapWrap = el("div", {
     class: "map",
     tabindex: 0,
     role: "application",
-    "aria-label": "Map. The pin stays in the centre. Drag or tap to move the spot under it, or use the arrow keys to nudge it — hold Shift for bigger steps.",
+    "aria-label": t("location.mapLabel"),
   }, [canvas, el("div", { class: "pin", "aria-hidden": "true" }, "📍"), attrib]);
   // Whether the last draw managed to show tiles; the drag scale follows the
   // layer the user is actually looking at (map tiles vs. the 5 m grid).
@@ -80,8 +82,8 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
 
   function updateStatus(): void {
     const off = Math.hypot(offN, offE);
-    const acc = accuracy != null ? ` · GPS accuracy ±${Math.round(accuracy)} m` : "";
-    const moved = off > 1 ? ` · nudged ${Math.round(off)} m` : "";
+    const acc = accuracy != null ? t("location.accuracy", { m: fmtNumber(Math.round(accuracy)) }) : "";
+    const moved = off > 1 ? t("location.nudged", { m: fmtNumber(Math.round(off)) }) : "";
     status.textContent = `${effLat().toFixed(5)}, ${effLon().toFixed(5)}${acc}${moved}`;
     drawMap();
   }
@@ -147,7 +149,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
       // A halo keeps the marker readable over map imagery.
       ctx.strokeStyle = "rgba(255,255,255,0.9)";
       ctx.lineWidth = 3;
-      ctx.strokeText("GPS fix", fx + 9, fy + 4);
+      ctx.strokeText(t("location.gpsFix"), fx + 9, fy + 4);
     }
     ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue("--focus").trim() || "#1a53c4";
     ctx.globalAlpha = drewTiles ? 0.9 : 0.6;
@@ -155,7 +157,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
     ctx.arc(fx, fy, 6, 0, Math.PI * 2);
     ctx.fill();
     ctx.globalAlpha = 1;
-    ctx.fillText("GPS fix", fx + 9, fy + 4);
+    ctx.fillText(t("location.gpsFix"), fx + 9, fy + 4);
   }
 
   // Metres per CSS pixel at the scale of whichever map layer is showing.
@@ -221,15 +223,15 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
     updateStatus();
   });
 
-  const locateBtn = el("button", { class: "btn btn-primary btn-block", onClick: locate }, "📍 Use my location");
+  const locateBtn = el("button", { class: "btn btn-primary btn-block", onClick: locate }, t("location.use"));
 
   function locate(): void {
     if (!("geolocation" in navigator)) {
-      toast("This device can't share location — try the town search instead.");
+      toast(t("location.noGeolocation"));
       setMode("zip");
       return;
     }
-    locateBtn.textContent = "Locating…";
+    locateBtn.textContent = t("location.locating");
     (locateBtn as HTMLButtonElement).disabled = true;
     navigator.geolocation.getCurrentPosition(
       (pos) => {
@@ -237,18 +239,18 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
         lon = pos.coords.longitude;
         accuracy = pos.coords.accuracy;
         offN = 0; offE = 0;
-        locateBtn.textContent = "📍 Update my location";
+        locateBtn.textContent = t("location.update");
         (locateBtn as HTMLButtonElement).disabled = false;
         clear(coverageOut);
         if (!regionForCoords(lat, lon)) {
-          coverageOut.append(coverageWarning("We don't have a plant list for this area yet."));
+          coverageOut.append(coverageWarning(t("location.noListHere")));
         }
         updateStatus();
       },
       (err) => {
-        locateBtn.textContent = "📍 Use my location";
+        locateBtn.textContent = t("location.use");
         (locateBtn as HTMLButtonElement).disabled = false;
-        toast(err.code === err.PERMISSION_DENIED ? "Location denied — try the town search instead." : "Couldn't get a fix — try again, or switch to the town search.");
+        toast(err.code === err.PERMISSION_DENIED ? t("location.denied") : t("location.noFix"));
       },
       { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
     );
@@ -259,11 +261,11 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
     type: "search",
     id: "place-q",
     autocomplete: "off",
-    placeholder: "e.g. State College, or 16801",
+    placeholder: t("location.searchPlaceholder"),
     // Shares a row with the button: shrinkable, takes the leftover width.
     style: "flex:1 1 auto;min-width:0",
   }) as HTMLInputElement;
-  const searchBtn = el("button", { class: "btn btn-secondary", style: "flex:none" }, "Search") as HTMLButtonElement;
+  const searchBtn = el("button", { class: "btn btn-secondary", style: "flex:none" }, t("location.search")) as HTMLButtonElement;
   const searchOut = el("div", { "aria-live": "polite" });
 
   async function doSearch(): Promise<void> {
@@ -271,12 +273,12 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
     if (!q) return;
     clear(searchOut);
     searchBtn.disabled = true;
-    searchBtn.textContent = "Searching…";
+    searchBtn.textContent = t("location.searching");
     try {
       const places = await searchPlaces(q);
       clear(searchOut);
       if (!places.length) {
-        searchOut.append(el("div", { class: "note warn" }, "Couldn't find that name. Try the town and state together — like “Springfield Pennsylvania” — or the ZIP code on your mail."));
+        searchOut.append(el("div", { class: "note warn" }, t("location.searchNoResults")));
         return;
       }
       searchOut.append(
@@ -291,13 +293,13 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
               searchOut.append(
                 regionForCoords(p.lat, p.lon)
                   ? el("div", { class: "note info" }, [
-                      el("strong", {}, `Pin set to the middle of ${p.name}. `),
+                      el("strong", {}, t("location.pinSet", { place: p.name })),
                       // Say only what the pin's precision actually buys: the
                       // soil/slope lookups (a ~250 m grid). Sun never comes
                       // from the map, and climate/region are far coarser.
-                      "That's enough to pick your region, climate, and plant list — and the sun estimate comes from you in the next step, not from the map. Only the soil and slope lookups care about the exact spot, so if you're far from the middle of town, drag the pin roughly onto your yard.",
+                      t("location.pinSetRest"),
                     ])
-                  : coverageWarning(`Pin set to the middle of ${p.name} — but we don't have a plant list for this area yet.`)
+                  : coverageWarning(t("location.pinSetUncovered", { place: p.name }))
               );
               updateStatus();
               mapWrap.scrollIntoView({ block: "nearest" });
@@ -310,20 +312,20 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
       );
     } catch {
       clear(searchOut);
-      searchOut.append(el("div", { class: "note warn" }, "The place search needs a signal and we couldn't reach it. If GPS works, switch back to your location — or pick your region by hand instead."));
+      searchOut.append(el("div", { class: "note warn" }, t("location.searchOffline")));
     } finally {
       searchBtn.disabled = false;
-      searchBtn.textContent = "Search";
+      searchBtn.textContent = t("location.search");
     }
   }
 
   const searchCard = el("div", { class: "card" }, [
-    el("h3", {}, "No GPS? Search by town"),
+    el("h3", {}, t("location.searchTitle")),
     el("form", {
       onSubmit: (e: Event) => { e.preventDefault(); void doSearch(); },
     }, [
       el("div", { class: "field", style: "margin-bottom:0.6rem" }, [
-        el("label", { for: "place-q" }, "Your town, city, or ZIP code"),
+        el("label", { for: "place-q" }, t("location.searchLabel")),
         el("div", { style: "display:flex;gap:0.5rem" }, [searchInput, searchBtn]),
       ]),
     ]),
@@ -349,25 +351,22 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
             renderRegionList(false);
           },
         }, [
-          el("span", { class: "choice-title" }, r.meta.name),
-          el("span", { class: "choice-sub" }, [r.meta.reference, " ", zoneChip(r.meta)]),
+          el("span", { class: "choice-title" }, regionName(r.meta)),
+          el("span", { class: "choice-sub" }, [regionReference(r.meta), " ", zoneChip(r.meta)]),
         ])
       )
     );
     if (!expanded) {
       regionList.append(
-        el("button", { class: "linklike", onClick: () => renderRegionList(true) }, "Not this one? Show all regions")
+        el("button", { class: "linklike", onClick: () => renderRegionList(true) }, t("location.regionShowAll"))
       );
     }
   }
   renderRegionList(selectedRegion == null);
 
   const regionCard = el("div", { class: "card" }, [
-    el("h3", {}, "🗺️ Pick your region"),
-    el("p", {}, [
-      "If you already know which of our regions — or which EPA ecoregion — you're in, you can skip the map. ",
-      "Fair warning: without a map point we can't look up your soil, rainfall, or winter cold, so you'll answer the sun and moisture questions yourself and the plant list leans on what you tell us.",
-    ]),
+    el("h3", {}, t("location.regionTitle")),
+    el("p", {}, t("location.regionLede")),
     regionList,
   ]);
 
@@ -388,12 +387,23 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
     clear(switcher);
     const link = (label: string, m: Mode) =>
       el("button", { class: "linklike", onClick: () => setMode(m) }, label);
+    // `tx` rather than three concatenated fragments: the two links have to be
+    // able to move inside the sentence, and English word order is not French's.
     if (mode === "gps") {
-      switcher.append("Don't want to use your location? ", link("Use a ZIP code", "zip"), " or ", link("pick a region", "region"), " instead.");
+      switcher.append(...tx("location.switchFromGps", {
+        a: link(t("location.switchZip"), "zip"),
+        b: link(t("location.switchRegion"), "region"),
+      }));
     } else if (mode === "zip") {
-      switcher.append("Changed your mind? ", link("Use GPS location", "gps"), " or ", link("pick a region", "region"), " instead.");
+      switcher.append(...tx("location.switchFromOther", {
+        a: link(t("location.switchGps"), "gps"),
+        b: link(t("location.switchRegion"), "region"),
+      }));
     } else {
-      switcher.append("Changed your mind? ", link("Use GPS location", "gps"), " or ", link("search by ZIP code", "zip"), " instead.");
+      switcher.append(...tx("location.switchFromOther", {
+        a: link(t("location.switchGps"), "gps"),
+        b: link(t("location.switchZip"), "zip"),
+      }));
     }
   }
 
@@ -407,27 +417,24 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
   }
 
   main.append(
-    el("h2", { class: "step-title" }, "Where are you standing?"),
-    el("p", { class: "step-lede" }, "Get your location, then check the map — if the pin isn't where you're really standing, drag or tap to nudge it."),
-    whyThis("Why does the exact spot matter?", [
-      "“Native” always means native to somewhere. ",
-      "Your coordinates pick which regional plant list applies and pull the soil, climate, and ecoregion records for this exact place — the same species can be a keystone in one region and a stranger in the next.",
-    ]),
+    el("h2", { class: "step-title" }, t("location.title")),
+    el("p", { class: "step-lede" }, t("location.lede")),
+    whyThis(t("location.whyTitle"), t("location.why")),
     locateBtn,
-    privacyNote("Your location is used only to find what grows here, only when you tap, and never leaves your device except as anonymous lookups"),
+    privacyNote(t("location.privacy")),
     searchCard,
     mapBlock,
     regionCard,
     switcher,
     el("div", { class: "btn-row" }, [
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, "Back"),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("location.back")),
       el("button", {
         class: "btn btn-primary",
         onClick: () => {
           if (mode === "region") {
             const r = REGIONS.find((x) => x.meta.id === selectedRegion);
             if (!r) {
-              toast("Pick a region first.");
+              toast(t("location.pickFirst"));
               return;
             }
             store.draft.lat = null;
@@ -435,7 +442,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
             store.draft.site = null;
             store.draft.regionOverride = r.meta.id;
             setSitePromise(null);
-            toast(`Using the ${r.meta.name} list — your pick.`);
+            toast(t("location.usingList", { region: regionName(r.meta) }));
             navigate("sun");
             return;
           }
@@ -453,7 +460,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
           );
           navigate("sun");
         },
-      }, "Next: measure the sun →"),
+      }, t("location.next")),
     ])
   );
 

@@ -22,6 +22,7 @@ in the app consumes it.
 |---|---|---|---|
 | [`eea-biogeographical-regions/`](eea-biogeographical-regions/) | `probe.json` — layer list + per-region point checks + detected field name for the live EEA ecoregion service | CC-BY 4.0 (EEA) | `node app/scripts/probe-eea.mjs` |
 | [`eu-lep-plant-matrix/`](eu-lep-plant-matrix/) | the Gaytán 2026 European Lepidoptera–plant matrix, ecosystem table and taxonomy (raw, git-ignored) + `host-counts.json` — the per-genus, per-zone counts derived from them (committed) → feeds `hostLepCount` | CC-BY 4.0 | manual download from the DOI (see its README), then `cd app && npm run host-counts` |
+| [`vernacular-names/`](vernacular-names/) | `fr.json` — per-taxon verification of the French plant & animal names against the reference lists that supply them | Licence Ouverte (TAXREF) · CC BY-SA (Tela Botanica) · CC BY (VASCAN) · CC0 (Wikidata) | `node app/scripts/check-vernacular.mjs` |
 
 ## Why this exists / CI
 

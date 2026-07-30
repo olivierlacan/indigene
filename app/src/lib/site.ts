@@ -3,6 +3,7 @@
 // the confirm screen lets the user correct anything. Soil especially is always
 // presented as "the map says…", never as measured fact (see honesty rules).
 import type { EcoregionInfo, SiteData } from "../types";
+import { t, tOptional } from "./i18n";
 
 const TIMEOUT_MS = 12000;
 
@@ -340,9 +341,16 @@ export function ecoregionLabel(
   lon: number
 ): string | null {
   if (info) {
-    const suffix =
-      info.provider === "eea-biogeo" ? "EEA biogeographical region" : "EPA Level III ecoregion";
-    return `${info.name} (${suffix})`;
+    // The EEA's eleven regions have settled names in each language ("Atlantic"
+    // is *atlantique*), so those translate off the canonical slug. EPA Level III
+    // names are American place names — "Willamette Valley" is not translated,
+    // any more than we'd translate "Bordeaux". Only the suffix that says which
+    // classification answered is a sentence, and that always translates.
+    const name = info.provider === "eea-biogeo"
+      ? tOptional(`ecoregion.eea.${info.code}`) ?? info.name
+      : info.name;
+    const suffix = t(info.provider === "eea-biogeo" ? "ecoregion.suffixEea" : "ecoregion.suffixEpa");
+    return `${name} (${suffix})`;
   }
   return ecoregionGuess(lat, lon);
 }
@@ -352,22 +360,22 @@ export function ecoregionLabel(
 // for, and always marked "(broad)".
 function ecoregionGuess(lat: number, lon: number): string | null {
   if (lat >= 42 && lat <= 49 && lon >= -124.9 && lon <= -120.5) {
-    return "Marine West Coast Forest (broad)";
+    return t("ecoregion.broad.marineWest");
   }
   if (lat >= 24.4 && lat < 27.2 && lon >= -82.5 && lon <= -79.9) {
-    return "Southern Florida Coastal Plain (broad)";
+    return t("ecoregion.broad.southFlorida");
   }
   if (lat >= 27.2 && lat <= 31 && lon >= -87.7 && lon <= -79.8) {
-    return "Southern Coastal Plain (broad)";
+    return t("ecoregion.broad.southernCoastal");
   }
   if (lat >= 24 && lat <= 49 && lon >= -100 && lon <= -66) {
-    return "Eastern Temperate Forest (broad)";
+    return t("ecoregion.broad.easternTemperate");
   }
   // Metropolitan France, coarse: the Mediterranean south vs the Atlantic
   // west/north. Offline label only — selection still uses the box + live code.
   if (inEurope(lat, lon)) {
-    if (lat <= 44.2 && lon >= 2.5 && lon <= 10.0) return "Mediterranean (broad)";
-    if (lat >= 42.5 && lat <= 51.6 && lon >= -5.5 && lon <= 8.5) return "Atlantic (broad)";
+    if (lat <= 44.2 && lon >= 2.5 && lon <= 10.0) return t("ecoregion.broad.mediterranean");
+    if (lat >= 42.5 && lat <= 51.6 && lon >= -5.5 && lon <= 8.5) return t("ecoregion.broad.atlantic");
   }
   return null;
 }

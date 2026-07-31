@@ -19,6 +19,12 @@
 //                         exists once something has been typed (the in-page
 //                         filters, the search field)
 //   --fill-into sel       type into the first match of `sel` instead
+//   --picks REGION        walk the flow to the ranked plant list before
+//                         shooting, picking the region whose card matches
+//                         REGION by hand (no geolocation, no network). That
+//                         page has no URL of its own — it needs a spot — so
+//                         this is the only way to photograph it. Point the
+//                         URL at `#/location` and this takes it from there.
 //
 // Exists because the Playwright CLI can't set device pixel ratio directly —
 // its iPhone device descriptors force WebKit, which isn't installed here.
@@ -45,6 +51,7 @@ const wait = Number(flag("--wait", "1500"));
 const locale = flag("--locale", "en-US");
 const fill = flag("--fill", "");
 const fillInto = flag("--fill-into", "input[type='search']");
+const picks = flag("--picks", "");
 const [url, out] = args;
 
 if (!url || !out || !(dpr > 0) || !(vw > 0) || !(vh > 0)) {
@@ -68,10 +75,32 @@ const context = await browser.newContext({
 });
 const page = await context.newPage();
 await page.goto(url, { waitUntil: "networkidle" });
+if (picks) await walkToPicks(page, picks);
 // Typed, not set: these fields listen for `input`, and assigning `.value`
 // fires nothing — the shot would show a filled box over an unfiltered list.
 if (fill) await page.locator(fillInto).first().pressSequentially(fill);
 await page.waitForTimeout(wait);
 await page.screenshot({ path: out, fullPage });
 await browser.close();
-console.log(`shot: ${url} → ${out} (${vw}x${vh} @${dpr}x, ${scheme}, ${locale}${fullPage ? ", full-page" : ""})`);
+console.log(`shot: ${url} → ${out} (${vw}x${vh} @${dpr}x, ${scheme}, ${locale}${picks ? ", ranked picks" : ""}${fullPage ? ", full-page" : ""})`);
+
+/**
+ * Walk the flow to the ranked plant list, which is the one page no URL can
+ * reach: it needs a spot. The hand-picked-region path is the one that asks
+ * nothing of the network or of geolocation permissions — pick the region whose
+ * card matches `name`, take the defaults for sun and soil, and land on
+ * `#/results` with that region's plants ranked.
+ */
+async function walkToPicks(page, name) {
+  await page.getByRole("button", { name: "pick a region" }).click();
+  await page.locator("button.choice", { hasText: name }).first().click();
+  // Sun, then soil: each step offers its choices, and the primary button
+  // carries on. Taking the first choice keeps the shot reproducible.
+  for (const step of ["#/sun", "#/confirm"]) {
+    await page.locator("button.btn-primary:visible").last().click();
+    await page.waitForURL(`**${step}`);
+    await page.locator("button.choice:visible").first().click();
+  }
+  await page.locator("button.btn-primary:visible").last().click();
+  await page.waitForURL("**#/results");
+}

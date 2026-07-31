@@ -23,41 +23,40 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
-### Fixed
+## [0.17] - 2026-07-31
 
-- **The little captions on the photo thumbnails are gone.** They tried to fit
-  "under 1 km away · seen June 2023" into a 90-pixel square, so they cut off
-  mid-word and spilled over the edge of the picture — and on a phone, which has
-  no hover, you could never see them at all. Tap a photo and the big view tells
-  you all of it, in a size you can actually read.
-- **"See it growing near you" was coming up empty for plants that are all over
-  the place.** Ask about a common oak or a maple in a town where thousands of
-  people have photographed one, and Indigene would answer that nobody had.
-  It was our fault, not iNaturalist's: instead of asking about the plant you
-  were looking at, we asked for the hundred most recent photos of *every*
-  native in your whole region and then hunted for yours among them. In a busy
-  area those hundred photos cover about a week, so any plant nobody happened to
-  photograph that week looked, to us, like a plant nobody had ever
-  photographed. Indigene now asks about one plant — the one whose page you're
-  on — and gets a real answer. Photos of a subspecies or a variety count now,
-  too; they were being thrown away, even though they're the same plant.
-- **When iNaturalist is simply busy, Indigene says so.** Every hitch used to
-  read "we couldn't reach iNaturalist", which sounds like something is broken.
-  Being asked to slow down for a minute now says that instead, so you know to
-  just try again.
-- Internal: `lib/nearby.ts` now queries iNaturalist per taxon
-  (`taxon_id=<this plant>`) and caches under `plant:<inatId>:<area>`, replacing
-  the region-wide fetch-once-and-index-by-taxon shape. That shape shared a
-  100-row page across a region's ~40 natives ordered by `observed_on desc`, so
-  coverage collapsed to the last few days in any well-observed area, and
-  descendant-rank observations were dropped by the exact-id join. `nativesOnly`
-  and `indexByTaxon` are gone — a single-taxon query makes both guarantees hold
-  by construction — and `wildlife-sightings.ts` now shares `loadSightings`
-  rather than keeping its own copy. HTTP failures throw a typed `InatError`
-  carrying the status, so 429/5xx reads as "busy" rather than "unreachable".
+**Real pages, and photos that stay**
+
+[![The tidied “See it growing near you” section on a plant's page](docs/screenshots/pr-74/thumb.png)](docs/screenshots/pr-74/after-dark.png)
+[Before](docs/screenshots/pr-74/before-dark.png) · [After](docs/screenshots/pr-74/after-dark.png)
 
 ### Added
 
+- **The preview now describes the page you actually sent.** Until now, every
+  Indigene link showed the same card, whatever it led to. Share
+  [butterfly weed](https://indigene.app/plants/asclepias-tuberosa) and the card
+  says "Butterfly Weed (Asclepias tuberosa)" and what it does for monarchs;
+  share [the Pacific Northwest](https://indigene.app/regions/pnw) or
+  [the monarch](https://indigene.app/wildlife/monarch) and you get that page's
+  own words. Every plant, every region and every creature has its own now — 261
+  pages in all. Only the picture is still the same on every link; a picture of
+  the plant itself is the next step.
+- **Found photos are a gallery now.** They used to arrive as a stack of boxes,
+  one per sighting, each with a line of small grey type under it — so four
+  photos filled the screen and three of them were words. Now every photo the
+  lookup found sits in one grid of thumbnails you can take in at a glance. Tap
+  any of them and the big view tells you who took it, the licence they share it
+  under, where and when they saw it, and links to their original record — the
+  credit moved to where you're actually looking at the picture. On a computer,
+  hovering a thumbnail shows how far away and how recent it is.
+- **Fewer words, fewer boxes, above those photos.** The paragraph explaining
+  the lookup is now one line. *My location* and the postal-code box share a
+  single row instead of taking three. The promise about your location is a
+  link — [How your location is used](https://indigene.app/#/privacy) — which
+  opens the privacy page at the section that answers it, rather than a
+  paragraph repeated on every plant page. And the button for looking a plant up
+  elsewhere just says *Where it's native* when there's only one region to
+  choose.
 - **Photos you've already seen don't download again.** Once a plant's sightings
   have loaded, the pictures are kept on your device — so coming back to that
   plant is instant, and works with no signal at all, the same way a spot you've
@@ -81,22 +80,67 @@ subtitle on the What's new page.
   `largeUrl` fetched serially at `fetchPriority = "low"`, guarded by a
   `reelToken` that goes stale on close. Verified: 6 of 6 larges pulled after
   open, nothing pulled after Escape.
-- **Found photos are a gallery now.** They used to arrive as a stack of boxes,
-  one per sighting, each with a line of small grey type under it — so four
-  photos filled the screen and three of them were words. Now every photo the
-  lookup found sits in one grid of thumbnails you can take in at a glance. Tap
-  any of them and the big view tells you who took it, the licence they share it
-  under, where and when they saw it, and links to their original record — the
-  credit moved to where you're actually looking at the picture. On a computer,
-  hovering a thumbnail shows how far away and how recent it is.
-- **Fewer words, fewer boxes, above those photos.** The paragraph explaining
-  the lookup is now one line. *My location* and the postal-code box share a
-  single row instead of taking three. The promise about your location is a
-  link — [How your location is used](https://indigene.app/#/privacy) — which
-  opens the privacy page at the section that answers it, rather than a
-  paragraph repeated on every plant page. And the button for looking a plant up
-  elsewhere just says *Where it's native* when there's only one region to
-  choose.
+
+### Fixed
+
+- **A plant's own address used to answer "page not found".** Not to you — the
+  app opened fine — but to the machines that build the little preview boxes in
+  Messages, Slack and WhatsApp. So a link to a plant either previewed as the
+  app in general or, in some apps, showed nothing but the bare address. Every
+  page Indigene invites you to share is now a real page at its own address, and
+  answers as one.
+- **"See it growing near you" was coming up empty for plants that are all over
+  the place.** Ask about a common oak or a maple in a town where thousands of
+  people have photographed one, and Indigene would answer that nobody had.
+  It was our fault, not iNaturalist's: instead of asking about the plant you
+  were looking at, we asked for the hundred most recent photos of *every*
+  native in your whole region and then hunted for yours among them. In a busy
+  area those hundred photos cover about a week, so any plant nobody happened to
+  photograph that week looked, to us, like a plant nobody had ever
+  photographed. Indigene now asks about one plant — the one whose page you're
+  on — and gets a real answer. Photos of a subspecies or a variety count now,
+  too; they were being thrown away, even though they're the same plant.
+- **When iNaturalist is simply busy, Indigene says so.** Every hitch used to
+  read "we couldn't reach iNaturalist", which sounds like something is broken.
+  Being asked to slow down for a minute now says that instead, so you know to
+  just try again.
+- **The little captions on the photo thumbnails are gone.** They tried to fit
+  "under 1 km away · seen June 2023" into a 90-pixel square, so they cut off
+  mid-word and spilled over the edge of the picture — and on a phone, which has
+  no hover, you could never see them at all. Tap a photo and the big view tells
+  you all of it, in a size you can actually read.
+- Internal: `lib/nearby.ts` now queries iNaturalist per taxon
+  (`taxon_id=<this plant>`) and caches under `plant:<inatId>:<area>`, replacing
+  the region-wide fetch-once-and-index-by-taxon shape. That shape shared a
+  100-row page across a region's ~40 natives ordered by `observed_on desc`, so
+  coverage collapsed to the last few days in any well-observed area, and
+  descendant-rank observations were dropped by the exact-id join. `nativesOnly`
+  and `indexByTaxon` are gone — a single-taxon query makes both guarantees hold
+  by construction — and `wildlife-sightings.ts` now shares `loadSightings`
+  rather than keeping its own copy. HTTP failures throw a typed `InatError`
+  carrying the status, so 429/5xx reads as "busy" rather than "unreachable".
+- Internal: `scripts/prerender.mjs` runs after `vite build` and writes
+  `dist/<route>/index.html` for all 261 shareable routes — the built shell with
+  its head metadata swapped for that page's. Titles and descriptions come from
+  the app's own English dictionary (`locales/en.ts`) so a card can't drift from
+  the page it opens; the plant descriptions are each row's `nativeNote` plus
+  `givesNote`. Each copy also gets `hreflang` alternates naming *itself*, which
+  is what `index.html`'s comment said needed per-page files. The script fails
+  the build if `index.html` grows or loses a share tag it doesn't re-emit.
+  `404.html` keeps its bounce for deep links (`/plants/<slug>/ecosystem`),
+  flow steps, and the retired `/search` address, and
+  `renderExplore`/`renderBrowse`/`renderPlants` now set a `document.title`
+  so the app and the prerendered file agree.
+
+## [0.16] - 2026-07-30
+
+**Say what the spot is for**
+
+[![The new Goals step: pick what the spot should do](docs/screenshots/pr-72/thumb.png)](docs/screenshots/pr-72/goals-after-dark.png)
+[Before](docs/screenshots/pr-72/goals-before-dark.png) · [After](docs/screenshots/pr-72/goals-after-dark.png)
+
+### Added
+
 - **Indigene asks what you want the spot to do, before it shows you plants.**
   There's a new step in the walk — **Goals** — between the soil question and
   your plant list. Pick one: *feed the most wildlife*, *butterflies & moths*,
@@ -134,93 +178,6 @@ subtitle on the What's new page.
   [home](https://indigene.app/#/) in one tap, screen readers don't announce
   any of it, and if you've asked your phone or computer to keep animations to
   a minimum, the bee simply appears beside the name without flying anywhere.
-- **Indigene speaks French.** Every word of the app — the screens, the buttons,
-  the plain-language explanations, the privacy and sources pages — is now
-  available in French as well as English. It picks your language from your
-  phone or browser the first time, and you can change it whenever you like from
-  **Réglages / Settings**, reachable from the bottom of every page.
-- **You choose your own units, whatever language you read in.** Heights,
-  rainfall and winter cold can be shown in metres and °C, or in feet and °F,
-  and the choice is completely separate from the language. A French speaker
-  gardening in Ohio can read in French and measure in feet; an American in
-  Bordeaux can read in English and measure in metres. Left alone, it simply
-  follows whatever your phone's region uses. See
-  [Settings](https://indigene.app/#/settings).
-- **Plants and animals are called by their French names.** *Quercus robur* is
-  "Chêne pédonculé", not a translation of "Pedunculate Oak" — because that's
-  the name recorded for it in France's own national reference list. The names
-  come from TAXREF (the Muséum national d'Histoire naturelle), Tela Botanica,
-  and — for North American plants that France has never needed to name — the
-  Canadian VASCAN list. Where nobody has given a plant a French name, we show
-  its scientific name rather than inventing one, and the page says so. Where
-  each name comes from is set out on the
-  [Where our numbers come from](https://indigene.app/#/sources) page.
-- **Send someone a link that opens in French.** Put `?lang=fr` on the end of any
-  Indigene address — [indigene.app/?lang=fr](https://indigene.app/?lang=fr), or
-  `indigene.app/plants/quercus-alba?lang=fr` for a particular plant — and it
-  opens in French for whoever you sent it to, no matter what language their
-  phone or computer is set to. `?lang=en` does the same for English. Indigene
-  remembers the language from then on, so the rest of their visit stays in it.
-  One thing a link will never do is overrule someone: if they have already
-  chosen a language in Indigene themselves, that choice stands and the link
-  quietly leaves it alone.
-- Search engines are now told that Indigene exists in both languages, so a
-  French-speaking searcher can be offered the French page instead of one
-  language being listed and the other hidden.
-- The size drawing, the plant cards and the "no taller than…" filters all read
-  in your units: a tree is "24 m × 21 m" or "80 ft × 70 ft", and the ruler up
-  the side of the drawing is marked in whole metres or whole feet — never in
-  the awkward converted numbers you'd get from just swapping the label.
-- **An [About page](https://indigene.app/#/about)**, linked from the bottom of
-  every page. It says why Indigene exists — most gardens are green and nearly
-  lifeless, and one native plant restarts the food web the same season — who
-  it's for, and the five things it refuses to do: never use a word it hasn't
-  explained, always show its error bars, never state a number it can't trace to
-  somebody else, never ask anything of you, and keep working where the signal
-  doesn't.
-- [Browse by wildlife](https://indigene.app/#/wildlife) now has a **"Filter by
-  name…" box** at the top, the same one the plant lists have. Type "swallow"
-  and the page keeps only the swallowtails; type "hummingbird" and you get the
-  bird and the moth named after it.
-- Each group of creatures also has **its own page** now — just the
-  [butterflies](https://indigene.app/#/wildlife/butterflies), just the
-  [moths](https://indigene.app/#/wildlife/moths), just the
-  [bees](https://indigene.app/#/wildlife/bees),
-  [birds](https://indigene.app/#/wildlife/birds), or
-  [mammals & others](https://indigene.app/#/wildlife/mammals). A row of buttons
-  hops between them, so "show me only the moths" is one tap and a link you can
-  send to someone.
-- **Pick a region on the wildlife page and see only the creatures that live
-  there.** [Browse by wildlife](https://indigene.app/#/wildlife) now has a
-  "Show the wildlife of" picker at the top. Choose the Pacific Northwest and
-  the list narrows to the 15 creatures its native plants support — and the
-  plant count on each card counts only that region's plants, so nothing on the
-  page is claiming more than it should. It works together with the group
-  buttons, so ["the butterflies of the French
-  Alps"](https://indigene.app/#/wildlife/in/france-alpine/butterflies) is a
-  page, and every combination has its own web address you can bookmark or send
-  to someone.
-- **Your plant list for a spot has the same "Filter by name…" box.** After
-  Indigene ranks the natives for where you're standing, you can type a name to
-  pull one out of the list — "oak", "milkweed", "fern" — and the part you typed
-  is underlined in green on each card that matches. It searches the *whole*
-  ranked list, not just the twenty-five cards on screen, so a plant sitting at
-  number thirty still turns up.
-- Indigene has a little seedling of its own now — two pointed leaves rising
-  from a bent stem — in your browser tab and on your home screen, instead of
-  the blank page symbol every site gets when it hasn't been given one.
-- Posting an Indigene link somewhere — a message to a friend, a group chat, a
-  social post — now shows a proper preview card with the name, a line about
-  what the app does, and the seedling, rather than a bare address or nothing at
-  all.
-- **And the preview now describes the page you actually sent.** Share
-  [butterfly weed](https://indigene.app/plants/asclepias-tuberosa) and the card
-  says "Butterfly Weed (Asclepias tuberosa)" and what it does for monarchs;
-  share [the Pacific Northwest](https://indigene.app/regions/pnw) or
-  [the monarch](https://indigene.app/wildlife/monarch) and you get that page's
-  own words. Every plant, every region and every creature has its own now — 261
-  pages in all. Only the picture is still the same on every link; a picture of
-  the plant itself is the next step.
 
 ### Changed
 
@@ -258,6 +215,11 @@ subtitle on the What's new page.
   spreads into three columns of cards instead of one phone-width ribbon down
   the middle of the screen, the way the Regions and Wildlife pages already did,
   and each card shows the regions that plant grows in.
+- **The little mark in your tab is a seedling now.** Two pointed leaves rising
+  from a bent stem, where it used to be two matching ovals on a straight bar —
+  which, shrunk to the size of a browser tab, read as a diagram of something
+  rather than a plant. It changes on your home screen too, if you've installed
+  Indigene there.
 - Internal: the app mark is redrawn as a seedling — two pointed, curved leaves
   meeting a bent stem at different heights — replacing the two symmetrical
   ellipses on a straight bar, which read as anatomy rather than botany at icon
@@ -267,6 +229,91 @@ subtitle on the What's new page.
   numbers, so the three can no longer drift apart. A leaf is the lens between
   two circular arcs and the stem is a stroked Bézier — evaluated by signed
   distance in the rasteriser, emitted as arc and curve commands in the SVG.
+
+## [0.15] - 2026-07-30
+
+**Indigene speaks French**
+
+[![The home page, in French, on a phone](docs/screenshots/pr-66/thumb.png)](docs/screenshots/pr-66/home-after-fr-dark.png)
+[Before](docs/screenshots/pr-66/home-before-fr-dark.png) · [After](docs/screenshots/pr-66/home-after-fr-dark.png)
+
+### Added
+
+- **Indigene speaks French.** Every word of the app — the screens, the buttons,
+  the plain-language explanations, the privacy and sources pages — is now
+  available in French as well as English. It picks your language from your
+  phone or browser the first time, and you can change it whenever you like from
+  **Réglages / Settings**, reachable from the bottom of every page.
+- **You choose your own units, whatever language you read in.** Heights,
+  rainfall and winter cold can be shown in metres and °C, or in feet and °F,
+  and the choice is completely separate from the language. A French speaker
+  gardening in Ohio can read in French and measure in feet; an American in
+  Bordeaux can read in English and measure in metres. Left alone, it simply
+  follows whatever your phone's region uses. See
+  [Settings](https://indigene.app/#/settings).
+- **Plants and animals are called by their French names.** *Quercus robur* is
+  "Chêne pédonculé", not a translation of "Pedunculate Oak" — because that's
+  the name recorded for it in France's own national reference list. The names
+  come from TAXREF (the Muséum national d'Histoire naturelle), Tela Botanica,
+  and — for North American plants that France has never needed to name — the
+  Canadian VASCAN list. Where nobody has given a plant a French name, we show
+  its scientific name rather than inventing one, and the page says so. Where
+  each name comes from is set out on the
+  [Where our numbers come from](https://indigene.app/#/sources) page.
+- **Send someone a link that opens in French.** Put `?lang=fr` on the end of any
+  Indigene address — [indigene.app/?lang=fr](https://indigene.app/?lang=fr), or
+  `indigene.app/plants/quercus-alba?lang=fr` for a particular plant — and it
+  opens in French for whoever you sent it to, no matter what language their
+  phone or computer is set to. `?lang=en` does the same for English. Indigene
+  remembers the language from then on, so the rest of their visit stays in it.
+  One thing a link will never do is overrule someone: if they have already
+  chosen a language in Indigene themselves, that choice stands and the link
+  quietly leaves it alone.
+- The size drawing, the plant cards and the "no taller than…" filters all read
+  in your units: a tree is "24 m × 21 m" or "80 ft × 70 ft", and the ruler up
+  the side of the drawing is marked in whole metres or whole feet — never in
+  the awkward converted numbers you'd get from just swapping the label.
+- Search engines are now told that Indigene exists in both languages, so a
+  French-speaking searcher can be offered the French page instead of one
+  language being listed and the other hidden.
+- **An [About page](https://indigene.app/#/about)**, linked from the bottom of
+  every page. It says why Indigene exists — most gardens are green and nearly
+  lifeless, and one native plant restarts the food web the same season — who
+  it's for, and the five things it refuses to do: never use a word it hasn't
+  explained, always show its error bars, never state a number it can't trace to
+  somebody else, never ask anything of you, and keep working where the signal
+  doesn't.
+- [Browse by wildlife](https://indigene.app/#/wildlife) now has a **"Filter by
+  name…" box** at the top, the same one the plant lists have. Type "swallow"
+  and the page keeps only the swallowtails; type "hummingbird" and you get the
+  bird and the moth named after it.
+- Each group of creatures also has **its own page** now — just the
+  [butterflies](https://indigene.app/#/wildlife/butterflies), just the
+  [moths](https://indigene.app/#/wildlife/moths), just the
+  [bees](https://indigene.app/#/wildlife/bees),
+  [birds](https://indigene.app/#/wildlife/birds), or
+  [mammals & others](https://indigene.app/#/wildlife/mammals). A row of buttons
+  hops between them, so "show me only the moths" is one tap and a link you can
+  send to someone.
+- **Pick a region on the wildlife page and see only the creatures that live
+  there.** [Browse by wildlife](https://indigene.app/#/wildlife) now has a
+  "Show the wildlife of" picker at the top. Choose the Pacific Northwest and
+  the list narrows to the 15 creatures its native plants support — and the
+  plant count on each card counts only that region's plants, so nothing on the
+  page is claiming more than it should. It works together with the group
+  buttons, so ["the butterflies of the French
+  Alps"](https://indigene.app/#/wildlife/in/france-alpine/butterflies) is a
+  page, and every combination has its own web address you can bookmark or send
+  to someone.
+- **Your plant list for a spot has the same "Filter by name…" box.** After
+  Indigene ranks the natives for where you're standing, you can type a name to
+  pull one out of the list — "oak", "milkweed", "fern" — and the part you typed
+  is underlined in green on each card that matches. It searches the *whole*
+  ranked list, not just the twenty-five cards on screen, so a plant sitting at
+  number thirty still turns up.
+
+### Changed
+
 - **The menu at the top of every page now says what each page holds.**
   "Explore" is now **[Regions](https://indigene.app/#/regions)** — the places
   Indigene knows, from Florida to the Piedmont — and "Search" is now
@@ -313,12 +360,6 @@ subtitle on the What's new page.
   little line under the list says the same thing in both places too ("1 of 23
   plants match “oak”."), so the two ways of looking for a plant no longer
   behave like two different features.
-- Internal: the filter box, its counting line, and the match underlining now
-  come from one shared component (`components/filter-field.ts`) used by the
-  region rosters, the wildlife index, and — for the highlighting — the search
-  page, instead of three near-copies. It holds no words of its own: every
-  sentence is passed in already translated, because a count line doesn't
-  survive being assembled from a noun slot in French.
 - **Your plants come sooner on the page.** The explanation of how the ranking
   works used to sit open above the list, so every visit began with five lines
   about method. It now lives inside **What matters most?** — the panel where
@@ -329,18 +370,19 @@ subtitle on the What's new page.
   that finally shows your plants was a way to leave it — and an offer to save a
   spot whose plants you hadn't seen yet. They now come after the list, where
   every other step in Indigene keeps its buttons.
-- Internal: `scripts/shoot.mjs` takes a `--fill` flag, so a screenshot can be
-  taken of a page whose interesting state only exists once something has been
-  typed into it, a `--picks REGION` flag that walks the flow to the ranked
-  plant list — the one page no URL can reach, because it needs a spot — and an
-  `--open SEL` flag for the panels whose content only exists once opened.
-- Internal: `filter-field.ts` splits into two shapes over one field —
-  `filterField` hides rows already on the page, `filterBox` hands the query to
-  the caller for the ranked list, which has to re-rank rather than hide.
 - The French plant descriptions for **Atlantic France** — Paris, Nantes and
   Bordeaux — are written in French. The other regions' descriptions are still
   in English while we work through them, and any page showing English text says
   so plainly rather than leaving you to notice.
+- Internal: the filter box, its counting line, and the match underlining now
+  come from one shared component (`components/filter-field.ts`) used by the
+  region rosters, the wildlife index, and — for the highlighting — the search
+  page, instead of three near-copies. It holds no words of its own: every
+  sentence is passed in already translated, because a count line doesn't
+  survive being assembled from a noun slot in French.
+- Internal: `filter-field.ts` splits into two shapes over one field —
+  `filterField` hides rows already on the page, `filterBox` hands the query to
+  the caller for the ranked list, which has to re-rank rather than hide.
 - Internal: a hand-rolled `lib/i18n.ts` (~2 KB, no dependency) over typed
   dictionaries in `app/src/locales/`. English is the key set and every other
   locale is typed against it, so a missing or misspelt key is a compile error,
@@ -362,48 +404,14 @@ subtitle on the What's new page.
   `components/prefs-controls.ts` rather than inside a screen, so the fuller
   settings screen being built separately can import them and delete the thin
   `steps/settings.ts` shell in one line.
-- Mistyping an Indigene address used to quietly drop you on the front page, as
-  though that's where you'd meant to go. Now there's a real
-  **"We couldn't find that page"** page that says what happened and offers
-  three ways back in — [the regions and their plants](https://indigene.app/#/plants),
-  [search](https://indigene.app/#/search), and
-  [browse by wildlife](https://indigene.app/#/wildlife). Links to real pages
-  still go straight through, exactly as before.
-- The app's icon had square corners with a faint ghost of a curve near them —
-  a rounding that was drawn but never actually cut out. The corners are round
-  now, on the tab icon and the one you get when you install Indigene to your
-  home screen.
-- The region cards on [Meet the natives](https://indigene.app/#/plants) no
-  longer carry a little "USDA 6b–7a" badge. Those numbers are a gardener's
-  shorthand for how cold a place gets in winter, and on a page whose only job
-  is "pick where you live" they were an answer to a question nobody had asked
-  yet. Each card now simply names its place. The badge is still on every
-  region's own page — right where you've settled on a region and started
-  asking what grows there.
-- Indigene has its own address now: **[indigene.app](https://indigene.app/)**.
-  Older links to `olivierlacan.github.io/indigene` still work — they forward to
-  the new one — and everything you saved stays where it is on your device.
+- Internal: `scripts/shoot.mjs` takes a `--fill` flag, so a screenshot can be
+  taken of a page whose interesting state only exists once something has been
+  typed into it, a `--picks REGION` flag that walks the flow to the ranked
+  plant list — the one page no URL can reach, because it needs a spot — and an
+  `--open SEL` flag for the panels whose content only exists once opened.
 
 ### Fixed
 
-- **A plant's own address used to answer "page not found".** Not to you — the
-  app opened fine — but to the machines that build the little preview boxes in
-  Messages, Slack and WhatsApp. So a link to a plant either previewed as the
-  app in general or, in some apps, showed nothing but the bare address. Every
-  page Indigene invites you to share is now a real page at its own address, and
-  answers as one.
-- Internal: `scripts/prerender.mjs` runs after `vite build` and writes
-  `dist/<route>/index.html` for all 261 shareable routes — the built shell with
-  its head metadata swapped for that page's. Titles and descriptions come from
-  the app's own English dictionary (`locales/en.ts`) so a card can't drift from
-  the page it opens; the plant descriptions are each row's `nativeNote` plus
-  `givesNote`. Each copy also gets `hreflang` alternates naming *itself*, which
-  is what `index.html`'s comment said needed per-page files. The script fails
-  the build if `index.html` grows or loses a share tag it doesn't re-emit.
-  `404.html` keeps its bounce for deep links (`/plants/<slug>/ecosystem`),
-  flow steps, and the retired `/search` address, and
-  `renderExplore`/`renderBrowse`/`renderPlants` now set a `document.title`
-  so the app and the prerendered file agree.
 - **Reading in French, being answered in English.** Several of the sentences
   Indigene writes for you personally were still coming out in English however
   the app was set. The one under every plant in a ranked list — "Sun is a good
@@ -447,6 +455,64 @@ subtitle on the What's new page.
   after a tap — the spot verdict, for one. Its `--picks` walk now finds the
   region link by `data-mode` rather than by its English label, so it works
   under `--locale` too.
+
+## [0.14] - 2026-07-29
+
+**Its own address**
+
+[![The new “We couldn't find that page” page, on a phone](docs/screenshots/pr-62/thumb.png)](docs/screenshots/pr-62/404-after-dark.png)
+[Before](docs/screenshots/pr-62/404-before-dark.png) · [After](docs/screenshots/pr-62/404-after-dark.png)
+
+### Added
+
+- Indigene has a proper little sprout icon in your browser tab now, instead of
+  the blank page symbol every site gets when it hasn't been given one.
+- Posting an Indigene link somewhere — a message to a friend, a group chat, a
+  social post — now shows a proper preview card with the name, a line about
+  what the app does, and the sprout, rather than a bare address or nothing at
+  all. For now every link shows the same card; showing the particular plant
+  you shared is coming.
+- Internal: the identifier reconcile job can now ask iNaturalist directly for
+  the taxon ids Wikidata's hand-contributed property doesn't carry. Those ids
+  are what join a plant's page to the real sightings shown on it, so a missing
+  one means "See it growing near you" quietly has nothing to show. Run it from
+  Actions → "Reconcile registry identifiers" with scope `missing-inat` (or
+  `npm run reconcile -- --missing inat`) and it opens a PR with the result; a
+  monthly schedule now runs the same gap-fill on its own, so a newly added
+  region doesn't wait on the quarterly full pass.
+- Internal: a `Registry` check on pull requests that touch plant data. It
+  rebuilds the registry to catch a committed copy drifting from the catalog,
+  and annotates the PR with per-region iNaturalist coverage — the gap that let
+  21 of the Pacific Northwest's 44 natives, and every French region, ship with
+  no taxon ids and nothing to say so. `npm run registry:check` prints the same
+  table locally.
+
+### Changed
+
+- Indigene has its own address now: **[indigene.app](https://indigene.app/)**.
+  Older links to `olivierlacan.github.io/indigene` still work — they forward to
+  the new one — and everything you saved stays where it is on your device.
+- The region cards on [Meet the natives](https://indigene.app/#/plants) no
+  longer carry a little "USDA 6b–7a" badge. Those numbers are a gardener's
+  shorthand for how cold a place gets in winter, and on a page whose only job
+  is "pick where you live" they were an answer to a question nobody had asked
+  yet. Each card now simply names its place. The badge is still on every
+  region's own page — right where you've settled on a region and started
+  asking what grows there.
+- Mistyping an Indigene address used to quietly drop you on the front page, as
+  though that's where you'd meant to go. Now there's a real
+  **"We couldn't find that page"** page that says what happened and offers
+  three ways back in — [the regions and their plants](https://indigene.app/#/plants),
+  [search](https://indigene.app/#/search), and
+  [browse by wildlife](https://indigene.app/#/wildlife). Links to real pages
+  still go straight through, exactly as before.
+- The app's icon had square corners with a faint ghost of a curve near them —
+  a rounding that was drawn but never actually cut out. The corners are round
+  now, on the tab icon and the one you get when you install Indigene to your
+  home screen.
+
+### Fixed
+
 - The first pages published at [indigene.app](https://indigene.app/) arrived as
   a bare list of blue links, with no colours, pictures, or layout. The page was
   still asking for its styles and code at the old address, which lived one
@@ -463,26 +529,6 @@ subtitle on the What's new page.
   now ships the custom domain in the artifact, `404.html` folds the whole path
   into the hash route, and the release-notes pages declare their canonical URLs
   under `indigene.app`.
-
-### Added
-
-- Internal: the identifier reconcile job can now ask iNaturalist directly for
-  the taxon ids Wikidata's hand-contributed property doesn't carry. Those ids
-  are what join a plant's page to the real sightings shown on it, so a missing
-  one means "See it growing near you" quietly has nothing to show. Run it from
-  Actions → "Reconcile registry identifiers" with scope `missing-inat` (or
-  `npm run reconcile -- --missing inat`) and it opens a PR with the result; a
-  monthly schedule now runs the same gap-fill on its own, so a newly added
-  region doesn't wait on the quarterly full pass.
-- Internal: a `Registry` check on pull requests that touch plant data. It
-  rebuilds the registry to catch a committed copy drifting from the catalog,
-  and annotates the PR with per-region iNaturalist coverage — the gap that let
-  21 of the Pacific Northwest's 44 natives, and every French region, ship with
-  no taxon ids and nothing to say so. `npm run registry:check` prints the same
-  table locally.
-
-### Fixed
-
 - Internal: reconcile no longer discards every identifier it found for a taxon
   just because neither IPNI nor World Flora Online had an entry to anchor it
   to. The anchor decides `primaryId`, not whether the rest of the bag is worth
@@ -1172,7 +1218,11 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/d81160b...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/ccd214c...HEAD
+[0.17]: https://github.com/olivierlacan/indigene/compare/5200de0...ccd214c
+[0.16]: https://github.com/olivierlacan/indigene/compare/aaa7781...5200de0
+[0.15]: https://github.com/olivierlacan/indigene/compare/318f221...aaa7781
+[0.14]: https://github.com/olivierlacan/indigene/compare/d81160b...318f221
 [0.13]: https://github.com/olivierlacan/indigene/compare/fa0dd4c...d81160b
 [0.12]: https://github.com/olivierlacan/indigene/compare/2aec57f...fa0dd4c
 [0.11]: https://github.com/olivierlacan/indigene/compare/f84450c...2aec57f

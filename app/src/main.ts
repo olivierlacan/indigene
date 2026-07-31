@@ -15,8 +15,11 @@ import { renderPlants } from "./steps/plants";
 import { renderPlant } from "./steps/plant";
 import { renderRegion } from "./steps/region";
 import { renderWildlifeIndex, renderWildlife, wildlifeRegionParam } from "./steps/wildlife";
-import { wildlifeKindRoute } from "./lib/wildlife";
+import { wildlifeKindRoute, getWildlife } from "./lib/wildlife";
 import { renderLookalikeIndex, renderLookalike, lookalikeRegionParam } from "./steps/lookalikes";
+import { getLookalike } from "./lib/lookalikes";
+import { findPlant } from "./lib/explore";
+import { REGIONS } from "./lib/plants";
 import { renderPrivacy } from "./steps/privacy";
 import { renderSources } from "./steps/sources";
 import { renderSettings } from "./steps/settings";
@@ -96,13 +99,29 @@ let cleanup: (() => void) | null = null;
  *  question it raises (`#/privacy/lookups`). */
 const PARAM_STEPS = new Set(["plants", "regions", "wildlife", "lookalikes", "settings", "privacy"]);
 
+/** Whatever sits beyond the app base in the address bar, e.g. `plants/ilex-opaca`
+ *  for `…/plants/ilex-opaca/`. Pages serves the directory index, so the trailing
+ *  slash is the browser's, not ours; the canonical form has none. */
+function pathRoute(): string {
+  const base = import.meta.env.BASE_URL;
+  if (!location.pathname.startsWith(base)) return "";
+  return location.pathname.slice(base.length).replace(/\/+$/, "");
+}
+
 /** The active route: a step key, plus a param for the `<step>/<id>` pages. */
 function currentRoute(): { step: string; param?: string } {
   // A hash query string (`#/plants?q=oak`) is the page's *state*, not its
   // identity — the plants index reads its own `?q=` — so it never takes part
   // in matching a route.
-  const hash = location.hash.replace(/^#\/?/, "").split("?")[0];
-  const [head, ...rest] = hash.split("/");
+  //
+  // With no hash at all, the path *is* the route: a canonical URL
+  // (…/plants/ilex-opaca) is a real prerendered file, and it stays in the
+  // address bar rather than being folded into the hash form. `location.hash`
+  // rather than the parsed route decides which side to read, because `#/` is a
+  // hash that means home — and on a page opened by its path, folding an empty
+  // hash route back onto the path would re-render the page you just left.
+  const raw = location.hash ? location.hash.replace(/^#\/?/, "").split("?")[0] : pathRoute();
+  const [head, ...rest] = raw.split("/");
   if (PARAM_STEPS.has(head) && rest.length) {
     return { step: head, param: decodeURIComponent(rest.join("/")) };
   }
@@ -126,21 +145,85 @@ function canonicalizeRoute(): void {
   history.replaceState(null, "", `#/plants${q ? `?q=${encodeURIComponent(q)}` : ""}`);
 }
 
+/** The index pages `scripts/prerender.mjs` writes a file for. `settings` is
+ *  absent on purpose — it's the one screen with no address worth sending. */
+const PRERENDERED_INDEXES = new Set([
+  "plants", "regions", "browse", "wildlife", "lookalikes", "privacy", "sources", "about",
+]);
+
 /**
- * Canonical plant URLs are real paths (…/plants/<slug>) so they read well and
- * share cleanly, but the app routes on the hash. Online, GitHub Pages serves
- * 404.html for those paths and it redirects here; offline, the service worker
- * answers the navigation with the cached shell directly. Either way, fold any
- * path beyond the app base into the equivalent hash route on boot.
+ * The canonical address of a route, when it has one: the real path that
+ * `scripts/prerender.mjs` wrote a file for, or null.
+ *
+ * Only those pages can be previewed. An unfurler — Slack, iMessage, Facebook —
+ * is a plain HTTP fetch, and a `#…` fragment is *never sent to a server*: ask
+ * for `…/#/plants/asclepias-tuberosa` and the server is asked for `/`, so the
+ * card that comes back describes the site, whatever the link led to. The path
+ * form is a real document with the plant's own title and words in its head.
+ *
+ * Everything else is deliberately absent. The flow steps have no file (they
+ * mean nothing without the draft held in memory), and neither do the
+ * sub-routes — `#/wildlife/in/<region>`, `#/settings/units`,
+ * `#/privacy/lookups` — which are a filter or a scroll position on a page
+ * rather than a page. Null leaves those in the hash form, which is right:
+ * it's the only address that reloads them.
  */
-function normalizePathRoute(): void {
-  const base = import.meta.env.BASE_URL;
-  const extra = location.pathname.startsWith(base)
-    ? location.pathname.slice(base.length)
-    : "";
-  if (extra && !location.hash) {
-    history.replaceState(null, "", base + "#/" + extra.replace(/\/+$/, ""));
+function canonicalPath(step: string, param?: string): string | null {
+  if (!param) return PRERENDERED_INDEXES.has(step) ? step : null;
+  const at = (id: string): string => `${step}/${encodeURIComponent(id)}`;
+  switch (step) {
+    case "plants":
+      return findPlant(param).length ? at(param) : null;
+    case "regions":
+      return REGIONS.some((r) => r.meta.id === param) ? at(param) : null;
+    // Both an animal (`…/wildlife/monarch`) and a group (`…/wildlife/bees`).
+    case "wildlife":
+      return getWildlife(param) || wildlifeKindRoute(param) ? at(param) : null;
+    case "lookalikes":
+      return getLookalike(param) ? at(param) : null;
+    default:
+      return null;
   }
+}
+
+/**
+ * Put the address bar on the canonical address of the page being shown.
+ *
+ * This is not tidiness, it's the share card. The Share control already hands
+ * out the path form (`plantShareUrl`), but most people copy the address bar —
+ * or use the browser's own share sheet, which copies it for them. While the app
+ * rewrote every path it was handed into `…/#/plants/<slug>`, *opening* a good
+ * link was enough to destroy it: the recipient's address bar then held the one
+ * form that cannot preview, and anything re-shared from there showed the
+ * generic site card instead of the plant. Now both forms agree, and the URL you
+ * copy is the URL that unfurls.
+ *
+ * A page's `?q=` state rides along in the search string once the hash is gone,
+ * which is where `…/plants?q=oak` reads it from (steps/plants.ts) — but only
+ * for as long as that page is on screen. A query written into the hash is part
+ * of the link being followed and is always honoured; a query already sitting in
+ * the search string is the *previous* page's, because a browser keeps the
+ * search when only the hash changes. Carrying that one across a route change is
+ * how the plants index's search leaked onto the plant it opened, leaving
+ * `…/plants/asclepias-tuberosa?q=butterfly%20weed` in the address bar.
+ */
+let syncedRoute: string | null = null;
+function syncAddressBar(step: string, param?: string): void {
+  const base = import.meta.env.BASE_URL;
+  const path = canonicalPath(step, param);
+  const key = param ? `${step}/${param}` : step;
+  // The first sync of a page load has no previous route, so its search string
+  // is the address that was asked for, not residue.
+  const ownsSearch = syncedRoute === null || syncedRoute === key;
+  syncedRoute = key;
+
+  const at = location.hash.indexOf("?");
+  const query = at >= 0 ? location.hash.slice(at) : ownsSearch ? location.search : "";
+  const want = path === null ? `${base}${query}${location.hash}` : `${base}${path}${query}`;
+  if (location.pathname + location.search + location.hash !== want) {
+    history.replaceState(history.state, "", want);
+  }
+  routedHref = location.href;
 }
 
 function renderStepRail(active: string): void {
@@ -234,7 +317,10 @@ function updateSiteNav(step: string): void {
 async function route(): Promise<void> {
   canonicalizeRoute();
   const { step, param } = currentRoute();
+  // Before `syncAddressBar` — the trail helpers read `location.hash` to see
+  // where the reader is heading, and canonicalizing takes the hash away.
   if (cleanup) { cleanup(); cleanup = null; }
+  syncAddressBar(step, param);
   closeAppMenu(); // a navigation always dismisses an open header menu
   closeTermDialog(); // …and any explain-this dialog, which would float above the new page
   resetUntranslated(); // whatever the last page admitted to isn't this page's
@@ -274,7 +360,29 @@ function landAtTop(): void {
   main.focus({ preventScroll: true });
 }
 
-window.addEventListener("hashchange", route);
+/**
+ * A navigation happened — from a link, from `location.hash =`, or from the back
+ * and forward buttons.
+ *
+ * Both events, because neither covers everything. A link or a programmatic hash
+ * assignment fires `hashchange` alone. But a back or forward step between two
+ * addresses that differ by *path* — which two canonical URLs now do — changes
+ * no hash at all, so it fires `popstate` alone: without it, going back from the
+ * wildlife index to the plant you came from moved the address bar and left the
+ * old page on screen.
+ *
+ * A hash traversal fires both, so `routedHref` guards against drawing the same
+ * page twice. `syncAddressBar` updates it as well, because it rewrites the
+ * address mid-route and the second event of a pair arrives after that.
+ */
+let routedHref = "";
+function onNavigation(): void {
+  if (location.href === routedHref) return;
+  routedHref = location.href;
+  void route();
+}
+window.addEventListener("hashchange", onNavigation);
+window.addEventListener("popstate", onNavigation);
 
 /**
  * A header link pointing at the section you're already in is a same-URL
@@ -282,11 +390,17 @@ window.addEventListener("hashchange", route);
  * nothing at all — so tapping "Wildlife" halfway down the wildlife index just
  * ignores you. Treat that click as what it plainly means: take me back to the
  * top of this page.
+ *
+ * The link is `#/wildlife` and the page you're on may be showing `/wildlife`,
+ * so "already here" is checked against both forms — otherwise tapping the
+ * section you're in on a page opened by its canonical path would push the hash
+ * form back into the address bar and redraw the page to say so.
  */
 document.querySelector(".site-nav")?.addEventListener("click", (e) => {
   const link = (e.target as Element | null)?.closest("a[href^='#']");
   if (!link) return;
-  if (link.getAttribute("href") !== location.hash) return;
+  const href = link.getAttribute("href");
+  if (href !== location.hash && href !== `#/${pathRoute()}`) return;
   e.preventDefault();
   landAtTop();
 });
@@ -315,11 +429,11 @@ function rerenderAll(): void {
 }
 
 async function boot(): Promise<void> {
-  normalizePathRoute();
   // `?lang=fr` has already been read (i18n picks it up as it loads); this takes
   // it back out of the address bar. It has to happen before the first route(),
-  // because 404.html hands us the path form as `#/plants/<slug>?lang=fr` and
-  // that query would otherwise be read as part of the slug.
+  // because 404.html hands an address it bounced to the hash side of the URL —
+  // `#/wildlife/in/pnw?lang=fr` — and that query would otherwise be read as
+  // part of the route.
   consumeLangParam();
   applyDocumentLang();
   renderChrome();

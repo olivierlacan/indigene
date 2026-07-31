@@ -123,7 +123,7 @@ subtitle on the What's new page.
   spreading sideways, a climber a shoot with the curled tendril it grabs on
   with. The little pictures beside a region's category headings are bigger too,
   so they read next to the words instead of hiding beside them. See them on
-  [any region's page](https://indigene.app/#/regions/france-atlantic).
+  [any region's page](https://indigene.app/regions/france-atlantic).
 - Internal: `silhouetteFor` in `components/plant-card.ts` now renders a table of
   parts (filled masses, stems stroked at one weight) rather than a single path
   per form with a per-form fill/stroke switch, and the stem weight scales below
@@ -131,6 +131,42 @@ subtitle on the What's new page.
   `scripts/gen-form-glyphs.mjs` — edit there and paste its output back over
   `FORM_GLYPHS`. `steps/region.ts` takes a size for `formIcon`, and passes 24
   for section headings against 17 for chips.
+
+### Fixed
+
+- **The link you copy is now the link that shows the plant.** Every plant,
+  region and creature already had its own preview — the little card with a
+  title and a picture that Messages, WhatsApp, Slack or Facebook show when you
+  paste a link. It only ever worked for addresses like
+  [indigene.app/plants/asclepias-tuberosa](https://indigene.app/plants/asclepias-tuberosa),
+  and the address bar never showed you one of those: it showed
+  `indigene.app/#/plants/asclepias-tuberosa`, with a `#` in the middle.
+  Everything after a `#` stays on your own device and is never sent to the
+  website, so a link copied from the address bar arrived with no way of knowing
+  which page you meant, and the card fell back to the plain "Indigene" one.
+  Opening a good link was enough to spoil it — the app swapped the address for
+  the `#` version the moment the page finished loading. Now it keeps the
+  sendable address, so copying from the address bar, using your phone's share
+  button, and tapping Indigene's own 🔗 all send the same working link.
+- **A few saved links no longer land on "we couldn't find that page."** Opening
+  [Language](https://indigene.app/settings/language) or
+  [Units](https://indigene.app/settings/units) from a bookmark showed the
+  not-found page instead of the setting, and so did a link to the
+  [look-alikes](https://indigene.app/lookalikes) of one particular region.
+- Internal: `main.ts` reads the path as a route alongside the hash and keeps the
+  canonical one in the address bar (`pathRoute`, `canonicalPath`,
+  `syncAddressBar`) instead of folding every path into the hash form on boot
+  (`normalizePathRoute`, removed). Canonicalization is limited to routes
+  `scripts/prerender.mjs` actually wrote a file for, so flow steps and
+  sub-routes (`#/wildlife/in/<region>`, `#/settings/units`) keep the hash — the
+  only address that reloads them. A `popstate` listener joins `hashchange`,
+  because a back step between two path addresses changes no hash and used to
+  move the address bar while leaving the old page on screen; `routedHref` keeps
+  a hash traversal, which fires both, from rendering twice. The plants index's
+  `?q=` moved to the search string and is dropped on a route change rather than
+  trailing onto the page it opened. `public/404.html`'s `ROUTES` had drifted
+  from `STEPS` — `priorities`, `lookalikes`, `settings` and `about` were
+  missing.
 
 ## [0.17] - 2026-07-31
 

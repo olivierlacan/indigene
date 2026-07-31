@@ -21,9 +21,15 @@
 // what it feeds.
 //
 // The body is untouched — these are the same single-page app, and `main.ts`
-// (`normalizePathRoute`) folds the path into the equivalent hash route on boot,
-// exactly as it already did for the 404.html bounce. Nothing here renders the
-// page's content; this is metadata, not server-side rendering.
+// reads the path as a route (`currentRoute`) the way it reads the hash.
+// Nothing here renders the page's content; this is metadata, not server-side
+// rendering.
+//
+// The app then *keeps* that address rather than folding it into the hash form
+// (`syncAddressBar`), which is what makes these files worth writing: the URL a
+// reader copies out of the address bar is the one with a file behind it, and so
+// the one that previews as the page. A `#…` fragment is never sent to a server,
+// so a hash address can only ever fetch the site root and show its card.
 //
 // public/404.html still matters, and still redirects: deep links below a page
 // (…/plants/<slug>/ecosystem, …/wildlife/in/<region>) and the flow steps aren't

@@ -1,19 +1,37 @@
-// Renders one ranked plant. Every number is broken out and explained — the
-// ecosystem score is never a black box, honesty flags are prominent, and the
-// site-match reasoning is spelled out in plain words.
+// Renders one ranked plant, as a card in the list of picks for a spot.
+//
+// It used to be the whole plant: the stat grid, the to-scale drawing, all seven
+// score bars, the care notes, the confidence and its citation — twenty-five
+// times over, so reaching the tenth plant meant scrolling past nine essays. And
+// the card was a dead end: everything it could ever say, it said right there,
+// because there was nowhere to go.
+//
+// Now there is. Every card is a door to the plant's own page — the whole card,
+// via a link stretched over it — so this one only has to carry what you need in
+// order to decide whether to open it:
+//
+//   - who it is (name, badges),
+//   - whether it suits this spot, and why, in plain words,
+//   - what it looks like grown up, in one line,
+//   - what it gives, in one line,
+//   - and its wildlife value, with the two components *your* goals weighted
+//     most heavily — the tie between the ranking and the choice you made.
+//
+// Everything cut from here is on the plant page, one tap away, in full.
 import type { Ranked } from "../lib/ranking";
 import type { Plant, Weights } from "../types";
 import { el } from "../ui";
-import { drawSizeViz } from "./size-viz";
-import { statGrid } from "./stat-card";
-import { SCORE_KEYS, scoreLabel, bloomSentence, confidencePlain, growthPlain, moistureWord, SOURCES_ROUTE } from "../lib/plain";
-import { citation } from "./citation";
+import { SCORE_KEYS, scoreLabel, bloomSentence } from "../lib/plain";
 import { keystoneIcon } from "./keystone-icon";
 import { t, fmtNumber, fmtList } from "../lib/i18n";
-import { length, humanHeightLabel } from "../lib/units";
-import { nameLines, commonName } from "../lib/names";
+import { length } from "../lib/units";
+import { nameLines } from "../lib/names";
 import { highlight } from "./filter-field";
 import { prose } from "../lib/prose";
+
+/** A component has to be worth something on its own before we call the plant
+ *  "strongest for" it — a weighted 12 out of 100 is not a selling point. */
+const STRENGTH_FLOOR = 45;
 
 /**
  * @param nq A normalized filter query to underline in the card's two name
@@ -38,90 +56,79 @@ export function plantCard(r: Ranked, weights: Weights, nq = ""): HTMLElement {
   ]);
 
   const names = nameLines(p);
+  // The name is the link, and CSS stretches it over the whole card (see
+  // `.plant-pick`), so the card is one big target with one accessible name
+  // rather than a grid of things to aim at. Nothing else in the card is
+  // interactive, which is what makes that safe.
+  //
+  // It ends in the same green chevron a section heading wears (see
+  // `components/section-link.ts`) — the app's one mark for "this leads
+  // somewhere", drawn at rest because a phone has no hover. Its own element
+  // rather than a `::after`, because the link's `::after` is the overlay that
+  // stretches it across the card.
   const head = el("div", { class: "plant-head" }, [
     el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
     el("div", {}, [
-      el("h3", { class: "plant-name" }, highlight(names.title, nq)),
+      el("h3", { class: "plant-name" }, [
+        el("a", { class: "plant-pick-link", href: `#/plants/${p.id}` }, [
+          ...highlight(names.title, nq),
+          el("span", { class: "pick-chevron", "aria-hidden": "true" }),
+        ]),
+      ]),
       el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" },
         highlight(names.sub, nq)),
       badges,
     ]),
   ]);
 
-  // Site-match summary.
+  // Site-match summary — the reason this plant is at this height in the list.
   const matchWord = t(`match.${r.match}` as const);
   const match = el("div", { class: `note ${r.match === "good" ? "info" : r.match === "ok" ? "warn" : "danger"}` }, [
     el("strong", {}, matchWord),
     el("ul", { style: "margin:0.4rem 0 0; padding-left:1.1rem;" }, r.reasons.map((why) => el("li", {}, why))),
   ]);
 
-  // To-scale size viz.
-  const canvas = el("canvas", { class: "size-viz", role: "img", "aria-label": sizeAria(p) });
-  // Draw after it's in the DOM (needs clientWidth); scheduled via microtask.
-  queueMicrotask(() => drawSizeViz(canvas, p));
-  const sizeCaption = el("div", { class: "size-caption" }, [
-    `${t("card.sizeCaption", {
-      human: humanHeightLabel(),
-      height: length(p.matureHeightFt),
-      spread: length(p.matureSpreadFt),
-    })} ${growthPlain(p)}`,
+  // Grown-up size and bloom in one line, in place of the stat grid, the
+  // to-scale drawing and the bloom paragraph. All three are on the plant page.
+  const meta = el("p", { class: "pick-meta" }, [
+    t("card.sizeShort", { height: length(p.matureHeightFt), spread: length(p.matureSpreadFt) }),
+    " ",
+    bloomSentence(p.bloom),
   ]);
 
-  // Transparent score breakdown (weighted total shown, then each part). The
-  // bars stay compact here — what each score means is spelled out once, on the
-  // plant's own profile page, not repeated on all 25 cards.
-  const scoreParts = SCORE_KEYS.map((key) => {
-    const val = (p.scores as unknown as Record<string, number>)[key];
-    const w = (weights as unknown as Record<string, number>)[key];
-    const label = scoreLabel(key);
-    return el("li", { class: "score-item" }, [
-      el("div", { class: "score-head" }, [
-        el("span", {}, [
-          el("span", { "aria-hidden": "true" }, `${label.icon} `),
-          label.name + (w >= 4 ? ` ${t("card.weightedHigh")}` : ""),
-        ]),
-        el("span", {}, `${fmtNumber(val)}${key === "host" ? ` · ${t("card.hostSpecies", { n: fmtNumber(p.hostLepCount) })}` : ""}`),
-      ]),
-      el("div", { class: "score-bar" }, [el("span", { style: `width:${val}%` })]),
-    ]);
-  });
-
-  const scores = el("div", {}, [
-    el("p", { style: "font-weight:700;margin:0 0 0.2rem" }, t("card.whyRanks", { score: fmtNumber(r.ecoScore) })),
-    el("ul", { class: "score-list" }, scoreParts),
+  // Wildlife value, and what earned it *under this reader's goals*. Weighting
+  // butterflies heavily and then being shown a bar chart of all seven scores
+  // never said which of them put this plant here; naming the top two does.
+  const strengths = strongestFor(p, weights);
+  const value = el("p", { class: "pick-value" }, [
+    el("strong", {}, t("card.ecoValue", { score: fmtNumber(r.ecoScore) })),
+    ...(strengths.length ? [" ", t("card.strongFor", { list: fmtList(strengths) })] : []),
   ]);
 
-  const bloom = bloomSentence(p.bloom);
-
-  const body = el("div", { class: "plant-body" }, [
-    el("p", { class: "kv" }, [el("span", { class: "k" }, t("card.gives")), prose(p, "givesNote")]),
-    el("p", { class: "kv" }, [el("span", { class: "k" }, t("card.needs")), prose(p, "careNote")]),
-    el("p", { class: "kv" }, [
-      el("span", { class: "k" }, t("card.bloomMoisture")),
-      `${bloom} ${t("card.prefersSoil", { bands: fmtList(p.moisture.map(moistureWord)) })}`,
-    ]),
-    scores,
-    el("p", { class: "confidence" }, [
-      el("strong", {}, t("card.confidence", { level: t(`confidence.word.${p.confidence}` as const) })),
-      confidencePlain(p.confidence),
-      " ",
-      el("span", {}, [
-        t("card.source"),
-        ...citation(p.basis),
-        " ",
-        el("a", { href: SOURCES_ROUTE }, t("card.howSure")),
-      ]),
-    ]),
+  return el("article", { class: "plant plant-pick" }, [
+    head,
+    match,
+    meta,
+    el("p", { class: "pick-gives" }, prose(p, "givesNote")),
+    value,
   ]);
-
-  return el("article", { class: "plant" }, [head, match, statGrid(p), canvas, sizeCaption, body]);
 }
 
-function sizeAria(p: Plant): string {
-  const parts = p.size.map((s) =>
-    t("card.sizeAriaPart", { year: s.year, height: length(s.heightFt) })
-  );
-  return t("card.sizeAria", { name: commonName(p), parts: parts.join(", ") });
+/**
+ * The two components that contributed most to this plant's rank — score times
+ * weight, so a thing the reader turned off can never be named, and a thing they
+ * turned up gets named the moment the plant is actually good at it.
+ */
+function strongestFor(p: Plant, weights: Weights): string[] {
+  return SCORE_KEYS.map((key) => ({
+    key,
+    value: p.scores[key],
+    weight: weights[key],
+  }))
+    .filter((c) => c.weight > 0 && c.value >= STRENGTH_FLOOR)
+    .sort((a, b) => b.value * b.weight - a.value * a.weight)
+    .slice(0, 2)
+    .map((c) => `${scoreLabel(c.key).icon} ${scoreLabel(c.key).name}`);
 }
 
 // A simple drawn silhouette so a card is meaningful offline with no photo.

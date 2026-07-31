@@ -28,7 +28,7 @@ uncertainty; no gamification.
 
 | Question from the brief | Decision | Why |
 |---|---|---|
-| **Framework** | **None.** Vanilla TS + DOM + real web APIs, bundled by Vite. Zero runtime deps. | Per direction ("Do not use React… respect the DOM"). Keeps the bundle ~240 KB gzipped and the code legible. |
+| **Framework** | **None.** Vanilla TS + DOM + real web APIs, bundled by Vite. Zero runtime deps. | Per direction ("Do not use React… respect the DOM"). Keeps the bundle ~250 KB gzipped and the code legible. |
 | **Sky scan tech** | `getUserMedia` + `DeviceOrientationEvent` on a `<canvas>` overlay — **not** WebXR. | WebXR doesn't work in iOS Safari. |
 | **Sun math** | Local NOAA solar-position implementation (no API), integrated against the horizon mask. | Works fully offline; no dependency. |
 | **License** | **MIT.** | A civic tool on public data should maximize reuse; AGPL's network-copyleft would deter the land trusts / extension offices / other apps we want integrating. |
@@ -85,7 +85,8 @@ Transparent and re-weightable. Final position = **eco-score × site-fit**:
       region still needs, and where the data for it comes from, is in
       [`docs/coverage-plan.md`](docs/coverage-plan.md)
 - [x] Ranked results with the to-scale size visualization (human silhouette)
-- [x] Re-weightable ranking sliders + presets
+- [x] Goals asked before the list: named presets that say what they favour,
+      per-benefit sliders that read in words, and a live preview of who leads
 - [x] Offline + installable (hand-written service worker, web manifest, icons)
 - [x] Saved spots in IndexedDB (local-first, no account)
 - [x] Hanami site-data proxy API (optional; PWA works without it)

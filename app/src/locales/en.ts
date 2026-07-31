@@ -63,6 +63,7 @@ export const en = {
   "steps.spot": "Spot",
   "steps.sun": "Sun",
   "steps.soil": "Soil",
+  "steps.goals": "Goals",
   "steps.plants": "Plants",
   "steps.saved": "Saved",
   "steps.browse": "Browse",
@@ -336,7 +337,7 @@ export const en = {
   "confirm.wet": "Wet",
   "confirm.deciduous": "Trees overhead that drop their leaves in winter (makes the spot sunnier in spring/fall).",
   "confirm.back": "Back",
-  "confirm.next": "See my plants →",
+  "confirm.next": "Set my goals →",
   "confirm.kvLabel": "{k}: ",
   "confirm.ribbonTitle": "🤲 The 60-second soil check",
   "confirm.ribbon1": "Grab a small handful of soil and dampen it so it's moist but not dripping.",
@@ -541,9 +542,10 @@ export const en = {
   "match.poor": "Poor match — here's why",
   "card.sizeCaption":
     "Drawn to scale beside a {human} person. Eventually reaches about {height} tall and {spread} wide.",
-  "card.weightedHigh": "★ (you're weighting this high)",
   "card.hostSpecies": "{n} species",
-  "card.whyRanks": "🦋 Why it ranks here — eco value {score}/100",
+  "card.sizeShort": "Grows to about {height} tall and {spread} wide.",
+  "card.ecoValue": "🦋 Wildlife value {score}/100.",
+  "card.strongFor": "Counts most here: {list}.",
   // Two forms of one sentence. Which is used depends on whether the month
   // that follows starts with a vowel — English doesn't care and defines both
   // identically, French elides ("de avril" is not a thing anyone writes).
@@ -557,8 +559,6 @@ export const en = {
   "card.confidence": "Confidence: {level}. ",
   "card.source": "Source: ",
   "card.howSure": "How sure are we? →",
-  "card.sizeAria": "Size of {name} over time — {parts}.",
-  "card.sizeAriaPart": "year {year}: {height} tall",
   "confidence.word.high": "high",
   "confidence.word.medium": "medium",
   "confidence.word.low": "low",
@@ -646,21 +646,53 @@ export const en = {
   "color.yellow": "yellow",
 
   // ---------------------------------------------------------------------
+  // Goals — the step that asks what you want the spot to do, before any list
+  // is shown. Its whole job is to make the ranking legible, so every string
+  // here explains rather than labels.
+  // ---------------------------------------------------------------------
+  "priorities.title": "What matters most here?",
+  "priorities.lede":
+    "The plant list is ranked, not random — and you decide what it's ranked for. Pick a goal below and watch the leaders change; you can come back and change it any time.",
+  "priorities.whyTitle": "How does the ranking work?",
+  "priorities.why":
+    "Each plant's wildlife value — caterpillars hosted, pollinators and birds fed, rain soaked up — is weighed by how much you say each of those matters, and then set against how well the plant fits this spot's sun, moisture and winter cold. A wonderful plant in the wrong place still ranks low, and every card says why.",
+  "priorities.pickTitle": "Pick a goal",
+  "priorities.custom": "your own mix",
+  "priorities.tuneSummary": "⚖️ Fine-tune each one",
+  "priorities.tuneLede":
+    "Seven things a plant can do, and how much each should count. Slide one to nothing and it stops affecting the order at all; slide it to the top and plants good at it rise. The leaders above update as you go.",
+  "priorities.sliderAria": "How much this matters: {name}",
+  "priorities.previewTitle": "Leading right now",
+  "priorities.previewCount": "{good} of {n} plants are a good or workable match for this spot.",
+  "priorities.allZero":
+    "Everything is set to zero, so nothing is being weighed — the list below is in no particular order. Turn at least one thing up.",
+  "priorities.back": "Back",
+  "priorities.backToList": "← Your plants",
+  "priorities.next": "See the plants →",
+
+  // ---------------------------------------------------------------------
+  // "Yes, that did something" — what the list says after every recompute.
+  // ---------------------------------------------------------------------
+  "rerank.same": "Recomputed — the order didn't change.",
+  "rerank.lead": "Recomputed — {name} now leads.",
+  "rerank.moved.one": "Recomputed — 1 plant changed place.",
+  "rerank.moved.other": "Recomputed — {n} plants changed places.",
+  "rerank.set.one": "Recomputed — {n} plant matches now.",
+  "rerank.set.other": "Recomputed — {n} plants match now.",
+
+  // ---------------------------------------------------------------------
   // Results.
   // ---------------------------------------------------------------------
   "results.title": "Plants for this spot",
   "results.regionTag": "📍 {region}",
   "results.regionTagPick": "📍 {region} — your pick, not measured from a location",
-  "results.whyTitle": "How does this ranking work?",
-  "results.why":
-    "Each plant's wildlife value — caterpillars hosted, pollinators and birds fed, rain soaked up — is weighed against how well it fits this spot's sun, moisture, and winter cold. Nothing is a black box: every plant's score is broken out right on its card.",
   "results.count": "{n} native plants {fit} — {good} are a good or workable match. Best matches first.",
   "results.fitClimate": "fit this spot's climate",
   "results.fitList": "are in this region's list",
   "results.noneFiltered":
     "No plants in the {region} list pass every filter you set. Try loosening a filter — the size limits are the usual culprit.",
   "results.noneHardy": "No plants in the {region} seed list are hardy at this spot's winter temperature.",
-  "results.showingTop": "Showing the top {n}. Adjust the sliders above to resurface the rest.",
+  "results.showingTop": "Showing the top {n}. Type a name to find one further down, or change what this list is ranked for.",
   "results.filterAria": "Filter these picks by plant name",
   "results.filterPlaceholder": "Filter by name…",
   "results.filterCount.one": "{shown} of {total} plants match “{q}”.",
@@ -668,10 +700,9 @@ export const en = {
   "results.filterNone": "Nothing here matches — ",
   "results.filterSearchAll": "search every region",
   "results.filterNoneRest": " instead.",
-  "results.sliderAria": "Importance of: {name}",
-  "results.weightsSummary": "⚖️ What matters most?",
-  "results.done": "Done — show the plants",
-  "results.resorted": "Re-sorted for: {name}",
+  "results.rankedFor": "Ranked for: ",
+  "results.changeGoal": "Change",
+  "results.changeGoalAria": "Change what this list is ranked for",
   "results.matchedTo": "Matched to: ",
   "results.sunSummary": "{label} (~{hours} h of sun)",
   "results.mesicSoil": "evenly moist soil ({link} in plant guides)",
@@ -688,12 +719,27 @@ export const en = {
   "results.saved": "Saved to this device.",
   "results.privacy":
     "A saved spot stays on this device only — it never reaches a server, because there isn't one",
-  "preset.balanced": "Balanced",
+  "preset.default": "Feed the most wildlife",
+  "preset.default.sub":
+    "Caterpillars first, then bees and birds — the plants the most animals depend on. This is where the app starts if you don't choose.",
+  "preset.balanced": "A bit of everything",
+  "preset.balanced.sub": "No single benefit leads: wildlife, rain and easy care all count about the same.",
   "preset.butterflies": "Butterflies & moths",
+  "preset.butterflies.sub": "Leaves their caterpillars can actually eat, and flowers for the adults.",
   "preset.birds": "Birds",
+  "preset.birds.sub": "Berries, seeds and cover — plus the caterpillars that feed their young.",
   "preset.erosion": "Stop erosion",
+  "preset.erosion.sub": "Deep, gripping roots for a slope, a bank or bare ground that keeps washing away.",
   "preset.rain": "Soak up rain",
+  "preset.rain.sub": "Plants that drink standing water and runoff — a wet corner, a downspout, a rain garden.",
   "preset.easiest": "Easiest to grow",
+  "preset.easiest.sub": "Tough and forgiving: the best odds of surviving with no watering and little fuss.",
+  "weight.word.0": "ignore it",
+  "weight.word.1": "barely counts",
+  "weight.word.2": "counts a little",
+  "weight.word.3": "counts normally",
+  "weight.word.4": "counts a lot",
+  "weight.word.5": "counts most of all",
   "filter.summary": "🔍 Filters",
   "filter.noWater": "🌾 Survives with zero watering (guerrilla mode)",
   "filter.deer": "🦌 Deer tend to leave it alone",
@@ -785,6 +831,8 @@ export const en = {
   // ---------------------------------------------------------------------
   "plant.docTitle": "{name} ({latin}) — Indigene",
   "plant.more": "← More natives",
+  "plant.backToList": "← Back to your plant list",
+  "plant.backToListShort": "← Your plants",
   "plant.sizeAria": "Size of {name} over time",
   "plant.nativeTo": "📍 Native to: ",
   "plant.whyBelongs": "Why it belongs here: ",

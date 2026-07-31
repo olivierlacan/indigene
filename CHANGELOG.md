@@ -106,11 +106,12 @@ subtitle on the What's new page.
   is underlined in green on each card that matches. It searches the *whole*
   ranked list, not just the twenty-five cards on screen, so a plant sitting at
   number thirty still turns up.
-- Indigene has a proper little sprout icon in your browser tab now, instead of
+- Indigene has a little seedling of its own now — two pointed leaves rising
+  from a bent stem — in your browser tab and on your home screen, instead of
   the blank page symbol every site gets when it hasn't been given one.
 - Posting an Indigene link somewhere — a message to a friend, a group chat, a
   social post — now shows a proper preview card with the name, a line about
-  what the app does, and the sprout, rather than a bare address or nothing at
+  what the app does, and the seedling, rather than a bare address or nothing at
   all. For now every link shows the same card; showing the particular plant
   you shared is coming.
 
@@ -136,6 +137,15 @@ subtitle on the What's new page.
   spreads into three columns of cards instead of one phone-width ribbon down
   the middle of the screen, the way the Regions and Wildlife pages already did,
   and each card shows the regions that plant grows in.
+- Internal: the app mark is redrawn as a seedling — two pointed, curved leaves
+  meeting a bent stem at different heights — replacing the two symmetrical
+  ellipses on a straight bar, which read as anatomy rather than botany at icon
+  sizes. `scripts/gen-icons.mjs` is now the only place the geometry lives: it
+  rasterises the PNG icons *and* writes the vector copies (`public/favicon.svg`
+  and the block between the `mark:` markers in `public/404.html`) from the same
+  numbers, so the three can no longer drift apart. A leaf is the lens between
+  two circular arcs and the stem is a stroked Bézier — evaluated by signed
+  distance in the rasteriser, emitted as arc and curve commands in the SVG.
 - **The menu at the top of every page now says what each page holds.**
   "Explore" is now **[Regions](https://indigene.app/#/regions)** — the places
   Indigene knows, from Florida to the Piedmont — and "Search" is now

@@ -23,7 +23,7 @@
 // Priority is by *reader*, not by alphabet: the four French regions are
 // translated first, because those are the plants a French speaker standing in
 // France will actually be handed.
-import type { Plant, SupportLink, Wildlife } from "../types";
+import type { Lookalike, LookalikeLink, Plant, SupportLink, TellApart, Wildlife } from "../types";
 import { getLang } from "./i18n";
 import { PROSE_FR } from "../locales/prose.fr";
 
@@ -41,6 +41,16 @@ export interface TaxonProse {
   /** Wildlife ties, keyed by the *other* end of the tie — a plant's entry keys
    *  its notes by `wildlifeId`, so one plant's ties live together. */
   supportNotes?: Record<string, string>;
+  /** Look-alikes only: where the impostor is really from (`Lookalike.origin`).
+   *  Keyed, like `blurb`, under the impostor's own scientific name — an
+   *  impostor is a taxon like any other, and one that happens to be native
+   *  somewhere we cover (common ivy, holly, Douglas-fir) simply has both kinds
+   *  of writing under the one key. Nothing collides: a plant row never uses
+   *  `blurb` or `origin`, and a look-alike never uses `givesNote`. */
+  origin?: string;
+  /** Look-alike ties, keyed by the *other* end of the tie — the impostor's id —
+   *  exactly as `supportNotes` is, so one plant's mix-ups live together. */
+  lookalikeNotes?: Record<string, { why?: string; tells?: TellApart[] }>;
 }
 
 export type ProseTable = Record<string, TaxonProse>;
@@ -71,6 +81,53 @@ export function wildlifeBlurb(w: Wildlife): string {
 /** The plant-specific "why this animal cares about this plant" line. */
 export function supportNote(plantLatin: string, link: SupportLink): string {
   return entry(plantLatin)?.supportNotes?.[link.wildlifeId] ?? link.note;
+}
+
+// ---- Look-alikes ----
+// The impostor's own two paragraphs are keyed under its scientific name; the
+// tie's writing (why they're mixed up, and the tells) is keyed under the native
+// plant, because that's the page it appears on and the direction it was written
+// in. A locale that translates one and not the other is fine — every getter
+// falls back to the authored English on its own.
+
+export function lookalikeBlurb(l: Lookalike): string {
+  return entry(l.latin)?.blurb ?? l.blurb;
+}
+
+export function lookalikeOrigin(l: Lookalike): string {
+  return entry(l.latin)?.origin ?? l.origin;
+}
+
+export function lookalikeWhy(plantLatin: string, link: LookalikeLink): string {
+  return entry(plantLatin)?.lookalikeNotes?.[link.lookalikeId]?.why ?? link.why;
+}
+
+/** The tells in the reader's language — all of them or none, never a table
+ *  half in each language, which would be harder to read than plain English. */
+export function lookalikeTells(plantLatin: string, link: LookalikeLink): TellApart[] {
+  const translated = entry(plantLatin)?.lookalikeNotes?.[link.lookalikeId]?.tells;
+  return translated?.length === link.tells.length ? translated : link.tells;
+}
+
+/**
+ * Is any of the look-alike writing on this page still in the English it was
+ * authored in? Asked of the whole section at once, the way `wildlifeUntranslated`
+ * is: the reader needs to know the page mixes languages, not which paragraph.
+ */
+export function lookalikesUntranslated(
+  plantLatin: string,
+  items: { lookalike: Lookalike; link: LookalikeLink }[],
+): boolean {
+  if (getLang() === "en" || !items.length) return false;
+  const notes = entry(plantLatin)?.lookalikeNotes;
+  return items.some(({ lookalike, link }) => {
+    const tie = notes?.[link.lookalikeId];
+    return (
+      entry(lookalike.latin)?.blurb === undefined ||
+      tie?.why === undefined ||
+      tie?.tells?.length !== link.tells.length
+    );
+  });
 }
 
 /**

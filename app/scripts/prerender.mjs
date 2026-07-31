@@ -204,12 +204,13 @@ function headMeta({ title, description, path }) {
  * sentences the row already carries.
  */
 async function collectPages(load) {
-  const [{ en }, { REGIONS, loadPlants }, { WILDLIFE }, { KIND_ORDER, KIND_SLUGS }] =
+  const [{ en }, { REGIONS, loadPlants }, { WILDLIFE }, { KIND_ORDER, KIND_SLUGS }, { lookalikeIndex }] =
     await Promise.all([
       load("/src/locales/en.ts"),
       load("/src/lib/plants.ts"),
       load("/src/data/wildlife.ts"),
       load("/src/lib/wildlife.ts"),
+      load("/src/lib/lookalikes.ts"),
     ]);
 
   const pages = [];
@@ -228,6 +229,8 @@ async function collectPages(load) {
   }));
   add("browse", en["browse.docTitle"], en["browse.lede"]);
   add("wildlife", en["wildlife.indexDocTitle"], fill(en["wildlife.indexLede"], { n: WILDLIFE.length }));
+  const impostors = lookalikeIndex();
+  add("lookalikes", en["lookalikes.indexDocTitle"], fill(en["lookalikes.indexLede"], { n: impostors.length }));
   add("privacy", en["privacy.docTitle"], en["privacy.lede"]);
   add("sources", en["sources.docTitle"], en["sources.lede"]);
   add("about", en["about.docTitle"], en["about.lede"]);
@@ -262,6 +265,17 @@ async function collectPages(load) {
   for (const w of WILDLIFE) {
     add(`wildlife/${w.id}`, fill(en["wildlife.docTitle"], { animal: w.common }), w.blurb);
   }
+  // --- one page per impostor ---
+  // Shareable for the same reason a plant is: "that tree in your yard is a
+  // Callery pear, and here's how I know" is a link somebody sends someone.
+  for (const row of impostors) {
+    add(
+      `lookalikes/${row.lookalike.id}`,
+      fill(en["lookalikes.docTitle"], { name: row.lookalike.common }),
+      `${row.lookalike.origin} ${row.lookalike.blurb}`
+    );
+  }
+
   for (const kind of KIND_ORDER) {
     add(
       `wildlife/${KIND_SLUGS[kind]}`,

@@ -11,6 +11,7 @@ import { manualSunEstimate } from "../lib/solar";
 import { findPlant, assessSpot, plantShareUrl } from "../lib/explore";
 import type { PlantEntry, Suitability } from "../lib/explore";
 import { wildlifeForPlant, relianceOf } from "../lib/wildlife";
+import { lookalikesForPlant } from "../lib/lookalikes";
 import { supportLabel } from "../lib/plain";
 import { supportIcon } from "../components/support-icon";
 import { SCORE_KEYS, scoreLabel, bloomSentence, confidencePlain, growthPlain, moistureWord, propagationMethod, PROPAGATION_SOURCE_URL, SOURCES_ROUTE } from "../lib/plain";
@@ -26,7 +27,7 @@ import type { Plant, SiteData, SunEstimate, SupportKind } from "../types";
 import { t, fmtNumber, fmtList } from "../lib/i18n";
 import { length, humanHeightLabel } from "../lib/units";
 import { commonName, nameLines, regionName } from "../lib/names";
-import { prose, propagationNote, isUntranslated } from "../lib/prose";
+import { prose, propagationNote, isUntranslated, lookalikesUntranslated } from "../lib/prose";
 import { reportUntranslated } from "../components/wip-banner";
 
 // The anchorable sections below the profile share one deep-link scheme:
@@ -58,7 +59,12 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
 
   // Some of the catalog's writing is still in English (see lib/prose). Reported,
   // not rendered — main.ts puts the banner at the top of the page.
-  if (isUntranslated(plant)) reportUntranslated(t("wip.plant"));
+  // The look-alike writing is part of the same promise: a page that is otherwise
+  // fully in the reader's language mustn't quietly grow an English section.
+  const allLookalikes = entries.flatMap((e) => lookalikesForPlant(e.region.meta.id, e.plant.id));
+  if (isUntranslated(plant) || lookalikesUntranslated(plant.latin, allLookalikes)) {
+    reportUntranslated(t("wip.plant"));
+  }
 
   // Arrived by tapping a card in the ranked list for a spot? Then this page is
   // a detour, and a detour needs a way back — at the top, before the reading,
@@ -139,6 +145,7 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
         ]),
       ]),
       el("p", { class: "kv", style: "margin-top:0.75rem" }, [el("span", { class: "k" }, t("plant.whyBelongs")), prose(p, "nativeNote")]),
+      lookalikeLine(all),
       statGrid(p),
       canvas,
       el("div", { class: "size-caption" }, [
@@ -504,6 +511,39 @@ function whoItFeeds(entries: PlantEntry[]): HTMLElement | null {
         ])
       )
     ),
+  ]);
+}
+
+/**
+ * "Don't confuse it with" — one line, high on the page, and nothing more.
+ *
+ * The comparison itself lives on the impostor's own page (`steps/lookalikes.ts`):
+ * an impostor is shared across plants and regions, so spelling out every tell
+ * here would repeat the same shrub on a dozen plant pages and push this plant's
+ * own story below the fold. What belongs *here* is the warning and the way
+ * through — the names, so a reader recognises the one they're holding, and a
+ * link to how to tell them apart.
+ *
+ * A plant native to two regions shows the union of its impostors, deduped: a
+ * mix-up doesn't stop being true one state over.
+ */
+function lookalikeLine(all: PlantEntry[]): HTMLElement | null {
+  const seen = new Map<string, string>(); // id → name to show
+  for (const e of all) {
+    for (const { lookalike } of lookalikesForPlant(e.region.meta.id, e.plant.id)) {
+      if (!seen.has(lookalike.id)) seen.set(lookalike.id, commonName(lookalike));
+    }
+  }
+  if (!seen.size) return null;
+  return el("p", { class: "kv lookalike-line" }, [
+    el("span", { class: "k" }, [
+      el("span", { "aria-hidden": "true" }, "🕵️ "),
+      t("plant.lookalikesTitle"),
+    ]),
+    ...[...seen].flatMap(([id, name], i) => [
+      i > 0 ? " · " : null,
+      el("a", { href: `#/lookalikes/${id}` }, name),
+    ]),
   ]);
 }
 

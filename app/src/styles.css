@@ -1872,6 +1872,124 @@ details.weights {
   margin: 0.15rem 0 0;
 }
 
+/* --- Look-alikes ---------------------------------------------------------
+   The comparison lives on the impostor's own page; a plant page keeps one line
+   (`.lookalike-line`). On the comparison, the two sides are colour-coded and
+   marked with a left rule rather than laid out as a table: a three-column table
+   at 360 px is four words per line. Each tell stacks (feature, then the native,
+   then the impostor) on a phone and pairs up side by side once there's room. */
+.lookalike-line {
+  margin-top: 0.4rem;
+}
+.lookalike-card .lookalike-head {
+  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: start;
+}
+/* The name takes the slack and the badge keeps its size, so a long name wraps
+   inside its own column instead of pushing the badge onto a line of its own. */
+.lookalike-card .lookalike-head h4 {
+  flex: 1 1 8rem;
+  min-width: 0;
+}
+.lookalike-card .lookalike-head .badge {
+  flex: none;
+  margin-top: 0.15rem;
+}
+.lookalike-card .lookalike-latin {
+  margin-top: 0.1rem;
+}
+/* The name is the link, and the ::after stretches its hit area over the whole
+   card — the same trick the wildlife cards use, so a card behaves like a card
+   rather than like a paragraph with a blue word in it. */
+.lookalike-card {
+  position: relative;
+  height: 100%;
+  margin: 0;
+}
+.lookalike-card:hover {
+  border-color: var(--line-strong);
+}
+.lookalike-card .lookalike-head h4 a {
+  color: inherit;
+  text-decoration: none;
+}
+.lookalike-card .lookalike-head h4 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+}
+/* …but the badge has to stay above that overlay, or its tooltip is unreachable. */
+.lookalike-card .lookalike-head .badge {
+  position: relative;
+  z-index: 1;
+}
+.lookalike-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+.lookalike-head h4 {
+  margin: 0;
+  font-size: 1.02rem;
+}
+.lookalike-latin {
+  margin: 0.1rem 0 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+.tells {
+  margin-top: 0.5rem;
+}
+.tell {
+  margin: 0.55rem 0;
+}
+.tell-feature {
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.2rem;
+}
+.tell-side {
+  display: block;
+  font-size: 0.92rem;
+  padding: 0.35rem 0.6rem;
+  border-left: 4px solid var(--line-strong);
+  border-radius: 0 calc(var(--radius) - 8px) calc(var(--radius) - 8px) 0;
+  margin-bottom: 0.25rem;
+}
+.tell-side.is-native {
+  border-left-color: var(--good);
+  background: var(--brand-bg);
+}
+.tell-side.is-impostor {
+  border-left-color: var(--warn-ink);
+  background: var(--warn-bg);
+  color: var(--warn-ink);
+}
+.tell-who {
+  font-weight: 700;
+  display: block;
+}
+@media (min-width: 32rem) {
+  .tell {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.35rem;
+  }
+  .tell-feature {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
+  .tell-side {
+    margin-bottom: 0;
+  }
+}
+
 .match {
   font-weight: 700;
 }

@@ -15,6 +15,7 @@ import { renderPlant } from "./steps/plant";
 import { renderRegion } from "./steps/region";
 import { renderWildlifeIndex, renderWildlife, wildlifeRegionParam } from "./steps/wildlife";
 import { wildlifeKindRoute } from "./lib/wildlife";
+import { renderLookalikeIndex, renderLookalike, lookalikeRegionParam } from "./steps/lookalikes";
 import { renderPrivacy } from "./steps/privacy";
 import { renderSources } from "./steps/sources";
 import { renderSettings } from "./steps/settings";
@@ -48,6 +49,9 @@ const STEPS: Record<string, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = {
   // The index takes a wildlife *kind*, not a route param — `#/wildlife` alone
   // is the whole catalog; the grouped pages come through `renderWildlife`.
   wildlife: { fn: (m) => renderWildlifeIndex(m), labelKey: "steps.wildlife", inFlow: false },
+  // The impostors. `#/lookalikes` alone is the whole index; a param is either
+  // one impostor or `in/<region>`, and `renderLookalike` tells them apart.
+  lookalikes: { fn: (m) => renderLookalikeIndex(m), labelKey: "steps.lookalikes", inFlow: false },
   privacy: { fn: renderPrivacy, labelKey: "steps.privacy", inFlow: false },
   sources: { fn: renderSources, labelKey: "steps.sources", inFlow: false },
   settings: { fn: renderSettings, labelKey: "steps.settings", inFlow: false },
@@ -66,6 +70,7 @@ const PARAM_RENDERERS: Record<string, StepFn> = {
   plants: renderPlant,
   regions: renderRegion,
   wildlife: renderWildlife,
+  lookalikes: renderLookalike,
   settings: renderSettings,
   privacy: renderPrivacy,
 };
@@ -81,7 +86,7 @@ let cleanup: (() => void) | null = null;
  *  which is what makes the footer's two links land in two different places —
  *  and so does `privacy`, so a control can link to the section that answers the
  *  question it raises (`#/privacy/lookups`). */
-const PARAM_STEPS = new Set(["plants", "regions", "wildlife", "settings", "privacy"]);
+const PARAM_STEPS = new Set(["plants", "regions", "wildlife", "lookalikes", "settings", "privacy"]);
 
 /** The active route: a step key, plus a param for the `<step>/<id>` pages. */
 function currentRoute(): { step: string; param?: string } {
@@ -153,6 +158,7 @@ const SECTION_OF: Record<string, string> = {
   browse: "regions",
   regions: "regions",
   plants: "plants",
+  lookalikes: "plants",
   wildlife: "wildlife",
   saved: "menu",
   settings: "menu",
@@ -174,7 +180,7 @@ function sectionOf(step: string): string | undefined {
  * columns (see `.card-grid`): Explore's region cards, the region rosters, the
  * plants index, and the wildlife index.
  */
-const WIDE_STEPS = new Set(["plants", "regions", "wildlife"]);
+const WIDE_STEPS = new Set(["plants", "regions", "wildlife", "lookalikes"]);
 
 function updateLayout(step: string, param?: string): void {
   // Only the parameter-less index of each: `#/plants/<slug>` is a profile and
@@ -186,7 +192,8 @@ function updateLayout(step: string, param?: string): void {
     WIDE_STEPS.has(step) &&
     (!param ||
       step === "regions" ||
-      (step === "wildlife" && (!!wildlifeKindRoute(param) || wildlifeRegionParam(param) !== null)));
+      (step === "wildlife" && (!!wildlifeKindRoute(param) || wildlifeRegionParam(param) !== null)) ||
+      (step === "lookalikes" && lookalikeRegionParam(param) !== null));
   document.body.dataset.layout = wide ? "wide" : "narrow";
 }
 

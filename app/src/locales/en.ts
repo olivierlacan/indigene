@@ -849,6 +849,65 @@ export const en = {
   "plant.ecosystemTitle": "🦋 What it does for the ecosystem",
   "plant.wildlifeItBrings": "Wildlife it brings in: ",
   "plant.soleTie": "This plant is the only option {name} has — a make-or-break tie.",
+  // The look-alike section. "Impostor" is deliberately about the mix-up and not
+  // about the plant's character: some of these are serious invasives, some are
+  // ordinary garden plants that simply aren't from here, and one or two are
+  // natives that happen to be dangerous. The status word carries that
+  // difference so the copy doesn't have to scold.
+  "lookalike.whyMixedUp": "Why they get mixed up: ",
+  "lookalike.tellsSource": "How to tell them apart: ",
+  "lookalike.seeOnInat": "Photos on iNaturalist ↗",
+  "lookalike.status.invasive": "Invasive here",
+  "lookalike.status.introduced": "Not from here",
+  "lookalike.status.native": "Native here too",
+  "lookalike.statusPlain.invasive":
+    "Brought here, and it spreads into wild places on its own, at a cost to what was already there.",
+  "lookalike.statusPlain.introduced":
+    "Brought here and planted. Not known to spread on its own — it simply isn't the plant the local wildlife grew up with.",
+  "lookalike.statusPlain.native":
+    "Grows here wild, just like the plant it's confused with. The mix-up still matters.",
+  "lookalike.nativeElsewhere": "It's a genuine native somewhere — {link}.",
+  "lookalike.nativeElsewhereLink": "we recommend it on our {region} list",
+  "lookalike.coverageNote":
+    "These are the mix-ups we've written up, not every plant that could be confused with this one. If you're unsure about something in front of you, photograph it and ask iNaturalist — real people identify them.",
+  // ---------------------------------------------------------------------
+  // Browse-by-impostor: the look-alike index and each impostor's own page.
+  // ---------------------------------------------------------------------
+  "plants.lookalikesLink": "Not sure what you're looking at? Some plants get bought and planted in place of a native — {link}.",
+  "plants.lookalikesLinkText": "see the look-alikes we've written up",
+  "steps.lookalikes": "Look-alikes",
+  "lookalikes.indexTitle": "Plants that get mistaken for natives",
+  "lookalikes.indexDocTitle": "Look-alikes — plants mistaken for natives — Indigene",
+  "lookalikes.regionDocTitle": "Look-alikes in {region} — Indigene",
+  "lookalikes.docTitle": "{name} — what it's mistaken for — Indigene",
+  "lookalikes.indexLede":
+    "{n} plants that get bought, planted and photographed in place of a native. Open one to see, side by side, what tells it apart from the real thing.",
+  "lookalikes.indexLedeRegion":
+    "{n} of them turn up in {region}. Open one to see, side by side, what tells it apart from the native it stands in for.",
+  "lookalikes.notAllVillains": "Not all of these are villains. ",
+  "lookalikes.notAllVillainsRest":
+    "Some spread into wild places and cost us something. Some are ordinary garden plants that simply aren't from here. One or two grow here wild, like the plant they're confused with — and the mix-up still matters, because one of them can kill you. The label on each says which.",
+  "lookalikes.mistakenFor": "Mistaken for: ",
+  "lookalikes.mistakenForHere": "Mistaken for, here: ",
+  "lookalikes.mistakenForHeading": "Mistaken for {name}",
+  "lookalikes.whereItsFrom": "Where it's really from: ",
+  "lookalikes.originSource": "Source: ",
+  "lookalikes.seeTheNative": "See the native's page",
+  "lookalikes.backToIndex": "← All look-alikes",
+  "lookalikes.more": "See other look-alikes",
+  "lookalikes.browseNatives": "Browse the natives",
+  "lookalikes.regionFilterLabel": "Where",
+  "lookalikes.regionFilterAll": "Every region ({n})",
+  "lookalikes.filterAria": "Filter look-alikes by name",
+  "lookalikes.filterPlaceholder": "Filter by name…",
+  "lookalikes.filterCount.one": "{shown} of {total} matches \u201c{q}\u201d.",
+  "lookalikes.filterCount.other": "{shown} of {total} match \u201c{q}\u201d.",
+  "lookalikes.filterNone": "No look-alike here matches \u201c{q}\u201d. ",
+  "lookalikes.filterSearchPlants": "Search the plants instead",
+  "lookalikes.filterNoneRest": " — it may be one of the natives.",
+  "lookalikes.notFoundTitle": "We don't know that one",
+  "lookalikes.notFoundLede": "No look-alike here has the address \u201c{slug}\u201d.",
+  "plant.lookalikesTitle": "Don't confuse it with: ",
   "plant.propagationTitle": "🪴 How to grow more",
   "plant.forThisPlant": "For this plant: ",
   "plant.howToSource": "How-to source: ",

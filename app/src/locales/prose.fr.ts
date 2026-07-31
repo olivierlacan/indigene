@@ -76,6 +76,17 @@ export const PROSE_FR: ProseTable = {
       "Des corymbes crème pour les abeilles et les syrphes au printemps, puis de lourdes grappes de baies orange vif que grives mauvis, litornes, merles et jaseurs dépouillent tout l'automne.",
     propagationNote:
       "Écrasez les baies mûres, rincez bien la graine et faites-lui passer un hiver froid et humide (un semis dehors à l'automne convient très bien). La levée peut être irrégulière : gardez le pot un second printemps avant de renoncer.",
+    lookalikeNotes: {
+      "robinia-pseudoacacia": {
+        why: "Tous deux portent une feuille découpée en de nombreuses folioles sur un même pétiole, et tous deux poussent sur les mêmes friches et bords de route.",
+        tells: [
+          { feature: "Folioles", native: "Dentées sur tout leur pourtour, comme une petite lame de scie.", lookalike: "À bord lisse et ovale, avec une minuscule échancrure au bout." },
+          { feature: "Épines", native: "Aucune.", lookalike: "Deux courtes épines raides à la base de chaque feuille, sur les jeunes pousses." },
+          { feature: "Fleurs", native: "Des corymbes crème de multitudes de petites fleurs, en mai.", lookalike: "Des grappes pendantes de fleurs blanches en forme de pois, très parfumées, fin mai." },
+          { feature: "Fruits", native: "Des grappes de baies orange vif que les grives dépouillent à l'automne.", lookalike: "Des gousses brunes et plates qui claquent dans les branches tout l'hiver." },
+        ],
+      },
+    },
   },
   "Carpinus betulus": {
     nativeNote:
@@ -140,6 +151,17 @@ export const PROSE_FR: ProseTable = {
       "Ses petites fleurs printanières nourrissent les abeilles, ses baies d'hiver sont une nourriture tardive essentielle pour grives et merles, son couvert dense et piquant abrite les oiseaux au dortoir et au nid toute l'année, et c'est la principale plante nourricière de l'azuré des nerpruns.",
     propagationNote:
       "Par les baies c'est très lent — la graine nettoyée peut demander deux ou trois hivers dehors avant de lever. La plupart des gens prélèvent plutôt des boutures semi-aoûtées à la fin de l'été, qui s'enracinent lentement mais sûrement sous châssis ombragé.",
+    lookalikeNotes: {
+      "prunus-laurocerasus": {
+        why: "Deux persistants luisants employés pour la même haie — et le laurier-palme est ce dont la plupart des haies de jardin sont faites aujourd'hui.",
+        tells: [
+          { feature: "Bord de la feuille", native: "Dur et ondulé, armé de piquants (les feuilles hautes en perdent souvent).", lookalike: "Plat et coriace, finement denté ou lisse — jamais piquant." },
+          { feature: "Taille de la feuille", native: "À peu près la longueur d'un pouce.", lookalike: "À peu près la longueur d'une main." },
+          { feature: "Froissez une feuille", native: "Pas d'odeur particulière.", lookalike: "Une odeur vive d'amande amère — c'est du cyanure." },
+          { feature: "Fruits", native: "Des baies écarlates en hiver, sur les pieds femelles.", lookalike: "Des cerises noires en fin d'été, le long d'épis dressés." },
+        ],
+      },
+    },
   },
   "Cornus sanguinea": {
     nativeNote:
@@ -234,6 +256,17 @@ export const PROSE_FR: ProseTable = {
       "Ses tubes parfumés du soir sont faits pour les papillons de nuit à longue trompe (et nourrissent les bourdons ainsi que le moro-sphinx, actif de jour), c'est la plante nourricière du petit sylvain, et ses baies rouges d'automne nourrissent fauvettes et grives.",
     propagationNote:
       "Prélevez des boutures semi-aoûtées en été, ou couchez une tige basse sur la terre pour qu'elle s'enracine au point de contact. La graine tirée des baies demande un nettoyage puis un hiver froid et humide avant de lever.",
+    lookalikeNotes: {
+      "lonicera-japonica": {
+        why: "Deux chèvrefeuilles volubiles, aux fleurs crème virant au jaune et au même parfum sucré du soir.",
+        tells: [
+          { feature: "Où sont les fleurs", native: "Toutes réunies en une tête à l'extrémité de la pousse.", lookalike: "Par paires à l'aisselle des feuilles, tout le long de la tige." },
+          { feature: "Couleur des fleurs", native: "Crème à l'intérieur, lavées de rouge pourpre à l'extérieur.", lookalike: "Blanches virant au jaune beurre, sans aucun rouge." },
+          { feature: "Fruits", native: "Une grappe serrée de baies rouges.", lookalike: "Des baies noires, par deux." },
+          { feature: "En hiver", native: "Nue, ou presque.", lookalike: "Encore feuillée." },
+        ],
+      },
+    },
   },
   "Hedera helix": {
     nativeNote:
@@ -264,5 +297,29 @@ export const PROSE_FR: ProseTable = {
       "Ses grandes frondes arquées offrent un couvert toute l'année et retiennent la litière de feuilles sur une pente ombragée, abritant grenouilles, coléoptères et autre petite faune. Les fougères nourrissent très peu de chenilles — celle-ci est retenue pour sa structure à l'ombre et sa lutte contre l'érosion, pas pour sa valeur alimentaire.",
     propagationNote:
       "On peut l'élever à partir des spores qui mûrissent au dos des frondes, mais c'est lent et délicat. Bien plus facile : déterrez une touffe installée au printemps et séparez la souche en éclats, chacun avec des racines et quelques frondes.",
+  },
+
+  // -------------------------------------------------------------------------
+  // Les sosies (`data/lookalikes.ts`) que croisent les pages ci-dessus. Une
+  // plante imposteur est un taxon comme un autre : elle est rangée ici sous son
+  // nom scientifique, avec les deux paragraphes qui la décrivent. Les
+  // différences à repérer, elles, appartiennent à la page où elles s'affichent
+  // et vivent dans l'entrée de la plante indigène concernée.
+  // -------------------------------------------------------------------------
+  "Robinia pseudoacacia": {
+    origin:
+      "Indigène des Appalaches, en Amérique du Nord ; planté en Europe depuis les années 1600.",
+    blurb:
+      "En France on l'appelle « acacia », il donne le miel du même nom, et c'est l'un des arbres exotiques envahissants les plus répandus d'Europe. Chaque racine coupée renvoie des rejets, et l'azote que ses racines apportent aux sols pauvres change la terre elle-même : ce sont les orties et les ronces qui suivent, et non la prairie qui était là.",
+  },
+  "Prunus laurocerasus": {
+    origin: "Indigène des Balkans, de Turquie et des rivages de la mer Noire.",
+    blurb:
+      "La haie persistante par défaut de la moitié de l'Europe. Les oiseaux emportent ses fruits noirs jusque dans les bois, où il forme un sous-étage sombre et dense que rien ne traverse. Froissées ou broyées, ses feuilles dégagent du cyanure — raison pour laquelle ses déchets de taille ne doivent jamais approcher un animal.",
+  },
+  "Lonicera japonica": {
+    origin: "Indigène d'Asie de l'Est.",
+    blurb:
+      "La liane au parfum sucré dont les enfants arrachent les fleurs pour en goûter la goutte de nectar. Elle garde ses feuilles l'hiver, s'enroule assez serré pour étrangler ce qu'elle escalade et recouvre des sous-bois entiers — l'une des lianes envahissantes les plus répandues de l'est des États-Unis, et en progression dans l'ouest de l'Europe.",
   },
 };

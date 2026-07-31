@@ -16,7 +16,8 @@
     "registry:build": "node scripts/build-registry.mjs",
     "registry:check": "node scripts/check-registry.mjs",
     "reconcile": "node scripts/reconcile.mjs",
-    "names:check": "node scripts/check-vernacular.mjs"
+    "names:check": "node scripts/check-vernacular.mjs",
+    "lookalikes:check": "node scripts/check-lookalikes.mjs"
   },
   "devDependencies": {
     "playwright": "^1.62.0",

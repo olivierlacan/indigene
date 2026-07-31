@@ -76,7 +76,11 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   "settings.title": "Réglages",
   "settings.lede":
-    "Deux choix indépendants : la langue dans laquelle vous lisez, et les unités dans lesquelles vous mesurez. Toutes les combinaisons sont possibles.",
+    "La façon dont l'application se lit, et ce qu'elle retient de vous — le tout gardé sur cet appareil.",
+  "settings.readingTitle": "La lecture",
+  "settings.memoryTitle": "Ce que cet appareil retient",
+  "settings.memoryLede":
+    "Tout ce qui suit est enregistré dans ce navigateur et nulle part ailleurs. Vous pouvez en effacer n'importe quelle partie quand vous voulez.",
   "settings.language": "Langue",
   "settings.languageHelp":
     "Change tous les mots de l'application. Les noms de plantes et d'animaux suivent aussi, chaque fois qu'une liste nationale nous donne le nom dans votre langue.",
@@ -93,6 +97,39 @@ export const fr: Dict = {
     "Les noms de plantes et d'animaux viennent de la liste nationale de référence de chaque pays, pas d'une traduction automatique — {link}.",
   "settings.namesNoteLink": "voir d'où vient chaque nom",
   "settings.done": "Terminé",
+
+  // ---------------------------------------------------------------------
+  // Les trois choses retenues, en fiches de réglages.
+  // ---------------------------------------------------------------------
+  "memory.spotTitle": "Votre dernier endroit",
+  "memory.spotLede":
+    "Là où vous étiez la dernière fois, pour ne pas tout recommencer. Les réponses sur le soleil et le sol n'appartiennent qu'à cet endroit-là : ailleurs, la question est reposée, parce que la réponse y est vraiment différente.",
+  "memory.spotEmpty":
+    "Rien pour l'instant. Dès que vous aurez trouvé un endroit, il vous attendra ici — et la prochaine visite commencera par lui plutôt que par une carte vierge.",
+  "memory.spotWhere": "Endroit",
+  "memory.spotWhereCoords": "{lat}, {lon}",
+  "memory.spotWhereRegion": "{region} (choisie à la main, sans point sur la carte)",
+  "memory.spotSun": "Soleil",
+  "memory.spotSoil": "Humidité du sol",
+  "memory.spotPrivacy":
+    "Cet endroit ne vit que sur cet appareil — il n'en sort jamais, et nous ne pouvons pas le voir",
+  "memory.spotUse": "Repartir d'ici",
+  "memory.unanswered": "Pas encore répondu",
+  "memory.forget": "Oublier",
+  "memory.forgotten": "Oublié.",
+  "memory.regionTitle": "Région de départ",
+  "memory.regionLede":
+    "Si vous connaissez déjà votre coin, partez de là et sautez complètement l'étape de la carte.",
+  "memory.regionAuto": "La déduire de l'endroit où je suis",
+  "memory.regionAutoSub": "La façon habituelle : votre endroit décide de la liste de plantes.",
+  "memory.regionShowAll": "Afficher toutes les régions",
+  "memory.regionSet": "Enregistré — vous partirez d'ici.",
+  "memory.regionCleared": "De nouveau déduite de votre endroit.",
+  "memory.goalTitle": "Objectif du classement",
+  "memory.goalLede":
+    "Ce qui décide de l'ordre de chaque nouvelle liste de plantes. Vous le changez à l'étape des objectifs, où vous voyez l'ordre bouger en direct.",
+  "memory.goalResetBtn": "Revenir à l'objectif habituel",
+  "memory.goalReset": "Retour à l'objectif habituel.",
 
   // ---------------------------------------------------------------------
   // Accueil.
@@ -231,6 +268,11 @@ export const fr: Dict = {
   "location.regionLede":
     "Si vous savez déjà dans laquelle de nos régions — ou dans quelle écorégion — vous vous trouvez, vous pouvez sauter la carte. À savoir : sans point sur la carte, nous ne pouvons pas consulter votre sol, votre pluviométrie ni le froid de vos hivers. Vous répondrez donc vous-même aux questions de soleil et d'humidité, et la liste s'appuiera sur ce que vous nous direz.",
   "location.regionShowAll": "Ce n'est pas celle-ci ? Afficher toutes les régions",
+  "location.spotRemembered": "Le repère est là où vous l'aviez laissé — {link}.",
+  "location.rememberedLink": "gérer ce qui est retenu",
+  "location.regionDefault": "Votre région de départ — {link}.",
+  "location.regionDefaultLink": "la changer dans les Réglages",
+  "location.regionRemembered": "La région choisie la dernière fois — {link}.",
   "location.switchFromGps": "Vous ne voulez pas utiliser votre position ? {a} ou {b}.",
   "location.switchFromOther": "Vous avez changé d'avis ? {a} ou {b}.",
   "location.switchZip": "cherchez votre commune",
@@ -262,6 +304,8 @@ export const fr: Dict = {
   "sun.fromScan": "Mesuré à partir de votre balayage du ciel.",
   "sun.fromPickWithScan": "D'après votre choix rapide — balayez le ciel ci-dessous pour une estimation plus fine.",
   "sun.fromPick": "D'après votre choix rapide.",
+  "sun.remembered":
+    "Votre réponse pour cet endroit la dernière fois. Touchez-en une autre pour la changer.",
   "sun.next": "Suite : vérifier le sol et le climat →",
   "sun.deciduous": "🍂 Des arbres au-dessus qui perdent leurs feuilles ?",
   "sun.deciduousSub":
@@ -346,6 +390,8 @@ export const fr: Dict = {
   "confirm.moistureWhyTitle": "Pourquoi ne pas simplement amender le sol ?",
   "confirm.moistureWhy":
     "Les indigènes sont déjà adaptées au sol que vous avez : le sable sec, l'argile lourde, les creux détrempés ont chacun leurs spécialistes. L'astuce est de choisir la plante qui convient au sol, pas de charrier des amendements pour convenir à la plante. Répondez honnêtement et les bonnes remonteront d'elles-mêmes.",
+  "confirm.moistureRemembered":
+    "Votre réponse pour cet endroit la dernière fois. Touchez-en une autre pour la changer.",
   "confirm.dry": "Sec",
   "confirm.mesic": "Frais, jamais détrempé",
   "confirm.wet": "Humide",

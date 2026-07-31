@@ -1,5 +1,5 @@
 import { el, clear, toast } from "../ui";
-import { navigate, store } from "../state";
+import { navigate, store, rememberDraftSpot } from "../state";
 import {
   OrientationSensor,
   requestOrientationPermission,
@@ -156,6 +156,11 @@ export function renderScan(main: HTMLElement): () => void {
       deciduousOverhead: store.draft.deciduousOverhead,
       source: "scan",
     });
+    // A scan measures this exact point, which is precisely why it's worth
+    // keeping: it's stored against the coordinates it was taken at and comes
+    // back only for them.
+    store.draft.recalled.sun = false;
+    rememberDraftSpot();
     cleanup();
     toast(t("scan.updated"));
     navigate("sun");

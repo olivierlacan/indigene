@@ -1,5 +1,5 @@
 import { el, clear } from "../ui";
-import { navigate, store } from "../state";
+import { navigate, store, rememberDraftSpot } from "../state";
 import { manualSunEstimate } from "../lib/solar";
 import { sunPlain } from "../lib/plain";
 import { sunIcon } from "../components/sun-icon";
@@ -39,6 +39,11 @@ export function renderSun(main: HTMLElement): void {
         s.source === "scan"
           ? el("div", { style: "margin-top:0.4rem" }, t("sun.fromScan"))
           : el("div", { style: "margin-top:0.4rem" }, hasCoords ? t("sun.fromPickWithScan") : t("sun.fromPick")),
+        // Recall is never silent. One line, and only while it's true: the
+        // buttons that change it are directly above.
+        ...(store.draft.recalled.sun
+          ? [el("div", { class: "memory-note", style: "margin-top:0.4rem" }, t("sun.remembered"))]
+          : []),
       ]),
       el("button", { class: "btn btn-primary btn-block", onClick: () => navigate("confirm") }, t("sun.next"))
     );
@@ -51,7 +56,11 @@ export function renderSun(main: HTMLElement): void {
       onClick: () => {
         store.draft.sun = manualSunEstimate(b.key);
         store.draft.horizon = { angles: new Array(72).fill(b.key === "full" ? 0 : b.key === "half" ? 25 : 45), source: "manual" };
+        // Answered for themselves — whatever we recalled is no longer what's
+        // on screen, so the note that said so goes with it.
+        store.draft.recalled.sun = false;
         choiceButtons.forEach((btn, i) => btn.setAttribute("aria-pressed", buckets[i].key === b.key ? "true" : "false"));
+        rememberDraftSpot();
         renderResult();
       },
     }, [
@@ -77,7 +86,10 @@ export function renderSun(main: HTMLElement): void {
     type: "checkbox",
     id: "decid",
     checked: store.draft.deciduousOverhead,
-    onChange: (e) => { store.draft.deciduousOverhead = (e.target as HTMLInputElement).checked; },
+    onChange: (e) => {
+      store.draft.deciduousOverhead = (e.target as HTMLInputElement).checked;
+      rememberDraftSpot();
+    },
   }) as HTMLInputElement;
 
   main.append(

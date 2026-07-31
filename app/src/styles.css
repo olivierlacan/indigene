@@ -3127,3 +3127,62 @@ body[data-layout="profile"] .wip-banner-text {
     margin-bottom: 0;
   }
 }
+
+/* --- What this device remembers ----------------------------------------- */
+/* The in-flow recall line. Quiet on purpose: a step that reuses an answer you
+   already gave should say so and get out of the way, not open a bordered
+   disclosure box over the question. The full account — every stored value and
+   the button that forgets it — lives on the Settings page, which this line
+   links to (see `lib/sticky.ts` for the division of labour). */
+.memory-note {
+  margin: 0.35rem 0 0.6rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+/* Nothing to disclose: collapse entirely rather than leave the margin behind,
+   so a step with no recall reads exactly as it did before. */
+.memory-note:empty {
+  display: none;
+  margin: 0;
+}
+
+/* The Settings page's stored-value list: label above, value below, so a long
+   region name has the whole width instead of a 40% column. */
+.memory-list {
+  margin: 0.6rem 0 0;
+}
+.memory-list dt {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+.memory-list dd {
+  margin: 0 0 0.6rem;
+}
+.memory-list dd:last-child {
+  margin-bottom: 0;
+}
+/* The one value a card is *about* — the ranking goal's name. Bigger than the
+   sentence explaining it, because it's the answer and that's the footnote. */
+.memory-value {
+  margin: 0.2rem 0 0.4rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+/* Settings splits into "how it reads" and "what it remembers"; these are the
+   two headings between the cards. */
+.settings-group {
+  margin: 1.6rem 0 0.6rem;
+  font-size: 1.05rem;
+}
+.settings-group:first-of-type {
+  margin-top: 1rem;
+}
+/* Inside a coloured note, the note sets the contrast. The quiet grey that reads
+   well on the page background is not guaranteed to read well on brand green, so
+   the recall line keeps the note's own ink and steps back with weight instead. */
+.note .memory-note {
+  color: inherit;
+  opacity: 0.85;
+}

@@ -23,7 +23,35 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Added
+
+- **Indigene remembers the spot you were last standing in.** Come back
+  tomorrow and it opens where you left off instead of a blank map — the same
+  place, and the sun and soil answers you gave for it, so you're at your plant
+  list in a couple of taps. Those answers belong to that patch of ground and
+  nowhere else: move somewhere new and Indigene asks again, because how sunny a
+  spot is and how wet it stays really are different one garden over.
+- **A starting region, if you'd rather skip the map for good.** If you already
+  know your area, choose it once under **Starting region** in
+  [Settings](https://indigene.app/#/settings) and every visit begins there. The
+  spot step then says so in a single line, with the link to change it, instead
+  of explaining itself all over again.
+- **Settings now lists everything this device remembers about you**, in plain
+  words, each with a button that throws it away: your last spot (with its sun
+  and soil), your starting region, and the goal your plant lists are ranked by.
+  All of it stays in your browser — it has never gone anywhere else.
+- **The goal you last chose sticks, and now says so.** Ask for a list that
+  favours birds and it stays favouring birds on your next visit. That was
+  already true, quietly; the trouble was that nothing ever told you, so a list
+  ordered by last month's decision looked like Indigene's own opinion. It's
+  named on the Settings page now, with one button back to the usual goal.
+
 ### Changed
+
+- **Every screen that reuses an answer you already gave says so, in one line.**
+  A sentence and a link to where it's kept — not a box of small print between
+  you and the question. What's remembered is explained once, in Settings, which
+  is where you go to change or forget it.
 
 - **A plant's page fits a computer screen now.** Open
   [a plant](https://indigene.app/#/plants/quercus-alba) on a laptop and it used

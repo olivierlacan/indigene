@@ -1,5 +1,5 @@
 import { el, clear } from "../ui";
-import { navigate, store, getSitePromise } from "../state";
+import { navigate, store, getSitePromise, rememberDraftSpot } from "../state";
 import type { MoistureBand } from "../types";
 import {
   zonePlain,
@@ -98,20 +98,36 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
   main.append(soilCard);
 
   // Moisture override — the most important correction for plant fit.
-  const current: MoistureBand = store.draft.moistureOverride ?? guessMoisture(site?.soil.drainage ?? "");
+  const mapGuess = guessMoisture(site?.soil.drainage ?? "");
+  const current: MoistureBand = store.draft.moistureOverride ?? mapGuess;
+  // Only worth saying when the memory is actually what's on screen. A
+  // remembered answer that agrees with the map changed nothing — claiming
+  // credit for it would be noise, and (since the guess gets locked into the
+  // same field below) sometimes a claim about an answer nobody gave.
+  const recalledMoisture = store.draft.recalled.moisture && current !== mapGuess;
   const moistureButtons: HTMLButtonElement[] = [];
   const bands: MoistureBand[] = ["dry", "mesic", "wet"];
+  // Says so when the answer already showing is this spot's own, from a previous
+  // visit — one line, with the three buttons that change it right below it.
+  // An empty array, not an empty string: `.memory-note:empty` is what collapses
+  // the line away, and a zero-length text node is still a child.
+  const moistureNote = el("p", { class: "memory-note" },
+    recalledMoisture ? [t("confirm.moistureRemembered")] : []);
   const moistureCard = el("div", { class: "card" }, [
     el("h3", {}, t("confirm.moistureTitle")),
     el("p", {}, t("confirm.moistureLede")),
     whyThis(t("confirm.moistureWhyTitle"), t("confirm.moistureWhy")),
+    moistureNote,
     ...bands.map((b) => {
       const btn = el("button", {
         class: "choice",
         "aria-pressed": b === current ? "true" : "false",
         onClick: () => {
           store.draft.moistureOverride = b;
+          store.draft.recalled.moisture = false;
+          clear(moistureNote);
           moistureButtons.forEach((mb, i) => mb.setAttribute("aria-pressed", bands[i] === b ? "true" : "false"));
+          rememberDraftSpot();
         },
       }, [
         el("span", { class: "choice-title" }, t(`confirm.${b}` as const)),
@@ -125,7 +141,10 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
   main.append(moistureCard);
 
   // Deciduous overhead (affects sun seasonally) — repeated here for correction.
-  const decid = el("input", { type: "checkbox", id: "decid2", checked: store.draft.deciduousOverhead, onChange: (e) => { store.draft.deciduousOverhead = (e.target as HTMLInputElement).checked; } }) as HTMLInputElement;
+  const decid = el("input", { type: "checkbox", id: "decid2", checked: store.draft.deciduousOverhead, onChange: (e) => {
+    store.draft.deciduousOverhead = (e.target as HTMLInputElement).checked;
+    rememberDraftSpot();
+  } }) as HTMLInputElement;
   main.append(el("div", { class: "card" }, [
     el("label", { for: "decid2", style: "display:flex;gap:0.6rem;align-items:flex-start;font-weight:600" }, [
       decid,
@@ -135,7 +154,7 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
 
   main.append(el("div", { class: "btn-row" }, [
     el("button", { class: "btn btn-secondary", onClick: () => navigate("sun") }, t("confirm.back")),
-    el("button", { class: "btn btn-primary", onClick: () => navigate("priorities") }, t("confirm.next")),
+    el("button", { class: "btn btn-primary", onClick: () => { rememberDraftSpot(); navigate("priorities"); } }, t("confirm.next")),
   ]));
 }
 

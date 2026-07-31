@@ -75,10 +75,14 @@ export const en = {
   "steps.settings": "Settings",
 
   // ---------------------------------------------------------------------
-  // Settings: language and units, deliberately two separate choices.
+  // Settings: how the app reads (language and units, deliberately two
+  // separate choices) and what it remembers.
   // ---------------------------------------------------------------------
   "settings.title": "Settings",
-  "settings.lede": "Two separate choices — pick the language you read in and the units you measure in, in any combination.",
+  "settings.lede": "How the app reads, and what it remembers about you — all of it kept on this device.",
+  "settings.readingTitle": "How it reads",
+  "settings.memoryTitle": "What this device remembers",
+  "settings.memoryLede": "Everything below is stored in this browser and nowhere else. Forget any of it whenever you like.",
   "settings.language": "Language",
   "settings.languageHelp": "Changes every word in the app. Plant and animal names switch too, where a national list gives us the name in your language.",
   "settings.units": "Units",
@@ -92,6 +96,36 @@ export const en = {
   "settings.namesNote": "Plant and animal names come from each country's own national list, not from machine translation — {link}.",
   "settings.namesNoteLink": "see where each name comes from",
   "settings.done": "Done",
+
+  // ---------------------------------------------------------------------
+  // The three remembered things, as Settings cards. Written for someone who
+  // never asked to be remembered: say what's stored, in the words they used,
+  // and put the undo button in plain sight.
+  // ---------------------------------------------------------------------
+  "memory.spotTitle": "Your last spot",
+  "memory.spotLede": "Where you were the last time, so you don't start from scratch. The sun and soil answers belong to this spot only — somewhere new asks again, because the answers really are different there.",
+  "memory.spotEmpty": "Nothing yet. Once you've found a spot, it'll be waiting here — and the next visit starts with it instead of a blank map.",
+  "memory.spotWhere": "Spot",
+  "memory.spotWhereCoords": "{lat}, {lon}",
+  "memory.spotWhereRegion": "{region} (picked by hand, no map point)",
+  "memory.spotSun": "Sun",
+  "memory.spotSoil": "How wet it stays",
+  "memory.spotPrivacy": "This spot lives on this device only — it never leaves it, and we can't see it",
+  "memory.spotUse": "Start here again",
+  "memory.unanswered": "Not answered yet",
+  "memory.forget": "Forget this",
+  "memory.forgotten": "Forgotten.",
+  "memory.regionTitle": "Starting region",
+  "memory.regionLede": "If you already know your area, start there and skip the map altogether.",
+  "memory.regionAuto": "Work it out from where I am",
+  "memory.regionAutoSub": "The usual way: your spot decides which plant list you get.",
+  "memory.regionShowAll": "Show all regions",
+  "memory.regionSet": "Saved — you'll start here.",
+  "memory.regionCleared": "Back to working it out from your spot.",
+  "memory.goalTitle": "Ranking goal",
+  "memory.goalLede": "What every new plant list is sorted by. Change it on the goals step, where you can watch the order move as you do.",
+  "memory.goalResetBtn": "Use the usual goal again",
+  "memory.goalReset": "Back to the usual goal.",
 
   // ---------------------------------------------------------------------
   // Welcome.
@@ -224,6 +258,14 @@ export const en = {
   "location.regionLede":
     "If you already know which of our regions — or which ecoregion — you're in, you can skip the map. Fair warning: without a map point we can't look up your soil, rainfall, or winter cold, so you'll answer the sun and moisture questions yourself and the plant list leans on what you tell us.",
   "location.regionShowAll": "Not this one? Show all regions",
+  // The three in-flow recall lines. Each is one sentence and a link, because
+  // the page that explains what's remembered is one tap away and doesn't need
+  // repeating in a garden (see components/memory-controls.ts).
+  "location.spotRemembered": "The pin is where you left it last time — {link}.",
+  "location.rememberedLink": "manage what's remembered",
+  "location.regionDefault": "Your starting region — {link}.",
+  "location.regionDefaultLink": "change it in Settings",
+  "location.regionRemembered": "The region you picked last time — {link}.",
   "location.switchFromGps": "Don't want to use your location? {a} or {b} instead.",
   "location.switchFromOther": "Changed your mind? {a} or {b} instead.",
   "location.switchZip": "Search by town",
@@ -254,6 +296,7 @@ export const en = {
   "sun.fromScan": "Measured from your sky scan.",
   "sun.fromPickWithScan": "From your quick pick — scan the sky below for a sharper estimate.",
   "sun.fromPick": "From your quick pick.",
+  "sun.remembered": "Your answer for this spot last time. Tap another one to change it.",
   "sun.next": "Next: check the soil & climate →",
   "sun.deciduous": "🍂 Trees overhead that go bare in winter?",
   "sun.deciduousSub": "Bare branches make spring and fall much sunnier — we'll account for it.",
@@ -334,6 +377,7 @@ export const en = {
   "confirm.moistureWhyTitle": "Why not just improve the soil?",
   "confirm.moistureWhy":
     "Natives are already adapted to the soil you have — dry sand, heavy clay, soggy hollows all have their specialists. The trick is picking a plant to fit the soil, not hauling in amendments to fit the plant. Answer honestly and the right ones rise to the top.",
+  "confirm.moistureRemembered": "Your answer for this spot last time. Tap another one to change it.",
   "confirm.dry": "Dry",
   "confirm.mesic": "Evenly moist",
   "confirm.wet": "Wet",

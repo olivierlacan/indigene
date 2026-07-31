@@ -45,6 +45,13 @@
 //   --scroll-to sel       scroll the first match into view before shooting —
 //                         for a viewport crop of something further down a page
 //                         whose sticky panels a full-page capture would smear
+//   --revisit ROUTE       after the walk, come back as a returning visitor:
+//                         load ROUTE (a hash route, e.g. `#/settings`) and
+//                         *reload* the document, so the in-memory draft is gone
+//                         and only what the device actually remembers is left.
+//                         The reload is the point — a goto that changes nothing
+//                         but the hash doesn't reload, and the page would still
+//                         be showing the walk's own state rather than a memory
 //   --stop-at STEP        with --picks, stop the walk at `goals` (the step
 //                         that asks what the list should be ranked for)
 //                         instead of carrying on to the plants
@@ -94,6 +101,7 @@ const scrollTo = flag("--scroll-to", "");
 const shootEl = flag("--shoot-el", "");
 const unstick = has("--unstick");
 const stopAt = flag("--stop-at", "");
+const revisit = flag("--revisit", "");
 const tapPick = has("--tap-pick");
 const then = flag("--then", "");
 const open = flag("--open", "");
@@ -133,6 +141,8 @@ if (tapPick) await tapFirstPick(page);
 if (then) {
   await page.goto(new URL(then, url).href, { waitUntil: "networkidle" });
 }
+
+if (revisit) await comeBackLater(page, url, revisit);
 // Clicked, not `open = true`: a details that was opened by assignment skips
 // whatever its summary's click handler does.
 if (open) await page.locator(open).first().locator("summary").click();
@@ -186,6 +196,23 @@ async function walkToPicks(page, name, stop = "") {
   if (stop === "goals") return;
   await page.locator("button.btn-primary:visible").last().click();
   await page.waitForURL("**#/results");
+}
+
+/**
+ * Come back to the app the way a person does the next day: same device, same
+ * stored data, nothing left in memory.
+ *
+ * The reload is what makes it a *revisit* rather than a navigation. A `goto`
+ * that differs from the current address only in its hash doesn't reload the
+ * document, so the working draft — the coordinates, the sun answer, the
+ * moisture just picked — would still be sitting in memory, and the page would
+ * show those instead of what the device genuinely remembers. Which is exactly
+ * the difference the shot is meant to prove.
+ */
+async function comeBackLater(page, base, route) {
+  const hash = route.startsWith("#") ? route : `#${route}`;
+  await page.goto(new URL(hash, base).href, { waitUntil: "networkidle" });
+  await page.reload({ waitUntil: "networkidle" });
 }
 
 /** Open the first plant in the ranked list, the way a reader does: by tapping

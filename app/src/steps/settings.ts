@@ -1,37 +1,64 @@
-// Language & units.
+// Settings: how the app reads, and what it remembers.
 //
-// **This screen is deliberately a shell.** A fuller settings screen is being
-// built separately; the two controls it hosts live in
-// `components/prefs-controls.ts` so that screen can import them and this file
-// can be deleted in one line. What must not disappear with it is the *pair* —
-// language and units are two independent choices (see the note in
-// `prefs-controls.ts` for why), and they need to stay reachable.
+// Two halves, in that order. **How it reads** — language and units, two
+// independent choices (see the note in `prefs-controls.ts` for why they're two
+// cards and not one). **What it remembers** — the last spot, the starting
+// region, and the ranking goal, each spelled out with the button that undoes
+// it (`components/memory-controls.ts`).
 //
-// It takes an optional param — `#/settings/language`, `#/settings/units` — so
-// the footer's two links can land on the thing each one names instead of both
-// dropping the reader at the top of the same page to hunt for the difference.
+// The second half is what lets the flow stay quiet. A step that reuses a
+// remembered answer says so in one line and points here; the full account of
+// what's stored lives on this page, once, instead of being re-read in a garden
+// every visit.
+//
+// Every card is addressable — `#/settings/language`, `#/settings/units`,
+// `#/settings/spot`, `#/settings/region`, `#/settings/goal` — so a link can
+// land on the thing it names instead of dropping the reader at the top of the
+// page to hunt for it.
 import { el, clear } from "../ui";
 import { t } from "../lib/i18n";
 import { languageCard, unitsCard } from "../components/prefs-controls";
+import { lastSpotCard, rankingGoalCard, startingRegionCard } from "../components/memory-controls";
+import { stickyReady } from "../lib/sticky";
+import { prefsReady } from "../state";
 
 /** The cards a `#/settings/<param>` link can ask for, by their route word. */
 const CARD_IDS: Record<string, string> = {
   language: "settings-language",
   units: "settings-units",
+  spot: "settings-spot",
+  region: "settings-region",
+  goal: "settings-goal",
 };
 
-export function renderSettings(main: HTMLElement, param?: string): void {
+export async function renderSettings(main: HTMLElement, param?: string): Promise<void> {
+  // Three of the five cards report what's stored on this device, and the two
+  // background reads that fill them (the spot and the ranking weights) are
+  // separate. Wait for both: a settings screen that says "nothing remembered"
+  // or names the wrong goal because it drew a few milliseconds early is worse
+  // than a beat of delay. Both are bounded by the db module's open watchdog.
+  await Promise.all([stickyReady(), prefsReady()]);
   clear(main);
-  const language = languageCard();
-  const units = unitsCard();
-  language.id = CARD_IDS.language;
-  units.id = CARD_IDS.units;
+  const cards: Record<string, HTMLElement> = {
+    language: languageCard(),
+    units: unitsCard(),
+    spot: lastSpotCard(),
+    region: startingRegionCard(),
+    goal: rankingGoalCard(),
+  };
+  for (const [key, card] of Object.entries(cards)) card.id = CARD_IDS[key];
 
   main.append(
     el("h2", { class: "step-title" }, t("settings.title")),
     el("p", { class: "step-lede" }, t("settings.lede")),
-    language,
-    units,
+    el("h3", { class: "settings-group" }, t("settings.readingTitle")),
+    cards.language,
+    cards.units,
+    el("h3", { class: "settings-group" }, t("settings.memoryTitle")),
+    el("p", { class: "step-lede" }, t("settings.memoryLede")),
+    cards.spot,
+    cards.region,
+    cards.goal,
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
       el(
         "button",

@@ -91,3 +91,16 @@ export function proseCoverage(plants: Plant[]): { translated: number; total: num
 export function isUntranslated(p: Plant): boolean {
   return getLang() !== "en" && entry(p.latin)?.givesNote === undefined;
 }
+
+/**
+ * The same question for the wildlife layer, asked of a whole page at once: is
+ * any of this animal writing still in the English it was authored in? The
+ * wildlife blurbs are one pool rather than one per region, so a page is either
+ * telling the reader something they can read or it isn't — a count would be
+ * precision nobody needs.
+ */
+export function wildlifeUntranslated(items: Wildlife[]): boolean {
+  if (getLang() === "en") return false;
+  const tbl = table();
+  return items.some((w) => tbl?.[w.latin ?? `#${w.id}`]?.blurb === undefined);
+}

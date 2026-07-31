@@ -11,6 +11,9 @@ import type { RegionDef } from "../data/region";
 import { REGIONS, loadPlants, regionForSite } from "./plants";
 import { computeFit, siteMoisture } from "./ranking";
 import { zoneFromMinTemp } from "./site";
+import { fmtList, fmtNumber, t } from "./i18n";
+import { commonName, regionName } from "./names";
+import { temperature } from "./units";
 
 export interface PlantEntry {
   plant: Plant;
@@ -86,15 +89,15 @@ export function assessSpot(
     : null;
 
   if (!entry) {
-    const where = entries.map((e) => e.region.meta.name).join(" and ");
+    const where = fmtList(entries.map((e) => regionName(e.region.meta)));
     return {
       level: "unsuitable",
-      headline: "Not known native at this spot",
+      headline: t("verdict.notNative"),
       reasons: [
         spotRegion
-          ? `This plant isn't in the ${spotRegion.meta.name} list — our data says it's native to ${where}.`
-          : `This spot is outside the regions Indigene covers so far (this plant's data is for ${where}), so we can't honestly vouch for it here.`,
-        "Planting it anyway wouldn't feed local wildlife the way a true local native would — that's the whole point of choosing natives.",
+          ? t("verdict.notNativeHere", { region: regionName(spotRegion.meta), where })
+          : t("verdict.notCovered", { where }),
+        t("verdict.notNativeWhy"),
       ],
       entry: null,
       fit: null,
@@ -109,17 +112,24 @@ export function assessSpot(
   const zoneNum = zone ? parseInt(zone, 10) : null;
   // Common parlance first — "how cold winters get" — with the zone label in
   // parentheses as the term plant tags use, never leading.
+  // The temperature itself goes through `units.ts`, so a reader who measures in
+  // Celsius is told about their winter in Celsius — the zone label stays USDA
+  // either way, because that's the scale the number is defined on.
   const winterCold =
     site?.zoneMinTempF != null
-      ? `winter nights around ${site.zoneMinTempF}°F (USDA zone ${zone})`
-      : `this spot's winter cold (USDA zone ${zone})`;
+      ? t("verdict.winterNights", { temp: temperature(site.zoneMinTempF), zone: zone ?? "" })
+      : t("verdict.winterCold", { zone: zone ?? "" });
   if (zoneNum != null && Number.isFinite(zoneNum)) {
     if (zoneNum < plant.zones.min) {
       return {
         level: "unsuitable",
-        headline: "Winters here are too cold for it",
+        headline: t("verdict.tooCold"),
         reasons: [
-          `${plant.common} can't survive ${winterCold} — it's only hardy down to zone ${plant.zones.min}. A normal winter would kill it.`,
+          t("verdict.tooColdWhy", {
+            name: commonName(plant),
+            winter: winterCold,
+            zone: fmtNumber(plant.zones.min),
+          }),
         ],
         entry,
         fit: null,
@@ -128,17 +138,21 @@ export function assessSpot(
     if (zoneNum > plant.zones.max) {
       return {
         level: "unsuitable",
-        headline: "Winters here aren't cold enough for it",
+        headline: t("verdict.tooWarm"),
         reasons: [
-          `${plant.common} needs a colder winter rest than ${winterCold} gives — it wants zone ${plant.zones.max} or colder.`,
+          t("verdict.tooWarmWhy", {
+            name: commonName(plant),
+            winter: winterCold,
+            zone: fmtNumber(plant.zones.max),
+          }),
         ],
         entry,
         fit: null,
       };
     }
-    reasons.push(`Tough enough for ${winterCold}.`);
+    reasons.push(t("verdict.hardyEnough", { winter: winterCold }));
   } else {
-    reasons.push("Couldn't confirm how cold winters get here — the rest of the verdict assumes it's fine.");
+    reasons.push(t("verdict.winterUnknown"));
   }
 
   const moisture = siteMoisture(site, moistureOverride);
@@ -151,15 +165,10 @@ export function assessSpot(
   // promise we can't back. Cap at decent and say what would firm it up.
   if (!sun && level === "ideal") {
     level = "decent";
-    reasons.push("We don't know this spot's sun yet — pick a sun level above and this can become a full verdict.");
+    reasons.push(t("verdict.sunMissingCapped"));
   } else if (!sun) {
-    reasons.push("No sun reading for this spot yet — tell us the sun above and the verdict sharpens.");
+    reasons.push(t("verdict.sunMissing"));
   }
-  const headline =
-    level === "ideal"
-      ? "Ideal planting spot"
-      : level === "decent"
-        ? "Decent spot — it'll grow, with caveats"
-        : "This spot would fight it the whole way";
+  const headline = t(`verdict.${level}` as const);
   return { level, headline, reasons, entry, fit };
 }

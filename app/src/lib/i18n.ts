@@ -307,6 +307,12 @@ export function fmtList(items: string[]): string {
   return new Intl.ListFormat(current, { style: "long", type: "conjunction" }).format(items);
 }
 
+/** The same list, but as alternatives: "dry or damp" / "sec ou frais". A hand-
+ *  joined `" or "` reads as English in every other language. */
+export function fmtOrList(items: string[]): string {
+  return new Intl.ListFormat(current, { style: "long", type: "disjunction" }).format(items);
+}
+
 /** A date in the reader's own convention — "3 Feb 2026" / "3 févr. 2026". */
 export function fmtDate(ms: number): string {
   return new Intl.DateTimeFormat(current, { dateStyle: "medium" }).format(new Date(ms));

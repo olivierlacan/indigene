@@ -5,6 +5,7 @@ import { zoneChip } from "../components/zone-chip";
 import { rankPlants, siteMoisture } from "../lib/ranking";
 import type { Weights } from "../types";
 import { plantCard } from "../components/plant-card";
+import { reportRosterUntranslated } from "../components/wip-banner";
 import { whyThis } from "../components/learn";
 import { privacyNote } from "../components/privacy-link";
 import {
@@ -69,6 +70,12 @@ export function renderResults(main: HTMLElement): void {
   // quoting back in the line under the field.
   let nameQuery = "";
   let typedQuery = "";
+
+  // Every card here prints two paragraphs of catalog prose. Reported against the
+  // region's whole list rather than the filtered slice on screen: the gap is a
+  // fact about the region, and a banner that blinked in and out as a slider or
+  // the name filter moved would read as a glitch rather than as an honest caveat.
+  reportRosterUntranslated(plants);
 
   function rerender(): void {
     const ranked = rankPlants(plants, {

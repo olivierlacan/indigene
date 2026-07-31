@@ -5,7 +5,7 @@
 // the section-wide iNaturalist credit below. Keeping it here means the two layers
 // can't drift apart, and the credit/licence handling stays in one place.
 import { el } from "../ui";
-import { t } from "../lib/i18n";
+import { fmtNumber, t } from "../lib/i18n";
 import { openObservationLightbox } from "./lightbox";
 import { whereWhen } from "../lib/inaturalist";
 import type { ObservationSummary } from "../lib/inaturalist";
@@ -42,15 +42,19 @@ function observationCard(
       const btn = el("button", {
         type: "button",
         class: "obs-thumb",
-        title: `${ph.attribution} — tap to enlarge`,
-        "aria-label": `Enlarge photo ${i + 1} of ${o.taxonName ?? label} by ${o.observer}`
-          + (more ? `, and see ${more} more from this sighting` : ""),
+        title: t("obs.tapToEnlarge", { attribution: ph.attribution }),
+        "aria-label":
+          t("obs.enlarge", {
+            i: fmtNumber(i + 1),
+            name: o.taxonName ?? label,
+            observer: o.observer,
+          }) + (more ? t("obs.enlargeMore", { n: fmtNumber(more) }) : ""),
         onClick: () => openObservationLightbox(group, { observation: obsIndex, photo: i }, label, btn),
       }, [
         el("img", {
           src: ph.thumbUrl,
           loading: "lazy",
-          alt: `${o.taxonName ?? label} photographed by ${o.observer}`,
+          alt: t("obs.photoAlt", { name: o.taxonName ?? label, observer: o.observer }),
           width: 112,
           height: 112,
         }),

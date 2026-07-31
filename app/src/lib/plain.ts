@@ -12,7 +12,7 @@
 // import time would freeze whatever language happened to be active on the first
 // render and then quietly ignore the switch.
 import type { MoistureBand, PropagationMethod, SizeSnapshot, SupportKind, SupportReliance, WildlifeKind } from "../types";
-import { t, tn, tOptional } from "./i18n";
+import { monthName, t, tn, tOptional } from "./i18n";
 import { length, temperature } from "./units";
 
 /** The full audit of every dataset behind the numbers — linked wherever we
@@ -134,6 +134,29 @@ export function slopePlain(deg: number | null): string {
  */
 export function bloomColorWord(color: string): string {
   return tOptional(`color.${color}`) ?? color;
+}
+
+/** Months that begin with a vowel sound. French contracts the preposition in
+ *  front of them — *d'avril*, never *de avril* — and the dictionary carries two
+ *  forms of the sentence so the choice is a translator's, not a regex's.
+ *  English defines both forms identically and never notices. */
+function startsWithVowel(word: string): boolean {
+  return /^[aàâeéèêëiîïoôuùûü]/i.test(word);
+}
+
+/**
+ * "Blooms April–May (green)." / "Fleurit d'avril à mai (vert)." — one sentence,
+ * built here rather than at each call site so the elision rule lives in one
+ * place. Plants grown for foliage get the no-flowers line instead.
+ */
+export function bloomSentence(bloom: { startMonth: number; endMonth: number; color: string } | null | undefined): string {
+  if (!bloom) return t("card.foliage");
+  const from = monthName(bloom.startMonth);
+  return t(startsWithVowel(from) ? "card.bloomRangeVowel" : "card.bloomRange", {
+    from,
+    to: monthName(bloom.endMonth),
+    color: bloomColorWord(bloom.color),
+  });
 }
 
 /** The seven eco-score components, in the order they're shown. */

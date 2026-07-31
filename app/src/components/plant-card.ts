@@ -6,10 +6,10 @@ import type { Plant, Weights } from "../types";
 import { el } from "../ui";
 import { drawSizeViz } from "./size-viz";
 import { statGrid } from "./stat-card";
-import { SCORE_KEYS, scoreLabel, bloomColorWord, confidencePlain, growthPlain, moistureWord, SOURCES_ROUTE } from "../lib/plain";
+import { SCORE_KEYS, scoreLabel, bloomSentence, confidencePlain, growthPlain, moistureWord, SOURCES_ROUTE } from "../lib/plain";
 import { citation } from "./citation";
 import { keystoneIcon } from "./keystone-icon";
-import { t, fmtNumber, fmtList, monthName } from "../lib/i18n";
+import { t, fmtNumber, fmtList } from "../lib/i18n";
 import { length, humanHeightLabel } from "../lib/units";
 import { nameLines, commonName } from "../lib/names";
 import { highlight } from "./filter-field";
@@ -91,13 +91,7 @@ export function plantCard(r: Ranked, weights: Weights, nq = ""): HTMLElement {
     el("ul", { class: "score-list" }, scoreParts),
   ]);
 
-  const bloom = p.bloom
-    ? t("card.bloomRange", {
-        from: monthName(p.bloom.startMonth, "short"),
-        to: monthName(p.bloom.endMonth, "short"),
-        color: bloomColorWord(p.bloom.color),
-      })
-    : t("card.foliage");
+  const bloom = bloomSentence(p.bloom);
 
   const body = el("div", { class: "plant-body" }, [
     el("p", { class: "kv" }, [el("span", { class: "k" }, t("card.gives")), prose(p, "givesNote")]),

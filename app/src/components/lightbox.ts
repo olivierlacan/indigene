@@ -21,7 +21,7 @@
 // the close button all dismiss it; body scroll is locked while it's open and
 // focus is restored to the thumbnail on close.
 import { el } from "../ui";
-import { t, fmtNumber } from "../lib/i18n";
+import { t, tx, fmtNumber } from "../lib/i18n";
 import { whereWhen } from "../lib/inaturalist";
 import type { ObservationPhoto, ObservationSummary } from "../lib/inaturalist";
 
@@ -151,7 +151,10 @@ function paint(): void {
   const { photo, observation, obsIndex } = frames[index];
 
   showPhoto(img, photo.largeUrl || photo.mediumUrl);
-  img.alt = `${observation.taxonName ?? plantName}, photographed by ${observation.observer}`;
+  img.alt = t("obs.photoAlt", {
+    name: observation.taxonName ?? plantName,
+    observer: observation.observer,
+  });
 
   const many = frames.length > 1;
   prev.hidden = !many;
@@ -173,10 +176,14 @@ function paint(): void {
   caption.replaceChildren(
     el("p", { class: "lb-title" }, observation.taxonName ?? plantName),
     el("p", { class: "lb-credit" }, [
-      "Photo © ",
-      el("a", { href: `${INAT}/people/${observation.observer}`, target: "_blank", rel: "noopener" }, observation.observer),
-      ` · ${licenseLabel(photo.license)} · via `,
-      el("a", { href: INAT, target: "_blank", rel: "noopener" }, "iNaturalist"),
+      ...tx(
+        "lightbox.credit",
+        {
+          observer: el("a", { href: `${INAT}/people/${observation.observer}`, target: "_blank", rel: "noopener" }, observation.observer),
+          site: el("a", { href: INAT, target: "_blank", rel: "noopener" }, "iNaturalist"),
+        },
+        { licence: licenseLabel(photo.license) }
+      ),
       seen ? el("span", { class: "lb-seen" }, seen) : null,
     ]),
     el("a", {

@@ -19,6 +19,7 @@ import type { Plant, PlantForm } from "../types";
 import { t, tn, fmtNumber, getLang } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionNote, regionReference, localNameCoverage } from "../lib/names";
 import { prose } from "../lib/prose";
+import { reportRosterUntranslated } from "../components/wip-banner";
 
 const FORM_ORDER: PlantForm[] = ["tree", "shrub", "perennial", "grass", "vine", "groundcover", "fern"];
 /** The category headings. A function, not a record: a record built at import
@@ -60,6 +61,7 @@ export function renderRegion(main: HTMLElement, param?: string): void {
   }
 
   document.title = t("region.docTitle", { region: regionName(region.meta) });
+  reportRosterUntranslated(plants);
 
   const allRows: FilterRow[] = [];
   const sections: FilterSection[] = [];
@@ -92,7 +94,11 @@ export function renderRegion(main: HTMLElement, param?: string): void {
       t("region.lede", { reference: regionReference(region.meta) })),
     regionStatGrid(region, plants),
     el("p", { style: "font-size:0.9rem;color:var(--ink-soft)" }, regionNote(region.meta)),
-    ...(namingNote(plants) ? [namingNote(plants) as HTMLElement] : []),
+    // Which of these plants we can't name in the reader's language. (The
+    // *writing* we haven't translated is the page-top banner's job, reported
+    // below.) `main.append` is the DOM's, so an absent note has to vanish from
+    // the argument list rather than pass through as null.
+    ...[namingNote(plants)].filter((n): n is HTMLElement => n !== null),
     plantFilterField(allRows, sections),
     categoryChips(region, plants, null),
     ...groups,
@@ -127,6 +133,7 @@ function renderCategory(
   const inForm = sortedByCommon(plants, form);
   const label = formLabel(form);
   document.title = t("region.categoryDocTitle", { label, region: regionName(region.meta) });
+  reportRosterUntranslated(inForm);
 
   // The same category elsewhere — only regions that actually have one.
   const elsewhere = REGIONS.filter(

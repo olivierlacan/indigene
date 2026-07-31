@@ -47,6 +47,11 @@ export const fr: Dict = {
   "footer.sources": "d'où viennent nos chiffres",
   "footer.releaseNotes": "Voir les nouveautés",
   "footer.privacy": "Vie privée et sécurité",
+  // L'espace avant le deux-points est une fine insécable (U+202F) : c'est la
+  // règle française, et elle empêche aussi le deux-points de passer seul à la
+  // ligne suivante.
+  "footer.languageIs": "Langue : {value}",
+  "footer.unitsIs": "Unités : {value}",
   "steps.progress": "Progression",
   "steps.start": "Début",
   "steps.spot": "Lieu",

@@ -48,6 +48,13 @@ export const en = {
   "footer.sources": "where our numbers come from",
   "footer.releaseNotes": "See what's new",
   "footer.privacy": "Privacy & safety",
+  // The footer's two settings links. The whole phrase is one dictionary entry
+  // rather than a label the code glues a colon onto, because the punctuation
+  // around a colon is a language's own business — French wants a space before
+  // it, English doesn't, and a `${label}: ${value}` in the code would quietly
+  // impose English on every language we ever add.
+  "footer.languageIs": "Language: {value}",
+  "footer.unitsIs": "Units: {value}",
   "steps.progress": "Progress",
   "steps.start": "Start",
   "steps.spot": "Spot",

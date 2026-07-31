@@ -111,7 +111,10 @@ subtitle on the What's new page.
   A globe 🌐 for the language you read in, a ruler 📏 for the units you measure
   in, each opening the settings page at the choice it names. Written together
   as one "English · Imperial" line they looked like a single setting, and they
-  have never been one — you can read in French and measure in feet.
+  have never been one — you can read in French and measure in feet. At the
+  bottom of the page each one says what it is as well as what it's set to —
+  **Language: English**, **Units: Imperial** — in whichever language you're
+  reading ("Langue : Français", "Unités : Métrique").
 - **The home page no longer stops to ask about language and units** halfway
   down. That belonged in the menu and the footer, not in the middle of the
   page you came to read.

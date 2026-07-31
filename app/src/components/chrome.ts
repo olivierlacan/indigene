@@ -65,18 +65,16 @@ function renderFooter(): void {
     );
   }
 
-  // Two links, two labels. The visible text is the *value* ("Français"), and
-  // the accessible name adds the setting it belongs to ("Langue : Français") —
-  // sighted readers get the icon for that half, and a screen reader shouldn't
-  // have to guess what a bare "Français" at the end of a page is offering.
-  stampPref("prefs-lang", "prefs-lang-link", langLabel(), t("settings.language"));
-  stampPref("prefs-units", "prefs-units-link", unitsLabel(), t("settings.units"));
-}
-
-function stampPref(textId: string, linkId: string, value: string, setting: string): void {
-  const span = document.getElementById(textId);
-  if (span) span.textContent = value;
-  document.getElementById(linkId)?.setAttribute("aria-label", `${setting}: ${value}`);
+  // Two links, each naming its setting as well as its value: "Language:
+  // English", not a bare "English" that leaves you to work out what it's
+  // offering. The footer has the room the header's menu doesn't, and this is
+  // where a reader arrives *looking* for a setting rather than recognising a
+  // familiar word in passing. Said in full, the visible text is also the
+  // accessible name, so there's no aria-label to keep in sync.
+  const lang = document.getElementById("prefs-lang");
+  if (lang) lang.textContent = t("footer.languageIs", { value: langLabel() });
+  const units = document.getElementById("prefs-units");
+  if (units) units.textContent = t("footer.unitsIs", { value: unitsLabel() });
 }
 
 /** "Français" — the active language, in its own name. */

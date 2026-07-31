@@ -517,6 +517,13 @@ a {
   flex-wrap: wrap;
   gap: 0.35rem 1.25rem;
 }
+/* Each label is one phrase — "Units: Imperial", "Langue : Français" — so it
+   breaks between the two links, never inside one. Without this the pair fits
+   at 390px by splitting "Langue :" from "Français", which reads as two
+   settings again, and strands a colon at the end of a line. */
+.footer-prefs a {
+  white-space: nowrap;
+}
 
 .step-title {
   font-size: 1.5rem;

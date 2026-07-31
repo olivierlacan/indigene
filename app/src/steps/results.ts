@@ -279,16 +279,21 @@ export function renderResults(main: HTMLElement): void {
     el("p", { class: "step-lede" }, conditions),
     whyThis(t("results.whyTitle"), t("results.why")),
     el("div", { class: "result-controls" }, [weights, filters]),
-    el("div", { class: "btn-row", style: "margin-top:0" }, [
+    summaryEl,
+    nameFilter.node,
+    listEl,
+    // After the plants, like every other step in the flow puts its buttons
+    // after the thing the step is for. These used to sit above the list, which
+    // asked the reader to step over a dead end — a way back to the soil
+    // question, and an offer to save a spot they hadn't seen the plants for —
+    // before reaching the one thing they came for.
+    el("div", { class: "btn-row" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("confirm") }, t("results.back")),
       // A saved spot IS a coordinate — with a hand-picked region there's no
       // spot to save, so the button honestly isn't there.
       ...(hasCoords ? [el("button", { class: "btn btn-primary", onClick: doSave }, t("results.save"))] : []),
     ]),
-    ...(hasCoords ? [privacyNote(t("results.privacy"))] : []),
-    summaryEl,
-    nameFilter.node,
-    listEl
+    ...(hasCoords ? [privacyNote(t("results.privacy"))] : [])
   );
 
   rerender();

@@ -118,6 +118,11 @@ subtitle on the What's new page.
   page, instead of three near-copies. It holds no words of its own: every
   sentence is passed in already translated, because a count line doesn't
   survive being assembled from a noun slot in French.
+- **The buttons on your plant list moved below the plants.** "Back" and "Save
+  this spot" used to sit above the list, so the first thing you met on the page
+  that finally shows your plants was a way to leave it — and an offer to save a
+  spot whose plants you hadn't seen yet. They now come after the list, where
+  every other step in Indigene keeps its buttons.
 - Internal: `scripts/shoot.mjs` takes a `--fill` flag, so a screenshot can be
   taken of a page whose interesting state only exists once something has been
   typed into it, and a `--picks REGION` flag that walks the flow to the ranked

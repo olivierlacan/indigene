@@ -130,11 +130,28 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
       el("a", { href: "#/results" }, t("plant.backToList")),
     ])] : []),
     profile(plant, entries),
-    ecosystemSection(plant, entries),
-    nearbyObservationsSection(plant),
-    propagationSection(plant),
-    referencesSection(plant),
-    suitabilityChecker(entries),
+    // The sections below the profile, in two columns on a laptop and one on a
+    // phone. The split is by position, not by shuffling: reading down the left
+    // column and then the right gives exactly the order a phone stacks them in,
+    // so nothing has a different place in the page depending on the screen.
+    // (`.plant-sections` and its columns are `display: contents` until the
+    // laptop breakpoint, so on a phone these wrappers don't exist at all.)
+    //
+    // "Check your spot" heads the second column and the databases close the
+    // page: one is what a reader came here to do, the other is where they go
+    // when this page has run out of answers. Reference material belongs after
+    // the thing it backs up, not in front of it.
+    el("div", { class: "plant-sections" }, [
+      el("div", { class: "plant-sections-col" }, [
+        ecosystemSection(plant, entries),
+        nearbyObservationsSection(plant),
+        propagationSection(plant),
+      ]),
+      el("div", { class: "plant-sections-col" }, [
+        suitabilityChecker(entries),
+        referencesSection(plant),
+      ]),
+    ]),
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
       fromList
         ? el("button", { class: "btn btn-primary", onClick: () => navigate("results") }, t("plant.backToListShort"))
@@ -219,42 +236,57 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
         ]),
         shareButton(p),
       ]),
+      // Which region's figures these are stays above the columns, spanning the
+      // card: it governs everything below it, in both columns.
       regionSwitch(p, all, active),
-      el("div", { class: "plant-head" }, [
-        el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
-        el("div", {}, [
-          el("h2", { class: "plant-name", style: "margin:0" }, names.title),
-          el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" }, names.sub),
-          badges,
+      // Two columns on a laptop, one stack on a phone — and the same order
+      // either way, read down the left column and then the right: who this
+      // plant is and its numbers, then how big it gets and what it asks of you.
+      // The wrappers are `display: contents` below the breakpoint, so on a
+      // phone the pieces sit in the card exactly as they always have.
+      el("div", { class: "plant-cols" }, [
+        el("div", { class: "plant-col" }, [
+          el("div", { class: "plant-head" }, [
+            el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
+            el("div", {}, [
+              el("h2", { class: "plant-name", style: "margin:0" }, names.title),
+              el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" }, names.sub),
+              badges,
+            ]),
+          ]),
+          el("p", { class: "kv plant-why" }, [el("span", { class: "k" }, t("plant.whyBelongs")), prose(p, "nativeNote")]),
+          // The impostor warning belongs with the plant's identity, so it stays
+          // in this column: you read the name, then who gets mistaken for it.
+          lookalikeLine(all),
+          statGrid(p),
         ]),
-      ]),
-      el("p", { class: "kv", style: "margin-top:0.75rem" }, [el("span", { class: "k" }, t("plant.whyBelongs")), prose(p, "nativeNote")]),
-      lookalikeLine(all),
-      statGrid(p),
-      canvas,
-      el("div", { class: "size-caption" }, [
-        `${t("card.sizeCaption", {
-          human: humanHeightLabel(),
-          height: length(p.matureHeightFt),
-          spread: length(p.matureSpreadFt),
-        })} ${growthPlain(p)}`,
-      ]),
-      el("div", { class: "plant-body" }, [
-        el("p", { class: "kv" }, [el("span", { class: "k" }, t("card.gives")), prose(p, "givesNote")]),
-        el("p", { class: "kv" }, [el("span", { class: "k" }, t("card.needs")), prose(p, "careNote")]),
-        el("p", { class: "kv" }, [
-          el("span", { class: "k" }, t("card.bloomMoisture")),
-          `${bloom} ${t("card.prefersSoil", { bands: fmtList(p.moisture.map(moistureWord)) })}`,
-        ]),
-        el("p", { class: "confidence" }, [
-          el("strong", {}, t("card.confidence", { level: t(`confidence.word.${p.confidence}` as const) })),
-          confidencePlain(p.confidence),
-          " ",
-          el("span", {}, [
-            t("card.source"),
-            ...citation(p.basis),
-            " ",
-            el("a", { href: SOURCES_ROUTE }, t("card.howSure")),
+        el("div", { class: "plant-col" }, [
+          canvas,
+          el("div", { class: "size-caption" }, [
+            `${t("card.sizeCaption", {
+              human: humanHeightLabel(),
+              height: length(p.matureHeightFt),
+              spread: length(p.matureSpreadFt),
+            })} ${growthPlain(p)}`,
+          ]),
+          el("div", { class: "plant-body" }, [
+            el("p", { class: "kv" }, [el("span", { class: "k" }, t("card.gives")), prose(p, "givesNote")]),
+            el("p", { class: "kv" }, [el("span", { class: "k" }, t("card.needs")), prose(p, "careNote")]),
+            el("p", { class: "kv" }, [
+              el("span", { class: "k" }, t("card.bloomMoisture")),
+              `${bloom} ${t("card.prefersSoil", { bands: fmtList(p.moisture.map(moistureWord)) })}`,
+            ]),
+            el("p", { class: "confidence" }, [
+              el("strong", {}, t("card.confidence", { level: t(`confidence.word.${p.confidence}` as const) })),
+              confidencePlain(p.confidence),
+              " ",
+              el("span", {}, [
+                t("card.source"),
+                ...citation(p.basis),
+                " ",
+                el("a", { href: SOURCES_ROUTE }, t("card.howSure")),
+              ]),
+            ]),
           ]),
         ]),
       ]),
@@ -485,7 +517,11 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
       }
     }
 
-    return el("section", { class: "card", id: sectionDomId("spot"), style: "margin-top:1rem" }, [
+    // The gap to the section above comes from that section's own bottom margin
+    // (they collapse into one on a phone, and the laptop columns space their
+    // cards the same way) — an extra top margin here would double it in a
+    // column, where margins no longer collapse.
+    return el("section", { class: "card", id: sectionDomId("spot") }, [
       // No plant name in the heading: it changes width per plant and would
       // wrap the card title on a phone. The page is already about this plant.
       el("h3", { style: "margin-top:0" }, t("plant.checkSpotTitle")),
@@ -503,7 +539,10 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
         }, [
           el("div", { class: "field", style: "margin-top:0.5rem" }, [
             el("label", { for: "plant-place-q" }, t("location.searchLabel")),
-            el("div", { style: "display:flex;gap:0.5rem" }, [searchInput, searchBtn]),
+            // Capped for the same reason the nearby-photos prompt is (see
+            // `.spot-prompt`): a town name doesn't need half a laptop screen,
+            // and the two fields on this page shouldn't disagree about that.
+            el("div", { class: "town-search-row" }, [searchInput, searchBtn]),
           ]),
         ]),
         searchOut,

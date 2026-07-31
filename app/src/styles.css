@@ -1695,8 +1695,21 @@ details.weights {
 .share-btn.is-pressed {
   background: var(--brand-bg);
 }
-.plant > .kv {
+/* The plant card has no padding of its own, so anything loose in it carries the
+   gutter itself. The `>` rule still serves the impostor pages, whose card keeps
+   its paragraphs as direct children. The plant profile's don't: on a laptop
+   they sit inside one of its two columns (see "Profile pages on a laptop"),
+   where a `>` selector stops matching — so those are named by class. The region
+   switch is named too, and gains the gutter it never had: it was sitting a
+   gutter's width left of everything else in the card. */
+.plant > .kv,
+.plant .region-switch,
+.plant .plant-why,
+.plant .lookalike-line {
   padding: 0 1rem;
+}
+.plant .plant-why {
+  margin-top: 0.75rem;
 }
 .plant-photo {
   width: 4.5rem;
@@ -1874,6 +1887,22 @@ details.weights {
 
 .plant-body {
   padding: 0.6rem 1rem 1rem;
+}
+/* An animal's page splits its body in two so the halves can sit side by side on
+   a laptop (see "Profile pages on a laptop"). The two paddings add up to one
+   .plant-body's, so stacked on a phone they are indistinguishable from it. */
+.plant-body-lead {
+  padding-bottom: 0;
+}
+.plant-body-rest {
+  padding-top: 0;
+}
+/* "A native animal…" — the sourced guarantee that opens the second half. A
+   class rather than an inline margin so the laptop layout can straighten it
+   out: there it heads a column, and a dashed rule under nothing is a rule that
+   separates nothing. */
+.plant-body-rest > .wildlife-vouch {
+  margin: 0.4rem 0 0;
 }
 .kv {
   margin: 0.4rem 0;
@@ -2124,7 +2153,17 @@ details.weights {
    so more economically than the stacked button / "or" rule / labelled field it
    replaced — four rows of chrome above a section whose content is photographs.
    The button shrinks to its text and the field takes what's left; on a phone too
-   narrow for both, the field wraps under rather than squeezing to nothing. */
+   narrow for both, the field wraps under rather than squeezing to nothing.
+
+   Everything here is capped, because "take what's left" was written for a phone
+   and the profile pages are no longer phone-width. On an animal's page the row
+   spans the whole card, and an uncapped field became a 900px box waiting for
+   five characters — which reads as a mistake, not as generosity. The block gets
+   a cap too: the place picks that appear under the row are one-line choices,
+   and they sprawled the same way. */
+.spot-prompt {
+  max-width: 32rem;
+}
 .spot-row {
   display: flex;
   flex-wrap: wrap;
@@ -2138,10 +2177,21 @@ details.weights {
   padding: 0.5rem 0.6rem;
   font-size: 0.95rem;
 }
+/* 14rem holds a long town name comfortably and leaves the pair reading as two
+   controls of a similar size. The `flex` line still governs everywhere the cap
+   doesn't bite — which is every phone, where the field is nearer 7rem. */
 .spot-search {
   display: flex;
   flex: 1 1 7rem;
   min-width: 0;
+  max-width: 14rem;
+}
+/* The spot checker's own town field, which carries a visible label and a Search
+   button beside it. Wider than `.spot-search` by exactly that button. */
+.town-search-row {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 24rem;
 }
 .spot-search input {
   font-size: 0.9rem;
@@ -2866,13 +2916,18 @@ a.region-pill:focus-visible {
 body[data-layout="wide"] .step-lede,
 body[data-layout="wide"] .note,
 body[data-layout="wide"] .confidence,
-body[data-layout="wide"] .app-footer p {
+body[data-layout="wide"] .app-footer p,
+body[data-layout="profile"] .step-lede,
+body[data-layout="profile"] .note,
+body[data-layout="profile"] .confidence,
+body[data-layout="profile"] .app-footer p {
   max-width: 36rem;
 }
 /* The banner is the exception: it's a sign about the whole page, not prose
    within it, so on a wide index it spans the page the way a sign would. Its
    *sentence* still keeps the reading measure. */
-body[data-layout="wide"] .wip-banner-text {
+body[data-layout="wide"] .wip-banner-text,
+body[data-layout="profile"] .wip-banner-text {
   max-width: 36rem;
 }
 
@@ -2931,3 +2986,144 @@ body[data-layout="wide"] .wip-banner-text {
    badges lined up down the grid. They don't any more — the cards name the
    place and nothing else — so the line is plain text again (see
    `.region-card-ref` above) and needs no flex row of its own. */
+
+/* --- The plants that keep one animal going ------------------------------- */
+/* A row per plant on an animal's page: silhouette, name, the tie chips, what
+   the tie is, and its source. One column on a phone; on a laptop they reflow
+   into as many as fit, the same way every other list of self-contained cards
+   in the app does. The floor is 24rem rather than `.card-grid`'s 19rem — these
+   rows carry a citation line, and at 19rem it wrapped to three.
+
+   `auto-fill`, not `auto-fit`: a region where only one plant supports this
+   animal keeps that card one column wide, with the empty track beside it,
+   rather than stretching a two-line note across the whole window. */
+.wildlife-supports {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(24rem, 100%), 1fr));
+  gap: 0.5rem;
+  align-items: start;
+}
+.support-row {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  padding: 0.6rem 0.8rem;
+  margin: 0;
+  /* Cards in a row end level with each other even when one plant's note runs
+     to two lines and its neighbour's doesn't. */
+  height: 100%;
+}
+.support-row-text {
+  min-width: 0;
+}
+
+/* --- Profile pages on a laptop -------------------------------------------
+   A plant's page is the longest in the app: an identity block, a stat grid, a
+   to-scale drawing, four paragraphs and five card sections. An animal's is the
+   second longest. Set in the phone measure, a plant ran to five screenfuls on
+   a 1280px screen with two-thirds of the window empty either side — so reading
+   one meant scrolling past most of what you'd come to find out.
+
+   Both split in two instead. Their profile cards divide down the middle, and
+   below that the plant's card sections go into two columns while the animal's
+   supporting plants reflow into a grid. Nothing is reordered and no sentence
+   is set any wider than it is on a phone — reading down the left column and
+   then the right gives exactly the phone's order, so a link, a screenshot and
+   a description all mean the same thing on either.
+
+   Below the breakpoint the wrappers are `display: contents`: they vanish from
+   the layout entirely, and each page is the single stack it always was. */
+.plant-cols,
+.plant-col,
+.plant-sections,
+.plant-sections-col {
+  display: contents;
+}
+
+/* 1024px — the width at which two columns are each still wider than a phone.
+   (Media-query `rem` is 16px, not the app's 18px root.) The pages' own maximum
+   is the same 62rem the browse indexes use, so the header, the main column and
+   the footer stay aligned across every wide page. */
+@media (min-width: 64rem) {
+  body[data-layout="profile"] {
+    --maxw: 62rem;
+  }
+
+  /* ---- The profile card, on either page ---- */
+  /* The columns own the card's gutters, top included, so both start on the
+     same line whatever each one leads with. */
+  .plant .plant-cols {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 1.25rem;
+    padding: 0.9rem 1rem 1rem;
+  }
+  .plant .plant-col {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  /* …so the pieces inside them stop carrying their own — otherwise every
+     element would be indented twice, and the two columns would start on
+     different lines. */
+  .plant-cols .plant-head,
+  .plant-cols .plant-why,
+  .plant-cols .lookalike-line,
+  .plant-cols .stat-grid,
+  .plant-cols .size-caption,
+  .plant-cols .plant-body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .plant-cols .plant-head {
+    padding-top: 0;
+  }
+  .plant-cols .plant-body {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  /* …except the half that follows the name in the same column: it keeps the
+     breathing room it has on a phone. */
+  .plant-cols .plant-body-lead {
+    padding-top: 0.6rem;
+  }
+  /* Heading its own column, the guarantee has nothing above it to be separated
+     from — so it loses the dashed rule and starts level with the name opposite. */
+  .plant-cols .plant-body-rest > .wildlife-vouch:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+  /* Half the width, so two roomy tiles per row rather than four cramped ones —
+     "Caterpillar hosts" stops wrapping to three lines. */
+  .plant-cols .stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-bottom: 0;
+  }
+  /* The drawing ran full-bleed because it spanned the whole card. In a column
+     it's a framed panel, like the tiles beside it. */
+  .plant-cols .size-viz {
+    border: 1px solid var(--line);
+    border-radius: calc(var(--radius) - 4px);
+  }
+
+  /* ---- A plant's sections below it ---- */
+  /* The left column is given the wider track: it carries three cards to the
+     right column's two, and the extra width shortens all three. */
+  .plant-sections {
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+    column-gap: 1rem;
+    align-items: start;
+  }
+  .plant-sections-col {
+    display: block;
+    min-width: 0;
+  }
+  /* A grid item is its own formatting context, so the last card's bottom margin
+     can't collapse out of the column the way it does in the phone stack — drop
+     it, and let the button row below set the gap. */
+  .plant-sections-col > :last-child {
+    margin-bottom: 0;
+  }
+}

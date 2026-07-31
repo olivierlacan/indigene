@@ -482,46 +482,62 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
   const soleCount = supports.filter((s) => relianceOf(s.link) === "sole").length;
 
   main.append(
-    el("article", { class: "plant" }, [
+    el("article", { class: "plant plant-animal" }, [
       el("p", { class: "region-tag", style: "margin:0 0 0.4rem;font-size:0.9rem;color:var(--ink-soft)" }, [
         el("a", { href: "#/wildlife" }, t("wildlife.allWildlife")),
         "  ·  ",
         el("a", { href: `#/wildlife/${KIND_SLUGS[w.kind]}` }, `${label.icon} ${label.title}`),
       ]),
-      el("div", { class: "plant-head" }, [
-        el("div", { "aria-hidden": "true", style: "font-size:2.4rem;line-height:1;flex:0 0 auto" }, w.icon),
-        el("div", {}, [
-          el("h2", { class: "plant-name", style: "margin:0" }, names.title),
-          names.sub ? el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" }, names.sub) : null,
-          // Not a "Native animal" badge: every animal in the catalog is one,
-          // and the sourced sentence below says so properly. What's worth a
-          // glance here is *where* — each region a tap away from the rest of
-          // the wildlife it shares a list with.
-          regionPills(byRegion.map((g) => g.region)),
+      // Who it is on the left, what we know about it on the right — but only on
+      // a laptop. Both wrappers are `display: contents` below that breakpoint,
+      // so on a phone this is the single stack it has always been. (The same
+      // pair a plant's page uses; see "Profile pages on a laptop".)
+      el("div", { class: "plant-cols" }, [
+        el("div", { class: "plant-col" }, [
+          el("div", { class: "plant-head" }, [
+            el("div", { "aria-hidden": "true", style: "font-size:2.4rem;line-height:1;flex:0 0 auto" }, w.icon),
+            el("div", {}, [
+              el("h2", { class: "plant-name", style: "margin:0" }, names.title),
+              names.sub ? el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" }, names.sub) : null,
+              // Not a "Native animal" badge: every animal in the catalog is one,
+              // and the sourced sentence below says so properly. What's worth a
+              // glance here is *where* — each region a tap away from the rest of
+              // the wildlife it shares a list with.
+              regionPills(byRegion.map((g) => g.region)),
+            ]),
+          ]),
+          // The .plant card has no padding of its own (media can run full-bleed),
+          // so all the loose text lives in a .plant-body to get the usual
+          // gutters. It's in two halves here: what this animal *is* stays with
+          // its name, and everything we can vouch for goes in the column
+          // opposite. `-lead` and `-rest` between them add up to exactly one
+          // .plant-body's padding, so the phone stack is unchanged.
+          el("div", { class: "plant-body plant-body-lead" }, [
+            el("p", { style: "margin:0" }, wildlifeBlurb(w)),
+          ]),
         ]),
-      ]),
-      // The .plant card has no padding of its own (media can run full-bleed),
-      // so all the loose text lives in a .plant-body to get the usual gutters.
-      el("div", { class: "plant-body" }, [
-        el("p", { style: "margin:0" }, wildlifeBlurb(w)),
-        // The native-status guarantee, sourced (authority names linked) — a native
-        // plant should be feeding a native animal, and we say where that comes from.
-        el("p", { class: "confidence", style: "margin:0.4rem 0 0" }, [
-          el("span", { "aria-hidden": "true" }, "🌿 "),
-          el("strong", {}, t("wildlife.aNativeAnimal")),
-          ...citation(w.nativeBasis),
+        el("div", { class: "plant-col" }, [
+          el("div", { class: "plant-body plant-body-rest" }, [
+            // The native-status guarantee, sourced (authority names linked) — a native
+            // plant should be feeding a native animal, and we say where that comes from.
+            el("p", { class: "confidence wildlife-vouch" }, [
+              el("span", { "aria-hidden": "true" }, "🌿 "),
+              el("strong", {}, t("wildlife.aNativeAnimal")),
+              ...citation(w.nativeBasis),
+            ]),
+            speciesLink(w),
+            el("p", { style: "margin:0.4rem 0 0;font-weight:650" }, [
+              tn("wildlife.supportedBy", plantCount, { n: fmtNumber(plantCount), animal: names.title }),
+              hosts ? tn("wildlife.ofThemHosts", hosts, { n: fmtNumber(hosts) }) : ".",
+            ]),
+            soleCount
+              ? el("p", { class: "note info", style: "margin:0.5rem 0 0" }, [
+                  el("strong", {}, tn("wildlife.cantLiveWithout", soleCount)),
+                  tn("wildlife.onlyOption", soleCount, { n: fmtNumber(soleCount), animal: names.title }),
+                ])
+              : null,
+          ]),
         ]),
-        speciesLink(w),
-        el("p", { style: "margin:0.4rem 0 0;font-weight:650" }, [
-          tn("wildlife.supportedBy", plantCount, { n: fmtNumber(plantCount), animal: names.title }),
-          hosts ? tn("wildlife.ofThemHosts", hosts, { n: fmtNumber(hosts) }) : ".",
-        ]),
-        soleCount
-          ? el("p", { class: "note info", style: "margin:0.5rem 0 0" }, [
-              el("strong", {}, tn("wildlife.cantLiveWithout", soleCount)),
-              tn("wildlife.onlyOption", soleCount, { n: fmtNumber(soleCount), animal: names.title }),
-            ])
-          : null,
       ]),
     ]),
   );
@@ -535,10 +551,15 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
     main.append(
       el("section", {}, [
         sectionHeading(`#/regions/${group.region.meta.id}`, "📍", regionName(group.region.meta)),
-        ...group.items
-          .slice()
-          .sort(sortByStrength)
-          .map((s) => supportRow(s)),
+        // A grid, not a stack: one column at phone width, as many as fit on a
+        // laptop (see `.wildlife-supports`). An animal with a dozen plants was
+        // a dozen full-width rows down the middle of a desktop window.
+        el("div", { class: "wildlife-supports" },
+          group.items
+            .slice()
+            .sort(sortByStrength)
+            .map((s) => supportRow(s)),
+        ),
       ]),
     );
   }
@@ -575,17 +596,14 @@ function sortByStrength(a: PlantSupport, b: PlantSupport): number {
 function supportRow(s: PlantSupport): HTMLElement {
   const p = s.plant;
   const names = nameLines(p);
-  return el("div", {
-    class: "card",
-    style: "display:flex;gap:0.7rem;align-items:flex-start;padding:0.6rem 0.8rem;margin-bottom:0.5rem",
-  }, [
+  return el("div", { class: "card support-row" }, [
     el("a", {
       href: `#/plants/${p.id}`,
       class: "plant-photo",
       "aria-label": t("wildlife.fullProfile", { name: names.title }),
       style: "flex:0 0 auto",
     }, [silhouetteFor(p.form)]),
-    el("div", { style: "min-width:0" }, [
+    el("div", { class: "support-row-text" }, [
       el("div", { style: "font-weight:700" }, [
         el("a", { href: `#/plants/${p.id}`, style: "color:inherit" }, names.title),
         p.keystone

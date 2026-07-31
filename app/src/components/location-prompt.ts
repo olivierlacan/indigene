@@ -143,7 +143,11 @@ export function locationPrompt(config: LocationPromptConfig): HTMLElement {
   // One row: the GPS button, then the place field. The label is visually hidden
   // rather than dropped — the placeholder is an example, not a name for the
   // field, and a screen reader still needs the name.
-  return el("div", {}, [
+  //
+  // The whole block is width-capped (`.spot-prompt`), not just the row: the
+  // place picks that land under it are a list of one-line choices, and they
+  // sprawl on a wide page for the same reason the field did.
+  return el("div", { class: "spot-prompt" }, [
     el("div", { class: "spot-row" }, [
       gpsBtn,
       el("form", {

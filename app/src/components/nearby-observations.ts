@@ -191,7 +191,10 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
     });
   }
 
-  return el("section", { class: "card", style: "margin-top:1rem" }, [
+  // No top margin of its own: the card above already carries a bottom one, and
+  // in the plant page's laptop columns (where margins don't collapse) a second
+  // one would open a gap twice the size of every other.
+  return el("section", { class: "card" }, [
     // No plant name in the heading — the page is already about this plant, and
     // interpolating one would change the heading's width per species.
     el("h3", { style: "margin-top:0" }, t("nearby.seeItGrowing")),

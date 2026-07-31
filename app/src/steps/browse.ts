@@ -12,6 +12,7 @@ import { commonName, regionName, regionReference } from "../lib/names";
 
 export function renderBrowse(main: HTMLElement): void {
   clear(main);
+  document.title = t("browse.docTitle");
 
   main.append(
     el("h2", { class: "step-title" }, t("browse.title")),

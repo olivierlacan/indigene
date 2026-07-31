@@ -140,8 +140,15 @@ subtitle on the What's new page.
 - Posting an Indigene link somewhere — a message to a friend, a group chat, a
   social post — now shows a proper preview card with the name, a line about
   what the app does, and the seedling, rather than a bare address or nothing at
-  all. For now every link shows the same card; showing the particular plant
-  you shared is coming.
+  all.
+- **And the preview now describes the page you actually sent.** Share
+  [butterfly weed](https://indigene.app/plants/asclepias-tuberosa) and the card
+  says "Butterfly Weed (Asclepias tuberosa)" and what it does for monarchs;
+  share [the Pacific Northwest](https://indigene.app/regions/pnw) or
+  [the monarch](https://indigene.app/wildlife/monarch) and you get that page's
+  own words. Every plant, every region and every creature has its own now — 261
+  pages in all. Only the picture is still the same on every link; a picture of
+  the plant itself is the next step.
 
 ### Changed
 
@@ -307,6 +314,24 @@ subtitle on the What's new page.
 
 ### Fixed
 
+- **A plant's own address used to answer "page not found".** Not to you — the
+  app opened fine — but to the machines that build the little preview boxes in
+  Messages, Slack and WhatsApp. So a link to a plant either previewed as the
+  app in general or, in some apps, showed nothing but the bare address. Every
+  page Indigene invites you to share is now a real page at its own address, and
+  answers as one.
+- Internal: `scripts/prerender.mjs` runs after `vite build` and writes
+  `dist/<route>/index.html` for all 261 shareable routes — the built shell with
+  its head metadata swapped for that page's. Titles and descriptions come from
+  the app's own English dictionary (`locales/en.ts`) so a card can't drift from
+  the page it opens; the plant descriptions are each row's `nativeNote` plus
+  `givesNote`. Each copy also gets `hreflang` alternates naming *itself*, which
+  is what `index.html`'s comment said needed per-page files. The script fails
+  the build if `index.html` grows or loses a share tag it doesn't re-emit.
+  `404.html` keeps its bounce for deep links (`/plants/<slug>/ecosystem`),
+  flow steps, and the retired `/search` address, and
+  `renderExplore`/`renderBrowse`/`renderPlants` now set a `document.title`
+  so the app and the prerendered file agree.
 - **Reading in French, being answered in English.** Several of the sentences
   Indigene writes for you personally were still coming out in English however
   the app was set. The one under every plant in a ranked list — "Sun is a good

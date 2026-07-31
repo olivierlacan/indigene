@@ -79,6 +79,7 @@ function queryFromHash(): string {
 
 export function renderPlants(main: HTMLElement): void {
   clear(main);
+  document.title = t("plants.docTitle");
   const ROWS = buildRows();
 
   const input = el("input", {

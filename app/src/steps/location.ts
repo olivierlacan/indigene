@@ -385,8 +385,10 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
 
   function renderSwitcher(): void {
     clear(switcher);
+    // `data-mode` is for the screenshot script, which has to find "pick a
+    // region" in whatever language it's shooting in (see scripts/shoot.mjs).
     const link = (label: string, m: Mode) =>
-      el("button", { class: "linklike", onClick: () => setMode(m) }, label);
+      el("button", { class: "linklike", "data-mode": m, onClick: () => setMode(m) }, label);
     // `tx` rather than three concatenated fragments: the two links have to be
     // able to move inside the sentence, and English word order is not French's.
     if (mode === "gps") {

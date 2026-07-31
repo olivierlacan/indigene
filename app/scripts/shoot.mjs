@@ -123,7 +123,9 @@ console.log(`shot: ${url} → ${out} (${vw}x${vh} @${dpr}x, ${scheme}, ${locale}
  * `#/results` with that region's plants ranked.
  */
 async function walkToPicks(page, name) {
-  await page.getByRole("button", { name: "pick a region" }).click();
+  // By `data-mode`, not by the button's words: this has to work under --locale,
+  // and "pick a region" is "choisissez une région" in French.
+  await page.locator("button.linklike[data-mode='region']").first().click();
   await page.locator("button.choice", { hasText: name }).first().click();
   // Sun, then soil: each step offers its choices, and the primary button
   // carries on. Taking the first choice keeps the shot reproducible.

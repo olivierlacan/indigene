@@ -259,7 +259,9 @@ subtitle on the What's new page.
   renderers can't wear three of them and a step can't bury one mid-layout.
 - Internal: `scripts/shoot.mjs` takes repeatable `--click` selectors and a
   `--geo lat,lon`, so a screenshot can be taken of a state that only exists
-  after a tap — the spot verdict, for one.
+  after a tap — the spot verdict, for one. Its `--picks` walk now finds the
+  region link by `data-mode` rather than by its English label, so it works
+  under `--locale` too.
 - The first pages published at [indigene.app](https://indigene.app/) arrived as
   a bare list of blue links, with no colours, pictures, or layout. The page was
   still asking for its styles and code at the old address, which lived one

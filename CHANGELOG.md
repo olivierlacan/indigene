@@ -25,6 +25,11 @@ subtitle on the What's new page.
 
 ### Fixed
 
+- **The little captions on the photo thumbnails are gone.** They tried to fit
+  "under 1 km away · seen June 2023" into a 90-pixel square, so they cut off
+  mid-word and spilled over the edge of the picture — and on a phone, which has
+  no hover, you could never see them at all. Tap a photo and the big view tells
+  you all of it, in a size you can actually read.
 - **"See it growing near you" was coming up empty for plants that are all over
   the place.** Ask about a common oak or a maple in a town where thousands of
   people have photographed one, and Indigene would answer that nobody had.
@@ -53,6 +58,29 @@ subtitle on the What's new page.
 
 ### Added
 
+- **Photos you've already seen don't download again.** Once a plant's sightings
+  have loaded, the pictures are kept on your device — so coming back to that
+  plant is instant, and works with no signal at all, the same way a spot you've
+  already looked up does. Indigene keeps the most recent few hundred photos and
+  quietly lets the oldest go, so it never grows without limit.
+- **Opening one photo gets the rest ready.** The moment you tap a picture,
+  Indigene starts fetching the full-size version of every other photo in that
+  set, one at a time and gently in the background. Swiping on to the next one
+  is then immediate instead of a wait — you're walking a gallery, not loading a
+  page each time.
+- Internal: the service worker gains a bounded, cache-first `PHOTO_CACHE` for
+  `inaturalist-open-data.s3.amazonaws.com` and `static.inaturalist.org`. It
+  re-issues each `<img>`'s no-cors request in **cors** mode before storing:
+  opaque responses are quota-padded (~7 MB each in Chromium), which silently
+  exhausted the origin quota at ~132 entries and made every later `put()`
+  throw. `store()` now catches a quota rejection, drops the oldest quarter and
+  retries once. Verified with Playwright: one network fetch per URL, the 240
+  cap holding at 300 distinct photos with the newest kept, and photos still
+  rendering after `setOffline(true)`.
+- Internal: `lightbox.ts` warms the reel on open — every other frame's
+  `largeUrl` fetched serially at `fetchPriority = "low"`, guarded by a
+  `reelToken` that goes stale on close. Verified: 6 of 6 larges pulled after
+  open, nothing pulled after Escape.
 - **Found photos are a gallery now.** They used to arrive as a stack of boxes,
   one per sighting, each with a line of small grey type under it — so four
   photos filled the screen and three of them were words. Now every photo the

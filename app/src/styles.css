@@ -2150,35 +2150,9 @@ details.weights {
   font-weight: 650;
   line-height: 1.5;
 }
-/* Where and when, on hover. Hidden by default and revealed only where there's a
-   real pointer: on a phone a tap must open the photo, not uncover a label, and
-   the lightbox says all of this the moment it opens. Two lines at most. */
-.obs-tile-meta {
-  position: absolute;
-  inset-inline: 0;
-  bottom: 0;
-  padding: 0.5rem 0.35rem 0.3rem;
-  background: linear-gradient(to top, rgb(0 0 0 / 0.82), rgb(0 0 0 / 0));
-  color: #fff;
-  font-size: 0.68rem;
-  line-height: 1.25;
-  text-align: left;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.12s ease;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
 @media (hover: hover) {
   .obs-tile:hover img {
     transform: scale(1.05);
-  }
-  .obs-tile:hover .obs-tile-meta,
-  .obs-tile:focus-visible .obs-tile-meta {
-    opacity: 1;
   }
 }
 .obs-attribution {

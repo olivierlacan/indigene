@@ -12,14 +12,18 @@
 // The credit didn't go anywhere; it moved to where someone is actually looking
 // at the photo. Tapping a tile opens the lightbox, which names the observer,
 // states the licence, says where and when it was seen, and links to the original
-// sighting — for that photo, rebuilt as you page. On a pointer device the tile
-// also reveals its where/when on hover. The section-wide credit line below the
-// grid names iNaturalist and says every photo is its observer's, so nothing is
-// ever shown unattributed even before a tap.
+// sighting — for that photo, rebuilt as you page. The section-wide credit line
+// below the grid names iNaturalist and says every photo is its observer's, so
+// nothing is ever shown unattributed even before a tap.
+//
+// The tiles themselves carry no text. A hover caption was tried and removed: a
+// 90 px square has no room for "under 1 km away · seen June 2023", so it
+// clipped mid-word and spilled past the tile, and it was invisible on the
+// phones this app is built for. Metadata belongs in the lightbox, at a size
+// where it can be read.
 import { el } from "../ui";
 import { fmtNumber, t } from "../lib/i18n";
 import { openObservationLightbox } from "./lightbox";
-import { whereWhen } from "../lib/inaturalist";
 import type { ObservationPhoto, ObservationSummary } from "../lib/inaturalist";
 
 const INAT = "https://www.inaturalist.org";
@@ -67,12 +71,13 @@ export function observationList(observations: ObservationSummary[], label: strin
       const { photo, observation: o } = tile;
       // The badge rides the last tile, where the grid runs out of room.
       const more = hidden > 0 && i === shown.length - 1 ? hidden : 0;
-      const seen = whereWhen(o);
       const btn = el("button", {
         type: "button",
         class: "obs-tile",
         // The native tooltip carries the full credit for a mouse user who
-        // hovers without clicking; the hover caption below carries where/when.
+        // hovers without clicking. It's the browser's own, so it's legible and
+        // positioned to fit — which a caption painted inside a 90 px tile
+        // wasn't.
         title: t("obs.tapToEnlarge", { attribution: photo.attribution }),
         "aria-label":
           t("obs.enlarge", {
@@ -95,9 +100,6 @@ export function observationList(observations: ObservationSummary[], label: strin
           width: 112,
           height: 112,
         }),
-        // Hover-only, and hidden from screen readers: the aria-label above
-        // already says whose photo this is, and the lightbox states all of it.
-        seen ? el("span", { class: "obs-tile-meta", "aria-hidden": "true" }, seen) : null,
         more ? el("span", { class: "obs-tile-more", "aria-hidden": "true" }, `+${more}`) : null,
       ]);
       return btn;

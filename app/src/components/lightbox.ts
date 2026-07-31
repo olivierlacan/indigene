@@ -17,6 +17,15 @@
 // their licence, re-points the "view original sighting" link, and says where and
 // when that one was seen — nobody's photo is ever shown under somebody else's name.
 //
+// Opening the lightbox also starts warming the rest of the reel: once the first
+// photo is on screen, the full-size version of every other photo in the set is
+// fetched one at a time, in paging order, at low priority. Paging is then
+// instant instead of a fresh several-hundred-KB download per tap — the reader
+// walks a gallery rather than waiting on one. Serial and low-priority on
+// purpose: it must never compete with the photo someone is looking at, and a
+// phone on cell data shouldn't have twelve JPEGs in flight at once. The service
+// worker keeps whatever this pulls, so a second visit costs nothing.
+//
 // One overlay is reused across opens (a module singleton). Escape / backdrop /
 // the close button all dismiss it; body scroll is locked while it's open and
 // focus is restored to the thumbnail on close.
@@ -53,6 +62,10 @@ interface LightboxState {
 
 let overlay: HTMLElement | null = null;
 let state: LightboxState | null = null;
+// Bumped whenever the reel changes (a new open, or a close); the warming loop
+// compares against it between photos and stops rather than pulling images for a
+// set nobody is looking at any more.
+let reelToken = 0;
 // Bumped on every paint; an in-flight decode from a previous photo compares
 // against it and quietly drops out, so fast paging can't paint a stale photo.
 let paintToken = 0;
@@ -90,12 +103,14 @@ export function openObservationLightbox(
   document.body.style.overflow = "hidden"; // no scrolling the page behind it
   document.addEventListener("keydown", onKey);
   paint();
+  void warmReel(++reelToken, frames, index);
   // Focus the close button so Escape/Enter work and focus is trapped-ish.
   (overlay.querySelector(".lb-close") as HTMLElement | null)?.focus();
 }
 
 function close(): void {
   if (!overlay) return;
+  reelToken++; // stops any warming still walking the reel
   document.removeEventListener("keydown", onKey);
   document.body.style.overflow = "";
   overlay.remove();
@@ -193,6 +208,31 @@ function paint(): void {
       rel: "noopener",
     }, t("lightbox.viewOriginal")),
   );
+}
+
+/**
+ * Fetch the full-size version of every other photo in the reel, one at a time,
+ * starting with the one the reader will most likely ask for next (the one after
+ * the photo they opened) and wrapping around.
+ *
+ * Deliberately unhurried: each image is awaited before the next begins, and each
+ * is marked low priority so the browser lets the on-screen photo and anything
+ * the page still needs go first. Failures are ignored — this is an optimisation,
+ * and `showPhoto` will try the URL properly if the reader actually gets there.
+ * `token` is the guard: it goes stale the moment the lightbox closes or reopens
+ * on a different set, and the loop notices between photos and stops.
+ */
+async function warmReel(token: number, frames: Frame[], from: number): Promise<void> {
+  const n = frames.length;
+  for (let step = 1; step < n; step++) {
+    if (token !== reelToken) return;
+    const { photo } = frames[(from + step) % n];
+    const url = photo.largeUrl || photo.mediumUrl;
+    const img = new Image();
+    img.fetchPriority = "low";
+    img.src = url;
+    await img.decode().catch(() => {});
+  }
 }
 
 // Swap the stage to a new photo without the browser's progressive-JPEG jitter:

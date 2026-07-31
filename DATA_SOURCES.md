@@ -118,7 +118,16 @@ have TAXREF and VASCAN; identity has IPNI. *"These two plants get confused"* is
 nobody's dataset. Nobody publishes it as a table, because it isn't a property of
 a plant — it's a property of the mistake people make. So this layer is
 hand-authored from the places that **do** publish it, all of them the same kind
-of institution the rest of the catalog already leans on:
+of institution the rest of the catalog already leans on.
+
+Two of them come closer to a dataset than the rest, and are the first place to
+look when adding a tie: the **CABI Compendium** datasheets carry a
+*"Similarities to Other Species/Conditions"* field, and **EPPO** and the **OFB
+Centre de ressources EEE** carry the same idea as *« risque de confusion »*.
+They are per-species prose in a named field rather than a table anyone can
+download — but a named field across thousands of species is as structured as
+this subject gets, and it is checkable one row at a time, which is how every
+other claim in this repo is checked.
 
 | Source | Used for | Access | Licence / terms | Verdict |
 |---|---|---|---|---|
@@ -126,7 +135,11 @@ of institution the rest of the catalog already leans on:
 | **OFB — Centre de ressources Espèces exotiques envahissantes** | The four France regions. Its species fact sheets carry an explicit **« risque de confusion »** section — the closest thing anywhere to a published look-alike field | Referenced | Public establishment; factual identification content used | ✅ Facts referenced. The French counterpart to the extension bulletins. |
 | **Noxious weed boards & invasive-species councils** — Washington State NWCB, King County, Florida Invasive Species Council, Invasive Plant Atlas of the US | Which plants are invasive **in a given region** (`LookalikeLink.status`), plus the ID sheets weed crews use — misidentification is an operational problem for them, so they publish the tells | Referenced | Government/non-profit identification material; status facts used | ✅ Facts referenced. |
 | **Herbaria & floras** — Burke Herbarium (University of Washington), Missouri Botanical Garden, Morton Arboretum, Tela Botanica, INPN | The characters themselves: opposite vs. alternate leaves, hollow vs. solid pith, milky vs. clear sap. The tells have to be *true*, not just repeated | Referenced | Factual morphology; not copyrightable | ✅ Facts referenced. |
-| **EPPO Global Database** | European invasive status, and which species the EU acts on | Referenced | Public plant-health organisation | ✅ Facts referenced. |
+| **EPPO Global Database** | European invasive status, which species the EU acts on, and the datasheet sections on species a taxon is confused with | Referenced | Public plant-health organisation | ✅ Facts referenced. |
+| **CABI Compendium** (invasive species datasheets) | The nearest thing to a structured source: a *"Similarities to Other Species/Conditions"* field, per species, worldwide. The first place to check when a new tie is proposed | Referenced | Open-access datasheets; the factual comparison used, not the prose | ✅ Facts referenced. |
+| **Bugwood / invasive.org** (Center for Invasive Species and Ecosystem Health, University of Georgia) | US ID guides whose species pages carry an explicit look-alike section, and the image library behind most extension bulletins | Referenced | Educational; identification facts used | ✅ Facts referenced. |
+| **USDA Forest Service field guides & NRCS plant guides** | "Similar species" sections in the regional field guides for managing invasive plants | Referenced | US Government public domain | ✅ Safe. |
+| **Go Botany** (Native Plant Trust) · **Flora of North America** | Where a tell has to survive a real key — FNA's couplets are the reason a tell says "hollow pith" rather than "looks different" | Referenced | Factual morphology; not copyrightable | ✅ Facts referenced. |
 | **Xerces Society · Monarch Joint Venture** | The tropical-milkweed and butterfly-bush ties, where the mix-up has a documented cost to the animal | Referenced | Facts referenced | ✅ Facts referenced. |
 | **ASPCA Animal Poison Control · Washington Poison Center** | The toxicity facts on the ties where getting it wrong is dangerous (sago palm, death camas, cherry laurel) | Referenced | Educational reference; toxicity facts used | ✅ Facts referenced. |
 | **iNaturalist** — `identifications/similar_species` | **Corroboration, not authoring.** When an observation's community ID moves from one taxon to another, that is a recorded, counted mistake by a real person. `npm run lookalikes:check` asks iNaturalist whether it has recorded people making each mix-up we describe — and, with `--suggest`, which frequent confusions we say nothing about | Public API, no key; queried by the check script, never at page load | CC-licensed content; we read aggregate counts | ✅ Evidence, checked in CI-style runs like `reconcile.mjs`. |

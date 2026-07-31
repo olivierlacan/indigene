@@ -99,7 +99,7 @@ subtitle on the What's new page.
   translated in full — that region's pages are otherwise entirely in French —
   and `lookalikesUntranslated()` makes the "still in English" notice cover this
   writing too, so a page can't quietly grow an English block.
-- Internal: bundle re-measured after the new data — ~248 KB → ~268 KB gzipped;
+- Internal: bundle re-measured after the new data — ~250 KB → ~268 KB gzipped;
   the figure updated in `README.md`, `PROJECT_BRIEF.md`, `app/README.md` and
   `docs/ecoregion-plan.md`.
 - **The preview now describes the page you actually sent.** Until now, every

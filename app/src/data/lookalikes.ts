@@ -38,6 +38,12 @@
 //   - Florida Invasive Species Council; Florida Native Plant Society
 //   - Xerces Society and Monarch Joint Venture (the milkweed story)
 //   - Tela Botanica, INPN and the OFB Centre de ressources EEE (France)
+//
+// The two nearest things to a *structured* source, and the first place to look
+// when proposing a new tie: CABI Compendium datasheets carry a "Similarities to
+// Other Species/Conditions" field, and EPPO and the OFB fact sheets carry the
+// same idea as « risque de confusion ». Per-species prose in a named field is
+// as structured as this subject gets — see DATA_SOURCES.md.
 import type { Lookalike, LookalikeLink } from "../types";
 
 // ---- The catalog: the impostors themselves, described once ----

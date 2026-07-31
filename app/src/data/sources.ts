@@ -66,6 +66,8 @@ export const SOURCE_LINKS: SourceSite[] = [
   { name: "Washington Poison Center", url: "https://www.wapc.org/" },
   { name: "Maryland DNR", url: "https://dnr.maryland.gov/" },
   { name: "Florida Invasive Species Council", url: "https://floridainvasives.org/" },
+  { name: "CABI Compendium", url: "https://www.cabidigitallibrary.org/product/qi" },
+  { name: "Bugwood", url: "https://www.invasive.org/" },
   { name: "ASPCA Animal Poison Control", url: "https://www.aspca.org/pet-care/animal-poison-control" },
   // European authorities, cited by the France rows. The Gaytán matrix is the
   // source of every European host count, so it links to the paper itself.

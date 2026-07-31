@@ -102,6 +102,11 @@ subtitle on the What's new page.
 - Internal: bundle re-measured after the new data — ~250 KB → ~268 KB gzipped;
   the figure updated in `README.md`, `PROJECT_BRIEF.md`, `app/README.md` and
   `docs/ecoregion-plan.md`.
+- **Reading about a plant that grows in more than one region? You can switch.**
+  Those plants now have a row of buttons under their name — *Figures for:
+  Mid-Atlantic · North & Central Florida* — so you can see how the same plant
+  behaves somewhere else, and link straight to that version. Plants native to
+  only one region look exactly as they did.
 - **The preview now describes the page you actually sent.** Until now, every
   Indigene link showed the same card, whatever it led to. Share
   [butterfly weed](https://indigene.app/plants/asclepias-tuberosa) and the card
@@ -153,6 +158,23 @@ subtitle on the What's new page.
 
 ### Fixed
 
+- **A plant that grows in two regions was telling some readers the wrong
+  thing.** Indigene keeps separate notes for a plant in each region it's native
+  to, because the same species really does behave differently — butterfly weed
+  survives winters down to zone 3 in the Mid-Atlantic but only to zone 8 in
+  Florida, and goat willow is a different height, and has a different French
+  name, in the Alps than on the Atlantic coast. The plant's page was always
+  showing whichever region came first in our internal list, so someone in
+  Florida looking up butterfly weed from their own Florida list was reading the
+  Mid-Atlantic's numbers. It now shows the notes for **your** region. Seventeen
+  plants were affected.
+- Internal: `steps/plant.ts` resolves the displayed row via `activeEntry()`
+  (`?region=` → `draft.regionOverride` → `regionForSite(draft)` → first) instead
+  of `entries[0]`, which was REGIONS-array order. The suitability checker's
+  region lede follows it, so page and verdict can't disagree about "here".
+  Region is carried as a hash query, not a new route: it's page state, and one
+  plant keeps one address and one share link. `shoot.mjs` gains `--then <hash>`
+  for photographing a page that depends on the reader's region.
 - **A plant's own address used to answer "page not found".** Not to you — the
   app opened fine — but to the machines that build the little preview boxes in
   Messages, Slack and WhatsApp. So a link to a plant either previewed as the

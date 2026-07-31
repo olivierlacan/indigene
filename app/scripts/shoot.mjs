@@ -52,6 +52,11 @@
 //                         and shoot the page it opens — the only way to reach
 //                         a plant's page *from* a list, which is what puts the
 //                         way back on it
+//   --then HASH           with --picks, open this hash after the walk instead
+//                         of stopping at the list. For the pages that read the
+//                         reader's region: the walk is what makes the app know
+//                         where "here" is, and this picks *which* page to then
+//                         photograph knowing it
 //
 // Exists because the Playwright CLI can't set device pixel ratio directly —
 // its iPhone device descriptors force WebKit, which isn't installed here.
@@ -90,6 +95,7 @@ const shootEl = flag("--shoot-el", "");
 const unstick = has("--unstick");
 const stopAt = flag("--stop-at", "");
 const tapPick = has("--tap-pick");
+const then = flag("--then", "");
 const open = flag("--open", "");
 const clicks = flags("--click");
 const geo = flag("--geo", "");
@@ -122,6 +128,11 @@ const page = await context.newPage();
 await page.goto(url, { waitUntil: "networkidle" });
 if (picks) await walkToPicks(page, picks, stopAt);
 if (tapPick) await tapFirstPick(page);
+// After the walk the app knows the reader's region; this opens a page that
+// depends on it, in the state a real reader would arrive with.
+if (then) {
+  await page.goto(new URL(then, url).href, { waitUntil: "networkidle" });
+}
 // Clicked, not `open = true`: a details that was opened by assignment skips
 // whatever its summary's click handler does.
 if (open) await page.locator(open).first().locator("summary").click();

@@ -854,6 +854,7 @@ export const fr: Dict = {
   "plant.backToList": "← Retour à votre liste de plantes",
   "plant.backToListShort": "← Vos plantes",
   "plant.sizeAria": "Taille de {name} au fil du temps",
+  "plant.figuresFor": "Données pour :",
   "plant.nativeTo": "📍 Indigène de : ",
   "plant.whyBelongs": "Pourquoi elle est chez elle ici : ",
   "plant.share": "Partager cette plante",

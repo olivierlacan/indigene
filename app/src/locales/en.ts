@@ -836,6 +836,7 @@ export const en = {
   "plant.backToList": "← Back to your plant list",
   "plant.backToListShort": "← Your plants",
   "plant.sizeAria": "Size of {name} over time",
+  "plant.figuresFor": "Figures for:",
   "plant.nativeTo": "📍 Native to: ",
   "plant.whyBelongs": "Why it belongs here: ",
   // The accessible name of the share control; the icon carries the 🔗 itself.

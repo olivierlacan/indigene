@@ -9,6 +9,7 @@ import { fetchSite } from "../lib/site";
 import { searchPlaces, placeLabel, nearestPlaceName } from "../lib/geocode";
 import { manualSunEstimate } from "../lib/solar";
 import { findPlant, assessSpot, plantShareUrl } from "../lib/explore";
+import { regionForSite } from "../lib/plants";
 import type { PlantEntry, Suitability } from "../lib/explore";
 import { wildlifeForPlant, relianceOf } from "../lib/wildlife";
 import { lookalikesForPlant } from "../lib/lookalikes";
@@ -26,7 +27,7 @@ import { privacyNote } from "../components/privacy-link";
 import type { Plant, SiteData, SunEstimate, SupportKind } from "../types";
 import { t, fmtNumber, fmtList } from "../lib/i18n";
 import { length, humanHeightLabel } from "../lib/units";
-import { commonName, nameLines, regionName } from "../lib/names";
+import { commonName, nameLines, regionName, regionShort } from "../lib/names";
 import { prose, propagationNote, isUntranslated, lookalikesUntranslated } from "../lib/prose";
 import { reportUntranslated } from "../components/wip-banner";
 
@@ -36,6 +37,53 @@ import { reportUntranslated } from "../components/wip-banner";
 const SECTIONS = ["ecosystem", "propagation", "references", "spot"] as const;
 type Section = (typeof SECTIONS)[number];
 const sectionDomId = (s: Section): string => `sec-${s}`;
+
+/**
+ * Which of a plant's regional rows this page is showing.
+ *
+ * A plant native to more than one region has a *different row per region* — and
+ * they differ in load-bearing ways, not decoration: butterfly weed is hardy in
+ * zones 3–9 in the Mid-Atlantic and 8–10 in Florida, goat willow's mature height
+ * and even its French common name change between the Atlantic coast and the
+ * Alps. Every one of the catalog's multi-region plants differs somewhere.
+ *
+ * This used to be `entries[0]`, which is whichever region happens to sit
+ * earliest in the REGIONS array — so a Floridian who tapped butterfly weed in
+ * their own Florida results list was shown the Mid-Atlantic's hardiness and the
+ * Mid-Atlantic's description of it. In order of trust:
+ *
+ *   1. `?region=` in the address — a link that deliberately pinned one.
+ *   2. The reader's own region: the one they picked by hand, or the one their
+ *      spot resolves to (the same call the suitability check makes, so the page
+ *      and the verdict on it can never disagree about where "here" is).
+ *   3. The first row, which is all we can honestly do knowing nothing.
+ */
+function activeEntry(entries: PlantEntry[]): PlantEntry {
+  const pinned = hashParam("region");
+  const byPin = pinned && entries.find((e) => e.region.meta.id === pinned);
+  if (byPin) return byPin;
+
+  const { regionOverride, lat, lon, site } = store.draft;
+  if (regionOverride) {
+    const chosen = entries.find((e) => e.region.meta.id === regionOverride);
+    if (chosen) return chosen;
+  }
+  if (lat != null && lon != null) {
+    const here = regionForSite(lat, lon, site);
+    const mine = here && entries.find((e) => e.region.meta.id === here.meta.id);
+    if (mine) return mine;
+  }
+  return entries[0];
+}
+
+/** One value out of the hash's query string (`#/plants/x?region=pnw`). The hash
+ *  query is the page's *state*, not its identity — the router strips it before
+ *  matching a route, so a page that wants it reads it here. */
+function hashParam(name: string): string | null {
+  const at = location.hash.indexOf("?");
+  if (at < 0) return null;
+  return new URLSearchParams(location.hash.slice(at + 1)).get(name);
+}
 
 export function renderPlant(main: HTMLElement, param?: string): (() => void) | void {
   clear(main);
@@ -52,9 +100,13 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
     return;
   }
 
-  // Default to the first region's row for display; the suitability check picks
-  // the row matching the reader's actual location.
-  const { plant, region } = entries[0];
+  // Which region's row to show. Not `entries[0]`: that is whichever region sits
+  // earliest in the REGIONS array, which is nobody's region in particular.
+  const active = activeEntry(entries);
+  // `region` feeds the "check your spot" lede, which names the region whose
+  // figures are on screen — so it has to follow the active row too, or the
+  // checker offers to test a spot against a region the page isn't showing.
+  const { plant, region } = active;
   document.title = t("plant.docTitle", { name: commonName(plant), latin: plant.latin });
 
   // Some of the catalog's writing is still in English (see lib/prose). Reported,
@@ -98,6 +150,37 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
   // pages later as a guess about what "back" means.
   const cleanup = (): void => keepTrail(location.hash);
 
+  /**
+   * For a plant native to more than one region: which region's figures you are
+   * reading, and a tap to read another's.
+   *
+   * It exists because those figures genuinely differ. Every multi-region plant
+   * in the catalog has a different row per region — hardiness zones, mature
+   * size, soil pH, the wildlife scores, all of the prose, and for three French
+   * trees even the common name. Showing one silently, with a "Native to: A · B"
+   * line above implying both, told some readers the wrong thing with a straight
+   * face.
+   *
+   * Single-region plants — 181 of the 198 — get nothing here. There is no
+   * choice to offer, and a control with one option is furniture.
+   */
+  function regionSwitch(p: Plant, all: PlantEntry[], current: PlantEntry): HTMLElement | null {
+    if (all.length < 2) return null;
+    return el("div", { class: "region-switch" }, [
+      el("span", { class: "region-switch-lede" }, t("plant.figuresFor")),
+      ...all.map((e) => {
+        const here = e.region.meta.id === current.region.meta.id;
+        return el("a", {
+          class: here ? "region-chip region-chip-on" : "region-chip",
+          // A hash query, so the plant keeps one address and one share link:
+          // which region you are reading is the page's state, not its identity.
+          href: `#/plants/${encodeURIComponent(p.id)}?region=${encodeURIComponent(e.region.meta.id)}`,
+          ...(here ? { "aria-current": "true" } : {}),
+        }, regionShort(e.region.meta));
+      }),
+    ]);
+  }
+
   function profile(p: Plant, all: PlantEntry[]): HTMLElement {
     const badges = el("div", {}, [
       p.keystone
@@ -136,6 +219,7 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
         ]),
         shareButton(p),
       ]),
+      regionSwitch(p, all, active),
       el("div", { class: "plant-head" }, [
         el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
         el("div", {}, [

@@ -19,6 +19,9 @@
 //                         exists once something has been typed (the in-page
 //                         filters, the search field)
 //   --fill-into sel       type into the first match of `sel` instead
+//   --open sel            open the <details> matching `sel` before shooting,
+//                         for the panels whose content only exists once a
+//                         reader has asked for it
 //   --picks REGION        walk the flow to the ranked plant list before
 //                         shooting, picking the region whose card matches
 //                         REGION by hand (no geolocation, no network). That
@@ -52,6 +55,7 @@ const locale = flag("--locale", "en-US");
 const fill = flag("--fill", "");
 const fillInto = flag("--fill-into", "input[type='search']");
 const picks = flag("--picks", "");
+const open = flag("--open", "");
 const [url, out] = args;
 
 if (!url || !out || !(dpr > 0) || !(vw > 0) || !(vh > 0)) {
@@ -76,6 +80,9 @@ const context = await browser.newContext({
 const page = await context.newPage();
 await page.goto(url, { waitUntil: "networkidle" });
 if (picks) await walkToPicks(page, picks);
+// Clicked, not `open = true`: a details that was opened by assignment skips
+// whatever its summary's click handler does.
+if (open) await page.locator(open).first().locator("summary").click();
 // Typed, not set: these fields listen for `input`, and assigning `.value`
 // fires nothing — the shot would show a filled box over an unfiltered list.
 if (fill) await page.locator(fillInto).first().pressSequentially(fill);

@@ -187,6 +187,12 @@ export function renderResults(main: HTMLElement): void {
   // summary, a Done button at the bottom, and the chevron makes state obvious.
   const weightsPanel = el("details", { open: false }, [
     el("summary", {}, t("results.weightsSummary")),
+    // How the ranking works, answered where the ranking is tuned. It used to
+    // stand open above the list — five lines of method every visit, between a
+    // reader and the plants they came for — and this is the one page where
+    // that aside is preamble rather than help: the question it answers is the
+    // one you're asking when you open this panel, and nowhere else.
+    whyThis(t("results.whyTitle"), t("results.why")),
     presetRow,
     ...sliderRows.map((s) => s.row),
     el("button", {
@@ -277,7 +283,6 @@ export function renderResults(main: HTMLElement): void {
     el("p", { class: "region-tag", style: "margin:0 0 0.5rem;font-size:0.9rem;color:var(--ink-soft)" },
       chosen ? t("results.regionTagPick", { region: name }) : t("results.regionTag", { region: name })),
     el("p", { class: "step-lede" }, conditions),
-    whyThis(t("results.whyTitle"), t("results.why")),
     el("div", { class: "result-controls" }, [weights, filters]),
     summaryEl,
     nameFilter.node,

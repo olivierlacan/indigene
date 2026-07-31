@@ -322,6 +322,35 @@ a {
 .nav-menu-panel .nav-menu-all:hover {
   text-decoration: underline;
 }
+/* Language and units at the foot of the menu: a row each, matching the footer
+   (see index.html) — two settings, never one "locale". Only the first carries
+   the rule, so the pair reads as one group parted from the saved spots above
+   rather than as two unrelated rows. Taller than the links above them because
+   an icon + a word is a tap target, not a line of text. */
+.nav-menu-panel .nav-menu-pref {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.5rem;
+  padding: 0.35rem 0.6rem;
+  font-weight: 650;
+  color: var(--focus);
+  text-decoration: none;
+}
+.nav-menu-panel .nav-menu-pref.nav-menu-divide {
+  margin-top: 0.15rem;
+  border-top: 1px solid var(--line);
+}
+.nav-menu-panel .nav-menu-pref:hover {
+  text-decoration: underline;
+}
+.nav-menu-pref-icon {
+  /* A fixed box so the globe and the ruler start their words at the same x —
+     emoji advance widths differ, and a 2px stagger reads as a mistake. */
+  flex: 0 0 1.25rem;
+  text-align: center;
+}
+
 /* The menu's "Try again" action is a <button>, but it should read exactly
    like the link row above it. */
 .nav-menu-panel button.nav-menu-all {

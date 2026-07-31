@@ -102,16 +102,16 @@ subtitle on the What's new page.
 ### Changed
 
 - **The bookmark button at the top of every page is now a ⚙️ menu**, and it
-  holds the switch for language and units as well as your saved spots. It used
-  to lead only to saved places, which meant the one setting a reader might
+  holds your language and your units as well as your saved spots. It used to
+  lead only to saved places, which meant the one setting a reader might
   urgently need — the one that puts the whole app in their language — was
   reachable only by scrolling to the bottom of a page they may not be able to
   read. Now it's a tap away from the top of every screen.
-- **Language and units are two links in the footer, not one line.** A globe for
-  the language you read in, a ruler for the units you measure in, each opening
-  the settings page at the choice it names. Written as a single "English ·
-  Imperial" they looked like one setting, and they have never been one — you
-  can read in French and measure in feet.
+- **Language and units are two separate lines, in the menu and in the footer.**
+  A globe 🌐 for the language you read in, a ruler 📏 for the units you measure
+  in, each opening the settings page at the choice it names. Written together
+  as one "English · Imperial" line they looked like a single setting, and they
+  have never been one — you can read in French and measure in feet.
 - **The home page no longer stops to ask about language and units** halfway
   down. That belonged in the menu and the footer, not in the middle of the
   page you came to read.

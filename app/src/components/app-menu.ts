@@ -10,9 +10,9 @@
 //
 //   1. Your saved spots, as a quick jump back without leaving for the full
 //      Saved page (which stays, for managing and deleting).
-//   2. Language & units — the setting most likely to be wanted by someone who
-//      can't read the page they're looking at, and therefore the one worst
-//      served by living only at the bottom of it.
+//   2. Language and units, one row each — the settings most likely to be
+//      wanted by someone who can't read the page they're looking at, and
+//      therefore the ones worst served by living only at the bottom of it.
 //
 // The icon follows the contents: a bookmark promised saved spots and nothing
 // else, so it became a gear as soon as the panel held two unlike things.
@@ -24,7 +24,7 @@ import { el } from "../ui";
 import { listSpots } from "../db";
 import { openSavedSpot } from "../state";
 import { t } from "../lib/i18n";
-import { prefsSummary } from "./chrome";
+import { langLabel, unitsLabel } from "./chrome";
 
 const MAX_IN_MENU = 6;
 
@@ -74,30 +74,45 @@ export function closeAppMenu(): void {
 }
 
 /**
- * The language & units row, at the foot of the panel in every state.
+ * The language and units rows at the foot of the panel — two of them, matching
+ * the footer, because they are two settings and not one "locale". A single
+ * "English · Imperial" line invites exactly the assumption the app spends a
+ * whole comment block in `prefs-controls.ts` refusing to make.
  *
- * It shows the two current choices rather than the word "Settings", for the
- * reader this row is really for: someone looking at a page in a language they
- * don't read recognises "English · Imperial" as the thing to press long before
- * they parse a label they can't read either.
+ * Each shows its current *value* rather than the word "Settings", for the
+ * reader these rows are really for: someone looking at a page in a language
+ * they don't read recognises "English" as the thing to press long before they
+ * parse a label they can't read either. The icon carries the other half of the
+ * meaning, and the accessible name spells out both.
  */
-function prefsItem(): HTMLElement {
+function prefRow(
+  href: string,
+  icon: string,
+  value: string,
+  setting: string,
+  divide: boolean
+): HTMLElement {
   return el(
     "a",
     {
-      href: "#/settings/language",
+      href,
       role: "menuitem",
-      class: "nav-menu-all",
-      "aria-label": `${t("nav.languageAndUnits")}: ${prefsSummary()}`,
+      class: divide ? "nav-menu-pref nav-menu-divide" : "nav-menu-pref",
+      "aria-label": `${setting}: ${value}`,
     },
-    [el("span", { "aria-hidden": "true" }, "🌐 "), prefsSummary()]
+    [el("span", { class: "nav-menu-pref-icon", "aria-hidden": "true" }, icon), value]
   );
 }
 
-/** Whatever the saved-spots lookup produced, then the prefs row — which is in
- *  the panel in every state, including while the database is still answering. */
+/** Whatever the saved-spots lookup produced, then the two prefs rows — which
+ *  are in the panel in every state, including while the database is still
+ *  answering. Only the first carries the rule that divides them from above. */
 function fill(target: HTMLElement, ...saved: Node[]): void {
-  target.replaceChildren(...saved, prefsItem());
+  target.replaceChildren(
+    ...saved,
+    prefRow("#/settings/language", "🌐", langLabel(), t("settings.language"), true),
+    prefRow("#/settings/units", "📏", unitsLabel(), t("settings.units"), false)
+  );
 }
 
 async function populate(target: HTMLElement): Promise<void> {

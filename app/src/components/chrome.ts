@@ -88,8 +88,3 @@ export function langLabel(): string {
 export function unitsLabel(): string {
   return t(getUnits() === "metric" ? "settings.units.metric" : "settings.units.imperial");
 }
-
-/** "Français · Métrique" — both choices at once, for the header menu's one row. */
-export function prefsSummary(): string {
-  return `${langLabel()} · ${unitsLabel()}`;
-}

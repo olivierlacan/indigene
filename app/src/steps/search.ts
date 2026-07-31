@@ -7,6 +7,9 @@ import { el, clear } from "../ui";
 import { navigate } from "../state";
 import { REGISTRY } from "../lib/registry";
 import { REGIONS } from "../lib/plants";
+// The same matching and the same underlining the in-page filters use, so a
+// name matches — and *looks* matched — identically wherever you type it.
+import { highlight, norm } from "../components/filter-field";
 import { silhouetteFor } from "../components/plant-card";
 import type { PlantForm } from "../types";
 import { t, fmtNumber, getLang } from "../lib/i18n";
@@ -16,7 +19,6 @@ const regionLabel = (id: string): string => {
   const r = REGIONS.find((x) => x.meta.id === id);
   return r ? regionName(r.meta) : id;
 };
-const norm = (s: string): string => s.trim().toLowerCase().replace(/\s+/g, " ");
 
 type Row = {
   slug: string;
@@ -62,23 +64,6 @@ function buildRows(): Row[] {
   })
     .filter((r) => r.slug)
     .sort((a, b) => a.common.localeCompare(b.common, getLang()));
-}
-
-// Wrap every occurrence of the (already-normalized) query in <mark>, so a
-// result shows *why* it matched. Case-insensitive; display names are
-// single-spaced, so lowercased indices line up with the original string.
-function highlight(text: string, nq: string): (string | Node)[] {
-  if (!nq) return [text];
-  const lower = text.toLowerCase();
-  const out: (string | Node)[] = [];
-  let i = 0;
-  for (let hit = lower.indexOf(nq); hit !== -1; hit = lower.indexOf(nq, i)) {
-    if (hit > i) out.push(text.slice(i, hit));
-    out.push(el("mark", {}, text.slice(hit, hit + nq.length)));
-    i = hit + nq.length;
-  }
-  if (i < text.length) out.push(text.slice(i));
-  return out;
 }
 
 export function renderSearch(main: HTMLElement, param?: string): void {

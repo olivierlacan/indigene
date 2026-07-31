@@ -13,6 +13,7 @@ import { renderSearch } from "./steps/search";
 import { renderPlant } from "./steps/plant";
 import { renderRegion } from "./steps/region";
 import { renderWildlifeIndex, renderWildlife } from "./steps/wildlife";
+import { wildlifeKindRoute } from "./lib/wildlife";
 import { renderPrivacy } from "./steps/privacy";
 import { renderSources } from "./steps/sources";
 import { renderSettings } from "./steps/settings";
@@ -41,7 +42,9 @@ const STEPS: Record<string, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = {
   plants: { fn: renderExplore, labelKey: "steps.explore", inFlow: false },
   regions: { fn: renderExplore, labelKey: "steps.explore", inFlow: false },
   search: { fn: renderSearch, labelKey: "steps.search", inFlow: false },
-  wildlife: { fn: renderWildlifeIndex, labelKey: "steps.wildlife", inFlow: false },
+  // The index takes a wildlife *kind*, not a route param — `#/wildlife` alone
+  // is the whole catalog; the grouped pages come through `renderWildlife`.
+  wildlife: { fn: (m) => renderWildlifeIndex(m), labelKey: "steps.wildlife", inFlow: false },
   privacy: { fn: renderPrivacy, labelKey: "steps.privacy", inFlow: false },
   sources: { fn: renderSources, labelKey: "steps.sources", inFlow: false },
   settings: { fn: renderSettings, labelKey: "steps.settings", inFlow: false },
@@ -127,9 +130,11 @@ const WIDE_STEPS = new Set(["plants", "regions", "wildlife"]);
 function updateLayout(step: string, param?: string): void {
   // Only the parameter-less index of each: `#/plants/<slug>` is a profile and
   // `#/wildlife/<id>` is an animal's story, both of which want the narrow
-  // measure. `#/regions/<id>` is the exception — it's a roster, all cards.
+  // measure. Two exceptions, both card lists: `#/regions/<id>` is a roster, and
+  // `#/wildlife/<group>` ("…/butterflies") is a slice of the wildlife index.
   const wide =
-    WIDE_STEPS.has(step) && (!param || step === "regions");
+    WIDE_STEPS.has(step) &&
+    (!param || step === "regions" || (step === "wildlife" && !!wildlifeKindRoute(param)));
   document.body.dataset.layout = wide ? "wide" : "narrow";
 }
 

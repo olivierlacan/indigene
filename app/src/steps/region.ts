@@ -9,6 +9,8 @@ import { el, clear } from "../ui";
 import { navigate } from "../state";
 import { REGIONS, loadPlants } from "../lib/plants";
 import type { RegionDef } from "../lib/plants";
+import { filterField, highlight, norm } from "../components/filter-field";
+import type { FilterRow, FilterSection } from "../components/filter-field";
 import { silhouetteFor } from "../components/plant-card";
 import { keystoneIcon } from "../components/keystone-icon";
 import { regionStatGrid } from "../components/region-stats";
@@ -91,7 +93,7 @@ export function renderRegion(main: HTMLElement, param?: string): void {
     regionStatGrid(region, plants),
     el("p", { style: "font-size:0.9rem;color:var(--ink-soft)" }, regionNote(region.meta)),
     ...(namingNote(plants) ? [namingNote(plants) as HTMLElement] : []),
-    filterField(allRows, sections),
+    plantFilterField(allRows, sections),
     categoryChips(region, plants, null),
     ...groups,
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
@@ -165,7 +167,7 @@ function renderCategory(
         ])
       : el("p", { class: "step-lede" },
           t("region.emptyCategory", { region: regionName(region.meta), label: label.toLowerCase() })),
-    ...(rows.length > 1 ? [filterField(rows, [])] : []),
+    ...(rows.length > 1 ? [plantFilterField(rows, [])] : []),
     categoryChips(region, plants, form),
     el("div", { class: "card-grid" }, rows.map((r) => r.node)),
     ...(switcher ? [switcher] : []),
@@ -223,78 +225,41 @@ function sortedByCommon(plants: Plant[], form: PlantForm): Plant[] {
 }
 
 // ---- In-page filtering: type a name, the list narrows as you type ----
-// This filters the rows already on the page (no routing, no registry lookup) so
-// nobody has to reach for Ctrl+F or bounce out to the search page just to find
-// one plant in a 40-row roster.
-
-const norm = (s: string): string => s.trim().toLowerCase().replace(/\s+/g, " ");
-
-interface FilterRow {
-  /** Everything a match can hit: common + scientific name, normalized. */
-  hay: string;
-  node: HTMLElement;
-}
-
-/** A form group on the roster page — hidden whole when no row in it matches. */
-interface FilterSection {
-  node: HTMLElement;
-  rows: FilterRow[];
-}
+// The field itself — and the underlining of what you typed — is shared with the
+// wildlife index and, through `highlight`, with the search page. See
+// components/filter-field.ts.
 
 // The haystack carries the English name too, not only the displayed one: a
 // French reader who knows a plant as "red maple" should still find it.
 function filterRow(p: Plant): FilterRow {
-  return { hay: norm(`${commonName(p)} ${p.common} ${p.latin}`), node: plantRow(p) };
+  const { node, mark } = plantRow(p);
+  return { hay: norm(`${commonName(p)} ${p.common} ${p.latin}`), node, mark };
 }
 
-function filterField(rows: FilterRow[], sections: FilterSection[]): HTMLElement {
-  const input = el("input", {
-    type: "search",
-    "aria-label": t("region.filterAria"),
+function plantFilterField(rows: FilterRow[], sections: FilterSection[]): HTMLElement {
+  return filterField(rows, sections, {
+    label: t("region.filterAria"),
     placeholder: t("region.filterPlaceholder"),
-    autocomplete: "off",
-    autocapitalize: "none",
-    spellcheck: false,
-    // Full width on a phone, but a text field the width of a laptop is a
-    // target with nothing in it — cap it once the page goes wide.
-    style: "width:100%;max-width:24rem",
-  }) as HTMLInputElement;
-  const status = el("p", { role: "status", class: "coords", style: "margin:0.35rem 0 0" });
-
-  const apply = (): void => {
-    const nq = norm(input.value);
-    let shown = 0;
-    for (const r of rows) {
-      const hit = !nq || r.hay.includes(nq);
-      // Rows carry an inline display:flex, so toggle that rather than [hidden].
-      r.node.style.display = hit ? "flex" : "none";
-      if (hit) shown++;
-    }
-    for (const s of sections) {
-      s.node.style.display = s.rows.some((r) => r.node.style.display !== "none") ? "" : "none";
-    }
-    clear(status);
-    if (!nq) return;
-    if (shown) {
-      status.append(t("region.filterCount", { shown: fmtNumber(shown), total: fmtNumber(rows.length) }));
-    } else {
-      status.append(
-        t("region.filterNone"),
-        el("a", { href: `#/search/${encodeURIComponent(input.value.trim())}` }, t("region.filterSearchAll")),
-        t("region.filterNoneRest")
-      );
-    }
-  };
-  input.addEventListener("input", apply);
-
-  return el("div", { style: "margin:0 0 0.6rem" }, [input, status]);
+    // Plural-aware: French agrees the verb and the noun with how many matched.
+    count: (shown, total, q) =>
+      tn("region.filterCount", shown, { shown: fmtNumber(shown), total: fmtNumber(total), q }),
+    fallback: (q) => [
+      t("region.filterNone"),
+      el("a", { href: `#/search/${encodeURIComponent(q)}` }, t("region.filterSearchAll")),
+      t("region.filterNoneRest"),
+    ],
+  });
 }
 
 // A compact, scannable row: enough to recognize the plant and want to tap it,
-// with the full story living on the plant's own page.
-function plantRow(p: Plant): HTMLElement {
+// with the full story living on the plant's own page. `mark` re-draws the two
+// name lines with the filter query underlined, exactly as a search result does
+// — the row says which word kept it on screen.
+function plantRow(p: Plant): { node: HTMLElement; mark: (nq: string) => void } {
   const names = nameLines(p);
-  return el("a", {
+  const title = el("span", {});
+  const sub = el("div", { class: "plant-latin", style: "font-size:0.85rem" });
+  const node = el("a", {
     href: `#/plants/${p.id}`,
     class: "card",
     style: "display:flex;gap:0.7rem;align-items:center;text-decoration:none;color:inherit;padding:0.6rem 0.8rem;margin:0;height:100%",
@@ -302,7 +267,7 @@ function plantRow(p: Plant): HTMLElement {
     el("div", { class: "plant-photo", "aria-hidden": "true", style: "flex:0 0 auto" }, [silhouetteFor(p.form)]),
     el("div", { style: "min-width:0" }, [
       el("div", { style: "font-weight:700" }, [
-        names.title,
+        title,
         p.keystone
           ? el("span", {
               title: t("explore.keystoneTitle"),
@@ -312,12 +277,18 @@ function plantRow(p: Plant): HTMLElement {
             }, [keystoneIcon(13)])
           : null,
       ]),
-      el("div", { class: "plant-latin", style: "font-size:0.85rem" }, names.sub),
+      sub,
       el("div", {
         style: "font-size:0.85rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis",
       }, prose(p, "givesNote")),
     ]),
   ]);
+  const mark = (nq: string): void => {
+    title.replaceChildren(...highlight(names.title, nq));
+    sub.replaceChildren(...highlight(names.sub, nq));
+  };
+  mark("");
+  return { node, mark };
 }
 
 function renderNotFound(main: HTMLElement, why: string, region?: RegionDef): void {

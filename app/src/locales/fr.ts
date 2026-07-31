@@ -826,6 +826,23 @@ export const fr: Dict = {
   "wildlife.notFoundLede":
     "Rien dans la liste faunistique d'Indigene ne correspond à « {id} ». La liste est constituée à la main — chaque lien est vérifié et sourcé — elle grandit donc avec prudence.",
   "wildlife.notFoundBrowse": "Parcourir les espèces que nous suivons",
+  "wildlife.groupDocTitle": "Plantes indigènes pour les {group} — Indigene",
+  "wildlife.groupLede": "{n} recensés à ce jour. {blurb}",
+  // Pas de {group} ici : l'accord en genre change d'un groupe à l'autre, et
+  // « aucun animal dans ce groupe » se lit aussi bien pour tous.
+  "wildlife.emptyGroup":
+    "Nous n'avons encore recensé aucun animal dans ce groupe — chaque lien est vérifié et sourcé avant d'être publié, la liste grandit donc prudemment.",
+  "wildlife.allChip": "Tout ({n})",
+  "wildlife.groupsNav": "Groupes d'animaux",
+  "wildlife.filterAria": "Filtrer cette liste par nom d'animal",
+  "wildlife.filterPlaceholder": "Filtrer par nom…",
+  "wildlife.filterCount.one": "{shown} animal sur {total} correspond à « {q} ».",
+  "wildlife.filterCount.other": "{shown} animaux sur {total} correspondent à « {q} ».",
+  "wildlife.filterNoneGroup": "Aucun résultat parmi les {group} pour « {q} » — ",
+  "wildlife.filterSeeAll": "voir toute la faune",
+  "wildlife.filterNoneIndex": "Aucun animal recensé ne correspond à « {q} » — ",
+  "wildlife.filterSearchPlants": "chercher parmi les plantes",
+  "wildlife.filterNoneRest": ".",
 
   // ---------------------------------------------------------------------
   // Listes régionales.
@@ -856,7 +873,8 @@ export const fr: Dict = {
   "region.categoriesNav": "Catégories de plantes",
   "region.filterAria": "Filtrer cette liste par nom de plante",
   "region.filterPlaceholder": "Filtrer par nom…",
-  "region.filterCount": "{shown} sur {total} correspondent.",
+  "region.filterCount.one": "{shown} plante sur {total} correspond à « {q} ».",
+  "region.filterCount.other": "{shown} plantes sur {total} correspondent à « {q} ».",
   "region.filterNone": "Rien ici ne correspond — ",
   "region.filterSearchAll": "chercher dans toutes les régions",
   "region.filterNoneRest": ".",

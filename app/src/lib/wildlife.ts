@@ -30,6 +30,29 @@ export function getWildlife(id: string): Wildlife | undefined {
 /** Section order for the index — most-asked-for wildlife first. */
 export const KIND_ORDER: WildlifeKind[] = ["butterfly", "moth", "bee", "bird", "mammal"];
 
+/** URL slug for each kind — plural, human, stable ("…/wildlife/butterflies"). */
+export const KIND_SLUGS: Record<WildlifeKind, string> = {
+  butterfly: "butterflies",
+  moth: "moths",
+  bee: "bees",
+  bird: "birds",
+  mammal: "mammals",
+};
+const slugToKind = new Map<string, WildlifeKind>(
+  KIND_ORDER.map((k) => [KIND_SLUGS[k], k])
+);
+
+/**
+ * The kind index a `#/wildlife/<param>` route means, if any — so the router and
+ * the page agree on which of the two shapes an address is. An animal's id
+ * always wins: `#/wildlife/monarch` is the monarch, and only a param that is
+ * no animal's id can be read as a group ("all the butterflies").
+ */
+export function wildlifeKindRoute(param: string): WildlifeKind | undefined {
+  if (wildlifeById.has(param)) return undefined;
+  return slugToKind.get(param);
+}
+
 /** A plant that supports a given animal, with the region it's in and the tie. */
 export interface PlantSupport {
   region: RegionDef;

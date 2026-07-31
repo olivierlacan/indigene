@@ -14,6 +14,11 @@
 //                         navigator.language, so it picks the app's default
 //                         language *and* its default unit system, the same way
 //                         a real phone in that region would
+//   --fill text           type `text` into the page's first search box before
+//                         shooting — for the pages whose interesting state only
+//                         exists once something has been typed (the in-page
+//                         filters, the search field)
+//   --fill-into sel       type into the first match of `sel` instead
 //
 // Exists because the Playwright CLI can't set device pixel ratio directly —
 // its iPhone device descriptors force WebKit, which isn't installed here.
@@ -38,6 +43,8 @@ const [vw, vh] = flag("--viewport", "390x844").split("x").map(Number);
 const fullPage = !has("--no-full-page");
 const wait = Number(flag("--wait", "1500"));
 const locale = flag("--locale", "en-US");
+const fill = flag("--fill", "");
+const fillInto = flag("--fill-into", "input[type='search']");
 const [url, out] = args;
 
 if (!url || !out || !(dpr > 0) || !(vw > 0) || !(vh > 0)) {
@@ -61,6 +68,9 @@ const context = await browser.newContext({
 });
 const page = await context.newPage();
 await page.goto(url, { waitUntil: "networkidle" });
+// Typed, not set: these fields listen for `input`, and assigning `.value`
+// fires nothing — the shot would show a filled box over an unfiltered list.
+if (fill) await page.locator(fillInto).first().pressSequentially(fill);
 await page.waitForTimeout(wait);
 await page.screenshot({ path: out, fullPage });
 await browser.close();

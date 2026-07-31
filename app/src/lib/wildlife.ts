@@ -117,49 +117,92 @@ export function regionsForWildlife(wildlifeId: string): RegionDef[] {
 /** One row of the browse index: an animal plus how widely it's supported. */
 export interface WildlifeIndexRow {
   wildlife: Wildlife;
+  /** Supporting plants **within the scope asked for** — every region, or the
+   *  one the index was filtered to. */
   plantCount: number;
+  /** Every region whose roster carries a plant supporting it, in the app's
+   *  usual order — the animal's regions, regardless of any filter, so a card
+   *  can say where it lives rather than just how many places. */
   regionIds: string[];
+}
+
+/** The whole index computed once: the joins below walk every region's roster
+ *  for every animal, and the answer can't change at runtime. */
+interface IndexEntry {
+  wildlife: Wildlife;
+  total: number;
+  byRegion: Map<string, number>;
+}
+let entryCache: IndexEntry[] | null = null;
+
+function indexEntries(): IndexEntry[] {
+  if (entryCache) return entryCache;
+  const entries: IndexEntry[] = [];
+  for (const wildlife of WILDLIFE) {
+    const supports = plantsForWildlife(wildlife.id);
+    if (!supports.length) continue;
+    const byRegion = new Map<string, number>();
+    for (const s of supports) {
+      const id = s.region.meta.id;
+      byRegion.set(id, (byRegion.get(id) ?? 0) + 1);
+    }
+    entries.push({ wildlife, total: supports.length, byRegion });
+  }
+  entryCache = entries;
+  return entries;
 }
 
 /**
  * The browse index: every catalog animal that at least one mapped plant
  * supports, with a count and the regions it's found in. Animals with no ties
  * yet are left out rather than shown as empty dead ends.
+ *
+ * Pass a region id to narrow it to the animals that region's plants support —
+ * the `#/wildlife/in/<region>` view. The count then means "plants **on that
+ * region's list** that support it", because a figure counting five regions'
+ * plants under a heading naming one would be a lie.
  */
-export function wildlifeIndex(): WildlifeIndexRow[] {
-  const rows: WildlifeIndexRow[] = [];
-  for (const wildlife of WILDLIFE) {
-    const supports = plantsForWildlife(wildlife.id);
-    if (!supports.length) continue;
-    const regionIds = [...new Set(supports.map((s) => s.region.meta.id))];
-    rows.push({ wildlife, plantCount: supports.length, regionIds });
-  }
-  return rows;
+export function wildlifeIndex(regionId?: string): WildlifeIndexRow[] {
+  return indexEntries()
+    .filter((e) => !regionId || e.byRegion.has(regionId))
+    .map((e) => ({
+      wildlife: e.wildlife,
+      plantCount: regionId ? (e.byRegion.get(regionId) ?? 0) : e.total,
+      regionIds: REGIONS.filter((r) => e.byRegion.has(r.meta.id)).map((r) => r.meta.id),
+    }));
 }
 
 /** Total distinct animals with at least one mapped plant — for the index lede. */
 export function mappedWildlifeCount(): number {
-  return wildlifeIndex().length;
+  return indexEntries().length;
+}
+
+let countCache: Map<string, number> | null = null;
+
+/** How many animals each region's plants support — the wildlife index's region
+ *  filter, and the region stat tiles. A region absent from the map has nothing
+ *  mapped yet, which is why the filter can leave it out instead of offering a
+ *  choice that leads to an empty list. */
+export function wildlifeCountsByRegion(): Map<string, number> {
+  if (countCache) return countCache;
+  const counts = new Map<string, number>();
+  for (const e of indexEntries()) {
+    for (const id of e.byRegion.keys()) counts.set(id, (counts.get(id) ?? 0) + 1);
+  }
+  countCache = counts;
+  return counts;
 }
 
 /**
  * Distinct catalog animals with at least one documented tie to a plant in this
- * region's roster — the region page's "wildlife these plants support" figure.
- * Same defensive joins as everywhere else: a tie pointing at a plant the roster
- * doesn't carry, or an animal the catalog doesn't know, counts for nothing.
+ * region's roster — the region page's "wildlife these plants support" figure,
+ * and the same number the region filter on the wildlife index shows, because
+ * both read it off the one index. Same defensive joins as everywhere else: a
+ * tie pointing at a plant the roster doesn't carry, or an animal the catalog
+ * doesn't know, counts for nothing.
  */
 export function wildlifeCountForRegion(regionId: string): number {
-  const region = regionById.get(regionId);
-  if (!region) return 0;
-  const roster = new Set(loadPlants(region).map((p) => p.id));
-  const seen = new Set<string>();
-  for (const [plantId, links] of Object.entries(SUPPORT[regionId] ?? {})) {
-    if (!roster.has(plantId)) continue;
-    for (const link of links) {
-      if (wildlifeById.has(link.wildlifeId)) seen.add(link.wildlifeId);
-    }
-  }
-  return seen.size;
+  return wildlifeCountsByRegion().get(regionId) ?? 0;
 }
 
 /**

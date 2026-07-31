@@ -12,13 +12,14 @@ import { renderBrowse } from "./steps/browse";
 import { renderSearch } from "./steps/search";
 import { renderPlant } from "./steps/plant";
 import { renderRegion } from "./steps/region";
-import { renderWildlifeIndex, renderWildlife } from "./steps/wildlife";
+import { renderWildlifeIndex, renderWildlife, wildlifeRegionParam } from "./steps/wildlife";
 import { wildlifeKindRoute } from "./lib/wildlife";
 import { renderPrivacy } from "./steps/privacy";
 import { renderSources } from "./steps/sources";
 import { renderSettings } from "./steps/settings";
 import { renderAbout } from "./steps/about";
 import { initSavedMenu, closeSavedMenu } from "./components/saved-menu";
+import { closeTermDialog } from "./components/term-dialog";
 import { applyDocumentLang, onLangChange, t } from "./lib/i18n";
 import type { TKey } from "./locales/en";
 import { onUnitsChange } from "./lib/units";
@@ -130,11 +131,14 @@ const WIDE_STEPS = new Set(["plants", "regions", "wildlife"]);
 function updateLayout(step: string, param?: string): void {
   // Only the parameter-less index of each: `#/plants/<slug>` is a profile and
   // `#/wildlife/<id>` is an animal's story, both of which want the narrow
-  // measure. Two exceptions, both card lists: `#/regions/<id>` is a roster, and
-  // `#/wildlife/<group>` ("…/butterflies") is a slice of the wildlife index.
+  // measure. The exceptions are all card lists: `#/regions/<id>` is a roster,
+  // and both slices of the wildlife index — `#/wildlife/<group>`
+  // ("…/butterflies") and `#/wildlife/in/<region>` — are grids of cards.
   const wide =
     WIDE_STEPS.has(step) &&
-    (!param || step === "regions" || (step === "wildlife" && !!wildlifeKindRoute(param)));
+    (!param ||
+      step === "regions" ||
+      (step === "wildlife" && (!!wildlifeKindRoute(param) || wildlifeRegionParam(param) !== null)));
   document.body.dataset.layout = wide ? "wide" : "narrow";
 }
 
@@ -151,6 +155,7 @@ async function route(): Promise<void> {
   const { step, param } = currentRoute();
   if (cleanup) { cleanup(); cleanup = null; }
   closeSavedMenu(); // a navigation always dismisses an open header menu
+  closeTermDialog(); // …and any explain-this dialog, which would float above the new page
   document.title = t("app.title"); // plant pages set their own; everything else resets
   renderStepRail(step);
   updateSiteNav(step);

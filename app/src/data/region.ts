@@ -26,6 +26,18 @@ export interface RegionMeta {
   /** Human name shown in the UI, e.g. "Pacific Northwest (west of the Cascades)". */
   name: string;
   /**
+   * The same place in as few words as stay true — "Pacific Northwest",
+   * "South Florida". For chips, pills and filter rows, where the full name's
+   * qualifier ("west of the Cascades") is the part that wraps to a second line
+   * on a phone. It must still name the region unambiguously: shorten by
+   * dropping a parenthetical, never by widening the claim. Pages that *are*
+   * about the region (its roster, its card) keep the full `name`.
+   *
+   * English, like `name` — a reader's own language comes from
+   * `locales/regions.<lang>.ts` via `regionShort()`, never from here.
+   */
+  short: string;
+  /**
    * The reference *place* the numbers are tuned to — "Pennsylvania",
    * "Greater Miami & the Keys". Just the place: the hardiness range used to
    * ride along in a parenthetical here, which made every line longer and

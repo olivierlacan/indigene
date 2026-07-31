@@ -40,6 +40,14 @@ function dialog(): HTMLDialogElement {
   return shared;
 }
 
+/** Dismiss the shared dialog if it's open. The router calls this on every
+ *  navigation: a dialog is in the browser's top layer, so one left open would
+ *  float above the *next* page — which is exactly what a link inside a dialog
+ *  (the wildlife regions list) would otherwise cause. */
+export function closeTermDialog(): void {
+  shared?.close();
+}
+
 export function openTermDialog(info: TermInfo): void {
   const d = dialog();
   d.replaceChildren(

@@ -24,19 +24,46 @@ export interface CardStat {
   value: string;
   /** The full sentence: the tooltip on hover, and the accessible name. */
   label: string;
+  /**
+   * Makes this figure a real button rather than a hover tooltip: hovering
+   * still shows `label`, but a tap opens whatever this does. For a figure a
+   * phone user would otherwise have no way to read — there is no hover on a
+   * touchscreen — or one with somewhere to go behind it (the wildlife card's
+   * region count opens the list of regions, each a link).
+   *
+   * The button must not sit inside an `<a>`, so a card that uses one has to
+   * stretch a link over itself instead of wrapping itself in one (see
+   * `.wildlife-card`, `.region-card`).
+   */
+  onActivate?: () => void;
 }
 
 export function cardStats(stats: (CardStat | null)[]): HTMLElement {
   return el(
     "p",
     { class: "card-stats" },
-    stats.filter((s): s is CardStat => s !== null).map((s) =>
-      el("span", { class: "card-stat", title: s.label, role: "img", "aria-label": s.label }, [
+    stats.filter((s): s is CardStat => s !== null).map((s) => {
+      const parts = [
         el("span", { class: "card-stat-icon" }, [
           typeof s.icon === "string" ? document.createTextNode(s.icon) : s.icon(),
         ]),
-        s.value,
-      ])
-    )
+        s.onActivate ? el("span", { class: "card-stat-tap" }, s.value) : document.createTextNode(s.value),
+      ];
+      if (!s.onActivate) {
+        return el("span", { class: "card-stat", title: s.label, role: "img", "aria-label": s.label }, parts);
+      }
+      return el("button", {
+        type: "button",
+        class: "card-stat",
+        title: s.label,
+        "aria-haspopup": "dialog",
+        "aria-label": s.label,
+        onClick: (e: Event) => {
+          e.preventDefault();
+          e.stopPropagation();
+          s.onActivate!();
+        },
+      }, parts);
+    })
   );
 }

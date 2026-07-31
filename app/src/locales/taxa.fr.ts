@@ -261,4 +261,26 @@ export const TAXA_FR: NameTable = {
   "#mediterranean-warblers": { name: "Fauvettes à tête noire et autres fauvettes", src: "catalog" },
   "#conifer-seed-finches": { name: "Becs-croisés, tarins et sizerins", src: "catalog" },
   "#acorn-mammals": { name: "Écureuils, chevreuils et autres mammifères", src: "catalog" },
+
+  // ---------------------------------------------------------------------
+  // Les sosies (`data/lookalikes.ts`) — les plantes qu'on prend pour une
+  // indigène. Un imposteur est un taxon comme un autre : il a son nom dans
+  // les mêmes référentiels, et la plupart de ceux-ci sont dans TAXREF pour
+  // la simple raison qu'ils poussent en France, introduits ou non.
+  // ---------------------------------------------------------------------
+  "Acer negundo": { name: "Érable negundo", src: "taxref" },
+  "Acer platanoides": { name: "Érable plane", src: "taxref" },
+  "Ailanthus altissima": { name: "Ailante glanduleux", src: "taxref" },
+  "Buddleja davidii": { name: "Arbre aux papillons", src: "taxref" },
+  "Ficaria verna": { name: "Ficaire fausse-renoncule", src: "taxref" },
+  "Lavandula × intermedia": { name: "Lavandin", src: "taxref" },
+  "Lonicera japonica": { name: "Chèvrefeuille du Japon", src: "taxref" },
+  "Lythrum salicaria": { name: "Salicaire commune", src: "taxref" },
+  "Prunus laurocerasus": { name: "Laurier-cerise", src: "taxref" },
+  // Pseudotsuga menziesii is already named above, as the Pacific Northwest
+  // native it is — the same taxon, the same entry, whichever side of the
+  // Atlantic the page is about.
+  "Robinia pseudoacacia": { name: "Robinier faux-acacia", src: "taxref" },
+  "Rubus armeniacus": { name: "Ronce d'Arménie", src: "taxref" },
+  "Pyrus calleryana": { name: "Poirier de Callery", src: "vascan" },
 };

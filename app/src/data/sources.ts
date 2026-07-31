@@ -50,6 +50,25 @@ export const SOURCE_LINKS: SourceSite[] = [
   { name: "Smithsonian", url: "https://naturalhistory.si.edu/" },
   { name: "USFWS", url: "https://www.fws.gov/" },
   { name: "WSU Extension", url: "https://extension.wsu.edu/" },
+  // Authorities cited by the look-alike layer (`data/lookalikes.ts`): the
+  // extension services, herbaria and weed boards that publish the "how to tell
+  // these two apart" and "what this plant does here" pages we lean on.
+  { name: "Penn State Extension", url: "https://extension.psu.edu/" },
+  { name: "Ohio State Extension", url: "https://extension.osu.edu/" },
+  { name: "Oregon State University", url: "https://landscapeplants.oregonstate.edu/" },
+  { name: "Missouri Botanical Garden", url: "https://www.missouribotanicalgarden.org/plantfinder/plantfindersearch.aspx" },
+  { name: "Morton Arboretum", url: "https://mortonarb.org/plant-and-protect/trees-and-plants/" },
+  { name: "Burke Herbarium (University of Washington)", url: "https://burkeherbarium.org/imagecollection/" },
+  { name: "Invasive Plant Atlas", url: "https://www.invasiveplantatlas.org/" },
+  { name: "Washington State Noxious Weed Control Board", url: "https://www.nwcb.wa.gov/" },
+  { name: "King County Noxious Weeds", url: "https://kingcounty.gov/" },
+  { name: "Oregon Dept. of Agriculture", url: "https://www.oregon.gov/oda/programs/weeds/" },
+  { name: "Washington Poison Center", url: "https://www.wapc.org/" },
+  { name: "Maryland DNR", url: "https://dnr.maryland.gov/" },
+  { name: "Florida Invasive Species Council", url: "https://floridainvasives.org/" },
+  { name: "CABI Compendium", url: "https://www.cabidigitallibrary.org/product/qi" },
+  { name: "Bugwood", url: "https://www.invasive.org/" },
+  { name: "ASPCA Animal Poison Control", url: "https://www.aspca.org/pet-care/animal-poison-control" },
   // European authorities, cited by the France rows. The Gaytán matrix is the
   // source of every European host count, so it links to the paper itself.
   { name: "Gaytán et al. 2026 European matrix", url: "https://doi.org/10.1002/ece3.73004" },
@@ -61,6 +80,13 @@ export const SOURCE_LINKS: SourceSite[] = [
   { name: "Buglife", url: "https://www.buglife.org.uk/" },
   { name: "Plantlife", url: "https://www.plantlife.org.uk/" },
   { name: "RHS", url: "https://www.rhs.org.uk/" },
+  // European authorities for the look-alike layer: France's invasive-species
+  // resource centre, the plant-health organisation whose lists the EU acts on,
+  // the national forestry office, and the Mediterranean conservatory.
+  { name: "OFB Centre de ressources EEE", url: "https://especes-exotiques-envahissantes.fr/" },
+  { name: "EPPO", url: "https://gd.eppo.int/" },
+  { name: "ONF", url: "https://www.onf.fr/" },
+  { name: "Conservatoire botanique national méditerranéen", url: "https://www.cbnmed.fr/" },
 ];
 
 const BAMONA_SPECIES = "https://www.butterfliesandmoths.org/species/";

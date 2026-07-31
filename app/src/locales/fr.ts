@@ -865,6 +865,65 @@ export const fr: Dict = {
   "plant.ecosystemTitle": "🦋 Ce qu'elle fait pour l'écosystème",
   "plant.wildlifeItBrings": "La faune qu'elle attire : ",
   "plant.soleTie": "Cette plante est la seule option de {name} — un lien vital.",
+  // Les sosies. Le mot d'ordre est le même qu'en anglais : on décrit la
+  // confusion, pas le caractère de la plante. Certaines sont de vraies
+  // envahissantes, d'autres de simples plantes de jardin qui ne sont pas d'ici,
+  // et une ou deux sont indigènes mais dangereuses. C'est l'étiquette de statut
+  // qui porte la nuance, pour que le texte n'ait pas à faire la morale.
+  "lookalike.whyMixedUp": "Pourquoi on les confond : ",
+  "lookalike.tellsSource": "Comment les distinguer : ",
+  "lookalike.seeOnInat": "Photos sur iNaturalist ↗",
+  "lookalike.status.invasive": "Envahissante ici",
+  "lookalike.status.introduced": "Pas d'ici",
+  "lookalike.status.native": "Indigène aussi",
+  "lookalike.statusPlain.invasive":
+    "Introduite ici, et elle gagne seule les milieux naturels, aux dépens de ce qui y était déjà.",
+  "lookalike.statusPlain.introduced":
+    "Introduite et plantée ici. On ne la connaît pas comme envahissante — elle n'est simplement pas la plante avec laquelle la faune d'ici a grandi.",
+  "lookalike.statusPlain.native":
+    "Elle pousse ici à l'état sauvage, tout comme la plante avec laquelle on la confond. La confusion compte quand même.",
+  "lookalike.nativeElsewhere": "Elle est bel et bien indigène quelque part — {link}.",
+  "lookalike.nativeElsewhereLink": "nous la recommandons dans notre liste {region}",
+  "lookalike.coverageNote":
+    "Ce sont les confusions que nous avons documentées, pas toutes celles qui sont possibles. Dans le doute, photographiez la plante et demandez à iNaturalist — ce sont de vraies personnes qui identifient.",
+  // ---------------------------------------------------------------------
+  // Les sosies : l'index et la page de chaque imposteur.
+  // ---------------------------------------------------------------------
+  "plants.lookalikesLink": "Vous ne savez pas ce que vous avez sous les yeux ? Certaines plantes s'achètent et se plantent à la place d'une indigène — {link}.",
+  "plants.lookalikesLinkText": "voyez les sosies que nous avons documentés",
+  "steps.lookalikes": "Sosies",
+  "lookalikes.indexTitle": "Les plantes qu'on prend pour des indigènes",
+  "lookalikes.indexDocTitle": "Sosies — les plantes qu'on prend pour des indigènes — Indigene",
+  "lookalikes.regionDocTitle": "Sosies en {region} — Indigene",
+  "lookalikes.docTitle": "{name} — avec quoi on la confond — Indigene",
+  "lookalikes.indexLede":
+    "{n} plantes qu'on achète, plante et photographie à la place d'une indigène. Ouvrez-en une pour voir, côte à côte, ce qui la distingue de la vraie.",
+  "lookalikes.indexLedeRegion":
+    "{n} d'entre elles se rencontrent en {region}. Ouvrez-en une pour voir, côte à côte, ce qui la distingue de l'indigène dont elle tient la place.",
+  "lookalikes.notAllVillains": "Toutes ne sont pas des coupables. ",
+  "lookalikes.notAllVillainsRest":
+    "Certaines gagnent les milieux naturels et nous coûtent quelque chose. D'autres sont de simples plantes de jardin qui ne sont pas d'ici. Une ou deux poussent ici à l'état sauvage, comme la plante avec laquelle on les confond — et la confusion compte quand même, car l'une d'elles peut vous tuer. L'étiquette de chacune le dit.",
+  "lookalikes.mistakenFor": "On la confond avec : ",
+  "lookalikes.mistakenForHere": "Ici, on la confond avec : ",
+  "lookalikes.mistakenForHeading": "Confondue avec {name}",
+  "lookalikes.whereItsFrom": "D'où elle vient vraiment : ",
+  "lookalikes.originSource": "Source : ",
+  "lookalikes.seeTheNative": "Voir la page de l'indigène",
+  "lookalikes.backToIndex": "← Tous les sosies",
+  "lookalikes.more": "Voir d'autres sosies",
+  "lookalikes.browseNatives": "Parcourir les indigènes",
+  "lookalikes.regionFilterLabel": "Où",
+  "lookalikes.regionFilterAll": "Toutes les régions ({n})",
+  "lookalikes.filterAria": "Filtrer les sosies par nom",
+  "lookalikes.filterPlaceholder": "Filtrer par nom…",
+  "lookalikes.filterCount.one": "{shown} sur {total} correspond à «\u202f{q}\u202f».",
+  "lookalikes.filterCount.other": "{shown} sur {total} correspondent à «\u202f{q}\u202f».",
+  "lookalikes.filterNone": "Aucun sosie ici ne correspond à «\u202f{q}\u202f». ",
+  "lookalikes.filterSearchPlants": "Chercher plutôt dans les plantes",
+  "lookalikes.filterNoneRest": " — c'est peut-être l'une des indigènes.",
+  "lookalikes.notFoundTitle": "Nous ne connaissons pas celui-là",
+  "lookalikes.notFoundLede": "Aucun sosie ici n'a l'adresse «\u202f{slug}\u202f».",
+  "plant.lookalikesTitle": "À ne pas confondre avec : ",
   "plant.propagationTitle": "🪴 Comment en faire plus",
   "plant.forThisPlant": "Pour cette plante : ",
   "plant.howToSource": "Source du mode d'emploi : ",

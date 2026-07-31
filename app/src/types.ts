@@ -239,6 +239,109 @@ export interface SupportLink {
 }
 
 // ---------------------------------------------------------------------------
+// Look-alikes: the "that isn't the one" layer.
+//
+// Every other layer in the app answers "what should I plant". This one answers
+// the question that comes right after someone decides to: **is the thing in
+// front of me actually it?** A garden centre sells Callery pear beside
+// serviceberry, a hedge of cherry laurel reads as holly at a glance, and half
+// the "butterfly plants" on a bench are not the plant the butterfly needs. A
+// person acting in good faith plants the wrong thing, and nothing in the app
+// would have caught it.
+//
+// Same two-part shape as the wildlife layer, for the same reason:
+//
+//   1. LOOKALIKES — the catalog. Each impostor described once, in plain words:
+//      what it is, where it's really from, and why it keeps getting mistaken
+//      for something else. A Callery pear is a Callery pear in every region.
+//
+//   2. CONFUSIONS — the ties, keyed by region → native plant id → links. Keyed
+//      by region because *the same plant is not the same story in two places*:
+//      common ivy is a listed invasive in North America and an ordinary native
+//      woodland climber in Atlantic France, where it's on our own roster. A
+//      catalog-level "invasive" flag would have to lie in one of those places,
+//      which is why `status` lives on the tie.
+//
+// Honesty stance, as everywhere else:
+//   - This is NOT "non-native plants we disapprove of". A tie earns its place
+//     only when the two plants are genuinely mixed up by real people, and the
+//     entry has to say *how to tell them apart* — a list of villains with no
+//     tells is a scold, not a tool.
+//   - "Impostor" is about the confusion, not about the plant's character.
+//     Douglas-fir planted in the Alps is a magnificent tree in the wrong
+//     hemisphere; Japanese maple is not invasive anywhere near us. The status
+//     word says which is which instead of tarring them all.
+//   - Every tie carries a `basis`, and every tell is something a person can
+//     actually check standing in front of the plant — a smell, a thorn, a leaf
+//     stalk that bleeds white — not a botanical key they'd need a lens for.
+// ---------------------------------------------------------------------------
+
+/**
+ * What this plant is *in the region the tie is authored for* — the honest
+ * middle ground between "native" and "not native", because those two words
+ * hide the distinction that actually matters to a gardener.
+ *
+ *  - "invasive"   Introduced here AND spreading into wild places on its own,
+ *                 at a cost. The ones worth going out of your way to avoid.
+ *  - "introduced" Brought here and planted; not known to spread on its own.
+ *                 Not a villain — just not the plant the local food web knows.
+ *  - "native"     Grows here wild, same as the plant it's confused with. The
+ *                 confusion still matters (a deadly bulb next to an edible one,
+ *                 a host plant next to one nothing eats).
+ */
+export type LookalikeStatus = "invasive" | "introduced" | "native";
+
+/**
+ * One impostor, described once. `latin` is what makes it findable: the app has
+ * no registry entry for a plant it doesn't recommend, so the iNaturalist link
+ * is built from the scientific name the same way the registry falls back to a
+ * name search for an unreconciled native.
+ */
+export interface Lookalike {
+  id: string; // stable slug, e.g. "pyrus-calleryana"
+  common: string; // "Callery pear (Bradford pear)"
+  latin: string; // "Pyrus calleryana"
+  /** Growth habit, for the same drawn silhouette a plant card gets. It carries
+   *  real information in this layer: half of "is that my serviceberry?" is
+   *  whether the thing in front of you is a tree, a shrub or a vine. */
+  form: PlantForm;
+  /** Where it's really from, in plain words: "Native to China and Vietnam." */
+  origin: string;
+  /** What it is and why it keeps turning up where it shouldn't. */
+  blurb: string;
+  /** A dependable, citable source for the origin and the spread. */
+  originBasis: string;
+}
+
+/**
+ * One checkable difference between the native and its impostor. Read as a
+ * sentence: **Flowers** — the native does this, the impostor does that. Both
+ * sides are always filled in: "the native has X" is only useful next to what
+ * the other one has instead.
+ */
+export interface TellApart {
+  /** What you're looking at: "Flowers", "Leaf stalk", "Smell", "Berries". */
+  feature: string;
+  /** What the native shows. */
+  native: string;
+  /** What the impostor shows. */
+  lookalike: string;
+}
+
+/** One native→impostor tie, keyed under the native in the region confusion map. */
+export interface LookalikeLink {
+  lookalikeId: string;
+  /** What the impostor is **in this region** (see `LookalikeStatus`). */
+  status: LookalikeStatus;
+  /** Why these two get mixed up, in one plain sentence. */
+  why: string;
+  /** How to tell them apart, most decisive tell first. */
+  tells: TellApart[];
+  /** A dependable, citable source for the confusion and the tells. */
+  basis: string;
+}
+
+// ---------------------------------------------------------------------------
 // Registry: the canonical identity layer.
 //
 // The plant lists answer "what should I plant here". The registry answers a

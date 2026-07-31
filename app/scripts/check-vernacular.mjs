@@ -58,8 +58,11 @@ const loader = await openLoader();
 const table = (await loader.load(`/src/locales/taxa.${lang}.ts`))[`TAXA_${lang.toUpperCase()}`];
 const { REGIONS } = await loader.load("/src/data/regions.ts");
 const { WILDLIFE } = await loader.load("/src/data/wildlife.ts");
+const { LOOKALIKES } = await loader.load("/src/data/lookalikes.ts");
 
-/** Every scientific name the app shows, deduped — plants then animals. */
+/** Every scientific name the app shows, deduped — plants, animals, impostors.
+ *  The look-alikes count: they are named on a plant's page exactly as the plant
+ *  is, so a French reader is owed the same "looked up, never invented" name. */
 function allTaxa() {
   const seen = new Map();
   for (const r of REGIONS) {
@@ -70,6 +73,9 @@ function allTaxa() {
   for (const w of WILDLIFE ?? []) {
     const key = w.latin ?? `#${w.id}`;
     if (!seen.has(key)) seen.set(key, { latin: key, kind: "animal", common: w.common });
+  }
+  for (const l of LOOKALIKES ?? []) {
+    if (!seen.has(l.latin)) seen.set(l.latin, { latin: l.latin, kind: "lookalike", common: l.common });
   }
   return [...seen.values()].filter((t) => !onlyName || t.latin === onlyName);
 }

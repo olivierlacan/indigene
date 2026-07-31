@@ -55,6 +55,53 @@ subtitle on the What's new page.
 
 ### Added
 
+- **A new section of the app for the plants that get mistaken for natives.**
+  [Look-alikes](https://indigene.app/#/lookalikes) is a list of the impostors —
+  the Callery pear sold beside the serviceberry, the cherry laurel hedge that
+  reads as holly, the sago palm that isn't a coontie — and each one has a page
+  showing, side by side, the differences you can actually check while standing
+  in front of them: a smell, a thorn, a hollow twig, a leaf stalk that bleeds
+  milky white. Every page links straight to photographs of the impostor on
+  iNaturalist, says where it's really from and what it does here, and cites who
+  says so. Start with the
+  [Callery pear](https://indigene.app/#/lookalikes/pyrus-calleryana), or with
+  [meadow death camas](https://indigene.app/#/lookalikes/toxicoscordion-venenosum),
+  where the look-alike is a bulb that can kill you.
+- **Every plant page says what it gets confused with, in one line.** Under
+  "Why it belongs here" you'll now find *Don't confuse it with* and the names,
+  each a link to the full comparison. One line, so the plant's own story keeps
+  the page.
+- **The label says which kind of impostor it is.** Some of these spread into
+  wild places and cost us something; some are ordinary garden plants that
+  simply aren't from here and do no harm; one or two grow here wild, just like
+  the plant they're confused with. Calling them all bad would be false, so each
+  is marked *Invasive here*, *Not from here* or *Native here too* — for the
+  region you're looking at. The same plant can be both: common ivy is invasive
+  in North America and an ordinary native climber in Atlantic France, where we
+  recommend it, and the page says so and links to it.
+- Internal: new `data/lookalikes.ts` (27 impostors, 36 region-keyed ties) with
+  `lib/lookalikes.ts` as its query layer and a dev audit — every tie must cite
+  a source, name at least one tell, fill in both sides of every tell, and may
+  not call a plant introduced in a region whose own roster lists it as native.
+  Status lives on the tie, never the catalog, for exactly that reason.
+  `steps/lookalikes.ts` serves `#/lookalikes`, `#/lookalikes/in/<region>` and
+  `#/lookalikes/<id>`, all three prerendered with their own share cards.
+- Internal: `scripts/check-lookalikes.mjs` (`npm run lookalikes:check`)
+  corroborates each tie against iNaturalist's `identifications/similar_species`
+  counts — the community's own record of which plants people really do
+  misidentify — and with `--suggest` reports frequent confusions the catalog
+  says nothing about. It never gates the build: an unbacked tie is usually a
+  garden plant nobody photographs in the wild, not a false claim. Provenance
+  for the whole layer is written up in `DATA_SOURCES.md`.
+- Internal: French vernacular names for twelve of the impostors (TAXREF, plus
+  VASCAN for Callery pear), and `check-vernacular.mjs` now verifies look-alike
+  names alongside plants and animals. The three Atlantic-France ties are
+  translated in full — that region's pages are otherwise entirely in French —
+  and `lookalikesUntranslated()` makes the "still in English" notice cover this
+  writing too, so a page can't quietly grow an English block.
+- Internal: bundle re-measured after the new data — ~250 KB → ~268 KB gzipped;
+  the figure updated in `README.md`, `PROJECT_BRIEF.md`, `app/README.md` and
+  `docs/ecoregion-plan.md`.
 - **The preview now describes the page you actually sent.** Until now, every
   Indigene link showed the same card, whatever it led to. Share
   [butterfly weed](https://indigene.app/plants/asclepias-tuberosa) and the card

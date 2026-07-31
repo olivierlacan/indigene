@@ -17,7 +17,7 @@ import { REGIONS } from "../lib/plants";
 import { highlight, norm } from "../components/filter-field";
 import { silhouetteFor } from "../components/plant-card";
 import type { PlantForm } from "../types";
-import { t, fmtNumber, getLang } from "../lib/i18n";
+import { t, tx, fmtNumber, getLang } from "../lib/i18n";
 import { regionName, regionShort, searchAliases, localName } from "../lib/names";
 
 const regionMetaOf = (id: string) => REGIONS.find((x) => x.meta.id === id)?.meta;
@@ -166,6 +166,13 @@ export function renderPlants(main: HTMLElement): void {
   main.append(
     el("h2", { class: "step-title" }, t("plants.title")),
     el("p", { class: "step-lede" }, t("plants.lede")),
+    // The way in to the impostors. It sits here, on the catalog, because that's
+    // where the question arises — you look a plant up because you're not sure
+    // what you're holding — and because the header has no room for a fifth nav
+    // item (see components/app-menu.ts on how tightly it's measured).
+    el("p", { class: "note", style: "margin-top:0" }, tx("plants.lookalikesLink", {
+      link: el("a", { href: "#/lookalikes" }, t("plants.lookalikesLinkText")),
+    })),
     el("div", { class: "field" }, [el("label", { for: "plant-q" }, t("plants.label")), input]),
     count,
     results,

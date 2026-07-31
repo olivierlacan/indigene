@@ -25,6 +25,15 @@ subtitle on the What's new page.
 
 ### Added
 
+- **A bee has moved into the logo.** Point at the Indigene name at the top of
+  any page — or reach it with the Tab key — and a bee buzzes in, crosses the
+  name to the little seedling looking for pollen, casts about, finds nothing
+  but leaves, and trudges home. The moment its back is turned the seedling
+  opens into a flower, so it races the whole way back and settles in to feed.
+  It is there to be enjoyed and nothing else: the name still takes you
+  [home](https://indigene.app/#/) in one tap, screen readers don't announce
+  any of it, and if you've asked your phone or computer to keep animations to
+  a minimum, the bee simply appears beside the name without flying anywhere.
 - **Indigene speaks French.** Every word of the app — the screens, the buttons,
   the plain-language explanations, the privacy and sources pages — is now
   available in French as well as English. It picks your language from your

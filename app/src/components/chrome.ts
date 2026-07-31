@@ -29,10 +29,17 @@ export function renderChrome(): void {
     if (key) elm.textContent = t(key as Parameters<typeof t>[0]);
   });
 
-  const savedBtn = document.querySelector<HTMLElement>("#saved-menu .nav-menu-btn");
-  savedBtn?.setAttribute("aria-label", t("nav.savedLocations"));
-  document.getElementById("saved-menu-panel")?.setAttribute("aria-label", t("nav.savedLocations"));
+  const menuBtn = document.querySelector<HTMLElement>("#app-menu .nav-menu-btn");
+  menuBtn?.setAttribute("aria-label", t("nav.menu"));
+  document.getElementById("app-menu-panel")?.setAttribute("aria-label", t("nav.menu"));
   document.getElementById("steps-rail")?.setAttribute("aria-label", t("steps.progress"));
+
+  // Keep the share card's locale honest for anything that renders the page
+  // before reading it. The static value in index.html is what a crawler that
+  // doesn't run JS gets; this is for the ones that do.
+  document
+    .querySelector('meta[property="og:locale"]')
+    ?.setAttribute("content", getLang());
 
   renderFooter();
 }
@@ -58,16 +65,24 @@ function renderFooter(): void {
     );
   }
 
-  const summary = document.getElementById("prefs-summary");
-  if (summary) summary.textContent = prefsSummary();
-  document
-    .getElementById("prefs-link")
-    ?.setAttribute("aria-label", `${t("settings.title")}: ${prefsSummary()}`);
+  // Two links, each naming its setting as well as its value: "Language:
+  // English", not a bare "English" that leaves you to work out what it's
+  // offering. The footer has the room the header's menu doesn't, and this is
+  // where a reader arrives *looking* for a setting rather than recognising a
+  // familiar word in passing. Said in full, the visible text is also the
+  // accessible name, so there's no aria-label to keep in sync.
+  const lang = document.getElementById("prefs-lang");
+  if (lang) lang.textContent = t("footer.languageIs", { value: langLabel() });
+  const units = document.getElementById("prefs-units");
+  if (units) units.textContent = t("footer.unitsIs", { value: unitsLabel() });
 }
 
-/** "Français · Métrique" — the two active choices, in the active language. */
-export function prefsSummary(): string {
-  const lang = LANGUAGES.find((l) => l.code === getLang())?.endonym ?? getLang();
-  const units = t(getUnits() === "metric" ? "settings.units.metric" : "settings.units.imperial");
-  return `${lang} · ${units}`;
+/** "Français" — the active language, in its own name. */
+export function langLabel(): string {
+  return LANGUAGES.find((l) => l.code === getLang())?.endonym ?? getLang();
+}
+
+/** "Métrique" — the active unit system, in the active language. */
+export function unitsLabel(): string {
+  return t(getUnits() === "metric" ? "settings.units.metric" : "settings.units.imperial");
 }

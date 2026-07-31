@@ -10,8 +10,9 @@
 //     "key not found" path to discover in production.
 //  2. **The choice is the user's, the guess is only a default.** We read
 //     `navigator.language` once, and from the moment someone picks a language
-//     by hand that pick wins forever. Same instinct as the sun picker: the
-//     sensor is a suggestion, the human is the answer.
+//     by hand that pick wins forever — over the browser's guess and over a
+//     `?lang=` in a link someone sent them (see `langFromUrl()`). Same instinct
+//     as the sun picker: the sensor is a suggestion, the human is the answer.
 //  3. **Language and units are separate settings.** A French speaker in Ohio
 //     wants French and feet; an American in Paris wants English and metres.
 //     Nothing here reaches into `units.ts`, and `units.ts` only reads the
@@ -33,28 +34,97 @@ const DICTS: Record<Lang, Dict> = { en, fr };
 
 const STORAGE_KEY = "indigene:lang";
 
+/** The query parameter that pins a link to one language: `?lang=fr`. */
+const URL_PARAM = "lang";
+
 function isLang(v: string | null | undefined): v is Lang {
   return v === "en" || v === "fr";
 }
 
+/** Reduce anything BCP 47-shaped to a language we ship: "fr-CA" → "fr". */
+function toLang(tag: string | null | undefined): Lang | undefined {
+  const base = String(tag ?? "").toLowerCase().split("-")[0];
+  return isLang(base) ? base : undefined;
+}
+
 /**
- * The starting language: an explicit past choice, else the browser's own
- * preference list, else English. `navigator.languages` is ordered by how much
- * the person wants each one, so we walk it in order and take the first we
- * actually speak — "fr-CA" and "fr" both mean French to us.
+ * A language pinned by the URL — the shareable-link case.
+ *
+ *   https://indigene.app/?lang=fr#/plants/quercus-alba
+ *   https://indigene.app/#/plants/quercus-alba?lang=fr
+ *
+ * Both forms work, because both are things a person plausibly types. The app
+ * routes on the hash but the canonical plant URLs are real paths, so a link can
+ * arrive with its query on either side of the `#` and neither reading is wrong.
+ *
+ * It does *not* beat a choice the reader has already made. A link is a guess
+ * about someone by whoever sent it; a pick in the settings screen is that
+ * person speaking for themselves, and a stranger's link doesn't get to talk
+ * over it. So the parameter sits exactly where the browser's own preference
+ * used to: it decides for a first-time visitor — which is the whole point of
+ * sending one — and is ignored by anyone who has set their language by hand.
+ */
+function langFromUrl(): Lang | undefined {
+  try {
+    const q = location.hash.indexOf("?");
+    const inHash = q >= 0 ? new URLSearchParams(location.hash.slice(q + 1)) : null;
+    return (
+      toLang(new URLSearchParams(location.search).get(URL_PARAM)) ??
+      toLang(inHash?.get(URL_PARAM))
+    );
+  } catch {
+    // A malformed URL is not worth a blank app.
+    return undefined;
+  }
+}
+
+function remember(lang: Lang): void {
+  try {
+    localStorage.setItem(STORAGE_KEY, lang);
+  } catch {
+    // Private-mode Safari throws on localStorage. A language pick that doesn't
+    // persist is a small loss; a blank app is a total one.
+  }
+}
+
+/**
+ * The starting language, in order of who is doing the asking:
+ *
+ *  1. **What this reader chose**, in the settings screen, at any point in the
+ *     past. Nothing outranks it.
+ *  2. **A `?lang=` in the link they followed** — someone else's guess about
+ *     them, which is worth acting on only because nobody better has spoken.
+ *  3. **The browser's own preference list**, the device's guess.
+ *  4. English.
+ *
+ * `navigator.languages` is ordered by how much the person wants each one, so we
+ * walk it in order and take the first we actually speak — "fr-CA" and "fr" both
+ * mean French to us.
  */
 function detect(): Lang {
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (isLang(saved)) return saved;
   } catch {
-    // Private-mode Safari throws on localStorage. A language pick that doesn't
-    // persist is a small loss; a blank app is a total one.
+    // See remember(): storage can throw. Fall through to the guesses — and note
+    // this is also the browser where a `?lang=` link *does* win every time,
+    // because there is no stored choice for it to talk over.
   }
+
+  const pinned = langFromUrl();
+  if (pinned) {
+    // Persist it, because the parameter is stripped from the address bar a
+    // moment later (see `consumeLangParam`) and the choice has to outlive it —
+    // through the next tap, the next page, and the next visit. From here on
+    // it's this reader's choice, and the next link can't overrule it either.
+    remember(pinned);
+    return pinned;
+  }
+
   const wanted = navigator.languages?.length ? navigator.languages : [navigator.language];
   for (const tag of wanted) {
-    const base = String(tag).toLowerCase().split("-")[0];
-    if (isLang(base)) return base;
+    const base = toLang(tag);
+    if (base) return base;
   }
   return "en";
 }
@@ -74,13 +144,43 @@ export function langTag(): string {
 export function setLang(next: Lang): void {
   if (next === current) return;
   current = next;
-  try {
-    localStorage.setItem(STORAGE_KEY, next);
-  } catch {
-    // See detect(): persistence is best-effort, the switch still works.
-  }
+  remember(next);
   applyDocumentLang();
   listeners.forEach((fn) => fn());
+}
+
+/**
+ * Take `?lang=` back out of the address bar, once it has been read.
+ *
+ * The parameter is an *instruction*, not part of the page's identity: the same
+ * plant profile in French and in English is one page, and the language is now a
+ * setting like any other. Leaving the parameter behind would make the address
+ * bar disagree with the app the moment someone used the picker — a URL claiming
+ * `?lang=fr` on a screen full of English, ready to be copied and passed on. So
+ * we act on it and clear it, and the URL you'd share from here is the clean one.
+ *
+ * It also keeps the router honest: `#/plants/quercus-alba?lang=fr` has to lose
+ * its query before `currentRoute()` reads that slug.
+ *
+ * Must run before the first route() — call it from boot().
+ */
+export function consumeLangParam(): void {
+  const url = new URL(location.href);
+  let changed = url.searchParams.has(URL_PARAM);
+  url.searchParams.delete(URL_PARAM);
+
+  const q = url.hash.indexOf("?");
+  if (q >= 0) {
+    const params = new URLSearchParams(url.hash.slice(q + 1));
+    if (params.has(URL_PARAM)) {
+      params.delete(URL_PARAM);
+      const rest = params.toString();
+      url.hash = url.hash.slice(0, q) + (rest ? `?${rest}` : "");
+      changed = true;
+    }
+  }
+  if (!changed) return;
+  history.replaceState(history.state, "", url.pathname + url.search + url.hash);
 }
 
 /** Keep `<html lang>` honest — it's what screen readers pick a voice from and

@@ -2,7 +2,6 @@ import { el, clear } from "../ui";
 import { navigate, resetDraft } from "../state";
 import { listSpots } from "../db";
 import { t, tn, tx } from "../lib/i18n";
-import { prefsSummary } from "../components/chrome";
 
 export function renderWelcome(main: HTMLElement): void {
   clear(main);
@@ -33,14 +32,13 @@ export function renderWelcome(main: HTMLElement): void {
         link: el("a", { href: "#/browse" }, t("welcome.ratherNotLink")),
       })
     ),
-    // Language & units, met on first contact rather than hunted for. The
-    // footer carries the same link on every page, but this is where a reader
-    // who needs it actually arrives — a French speaker shouldn't have to read
-    // an English page to the bottom to find the switch that makes it French.
-    el("p", { class: "prefs-inline" }, [
-      el("span", { "aria-hidden": "true" }, "🌐 "),
-      el("a", { href: "#/settings" }, `${prefsSummary()} — ${t("welcome.changePrefs")}`),
-    ]),
+    // No language & units line here. It used to sit between the start button
+    // and the pitch, on the reasoning that a French speaker shouldn't have to
+    // read an English page to the bottom to find the switch — but a settings
+    // control dropped into the middle of a page reads as part of the page, and
+    // it interrupted the one thing this screen is for. The switch is now in
+    // the header's menu, which is above the fold on every page including this
+    // one, and still in the footer.
 
     // The pitch for anyone not yet convinced — in plain sight, not a drawer.
     el("h3", { style: "margin-top:1.8rem" }, t("welcome.whyTitle")),

@@ -18,9 +18,9 @@ import { renderPrivacy } from "./steps/privacy";
 import { renderSources } from "./steps/sources";
 import { renderSettings } from "./steps/settings";
 import { renderAbout } from "./steps/about";
-import { initSavedMenu, closeSavedMenu } from "./components/saved-menu";
+import { initAppMenu, closeAppMenu } from "./components/app-menu";
 import { closeTermDialog } from "./components/term-dialog";
-import { applyDocumentLang, onLangChange, t } from "./lib/i18n";
+import { applyDocumentLang, consumeLangParam, onLangChange, t } from "./lib/i18n";
 import type { TKey } from "./locales/en";
 import { onUnitsChange } from "./lib/units";
 import { renderChrome } from "./components/chrome";
@@ -52,14 +52,31 @@ const STEPS: Record<string, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = {
   about: { fn: renderAbout, labelKey: "steps.about", inFlow: false },
 };
 
+/**
+ * Who renders `<step>/<param>`, when a step has one. Separate from `STEPS`
+ * because these are different screens, not the same screen with an argument:
+ * `#/plants` is the catalog and `#/plants/<slug>` is one plant's profile.
+ * `settings` is the exception that proves it — same screen either way, so it
+ * appears in both maps and simply reads the param (see steps/settings.ts).
+ */
+const PARAM_RENDERERS: Record<string, StepFn> = {
+  plants: renderPlant,
+  regions: renderRegion,
+  wildlife: renderWildlife,
+  search: renderSearch,
+  settings: renderSettings,
+};
+
 const FLOW = ["location", "sun", "confirm", "results"];
 
 const main = document.getElementById("main") as HTMLElement;
 const stepsList = document.getElementById("steps") as HTMLOListElement;
 let cleanup: (() => void) | null = null;
 
-/** Step keys that carry a param, e.g. `#/plants/<slug>`, `#/wildlife/<id>`. */
-const PARAM_STEPS = new Set(["plants", "regions", "wildlife", "search"]);
+/** Step keys that carry a param, e.g. `#/plants/<slug>`, `#/wildlife/<id>`.
+ *  `settings` takes one too — `#/settings/units` opens the page at that card,
+ *  which is what makes the footer's two links land in two different places. */
+const PARAM_STEPS = new Set(["plants", "regions", "wildlife", "search", "settings"]);
 
 /** The active route: a step key, plus a param for the `<step>/<id>` pages. */
 function currentRoute(): { step: string; param?: string } {
@@ -105,14 +122,16 @@ function renderStepRail(active: string): void {
   (document.querySelector(".steps") as HTMLElement).style.display = idx >= 0 ? "block" : "none";
 }
 
-/** Which header nav link, if any, a step belongs to. Flow steps map to none. */
+/** Which header nav link, if any, a step belongs to. Flow steps map to none.
+ *  Saved and Settings both mark the gear: it's the menu that leads to each. */
 const SECTION_OF: Record<string, string> = {
   browse: "explore",
   plants: "explore",
   regions: "explore",
   search: "search",
   wildlife: "wildlife",
-  saved: "saved",
+  saved: "menu",
+  settings: "menu",
 };
 
 /**
@@ -144,7 +163,7 @@ function updateLayout(step: string, param?: string): void {
 
 function updateSiteNav(step: string): void {
   const section = SECTION_OF[step];
-  // Both the plain links and the Saved menu button carry data-section.
+  // Both the plain links and the app-menu button carry data-section.
   document.querySelectorAll<HTMLElement>(".site-nav [data-section]").forEach((elm) => {
     if (elm.dataset.section === section) elm.setAttribute("aria-current", "page");
     else elm.removeAttribute("aria-current");
@@ -154,21 +173,13 @@ function updateSiteNav(step: string): void {
 async function route(): Promise<void> {
   const { step, param } = currentRoute();
   if (cleanup) { cleanup(); cleanup = null; }
-  closeSavedMenu(); // a navigation always dismisses an open header menu
+  closeAppMenu(); // a navigation always dismisses an open header menu
   closeTermDialog(); // …and any explain-this dialog, which would float above the new page
   document.title = t("app.title"); // plant pages set their own; everything else resets
   renderStepRail(step);
   updateSiteNav(step);
   updateLayout(step, param);
-  const fn = param
-    ? step === "plants"
-      ? renderPlant
-      : step === "wildlife"
-        ? renderWildlife
-        : step === "search"
-          ? renderSearch
-          : renderRegion
-    : STEPS[step].fn;
+  const fn = param ? PARAM_RENDERERS[step] ?? STEPS[step].fn : STEPS[step].fn;
   const result = fn(main, param);
   if (typeof result === "function") cleanup = result;
   else if (result instanceof Promise) {
@@ -238,6 +249,11 @@ function rerenderAll(): void {
 
 async function boot(): Promise<void> {
   normalizePathRoute();
+  // `?lang=fr` has already been read (i18n picks it up as it loads); this takes
+  // it back out of the address bar. It has to happen before the first route(),
+  // because 404.html hands us the path form as `#/plants/<slug>?lang=fr` and
+  // that query would otherwise be read as part of the slug.
+  consumeLangParam();
   applyDocumentLang();
   renderChrome();
   onLangChange(rerenderAll);
@@ -249,7 +265,7 @@ async function boot(): Promise<void> {
   // a fresh page can't be showing ranked results yet anyway (the results
   // step needs a confirmed spot, which a reload clears).
   void loadPrefs().catch(() => {});
-  initSavedMenu();
+  initAppMenu();
   updateOnline();
   await route();
   // Register the hand-written service worker for offline + installability.

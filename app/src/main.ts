@@ -125,14 +125,23 @@ function renderStepRail(active: string): void {
 /** Which header nav link, if any, a step belongs to. Flow steps map to none.
  *  Saved and Settings both mark the gear: it's the menu that leads to each. */
 const SECTION_OF: Record<string, string> = {
-  browse: "explore",
-  plants: "explore",
-  regions: "explore",
-  search: "search",
+  browse: "regions",
+  regions: "regions",
+  search: "plants",
   wildlife: "wildlife",
   saved: "menu",
   settings: "menu",
 };
+
+/**
+ * The one step that lands under two nav items: `#/plants` is the region index
+ * (the older URL for `#/regions`), while `#/plants/<slug>` is a single plant's
+ * profile — which belongs under Plants, next to the search that finds it.
+ */
+function sectionOf(step: string, param?: string): string | undefined {
+  if (step === "plants") return param ? "plants" : "regions";
+  return SECTION_OF[step];
+}
 
 /**
  * The pages that are a *list of independent cards* rather than a document.
@@ -161,8 +170,8 @@ function updateLayout(step: string, param?: string): void {
   document.body.dataset.layout = wide ? "wide" : "narrow";
 }
 
-function updateSiteNav(step: string): void {
-  const section = SECTION_OF[step];
+function updateSiteNav(step: string, param?: string): void {
+  const section = sectionOf(step, param);
   // Both the plain links and the app-menu button carry data-section.
   document.querySelectorAll<HTMLElement>(".site-nav [data-section]").forEach((elm) => {
     if (elm.dataset.section === section) elm.setAttribute("aria-current", "page");
@@ -177,7 +186,7 @@ async function route(): Promise<void> {
   closeTermDialog(); // …and any explain-this dialog, which would float above the new page
   document.title = t("app.title"); // plant pages set their own; everything else resets
   renderStepRail(step);
-  updateSiteNav(step);
+  updateSiteNav(step, param);
   updateLayout(step, param);
   const fn = param ? PARAM_RENDERERS[step] ?? STEPS[step].fn : STEPS[step].fn;
   const result = fn(main, param);

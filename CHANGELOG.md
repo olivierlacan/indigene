@@ -46,6 +46,14 @@ subtitle on the What's new page.
   its scientific name rather than inventing one, and the page says so. Where
   each name comes from is set out on the
   [Where our numbers come from](https://indigene.app/#/sources) page.
+- **Send someone a link that opens in French.** Put `?lang=fr` on the end of any
+  Indigene address — [indigene.app/?lang=fr](https://indigene.app/?lang=fr), or
+  `indigene.app/plants/quercus-alba?lang=fr` for a particular plant — and it
+  opens in French for whoever you sent it to, no matter what language their
+  phone or computer is set to. `?lang=en` does the same for English. Indigene
+  remembers the language from then on, so the rest of their visit stays in it,
+  and either of you can still change it any time from
+  [Settings](https://indigene.app/#/settings).
 - The size drawing, the plant cards and the "no taller than…" filters all read
   in your units: a tree is "24 m × 21 m" or "80 ft × 70 ft", and the ruler up
   the side of the drawing is marked in whole metres or whole feet — never in

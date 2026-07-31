@@ -20,7 +20,7 @@ import { renderSettings } from "./steps/settings";
 import { renderAbout } from "./steps/about";
 import { initSavedMenu, closeSavedMenu } from "./components/saved-menu";
 import { closeTermDialog } from "./components/term-dialog";
-import { applyDocumentLang, onLangChange, t } from "./lib/i18n";
+import { applyDocumentLang, consumeLangParam, onLangChange, t } from "./lib/i18n";
 import type { TKey } from "./locales/en";
 import { onUnitsChange } from "./lib/units";
 import { renderChrome } from "./components/chrome";
@@ -238,6 +238,11 @@ function rerenderAll(): void {
 
 async function boot(): Promise<void> {
   normalizePathRoute();
+  // `?lang=fr` has already been read (i18n picks it up as it loads); this takes
+  // it back out of the address bar. It has to happen before the first route(),
+  // because 404.html hands us the path form as `#/plants/<slug>?lang=fr` and
+  // that query would otherwise be read as part of the slug.
+  consumeLangParam();
   applyDocumentLang();
   renderChrome();
   onLangChange(rerenderAll);

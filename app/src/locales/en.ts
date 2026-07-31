@@ -128,6 +128,7 @@ export const en = {
   // ---------------------------------------------------------------------
   // Browse (the no-location entrance).
   // ---------------------------------------------------------------------
+  "browse.docTitle": "Browse regions & native plants — Indigene",
   "browse.title": "Browse regions & native plants",
   "browse.lede": "No location needed — start from a region or a standout plant instead.",
   "browse.regionsTitle.one": "Right now this covers one region",
@@ -158,6 +159,7 @@ export const en = {
   // ---------------------------------------------------------------------
   // Explore (region cards).
   // ---------------------------------------------------------------------
+  "explore.docTitle": "Meet the natives — Indigene",
   "explore.title": "Meet the natives",
   "explore.lede":
     "{plants} native plants across the {regions} regions Indigene covers so far. Open the one you live in to see its whole roster — or tap the plant on the front of a card to meet it.",
@@ -1016,6 +1018,7 @@ export const en = {
   // ---------------------------------------------------------------------
   // The plants index (#/plants) — every native we know, searchable.
   // ---------------------------------------------------------------------
+  "plants.docTitle": "Native plants — Indigene",
   "plants.title": "Native plants",
   "plants.lede":
     "Every plant Indigene knows, from every region. Type a name — common or scientific — to narrow the list, then open a plant for its full page.",

@@ -4,10 +4,16 @@
     GitHub Pages serves this file for any path that isn't a real file. Two very
     different things land here, and they want opposite treatment:
 
-    1. A canonical app URL — /plants/quercus-alba, /regions/pnw, /wildlife/monarch.
-       The app is a single page routed on the hash, so this bounces the path
-       into the equivalent hash route (main.ts normalizes the rest).
+    1. A canonical app URL that has no file of its own — a deep link below a
+       page (/plants/quercus-alba/ecosystem, /wildlife/in/pnw) or a flow step
+       (/results). The app is a single page routed on the hash, so this bounces
+       the path into the equivalent hash route (main.ts normalizes the rest).
        location.replace keeps this stop out of the back button.
+
+       The pages themselves — /plants/quercus-alba, /regions/pnw,
+       /wildlife/monarch — no longer come through here at all:
+       scripts/prerender.mjs writes each one a real file, so they answer 200
+       with their own share card instead of a 404 with the site's.
 
     2. An address that isn't ours at all — a typo, a stale link, a scanner
        poking at /wp-login.php. These used to be bounced too, and since the
@@ -44,10 +50,10 @@
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
 
     <!--
-      The share card matters more here than anywhere. Every plant link the app
-      hands out (see plantShareUrl in src/lib/explore.ts) is a real path, so
-      this is the file an unfurler is served when someone posts one — it used
-      to carry no tags at all, and those links previewed as nothing.
+      A share card for what lands here anyway: a deep link, a stale address, a
+      typo. It describes the site rather than a page, which is the only honest
+      thing to say about an address we couldn't resolve. Real pages carry their
+      own (scripts/prerender.mjs) and never reach this file.
     -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Indigene" />

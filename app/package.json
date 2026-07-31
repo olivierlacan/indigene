@@ -7,9 +7,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "build": "tsc --noEmit && vite build && node scripts/prerender.mjs",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
+    "prerender": "node scripts/prerender.mjs",
     "release-notes": "node scripts/build-release-notes.mjs",
     "host-counts": "node scripts/build-host-counts.mjs",
     "registry:build": "node scripts/build-registry.mjs",

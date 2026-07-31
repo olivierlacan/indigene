@@ -21,6 +21,7 @@ import { nameLines, regionName, regionReference } from "../lib/names";
 
 export function renderExplore(main: HTMLElement): void {
   clear(main);
+  document.title = t("explore.docTitle");
 
   const totalPlants = REGIONS.reduce((n, r) => n + loadPlants(r).length, 0);
 

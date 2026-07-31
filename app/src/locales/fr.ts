@@ -129,6 +129,7 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   // Parcourir.
   // ---------------------------------------------------------------------
+  "browse.docTitle": "Parcourir les régions et les plantes indigènes — Indigene",
   "browse.title": "Parcourir les régions et les plantes indigènes",
   "browse.lede": "Pas besoin de position : partez plutôt d'une région ou d'une plante remarquable.",
   "browse.regionsTitle.one": "Pour l'instant, une seule région est couverte",
@@ -164,6 +165,7 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   // Explorer.
   // ---------------------------------------------------------------------
+  "explore.docTitle": "À la rencontre des indigènes — Indigene",
   "explore.title": "À la rencontre des indigènes",
   "explore.lede":
     "{plants} plantes indigènes réparties sur les {regions} régions couvertes jusqu'ici. Ouvrez celle où vous vivez pour voir toute sa liste — ou touchez la plante en couverture d'une carte pour faire sa connaissance.",
@@ -1037,6 +1039,7 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   // L'index des plantes (#/plants) — toutes les indigènes, avec recherche.
   // ---------------------------------------------------------------------
+  "plants.docTitle": "Plantes indigènes — Indigene",
   "plants.title": "Plantes indigènes",
   "plants.lede":
     "Toutes les plantes qu'Indigene connaît, région par région. Tapez un nom — courant ou scientifique — pour resserrer la liste, puis ouvrez une plante pour sa fiche complète.",

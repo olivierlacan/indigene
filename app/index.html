@@ -19,11 +19,9 @@
          it can offer the French page to a French searcher instead of ranking
          one language and hiding the other.
 
-         They point at the site root and nothing deeper, because that is the
-         whole truth available to a crawler here: the router lives in the hash,
-         so every plant and region URL is served this same file. Per-page
-         alternates need per-page files — the prerendering work, not this.
-         x-default is the bare URL, where detection picks the language. -->
+         These are the *root* page's alternates. Every other page now has its
+         own file with its own set, written by scripts/prerender.mjs at build
+         time. x-default is the bare URL, where detection picks the language. -->
     <link rel="alternate" hreflang="en" href="https://indigene.app/?lang=en" />
     <link rel="alternate" hreflang="fr" href="https://indigene.app/?lang=fr" />
     <link rel="alternate" hreflang="x-default" href="https://indigene.app/" />
@@ -37,12 +35,14 @@
     <link rel="manifest" href="/manifest.webmanifest" />
 
     <!-- The share card: what Slack, iMessage, WhatsApp and the rest show when
-         someone posts a link. These describe the *site*, because that is all
-         they honestly can right now — the app routes on the hash, so a
-         crawler asking for any plant URL is served this same file and never
-         sees the plant. Per-page cards need each page to exist as its own
-         file, which is the prerendering work, not this. og:image must be an
-         absolute URL, hence the hardcoded origin (pinned by public/CNAME). -->
+         someone posts a link. These describe the *site*, which is exactly what
+         this file is now — every shareable page gets its own copy of the built
+         shell with its own words in place of these, written by
+         scripts/prerender.mjs after `vite build`. Keep the two in step: that
+         script strips this whole block from each copy and re-emits it, and it
+         fails the build if a tag here has no counterpart there. og:image must
+         be an absolute URL, hence the hardcoded origin (pinned by
+         public/CNAME). -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Indigene" />
     <meta property="og:url" content="https://indigene.app/" />

@@ -165,7 +165,12 @@ a {
   line-height: 1.6;
   vertical-align: 0.12em;
 }
-.section-link::after {
+/* The chevron itself, shared with the plant cards in a ranked list — same
+   mark, same meaning, so "this leads somewhere" looks the same everywhere. A
+   card's name draws it as a real element (`.pick-chevron`), because the link's
+   own `::after` is the overlay stretching it across the card. */
+.section-link::after,
+.pick-chevron {
   content: "";
   display: inline-block;
   width: 0.36em;
@@ -182,7 +187,9 @@ a {
   color: var(--brand-ink);
 }
 .section-link:hover::after,
-.section-link:focus-visible::after {
+.section-link:focus-visible::after,
+.plant-pick:hover .pick-chevron,
+.plant-pick:focus-within .pick-chevron {
   transform: rotate(45deg) translate(0.12em, -0.12em);
 }
 
@@ -1564,14 +1571,8 @@ details.weights {
 .pick-value strong {
   color: var(--ink);
 }
-/* Says what the whole-card link does. A pointer gets a cursor and a hover; a
-   finger gets neither, so the card says it in words. */
-.pick-open {
-  padding: 0 1rem 0.9rem;
-  margin: 0.5rem 0 0;
-  font-size: 0.9rem;
-  font-weight: 650;
-  color: var(--brand-ink);
+.pick-value {
+  padding-bottom: 0.9rem;
 }
 /* Loose text children of a plant card (the card has no padding of its own so
    media can run full-bleed) get the same gutter as everything else. */

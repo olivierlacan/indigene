@@ -546,7 +546,6 @@ export const en = {
   "card.sizeShort": "Grows to about {height} tall and {spread} wide.",
   "card.ecoValue": "🦋 Wildlife value {score}/100.",
   "card.strongFor": "Counts most here: {list}.",
-  "card.openHint": "Tap for the full plant →",
   // Two forms of one sentence. Which is used depends on whether the month
   // that follows starts with a vowel — English doesn't care and defines both
   // identically, French elides ("de avril" is not a thing anyone writes).

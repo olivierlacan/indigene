@@ -563,7 +563,6 @@ export const fr: Dict = {
   "card.sizeShort": "Atteint à terme environ {height} de haut et {spread} de large.",
   "card.ecoValue": "🦋 Valeur écologique {score}/100.",
   "card.strongFor": "Ce qui compte le plus ici : {list}.",
-  "card.openHint": "Touchez pour la fiche complète →",
   "card.bloomRange": "Fleurit de {from} à {to} ({color}).",
   "card.bloomRangeVowel": "Fleurit d'{from} à {to} ({color}).",
   "card.foliage": "Cultivée pour son feuillage, pas pour ses fleurs.",

@@ -60,11 +60,20 @@ export function plantCard(r: Ranked, weights: Weights, nq = ""): HTMLElement {
   // `.plant-pick`), so the card is one big target with one accessible name
   // rather than a grid of things to aim at. Nothing else in the card is
   // interactive, which is what makes that safe.
+  //
+  // It ends in the same green chevron a section heading wears (see
+  // `components/section-link.ts`) — the app's one mark for "this leads
+  // somewhere", drawn at rest because a phone has no hover. Its own element
+  // rather than a `::after`, because the link's `::after` is the overlay that
+  // stretches it across the card.
   const head = el("div", { class: "plant-head" }, [
     el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
     el("div", {}, [
       el("h3", { class: "plant-name" }, [
-        el("a", { class: "plant-pick-link", href: `#/plants/${p.id}` }, highlight(names.title, nq)),
+        el("a", { class: "plant-pick-link", href: `#/plants/${p.id}` }, [
+          ...highlight(names.title, nq),
+          el("span", { class: "pick-chevron", "aria-hidden": "true" }),
+        ]),
       ]),
       el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" },
         highlight(names.sub, nq)),
@@ -102,9 +111,6 @@ export function plantCard(r: Ranked, weights: Weights, nq = ""): HTMLElement {
     meta,
     el("p", { class: "pick-gives" }, prose(p, "givesNote")),
     value,
-    // Says out loud what the stretched link does — a card that navigates on tap
-    // shouldn't be a surprise, and the pointer cursor isn't there on a phone.
-    el("p", { class: "pick-open", "aria-hidden": "true" }, t("card.openHint")),
   ]);
 }
 

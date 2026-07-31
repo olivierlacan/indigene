@@ -11,6 +11,7 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "prerender": "node scripts/prerender.mjs",
+    "routes:check": "node scripts/check-routes.mjs",
     "release-notes": "node scripts/build-release-notes.mjs",
     "host-counts": "node scripts/build-host-counts.mjs",
     "registry:build": "node scripts/build-registry.mjs",

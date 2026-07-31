@@ -210,13 +210,14 @@ function headMeta({ title, description, path }) {
  * sentences the row already carries.
  */
 async function collectPages(load) {
-  const [{ en }, { REGIONS, loadPlants }, { WILDLIFE }, { KIND_ORDER, KIND_SLUGS }, { lookalikeIndex }] =
+  const [{ en }, { REGIONS, loadPlants }, { WILDLIFE }, { KIND_ORDER, KIND_SLUGS }, { lookalikeIndex }, { shareablePaths }] =
     await Promise.all([
       load("/src/locales/en.ts"),
       load("/src/lib/plants.ts"),
       load("/src/data/wildlife.ts"),
       load("/src/lib/wildlife.ts"),
       load("/src/lib/lookalikes.ts"),
+      load("/src/lib/routes.ts"),
     ]);
 
   const pages = [];
@@ -292,6 +293,25 @@ async function collectPages(load) {
 
   for (const p of pages) {
     if (!p.title || !p.description) throw new Error(`prerender: /${p.path} is missing title or description`);
+  }
+
+  // The addresses written here and the addresses the *app* puts in the address
+  // bar have to be the same set, or a reader copies out a link with nothing
+  // behind it. `lib/routes.ts` is where that set is decided; this file only
+  // adds the words. So check the two agree before writing a single file —
+  // failing the build beats shipping a page whose link answers 404, and it
+  // beats finding out from a stranger who clicked one.
+  const written = new Set(pages.map((p) => p.path));
+  const expected = shareablePaths();
+  const missing = expected.filter((p) => !written.has(p));
+  const extra = [...written].filter((p) => !expected.includes(p));
+  if (missing.length || extra.length) {
+    throw new Error(
+      "prerender: the pages written here have drifted from `shareablePaths()` in src/lib/routes.ts.\n" +
+        (missing.length ? `  the app canonicalizes to these, but no file is written: ${missing.slice(0, 10).join(", ")}\n` : "") +
+        (extra.length ? `  a file is written, but the app never hands the address out: ${extra.slice(0, 10).join(", ")}\n` : "") +
+        "  Both lists come from the catalogs, so a mismatch means one of them has a rule the other doesn't."
+    );
   }
   return pages;
 }

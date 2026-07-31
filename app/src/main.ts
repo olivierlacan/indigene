@@ -15,11 +15,10 @@ import { renderPlants } from "./steps/plants";
 import { renderPlant } from "./steps/plant";
 import { renderRegion } from "./steps/region";
 import { renderWildlifeIndex, renderWildlife, wildlifeRegionParam } from "./steps/wildlife";
-import { wildlifeKindRoute, getWildlife } from "./lib/wildlife";
+import { wildlifeKindRoute } from "./lib/wildlife";
 import { renderLookalikeIndex, renderLookalike, lookalikeRegionParam } from "./steps/lookalikes";
-import { getLookalike } from "./lib/lookalikes";
-import { findPlant } from "./lib/explore";
-import { REGIONS } from "./lib/plants";
+import { canonicalPath, parseRoute } from "./lib/routes";
+import type { AppStep } from "./lib/routes";
 import { renderPrivacy } from "./steps/privacy";
 import { renderSources } from "./steps/sources";
 import { renderSettings } from "./steps/settings";
@@ -45,7 +44,15 @@ type StepFn = (
 // on every language change, so the words have to be looked up at render time.
 // A string captured here would be frozen in whatever language happened to be
 // active when this module first ran.
-const STEPS: Record<string, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = {
+//
+// Keyed on `AppStep` rather than `string`, so this table and `APP_STEPS` in
+// `lib/routes.ts` cannot fall out of step: a step added in one place and not
+// the other fails to compile. That matters because `public/404.html` carries
+// its own copy of the step list — it has to, it runs before any of this loads —
+// and `scripts/check-routes.mjs` checks *that* copy against `APP_STEPS`. A
+// step missing from the 404 list is served "we couldn't find that page"
+// instead of being bounced into the app, which is how `/settings/units` broke.
+const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = {
   "": { fn: renderWelcome, labelKey: "steps.start", inFlow: false },
   location: { fn: renderLocation, labelKey: "steps.spot", inFlow: true },
   sun: { fn: renderSun, labelKey: "steps.sun", inFlow: true },
@@ -86,18 +93,11 @@ const PARAM_RENDERERS: Record<string, StepFn> = {
   privacy: renderPrivacy,
 };
 
-const FLOW = ["location", "sun", "confirm", "priorities", "results"];
+const FLOW: AppStep[] = ["location", "sun", "confirm", "priorities", "results"];
 
 const main = document.getElementById("main") as HTMLElement;
 const stepsList = document.getElementById("steps") as HTMLOListElement;
 let cleanup: (() => void) | null = null;
-
-/** Step keys that carry a param, e.g. `#/plants/<slug>`, `#/wildlife/<id>`.
- *  `settings` takes one too — `#/settings/units` opens the page at that card,
- *  which is what makes the footer's two links land in two different places —
- *  and so does `privacy`, so a control can link to the section that answers the
- *  question it raises (`#/privacy/lookups`). */
-const PARAM_STEPS = new Set(["plants", "regions", "wildlife", "lookalikes", "settings", "privacy"]);
 
 /** Whatever sits beyond the app base in the address bar, e.g. `plants/ilex-opaca`
  *  for `…/plants/ilex-opaca/`. Pages serves the directory index, so the trailing
@@ -109,7 +109,7 @@ function pathRoute(): string {
 }
 
 /** The active route: a step key, plus a param for the `<step>/<id>` pages. */
-function currentRoute(): { step: string; param?: string } {
+function currentRoute(): { step: AppStep; param?: string } {
   // A hash query string (`#/plants?q=oak`) is the page's *state*, not its
   // identity — the plants index reads its own `?q=` — so it never takes part
   // in matching a route.
@@ -121,11 +121,9 @@ function currentRoute(): { step: string; param?: string } {
   // hash that means home — and on a page opened by its path, folding an empty
   // hash route back onto the path would re-render the page you just left.
   const raw = location.hash ? location.hash.replace(/^#\/?/, "").split("?")[0] : pathRoute();
-  const [head, ...rest] = raw.split("/");
-  if (PARAM_STEPS.has(head) && rest.length) {
-    return { step: head, param: decodeURIComponent(rest.join("/")) };
-  }
-  return { step: head in STEPS ? head : "" };
+  // Both forms parse the same way, in `lib/routes.ts`, because both have to
+  // agree with the addresses the prerenderer writes files for.
+  return parseRoute(raw);
 }
 
 /**
@@ -143,47 +141,6 @@ function canonicalizeRoute(): void {
   if (!m) return;
   const q = m[1] ? decodeURIComponent(m[1]).trim() : "";
   history.replaceState(null, "", `#/plants${q ? `?q=${encodeURIComponent(q)}` : ""}`);
-}
-
-/** The index pages `scripts/prerender.mjs` writes a file for. `settings` is
- *  absent on purpose — it's the one screen with no address worth sending. */
-const PRERENDERED_INDEXES = new Set([
-  "plants", "regions", "browse", "wildlife", "lookalikes", "privacy", "sources", "about",
-]);
-
-/**
- * The canonical address of a route, when it has one: the real path that
- * `scripts/prerender.mjs` wrote a file for, or null.
- *
- * Only those pages can be previewed. An unfurler — Slack, iMessage, Facebook —
- * is a plain HTTP fetch, and a `#…` fragment is *never sent to a server*: ask
- * for `…/#/plants/asclepias-tuberosa` and the server is asked for `/`, so the
- * card that comes back describes the site, whatever the link led to. The path
- * form is a real document with the plant's own title and words in its head.
- *
- * Everything else is deliberately absent. The flow steps have no file (they
- * mean nothing without the draft held in memory), and neither do the
- * sub-routes — `#/wildlife/in/<region>`, `#/settings/units`,
- * `#/privacy/lookups` — which are a filter or a scroll position on a page
- * rather than a page. Null leaves those in the hash form, which is right:
- * it's the only address that reloads them.
- */
-function canonicalPath(step: string, param?: string): string | null {
-  if (!param) return PRERENDERED_INDEXES.has(step) ? step : null;
-  const at = (id: string): string => `${step}/${encodeURIComponent(id)}`;
-  switch (step) {
-    case "plants":
-      return findPlant(param).length ? at(param) : null;
-    case "regions":
-      return REGIONS.some((r) => r.meta.id === param) ? at(param) : null;
-    // Both an animal (`…/wildlife/monarch`) and a group (`…/wildlife/bees`).
-    case "wildlife":
-      return getWildlife(param) || wildlifeKindRoute(param) ? at(param) : null;
-    case "lookalikes":
-      return getLookalike(param) ? at(param) : null;
-    default:
-      return null;
-  }
 }
 
 /**
@@ -208,7 +165,7 @@ function canonicalPath(step: string, param?: string): string | null {
  * `…/plants/asclepias-tuberosa?q=butterfly%20weed` in the address bar.
  */
 let syncedRoute: string | null = null;
-function syncAddressBar(step: string, param?: string): void {
+function syncAddressBar(step: AppStep, param?: string): void {
   const base = import.meta.env.BASE_URL;
   const path = canonicalPath(step, param);
   const key = param ? `${step}/${param}` : step;
@@ -226,8 +183,8 @@ function syncAddressBar(step: string, param?: string): void {
   routedHref = location.href;
 }
 
-function renderStepRail(active: string): void {
-  const activeFlowKey = active === "scan" ? "sun" : active;
+function renderStepRail(active: AppStep): void {
+  const activeFlowKey: AppStep = active === "scan" ? "sun" : active;
   const idx = FLOW.indexOf(activeFlowKey);
   stepsList.replaceChildren();
   FLOW.forEach((key, i) => {
@@ -273,7 +230,7 @@ function sectionOf(step: string): string | undefined {
  */
 const WIDE_STEPS = new Set(["plants", "regions", "wildlife", "lookalikes"]);
 
-function updateLayout(step: string, param?: string): void {
+function updateLayout(step: AppStep, param?: string): void {
   // Two of the documents — a plant's page and an animal's — get a mode of their
   // own. Neither is a card list, but they're *long*, and on a laptop they ran to
   // several screenfuls of narrow ribbon with the window empty either side. They
@@ -305,7 +262,7 @@ function updateLayout(step: string, param?: string): void {
   document.body.dataset.layout = wide ? "wide" : "narrow";
 }
 
-function updateSiteNav(step: string): void {
+function updateSiteNav(step: AppStep): void {
   const section = sectionOf(step);
   // Both the plain links and the app-menu button carry data-section.
   document.querySelectorAll<HTMLElement>(".site-nav [data-section]").forEach((elm) => {

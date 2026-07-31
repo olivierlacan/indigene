@@ -153,6 +153,27 @@ subtitle on the What's new page.
   [Units](https://indigene.app/settings/units) from a bookmark showed the
   not-found page instead of the setting, and so did a link to the
   [look-alikes](https://indigene.app/lookalikes) of one particular region.
+- **Nothing can quietly ship a plant whose link doesn't work.** Every plant,
+  animal and region has a page at its own address, and that address is what
+  gets sent when you share one. Adding a new plant used to be able to skip
+  building that page: the plant looked perfect inside the app, and only the
+  person who received the link found out — they'd get "we couldn't find that
+  page" and a preview of nothing in particular. A check now runs on every
+  proposed change and refuses it if a single one is missing.
+- Internal: `src/lib/routes.ts` is the one list of what counts as a page —
+  `APP_STEPS`, `PARAM_STEPS`, `SHAREABLE_INDEXES`, `parseRoute`,
+  `canonicalPath`, `shareablePaths` — imported by `main.ts` (which types its
+  `STEPS` table as `Record<AppStep, …>`, so the two can't drift without a
+  compile error), by `prerender.mjs` (which now throws if its page list and
+  `shareablePaths()` disagree, before writing a file) and by the new
+  `scripts/check-routes.mjs` / `npm run routes:check`. That check runs in a
+  `Routes` workflow after a build and verifies five things: every shareable
+  address has a file in `dist/`; no prerendered file exists for an address the
+  app never hands out; each file's canonical link, `og:url` and title name
+  itself rather than the shell's; every address round-trips through
+  `parseRoute` → `canonicalPath` back to itself; and `public/404.html`'s
+  hand-kept `ROUTES` covers every step in `APP_STEPS`. All six failure modes
+  were verified by breaking them one at a time.
 - Internal: `main.ts` reads the path as a route alongside the hash and keeps the
   canonical one in the address bar (`pathRoute`, `canonicalPath`,
   `syncAddressBar`) instead of folding every path into the hash form on boot

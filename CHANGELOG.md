@@ -153,6 +153,18 @@ subtitle on the What's new page.
   [Units](https://indigene.app/settings/units) from a bookmark showed the
   not-found page instead of the setting, and so did a link to the
   [look-alikes](https://indigene.app/lookalikes) of one particular region.
+- Internal: groundwork for a per-plant share picture. The seven form glyphs move
+  from `components/plant-card.ts` to `components/plant-glyphs.ts` — same
+  geometry, no DOM — so `silhouetteFor` (browser) and `glyphMarkup` (headless)
+  draw one set from one table. `scripts/gen-plant-cards.mjs` renders a
+  1200×630 card per plant: English common name, scientific name in italics, the
+  plant's own silhouette, and up to four facts as an icon and a number
+  (caterpillar species, creatures fed, bloom window, mature height), with a
+  keystone badge where it applies. Nothing points at these yet — `og:image` is
+  still the one site-wide card on all 289 pages — and no images are committed:
+  the design and the ~8 MB the catalog would add are both still open questions.
+  Run it on a few slugs (`node scripts/gen-plant-cards.mjs quercus-alba`) to
+  look.
 - **Nothing can quietly ship a plant whose link doesn't work.** Every plant,
   animal and region has a page at its own address, and that address is what
   gets sent when you share one. Adding a new plant used to be able to skip

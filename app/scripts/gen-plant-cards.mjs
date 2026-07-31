@@ -1,0 +1,319 @@
+// Draws one share card per plant — the picture Messages, WhatsApp, Slack,
+// Facebook and Google show beside an Indigene plant link.
+//
+//   node scripts/gen-plant-cards.mjs                 # every plant
+//   node scripts/gen-plant-cards.mjs quercus-alba …  # just these, for a look
+//
+// Writes public/og/plants/<slug>.jpg at 1200×630, the size every unfurler
+// expects — and crops toward the middle of when it wants something squarer,
+// which is why the name and the drawing sit centre-left and nothing that
+// matters goes near an edge.
+//
+// ## What's on it
+//
+// The English common name, big; the scientific name under it in italics; the
+// plant's own silhouette from the app's glyph set (`components/plant-glyphs.ts`
+// — the same drawing the plant's card and page show, so the picture in the
+// preview is the picture you land on); and up to four facts as an icon and a
+// number, because a card is read in half a second and a sentence isn't.
+//
+// The facts are chosen per plant by `factsFor` below, in a fixed order of
+// interest, and a plant only ever shows what it actually has. The icons are the
+// app's own (`lib/plain.ts` — 🐛 for host value, 🐝 for pollinators), so a
+// reader who has seen the app once already knows what they mean.
+//
+// ## Words, and why they are English
+//
+// The card is English for the same reason the prerendered metadata is: a query
+// string can't pick a file, so `…/plants/<slug>?lang=fr` is the same document
+// and the same picture. A French reader still gets a French *app* the moment it
+// boots. Real French cards would be a second tree of files and a second tree of
+// pages to point at them.
+//
+// A common name carrying a second name in brackets — "Alpenrose (Rhododendron
+// ferrugineux)", "Cabbage Palm (Sabal Palm)" — is trimmed to the first. Eighty-
+// odd rows are written that way, the bracket is the part that makes a name too
+// long to set large, and the scientific name is already on the next line.
+//
+// ## Cost, and why these are JPEGs
+//
+// Like gen-og-image.mjs and make-thumb.mjs there's no image library: Playwright
+// is already a dev dependency, so each card is a small HTML page rendered and
+// captured. The output is committed, so a normal build never runs this. Re-run
+// it when the design changes, or when a plant is added — `--check` reports what
+// is missing or stale without drawing anything.
+//
+// Two hundred-odd committed images have to be small, and the brand wash is what
+// decides the format. It's a smooth radial gradient, so it holds thousands of
+// near-identical colours that PNG cannot run-length away: the same card is
+// ~230 KB as a PNG and ~24 KB as a JPEG, which is 50 MB against 5 MB across the
+// catalog. Flattening the background would get PNG down to about the same 24 KB
+// — so the choice is really "keep the wash" or "keep PNG", and the wash is what
+// makes a plant card look like it came from the same place as the site-wide
+// one. Nothing here is a photograph or a fine gradient at a hard edge, which is
+// where a JPEG would show; text on flat colour at quality 90 does not.
+const QUALITY = 90;
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync, unlinkSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
+import { chromium } from "playwright";
+import { openLoader } from "./_load-ts.mjs";
+
+const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+const outDir = join(root, "public", "og", "plants");
+
+const W = 1200;
+const H = 630;
+
+const args = process.argv.slice(2);
+const CHECK = args.includes("--check");
+const only = new Set(args.filter((a) => !a.startsWith("--")));
+
+// ---------------------------------------------------------------------------
+// What each card says
+// ---------------------------------------------------------------------------
+
+/** The English common name, without the second name some rows carry in
+ *  brackets. `Beach / Dune Sunflower` keeps its slash — that's one name written
+ *  two ways, not two names. */
+const displayName = (common) => common.replace(/\s*\([^)]*\)\s*$/, "").trim();
+
+const MONTHS = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+/** Feet big and metres small, because the catalog stores feet and half the
+ *  regions are in France — neither reader should have to convert. Rounded
+ *  hard: this is a glance, not a spec. Under ten feet a decimal earns its
+ *  place in metres; above it, it doesn't. */
+function height(ft) {
+  const m = ft * 0.3048;
+  return { value: `${ft} ft`, label: `${m < 10 ? Math.round(m * 10) / 10 : Math.round(m)} m tall` };
+}
+
+/**
+ * Up to four facts, in a fixed order of interest, skipping whatever a plant
+ * hasn't got.
+ *
+ * Host count leads wherever there is one, because it's the number the whole app
+ * is built around — how many kinds of caterpillar this plant feeds, and so how
+ * much of the food web it holds up. Named wildlife comes next: "6 creatures we
+ * can name" is the promise of the page you're about to open. Then bloom, which
+ * is what a gardener looks for, and last the mature size, which is the thing
+ * that decides whether a plant fits at all.
+ *
+ * Every label is one or two short words and none of them wraps: four facts, a
+ * URL and 1040 px of card is not a lot of room, and a label that breaks over
+ * two lines drags the whole row out of alignment. Labels stay plural whatever
+ * the number — "1 creatures" would be worse than the second of type it saves,
+ * so the singular is spelled out where it happens.
+ */
+function factsFor(plant, wildlifeCount) {
+  const facts = [];
+  if (plant.hostLepCount > 0) {
+    facts.push({ icon: "🐛", value: String(plant.hostLepCount), label: "caterpillars" });
+  }
+  if (wildlifeCount > 0) {
+    facts.push({ icon: "🐝", value: String(wildlifeCount), label: wildlifeCount === 1 ? "creature fed" : "creatures fed" });
+  }
+  if (plant.bloom) {
+    const { startMonth: a, endMonth: b } = plant.bloom;
+    facts.push({ icon: "🌸", value: a === b ? MONTHS[a] : `${MONTHS[a]}–${MONTHS[b]}`, label: "in bloom" });
+  }
+  facts.push({ icon: "📏", ...height(plant.matureHeightFt) });
+  return facts.slice(0, 4);
+}
+
+// ---------------------------------------------------------------------------
+// The card
+// ---------------------------------------------------------------------------
+
+const BRAND = "#7ec894";
+
+const mark = readFileSync(join(root, "public", "favicon.svg"), "utf8")
+  .replace(/<!--[\s\S]*?-->/g, "")
+  .replace("<svg", '<svg width="46" height="46"');
+
+const esc = (s) =>
+  String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+/**
+ * The name is the one thing that can't be allowed to overflow, and plant names
+ * run from "Wild Rye" to "Mediterranean False Brome". Rather than shrink the
+ * type until the longest name fits — which would leave every short name looking
+ * timid — the size steps down in three stages, measured in characters because
+ * the card is set in one font at one weight and nothing else varies.
+ */
+function nameSize(name) {
+  if (name.length <= 14) return 96;
+  if (name.length <= 20) return 80;
+  return 66;
+}
+
+function cardHtml({ name, latin, glyph, keystone, facts }) {
+  const chips = facts
+    .map(
+      (f) => `<li>
+        <span class="ficon">${f.icon}</span>
+        <span class="ftext"><b>${esc(f.value)}</b><i>${esc(f.label)}</i></span>
+      </li>`
+    )
+    .join("");
+
+  return `<!doctype html>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: ${W}px; height: ${H}px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    /* The app's dark surface, so the card looks like the page it opens. */
+    background: #14160f;
+    color: #f2f1e8;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 56px 80px 52px;
+    position: relative;
+    overflow: hidden;
+  }
+  /* The same brand wash the site-wide card carries, so the two are obviously
+     from one place. It sits behind the drawing, which lifts the silhouette off
+     the flat background without a photograph. */
+  .wash {
+    position: absolute; right: -120px; bottom: -300px;
+    width: 900px; height: 900px; border-radius: 50%;
+    background: radial-gradient(circle, #1f6b3b 0%, rgba(31,107,59,0) 70%);
+    opacity: 0.6;
+  }
+  header { display: flex; align-items: center; gap: 16px; position: relative; }
+  .wordmark { font-size: 30px; font-weight: 800; letter-spacing: -0.01em; }
+  .keystone {
+    margin-left: auto; display: flex; align-items: center; gap: 10px;
+    font-size: 23px; font-weight: 700; color: #14160f;
+    background: ${BRAND}; border-radius: 999px; padding: 9px 20px 9px 16px;
+  }
+  .keystone svg { width: 22px; height: 22px; }
+
+  .mid { position: relative; display: flex; align-items: center; gap: 56px; }
+  .names { min-width: 0; }
+  h1 {
+    font-weight: 800; letter-spacing: -0.025em; line-height: 1.04;
+    font-size: ${nameSize(name)}px;
+  }
+  .latin {
+    margin-top: 14px; font-size: 36px; font-style: italic;
+    color: ${BRAND}; letter-spacing: -0.005em;
+  }
+  /* The drawing, at the size it was designed to hold: one 48-unit box, the
+     plant standing on the ground line. Pushed right so an unfurler's square
+     crop keeps both it and the name. */
+  .drawing { margin-left: auto; flex: none; opacity: 0.95; }
+
+  /* Four facts and an address share 1040 px, so nothing here may wrap: a label
+     that breaks over two lines lifts its own number out of line with the rest
+     and the row stops reading as a row. */
+  ul { position: relative; display: flex; gap: 38px; list-style: none; align-items: center; }
+  li { display: flex; align-items: center; gap: 13px; white-space: nowrap; }
+  .ficon { font-size: 34px; line-height: 1; }
+  .ftext { display: flex; flex-direction: column; }
+  .ftext b { font-size: 38px; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; }
+  .ftext i { font-size: 20px; font-style: normal; color: #cdcdbd; margin-top: 4px; }
+  .url { margin-left: auto; padding-left: 24px; font-size: 24px; font-weight: 650; color: ${BRAND}; }
+</style>
+<div class="wash"></div>
+<header>
+  ${mark}<span class="wordmark">Indigene</span>
+  ${keystone ? `<span class="keystone">${keystoneSvg}Keystone</span>` : ""}
+</header>
+<div class="mid">
+  <div class="names">
+    <h1>${esc(name)}</h1>
+    <div class="latin">${esc(latin)}</div>
+  </div>
+  <div class="drawing">${glyph}</div>
+</div>
+<ul>${chips}<li class="url">indigene.app</li></ul>
+`;
+}
+
+/** The keystone arch, inlined from `components/keystone-icon.ts`. */
+const keystoneSvg =
+  '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+  '<path d="M3 21v-6a9.5 9.5 0 0 1 4.6-8.1l1.7 2.8A6.3 6.3 0 0 0 6.2 15v6Z" fill="currentColor" opacity="0.5"/>' +
+  '<path d="M21 21v-6a9.5 9.5 0 0 0-4.6-8.1l-1.7 2.8a6.3 6.3 0 0 1 3.1 5.3v6Z" fill="currentColor" opacity="0.5"/>' +
+  '<path d="M8.5 2.8h7l-1.6 6.8h-3.8Z" fill="currentColor"/></svg>';
+
+// ---------------------------------------------------------------------------
+
+const loader = await openLoader();
+let plants;
+try {
+  const [{ REGIONS, loadPlants }, { wildlifeForPlant }, { glyphMarkup }] = await Promise.all([
+    loader.load("/src/lib/plants.ts"),
+    loader.load("/src/lib/wildlife.ts"),
+    loader.load("/src/components/plant-glyphs.ts"),
+  ]);
+  // A species native to more than one covered region shares one slug and one
+  // card, so the first region's row wins — the same choice the profile page and
+  // the prerenderer make. Its wildlife ties are counted across every region it
+  // grows in, because the card names the plant, not the plant-in-a-place.
+  const seen = new Map();
+  for (const region of REGIONS) {
+    for (const plant of loadPlants(region)) {
+      const prev = seen.get(plant.id);
+      const ties = wildlifeForPlant(region.meta.id, plant.id).length;
+      if (prev) prev.wildlifeCount = Math.max(prev.wildlifeCount, ties);
+      else seen.set(plant.id, { plant, wildlifeCount: ties });
+    }
+  }
+  plants = [...seen.values()].map(({ plant, wildlifeCount }) => ({
+    slug: plant.id,
+    name: displayName(plant.common),
+    latin: plant.latin,
+    keystone: plant.keystone,
+    facts: factsFor(plant, wildlifeCount),
+    glyph: glyphMarkup(plant.form, 300, BRAND),
+  }));
+} finally {
+  await loader.close();
+}
+
+const wanted = only.size ? plants.filter((p) => only.has(p.slug)) : plants;
+if (only.size && wanted.length !== only.size) {
+  const missing = [...only].filter((s) => !plants.some((p) => p.slug === s));
+  throw new Error(`gen-plant-cards: no such plant: ${missing.join(", ")}`);
+}
+
+if (CHECK) {
+  mkdirSync(outDir, { recursive: true });
+  const have = new Set(readdirSync(outDir).filter((f) => f.endsWith(".jpg")).map((f) => f.slice(0, -4)));
+  const missing = plants.filter((p) => !have.has(p.slug)).map((p) => p.slug);
+  const extra = [...have].filter((slug) => !plants.some((p) => p.slug === slug));
+  if (missing.length) console.error(`missing a card: ${missing.join(", ")}`);
+  if (extra.length) console.error(`card for a plant that no longer exists: ${extra.join(", ")}`);
+  if (missing.length || extra.length) process.exit(1);
+  console.log(`all ${plants.length} plant cards present`);
+  process.exit(0);
+}
+
+mkdirSync(outDir, { recursive: true });
+const prebuilt = "/opt/pw-browsers/chromium";
+const browser = await chromium.launch(existsSync(prebuilt) ? { executablePath: prebuilt } : {});
+const page = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
+
+let n = 0;
+for (const card of wanted) {
+  await page.setContent(cardHtml(card), { waitUntil: "load" });
+  const shot = await page.screenshot({ type: "jpeg", quality: QUALITY });
+  const out = join(outDir, `${card.slug}.jpg`);
+  // Only rewrite what changed, so a re-run doesn't churn 200-odd files in git.
+  if (!existsSync(out) || !readFileSync(out).equals(shot)) writeFileSync(out, shot);
+  if (++n % 25 === 0) console.log(`  …${n}/${wanted.length}`);
+}
+await browser.close();
+
+// A renamed or removed plant leaves a card behind; sweep it, but only on a
+// full run, where `plants` is the whole catalog.
+if (!only.size) {
+  for (const f of readdirSync(outDir)) {
+    if (f.endsWith(".jpg") && !plants.some((p) => `${p.slug}.jpg` === f)) unlinkSync(join(outDir, f));
+  }
+}
+console.log(`wrote ${wanted.length} plant cards into public/og/plants/ at ${W}×${H}`);

@@ -1,5 +1,5 @@
 // Draws the seven plant-form glyphs and prints them as the table that
-// `components/plant-card.ts` holds in `FORM_GLYPHS`. Run it, paste the output
+// `components/plant-glyphs.ts` holds in `FORM_GLYPHS`. Run it, paste the output
 // over that table:
 //
 //   node scripts/gen-form-glyphs.mjs

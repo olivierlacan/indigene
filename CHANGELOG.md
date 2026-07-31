@@ -25,6 +25,64 @@ subtitle on the What's new page.
 
 ### Changed
 
+- **A plant's page fits a computer screen now.** Open
+  [a plant](https://indigene.app/#/plants/quercus-alba) on a laptop and it used
+  to be a narrow phone-shaped strip down the middle of the window, with empty
+  space either side and five screens of scrolling to get to the end. It now
+  uses the room it has. At the top, the plant's name, badges and the numbers
+  at-a-glance sit on the left, with the to-scale drawing of how big it gets and
+  the paragraphs about it on the right. Below that, the sections — what it does
+  for the ecosystem, photos of it growing near you, how to grow more, *Want to
+  plant it? Check your spot*, and where to look it up — run in two columns
+  instead of one long queue. The whole page is a little over half as tall as it
+  was, and the "check your spot" tool is now on screen early rather than at the
+  very bottom. Reading down the left column and then the right gives you exactly
+  the same order a phone gives you, and no sentence is set any wider than it is
+  on a phone.
+- **An animal's page got the same treatment.** On
+  [an animal](https://indigene.app/#/wildlife/monarch), its name and what it is
+  now sit beside where it lives and what we can vouch for, and the plants that
+  keep it going are laid out several across instead of one long stack of
+  full-width rows. It's about a third shorter on a laptop.
+- **The "ZIP or town" box is the size of a ZIP or a town again.** It used to
+  stretch to fill whatever space was left on the line, which was fine on a
+  phone and silly on a wide screen — on an animal's page it became a box half a
+  window wide waiting for five characters. It now stops at a comfortable width,
+  and so does the list of places that appears when you search. Unchanged on a
+  phone, where "fill the line" was always the right answer.
+- **The *Figures for* buttons line up with the rest of the page.** On a plant
+  that grows in more than one region, the row of region buttons under the name
+  was sitting a little further left than everything around it. It doesn't any
+  more.
+- **Where to look a plant up has moved to the very bottom of its page.** The
+  list of botanical databases is where you go once this page has run out of
+  answers, so it now comes after *Want to plant it? Check your spot* rather
+  than in front of it — on every screen. Nothing else about either section
+  changed.
+- Internal: `#/plants/<slug>` and `#/wildlife/<id>` share a new layout mode
+  (`body[data-layout="profile"]`), which raises `--maxw` to the same 62rem the
+  browse indexes use — but only inside `@media (min-width: 64rem)`, so the
+  narrow measure holds everywhere below the laptop breakpoint. Each profile's
+  pieces are wrapped in `.plant-cols` / `.plant-sections` column containers that
+  are `display: contents` until that breakpoint, so the phone DOM flows exactly
+  as before; every split is contiguous, so visual order never diverges from DOM
+  order. An animal's supporting plants become a `.wildlife-supports` grid
+  (`auto-fill`, 24rem floor, so a lone card doesn't stretch across the window),
+  and `supportRow` trades its inline styles for `.support-row`. The location
+  prompt's `flex: 1 1 7rem` field gains a 14rem cap and the block around it a
+  32rem one (`.spot-prompt`), with the plant page's own town search capped to
+  match (`.town-search-row`); the GPS button keeps `flex: 0 0 auto` so it can't
+  wrap at 360px. Wrapping the profile's pieces moves its paragraphs out of reach
+  of `.plant > .kv`, so `.plant-why` and `.lookalike-line` carry the gutter by
+  class while the `>` rule stays for the impostor pages, whose card keeps its
+  paragraphs as direct children; `.region-switch` joins them and gains the
+  gutter it never had. An impostor's own page (`#/lookalikes/<id>`) is a short
+  comparison and stays at the reading measure. Verified by pixel-comparing 390px
+  full-page captures against `main` in both schemes — identical on every animal
+  page, both look-alike pages and seven other routes, and identical in height on
+  plant pages (single- and multi-region, with and without a look-alike line),
+  where only the last two sections swap — and by checking 360–1920px for
+  horizontal overflow (none).
 - **The little plant drawings are clearer.** Every plant that has no photo yet
   is drawn as a small green shape, and the same drawing labels each category on
   a region's page — trees, shrubs, wildflowers, grasses, climbers, ground

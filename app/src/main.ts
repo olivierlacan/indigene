@@ -171,23 +171,40 @@ function sectionOf(step: string): string | undefined {
 /**
  * The pages that are a *list of independent cards* rather than a document.
  *
- * Everything else stays at the reading measure (`--maxw`, 34rem): a plant
- * profile or an animal's page is prose, and prose set 1,000px wide is harder
- * to read, not easier. But the browse indexes are grids of self-contained
- * cards, and on a laptop a single 34rem column of them is a phone layout
- * pretending to be a desktop one — a screenful of empty margin either side and
- * five times the scrolling. Those widen, and their card grids reflow into
- * columns (see `.card-grid`): Explore's region cards, the region rosters, the
- * plants index, and the wildlife index.
+ * Everything else stays at the reading measure (`--maxw`, 34rem): prose set
+ * 1,000px wide is harder to read, not easier. But the browse indexes are grids
+ * of self-contained cards, and on a laptop a single 34rem column of them is a
+ * phone layout pretending to be a desktop one — a screenful of empty margin
+ * either side and five times the scrolling. Those widen, and their card grids
+ * reflow into columns (see `.card-grid`): Explore's region cards, the region
+ * rosters, the plants index, and the wildlife index. The two profile pages
+ * widen differently — see `updateLayout`.
  */
 const WIDE_STEPS = new Set(["plants", "regions", "wildlife", "lookalikes"]);
 
 function updateLayout(step: string, param?: string): void {
-  // Only the parameter-less index of each: `#/plants/<slug>` is a profile and
-  // `#/wildlife/<id>` is an animal's story, both of which want the narrow
-  // measure. The exceptions are all card lists: `#/regions/<id>` is a roster,
-  // and both slices of the wildlife index — `#/wildlife/<group>`
-  // ("…/butterflies") and `#/wildlife/in/<region>` — are grids of cards.
+  // Two of the documents — a plant's page and an animal's — get a mode of their
+  // own. Neither is a card list, but they're *long*, and on a laptop they ran to
+  // several screenfuls of narrow ribbon with the window empty either side. They
+  // widen too, and lay their own pieces out in columns so no sentence is set any
+  // wider than it is now (see "Profile pages on a laptop" in styles.css). Only
+  // past the laptop breakpoint, which is why the widening itself lives in the
+  // stylesheet rather than here.
+  //
+  // An impostor's page (`#/lookalikes/<id>`) is not in that club: it's a short
+  // comparison, and it keeps the reading measure.
+  const plantProfile = step === "plants" && !!param;
+  const animalProfile =
+    step === "wildlife" && !!param && !wildlifeKindRoute(param) && wildlifeRegionParam(param) === null;
+  if (plantProfile || animalProfile) {
+    document.body.dataset.layout = "profile";
+    return;
+  }
+  // Of what's left, only the parameter-less index of each widens, plus the card
+  // lists that take a param: `#/regions/<id>` is a roster, both slices of the
+  // wildlife index — `#/wildlife/<group>` ("…/butterflies") and
+  // `#/wildlife/in/<region>` — are grids of cards, and so is
+  // `#/lookalikes/in/<region>`.
   const wide =
     WIDE_STEPS.has(step) &&
     (!param ||

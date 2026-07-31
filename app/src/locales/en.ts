@@ -38,9 +38,10 @@ export const en = {
   "nav.explore": "Explore",
   "nav.search": "Search",
   "nav.wildlife": "Wildlife",
-  "nav.saved": "Saved",
+  "nav.menu": "Menu",
   "nav.savedLocations": "Saved locations",
   "nav.settings": "Settings",
+  "nav.languageAndUnits": "Language & units",
   "footer.text":
     "Open-source (MIT), built on public scientific data — {sources}, and how sure we are of each one. {about}. {releaseNotes}. {privacy}.",
   "footer.about": "About",
@@ -496,7 +497,6 @@ export const en = {
     "Some of this plant's description is still in English — we translate the writing region by region, and haven't reached this one yet.",
   "names.partlyNamed":
     "{named} of these {total} plants have a name in your language from a national reference list; the rest show their scientific name, because inventing one would be worse than showing none.",
-  "welcome.changePrefs": "change",
 
   // The size drawing.
   "sizeViz.you": "You",
@@ -713,7 +713,11 @@ export const en = {
   "plant.sizeAria": "Size of {name} over time",
   "plant.nativeTo": "📍 Native to: ",
   "plant.whyBelongs": "Why it belongs here: ",
-  "plant.share": "🔗 Share this plant",
+  // The accessible name of the share control; the icon carries the 🔗 itself.
+  "plant.share": "Share this plant",
+  // What the icon widens to show. Must stay a word or two — it opens inside
+  // the "Native to:" row, which already has a region name in it.
+  "plant.shareShort": "Share",
   "plant.shareTitle": "{name} — Indigene",
   "plant.shareText": "{name} ({latin}) — a native plant worth knowing. Check if your spot suits it:",
   "plant.linkCopied": "Link copied — paste it anywhere.",

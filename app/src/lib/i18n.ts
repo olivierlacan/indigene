@@ -10,9 +10,9 @@
 //     "key not found" path to discover in production.
 //  2. **The choice is the user's, the guess is only a default.** We read
 //     `navigator.language` once, and from the moment someone picks a language
-//     by hand that pick wins forever. Same instinct as the sun picker: the
-//     sensor is a suggestion, the human is the answer. A `?lang=` in the link
-//     someone was *sent* counts as a pick too — see `langFromUrl()`.
+//     by hand that pick wins forever — over the browser's guess and over a
+//     `?lang=` in a link someone sent them (see `langFromUrl()`). Same instinct
+//     as the sun picker: the sensor is a suggestion, the human is the answer.
 //  3. **Language and units are separate settings.** A French speaker in Ohio
 //     wants French and feet; an American in Paris wants English and metres.
 //     Nothing here reaches into `units.ts`, and `units.ts` only reads the
@@ -57,10 +57,12 @@ function toLang(tag: string | null | undefined): Lang | undefined {
  * routes on the hash but the canonical plant URLs are real paths, so a link can
  * arrive with its query on either side of the `#` and neither reading is wrong.
  *
- * Why the URL beats a saved choice: sending someone a `?lang=fr` link is a
- * deliberate act about *that reader*, and it's the more recent statement of
- * intent. Someone who set English months ago and is handed a French link wants
- * the French — and the picker is two taps away if they don't.
+ * It does *not* beat a choice the reader has already made. A link is a guess
+ * about someone by whoever sent it; a pick in the settings screen is that
+ * person speaking for themselves, and a stranger's link doesn't get to talk
+ * over it. So the parameter sits exactly where the browser's own preference
+ * used to: it decides for a first-time visitor — which is the whole point of
+ * sending one — and is ignored by anyone who has set their language by hand.
  */
 function langFromUrl(): Lang | undefined {
   try {
@@ -86,26 +88,39 @@ function remember(lang: Lang): void {
 }
 
 /**
- * The starting language: a `?lang=` in the link, else an explicit past choice,
- * else the browser's own preference list, else English. `navigator.languages`
- * is ordered by how much the person wants each one, so we walk it in order and
- * take the first we actually speak — "fr-CA" and "fr" both mean French to us.
+ * The starting language, in order of who is doing the asking:
+ *
+ *  1. **What this reader chose**, in the settings screen, at any point in the
+ *     past. Nothing outranks it.
+ *  2. **A `?lang=` in the link they followed** — someone else's guess about
+ *     them, which is worth acting on only because nobody better has spoken.
+ *  3. **The browser's own preference list**, the device's guess.
+ *  4. English.
+ *
+ * `navigator.languages` is ordered by how much the person wants each one, so we
+ * walk it in order and take the first we actually speak — "fr-CA" and "fr" both
+ * mean French to us.
  */
 function detect(): Lang {
-  const pinned = langFromUrl();
-  if (pinned) {
-    // Persist it, because the parameter is stripped from the address bar a
-    // moment later (see `consumeLangParam`) and the choice has to outlive it —
-    // through the next tap, the next page, and the next visit.
-    remember(pinned);
-    return pinned;
-  }
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (isLang(saved)) return saved;
   } catch {
-    // See remember(): storage can throw, and English is a fine last resort.
+    // See remember(): storage can throw. Fall through to the guesses — and note
+    // this is also the browser where a `?lang=` link *does* win every time,
+    // because there is no stored choice for it to talk over.
   }
+
+  const pinned = langFromUrl();
+  if (pinned) {
+    // Persist it, because the parameter is stripped from the address bar a
+    // moment later (see `consumeLangParam`) and the choice has to outlive it —
+    // through the next tap, the next page, and the next visit. From here on
+    // it's this reader's choice, and the next link can't overrule it either.
+    remember(pinned);
+    return pinned;
+  }
+
   const wanted = navigator.languages?.length ? navigator.languages : [navigator.language];
   for (const tag of wanted) {
     const base = toLang(tag);

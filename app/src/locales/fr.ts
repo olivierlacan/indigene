@@ -37,9 +37,10 @@ export const fr: Dict = {
   "nav.explore": "Explorer",
   "nav.search": "Rechercher",
   "nav.wildlife": "Faune",
-  "nav.saved": "Lieux",
+  "nav.menu": "Menu",
   "nav.savedLocations": "Lieux enregistrés",
   "nav.settings": "Réglages",
+  "nav.languageAndUnits": "Langue et unités",
   "footer.text":
     "Libre (licence MIT), bâti sur des données scientifiques publiques — {sources}, et à quel point nous en sommes sûrs. {about}. {releaseNotes}. {privacy}.",
   "footer.about": "À propos",
@@ -517,7 +518,6 @@ export const fr: Dict = {
     "Une partie de la description de cette plante est encore en anglais — nous traduisons les textes région par région, et nous n'en sommes pas encore à celle-ci.",
   "names.partlyNamed":
     "{named} de ces {total} plantes portent un nom dans votre langue, tiré d'une liste nationale de référence ; les autres affichent leur nom scientifique, parce qu'en inventer un serait pire que de n'en donner aucun.",
-  "welcome.changePrefs": "modifier",
 
   // Le dessin des tailles.
   "sizeViz.you": "Vous",
@@ -736,7 +736,8 @@ export const fr: Dict = {
   "plant.sizeAria": "Taille de {name} au fil du temps",
   "plant.nativeTo": "📍 Indigène de : ",
   "plant.whyBelongs": "Pourquoi elle est chez elle ici : ",
-  "plant.share": "🔗 Partager cette plante",
+  "plant.share": "Partager cette plante",
+  "plant.shareShort": "Partager",
   "plant.shareTitle": "{name} — Indigene",
   "plant.shareText":
     "{name} ({latin}) — une plante indigène qui mérite d'être connue. Voyez si votre coin lui convient :",

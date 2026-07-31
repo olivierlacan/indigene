@@ -51,9 +51,13 @@ subtitle on the What's new page.
   `indigene.app/plants/quercus-alba?lang=fr` for a particular plant — and it
   opens in French for whoever you sent it to, no matter what language their
   phone or computer is set to. `?lang=en` does the same for English. Indigene
-  remembers the language from then on, so the rest of their visit stays in it,
-  and either of you can still change it any time from
-  [Settings](https://indigene.app/#/settings).
+  remembers the language from then on, so the rest of their visit stays in it.
+  One thing a link will never do is overrule someone: if they have already
+  chosen a language in Indigene themselves, that choice stands and the link
+  quietly leaves it alone.
+- Search engines are now told that Indigene exists in both languages, so a
+  French-speaking searcher can be offered the French page instead of one
+  language being listed and the other hidden.
 - The size drawing, the plant cards and the "no taller than…" filters all read
   in your units: a tree is "24 m × 21 m" or "80 ft × 70 ft", and the ruler up
   the side of the drawing is marked in whole metres or whole feet — never in
@@ -97,6 +101,25 @@ subtitle on the What's new page.
 
 ### Changed
 
+- **The bookmark button at the top of every page is now a ⚙️ menu**, and it
+  holds the switch for language and units as well as your saved spots. It used
+  to lead only to saved places, which meant the one setting a reader might
+  urgently need — the one that puts the whole app in their language — was
+  reachable only by scrolling to the bottom of a page they may not be able to
+  read. Now it's a tap away from the top of every screen.
+- **Language and units are two links in the footer, not one line.** A globe for
+  the language you read in, a ruler for the units you measure in, each opening
+  the settings page at the choice it names. Written as a single "English ·
+  Imperial" they looked like one setting, and they have never been one — you
+  can read in French and measure in feet.
+- **The home page no longer stops to ask about language and units** halfway
+  down. That belonged in the menu and the footer, not in the middle of the
+  page you came to read.
+- **Sharing a plant is a small link button at the top of its page**, beside
+  where it says which regions the plant is native to, instead of a full-width
+  button right at the bottom. Point at it (or tap it on a phone) and it says
+  "Share". It's in reach the moment you recognise a plant, and it no longer
+  spends a whole row of a phone screen.
 - **Every creature now says where it lives, instead of wearing a "native"
   badge.** Every animal on the wildlife pages is native — that's the whole
   point of the page — so a "native" tag on all of them told you nothing. In

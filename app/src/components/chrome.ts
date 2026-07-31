@@ -29,10 +29,17 @@ export function renderChrome(): void {
     if (key) elm.textContent = t(key as Parameters<typeof t>[0]);
   });
 
-  const savedBtn = document.querySelector<HTMLElement>("#saved-menu .nav-menu-btn");
-  savedBtn?.setAttribute("aria-label", t("nav.savedLocations"));
-  document.getElementById("saved-menu-panel")?.setAttribute("aria-label", t("nav.savedLocations"));
+  const menuBtn = document.querySelector<HTMLElement>("#app-menu .nav-menu-btn");
+  menuBtn?.setAttribute("aria-label", t("nav.menu"));
+  document.getElementById("app-menu-panel")?.setAttribute("aria-label", t("nav.menu"));
   document.getElementById("steps-rail")?.setAttribute("aria-label", t("steps.progress"));
+
+  // Keep the share card's locale honest for anything that renders the page
+  // before reading it. The static value in index.html is what a crawler that
+  // doesn't run JS gets; this is for the ones that do.
+  document
+    .querySelector('meta[property="og:locale"]')
+    ?.setAttribute("content", getLang());
 
   renderFooter();
 }
@@ -58,16 +65,31 @@ function renderFooter(): void {
     );
   }
 
-  const summary = document.getElementById("prefs-summary");
-  if (summary) summary.textContent = prefsSummary();
-  document
-    .getElementById("prefs-link")
-    ?.setAttribute("aria-label", `${t("settings.title")}: ${prefsSummary()}`);
+  // Two links, two labels. The visible text is the *value* ("Français"), and
+  // the accessible name adds the setting it belongs to ("Langue : Français") —
+  // sighted readers get the icon for that half, and a screen reader shouldn't
+  // have to guess what a bare "Français" at the end of a page is offering.
+  stampPref("prefs-lang", "prefs-lang-link", langLabel(), t("settings.language"));
+  stampPref("prefs-units", "prefs-units-link", unitsLabel(), t("settings.units"));
 }
 
-/** "Français · Métrique" — the two active choices, in the active language. */
+function stampPref(textId: string, linkId: string, value: string, setting: string): void {
+  const span = document.getElementById(textId);
+  if (span) span.textContent = value;
+  document.getElementById(linkId)?.setAttribute("aria-label", `${setting}: ${value}`);
+}
+
+/** "Français" — the active language, in its own name. */
+export function langLabel(): string {
+  return LANGUAGES.find((l) => l.code === getLang())?.endonym ?? getLang();
+}
+
+/** "Métrique" — the active unit system, in the active language. */
+export function unitsLabel(): string {
+  return t(getUnits() === "metric" ? "settings.units.metric" : "settings.units.imperial");
+}
+
+/** "Français · Métrique" — both choices at once, for the header menu's one row. */
 export function prefsSummary(): string {
-  const lang = LANGUAGES.find((l) => l.code === getLang())?.endonym ?? getLang();
-  const units = t(getUnits() === "metric" ? "settings.units.metric" : "settings.units.imperial");
-  return `${lang} · ${units}`;
+  return `${langLabel()} · ${unitsLabel()}`;
 }

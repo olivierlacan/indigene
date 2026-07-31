@@ -155,7 +155,7 @@ a {
      When fonts run wider (Linux screenshot environments, big accessibility
      text), the nav must wrap under the title rather than overflow past the
      viewport edge — overflow here pushed the whole document wider and put
-     the Saved button off-screen. */
+     the menu button off-screen. */
   flex-wrap: wrap;
   gap: 0.3rem;
   padding: 0.6rem 0.6rem calc(0.6rem);
@@ -221,7 +221,7 @@ a {
   text-decoration: underline;
 }
 
-/* --- Saved-locations menu (a disclosure, not a nav tab) --- */
+/* --- The app menu (a disclosure, not a nav tab) --- */
 .nav-menu {
   position: relative;
 }
@@ -299,6 +299,18 @@ a {
   color: var(--ink-soft);
   font-size: 0.9rem;
 }
+/* Names the saved-spots half of the menu, now that the panel also holds the
+   language row. Small and quiet — it's a signpost between two groups, not a
+   heading competing with the items under it. */
+.nav-menu-heading {
+  margin: 0;
+  padding: 0.35rem 0.6rem 0.2rem;
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
 .nav-menu-panel .nav-menu-all {
   padding: 0.55rem 0.6rem;
   margin-top: 0.15rem;
@@ -323,12 +335,10 @@ a {
   cursor: pointer;
 }
 
-/* Narrow phones: shrink the title and drop the Saved label to its icon so the
-   header holds Explore + Wildlife + Saved on one line without crowding. */
 /* Phones (up to ~500px, which covers the largest — iPhone Pro Max is 430):
-   collapse the Saved label to its icon and tighten sizes so the title, both
-   browse tabs, and the Saved menu fit on one line. Above this the header has
-   room for the full "🔖 Saved" label and larger type. */
+   collapse the menu label to its icon and tighten sizes so the title, both
+   browse tabs, and the ⚙️ menu fit on one line. Above this the header has
+   room for the full "⚙️ Menu" label and larger type. */
 @media (max-width: 500px) {
   .app-title {
     font-size: 0.9rem;
@@ -341,7 +351,7 @@ a {
   .nav-menu-btn {
     /* Measured, not eyeballed (scripts/_measure-header.mjs): title + all four
        nav items must clear one line with real headroom, because iOS renders
-       SF and Apple color emoji (🌱, 🔖) wider than this Linux/Helvetica env —
+       SF and Apple color emoji (🌱, ⚙️) wider than this Linux/Helvetica env —
        the previous knife-edge fit here wrapped on a real iPhone. These sizes
        leave ~36px slack at 390px and ~25px at 360px locally, which absorbs
        that difference. */
@@ -349,7 +359,7 @@ a {
     font-size: 0.8rem;
   }
   .nav-menu-label {
-    /* Visually hidden; the button's aria-label still reads "Saved locations". */
+    /* Visually hidden; the button's aria-label still reads "Menu". */
     position: absolute;
     width: 1px;
     height: 1px;
@@ -468,6 +478,15 @@ a {
   margin: 0;
   border-top: 1px solid var(--line);
   padding-top: 1rem;
+}
+/* Language and units, side by side — two settings, so two links (see the note
+   in index.html). Flex with a wrap so that at 360px, or with the text scaled
+   up, the second drops under the first instead of pushing the page wider. The
+   gap is generous because these are two tap targets, not one phrase. */
+.footer-prefs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
 }
 
 .step-title {
@@ -978,6 +997,81 @@ details.weights[open] > summary {
    media can run full-bleed) get the same gutter as everything else. */
 .plant > .region-tag {
   padding: 0.9rem 1rem 0;
+}
+/* The plant page's top row: where it grows natively, and the share control
+   opposite it. `align-items: flex-start` keeps the button pinned to the first
+   line of the region list rather than drifting to the middle of a wrapped one;
+   `min-width: 0` lets a long region name wrap instead of shoving the button
+   past the card's edge. */
+.plant > .plant-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.9rem 1rem 0;
+}
+.plant-top > .region-tag {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* --- The share control (plant page) ------------------------------------- */
+/* An icon that grows a label, rather than a labelled button that never
+   shrinks. Closed it is a round 48px target — the app's floor, and a control
+   tucked in a corner is where a smaller one would hurt most. Hovered (pointer)
+   or pressed (touch, via .is-pressed from steps/plant.ts) it widens to show
+   the word. The accessible name is the full "Share this plant" either way, so
+   the label is decoration and `aria-hidden`. */
+.share-btn {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  min-height: var(--tap);
+  min-width: var(--tap);
+  padding: 0 0.65rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 650;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.share-btn-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+.share-btn-label {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: max-width 0.22s ease, opacity 0.16s ease, margin-left 0.22s ease;
+}
+/* Hover only where hovering is a thing — on a phone `:hover` sticks after a
+   tap and would leave the label open until you touched something else. */
+@media (hover: hover) {
+  .share-btn:hover {
+    background: var(--brand-bg);
+  }
+  .share-btn:hover .share-btn-label {
+    max-width: 8rem;
+    opacity: 1;
+    margin-left: 0.35rem;
+  }
+}
+.share-btn:focus-visible .share-btn-label,
+.share-btn.is-pressed .share-btn-label {
+  max-width: 8rem;
+  opacity: 1;
+  margin-left: 0.35rem;
+}
+.share-btn.is-pressed {
+  background: var(--brand-bg);
 }
 .plant > .kv {
   padding: 0 1rem;

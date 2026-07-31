@@ -95,16 +95,24 @@ export function renderPlant(main: HTMLElement, param?: string): void {
         })
       : t("card.foliage");
 
-    const shareBtn = el("button", { class: "btn btn-secondary", onClick: () => share(p) }, t("plant.share"));
     const names = nameLines(p);
 
     return el("article", { class: "plant" }, [
-      el("p", { class: "region-tag", style: "margin:0 0 0.4rem;font-size:0.9rem;color:var(--ink-soft)" }, [
-        t("plant.nativeTo"),
-        ...all.flatMap((e, i) => [
-          i > 0 ? " · " : null,
-          el("a", { href: `#/regions/${e.region.meta.id}` }, regionName(e.region.meta)),
+      // The "native to" line and the share control share the top row. The
+      // button used to be a full-width secondary at the very bottom of the
+      // page, which made sharing look like the last step of reading the plant
+      // rather than something you can do the moment you recognise it — and
+      // spent a whole row of a phone screen on it. Up here there is slack to
+      // the right of a short region name, and none of the reading is displaced.
+      el("div", { class: "plant-top" }, [
+        el("p", { class: "region-tag", style: "margin:0;font-size:0.9rem;color:var(--ink-soft)" }, [
+          t("plant.nativeTo"),
+          ...all.flatMap((e, i) => [
+            i > 0 ? " · " : null,
+            el("a", { href: `#/regions/${e.region.meta.id}` }, regionName(e.region.meta)),
+          ]),
         ]),
+        shareButton(p),
       ]),
       el("div", { class: "plant-head" }, [
         el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
@@ -145,9 +153,39 @@ export function renderPlant(main: HTMLElement, param?: string): void {
             el("a", { href: SOURCES_ROUTE }, t("card.howSure")),
           ]),
         ]),
-        shareBtn,
       ]),
     ]);
+  }
+
+  /**
+   * The share control: an icon that grows a label rather than a labelled
+   * button that never shrinks.
+   *
+   * A bare icon is a guessing game and a labelled button is a whole row, so it
+   * is both, at different moments. With a pointer, hovering widens it to
+   * "🔗 Share" before you commit. With a finger there is no hover to give, so
+   * the tap does it: `pressed` holds the label open for a beat as the share
+   * sheet comes up, which answers "what did I just press?" at the only moment
+   * the question gets asked. Either way the accessible name is the full
+   * sentence, so nothing depends on the label being visible.
+   */
+  function shareButton(p: Plant): HTMLElement {
+    const btn = el("button", {
+      type: "button",
+      class: "share-btn",
+      "aria-label": t("plant.share"),
+      onClick: () => {
+        btn.classList.add("is-pressed");
+        // Long enough to read, short enough that it isn't still open when you
+        // come back from the share sheet and wonder why.
+        setTimeout(() => btn.classList.remove("is-pressed"), 1600);
+        void share(p);
+      },
+    }, [
+      el("span", { class: "share-btn-icon", "aria-hidden": "true" }, "🔗"),
+      el("span", { class: "share-btn-label", "aria-hidden": "true" }, t("plant.shareShort")),
+    ]);
+    return btn;
   }
 
   async function share(p: Plant): Promise<void> {

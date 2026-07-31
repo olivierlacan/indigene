@@ -25,6 +25,34 @@ subtitle on the What's new page.
 
 ### Added
 
+- **Indigene asks what you want the spot to do, before it shows you plants.**
+  There's a new step in the walk — **Goals** — between the soil question and
+  your plant list. Pick one: *feed the most wildlife*, *butterflies & moths*,
+  *birds*, *stop erosion*, *soak up rain*, *easiest to grow*, or *a bit of
+  everything*. Each one says in a line what it favours, so the order of your
+  list is something you chose rather than something that happened to you. The
+  setting Indigene starts with is one of those goals too, named and explained
+  — it isn't a hidden default any more.
+- **You can see what a slider does while you move it.** Open *Fine-tune each
+  one* on the Goals step and the seven things a plant can do — feeding
+  caterpillars, feeding bees, soaking up rain — each have a slider that says
+  its setting in words ("counts a lot", "ignore it") rather than a bare number,
+  with a line underneath explaining what the thing actually means. Above them,
+  a panel that follows you down the page names the three plants leading right
+  now, and reshuffles as you slide.
+- **Indigene says out loud when it has recalculated — even when nothing
+  moved.** Change a goal, move a slider, tick a filter, and a line reports what
+  happened: *"Recomputed — Black Cherry now leads"*, *"Recomputed — 21 plants
+  changed places"*, or plainly *"Recomputed — the order didn't change"*. Silence
+  used to be ambiguous: you couldn't tell whether nothing had happened or
+  nothing had changed.
+- **Tap any plant in your list to open its full page — and get back to your
+  list where you left it.** Every card in the ranked list is now a door to that
+  plant's own page, with everything it has ever known about it: the stat tiles,
+  the to-scale drawing, the seven scores explained, how to grow more of it, and
+  which creatures depend on it. At the top of that page is *"← Back to your
+  plant list"*, and taking it puts you back at the plant you tapped, not at the
+  top of the list.
 - **A bee has moved into the logo.** Point at the Indigene name at the top of
   any page — or reach it with the Tab key — and a bee buzzes in, crosses the
   name to the little seedling looking for pollen, casts about, finds nothing
@@ -116,6 +144,20 @@ subtitle on the What's new page.
 
 ### Changed
 
+- **The cards in your plant list are much shorter.** Each one now carries what
+  you need in order to decide whether to open it: the name, whether it suits
+  your spot and why, how big it gets, what it does for you and for wildlife,
+  and the two things your goals weighted most heavily — *"Counts most here:
+  🐛 Feeds baby butterflies & moths and 🐦 Feeds & shelters birds"*. Everything
+  that used to be repeated on all twenty-five cards is one tap away on the
+  plant's own page. A single card used to run more than two phone screens tall;
+  it's now about two thirds of one.
+- **The plant list is a list again, not a control panel.** The ⚖️ sliders panel
+  that sat above it has gone to the Goals step; in its place a line says what
+  the list was ranked for — *"⚖️ Ranked for: Feed the most wildlife"* — with a
+  **Change** button beside it. Filters stay where they were: they narrow what
+  came back rather than reorder it, which is a question you ask after seeing the
+  list, not before.
 - **A heading that leads somewhere now looks like it.** On a region's page, the
   headings that group its plants — Trees, Shrubs, Grasses & sedges — each open
   a page of their own, and so do the group headings on the

@@ -5,7 +5,7 @@ native plants that will actually thrive there — ranked by what they do for the
 local ecosystem, with honest mature-size-over-time drawings.
 
 **No framework.** Built on the DOM and real web APIs, TypeScript compiled by
-Vite. Zero runtime dependencies. ~240 KB gzipped.
+Vite. Zero runtime dependencies. ~250 KB gzipped.
 
 ## Run it
 
@@ -34,9 +34,15 @@ over plain `localhost`.
    denied.
 3. **Confirm** — soil/climate/zone in plain language, framed as "the map says…",
    with a 60-second ribbon test to override it and a moisture correction.
-4. **Results** — plants ranked by a transparent eco-score × site-fit, each with
-   a to-scale size drawing, a broken-out score, honesty flags, and confidence.
-   Re-weightable sliders + presets; guerrilla-mode filters. Save to IndexedDB.
+4. **Goals** — what the spot is *for*, asked before any list is shown: seven
+   named goals (feed the most wildlife, butterflies, birds, erosion, rain, easy
+   care, a bit of everything), each saying what it favours, plus per-benefit
+   sliders that read in words and a live preview of who leads.
+5. **Results** — plants ranked by a transparent eco-score × site-fit, each card
+   short enough to scan and a link to the plant's own page (which carries the
+   size drawing, the broken-out scores, propagation and references). The card
+   names the two benefits your goals weighted most. Guerrilla-mode filters
+   narrow the list; every recompute says what it changed. Save to IndexedDB.
 
 ## Architecture
 
@@ -60,7 +66,8 @@ src/
     plants.mid-atlantic.ts   36-species seed dataset (see DATA_SOURCES.md)
   components/
     size-viz.ts        To-scale Canvas 2D size-over-time drawing
-    plant-card.ts      One ranked plant, fully explained
+    plant-card.ts      One ranked plant, compact — a door to its own page
+    recompute.ts       Says what a re-rank changed, even when it changed nothing
   steps/               One module per screen
 public/
   manifest.webmanifest, sw.js (hand-written), icons/

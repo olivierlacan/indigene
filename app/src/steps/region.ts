@@ -71,7 +71,7 @@ export function renderRegion(main: HTMLElement, param?: string): void {
     if (!inForm.length) return null;
     const rows = inForm.map(filterRow);
     const node = el("section", {}, [
-      sectionHeading(categoryHref(region, f), formIcon(f), formLabel(f), fmtNumber(inForm.length)),
+      sectionHeading(categoryHref(region, f), formIcon(f, 24), formLabel(f), fmtNumber(inForm.length)),
       el("div", { class: "card-grid" }, rows.map((r) => r.node)),
     ]);
     allRows.push(...rows);
@@ -207,9 +207,12 @@ function categoryChips(region: RegionDef, plants: Plant[], current: PlantForm | 
 // `gap:0.3rem` overrides .btn's roomy 0.5rem so a chip's icon hugs its label.
 const chipStyle = "flex:0 1 auto;min-height:2.4rem;padding:0.4rem 0.6rem;font-size:0.9rem;text-decoration:none;gap:0.3rem";
 
-/** A category's silhouette at chip/heading size — same drawing as the rows. */
-function formIcon(f: PlantForm): SVGSVGElement {
-  const svg = silhouetteFor(f, 17);
+/** A category's silhouette at chip/heading size — same drawing as the rows.
+ *  A heading's type is half again the size of a chip's, so its glyph is too:
+ *  one size for both left the heading wearing a speck of green beside words
+ *  twice its height. */
+function formIcon(f: PlantForm, size = 17): SVGSVGElement {
+  const svg = silhouetteFor(f, size);
   svg.setAttribute("aria-hidden", "true");
   svg.style.verticalAlign = "-0.18em";
   return svg;

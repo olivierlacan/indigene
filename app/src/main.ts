@@ -9,7 +9,7 @@ import { renderResults } from "./steps/results";
 import { renderSaved } from "./steps/saved";
 import { renderExplore } from "./steps/explore";
 import { renderBrowse } from "./steps/browse";
-import { renderSearch } from "./steps/search";
+import { renderPlants } from "./steps/plants";
 import { renderPlant } from "./steps/plant";
 import { renderRegion } from "./steps/region";
 import { renderWildlifeIndex, renderWildlife, wildlifeRegionParam } from "./steps/wildlife";
@@ -40,9 +40,8 @@ const STEPS: Record<string, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = {
   results: { fn: renderResults, labelKey: "steps.plants", inFlow: true },
   saved: { fn: renderSaved, labelKey: "steps.saved", inFlow: false },
   browse: { fn: renderBrowse, labelKey: "steps.browse", inFlow: false },
-  plants: { fn: renderExplore, labelKey: "steps.explore", inFlow: false },
+  plants: { fn: renderPlants, labelKey: "steps.plants", inFlow: false },
   regions: { fn: renderExplore, labelKey: "steps.explore", inFlow: false },
-  search: { fn: renderSearch, labelKey: "steps.search", inFlow: false },
   // The index takes a wildlife *kind*, not a route param — `#/wildlife` alone
   // is the whole catalog; the grouped pages come through `renderWildlife`.
   wildlife: { fn: (m) => renderWildlifeIndex(m), labelKey: "steps.wildlife", inFlow: false },
@@ -63,7 +62,6 @@ const PARAM_RENDERERS: Record<string, StepFn> = {
   plants: renderPlant,
   regions: renderRegion,
   wildlife: renderWildlife,
-  search: renderSearch,
   settings: renderSettings,
 };
 
@@ -76,16 +74,36 @@ let cleanup: (() => void) | null = null;
 /** Step keys that carry a param, e.g. `#/plants/<slug>`, `#/wildlife/<id>`.
  *  `settings` takes one too — `#/settings/units` opens the page at that card,
  *  which is what makes the footer's two links land in two different places. */
-const PARAM_STEPS = new Set(["plants", "regions", "wildlife", "search", "settings"]);
+const PARAM_STEPS = new Set(["plants", "regions", "wildlife", "settings"]);
 
 /** The active route: a step key, plus a param for the `<step>/<id>` pages. */
 function currentRoute(): { step: string; param?: string } {
-  const hash = location.hash.replace(/^#\/?/, "");
+  // A hash query string (`#/plants?q=oak`) is the page's *state*, not its
+  // identity — the plants index reads its own `?q=` — so it never takes part
+  // in matching a route.
+  const hash = location.hash.replace(/^#\/?/, "").split("?")[0];
   const [head, ...rest] = hash.split("/");
   if (PARAM_STEPS.has(head) && rest.length) {
     return { step: head, param: decodeURIComponent(rest.join("/")) };
   }
   return { step: head in STEPS ? head : "" };
+}
+
+/**
+ * Old addresses, folded into the ones they became — quietly, before the router
+ * ever sees them, so a bookmark or a shared link lands on the real page rather
+ * than on "we couldn't find that".
+ *
+ * `#/search` was the plants index back when the page was called Search; it is
+ * now `#/plants`, and `#/search/<query>` is `#/plants?q=<query>` (a query
+ * string, because `#/plants/<slug>` already means one plant's profile).
+ */
+function canonicalizeRoute(): void {
+  const hash = location.hash.replace(/^#\/?/, "");
+  const m = /^search(?:\/([^?]*))?(?:$|\?)/.exec(hash);
+  if (!m) return;
+  const q = m[1] ? decodeURIComponent(m[1]).trim() : "";
+  history.replaceState(null, "", `#/plants${q ? `?q=${encodeURIComponent(q)}` : ""}`);
 }
 
 /**
@@ -127,19 +145,13 @@ function renderStepRail(active: string): void {
 const SECTION_OF: Record<string, string> = {
   browse: "regions",
   regions: "regions",
-  search: "plants",
+  plants: "plants",
   wildlife: "wildlife",
   saved: "menu",
   settings: "menu",
 };
 
-/**
- * The one step that lands under two nav items: `#/plants` is the region index
- * (the older URL for `#/regions`), while `#/plants/<slug>` is a single plant's
- * profile — which belongs under Plants, next to the search that finds it.
- */
-function sectionOf(step: string, param?: string): string | undefined {
-  if (step === "plants") return param ? "plants" : "regions";
+function sectionOf(step: string): string | undefined {
   return SECTION_OF[step];
 }
 
@@ -152,7 +164,8 @@ function sectionOf(step: string, param?: string): string | undefined {
  * cards, and on a laptop a single 34rem column of them is a phone layout
  * pretending to be a desktop one — a screenful of empty margin either side and
  * five times the scrolling. Those widen, and their card grids reflow into
- * columns (see `.card-grid`).
+ * columns (see `.card-grid`): Explore's region cards, the region rosters, the
+ * plants index, and the wildlife index.
  */
 const WIDE_STEPS = new Set(["plants", "regions", "wildlife"]);
 
@@ -170,8 +183,8 @@ function updateLayout(step: string, param?: string): void {
   document.body.dataset.layout = wide ? "wide" : "narrow";
 }
 
-function updateSiteNav(step: string, param?: string): void {
-  const section = sectionOf(step, param);
+function updateSiteNav(step: string): void {
+  const section = sectionOf(step);
   // Both the plain links and the app-menu button carry data-section.
   document.querySelectorAll<HTMLElement>(".site-nav [data-section]").forEach((elm) => {
     if (elm.dataset.section === section) elm.setAttribute("aria-current", "page");
@@ -180,13 +193,14 @@ function updateSiteNav(step: string, param?: string): void {
 }
 
 async function route(): Promise<void> {
+  canonicalizeRoute();
   const { step, param } = currentRoute();
   if (cleanup) { cleanup(); cleanup = null; }
   closeAppMenu(); // a navigation always dismisses an open header menu
   closeTermDialog(); // …and any explain-this dialog, which would float above the new page
   document.title = t("app.title"); // plant pages set their own; everything else resets
   renderStepRail(step);
-  updateSiteNav(step, param);
+  updateSiteNav(step);
   updateLayout(step, param);
   const fn = param ? PARAM_RENDERERS[step] ?? STEPS[step].fn : STEPS[step].fn;
   const result = fn(main, param);

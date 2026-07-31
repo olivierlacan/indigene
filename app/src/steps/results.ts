@@ -126,7 +126,7 @@ export function renderResults(main: HTMLElement): void {
     }
     return [
       t("results.filterNone"),
-      el("a", { href: `#/search/${encodeURIComponent(typedQuery)}` }, t("results.filterSearchAll")),
+      el("a", { href: `#/plants?q=${encodeURIComponent(typedQuery)}` }, t("results.filterSearchAll")),
       t("results.filterNoneRest"),
     ];
   }

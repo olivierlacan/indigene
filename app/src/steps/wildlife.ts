@@ -43,6 +43,7 @@ import { citation } from "../components/citation";
 import { termTag, openTermDialog } from "../components/term-dialog";
 import { supportIcon, relianceIcon } from "../components/support-icon";
 import { silhouetteFor } from "../components/plant-card";
+import { sectionHeading } from "../components/section-link";
 import { keystoneIcon } from "../components/keystone-icon";
 import { wildlifeNearbySection } from "../components/wildlife-nearby";
 import { cardStats } from "../components/card-stats";
@@ -189,12 +190,12 @@ export function renderWildlifeIndex(main: HTMLElement, view: IndexView = {}): vo
       const kindLabel = wildlifeKindLabel(k);
       const cards = inKind.map((r) => wildlifeCard(r, region ?? null));
       const node = el("section", {}, [
-        el("h3", { style: "margin:1.2rem 0 0.2rem" }, [
-          el("a", { href: indexHref(region?.meta.id ?? null, k), style: "color:inherit" }, [
-            el("span", { "aria-hidden": "true" }, `${kindLabel.icon} `),
-            `${kindLabel.title} (${fmtNumber(inKind.length)})`,
-          ]),
-        ]),
+        sectionHeading(
+          indexHref(region?.meta.id ?? null, k),
+          kindLabel.icon,
+          kindLabel.title,
+          fmtNumber(inKind.length)
+        ),
         el("p", { style: "margin:0 0 0.6rem;font-size:0.9rem;color:var(--ink-soft)" }, kindLabel.blurb),
         el("div", { class: "card-grid" }, cards.map((c) => c.node)),
       ]);
@@ -228,7 +229,7 @@ export function renderWildlifeIndex(main: HTMLElement, view: IndexView = {}): vo
             ]
           : [
               t("wildlife.filterNoneIndex", { q }),
-              el("a", { href: `#/search/${encodeURIComponent(q)}` }, t("wildlife.filterSearchPlants")),
+              el("a", { href: `#/plants?q=${encodeURIComponent(q)}` }, t("wildlife.filterSearchPlants")),
               t("wildlife.filterNoneRest"),
             ],
     })] : []),
@@ -526,10 +527,7 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
   for (const group of byRegion) {
     main.append(
       el("section", {}, [
-        el("h3", { style: "margin:1.1rem 0 0.5rem" }, [
-          "📍 ",
-          el("a", { href: `#/regions/${group.region.meta.id}`, style: "color:inherit" }, regionName(group.region.meta)),
-        ]),
+        sectionHeading(`#/regions/${group.region.meta.id}`, "📍", regionName(group.region.meta)),
         ...group.items
           .slice()
           .sort(sortByStrength)

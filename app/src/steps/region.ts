@@ -12,6 +12,7 @@ import type { RegionDef } from "../lib/plants";
 import { filterField, highlight, norm } from "../components/filter-field";
 import type { FilterRow, FilterSection } from "../components/filter-field";
 import { silhouetteFor } from "../components/plant-card";
+import { sectionHeading } from "../components/section-link";
 import { keystoneIcon } from "../components/keystone-icon";
 import { regionStatGrid } from "../components/region-stats";
 import { regionRefLine, zoneChip } from "../components/zone-chip";
@@ -68,12 +69,7 @@ export function renderRegion(main: HTMLElement, param?: string): void {
     if (!inForm.length) return null;
     const rows = inForm.map(filterRow);
     const node = el("section", {}, [
-      el("h3", { style: "margin:1.1rem 0 0.4rem" }, [
-        el("a", { href: categoryHref(region, f), style: "color:inherit" }, [
-          formIcon(f),
-          ` ${formLabel(f)} (${fmtNumber(inForm.length)})`,
-        ]),
-      ]),
+      sectionHeading(categoryHref(region, f), formIcon(f), formLabel(f), fmtNumber(inForm.length)),
       el("div", { class: "card-grid" }, rows.map((r) => r.node)),
     ]);
     allRows.push(...rows);
@@ -97,7 +93,7 @@ export function renderRegion(main: HTMLElement, param?: string): void {
     categoryChips(region, plants, null),
     ...groups,
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("plants") }, t("region.featured")),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("regions") }, t("region.featured")),
       el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("wildlife.rankForSpot")),
     ])
   );
@@ -245,7 +241,7 @@ function plantFilterField(rows: FilterRow[], sections: FilterSection[]): HTMLEle
       tn("region.filterCount", shown, { shown: fmtNumber(shown), total: fmtNumber(total), q }),
     fallback: (q) => [
       t("region.filterNone"),
-      el("a", { href: `#/search/${encodeURIComponent(q)}` }, t("region.filterSearchAll")),
+      el("a", { href: `#/plants?q=${encodeURIComponent(q)}` }, t("region.filterSearchAll")),
       t("region.filterNoneRest"),
     ],
   });

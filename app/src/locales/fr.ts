@@ -61,7 +61,6 @@ export const fr: Dict = {
   "steps.saved": "Lieux",
   "steps.browse": "Parcourir",
   "steps.explore": "Explorer",
-  "steps.search": "Recherche",
   "steps.wildlife": "Faune",
   "steps.privacy": "Vie privée",
   "steps.sources": "Sources",
@@ -929,22 +928,22 @@ export const fr: Dict = {
     "{n} des plantes de cette région sont des clés de voûte — comme la pierre au sommet d'une arche, chacune fait vivre bien plus d'animaux que la moyenne, et en perdre une déferait un réseau alimentaire bien plus grand qu'elle.",
 
   // ---------------------------------------------------------------------
-  // Recherche.
+  // L'index des plantes (#/plants) — toutes les indigènes, avec recherche.
   // ---------------------------------------------------------------------
-  "search.title": "Rechercher une plante indigène",
-  "search.lede":
-    "Tapez le nom d'une plante — courant ou scientifique — et ouvrez sa fiche. La recherche interroge le registre des plantes indigènes d'Indigene : un nom s'y résout exactement comme partout ailleurs dans l'application.",
-  "search.label": "Nom de la plante",
-  "search.placeholder": "ex. chêne, asclépiade ou Quercus",
-  "search.matchCount": "{n} plantes indigènes sur {total} correspondent à « {q} ».",
-  "search.idle": "Cherchez parmi {total} plantes indigènes réparties sur {regions} régions.",
-  "search.alsoCalled": "Aussi appelée « ",
-  "search.alsoCalledEnd": " »",
-  "search.noneLead":
+  "plants.title": "Plantes indigènes",
+  "plants.lede":
+    "Toutes les plantes qu'Indigene connaît, région par région. Tapez un nom — courant ou scientifique — pour resserrer la liste, puis ouvrez une plante pour sa fiche complète.",
+  "plants.label": "Nom de la plante",
+  "plants.placeholder": "ex. chêne, asclépiade ou Quercus",
+  "plants.matchCount": "{n} plantes indigènes sur {total} correspondent à « {q} ».",
+  "plants.idle": "{total} plantes indigènes réparties sur {regions} régions.",
+  "plants.alsoCalled": "Aussi appelée « ",
+  "plants.alsoCalledEnd": " »",
+  "plants.noneLead":
     "Aucune plante des listes d'Indigene ne correspond à « {q} ». Les listes sont constituées région par région, elles grandissent donc prudemment — ",
-  "search.noneLink": "parcourez les indigènes que nous connaissons",
-  "search.noneEnd": ".",
-  "search.browseInstead": "Parcourir plutôt",
+  "plants.noneLink": "parcourez les indigènes que nous connaissons",
+  "plants.noneEnd": ".",
+  "plants.browseRegions": "Parcourir par région",
 
   // ---------------------------------------------------------------------
   // Vie privée et sécurité.

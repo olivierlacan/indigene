@@ -1,8 +1,13 @@
-// A registry-backed, plant-first search: type any name — common or scientific —
-// and open that plant's page. It searches the native-plant registry (the
+// The plants index (#/plants): every native Indigene knows, with a box that
+// narrows the list as you type. It reads the native-plant registry (the
 // identity layer), so a name resolves here the same way it does everywhere in
-// the app: over the same common names, scientific names, and aliases. The query
-// is reflected into the URL (#/search/<query>) so a search is shareable.
+// the app: over the same common names, scientific names, and aliases.
+//
+// The typed query is reflected into the URL as `#/plants?q=<query>` so a
+// narrowed list is shareable. A query string rather than a path segment,
+// because `#/plants/<slug>` is already one plant's profile — "oak" is a search,
+// not a slug, and the two can't share a shape. `#/search` and `#/search/<q>`
+// were the old addresses; main.ts folds them into these.
 import { el, clear } from "../ui";
 import { navigate } from "../state";
 import { REGISTRY } from "../lib/registry";
@@ -13,12 +18,9 @@ import { highlight, norm } from "../components/filter-field";
 import { silhouetteFor } from "../components/plant-card";
 import type { PlantForm } from "../types";
 import { t, fmtNumber, getLang } from "../lib/i18n";
-import { regionName, searchAliases, localName } from "../lib/names";
+import { regionName, regionShort, searchAliases, localName } from "../lib/names";
 
-const regionLabel = (id: string): string => {
-  const r = REGIONS.find((x) => x.meta.id === id);
-  return r ? regionName(r.meta) : id;
-};
+const regionMetaOf = (id: string) => REGIONS.find((x) => x.meta.id === id)?.meta;
 
 type Row = {
   slug: string;
@@ -66,7 +68,16 @@ function buildRows(): Row[] {
     .sort((a, b) => a.common.localeCompare(b.common, getLang()));
 }
 
-export function renderSearch(main: HTMLElement, param?: string): void {
+/** The typed query, read straight off the address bar (`#/plants?q=oak`).
+ *  The router hands a param to `#/<step>/<param>` pages; this page's state is a
+ *  query string instead, so it reads its own. */
+function queryFromHash(): string {
+  const at = location.hash.indexOf("?");
+  if (at < 0) return "";
+  return new URLSearchParams(location.hash.slice(at + 1)).get("q") ?? "";
+}
+
+export function renderPlants(main: HTMLElement): void {
   clear(main);
   const ROWS = buildRows();
 
@@ -76,7 +87,7 @@ export function renderSearch(main: HTMLElement, param?: string): void {
     autocomplete: "off",
     autocapitalize: "none",
     spellcheck: false,
-    placeholder: t("search.placeholder"),
+    placeholder: t("plants.placeholder"),
     style: "width:100%",
   }) as HTMLInputElement;
   const count = el("p", { id: "search-count", class: "coords", style: "margin:0.5rem 0 0.8rem" }, "");
@@ -87,7 +98,11 @@ export function renderSearch(main: HTMLElement, param?: string): void {
     return norm(r.common).startsWith(nq) || norm(r.latin).startsWith(nq) ? 0 : 1;
   }
 
-  function row(r: Row, nq: string): HTMLElement {
+  // One plant as a card in the grid: the silhouette, the two name lines, and
+  // the regions it's native to as pills — the same pills an animal's page uses,
+  // so "where does this grow" looks the same wherever it's answered. The whole
+  // card is the link; there is nothing else on it to aim at.
+  function card(r: Row, nq: string): HTMLElement {
     // When neither displayed name contains the query, the match came from a
     // hidden name (a second common name, an alias) — show that name, so the
     // result doesn't look like a false positive.
@@ -95,19 +110,18 @@ export function renderSearch(main: HTMLElement, param?: string): void {
       ? r.alts.find((a) => norm(a).includes(nq))
       : undefined;
     return el("li", {}, [
-      el("a", {
-        href: `#/plants/${r.slug}`,
-        class: "card search-result",
-        style: "display:flex;gap:0.7rem;align-items:center;text-decoration:none;color:inherit;margin-bottom:0.5rem",
-      }, [
+      el("a", { href: `#/plants/${r.slug}`, class: "card plant-index-card" }, [
         el("span", { class: "plant-photo", "aria-hidden": "true", style: "flex:none" }, [silhouetteFor(r.form)]),
-        el("span", { style: "min-width:0" }, [
+        el("span", { class: "plant-index-text" }, [
           el("span", { class: "plant-name", style: "display:block;font-weight:700" }, highlight(r.common, nq)),
           el("span", { class: "plant-latin", style: "display:block" }, highlight(r.latin, nq)),
-          alt && el("span", { style: "display:block;font-size:0.8rem;color:var(--ink-soft)" },
-            [t("search.alsoCalled"), ...highlight(alt, nq), t("search.alsoCalledEnd")]),
-          el("span", { style: "display:block;font-size:0.8rem;color:var(--ink-soft)" },
-            r.regions.map(regionLabel).join(" · ")),
+          alt && el("span", { class: "plant-index-alt" },
+            [t("plants.alsoCalled"), ...highlight(alt, nq), t("plants.alsoCalledEnd")]),
+          el("span", { class: "region-pills" }, r.regions.map((id) => {
+            const meta = regionMetaOf(id);
+            return el("span", { class: "region-pill", title: meta ? regionName(meta) : id },
+              meta ? regionShort(meta) : id);
+          })),
         ]),
       ]),
     ]);
@@ -119,42 +133,48 @@ export function renderSearch(main: HTMLElement, param?: string): void {
       .slice()
       .sort((a, b) => rank(a, nq) - rank(b, nq) || a.common.localeCompare(b.common, getLang()));
     count.textContent = nq
-      ? t("search.matchCount", { n: fmtNumber(matches.length), total: fmtNumber(ROWS.length), q: q.trim() })
-      : t("search.idle", { total: fmtNumber(ROWS.length), regions: fmtNumber(REGIONS.length) });
+      ? t("plants.matchCount", { n: fmtNumber(matches.length), total: fmtNumber(ROWS.length), q: q.trim() })
+      : t("plants.idle", { total: fmtNumber(ROWS.length), regions: fmtNumber(REGIONS.length) });
     clear(results);
     if (!matches.length) {
       results.append(
         el("div", { class: "note warn" }, [
-          t("search.noneLead", { q: q.trim() }),
-          el("a", { href: "#/plants" }, t("search.noneLink")),
-          t("search.noneEnd"),
+          t("plants.noneLead", { q: q.trim() }),
+          el("a", { href: "#/regions" }, t("plants.noneLink")),
+          t("plants.noneEnd"),
         ]),
       );
       return;
     }
-    results.append(el("ul", { style: "list-style:none;margin:0;padding:0" }, matches.map((r) => row(r, nq))));
+    // A grid, not a stack: the cards are self-contained, so a laptop shows
+    // three across instead of one phone-wide ribbon down the middle of the
+    // screen (see `.card-grid`, and `WIDE_STEPS` in main.ts).
+    results.append(
+      el("ul", { class: "card-grid", style: "list-style:none;margin:0;padding:0" },
+        matches.map((r) => card(r, nq)))
+    );
   }
 
   input.addEventListener("input", () => {
     const q = input.value;
     run(q);
     // Reflect the query into the URL for sharing, without triggering a re-route.
-    history.replaceState(null, "", q.trim() ? `#/search/${encodeURIComponent(q.trim())}` : "#/search");
+    history.replaceState(null, "", q.trim() ? `#/plants?q=${encodeURIComponent(q.trim())}` : "#/plants");
   });
 
   main.append(
-    el("h2", { class: "step-title" }, t("search.title")),
-    el("p", { class: "step-lede" }, t("search.lede")),
-    el("div", { class: "field" }, [el("label", { for: "plant-q" }, t("search.label")), input]),
+    el("h2", { class: "step-title" }, t("plants.title")),
+    el("p", { class: "step-lede" }, t("plants.lede")),
+    el("div", { class: "field" }, [el("label", { for: "plant-q" }, t("plants.label")), input]),
     count,
     results,
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("plants") }, t("search.browseInstead")),
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("browse.home")),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("regions") }, t("plants.browseRegions")),
+      el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("wildlife.rankForSpot")),
     ]),
   );
 
-  const initial = param ?? ""; // the router already URL-decoded the param
+  const initial = queryFromHash();
   if (initial) input.value = initial;
   run(initial);
   queueMicrotask(() => input.focus());

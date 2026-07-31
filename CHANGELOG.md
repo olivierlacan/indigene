@@ -107,10 +107,30 @@ subtitle on the What's new page.
 
 ### Changed
 
+- **A heading that leads somewhere now looks like it.** On a region's page, the
+  headings that group its plants — Trees, Shrubs, Grasses & sedges — each open
+  a page of their own, and so do the group headings on the
+  [Wildlife](https://indigene.app/#/wildlife) page and the place names on an
+  animal's page. They used to be marked with a plain underline, which ran under
+  the little picture in front and the count in brackets behind, so the line
+  started before the words and stopped after a bracket. Now each one ends in a
+  small green arrow pointing the way the tap goes, and the count sits beside it
+  as a quiet round badge instead of "(14)". The region cards on
+  [Regions](https://indigene.app/#/regions) lost their underline too: the whole
+  card was always the link, so underlining one word was telling you the wrong
+  thing.
+- **The plants list has a simpler address and a proper wide layout.** It now
+  lives at **[indigene.app/#/plants](https://indigene.app/#/plants)** — the
+  page the **Plants** menu leads to — and a search you've typed is shareable as
+  `#/plants?q=oak`. Old `#/search` links still work; they land on the same page
+  with whatever you searched for already filled in. On a laptop the list now
+  spreads into three columns of cards instead of one phone-width ribbon down
+  the middle of the screen, the way the Regions and Wildlife pages already did,
+  and each card shows the regions that plant grows in.
 - **The menu at the top of every page now says what each page holds.**
   "Explore" is now **[Regions](https://indigene.app/#/regions)** — the places
   Indigene knows, from Florida to the Piedmont — and "Search" is now
-  **[Plants](https://indigene.app/#/search)**, which lists every plant on
+  **[Plants](https://indigene.app/#/plants)**, which lists every plant on
   Indigene's list and lets you type a name to narrow it down.
   **[Wildlife](https://indigene.app/#/wildlife)** keeps its name. In French the
   three read **Régions**, **Plantes** and **Faune**.

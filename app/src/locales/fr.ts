@@ -25,6 +25,9 @@ export const fr: Dict = {
   "units.m": "m",
   "units.cm": "cm",
   "units.mm": "mm",
+  "units.km": "km",
+  "units.mile": "mile",
+  "units.miles": "miles",
 
   // ---------------------------------------------------------------------
   // Habillage de l'application.
@@ -523,6 +526,14 @@ export const fr: Dict = {
     "Une partie de la description de cette plante est encore en anglais — nous traduisons les textes région par région, et nous n'en sommes pas encore à celle-ci.",
   "names.partlyNamed":
     "{named} de ces {total} plantes portent un nom dans votre langue, tiré d'une liste nationale de référence ; les autres affichent leur nom scientifique, parce qu'en inventer un serait pire que de n'en donner aucun.",
+  "names.rosterUntranslated":
+    "{n} de ces {total} plantes se décrivent encore en anglais — nous traduisons les textes région par région, et nous n'en sommes pas encore là.",
+  "names.rosterAllUntranslated.one":
+    "Cette plante se décrit encore en anglais — nous traduisons les textes région par région, et nous n'en sommes pas encore à celle-ci.",
+  "names.rosterAllUntranslated.other":
+    "Ces {n} plantes se décrivent toutes encore en anglais — nous traduisons les textes région par région, et nous n'en sommes pas encore à cette région.",
+  "names.wildlifeUntranslated":
+    "Les descriptions de cette page sont encore en anglais — nous traduisons les textes région par région, et nous n'en sommes pas encore à la faune.",
 
   // Le dessin des tailles.
   "sizeViz.you": "Vous",
@@ -551,6 +562,7 @@ export const fr: Dict = {
   "card.hostSpecies": "{n} espèces",
   "card.whyRanks": "🦋 Pourquoi ce rang — valeur écologique {score}/100",
   "card.bloomRange": "Fleurit de {from} à {to} ({color}).",
+  "card.bloomRangeVowel": "Fleurit d'{from} à {to} ({color}).",
   "card.foliage": "Cultivée pour son feuillage, pas pour ses fleurs.",
   "card.gives": "Ce qu'elle apporte, à vous et à la faune : ",
   "card.needs": "Ce qu'elle attend de vous : ",
@@ -564,6 +576,45 @@ export const fr: Dict = {
   "confidence.word.high": "élevée",
   "confidence.word.medium": "moyenne",
   "confidence.word.low": "faible",
+
+  // ---------------------------------------------------------------------
+  // Pourquoi une plante obtient cette note pour ce coin de jardin.
+  // ---------------------------------------------------------------------
+  "fit.sun.tooLittle": "Veut plus de soleil que ce coin n'en reçoit (il lui en faut ~{needs} h, ce coin en donne ~{has}).",
+  "fit.sun.tooMuch": "Préfère plus d'ombre que ce coin n'en offre — elle risque de griller en plein soleil.",
+  "fit.sun.good": "Le soleil lui convient bien ({sun}).",
+  "fit.moisture.good": "Elle s'accommode de l'humidité d'ici (sol {band}).",
+  "fit.moisture.near": "L'humidité n'est pas tout à fait la bonne — ici le sol est {band}, et elle le préfère {wants}.",
+  "fit.moisture.far": "L'humidité est loin du compte — ici le sol est {band}, et elle le préfère {wants}.",
+  "fit.ph.off": "L'acidité du sol sort de sa zone de confort (estimation cartographique).",
+
+  // ---------------------------------------------------------------------
+  // Le verdict « est-ce que ça pousserait chez moi ? ».
+  // ---------------------------------------------------------------------
+  "verdict.ideal": "Coin idéal pour la planter",
+  "verdict.decent": "Coin correct — elle poussera, avec des réserves",
+  "verdict.unsuitable": "Ce coin lui mènerait la vie dure",
+  "verdict.notNative": "Pas connue comme indigène à cet endroit",
+  "verdict.notNativeHere": "Cette plante n'est pas sur la liste {region} — nos données la donnent indigène de {where}.",
+  "verdict.notCovered":
+    "Cet endroit est en dehors des régions qu'Indigene couvre pour l'instant (les données de cette plante portent sur {where}), nous ne pouvons donc pas honnêtement nous porter garants d'elle ici.",
+  "verdict.notNativeWhy":
+    "La planter quand même ne nourrirait pas la faune locale comme le ferait une vraie indigène d'ici — et c'est tout l'intérêt de choisir des indigènes.",
+  "verdict.tooCold": "Les hivers sont trop froids ici pour elle",
+  "verdict.tooColdWhy":
+    "{name} ne survivrait pas à {winter} — elle ne tient que jusqu'à la zone {zone}. Un hiver normal la tuerait.",
+  "verdict.tooWarm": "Les hivers ne sont pas assez froids ici pour elle",
+  "verdict.tooWarmWhy":
+    "{name} a besoin d'un repos hivernal plus froid que {winter} — il lui faut la zone {zone} ou plus froide.",
+  "verdict.winterNights": "des nuits d'hiver autour de {temp} (zone USDA {zone})",
+  "verdict.winterCold": "le froid hivernal de cet endroit (zone USDA {zone})",
+  "verdict.hardyEnough": "Assez rustique pour {winter}.",
+  "verdict.winterUnknown":
+    "Nous n'avons pas pu vérifier le froid qu'il fait ici en hiver — le reste du verdict suppose que ça passe.",
+  "verdict.sunMissingCapped":
+    "Nous ne connaissons pas encore le soleil de ce coin — indiquez-le ci-dessus et le verdict deviendra complet.",
+  "verdict.sunMissing":
+    "Pas encore de relevé de soleil pour ce coin — dites-nous ci-dessus ce qu'il en est et le verdict s'affinera.",
 
   // ---------------------------------------------------------------------
   // Couleurs de floraison.
@@ -1163,12 +1214,21 @@ export const fr: Dict = {
   "obs.fromCache": "Chargées depuis le cache de cet appareil — ",
   "obs.fetchedNow": "Récupérées à l'instant par votre navigateur — ",
   "obs.creditEnd": "c'est votre navigateur qui appelle iNaturalist directement : ils voient votre requête, pas la nôtre.",
+  "obs.away": "à ~{distance}",
+  "obs.veryClose": "à moins de {distance}",
+  "obs.seenOn": "vue en {month} {year}",
+  "obs.seenIn": "vue en {year}",
+  "obs.enlarge": "Agrandir la photo {i} de {name} par {observer}",
+  "obs.enlargeMore": ", et en voir {n} de plus pour cette observation",
+  "obs.tapToEnlarge": "{attribution} — touchez pour agrandir",
+  "obs.photoAlt": "{name} photographié par {observer}",
   "lightbox.prev": "Photo précédente",
   "lightbox.next": "Photo suivante",
   "lightbox.close": "Fermer",
   "lightbox.viewer": "Visionneuse de photos",
   "lightbox.viewOriginal": "Voir l'observation d'origine ↗",
   "lightbox.sightingOf": "observation {i} sur {n}",
+  "lightbox.credit": "Photo © {observer} · {licence} · via {site}",
   "nearby.useMyLocation": "Utiliser ma position",
   "nearby.asking": "Interrogation d'iNaturalist…",
   "nearby.unreachable":

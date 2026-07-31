@@ -38,6 +38,9 @@ const TAXA_BASE = "https://api.inaturalist.org/v1/taxa";
 /** Default search radius around the spot, in kilometres. */
 export const DEFAULT_RADIUS_KM = 50;
 
+import { monthName, t } from "./i18n";
+import { distance, distanceFloor, distanceFloorKm } from "./units";
+
 /** How many observations to pull in the single nearby request (API max is 200). */
 export const DEFAULT_PER_PAGE = 100;
 
@@ -128,25 +131,35 @@ export interface ObservationSummary {
   photos: ObservationPhoto[];
 }
 
-const monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
 /** "~3 km away · seen Jun 2023" — the honest context line for one sighting.
  *  Distance when we measured it (a "near me" lookup), otherwise the coarse place
  *  iNaturalist reports; then the month/year it was observed, when known. It
  *  lives here, beside the shape it describes, because both the sighting card and
  *  the lightbox print it — the lightbox needs it now that paging crosses from one
- *  sighting to the next and the reader has to see *where they've landed*. */
+ *  sighting to the next and the reader has to see *where they've landed*.
+ *
+ *  Both halves follow the reader's own two settings: the words come from the
+ *  language dictionary, the distance from the units picker — so a French reader
+ *  who measures in miles gets "à ~2 miles · vue en juin 2023". */
 export function whereWhen(o: ObservationSummary): string {
   const bits: string[] = [];
   if (o.distanceKm != null) {
-    bits.push(o.distanceKm < 1 ? "under 1 km away" : `~${Math.round(o.distanceKm)} km away`);
+    bits.push(
+      o.distanceKm < distanceFloorKm()
+        ? t("obs.veryClose", { distance: distanceFloor() })
+        : t("obs.away", { distance: distance(o.distanceKm) })
+    );
   } else if (o.place) {
     bits.push(o.place);
   }
   if (o.observedOn) {
     const [y, m] = o.observedOn.split("-");
     const mm = Number(m);
-    bits.push(`seen ${mm >= 1 && mm <= 12 ? monthNames[mm] + " " : ""}${y}`);
+    bits.push(
+      mm >= 1 && mm <= 12
+        ? t("obs.seenOn", { month: monthName(mm, "short"), year: y })
+        : t("obs.seenIn", { year: y })
+    );
   }
   return bits.join(" · ");
 }

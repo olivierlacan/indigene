@@ -194,6 +194,36 @@ export function temperatureSpan(deltaF: number): string {
 }
 
 // ---------------------------------------------------------------------------
+// Distance. Input is always kilometres — what iNaturalist's geography is in,
+// and what our own great-circle maths produces.
+// ---------------------------------------------------------------------------
+
+const KM_PER_MILE = 1.609344;
+
+/** How far away a sighting is, rounded the way someone would say it out loud:
+ *  "3 km", "2 miles". Never a decimal — the point is "that's the next street"
+ *  versus "that's the next town", and the observation's own coordinates are
+ *  fuzzy anyway. */
+export function distance(km: number): string {
+  if (getUnits() === "metric") return `${fmtNumber(Math.round(km))} ${t("units.km")}`;
+  return `${fmtNumber(Math.round(km / KM_PER_MILE))} ${t("units.miles")}`;
+}
+
+/** The distance below which we say "under one X away" rather than round to a
+ *  meaningless zero. One kilometre, or one mile — the unit's own floor, so the
+ *  sentence reads honestly in either system. */
+export function distanceFloorKm(): number {
+  return getUnits() === "metric" ? 1 : KM_PER_MILE;
+}
+
+/** That floor as words: "1 km" / "1 mile". */
+export function distanceFloor(): string {
+  return getUnits() === "metric"
+    ? `${fmtNumber(1)} ${t("units.km")}`
+    : `${fmtNumber(1)} ${t("units.mile")}`;
+}
+
+// ---------------------------------------------------------------------------
 // Rainfall. Input is always inches — what Open-Meteo is asked for.
 // ---------------------------------------------------------------------------
 

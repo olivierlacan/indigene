@@ -13,7 +13,8 @@ import type {
   Weights,
 } from "../types";
 import { zoneFromMinTemp } from "./site";
-import { moistureWord } from "./plain";
+import { moistureWord, sunLabel } from "./plain";
+import { fmtNumber, fmtOrList, t } from "./i18n";
 
 export const DEFAULT_WEIGHTS: Weights = {
   host: 5, // caterpillar/moth host value is the strongest food-web proxy
@@ -107,15 +108,13 @@ export function computeFit(
     if (h < plant.sun.minHours) {
       sunFit = clamp01(1 - (plant.sun.minHours - h) / 4);
       reasons.push(
-        `Wants more sun than this spot gets (needs ~${plant.sun.minHours}+ hours, spot gets ~${h}).`
+        t("fit.sun.tooLittle", { needs: fmtNumber(plant.sun.minHours), has: fmtNumber(h) })
       );
     } else if (h > plant.sun.maxHours) {
       sunFit = clamp01(1 - (h - plant.sun.maxHours) / 5);
-      reasons.push(
-        `Prefers more shade than this spot offers — may scorch in full sun.`
-      );
+      reasons.push(t("fit.sun.tooMuch"));
     } else {
-      reasons.push(`Sun is a good match (${sunLabelShort(h)}).`);
+      reasons.push(t("fit.sun.good", { sun: sunLabel(h) }));
     }
   }
 
@@ -125,8 +124,16 @@ export function computeFit(
   const accepts = plant.moisture.map((b) => order.indexOf(b));
   const dist = Math.min(...accepts.map((a) => Math.abs(a - mi)));
   let moistFit = dist === 0 ? 1 : dist === 1 ? 0.6 : 0.3;
-  if (dist === 0) reasons.push(`Handles the moisture here (${moistureWord(moisture)} soil).`);
-  else reasons.push(`Moisture is ${dist === 1 ? "a bit" : "quite"} off — this spot's soil is ${moistureWord(moisture)}, and it prefers ${plant.moisture.map(moistureWord).join(" or ")}.`);
+  if (dist === 0) {
+    reasons.push(t("fit.moisture.good", { band: moistureWord(moisture) }));
+  } else {
+    reasons.push(
+      t(dist === 1 ? "fit.moisture.near" : "fit.moisture.far", {
+        band: moistureWord(moisture),
+        wants: fmtOrList(plant.moisture.map(moistureWord)),
+      })
+    );
+  }
 
   // pH.
   let phFit = 1;
@@ -136,7 +143,7 @@ export function computeFit(
     else if (ph >= plant.ph.min - 0.5 && ph <= plant.ph.max + 0.5) phFit = 0.8;
     else {
       phFit = 0.55;
-      reasons.push(`Soil acidity is outside its comfort zone (map estimate).`);
+      reasons.push(t("fit.ph.off"));
     }
   }
 
@@ -183,10 +190,4 @@ export function rankPlants(
 
 function clamp01(x: number): number {
   return Math.min(1, Math.max(0, x));
-}
-function sunLabelShort(h: number): string {
-  if (h >= 6) return "full sun";
-  if (h >= 4) return "part sun";
-  if (h >= 2) return "part shade";
-  return "shade";
 }

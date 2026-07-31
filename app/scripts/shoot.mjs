@@ -28,6 +28,12 @@
 //                         page has no URL of its own — it needs a spot — so
 //                         this is the only way to photograph it. Point the
 //                         URL at `#/location` and this takes it from there.
+//   --click sel           click the first match of a Playwright selector before
+//                         shooting, waiting for the page to settle after each.
+//                         Repeatable, applied in order — for the states that
+//                         only exist after a tap (the spot verdict, a sun pick)
+//   --geo lat,lon         grant geolocation and answer it with this point, so
+//                         a "use my location" button can be one of those clicks
 //
 // Exists because the Playwright CLI can't set device pixel ratio directly —
 // its iPhone device descriptors force WebKit, which isn't installed here.
@@ -45,6 +51,12 @@ const has = (name) => {
   const i = args.indexOf(name);
   return i === -1 ? false : (args.splice(i, 1), true);
 };
+/** Every occurrence of a repeatable flag, in the order they were written. */
+const flags = (name) => {
+  const out = [];
+  for (let v = flag(name, null); v !== null; v = flag(name, null)) out.push(v);
+  return out;
+};
 
 const scheme = flag("--scheme", "dark");
 const dpr = Number(flag("--dpr", "3"));
@@ -56,6 +68,8 @@ const fill = flag("--fill", "");
 const fillInto = flag("--fill-into", "input[type='search']");
 const picks = flag("--picks", "");
 const open = flag("--open", "");
+const clicks = flags("--click");
+const geo = flag("--geo", "");
 const [url, out] = args;
 
 if (!url || !out || !(dpr > 0) || !(vw > 0) || !(vh > 0)) {
@@ -69,6 +83,7 @@ const prebuilt = "/opt/pw-browsers/chromium";
 const browser = await chromium.launch(
   existsSync(prebuilt) ? { executablePath: prebuilt } : {},
 );
+const [geoLat, geoLon] = geo.split(",").map(Number);
 const context = await browser.newContext({
   viewport: { width: vw, height: vh },
   deviceScaleFactor: dpr,
@@ -76,6 +91,9 @@ const context = await browser.newContext({
   locale,
   isMobile: true,
   hasTouch: true,
+  ...(geo
+    ? { geolocation: { latitude: geoLat, longitude: geoLon }, permissions: ["geolocation"] }
+    : {}),
 });
 const page = await context.newPage();
 await page.goto(url, { waitUntil: "networkidle" });
@@ -86,6 +104,12 @@ if (open) await page.locator(open).first().locator("summary").click();
 // Typed, not set: these fields listen for `input`, and assigning `.value`
 // fires nothing — the shot would show a filled box over an unfiltered list.
 if (fill) await page.locator(fillInto).first().pressSequentially(fill);
+// Taps, in the order given. Each gets the settle time of its own, because these
+// tend to kick off a lookup whose answer is the thing being photographed.
+for (const sel of clicks) {
+  await page.locator(sel).first().click();
+  await page.waitForTimeout(wait);
+}
 await page.waitForTimeout(wait);
 await page.screenshot({ path: out, fullPage });
 await browser.close();

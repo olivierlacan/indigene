@@ -26,6 +26,9 @@ export const en = {
   "units.m": "m",
   "units.cm": "cm",
   "units.mm": "mm",
+  "units.km": "km",
+  "units.mile": "mile",
+  "units.miles": "miles",
 
   // ---------------------------------------------------------------------
   // App chrome: the header, nav, footer and the progress rail.
@@ -504,6 +507,14 @@ export const en = {
     "Some of this plant's description is still in English — we translate the writing region by region, and haven't reached this one yet.",
   "names.partlyNamed":
     "{named} of these {total} plants have a name in your language from a national reference list; the rest show their scientific name, because inventing one would be worse than showing none.",
+  "names.rosterUntranslated":
+    "{n} of these {total} plants still describe themselves in English — we translate the writing region by region, and haven't reached them yet.",
+  "names.rosterAllUntranslated.one":
+    "This plant still describes itself in English — we translate the writing region by region, and haven't reached this one yet.",
+  "names.rosterAllUntranslated.other":
+    "All {n} of these plants still describe themselves in English — we translate the writing region by region, and haven't reached this region yet.",
+  "names.wildlifeUntranslated":
+    "The descriptions on this page are still in English — we translate the writing region by region, and haven't reached the wildlife yet.",
 
   // The size drawing.
   "sizeViz.you": "You",
@@ -531,7 +542,11 @@ export const en = {
   "card.weightedHigh": "★ (you're weighting this high)",
   "card.hostSpecies": "{n} species",
   "card.whyRanks": "🦋 Why it ranks here — eco value {score}/100",
+  // Two forms of one sentence. Which is used depends on whether the month
+  // that follows starts with a vowel — English doesn't care and defines both
+  // identically, French elides ("de avril" is not a thing anyone writes).
   "card.bloomRange": "Blooms {from}–{to} ({color}).",
+  "card.bloomRangeVowel": "Blooms {from}–{to} ({color}).",
   "card.foliage": "Grown for foliage, not flowers.",
   "card.gives": "What it does for you & wildlife: ",
   "card.needs": "What it needs from you: ",
@@ -545,6 +560,50 @@ export const en = {
   "confidence.word.high": "high",
   "confidence.word.medium": "medium",
   "confidence.word.low": "low",
+
+  // ---------------------------------------------------------------------
+  // Why a plant scores the way it does for a spot. These are the bullets
+  // under every ranked card and under the "check your spot" verdict on a
+  // plant's own page — `lib/ranking.ts` decides which one applies, this is
+  // what it says.
+  // ---------------------------------------------------------------------
+  "fit.sun.tooLittle": "Wants more sun than this spot gets (needs ~{needs}+ hours, spot gets ~{has}).",
+  "fit.sun.tooMuch": "Prefers more shade than this spot offers — may scorch in full sun.",
+  "fit.sun.good": "Sun is a good match ({sun}).",
+  "fit.moisture.good": "Handles the moisture here ({band} soil).",
+  "fit.moisture.near": "Moisture is a bit off — this spot's soil is {band}, and it prefers {wants}.",
+  "fit.moisture.far": "Moisture is quite off — this spot's soil is {band}, and it prefers {wants}.",
+  "fit.ph.off": "Soil acidity is outside its comfort zone (map estimate).",
+
+  // ---------------------------------------------------------------------
+  // The "would this plant grow at my spot?" verdict (`lib/explore.ts`).
+  // Winter cold is always said in plain words first, with the USDA zone in
+  // parentheses — and the temperature comes from `units.ts`, so a French
+  // reader who measures in Celsius gets Celsius.
+  // ---------------------------------------------------------------------
+  "verdict.ideal": "Ideal planting spot",
+  "verdict.decent": "Decent spot — it'll grow, with caveats",
+  "verdict.unsuitable": "This spot would fight it the whole way",
+  "verdict.notNative": "Not known native at this spot",
+  "verdict.notNativeHere": "This plant isn't in the {region} list — our data says it's native to {where}.",
+  "verdict.notCovered":
+    "This spot is outside the regions Indigene covers so far (this plant's data is for {where}), so we can't honestly vouch for it here.",
+  "verdict.notNativeWhy":
+    "Planting it anyway wouldn't feed local wildlife the way a true local native would — that's the whole point of choosing natives.",
+  "verdict.tooCold": "Winters here are too cold for it",
+  "verdict.tooColdWhy":
+    "{name} can't survive {winter} — it's only hardy down to zone {zone}. A normal winter would kill it.",
+  "verdict.tooWarm": "Winters here aren't cold enough for it",
+  "verdict.tooWarmWhy":
+    "{name} needs a colder winter rest than {winter} gives — it wants zone {zone} or colder.",
+  "verdict.winterNights": "winter nights around {temp} (USDA zone {zone})",
+  "verdict.winterCold": "this spot's winter cold (USDA zone {zone})",
+  "verdict.hardyEnough": "Tough enough for {winter}.",
+  "verdict.winterUnknown":
+    "Couldn't confirm how cold winters get here — the rest of the verdict assumes it's fine.",
+  "verdict.sunMissingCapped":
+    "We don't know this spot's sun yet — pick a sun level above and this can become a full verdict.",
+  "verdict.sunMissing": "No sun reading for this spot yet — tell us the sun above and the verdict sharpens.",
 
   // ---------------------------------------------------------------------
   // Bloom colours. Enumerated rather than assembled from translated atoms:
@@ -1130,12 +1189,23 @@ export const en = {
   "obs.fromCache": "Loaded from this device's cache — ",
   "obs.fetchedNow": "Fetched just now by your browser — ",
   "obs.creditEnd": "your browser calls iNaturalist directly, so they see your request, not ours.",
+  // One sighting's "where and when" line. The distance is formatted by
+  // `units.ts`, so it reads in kilometres or miles by the reader's own choice.
+  "obs.away": "~{distance} away",
+  "obs.veryClose": "under {distance} away",
+  "obs.seenOn": "seen {month} {year}",
+  "obs.seenIn": "seen {year}",
+  "obs.enlarge": "Enlarge photo {i} of {name} by {observer}",
+  "obs.enlargeMore": ", and see {n} more from this sighting",
+  "obs.tapToEnlarge": "{attribution} — tap to enlarge",
+  "obs.photoAlt": "{name} photographed by {observer}",
   "lightbox.prev": "Previous photo",
   "lightbox.next": "Next photo",
   "lightbox.close": "Close",
   "lightbox.viewer": "Photo viewer",
   "lightbox.viewOriginal": "View original sighting ↗",
   "lightbox.sightingOf": "sighting {i} of {n}",
+  "lightbox.credit": "Photo © {observer} · {licence} · via {site}",
   "nearby.useMyLocation": "Use my location",
   "nearby.asking": "Asking iNaturalist…",
   "nearby.unreachable":

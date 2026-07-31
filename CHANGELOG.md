@@ -219,6 +219,41 @@ subtitle on the What's new page.
 
 ### Fixed
 
+- **Reading in French, being answered in English.** Several of the sentences
+  Indigene writes for you personally were still coming out in English however
+  the app was set. The one under every plant in a ranked list — "Sun is a good
+  match (full sun)", "Handles the moisture here" — and the whole verdict when
+  you check a spot on a plant's own page ("Ideal planting spot", "Winters here
+  are too cold for it") are now written in the language you're reading, and the
+  winter temperature inside them is shown in your own units. Try it on
+  [white oak](https://indigene.app/#/plants/quercus-alba).
+- **"Fleurit de avril"** — the flowering line on every plant said *de avril*,
+  *de août*, *de octobre*, which is not how anyone writes French. It now reads
+  *Fleurit d'avril à mai*, and it spells the months out in full rather than
+  abbreviating them mid-sentence.
+- The little line under each nearby sighting — how far away it was and when
+  someone saw it — was English-only, and always in kilometres. It now follows
+  both your settings: "à ~3 km · vue en juin 2023", or miles if that's what you
+  measure in. The photo descriptions read out by screen readers were English-
+  only too, and now aren't.
+- **A page full of English no longer keeps quiet about it.** A plant's own page
+  has always said when its description hasn't been translated yet. A region's
+  list of forty plants, and the whole
+  [wildlife section](https://indigene.app/#/wildlife), were doing the same
+  thing silently. Each now says so once, at the top, so you know what you're
+  looking at rather than wondering why the words changed language halfway down.
+- Internal: `lib/ranking.ts` and `lib/explore.ts` were building their reason
+  strings by hand; both now go through the dictionaries (`fit.*`, `verdict.*`),
+  and `ranking.ts`'s private English `sunLabelShort` is gone in favour of
+  `plain.ts`'s `sunLabel`. `whereWhen()` in `lib/inaturalist.ts` uses `t()` plus
+  new `units.ts` distance formatters. The bloom sentence moved into
+  `plain.ts` as `bloomSentence()`, which picks between `card.bloomRange` and
+  `card.bloomRangeVowel` so the elision is a translator's choice, not a regex.
+  `proseCoverage()` had never been called by anything; it and a new
+  `wildlifeUntranslated()` now drive the roster and wildlife notices.
+- Internal: `scripts/shoot.mjs` takes repeatable `--click` selectors and a
+  `--geo lat,lon`, so a screenshot can be taken of a state that only exists
+  after a tap — the spot verdict, for one.
 - The first pages published at [indigene.app](https://indigene.app/) arrived as
   a bare list of blue links, with no colours, pictures, or layout. The page was
   still asking for its styles and code at the old address, which lived one

@@ -52,6 +52,44 @@ export const store: {
   filters: { ...NO_FILTERS },
 };
 
+/**
+ * The way back to the ranked plant list.
+ *
+ * A list you can't return to is a list you daren't leave, and the plant list is
+ * now something people step off constantly — onto a plant's own page, or back
+ * to the goals step to re-rank. So leaving it leaves a trail: `open` means a
+ * page should offer the way back, and `scrollY` is where the list was, so
+ * coming back from plant number twelve doesn't land at plant number one.
+ *
+ * It's deliberately narrow. The trail is laid only when the list is left for a
+ * page that leads back to it, and it's swept the moment the reader goes
+ * anywhere else — an offer to "return to your plants" three pages later is a
+ * guess about intent, not a memory of one.
+ */
+export const resultsTrail: { open: boolean; scrollY: number | null } = {
+  open: false,
+  scrollY: null,
+};
+
+/** Called as the plant list is left, with the route being opened. */
+export function leaveResults(dest: string, scrollY: number): void {
+  const toPlant = dest.startsWith("#/plants/");
+  const toGoals = dest.startsWith("#/priorities");
+  resultsTrail.open = toPlant || toGoals;
+  // Only a plant page restores the scroll: coming back from the goals step, the
+  // ranking itself may have changed, and a remembered position would put the
+  // reader in the middle of a list that no longer means what it did.
+  resultsTrail.scrollY = toPlant ? scrollY : null;
+}
+
+/** Called as a page that offered the way back is left, with the route being
+ *  opened: the trail survives only if it was the one taken. */
+export function keepTrail(dest: string): void {
+  if (dest.startsWith("#/results")) return;
+  resultsTrail.open = false;
+  resultsTrail.scrollY = null;
+}
+
 export async function loadPrefs(): Promise<void> {
   const w = await kvGet<Weights>("weights");
   const f = await kvGet<ActiveFilters>("filters");
@@ -76,6 +114,9 @@ export function getSitePromise(): Promise<SiteData> | null {
 
 export function resetDraft(): void {
   _sitePromise = null;
+  // A new spot means the old list is gone; nothing leads back to it.
+  resultsTrail.open = false;
+  resultsTrail.scrollY = null;
   store.draft = {
     lat: null,
     lon: null,

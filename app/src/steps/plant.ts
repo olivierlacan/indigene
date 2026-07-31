@@ -4,7 +4,7 @@
 // honest levels — ideal, decent, unsuitable — and is computed with the same
 // fit math and hard gates as the ranked list.
 import { el, clear, toast } from "../ui";
-import { navigate, store, resetDraft } from "../state";
+import { navigate, store, resetDraft, resultsTrail, keepTrail } from "../state";
 import { fetchSite } from "../lib/site";
 import { searchPlaces, placeLabel, nearestPlaceName } from "../lib/geocode";
 import { manualSunEstimate } from "../lib/solar";
@@ -36,7 +36,7 @@ const SECTIONS = ["ecosystem", "propagation", "references", "spot"] as const;
 type Section = (typeof SECTIONS)[number];
 const sectionDomId = (s: Section): string => `sec-${s}`;
 
-export function renderPlant(main: HTMLElement, param?: string): void {
+export function renderPlant(main: HTMLElement, param?: string): (() => void) | void {
   clear(main);
   // The route param is the slug, optionally followed by /<section>.
   const raw = param ?? "";
@@ -60,7 +60,17 @@ export function renderPlant(main: HTMLElement, param?: string): void {
   // not rendered — main.ts puts the banner at the top of the page.
   if (isUntranslated(plant)) reportUntranslated(t("wip.plant"));
 
+  // Arrived by tapping a card in the ranked list for a spot? Then this page is
+  // a detour, and a detour needs a way back — at the top, before the reading,
+  // where an escape hatch belongs, and again at the bottom in place of the
+  // browse-everything button, which is the wrong "more plants" for someone who
+  // has a list of their own waiting.
+  const fromList = resultsTrail.open;
+
   main.append(
+    ...(fromList ? [el("p", { class: "back-trail" }, [
+      el("a", { href: "#/results" }, t("plant.backToList")),
+    ])] : []),
     profile(plant, entries),
     ecosystemSection(plant, entries),
     nearbyObservationsSection(plant),
@@ -68,12 +78,19 @@ export function renderPlant(main: HTMLElement, param?: string): void {
     referencesSection(plant),
     suitabilityChecker(entries),
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("plants") }, t("plant.more")),
+      fromList
+        ? el("button", { class: "btn btn-primary", onClick: () => navigate("results") }, t("plant.backToListShort"))
+        : el("button", { class: "btn btn-secondary", onClick: () => navigate("plants") }, t("plant.more")),
       el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("browse.home")),
     ])
   );
 
   if (section) revealSection(section);
+
+  // The way back to the list is kept only for as long as it leads anywhere: go
+  // somewhere else from here and the offer is swept, rather than reappearing
+  // pages later as a guess about what "back" means.
+  const cleanup = (): void => keepTrail(location.hash);
 
   function profile(p: Plant, all: PlantEntry[]): HTMLElement {
     const badges = el("div", {}, [
@@ -403,6 +420,8 @@ export function renderPlant(main: HTMLElement, param?: string): void {
       verdictEl,
     ]);
   }
+
+  return cleanup;
 }
 
 // A standalone card — the same shape the "Want to plant?" tool uses — that a

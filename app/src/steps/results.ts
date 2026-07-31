@@ -1,16 +1,15 @@
 import { el, clear, toast } from "../ui";
-import { navigate, store, persistPrefs } from "../state";
-import { loadPlants, regionForSite, REGIONS } from "../lib/plants";
+import { navigate, store, persistPrefs, resultsTrail, leaveResults } from "../state";
+import { REGIONS } from "../lib/plants";
 import { zoneChip } from "../components/zone-chip";
-import { rankPlants, siteMoisture } from "../lib/ranking";
-import type { Weights } from "../types";
+import { siteMoisture } from "../lib/ranking";
+import { draftRegion, draftPlants, rankDraft, draftContext } from "../lib/draft";
+import { priorityName } from "../lib/priorities";
 import { plantCard } from "../components/plant-card";
 import { reportRosterUntranslated } from "../components/wip-banner";
-import { whyThis } from "../components/learn";
+import { recompute } from "../components/recompute";
 import { privacyNote } from "../components/privacy-link";
 import {
-  SCORE_KEYS,
-  scoreLabel,
   sunLabel,
   ISSUES_URL,
   ZONE_INFO_URL,
@@ -19,57 +18,63 @@ import {
 } from "../lib/plain";
 import { saveSpot } from "../db";
 import { t, tn, tx, fmtNumber } from "../lib/i18n";
-import type { TKey } from "../locales/en";
 import { maxHeightChoices, maxSpreadChoices, temperature } from "../lib/units";
 import { commonName, regionName, regionReference } from "../lib/names";
 import { filterBox, norm } from "../components/filter-field";
 import type { Plant } from "../types";
 
-const WEIGHT_KEYS: (keyof Weights)[] = [...SCORE_KEYS];
+/** How deep a slice of the ranking the recompute line compares — the same
+ *  window the goals step previews, so the two pages report on the same thing. */
+const COMPARE_DEPTH = 25;
 
-// The preset *weights* are a product decision and don't vary by language; only
-// the button's name does, so each preset carries its dictionary key.
-const PRESETS: { key: TKey; weights: Weights }[] = [
-  { key: "preset.balanced", weights: { host: 3, pollinator: 3, bird: 3, stormwater: 2, erosion: 2, carbon: 1, establishment: 3 } },
-  { key: "preset.butterflies", weights: { host: 5, pollinator: 5, bird: 3, stormwater: 1, erosion: 1, carbon: 1, establishment: 2 } },
-  { key: "preset.birds", weights: { host: 4, pollinator: 2, bird: 5, stormwater: 1, erosion: 1, carbon: 1, establishment: 2 } },
-  { key: "preset.erosion", weights: { host: 1, pollinator: 1, bird: 1, stormwater: 4, erosion: 5, carbon: 2, establishment: 4 } },
-  { key: "preset.rain", weights: { host: 1, pollinator: 2, bird: 1, stormwater: 5, erosion: 3, carbon: 2, establishment: 3 } },
-  { key: "preset.easiest", weights: { host: 2, pollinator: 2, bird: 2, stormwater: 1, erosion: 1, carbon: 1, establishment: 5 } },
-];
-
-export function renderResults(main: HTMLElement): void {
+export function renderResults(main: HTMLElement): (() => void) | void {
   clear(main);
-  const hasCoords = store.draft.lat != null && store.draft.lon != null;
+  const { region, chosen, hasCoords } = draftRegion();
   if (!hasCoords && !store.draft.regionOverride) return void navigate("location");
 
-  // Pick the plant list from the spot's coordinates, refined by its real EPA
+  // The plant list comes from the spot's coordinates, refined by its real EPA
   // ecoregion when we have one — unless the user picked a region by hand, in
   // which case their choice wins and the tag below says so. Outside every
   // covered region we have no honest recommendations to give, so we say so
   // plainly rather than showing another region's plants.
-  const chosen = store.draft.regionOverride
-    ? REGIONS.find((r) => r.meta.id === store.draft.regionOverride) ?? null
-    : null;
-  const region = chosen ?? (hasCoords
-    ? regionForSite(store.draft.lat!, store.draft.lon!, store.draft.site)
-    : null);
   if (!region) {
     renderNoRegion(main);
     return;
   }
 
-  const plants = loadPlants(region);
+  const plants = draftPlants(region);
   const name = regionName(region.meta);
+  const context = draftContext(region);
+  const rc = recompute("list");
+
+  // Coming back from a plant's page lands where you left off, not at the top of
+  // a list you'd already scrolled halfway down. Read (and cleared) before the
+  // first render; restored after it, so the cards exist to scroll past.
+  const restoreTo = resultsTrail.scrollY;
+  resultsTrail.open = false;
+  resultsTrail.scrollY = null;
   // The site summary sits outside the list so the filter field can live between
   // the two — and so typing doesn't rebuild the field the reader is typing in.
   const summaryEl = el("p", { "aria-live": "polite", style: "margin:0.5rem 0 1rem;font-weight:650" });
   const listEl = el("div", { "aria-live": "polite" });
 
+  // Where the list was when a card was tapped — read at the tap, not at
+  // teardown. A hash navigation that matches no element on the page makes the
+  // browser jump to the top *before* `hashchange` fires, so by the time the
+  // step is torn down `window.scrollY` is already somebody else's number.
+  let tappedAt = 0;
+  listEl.addEventListener("click", (e) => {
+    if ((e.target as Element | null)?.closest("a.plant-pick-link")) tappedAt = window.scrollY;
+  });
+
   // The standing name filter, normalized for matching and kept as typed for
   // quoting back in the line under the field.
   let nameQuery = "";
   let typedQuery = "";
+  // Landing on the list is not a recompute. A ranking that *did* change on the
+  // way here still says so — but "the order didn't change" is only worth saying
+  // to someone who just tried to change it.
+  let firstPaint = true;
 
   // Every card here prints two paragraphs of catalog prose. Reported against the
   // region's whole list rather than the filtered slice on screen: the gap is a
@@ -78,13 +83,7 @@ export function renderResults(main: HTMLElement): void {
   reportRosterUntranslated(plants);
 
   function rerender(): void {
-    const ranked = rankPlants(plants, {
-      site: store.draft.site,
-      sun: store.draft.sun,
-      weights: store.weights,
-      filters: store.filters,
-      moistureOverride: store.draft.moistureOverride,
-    });
+    const ranked = rankDraft(plants);
     // The typed name narrows the *ranked* list, not just the cards on screen:
     // only the top 25 are ever drawn, so hiding drawn cards would quietly lose
     // the oak sitting at rank 30. The names searched are the same three a
@@ -121,6 +120,13 @@ export function renderResults(main: HTMLElement): void {
       listEl.append(el("p", { style: "text-align:center;color:var(--ink-soft)" },
         t("results.showingTop", { n: fmtNumber(shown.length) })));
     }
+    // What the recompute changed — measured on the ranking itself, never on the
+    // typing, so a name filter doesn't get reported as a re-rank. Compared
+    // against the list as *this page* last showed it, which is what lets it say
+    // "black cherry now leads" when you come back from changing a goal.
+    rc.report(context, ranked.slice(0, COMPARE_DEPTH)
+      .map((r) => ({ id: r.plant.id, name: commonName(r.plant) })), ranked.length, firstPaint);
+    firstPaint = false;
   }
 
   /** The line under the field: nothing typed says nothing. */
@@ -148,67 +154,23 @@ export function renderResults(main: HTMLElement): void {
     },
   });
 
-  // --- Sliders ---
-  const sliderRows = WEIGHT_KEYS.map((key) => {
-    const label = scoreLabel(key);
-    const valSpan = el("span", {}, fmtNumber(store.weights[key]));
-    const input = el("input", {
-      type: "range", min: "0", max: "5", step: "1", value: String(store.weights[key]),
-      "aria-label": t("results.sliderAria", { name: label.name }),
-      onInput: (e) => {
-        store.weights[key] = Number((e.target as HTMLInputElement).value);
-        valSpan.textContent = fmtNumber(store.weights[key]);
-        persistPrefs();
-        rerender();
-      },
-    }) as HTMLInputElement;
-    return { input, row: el("div", { class: "weight-row" }, [
-      el("div", { class: "weight-head" }, [
-        el("span", {}, [el("span", { "aria-hidden": "true" }, `${label.icon} `), label.name]),
-        valSpan,
-      ]),
-      input,
-    ]) };
-  });
-
-  function applyWeights(w: Weights): void {
-    store.weights = { ...w };
-    sliderRows.forEach(({ input }, i) => {
-      const k = WEIGHT_KEYS[i];
-      input.value = String(w[k]);
-      (input.previousElementSibling?.lastElementChild as HTMLElement).textContent = fmtNumber(w[k]);
-    });
-    persistPrefs();
-    rerender();
-  }
-
-  const presetRow = el("div", { style: "display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.6rem" },
-    PRESETS.map((p) => el("button", {
-      class: "btn btn-secondary",
-      style: "flex:0 1 auto;min-height:2.4rem;padding:0.4rem 0.7rem;font-size:0.9rem",
-      onClick: () => { applyWeights(p.weights); toast(t("results.resorted", { name: t(p.key) })); },
-    }, t(p.key)))
-  );
-
-  // The re-sort panel opens tall on a phone, so it closes three ways: the
-  // summary, a Done button at the bottom, and the chevron makes state obvious.
-  const weightsPanel = el("details", { open: false }, [
-    el("summary", {}, t("results.weightsSummary")),
-    // How the ranking works, answered where the ranking is tuned. It used to
-    // stand open above the list — five lines of method every visit, between a
-    // reader and the plants they came for — and this is the one page where
-    // that aside is preamble rather than help: the question it answers is the
-    // one you're asking when you open this panel, and nowhere else.
-    whyThis(t("results.whyTitle"), t("results.why")),
-    presetRow,
-    ...sliderRows.map((s) => s.row),
+  // --- What this list was ranked for ---
+  // The sliders used to live here, inside a closed panel, which meant the order
+  // of the list was decided by settings nobody had been shown. They're a step
+  // of their own now (steps/priorities.ts); what stays behind is the answer to
+  // "why this order?" — named, and one tap from being changed.
+  const rankedFor = el("div", { class: "ranked-for" }, [
+    el("p", {}, [
+      el("span", { "aria-hidden": "true" }, "⚖️ "),
+      t("results.rankedFor"),
+      el("strong", {}, priorityName(store.weights)),
+    ]),
     el("button", {
-      class: "btn btn-primary btn-block",
-      style: "margin:0.25rem 0 0.5rem",
-      onClick: () => { (weightsPanel as HTMLDetailsElement).open = false; },
-    }, t("results.done")),
+      class: "btn btn-secondary",
+      "aria-label": t("results.changeGoalAria"),
+      onClick: () => navigate("priorities"),
+    }, t("results.changeGoal")),
   ]);
-  const weights = el("div", { class: "weights" }, [weightsPanel]);
 
   // --- Filters (incl. guerrilla mode) ---
   type BoolFilterKey = "requireNoWater" | "requireDeerResistant" | "excludeThorny" | "excludePetToxic" | "excludeAggressive";
@@ -290,8 +252,9 @@ export function renderResults(main: HTMLElement): void {
     el("p", { class: "region-tag", style: "margin:0 0 0.5rem;font-size:0.9rem;color:var(--ink-soft)" },
       chosen ? t("results.regionTagPick", { region: name }) : t("results.regionTag", { region: name })),
     el("p", { class: "step-lede" }, conditions),
-    el("div", { class: "result-controls" }, [weights, filters]),
+    el("div", { class: "result-controls" }, [rankedFor, filters]),
     summaryEl,
+    rc.node,
     nameFilter.node,
     listEl,
     // After the plants, like every other step in the flow puts its buttons
@@ -300,7 +263,7 @@ export function renderResults(main: HTMLElement): void {
     // question, and an offer to save a spot they hadn't seen the plants for —
     // before reaching the one thing they came for.
     el("div", { class: "btn-row" }, [
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("confirm") }, t("results.back")),
+      el("button", { class: "btn btn-secondary", onClick: () => navigate("priorities") }, t("results.back")),
       // A saved spot IS a coordinate — with a hand-picked region there's no
       // spot to save, so the button honestly isn't there.
       ...(hasCoords ? [el("button", { class: "btn btn-primary", onClick: doSave }, t("results.save"))] : []),
@@ -309,6 +272,11 @@ export function renderResults(main: HTMLElement): void {
   );
 
   rerender();
+
+  // Back where you left it. After the router's own scroll-to-top, hence the
+  // frame's wait: the cards are on the page by then, so there's a page tall
+  // enough to scroll.
+  if (restoreTo) requestAnimationFrame(() => window.scrollTo(0, restoreTo));
 
   // Common parlance first, the technical term in parentheses with a link —
   // "zone 8b" and "mesic" are never shown bare (see the plain-language rule).
@@ -375,6 +343,11 @@ export function renderResults(main: HTMLElement): void {
       lon: store.draft.lon!.toFixed(4),
     });
   }
+
+  // Stepping off the list — onto a plant's page, or back to the goals — leaves
+  // a trail those pages can offer as the way back, with the scroll position
+  // that makes it a *return* rather than a fresh arrival.
+  return () => leaveResults(location.hash, tappedAt);
 }
 
 // Carries the English name too, not only the displayed one: a French reader who

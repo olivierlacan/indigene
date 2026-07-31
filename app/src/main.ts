@@ -5,6 +5,7 @@ import { renderLocation } from "./steps/location";
 import { renderSun } from "./steps/sun";
 import { renderScan } from "./steps/skyscan";
 import { renderConfirm } from "./steps/confirm";
+import { renderPriorities } from "./steps/priorities";
 import { renderResults } from "./steps/results";
 import { renderSaved } from "./steps/saved";
 import { renderExplore } from "./steps/explore";
@@ -38,6 +39,7 @@ const STEPS: Record<string, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = {
   sun: { fn: renderSun, labelKey: "steps.sun", inFlow: true },
   scan: { fn: renderScan, labelKey: "steps.sun", inFlow: true },
   confirm: { fn: renderConfirm, labelKey: "steps.soil", inFlow: true },
+  priorities: { fn: renderPriorities, labelKey: "steps.goals", inFlow: true },
   results: { fn: renderResults, labelKey: "steps.plants", inFlow: true },
   saved: { fn: renderSaved, labelKey: "steps.saved", inFlow: false },
   browse: { fn: renderBrowse, labelKey: "steps.browse", inFlow: false },
@@ -66,7 +68,7 @@ const PARAM_RENDERERS: Record<string, StepFn> = {
   settings: renderSettings,
 };
 
-const FLOW = ["location", "sun", "confirm", "results"];
+const FLOW = ["location", "sun", "confirm", "priorities", "results"];
 
 const main = document.getElementById("main") as HTMLElement;
 const stepsList = document.getElementById("steps") as HTMLOListElement;

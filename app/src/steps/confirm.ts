@@ -135,7 +135,7 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
 
   main.append(el("div", { class: "btn-row" }, [
     el("button", { class: "btn btn-secondary", onClick: () => navigate("sun") }, t("confirm.back")),
-    el("button", { class: "btn btn-primary", onClick: () => navigate("results") }, t("confirm.next")),
+    el("button", { class: "btn btn-primary", onClick: () => navigate("priorities") }, t("confirm.next")),
   ]));
 }
 

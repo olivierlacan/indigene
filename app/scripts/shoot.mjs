@@ -34,6 +34,24 @@
 //                         only exist after a tap (the spot verdict, a sun pick)
 //   --geo lat,lon         grant geolocation and answer it with this point, so
 //                         a "use my location" button can be one of those clicks
+//   --shoot-el sel        photograph just that element instead of the page —
+//                         for a card whose whole point is how tall it is, and
+//                         which a sticky panel would otherwise sit on top of
+//   --unstick             drop every sticky element to static before shooting.
+//                         Only for --shoot-el: capturing a tall element scrolls
+//                         the page, and the header and control panels would be
+//                         painted across the middle of the card — an artifact of
+//                         the capture, not something a reader ever sees
+//   --scroll-to sel       scroll the first match into view before shooting —
+//                         for a viewport crop of something further down a page
+//                         whose sticky panels a full-page capture would smear
+//   --stop-at STEP        with --picks, stop the walk at `goals` (the step
+//                         that asks what the list should be ranked for)
+//                         instead of carrying on to the plants
+//   --tap-pick            with --picks, tap the first plant in the ranked list
+//                         and shoot the page it opens — the only way to reach
+//                         a plant's page *from* a list, which is what puts the
+//                         way back on it
 //
 // Exists because the Playwright CLI can't set device pixel ratio directly —
 // its iPhone device descriptors force WebKit, which isn't installed here.
@@ -67,6 +85,11 @@ const locale = flag("--locale", "en-US");
 const fill = flag("--fill", "");
 const fillInto = flag("--fill-into", "input[type='search']");
 const picks = flag("--picks", "");
+const scrollTo = flag("--scroll-to", "");
+const shootEl = flag("--shoot-el", "");
+const unstick = has("--unstick");
+const stopAt = flag("--stop-at", "");
+const tapPick = has("--tap-pick");
 const open = flag("--open", "");
 const clicks = flags("--click");
 const geo = flag("--geo", "");
@@ -97,13 +120,18 @@ const context = await browser.newContext({
 });
 const page = await context.newPage();
 await page.goto(url, { waitUntil: "networkidle" });
-if (picks) await walkToPicks(page, picks);
+if (picks) await walkToPicks(page, picks, stopAt);
+if (tapPick) await tapFirstPick(page);
 // Clicked, not `open = true`: a details that was opened by assignment skips
 // whatever its summary's click handler does.
 if (open) await page.locator(open).first().locator("summary").click();
 // Typed, not set: these fields listen for `input`, and assigning `.value`
 // fires nothing — the shot would show a filled box over an unfiltered list.
 if (fill) await page.locator(fillInto).first().pressSequentially(fill);
+if (scrollTo) {
+  await page.locator(scrollTo).first().evaluate((node) =>
+    node.scrollIntoView({ block: "start" }));
+}
 // Taps, in the order given. Each gets the settle time of its own, because these
 // tend to kick off a lookup whose answer is the thing being photographed.
 for (const sel of clicks) {
@@ -111,7 +139,12 @@ for (const sel of clicks) {
   await page.waitForTimeout(wait);
 }
 await page.waitForTimeout(wait);
-await page.screenshot({ path: out, fullPage });
+if (unstick) {
+  await page.addStyleTag({ content: "*{position:static !important}" });
+  await page.waitForTimeout(200);
+}
+if (shootEl) await page.locator(shootEl).first().screenshot({ path: out });
+else await page.screenshot({ path: out, fullPage });
 await browser.close();
 console.log(`shot: ${url} → ${out} (${vw}x${vh} @${dpr}x, ${scheme}, ${locale}${picks ? ", ranked picks" : ""}${fullPage ? ", full-page" : ""})`);
 
@@ -122,7 +155,7 @@ console.log(`shot: ${url} → ${out} (${vw}x${vh} @${dpr}x, ${scheme}, ${locale}
  * card matches `name`, take the defaults for sun and soil, and land on
  * `#/results` with that region's plants ranked.
  */
-async function walkToPicks(page, name) {
+async function walkToPicks(page, name, stop = "") {
   // By `data-mode`, not by the button's words: this has to work under --locale,
   // and "pick a region" is "choisissez une région" in French.
   await page.locator("button.linklike[data-mode='region']").first().click();
@@ -134,6 +167,19 @@ async function walkToPicks(page, name) {
     await page.waitForURL(`**${step}`);
     await page.locator("button.choice:visible").first().click();
   }
+  // Then the goals step, which is where the ranking is chosen. Its own primary
+  // button is the one that finally shows the plants — so a shot of the goals
+  // step stops here, and everything else carries on with the defaults.
+  await page.locator("button.btn-primary:visible").last().click();
+  await page.waitForURL("**#/priorities");
+  if (stop === "goals") return;
   await page.locator("button.btn-primary:visible").last().click();
   await page.waitForURL("**#/results");
+}
+
+/** Open the first plant in the ranked list, the way a reader does: by tapping
+ *  its card. */
+async function tapFirstPick(page) {
+  await page.locator("article.plant-pick a.plant-pick-link").first().click();
+  await page.waitForURL("**#/plants/**");
 }

@@ -60,6 +60,7 @@ export const fr: Dict = {
   "steps.spot": "Lieu",
   "steps.sun": "Soleil",
   "steps.soil": "Sol",
+  "steps.goals": "Objectifs",
   "steps.plants": "Plantes",
   "steps.saved": "Lieux",
   "steps.browse": "Parcourir",
@@ -349,7 +350,7 @@ export const fr: Dict = {
   "confirm.deciduous":
     "Des arbres au-dessus qui perdent leurs feuilles en hiver (le lieu devient plus lumineux au printemps et à l'automne).",
   "confirm.back": "Retour",
-  "confirm.next": "Voir mes plantes →",
+  "confirm.next": "Mes objectifs →",
   "confirm.kvLabel": "{k} : ",
   "confirm.ribbonTitle": "🤲 Le test de sol en soixante secondes",
   "confirm.ribbon1": "Prenez une petite poignée de terre et humidifiez-la : humide, mais sans qu'elle dégoutte.",
@@ -558,9 +559,11 @@ export const fr: Dict = {
   "match.poor": "Mauvais choix — voici pourquoi",
   "card.sizeCaption":
     "Dessinée à l'échelle, à côté d'une personne de {human}. Atteint à terme environ {height} de haut et {spread} de large.",
-  "card.weightedHigh": "★ (vous y accordez beaucoup d'importance)",
   "card.hostSpecies": "{n} espèces",
-  "card.whyRanks": "🦋 Pourquoi ce rang — valeur écologique {score}/100",
+  "card.sizeShort": "Atteint à terme environ {height} de haut et {spread} de large.",
+  "card.ecoValue": "🦋 Valeur écologique {score}/100.",
+  "card.strongFor": "Ce qui compte le plus ici : {list}.",
+  "card.openHint": "Touchez pour la fiche complète →",
   "card.bloomRange": "Fleurit de {from} à {to} ({color}).",
   "card.bloomRangeVowel": "Fleurit d'{from} à {to} ({color}).",
   "card.foliage": "Cultivée pour son feuillage, pas pour ses fleurs.",
@@ -571,8 +574,6 @@ export const fr: Dict = {
   "card.confidence": "Confiance : {level}. ",
   "card.source": "Source : ",
   "card.howSure": "À quel point en sommes-nous sûrs ? →",
-  "card.sizeAria": "Taille de {name} au fil du temps — {parts}.",
-  "card.sizeAriaPart": "an {year} : {height} de haut",
   "confidence.word.high": "élevée",
   "confidence.word.medium": "moyenne",
   "confidence.word.low": "faible",
@@ -654,14 +655,47 @@ export const fr: Dict = {
   "color.yellow": "jaune",
 
   // ---------------------------------------------------------------------
+  // Objectifs — l'étape qui demande ce qu'on attend du lieu, avant toute
+  // liste. Tout son rôle est de rendre le classement lisible : chaque phrase
+  // explique au lieu de simplement nommer.
+  // ---------------------------------------------------------------------
+  "priorities.title": "Qu'est-ce qui compte le plus ici ?",
+  "priorities.lede":
+    "La liste de plantes est classée, pas tirée au hasard — et c'est vous qui décidez selon quoi. Choisissez un objectif ci-dessous et regardez les premières changer ; vous pourrez y revenir quand vous voudrez.",
+  "priorities.whyTitle": "Comment ce classement fonctionne-t-il ?",
+  "priorities.why":
+    "La valeur de chaque plante pour la faune — chenilles hébergées, pollinisateurs et oiseaux nourris, pluie absorbée — est pondérée par l'importance que vous donnez à chacun de ces points, puis mise en balance avec sa capacité à s'accommoder du soleil, de l'humidité et du froid hivernal de ce lieu. Une plante magnifique au mauvais endroit reste mal classée, et chaque fiche dit pourquoi.",
+  "priorities.pickTitle": "Choisissez un objectif",
+  "priorities.custom": "votre propre mélange",
+  "priorities.tuneSummary": "⚖️ Régler chaque point",
+  "priorities.tuneLede":
+    "Sept choses qu'une plante peut faire, et le poids que chacune doit avoir. Descendez un curseur à zéro et il cesse complètement d'influer sur l'ordre ; montez-le au maximum et les plantes douées pour ça remontent. Les premières, au-dessus, se mettent à jour au fur et à mesure.",
+  "priorities.sliderAria": "Importance accordée à : {name}",
+  "priorities.previewTitle": "En tête en ce moment",
+  "priorities.previewCount": "{good} plantes sur {n} conviennent bien ou passablement à ce lieu.",
+  "priorities.allZero":
+    "Tout est à zéro : plus rien n'est pondéré, la liste ci-dessous n'est donc dans aucun ordre particulier. Remontez au moins un curseur.",
+  "priorities.back": "Retour",
+  "priorities.backToList": "← Vos plantes",
+  "priorities.next": "Voir les plantes →",
+
+  // ---------------------------------------------------------------------
+  // « Oui, ça a bien fait quelque chose » — ce que dit la liste après chaque
+  // recalcul.
+  // ---------------------------------------------------------------------
+  "rerank.same": "Recalculé — l'ordre n'a pas changé.",
+  "rerank.lead": "Recalculé — {name} passe en tête.",
+  "rerank.moved.one": "Recalculé — 1 plante a changé de place.",
+  "rerank.moved.other": "Recalculé — {n} plantes ont changé de place.",
+  "rerank.set.one": "Recalculé — {n} plante correspond désormais.",
+  "rerank.set.other": "Recalculé — {n} plantes correspondent désormais.",
+
+  // ---------------------------------------------------------------------
   // Résultats.
   // ---------------------------------------------------------------------
   "results.title": "Les plantes pour ce lieu",
   "results.regionTag": "📍 {region}",
   "results.regionTagPick": "📍 {region} — votre choix, pas une mesure faite depuis une position",
-  "results.whyTitle": "Comment ce classement fonctionne-t-il ?",
-  "results.why":
-    "La valeur de chaque plante pour la faune — chenilles hébergées, pollinisateurs et oiseaux nourris, pluie absorbée — est mise en balance avec sa capacité à s'accommoder du soleil, de l'humidité et du froid hivernal de ce lieu. Rien n'est une boîte noire : le détail du score de chaque plante figure sur sa fiche.",
   "results.count":
     "{n} plantes indigènes {fit} — dont {good} conviennent bien ou passablement. Les meilleures d'abord.",
   "results.fitClimate": "s'accommodent du climat de ce lieu",
@@ -671,7 +705,7 @@ export const fr: Dict = {
   "results.noneHardy":
     "Aucune plante de la liste {region} n'est rustique à la température hivernale de ce lieu.",
   "results.showingTop":
-    "Nous en montrons {n}. Ajustez les curseurs ci-dessus pour faire remonter les autres.",
+    "Nous en montrons {n}. Tapez un nom pour en trouver une plus bas, ou changez ce pour quoi la liste est classée.",
   "results.filterAria": "Filtrer ces suggestions par nom de plante",
   "results.filterPlaceholder": "Filtrer par nom…",
   "results.filterCount.one": "{shown} plante sur {total} correspond à « {q} ».",
@@ -679,10 +713,9 @@ export const fr: Dict = {
   "results.filterNone": "Rien ici ne correspond — ",
   "results.filterSearchAll": "chercher dans toutes les régions",
   "results.filterNoneRest": ".",
-  "results.sliderAria": "Importance de : {name}",
-  "results.weightsSummary": "⚖️ Qu'est-ce qui compte le plus ?",
-  "results.done": "Terminé — montrer les plantes",
-  "results.resorted": "Reclassé selon : {name}",
+  "results.rankedFor": "Classé pour : ",
+  "results.changeGoal": "Changer",
+  "results.changeGoalAria": "Changer ce pour quoi la liste est classée",
   "results.matchedTo": "Établi pour : ",
   "results.sunSummary": "{label} (~{hours} h de soleil)",
   "results.mesicSoil": "sol frais et jamais détrempé ({link} dans les guides)",
@@ -699,12 +732,33 @@ export const fr: Dict = {
   "results.saved": "Enregistré sur cet appareil.",
   "results.privacy":
     "Un lieu enregistré ne quitte pas cet appareil — il n'atteint aucun serveur, parce qu'il n'y en a pas",
-  "preset.balanced": "Équilibré",
+  "preset.default": "Nourrir le plus de vie",
+  "preset.default.sub":
+    "Les chenilles d'abord, puis les abeilles et les oiseaux — les plantes dont le plus d'animaux dépendent. C'est le réglage de départ si vous ne choisissez rien.",
+  "preset.balanced": "Un peu de tout",
+  "preset.balanced.sub":
+    "Aucun bénéfice ne domine : faune, pluie et facilité de culture comptent à peu près autant.",
   "preset.butterflies": "Papillons",
+  "preset.butterflies.sub":
+    "Des feuilles que leurs chenilles peuvent vraiment manger, et des fleurs pour les adultes.",
   "preset.birds": "Oiseaux",
+  "preset.birds.sub":
+    "Des baies, des graines et des abris — plus les chenilles qui nourrissent les petits.",
   "preset.erosion": "Retenir la terre",
+  "preset.erosion.sub":
+    "Des racines profondes et agrippantes pour un talus, une berge ou un sol nu qui part avec l'eau.",
   "preset.rain": "Absorber la pluie",
+  "preset.rain.sub":
+    "Des plantes qui boivent l'eau stagnante et le ruissellement — un coin humide, une descente de gouttière, un jardin de pluie.",
   "preset.easiest": "Les plus faciles",
+  "preset.easiest.sub":
+    "Résistantes et indulgentes : les meilleures chances de s'en sortir sans arrosage ni soins.",
+  "weight.word.0": "on l'ignore",
+  "weight.word.1": "compte à peine",
+  "weight.word.2": "compte un peu",
+  "weight.word.3": "compte normalement",
+  "weight.word.4": "compte beaucoup",
+  "weight.word.5": "compte avant tout",
   "filter.summary": "🔍 Filtres",
   "filter.noWater": "🌾 Survit sans aucun arrosage (mode guérilla)",
   "filter.deer": "🦌 Les chevreuils l'évitent en général",
@@ -796,6 +850,8 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   "plant.docTitle": "{name} ({latin}) — Indigene",
   "plant.more": "← D'autres indigènes",
+  "plant.backToList": "← Retour à votre liste de plantes",
+  "plant.backToListShort": "← Vos plantes",
   "plant.sizeAria": "Taille de {name} au fil du temps",
   "plant.nativeTo": "📍 Indigène de : ",
   "plant.whyBelongs": "Pourquoi elle est chez elle ici : ",

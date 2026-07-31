@@ -75,8 +75,22 @@
   <body>
     <a class="skip-link" id="skip-link" href="#main">Skip to main content</a>
     <header class="app-header">
+      <!-- The brand is also the way home. Hover (or focus) it and a small
+           story plays out around the name: a bee flies over to the seedling
+           hunting for pollen, finds a leaf and nothing else, trudges back —
+           and the moment its back is turned the seedling blooms, so it comes
+           racing across to feed. Every piece of it is decoration, hidden from
+           screen readers; the link's accessible name stays "Indigene". The
+           choreography lives in styles.css (`bee-errand`). -->
       <h1 class="app-title">
-        <a href="#/"><span aria-hidden="true">🌱</span> Indigene</a>
+        <a href="#/"
+          ><span class="brand-plant" aria-hidden="true"
+            ><span class="brand-seed">🌱</span
+            ><span class="brand-bloom">🌼</span></span
+          > Indigene<span class="brand-bee" aria-hidden="true"
+            ><span class="brand-bee-body">🐝</span></span
+          ></a
+        >
       </h1>
       <button
         id="offline-badge"

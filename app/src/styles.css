@@ -173,27 +173,253 @@ a {
   white-space: nowrap;
 }
 /* The title doubles as the escape hatch: from anywhere, tap it to go home.
-   No underline — instead a small bee buzzes in on hover/press, a wink at the
-   pollinators the whole app is for. */
+   No underline — instead, hovering it plays a small errand in four beats: a
+   bee buzzes in past the "e", crosses the name to the seedling looking for
+   pollen, finds none and slouches home — then the seedling blooms behind its
+   back and it races the whole way across to feed. A wink at the pollinators
+   the whole app is for.
+
+   The link is the flight path's containing block, so the bee's `left`
+   percentages are of the wordmark itself: 100% is perched off its right end,
+   0% is right on the seedling. That way the same choreography fits every
+   header size (the title shrinks three times on the way down to 320px)
+   without a single hard-coded distance. */
 .app-title a {
+  position: relative;
+  display: inline-block;
   color: inherit;
   text-decoration: none;
 }
-.app-title a::after {
-  content: "🐝";
-  content: "🐝" / "";
+
+/* Seedling and flower share one cell — the flower sits on top, invisible
+   until it opens — so the header's width never moves when it blooms. */
+.brand-plant {
+  position: relative;
   display: inline-block;
-  margin-left: 0.35rem;
-  font-size: 0.8em;
-  opacity: 0;
-  transform: translate(-8px, 3px) rotate(-25deg) scale(0.4);
-  transition: opacity 0.15s ease-out, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.app-title a:hover::after,
-.app-title a:focus-visible::after,
-.app-title a:active::after {
-  opacity: 1;
-  transform: none;
+.brand-seed {
+  display: inline-block;
+  transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+}
+.brand-bloom {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+}
+
+/* Out of flow entirely: the bee can cross the name without nudging a pixel of
+   the header, which is measured to fit on a 320px phone. */
+.brand-bee {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-top: -0.5em; /* em of the bee's own size, with line-height 1: centred */
+  font-size: 0.8em;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease-out;
+}
+/* Wings, on their own timeline: a fast jitter that keeps running after the
+   flight animation has settled, so the bee never looks like a sticker. */
+.brand-bee-body {
+  display: inline-block;
+}
+
+.app-title a:hover .brand-bee,
+.app-title a:focus-visible .brand-bee,
+.app-title a:active .brand-bee {
+  animation: bee-errand 4.6s linear forwards;
+}
+.app-title a:hover .brand-bee-body,
+.app-title a:focus-visible .brand-bee-body,
+.app-title a:active .brand-bee-body {
+  animation: bee-buzz 0.14s linear infinite;
+}
+.app-title a:hover .brand-seed,
+.app-title a:focus-visible .brand-seed,
+.app-title a:active .brand-seed {
+  animation: seed-sprout 0.7s ease-in 2.55s forwards;
+}
+/* Late on purpose: the seedling only opens once the bee has given up and got
+   all the way home, so the joke lands on its turned back. */
+.app-title a:hover .brand-bloom,
+.app-title a:focus-visible .brand-bloom,
+.app-title a:active .brand-bloom {
+  animation: bloom-open 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 2.85s forwards;
+}
+
+/* One flight, timed in percentages of 4.6s. `linear` overall so the bee holds
+   its speed across a leg; the beats that need weight set their own easing.
+   Facing is the sign of scaleX — 1 faces left (how the glyph is drawn), -1
+   faces right — and interpolating between them passes through 0, which reads
+   as the bee banking round mid-turn. Nose-down is a negative rotate facing
+   left, positive facing right. */
+@keyframes bee-errand {
+  /* In from off-frame, small and fast, braking to a perch. */
+  0% {
+    left: 128%;
+    opacity: 0;
+    transform: translateY(0.9em) rotate(-24deg) scale(0.35);
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.3, 1);
+  }
+  7% {
+    left: 100%;
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+    animation-timing-function: ease-in;
+  }
+  /* Across the name, bobbing the way a bee does. */
+  13% {
+    left: 74%;
+    transform: translateY(-0.4em) rotate(-10deg) scale(1);
+  }
+  19% {
+    left: 42%;
+    transform: translateY(0.2em) rotate(8deg) scale(1);
+  }
+  26% {
+    left: 8%;
+    transform: translateY(-0.25em) rotate(-8deg) scale(1);
+    animation-timing-function: ease-in-out;
+  }
+  /* Casts about the seedling. Leaves, leaves, leaves. */
+  31% {
+    left: 0%;
+    transform: translateY(-0.55em) rotate(-14deg) scale(1);
+  }
+  36% {
+    left: 12%;
+    transform: translateY(0.3em) rotate(12deg) scale(1);
+  }
+  41% {
+    left: 1%;
+    transform: translateY(-0.05em) rotate(-5deg) scale(1);
+  }
+  /* Gives up. Turns around and trudges home, low and nose-down. */
+  46% {
+    left: 7%;
+    transform: translateY(0.45em) rotate(-8deg) scale(1);
+  }
+  52% {
+    left: 24%;
+    transform: translateY(0.6em) rotate(10deg) scale(-1, 1);
+  }
+  62% {
+    left: 100%;
+    transform: translateY(0.62em) rotate(10deg) scale(-1, 1);
+  }
+  /* Behind it, the seedling opens (see `bloom-open`) — and it notices. */
+  70% {
+    left: 96%;
+    transform: translateY(0.1em) rotate(-6deg) scale(-1, 1);
+    animation-timing-function: cubic-bezier(0.5, 0, 0.2, 1);
+  }
+  74% {
+    left: 78%;
+    transform: translateY(-0.35em) rotate(-8deg) scale(1);
+  }
+  80% {
+    left: 34%;
+    transform: translateY(-0.5em) rotate(-12deg) scale(1);
+  }
+  85% {
+    left: -4%;
+    transform: translateY(-0.15em) rotate(-4deg) scale(1);
+    animation-timing-function: ease-out;
+  }
+  /* Settles in to feed, and stays there as long as you hover — parked just
+     above the bloom rather than on top of it, so you can still see what it
+     came back for. */
+  90% {
+    left: 11%;
+    transform: translateY(-0.1em) rotate(9deg) scale(1);
+  }
+  95% {
+    left: 3%;
+    transform: translateY(-0.5em) rotate(-9deg) scale(1);
+  }
+  100% {
+    left: 9%;
+    opacity: 1;
+    transform: translateY(-0.3em) rotate(3deg) scale(1);
+  }
+}
+
+/* Sub-pixel wingbeat. Small enough to read as a hum, not a wobble. */
+@keyframes bee-buzz {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(0.35px, -0.6px);
+  }
+  50% {
+    transform: translate(-0.3px, 0.5px);
+  }
+  75% {
+    transform: translate(0.25px, 0.55px);
+  }
+}
+
+/* The seedling shivers, then folds itself away under the opening flower. */
+@keyframes seed-sprout {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.05) rotate(-7deg);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.05) rotate(7deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.08) rotate(-4deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.2) rotate(0deg);
+  }
+}
+
+@keyframes bloom-open {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotate(-90deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.25) rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Reduced motion: no flight, no bloom. The bee simply appears beside the name
+   on hover — the wink the header had before there was a story. `!important`
+   because these have to beat the hover rules above, which are more specific. */
+@media (prefers-reduced-motion: reduce) {
+  .brand-bee,
+  .brand-bee-body,
+  .brand-seed,
+  .brand-bloom {
+    animation: none !important;
+  }
+  .app-title a:hover .brand-bee,
+  .app-title a:focus-visible .brand-bee,
+  .app-title a:active .brand-bee {
+    opacity: 1;
+  }
 }
 
 /* Section links: the parts of the app outside the find-a-spot flow. */

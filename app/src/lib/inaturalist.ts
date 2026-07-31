@@ -19,13 +19,12 @@
 //      Referer *is* our identification — which is why we never route this through
 //      a server that would replace it with a datacenter IP and a blank referrer.
 //
-//   2. **We fetch a nearby *list* once and index it, rather than hammering the
-//      API per plant.** One request returns the ~100 closest plant observations
-//      around the spot; we trim each down to only what we display (taxon id +
-//      photo links + credit) and cache that in IndexedDB (see `db.ts`). Every
-//      recommended plant then looks itself up in that cached index by its
-//      iNaturalist taxon id — zero extra network calls. See `nearby.ts` for the
-//      cache-and-index wrapper; this module is the pure client + trimmer.
+//   2. **One request per taxon per area, cached for a week.** A page asks one
+//      question — "is *this* plant growing near me?" — so that's the question we
+//      put to iNaturalist. We trim each result down to only what we display
+//      (photo links + credit) and cache that in IndexedDB (see `db.ts`), so the
+//      same plant in the same area never asks twice. See `nearby.ts` for the
+//      cache wrapper; this module is the pure client + trimmer.
 //
 // Attribution is not optional: iNaturalist content is contributor-owned. Each
 // photo carries its own licence code and a ready-made credit string, and we keep
@@ -34,6 +33,29 @@
 
 const API_BASE = "https://api.inaturalist.org/v1/observations";
 const TAXA_BASE = "https://api.inaturalist.org/v1/taxa";
+
+/**
+ * An HTTP failure from iNaturalist, carrying the status so a caller can tell the
+ * kinds apart. "We couldn't reach iNaturalist" is the wrong thing to say when
+ * iNaturalist answered perfectly clearly that we should slow down — and a
+ * feature that reports every failure identically is a feature nobody can debug.
+ */
+export class InatError extends Error {
+  constructor(readonly status: number, readonly endpoint: string) {
+    super(`iNaturalist ${endpoint} ${status}`);
+    this.name = "InatError";
+  }
+  /** True when iNaturalist is asking us to back off (429) or shedding load
+   *  (502/503/504) — a "try again in a minute", not a "this is broken". */
+  get busy(): boolean {
+    return this.status === 429 || this.status >= 502;
+  }
+}
+
+/** True when a thrown value is iNaturalist telling us to come back later. */
+export function isBusy(err: unknown): boolean {
+  return err instanceof InatError && err.busy;
+}
 
 /** Default search radius around the spot, in kilometres. */
 export const DEFAULT_RADIUS_KM = 50;
@@ -51,10 +73,12 @@ export interface NearbyQuery {
   radiusKm?: number;
   /** Max observations to request. Default `DEFAULT_PER_PAGE`, capped at 200. */
   perPage?: number;
-  /** iNaturalist taxon ids to restrict the query to. We pass the taxa native to
-   *  the user's region here, so iNaturalist only ever returns — and we only ever
-   *  cache — plants we can vouch for as local natives. Omit for an unscoped
-   *  "any plant" query (not used by the app; kept for the raw client). */
+  /** iNaturalist taxon ids to restrict the query to. The app always passes
+   *  exactly one — the plant or animal whose page is asking — which is what
+   *  makes "everything returned is the thing we asked about" true by
+   *  construction. Note iNaturalist matches *descendants* too, so a species id
+   *  also returns its subspecies and varieties; that's wanted, they're the same
+   *  plant. Omit for an unscoped query (not used by the app). */
   taxonIds?: readonly string[];
   /** iNaturalist iconic taxon to scope the search to (e.g. "Plantae" for the
    *  plant layer, "Insecta"/"Aves"/… for the wildlife layer). Defaults to
@@ -75,7 +99,8 @@ export interface RegionQuery {
   bounds: Bounds;
   /** Max observations to request. Default `DEFAULT_PER_PAGE`, capped at 200. */
   perPage?: number;
-  /** Taxa to restrict to — the region's natives, same native-only guarantee. */
+  /** Taxa to restrict to — the app passes the one taxon being asked about,
+   *  descendants included (see `NearbyQuery.taxonIds`). */
   taxonIds?: readonly string[];
   /** iNaturalist iconic taxon to scope to. Defaults to "Plantae". */
   iconicTaxa?: string;
@@ -344,7 +369,7 @@ export async function fetchNearbyObservations(
   signal?: AbortSignal,
 ): Promise<ObservationSummary[]> {
   const res = await fetch(buildObservationsUrl(q), { signal });
-  if (!res.ok) throw new Error(`iNaturalist ${res.status}`);
+  if (!res.ok) throw new InatError(res.status, "observations");
   const data = await res.json();
   return summarizeObservations(data?.results, { lat: q.lat, lon: q.lon });
 }
@@ -360,24 +385,9 @@ export async function fetchRegionObservations(
   signal?: AbortSignal,
 ): Promise<ObservationSummary[]> {
   const res = await fetch(buildBoundsUrl(q), { signal });
-  if (!res.ok) throw new Error(`iNaturalist ${res.status}`);
+  if (!res.ok) throw new InatError(res.status, "observations");
   const data = await res.json();
   return summarizeObservations(data?.results, null);
-}
-
-/** Index a trimmed list by iNaturalist taxon id, each bucket nearest-first
- *  (input order is preserved, so pass an already-sorted list). This is the
- *  join table the app uses: registry entry → `identifiers.inat` → observations. */
-export function indexByTaxon(
-  observations: ObservationSummary[],
-): Map<number, ObservationSummary[]> {
-  const index = new Map<number, ObservationSummary[]>();
-  for (const o of observations) {
-    const bucket = index.get(o.taxonId);
-    if (bucket) bucket.push(o);
-    else index.set(o.taxonId, [o]);
-  }
-  return index;
 }
 
 // ---------------------------------------------------------------------------
@@ -444,7 +454,7 @@ export async function resolveTaxon(
   signal?: AbortSignal,
 ): Promise<number | null> {
   const res = await fetch(buildTaxaUrl(name, iconicTaxa), { signal });
-  if (!res.ok) throw new Error(`iNaturalist taxa ${res.status}`);
+  if (!res.ok) throw new InatError(res.status, "taxa");
   const data = await res.json();
   return pickTaxon(data?.results, name);
 }

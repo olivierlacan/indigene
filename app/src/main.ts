@@ -58,14 +58,16 @@ const STEPS: Record<string, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = {
  * Who renders `<step>/<param>`, when a step has one. Separate from `STEPS`
  * because these are different screens, not the same screen with an argument:
  * `#/plants` is the catalog and `#/plants/<slug>` is one plant's profile.
- * `settings` is the exception that proves it — same screen either way, so it
- * appears in both maps and simply reads the param (see steps/settings.ts).
+ * `settings` and `privacy` are the exceptions that prove it — same screen either
+ * way, so each appears in both maps and simply reads the param to open itself at
+ * the card (steps/settings.ts) or section (steps/privacy.ts) that was asked for.
  */
 const PARAM_RENDERERS: Record<string, StepFn> = {
   plants: renderPlant,
   regions: renderRegion,
   wildlife: renderWildlife,
   settings: renderSettings,
+  privacy: renderPrivacy,
 };
 
 const FLOW = ["location", "sun", "confirm", "priorities", "results"];
@@ -76,8 +78,10 @@ let cleanup: (() => void) | null = null;
 
 /** Step keys that carry a param, e.g. `#/plants/<slug>`, `#/wildlife/<id>`.
  *  `settings` takes one too — `#/settings/units` opens the page at that card,
- *  which is what makes the footer's two links land in two different places. */
-const PARAM_STEPS = new Set(["plants", "regions", "wildlife", "settings"]);
+ *  which is what makes the footer's two links land in two different places —
+ *  and so does `privacy`, so a control can link to the section that answers the
+ *  question it raises (`#/privacy/lookups`). */
+const PARAM_STEPS = new Set(["plants", "regions", "wildlife", "settings", "privacy"]);
 
 /** The active route: a step key, plus a param for the `<step>/<id>` pages. */
 function currentRoute(): { step: string; param?: string } {

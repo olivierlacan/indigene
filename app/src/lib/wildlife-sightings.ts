@@ -2,20 +2,14 @@
 // on an animal's page, mirroring `nearby.ts` for plants but for one animal at a
 // time.
 //
-// Where the plant layer fetches *all* the region's natives in one request and
-// then serves every plant from that shared index, the wildlife layer is
-// per-animal: each animal has its own page, so we fetch and cache one animal's
-// sightings for one area. Two differences from the plant path follow from that:
-//
-//   1. **Two calls on a cache miss, not one.** The plant registry stores a
-//      reconciled numeric iNaturalist id; the wildlife catalog stores only the
-//      scientific name. So we first resolve name → taxon id (`resolveTaxon`,
-//      which follows iNaturalist's synonymy and fails safe), then fetch the
-//      sightings by that id. Both happen behind the cache, so a fresh cache hit
-//      touches the network zero times.
-//   2. **No native-taxa filter.** The plant path keeps only catalog natives; the
-//      wildlife query is already pinned to exactly one taxon (the animal we
-//      asked for), so there is nothing else it could return.
+// It is the same shape as the plant path — one taxon, one area, one request,
+// cached for a week — and shares its `loadSightings` and its cache-key helpers,
+// so the two can't drift apart. One difference: **two calls on a cache miss,
+// not one.** The plant registry stores a reconciled numeric iNaturalist id; the
+// wildlife catalog stores only the scientific name. So we first resolve name →
+// taxon id (`resolveTaxon`, which follows iNaturalist's synonymy and fails
+// safe), then fetch the sightings by that id. Both happen behind the cache, so a
+// fresh cache hit touches the network zero times.
 //
 // Freshness is the same as plants: sightings accrete slowly and we're showing
 // "here's roughly what this looks like near you", not a live feed, so the shared
@@ -30,46 +24,11 @@ import {
   type Bounds,
   type ObservationSummary,
 } from "./inaturalist";
-import { cacheKey, regionCacheKey, CACHE_TTL_MS } from "./nearby";
-import {
-  getCachedObservations,
-  putCachedObservations,
-  type CachedObservations,
-} from "../db";
+import { cacheKey, regionCacheKey, loadSightings } from "./nearby";
+import type { SightingResult } from "./nearby";
 import type { InatScope } from "../types";
 
-export interface SightingResult {
-  /** The animal's sightings for the area — nearest-first for a spot, most-recent
-   *  first for a region (where there's no "you" to measure distance from). */
-  observations: ObservationSummary[];
-  /** The point distances were measured from (the spot, or a region's box center). */
-  from: { lat: number; lon: number };
-  /** true when served from IndexedDB, false when just fetched from the network. */
-  fromCache: boolean;
-}
-
-/** True when a cache record is missing or older than the TTL. */
-function isStale(rec: CachedObservations | undefined, now: number): rec is undefined {
-  return !rec || now - rec.capturedAt > CACHE_TTL_MS;
-}
-
-// Shared machinery: return a fresh cached list if there is one, otherwise run
-// `fetcher`, write the trimmed list back, and hand it up. Best-effort write — a
-// full or quota-limited IndexedDB shouldn't sink the feature.
-async function loadSightings(
-  key: string,
-  from: { lat: number; lon: number },
-  fetcher: () => Promise<ObservationSummary[]>,
-  now: number,
-): Promise<SightingResult> {
-  const cached = await getCachedObservations(key).catch(() => undefined);
-  if (!isStale(cached, now)) {
-    return { observations: cached.observations, from: cached.from, fromCache: true };
-  }
-  const observations = await fetcher();
-  await putCachedObservations({ key, from, capturedAt: now, observations }).catch(() => {});
-  return { observations, from, fromCache: false };
-}
+export type { SightingResult };
 
 // Resolve the animal's name to a taxon id, then fetch by that id. A name that
 // won't resolve yields an empty list (not the wrong creature) — see `resolveTaxon`.

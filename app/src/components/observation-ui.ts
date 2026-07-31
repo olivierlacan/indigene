@@ -1,94 +1,114 @@
-// Shared rendering for an iNaturalist sighting — used by both the plant page's
-// "See it growing near you" and the wildlife page's "See it near you". A sighting
-// looks the same whether it's of a plant or an animal: a strip of small square
-// photos over a one-line credit that links back to the observer's record, with
-// the section-wide iNaturalist credit below. Keeping it here means the two layers
-// can't drift apart, and the credit/licence handling stays in one place.
+// Shared rendering for iNaturalist sightings — used by both the plant page's
+// "See it growing near you" and the wildlife page's "See it near you".
+//
+// **The results are a gallery, not a stack of cards.** Every licence-bearing
+// photo the section found becomes one square tile in a single grid, in the order
+// the sightings came back (nearest first when we measured from a spot). The old
+// shape gave each sighting its own bordered card with a credit line under it,
+// which meant a sighting with one photo — the common case — spent a whole row on
+// one thumbnail and a line of small grey text. Four of those filled the screen
+// with chrome and showed four pictures.
+//
+// The credit didn't go anywhere; it moved to where someone is actually looking
+// at the photo. Tapping a tile opens the lightbox, which names the observer,
+// states the licence, says where and when it was seen, and links to the original
+// sighting — for that photo, rebuilt as you page. On a pointer device the tile
+// also reveals its where/when on hover. The section-wide credit line below the
+// grid names iNaturalist and says every photo is its observer's, so nothing is
+// ever shown unattributed even before a tap.
 import { el } from "../ui";
 import { fmtNumber, t } from "../lib/i18n";
 import { openObservationLightbox } from "./lightbox";
 import { whereWhen } from "../lib/inaturalist";
-import type { ObservationSummary } from "../lib/inaturalist";
+import type { ObservationPhoto, ObservationSummary } from "../lib/inaturalist";
 
 const INAT = "https://www.inaturalist.org";
 
-/** Thumbnails shown per sighting. Three fills exactly one row on a phone, so a
- *  card never ends in a ragged half-row; anything beyond them is reachable —
- *  the lightbox pages through every photo of every sighting on screen, and the
- *  last thumbnail wears a "+2" badge to say so. */
-const THUMBS_PER_CARD = 3;
+/** Tiles shown before the grid stops and the last one wears a "+N" badge. Twelve
+ *  is four rows on a phone (three to a row) — a gallery you take in at a glance,
+ *  not one you scroll. Everything past it is still reachable: the lightbox pages
+ *  through every photo of every sighting the section found. */
+const MAX_TILES = 12;
+
+/** One photo of one sighting, flattened out of the nested shape so the grid can
+ *  lay photos out without caring which sighting they came from — while keeping
+ *  the coordinates the lightbox needs to open on exactly this one. */
+interface Tile {
+  photo: ObservationPhoto;
+  observation: ObservationSummary;
+  obsIndex: number;
+  photoIndex: number;
+}
+
+function flatten(observations: ObservationSummary[]): Tile[] {
+  const tiles: Tile[] = [];
+  observations.forEach((observation, obsIndex) => {
+    observation.photos.forEach((photo, photoIndex) => {
+      tiles.push({ photo, observation, obsIndex, photoIndex });
+    });
+  });
+  return tiles;
+}
 
 /**
- * One sighting as a card: its licence-bearing photos as tappable thumbnails over
- * an observer credit that links to the original record. `label` is the plain
- * name to fall back to when the sighting has no scientific name of its own (the
- * plant's or animal's common name), and is what the lightbox is titled with.
- * Tapping a thumbnail opens the in-app lightbox rather than redirecting away,
- * on this photo of this sighting — but able to page on through `group`, every
- * sighting the section is showing.
+ * Every photo the section found, as one gallery of square thumbnails. `label` is
+ * the plain name to fall back to when a sighting carries no scientific name of
+ * its own (the plant's or animal's common name), and is what the lightbox is
+ * titled with. Tapping a tile opens the in-app lightbox rather than redirecting
+ * away — on that photo, and able to page on through the whole set.
  */
-function observationCard(
-  o: ObservationSummary,
-  label: string,
-  group: ObservationSummary[],
-  obsIndex: number,
-): HTMLElement {
-  const photos = o.photos.slice(0, THUMBS_PER_CARD);
-  const hidden = o.photos.length - photos.length;
-  const thumbs = el("div", { class: "obs-thumbs" },
-    photos.map((ph, i) => {
-      // The badge rides the last thumbnail, where the row runs out of room.
-      const more = hidden > 0 && i === photos.length - 1 ? hidden : 0;
+export function observationList(observations: ObservationSummary[], label: string): HTMLElement {
+  const tiles = flatten(observations);
+  const shown = tiles.slice(0, MAX_TILES);
+  const hidden = tiles.length - shown.length;
+
+  return el("div", { class: "obs-gallery" },
+    shown.map((tile, i) => {
+      const { photo, observation: o } = tile;
+      // The badge rides the last tile, where the grid runs out of room.
+      const more = hidden > 0 && i === shown.length - 1 ? hidden : 0;
+      const seen = whereWhen(o);
       const btn = el("button", {
         type: "button",
-        class: "obs-thumb",
-        title: t("obs.tapToEnlarge", { attribution: ph.attribution }),
+        class: "obs-tile",
+        // The native tooltip carries the full credit for a mouse user who
+        // hovers without clicking; the hover caption below carries where/when.
+        title: t("obs.tapToEnlarge", { attribution: photo.attribution }),
         "aria-label":
           t("obs.enlarge", {
             i: fmtNumber(i + 1),
             name: o.taxonName ?? label,
             observer: o.observer,
           }) + (more ? t("obs.enlargeMore", { n: fmtNumber(more) }) : ""),
-        onClick: () => openObservationLightbox(group, { observation: obsIndex, photo: i }, label, btn),
+        onClick: () =>
+          openObservationLightbox(
+            observations,
+            { observation: tile.obsIndex, photo: tile.photoIndex },
+            label,
+            btn,
+          ),
       }, [
         el("img", {
-          src: ph.thumbUrl,
+          src: photo.thumbUrl,
           loading: "lazy",
           alt: t("obs.photoAlt", { name: o.taxonName ?? label, observer: o.observer }),
           width: 112,
           height: 112,
         }),
-        more ? el("span", { class: "obs-thumb-more", "aria-hidden": "true" }, `+${more}`) : null,
+        // Hover-only, and hidden from screen readers: the aria-label above
+        // already says whose photo this is, and the lightbox states all of it.
+        seen ? el("span", { class: "obs-tile-meta", "aria-hidden": "true" }, seen) : null,
+        more ? el("span", { class: "obs-tile-more", "aria-hidden": "true" }, `+${more}`) : null,
       ]);
       return btn;
     }),
   );
-  // The observation's own credit line: observer + where/when + a link to the
-  // record. Photo-level licences are shown on hover (the title above) and on the
-  // section-wide credit; here we keep the card scannable.
-  const credit = el("p", { class: "obs-credit" }, [
-    el("a", { href: `${INAT}/observations/${o.id}`, target: "_blank", rel: "noopener" },
-      `© ${o.observer}`),
-    whereWhen(o) ? ` · ${whereWhen(o)}` : "",
-  ]);
-  return el("figure", { class: "obs-card" }, [thumbs, credit]);
-}
-
-/**
- * Every sighting a section found, as a stack of cards — and as *one* photo reel.
- * Building the list here (rather than mapping `observationCard` at each call
- * site) is what lets a thumbnail hand the lightbox the whole set: open on the
- * photo that was tapped, then page on through the other observers' photos
- * instead of stopping at the edge of one card.
- */
-export function observationList(observations: ObservationSummary[], label: string): HTMLElement {
-  return el("div", { class: "obs-list" },
-    observations.map((o, i) => observationCard(o, label, observations, i)));
 }
 
 /** The section-wide credit + freshness note: iNaturalist named and linked, the
- *  per-observer licence acknowledged, and the "your browser called them, not us"
- *  transparency line. `fromCache` flips only the "fetched now vs. from cache" clause. */
+ *  per-observer licence acknowledged with a pointer to where it's spelled out
+ *  (the lightbox), and the "your browser called them, not us" transparency line.
+ *  `fromCache` flips only the "fetched now vs. from cache" clause. */
 export function freshnessLine(fromCache: boolean): HTMLElement {
   return el("p", { class: "obs-attribution" }, [
     t("obs.creditLead"),

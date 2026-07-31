@@ -1228,17 +1228,15 @@ export const en = {
   "prompt.getting": "Getting your location…",
   "prompt.denied": "Location denied — that's fine; enter a postal code or town below instead.",
   "prompt.noFix": "Couldn't get your location. Try again, or enter a postal code or town below.",
-  "prompt.placeholder": "e.g. 16801, or State College",
+  "prompt.placeholder": "ZIP or town",
   "prompt.notFound":
     "Couldn't find that postal code or place. Try a nearby town with its region — like “State College Pennsylvania” — or a full postal code.",
   "prompt.offline":
     "The place search needs a signal and we couldn't reach it. If your device has GPS, use the location button above.",
-  "prompt.or": "or",
   "prompt.label": "Enter a postal code or town",
-  "prompt.privacy":
-    "Whichever you choose, it's used only for this lookup and never leaves your device except as an anonymous request to iNaturalist",
+  "prompt.privacyLink": "How your location is used",
   "obs.creditLead": "Sightings & photos from ",
-  "obs.creditMid": ", each © its observer under the licence shown. ",
+  "obs.creditMid": ", each © its observer — open a photo for their name, its licence and a link to the original sighting. ",
   "obs.fromCache": "Loaded from this device's cache — ",
   "obs.fetchedNow": "Fetched just now by your browser — ",
   "obs.creditEnd": "your browser calls iNaturalist directly, so they see your request, not ours.",
@@ -1249,7 +1247,7 @@ export const en = {
   "obs.seenOn": "seen {month} {year}",
   "obs.seenIn": "seen {year}",
   "obs.enlarge": "Enlarge photo {i} of {name} by {observer}",
-  "obs.enlargeMore": ", and see {n} more from this sighting",
+  "obs.enlargeMore": ", and see {n} more photos",
   "obs.tapToEnlarge": "{attribution} — tap to enlarge",
   "obs.photoAlt": "{name} photographed by {observer}",
   "lightbox.prev": "Previous photo",
@@ -1259,7 +1257,7 @@ export const en = {
   "lightbox.viewOriginal": "View original sighting ↗",
   "lightbox.sightingOf": "sighting {i} of {n}",
   "lightbox.credit": "Photo © {observer} · {licence} · via {site}",
-  "nearby.useMyLocation": "Use my location",
+  "nearby.useMyLocation": "My location",
   "nearby.asking": "Asking iNaturalist…",
   "nearby.unreachable":
     "We couldn't reach iNaturalist just now. It's called straight from your browser, so a flaky connection or a blocked request will stop it — try again later.",
@@ -1269,7 +1267,7 @@ export const en = {
   "nearby.foundNear": "Found {n} nearby ",
   "nearby.seeItGrowing": "See it growing near you",
   "nearby.seeItGrowingLede":
-    "The drawing above is to scale, but nothing beats seeing a mature {name} in the ground. Share your location or enter a postal code and we'll pull real, community-verified photos of ones growing near there — or look it up in a region it's native to, even if you're not there. Either way the photos come live from iNaturalist, called by your own browser and credited to the people who took them.",
+    "Real, community-verified iNaturalist photos of one growing near a spot you pick — or anywhere it's native.",
   "nearby.outsideYou":
     "You're outside the regions Indigene has native-plant data for, so we can't vouch for what's truly native there — and we won't dress up nearby sightings as local natives. The sun, soil and climate readings still work everywhere.",
   "nearby.outsidePlace":
@@ -1288,14 +1286,17 @@ export const en = {
     "research-grade sighting of {name} in {region} — verified and photographed by the iNaturalist community (you don't have to be there):",
   "nearby.foundRest.other":
     "research-grade sightings of {name} in {region} — verified and photographed by the iNaturalist community (you don't have to be there):",
-  "nearby.notThereNative": "Not there right now? Look it up where it's native:",
+  "nearby.notThereNative": "Not there right now?",
+  "nearby.whereNative": "Where it's native",
+  "nearby.busy":
+    "iNaturalist asked us to slow down — it's busy right now. Give it a minute and try again.",
   "nearby.nativeToList": "native to {list}",
   "nearby.nativeToOther": "native to another region",
   "nearby.nativeElsewhere":
     "Our data lists {name} as {belongs}, not {region}. It may turn up on iNaturalist there as a planted or escaped specimen, but we won't showcase it as a local native where it doesn't belong — that's the opposite of what Indigene is for.",
   "wlNearby.seeItNear": "See it near you",
   "wlNearby.seeItNearLede":
-    "Nothing beats seeing a real {name}. Share your location or enter a postal code, and we'll pull community-verified iNaturalist photos of ones spotted near there — or look it up in a region where it's found, even if you're not there. Either way the photos come live from iNaturalist, called by your own browser and credited to the people who took them.",
+    "Community-verified photos from iNaturalist of real ones spotted near a place you pick — or anywhere it's found.",
   "wlNearby.outsideYou":
     "You're outside the regions Indigene covers, so we can't do a nearby lookup there. You can still look it up in a region where it's found, below.",
   "wlNearby.outsidePlace":
@@ -1310,7 +1311,8 @@ export const en = {
     "research-grade sighting of {name} in {region} — verified and photographed by the iNaturalist community (you don't have to be there):",
   "wlNearby.foundRest.other":
     "research-grade sightings of {name} in {region} — verified and photographed by the iNaturalist community (you don't have to be there):",
-  "wlNearby.notThereFound": "Not there right now? Look it up where it's found:",
+  "wlNearby.notThereFound": "Not there right now?",
+  "wlNearby.whereFound": "Where it's found",
 
   // ---------------------------------------------------------------------
   // Ecoregion labels. The EEA's eleven regions have a settled name in each

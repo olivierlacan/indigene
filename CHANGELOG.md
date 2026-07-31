@@ -69,6 +69,16 @@ subtitle on the What's new page.
   [mammals & others](https://indigene.app/#/wildlife/mammals). A row of buttons
   hops between them, so "show me only the moths" is one tap and a link you can
   send to someone.
+- **Pick a region on the wildlife page and see only the creatures that live
+  there.** [Browse by wildlife](https://indigene.app/#/wildlife) now has a
+  "Show the wildlife of" picker at the top. Choose the Pacific Northwest and
+  the list narrows to the 15 creatures its native plants support — and the
+  plant count on each card counts only that region's plants, so nothing on the
+  page is claiming more than it should. It works together with the group
+  buttons, so ["the butterflies of the French
+  Alps"](https://indigene.app/#/wildlife/in/france-alpine/butterflies) is a
+  page, and every combination has its own web address you can bookmark or send
+  to someone.
 - Indigene has a proper little sprout icon in your browser tab now, instead of
   the blank page symbol every site gets when it hasn't been given one.
 - Posting an Indigene link somewhere — a message to a friend, a group chat, a
@@ -79,6 +89,16 @@ subtitle on the What's new page.
 
 ### Changed
 
+- **Every creature now says where it lives, instead of wearing a "native"
+  badge.** Every animal on the wildlife pages is native — that's the whole
+  point of the page — so a "native" tag on all of them told you nothing. In
+  its place, a creature found in more than one of our regions shows a map pin
+  and a number: 📍 3 for the monarch. Hover it on a computer to read the region
+  names, or tap it on a phone to open them as links — each one goes straight to
+  the rest of the wildlife those regions' plants support. A creature we've
+  mapped in a single region shows nothing at all, because "1" is the same
+  non-fact the old badge was. Its own page still names its regions in full,
+  with the sourced sentence about where it's native right below.
 - When you filter a region's plant list — say you type "oak" on
   [Florida (north & central)](https://indigene.app/#/regions/florida-central) —
   the part of each name you typed is now **underlined in green**, exactly the

@@ -22,6 +22,7 @@ export type { RawPlant };
 export const REGION: RegionMeta = {
   id: "mid-atlantic",
   name: "Mid-Atlantic / Northeast Piedmont",
+  short: "Mid-Atlantic",
   reference: "Pennsylvania",
   zones: "6b–7a",
   note: "Native here means native to this region specifically. Outside it, treat these picks as untested.",

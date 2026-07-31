@@ -767,25 +767,29 @@ export const en = {
   // Wildlife.
   // ---------------------------------------------------------------------
   "wildlife.coverageNote":
-    "These are the notable, well-documented wildlife ties we've mapped so far — not every insect a plant supports. A single oak is a caterpillar host to hundreds of moth species; here we name the ones worth choosing a plant for. Every tie shows its source, and the list grows as carefully as the plant lists do.",
+    "These are the notable, well-documented wildlife ties we've mapped so far — not every insect a plant supports. A single oak is a caterpillar host to hundreds of moth species; here we name the ones worth choosing a plant for. Every tie shows its source, and the list grows as carefully as the plant lists do. The regions we name for an animal are the ones where we've mapped plants supporting it; its own range often reaches well past them.",
   "wildlife.indexDocTitle": "Browse native plants by the wildlife they support — Indigene",
   "wildlife.indexTitle": "Browse by wildlife",
   "wildlife.indexLede":
     "Pick the insect or animal you want in your yard, and see which native plants support it — and how. {n} creatures mapped so far, from monarchs to the gopher tortoise.",
   "wildlife.allNative": "🌿 Every animal here is itself native. ",
   "wildlife.allNativeRest":
-    "The whole point is a native plant feeding native wildlife — so the introduced honey bee, for one, is left out. Each creature's page cites where it's native, and every plant tie cites its source.",
+    "That's the whole point — a native plant feeding native wildlife — so the introduced honey bee is left out. So instead of a “native” tag on every card, the 📍 figure counts the regions we've mapped a creature in — open it for their names.",
   "wildlife.browsePlants": "← Browse plants instead",
   "wildlife.browsePlantsShort": "Browse plants",
   "wildlife.startFromSpot": "Start from a spot",
   "wildlife.supportedBy.one": "{n} native plant in Indigene supports {animal}",
   "wildlife.supportedBy.other": "{n} native plants in Indigene support {animal}",
-  "wildlife.onRegionLists": "Found on the plant lists of {n} of Indigene's regions",
-  "wildlife.nativeShort": "native",
-  "wildlife.isNative": "{animal} is itself a native animal — {basis}",
+  "wildlife.supportedByInRegion.one": "{n} native plant on Indigene's {region} list supports {animal}",
+  "wildlife.supportedByInRegion.other": "{n} native plants on Indigene's {region} list support {animal}",
+  "wildlife.inRegions": "Native to {n} of Indigene's regions: {regions}. Open for links.",
+  "wildlife.inRegionsTitle": "Native to {n} regions",
+  "wildlife.inRegionsBody":
+    "Indigene maps native plants supporting {animal} on {n} of its regional lists. Open one to see every creature those plants support.",
+  "wildlife.nativeTo": "📍 Native to",
+  "wildlife.regionPillTitle": "{region} — all the wildlife its natives support",
   "wildlife.docTitle": "Native plants that support {animal} — Indigene",
   "wildlife.allWildlife": "← All wildlife",
-  "wildlife.nativeBadge": "🌿 Native animal",
   "wildlife.aNativeAnimal": "A native animal. ",
   "wildlife.ofThemHosts.one": ", {n} of them as a caterpillar host — the strongest tie.",
   "wildlife.ofThemHosts.other": ", {n} of them as caterpillar hosts — the strongest tie.",
@@ -816,6 +820,18 @@ export const en = {
   "wildlife.filterNoneIndex": "No creature we've mapped matches “{q}” yet — ",
   "wildlife.filterSearchPlants": "search the plants",
   "wildlife.filterNoneRest": " instead.",
+  // The region cut of the index — the other axis the group chips run on.
+  "wildlife.regionDocTitle": "Wildlife the natives of {region} support — Indigene",
+  "wildlife.groupInRegionDocTitle": "{group} of {region} — Indigene",
+  "wildlife.indexLedeRegion":
+    "{n} creatures the natives on Indigene's {region} list support. Pick one to see which of those plants raise or feed it — and how.",
+  "wildlife.groupInRegionLede": "{n} on Indigene's {region} list. {blurb}",
+  "wildlife.regionFilterLabel": "Show the wildlife of",
+  "wildlife.regionFilterAll": "Every region ({n})",
+  "wildlife.allWildlifePlain": "All wildlife",
+  "wildlife.noSuchRegionTitle": "That's not a region we cover",
+  "wildlife.noSuchRegionLede":
+    "Nothing in Indigene matches the region “{id}”. Pick one of these instead:",
 
   // ---------------------------------------------------------------------
   // Region rosters.

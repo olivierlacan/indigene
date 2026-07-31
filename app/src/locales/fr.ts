@@ -791,25 +791,29 @@ export const fr: Dict = {
   // Faune.
   // ---------------------------------------------------------------------
   "wildlife.coverageNote":
-    "Voici les liens avec la faune les mieux documentés que nous ayons cartographiés jusqu'ici — pas tous les insectes qu'une plante fait vivre. Un seul chêne héberge les chenilles de centaines d'espèces de papillons ; ici nous nommons celles pour lesquelles il vaut la peine de choisir une plante. Chaque lien indique sa source, et la liste grandit aussi prudemment que celles des plantes.",
+    "Voici les liens avec la faune les mieux documentés que nous ayons cartographiés jusqu'ici — pas tous les insectes qu'une plante fait vivre. Un seul chêne héberge les chenilles de centaines d'espèces de papillons ; ici nous nommons celles pour lesquelles il vaut la peine de choisir une plante. Chaque lien indique sa source, et la liste grandit aussi prudemment que celles des plantes. Les régions que nous citons pour un animal sont celles où nous avons cartographié des plantes qui le font vivre ; son aire de répartition va souvent bien au-delà.",
   "wildlife.indexDocTitle": "Parcourir les plantes indigènes par la faune qu'elles font vivre — Indigene",
   "wildlife.indexTitle": "Parcourir par animal",
   "wildlife.indexLede":
     "Choisissez l'insecte ou l'animal que vous aimeriez voir chez vous, et découvrez quelles plantes indigènes le font vivre — et comment. {n} espèces cartographiées jusqu'ici.",
   "wildlife.allNative": "🌿 Chaque animal listé ici est lui-même indigène. ",
   "wildlife.allNativeRest":
-    "Tout l'intérêt est qu'une plante indigène nourrisse une faune indigène — l'abeille domestique, introduite, est donc écartée. La page de chaque espèce cite où elle est indigène, et chaque lien avec une plante cite sa source.",
+    "C'est tout l'intérêt — une plante indigène qui nourrit une faune indigène — et l'abeille domestique, introduite, est donc écartée. Plutôt qu'une étiquette « indigène » sur chaque fiche, le chiffre 📍 compte les régions où nous avons cartographié l'espèce — ouvrez-le pour leurs noms.",
   "wildlife.browsePlants": "← Parcourir plutôt les plantes",
   "wildlife.browsePlantsShort": "Parcourir les plantes",
   "wildlife.startFromSpot": "Partir d'un lieu",
   "wildlife.supportedBy.one": "{n} plante indigène d'Indigene fait vivre {animal}",
   "wildlife.supportedBy.other": "{n} plantes indigènes d'Indigene font vivre {animal}",
-  "wildlife.onRegionLists": "Présent sur les listes de {n} des régions d'Indigene",
-  "wildlife.nativeShort": "indigène",
-  "wildlife.isNative": "{animal} est lui-même un animal indigène — {basis}",
+  "wildlife.supportedByInRegion.one": "{n} plante indigène de la liste {region} d'Indigene fait vivre {animal}",
+  "wildlife.supportedByInRegion.other": "{n} plantes indigènes de la liste {region} d'Indigene font vivre {animal}",
+  "wildlife.inRegions": "Indigène dans {n} des régions d'Indigene : {regions}. Ouvrez pour les liens.",
+  "wildlife.inRegionsTitle": "Indigène dans {n} régions",
+  "wildlife.inRegionsBody":
+    "Indigene cartographie des plantes indigènes qui font vivre {animal} dans {n} de ses listes régionales. Ouvrez-en une pour voir toutes les espèces que ces plantes font vivre.",
+  "wildlife.nativeTo": "📍 Indigène dans",
+  "wildlife.regionPillTitle": "{region} — toute la faune que ses plantes indigènes font vivre",
   "wildlife.docTitle": "Les plantes indigènes qui font vivre {animal} — Indigene",
   "wildlife.allWildlife": "← Toute la faune",
-  "wildlife.nativeBadge": "🌿 Animal indigène",
   "wildlife.aNativeAnimal": "Un animal indigène. ",
   "wildlife.ofThemHosts.one": ", dont {n} comme plante nourricière de ses chenilles — le lien le plus fort.",
   "wildlife.ofThemHosts.other": ", dont {n} comme plantes nourricières de ses chenilles — le lien le plus fort.",
@@ -843,6 +847,18 @@ export const fr: Dict = {
   "wildlife.filterNoneIndex": "Aucun animal recensé ne correspond à « {q} » — ",
   "wildlife.filterSearchPlants": "chercher parmi les plantes",
   "wildlife.filterNoneRest": ".",
+  // La coupe par région — l'autre axe, à côté des chips de groupe.
+  "wildlife.regionDocTitle": "La faune que font vivre les plantes indigènes de {region} — Indigene",
+  "wildlife.groupInRegionDocTitle": "{group} de {region} — Indigene",
+  "wildlife.indexLedeRegion":
+    "{n} espèces que font vivre les plantes indigènes de la liste {region} d'Indigene. Choisissez-en une pour voir lesquelles de ces plantes élèvent ses petits ou la nourrissent — et comment.",
+  "wildlife.groupInRegionLede": "{n} sur la liste {region} d'Indigene. {blurb}",
+  "wildlife.regionFilterLabel": "Afficher la faune de",
+  "wildlife.regionFilterAll": "Toutes les régions ({n})",
+  "wildlife.allWildlifePlain": "Toute la faune",
+  "wildlife.noSuchRegionTitle": "Ce n'est pas une région que nous couvrons",
+  "wildlife.noSuchRegionLede":
+    "Rien dans Indigene ne correspond à la région « {id} ». Choisissez plutôt l'une de celles-ci :",
 
   // ---------------------------------------------------------------------
   // Listes régionales.

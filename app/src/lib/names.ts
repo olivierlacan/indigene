@@ -156,6 +156,14 @@ export function regionName(meta: RegionMeta): string {
   return regionText(meta)?.name ?? meta.name;
 }
 
+/** The short form, for a pill or a picker option where the full name's
+ *  qualifier would wrap. Falls back to the region's own English short, and
+ *  then — for a locale table that has neither — to the full name, which is
+ *  long but never wrong. */
+export function regionShort(meta: RegionMeta): string {
+  return regionText(meta)?.short ?? meta.short;
+}
+
 export function regionReference(meta: RegionMeta): string {
   return regionText(meta)?.reference ?? meta.reference;
 }

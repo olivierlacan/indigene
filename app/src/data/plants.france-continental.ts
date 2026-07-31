@@ -48,6 +48,7 @@ export type { RawPlant };
 export const REGION: RegionMeta = {
   id: "france-continental",
   name: "Continental France",
+  short: "Continental France",
   reference: "Dijon, Nancy & Strasbourg",
   zones: "≈6b–8a",
   note: "Native status is asserted for the Continental biogeographical region of metropolitan France — the centre and east, with colder winters and hotter summers than the Atlantic coast. The oceanic west, the Mediterranean south and the Alps are different floras with their own lists; treat these recommendations as untested there. Host-insect figures are counted from the open European Lepidoptera–plant matrix (Gaytán et al. 2026) for native, continental-temperate relatives of each plant.",

@@ -22,7 +22,7 @@ function coverageWarning(lead: string): HTMLElement {
     el("strong", {}, lead + " "),
     t("location.coverage"),
     el("ul", { style: "margin:0.4rem 0 0;padding-left:1.2rem" }, [
-      el("li", {}, [el("a", { href: "#/plants" }, t("location.coverageBrowse")), t("location.coverageBrowseRest")]),
+      el("li", {}, [el("a", { href: "#/regions" }, t("location.coverageBrowse")), t("location.coverageBrowseRest")]),
       el("li", {}, [el("a", { href: ISSUES_URL, target: "_blank", rel: "noopener" }, t("location.coverageAsk")), t("location.coverageAskRest")]),
     ]),
   ]);

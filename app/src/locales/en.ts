@@ -67,7 +67,6 @@ export const en = {
   "steps.saved": "Saved",
   "steps.browse": "Browse",
   "steps.explore": "Explore",
-  "steps.search": "Search",
   "steps.wildlife": "Wildlife",
   "steps.privacy": "Privacy",
   "steps.sources": "Sources",
@@ -967,22 +966,22 @@ export const en = {
     "{n} of this region's plants are keystones — like the wedge at the crown of a stone arch, each supports far more wildlife than most, and losing one would unravel a food web far bigger than itself.",
 
   // ---------------------------------------------------------------------
-  // Search.
+  // The plants index (#/plants) — every native we know, searchable.
   // ---------------------------------------------------------------------
-  "search.title": "Search native plants",
-  "search.lede":
-    "Type a plant's name — common or scientific — and open its page. It searches Indigene's native-plant registry, so a name resolves the same way here as everywhere in the app.",
-  "search.label": "Plant name",
-  "search.placeholder": "e.g. milkweed, oak, or Asclepias",
-  "search.matchCount": "{n} of {total} native plants match “{q}”.",
-  "search.idle": "Search {total} native plants across {regions} regions.",
-  "search.alsoCalled": "Also called “",
-  "search.alsoCalledEnd": "”",
-  "search.noneLead":
+  "plants.title": "Native plants",
+  "plants.lede":
+    "Every plant Indigene knows, from every region. Type a name — common or scientific — to narrow the list, then open a plant for its full page.",
+  "plants.label": "Plant name",
+  "plants.placeholder": "e.g. milkweed, oak, or Asclepias",
+  "plants.matchCount": "{n} of {total} native plants match “{q}”.",
+  "plants.idle": "{total} native plants across {regions} regions.",
+  "plants.alsoCalled": "Also called “",
+  "plants.alsoCalledEnd": "”",
+  "plants.noneLead":
     "No plant in Indigene's lists matches “{q}”. The lists are curated per region, so they grow carefully — ",
-  "search.noneLink": "browse the natives we know",
-  "search.noneEnd": ".",
-  "search.browseInstead": "Browse instead",
+  "plants.noneLink": "browse the natives we know",
+  "plants.noneEnd": ".",
+  "plants.browseRegions": "Browse by region",
 
   // ---------------------------------------------------------------------
   // Privacy & safety. Written for everyone, including kids and grandparents.

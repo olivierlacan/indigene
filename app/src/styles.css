@@ -123,6 +123,69 @@ a {
   color: var(--focus);
 }
 
+/* --- Section headings that lead somewhere -------------------------------
+   A roster's category heading, a wildlife group's heading, a region on an
+   animal's page: each labels the cards under it *and* is the way into that
+   section's own page (see components/section-link.ts).
+
+   The browser's default underline said "link", but said it badly: it ran under
+   the leading icon and the trailing "(7)", so the rule began before the words
+   and ended after a bracket, and every heading down the page wore a heavy line.
+   A chevron says the same thing better — it points where the tap goes, it's
+   brand green instead of a rule struck through the text, and it nudges forward
+   on hover or focus. It's drawn at rest rather than on hover: a phone has no
+   hover, and this is the affordance, not a reward for pointing at it.
+
+   Inline rather than a flex row, so a long heading wraps like the text it is
+   and the chevron simply follows the last word instead of being stranded
+   beside a two-line name. */
+.section-head {
+  margin: 1.2rem 0 0.35rem;
+}
+.section-link {
+  color: inherit;
+  text-decoration: none;
+}
+.section-link-icon {
+  color: var(--brand);
+  margin-right: 0.3rem;
+  vertical-align: -0.18em;
+}
+/* How many cards are under the heading. A quiet pill, not "(7)": the number is
+   a fact about the section, not part of its name. */
+.section-count {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0 0.45em;
+  border-radius: 999px;
+  background: var(--brand-bg);
+  color: var(--brand-ink);
+  font-size: 0.72em;
+  font-weight: 700;
+  line-height: 1.6;
+  vertical-align: 0.12em;
+}
+.section-link::after {
+  content: "";
+  display: inline-block;
+  width: 0.36em;
+  height: 0.36em;
+  margin-left: 0.45em;
+  vertical-align: 0.1em;
+  border-right: 0.14em solid var(--brand);
+  border-top: 0.14em solid var(--brand);
+  transform: rotate(45deg);
+  transition: transform 0.15s ease-out;
+}
+.section-link:hover,
+.section-link:focus-visible {
+  color: var(--brand-ink);
+}
+.section-link:hover::after,
+.section-link:focus-visible::after {
+  transform: rotate(45deg) translate(0.12em, -0.12em);
+}
+
 :focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 2px;
@@ -2183,8 +2246,13 @@ button.card-stat:focus-visible .card-stat-tap {
     min-height: 2.75rem; /* two lines at this size and line-height */
   }
 }
+/* No underline: the whole card is the link (below), so a rule under the name
+   marked one word as clickable when in fact everything around it was. The
+   card's border lighting up on hover is what says "this goes somewhere" — the
+   same treatment the wildlife cards use. */
 .region-card-name a {
   color: inherit;
+  text-decoration: none;
 }
 /* Stretch the heading's link over the whole card, so the card *is* the way
    into the region — no second link at the bottom repeating it. Everything that
@@ -2259,6 +2327,58 @@ button.card-stat:focus-visible .card-stat-tap {
 .region-card .card-stats {
   margin-top: 0;
   padding-top: 0.6rem;
+}
+
+/* --- The plants index: one card per native ------------------------------ */
+/* The whole card is the link to the plant's profile: silhouette, the two name
+   lines, and the regions it grows in as pills — the same pills an animal's
+   page uses, so "where does this grow" looks the same wherever it's answered.
+
+   In a `.card-grid` these reflow into columns on a laptop, which is the point.
+   The index was a stack of full-width rows, so two hundred natives read as a
+   phone-width ribbon down the middle of a desktop screen: five times the
+   scrolling, with a screenful of empty margin either side. */
+.plant-index-card {
+  display: flex;
+  gap: 0.7rem;
+  align-items: stretch;
+  text-decoration: none;
+  color: inherit;
+  padding: 0.7rem 0.85rem;
+  margin: 0;
+  height: 100%;
+}
+.plant-index-card:hover {
+  border-color: var(--line-strong);
+}
+.plant-index-card .plant-photo {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+.plant-index-card .plant-name {
+  font-size: 1.02rem;
+  line-height: 1.25;
+}
+.plant-index-card .plant-latin {
+  font-size: 0.85rem;
+}
+.plant-index-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.plant-index-alt {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+/* Pinned to the bottom of the card, so a row of cards puts its pills on one
+   line however long the names above them ran — the same trick `.card-stats`
+   plays on the other two indexes. */
+.plant-index-card .region-pills {
+  margin-top: auto;
+  padding-top: 0.4rem;
 }
 
 /* --- Wildlife index: one card per creature ------------------------------ */

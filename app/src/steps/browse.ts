@@ -45,7 +45,7 @@ export function renderBrowse(main: HTMLElement): void {
           ]);
         })
       ),
-      el("button", { class: "btn btn-secondary btn-block", onClick: () => navigate("plants") }, t("browse.exploreBtn")),
+      el("button", { class: "btn btn-secondary btn-block", onClick: () => navigate("regions") }, t("browse.exploreBtn")),
     ]),
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("browse.home")),

@@ -1522,6 +1522,47 @@ details.weights {
   margin-bottom: 1rem;
   overflow: hidden;
 }
+/* --- Which region's figures you're reading (multi-region plants only) --- */
+/* Chips rather than a <select>: there are two or three, they're all worth
+   seeing at once, and the current one has to be legible as *current* rather
+   than as a collapsed value. Short region names, so a row of them fits a phone
+   without the parenthetical qualifier wrapping. */
+.region-switch {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0.5rem 0 0;
+}
+/* Its own line, so the chips get the full width to sit side by side. Sharing a
+   row with the lede pushed the second chip onto a line of its own on a phone,
+   which read as two separate controls rather than a choice between two. */
+.region-switch-lede {
+  flex: 1 0 100%;
+  margin-bottom: -0.1rem;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.region-chip {
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.region-chip-on {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: var(--on-brand);
+}
+.region-chip:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
 .plant-head {
   display: flex;
   gap: 0.85rem;

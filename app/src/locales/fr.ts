@@ -621,6 +621,13 @@ export const fr: Dict = {
     "Aucune plante de la liste {region} n'est rustique à la température hivernale de ce lieu.",
   "results.showingTop":
     "Nous en montrons {n}. Ajustez les curseurs ci-dessus pour faire remonter les autres.",
+  "results.filterAria": "Filtrer ces suggestions par nom de plante",
+  "results.filterPlaceholder": "Filtrer par nom…",
+  "results.filterCount.one": "{shown} plante sur {total} correspond à « {q} ».",
+  "results.filterCount.other": "{shown} plantes sur {total} correspondent à « {q} ».",
+  "results.filterNone": "Rien ici ne correspond — ",
+  "results.filterSearchAll": "chercher dans toutes les régions",
+  "results.filterNoneRest": ".",
   "results.sliderAria": "Importance de : {name}",
   "results.weightsSummary": "⚖️ Qu'est-ce qui compte le plus ?",
   "results.done": "Terminé — montrer les plantes",

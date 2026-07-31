@@ -1,8 +1,11 @@
 // Type-to-narrow filtering, shared by every list long enough to hunt through:
-// a region's roster and its category pages, and the wildlife index. It filters
-// the rows already on the page (no routing, no registry lookup) so nobody has
-// to reach for Ctrl+F or bounce out to the search page just to find one entry
-// in a 40-row list.
+// a region's roster and its category pages, the wildlife index, and the ranked
+// picks for a spot. Nobody should have to reach for Ctrl+F or bounce out to the
+// search page just to find one entry in a 40-row list.
+//
+// Two shapes, one field. `filterField` hides rows already on the page — right
+// when the page holds every candidate. `filterBox` hands the query back to the
+// caller instead, for the ranked list, which has to re-rank rather than hide.
 //
 // The matching rules — and, more visibly, the way a match is *shown* — are the
 // same ones the search page uses: every occurrence of what you typed is
@@ -64,11 +67,41 @@ export interface FilterOptions {
   fallback(query: string): (string | Node)[];
 }
 
-export function filterField(
-  rows: FilterRow[],
-  sections: FilterSection[],
-  opts: FilterOptions
-): HTMLElement {
+export interface FilterBoxOptions {
+  /** The field's accessible name, translated. */
+  label: string;
+  /** Placeholder text, translated. */
+  placeholder: string;
+  /**
+   * Runs on every keystroke, with the query both normalized (for matching) and
+   * trimmed as typed (for quoting back). Filter, redraw, then `say()` what the
+   * line under the field should read.
+   */
+  onInput(nq: string, typed: string): void;
+}
+
+export interface FilterBox {
+  node: HTMLElement;
+  /**
+   * Set the line under the field — call it after *any* redraw, not only after
+   * a keystroke. On the ranked list a slider can change what a standing query
+   * matches, and a count line that only updates when you type would sit there
+   * claiming the old number.
+   */
+  say(parts: (string | Node)[]): void;
+}
+
+/**
+ * The field and the line under it, with the *caller* doing the filtering.
+ *
+ * `filterField` below hides rows already on the page, which is right when the
+ * page holds every candidate. The ranked list doesn't work that way: it ranks,
+ * then shows the top 25, so a query has to reach the ranking — narrowing only
+ * what's on screen would quietly hide the oak sitting at rank 30. Both share
+ * this box, so the field, its spacing, and the sentence's place stay identical
+ * wherever you meet them.
+ */
+export function filterBox(opts: FilterBoxOptions): FilterBox {
   const input = el("input", {
     type: "search",
     "aria-label": opts.label,
@@ -82,30 +115,43 @@ export function filterField(
   }) as HTMLInputElement;
   const status = el("p", { role: "status", class: "coords", style: "margin:0.35rem 0 0" });
 
+  const say = (parts: (string | Node)[]): void => {
+    clear(status);
+    if (parts.length) status.append(...parts);
+  };
+  input.addEventListener("input", () => opts.onInput(norm(input.value), input.value.trim()));
+
+  return { node: el("div", { style: "margin:0 0 0.6rem" }, [input, status]), say };
+}
+
+export function filterField(
+  rows: FilterRow[],
+  sections: FilterSection[],
+  opts: FilterOptions
+): HTMLElement {
   // Rows carry their own inline display (the plant rows are flex, the wildlife
   // cards take it from a class), so remember each one rather than assuming a
   // value to restore them to.
   const display = rows.map((r) => r.node.style.display);
 
-  const apply = (): void => {
-    const nq = norm(input.value);
-    let shown = 0;
-    rows.forEach((r, i) => {
-      const hit = !nq || r.hay.includes(nq);
-      r.node.style.display = hit ? display[i] : "none";
-      r.mark(hit ? nq : "");
-      if (hit) shown++;
-    });
-    for (const s of sections) {
-      s.node.style.display = s.rows.some((r) => r.node.style.display !== "none") ? "" : "none";
-    }
-    clear(status);
-    if (!nq) return;
-    const q = input.value.trim();
-    if (shown) status.append(opts.count(shown, rows.length, q));
-    else status.append(...opts.fallback(q));
-  };
-  input.addEventListener("input", apply);
-
-  return el("div", { style: "margin:0 0 0.6rem" }, [input, status]);
+  const box = filterBox({
+    label: opts.label,
+    placeholder: opts.placeholder,
+    onInput(nq, typed) {
+      let shown = 0;
+      rows.forEach((r, i) => {
+        const hit = !nq || r.hay.includes(nq);
+        r.node.style.display = hit ? display[i] : "none";
+        r.mark(hit ? nq : "");
+        if (hit) shown++;
+      });
+      for (const s of sections) {
+        s.node.style.display = s.rows.some((r) => r.node.style.display !== "none") ? "" : "none";
+      }
+      // Nothing typed, nothing to say: the list is all there, unmarked.
+      if (!nq) return box.say([]);
+      box.say(shown ? [opts.count(shown, rows.length, typed)] : opts.fallback(typed));
+    },
+  });
+  return box.node;
 }

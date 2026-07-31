@@ -91,6 +91,12 @@ subtitle on the What's new page.
   Alps"](https://indigene.app/#/wildlife/in/france-alpine/butterflies) is a
   page, and every combination has its own web address you can bookmark or send
   to someone.
+- **Your plant list for a spot has the same "Filter by name…" box.** After
+  Indigene ranks the natives for where you're standing, you can type a name to
+  pull one out of the list — "oak", "milkweed", "fern" — and the part you typed
+  is underlined in green on each card that matches. It searches the *whole*
+  ranked list, not just the twenty-five cards on screen, so a plant sitting at
+  number thirty still turns up.
 - Indigene has a proper little sprout icon in your browser tab now, instead of
   the blank page symbol every site gets when it hasn't been given one.
 - Posting an Indigene link somewhere — a message to a friend, a group chat, a
@@ -146,9 +152,24 @@ subtitle on the What's new page.
   page, instead of three near-copies. It holds no words of its own: every
   sentence is passed in already translated, because a count line doesn't
   survive being assembled from a noun slot in French.
+- **Your plants come sooner on the page.** The explanation of how the ranking
+  works used to sit open above the list, so every visit began with five lines
+  about method. It now lives inside **What matters most?** — the panel where
+  you'd go to change the ranking anyway — and opens when you ask for it. The
+  first plant is about a phone-screen higher up the page than it was.
+- **The buttons on your plant list moved below the plants.** "Back" and "Save
+  this spot" used to sit above the list, so the first thing you met on the page
+  that finally shows your plants was a way to leave it — and an offer to save a
+  spot whose plants you hadn't seen yet. They now come after the list, where
+  every other step in Indigene keeps its buttons.
 - Internal: `scripts/shoot.mjs` takes a `--fill` flag, so a screenshot can be
   taken of a page whose interesting state only exists once something has been
-  typed into it.
+  typed into it, a `--picks REGION` flag that walks the flow to the ranked
+  plant list — the one page no URL can reach, because it needs a spot — and an
+  `--open SEL` flag for the panels whose content only exists once opened.
+- Internal: `filter-field.ts` splits into two shapes over one field —
+  `filterField` hides rows already on the page, `filterBox` hands the query to
+  the caller for the ranked list, which has to re-rank rather than hide.
 - The French plant descriptions for **Atlantic France** — Paris, Nantes and
   Bordeaux — are written in French. The other regions' descriptions are still
   in English while we work through them, and any page showing English text says

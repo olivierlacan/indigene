@@ -17,10 +17,12 @@ import {
   moistureWord,
 } from "../lib/plain";
 import { saveSpot } from "../db";
-import { t, tx, fmtNumber } from "../lib/i18n";
+import { t, tn, tx, fmtNumber } from "../lib/i18n";
 import type { TKey } from "../locales/en";
 import { maxHeightChoices, maxSpreadChoices, temperature } from "../lib/units";
-import { regionName, regionReference } from "../lib/names";
+import { commonName, regionName, regionReference } from "../lib/names";
+import { filterBox, norm } from "../components/filter-field";
+import type { Plant } from "../types";
 
 const WEIGHT_KEYS: (keyof Weights)[] = [...SCORE_KEYS];
 
@@ -58,7 +60,15 @@ export function renderResults(main: HTMLElement): void {
 
   const plants = loadPlants(region);
   const name = regionName(region.meta);
+  // The site summary sits outside the list so the filter field can live between
+  // the two — and so typing doesn't rebuild the field the reader is typing in.
+  const summaryEl = el("p", { "aria-live": "polite", style: "margin:0.5rem 0 1rem;font-weight:650" });
   const listEl = el("div", { "aria-live": "polite" });
+
+  // The standing name filter, normalized for matching and kept as typed for
+  // quoting back in the line under the field.
+  let nameQuery = "";
+  let typedQuery = "";
 
   function rerender(): void {
     const ranked = rankPlants(plants, {
@@ -68,20 +78,29 @@ export function renderResults(main: HTMLElement): void {
       filters: store.filters,
       moistureOverride: store.draft.moistureOverride,
     });
+    // The typed name narrows the *ranked* list, not just the cards on screen:
+    // only the top 25 are ever drawn, so hiding drawn cards would quietly lose
+    // the oak sitting at rank 30. The names searched are the same three a
+    // region roster matches on — displayed, English, and botanical.
+    const hits = nameQuery
+      ? ranked.filter((r) => nameHay(r.plant).includes(nameQuery))
+      : ranked;
+    // Said here rather than on the keystroke, because a slider or a filter can
+    // change what a standing query matches without anyone typing a thing.
+    nameFilter.say(matchLine(hits.length, ranked.length));
+
     clear(listEl);
-    const shown = ranked.slice(0, 25);
+    const shown = hits.slice(0, 25);
     const goodCount = ranked.filter((r) => r.match !== "poor").length;
     // Only claim a climate check when a looked-up zone actually filtered the
     // list; on the hand-picked-region path nothing was checked against winter.
     const fitClause = store.draft.site?.zone ? t("results.fitClimate") : t("results.fitList");
-    listEl.append(
-      el("p", { style: "margin:0.5rem 0 1rem;font-weight:650" },
-        t("results.count", {
-          n: fmtNumber(ranked.length),
-          fit: fitClause,
-          good: fmtNumber(goodCount),
-        }))
-    );
+    // Always the whole roster's tally: it describes the spot, not the typing.
+    summaryEl.replaceChildren(t("results.count", {
+      n: fmtNumber(ranked.length),
+      fit: fitClause,
+      good: fmtNumber(goodCount),
+    }));
     if (!ranked.length) {
       // Blame the right culprit: with any filter set, it's almost certainly the
       // filters that emptied the list, not the climate.
@@ -90,12 +109,37 @@ export function renderResults(main: HTMLElement): void {
       listEl.append(el("div", { class: "note warn" },
         anyFilter ? t("results.noneFiltered", { region: name }) : t("results.noneHardy", { region: name })));
     }
-    shown.forEach((r) => listEl.append(plantCard(r, store.weights)));
-    if (ranked.length > shown.length) {
+    shown.forEach((r) => listEl.append(plantCard(r, store.weights, nameQuery)));
+    if (hits.length > shown.length) {
       listEl.append(el("p", { style: "text-align:center;color:var(--ink-soft)" },
         t("results.showingTop", { n: fmtNumber(shown.length) })));
     }
   }
+
+  /** The line under the field: nothing typed says nothing. */
+  function matchLine(shown: number, total: number): (string | Node)[] {
+    if (!nameQuery) return [];
+    // Plural-aware: French agrees the verb and the noun with how many matched.
+    if (shown) {
+      return [tn("results.filterCount", shown,
+        { shown: fmtNumber(shown), total: fmtNumber(total), q: typedQuery })];
+    }
+    return [
+      t("results.filterNone"),
+      el("a", { href: `#/search/${encodeURIComponent(typedQuery)}` }, t("results.filterSearchAll")),
+      t("results.filterNoneRest"),
+    ];
+  }
+
+  const nameFilter = filterBox({
+    label: t("results.filterAria"),
+    placeholder: t("results.filterPlaceholder"),
+    onInput(nq, typed) {
+      nameQuery = nq;
+      typedQuery = typed;
+      rerender();
+    },
+  });
 
   // --- Sliders ---
   const sliderRows = WEIGHT_KEYS.map((key) => {
@@ -143,6 +187,12 @@ export function renderResults(main: HTMLElement): void {
   // summary, a Done button at the bottom, and the chevron makes state obvious.
   const weightsPanel = el("details", { open: false }, [
     el("summary", {}, t("results.weightsSummary")),
+    // How the ranking works, answered where the ranking is tuned. It used to
+    // stand open above the list — five lines of method every visit, between a
+    // reader and the plants they came for — and this is the one page where
+    // that aside is preamble rather than help: the question it answers is the
+    // one you're asking when you open this panel, and nowhere else.
+    whyThis(t("results.whyTitle"), t("results.why")),
     presetRow,
     ...sliderRows.map((s) => s.row),
     el("button", {
@@ -233,16 +283,22 @@ export function renderResults(main: HTMLElement): void {
     el("p", { class: "region-tag", style: "margin:0 0 0.5rem;font-size:0.9rem;color:var(--ink-soft)" },
       chosen ? t("results.regionTagPick", { region: name }) : t("results.regionTag", { region: name })),
     el("p", { class: "step-lede" }, conditions),
-    whyThis(t("results.whyTitle"), t("results.why")),
     el("div", { class: "result-controls" }, [weights, filters]),
-    el("div", { class: "btn-row", style: "margin-top:0" }, [
+    summaryEl,
+    nameFilter.node,
+    listEl,
+    // After the plants, like every other step in the flow puts its buttons
+    // after the thing the step is for. These used to sit above the list, which
+    // asked the reader to step over a dead end — a way back to the soil
+    // question, and an offer to save a spot they hadn't seen the plants for —
+    // before reaching the one thing they came for.
+    el("div", { class: "btn-row" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("confirm") }, t("results.back")),
       // A saved spot IS a coordinate — with a hand-picked region there's no
       // spot to save, so the button honestly isn't there.
       ...(hasCoords ? [el("button", { class: "btn btn-primary", onClick: doSave }, t("results.save"))] : []),
     ]),
-    ...(hasCoords ? [privacyNote(t("results.privacy"))] : []),
-    listEl
+    ...(hasCoords ? [privacyNote(t("results.privacy"))] : [])
   );
 
   rerender();
@@ -312,6 +368,13 @@ export function renderResults(main: HTMLElement): void {
       lon: store.draft.lon!.toFixed(4),
     });
   }
+}
+
+// Carries the English name too, not only the displayed one: a French reader who
+// knows a plant as "red maple" should still find it. Same three names the region
+// rosters match on.
+function nameHay(p: Plant): string {
+  return norm(`${commonName(p)} ${p.common} ${p.latin}`);
 }
 
 /** The rung of the ladder closest to a stored value, in feet. */

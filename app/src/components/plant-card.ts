@@ -12,9 +12,16 @@ import { keystoneIcon } from "./keystone-icon";
 import { t, fmtNumber, fmtList, monthName } from "../lib/i18n";
 import { length, humanHeightLabel } from "../lib/units";
 import { nameLines, commonName } from "../lib/names";
+import { highlight } from "./filter-field";
 import { prose } from "../lib/prose";
 
-export function plantCard(r: Ranked, weights: Weights): HTMLElement {
+/**
+ * @param nq A normalized filter query to underline in the card's two name
+ *   lines, the way a search result and a region roster row do ("" underlines
+ *   nothing). The ranked list rebuilds its cards on every keystroke, so the
+ *   query is a build-time argument rather than a handle to call back into.
+ */
+export function plantCard(r: Ranked, weights: Weights, nq = ""): HTMLElement {
   const p = r.plant;
 
   const badges = el("div", {}, [
@@ -34,8 +41,9 @@ export function plantCard(r: Ranked, weights: Weights): HTMLElement {
   const head = el("div", { class: "plant-head" }, [
     el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
     el("div", {}, [
-      el("h3", { class: "plant-name" }, names.title),
-      el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" }, names.sub),
+      el("h3", { class: "plant-name" }, highlight(names.title, nq)),
+      el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" },
+        highlight(names.sub, nq)),
       badges,
     ]),
   ]);

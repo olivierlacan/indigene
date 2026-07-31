@@ -107,6 +107,13 @@ subtitle on the What's new page.
 
 ### Changed
 
+- **The menu at the top of every page now says what each page holds.**
+  "Explore" is now **[Regions](https://indigene.app/#/regions)** — the places
+  Indigene knows, from Florida to the Piedmont — and "Search" is now
+  **[Plants](https://indigene.app/#/search)**, which lists every plant on
+  Indigene's list and lets you type a name to narrow it down.
+  **[Wildlife](https://indigene.app/#/wildlife)** keeps its name. In French the
+  three read **Régions**, **Plantes** and **Faune**.
 - **The bookmark button at the top of every page is now a ⚙️ menu**, and it
   holds your language and your units as well as your saved spots. It used to
   lead only to saved places, which meant the one setting a reader might

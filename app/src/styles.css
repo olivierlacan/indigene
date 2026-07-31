@@ -1960,25 +1960,41 @@ details.weights {
   }
 }
 
-/* --- "or" divider between two equally-weighted choices (location prompt) --- */
-/* A line — "or" — line rule, so sharing GPS and typing a ZIP read as peers,
-   not primary-and-fallback. */
-.or-sep {
+/* --- The two ways to say where "near you" is, on one row --- */
+/* Sharing GPS and typing a postal code are peers, and sitting side by side says
+   so more economically than the stacked button / "or" rule / labelled field it
+   replaced — four rows of chrome above a section whose content is photographs.
+   The button shrinks to its text and the field takes what's left; on a phone too
+   narrow for both, the field wraps under rather than squeezing to nothing. */
+.spot-row {
   display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin: 0.7rem 0;
-  font-size: 0.8rem;
-  color: var(--ink-soft);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
 }
-.or-sep::before,
-.or-sep::after {
-  content: "";
-  flex: 1 1 auto;
-  height: 1px;
-  background: var(--line);
+.spot-gps {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  gap: 0.35rem;
+  padding: 0.5rem 0.6rem;
+  font-size: 0.95rem;
+}
+.spot-search {
+  display: flex;
+  flex: 1 1 7rem;
+  min-width: 0;
+}
+.spot-search input {
+  font-size: 0.9rem;
+  padding: 0.5rem 0.6rem;
+}
+
+/* The section's one-line lede: subordinate to the controls under it, because
+   the controls are what the reader came to use. */
+.obs-section-lede {
+  margin: 0.2rem 0 0.1rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
 }
 
 /* --- Privacy reassurance line (under a location/save control) --- */
@@ -1994,6 +2010,10 @@ details.weights {
   text-decoration: underline;
   text-underline-offset: 2px;
   font-weight: 600;
+}
+.privacy-note-slim {
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
 }
 .privacy-note a:hover,
 .privacy-note a:focus-visible {
@@ -2080,33 +2100,20 @@ details.weights {
   color: var(--ink-soft);
 }
 
-/* --- iNaturalist "growing near you" observation strip --- */
-/* Each card is one nearby, research-grade sighting: a row of small square
-   photos over a one-line credit that links back to the observer's record.
-   The section-wide iNaturalist credit sits below in muted text. */
-.obs-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+/* --- iNaturalist "growing near you" sighting gallery --- */
+/* Every photo the lookup found, as one grid of squares — not a stack of cards
+   with a credit line each. A sighting usually has one photo, so the old shape
+   spent a whole bordered row and a line of small grey text per thumbnail; four
+   of them filled the screen with chrome and showed four pictures. The credit
+   moved to the lightbox, where someone is actually looking at the photo, and the
+   section-wide line below the grid still names iNaturalist and its observers. */
+.obs-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5.25rem, 1fr));
+  gap: 0.4rem;
   margin: 0.5rem 0;
 }
-.obs-card {
-  margin: 0;
-  padding: 0.6rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: calc(var(--radius) - 4px);
-}
-/* Three squares to a row, filling the card's width — on a phone that's a ~93px
-   thumbnail instead of a fixed 76px one, and never a ragged half-row left over.
-   The max-width stops them ballooning on a wide screen. */
-.obs-thumbs {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.4rem;
-  max-width: 21rem;
-}
-.obs-thumb {
+.obs-tile {
   position: relative;
   display: block;
   line-height: 0;
@@ -2117,11 +2124,11 @@ details.weights {
   background: none;
   cursor: pointer;
 }
-.obs-thumb:focus-visible {
+.obs-tile:focus-visible {
   outline: 2px solid var(--brand);
   outline-offset: 2px;
 }
-.obs-thumb img {
+.obs-tile img {
   width: 100%;
   height: auto;
   aspect-ratio: 1;
@@ -2129,12 +2136,12 @@ details.weights {
   background: var(--line);
   transition: transform 0.12s ease;
 }
-/* "+2" on the last thumbnail: this sighting has more photos than fit, and the
-   lightbox will page through them. */
-.obs-thumb-more {
+/* "+8" on the last tile: the lookup found more photos than the grid shows, and
+   the lightbox pages through all of them. Top-right, clear of the hover caption. */
+.obs-tile-more {
   position: absolute;
+  top: 0.25rem;
   right: 0.25rem;
-  bottom: 0.25rem;
   padding: 0.05rem 0.35rem;
   border-radius: 999px;
   background: rgb(0 0 0 / 0.62);
@@ -2143,22 +2150,64 @@ details.weights {
   font-weight: 650;
   line-height: 1.5;
 }
-.obs-thumb:hover img {
-  transform: scale(1.05);
+/* Where and when, on hover. Hidden by default and revealed only where there's a
+   real pointer: on a phone a tap must open the photo, not uncover a label, and
+   the lightbox says all of this the moment it opens. Two lines at most. */
+.obs-tile-meta {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 0.5rem 0.35rem 0.3rem;
+  background: linear-gradient(to top, rgb(0 0 0 / 0.82), rgb(0 0 0 / 0));
+  color: #fff;
+  font-size: 0.68rem;
+  line-height: 1.25;
+  text-align: left;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.12s ease;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
-.obs-credit {
-  margin: 0.45rem 0 0;
-  font-size: 0.85rem;
-  color: var(--ink-soft);
-}
-.obs-credit a {
-  color: inherit;
-  font-weight: 600;
+@media (hover: hover) {
+  .obs-tile:hover img {
+    transform: scale(1.05);
+  }
+  .obs-tile:hover .obs-tile-meta,
+  .obs-tile:focus-visible .obs-tile-meta {
+    opacity: 1;
+  }
 }
 .obs-attribution {
   margin: 0.5rem 0 0;
   font-size: 0.8rem;
   color: var(--ink-soft);
+}
+
+/* --- "Look it up where it's native" --- */
+/* One compact row of region buttons under a short lead. The lead carries the
+   sentence, so the buttons carry only what tells them apart. */
+.obs-elsewhere {
+  margin-top: 0.7rem;
+}
+.obs-elsewhere-lede {
+  margin: 0 0 0.35rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+.obs-elsewhere-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.btn-compact {
+  flex: 0 1 auto;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 /* --- iNaturalist photo lightbox --- */

@@ -23,8 +23,52 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Fixed
+
+- **"See it growing near you" was coming up empty for plants that are all over
+  the place.** Ask about a common oak or a maple in a town where thousands of
+  people have photographed one, and Indigene would answer that nobody had.
+  It was our fault, not iNaturalist's: instead of asking about the plant you
+  were looking at, we asked for the hundred most recent photos of *every*
+  native in your whole region and then hunted for yours among them. In a busy
+  area those hundred photos cover about a week, so any plant nobody happened to
+  photograph that week looked, to us, like a plant nobody had ever
+  photographed. Indigene now asks about one plant — the one whose page you're
+  on — and gets a real answer. Photos of a subspecies or a variety count now,
+  too; they were being thrown away, even though they're the same plant.
+- **When iNaturalist is simply busy, Indigene says so.** Every hitch used to
+  read "we couldn't reach iNaturalist", which sounds like something is broken.
+  Being asked to slow down for a minute now says that instead, so you know to
+  just try again.
+- Internal: `lib/nearby.ts` now queries iNaturalist per taxon
+  (`taxon_id=<this plant>`) and caches under `plant:<inatId>:<area>`, replacing
+  the region-wide fetch-once-and-index-by-taxon shape. That shape shared a
+  100-row page across a region's ~40 natives ordered by `observed_on desc`, so
+  coverage collapsed to the last few days in any well-observed area, and
+  descendant-rank observations were dropped by the exact-id join. `nativesOnly`
+  and `indexByTaxon` are gone — a single-taxon query makes both guarantees hold
+  by construction — and `wildlife-sightings.ts` now shares `loadSightings`
+  rather than keeping its own copy. HTTP failures throw a typed `InatError`
+  carrying the status, so 429/5xx reads as "busy" rather than "unreachable".
+
 ### Added
 
+- **Found photos are a gallery now.** They used to arrive as a stack of boxes,
+  one per sighting, each with a line of small grey type under it — so four
+  photos filled the screen and three of them were words. Now every photo the
+  lookup found sits in one grid of thumbnails you can take in at a glance. Tap
+  any of them and the big view tells you who took it, the licence they share it
+  under, where and when they saw it, and links to their original record — the
+  credit moved to where you're actually looking at the picture. On a computer,
+  hovering a thumbnail shows how far away and how recent it is.
+- **Fewer words, fewer boxes, above those photos.** The paragraph explaining
+  the lookup is now one line. *My location* and the postal-code box share a
+  single row instead of taking three. The promise about your location is a
+  link — [How your location is used](https://indigene.app/#/privacy) — which
+  opens the privacy page at the section that answers it, rather than a
+  paragraph repeated on every plant page. And the button for looking a plant up
+  elsewhere just says *Where it's native* when there's only one region to
+  choose.
 - **Indigene asks what you want the spot to do, before it shows you plants.**
   There's a new step in the walk — **Goals** — between the soil question and
   your plant list. Pick one: *feed the most wildlife*, *butterflies & moths*,

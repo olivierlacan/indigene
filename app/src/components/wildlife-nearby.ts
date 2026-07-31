@@ -25,12 +25,13 @@ import type { RegionDef } from "../lib/plants";
 import { regionsForWildlife } from "../lib/wildlife";
 import { wildlifeSightingsNear, wildlifeSightingsInRegion } from "../lib/wildlife-sightings";
 import type { SightingResult } from "../lib/wildlife-sightings";
+import { isBusy } from "../lib/inaturalist";
 import type { Bounds } from "../lib/inaturalist";
 import { observationList, freshnessLine } from "./observation-ui";
 import { locationPrompt } from "./location-prompt";
 import type { InatScope, Wildlife } from "../types";
 import { t, tn, fmtNumber } from "../lib/i18n";
-import { commonName, regionName } from "../lib/names";
+import { commonName, regionName, regionShort } from "../lib/names";
 
 /** "Where are we looking?" — near a chosen spot, or inside a named region's box. */
 type Mode = "near" | "region";
@@ -79,8 +80,8 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
     try {
       const result = await wildlifeSightingsNear(scope, w.id, lat, lon);
       renderResults(result, "near", region, label);
-    } catch {
-      showNote(t("nearby.unreachable"));
+    } catch (err) {
+      showNote(t(isBusy(err) ? "nearby.busy" : "nearby.unreachable"));
     }
   }
 
@@ -94,8 +95,8 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
     try {
       const result = await wildlifeSightingsInRegion(scope, w.id, region.meta.id, toBounds(region));
       renderResults(result, "region", region);
-    } catch {
-      showNote(t("nearby.unreachable"));
+    } catch (err) {
+      showNote(t(isBusy(err) ? "nearby.busy" : "nearby.unreachable"));
     } finally {
       btn.disabled = false;
       btn.textContent = label;
@@ -116,8 +117,9 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
       return;
     }
 
-    // Enough to show the animal, not a gallery to scroll forever.
-    const shown = sightings.slice(0, 4);
+    // Eight sightings' worth of photos feed the gallery, which caps itself at a
+    // dozen tiles — enough variety that the grid isn't four shots of one bird.
+    const shown = sightings.slice(0, 8);
     out.append(
       el("p", { style: "margin:0.6rem 0 0.4rem" },
         mode === "near"
@@ -136,16 +138,18 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
   function regionButtons(): HTMLElement | null {
     const regions = regionsForWildlife(w.id);
     if (!regions.length) return null;
-    return el("div", { style: "margin-top:0.8rem" }, [
-      el("p", { style: "margin:0 0 0.4rem;font-weight:650" }, t("wlNearby.notThereFound")),
-      el("div", { style: "display:flex;flex-wrap:wrap;gap:0.4rem" },
+    // Same thrift as the plant twin: one region needs no name (the line above
+    // said it), several need only the short form to tell them apart.
+    const many = regions.length > 1;
+    return el("div", { class: "obs-elsewhere" }, [
+      el("p", { class: "obs-elsewhere-lede" }, t("wlNearby.notThereFound")),
+      el("div", { class: "obs-elsewhere-row" },
         regions.map((r) => {
           const btn = el("button", {
             type: "button",
-            class: "btn btn-secondary",
-            style: "flex:1 1 auto;min-height:2.6rem;padding:0.4rem 0.7rem;font-size:0.9rem",
+            class: "btn btn-secondary btn-compact",
             onClick: () => void loadRegion(r, btn),
-          }, `🗺️ ${regionName(r.meta)}`) as HTMLButtonElement;
+          }, `🗺️ ${many ? regionShort(r.meta) : t("wlNearby.whereFound")}`) as HTMLButtonElement;
           return btn;
         }),
       ),
@@ -154,7 +158,7 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
 
   return el("section", { class: "card", style: "margin-top:1rem" }, [
     el("h3", { style: "margin-top:0" }, t("wlNearby.seeItNear")),
-    el("p", { style: "margin:0.3rem 0 0.6rem" }, t("wlNearby.seeItNearLede", { name: commonName(w) })),
+    el("p", { class: "obs-section-lede" }, t("wlNearby.seeItNearLede", { name: commonName(w) })),
     prompt,
     regionButtons(),
     out,

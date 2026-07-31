@@ -1,38 +1,56 @@
-// The cache-and-index layer over the iNaturalist client.
+// The cache-and-fetch layer over the iNaturalist client: **one taxon, one area,
+// one request, then a week of IndexedDB.**
 //
-// The rule the whole feature turns on: **hit the network at most once per area,
-// then serve every plant from memory/IndexedDB.** A single request returns the
-// research-grade plant observations for an area — either the ones closest to a
-// spot, or the ones inside a whole region's box; we trim it (see
-// `inaturalist.ts`), store the trimmed list in IndexedDB keyed by that area, and
-// index it by taxon id. Any recommended plant then answers "is this growing
-// here?" by a map lookup — no further calls.
+// A plant's page asks exactly one question — "is *this* plant growing near me?"
+// — so that is the question we put to iNaturalist: `taxon_id=<this plant>`,
+// bounded either by the spot's radius or by a region's coverage box. What comes
+// back is trimmed (see `inaturalist.ts`), cached under a key naming that taxon
+// and that area, and handed straight to the page.
+//
+// It used to ask a much wider question, and that was the bug. The old shape
+// fetched the 100 most recent observations of *every* native in the region in
+// one request, indexed them by taxon id, and let each plant look itself up. One
+// request served every plant — but those 100 rows were shared across ~40 taxa
+// and ordered by recency, so in a well-observed area they spanned only the last
+// few days. Any plant nobody had happened to photograph that week came back with
+// nothing, and the page said "no one has photographed and verified one here yet"
+// about a plant with thousands of nearby sightings. Worse, iNaturalist's
+// `taxon_id` filter matches *descendants*, so an observation identified as a
+// subspecies or variety came back under the subspecies' own id, missed the
+// exact-id lookup, and was dropped — silently, and after it had already eaten
+// one of the 100 slots.
+//
+// Asking per taxon costs one request per plant page per week per area instead of
+// one per region, and it answers the question that was actually asked. It also
+// makes two guarantees free rather than enforced downstream: everything returned
+// *is* the plant (or a subspecies of it), and nothing else can reach the cache.
 //
 // Two areas, one machinery:
-//   - `nearbyObservations` — a spot + radius, keyed by a ~11 km cell. "Near me."
-//   - `regionObservations` — a region's coverage box, keyed by region id. Lets
-//     you look up sightings in a specific ecoregion even when you're not there.
+//   - `plantSightingsNear` — a spot + radius, keyed by a ~11 km cell. "Near me."
+//   - `plantSightingsInRegion` — a region's coverage box, keyed by region id.
+//     Lets you look up sightings in an ecoregion even when you're not there.
 //
-// Freshness: observations accrete slowly and we're showing "here's roughly what
+// `wildlife-sightings.ts` is this same layer for animals and shares
+// `loadSightings` below; the only difference there is that an animal's taxon id
+// has to be resolved from its scientific name first.
+//
+// Freshness: sightings accrete slowly and we're showing "here's roughly what
 // this looks like", not a live feed, so a week-old cache is fine.
 import {
   fetchNearbyObservations,
   fetchRegionObservations,
   boundsCenter,
-  indexByTaxon,
   DEFAULT_RADIUS_KM,
-  type NearbyQuery,
   type Bounds,
   type ObservationSummary,
 } from "./inaturalist";
-import { entryByInatId } from "./registry";
 import {
   getCachedObservations,
   putCachedObservations,
   type CachedObservations,
 } from "../db";
 
-/** How long a cached nearby-list stays usable. */
+/** How long a cached list stays usable. */
 export const CACHE_TTL_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 
 /** Cell size for the cache key — ~0.1° ≈ 11 km, comfortably inside the 50 km
@@ -51,103 +69,81 @@ export function regionCacheKey(regionId: string): string {
   return `region:${regionId}`;
 }
 
-/** True when a cache record is missing or older than the TTL. */
-function isStale(rec: CachedObservations | undefined, now: number): rec is undefined {
-  return !rec || now - rec.capturedAt > CACHE_TTL_MS;
-}
-
-export interface NearbyResult {
-  /** All observations for the area — nearest-first for a spot, most-recent-first
-   *  for a region (where there's no "you" to measure distance from). */
+export interface SightingResult {
+  /** The taxon's sightings for the area — nearest-first for a spot,
+   *  most-recent-first for a region (where there's no "you" to measure from). */
   observations: ObservationSummary[];
-  /** Indexed by iNaturalist taxon id for O(1) per-plant lookup. */
-  byTaxon: Map<number, ObservationSummary[]>;
   /** The point distances were measured from (the spot, or a region's box center). */
   from: { lat: number; lon: number };
   /** true when served from IndexedDB, false when just fetched from the network. */
   fromCache: boolean;
 }
 
-// Keep only observations whose taxon is one of our catalog natives. Queries are
-// already scoped to the area's native taxa, but enforcing it here makes
-// "natives only" a property of the layer — nothing non-native ever reaches the
-// cache or the screen, even if a query is somehow left unscoped.
-function nativesOnly(list: ObservationSummary[]): ObservationSummary[] {
-  return list.filter((o) => entryByInatId(String(o.taxonId)));
+/** True when a cache record is missing or older than the TTL. */
+function isStale(rec: CachedObservations | undefined, now: number): rec is undefined {
+  return !rec || now - rec.capturedAt > CACHE_TTL_MS;
 }
 
-// The shared machinery: return a fresh cached list if there is one, otherwise
-// run `fetcher`, keep only natives, write the trimmed list back, and index it.
-async function loadIndexed(
-  record: Omit<CachedObservations, "capturedAt" | "observations">,
+/**
+ * The shared machinery, used by both this module and `wildlife-sightings.ts`:
+ * return a fresh cached list if there is one, otherwise run `fetcher`, write the
+ * trimmed list back, and hand it up. The write is best-effort — a full or
+ * quota-limited IndexedDB shouldn't sink the feature, so we still return the
+ * freshly fetched list.
+ */
+export async function loadSightings(
+  key: string,
+  from: { lat: number; lon: number },
   fetcher: () => Promise<ObservationSummary[]>,
   now: number,
-): Promise<NearbyResult> {
-  const cached = await getCachedObservations(record.key).catch(() => undefined);
+): Promise<SightingResult> {
+  const cached = await getCachedObservations(key).catch(() => undefined);
   if (!isStale(cached, now)) {
-    return {
-      observations: cached.observations,
-      byTaxon: indexByTaxon(cached.observations),
-      from: cached.from,
-      fromCache: true,
-    };
+    return { observations: cached.observations, from: cached.from, fromCache: true };
   }
-  const observations = nativesOnly(await fetcher());
-  // Best-effort write: a full or quota-limited IndexedDB shouldn't sink the
-  // feature — we still return the freshly fetched list.
-  await putCachedObservations({ ...record, capturedAt: now, observations }).catch(() => {});
-  return {
-    observations,
-    byTaxon: indexByTaxon(observations),
-    from: record.from,
-    fromCache: false,
-  };
+  const observations = await fetcher();
+  await putCachedObservations({ key, from, capturedAt: now, observations }).catch(() => {});
+  return { observations, from, fromCache: false };
 }
 
 /**
- * The observation index for a spot ("near me"), fetching from iNaturalist only
- * if there's no fresh cached list for the cell. Rejects only on a genuine
- * fetch's network failure; a cache hit never touches the network. `now` is
- * injectable for testing and defaults to the current time.
+ * One plant's research-grade, photographed sightings near a spot, fetching from
+ * iNaturalist only if there's no fresh cached list for this plant + cell.
+ * `inatId` is the taxon id as the registry stores it (`identifiers.inat`).
+ * Rejects only on a genuine fetch's failure — an `InatError` carrying the HTTP
+ * status, so the caller can tell "slow down" from "unreachable"; a cache hit
+ * never touches the network. `now` is injectable for testing.
  */
-export async function nearbyObservations(
-  q: NearbyQuery,
+export async function plantSightingsNear(
+  inatId: string,
+  lat: number,
+  lon: number,
   now: number = Date.now(),
-): Promise<NearbyResult> {
-  const radiusKm = q.radiusKm ?? DEFAULT_RADIUS_KM;
-  return loadIndexed(
-    { key: cacheKey(q.lat, q.lon, radiusKm), from: { lat: q.lat, lon: q.lon }, radiusKm },
-    () => fetchNearbyObservations({ ...q, radiusKm }),
+): Promise<SightingResult> {
+  const radiusKm = DEFAULT_RADIUS_KM;
+  return loadSightings(
+    `plant:${inatId}:${cacheKey(lat, lon, radiusKm)}`,
+    { lat, lon },
+    () => fetchNearbyObservations({ lat, lon, radiusKm, taxonIds: [inatId] }),
     now,
   );
 }
 
 /**
- * The observation index for a whole region's box ("in this ecoregion, even if
- * you're not there"). Cached once per region id and scoped to that region's
- * native taxa. Same fetch-once-then-serve-from-cache contract as `nearbyObservations`.
+ * One plant's sightings inside a region's coverage box ("show it to me in an
+ * ecoregion it's native to, even though I'm not there"). Cached once per plant +
+ * region id. Same fetch-once-then-serve-from-cache contract as the spot lookup.
  */
-export async function regionObservations(
+export async function plantSightingsInRegion(
+  inatId: string,
   regionId: string,
   bounds: Bounds,
-  taxonIds: readonly string[],
   now: number = Date.now(),
-): Promise<NearbyResult> {
-  return loadIndexed(
-    { key: regionCacheKey(regionId), from: boundsCenter(bounds), regionId },
-    () => fetchRegionObservations({ bounds, taxonIds }),
+): Promise<SightingResult> {
+  return loadSightings(
+    `plant:${inatId}:${regionCacheKey(regionId)}`,
+    boundsCenter(bounds),
+    () => fetchRegionObservations({ bounds, taxonIds: [inatId] }),
     now,
   );
-}
-
-/** The observations for one plant, by its iNaturalist taxon id (a string, as
- *  stored in the registry's `identifiers.inat`). Empty when none are nearby. */
-export function observationsForTaxon(
-  result: NearbyResult,
-  inatId: string | undefined,
-): ObservationSummary[] {
-  if (!inatId) return [];
-  const id = Number(inatId);
-  if (!Number.isFinite(id)) return [];
-  return result.byTaxon.get(id) ?? [];
 }

@@ -10,9 +10,22 @@
 // The ZIP/town → coordinate step is the app's existing geocoder (`lib/geocode`,
 // Open-Meteo, no key, town/postal-code granularity), the same one the plant
 // suitability checker uses — no new provider, no new trust decision.
+//
+// **Both routes share one row.** They used to stack: a full-width primary button,
+// an "or" rule, a field label, and the input with its own Search button — five
+// controls' worth of chrome to ask one short question, above the fold of a
+// section whose actual content is photographs. Now the button sits beside the
+// field, and the privacy promise is a one-line link into the page that spells it
+// out rather than a paragraph restated in place.
+//
+// The Search button went with it. The field is a `type="search"` inside a
+// `<form>`, so Enter submits it and every mobile keyboard offers a Search key —
+// the button was spending the width the field needed at a 360 px phone on an
+// action the field already offers. Progress is reported where the answer will
+// appear, which is where someone is looking anyway.
 import { el, clear } from "../ui";
 import { searchPlaces, placeLabel } from "../lib/geocode";
-import { privacyNote } from "./privacy-link";
+import { privacyLink } from "./privacy-link";
 import { t } from "../lib/i18n";
 
 export interface LocationPromptConfig {
@@ -44,7 +57,7 @@ export function locationPrompt(config: LocationPromptConfig): HTMLElement {
   // ---- Route 1: the device's location ----
   const gpsBtn = el("button", {
     type: "button",
-    class: "btn btn-primary btn-block",
+    class: "btn btn-primary spot-gps",
     onClick: useGps,
   }, `📍 ${gpsLabel}`) as HTMLButtonElement;
 
@@ -86,11 +99,6 @@ export function locationPrompt(config: LocationPromptConfig): HTMLElement {
     placeholder: t("prompt.placeholder"),
     style: "flex:1 1 auto;min-width:0",
   }) as HTMLInputElement;
-  const searchBtn = el("button", {
-    type: "submit",
-    class: "btn btn-secondary",
-    style: "flex:none",
-  }, t("location.search")) as HTMLButtonElement;
   const results = el("div", { "aria-live": "polite" });
 
   async function doSearch(): Promise<void> {
@@ -98,8 +106,10 @@ export function locationPrompt(config: LocationPromptConfig): HTMLElement {
     if (!q) return;
     clear(msg);
     clear(results);
-    searchBtn.disabled = true;
-    searchBtn.textContent = t("location.searching");
+    input.disabled = true;
+    // The progress line stands where the results will, so the eye doesn't have
+    // to move when they arrive.
+    results.append(el("p", { class: "note", style: "margin:0.5rem 0 0" }, t("location.searching")));
     try {
       const places = await searchPlaces(q);
       clear(results);
@@ -126,24 +136,26 @@ export function locationPrompt(config: LocationPromptConfig): HTMLElement {
     } catch {
       note(t("prompt.offline"));
     } finally {
-      searchBtn.disabled = false;
-      searchBtn.textContent = t("location.search");
+      input.disabled = false;
     }
   }
 
+  // One row: the GPS button, then the place field. The label is visually hidden
+  // rather than dropped — the placeholder is an example, not a name for the
+  // field, and a screen reader still needs the name.
   return el("div", {}, [
-    gpsBtn,
-    el("p", { class: "or-sep", "aria-hidden": "true" }, t("prompt.or")),
-    el("form", {
-      onSubmit: (e: Event) => { e.preventDefault(); void doSearch(); },
-    }, [
-      el("div", { class: "field" }, [
-        el("label", { for: `${idBase}-place` }, t("prompt.label")),
-        el("div", { style: "display:flex;gap:0.5rem" }, [input, searchBtn]),
+    el("div", { class: "spot-row" }, [
+      gpsBtn,
+      el("form", {
+        class: "spot-search",
+        onSubmit: (e: Event) => { e.preventDefault(); void doSearch(); },
+      }, [
+        el("label", { for: `${idBase}-place`, class: "sr-only" }, t("prompt.label")),
+        input,
       ]),
     ]),
     results,
     msg,
-    privacyNote(t("prompt.privacy")),
+    privacyLink(t("prompt.privacyLink"), "lookups"),
   ]);
 }

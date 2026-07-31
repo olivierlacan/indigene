@@ -12,16 +12,17 @@
 //   - iNaturalist is credited on the section, and every photo carries its own
 //     observer + licence credit straight from the API.
 import { el, clear } from "../ui";
-import { entryForPlant, inatIdsForRegions } from "../lib/registry";
+import { entryForPlant } from "../lib/registry";
 import { regionForSite, REGIONS } from "../lib/plants";
 import type { RegionDef } from "../lib/plants";
-import { nearbyObservations, regionObservations, observationsForTaxon } from "../lib/nearby";
-import type { NearbyResult } from "../lib/nearby";
-import type { Bounds, ObservationSummary } from "../lib/inaturalist";
+import { plantSightingsNear, plantSightingsInRegion } from "../lib/nearby";
+import type { SightingResult } from "../lib/nearby";
+import { isBusy } from "../lib/inaturalist";
+import type { Bounds } from "../lib/inaturalist";
 import { observationList, freshnessLine } from "./observation-ui";
 import { locationPrompt } from "./location-prompt";
 import { t, tn, fmtNumber } from "../lib/i18n";
-import { commonName, regionName } from "../lib/names";
+import { commonName, regionName, regionShort } from "../lib/names";
 import { fmtList } from "../lib/i18n";
 import type { Plant } from "../types";
 
@@ -81,14 +82,14 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
 
     showBusy();
     try {
-      // Scope the query to this region's natives, so iNaturalist only returns —
-      // and we only cache — plants that belong here.
-      const taxonIds = inatIdsForRegions([region.meta.id]);
-      const result = await nearbyObservations({ lat, lon, taxonIds });
-      const mine = observationsForTaxon(result, inatId);
-      renderResults(result, mine, region, "near", label);
-    } catch {
-      showNote(t("nearby.unreachable"));
+      // One question, one taxon: "is *this* plant growing near here?" Everything
+      // that comes back is this plant or a subspecies of it, which is what makes
+      // the native-only promise hold without a filter — and the two gates above
+      // already refused to look anywhere our data doesn't vouch for it.
+      const result = await plantSightingsNear(inatId, lat, lon);
+      renderResults(result, region, "near", label);
+    } catch (err) {
+      showNote(t(isBusy(err) ? "nearby.busy" : "nearby.unreachable"));
     }
   }
 
@@ -104,20 +105,19 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
     btn.textContent = t("nearby.asking");
     showBusy();
     try {
-      const taxonIds = inatIdsForRegions([region.meta.id]);
-      const result = await regionObservations(region.meta.id, toBounds(region), taxonIds);
-      const mine = observationsForTaxon(result, inatId);
-      renderResults(result, mine, region, "region");
-    } catch {
-      showNote(t("nearby.unreachable"));
+      const result = await plantSightingsInRegion(inatId, region.meta.id, toBounds(region));
+      renderResults(result, region, "region");
+    } catch (err) {
+      showNote(t(isBusy(err) ? "nearby.busy" : "nearby.unreachable"));
     } finally {
       btn.disabled = false;
       btn.textContent = label;
     }
   }
 
-  function renderResults(result: NearbyResult, mine: ObservationSummary[], region: RegionDef, mode: Mode, label?: string): void {
+  function renderResults(result: SightingResult, region: RegionDef, mode: Mode, label?: string): void {
     clear(out);
+    const mine = result.observations;
     const where = label ? t("nearby.nearPlace", { place: label }) : t("nearby.closeToYou");
     const name = commonName(plant);
     if (!mine.length) {
@@ -129,8 +129,9 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
       return;
     }
 
-    // Enough to show the plant, not a gallery to scroll forever.
-    const shown = mine.slice(0, 4);
+    // Eight sightings' worth of photos feed the gallery, which caps itself at a
+    // dozen tiles — enough variety that the grid isn't four shots of one bush.
+    const shown = mine.slice(0, 8);
     out.append(
       el("p", { style: "margin:0.6rem 0 0.4rem" },
         mode === "near"
@@ -153,16 +154,21 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
       .map((id) => REGIONS.find((r) => r.meta.id === id))
       .filter((r): r is RegionDef => Boolean(r));
     if (!regions.length) return null;
-    return el("div", { style: "margin-top:0.8rem" }, [
-      el("p", { style: "margin:0 0 0.4rem;font-weight:650" }, t("nearby.notThereNative")),
-      el("div", { style: "display:flex;flex-wrap:wrap;gap:0.4rem" },
+    // The label leans on the line above it. With one native region there is
+    // nothing to choose between, so the button says what it does and skips the
+    // name entirely; with several it needs to tell them apart, and the short
+    // form does that without the parenthetical qualifier that made the full name
+    // wrap ("Pacific Northwest", not "Pacific Northwest (west of the Cascades)").
+    const many = regions.length > 1;
+    return el("div", { class: "obs-elsewhere" }, [
+      el("p", { class: "obs-elsewhere-lede" }, t("nearby.notThereNative")),
+      el("div", { class: "obs-elsewhere-row" },
         regions.map((r) => {
           const btn = el("button", {
             type: "button",
-            class: "btn btn-secondary",
-            style: "flex:1 1 auto;min-height:2.6rem;padding:0.4rem 0.7rem;font-size:0.9rem",
+            class: "btn btn-secondary btn-compact",
             onClick: () => void loadRegion(r, btn),
-          }, `🗺️ ${regionName(r.meta)}`) as HTMLButtonElement;
+          }, `🗺️ ${many ? regionShort(r.meta) : t("nearby.whereNative")}`) as HTMLButtonElement;
           return btn;
         }),
       ),
@@ -189,7 +195,7 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
     // No plant name in the heading — the page is already about this plant, and
     // interpolating one would change the heading's width per species.
     el("h3", { style: "margin-top:0" }, t("nearby.seeItGrowing")),
-    el("p", { style: "margin:0.3rem 0 0.6rem" }, t("nearby.seeItGrowingLede", { name: commonName(plant) })),
+    el("p", { class: "obs-section-lede" }, t("nearby.seeItGrowingLede", { name: commonName(plant) })),
     prompt,
     regionButtons(),
     out,

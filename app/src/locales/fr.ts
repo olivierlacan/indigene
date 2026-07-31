@@ -1258,17 +1258,15 @@ export const fr: Dict = {
   "prompt.getting": "Récupération de votre position…",
   "prompt.denied": "Position refusée — ce n'est pas grave ; saisissez un code postal ou une commune ci-dessous.",
   "prompt.noFix": "Impossible d'obtenir votre position. Réessayez, ou saisissez un code postal ou une commune ci-dessous.",
-  "prompt.placeholder": "ex. 44000, ou Nantes",
+  "prompt.placeholder": "Code postal",
   "prompt.notFound":
     "Ce code postal ou ce lieu est introuvable. Essayez une commune proche avec sa région — « Saint-Denis Réunion » par exemple — ou un code postal complet.",
   "prompt.offline":
     "La recherche de lieux a besoin d'une connexion et nous n'avons pas pu l'atteindre. Si votre appareil a un GPS, utilisez le bouton de position ci-dessus.",
-  "prompt.or": "ou",
   "prompt.label": "Saisissez un code postal ou une commune",
-  "prompt.privacy":
-    "Quel que soit votre choix, cela ne sert qu'à cette recherche et ne quitte jamais votre appareil, sinon sous forme de requête anonyme à iNaturalist",
+  "prompt.privacyLink": "Ce que devient votre position",
   "obs.creditLead": "Observations et photos issues d'",
-  "obs.creditMid": ", chacune © son observateur, sous la licence indiquée. ",
+  "obs.creditMid": ", chacune © son observateur — ouvrez une photo pour son nom, sa licence et un lien vers l'observation d'origine. ",
   "obs.fromCache": "Chargées depuis le cache de cet appareil — ",
   "obs.fetchedNow": "Récupérées à l'instant par votre navigateur — ",
   "obs.creditEnd": "c'est votre navigateur qui appelle iNaturalist directement : ils voient votre requête, pas la nôtre.",
@@ -1277,7 +1275,7 @@ export const fr: Dict = {
   "obs.seenOn": "vue en {month} {year}",
   "obs.seenIn": "vue en {year}",
   "obs.enlarge": "Agrandir la photo {i} de {name} par {observer}",
-  "obs.enlargeMore": ", et en voir {n} de plus pour cette observation",
+  "obs.enlargeMore": ", et en voir {n} de plus",
   "obs.tapToEnlarge": "{attribution} — touchez pour agrandir",
   "obs.photoAlt": "{name} photographié par {observer}",
   "lightbox.prev": "Photo précédente",
@@ -1287,7 +1285,7 @@ export const fr: Dict = {
   "lightbox.viewOriginal": "Voir l'observation d'origine ↗",
   "lightbox.sightingOf": "observation {i} sur {n}",
   "lightbox.credit": "Photo © {observer} · {licence} · via {site}",
-  "nearby.useMyLocation": "Utiliser ma position",
+  "nearby.useMyLocation": "Ma position",
   "nearby.asking": "Interrogation d'iNaturalist…",
   "nearby.unreachable":
     "Nous n'avons pas pu joindre iNaturalist à l'instant. L'appel part directement de votre navigateur : une connexion capricieuse ou une requête bloquée suffit à l'interrompre — réessayez plus tard.",
@@ -1297,7 +1295,7 @@ export const fr: Dict = {
   "nearby.foundNear": "Nous en avons trouvé {n} à proximité : ",
   "nearby.seeItGrowing": "La voir pousser près de chez vous",
   "nearby.seeItGrowingLede":
-    "Le dessin ci-dessus est à l'échelle, mais rien ne remplace la vue d'un {name} adulte en pleine terre. Partagez votre position ou saisissez un code postal, et nous irons chercher de vraies photos, vérifiées par la communauté, de sujets qui poussent près de là — ou consultez-la dans une région dont elle est indigène, même si vous n'y êtes pas. Dans les deux cas les photos viennent en direct d'iNaturalist, appelé par votre propre navigateur, et créditées à celles et ceux qui les ont prises.",
+    "Des photos vérifiées par la communauté iNaturalist, de vrais spécimens près d'un lieu que vous choisissez — ou partout où l'espèce est indigène.",
   "nearby.outsideYou":
     "Vous êtes en dehors des régions pour lesquelles Indigene a des données sur les plantes indigènes : nous ne pouvons donc pas garantir ce qui y est vraiment indigène — et nous ne ferons pas passer des observations voisines pour des indigènes locales. Les mesures de soleil, de sol et de climat fonctionnent partout.",
   "nearby.outsidePlace":
@@ -1316,14 +1314,17 @@ export const fr: Dict = {
     "observation de qualité recherche de {name} en {region} — vérifiée et photographiée par la communauté iNaturalist (vous n'avez pas besoin d'y être) :",
   "nearby.foundRest.other":
     "observations de qualité recherche de {name} en {region} — vérifiées et photographiées par la communauté iNaturalist (vous n'avez pas besoin d'y être) :",
-  "nearby.notThereNative": "Vous n'y êtes pas ? Cherchez-la là où elle est indigène :",
+  "nearby.notThereNative": "Vous n'y êtes pas ?",
+  "nearby.whereNative": "Là où elle est indigène",
+  "nearby.busy":
+    "iNaturalist nous demande de ralentir : le service est très sollicité. Patientez une minute et réessayez.",
   "nearby.nativeToList": "indigène de {list}",
   "nearby.nativeToOther": "indigène d'une autre région",
   "nearby.nativeElsewhere":
     "Nos données donnent {name} comme {belongs}, et non de {region}. Elle peut apparaître sur iNaturalist là-bas comme sujet planté ou échappé de culture, mais nous ne la présenterons pas comme une indigène locale là où elle n'a pas sa place — ce serait le contraire de ce à quoi Indigene sert.",
   "wlNearby.seeItNear": "Le voir près de chez vous",
   "wlNearby.seeItNearLede":
-    "Rien ne remplace la vue d'un vrai {name}. Partagez votre position ou saisissez un code postal, et nous irons chercher des photos iNaturalist vérifiées par la communauté, prises près de là — ou consultez-le dans une région où il est présent, même si vous n'y êtes pas. Dans les deux cas les photos viennent en direct d'iNaturalist, appelé par votre propre navigateur, et créditées à celles et ceux qui les ont prises.",
+    "Des photos vérifiées par la communauté iNaturalist, de vrais individus observés près d'un lieu que vous choisissez — ou partout où l'espèce est présente.",
   "wlNearby.outsideYou":
     "Vous êtes en dehors des régions couvertes par Indigene : nous ne pouvons donc pas faire de recherche à proximité. Vous pouvez tout de même le chercher dans une région où il est présent, ci-dessous.",
   "wlNearby.outsidePlace":
@@ -1340,7 +1341,8 @@ export const fr: Dict = {
     "observation de qualité recherche de {name} en {region} — vérifiée et photographiée par la communauté iNaturalist (vous n'avez pas besoin d'y être) :",
   "wlNearby.foundRest.other":
     "observations de qualité recherche de {name} en {region} — vérifiées et photographiées par la communauté iNaturalist (vous n'avez pas besoin d'y être) :",
-  "wlNearby.notThereFound": "Vous n'y êtes pas ? Cherchez-le là où il est présent :",
+  "wlNearby.notThereFound": "Vous n'y êtes pas ?",
+  "wlNearby.whereFound": "Là où il est présent",
 
   // ---------------------------------------------------------------------
   // Écorégions.

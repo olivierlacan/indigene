@@ -12,6 +12,11 @@
 // The page is built from a list of dictionary keys rather than inline prose, so
 // a translator meets the document as a document — one ordered run of paragraphs
 // in `locales/*` — instead of hunting sentences out of DOM-building code.
+//
+// It takes an optional param — `#/privacy/lookups`, `#/privacy/location` — so a
+// control elsewhere in the app can link to the section that answers the question
+// it raises, instead of restating the answer beside itself. Same idea, and the
+// same reveal, as `#/settings/<card>`.
 import { el, clear } from "../ui";
 import { navigate } from "../state";
 import { DATA_SOURCES_URL, ISSUES_URL } from "../lib/plain";
@@ -19,6 +24,15 @@ import { t, tx } from "../lib/i18n";
 import type { TKey } from "../locales/en";
 
 const REPO_URL = "https://github.com/olivierlacan/indigene";
+
+/** The sections a `#/privacy/<param>` link can ask for, by their route word.
+ *  The words are the `PrivacySection` union in `components/privacy-link.ts`. */
+const SECTION_IDS: Record<string, string> = {
+  location: "privacy-location",
+  lookups: "privacy-lookups",
+  saved: "privacy-saved",
+  children: "privacy-children",
+};
 
 /** The public services a lookup can reach, and what each one is told. Their
  *  *names* are proper nouns and never translate; the two descriptions do. */
@@ -43,7 +57,7 @@ function service(name: string, forWhat: string, sent: string): HTMLElement {
 const bullets = (keys: TKey[]): HTMLElement =>
   el("ul", {}, keys.map((k) => el("li", {}, t(k))));
 
-export function renderPrivacy(main: HTMLElement): void {
+export function renderPrivacy(main: HTMLElement, param?: string): void {
   clear(main);
   document.title = t("privacy.docTitle");
 
@@ -58,25 +72,25 @@ export function renderPrivacy(main: HTMLElement): void {
         bullets(["privacy.short1", "privacy.short2", "privacy.short3", "privacy.short4", "privacy.short5"]),
       ]),
 
-      el("h3", {}, t("privacy.locationTitle")),
+      el("h3", { id: "privacy-location" }, t("privacy.locationTitle")),
       el("p", {}, t("privacy.location1")),
       el("p", {}, tx("privacy.location2", { zip: el("strong", {}, t("privacy.zipOrTown")) })),
       el("p", {}, t("privacy.location3")),
 
-      el("h3", {}, t("privacy.whereTitle")),
+      el("h3", { id: "privacy-lookups" }, t("privacy.whereTitle")),
       el("p", {}, t("privacy.whereLede")),
       el("ul", { class: "who-list" }, SERVICES.map((s) => service(s.name, t(s.forWhat), t(s.sent)))),
       el("p", {}, tx("privacy.whereFooter", {
         link: el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, t("privacy.dataSourcesLink")),
       })),
 
-      el("h3", {}, t("privacy.savedTitle")),
+      el("h3", { id: "privacy-saved" }, t("privacy.savedTitle")),
       el("p", {}, tx("privacy.saved", { save: el("strong", {}, t("privacy.saveButton")) })),
 
       el("h3", {}, t("privacy.noAccountTitle")),
       bullets(["privacy.noAccount1", "privacy.noAccount2", "privacy.noAccount3"]),
 
-      el("h3", {}, t("privacy.childrenTitle")),
+      el("h3", { id: "privacy-children" }, t("privacy.childrenTitle")),
       bullets([
         "privacy.children1",
         "privacy.children2",
@@ -101,4 +115,27 @@ export function renderPrivacy(main: HTMLElement): void {
       ]),
     ]),
   );
+
+  revealSection(param);
+}
+
+/**
+ * Open the page at the section a link asked for. Mirrors `#/settings/<card>`:
+ * scroll only if the heading isn't already on screen, then move focus there so a
+ * keyboard or screen-reader user arrives where a sighted one is looking.
+ *
+ * An unknown param — a typo, an old link — is not an error worth a message:
+ * `#/privacy/whatever` is still the privacy page, opened at the top.
+ */
+function revealSection(param?: string): void {
+  const id = param ? SECTION_IDS[param] : undefined;
+  if (!id) return;
+  requestAnimationFrame(() => {
+    const heading = document.getElementById(id);
+    if (!heading) return;
+    const box = heading.getBoundingClientRect();
+    if (box.top < 0 || box.bottom > window.innerHeight) heading.scrollIntoView({ block: "start" });
+    heading.setAttribute("tabindex", "-1");
+    heading.focus({ preventScroll: true });
+  });
 }

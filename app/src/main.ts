@@ -24,6 +24,7 @@ import { applyDocumentLang, consumeLangParam, onLangChange, t } from "./lib/i18n
 import type { TKey } from "./locales/en";
 import { onUnitsChange } from "./lib/units";
 import { renderChrome } from "./components/chrome";
+import { mountUntranslatedBanner, resetUntranslated } from "./components/wip-banner";
 
 type StepFn = (main: HTMLElement, param?: string) => void | (() => void) | Promise<void>;
 
@@ -175,6 +176,7 @@ async function route(): Promise<void> {
   if (cleanup) { cleanup(); cleanup = null; }
   closeAppMenu(); // a navigation always dismisses an open header menu
   closeTermDialog(); // …and any explain-this dialog, which would float above the new page
+  resetUntranslated(); // whatever the last page admitted to isn't this page's
   document.title = t("app.title"); // plant pages set their own; everything else resets
   renderStepRail(step);
   updateSiteNav(step);
@@ -186,6 +188,10 @@ async function route(): Promise<void> {
     const r = await result;
     if (typeof r === "function") cleanup = r;
   }
+  // Mounted here rather than by the step: one banner per page, always the first
+  // thing under the header, wherever in its own layout the step happened to
+  // notice the gap (see components/wip-banner.ts).
+  mountUntranslatedBanner(main);
   landAtTop();
 }
 

@@ -569,6 +569,57 @@ a {
   color: inherit;
 }
 
+/* --- The "still being translated" banner -------------------------------- */
+/* Roadworks hazard tape, because that is honestly what this is: a page still
+   being built, safe to use, worth reading carefully. It sits at the very top of
+   `main` (see components/wip-banner.ts) so a reader meets it before the mixed
+   language rather than after wondering about it.
+
+   The stripes are decorative only — every word sits on the caution palette
+   (--warn-bg/--warn-ink), which is already contrast-checked in both themes, so
+   the amber and black never have to carry text. Static, never animated: a
+   moving barber pole at the top of every page would be a nuisance long before
+   it was informative. */
+.wip-banner {
+  /* Fixed rather than themed: hazard tape is amber-on-black in every light,
+     and these two only ever paint the stripes. */
+  --hazard-ink: #17150e;
+  --hazard-amber: #f4b93c;
+  margin: 0 0 1rem;
+  border-radius: var(--radius);
+  overflow: hidden; /* keeps the stripes inside the rounded corners */
+  background: var(--warn-bg);
+  color: var(--warn-ink);
+}
+.wip-hazard {
+  height: 0.5rem;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--hazard-ink) 0 0.5rem,
+    var(--hazard-amber) 0.5rem 1rem
+  );
+}
+.wip-banner-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  padding: 0.75rem 1rem;
+}
+.wip-banner-icon {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  flex: 0 0 auto;
+}
+.wip-banner-text {
+  margin: 0;
+  font-size: 0.95rem;
+  min-width: 0;
+}
+.wip-banner-title {
+  display: block;
+  color: inherit;
+}
+
 /* --- Disclosures --- */
 /* The only things that still open and close are the sort/filter panels on the
    results page — everything else renders in plain sight. Their summaries look
@@ -2083,6 +2134,12 @@ body[data-layout="wide"] .step-lede,
 body[data-layout="wide"] .note,
 body[data-layout="wide"] .confidence,
 body[data-layout="wide"] .app-footer p {
+  max-width: 36rem;
+}
+/* The banner is the exception: it's a sign about the whole page, not prose
+   within it, so on a wide index it spans the page the way a sign would. Its
+   *sentence* still keeps the reading measure. */
+body[data-layout="wide"] .wip-banner-text {
   max-width: 36rem;
 }
 

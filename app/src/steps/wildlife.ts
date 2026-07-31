@@ -50,6 +50,7 @@ import type { SupportLink } from "../types";
 import { t, tn, fmtNumber, fmtList, getLang } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
 import { wildlifeBlurb, supportNote, wildlifeUntranslated } from "../lib/prose";
+import { reportUntranslated } from "../components/wip-banner";
 
 // Shared honesty note: this is the notable, mapped wildlife — never a claim to
 // be the whole food web. Shown on both the index and every animal's page. A
@@ -115,6 +116,11 @@ export function renderWildlifeIndex(main: HTMLElement, view: IndexView = {}): vo
       ? t("wildlife.regionDocTitle", { region: regionName(region.meta) })
       : t("wildlife.indexDocTitle");
 
+  // The animals' own writing hasn't been translated yet (see lib/prose): report
+  // it, and main.ts banners it at the top rather than letting the page mix two
+  // languages in silence.
+  if (wildlifeUntranslated(rows.map((r) => r.wildlife))) reportUntranslated(t("wip.wildlife"));
+
   // The line above the heading says what you've already narrowed to, and is the
   // way back out of it: the region page for a region, the whole catalog for a
   // group.
@@ -164,12 +170,6 @@ export function renderWildlifeIndex(main: HTMLElement, view: IndexView = {}): vo
         ]),
       );
     }
-  }
-
-  // The animals' own writing hasn't been translated yet (see lib/prose): say so
-  // once at the top rather than let the page mix two languages in silence.
-  if (wildlifeUntranslated(rows.map((r) => r.wildlife))) {
-    main.append(el("p", { class: "note info" }, t("names.wildlifeUntranslated")));
   }
 
   const filterRows: FilterRow[] = [];
@@ -464,6 +464,7 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
     return;
   }
   document.title = t("wildlife.docTitle", { animal: commonName(w) });
+  if (wildlifeUntranslated([w])) reportUntranslated(t("wip.wildlife"));
 
   const supports = plantsForWildlife(w.id);
   const label = wildlifeKindLabel(w.kind);
@@ -502,9 +503,6 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
       // so all the loose text lives in a .plant-body to get the usual gutters.
       el("div", { class: "plant-body" }, [
         el("p", { style: "margin:0" }, wildlifeBlurb(w)),
-        wildlifeUntranslated([w])
-          ? el("p", { class: "note info", style: "margin:0.5rem 0 0" }, t("names.wildlifeUntranslated"))
-          : null,
         // The native-status guarantee, sourced (authority names linked) — a native
         // plant should be feeding a native animal, and we say where that comes from.
         el("p", { class: "confidence", style: "margin:0.4rem 0 0" }, [

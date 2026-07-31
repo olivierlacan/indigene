@@ -27,6 +27,7 @@ import { t, fmtNumber, fmtList } from "../lib/i18n";
 import { length, humanHeightLabel } from "../lib/units";
 import { commonName, nameLines, regionName } from "../lib/names";
 import { prose, propagationNote, isUntranslated } from "../lib/prose";
+import { reportUntranslated } from "../components/wip-banner";
 
 // The anchorable sections below the profile share one deep-link scheme:
 // #/plants/<slug>/<section>. A link straight to a section scrolls it into
@@ -54,6 +55,10 @@ export function renderPlant(main: HTMLElement, param?: string): void {
   // the row matching the reader's actual location.
   const { plant, region } = entries[0];
   document.title = t("plant.docTitle", { name: commonName(plant), latin: plant.latin });
+
+  // Some of the catalog's writing is still in English (see lib/prose). Reported,
+  // not rendered — main.ts puts the banner at the top of the page.
+  if (isUntranslated(plant)) reportUntranslated(t("wip.plant"));
 
   main.append(
     profile(plant, entries),
@@ -117,9 +122,6 @@ export function renderPlant(main: HTMLElement, param?: string): void {
         ]),
       ]),
       el("p", { class: "kv", style: "margin-top:0.75rem" }, [el("span", { class: "k" }, t("plant.whyBelongs")), prose(p, "nativeNote")]),
-      // Said once, at the top, rather than on every paragraph: some of the
-      // catalog's writing is still in English (see lib/prose).
-      isUntranslated(p) ? el("p", { class: "note info", style: "margin:0.5rem 0" }, t("names.untranslated")) : null,
       statGrid(p),
       canvas,
       el("div", { class: "size-caption" }, [

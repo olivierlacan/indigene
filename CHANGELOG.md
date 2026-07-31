@@ -237,11 +237,14 @@ subtitle on the What's new page.
   measure in. The photo descriptions read out by screen readers were English-
   only too, and now aren't.
 - **A page full of English no longer keeps quiet about it.** A plant's own page
-  has always said when its description hasn't been translated yet. A region's
-  list of forty plants, and the whole
-  [wildlife section](https://indigene.app/#/wildlife), were doing the same
-  thing silently. Each now says so once, at the top, so you know what you're
-  looking at rather than wondering why the words changed language halfway down.
+  has always said when its description hasn't been translated yet — but only in
+  a small note partway down, and a region's list of forty plants, the ranked
+  results, and the whole [wildlife section](https://indigene.app/#/wildlife)
+  said nothing at all. Every page that still has English on it now carries a
+  **roadworks banner across the top**, in yellow-and-black hazard stripes:
+  "Traduction en cours — ces 40 descriptions sont encore en anglais". You see it
+  before you meet the English, not after you've wondered about it, and it reads
+  as what it is: something still being built, and worth using meanwhile.
 - Internal: `lib/ranking.ts` and `lib/explore.ts` were building their reason
   strings by hand; both now go through the dictionaries (`fit.*`, `verdict.*`),
   and `ranking.ts`'s private English `sunLabelShort` is gone in favour of
@@ -250,7 +253,10 @@ subtitle on the What's new page.
   `plain.ts` as `bloomSentence()`, which picks between `card.bloomRange` and
   `card.bloomRangeVowel` so the elision is a translator's choice, not a regex.
   `proseCoverage()` had never been called by anything; it and a new
-  `wildlifeUntranslated()` now drive the roster and wildlife notices.
+  `wildlifeUntranslated()` now feed `components/wip-banner.ts`. A step
+  *reports* its translation gap while rendering and `main.ts` mounts one
+  banner at the top of `main` afterwards, so a page assembled from several
+  renderers can't wear three of them and a step can't bury one mid-layout.
 - Internal: `scripts/shoot.mjs` takes repeatable `--click` selectors and a
   `--geo lat,lon`, so a screenshot can be taken of a state that only exists
   after a tap — the spot verdict, for one.

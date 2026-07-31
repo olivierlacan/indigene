@@ -18,7 +18,8 @@ import { regionRefLine, zoneChip } from "../components/zone-chip";
 import type { Plant, PlantForm } from "../types";
 import { t, tn, fmtNumber, getLang } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionNote, regionReference, localNameCoverage } from "../lib/names";
-import { prose, proseCoverage } from "../lib/prose";
+import { prose } from "../lib/prose";
+import { reportRosterUntranslated } from "../components/wip-banner";
 
 const FORM_ORDER: PlantForm[] = ["tree", "shrub", "perennial", "grass", "vine", "groundcover", "fern"];
 /** The category headings. A function, not a record: a record built at import
@@ -60,6 +61,7 @@ export function renderRegion(main: HTMLElement, param?: string): void {
   }
 
   document.title = t("region.docTitle", { region: regionName(region.meta) });
+  reportRosterUntranslated(plants);
 
   const allRows: FilterRow[] = [];
   const sections: FilterSection[] = [];
@@ -92,11 +94,11 @@ export function renderRegion(main: HTMLElement, param?: string): void {
       t("region.lede", { reference: regionReference(region.meta) })),
     regionStatGrid(region, plants),
     el("p", { style: "font-size:0.9rem;color:var(--ink-soft)" }, regionNote(region.meta)),
-    // Two "here's what this page can't do yet" notes, each shown only when it
-    // applies: names we don't have in the reader's language, then paragraphs
-    // we haven't translated. `main.append` is the DOM's, so absent notes have
-    // to vanish from the argument list rather than pass through as null.
-    ...[namingNote(plants), translationNote(plants)].filter((n): n is HTMLElement => n !== null),
+    // Which of these plants we can't name in the reader's language. (The
+    // *writing* we haven't translated is the page-top banner's job, reported
+    // below.) `main.append` is the DOM's, so an absent note has to vanish from
+    // the argument list rather than pass through as null.
+    ...[namingNote(plants)].filter((n): n is HTMLElement => n !== null),
     plantFilterField(allRows, sections),
     categoryChips(region, plants, null),
     ...groups,
@@ -120,24 +122,6 @@ function namingNote(plants: Plant[]): HTMLElement | null {
     t("names.partlyNamed", { named: fmtNumber(named), total: fmtNumber(total) }));
 }
 
-/**
- * The same courtesy for the *writing*: this roster prints a paragraph per plant
- * and some of those paragraphs are still in the English they were authored in.
- * A plant's own page has said so since the French edition shipped; a list of
- * forty of them was quietly mixing two languages and saying nothing.
- */
-function translationNote(plants: Plant[]): HTMLElement | null {
-  const { translated, total } = proseCoverage(plants);
-  if (translated === total) return null;
-  const missing = total - translated;
-  return el("p", { class: "note info", style: "margin:0.4rem 0 0.8rem" },
-    // "40 of these 40" is a sentence nobody writes. When none of the roster is
-    // translated — the usual case for a region we haven't reached — say that.
-    translated === 0
-      ? tn("names.rosterAllUntranslated", missing, { n: fmtNumber(missing) })
-      : t("names.rosterUntranslated", { n: fmtNumber(missing), total: fmtNumber(total) }));
-}
-
 // One category of one region — a straight-to-the-point shareable page, with a
 // switcher to the same category in every other region that has one.
 function renderCategory(
@@ -149,6 +133,7 @@ function renderCategory(
   const inForm = sortedByCommon(plants, form);
   const label = formLabel(form);
   document.title = t("region.categoryDocTitle", { label, region: regionName(region.meta) });
+  reportRosterUntranslated(inForm);
 
   // The same category elsewhere — only regions that actually have one.
   const elsewhere = REGIONS.filter(
@@ -189,7 +174,6 @@ function renderCategory(
         ])
       : el("p", { class: "step-lede" },
           t("region.emptyCategory", { region: regionName(region.meta), label: label.toLowerCase() })),
-    ...[translationNote(inForm)].filter((n): n is HTMLElement => n !== null),
     ...(rows.length > 1 ? [plantFilterField(rows, [])] : []),
     categoryChips(region, plants, form),
     el("div", { class: "card-grid" }, rows.map((r) => r.node)),

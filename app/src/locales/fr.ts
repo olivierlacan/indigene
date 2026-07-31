@@ -522,18 +522,19 @@ export const fr: Dict = {
   // Noms des espèces.
   // ---------------------------------------------------------------------
   "names.englishName": "Nom anglais : {name}",
-  "names.untranslated":
-    "Une partie de la description de cette plante est encore en anglais — nous traduisons les textes région par région, et nous n'en sommes pas encore à celle-ci.",
   "names.partlyNamed":
     "{named} de ces {total} plantes portent un nom dans votre langue, tiré d'une liste nationale de référence ; les autres affichent leur nom scientifique, parce qu'en inventer un serait pire que de n'en donner aucun.",
-  "names.rosterUntranslated":
-    "{n} de ces {total} plantes se décrivent encore en anglais — nous traduisons les textes région par région, et nous n'en sommes pas encore là.",
-  "names.rosterAllUntranslated.one":
-    "Cette plante se décrit encore en anglais — nous traduisons les textes région par région, et nous n'en sommes pas encore à celle-ci.",
-  "names.rosterAllUntranslated.other":
-    "Ces {n} plantes se décrivent toutes encore en anglais — nous traduisons les textes région par région, et nous n'en sommes pas encore à cette région.",
-  "names.wildlifeUntranslated":
-    "Les descriptions de cette page sont encore en anglais — nous traduisons les textes région par région, et nous n'en sommes pas encore à la faune.",
+
+  // ---------------------------------------------------------------------
+  // Le bandeau « chantier » en haut d'une page dont les textes ne sont pas
+  // encore tous traduits.
+  // ---------------------------------------------------------------------
+  "wip.title": "Traduction en cours",
+  "wip.plant": "Une partie de cette description est encore en anglais — nous traduisons région par région.",
+  "wip.roster": "{n} de ces {total} descriptions sont encore en anglais — nous traduisons région par région.",
+  "wip.rosterAll.one": "Cette description est encore en anglais — nous traduisons région par région.",
+  "wip.rosterAll.other": "Ces {n} descriptions sont encore en anglais — nous traduisons région par région.",
+  "wip.wildlife": "Les descriptions d'animaux sont encore en anglais — nous traduisons région par région.",
 
   // Le dessin des tailles.
   "sizeViz.you": "Vous",

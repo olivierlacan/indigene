@@ -503,18 +503,21 @@ export const en = {
   // and the scientific name has been promoted to the heading (see lib/names).
   // ---------------------------------------------------------------------
   "names.englishName": "English name: {name}",
-  "names.untranslated":
-    "Some of this plant's description is still in English — we translate the writing region by region, and haven't reached this one yet.",
   "names.partlyNamed":
     "{named} of these {total} plants have a name in your language from a national reference list; the rest show their scientific name, because inventing one would be worse than showing none.",
-  "names.rosterUntranslated":
-    "{n} of these {total} plants still describe themselves in English — we translate the writing region by region, and haven't reached them yet.",
-  "names.rosterAllUntranslated.one":
-    "This plant still describes itself in English — we translate the writing region by region, and haven't reached this one yet.",
-  "names.rosterAllUntranslated.other":
-    "All {n} of these plants still describe themselves in English — we translate the writing region by region, and haven't reached this region yet.",
-  "names.wildlifeUntranslated":
-    "The descriptions on this page are still in English — we translate the writing region by region, and haven't reached the wildlife yet.",
+
+  // ---------------------------------------------------------------------
+  // The hazard-striped banner at the top of a page whose writing isn't all
+  // translated yet (`components/wip-banner.ts`). `wip.title` is the constant
+  // heading; the rest are the one-line "what exactly" that follows it, and a
+  // page reports whichever describes it.
+  // ---------------------------------------------------------------------
+  "wip.title": "Translation in progress",
+  "wip.plant": "Part of this description is still in English — we're translating region by region.",
+  "wip.roster": "{n} of these {total} descriptions are still in English — we're translating region by region.",
+  "wip.rosterAll.one": "This description is still in English — we're translating region by region.",
+  "wip.rosterAll.other": "These {n} descriptions are still in English — we're translating region by region.",
+  "wip.wildlife": "The animal descriptions are still in English — we're translating region by region.",
 
   // The size drawing.
   "sizeViz.you": "You",

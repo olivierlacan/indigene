@@ -978,6 +978,10 @@ export const fr: Dict = {
   "plant.forThisPlant": "Pour cette plante : ",
   "plant.howToSource": "Source du mode d'emploi : ",
   "plant.usfsLink": "Native Plant Network (USFS) →",
+  "plant.savedFit.one":
+    "Vous avez enregistré un coin qui lui conviendrait. Ouvrez-le pour voir tout ce qui y prospère.",
+  "plant.savedFit.other":
+    "Vous avez enregistré {n} coins qui lui conviendraient. Ouvrez-en un pour voir tout ce qui y prospère.",
   "plant.checkSpotTitle": "Envie de la planter ? Vérifiez votre coin",
   "plant.checkSpotLede":
     "Placez-vous là où vous la planteriez (ou cherchez votre commune ci-dessous) et Indigene confronte le sol, le climat et la région à ce dont cette plante a besoin — indigène de {region} et au-delà, il faut encore qu'elle se plaise à votre endroit exact.",

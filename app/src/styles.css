@@ -3253,12 +3253,10 @@ body[data-layout="profile"] .wip-banner-text {
 /* ---------------------------------------------------------------------------
    The "something landed since you were last here" dot (components/new-dot.ts).
 
-   Three homes, one look: the header's gear, the What's new row inside its
-   menu, and the footer's link to the same page. On the two text rows it sits
-   in the flow after the words; on the gear it's positioned over the corner,
-   because that button lives in a header measured to the pixel and a badge that
-   pushed its neighbours around on release day would be a layout bug that only
-   appears sometimes.
+   Two homes, one look: the What's new row in the header's menu, and the
+   footer's link to the same page. In both it sits in the flow, after the words
+   it belongs to — there is deliberately no badge on the gear, which is
+   explained where the decision lives, in `new-dot.ts`.
 
    Colour alone never carries it — every dot ships with words beside it (hidden
    visually, read aloud). --good is the same green the app uses for a verified
@@ -3276,7 +3274,34 @@ body[data-layout="profile"] .wip-banner-text {
   border-radius: 50%;
   background: var(--good);
   /* The footer sits on --bg and the menu row on --surface; a hairline ring in
-     the surface colour keeps the dot legible against either, and against the
-     brand green of the header when it rides the gear. */
+     the surface colour keeps the dot legible against either. */
   box-shadow: 0 0 0 1.5px var(--surface);
 }
+
+/* ---------------------------------------------------------------------------
+   "You've already got somewhere this would go" — the saved spots a plant
+   suits, listed at the top of its "Check your spot" card (lib/saved-fit.ts).
+
+   Deliberately plain: these reuse `.choice`, the same tappable card the region
+   and settings pickers use, because that is what they are — a short list of
+   places, one tap each. The only additions are the lede above them and the
+   verdict's own emphasis inside the sub-line, so a reader scanning the card
+   sees which spots are ideal and which merely workable without reading.
+   ------------------------------------------------------------------------ */
+.saved-fit-lede {
+  margin: 0 0 0.5rem;
+  font-weight: 650;
+}
+.saved-fit-level {
+  color: var(--brand-ink);
+  font-weight: 650;
+}
+/* The rows sit above the "check somewhere else" button; the gap keeps the
+   answer we already have from crowding the offer to go looking. */
+.saved-fit-lede + .choice {
+  margin-top: 0;
+}
+.choice + .btn-block {
+  margin-top: 0.8rem;
+}
+

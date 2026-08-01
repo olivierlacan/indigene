@@ -4,18 +4,19 @@
 // honest levels — ideal, decent, unsuitable — and is computed with the same
 // fit math and hard gates as the ranked list.
 import { el, clear, toast } from "../ui";
-import { navigate, store, resetDraft, resultsTrail, keepTrail } from "../state";
+import { navigate, store, resetDraft, resultsTrail, keepTrail, openSavedSpot } from "../state";
 import { fetchSite } from "../lib/site";
 import { searchPlaces, placeLabel, nearestPlaceName } from "../lib/geocode";
 import { manualSunEstimate } from "../lib/solar";
 import { findPlant, assessSpot, plantShareUrl } from "../lib/explore";
+import { savedSpotsThatSuit } from "../lib/saved-fit";
 import { regionForSite } from "../lib/plants";
 import type { PlantEntry, Suitability } from "../lib/explore";
 import { wildlifeForPlant, relianceOf } from "../lib/wildlife";
 import { lookalikesForPlant } from "../lib/lookalikes";
 import { supportLabel } from "../lib/plain";
 import { supportIcon } from "../components/support-icon";
-import { SCORE_KEYS, scoreLabel, bloomSentence, confidencePlain, growthPlain, moistureWord, propagationMethod, PROPAGATION_SOURCE_URL, SOURCES_ROUTE } from "../lib/plain";
+import { SCORE_KEYS, scoreLabel, bloomSentence, confidencePlain, growthPlain, moistureWord, propagationMethod, sunLabel, PROPAGATION_SOURCE_URL, SOURCES_ROUTE } from "../lib/plain";
 import { citation } from "../components/citation";
 import { silhouetteFor } from "../components/plant-card";
 import { heroPhotoFor, asObservation } from "../lib/hero-photo";
@@ -27,7 +28,7 @@ import { entryForPlant, deepLinks } from "../lib/registry";
 import { nearbyObservationsSection } from "../components/nearby-observations";
 import { privacyNote } from "../components/privacy-link";
 import type { Plant, SiteData, SunEstimate, SupportKind } from "../types";
-import { t, fmtNumber, fmtList } from "../lib/i18n";
+import { t, tn, fmtNumber, fmtList } from "../lib/i18n";
 import { length, humanHeightLabel } from "../lib/units";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
 import { prose, propagationNote, isUntranslated, lookalikesUntranslated } from "../lib/prose";
@@ -454,6 +455,48 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
 
     const locateBtn = el("button", { class: "btn btn-primary btn-block", onClick: locate }, t("plant.checkLocation")) as HTMLButtonElement;
 
+    /**
+     * The saved spots this plant already suits, when there are any.
+     *
+     * Filled in after the database answers, above the manual check — because a
+     * reader who has already described a garden shouldn't be asked to describe
+     * it again to learn whether this plant belongs in it. Empty until then, and
+     * empty forever if nothing suits: the section reads exactly as it did
+     * before, and the manual check underneath still gives an honest verdict for
+     * any spot, saved or not (see `lib/saved-fit.ts` for why nothing negative
+     * is volunteered here).
+     */
+    const savedFit = el("div", {});
+    void savedSpotsThatSuit(all).then((matches) => {
+      if (!matches.length) return;
+      savedFit.append(
+        el("p", { class: "saved-fit-lede" }, tn("plant.savedFit", matches.length)),
+        ...matches.map(({ spot, verdict }) =>
+          el("button", {
+            class: "choice",
+            onClick: () => openSavedSpot(spot),
+          }, [
+            el("span", { class: "choice-title" }, spot.label),
+            el("span", { class: "choice-sub" }, [
+              el("span", { class: "saved-fit-level" },
+                `${verdict.level === "ideal" ? "🌱" : "🌤"} ${verdict.headline}`),
+              // What that spot is *like*, not the first line of the verdict's
+              // reasoning. The reasons are ordered for reading in full, so the
+              // first is the hardiness line — which on a spot whose site lookup
+              // never landed is "couldn't confirm how cold winters get here",
+              // and leading a positive answer with a caveat reads as a warning.
+              // The sun answer is the reader's own words about that ground and
+              // says why it came out ideal or merely decent. Derived from the
+              // hours rather than read off `sun.label`, which was written in
+              // whatever language the spot was saved in and would otherwise
+              // stay English on a page that had switched to French.
+              ...(spot.sun ? [" — ", sunLabel(spot.sun.hours)] : []),
+            ]),
+          ])
+        )
+      );
+    });
+
     // The no-GPS fallback: the same town/ZIP search as the main flow — nobody
     // is asked to know coordinates. A pick names the spot directly (its
     // centroid is plenty for a region/climate/soil-grid check).
@@ -597,6 +640,7 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
       el("h3", { style: "margin-top:0" }, t("plant.checkSpotTitle")),
       el("p", { style: "margin:0.3rem 0 0.6rem" },
         t("plant.checkSpotLede", { region: regionName(region.meta) })),
+      savedFit,
       locateBtn,
       privacyNote(t("plant.checkPrivacy")),
       status,

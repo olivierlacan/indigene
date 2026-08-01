@@ -160,47 +160,71 @@ const BRAND = "#7ec894";
  * the app draws them; putting them there would ship four unused shapes in the
  * bundle. If the app ever wants them, that's where they should move.
  */
+/**
+ * A circle, written out.
+ *
+ * The shorthand form — `M cx cy a r r 0 1 0 0 -.01` — starts the arc at the
+ * *edge*, not the centre, so every shape drawn with it sat half a radius right
+ * of where it was placed. The caterpillar's head ran past x=48 and the viewBox
+ * sliced it flat, which is not a thing caterpillars have. Two explicit arcs,
+ * left edge round to the right edge and back, can't be read two ways.
+ */
+const circle = (cx, cy, r) =>
+  `M${cx - r} ${cy}a${r} ${r} 0 1 0 ${r * 2} 0a${r} ${r} 0 1 0 ${-r * 2} 0Z`;
+
 const FACT_ICONS = {
-  // A grub in profile: four body segments scalloping down to the ground, then a
-  // larger head with an eye punched out of it (hence the even-odd fill — the
-  // second subpath winds the other way) and two antennae.
+  // A humped grub in profile: four body segments rising to the shoulder, a
+  // larger round head with an eye punched out of it (hence the even-odd fill —
+  // the eye is a second subpath winding the other way), and two antennae.
+  //
+  // Drawn larger than the geometry needs, because a caterpillar is the flattest
+  // thing in the set: at the same nominal size as a butterfly, which fills its
+  // box top to bottom, it read noticeably smaller. It's arched rather than laid
+  // flat for the same reason — height in the box is what makes it hold its own
+  // in a row.
   caterpillar: {
     evenodd: true,
     marks: [
-      { d: "M10.5 33.2a4.6 4.6 0 1 0 0-.01Z" },
-      { d: "M17.4 30.6a5.1 5.1 0 1 0 0-.01Z" },
-      { d: "M24.3 28.9a5.4 5.4 0 1 0 0-.01Z" },
-      { d: "M31.2 29.3a5.4 5.4 0 1 0 0-.01Z" },
-      { d: "M38.6 32.2a6.6 6.6 0 1 0 0-.01ZM40.6 29.6a1.9 1.9 0 1 1 0 .01Z" },
-      { d: "M39.2 25.2l1.4-5.6", stem: true, w: 2.6 },
-      { d: "M43.2 26.6l4.2-3.9", stem: true, w: 2.6 },
+      { d: circle(8.5, 34.5, 5) },
+      { d: circle(15.5, 31, 5.8) },
+      { d: circle(22.5, 28.5, 6.2) },
+      { d: circle(29.5, 29.5, 6) },
+      { d: circle(37.5, 32, 7) + circle(39.6, 30.3, 2.2) },
+      { d: "M38.2 24.8l1.2-5.6", stem: true, w: 2.8 },
+      { d: "M42 26.6l3.9-3.7", stem: true, w: 2.8 },
     ],
   },
-  // Wings first, body over them, antennae behind the upper pair so they read as
-  // a notch rather than two loose hairs at small sizes.
+  // Mostly wing, which is what makes a butterfly read at a glance: two big
+  // upper wings reaching for the top corners, two rounded lower ones, and a
+  // thread of a body between them. The antennae are clear of the wings with a
+  // club on each end — tucked behind, they read as a notch and the whole thing
+  // stops looking like an insect. Each half is the other's mirror.
   butterfly: {
     marks: [
-      { d: "M23 17L19 9.5", stem: true, w: 2.4 },
-      { d: "M25 17L29 9.5", stem: true, w: 2.4 },
-      { d: "M22 22C20 12.5 12.5 7 8.5 10.5C4.8 13.8 10 22.6 22 24Z" },
-      { d: "M26 22C28 12.5 35.5 7 39.5 10.5C43.2 13.8 38 22.6 26 24Z" },
-      { d: "M22 27C18.5 30 12 33 11 37C10.2 40.5 17 41 20 36.5C21.4 34.4 22.2 31 22 27Z" },
-      { d: "M26 27C29.5 30 36 33 37 37C37.8 40.5 31 41 28 36.5C26.6 34.4 25.8 31 26 27Z" },
-      { d: "M24 16c1.7 0 2.8 1.7 2.8 4.2v12c0 2.5-1.1 4.2-2.8 4.2s-2.8-1.7-2.8-4.2v-12C21.2 17.7 22.3 16 24 16Z" },
+      { d: "M23 17C21.5 10.5 15 5.5 9 6.5C3.5 7.4 3.6 15.5 8.5 20C12.4 23.6 18.5 24.8 23 24.5Z" },
+      { d: "M25 17C26.5 10.5 33 5.5 39 6.5C44.5 7.4 44.4 15.5 39.5 20C35.6 23.6 29.5 24.8 25 24.5Z" },
+      { d: "M23 26.5C20 29 13.5 30.5 11 34C8.4 37.6 12.5 42.5 17 41C20.8 39.7 23.2 34 23 26.5Z" },
+      { d: "M25 26.5C28 29 34.5 30.5 37 34C39.6 37.6 35.5 42.5 31 41C27.2 39.7 24.8 34 25 26.5Z" },
+      { d: "M24 13.5C25.4 13.5 26.2 15 26.2 17.4V33.6C26.2 36.6 25.3 38.5 24 38.5C22.7 38.5 21.8 36.6 21.8 33.6V17.4C21.8 15 22.6 13.5 24 13.5Z" },
+      { d: circle(24, 12, 2.6) },
+      { d: "M23 10.5C21.5 7.5 19.5 6 17.5 5.4", stem: true, w: 2.2 },
+      { d: "M25 10.5C26.5 7.5 28.5 6 30.5 5.4", stem: true, w: 2.2 },
+      { d: circle(17, 5.1, 1.7) },
+      { d: circle(31, 5.1, 1.7) },
     ],
   },
   // The perennial glyph's own flower head — the same bloom the wildflower
   // silhouette wears, which is the point — opened up to fill the box on its
   // own, since here it isn't sitting on a stem with leaves under it.
   bloom: {
-    scale: 1.26,
+    scale: 1.35,
     marks: [
       { d: "M24 24.5C29.2 21.2 27.9 13.7 24 11.1C20.1 13.7 18.8 21.2 24 24.5Z" },
       { d: "M24 24.5C28.8 28.4 35.3 24.9 36.6 20.3C32.8 17.5 25.5 18.5 24 24.5Z" },
       { d: "M24 24.5C21.8 30.2 27.1 35.4 31.8 35.3C33.4 30.7 30.1 24.1 24 24.5Z" },
       { d: "M24 24.5C17.9 24.1 14.6 30.7 16.2 35.3C20.9 35.4 26.2 30.2 24 24.5Z" },
       { d: "M24 24.5C22.5 18.5 15.2 17.5 11.4 20.3C12.7 24.9 19.2 28.4 24 24.5Z" },
-      { d: "M24 19.6a4.9 4.9 0 1 0 0 9.8 4.9 4.9 0 1 0 0-9.8Z" },
+      { d: circle(24, 24.5, 4.9) },
     ],
   },
   // Ground line, and a rise off it. Wider and heavier than it needs to be to
@@ -254,7 +278,7 @@ function cardHtml({ name, latin, glyph, keystone, facts }) {
   const chips = facts
     .map(
       (f) => `<li>
-        ${iconMarkup(f.icon, 44)}
+        ${iconMarkup(f.icon, 62)}
         <span class="ftext"><b>${esc(f.value)}</b><i>${esc(f.label)}</i></span>
       </li>`
     )
@@ -311,8 +335,8 @@ function cardHtml({ name, latin, glyph, keystone, facts }) {
   /* Four facts and an address share 1040 px, so nothing here may wrap: a label
      that breaks over two lines lifts its own number out of line with the rest
      and the row stops reading as a row. */
-  ul { position: relative; display: flex; gap: 38px; list-style: none; align-items: center; }
-  li { display: flex; align-items: center; gap: 12px; white-space: nowrap; }
+  ul { position: relative; display: flex; gap: 30px; list-style: none; align-items: center; }
+  li { display: flex; align-items: center; gap: 11px; white-space: nowrap; }
   li > svg { flex: none; display: block; }
   .ftext { display: flex; flex-direction: column; }
   .ftext b { font-size: 38px; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; }
@@ -401,8 +425,47 @@ const browser = await chromium.launch(existsSync(prebuilt) ? { executablePath: p
 const page = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
 
 let n = 0;
+/**
+ * Measure the card before capturing it, and refuse to write a broken one.
+ *
+ * CLAUDE.md's rule for buttons — a label that wraps reads as broken, so check
+ * it at the width it will actually be seen at — applies here with more force,
+ * because a share card is a picture. Once it's committed nobody looks at it
+ * again, and a plant whose name is two characters longer than the last one can
+ * push the fact row into a second line or slide a wing off the edge with no
+ * warning at all. Four hundred-odd numbers and labels across 198 cards is
+ * exactly the kind of thing to be measured rather than spot-checked.
+ *
+ * Both failures are real ones already hit: a fact label wrapping onto two
+ * lines, and the caterpillar's head running past the icon's viewBox and being
+ * sliced flat by it.
+ */
+async function overflows() {
+  return page.evaluate(() => {
+    const bad = [];
+    // The two content rows. Not `body`: the brand wash is deliberately parked
+    // outside the frame and clipped, so the body always "overflows".
+    for (const [sel, what] of [["ul", "the fact row"], [".mid", "the name and the drawing"]]) {
+      const el = document.querySelector(sel);
+      if (el.scrollWidth > el.clientWidth + 1) bad.push(`${what} is ${el.scrollWidth - el.clientWidth}px too wide`);
+    }
+    // One client rect per element means one line. Two means it wrapped.
+    for (const el of document.querySelectorAll("li b, li i, .latin, h1")) {
+      const lines = el.getClientRects().length;
+      const allowed = el.tagName === "H1" ? 2 : 1; // only the name may take two
+      if (lines > allowed) bad.push(`"${el.textContent}" wrapped onto ${lines} lines`);
+    }
+    return bad;
+  });
+}
+
 for (const card of wanted) {
   await page.setContent(cardHtml(card), { waitUntil: "load" });
+  const bad = await overflows();
+  if (bad.length) {
+    await browser.close();
+    throw new Error(`gen-plant-cards: ${card.name} doesn't fit its card — ${bad.join("; ")}`);
+  }
   const shot = await page.screenshot({ type: "jpeg", quality: QUALITY });
   const out = join(outDir, `${card.slug}.jpg`);
   // Only rewrite what changed, so a re-run doesn't churn 200-odd files in git.

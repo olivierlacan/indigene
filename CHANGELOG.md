@@ -178,6 +178,16 @@ subtitle on the What's new page.
   from lossless. Nothing but a link unfurler ever fetches them, so the weight
   is a repository cost, not a page-load one. `check-routes.mjs` now also
   verifies every page's `og:image` resolves to a file that was actually built.
+- Internal: the card generator measures each card in the browser before
+  capturing it and refuses to write one that doesn't fit — a fact label wrapping
+  onto two lines, the name and the drawing colliding, a row overflowing. That's
+  CLAUDE.md's don't-let-a-label-wrap rule applied to a surface nobody re-opens
+  once it's committed, and it makes the largest icon size the fact row can carry
+  a measured number rather than a guess. The fact icons were redrawn: circles
+  are now written as two explicit arcs, because the shorthand
+  `M cx cy a r r 0 1 0 0 -.01` starts at the circle's *edge*, not its centre —
+  every shape sat half a radius right of where it was placed, which ran the
+  caterpillar's head past its viewBox and let the edge slice it flat.
 - **Nothing can quietly ship a plant whose link doesn't work.** Every plant,
   animal and region has a page at its own address, and that address is what
   gets sent when you share one. Adding a new plant used to be able to skip

@@ -84,10 +84,39 @@ jobs:
             echo "REPORT_EOF"
           } >> "$GITHUB_OUTPUT"
 
-      # See reconcile.yml for why this is continue-on-error: the branch is
+      # The report, on the run's own page. This is what makes the job usable as
+      # a *verifier*: dispatch it against a branch that changes the lookups and
+      # read the answer here, without a PR or a commit anywhere.
+      - name: Put the report on the run summary
+        if: always()
+        run: |
+          {
+            echo "## Vernacular names — \`$LANG_CODE\`"
+            echo
+            echo '```'
+            cat "$RUNNER_TEMP/vernacular.txt" 2>/dev/null || echo "(no report written)"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Keep the snapshot as an artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vernacular-${{ env.LANG_CODE }}
+          path: data/sources/vernacular-names/${{ env.LANG_CODE }}.json
+          if-no-files-found: warn
+
+      # Only from the default branch. A dispatch against a feature branch is
+      # someone asking "does the check work now?", and answering that by
+      # force-pushing `names/verify` to a snapshot taken from unmerged code —
+      # dragging that branch's whole diff into the standing PR — answers a
+      # question nobody asked. The summary above is the answer.
+      #
+      # See reconcile.yml for why this is also continue-on-error: the branch is
       # pushed either way, and opening the PR automatically needs "Allow GitHub
       # Actions to create and approve pull requests" in the repo settings.
       - name: Open a PR with the refreshed snapshot
+        if: github.ref_name == github.event.repository.default_branch
         continue-on-error: true
         uses: peter-evans/create-pull-request@v6
         with:

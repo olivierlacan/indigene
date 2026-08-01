@@ -6,8 +6,9 @@
 // division is what lets the location step say "your default region — change it
 // in Settings" instead of re-explaining itself on every visit.
 //
-// Three cards, matching the three things kept (see `lib/sticky.ts` for why the
-// list is exactly this long):
+// Four cards, matching the four things kept (see `lib/sticky.ts` for why that
+// list is exactly this long, and `lib/visits.ts` for the fourth, which is kept
+// elsewhere because two documents read it):
 //
 //   - **Your last spot** — where you were, with the sun and soil answers that
 //     belong to *that ground*. Never applied anywhere else.
@@ -15,6 +16,8 @@
 //     opens with when you'd rather not use the map at all.
 //   - **Ranking goal** — the goal every new plant list is sorted by, which
 //     already persisted silently and now says so.
+//   - **What's new** — when you last visited and the release you'd read up to,
+//     which is what the green dot on the gear is reading.
 import { el, clear, toast } from "../ui";
 import { store, persistPrefs, navigate, resetDraft } from "../state";
 import { defaultRegion, forgetSpot, setDefaultRegion, sticky } from "../lib/sticky";
@@ -26,7 +29,8 @@ import { moisturePlain, sunPlain } from "../lib/plain";
 import { DEFAULT_WEIGHTS } from "../lib/ranking";
 import { matchingPreset, priorityName } from "../lib/priorities";
 import { privacyNote } from "./privacy-link";
-import { t, fmtNumber } from "../lib/i18n";
+import { forgetVisits, visits } from "../lib/visits";
+import { t, fmtNumber, fmtDate } from "../lib/i18n";
 
 /**
  * The last spot, in full: where it is and what's remembered about it.
@@ -202,6 +206,57 @@ export function rankingGoalCard(): HTMLElement {
             },
           }, t("memory.goalResetBtn")),
         ]),
+      ])
+    );
+  }
+}
+
+/**
+ * When you last looked, and what you'd seen by then.
+ *
+ * The fourth card, and the one that most needs to exist: a green dot appearing
+ * on the gear is the app volunteering that it knows something about your
+ * history, so the page that accounts for what's stored has to account for this
+ * too. It says both values in words a reader can check against their own
+ * memory — the date they were last here, and the release they'd read up to —
+ * and throws them away on one press.
+ *
+ * Forgetting is honest about what happens next: the next visit is a first
+ * visit, which starts you level with today's release rather than resurrecting
+ * every release you've already read as unread.
+ */
+export function whatsNewCard(): HTMLElement {
+  const card = el("div", { class: "card" });
+  fill();
+  return card;
+
+  function fill(): void {
+    clear(card);
+    const v = visits();
+    card.append(el("h3", {}, t("memory.visitTitle")));
+    if (!v.seenVersion) {
+      card.append(el("p", {}, t("memory.visitEmpty")));
+      return;
+    }
+    card.append(
+      el("p", {}, t("memory.visitLede")),
+      el("dl", { class: "memory-list" }, [
+        ...row(t("memory.visitSeen"), t("memory.visitSeenValue", { version: v.seenVersion })),
+        ...row(
+          t("memory.visitWhen"),
+          v.lastVisitAt ? fmtDate(v.lastVisitAt) : t("memory.unanswered")
+        ),
+      ]),
+      privacyNote(t("memory.visitPrivacy")),
+      el("div", { class: "btn-row", style: "margin-top:0.8rem" }, [
+        el("button", {
+          class: "btn btn-ghost",
+          onClick: () => {
+            forgetVisits();
+            toast(t("memory.forgotten"));
+            fill();
+          },
+        }, t("memory.forget")),
       ])
     );
   }

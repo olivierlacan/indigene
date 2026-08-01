@@ -6,11 +6,14 @@
 // only spare surface in a header measured to the pixel (see the ≤500px rules in
 // styles.css — title + four items with ~25 px of slack at 360 px). Anything
 // that should be reachable from every page without owning a tab belongs here.
-// Today that's two things:
+// Today that's three things:
 //
 //   1. Your saved spots, as a quick jump back without leaving for the full
 //      Saved page (which stays, for managing and deleting).
-//   2. Language and units, one row each — the settings most likely to be
+//   2. What's new, which is here because the gear is what wears the "something
+//      landed since you were last here" dot on every screen — a badge you can
+//      see from anywhere needs somewhere to go when you press it.
+//   3. Language and units, one row each — the settings most likely to be
 //      wanted by someone who can't read the page they're looking at, and
 //      therefore the ones worst served by living only at the bottom of it.
 //
@@ -25,6 +28,8 @@ import { listSpots } from "../db";
 import { openSavedSpot } from "../state";
 import { t } from "../lib/i18n";
 import { langLabel, unitsLabel } from "./chrome";
+import { hasUnseenRelease } from "../lib/visits";
+import { newDot } from "./new-dot";
 
 const MAX_IN_MENU = 6;
 
@@ -104,13 +109,46 @@ function prefRow(
   );
 }
 
-/** Whatever the saved-spots lookup produced, then the two prefs rows — which
- *  are in the panel in every state, including while the database is still
- *  answering. Only the first carries the rule that divides them from above. */
+/**
+ * The What's new row.
+ *
+ * It lives here rather than only in the footer because the gear is what carries
+ * the dot on every screen, and a badge that leads nowhere when you press it is
+ * a puzzle. The label is the destination and nothing else — no version number,
+ * no count — so its width never depends on what happens to have shipped (see
+ * CLAUDE.md's one-line rule); the dot beside it is what says there's something
+ * to read, and the words it carries are read aloud with the link.
+ *
+ * A real path, not a hash route: the notes are their own page. The base is read
+ * off the footer's existing link, which Vite has already resolved, for the same
+ * reason `chrome.ts` does it — rebuilding it here would get the base wrong on a
+ * project Pages site.
+ */
+function whatsNewRow(unseen: boolean): HTMLElement {
+  const href =
+    document
+      .querySelector<HTMLAnchorElement>('#footer-text a[href$="release-notes/"]')
+      ?.getAttribute("href") ?? "release-notes/";
+  return el(
+    "a",
+    { href, role: "menuitem", class: "nav-menu-pref nav-menu-divide" },
+    [
+      el("span", { class: "nav-menu-pref-icon", "aria-hidden": "true" }, "✨"),
+      t("footer.releaseNotes"),
+      ...(unseen ? [newDot()] : []),
+    ]
+  );
+}
+
+/** Whatever the saved-spots lookup produced, then What's new and the two prefs
+ *  rows — which are in the panel in every state, including while the database
+ *  is still answering. Only the first carries the rule that divides them from
+ *  above. */
 function fill(target: HTMLElement, ...saved: Node[]): void {
   target.replaceChildren(
     ...saved,
-    prefRow("#/settings/language", "🌐", langLabel(), t("settings.language"), true),
+    whatsNewRow(hasUnseenRelease()),
+    prefRow("#/settings/language", "🌐", langLabel(), t("settings.language"), false),
     prefRow("#/settings/units", "📏", unitsLabel(), t("settings.units"), false)
   );
 }

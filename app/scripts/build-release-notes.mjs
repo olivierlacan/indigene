@@ -66,6 +66,111 @@ function fail(msg) {
   process.exit(1);
 }
 
+// ---------- what's new to *you* ----------
+//
+// The page marks the releases that have landed since a reader last read it, and
+// the app puts a green dot on its menu while any are unmarked. Both sides read
+// one localStorage record; `src/lib/visits.ts` is where it's defined and
+// explained, and the script below is the mirror it warns about. Keep the key
+// and the field names identical — they are the entire contract between a
+// bundled TypeScript module and a static file with no bundle behind it.
+const VISITS_KEY = "indigene.visits";
+
+/**
+ * The reader-facing script, injected into every page this builds.
+ *
+ * Deliberately at the end of `<body>`: by then every `<article>` is parsed, so
+ * the marks are applied in the same frame the page first paints rather than
+ * flickering on afterwards. It reads before it writes, because writing first
+ * would mark everything seen and leave nothing to highlight.
+ *
+ * No template literals in here — this string is itself inside one.
+ */
+const CLIENT_SCRIPT = `
+(function () {
+  var KEY = ${JSON.stringify(VISITS_KEY)};
+  function cmp(a, b) {
+    var pa = String(a).split("."), pb = String(b).split(".");
+    for (var i = 0; i < Math.max(pa.length, pb.length); i++) {
+      var x = Number(pa[i] || 0), y = Number(pb[i] || 0);
+      if (isNaN(x) || isNaN(y)) return 0;
+      if (x !== y) return x < y ? -1 : 1;
+    }
+    return 0;
+  }
+  var store = {};
+  try {
+    var raw = localStorage.getItem(KEY);
+    var parsed = raw ? JSON.parse(raw) : null;
+    if (parsed && typeof parsed === "object") store = parsed;
+  } catch (e) {
+    // Private browsing or a blocked store. Nothing is marked, nothing breaks —
+    // the page is a list of releases either way.
+    return;
+  }
+  var seen = store.seenVersion;
+  var articles = [].slice.call(document.querySelectorAll("article.release[data-version]"));
+  if (!articles.length) return;
+
+  // A first-ever reader has no "since last time", so nothing is marked: the
+  // whole page is new to them and saying so about all nineteen releases would
+  // teach them the mark means nothing. This matches the app, which starts a
+  // first visit level with today's release (see lib/visits.ts).
+  var fresh = seen ? articles.filter(function (a) { return cmp(a.dataset.version, seen) > 0; }) : [];
+
+  for (var i = 0; i < fresh.length; i++) {
+    fresh[i].classList.add("is-new");
+    var flag = document.createElement("p");
+    flag.className = "new-flag";
+    flag.textContent = "New since your last visit";
+    var header = fresh[i].querySelector("header");
+    if (header) header.appendChild(flag);
+  }
+
+  // The jump is offered only where there's a list to jump within, and only
+  // when more than one release is waiting — on a single unread release the
+  // button would scroll you to the thing already under your eyes.
+  var bar = document.getElementById("since-last-visit");
+  if (bar && fresh.length) {
+    var count = fresh.length;
+    var oldest = fresh[fresh.length - 1];
+    var line = document.createElement("p");
+    line.className = "since-line";
+    line.textContent =
+      count === 1
+        ? "One release has landed since your last visit."
+        : count + " releases have landed since your last visit.";
+    bar.appendChild(line);
+    if (count > 1) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "since-btn";
+      btn.textContent = "Start with the oldest";
+      btn.addEventListener("click", function () {
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        oldest.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+        // Focus follows the scroll, so a keyboard or screen-reader user arrives
+        // where a sighted one is looking rather than at the top of the page.
+        oldest.setAttribute("tabindex", "-1");
+        oldest.focus({ preventScroll: true });
+      });
+      bar.appendChild(btn);
+    }
+    bar.hidden = false;
+  }
+
+  // Reading the page is what marks it read. The newest version *on this page*
+  // is the high-water mark, so a release's own page counts for that release —
+  // and an old release's page can never drag the mark backwards.
+  var newest = articles.map(function (a) { return a.dataset.version; })
+    .reduce(function (best, v) { return cmp(v, best) > 0 ? v : best; });
+  if (!seen || cmp(newest, seen) > 0) {
+    store.seenVersion = newest;
+    try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (e) {}
+  }
+})();
+`;
+
 // ---------- parse ----------
 
 /** @returns {{version: string, date: string, name: string|null,
@@ -221,7 +326,12 @@ function copyThumb(r) {
 function renderRelease(r, { standalone = false, assets = "" } = {}) {
   const parts = [];
   const tag = standalone ? "h1" : "h2";
-  parts.push(`<article class="release" id="${anchor(r.version)}">`);
+  // `data-version` is what the reader-facing script compares against what this
+  // browser last saw — the number, not the rendered heading, so the comparison
+  // never depends on how the title happens to be worded.
+  parts.push(
+    `<article class="release" id="${anchor(r.version)}" data-version="${escapeHtml(r.version)}">`,
+  );
   parts.push(`<header>`);
   const title = `Version ${escapeHtml(r.version)}`;
   parts.push(
@@ -251,7 +361,12 @@ function renderRelease(r, { standalone = false, assets = "" } = {}) {
   return parts.join("\n");
 }
 
-function shell({ title, description, canonical, body }) {
+// `root` is the way back to the app from this page's own directory — one level
+// up from the index, two from a release's page. The footer's privacy link is
+// the only thing that needs it, and it needs it right: a link into the app's
+// privacy section that resolves inside /release-notes/ is a 404 on the one
+// sentence promising the reader we're being straight with them.
+function shell({ title, description, canonical, body, root = "../" }) {
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -326,6 +441,36 @@ code {
   padding: 0.05rem 0.3rem; border-radius: 6px; font-size: 0.9em;
 }
 footer { color: var(--ink-soft); margin-top: 2rem; font-size: 0.9rem; }
+/* --- What's new to *you* (see CLIENT_SCRIPT). Everything below is applied by
+   that script; none of it exists for a reader who has never been here, or for
+   one whose browser won't store anything. --- */
+.since {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.9rem;
+  background: var(--brand-bg); color: var(--brand-ink);
+  border: 1px solid var(--brand); border-radius: var(--radius);
+  padding: 0.75rem 1rem; margin: 1.25rem 0;
+}
+.since[hidden] { display: none; }
+.since-line { margin: 0; font-weight: 650; }
+.since-btn {
+  margin-left: auto; cursor: pointer; font: inherit; font-weight: 650;
+  background: var(--brand); color: var(--surface);
+  border: 1px solid var(--brand); border-radius: 999px;
+  padding: 0.35rem 0.9rem; min-height: 2.4rem; white-space: nowrap;
+}
+@media (prefers-color-scheme: dark) { .since-btn { color: #14160f; } }
+.since-btn:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+/* The mark itself: a green edge down the release and a small line in its
+   header. Subtle on purpose — it's an aid to finding your place, not an
+   announcement, and it has to still read as the same page it was before. */
+.release.is-new { border-left: 4px solid var(--brand); }
+.release.is-new:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.new-flag {
+  margin: 0.4rem 0 0; font-size: 0.8rem; font-weight: 650;
+  color: var(--brand-ink); text-transform: none;
+}
+.new-flag::before { content: "● "; color: var(--brand); }
+.privacy-line { margin-top: 0.6rem; }
 </style>
 </head>
 <body>
@@ -334,8 +479,13 @@ ${body}
 <footer>
 <p>Indigene is free, open source, and built on public data.
 <a href="https://github.com/olivierlacan/indigene">See how it&rsquo;s made on GitHub</a>.</p>
+<p class="privacy-line">The only thing this page remembers is which release you
+had read, kept in this browser so it can mark what&rsquo;s new next time. No
+account, no visit counter, nothing sent anywhere &mdash;
+<a href="${root}#/privacy/whatsnew">how that works, in full</a>.</p>
 </footer>
 </main>
+<script>${CLIENT_SCRIPT}</script>
 </body>
 </html>
 `;
@@ -353,6 +503,7 @@ belong where you live. This page lists everything new in the app, newest
 first, in plain words. The app updates itself, so whatever you read here is
 already yours.</p>
 <a class="back" href="../">&larr; Open Indigene</a>
+<div class="since" id="since-last-visit" hidden></div>
 ${releases.map((r) => renderRelease(r)).join("\n")}`,
   });
 }
@@ -371,6 +522,7 @@ function renderReleasePage(r, newer, older) {
     );
   }
   return shell({
+    root: "../../",
     title: `Version ${r.version}${r.name ? `: ${r.name}` : ""} — What's new in Indigene`,
     description: r.name
       ? `${r.name} — what changed in Indigene ${r.version}, released ${r.date}, in plain words.`
@@ -383,6 +535,26 @@ ${pager.length ? `<nav class="pager">\n${pager.join("\n")}\n</nav>` : ""}`,
 }
 
 const releases = parseChangelog(readFileSync(CHANGELOG, "utf8"));
+
+// The app decides whether to show its "something's new" dot by comparing the
+// version it was built with (`package.json`, imported by `src/lib/visits.ts`)
+// against what the reader last saw here. If that number and the newest release
+// in the changelog ever disagree, the dot is wrong in one direction or the
+// other — silently, and for everyone. CLAUDE.md already says to bump both when
+// cutting a release; this is what makes forgetting a build failure instead of a
+// bug nobody notices for a week.
+{
+  const pkg = JSON.parse(readFileSync(resolve(HERE, "../package.json"), "utf8"));
+  const declared = pkg.version.replace(/\.0$/, "");
+  if (declared !== releases[0].version) {
+    fail(
+      `app/package.json says version ${pkg.version} but the newest release in ` +
+        `CHANGELOG.md is ${releases[0].version}. Bump package.json to match the ` +
+        `release you just cut — the app reads it to know what's new.`,
+    );
+  }
+}
+
 mkdirSync(dirname(OUT), { recursive: true });
 for (const r of releases) if (r.thumb) r.thumb.local = copyThumb(r);
 writeFileSync(OUT, renderIndex(releases));

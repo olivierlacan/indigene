@@ -23,6 +23,54 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Added
+
+- **A green dot when something's new, and nothing when it isn't.** Indigene now
+  keeps a small mark on the ⚙️ menu — and on *See what's new* in the footer —
+  from the moment something is added until you've had a look at it. Press it and
+  the [What's new page](https://indigene.app/release-notes/) opens with the
+  releases you haven't read marked down the side, a line at the top saying how
+  many have landed since you were last here, and a button that takes you to the
+  oldest one so you can read forward instead of piecing it together backwards.
+  Reading them is what turns the dot off; nothing else does, so it can't quietly
+  clear itself and leave you wondering what you missed.
+- **Someone arriving for the first time gets no dot at all.** "New since your
+  last visit" means nothing to a person who has never visited, and greeting them
+  with nineteen highlighted releases would teach them, in one screen, that the
+  mark isn't worth looking at. They start level with today, and get a dot the
+  next time something genuinely lands.
+- **What that costs you, in full: a version number and two dates.** To know
+  what's new to *you*, Indigene has to remember the release you'd read up to and
+  when you were last here. That's the entire list — no account, no counter of
+  how often you come, no record of what you looked at, and nothing that could
+  tell you from anyone else. It stays in your browser, and there's no server to
+  send it to. [Privacy & safety](https://indigene.app/privacy) now says so in
+  its own section, and
+  [Settings](https://indigene.app/settings) shows you both values with a button
+  that throws them away.
+
+### Changed
+
+- Internal: `lib/visits.ts` owns the record — `indigene.visits` in
+  localStorage, holding `seenVersion`, `lastVisitAt` and `visitAt`. localStorage
+  rather than the IndexedDB kv store every other memory uses, because this is
+  the one thing read by two documents: the app, and the standalone page
+  `build-release-notes.mjs` compiles, which has no bundle behind it and has to
+  decide what to mark before it paints. The compiled page therefore carries a
+  mirror of the read/write/compare logic; both sides are commented as such.
+  `compareVersions` compares part-by-part as numbers, because string order puts
+  `0.9` after `0.19` and that comparison is the whole feature. A visit that
+  resumes within 30 minutes is the same visit, so a reload — or a trip to the
+  notes and back — can't redefine "since your last visit" as "since you
+  clicked".
+- Internal: `build-release-notes.mjs` fails the build when `app/package.json`'s
+  version and the newest changelog heading disagree. The app reads the former to
+  decide whether to show the dot and the page publishes the latter, so drift
+  between them is a wrong badge for everyone, silently; CLAUDE.md already says
+  to bump both when cutting a release, and this makes forgetting a build error.
+- Internal: bundle re-measured — 273 KB → 275 KB gzipped, and the four docs
+  quoting the figure updated (they had drifted to ~268 KB before this change).
+
 ## [0.19] - 2026-08-01
 
 **A spot it remembers, and links that travel**

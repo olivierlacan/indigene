@@ -1,6 +1,7 @@
 import "./styles.css";
 import { loadPrefs } from "./state";
 import { loadSticky } from "./lib/sticky";
+import { noteVisit } from "./lib/visits";
 import { renderWelcome } from "./steps/welcome";
 import { renderLocation } from "./steps/location";
 import { renderSun } from "./steps/sun";
@@ -393,6 +394,11 @@ async function boot(): Promise<void> {
   // part of the route.
   consumeLangParam();
   applyDocumentLang();
+  // Before the chrome is drawn, because the chrome is what shows the dot: this
+  // settles whether a visit that has been away long enough counts as a new one,
+  // and it's synchronous (localStorage — see the note in `lib/visits.ts`), so
+  // there's nothing to wait for and nothing to flash.
+  noteVisit();
   renderChrome();
   onLangChange(rerenderAll);
   onUnitsChange(rerenderAll);

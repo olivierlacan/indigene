@@ -50,6 +50,10 @@ export const fr: Dict = {
   "footer.sources": "d'où viennent nos chiffres",
   "footer.releaseNotes": "Voir les nouveautés",
   "footer.privacy": "Vie privée et sécurité",
+  // Lu à voix haute à côté du point vert, et intégré au nom accessible de la
+  // roue dentée. Un point est une couleur et une forme : seul, il ne dit rien
+  // à un lecteur d'écran, ni à quelqu'un qui ne distingue pas le vert du gris.
+  "whatsNew.sinceLastVisit": "du nouveau depuis votre dernière visite",
   // L'espace avant le deux-points est une fine insécable (U+202F) : c'est la
   // règle française, et elle empêche aussi le deux-points de passer seul à la
   // ligne suivante.
@@ -130,6 +134,16 @@ export const fr: Dict = {
     "Ce qui décide de l'ordre de chaque nouvelle liste de plantes. Vous le changez à l'étape des objectifs, où vous voyez l'ordre bouger en direct.",
   "memory.goalResetBtn": "Revenir à l'objectif habituel",
   "memory.goalReset": "Retour à l'objectif habituel.",
+  "memory.visitTitle": "Ce qui est nouveau pour vous",
+  "memory.visitLede":
+    "De quoi afficher un point vert sur le menu ⚙️ quand quelque chose a été ajouté depuis votre dernier passage — et le laisser éteint quand rien n'a bougé.",
+  "memory.visitEmpty":
+    "Rien pour l'instant. Dès votre prochaine visite, vous verrez ici quand vous êtes passé la dernière fois et jusqu'où vous aviez lu la page des nouveautés.",
+  "memory.visitSeen": "Vous avez lu jusqu'à",
+  "memory.visitSeenValue": "Version {version}",
+  "memory.visitWhen": "Dernier passage",
+  "memory.visitPrivacy":
+    "Un numéro de version et une date, dans ce navigateur — pas de compte, rien sur qui vous êtes, et rien qui quitte l'appareil",
 
   // ---------------------------------------------------------------------
   // Accueil.
@@ -1209,6 +1223,18 @@ export const fr: Dict = {
   "privacy.saveButton": "Enregistrer ce lieu",
   "privacy.saved":
     "Quand vous touchez {save}, il est conservé dans le stockage propre à votre navigateur, sur cet appareil uniquement. Il ne quitte jamais votre appareil, n'atteint aucun serveur (il n'y en a pas), et nous ne pouvons jamais le voir. Il est à vous : ouvrez ou supprimez un lieu enregistré quand vous voulez depuis le menu « Lieux », et effacer les données de ce site dans votre navigateur les efface définitivement.",
+  "privacy.whatsNewTitle": "Comment nous savons ce qui est nouveau pour vous",
+  "privacy.whatsNew1":
+    "Indigene affiche un petit point vert sur le menu ⚙️ quand quelque chose a été ajouté depuis votre dernier passage, et signale ces nouveautés sur la page des nouveautés. Pour cela, il doit retenir un peu de choses — les voici, exactement :",
+  "privacy.whatsNew2":
+    "Le numéro de version jusqu'où vous aviez lu, par exemple « 0.19 ». Lire la page des nouveautés le remplace par celui du jour ; c'est ce qui éteint le point.",
+  "privacy.whatsNew3":
+    "La date de votre visite précédente et celle du début de cette visite — deux dates, rien de plus fin.",
+  "privacy.whatsNew4":
+    "C'est toute la liste. Aucun compteur de visites, aucune trace des pages ouvertes ni du temps passé, et rien qui permette de vous distinguer de quelqu'un d'autre. Tout reste dans ce navigateur, comme le reste, et aucun serveur n'apprend que vous êtes revenu — il n'y en a pas.",
+  "privacy.whatsNew5":
+    "Vous pouvez lire ces deux valeurs et les jeter quand vous voulez, dans {settings}. Les oublier vous remet au niveau de la version du jour plutôt que de marquer toutes les versions passées comme non lues : appuyer sur un bouton « Oublier » ne devrait pas vous valoir un mur de points.",
+  "privacy.whatsNewSettingsLink": "Ce qui est nouveau pour vous, dans les Réglages",
   "privacy.noAccountTitle": "Pas de compte, pas de pistage, pas de publicité",
   "privacy.noAccount1": "Pas d'inscription, pas d'adresse e-mail, pas de mot de passe — nous ne demandons jamais qui vous êtes.",
   "privacy.noAccount2":

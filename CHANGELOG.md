@@ -29,11 +29,11 @@ subtitle on the What's new page.
   keeps a small mark on the ⚙️ menu — and on *See what's new* in the footer —
   from the moment something is added until you've had a look at it. Press it and
   the [What's new page](https://indigene.app/release-notes/) opens with the
-  releases you haven't read marked down the side, a line at the top saying how
-  many have landed since you were last here, and a button that takes you to the
-  oldest one so you can read forward instead of piecing it together backwards.
-  Reading them is what turns the dot off; nothing else does, so it can't quietly
-  clear itself and leave you wondering what you missed.
+  releases you haven't read marked down the side and one line at the top —
+  *2 new since your last visit* — which you can press to start at the oldest of
+  them and read forward, instead of piecing it together backwards. Reading them
+  is what turns the dot off; nothing else does, so it can't quietly clear itself
+  and leave you wondering what you missed.
 - **Someone arriving for the first time gets no dot at all.** "New since your
   last visit" means nothing to a person who has never visited, and greeting them
   with nineteen highlighted releases would teach them, in one screen, that the
@@ -78,6 +78,14 @@ subtitle on the What's new page.
   decide whether to show the dot and the page publishes the latter, so drift
   between them is a wrong badge for everyone, silently; CLAUDE.md already says
   to bump both when cutting a release, and this makes forgetting a build error.
+- Internal: the "since your last visit" notice is one line because a sentence
+  and a pill button measurably cannot share a row at 360px — so the notice *is*
+  the control: the whole box is a button, and the visible label stays short
+  while its accessible name says what pressing it does. With exactly one release
+  waiting there is nowhere to jump, so it degrades to a plain line. The gear's
+  badge is anchored to the glyph rather than the button, whose box moves with
+  its padding and its visually hidden label; centred on the hub at 0.34rem,
+  sized against a 16–18px gear rather than picked.
 - Internal: `app-menu.ts` is synchronous now — no `listSpots`, no loading,
   error/retry or empty states, and the panel is drawn on open rather than
   populated in two passes. The seven `savedMenu.*` strings it needed go with

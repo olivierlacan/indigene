@@ -121,7 +121,11 @@
             aria-controls="app-menu-panel"
             aria-label="Menu"
           >
-            <span aria-hidden="true">⚙️</span>
+            <!-- The gear carries the "something's new" dot, which is centred on
+                 this glyph rather than on the button: the button's box changes
+                 with its padding and its (visually hidden) label, so anchoring
+                 to it put the mark beside the gear instead of on it. -->
+            <span class="nav-menu-gear" aria-hidden="true">⚙️</span>
             <span class="nav-menu-label" data-i18n="nav.menu">Menu</span>
           </button>
           <div

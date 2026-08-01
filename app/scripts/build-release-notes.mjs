@@ -127,25 +127,37 @@ const CLIENT_SCRIPT = `
     if (header) header.appendChild(flag);
   }
 
-  // The jump is offered only where there's a list to jump within, and only
-  // when more than one release is waiting — on a single unread release the
-  // button would scroll you to the thing already under your eyes.
+  // One line, always. A sentence plus a pill button cannot share a row at
+  // 360px — measured, not guessed — and a notice that wraps to three lines to
+  // announce two releases is louder than what it's announcing. So the whole
+  // notice IS the control: a single line saying how many are waiting, and
+  // pressing it starts you at the oldest of them.
+  //
+  // Except when only one is waiting, where there is nowhere to jump: the one
+  // unread release is already the next thing on the page. Then it's a plain
+  // line that says so, with nothing to press.
   var bar = document.getElementById("since-last-visit");
   if (bar && fresh.length) {
     var count = fresh.length;
     var oldest = fresh[fresh.length - 1];
-    var line = document.createElement("p");
-    line.className = "since-line";
-    line.textContent =
-      count === 1
-        ? "One release has landed since your last visit."
-        : count + " releases have landed since your last visit.";
-    bar.appendChild(line);
-    if (count > 1) {
+    var words = count + " new since your last visit";
+    if (count === 1) {
+      var line = document.createElement("p");
+      line.className = "since-line";
+      line.textContent = words;
+      bar.appendChild(line);
+    } else {
       var btn = document.createElement("button");
       btn.type = "button";
-      btn.className = "since-btn";
-      btn.textContent = "Start with the oldest";
+      btn.className = "since-jump";
+      // The visible label stays short so it holds one line on the narrowest
+      // phone; the accessible name says what pressing it does, which is the
+      // half a downward arrow can only imply.
+      btn.textContent = "↓ " + words;
+      btn.setAttribute(
+        "aria-label",
+        count + " new releases since your last visit — go to the oldest one you haven't read",
+      );
       btn.addEventListener("click", function () {
         var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         oldest.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
@@ -445,21 +457,28 @@ footer { color: var(--ink-soft); margin-top: 2rem; font-size: 0.9rem; }
    that script; none of it exists for a reader who has never been here, or for
    one whose browser won't store anything. --- */
 .since {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.9rem;
   background: var(--brand-bg); color: var(--brand-ink);
   border: 1px solid var(--brand); border-radius: var(--radius);
-  padding: 0.75rem 1rem; margin: 1.25rem 0;
+  margin: 1.25rem 0;
 }
 .since[hidden] { display: none; }
-.since-line { margin: 0; font-weight: 650; }
-.since-btn {
-  margin-left: auto; cursor: pointer; font: inherit; font-weight: 650;
-  background: var(--brand); color: var(--surface);
-  border: 1px solid var(--brand); border-radius: 999px;
-  padding: 0.35rem 0.9rem; min-height: 2.4rem; white-space: nowrap;
+/* The whole box is the control when there's somewhere to jump to, so the
+   padding belongs to the button rather than the box — otherwise the tap target
+   is a ring of dead space around a line of text. */
+.since-jump {
+  display: block; width: 100%; text-align: left; cursor: pointer;
+  font: inherit; font-weight: 650; font-size: 0.95rem;
+  background: transparent; color: inherit; border: 0;
+  border-radius: inherit; padding: 0.85rem 1rem; min-height: 3rem;
+  /* One line is the whole point; the ellipsis is the belt-and-braces for a
+     font or language that measures wider than the ones checked. */
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-@media (prefers-color-scheme: dark) { .since-btn { color: #14160f; } }
-.since-btn:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.since-jump:hover { background: rgba(127, 127, 127, 0.12); }
+.since-jump:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; }
+.since-line {
+  margin: 0; padding: 0.85rem 1rem; font-weight: 650; font-size: 0.95rem;
+}
 /* The mark itself: a green edge down the release and a small line in its
    header. Subtle on purpose — it's an aid to finding your place, not an
    announcement, and it has to still read as the same page it was before. */

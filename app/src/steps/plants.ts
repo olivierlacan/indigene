@@ -68,13 +68,22 @@ function buildRows(): Row[] {
     .sort((a, b) => a.common.localeCompare(b.common, getLang()));
 }
 
-/** The typed query, read straight off the address bar (`#/plants?q=oak`).
+/** The typed query, read straight off the address bar (`/plants?q=oak`).
  *  The router hands a param to `#/<step>/<param>` pages; this page's state is a
- *  query string instead, so it reads its own. */
-function queryFromHash(): string {
+ *  query string instead, so it reads its own.
+ *
+ *  Both sides of the `#` are read. This page has a real file of its own, so its
+ *  canonical address is the path form and that's what the router leaves in the
+ *  address bar (`syncAddressBar` in main.ts) — but the hash form is still what
+ *  an old link, a bookmark or the retired `#/search/<query>` address arrives
+ *  as, and either is a fine thing to be handed. */
+function queryFromUrl(): string {
   const at = location.hash.indexOf("?");
-  if (at < 0) return "";
-  return new URLSearchParams(location.hash.slice(at + 1)).get("q") ?? "";
+  const params =
+    at >= 0
+      ? new URLSearchParams(location.hash.slice(at + 1))
+      : new URLSearchParams(location.search);
+  return params.get("q") ?? "";
 }
 
 export function renderPlants(main: HTMLElement): void {
@@ -160,7 +169,12 @@ export function renderPlants(main: HTMLElement): void {
     const q = input.value;
     run(q);
     // Reflect the query into the URL for sharing, without triggering a re-route.
-    history.replaceState(null, "", q.trim() ? `#/plants?q=${encodeURIComponent(q.trim())}` : "#/plants");
+    // The canonical path form, not the hash: this page has a prerendered file,
+    // so `/plants?q=oak` is a real address that previews — and writing the hash
+    // form here would leave `…/plants/#/plants?q=oak` on a page that was itself
+    // opened by its path.
+    const base = `${import.meta.env.BASE_URL}plants`;
+    history.replaceState(null, "", q.trim() ? `${base}?q=${encodeURIComponent(q.trim())}` : base);
   });
 
   main.append(
@@ -182,7 +196,7 @@ export function renderPlants(main: HTMLElement): void {
     ]),
   );
 
-  const initial = queryFromHash();
+  const initial = queryFromUrl();
   if (initial) input.value = initial;
   run(initial);
   queueMicrotask(() => input.focus());

@@ -79,10 +79,14 @@
     <meta name="twitter:image" content="https://indigene.app/og/share-card.png" />
 
     <script>
-      // Keep this in sync with STEPS in src/main.ts.
+      // Keep this in sync with STEPS in src/main.ts. Missing a step here isn't
+      // cosmetic: /settings/units and /lookalikes/in/atlantic-france are real
+      // addresses the app hands out, and a step left off this list turns one
+      // into "we couldn't find that page".
       var ROUTES = [
-        "location", "sun", "scan", "confirm", "results", "saved", "browse",
-        "plants", "regions", "search", "wildlife", "privacy", "sources"
+        "location", "sun", "scan", "confirm", "priorities", "results", "saved",
+        "browse", "plants", "regions", "search", "wildlife", "lookalikes",
+        "privacy", "sources", "settings", "about"
       ];
       var parts = location.pathname.split("/").filter(Boolean);
       if (parts.length && ROUTES.indexOf(parts[0]) !== -1) {

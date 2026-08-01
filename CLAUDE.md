@@ -151,8 +151,12 @@ Two more conventions the compiler understands:
 
 - **Link what you describe.** When an entry mentions something with an
   address — a page, a section — link it with the full live URL
-  (`https://indigene.app/#/wildlife`), so a reader who
-  didn't know the feature existed can go straight to it.
+  (`https://indigene.app/wildlife`), so a reader who
+  didn't know the feature existed can go straight to it. Use the **path** form,
+  not the `#/` one: every shareable page has a real file behind it
+  (`scripts/prerender.mjs`), and only that address previews as the page when
+  someone passes the link on. Keep `#/` only for a sub-route that has no file
+  of its own, like `https://indigene.app/#/wildlife/in/pnw`.
 - **One thumbnail per release, no more.** A release may show a single square
   picture: make it from an existing PR screenshot with
   `cd app && node scripts/make-thumb.mjs ../docs/screenshots/pr-<n>/<shot>.png`

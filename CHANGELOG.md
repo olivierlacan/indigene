@@ -123,7 +123,7 @@ subtitle on the What's new page.
   spreading sideways, a climber a shoot with the curled tendril it grabs on
   with. The little pictures beside a region's category headings are bigger too,
   so they read next to the words instead of hiding beside them. See them on
-  [any region's page](https://indigene.app/#/regions/france-atlantic).
+  [any region's page](https://indigene.app/regions/france-atlantic).
 - Internal: `silhouetteFor` in `components/plant-card.ts` now renders a table of
   parts (filled masses, stems stroked at one weight) rather than a single path
   per form with a per-form fill/stroke switch, and the stem weight scales below
@@ -131,6 +131,107 @@ subtitle on the What's new page.
   `scripts/gen-form-glyphs.mjs` — edit there and paste its output back over
   `FORM_GLYPHS`. `steps/region.ts` takes a size for `formIcon`, and passes 24
   for section headings against 17 for chips.
+
+### Fixed
+
+- **The link you copy is now the link that shows the plant.** Every plant,
+  region and creature already had its own preview — the little card with a
+  title and a picture that Messages, WhatsApp, Slack or Facebook show when you
+  paste a link. It only ever worked for addresses like
+  [indigene.app/plants/asclepias-tuberosa](https://indigene.app/plants/asclepias-tuberosa),
+  and the address bar never showed you one of those: it showed
+  `indigene.app/#/plants/asclepias-tuberosa`, with a `#` in the middle.
+  Everything after a `#` stays on your own device and is never sent to the
+  website, so a link copied from the address bar arrived with no way of knowing
+  which page you meant, and the card fell back to the plain "Indigene" one.
+  Opening a good link was enough to spoil it — the app swapped the address for
+  the `#` version the moment the page finished loading. Now it keeps the
+  sendable address, so copying from the address bar, using your phone's share
+  button, and tapping Indigene's own 🔗 all send the same working link.
+- **A few saved links no longer land on "we couldn't find that page."** Opening
+  [Language](https://indigene.app/settings/language) or
+  [Units](https://indigene.app/settings/units) from a bookmark showed the
+  not-found page instead of the setting, and so did a link to the
+  [look-alikes](https://indigene.app/lookalikes) of one particular region.
+- **Every plant now has its own picture on a shared link.** Send someone
+  [white oak](https://indigene.app/plants/quercus-alba) and the preview no
+  longer shows the same green Indigene picture every other link showed: it
+  shows a card made for that plant. Its name, large; the scientific name under
+  it; the little drawing of its shape — the same one you see beside it in the
+  app, a tree for a tree, a fan of blades for a grass; and four things worth
+  knowing at a glance, each as a small picture and a number rather than a
+  sentence: how many kinds of caterpillar it feeds, how many creatures we can
+  name that depend on it, the months it flowers, and how tall it grows in both
+  feet and metres. A plant that holds up more of the food web than most also
+  wears a *Keystone* badge. All 198 of them.
+- Internal: the seven form glyphs move from `components/plant-card.ts` to
+  `components/plant-glyphs.ts` — same geometry, no DOM — so `silhouetteFor`
+  (browser) and `glyphMarkup` (headless) draw one set from one table.
+  `scripts/gen-plant-cards.mjs` renders the 1200×630 cards; they're committed
+  under `public/og/plants/` and `prerender.mjs` only points at them, so a build
+  never runs Playwright. `--check` reports a plant with no card. The four fact
+  icons are drawn to the glyph set's rules rather than set as emoji: at
+  thumbnail size, four full-colour emoji on one flat green-on-dark card read as
+  clutter. They're JPEG at quality 90 (~48 KB each, 9.7 MB for the catalog):
+  the brand wash is a smooth gradient, which puts the same card at 224 KB as a
+  PNG — 47 MB across the catalog — and at 1:1 the JPEG is indistinguishable
+  from lossless. Nothing but a link unfurler ever fetches them, so the weight
+  is a repository cost, not a page-load one. `check-routes.mjs` now also
+  verifies every page's `og:image` resolves to a file that was actually built.
+- Internal: share cards carry the plant's **illustration, never its hero
+  photograph**, written down in `docs/hero-photos.md` and in the generator's own
+  header because that's where someone would be tempted. Four of the five
+  licences the harvest accepts require attribution and a share card can't carry
+  any — it lands in a chat as a bare image with nowhere to put the credit, which
+  is the one rule that pipeline doesn't break. Compositing would also make the
+  card a derivative work (two of those licences are ShareAlike), and committing
+  it would republish someone's photo permanently, where the in-app hot-link
+  honours a deletion or a licence change at once.
+- Internal: the card generator measures each card in the browser before
+  capturing it and refuses to write one that doesn't fit — a fact label wrapping
+  onto two lines, the name and the drawing colliding, a row overflowing. That's
+  CLAUDE.md's don't-let-a-label-wrap rule applied to a surface nobody re-opens
+  once it's committed, and it makes the largest icon size the fact row can carry
+  a measured number rather than a guess. The fact icons were redrawn: circles
+  are now written as two explicit arcs, because the shorthand
+  `M cx cy a r r 0 1 0 0 -.01` starts at the circle's *edge*, not its centre —
+  every shape sat half a radius right of where it was placed, which ran the
+  caterpillar's head past its viewBox and let the edge slice it flat.
+- **Nothing can quietly ship a plant whose link doesn't work.** Every plant,
+  animal and region has a page at its own address, and that address is what
+  gets sent when you share one. Adding a new plant used to be able to skip
+  building that page: the plant looked perfect inside the app, and only the
+  person who received the link found out — they'd get "we couldn't find that
+  page" and a preview of nothing in particular. A check now runs on every
+  proposed change and refuses it if a single one is missing.
+- Internal: `src/lib/routes.ts` is the one list of what counts as a page —
+  `APP_STEPS`, `PARAM_STEPS`, `SHAREABLE_INDEXES`, `parseRoute`,
+  `canonicalPath`, `shareablePaths` — imported by `main.ts` (which types its
+  `STEPS` table as `Record<AppStep, …>`, so the two can't drift without a
+  compile error), by `prerender.mjs` (which now throws if its page list and
+  `shareablePaths()` disagree, before writing a file) and by the new
+  `scripts/check-routes.mjs` / `npm run routes:check`. That check runs in a
+  `Routes` workflow after a build and verifies five things: every shareable
+  address has a file in `dist/`; no prerendered file exists for an address the
+  app never hands out; each file's canonical link, `og:url` and title name
+  itself rather than the shell's; every address round-trips through
+  `parseRoute` → `canonicalPath` back to itself; and `public/404.html`'s
+  hand-kept `ROUTES` covers every step in `APP_STEPS`. All six failure modes
+  were verified by breaking them one at a time.
+- Internal: `main.ts` reads the path as a route alongside the hash and keeps the
+  canonical one in the address bar (`pathRoute`, `canonicalPath`,
+  `syncAddressBar`) instead of folding every path into the hash form on boot
+  (`normalizePathRoute`, removed). Canonicalization is limited to routes
+  `scripts/prerender.mjs` actually wrote a file for, so flow steps and
+  sub-routes (`#/wildlife/in/<region>`, `#/settings/units`) keep the hash — the
+  only address that reloads them. A `popstate` listener joins `hashchange`,
+  because a back step between two path addresses changes no hash and used to
+  move the address bar while leaving the old page on screen; `routedHref` keeps
+  a hash traversal, which fires both, from rendering twice. The plants index's
+  `?q=` moved to the search string and is dropped on a route change rather than
+  trailing onto the page it opened. `public/404.html`'s `ROUTES` had drifted
+  from `STEPS` — `priorities`, `lookalikes`, `settings` and `about` were
+  missing.
 
 ## [0.17] - 2026-07-31
 

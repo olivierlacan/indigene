@@ -50,8 +50,14 @@ export function findPlant(slug: string): PlantEntry[] {
 
 /**
  * The canonical share URL for a plant: a real path, not a hash, so it reads
- * as a stable link ("…/plants/quercus-alba"). GitHub Pages serves 404.html
- * for it, which bounces into the hash route (see main.ts).
+ * as a stable link ("…/plants/quercus-alba") — and, far more importantly, so
+ * it previews as the plant. `scripts/prerender.mjs` writes a real file at that
+ * address carrying the plant's own title and description; a `#…` fragment is
+ * never sent to a server, so the hash form can only ever show the site card.
+ *
+ * The app shows this same address in the address bar whenever it's on a plant
+ * (`syncAddressBar` in main.ts), so copying the URL and using this button give
+ * the same link.
  */
 export function plantShareUrl(slug: string): string {
   return `${location.origin}${import.meta.env.BASE_URL}plants/${encodeURIComponent(slug)}`;

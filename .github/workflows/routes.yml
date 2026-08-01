@@ -1,0 +1,70 @@
+# Checks that every address the app hands out is an address that exists.
+#
+# The app shows a page's canonical path in the address bar — /plants/ilex-opaca,
+# /wildlife/monarch — because that's the only form a link preview can fetch: a
+# `#…` fragment is never sent to a server, so a hash address asks for `/` and
+# unfurls as the generic site card. That works only while two lists agree: what
+# `src/lib/routes.ts` calls a page, and what `scripts/prerender.mjs` wrote a
+# file for.
+#
+# The reason this is a CI job and not a code review: when they disagree, nothing
+# looks wrong. Add a plant to a region, or a new animal, and the app shows it
+# perfectly — the page works, the drawing is there, the numbers are right. Only
+# the stranger who receives the link finds out, because that address answers 404
+# and previews as nothing in particular. Nobody working on the app can see it.
+#
+# `npm run routes:check` is the same command locally; run it after `npm run
+# build`, which is what produces the dist/ tree it reads.
+name: Routes
+
+on:
+  pull_request:
+    paths:
+      - "app/src/data/**"
+      - "app/src/lib/routes.ts"
+      - "app/src/main.ts"
+      - "app/src/locales/**"
+      - "app/index.html"
+      - "app/public/404.html"
+      - "app/scripts/prerender.mjs"
+      - "app/scripts/check-routes.mjs"
+      # A plant's share card is committed, not built, so a change here (or a new
+      # plant above) can leave a page pointing at a picture nobody drew.
+      - "app/scripts/gen-plant-cards.mjs"
+      - "app/public/og/**"
+      - ".github/workflows/routes.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Canonical links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      # The same BASE_PATH the deploy uses: the site is served from the root of
+      # its own domain, and the check compares each page's canonical URL against
+      # the address it was written to.
+      - name: Build
+        working-directory: app
+        env:
+          BASE_PATH: /
+        run: npm run build
+
+      - name: Check every shareable address
+        working-directory: app
+        env:
+          BASE_PATH: /
+        run: npm run routes:check

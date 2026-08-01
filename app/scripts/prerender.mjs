@@ -21,20 +21,29 @@
 // what it feeds.
 //
 // The body is untouched — these are the same single-page app, and `main.ts`
-// (`normalizePathRoute`) folds the path into the equivalent hash route on boot,
-// exactly as it already did for the 404.html bounce. Nothing here renders the
-// page's content; this is metadata, not server-side rendering.
+// reads the path as a route (`currentRoute`) the way it reads the hash.
+// Nothing here renders the page's content; this is metadata, not server-side
+// rendering.
+//
+// The app then *keeps* that address rather than folding it into the hash form
+// (`syncAddressBar`), which is what makes these files worth writing: the URL a
+// reader copies out of the address bar is the one with a file behind it, and so
+// the one that previews as the page. A `#…` fragment is never sent to a server,
+// so a hash address can only ever fetch the site root and show its card.
 //
 // public/404.html still matters, and still redirects: deep links below a page
 // (…/plants/<slug>/ecosystem, …/wildlife/in/<region>) and the flow steps aren't
 // prerendered, and a typo has to land somewhere.
 //
-// ## What it does not do yet
+// ## The picture
 //
-// Every page still points at the one site-wide og:image. A per-plant card would
-// mean rendering ~200 pictures through Playwright on every deploy (minutes of
-// build time and ~10 MB of images), so it's deliberately left for its own
-// change. The words are per-page; the picture isn't.
+// A plant page carries its own: `scripts/gen-plant-cards.mjs` draws one card
+// per plant and they're committed under public/og/plants/, so this build only
+// points at them — it never renders anything. Every other page still shows the
+// site-wide card, which is honest for an index and a region; those pages are a
+// list, and a drawing of one member of it would be a lie about the rest.
+//
+// ## What it does not do yet
 //
 // The metadata is English on every page, because a query string can't pick a
 // file: …/plants/<slug>?lang=fr is the same document. A reader still gets
@@ -54,6 +63,10 @@ const ORIGIN = "https://indigene.app";
 const BASE = process.env.BASE_PATH || "/";
 const CARD = `${ORIGIN}${BASE}og/share-card.png`;
 const CARD_ALT = "Indigene — native plants for exactly where you stand";
+
+/** A plant's own card, drawn by `scripts/gen-plant-cards.mjs` and committed
+ *  under public/og/plants/. Every other page still shows the site-wide one. */
+const plantCard = (slug) => `${ORIGIN}${BASE}og/plants/${slug}.jpg`;
 
 /** Locale-style `{name}` interpolation, matching `t()` in lib/i18n.ts. */
 const fill = (s, vars = {}) =>
@@ -161,8 +174,10 @@ function stripHeadMeta(html) {
 const MARKER = "<!-- Head metadata written by scripts/prerender.mjs. -->";
 
 /** The per-page replacement for what `stripHeadMeta` took out. */
-function headMeta({ title, description, path }) {
+function headMeta({ title, description, path, image, imageAlt }) {
   const url = `${ORIGIN}${BASE}${path}`;
+  const card = image ?? CARD;
+  const alt = imageAlt ?? CARD_ALT;
   const tag = (s) => `    ${s}\n`;
   return (
     tag(MARKER) +
@@ -180,16 +195,16 @@ function headMeta({ title, description, path }) {
     tag(`<meta property="og:url" content="${esc(url)}" />`) +
     tag(`<meta property="og:title" content="${esc(title)}" />`) +
     tag(`<meta property="og:description" content="${esc(description)}" />`) +
-    tag(`<meta property="og:image" content="${CARD}" />`) +
+    tag(`<meta property="og:image" content="${card}" />`) +
     tag(`<meta property="og:image:width" content="1200" />`) +
     tag(`<meta property="og:image:height" content="630" />`) +
-    tag(`<meta property="og:image:alt" content="${esc(CARD_ALT)}" />`) +
+    tag(`<meta property="og:image:alt" content="${esc(alt)}" />`) +
     tag(`<meta property="og:locale" content="en" />`) +
     tag(`<meta property="og:locale:alternate" content="fr" />`) +
     tag(`<meta name="twitter:card" content="summary_large_image" />`) +
     tag(`<meta name="twitter:title" content="${esc(title)}" />`) +
     tag(`<meta name="twitter:description" content="${esc(description)}" />`) +
-    tag(`<meta name="twitter:image" content="${CARD}" />`)
+    tag(`<meta name="twitter:image" content="${card}" />`)
   );
 }
 
@@ -204,18 +219,19 @@ function headMeta({ title, description, path }) {
  * sentences the row already carries.
  */
 async function collectPages(load) {
-  const [{ en }, { REGIONS, loadPlants }, { WILDLIFE }, { KIND_ORDER, KIND_SLUGS }, { lookalikeIndex }] =
+  const [{ en }, { REGIONS, loadPlants }, { WILDLIFE }, { KIND_ORDER, KIND_SLUGS }, { lookalikeIndex }, { shareablePaths }] =
     await Promise.all([
       load("/src/locales/en.ts"),
       load("/src/lib/plants.ts"),
       load("/src/data/wildlife.ts"),
       load("/src/lib/wildlife.ts"),
       load("/src/lib/lookalikes.ts"),
+      load("/src/lib/routes.ts"),
     ]);
 
   const pages = [];
-  const add = (path, title, description) =>
-    pages.push({ path, title, description: clip(description) });
+  const add = (path, title, description, extra) =>
+    pages.push({ path, title, description: clip(description), ...extra });
 
   // --- the index pages ---
   // `#/search` is deliberately absent: it's the plants index's old address, and
@@ -253,10 +269,17 @@ async function collectPages(load) {
     for (const plant of loadPlants(region)) {
       if (seen.has(plant.id)) continue;
       seen.add(plant.id);
+      // The one kind of page with a picture of its own. The alt text says what
+      // the card actually shows, rather than repeating the title — a reader on
+      // a screen reader gets the title from `og:title` either way.
       add(
         `plants/${plant.id}`,
         fill(en["plant.docTitle"], { name: plant.common, latin: plant.latin }),
-        `${plant.nativeNote} ${plant.givesNote}`
+        `${plant.nativeNote} ${plant.givesNote}`,
+        {
+          image: plantCard(plant.id),
+          imageAlt: `${plant.common} (${plant.latin}) — a drawing of its form, with what it feeds and how big it grows`,
+        }
       );
     }
   }
@@ -286,6 +309,25 @@ async function collectPages(load) {
 
   for (const p of pages) {
     if (!p.title || !p.description) throw new Error(`prerender: /${p.path} is missing title or description`);
+  }
+
+  // The addresses written here and the addresses the *app* puts in the address
+  // bar have to be the same set, or a reader copies out a link with nothing
+  // behind it. `lib/routes.ts` is where that set is decided; this file only
+  // adds the words. So check the two agree before writing a single file —
+  // failing the build beats shipping a page whose link answers 404, and it
+  // beats finding out from a stranger who clicked one.
+  const written = new Set(pages.map((p) => p.path));
+  const expected = shareablePaths();
+  const missing = expected.filter((p) => !written.has(p));
+  const extra = [...written].filter((p) => !expected.includes(p));
+  if (missing.length || extra.length) {
+    throw new Error(
+      "prerender: the pages written here have drifted from `shareablePaths()` in src/lib/routes.ts.\n" +
+        (missing.length ? `  the app canonicalizes to these, but no file is written: ${missing.slice(0, 10).join(", ")}\n` : "") +
+        (extra.length ? `  a file is written, but the app never hands the address out: ${extra.slice(0, 10).join(", ")}\n` : "") +
+        "  Both lists come from the catalogs, so a mismatch means one of them has a rule the other doesn't."
+    );
   }
   return pages;
 }

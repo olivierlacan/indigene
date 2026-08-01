@@ -140,7 +140,10 @@ const CLIENT_SCRIPT = `
   if (bar && fresh.length) {
     var count = fresh.length;
     var oldest = fresh[fresh.length - 1];
-    var words = count + " new since your last visit";
+    var words =
+      count === 1
+        ? "1 release since your last visit"
+        : count + " releases since your last visit";
     if (count === 1) {
       var line = document.createElement("p");
       line.className = "since-line";
@@ -150,13 +153,13 @@ const CLIENT_SCRIPT = `
       var btn = document.createElement("button");
       btn.type = "button";
       btn.className = "since-jump";
-      // The visible label stays short so it holds one line on the narrowest
-      // phone; the accessible name says what pressing it does, which is the
-      // half a downward arrow can only imply.
-      btn.textContent = "↓ " + words;
+      // The visible label is the count and nothing else, so it holds one line
+      // on the narrowest phone whatever the number grows to; the accessible
+      // name is where "and pressing it takes you there" gets said.
+      btn.textContent = words;
       btn.setAttribute(
         "aria-label",
-        count + " new releases since your last visit — go to the oldest one you haven't read",
+        count + " releases since your last visit — go to the oldest one you haven't read",
       );
       btn.addEventListener("click", function () {
         var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

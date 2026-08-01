@@ -30,7 +30,7 @@ subtitle on the What's new page.
   from the moment something is added until you've had a look at it. Press it and
   the [What's new page](https://indigene.app/release-notes/) opens with the
   releases you haven't read marked down the side and one line at the top —
-  *2 new since your last visit* — which you can press to start at the oldest of
+  *2 releases since your last visit* — which you can press to start at the oldest of
   them and read forward, instead of piecing it together backwards. Reading them
   is what turns the dot off; nothing else does, so it can't quietly clear itself
   and leave you wondering what you missed.
@@ -80,8 +80,9 @@ subtitle on the What's new page.
   to bump both when cutting a release, and this makes forgetting a build error.
 - Internal: the "since your last visit" notice is one line because a sentence
   and a pill button measurably cannot share a row at 360px — so the notice *is*
-  the control: the whole box is a button, and the visible label stays short
-  while its accessible name says what pressing it does. With exactly one release
+  the control: the whole box is a button, and the visible label is the count
+  and nothing else, so it holds that line whatever the number grows to; its
+  accessible name is where "and pressing it takes you there" gets said. With exactly one release
   waiting there is nowhere to jump, so it degrades to a plain line. The gear's
   badge is anchored to the glyph rather than the button, whose box moves with
   its padding and its visually hidden label; centred on the hub at 0.34rem,

@@ -20,7 +20,8 @@
     "hero:review": "node scripts/build-hero-review.mjs",
     "reconcile": "node scripts/reconcile.mjs",
     "names:check": "node scripts/check-vernacular.mjs",
-    "lookalikes:check": "node scripts/check-lookalikes.mjs"
+    "lookalikes:check": "node scripts/check-lookalikes.mjs",
+    "swipe:check": "node scripts/check-lightbox-swipe.mjs"
   },
   "devDependencies": {
     "playwright": "^1.62.0",

@@ -9,6 +9,10 @@
 //   - an always-present link back to the *original sighting* on iNaturalist,
 // so a tap-through to the source is one click away and the source is named.
 //
+// Three ways to page, all landing in the same place: the ‹ › buttons, the ← →
+// keys, and a swipe across the photo. The swipe exists so a thumb never has to
+// hunt for a small round button at the edge of a picture.
+//
 // Paging runs across *every sighting on screen*, not just the one that was
 // tapped: a section that found four sightings of the same animal is one
 // continuous reel of photos, so ← → carries on into the next observer's
@@ -142,6 +146,7 @@ function buildOverlay(): HTMLElement {
   const closeBtn = el("button", { class: "lb-close", "aria-label": t("lightbox.close"), onClick: close }, "✕");
 
   const stage = el("div", { class: "lb-stage" }, [prev, img, next]);
+  attachSwipe(stage, img);
   const panel = el("div", {
     class: "lb-panel",
     role: "dialog",
@@ -155,6 +160,74 @@ function buildOverlay(): HTMLElement {
   // Stash the mutable bits for paint() to find.
   (root as any)._parts = { img, caption, counter, prev, next };
   return root;
+}
+
+// A drag across the photo pages the reel, and lands on exactly what the ‹ ›
+// buttons would have done: drag left for the next photo, right for the previous,
+// wrapping at the ends the same way. The photo follows the finger at a fraction
+// of the distance so the gesture is visibly live, then either snaps back or
+// settles on the new photo.
+//
+// Only touch and pen count. A mouse drag on a picture already means something
+// else (select, drag the image out), and a desktop has the buttons and the arrow
+// keys, so we leave it alone. A drag that starts out vertical is a scroll, not a
+// swipe, and is handed straight back to the browser.
+const SWIPE_MIN = 48; // px a deliberate drag must cover to page…
+const FLICK_MIN = 20; // …or less, for a flick…
+const FLICK_MS = 300; // …that was this quick.
+const INTENT_MIN = 8; // px before a drag is called horizontal at all
+
+function attachSwipe(stage: HTMLElement, img: HTMLImageElement): void {
+  let startX = 0;
+  let startY = 0;
+  let startedAt = 0;
+  let tracking = false;
+  let horizontal = false;
+
+  const reset = (): void => {
+    tracking = false;
+    horizontal = false;
+    img.classList.remove("lb-img-dragging");
+    img.style.transform = "";
+  };
+
+  stage.addEventListener("pointerdown", (e: PointerEvent) => {
+    if (e.pointerType === "mouse" || !e.isPrimary) return;
+    // One photo pages nowhere — same reason the buttons are hidden.
+    if (!state || state.frames.length < 2) return;
+    tracking = true;
+    horizontal = false;
+    startX = e.clientX;
+    startY = e.clientY;
+    startedAt = e.timeStamp;
+  });
+
+  stage.addEventListener("pointermove", (e: PointerEvent) => {
+    if (!tracking) return;
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+    if (!horizontal) {
+      if (Math.abs(dy) > Math.abs(dx)) { reset(); return; }
+      if (Math.abs(dx) < INTENT_MIN) return;
+      horizontal = true;
+      img.classList.add("lb-img-dragging");
+      // Now that this is plainly a swipe and not a tap on ‹ or ›, follow the
+      // finger even if it leaves the photo — releasing off the edge still pages.
+      stage.setPointerCapture?.(e.pointerId);
+    }
+    img.style.transform = `translateX(${dx * 0.35}px)`;
+  });
+
+  stage.addEventListener("pointerup", (e: PointerEvent) => {
+    if (!tracking) return;
+    const dx = e.clientX - startX;
+    const quick = e.timeStamp - startedAt < FLICK_MS;
+    const far = Math.abs(dx) >= SWIPE_MIN || (quick && Math.abs(dx) >= FLICK_MIN);
+    reset();
+    if (far) step(dx < 0 ? 1 : -1);
+  });
+
+  stage.addEventListener("pointercancel", reset);
 }
 
 function paint(): void {

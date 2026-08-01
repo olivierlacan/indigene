@@ -25,6 +25,20 @@ subtitle on the What's new page.
 
 ### Added
 
+- **Swipe through the photos.** When you tap a photo of a plant or animal
+  [someone spotted near you](https://indigene.app/wildlife) and it opens large,
+  you can now slide it aside with your thumb to see the next one — the picture
+  follows your finger, and a flick is enough. It does exactly what the small ‹ ›
+  buttons at the edges do, so you no longer have to aim for them on a phone:
+  drag left for the next photo, right for the one before, right round the set
+  and back to the start. A drag up or down still scrolls the page, and a photo
+  with nothing to page to stays put.
+- Internal: the gesture lives in `attachSwipe` in `components/lightbox.ts` and
+  routes into the same `step()` the buttons and the ← → keys call, so paging
+  can't drift apart between them. It listens for touch and pen only — a mouse
+  drag on a picture already means something else. `npm run swipe:check` drives
+  real Chromium touch input at a built, served `dist/` and asserts where each
+  gesture lands (long drag, flick, twitch, scroll, wrap-around, one-photo reel).
 - **A plant's page tells you when you've already got somewhere to put it.** If
   you've saved a spot, reading about
   [a plant](https://indigene.app/plants/quercus-alba) now says whether it would

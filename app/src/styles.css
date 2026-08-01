@@ -2506,6 +2506,11 @@ details.weights {
   justify-content: center;
   min-height: 0;
   flex: 1 1 auto;
+  /* Sideways drags are ours — they page the reel (attachSwipe in lightbox.ts).
+     Vertical ones stay the browser's, so a scroll still scrolls. */
+  touch-action: pan-y;
+  /* A dragged photo slides out of the frame, not across the page behind it. */
+  overflow: hidden;
 }
 /* A quiet spinner while the photo decodes off-screen. The transition delay
    means an already-cached photo never flashes it. */
@@ -2535,10 +2540,18 @@ details.weights {
   border-radius: 8px;
   background: #111;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  /* A swipe shouldn't start by lifting the picture out of the page. */
+  -webkit-user-drag: none;
+  user-select: none;
 }
 .lb-img.lb-img-ready {
   opacity: 1;
+}
+/* While a finger is on it the photo tracks the finger exactly — the easing is
+   for the snap back once it lifts, not for the drag itself. */
+.lb-img.lb-img-dragging {
+  transition: opacity 0.3s ease;
 }
 .lb-nav {
   position: absolute;

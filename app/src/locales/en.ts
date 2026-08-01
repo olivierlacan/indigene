@@ -160,17 +160,6 @@ export const en = {
   "welcome.openSaved.other": "Open saved spots ({n})",
 
   // ---------------------------------------------------------------------
-  // The header's Saved menu.
-  // ---------------------------------------------------------------------
-  "savedMenu.loading": "Loading…",
-  "savedMenu.error": "Couldn't open saved spots. Closing other Indigene tabs may help.",
-  "savedMenu.retry": "Try again",
-  "savedMenu.empty": "No saved spots yet.",
-  "savedMenu.findSpot": "📍 Find a spot to save",
-  "savedMenu.seeAll": "See all {n} saved →",
-  "savedMenu.manage": "Manage saved →",
-
-  // ---------------------------------------------------------------------
   // Browse (the no-location entrance).
   // ---------------------------------------------------------------------
   "browse.docTitle": "Browse regions & native plants — Indigene",

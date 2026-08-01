@@ -51,6 +51,16 @@ subtitle on the What's new page.
 
 ### Changed
 
+- **The ⚙️ menu opens with what's new, and saved spots are one row away.**
+  What's new sits at the top, where the dot on the gear points. Underneath it,
+  **Saved spots** is now a single row through to
+  [the Saved page](https://indigene.app/#/saved) rather than a list of your
+  spots inside the menu. The list looked like a shortcut and behaved like a
+  wait: opening the menu had to open the database first, so it could show
+  "Loading…", or an error with a *Try again*, before it showed you anything.
+  The row is simply there, the moment you press the gear, and the Saved page —
+  which is where opening, renaming and deleting a spot already lived — does the
+  rest in one place instead of two.
 - Internal: `lib/visits.ts` owns the record — `indigene.visits` in
   localStorage, holding `seenVersion`, `lastVisitAt` and `visitAt`. localStorage
   rather than the IndexedDB kv store every other memory uses, because this is
@@ -68,8 +78,15 @@ subtitle on the What's new page.
   decide whether to show the dot and the page publishes the latter, so drift
   between them is a wrong badge for everyone, silently; CLAUDE.md already says
   to bump both when cutting a release, and this makes forgetting a build error.
+- Internal: `app-menu.ts` is synchronous now — no `listSpots`, no loading,
+  error/retry or empty states, and the panel is drawn on open rather than
+  populated in two passes. The seven `savedMenu.*` strings it needed go with
+  it, from both locales. The two settings rows take their accessible name from
+  the `footer.languageIs` / `footer.unitsIs` phrases instead of gluing a colon
+  on in code, which had been quietly imposing English spacing on French.
 - Internal: bundle re-measured — 273 KB → 275 KB gzipped, and the four docs
   quoting the figure updated (they had drifted to ~268 KB before this change).
+  Dropping the menu's database path gave ~0.4 KB of that back.
 
 ## [0.19] - 2026-08-01
 

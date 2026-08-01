@@ -167,17 +167,6 @@ export const fr: Dict = {
   "welcome.openSaved.other": "Ouvrir les lieux enregistrés ({n})",
 
   // ---------------------------------------------------------------------
-  // Menu « Lieux » de l'en-tête.
-  // ---------------------------------------------------------------------
-  "savedMenu.loading": "Chargement…",
-  "savedMenu.error": "Impossible d'ouvrir vos lieux. Fermer les autres onglets Indigene peut aider.",
-  "savedMenu.retry": "Réessayer",
-  "savedMenu.empty": "Aucun lieu enregistré pour l'instant.",
-  "savedMenu.findSpot": "📍 Trouver un lieu à enregistrer",
-  "savedMenu.seeAll": "Voir les {n} lieux →",
-  "savedMenu.manage": "Gérer mes lieux →",
-
-  // ---------------------------------------------------------------------
   // Parcourir.
   // ---------------------------------------------------------------------
   "browse.docTitle": "Parcourir les régions et les plantes indigènes — Indigene",

@@ -2,18 +2,25 @@
 # they claim to come from, and open a PR when the snapshot changes.
 #
 # A name in another language is *looked up*, not translated — see
-# `app/src/lib/names.ts`. The lookup needs open internet (TAXREF, VASCAN and
-# Wikidata all refuse the local build sandbox's egress), which is exactly the
-# situation `reconcile.yml` is in, so it gets the same treatment: a separate
-# job, on a GitHub runner, producing a reviewable data change rather than a
-# build artifact.
+# `app/src/lib/names.ts` — and it is looked up in the reference lists of a
+# *country*: the French edition is fr-FR, so the lists are France's. The lookup
+# needs open internet (TAXREF, Tela Botanica and Wikidata all refuse the local
+# build sandbox's egress), which is exactly the situation `reconcile.yml` is in,
+# so it gets the same treatment: a separate job, on a GitHub runner, producing a
+# reviewable data change rather than a build artifact.
 #
 # What it catches, in order of how much it matters:
 #   1. **A disagreement** — we display a name its own source doesn't back. That
 #      fails the job, because it means the app is asserting something untrue.
-#   2. **A gap upstream has filled** — a reference list has since named a taxon
+#   2. **A silent authority** — a list that answered none of its lookups. Also a
+#      failure when it's the national reference: a check that has stopped
+#      checking looks exactly like a clean bill of health otherwise.
+#   3. **A row still awaiting an fr-FR source** — the North American names
+#      inherited from the Canadian list. Not a failure; the run proposes the
+#      source to promote each one to.
+#   4. **A gap upstream has filled** — a reference list has since named a taxon
 #      we show in Latin. Not a failure; a suggestion, reported in the PR.
-#   3. **Drift** — a name the authority has revised. Shows up in the committed
+#   5. **Drift** — a name the authority has revised. Shows up in the committed
 #      snapshot's diff.
 #
 # Quarterly, because vernacular names in a national référentiel move on the
@@ -61,7 +68,7 @@ jobs:
       # continue-on-error so a disagreement still produces the snapshot and the
       # PR — a reviewer needs to see *what* disagreed, not just that something
       # did. The check step below re-reads the result and fails the job.
-      - name: Check names against TAXREF, VASCAN and Wikidata
+      - name: Check names against TAXREF, Tela Botanica and Wikidata
         id: check
         continue-on-error: true
         working-directory: app
@@ -89,13 +96,18 @@ jobs:
           commit-message: "Refresh the vernacular-name verification snapshot"
           body: |
             Quarterly re-check of the localized plant and animal names in
-            `app/src/locales/taxa.*.ts` against the lists they're asserted from —
-            TAXREF (INPN/MNHN), VASCAN, and Wikidata.
+            `app/src/locales/taxa.*.ts` against the lists they're asserted from.
+            The French edition is **fr-FR**, so the lists are France's: TAXREF
+            (INPN/MNHN), Tela Botanica (BDTFX/NVJFL), and Wikidata.
 
             A **disagreement** means the app is displaying a name its own source
-            doesn't back: fix `taxa.*.ts`, don't paper over it. A **gap** is a
-            taxon a reference list has since named that we still show in Latin —
-            worth adding, and never urgent.
+            doesn't back: fix `taxa.*.ts`, don't paper over it. A **silent
+            authority** (`!!` in the report) means a list answered nothing at
+            all — fix the lookup, don't read it as "nobody has named these".
+            **Pending** rows are the North American names inherited from the
+            Canadian list, each printed with the source to promote it to. A
+            **gap** is a taxon a reference list has since named that we still
+            show in Latin — worth adding, and never urgent.
 
             ```
             ${{ steps.report.outputs.text }}

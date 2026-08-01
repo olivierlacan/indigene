@@ -1,4 +1,5 @@
-// French vernacular names, keyed on the scientific name.
+// Vernacular names in **French of France (fr-FR)**, keyed on the scientific
+// name. The locale is the point, not a detail: see `LOCALE` in `lib/i18n.ts`.
 //
 // **These are looked up, not translated.** Every entry names the reference list
 // it is asserted from (see `lib/names.ts` for what each source is and why it's
@@ -7,15 +8,19 @@
 //   - `taxref`   — TAXREF (INPN / MNHN), the French national reference for the
 //                  flora and fauna of France. The authority for anything that
 //                  actually grows or flies here.
-//   - `vascan`   — Database of Vascular Plants of Canada. The authority for the
-//                  North American plants TAXREF has no reason to list: a
-//                  Pacific Northwest native is unknown to the French flora, but
-//                  Québec has named it.
+//   - `bdtfx`    — Tela Botanica's flora of metropolitan France, the names
+//                  French botanists actually use.
 //   - `wikidata` — the crosswalk of last resort, for taxa neither list covers
 //                  (the Caribbean and Florida species, and a few insects).
 //   - `catalog`  — the handful of *informal groups* Indigene itself invented
 //                  ("Jays, turkeys & woodpeckers"). Those are our own label, so
 //                  translating them is honest; they're keyed on `#<slug>`.
+//   - `pending`  — displayed, but not yet backed by a source that speaks
+//                  fr-FR. See the North American section below for how a whole
+//                  block of rows ended up there.
+//
+// **VASCAN is not on that list.** It was, and the type now forbids it: its
+// French is Canadian French, and this table is French of France.
 //
 // **A taxon with no established French name is deliberately absent.** Most of
 // the Florida subtropicals and a good number of the North American insects have
@@ -23,13 +28,14 @@
 // fabrication this app refuses to commit with a host count. An absent entry
 // renders as the scientific name — see `nameLines()`.
 //
-// Verification: `npm run names:check` re-queries TAXREF, VASCAN and Wikidata and
-// reports any row whose name the source doesn't confirm. It needs open internet
-// (the build sandbox blocks these hosts), so it runs in CI —
+// Verification: `npm run names:check` re-queries the fr-FR authorities (TAXREF,
+// Tela Botanica, Wikidata) and reports any row whose name the source doesn't
+// confirm, plus a source to promote each `pending` row to. It needs open
+// internet (the build sandbox blocks these hosts), so it runs in CI —
 // `.github/workflows/vernacular.yml` — the same arrangement `reconcile.mjs` uses.
-import type { NameTable } from "../lib/names";
+import type { FrenchSource, NameTable } from "../lib/names";
 
-export const TAXA_FR: NameTable = {
+export const TAXA_FR: NameTable<FrenchSource> = {
   // ---------------------------------------------------------------------
   // Flore de France — TAXREF / BDTFX.
   // ---------------------------------------------------------------------
@@ -122,99 +128,117 @@ export const TAXA_FR: NameTable = {
   "Arctostaphylos uva-ursi": { name: "Busserole", src: "taxref" },
 
   // ---------------------------------------------------------------------
-  // Flore nord-américaine — VASCAN (noms français normalisés du Canada).
+  // Flore nord-américaine — en attente d'une source française de France.
+  //
+  // These rows were seeded from VASCAN, the Canadian list, on the reasoning
+  // that a Pacific Northwest native is unknown to the French flora but Québec
+  // has named it. The reasoning was half right: Québec *has* named it — in
+  // Québécois. "Bleuet" is a blueberry in Montréal and a cornflower in Paris;
+  // "pruche" is a hemlock nobody in France calls a pruche; VASCAN's standard
+  // name for *Pseudotsuga menziesii* is "douglas de Menzies" where every French
+  // nursery says "sapin de Douglas". So the table had begun drifting away from
+  // its own cited source, one hand-corrected row at a time, and the quarterly
+  // check was reading that drift as *our* error.
+  //
+  // The names stay — most are exactly what a French reader would say, and
+  // showing 87 plants in Latin overnight would be a worse answer than showing
+  // them a name we're still sourcing. What's gone is the false claim about
+  // where they came from. `npm run names:check` now asks the fr-FR lists about
+  // each one and proposes the source to promote it to; a row nobody in France
+  // has a name for should end up deleted, not relabelled.
   // ---------------------------------------------------------------------
-  "Acer circinatum": { name: "Érable circiné", src: "vascan" },
-  "Acer macrophyllum": { name: "Érable à grandes feuilles", src: "vascan" },
-  "Acer rubrum": { name: "Érable rouge", src: "vascan" },
-  "Alnus rubra": { name: "Aulne rouge", src: "vascan" },
-  "Amelanchier alnifolia": { name: "Amélanchier à feuilles d'aulne", src: "vascan" },
-  "Amelanchier canadensis": { name: "Amélanchier du Canada", src: "vascan" },
-  "Anaphalis margaritacea": { name: "Anaphale marguerite", src: "vascan" },
-  "Andropogon gerardii": { name: "Barbon de Gérard", src: "vascan" },
-  "Aquilegia canadensis": { name: "Ancolie du Canada", src: "vascan" },
-  "Aquilegia formosa": { name: "Ancolie élégante", src: "vascan" },
-  "Arbutus menziesii": { name: "Arbousier de Menzies", src: "vascan" },
-  "Asclepias incarnata": { name: "Asclépiade incarnate", src: "vascan" },
-  "Asclepias speciosa": { name: "Asclépiade voyante", src: "vascan" },
-  "Asclepias tuberosa": { name: "Asclépiade tubéreuse", src: "vascan" },
-  "Berberis aquifolium": { name: "Mahonia à feuilles de houx", src: "vascan" },
-  "Betula nigra": { name: "Bouleau noir", src: "vascan" },
-  "Callicarpa americana": { name: "Callicarpe d'Amérique", src: "vascan" },
-  "Camassia quamash": { name: "Camassie quamash", src: "vascan" },
-  "Carex pensylvanica": { name: "Carex de Pennsylvanie", src: "vascan" },
-  "Ceanothus americanus": { name: "Céanothe d'Amérique", src: "vascan" },
-  "Cephalanthus occidentalis": { name: "Céphalanthe occidental", src: "vascan" },
-  "Cercis canadensis": { name: "Gainier du Canada", src: "vascan" },
-  "Chionanthus virginicus": { name: "Chionanthe de Virginie", src: "vascan" },
-  "Cornus florida": { name: "Cornouiller fleuri", src: "vascan" },
-  "Cornus nuttallii": { name: "Cornouiller de Nuttall", src: "vascan" },
-  "Cornus sericea": { name: "Cornouiller stolonifère", src: "vascan" },
-  "Corylus americana": { name: "Noisetier d'Amérique", src: "vascan" },
-  "Corylus cornuta": { name: "Noisetier à long bec", src: "vascan" },
-  "Echinacea purpurea": { name: "Échinacée pourpre", src: "vascan" },
-  "Elymus glaucus": { name: "Élyme glauque", src: "vascan" },
-  "Eutrochium purpureum": { name: "Eupatoire pourpre", src: "vascan" },
-  "Fragaria chiloensis": { name: "Fraisier du Chili", src: "vascan" },
-  "Fragaria virginiana": { name: "Fraisier de Virginie", src: "vascan" },
-  "Fraxinus latifolia": { name: "Frêne de l'Oregon", src: "vascan" },
-  "Gaultheria shallon": { name: "Gaulthérie shallon", src: "vascan" },
-  "Geranium maculatum": { name: "Géranium maculé", src: "vascan" },
-  "Hamamelis virginiana": { name: "Hamamélis de Virginie", src: "vascan" },
-  "Holodiscus discolor": { name: "Holodisque discolore", src: "vascan" },
-  "Ilex verticillata": { name: "Houx verticillé", src: "vascan" },
-  "Lobelia cardinalis": { name: "Lobélie cardinale", src: "vascan" },
-  "Lonicera ciliosa": { name: "Chèvrefeuille cilié", src: "vascan" },
-  "Lonicera involucrata": { name: "Chèvrefeuille involucré", src: "vascan" },
-  "Lonicera sempervirens": { name: "Chèvrefeuille toujours vert", src: "vascan" },
-  "Lupinus polyphyllus": { name: "Lupin à folioles nombreuses", src: "vascan" },
-  "Magnolia grandiflora": { name: "Magnolia à grandes fleurs", src: "vascan" },
-  "Monarda fistulosa": { name: "Monarde fistuleuse", src: "vascan" },
-  "Monarda punctata": { name: "Monarde ponctuée", src: "vascan" },
-  "Muhlenbergia capillaris": { name: "Muhlenbergie capillaire", src: "vascan" },
-  "Packera aurea": { name: "Séneçon doré", src: "vascan" },
-  "Panicum virgatum": { name: "Panic érigé", src: "vascan" },
-  "Parthenocissus quinquefolia": { name: "Vigne vierge à cinq folioles", src: "vascan" },
-  "Passiflora incarnata": { name: "Passiflore officinale", src: "vascan" },
-  "Penstemon digitalis": { name: "Penstémon digitale", src: "vascan" },
-  "Physocarpus capitatus": { name: "Physocarpe capité", src: "vascan" },
-  "Physocarpus opulifolius": { name: "Physocarpe à feuilles d'obier", src: "vascan" },
-  "Pinus palustris": { name: "Pin des marais", src: "vascan" },
-  "Polystichum acrostichoides": { name: "Polystic faux-acrostic", src: "vascan" },
-  "Polystichum munitum": { name: "Polystic à épées", src: "vascan" },
-  "Populus trichocarpa": { name: "Peuplier de l'Ouest", src: "vascan" },
-  "Prunus emarginata": { name: "Cerisier amer", src: "vascan" },
-  "Prunus serotina": { name: "Cerisier tardif", src: "vascan" },
-  "Pseudotsuga menziesii": { name: "Sapin de Douglas", src: "vascan" },
-  "Quercus alba": { name: "Chêne blanc", src: "vascan" },
-  "Quercus garryana": { name: "Chêne de Garry", src: "vascan" },
-  "Quercus rubra": { name: "Chêne rouge", src: "vascan" },
-  "Quercus virginiana": { name: "Chêne de Virginie", src: "vascan" },
-  "Ribes sanguineum": { name: "Groseillier sanguin", src: "vascan" },
-  "Rosa nutkana": { name: "Rosier de Nootka", src: "vascan" },
-  "Rubus spectabilis": { name: "Ronce remarquable", src: "vascan" },
-  "Rudbeckia fulgida": { name: "Rudbeckie éclatante", src: "vascan" },
-  "Salix scouleriana": { name: "Saule de Scouler", src: "vascan" },
-  "Sambucus racemosa": { name: "Sureau rouge", src: "vascan" },
-  "Schizachyrium scoparium": { name: "Barbon à balais", src: "vascan" },
-  "Solidago lepida": { name: "Verge d'or élégante", src: "vascan" },
-  "Solidago rugosa": { name: "Verge d'or rugueuse", src: "vascan" },
-  "Struthiopteris spicant": { name: "Blechne en épi", src: "vascan" },
-  "Symphoricarpos albus": { name: "Symphorine blanche", src: "vascan" },
-  "Symphyotrichum novae-angliae": { name: "Aster de Nouvelle-Angleterre", src: "vascan" },
-  "Taxodium distichum": { name: "Cyprès chauve", src: "vascan" },
-  "Thuja plicata": { name: "Thuya géant", src: "vascan" },
-  "Tripsacum dactyloides": { name: "Tripsaque dactyloïde", src: "vascan" },
-  "Tsuga heterophylla": { name: "Pruche de l'Ouest", src: "vascan" },
-  "Vaccinium corymbosum": { name: "Bleuet en corymbe", src: "vascan" },
-  "Vaccinium ovatum": { name: "Airelle à feuilles ovales", src: "vascan" },
-  "Viburnum dentatum": { name: "Viorne dentée", src: "vascan" },
-  "Zizia aurea": { name: "Zizia doré", src: "vascan" },
+  "Acer circinatum": { name: "Érable circiné", src: "pending" },
+  "Acer macrophyllum": { name: "Érable à grandes feuilles", src: "pending" },
+  "Acer rubrum": { name: "Érable rouge", src: "pending" },
+  "Alnus rubra": { name: "Aulne rouge", src: "pending" },
+  "Amelanchier alnifolia": { name: "Amélanchier à feuilles d'aulne", src: "pending" },
+  "Amelanchier canadensis": { name: "Amélanchier du Canada", src: "pending" },
+  "Anaphalis margaritacea": { name: "Anaphale marguerite", src: "pending" },
+  "Andropogon gerardii": { name: "Barbon de Gérard", src: "pending" },
+  "Aquilegia canadensis": { name: "Ancolie du Canada", src: "pending" },
+  "Aquilegia formosa": { name: "Ancolie élégante", src: "pending" },
+  "Arbutus menziesii": { name: "Arbousier de Menzies", src: "pending" },
+  "Asclepias incarnata": { name: "Asclépiade incarnate", src: "pending" },
+  "Asclepias speciosa": { name: "Asclépiade voyante", src: "pending" },
+  "Asclepias tuberosa": { name: "Asclépiade tubéreuse", src: "pending" },
+  "Berberis aquifolium": { name: "Mahonia à feuilles de houx", src: "pending" },
+  "Betula nigra": { name: "Bouleau noir", src: "pending" },
+  "Callicarpa americana": { name: "Callicarpe d'Amérique", src: "pending" },
+  "Camassia quamash": { name: "Camassie quamash", src: "pending" },
+  "Carex pensylvanica": { name: "Carex de Pennsylvanie", src: "pending" },
+  "Ceanothus americanus": { name: "Céanothe d'Amérique", src: "pending" },
+  "Cephalanthus occidentalis": { name: "Céphalanthe occidental", src: "pending" },
+  "Cercis canadensis": { name: "Gainier du Canada", src: "pending" },
+  "Chionanthus virginicus": { name: "Chionanthe de Virginie", src: "pending" },
+  "Cornus florida": { name: "Cornouiller fleuri", src: "pending" },
+  "Cornus nuttallii": { name: "Cornouiller de Nuttall", src: "pending" },
+  "Cornus sericea": { name: "Cornouiller stolonifère", src: "pending" },
+  "Corylus americana": { name: "Noisetier d'Amérique", src: "pending" },
+  "Corylus cornuta": { name: "Noisetier à long bec", src: "pending" },
+  "Echinacea purpurea": { name: "Échinacée pourpre", src: "pending" },
+  "Elymus glaucus": { name: "Élyme glauque", src: "pending" },
+  "Eutrochium purpureum": { name: "Eupatoire pourpre", src: "pending" },
+  "Fragaria chiloensis": { name: "Fraisier du Chili", src: "pending" },
+  "Fragaria virginiana": { name: "Fraisier de Virginie", src: "pending" },
+  "Fraxinus latifolia": { name: "Frêne de l'Oregon", src: "pending" },
+  "Gaultheria shallon": { name: "Gaulthérie shallon", src: "pending" },
+  "Geranium maculatum": { name: "Géranium maculé", src: "pending" },
+  "Hamamelis virginiana": { name: "Hamamélis de Virginie", src: "pending" },
+  "Holodiscus discolor": { name: "Holodisque discolore", src: "pending" },
+  "Ilex verticillata": { name: "Houx verticillé", src: "pending" },
+  "Lobelia cardinalis": { name: "Lobélie cardinale", src: "pending" },
+  "Lonicera ciliosa": { name: "Chèvrefeuille cilié", src: "pending" },
+  "Lonicera involucrata": { name: "Chèvrefeuille involucré", src: "pending" },
+  "Lonicera sempervirens": { name: "Chèvrefeuille toujours vert", src: "pending" },
+  "Lupinus polyphyllus": { name: "Lupin à folioles nombreuses", src: "pending" },
+  "Magnolia grandiflora": { name: "Magnolia à grandes fleurs", src: "pending" },
+  "Monarda fistulosa": { name: "Monarde fistuleuse", src: "pending" },
+  "Monarda punctata": { name: "Monarde ponctuée", src: "pending" },
+  "Muhlenbergia capillaris": { name: "Muhlenbergie capillaire", src: "pending" },
+  "Packera aurea": { name: "Séneçon doré", src: "pending" },
+  "Panicum virgatum": { name: "Panic érigé", src: "pending" },
+  "Parthenocissus quinquefolia": { name: "Vigne vierge à cinq folioles", src: "pending" },
+  "Passiflora incarnata": { name: "Passiflore officinale", src: "pending" },
+  "Penstemon digitalis": { name: "Penstémon digitale", src: "pending" },
+  "Physocarpus capitatus": { name: "Physocarpe capité", src: "pending" },
+  "Physocarpus opulifolius": { name: "Physocarpe à feuilles d'obier", src: "pending" },
+  "Pinus palustris": { name: "Pin des marais", src: "pending" },
+  "Polystichum acrostichoides": { name: "Polystic faux-acrostic", src: "pending" },
+  "Polystichum munitum": { name: "Polystic à épées", src: "pending" },
+  "Populus trichocarpa": { name: "Peuplier de l'Ouest", src: "pending" },
+  "Prunus emarginata": { name: "Cerisier amer", src: "pending" },
+  "Prunus serotina": { name: "Cerisier tardif", src: "pending" },
+  "Pseudotsuga menziesii": { name: "Sapin de Douglas", src: "pending" },
+  "Quercus alba": { name: "Chêne blanc", src: "pending" },
+  "Quercus garryana": { name: "Chêne de Garry", src: "pending" },
+  "Quercus rubra": { name: "Chêne rouge", src: "pending" },
+  "Quercus virginiana": { name: "Chêne de Virginie", src: "pending" },
+  "Ribes sanguineum": { name: "Groseillier sanguin", src: "pending" },
+  "Rosa nutkana": { name: "Rosier de Nootka", src: "pending" },
+  "Rubus spectabilis": { name: "Ronce remarquable", src: "pending" },
+  "Rudbeckia fulgida": { name: "Rudbeckie éclatante", src: "pending" },
+  "Salix scouleriana": { name: "Saule de Scouler", src: "pending" },
+  "Sambucus racemosa": { name: "Sureau rouge", src: "pending" },
+  "Schizachyrium scoparium": { name: "Barbon à balais", src: "pending" },
+  "Solidago lepida": { name: "Verge d'or élégante", src: "pending" },
+  "Solidago rugosa": { name: "Verge d'or rugueuse", src: "pending" },
+  "Struthiopteris spicant": { name: "Blechne en épi", src: "pending" },
+  "Symphoricarpos albus": { name: "Symphorine blanche", src: "pending" },
+  "Symphyotrichum novae-angliae": { name: "Aster de Nouvelle-Angleterre", src: "pending" },
+  "Taxodium distichum": { name: "Cyprès chauve", src: "pending" },
+  "Thuja plicata": { name: "Thuya géant", src: "pending" },
+  "Tripsacum dactyloides": { name: "Tripsaque dactyloïde", src: "pending" },
+  "Tsuga heterophylla": { name: "Pruche de l'Ouest", src: "pending" },
+  "Vaccinium corymbosum": { name: "Bleuet en corymbe", src: "pending" },
+  "Vaccinium ovatum": { name: "Airelle à feuilles ovales", src: "pending" },
+  "Viburnum dentatum": { name: "Viorne dentée", src: "pending" },
+  "Zizia aurea": { name: "Zizia doré", src: "pending" },
 
   // Caribbean / Florida species with long-standing French names from the
-  // French Antilles, where the same plants grow. Neither TAXREF (metropolitan
-  // flora) nor VASCAN (Canada) is the right list, so these route through
-  // Wikidata and want a second pair of eyes from a Caribbean flora.
+  // French Antilles, where the same plants grow — and which are French soil,
+  // so TAXREF's outre-mer coverage is the list to promote these to once the
+  // check can confirm them. They route through Wikidata meanwhile, and still
+  // want a second pair of eyes from a Caribbean flora.
   "Bursera simaruba": { name: "Gommier rouge", src: "wikidata" },
   "Chrysobalanus icaco": { name: "Icaquier", src: "wikidata" },
   "Coccoloba uvifera": { name: "Raisinier bord de mer", src: "wikidata" },
@@ -282,5 +306,5 @@ export const TAXA_FR: NameTable = {
   // Atlantic the page is about.
   "Robinia pseudoacacia": { name: "Robinier faux-acacia", src: "taxref" },
   "Rubus armeniacus": { name: "Ronce d'Arménie", src: "taxref" },
-  "Pyrus calleryana": { name: "Poirier de Callery", src: "vascan" },
+  "Pyrus calleryana": { name: "Poirier de Callery", src: "pending" },
 };

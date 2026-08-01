@@ -23,7 +23,7 @@ import { DATA_SOURCES_URL, ISSUES_URL } from "../lib/plain";
 import { t, tx } from "../lib/i18n";
 import type { TKey } from "../locales/en";
 import { NAME_SOURCE_INFO } from "../lib/names";
-import type { NameSource } from "../lib/names";
+import type { ReferenceList } from "../lib/names";
 
 const REPO_URL = "https://github.com/olivierlacan/indigene";
 const MATRIX_DOI = "https://doi.org/10.1002/ece3.73004";
@@ -64,11 +64,12 @@ function surenessGroup(kind: Sureness, heading: string, meaning: string, rows: H
 const boldLead = (lead: TKey, rest: TKey): HTMLElement =>
   el("li", {}, [el("strong", {}, t(lead)), t(rest)]);
 
-/** The reference lists behind every plant and animal name, in reading order. */
-const NAME_SOURCES: { src: NameSource; what: TKey }[] = [
+/** The reference lists behind every plant and animal name, in reading order.
+ *  All three speak the French this app is written in — French of France. The
+ *  Canadian list used to sit in the middle of them; see `lib/names.ts`. */
+const NAME_SOURCES: { src: ReferenceList; what: TKey }[] = [
   { src: "taxref", what: "names.src.taxref" },
   { src: "bdtfx", what: "names.src.bdtfx" },
-  { src: "vascan", what: "names.src.vascan" },
   { src: "wikidata", what: "names.src.wikidata" },
 ];
 
@@ -118,6 +119,9 @@ export function renderSources(main: HTMLElement): void {
       // Names are a claim like any other, so they get the same accounting.
       el("h3", {}, t("names.sourcesTitle")),
       el("p", {}, t("names.sourcesLede")),
+      // *Whose* French, before the lists — otherwise the reader has no way to
+      // tell why a Canadian list isn't among them.
+      el("p", {}, t("names.sourcesLocale")),
       el("ul", { class: "who-list" }, NAME_SOURCES.map(({ src, what }) =>
         el("li", {}, [
           el("a", { href: NAME_SOURCE_INFO[src].url, target: "_blank", rel: "noopener" },
@@ -126,6 +130,7 @@ export function renderSources(main: HTMLElement): void {
         ])
       )),
       el("p", {}, t("names.sourcesGap")),
+      el("p", {}, t("names.sourcesPending")),
 
       el("h3", {}, t("sources.assumptionsTitle")),
       el("p", {}, t("sources.assumptionsLede")),

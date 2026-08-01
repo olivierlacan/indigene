@@ -1,5 +1,6 @@
 import "./styles.css";
 import { loadPrefs } from "./state";
+import { loadSticky } from "./lib/sticky";
 import { renderWelcome } from "./steps/welcome";
 import { renderLocation } from "./steps/location";
 import { renderSun } from "./steps/sun";
@@ -28,7 +29,14 @@ import { onUnitsChange } from "./lib/units";
 import { renderChrome } from "./components/chrome";
 import { mountUntranslatedBanner, resetUntranslated } from "./components/wip-banner";
 
-type StepFn = (main: HTMLElement, param?: string) => void | (() => void) | Promise<void>;
+// A step may render synchronously, hand back a cleanup function, or do both
+// after an await — the router already unwraps all three (see `route`), and a
+// step that waits on stored preferences before its first paint needs the
+// combination.
+type StepFn = (
+  main: HTMLElement,
+  param?: string
+) => void | (() => void) | Promise<void | (() => void)>;
 
 // `labelKey` rather than `label`: the rail is redrawn on every navigation and
 // on every language change, so the words have to be looked up at render time.
@@ -324,6 +332,11 @@ async function boot(): Promise<void> {
   // a fresh page can't be showing ranked results yet anyway (the results
   // step needs a confirmed spot, which a reload clears).
   void loadPrefs().catch(() => {});
+  // Same background read for what this device remembers — the last spot and
+  // the starting region. Started here, before the first route, so the one
+  // screen whose opening state depends on it (the location step, which awaits
+  // `stickyReady`) almost never actually waits.
+  void loadSticky().catch(() => {});
   initAppMenu();
   updateOnline();
   await route();

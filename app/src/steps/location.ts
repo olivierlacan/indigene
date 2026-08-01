@@ -1,5 +1,5 @@
 import { el, clear, toast } from "../ui";
-import { navigate, store, setSitePromise } from "../state";
+import { navigate, store, setSitePromise, rememberDraftSpot } from "../state";
 import { fetchSite } from "../lib/site";
 import { searchPlaces, placeLabel } from "../lib/geocode";
 import { REGIONS } from "../lib/plants";
@@ -11,6 +11,7 @@ import { whyThis } from "../components/learn";
 import { privacyNote } from "../components/privacy-link";
 import { t, tx, fmtNumber } from "../lib/i18n";
 import { regionName, regionReference } from "../lib/names";
+import { defaultRegion, rememberedSpotFor, sticky, stickyReady } from "../lib/sticky";
 
 // The out-of-coverage message, shown the moment a person selects a location
 // (GPS fix or search pick) outside every covered region — not sprung on them
@@ -35,23 +36,97 @@ function coverageWarning(lead: string): HTMLElement {
 // doesn't have.
 const MAP_ZOOM = 14;
 
+/**
+ * A one-line "this came from your device" note.
+ *
+ * Deliberately a sentence with a link, not a boxed disclosure. What's
+ * remembered is listed and managed in one place — the Settings page — and
+ * re-explaining that page here on every visit would be a paragraph nobody
+ * reads standing in a garden. Say which memory is in play, point at where it
+ * lives, stop.
+ */
+function memoryNote(parts: (string | Node)[]): HTMLElement {
+  return el("p", { class: "memory-note" }, parts);
+}
+
+/**
+ * Fit the draft's sun and soil to the spot just confirmed.
+ *
+ * This is the rule that keeps those two answers per-spot. Confirm the same
+ * ground again and its own readings come back, so nobody re-answers a question
+ * they answered here last week. Confirm different ground and they're wiped —
+ * including anything carried over from earlier in this same visit — because
+ * "sunny most of the day" was a fact about a patch of earth, never about the
+ * person holding the phone, and quietly reusing it somewhere else would rank
+ * the new spot's plants against the old spot's light.
+ *
+ * Answers given this visit are never overwritten: recall fills blanks, it
+ * doesn't argue.
+ */
+function fitToSpot(at: { lat: number; lon: number } | { regionId: string }): void {
+  const d = store.draft;
+  const s = rememberedSpotFor(at);
+  if (!s) {
+    d.sun = null;
+    d.horizon = null;
+    d.deciduousOverhead = false;
+    d.moistureOverride = null;
+    d.recalled = { sun: false, moisture: false };
+    return;
+  }
+  if (!d.sun && s.sun) {
+    d.sun = s.sun;
+    d.horizon = s.horizon;
+    d.deciduousOverhead = s.deciduousOverhead;
+    d.recalled.sun = true;
+  }
+  if (!d.moistureOverride && s.moisture) {
+    d.moistureOverride = s.moisture;
+    d.recalled.moisture = true;
+  }
+}
+
 // Step 1: "Where are you standing?" High-accuracy geolocation leads; the
 // fallbacks — a town/ZIP search (no permissions needed) and, for people who
 // already know their region, picking the plant list directly — sit behind a
 // plain-words switch link so only one picker shows at a time. Nothing here
 // asks anyone to know coordinates. The pin is adjusted by dragging, tapping,
 // or arrow keys — three ways to the same nudge.
-export function renderLocation(main: HTMLElement): void | (() => void) {
+//
+// Async because everything about its opening state — where the pin starts,
+// which picker is showing, which region is preselected — depends on what this
+// device remembers. Rendering before that read settles would silently show a
+// blank first visit to someone who has been here before. The wait is a
+// microtask once the background load has landed, and is bounded by the db
+// module's open watchdog when IndexedDB stalls.
+export async function renderLocation(main: HTMLElement): Promise<(() => void) | void> {
+  await stickyReady();
   clear(main);
 
-  let lat = store.draft.lat ?? 40.4406; // Pittsburgh, PA as a regional default
-  let lon = store.draft.lon ?? -79.9959;
+  const remembered = sticky().spot;
+  const startingRegion = defaultRegion();
+  // Whether the pin below is standing where we left it last time, rather than
+  // on a draft in progress or on the fallback point.
+  const fromMemory =
+    store.draft.lat == null && remembered?.lat != null && remembered.lon != null;
+
+  let lat = store.draft.lat ?? remembered?.lat ?? 40.4406; // Pittsburgh, PA as a regional default
+  let lon = store.draft.lon ?? remembered?.lon ?? -79.9959;
   let accuracy: number | null = null;
   // Offset (metres) applied by nudging the pin, relative to the fix.
   let offN = 0;
   let offE = 0;
 
   const status = el("p", { class: "coords", role: "status", "aria-live": "polite" }, t("location.none"));
+  // Where the pin came from, when it came from memory. Cleared the moment a
+  // fix or a search pick moves it, because then it didn't.
+  const spotNote = memoryNote(
+    fromMemory
+      ? tx("location.spotRemembered", {
+          link: el("a", { href: "#/settings/spot" }, t("location.rememberedLink")),
+        })
+      : []
+  );
   // Coverage feedback for a GPS fix; search picks show theirs by the search box.
   const coverageOut = el("div", { "aria-live": "polite" });
   const canvas = el("canvas", { width: 600, height: 320, "aria-hidden": "true" });
@@ -242,6 +317,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
         locateBtn.textContent = t("location.update");
         (locateBtn as HTMLButtonElement).disabled = false;
         clear(coverageOut);
+        clear(spotNote); // the pin is where you are now, not where it was
         if (!regionForCoords(lat, lon)) {
           coverageOut.append(coverageWarning(t("location.noListHere")));
         }
@@ -290,6 +366,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
               offN = 0; offE = 0; accuracy = null;
               clear(searchOut);
               clear(coverageOut); // a search pick supersedes any GPS-fix warning
+              clear(spotNote); // …and moves the pin off the remembered spot
               searchOut.append(
                 regionForCoords(p.lat, p.lon)
                   ? el("div", { class: "note info" }, [
@@ -335,8 +412,28 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
   // --- The escape hatch: pick a region by hand, no map point at all. ---
   // Picking is a two-step: tap a region, the list collapses to just that
   // choice (so the Next button is right there), and Next confirms it.
-  let selectedRegion: string | null = store.draft.regionOverride;
+  //
+  // It opens preselected when there's something to preselect, in this order:
+  // the draft being edited, then the starting region set in Settings, then
+  // whichever region was picked last. The note under the heading says which of
+  // those it is, in one line.
+  let selectedRegion: string | null =
+    store.draft.regionOverride ?? startingRegion ?? remembered?.regionId ?? null;
   const regionList = el("div", {});
+  const regionNote = memoryNote([]);
+
+  function renderRegionNote(): void {
+    clear(regionNote);
+    if (startingRegion && selectedRegion === startingRegion) {
+      regionNote.append(...tx("location.regionDefault", {
+        link: el("a", { href: "#/settings/region" }, t("location.regionDefaultLink")),
+      }));
+    } else if (remembered?.regionId && selectedRegion === remembered.regionId) {
+      regionNote.append(...tx("location.regionRemembered", {
+        link: el("a", { href: "#/settings/spot" }, t("location.rememberedLink")),
+      }));
+    }
+  }
 
   function renderRegionList(expanded: boolean): void {
     clear(regionList);
@@ -349,6 +446,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
           onClick: () => {
             selectedRegion = r.meta.id;
             renderRegionList(false);
+            renderRegionNote();
           },
         }, [
           el("span", { class: "choice-title" }, regionName(r.meta)),
@@ -363,22 +461,34 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
     }
   }
   renderRegionList(selectedRegion == null);
+  renderRegionNote();
 
   const regionCard = el("div", { class: "card" }, [
     el("h3", {}, t("location.regionTitle")),
     el("p", {}, t("location.regionLede")),
+    regionNote,
     regionList,
   ]);
 
   // --- One way in at a time. GPS leads; the town search and the region list
   // stay tucked behind a plain-words link so the screen holds a single task
   // and the Next button stays close. The link always offers the way back.
+  //
+  // Which picker opens: the draft's own way in, if there is one; otherwise a
+  // region — either the one set as the starting point in Settings, or the one
+  // picked last visit — because reopening the map for someone who has twice
+  // told us they work by region is asking a question they've answered.
   type Mode = "gps" | "zip" | "region";
-  let mode: Mode = store.draft.regionOverride ? "region" : "gps";
+  let mode: Mode =
+    store.draft.regionOverride ? "region"
+    : store.draft.lat != null ? "gps"
+    : startingRegion || remembered?.regionId ? "region"
+    : "gps";
 
   const mapBlock = el("div", {}, [
     el("div", { style: "margin:0.9rem 0" }, [mapWrap]),
     status,
+    spotNote,
     coverageOut,
   ]);
   const switcher = el("p", { class: "picker-switch" });
@@ -444,6 +554,8 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
             store.draft.site = null;
             store.draft.regionOverride = r.meta.id;
             setSitePromise(null);
+            fitToSpot({ regionId: r.meta.id });
+            rememberDraftSpot();
             toast(t("location.usingList", { region: regionName(r.meta) }));
             navigate("sun");
             return;
@@ -453,6 +565,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
           store.draft.lon = fLon;
           // A confirmed map point puts region selection back on automatic.
           store.draft.regionOverride = null;
+          fitToSpot({ lat: fLat, lon: fLon });
           // Start fetching soil/climate/elevation now, in parallel with the sun step.
           setSitePromise(
             fetchSite(fLat, fLon).then((s) => {
@@ -460,6 +573,7 @@ export function renderLocation(main: HTMLElement): void | (() => void) {
               return s;
             })
           );
+          rememberDraftSpot();
           navigate("sun");
         },
       }, t("location.next")),

@@ -22,6 +22,7 @@ concurrency:
 
 jobs:
   build:
+    name: Build the site
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -48,7 +49,7 @@ jobs:
       # which resolves to /indigene on a project Pages site — those URLs 404 on
       # the custom domain, because the files sit at /assets, not /indigene/assets.
       # Hardcoding the root keeps the build honest whatever that API reports.
-      - name: Build
+      - name: Build the app
         working-directory: app
         env:
           BASE_PATH: /
@@ -67,6 +68,7 @@ jobs:
           path: app/dist
 
   deploy:
+    name: Publish to Pages
     needs: build
     runs-on: ubuntu-latest
     environment:

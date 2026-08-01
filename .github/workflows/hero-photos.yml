@@ -43,6 +43,7 @@ concurrency:
 
 jobs:
   harvest:
+    name: Harvest, rank & shortlist
     runs-on: ubuntu-latest
     # A full run is ~200 plant×region pairs at roughly a second each, plus the
     # image downloads and decoding. Generous, but bounded.
@@ -89,7 +90,7 @@ jobs:
           path: app/dist/hero-review/index.html
           retention-days: 30
 
-      - name: Summarize
+      - name: Summarize the harvest
         if: always()
         run: |
           # `cat`, never an interpolated expression: the log carries names that

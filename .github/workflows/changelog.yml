@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   entry:
-    name: Changelog entry
+    name: Entry for this PR
     runs-on: ubuntu-latest
     steps:
       - name: Skip via label

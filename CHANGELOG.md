@@ -48,6 +48,11 @@ subtitle on the What's new page.
 
 ### Changed
 
+- Internal: every CI job has a name that says what it does, so a check reads
+  `Registry / Rebuild, audit & taxon-id coverage` rather than `Registry /
+  check`. Job ids are untouched (`needs:` still resolves), and `main` has no
+  required status checks to re-point.
+
 - **Every screen that reuses an answer you already gave says so, in one line.**
   A sentence and a link to where it's kept — not a box of small print between
   you and the question. What's remembered is explained once, in Settings, which

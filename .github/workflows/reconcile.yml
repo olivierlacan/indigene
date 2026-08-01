@@ -47,6 +47,7 @@ concurrency:
 
 jobs:
   reconcile:
+    name: Reconcile, rebuild & open a PR
     runs-on: ubuntu-latest
     env:
       # workflow_dispatch carries an explicit scope; a schedule can't pass
@@ -140,7 +141,7 @@ jobs:
             app/src/data/registry.ts
             app/public/registry/native-plant-registry.json
 
-      - name: Summarize outcome
+      - name: Summarize what changed
         if: always()
         run: |
           # `cat`, never an interpolated expression: the digest carries names

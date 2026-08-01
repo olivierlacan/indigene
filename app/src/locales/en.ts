@@ -888,8 +888,11 @@ export const en = {
   // What the icon widens to show. Must stay a word or two — it opens inside
   // the "Native to:" row, which already has a region name in it.
   "plant.shareShort": "Share",
+  // The subject line, for a share target that wants one (Mail). Everything
+  // that shows a link preview ignores it and renders the card instead — which
+  // is why there is no accompanying sentence to share: the card, the preview's
+  // own title row and a message body would be the same words three times over.
   "plant.shareTitle": "{name} — Indigene",
-  "plant.shareText": "{name} ({latin}) — a native plant worth knowing. Check if your spot suits it:",
   "plant.linkCopied": "Link copied — paste it anywhere.",
   "plant.ecosystemTitle": "🦋 What it does for the ecosystem",
   "plant.wildlifeItBrings": "Wildlife it brings in: ",

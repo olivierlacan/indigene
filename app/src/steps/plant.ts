@@ -394,15 +394,27 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
     return btn;
   }
 
+  /**
+   * Hand the share sheet a link, and nothing else to say.
+   *
+   * There used to be a sentence here — "{name} ({latin}) — a native plant worth
+   * knowing. Check if your spot suits it:" — written when an Indigene link
+   * previewed as nothing at all and the message had to carry the whole meaning
+   * itself. Now that every plant has its own card, that sentence is the third
+   * copy of the same words in one message: the picture says "Alder Buckthorn /
+   * Frangula alnus", the preview's title row underneath says "Alder Buckthorn
+   * (Frangula alnus)", and then the text said it again and asked you to click.
+   * Sending it felt like forwarding an advert.
+   *
+   * So: no `text`. Messages, WhatsApp and Slack insert the bare link and let
+   * their own preview do the talking, which is what the card is for. `title` is
+   * kept because a few targets — Mail most visibly — use it as the subject and
+   * would otherwise offer an untitled message; the ones that unfurl ignore it.
+   */
   async function share(p: Plant): Promise<void> {
     const url = plantShareUrl(p.id);
-    const data = {
-      title: t("plant.shareTitle", { name: commonName(p) }),
-      text: t("plant.shareText", { name: commonName(p), latin: p.latin }),
-      url,
-    };
     if (navigator.share) {
-      await navigator.share(data).catch(() => {});
+      await navigator.share({ title: t("plant.shareTitle", { name: commonName(p) }), url }).catch(() => {});
       return;
     }
     await navigator.clipboard?.writeText(url).catch(() => {});

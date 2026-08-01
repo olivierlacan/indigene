@@ -906,8 +906,6 @@ export const fr: Dict = {
   "plant.share": "Partager cette plante",
   "plant.shareShort": "Partager",
   "plant.shareTitle": "{name} — Indigene",
-  "plant.shareText":
-    "{name} ({latin}) — une plante indigène qui mérite d'être connue. Voyez si votre coin lui convient :",
   "plant.linkCopied": "Lien copié — collez-le où vous voulez.",
   "plant.ecosystemTitle": "🦋 Ce qu'elle fait pour l'écosystème",
   "plant.wildlifeItBrings": "La faune qu'elle attire : ",

@@ -48,6 +48,15 @@ subtitle on the What's new page.
 
 ### Changed
 
+- **Sharing a plant just sends the link now.** Tapping *Share* used to write a
+  little advert into your message for you — "Alder Buckthorn (Frangula alnus) —
+  a native plant worth knowing. Check if your spot suits it:" — and then attach
+  the link underneath. That was written back when an Indigene link showed
+  nothing useful and the message had to explain itself. Now the link brings its
+  own picture with the plant's name on it, so the sentence was the same words a
+  third time, and it made a note to a friend read like something forwarded from
+  a company. Your message is yours again: the link goes in, its picture appears,
+  and whatever you want to say around it is up to you.
 - **Every screen that reuses an answer you already gave says so, in one line.**
   A sentence and a link to where it's kept — not a box of small print between
   you and the question. What's remembered is explained once, in Settings, which

@@ -1,20 +1,26 @@
 // The small green dot that says "something has landed since you were last
-// here" — on the header's gear, on the What's new row inside its menu, and on
-// the footer's link to the same page.
+// here" — beside *What's new* in the header's ⚙️ menu, and beside the same
+// words in the footer.
 //
-// It appears in three places because they are three ways into one destination,
-// and a dot on only one of them is a dot most people never see: the gear is on
-// every screen and carries it without opening anything, the menu row is what
-// you actually press, and the footer is where a reader who has scrolled to the
-// end goes looking. All three clear together, because they read the same
-// memory (`lib/visits.ts`) and it's the What's new page — not any of these —
-// that marks the releases seen.
+// Both are ways into one destination, and both clear together: they read the
+// same memory (`lib/visits.ts`), and it's the What's new page — not either of
+// them — that marks the releases seen.
+//
+// ## Not on the gear
+//
+// The obvious place for a badge is the gear itself, so it can be seen without
+// opening anything. It was there and it's been taken off: on a header filled
+// with brand green, a mark on a 16–18px emoji reads as a smudge on the header
+// rather than a badge on a control, whether it's tucked into a corner or
+// centred on the hub. The cost is real — nothing now says "something's new"
+// until you open the menu or reach the footer — and it was the right trade
+// anyway, because a badge nobody can parse isn't a signal, it's noise on every
+// screen in the app.
 //
 // The dot is never the only thing carrying the meaning. It's a colour and a
 // shape, so it says nothing to a screen reader and nothing to a reader who
-// can't tell green from grey: every dot ships with words beside it. On the two
-// text rows the words are visually hidden and read aloud; on the gear, whose
-// whole label is already "Menu", they go into the accessible name.
+// can't tell green from grey: every dot ships with the words beside it,
+// visually hidden and read aloud as part of the link's own name.
 import { el } from "../ui";
 import { t } from "../lib/i18n";
 
@@ -30,21 +36,4 @@ export function newDot(): HTMLElement {
     el("span", { class: "new-dot", "aria-hidden": "true" }),
     el("span", { class: "sr-only" }, t("whatsNew.sinceLastVisit")),
   ]);
-}
-
-/**
- * Put the dot on the header's gear, or take it off.
- *
- * The gear is a fixed-width control in a header measured to the pixel (see the
- * ≤500px rules in styles.css), so the dot is positioned over it rather than
- * added to its flow — a badge that reflowed the header on the day a release
- * shipped would be a layout bug that only appears sometimes, which is the worst
- * kind. The button keeps its own label and gains a second sentence.
- */
-export function markMenuButton(button: HTMLElement, unseen: boolean): void {
-  button.classList.toggle("has-new", unseen);
-  button.setAttribute(
-    "aria-label",
-    unseen ? `${t("nav.menu")}, ${t("whatsNew.sinceLastVisit")}` : t("nav.menu")
-  );
 }

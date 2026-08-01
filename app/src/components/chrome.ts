@@ -10,7 +10,7 @@ import { el } from "../ui";
 import { t, tx, getLang, LANGUAGES } from "../lib/i18n";
 import { getUnits } from "../lib/units";
 import { hasUnseenRelease } from "../lib/visits";
-import { newDot, markMenuButton } from "./new-dot";
+import { newDot } from "./new-dot";
 
 /** Fill everything outside `#main` with the active language's words. */
 export function renderChrome(): void {
@@ -31,11 +31,8 @@ export function renderChrome(): void {
     if (key) elm.textContent = t(key as Parameters<typeof t>[0]);
   });
 
-  // The gear carries the "something's new" dot on every screen, so it's stamped
-  // here with the rest of the chrome rather than only when the menu opens —
-  // the whole point of a badge is to be seen before anything is pressed.
   const menuBtn = document.querySelector<HTMLElement>("#app-menu .nav-menu-btn");
-  if (menuBtn) markMenuButton(menuBtn, hasUnseenRelease());
+  menuBtn?.setAttribute("aria-label", t("nav.menu"));
   document.getElementById("app-menu-panel")?.setAttribute("aria-label", t("nav.menu"));
   document.getElementById("steps-rail")?.setAttribute("aria-label", t("steps.progress"));
 

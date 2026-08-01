@@ -131,7 +131,7 @@ export const en = {
   "memory.goalResetBtn": "Use the usual goal again",
   "memory.goalReset": "Back to the usual goal.",
   "memory.visitTitle": "What's new to you",
-  "memory.visitLede": "So the app can put a green dot on the ⚙️ menu when something has been added since you were last here — and leave it off when nothing has.",
+  "memory.visitLede": "So the app can put a green dot beside What's new — in the ⚙️ menu, and at the foot of every page — when something has been added since you were last here, and leave it off when nothing has.",
   "memory.visitEmpty": "Nothing yet. From your next visit, this is where you'll see when you were last here and how much of the What's new page you'd read.",
   "memory.visitSeen": "You've read up to",
   "memory.visitSeenValue": "Version {version}",
@@ -1184,7 +1184,7 @@ export const en = {
     "When you tap {save}, it's kept in your browser's own storage, on that device only. It never leaves your device, never reaches a server (there is none), and we can never see it. It's yours: open or delete a saved spot anytime from the Saved menu, and clearing your browser's data for this site erases them for good.",
   "privacy.whatsNewTitle": "How we know what's new to you",
   "privacy.whatsNew1":
-    "Indigene shows a small green dot on the ⚙️ menu when something has been added since you last looked, and marks those entries on the What's new page. To do that it has to remember a little — so here is all of it, exactly:",
+    "Indigene shows a small green dot beside What's new — in the ⚙️ menu, and at the foot of every page — when something has been added since you last looked, and marks those entries on the What's new page. To do that it has to remember a little — so here is all of it, exactly:",
   "privacy.whatsNew2":
     "The version number you'd read up to, like \"0.19\". Reading the What's new page sets it to today's; that's what turns the dot off.",
   "privacy.whatsNew3": "When your previous visit was, and when this one started — two dates, nothing finer.",

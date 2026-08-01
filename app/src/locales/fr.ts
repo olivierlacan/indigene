@@ -136,7 +136,7 @@ export const fr: Dict = {
   "memory.goalReset": "Retour à l'objectif habituel.",
   "memory.visitTitle": "Ce qui est nouveau pour vous",
   "memory.visitLede":
-    "De quoi afficher un point vert sur le menu ⚙️ quand quelque chose a été ajouté depuis votre dernier passage — et le laisser éteint quand rien n'a bougé.",
+    "De quoi afficher un point vert à côté des nouveautés — dans le menu ⚙️ et en bas de chaque page — quand quelque chose a été ajouté depuis votre dernier passage, et le laisser éteint quand rien n'a bougé.",
   "memory.visitEmpty":
     "Rien pour l'instant. Dès votre prochaine visite, vous verrez ici quand vous êtes passé la dernière fois et jusqu'où vous aviez lu la page des nouveautés.",
   "memory.visitSeen": "Vous avez lu jusqu'à",
@@ -1214,7 +1214,7 @@ export const fr: Dict = {
     "Quand vous touchez {save}, il est conservé dans le stockage propre à votre navigateur, sur cet appareil uniquement. Il ne quitte jamais votre appareil, n'atteint aucun serveur (il n'y en a pas), et nous ne pouvons jamais le voir. Il est à vous : ouvrez ou supprimez un lieu enregistré quand vous voulez depuis le menu « Lieux », et effacer les données de ce site dans votre navigateur les efface définitivement.",
   "privacy.whatsNewTitle": "Comment nous savons ce qui est nouveau pour vous",
   "privacy.whatsNew1":
-    "Indigene affiche un petit point vert sur le menu ⚙️ quand quelque chose a été ajouté depuis votre dernier passage, et signale ces nouveautés sur la page des nouveautés. Pour cela, il doit retenir un peu de choses — les voici, exactement :",
+    "Indigene affiche un petit point vert à côté des nouveautés — dans le menu ⚙️ et en bas de chaque page — quand quelque chose a été ajouté depuis votre dernier passage, et signale ces nouveautés sur la page des nouveautés. Pour cela, il doit retenir un peu de choses — les voici, exactement :",
   "privacy.whatsNew2":
     "Le numéro de version jusqu'où vous aviez lu, par exemple « 0.19 ». Lire la page des nouveautés le remplace par celui du jour ; c'est ce qui éteint le point.",
   "privacy.whatsNew3":

@@ -26,8 +26,9 @@ subtitle on the What's new page.
 ### Added
 
 - **A green dot when something's new, and nothing when it isn't.** Indigene now
-  keeps a small mark on the ⚙️ menu — and on *See what's new* in the footer —
-  from the moment something is added until you've had a look at it. Press it and
+  keeps a small mark beside *What's new* — in the ⚙️ menu, and at the foot of
+  every page — from the moment something is added until you've looked at it.
+  Follow it and
   the [What's new page](https://indigene.app/release-notes/) opens with the
   releases you haven't read marked down the side and one line at the top —
   *2 releases since your last visit* — which you can press to start at the oldest of
@@ -83,10 +84,12 @@ subtitle on the What's new page.
   the control: the whole box is a button, and the visible label is the count
   and nothing else, so it holds that line whatever the number grows to; its
   accessible name is where "and pressing it takes you there" gets said. With exactly one release
-  waiting there is nowhere to jump, so it degrades to a plain line. The gear's
-  badge is anchored to the glyph rather than the button, whose box moves with
-  its padding and its visually hidden label; centred on the hub at 0.34rem,
-  sized against a 16–18px gear rather than picked.
+  waiting there is nowhere to jump, so it degrades to a plain line. There is
+  deliberately no badge on the gear itself: on a header filled with brand green
+  a mark on a 16–18px emoji reads as a smudge on the header rather than a badge
+  on a control, in a corner or centred on the hub alike. The trade is real —
+  nothing signals a new release until the menu is opened or the footer reached
+  — and a badge nobody can parse is noise on every screen, not a signal.
 - Internal: `app-menu.ts` is synchronous now — no `listSpots`, no loading,
   error/retry or empty states, and the panel is drawn on open rather than
   populated in two passes. The seven `savedMenu.*` strings it needed go with

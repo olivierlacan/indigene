@@ -8,9 +8,9 @@
 // from every page without owning a tab belongs here. Today that's four rows, in
 // this order:
 //
-//   1. What's new, first, because the gear is what wears the "something landed
-//      since you were last here" dot on every screen — a badge you can see from
-//      anywhere needs the thing it points at to be the first thing you meet.
+//   1. What's new, first, because it's the row that wears the "something landed
+//      since you were last here" dot — and a menu you opened to check that
+//      shouldn't make you read past two settings to find it.
 //   2. Saved spots, as a way through to the Saved page.
 //   3–4. Language and units, one row each — the settings most likely to be
 //      wanted by someone who can't read the page they're looking at, and

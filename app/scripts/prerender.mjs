@@ -35,12 +35,15 @@
 // (…/plants/<slug>/ecosystem, …/wildlife/in/<region>) and the flow steps aren't
 // prerendered, and a typo has to land somewhere.
 //
-// ## What it does not do yet
+// ## The picture
 //
-// Every page still points at the one site-wide og:image. A per-plant card would
-// mean rendering ~200 pictures through Playwright on every deploy (minutes of
-// build time and ~10 MB of images), so it's deliberately left for its own
-// change. The words are per-page; the picture isn't.
+// A plant page carries its own: `scripts/gen-plant-cards.mjs` draws one card
+// per plant and they're committed under public/og/plants/, so this build only
+// points at them — it never renders anything. Every other page still shows the
+// site-wide card, which is honest for an index and a region; those pages are a
+// list, and a drawing of one member of it would be a lie about the rest.
+//
+// ## What it does not do yet
 //
 // The metadata is English on every page, because a query string can't pick a
 // file: …/plants/<slug>?lang=fr is the same document. A reader still gets
@@ -60,6 +63,10 @@ const ORIGIN = "https://indigene.app";
 const BASE = process.env.BASE_PATH || "/";
 const CARD = `${ORIGIN}${BASE}og/share-card.png`;
 const CARD_ALT = "Indigene — native plants for exactly where you stand";
+
+/** A plant's own card, drawn by `scripts/gen-plant-cards.mjs` and committed
+ *  under public/og/plants/. Every other page still shows the site-wide one. */
+const plantCard = (slug) => `${ORIGIN}${BASE}og/plants/${slug}.jpg`;
 
 /** Locale-style `{name}` interpolation, matching `t()` in lib/i18n.ts. */
 const fill = (s, vars = {}) =>
@@ -167,8 +174,10 @@ function stripHeadMeta(html) {
 const MARKER = "<!-- Head metadata written by scripts/prerender.mjs. -->";
 
 /** The per-page replacement for what `stripHeadMeta` took out. */
-function headMeta({ title, description, path }) {
+function headMeta({ title, description, path, image, imageAlt }) {
   const url = `${ORIGIN}${BASE}${path}`;
+  const card = image ?? CARD;
+  const alt = imageAlt ?? CARD_ALT;
   const tag = (s) => `    ${s}\n`;
   return (
     tag(MARKER) +
@@ -186,16 +195,16 @@ function headMeta({ title, description, path }) {
     tag(`<meta property="og:url" content="${esc(url)}" />`) +
     tag(`<meta property="og:title" content="${esc(title)}" />`) +
     tag(`<meta property="og:description" content="${esc(description)}" />`) +
-    tag(`<meta property="og:image" content="${CARD}" />`) +
+    tag(`<meta property="og:image" content="${card}" />`) +
     tag(`<meta property="og:image:width" content="1200" />`) +
     tag(`<meta property="og:image:height" content="630" />`) +
-    tag(`<meta property="og:image:alt" content="${esc(CARD_ALT)}" />`) +
+    tag(`<meta property="og:image:alt" content="${esc(alt)}" />`) +
     tag(`<meta property="og:locale" content="en" />`) +
     tag(`<meta property="og:locale:alternate" content="fr" />`) +
     tag(`<meta name="twitter:card" content="summary_large_image" />`) +
     tag(`<meta name="twitter:title" content="${esc(title)}" />`) +
     tag(`<meta name="twitter:description" content="${esc(description)}" />`) +
-    tag(`<meta name="twitter:image" content="${CARD}" />`)
+    tag(`<meta name="twitter:image" content="${card}" />`)
   );
 }
 
@@ -221,8 +230,8 @@ async function collectPages(load) {
     ]);
 
   const pages = [];
-  const add = (path, title, description) =>
-    pages.push({ path, title, description: clip(description) });
+  const add = (path, title, description, extra) =>
+    pages.push({ path, title, description: clip(description), ...extra });
 
   // --- the index pages ---
   // `#/search` is deliberately absent: it's the plants index's old address, and
@@ -260,10 +269,17 @@ async function collectPages(load) {
     for (const plant of loadPlants(region)) {
       if (seen.has(plant.id)) continue;
       seen.add(plant.id);
+      // The one kind of page with a picture of its own. The alt text says what
+      // the card actually shows, rather than repeating the title — a reader on
+      // a screen reader gets the title from `og:title` either way.
       add(
         `plants/${plant.id}`,
         fill(en["plant.docTitle"], { name: plant.common, latin: plant.latin }),
-        `${plant.nativeNote} ${plant.givesNote}`
+        `${plant.nativeNote} ${plant.givesNote}`,
+        {
+          image: plantCard(plant.id),
+          imageAlt: `${plant.common} (${plant.latin}) — a drawing of its form, with what it feeds and how big it grows`,
+        }
       );
     }
   }

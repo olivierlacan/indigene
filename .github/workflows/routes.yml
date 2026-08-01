@@ -28,6 +28,10 @@ on:
       - "app/public/404.html"
       - "app/scripts/prerender.mjs"
       - "app/scripts/check-routes.mjs"
+      # A plant's share card is committed, not built, so a change here (or a new
+      # plant above) can leave a page pointing at a picture nobody drew.
+      - "app/scripts/gen-plant-cards.mjs"
+      - "app/public/og/**"
       - ".github/workflows/routes.yml"
 
 permissions:

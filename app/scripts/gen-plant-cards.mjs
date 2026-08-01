@@ -18,9 +18,8 @@
 // number, because a card is read in half a second and a sentence isn't.
 //
 // The facts are chosen per plant by `factsFor` below, in a fixed order of
-// interest, and a plant only ever shows what it actually has. The icons are the
-// app's own (`lib/plain.ts` — 🐛 for host value, 🐝 for pollinators), so a
-// reader who has seen the app once already knows what they mean.
+// interest, and a plant only ever shows what it actually has. The icons beside
+// them are drawn, not emoji — see `FACT_ICONS`.
 //
 // ## Words, and why they are English
 //
@@ -43,15 +42,27 @@
 // it when the design changes, or when a plant is added — `--check` reports what
 // is missing or stale without drawing anything.
 //
-// Two hundred-odd committed images have to be small, and the brand wash is what
-// decides the format. It's a smooth radial gradient, so it holds thousands of
-// near-identical colours that PNG cannot run-length away: the same card is
-// ~230 KB as a PNG and ~24 KB as a JPEG, which is 50 MB against 5 MB across the
-// catalog. Flattening the background would get PNG down to about the same 24 KB
-// — so the choice is really "keep the wash" or "keep PNG", and the wash is what
-// makes a plant card look like it came from the same place as the site-wide
-// one. Nothing here is a photograph or a fine gradient at a hard edge, which is
-// where a JPEG would show; text on flat colour at quality 90 does not.
+// Two hundred-odd committed images have to be small, and PNG cannot make them
+// small. The brand wash is a smooth radial gradient — thousands of
+// near-identical colours no run-length coder can help with — and the type is
+// large and antialiased. Measured on this card:
+//
+//   PNG, with the wash     224 KB    47 MB across the catalog
+//   PNG, flat background    48 KB    10 MB
+//   JPEG 95                 65 KB    14 MB
+//   JPEG 90                 48 KB    10 MB
+//   JPEG 85                 40 KB     9 MB
+//   JPEG 78                 33 KB     7 MB
+//
+// Flattening the background buys nothing PNG-side, so the real choice is the
+// quality number — and at 1:1, with the crops stacked, every one of those JPEGs
+// is indistinguishable from the lossless original. Nothing on the card is a
+// photograph or a fine gradient meeting a hard edge, which is where JPEG shows;
+// it's flat colour and type. 90 is chosen with room to spare rather than at the
+// edge of what survives, because these are the pictures strangers see first and
+// they are cheap to be generous about. They're also fetched only by link
+// unfurlers, never by anyone using the app, so the weight is a repository cost
+// and not a page-load one.
 const QUALITY = 90;
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync, unlinkSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -109,16 +120,16 @@ function height(ft) {
 function factsFor(plant, wildlifeCount) {
   const facts = [];
   if (plant.hostLepCount > 0) {
-    facts.push({ icon: "🐛", value: String(plant.hostLepCount), label: "caterpillars" });
+    facts.push({ icon: "caterpillar", value: String(plant.hostLepCount), label: "caterpillars" });
   }
   if (wildlifeCount > 0) {
-    facts.push({ icon: "🐝", value: String(wildlifeCount), label: wildlifeCount === 1 ? "creature fed" : "creatures fed" });
+    facts.push({ icon: "butterfly", value: String(wildlifeCount), label: wildlifeCount === 1 ? "creature fed" : "creatures fed" });
   }
   if (plant.bloom) {
     const { startMonth: a, endMonth: b } = plant.bloom;
-    facts.push({ icon: "🌸", value: a === b ? MONTHS[a] : `${MONTHS[a]}–${MONTHS[b]}`, label: "in bloom" });
+    facts.push({ icon: "bloom", value: a === b ? MONTHS[a] : `${MONTHS[a]}–${MONTHS[b]}`, label: "in bloom" });
   }
-  facts.push({ icon: "📏", ...height(plant.matureHeightFt) });
+  facts.push({ icon: "height", ...height(plant.matureHeightFt) });
   return facts.slice(0, 4);
 }
 
@@ -127,6 +138,97 @@ function factsFor(plant, wildlifeCount) {
 // ---------------------------------------------------------------------------
 
 const BRAND = "#7ec894";
+
+/**
+ * The four fact icons, drawn rather than typed.
+ *
+ * The app writes these facts with emoji — 🐛, 🐝 — because that's its icon
+ * idiom in running text, where a reader is already looking at words and a
+ * familiar coloured glyph is the fastest thing to recognise. A share card is
+ * the opposite situation: one flat green on one dark ground, seen at thumbnail
+ * size in a chat list, and four full-colour emoji dropped into that read as
+ * clutter competing with the plant.
+ *
+ * So they follow the plant glyphs' rules instead (`scripts/gen-form-glyphs.mjs`
+ * sets them out): one 48-unit box, filled masses with any stem stroked at one
+ * weight, roughly equal ink in each, and the same brand green as the silhouette
+ * beside them. The height mark stands on the ground line at y≈40, which is
+ * where every plant in the set stands too — that's the whole reason it reads as
+ * "grows this tall" rather than as an arrow.
+ *
+ * They live here rather than in `components/plant-glyphs.ts` because nothing in
+ * the app draws them; putting them there would ship four unused shapes in the
+ * bundle. If the app ever wants them, that's where they should move.
+ */
+const FACT_ICONS = {
+  // A grub in profile: four body segments scalloping down to the ground, then a
+  // larger head with an eye punched out of it (hence the even-odd fill — the
+  // second subpath winds the other way) and two antennae.
+  caterpillar: {
+    evenodd: true,
+    marks: [
+      { d: "M10.5 33.2a4.6 4.6 0 1 0 0-.01Z" },
+      { d: "M17.4 30.6a5.1 5.1 0 1 0 0-.01Z" },
+      { d: "M24.3 28.9a5.4 5.4 0 1 0 0-.01Z" },
+      { d: "M31.2 29.3a5.4 5.4 0 1 0 0-.01Z" },
+      { d: "M38.6 32.2a6.6 6.6 0 1 0 0-.01ZM40.6 29.6a1.9 1.9 0 1 1 0 .01Z" },
+      { d: "M39.2 25.2l1.4-5.6", stem: true, w: 2.6 },
+      { d: "M43.2 26.6l4.2-3.9", stem: true, w: 2.6 },
+    ],
+  },
+  // Wings first, body over them, antennae behind the upper pair so they read as
+  // a notch rather than two loose hairs at small sizes.
+  butterfly: {
+    marks: [
+      { d: "M23 17L19 9.5", stem: true, w: 2.4 },
+      { d: "M25 17L29 9.5", stem: true, w: 2.4 },
+      { d: "M22 22C20 12.5 12.5 7 8.5 10.5C4.8 13.8 10 22.6 22 24Z" },
+      { d: "M26 22C28 12.5 35.5 7 39.5 10.5C43.2 13.8 38 22.6 26 24Z" },
+      { d: "M22 27C18.5 30 12 33 11 37C10.2 40.5 17 41 20 36.5C21.4 34.4 22.2 31 22 27Z" },
+      { d: "M26 27C29.5 30 36 33 37 37C37.8 40.5 31 41 28 36.5C26.6 34.4 25.8 31 26 27Z" },
+      { d: "M24 16c1.7 0 2.8 1.7 2.8 4.2v12c0 2.5-1.1 4.2-2.8 4.2s-2.8-1.7-2.8-4.2v-12C21.2 17.7 22.3 16 24 16Z" },
+    ],
+  },
+  // The perennial glyph's own flower head — the same bloom the wildflower
+  // silhouette wears, which is the point — opened up to fill the box on its
+  // own, since here it isn't sitting on a stem with leaves under it.
+  bloom: {
+    scale: 1.26,
+    marks: [
+      { d: "M24 24.5C29.2 21.2 27.9 13.7 24 11.1C20.1 13.7 18.8 21.2 24 24.5Z" },
+      { d: "M24 24.5C28.8 28.4 35.3 24.9 36.6 20.3C32.8 17.5 25.5 18.5 24 24.5Z" },
+      { d: "M24 24.5C21.8 30.2 27.1 35.4 31.8 35.3C33.4 30.7 30.1 24.1 24 24.5Z" },
+      { d: "M24 24.5C17.9 24.1 14.6 30.7 16.2 35.3C20.9 35.4 26.2 30.2 24 24.5Z" },
+      { d: "M24 24.5C22.5 18.5 15.2 17.5 11.4 20.3C12.7 24.9 19.2 28.4 24 24.5Z" },
+      { d: "M24 19.6a4.9 4.9 0 1 0 0 9.8 4.9 4.9 0 1 0 0-9.8Z" },
+    ],
+  },
+  // Ground line, and a rise off it. Wider and heavier than it needs to be to
+  // read, because it has to carry the same weight of ink as a butterfly.
+  height: {
+    marks: [
+      { d: "M24 7l7.4 10.2H16.6Z" },
+      { d: "M21.4 15.6h5.2v21.4h-5.2Z" },
+      { d: "M8.5 36.8h31v3.7h-31Z" },
+    ],
+  },
+};
+
+function iconMarkup(name, size) {
+  const { marks, evenodd, scale } = FACT_ICONS[name];
+  const parts = marks.map((m) =>
+    m.stem
+      ? `<path d="${m.d}" fill="none" stroke="${BRAND}" stroke-width="${m.w}" stroke-linecap="round" stroke-linejoin="round"/>`
+      : `<path d="${m.d}" fill="${BRAND}"${evenodd ? ' fill-rule="evenodd"' : ""}/>`
+  );
+  // A group transform rather than rescaled path data: the geometry stays the
+  // number it was drawn as, and "this shape wants to sit larger in the box" is
+  // said once instead of being baked into every coordinate.
+  const body = scale
+    ? `<g transform="translate(24 24) scale(${scale}) translate(-24 -24)">${parts.join("")}</g>`
+    : parts.join("");
+  return `<svg viewBox="0 0 48 48" width="${size}" height="${size}" aria-hidden="true">${body}</svg>`;
+}
 
 const mark = readFileSync(join(root, "public", "favicon.svg"), "utf8")
   .replace(/<!--[\s\S]*?-->/g, "")
@@ -152,7 +254,7 @@ function cardHtml({ name, latin, glyph, keystone, facts }) {
   const chips = facts
     .map(
       (f) => `<li>
-        <span class="ficon">${f.icon}</span>
+        ${iconMarkup(f.icon, 44)}
         <span class="ftext"><b>${esc(f.value)}</b><i>${esc(f.label)}</i></span>
       </li>`
     )
@@ -210,8 +312,8 @@ function cardHtml({ name, latin, glyph, keystone, facts }) {
      that breaks over two lines lifts its own number out of line with the rest
      and the row stops reading as a row. */
   ul { position: relative; display: flex; gap: 38px; list-style: none; align-items: center; }
-  li { display: flex; align-items: center; gap: 13px; white-space: nowrap; }
-  .ficon { font-size: 34px; line-height: 1; }
+  li { display: flex; align-items: center; gap: 12px; white-space: nowrap; }
+  li > svg { flex: none; display: block; }
   .ftext { display: flex; flex-direction: column; }
   .ftext b { font-size: 38px; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; }
   .ftext i { font-size: 20px; font-style: normal; color: #cdcdbd; margin-top: 4px; }

@@ -147,8 +147,15 @@ if (existsSync(dist)) {
   fail("dist/ is missing", "run `npm run build` before this check");
 }
 
-// --- 3. each page's head names itself --------------------------------------
+// --- 3. each page's head names itself, and its picture exists ---------------
+// The picture is checked the same way and for the same reason as the page. A
+// plant's card is drawn by `scripts/gen-plant-cards.mjs` and *committed*, not
+// built — so a plant added after the last run has a page whose og:image points
+// at a file nobody ever drew. The page previews with a broken picture, or with
+// no picture at all, and again the only person who finds out is the one who was
+// sent the link.
 const stale = [];
+const noImage = [];
 for (const path of expected) {
   const file = join(dist, path, "index.html");
   if (!existsSync(file)) continue; // already reported above
@@ -160,11 +167,28 @@ for (const path of expected) {
   if (canonical !== url || ogUrl !== url || !title || title === SHELL_TITLE) {
     stale.push(`/${path}${title === SHELL_TITLE ? " (still the shell's title)" : ` (canonical ${canonical}, og:url ${ogUrl})`}`);
   }
+
+  const image = /<meta property="og:image" content="([^"]+)"/.exec(html)?.[1];
+  const twitter = /<meta name="twitter:image" content="([^"]+)"/.exec(html)?.[1];
+  if (!image || !image.startsWith(`${ORIGIN}${BASE}`)) {
+    noImage.push(`/${path} — og:image is ${image ?? "missing"}, which isn't an address on this site`);
+  } else if (!existsSync(join(dist, image.slice(`${ORIGIN}${BASE}`.length)))) {
+    noImage.push(`/${path} — og:image points at ${image.slice(ORIGIN.length)}, and no such file was built`);
+  } else if (twitter !== image) {
+    noImage.push(`/${path} — og:image and twitter:image disagree (${image} vs ${twitter})`);
+  }
 }
 if (stale.length) {
   fail(
     `${stale.length} page${stale.length === 1 ? "" : "s"} kept the shell's share metadata`,
     `${stale.slice(0, 8).join("\n    ")}\n    A 200 that still previews as the generic card is the bug this all exists to prevent.`
+  );
+}
+if (noImage.length) {
+  fail(
+    `${noImage.length} page${noImage.length === 1 ? " has" : "s have"} a share picture that isn't there`,
+    `${noImage.slice(0, 8).join("\n    ")}\n` +
+      "    Plant cards are committed, not built — run `node scripts/gen-plant-cards.mjs` and commit what it writes."
   );
 }
 

@@ -1337,6 +1337,7 @@ export const fr: Dict = {
   "obs.enlarge": "Agrandir la photo {i} de {name} par {observer}",
   "obs.enlargeMore": ", et en voir {n} de plus",
   "obs.tapToEnlarge": "{attribution} — touchez pour agrandir",
+  "hero.enlarge": "Voir cette photo de {name} en grand",
   "obs.photoAlt": "{name} photographié par {observer}",
   "lightbox.prev": "Photo précédente",
   "lightbox.next": "Photo suivante",

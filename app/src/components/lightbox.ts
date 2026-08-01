@@ -259,8 +259,10 @@ function showPhoto(img: HTMLImageElement, url: string): void {
   });
 }
 
-// "cc-by-nc" → "CC BY-NC"; "cc0" → "CC0". Anything unexpected is upper-cased as-is.
-function licenseLabel(code: string): string {
+/** "cc-by-nc" → "CC BY-NC"; "cc0" → "CC0". Anything unexpected is upper-cased
+ *  as-is. Exported because the plant page's hero credit prints the same label,
+ *  and two spellings of a licence is one too many. */
+export function licenseLabel(code: string): string {
   if (code === "cc0") return "CC0";
   return code.toUpperCase().replace(/^CC-/, "CC ");
 }

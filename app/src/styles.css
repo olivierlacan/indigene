@@ -1711,6 +1711,69 @@ details.weights {
 .plant .plant-why {
   margin-top: 0.75rem;
 }
+/* --- The chosen photograph, in the form drawing's slot --- */
+/* A thumbnail the text wraps around, never wider than a third of the viewport.
+   Two earlier goes were wrong in instructive ways: full-bleed pushed the plant
+   below its own photograph, and a flex column left a block of dead space to the
+   right — a name and a binomial are two short lines, the photo is five tall.
+   Floating it lets the name, the binomial and the badges sit beside it and then
+   carry on underneath, which is what actually fills the row. `flow-root` on the
+   head contains the float so "why it belongs here" still starts below it. */
+.plant-head-photo {
+  display: flow-root;
+  padding: 0.9rem 1rem 0.6rem;
+}
+.plant-hero {
+  float: inline-start;
+  width: min(33vw, 9.5rem);
+  margin: 0 0.85rem 0.4rem 0;
+}
+.plant-hero-shot {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--brand-bg);
+  line-height: 0;
+  cursor: zoom-in;
+}
+.plant-hero-shot:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+.plant-hero-shot img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: transform 0.15s ease;
+}
+@media (hover: hover) {
+  .plant-hero-shot:hover img {
+    transform: scale(1.04);
+  }
+}
+/* Credit rides with the photo, at the size a credit deserves — the observer's
+   name on one line, ellipsised rather than wrapped. The licence, the date and
+   the link to the original are one tap away in the lightbox; a full-width row
+   of them above the plant's own badges had the priorities backwards. */
+.plant-hero-credit {
+  margin-top: 0.25rem;
+  font-size: 0.7rem;
+  line-height: 1.3;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.plant-hero-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .plant-photo {
   width: 4.5rem;
   height: 4.5rem;

@@ -2,7 +2,7 @@
   "name": "indigene",
   "version": "0.17.0",
   "private": true,
-  "description": "Native Indigene — a mobile-first PWA that recommends locally native plants for the exact spot you're standing in.",
+  "description": "Native Indigene \u2014 a mobile-first PWA that recommends locally native plants for the exact spot you're standing in.",
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -15,6 +15,8 @@
     "host-counts": "node scripts/build-host-counts.mjs",
     "registry:build": "node scripts/build-registry.mjs",
     "registry:check": "node scripts/check-registry.mjs",
+    "hero:harvest": "node scripts/harvest-hero-photos.mjs",
+    "hero:review": "node scripts/build-hero-review.mjs",
     "reconcile": "node scripts/reconcile.mjs",
     "names:check": "node scripts/check-vernacular.mjs",
     "lookalikes:check": "node scripts/check-lookalikes.mjs"

@@ -114,7 +114,7 @@ sides** — describing only the native is half a sentence.
 
 **Where this data comes from is different from every other layer, and worth
 being blunt about.** Host counts have NWF/Tallamy and the Gaytán matrix; names
-have TAXREF and VASCAN; identity has IPNI. *"These two plants get confused"* is
+have TAXREF and Tela Botanica; identity has IPNI. *"These two plants get confused"* is
 nobody's dataset. Nobody publishes it as a table, because it isn't a property of
 a plant — it's a property of the mistake people make. So this layer is
 hand-authored from the places that **do** publish it, all of them the same kind
@@ -168,21 +168,40 @@ layer is [`app/src/lib/names.ts`](app/src/lib/names.ts); the tables are
 `app/src/locales/taxa.<lang>.ts`, and every row records which authority it came
 from.
 
+**The edition is `fr-FR` — French of France.** A reference list belongs to a
+country, and the countries disagree: Québec's standard name for *Ribes
+sanguineum* is "gadellier sanguin", France's is "groseillier sanguin"; a
+*bleuet* is a blueberry in Montréal and a cornflower in Paris. A table that
+quotes both speaks a French nobody speaks, so the locale is declared once (as
+`LOCALE` in [`app/src/lib/i18n.ts`](app/src/lib/i18n.ts)) and the sources below
+are France's.
+
 | Source | Covers | Licence | Notes |
 |---|---|---|---|
-| **TAXREF** (INPN / Muséum national d'Histoire naturelle) — [referentiel-taxonomique-taxref](https://inpn.mnhn.fr/programme/referentiel-taxonomique-taxref) | the flora **and fauna** of France and its overseas territories; `frenchVernacularName` | Licence Ouverte / Etalab (open, attribution) | The authority for anything native to France, plants and animals alike. Where several names are listed, the one the référentiel leads with is used. |
-| **Tela Botanica — BDTFX** — [bdtfx](https://www.tela-botanica.org/bdtfx/) | flora of metropolitan France, with the vernacular names French botanists actually use | CC BY-SA 4.0 | Cross-check on TAXREF for plants. |
-| **VASCAN** (Database of Vascular Plants of Canada, Université de Montréal) — [data.canadensys.net/vascan](https://data.canadensys.net/vascan/) | standard French names for **North American** plants | CC BY 4.0 | The gap TAXREF cannot fill: a Pacific Northwest native is unknown to the French flora, but Québec has named it. |
-| **Wikidata** — [wikidata.org](https://www.wikidata.org/) | `P1843` (taxon common name, `fr`) and the `fr` label | CC0 | Crosswalk of last resort, for taxa neither national list covers (the Caribbean and Florida species, a few insects). Already the hub `scripts/reconcile.mjs` resolves every taxon through, so the join is free. |
+| **TAXREF** (INPN / Muséum national d'Histoire naturelle) — [referentiel-taxonomique-taxref](https://inpn.mnhn.fr/programme/referentiel-taxonomique-taxref) | the flora **and fauna** of France and its overseas territories; `frenchVernacularName` | Licence Ouverte / Etalab (open, attribution) | The authority for anything native to France, plants and animals alike — the outre-mer coverage reaching the Antillean flora too. Where several names are listed, the one the référentiel leads with is used. Served as `application/hal+json`: ask for plain JSON and it answers 406 to every request. |
+| **Tela Botanica — BDTFX / NVJFL** — [bdtfx](https://www.tela-botanica.org/bdtfx/) | flora of metropolitan France, with the vernacular names French botanists actually use | CC BY-SA 4.0 | Second French opinion on TAXREF for plants. Two hops: BDTFX resolves the scientific name to a `num_taxonomique`, NVJFL turns that into vernacular names. |
+| **Wikidata** — [wikidata.org](https://www.wikidata.org/) | `P1843` (taxon common name, `fr`) and the `fr` label | CC0 | Crosswalk of last resort, for taxa neither national list covers (the Caribbean and Florida species, a few insects). Already the hub `scripts/reconcile.mjs` resolves every taxon through, so the join is free. A `fr` label that is just the binomial is not a French name and is discarded. |
+
+**Deliberately not used: VASCAN** (Database of Vascular Plants of Canada,
+[data.canadensys.net/vascan](https://data.canadensys.net/vascan/), CC BY 4.0).
+It was, on the reasoning that Québec has named the North American plants the
+French flora has no entry for. But its *noms français normalisés* are Canadian
+French, and mixing them into an fr-FR table gives a reader two dialects at once —
+"douglas de Menzies" beside "sapin de Douglas". It is the right authority for a
+`fr-CA` edition, which is why it survives in `NameSource` scoped to that locale,
+and the type system now keeps it out of the French one.
 
 **How the claim stays honest.** The tables are hand-seeded from those lists, and
 [`app/scripts/check-vernacular.mjs`](app/scripts/check-vernacular.mjs) re-asks
 each authority and reports every row its own source doesn't back. It needs open
-internet (all four hosts refuse the build sandbox's egress), so it runs
+internet (all three hosts refuse the build sandbox's egress), so it runs
 quarterly in CI — [`.github/workflows/vernacular.yml`](.github/workflows/vernacular.yml)
 — and commits its snapshot to
 [`data/sources/vernacular-names/`](data/sources/vernacular-names/). A
-*disagreement* fails the job; a *gap* does not, because plenty of North American
+*disagreement* fails the job, and so does **an authority that answers nothing at
+all**: a national reference can go quiet behind a changed header or a rate limit,
+and a check that reads that as "no French name for any of these 258 taxa" has
+stopped checking. A *gap* is not a failure, because plenty of North American
 natives have simply never been named in French and showing the Latin is the
 honest answer.
 

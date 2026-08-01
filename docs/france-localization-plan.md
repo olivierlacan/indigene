@@ -13,9 +13,10 @@ the reader's own choice. What exists today:
   resolved: a user toggle everywhere, not metric-for-the-French-edition). The
   catalog still stores feet and °F; conversion happens once, at the moment a
   number becomes text.
-- **Localized names, looked up rather than translated** — TAXREF, Tela Botanica,
-  VASCAN and Wikidata, with a quarterly CI verification job. See
-  `DATA_SOURCES.md` → "Vernacular names".
+- **Localized names, looked up rather than translated** — TAXREF, Tela Botanica
+  and Wikidata, with a quarterly CI verification job. The edition is **fr-FR**,
+  which is what makes those the right lists and Canada's VASCAN the wrong one.
+  See `DATA_SOURCES.md` → "Vernacular names".
 - **Localized region metadata and catalog prose**, as overlays that fall back to
   English and *say so on the page* when they do.
 

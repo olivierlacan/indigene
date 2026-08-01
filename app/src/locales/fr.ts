@@ -1342,15 +1342,17 @@ export const fr: Dict = {
   "names.sourcesTitle": "D'où viennent les noms de plantes et d'animaux",
   "names.sourcesLede":
     "Le nom d'une plante dans votre langue n'est pas la traduction de son nom anglais : c'est le nom que lui ont donné les gens qui vivent avec elle, consigné dans un référentiel national. Nous allons donc le chercher, au lieu de le traduire :",
+  "names.sourcesLocale":
+    "Quel français ? Celui de France. Une même plante peut porter un nom à Paris et un autre au Québec — un bleuet est une myrtille à Montréal et une fleur bleue des champs en France — alors nous suivons les référentiels d'un seul pays, plutôt que d'en mélanger deux en un français que personne ne parle.",
   "names.src.taxref":
     "le référentiel national français de la flore et de la faune de France. L'autorité pour tout ce qui pousse ou vole ici.",
   "names.src.bdtfx":
     "la flore de France métropolitaine, avec les noms vernaculaires que les botanistes français emploient réellement.",
-  "names.src.vascan":
-    "les noms français normalisés des plantes nord-américaines — la lacune que le référentiel français ne peut pas combler, une indigène du Nord-Ouest Pacifique lui étant inconnue.",
   "names.src.wikidata": "le recoupement de dernier recours, pour les espèces qu'aucun référentiel national ne couvre.",
   "names.sourcesGap":
     "Quand aucun référentiel n'a de nom, nous affichons le nom scientifique. Beaucoup d'indigènes nord-américaines n'ont tout simplement jamais reçu de nom français, et en inventer un serait exactement l'invention assurée que nous refusons de commettre avec un nombre de chenilles.",
+  "names.sourcesPending":
+    "Et quelques dizaines de plantes nord-américaines portent ici un nom français dont nous cherchons encore la source française. Ils venaient du référentiel canadien, que nous ne prenons plus pour le nôtre. Les noms restent pour l'instant — presque tous sont ceux qu'emploierait un jardinier français — et chacun de ceux que nous ne pourrons pas confirmer laissera place au nom scientifique.",
 
   // ---------------------------------------------------------------------
   // Composants partagés.

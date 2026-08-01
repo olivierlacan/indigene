@@ -9,7 +9,7 @@
 //
 // **Why this exists.** Every other number in this app has a source you can page
 // through: host counts come from NWF/Tallamy and the Gaytán matrix, names from
-// TAXREF and VASCAN, identity from IPNI. "These two plants get confused",
+// TAXREF and Tela Botanica, identity from IPNI. "These two plants get confused",
 // though, is nobody's dataset. It's editorial content — extension bulletins,
 // weed-board ID sheets, the "risque de confusion" section of a French EEE fact
 // sheet — and every tie in the catalog is hand-authored from those, and cites

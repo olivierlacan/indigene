@@ -131,6 +131,49 @@ subtitle on the What's new page.
   `scripts/gen-form-glyphs.mjs` — edit there and paste its output back over
   `FORM_GLYPHS`. `steps/region.ts` takes a size for `formIcon`, and passes 24
   for section headings against 17 for chips.
+- **Indigene's French is now, plainly, the French of France.** The same plant
+  can go by one name in Paris and another in Québec — a *bleuet* is a blueberry
+  in Montréal and a cornflower in France — and until now Indigene had been
+  taking names from both countries' reference lists at once. It follows
+  France's lists only from here on, and [where the names come
+  from](https://indigene.app/#/sources) says which French it means and why.
+  Anyone whose phone is set to Canadian French still gets this edition: reading
+  France's French beats reading English, and we'd rather say which one it is
+  than pretend it's both.
+- **Several dozen North American plants keep their French name, with an honest
+  label on it.** Those names came from the Canadian list, so the app can no
+  longer say that's where they're from. Nearly all of them are what a French
+  gardener would say anyway, so they stay on screen while each is traced back
+  to a French list — and the ones no French list has ever named will go back to
+  showing the scientific name, which is nobody's dialect.
+- Internal: the locale is declared once, as `LOCALE` in `lib/i18n.ts` (`fr` →
+  `fr-FR`), and stamped on `<html lang>` and every `Intl` formatter. Name
+  sources are locale-scoped in `lib/names.ts`: `TAXA_FR` is a
+  `NameTable<FrenchSource>`, so VASCAN — kept in `NameSource` as the fr-CA
+  authority it is — is a compile error in the French table rather than
+  something a reviewer has to catch. The 87 rows it had supplied now carry
+  `src: "pending"`.
+
+### Fixed
+
+- **The quarterly check that keeps those names honest had stopped checking.**
+  Four times a year Indigene re-asks each national reference list whether the
+  names it shows are the names that list gives. France's national list had been
+  answering nothing at all — every question, the whole run — and the check read
+  that silence as "no French name exists for any of these 258 plants and
+  animals", then took the Canadian answers as the truth. It asks properly
+  again, and from now on a list that answers nothing fails the check loudly
+  instead of passing as a clean result.
+- Internal: `check-vernacular.mjs` is locale-driven (`LOCALES` maps `fr` →
+  fr-FR + its authorities). TAXREF is asked for `application/hal+json`, which
+  is what it serves — the plain-JSON `Accept` was returning 406 for every
+  lookup — and falls back to `/taxa/{id}` when the search projection carries no
+  vernacular name. Tela Botanica (BDTFX → NVJFL) is wired up at last as the
+  second French opinion. A Wikidata `fr` label equal to the binomial is
+  discarded rather than reported as a disagreement. Every request's status is
+  recorded per source in the snapshot's new `health` block, requests are paced
+  and retried on 429/5xx, and `pending` rows are reported with the source to
+  promote each to.
 
 ### Fixed
 

@@ -1311,14 +1311,16 @@ export const en = {
   "names.sourcesTitle": "Where the plant and animal names come from",
   "names.sourcesLede":
     "A plant's name in your language isn't a translation of its English name — it's the name the people who live with it gave it, recorded in a national reference list. So we look each one up rather than translating it:",
+  "names.sourcesLocale":
+    "Which French? The French of France. The same plant can go by one name in Paris and another in Québec — a bleuet is a blueberry in Montréal and a cornflower in France — so we follow one country's lists rather than mixing two into a French nobody actually speaks.",
   "names.src.taxref":
     "the French national reference for the flora and fauna of France. The authority for anything that grows or flies here.",
   "names.src.bdtfx": "the flora of metropolitan France, with the vernacular names French botanists actually use.",
-  "names.src.vascan":
-    "the standard French names for North American plants — the gap the French list can't fill, because a Pacific Northwest native is unknown to it.",
   "names.src.wikidata": "the crosswalk of last resort, for species neither national list covers.",
   "names.sourcesGap":
     "Where no list has a name, we show the scientific name instead. Plenty of North American natives have simply never been named in French, and making one up would be exactly the confident invention we refuse to commit with a host count.",
+  "names.sourcesPending":
+    "And a few dozen North American plants are shown with a French name we're still tracing back to a French list. They came from the Canadian one, which we've stopped treating as ours. The names stay for now — nearly all are what a French gardener would say — and each one we can't confirm will go back to showing the scientific name.",
 
   // ---------------------------------------------------------------------
   // Shared components: the location prompt, the sightings sections, chips.

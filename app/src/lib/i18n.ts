@@ -30,6 +30,28 @@ export const LANGUAGES: { code: Lang; endonym: string }[] = [
   { code: "fr", endonym: "Français" },
 ];
 
+/**
+ * The **locale** each language actually is — not just its language code.
+ *
+ * A language code says "French"; a locale says *whose* French. That matters
+ * here more than it does in most apps, because Indigene doesn't translate the
+ * names of living things, it looks them up in a national reference list (see
+ * `lib/names.ts`) — and the lists disagree by country. Quebec's standard name
+ * for *Pseudotsuga menziesii* is "douglas de Menzies"; France's is "sapin de
+ * Douglas". Both are correct French. Only one of them is the French this app
+ * is written in.
+ *
+ * So the French edition is **fr-FR**, stated once here and honoured everywhere:
+ * `<html lang>`, every `Intl` formatter, and the reference lists
+ * `scripts/check-vernacular.mjs` is allowed to verify a name against.
+ *
+ * A reader whose browser says `fr-CA` still gets this edition — `toLang()`
+ * folds every `fr-*` tag to our one French, which is far better for them than
+ * English. What they don't get is a promise we can't keep: a Québécois name
+ * table we don't have and haven't sourced.
+ */
+export const LOCALE: Record<Lang, string> = { en: "en-US", fr: "fr-FR" };
+
 const DICTS: Record<Lang, Dict> = { en, fr };
 
 const STORAGE_KEY = "indigene:lang";
@@ -41,7 +63,9 @@ function isLang(v: string | null | undefined): v is Lang {
   return v === "en" || v === "fr";
 }
 
-/** Reduce anything BCP 47-shaped to a language we ship: "fr-CA" → "fr". */
+/** Reduce anything BCP 47-shaped to a language we ship: "fr-CA" → "fr", which
+ *  is to say our one French edition, `fr-FR`. Reading France's French beats
+ *  reading English; see `LOCALE` for why we don't pretend otherwise. */
 function toLang(tag: string | null | undefined): Lang | undefined {
   const base = String(tag ?? "").toLowerCase().split("-")[0];
   return isLang(base) ? base : undefined;
@@ -136,9 +160,11 @@ export function getLang(): Lang {
   return current;
 }
 
-/** The BCP 47 tag to hand `Intl` and to stamp on `<html lang>`. */
+/** The BCP 47 tag to hand `Intl` and to stamp on `<html lang>` — the full
+ *  locale (`fr-FR`), not the bare language, because that is what the content
+ *  actually is. See `LOCALE`. */
 export function langTag(): string {
-  return current;
+  return LOCALE[current];
 }
 
 export function setLang(next: Lang): void {
@@ -184,9 +210,10 @@ export function consumeLangParam(): void {
 }
 
 /** Keep `<html lang>` honest — it's what screen readers pick a voice from and
- *  what the browser hyphenates by, so it has to track the actual UI language. */
+ *  what the browser hyphenates by, so it has to track the actual UI language.
+ *  The full locale, so a French voice is a French-of-France voice. */
 export function applyDocumentLang(): void {
-  document.documentElement.lang = current;
+  document.documentElement.lang = langTag();
 }
 
 /** Re-render hook. `main.ts` subscribes and re-runs the current route, which
@@ -287,7 +314,8 @@ export function tx(key: TKey, nodes: Record<string, Node | string>, params?: Par
 // ---------------------------------------------------------------------------
 // Locale-aware formatting. These follow the *language*, not the unit system:
 // "1,070 mm" in English and "1 070 mm" in French are the same measurement
-// written the way each reader expects to see a number.
+// written the way each reader expects to see a number. They take the full
+// locale tag (`fr-FR`), which is what `Intl` wants anyway.
 // ---------------------------------------------------------------------------
 
 const numberCache = new Map<string, Intl.NumberFormat>();
@@ -296,7 +324,7 @@ export function fmtNumber(value: number, maxFractionDigits = 0): string {
   const cacheKey = `${current}:${maxFractionDigits}`;
   let f = numberCache.get(cacheKey);
   if (!f) {
-    f = new Intl.NumberFormat(current, { maximumFractionDigits: maxFractionDigits });
+    f = new Intl.NumberFormat(langTag(), { maximumFractionDigits: maxFractionDigits });
     numberCache.set(cacheKey, f);
   }
   return f.format(value);
@@ -304,22 +332,22 @@ export function fmtNumber(value: number, maxFractionDigits = 0): string {
 
 /** "oak, willow and cherry" / "chêne, saule et cerisier". */
 export function fmtList(items: string[]): string {
-  return new Intl.ListFormat(current, { style: "long", type: "conjunction" }).format(items);
+  return new Intl.ListFormat(langTag(), { style: "long", type: "conjunction" }).format(items);
 }
 
 /** The same list, but as alternatives: "dry or damp" / "sec ou frais". A hand-
  *  joined `" or "` reads as English in every other language. */
 export function fmtOrList(items: string[]): string {
-  return new Intl.ListFormat(current, { style: "long", type: "disjunction" }).format(items);
+  return new Intl.ListFormat(langTag(), { style: "long", type: "disjunction" }).format(items);
 }
 
 /** A date in the reader's own convention — "3 Feb 2026" / "3 févr. 2026". */
 export function fmtDate(ms: number): string {
-  return new Intl.DateTimeFormat(current, { dateStyle: "medium" }).format(new Date(ms));
+  return new Intl.DateTimeFormat(langTag(), { dateStyle: "medium" }).format(new Date(ms));
 }
 
 /** Month names for the bloom-period line, in the reader's language. */
 export function monthName(month1to12: number, style: "long" | "short" = "long"): string {
   const d = new Date(Date.UTC(2001, Math.max(0, Math.min(11, month1to12 - 1)), 1));
-  return new Intl.DateTimeFormat(current, { month: style, timeZone: "UTC" }).format(d);
+  return new Intl.DateTimeFormat(langTag(), { month: style, timeZone: "UTC" }).format(d);
 }

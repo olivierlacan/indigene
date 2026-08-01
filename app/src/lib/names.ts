@@ -4,22 +4,34 @@
 // "White oak" is not a phrase to be rendered into French; *Quercus robur* has a
 // name in French, given to it by the people who live with it, and recorded in a
 // national reference list. So this layer is a **lookup against those lists**,
-// never a translation:
+// never a translation.
+//
+// **Which French, though.** A reference list belongs to a country, and the
+// countries disagree: Québec's standard name for *Ribes sanguineum* is
+// "gadellier sanguin", France's is "groseillier sanguin"; Québec says "bleuet"
+// where France says "myrtille". Both are correct French, and mixing them would
+// give a reader a table that speaks two dialects at once. So the edition is
+// **fr-FR** (declared in `lib/i18n.ts` as `LOCALE`), and a list is an authority
+// here only if it speaks fr-FR:
 //
 //   - **TAXREF** (INPN / Muséum national d'Histoire naturelle) — the French
 //     national taxonomic reference for the flora *and* fauna of France and its
 //     overseas territories, carrying the official French vernacular names.
 //     Licence Ouverte / Etalab. This is the authority for anything native to
-//     France, plants and animals alike.
+//     France, plants and animals alike — and, because TAXREF covers the
+//     outre-mer, for a good deal of the Caribbean flora too.
 //   - **Tela Botanica — BDTFX** — the flora of metropolitan France, with the
 //     vernacular names French botanists actually use. CC BY-SA.
-//   - **VASCAN** (Database of Vascular Plants of Canada, Université de
-//     Montréal) — the standard French names for *North American* plants, which
-//     is the gap TAXREF cannot fill: a Pacific Northwest native has no entry in
-//     the French flora, but Québec has named it. CC BY.
 //   - **Wikidata** — `P1843` (taxon common name, `fr`) and the `fr` label, used
 //     as the crosswalk of last resort. CC0, and the hub `scripts/reconcile.mjs`
 //     already resolves every taxon through, so the join is free.
+//
+// **VASCAN** (Database of Vascular Plants of Canada) is *not* on that list any
+// more. Its noms français normalisés are the standard names of Canadian French
+// — the right authority for an fr-CA edition, and the wrong one for this one.
+// It stays in `NameSource` scoped to fr-CA so the day that edition exists it has
+// its list, and so the type system stops anyone quietly re-seeding fr-FR from
+// it: `TAXA_FR` is typed `NameTable<FrenchSource>`, which VASCAN isn't in.
 //
 // **When there is no name, we say the Latin.** Plenty of North American natives
 // have never been named in French, and inventing a plausible-sounding one would
@@ -37,28 +49,58 @@ import { REGIONS_FR } from "../locales/regions.fr";
 import type { RegionText } from "../locales/regions.fr";
 import type { RegionMeta } from "../data/region";
 
+/**
+ * The sources an **fr-FR** row may cite: the two French national references,
+ * the locale-neutral crosswalk, our own catalog labels — and `pending`.
+ *
+ * `pending` is not a list. It's the honest label for a name we are still
+ * showing while its fr-FR provenance is settled: the North American roster was
+ * seeded from VASCAN, whose French is Québec's, so those rows can no longer
+ * claim the source they were taken from and haven't yet been matched to one
+ * that speaks fr-FR. The name stays on screen (most of them are what a French
+ * reader would say anyway); the *claim* about where it comes from doesn't.
+ * `npm run names:check` proposes a real source for each one, and every row it
+ * can't place is a candidate for deletion — an absent row renders as the
+ * scientific name, which is never wrong.
+ */
+export type FrenchSource = "taxref" | "bdtfx" | "wikidata" | "catalog" | "pending";
+
+/** The list that speaks **fr-CA**. Deliberately unusable in the fr-FR table
+ *  (see the header) — kept because it is exactly the right authority for a
+ *  Québécois edition, the day someone writes one. */
+export type QuebecSource = "vascan";
+
 /** Which reference list a name is asserted from. Shown on the Sources page and
  *  used by `scripts/check-vernacular.mjs` to know what to verify against. */
-export type NameSource = "taxref" | "bdtfx" | "vascan" | "wikidata" | "catalog";
+export type NameSource = FrenchSource | QuebecSource;
 
-export interface LocalName {
+/** The sources that are an actual published list, i.e. everything we can put a
+ *  name and a link to on the Sources page. */
+export type ReferenceList = Exclude<NameSource, "pending">;
+
+export interface LocalName<S extends NameSource = NameSource> {
   /** The vernacular name in this language, as the source list spells it. */
   name: string;
   /** The authority it comes from. */
-  src: NameSource;
+  src: S;
 }
 
-export type NameTable = Record<string, LocalName>;
+/** A locale's whole table. The type parameter is how a locale states which
+ *  lists it is allowed to quote — `TAXA_FR` is a `NameTable<FrenchSource>`, so
+ *  a Canadian name is a compile error rather than a thing a reviewer has to
+ *  catch by eye. */
+export type NameTable<S extends NameSource = NameSource> = Record<string, LocalName<S>>;
 
 /** Where the Sources page explains all of this. */
 export const NAME_SOURCES_ROUTE = "#/sources";
 
-export const NAME_SOURCE_INFO: Record<NameSource, { label: string; url: string }> = {
+export const NAME_SOURCE_INFO: Record<ReferenceList, { label: string; url: string }> = {
   taxref: { label: "TAXREF (INPN — Muséum national d'Histoire naturelle)", url: "https://inpn.mnhn.fr/programme/referentiel-taxonomique-taxref" },
   bdtfx: { label: "Tela Botanica — BDTFX", url: "https://www.tela-botanica.org/bdtfx/" },
-  vascan: { label: "VASCAN — Database of Vascular Plants of Canada", url: "https://data.canadensys.net/vascan/" },
   wikidata: { label: "Wikidata", url: "https://www.wikidata.org/" },
   catalog: { label: "Indigene catalog (see the row's own source)", url: "https://github.com/olivierlacan/indigene/blob/main/DATA_SOURCES.md" },
+  // fr-CA, and so not among the lists the French edition quotes.
+  vascan: { label: "VASCAN — Database of Vascular Plants of Canada", url: "https://data.canadensys.net/vascan/" },
 };
 
 /** One table per language. English needs none — the catalog is written in it. */

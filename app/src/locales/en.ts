@@ -51,6 +51,10 @@ export const en = {
   "footer.sources": "where our numbers come from",
   "footer.releaseNotes": "See what's new",
   "footer.privacy": "Privacy & safety",
+  // Read out beside the green dot, and folded into the gear's accessible name.
+  // A dot is a colour and a shape: on its own it says nothing to a screen
+  // reader, and nothing to anyone who can't tell green from grey.
+  "whatsNew.sinceLastVisit": "new since your last visit",
   // The footer's two settings links. The whole phrase is one dictionary entry
   // rather than a label the code glues a colon onto, because the punctuation
   // around a colon is a language's own business — French wants a space before
@@ -126,6 +130,13 @@ export const en = {
   "memory.goalLede": "What every new plant list is sorted by. Change it on the goals step, where you can watch the order move as you do.",
   "memory.goalResetBtn": "Use the usual goal again",
   "memory.goalReset": "Back to the usual goal.",
+  "memory.visitTitle": "What's new to you",
+  "memory.visitLede": "So the app can put a green dot beside What's new — in the ⚙️ menu, and at the foot of every page — when something has been added since you were last here, and leave it off when nothing has.",
+  "memory.visitEmpty": "Nothing yet. From your next visit, this is where you'll see when you were last here and how much of the What's new page you'd read.",
+  "memory.visitSeen": "You've read up to",
+  "memory.visitSeenValue": "Version {version}",
+  "memory.visitWhen": "Last here",
+  "memory.visitPrivacy": "A version number and a date, in this browser — no account, nothing about who you are, and nothing that leaves the device",
 
   // ---------------------------------------------------------------------
   // Welcome.
@@ -147,17 +158,6 @@ export const en = {
   "welcome.savedTitle": "Your saved spots",
   "welcome.openSaved.one": "Open saved spot ({n})",
   "welcome.openSaved.other": "Open saved spots ({n})",
-
-  // ---------------------------------------------------------------------
-  // The header's Saved menu.
-  // ---------------------------------------------------------------------
-  "savedMenu.loading": "Loading…",
-  "savedMenu.error": "Couldn't open saved spots. Closing other Indigene tabs may help.",
-  "savedMenu.retry": "Try again",
-  "savedMenu.empty": "No saved spots yet.",
-  "savedMenu.findSpot": "📍 Find a spot to save",
-  "savedMenu.seeAll": "See all {n} saved →",
-  "savedMenu.manage": "Manage saved →",
 
   // ---------------------------------------------------------------------
   // Browse (the no-location entrance).
@@ -1182,6 +1182,17 @@ export const en = {
   "privacy.saveButton": "Save this spot",
   "privacy.saved":
     "When you tap {save}, it's kept in your browser's own storage, on that device only. It never leaves your device, never reaches a server (there is none), and we can never see it. It's yours: open or delete a saved spot anytime from the Saved menu, and clearing your browser's data for this site erases them for good.",
+  "privacy.whatsNewTitle": "How we know what's new to you",
+  "privacy.whatsNew1":
+    "Indigene shows a small green dot beside What's new — in the ⚙️ menu, and at the foot of every page — when something has been added since you last looked, and marks those entries on the What's new page. To do that it has to remember a little — so here is all of it, exactly:",
+  "privacy.whatsNew2":
+    "The version number you'd read up to, like \"0.19\". Reading the What's new page sets it to today's; that's what turns the dot off.",
+  "privacy.whatsNew3": "When your previous visit was, and when this one started — two dates, nothing finer.",
+  "privacy.whatsNew4":
+    "That's the whole list. There's no visit counter, no record of which pages you opened or how long you stayed, and nothing that could tell you apart from anyone else. It's kept in this browser, like everything else here, and no server is ever told you came back — there isn't one.",
+  "privacy.whatsNew5":
+    "You can read the two values and throw them away whenever you like, under {settings}. Forgetting them starts you level with today's release rather than marking every past release unread — you shouldn't get a wall of dots for pressing a button called Forget.",
+  "privacy.whatsNewSettingsLink": "What's new to you, in Settings",
   "privacy.noAccountTitle": "No account, no tracking, no ads",
   "privacy.noAccount1": "No sign-up, email, or password — we never ask who you are.",
   "privacy.noAccount2": "No advertising, and nothing sold or shared. We hold no data about you to sell in the first place.",

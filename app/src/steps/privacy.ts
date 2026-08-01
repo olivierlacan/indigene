@@ -31,6 +31,7 @@ const SECTION_IDS: Record<string, string> = {
   location: "privacy-location",
   lookups: "privacy-lookups",
   saved: "privacy-saved",
+  whatsnew: "privacy-whats-new",
   children: "privacy-children",
 };
 
@@ -86,6 +87,17 @@ export function renderPrivacy(main: HTMLElement, param?: string): void {
 
       el("h3", { id: "privacy-saved" }, t("privacy.savedTitle")),
       el("p", {}, tx("privacy.saved", { save: el("strong", {}, t("privacy.saveButton")) })),
+
+      // The green dot is the app volunteering that it knows something about
+      // your history, so it gets its own section rather than a line inside
+      // another one. Said in full: the three values, where they live, what
+      // they can't do, and the way to erase them.
+      el("h3", { id: "privacy-whats-new" }, t("privacy.whatsNewTitle")),
+      el("p", {}, t("privacy.whatsNew1")),
+      bullets(["privacy.whatsNew2", "privacy.whatsNew3", "privacy.whatsNew4"]),
+      el("p", {}, tx("privacy.whatsNew5", {
+        settings: el("a", { href: "#/settings/whatsnew" }, t("privacy.whatsNewSettingsLink")),
+      })),
 
       el("h3", {}, t("privacy.noAccountTitle")),
       bullets(["privacy.noAccount1", "privacy.noAccount2", "privacy.noAccount3"]),

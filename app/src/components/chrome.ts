@@ -9,6 +9,8 @@
 import { el } from "../ui";
 import { t, tx, getLang, LANGUAGES } from "../lib/i18n";
 import { getUnits } from "../lib/units";
+import { hasUnseenRelease } from "../lib/visits";
+import { newDot } from "./new-dot";
 
 /** Fill everything outside `#main` with the active language's words. */
 export function renderChrome(): void {
@@ -55,10 +57,14 @@ function renderFooter(): void {
       ...tx("footer.text", {
         sources: el("a", { href: "#/sources" }, t("footer.sources")),
         about: el("a", { href: "#/about" }, t("footer.about")),
+        // The dot rides inside the link, so the words it carries become part of
+        // the link's own accessible name rather than a separate stop.
         releaseNotes: el(
           "a",
           { href: existingNotes?.getAttribute("href") ?? "release-notes/" },
-          t("footer.releaseNotes")
+          hasUnseenRelease()
+            ? [t("footer.releaseNotes"), newDot()]
+            : [t("footer.releaseNotes")]
         ),
         privacy: el("a", { href: "#/privacy" }, t("footer.privacy")),
       })

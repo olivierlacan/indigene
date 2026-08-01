@@ -25,26 +25,149 @@ subtitle on the What's new page.
 
 ### Added
 
+- **A green dot when something's new, and nothing when it isn't.** Indigene now
+  keeps a small mark beside *What's new* — in the ⚙️ menu, and at the foot of
+  every page — from the moment something is added until you've looked at it.
+  Follow it and
+  the [What's new page](https://indigene.app/release-notes/) opens with the
+  releases you haven't read marked down the side and one line at the top —
+  *2 releases since your last visit* — which you can press to start at the oldest of
+  them and read forward, instead of piecing it together backwards. Reading them
+  is what turns the dot off; nothing else does, so it can't quietly clear itself
+  and leave you wondering what you missed.
+- **Someone arriving for the first time gets no dot at all.** "New since your
+  last visit" means nothing to a person who has never visited, and greeting them
+  with nineteen highlighted releases would teach them, in one screen, that the
+  mark isn't worth looking at. They start level with today, and get a dot the
+  next time something genuinely lands.
+- **What that costs you, in full: a version number and two dates.** To know
+  what's new to *you*, Indigene has to remember the release you'd read up to and
+  when you were last here. That's the entire list — no account, no counter of
+  how often you come, no record of what you looked at, and nothing that could
+  tell you from anyone else. It stays in your browser, and there's no server to
+  send it to. [Privacy & safety](https://indigene.app/privacy) now says so in
+  its own section, and
+  [Settings](https://indigene.app/settings) shows you both values with a button
+  that throws them away.
+
+### Changed
+
+- **The ⚙️ menu opens with what's new, and saved spots are one row away.**
+  What's new sits at the top, where the dot on the gear points. Underneath it,
+  **Saved spots** is now a single row through to
+  [the Saved page](https://indigene.app/#/saved) rather than a list of your
+  spots inside the menu. The list looked like a shortcut and behaved like a
+  wait: opening the menu had to open the database first, so it could show
+  "Loading…", or an error with a *Try again*, before it showed you anything.
+  The row is simply there, the moment you press the gear, and the Saved page —
+  which is where opening, renaming and deleting a spot already lived — does the
+  rest in one place instead of two.
+- Internal: `lib/visits.ts` owns the record — `indigene.visits` in
+  localStorage, holding `seenVersion`, `lastVisitAt` and `visitAt`. localStorage
+  rather than the IndexedDB kv store every other memory uses, because this is
+  the one thing read by two documents: the app, and the standalone page
+  `build-release-notes.mjs` compiles, which has no bundle behind it and has to
+  decide what to mark before it paints. The compiled page therefore carries a
+  mirror of the read/write/compare logic; both sides are commented as such.
+  `compareVersions` compares part-by-part as numbers, because string order puts
+  `0.9` after `0.19` and that comparison is the whole feature. A visit that
+  resumes within 30 minutes is the same visit, so a reload — or a trip to the
+  notes and back — can't redefine "since your last visit" as "since you
+  clicked".
+- Internal: `build-release-notes.mjs` fails the build when `app/package.json`'s
+  version and the newest changelog heading disagree. The app reads the former to
+  decide whether to show the dot and the page publishes the latter, so drift
+  between them is a wrong badge for everyone, silently; CLAUDE.md already says
+  to bump both when cutting a release, and this makes forgetting a build error.
+- Internal: the "since your last visit" notice is one line because a sentence
+  and a pill button measurably cannot share a row at 360px — so the notice *is*
+  the control: the whole box is a button, and the visible label is the count
+  and nothing else, so it holds that line whatever the number grows to; its
+  accessible name is where "and pressing it takes you there" gets said. With exactly one release
+  waiting there is nowhere to jump, so it degrades to a plain line. There is
+  deliberately no badge on the gear itself: on a header filled with brand green
+  a mark on a 16–18px emoji reads as a smudge on the header rather than a badge
+  on a control, in a corner or centred on the hub alike. The trade is real —
+  nothing signals a new release until the menu is opened or the footer reached
+  — and a badge nobody can parse is noise on every screen, not a signal.
+- Internal: `app-menu.ts` is synchronous now — no `listSpots`, no loading,
+  error/retry or empty states, and the panel is drawn on open rather than
+  populated in two passes. The seven `savedMenu.*` strings it needed go with
+  it, from both locales. The two settings rows take their accessible name from
+  the `footer.languageIs` / `footer.unitsIs` phrases instead of gluing a colon
+  on in code, which had been quietly imposing English spacing on French.
+- Internal: bundle re-measured — 273 KB → 275 KB gzipped, and the four docs
+  quoting the figure updated (they had drifted to ~268 KB before this change).
+  Dropping the menu's database path gave ~0.4 KB of that back.
+
+## [0.19] - 2026-08-01
+
+**A spot it remembers, and links that travel**
+
+[![Settings listing everything the app remembers, each with a button to forget it](docs/screenshots/pr-81/thumb.png)](docs/screenshots/pr-81/settings-after-dark.png)
+[Before](docs/screenshots/pr-81/settings-before-dark.png) · [After](docs/screenshots/pr-81/settings-after-dark.png)
+
+### Added
+
 - **Indigene remembers the spot you were last standing in.** Come back
   tomorrow and it opens where you left off instead of a blank map — the same
   place, and the sun and soil answers you gave for it, so you're at your plant
   list in a couple of taps. Those answers belong to that patch of ground and
   nowhere else: move somewhere new and Indigene asks again, because how sunny a
   spot is and how wet it stays really are different one garden over.
+
 - **A starting region, if you'd rather skip the map for good.** If you already
   know your area, choose it once under **Starting region** in
   [Settings](https://indigene.app/#/settings) and every visit begins there. The
   spot step then says so in a single line, with the link to change it, instead
   of explaining itself all over again.
+
 - **Settings now lists everything this device remembers about you**, in plain
   words, each with a button that throws it away: your last spot (with its sun
   and soil), your starting region, and the goal your plant lists are ranked by.
   All of it stays in your browser — it has never gone anywhere else.
+
 - **The goal you last chose sticks, and now says so.** Ask for a list that
   favours birds and it stays favouring birds on your next visit. That was
   already true, quietly; the trouble was that nothing ever told you, so a list
   ordered by last month's decision looked like Indigene's own opinion. It's
   named on the Settings page now, with one button back to the usual goal.
+
+- **A real photograph where a plant's page had a drawing.** That little picture
+  beside a plant's name was chosen by its *type* — the same shrub shape for
+  every shrub, the same tree for every tree. It can now be an actual photo of
+  that species instead, in the same spot and never wider than a third of your
+  screen, with the photographer named just below. Tap it to see it large, with
+  the licence and a link to the original sighting, exactly like the other photos
+  in the app. Plants nobody has chosen a picture for yet keep the drawing, so
+  nothing looks half-finished.
+
+- Internal: the hero-photo pipeline — `npm run hero:harvest` (iNaturalist's
+  most-favourited research-grade observations per plant per region, restricted
+  at the query to republishable CC licences), `_photo-quality.mjs` (Chromium
+  decodes, Node fetches — no new dependency), and `npm run hero:review` (a
+  self-contained page for picking, with `localStorage` persistence and a JSON
+  download). `.github/workflows/hero-photos.yml` runs the harvest quarterly and
+  opens a PR with the shortlists. Scoring leans on **subject isolation**, not
+  global sharpness: measured on real photos, Laplacian variance ranked a
+  cluttered hillside (5731) far above a clean close-up (361), because busy
+  frames are high-frequency everywhere. Nothing here changes a photo the app
+  shows until a pick is committed; `lib/hero-photo.ts` reads them, preferring
+  the displayed region and falling back to any reviewed one, and reshapes a pick
+  into an `ObservationSummary` so the lightbox credits it through the existing
+  path rather than a second implementation. See `docs/hero-photos.md`.
+
+- **Every plant now has its own picture on a shared link.** Send someone
+  [white oak](https://indigene.app/plants/quercus-alba) and the preview no
+  longer shows the same green Indigene picture every other link showed: it
+  shows a card made for that plant. Its name, large; the scientific name under
+  it; the little drawing of its shape — the same one you see beside it in the
+  app, a tree for a tree, a fan of blades for a grass; and four things worth
+  knowing at a glance, each as a small picture and a number rather than a
+  sentence: how many kinds of caterpillar it feeds, how many creatures we can
+  name that depend on it, the months it flowers, and how tall it grows in both
+  feet and metres. A plant that holds up more of the food web than most also
+  wears a *Keystone* badge. All 198 of them.
 
 ### Changed
 
@@ -57,6 +180,241 @@ subtitle on the What's new page.
   A sentence and a link to where it's kept — not a box of small print between
   you and the question. What's remembered is explained once, in Settings, which
   is where you go to change or forget it.
+
+- **Indigene's French is now, plainly, the French of France.** The same plant
+  can go by one name in Paris and another in Québec — a *bleuet* is a blueberry
+  in Montréal and a cornflower in France — and until now Indigene had been
+  taking names from both countries' reference lists at once. It follows
+  France's lists only from here on, and [where the names come
+  from](https://indigene.app/#/sources) says which French it means and why.
+  Anyone whose phone is set to Canadian French still gets this edition: reading
+  France's French beats reading English, and we'd rather say which one it is
+  than pretend it's both.
+
+- **Several dozen North American plants keep their French name, with an honest
+  label on it.** Those names came from the Canadian list, so the app can no
+  longer say that's where they're from. Nearly all of them are what a French
+  gardener would say anyway, so they stay on screen while each is traced back
+  to a French list — and the ones no French list has ever named will go back to
+  showing the scientific name, which is nobody's dialect.
+
+- Internal: the locale is declared once, as `LOCALE` in `lib/i18n.ts` (`fr` →
+  `fr-FR`), and stamped on `<html lang>` and every `Intl` formatter. Name
+  sources are locale-scoped in `lib/names.ts`: `TAXA_FR` is a
+  `NameTable<FrenchSource>`, so VASCAN — kept in `NameSource` as the fr-CA
+  authority it is — is a compile error in the French table rather than
+  something a reviewer has to catch. The 87 rows it had supplied now carry
+  `src: "pending"`.
+
+### Fixed
+
+- **The link you copy is now the link that shows the plant.** Every plant,
+  region and creature already had its own preview — the little card with a
+  title and a picture that Messages, WhatsApp, Slack or Facebook show when you
+  paste a link. It only ever worked for addresses like
+  [indigene.app/plants/asclepias-tuberosa](https://indigene.app/plants/asclepias-tuberosa),
+  and the address bar never showed you one of those: it showed
+  `indigene.app/#/plants/asclepias-tuberosa`, with a `#` in the middle.
+  Everything after a `#` stays on your own device and is never sent to the
+  website, so a link copied from the address bar arrived with no way of knowing
+  which page you meant, and the card fell back to the plain "Indigene" one.
+  Opening a good link was enough to spoil it — the app swapped the address for
+  the `#` version the moment the page finished loading. Now it keeps the
+  sendable address, so copying from the address bar, using your phone's share
+  button, and tapping Indigene's own 🔗 all send the same working link.
+
+- **A few saved links no longer land on "we couldn't find that page."** Opening
+  [Language](https://indigene.app/settings/language) or
+  [Units](https://indigene.app/settings/units) from a bookmark showed the
+  not-found page instead of the setting, and so did a link to the
+  [look-alikes](https://indigene.app/lookalikes) of one particular region.
+
+- Internal: the seven form glyphs move from `components/plant-card.ts` to
+  `components/plant-glyphs.ts` — same geometry, no DOM — so `silhouetteFor`
+  (browser) and `glyphMarkup` (headless) draw one set from one table.
+  `scripts/gen-plant-cards.mjs` renders the 1200×630 cards; they're committed
+  under `public/og/plants/` and `prerender.mjs` only points at them, so a build
+  never runs Playwright. `--check` reports a plant with no card. The four fact
+  icons are drawn to the glyph set's rules rather than set as emoji: at
+  thumbnail size, four full-colour emoji on one flat green-on-dark card read as
+  clutter. They're JPEG at quality 90 (~48 KB each, 9.7 MB for the catalog):
+  the brand wash is a smooth gradient, which puts the same card at 224 KB as a
+  PNG — 47 MB across the catalog — and at 1:1 the JPEG is indistinguishable
+  from lossless. Nothing but a link unfurler ever fetches them, so the weight
+  is a repository cost, not a page-load one. `check-routes.mjs` now also
+  verifies every page's `og:image` resolves to a file that was actually built.
+
+- Internal: share cards carry the plant's **illustration, never its hero
+  photograph**, written down in `docs/hero-photos.md` and in the generator's own
+  header because that's where someone would be tempted. Four of the five
+  licences the harvest accepts require attribution and a share card can't carry
+  any — it lands in a chat as a bare image with nowhere to put the credit, which
+  is the one rule that pipeline doesn't break. Compositing would also make the
+  card a derivative work (two of those licences are ShareAlike), and committing
+  it would republish someone's photo permanently, where the in-app hot-link
+  honours a deletion or a licence change at once.
+
+- Internal: the card generator measures each card in the browser before
+  capturing it and refuses to write one that doesn't fit — a fact label wrapping
+  onto two lines, the name and the drawing colliding, a row overflowing. That's
+  CLAUDE.md's don't-let-a-label-wrap rule applied to a surface nobody re-opens
+  once it's committed, and it makes the largest icon size the fact row can carry
+  a measured number rather than a guess. The fact icons were redrawn: circles
+  are now written as two explicit arcs, because the shorthand
+  `M cx cy a r r 0 1 0 0 -.01` starts at the circle's *edge*, not its centre —
+  every shape sat half a radius right of where it was placed, which ran the
+  caterpillar's head past its viewBox and let the edge slice it flat.
+
+- **Nothing can quietly ship a plant whose link doesn't work.** Every plant,
+  animal and region has a page at its own address, and that address is what
+  gets sent when you share one. Adding a new plant used to be able to skip
+  building that page: the plant looked perfect inside the app, and only the
+  person who received the link found out — they'd get "we couldn't find that
+  page" and a preview of nothing in particular. A check now runs on every
+  proposed change and refuses it if a single one is missing.
+
+- Internal: `src/lib/routes.ts` is the one list of what counts as a page —
+  `APP_STEPS`, `PARAM_STEPS`, `SHAREABLE_INDEXES`, `parseRoute`,
+  `canonicalPath`, `shareablePaths` — imported by `main.ts` (which types its
+  `STEPS` table as `Record<AppStep, …>`, so the two can't drift without a
+  compile error), by `prerender.mjs` (which now throws if its page list and
+  `shareablePaths()` disagree, before writing a file) and by the new
+  `scripts/check-routes.mjs` / `npm run routes:check`. That check runs in a
+  `Routes` workflow after a build and verifies five things: every shareable
+  address has a file in `dist/`; no prerendered file exists for an address the
+  app never hands out; each file's canonical link, `og:url` and title name
+  itself rather than the shell's; every address round-trips through
+  `parseRoute` → `canonicalPath` back to itself; and `public/404.html`'s
+  hand-kept `ROUTES` covers every step in `APP_STEPS`. All six failure modes
+  were verified by breaking them one at a time.
+
+- Internal: `main.ts` reads the path as a route alongside the hash and keeps the
+  canonical one in the address bar (`pathRoute`, `canonicalPath`,
+  `syncAddressBar`) instead of folding every path into the hash form on boot
+  (`normalizePathRoute`, removed). Canonicalization is limited to routes
+  `scripts/prerender.mjs` actually wrote a file for, so flow steps and
+  sub-routes (`#/wildlife/in/<region>`, `#/settings/units`) keep the hash — the
+  only address that reloads them. A `popstate` listener joins `hashchange`,
+  because a back step between two path addresses changes no hash and used to
+  move the address bar while leaving the old page on screen; `routedHref` keeps
+  a hash traversal, which fires both, from rendering twice. The plants index's
+  `?q=` moved to the search string and is dropped on a route change rather than
+  trailing onto the page it opened. `public/404.html`'s `ROUTES` had drifted
+  from `STEPS` — `priorities`, `lookalikes`, `settings` and `about` were
+  missing.
+
+- **The quarterly check that keeps those names honest had stopped checking.**
+  Four times a year Indigene re-asks each national reference list whether the
+  names it shows are the names that list gives. France's national list had been
+  answering nothing at all — every question, the whole run — and the check read
+  that silence as "no French name exists for any of these 258 plants and
+  animals", then took the Canadian answers as the truth. It asks properly
+  again, and from now on a list that answers nothing fails the check loudly
+  instead of passing as a clean result.
+
+- Internal: `check-vernacular.mjs` is locale-driven (`LOCALES` maps `fr` →
+  fr-FR + its authorities). TAXREF is asked for `application/hal+json`, which
+  is what it serves — the plain-JSON `Accept` was returning 406 for every
+  lookup — and falls back to `/taxa/{id}` when the search projection carries no
+  vernacular name. Tela Botanica (BDTFX → NVJFL) is wired up at last as the
+  second French opinion. A Wikidata `fr` label equal to the binomial is
+  discarded rather than reported as a disagreement. Every request's status is
+  recorded per source in the snapshot's new `health` block, requests are paced
+  and retried on 429/5xx, and `pending` rows are reported with the source to
+  promote each to.
+
+## [0.18] - 2026-07-31
+
+**Room to read, and the look-alikes named**
+
+[![A plant's page using the whole of a laptop screen](docs/screenshots/pr-78/thumb.png)](docs/screenshots/pr-78/plant-after-dark.png)
+[Before](docs/screenshots/pr-78/plant-before-dark.png) · [After](docs/screenshots/pr-78/plant-after-dark.png)
+
+### Added
+
+- **A new section of the app for the plants that get mistaken for natives.**
+  [Look-alikes](https://indigene.app/#/lookalikes) is a list of the impostors —
+  the Callery pear sold beside the serviceberry, the cherry laurel hedge that
+  reads as holly, the sago palm that isn't a coontie — and each one has a page
+  showing, side by side, the differences you can actually check while standing
+  in front of them: a smell, a thorn, a hollow twig, a leaf stalk that bleeds
+  milky white. Every page links straight to photographs of the impostor on
+  iNaturalist, says where it's really from and what it does here, and cites who
+  says so. Start with the
+  [Callery pear](https://indigene.app/#/lookalikes/pyrus-calleryana), or with
+  [meadow death camas](https://indigene.app/#/lookalikes/toxicoscordion-venenosum),
+  where the look-alike is a bulb that can kill you.
+
+- **Every plant page says what it gets confused with, in one line.** Under
+  "Why it belongs here" you'll now find *Don't confuse it with* and the names,
+  each a link to the full comparison. One line, so the plant's own story keeps
+  the page.
+
+- **The label says which kind of impostor it is.** Some of these spread into
+  wild places and cost us something; some are ordinary garden plants that
+  simply aren't from here and do no harm; one or two grow here wild, just like
+  the plant they're confused with. Calling them all bad would be false, so each
+  is marked *Invasive here*, *Not from here* or *Native here too* — for the
+  region you're looking at. The same plant can be both: common ivy is invasive
+  in North America and an ordinary native climber in Atlantic France, where we
+  recommend it, and the page says so and links to it.
+
+- Internal: new `data/lookalikes.ts` (27 impostors, 36 region-keyed ties) with
+  `lib/lookalikes.ts` as its query layer and a dev audit — every tie must cite
+  a source, name at least one tell, fill in both sides of every tell, and may
+  not call a plant introduced in a region whose own roster lists it as native.
+  Status lives on the tie, never the catalog, for exactly that reason.
+  `steps/lookalikes.ts` serves `#/lookalikes`, `#/lookalikes/in/<region>` and
+  `#/lookalikes/<id>`, all three prerendered with their own share cards.
+
+- Internal: `scripts/check-lookalikes.mjs` (`npm run lookalikes:check`)
+  corroborates each tie against iNaturalist's `identifications/similar_species`
+  counts — the community's own record of which plants people really do
+  misidentify — and with `--suggest` reports frequent confusions the catalog
+  says nothing about. It never gates the build: an unbacked tie is usually a
+  garden plant nobody photographs in the wild, not a false claim. Provenance
+  for the whole layer is written up in `DATA_SOURCES.md`.
+
+- Internal: French vernacular names for twelve of the impostors (TAXREF, plus
+  VASCAN for Callery pear), and `check-vernacular.mjs` now verifies look-alike
+  names alongside plants and animals. The three Atlantic-France ties are
+  translated in full — that region's pages are otherwise entirely in French —
+  and `lookalikesUntranslated()` makes the "still in English" notice cover this
+  writing too, so a page can't quietly grow an English block.
+
+- Internal: bundle re-measured after the new data — ~250 KB → ~268 KB gzipped;
+  the figure updated in `README.md`, `PROJECT_BRIEF.md`, `app/README.md` and
+  `docs/ecoregion-plan.md`.
+
+- **Reading about a plant that grows in more than one region? You can switch.**
+  Those plants now have a row of buttons under their name — *Figures for:
+  Mid-Atlantic · North & Central Florida* — so you can see how the same plant
+  behaves somewhere else, and link straight to that version. Plants native to
+  only one region look exactly as they did.
+
+### Changed
+
+- **The little plant drawings are clearer.** Every plant that has no photo yet
+  is drawn as a small green shape, and the same drawing labels each category on
+  a region's page — trees, shrubs, wildflowers, grasses, climbers, ground
+  covers, ferns. They were a mismatched bunch: some were solid blobs, others
+  thin outlines you could barely see, and they came in all sizes, so a row of
+  them looked like seven different sets. They're one family now — same size,
+  same weight of line, all standing on the same ground — and each one is drawn
+  to say what it is at a glance: a tree is a leafy crown on a bare trunk, a
+  shrub the same foliage sitting on the ground, a ground cover a low fan
+  spreading sideways, a climber a shoot with the curled tendril it grabs on
+  with. The little pictures beside a region's category headings are bigger too,
+  so they read next to the words instead of hiding beside them. See them on
+  [any region's page](https://indigene.app/regions/france-atlantic).
+
+- Internal: `silhouetteFor` in `components/plant-card.ts` now renders a table of
+  parts (filled masses, stems stroked at one weight) rather than a single path
+  per form with a per-form fill/stroke switch, and the stem weight scales below
+  ~20 px so a 17 px chip glyph keeps 1.4 px of ink. The geometry is generated by
+  `scripts/gen-form-glyphs.mjs` — edit there and paste its output back over
+  `FORM_GLYPHS`. `steps/region.ts` takes a size for `formIcon`, and passes 24
+  for section headings against 17 for chips.
 
 - **A plant's page fits a computer screen now.** Open
   [a plant](https://indigene.app/#/plants/quercus-alba) on a laptop and it used
@@ -72,26 +430,31 @@ subtitle on the What's new page.
   very bottom. Reading down the left column and then the right gives you exactly
   the same order a phone gives you, and no sentence is set any wider than it is
   on a phone.
+
 - **An animal's page got the same treatment.** On
   [an animal](https://indigene.app/#/wildlife/monarch), its name and what it is
   now sit beside where it lives and what we can vouch for, and the plants that
   keep it going are laid out several across instead of one long stack of
   full-width rows. It's about a third shorter on a laptop.
+
 - **The "ZIP or town" box is the size of a ZIP or a town again.** It used to
   stretch to fill whatever space was left on the line, which was fine on a
   phone and silly on a wide screen — on an animal's page it became a box half a
   window wide waiting for five characters. It now stops at a comfortable width,
   and so does the list of places that appears when you search. Unchanged on a
   phone, where "fill the line" was always the right answer.
+
 - **The *Figures for* buttons line up with the rest of the page.** On a plant
   that grows in more than one region, the row of region buttons under the name
   was sitting a little further left than everything around it. It doesn't any
   more.
+
 - **Where to look a plant up has moved to the very bottom of its page.** The
   list of botanical databases is where you go once this page has run out of
   answers, so it now comes after *Want to plant it? Check your spot* rather
   than in front of it — on every screen. Nothing else about either section
   changed.
+
 - Internal: `#/plants/<slug>` and `#/wildlife/<id>` share a new layout mode
   (`body[data-layout="profile"]`), which raises `--maxw` to the same 62rem the
   browse indexes use — but only inside `@media (min-width: 64rem)`, so the
@@ -116,302 +479,6 @@ subtitle on the What's new page.
   plant pages (single- and multi-region, with and without a look-alike line),
   where only the last two sections swap — and by checking 360–1920px for
   horizontal overflow (none).
-- **The little plant drawings are clearer.** Every plant that has no photo yet
-  is drawn as a small green shape, and the same drawing labels each category on
-  a region's page — trees, shrubs, wildflowers, grasses, climbers, ground
-  covers, ferns. They were a mismatched bunch: some were solid blobs, others
-  thin outlines you could barely see, and they came in all sizes, so a row of
-  them looked like seven different sets. They're one family now — same size,
-  same weight of line, all standing on the same ground — and each one is drawn
-  to say what it is at a glance: a tree is a leafy crown on a bare trunk, a
-  shrub the same foliage sitting on the ground, a ground cover a low fan
-  spreading sideways, a climber a shoot with the curled tendril it grabs on
-  with. The little pictures beside a region's category headings are bigger too,
-  so they read next to the words instead of hiding beside them. See them on
-  [any region's page](https://indigene.app/regions/france-atlantic).
-- Internal: `silhouetteFor` in `components/plant-card.ts` now renders a table of
-  parts (filled masses, stems stroked at one weight) rather than a single path
-  per form with a per-form fill/stroke switch, and the stem weight scales below
-  ~20 px so a 17 px chip glyph keeps 1.4 px of ink. The geometry is generated by
-  `scripts/gen-form-glyphs.mjs` — edit there and paste its output back over
-  `FORM_GLYPHS`. `steps/region.ts` takes a size for `formIcon`, and passes 24
-  for section headings against 17 for chips.
-- **Indigene's French is now, plainly, the French of France.** The same plant
-  can go by one name in Paris and another in Québec — a *bleuet* is a blueberry
-  in Montréal and a cornflower in France — and until now Indigene had been
-  taking names from both countries' reference lists at once. It follows
-  France's lists only from here on, and [where the names come
-  from](https://indigene.app/#/sources) says which French it means and why.
-  Anyone whose phone is set to Canadian French still gets this edition: reading
-  France's French beats reading English, and we'd rather say which one it is
-  than pretend it's both.
-- **Several dozen North American plants keep their French name, with an honest
-  label on it.** Those names came from the Canadian list, so the app can no
-  longer say that's where they're from. Nearly all of them are what a French
-  gardener would say anyway, so they stay on screen while each is traced back
-  to a French list — and the ones no French list has ever named will go back to
-  showing the scientific name, which is nobody's dialect.
-- Internal: the locale is declared once, as `LOCALE` in `lib/i18n.ts` (`fr` →
-  `fr-FR`), and stamped on `<html lang>` and every `Intl` formatter. Name
-  sources are locale-scoped in `lib/names.ts`: `TAXA_FR` is a
-  `NameTable<FrenchSource>`, so VASCAN — kept in `NameSource` as the fr-CA
-  authority it is — is a compile error in the French table rather than
-  something a reviewer has to catch. The 87 rows it had supplied now carry
-  `src: "pending"`.
-
-### Fixed
-
-- **The quarterly check that keeps those names honest had stopped checking.**
-  Four times a year Indigene re-asks each national reference list whether the
-  names it shows are the names that list gives. France's national list had been
-  answering nothing at all — every question, the whole run — and the check read
-  that silence as "no French name exists for any of these 258 plants and
-  animals", then took the Canadian answers as the truth. It asks properly
-  again, and from now on a list that answers nothing fails the check loudly
-  instead of passing as a clean result.
-- Internal: `check-vernacular.mjs` is locale-driven (`LOCALES` maps `fr` →
-  fr-FR + its authorities). TAXREF is asked for `application/hal+json`, which
-  is what it serves — the plain-JSON `Accept` was returning 406 for every
-  lookup — and falls back to `/taxa/{id}` when the search projection carries no
-  vernacular name. Tela Botanica (BDTFX → NVJFL) is wired up at last as the
-  second French opinion. A Wikidata `fr` label equal to the binomial is
-  discarded rather than reported as a disagreement. Every request's status is
-  recorded per source in the snapshot's new `health` block, requests are paced
-  and retried on 429/5xx, and `pending` rows are reported with the source to
-  promote each to.
-
-### Fixed
-
-- **The link you copy is now the link that shows the plant.** Every plant,
-  region and creature already had its own preview — the little card with a
-  title and a picture that Messages, WhatsApp, Slack or Facebook show when you
-  paste a link. It only ever worked for addresses like
-  [indigene.app/plants/asclepias-tuberosa](https://indigene.app/plants/asclepias-tuberosa),
-  and the address bar never showed you one of those: it showed
-  `indigene.app/#/plants/asclepias-tuberosa`, with a `#` in the middle.
-  Everything after a `#` stays on your own device and is never sent to the
-  website, so a link copied from the address bar arrived with no way of knowing
-  which page you meant, and the card fell back to the plain "Indigene" one.
-  Opening a good link was enough to spoil it — the app swapped the address for
-  the `#` version the moment the page finished loading. Now it keeps the
-  sendable address, so copying from the address bar, using your phone's share
-  button, and tapping Indigene's own 🔗 all send the same working link.
-- **A few saved links no longer land on "we couldn't find that page."** Opening
-  [Language](https://indigene.app/settings/language) or
-  [Units](https://indigene.app/settings/units) from a bookmark showed the
-  not-found page instead of the setting, and so did a link to the
-  [look-alikes](https://indigene.app/lookalikes) of one particular region.
-- **Every plant now has its own picture on a shared link.** Send someone
-  [white oak](https://indigene.app/plants/quercus-alba) and the preview no
-  longer shows the same green Indigene picture every other link showed: it
-  shows a card made for that plant. Its name, large; the scientific name under
-  it; the little drawing of its shape — the same one you see beside it in the
-  app, a tree for a tree, a fan of blades for a grass; and four things worth
-  knowing at a glance, each as a small picture and a number rather than a
-  sentence: how many kinds of caterpillar it feeds, how many creatures we can
-  name that depend on it, the months it flowers, and how tall it grows in both
-  feet and metres. A plant that holds up more of the food web than most also
-  wears a *Keystone* badge. All 198 of them.
-- Internal: the seven form glyphs move from `components/plant-card.ts` to
-  `components/plant-glyphs.ts` — same geometry, no DOM — so `silhouetteFor`
-  (browser) and `glyphMarkup` (headless) draw one set from one table.
-  `scripts/gen-plant-cards.mjs` renders the 1200×630 cards; they're committed
-  under `public/og/plants/` and `prerender.mjs` only points at them, so a build
-  never runs Playwright. `--check` reports a plant with no card. The four fact
-  icons are drawn to the glyph set's rules rather than set as emoji: at
-  thumbnail size, four full-colour emoji on one flat green-on-dark card read as
-  clutter. They're JPEG at quality 90 (~48 KB each, 9.7 MB for the catalog):
-  the brand wash is a smooth gradient, which puts the same card at 224 KB as a
-  PNG — 47 MB across the catalog — and at 1:1 the JPEG is indistinguishable
-  from lossless. Nothing but a link unfurler ever fetches them, so the weight
-  is a repository cost, not a page-load one. `check-routes.mjs` now also
-  verifies every page's `og:image` resolves to a file that was actually built.
-- Internal: share cards carry the plant's **illustration, never its hero
-  photograph**, written down in `docs/hero-photos.md` and in the generator's own
-  header because that's where someone would be tempted. Four of the five
-  licences the harvest accepts require attribution and a share card can't carry
-  any — it lands in a chat as a bare image with nowhere to put the credit, which
-  is the one rule that pipeline doesn't break. Compositing would also make the
-  card a derivative work (two of those licences are ShareAlike), and committing
-  it would republish someone's photo permanently, where the in-app hot-link
-  honours a deletion or a licence change at once.
-- Internal: the card generator measures each card in the browser before
-  capturing it and refuses to write one that doesn't fit — a fact label wrapping
-  onto two lines, the name and the drawing colliding, a row overflowing. That's
-  CLAUDE.md's don't-let-a-label-wrap rule applied to a surface nobody re-opens
-  once it's committed, and it makes the largest icon size the fact row can carry
-  a measured number rather than a guess. The fact icons were redrawn: circles
-  are now written as two explicit arcs, because the shorthand
-  `M cx cy a r r 0 1 0 0 -.01` starts at the circle's *edge*, not its centre —
-  every shape sat half a radius right of where it was placed, which ran the
-  caterpillar's head past its viewBox and let the edge slice it flat.
-- **Nothing can quietly ship a plant whose link doesn't work.** Every plant,
-  animal and region has a page at its own address, and that address is what
-  gets sent when you share one. Adding a new plant used to be able to skip
-  building that page: the plant looked perfect inside the app, and only the
-  person who received the link found out — they'd get "we couldn't find that
-  page" and a preview of nothing in particular. A check now runs on every
-  proposed change and refuses it if a single one is missing.
-- Internal: `src/lib/routes.ts` is the one list of what counts as a page —
-  `APP_STEPS`, `PARAM_STEPS`, `SHAREABLE_INDEXES`, `parseRoute`,
-  `canonicalPath`, `shareablePaths` — imported by `main.ts` (which types its
-  `STEPS` table as `Record<AppStep, …>`, so the two can't drift without a
-  compile error), by `prerender.mjs` (which now throws if its page list and
-  `shareablePaths()` disagree, before writing a file) and by the new
-  `scripts/check-routes.mjs` / `npm run routes:check`. That check runs in a
-  `Routes` workflow after a build and verifies five things: every shareable
-  address has a file in `dist/`; no prerendered file exists for an address the
-  app never hands out; each file's canonical link, `og:url` and title name
-  itself rather than the shell's; every address round-trips through
-  `parseRoute` → `canonicalPath` back to itself; and `public/404.html`'s
-  hand-kept `ROUTES` covers every step in `APP_STEPS`. All six failure modes
-  were verified by breaking them one at a time.
-- Internal: `main.ts` reads the path as a route alongside the hash and keeps the
-  canonical one in the address bar (`pathRoute`, `canonicalPath`,
-  `syncAddressBar`) instead of folding every path into the hash form on boot
-  (`normalizePathRoute`, removed). Canonicalization is limited to routes
-  `scripts/prerender.mjs` actually wrote a file for, so flow steps and
-  sub-routes (`#/wildlife/in/<region>`, `#/settings/units`) keep the hash — the
-  only address that reloads them. A `popstate` listener joins `hashchange`,
-  because a back step between two path addresses changes no hash and used to
-  move the address bar while leaving the old page on screen; `routedHref` keeps
-  a hash traversal, which fires both, from rendering twice. The plants index's
-  `?q=` moved to the search string and is dropped on a route change rather than
-  trailing onto the page it opened. `public/404.html`'s `ROUTES` had drifted
-  from `STEPS` — `priorities`, `lookalikes`, `settings` and `about` were
-  missing.
-
-## [0.17] - 2026-07-31
-
-**Real pages, and photos that stay**
-
-[![The tidied “See it growing near you” section on a plant's page](docs/screenshots/pr-74/thumb.png)](docs/screenshots/pr-74/after-dark.png)
-[Before](docs/screenshots/pr-74/before-dark.png) · [After](docs/screenshots/pr-74/after-dark.png)
-
-### Added
-
-- **A real photograph where a plant's page had a drawing.** That little picture
-  beside a plant's name was chosen by its *type* — the same shrub shape for
-  every shrub, the same tree for every tree. It can now be an actual photo of
-  that species instead, in the same spot and never wider than a third of your
-  screen, with the photographer named just below. Tap it to see it large, with
-  the licence and a link to the original sighting, exactly like the other photos
-  in the app. Plants nobody has chosen a picture for yet keep the drawing, so
-  nothing looks half-finished.
-- Internal: the hero-photo pipeline — `npm run hero:harvest` (iNaturalist's
-  most-favourited research-grade observations per plant per region, restricted
-  at the query to republishable CC licences), `_photo-quality.mjs` (Chromium
-  decodes, Node fetches — no new dependency), and `npm run hero:review` (a
-  self-contained page for picking, with `localStorage` persistence and a JSON
-  download). `.github/workflows/hero-photos.yml` runs the harvest quarterly and
-  opens a PR with the shortlists. Scoring leans on **subject isolation**, not
-  global sharpness: measured on real photos, Laplacian variance ranked a
-  cluttered hillside (5731) far above a clean close-up (361), because busy
-  frames are high-frequency everywhere. Nothing here changes a photo the app
-  shows until a pick is committed; `lib/hero-photo.ts` reads them, preferring
-  the displayed region and falling back to any reviewed one, and reshapes a pick
-  into an `ObservationSummary` so the lightbox credits it through the existing
-  path rather than a second implementation. See `docs/hero-photos.md`.
-- **A new section of the app for the plants that get mistaken for natives.**
-  [Look-alikes](https://indigene.app/#/lookalikes) is a list of the impostors —
-  the Callery pear sold beside the serviceberry, the cherry laurel hedge that
-  reads as holly, the sago palm that isn't a coontie — and each one has a page
-  showing, side by side, the differences you can actually check while standing
-  in front of them: a smell, a thorn, a hollow twig, a leaf stalk that bleeds
-  milky white. Every page links straight to photographs of the impostor on
-  iNaturalist, says where it's really from and what it does here, and cites who
-  says so. Start with the
-  [Callery pear](https://indigene.app/#/lookalikes/pyrus-calleryana), or with
-  [meadow death camas](https://indigene.app/#/lookalikes/toxicoscordion-venenosum),
-  where the look-alike is a bulb that can kill you.
-- **Every plant page says what it gets confused with, in one line.** Under
-  "Why it belongs here" you'll now find *Don't confuse it with* and the names,
-  each a link to the full comparison. One line, so the plant's own story keeps
-  the page.
-- **The label says which kind of impostor it is.** Some of these spread into
-  wild places and cost us something; some are ordinary garden plants that
-  simply aren't from here and do no harm; one or two grow here wild, just like
-  the plant they're confused with. Calling them all bad would be false, so each
-  is marked *Invasive here*, *Not from here* or *Native here too* — for the
-  region you're looking at. The same plant can be both: common ivy is invasive
-  in North America and an ordinary native climber in Atlantic France, where we
-  recommend it, and the page says so and links to it.
-- Internal: new `data/lookalikes.ts` (27 impostors, 36 region-keyed ties) with
-  `lib/lookalikes.ts` as its query layer and a dev audit — every tie must cite
-  a source, name at least one tell, fill in both sides of every tell, and may
-  not call a plant introduced in a region whose own roster lists it as native.
-  Status lives on the tie, never the catalog, for exactly that reason.
-  `steps/lookalikes.ts` serves `#/lookalikes`, `#/lookalikes/in/<region>` and
-  `#/lookalikes/<id>`, all three prerendered with their own share cards.
-- Internal: `scripts/check-lookalikes.mjs` (`npm run lookalikes:check`)
-  corroborates each tie against iNaturalist's `identifications/similar_species`
-  counts — the community's own record of which plants people really do
-  misidentify — and with `--suggest` reports frequent confusions the catalog
-  says nothing about. It never gates the build: an unbacked tie is usually a
-  garden plant nobody photographs in the wild, not a false claim. Provenance
-  for the whole layer is written up in `DATA_SOURCES.md`.
-- Internal: French vernacular names for twelve of the impostors (TAXREF, plus
-  VASCAN for Callery pear), and `check-vernacular.mjs` now verifies look-alike
-  names alongside plants and animals. The three Atlantic-France ties are
-  translated in full — that region's pages are otherwise entirely in French —
-  and `lookalikesUntranslated()` makes the "still in English" notice cover this
-  writing too, so a page can't quietly grow an English block.
-- Internal: bundle re-measured after the new data — ~250 KB → ~268 KB gzipped;
-  the figure updated in `README.md`, `PROJECT_BRIEF.md`, `app/README.md` and
-  `docs/ecoregion-plan.md`.
-- **Reading about a plant that grows in more than one region? You can switch.**
-  Those plants now have a row of buttons under their name — *Figures for:
-  Mid-Atlantic · North & Central Florida* — so you can see how the same plant
-  behaves somewhere else, and link straight to that version. Plants native to
-  only one region look exactly as they did.
-- **The preview now describes the page you actually sent.** Until now, every
-  Indigene link showed the same card, whatever it led to. Share
-  [butterfly weed](https://indigene.app/plants/asclepias-tuberosa) and the card
-  says "Butterfly Weed (Asclepias tuberosa)" and what it does for monarchs;
-  share [the Pacific Northwest](https://indigene.app/regions/pnw) or
-  [the monarch](https://indigene.app/wildlife/monarch) and you get that page's
-  own words. Every plant, every region and every creature has its own now — 261
-  pages in all. Only the picture is still the same on every link; a picture of
-  the plant itself is the next step.
-- **Found photos are a gallery now.** They used to arrive as a stack of boxes,
-  one per sighting, each with a line of small grey type under it — so four
-  photos filled the screen and three of them were words. Now every photo the
-  lookup found sits in one grid of thumbnails you can take in at a glance. Tap
-  any of them and the big view tells you who took it, the licence they share it
-  under, where and when they saw it, and links to their original record — the
-  credit moved to where you're actually looking at the picture. On a computer,
-  hovering a thumbnail shows how far away and how recent it is.
-- **Fewer words, fewer boxes, above those photos.** The paragraph explaining
-  the lookup is now one line. *My location* and the postal-code box share a
-  single row instead of taking three. The promise about your location is a
-  link — [How your location is used](https://indigene.app/#/privacy) — which
-  opens the privacy page at the section that answers it, rather than a
-  paragraph repeated on every plant page. And the button for looking a plant up
-  elsewhere just says *Where it's native* when there's only one region to
-  choose.
-- **Photos you've already seen don't download again.** Once a plant's sightings
-  have loaded, the pictures are kept on your device — so coming back to that
-  plant is instant, and works with no signal at all, the same way a spot you've
-  already looked up does. Indigene keeps the most recent few hundred photos and
-  quietly lets the oldest go, so it never grows without limit.
-- **Opening one photo gets the rest ready.** The moment you tap a picture,
-  Indigene starts fetching the full-size version of every other photo in that
-  set, one at a time and gently in the background. Swiping on to the next one
-  is then immediate instead of a wait — you're walking a gallery, not loading a
-  page each time.
-- Internal: the service worker gains a bounded, cache-first `PHOTO_CACHE` for
-  `inaturalist-open-data.s3.amazonaws.com` and `static.inaturalist.org`. It
-  re-issues each `<img>`'s no-cors request in **cors** mode before storing:
-  opaque responses are quota-padded (~7 MB each in Chromium), which silently
-  exhausted the origin quota at ~132 entries and made every later `put()`
-  throw. `store()` now catches a quota rejection, drops the oldest quarter and
-  retries once. Verified with Playwright: one network fetch per URL, the 240
-  cap holding at 300 distinct photos with the newest kept, and photos still
-  rendering after `setOffline(true)`.
-- Internal: `lightbox.ts` warms the reel on open — every other frame's
-  `largeUrl` fetched serially at `fetchPriority = "low"`, guarded by a
-  `reelToken` that goes stale on close. Verified: 6 of 6 larges pulled after
-  open, nothing pulled after Escape.
 
 ### Fixed
 
@@ -425,6 +492,7 @@ subtitle on the What's new page.
   Florida looking up butterfly weed from their own Florida list was reading the
   Mid-Atlantic's numbers. It now shows the notes for **your** region. Seventeen
   plants were affected.
+
 - Internal: `steps/plant.ts` resolves the displayed row via `activeEntry()`
   (`?region=` → `draft.regionOverride` → `regionForSite(draft)` → first) instead
   of `entries[0]`, which was REGIONS-array order. The suitability checker's
@@ -432,12 +500,80 @@ subtitle on the What's new page.
   Region is carried as a hash query, not a new route: it's page state, and one
   plant keeps one address and one share link. `shoot.mjs` gains `--then <hash>`
   for photographing a page that depends on the reader's region.
+
+## [0.17] - 2026-07-31
+
+**Real pages, and photos that stay**
+
+[![The tidied “See it growing near you” section on a plant's page](docs/screenshots/pr-74/thumb.png)](docs/screenshots/pr-74/after-dark.png)
+[Before](docs/screenshots/pr-74/before-dark.png) · [After](docs/screenshots/pr-74/after-dark.png)
+
+### Added
+
+- **The preview now describes the page you actually sent.** Until now, every
+  Indigene link showed the same card, whatever it led to. Share
+  [butterfly weed](https://indigene.app/plants/asclepias-tuberosa) and the card
+  says "Butterfly Weed (Asclepias tuberosa)" and what it does for monarchs;
+  share [the Pacific Northwest](https://indigene.app/regions/pnw) or
+  [the monarch](https://indigene.app/wildlife/monarch) and you get that page's
+  own words. Every plant, every region and every creature has its own now — 261
+  pages in all. Only the picture is still the same on every link; a picture of
+  the plant itself is the next step.
+
+- **Found photos are a gallery now.** They used to arrive as a stack of boxes,
+  one per sighting, each with a line of small grey type under it — so four
+  photos filled the screen and three of them were words. Now every photo the
+  lookup found sits in one grid of thumbnails you can take in at a glance. Tap
+  any of them and the big view tells you who took it, the licence they share it
+  under, where and when they saw it, and links to their original record — the
+  credit moved to where you're actually looking at the picture. On a computer,
+  hovering a thumbnail shows how far away and how recent it is.
+
+- **Fewer words, fewer boxes, above those photos.** The paragraph explaining
+  the lookup is now one line. *My location* and the postal-code box share a
+  single row instead of taking three. The promise about your location is a
+  link — [How your location is used](https://indigene.app/#/privacy) — which
+  opens the privacy page at the section that answers it, rather than a
+  paragraph repeated on every plant page. And the button for looking a plant up
+  elsewhere just says *Where it's native* when there's only one region to
+  choose.
+
+- **Photos you've already seen don't download again.** Once a plant's sightings
+  have loaded, the pictures are kept on your device — so coming back to that
+  plant is instant, and works with no signal at all, the same way a spot you've
+  already looked up does. Indigene keeps the most recent few hundred photos and
+  quietly lets the oldest go, so it never grows without limit.
+
+- **Opening one photo gets the rest ready.** The moment you tap a picture,
+  Indigene starts fetching the full-size version of every other photo in that
+  set, one at a time and gently in the background. Swiping on to the next one
+  is then immediate instead of a wait — you're walking a gallery, not loading a
+  page each time.
+
+- Internal: the service worker gains a bounded, cache-first `PHOTO_CACHE` for
+  `inaturalist-open-data.s3.amazonaws.com` and `static.inaturalist.org`. It
+  re-issues each `<img>`'s no-cors request in **cors** mode before storing:
+  opaque responses are quota-padded (~7 MB each in Chromium), which silently
+  exhausted the origin quota at ~132 entries and made every later `put()`
+  throw. `store()` now catches a quota rejection, drops the oldest quarter and
+  retries once. Verified with Playwright: one network fetch per URL, the 240
+  cap holding at 300 distinct photos with the newest kept, and photos still
+  rendering after `setOffline(true)`.
+
+- Internal: `lightbox.ts` warms the reel on open — every other frame's
+  `largeUrl` fetched serially at `fetchPriority = "low"`, guarded by a
+  `reelToken` that goes stale on close. Verified: 6 of 6 larges pulled after
+  open, nothing pulled after Escape.
+
+### Fixed
+
 - **A plant's own address used to answer "page not found".** Not to you — the
   app opened fine — but to the machines that build the little preview boxes in
   Messages, Slack and WhatsApp. So a link to a plant either previewed as the
   app in general or, in some apps, showed nothing but the bare address. Every
   page Indigene invites you to share is now a real page at its own address, and
   answers as one.
+
 - **"See it growing near you" was coming up empty for plants that are all over
   the place.** Ask about a common oak or a maple in a town where thousands of
   people have photographed one, and Indigene would answer that nobody had.
@@ -449,15 +585,18 @@ subtitle on the What's new page.
   photographed. Indigene now asks about one plant — the one whose page you're
   on — and gets a real answer. Photos of a subspecies or a variety count now,
   too; they were being thrown away, even though they're the same plant.
+
 - **When iNaturalist is simply busy, Indigene says so.** Every hitch used to
   read "we couldn't reach iNaturalist", which sounds like something is broken.
   Being asked to slow down for a minute now says that instead, so you know to
   just try again.
+
 - **The little captions on the photo thumbnails are gone.** They tried to fit
   "under 1 km away · seen June 2023" into a 90-pixel square, so they cut off
   mid-word and spilled over the edge of the picture — and on a phone, which has
   no hover, you could never see them at all. Tap a photo and the big view tells
   you all of it, in a size you can actually read.
+
 - Internal: `lib/nearby.ts` now queries iNaturalist per taxon
   (`taxon_id=<this plant>`) and caches under `plant:<inatId>:<area>`, replacing
   the region-wide fetch-once-and-index-by-taxon shape. That shape shared a
@@ -468,6 +607,7 @@ subtitle on the What's new page.
   by construction — and `wildlife-sightings.ts` now shares `loadSightings`
   rather than keeping its own copy. HTTP failures throw a typed `InatError`
   carrying the status, so 429/5xx reads as "busy" rather than "unreachable".
+
 - Internal: `scripts/prerender.mjs` runs after `vite build` and writes
   `dist/<route>/index.html` for all 261 shareable routes — the built shell with
   its head metadata swapped for that page's. Titles and descriptions come from
@@ -1567,7 +1707,9 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/ccd214c...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/ccf78ee...HEAD
+[0.19]: https://github.com/olivierlacan/indigene/compare/9cc18dd...ccf78ee
+[0.18]: https://github.com/olivierlacan/indigene/compare/ccd214c...9cc18dd
 [0.17]: https://github.com/olivierlacan/indigene/compare/5200de0...ccd214c
 [0.16]: https://github.com/olivierlacan/indigene/compare/aaa7781...5200de0
 [0.15]: https://github.com/olivierlacan/indigene/compare/318f221...aaa7781

@@ -3,8 +3,8 @@
 // Two halves, in that order. **How it reads** — language and units, two
 // independent choices (see the note in `prefs-controls.ts` for why they're two
 // cards and not one). **What it remembers** — the last spot, the starting
-// region, and the ranking goal, each spelled out with the button that undoes
-// it (`components/memory-controls.ts`).
+// region, the ranking goal, and when you last read the release notes, each
+// spelled out with the button that undoes it (`components/memory-controls.ts`).
 //
 // The second half is what lets the flow stay quiet. A step that reuses a
 // remembered answer says so in one line and points here; the full account of
@@ -12,13 +12,18 @@
 // every visit.
 //
 // Every card is addressable — `#/settings/language`, `#/settings/units`,
-// `#/settings/spot`, `#/settings/region`, `#/settings/goal` — so a link can
-// land on the thing it names instead of dropping the reader at the top of the
-// page to hunt for it.
+// `#/settings/spot`, `#/settings/region`, `#/settings/goal`,
+// `#/settings/whatsnew` — so a link can land on the thing it names instead of
+// dropping the reader at the top of the page to hunt for it.
 import { el, clear } from "../ui";
 import { t } from "../lib/i18n";
 import { languageCard, unitsCard } from "../components/prefs-controls";
-import { lastSpotCard, rankingGoalCard, startingRegionCard } from "../components/memory-controls";
+import {
+  lastSpotCard,
+  rankingGoalCard,
+  startingRegionCard,
+  whatsNewCard,
+} from "../components/memory-controls";
 import { stickyReady } from "../lib/sticky";
 import { prefsReady } from "../state";
 
@@ -29,14 +34,17 @@ const CARD_IDS: Record<string, string> = {
   spot: "settings-spot",
   region: "settings-region",
   goal: "settings-goal",
+  whatsnew: "settings-whatsnew",
 };
 
 export async function renderSettings(main: HTMLElement, param?: string): Promise<void> {
-  // Three of the five cards report what's stored on this device, and the two
+  // Four of the six cards report what's stored on this device, and the two
   // background reads that fill them (the spot and the ranking weights) are
   // separate. Wait for both: a settings screen that says "nothing remembered"
   // or names the wrong goal because it drew a few milliseconds early is worse
   // than a beat of delay. Both are bounded by the db module's open watchdog.
+  // The fourth card needs no wait at all — it reads localStorage, which answers
+  // at once (see `lib/visits.ts`).
   await Promise.all([stickyReady(), prefsReady()]);
   clear(main);
   const cards: Record<string, HTMLElement> = {
@@ -45,6 +53,7 @@ export async function renderSettings(main: HTMLElement, param?: string): Promise
     spot: lastSpotCard(),
     region: startingRegionCard(),
     goal: rankingGoalCard(),
+    whatsnew: whatsNewCard(),
   };
   for (const [key, card] of Object.entries(cards)) card.id = CARD_IDS[key];
 
@@ -59,6 +68,7 @@ export async function renderSettings(main: HTMLElement, param?: string): Promise
     cards.spot,
     cards.region,
     cards.goal,
+    cards.whatsnew,
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
       el(
         "button",

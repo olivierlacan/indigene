@@ -3249,3 +3249,34 @@ body[data-layout="profile"] .wip-banner-text {
   color: inherit;
   opacity: 0.85;
 }
+
+/* ---------------------------------------------------------------------------
+   The "something landed since you were last here" dot (components/new-dot.ts).
+
+   Three homes, one look: the header's gear, the What's new row inside its
+   menu, and the footer's link to the same page. On the two text rows it sits
+   in the flow after the words; on the gear it's positioned over the corner,
+   because that button lives in a header measured to the pixel and a badge that
+   pushed its neighbours around on release day would be a layout bug that only
+   appears sometimes.
+
+   Colour alone never carries it — every dot ships with words beside it (hidden
+   visually, read aloud). --good is the same green the app uses for a verified
+   answer, and it holds its contrast in both schemes.
+   ------------------------------------------------------------------------ */
+.new-dot-wrap {
+  display: inline-flex;
+  align-items: center;
+}
+.new-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.35rem;
+  border-radius: 50%;
+  background: var(--good);
+  /* The footer sits on --bg and the menu row on --surface; a hairline ring in
+     the surface colour keeps the dot legible against either, and against the
+     brand green of the header when it rides the gear. */
+  box-shadow: 0 0 0 1.5px var(--surface);
+}

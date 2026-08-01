@@ -154,3 +154,30 @@ Every candidate carries `observer`, `license` and iNaturalist's own
 shortlist into the committed pick. Nothing in this pipeline ever separates a
 photograph from its credit — the same rule the "See it growing near you" layer
 follows.
+
+### Which is why hero photos never go on a share card
+
+A plant's Open Graph card (`app/scripts/gen-plant-cards.mjs`) draws the plant's
+**illustration**, never its photograph, and that is a licensing decision rather
+than a design one.
+
+Four of the five licences we accept — everything but `cc0` — require
+attribution, and a share card is the one surface that cannot carry any. It
+arrives in iMessage, Slack or WhatsApp as a bare image with no caption, no alt
+text a reader will see, and nowhere to put "© the observer, CC BY-NC". Putting a
+photograph there would separate it from its credit, which is the rule above.
+
+Three more reasons the same way:
+
+- **A card is a derivative work.** The photo would be cropped and composited
+  into our layout. `cc-by-sa` and `cc-by-nc-sa` are ShareAlike, so the resulting
+  card would arguably have to be licensed under the same terms.
+- **Caching it means republishing it, permanently.** These images are committed,
+  and git history is forever. In-app we point at iNaturalist's own URLs, so an
+  observer who deletes a photo or tightens its licence is honoured immediately.
+  A copy in our repo can't be recalled.
+- **`cc-by-nc` on a promotional image is at best unsettled.** A share card is
+  the most marketing-shaped surface the project has.
+
+The illustrations have none of these problems: we drew them, so they can be
+cached, cropped and composited freely, and they cost about 48 KB apiece.

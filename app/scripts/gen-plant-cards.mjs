@@ -21,6 +21,26 @@
 // interest, and a plant only ever shows what it actually has. The icons beside
 // them are drawn, not emoji — see `FACT_ICONS`.
 //
+// ## The drawing, and not the photograph
+//
+// A plant page now opens with a real photograph where one has been picked
+// (`lib/hero-photo.ts`). This card deliberately keeps the illustration, and it
+// is a licensing decision rather than a design one — see the "share card"
+// section of `docs/hero-photos.md`.
+//
+// The short version: four of the five licences the harvest accepts require
+// attribution, and a share card is the one surface that can't carry any. It
+// lands in iMessage or Slack as a bare image with no caption and nowhere to put
+// "© the observer, CC BY-NC" — so a photograph here would be separated from its
+// credit, which is the one rule that pipeline doesn't break. Compositing also
+// makes the card a derivative work (two of those licences are ShareAlike), and
+// committing it republishes someone's photo permanently: in-app we point at
+// iNaturalist's URLs, so a deleted or relicensed photo is honoured at once,
+// where a copy in git history can't be recalled.
+//
+// We drew the illustrations, so they can be cached, cropped and composited
+// freely. That's the whole reason they're the right thing to put here.
+//
 // ## Words, and why they are English
 //
 // The card is English for the same reason the prerendered metadata is: a query

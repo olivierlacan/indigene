@@ -178,6 +178,15 @@ subtitle on the What's new page.
   from lossless. Nothing but a link unfurler ever fetches them, so the weight
   is a repository cost, not a page-load one. `check-routes.mjs` now also
   verifies every page's `og:image` resolves to a file that was actually built.
+- Internal: share cards carry the plant's **illustration, never its hero
+  photograph**, written down in `docs/hero-photos.md` and in the generator's own
+  header because that's where someone would be tempted. Four of the five
+  licences the harvest accepts require attribution and a share card can't carry
+  any — it lands in a chat as a bare image with nowhere to put the credit, which
+  is the one rule that pipeline doesn't break. Compositing would also make the
+  card a derivative work (two of those licences are ShareAlike), and committing
+  it would republish someone's photo permanently, where the in-app hot-link
+  honours a deletion or a licence change at once.
 - Internal: the card generator measures each card in the browser before
   capturing it and refuses to write one that doesn't fit — a fact label wrapping
   onto two lines, the name and the drawing colliding, a row overflowing. That's

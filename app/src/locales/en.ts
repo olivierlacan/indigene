@@ -957,6 +957,10 @@ export const en = {
   "plant.forThisPlant": "For this plant: ",
   "plant.howToSource": "How-to source: ",
   "plant.usfsLink": "USFS Native Plant Network →",
+  "plant.savedFit.one":
+    "You've saved a spot this would suit. Open it to see everything else that thrives there.",
+  "plant.savedFit.other":
+    "You've saved {n} spots this would suit. Open one to see everything else that thrives there.",
   "plant.checkSpotTitle": "Want to plant it? Check your spot",
   "plant.checkSpotLede":
     "Stand where you'd plant it (or search for your town below) and Indigene checks the soil, climate and region against what this plant needs — native to {region} and beyond, it still has to like your exact spot.",

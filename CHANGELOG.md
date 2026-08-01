@@ -25,6 +25,29 @@ subtitle on the What's new page.
 
 ### Added
 
+- **A plant's page tells you when you've already got somewhere to put it.** If
+  you've saved a spot, reading about
+  [a plant](https://indigene.app/plants/quercus-alba) now says whether it would
+  suit that ground — by name, under *Want to plant it?* — instead of asking you
+  to describe the garden all over again to find out. Tap the spot to see
+  everything else that thrives there. It only ever names the spots a plant
+  *would* suit: a page you're browsing shouldn't volunteer bad news about four
+  gardens, and the check underneath still gives an honest verdict, good or bad,
+  for anywhere you point it. Nothing is asked and nothing is sent — it's the
+  same arithmetic your plant lists already do, run on spots this device had
+  saved.
+- Internal: `lib/saved-fit.ts` runs every saved spot through `assessSpot`, the
+  same function the manual checker calls, so a plant can never look better here
+  than it would in the ranked list for that same spot; ideal ahead of decent,
+  then by fit. `assessSpot` gains an optional region override, honoured the way
+  `activeEntry` and the ranked flow already honour it, so a spot the reader
+  hand-placed just over a boundary is judged against the region they said it's
+  in. The row's sub-line shows the spot's own sun answer rather than the
+  verdict's first reason — the reasons are ordered for reading in full, so the
+  first is the hardiness line, and on a spot whose site lookup never landed
+  that's "couldn't confirm how cold winters get here", which reads as a warning
+  under a green verdict. It's derived from the stored hours, not the stored
+  label, which was written in whatever language the spot was saved in.
 - **A green dot when something's new, and nothing when it isn't.** Indigene now
   keeps a small mark beside *What's new* — in the ⚙️ menu, and at the foot of
   every page — from the moment something is added until you've looked at it.

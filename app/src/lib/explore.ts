@@ -87,9 +87,22 @@ export function assessSpot(
   lat: number,
   lon: number,
   sun: SunEstimate | null,
-  moistureOverride?: MoistureBand | null
+  moistureOverride?: MoistureBand | null,
+  /**
+   * The region the reader picked by hand for this spot, when they did.
+   *
+   * It exists for the case the boxes get wrong — a garden just over a boundary
+   * — so where it's set it beats the coordinates, exactly as it does everywhere
+   * else the app decides which region a spot is in (`activeEntry`, the ranked
+   * flow). Only a region we actually have a list for counts; anything else
+   * falls back to the coordinates rather than answering about nowhere.
+   */
+  regionOverride?: string | null
 ): Suitability {
-  const spotRegion = regionForSite(lat, lon, site);
+  const overridden = regionOverride
+    ? REGIONS.find((r) => r.meta.id === regionOverride) ?? null
+    : null;
+  const spotRegion = overridden ?? regionForSite(lat, lon, site);
   const entry = spotRegion
     ? entries.find((e) => e.region.meta.id === spotRegion.meta.id) ?? null
     : null;

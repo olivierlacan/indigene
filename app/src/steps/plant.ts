@@ -18,6 +18,8 @@ import { supportIcon } from "../components/support-icon";
 import { SCORE_KEYS, scoreLabel, bloomSentence, confidencePlain, growthPlain, moistureWord, propagationMethod, PROPAGATION_SOURCE_URL, SOURCES_ROUTE } from "../lib/plain";
 import { citation } from "../components/citation";
 import { silhouetteFor } from "../components/plant-card";
+import { heroPhotoFor, asObservation } from "../lib/hero-photo";
+import { openObservationLightbox, licenseLabel } from "../components/lightbox";
 import { keystoneIcon } from "../components/keystone-icon";
 import { statGrid } from "../components/stat-card";
 import { drawSizeViz } from "../components/size-viz";
@@ -198,7 +200,71 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
     ]);
   }
 
+  /**
+   * The chosen photograph, in the slot the form drawing occupies — or null when
+   * nobody has picked one for this plant, in which case the drawing stays.
+   *
+   * A *thumbnail that the text wraps around*, not a column. As a flex column it
+   * left a block of dead space to its right — a name and a latin binomial are
+   * two short lines, the photo is five tall — while pushing the badges and the
+   * credit onto rows of their own below. Floating it lets the name, the binomial
+   * and the badges sit beside it and then carry on underneath when they run past
+   * it, which is what fills that space.
+   *
+   * The credit travels *with* the photo, inside the float, at the size a credit
+   * deserves: the observer's name, one line, truncated rather than wrapped. The
+   * licence, the date and the link to the original record are a tap away in the
+   * lightbox — the same lightbox, the same wording, and the same single
+   * implementation every other iNaturalist photo in the app uses. Spending a
+   * full-width row on all of it above the plant's own badges had the priorities
+   * backwards.
+   *
+   * `regionId` is the *active* region, not the first one: a plant native to
+   * several regions shows that region's figures (see `activeEntry`), so it has
+   * to show that region's photograph too, or the page would picture a Florida
+   * live oak beside Maryland's numbers.
+   */
+  function heroImage(p: Plant, regionId?: string): HTMLElement | null {
+    const pick = heroPhotoFor(p.id, regionId);
+    if (!pick) return null;
+    const name = commonName(p);
+    const observation = asObservation(pick, p.latin);
+    const btn = el("button", {
+      type: "button",
+      class: "plant-hero-shot",
+      "aria-label": t("hero.enlarge", { name }),
+      onClick: () => openObservationLightbox([observation], { observation: 0, photo: 0 }, name, btn),
+    }, [
+      el("img", {
+        src: pick.mediumUrl,
+        // Displayed at most 171 px across, so the 500 px rendition covers even a
+        // 3x phone; the large one is for the lightbox, not for here.
+        alt: t("obs.photoAlt", { name: p.latin, observer: pick.observer ?? "an iNaturalist observer" }),
+        // Square, and said up front, so the head row doesn't reflow when it lands.
+        width: 180,
+        height: 180,
+      }),
+    ]) as HTMLButtonElement;
+
+    // One line, the observer's name, ellipsised if it's long — with the full
+    // credit on the element itself for a pointer, and stated in full in the
+    // lightbox for everyone.
+    const credit = el("figcaption", {
+      class: "plant-hero-credit",
+      title: pick.attribution ?? `© ${pick.observer} · ${licenseLabel(pick.license)} · iNaturalist`,
+    }, [
+      el("a", {
+        href: `https://www.inaturalist.org/observations/${pick.observationId}`,
+        target: "_blank",
+        rel: "noopener",
+      }, `© ${pick.observer ?? "iNaturalist"}`),
+    ]);
+
+    return el("figure", { class: "plant-hero" }, [btn, credit]);
+  }
+
   function profile(p: Plant, all: PlantEntry[]): HTMLElement {
+    const hero = heroImage(p, active.region.meta.id);
     const badges = el("div", {}, [
       p.keystone
         ? el("span", { class: "badge keystone", title: t("badge.keystoneTitle") }, [keystoneIcon(), " " + t("badge.keystone")])
@@ -246,8 +312,12 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
       // phone the pieces sit in the card exactly as they always have.
       el("div", { class: "plant-cols" }, [
         el("div", { class: "plant-col" }, [
-          el("div", { class: "plant-head" }, [
-            el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
+          // Two layouts, one row of content. The drawing is a flex column beside
+          // the text, as it always was. The photograph is a *float*, so the text
+          // runs beside it and then under it — a photo is taller than a name and
+          // a latin binomial, and a flex column would leave that difference blank.
+          el("div", { class: hero ? "plant-head plant-head-photo" : "plant-head" }, [
+            hero ?? el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
             el("div", {}, [
               el("h2", { class: "plant-name", style: "margin:0" }, names.title),
               el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" }, names.sub),

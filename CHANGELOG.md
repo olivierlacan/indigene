@@ -141,6 +141,28 @@ subtitle on the What's new page.
 
 ### Added
 
+- **A real photograph where a plant's page had a drawing.** That little picture
+  beside a plant's name was chosen by its *type* — the same shrub shape for
+  every shrub, the same tree for every tree. It can now be an actual photo of
+  that species instead, in the same spot and never wider than a third of your
+  screen, with the photographer named just below. Tap it to see it large, with
+  the licence and a link to the original sighting, exactly like the other photos
+  in the app. Plants nobody has chosen a picture for yet keep the drawing, so
+  nothing looks half-finished.
+- Internal: the hero-photo pipeline — `npm run hero:harvest` (iNaturalist's
+  most-favourited research-grade observations per plant per region, restricted
+  at the query to republishable CC licences), `_photo-quality.mjs` (Chromium
+  decodes, Node fetches — no new dependency), and `npm run hero:review` (a
+  self-contained page for picking, with `localStorage` persistence and a JSON
+  download). `.github/workflows/hero-photos.yml` runs the harvest quarterly and
+  opens a PR with the shortlists. Scoring leans on **subject isolation**, not
+  global sharpness: measured on real photos, Laplacian variance ranked a
+  cluttered hillside (5731) far above a clean close-up (361), because busy
+  frames are high-frequency everywhere. Nothing here changes a photo the app
+  shows until a pick is committed; `lib/hero-photo.ts` reads them, preferring
+  the displayed region and falling back to any reviewed one, and reshapes a pick
+  into an `ObservationSummary` so the lightbox credits it through the existing
+  path rather than a second implementation. See `docs/hero-photos.md`.
 - **A new section of the app for the plants that get mistaken for natives.**
   [Look-alikes](https://indigene.app/#/lookalikes) is a list of the impostors —
   the Callery pear sold beside the serviceberry, the cherry laurel hedge that

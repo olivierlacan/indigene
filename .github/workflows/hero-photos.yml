@@ -1,0 +1,152 @@
+# Harvest and rank candidate hero photos, then open a PR with the shortlist.
+#
+# Why here and not in the build: the harvest needs open internet (iNaturalist),
+# which the local build sandbox blocks — GitHub runners don't. Same arrangement
+# as reconcile.yml, and for the same reason. This produces review data only
+# (docs/hero-photos/candidates.json); a human picks from it and commits the
+# picks separately. See docs/hero-photos.md.
+#
+# It is deliberately NOT on the deploy path. Nothing this writes reaches the app
+# until someone has looked at the photographs and chosen.
+#
+# Requires "Allow GitHub Actions to create and approve pull requests" in the
+# repo's Actions settings.
+name: Harvest hero photos
+
+on:
+  workflow_dispatch:
+    inputs:
+      region:
+        description: "Region id to harvest (blank = all regions)"
+        type: string
+        default: ""
+      keep:
+        description: "How many candidates to shortlist per plant"
+        type: string
+        default: "10"
+      limit:
+        description: "Stop after this many plant×region pairs (blank = no limit)"
+        type: string
+        default: ""
+  schedule:
+    # 05:00 UTC on the 15th, quarterly. Photo pools grow slowly and the output
+    # costs a human review, so this is a nudge, not a treadmill.
+    - cron: "0 5 15 1,4,7,10 *"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: hero-photos
+  cancel-in-progress: false
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    # A full run is ~200 plant×region pairs at roughly a second each, plus the
+    # image downloads and decoding. Generous, but bounded.
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      # Chromium is the image decoder (see scripts/_photo-quality.mjs) — the
+      # browser only ever sees bytes Node already fetched, so no sandbox flags
+      # or display are needed. --with-deps because a bare runner lacks the libs.
+      - name: Install Chromium
+        working-directory: app
+        run: npx playwright install --with-deps chromium
+
+      - name: Harvest and rank candidates
+        working-directory: app
+        run: |
+          args=()
+          if [ -n "${{ inputs.region }}" ]; then args+=(--region "${{ inputs.region }}"); fi
+          if [ -n "${{ inputs.limit }}" ]; then args+=(--limit "${{ inputs.limit }}"); fi
+          if [ -n "${{ inputs.keep }}" ]; then args+=(--keep "${{ inputs.keep }}"); fi
+          npm run hero:harvest -- "${args[@]}" | tee "$RUNNER_TEMP/harvest.log"
+
+      # The reviewer opens this file to make the picks. It's an artifact rather
+      # than a committed file because it's a build product of the candidates —
+      # `npm run hero:review` regenerates it from the PR's JSON at any time.
+      - name: Build the review page
+        working-directory: app
+        run: npm run hero:review
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hero-photo-review
+          path: app/dist/hero-review/index.html
+          retention-days: 30
+
+      - name: Summarize
+        if: always()
+        run: |
+          # `cat`, never an interpolated expression: the log carries names that
+          # came back from an external API.
+          {
+            echo "### Hero photo harvest"
+            echo ""
+            echo '```'
+            tail -n 25 "$RUNNER_TEMP/harvest.log" 2>/dev/null || echo "(no log)"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open a PR with the refreshed shortlists
+        id: cpr
+        continue-on-error: true
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: hero-photos/candidates
+          title: "Refresh hero photo candidates"
+          commit-message: "Refresh hero photo candidates from iNaturalist"
+          body: |
+            Automated harvest of candidate hero photos: for each plant, in each
+            region it's native to, iNaturalist's most-favourited research-grade
+            observations carrying a **reusable** licence, re-ranked on the pixels
+            (see `docs/hero-photos.md`).
+
+            **This changes no photo the app shows.** It refreshes the shortlist
+            a human picks from. To make picks:
+
+            ```sh
+            gh pr checkout <this PR>
+            cd app && npm run hero:review
+            # open app/dist/hero-review/index.html, pick, Download picks
+            ```
+
+            …or download the **hero-photo-review** artifact from this run and
+            open it directly. Save the result as `app/src/data/hero-photos.json`
+            and commit it — on this branch or your own.
+
+            Worth a glance in the diff: any plant whose shortlist went empty
+            (no reusable photo in that region), and anything under `problems`.
+          add-paths: |
+            docs/hero-photos/candidates.json
+          labels: skip-changelog
+
+      - name: Report where the PR went
+        if: always()
+        run: |
+          if [ "${{ steps.cpr.outcome }}" = "success" ] && [ -n "${{ steps.cpr.outputs.pull-request-url }}" ]; then
+            echo "✅ Candidates PR: ${{ steps.cpr.outputs.pull-request-url }}" >> "$GITHUB_STEP_SUMMARY"
+          else
+            {
+              echo ""
+              echo "The branch \`hero-photos/candidates\` was pushed; open the PR here:"
+              echo ""
+              echo "<${{ github.server_url }}/${{ github.repository }}/compare/main...hero-photos/candidates?expand=1>"
+              echo ""
+              echo "To open it automatically, enable **Settings → Actions → General → \"Allow GitHub Actions to create and approve pull requests\"**."
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi

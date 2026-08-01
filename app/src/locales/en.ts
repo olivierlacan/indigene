@@ -1353,6 +1353,7 @@ export const en = {
   "obs.enlarge": "Enlarge photo {i} of {name} by {observer}",
   "obs.enlargeMore": ", and see {n} more photos",
   "obs.tapToEnlarge": "{attribution} — tap to enlarge",
+  "hero.enlarge": "See this photo of {name} full size",
   "obs.photoAlt": "{name} photographed by {observer}",
   "lightbox.prev": "Previous photo",
   "lightbox.next": "Next photo",

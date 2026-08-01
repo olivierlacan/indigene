@@ -49,6 +49,7 @@ concurrency:
 
 jobs:
   verify:
+    name: Ask each reference list
     runs-on: ubuntu-latest
     env:
       LANG_CODE: ${{ inputs.lang || 'fr' }}

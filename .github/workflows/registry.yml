@@ -31,7 +31,7 @@ permissions:
 
 jobs:
   check:
-    name: Registry check
+    name: Rebuild, audit & taxon-id coverage
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

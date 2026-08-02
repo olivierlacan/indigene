@@ -3,7 +3,23 @@
 Two regions, measured rather than estimated. Every number below comes from
 `npm run coverage` (`app/scripts/coverage.mjs`), which reads the shipped data
 and the committed Gaytán host-count table — so it can be re-run, disagreed with,
-and watched over time. Nothing here changes the app.
+and watched over time.
+
+> **Status: measured, then closed.** The tables below are the state that
+> prompted the work, kept as written so the before is legible. What has since
+> landed:
+>
+> | | then | now |
+> |---|---|---|
+> | Pacific NW plants | 44 | **58** — every form ≥3, February closed |
+> | Atlantic France plants | 23 | **46** — every form ≥3, every site cell ≥3 |
+> | Atlantic France top-30 host genera | 9 of 30 (41%) | **29 of 30 (97%)** |
+> | Atlantic France ties / larval hosts | 8 / **0** | see §4 |
+>
+> Still open, deliberately: the PNW's October bloom month (nothing on the
+> candidate list honestly flowers then) and *Ceanothus*, the one keystone genus
+> the region still lacks; Atlantic France's November and December; and
+> *Taraxacum*, the only top-30 genus left out on plantability grounds.
 
 ## The short answer
 

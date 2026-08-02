@@ -45,10 +45,10 @@ in [`docs/coverage-gap-pnw-france-atlantic.md`](coverage-gap-pnw-france-atlantic
 | Region | Plants | Thinnest categories | Biggest gap |
 |---|---|---|---|
 | Mid-Atlantic | 40 | ferns 1, vines 2, groundcovers 2 | shade-tolerant perennials |
-| Pacific NW | 44 | vines 1, grasses 2, groundcovers 2, ferns 2 | wetland / rain-garden perennials |
+| Pacific NW | **58** | *every form now ≥3* | October bloom (1); *Ceanothus*, the one absent keystone genus |
 | Florida N & C | 23 | **ferns 0**, vines 1 | grasses, a second oak, more perennials |
 | Florida S & Keys | 21 | **ferns 0**, perennials 2, vines 1 | perennials, and a real palm/understory set |
-| Atlantic France | 23 | grasses 1, groundcovers 1, ferns 1 | wetland and shade perennials |
+| Atlantic France | **46** | *every form now ≥3* | November/December bloom; the wildlife ties for the newest rows |
 | Continental France | 22 | **ferns 0, groundcovers 0**, grasses 1 | ferns, groundcovers, wetland plants |
 | Mediterranean France | 21 | **ferns 0**, grasses 1, vines 1, groundcovers 1 | shade plants for a north wall; bulbs |
 | French Alps | 21 | **ferns 0, vines 0**, grasses 1 | wet-meadow perennials; scree specialists |
@@ -58,6 +58,13 @@ shrubs** (they are the easy, charismatic, well-documented end) **and under-index
 on grasses, ferns, groundcovers and wetland plants** — which is precisely
 backwards from the point of view of a small garden, where almost nobody has room
 for a fourteenth tree.
+
+The two bold rows are the two that have since been worked on — see
+[`docs/coverage-gap-pnw-france-atlantic.md`](coverage-gap-pnw-france-atlantic.md).
+Both now clear every form floor and every site cell, and Atlantic France carries
+29 of the top 30 Oceanic-temperate host genera where it carried 9. The other six
+regions still read exactly as this table describes, and the Florida lists and
+Mediterranean France are in worse shape than either of these two ever were.
 
 ---
 

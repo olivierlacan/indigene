@@ -25,6 +25,65 @@ subtitle on the What's new page.
 
 ### Added
 
+- **A lot more to plant in the Pacific Northwest.** The list grew from 44 plants
+  to 58, and the new ones are deliberately not more trees. There are now sedges
+  and a rush for wet ground, two more ferns, stonecrop and buckwheat for a dry
+  sunny edge, and trailing blackberry — the native everyone mistakes for the
+  Himalayan bramble. Three trees did go in, each for a reason: black hawthorn,
+  paper birch and Pacific crabapple all feed large numbers of caterpillars and
+  none of them was on the list at all. Indian plum is the one to notice — it is
+  the first thing in flower west of the Cascades, often in February, which is
+  exactly when a queen bumblebee wakes up hungry and finds nothing open.
+- **Early blue violet, and why it matters.** Also new to the Northwest, and the
+  only thing a fritillary caterpillar will eat. The way it works is worth
+  knowing before you plant it: the butterfly lays her eggs in late summer beside
+  violets that have already died back for the year, the caterpillar hatches,
+  eats nothing at all, sleeps through the winter in the leaf litter, and goes
+  looking for violet leaves the following April. So the patch has to still be
+  there next spring, in the same spot. The plant's page says so.
+- **Atlantic France doubled, from 23 plants to 46.** Heather, broom, dyer's
+  greenweed, bramble, lady's bedstraw, mugwort, knapweed, bird's-foot trefoil,
+  sorrel, red clover, ribwort plantain, two grasses, two more ferns, hop, aspen,
+  bilberry, small-leaved lime, wych elm, wild pear, field rose and beech. Most of
+  them were chosen because they feed the most caterpillars of anything that grows
+  there — and several also flower in August, September and October, which is when
+  the old list ran out of flowers and a bee colony runs out of food.
+- **The app now says who eats what, all over Europe.** Atlantic France used to
+  name an animal for five of its plants and never once said that a caterpillar
+  ate anything. It now names animals for 43 of its 46 plants, and 24 of those are
+  a caterpillar's actual food. The one to look at is
+  [alder buckthorn](https://indigene.app/plants/frangula-alnus): a brimstone
+  caterpillar can eat buckthorn and nothing else, so one shrub in a hedge really
+  can put the first butterfly of spring in your garden. Oak gets the purple
+  hairstreak and the jay, goat willow the purple emperor, hazel the dormouse,
+  cowslip the Duke of Burgundy, wild cherry the hawfinch — the one bird that
+  cracks the stone instead of eating the flesh.
+- **And in the Northwest too.** Douglas-fir, western hemlock and western redcedar
+  now name the crossbills and siskins that live off their cones, and the region
+  went from 59 named relationships to 91. Twenty-two new animals joined
+  [the wildlife pages](https://indigene.app/wildlife) in all.
+- Internal: `npm run coverage` prints what each region's plant list is missing —
+  forms below three, moisture × sun cells with nothing in them, months with
+  nothing in flower, the wildlife ties that aren't written, and (for the four
+  French regions) the food-web genera we don't ship, joined live against the
+  committed Gaytán host counts. This is `docs/coverage-plan.md` §4 step 1, which
+  that document asked for and left unbuilt. `--region <id>` for one region,
+  `--top N` for how far down the genus ranking to look.
+- Internal: `docs/coverage-gap-pnw-france-atlantic.md` is what the script found
+  and what was done about it. Atlantic France went from 9 of the top 30
+  Oceanic-temperate host genera to **29 of 30** — 41% of the caterpillar records
+  to 97% — and both regions now clear every form floor and every site cell.
+  Deliberately still open: the Northwest's October bloom month and *Ceanothus*;
+  Atlantic France's November and December; and dandelion, the only top-30 genus
+  left out, on plantability grounds.
+- Internal: `app/scripts/probe-globi.mjs` and the *US host counts* workflow ask
+  GloBI whether America can have computed host counts the way Europe does. It
+  ships nothing on purpose — the gate is whether the source can tell a
+  caterpillar eating a leaf from an adult sipping at a flower, and
+  `docs/us-host-counts-plan.md` commits to abandoning the approach if it can't.
+  This is the structural gap the audit exposed: European lists can be grown from
+  a ranking and American ones can't.
+
 - Internal: `npm run coverage` prints what each region's plant list is missing —
   forms below three, moisture × sun cells with nothing in them, months with
   nothing in flower, the wildlife ties that aren't written, and (for the four

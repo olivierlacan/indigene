@@ -279,9 +279,24 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   "Apatura iris": { name: "Grand mars changeant", src: "taxref" },
   "Celastrina argiolus": { name: "Azuré des nerpruns", src: "taxref" },
   "Hamearis lucina": { name: "Lucine", src: "taxref" },
+  "Lycaena phlaeas": { name: "Cuivré commun", src: "taxref" },
+  "Satyrium w-album": { name: "Thécla de l'Orme", src: "taxref" },
+  "Callophrys rubi": { name: "Thécla de la ronce", src: "taxref" },
+  "Plebejus argus": { name: "Azuré de l'Ajonc", src: "taxref" },
+  "Melitaea cinxia": { name: "Mélitée du Plantain", src: "taxref" },
+  "Laothoe populi": { name: "Sphinx du peuplier", src: "taxref" },
+  "Deilephila elpenor": { name: "Grand sphinx de la vigne", src: "taxref" },
+  "Macroglossum stellatarum": { name: "Moro-sphinx", src: "taxref" },
+  "Saturnia pavonia": { name: "Petit paon de nuit", src: "taxref" },
+  // Holarctic: the catalog entry is written for the Pacific Northwest, but the
+  // butterfly is the same animal a French reader knows as the Morio, and this
+  // table keys on the scientific name. Naming it is a lookup, not a claim about
+  // which plants it uses here.
+  "Nymphalis antiopa": { name: "Morio", src: "taxref" },
   "Nucifraga caryocatactes": { name: "Cassenoix moucheté", src: "taxref" },
   "Lyrurus tetrix": { name: "Tétras lyre", src: "taxref" },
   "Garrulus glandarius": { name: "Geai des chênes", src: "taxref" },
+  "Coccothraustes coccothraustes": { name: "Gros-bec casse-noyaux", src: "taxref" },
   "Muscardinus avellanarius": { name: "Muscardin", src: "taxref" },
 
   "Danaus plexippus": { name: "Monarque", src: "wikidata" },
@@ -307,6 +322,7 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   "#berry-songbirds": { name: "Moqueurs, cardinaux et grives", src: "catalog" },
   "#winter-thrushes": { name: "Grives litornes, mauvis et merles", src: "catalog" },
   "#blackcaps-warblers": { name: "Fauvettes à tête noire et autres fauvettes", src: "catalog" },
+  "#goldfinches-linnets": { name: "Chardonnerets et linottes", src: "catalog" },
   "#conifer-seed-finches": { name: "Becs-croisés, tarins et sizerins", src: "catalog" },
   "#acorn-mammals": { name: "Écureuils, chevreuils et autres mammifères", src: "catalog" },
 

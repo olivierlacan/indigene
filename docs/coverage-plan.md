@@ -32,8 +32,13 @@ Concretely, a region is **complete enough** when:
 
 Those are all **computable from the data we already ship**, which means they can
 become a script (`npm run coverage`) that prints each region's gaps rather than a
-document someone has to re-read. That script is the natural first follow-up to
-this plan, and it is deliberately *not* in this PR.
+document someone has to re-read.
+
+**That script now exists** — `app/scripts/coverage.mjs`, §4 step 1 below. It
+prints the table in this section for every region, joins the European regions
+against the committed Gaytán host counts to name the missing genera outright,
+and censuses the wildlife layer. The first thing it was pointed at is written up
+in [`docs/coverage-gap-pnw-france-atlantic.md`](coverage-gap-pnw-france-atlantic.md).
 
 ### Where the eight regions stand today
 
@@ -175,8 +180,14 @@ kind of automation:
 
 ## 4. Suggested order of work
 
-1. **`npm run coverage`** — turn §1's table into a script that prints each
-   region's gaps. Cheap, and it makes every later decision obvious.
+1. ~~**`npm run coverage`** — turn §1's table into a script that prints each
+   region's gaps.~~ **Shipped** (`app/scripts/coverage.mjs`). It did make the
+   later decisions obvious: see
+   [`docs/coverage-gap-pnw-france-atlantic.md`](coverage-gap-pnw-france-atlantic.md),
+   which found that the wildlife layer is a bigger and much cheaper gap than the
+   plant lists — Atlantic France names an animal for 5 of its 23 plants and
+   claims no larval host at all — and that the missing US host table (§3) is the
+   one thing blocking step 2 from covering every region.
 2. **GBIF candidate generator** — a script that proposes the next N species for a
    region by joining ecoregion occurrences to host counts, for a human to accept
    or reject. This is what makes list growth repeatable instead of heroic.

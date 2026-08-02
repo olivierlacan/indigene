@@ -25,6 +25,21 @@ subtitle on the What's new page.
 
 ### Added
 
+- Internal: `npm run coverage` prints what each region's plant list is missing —
+  forms below three, moisture × sun cells with nothing in them, months with
+  nothing in flower, the wildlife ties that aren't written, and (for the four
+  French regions) the food-web genera we don't ship, joined live against the
+  committed Gaytán host counts. This is `docs/coverage-plan.md` §4 step 1, which
+  that document asked for and left unbuilt. `--region <id>` for one region,
+  `--top N` for how far down the genus ranking to look.
+- Internal: `docs/coverage-gap-pnw-france-atlantic.md` is the first thing the
+  script was pointed at — the measured gap in the Pacific Northwest and Atlantic
+  France, with the rows to write and the order to write them in. Headline: the
+  plant lists are 7 and 8 rows short of the app's own floors, but Atlantic France
+  ships only 9 of the 30 genera that host the most caterpillars in its zone, and
+  names an animal for 5 of its 23 plants with **no** larval host at all — a gap
+  that needs no new plant rows and no new data source to close.
+
 - **Swipe through the photos.** When you tap a photo of a plant or animal
   [someone spotted near you](https://indigene.app/wildlife) and it opens large,
   you can now slide it aside with your thumb to see the next one — the picture

@@ -31,14 +31,23 @@ subtitle on the What's new page.
   follows your finger, and a flick is enough. It does exactly what the small ‹ ›
   buttons at the edges do, so you no longer have to aim for them on a phone:
   drag left for the next photo, right for the one before, right round the set
-  and back to the start. A drag up or down still scrolls the page, and a photo
-  with nothing to page to stays put.
-- Internal: the gesture lives in `attachSwipe` in `components/lightbox.ts` and
-  routes into the same `step()` the buttons and the ← → keys call, so paging
-  can't drift apart between them. It listens for touch and pen only — a mouse
-  drag on a picture already means something else. `npm run swipe:check` drives
-  real Chromium touch input at a built, served `dist/` and asserts where each
-  gesture lands (long drag, flick, twitch, scroll, wrap-around, one-photo reel).
+  and back to the start. A photo with nothing to page to stays put.
+- **Swipe down to put a photo away.** Drag the big photo downwards and the whole
+  viewer falls with your thumb, letting the page show through behind it — let go
+  and it's closed, as if you'd tapped the ✕. Change your mind halfway and it
+  springs back to where it was. Handy when the ✕ is up in the far corner and your
+  thumb is not.
+- Internal: both gestures live in `attachSwipe` in `components/lightbox.ts`,
+  which picks an axis in the first 8 px of travel and holds it: sideways routes
+  into the same `step()` the buttons and the ← → keys call, downwards into the
+  same `close()` as ✕ / Escape / the backdrop, so no path can drift apart from
+  the others. Touch and pen only — a mouse drag on a picture already means
+  something else. The falling panel fades `.lb-overlay`'s *background*, not its
+  opacity (fading the overlay makes the photo itself see-through), and
+  `close()` undoes a drag in flight so the reused overlay never greets the next
+  photo tilted. `npm run swipe:check` drives real Chromium touch input at a
+  built, served `dist/` and asserts all 17 outcomes (drags, flicks, twitches,
+  wrap-around, dismissal both ways, and a clean reopen).
 - **A plant's page tells you when you've already got somewhere to put it.** If
   you've saved a spot, reading about
   [a plant](https://indigene.app/plants/quercus-alba) now says whether it would

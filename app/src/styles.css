@@ -2470,6 +2470,11 @@ details.weights {
   justify-content: center;
   padding: max(0.75rem, env(safe-area-inset-top)) 0.75rem max(0.75rem, env(safe-area-inset-bottom));
   animation: lb-fade-in 0.18s ease-out;
+  /* A swipe down thins the backdrop as the panel falls; this brings it back.
+     Note it's the background, not the overlay's opacity — fading the whole
+     overlay would make the photo itself see-through, which reads as broken.
+     Keep the alpha here and BACKDROP in lightbox.ts in step. */
+  transition: background-color 0.2s ease;
 }
 @keyframes lb-fade-in {
   from { opacity: 0; }
@@ -2484,6 +2489,15 @@ details.weights {
   height: 100%;
   width: 100%;
   gap: 0.6rem;
+  /* For the ride back up when a swipe-down doesn't go far enough to dismiss.
+     The backdrop's own fade is on .lb-overlay's opacity. */
+  transition: transform 0.2s ease;
+}
+/* While the finger is down, the panel and the backdrop track it exactly — the
+   easing is for the snap back, not for the drag itself. */
+.lb-panel.lb-panel-dragging,
+.lb-overlay:has(.lb-panel-dragging) {
+  transition: none;
 }
 .lb-close {
   position: absolute;
@@ -2506,9 +2520,10 @@ details.weights {
   justify-content: center;
   min-height: 0;
   flex: 1 1 auto;
-  /* Sideways drags are ours — they page the reel (attachSwipe in lightbox.ts).
-     Vertical ones stay the browser's, so a scroll still scrolls. */
-  touch-action: pan-y;
+  /* Every drag on the photo is ours: sideways pages the reel, down puts the
+     viewer away (attachSwipe in lightbox.ts). There's nothing to scroll behind
+     it — the page is locked while the lightbox is open. */
+  touch-action: none;
   /* A dragged photo slides out of the frame, not across the page behind it. */
   overflow: hidden;
 }

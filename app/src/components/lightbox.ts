@@ -66,6 +66,10 @@ interface LightboxState {
 
 let overlay: HTMLElement | null = null;
 let state: LightboxState | null = null;
+// Undoes a drag in progress (see attachSwipe). Closing mid-drag — Escape, say,
+// or the dismiss the drag itself asked for — must not leave the reused overlay
+// tilted or half-transparent for the next photo someone taps.
+let resetDrag: (() => void) | null = null;
 // Bumped whenever the reel changes (a new open, or a close); the warming loop
 // compares against it between photos and stops rather than pulling images for a
 // set nobody is looking at any more.
@@ -114,6 +118,7 @@ export function openObservationLightbox(
 
 function close(): void {
   if (!overlay) return;
+  resetDrag?.();
   reelToken++; // stops any warming still walking the reel
   document.removeEventListener("keydown", onKey);
   document.body.style.overflow = "";
@@ -146,7 +151,6 @@ function buildOverlay(): HTMLElement {
   const closeBtn = el("button", { class: "lb-close", "aria-label": t("lightbox.close"), onClick: close }, "✕");
 
   const stage = el("div", { class: "lb-stage" }, [prev, img, next]);
-  attachSwipe(stage, img);
   const panel = el("div", {
     class: "lb-panel",
     role: "dialog",
@@ -157,74 +161,122 @@ function buildOverlay(): HTMLElement {
   }, [closeBtn, stage, el("div", { class: "lb-foot" }, [caption, counter])]);
 
   const root = el("div", { class: "lb-overlay", onClick: close }, [panel]);
+  attachSwipe(stage, img, panel, root);
   // Stash the mutable bits for paint() to find.
   (root as any)._parts = { img, caption, counter, prev, next };
   return root;
 }
 
-// A drag across the photo pages the reel, and lands on exactly what the ‹ ›
-// buttons would have done: drag left for the next photo, right for the previous,
-// wrapping at the ends the same way. The photo follows the finger at a fraction
-// of the distance so the gesture is visibly live, then either snaps back or
-// settles on the new photo.
+// Dragging the photo does one of two things, decided by the first few pixels of
+// travel and then held for the rest of the gesture:
+//
+//   sideways — pages the reel, landing on exactly what the ‹ › buttons would
+//     have done: left for the next photo, right for the previous, wrapping at
+//     the ends the same way, because it calls the same `step`. The photo follows
+//     the finger at a fraction of the distance, then snaps back or settles on
+//     the new photo.
+//   downwards — puts the viewer away, exactly as ✕ / Escape / the backdrop do.
+//     The whole panel rides down with the finger and the backdrop thins out as
+//     it goes, so a half-hearted drag shows you what it would do and returns the
+//     photo when you let go. Dragging *up* only rubber-bands: there's nothing up
+//     there, and a gesture that goes nowhere shouldn't pretend otherwise.
 //
 // Only touch and pen count. A mouse drag on a picture already means something
-// else (select, drag the image out), and a desktop has the buttons and the arrow
-// keys, so we leave it alone. A drag that starts out vertical is a scroll, not a
-// swipe, and is handed straight back to the browser.
-const SWIPE_MIN = 48; // px a deliberate drag must cover to page…
+// else (select, drag the image out), and a desktop has the buttons, Escape and
+// the arrow keys, so we leave it alone.
+const SWIPE_MIN = 48; // px a deliberate sideways drag must cover to page…
 const FLICK_MIN = 20; // …or less, for a flick…
 const FLICK_MS = 300; // …that was this quick.
-const INTENT_MIN = 8; // px before a drag is called horizontal at all
+const DISMISS_MIN = 110; // px a downward drag must cover to close…
+const DISMISS_FLICK = 45; // …or less, for a quick flick down.
+const INTENT_MIN = 8; // px before a drag is called sideways or downwards
+const FOLLOW = 0.35; // how much of a sideways drag the photo travels
+const UP_FOLLOW = 0.2; // …and of an upward one, which is going nowhere
+const FADE_OVER = 420; // px of downward travel that thins the backdrop right out
+const BACKDROP = 0.86; // the backdrop's resting alpha — .lb-overlay's own…
+const BACKDROP_MIN = 0.3; // …and how far a long drag down thins it
 
-function attachSwipe(stage: HTMLElement, img: HTMLImageElement): void {
+function attachSwipe(
+  stage: HTMLElement,
+  img: HTMLImageElement,
+  panel: HTMLElement,
+  root: HTMLElement,
+): void {
   let startX = 0;
   let startY = 0;
   let startedAt = 0;
   let tracking = false;
-  let horizontal = false;
+  let axis: "" | "x" | "y" = "";
 
+  // Back to a photo sitting still in an opaque viewer. Called on release, on
+  // cancel, and before closing — the overlay is one reused element, so a
+  // transform left behind would greet the next photo someone taps.
   const reset = (): void => {
     tracking = false;
-    horizontal = false;
+    axis = "";
     img.classList.remove("lb-img-dragging");
+    panel.classList.remove("lb-panel-dragging");
     img.style.transform = "";
+    panel.style.transform = "";
+    root.style.backgroundColor = "";
   };
+  resetDrag = reset;
 
   stage.addEventListener("pointerdown", (e: PointerEvent) => {
     if (e.pointerType === "mouse" || !e.isPrimary) return;
-    // One photo pages nowhere — same reason the buttons are hidden.
-    if (!state || state.frames.length < 2) return;
+    if (!state) return;
     tracking = true;
-    horizontal = false;
+    axis = "";
     startX = e.clientX;
     startY = e.clientY;
     startedAt = e.timeStamp;
   });
 
   stage.addEventListener("pointermove", (e: PointerEvent) => {
-    if (!tracking) return;
+    if (!tracking || !state) return;
     const dx = e.clientX - startX;
     const dy = e.clientY - startY;
-    if (!horizontal) {
-      if (Math.abs(dy) > Math.abs(dx)) { reset(); return; }
-      if (Math.abs(dx) < INTENT_MIN) return;
-      horizontal = true;
-      img.classList.add("lb-img-dragging");
-      // Now that this is plainly a swipe and not a tap on ‹ or ›, follow the
-      // finger even if it leaves the photo — releasing off the edge still pages.
+    if (!axis) {
+      if (Math.max(Math.abs(dx), Math.abs(dy)) < INTENT_MIN) return;
+      // A reel of one photo pages nowhere — same reason the buttons are hidden —
+      // so a sideways drag there is left as nothing rather than a dead wobble.
+      if (Math.abs(dx) > Math.abs(dy)) {
+        if (state.frames.length < 2) { reset(); return; }
+        axis = "x";
+        img.classList.add("lb-img-dragging");
+      } else {
+        axis = "y";
+        panel.classList.add("lb-panel-dragging");
+      }
+      // Now that this is plainly a drag and not a tap on ‹ › or ✕, follow the
+      // finger even if it leaves the photo — releasing off the edge still counts.
       stage.setPointerCapture?.(e.pointerId);
     }
-    img.style.transform = `translateX(${dx * 0.35}px)`;
+    if (axis === "x") {
+      img.style.transform = `translateX(${dx * FOLLOW}px)`;
+    } else {
+      const travel = dy > 0 ? dy : dy * UP_FOLLOW;
+      panel.style.transform = `translateY(${travel}px)`;
+      // Only the backdrop thins as the viewer falls away — the page underneath
+      // comes back gradually instead of all at once at the end. The photo keeps
+      // its own opacity: a picture you can see through looks broken, not moving.
+      const shade = BACKDROP - (BACKDROP - BACKDROP_MIN) * Math.min(Math.max(travel, 0) / FADE_OVER, 1);
+      root.style.backgroundColor = `rgba(0, 0, 0, ${shade.toFixed(3)})`;
+    }
   });
 
   stage.addEventListener("pointerup", (e: PointerEvent) => {
     if (!tracking) return;
     const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
     const quick = e.timeStamp - startedAt < FLICK_MS;
-    const far = Math.abs(dx) >= SWIPE_MIN || (quick && Math.abs(dx) >= FLICK_MIN);
+    const wasAxis = axis;
     reset();
-    if (far) step(dx < 0 ? 1 : -1);
+    if (wasAxis === "x") {
+      if (Math.abs(dx) >= SWIPE_MIN || (quick && Math.abs(dx) >= FLICK_MIN)) step(dx < 0 ? 1 : -1);
+    } else if (wasAxis === "y") {
+      if (dy >= DISMISS_MIN || (quick && dy >= DISMISS_FLICK)) close();
+    }
   });
 
   stage.addEventListener("pointercancel", reset);

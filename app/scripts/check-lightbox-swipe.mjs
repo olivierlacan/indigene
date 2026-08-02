@@ -120,8 +120,8 @@ await record("quick flick left → next", "6 / 11");
 await swipe({ from: 200, to: 190, steps: 6, ms: 40 }); // 10px, slow: no paging
 await record("small slow drag stays put", "6 / 11");
 
-await swipe({ from: 300, to: 120, y: 260 });  // mostly vertical: a scroll
-await record("vertical drag stays put", "6 / 11");
+await swipe({ from: 200, to: 200, y: 70 });  // down, but short of dismissing
+await record("short drag down stays on the photo", "6 / 11");
 
 // The buttons must still work under touch after all that.
 await page.locator(".lb-next").tap();
@@ -137,6 +137,35 @@ await record("…and past the start to the last", "11 / 11");
 // Transform must be cleared after every gesture — no photo left off-centre.
 const left = await page.locator(".lb-img").evaluate((n) => n.style.transform || "(none)");
 checks.push(["photo re-centred after release", "(none)", left, left === "(none)"]);
+
+// Swipe down to dismiss, the same outcome as ✕ / Escape / the backdrop.
+const isOpen = () => page.locator(".lb-overlay").isVisible();
+const note = (name, expect, got) => checks.push([name, expect, got, expect === got]);
+const openLightbox = async (nth) => {
+  await page.locator(".obs-tile").nth(nth).tap();
+  await page.locator(".lb-stage").waitFor();
+  await page.waitForTimeout(500);
+};
+
+await swipe({ from: 200, to: 200, y: -220 }); // up: nowhere to go
+note("long drag up keeps it open", "open", (await isOpen()) ? "open" : "closed");
+
+await swipe({ from: 200, to: 200, y: 220 }); // down, past the threshold
+note("long drag down closes it", "closed", (await isOpen()) ? "open" : "closed");
+
+await openLightbox(4);
+await swipe({ from: 200, to: 200, y: 60, steps: 4, ms: 8 }); // quick flick down
+note("quick flick down closes it", "closed", (await isOpen()) ? "open" : "closed");
+
+// Reopening after a dismissal must find a clean overlay: the panel back where it
+// belongs and the backdrop fully opaque, not left where the last drag ended.
+await openLightbox(4);
+const leftovers = await page.evaluate(() => ({
+  panel: document.querySelector(".lb-panel").style.transform || "(none)",
+  backdrop: document.querySelector(".lb-overlay").style.backgroundColor || "(none)",
+}));
+note("panel reset on reopen", "(none)", leftovers.panel);
+note("backdrop reset on reopen", "(none)", leftovers.backdrop);
 
 // A reel of one: nothing to page to, so a swipe must leave the photo alone —
 // same as the ‹ › buttons, which paint hidden.

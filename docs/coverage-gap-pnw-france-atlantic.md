@@ -237,11 +237,12 @@ the name or the tie should change.
 5. **Find or build the US equivalent of the Gaytán table.** This is the real
    structural gap the exercise exposed: *we can rank Europe's next twenty plants
    mechanically and we cannot do the same for the United States.* Every US
-   candidate above is judgment, and it shouldn't have to be. Options, in order
-   of promise: the primary Tallamy literature (already flagged in
-   `PROJECT_BRIEF.md` as a re-sourcing task), **GloBI** (CC-BY, machine-readable,
-   already named in `coverage-plan.md` §3), and **GBIF occurrence density** to
-   tell a garden plant from a flora entry.
+   candidate above is judgment, and it shouldn't have to be. **Started** — the
+   plan is [`docs/us-host-counts-plan.md`](us-host-counts-plan.md) and the probe
+   is `app/scripts/probe-globi.mjs`, run by the *US host counts (GloBI probe)*
+   workflow because the API refuses the build sandbox's egress. It ships
+   nothing: the gate is whether GloBI can tell a caterpillar eating a leaf from
+   an adult sipping at a flower, and that verdict comes back from a runner.
 6. **Then the GBIF candidate generator** (`coverage-plan.md` §4 step 2). With
    §5 done, "which twenty plants next" becomes a query instead of a memory
    exercise, for every region at once.

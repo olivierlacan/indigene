@@ -23,6 +23,7 @@ in the app consumes it.
 | [`eea-biogeographical-regions/`](eea-biogeographical-regions/) | `probe.json` — layer list + per-region point checks + detected field name for the live EEA ecoregion service | CC-BY 4.0 (EEA) | `node app/scripts/probe-eea.mjs` |
 | [`eu-lep-plant-matrix/`](eu-lep-plant-matrix/) | the Gaytán 2026 European Lepidoptera–plant matrix, ecosystem table and taxonomy (raw, git-ignored) + `host-counts.json` — the per-genus, per-zone counts derived from them (committed) → feeds `hostLepCount` | CC-BY 4.0 | manual download from the DOI (see its README), then `cd app && npm run host-counts` |
 | [`vernacular-names/`](vernacular-names/) | `fr.json` — per-taxon verification of the **fr-FR** plant & animal names against the French reference lists that supply them | Licence Ouverte (TAXREF) · CC BY-SA (Tela Botanica) · CC0 (Wikidata) | `node app/scripts/check-vernacular.mjs` |
+| [`globi/`](globi/) | `probe.json` — what GloBI answered when asked whether it can source **US** host counts the way the Gaytán matrix sources European ones. **Nothing shipped depends on it**; the gate is whether a larval host is distinguishable from an adult nectaring | CC0/CC-BY aggregate; contributed datasets carry their own terms | `node app/scripts/probe-globi.mjs` |
 
 ## Why this exists / CI
 

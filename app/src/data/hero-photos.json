@@ -1,1 +1,2622 @@
-{}
+{
+  "acer-campestre": {
+    "france-continental": {
+      "photoId": 485095587,
+      "observationId": 269772604,
+      "observer": "jeromeb76",
+      "license": "cc-by-nc",
+      "attribution": "(c) Jérôme Bosset, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-04-11",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/485095587/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/485095587/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/485095587/large.jpeg"
+    }
+  },
+  "acer-macrophyllum": {
+    "pnw": {
+      "photoId": 305113974,
+      "observationId": 175558796,
+      "observer": "ranmofod",
+      "license": "cc-by-sa",
+      "attribution": "(c) Rand Workman, some rights reserved (CC BY-SA)",
+      "observedOn": "2023-07-26",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/305113974/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/305113974/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/305113974/large.jpeg"
+    }
+  },
+  "acer-circinatum": {
+    "pnw": {
+      "photoId": 376084490,
+      "observationId": 212814752,
+      "observer": "calloftheloon",
+      "license": "cc-by",
+      "attribution": "(c) Derek, some rights reserved (CC BY)",
+      "observedOn": "2024-05-01",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/376084490/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/376084490/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/376084490/large.jpg"
+    }
+  },
+  "acer-monspessulanum": {
+    "france-mediterranean": {
+      "photoId": 563701648,
+      "observationId": 312229921,
+      "observer": "georges95091",
+      "license": "cc-by-nc",
+      "attribution": "(c) Georges Olioso, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-09-07",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/563701648/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/563701648/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/563701648/large.jpg"
+    }
+  },
+  "acer-pseudoplatanus": {
+    "france-alpine": {
+      "photoId": 300047996,
+      "observationId": 172813576,
+      "observer": "elkvorr",
+      "license": "cc-by-nc",
+      "attribution": "(c) Elio Giacone, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-07-13",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/300047996/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/300047996/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/300047996/large.jpeg"
+    }
+  },
+  "acer-rubrum": {
+    "mid-atlantic": {
+      "photoId": 54545376,
+      "observationId": 34643990,
+      "observer": "sadawolk",
+      "license": "cc-by",
+      "attribution": "(c) Sandy Wolkenberg, some rights reserved (CC BY)",
+      "observedOn": "2019-10-20",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54545376/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54545376/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54545376/large.jpg"
+    },
+    "florida-central": {
+      "photoId": 73911531,
+      "observationId": 46600479,
+      "observer": "rosalina126",
+      "license": "cc-by-nc",
+      "attribution": "(c) rosalina126, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-05-20",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73911531/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73911531/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73911531/large.jpg"
+    }
+  },
+  "achillea-millefolium": {
+    "pnw": {
+      "photoId": 425016461,
+      "observationId": 238706098,
+      "observer": "manseekingorganisms",
+      "license": "cc-by-nc",
+      "attribution": "(c) manseekingorganisms, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-08-29",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/425016461/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/425016461/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/425016461/large.jpeg"
+    }
+  },
+  "alnus-alnobetula": {
+    "france-alpine": {
+      "photoId": 202159113,
+      "observationId": 119551261,
+      "observer": "massi_pettavino",
+      "license": "cc-by-nc",
+      "attribution": "(c) Massimo Pettavino, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-05-31",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202159113/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202159113/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202159113/large.jpg"
+    }
+  },
+  "alnus-glutinosa": {
+    "france-atlantic": {
+      "photoId": 102154723,
+      "observationId": 63630364,
+      "observer": "clea-deme",
+      "license": "cc-by-nc",
+      "attribution": "(c) clea-deme, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-09-28",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/102154723/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/102154723/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/102154723/large.jpg"
+    }
+  },
+  "alnus-rubra": {
+    "pnw": {
+      "photoId": 368696154,
+      "observationId": 208387695,
+      "observer": "sageost",
+      "license": "cc-by-nc",
+      "attribution": "(c) sageost, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-04-20",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/368696154/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/368696154/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/368696154/large.jpg"
+    }
+  },
+  "amelanchier-canadensis": {
+    "mid-atlantic": {
+      "photoId": 286665801,
+      "observationId": 165604768,
+      "observer": "jimbrighton",
+      "license": "cc-by-nc",
+      "attribution": "(c) Jim Brighton, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-06-03",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/286665801/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/286665801/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/286665801/large.jpg"
+    }
+  },
+  "anaphalis-margaritacea": {
+    "pnw": {
+      "photoId": 417521686,
+      "observationId": 234821261,
+      "observer": "beija_flor",
+      "license": "cc-by-nc",
+      "attribution": "(c) beija_flor, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-08-08",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/417521686/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/417521686/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/417521686/large.jpeg"
+    }
+  },
+  "andropogon-gerardii": {
+    "mid-atlantic": {
+      "photoId": 178573399,
+      "observationId": 106315719,
+      "observer": "douggoldman",
+      "license": "cc-by-sa",
+      "attribution": "(c) Douglas Goldman, some rights reserved (CC BY-SA)",
+      "observedOn": "2018-10-23",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/178573399/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/178573399/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/178573399/large.jpg"
+    }
+  },
+  "anthyllis-vulneraria": {
+    "france-alpine": {
+      "photoId": 368154662,
+      "observationId": 208096140,
+      "observer": "lejocelyn",
+      "license": "cc-by-nc",
+      "attribution": "(c) lejocelyn, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-04-19",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/368154662/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/368154662/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/368154662/large.jpeg"
+    }
+  },
+  "aquilegia-canadensis": {
+    "mid-atlantic": {
+      "photoId": 602837725,
+      "observationId": 332208032,
+      "observer": "andrewlai530",
+      "license": "cc-by",
+      "attribution": "(c) Andrew Lai, some rights reserved (CC BY)",
+      "observedOn": "2025-05-16",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/602837725/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/602837725/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/602837725/large.jpg"
+    }
+  },
+  "aquilegia-formosa": {
+    "pnw": {
+      "photoId": 418323576,
+      "observationId": 235239410,
+      "observer": "steinm",
+      "license": "cc-by-nc",
+      "attribution": "(c) Michael Stein, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-08-10",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/418323576/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/418323576/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/418323576/large.jpeg"
+    }
+  },
+  "arbutus-unedo": {
+    "france-mediterranean": {
+      "photoId": 53392503,
+      "observationId": 33959645,
+      "observer": "osoandino",
+      "license": "cc-by-nc",
+      "attribution": "(c) osoandino, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-10-06",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/53392503/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/53392503/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/53392503/large.jpg"
+    }
+  },
+  "arctostaphylos-uva-ursi": {
+    "pnw": {
+      "photoId": 696128869,
+      "observationId": 380501959,
+      "observer": "brewbooks",
+      "license": "cc-by",
+      "attribution": "(c) John Brew, some rights reserved (CC BY)",
+      "observedOn": "2026-07-07",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/696128869/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/696128869/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/696128869/large.jpg"
+    }
+  },
+  "asclepias-incarnata": {
+    "mid-atlantic": {
+      "photoId": 88638487,
+      "observationId": 55655433,
+      "observer": "jewels3235",
+      "license": "cc-by-nc",
+      "attribution": "(c) jewels3235, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-08-06",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/88638487/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/88638487/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/88638487/large.jpg"
+    }
+  },
+  "asclepias-speciosa": {
+    "pnw": {
+      "photoId": 682807359,
+      "observationId": 373613207,
+      "observer": "mogug",
+      "license": "cc-by-nc",
+      "attribution": "(c) Thomas Guggemoos, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-06-20",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/682807359/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/682807359/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/682807359/large.jpg"
+    }
+  },
+  "asclepias-tuberosa": {
+    "mid-atlantic": {
+      "photoId": 45041391,
+      "observationId": 28877982,
+      "observer": "lvconrad1977",
+      "license": "cc-by-nc",
+      "attribution": "(c) lvconrad1977, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-07-15",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/45041391/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/45041391/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/45041391/large.jpeg"
+    },
+    "florida-central": {
+      "photoId": 370102883,
+      "observationId": 209145895,
+      "observer": "dbond",
+      "license": "cc-by-nc",
+      "attribution": "(c) dbond, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-04-24",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/370102883/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/370102883/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/370102883/large.jpg"
+    }
+  },
+  "baptisia-australis": {
+    "mid-atlantic": {
+      "photoId": 531548260,
+      "observationId": 295274642,
+      "observer": "jboreal",
+      "license": "cc-by-nc",
+      "attribution": "(c) jboreal, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-07-01",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/531548260/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/531548260/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/531548260/large.jpg"
+    }
+  },
+  "berberis-aquifolium": {
+    "pnw": {
+      "photoId": 68127565,
+      "observationId": 42904604,
+      "observer": "paultsym",
+      "license": "cc-by-nc",
+      "attribution": "(c) paultsym, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-04-22",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/68127565/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/68127565/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/68127565/large.jpg"
+    }
+  },
+  "betula-pendula": {
+    "france-atlantic": {
+      "photoId": 447129878,
+      "observationId": 250059002,
+      "observer": "fredjar",
+      "license": "cc-by-nc",
+      "attribution": "(c) Frederic Jarry, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-11-01",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/447129878/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/447129878/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/447129878/large.jpeg"
+    }
+  },
+  "betula-nigra": {
+    "mid-atlantic": {
+      "photoId": 326607951,
+      "observationId": 186839775,
+      "observer": "dbarber",
+      "license": "cc-by-nc",
+      "attribution": "(c) Deborah E Barber, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-09-29",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/326607951/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/326607951/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/326607951/large.jpg"
+    }
+  },
+  "bursera-simaruba": {
+    "florida-south": {
+      "photoId": 336151673,
+      "observationId": 191594386,
+      "observer": "douggoldman",
+      "license": "cc-by-sa",
+      "attribution": "(c) Douglas Goldman, some rights reserved (CC BY-SA)",
+      "observedOn": "2023-11-17",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/336151673/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/336151673/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/336151673/large.jpg"
+    }
+  },
+  "brachypodium-retusum": {
+    "france-mediterranean": {
+      "photoId": 658994318,
+      "observationId": 361104980,
+      "observer": "baptiste_lecoq",
+      "license": "cc-by-nc",
+      "attribution": "(c) baptiste_lecoq, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-04-19",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/658994318/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/658994318/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/658994318/large.jpg"
+    }
+  },
+  "callicarpa-americana": {
+    "florida-central": {
+      "photoId": 230698921,
+      "observationId": 135274825,
+      "observer": "gpafuzzy",
+      "license": "cc-by-nc",
+      "attribution": "(c) Dale Warner, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-09-16",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/230698921/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/230698921/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/230698921/large.jpeg"
+    }
+  },
+  "camassia-quamash": {
+    "pnw": {
+      "photoId": 635007454,
+      "observationId": 348203042,
+      "observer": "blue-jackson",
+      "license": "cc-by-nc",
+      "attribution": "(c) Blue Jackson, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-04-07",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/635007454/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/635007454/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/635007454/large.jpg"
+    }
+  },
+  "carex-pensylvanica": {
+    "mid-atlantic": {
+      "photoId": 123744218,
+      "observationId": 75623367,
+      "observer": "shaunpogacnik95",
+      "license": "cc-by-nc",
+      "attribution": "(c) Shaun Pogacnik, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-04-28",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/123744218/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/123744218/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/123744218/large.jpeg"
+    }
+  },
+  "carpinus-betulus": {
+    "france-atlantic": {
+      "photoId": 299189341,
+      "observationId": 172352205,
+      "observer": "bartwursten",
+      "license": "cc-by-nc",
+      "attribution": "(c) Bart Wursten, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-07-10",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/299189341/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/299189341/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/299189341/large.jpeg"
+    },
+    "france-continental": {
+      "photoId": 276521707,
+      "observationId": 160030030,
+      "observer": "kleiber",
+      "license": "cc-by-nc",
+      "attribution": "(c) kleiber, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-05-04",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/276521707/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/276521707/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/276521707/large.jpeg"
+    }
+  },
+  "ceanothus-americanus": {
+    "mid-atlantic": {
+      "photoId": 20061797,
+      "observationId": 13629899,
+      "observer": "choess",
+      "license": "cc-by-sa",
+      "attribution": "(c) Chris Hoess, some rights reserved (CC BY-SA)",
+      "observedOn": "2018-06-20",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/20061797/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/20061797/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/20061797/large.jpeg"
+    }
+  },
+  "celtis-australis": {
+    "france-mediterranean": {
+      "photoId": 188304457,
+      "observationId": 111539638,
+      "observer": "baptiste_lecoq",
+      "license": "cc-by-nc",
+      "attribution": "(c) baptiste_lecoq, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-04-15",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/188304457/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/188304457/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/188304457/large.jpg"
+    }
+  },
+  "centaurea-scabiosa": {
+    "france-continental": {
+      "photoId": 131236436,
+      "observationId": 80089525,
+      "observer": "olivier_niederhauser",
+      "license": "cc-by",
+      "attribution": "(c) Olivier Niederhauser, some rights reserved (CC BY)",
+      "observedOn": "2021-05-24",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/131236436/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/131236436/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/131236436/large.jpeg"
+    }
+  },
+  "cephalanthus-occidentalis": {
+    "mid-atlantic": {
+      "photoId": 22730978,
+      "observationId": 15196503,
+      "observer": "amiddlb",
+      "license": "cc-by-nc",
+      "attribution": "(c) Andrew, some rights reserved (CC BY-NC)",
+      "observedOn": "2018-08-07",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/22730978/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/22730978/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/22730978/large.jpeg"
+    }
+  },
+  "cercis-canadensis": {
+    "mid-atlantic": {
+      "photoId": 189725291,
+      "observationId": 112325585,
+      "observer": "phleve",
+      "license": "cc-by-nc",
+      "attribution": "(c) phleve, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-04-21",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/189725291/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/189725291/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/189725291/large.jpg"
+    }
+  },
+  "chionanthus-virginicus": {
+    "florida-central": {
+      "photoId": 245943998,
+      "observationId": 143413037,
+      "observer": "isaacxii",
+      "license": "cc-by-nc",
+      "attribution": "(c) isaacxii, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-04-11",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/245943998/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/245943998/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/245943998/large.jpg"
+    }
+  },
+  "chrysobalanus-icaco": {
+    "florida-south": {
+      "photoId": 701257790,
+      "observationId": 383159073,
+      "observer": "lesa-1994",
+      "license": "cc-by-nc",
+      "attribution": "(c) LisaBrown, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-07-18",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/701257790/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/701257790/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/701257790/large.jpg"
+    }
+  },
+  "cistus-albidus": {
+    "france-mediterranean": {
+      "photoId": 113776894,
+      "observationId": 70034632,
+      "observer": "bencostamagna",
+      "license": "cc-by",
+      "attribution": "(c) Ben Costamagna, some rights reserved (CC BY)",
+      "observedOn": "2021-02-23",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/113776894/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/113776894/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/113776894/large.jpg"
+    }
+  },
+  "clematis-flammula": {
+    "france-mediterranean": {
+      "photoId": 706518738,
+      "observationId": 385900637,
+      "observer": "berardom",
+      "license": "cc-by",
+      "attribution": "(c) Michael Berardozzi, some rights reserved (CC BY)",
+      "observedOn": "2026-07-27",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/706518738/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/706518738/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/706518738/large.jpg"
+    }
+  },
+  "clematis-vitalba": {
+    "france-continental": {
+      "photoId": 44714301,
+      "observationId": 28674207,
+      "observer": "hamster2020",
+      "license": "cc-by-nc",
+      "attribution": "(c) hamster2020, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-07-12",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/44714301/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/44714301/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/44714301/large.jpg"
+    }
+  },
+  "coccoloba-uvifera": {
+    "florida-south": {
+      "photoId": 613727776,
+      "observationId": 337587774,
+      "observer": "acjci",
+      "license": "cc-by-sa",
+      "attribution": "(c) Turner Brockman, some rights reserved (CC BY-SA)",
+      "observedOn": "2026-01-07",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/613727776/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/613727776/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/613727776/large.jpg"
+    }
+  },
+  "coccoloba-diversifolia": {
+    "florida-south": {
+      "photoId": 249648848,
+      "observationId": 145352812,
+      "observer": "douggoldman",
+      "license": "cc-by-sa",
+      "attribution": "(c) Douglas Goldman, some rights reserved (CC BY-SA)",
+      "observedOn": "2018-12-11",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/249648848/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/249648848/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/249648848/large.jpg"
+    }
+  },
+  "conocarpus-erectus": {
+    "florida-south": {
+      "photoId": 181270852,
+      "observationId": 107742626,
+      "observer": "djringer",
+      "license": "cc-by-nc",
+      "attribution": "(c) David Jeffrey Ringer, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-02-19",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/181270852/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/181270852/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/181270852/large.jpg"
+    }
+  },
+  "coreopsis-leavenworthii": {
+    "florida-central": {
+      "photoId": 133778482,
+      "observationId": 81552379,
+      "observer": "photosympathizer",
+      "license": "cc-by-nc",
+      "attribution": "(c) Jen, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-05-17",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/133778482/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/133778482/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/133778482/large.jpeg"
+    }
+  },
+  "cornus-florida": {
+    "mid-atlantic": {
+      "photoId": 41873212,
+      "observationId": 26945154,
+      "observer": "adom57",
+      "license": "cc-by-nc",
+      "attribution": "(c) adom57, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-04-26",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41873212/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41873212/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41873212/large.jpeg"
+    }
+  },
+  "cornus-mas": {
+    "france-continental": {
+      "photoId": 341282613,
+      "observationId": 194192651,
+      "observer": "r-ziebarth",
+      "license": "cc-by-nc",
+      "attribution": "(c) R. Ziebarth, some rights reserved (CC BY-NC)",
+      "observedOn": "2018-03-30",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/341282613/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/341282613/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/341282613/large.jpg"
+    }
+  },
+  "cornus-nuttallii": {
+    "pnw": {
+      "photoId": 367266789,
+      "observationId": 207622419,
+      "observer": "kylechamberlain",
+      "license": "cc-by-nc",
+      "attribution": "(c) kylechamberlain, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-04-16",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/367266789/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/367266789/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/367266789/large.jpeg"
+    }
+  },
+  "cornus-sanguinea": {
+    "france-atlantic": {
+      "photoId": 150290258,
+      "observationId": 90905938,
+      "observer": "mickgyver",
+      "license": "cc-by-nc",
+      "attribution": "(c) mickgyver, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-08-12",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/150290258/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/150290258/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/150290258/large.jpeg"
+    }
+  },
+  "cornus-sericea": {
+    "mid-atlantic": {
+      "photoId": 513385063,
+      "observationId": 285613321,
+      "observer": "felixandnoemie",
+      "license": "cc-by-nc",
+      "attribution": "(c) felixandnoemie, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-05-31",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/513385063/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/513385063/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/513385063/large.jpg"
+    },
+    "pnw": {
+      "photoId": 17856122,
+      "observationId": 12390626,
+      "observer": "rbelshee",
+      "license": "cc0",
+      "attribution": "no rights reserved",
+      "observedOn": "2018-05-12",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/17856122/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/17856122/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/17856122/large.jpeg"
+    }
+  },
+  "corylus-avellana": {
+    "france-atlantic": {
+      "photoId": 66636366,
+      "observationId": 41986926,
+      "observer": "dgovaerts",
+      "license": "cc-by-nc",
+      "attribution": "(c) fam. Govaerts, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-04-12",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66636366/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66636366/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66636366/large.jpg"
+    }
+  },
+  "corylus-americana": {
+    "mid-atlantic": {
+      "photoId": 198760563,
+      "observationId": 117678870,
+      "observer": "colalupi67",
+      "license": "cc-by-nc-sa",
+      "attribution": "(c) Rowan H, some rights reserved (CC BY-NC-SA)",
+      "observedOn": "2022-05-18",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/198760563/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/198760563/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/198760563/large.jpg"
+    }
+  },
+  "corylus-cornuta": {
+    "pnw": {
+      "photoId": 205654288,
+      "observationId": 121526422,
+      "observer": "wendy5",
+      "license": "cc-by-nc",
+      "attribution": "(c) Wendy Feltham, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-06-12",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/205654288/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/205654288/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/205654288/large.jpeg"
+    }
+  },
+  "crataegus-laevigata": {
+    "france-continental": {
+      "photoId": 272551454,
+      "observationId": 157653872,
+      "observer": "alg2115",
+      "license": "cc-by",
+      "attribution": "(c) Alessia Guggisberg, some rights reserved (CC BY)",
+      "observedOn": "2023-04-29",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/272551454/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/272551454/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/272551454/large.jpeg"
+    }
+  },
+  "crataegus-monogyna": {
+    "france-atlantic": {
+      "photoId": 35588817,
+      "observationId": 22959501,
+      "observer": "luckas",
+      "license": "cc-by-nc",
+      "attribution": "(c) luckas, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-04-22",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/35588817/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/35588817/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/35588817/large.jpeg"
+    }
+  },
+  "digitalis-purpurea": {
+    "france-atlantic": {
+      "photoId": 534539953,
+      "observationId": 296841869,
+      "observer": "jdmgoncalves",
+      "license": "cc-by-nc-sa",
+      "attribution": "(c) Jorge Goncalves, some rights reserved (CC BY-NC-SA)",
+      "observedOn": "2025-07-10",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/534539953/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/534539953/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/534539953/large.jpg"
+    }
+  },
+  "deschampsia-cespitosa": {
+    "france-atlantic": {
+      "photoId": 461524187,
+      "observationId": 257294477,
+      "observer": "frousseu",
+      "license": "cc-by-nc",
+      "attribution": "(c) François Rousseu, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-09-21",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/461524187/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/461524187/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/461524187/large.jpg"
+    }
+  },
+  "dryas-octopetala": {
+    "france-alpine": {
+      "photoId": 200967728,
+      "observationId": 118914078,
+      "observer": "thebobplus",
+      "license": "cc-by-nc",
+      "attribution": "(c) thebobplus, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-05-26",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/200967728/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/200967728/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/200967728/large.jpeg"
+    }
+  },
+  "dryopteris-filix-mas": {
+    "france-atlantic": {
+      "photoId": 566184484,
+      "observationId": 313518623,
+      "observer": "etylege",
+      "license": "cc-by-nc",
+      "attribution": "(c) Elphège Budzinski, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-09-13",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/566184484/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/566184484/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/566184484/large.jpg"
+    }
+  },
+  "echinacea-purpurea": {
+    "mid-atlantic": {
+      "photoId": 126021575,
+      "observationId": 77061673,
+      "observer": "rtasnim",
+      "license": "cc-by-nc",
+      "attribution": "(c) rtasnim, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-05-03",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/126021575/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/126021575/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/126021575/large.jpg"
+    }
+  },
+  "eriophyllum-lanatum": {
+    "pnw": {
+      "photoId": 130796354,
+      "observationId": 79837669,
+      "observer": "brodiecasstalbott",
+      "license": "cc-by",
+      "attribution": "(c) Brodie Cass Talbott, some rights reserved (CC BY)",
+      "observedOn": "2021-05-22",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/130796354/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/130796354/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/130796354/large.jpeg"
+    }
+  },
+  "elymus-glaucus": {
+    "pnw": {
+      "photoId": 243313181,
+      "observationId": 141964457,
+      "observer": "violawatts",
+      "license": "cc-by-nc",
+      "attribution": "(c) violawatts, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-09-19",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/243313181/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/243313181/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/243313181/large.jpg"
+    }
+  },
+  "euonymus-europaeus": {
+    "france-continental": {
+      "photoId": 5039786,
+      "observationId": 4221736,
+      "observer": "anro",
+      "license": "cc-by-sa",
+      "attribution": "(c) Andreas Rockstein, some rights reserved (CC BY-SA)",
+      "observedOn": "2016-09-22",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/5039786/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/5039786/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/5039786/large.jpg"
+    }
+  },
+  "euphorbia-characias": {
+    "france-mediterranean": {
+      "photoId": 472528042,
+      "observationId": 263066935,
+      "observer": "manbas",
+      "license": "cc-by-nc",
+      "attribution": "(c) manbas, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-02-21",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/472528042/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/472528042/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/472528042/large.jpg"
+    }
+  },
+  "eutrochium-purpureum": {
+    "mid-atlantic": {
+      "photoId": 309479177,
+      "observationId": 177903830,
+      "observer": "cbsmouse",
+      "license": "cc-by-nc",
+      "attribution": "(c) cbsmouse, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-08-11",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/309479177/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/309479177/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/309479177/large.jpg"
+    }
+  },
+  "fagus-sylvatica": {
+    "france-continental": {
+      "photoId": 542218503,
+      "observationId": 300916710,
+      "observer": "rvgalli",
+      "license": "cc-by-nc",
+      "attribution": "(c) Hervé GALLIFFET, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-07-24",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/542218503/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/542218503/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/542218503/large.jpg"
+    }
+  },
+  "festuca-roemeri": {
+    "pnw": {
+      "photoId": 101080420,
+      "observationId": 63024937,
+      "observer": "sedgequeen",
+      "license": "cc-by-nc",
+      "attribution": "(c) Barbara L. Wilson, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-10-18",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/101080420/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/101080420/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/101080420/large.jpeg"
+    }
+  },
+  "fragaria-chiloensis": {
+    "pnw": {
+      "photoId": 353745215,
+      "observationId": 200492180,
+      "observer": "leodoptera",
+      "license": "cc-by-nc",
+      "attribution": "(c) leo c., some rights reserved (CC BY-NC)",
+      "observedOn": "2024-02-25",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/353745215/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/353745215/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/353745215/large.jpeg"
+    }
+  },
+  "fragaria-vesca": {
+    "france-atlantic": {
+      "photoId": 41996209,
+      "observationId": 27019531,
+      "observer": "ya2n",
+      "license": "cc-by-nc",
+      "attribution": "(c) ya2n, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-06-15",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41996209/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41996209/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41996209/large.jpg"
+    }
+  },
+  "fragaria-virginiana": {
+    "mid-atlantic": {
+      "photoId": 517900188,
+      "observationId": 288011922,
+      "observer": "mikexmas",
+      "license": "cc-by-nc",
+      "attribution": "(c) mikexmas, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-04-29",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/517900188/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/517900188/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/517900188/large.jpg"
+    }
+  },
+  "frangula-alnus": {
+    "france-atlantic": {
+      "photoId": 573139607,
+      "observationId": 317189890,
+      "observer": "vhamon",
+      "license": "cc-by-nc",
+      "attribution": "(c) Valentin Hamon, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-09-21",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/573139607/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/573139607/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/573139607/large.jpg"
+    }
+  },
+  "fraxinus-latifolia": {
+    "pnw": {
+      "photoId": 645558192,
+      "observationId": 353841507,
+      "observer": "llh0043",
+      "license": "cc-by-nc",
+      "attribution": "(c) llh0043, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-04-25",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/645558192/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/645558192/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/645558192/large.jpg"
+    }
+  },
+  "fraxinus-ornus": {
+    "france-mediterranean": {
+      "photoId": 37784221,
+      "observationId": 24434017,
+      "observer": "fiorimondu20",
+      "license": "cc-by-nc",
+      "attribution": "(c) fiorimondu20, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-05-03",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/37784221/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/37784221/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/37784221/large.jpg"
+    }
+  },
+  "gaultheria-shallon": {
+    "pnw": {
+      "photoId": 366749402,
+      "observationId": 207344036,
+      "observer": "alana_mullen",
+      "license": "cc-by-nc",
+      "attribution": "(c) Alana Mullen, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-04-14",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/366749402/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/366749402/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/366749402/large.jpeg"
+    }
+  },
+  "gentiana-lutea": {
+    "france-alpine": {
+      "photoId": 84174256,
+      "observationId": 52935827,
+      "observer": "lya",
+      "license": "cc-by-nc-sa",
+      "attribution": "(c) lya, some rights reserved (CC BY-NC-SA)",
+      "observedOn": "2019-07-20",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/84174256/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/84174256/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/84174256/large.jpeg"
+    }
+  },
+  "geranium-maculatum": {
+    "mid-atlantic": {
+      "photoId": 128475066,
+      "observationId": 78503640,
+      "observer": "sammakler",
+      "license": "cc-by-nc",
+      "attribution": "(c) sammakler, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-05-09",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/128475066/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/128475066/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/128475066/large.jpeg"
+    }
+  },
+  "hamamelis-virginiana": {
+    "mid-atlantic": {
+      "photoId": 576166570,
+      "observationId": 318776662,
+      "observer": "alex_abair",
+      "license": "cc-by",
+      "attribution": "(c) Alex Abair, some rights reserved (CC BY)",
+      "observedOn": "2025-10-04",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/576166570/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/576166570/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/576166570/large.jpg"
+    }
+  },
+  "hamelia-patens": {
+    "florida-central": {
+      "photoId": 228020469,
+      "observationId": 133832610,
+      "observer": "sean_patton",
+      "license": "cc-by-nc",
+      "attribution": "(c) Sean Patton, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-09-04",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/228020469/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/228020469/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/228020469/large.jpeg"
+    },
+    "florida-south": {
+      "photoId": 66276227,
+      "observationId": 41771916,
+      "observer": "jandalton",
+      "license": "cc-by-nc",
+      "attribution": "(c) jandalton, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-04-09",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66276227/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66276227/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66276227/large.jpg"
+    }
+  },
+  "hedera-helix": {
+    "france-atlantic": {
+      "photoId": 54941942,
+      "observationId": 34874303,
+      "observer": "crapfou",
+      "license": "cc-by",
+      "attribution": "(c) Crap Fou, some rights reserved (CC BY)",
+      "observedOn": "2019-10-25",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54941942/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54941942/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54941942/large.jpeg"
+    }
+  },
+  "helianthemum-nummularium": {
+    "france-alpine": {
+      "photoId": 410169394,
+      "observationId": 230973562,
+      "observer": "lucianoarp",
+      "license": "cc-by-nc",
+      "attribution": "(c) lucianoarp, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-07-20",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/410169394/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/410169394/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/410169394/large.jpg"
+    }
+  },
+  "helianthus-debilis": {
+    "florida-central": {
+      "photoId": 607998041,
+      "observationId": 334763396,
+      "observer": "owenwest33",
+      "license": "cc-by-nc",
+      "attribution": "(c) Owen West, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-01-12",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/607998041/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/607998041/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/607998041/large.jpg"
+    },
+    "florida-south": {
+      "photoId": 462192870,
+      "observationId": 257633193,
+      "observer": "beach2022",
+      "license": "cc-by-nc",
+      "attribution": "(c) Beach2022 - CJ McCartney, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-01-06",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/462192870/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/462192870/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/462192870/large.jpeg"
+    }
+  },
+  "helichrysum-stoechas": {
+    "france-mediterranean": {
+      "photoId": 73538022,
+      "observationId": 46364650,
+      "observer": "bscrl",
+      "license": "cc-by-nc",
+      "attribution": "(c) bscrl, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-05-17",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73538022/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73538022/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73538022/large.jpeg"
+    }
+  },
+  "holodiscus-discolor": {
+    "pnw": {
+      "photoId": 45547133,
+      "observationId": 29192106,
+      "observer": "jacklasley",
+      "license": "cc-by-nc",
+      "attribution": "(c) jacklasley, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-07-20",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/45547133/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/45547133/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/45547133/large.jpeg"
+    }
+  },
+  "humulus-lupulus": {
+    "france-continental": {
+      "photoId": 96668903,
+      "observationId": 60454501,
+      "observer": "anro",
+      "license": "cc-by-nc",
+      "attribution": "(c) Andreas Rockstein, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-09-22",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/96668903/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/96668903/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/96668903/large.jpg"
+    }
+  },
+  "hyacinthoides-non-scripta": {
+    "france-atlantic": {
+      "photoId": 391356888,
+      "observationId": 221012206,
+      "observer": "grinnin",
+      "license": "cc-by-nc",
+      "attribution": "(c) grinnin, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-05-16",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/391356888/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/391356888/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/391356888/large.jpg"
+    }
+  },
+  "ilex-aquifolium": {
+    "france-atlantic": {
+      "photoId": 338255746,
+      "observationId": 192658117,
+      "observer": "matthieu_gauvain",
+      "license": "cc-by-nc",
+      "attribution": "(c) Matthieu Gauvain, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-11-05",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/338255746/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/338255746/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/338255746/large.jpeg"
+    }
+  },
+  "ilex-verticillata": {
+    "mid-atlantic": {
+      "photoId": 318338489,
+      "observationId": 182567510,
+      "observer": "mhalsted",
+      "license": "cc-by-nc",
+      "attribution": "(c) mhalsted, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-09-09",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/318338489/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/318338489/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/318338489/large.jpeg"
+    }
+  },
+  "ilex-vomitoria": {
+    "florida-central": {
+      "photoId": 170384291,
+      "observationId": 101979557,
+      "observer": "laplante",
+      "license": "cc-by-nc",
+      "attribution": "(c) Robert LaPlante, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-11-26",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/170384291/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/170384291/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/170384291/large.jpg"
+    }
+  },
+  "juniperus-communis": {
+    "france-alpine": {
+      "photoId": 641406909,
+      "observationId": 351474203,
+      "observer": "pluvierdodu",
+      "license": "cc-by-nc",
+      "attribution": "(c) Jean-Guy Papineau, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-04-20",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/641406909/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/641406909/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/641406909/large.jpg"
+    }
+  },
+  "juniperus-oxycedrus": {
+    "france-mediterranean": {
+      "photoId": 117245216,
+      "observationId": 71060245,
+      "observer": "corvusvaesoli",
+      "license": "cc-by-nc",
+      "attribution": "(c) corvusvaesoli, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-03-12",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/117245216/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/117245216/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/117245216/large.jpg"
+    }
+  },
+  "knautia-arvensis": {
+    "france-continental": {
+      "photoId": 73096126,
+      "observationId": 46085598,
+      "observer": "aureliecoulon",
+      "license": "cc-by-nc",
+      "attribution": "(c) Aurélie Coulon, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-05-16",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73096126/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73096126/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73096126/large.jpg"
+    }
+  },
+  "larix-decidua": {
+    "france-alpine": {
+      "photoId": 19605299,
+      "observationId": 13372436,
+      "observer": "nicz",
+      "license": "cc-by-nc-sa",
+      "attribution": "(c) Nicolas Zwahlen, some rights reserved (CC BY-NC-SA)",
+      "observedOn": "2018-06-10",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/19605299/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/19605299/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/19605299/large.jpg"
+    }
+  },
+  "lavandula-angustifolia": {
+    "france-mediterranean": {
+      "photoId": 289572205,
+      "observationId": 167174655,
+      "observer": "chirp147",
+      "license": "cc-by-nc",
+      "attribution": "(c) Christian Herzig, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-06-11",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/289572205/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/289572205/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/289572205/large.jpeg"
+    }
+  },
+  "liatris-gracilis": {
+    "florida-central": {
+      "photoId": 162946962,
+      "observationId": 97928751,
+      "observer": "laplante",
+      "license": "cc-by-nc",
+      "attribution": "(c) Robert LaPlante, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-10-11",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/162946962/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/162946962/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/162946962/large.jpg"
+    }
+  },
+  "ligustrum-vulgare": {
+    "france-continental": {
+      "photoId": 101958444,
+      "observationId": 63525276,
+      "observer": "virginiet",
+      "license": "cc-by-nc",
+      "attribution": "(c) virginiet, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-10-24",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/101958444/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/101958444/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/101958444/large.jpeg"
+    }
+  },
+  "lobelia-cardinalis": {
+    "mid-atlantic": {
+      "photoId": 23316200,
+      "observationId": 15613118,
+      "observer": "mefisher",
+      "license": "cc0",
+      "attribution": "no rights reserved",
+      "observedOn": "2018-08-17",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/23316200/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/23316200/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/23316200/large.jpg"
+    }
+  },
+  "lonicera-ciliosa": {
+    "pnw": {
+      "photoId": 75289805,
+      "observationId": 47469945,
+      "observer": "knel10",
+      "license": "cc-by-nc",
+      "attribution": "(c) knel10, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-05-26",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75289805/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75289805/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75289805/large.jpg"
+    }
+  },
+  "lonicera-involucrata": {
+    "pnw": {
+      "photoId": 75484172,
+      "observationId": 47590100,
+      "observer": "lenoradavis",
+      "license": "cc-by-nc",
+      "attribution": "(c) lenoradavis, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-05-27",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75484172/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75484172/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75484172/large.jpg"
+    }
+  },
+  "lonicera-periclymenum": {
+    "france-atlantic": {
+      "photoId": 408071190,
+      "observationId": 229861193,
+      "observer": "the-real-torax",
+      "license": "cc-by-nc",
+      "attribution": "(c) C., some rights reserved (CC BY-NC)",
+      "observedOn": "2024-06-30",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/408071190/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/408071190/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/408071190/large.jpeg"
+    }
+  },
+  "lonicera-sempervirens": {
+    "mid-atlantic": {
+      "photoId": 651813752,
+      "observationId": 357377091,
+      "observer": "jimbrighton",
+      "license": "cc-by-nc",
+      "attribution": "(c) Jim Brighton, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-04-29",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/651813752/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/651813752/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/651813752/large.jpg"
+    }
+  },
+  "lotus-corniculatus": {
+    "france-continental": {
+      "photoId": 75229195,
+      "observationId": 47432839,
+      "observer": "shirley_laurent",
+      "license": "cc-by-nc",
+      "attribution": "(c) Shirley Laurent, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-05-26",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75229195/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75229195/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75229195/large.jpeg"
+    },
+    "france-alpine": {
+      "photoId": 461627173,
+      "observationId": 257346929,
+      "observer": "kai_pirinha",
+      "license": "cc-by",
+      "attribution": "(c) Kai Löhr, some rights reserved (CC BY)",
+      "observedOn": "2020-08-27",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/461627173/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/461627173/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/461627173/large.jpg"
+    }
+  },
+  "lupinus-polyphyllus": {
+    "pnw": {
+      "photoId": 672293042,
+      "observationId": 368105906,
+      "observer": "croagunk",
+      "license": "cc-by-nc",
+      "attribution": "(c) croagunk, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-06-03",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/672293042/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/672293042/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/672293042/large.jpg"
+    }
+  },
+  "magnolia-grandiflora": {
+    "florida-central": {
+      "photoId": 246812927,
+      "observationId": 143870423,
+      "observer": "daniel_e",
+      "license": "cc0",
+      "attribution": "no rights reserved",
+      "observedOn": "2022-12-06",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/246812927/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/246812927/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/246812927/large.jpg"
+    }
+  },
+  "mimosa-strigillosa": {
+    "florida-central": {
+      "photoId": 26931009,
+      "observationId": 17672856,
+      "observer": "flbirdbrain",
+      "license": "cc-by-nc",
+      "attribution": "(c) flbirdbrain, some rights reserved (CC BY-NC)",
+      "observedOn": "2018-10-20",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/26931009/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/26931009/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/26931009/large.jpg"
+    }
+  },
+  "monarda-fistulosa": {
+    "mid-atlantic": {
+      "photoId": 307546805,
+      "observationId": 176870330,
+      "observer": "alan_rockefeller",
+      "license": "cc-by",
+      "attribution": "(c) Alan Rockefeller, some rights reserved (CC BY)",
+      "observedOn": "2023-08-05",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/307546805/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/307546805/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/307546805/large.jpeg"
+    }
+  },
+  "monarda-punctata": {
+    "florida-central": {
+      "photoId": 561862024,
+      "observationId": 311256126,
+      "observer": "ingolfaskevold",
+      "license": "cc0",
+      "attribution": "no rights reserved",
+      "observedOn": "2025-09-03",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/561862024/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/561862024/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/561862024/large.jpg"
+    }
+  },
+  "muhlenbergia-capillaris": {
+    "florida-central": {
+      "photoId": 163020312,
+      "observationId": 97968431,
+      "observer": "sdickman",
+      "license": "cc-by-nc",
+      "attribution": "(c) sdickman, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-10-11",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/163020312/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/163020312/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/163020312/large.jpg"
+    },
+    "florida-south": {
+      "photoId": 42096278,
+      "observationId": 27079290,
+      "observer": "bharding81",
+      "license": "cc-by-nc",
+      "attribution": "(c) bharding81, some rights reserved (CC BY-NC)",
+      "observedOn": "2018-10-24",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/42096278/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/42096278/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/42096278/large.jpg"
+    }
+  },
+  "morella-cerifera": {
+    "florida-south": {
+      "photoId": 159372415,
+      "observationId": 95963361,
+      "observer": "mrnovas",
+      "license": "cc-by-nc",
+      "attribution": "(c) mrnovas, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-09-24",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159372415/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159372415/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159372415/large.jpg"
+    }
+  },
+  "myrcianthes-fragrans": {
+    "florida-central": {
+      "photoId": 297261391,
+      "observationId": 171262793,
+      "observer": "mnd10",
+      "license": "cc-by-nc",
+      "attribution": "(c) mnd10, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-07-05",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/297261391/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/297261391/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/297261391/large.jpg"
+    },
+    "florida-south": {
+      "photoId": 33964142,
+      "observationId": 21918074,
+      "observer": "eridanxharahi",
+      "license": "cc-by",
+      "attribution": "(c) Eridan Xharahi, some rights reserved (CC BY)",
+      "observedOn": "2019-04-01",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33964142/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33964142/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33964142/large.jpg"
+    }
+  },
+  "myrtus-communis": {
+    "france-mediterranean": {
+      "photoId": 466077026,
+      "observationId": 259620332,
+      "observer": "jacques_hallot",
+      "license": "cc-by-nc",
+      "attribution": "(c) Jacques HALLOT, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-01-25",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/466077026/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/466077026/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/466077026/large.jpg"
+    }
+  },
+  "origanum-vulgare": {
+    "france-continental": {
+      "photoId": 681502647,
+      "observationId": 372928823,
+      "observer": "mth_naturalist",
+      "license": "cc-by",
+      "attribution": "(c) mth_naturalist, some rights reserved (CC BY)",
+      "observedOn": "2026-06-18",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/681502647/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/681502647/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/681502647/large.jpg"
+    }
+  },
+  "packera-aurea": {
+    "mid-atlantic": {
+      "photoId": 129740902,
+      "observationId": 79222712,
+      "observer": "roamingthewoods",
+      "license": "cc-by-nc",
+      "attribution": "(c) roamingthewoods, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-05-13",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/129740902/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/129740902/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/129740902/large.jpg"
+    }
+  },
+  "panicum-virgatum": {
+    "mid-atlantic": {
+      "photoId": 688020223,
+      "observationId": 376308521,
+      "observer": "ccantley",
+      "license": "cc-by-nc",
+      "attribution": "(c) Chuck Cantley, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-06-28",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/688020223/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/688020223/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/688020223/large.jpg"
+    }
+  },
+  "parthenocissus-quinquefolia": {
+    "mid-atlantic": {
+      "photoId": 160649626,
+      "observationId": 96679452,
+      "observer": "srall",
+      "license": "cc-by-nc",
+      "attribution": "(c) Sara Rall, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-09-27",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/160649626/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/160649626/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/160649626/large.jpeg"
+    }
+  },
+  "passiflora-incarnata": {
+    "florida-central": {
+      "photoId": 344893723,
+      "observationId": 195967285,
+      "observer": "frodejacobsen",
+      "license": "cc-by-nc",
+      "attribution": "(c) Frode Jacobsen, some rights reserved (CC BY-NC)",
+      "observedOn": "2006-04-28",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/344893723/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/344893723/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/344893723/large.jpg"
+    }
+  },
+  "penstemon-digitalis": {
+    "mid-atlantic": {
+      "photoId": 570725776,
+      "observationId": 315909010,
+      "observer": "lilian428",
+      "license": "cc-by-nc",
+      "attribution": "(c) Lilian Martin, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-06-12",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/570725776/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/570725776/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/570725776/large.jpg"
+    }
+  },
+  "penstemon-serrulatus": {
+    "pnw": {
+      "photoId": 298610451,
+      "observationId": 172038996,
+      "observer": "mattunitis",
+      "license": "cc-by-nc",
+      "attribution": "(c) Matt Unitis, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-07-09",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/298610451/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/298610451/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/298610451/large.jpg"
+    }
+  },
+  "phillyrea-angustifolia": {
+    "france-mediterranean": {
+      "photoId": 438558384,
+      "observationId": 245732885,
+      "observer": "oreste83",
+      "license": "cc-by-nc",
+      "attribution": "(c) oreste83, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-10-05",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/438558384/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/438558384/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/438558384/large.jpeg"
+    }
+  },
+  "physocarpus-capitatus": {
+    "pnw": {
+      "photoId": 661706578,
+      "observationId": 362542532,
+      "observer": "creff",
+      "license": "cc-by-nc",
+      "attribution": "(c) creff, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-05-17",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/661706578/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/661706578/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/661706578/large.jpg"
+    }
+  },
+  "physocarpus-opulifolius": {
+    "mid-atlantic": {
+      "photoId": 208947504,
+      "observationId": 123344527,
+      "observer": "hollyyoung",
+      "license": "cc-by-nc",
+      "attribution": "(c) hollyyoung, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-06-24",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/208947504/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/208947504/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/208947504/large.jpeg"
+    }
+  },
+  "picea-abies": {
+    "france-alpine": {
+      "photoId": 665930705,
+      "observationId": 364774740,
+      "observer": "myrrhabelle",
+      "license": "cc-by-nc",
+      "attribution": "(c) myrrhabelle, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-05-23",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/665930705/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/665930705/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/665930705/large.jpg"
+    }
+  },
+  "pinus-cembra": {
+    "france-alpine": {
+      "photoId": 207092201,
+      "observationId": 122071027,
+      "observer": "corentind",
+      "license": "cc-by",
+      "attribution": "(c) CorentinD, some rights reserved (CC BY)",
+      "observedOn": "2022-06-16",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/207092201/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/207092201/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/207092201/large.jpeg"
+    }
+  },
+  "pinus-halepensis": {
+    "france-mediterranean": {
+      "photoId": 385997317,
+      "observationId": 218150172,
+      "observer": "chirp147",
+      "license": "cc-by-nc",
+      "attribution": "(c) Christian Herzig, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-05-25",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/385997317/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/385997317/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/385997317/large.jpeg"
+    }
+  },
+  "pinus-palustris": {
+    "florida-central": {
+      "photoId": 557407774,
+      "observationId": 308927563,
+      "observer": "brettbudach",
+      "license": "cc-by-nc",
+      "attribution": "(c) brettbudach, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-08-24",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/557407774/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/557407774/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/557407774/large.jpg"
+    }
+  },
+  "pinus-sylvestris": {
+    "france-continental": {
+      "photoId": 187147410,
+      "observationId": 110901556,
+      "observer": "geoltel",
+      "license": "cc-by-nc",
+      "attribution": "(c) Q. Scouflaire, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-04-09",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/187147410/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/187147410/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/187147410/large.jpg"
+    }
+  },
+  "pistacia-lentiscus": {
+    "france-mediterranean": {
+      "photoId": 488824341,
+      "observationId": 271739800,
+      "observer": "dbastia",
+      "license": "cc-by",
+      "attribution": "(c) Denis Bastianelli, some rights reserved (CC BY)",
+      "observedOn": "2025-04-20",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/488824341/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/488824341/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/488824341/large.jpeg"
+    }
+  },
+  "polystichum-acrostichoides": {
+    "mid-atlantic": {
+      "photoId": 202585617,
+      "observationId": 119815107,
+      "observer": "wllam",
+      "license": "cc0",
+      "attribution": "no rights reserved",
+      "observedOn": "2022-05-29",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202585617/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202585617/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202585617/large.jpeg"
+    }
+  },
+  "polystichum-munitum": {
+    "pnw": {
+      "photoId": 282936660,
+      "observationId": 163577718,
+      "observer": "harsiparker",
+      "license": "cc-by-nc",
+      "attribution": "(c) Harsi S. Parker, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-05-24",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/282936660/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/282936660/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/282936660/large.jpg"
+    }
+  },
+  "populus-trichocarpa": {
+    "pnw": {
+      "photoId": 67703344,
+      "observationId": 42634706,
+      "observer": "stedman4890",
+      "license": "cc-by-nc",
+      "attribution": "(c) stedman4890, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-04-19",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67703344/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67703344/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67703344/large.jpg"
+    }
+  },
+  "primula-veris": {
+    "france-atlantic": {
+      "photoId": 247991747,
+      "observationId": 144486238,
+      "observer": "lornaneville",
+      "license": "cc-by-nc",
+      "attribution": "(c) lornaneville, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-04-22",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/247991747/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/247991747/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/247991747/large.jpeg"
+    }
+  },
+  "prunus-avium": {
+    "france-atlantic": {
+      "photoId": 187920569,
+      "observationId": 111325598,
+      "observer": "jamie_medford",
+      "license": "cc-by",
+      "attribution": "(c) Jamie Medford, some rights reserved (CC BY)",
+      "observedOn": "2022-04-13",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/187920569/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/187920569/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/187920569/large.jpg"
+    }
+  },
+  "prunus-emarginata": {
+    "pnw": {
+      "photoId": 256890723,
+      "observationId": 149109905,
+      "observer": "bart97030",
+      "license": "cc-by-nc",
+      "attribution": "(c) Bart Lawrence, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-02-18",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/256890723/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/256890723/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/256890723/large.jpg"
+    }
+  },
+  "prunus-mahaleb": {
+    "france-continental": {
+      "photoId": 485537810,
+      "observationId": 270009372,
+      "observer": "codrin_bucur",
+      "license": "cc-by",
+      "attribution": "(c) Codrin Bucur, some rights reserved (CC BY)",
+      "observedOn": "2025-04-12",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/485537810/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/485537810/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/485537810/large.jpg"
+    }
+  },
+  "prunus-serotina": {
+    "mid-atlantic": {
+      "photoId": 18571083,
+      "observationId": 12806817,
+      "observer": "sarmartinez",
+      "license": "cc-by-nc",
+      "attribution": "(c) Sarah Martinez, some rights reserved (CC BY-NC)",
+      "observedOn": "2018-05-25",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/18571083/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/18571083/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/18571083/large.jpg"
+    }
+  },
+  "prunus-spinosa": {
+    "france-atlantic": {
+      "photoId": 234242119,
+      "observationId": 137183056,
+      "observer": "natalie0816",
+      "license": "cc-by-nc",
+      "attribution": "(c) natalie0816, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-10-01",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/234242119/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/234242119/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/234242119/large.jpg"
+    }
+  },
+  "pseudotsuga-menziesii": {
+    "pnw": {
+      "photoId": 121926951,
+      "observationId": 74590428,
+      "observer": "dunnison",
+      "license": "cc-by-nc",
+      "attribution": "(c) dunnison, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-04-19",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/121926951/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/121926951/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/121926951/large.jpeg"
+    }
+  },
+  "psychotria-nervosa": {
+    "florida-south": {
+      "photoId": 121385197,
+      "observationId": 74285255,
+      "observer": "como_plants_animals_rocks",
+      "license": "cc-by-nc",
+      "attribution": "(c) cpar, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-03-20",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/121385197/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/121385197/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/121385197/large.jpeg"
+    }
+  },
+  "quercus-alba": {
+    "mid-atlantic": {
+      "photoId": 63892986,
+      "observationId": 40220852,
+      "observer": "owenclarkin",
+      "license": "cc-by-nc",
+      "attribution": "(c) Owen Clarkin, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-08-24",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/63892986/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/63892986/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/63892986/large.jpeg"
+    }
+  },
+  "quercus-garryana": {
+    "pnw": {
+      "photoId": 44825543,
+      "observationId": 28744863,
+      "observer": "eralverson",
+      "license": "cc-by",
+      "attribution": "(c) Ed Alverson, some rights reserved (CC BY)",
+      "observedOn": "2017-10-06",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/44825543/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/44825543/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/44825543/large.jpeg"
+    }
+  },
+  "quercus-ilex": {
+    "france-mediterranean": {
+      "photoId": 411372250,
+      "observationId": 231602700,
+      "observer": "missbirdz",
+      "license": "cc-by-nc",
+      "attribution": "(c) missbirdz, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-07-17",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/411372250/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/411372250/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/411372250/large.jpeg"
+    }
+  },
+  "quercus-petraea": {
+    "france-continental": {
+      "photoId": 387056799,
+      "observationId": 218719883,
+      "observer": "nschwab",
+      "license": "cc-by-nc",
+      "attribution": "(c) Nicolas Schwab, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-05-25",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/387056799/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/387056799/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/387056799/large.jpg"
+    }
+  },
+  "quercus-pubescens": {
+    "france-mediterranean": {
+      "photoId": 272048933,
+      "observationId": 157336224,
+      "observer": "vincent_da-silva",
+      "license": "cc-by-nc",
+      "attribution": "(c) Vincent Da silva, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-04-27",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/272048933/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/272048933/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/272048933/large.jpeg"
+    }
+  },
+  "quercus-robur": {
+    "france-atlantic": {
+      "photoId": 454986415,
+      "observationId": 254057460,
+      "observer": "sylvainm_53",
+      "license": "cc-by",
+      "attribution": "(c) Sylvain Montagner, some rights reserved (CC BY)",
+      "observedOn": "2010-03-14",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/454986415/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/454986415/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/454986415/large.jpeg"
+    }
+  },
+  "quercus-rubra": {
+    "mid-atlantic": {
+      "photoId": 301028051,
+      "observationId": 173354377,
+      "observer": "william_deml",
+      "license": "cc-by",
+      "attribution": "(c) William J. Deml, some rights reserved (CC BY)",
+      "observedOn": "2023-05-21",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/301028051/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/301028051/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/301028051/large.jpeg"
+    }
+  },
+  "quercus-virginiana": {
+    "florida-central": {
+      "photoId": 58356780,
+      "observationId": 36871651,
+      "observer": "kpmcfarland",
+      "license": "cc0",
+      "attribution": "no rights reserved",
+      "observedOn": "2010-04-18",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/58356780/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/58356780/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/58356780/large.jpg"
+    },
+    "florida-south": {
+      "photoId": 355855948,
+      "observationId": 201576150,
+      "observer": "dbmcc09",
+      "license": "cc-by-nc",
+      "attribution": "(c) David McCorquodale, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-02-22",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/355855948/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/355855948/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/355855948/large.jpg"
+    }
+  },
+  "rhamnus-alaternus": {
+    "france-mediterranean": {
+      "photoId": 274032719,
+      "observationId": 158649604,
+      "observer": "falcoabril",
+      "license": "cc-by-nc",
+      "attribution": "(c) falcoabril, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-04-29",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/274032719/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/274032719/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/274032719/large.jpeg"
+    }
+  },
+  "rhododendron-ferrugineum": {
+    "france-alpine": {
+      "photoId": 100871358,
+      "observationId": 62911635,
+      "observer": "virginiet",
+      "license": "cc-by-nc",
+      "attribution": "(c) virginiet, some rights reserved (CC BY-NC)",
+      "observedOn": "2018-07-18",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/100871358/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/100871358/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/100871358/large.jpeg"
+    }
+  },
+  "ribes-sanguineum": {
+    "pnw": {
+      "photoId": 66563623,
+      "observationId": 41944615,
+      "observer": "emily_jeanne",
+      "license": "cc-by-nc",
+      "attribution": "(c) Emily Cook, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-04-11",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66563623/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66563623/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66563623/large.jpg"
+    }
+  },
+  "rivina-humilis": {
+    "florida-south": {
+      "photoId": 618326010,
+      "observationId": 339850697,
+      "observer": "adrastia217",
+      "license": "cc-by-nc",
+      "attribution": "(c) Melissa, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-02-17",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/618326010/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/618326010/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/618326010/large.jpg"
+    }
+  },
+  "rosa-canina": {
+    "france-continental": {
+      "photoId": 202153626,
+      "observationId": 119574791,
+      "observer": "anro",
+      "license": "cc-by-nc",
+      "attribution": "(c) Andreas Rockstein, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-05-14",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202153626/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202153626/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202153626/large.jpg"
+    }
+  },
+  "rosa-nutkana": {
+    "pnw": {
+      "photoId": 134208143,
+      "observationId": 81808885,
+      "observer": "cdicentra",
+      "license": "cc-by-nc",
+      "attribution": "(c) cdicentra, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-06-05",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/134208143/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/134208143/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/134208143/large.jpg"
+    }
+  },
+  "rubus-spectabilis": {
+    "pnw": {
+      "photoId": 634851834,
+      "observationId": 348125548,
+      "observer": "evelyn16105",
+      "license": "cc-by-nc",
+      "attribution": "(c) Evelyn Ives, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-04-07",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/634851834/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/634851834/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/634851834/large.jpg"
+    }
+  },
+  "rudbeckia-fulgida": {
+    "mid-atlantic": {
+      "photoId": 308742129,
+      "observationId": 177511589,
+      "observer": "radbackedsalamander",
+      "license": "cc-by-nc",
+      "attribution": "(c) Alex Karasoulos, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-08-04",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/308742129/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/308742129/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/308742129/large.jpeg"
+    }
+  },
+  "sabal-palmetto": {
+    "florida-central": {
+      "photoId": 83321425,
+      "observationId": 52422234,
+      "observer": "jmartin1",
+      "license": "cc-by-nc",
+      "attribution": "(c) jmartin1, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-07-08",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/83321425/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/83321425/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/83321425/large.jpeg"
+    },
+    "florida-south": {
+      "photoId": 659768552,
+      "observationId": 361544721,
+      "observer": "jrichardabbott",
+      "license": "cc-by-nc",
+      "attribution": "(c) J. Richard Abbott, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-04-30",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/659768552/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/659768552/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/659768552/large.jpg"
+    }
+  },
+  "salix-caprea": {
+    "france-atlantic": {
+      "photoId": 412329891,
+      "observationId": 232113349,
+      "observer": "nicolashelitas",
+      "license": "cc-by-nc",
+      "attribution": "(c) Nicolas HELITAS, some rights reserved (CC BY-NC)",
+      "observedOn": "2008-03-05",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/412329891/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/412329891/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/412329891/large.jpg"
+    },
+    "france-alpine": {
+      "photoId": 202771028,
+      "observationId": 119925591,
+      "observer": "jasonrgrant",
+      "license": "cc-by",
+      "attribution": "(c) Jason Grant, some rights reserved (CC BY)",
+      "observedOn": "2022-06-02",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202771028/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202771028/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202771028/large.jpeg"
+    }
+  },
+  "salix-scouleriana": {
+    "pnw": {
+      "photoId": 257758284,
+      "observationId": 149571915,
+      "observer": "vlohr",
+      "license": "cc-by-nc",
+      "attribution": "(c) V. Lohr, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-11-13",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/257758284/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/257758284/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/257758284/large.jpeg"
+    }
+  },
+  "salvia-coccinea": {
+    "florida-central": {
+      "photoId": 534634070,
+      "observationId": 296890218,
+      "observer": "rnp35",
+      "license": "cc-by-nc",
+      "attribution": "(c) rnp35, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-07-09",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/534634070/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/534634070/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/534634070/large.jpg"
+    },
+    "florida-south": {
+      "photoId": 128049183,
+      "observationId": 78249024,
+      "observer": "pjspurrier",
+      "license": "cc-by-nc",
+      "attribution": "(c) pjspurrier, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-05-10",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/128049183/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/128049183/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/128049183/large.jpeg"
+    }
+  },
+  "salvia-pratensis": {
+    "france-continental": {
+      "photoId": 67315566,
+      "observationId": 42398233,
+      "observer": "corinnah",
+      "license": "cc-by-nc",
+      "attribution": "(c) Corinna Herr, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-04-17",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67315566/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67315566/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67315566/large.jpeg"
+    }
+  },
+  "sambucus-nigra": {
+    "france-atlantic": {
+      "photoId": 149948792,
+      "observationId": 90714061,
+      "observer": "arkantor",
+      "license": "cc-by-nc-sa",
+      "attribution": "(c) Nuno Veríssimo P., some rights reserved (CC BY-NC-SA)",
+      "observedOn": "2019-05-24",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/149948792/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/149948792/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/149948792/large.jpeg"
+    }
+  },
+  "schizachyrium-scoparium": {
+    "mid-atlantic": {
+      "photoId": 325664379,
+      "observationId": 186361057,
+      "observer": "gcwarbler",
+      "license": "cc-by-nc",
+      "attribution": "(c) Chuck Sexton, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-10-05",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/325664379/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/325664379/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/325664379/large.jpg"
+    }
+  },
+  "serenoa-repens": {
+    "florida-central": {
+      "photoId": 353425589,
+      "observationId": 200331879,
+      "observer": "jackparton",
+      "license": "cc-by-nc",
+      "attribution": "(c) jackparton, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-02-24",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/353425589/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/353425589/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/353425589/large.jpeg"
+    },
+    "florida-south": {
+      "photoId": 544635200,
+      "observationId": 302212608,
+      "observer": "muscariafly",
+      "license": "cc-by-nc",
+      "attribution": "(c) muscariafly, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-07-29",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/544635200/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/544635200/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/544635200/large.jpg"
+    }
+  },
+  "solidago-lepida": {
+    "pnw": {
+      "photoId": 552965141,
+      "observationId": 306618470,
+      "observer": "oliviajerome",
+      "license": "cc-by-nc",
+      "attribution": "(c) Olivia Jerome, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-08-06",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/552965141/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/552965141/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/552965141/large.jpg"
+    }
+  },
+  "solidago-rugosa": {
+    "mid-atlantic": {
+      "photoId": 97664806,
+      "observationId": 61056098,
+      "observer": "mnold1",
+      "license": "cc-by-nc",
+      "attribution": "(c) MikeN, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-09-18",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/97664806/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/97664806/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/97664806/large.jpg"
+    }
+  },
+  "sophora-tomentosa-truncata": {
+    "florida-south": {
+      "photoId": 159653850,
+      "observationId": 96125270,
+      "observer": "jayhorn",
+      "license": "cc-by",
+      "attribution": "(c) Jay Horn, some rights reserved (CC BY)",
+      "observedOn": "2021-09-25",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159653850/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159653850/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159653850/large.jpeg"
+    }
+  },
+  "sorbus-aucuparia": {
+    "france-atlantic": {
+      "photoId": 17600727,
+      "observationId": 12244465,
+      "observer": "danielcahen",
+      "license": "cc-by",
+      "attribution": "(c) Daniel Cahen, some rights reserved (CC BY)",
+      "observedOn": "2018-05-07",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/17600727/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/17600727/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/17600727/large.jpeg"
+    },
+    "france-alpine": {
+      "photoId": 549906942,
+      "observationId": 305012270,
+      "observer": "elkvorr",
+      "license": "cc-by-nc",
+      "attribution": "(c) Elio Giacone, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-08-07",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/549906942/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/549906942/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/549906942/large.jpg"
+    }
+  },
+  "stachytarpheta-jamaicensis": {
+    "florida-south": {
+      "photoId": 124172766,
+      "observationId": 75888627,
+      "observer": "ericrupert",
+      "license": "cc-by-nc",
+      "attribution": "(c) eric rupert, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-04-30",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124172766/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124172766/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124172766/large.jpg"
+    }
+  },
+  "struthiopteris-spicant": {
+    "pnw": {
+      "photoId": 93030640,
+      "observationId": 58280558,
+      "observer": "camillehill",
+      "license": "cc-by-nc",
+      "attribution": "(c) camillehill, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-09-01",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/93030640/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/93030640/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/93030640/large.jpg"
+    }
+  },
+  "succisa-pratensis": {
+    "france-atlantic": {
+      "photoId": 470004499,
+      "observationId": 261598181,
+      "observer": "alainlh",
+      "license": "cc-by-nc",
+      "attribution": "(c) Alain Le Hérissé, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-09-27",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/470004499/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/470004499/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/470004499/large.jpeg"
+    }
+  },
+  "symphoricarpos-albus": {
+    "pnw": {
+      "photoId": 59643137,
+      "observationId": 37603384,
+      "observer": "tay_berube",
+      "license": "cc-by-nc",
+      "attribution": "(c) tay_berube, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-01-11",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/59643137/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/59643137/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/59643137/large.jpg"
+    }
+  },
+  "symphyotrichum-novae-angliae": {
+    "mid-atlantic": {
+      "photoId": 561877074,
+      "observationId": 311265421,
+      "observer": "michael_oldham",
+      "license": "cc-by-nc",
+      "attribution": "(c) Michael John Oldham, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-09-01",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/561877074/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/561877074/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/561877074/large.jpg"
+    }
+  },
+  "symphyotrichum-subspicatum": {
+    "pnw": {
+      "photoId": 569718028,
+      "observationId": 315379896,
+      "observer": "nitinr",
+      "license": "cc-by-nc",
+      "attribution": "(c) Nitin Ravikanthachari, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-09-20",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/569718028/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/569718028/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/569718028/large.jpg"
+    }
+  },
+  "taxodium-distichum": {
+    "florida-central": {
+      "photoId": 251701863,
+      "observationId": 146379113,
+      "observer": "william_deml",
+      "license": "cc-by",
+      "attribution": "(c) William J. Deml, some rights reserved (CC BY)",
+      "observedOn": "2008-09-13",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/251701863/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/251701863/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/251701863/large.jpeg"
+    }
+  },
+  "thuja-plicata": {
+    "pnw": {
+      "photoId": 160208840,
+      "observationId": 96434447,
+      "observer": "dosafyre",
+      "license": "cc-by-nc",
+      "attribution": "(c) dosafyre, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-09-27",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/160208840/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/160208840/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/160208840/large.jpeg"
+    }
+  },
+  "thymus-vulgaris": {
+    "france-mediterranean": {
+      "photoId": 568199944,
+      "observationId": 314588248,
+      "observer": "sus_scrofa",
+      "license": "cc-by",
+      "attribution": "(c) W Rao, some rights reserved (CC BY)",
+      "observedOn": "2025-08-19",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/568199944/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/568199944/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/568199944/large.jpg"
+    }
+  },
+  "tilia-cordata": {
+    "france-continental": {
+      "photoId": 358356339,
+      "observationId": 202874558,
+      "observer": "rollier",
+      "license": "cc-by-nc",
+      "attribution": "(c) Maryse, some rights reserved (CC BY-NC)",
+      "observedOn": "2009-06-21",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/358356339/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/358356339/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/358356339/large.jpeg"
+    }
+  },
+  "tripsacum-dactyloides": {
+    "florida-central": {
+      "photoId": 124143221,
+      "observationId": 75876679,
+      "observer": "sean_patton",
+      "license": "cc-by-nc",
+      "attribution": "(c) Sean Patton, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-04-30",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124143221/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124143221/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124143221/large.jpeg"
+    },
+    "florida-south": {
+      "photoId": 606761493,
+      "observationId": 334154862,
+      "observer": "lonesomebuckwheat",
+      "license": "cc-by-nc",
+      "attribution": "(c) Matt Reala, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-01-09",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/606761493/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/606761493/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/606761493/large.jpg"
+    }
+  },
+  "trollius-europaeus": {
+    "france-alpine": {
+      "photoId": 8731483,
+      "observationId": 6853194,
+      "observer": "jujurenoult",
+      "license": "cc-by",
+      "attribution": "(c) Julien Renoult, some rights reserved (CC BY)",
+      "observedOn": "2017-06-24",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/8731483/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/8731483/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/8731483/large.jpeg"
+    }
+  },
+  "tsuga-heterophylla": {
+    "pnw": {
+      "photoId": 322833344,
+      "observationId": 184908525,
+      "observer": "vlohr",
+      "license": "cc-by-nc",
+      "attribution": "(c) V. Lohr, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-09-23",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/322833344/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/322833344/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/322833344/large.jpg"
+    }
+  },
+  "vaccinium-corymbosum": {
+    "mid-atlantic": {
+      "photoId": 404683762,
+      "observationId": 228074357,
+      "observer": "awells",
+      "license": "cc-by-nc",
+      "attribution": "(c) Alan Wells, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-07-05",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/404683762/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/404683762/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/404683762/large.jpg"
+    }
+  },
+  "vaccinium-myrtillus": {
+    "france-alpine": {
+      "photoId": 519232028,
+      "observationId": 288712065,
+      "observer": "tombitsch",
+      "license": "cc-by-nc",
+      "attribution": "(c) Thomas Bitsch, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-06-08",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/519232028/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/519232028/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/519232028/large.jpg"
+    }
+  },
+  "vaccinium-ovatum": {
+    "pnw": {
+      "photoId": 333311414,
+      "observationId": 190179554,
+      "observer": "jhans16",
+      "license": "cc-by-nc",
+      "attribution": "(c) jhans16, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-11-05",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/333311414/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/333311414/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/333311414/large.jpg"
+    }
+  },
+  "vaccinium-vitis-idaea": {
+    "france-alpine": {
+      "photoId": 94586233,
+      "observationId": 59205423,
+      "observer": "guglielmo_vacirca",
+      "license": "cc-by-nc",
+      "attribution": "(c) Guglielmo Vacirca, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-09-10",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/94586233/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/94586233/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/94586233/large.jpg"
+    }
+  },
+  "viburnum-dentatum": {
+    "mid-atlantic": {
+      "photoId": 288950645,
+      "observationId": 166840119,
+      "observer": "zihaowang",
+      "license": "cc-by",
+      "attribution": "(c) Zihao Wang, some rights reserved (CC BY)",
+      "observedOn": "2023-06-11",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/288950645/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/288950645/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/288950645/large.jpeg"
+    }
+  },
+  "viburnum-lantana": {
+    "france-continental": {
+      "photoId": 124474008,
+      "observationId": 76076444,
+      "observer": "manniho",
+      "license": "cc-by",
+      "attribution": "(c) Marianne Hoffmann, some rights reserved (CC BY)",
+      "observedOn": "2021-04-30",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124474008/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124474008/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124474008/large.jpg"
+    }
+  },
+  "viburnum-obovatum": {
+    "florida-central": {
+      "photoId": 179668261,
+      "observationId": 106891202,
+      "observer": "flashberry",
+      "license": "cc-by-nc",
+      "attribution": "(c) Flashberry, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-02-16",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/179668261/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/179668261/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/179668261/large.jpeg"
+    }
+  },
+  "viburnum-tinus": {
+    "france-mediterranean": {
+      "photoId": 264854988,
+      "observationId": 153353906,
+      "observer": "guglielmo_vacirca",
+      "license": "cc-by-nc",
+      "attribution": "(c) Guglielmo Vacirca, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-03-15",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/264854988/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/264854988/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/264854988/large.jpg"
+    }
+  },
+  "zamia-integrifolia": {
+    "florida-south": {
+      "photoId": 35970855,
+      "observationId": 23213527,
+      "observer": "pitcherplant19",
+      "license": "cc-by-nc",
+      "attribution": "(c) pitcherplant19, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-04-26",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/35970855/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/35970855/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/35970855/large.jpg"
+    }
+  },
+  "zizia-aurea": {
+    "mid-atlantic": {
+      "photoId": 123259131,
+      "observationId": 75349671,
+      "observer": "shaunpogacnik95",
+      "license": "cc-by-nc",
+      "attribution": "(c) Shaun Pogacnik, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-04-25",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/123259131/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/123259131/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/123259131/large.jpeg"
+    }
+  }
+}

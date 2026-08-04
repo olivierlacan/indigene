@@ -24,9 +24,24 @@
 import { el } from "../ui";
 import { fmtNumber, t } from "../lib/i18n";
 import { openObservationLightbox } from "./lightbox";
+import { loadPhoto } from "../lib/photo";
 import type { ObservationPhoto, ObservationSummary } from "../lib/inaturalist";
 
 const INAT = "https://www.inaturalist.org";
+
+/** A tile's drawn width on a phone — three to a row inside the content column.
+ *  The loader turns it into a rendition: `square` at 1×, `small` above. */
+const TILE_PX = 112;
+
+/** One thumbnail, loaded the way every photo in the app is (see `lib/photo.ts`):
+ *  not requested until it is nearly on screen, never more than a few at once,
+ *  and faded in only once it has decoded — so a gallery fills in tile by
+ *  finished tile instead of a dozen JPEGs painting themselves at once. */
+function photoTile(url: string, alt: string): HTMLImageElement {
+  const img = el("img", { class: "photo-fade", alt, width: 112, height: 112 });
+  loadPhoto(img, url, TILE_PX);
+  return img;
+}
 
 /** Tiles shown before the grid stops and the last one wears a "+N" badge. Twelve
  *  is four rows on a phone (three to a row) — a gallery you take in at a glance,
@@ -93,13 +108,7 @@ export function observationList(observations: ObservationSummary[], label: strin
             btn,
           ),
       }, [
-        el("img", {
-          src: photo.thumbUrl,
-          loading: "lazy",
-          alt: t("obs.photoAlt", { name: o.taxonName ?? label, observer: o.observer }),
-          width: 112,
-          height: 112,
-        }),
+        photoTile(photo.thumbUrl, t("obs.photoAlt", { name: o.taxonName ?? label, observer: o.observer })),
         more ? el("span", { class: "obs-tile-more", "aria-hidden": "true" }, `+${more}`) : null,
       ]);
       return btn;

@@ -169,9 +169,35 @@ subtitle on the What's new page.
   its own section, and
   [Settings](https://indigene.app/settings) shows you both values with a button
   that throws them away.
+- **You can now see what a plant looks like without opening it.** The photographs
+  people picked for the plant pages have moved out onto the lists as well:
+  [every native Indigene knows](https://indigene.app/plants), every region's
+  roster, and the plant starring on the front of each region card. Where nobody
+  has chosen a photograph yet the little drawing stays exactly as it was, so no
+  row is ever left with an empty square.
 
 ### Changed
 
+- **Pictures arrive gently instead of appearing in pieces.** Every photograph in
+  the app is now fetched quietly in the background and only shown once it is
+  complete, fading in over whatever was already there — the plant's drawing on a
+  list, or the photograph's own colours on a plant page. No more watching a
+  picture paint itself from the top down, and nothing on the page shifts when
+  one lands.
+- **Photographs are asked for at the size they're actually shown.** A picture
+  drawn the size of a postage stamp used to be downloaded at the size of a
+  postcard. Now the app asks for the small one for a small space and the larger
+  one only where it will really be seen, which on an ordinary laptop is about a
+  third of what a plant page used to cost. On a phone the difference is bigger
+  still, because a whole list of plants is now a whole list of small pictures
+  rather than large ones.
+- **A long list only loads the pictures you can see.** Scrolling the plants
+  page no longer sets 190 photographs downloading at once; each one is fetched
+  just before it reaches the screen, a few at a time, so the rest of the app
+  stays quick while they arrive. If your connection is slow, or your phone is
+  set to save data, the lists keep their drawings and don't fetch photographs at
+  all. Anything you have already seen is kept on your device and comes back
+  instantly, offline included.
 - **The ⚙️ menu opens with what's new, and saved spots are one row away.**
   What's new sits at the top, where the dot on the gear points. Underneath it,
   **Saved spots** is now a single row through to
@@ -219,6 +245,43 @@ subtitle on the What's new page.
 - Internal: bundle re-measured — 273 KB → 275 KB gzipped, and the four docs
   quoting the figure updated (they had drifted to ~268 KB before this change).
   Dropping the menu's database path gave ~0.4 KB of that back.
+- Internal: `lib/photo.ts` is now the only place that decides how an
+  iNaturalist photo is asked for and shown — `renditionFor` picks the smallest
+  of iNaturalist's five fixed renditions that covers a slot at the device's
+  pixel ratio (measured: square 7.6 KB, small 38 KB, medium 126 KB, large
+  438 KB, original 1.7 MB; `original` is asked for nowhere), a shared
+  `IntersectionObserver` holds a thumbnail's job until it is within 400 px of
+  the viewport, a four-deep queue caps concurrency with the plant hero
+  jumping it, and every image is `decode()`d before the `.photo-fade` class is
+  lifted. A job that hasn't decoded in 8 s releases its slot and finishes on
+  its own, so one stalled request can't starve a list. The observer's targets
+  are swept for disconnected nodes past 300 entries — an
+  `IntersectionObserver` holds targets strongly, and the plants index rebuilds
+  ~190 cards per keystroke.
+- Internal: **no worker resizes anything, deliberately.** Shrinking an image
+  locally requires downloading every byte first, so it cannot shorten the wait
+  it appears to address, and iNaturalist already publishes five sizes on a CDN
+  — asking for `small` costs 38 KB where fetching `medium` to shrink costs 126.
+  The reasoning is written down at the top of `lib/photo.ts` so the idea isn't
+  re-proposed.
+- Internal: `npm run hero:colors` (`scripts/hero-colors.mjs`) averages each
+  pick's `square` rendition into a `color` on `hero-photos.json` — decoded by
+  Chromium, the same borrowed-decoder arrangement `_photo-quality.mjs` uses, so
+  the repo keeps zero runtime dependencies. ~1.6 KB for all 204 picks. The
+  field is optional; without it the hero falls back to `--brand-bg`. Documented
+  as stage 3½ in `docs/hero-photos.md`.
+- Internal: the plant hero's `aspect-ratio` moved from the `<img>` to the
+  `.plant-hero-shot` button. An `<img>` with no `src` yet is not a replaced
+  element — it lays out as its alt text — so the ratio on the image reserved a
+  text-high strip and the waiting colour showed as a bar.
+- Internal: `PHOTO_CACHE_LIMIT` 240 → 600. The mix shifted from lightbox-sized
+  photos to 8–38 KB thumbnails, so the entry count can rise while the bytes
+  stay around 30 MB.
+- Internal: `scripts/shoot.mjs --photos DIR` serves the iNaturalist photo hosts
+  from a local mirror laid out like their URLs. The list pages now load
+  photographs, which made screenshots depend on the network and race whichever
+  tiles had landed; the mirror holds the real bytes, so a capture is both
+  truthful and repeatable.
 
 ## [0.19] - 2026-08-01
 

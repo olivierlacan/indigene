@@ -19,6 +19,7 @@
     "registry:check": "node scripts/check-registry.mjs",
     "hero:harvest": "node scripts/harvest-hero-photos.mjs",
     "hero:review": "node scripts/build-hero-review.mjs",
+    "hero:colors": "node scripts/hero-colors.mjs",
     "reconcile": "node scripts/reconcile.mjs",
     "names:check": "node scripts/check-vernacular.mjs",
     "lookalikes:check": "node scripts/check-lookalikes.mjs",

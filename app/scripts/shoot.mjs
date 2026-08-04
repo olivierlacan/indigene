@@ -64,12 +64,37 @@
 //                         reader's region: the walk is what makes the app know
 //                         where "here" is, and this picks *which* page to then
 //                         photograph knowing it
+//   --photos DIR          answer iNaturalist photo requests from a local
+//                         mirror instead of the network — see below
+//
+// ## --photos, and why the shots need it
+//
+// The plant page, the plants index, a region's roster and the region cards all
+// show photographs now, and they come from iNaturalist's bucket rather than
+// from `dist/`. That makes a screenshot depend on the network twice over: it
+// can't be taken at all where outbound traffic is filtered (the sandbox these
+// are usually captured in), and even with a good connection it races — a
+// capture is a picture of whichever tiles happened to have landed.
+//
+// `--photos DIR` fixes both. It serves the photo hosts from a directory laid
+// out exactly like their URLs, so `…/photos/12345/small.jpeg` is read from
+// `DIR/photos/12345/small.jpeg`. The bytes are the real photograph's, so the
+// shot is the truth; it is just fetched from disk, so it is the *same* truth
+// every time. Mirror what you need with curl:
+//
+//   curl -sS --create-dirs -o "$DIR/photos/12345/small.jpeg" \
+//     https://inaturalist-open-data.s3.amazonaws.com/photos/12345/small.jpeg
+//
+// A photo the mirror doesn't have is failed rather than fetched, so a missing
+// file shows up as a missing picture instead of quietly going to the network
+// and reintroducing the race.
 //
 // Exists because the Playwright CLI can't set device pixel ratio directly —
 // its iPhone device descriptors force WebKit, which isn't installed here.
 // The output width always equals viewport-width × dpr; anything else means
 // the page overflows sideways (see CLAUDE.md — fix the page, don't publish).
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
+import { extname, join, resolve } from "node:path";
 import { chromium } from "playwright";
 
 const args = process.argv.slice(2);
@@ -107,6 +132,7 @@ const then = flag("--then", "");
 const open = flag("--open", "");
 const clicks = flags("--click");
 const geo = flag("--geo", "");
+const photos = flag("--photos", "");
 const [url, out] = args;
 
 if (!url || !out || !(dpr > 0) || !(vw > 0) || !(vh > 0)) {
@@ -133,6 +159,21 @@ const context = await browser.newContext({
     : {}),
 });
 const page = await context.newPage();
+
+// The photo mirror. Same two hosts the service worker knows about
+// (`public/sw.js`), and the same reasoning: a photo URL names one photo at one
+// size forever, so a file on disk is a complete and permanent answer.
+if (photos) {
+  const root = resolve(photos);
+  const TYPES = { ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" };
+  for (const host of ["inaturalist-open-data.s3.amazonaws.com", "static.inaturalist.org"]) {
+    await page.route(`https://${host}/**`, (route) => {
+      const file = join(root, new URL(route.request().url()).pathname);
+      if (!file.startsWith(root) || !existsSync(file)) return route.abort();
+      route.fulfill({ body: readFileSync(file), contentType: TYPES[extname(file).toLowerCase()] ?? "image/jpeg" });
+    });
+  }
+}
 await page.goto(url, { waitUntil: "networkidle" });
 if (picks) await walkToPicks(page, picks, stopAt);
 if (tapPick) await tapFirstPick(page);

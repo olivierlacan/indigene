@@ -105,7 +105,26 @@ npm run hero:harvest -- --region pnw   # needs network; see below
 npm run hero:review
 # open app/dist/hero-review/index.html, pick, download
 mv ~/Downloads/hero-photos.json src/data/hero-photos.json
+npm run hero:colors                    # needs network; see below
 ```
+
+## Stage 3½ — every pick gets a colour
+
+`npm run hero:colors` fills in a `color` field on any pick that lacks one: the
+photograph's average colour, as `#rrggbb`, about eight bytes each. The plant
+page paints its hero slot that colour while the photograph is still downloading,
+so the picture fades up out of its own mossy green or winter grey instead of
+appearing in an empty rectangle.
+
+It downloads only the 75 px `square` rendition (7–8 KB a pick) and averages it
+in Chromium, the same borrowed-decoder trick `_photo-quality.mjs` uses — the
+repo has no runtime dependencies and Playwright is already a dev one. Run it
+after every review round; it skips picks that already have a colour, so it is
+cheap to re-run, and `--force` redoes them all.
+
+The field is optional everywhere it's read. A picks file that has never been
+through this script works exactly as before — the slot falls back to the app's
+placeholder green.
 
 ## Stage 4 — the app reads it
 
@@ -123,6 +142,13 @@ lightbox already speaks, so the credit, the licence label and the "view original
 sighting" link come from exactly one implementation. There is no second way of
 crediting a photo in this codebase, on purpose.
 
+**The lists show the picks too** — the plants index, a region's roster, and the
+starring plant on each region card. There the drawing is *not* replaced: the
+photograph fades in over it, so a plant nobody has reviewed looks exactly as it
+always did and the row never has an empty box. See
+`app/src/components/plant-thumb.ts`, and `app/src/lib/photo.ts` for which
+rendition gets asked for and when.
+
 **Picks fall back across regions.** Reviewing 200 plants × their regions before
 anything appears would be a bad trade, so a plant with a pick for *any* region
 gets a photo everywhere, and a region-specific pick overrides it where one
@@ -138,6 +164,10 @@ The harvest needs open internet, which the build sandbox blocks. Two ways:
   `docs/hero-photos/candidates.json`. This is the normal path.
 - **Locally** — `npm run hero:harvest`, with `--region` / `--plant` / `--limit`
   to keep a trial small.
+
+`npm run hero:colors` needs network too, for the same reason and on the same
+terms — but it only fetches the 75 px renditions of picks already committed, so
+it is a much smaller errand than a harvest.
 
 It paces itself at roughly one request a second, well under iNaturalist's
 published limits, and sends a `User-Agent` identifying the project — Node can,

@@ -12,6 +12,7 @@ import type { RegionDef } from "../lib/plants";
 import { filterField, highlight, norm } from "../components/filter-field";
 import type { FilterRow, FilterSection } from "../components/filter-field";
 import { silhouetteFor } from "../components/plant-card";
+import { plantThumb } from "../components/plant-thumb";
 import { sectionHeading } from "../components/section-link";
 import { keystoneIcon } from "../components/keystone-icon";
 import { regionStatGrid } from "../components/region-stats";
@@ -69,7 +70,7 @@ export function renderRegion(main: HTMLElement, param?: string): void {
   const groups = FORM_ORDER.map((f) => {
     const inForm = sortedByCommon(plants, f);
     if (!inForm.length) return null;
-    const rows = inForm.map(filterRow);
+    const rows = inForm.map((p) => filterRow(p, region.meta.id));
     const node = el("section", {}, [
       sectionHeading(categoryHref(region, f), formIcon(f, 24), formLabel(f), fmtNumber(inForm.length)),
       el("div", { class: "card-grid" }, rows.map((r) => r.node)),
@@ -150,7 +151,7 @@ function renderCategory(
       ])
     : null;
 
-  const rows = inForm.map(filterRow);
+  const rows = inForm.map((p) => filterRow(p, region.meta.id));
 
   main.append(
     el("p", { class: "region-tag", style: "margin:0 0 0.3rem;font-size:0.9rem;color:var(--ink-soft)" }, [
@@ -237,8 +238,8 @@ function sortedByCommon(plants: Plant[], form: PlantForm): Plant[] {
 
 // The haystack carries the English name too, not only the displayed one: a
 // French reader who knows a plant as "red maple" should still find it.
-function filterRow(p: Plant): FilterRow {
-  const { node, mark } = plantRow(p);
+function filterRow(p: Plant, regionId: string): FilterRow {
+  const { node, mark } = plantRow(p, regionId);
   return { hay: norm(`${commonName(p)} ${p.common} ${p.latin}`), node, mark };
 }
 
@@ -261,7 +262,7 @@ function plantFilterField(rows: FilterRow[], sections: FilterSection[]): HTMLEle
 // with the full story living on the plant's own page. `mark` re-draws the two
 // name lines with the filter query underlined, exactly as a search result does
 // — the row says which word kept it on screen.
-function plantRow(p: Plant): { node: HTMLElement; mark: (nq: string) => void } {
+function plantRow(p: Plant, regionId: string): { node: HTMLElement; mark: (nq: string) => void } {
   const names = nameLines(p);
   const title = el("span", {});
   const sub = el("div", { class: "plant-latin", style: "font-size:0.85rem" });
@@ -270,7 +271,10 @@ function plantRow(p: Plant): { node: HTMLElement; mark: (nq: string) => void } {
     class: "card",
     style: "display:flex;gap:0.7rem;align-items:center;text-decoration:none;color:inherit;padding:0.6rem 0.8rem;margin:0;height:100%",
   }, [
-    el("div", { class: "plant-photo", "aria-hidden": "true", style: "flex:0 0 auto" }, [silhouetteFor(p.form)]),
+    // This region's photograph, not just any region's: a live oak in Florida
+    // and the same species in Maryland are not the same-looking tree, and the
+    // roster you're reading is one region's.
+    plantThumb(p.id, p.form, { regionId, attrs: { style: "flex:0 0 auto" } }),
     el("div", { style: "min-width:0" }, [
       el("div", { style: "font-weight:700" }, [
         title,

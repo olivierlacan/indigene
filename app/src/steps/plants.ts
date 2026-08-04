@@ -15,7 +15,7 @@ import { REGIONS } from "../lib/plants";
 // The same matching and the same underlining the in-page filters use, so a
 // name matches — and *looks* matched — identically wherever you type it.
 import { highlight, norm } from "../components/filter-field";
-import { silhouetteFor } from "../components/plant-card";
+import { plantThumb } from "../components/plant-thumb";
 import type { PlantForm } from "../types";
 import { t, tx, fmtNumber, getLang } from "../lib/i18n";
 import { regionName, regionShort, searchAliases, localName } from "../lib/names";
@@ -108,10 +108,15 @@ export function renderPlants(main: HTMLElement): void {
     return norm(r.common).startsWith(nq) || norm(r.latin).startsWith(nq) ? 0 : 1;
   }
 
-  // One plant as a card in the grid: the silhouette, the two name lines, and
-  // the regions it's native to as pills — the same pills an animal's page uses,
-  // so "where does this grow" looks the same wherever it's answered. The whole
-  // card is the link; there is nothing else on it to aim at.
+  // One plant as a card in the grid: its picture, the two name lines, and the
+  // regions it's native to as pills — the same pills an animal's page uses, so
+  // "where does this grow" looks the same wherever it's answered. The whole card
+  // is the link; there is nothing else on it to aim at.
+  //
+  // The picture is the form drawing until the plant's chosen photograph arrives
+  // over it — and this list is ~190 plants long, so the photographs are fetched
+  // a screenful at a time as you scroll rather than all at once. See
+  // `components/plant-thumb.ts`.
   function card(r: Row, nq: string): HTMLElement {
     // When neither displayed name contains the query, the match came from a
     // hidden name (a second common name, an alias) — show that name, so the
@@ -121,7 +126,7 @@ export function renderPlants(main: HTMLElement): void {
       : undefined;
     return el("li", {}, [
       el("a", { href: `#/plants/${r.slug}`, class: "card plant-index-card" }, [
-        el("span", { class: "plant-photo", "aria-hidden": "true", style: "flex:none" }, [silhouetteFor(r.form)]),
+        plantThumb(r.slug, r.form, { attrs: { style: "flex:none" } }),
         el("span", { class: "plant-index-text" }, [
           el("span", { class: "plant-name", style: "display:block;font-weight:700" }, highlight(r.common, nq)),
           el("span", { class: "plant-latin", style: "display:block" }, highlight(r.latin, nq)),

@@ -9,7 +9,8 @@
       "observedOn": "2025-04-11",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/485095587/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/485095587/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/485095587/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/485095587/large.jpeg",
+      "color": "#698739"
     }
   },
   "acer-macrophyllum": {
@@ -22,7 +23,8 @@
       "observedOn": "2023-07-26",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/305113974/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/305113974/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/305113974/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/305113974/large.jpeg",
+      "color": "#44786f"
     }
   },
   "acer-circinatum": {
@@ -35,7 +37,8 @@
       "observedOn": "2024-05-01",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/376084490/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/376084490/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/376084490/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/376084490/large.jpg",
+      "color": "#736f28"
     }
   },
   "acer-monspessulanum": {
@@ -48,7 +51,8 @@
       "observedOn": "2025-09-07",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/563701648/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/563701648/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/563701648/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/563701648/large.jpg",
+      "color": "#597a34"
     }
   },
   "acer-pseudoplatanus": {
@@ -61,7 +65,8 @@
       "observedOn": "2023-07-13",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/300047996/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/300047996/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/300047996/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/300047996/large.jpeg",
+      "color": "#4a5e2a"
     }
   },
   "acer-rubrum": {
@@ -74,7 +79,8 @@
       "observedOn": "2019-10-20",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54545376/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54545376/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54545376/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54545376/large.jpg",
+      "color": "#b37e2a"
     },
     "florida-central": {
       "photoId": 73911531,
@@ -85,7 +91,8 @@
       "observedOn": "2020-05-20",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73911531/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73911531/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73911531/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73911531/large.jpg",
+      "color": "#7b7351"
     }
   },
   "achillea-millefolium": {
@@ -98,7 +105,8 @@
       "observedOn": "2024-08-29",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/425016461/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/425016461/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/425016461/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/425016461/large.jpeg",
+      "color": "#919a8b"
     }
   },
   "alnus-alnobetula": {
@@ -111,7 +119,8 @@
       "observedOn": "2022-05-31",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202159113/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202159113/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202159113/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202159113/large.jpg",
+      "color": "#7c985d"
     }
   },
   "alnus-glutinosa": {
@@ -124,7 +133,8 @@
       "observedOn": "2020-09-28",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/102154723/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/102154723/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/102154723/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/102154723/large.jpg",
+      "color": "#8d9c8b"
     }
   },
   "alnus-rubra": {
@@ -137,7 +147,8 @@
       "observedOn": "2024-04-20",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/368696154/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/368696154/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/368696154/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/368696154/large.jpg",
+      "color": "#6c6f59"
     }
   },
   "amelanchier-canadensis": {
@@ -150,7 +161,8 @@
       "observedOn": "2023-06-03",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/286665801/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/286665801/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/286665801/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/286665801/large.jpg",
+      "color": "#938f4b"
     }
   },
   "anaphalis-margaritacea": {
@@ -163,7 +175,8 @@
       "observedOn": "2024-08-08",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/417521686/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/417521686/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/417521686/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/417521686/large.jpeg",
+      "color": "#5e735a"
     }
   },
   "andropogon-gerardii": {
@@ -176,7 +189,8 @@
       "observedOn": "2018-10-23",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/178573399/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/178573399/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/178573399/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/178573399/large.jpg",
+      "color": "#322d28"
     }
   },
   "anthyllis-vulneraria": {
@@ -189,7 +203,8 @@
       "observedOn": "2024-04-19",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/368154662/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/368154662/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/368154662/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/368154662/large.jpeg",
+      "color": "#777155"
     }
   },
   "aquilegia-canadensis": {
@@ -202,7 +217,8 @@
       "observedOn": "2025-05-16",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/602837725/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/602837725/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/602837725/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/602837725/large.jpg",
+      "color": "#6f801f"
     }
   },
   "aquilegia-formosa": {
@@ -215,7 +231,8 @@
       "observedOn": "2024-08-10",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/418323576/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/418323576/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/418323576/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/418323576/large.jpeg",
+      "color": "#3c2b1d"
     }
   },
   "arbutus-unedo": {
@@ -228,7 +245,8 @@
       "observedOn": "2019-10-06",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/53392503/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/53392503/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/53392503/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/53392503/large.jpg",
+      "color": "#839e64"
     }
   },
   "arctostaphylos-uva-ursi": {
@@ -241,7 +259,8 @@
       "observedOn": "2026-07-07",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/696128869/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/696128869/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/696128869/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/696128869/large.jpg",
+      "color": "#6e6a2f"
     }
   },
   "asclepias-incarnata": {
@@ -254,7 +273,8 @@
       "observedOn": "2020-08-06",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/88638487/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/88638487/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/88638487/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/88638487/large.jpg",
+      "color": "#839046"
     }
   },
   "asclepias-speciosa": {
@@ -267,7 +287,8 @@
       "observedOn": "2026-06-20",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/682807359/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/682807359/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/682807359/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/682807359/large.jpg",
+      "color": "#727f54"
     }
   },
   "asclepias-tuberosa": {
@@ -280,7 +301,8 @@
       "observedOn": "2019-07-15",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/45041391/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/45041391/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/45041391/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/45041391/large.jpeg",
+      "color": "#a25914"
     },
     "florida-central": {
       "photoId": 370102883,
@@ -291,7 +313,8 @@
       "observedOn": "2024-04-24",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/370102883/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/370102883/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/370102883/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/370102883/large.jpg",
+      "color": "#736c43"
     }
   },
   "baptisia-australis": {
@@ -304,7 +327,8 @@
       "observedOn": "2025-07-01",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/531548260/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/531548260/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/531548260/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/531548260/large.jpg",
+      "color": "#727f5e"
     }
   },
   "berberis-aquifolium": {
@@ -317,7 +341,8 @@
       "observedOn": "2020-04-22",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/68127565/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/68127565/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/68127565/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/68127565/large.jpg",
+      "color": "#657459"
     }
   },
   "betula-pendula": {
@@ -330,7 +355,8 @@
       "observedOn": "2024-11-01",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/447129878/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/447129878/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/447129878/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/447129878/large.jpeg",
+      "color": "#697260"
     }
   },
   "betula-nigra": {
@@ -343,7 +369,8 @@
       "observedOn": "2023-09-29",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/326607951/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/326607951/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/326607951/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/326607951/large.jpg",
+      "color": "#7a7e51"
     }
   },
   "bursera-simaruba": {
@@ -356,7 +383,8 @@
       "observedOn": "2023-11-17",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/336151673/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/336151673/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/336151673/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/336151673/large.jpg",
+      "color": "#5c8036"
     }
   },
   "brachypodium-retusum": {
@@ -369,7 +397,8 @@
       "observedOn": "2026-04-19",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/658994318/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/658994318/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/658994318/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/658994318/large.jpg",
+      "color": "#928b69"
     }
   },
   "callicarpa-americana": {
@@ -382,7 +411,8 @@
       "observedOn": "2022-09-16",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/230698921/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/230698921/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/230698921/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/230698921/large.jpeg",
+      "color": "#648233"
     }
   },
   "camassia-quamash": {
@@ -395,7 +425,8 @@
       "observedOn": "2026-04-07",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/635007454/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/635007454/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/635007454/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/635007454/large.jpg",
+      "color": "#70797f"
     }
   },
   "carex-pensylvanica": {
@@ -408,7 +439,8 @@
       "observedOn": "2021-04-28",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/123744218/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/123744218/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/123744218/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/123744218/large.jpeg",
+      "color": "#322f16"
     }
   },
   "carpinus-betulus": {
@@ -421,7 +453,8 @@
       "observedOn": "2023-07-10",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/299189341/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/299189341/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/299189341/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/299189341/large.jpeg",
+      "color": "#5f715f"
     },
     "france-continental": {
       "photoId": 276521707,
@@ -432,7 +465,8 @@
       "observedOn": "2023-05-04",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/276521707/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/276521707/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/276521707/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/276521707/large.jpeg",
+      "color": "#3d5a22"
     }
   },
   "ceanothus-americanus": {
@@ -445,7 +479,8 @@
       "observedOn": "2018-06-20",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/20061797/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/20061797/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/20061797/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/20061797/large.jpeg",
+      "color": "#4b6629"
     }
   },
   "celtis-australis": {
@@ -458,7 +493,8 @@
       "observedOn": "2022-04-15",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/188304457/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/188304457/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/188304457/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/188304457/large.jpg",
+      "color": "#779641"
     }
   },
   "centaurea-scabiosa": {
@@ -471,7 +507,8 @@
       "observedOn": "2021-05-24",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/131236436/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/131236436/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/131236436/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/131236436/large.jpeg",
+      "color": "#7a6e59"
     }
   },
   "cephalanthus-occidentalis": {
@@ -484,7 +521,8 @@
       "observedOn": "2018-08-07",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/22730978/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/22730978/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/22730978/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/22730978/large.jpeg",
+      "color": "#5c7d45"
     }
   },
   "cercis-canadensis": {
@@ -497,7 +535,8 @@
       "observedOn": "2022-04-21",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/189725291/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/189725291/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/189725291/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/189725291/large.jpg",
+      "color": "#878063"
     }
   },
   "chionanthus-virginicus": {
@@ -510,7 +549,8 @@
       "observedOn": "2022-04-11",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/245943998/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/245943998/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/245943998/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/245943998/large.jpg",
+      "color": "#838058"
     }
   },
   "chrysobalanus-icaco": {
@@ -523,7 +563,8 @@
       "observedOn": "2026-07-18",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/701257790/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/701257790/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/701257790/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/701257790/large.jpg",
+      "color": "#788b11"
     }
   },
   "cistus-albidus": {
@@ -536,7 +577,8 @@
       "observedOn": "2021-02-23",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/113776894/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/113776894/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/113776894/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/113776894/large.jpg",
+      "color": "#826963"
     }
   },
   "clematis-flammula": {
@@ -549,7 +591,8 @@
       "observedOn": "2026-07-27",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/706518738/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/706518738/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/706518738/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/706518738/large.jpg",
+      "color": "#65674f"
     }
   },
   "clematis-vitalba": {
@@ -562,7 +605,8 @@
       "observedOn": "2019-07-12",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/44714301/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/44714301/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/44714301/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/44714301/large.jpg",
+      "color": "#678c51"
     }
   },
   "coccoloba-uvifera": {
@@ -575,7 +619,8 @@
       "observedOn": "2026-01-07",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/613727776/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/613727776/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/613727776/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/613727776/large.jpg",
+      "color": "#8d8853"
     }
   },
   "coccoloba-diversifolia": {
@@ -588,7 +633,8 @@
       "observedOn": "2018-12-11",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/249648848/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/249648848/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/249648848/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/249648848/large.jpg",
+      "color": "#4f784e"
     }
   },
   "conocarpus-erectus": {
@@ -601,7 +647,8 @@
       "observedOn": "2022-02-19",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/181270852/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/181270852/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/181270852/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/181270852/large.jpg",
+      "color": "#6c8d25"
     }
   },
   "coreopsis-leavenworthii": {
@@ -614,7 +661,8 @@
       "observedOn": "2021-05-17",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/133778482/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/133778482/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/133778482/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/133778482/large.jpeg",
+      "color": "#635b3e"
     }
   },
   "cornus-florida": {
@@ -627,7 +675,8 @@
       "observedOn": "2019-04-26",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41873212/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41873212/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41873212/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41873212/large.jpeg",
+      "color": "#768e5a"
     }
   },
   "cornus-mas": {
@@ -640,7 +689,8 @@
       "observedOn": "2018-03-30",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/341282613/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/341282613/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/341282613/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/341282613/large.jpg",
+      "color": "#807953"
     }
   },
   "cornus-nuttallii": {
@@ -653,7 +703,8 @@
       "observedOn": "2024-04-16",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/367266789/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/367266789/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/367266789/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/367266789/large.jpeg",
+      "color": "#65685b"
     }
   },
   "cornus-sanguinea": {
@@ -666,7 +717,8 @@
       "observedOn": "2021-08-12",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/150290258/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/150290258/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/150290258/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/150290258/large.jpeg",
+      "color": "#4f733b"
     }
   },
   "cornus-sericea": {
@@ -679,7 +731,8 @@
       "observedOn": "2025-05-31",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/513385063/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/513385063/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/513385063/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/513385063/large.jpg",
+      "color": "#506834"
     },
     "pnw": {
       "photoId": 17856122,
@@ -690,7 +743,8 @@
       "observedOn": "2018-05-12",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/17856122/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/17856122/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/17856122/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/17856122/large.jpeg",
+      "color": "#52672e"
     }
   },
   "corylus-avellana": {
@@ -703,7 +757,8 @@
       "observedOn": "2020-04-12",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66636366/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66636366/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66636366/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66636366/large.jpg",
+      "color": "#78775c"
     }
   },
   "corylus-americana": {
@@ -716,7 +771,8 @@
       "observedOn": "2022-05-18",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/198760563/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/198760563/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/198760563/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/198760563/large.jpg",
+      "color": "#6a8850"
     }
   },
   "corylus-cornuta": {
@@ -729,7 +785,8 @@
       "observedOn": "2022-06-12",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/205654288/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/205654288/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/205654288/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/205654288/large.jpeg",
+      "color": "#818649"
     }
   },
   "crataegus-laevigata": {
@@ -742,7 +799,8 @@
       "observedOn": "2023-04-29",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/272551454/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/272551454/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/272551454/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/272551454/large.jpeg",
+      "color": "#555e42"
     }
   },
   "crataegus-monogyna": {
@@ -755,7 +813,8 @@
       "observedOn": "2019-04-22",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/35588817/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/35588817/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/35588817/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/35588817/large.jpeg",
+      "color": "#4e733a"
     }
   },
   "digitalis-purpurea": {
@@ -768,7 +827,8 @@
       "observedOn": "2025-07-10",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/534539953/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/534539953/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/534539953/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/534539953/large.jpg",
+      "color": "#85857c"
     }
   },
   "deschampsia-cespitosa": {
@@ -781,7 +841,8 @@
       "observedOn": "2024-09-21",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/461524187/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/461524187/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/461524187/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/461524187/large.jpg",
+      "color": "#6a7249"
     }
   },
   "dryas-octopetala": {
@@ -794,7 +855,8 @@
       "observedOn": "2022-05-26",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/200967728/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/200967728/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/200967728/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/200967728/large.jpeg",
+      "color": "#928669"
     }
   },
   "dryopteris-filix-mas": {
@@ -807,7 +869,8 @@
       "observedOn": "2025-09-13",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/566184484/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/566184484/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/566184484/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/566184484/large.jpg",
+      "color": "#79894f"
     }
   },
   "echinacea-purpurea": {
@@ -820,7 +883,8 @@
       "observedOn": "2021-05-03",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/126021575/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/126021575/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/126021575/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/126021575/large.jpg",
+      "color": "#9f6b97"
     }
   },
   "eriophyllum-lanatum": {
@@ -833,7 +897,8 @@
       "observedOn": "2021-05-22",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/130796354/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/130796354/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/130796354/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/130796354/large.jpeg",
+      "color": "#5d5636"
     }
   },
   "elymus-glaucus": {
@@ -846,7 +911,8 @@
       "observedOn": "2022-09-19",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/243313181/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/243313181/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/243313181/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/243313181/large.jpg",
+      "color": "#716f49"
     }
   },
   "euonymus-europaeus": {
@@ -859,7 +925,8 @@
       "observedOn": "2016-09-22",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/5039786/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/5039786/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/5039786/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/5039786/large.jpg",
+      "color": "#75673d"
     }
   },
   "euphorbia-characias": {
@@ -872,7 +939,8 @@
       "observedOn": "2025-02-21",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/472528042/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/472528042/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/472528042/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/472528042/large.jpg",
+      "color": "#697f62"
     }
   },
   "eutrochium-purpureum": {
@@ -885,7 +953,8 @@
       "observedOn": "2023-08-11",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/309479177/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/309479177/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/309479177/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/309479177/large.jpg",
+      "color": "#6d8057"
     }
   },
   "fagus-sylvatica": {
@@ -898,7 +967,8 @@
       "observedOn": "2025-07-24",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/542218503/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/542218503/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/542218503/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/542218503/large.jpg",
+      "color": "#6d7c43"
     }
   },
   "festuca-roemeri": {
@@ -911,7 +981,8 @@
       "observedOn": "2020-10-18",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/101080420/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/101080420/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/101080420/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/101080420/large.jpeg",
+      "color": "#6b5f56"
     }
   },
   "fragaria-chiloensis": {
@@ -924,7 +995,8 @@
       "observedOn": "2024-02-25",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/353745215/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/353745215/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/353745215/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/353745215/large.jpeg",
+      "color": "#6a7155"
     }
   },
   "fragaria-vesca": {
@@ -937,7 +1009,8 @@
       "observedOn": "2019-06-15",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41996209/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41996209/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41996209/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41996209/large.jpg",
+      "color": "#709641"
     }
   },
   "fragaria-virginiana": {
@@ -950,7 +1023,8 @@
       "observedOn": "2025-04-29",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/517900188/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/517900188/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/517900188/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/517900188/large.jpg",
+      "color": "#6b763e"
     }
   },
   "frangula-alnus": {
@@ -963,7 +1037,8 @@
       "observedOn": "2025-09-21",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/573139607/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/573139607/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/573139607/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/573139607/large.jpg",
+      "color": "#646f61"
     }
   },
   "fraxinus-latifolia": {
@@ -976,7 +1051,8 @@
       "observedOn": "2026-04-25",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/645558192/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/645558192/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/645558192/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/645558192/large.jpg",
+      "color": "#4e574f"
     }
   },
   "fraxinus-ornus": {
@@ -989,7 +1065,8 @@
       "observedOn": "2019-05-03",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/37784221/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/37784221/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/37784221/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/37784221/large.jpg",
+      "color": "#707c4f"
     }
   },
   "gaultheria-shallon": {
@@ -1002,7 +1079,8 @@
       "observedOn": "2024-04-14",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/366749402/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/366749402/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/366749402/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/366749402/large.jpeg",
+      "color": "#8b866f"
     }
   },
   "gentiana-lutea": {
@@ -1015,7 +1093,8 @@
       "observedOn": "2019-07-20",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/84174256/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/84174256/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/84174256/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/84174256/large.jpeg",
+      "color": "#6a823e"
     }
   },
   "geranium-maculatum": {
@@ -1028,7 +1107,8 @@
       "observedOn": "2021-05-09",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/128475066/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/128475066/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/128475066/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/128475066/large.jpeg",
+      "color": "#3d4e10"
     }
   },
   "hamamelis-virginiana": {
@@ -1041,7 +1121,8 @@
       "observedOn": "2025-10-04",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/576166570/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/576166570/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/576166570/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/576166570/large.jpg",
+      "color": "#444747"
     }
   },
   "hamelia-patens": {
@@ -1054,7 +1135,8 @@
       "observedOn": "2022-09-04",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/228020469/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/228020469/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/228020469/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/228020469/large.jpeg",
+      "color": "#7d9557"
     },
     "florida-south": {
       "photoId": 66276227,
@@ -1065,7 +1147,8 @@
       "observedOn": "2020-04-09",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66276227/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66276227/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66276227/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66276227/large.jpg",
+      "color": "#706434"
     }
   },
   "hedera-helix": {
@@ -1078,7 +1161,8 @@
       "observedOn": "2019-10-25",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54941942/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54941942/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54941942/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54941942/large.jpeg",
+      "color": "#515935"
     }
   },
   "helianthemum-nummularium": {
@@ -1091,7 +1175,8 @@
       "observedOn": "2024-07-20",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/410169394/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/410169394/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/410169394/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/410169394/large.jpg",
+      "color": "#766a22"
     }
   },
   "helianthus-debilis": {
@@ -1104,7 +1189,8 @@
       "observedOn": "2026-01-12",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/607998041/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/607998041/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/607998041/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/607998041/large.jpg",
+      "color": "#796f49"
     },
     "florida-south": {
       "photoId": 462192870,
@@ -1115,7 +1201,8 @@
       "observedOn": "2025-01-06",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/462192870/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/462192870/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/462192870/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/462192870/large.jpeg",
+      "color": "#63794a"
     }
   },
   "helichrysum-stoechas": {
@@ -1128,7 +1215,8 @@
       "observedOn": "2020-05-17",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73538022/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73538022/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73538022/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73538022/large.jpeg",
+      "color": "#4e4e26"
     }
   },
   "holodiscus-discolor": {
@@ -1141,7 +1229,8 @@
       "observedOn": "2019-07-20",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/45547133/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/45547133/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/45547133/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/45547133/large.jpeg",
+      "color": "#546a47"
     }
   },
   "humulus-lupulus": {
@@ -1154,7 +1243,8 @@
       "observedOn": "2020-09-22",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/96668903/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/96668903/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/96668903/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/96668903/large.jpg",
+      "color": "#68715b"
     }
   },
   "hyacinthoides-non-scripta": {
@@ -1167,7 +1257,8 @@
       "observedOn": "2024-05-16",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/391356888/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/391356888/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/391356888/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/391356888/large.jpg",
+      "color": "#5c4e7b"
     }
   },
   "ilex-aquifolium": {
@@ -1180,7 +1271,8 @@
       "observedOn": "2023-11-05",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/338255746/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/338255746/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/338255746/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/338255746/large.jpeg",
+      "color": "#383418"
     }
   },
   "ilex-verticillata": {
@@ -1193,7 +1285,8 @@
       "observedOn": "2023-09-09",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/318338489/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/318338489/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/318338489/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/318338489/large.jpeg",
+      "color": "#7f7c64"
     }
   },
   "ilex-vomitoria": {
@@ -1206,7 +1299,8 @@
       "observedOn": "2021-11-26",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/170384291/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/170384291/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/170384291/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/170384291/large.jpg",
+      "color": "#7f6d4b"
     }
   },
   "juniperus-communis": {
@@ -1219,7 +1313,8 @@
       "observedOn": "2026-04-20",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/641406909/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/641406909/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/641406909/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/641406909/large.jpg",
+      "color": "#687132"
     }
   },
   "juniperus-oxycedrus": {
@@ -1232,7 +1327,8 @@
       "observedOn": "2021-03-12",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/117245216/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/117245216/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/117245216/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/117245216/large.jpg",
+      "color": "#807d6c"
     }
   },
   "knautia-arvensis": {
@@ -1245,7 +1341,8 @@
       "observedOn": "2020-05-16",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73096126/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73096126/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73096126/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73096126/large.jpg",
+      "color": "#63723a"
     }
   },
   "larix-decidua": {
@@ -1258,7 +1355,8 @@
       "observedOn": "2018-06-10",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/19605299/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/19605299/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/19605299/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/19605299/large.jpg",
+      "color": "#757e56"
     }
   },
   "lavandula-angustifolia": {
@@ -1271,7 +1369,8 @@
       "observedOn": "2023-06-11",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/289572205/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/289572205/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/289572205/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/289572205/large.jpeg",
+      "color": "#5f7039"
     }
   },
   "liatris-gracilis": {
@@ -1284,7 +1383,8 @@
       "observedOn": "2021-10-11",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/162946962/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/162946962/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/162946962/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/162946962/large.jpg",
+      "color": "#6f7060"
     }
   },
   "ligustrum-vulgare": {
@@ -1297,7 +1397,8 @@
       "observedOn": "2020-10-24",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/101958444/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/101958444/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/101958444/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/101958444/large.jpeg",
+      "color": "#5c734a"
     }
   },
   "lobelia-cardinalis": {
@@ -1310,7 +1411,8 @@
       "observedOn": "2018-08-17",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/23316200/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/23316200/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/23316200/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/23316200/large.jpg",
+      "color": "#625b47"
     }
   },
   "lonicera-ciliosa": {
@@ -1323,7 +1425,8 @@
       "observedOn": "2020-05-26",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75289805/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75289805/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75289805/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75289805/large.jpg",
+      "color": "#676b42"
     }
   },
   "lonicera-involucrata": {
@@ -1336,7 +1439,8 @@
       "observedOn": "2020-05-27",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75484172/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75484172/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75484172/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75484172/large.jpg",
+      "color": "#567528"
     }
   },
   "lonicera-periclymenum": {
@@ -1349,7 +1453,8 @@
       "observedOn": "2024-06-30",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/408071190/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/408071190/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/408071190/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/408071190/large.jpeg",
+      "color": "#465925"
     }
   },
   "lonicera-sempervirens": {
@@ -1362,7 +1467,8 @@
       "observedOn": "2026-04-29",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/651813752/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/651813752/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/651813752/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/651813752/large.jpg",
+      "color": "#77743d"
     }
   },
   "lotus-corniculatus": {
@@ -1375,7 +1481,8 @@
       "observedOn": "2020-05-26",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75229195/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75229195/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75229195/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75229195/large.jpeg",
+      "color": "#706820"
     },
     "france-alpine": {
       "photoId": 461627173,
@@ -1386,7 +1493,8 @@
       "observedOn": "2020-08-27",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/461627173/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/461627173/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/461627173/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/461627173/large.jpg",
+      "color": "#696213"
     }
   },
   "lupinus-polyphyllus": {
@@ -1399,7 +1507,8 @@
       "observedOn": "2026-06-03",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/672293042/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/672293042/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/672293042/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/672293042/large.jpg",
+      "color": "#797f67"
     }
   },
   "magnolia-grandiflora": {
@@ -1412,7 +1521,8 @@
       "observedOn": "2022-12-06",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/246812927/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/246812927/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/246812927/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/246812927/large.jpg",
+      "color": "#5e5e53"
     }
   },
   "mimosa-strigillosa": {
@@ -1425,7 +1535,8 @@
       "observedOn": "2018-10-20",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/26931009/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/26931009/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/26931009/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/26931009/large.jpg",
+      "color": "#62714a"
     }
   },
   "monarda-fistulosa": {
@@ -1438,7 +1549,8 @@
       "observedOn": "2023-08-05",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/307546805/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/307546805/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/307546805/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/307546805/large.jpeg",
+      "color": "#6b6c66"
     }
   },
   "monarda-punctata": {
@@ -1451,7 +1563,8 @@
       "observedOn": "2025-09-03",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/561862024/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/561862024/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/561862024/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/561862024/large.jpg",
+      "color": "#70865b"
     }
   },
   "muhlenbergia-capillaris": {
@@ -1464,7 +1577,8 @@
       "observedOn": "2021-10-11",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/163020312/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/163020312/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/163020312/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/163020312/large.jpg",
+      "color": "#7d7853"
     },
     "florida-south": {
       "photoId": 42096278,
@@ -1475,7 +1589,8 @@
       "observedOn": "2018-10-24",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/42096278/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/42096278/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/42096278/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/42096278/large.jpg",
+      "color": "#6d7273"
     }
   },
   "morella-cerifera": {
@@ -1488,7 +1603,8 @@
       "observedOn": "2021-09-24",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159372415/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159372415/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159372415/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159372415/large.jpg",
+      "color": "#788662"
     }
   },
   "myrcianthes-fragrans": {
@@ -1501,7 +1617,8 @@
       "observedOn": "2023-07-05",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/297261391/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/297261391/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/297261391/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/297261391/large.jpg",
+      "color": "#707f3f"
     },
     "florida-south": {
       "photoId": 33964142,
@@ -1512,7 +1629,8 @@
       "observedOn": "2019-04-01",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33964142/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33964142/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33964142/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33964142/large.jpg",
+      "color": "#343a24"
     }
   },
   "myrtus-communis": {
@@ -1525,7 +1643,8 @@
       "observedOn": "2025-01-25",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/466077026/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/466077026/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/466077026/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/466077026/large.jpg",
+      "color": "#4a5738"
     }
   },
   "origanum-vulgare": {
@@ -1538,7 +1657,8 @@
       "observedOn": "2026-06-18",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/681502647/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/681502647/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/681502647/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/681502647/large.jpg",
+      "color": "#5a6035"
     }
   },
   "packera-aurea": {
@@ -1551,7 +1671,8 @@
       "observedOn": "2021-05-13",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/129740902/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/129740902/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/129740902/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/129740902/large.jpg",
+      "color": "#386115"
     }
   },
   "panicum-virgatum": {
@@ -1564,7 +1685,8 @@
       "observedOn": "2026-06-28",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/688020223/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/688020223/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/688020223/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/688020223/large.jpg",
+      "color": "#6c8844"
     }
   },
   "parthenocissus-quinquefolia": {
@@ -1577,7 +1699,8 @@
       "observedOn": "2021-09-27",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/160649626/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/160649626/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/160649626/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/160649626/large.jpeg",
+      "color": "#8f7146"
     }
   },
   "passiflora-incarnata": {
@@ -1590,7 +1713,8 @@
       "observedOn": "2006-04-28",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/344893723/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/344893723/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/344893723/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/344893723/large.jpg",
+      "color": "#50533c"
     }
   },
   "penstemon-digitalis": {
@@ -1603,7 +1727,8 @@
       "observedOn": "2025-06-12",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/570725776/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/570725776/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/570725776/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/570725776/large.jpg",
+      "color": "#888f65"
     }
   },
   "penstemon-serrulatus": {
@@ -1616,7 +1741,8 @@
       "observedOn": "2023-07-09",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/298610451/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/298610451/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/298610451/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/298610451/large.jpg",
+      "color": "#766f5e"
     }
   },
   "phillyrea-angustifolia": {
@@ -1629,7 +1755,8 @@
       "observedOn": "2024-10-05",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/438558384/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/438558384/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/438558384/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/438558384/large.jpeg",
+      "color": "#716f4e"
     }
   },
   "physocarpus-capitatus": {
@@ -1642,7 +1769,8 @@
       "observedOn": "2026-05-17",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/661706578/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/661706578/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/661706578/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/661706578/large.jpg",
+      "color": "#77774c"
     }
   },
   "physocarpus-opulifolius": {
@@ -1655,7 +1783,8 @@
       "observedOn": "2022-06-24",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/208947504/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/208947504/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/208947504/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/208947504/large.jpeg",
+      "color": "#6a856b"
     }
   },
   "picea-abies": {
@@ -1668,7 +1797,8 @@
       "observedOn": "2026-05-23",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/665930705/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/665930705/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/665930705/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/665930705/large.jpg",
+      "color": "#6a7f53"
     }
   },
   "pinus-cembra": {
@@ -1681,7 +1811,8 @@
       "observedOn": "2022-06-16",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/207092201/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/207092201/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/207092201/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/207092201/large.jpeg",
+      "color": "#5e7257"
     }
   },
   "pinus-halepensis": {
@@ -1694,7 +1825,8 @@
       "observedOn": "2024-05-25",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/385997317/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/385997317/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/385997317/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/385997317/large.jpeg",
+      "color": "#5a7981"
     }
   },
   "pinus-palustris": {
@@ -1707,7 +1839,8 @@
       "observedOn": "2025-08-24",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/557407774/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/557407774/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/557407774/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/557407774/large.jpg",
+      "color": "#63867a"
     }
   },
   "pinus-sylvestris": {
@@ -1720,7 +1853,8 @@
       "observedOn": "2022-04-09",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/187147410/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/187147410/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/187147410/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/187147410/large.jpg",
+      "color": "#777a56"
     }
   },
   "pistacia-lentiscus": {
@@ -1733,7 +1867,8 @@
       "observedOn": "2025-04-20",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/488824341/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/488824341/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/488824341/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/488824341/large.jpeg",
+      "color": "#625d2d"
     }
   },
   "polystichum-acrostichoides": {
@@ -1746,7 +1881,8 @@
       "observedOn": "2022-05-29",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202585617/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202585617/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202585617/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202585617/large.jpeg",
+      "color": "#727c58"
     }
   },
   "polystichum-munitum": {
@@ -1759,7 +1895,8 @@
       "observedOn": "2023-05-24",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/282936660/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/282936660/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/282936660/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/282936660/large.jpg",
+      "color": "#59701f"
     }
   },
   "populus-trichocarpa": {
@@ -1772,7 +1909,8 @@
       "observedOn": "2020-04-19",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67703344/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67703344/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67703344/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67703344/large.jpg",
+      "color": "#868869"
     }
   },
   "primula-veris": {
@@ -1785,7 +1923,8 @@
       "observedOn": "2021-04-22",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/247991747/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/247991747/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/247991747/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/247991747/large.jpeg",
+      "color": "#728373"
     }
   },
   "prunus-avium": {
@@ -1798,7 +1937,8 @@
       "observedOn": "2022-04-13",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/187920569/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/187920569/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/187920569/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/187920569/large.jpg",
+      "color": "#596047"
     }
   },
   "prunus-emarginata": {
@@ -1811,7 +1951,8 @@
       "observedOn": "2023-02-18",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/256890723/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/256890723/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/256890723/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/256890723/large.jpg",
+      "color": "#7d765b"
     }
   },
   "prunus-mahaleb": {
@@ -1824,7 +1965,8 @@
       "observedOn": "2025-04-12",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/485537810/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/485537810/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/485537810/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/485537810/large.jpg",
+      "color": "#84963f"
     }
   },
   "prunus-serotina": {
@@ -1837,7 +1979,8 @@
       "observedOn": "2018-05-25",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/18571083/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/18571083/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/18571083/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/18571083/large.jpg",
+      "color": "#547628"
     }
   },
   "prunus-spinosa": {
@@ -1850,7 +1993,8 @@
       "observedOn": "2022-10-01",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/234242119/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/234242119/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/234242119/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/234242119/large.jpg",
+      "color": "#677253"
     }
   },
   "pseudotsuga-menziesii": {
@@ -1863,7 +2007,8 @@
       "observedOn": "2021-04-19",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/121926951/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/121926951/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/121926951/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/121926951/large.jpeg",
+      "color": "#67818e"
     }
   },
   "psychotria-nervosa": {
@@ -1876,7 +2021,8 @@
       "observedOn": "2021-03-20",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/121385197/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/121385197/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/121385197/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/121385197/large.jpeg",
+      "color": "#657d41"
     }
   },
   "quercus-alba": {
@@ -1889,7 +2035,8 @@
       "observedOn": "2019-08-24",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/63892986/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/63892986/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/63892986/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/63892986/large.jpeg",
+      "color": "#667e68"
     }
   },
   "quercus-garryana": {
@@ -1902,7 +2049,8 @@
       "observedOn": "2017-10-06",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/44825543/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/44825543/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/44825543/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/44825543/large.jpeg",
+      "color": "#707d81"
     }
   },
   "quercus-ilex": {
@@ -1915,7 +2063,8 @@
       "observedOn": "2024-07-17",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/411372250/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/411372250/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/411372250/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/411372250/large.jpeg",
+      "color": "#61603b"
     }
   },
   "quercus-petraea": {
@@ -1928,7 +2077,8 @@
       "observedOn": "2024-05-25",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/387056799/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/387056799/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/387056799/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/387056799/large.jpg",
+      "color": "#407a30"
     }
   },
   "quercus-pubescens": {
@@ -1941,7 +2091,8 @@
       "observedOn": "2023-04-27",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/272048933/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/272048933/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/272048933/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/272048933/large.jpeg",
+      "color": "#79ad1d"
     }
   },
   "quercus-robur": {
@@ -1954,7 +2105,8 @@
       "observedOn": "2010-03-14",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/454986415/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/454986415/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/454986415/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/454986415/large.jpeg",
+      "color": "#6d6254"
     }
   },
   "quercus-rubra": {
@@ -1967,7 +2119,8 @@
       "observedOn": "2023-05-21",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/301028051/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/301028051/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/301028051/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/301028051/large.jpeg",
+      "color": "#5a7c21"
     }
   },
   "quercus-virginiana": {
@@ -1980,7 +2133,8 @@
       "observedOn": "2010-04-18",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/58356780/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/58356780/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/58356780/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/58356780/large.jpg",
+      "color": "#697157"
     },
     "florida-south": {
       "photoId": 355855948,
@@ -1991,7 +2145,8 @@
       "observedOn": "2024-02-22",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/355855948/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/355855948/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/355855948/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/355855948/large.jpg",
+      "color": "#4e472b"
     }
   },
   "rhamnus-alaternus": {
@@ -2004,7 +2159,8 @@
       "observedOn": "2023-04-29",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/274032719/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/274032719/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/274032719/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/274032719/large.jpeg",
+      "color": "#6e7645"
     }
   },
   "rhododendron-ferrugineum": {
@@ -2017,7 +2173,8 @@
       "observedOn": "2018-07-18",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/100871358/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/100871358/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/100871358/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/100871358/large.jpeg",
+      "color": "#574f2a"
     }
   },
   "ribes-sanguineum": {
@@ -2030,7 +2187,8 @@
       "observedOn": "2020-04-11",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66563623/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66563623/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66563623/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66563623/large.jpg",
+      "color": "#789465"
     }
   },
   "rivina-humilis": {
@@ -2043,7 +2201,8 @@
       "observedOn": "2026-02-17",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/618326010/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/618326010/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/618326010/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/618326010/large.jpg",
+      "color": "#7b833d"
     }
   },
   "rosa-canina": {
@@ -2056,7 +2215,8 @@
       "observedOn": "2022-05-14",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202153626/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202153626/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202153626/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202153626/large.jpg",
+      "color": "#4d5236"
     }
   },
   "rosa-nutkana": {
@@ -2069,7 +2229,8 @@
       "observedOn": "2021-06-05",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/134208143/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/134208143/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/134208143/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/134208143/large.jpg",
+      "color": "#4e8f4f"
     }
   },
   "rubus-spectabilis": {
@@ -2082,7 +2243,8 @@
       "observedOn": "2026-04-07",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/634851834/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/634851834/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/634851834/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/634851834/large.jpg",
+      "color": "#68743d"
     }
   },
   "rudbeckia-fulgida": {
@@ -2095,7 +2257,8 @@
       "observedOn": "2023-08-04",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/308742129/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/308742129/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/308742129/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/308742129/large.jpeg",
+      "color": "#4d5c25"
     }
   },
   "sabal-palmetto": {
@@ -2108,7 +2271,8 @@
       "observedOn": "2020-07-08",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/83321425/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/83321425/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/83321425/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/83321425/large.jpeg",
+      "color": "#a7aca6"
     },
     "florida-south": {
       "photoId": 659768552,
@@ -2119,7 +2283,8 @@
       "observedOn": "2026-04-30",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/659768552/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/659768552/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/659768552/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/659768552/large.jpg",
+      "color": "#596064"
     }
   },
   "salix-caprea": {
@@ -2132,7 +2297,8 @@
       "observedOn": "2008-03-05",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/412329891/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/412329891/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/412329891/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/412329891/large.jpg",
+      "color": "#6d674b"
     },
     "france-alpine": {
       "photoId": 202771028,
@@ -2143,7 +2309,8 @@
       "observedOn": "2022-06-02",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202771028/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202771028/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202771028/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202771028/large.jpeg",
+      "color": "#72893c"
     }
   },
   "salix-scouleriana": {
@@ -2156,7 +2323,8 @@
       "observedOn": "2022-11-13",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/257758284/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/257758284/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/257758284/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/257758284/large.jpeg",
+      "color": "#6d8785"
     }
   },
   "salvia-coccinea": {
@@ -2169,7 +2337,8 @@
       "observedOn": "2025-07-09",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/534634070/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/534634070/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/534634070/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/534634070/large.jpg",
+      "color": "#94763d"
     },
     "florida-south": {
       "photoId": 128049183,
@@ -2180,7 +2349,8 @@
       "observedOn": "2021-05-10",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/128049183/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/128049183/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/128049183/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/128049183/large.jpeg",
+      "color": "#646242"
     }
   },
   "salvia-pratensis": {
@@ -2193,7 +2363,8 @@
       "observedOn": "2020-04-17",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67315566/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67315566/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67315566/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67315566/large.jpeg",
+      "color": "#81815f"
     }
   },
   "sambucus-nigra": {
@@ -2206,7 +2377,8 @@
       "observedOn": "2019-05-24",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/149948792/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/149948792/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/149948792/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/149948792/large.jpeg",
+      "color": "#3b553b"
     }
   },
   "schizachyrium-scoparium": {
@@ -2219,7 +2391,8 @@
       "observedOn": "2023-10-05",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/325664379/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/325664379/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/325664379/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/325664379/large.jpg",
+      "color": "#7a6952"
     }
   },
   "serenoa-repens": {
@@ -2232,7 +2405,8 @@
       "observedOn": "2024-02-24",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/353425589/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/353425589/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/353425589/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/353425589/large.jpeg",
+      "color": "#78765e"
     },
     "florida-south": {
       "photoId": 544635200,
@@ -2243,7 +2417,8 @@
       "observedOn": "2025-07-29",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/544635200/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/544635200/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/544635200/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/544635200/large.jpg",
+      "color": "#7292af"
     }
   },
   "solidago-lepida": {
@@ -2256,7 +2431,8 @@
       "observedOn": "2025-08-06",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/552965141/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/552965141/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/552965141/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/552965141/large.jpg",
+      "color": "#79823b"
     }
   },
   "solidago-rugosa": {
@@ -2269,7 +2445,8 @@
       "observedOn": "2020-09-18",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/97664806/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/97664806/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/97664806/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/97664806/large.jpg",
+      "color": "#627c2c"
     }
   },
   "sophora-tomentosa-truncata": {
@@ -2282,7 +2459,8 @@
       "observedOn": "2021-09-25",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159653850/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159653850/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159653850/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159653850/large.jpeg",
+      "color": "#658a18"
     }
   },
   "sorbus-aucuparia": {
@@ -2295,7 +2473,8 @@
       "observedOn": "2018-05-07",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/17600727/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/17600727/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/17600727/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/17600727/large.jpeg",
+      "color": "#2d3e1c"
     },
     "france-alpine": {
       "photoId": 549906942,
@@ -2306,7 +2485,8 @@
       "observedOn": "2025-08-07",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/549906942/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/549906942/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/549906942/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/549906942/large.jpg",
+      "color": "#3b4321"
     }
   },
   "stachytarpheta-jamaicensis": {
@@ -2319,7 +2499,8 @@
       "observedOn": "2021-04-30",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124172766/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124172766/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124172766/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124172766/large.jpg",
+      "color": "#6a691e"
     }
   },
   "struthiopteris-spicant": {
@@ -2332,7 +2513,8 @@
       "observedOn": "2020-09-01",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/93030640/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/93030640/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/93030640/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/93030640/large.jpg",
+      "color": "#718744"
     }
   },
   "succisa-pratensis": {
@@ -2345,7 +2527,8 @@
       "observedOn": "2024-09-27",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/470004499/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/470004499/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/470004499/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/470004499/large.jpeg",
+      "color": "#818880"
     }
   },
   "symphoricarpos-albus": {
@@ -2358,7 +2541,8 @@
       "observedOn": "2020-01-11",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/59643137/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/59643137/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/59643137/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/59643137/large.jpg",
+      "color": "#756e5e"
     }
   },
   "symphyotrichum-novae-angliae": {
@@ -2371,7 +2555,8 @@
       "observedOn": "2025-09-01",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/561877074/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/561877074/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/561877074/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/561877074/large.jpg",
+      "color": "#6a6d32"
     }
   },
   "symphyotrichum-subspicatum": {
@@ -2384,7 +2569,8 @@
       "observedOn": "2025-09-20",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/569718028/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/569718028/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/569718028/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/569718028/large.jpg",
+      "color": "#736d63"
     }
   },
   "taxodium-distichum": {
@@ -2397,7 +2583,8 @@
       "observedOn": "2008-09-13",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/251701863/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/251701863/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/251701863/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/251701863/large.jpeg",
+      "color": "#6f6651"
     }
   },
   "thuja-plicata": {
@@ -2410,7 +2597,8 @@
       "observedOn": "2021-09-27",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/160208840/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/160208840/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/160208840/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/160208840/large.jpeg",
+      "color": "#737350"
     }
   },
   "thymus-vulgaris": {
@@ -2423,7 +2611,8 @@
       "observedOn": "2025-08-19",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/568199944/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/568199944/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/568199944/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/568199944/large.jpg",
+      "color": "#372f25"
     }
   },
   "tilia-cordata": {
@@ -2436,7 +2625,8 @@
       "observedOn": "2009-06-21",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/358356339/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/358356339/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/358356339/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/358356339/large.jpeg",
+      "color": "#74805a"
     }
   },
   "tripsacum-dactyloides": {
@@ -2449,7 +2639,8 @@
       "observedOn": "2021-04-30",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124143221/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124143221/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124143221/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124143221/large.jpeg",
+      "color": "#7a8168"
     },
     "florida-south": {
       "photoId": 606761493,
@@ -2460,7 +2651,8 @@
       "observedOn": "2026-01-09",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/606761493/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/606761493/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/606761493/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/606761493/large.jpg",
+      "color": "#836f49"
     }
   },
   "trollius-europaeus": {
@@ -2473,7 +2665,8 @@
       "observedOn": "2017-06-24",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/8731483/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/8731483/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/8731483/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/8731483/large.jpeg",
+      "color": "#67722d"
     }
   },
   "tsuga-heterophylla": {
@@ -2486,7 +2679,8 @@
       "observedOn": "2023-09-23",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/322833344/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/322833344/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/322833344/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/322833344/large.jpg",
+      "color": "#5d735c"
     }
   },
   "vaccinium-corymbosum": {
@@ -2499,7 +2693,8 @@
       "observedOn": "2024-07-05",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/404683762/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/404683762/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/404683762/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/404683762/large.jpg",
+      "color": "#73833f"
     }
   },
   "vaccinium-myrtillus": {
@@ -2512,7 +2707,8 @@
       "observedOn": "2025-06-08",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/519232028/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/519232028/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/519232028/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/519232028/large.jpg",
+      "color": "#71863d"
     }
   },
   "vaccinium-ovatum": {
@@ -2525,7 +2721,8 @@
       "observedOn": "2023-11-05",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/333311414/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/333311414/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/333311414/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/333311414/large.jpg",
+      "color": "#6a8255"
     }
   },
   "vaccinium-vitis-idaea": {
@@ -2538,7 +2735,8 @@
       "observedOn": "2020-09-10",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/94586233/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/94586233/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/94586233/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/94586233/large.jpg",
+      "color": "#6f764c"
     }
   },
   "viburnum-dentatum": {
@@ -2551,7 +2749,8 @@
       "observedOn": "2023-06-11",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/288950645/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/288950645/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/288950645/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/288950645/large.jpeg",
+      "color": "#6d8e47"
     }
   },
   "viburnum-lantana": {
@@ -2564,7 +2763,8 @@
       "observedOn": "2021-04-30",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124474008/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124474008/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124474008/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/124474008/large.jpg",
+      "color": "#707055"
     }
   },
   "viburnum-obovatum": {
@@ -2577,7 +2777,8 @@
       "observedOn": "2022-02-16",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/179668261/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/179668261/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/179668261/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/179668261/large.jpeg",
+      "color": "#515d2c"
     }
   },
   "viburnum-tinus": {
@@ -2590,7 +2791,8 @@
       "observedOn": "2023-03-15",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/264854988/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/264854988/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/264854988/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/264854988/large.jpg",
+      "color": "#535646"
     }
   },
   "zamia-integrifolia": {
@@ -2603,7 +2805,8 @@
       "observedOn": "2019-04-26",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/35970855/square.jpg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/35970855/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/35970855/large.jpg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/35970855/large.jpg",
+      "color": "#757c64"
     }
   },
   "zizia-aurea": {
@@ -2616,7 +2819,8 @@
       "observedOn": "2021-04-25",
       "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/123259131/square.jpeg",
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/123259131/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/123259131/large.jpeg"
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/123259131/large.jpeg",
+      "color": "#494b06"
     }
   }
 }

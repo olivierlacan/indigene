@@ -39,6 +39,12 @@ export interface HeroPhoto {
   thumbUrl: string;
   mediumUrl: string;
   largeUrl: string;
+  /** The photograph's own average colour, `#rrggbb` — what the plant page's
+   *  hero slot paints while the photograph is still coming down the wire, so it
+   *  fades up out of its own colours instead of appearing in a green rectangle.
+   *  Written by `scripts/hero-colors.mjs`, and optional: a pick that predates
+   *  that script simply falls back to the app's placeholder green. */
+  color?: string;
 }
 
 /** `plantId → regionId → pick`. Empty until someone reviews a shortlist. */

@@ -13,7 +13,7 @@ import { REGIONS, loadPlants } from "../lib/plants";
 import type { RegionDef } from "../lib/plants";
 import { featuredPlant } from "../lib/explore";
 import { wildlifeCountForRegion } from "../lib/wildlife";
-import { silhouetteFor } from "../components/plant-card";
+import { plantThumb } from "../components/plant-thumb";
 import { keystoneIcon } from "../components/keystone-icon";
 import { cardStats } from "../components/card-stats";
 import { t, tn, fmtNumber } from "../lib/i18n";
@@ -79,7 +79,7 @@ function regionCard(region: RegionDef): HTMLElement {
     // already picked their place is asking what grows there.
     el("p", { class: "region-card-ref" }, regionReference(region.meta)),
     el("a", { class: "region-card-star", href: `#/plants/${p.id}` }, [
-      el("span", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
+      plantThumb(p.id, p.form, { regionId: region.meta.id }),
       el("span", { class: "region-card-star-text" }, [
         el("span", { class: "region-card-kicker" }, t("explore.starring")),
         el("span", { class: "region-card-plant" }, [

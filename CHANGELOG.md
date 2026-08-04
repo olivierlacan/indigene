@@ -45,6 +45,12 @@ subtitle on the What's new page.
   already true, quietly; the trouble was that nothing ever told you, so a list
   ordered by last month's decision looked like Indigene's own opinion. It's
   named on the Settings page now, with one button back to the usual goal.
+- **Real photographs on plant pages.** Where we've been able to choose a good,
+  freely-licensed picture, a plant's profile now opens with an actual
+  photograph of the species instead of the drawing — 188 plants so far, each
+  photo credited to the naturalist who took it and tappable to see it full-size
+  with its licence and a link back to the original sighting. Plants we haven't
+  chosen a photo for yet keep their drawing, so nothing looks unfinished.
 
 ### Changed
 

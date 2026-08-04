@@ -1731,6 +1731,13 @@ details.weights {
 .plant-hero-shot {
   display: block;
   width: 100%;
+  /* The square is the *button's*, not the photograph's. Until the loader gives
+     it a `src`, an `<img>` is not a replaced element at all — it lays out as
+     its alt text, so an `aspect-ratio` on the image reserves a text-high strip
+     rather than a square, and the waiting colour shows as a bar. Reserving the
+     space here means the slot is the right shape from the first paint, holds
+     its colour while the photo comes down, and never reflows the head row. */
+  aspect-ratio: 1;
   padding: 0;
   border: 0;
   border-radius: 10px;
@@ -1744,11 +1751,15 @@ details.weights {
   outline-offset: 2px;
 }
 .plant-hero-shot img {
+  display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 1;
+  height: 100%;
   object-fit: cover;
-  transition: transform 0.15s ease;
+  /* Both transitions here, not split between this rule and `.photo-fade`: a
+     single `transition` property can't be written twice, and this selector is
+     the more specific of the two, so it would silently win and the fade would
+     never run. */
+  transition: transform 0.15s ease, opacity 0.3s ease;
 }
 @media (hover: hover) {
   .plant-hero-shot:hover img {
@@ -1784,10 +1795,31 @@ details.weights {
   place-items: center;
   overflow: hidden;
 }
+/* The drawing and the photograph share one grid cell, so the photo fades in
+   *over* the drawing rather than replacing it. That's what makes the slot need
+   no placeholder of its own: what's underneath is already the right size, the
+   right colour, and true about the plant. */
+.plant-photo > * {
+  grid-area: 1 / 1;
+}
 .plant-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Every iNaturalist photo in the app arrives this way: decoded off-screen
+   first, then faded up (see `lib/photo.ts`). Until `is-ready`, the image is
+   invisible — so a slot never shows a JPEG painting itself in bands, and a
+   photo that never arrives simply never appears. The global
+   prefers-reduced-motion rule collapses the transition to nothing, which is
+   exactly right: the picture still appears, it just doesn't travel. */
+.photo-fade {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.photo-fade.is-ready {
+  opacity: 1;
 }
 .plant-name {
   margin: 0;
@@ -2393,7 +2425,10 @@ details.weights {
   overflow: hidden;
   padding: 0;
   border: 0;
-  background: none;
+  /* The waiting colour sits on the tile, not on the image: the image fades in
+     from transparent, so a background painted on *it* would be invisible for
+     precisely as long as it was needed. */
+  background: var(--line);
   cursor: pointer;
 }
 .obs-tile:focus-visible {
@@ -2405,8 +2440,7 @@ details.weights {
   height: auto;
   aspect-ratio: 1;
   object-fit: cover;
-  background: var(--line);
-  transition: transform 0.12s ease;
+  transition: transform 0.12s ease, opacity 0.3s ease;
 }
 /* "+8" on the last tile: the lookup found more photos than the grid shows, and
    the lightbox pages through all of them. Top-right, clear of the hover caption. */

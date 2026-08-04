@@ -20,6 +20,7 @@ import { SCORE_KEYS, scoreLabel, bloomSentence, confidencePlain, growthPlain, mo
 import { citation } from "../components/citation";
 import { silhouetteFor } from "../components/plant-card";
 import { heroPhotoFor, asObservation } from "../lib/hero-photo";
+import { loadPhoto } from "../lib/photo";
 import { openObservationLightbox, licenseLabel } from "../components/lightbox";
 import { keystoneIcon } from "../components/keystone-icon";
 import { statGrid } from "../components/stat-card";
@@ -38,6 +39,11 @@ import { reportUntranslated } from "../components/wip-banner";
 // #/plants/<slug>/<section>. A link straight to a section scrolls it into
 // view; every section is always open.
 const SECTIONS = ["ecosystem", "propagation", "references", "spot"] as const;
+
+/** The hero's widest drawn size, matching `.plant-hero` in the stylesheet
+ *  (`min(33vw, 9.5rem)`). The loader turns it, plus the screen's pixel density,
+ *  into which of iNaturalist's five renditions to ask for. */
+const HERO_PX = 152;
 type Section = (typeof SECTIONS)[number];
 const sectionDomId = (s: Section): string => `sec-${s}`;
 
@@ -233,19 +239,31 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
     const btn = el("button", {
       type: "button",
       class: "plant-hero-shot",
+      // The photograph's own average colour, so the slot is never a green
+      // rectangle waiting to be filled — the picture fades up out of its own
+      // mossy green, or winter grey, or goldenrod yellow. Picks harvested
+      // before `hero:colors` existed have none, and keep the stylesheet's.
+      ...(pick.color ? { style: `background:${pick.color}` } : {}),
       "aria-label": t("hero.enlarge", { name }),
       onClick: () => openObservationLightbox([observation], { observation: 0, photo: 0 }, name, btn),
     }, [
       el("img", {
-        src: pick.mediumUrl,
-        // Displayed at most 171 px across, so the 500 px rendition covers even a
-        // 3x phone; the large one is for the lightbox, not for here.
+        // No `src`: `loadPhoto` sets it, having chosen the rendition that
+        // actually covers this slot on this screen. A 3× phone still gets the
+        // 500 px file; a laptop gets the 240 px one, which is a third of the
+        // bytes for a picture nobody could tell apart. The large rendition is
+        // for the lightbox, and `original` is for nowhere.
+        class: "photo-fade",
         alt: t("obs.photoAlt", { name: p.latin, observer: pick.observer ?? "an iNaturalist observer" }),
         // Square, and said up front, so the head row doesn't reflow when it lands.
         width: 180,
         height: 180,
       }),
     ]) as HTMLButtonElement;
+    // Urgent: this is the picture the page is about, at the top of it, so it
+    // skips the wait-until-nearly-visible step every other photo goes through
+    // and goes to the front of the queue.
+    loadPhoto(btn.querySelector("img")!, pick.mediumUrl, HERO_PX, true);
 
     // One line, the observer's name, ellipsised if it's long — with the full
     // credit on the element itself for a pointer, and stated in full in the

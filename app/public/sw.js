@@ -50,10 +50,20 @@ const DATA_HOSTS = [
 // older path some photos still resolve through.
 const PHOTO_HOSTS = ["inaturalist-open-data.s3.amazonaws.com", "static.inaturalist.org"];
 
-/** How many photo files to keep. A thumbnail is a few KB and a lightbox-sized
- *  one a few hundred, so ~40 MB worst case — generous for the feature, and far
- *  from the quota a phone will give a PWA. Past it, the oldest go first. */
-const PHOTO_CACHE_LIMIT = 240;
+/** How many photo files to keep.
+ *
+ *  Raised from 240 when the plant lists started showing photographs. The mix
+ *  changed more than the volume did: the entries are now mostly 8–38 KB
+ *  thumbnails (a `square` or `small` rendition, one per plant you scrolled
+ *  past) rather than the 126–438 KB ones a lightbox pulls. 600 of that mix is
+ *  roughly 30 MB worst case — about what 240 lightbox-sized photos cost, and
+ *  still far from the quota a phone gives a PWA.
+ *
+ *  Worth the room: a thumbnail cached once is the plants index and every region
+ *  roster rendering instantly, offline, forever, because a photo URL names one
+ *  photo at one size and can never change. Past the limit, the oldest go
+ *  first. */
+const PHOTO_CACHE_LIMIT = 600;
 
 self.addEventListener("install", (event) => {
   event.waitUntil(

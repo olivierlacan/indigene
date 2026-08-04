@@ -18,8 +18,8 @@
     ],
     "note": "External identifiers are filled by scripts/reconcile.mjs; 'indigene' is our catalog id."
   },
-  "count": 198,
-  "unreconciled": 1,
+  "count": 229,
+  "unreconciled": 32,
   "entries": [
     {
       "primaryId": "ipni:781250-1",
@@ -216,6 +216,27 @@
       "aliases": [
         "achillea millefolium",
         "yarrow"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Adiantum aleuticum",
+      "family": "Pteridaceae",
+      "form": "fern",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "adiantum-aleuticum"
+      },
+      "commonNames": [
+        "Western Maidenhair Fern"
+      ],
+      "aliases": [
+        "adiantum aleuticum",
+        "western maidenhair fern"
       ],
       "cultivarOf": null,
       "regions": [
@@ -589,6 +610,27 @@
       ]
     },
     {
+      "primaryId": null,
+      "scientificName": "Artemisia vulgaris",
+      "family": "Asteraceae",
+      "form": "perennial",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "artemisia-vulgaris"
+      },
+      "commonNames": [
+        "Mugwort"
+      ],
+      "aliases": [
+        "artemisia vulgaris",
+        "mugwort"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "france-atlantic"
+      ]
+    },
+    {
       "primaryId": "ipni:94351-1",
       "scientificName": "Asclepias incarnata",
       "family": "Apocynaceae",
@@ -674,6 +716,27 @@
       ]
     },
     {
+      "primaryId": null,
+      "scientificName": "Asplenium scolopendrium",
+      "family": "Aspleniaceae",
+      "form": "fern",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "asplenium-scolopendrium"
+      },
+      "commonNames": [
+        "Hart's-tongue Fern"
+      ],
+      "aliases": [
+        "asplenium scolopendrium",
+        "hart's-tongue fern"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "france-atlantic"
+      ]
+    },
+    {
       "primaryId": "ipni:480953-1",
       "scientificName": "Baptisia australis",
       "family": "Fabaceae",
@@ -754,6 +817,27 @@
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Betula papyrifera",
+      "family": "Betulaceae",
+      "form": "tree",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "betula-papyrifera"
+      },
+      "commonNames": [
+        "Paper Birch"
+      ],
+      "aliases": [
+        "betula papyrifera",
+        "paper birch"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
       ]
     },
     {
@@ -920,15 +1004,18 @@
       },
       "commonNames": [
         "Heather",
+        "Ling",
         "Callune"
       ],
       "aliases": [
         "calluna vulgaris",
         "callune",
-        "heather"
+        "heather",
+        "ling"
       ],
       "cultivarOf": null,
       "regions": [
+        "france-atlantic",
         "france-alpine"
       ]
     },
@@ -954,6 +1041,27 @@
       "aliases": [
         "camassia quamash",
         "common camas"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Carex obnupta",
+      "family": "Cyperaceae",
+      "form": "grass",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "carex-obnupta"
+      },
+      "commonNames": [
+        "Slough Sedge"
+      ],
+      "aliases": [
+        "carex obnupta",
+        "slough sedge"
       ],
       "cultivarOf": null,
       "regions": [
@@ -1075,6 +1183,29 @@
       "cultivarOf": null,
       "regions": [
         "france-mediterranean"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Centaurea nigra",
+      "family": "Asteraceae",
+      "form": "perennial",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "centaurea-nigra"
+      },
+      "commonNames": [
+        "Common Knapweed",
+        "Hardheads"
+      ],
+      "aliases": [
+        "centaurea nigra",
+        "common knapweed",
+        "hardheads"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "france-atlantic"
       ]
     },
     {
@@ -1275,6 +1406,27 @@
       "cultivarOf": null,
       "regions": [
         "france-mediterranean"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Clematis ligusticifolia",
+      "family": "Ranunculaceae",
+      "form": "vine",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "clematis-ligusticifolia"
+      },
+      "commonNames": [
+        "Western White Clematis"
+      ],
+      "aliases": [
+        "clematis ligusticifolia",
+        "western white clematis"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
       ]
     },
     {
@@ -1647,6 +1799,27 @@
       ]
     },
     {
+      "primaryId": null,
+      "scientificName": "Crataegus douglasii",
+      "family": "Rosaceae",
+      "form": "tree",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "crataegus-douglasii"
+      },
+      "commonNames": [
+        "Black Hawthorn"
+      ],
+      "aliases": [
+        "black hawthorn",
+        "crataegus douglasii"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
       "primaryId": "ipni:723644-1",
       "scientificName": "Crataegus laevigata",
       "family": "Rosaceae",
@@ -1700,6 +1873,27 @@
         "crataegus monogyna",
         "hawthorn",
         "whitethorn"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "france-atlantic"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Cytisus scoparius",
+      "family": "Fabaceae",
+      "form": "shrub",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "cytisus-scoparius"
+      },
+      "commonNames": [
+        "Broom"
+      ],
+      "aliases": [
+        "broom",
+        "cytisus scoparius"
       ],
       "cultivarOf": null,
       "regions": [
@@ -1907,6 +2101,27 @@
       ]
     },
     {
+      "primaryId": null,
+      "scientificName": "Eriogonum umbellatum",
+      "family": "Polygonaceae",
+      "form": "groundcover",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "eriogonum-umbellatum"
+      },
+      "commonNames": [
+        "Sulphur Buckwheat"
+      ],
+      "aliases": [
+        "eriogonum umbellatum",
+        "sulphur buckwheat"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
       "primaryId": "ipni:1105505-2",
       "scientificName": "Eriophyllum lanatum",
       "family": "Asteraceae",
@@ -2049,6 +2264,7 @@
       ],
       "cultivarOf": null,
       "regions": [
+        "france-atlantic",
         "france-continental"
       ]
     },
@@ -2106,6 +2322,27 @@
       "cultivarOf": null,
       "regions": [
         "pnw"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Festuca rubra",
+      "family": "Poaceae",
+      "form": "grass",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "festuca-rubra"
+      },
+      "commonNames": [
+        "Red Fescue"
+      ],
+      "aliases": [
+        "festuca rubra",
+        "red fescue"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "france-atlantic"
       ]
     },
     {
@@ -2279,6 +2516,27 @@
       ]
     },
     {
+      "primaryId": null,
+      "scientificName": "Galium verum",
+      "family": "Rubiaceae",
+      "form": "groundcover",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "galium-verum"
+      },
+      "commonNames": [
+        "Lady's Bedstraw"
+      ],
+      "aliases": [
+        "galium verum",
+        "lady's bedstraw"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "france-atlantic"
+      ]
+    },
+    {
       "primaryId": "ipni:317388-2",
       "scientificName": "Gaultheria shallon",
       "family": "Ericaceae",
@@ -2304,6 +2562,27 @@
       "cultivarOf": null,
       "regions": [
         "pnw"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Genista tinctoria",
+      "family": "Fabaceae",
+      "form": "shrub",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "genista-tinctoria"
+      },
+      "commonNames": [
+        "Dyer's Greenweed"
+      ],
+      "aliases": [
+        "dyer's greenweed",
+        "genista tinctoria"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "france-atlantic"
       ]
     },
     {
@@ -2593,6 +2872,7 @@
       ],
       "cultivarOf": null,
       "regions": [
+        "france-atlantic",
         "france-continental"
       ]
     },
@@ -2706,6 +2986,29 @@
       "cultivarOf": null,
       "regions": [
         "florida-central"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Juncus patens",
+      "family": "Juncaceae",
+      "form": "grass",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "juncus-patens"
+      },
+      "commonNames": [
+        "Spreading Rush",
+        "Grey Rush"
+      ],
+      "aliases": [
+        "grey rush",
+        "juncus patens",
+        "spreading rush"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
       ]
     },
     {
@@ -3076,15 +3379,18 @@
       },
       "commonNames": [
         "Bird's-foot Trefoil",
+        "Eggs and Bacon",
         "Lotier corniculé"
       ],
       "aliases": [
         "bird's-foot trefoil",
+        "eggs and bacon",
         "lotier corniculé",
         "lotus corniculatus"
       ],
       "cultivarOf": null,
       "regions": [
+        "france-atlantic",
         "france-continental",
         "france-alpine"
       ]
@@ -3143,6 +3449,27 @@
       "cultivarOf": null,
       "regions": [
         "florida-central"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Malus fusca",
+      "family": "Rosaceae",
+      "form": "tree",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "malus-fusca"
+      },
+      "commonNames": [
+        "Pacific Crabapple"
+      ],
+      "aliases": [
+        "malus fusca",
+        "pacific crabapple"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
       ]
     },
     {
@@ -3349,6 +3676,29 @@
       "cultivarOf": null,
       "regions": [
         "france-mediterranean"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Oemleria cerasiformis",
+      "family": "Rosaceae",
+      "form": "shrub",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "oemleria-cerasiformis"
+      },
+      "commonNames": [
+        "Indian Plum",
+        "Osoberry"
+      ],
+      "aliases": [
+        "indian plum",
+        "oemleria cerasiformis",
+        "osoberry"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
       ]
     },
     {
@@ -3842,6 +4192,48 @@
       ]
     },
     {
+      "primaryId": null,
+      "scientificName": "Plantago lanceolata",
+      "family": "Plantaginaceae",
+      "form": "groundcover",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "plantago-lanceolata"
+      },
+      "commonNames": [
+        "Ribwort Plantain"
+      ],
+      "aliases": [
+        "plantago lanceolata",
+        "ribwort plantain"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "france-atlantic"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Poa nemoralis",
+      "family": "Poaceae",
+      "form": "grass",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "poa-nemoralis"
+      },
+      "commonNames": [
+        "Wood Meadow-grass"
+      ],
+      "aliases": [
+        "poa nemoralis",
+        "wood meadow-grass"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "france-atlantic"
+      ]
+    },
+    {
       "primaryId": "ipni:17205300-1",
       "scientificName": "Polystichum acrostichoides",
       "family": "Dryopteridaceae",
@@ -3895,6 +4287,50 @@
       "cultivarOf": null,
       "regions": [
         "pnw"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Polystichum setiferum",
+      "family": "Dryopteridaceae",
+      "form": "fern",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "polystichum-setiferum"
+      },
+      "commonNames": [
+        "Soft Shield Fern"
+      ],
+      "aliases": [
+        "polystichum setiferum",
+        "soft shield fern"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "france-atlantic"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Populus tremula",
+      "family": "Salicaceae",
+      "form": "tree",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "populus-tremula"
+      },
+      "commonNames": [
+        "Aspen",
+        "Trembling Poplar"
+      ],
+      "aliases": [
+        "aspen",
+        "populus tremula",
+        "trembling poplar"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "france-atlantic"
       ]
     },
     {
@@ -4152,6 +4588,27 @@
       "cultivarOf": null,
       "regions": [
         "florida-south"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Pyrus pyraster",
+      "family": "Rosaceae",
+      "form": "tree",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "pyrus-pyraster"
+      },
+      "commonNames": [
+        "Wild Pear"
+      ],
+      "aliases": [
+        "pyrus pyraster",
+        "wild pear"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "france-atlantic"
       ]
     },
     {
@@ -4505,6 +4962,27 @@
       ]
     },
     {
+      "primaryId": null,
+      "scientificName": "Rosa arvensis",
+      "family": "Rosaceae",
+      "form": "shrub",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "rosa-arvensis"
+      },
+      "commonNames": [
+        "Field Rose"
+      ],
+      "aliases": [
+        "field rose",
+        "rosa arvensis"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "france-atlantic"
+      ]
+    },
+    {
       "primaryId": "ipni:731955-1",
       "scientificName": "Rosa canina",
       "family": "Rosaceae",
@@ -4563,6 +5041,29 @@
       ]
     },
     {
+      "primaryId": null,
+      "scientificName": "Rubus fruticosus agg.",
+      "family": "Rosaceae",
+      "form": "shrub",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "rubus-fruticosus"
+      },
+      "commonNames": [
+        "Bramble",
+        "Blackberry"
+      ],
+      "aliases": [
+        "blackberry",
+        "bramble",
+        "rubus fruticosus agg."
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "france-atlantic"
+      ]
+    },
+    {
       "primaryId": "ipni:223579-2",
       "scientificName": "Rubus spectabilis",
       "family": "Rosaceae",
@@ -4584,6 +5085,27 @@
       "aliases": [
         "rubus spectabilis",
         "salmonberry"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Rubus ursinus",
+      "family": "Rosaceae",
+      "form": "vine",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "rubus-ursinus"
+      },
+      "commonNames": [
+        "Trailing Blackberry"
+      ],
+      "aliases": [
+        "rubus ursinus",
+        "trailing blackberry"
       ],
       "cultivarOf": null,
       "regions": [
@@ -4616,6 +5138,27 @@
       "cultivarOf": null,
       "regions": [
         "mid-atlantic"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Rumex acetosa",
+      "family": "Polygonaceae",
+      "form": "perennial",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "rumex-acetosa"
+      },
+      "commonNames": [
+        "Common Sorrel"
+      ],
+      "aliases": [
+        "common sorrel",
+        "rumex acetosa"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "france-atlantic"
       ]
     },
     {
@@ -4856,6 +5399,27 @@
       ]
     },
     {
+      "primaryId": null,
+      "scientificName": "Sedum oreganum",
+      "family": "Crassulaceae",
+      "form": "groundcover",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "sedum-oreganum"
+      },
+      "commonNames": [
+        "Oregon Stonecrop"
+      ],
+      "aliases": [
+        "oregon stonecrop",
+        "sedum oreganum"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
       "primaryId": "ipni:941782-1",
       "scientificName": "Serenoa repens",
       "family": "Arecaceae",
@@ -5028,6 +5592,29 @@
       "cultivarOf": null,
       "regions": [
         "france-continental"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Spiraea douglasii",
+      "family": "Rosaceae",
+      "form": "shrub",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "spiraea-douglasii"
+      },
+      "commonNames": [
+        "Douglas Spirea",
+        "Hardhack"
+      ],
+      "aliases": [
+        "douglas spirea",
+        "hardhack",
+        "spiraea douglasii"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
       ]
     },
     {
@@ -5339,7 +5926,29 @@
       ],
       "cultivarOf": null,
       "regions": [
+        "france-atlantic",
         "france-continental"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Trifolium pratense",
+      "family": "Fabaceae",
+      "form": "perennial",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "trifolium-pratense"
+      },
+      "commonNames": [
+        "Red Clover"
+      ],
+      "aliases": [
+        "red clover",
+        "trifolium pratense"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "france-atlantic"
       ]
     },
     {
@@ -5431,6 +6040,27 @@
       ]
     },
     {
+      "primaryId": null,
+      "scientificName": "Ulmus glabra",
+      "family": "Ulmaceae",
+      "form": "tree",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "ulmus-glabra"
+      },
+      "commonNames": [
+        "Wych Elm"
+      ],
+      "aliases": [
+        "ulmus glabra",
+        "wych elm"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "france-atlantic"
+      ]
+    },
+    {
       "primaryId": "ipni:261823-2",
       "scientificName": "Vaccinium corymbosum",
       "family": "Ericaceae",
@@ -5485,6 +6115,7 @@
       ],
       "cultivarOf": null,
       "regions": [
+        "france-atlantic",
         "france-alpine"
       ]
     },
@@ -5660,6 +6291,48 @@
       "cultivarOf": null,
       "regions": [
         "france-mediterranean"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Viola adunca",
+      "family": "Violaceae",
+      "form": "perennial",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "viola-adunca"
+      },
+      "commonNames": [
+        "Early Blue Violet"
+      ],
+      "aliases": [
+        "early blue violet",
+        "viola adunca"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "primaryId": null,
+      "scientificName": "Woodwardia fimbriata",
+      "family": "Blechnaceae",
+      "form": "fern",
+      "rank": "species",
+      "identifiers": {
+        "indigene": "woodwardia-fimbriata"
+      },
+      "commonNames": [
+        "Giant Chain Fern"
+      ],
+      "aliases": [
+        "giant chain fern",
+        "woodwardia fimbriata"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
       ]
     },
     {

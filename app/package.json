@@ -13,6 +13,7 @@
     "prerender": "node scripts/prerender.mjs",
     "routes:check": "node scripts/check-routes.mjs",
     "release-notes": "node scripts/build-release-notes.mjs",
+    "coverage": "node scripts/coverage.mjs",
     "host-counts": "node scripts/build-host-counts.mjs",
     "registry:build": "node scripts/build-registry.mjs",
     "registry:check": "node scripts/check-registry.mjs",

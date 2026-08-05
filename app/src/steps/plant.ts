@@ -27,6 +27,8 @@ import { statGrid } from "../components/stat-card";
 import { drawSizeViz } from "../components/size-viz";
 import { entryForPlant, deepLinks } from "../lib/registry";
 import { nearbyObservationsSection } from "../components/nearby-observations";
+import { anchoredHeading } from "../components/anchor-head";
+import { plantSectionHref } from "../lib/routes";
 import { privacyNote } from "../components/privacy-link";
 import type { Plant, SiteData, SunEstimate, SupportKind } from "../types";
 import { t, tn, fmtNumber, fmtList } from "../lib/i18n";
@@ -36,9 +38,10 @@ import { prose, propagationNote, isUntranslated, lookalikesUntranslated } from "
 import { reportUntranslated } from "../components/wip-banner";
 
 // The anchorable sections below the profile share one deep-link scheme:
-// #/plants/<slug>/<section>. A link straight to a section scrolls it into
-// view; every section is always open.
-const SECTIONS = ["ecosystem", "propagation", "references", "spot"] as const;
+// #/plants/<slug>/<section>. Every heading now shows that address (the `#`
+// mark — see `components/anchor-head.ts`), and following one opens the page at
+// that card. Listed in the order they appear in the phone stack.
+const SECTIONS = ["ecosystem", "nearby", "propagation", "spot", "references"] as const;
 
 /** The hero's widest drawn size, matching `.plant-hero` in the stylesheet
  *  (`min(33vw, 9.5rem)`). The loader turns it, plus the screen's pixel density,
@@ -155,7 +158,10 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
     // the thing it backs up, not in front of it.
     el("div", { class: "plant-sections" }, [
       el("div", { class: "plant-sections-col" }, [
-        ecosystemSection(plant, entries),
+        // A link straight to the ecosystem card is a request for the detail in
+        // it, so it arrives with every "what does this mean?" already open —
+        // see `ecosystemSection`.
+        ecosystemSection(plant, entries, section === "ecosystem"),
         nearbyObservationsSection(plant),
         propagationSection(plant, region.meta.id),
       ]),
@@ -174,10 +180,50 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
 
   if (section) revealSection(section);
 
+  main.addEventListener("click", onAnchorClick);
+
   // The way back to the list is kept only for as long as it leads anywhere: go
   // somewhere else from here and the offer is swept, rather than reappearing
   // pages later as a guess about what "back" means.
-  const cleanup = (): void => keepTrail(location.hash);
+  const cleanup = (): void => {
+    main.removeEventListener("click", onAnchorClick);
+    keepTrail(location.hash);
+  };
+
+  /**
+   * A tap on a heading's `#` mark — answered here rather than by the router.
+   *
+   * Letting it navigate would work and would be wasteful: the address differs
+   * from the one on screen only in which card you want to be looking at, and a
+   * re-render for that throws away the hero photograph, every observation
+   * thumbnail already fetched, and whatever spot the reader had typed into the
+   * checker. So the page moves itself instead, and `replaceState` puts the
+   * section's address in the bar without stacking a history entry per tap —
+   * back still means "the page I came from", not "the same page, one card up".
+   *
+   * Only a plain left click is taken: a modified click is someone deliberately
+   * opening the section in a new tab, and the `<a>` is real, so it just works.
+   *
+   * The link is copied too, because "give me the link to this bit" is the whole
+   * reason the mark is there, and a reader on a phone has no address bar worth
+   * the name to copy it out of.
+   */
+  function onAnchorClick(e: MouseEvent): void {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const link = (e.target as Element | null)?.closest("a.anchor-link");
+    if (!link || !main.contains(link)) return;
+    const href = link.getAttribute("href") ?? "";
+    const wantedSection = href.slice(href.lastIndexOf("/") + 1);
+    if (!(SECTIONS as readonly string[]).includes(wantedSection)) return;
+    e.preventDefault();
+    // The address the router itself would settle on for this route (see
+    // `syncAddressBar`): base, then the hash form. A section has no file of its
+    // own, so the hash is the only address that reloads it.
+    const address = `${import.meta.env.BASE_URL}${href}`;
+    history.replaceState(history.state, "", address);
+    revealSection(wantedSection as Section);
+    void copyLink(`${location.origin}${address}`);
+  }
 
   /**
    * For a plant native to more than one region: which region's figures you are
@@ -655,10 +701,10 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
     // (they collapse into one on a phone, and the laptop columns space their
     // cards the same way) — an extra top margin here would double it in a
     // column, where margins no longer collapse.
-    return el("section", { class: "card", id: sectionDomId("spot") }, [
+    return el("section", { class: "card plant-section", id: sectionDomId("spot") }, [
       // No plant name in the heading: it changes width per plant and would
       // wrap the card title on a phone. The page is already about this plant.
-      el("h3", { style: "margin-top:0" }, t("plant.checkSpotTitle")),
+      anchoredHeading(t("plant.checkSpotTitle"), plantSectionHref(plant.id, "spot"), t("plant.sectionLink")),
       el("p", { style: "margin:0.3rem 0 0.6rem" },
         t("plant.checkSpotLede", { region: regionName(region.meta) })),
       savedFit,
@@ -692,34 +738,87 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
 // A standalone card — the same shape the "Want to plant?" tool uses — that a
 // deep link scrolls into view. Always open: these used to collapse, but
 // content shouldn't hide behind a tap.
-function sectionCard(section: Section, heading: string, body: HTMLElement[]): HTMLElement {
+//
+// The heading carries the card's own address (`components/anchor-head.ts`), so
+// every one of these is a place you can send somebody to rather than a place
+// you have to describe.
+function sectionCard(slug: string, section: Section, heading: string, body: HTMLElement[]): HTMLElement {
   return el("section", { class: "card plant-section", id: sectionDomId(section) }, [
-    el("h3", {}, heading),
+    anchoredHeading(heading, plantSectionHref(slug, section), t("plant.sectionLink")),
     ...body,
   ]);
 }
 
-// The seven ecosystem-benefit scores, each with its fixed icon and plain-words
-// gloss. Its own card now, so it can be linked to and opened directly. When the
-// plant has named wildlife ties, they lead the card — the specific creatures a
-// person can go looking for, above the abstract scores.
-function ecosystemSection(p: Plant, entries: PlantEntry[]): HTMLElement {
+/** Put a section's address on the clipboard. Best-effort: a browser that
+ *  refuses (no permission, insecure origin) still moved the page and still put
+ *  the address in the bar, so there is nothing to apologise for. */
+async function copyLink(url: string): Promise<void> {
+  if (!navigator.clipboard) return;
+  try {
+    await navigator.clipboard.writeText(url);
+    toast(t("plant.linkCopied"));
+  } catch {
+    /* the address bar has it either way */
+  }
+}
+
+/**
+ * The seven ecosystem-benefit scores, each with its fixed icon, its bar, and a
+ * plain-words gloss that is now folded away until asked for.
+ *
+ * All seven glosses open at once made the tallest card on the page: seven
+ * headings, seven bars and roughly twenty lines of explanation, with no space
+ * between any two of them, so the numbers — the part you came for — had to be
+ * hunted out of a wall of prose. Folded, the card is a scannable table of seven
+ * rows, and the sentence is one hover or one tap away.
+ *
+ * The glosses are the one thing on this page that can honestly be folded. They
+ * explain the *label*, not the plant: "Soaks up rain" already says what
+ * "Deep roots that let rainwater sink in instead of running off" says, at
+ * greater length. Nothing about this plant in particular hides here — which is
+ * the bar the rest of the page is deliberately held to (see `sectionCard`).
+ *
+ * Three ways in, because a screen is one of three things:
+ *   - a pointer: hovering a row opens its gloss, no click needed (CSS only);
+ *   - a finger: the row is a real button, and a tap opens it — the chevron is
+ *     drawn at rest so there is something to aim at;
+ *   - a keyboard: focus opens it, and Enter latches it open.
+ *
+ * @param expanded Start with every gloss open — what a link straight to this
+ *   card means, since asking for the ecosystem section is asking for the
+ *   detail in it.
+ */
+function ecosystemSection(p: Plant, entries: PlantEntry[], expanded: boolean): HTMLElement {
   const scoreParts = SCORE_KEYS.map((key) => {
     const val = (p.scores as unknown as Record<string, number>)[key];
     const label = scoreLabel(key);
-    return el("li", { class: "score-item" }, [
+    const whyId = `score-why-${key}`;
+    const toggle = el("button", {
+      type: "button",
+      class: "score-toggle",
+      "aria-expanded": expanded ? "true" : "false",
+      "aria-controls": whyId,
+      onClick: () => {
+        const open = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", open ? "false" : "true");
+      },
+    }, [
       el("div", { class: "score-head" }, [
-        el("span", {}, [el("span", { "aria-hidden": "true" }, `${label.icon} `), label.name]),
-        el("span", {}, `${fmtNumber(val)}${key === "host" ? ` · ${t("card.hostSpecies", { n: fmtNumber(p.hostLepCount) })}` : ""}`),
+        el("span", { class: "score-name" }, [el("span", { "aria-hidden": "true" }, `${label.icon} `), label.name]),
+        el("span", { class: "score-value" }, `${fmtNumber(val)}${key === "host" ? ` · ${t("card.hostSpecies", { n: fmtNumber(p.hostLepCount) })}` : ""}`),
+        el("span", { class: "score-chevron", "aria-hidden": "true" }, "›"),
       ]),
       el("div", { class: "score-bar" }, [el("span", { style: `width:${val}%` })]),
-      el("p", { class: "score-why" }, label.plain),
+    ]);
+    return el("li", { class: "score-item" }, [
+      toggle,
+      el("div", { class: "score-why", id: whyId }, [el("p", { class: "score-why-text" }, label.plain)]),
     ]);
   });
   const feeds = whoItFeeds(entries);
-  return sectionCard("ecosystem", t("plant.ecosystemTitle"), [
+  return sectionCard(p.id, "ecosystem", t("plant.ecosystemTitle"), [
     ...(feeds ? [feeds] : []),
-    el("ul", { class: "score-list" }, scoreParts),
+    el("ul", { class: "score-list score-list-folding" }, scoreParts),
   ]);
 }
 
@@ -817,7 +916,7 @@ function propagationSection(p: Plant, regionId: string): HTMLElement {
       el("p", { class: "score-why" }, g.plain),
     ]);
   });
-  return sectionCard("propagation", t("plant.propagationTitle"), [
+  return sectionCard(p.id, "propagation", t("plant.propagationTitle"), [
     el("p", { class: "kv", style: "margin-top:0.5rem" }, [
       el("span", { class: "k" }, t("plant.forThisPlant")),
       propagationNote(p, regionId),
@@ -875,16 +974,51 @@ function referencesSection(p: Plant): HTMLElement {
       ]),
     );
   }
-  return sectionCard("references", t("ref.title"), body);
+  return sectionCard(p.id, "references", t("ref.title"), body);
 }
 
-// Bring the deep-linked section into view. Runs after the router's own
-// scroll-to-top on the next frame, so it wins.
+/**
+ * Point at the section a link asked for. Runs after the router's own
+ * scroll-to-top on the next frame, so it wins.
+ *
+ * Scrolling is not the answer on its own, and on a laptop it's often not the
+ * answer at all: the page lays its cards out in two columns past 1024px, so the
+ * card being linked to is frequently already on screen — and scrolling to
+ * something the reader can see just moves the page for no reason, then leaves
+ * them hunting for what changed. So there are two halves here, and they cover
+ * for each other:
+ *
+ *   - **Move only if it isn't all there.** The same test `#/settings/<card>`
+ *     and `#/privacy/<section>` use. `scroll-margin-top` on `.plant-section`
+ *     keeps the heading clear of the sticky header.
+ *   - **Flash it either way.** A brief brand-green ring and wash (`.is-linked`
+ *     in styles.css) says *this one* whether the page moved or not. It fades on
+ *     its own; nothing is left highlighted for the reader to dismiss.
+ *
+ * Focus follows, so a keyboard or screen-reader user arrives where a sighted
+ * one is looking and the next Tab lands inside the card.
+ */
 function revealSection(section: Section): void {
   requestAnimationFrame(() => {
     const target = document.getElementById(sectionDomId(section));
     if (!target) return;
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    const box = target.getBoundingClientRect();
+    // "Already there" has to mean *visible*, not merely above the fold: the
+    // header is sticky, so a card whose top sits at y=30 is thirty pixels of
+    // card and the rest under the green bar. Measured rather than assumed —
+    // the header wraps to two rows at large text sizes.
+    const header = document.querySelector(".app-header")?.getBoundingClientRect().height ?? 0;
+    if (box.top < header || box.bottom > window.innerHeight) {
+      const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      target.scrollIntoView({ behavior: still ? "auto" : "smooth", block: "start" });
+    }
+    // Restart the animation when the same heading is tapped twice: a class the
+    // element already carries is not a change, and nothing would flash.
+    target.classList.remove("is-linked");
+    void target.offsetWidth;
+    target.classList.add("is-linked");
+    target.setAttribute("tabindex", "-1");
+    target.focus({ preventScroll: true });
   });
 }
 

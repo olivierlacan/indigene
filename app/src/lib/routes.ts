@@ -144,6 +144,24 @@ export function canonicalPath(step: string, param?: string): string | null {
 }
 
 /**
+ * A plant page section's own address — `#/plants/<slug>/<section>`.
+ *
+ * Hash form on purpose, and `canonicalPath` above declines to fold it into a
+ * path deliberately: a section is a *place on a page*, not a page. The
+ * prerenderer writes no file for it (198 plants × five sections would be a
+ * thousand documents whose only difference is where they open), so the hash is
+ * the only address that reloads it — and a link that opens the plant and lands
+ * on the right card is exactly what's wanted.
+ *
+ * Lives here rather than in `steps/plant.ts` so that the components drawing
+ * these links — one of which the plant page itself imports — don't have to
+ * import the page back.
+ */
+export function plantSectionHref(slug: string, section: string): string {
+  return `#/plants/${encodeURIComponent(slug)}/${section}`;
+}
+
+/**
  * Every plant slug in the catalog.
  *
  * A species native to more than one covered region (live oak spans both Florida

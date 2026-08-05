@@ -950,12 +950,86 @@ details[open] > summary::after {
   background: var(--brand);
 }
 
-/* Ecosystem & propagation: each its own card whose heading matches the "Want
-   to plant?" tool, so the sections below a plant read as siblings and each
-   scrolls into view on its own deep link. */
+/* Every card below a plant's profile: same heading, so they read as siblings,
+   and each one is a place you can send somebody to. */
 .plant-section > h3 {
   margin: 0 0 0.6rem;
   font-size: 1.17rem;
+}
+/* Clear of the sticky header when a deep link scrolls one of these to the top —
+   without it the heading you were sent to hides underneath it. */
+.plant-section {
+  scroll-margin-top: 4rem;
+}
+
+/* --- A section's own address -------------------------------------------- */
+/* The `#` beside a section heading. Drawn at rest and quiet: on a phone there
+   is no hover to reveal it with, so an invisible one is no link at all — but a
+   page with five of them shouldn't look punctuated either. It brightens to the
+   brand green under a pointer or the keyboard. */
+.card-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.card-head-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.anchor-link {
+  flex: 0 0 auto;
+  /* A full tap target without a full line of height: the box grows past the
+     heading's line without pushing it around. */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  min-height: 2rem;
+  margin: -0.5rem -0.35rem -0.5rem 0;
+  border-radius: calc(var(--radius) - 6px);
+  color: var(--ink-soft);
+  opacity: 0.55;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+}
+.anchor-link:hover,
+.anchor-link:focus-visible {
+  color: var(--brand);
+  opacity: 1;
+  background: var(--surface-2);
+}
+
+/* Arriving at a section: say *this one*, whether or not the page had to move.
+   On a laptop the cards sit in two columns and the one being linked to is
+   often already on screen, so scrolling alone would tell the reader nothing —
+   the page wouldn't change at all and they'd be left hunting.
+
+   A wash of the brand green and a green edge, held long enough to be read and
+   then faded back to an ordinary card. No movement, and nothing left for the
+   reader to dismiss. The border carries most of it, because `--brand-bg` sits
+   only a shade off `--surface` in the dark theme and a wash alone would be
+   nearly invisible there.
+
+   The card also takes focus on arrival (so a keyboard or screen-reader user
+   lands where a sighted one is looking), and that outline is recoloured from
+   the app's focus blue to the same green — otherwise the landing reads as two
+   competing signals in two different colours. It isn't relied on: whether a
+   programmatic focus counts as `:focus-visible` differs between engines, and
+   the fade above has to work on its own. */
+@keyframes section-arrived {
+  0%,
+  30% {
+    background: var(--brand-bg);
+    border-color: var(--brand);
+  }
+}
+.card.is-linked {
+  animation: section-arrived 2.2s ease-out;
+}
+.card.is-linked:focus-visible {
+  outline-color: var(--brand);
 }
 
 /* --- Just-in-time education asides ("why this matters") --- */
@@ -2035,6 +2109,115 @@ details.weights {
   font-size: 0.85rem;
   color: var(--ink-soft);
   margin: 0.15rem 0 0;
+}
+
+/* --- The ecosystem card's folding glosses --------------------------------
+   Only this one list folds (`.score-list-folding`); the propagation methods and
+   the database descriptions use the same `.score-item` shape and stay open,
+   because their sentences are the content rather than a gloss on a label.
+
+   Seven headings, seven bars and twenty-odd lines of explanation with nothing
+   between them made the tallest card on the page and buried the numbers. Folded,
+   the card is a table you can scan; the sentence arrives on hover, on tap, or on
+   focus. See `ecosystemSection` in steps/plant.ts for why these in particular
+   are the one thing on a plant's page that may be folded away. */
+.score-list-folding .score-item {
+  margin: 0;
+  border-top: 1px solid var(--line);
+}
+.score-list-folding .score-item:first-child {
+  border-top: 0;
+}
+/* The whole row is the control — a 0.92rem label is a poor thing to aim a
+   finger at, and the bar underneath it is part of the same fact. */
+.score-list-folding .score-toggle {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0.35rem 0.55rem;
+  border: 0;
+  border-radius: calc(var(--radius) - 6px);
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.score-list-folding .score-head {
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+.score-list-folding .score-name {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.score-list-folding .score-value {
+  flex: 0 0 auto;
+  font-variant-numeric: tabular-nums;
+}
+/* Drawn at rest, not on hover: a phone has no hover, and the affordance is the
+   whole point (the same rule `.section-link` follows). */
+.score-chevron {
+  flex: 0 0 auto;
+  color: var(--brand);
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 0.18s ease;
+}
+.score-toggle[aria-expanded="true"] .score-chevron {
+  transform: rotate(90deg);
+}
+/* 0fr → 1fr on a grid row is the one way to animate to a height nobody knows
+   in advance. The inner element clips; `visibility` takes the words out of the
+   accessibility tree while they're folded away, and waits for the fold to
+   finish before doing it, so the text doesn't blink out ahead of the row. */
+.score-list-folding .score-why {
+  display: grid;
+  grid-template-rows: 0fr;
+  margin: 0;
+  transition: grid-template-rows 0.18s ease;
+}
+.score-list-folding .score-why-text {
+  overflow: hidden;
+  visibility: hidden;
+  margin: 0;
+  padding: 0 0.35rem;
+  transition: visibility 0s linear 0.18s;
+}
+/* Latched open by a tap, or open for as long as the keyboard is on this row —
+   tabbing down the list reads it without having to press anything. */
+.score-toggle[aria-expanded="true"] + .score-why,
+.score-toggle:focus-visible + .score-why {
+  grid-template-rows: 1fr;
+}
+.score-toggle[aria-expanded="true"] + .score-why > .score-why-text,
+.score-toggle:focus-visible + .score-why > .score-why-text {
+  visibility: visible;
+  padding-bottom: 0.5rem;
+  transition-delay: 0s;
+}
+/* With a pointer there is no need to press anything at all: the row opens as
+   the cursor crosses it and closes behind it. The gloss grows *below* the head
+   being pointed at, so the row under the cursor never moves out from under it. */
+@media (hover: hover) {
+  .score-list-folding .score-item:hover .score-why {
+    grid-template-rows: 1fr;
+  }
+  .score-list-folding .score-item:hover .score-why > .score-why-text {
+    visibility: visible;
+    padding-bottom: 0.5rem;
+    transition-delay: 0s;
+  }
+  .score-list-folding .score-toggle:hover {
+    background: var(--surface-2);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .score-list-folding .score-why,
+  .score-chevron {
+    transition: none;
+  }
 }
 
 /* --- Look-alikes ---------------------------------------------------------

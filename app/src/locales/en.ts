@@ -891,6 +891,10 @@ export const en = {
   "plant.shareTitle": "{name} — Indigene",
   "plant.shareText": "{name} ({latin}) — a native plant worth knowing. Check if your spot suits it:",
   "plant.linkCopied": "Link copied — paste it anywhere.",
+  // The `#` beside every section heading on a plant's page. It says what
+  // following it does, because "#" on its own says nothing — and what it does
+  // is hand you the address of that one card.
+  "plant.sectionLink": "Copy a link to this section",
   "plant.ecosystemTitle": "🦋 What it does for the ecosystem",
   "plant.wildlifeItBrings": "Wildlife it brings in: ",
   "plant.soleTie": "This plant is the only option {name} has — a make-or-break tie.",

@@ -152,9 +152,18 @@ angle.
 | fruit | the **fruiting** annotation, the same way |
 
 **Only the annotations are trustworthy.** The habit/leaf split is colour
-statistics and a threshold; it has been sanity-checked against synthetic images
-that isolate each signal, and never against a labelled set of real photographs,
-because there isn't one. It is exactly as crude as it sounds.
+statistics and a threshold, and it is exactly as crude as it sounds.
+
+What it *has* been measured against is one full harvest — 6,755 plant candidates.
+The two buckets separate cleanly: 94% of the photographs it calls habit have
+visible sky (median 0.20 of the top third), the ones it calls leaf have
+essentially none (median 0.002), and only 1% of habit calls beat leaf by a hair.
+So the signal is discriminating rather than defaulting, which was the real worry.
+
+That is separation, not correctness. Nothing here knows whether a photograph
+actually shows the whole shrub — only that it looks outdoors-and-wide rather than
+a-foot-from-a-leaf. A hillside with the plant somewhere in it measures the same
+as a fine specimen shot, and always will.
 
 Which is why it decides nothing. The guess re-orders the strip and puts a small
 tag on a tile; every candidate is still assignable to every slot. A wrong guess

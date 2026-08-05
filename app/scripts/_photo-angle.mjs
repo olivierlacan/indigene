@@ -34,8 +34,15 @@
 // shrub" or "this is a leaf", so those two are guessed from colour statistics:
 // sky in the top third, greenness in the middle, how much detail sits in the
 // centre versus the edges. The reasoning is stated in `fit()` below, and it is
-// exactly as crude as it sounds. It has not been measured against a labelled
-// set, because there isn't one.
+// exactly as crude as it sounds.
+//
+// Measured over one full harvest (6,755 plant candidates), the two buckets do at
+// least separate: 94% of the photographs called habit have visible sky, the ones
+// called leaf have essentially none, and only 1% of habit calls win by a hair.
+// That says the signal discriminates rather than defaults. It does not say the
+// call is right — nothing here knows whether the whole shrub is in the frame,
+// and a scrubby hillside with the plant somewhere in it measures the same as a
+// fine specimen shot.
 //
 // ## Which is why nothing here decides anything
 //

@@ -23,6 +23,89 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+## [0.23] - 2026-08-04
+
+**Photographs on every list, arriving gently**
+
+[![The plants list, every row opening with a photograph of the species](docs/screenshots/pr-92/thumb.png)](docs/screenshots/pr-92/plants-after-dark.png)
+[Before](docs/screenshots/pr-92/plants-before-dark.png) · [After](docs/screenshots/pr-92/plants-after-dark.png)
+
+### Added
+
+- **You can now see what a plant looks like without opening it.** The photographs
+  people picked for the plant pages have moved out onto the lists as well:
+  [every native Indigene knows](https://indigene.app/plants), every region's
+  roster, and the plant starring on the front of each region card. Where nobody
+  has chosen a photograph yet the little drawing stays exactly as it was, so no
+  row is ever left with an empty square.
+
+### Changed
+
+- **Pictures arrive gently instead of appearing in pieces.** Every photograph in
+  the app is now fetched quietly in the background and only shown once it is
+  complete, fading in over whatever was already there — the plant's drawing on a
+  list, or the photograph's own colours on a plant page. No more watching a
+  picture paint itself from the top down, and nothing on the page shifts when
+  one lands.
+- **Photographs are asked for at the size they're actually shown.** A picture
+  drawn the size of a postage stamp used to be downloaded at the size of a
+  postcard. Now the app asks for the small one for a small space and the larger
+  one only where it will really be seen, which on an ordinary laptop is about a
+  third of what a plant page used to cost. On a phone the difference is bigger
+  still, because a whole list of plants is now a whole list of small pictures
+  rather than large ones.
+- **A long list only loads the pictures you can see.** Scrolling the plants
+  page no longer sets 190 photographs downloading at once; each one is fetched
+  just before it reaches the screen, a few at a time, so the rest of the app
+  stays quick while they arrive. If your connection is slow, or your phone is
+  set to save data, the lists keep their drawings and don't fetch photographs at
+  all. Anything you have already seen is kept on your device and comes back
+  instantly, offline included.
+- Internal: `lib/photo.ts` is now the only place that decides how an
+  iNaturalist photo is asked for and shown — `renditionFor` picks the smallest
+  of iNaturalist's five fixed renditions that covers a slot at the device's
+  pixel ratio (measured: square 7.6 KB, small 38 KB, medium 126 KB, large
+  438 KB, original 1.7 MB; `original` is asked for nowhere), a shared
+  `IntersectionObserver` holds a thumbnail's job until it is within 400 px of
+  the viewport, a four-deep queue caps concurrency with the plant hero
+  jumping it, and every image is `decode()`d before the `.photo-fade` class is
+  lifted. A job that hasn't decoded in 8 s releases its slot and finishes on
+  its own, so one stalled request can't starve a list. The observer's targets
+  are swept for disconnected nodes past 300 entries — an
+  `IntersectionObserver` holds targets strongly, and the plants index rebuilds
+  ~190 cards per keystroke.
+- Internal: **no worker resizes anything, deliberately.** Shrinking an image
+  locally requires downloading every byte first, so it cannot shorten the wait
+  it appears to address, and iNaturalist already publishes five sizes on a CDN
+  — asking for `small` costs 38 KB where fetching `medium` to shrink costs 126.
+  The reasoning is written down at the top of `lib/photo.ts` so the idea isn't
+  re-proposed.
+- Internal: `npm run hero:colors` (`scripts/hero-colors.mjs`) averages each
+  pick's `square` rendition into a `color` on `hero-photos.json` — decoded by
+  Chromium, the same borrowed-decoder arrangement `_photo-quality.mjs` uses, so
+  the repo keeps zero runtime dependencies. ~1.6 KB for all 204 picks. The
+  field is optional; without it the hero falls back to `--brand-bg`. Documented
+  as stage 3½ in `docs/hero-photos.md`.
+- Internal: the plant hero's `aspect-ratio` moved from the `<img>` to the
+  `.plant-hero-shot` button. An `<img>` with no `src` yet is not a replaced
+  element — it lays out as its alt text — so the ratio on the image reserved a
+  text-high strip and the waiting colour showed as a bar.
+- Internal: `PHOTO_CACHE_LIMIT` 240 → 600. The mix shifted from lightbox-sized
+  photos to 8–38 KB thumbnails, so the entry count can rise while the bytes
+  stay around 30 MB.
+- Internal: `scripts/shoot.mjs --photos DIR` serves the iNaturalist photo hosts
+  from a local mirror laid out like their URLs. The list pages now load
+  photographs, which made screenshots depend on the network and race whichever
+  tiles had landed; the mirror holds the real bytes, so a capture is both
+  truthful and repeatable.
+
+## [0.22] - 2026-08-04
+
+**More to plant, and who it feeds**
+
+[![Browse by wildlife: 28 creatures the Atlantic France plants support](docs/screenshots/pr-91/thumb.png)](docs/screenshots/pr-91/wildlife-after-dark.png)
+[Before](docs/screenshots/pr-91/wildlife-before-dark.png) · [After](docs/screenshots/pr-91/wildlife-after-dark.png)
+
 ### Added
 
 - **A lot more to plant in the Pacific Northwest.** The list grew from 44 plants
@@ -84,21 +167,21 @@ subtitle on the What's new page.
   This is the structural gap the audit exposed: European lists can be grown from
   a ranking and American ones can't.
 
-- Internal: `npm run coverage` prints what each region's plant list is missing —
-  forms below three, moisture × sun cells with nothing in them, months with
-  nothing in flower, the wildlife ties that aren't written, and (for the four
-  French regions) the food-web genera we don't ship, joined live against the
-  committed Gaytán host counts. This is `docs/coverage-plan.md` §4 step 1, which
-  that document asked for and left unbuilt. `--region <id>` for one region,
-  `--top N` for how far down the genus ranking to look.
-- Internal: `docs/coverage-gap-pnw-france-atlantic.md` is the first thing the
-  script was pointed at — the measured gap in the Pacific Northwest and Atlantic
-  France, with the rows to write and the order to write them in. Headline: the
-  plant lists are 7 and 8 rows short of the app's own floors, but Atlantic France
-  ships only 9 of the 30 genera that host the most caterpillars in its zone, and
-  names an animal for 5 of its 23 plants with **no** larval host at all — a gap
-  that needs no new plant rows and no new data source to close.
+## [0.21] - 2026-08-03
 
+**Real photographs, and a thumb to page them**
+
+[![A plant's page opening with a photograph of the species instead of a drawing](docs/screenshots/pr-85/thumb.png)](docs/screenshots/pr-85/after-dark.png)
+[Before](docs/screenshots/pr-85/before-dark.png) · [After](docs/screenshots/pr-85/after-dark.png)
+
+### Added
+
+- **Real photographs on plant pages.** Where we've been able to choose a good,
+  freely-licensed picture, a plant's profile now opens with an actual
+  photograph of the species instead of the drawing — 188 plants so far, each
+  photo credited to the naturalist who took it and tappable to see it full-size
+  with its licence and a link back to the original sighting. Plants we haven't
+  chosen a photo for yet keep their drawing, so nothing looks unfinished.
 - **Swipe through the photos.** When you tap a photo of a plant or animal
   [someone spotted near you](https://indigene.app/wildlife) and it opens large,
   you can now slide it aside with your thumb to see the next one — the picture
@@ -122,6 +205,16 @@ subtitle on the What's new page.
   photo tilted. `npm run swipe:check` drives real Chromium touch input at a
   built, served `dist/` and asserts all 17 outcomes (drags, flicks, twitches,
   wrap-around, dismissal both ways, and a clean reopen).
+
+## [0.20] - 2026-08-01
+
+**What's new, and where it would go**
+
+[![The gear menu opening with "See what's new" and a green dot beside it](docs/screenshots/pr-88/thumb.png)](docs/screenshots/pr-88/menu-after-dark.png)
+[Before](docs/screenshots/pr-88/menu-before-dark.png) · [After](docs/screenshots/pr-88/menu-after-dark.png)
+
+### Added
+
 - **A plant's page tells you when you've already got somewhere to put it.** If
   you've saved a spot, reading about
   [a plant](https://indigene.app/plants/quercus-alba) now says whether it would
@@ -169,35 +262,9 @@ subtitle on the What's new page.
   its own section, and
   [Settings](https://indigene.app/settings) shows you both values with a button
   that throws them away.
-- **You can now see what a plant looks like without opening it.** The photographs
-  people picked for the plant pages have moved out onto the lists as well:
-  [every native Indigene knows](https://indigene.app/plants), every region's
-  roster, and the plant starring on the front of each region card. Where nobody
-  has chosen a photograph yet the little drawing stays exactly as it was, so no
-  row is ever left with an empty square.
 
 ### Changed
 
-- **Pictures arrive gently instead of appearing in pieces.** Every photograph in
-  the app is now fetched quietly in the background and only shown once it is
-  complete, fading in over whatever was already there — the plant's drawing on a
-  list, or the photograph's own colours on a plant page. No more watching a
-  picture paint itself from the top down, and nothing on the page shifts when
-  one lands.
-- **Photographs are asked for at the size they're actually shown.** A picture
-  drawn the size of a postage stamp used to be downloaded at the size of a
-  postcard. Now the app asks for the small one for a small space and the larger
-  one only where it will really be seen, which on an ordinary laptop is about a
-  third of what a plant page used to cost. On a phone the difference is bigger
-  still, because a whole list of plants is now a whole list of small pictures
-  rather than large ones.
-- **A long list only loads the pictures you can see.** Scrolling the plants
-  page no longer sets 190 photographs downloading at once; each one is fetched
-  just before it reaches the screen, a few at a time, so the rest of the app
-  stays quick while they arrive. If your connection is slow, or your phone is
-  set to save data, the lists keep their drawings and don't fetch photographs at
-  all. Anything you have already seen is kept on your device and comes back
-  instantly, offline included.
 - **The ⚙️ menu opens with what's new, and saved spots are one row away.**
   What's new sits at the top, where the dot on the gear points. Underneath it,
   **Saved spots** is now a single row through to
@@ -245,43 +312,6 @@ subtitle on the What's new page.
 - Internal: bundle re-measured — 273 KB → 275 KB gzipped, and the four docs
   quoting the figure updated (they had drifted to ~268 KB before this change).
   Dropping the menu's database path gave ~0.4 KB of that back.
-- Internal: `lib/photo.ts` is now the only place that decides how an
-  iNaturalist photo is asked for and shown — `renditionFor` picks the smallest
-  of iNaturalist's five fixed renditions that covers a slot at the device's
-  pixel ratio (measured: square 7.6 KB, small 38 KB, medium 126 KB, large
-  438 KB, original 1.7 MB; `original` is asked for nowhere), a shared
-  `IntersectionObserver` holds a thumbnail's job until it is within 400 px of
-  the viewport, a four-deep queue caps concurrency with the plant hero
-  jumping it, and every image is `decode()`d before the `.photo-fade` class is
-  lifted. A job that hasn't decoded in 8 s releases its slot and finishes on
-  its own, so one stalled request can't starve a list. The observer's targets
-  are swept for disconnected nodes past 300 entries — an
-  `IntersectionObserver` holds targets strongly, and the plants index rebuilds
-  ~190 cards per keystroke.
-- Internal: **no worker resizes anything, deliberately.** Shrinking an image
-  locally requires downloading every byte first, so it cannot shorten the wait
-  it appears to address, and iNaturalist already publishes five sizes on a CDN
-  — asking for `small` costs 38 KB where fetching `medium` to shrink costs 126.
-  The reasoning is written down at the top of `lib/photo.ts` so the idea isn't
-  re-proposed.
-- Internal: `npm run hero:colors` (`scripts/hero-colors.mjs`) averages each
-  pick's `square` rendition into a `color` on `hero-photos.json` — decoded by
-  Chromium, the same borrowed-decoder arrangement `_photo-quality.mjs` uses, so
-  the repo keeps zero runtime dependencies. ~1.6 KB for all 204 picks. The
-  field is optional; without it the hero falls back to `--brand-bg`. Documented
-  as stage 3½ in `docs/hero-photos.md`.
-- Internal: the plant hero's `aspect-ratio` moved from the `<img>` to the
-  `.plant-hero-shot` button. An `<img>` with no `src` yet is not a replaced
-  element — it lays out as its alt text — so the ratio on the image reserved a
-  text-high strip and the waiting colour showed as a bar.
-- Internal: `PHOTO_CACHE_LIMIT` 240 → 600. The mix shifted from lightbox-sized
-  photos to 8–38 KB thumbnails, so the entry count can rise while the bytes
-  stay around 30 MB.
-- Internal: `scripts/shoot.mjs --photos DIR` serves the iNaturalist photo hosts
-  from a local mirror laid out like their URLs. The list pages now load
-  photographs, which made screenshots depend on the network and race whichever
-  tiles had landed; the mirror holds the real bytes, so a capture is both
-  truthful and repeatable.
 
 ## [0.19] - 2026-08-01
 
@@ -315,13 +345,6 @@ subtitle on the What's new page.
   already true, quietly; the trouble was that nothing ever told you, so a list
   ordered by last month's decision looked like Indigene's own opinion. It's
   named on the Settings page now, with one button back to the usual goal.
-- **Real photographs on plant pages.** Where we've been able to choose a good,
-  freely-licensed picture, a plant's profile now opens with an actual
-  photograph of the species instead of the drawing — 188 plants so far, each
-  photo credited to the naturalist who took it and tappable to see it full-size
-  with its licence and a link back to the original sighting. Plants we haven't
-  chosen a photo for yet keep their drawing, so nothing looks unfinished.
-
 - **A real photograph where a plant's page had a drawing.** That little picture
   beside a plant's name was chosen by its *type* — the same shrub shape for
   every shrub, the same tree for every tree. It can now be an actual photo of
@@ -1896,7 +1919,11 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/ccf78ee...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/e8860f8...HEAD
+[0.23]: https://github.com/olivierlacan/indigene/compare/221a9ee...e8860f8
+[0.22]: https://github.com/olivierlacan/indigene/compare/9f09ba2...221a9ee
+[0.21]: https://github.com/olivierlacan/indigene/compare/1774027...9f09ba2
+[0.20]: https://github.com/olivierlacan/indigene/compare/ccf78ee...1774027
 [0.19]: https://github.com/olivierlacan/indigene/compare/9cc18dd...ccf78ee
 [0.18]: https://github.com/olivierlacan/indigene/compare/ccd214c...9cc18dd
 [0.17]: https://github.com/olivierlacan/indigene/compare/5200de0...ccd214c

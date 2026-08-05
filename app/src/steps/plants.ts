@@ -192,6 +192,12 @@ export function renderPlants(main: HTMLElement): void {
     el("p", { class: "note", style: "margin-top:0" }, tx("plants.lookalikesLink", {
       link: el("a", { href: "#/lookalikes" }, t("plants.lookalikesLinkText")),
     })),
+    // And the way in to the how-tos, for the same reason and in the same place:
+    // once you already own one of these, the next question is how to make more
+    // of it, and when in the year that's done.
+    el("p", { class: "note", style: "margin-top:0" }, tx("plants.plantingLink", {
+      link: el("a", { href: "#/planting" }, t("plants.plantingLinkText")),
+    })),
     el("div", { class: "field" }, [el("label", { for: "plant-q" }, t("plants.label")), input]),
     count,
     results,

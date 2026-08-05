@@ -2220,6 +2220,195 @@ details.weights {
   }
 }
 
+/* --- Ways to grow more ----------------------------------------------------
+   The propagation techniques as pages (`#/planting`, steps/planting.ts). The
+   one new idea here is the season strip: four cells for the year, the
+   technique's window filled in, today's season ringed. It has to survive a
+   360 px phone, so the cells are equal fractions of the width and the labels
+   are single words — "Spring Summer Autumn Winter" is the widest row it will
+   ever have to draw, and it fits.
+
+   The strip is `aria-hidden` in the markup: the `when` line beside it says the
+   same thing in words, and shading is not something a screen reader can
+   convey. */
+.season-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.15rem;
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+.season-cell {
+  text-align: center;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.1rem;
+  border-radius: 6px;
+  background: var(--surface-2);
+  color: var(--ink-soft);
+  border: 1px solid transparent;
+}
+.season-cell.is-on {
+  background: var(--brand);
+  color: var(--on-brand);
+  font-weight: 650;
+}
+/* Today, so the strip answers "is this week one of them" without arithmetic.
+   A ring rather than another fill: it has to read on a lit cell and an unlit
+   one alike, and only `--ink` is guaranteed to contrast with both. */
+.season-cell.is-now {
+  border-color: var(--ink);
+}
+
+/* The window and the wait, side by side. A definition list because that is
+   what it is — two labels and their values — and it lets the labels shrink
+   into small caps without becoming a heading. */
+.timing-chips {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.2rem 0.6rem;
+  margin: 0.7rem 0 0;
+}
+.timing-chips dt {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  padding-top: 0.12rem;
+}
+.timing-chips dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.technique-group {
+  margin-top: 1.2rem;
+}
+.technique-group-lede {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin: 0.2rem 0 0.6rem;
+}
+.technique-list {
+  display: grid;
+  gap: 0.6rem;
+}
+.technique-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.7rem 0.8rem 0.8rem;
+}
+.technique-card:hover {
+  border-color: var(--line-strong);
+}
+.technique-name {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.3;
+  display: flex;
+  gap: 0.4rem;
+  align-items: baseline;
+}
+.technique-name a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.technique-name a::after {
+  content: " →";
+  color: var(--brand);
+}
+.technique-name a:hover,
+.technique-name a:focus-visible {
+  text-decoration: underline;
+}
+.technique-icon {
+  flex: none;
+}
+.technique-when {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.technique-anyseason {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.technique-plants {
+  margin: 0.4rem 0 0;
+  line-height: 1.9;
+}
+
+/* "What to do in autumn" — the card the index leads with, and the same list
+   repeated at the foot of a technique page. */
+.season-now-list {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+.season-now-list li {
+  display: grid;
+  grid-template-columns: 1.4rem 1fr;
+  gap: 0 0.2rem;
+  padding: 0.35rem 0;
+  border-top: 1px solid var(--line);
+}
+.season-now-list li:first-child {
+  border-top: 0;
+}
+.season-now-when {
+  grid-column: 2;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.season-now-lede {
+  margin: 0.2rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.planting-sources .score-head {
+  gap: 0.4rem;
+  align-items: flex-start;
+}
+.planting-sources .score-head .badge {
+  flex: none;
+}
+
+/* The plant page's end of the same thread: each method's name is now the door
+   to its technique page, with its window on the line below. */
+.prop-method-link {
+  color: var(--ink);
+  text-decoration: none;
+  display: flex;
+  gap: 0.35rem;
+  align-items: baseline;
+}
+.prop-method-label::after {
+  content: " →";
+  color: var(--brand);
+  white-space: nowrap;
+}
+.prop-method-link:hover,
+.prop-method-link:focus-visible {
+  text-decoration: underline;
+}
+.prop-when {
+  margin: 0.1rem 0 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.prop-when .k {
+  font-weight: 700;
+  color: var(--ink);
+  margin-right: 0.3rem;
+}
+.prop-all {
+  margin: 0.7rem 0 0;
+  font-size: 0.9rem;
+}
+
 /* --- Look-alikes ---------------------------------------------------------
    The comparison lives on the impostor's own page; a plant page keeps one line
    (`.lookalike-line`). On the comparison, the two sides are colour-coded and

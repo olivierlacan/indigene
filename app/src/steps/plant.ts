@@ -17,6 +17,7 @@ import { lookalikesForPlant } from "../lib/lookalikes";
 import { supportLabel } from "../lib/plain";
 import { supportIcon } from "../components/support-icon";
 import { SCORE_KEYS, scoreLabel, bloomSentence, confidencePlain, growthPlain, moistureWord, propagationMethod, sunLabel, PROPAGATION_SOURCE_URL, SOURCES_ROUTE } from "../lib/plain";
+import { techniqueFor, techniqueHref } from "../lib/planting";
 import { citation } from "../components/citation";
 import { silhouetteFor } from "../components/plant-card";
 import { heroPhotoFor, asObservation } from "../lib/hero-photo";
@@ -934,12 +935,33 @@ function lookalikeLine(all: PlantEntry[]): HTMLElement | null {
 // "Already have one? Here's how to make more." Every method the plant lists is
 // spelled out in plain words (from the shared glossary), so a term like
 // "stratification" never appears without the what-you-actually-do beside it.
+//
+// Each method also says *when* — one line — and links to its own page
+// (`#/planting/<slug>`), where the timing is the content: the cue to watch for,
+// how long the wait is, and where it usually goes wrong. That belongs there
+// rather than here for the same reason the look-alike comparisons do: the same
+// three paragraphs about scarification would otherwise be printed on the forty
+// plant pages that mention it, pushing this plant's own story below the fold.
 function propagationSection(p: Plant, regionId: string): HTMLElement {
   const { methods, basis } = p.propagation;
   const methodItems = methods.map((m) => {
     const g = propagationMethod(m);
+    const tech = techniqueFor(m);
     return el("li", { class: "score-item" }, [
-      el("div", { class: "score-head" }, [el("span", {}, g.name)]),
+      el("div", { class: "score-head" }, [
+        el("a", { class: "prop-method-link", href: techniqueHref(tech) }, [
+          el("span", { class: "technique-icon", "aria-hidden": "true" }, tech.icon),
+          // The label carries the chevron rather than the anchor: the anchor is
+          // a flex row (icon, then label), and a `::after` on it would be laid
+          // out as a third column — parking the arrow against the right margin,
+          // two lines above the words it belongs to.
+          el("span", { class: "prop-method-label" }, g.name),
+        ]),
+      ]),
+      el("p", { class: "prop-when" }, [
+        el("span", { class: "k" }, t("planting.whenLabel")),
+        g.when,
+      ]),
       el("p", { class: "score-why" }, g.plain),
     ]);
   });
@@ -949,6 +971,9 @@ function propagationSection(p: Plant, regionId: string): HTMLElement {
       propagationNote(p, regionId),
     ]),
     el("ul", { class: "score-list" }, methodItems),
+    el("p", { class: "prop-all" }, [
+      el("a", { href: "#/planting" }, t("planting.allTechniques")),
+    ]),
     el("p", { class: "confidence", style: "margin-top:0.4rem" }, [
       el("span", {}, [
         t("plant.howToSource"),

@@ -617,7 +617,7 @@ function supportRow(s: PlantSupport): HTMLElement {
       ]),
       el("div", { class: "plant-latin", style: "font-size:0.85rem" }, names.sub),
       el("div", { style: "display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.35rem" }, tieTags(s.link)),
-      el("div", { style: "font-size:0.85rem;color:var(--ink-soft);margin-top:0.3rem" }, supportNote(p.latin, s.link)),
+      el("div", { style: "font-size:0.85rem;color:var(--ink-soft);margin-top:0.3rem" }, supportNote(p.latin, s.link, s.region.meta.id)),
       // Every relationship shows its source, with authority names linked out.
       el("div", { style: "font-size:0.75rem;color:var(--ink-soft);opacity:0.85;margin-top:0.2rem" }, [
         el("span", { "aria-hidden": "true" }, "🔎 "),

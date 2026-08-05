@@ -63,7 +63,7 @@ export function renderRegion(main: HTMLElement, param?: string): void {
   }
 
   document.title = t("region.docTitle", { region: regionName(region.meta) });
-  reportRosterUntranslated(plants);
+  reportRosterUntranslated(plants, region.meta.id);
 
   const allRows: FilterRow[] = [];
   const sections: FilterSection[] = [];
@@ -130,7 +130,7 @@ function renderCategory(
   const inForm = sortedByCommon(plants, form);
   const label = formLabel(form);
   document.title = t("region.categoryDocTitle", { label, region: regionName(region.meta) });
-  reportRosterUntranslated(inForm);
+  reportRosterUntranslated(inForm, region.meta.id);
 
   // The same category elsewhere — only regions that actually have one.
   const elsewhere = REGIONS.filter(
@@ -290,7 +290,7 @@ function plantRow(p: Plant, regionId: string): { node: HTMLElement; mark: (nq: s
       sub,
       el("div", {
         style: "font-size:0.85rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis",
-      }, prose(p, "givesNote")),
+      }, prose(p, "givesNote", regionId)),
     ]),
   ]);
   const mark = (nq: string): void => {

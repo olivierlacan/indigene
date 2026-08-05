@@ -5,7 +5,9 @@ native plants that will actually thrive there — ranked by what they do for the
 local ecosystem, with honest mature-size-over-time drawings.
 
 **No framework.** Built on the DOM and real web APIs, TypeScript compiled by
-Vite. Zero runtime dependencies. ~330 KB gzipped.
+Vite. Zero runtime dependencies. ~320 KB gzipped — plus a ~122 KB chunk of
+translated catalog prose that only a reader in French ever downloads (see
+`src/lib/prose.ts`).
 
 ## Run it
 

@@ -22,6 +22,7 @@
     "hero:colors": "node scripts/hero-colors.mjs",
     "reconcile": "node scripts/reconcile.mjs",
     "names:check": "node scripts/check-vernacular.mjs",
+    "prose:check": "node scripts/check-prose.mjs",
     "lookalikes:check": "node scripts/check-lookalikes.mjs",
     "swipe:check": "node scripts/check-lightbox-swipe.mjs"
   },

@@ -80,8 +80,8 @@ const shortLabel = (name: string): string => name.replace(/\s*[([].*$/, "");
  * Stacks on a phone and pairs up side by side once there's room — a
  * three-column table at 360 px is four words to a line.
  */
-export function tellTable(plantLatin: string, nativeName: string, lookalikeName: string, link: LookalikeLink): HTMLElement {
-  return el("div", { class: "tells" }, lookalikeTells(plantLatin, link).map((tell) =>
+export function tellTable(plantLatin: string, nativeName: string, lookalikeName: string, link: LookalikeLink, regionId?: string): HTMLElement {
+  return el("div", { class: "tells" }, lookalikeTells(plantLatin, link, regionId).map((tell) =>
     el("div", { class: "tell" }, [
       el("div", { class: "tell-feature" }, tell.feature),
       el("div", { class: "tell-side is-native" }, [
@@ -297,9 +297,9 @@ function comparisonCard(lookalike: Lookalike, n: NativeForLookalike): HTMLElemen
     ]),
     el("p", { class: "kv", style: "margin:0 0 0.5rem" }, [
       el("span", { class: "k" }, t("lookalike.whyMixedUp")),
-      lookalikeWhy(n.plant.latin, n.link),
+      lookalikeWhy(n.plant.latin, n.link, n.region.meta.id),
     ]),
-    tellTable(n.plant.latin, nativeName, commonName(lookalike), n.link),
+    tellTable(n.plant.latin, nativeName, commonName(lookalike), n.link, n.region.meta.id),
     el("p", { class: "confidence", style: "margin-top:0.6rem" }, [
       el("span", {}, [t("lookalike.tellsSource"), ...citation(n.link.basis)]),
     ]),

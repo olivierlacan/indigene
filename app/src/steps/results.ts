@@ -43,6 +43,10 @@ export function renderResults(main: HTMLElement): (() => void) | void {
   }
 
   const plants = draftPlants(region);
+  // Captured rather than read inside `rerender`: the narrowing above doesn't
+  // survive into a closure, and every card needs to say which region's row —
+  // and so which region's translation — it is showing.
+  const regionId = region.meta.id;
   const name = regionName(region.meta);
   const context = draftContext(region);
   const rc = recompute("list");
@@ -80,7 +84,7 @@ export function renderResults(main: HTMLElement): (() => void) | void {
   // region's whole list rather than the filtered slice on screen: the gap is a
   // fact about the region, and a banner that blinked in and out as a slider or
   // the name filter moved would read as a glitch rather than as an honest caveat.
-  reportRosterUntranslated(plants);
+  reportRosterUntranslated(plants, regionId);
 
   function rerender(): void {
     const ranked = rankDraft(plants);
@@ -115,7 +119,7 @@ export function renderResults(main: HTMLElement): (() => void) | void {
       listEl.append(el("div", { class: "note warn" },
         anyFilter ? t("results.noneFiltered", { region: name }) : t("results.noneHardy", { region: name })));
     }
-    shown.forEach((r) => listEl.append(plantCard(r, store.weights, nameQuery)));
+    shown.forEach((r) => listEl.append(plantCard(r, store.weights, nameQuery, regionId)));
     if (hits.length > shown.length) {
       listEl.append(el("p", { style: "text-align:center;color:var(--ink-soft)" },
         t("results.showingTop", { n: fmtNumber(shown.length) })));

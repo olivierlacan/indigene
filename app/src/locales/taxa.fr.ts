@@ -311,13 +311,20 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   "Bombus spp.": { name: "Bourdons", src: "wikidata" },
 
   // ---------------------------------------------------------------------
-  // Indigene's own informal groups (`#<slug>`). These are labels we wrote, not
-  // taxa anyone has named, so translating them is the honest thing to do.
+  // Indigene's own informal groups. These are labels we wrote, not taxa anyone
+  // has named, so translating them is the honest thing to do.
+  //
+  // **Key them the way `keyFor()` reads them**, which is `latin` first and the
+  // `#<slug>` only as a fallback. Most of these groups have no `latin` at all
+  // and so key on the slug — but three of them carry a *pseudo*-latin in
+  // `data/wildlife.ts`: a list of genera rather than a binomial. Those three
+  // must be keyed on that exact string, or the name here is never read and a
+  // French reader gets "Osmia, Andrena spp." on the card. (They were, once.)
   // ---------------------------------------------------------------------
   "#grass-skippers": { name: "Hespéries et satyres", src: "catalog" },
-  "#sunflower-specialist-bees": { name: "Abeilles spécialistes des astéracées", src: "catalog" },
-  "#mason-bees": { name: "Osmies et andrènes", src: "catalog" },
-  "#annas-rufous-hummingbird": { name: "Colibri d'Anna et colibri roux", src: "catalog" },
+  "Andrena, Melissodes & others": { name: "Abeilles spécialistes des astéracées", src: "catalog" },
+  "Osmia, Andrena spp.": { name: "Osmies et andrènes", src: "catalog" },
+  "Calypte anna, Selasphorus rufus": { name: "Colibri d'Anna et colibri roux", src: "catalog" },
   "#acorn-birds": { name: "Geais, dindons et pics", src: "catalog" },
   "#berry-songbirds": { name: "Moqueurs, cardinaux et grives", src: "catalog" },
   "#winter-thrushes": { name: "Grives litornes, mauvis et merles", src: "catalog" },

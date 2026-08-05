@@ -39,8 +39,11 @@ const STRENGTH_FLOOR = 45;
  *   lines, the way a search result and a region roster row do ("" underlines
  *   nothing). The ranked list rebuilds its cards on every keystroke, so the
  *   query is a build-time argument rather than a handle to call back into.
+ * @param regionId The region whose roster this card came out of. A plant native
+ *   to two regions has a different row — and a different translation — in each,
+ *   so the card has to say which one it is showing (see `lib/prose.ts`).
  */
-export function plantCard(r: Ranked, weights: Weights, nq = ""): HTMLElement {
+export function plantCard(r: Ranked, weights: Weights, nq = "", regionId?: string): HTMLElement {
   const p = r.plant;
 
   const badges = el("div", {}, [
@@ -110,7 +113,7 @@ export function plantCard(r: Ranked, weights: Weights, nq = ""): HTMLElement {
     head,
     match,
     meta,
-    el("p", { class: "pick-gives" }, prose(p, "givesNote")),
+    el("p", { class: "pick-gives" }, prose(p, "givesNote", regionId)),
     value,
   ]);
 }

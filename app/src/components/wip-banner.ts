@@ -47,8 +47,8 @@ export function reportUntranslated(detail: string): void {
  * rather than in one of those steps so the other two don't have to import it
  * from a sibling screen.
  */
-export function reportRosterUntranslated(plants: Plant[]): void {
-  const { translated, total } = proseCoverage(plants);
+export function reportRosterUntranslated(plants: Plant[], regionId?: string): void {
+  const { translated, total } = proseCoverage(plants, regionId);
   if (translated === total) return;
   const missing = total - translated;
   // "40 of these 40" is a sentence nobody writes. When none of the roster is

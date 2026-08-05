@@ -31,6 +31,7 @@ import type { TKey } from "./locales/en";
 import { onUnitsChange } from "./lib/units";
 import { renderChrome } from "./components/chrome";
 import { mountUntranslatedBanner, resetUntranslated } from "./components/wip-banner";
+import { loadProse } from "./lib/prose";
 
 // A step may render synchronously, hand back a cleanup function, or do both
 // after an await — the router already unwraps all three (see `route`), and a
@@ -274,6 +275,12 @@ function updateSiteNav(step: AppStep): void {
 
 async function route(): Promise<void> {
   canonicalizeRoute();
+  // The catalog's translated prose is a fetched chunk, not part of the bundle
+  // (see `lib/prose.ts`). Awaited here, before anything renders, so the getters
+  // downstream can stay synchronous — and awaited on *every* route, because a
+  // language switch comes back through here too. It resolves instantly once the
+  // language is loaded, and for English there is nothing to load at all.
+  await loadProse();
   const { step, param } = currentRoute();
   // Before `syncAddressBar` — the trail helpers read `location.hash` to see
   // where the reader is heading, and canonicalizing takes the hash away.

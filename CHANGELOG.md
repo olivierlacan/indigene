@@ -23,6 +23,50 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Added
+
+- **The French edition is finished.** Until now, choosing French translated the
+  buttons and the headings, and then handed you paragraphs of English as soon as
+  you opened a plant — with a small honest notice at the top of the page saying
+  so. Every one of those paragraphs is now in French: why each plant belongs
+  where it grows, what it gives you and the wildlife, what it asks of you, and
+  how to grow more of it. All 229 plants across the eight regions, from
+  [Atlantic France](https://indigene.app/regions/france-atlantic) to
+  [south Florida and the Keys](https://indigene.app/regions/florida-south),
+  plus the 65 [animals](https://indigene.app/wildlife) and the 27
+  [look-alikes](https://indigene.app/lookalikes) and every "how to tell them
+  apart" table. The notice is gone because there is nothing left for it to
+  admit to.
+- **Plants that grow in two regions now say the right thing in each.** Twenty-two
+  plants are on more than one of our lists, and their descriptions were always
+  written separately — hornbeam is a garden hedge in the west of France and the
+  great oak-and-hornbeam forest of Lorraine in the east. The French now follows
+  the same split, so the page you are reading describes the region you are
+  reading about.
+
+### Fixed
+
+- **Three groups of animals had French names that never appeared.** "Osmies et
+  andrènes", "Abeilles spécialistes des astéracées" and "Colibri d'Anna et
+  colibri roux" had all been written down, but a mismatch in how they were
+  filed meant a French reader saw the scientific name instead. They show up
+  properly now.
+
+### Changed
+
+- **Internal:** the translated catalog prose is fetched as its own file rather
+  than built into the app, so an English reader downloads none of it. The app
+  stays at ~320 KB gzipped; French adds ~122 KB, once, and only in French. If
+  that file can't be fetched the pages fall back to English exactly as an
+  untranslated row always did.
+- **Internal:** `locales/prose.fr.ts` is now `locales/prose.fr/`, one file per
+  region plus one each for the animals and the look-alikes, and a key may be
+  qualified with a region (`"Carpinus betulus@france-continental"`) so one taxon
+  can carry a different translation per list. New `npm run prose:check` reports
+  per-region coverage, names every field still falling back to English, and
+  fails on two files claiming the same key — which is how the Douglas-fir /
+  holly / ivy collision was caught.
+
 ## [0.23] - 2026-08-04
 
 **Photographs on every list, arriving gently**

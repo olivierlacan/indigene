@@ -123,7 +123,10 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
   // The look-alike writing is part of the same promise: a page that is otherwise
   // fully in the reader's language mustn't quietly grow an English section.
   const allLookalikes = entries.flatMap((e) => lookalikesForPlant(e.region.meta.id, e.plant.id));
-  if (isUntranslated(plant) || lookalikesUntranslated(plant.latin, allLookalikes)) {
+  if (
+    isUntranslated(plant, region.meta.id) ||
+    lookalikesUntranslated(plant.latin, allLookalikes, region.meta.id)
+  ) {
     reportUntranslated(t("wip.plant"));
   }
 
@@ -154,7 +157,7 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
       el("div", { class: "plant-sections-col" }, [
         ecosystemSection(plant, entries),
         nearbyObservationsSection(plant),
-        propagationSection(plant),
+        propagationSection(plant, region.meta.id),
       ]),
       el("div", { class: "plant-sections-col" }, [
         suitabilityChecker(entries),
@@ -343,7 +346,7 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
               badges,
             ]),
           ]),
-          el("p", { class: "kv plant-why" }, [el("span", { class: "k" }, t("plant.whyBelongs")), prose(p, "nativeNote")]),
+          el("p", { class: "kv plant-why" }, [el("span", { class: "k" }, t("plant.whyBelongs")), prose(p, "nativeNote", region.meta.id)]),
           // The impostor warning belongs with the plant's identity, so it stays
           // in this column: you read the name, then who gets mistaken for it.
           lookalikeLine(all),
@@ -359,8 +362,8 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
             })} ${growthPlain(p)}`,
           ]),
           el("div", { class: "plant-body" }, [
-            el("p", { class: "kv" }, [el("span", { class: "k" }, t("card.gives")), prose(p, "givesNote")]),
-            el("p", { class: "kv" }, [el("span", { class: "k" }, t("card.needs")), prose(p, "careNote")]),
+            el("p", { class: "kv" }, [el("span", { class: "k" }, t("card.gives")), prose(p, "givesNote", region.meta.id)]),
+            el("p", { class: "kv" }, [el("span", { class: "k" }, t("card.needs")), prose(p, "careNote", region.meta.id)]),
             el("p", { class: "kv" }, [
               el("span", { class: "k" }, t("card.bloomMoisture")),
               `${bloom} ${t("card.prefersSoil", { bands: fmtList(p.moisture.map(moistureWord)) })}`,
@@ -805,7 +808,7 @@ function lookalikeLine(all: PlantEntry[]): HTMLElement | null {
 // "Already have one? Here's how to make more." Every method the plant lists is
 // spelled out in plain words (from the shared glossary), so a term like
 // "stratification" never appears without the what-you-actually-do beside it.
-function propagationSection(p: Plant): HTMLElement {
+function propagationSection(p: Plant, regionId: string): HTMLElement {
   const { methods, basis } = p.propagation;
   const methodItems = methods.map((m) => {
     const g = propagationMethod(m);
@@ -817,7 +820,7 @@ function propagationSection(p: Plant): HTMLElement {
   return sectionCard("propagation", t("plant.propagationTitle"), [
     el("p", { class: "kv", style: "margin-top:0.5rem" }, [
       el("span", { class: "k" }, t("plant.forThisPlant")),
-      propagationNote(p),
+      propagationNote(p, regionId),
     ]),
     el("ul", { class: "score-list" }, methodItems),
     el("p", { class: "confidence", style: "margin-top:0.4rem" }, [

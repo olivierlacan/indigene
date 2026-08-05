@@ -1587,6 +1587,39 @@ export const fr: Dict = {
   "obs.tapToEnlarge": "{attribution} — touchez pour agrandir",
   "hero.enlarge": "Voir cette photo de {name} en grand",
   "obs.photoAlt": "{name} photographié par {observer}",
+
+  // ---------------------------------------------------------------------
+  // Les photos d'une plante (#/plants/<slug>/photos).
+  // ---------------------------------------------------------------------
+  "photos.more": "Plus de photos",
+  "photos.docTitle": "Photos de {name} — Indigene",
+  "photos.shareLede":
+    "Des photos choisies de {name} ({latin}) — la plante entière, ses feuilles, ses fleurs et ses fruits — et de vraies observations près de chez vous.",
+  "photos.title": "Photos de {name}",
+  "photos.lede":
+    "Une photo dit à peu près ce qu'est une plante. Celles-ci disent ce que vous tenez : la silhouette vue de quelques pas, puis la feuille, la fleur et le fruit de près.",
+  "photos.backToPlant": "← Retour à la plante",
+  "photos.backToPlantShort": "← Retour à la plante",
+  "photos.chosenTitle": "Photos choisies",
+  "photos.chosenLede":
+    "Choisies par une personne parmi les photos les plus appréciées d'iNaturalist, librement réutilisables — c'est donc toujours la même image, à laquelle vous pouvez vous fier pour comparer.",
+  "photos.angle.portrait": "Portrait",
+  "photos.angle.habit": "La plante entière",
+  "photos.angle.leaf": "Feuilles",
+  "photos.angle.flower": "Fleurs",
+  "photos.angle.fruit": "Fruits et graines",
+  // Les mêmes, formulés pour tenir dans une phrase sur ce qui manque.
+  "photos.angleGap.habit": "la plante entière",
+  "photos.angleGap.leaf": "les feuilles",
+  "photos.angleGap.flower": "les fleurs",
+  "photos.angleGap.fruit": "les fruits",
+  "photos.enlarge": "Voir en grand la photo « {angle} » de {name}",
+  "photos.shotAlt": "{name} — {angle}",
+  "photos.noneYet":
+    "Personne n'a encore choisi de gros plans de {name}. La recherche ci-dessous fonctionne quand même : elle demande à iNaturalist de vraies observations près d'un lieu que vous choisissez.",
+  "photos.someMissing":
+    "{n} pour l'instant. Restent à choisir : {angles}. La recherche ci-dessous en trouve d'autres, près de chez vous, aujourd'hui.",
+  "photos.allChosen": "Les {n} photos ont été choisies pour celle-ci.",
   "lightbox.prev": "Photo précédente",
   "lightbox.next": "Photo suivante",
   "lightbox.close": "Fermer",

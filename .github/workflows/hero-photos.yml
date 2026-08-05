@@ -1,4 +1,5 @@
-# Harvest and rank candidate hero photos, then open a PR with the shortlist.
+# Harvest and rank candidate photographs — for the plants and for the animals —
+# then open a PR with the shortlist.
 #
 # Why here and not in the build: the harvest needs open internet (iNaturalist),
 # which the local build sandbox blocks — GitHub runners don't. Same arrangement
@@ -16,6 +17,11 @@ name: Harvest hero photos
 on:
   workflow_dispatch:
     inputs:
+      kind:
+        description: "What to harvest"
+        type: choice
+        default: both
+        options: [both, plants, wildlife]
       region:
         description: "Region id to harvest (blank = all regions)"
         type: string
@@ -45,9 +51,11 @@ jobs:
   harvest:
     name: Harvest, rank & shortlist
     runs-on: ubuntu-latest
-    # A full run is ~200 plant×region pairs at roughly a second each, plus the
-    # image downloads and decoding. Generous, but bounded.
-    timeout-minutes: 90
+    # A full run is ~790 requests at roughly a second each, plus ~11,500 image
+    # downloads and decoding — three asks per plant×region now that flowering
+    # and fruiting are queried separately, and one per animal×region. Generous,
+    # but bounded; `--region` (or `kind: wildlife`) is how you run it in pieces.
+    timeout-minutes: 300
     steps:
       - uses: actions/checkout@v4
 
@@ -72,6 +80,7 @@ jobs:
         working-directory: app
         run: |
           args=()
+          if [ -n "${{ inputs.kind }}" ]; then args+=(--kind "${{ inputs.kind }}"); fi
           if [ -n "${{ inputs.region }}" ]; then args+=(--region "${{ inputs.region }}"); fi
           if [ -n "${{ inputs.limit }}" ]; then args+=(--limit "${{ inputs.limit }}"); fi
           if [ -n "${{ inputs.keep }}" ]; then args+=(--keep "${{ inputs.keep }}"); fi
@@ -112,10 +121,15 @@ jobs:
           title: "Refresh hero photo candidates"
           commit-message: "Refresh hero photo candidates from iNaturalist"
           body: |
-            Automated harvest of candidate hero photos: for each plant, in each
-            region it's native to, iNaturalist's most-favourited research-grade
-            observations carrying a **reusable** licence, re-ranked on the pixels
-            (see `docs/hero-photos.md`).
+            Automated harvest of candidate photographs: for each plant and each
+            animal, in each region it belongs to, iNaturalist's most-favourited
+            research-grade observations carrying a **reusable** licence,
+            re-ranked on the pixels (see `docs/hero-photos.md`).
+
+            Each plant is asked for three times over — its favourites, then its
+            **flowering** observations and its **fruiting** ones, by the
+            community's own annotation — so the flower and fruit shots aren't
+            buried under forty close-ups of leaves.
 
             **This changes no photo the app shows.** It refreshes the shortlist
             a human picks from. To make picks:
@@ -130,8 +144,10 @@ jobs:
             open it directly. Save the result as `app/src/data/hero-photos.json`
             and commit it — on this branch or your own.
 
-            Worth a glance in the diff: any plant whose shortlist went empty
-            (no reusable photo in that region), and anything under `problems`.
+            Worth a glance in the diff: any subject whose shortlist went empty
+            (no reusable photo in that region), and anything under `problems` —
+            an animal whose scientific name iNaturalist couldn't match lands
+            there rather than failing the run.
           add-paths: |
             docs/hero-photos/candidates.json
           labels: skip-changelog

@@ -231,7 +231,7 @@ function headMeta({ title, description, path, image, imageAlt }) {
  * sentences the row already carries.
  */
 async function collectPages(load) {
-  const [{ en }, { REGIONS, loadPlants }, { WILDLIFE }, { KIND_ORDER, KIND_SLUGS }, { lookalikeIndex }, { TECHNIQUES }, { shareablePaths }] =
+  const [{ en }, { REGIONS, loadPlants }, { WILDLIFE }, { KIND_ORDER, KIND_SLUGS }, { lookalikeIndex }, { TECHNIQUES }, { shareablePaths, PHOTOS_SEGMENT }] =
     await Promise.all([
       load("/src/locales/en.ts"),
       load("/src/lib/plants.ts"),
@@ -293,6 +293,24 @@ async function collectPages(load) {
         `plants/${plant.id}`,
         fill(en["plant.docTitle"], { name: plant.common, latin: plant.latin }),
         `${plant.nativeNote} ${plant.givesNote}`,
+        {
+          image: plantCard(plant.id),
+          imageAlt: `${plant.common} (${plant.latin}) — a drawing of its form, with what it feeds and how big it grows`,
+        }
+      );
+      // …and its gallery, which is its own page: the whole plant, its leaves,
+      // its flowers and its fruit, plus the live "growing near you" lookup.
+      // "Which one is it?" answered with pictures is a link people send, so it
+      // gets a real file like every other shareable address.
+      //
+      // It carries the plant's card, not one of the photographs: a share card
+      // has nowhere to put "© the observer, CC BY-NC", and four of the five
+      // licences we accept require it (see docs/hero-photos.md). The drawing is
+      // ours, so it can go anywhere.
+      add(
+        `plants/${plant.id}/${PHOTOS_SEGMENT}`,
+        fill(en["photos.docTitle"], { name: plant.common }),
+        fill(en["photos.shareLede"], { name: plant.common, latin: plant.latin }),
         {
           image: plantCard(plant.id),
           imageAlt: `${plant.common} (${plant.latin}) — a drawing of its form, with what it feeds and how big it grows`,

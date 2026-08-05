@@ -26,6 +26,17 @@
 // from a fine photograph of the whole shrub, and it never will. It exists to
 // turn a hundred candidates into a shortlist of ten that a person can look
 // through in a few seconds — the choosing stays human.
+//
+// ## The second question: what is this a photograph *of*?
+//
+// A shortlist of ten good photographs is still ten photographs of leaves, which
+// is what iNaturalist's pool mostly is. So this file now also measures a handful
+// of things that hint at the *subject* — how much sky is in the frame, how green
+// the middle is, whether there's a saturated non-green blob in the centre — and
+// `_photo-angle.mjs` turns those into a guess at "whole plant / leaf / flower /
+// fruit". The measuring lives here because the pixels are already decoded and in
+// memory; the guessing lives there because it is an opinion, and a weak one.
+// Read that file's header for exactly how weak.
 import { chromium } from "playwright";
 import { existsSync } from "node:fs";
 
@@ -121,6 +132,13 @@ function measureAll({ items, N }) {
   const bytes = (b64) => Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
   const canvas = new OffscreenCanvas(N, N);
   const ctx = canvas.getContext("2d", { willReadFrequently: true });
+  // A second raster holding the *whole* frame, aspect be damned. The quality
+  // metrics use a centre crop, deliberately — a panorama shouldn't be judged on
+  // squashed detail. But "is there sky above this tree?" is a question about the
+  // top of the photograph as taken, and a centre crop of a tall portrait throws
+  // exactly that away. Colour statistics don't care about aspect ratio.
+  const full = new OffscreenCanvas(N, N);
+  const fullCtx = full.getContext("2d", { willReadFrequently: true });
 
   return (async () => {
     const out = [];
@@ -177,6 +195,7 @@ function measureAll({ items, N }) {
           saturation: round(satSum / (N * N), 3),
           centreDetail: round(cSum / cN),
           edgeDetail: round(eSum / eN),
+          ...subject(bmp),
         });
         bmp.close?.();
       } catch (err) {
@@ -188,6 +207,71 @@ function measureAll({ items, N }) {
     function round(v, places = 2) {
       const f = 10 ** places;
       return Math.round(v * f) / f;
+    }
+
+    /**
+     * Four colour statistics that hint at what the photograph is *of*, measured
+     * on the whole frame rather than a centre crop.
+     *
+     *   sky          bright, blue-or-white, low-saturation pixels in the top
+     *                third. A tree photographed whole is nearly always against
+     *                some of it; a leaf held up to the camera almost never is.
+     *   green        how much of the frame is foliage-coloured.
+     *   centreGreen  the same, in the middle half — a leaf close-up is green
+     *                *where the subject is*, a landscape is green all over.
+     *   centreVivid  saturated, decidedly non-green pixels in the middle half:
+     *                a flower or a berry, or a lens flare, or somebody's coat.
+     *   centreLight  near-white, unsaturated pixels in the middle half, which is
+     *                what a white umbel or a dogwood bract looks like to a
+     *                machine — and also what an overcast sky looks like, which
+     *                is why `sky` is measured separately and subtracted in the
+     *                guessing.
+     *
+     * `aspect` rides along because a photograph taller than it is wide is a
+     * weak hint at a whole tree, and it costs nothing to carry.
+     */
+    function subject(bmp) {
+      fullCtx.clearRect(0, 0, N, N);
+      fullCtx.drawImage(bmp, 0, 0, N, N);
+      const d = fullCtx.getImageData(0, 0, N, N).data;
+      const topRows = Math.round(N / 3);
+      const lo = N * 0.25;
+      const hi = N * 0.75;
+      let sky = 0;
+      let green = 0;
+      let centreGreen = 0;
+      let centreVivid = 0;
+      let centreLight = 0;
+      let centreN = 0;
+      for (let y = 0; y < N; y++) {
+        for (let x = 0; x < N; x++) {
+          const p = (y * N + x) * 4;
+          const r = d[p];
+          const g = d[p + 1];
+          const b = d[p + 2];
+          const max = Math.max(r, g, b);
+          const min = Math.min(r, g, b);
+          const sat = max === 0 ? 0 : (max - min) / max;
+          const isGreen = g > r + 8 && g > b + 8;
+          const inCentre = x >= lo && x < hi && y >= lo && y < hi;
+          if (isGreen) green++;
+          if (y < topRows && max > 150 && b >= r && sat < 0.45) sky++;
+          if (inCentre) {
+            centreN++;
+            if (isGreen) centreGreen++;
+            else if (sat > 0.35 && max > 60) centreVivid++;
+            else if (min > 170 && sat < 0.2) centreLight++;
+          }
+        }
+      }
+      return {
+        aspect: round(bmp.width / Math.max(bmp.height, 1), 3),
+        sky: round(sky / (topRows * N), 3),
+        green: round(green / (N * N), 3),
+        centreGreen: round(centreGreen / centreN, 3),
+        centreVivid: round(centreVivid / centreN, 3),
+        centreLight: round(centreLight / centreN, 3),
+      };
     }
   })();
 }

@@ -56,6 +56,16 @@ export const APP_STEPS = [
 
 export type AppStep = (typeof APP_STEPS)[number];
 
+/**
+ * The third segment that turns a plant's address into its gallery:
+ * `plants/<slug>/photos`. Defined here rather than in the page that renders it,
+ * because a Node script loads this module to write and check the files — and
+ * `steps/plant-photos.ts` touches the DOM from its first import.
+ *
+ * English in every language, like every other address in the app.
+ */
+export const PHOTOS_SEGMENT = "photos";
+
 /** Steps that take a `<step>/<param>` second segment. */
 export const PARAM_STEPS = new Set<string>([
   "plants",
@@ -133,8 +143,19 @@ export function canonicalPath(step: string, param?: string): string | null {
   if (!param) return SHAREABLE_INDEXES.includes(step) ? step : null;
   const at = (id: string): string => `${step}/${encodeURIComponent(id)}`;
   switch (step) {
-    case "plants":
-      return plantIds().has(param) ? at(param) : null;
+    case "plants": {
+      if (plantIds().has(param)) return at(param);
+      // `…/plants/<slug>/photos` is a page in its own right, not a section of
+      // the profile: different content, its own title, and the one address
+      // somebody sends when the answer to "which one is it?" is a picture. The
+      // sections (`…/ecosystem`, `…/spot`) stay in the hash form, because they
+      // are a scroll position on a page that already has a file.
+      const [slug, rest, ...more] = param.split("/");
+      if (rest === PHOTOS_SEGMENT && !more.length && plantIds().has(slug)) {
+        return `${step}/${encodeURIComponent(slug)}/${PHOTOS_SEGMENT}`;
+      }
+      return null;
+    }
     case "regions":
       return REGIONS.some((r) => r.meta.id === param) ? at(param) : null;
     // Both an animal (`…/wildlife/monarch`) and a group (`…/wildlife/bees`).
@@ -224,7 +245,7 @@ function plantIds(): Set<string> {
 export function shareablePaths(): string[] {
   const paths = [...SHAREABLE_INDEXES];
   for (const region of REGIONS) paths.push(`regions/${region.meta.id}`);
-  for (const id of plantIds()) paths.push(`plants/${id}`);
+  for (const id of plantIds()) paths.push(`plants/${id}`, `plants/${id}/${PHOTOS_SEGMENT}`);
   for (const w of WILDLIFE) paths.push(`wildlife/${w.id}`);
   for (const kind of KIND_ORDER) paths.push(`wildlife/${KIND_SLUGS[kind]}`);
   for (const row of lookalikeIndex()) paths.push(`lookalikes/${row.lookalike.id}`);

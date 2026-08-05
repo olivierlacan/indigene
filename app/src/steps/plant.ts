@@ -10,7 +10,8 @@ import { searchPlaces, placeLabel, nearestPlaceName } from "../lib/geocode";
 import { manualSunEstimate } from "../lib/solar";
 import { findPlant, assessSpot, plantShareUrl } from "../lib/explore";
 import { savedSpotsThatSuit } from "../lib/saved-fit";
-import { regionForSite } from "../lib/plants";
+import { activeEntry } from "../lib/plant-view";
+import { renderPlantPhotos, PHOTOS_ROUTE, photosHref } from "./plant-photos";
 import type { PlantEntry, Suitability } from "../lib/explore";
 import { wildlifeForPlant, relianceOf } from "../lib/wildlife";
 import { lookalikesForPlant } from "../lib/lookalikes";
@@ -54,53 +55,6 @@ const HERO_PX = 152;
 type Section = (typeof SECTIONS)[number];
 const sectionDomId = (s: Section): string => `sec-${s}`;
 
-/**
- * Which of a plant's regional rows this page is showing.
- *
- * A plant native to more than one region has a *different row per region* — and
- * they differ in load-bearing ways, not decoration: butterfly weed is hardy in
- * zones 3–9 in the Mid-Atlantic and 8–10 in Florida, goat willow's mature height
- * and even its French common name change between the Atlantic coast and the
- * Alps. Every one of the catalog's multi-region plants differs somewhere.
- *
- * This used to be `entries[0]`, which is whichever region happens to sit
- * earliest in the REGIONS array — so a Floridian who tapped butterfly weed in
- * their own Florida results list was shown the Mid-Atlantic's hardiness and the
- * Mid-Atlantic's description of it. In order of trust:
- *
- *   1. `?region=` in the address — a link that deliberately pinned one.
- *   2. The reader's own region: the one they picked by hand, or the one their
- *      spot resolves to (the same call the suitability check makes, so the page
- *      and the verdict on it can never disagree about where "here" is).
- *   3. The first row, which is all we can honestly do knowing nothing.
- */
-function activeEntry(entries: PlantEntry[]): PlantEntry {
-  const pinned = hashParam("region");
-  const byPin = pinned && entries.find((e) => e.region.meta.id === pinned);
-  if (byPin) return byPin;
-
-  const { regionOverride, lat, lon, site } = store.draft;
-  if (regionOverride) {
-    const chosen = entries.find((e) => e.region.meta.id === regionOverride);
-    if (chosen) return chosen;
-  }
-  if (lat != null && lon != null) {
-    const here = regionForSite(lat, lon, site);
-    const mine = here && entries.find((e) => e.region.meta.id === here.meta.id);
-    if (mine) return mine;
-  }
-  return entries[0];
-}
-
-/** One value out of the hash's query string (`#/plants/x?region=pnw`). The hash
- *  query is the page's *state*, not its identity — the router strips it before
- *  matching a route, so a page that wants it reads it here. */
-function hashParam(name: string): string | null {
-  const at = location.hash.indexOf("?");
-  if (at < 0) return null;
-  return new URLSearchParams(location.hash.slice(at + 1)).get(name);
-}
-
 export function renderPlant(main: HTMLElement, param?: string): (() => void) | void {
   clear(main);
   const raw = param ?? "";
@@ -117,6 +71,14 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
   //     arrived on one and re-shared their address bar would pass on the form
   //     that unfurls as the generic site card.
   const fromRoute = slash >= 0 ? raw.slice(slash + 1) : "";
+  // `…/plants/<slug>/photos` is not a card on this page — it is a page of its
+  // own, with its own file and its own title. So it is read off the *route*
+  // before any fragment is considered: a gallery opened at a fragment is still
+  // the gallery, not this profile scrolled somewhere.
+  if (fromRoute === PHOTOS_ROUTE) {
+    renderPlantPhotos(main, slug);
+    return;
+  }
   const fromFragment = isHashRoute(location.hash) ? "" : location.hash.slice(1);
   const wanted = fromFragment || fromRoute;
   const section = (SECTIONS as readonly string[]).includes(wanted) ? (wanted as Section) : null;
@@ -359,6 +321,25 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
     return el("figure", { class: "plant-hero" }, [btn, credit]);
   }
 
+  /**
+   * The way to the plant's other photographs — its leaves, its flowers, its
+   * fruit, and whatever iNaturalist has growing near you today.
+   *
+   * Always offered, even for a plant nobody has picked close-ups for: that page
+   * also carries the "see it growing near you" lookup, which works for every
+   * plant with a taxon id. So the link is never a door onto an empty room.
+   *
+   * The label carries no plant name (the page is already about this plant) and
+   * no count (it would change width per plant, and the number a reader wants is
+   * however many the page has *today*, iNaturalist included).
+   */
+  function photosLink(p: Plant): HTMLElement {
+    return el("a", { class: "plant-photos-link", href: photosHref(p.id, active.region.meta.id) }, [
+      el("span", { "aria-hidden": "true" }, "📷 "),
+      t("photos.more"),
+    ]);
+  }
+
   function profile(p: Plant, all: PlantEntry[]): HTMLElement {
     const hero = heroImage(p, active.region.meta.id);
     const badges = el("div", {}, [
@@ -418,6 +399,7 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
               el("h2", { class: "plant-name", style: "margin:0" }, names.title),
               el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" }, names.sub),
               badges,
+              photosLink(p),
             ]),
           ]),
           el("p", { class: "kv plant-why" }, [el("span", { class: "k" }, t("plant.whyBelongs")), prose(p, "nativeNote", region.meta.id)]),

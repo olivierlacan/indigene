@@ -188,7 +188,8 @@ if (noImage.length) {
   fail(
     `${noImage.length} page${noImage.length === 1 ? " has" : "s have"} a share picture that isn't there`,
     `${noImage.slice(0, 8).join("\n    ")}\n` +
-      "    Plant cards are committed, not built — run `node scripts/gen-plant-cards.mjs` and commit what it writes."
+      "    These cards are committed, not built — run `node scripts/gen-plant-cards.mjs` (plants) or\n" +
+      "    `node scripts/gen-planting-cards.mjs` (the propagation pages) and commit what it writes."
   );
 }
 

@@ -39,9 +39,15 @@
 //
 // A plant page carries its own: `scripts/gen-plant-cards.mjs` draws one card
 // per plant and they're committed under public/og/plants/, so this build only
-// points at them — it never renders anything. Every other page still shows the
-// site-wide card, which is honest for an index and a region; those pages are a
-// list, and a drawing of one member of it would be a lie about the rest.
+// points at them — it never renders anything. The propagation pages work the
+// same way (`scripts/gen-planting-cards.mjs` → public/og/planting/), and there
+// the index gets one too: its card is the year with every season lit, which is
+// a true picture of a page about all fifteen techniques rather than a portrait
+// of one of them.
+//
+// Every other page still shows the site-wide card, which is honest for a
+// region and for a catalog: those pages are a list, and a drawing of one member
+// of it would be a lie about the rest.
 //
 // ## What it does not do yet
 //
@@ -65,8 +71,14 @@ const CARD = `${ORIGIN}${BASE}og/share-card.png`;
 const CARD_ALT = "Indigene — native plants for exactly where you stand";
 
 /** A plant's own card, drawn by `scripts/gen-plant-cards.mjs` and committed
- *  under public/og/plants/. Every other page still shows the site-wide one. */
+ *  under public/og/plants/. */
 const plantCard = (slug) => `${ORIGIN}${BASE}og/plants/${slug}.jpg`;
+
+/** A propagation technique's card — the year with its window filled in — drawn
+ *  by `scripts/gen-planting-cards.mjs` and committed under public/og/planting/.
+ *  The index has one too, under the reserved slug `index`. Everything else
+ *  still shows the site-wide card, which is honest for a list. */
+const plantingCard = (slug) => `${ORIGIN}${BASE}og/planting/${slug}.jpg`;
 
 /** Locale-style `{name}` interpolation, matching `t()` in lib/i18n.ts. */
 const fill = (s, vars = {}) =>
@@ -248,7 +260,10 @@ async function collectPages(load) {
   add("wildlife", en["wildlife.indexDocTitle"], fill(en["wildlife.indexLede"], { n: WILDLIFE.length }));
   const impostors = lookalikeIndex();
   add("lookalikes", en["lookalikes.indexDocTitle"], fill(en["lookalikes.indexLede"], { n: impostors.length }));
-  add("planting", en["planting.docTitle"], en["planting.lede"]);
+  add("planting", en["planting.docTitle"], en["planting.lede"], {
+    image: plantingCard("index"),
+    imageAlt: "Ways to grow more — the four seasons, and the count of techniques and sources behind the page",
+  });
   add("privacy", en["privacy.docTitle"], en["privacy.lede"]);
   add("sources", en["sources.docTitle"], en["sources.lede"]);
   add("about", en["about.docTitle"], en["about.lede"]);
@@ -306,10 +321,18 @@ async function collectPages(load) {
   // is a link someone sends a neighbour in January, with no plant attached.
   // The description is the window plus the wait, which is what the page is for.
   for (const tech of TECHNIQUES) {
+    const name = en[`prop.${tech.method}.name`];
+    const when = en[`prop.${tech.method}.when`];
     add(
       `planting/${tech.slug}`,
-      fill(en["planting.techniqueDocTitle"], { name: en[`prop.${tech.method}.name`] }),
-      `${en[`prop.${tech.method}.when`]} ${en[`prop.${tech.method}.plain`]}`
+      fill(en["planting.techniqueDocTitle"], { name }),
+      `${when} ${en[`prop.${tech.method}.plain`]}`,
+      {
+        image: plantingCard(tech.slug),
+        // What the picture actually shows, rather than a repeat of the title —
+        // the title reaches a screen reader through `og:title` either way.
+        imageAlt: `${name} — which seasons of the year it belongs to. ${when}`,
+      }
     );
   }
 

@@ -59,6 +59,13 @@ subtitle on the What's new page.
   Bird Johnson Wildflower Center, Tela Botanica, the INPN, the RHS and two more
   — with a line on what each is actually good for and which continent it speaks
   for. They're worth an afternoon on their own.
+- **Sharing one of these pages shows a picture of the year.** Post a link to a
+  technique in a message and the preview that comes up is that technique's name
+  with the four seasons under it and its own window filled in — so
+  [taking hardwood cuttings](https://indigene.app/planting/hardwood-cuttings)
+  arrives with winter lit before anyone has tapped anything. Plants have had a
+  picture of their own on a shared link for a while; these pages now do too,
+  instead of falling back to the general Indigene card.
 - **The French edition is finished.** Until now, choosing French translated the
   buttons and the headings, and then handed you paragraphs of English as soon as
   you opened a plant — with a small honest notice at the top of the page saying

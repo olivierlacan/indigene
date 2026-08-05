@@ -5,9 +5,11 @@
 // "how do I grow more of these?" could send the page and then have to say
 // "scroll down a bit", which is the internet's oldest small unkindness.
 //
-// The deep-link scheme already existed (`#/plants/<slug>/<section>`, honoured by
-// `steps/plant.ts` and bounced correctly by `public/404.html`); what was missing
-// was any way to *find* it. This draws the mark that hands it over.
+// The link is a fragment on the page's own canonical path —
+// `…/plants/<slug>#nearby` — so the address that names one card is still the
+// address of a real prerendered file, and pasting it anywhere shows the plant's
+// own share card. See `plantSectionHref` in lib/routes.ts. This draws the mark
+// that hands it over.
 //
 // The `#` is drawn at rest, not on hover — the same reasoning as
 // `components/section-link.ts`. A phone has no hover, and a link nobody can see
@@ -23,7 +25,7 @@ import { el } from "../ui";
 
 /**
  * @param text The heading itself, emoji and all.
- * @param href The section's own address — `#/plants/<slug>/<section>`.
+ * @param href The section's own address — the fragment `#<section>`.
  * @param label The link's accessible name; it says what activating it does,
  *   because "#" says nothing at all.
  */

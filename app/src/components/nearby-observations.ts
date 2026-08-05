@@ -204,7 +204,7 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
     // interpolating one would change the heading's width per species.
     anchoredHeading(
       t("nearby.seeItGrowing"),
-      plantSectionHref(plant.id, "nearby"),
+      plantSectionHref("nearby"),
       t("plant.sectionLink")
     ),
     el("p", { class: "obs-section-lede" }, t("nearby.seeItGrowingLede", { name: commonName(plant) })),

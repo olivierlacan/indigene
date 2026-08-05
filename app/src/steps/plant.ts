@@ -28,7 +28,7 @@ import { drawSizeViz } from "../components/size-viz";
 import { entryForPlant, deepLinks } from "../lib/registry";
 import { nearbyObservationsSection } from "../components/nearby-observations";
 import { anchoredHeading } from "../components/anchor-head";
-import { plantSectionHref } from "../lib/routes";
+import { plantSectionHref, isHashRoute } from "../lib/routes";
 import { privacyNote } from "../components/privacy-link";
 import type { Plant, SiteData, SunEstimate, SupportKind } from "../types";
 import { t, tn, fmtNumber, fmtList } from "../lib/i18n";
@@ -37,10 +37,13 @@ import { commonName, nameLines, regionName, regionShort } from "../lib/names";
 import { prose, propagationNote, isUntranslated, lookalikesUntranslated } from "../lib/prose";
 import { reportUntranslated } from "../components/wip-banner";
 
-// The anchorable sections below the profile share one deep-link scheme:
-// #/plants/<slug>/<section>. Every heading now shows that address (the `#`
-// mark — see `components/anchor-head.ts`), and following one opens the page at
-// that card. Listed in the order they appear in the phone stack.
+// The anchorable cards below the profile. Each one's address is a fragment on
+// the plant's own canonical path — `…/plants/<slug>#nearby` — so the link both
+// reloads that card *and* previews as the plant when it's pasted somewhere; see
+// `plantSectionHref` in lib/routes.ts for why the fragment form and not a
+// route. Every heading shows the mark that hands it over
+// (`components/anchor-head.ts`). Listed in the order they appear in the phone
+// stack.
 const SECTIONS = ["ecosystem", "nearby", "propagation", "spot", "references"] as const;
 
 /** The hero's widest drawn size, matching `.plant-hero` in the stylesheet
@@ -99,11 +102,22 @@ function hashParam(name: string): string | null {
 
 export function renderPlant(main: HTMLElement, param?: string): (() => void) | void {
   clear(main);
-  // The route param is the slug, optionally followed by /<section>.
   const raw = param ?? "";
   const slash = raw.indexOf("/");
   const slug = slash >= 0 ? raw.slice(0, slash) : raw;
-  const wanted = slash >= 0 ? raw.slice(slash + 1) : "";
+  // Which card a link asked to be opened at. Two forms are read:
+  //
+  //   - `…/plants/<slug>#spot` — a fragment on the plant's own path. This is
+  //     what the page hands out, because it is the one that previews as the
+  //     plant when somebody pastes it (see `plantSectionHref`).
+  //   - `#/plants/<slug>/spot` — the older route form, which shipped before and
+  //     is still honoured so nothing that was already linked breaks. It is
+  //     upgraded below rather than merely tolerated: left alone, a reader who
+  //     arrived on one and re-shared their address bar would pass on the form
+  //     that unfurls as the generic site card.
+  const fromRoute = slash >= 0 ? raw.slice(slash + 1) : "";
+  const fromFragment = isHashRoute(location.hash) ? "" : location.hash.slice(1);
+  const wanted = fromFragment || fromRoute;
   const section = (SECTIONS as readonly string[]).includes(wanted) ? (wanted as Section) : null;
 
   const entries = findPlant(slug);
@@ -179,6 +193,10 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
   );
 
   if (section) revealSection(section);
+  // Arrived on the old route form: put the shareable one in the address bar,
+  // silently and without a history entry, so what the reader copies from here
+  // is the address that previews as this plant.
+  if (section && fromRoute && !fromFragment) history.replaceState(history.state, "", sectionAddress(section));
 
   main.addEventListener("click", onAnchorClick);
 
@@ -212,17 +230,26 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
     if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     const link = (e.target as Element | null)?.closest("a.anchor-link");
     if (!link || !main.contains(link)) return;
-    const href = link.getAttribute("href") ?? "";
-    const wantedSection = href.slice(href.lastIndexOf("/") + 1);
+    const wantedSection = (link.getAttribute("href") ?? "").slice(1);
     if (!(SECTIONS as readonly string[]).includes(wantedSection)) return;
     e.preventDefault();
-    // The address the router itself would settle on for this route (see
-    // `syncAddressBar`): base, then the hash form. A section has no file of its
-    // own, so the hash is the only address that reloads it.
-    const address = `${import.meta.env.BASE_URL}${href}`;
+    const address = sectionAddress(wantedSection as Section);
     history.replaceState(history.state, "", address);
     revealSection(wantedSection as Section);
     void copyLink(`${location.origin}${address}`);
+  }
+
+  /**
+   * This card's address: the plant's canonical path, whatever state the page is
+   * carrying in its search string, then the fragment naming the card.
+   *
+   * Spelled out rather than taken from the current URL because it is both what
+   * goes in the address bar *and* what goes on the clipboard, and those must be
+   * the same string — the whole point of the mark is that what you copy is what
+   * a reader will get.
+   */
+  function sectionAddress(which: Section): string {
+    return `${import.meta.env.BASE_URL}plants/${encodeURIComponent(plant.id)}${location.search}#${which}`;
   }
 
   /**
@@ -704,7 +731,7 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
     return el("section", { class: "card plant-section", id: sectionDomId("spot") }, [
       // No plant name in the heading: it changes width per plant and would
       // wrap the card title on a phone. The page is already about this plant.
-      anchoredHeading(t("plant.checkSpotTitle"), plantSectionHref(plant.id, "spot"), t("plant.sectionLink")),
+      anchoredHeading(t("plant.checkSpotTitle"), plantSectionHref("spot"), t("plant.sectionLink")),
       el("p", { style: "margin:0.3rem 0 0.6rem" },
         t("plant.checkSpotLede", { region: regionName(region.meta) })),
       savedFit,
@@ -736,15 +763,15 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
 }
 
 // A standalone card — the same shape the "Want to plant?" tool uses — that a
-// deep link scrolls into view. Always open: these used to collapse, but
-// content shouldn't hide behind a tap.
+// link opens the page at. Always open: these used to collapse, but content
+// shouldn't hide behind a tap.
 //
 // The heading carries the card's own address (`components/anchor-head.ts`), so
 // every one of these is a place you can send somebody to rather than a place
 // you have to describe.
-function sectionCard(slug: string, section: Section, heading: string, body: HTMLElement[]): HTMLElement {
+function sectionCard(section: Section, heading: string, body: HTMLElement[]): HTMLElement {
   return el("section", { class: "card plant-section", id: sectionDomId(section) }, [
-    anchoredHeading(heading, plantSectionHref(slug, section), t("plant.sectionLink")),
+    anchoredHeading(heading, plantSectionHref(section), t("plant.sectionLink")),
     ...body,
   ]);
 }
@@ -816,7 +843,7 @@ function ecosystemSection(p: Plant, entries: PlantEntry[], expanded: boolean): H
     ]);
   });
   const feeds = whoItFeeds(entries);
-  return sectionCard(p.id, "ecosystem", t("plant.ecosystemTitle"), [
+  return sectionCard("ecosystem", t("plant.ecosystemTitle"), [
     ...(feeds ? [feeds] : []),
     el("ul", { class: "score-list score-list-folding" }, scoreParts),
   ]);
@@ -916,7 +943,7 @@ function propagationSection(p: Plant, regionId: string): HTMLElement {
       el("p", { class: "score-why" }, g.plain),
     ]);
   });
-  return sectionCard(p.id, "propagation", t("plant.propagationTitle"), [
+  return sectionCard("propagation", t("plant.propagationTitle"), [
     el("p", { class: "kv", style: "margin-top:0.5rem" }, [
       el("span", { class: "k" }, t("plant.forThisPlant")),
       propagationNote(p, regionId),
@@ -974,7 +1001,7 @@ function referencesSection(p: Plant): HTMLElement {
       ]),
     );
   }
-  return sectionCard(p.id, "references", t("ref.title"), body);
+  return sectionCard("references", t("ref.title"), body);
 }
 
 /**

@@ -18,7 +18,7 @@ import { renderRegion } from "./steps/region";
 import { renderWildlifeIndex, renderWildlife, wildlifeRegionParam } from "./steps/wildlife";
 import { wildlifeKindRoute } from "./lib/wildlife";
 import { renderLookalikeIndex, renderLookalike, lookalikeRegionParam } from "./steps/lookalikes";
-import { canonicalPath, parseRoute } from "./lib/routes";
+import { canonicalPath, parseRoute, isHashRoute } from "./lib/routes";
 import type { AppStep } from "./lib/routes";
 import { renderPrivacy } from "./steps/privacy";
 import { renderSources } from "./steps/sources";
@@ -116,13 +116,18 @@ function currentRoute(): { step: AppStep; param?: string } {
   // identity — the plants index reads its own `?q=` — so it never takes part
   // in matching a route.
   //
-  // With no hash at all, the path *is* the route: a canonical URL
+  // With no hash *route*, the path is the route: a canonical URL
   // (…/plants/ilex-opaca) is a real prerendered file, and it stays in the
   // address bar rather than being folded into the hash form. `location.hash`
   // rather than the parsed route decides which side to read, because `#/` is a
   // hash that means home — and on a page opened by its path, folding an empty
   // hash route back onto the path would re-render the page you just left.
-  const raw = location.hash ? location.hash.replace(/^#\/?/, "").split("?")[0] : pathRoute();
+  //
+  // A hash *fragment* — `…/plants/ilex-opaca#spot` — is not a route and is not
+  // read as one: it names a card on the page the path already selected (see
+  // `isHashRoute`). Read as a route it would parse as the step "spot", which
+  // isn't one, and land the reader on the welcome screen.
+  const raw = isHashRoute(location.hash) ? location.hash.replace(/^#\/?/, "").split("?")[0] : pathRoute();
   // Both forms parse the same way, in `lib/routes.ts`, because both have to
   // agree with the addresses the prerenderer writes files for.
   return parseRoute(raw);
@@ -138,6 +143,7 @@ function currentRoute(): { step: AppStep; param?: string } {
  * string, because `#/plants/<slug>` already means one plant's profile).
  */
 function canonicalizeRoute(): void {
+  if (!isHashRoute(location.hash)) return; // a fragment names a card, not a step
   const hash = location.hash.replace(/^#\/?/, "");
   const m = /^search(?:\/([^?]*))?(?:$|\?)/.exec(hash);
   if (!m) return;
@@ -176,9 +182,17 @@ function syncAddressBar(step: AppStep, param?: string): void {
   const ownsSearch = syncedRoute === null || syncedRoute === key;
   syncedRoute = key;
 
-  const at = location.hash.indexOf("?");
+  // A fragment (`#spot`) is not a route — it names a card on the page being
+  // shown — so it survives canonicalization instead of being swept away with
+  // the hash route it isn't. Without this the address bar on
+  // `…/plants/ilex-opaca#spot` would be rewritten to `…/plants/ilex-opaca` the
+  // moment the page drew, and the link a reader copied from it would have lost
+  // the only part that said which card they meant.
+  const routeHash = isHashRoute(location.hash);
+  const fragment = routeHash ? "" : location.hash;
+  const at = routeHash ? location.hash.indexOf("?") : -1;
   const query = at >= 0 ? location.hash.slice(at) : ownsSearch ? location.search : "";
-  const want = path === null ? `${base}${query}${location.hash}` : `${base}${path}${query}`;
+  const want = path === null ? `${base}${query}${location.hash}` : `${base}${path}${query}${fragment}`;
   if (location.pathname + location.search + location.hash !== want) {
     history.replaceState(history.state, "", want);
   }

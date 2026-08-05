@@ -122,7 +122,7 @@ subtitle on the What's new page.
   for the detail in it.
 - **Internal:** the translated catalog prose is fetched as its own file rather
   than built into the app, so an English reader downloads none of it. The app
-  stays at ~336 KB gzipped; French adds ~122 KB, once, and only in French. If
+  stays at ~337 KB gzipped; French adds ~122 KB, once, and only in French. If
   that file can't be fetched the pages fall back to English exactly as an
   untranslated row always did.
 - **Internal:** `locales/prose.fr.ts` is now `locales/prose.fr/`, one file per

@@ -144,6 +144,52 @@ export function canonicalPath(step: string, param?: string): string | null {
 }
 
 /**
+ * Is this hash the app's *route*, or a fragment naming a place on the page
+ * already being shown?
+ *
+ * Every route this app has begins `#/` — that is what `main.ts` writes, what
+ * `public/404.html` bounces to, and what every link in the app carries. So a
+ * hash without the slash is not a route at all: `…/plants/quercus-alba#spot` is
+ * the oak's page, opened at the spot checker, and reading `spot` as a step name
+ * would land the reader on the welcome screen instead.
+ *
+ * `#` alone is the empty fragment, which is likewise not a route — a URL that
+ * merely ends in a `#` still means the page its path names.
+ */
+export function isHashRoute(hash: string): boolean {
+  return hash.startsWith("#/");
+}
+
+/**
+ * The address of one section of a plant's page: a fragment on the plant's own
+ * canonical path — `/plants/lupinus-polyphyllus#nearby`.
+ *
+ * This was `#/plants/<slug>/nearby` — a *route* — and that was wrong for the
+ * one thing these links exist to do, which is be sent to somebody. An
+ * unfurler (Slack, iMessage, Facebook) is a plain HTTP fetch, and a fragment is
+ * never sent to a server. Ask for `…/#/plants/<slug>/nearby` and the server is
+ * asked for `/`, so the card that comes back describes the site, whatever the
+ * link led to — the exact failure `canonicalPath` above exists to prevent. Ask
+ * for `…/plants/<slug>#nearby` and the server is asked for `/plants/<slug>`,
+ * which `scripts/prerender.mjs` wrote a real file for: the plant's own title,
+ * words and picture. The fragment rides along to the browser untouched, and the
+ * card the reader gets is the plant's.
+ *
+ * So the two halves of the address now each do what they're for. The path is
+ * the page, and it previews. The fragment is the place on it, and it is
+ * deliberately *not* a route — `isHashRoute` above is how `main.ts` tells them
+ * apart, and `canonicalPath` still returns null for a section because a section
+ * is not a page and never gets a file of its own.
+ *
+ * Lives here rather than in `steps/plant.ts` so that the components drawing
+ * these links — one of which the plant page itself imports — don't have to
+ * import the page back.
+ */
+export function plantSectionHref(section: string): string {
+  return `#${section}`;
+}
+
+/**
  * Every plant slug in the catalog.
  *
  * A species native to more than one covered region (live oak spans both Florida

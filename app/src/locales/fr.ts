@@ -912,6 +912,7 @@ export const fr: Dict = {
   "plant.shareText":
     "{name} ({latin}) — une plante indigène qui mérite d'être connue. Voyez si votre coin lui convient :",
   "plant.linkCopied": "Lien copié — collez-le où vous voulez.",
+  "plant.sectionLink": "Copier un lien vers cette rubrique",
   "plant.ecosystemTitle": "🦋 Ce qu'elle fait pour l'écosystème",
   "plant.wildlifeItBrings": "La faune qu'elle attire : ",
   "plant.soleTie": "Cette plante est la seule option de {name} — un lien vital.",

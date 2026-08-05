@@ -21,6 +21,8 @@ import { isBusy } from "../lib/inaturalist";
 import type { Bounds } from "../lib/inaturalist";
 import { observationList, freshnessLine } from "./observation-ui";
 import { locationPrompt } from "./location-prompt";
+import { anchoredHeading } from "./anchor-head";
+import { plantSectionHref } from "../lib/routes";
 import { t, tn, fmtNumber } from "../lib/i18n";
 import { commonName, regionName, regionShort } from "../lib/names";
 import { fmtList } from "../lib/i18n";
@@ -194,10 +196,17 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
   // No top margin of its own: the card above already carries a bottom one, and
   // in the plant page's laptop columns (where margins don't collapse) a second
   // one would open a gap twice the size of every other.
-  return el("section", { class: "card" }, [
+  // `sec-nearby` and the heading's `#` mark: this card is one of the plant
+  // page's linkable sections like any other (see `steps/plant.ts`), so someone
+  // can send "here's what it looks like where you live" straight to it.
+  return el("section", { class: "card plant-section", id: "sec-nearby" }, [
     // No plant name in the heading — the page is already about this plant, and
     // interpolating one would change the heading's width per species.
-    el("h3", { style: "margin-top:0" }, t("nearby.seeItGrowing")),
+    anchoredHeading(
+      t("nearby.seeItGrowing"),
+      plantSectionHref("nearby"),
+      t("plant.sectionLink")
+    ),
     el("p", { class: "obs-section-lede" }, t("nearby.seeItGrowingLede", { name: commonName(plant) })),
     prompt,
     regionButtons(),

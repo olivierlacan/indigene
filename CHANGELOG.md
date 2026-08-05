@@ -43,6 +43,20 @@ subtitle on the What's new page.
   great oak-and-hornbeam forest of Lorraine in the east. The French now follows
   the same split, so the page you are reading describes the region you are
   reading about.
+- **You can send someone straight to one part of a plant's page.** A plant's page
+  is long, and until now the only thing you could share was the whole of it —
+  followed by "scroll down a bit". Every heading below the plant's photograph now
+  carries a small `#`: tap it and the link to *that* section is copied, ready to
+  paste. Follow one and the page opens with that card gently lit in green for a
+  moment, so you can see which part you were sent to even when it was already on
+  screen. The link still shows the plant's own picture and name when you paste it
+  into a message, the way the plain link to the plant always has. There are five
+  of them —
+  [what it does for the ecosystem](https://indigene.app/plants/lupinus-polyphyllus#ecosystem),
+  [seeing it growing near you](https://indigene.app/plants/lupinus-polyphyllus#nearby),
+  [how to grow more](https://indigene.app/plants/lupinus-polyphyllus#propagation),
+  [checking your own spot](https://indigene.app/plants/lupinus-polyphyllus#spot),
+  and [looking it up elsewhere](https://indigene.app/plants/lupinus-polyphyllus#references).
 
 ### Fixed
 
@@ -54,6 +68,17 @@ subtitle on the What's new page.
 
 ### Changed
 
+- **"What it does for the ecosystem" is a third shorter, and easier to read at a
+  glance.** The card lists seven things a plant does — feeding caterpillars,
+  feeding bees, soaking up rain, and so on — and each one used to be followed by
+  a sentence explaining it, seven sentences deep with nothing between them. The
+  numbers were buried in the middle of a wall of words. Now the seven sit as a
+  neat list you can read down in one look, and the explanation appears when you
+  ask for it: hover a line on a computer, or tap it on a phone. Nothing has been
+  taken away — and if you follow a link straight to
+  [this section](https://indigene.app/plants/lupinus-polyphyllus#ecosystem),
+  every explanation is already open, because asking for that section is asking
+  for the detail in it.
 - **Internal:** the translated catalog prose is fetched as its own file rather
   than built into the app, so an English reader downloads none of it. The app
   stays at ~320 KB gzipped; French adds ~122 KB, once, and only in French. If

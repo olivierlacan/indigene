@@ -219,13 +219,14 @@ function headMeta({ title, description, path, image, imageAlt }) {
  * sentences the row already carries.
  */
 async function collectPages(load) {
-  const [{ en }, { REGIONS, loadPlants }, { WILDLIFE }, { KIND_ORDER, KIND_SLUGS }, { lookalikeIndex }, { shareablePaths }] =
+  const [{ en }, { REGIONS, loadPlants }, { WILDLIFE }, { KIND_ORDER, KIND_SLUGS }, { lookalikeIndex }, { TECHNIQUES }, { shareablePaths }] =
     await Promise.all([
       load("/src/locales/en.ts"),
       load("/src/lib/plants.ts"),
       load("/src/data/wildlife.ts"),
       load("/src/lib/wildlife.ts"),
       load("/src/lib/lookalikes.ts"),
+      load("/src/lib/planting.ts"),
       load("/src/lib/routes.ts"),
     ]);
 
@@ -247,6 +248,7 @@ async function collectPages(load) {
   add("wildlife", en["wildlife.indexDocTitle"], fill(en["wildlife.indexLede"], { n: WILDLIFE.length }));
   const impostors = lookalikeIndex();
   add("lookalikes", en["lookalikes.indexDocTitle"], fill(en["lookalikes.indexLede"], { n: impostors.length }));
+  add("planting", en["planting.docTitle"], en["planting.lede"]);
   add("privacy", en["privacy.docTitle"], en["privacy.lede"]);
   add("sources", en["sources.docTitle"], en["sources.lede"]);
   add("about", en["about.docTitle"], en["about.lede"]);
@@ -296,6 +298,18 @@ async function collectPages(load) {
       `lookalikes/${row.lookalike.id}`,
       fill(en["lookalikes.docTitle"], { name: row.lookalike.common }),
       `${row.lookalike.origin} ${row.lookalike.blurb}`
+    );
+  }
+
+  // --- one page per propagation technique ---
+  // Shareable in its own right: "here's how and when to take hardwood cuttings"
+  // is a link someone sends a neighbour in January, with no plant attached.
+  // The description is the window plus the wait, which is what the page is for.
+  for (const tech of TECHNIQUES) {
+    add(
+      `planting/${tech.slug}`,
+      fill(en["planting.techniqueDocTitle"], { name: en[`prop.${tech.method}.name`] }),
+      `${en[`prop.${tech.method}.when`]} ${en[`prop.${tech.method}.plain`]}`
     );
   }
 

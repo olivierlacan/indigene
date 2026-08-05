@@ -18,6 +18,7 @@ import { renderRegion } from "./steps/region";
 import { renderWildlifeIndex, renderWildlife, wildlifeRegionParam } from "./steps/wildlife";
 import { wildlifeKindRoute } from "./lib/wildlife";
 import { renderLookalikeIndex, renderLookalike, lookalikeRegionParam } from "./steps/lookalikes";
+import { renderPlantingIndex, renderPlanting } from "./steps/planting";
 import { canonicalPath, parseRoute, isHashRoute } from "./lib/routes";
 import type { AppStep } from "./lib/routes";
 import { renderPrivacy } from "./steps/privacy";
@@ -72,6 +73,9 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
   // The impostors. `#/lookalikes` alone is the whole index; a param is either
   // one impostor or `in/<region>`, and `renderLookalike` tells them apart.
   lookalikes: { fn: (m) => renderLookalikeIndex(m), labelKey: "steps.lookalikes", inFlow: false },
+  // The propagation techniques: `#/planting` is all fifteen against the
+  // calendar, `#/planting/<slug>` is one of them in full.
+  planting: { fn: renderPlantingIndex, labelKey: "steps.planting", inFlow: false },
   privacy: { fn: renderPrivacy, labelKey: "steps.privacy", inFlow: false },
   sources: { fn: renderSources, labelKey: "steps.sources", inFlow: false },
   settings: { fn: renderSettings, labelKey: "steps.settings", inFlow: false },
@@ -91,6 +95,7 @@ const PARAM_RENDERERS: Record<string, StepFn> = {
   regions: renderRegion,
   wildlife: renderWildlife,
   lookalikes: renderLookalike,
+  planting: renderPlanting,
   settings: renderSettings,
   privacy: renderPrivacy,
 };

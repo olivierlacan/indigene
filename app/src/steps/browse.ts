@@ -48,6 +48,14 @@ export function renderBrowse(main: HTMLElement): void {
       ),
       el("button", { class: "btn btn-secondary btn-block", onClick: () => navigate("regions") }, t("browse.exploreBtn")),
     ]),
+    // The third way in: not a plant or a place, but a thing to do this weekend.
+    // It's the only entrance that answers "what's the right season for this?",
+    // which is the question a gardener has standing over a plant they already own.
+    el("div", { class: "card", style: "margin-top:1rem" }, [
+      el("h3", {}, t("planting.title")),
+      el("p", {}, t("planting.lede")),
+      el("button", { class: "btn btn-secondary btn-block", onClick: () => navigate("planting") }, t("planting.allTechniques")),
+    ]),
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("browse.home")),
       el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("browse.startFromSpot")),

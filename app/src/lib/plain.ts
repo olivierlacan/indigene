@@ -275,11 +275,28 @@ export function relianceLabel(r: SupportReliance): { icon: string; term: string;
  * pencil — which need no unit conversion, read the same in both systems, and
  * are how a gardener actually judges a cutting: against their own hand, not a
  * ruler they didn't bring outside.
+ *
+ * The last four answer *when*, which the first two provoke and never used to
+ * answer: `when` is the window in a line, `wait` how long before anything
+ * happens, `timing` the cue to watch for rather than a date, and `mistake` the
+ * one slip that wastes the attempt. The plant page shows `when` beside each
+ * method; the rest is the technique's own page (`steps/planting.ts`).
  */
-export function propagationMethod(m: PropagationMethod): { name: string; plain: string } {
+export function propagationMethod(m: PropagationMethod): {
+  name: string;
+  plain: string;
+  when: string;
+  wait: string;
+  timing: string;
+  mistake: string;
+} {
   return {
     name: t(`prop.${m}.name` as const),
     plain: t(`prop.${m}.plain` as const),
+    when: t(`prop.${m}.when` as const),
+    wait: t(`prop.${m}.wait` as const),
+    timing: t(`prop.${m}.timing` as const),
+    mistake: t(`prop.${m}.mistake` as const),
   };
 }
 

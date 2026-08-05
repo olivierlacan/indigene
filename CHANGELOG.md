@@ -25,6 +25,40 @@ subtitle on the What's new page.
 
 ### Added
 
+- **Every way to grow more, and when in the year to do it.** "How to grow more"
+  on a plant page used to tell you what to do — nick the hard seed coat, give
+  the seed a cold damp winter — and stop there, which left the question it
+  raises unanswered: *when?* Each of the fifteen techniques now has a page of
+  its own with the timing on it, and the plant page carries a one-line window
+  beside each one, so you can tell at a glance that scarifying happens the
+  evening before you sow while collecting acorns happens in October. The new
+  pages are at [Ways to grow more](https://indigene.app/planting): the four
+  seasons laid against all fifteen techniques, a "what to do in this season"
+  list that follows the actual month, and one page each for
+  [sowing seed as it falls](https://indigene.app/planting/direct-sowing),
+  [faking a winter in the fridge](https://indigene.app/planting/cold-stratification),
+  [scuffing a hard seed coat](https://indigene.app/planting/scarification),
+  [taking cuttings](https://indigene.app/planting/softwood-cuttings),
+  [splitting a clump](https://indigene.app/planting/division) and ten more.
+- **Every technique page says how long you'll be waiting, and how it usually
+  goes wrong.** Roots in three to six weeks for a soft green cutting; eighteen
+  months, and a pot that looks empty for the whole first spring, for a seed with
+  double dormancy. Each one names the single slip that wastes the attempt —
+  planting a winter twig upside down, watering fine seed from above, tipping out
+  the pot too early — because those are the reasons it fails, not the technique.
+- **The windows are seasons and signs, never dates.** February in the Florida
+  Keys is April in Pennsylvania, so a date would be wrong somewhere. Instead:
+  bend a shoot tip and take the cutting if it snaps cleanly, collect fern spores
+  when the frond backs turn rich brown, sow fresh seed the week it ripens. The
+  pages also say plainly what to do where it never freezes — in south Florida
+  the fridge isn't a shortcut, it's the only version of the technique there is.
+- **A reading list for anyone who wants more than one page.** The bottom of
+  [Ways to grow more](https://indigene.app/planting) now names the eight free
+  resources every propagation note in the app is written from — the US Forest
+  Service's propagation protocol database, the Woody Plant Seed Manual, the Lady
+  Bird Johnson Wildflower Center, Tela Botanica, the INPN, the RHS and two more
+  — with a line on what each is actually good for and which continent it speaks
+  for. They're worth an afternoon on their own.
 - **The French edition is finished.** Until now, choosing French translated the
   buttons and the headings, and then handed you paragraphs of English as soon as
   you opened a plant — with a small honest notice at the top of the page saying
@@ -81,7 +115,7 @@ subtitle on the What's new page.
   for the detail in it.
 - **Internal:** the translated catalog prose is fetched as its own file rather
   than built into the app, so an English reader downloads none of it. The app
-  stays at ~320 KB gzipped; French adds ~122 KB, once, and only in French. If
+  stays at ~336 KB gzipped; French adds ~122 KB, once, and only in French. If
   that file can't be fetched the pages fall back to English exactly as an
   untranslated row always did.
 - **Internal:** `locales/prose.fr.ts` is now `locales/prose.fr/`, one file per

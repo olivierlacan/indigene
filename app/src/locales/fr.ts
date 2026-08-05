@@ -70,6 +70,7 @@ export const fr: Dict = {
   "steps.browse": "Parcourir",
   "steps.explore": "Explorer",
   "steps.wildlife": "Faune",
+  "steps.planting": "Multiplier",
   "steps.privacy": "Vie privée",
   "steps.sources": "Sources",
   "steps.about": "À propos",
@@ -557,6 +558,106 @@ export const fr: Dict = {
   "prop.spores.plain":
     "Les fougères ne font pas de graines — elles répandent des spores fines comme de la poussière depuis les taches brunes sous les frondes mûres. Plus lent et plus délicat, mais faisable : posez une fronde mûre sur du papier une journée pour recueillir la poussière brune, répandez-la à la surface d'un mélange stérile humide, couvrez d'un plastique transparent et gardez clair et humide. Un film vert apparaît d'abord, puis de minuscules fougères au fil des mois. La plupart des jardiniers trouvent bien plus facile de diviser une touffe existante.",
 
+  // -------------------------------------------------------------------------
+  // Quand le faire — la couche « calendrier » derrière la page de chaque
+  // technique (`#/planting/<slug>`, steps/planting.ts). Le glossaire ci-dessus
+  // dit ce qu'on fait ; ces quatre chaînes disent quand : la fenêtre en une
+  // ligne (.when), le délai avant que quoi que ce soit se passe (.wait), le
+  // signe à guetter plutôt qu'une date (.timing), et l'erreur qui gâche tout
+  // (.mistake). Jamais de dates : février aux Keys, c'est avril en
+  // Pennsylvanie, alors qu'« quand les gousses brunissent » est vrai partout.
+  // -------------------------------------------------------------------------
+  "prop.seed-direct.when": "L'automne pour la plupart des graines ; le printemps pour le reste.",
+  "prop.seed-direct.wait": "Levée aux premiers redoux, après son hiver.",
+  "prop.seed-direct.timing":
+    "L'automne est le choix par défaut parce que c'est ce que fait la plante elle-même : la graine mûrit, tombe, passe l'hiver sous les feuilles et la pluie, et lève quand le sol se réchauffe. Semer à ce moment-là ne vous demande rien — ni réfrigérateur, ni semaines à compter. Le semis de printemps est la solution de repli pour une graine arrivée tard ou conservée au sec : ça marche, vous y gagnez simplement un premier été plus court. La saison à éviter, c'est le plein été, où les premiers centimètres de terre sèchent entre deux arrosages plus vite qu'une jeune racine ne descend.",
+  "prop.seed-direct.mistake":
+    "L'enterrer. La règle est : à peu près sa propre largeur de profondeur — une graine fine à peine recouverte, un gland à un doigt sous la surface. La plupart des graines qui ne lèvent jamais étaient simplement trop profondes pour remonter.",
+  "prop.seed-warm.when": "La semaine où elle mûrit — souvent de l'été au début de l'automne.",
+  "prop.seed-warm.wait": "Quelques semaines, souvent moins.",
+  "prop.seed-warm.timing":
+    "C'est la seule technique dont vous ne choisissez pas le moment : la plante le fixe, et votre rôle est d'être prêt. Surveillez le fruit plutôt que le calendrier — les samares d'un érable qui virent au fauve, le cône d'un magnolia qui s'ouvre sur des graines rouges — et semez dans les jours qui suivent la récolte. Ces graines sont vivantes et à peau fine : c'est le dessèchement qui les tue, et « je le ferai ce week-end » est tout le risque. Si vous ne pouvez vraiment pas semer tout de suite, gardez-les à peine humides et au frais dans un sachet de sable, jamais au sec sur un rebord de fenêtre.",
+  "prop.seed-warm.mistake":
+    "Les traiter comme un sachet du commerce. Une graine fraîche ne se conserve pas — celles qui sèchent le plus dur sont souvent celles qui ne repartent jamais.",
+  "prop.seed-cold-moist.when": "Semer dehors à l'automne, ou lancer le réfrigérateur en plein hiver.",
+  "prop.seed-cold-moist.wait": "De quatre à douze semaines de froid, puis la levée.",
+  "prop.seed-cold-moist.timing":
+    "Il y a deux chemins, et la question du calendrier est surtout de savoir lequel vous prenez. Dehors : semez le pot en octobre ou en novembre, posez-le là où il recevra la pluie et la neige, et le vrai hiver compte les semaines à votre place. Au réfrigérateur : comptez à rebours depuis la date où vous voulez des plantules — dix semaines de froid et un semis en avril, c'est un sachet mis au frais vers la fin janvier. Dans les deux cas, la graine doit rester *humide* tout du long. Un froid sec ne fait strictement rien, et c'est pourquoi un sachet glissé au réfrigérateur en novembre est encore là, inchangé, au printemps.",
+  "prop.seed-cold-moist.mistake":
+    "Ne pas regarder. Certaines graines germent dans le sachet avant la fin des semaines prévues, et la petite racine blanche casse si vous les découvrez trop tard — ouvrez le sachet toutes les deux semaines à partir de la moitié.",
+  "prop.seed-scarify.when": "Juste avant de semer, quel que soit le moment.",
+  "prop.seed-scarify.wait": "Des jours plutôt que des semaines, une fois en terre.",
+  "prop.seed-scarify.timing":
+    "La scarification n'est pas une saison, c'est la dernière étape avant le semis — la vraie question est donc : quand semez-vous ? Faites-le la veille au soir : entaillez ou râpez le tégument, laissez tremper la nuit, semez au matin. Ce qu'il ne faut surtout pas faire, c'est scarifier un lot en janvier pour semer en avril. Ouvrir le tégument, c'est retirer son imperméable à la graine : elle peut désormais absorber l'eau, et une graine scarifiée humide au fond d'un bocal va soit pourrir, soit germer dans le noir. Le trempage sert aussi de contrôle — une graine qui a bu gonfle visiblement et paraît plus grosse que ses voisines ; celles qui restent petites et dures méritent un nouveau passage sur le papier de verre.",
+  "prop.seed-scarify.mistake":
+    "Aller trop loin. Arrêtez dès que la couche plus claire apparaît : on veut le tégument ouvert, pas la graine blessée.",
+  "prop.seed-surface-light.when": "De la fin de l'hiver au printemps à l'abri ; à l'automne dehors.",
+  "prop.seed-surface-light.wait": "De deux à quatre semaines, si la surface ne sèche jamais.",
+  "prop.seed-surface-light.timing":
+    "Une graine fine comme de la poussière reste posée sur la terre, ce qui en fait la chose la plus fragile que vous sèmerez : la surface qui la porte peut sécher en un après-midi de soleil, et une graine aussi petite n'a aucune réserve pour y survivre. Semez-la donc là où vous pouvez la surveiller — une terrine à l'intérieur ou sous châssis dès la fin de l'hiver, prête à sortir aux beaux jours. Dehors, l'automne convient à celles qui veulent aussi un passage au froid : à la volée sur une planche nette, et on les laisse faire. Couvrez la terrine d'un plastique transparent ou d'une vitre, à la lumière mais hors du soleil de midi.",
+  "prop.seed-surface-light.mistake":
+    "Arroser par le dessus. L'arrosoir enfonce la graine dans le terreau, où elle ne voit plus la lumière dont elle a besoin — brumisez, ou posez la terrine dans un fond d'eau et laissez-la boire par en dessous.",
+  "prop.seed-double-dormant.when": "Semer à l'automne, et n'attendre rien avant le deuxième printemps.",
+  "prop.seed-double-dormant.wait": "Dix-huit mois, à peu de chose près.",
+  "prop.seed-double-dormant.timing":
+    "Semez le pot à l'automne, posez-le à l'ombre, à l'abri et franchement hors du passage — derrière la cabane, pas sur la table de la terrasse — et laissez-le un an et demi. Ce qui se passe entre-temps est invisible : après le premier hiver, la racine sort sous la terre, et la tige feuillée attend un second hiver avant de se montrer. Un pot qui semble vide à son premier printemps est presque certainement en train de travailler. Étiquetez-le sérieusement et arrosez-le en cas de sécheresse : ces semis-là se perdent bien plus souvent parce que quelqu'un a fait du rangement que parce que la technique a échoué.",
+  "prop.seed-double-dormant.mistake":
+    "Vider le pot après le premier printemps sans rien. C'est justement l'année où il ne devait rien se passer.",
+  "prop.division.when": "Début de printemps ou automne — jamais en pleine floraison.",
+  "prop.division.wait": "Repartie en quelques semaines.",
+  "prop.division.timing":
+    "Divisez quand la plante peut tout mettre dans de nouvelles racines plutôt que dans ses fleurs : au tout début du printemps, quand les pousses percent à peine, ou à l'automne une fois la chaleur passée mais avec encore des semaines de sol tiède pour s'enraciner. La vieille règle est bonne — les plantes à floraison printanière se divisent à l'automne, celles d'automne au printemps — de sorte que vous ne découpez jamais une plante au milieu de sa grande année. Choisissez un jour gris et humide si vous le pouvez : les racines ne sont à l'air que quelques minutes, et ce sont le soleil et le vent qui leur font du mal.",
+  "prop.division.mistake":
+    "Laisser traîner les éclats le temps d'un café. Les racines fines sèchent en quelques minutes — creusez les trous d'abord, et arrosez tout de suite après.",
+  "prop.cuttings-softwood.when": "De la fin du printemps au début de l'été, sur les pousses de l'année.",
+  "prop.cuttings-softwood.wait": "Racines en trois à six semaines.",
+  "prop.cuttings-softwood.timing":
+    "La fenêtre est courte — quelques semaines, tant que la pousse est tendre — et vos doigts la trouvent bien mieux que le calendrier. Pliez une extrémité de pousse : si elle retombe mollement, elle est encore trop jeune pour se tenir dans un pot ; si elle casse net, c'est exactement le moment ; si elle plie sans casser, elle s'est déjà lignifiée et il vous faut plutôt la bouture semi-aoûtée. Prélevez tôt le matin, quand les pousses sont gorgées d'eau, et mettez-les en terreau humide dans l'heure : une bouture qui a fané en chemin a déjà dépensé ce qu'il lui fallait pour faire des racines.",
+  "prop.cuttings-softwood.mistake":
+    "Couper à midi en plein soleil et les promener dans une poche tiède. Un sac avec un linge humide ne coûte rien et en sauve la plupart.",
+  "prop.cuttings-semi-hardwood.when": "Du milieu de l'été au début de l'automne, quand la pousse durcit.",
+  "prop.cuttings-semi-hardwood.wait": "De six à douze semaines.",
+  "prop.cuttings-semi-hardwood.timing":
+    "Plus tard dans la même pousse de l'année, quand la base a raidi et bruni tandis que la pointe est encore verte — pour la plupart des arbustes, de juillet à septembre. Plus lente à s'enraciner qu'une bouture tendre, et bien plus indulgente : celle-ci tient une semaine sans s'effondrer, ce qui en fait le bon choix pour qui ne peut pas surveiller un pot tous les jours. Enracinez-les sous châssis ombré ou dans un coin abrité, laissez-les y passer l'hiver, et rempotez au printemps suivant.",
+  "prop.cuttings-semi-hardwood.mistake":
+    "Laisser toutes les feuilles. Une bouture encore sans racines ne peut pas alimenter un feuillage entier — ôtez les feuilles du bas et coupez en deux les grandes qui restent.",
+  "prop.cuttings-hardwood.when": "En plein hiver, quand la plante est nue.",
+  "prop.cuttings-hardwood.wait": "Enracinée au printemps, plantée l'automne d'après.",
+  "prop.cuttings-hardwood.timing":
+    "Après la chute des feuilles et avant que les bourgeons ne gonflent — grosso modo de décembre à février sur presque tout le territoire couvert ici. La plante dort, donc la bouture n'a pas à maintenir un feuillage en vie pendant qu'elle s'enracine : c'est ce qui en fait la bouture la moins exigeante qui soit. Des morceaux gros comme un crayon, longs comme un avant-bras, enfoncés de moitié en terre humide, et on n'y touche plus jusqu'au printemps. Saules et cornouillers reprennent si volontiers qu'on les plante souvent directement à l'endroit voulu.",
+  "prop.cuttings-hardwood.mistake":
+    "Les planter à l'envers. Un rameau nu se ressemble des deux bouts : marquez le haut en coupant, car les bourgeons pointent vers le haut et c'est ce bout-là qui doit rester en l'air.",
+  "prop.layering.when": "Coucher la branche au printemps ; la sevrer un an plus tard.",
+  "prop.layering.wait": "Un à deux ans.",
+  "prop.layering.timing":
+    "Le printemps est le moment de coucher la branche : elle est souple, la plante s'apprête à pousser, et elle a toute la belle saison pour faire des racines au point enterré. Ensuite, on attend. À l'automne suivant, dégagez la terre et regardez — une belle poignée de racines et vous pouvez la séparer du pied mère et la lever ; pas grand-chose et vous la laissez une année de plus, ce qui ne vous coûte rien du tout, puisque la mère continue de la nourrir. Plus lent qu'une bouture, et très difficile à rater, car la nouvelle plante n'est jamais seule un seul instant.",
+  "prop.layering.mistake":
+    "La sevrer dès qu'on aperçoit une racine ou deux. Une fois coupée, tout ce dont elle a besoin doit venir de ce qui a poussé là.",
+  "prop.suckers.when": "De la fin de l'hiver au début du printemps, avant les feuilles.",
+  "prop.suckers.wait": "Partie et poussant dès sa première saison.",
+  "prop.suckers.timing":
+    "Prélevez les rejets pendant que la plante dort, pour qu'elle n'ait pas à maintenir en vie une pousse dont vous venez de couper la moitié de l'alimentation en eau. Choisissez-en un à une paume ou plus du tronc : tout près, un rejet n'est souvent qu'une tige partant d'une grosse racine, sans racines à lui. Tranchez droit entre le rejet et le pied mère d'un coup de bêche, puis levez-le avec sa motte. Là où les hivers sont doux, l'automne fait tout aussi bien. Le pied mère ne le regrettera pas : une plante drageonnante en refait chaque année.",
+  "prop.suckers.mistake":
+    "Tirer au lieu de creuser. Un rejet sans racines à lui est un bâton, et il aura fière allure une quinzaine de jours avant de mourir.",
+  "prop.runners.when": "De la fin de l'été à l'automne, quand le plantule est enraciné.",
+  "prop.runners.wait": "Déplaçable quelques semaines après l'enracinement.",
+  "prop.runners.timing":
+    "Attendez que le bébé s'enracine tout seul, ce qu'il fait partout où il touche la terre pendant l'été ; tirez très doucement dessus, un plantule enraciné résiste. La fin de l'été et l'automne, c'est le moment où la plupart sont prêts, et c'est aussi le plus doux pour les déplacer : sol tiède, air qui fraîchit, et des mois avant qu'on leur demande quoi que ce soit. La version soignée : en juillet, épinglez chaque plantule dans un petit pot de terreau enterré près du pied mère ; en septembre, coupez le stolon et levez un pot déjà plein de racines.",
+  "prop.runners.mistake":
+    "Couper le stolon d'abord, en espérant. Tant que le plantule n'a pas ses propres racines, c'est le pied mère qui le maintient en vie.",
+  "prop.root-cuttings.when": "De la fin de l'automne au cœur de l'hiver, en pleine dormance.",
+  "prop.root-cuttings.wait": "Pousses au printemps.",
+  "prop.root-cuttings.timing":
+    "C'est la technique du plein hiver, quand il n'y a plus rien à travailler au-dessus du sol : levez un pied (ou creusez en bordure d'une touffe), prélevez des tronçons de racine longs comme un doigt et gros comme un crayon, et couchez-les dans une caissette de terreau humide, sous abri ou en châssis. Ce sont les réserves de la racine qui poussent les nouvelles tiges dehors, et une racine en contient le plus en hiver — la saison compte donc ici pour de vraies raisons, pas par commodité. Les pousses sortent au printemps, et le tronçon a alors fabriqué ses propres racines.",
+  "prop.root-cuttings.mistake":
+    "Ne plus savoir quel bout était le plus proche du collet. Couchez les tronçons à plat plutôt qu'à la verticale et la question ne se pose plus.",
+  "prop.spores.when": "De l'été à l'automne, quand le dos des frondes brunit.",
+  "prop.spores.wait": "Des mois — un voile vert d'abord, de petites fougères l'année suivante.",
+  "prop.spores.timing":
+    "Les fougères n'ont ni fleur ni graine : il n'y a donc rien à guetter que le dessous des frondes. Les petits amas y sont d'abord verts, mûrissent vers un brun profond, puis se libèrent. Le brun mûr, c'est le moment. Coupez une fronde, posez-la face contre une feuille de papier blanc dans un endroit sans courant d'air, et au matin vous aurez une poussière fine : ce sont les spores, et la balle plus claire à côté n'est que l'emballage. Semez aussitôt sur un terreau stérile humide, couvrez d'un plastique transparent, et installez-vous dans la patience : rien ne ressemble à une fougère pendant le premier semestre.",
+  "prop.spores.mistake":
+    "Récolter une semaine trop tard. Une fois les amas gris et poudreux, qui s'effritent au toucher, la fronde les a déjà lâchés.",
+
   "growth.quick": "Vite installée : comptez à peu près sa taille définitive en trois ans.",
   "growth.steady": "Une croissance régulière : proche de sa taille adulte à {year} ans.",
   "growth.slowish":
@@ -942,6 +1043,8 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   "plants.lookalikesLink": "Vous ne savez pas ce que vous avez sous les yeux ? Certaines plantes s'achètent et se plantent à la place d'une indigène — {link}.",
   "plants.lookalikesLinkText": "voyez les sosies que nous avons documentés",
+  "plants.plantingLink": "Vous en avez déjà une et vous en voulez une autre ? Il existe quinze façons de multiplier une plante, chacune avec sa saison — {link}.",
+  "plants.plantingLinkText": "voir quand et comment",
   "steps.lookalikes": "Sosies",
   "lookalikes.indexTitle": "Les plantes qu'on prend pour des indigènes",
   "lookalikes.indexDocTitle": "Sosies — les plantes qu'on prend pour des indigènes — Indigene",
@@ -1168,6 +1271,83 @@ export const fr: Dict = {
   "plants.noneLink": "parcourez les indigènes que nous connaissons",
   "plants.noneEnd": ".",
   "plants.browseRegions": "Parcourir par région",
+
+  // ---------------------------------------------------------------------
+  // Multiplier ses plantes : l'index `#/planting` et la page de chaque
+  // technique. L'index fait deux choses — l'année mise en regard des quinze
+  // techniques, et la liste des ressources d'où vient le mode d'emploi.
+  // ---------------------------------------------------------------------
+  "planting.docTitle": "Multiplier ses plantes, et à quel moment — Indigene",
+  "planting.title": "🪴 Multiplier ses plantes",
+  "planting.lede":
+    "Quinze façons de faire plusieurs plantes d'une seule — à partir des graines que vous récoltez, ou du pied déjà en terre. Chacune a sa saison, et choisir la bonne semaine compte plus que tout le reste.",
+  "planting.nowTitle": "Que faire en {season}",
+  "planting.nowLede":
+    "Nous sommes en {season}, au sens de l'hémisphère nord — c'est-à-dire partout où Indigene est présent. Voici les techniques dont la fenêtre est ouverte en ce moment.",
+  "planting.nowEmpty": "Rien ne vous réclame cette saison — le bon moment pour lire en avance.",
+  "planting.seasonNoteTitle": "Des saisons, pas des dates. ",
+  "planting.seasonNote":
+    "Une date serait fausse quelque part : février aux Keys, en Floride, c'est avril en Pennsylvanie. Chaque fenêtre est donc une saison et un signe à guetter — des gousses qui brunissent, une pousse qui casse net au lieu de plier — et ceux-là sont vrais où que vous soyez.",
+  "planting.frostFreeTitle": "Là où il ne gèle pas. ",
+  "planting.frostFree":
+    "Dans le sud de la Floride et aux Keys, il n'y a aucun hiver froid sur lequel s'appuyer : le réfrigérateur n'y est pas un raccourci, c'est la seule version de la technique qui fonctionne. Les mois frais et secs, de novembre à février, y sont la saison de plantation et y jouent le rôle que le printemps joue plus au nord.",
+  "planting.fromSeedTitle": "À partir des graines que vous récoltez",
+  "planting.fromSeedLede":
+    "Le moins cher, le plus lent, et le seul chemin qui donne toute une génération de plantes légèrement différentes — c'est-à-dire une population sauvage.",
+  "planting.fromPlantTitle": "À partir du pied que vous avez déjà",
+  "planting.fromPlantLede":
+    "Plus rapide, et chaque nouvelle plante est une copie exacte de la mère. De quoi remplir un massif à partir d'un seul arbuste en deux ans.",
+  "planting.whenLabel": "Quand",
+  "planting.waitLabel": "Combien de temps",
+  "planting.anySeason": "Pas de saison propre — elle suit le semis auquel elle appartient.",
+  "planting.usedByTitle": "Des plantes d'ici qui s'y prêtent",
+  "planting.usedByLede.one": "Une plante des listes d'Indigene se multiplie de cette façon.",
+  "planting.usedByLede.other": "{n} plantes des listes d'Indigene se multiplient de cette façon — et chaque fiche ajoute ses propres particularités à la technique.",
+  "planting.usedByMore": "et {n} autres",
+  "planting.timingTitle": "Reconnaître le moment",
+  "planting.howTitle": "Ce que vous faites concrètement",
+  "planting.mistakeTitle": "Là où ça rate le plus souvent",
+  "planting.allTechniques": "Toutes les façons de multiplier",
+  "planting.browsePlants": "Parcourir les plantes",
+  "planting.backToIndex": "← Toutes les techniques",
+  "planting.otherInSeason": "Également ouvert en {season}",
+  "planting.notFoundTitle": "Nous n'avons pas celle-là",
+  "planting.notFoundLede": "Aucune technique d'ici n'a l'adresse « {slug} ».",
+  "planting.season.spring": "Printemps",
+  "planting.season.summer": "Été",
+  "planting.season.fall": "Automne",
+  "planting.season.winter": "Hiver",
+  "planting.seasonIn.spring": "printemps",
+  "planting.seasonIn.summer": "été",
+  "planting.seasonIn.fall": "automne",
+  "planting.seasonIn.winter": "hiver",
+  "planting.techniqueDocTitle": "{name} — quand et comment — Indigene",
+
+  "planting.sourcesTitle": "D'où vient le mode d'emploi",
+  "planting.sourcesLede":
+    "Rien de tout cela n'est de notre invention. Chaque conseil de multiplication de l'application est écrit avec nos propres mots simples à partir de ces sources, et chacune d'elles est en accès libre et vaut bien un après-midi — ce sont les endroits où aller quand une page ne vous suffit plus.",
+  "planting.sourcesAfter":
+    "Ce sont les faits qui servent, jamais la prose : un protocole disant qu'une graine réclame dix semaines de froid énonce un fait sur la graine, et nous le disons à notre façon. Le décompte complet de toutes les sources de l'application, et de ce que nous contesterions en premier, est sur la page {sources}.",
+  "planting.sourcesLink": "D'où viennent nos chiffres",
+  "planting.scope.us": "Amérique du Nord",
+  "planting.scope.eu": "Europe",
+  "planting.scope.both": "Les deux",
+  "planting.src.npn":
+    "Celle à ouvrir en premier. Les pépiniéristes de la restauration écologique y consignent exactement comment ils ont élevé une espèce — traitement des graines, semaines de froid, ce qui a échoué — espèce par espèce, en public. Des milliers de protocoles pour les indigènes d'Amérique du Nord.",
+  "planting.src.wpsm":
+    "La référence pour les graines d'arbres et d'arbustes : comment les récolter, les nettoyer, les conserver et lever leur dormance, genre par genre. Un manuel fédéral dans le domaine public, téléchargeable en entier.",
+  "planting.src.wildflower":
+    "Une base de données de plantes indigènes qui donne, sur la plupart des fiches, un paragraphe de multiplication écrit pour des jardiniers plutôt que pour des pépinières. Le point de départ le plus doux des quatre.",
+  "planting.src.mobot":
+    "Une grande base horticole, sérieuse et pratique : ce que fait vraiment une plante au jardin et ce qui tourne mal, là où les sources de restauration se concentrent sur la façon de l'élever.",
+  "planting.src.xerces":
+    "Des spécialistes de la conservation des invertébrés, et la raison pour laquelle tant de ces notes précisent qui la plante nourrit. Leurs guides régionaux de semences et d'habitats sont gratuits, et remarquablement honnêtes sur ce qui ne s'installe pas.",
+  "planting.src.tela":
+    "Le réseau botanique francophone : une flore collaborative avec observations, clés et notes de culture, nourrie par des botanistes comme par des amateurs. La référence derrière la plupart des fiches françaises d'ici.",
+  "planting.src.inpn":
+    "L'inventaire national, porté par le Muséum national d'Histoire naturelle. Moins un mode d'emploi que l'autorité sur ce qui est réellement indigène et où — le garde-fou qui empêche de prendre pour « indigène » une plante qui pousse simplement bien.",
+  "planting.src.rhs":
+    "Des guides clairs et bien illustrés pour chaque technique, publiés par une société d'horticulture bicentenaire. Écrits pour un jardin européen et une année européenne.",
 
   // ---------------------------------------------------------------------
   // Vie privée et sécurité.

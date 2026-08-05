@@ -46,6 +46,7 @@ import { silhouetteFor } from "../components/plant-card";
 import { sectionHeading } from "../components/section-link";
 import { keystoneIcon } from "../components/keystone-icon";
 import { wildlifeNearbySection } from "../components/wildlife-nearby";
+import { wildlifeThumb, wildlifeHero } from "../components/wildlife-thumb";
 import { cardStats } from "../components/card-stats";
 import type { SupportLink } from "../types";
 import { t, tn, fmtNumber, fmtList, getLang } from "../lib/i18n";
@@ -345,7 +346,14 @@ function wildlifeCard(row: WildlifeIndexRow, region: RegionDef | null): FilterRo
     ? el("span", { class: "plant-latin", style: "font-weight:400;font-size:0.82rem" })
     : null;
   const node = el("article", { class: "card wildlife-card" }, [
-    el("span", { class: "wildlife-card-icon", "aria-hidden": "true" }, w.icon),
+    // The emoji, with the animal's chosen photograph fading in over it where
+    // one has been picked — the same arrangement the plant lists use, and for
+    // the same reason: the row is never empty and never jumps.
+    wildlifeThumb(w.id, w.icon, {
+      px: 56,
+      regionId: region?.meta.id,
+      attrs: { class: "wildlife-photo wildlife-card-icon" },
+    }),
     el("div", { class: "wildlife-card-text" }, [
       el("h4", { class: "wildlife-card-name" }, [
         el("a", { href: `#/wildlife/${w.id}` }, [title]),
@@ -481,6 +489,12 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
   const hosts = supports.filter((s) => s.link.support === "host").length;
   const soleCount = supports.filter((s) => relianceOf(s.link) === "sole").length;
 
+  // The chosen photograph, if there is one. Keyed to the first region this
+  // animal is documented in, which is the one whose plants the page leads with
+  // — a swallowtail on the Atlantic coast is not the same picture as its cousin
+  // in Florida.
+  const hero = wildlifeHero(w, byRegion[0]?.region.meta.id);
+
   main.append(
     el("article", { class: "plant plant-animal" }, [
       el("p", { class: "region-tag", style: "margin:0 0 0.4rem;font-size:0.9rem;color:var(--ink-soft)" }, [
@@ -494,8 +508,13 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
       // pair a plant's page uses; see "Profile pages on a laptop".)
       el("div", { class: "plant-cols" }, [
         el("div", { class: "plant-col" }, [
-          el("div", { class: "plant-head" }, [
-            el("div", { "aria-hidden": "true", style: "font-size:2.4rem;line-height:1;flex:0 0 auto" }, w.icon),
+          // The photograph where one has been chosen, the emoji where none has
+          // — the same two layouts a plant's profile has, and the same reason
+          // for the float: a name, a binomial and a row of region pills are
+          // shorter than a photograph is tall, and a flex column would leave
+          // that difference blank.
+          el("div", { class: hero ? "plant-head plant-head-photo" : "plant-head" }, [
+            hero ?? el("div", { "aria-hidden": "true", style: "font-size:2.4rem;line-height:1;flex:0 0 auto" }, w.icon),
             el("div", {}, [
               el("h2", { class: "plant-name", style: "margin:0" }, names.title),
               names.sub ? el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" }, names.sub) : null,

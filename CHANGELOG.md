@@ -66,6 +66,23 @@ subtitle on the What's new page.
   arrives with winter lit before anyone has tapped anything. Plants have had a
   picture of their own on a shared link for a while; these pages now do too,
   instead of falling back to the general Indigene card.
+- **Every plant now has a photo page of its own.** One photograph tells you
+  roughly what a plant is. A leaf in your hand asks more exact questions, so
+  there is now a page that answers them: the shape of the whole plant from a few
+  steps back, then its leaves, its flowers and its fruit up close, each one
+  chosen by a person and labelled. It sits one tap from the plant's page —
+  look for **📷 More photos** under its name — and it carries the same
+  "see it growing near you" lookup, so under the chosen pictures you can ask
+  iNaturalist what one looks like near you, today. Example:
+  [photos of alder buckthorn](https://indigene.app/plants/frangula-alnus/photos).
+  Most plants start with one photograph and the page says plainly which
+  close-ups haven't been chosen yet; they'll fill in as we work through them.
+- **Animals can have real photographs too.** The butterflies, moths, bees, birds
+  and mammals in [Wildlife](https://indigene.app/wildlife) have always been drawn
+  as an emoji, which tells you it's a butterfly and nothing else about *which*
+  butterfly. They now use the same system the plants do: a real, credited
+  photograph chosen from iNaturalist. The emoji stays underneath as the
+  placeholder, so nothing looks empty while the pictures are being chosen.
 - **The French edition is finished.** Until now, choosing French translated the
   buttons and the headings, and then handed you paragraphs of English as soon as
   you opened a plant — with a small honest notice at the top of the page saying
@@ -120,6 +137,17 @@ subtitle on the What's new page.
   [this section](https://indigene.app/plants/lupinus-polyphyllus#ecosystem),
   every explanation is already open, because asking for that section is asking
   for the detail in it.
+- **Internal:** the photo-harvesting pipeline now asks iNaturalist for a plant's
+  *flowering* and *fruiting* observations as separate queries, using the
+  community's own Plant Phenology annotations, so the flower and fruit shots
+  aren't buried under forty close-ups of leaves. The pixel pass guesses at
+  whole-plant vs. leaf as well, but only to re-order the shortlist — every
+  candidate stays assignable to every slot, and the choosing stays human. The
+  review page gained slots per subject, the animals, and the picks already
+  committed as its starting state. See `docs/hero-photos.md`.
+- **Internal:** the four close-up angles per plant live in their own JSON,
+  imported dynamically, so the bundle every reader downloads doesn't grow by the
+  gallery nobody has opened. The app stays at ~320 KB gzipped.
 - **Internal:** the translated catalog prose is fetched as its own file rather
   than built into the app, so an English reader downloads none of it. The app
   stays at ~337 KB gzipped; French adds ~122 KB, once, and only in French. If

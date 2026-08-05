@@ -1,30 +1,49 @@
 # Hero photos
 
-Every plant page opens with a to-scale drawing chosen by the plant's *type* — a
-generic shrub, a generic tree. It's honest about size and useless for
-recognition: two dogwoods and a viburnum get the same picture. The goal here is
-one real, well-chosen photograph per plant, cached in the repo, shown instead.
+Every plant page used to open with a to-scale drawing chosen by the plant's
+*type* — a generic shrub, a generic tree. It's honest about size and useless for
+recognition: two dogwoods and a viburnum get the same picture. Every animal's
+page opened with an emoji, which is the same problem with fewer pixels. The goal
+here is real, well-chosen photographs, cached in the repo, shown instead.
 
 The catch is that "well-chosen" is a judgement no script can make. So the
 pipeline does the fetching, the filtering and the ranking, and stops: a person
-picks the actual photo from a shortlist of ten. It's three commands and one
-sitting per region, not an afternoon per plant.
+picks the actual photo from a shortlist. It's three commands and one sitting per
+region, not an afternoon per subject.
 
 ```
-  iNaturalist ──▶ harvest ──▶ score ──▶ shortlist ──▶ YOU ──▶ hero-photos.json
-                (CC only)   (pixels)    (top 10)     (pick)      (committed)
+  iNaturalist ──▶ harvest ──▶ score ──▶ sort ──▶ shortlist ──▶ YOU ──▶ committed
+                (CC only)   (pixels)  (angle)   (top 10 ea.)   (pick)    JSON
 ```
+
+## What gets chosen
+
+| Slot | Where it shows | File |
+|---|---|---|
+| **hero** (plant) | the profile, every list, the region cards | `app/src/data/hero-photos.json` |
+| **habit / leaf / flower / fruit** | `…/plants/<slug>/photos` | `app/src/data/plant-photos.json` |
+| **hero** (animal) | the animal's page, the wildlife index | `app/src/data/wildlife-photos.json` |
+
+The four angles exist because one photograph answers one question. "Roughly,
+what is this?" is what a hero is for. Standing in front of a shrub with a leaf in
+your hand, the questions are *is this the right leaf, the right flower, the right
+fruit* — three more, each needing its own picture. See `app/src/lib/plant-photos.ts`
+for why the angles are a separate file from the heroes (they are fetched only by
+the page that shows them).
+
+Bark is the obvious fifth angle and is deliberately absent: better to add it when
+somebody is ready to review it than to ask for it and leave it empty everywhere.
 
 ## Stage 1 — harvest
 
 `app/scripts/harvest-hero-photos.mjs`, run as `npm run hero:harvest`.
 
-One request per plant per region it's native to, bounded by that region's
+One request per subject per region it belongs to, bounded by that region's
 coverage box:
 
 | Filter | Value | Why |
 |---|---|---|
-| `taxon_id` | the plant's iNaturalist id | descendants included — a subspecies is the same plant |
+| `taxon_id` | the subject's iNaturalist id | descendants included — a subspecies is the same plant |
 | `quality_grade` | `research` | the community confirmed the identification |
 | `photo_license` | `cc0, cc-by, cc-by-sa, cc-by-nc, cc-by-nc-sa` | **we must be able to republish it with credit** |
 | `order_by` | `votes` desc | iNaturalist's own favourites are a strong free prior |
@@ -34,8 +53,41 @@ A photo we can't republish is excluded *at the query*. It is never downloaded,
 never scored, and never shown to a reviewer, so there is no path by which an
 all-rights-reserved photo ends up in the app by accident.
 
-Each plant gets its own shortlist **per region**, because the right photograph
+Each subject gets its own shortlist **per region**, because the right photograph
 of a species at one end of its range is often the wrong one at the other.
+
+### Two more asks per plant, for the pictures nobody scrolls far enough to find
+
+iNaturalist's pool for any given plant is overwhelmingly leaves. Rank it on
+photographic quality and you get ten excellent photographs of foliage; the
+flowering shot is on page four and the fruiting shot might be on page nine. So a
+plant is asked for three times over:
+
+| Ask | Filter | What it's for |
+|---|---|---|
+| favourites | `order_by=votes` | the hero, and the whole-plant and leaf shots |
+| flowering | `term_id=12&term_value_id=13` | the flower slot |
+| fruiting | `term_id=12&term_value_id=14` | the fruit slot |
+
+Term 12 is iNaturalist's **Plant Phenology** annotation — a person, usually
+several, saying what an observation shows. That is a far better signal than
+anything we could measure, and it is what files a candidate under "flower" or
+"fruit" on human authority rather than on our guessing. (`--no-angles` skips
+both asks; the caveat is that an annotation describes the *observation*, and a
+fruiting observation often carries a habit shot alongside the berries.)
+
+### Animals
+
+`--kind wildlife` harvests the animal catalog on the same terms, minus the
+phenology asks (they mean nothing for a butterfly) and with one extra step: the
+wildlife catalog stores a scientific name rather than a numeric id, so the name
+is resolved through `pickTaxon` — **the app's own function, imported**, not a
+second copy of the rules. A harvest that resolved a name differently from the app
+would shortlist photographs of a different animal than the one the page looks up.
+
+An informal group ("Jays, turkeys & woodpeckers") maps to no single taxon, so
+there is nothing to photograph it *as*. It is skipped, the same way it gets no
+species-record link and no "see it near you" lookup.
 
 ## Stage 2 — score
 
@@ -82,22 +134,63 @@ lands mid-table because there isn't much detail anywhere in it. **This is a
 shortlister, not a chooser.** It turns a hundred candidates into ten worth a
 glance.
 
+## Stage 2½ — guess what it's a picture *of*
+
+`app/scripts/_photo-angle.mjs`.
+
+Ten excellent photographs of leaves is still the wrong shortlist when what you
+need is the whole shrub. So the same pixel pass also measures a few things that
+hint at the subject — sky in the top third, greenness in the middle, a saturated
+non-green blob in the centre — and this file turns them into a fit score per
+angle.
+
+| Angle | What it looks for |
+|---|---|
+| habit | sky above, foliage across the frame rather than only in the middle, detail everywhere (a scene, not a specimen), portrait aspect |
+| leaf | green in the middle, subject clear of its background, no sky |
+| flower | the **flowering** annotation, sharpened by how much of the centre isn't a leaf |
+| fruit | the **fruiting** annotation, the same way |
+
+**Only the annotations are trustworthy.** The habit/leaf split is colour
+statistics and a threshold; it has been sanity-checked against synthetic images
+that isolate each signal, and never against a labelled set of real photographs,
+because there isn't one. It is exactly as crude as it sounds.
+
+Which is why it decides nothing. The guess re-orders the strip and puts a small
+tag on a tile; every candidate is still assignable to every slot. A wrong guess
+costs one scroll. That is the most a signal this weak has earned.
+
 ## Stage 3 — pick
 
 `npm run hero:review` writes a single self-contained HTML file to
 `app/dist/hero-review/index.html`. Open it from disk — no server, no build.
 
-- Click a photo to pick it; click it again to unpick.
-- Picks are written to `localStorage` as you go, so a long review can span
-  several sittings or tabs without losing anything.
-- **Download picks** saves `hero-photos.json`.
+Each subject shows its **slots** as chips — Hero, Whole plant, Leaves, Flowers,
+Fruit for a plant; Hero alone for an animal — and a strip of candidates:
+
+- Click the slot you're filling, then click a photograph. The page moves on to
+  the next empty slot by itself, so filling a plant's five is five clicks.
+- The strip **re-sorts to the slot you're on**, best guess first. *Only likely
+  ones* hides the rest, for when a pool is ninety leaves and you want the berry.
+- Click the current pick again to unpick it — undo without a second control.
+- A photograph already used for another slot stays marked, so you can see the
+  set you're building without leaving the strip.
+- **It opens knowing what's already committed.** The picks in `src/data/` are
+  baked into the page, so a re-review starts from today's answers and a download
+  after changing one plant gives back a *complete* file, not a file with one
+  plant in it. Colours already computed ride along too, so re-picking the same
+  photograph doesn't send `hero:colors` back for a value it has.
+- Picks are written to `localStorage` as you go — but only the *difference* from
+  what's committed, so "clear all picks" means "back to what's in the repo".
 
 Each tile shows its score, its isolation ratio and its iNaturalist favourites,
 so you can see why the ranking put it there and overrule it freely — the numbers
-are advice.
+are advice. A green tag is the community's annotation; a grey one with a question
+mark is our guess.
 
-The page cannot write to the repo, and shouldn't: downloading the file and
-committing it is what puts a human signature on the data.
+The three **Download** buttons write the three files. The page cannot write to
+the repo, and shouldn't: downloading and committing is what puts a human
+signature on the data.
 
 ```sh
 cd app
@@ -105,16 +198,18 @@ npm run hero:harvest -- --region pnw   # needs network; see below
 npm run hero:review
 # open app/dist/hero-review/index.html, pick, download
 mv ~/Downloads/hero-photos.json src/data/hero-photos.json
+mv ~/Downloads/plant-photos.json src/data/plant-photos.json
+mv ~/Downloads/wildlife-photos.json src/data/wildlife-photos.json
 npm run hero:colors                    # needs network; see below
 ```
 
 ## Stage 3½ — every pick gets a colour
 
-`npm run hero:colors` fills in a `color` field on any pick that lacks one: the
-photograph's average colour, as `#rrggbb`, about eight bytes each. The plant
-page paints its hero slot that colour while the photograph is still downloading,
-so the picture fades up out of its own mossy green or winter grey instead of
-appearing in an empty rectangle.
+`npm run hero:colors` fills in a `color` field on any pick that lacks one — in
+all three files, and for every angle — the photograph's average colour, as
+`#rrggbb`, about eight bytes each. The page paints the slot that colour while the
+photograph is still downloading, so the picture fades up out of its own mossy
+green or winter grey instead of appearing in an empty rectangle.
 
 It downloads only the 75 px `square` rendition (7–8 KB a pick) and averages it
 in Chromium, the same borrowed-decoder trick `_photo-quality.mjs` uses — the
@@ -129,8 +224,14 @@ placeholder green.
 ## Stage 4 — the app reads it
 
 `app/src/data/hero-photos.json`, keyed `plantId → regionId → pick`, read by
-`app/src/lib/hero-photo.ts`. It ships as `{}` — every plant keeps its form
-drawing until someone picks a photo. The region asked for is the *active* one
+`app/src/lib/hero-photo.ts` — which also reads `wildlife-photos.json` on exactly
+the same terms, through the same fallback rule, so there is one answer to "which
+photograph, for which region?" and not two. The angles live in
+`plant-photos.json` behind `app/src/lib/plant-photos.ts`, which imports it
+*dynamically*: it is fetched the first time someone opens a photo page and never
+otherwise, because four angles per plant per region has no business in the
+bundle every reader downloads. Each file ships as `{}` — every subject keeps its
+drawing or its emoji until someone picks a photo. The region asked for is the *active* one
 (see `activeEntry` in `steps/plant.ts`), so a multi-region plant's photograph
 follows the same region as its figures.
 
@@ -142,12 +243,19 @@ lightbox already speaks, so the credit, the licence label and the "view original
 sighting" link come from exactly one implementation. There is no second way of
 crediting a photo in this codebase, on purpose.
 
-**The lists show the picks too** — the plants index, a region's roster, and the
-starring plant on each region card. There the drawing is *not* replaced: the
-photograph fades in over it, so a plant nobody has reviewed looks exactly as it
-always did and the row never has an empty box. See
-`app/src/components/plant-thumb.ts`, and `app/src/lib/photo.ts` for which
-rendition gets asked for and when.
+**The lists show the picks too** — the plants index, a region's roster, the
+starring plant on each region card, and the wildlife index. There the drawing (or
+the emoji) is *not* replaced: the photograph fades in over it, so a subject
+nobody has reviewed looks exactly as it always did and the row never has an empty
+box. See `app/src/components/plant-thumb.ts` and `wildlife-thumb.ts`, and
+`app/src/lib/photo.ts` for which rendition gets asked for and when.
+
+**The angles get a page of their own**, `#/plants/<slug>/photos`
+(`app/src/steps/plant-photos.ts`) — a real, prerendered, shareable address like
+every other page. It shows the chosen photographs above the live "see it growing
+near you" lookup, which is the deliberate pairing: few, labelled and stable above
+many, current and local. A plant nobody has picked close-ups for still has a
+working page, because the live half works for every plant with a taxon id.
 
 **Picks fall back across regions.** Reviewing 200 plants × their regions before
 anything appears would be a bad trade, so a plant with a pick for *any* region

@@ -42,7 +42,22 @@ import { chromium } from "playwright";
 const PREBUILT = "/opt/pw-browsers/chromium";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const PICKS = resolve(HERE, "../src/data/hero-photos.json");
+
+/**
+ * Every file of picks, and how deep the photograph sits in it.
+ *
+ *   flat    `id → region → pick`         — the plant heroes, the animal heroes
+ *   angled  `id → region → angle → pick` — a plant's whole-plant/leaf/flower/
+ *                                          fruit close-ups
+ *
+ * All three want the same treatment for the same reason, so they are walked by
+ * one loop rather than by three scripts that would drift.
+ */
+const FILES = [
+  { path: resolve(HERE, "../src/data/hero-photos.json"), shape: "flat" },
+  { path: resolve(HERE, "../src/data/wildlife-photos.json"), shape: "flat" },
+  { path: resolve(HERE, "../src/data/plant-photos.json"), shape: "angled" },
+];
 
 /** Analysis raster. Averaging 16×16 downscaled pixels rather than asking the
  *  browser for a single one: a one-pixel `drawImage` is not specified to be a
@@ -67,15 +82,32 @@ const BATCH = 40;
 
 const force = process.argv.includes("--force");
 
-const picks = JSON.parse(readFileSync(PICKS, "utf8"));
+const files = FILES.map((f) => {
+  let picks = {};
+  try {
+    picks = JSON.parse(readFileSync(f.path, "utf8"));
+  } catch {
+    /* a picks file nobody has written yet simply has nothing to colour */
+  }
+  return { ...f, picks, dirty: false };
+});
 
-// One job per (plant, region) pick that still needs a colour.
+// One job per pick that still needs a colour. Each carries the pick object
+// itself, so applying the answer is an assignment rather than a second walk
+// down four levels of keys with the same chance of getting them wrong.
 const jobs = [];
-for (const [plantId, byRegion] of Object.entries(picks)) {
-  for (const [regionId, pick] of Object.entries(byRegion)) {
-    if (pick.color && !force) continue;
-    if (!pick.thumbUrl) continue;
-    jobs.push({ plantId, regionId, url: pick.thumbUrl });
+for (const file of files) {
+  for (const [id, byRegion] of Object.entries(file.picks)) {
+    for (const [regionId, value] of Object.entries(byRegion ?? {})) {
+      const found = file.shape === "angled"
+        ? Object.entries(value ?? {}).map(([angle, pick]) => ({ label: `${id}/${regionId}/${angle}`, pick }))
+        : [{ label: `${id}/${regionId}`, pick: value }];
+      for (const { label, pick } of found) {
+        if (!pick?.thumbUrl) continue;
+        if (pick.color && !force) continue;
+        jobs.push({ file, label, pick, url: pick.thumbUrl });
+      }
+    }
   }
 }
 
@@ -94,27 +126,31 @@ try {
   for (let at = 0; at < jobs.length; at += BATCH) {
     const batch = jobs.slice(at, at + BATCH);
     const payload = [];
-    for (const job of batch) {
+    for (const [i, job] of batch.entries()) {
       try {
         const res = await fetch(job.url, { headers: { "User-Agent": UA } });
         if (!res.ok) throw new Error(String(res.status));
         const bytes = Buffer.from(await res.arrayBuffer());
-        payload.push({ key: `${job.plantId}/${job.regionId}`, b64: bytes.toString("base64") });
+        // The key is the position in this batch, not a path: a composite string
+        // would have to be parsed back apart, and one id containing the
+        // separator would put a colour on the wrong photograph.
+        payload.push({ key: String(i), b64: bytes.toString("base64") });
       } catch (err) {
         failed++;
-        console.warn(`  ${job.plantId} (${job.regionId}): ${err.message}`);
+        console.warn(`  ${job.label}: ${err.message}`);
       }
     }
     if (!payload.length) continue;
     const results = await page.evaluate(averageAll, { items: payload, N, MIN_L, MAX_L });
     for (const { key, color, error } of results) {
-      const [plantId, regionId] = key.split("/");
+      const job = batch[Number(key)];
       if (error) {
         failed++;
-        console.warn(`  ${plantId} (${regionId}): ${error}`);
+        console.warn(`  ${job.label}: ${error}`);
         continue;
       }
-      picks[plantId][regionId].color = color;
+      job.pick.color = color;
+      job.file.dirty = true;
       done++;
     }
     console.log(`  ${Math.min(at + BATCH, jobs.length)}/${jobs.length}`);
@@ -123,8 +159,14 @@ try {
   await browser.close();
 }
 
-writeFileSync(PICKS, `${JSON.stringify(picks, null, 2)}\n`);
-console.log(`Wrote ${done} colour${done === 1 ? "" : "s"}${failed ? `, ${failed} failed` : ""} → ${PICKS}`);
+// Only the files that gained something are rewritten — an untouched picks file
+// shouldn't show up in the diff with a changed trailing newline.
+const written = files.filter((f) => f.dirty);
+for (const file of written) writeFileSync(file.path, `${JSON.stringify(file.picks, null, 2)}\n`);
+console.log(
+  `Wrote ${done} colour${done === 1 ? "" : "s"}${failed ? `, ${failed} failed` : ""} → ` +
+    (written.map((f) => f.path.split("/").pop()).join(", ") || "nothing"),
+);
 
 /**
  * Everything that touches pixels, in one function because it is serialised into

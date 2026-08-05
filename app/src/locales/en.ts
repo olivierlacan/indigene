@@ -1566,6 +1566,45 @@ export const en = {
   "obs.tapToEnlarge": "{attribution} — tap to enlarge",
   "hero.enlarge": "See this photo of {name} full size",
   "obs.photoAlt": "{name} photographed by {observer}",
+
+  // ---------------------------------------------------------------------
+  // A plant's photographs (#/plants/<slug>/photos). One picture answers
+  // "roughly, what is this?"; a leaf in your hand asks three more specific
+  // questions, and they need three more specific pictures.
+  //
+  // No plant name goes in the link on the profile — the page it sits on is
+  // already about that plant, and a name would change the label's width per
+  // species (see "buttons stay on one line" in CLAUDE.md).
+  // ---------------------------------------------------------------------
+  "photos.more": "More photos",
+  "photos.docTitle": "Photos of {name} — Indigene",
+  "photos.shareLede":
+    "Chosen photographs of {name} ({latin}) — the whole plant, its leaves, its flowers and its fruit — plus real sightings growing near you.",
+  "photos.title": "Photos of {name}",
+  "photos.lede":
+    "One photograph tells you roughly what a plant is. These tell you what you're holding: the shape from a few steps back, then the leaf, the flower and the fruit up close.",
+  "photos.backToPlant": "← Back to the plant",
+  "photos.backToPlantShort": "← Back to the plant",
+  "photos.chosenTitle": "Chosen photographs",
+  "photos.chosenLede":
+    "Picked by a person from iNaturalist's most-liked, freely reusable photos — so it's the same picture every time, and you can compare against it.",
+  "photos.angle.portrait": "Portrait",
+  "photos.angle.habit": "The whole plant",
+  "photos.angle.leaf": "Leaves",
+  "photos.angle.flower": "Flowers",
+  "photos.angle.fruit": "Fruit & seeds",
+  // The same four, worded to sit inside a sentence about what's missing.
+  "photos.angleGap.habit": "the whole plant",
+  "photos.angleGap.leaf": "the leaves",
+  "photos.angleGap.flower": "the flowers",
+  "photos.angleGap.fruit": "the fruit",
+  "photos.enlarge": "See the “{angle}” photo of {name} full size",
+  "photos.shotAlt": "{name} — {angle}",
+  "photos.noneYet":
+    "Nobody has chosen close-ups of {name} yet. The lookup below still works: it asks iNaturalist for real sightings near a spot you pick.",
+  "photos.someMissing":
+    "{n} chosen so far. Still to be picked: {angles}. The lookup below finds more, near you, today.",
+  "photos.allChosen": "All {n} photographs have been chosen for this one.",
   "lightbox.prev": "Previous photo",
   "lightbox.next": "Next photo",
   "lightbox.close": "Close",

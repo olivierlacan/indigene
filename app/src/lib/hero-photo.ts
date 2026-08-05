@@ -22,7 +22,16 @@
 // nearby-sightings layer uses, so the lightbox credits a hero photo with
 // exactly the same words, links and licence line as any other photo in the app.
 // There is deliberately no second implementation of "how we credit a photo".
+//
+// **Animals have picks too, on the same terms.** `wildlife-photos.json` is the
+// same table keyed by an animal's id instead of a plant's, harvested by the same
+// script and chosen in the same review page — because "what does a hairstreak
+// actually look like?" is the same question as "what does an alder buckthorn
+// look like?", and an emoji answers it about as well as a generic shrub drawing
+// did. Both files are read through `pickFrom` below, so there is one fallback
+// rule and one credit path for every photograph the app has chosen.
 import PICKS from "../data/hero-photos.json";
+import WILDLIFE_PICKS from "../data/wildlife-photos.json";
 import type { ObservationSummary } from "./inaturalist";
 
 /** One chosen photograph, as `hero-photos.json` stores it — the shape the
@@ -47,10 +56,22 @@ export interface HeroPhoto {
   color?: string;
 }
 
-/** `plantId → regionId → pick`. Empty until someone reviews a shortlist. */
-type PickTable = Record<string, Record<string, HeroPhoto>>;
+/** `subjectId → regionId → pick`. Empty until someone reviews a shortlist. */
+export type PickTable = Record<string, Record<string, HeroPhoto>>;
 
 const picks = PICKS as PickTable;
+const wildlifePicks = WILDLIFE_PICKS as PickTable;
+
+/** The one fallback rule, shared by every table of picks: the region being
+ *  displayed if it has been reviewed, otherwise whichever region has. */
+function pickFrom(table: PickTable, id: string, regionId?: string): HeroPhoto | undefined {
+  const byRegion = table[id];
+  if (!byRegion) return undefined;
+  if (regionId && byRegion[regionId]) return byRegion[regionId];
+  // Object key order is insertion order, which for a downloaded picks file is
+  // the order they were reviewed in — as good a default as any, and stable.
+  return Object.values(byRegion)[0];
+}
 
 /**
  * The photograph to show for a plant, preferring the region being displayed and
@@ -58,12 +79,19 @@ const picks = PICKS as PickTable;
  * has picked one yet — the caller keeps the drawing.
  */
 export function heroPhotoFor(plantId: string, regionId?: string): HeroPhoto | undefined {
-  const byRegion = picks[plantId];
-  if (!byRegion) return undefined;
-  if (regionId && byRegion[regionId]) return byRegion[regionId];
-  // Object key order is insertion order, which for a downloaded picks file is
-  // the order they were reviewed in — as good a default as any, and stable.
-  return Object.values(byRegion)[0];
+  return pickFrom(picks, plantId, regionId);
+}
+
+/**
+ * The photograph to show for an animal — the same question, the same answer.
+ *
+ * The region here is the one whose wildlife list the reader is on
+ * (`#/wildlife/in/<region>`), because a swallowtail in Florida and the same
+ * genus on the Atlantic coast of France are not the same photograph. With no
+ * region in hand, any reviewed one will do.
+ */
+export function wildlifePhotoFor(wildlifeId: string, regionId?: string): HeroPhoto | undefined {
+  return pickFrom(wildlifePicks, wildlifeId, regionId);
 }
 
 /**

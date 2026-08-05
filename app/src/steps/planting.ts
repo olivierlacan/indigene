@@ -182,14 +182,22 @@ export function renderPlantingIndex(main: HTMLElement): void {
   main.append(
     el("h2", { class: "step-title" }, t("planting.title")),
     el("p", { class: "step-lede" }, t("planting.lede")),
-    thisSeasonCard(),
-    el("p", { class: "note info" }, [
-      el("strong", {}, t("planting.seasonNoteTitle")),
-      t("planting.seasonNote"),
-    ]),
-    el("p", { class: "note info" }, [
-      el("strong", {}, t("planting.frostFreeTitle")),
-      t("planting.frostFree"),
+    // What this season is for, and the two things to know before believing any
+    // window on the page. One stack on a phone; on a laptop the card takes the
+    // left column and the two caveats stand beside it (see `.planting-top` —
+    // the wrapper is `display: contents` until then, so this *is* the stack).
+    el("div", { class: "planting-top" }, [
+      thisSeasonCard(),
+      el("div", { class: "planting-caveats" }, [
+        el("p", { class: "note info" }, [
+          el("strong", {}, t("planting.seasonNoteTitle")),
+          t("planting.seasonNote"),
+        ]),
+        el("p", { class: "note info" }, [
+          el("strong", {}, t("planting.frostFreeTitle")),
+          t("planting.frostFree"),
+        ]),
+      ]),
     ]),
     techniqueGroup("seed"),
     techniqueGroup("plant"),
@@ -254,37 +262,48 @@ function renderTechnique(main: HTMLElement, tech: Technique): void {
       g.name,
     ]),
     el("section", { class: "card technique-timing" }, [
-      seasonStrip(tech),
-      tech.anyTime ? el("p", { class: "technique-anyseason" }, t("planting.anySeason")) : null,
+      // The strip and its footnote travel together: on a laptop they take the
+      // left of the card and the two chips sit beside them. `.technique-season`
+      // is `display: contents` below that width, so on a phone this is exactly
+      // the stack it always was.
+      el("div", { class: "technique-season" }, [
+        seasonStrip(tech),
+        tech.anyTime ? el("p", { class: "technique-anyseason" }, t("planting.anySeason")) : null,
+      ]),
       timingChips(tech),
     ]),
-    el("section", { class: "card" }, [
-      el("h3", {}, t("planting.howTitle")),
-      el("p", {}, g.plain),
+    // Two columns on a laptop, one stack below it — same wrapper trick, and the
+    // same rule as a plant's page: read down the left and then the right and you
+    // get the phone's order, unchanged. The split falls where the subject
+    // changes: the left column is the technique itself — what you do, when, and
+    // where it goes wrong — and the right is where to go next with it.
+    el("div", { class: "planting-cols" }, [
+      el("div", { class: "planting-col" }, [
+        el("section", { class: "card" }, [
+          el("h3", {}, t("planting.howTitle")),
+          el("p", {}, g.plain),
+        ]),
+        el("section", { class: "card" }, [
+          el("h3", {}, t("planting.timingTitle")),
+          el("p", {}, g.timing),
+          // The one technique the app's warmest region cannot do outdoors at all.
+          tech.method === "seed-cold-moist"
+            ? el("p", { class: "note info", style: "margin-bottom:0" }, [
+                el("strong", {}, t("planting.frostFreeTitle")),
+                t("planting.frostFree"),
+              ])
+            : null,
+        ]),
+        el("section", { class: "card" }, [
+          el("h3", {}, t("planting.mistakeTitle")),
+          el("p", { class: "note warn", style: "margin-bottom:0" }, g.mistake),
+        ]),
+      ]),
+      el("div", { class: "planting-col" }, [
+        usedBySection(tech),
+        alsoOpenSection(tech),
+      ]),
     ]),
-    el("section", { class: "card" }, [
-      el("h3", {}, t("planting.timingTitle")),
-      el("p", {}, g.timing),
-      // The one technique the app's warmest region cannot do outdoors at all.
-      tech.method === "seed-cold-moist"
-        ? el("p", { class: "note info", style: "margin-bottom:0" }, [
-            el("strong", {}, t("planting.frostFreeTitle")),
-            t("planting.frostFree"),
-          ])
-        : null,
-    ]),
-    el("section", { class: "card" }, [
-      el("h3", {}, t("planting.mistakeTitle")),
-      el("p", { class: "note warn", style: "margin-bottom:0" }, g.mistake),
-    ]),
-  );
-
-  const usedBy = usedBySection(tech);
-  if (usedBy) main.append(usedBy);
-  const alsoOpen = alsoOpenSection(tech);
-  if (alsoOpen) main.append(alsoOpen);
-
-  main.append(
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("planting") }, t("planting.allTechniques")),
     ])

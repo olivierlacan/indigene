@@ -126,6 +126,22 @@ subtitle on the What's new page.
 
 ### Changed
 
+- **"Ways to grow more" uses the whole screen on a computer.** These pages were
+  built for a phone and stayed that way everywhere else: on a laptop the fifteen
+  techniques were a narrow strip of cards down the middle with empty space either
+  side, and reaching the reading list at the bottom took eight screenfuls.
+  [Ways to grow more](https://indigene.app/planting) now lays the techniques out
+  three across, with the four seasons under each one lining up in rows so you can
+  find your month by running your eye down a column — the whole page is a little
+  over half as tall as it was. What this season is for sits beside the two notes
+  that qualify it, and the eight libraries at the foot are two columns instead of
+  eight stacked. Each technique's own page —
+  [faking a winter in the fridge](https://indigene.app/planting/cold-stratification),
+  say — splits in two as well: what you do, when, and where it goes wrong down
+  the left; the plants raised this way and what else is open right now down the
+  right, with the year and its two dates side by side at the top. Nothing was
+  moved or dropped, and on a phone every one of these pages is exactly the single
+  column it has always been.
 - **"What it does for the ecosystem" is a third shorter, and easier to read at a
   glance.** The card lists seven things a plant does — feeding caterpillars,
   feeding bees, soaking up rain, and so on — and each one used to be followed by

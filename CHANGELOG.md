@@ -25,6 +25,21 @@ subtitle on the What's new page.
 
 ### Added
 
+- Internal: GloBI was probed as a source for American caterpillar host counts,
+  and the answer is no. `npm run probe:globi` had never been runnable; run now,
+  its gate question fails — the life-stage columns that would separate "a
+  caterpillar ate this leaf" from "an adult sat on this flower" exist and are
+  empty in every record sampled (0 of 500), and while `bbox` filtering does
+  work, only 12 of 1,202 worldwide oak records survive the Mid-Atlantic box
+  against Tallamy's 511 for the same genus and place. So US host counts stay
+  genus-level estimates, labelled as such, and GloBI keeps its place only in the
+  wildlife-ties layer where no count is involved. Verdict written into
+  `docs/us-host-counts-plan.md` §2 and `data/sources/globi/README.md`, snapshot
+  committed at `data/sources/globi/probe.json`. Two bugs found in the probe
+  while doing it: it filtered locality with `lat`/`lng`, which GloBI silently
+  answers with an empty body, and a first fix read a column by position from
+  rows keyed by name, which reported a field as fully populated when it is
+  entirely empty.
 - Internal: the scripts that fetch from the open internet — the registry
   reconciler, the vernacular and look-alike audits, the photo harvester, the
   probes — now run through a configured HTTP proxy instead of silently around

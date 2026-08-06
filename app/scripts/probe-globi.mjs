@@ -35,12 +35,19 @@
 //   Q5  Can records be filtered to a region, so a Pacific Northwest count
 //       means the Pacific Northwest rather than all of North America?
 //
-// **It needs open internet, which the build sandbox does not have** — the agent
-// egress answers 403 to api.globalbioticinteractions.org. Same arrangement as
-// `check-vernacular.mjs`, `check-lookalikes.mjs` and `reconcile.mjs`: run it
-// locally, or let `.github/workflows/us-host-counts.yml` run it on a GitHub
-// runner. The snapshot it writes to `data/sources/globi/probe.json` is
-// committed, so what GloBI said on the day is reviewable in a diff.
+// **It needs open internet.** Run it as `npm run probe:globi`, which is the only
+// form that works behind a proxy (Node's fetch ignores HTTPS_PROXY without
+// NODE_USE_ENV_PROXY=1 — see `_net.mjs`), or let
+// `.github/workflows/us-host-counts.yml` run it on a GitHub runner. The snapshot
+// it writes to `data/sources/globi/probe.json` is committed, so what GloBI said
+// on the day is reviewable in a diff.
+//
+// **It has been run, and Q2 failed** (2026-08-06): both life-stage columns are
+// empty, and so is every coordinate, so GloBI cannot source `hostLepCount` and
+// cannot be cut to a region. The verdict is written up in
+// `docs/us-host-counts-plan.md` §2 and `data/sources/globi/README.md` §2. This
+// script stays because it is the evidence, and because a future GloBI release
+// could change the answer.
 import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -250,14 +257,39 @@ heading("Q5", "Can records be filtered to a region?");
 const q5 = { localityColumns: localityCols, citationColumns: citationCols, boxes: [] };
 for (const box of BOXES) {
   try {
+    // `bbox=minLon,minLat,maxLon,maxLat` is the filter GloBI supports. The
+    // first version of this probe sent `lat`/`lng`, which is not a filter at
+    // all: the API answers 200 with an empty body, and the run reported that as
+    // "SyntaxError: Unexpected end of JSON input" — an API shape mistake
+    // wearing an outage's clothes.
     const payload = await get(
       "/interaction?sourceTaxon=Lepidoptera&targetTaxon=Quercus&interactionType=eats&type=json&limit=5000" +
-        `&field=source_taxon_name&field=target_taxon_name` +
-        `&lat=${(box.minLat + box.maxLat) / 2}&lng=${(box.minLon + box.maxLon) / 2}`,
+        `&field=source_taxon_name&field=target_taxon_name&field=latitude` +
+        `&bbox=${box.minLon},${box.minLat},${box.maxLon},${box.maxLat}`,
     );
-    const n = rows(payload).length;
-    q5.boxes.push({ ...box, records: n });
-    console.log(`  ${box.label.padEnd(38)} ${n} Quercus records near centre`);
+    const inBox = rows(payload).length;
+    // The count above can only be as good as the coordinates behind it, so ask
+    // separately what share of unfiltered records carry any at all. If that is
+    // zero, an empty box is not "no oak-feeders in Oregon" — it is "GloBI does
+    // not know where any of these records happened", which is a different and
+    // much more important answer.
+    const anywhere = rows(
+      await get(
+        "/interaction?sourceTaxon=Lepidoptera&targetTaxon=Quercus&interactionType=eats&type=json&limit=500" +
+          "&field=source_taxon_name&field=latitude",
+      ),
+    );
+    // `rows()` returns objects keyed by column name, not positional arrays —
+    // reading `r[1]` here counted every row as geolocated and made the first
+    // fixed version of this probe report 500/500 for a field that is empty.
+    const geolocated = anywhere.filter(
+      (r) => r.latitude !== null && r.latitude !== undefined && r.latitude !== "",
+    ).length;
+    q5.boxes.push({ ...box, records: inBox, sampled: anywhere.length, geolocated });
+    console.log(
+      `  ${box.label.padEnd(38)} ${inBox} records in box` +
+        ` — ${geolocated}/${anywhere.length} of an unfiltered sample carry coordinates`,
+    );
     await sleep(1000);
   } catch (e) {
     q5.boxes.push({ ...box, error: String(e) });
@@ -268,6 +300,9 @@ console.log(`\n  locality columns available: ${localityCols.join(", ") || "(none
 console.log(`  citation columns available: ${citationCols.join(", ") || "(none seen)"}`);
 console.log("  A count with no locality is a continental count. The gap doc's honesty");
 console.log("  stance means a PNW figure has to mean the PNW, or say that it doesn't.");
+console.log("  Read the two numbers together: bbox does filter (the boxes differ), but");
+console.log("  what survives it is a sliver, and no surviving record will tell you where");
+console.log("  it was. A regional count from that measures study bookkeeping, not oaks.");
 findings.questions.q5 = q5;
 
 // ---- Write the snapshot ----------------------------------------------------

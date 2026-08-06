@@ -154,6 +154,13 @@ const context = await browser.newContext({
   locale,
   isMobile: true,
   hasTouch: true,
+  // With a mirror in hand, the service worker has to stay out of the way: once
+  // it takes control it fetches photos itself, and a fetch made *by* a worker
+  // never reaches `page.route`. The mirror would then answer only the handful
+  // of requests made before the worker activated, and the rest would go to a
+  // network that isn't there — a shot of a list with three photographs on it
+  // and no error to say why.
+  ...(photos ? { serviceWorkers: "block" } : {}),
   ...(geo
     ? { geolocation: { latitude: geoLat, longitude: geoLon }, permissions: ["geolocation"] }
     : {}),

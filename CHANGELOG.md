@@ -25,6 +25,18 @@ subtitle on the What's new page.
 
 ### Added
 
+- Internal: a way to publish the site without GitHub Actions, after a deploy
+  job sat fifteen minutes without ever getting a runner and left two merges
+  undeployed. `npm run publish:cloudflare` uploads the build straight to
+  Cloudflare Pages (the mirror that takes GitHub out of the path, and leaves a
+  permanent indigene.pages.dev to hand out during an outage);
+  `npm run publish:gh-pages` force-pushes the build to a branch, which GitHub's
+  branch-based Pages pipeline serves — a different subsystem from the runner
+  pool that failed. `enablement: true` came off the workflow's Configure Pages
+  step so that a failover can't be silently reclaimed by a build job that
+  succeeds on a day the deploy job can't. Runbook, including what any host has
+  to do with `404.html` and how to prepare the domain for failover, in
+  `docs/publishing.md`.
 - **We now count how many times each page is opened — and you can say no.**
   Indigene has never had a server, which means we have never had any idea
   whether anyone was out there using it. So the app now tells one outside

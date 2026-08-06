@@ -33,11 +33,23 @@ jobs:
           cache: npm
           cache-dependency-path: app/package-lock.json
 
+      # Reads the Pages configuration; deliberately does *not* pass
+      # `enablement: true`.
+      #
+      # That input doesn't just switch Pages on — it sets the site's build type
+      # back to "workflow", and it runs here in the build job, which succeeds
+      # even on the days the deploy job never gets a runner. That is exactly
+      # what happened on 2026-08-06: had the site been failed over to
+      # branch-based Pages, this step would have quietly taken it back to
+      # Actions mode and then not deployed, leaving neither path serving.
+      #
+      # Without it a run during a failover fails loudly at deploy-pages and the
+      # branch-based site keeps serving, which is the safe direction to be wrong
+      # in. The cost is that Pages has to be switched on by hand once, which
+      # README.md has always told you to do anyway.
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Install dependencies
         working-directory: app

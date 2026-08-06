@@ -44,7 +44,14 @@ directly from the browser, so Pages hosts the entire product; the optional
 `server/` API is not required and not deployed.
 
 One-time setup: in the repo's **Settings → Pages**, set the source to
-**GitHub Actions** (the workflow also attempts to enable this itself).
+**GitHub Actions**.
+
+When that path is unavailable — a deploy job that never gets a runner, an
+Actions outage, a Pages incident — the site can be published from a laptop
+instead, with `npm run publish:cloudflare` or `npm run publish:gh-pages`.
+[`docs/publishing.md`](docs/publishing.md) explains which failure each one
+survives, the one thing any host has to do (serve `404.html` for unknown
+paths, or every deep link breaks), and how to fail the domain over.
 
 The deploy also publishes a plain-words **What's new** page at
 `/release-notes/`, compiled from [`CHANGELOG.md`](CHANGELOG.md) — so release

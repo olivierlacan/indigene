@@ -11,6 +11,8 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "prerender": "node scripts/prerender.mjs",
+    "publish:cloudflare": "node scripts/publish.mjs cloudflare",
+    "publish:gh-pages": "node scripts/publish.mjs gh-pages",
     "routes:check": "node scripts/check-routes.mjs",
     "release-notes": "node scripts/build-release-notes.mjs",
     "coverage": "node scripts/coverage.mjs",

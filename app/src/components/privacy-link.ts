@@ -12,7 +12,13 @@ export const PRIVACY_ROUTE = "#/privacy";
 /** The page's linkable sections, by the word that addresses them —
  *  `#/privacy/lookups` opens it at "Who your browser talks to". The page owns
  *  the word → heading mapping (`steps/privacy.ts`); this type is the contract. */
-export type PrivacySection = "location" | "lookups" | "saved" | "whatsnew" | "children";
+export type PrivacySection =
+  | "location"
+  | "lookups"
+  | "saved"
+  | "whatsnew"
+  | "counting"
+  | "children";
 
 /** The route for one section of the page, or the page itself. */
 export function privacyRoute(section?: PrivacySection): string {

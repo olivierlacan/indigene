@@ -8,7 +8,9 @@
 //
 // Four cards, matching the four things kept (see `lib/sticky.ts` for why that
 // list is exactly this long, and `lib/visits.ts` for the fourth, which is kept
-// elsewhere because two documents read it):
+// elsewhere because two documents read it) — and a fifth that isn't a memory at
+// all but belongs to the same promise: whether this browser is counted in the
+// site's visit total (`visitCountCard`, and `lib/analytics.ts`):
 //
 //   - **Your last spot** — where you were, with the sun and soil answers that
 //     belong to *that ground*. Never applied anywhere else.
@@ -30,6 +32,7 @@ import { DEFAULT_WEIGHTS } from "../lib/ranking";
 import { matchingPreset, priorityName } from "../lib/priorities";
 import { privacyNote } from "./privacy-link";
 import { forgetVisits, visits } from "../lib/visits";
+import { countingChosen, refusedByBrowser, setAnalyticsEnabled } from "../lib/analytics";
 import { t, fmtNumber, fmtDate } from "../lib/i18n";
 
 /**
@@ -259,6 +262,68 @@ export function whatsNewCard(): HTMLElement {
         }, t("memory.forget")),
       ])
     );
+  }
+}
+
+/**
+ * Whether this browser is counted in the visit total.
+ *
+ * Not a memory like the four above — nothing here is *about* you — but it earns
+ * a place on this page for the same reason they do: the app does something with
+ * the outside world that a reader might not expect, so the page that accounts
+ * for everything says it and offers the way out. Off means the counting script
+ * is never fetched at all (`lib/analytics.ts`), which is why the card can
+ * promise silence rather than promising that someone else ignores you.
+ *
+ * When the browser is already refusing — Do Not Track, or Global Privacy
+ * Control — that's said plainly above the choice rather than the switch quietly
+ * moving itself. The reader's own setting is theirs, and it stays where they
+ * put it for the day they turn the browser signal off.
+ */
+export function visitCountCard(): HTMLElement {
+  const card = el("div", { class: "card" });
+  fill();
+  return card;
+
+  function fill(): void {
+    clear(card);
+    const chosen = countingChosen();
+    card.append(
+      el("h3", {}, t("memory.countTitle")),
+      el("p", {}, t("memory.countLede"))
+    );
+    if (refusedByBrowser()) {
+      card.append(el("p", { class: "note info" }, t("memory.countBrowserOff")));
+    }
+    card.append(
+      el("div", {}, [
+        el("button", {
+          class: "choice",
+          "aria-pressed": chosen ? "true" : "false",
+          onClick: () => choose(true),
+        }, [
+          el("span", { class: "choice-title" }, t("memory.countOn")),
+          el("span", { class: "choice-sub" }, t("memory.countOnSub")),
+        ]),
+        el("button", {
+          class: "choice",
+          "aria-pressed": chosen ? "false" : "true",
+          onClick: () => choose(false),
+        }, [
+          el("span", { class: "choice-title" }, t("memory.countOff")),
+          el("span", { class: "choice-sub" }, t("memory.countOffSub")),
+        ]),
+      ]),
+      privacyNote(t("memory.countPrivacy"))
+    );
+  }
+
+  function choose(on: boolean): void {
+    setAnalyticsEnabled(on);
+    fill();
+    // Honest about the seam: a script already fetched stays fetched, so turning
+    // it off finishes taking effect on the next load rather than mid-page.
+    toast(on ? t("memory.countNowOn") : t("memory.countNowOff"));
   }
 }
 

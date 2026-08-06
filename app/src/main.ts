@@ -2,6 +2,7 @@ import "./styles.css";
 import { loadPrefs } from "./state";
 import { loadSticky } from "./lib/sticky";
 import { noteVisit } from "./lib/visits";
+import { startAnalytics, trackPageview } from "./lib/analytics";
 import { renderWelcome } from "./steps/welcome";
 import { renderLocation } from "./steps/location";
 import { renderSun } from "./steps/sun";
@@ -333,6 +334,11 @@ async function route(): Promise<void> {
   // notice the gap (see components/wip-banner.ts).
   mountUntranslatedBanner(main);
   landAtTop();
+  // Last, and only now: the address bar has been put on the page's canonical
+  // form (`syncAddressBar`), so the one thing reported is the address a reader
+  // would have copied — not the hash form the app was momentarily on. Every
+  // reason this might send nothing at all lives in `lib/analytics.ts`.
+  trackPageview();
 }
 
 /**
@@ -434,6 +440,11 @@ async function boot(): Promise<void> {
   // and it's synchronous (localStorage — see the note in `lib/visits.ts`), so
   // there's nothing to wait for and nothing to flash.
   noteVisit();
+  // Started before the first route so the opening page — the one most readers
+  // only ever see — is counted like any other. It queues that first view until
+  // the deferred script lands, and on a local build, for an opted-out reader,
+  // or for a browser asking not to be tracked, it does nothing whatsoever.
+  startAnalytics();
   renderChrome();
   onLangChange(rerenderAll);
   onUnitsChange(rerenderAll);

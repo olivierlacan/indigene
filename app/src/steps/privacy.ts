@@ -25,6 +25,10 @@ import type { TKey } from "../locales/en";
 
 const REPO_URL = "https://github.com/olivierlacan/indigene";
 
+/** The one company named on this page, so a reader can go and read what it
+ *  says about itself rather than taking our summary of it on trust. */
+const FATHOM_URL = "https://usefathom.com/";
+
 /** The sections a `#/privacy/<param>` link can ask for, by their route word.
  *  The words are the `PrivacySection` union in `components/privacy-link.ts`. */
 const SECTION_IDS: Record<string, string> = {
@@ -32,6 +36,7 @@ const SECTION_IDS: Record<string, string> = {
   lookups: "privacy-lookups",
   saved: "privacy-saved",
   whatsnew: "privacy-whats-new",
+  counting: "privacy-counting",
   children: "privacy-children",
 };
 
@@ -97,6 +102,21 @@ export function renderPrivacy(main: HTMLElement, param?: string): void {
       bullets(["privacy.whatsNew2", "privacy.whatsNew3", "privacy.whatsNew4"]),
       el("p", {}, tx("privacy.whatsNew5", {
         settings: el("a", { href: "#/settings/whatsnew" }, t("privacy.whatsNewSettingsLink")),
+      })),
+
+      // The one thing the app tells anyone about *you being here*. It gets a
+      // section of its own, at the same size as the rest, because burying a
+      // page count in a footnote would be exactly the move this page exists to
+      // not make. What's said here is a description of `lib/analytics.ts`;
+      // the two change together or not at all.
+      el("h3", { id: "privacy-counting" }, t("privacy.countTitle")),
+      el("p", {}, t("privacy.count1")),
+      bullets(["privacy.count2", "privacy.count3", "privacy.count4", "privacy.count5"]),
+      el("p", {}, tx("privacy.count6", {
+        service: el("a", { href: FATHOM_URL, target: "_blank", rel: "noopener" }, "Fathom Analytics"),
+      })),
+      el("p", {}, tx("privacy.count7", {
+        settings: el("a", { href: "#/settings/counting" }, t("privacy.countSettingsLink")),
       })),
 
       el("h3", {}, t("privacy.noAccountTitle")),

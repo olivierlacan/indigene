@@ -11,10 +11,16 @@
 // what's stored lives on this page, once, instead of being re-read in a garden
 // every visit.
 //
+// A third half, one card long, is neither: whether this browser is counted in
+// the site's visit total. It sits here because it is the other thing a reader
+// might want to switch off, and because the Privacy page has to be able to
+// point at it (`#/settings/counting`).
+//
 // Every card is addressable — `#/settings/language`, `#/settings/units`,
 // `#/settings/spot`, `#/settings/region`, `#/settings/goal`,
-// `#/settings/whatsnew` — so a link can land on the thing it names instead of
-// dropping the reader at the top of the page to hunt for it.
+// `#/settings/whatsnew`, `#/settings/counting` — so a link can land on the
+// thing it names instead of dropping the reader at the top of the page to hunt
+// for it.
 import { el, clear } from "../ui";
 import { t } from "../lib/i18n";
 import { languageCard, unitsCard } from "../components/prefs-controls";
@@ -22,6 +28,7 @@ import {
   lastSpotCard,
   rankingGoalCard,
   startingRegionCard,
+  visitCountCard,
   whatsNewCard,
 } from "../components/memory-controls";
 import { stickyReady } from "../lib/sticky";
@@ -35,6 +42,7 @@ const CARD_IDS: Record<string, string> = {
   region: "settings-region",
   goal: "settings-goal",
   whatsnew: "settings-whatsnew",
+  counting: "settings-counting",
 };
 
 export async function renderSettings(main: HTMLElement, param?: string): Promise<void> {
@@ -54,6 +62,7 @@ export async function renderSettings(main: HTMLElement, param?: string): Promise
     region: startingRegionCard(),
     goal: rankingGoalCard(),
     whatsnew: whatsNewCard(),
+    counting: visitCountCard(),
   };
   for (const [key, card] of Object.entries(cards)) card.id = CARD_IDS[key];
 
@@ -69,6 +78,9 @@ export async function renderSettings(main: HTMLElement, param?: string): Promise
     cards.region,
     cards.goal,
     cards.whatsnew,
+    el("h3", { class: "settings-group" }, t("settings.countingTitle")),
+    el("p", { class: "step-lede" }, t("settings.countingLede")),
+    cards.counting,
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
       el(
         "button",

@@ -17,6 +17,7 @@ import { sectionHeading } from "../components/section-link";
 import { keystoneIcon } from "../components/keystone-icon";
 import { regionStatGrid } from "../components/region-stats";
 import { regionRefLine, zoneChip } from "../components/zone-chip";
+import { regionBoundaryCard } from "../components/region-boundary";
 import type { Plant, PlantForm } from "../types";
 import { t, tn, fmtNumber, getLang } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionNote, regionReference, localNameCoverage } from "../lib/names";
@@ -91,6 +92,11 @@ export function renderRegion(main: HTMLElement, param?: string): void {
       t("region.lede", { reference: regionReference(region.meta) })),
     regionStatGrid(region, plants),
     el("p", { style: "font-size:0.9rem;color:var(--ink-soft)" }, regionNote(region.meta)),
+    // "Native here" having been defined, say where *here* is — in landmarks,
+    // then in the mapped ecoregions those landmarks trace, then as a link to
+    // the map itself. Sits above the roster because "does this include me?"
+    // comes before "what's on the list".
+    regionBoundaryCard(region.meta),
     // Which of these plants we can't name in the reader's language. (The
     // *writing* we haven't translated is the page-top banner's job, reported
     // below.) `main.append` is the DOM's, so an absent note has to vanish from

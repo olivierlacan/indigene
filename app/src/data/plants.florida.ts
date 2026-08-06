@@ -32,6 +32,7 @@ export const REGION: RegionMeta = {
   reference: "Central Florida",
   zones: "8b–9b",
   note: "Native status is asserted for the panhandle and warm-temperate peninsula, roughly from the Georgia line down to Lake Okeechobee. The subtropical south and the Keys have their own list. Where a plant is really a north- or south-Florida species, its hardiness zones and notes say so.",
+  extent: "North to the Georgia line, west along the panhandle to Pensacola, and south to about Lake Okeechobee, where the subtropical south begins.",
   // North & central Florida: from the ~27.2° N seam (roughly Lake Okeechobee,
   // the base of the subtropical zone) up to the Georgia line (~31° N), west to
   // the panhandle. The box abuts — never overlaps — the south-Florida box.

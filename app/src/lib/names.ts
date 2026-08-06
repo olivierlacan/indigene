@@ -214,6 +214,11 @@ export function regionNote(meta: RegionMeta): string {
   return regionText(meta)?.note ?? meta.note;
 }
 
+/** How far the region reaches, in landmarks — see `RegionMeta.extent`. */
+export function regionExtent(meta: RegionMeta): string {
+  return regionText(meta)?.extent ?? meta.extent;
+}
+
 /** How many of a list of taxa we can name in the reader's language — used to
  *  tell them honestly when a region's roster is only partly named. */
 export function localNameCoverage(items: Nameable[]): { named: number; total: number } {

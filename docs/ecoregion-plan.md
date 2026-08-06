@@ -166,8 +166,25 @@ a concrete need. The shipped product is §1 (labels) + §2 (selection).
   service-worker-based offline model. The box fallback already gives correct-
   enough offline selection. Revisit only if a concrete need appears; if so, scope
   it to just the covered regions' polygons, not all 84.
+- **D — telling the reader where the region is:** ✅ **done.** Every region page
+  carries a "Where this region reaches" panel (`components/region-boundary.ts`):
+  the edges in landmarks (`RegionMeta.extent`), the L3 ecoregions they trace by
+  name (`data/ecoregions.ts`), and a link to the authority's own atlas — the EPA
+  page for US regions, the EEA datahub item for European ones. It exists because
+  a reader on `/regions/pnw` could read the whole page without learning how far
+  north the region went; the boundary was in the data three times over (box,
+  codes, caveat) and on screen zero times.
+- **E — an actual drawn map:** not started. The honest next step for the same
+  question: the region's polygon over OpenStreetMap tiles, so the boundary is
+  seen rather than described. It runs into §3's arithmetic — the polygons are
+  the payload, not the tiles — so the shape to explore is fetching a simplified
+  outline for *one* region on demand (a static GeoJSON per region, cached by the
+  service worker), never bundling all 84. Tiles also mean a third-party request
+  per region page, which needs the same privacy treatment as the rest of the
+  live lookups before it ships.
 - **Follow-up (optional):** Mid-Atlantic L3 codes — only worth doing with the
-  full, verified code list, since the box already works there.
+  full, verified code list, since the box already works there. Until then its
+  panel says plainly that its edges are a rectangle, not traced lines.
 
 ## Testing
 - Known-point → expected L3: Portland→Willamette Valley (3), Seattle→Puget

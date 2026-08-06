@@ -1250,6 +1250,19 @@ export const fr: Dict = {
   "region.filterNoneRest": ".",
   "region.nothingHere": "Il n'y a rien à cette adresse",
   "region.browseNatives": "Parcourir les indigènes",
+  "regionWhere.title": "Jusqu'où va cette région",
+  "regionWhere.followsEpa.one":
+    "Ces limites suivent une écorégion — {list} — une zone que l'agence américaine de l'environnement (EPA) cartographie d'après ce dont le terrain est fait, et non d'après les frontières des États. Son étendue est ce qui détermine les plantes affichées ici.",
+  "regionWhere.followsEpa.other":
+    "Ces limites suivent des écorégions — {list} — des zones que l'agence américaine de l'environnement (EPA) cartographie d'après ce dont le terrain est fait, et non d'après les frontières des États. Leur étendue est ce qui détermine les plantes affichées ici.",
+  "regionWhere.followsEea.one":
+    "Ces limites suivent une région biogéographique — la région {list} — une zone que l'Agence européenne pour l'environnement (AEE) cartographie d'après le climat, les sols et la flore sauvage, et non d'après les frontières des pays. Son étendue est ce qui détermine les plantes affichées ici.",
+  "regionWhere.followsEea.other":
+    "Ces limites suivent des régions biogéographiques — {list} — des zones que l'Agence européenne pour l'environnement (AEE) cartographie d'après le climat, les sols et la flore sauvage, et non d'après les frontières des pays. Leur étendue est ce qui détermine les plantes affichées ici.",
+  "regionWhere.broad":
+    "Les limites de cette région sont encore un rectangle approximatif plutôt qu'un tracé repris de la carte des écorégions : considérez les marges extérieures comme approximatives.",
+  "regionWhere.linkEpa": "Voir les cartes des écorégions de l'EPA",
+  "regionWhere.linkEea": "Voir la carte des régions de l'AEE",
   "regionStat.plants.label": "Plantes indigènes",
   "regionStat.plants.sub": "choisies pour cette région",
   "regionStat.plants.explain":

@@ -25,6 +25,25 @@ subtitle on the What's new page.
 
 ### Added
 
+- **Every region page now says how far the region reaches — and links the map
+  that draws its edges.** A reader on [the Pacific Northwest
+  page](https://indigene.app/regions/pnw) had a fair complaint: nothing on it
+  told them how far north or south the region went, so there was no way to know
+  whether it included them. Each region page now has a **Where this region
+  reaches** panel that says it in landmarks — "north to the Canadian border,
+  south to the Oregon–California line, and from the Pacific coast inland only as
+  far as the crest of the Cascades" — then names the mapped areas those edges
+  trace, and links straight to the official map of them. Those maps are not
+  decoration: an ecoregion is an area mapped by what the land is actually made
+  of, its rocks, soils, weather and wild plants, and which one your spot falls
+  in is exactly what decides the plants Indigene shows you. In the US the map is
+  the [Environmental Protection Agency's Level III/IV
+  ecoregions](https://www.epa.gov/eco-research/level-iii-and-iv-ecoregions-epa-region);
+  in France it's the [European Environment Agency's biogeographical
+  regions](https://www.eea.europa.eu/en/datahub/datahubitem-view/11db8d14-f167-4cd5-9205-95638dfd9618).
+  Where a region's edges are still a rough rectangle rather than traced from the
+  map — the Mid-Atlantic, for now — the panel says so instead of pretending
+  otherwise.
 - Internal: `npm run candidates -- --region <id>` proposes the next plants for a
   region and says why it picked each one, so growing a list stops being a matter
   of who remembers what. It ranks the most-recorded plants inside the region's

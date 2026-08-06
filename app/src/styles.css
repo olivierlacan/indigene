@@ -1879,6 +1879,15 @@ details.weights {
 .plant-photo img {
   width: 100%;
   height: 100%;
+  /* `min-width`/`min-height` are `auto` on a grid item, and for a photograph
+     that means "never smaller than you naturally are at this width". A
+     portrait photo asked to be 72 px wide answers 96 px tall and *wins* over
+     the `height: 100%` above — so it hangs out of the square, and `object-fit`
+     is left with nothing to crop: the whole picture shows, barely trimmed,
+     instead of a square cut from the middle of it. Zeroing the minimum is what
+     lets the square be the square. */
+  min-width: 0;
+  min-height: 0;
   object-fit: cover;
 }
 
@@ -2026,6 +2035,9 @@ details.weights {
 .wildlife-photo img {
   width: 100%;
   height: 100%;
+  /* Same grid-item minimum as `.plant-photo img` — see the note there. */
+  min-width: 0;
+  min-height: 0;
   object-fit: cover;
 }
 

@@ -133,6 +133,15 @@ subtitle on the What's new page.
 
 ### Fixed
 
+- **Upright photographs in a plant list are no longer cut off at the bottom.**
+  The little square picture beside each plant on a
+  [region's list](https://indigene.app/regions/florida-central) is meant to show
+  the middle of the photograph. For photographs that are taller than they are
+  wide — a maple sapling against a post, a beautyberry stem — it was showing the
+  top instead, and the bottom of the picture was quietly sliced off: the flowers
+  or fruit you were looking for often sat in the part that had been cut. Those
+  pictures are now centred in their square, like every other one.
+
 - **Three groups of animals had French names that never appeared.** "Osmies et
   andrènes", "Abeilles spécialistes des astéracées" and "Colibri d'Anna et
   colibri roux" had all been written down, but a mismatch in how they were

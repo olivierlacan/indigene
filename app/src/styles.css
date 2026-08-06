@@ -2423,15 +2423,27 @@ details.weights {
   font-size: 0.9rem;
   margin: 0.2rem 0 0.6rem;
 }
+/* Fifteen self-contained cards, so they reflow into columns the moment there's
+   room — the same `auto-fit` idiom (and the same 19rem floor) as `.card-grid`,
+   which means a phone still gets exactly one column and the widened index gets
+   three. Fifteen cards down a single column was eight screenfuls on a laptop. */
 .technique-list {
   display: grid;
   gap: 0.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(19rem, 100%), 1fr));
 }
 .technique-card {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 0.7rem 0.8rem 0.8rem;
+  /* Cards in a row end level with each other even when one technique's name
+     runs to three lines and its neighbour's runs to one — which lets the season
+     strips below line up, and scanning the page by season is the whole point of
+     drawing them (see `.season-strip` in a card, further down). */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .technique-card:hover {
   border-color: var(--line-strong);
@@ -2448,8 +2460,11 @@ details.weights {
   color: var(--ink);
   text-decoration: none;
 }
+/* A non-breaking space, so the arrow is stuck to the last word of the name.
+   Three columns of these means most names wrap, and with an ordinary space the
+   arrow kept landing alone on a line of its own. */
 .technique-name a::after {
-  content: " →";
+  content: "\00a0→";
   color: var(--brand);
 }
 .technique-name a:hover,
@@ -2463,6 +2478,12 @@ details.weights {
   margin: 0.25rem 0 0;
   font-size: 0.85rem;
   color: var(--ink-soft);
+}
+/* Pinned to the foot of the card, so a row of them draws one calendar across
+   the page rather than four strips at four different heights. */
+.technique-card .season-strip {
+  margin-top: auto;
+  padding-top: 0.5rem;
 }
 .technique-anyseason {
   margin: 0.5rem 0 0;
@@ -2508,6 +2529,109 @@ details.weights {
 }
 .planting-sources .score-head .badge {
   flex: none;
+}
+
+/* --- Ways to grow more, on a laptop --------------------------------------
+   Both halves of this corner of the app were built as a phone stack and left
+   that way, which on a 1280px screen meant the index ran to eight screenfuls
+   and a technique to two and a half, with two-thirds of the window empty
+   either side.
+
+   The index is a card list, so it takes the `wide` mode the browse indexes use
+   and its technique lists reflow into three columns (above). The technique
+   pages are documents, so they take the `profile` mode a plant's page takes:
+   they split into two columns of card sections, and nothing is reordered —
+   reading down the left column and then the right gives exactly the phone's
+   order. `main.ts` decides which page is which; the widening itself is here,
+   because it only happens past the laptop breakpoint.
+
+   Below that breakpoint every one of these wrappers is `display: contents`:
+   they vanish from the layout, and both pages are the single stack they always
+   were. */
+.planting-top,
+.planting-caveats,
+.planting-cols,
+.planting-col,
+.technique-season {
+  display: contents;
+}
+
+/* Same 1024px as the profile pages, for the same reason: it's the width at
+   which two columns are each still wider than a phone. (Media-query `rem` is
+   16px, not the app's 18px root.) */
+@media (min-width: 64rem) {
+  /* ---- The index: what this season is for, beside the two caveats ---- */
+  /* The season card is the answer someone came for, so it keeps the wider
+     track; the two notes qualifying it stand in the column beside it instead
+     of pushing the fifteen techniques a screenful further down. */
+  .planting-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 0.7rem;
+    align-items: start;
+  }
+  /* The two notes stay a stack of their own rather than becoming two grid rows:
+     as rows they'd be spaced by whatever the card beside them left over, which
+     put a hole between two sentences that belong together. */
+  .planting-caveats {
+    display: block;
+  }
+  .planting-top > .season-now,
+  .planting-caveats > .note:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ---- The index: the reading list ---- */
+  /* Eight libraries, each a name, a badge and two lines about what it's good
+     for. Two columns at this width; the floor keeps a long institution name
+     from being squeezed onto four lines. */
+  .planting-sources .score-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
+    gap: 0.9rem;
+    align-items: start;
+  }
+  .planting-sources .score-item {
+    margin: 0;
+  }
+
+  /* ---- A technique: the year, and the two numbers beside it ---- */
+  .technique-timing {
+    display: grid;
+    grid-template-columns: minmax(0, 20rem) minmax(0, 1fr);
+    column-gap: 1.5rem;
+    align-items: center;
+  }
+  .technique-season {
+    display: block;
+  }
+  /* The strip led the card and the chips followed it; side by side, neither
+     one is leading, so both lose the gap that separated them. */
+  .technique-timing .season-strip,
+  .technique-timing .timing-chips {
+    margin-top: 0;
+  }
+
+  /* ---- A technique: its sections in two columns ---- */
+  /* The left track is the wider one: it carries the three passages of prose —
+     what you actually do, how to know the moment, where it goes wrong — while
+     the right carries two lists, which are short lines and want less room. */
+  .planting-cols {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    column-gap: 1rem;
+    align-items: start;
+  }
+  .planting-col {
+    display: block;
+    min-width: 0;
+  }
+  /* A grid item is its own formatting context, so the last card's bottom margin
+     can't collapse out of the column the way it does in the phone stack — drop
+     it, and let the button row below set the gap. */
+  .planting-col > :last-child {
+    margin-bottom: 0;
+  }
 }
 
 /* The plant page's end of the same thread: each method's name is now the door

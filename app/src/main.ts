@@ -19,6 +19,7 @@ import { renderWildlifeIndex, renderWildlife, wildlifeRegionParam } from "./step
 import { wildlifeKindRoute } from "./lib/wildlife";
 import { renderLookalikeIndex, renderLookalike, lookalikeRegionParam } from "./steps/lookalikes";
 import { renderPlantingIndex, renderPlanting } from "./steps/planting";
+import { techniqueBySlug } from "./lib/planting";
 import { canonicalPath, parseRoute, isHashRoute } from "./lib/routes";
 import type { AppStep } from "./lib/routes";
 import { renderPrivacy } from "./steps/privacy";
@@ -246,10 +247,11 @@ function sectionOf(step: string): string | undefined {
  * phone layout pretending to be a desktop one — a screenful of empty margin
  * either side and five times the scrolling. Those widen, and their card grids
  * reflow into columns (see `.card-grid`): Explore's region cards, the region
- * rosters, the plants index, and the wildlife index. The two profile pages
- * widen differently — see `updateLayout`.
+ * rosters, the plants index, the wildlife index, and the fifteen propagation
+ * techniques at `#/planting`. The profile pages widen differently — see
+ * `updateLayout`.
  */
-const WIDE_STEPS = new Set(["plants", "regions", "wildlife", "lookalikes"]);
+const WIDE_STEPS = new Set(["plants", "regions", "wildlife", "lookalikes", "planting"]);
 
 function updateLayout(step: AppStep, param?: string): void {
   // Two of the documents — a plant's page and an animal's — get a mode of their
@@ -262,10 +264,17 @@ function updateLayout(step: AppStep, param?: string): void {
   //
   // An impostor's page (`#/lookalikes/<id>`) is not in that club: it's a short
   // comparison, and it keeps the reading measure.
+  //
+  // A technique's page (`#/planting/<slug>`) is: six card sections about one way
+  // of raising a plant, which ran to two and a half screenfuls of ribbon. It
+  // splits the same way. A slug that isn't a technique renders the short
+  // "no such page" instead, and that keeps the reading measure — hence the
+  // lookup here rather than a bare `!!param`.
   const plantProfile = step === "plants" && !!param;
   const animalProfile =
     step === "wildlife" && !!param && !wildlifeKindRoute(param) && wildlifeRegionParam(param) === null;
-  if (plantProfile || animalProfile) {
+  const techniqueProfile = step === "planting" && !!param && !!techniqueBySlug(param);
+  if (plantProfile || animalProfile || techniqueProfile) {
     document.body.dataset.layout = "profile";
     return;
   }

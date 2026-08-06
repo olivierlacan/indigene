@@ -101,6 +101,9 @@ export const fr: Dict = {
   "settings.namesNote":
     "Les noms de plantes et d'animaux viennent de la liste nationale de référence de chaque pays, pas d'une traduction automatique — {link}.",
   "settings.namesNoteLink": "voir d'où vient chaque nom",
+  "settings.countingTitle": "Compter les visites",
+  "settings.countingLede":
+    "La seule chose qu'Indigene dise au monde extérieur de votre passage — et l'interrupteur qui l'arrête.",
   "settings.done": "Terminé",
 
   // ---------------------------------------------------------------------
@@ -145,6 +148,19 @@ export const fr: Dict = {
   "memory.visitWhen": "Dernier passage",
   "memory.visitPrivacy":
     "Un numéro de version et une date, dans ce navigateur — pas de compte, rien sur qui vous êtes, et rien qui quitte l'appareil",
+  "memory.countTitle": "Compter mes visites",
+  "memory.countLede":
+    "Ouvrir une page apprend à un service extérieur qu'une page a été ouverte, et laquelle — jamais qui vous êtes, ni où vous êtes, ni ce que vous saisissez. C'est ainsi que nous savons si quelqu'un se sert de tout ceci.",
+  "memory.countBrowserOff":
+    "Votre navigateur demande déjà aux sites de ne pas vous pister : Indigene ne compte donc pas vos visites, quoi qu'il arrive. Votre choix ci-dessous est conservé pour le jour où vous désactiveriez ce réglage.",
+  "memory.countOn": "Compter mes visites",
+  "memory.countOnSub": "Une page a été ouverte, et laquelle. Rien qui dise que c'était vous.",
+  "memory.countOff": "Ne pas compter mes visites",
+  "memory.countOffSub":
+    "Rien n'est chargé et aucune connexion n'est établie — ils n'apprennent jamais que votre navigateur existe.",
+  "memory.countPrivacy": "Un décompte de pages, jamais un fichier sur les gens",
+  "memory.countNowOn": "Compté — merci.",
+  "memory.countNowOff": "Plus compté, dès votre prochaine visite.",
 
   // ---------------------------------------------------------------------
   // Accueil.
@@ -1359,7 +1375,7 @@ export const fr: Dict = {
   "privacy.shortVersion": "En bref. ",
   "privacy.short1": "Pas de compte, pas d'inscription, pas de mot de passe — rien qui vous identifie.",
   "privacy.short2":
-    "Pas de publicité. Pas de pistage. Aucune statistique qui observe ce que vous touchez. Rien vous concernant n'est vendu ni partagé.",
+    "Pas de publicité, et rien vous concernant n'est vendu ni partagé. Nous comptons combien de fois chaque page est ouverte — c'est tout, et cela ne permet pas de vous distinguer de quelqu'un d'autre.",
   "privacy.short3":
     "Vos lieux enregistrés restent sur votre appareil. Il n'y a aucun serveur Indigene où ils pourraient aller.",
   "privacy.short4":
@@ -1405,16 +1421,32 @@ export const fr: Dict = {
   "privacy.whatsNew3":
     "La date de votre visite précédente et celle du début de cette visite — deux dates, rien de plus fin.",
   "privacy.whatsNew4":
-    "C'est toute la liste. Aucun compteur de visites, aucune trace des pages ouvertes ni du temps passé, et rien qui permette de vous distinguer de quelqu'un d'autre. Tout reste dans ce navigateur, comme le reste, et aucun serveur n'apprend que vous êtes revenu — il n'y en a pas.",
+    "C'est toute la liste. Aucune trace du temps passé, et rien qui permette de vous distinguer de quelqu'un d'autre. Tout reste dans ce navigateur, comme le reste, et rien n'en sort jamais — pas même vers le comptage de pages décrit juste après, qui n'a aucun moyen de le lire.",
   "privacy.whatsNew5":
     "Vous pouvez lire ces deux valeurs et les jeter quand vous voulez, dans {settings}. Les oublier vous remet au niveau de la version du jour plutôt que de marquer toutes les versions passées comme non lues : appuyer sur un bouton « Oublier » ne devrait pas vous valoir un mur de points.",
   "privacy.whatsNewSettingsLink": "Ce qui est nouveau pour vous, dans les Réglages",
-  "privacy.noAccountTitle": "Pas de compte, pas de pistage, pas de publicité",
+  "privacy.countTitle": "Compter les visites, sans vous compter, vous",
+  "privacy.count1":
+    "Nous aimerions savoir si quelqu'un se sert vraiment de tout ceci — si le travail atteint un jardin. Alors quand vous ouvrez une page, un service extérieur apprend qu'une page a été ouverte, et laquelle. C'est tout le message, et voici tout ce qu'il ne contient pas :",
+  "privacy.count2":
+    "Aucun cookie, et rien de conservé pour vous reconnaître. Revenir demain ressemble exactement à l'arrivée de quelqu'un d'autre — pour eux comme pour nous.",
+  "privacy.count3":
+    "Jamais votre position, jamais un lieu que vous avez enregistré, et jamais ce que vous saisissez. Si vous cherchez dans la liste des plantes, les mots que vous avez tapés sont retirés de l'adresse avant l'envoi.",
+  "privacy.count4":
+    "Pas de nom, pas de compte, aucune régie publicitaire, et rien de vendu ni partagé. Cela ne peut vous suivre sur aucun autre site, faute d'avoir de quoi vous suivre.",
+  "privacy.count5":
+    "C'est un décompte, pas un journal. Personne — nous compris — ne peut lui demander ce que vous avez regardé, parce que rien ne relie une page à la suivante.",
+  "privacy.count6":
+    "Le service est {service}, une petite entreprise que nous payons précisément pour cela. Payer est le point important : quand les statistiques sont gratuites, ce sont en général les gens comptés qui sont vendus.",
+  "privacy.count7":
+    "Si vous préférez ne pas être compté du tout, désactivez-le dans {settings} — et c'est un vrai interrupteur, pas une demande polie. Rien n'est chargé et aucune connexion n'est établie : ils n'apprennent même pas que votre navigateur existe. Si votre navigateur demande déjà aux sites de ne pas vous pister (Do Not Track, ou Global Privacy Control), Indigene le prend pour votre réponse sans que vous ayez à la donner deux fois.",
+  "privacy.countSettingsLink": "Compter les visites, dans les Réglages",
+  "privacy.noAccountTitle": "Pas de compte, pas de publicité, aucun profil de vous",
   "privacy.noAccount1": "Pas d'inscription, pas d'adresse e-mail, pas de mot de passe — nous ne demandons jamais qui vous êtes.",
   "privacy.noAccount2":
     "Pas de publicité, et rien de vendu ni partagé. Nous ne détenons de toute façon aucune donnée sur vous à vendre.",
   "privacy.noAccount3":
-    "Pas de statistiques ni de cookies de pistage qui suivraient ce que vous faites. Les seules choses stockées sont vos lieux enregistrés et quelques réglages — sur votre appareil, pour vous.",
+    "Pas de cookies de pistage, et rien qui vous suive d'une visite à l'autre ni vers d'autres sites. Les seules choses stockées sont vos lieux enregistrés et quelques réglages — sur votre appareil, pour vous. La seule chose que nous comptons est la section juste au-dessus, et c'est un décompte de pages, pas de personnes.",
   "privacy.childrenTitle": "Fait pour tout le monde, enfants compris",
   "privacy.children1":
     "Des mots simples du début à la fin — chaque terme de jardinage ou de science est expliqué dans des mots sur lesquels on peut agir.",

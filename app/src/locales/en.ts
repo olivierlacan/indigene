@@ -100,6 +100,8 @@ export const en = {
   "settings.units.imperialSub": "Feet, inches, inches of rain, °F.",
   "settings.namesNote": "Plant and animal names come from each country's own national list, not from machine translation — {link}.",
   "settings.namesNoteLink": "see where each name comes from",
+  "settings.countingTitle": "Counting visits",
+  "settings.countingLede": "The one thing Indigene tells the outside world about you being here — and the switch that stops it.",
   "settings.done": "Done",
 
   // ---------------------------------------------------------------------
@@ -138,6 +140,16 @@ export const en = {
   "memory.visitSeenValue": "Version {version}",
   "memory.visitWhen": "Last here",
   "memory.visitPrivacy": "A version number and a date, in this browser — no account, nothing about who you are, and nothing that leaves the device",
+  "memory.countTitle": "Counting my visits",
+  "memory.countLede": "Opening a page tells one outside service that a page was opened, and which one — never who you are, where you are, or anything you type. It's how we know whether anyone is out there using this.",
+  "memory.countBrowserOff": "Your browser is already asking websites not to track you, so Indigene isn't counting your visits either way. Your choice below is kept for if you ever turn that off.",
+  "memory.countOn": "Count my visits",
+  "memory.countOnSub": "A page was opened, and which one. Nothing that says it was you.",
+  "memory.countOff": "Don't count my visits",
+  "memory.countOffSub": "Nothing is fetched and no connection is made — they're never told your browser exists.",
+  "memory.countPrivacy": "A tally of pages, never a record of people",
+  "memory.countNowOn": "Counted — thank you.",
+  "memory.countNowOff": "Not counted, from your next visit on.",
 
   // ---------------------------------------------------------------------
   // Welcome.
@@ -1345,7 +1357,8 @@ export const en = {
     "Indigene is built to be safe and respectful for everyone who uses it — including children. Here's the whole story in plain words: what we ask for, what we never do, and where anything you share actually goes.",
   "privacy.shortVersion": "The short version. ",
   "privacy.short1": "No account, no sign-up, no password — nothing that identifies you.",
-  "privacy.short2": "No ads. No tracking. No analytics watching what you tap. Nothing about you is sold or shared.",
+  "privacy.short2":
+    "No ads, and nothing about you is sold or shared. We count how many times each page is opened — that's all, and it can't tell you apart from anyone else.",
   "privacy.short3": "Your saved spots stay on your device. There's no Indigene server for them to go to.",
   "privacy.short4": "You never have to share your exact location — a postal code or town works everywhere it's used.",
   "privacy.short5": "It's open source: anyone can read exactly what it does.",
@@ -1387,15 +1400,31 @@ export const en = {
     "The version number you'd read up to, like \"0.19\". Reading the What's new page sets it to today's; that's what turns the dot off.",
   "privacy.whatsNew3": "When your previous visit was, and when this one started — two dates, nothing finer.",
   "privacy.whatsNew4":
-    "That's the whole list. There's no visit counter, no record of which pages you opened or how long you stayed, and nothing that could tell you apart from anyone else. It's kept in this browser, like everything else here, and no server is ever told you came back — there isn't one.",
+    "That's the whole list. No record of how long you stayed, and nothing that could tell you apart from anyone else. It's kept in this browser, like everything else here, and none of it is ever sent anywhere — not even to the page count described next, which has no way of reading it.",
   "privacy.whatsNew5":
     "You can read the two values and throw them away whenever you like, under {settings}. Forgetting them starts you level with today's release rather than marking every past release unread — you shouldn't get a wall of dots for pressing a button called Forget.",
   "privacy.whatsNewSettingsLink": "What's new to you, in Settings",
-  "privacy.noAccountTitle": "No account, no tracking, no ads",
+  "privacy.countTitle": "Counting visits, without counting you",
+  "privacy.count1":
+    "We would like to know whether anyone is actually out there using this — whether the work is reaching a garden. So when you open a page, one outside service is told that a page was opened, and which one. That is the entire message, and here is everything it doesn't contain:",
+  "privacy.count2":
+    "No cookie, and nothing kept to recognise you. Coming back tomorrow looks exactly like somebody else arriving — to them, and to us.",
+  "privacy.count3":
+    "Never your location, never a spot you've saved, and never anything you type. If you search the plant list, the words you typed are taken off the address before it's sent.",
+  "privacy.count4":
+    "No name, no account, no advertising company, and nothing sold or shared. It cannot follow you to any other website, because it has nothing to follow you with.",
+  "privacy.count5":
+    "It's a tally, not a diary. Nobody — including us — can ask it what you looked at, because nothing ties one page to the next.",
+  "privacy.count6":
+    "The service is {service}, a small company we pay for exactly this. Paying is the point: when analytics are free, the people being counted are usually what's being sold.",
+  "privacy.count7":
+    "If you would rather not be counted at all, turn it off under {settings} — and it's a real off switch, not a polite request. Nothing is fetched and no connection is made, so they are never told your browser exists. If your browser is already asking websites not to track you (Do Not Track, or Global Privacy Control), Indigene takes that as your answer without your having to give it twice.",
+  "privacy.countSettingsLink": "Counting visits, in Settings",
+  "privacy.noAccountTitle": "No account, no ads, no profile of you",
   "privacy.noAccount1": "No sign-up, email, or password — we never ask who you are.",
   "privacy.noAccount2": "No advertising, and nothing sold or shared. We hold no data about you to sell in the first place.",
   "privacy.noAccount3":
-    "No analytics and no tracking cookies following what you do. The only things stored are your saved spots and a few settings — on your device, for you.",
+    "No tracking cookies, and nothing that follows you between visits or onto other websites. The only things stored are your saved spots and a few settings — on your device, for you. The one thing we do count is the section just above, and it's a tally of pages, not of people.",
   "privacy.childrenTitle": "Made for everyone, including children",
   "privacy.children1":
     "Plain language throughout — every gardening or science term is explained in words anyone can act on.",

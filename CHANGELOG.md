@@ -25,6 +25,21 @@ subtitle on the What's new page.
 
 ### Added
 
+- **We now count how many times each page is opened — and you can say no.**
+  Indigene has never had a server, which means we have never had any idea
+  whether anyone was out there using it. So the app now tells one outside
+  service, when you open a page, that a page was opened and which one. That is
+  the whole message: no cookie, nothing kept to recognise you, never your
+  location, never a spot you've saved, and never anything you type — if you
+  search the plant list, the words you typed are taken off the address before
+  it's sent. Coming back tomorrow looks exactly like somebody else arriving. It
+  is a tally of pages, not a record of people, and nobody can ask it what you
+  looked at. [Privacy & safety](https://indigene.app/privacy) explains it in
+  full, and there is a plain off switch in Settings under **Counting visits** —
+  a real one, which stops the counting script from being fetched at all rather
+  than politely asking to be ignored. If your browser already asks websites not
+  to track you, Indigene takes that as your answer without your having to give
+  it twice.
 - **Every way to grow more, and when in the year to do it.** "How to grow more"
   on a plant page used to tell you what to do — nick the hard seed coat, give
   the seed a cold damp winter — and stop there, which left the question it

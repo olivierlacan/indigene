@@ -46,6 +46,9 @@ import { fileURLToPath } from "node:url";
 import { openLoader } from "./_load-ts.mjs";
 import { scoreImages } from "./_photo-quality.mjs";
 import { fit, suggest, PHENOLOGY, PHENOLOGY_LABEL } from "./_photo-angle.mjs";
+import { requireProxyAwareFetch } from "./_net.mjs";
+
+requireProxyAwareFetch("hero:harvest");
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = resolve(HERE, "../../docs/hero-photos/candidates.json");

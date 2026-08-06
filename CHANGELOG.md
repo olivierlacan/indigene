@@ -25,6 +25,17 @@ subtitle on the What's new page.
 
 ### Added
 
+- Internal: the scripts that fetch from the open internet — the registry
+  reconciler, the vernacular and look-alike audits, the photo harvester, the
+  probes — now run through a configured HTTP proxy instead of silently around
+  it. Node's built-in `fetch` ignores `HTTPS_PROXY` unless `NODE_USE_ENV_PROXY=1`
+  is set at startup, so every request left directly, came back `403`, and read
+  exactly like "this host is blocked by policy" — a diagnosis this repo's own
+  comments had written down as fact. The npm scripts now set the variable,
+  `scripts/_net.mjs` refuses a direct `node scripts/…` run with a sentence
+  naming the real problem, and the three probes that had no npm entry got one
+  (`inat:check`, `probe:globi`, `probe:eea`).
+
 - Internal: a way to publish the site without GitHub Actions, after a deploy
   job sat fifteen minutes without ever getting a runner and left two merges
   undeployed. `npm run publish:cloudflare` uploads the build straight to

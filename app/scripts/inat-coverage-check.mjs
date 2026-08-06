@@ -20,6 +20,9 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
+import { requireProxyAwareFetch } from "./_net.mjs";
+
+requireProxyAwareFetch("inat:check");
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const REGISTRY = resolve(HERE, "../public/registry/native-plant-registry.json");

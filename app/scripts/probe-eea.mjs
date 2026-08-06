@@ -14,6 +14,9 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { requireProxyAwareFetch } from "./_net.mjs";
+
+requireProxyAwareFetch("probe:eea");
 
 // Resolve the output path from this script's location, so it lands in the right
 // place regardless of the working directory it's launched from.

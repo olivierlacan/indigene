@@ -34,6 +34,9 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { openLoader } from "./_load-ts.mjs";
+import { requireProxyAwareFetch } from "./_net.mjs";
+
+requireProxyAwareFetch("names:check");
 
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const OUT_DIR = join(REPO_ROOT, "data", "sources", "vernacular-names");
@@ -328,8 +331,9 @@ const totalAnswers = Object.values(health).reduce((n, h) => n + h.answered, 0);
 if (report.checked > 0 && totalAnswers === 0) {
   console.error(
     "No reference list answered a single lookup — this is a blocked or offline network,\n" +
-    "not a result. TAXREF, Tela Botanica and Wikidata all refuse the build sandbox's\n" +
-    "egress; run this locally or via .github/workflows/vernacular.yml. Nothing was written.\n" +
+    "not a result. Either TAXREF, Tela Botanica and Wikidata are outside this machine's\n" +
+    "egress policy, or the requests never reached the proxy (see scripts/_net.mjs). Run it\n" +
+    "as `npm run names:check`, or via .github/workflows/vernacular.yml. Nothing was written.\n" +
     `HTTP: ${JSON.stringify(Object.fromEntries(Object.entries(health).map(([s, h]) => [s, h.statuses])))}`
   );
   await loader.close();

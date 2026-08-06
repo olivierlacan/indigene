@@ -44,6 +44,9 @@
 import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { requireProxyAwareFetch } from "./_net.mjs";
+
+requireProxyAwareFetch("probe:globi");
 
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const OUT_DIR = join(REPO_ROOT, "data", "sources", "globi");

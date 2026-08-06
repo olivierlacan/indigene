@@ -47,6 +47,9 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { openLoader } from "./_load-ts.mjs";
+import { requireProxyAwareFetch } from "./_net.mjs";
+
+requireProxyAwareFetch("lookalikes:check");
 
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const OUT_DIR = join(REPO_ROOT, "data", "sources", "lookalikes");
@@ -181,8 +184,9 @@ for (const [regionId, byPlant] of Object.entries(CONFUSIONS)) {
 if (report.ties > 0 && upstreamAnswers === 0) {
   console.error(
     "iNaturalist answered nothing at all — this is a blocked or offline network, not a\n" +
-    "result. api.inaturalist.org refuses the build sandbox's egress; run this locally or\n" +
-    "on a runner. Nothing was written."
+    "result. Either api.inaturalist.org is outside this machine's egress policy, or the\n" +
+    "requests never reached the proxy (see scripts/_net.mjs). Run it as\n" +
+    "`npm run lookalikes:check`, or on a runner. Nothing was written."
   );
   await loader.close();
   process.exit(2);

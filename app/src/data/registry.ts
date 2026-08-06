@@ -195,15 +195,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "achillea-millefolium"
     },
     "commonNames": [
-      "Yarrow"
+      "Yarrow",
+      "Common Yarrow"
     ],
     "aliases": [
       "achillea millefolium",
+      "common yarrow",
       "yarrow"
     ],
     "cultivarOf": null,
     "regions": [
-      "pnw"
+      "pnw",
+      "ca-south-coast"
     ]
   },
   {
@@ -225,6 +228,27 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Aesculus californica",
+    "family": "Sapindaceae",
+    "form": "tree",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "aesculus-californica"
+    },
+    "commonNames": [
+      "California Buckeye"
+    ],
+    "aliases": [
+      "aesculus californica",
+      "california buckeye"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -366,6 +390,27 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Amorpha californica",
+    "family": "Fabaceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "amorpha-californica"
+    },
+    "commonNames": [
+      "California False Indigo"
+    ],
+    "aliases": [
+      "amorpha californica",
+      "california false indigo"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -564,6 +609,27 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Arctostaphylos glauca",
+    "family": "Ericaceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "arctostaphylos-glauca"
+    },
+    "commonNames": [
+      "Bigberry Manzanita"
+    ],
+    "aliases": [
+      "arctostaphylos glauca",
+      "bigberry manzanita"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
     "primaryId": "ipni:1024084-2",
     "scientificName": "Arctostaphylos uva-ursi",
     "family": "Ericaceae",
@@ -595,6 +661,48 @@ export const REGISTRY: RegistryEntry[] = [
   },
   {
     "primaryId": null,
+    "scientificName": "Artemisia californica",
+    "family": "Asteraceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "artemisia-californica"
+    },
+    "commonNames": [
+      "California Sagebrush"
+    ],
+    "aliases": [
+      "artemisia californica",
+      "california sagebrush"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Artemisia douglasiana",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "artemisia-douglasiana"
+    },
+    "commonNames": [
+      "California Mugwort"
+    ],
+    "aliases": [
+      "artemisia douglasiana",
+      "california mugwort"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": null,
     "scientificName": "Artemisia vulgaris",
     "family": "Asteraceae",
     "form": "perennial",
@@ -612,6 +720,27 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Asclepias fascicularis",
+    "family": "Apocynaceae",
+    "form": "perennial",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "asclepias-fascicularis"
+    },
+    "commonNames": [
+      "Narrowleaf Milkweed"
+    ],
+    "aliases": [
+      "asclepias fascicularis",
+      "narrowleaf milkweed"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -718,6 +847,27 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Baccharis pilularis",
+    "family": "Asteraceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "baccharis-pilularis"
+    },
+    "commonNames": [
+      "Coyote Brush"
+    ],
+    "aliases": [
+      "baccharis pilularis",
+      "coyote brush"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -1081,6 +1231,27 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Carex praegracilis",
+    "family": "Cyperaceae",
+    "form": "grass",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "carex-praegracilis"
+    },
+    "commonNames": [
+      "Clustered Field Sedge"
+    ],
+    "aliases": [
+      "carex praegracilis",
+      "clustered field sedge"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
     "primaryId": "ipni:295248-1",
     "scientificName": "Carpinus betulus",
     "family": "Betulaceae",
@@ -1137,6 +1308,29 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Ceanothus crassifolius",
+    "family": "Rhamnaceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "ceanothus-crassifolius"
+    },
+    "commonNames": [
+      "Hoaryleaf Ceanothus",
+      "California Lilac"
+    ],
+    "aliases": [
+      "california lilac",
+      "ceanothus crassifolius",
+      "hoaryleaf ceanothus"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -1394,6 +1588,29 @@ export const REGISTRY: RegistryEntry[] = [
   },
   {
     "primaryId": null,
+    "scientificName": "Clematis lasiantha",
+    "family": "Ranunculaceae",
+    "form": "vine",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "clematis-lasiantha"
+    },
+    "commonNames": [
+      "Chaparral Clematis",
+      "Pipestem"
+    ],
+    "aliases": [
+      "chaparral clematis",
+      "clematis lasiantha",
+      "pipestem"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": null,
     "scientificName": "Clematis ligusticifolia",
     "family": "Ranunculaceae",
     "form": "vine",
@@ -1441,6 +1658,27 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-continental"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Clinopodium douglasii",
+    "family": "Lamiaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "clinopodium-douglasii"
+    },
+    "commonNames": [
+      "Yerba Buena"
+    ],
+    "aliases": [
+      "clinopodium douglasii",
+      "yerba buena"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -1941,6 +2179,27 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Diplacus aurantiacus",
+    "family": "Phrymaceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "diplacus-aurantiacus"
+    },
+    "commonNames": [
+      "Sticky Monkeyflower"
+    ],
+    "aliases": [
+      "diplacus aurantiacus",
+      "sticky monkeyflower"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
     "primaryId": "ipni:493388-1",
     "scientificName": "Dorycnium pentaphyllum",
     "family": "Fabaceae",
@@ -2001,6 +2260,27 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Dryopteris arguta",
+    "family": "Dryopteridaceae",
+    "form": "fern",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "dryopteris-arguta"
+    },
+    "commonNames": [
+      "Coastal Wood Fern"
+    ],
+    "aliases": [
+      "coastal wood fern",
+      "dryopteris arguta"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
     "primaryId": "ipni:17094880-1",
     "scientificName": "Dryopteris filix-mas",
     "family": "Dryopteridaceae",
@@ -2026,6 +2306,29 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Dudleya pulverulenta",
+    "family": "Crassulaceae",
+    "form": "perennial",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "dudleya-pulverulenta"
+    },
+    "commonNames": [
+      "Chalk Dudleya",
+      "Chalk Liveforever"
+    ],
+    "aliases": [
+      "chalk dudleya",
+      "chalk liveforever",
+      "dudleya pulverulenta"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -2086,6 +2389,92 @@ export const REGISTRY: RegistryEntry[] = [
   },
   {
     "primaryId": null,
+    "scientificName": "Encelia californica",
+    "family": "Asteraceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "encelia-californica"
+    },
+    "commonNames": [
+      "California Bush Sunflower"
+    ],
+    "aliases": [
+      "california bush sunflower",
+      "encelia californica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Epilobium canum",
+    "family": "Onagraceae",
+    "form": "perennial",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "epilobium-canum"
+    },
+    "commonNames": [
+      "California Fuchsia",
+      "Hummingbird Trumpet"
+    ],
+    "aliases": [
+      "california fuchsia",
+      "epilobium canum",
+      "hummingbird trumpet"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Eriogonum fasciculatum",
+    "family": "Polygonaceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "eriogonum-fasciculatum"
+    },
+    "commonNames": [
+      "California Buckwheat"
+    ],
+    "aliases": [
+      "california buckwheat",
+      "eriogonum fasciculatum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Eriogonum parvifolium",
+    "family": "Polygonaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "eriogonum-parvifolium"
+    },
+    "commonNames": [
+      "Seacliff Buckwheat"
+    ],
+    "aliases": [
+      "eriogonum parvifolium",
+      "seacliff buckwheat"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": null,
     "scientificName": "Eriogonum umbellatum",
     "family": "Polygonaceae",
     "form": "groundcover",
@@ -2131,6 +2520,27 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Eschscholzia californica",
+    "family": "Papaveraceae",
+    "form": "perennial",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "eschscholzia-californica"
+    },
+    "commonNames": [
+      "California Poppy"
+    ],
+    "aliases": [
+      "california poppy",
+      "eschscholzia californica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -2374,14 +2784,17 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "fragaria-vesca"
     },
     "commonNames": [
+      "Woodland Strawberry",
       "Wild Strawberry"
     ],
     "aliases": [
       "fragaria vesca",
-      "wild strawberry"
+      "wild strawberry",
+      "woodland strawberry"
     ],
     "cultivarOf": null,
     "regions": [
+      "ca-south-coast",
       "france-atlantic"
     ]
   },
@@ -2439,6 +2852,27 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Frangula californica",
+    "family": "Rhamnaceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "frangula-californica"
+    },
+    "commonNames": [
+      "California Coffeeberry"
+    ],
+    "aliases": [
+      "california coffeeberry",
+      "frangula californica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -2802,6 +3236,50 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Heteromeles arbutifolia",
+    "family": "Rosaceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "heteromeles-arbutifolia"
+    },
+    "commonNames": [
+      "Toyon",
+      "Christmas Berry"
+    ],
+    "aliases": [
+      "christmas berry",
+      "heteromeles arbutifolia",
+      "toyon"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Heuchera maxima",
+    "family": "Saxifragaceae",
+    "form": "perennial",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "heuchera-maxima"
+    },
+    "commonNames": [
+      "Island Alum Root"
+    ],
+    "aliases": [
+      "heuchera maxima",
+      "island alum root"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
     "primaryId": "ipni:1027403-2",
     "scientificName": "Holodiscus discolor",
     "family": "Rosaceae",
@@ -2974,6 +3452,48 @@ export const REGISTRY: RegistryEntry[] = [
   },
   {
     "primaryId": null,
+    "scientificName": "Isocoma menziesii",
+    "family": "Asteraceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "isocoma-menziesii"
+    },
+    "commonNames": [
+      "Coastal Goldenbush"
+    ],
+    "aliases": [
+      "coastal goldenbush",
+      "isocoma menziesii"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Juglans californica",
+    "family": "Juglandaceae",
+    "form": "tree",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "juglans-californica"
+    },
+    "commonNames": [
+      "Southern California Black Walnut"
+    ],
+    "aliases": [
+      "juglans californica",
+      "southern california black walnut"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": null,
     "scientificName": "Juncus patens",
     "family": "Juncaceae",
     "form": "grass",
@@ -3053,6 +3573,29 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Keckiella cordifolia",
+    "family": "Plantaginaceae",
+    "form": "vine",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "keckiella-cordifolia"
+    },
+    "commonNames": [
+      "Heart-leaved Penstemon",
+      "Climbing Penstemon"
+    ],
+    "aliases": [
+      "climbing penstemon",
+      "heart-leaved penstemon",
+      "keckiella cordifolia"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -3143,6 +3686,27 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Leymus condensatus",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "leymus-condensatus"
+    },
+    "commonNames": [
+      "Giant Wild Rye"
+    ],
+    "aliases": [
+      "giant wild rye",
+      "leymus condensatus"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -3604,6 +4168,27 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Muhlenbergia rigens",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "muhlenbergia-rigens"
+    },
+    "commonNames": [
+      "Deergrass"
+    ],
+    "aliases": [
+      "deergrass",
+      "muhlenbergia rigens"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
     "primaryId": "ipni:166091-2",
     "scientificName": "Myrcianthes fragrans",
     "family": "Myrtaceae",
@@ -3914,6 +4499,48 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Penstemon spectabilis",
+    "family": "Plantaginaceae",
+    "form": "perennial",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "penstemon-spectabilis"
+    },
+    "commonNames": [
+      "Showy Penstemon"
+    ],
+    "aliases": [
+      "penstemon spectabilis",
+      "showy penstemon"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Pentagramma triangularis",
+    "family": "Pteridaceae",
+    "form": "fern",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "pentagramma-triangularis"
+    },
+    "commonNames": [
+      "Goldback Fern"
+    ],
+    "aliases": [
+      "goldback fern",
+      "pentagramma triangularis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
     "primaryId": "ipni:610935-1",
     "scientificName": "Phillyrea angustifolia",
     "family": "Oleaceae",
@@ -4198,6 +4825,27 @@ export const REGISTRY: RegistryEntry[] = [
   },
   {
     "primaryId": null,
+    "scientificName": "Platanus racemosa",
+    "family": "Platanaceae",
+    "form": "tree",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "platanus-racemosa"
+    },
+    "commonNames": [
+      "Western Sycamore"
+    ],
+    "aliases": [
+      "platanus racemosa",
+      "western sycamore"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": null,
     "scientificName": "Poa nemoralis",
     "family": "Poaceae",
     "form": "grass",
@@ -4270,7 +4918,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "pnw"
+      "pnw",
+      "ca-south-coast"
     ]
   },
   {
@@ -4292,6 +4941,27 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Populus fremontii",
+    "family": "Salicaceae",
+    "form": "tree",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "populus-fremontii"
+    },
+    "commonNames": [
+      "Fremont Cottonwood"
+    ],
+    "aliases": [
+      "fremont cottonwood",
+      "populus fremontii"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -4428,6 +5098,27 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Prunus ilicifolia",
+    "family": "Rosaceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "prunus-ilicifolia"
+    },
+    "commonNames": [
+      "Hollyleaf Cherry"
+    ],
+    "aliases": [
+      "hollyleaf cherry",
+      "prunus ilicifolia"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -4593,6 +5284,27 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Quercus agrifolia",
+    "family": "Fagaceae",
+    "form": "tree",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "quercus-agrifolia"
+    },
+    "commonNames": [
+      "Coast Live Oak"
+    ],
+    "aliases": [
+      "coast live oak",
+      "quercus agrifolia"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -4888,6 +5600,27 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Rhus integrifolia",
+    "family": "Anacardiaceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "rhus-integrifolia"
+    },
+    "commonNames": [
+      "Lemonade Berry"
+    ],
+    "aliases": [
+      "lemonade berry",
+      "rhus integrifolia"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
     "primaryId": "ipni:317405-2",
     "scientificName": "Ribes sanguineum",
     "family": "Grossulariaceae",
@@ -4913,6 +5646,27 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Ribes speciosum",
+    "family": "Grossulariaceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "ribes-speciosum"
+    },
+    "commonNames": [
+      "Fuchsia-flowered Gooseberry"
+    ],
+    "aliases": [
+      "fuchsia-flowered gooseberry",
+      "ribes speciosum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -4943,6 +5697,29 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Romneya coulteri",
+    "family": "Papaveraceae",
+    "form": "perennial",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "romneya-coulteri"
+    },
+    "commonNames": [
+      "Matilija Poppy",
+      "Fried-egg Plant"
+    ],
+    "aliases": [
+      "fried-egg plant",
+      "matilija poppy",
+      "romneya coulteri"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -5210,6 +5987,27 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Salix lasiolepis",
+    "family": "Salicaceae",
+    "form": "tree",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "salix-lasiolepis"
+    },
+    "commonNames": [
+      "Arroyo Willow"
+    ],
+    "aliases": [
+      "arroyo willow",
+      "salix lasiolepis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
     "primaryId": "ipni:226166-2",
     "scientificName": "Salix scouleriana",
     "family": "Salicaceae",
@@ -5235,6 +6033,48 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Salvia apiana",
+    "family": "Lamiaceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "salvia-apiana"
+    },
+    "commonNames": [
+      "White Sage"
+    ],
+    "aliases": [
+      "salvia apiana",
+      "white sage"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Salvia clevelandii",
+    "family": "Lamiaceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "salvia-clevelandii"
+    },
+    "commonNames": [
+      "Cleveland Sage"
+    ],
+    "aliases": [
+      "cleveland sage",
+      "salvia clevelandii"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -5266,6 +6106,27 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "florida-central",
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Salvia mellifera",
+    "family": "Lamiaceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "salvia-mellifera"
+    },
+    "commonNames": [
+      "Black Sage"
+    ],
+    "aliases": [
+      "black sage",
+      "salvia mellifera"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -5324,6 +6185,27 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Sambucus nigra subsp. caerulea",
+    "family": "Adoxaceae",
+    "form": "tree",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "sambucus-nigra-caerulea"
+    },
+    "commonNames": [
+      "Blue Elderberry"
+    ],
+    "aliases": [
+      "blue elderberry",
+      "sambucus nigra subsp. caerulea"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -5433,6 +6315,27 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Sisyrinchium bellum",
+    "family": "Iridaceae",
+    "form": "perennial",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "sisyrinchium-bellum"
+    },
+    "commonNames": [
+      "Blue-eyed Grass"
+    ],
+    "aliases": [
+      "blue-eyed grass",
+      "sisyrinchium bellum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
     "primaryId": "ipni:240318-2",
     "scientificName": "Solidago lepida",
     "family": "Asteraceae",
@@ -5485,6 +6388,27 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Solidago velutina subsp. californica",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "solidago-velutina-californica"
+    },
+    "commonNames": [
+      "California Goldenrod"
+    ],
+    "aliases": [
+      "california goldenrod",
+      "solidago velutina subsp. californica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -5630,6 +6554,27 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Stipa pulchra",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "stipa-pulchra"
+    },
+    "commonNames": [
+      "Purple Needlegrass"
+    ],
+    "aliases": [
+      "purple needlegrass",
+      "stipa pulchra"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
     "primaryId": "ipni:30048227-2",
     "scientificName": "Struthiopteris spicant",
     "family": "Blechnaceae",
@@ -5710,6 +6655,48 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Symphoricarpos mollis",
+    "family": "Caprifoliaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "symphoricarpos-mollis"
+    },
+    "commonNames": [
+      "Creeping Snowberry"
+    ],
+    "aliases": [
+      "creeping snowberry",
+      "symphoricarpos mollis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Symphyotrichum chilense",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "symphyotrichum-chilense"
+    },
+    "commonNames": [
+      "Pacific Aster"
+    ],
+    "aliases": [
+      "pacific aster",
+      "symphyotrichum chilense"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -6045,6 +7032,29 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Umbellularia californica",
+    "family": "Lauraceae",
+    "form": "tree",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "umbellularia-californica"
+    },
+    "commonNames": [
+      "California Bay",
+      "Bay Laurel"
+    ],
+    "aliases": [
+      "bay laurel",
+      "california bay",
+      "umbellularia californica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
     "primaryId": "ipni:261823-2",
     "scientificName": "Vaccinium corymbosum",
     "family": "Ericaceae",
@@ -6300,6 +7310,27 @@ export const REGISTRY: RegistryEntry[] = [
   },
   {
     "primaryId": null,
+    "scientificName": "Vitis girdiana",
+    "family": "Vitaceae",
+    "form": "vine",
+    "rank": "species",
+    "identifiers": {
+      "indigene": "vitis-girdiana"
+    },
+    "commonNames": [
+      "Desert Wild Grape"
+    ],
+    "aliases": [
+      "desert wild grape",
+      "vitis girdiana"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": null,
     "scientificName": "Woodwardia fimbriata",
     "family": "Blechnaceae",
     "form": "fern",
@@ -6316,7 +7347,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "pnw"
+      "pnw",
+      "ca-south-coast"
     ]
   },
   {

@@ -6,6 +6,7 @@
 import type { RegionDef } from "./region";
 import { REGION as MID_ATLANTIC, SEED_RAW as MID_ATLANTIC_SEED } from "./plants.mid-atlantic";
 import { REGION as PNW, SEED_RAW as PNW_SEED } from "./plants.pnw";
+import { REGION as CA_SOUTH_COAST, SEED_RAW as CA_SOUTH_COAST_SEED } from "./plants.ca-south-coast";
 import { REGION as FLORIDA_CENTRAL, SEED_RAW as FLORIDA_CENTRAL_SEED } from "./plants.florida";
 import { REGION as FLORIDA_SOUTH, SEED_RAW as FLORIDA_SOUTH_SEED } from "./plants.florida-south";
 import { REGION as FRANCE_ATLANTIC, SEED_RAW as FRANCE_ATLANTIC_SEED } from "./plants.france-atlantic";
@@ -16,6 +17,10 @@ import { REGION as FRANCE_ALPINE, SEED_RAW as FRANCE_ALPINE_SEED } from "./plant
 export const REGIONS: RegionDef[] = [
   { meta: MID_ATLANTIC, seed: MID_ATLANTIC_SEED },
   { meta: PNW, seed: PNW_SEED },
+  // The West Coast, continued southward — see docs/west-coast-plan.md for the
+  // rest of the carve (central and north coast California, the Central Valley,
+  // the Sierra, eastern Oregon, and the deserts last).
+  { meta: CA_SOUTH_COAST, seed: CA_SOUTH_COAST_SEED },
   { meta: FLORIDA_CENTRAL, seed: FLORIDA_CENTRAL_SEED },
   { meta: FLORIDA_SOUTH, seed: FLORIDA_SOUTH_SEED },
   // Metropolitan France, complete: all four of its EEA biogeographical regions.

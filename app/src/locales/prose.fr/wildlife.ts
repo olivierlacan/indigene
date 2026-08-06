@@ -57,7 +57,7 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Papilio rutulus": {
     blurb:
-      "Le grand papillon à queues jaune des jardins et des bords de cours d'eau du Nord-Ouest Pacifique. Ses chenilles se nourrissent des feuilles de saules, de peupliers et de l'érable à grandes feuilles.",
+      "Le grand papillon à queues jaune des jardins et des bords de cours d'eau de l'Ouest, de la Colombie-Britannique à San Diego. Ses chenilles se nourrissent des feuilles de saules, de peupliers, de platanes et de l'érable à grandes feuilles.",
   },
   "Papilio eurymedon": {
     blurb:
@@ -65,7 +65,7 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Erynnis propertius": {
     blurb:
-      "Une petite hespérie brune liée aux prairies à chêne de Garry de l'Ouest — ses chenilles ne mangent que du chêne, et elle s'efface à mesure que cet habitat rare s'efface.",
+      "Une petite hespérie brune du pays des chênes de l'Ouest — les prairies à chêne de Garry au nord, les boisements de chêne vert de Californie au sud. Ses chenilles ne mangent que du chêne, et elle s'efface à mesure que ces habitats s'effacent.",
   },
   "Vanessa virginiensis": {
     blurb:
@@ -245,11 +245,11 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "#acorn-birds": {
     blurb:
-      "Les mangeurs de glands. Les geais bleus en particulier emportent et enterrent bien plus de glands qu'ils n'en mangeront jamais, et ceux qu'ils oublient poussent — un geai n'est donc pas seulement nourri par un chêne, il plante le suivant.",
+      "Les mangeurs de glands. Les geais en particulier — geai bleu à l'est, geai buissonnier à l'ouest — emportent et enterrent bien plus de glands qu'ils n'en mangeront jamais, et ceux qu'ils oublient poussent : un geai n'est donc pas seulement nourri par un chêne, il plante le suivant.",
   },
   "#berry-songbirds": {
     blurb:
-      "Les passereaux de tous les jours, qui élèvent leurs familles avec des insectes puis passent aux fruits — callicarpe, Psychotria, houx, raisinier — pour s'engraisser et traverser les mois les plus maigres.",
+      "Les passereaux de tous les jours, qui élèvent leurs familles avec des insectes puis passent aux fruits — callicarpe, sureau, houx, photinie de Californie — pour s'engraisser et traverser les mois les plus maigres.",
   },
   "#winter-thrushes": {
     blurb:

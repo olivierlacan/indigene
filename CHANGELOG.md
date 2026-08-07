@@ -25,6 +25,17 @@ subtitle on the What's new page.
 
 ### Added
 
+- Internal: `npm run candidates -- --region <id>` proposes the next plants for a
+  region and says why it picked each one, so growing a list stops being a matter
+  of who remembers what. It ranks the most-recorded plants inside the region's
+  own coverage box (GBIF), drops the ones iNaturalist lists as introduced rather
+  than native for that region's states, and rewards a candidate that brings a
+  genus the list doesn't have yet. It writes nothing into the app — the output is
+  a shortlist under `docs/candidates/`, and every row still needs a person to
+  check it's actually sold locally and to write the size curve and the notes by
+  hand. Its blind spot is stated in its own output: ranking by how often a plant
+  is recorded misses the scarce valuable one, which the first run proved by
+  missing the Pacific Northwest's one absent keystone genus.
 - Internal: GloBI was probed as a source for American caterpillar host counts,
   and the answer is no. `npm run probe:globi` had never been runnable; run now,
   its gate question fails — the life-stage columns that would separate "a

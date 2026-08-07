@@ -195,9 +195,24 @@ kind of automation:
    plant lists — Atlantic France names an animal for 5 of its 23 plants and
    claims no larval host at all — and that the missing US host table (§3) is the
    one thing blocking step 2 from covering every region.
-2. **GBIF candidate generator** — a script that proposes the next N species for a
-   region by joining ecoregion occurrences to host counts, for a human to accept
-   or reject. This is what makes list growth repeatable instead of heroic.
+2. ~~**GBIF candidate generator** — a script that proposes the next N species for
+   a region by joining ecoregion occurrences to host counts, for a human to
+   accept or reject.~~ **Shipped** (`app/scripts/candidates.mjs`,
+   `npm run candidates -- --region <id>`), with one term weaker than this
+   sentence assumed: there is no American host-count table to join to, because
+   GloBI's gate failed (`docs/us-host-counts-plan.md` §2), so the food-web term
+   uses our own genus-level estimates and says so in every line it prints. The
+   other three terms — occurrence density in the region's box (GBIF), native
+   status per place (iNaturalist), and whether a candidate brings a genus the
+   list lacks (our own rows) — are real.
+
+   Its output is a committed shortlist per region under
+   [`docs/candidates/`](candidates/), so a proposal is reviewable in a diff.
+   **Read it beside §1's coverage report, not instead of it**: ranking by
+   occurrence finds what a region is missing among plants people see often, and
+   is blind to the scarce high-value one. The first Pacific Northwest run proved
+   that by missing *Ceanothus* — the very genus this document names as that
+   list's one absent keystone.
 3. **Fill the thin categories** in the three Florida/France lists that need it
    most, using the ranking in §2.
 4. **DBIF cross-check** of the European counts.

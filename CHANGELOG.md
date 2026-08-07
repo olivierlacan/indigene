@@ -40,6 +40,17 @@ subtitle on the What's new page.
   swallowtail, Lorquin's admiral, anise swallowtail, eastern carpenter bee,
   bushtit, lesser goldfinch, and the brown-headed nuthatch — which uses a flake
   of bark as a tool to pry up more bark.
+- **Thirteen more Pacific Northwest natives, including the shrub the list most
+  needed.** Redstem ceanothus feeds more caterpillars than almost anything else
+  out there and had been missing entirely. With it: red huckleberry, cascara,
+  western trillium, fireweed, licorice fern and eight more. Seventy-one plants
+  now.
+- **Something is in flower in October now.** The region had exactly one plant
+  open that month. Puget Sound gumweed flowers from July until the rain
+  returns, so the last bees of the year have somewhere to go.
+- **Cow parsnip has a dangerous twin, and the app now says which is which.**
+  Giant hogweed is twice the height and its sap can blind. Both burn skin in
+  sunlight, so the look-alike page gives you the tells from a safe distance.
 
 ### Changed
 

@@ -1400,6 +1400,53 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "bumble-bees", support: "nectar", note: "A wild rose is a single open bowl with the pollen in plain reach, so a bee can actually use it — which a double garden rose, for an insect, is not.", basis: "Xerces Society." },
       { wildlifeId: "berry-songbirds", support: "berries", note: "The fat hips hold on through the winter for robins, towhees, and grouse, and the thorny thicket is deep nesting cover.", basis: "Cornell Lab; USDA PLANTS." },
     ],
+    "ceanothus-sanguineus": [
+      { wildlifeId: "pale-swallowtail", support: "host", reliance: "narrow", note: "Ceanothus is the pale swallowtail's classic caterpillar plant, and this is the west side's own species of it — the genus this list had been missing.", basis: "BAMONA; Xerces Society." },
+      { wildlifeId: "ceanothus-silkmoth", support: "host", reliance: "narrow", note: "The West's giant silkmoth is named after this shrub: the fat green caterpillars grow up on ceanothus and spin their cocoons in it.", basis: "BAMONA; Xerces Society." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Foaming white flower clusters in late spring, worked steadily by mason and mining bees.", basis: "Xerces Society." },
+    ],
+    "vaccinium-parvifolium": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Small translucent red huckleberries through late summer for thrushes, towhees and grouse — and for anyone who gets there first.", basis: "Cornell Lab; USFS FEIS." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Nodding pink-green bells open in April, while the solitary bees are provisioning and most shrubs are still bare.", basis: "Xerces Society." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Blueberry-family flowers need a bumble bee's buzz to shake the pollen loose, which is why she is the one you see on them.", basis: "Xerces Society; USDA NRCS." },
+    ],
+    "frangula-purshiana": [
+      { wildlifeId: "pale-swallowtail", support: "host", note: "Cascara is one of the pale swallowtail's caterpillar trees, alongside oceanspray and ceanothus.", basis: "BAMONA; Xerces Society." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Berries turn red then black in late summer and are stripped by band-tailed pigeons, robins and thrushes — which is how cascara seedlings arrive in a garden.", basis: "Cornell Lab; USFS FEIS." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Small green flowers that look like nothing and are covered in bees, hoverflies and predatory wasps.", basis: "Xerces Society." },
+    ],
+    "pinus-ponderosa": [
+      { wildlifeId: "conifer-seed-finches", support: "seeds", note: "Big pine seeds are what crossbills, nuthatches and siskins work a cone for.", basis: "Cornell Lab." },
+      { wildlifeId: "acorn-birds", support: "shelter", note: "Furrowed bark is where brown creepers wedge their nests, and an old ponderosa snag is woodpecker country for decades.", basis: "Cornell Lab; USFS Silvics." },
+    ],
+    "grindelia-integrifolia": [
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "It flowers from July into October, weeks after the rest of the region has finished — the last full meal of the year for the bees that collect sunflower-family pollen and nothing else.", basis: "Fowler & Droege, Pollen Specialist Bees (West); Xerces Society." },
+      { wildlifeId: "american-goldfinch", support: "seeds", note: "Goldfinches work the gummy seed heads through the winter if the stems are left standing.", basis: "Cornell Lab." },
+    ],
+    "chamaenerion-angustifolium": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "One of the great northern honey plants: the spike opens from the bottom upward through July and August, so a single plant feeds bees for weeks.", basis: "Xerces Society; USDA NRCS." },
+      { wildlifeId: "annas-rufous-hummingbird", support: "nectar", note: "Hummingbirds work the magenta spires in high summer, between the spring currants and the autumn asters.", basis: "Audubon; Cornell Lab." },
+    ],
+    "trillium-ovatum": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Early bumble bee queens and beetles work the March flowers, when a forest floor has almost nothing else open.", basis: "Xerces Society." },
+    ],
+    "erythronium-oregonum": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Among the first real nectar on the west side, timed for the queen bumble bees just out of hibernation.", basis: "Xerces Society." },
+    ],
+    "tiarella-trifoliata": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "A long shade bloom from May into August for the small solitary bees and hoverflies that have little else under a closed canopy.", basis: "Xerces Society." },
+    ],
+    "heracleum-maximum": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A landing platform the size of a plate, held at chest height — hoverflies, soldier beetles, small solitary bees and the parasitic wasps that keep aphids down all use it.", basis: "Xerces Society; UC ANR IPM." },
+      { wildlifeId: "western-tiger-swallowtail", support: "host", note: "Carrot-family leaves are what swallowtail caterpillars eat, and this is the biggest native umbel on the west side.", basis: "BAMONA." },
+    ],
+    "maianthemum-dilatatum": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Speckled red berries in late summer for thrushes and towhees working a forest floor.", basis: "Cornell Lab; USDA PLANTS." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Small white flower spikes for the little solitary bees and hoverflies of deep shade.", basis: "Xerces Society." },
+    ],
+    "linnaea-borealis": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Paired, faintly vanilla-scented bells held at exactly the height that suits the very small bees of a shaded forest floor.", basis: "Xerces Society." },
+    ],
     "fragaria-chiloensis": [
       { wildlifeId: "mason-bees", support: "nectar", note: "White spring flowers low to the ground, opening with the first solitary bees and easy for a small one to work.", basis: "Xerces Society." },
       { wildlifeId: "berry-songbirds", support: "berries", note: "Small deep-red strawberries in summer for towhees, robins, and sparrows — and for whoever gets there first.", basis: "Cornell Lab; USDA PLANTS." },

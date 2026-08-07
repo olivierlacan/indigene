@@ -1,0 +1,227 @@
+{
+  "checkedAt": "2026-08-07",
+  "ties": 38,
+  "backed": [
+    {
+      "region": "mid-atlantic",
+      "plant": "Cornus florida",
+      "lookalike": "Cornus kousa",
+      "misidentifications": 361
+    },
+    {
+      "region": "mid-atlantic",
+      "plant": "Acer rubrum",
+      "lookalike": "Acer platanoides",
+      "misidentifications": 1116
+    },
+    {
+      "region": "mid-atlantic",
+      "plant": "Lonicera sempervirens",
+      "lookalike": "Lonicera japonica",
+      "misidentifications": 62
+    },
+    {
+      "region": "mid-atlantic",
+      "plant": "Parthenocissus quinquefolia",
+      "lookalike": "Hedera helix",
+      "misidentifications": 30
+    },
+    {
+      "region": "mid-atlantic",
+      "plant": "Panicum virgatum",
+      "lookalike": "Miscanthus sinensis",
+      "misidentifications": 21
+    },
+    {
+      "region": "mid-atlantic",
+      "plant": "Asclepias tuberosa",
+      "lookalike": "Asclepias curassavica",
+      "misidentifications": 624
+    },
+    {
+      "region": "mid-atlantic",
+      "plant": "Asclepias incarnata",
+      "lookalike": "Asclepias curassavica",
+      "misidentifications": 32
+    },
+    {
+      "region": "pnw",
+      "plant": "Berberis aquifolium",
+      "lookalike": "Ilex aquifolium",
+      "misidentifications": 241
+    },
+    {
+      "region": "pnw",
+      "plant": "Rubus spectabilis",
+      "lookalike": "Rubus armeniacus",
+      "misidentifications": 44
+    },
+    {
+      "region": "pnw",
+      "plant": "Camassia quamash",
+      "lookalike": "Toxicoscordion venenosum",
+      "misidentifications": 5
+    },
+    {
+      "region": "ca-south-coast",
+      "plant": "Asclepias fascicularis",
+      "lookalike": "Asclepias curassavica",
+      "misidentifications": 17
+    },
+    {
+      "region": "ca-south-coast",
+      "plant": "Muhlenbergia rigens",
+      "lookalike": "Cortaderia selloana",
+      "misidentifications": 6
+    },
+    {
+      "region": "florida-central",
+      "plant": "Asclepias tuberosa",
+      "lookalike": "Asclepias curassavica",
+      "misidentifications": 624
+    },
+    {
+      "region": "florida-central",
+      "plant": "Callicarpa americana",
+      "lookalike": "Callicarpa dichotoma",
+      "misidentifications": 659
+    },
+    {
+      "region": "florida-central",
+      "plant": "Sabal palmetto",
+      "lookalike": "Washingtonia robusta",
+      "misidentifications": 146
+    },
+    {
+      "region": "florida-south",
+      "plant": "Zamia integrifolia",
+      "lookalike": "Cycas revoluta",
+      "misidentifications": 15
+    },
+    {
+      "region": "florida-south",
+      "plant": "Psychotria nervosa",
+      "lookalike": "Ardisia crenata",
+      "misidentifications": 13
+    },
+    {
+      "region": "florida-south",
+      "plant": "Stachytarpheta jamaicensis",
+      "lookalike": "Stachytarpheta cayennensis",
+      "misidentifications": 1025
+    },
+    {
+      "region": "florida-south",
+      "plant": "Sabal palmetto",
+      "lookalike": "Washingtonia robusta",
+      "misidentifications": 146
+    },
+    {
+      "region": "france-atlantic",
+      "plant": "Sorbus aucuparia",
+      "lookalike": "Robinia pseudoacacia",
+      "misidentifications": 21
+    },
+    {
+      "region": "france-atlantic",
+      "plant": "Ilex aquifolium",
+      "lookalike": "Prunus laurocerasus",
+      "misidentifications": 31
+    },
+    {
+      "region": "france-atlantic",
+      "plant": "Lonicera periclymenum",
+      "lookalike": "Lonicera japonica",
+      "misidentifications": 925
+    },
+    {
+      "region": "france-continental",
+      "plant": "Acer campestre",
+      "lookalike": "Acer negundo",
+      "misidentifications": 33
+    },
+    {
+      "region": "france-mediterranean",
+      "plant": "Fraxinus ornus",
+      "lookalike": "Ailanthus altissima",
+      "misidentifications": 4
+    },
+    {
+      "region": "france-mediterranean",
+      "plant": "Lavandula angustifolia",
+      "lookalike": "Lavandula × intermedia",
+      "misidentifications": 36
+    },
+    {
+      "region": "france-alpine",
+      "plant": "Picea abies",
+      "lookalike": "Pseudotsuga menziesii",
+      "misidentifications": 181
+    }
+  ],
+  "unrecorded": [
+    {
+      "region": "mid-atlantic",
+      "plant": "Amelanchier canadensis",
+      "lookalike": "Pyrus calleryana"
+    },
+    {
+      "region": "mid-atlantic",
+      "plant": "Viburnum dentatum",
+      "lookalike": "Lonicera maackii"
+    },
+    {
+      "region": "mid-atlantic",
+      "plant": "Packera aurea",
+      "lookalike": "Ficaria verna"
+    },
+    {
+      "region": "mid-atlantic",
+      "plant": "Eutrochium purpureum",
+      "lookalike": "Lythrum salicaria"
+    },
+    {
+      "region": "mid-atlantic",
+      "plant": "Schizachyrium scoparium",
+      "lookalike": "Miscanthus sinensis"
+    },
+    {
+      "region": "mid-atlantic",
+      "plant": "Asclepias tuberosa",
+      "lookalike": "Buddleja davidii"
+    },
+    {
+      "region": "pnw",
+      "plant": "Heracleum maximum",
+      "lookalike": "Heracleum mantegazzianum"
+    },
+    {
+      "region": "pnw",
+      "plant": "Acer circinatum",
+      "lookalike": "Acer palmatum"
+    },
+    {
+      "region": "ca-south-coast",
+      "plant": "Heteromeles arbutifolia",
+      "lookalike": "Pyracantha angustifolia"
+    },
+    {
+      "region": "france-mediterranean",
+      "plant": "Viburnum tinus",
+      "lookalike": "Prunus laurocerasus"
+    }
+  ],
+  "unresolved": [
+    {
+      "region": "florida-central",
+      "plant": "Hamelia patens",
+      "lookalike": "Hamelia patens var. glabra"
+    },
+    {
+      "region": "florida-south",
+      "plant": "Hamelia patens",
+      "lookalike": "Hamelia patens var. glabra"
+    }
+  ],
+  "missed": []
+}

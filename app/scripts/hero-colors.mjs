@@ -37,6 +37,9 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { existsSync } from "node:fs";
 import { chromium } from "playwright";
+import { requireProxyAwareFetch } from "./_net.mjs";
+
+requireProxyAwareFetch("hero:colors");
 
 /** Claude Code web sessions pre-install Chromium outside Playwright's registry. */
 const PREBUILT = "/opt/pw-browsers/chromium";

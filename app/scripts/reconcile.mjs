@@ -9,10 +9,13 @@
 //   npm run reconcile -- --limit 5
 //   npm run reconcile -- --missing inat   # only taxa that still lack an inat id
 //
-// Needs network (Wikidata + GBIF + iNaturalist). It CANNOT run in the build
-// sandbox, whose egress is blocked — run it locally or, preferably, via
+// Needs network (Wikidata + GBIF + iNaturalist). Run it locally, or via
 // .github/workflows/reconcile.yml (GitHub runners have open internet), which
-// opens a PR with the result. Plain JS + Vite loader so it runs on any Node.
+// opens a PR with the result. It also runs in a cloud session whose egress
+// policy allows those three hosts — but only through `npm run reconcile`, which
+// sets NODE_USE_ENV_PROXY=1; without that Node's fetch bypasses the proxy and
+// every request comes back 403, looking exactly like a policy denial. See
+// scripts/_net.mjs. Plain JS + Vite loader so it runs on any Node.
 //
 // Method (the "Wikidata hub, verify the load-bearing ones" approach):
 //   1. One SPARQL query maps each scientific name → its Wikidata item and, in a
@@ -29,6 +32,9 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { openLoader } from "./_load-ts.mjs";
+import { requireProxyAwareFetch } from "./_net.mjs";
+
+requireProxyAwareFetch("reconcile");
 
 const UA =
   "IndigeneRegistryReconcile/0.1 (https://github.com/olivierlacan/indigene; hi@olivierlacan.com)";

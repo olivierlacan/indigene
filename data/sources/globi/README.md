@@ -1,7 +1,8 @@
 # GloBI — Global Biotic Interactions
 
-**Status: probing, nothing shipped.** No number in the app comes from this
-source yet, and none should until §2 below has a verdict written in it.
+**Status: gate failed, nothing shipped — and nothing will be.** The probe ran
+on 2026-08-06 and GloBI cannot source `hostLepCount`. See §2. It stays valuable
+for the wildlife-ties layer, where no count is involved.
 
 ## What this is for
 
@@ -35,10 +36,10 @@ covering far more than Lepidoptera (bees, birds, mammals).
 Refresh: `node app/scripts/probe-globi.mjs`, or run
 `.github/workflows/us-host-counts.yml` from the Actions tab.
 
-**It needs open internet, which the build sandbox does not have** —
-`api.globalbioticinteractions.org` answers 403 to the agent egress. Same
-arrangement as [`vernacular-names/`](../vernacular-names/) and the reconcile
-job: run it from an unblocked machine, or let the runner do it.
+**It needs open internet.** Run it as `npm run probe:globi` — through a proxy,
+that npm script is the only form that works, because Node's `fetch` ignores
+`HTTPS_PROXY` without `NODE_USE_ENV_PROXY=1` (see `app/scripts/_net.mjs`). Or
+let `.github/workflows/us-host-counts.yml` run it on a runner.
 
 ## 2. The gate — is a larval host distinguishable from an adult nectaring?
 
@@ -54,15 +55,34 @@ be asked again, and the answer is not knowable from the documentation — it
 depends on how many records actually carry a life stage. That is question Q2 of
 the probe.
 
-> **Verdict: not yet run.** Fill this in from `probe.json` after the first run.
-> If Q2 fails, GloBI cannot source `hostLepCount` on its own and the fallback is
-> the Tallamy primary literature, as `PROJECT_BRIEF.md` already flags. It would
-> still be useful for the *wildlife-ties* layer, where a citation and a named
-> animal are the whole point and a count is not involved.
+> **Verdict: it is not. Q2 fails — 2026-08-06.**
+>
+> Both life-stage columns exist and both are empty. Zero of the probe's 25
+> sampled records carried one; a follow-up over 500 `Lepidoptera eats Quercus`
+> records found **0 with a life stage and 0 with coordinates**. A count built
+> from this would blend caterpillars stripping a leaf with adults resting on one,
+> so it cannot support the claim `hostLepCount` makes.
+>
+> Q5 is a second, independent reason. `bbox` filtering genuinely works — the
+> Mid-Atlantic box returns 12 of the 1,202 worldwide `Lepidoptera eats Quercus`
+> records, the Pacific Northwest box returns 0 — but 12 is not oak's regional
+> host count (Tallamy says 511 for the same genus in the same place). A
+> localised figure would rest on ~1% of the records and would really be
+> measuring which studies bothered to record a place.
+>
+> **Consequence.** American host counts stay genus-level estimates anchored on
+> Tallamy/NWF, labelled as estimates in every row's `basis` — the fallback
+> `PROJECT_BRIEF.md` already flags. GloBI keeps its place in the *wildlife-ties*
+> layer, where a named animal and a citation are the whole deliverable and no
+> count is involved.
+>
+> Worth saying plainly: this is the probe working. It cost one run and no shipped
+> number, which is the entire reason it was written before a builder.
 
 ## What would consume it
 
-Nothing yet. If the gate passes, the builder would be
+Nothing, and now nothing will — the gate failed. Kept for the record: had it
+passed, the builder would have been
 `app/scripts/build-us-host-counts.mjs`, written to mirror
 `build-host-counts.mjs` exactly — same genus-level aggregation, same
 `host-counts.json` shape, same "a shipped plant must not take a silent zero"

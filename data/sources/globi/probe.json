@@ -1,0 +1,216 @@
+{
+  "probedFrom": "https://api.globalbioticinteractions.org",
+  "questions": {
+    "q1": {
+      "reachable": true,
+      "interactionTypeCount": 49,
+      "interactionTypes": [
+        "eats",
+        "eatenBy",
+        "preysOn",
+        "preyedUponBy",
+        "kills",
+        "killedBy",
+        "parasiteOf",
+        "hasParasite",
+        "endoparasiteOf",
+        "hasEndoparasite",
+        "ectoparasiteOf",
+        "hasEctoparasite",
+        "parasitoidOf",
+        "hasParasitoid",
+        "hostOf",
+        "hasHost",
+        "pollinates",
+        "pollinatedBy",
+        "pathogenOf",
+        "allelopathOf",
+        "hasPathogen",
+        "vectorOf",
+        "hasVector",
+        "dispersalVectorOf",
+        "hasDispersalVector",
+        "rootparasiteOf",
+        "hemiparasiteOf",
+        "hasHabitat",
+        "createsHabitatFor",
+        "epiphyteOf",
+        "hasEpiphyte",
+        "ectomycorrhizalHostOf",
+        "hasEctomycorrhizalHost",
+        "arbuscularMycorrhizalHostOf",
+        "hasArbuscularMycorrhizalHost",
+        "providesNutrientsFor",
+        "acquiresNutrientsFrom",
+        "symbiontOf",
+        "mutualistOf",
+        "commensalistOf",
+        "flowersVisitedBy",
+        "visitsFlowersOf",
+        "visitedBy",
+        "visits",
+        "ecologicallyRelatedTo",
+        "coOccursWith",
+        "coRoostsWith",
+        "interactsWith",
+        "adjacentTo"
+      ],
+      "candidateTypes": [
+        "eats",
+        "eatenBy",
+        "hostOf",
+        "hasHost",
+        "pollinates",
+        "pollinatedBy",
+        "createsHabitatFor",
+        "ectomycorrhizalHostOf",
+        "hasEctomycorrhizalHost",
+        "arbuscularMycorrhizalHostOf",
+        "hasArbuscularMycorrhizalHost",
+        "flowersVisitedBy",
+        "visitsFlowersOf",
+        "visitedBy",
+        "visits",
+        "interactsWith"
+      ]
+    },
+    "q3": {
+      "columns": [
+        "source_taxon_external_id",
+        "source_taxon_name",
+        "source_taxon_path",
+        "source_specimen_occurrence_id",
+        "source_specimen_institution_code",
+        "source_specimen_collection_code",
+        "source_specimen_catalog_number",
+        "source_specimen_life_stage",
+        "source_specimen_basis_of_record",
+        "interaction_type",
+        "target_taxon_external_id",
+        "target_taxon_name",
+        "target_taxon_path",
+        "target_specimen_occurrence_id",
+        "target_specimen_institution_code",
+        "target_specimen_collection_code",
+        "target_specimen_catalog_number",
+        "target_specimen_life_stage",
+        "target_specimen_basis_of_record",
+        "latitude",
+        "longitude",
+        "study_title"
+      ],
+      "sampleRow": {
+        "source_taxon_external_id": "EOL:747",
+        "source_taxon_name": "Lepidoptera",
+        "source_taxon_path": "Life | Cellular Organisms | Eukaryota | Opisthokonta | Metazoa | Bilateria | Protostomia | Ecdysozoa | Arthropoda | Pancrustacea | Hexapoda | Insecta | Pterygota | Neoptera | Endopterygota | Amphiesmenoptera | Lepidoptera",
+        "source_specimen_occurrence_id": null,
+        "source_specimen_institution_code": null,
+        "source_specimen_collection_code": null,
+        "source_specimen_catalog_number": null,
+        "source_specimen_life_stage": null,
+        "source_specimen_basis_of_record": null,
+        "interaction_type": "eats",
+        "target_taxon_external_id": "COL:3CS2P",
+        "target_taxon_name": "Euphrasia picta",
+        "target_taxon_path": "Eukaryota | Plantae | Pteridobiotina | Tracheophyta | Magnoliopsida | Lamiales | Orobanchaceae | Rhinantheae | Euphrasia | Euphrasia picta",
+        "target_specimen_occurrence_id": null,
+        "target_specimen_institution_code": null,
+        "target_specimen_collection_code": null,
+        "target_specimen_catalog_number": null,
+        "target_specimen_life_stage": null,
+        "target_specimen_basis_of_record": null,
+        "latitude": null,
+        "longitude": null,
+        "study_title": null
+      },
+      "sampleSize": 25
+    },
+    "q2": {
+      "lifeStageColumns": [
+        "source_specimen_life_stage",
+        "target_specimen_life_stage"
+      ],
+      "verdict": "column exists but is empty in the sample",
+      "sampled": 25,
+      "withLifeStage": 0
+    },
+    "q4": {
+      "method": "distinct binomial Lepidoptera source taxa, interactionType=eats",
+      "calibration": [
+        {
+          "genus": "Quercus",
+          "globi": 1202,
+          "gaytanOceanic": 391
+        },
+        {
+          "genus": "Salix",
+          "globi": 368,
+          "gaytanOceanic": 377
+        },
+        {
+          "genus": "Populus",
+          "globi": 633,
+          "gaytanOceanic": 258
+        },
+        {
+          "genus": "Prunus",
+          "globi": 984,
+          "gaytanOceanic": 318
+        },
+        {
+          "genus": "Betula",
+          "globi": 730,
+          "gaytanOceanic": 306
+        },
+        {
+          "genus": "Vaccinium",
+          "globi": 467,
+          "gaytanOceanic": 227
+        },
+        {
+          "genus": "Rubus",
+          "globi": 412,
+          "gaytanOceanic": 186
+        },
+        {
+          "genus": "Acer",
+          "globi": 492,
+          "gaytanOceanic": 76
+        }
+      ]
+    },
+    "q5": {
+      "localityColumns": [
+        "latitude",
+        "longitude"
+      ],
+      "citationColumns": [
+        "study_title"
+      ],
+      "boxes": [
+        {
+          "id": "pnw",
+          "label": "Pacific NW (west of the Cascades)",
+          "minLat": 42,
+          "maxLat": 49,
+          "minLon": -124.9,
+          "maxLon": -120.5,
+          "records": 0,
+          "sampled": 500,
+          "geolocated": 0
+        },
+        {
+          "id": "mid-atlantic",
+          "label": "Mid-Atlantic / Northeast Piedmont",
+          "minLat": 38,
+          "maxLat": 42,
+          "minLon": -80.5,
+          "maxLon": -74,
+          "records": 12,
+          "sampled": 500,
+          "geolocated": 0
+        }
+      ]
+    }
+  }
+}

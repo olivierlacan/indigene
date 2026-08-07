@@ -1156,7 +1156,6 @@ export const en = {
   "wildlife.regionPillTitle": "{region} — all the wildlife its natives support",
   "wildlife.docTitle": "Native plants that support {animal} — Indigene",
   "wildlife.allWildlife": "← All wildlife",
-  "wildlife.aNativeAnimal": "A native animal. ",
   "wildlife.ofThemHosts.one": ", {n} of them as a caterpillar host — the strongest tie.",
   "wildlife.ofThemHosts.other": ", {n} of them as caterpillar hosts — the strongest tie.",
   "wildlife.cantLiveWithout.one": "⭐ It can't live without this plant. ",

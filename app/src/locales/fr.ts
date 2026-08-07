@@ -1168,7 +1168,6 @@ export const fr: Dict = {
   "wildlife.regionPillTitle": "{region} — toute la faune que ses plantes indigènes font vivre",
   "wildlife.docTitle": "Les plantes indigènes qui font vivre {animal} — Indigene",
   "wildlife.allWildlife": "← Toute la faune",
-  "wildlife.aNativeAnimal": "Un animal indigène. ",
   "wildlife.ofThemHosts.one": ", dont {n} comme plante nourricière de ses chenilles — le lien le plus fort.",
   "wildlife.ofThemHosts.other": ", dont {n} comme plantes nourricières de ses chenilles — le lien le plus fort.",
   "wildlife.cantLiveWithout.one": "⭐ Il ne peut pas vivre sans cette plante. ",

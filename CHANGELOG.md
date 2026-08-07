@@ -48,6 +48,10 @@ subtitle on the What's new page.
   monarch](https://indigene.app/wildlife/monarch) shows how many of our natives
   feed it, how many raise its young, and how many it has no substitute for —
   the same tiles a plant's page has. Tap one for what it means.
+- **An animal's page no longer calls it "a native animal".** Every animal in
+  [Wildlife](https://indigene.app/wildlife) is native, and the page names the
+  regions right beside it. What's left is the part that isn't repeated: where
+  it's native in the wild, and who says so.
 - **"See it near you" is half as tall on a computer.** Asking where to look and
   offering to look somewhere else were stacked down the page; they now sit side
   by side. On a phone, nothing moves.

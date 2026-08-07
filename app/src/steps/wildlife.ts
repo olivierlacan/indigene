@@ -558,11 +558,13 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
         ]),
         el("div", { class: "plant-col" }, [
           el("div", { class: "plant-body plant-body-rest" }, [
-            // The native-status guarantee, sourced (authority names linked) — a native
-            // plant should be feeding a native animal, and we say where that comes from.
+            // Where it's native, and who says so (authority names linked). It
+            // used to open "A native animal." — which the 📍 pills opposite
+            // have already said, and the index says once for the whole
+            // catalog. What's left is the part that isn't repeated anywhere:
+            // the range beyond our regions, and its source.
             el("p", { class: "confidence wildlife-vouch" }, [
               el("span", { "aria-hidden": "true" }, "🌿 "),
-              el("strong", {}, t("wildlife.aNativeAnimal")),
               ...citation(w.nativeBasis),
             ]),
             speciesLink(w),

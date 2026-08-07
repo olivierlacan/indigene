@@ -210,6 +210,33 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:60448516-2",
+    "scientificName": "Acmispon glaber",
+    "family": "Fabaceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "60448516-2",
+      "wfo": "wfo-0000508280",
+      "gbif": "7274828",
+      "itis": "820060",
+      "inat": "53134",
+      "wikidata": "Q15490404",
+      "indigene": "acmispon-glaber"
+    },
+    "commonNames": [
+      "Deerweed"
+    ],
+    "aliases": [
+      "acmispon glaber",
+      "deerweed"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
     "primaryId": "ipni:271629-2",
     "scientificName": "Adiantum aleuticum",
     "family": "Pteridaceae",
@@ -2347,6 +2374,32 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:82063-2",
+    "scientificName": "Dipterostemon capitatus",
+    "family": "Asparagaceae",
+    "form": "perennial",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "82063-2",
+      "wfo": "wfo-0000765518",
+      "gbif": "2772254",
+      "inat": "1196784",
+      "wikidata": "Q105828390",
+      "indigene": "dipterostemon-capitatus"
+    },
+    "commonNames": [
+      "Blue Dicks"
+    ],
+    "aliases": [
+      "blue dicks",
+      "dipterostemon capitatus"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
     "primaryId": "ipni:493388-1",
     "scientificName": "Dorycnium pentaphyllum",
     "family": "Fabaceae",
@@ -2688,6 +2741,34 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:204850-1",
+    "scientificName": "Eriophyllum confertiflorum",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "204850-1",
+      "wfo": "wfo-0000133670",
+      "gbif": "3130484",
+      "usda": "ERCO25",
+      "itis": "37332",
+      "inat": "53395",
+      "wikidata": "Q5389476",
+      "indigene": "eriophyllum-confertiflorum"
+    },
+    "commonNames": [
+      "Golden Yarrow"
+    ],
+    "aliases": [
+      "eriophyllum confertiflorum",
+      "golden yarrow"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -3467,6 +3548,36 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:1095274-2",
+    "scientificName": "Hesperoyucca whipplei",
+    "family": "Asparagaceae",
+    "form": "perennial",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "1095274-2",
+      "wfo": "wfo-0000658097",
+      "gbif": "2770323",
+      "usda": "HEWH",
+      "itis": "514686",
+      "inat": "58362",
+      "wikidata": "Q19848612",
+      "indigene": "hesperoyucca-whipplei"
+    },
+    "commonNames": [
+      "Chaparral Yucca",
+      "Our Lord's Candle"
+    ],
+    "aliases": [
+      "chaparral yucca",
+      "hesperoyucca whipplei",
+      "our lord's candle"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
     "primaryId": "ipni:725491-1",
     "scientificName": "Heteromeles arbutifolia",
     "family": "Rosaceae",
@@ -4223,6 +4334,34 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:30008684-2",
+    "scientificName": "Lupinus albifrons",
+    "family": "Fabaceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "30008684-2",
+      "wfo": "wfo-0000174684",
+      "gbif": "2964669",
+      "usda": "LUAL4",
+      "itis": "25930",
+      "inat": "51691",
+      "wikidata": "Q4118548",
+      "indigene": "lupinus-albifrons"
+    },
+    "commonNames": [
+      "Silver Bush Lupine"
+    ],
+    "aliases": [
+      "lupinus albifrons",
+      "silver bush lupine"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
     "primaryId": "ipni:504939-1",
     "scientificName": "Lupinus polyphyllus",
     "family": "Fabaceae",
@@ -4276,6 +4415,62 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-central"
+    ]
+  },
+  {
+    "primaryId": "ipni:149662-2",
+    "scientificName": "Malacothamnus fasciculatus",
+    "family": "Malvaceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "149662-2",
+      "wfo": "wfo-0001077089",
+      "gbif": "3152341",
+      "usda": "MAFA",
+      "itis": "21827",
+      "inat": "57137",
+      "wikidata": "Q6740908",
+      "indigene": "malacothamnus-fasciculatus"
+    },
+    "commonNames": [
+      "Chaparral Bush Mallow"
+    ],
+    "aliases": [
+      "chaparral bush mallow",
+      "malacothamnus fasciculatus"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:1032103-2",
+    "scientificName": "Malosma laurina",
+    "family": "Anacardiaceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "1032103-2",
+      "wfo": "wfo-0001051353",
+      "gbif": "8292447",
+      "usda": "MALA6",
+      "itis": "503671",
+      "inat": "64122",
+      "wikidata": "Q15544644",
+      "indigene": "malosma-laurina"
+    },
+    "commonNames": [
+      "Laurel Sumac"
+    ],
+    "aliases": [
+      "laurel sumac",
+      "malosma laurina"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -6143,6 +6338,34 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic"
+    ]
+  },
+  {
+    "primaryId": "ipni:30033304-2",
+    "scientificName": "Rosa californica",
+    "family": "Rosaceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "30033304-2",
+      "wfo": "wfo-0001014357",
+      "gbif": "3006252",
+      "usda": "ROCA2",
+      "itis": "24818",
+      "inat": "53437",
+      "wikidata": "Q143186",
+      "indigene": "rosa-californica"
+    },
+    "commonNames": [
+      "California Wild Rose"
+    ],
+    "aliases": [
+      "california wild rose",
+      "rosa californica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {

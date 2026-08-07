@@ -3022,5 +3022,90 @@
       "gbif": "5275361",
       "wikidata": "Q8033593"
     }
+  },
+  "Acmispon glaber": {
+    "identifiers": {
+      "ipni": "60448516-2",
+      "wfo": "wfo-0000508280",
+      "itis": "820060",
+      "inat": "53134",
+      "gbif": "7274828",
+      "wikidata": "Q15490404"
+    }
+  },
+  "Dipterostemon capitatus": {
+    "identifiers": {
+      "ipni": "82063-2",
+      "wfo": "wfo-0000765518",
+      "inat": "1196784",
+      "gbif": "2772254",
+      "wikidata": "Q105828390"
+    }
+  },
+  "Eriophyllum confertiflorum": {
+    "identifiers": {
+      "ipni": "204850-1",
+      "wfo": "wfo-0000133670",
+      "usda": "ERCO25",
+      "itis": "37332",
+      "inat": "53395",
+      "gbif": "3130484",
+      "wikidata": "Q5389476"
+    }
+  },
+  "Hesperoyucca whipplei": {
+    "identifiers": {
+      "ipni": "1095274-2",
+      "wfo": "wfo-0000658097",
+      "usda": "HEWH",
+      "itis": "514686",
+      "inat": "58362",
+      "gbif": "2770323",
+      "wikidata": "Q19848612"
+    }
+  },
+  "Lupinus albifrons": {
+    "identifiers": {
+      "ipni": "30008684-2",
+      "wfo": "wfo-0000174684",
+      "usda": "LUAL4",
+      "itis": "25930",
+      "inat": "51691",
+      "gbif": "2964669",
+      "wikidata": "Q4118548"
+    }
+  },
+  "Malacothamnus fasciculatus": {
+    "identifiers": {
+      "ipni": "149662-2",
+      "wfo": "wfo-0001077089",
+      "usda": "MAFA",
+      "itis": "21827",
+      "inat": "57137",
+      "gbif": "3152341",
+      "wikidata": "Q6740908"
+    }
+  },
+  "Malosma laurina": {
+    "identifiers": {
+      "ipni": "1032103-2",
+      "wfo": "wfo-0001051353",
+      "usda": "MALA6",
+      "itis": "503671",
+      "inat": "64122",
+      "gbif": "8292447",
+      "wikidata": "Q15544644"
+    }
+  },
+  "Rosa californica": {
+    "identifiers": {
+      "ipni": "30033304-2",
+      "wfo": "wfo-0001014357",
+      "usda": "ROCA2",
+      "itis": "24818",
+      "inat": "53437",
+      "gbif": "3006252",
+      "wikidata": "Q143186"
+    }
   }
 }

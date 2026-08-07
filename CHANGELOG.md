@@ -41,6 +41,18 @@ subtitle on the What's new page.
   monarch, whose western population has fallen by more than ninety percent. See
   the whole roster at
   [Southern California](https://indigene.app/regions/ca-south-coast).
+- **Eight more southern California natives, chosen by asking the data rather
+  than remembering.** Laurel sumac, California wild rose, chaparral yucca,
+  deerweed, golden yarrow, silver bush lupine, blue dicks and chaparral bush
+  mallow — sixty plants in the region now. They came out of a ranking of every
+  plant recorded in the region against what the list already had, which turned
+  up two whole kinds of plant the list was missing: a bulb that comes up with
+  the winter rain and dies back before the heat, and the wild rose of the creek
+  banks, whose hips feed birds into midwinter. The chaparral yucca brings a
+  story nothing else here tells — it is pollinated by one moth and one moth
+  only, which gathers the pollen, packs it onto the flower **on purpose**, and
+  lays its eggs there; neither the moth nor the yucca can live without the
+  other.
 - **Three things a nursery might sell you by mistake in southern California.**
   The look-alike pages now cover the region's own confusions: tropical milkweed
   beside the native narrowleaf one (it never dies back here, so the parasite

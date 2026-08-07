@@ -244,6 +244,18 @@ export const WILDLIFE: Wildlife[] = [
       "Native western blues and hairstreaks (acmon blue, Sheridan's green hairstreak and their relatives). Xerces Society; BAMONA.",
   },
   {
+    id: "painted-lady",
+    common: "Painted lady",
+    latin: "Vanessa cardui",
+    kind: "butterfly",
+    icon: "🦋",
+    blurb:
+      "The most widespread butterfly on earth, and the one that turns up in millions across southern California in the spring after a wet winter — a moving front of orange and black heading north, sometimes thousands of miles from the deserts where they hatched. Its caterpillars live in little silk tents on mallows, thistles and lupines, which is why a mallow in a garden is on the flight path.",
+    native: true,
+    nativeBasis: "Native to North America and nearly everywhere else. BAMONA; Xerces Society.",
+    inat: { name: "Vanessa cardui", iconic: "Insecta" },
+  },
+  {
     id: "california-dogface",
     common: "California dogface butterfly",
     latin: "Zerene eurydice",
@@ -535,6 +547,18 @@ export const WILDLIFE: Wildlife[] = [
     native: true,
     nativeBasis: "Native to North America. BAMONA.",
     inat: { name: "Hemaris thysbe", iconic: "Insecta" },
+  },
+  {
+    id: "california-yucca-moth",
+    common: "California yucca moth",
+    latin: "Tegeticula maculata",
+    kind: "moth",
+    icon: "🌙",
+    blurb:
+      "A small pale moth that does something almost no other insect does: it pollinates on purpose. A female gathers yucca pollen into a ball under her head, flies to another flower, lays her eggs in it, and then deliberately packs the pollen onto the stigma — making sure the seeds her caterpillars will eat actually get made. She leaves most of them uneaten. The yucca has no other pollinator and the moth has no other food, so the two have been keeping each other alive for millions of years.",
+    native: true,
+    nativeBasis: "Native to California and northern Baja California, on Hesperoyucca whipplei. Xerces Society; the yucca-moth literature (Pellmyr).",
+    inat: { name: "Tegeticula maculata", iconic: "Insecta" },
   },
   {
     id: "ceanothus-silkmoth",
@@ -1397,6 +1421,39 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "clinopodium-douglasii": [
       { wildlifeId: "mason-bees", support: "nectar", note: "Tiny white mint flowers at ground level in shade, over a long season, for the smallest solitary bees and hoverflies.", basis: "Xerces Society." },
+    ],
+    "malosma-laurina": [
+      { wildlifeId: "california-gnatcatcher", support: "shelter", note: "Dense evergreen cover on a coastal hillside is where gnatcatchers, wrentits and towhees nest and shelter year-round.", basis: "US Fish & Wildlife Service; Cornell Lab." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Small white fruits in autumn for thrashers, mockingbirds and towhees — and for the coyotes that carry the seed uphill.", basis: "Cornell Lab; USFS FEIS." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Big cream flower plumes in early summer, worked by bees, beetles and the predatory wasps that keep garden pests down.", basis: "Xerces Society." },
+    ],
+    "rosa-californica": [
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "Rose hips hang on well past midwinter, which is exactly when a roving waxwing flock needs something left on a branch.", basis: "Cornell Lab." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Thrashers, robins and quail all take the hips, and the thorny thicket underneath is safe nesting cover.", basis: "Cornell Lab; USFS FEIS." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A single wild rose lets a bee reach the pollen — a double garden rose has replaced those stamens with petals and offers almost nothing.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+    ],
+    "hesperoyucca-whipplei": [
+      { wildlifeId: "california-yucca-moth", support: "host", reliance: "sole", note: "The completest partnership in this list: the moth pollinates the yucca deliberately and lays its eggs in the flower, and its caterpillars eat some of the seeds that result. Neither species has another partner — no yucca, no moth, and no moth, no yucca seed.", basis: "Xerces Society; the yucca-moth literature (Pellmyr)." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The ten-foot flower spike also draws bees, beetles and hummingbirds, though only the moth actually pollinates it.", basis: "Xerces Society." },
+    ],
+    "malacothamnus-fasciculatus": [
+      { wildlifeId: "painted-lady", support: "host", reliance: "narrow", note: "Mallows are one of the painted lady's main caterpillar plants — the butterfly that arrives in millions across southern California in the spring after a wet winter.", basis: "BAMONA; Xerces Society." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Open pink mallow flowers over months, worked by bumble bees and by the native bees that specialise on the mallow family.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+    ],
+    "acmispon-glaber": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Small yellow pea flowers from March into August — one of the longest bloom seasons in the list, at the season bees most need it.", basis: "Xerces Society." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Its early flowers open while the solitary bees are still provisioning nests.", basis: "Xerces Society." },
+    ],
+    "lupinus-albifrons": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A lupine flower has to be forced open by a bee heavy enough to trip it, which is why bumble bees and carpenter bees are the ones you see on it.", basis: "UC Berkeley Urban Bee Lab; Xerces Society." },
+      { wildlifeId: "painted-lady", support: "host", note: "Lupines are among the painted lady's caterpillar plants alongside the mallows and thistles.", basis: "BAMONA." },
+    ],
+    "eriophyllum-confertiflorum": [
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "Gold flower heads from April into August, feeding the native bees that collect sunflower-family pollen and nothing else — right through the gap after the spring shrubs finish.", basis: "Fowler & Droege, Pollen Specialist Bees (West)." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "An easy flat landing pad worked by bumble bees and small butterflies all summer.", basis: "Xerces Society." },
+    ],
+    "dipterostemon-capitatus": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "One of the first real nectar sources of the year — it opens in February, when the early solitary bees and bee flies are out and almost nothing else is.", basis: "Xerces Society." },
     ],
   },
 

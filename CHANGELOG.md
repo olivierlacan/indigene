@@ -25,6 +25,22 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Added
+
+- **A hundred and thirty-six more animals named on the plants you can grow.**
+  Nine regions searched against an open database of published plant-and-animal
+  records. Pairings went from 415 to 551; plants naming nothing at all fell from
+  78 to 19. Browse them at [Wildlife](https://indigene.app/wildlife).
+- **Four regions now name a creature for every plant they ship** —
+  [Continental France](https://indigene.app/regions/france-continental),
+  [Mediterranean France](https://indigene.app/regions/france-mediterranean),
+  [the Alps](https://indigene.app/regions/france-alpine), and, but for two ferns,
+  [the Mid-Atlantic](https://indigene.app/regions/mid-atlantic).
+- **Nine new creatures.** The red admiral, silver-spotted skipper, spicebush
+  swallowtail, Lorquin's admiral, anise swallowtail, eastern carpenter bee,
+  bushtit, lesser goldfinch, and the brown-headed nuthatch — which uses a flake
+  of bark as a tool to pry up more bark.
+
 ### Changed
 
 - **What's new says the same things in half the words.** Every entry on
@@ -50,6 +66,9 @@ subtitle on the What's new page.
   written rule is in CLAUDE.md under *Every word is short by default*, which
   applies to all site copy — every word here is also a word somebody
   translates into French.
+- **Every new pairing names the study that found it** — a Swiss food web, a
+  European pollinator network, the Natural History Museum's world list of what
+  caterpillars eat. The [sources page](https://indigene.app/sources) says so too.
 
 ### Fixed
 
@@ -58,6 +77,21 @@ subtitle on the What's new page.
   the page — a stray pair of asterisks was enough to let them through.
 - Internal: the `Internal:` mark now matches with or without bold, which is
   what had been leaking those four; the four bullets are written plainly again.
+- Internal: the 2026-08-06 GloBI probe concluded its records carry no life stage
+  and no citations. They do — the probe had asked in the query mode that drops
+  those columns, and read the blanks as missing data. Re-measured in both modes:
+  life stage is on ~8% of records (so the host-count gate still fails, for the
+  right reason now) and **100%** name a source study, which is what this release
+  is built on. `probe-globi.mjs` now asks every per-observation question in both
+  modes and records both answers; `data/sources/globi/README.md` §1 writes up the
+  trap so nobody falls into it twice.
+- Internal: new `npm run wildlife -- --region <id>`
+  (`app/scripts/wildlife-candidates.mjs`) proposes wildlife for a region with the
+  evidence for each candidate — GloBI for the interaction, iNaturalist and GBIF
+  for whether the animal is present and native there, and the source study for
+  every tie. It proposes; it never writes a row. Shortlists land in
+  `docs/candidates/wildlife-<region>.md`, raw answers in
+  `data/sources/globi/wildlife-ties.json`.
 
 ## [0.24] - 2026-08-07
 

@@ -68,6 +68,10 @@ export const FRANCE_ALPINE: ProseTable = {
     },
   },
   "Acer pseudoplatanus": {
+    supportNotes: {
+      "bumble-bees":
+        "Le sycomore fleurit en mai, à une altitude où il n'y a presque rien d'autre de sorti, et un seul vieil arbre peut porter les reines de bourdon de toute une vallée pendant la semaine où elles en ont le plus besoin.",
+    },
     nativeNote:
       "Indigène des montagnes d'Europe centrale, Alpes comprises — un arbre des bois et des pâturages montagnards frais et humides, souvent autour des vieux bâtiments de ferme.",
     careNote:
@@ -82,6 +86,14 @@ export const FRANCE_ALPINE: ProseTable = {
   // Les Alpes françaises — arbustes.
   // -------------------------------------------------------------------------
   "Vaccinium vitis-idaea": {
+    supportNotes: {
+      "black-grouse":
+        "L'airelle rouge garde ses feuilles et ses fruits tout l'hiver sous la neige, et c'est pour cela qu'un tétras-lyre trouve encore à manger en février.",
+      "emperor-moth":
+        "Les chenilles du petit paon de nuit broutent ses petites feuilles coriaces à côté de celles de la myrtille.",
+      "green-hairstreak":
+        "L'une des fleurs où descend l'argus vert quand l'airelle est en fleur en juin.",
+    },
     nativeNote:
       "Un tapis persistant de l'étage subalpin, sur sol acide parmi la myrtille, le rhododendron ferrugineux et les vieux épicéas.",
     careNote:
@@ -92,6 +104,10 @@ export const FRANCE_ALPINE: ProseTable = {
       "Soulevez au printemps un morceau enraciné de tige rampante et mettez-le en pot dans un mélange acide de type terre de bruyère. Les pousses en voie d'aoûtement prises en fin d'été s'enracinent aussi sous abri, lentement, dans un mélange de sable et de tourbe.",
   },
   "Rhododendron ferrugineum": {
+    supportNotes: {
+      "bumble-bees":
+        "Les fleurs du rhododendron ferrugineux sont des tubes profonds : la plupart de ce qui les visite n'atteint pas le fond. Un bourdon à longue langue, si — et un versant d'alpenrose en juillet leur appartient presque entièrement.",
+    },
     nativeNote:
       "La rose des Alpes — le persistant bas qui rougit des pentes subalpines entières en juillet, sur les sols acides au-dessus de 1 500 m environ.",
     careNote:
@@ -162,6 +178,10 @@ export const FRANCE_ALPINE: ProseTable = {
     },
   },
   "Gentiana lutea": {
+    supportNotes: {
+      "bumble-bees":
+        "Une gentiane jaune dépasse la prairie autour d'elle et fleurit en verticilles étagés le long de la tige, si bien qu'un bourdon peut remonter longtemps le long d'un seul pied.",
+    },
     nativeNote:
       "La grande gentiane jaune des pâturages subalpins des Alpes — la racine qui parfume les apéritifs amers de la région.",
     careNote:
@@ -172,6 +192,10 @@ export const FRANCE_ALPINE: ProseTable = {
       "Semez la graine fine à la surface d'un terreau graveleux humide à l'automne et laissez le pot dehors tout l'hiver — il lui faut une période franchement froide et humide et de la lumière pour germer, et elle prendra son temps. Puis soyez patient : plusieurs années pour un pied de quelque taille, et une décennie pour une fleur.",
   },
   "Trollius europaeus": {
+    supportNotes: {
+      "bumble-bees":
+        "Un trolle ne s'ouvre jamais vraiment — les pétales se referment par-dessus en lanterne, et un insecte doit se glisser par l'interstice. Les bourdons sont parmi les rares assez gros pour s'en donner la peine.",
+    },
     nativeNote:
       "Le globe jaune citron des prairies de fauche humides de montagne et des bords de ruisseau des Alpes.",
     careNote:
@@ -182,6 +206,10 @@ export const FRANCE_ALPINE: ProseTable = {
       "Semez la graine fraîche à l'automne en pot laissé dehors — il lui faut un vrai hiver, et une graine conservée germe mal. Les touffes installées se divisent au début du printemps, mais elles boudent un an après.",
   },
   "Dryas octopetala": {
+    supportNotes: {
+      "mason-bees":
+        "La dryade tourne sa coupe blanche pour suivre le soleil, et ce creux tiède est là où les abeilles solitaires d'altitude passent une matinée froide.",
+    },
     nativeNote:
       "Un tapis alpin persistant des éboulis calcaires, des crêtes et des graviers stabilisés, surtout au-dessus de la limite des arbres dans les Alpes.",
     careNote:
@@ -237,6 +265,8 @@ export const FRANCE_ALPINE: ProseTable = {
     propagationNote:
       "Récoltez les chatons en forme de petits cônes en fin d'été, juste au moment où ils commencent à s'effriter, et émiettez-les à la surface d'un terreau humide — la graine de bouleau est fine comme de la poussière et a besoin de lumière, ne la couvrez donc pas. Elle lève en quelques semaines.",
     supportNotes: {
+      "emperor-moth":
+        "Le bouleau est l'un des arbres à chenilles du petit paon de nuit — la grosse larve verte à points roses et noirs mange à découvert sur les feuilles tout l'été.",
       "conifer-seed-finches":
         "Les chatons du bouleau s'effritent tout l'hiver en une graine si fine que seuls les petits fringilles s'en donnent la peine — tarins et sizerins se pendent la tête en bas au bout des rameaux pour l'atteindre.",
     },
@@ -251,6 +281,8 @@ export const FRANCE_ALPINE: ProseTable = {
     propagationNote:
       "Les saules sont les ligneux les plus faciles qui soient : coupez en hiver une tige nue grosse comme un crayon, enfoncez-en les deux tiers en terre humide, et elle s'enracine. Fait inhabituel chez un saule, le marsault s'enracine moins volontiers que la plupart : prenez-en plusieurs. Sa graine n'est viable que quelques jours, les boutures sont donc la voie raisonnable.",
     supportNotes: {
+      "mourning-cloak":
+        "Les feuilles de saule nourrissent les chenilles noires épineuses du morio, qui vivent en groupe sur une même branche jusqu'à être presque adultes.",
       "purple-emperor":
         "Le grand mars changeant pond sur les saules, et c'est le marsault qu'il choisit le plus souvent. Sa chenille passe l'hiver aplatie contre un rameau, exactement de la couleur de l'écorce, et reverdit avec les feuilles.",
       "bumble-bees":

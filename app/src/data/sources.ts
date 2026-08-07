@@ -87,6 +87,15 @@ export const SOURCE_LINKS: SourceSite[] = [
   { name: "EPPO", url: "https://gd.eppo.int/" },
   { name: "ONF", url: "https://www.onf.fr/" },
   { name: "Conservatoire botanique national méditerranéen", url: "https://www.cbnmed.fr/" },
+  // The interaction aggregator behind the ties found by
+  // `app/scripts/wildlife-candidates.mjs`. Only GloBI itself is linked: each
+  // tie's basis also names the *contributed dataset* the records came from
+  // (trophiCH, EuPPollNet, HOSTS…), and those stay as prose, the same way the
+  // European butterfly foodplant checklist already does — a reader who wants
+  // the dataset searches the name, and we don't ship a wall of DOIs we could
+  // not check from this build environment.
+  { name: "Global Biotic Interactions", url: "https://www.globalbioticinteractions.org/" },
+  { name: "GloBI", url: "https://www.globalbioticinteractions.org/" },
 ];
 
 const BAMONA_SPECIES = "https://www.butterfliesandmoths.org/species/";

@@ -17,6 +17,7 @@
     "release-notes": "node scripts/build-release-notes.mjs",
     "notes:check": "node scripts/check-notes-lightbox.mjs",
     "coverage": "node scripts/coverage.mjs",
+    "wildlife": "NODE_USE_ENV_PROXY=1 node scripts/wildlife-candidates.mjs",
     "candidates": "NODE_USE_ENV_PROXY=1 node scripts/candidates.mjs",
     "host-counts": "node scripts/build-host-counts.mjs",
     "maps:build": "NODE_USE_ENV_PROXY=1 node scripts/build-region-maps.mjs",

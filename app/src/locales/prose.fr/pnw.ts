@@ -25,6 +25,8 @@ export const PNW: ProseTable = {
     propagationNote:
       "Ramassez les glands à leur chute en automne et faites-les flotter dans l'eau — jetez ceux qui remontent, semez aussitôt ceux qui coulent. Les glands de chênes blancs germent dès l'automne, sans aucun froid, et ne doivent jamais sécher. À cause de la racine pivotante, démarrez-le en pot haut ou semez-le directement là où il vivra.",
     supportNotes: {
+      "lorquins-admiral":
+        "Un chêne dans une prairie à chêne de Garry est le poste d'observation d'un amiral de Lorquin, qui se laisse tomber de la branche pour chasser tout ce qui passe.",
       "propertius-duskywing":
         "Le chêne de Garry est la seule plante nourricière de l'Erynnis propertius — pas de chêne, pas de papillon.",
       "acorn-birds":
@@ -51,6 +53,8 @@ export const PNW: ProseTable = {
     propagationNote:
       "Récoltez les cônes à maturité, quand ils brunissent en fin d'été, puis séchez-les dans un sac en papier jusqu'à ce qu'ils s'ouvrent et secouez-en la graine ailée. Un mois environ de froid humide au réfrigérateur avant un semis de printemps donne un peuplement de jeunes plants plus régulier.",
     supportNotes: {
+      "ceanothus-silkmoth":
+        "Le douglas fait partie des arbres que les chenilles du grand paon du ceanothe acceptent — un papillon de nuit large comme une paume, sans bouche, qui vit toute sa vie adulte sur ce qu'il a mangé ici comme larve.",
       "conifer-seed-finches":
         "Les becs-croisés d'Amérique sont liés au sapin de Douglas ici plus étroitement qu'à aucun autre arbre — des populations entières ont leur propre taille de bec et leur propre cri de vol pour ses cônes, et une bande travaillant la cime d'un gros douglas est un son du Nord-Ouest Pacifique.",
     },
@@ -95,6 +99,8 @@ export const PNW: ProseTable = {
     propagationNote:
       "L'arbre le plus facile d'ici à démarrer : coupez en fin d'hiver des rameaux dormants gros comme un crayon et enfoncez-les en terre humide, ils s'enracinent tout seuls. La graine cotonneuse ne vit que quelques jours : si vous passez par elle, répandez-la sur de la vase à l'instant où elle est lâchée.",
     supportNotes: {
+      "lorquins-admiral":
+        "Le peuplier de l'Ouest est l'arbre à chenilles de l'amiral de Lorquin. La jeune larve ressemble à une fiente d'oiseau et passe l'hiver roulée dans une feuille qu'elle a attachée au rameau pour ne pas tomber.",
       "western-tiger-swallowtail":
         "Le peuplier de l'Ouest est un arbre nourricier de prédilection pour le Papilio rutulus.",
     },
@@ -109,6 +115,10 @@ export const PNW: ProseTable = {
     propagationNote:
       "Prélevez la graine des baies mûres d'automne, rincez-en toute la pulpe, et donnez-lui environ deux mois de froid humide. Il supporte mal qu'on dérange ses racines : démarrez-le en pot profond ou semez-le directement là où il poussera, et déplacez-le le moins possible.",
     supportNotes: {
+      "ceanothus-silkmoth":
+        "Les feuilles de l'arbousier de Menzies nourrissent les chenilles du grand paon du ceanothe, ce qui est rare : très peu de choses mangent une feuille persistante aussi coriace.",
+      "painted-lady":
+        "Ses petites fleurs en urne sortent au printemps et sont travaillées par les papillons autant que par les abeilles.",
       "acorn-birds":
         "Les baies d'arbousier sont une nourriture d'automne et d'hiver emblématique du pigeon à queue barrée, et elles sont prélevées par les merles d'Amérique et les jaseurs.",
       "mason-bees":
@@ -125,6 +135,8 @@ export const PNW: ProseTable = {
     propagationNote:
       "Dégagez la graine des baies mûres d'été et donnez-lui un long hiver froid et humide — cela peut être lent et tout ne lèvera pas au premier printemps, ne renoncez donc pas au pot. Plus simple encore : déterrez les rejets enracinés qu'il pousse autour de sa base et replantez-les.",
     supportNotes: {
+      "ceanothus-silkmoth":
+        "L'amélanchier fait partie de la courte liste d'arbustes sur lesquels le grand paon du ceanothe accepte de pondre.",
       "cedar-waxwing":
         "Les amélanches sont un fruit d'été de premier ordre pour les jaseurs et de nombreux passereaux de l'Ouest.",
       "berry-songbirds":
@@ -157,6 +169,8 @@ export const PNW: ProseTable = {
     propagationNote:
       "Cueillez les petits cônes ligneux à l'automne dès qu'ils commencent à s'ouvrir, séchez-les à l'intérieur dans un sac en papier et secouez-en la graine ailée. Elle lèvera d'un semis de printemps sans aucun traitement, quoiqu'un mois de froid humide au réfrigérateur rende le peuplement plus régulier. Semez épais — une bonne part de la graine est vide.",
     supportNotes: {
+      "ceanothus-silkmoth":
+        "L'aulne rouge nourrit les chenilles du grand paon du ceanothe en plus des fringilles qu'il nourrit l'hiver — le même arbre, deux repas entièrement différents.",
       "american-goldfinch":
         "Les petits chatons ligneux de l'aulne gardent une graine que les chardonnerets et les tarins des pins dépouillent tout l'hiver.",
     },
@@ -171,6 +185,8 @@ export const PNW: ProseTable = {
     propagationNote:
       "Écrasez les fruits mûrs à l'automne, lavez la pulpe des noyaux, et donnez-leur environ trois mois de froid humide au réfrigérateur avant de semer au printemps — la pulpe elle-même retient la germination, elle doit donc partir. Plus facile encore : soulevez en fin d'hiver l'un des drageons enracinés qu'il pousse autour de lui.",
     supportNotes: {
+      "lorquins-admiral":
+        "Le cerisier amer est l'autre arbre sur lequel l'amiral pond là où il n'y a ni saule ni peuplier.",
       "western-tiger-swallowtail":
         "Les cerisiers sauvages sont parmi les principaux arbres nourriciers du Papilio rutulus.",
       "pale-swallowtail":
@@ -359,6 +375,8 @@ export const PNW: ProseTable = {
     propagationNote:
       "La graine est fine comme de la poussière : répandez-la en surface sans l'enterrer, et donnez-lui un hiver froid et humide — la levée peut être têtue et inégale. Les boutures de pousses d'été en voie d'aoûtement sont l'autre voie courante.",
     supportNotes: {
+      "variable-checkerspot":
+        "Les plumeaux crème du holodisque sont l'arrêt-carburant du damier variable pendant la partie sèche de l'été.",
       "pale-swallowtail":
         "L'holodisque est une plante nourricière classique du Papilio eurymedon (et du Limenitis lorquini).",
       "bumble-bees":
@@ -375,6 +393,10 @@ export const PNW: ProseTable = {
     propagationNote:
       "De loin le plus facile est de déterrer les drageons enracinés par lesquels il s'étend, ou de prendre des boutures ligneuses dormantes en hiver. La graine est lente et têtue, demandant souvent deux hivers avant de lever, et la plupart des gens s'en passent.",
     supportNotes: {
+      "variable-checkerspot":
+        "La symphorine est l'un des rares arbustes que les chenilles du damier variable mangent, et elles se nourrissent en groupe à l'intérieur d'une toile tissée sur la pousse.",
+      "yellow-rumped-warbler":
+        "Les baies blanches tiennent tout l'hiver, et la paruline à croupion jaune est l'un des rares oiseaux à les prendre.",
       "annas-rufous-hummingbird":
         "Ses petites fleurs roses en clochettes sont une source de nectar estivale pour les colibris ; ses baies blanches persistent pour les oiseaux d'hiver.",
     },
@@ -478,6 +500,8 @@ export const PNW: ProseTable = {
     propagationNote:
       "Des boutures dormantes et nues prises en hiver et enfoncées en terre humide s'enracinent facilement. Le semis est tout aussi simple : récoltez les follicules secs et papyracés à l'automne, émiettez-les, et semez la graine en surface dans un pot laissé dehors tout l'hiver.",
     supportNotes: {
+      "variable-checkerspot":
+        "Les corymbes blancs et plats du physocarpe sont un atterrissage facile pour un papillon, et les damiers s'en servent beaucoup en juin.",
       "bumble-bees":
         "Ses dômes de fleurs blanches denses du début de l'été sont durement travaillés par les bourdons et d'autres abeilles indigènes.",
     },
@@ -587,6 +611,10 @@ export const PNW: ProseTable = {
     propagationNote:
       "La graine est minuscule et a besoin de lumière : répandez-la en surface et couvrez-la à peine. Plus facile encore, soulevez et séparez les touffes au printemps ou à l'automne — elle se divise sans se plaindre et se réenracine vite.",
     supportNotes: {
+      "painted-lady":
+        "L'achillée est une table à papillons : une assiette plate de minuscules fleurs, toutes accessibles d'un coup, et une belle-dame reste plusieurs minutes sur un seul capitule.",
+      "variable-checkerspot":
+        "L'une des plantes à nectar les plus relevées pour le damier variable dans toute son aire.",
       "bumble-bees":
         "Ses corymbes plats sont une piste d'atterrissage commode travaillée par de nombreuses petites abeilles indigènes et insectes auxiliaires.",
     },
@@ -631,6 +659,8 @@ export const PNW: ProseTable = {
     propagationNote:
       "Répandez la graine en surface pour qu'elle reçoive de la lumière, et un passage froid et humide aide à la déclencher. Les boutures tendres du début de l'été s'enracinent bien aussi. Elle vit peu mais se ressème : laissez tomber un peu de graine pour l'entretenir.",
     supportNotes: {
+      "painted-lady":
+        "L'ériophylle laineux fait partie des plantes sur lesquelles grandissent les chenilles de la belle-dame — elles vivent sous une tente de soie tendue sur les feuilles laineuses.",
       "sunflower-specialist-bees":
         "Une floraison d'astéracée de l'Ouest qui fait vivre les abeilles spécialistes du pollen d'astéracées de la région.",
     },

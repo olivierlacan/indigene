@@ -3760,6 +3760,19 @@ body[data-layout="profile"] .wip-banner-text {
   margin: 0 -0.4rem 0.6rem;
   border-radius: calc(var(--radius) - 6px);
 }
+/* Past phone width the full-bleed rule stops helping. A map is a diagram, not
+   a photograph: it carries a coastline, a shaded area and five town names, and
+   none of them get clearer at 900px — the picture just starts dominating the
+   roster it was supposed to introduce, pushing the actual plants below the
+   fold. So cap it at about the width it has on a large phone and let it sit at
+   the left of the card. */
+@media (min-width: 40rem) {
+  .region-map {
+    width: 100%;
+    max-width: 26rem;
+    margin: 0 0 0.6rem;
+  }
+}
 .region-map-legend {
   margin: 0 0 0.6rem;
   font-size: 0.9rem;

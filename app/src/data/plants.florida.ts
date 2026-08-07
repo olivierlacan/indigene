@@ -27,9 +27,9 @@ export type { RawPlant };
 
 export const REGION: RegionMeta = {
   id: "florida-central",
-  name: "Florida (north & central)",
+  name: "North & Central Florida",
   short: "North & Central Florida",
-  reference: "Central Florida",
+  reference: "The panhandle, Jacksonville & Orlando",
   zones: "8b–9b",
   note: "Native status is asserted for the panhandle and warm-temperate peninsula, roughly from the Georgia line down to Lake Okeechobee. The subtropical south and the Keys have their own list. Where a plant is really a north- or south-Florida species, its hardiness zones and notes say so.",
   extent: "North to the Georgia line, west along the panhandle to Pensacola, and south to about Lake Okeechobee, where the subtropical south begins.",

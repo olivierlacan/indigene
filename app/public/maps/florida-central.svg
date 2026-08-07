@@ -1,10 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 353" width="640" height="353" role="img">
-<title>Where the Florida (north &amp; central) region reaches</title>
+<title>Where the North &amp; Central Florida region reaches</title>
 <desc>North to the Georgia line, west along the panhandle to Pensacola, and south to about Lake Okeechobee, where the subtropical south begins. Boundary data: US EPA Level III Ecoregions of the Conterminous United States (2011), public domain.</desc>
 <style>
   .land { fill: #e6e2d5; stroke: #bdb6a3; stroke-width: 1.2; stroke-linejoin: round; }
   .admin { fill: none; stroke: #cfcabb; stroke-width: 1; stroke-linejoin: round; }
-  .cover { fill: #175e33; fill-opacity: 0.45; stroke: #0d3d20; stroke-width: 2; stroke-linejoin: round; }
+  /* One region is often a dozen Level III ecoregions, and they are drawn as one
+     path with a subpath each — so a heavy stroke outlines every *internal* seam
+     as boldly as the region's own edge. On the Mid-Atlantic, which is fifteen of
+     them, that read as a shattered windscreen. The seams are still drawn, because
+     the legend says the region is several ecoregions and the picture should agree,
+     but at a third the weight and much closer to the fill: fine internal texture,
+     not fifteen borders competing with the coastline. */
+  .cover { fill: #175e33; fill-opacity: 0.45; stroke: #2f6b45; stroke-opacity: 0.5;
+           stroke-width: 0.7; stroke-linejoin: round; }
   .cover-box { fill: #175e33; fill-opacity: 0.26; stroke: #0d3d20; stroke-width: 2;
                stroke-dasharray: 9 7; stroke-linejoin: round; }
   .pin { fill: #14140f; stroke: #f7f5ef; stroke-width: 2.5; }
@@ -14,7 +22,7 @@
   @media (prefers-color-scheme: dark) {
     .land { fill: #2e3325; stroke: #545d43; }
     .admin { stroke: #434b36; }
-    .cover { fill: #7ec894; fill-opacity: 0.42; stroke: #b9e6c6; }
+    .cover { fill: #7ec894; fill-opacity: 0.42; stroke: #a6d8b6; stroke-opacity: 0.45; }
     .cover-box { fill: #7ec894; fill-opacity: 0.22; stroke: #b9e6c6; }
     .pin { fill: #f2f1e8; stroke: #14160f; }
     .pin-label { fill: #f2f1e8; stroke: #14160f; }

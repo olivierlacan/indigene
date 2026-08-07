@@ -38,9 +38,9 @@ export type { RawPlant };
 
 export const REGION: RegionMeta = {
   id: "ca-south-coast",
-  name: "Southern California (coast, valleys & foothills)",
+  name: "Southern California",
   short: "Southern California",
-  reference: "Los Angeles–San Diego coastal plain",
+  reference: "Coast, valleys & foothills of Los Angeles–San Diego",
   zones: "9b–10b",
   note: "Native status is asserted for cismontane southern California — the coast, the inland valleys and the foothills west of the mountain crest, from about Santa Barbara to the Mexican border. Over the crest the Mojave and Colorado deserts are a different flora with different rules, and the high country of the Transverse and Peninsular ranges is colder than this list assumes; treat these recommendations as untested in both.",
   extent: "From Santa Barbara south to the Mexican border, and from the Pacific inland as far as the mountain crest — the Transverse and Peninsular ranges — and no further. Palm Springs and the desert beyond it are on the other side of that line.",

@@ -23,39 +23,38 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+## [0.24] - 2026-08-07
+
+**Southern California, and a map of where every region ends**
+
+[![The Southern California region map: the coast and valleys shaded from Santa Barbara to San Diego, with Palm Springs outside it](docs/screenshots/pr-103/thumb.png)](docs/screenshots/pr-103/map-card-dark.png)
+[The region list before](docs/screenshots/pr-103/regions-before-dark.png) · [and after](docs/screenshots/pr-103/regions-after-dark.png)
+
 ### Added
 
-- **Southern California is covered — 52 natives for the coast, the valleys and
+- **Southern California is covered — 60 natives for the coast, the valleys and
   the foothills.** Stand anywhere from Santa Barbara down to the Mexican border,
   west of the mountain crest, and Indigene now has a plant list for you instead
-  of an apology: coast live oak, the three sages, California buckwheat, toyon,
-  manzanita, matilija poppy, deergrass and forty-five more, with the wildlife
-  each one feeds. The whole list is built around the one thing that makes
-  gardening here different — **the dry season is the summer** — so the care
-  notes say plainly which plants must never be watered in July, and which
-  browning, bare-looking shrubs in August are doing exactly what they should.
-  Twenty-two kinds of wildlife are named across it, including the California
-  dogface (the state butterfly, which lays its eggs on one shrub and nothing
-  else), the California gnatcatcher that lives its whole life in sage scrub, the
-  Sonoran blue whose caterpillars grow up inside a dudleya's leaves, and the
-  monarch, whose western population has fallen by more than ninety percent. See
-  the whole roster at
+  of an apology: coast live oak, the three sages, laurel sumac, California
+  buckwheat, toyon, manzanita, the wild rose of the creek banks, matilija poppy,
+  deergrass and fifty more, with the wildlife each one feeds. The whole list is
+  built around the one thing that makes gardening here different — **the dry
+  season is the summer** — so the care notes say plainly which plants must never
+  be watered in July, and which browning, bare-looking shrubs in August are
+  doing exactly what they should. Twenty-four kinds of wildlife are named across
+  it: the California dogface (the state butterfly, which lays its eggs on one
+  shrub and nothing else), the California gnatcatcher that lives its whole life
+  in sage scrub, the Sonoran blue whose caterpillars grow up inside a dudleya's
+  leaves, the monarch, whose western population has fallen by more than ninety
+  percent — and the yucca moth, which pollinates the chaparral yucca on purpose,
+  packing the pollen onto the flower by hand so that there will be seeds for its
+  caterpillars to eat. Neither the moth nor the yucca can live without the
+  other. See the whole roster at
   [Southern California](https://indigene.app/regions/ca-south-coast), which
   opens with a map of exactly how far the region reaches — you can see Palm
   Springs sitting outside the shading, on the desert side of the mountains,
   because that is a different flora and a list for it would cook.
-- **Eight more southern California natives, chosen by asking the data rather
-  than remembering.** Laurel sumac, California wild rose, chaparral yucca,
-  deerweed, golden yarrow, silver bush lupine, blue dicks and chaparral bush
-  mallow — sixty plants in the region now. They came out of a ranking of every
-  plant recorded in the region against what the list already had, which turned
-  up two whole kinds of plant the list was missing: a bulb that comes up with
-  the winter rain and dies back before the heat, and the wild rose of the creek
-  banks, whose hips feed birds into midwinter. The chaparral yucca brings a
-  story nothing else here tells — it is pollinated by one moth and one moth
-  only, which gathers the pollen, packs it onto the flower **on purpose**, and
-  lays its eggs there; neither the moth nor the yucca can live without the
-  other.
+
 - **Three things a nursery might sell you by mistake in southern California.**
   The look-alike pages now cover the region's own confusions: tropical milkweed
   beside the native narrowleaf one (it never dies back here, so the parasite
@@ -2225,7 +2224,8 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/e8860f8...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/8f6327b...HEAD
+[0.24]: https://github.com/olivierlacan/indigene/compare/e8860f8...8f6327b
 [0.23]: https://github.com/olivierlacan/indigene/compare/221a9ee...e8860f8
 [0.22]: https://github.com/olivierlacan/indigene/compare/9f09ba2...221a9ee
 [0.21]: https://github.com/olivierlacan/indigene/compare/1774027...9f09ba2

@@ -41,11 +41,26 @@ subtitle on the What's new page.
   ecoregions](https://www.epa.gov/eco-research/level-iii-and-iv-ecoregions-epa-region)
   in the United States and the [European Environment Agency's biogeographical
   regions](https://www.eea.europa.eu/en/datahub/datahubitem-view/11db8d14-f167-4cd5-9205-95638dfd9618)
-  in France. Where a region's edges are still a plain rectangle rather than
-  traced from that map — the Mid-Atlantic, for now — the map draws the rectangle
-  as a dashed box and says so, instead of pretending to a precision it doesn't
-  have. The maps work offline like everything else here, and they follow your
-  phone into dark mode.
+  in France. A few cities are marked on each one, some of them deliberately
+  outside the shading — Bend on the dry side of the Cascades, Orlando north of
+  the south-Florida line — because the edge is the thing you came to find. The
+  maps work offline like everything else here, and they follow your phone into
+  dark mode.
+- **The Mid-Atlantic region now follows real ecoregion edges too.** It was the
+  last region whose coverage was a plain rectangle drawn on a map, which meant
+  the app would hand you a Pennsylvania-tuned plant list in places that don't
+  share Pennsylvania's flora. Its boundary is now traced from the same
+  ecoregion map as everywhere else — the Appalachian ridges, the Piedmont, the
+  coastal plain, the Northeast — and you can see the shape of it on [its
+  page](https://indigene.app/regions/mid-atlantic). One consequence worth
+  saying plainly: a few places just outside those lines — central and
+  north-western Ohio, the Adirondacks and northern New England — will now be
+  told we have no list for them yet, rather than being given one that was never
+  meant for them. Washington, Richmond, Boston, New York, Philadelphia and
+  Pittsburgh are all still inside. If your spot has dropped out and you'd like
+  it covered, say so on the [issue
+  tracker](https://github.com/olivierlacan/indigene/issues) — that's how
+  regions get added.
 - Internal: the region maps are drawn once, at build time, by
   `app/scripts/build-region-maps.mjs` (`npm run maps:build`) and committed as
   one small SVG per region under `app/public/maps/`. It queries the same EPA and

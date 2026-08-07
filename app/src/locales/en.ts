@@ -1244,6 +1244,8 @@ export const en = {
     "Shaded: the {list} biogeographical region — the European Environment Agency's map of climate, soils and wild plants, and what decides the plants you see here.",
   "regionWhere.shadedEea.other":
     "Shaded: the {list} biogeographical regions — the European Environment Agency's map of climate, soils and wild plants, and what decides the plants you see here.",
+  "regionWhere.more.one": "{n} more",
+  "regionWhere.more.other": "{n} more",
   "regionWhere.shadedBox":
     "Dashed: the rectangle this region still is. We haven't traced its edges from the ecoregion map yet, so treat the margins as approximate.",
   "regionWhere.linkEpa": "See the EPA's ecoregion maps",

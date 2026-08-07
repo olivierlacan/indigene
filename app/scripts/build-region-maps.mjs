@@ -16,15 +16,16 @@
 //
 // What each map shows, in the order it's drawn:
 //
-//   - **Land**, for orientation. In the US that's the EPA service's own state
-//     layer, so state lines are on the map without a second source. In Europe
-//     it's the biogeographical regions themselves, whose union is the
-//     continent's coastline.
+//   - **Land**, for orientation: Natural Earth's countries, plus — in the US —
+//     state lines from the ecoregion service's own layer.
 //   - **The coverage**, filled in brand green: this region's ecoregion polygons
 //     *clipped to its coverage box*, which is exactly the rule the app applies
 //     (`regionForSite` = inside the box AND in one of these ecoregions). A
-//     region that hasn't declared ecoregion codes yet — the Mid-Atlantic — gets
-//     its box drawn as the box it is, dashed, rather than a shape it isn't.
+//     region that declares no ecoregion codes gets its box drawn as the box it
+//     is, dashed, rather than a shape it isn't — every shipped region traces
+//     real ecoregion lines today, but the honest fallback stays for the next
+//     region added.
+//   - **A handful of cities**, so the shape is somewhere rather than something.
 //
 // Colors come from an internal stylesheet with a `prefers-color-scheme` query,
 // which an SVG referenced by <img> still honors — and since the app itself
@@ -59,6 +60,85 @@ const NATURAL_EARTH_COUNTRIES =
   "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_countries.geojson";
 
 const UA = "Mozilla/5.0 (indigene region maps; +https://github.com/olivierlacan/indigene)";
+
+/**
+ * The places that tell you where you are.
+ *
+ * A shaded shape on a coastline is only an answer if you can find yourself on
+ * it, so each map carries a handful of cities — enough to fix north, south and
+ * the inland edge, and no more, because labels crowd fast at phone size. Some
+ * are deliberately *outside* the shading (Bend behind the Cascade crest,
+ * Orlando north of the south-Florida line): the edge is the question being
+ * asked, and a town on the wrong side of it answers that better than a town in
+ * the middle. Anything outside a map's frame is dropped, so an over-generous
+ * list is harmless.
+ *
+ * Names are place names, and place names don't translate (the rule `lib/site.ts`
+ * already follows for Level III names) — "Marseille" reads the same in both
+ * languages this app speaks. Coordinates are town centres to two decimals,
+ * which is a few hundred metres: far finer than a dot at this scale.
+ */
+const LANDMARKS = {
+  pnw: [
+    { name: "Vancouver", lat: 49.28, lon: -123.12 },
+    { name: "Seattle", lat: 47.61, lon: -122.33 },
+    { name: "Spokane", lat: 47.66, lon: -117.43 },
+    { name: "Portland", lat: 45.52, lon: -122.68 },
+    { name: "Bend", lat: 44.06, lon: -121.31 },
+    { name: "Eugene", lat: 44.05, lon: -123.09 },
+    { name: "Medford", lat: 42.33, lon: -122.87 },
+  ],
+  "mid-atlantic": [
+    { name: "Boston", lat: 42.36, lon: -71.06 },
+    { name: "Pittsburgh", lat: 40.44, lon: -79.996 },
+    { name: "New York", lat: 40.71, lon: -74.01 },
+    { name: "Philadelphia", lat: 39.95, lon: -75.17 },
+    { name: "Washington", lat: 38.9, lon: -77.04 },
+    { name: "Richmond", lat: 37.54, lon: -77.44 },
+  ],
+  "florida-central": [
+    { name: "Pensacola", lat: 30.42, lon: -87.22 },
+    { name: "Tallahassee", lat: 30.44, lon: -84.28 },
+    { name: "Jacksonville", lat: 30.33, lon: -81.66 },
+    { name: "Orlando", lat: 28.54, lon: -81.38 },
+    { name: "Tampa", lat: 27.95, lon: -82.46 },
+  ],
+  "florida-south": [
+    { name: "Orlando", lat: 28.54, lon: -81.38 },
+    { name: "Fort Myers", lat: 26.64, lon: -81.87 },
+    { name: "West Palm Beach", lat: 26.71, lon: -80.05 },
+    { name: "Miami", lat: 25.77, lon: -80.19 },
+    { name: "Key West", lat: 24.56, lon: -81.78 },
+  ],
+  "france-atlantic": [
+    { name: "Lille", lat: 50.63, lon: 3.06 },
+    { name: "Paris", lat: 48.86, lon: 2.35 },
+    { name: "Rennes", lat: 48.11, lon: -1.68 },
+    { name: "Nantes", lat: 47.22, lon: -1.55 },
+    { name: "Bordeaux", lat: 44.84, lon: -0.58 },
+  ],
+  "france-continental": [
+    { name: "Nancy", lat: 48.69, lon: 6.18 },
+    { name: "Strasbourg", lat: 48.57, lon: 7.75 },
+    { name: "Dijon", lat: 47.32, lon: 5.04 },
+    { name: "Lyon", lat: 45.76, lon: 4.84 },
+    { name: "Genève", lat: 46.2, lon: 6.14 },
+  ],
+  "france-mediterranean": [
+    { name: "Marseille", lat: 43.3, lon: 5.37 },
+    { name: "Nice", lat: 43.7, lon: 7.27 },
+    { name: "Montpellier", lat: 43.61, lon: 3.88 },
+    { name: "Perpignan", lat: 42.7, lon: 2.9 },
+    { name: "Ajaccio", lat: 41.92, lon: 8.74 },
+  ],
+  "france-alpine": [
+    { name: "Genève", lat: 46.2, lon: 6.14 },
+    { name: "Annecy", lat: 45.9, lon: 6.13 },
+    { name: "Chamonix", lat: 45.92, lon: 6.87 },
+    { name: "Grenoble", lat: 45.19, lon: 5.72 },
+    { name: "Briançon", lat: 44.9, lon: 6.64 },
+  ],
+};
 
 /** Drawing size in user units. The page shows it at about a third of this, so
  *  the geometry stays crisp on a 3× phone screen without carrying more decimal
@@ -228,20 +308,89 @@ const STYLE = `
   .cover { fill: #175e33; fill-opacity: 0.45; stroke: #0d3d20; stroke-width: 2; stroke-linejoin: round; }
   .cover-box { fill: #175e33; fill-opacity: 0.26; stroke: #0d3d20; stroke-width: 2;
                stroke-dasharray: 9 7; stroke-linejoin: round; }
+  .pin { fill: #14140f; stroke: #f7f5ef; stroke-width: 2.5; }
+  .pin-label { font: 600 23px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+               fill: #14140f; stroke: #f7f5ef; stroke-width: 5; paint-order: stroke;
+               stroke-linejoin: round; dominant-baseline: central; }
   @media (prefers-color-scheme: dark) {
     .land { fill: #2e3325; stroke: #545d43; }
     .admin { stroke: #434b36; }
     .cover { fill: #7ec894; fill-opacity: 0.42; stroke: #b9e6c6; }
     .cover-box { fill: #7ec894; fill-opacity: 0.22; stroke: #b9e6c6; }
+    .pin { fill: #f2f1e8; stroke: #14160f; }
+    .pin-label { fill: #f2f1e8; stroke: #14160f; }
   }`;
 
-function svgFor({ view, land, admin, cover, boxOnly, credit }) {
+/** Label metrics, close enough to lay out with: at this weight and size a
+ *  character averages a bit over half the font size, which is all the accuracy
+ *  a collision test needs. */
+const LABEL_SIZE = 23;
+const labelWidth = (text) => text.length * LABEL_SIZE * 0.56;
+
+const overlaps = (a, b) =>
+  a.x1 < b.x2 && a.x2 > b.x1 && a.y1 < b.y2 && a.y2 > b.y1;
+
+/**
+ * Cities as dots with names, laid out so no two names touch.
+ *
+ * Each label gets four candidate positions — right of the dot, left of it,
+ * above, below — and takes the first that clears every label already placed and
+ * stays inside the frame. A name with nowhere to go loses its label and keeps
+ * its dot: a dot with no name is a town you can't identify, but two names on
+ * top of each other are two towns nobody can read. Order matters, so the lists
+ * above are written most-recognizable first.
+ */
+function landmarks(places, project, height) {
+  const dots = places.map((p) => project([p.lon, p.lat]));
+  const out = [];
+  // Every dot is an obstacle from the start, so a name can't be laid across a
+  // neighbouring town's marker — which reads as one place with a broken label.
+  // A label may still sit beside its *own* dot, so that one is skipped.
+  const taken = [];
+  for (let i = 0; i < places.length; i++) {
+    const place = places[i];
+    const [x, y] = dots[i];
+    const others = dots
+      .filter((_, j) => j !== i)
+      .map(([dx, dy]) => ({ x1: dx - 7, x2: dx + 7, y1: dy - 7, y2: dy + 7 }));
+    const w = labelWidth(place.name);
+    const candidates = [
+      { x1: x + 11, x2: x + 11 + w, anchor: "start", dx: 11, dy: 0 },
+      { x1: x - 11 - w, x2: x - 11, anchor: "end", dx: -11, dy: 0 },
+      { x1: x - w / 2, x2: x + w / 2, anchor: "middle", dx: 0, dy: -19 },
+      { x1: x - w / 2, x2: x + w / 2, anchor: "middle", dx: 0, dy: 19 },
+    ];
+    const cx = Math.round(x * 10) / 10;
+    const cy = Math.round(y * 10) / 10;
+    out.push(`<circle class="pin" cx="${cx}" cy="${cy}" r="5"/>`);
+    const fit = candidates.find((c) => {
+      const box = { x1: c.x1 - 3, x2: c.x2 + 3, y1: y + c.dy - 13, y2: y + c.dy + 13 };
+      if (box.x1 < 2 || box.x2 > WIDTH - 2 || box.y1 < 2 || box.y2 > height - 2) return false;
+      return !taken.some((t) => overlaps(box, t)) && !others.some((t) => overlaps(box, t));
+    });
+    if (!fit) continue;
+    taken.push({ x1: fit.x1 - 3, x2: fit.x2 + 3, y1: y + fit.dy - 13, y2: y + fit.dy + 13 });
+    const tx = Math.round((x + fit.dx) * 10) / 10;
+    const ty = Math.round((y + fit.dy) * 10) / 10;
+    out.push(
+      `<text class="pin-label" x="${tx}" y="${ty}" text-anchor="${fit.anchor}">` +
+      `${escape(place.name)}</text>`
+    );
+  }
+  return out;
+}
+
+function svgFor({ view, land, admin, cover, places, boxOnly, credit }) {
   const { project, height } = projector(view);
   const h = Math.round(height);
+  const inView = places.filter((p) =>
+    p.lon >= view.minLon && p.lon <= view.maxLon && p.lat >= view.minLat && p.lat <= view.maxLat
+  );
   const layers = [
     `<path class="land" fill-rule="evenodd" d="${pathData(land, project)}"/>`,
     ...(admin?.length ? [`<path class="admin" d="${pathData(admin, project)}"/>`] : []),
     `<path class="${boxOnly ? "cover-box" : "cover"}" fill-rule="evenodd" d="${pathData(cover, project)}"/>`,
+    ...landmarks(inView, project, h),
   ];
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${WIDTH} ${h}" width="${WIDTH}" height="${h}" role="img">
 <title>${credit.title}</title>
@@ -346,6 +495,7 @@ async function buildRegion(meta) {
     : "US EPA Level III Ecoregions of the Conterminous United States (2011), public domain";
   const svg = svgFor({
     view, land, admin, cover,
+    places: LANDMARKS[meta.id] ?? [],
     boxOnly: !meta.ecoregion,
     credit: {
       title: escape(`Where the ${meta.name} region reaches`),

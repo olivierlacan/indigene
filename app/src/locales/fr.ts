@@ -1259,6 +1259,8 @@ export const fr: Dict = {
     "En teinte : la région biogéographique {list} — la carte que l'Agence européenne pour l'environnement (AEE) dresse du climat, des sols et de la flore sauvage, et ce qui détermine les plantes affichées ici.",
   "regionWhere.shadedEea.other":
     "En teinte : les régions biogéographiques {list} — la carte que l'Agence européenne pour l'environnement (AEE) dresse du climat, des sols et de la flore sauvage, et ce qui détermine les plantes affichées ici.",
+  "regionWhere.more.one": "{n} autre",
+  "regionWhere.more.other": "{n} autres",
   "regionWhere.shadedBox":
     "En pointillés : le rectangle que cette région est encore. Ses limites ne sont pas encore reprises de la carte des écorégions — considérez les marges comme approximatives.",
   "regionWhere.linkEpa": "Voir les cartes des écorégions de l'EPA",

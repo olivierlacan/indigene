@@ -68,6 +68,16 @@ subtitle on the What's new page.
 - **Each region map is one shape now, and its coastline is smoother.** The lines
   dividing it into a dozen pieces answered no question anyone asks, and the
   jagged edges were an artefact of keeping the file small.
+- **Region names are shorter, with the qualifier on the line below.** "Florida
+  (south & the Keys)" is now **South Florida**; "Pacific Northwest (west of the
+  Cascades)" is **Pacific Northwest**. The brackets had been pushing a name onto
+  three lines on a phone.
+- **On a laptop the region map sits beside the numbers, not below them.** It
+  used to stretch the full width of the page and push the plant list off the
+  bottom of the screen. On a phone, nothing changes.
+- **Each region map is one shape now, and its coastline is smoother.** The lines
+  dividing it into a dozen pieces answered no question anyone asks, and the
+  jagged edges were an artefact of keeping the file small.
 
 ## [0.24] - 2026-08-07
 

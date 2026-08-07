@@ -3760,17 +3760,46 @@ body[data-layout="profile"] .wip-banner-text {
   margin: 0 -0.4rem 0.6rem;
   border-radius: calc(var(--radius) - 6px);
 }
-/* Past phone width the full-bleed rule stops helping. A map is a diagram, not
-   a photograph: it carries a coastline, a shaded area and five town names, and
-   none of them get clearer at 900px — the picture just starts dominating the
-   roster it was supposed to introduce, pushing the actual plants below the
-   fold. So cap it at about the width it has on a large phone and let it sit at
-   the left of the card. */
+.region-head-note {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+/* Past phone width the full-bleed rule stops helping. A map is a diagram, not a
+   photograph: a coastline, a shaded area and five town names get no clearer at
+   900px, and the picture starts dominating the roster it was supposed to
+   introduce. Between phone and laptop, cap it. */
 @media (min-width: 40rem) {
   .region-map {
     width: 100%;
-    max-width: 26rem;
+    max-width: 24rem;
     margin: 0 0 0.6rem;
+  }
+}
+/* At laptop width, capping the map alone left a small picture marooned in a
+   card the full width of the window — the map got smaller and the empty space
+   around it got bigger, which is worse than the problem. The card belongs
+   *beside* the stats: two columns, the map's own column sized to the map, so
+   nothing is stretched and nothing is stranded. `align-items: start` keeps the
+   map card its natural height instead of stretching it to match the stats. */
+@media (min-width: 52rem) {
+  .region-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(17rem, 21rem);
+    gap: 1rem;
+    align-items: start;
+  }
+  /* Four tiles across a narrowed column would be four cramped words, so the
+     glance block squares up to 2×2 beside the map. */
+  .region-head .stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 0;
+  }
+  .region-head .region-where {
+    margin: 0.85rem 0 0;
+  }
+  /* Its column is already the cap. */
+  .region-map {
+    max-width: none;
   }
 }
 .region-map-legend {

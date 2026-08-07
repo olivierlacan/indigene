@@ -272,20 +272,80 @@ function projector(view) {
 
 /** Rings → one `d` attribute, rounded to a tenth of a user unit (well under a
  *  device pixel at the size this is shown) and stripped of points that round to
- *  where the last one already was. */
-function pathData(rings, project) {
+ *  where the last one already was.
+ *
+ *  **Corners are rounded.** The polygons arrive already simplified by the map
+ *  service, at a tolerance of about three user units — which is a visible
+ *  zigzag at the size these are drawn, and made every coastline look like it had
+ *  been cut with pinking shears. Rather than ask for more vertices (the file is
+ *  committed, and the Mid-Atlantic is 160 rings), each corner is rounded by
+ *  drawing the ring as quadratic curves that pass through the *midpoints* of the
+ *  segments, using each original vertex as the control point. The curve stays
+ *  within half a segment of the original line, which at this tolerance is under
+ *  two pixels, and the shape reads as a coastline instead of a saw.
+ *
+ *  Collinear runs are emitted as straight lines instead, which matters for
+ *  honesty as much as for file size: where a ring follows the coverage box —
+ *  southern California's eastern edge is a meridian, not a landform — it has to
+ *  stay the straight line it actually is. */
+const COLLINEAR = 0.35; // user units of sag below which three points are "straight"
+/** How close to the map's own edge counts as *on* it. Rings are clipped to the
+ *  view, so a coastline that runs off the picture gets square corners on the
+ *  frame — and rounding those turned the whole map into a lozenge with the land
+ *  curling away from its corners. A vertex on the frame is a cut, not a
+ *  landform, and never gets curved. */
+const FRAME = 0.6;
+
+function pathData(rings, project, frame) {
   const parts = [];
+  const r1 = (n) => Math.round(n * 10) / 10;
   for (const ring of rings) {
-    let d = "";
-    let last = null;
+    // Project first, drop consecutive duplicates, and drop the repeated closing
+    // point — the curve closes the ring itself.
+    const pts = [];
     for (const point of ring) {
       const [x, y] = project(point);
-      const xy = `${Math.round(x * 10) / 10} ${Math.round(y * 10) / 10}`;
-      if (xy === last) continue;
-      d += d ? `L${xy}` : `M${xy}`;
-      last = xy;
+      const p = [r1(x), r1(y)];
+      const last = pts[pts.length - 1];
+      if (!last || last[0] !== p[0] || last[1] !== p[1]) pts.push(p);
     }
-    if (d.split(/[ML]/).length > 3) parts.push(`${d}Z`);
+    while (pts.length > 1) {
+      const a = pts[0];
+      const b = pts[pts.length - 1];
+      if (a[0] === b[0] && a[1] === b[1]) pts.pop();
+      else break;
+    }
+    if (pts.length < 3) continue;
+
+    const mid = (a, b) => [r1((a[0] + b[0]) / 2), r1((a[1] + b[1]) / 2)];
+    // Perpendicular distance of the corner from the chord between its
+    // neighbours' midpoints: how much curve this vertex would actually add.
+    const sag = (prev, cur, next) => {
+      const m0 = mid(prev, cur);
+      const m1 = mid(cur, next);
+      const dx = m1[0] - m0[0];
+      const dy = m1[1] - m0[1];
+      const len = Math.hypot(dx, dy);
+      if (!len) return 0;
+      return Math.abs((cur[0] - m0[0]) * dy - (cur[1] - m0[1]) * dx) / len;
+    };
+
+    const n = pts.length;
+    let d = `M${mid(pts[n - 1], pts[0]).join(" ")}`;
+    for (let i = 0; i < n; i++) {
+      const cur = pts[i];
+      const prev = pts[(i - 1 + n) % n];
+      const next = pts[(i + 1) % n];
+      const end = mid(cur, next);
+      const onFrame =
+        frame &&
+        (cur[0] <= FRAME || cur[0] >= frame.w - FRAME ||
+         cur[1] <= FRAME || cur[1] >= frame.h - FRAME);
+      d += onFrame || sag(prev, cur, next) < COLLINEAR
+        ? `L${cur.join(" ")}L${end.join(" ")}`
+        : `Q${cur.join(" ")} ${end.join(" ")}`;
+    }
+    parts.push(`${d}Z`);
   }
   return parts.join("");
 }
@@ -315,15 +375,16 @@ const rect = (box) => [[
 const STYLE = `
   .land { fill: #e6e2d5; stroke: #bdb6a3; stroke-width: 1.2; stroke-linejoin: round; }
   .admin { fill: none; stroke: #cfcabb; stroke-width: 1; stroke-linejoin: round; }
-  /* One region is often a dozen Level III ecoregions, and they are drawn as one
-     path with a subpath each — so a heavy stroke outlines every *internal* seam
-     as boldly as the region's own edge. On the Mid-Atlantic, which is fifteen of
-     them, that read as a shattered windscreen. The seams are still drawn, because
-     the legend says the region is several ecoregions and the picture should agree,
-     but at a third the weight and much closer to the fill: fine internal texture,
-     not fifteen borders competing with the coastline. */
-  .cover { fill: #175e33; fill-opacity: 0.45; stroke: #2f6b45; stroke-opacity: 0.5;
-           stroke-width: 0.7; stroke-linejoin: round; }
+  /* **No stroke, on purpose.** A region is often a dozen Level III ecoregions,
+     drawn as one path with a subpath each, so any stroke outlines every
+     *internal* seam as boldly as the region's own edge — the Mid-Atlantic, at
+     fifteen of them, read as a shattered windscreen. And those seams answer no
+     question a reader has: the caption already names the ecoregions in words,
+     and which of them a garden sits in changes nothing about what to plant. The
+     region is one shape, so it is drawn as one shape. Because every ring is a
+     subpath of a single path, fill-opacity composites once for the whole
+     union - touching polygons leave no seam at all. */
+  .cover { fill: #175e33; fill-opacity: 0.45; }
   .cover-box { fill: #175e33; fill-opacity: 0.26; stroke: #0d3d20; stroke-width: 2;
                stroke-dasharray: 9 7; stroke-linejoin: round; }
   .pin { fill: #14140f; stroke: #f7f5ef; stroke-width: 2.5; }
@@ -333,7 +394,7 @@ const STYLE = `
   @media (prefers-color-scheme: dark) {
     .land { fill: #2e3325; stroke: #545d43; }
     .admin { stroke: #434b36; }
-    .cover { fill: #7ec894; fill-opacity: 0.42; stroke: #a6d8b6; stroke-opacity: 0.45; }
+    .cover { fill: #7ec894; fill-opacity: 0.42; }
     .cover-box { fill: #7ec894; fill-opacity: 0.22; stroke: #b9e6c6; }
     .pin { fill: #f2f1e8; stroke: #14160f; }
     .pin-label { fill: #f2f1e8; stroke: #14160f; }
@@ -401,13 +462,16 @@ function landmarks(places, project, height) {
 function svgFor({ view, land, admin, cover, places, boxOnly, credit }) {
   const { project, height } = projector(view);
   const h = Math.round(height);
+  // The picture's own edges, so a vertex sitting on one is understood as a cut
+  // through the geometry rather than a corner of it (see pathData/FRAME).
+  const frame = { w: WIDTH, h };
   const inView = places.filter((p) =>
     p.lon >= view.minLon && p.lon <= view.maxLon && p.lat >= view.minLat && p.lat <= view.maxLat
   );
   const layers = [
-    `<path class="land" fill-rule="evenodd" d="${pathData(land, project)}"/>`,
-    ...(admin?.length ? [`<path class="admin" d="${pathData(admin, project)}"/>`] : []),
-    `<path class="${boxOnly ? "cover-box" : "cover"}" fill-rule="evenodd" d="${pathData(cover, project)}"/>`,
+    `<path class="land" fill-rule="evenodd" d="${pathData(land, project, frame)}"/>`,
+    ...(admin?.length ? [`<path class="admin" d="${pathData(admin, project, frame)}"/>`] : []),
+    `<path class="${boxOnly ? "cover-box" : "cover"}" fill-rule="evenodd" d="${pathData(cover, project, frame)}"/>`,
     ...landmarks(inView, project, h),
   ];
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${WIDTH} ${h}" width="${WIDTH}" height="${h}" role="img">

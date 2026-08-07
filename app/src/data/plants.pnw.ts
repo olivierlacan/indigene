@@ -31,6 +31,7 @@ export const REGION: RegionMeta = {
   reference: "Portland–Seattle lowlands",
   zones: "8a–9a",
   note: "Native status is asserted for the maritime, west-of-the-Cascades Pacific Northwest. East of the Cascade crest is a drier, different flora — treat these recommendations as untested there.",
+  extent: "North to the Canadian border, south to the Oregon–California line, and from the Pacific coast inland only as far as the crest of the Cascades — the wet, west-facing side of the mountains.",
   // Coarse box over western Oregon and Washington, from the Oregon–California
   // line (42° N) to the Canadian border (49° N), and from the coast inland to
   // roughly the Cascade crest. East of ~-120.5 is high desert, a different

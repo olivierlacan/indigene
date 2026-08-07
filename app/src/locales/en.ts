@@ -1233,6 +1233,23 @@ export const en = {
   "region.filterNoneRest": " instead.",
   "region.nothingHere": "Nothing at this address",
   "region.browseNatives": "Browse the natives",
+  // Where the region reaches, and the map that draws its edges. See
+  // components/region-boundary.ts.
+  "regionWhere.title": "Where this region reaches",
+  "regionWhere.shadedEpa.one":
+    "Shaded: the {list} ecoregion — the US Environmental Protection Agency's map of what the land is made of, and what decides the plants you see here.",
+  "regionWhere.shadedEpa.other":
+    "Shaded: the {list} ecoregions — the US Environmental Protection Agency's map of what the land is made of, and what decides the plants you see here.",
+  "regionWhere.shadedEea.one":
+    "Shaded: the {list} biogeographical region — the European Environment Agency's map of climate, soils and wild plants, and what decides the plants you see here.",
+  "regionWhere.shadedEea.other":
+    "Shaded: the {list} biogeographical regions — the European Environment Agency's map of climate, soils and wild plants, and what decides the plants you see here.",
+  "regionWhere.more.one": "{n} more",
+  "regionWhere.more.other": "{n} more",
+  "regionWhere.shadedBox":
+    "Dashed: the rectangle this region still is. We haven't traced its edges from the ecoregion map yet, so treat the margins as approximate.",
+  "regionWhere.linkEpa": "See the EPA's ecoregion maps",
+  "regionWhere.linkEea": "See the EEA's region map",
   "regionStat.plants.label": "Native plants",
   "regionStat.plants.sub": "curated for this region",
   "regionStat.plants.explain":

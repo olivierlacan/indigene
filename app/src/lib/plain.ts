@@ -36,6 +36,21 @@ export const ISSUES_URL = "https://github.com/olivierlacan/indigene/issues";
  * parlance first ("winters down to about −9 °C"), the zone in parentheses. */
 export const ZONE_INFO_URL = "https://planthardiness.ars.usda.gov/";
 
+/** The official Level III/IV ecoregion maps — the EPA's own page, with a
+ * printable map (and the GIS files) for every part of the country. Linked from
+ * any US region's page, because those polygons are literally what decides which
+ * plant list a spot gets: a reader asking "how far north does this go?"
+ * deserves the boundary itself, not our paraphrase of it. */
+export const EPA_ECOREGION_MAP_URL =
+  "https://www.epa.gov/eco-research/level-iii-and-iv-ecoregions-epa-region";
+
+/** The Europe-side equivalent: the EEA's Biogeographical Regions dataset page,
+ * which previews the map and offers the download. Same job as the EPA link on a
+ * European region's page. (Same item DATA_SOURCES.md cites for the live
+ * lookup — one address for the layer, whether you're querying it or reading it.) */
+export const EEA_BIOREGION_MAP_URL =
+  "https://www.eea.europa.eu/en/datahub/datahubitem-view/11db8d14-f167-4cd5-9205-95638dfd9618";
+
 /** Explainer for the moisture bands ("mesic" and its dry/wet siblings).
  * Same rule: say "evenly moist" first; "mesic" only ever in parentheses. */
 export const MOISTURE_INFO_URL = "https://en.wikipedia.org/wiki/Mesic_habitat";

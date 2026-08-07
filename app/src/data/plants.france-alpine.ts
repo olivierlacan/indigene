@@ -62,6 +62,7 @@ export const REGION: RegionMeta = {
   reference: "Grenoble, Annecy & Briançon",
   zones: "≈4–7",
   note: "Native status is asserted for the Alpine biogeographical region of metropolitan France, and this list is tuned to the Alps specifically: montane and subalpine ground, roughly 600–2,000 m. The Pyrenees share the same EEA designation but are a distinct flora with their own endemics, and are deliberately outside this list's coverage rather than guessed at. Below the mountains, the Continental, Atlantic and Mediterranean lists apply. Host-insect figures are counted from the open European Lepidoptera–plant matrix (Gaytán et al. 2026) for native, mountain-zone relatives of each plant.",
+  extent: "The French Alps only — from the Vercors and the Écrins north to the Chablais, and east to the Italian border. Mountain ground, roughly 600 to 2,000 m up. The Pyrenees are not included.",
   // Coarse box over the French Alps only — from the Vercors and the Écrins
   // north to the Chablais, and from the Grésivaudan east to the Italian border.
   // The Pyrenees are deliberately excluded (see the note above). The box

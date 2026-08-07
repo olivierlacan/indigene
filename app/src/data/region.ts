@@ -55,6 +55,21 @@ export interface RegionMeta {
   /** Plain-language caveat about what "native here" means for this region. */
   note: string;
   /**
+   * How far this region reaches, said the way you'd say it out loud — "from
+   * the Oregon–California line north to the Canadian border, and from the
+   * coast east to the crest of the Cascades".
+   *
+   * Someone reading a roster has a fair question the plant list can't answer:
+   * *does this include me?* The coverage box below answers it in degrees, the
+   * ecoregion codes answer it in classification jargon, and neither is a
+   * sentence anyone can picture. So every region names its own edges in
+   * landmarks — coasts, mountain crests, state lines, lakes.
+   *
+   * English, like `name` and `note`; a reader's own language comes from
+   * `locales/regions.<lang>.ts`.
+   */
+  extent: string;
+  /**
    * Coarse coverage box. Deliberately a bounding box, not a real ecoregion
    * polygon — it matches the app's other coarse-but-honest signals (soil,
    * ecoregion). A spot inside the box gets this region's plant list; outside

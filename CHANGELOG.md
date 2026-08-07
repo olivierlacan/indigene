@@ -25,6 +25,52 @@ subtitle on the What's new page.
 
 ### Added
 
+- **Every region page now has a map of the region.** A reader on [the Pacific
+  Northwest page](https://indigene.app/regions/pnw) had a fair complaint:
+  nothing on it told them how far north or south the region went, so there was
+  no way to know whether it included them. Now the page shows it — a small map
+  with the region shaded, the coast and the state lines around it, and a caption
+  naming the landmarks at its edges ("north to the Canadian border, south to the
+  Oregon–California line, and from the Pacific coast inland only as far as the
+  crest of the Cascades"). The shaded shape isn't drawn by us: it's the
+  ecoregions — areas mapped from what the land is actually made of, its rocks,
+  soils, weather and wild plants — and which one your spot falls in is exactly
+  what decides the plants Indigene shows you. The official maps behind it are
+  linked from the same panel, the [Environmental Protection Agency's Level
+  III/IV
+  ecoregions](https://www.epa.gov/eco-research/level-iii-and-iv-ecoregions-epa-region)
+  in the United States and the [European Environment Agency's biogeographical
+  regions](https://www.eea.europa.eu/en/datahub/datahubitem-view/11db8d14-f167-4cd5-9205-95638dfd9618)
+  in France. A few cities are marked on each one, some of them deliberately
+  outside the shading — Bend on the dry side of the Cascades, Orlando north of
+  the south-Florida line — because the edge is the thing you came to find. The
+  maps work offline like everything else here, and they follow your phone into
+  dark mode.
+- **The Mid-Atlantic region now follows real ecoregion edges too.** It was the
+  last region whose coverage was a plain rectangle drawn on a map, which meant
+  the app would hand you a Pennsylvania-tuned plant list in places that don't
+  share Pennsylvania's flora. Its boundary is now traced from the same
+  ecoregion map as everywhere else — the Appalachian ridges, the Piedmont, the
+  coastal plain, the Northeast — and you can see the shape of it on [its
+  page](https://indigene.app/regions/mid-atlantic). One consequence worth
+  saying plainly: a few places just outside those lines — central and
+  north-western Ohio, the Adirondacks and northern New England — will now be
+  told we have no list for them yet, rather than being given one that was never
+  meant for them. Washington, Richmond, Boston, New York, Philadelphia and
+  Pittsburgh are all still inside. If your spot has dropped out and you'd like
+  it covered, say so on the [issue
+  tracker](https://github.com/olivierlacan/indigene/issues) — that's how
+  regions get added.
+- Internal: the region maps are drawn once, at build time, by
+  `app/scripts/build-region-maps.mjs` (`npm run maps:build`) and committed as
+  one small SVG per region under `app/public/maps/`. It queries the same EPA and
+  EEA services the app already uses live, plus Natural Earth for country
+  outlines, then simplifies, clips each region's polygons to its coverage box —
+  the drawing is the app's real selection rule, not an artist's impression — and
+  renders paths. No map library, no tile host, no third-party request at
+  page-view time, nothing added to the JS bundle: the page loads an `<img>`. The
+  drawn size of each map lands in a generated `src/data/region-maps.ts` so the
+  page reserves the right space and the roster doesn't jump when a map arrives.
 - Internal: `npm run candidates -- --region <id>` proposes the next plants for a
   region and says why it picked each one, so growing a list stops being a matter
   of who remembers what. It ranks the most-recorded plants inside the region's

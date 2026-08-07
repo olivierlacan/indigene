@@ -6,10 +6,11 @@ in `app/src/lib/site.ts` (mirrored in `server/app/site_fetcher.rb`) queries the
 live EPA service; the confirm screen shows the real Level III/IV names; and
 `regionForSite` refines the bounding-box match by the spot's Level III code. PNW,
 north/central Florida and south Florida declare their ecoregions; Florida is now
-two regions split along the Southern Florida Coastal Plain (76) seam. Everything
-falls back to the box offline. **Deliberately deferred:** Level III codes for the
-Mid-Atlantic (its box works and has no edge bug) and Phase C offline polygons
-(they fight the tiny-bundle, service-worker-based offline model). Details below. This replaces the coarse lat/lon bounding boxes
+two regions split along the Southern Florida Coastal Plain (76) seam; and the
+Mid-Atlantic declares its fifteen eastern-forest codes too, so **every shipped
+region now traces real ecoregion lines**. Everything falls back to the box
+offline. **Deliberately deferred:** Phase C offline polygons (they fight the
+tiny-bundle, service-worker-based offline model). Details below. This replaces the coarse lat/lon bounding boxes
 that currently (a) label a spot's ecoregion on the confirm screen and (b) decide
 which region's plant list applies. Boxes are honest but blunt: a point just east
 of the Cascade crest still resolves to the Pacific Northwest west-side list, and
@@ -111,10 +112,20 @@ resolved site the box decides, so nothing regresses offline.
 
 Declared code sets: **PNW** = 1/2/3/4/78 (excludes 9, the eastern Cascades);
 **north/central Florida** = 65/75; **south Florida & the Keys** = 75/76.
-**Mid-Atlantic** is intentionally left box-only — its box has no known edge bug,
-and enumerating its ~dozen Appalachian/Piedmont/coastal L3 codes correctly is its
-own task with real regression risk (a missed code would send valid points to "no
-list"); omitting the field means the box decides, exactly as before.
+**Mid-Atlantic** = 58/67/70/69/60/83/59/45/61/64/62/63/65/84/66 — the fifteen
+eastern-forest ecoregions its box covers, ordered biggest-share-first. It was
+left box-only for a long time because a missed code sends valid points to "no
+list"; the set was finally enumerated by asking the service which codes the box
+actually intersects (ranked by clipped area) and checking known cities against
+the live point query. The check that decided the shape of the set: **Washington
+and Richmond are in 65, Southeastern Plains** — leaving 65 out would have left
+the capital with no list at all. Deliberately excluded, all of them a midwestern
+or boreal flora this Pennsylvania-tuned list shouldn't assert: Eastern Corn Belt
+Plains (55, Columbus), Southern Michigan/Northern Indiana Drift Plains (56),
+Huron/Erie Lake Plains (57, Toledo), Northern Lakes and Forests (50, the
+Adirondack and northern New England edge), Interior Plateau (71). Together they
+are ~8% of the box, and a spot in them now gets an honest "no list yet" when the
+EPA can be asked; offline the box still decides.
 
 **The Florida split (done).** Florida is two regions divided at a ~27.2° N seam
 (roughly Lake Okeechobee, the base of the subtropical zone) with abutting,
@@ -134,12 +145,13 @@ Shipped L3 code sets (in the region data files):
   Coastal Plain (75).
 - **South Florida & the Keys** (`florida-south`): Southern Coastal Plain (75),
   Southern Florida Coastal Plain (76).
-- **Mid-Atlantic** (`mid-atlantic`): none declared — box-only (see above). The
-  reference set if it's ever added: Piedmont (45), Northern Piedmont (64), Blue
-  Ridge (66), Ridge and Valley (67), Central Appalachians (69), North Central
-  Appalachians (62), Northeastern Highlands (58), Northeastern Coastal Zone (59),
-  Middle Atlantic Coastal Plain (63), Atlantic Coastal Pine Barrens (84), plus
-  the Allegheny Plateau/Great Lakes fringes — verify against the atlas before use.
+- **Mid-Atlantic** (`mid-atlantic`): Northeastern Highlands (58), Ridge and
+  Valley (67), Western Allegheny Plateau (70), Central Appalachians (69),
+  Northern Allegheny Plateau (60), Eastern Great Lakes Lowlands (83),
+  Northeastern Coastal Zone (59), Piedmont (45), Erie Drift Plain (61), Northern
+  Piedmont (64), North Central Appalachians (62), Middle Atlantic Coastal Plain
+  (63), Southeastern Plains (65), Atlantic Coastal Pine Barrens (84), Blue Ridge
+  (66) — *excludes* 55, 56, 57, 50 and 71 (see above).
 
 ### 3. Fully-offline accurate selection — deferred by decision
 The live query is online-only. Ecoregion-accurate selection with no signal would
@@ -166,14 +178,52 @@ a concrete need. The shipped product is §1 (labels) + §2 (selection).
   service-worker-based offline model. The box fallback already gives correct-
   enough offline selection. Revisit only if a concrete need appears; if so, scope
   it to just the covered regions' polygons, not all 84.
-- **Follow-up (optional):** Mid-Atlantic L3 codes — only worth doing with the
-  full, verified code list, since the box already works there.
+- **D — showing the reader where the region is:** ✅ **done.** Every region page
+  carries a "Where this region reaches" panel (`components/region-boundary.ts`):
+  the boundary **drawn**, a caption naming the landmarks at its edges
+  (`RegionMeta.extent`), which L3 ecoregions the shaded shape is
+  (`data/ecoregions.ts`), and a link to the authority's own atlas. It exists
+  because a reader on `/regions/pnw` could read the whole page without learning
+  how far north the region went; the boundary was in the data three times over
+  (box, codes, caveat) and on screen zero times.
+
+  The map is a static SVG per region, built by `scripts/build-region-maps.mjs`
+  and committed to `public/maps/`. That sidesteps §3's arithmetic rather than
+  paying it: the polygons are simplified, clipped to the region's own coverage
+  box, and rendered to paths **here**, so what ships is 8–27 KB of drawing per
+  region — lazily loaded, service-worker cached, no map library, no tile host,
+  no third-party request at page-view time, and correct in dark mode because
+  the SVG carries its own `prefers-color-scheme` stylesheet. Land and borders
+  come from Natural Earth (public domain) plus, in the US, the EPA service's own
+  state layer.
+
+  What the drawing deliberately shows is *the app's actual rule*: ecoregion
+  polygons **intersected with** the coverage box, which is what `regionForSite`
+  applies online. So the France maps show, honestly, that a spot in Belgium
+  inside the Atlantic box and in the Atlantic biogeographical region resolves to
+  the Atlantic-France list — a pre-existing consequence of box-plus-code
+  selection that the map makes visible for the first time. Worth a decision
+  (tighten the boxes, or say the lists travel), not a silent redraw.
+- **E — pan-and-zoom, labels, your dot on the map:** not started, and not
+  obviously needed. A static picture answers "does this include me?" for a
+  reader who knows roughly where they live. Putting *their* spot on it is the
+  natural follow-up and would want the confirm screen more than the region page.
+- **Follow-up (done):** Mid-Atlantic L3 codes — enumerated from the service and
+  checked against known cities, so its page draws traced ecoregion lines like
+  every other region's.
 
 ## Testing
-- Known-point → expected L3: Portland→Willamette Valley (3), Seattle→Puget
-  Lowland (2), Bend→Eastern Cascades (9, uncovered), Philadelphia→Northern
-  Piedmont (64), Orlando→Southern Coastal Plain (75), Miami→Southern Florida
-  Coastal Plain (76).
+- Known-point → expected L3, all confirmed against the live service: Portland→
+  Willamette Valley (3), Seattle→Puget Lowland (2), Bend→Eastern Cascades (9,
+  uncovered), Orlando→Southern Coastal Plain (75), Miami→Southern Florida Coastal
+  Plain (76). And for the Mid-Atlantic set: Philadelphia→Middle Atlantic Coastal
+  Plain (63, *not* Northern Piedmont as this plan used to guess), Washington and
+  Richmond→Southeastern Plains (65), Pittsburgh→Western Allegheny Plateau (70),
+  Boston and New York→Northeastern Coastal Zone (59), Harrisburg and Scranton→
+  Ridge and Valley (67), Charlottesville→Northern Piedmont (64), Buffalo and
+  Cleveland→Eastern Great Lakes Lowlands (83), Danville VA→Piedmont (45),
+  Columbus OH→Eastern Corn Belt Plains (55, deliberately uncovered), Toledo→
+  Huron/Erie Lake Plains (57, deliberately uncovered).
 - Unit-test the L3-code→region mapping with a **mocked** ArcGIS response so CI
   stays offline and deterministic.
 - Assert the box fallback still selects correctly when `site.ecoregion` is null.

@@ -1236,16 +1236,16 @@ export const en = {
   // Where the region reaches, and the map that draws its edges. See
   // components/region-boundary.ts.
   "regionWhere.title": "Where this region reaches",
-  "regionWhere.followsEpa.one":
-    "Those edges trace an ecoregion — {list} — an area the US Environmental Protection Agency maps by what the land is made of, not by state lines. Where it runs is what decides the plants you see here.",
-  "regionWhere.followsEpa.other":
-    "Those edges trace ecoregions — {list} — areas the US Environmental Protection Agency maps by what the land is made of, not by state lines. Where they run is what decides the plants you see here.",
-  "regionWhere.followsEea.one":
-    "Those edges trace a biogeographical region — the {list} one — an area the European Environment Agency maps by climate, soils and wild plants rather than by national borders. Where it runs is what decides the plants you see here.",
-  "regionWhere.followsEea.other":
-    "Those edges trace biogeographical regions — {list} — areas the European Environment Agency maps by climate, soils and wild plants rather than by national borders. Where they run is what decides the plants you see here.",
-  "regionWhere.broad":
-    "This region's edges are still drawn as a rough rectangle rather than traced from the ecoregion map, so treat the outer margins as approximate.",
+  "regionWhere.shadedEpa.one":
+    "Shaded: the {list} ecoregion — the US Environmental Protection Agency's map of what the land is made of, and what decides the plants you see here.",
+  "regionWhere.shadedEpa.other":
+    "Shaded: the {list} ecoregions — the US Environmental Protection Agency's map of what the land is made of, and what decides the plants you see here.",
+  "regionWhere.shadedEea.one":
+    "Shaded: the {list} biogeographical region — the European Environment Agency's map of climate, soils and wild plants, and what decides the plants you see here.",
+  "regionWhere.shadedEea.other":
+    "Shaded: the {list} biogeographical regions — the European Environment Agency's map of climate, soils and wild plants, and what decides the plants you see here.",
+  "regionWhere.shadedBox":
+    "Dashed: the rectangle this region still is. We haven't traced its edges from the ecoregion map yet, so treat the margins as approximate.",
   "regionWhere.linkEpa": "See the EPA's ecoregion maps",
   "regionWhere.linkEea": "See the EEA's region map",
   "regionStat.plants.label": "Native plants",

@@ -25,25 +25,37 @@ subtitle on the What's new page.
 
 ### Added
 
-- **Every region page now says how far the region reaches — and links the map
-  that draws its edges.** A reader on [the Pacific Northwest
-  page](https://indigene.app/regions/pnw) had a fair complaint: nothing on it
-  told them how far north or south the region went, so there was no way to know
-  whether it included them. Each region page now has a **Where this region
-  reaches** panel that says it in landmarks — "north to the Canadian border,
-  south to the Oregon–California line, and from the Pacific coast inland only as
-  far as the crest of the Cascades" — then names the mapped areas those edges
-  trace, and links straight to the official map of them. Those maps are not
-  decoration: an ecoregion is an area mapped by what the land is actually made
-  of, its rocks, soils, weather and wild plants, and which one your spot falls
-  in is exactly what decides the plants Indigene shows you. In the US the map is
-  the [Environmental Protection Agency's Level III/IV
-  ecoregions](https://www.epa.gov/eco-research/level-iii-and-iv-ecoregions-epa-region);
-  in France it's the [European Environment Agency's biogeographical
-  regions](https://www.eea.europa.eu/en/datahub/datahubitem-view/11db8d14-f167-4cd5-9205-95638dfd9618).
-  Where a region's edges are still a rough rectangle rather than traced from the
-  map — the Mid-Atlantic, for now — the panel says so instead of pretending
-  otherwise.
+- **Every region page now has a map of the region.** A reader on [the Pacific
+  Northwest page](https://indigene.app/regions/pnw) had a fair complaint:
+  nothing on it told them how far north or south the region went, so there was
+  no way to know whether it included them. Now the page shows it — a small map
+  with the region shaded, the coast and the state lines around it, and a caption
+  naming the landmarks at its edges ("north to the Canadian border, south to the
+  Oregon–California line, and from the Pacific coast inland only as far as the
+  crest of the Cascades"). The shaded shape isn't drawn by us: it's the
+  ecoregions — areas mapped from what the land is actually made of, its rocks,
+  soils, weather and wild plants — and which one your spot falls in is exactly
+  what decides the plants Indigene shows you. The official maps behind it are
+  linked from the same panel, the [Environmental Protection Agency's Level
+  III/IV
+  ecoregions](https://www.epa.gov/eco-research/level-iii-and-iv-ecoregions-epa-region)
+  in the United States and the [European Environment Agency's biogeographical
+  regions](https://www.eea.europa.eu/en/datahub/datahubitem-view/11db8d14-f167-4cd5-9205-95638dfd9618)
+  in France. Where a region's edges are still a plain rectangle rather than
+  traced from that map — the Mid-Atlantic, for now — the map draws the rectangle
+  as a dashed box and says so, instead of pretending to a precision it doesn't
+  have. The maps work offline like everything else here, and they follow your
+  phone into dark mode.
+- Internal: the region maps are drawn once, at build time, by
+  `app/scripts/build-region-maps.mjs` (`npm run maps:build`) and committed as
+  one small SVG per region under `app/public/maps/`. It queries the same EPA and
+  EEA services the app already uses live, plus Natural Earth for country
+  outlines, then simplifies, clips each region's polygons to its coverage box —
+  the drawing is the app's real selection rule, not an artist's impression — and
+  renders paths. No map library, no tile host, no third-party request at
+  page-view time, nothing added to the JS bundle: the page loads an `<img>`. The
+  drawn size of each map lands in a generated `src/data/region-maps.ts` so the
+  page reserves the right space and the roster doesn't jump when a map arrives.
 - Internal: `npm run candidates -- --region <id>` proposes the next plants for a
   region and says why it picked each one, so growing a list stops being a matter
   of who remembers what. It ranks the most-recorded plants inside the region's

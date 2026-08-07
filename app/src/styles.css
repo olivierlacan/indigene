@@ -3742,6 +3742,35 @@ body[data-layout="profile"] .wip-banner-text {
    place and nothing else — so the line is plain text again (see
    `.region-card-ref` above) and needs no flex row of its own. */
 
+/* --- Where this region reaches ------------------------------------------ */
+/* The drawn boundary (public/maps/<id>.svg, built by scripts/build-region-maps
+   .mjs) with its caption underneath. The image carries its own width/height so
+   the browser reserves the box before the file lands; `height: auto` lets it
+   scale down to the card while keeping that ratio.
+
+   No border and no background behind it: the map's own land fill is already a
+   shape against the card, and a frame around a picture of a coastline reads as
+   a second, wronger boundary. It sits full-bleed to the card's padding —
+   negative margins — because the shapes are small enough as it is on a phone. */
+.region-map-figure {
+  margin: 0 -0.4rem 0.5rem;
+}
+.region-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius) - 6px);
+}
+.region-map-figure figcaption {
+  margin: 0.5rem 0.4rem 0;
+  font-size: 0.95rem;
+}
+.region-map-legend {
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
 /* --- The plants that keep one animal going ------------------------------- */
 /* A row per plant on an animal's page: silhouette, name, the tie chips, what
    the tie is, and its source. One column on a phone; on a laptop they reflow

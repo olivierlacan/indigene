@@ -25,6 +25,47 @@ subtitle on the What's new page.
 
 ### Added
 
+- **Southern California is covered — 52 natives for the coast, the valleys and
+  the foothills.** Stand anywhere from Santa Barbara down to the Mexican border,
+  west of the mountain crest, and Indigene now has a plant list for you instead
+  of an apology: coast live oak, the three sages, California buckwheat, toyon,
+  manzanita, matilija poppy, deergrass and forty-five more, with the wildlife
+  each one feeds. The whole list is built around the one thing that makes
+  gardening here different — **the dry season is the summer** — so the care
+  notes say plainly which plants must never be watered in July, and which
+  browning, bare-looking shrubs in August are doing exactly what they should.
+  Twenty-two kinds of wildlife are named across it, including the California
+  dogface (the state butterfly, which lays its eggs on one shrub and nothing
+  else), the California gnatcatcher that lives its whole life in sage scrub, the
+  Sonoran blue whose caterpillars grow up inside a dudleya's leaves, and the
+  monarch, whose western population has fallen by more than ninety percent. See
+  the whole roster at
+  [Southern California](https://indigene.app/regions/ca-south-coast), which
+  opens with a map of exactly how far the region reaches — you can see Palm
+  Springs sitting outside the shading, on the desert side of the mountains,
+  because that is a different flora and a list for it would cook.
+- **Eight more southern California natives, chosen by asking the data rather
+  than remembering.** Laurel sumac, California wild rose, chaparral yucca,
+  deerweed, golden yarrow, silver bush lupine, blue dicks and chaparral bush
+  mallow — sixty plants in the region now. They came out of a ranking of every
+  plant recorded in the region against what the list already had, which turned
+  up two whole kinds of plant the list was missing: a bulb that comes up with
+  the winter rain and dies back before the heat, and the wild rose of the creek
+  banks, whose hips feed birds into midwinter. The chaparral yucca brings a
+  story nothing else here tells — it is pollinated by one moth and one moth
+  only, which gathers the pollen, packs it onto the flower **on purpose**, and
+  lays its eggs there; neither the moth nor the yucca can live without the
+  other.
+- **Three things a nursery might sell you by mistake in southern California.**
+  The look-alike pages now cover the region's own confusions: tropical milkweed
+  beside the native narrowleaf one (it never dies back here, so the parasite
+  builds up and monarchs stay instead of migrating), pampas grass beside
+  deergrass, and firethorn beside toyon — each with the tells you can check
+  standing in front of the plant. [See them](https://indigene.app/lookalikes).
+- Internal: `docs/west-coast-plan.md` maps the rest of the West Coast — the
+  eight regions that fill Oregon and California, the Omernik ecoregion codes and
+  coverage boxes each one claims, the order they'll be built in, and why the
+  deserts come last rather than getting a chaparral list they can't use.
 - **Every region page now has a map of the region.** A reader on [the Pacific
   Northwest page](https://indigene.app/regions/pnw) had a fair complaint:
   nothing on it told them how far north or south the region went, so there was

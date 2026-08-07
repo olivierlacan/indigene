@@ -91,6 +91,13 @@ const LANDMARKS = {
     { name: "Eugene", lat: 44.05, lon: -123.09 },
     { name: "Medford", lat: 42.33, lon: -122.87 },
   ],
+  "ca-south-coast": [
+    { name: "Santa Barbara", lat: 34.42, lon: -119.7 },
+    { name: "Los Angeles", lat: 34.05, lon: -118.24 },
+    { name: "Riverside", lat: 33.95, lon: -117.4 },
+    { name: "Palm Springs", lat: 33.83, lon: -116.55 },
+    { name: "San Diego", lat: 32.72, lon: -117.16 },
+  ],
   "mid-atlantic": [
     { name: "Boston", lat: 42.36, lon: -71.06 },
     { name: "Pittsburgh", lat: 40.44, lon: -79.996 },

@@ -6,6 +6,7 @@
 export const REGION_MAP_SIZES: Record<string, { w: number; h: number }> = {
   "mid-atlantic": { w: 640, h: 615 },
   "pnw": { w: 640, h: 768 },
+  "ca-south-coast": { w: 640, h: 551 },
   "florida-central": { w: 640, h: 353 },
   "florida-south": { w: 640, h: 740 },
   "france-atlantic": { w: 640, h: 745 },

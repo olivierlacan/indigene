@@ -296,6 +296,26 @@ export const LOOKALIKES: Lookalike[] = [
     originBasis: "Missouri Botanical Garden; Penn State Extension; Invasive Plant Atlas.",
   },
   {
+    id: "cortaderia-selloana",
+    common: "Pampas grass",
+    latin: "Cortaderia selloana",
+    form: "grass",
+    origin: "Native to southern South America.",
+    blurb:
+      "The huge grass with cream feather-duster plumes on roadsides and coastal bluffs up and down California. One plant throws millions of seeds that fly for miles, and the stands it makes on a dune or a burnt slope are dense enough to shut everything else out — and they burn hot. The leaf edges are sharp enough to cut a hand.",
+    originBasis: "Cal-IPC Invasive Plant Inventory (high); Jepson eFlora; California State Parks.",
+  },
+  {
+    id: "pyracantha-angustifolia",
+    common: "Firethorn (pyracantha)",
+    latin: "Pyracantha angustifolia",
+    form: "shrub",
+    origin: "Native to south-west China.",
+    blurb:
+      "The thorny hedge shrub covered in orange-red berries every winter, planted by the mile in California suburbs. Birds eat the fruit and drop the seed in canyons and on hillsides, where it comes up as a naturalized shrub — familiar enough that people often assume the native toyon beside it is the same plant.",
+    originBasis: "Jepson eFlora (naturalized in California); Calflora; Missouri Botanical Garden.",
+  },
+  {
     id: "stachytarpheta-cayennensis",
     common: "Nettleleaf porterweed",
     latin: "Stachytarpheta cayennensis",
@@ -571,6 +591,51 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
           { feature: "Where it is", native: "Wild, in the shade beneath conifers.", lookalike: "Planted, in a garden." },
         ],
         basis: "Burke Herbarium (University of Washington); Oregon State University; Missouri Botanical Garden.",
+      },
+    ],
+  },
+
+  "ca-south-coast": {
+    "asclepias-fascicularis": [
+      {
+        lookalikeId: "asclepias-curassavica",
+        status: "introduced",
+        why: "Both are milkweeds, both are sold for monarchs, and in southern California only one of them ever stops growing.",
+        tells: [
+          { feature: "Flower colour", native: "Dull white to pale pink, in domed clusters.", lookalike: "Bright red outer petals around a yellow-orange crown." },
+          { feature: "Leaves", native: "Very narrow, almost grassy, in whorls up the stem.", lookalike: "Broad and pointed, in opposite pairs." },
+          { feature: "In winter", native: "Dies to the ground and rests until spring.", lookalike: "Never stops in this climate. The OE parasite builds up on leaves that are never shed, and monarchs stay to breed instead of flying to the coast for winter." },
+          { feature: "If you already have it", native: "Nothing to do.", lookalike: "Cut it to the ground every autumn, or replace it — the western monarch is down more than ninety percent and this is one of the few things a garden can get wrong." },
+        ],
+        basis: "Xerces Society Western Monarch Count; Monarch Joint Venture; UC ANR.",
+      },
+    ],
+    "muhlenbergia-rigens": [
+      {
+        lookalikeId: "cortaderia-selloana",
+        status: "invasive",
+        why: "Both are big fountain-shaped bunchgrasses sold as an architectural clump for a dry garden.",
+        tells: [
+          { feature: "Size", native: "Waist high, four or five feet across.", lookalike: "Head high or more, and twice as wide." },
+          { feature: "The plume", native: "Narrow, upright, grey-green spikes held just above the leaves.", lookalike: "A huge cream feather duster on a stalk well clear of the clump." },
+          { feature: "The leaf edge", native: "Rough, but safe to run a hand along.", lookalike: "Sharp enough to cut you — this is the quickest test of all." },
+          { feature: "What happens next", native: "Stays where it was planted.", lookalike: "Millions of seeds on the wind; it is already the plant taking over coastal bluffs and burnt slopes." },
+        ],
+        basis: "Cal-IPC Invasive Plant Inventory; Jepson eFlora; UC ANR.",
+      },
+    ],
+    "heteromeles-arbutifolia": [
+      {
+        lookalikeId: "pyracantha-angustifolia",
+        status: "introduced",
+        why: "Two glossy evergreen shrubs loaded with orange-red berries at Christmas, often in the same street.",
+        tells: [
+          { feature: "Thorns", native: "None at all.", lookalike: "Stiff spines along the stems — the reason it gets planted under windows." },
+          { feature: "Leaf edge", native: "Sharply and evenly toothed all round, leathery, four inches long.", lookalike: "Small, mostly smooth-edged, often notched at the tip." },
+          { feature: "Berries", native: "In loose open sprays at the branch tips.", lookalike: "In tight flat masses pressed along the stem." },
+          { feature: "Where it turns up", native: "Wild on chaparral slopes and in canyons.", lookalike: "Planted — and increasingly seeding itself into those same canyons where birds drop it." },
+        ],
+        basis: "Jepson eFlora; Calflora; UC ANR; Theodore Payne Foundation.",
       },
     ],
   },

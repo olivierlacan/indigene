@@ -1504,7 +1504,8 @@ export const en = {
   "sources.fig.tiesFrom1":
     "— each plant-and-animal pairing cites a source, and the app refuses to show one that doesn't. How ",
   "sources.fig.tiesEm": "much",
-  "sources.fig.tiesFrom2": " an animal depends on that plant is our reading of those sources.",
+  "sources.fig.tiesFrom2":
+    " an animal depends on that plant is our reading of those sources. Many of these pairings were found by searching an open database of published plant-and-animal records, and each one keeps the name of the study it came from.",
   "sources.fig.sun": "Hours of sun",
   "sources.fig.sunFrom":
     "— your device calculates where the sun goes over your spot across the year, using the standard NOAA method. No lookup, no network.",

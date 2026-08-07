@@ -37,6 +37,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
     propagationNote:
       "Récoltez les chatons mûrs à la fin de l'été, quand ils s'effritent, et répandez la graine, fine comme de la poussière, à la surface d'une terre humide — il lui faut la lumière, ne l'enterrez pas. Semée à l'automne et laissée dehors pour l'hiver, elle lève sans difficulté au printemps.",
     supportNotes: {
+      "mourning-cloak":
+        "Les feuilles de bouleau nourrissent les chenilles noires épineuses du morio, qui restent en groupe sur une même branche jusqu'à être presque adultes.",
       "conifer-seed-finches":
         "Les chatons du bouleau s'effritent tout l'hiver en une graine si fine que seuls les petits fringilles s'en donnent la peine — tarins et sizerins se pendent la tête en bas au bout des rameaux pour l'atteindre, en général en une seule bande bruyante.",
     },
@@ -51,6 +53,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
     propagationNote:
       "Le plus facile qui soit : coupez en fin d'hiver des rameaux nus gros comme un crayon et enfoncez-les en terre humide, ils s'enracinent tout seuls. (Le saule marsault s'enracine un peu moins volontiers que ses cousins : prenez-en quelques-uns de plus.) Sa graine cotonneuse ne vit que quelques jours ; si vous passez par elle, semez-la aussitôt sur de la vase.",
     supportNotes: {
+      "mourning-cloak":
+        "Le saule est l'autre arbre à chenilles du morio — et l'adulte, qui passe l'hiver caché, est souvent le premier papillon que l'on voit en février.",
       "purple-emperor":
         "Le grand mars changeant pond sur les saules, et c'est le marsault qu'il choisit le plus souvent. Sa chenille passe l'hiver aplatie contre un rameau, exactement de la couleur de l'écorce, et reverdit avec les feuilles.",
       "bumble-bees":
@@ -340,6 +344,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
     propagationNote:
       "Prélevez des extrémités de pousses en voie d'aoûtement à la fin de l'été et faites-les raciner sous abri dans un mélange sableux sans calcaire. Plus simple encore : butez du terreau acide sur la base d'un vieux pied au printemps ; les tiges enterrées s'enracinent et se détachent en nouveaux plants un an plus tard.",
     supportNotes: {
+      "painted-lady":
+        "Une lande en août est l'endroit où les belles-dames font le plein avant de repartir vers le sud — certaines atteindront l'Afrique du Nord.",
       "silver-studded-blue":
         "La callune est la plante de ce papillon, et les fourmis noires en sont l'autre moitié : elles trouvent la chenille, se nourrissent du liquide sucré qu'elle exsude et la gardent en échange, emportant souvent la chrysalide dans leur propre nid. C'est pourquoi il veut de la jeune bruyère, avec du sol nu et chaud entre les pieds, et non un tapis refermé.",
       "emperor-moth":
@@ -659,6 +665,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
     propagationNote:
       "Le plus facile qui soit : coupez en fin d'été un morceau de pousse juvénile non grimpante et enfoncez-le dans une terre humide ou un pot, il s'enracine sans façon. Les tiges qui rampent au sol s'enracinent en chemin : vous pouvez soulever et déplacer les morceaux enracinés à tout moment.",
     supportNotes: {
+      "nettle-tree-butterfly":
+        "Le lierre fleurit en octobre, quand plus rien ne fleurit, et c'est ce dont se remplissent les papillons qui hivernent à l'état adulte avant de s'endormir.",
       "holly-blue":
         "La génération d'été de l'azuré des nerpruns pond sur les boutons floraux du lierre — la même plante dont les fleurs d'octobre nourrissent les adultes et dont le fouillis persistant les abrite. Le lierre est la moitié de la raison pour laquelle c'est l'azuré qui prospère en ville.",
       "blackcaps-warblers":

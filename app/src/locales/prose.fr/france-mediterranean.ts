@@ -12,6 +12,12 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
   // France méditerranéenne — arbres.
   // -------------------------------------------------------------------------
   "Quercus ilex": {
+    supportNotes: {
+      "eurasian-jay":
+        "Le gland de chêne vert est la réserve d'hiver du geai. Il l'enterre isolément, partout sur le versant, et ceux qu'il ne retrouve pas lèvent sous le buisson qui les cachait.",
+      "blackcaps-warblers":
+        "Un chêne persistant garde son couvert tout l'hiver, et c'est pour cela qu'autant de petits oiseaux viennent y dormir quand le mistral se lève.",
+    },
     nativeNote:
       "Le chêne persistant qui définit le paysage du Midi, de la garrigue languedocienne aux collines provençales et à la Corse.",
     careNote:
@@ -22,6 +28,10 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
       "Ramassez les glands à leur chute en automne et faites-les flotter dans l'eau — jetez ceux qui remontent, semez aussitôt ceux qui coulent. Ils germent dès l'automne sans passage au froid et ne doivent jamais sécher. À cause de la racine pivotante, démarrez-le en pot haut, ou semez-le là où il vivra.",
   },
   "Quercus pubescens": {
+    supportNotes: {
+      "eurasian-jay":
+        "Les glands du chêne blanc sont plus gros et plus doux que ceux du chêne vert, et les geais les prennent en premier.",
+    },
     nativeNote:
       "Le chêne caduc de l'arrière-pays méridional le plus chaud — le chêne truffier provençal, sur les coteaux calcaires et les vieilles terrasses.",
     careNote:
@@ -32,6 +42,10 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
       "Comme pour le chêne vert : faites flotter les glands d'automne, jetez ceux qui remontent, semez frais ceux qui coulent en pot profond ou directement en terre, et ne les laissez jamais sécher.",
   },
   "Pinus halepensis": {
+    supportNotes: {
+      "conifer-seed-finches":
+        "Les cônes du pin d'Alep peuvent rester fermés sur l'arbre pendant des années. Le bec croisé du bec-croisé est l'outil qui les ouvre, et les tarins prennent ce qui tombe.",
+    },
     nativeNote:
       "Le pin du littoral provençal — l'arbre de toutes les photographies des calanques, sur le calcaire le plus sec et le plus maigre.",
     careNote:
@@ -58,6 +72,12 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     },
   },
   "Acer monspessulanum": {
+    supportNotes: {
+      "mason-bees":
+        "L'érable de Montpellier fleurit en mars, les feuilles à peine sorties, et les andrènes y sont aussitôt.",
+      "bumble-bees":
+        "L'un des premiers vrais arbres à nectar de l'année en garrigue.",
+    },
     nativeNote:
       "Un petit érable robuste à trois lobes des pentes calcaires sèches et des lisières de garrigue de tout le Midi.",
     careNote:
@@ -68,6 +88,10 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
       "Récoltez les samares appariées à l'automne, quand elles brunissent, et donnez-leur environ trois mois dans un sachet de sable humide au réfrigérateur avant de semer — la graine d'érable a besoin de ce passage froid et humide pour se réveiller.",
   },
   "Fraxinus ornus": {
+    supportNotes: {
+      "privet-hawk-moth":
+        "L'énorme chenille verte du sphinx du troène grandit sur le frêne aussi volontiers que sur le troène — le frêne à fleurs est l'un des arbres qu'elle prend dans le Midi.",
+    },
     nativeNote:
       "Le frêne à fleurs des pentes rocheuses chaudes du Sud-Est — le seul frêne d'Europe à floraison voyante et parfumée.",
     careNote:
@@ -155,6 +179,10 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     },
   },
   "Phillyrea angustifolia": {
+    supportNotes: {
+      "blackcaps-warblers":
+        "Les fauvettes à tête noire mangent les petits fruits bleu-noir et déposent la graine ailleurs, ce qui est largement la façon dont le filaire se déplace — l'oiseau est le transport de la plante.",
+    },
     nativeNote:
       "Un persistant à feuilles fines du maquis et des broussailles littorales, fréquent dans les Maures, l'Esterel et la Corse.",
     careNote:
@@ -165,6 +193,12 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
       "Les pousses en voie d'aoûtement prises en fin d'été s'enracinent sous abri, avec de la patience. Par semis, débarrassez les baies de leur pulpe et donnez-leur environ trois mois de froid humide avant de semer.",
   },
   "Myrtus communis": {
+    supportNotes: {
+      "blackcaps-warblers":
+        "Les baies de myrte tiennent jusqu'en décembre, bleu-noir et résineuses, et comptent parmi les dernières choses sur lesquelles une fauvette hivernante peut compter.",
+      "bumble-bees":
+        "Les fleurs blanches d'été sont un bouquet d'étamines, le pollen à découvert : une abeille s'y charge sans avoir à forcer quoi que ce soit.",
+    },
     nativeNote:
       "Le persistant aromatique du maquis littoral du Var, de l'Esterel et surtout de la Corse, où ses baies parfument la liqueur locale.",
     careNote:
@@ -257,6 +291,10 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     },
   },
   "Helichrysum stoechas": {
+    supportNotes: {
+      "mason-bees":
+        "L'immortelle fleurit au pire de la sécheresse estivale, quand presque rien d'autre en garrigue n'a plus rien à donner, et c'est précisément pour cela qu'une longue liste de petites abeilles solitaires la travaille.",
+    },
     nativeNote:
       "Le sous-arbrisseau argenté au parfum de curry des dunes littorales, des garrigues sableuses et des bords de route du Midi et de la Corse.",
     careNote:
@@ -295,6 +333,12 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     },
   },
   "Clematis flammula": {
+    supportNotes: {
+      "bumble-bees":
+        "Un rideau de petites fleurs blanches parfumées en août — très visité, et qu'on sent avant de le voir.",
+      "grass-skippers":
+        "Les myrtils et les agrestes qui règnent sur un versant d'août viennent y refaire le plein.",
+    },
     nativeNote:
       "Une clématite grimpante des haies, des lisières de broussaille et des talus secs de toute la France méditerranéenne.",
     careNote:
@@ -305,6 +349,12 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
       "La méthode certaine est le marcottage : fixez une longue pousse dans la terre au printemps, laissez-la un an, puis détachez-la une fois enracinée. Par semis, semez les têtes plumeuses en pot dehors à l'automne et laissez l'hiver leur donner le froid ; c'est lent et irrégulier.",
   },
   "Dorycnium pentaphyllum": {
+    supportNotes: {
+      "mason-bees":
+        "La badasse est une fleur de papilionacée : il faut l'ouvrir de force, et les abeilles assez costaudes pour cela sont surtout les mégachiles, les osmies et les andrènes, qui y viennent en nombre.",
+      "bumble-bees":
+        "Les bourdons la travaillent aussi, et un talus de badasse en juin n'est jamais silencieux.",
+    },
     nativeNote:
       "Un sous-arbrisseau bas et argenté de la famille des légumineuses, des garrigues, des talus secs et des bords de route du Midi.",
     careNote:

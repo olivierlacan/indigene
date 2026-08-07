@@ -71,6 +71,26 @@ export const WILDLIFE_FR: ProseTable = {
     blurb:
       "Un papillon orange et noir portant au revers deux gros ocelles bleus. Ses chenilles mangent les immortelles aux feuilles argentées et les antennaires, en s'enveloppant dans les feuilles laineuses et leur propre soie pour se cacher.",
   },
+  "Vanessa atalanta": {
+    blurb:
+      "Des ailes noires barrées d'une bande écarlate, et une hardiesse inhabituelle — il se pose volontiers sur un bras. Ses chenilles vivent repliées à l'intérieur d'une feuille d'ortie cousue de soie, ce qui fait qu'un carré d'orties laissé debout dans un coin vaut bien plus qu'il n'en a l'air.",
+  },
+  "Epargyreus clarus": {
+    blurb:
+      "Une grande hespérie brune portant sous chaque aile postérieure une tache argentée qui lance des éclairs en vol. Elle se nourrit vite et souvent, et ses chenilles grandissent sur les légumineuses indigènes, à l'intérieur d'une feuille qu'elles replient sur elles-mêmes.",
+  },
+  "Papilio troilus": {
+    blurb:
+      "Un papillon à queues sombre, poudré de bleu-vert. Sa chenille est l'une des choses les plus étranges d'un jardin de l'est : vert vif, avec deux énormes faux yeux, cachée le jour dans une feuille qu'elle a roulée en tube.",
+  },
+  "Limenitis lorquini": {
+    blurb:
+      "Un papillon noir à bande blanche et bouts d'ailes orange, avec l'habitude de venir à votre rencontre — il chasse un oiseau, ou une personne, hors de son bout de berge, puis revient planer jusqu'au même rameau.",
+  },
+  "Papilio zelicaon": {
+    blurb:
+      "Le machaon jaune et noir des coteaux californiens, souvent vu à tourner tout en haut d'une colline — les mâles s'y rassemblent pour attendre les femelles. Ses chenilles mangent des plantes de la famille de la carotte et se dressent pour brandir une corne orange fourchue quand quelque chose les dérange.",
+  },
   "#grass-skippers": {
     blurb:
       "Les petites hespéries orange qui filent à travers une prairie, et les satyres et tristans brun tendre qui y dérivent. Leurs chenilles ne mangent rien que de l'herbe, et elles passent l'hiver blotties au fond d'une graminée indigène en touffe — c'est pourquoi une pelouse tondue n'en a aucun.",
@@ -219,6 +239,10 @@ export const WILDLIFE_FR: ProseTable = {
     blurb:
       "Des abeilles solitaires douces et très précoces — d'excellentes pollinisatrices d'arbres fruitiers — qui émergent quand les premiers arbustes indigènes fleurissent. Une fleur précoce comme le groseillier sanguin ou le saule est une bouée de sauvetage la semaine où elles se réveillent.",
   },
+  "Xylocopa virginica": {
+    blurb:
+      "La grosse abeille au dos luisant, comme un bourdon avec une plaque chauve. Elle niche dans le bois mort plutôt que dans le sol, et elle est assez forte pour ouvrir des fleurs que la plupart des abeilles ne peuvent pas — ou, quand une fleur est trop profonde même pour elle, pour en percer la base et boire par ce trou.",
+  },
 
   // -------------------------------------------------------------------------
   // Oiseaux.
@@ -234,6 +258,18 @@ export const WILDLIFE_FR: ProseTable = {
   "Bombycilla cedrorum": {
     blurb:
       "Un oiseau élégant et sociable qui vit de fruits et vagabonde en bandes, dépouillant un amélanchier ou un cornouiller en une après-midi. Ce sont les arbustes à baies qui gardent leurs fruits jusqu'en hiver qui les retiennent dans les environs.",
+  },
+  "Sitta pusilla": {
+    blurb:
+      "Une toute petite sittelle grise et brune qui couine comme un canard en plastique et passe sa vie entière dans les pins du sud des États-Unis. C'est l'un des très rares oiseaux à se servir d'un outil : elle ramasse un éclat d'écorce et s'en sert de levier pour en décoller d'autres et atteindre les insectes en dessous.",
+  },
+  "Psaltriparus minimus": {
+    blurb:
+      "Un bout d'oiseau gris, à peine plus lourd que deux trombones, qui circule en bandes bavardes d'une vingtaine et retourne un arbuste de l'intérieur. Son nid est la chose la plus étrange d'un jardin californien : une chaussette suspendue de lichen et de soie d'araignée, longue de trente centimètres, que le couple met un mois à construire.",
+  },
+  "Spinus psaltria": {
+    blurb:
+      "Un tout petit fringille au dos noir et au ventre citron, qui vit presque uniquement de graines — y compris celles des sauges et des tournesols dont déborde une bordure de jardin sec. Laissez les têtes de graines fanées debout et il les trouvera.",
   },
   "Spinus tristis": {
     blurb:

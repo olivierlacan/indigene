@@ -75,29 +75,72 @@
       ]
     },
     "q3": {
-      "columns": [
-        "source_taxon_external_id",
-        "source_taxon_name",
-        "source_taxon_path",
-        "source_specimen_occurrence_id",
-        "source_specimen_institution_code",
-        "source_specimen_collection_code",
-        "source_specimen_catalog_number",
-        "source_specimen_life_stage",
-        "source_specimen_basis_of_record",
-        "interaction_type",
-        "target_taxon_external_id",
-        "target_taxon_name",
-        "target_taxon_path",
-        "target_specimen_occurrence_id",
-        "target_specimen_institution_code",
-        "target_specimen_collection_code",
-        "target_specimen_catalog_number",
-        "target_specimen_life_stage",
-        "target_specimen_basis_of_record",
-        "latitude",
-        "longitude",
-        "study_title"
+      "note": "Sampled in both modes. The default response blanks every per-observation column; includeObservations=true fills them in. The 2026-08-06 run measured only the default and mistook its blanks for missing data.",
+      "modes": [
+        {
+          "mode": "default (aggregated)",
+          "columns": [
+            "source_taxon_external_id",
+            "source_taxon_name",
+            "source_taxon_path",
+            "source_specimen_occurrence_id",
+            "source_specimen_institution_code",
+            "source_specimen_collection_code",
+            "source_specimen_catalog_number",
+            "source_specimen_life_stage",
+            "source_specimen_basis_of_record",
+            "interaction_type",
+            "target_taxon_external_id",
+            "target_taxon_name",
+            "target_taxon_path",
+            "target_specimen_occurrence_id",
+            "target_specimen_institution_code",
+            "target_specimen_collection_code",
+            "target_specimen_catalog_number",
+            "target_specimen_life_stage",
+            "target_specimen_basis_of_record",
+            "latitude",
+            "longitude",
+            "study_title"
+          ],
+          "sampled": 200,
+          "withLifeStage": 0,
+          "withCoordinates": 0,
+          "citationSampled": 200,
+          "withCitation": 0
+        },
+        {
+          "mode": "includeObservations=true",
+          "columns": [
+            "source_taxon_external_id",
+            "source_taxon_name",
+            "source_taxon_path",
+            "source_specimen_occurrence_id",
+            "source_specimen_institution_code",
+            "source_specimen_collection_code",
+            "source_specimen_catalog_number",
+            "source_specimen_life_stage",
+            "source_specimen_basis_of_record",
+            "interaction_type",
+            "target_taxon_external_id",
+            "target_taxon_name",
+            "target_taxon_path",
+            "target_specimen_occurrence_id",
+            "target_specimen_institution_code",
+            "target_specimen_collection_code",
+            "target_specimen_catalog_number",
+            "target_specimen_life_stage",
+            "target_specimen_basis_of_record",
+            "latitude",
+            "longitude",
+            "study_title"
+          ],
+          "sampled": 200,
+          "withLifeStage": 17,
+          "withCoordinates": 73,
+          "citationSampled": 200,
+          "withCitation": 200
+        }
       ],
       "sampleRow": {
         "source_taxon_external_id": "EOL:747",
@@ -108,31 +151,36 @@
         "source_specimen_collection_code": null,
         "source_specimen_catalog_number": null,
         "source_specimen_life_stage": null,
-        "source_specimen_basis_of_record": null,
+        "source_specimen_basis_of_record": "Visual observation",
         "interaction_type": "eats",
-        "target_taxon_external_id": "COL:3CS2P",
-        "target_taxon_name": "Euphrasia picta",
-        "target_taxon_path": "Eukaryota | Plantae | Pteridobiotina | Tracheophyta | Magnoliopsida | Lamiales | Orobanchaceae | Rhinantheae | Euphrasia | Euphrasia picta",
+        "target_taxon_external_id": "EOL:49106",
+        "target_taxon_name": "Taraxacum",
+        "target_taxon_path": "Life | Cellular Organisms | Eukaryota | Archaeplastida | Chloroplastida | Streptophyta | Embryophytes | Tracheophyta | Spermatophytes | Angiosperms | Eudicots | Superasterids | Asterids | Asterales | Asteraceae | Taraxacum",
         "target_specimen_occurrence_id": null,
         "target_specimen_institution_code": null,
         "target_specimen_collection_code": null,
         "target_specimen_catalog_number": null,
         "target_specimen_life_stage": null,
-        "target_specimen_basis_of_record": null,
+        "target_specimen_basis_of_record": "Visual observation",
         "latitude": null,
         "longitude": null,
-        "study_title": null
-      },
-      "sampleSize": 25
+        "study_title": "Reji Chacko, M., Albouy, C., Altermatt, F., Brändle, M., Casanelles Abella, J., Boussange, V., Campell, F., Ellis, W. N., Fopp, F., Gossner, M. M., Ho., H., Joss, A., Kipf, P., Neff, F., Petrović, A., Prié, V., Tomanović, Ž., Zimmerli, N., Pellissier, L. (2024). trophiCH v1 - a food web for Switzerland. EnviDat. https://www.doi.org/10.16904/envidat.467. Accessed at <https://github.com/globalbioticinteractions/trophiCH/archive/9dcb8b2670c4675817c605f5add33cd183d3fb0e.zip> on 01 Aug 2026.Starý, P. (2006). Aphid parasitoids of the Czech Republic (Hymenoptera: Braconidae, Aphidiinae). Academia."
+      }
     },
     "q2": {
       "lifeStageColumns": [
         "source_specimen_life_stage",
         "target_specimen_life_stage"
       ],
-      "verdict": "column exists but is empty in the sample",
-      "sampled": 25,
-      "withLifeStage": 0
+      "mode": "includeObservations=true",
+      "verdict": "NOT usable as-is — life stage is missing from most records",
+      "sampled": 200,
+      "withLifeStage": 17,
+      "exampleStages": [
+        "Young",
+        "adult",
+        "Adult"
+      ]
     },
     "q4": {
       "method": "distinct binomial Lepidoptera source taxa, interactionType=eats",
@@ -197,7 +245,7 @@
           "maxLon": -120.5,
           "records": 0,
           "sampled": 500,
-          "geolocated": 0
+          "geolocated": 2
         },
         {
           "id": "mid-atlantic",
@@ -208,9 +256,36 @@
           "maxLon": -74,
           "records": 12,
           "sampled": 500,
-          "geolocated": 0
+          "geolocated": 2
         }
       ]
+    },
+    "q6": {
+      "verdict": "PASSES — effectively every record names its source study (over 1/3 plants asked; the rest timed out server-side)",
+      "plantsProbed": [
+        {
+          "plant": "Asclepias tuberosa",
+          "sampled": 100,
+          "withStudyCitation": 100,
+          "withSourceCitation": 100,
+          "distinctSources": 2,
+          "exampleSources": [
+            "Sarah E Miller. 06/10/2015. Species associations manually extracted from Chamberlin, W. J. The Buprestidae of North America, Exclusive of Mexico, a Catalogue in",
+            "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
+          ]
+        },
+        {
+          "plant": "Quercus alba",
+          "error": "Error: HTTP 500 for /interaction?targetTaxon=Quercus%20alba&sourceTaxon=Animalia&interactionType=eats&type=json&limit=100&includeObservations=true&field=source_taxon_name&field=interaction_type&field=study_citation&field=study_source_citation"
+        },
+        {
+          "plant": "Salix caprea",
+          "error": "Error: HTTP 500 for /interaction?targetTaxon=Salix%20caprea&sourceTaxon=Animalia&interactionType=eats&type=json&limit=100&includeObservations=true&field=source_taxon_name&field=interaction_type&field=study_citation&field=study_source_citation"
+        }
+      ],
+      "sampled": 100,
+      "cited": 100,
+      "plantsAnswering": "1/3"
     }
   }
 }

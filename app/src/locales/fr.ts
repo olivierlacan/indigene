@@ -1528,7 +1528,8 @@ export const fr: Dict = {
   "sources.fig.tiesFrom1":
     "— chaque association plante-animal cite une source, et l'application refuse d'en afficher une qui n'en a pas. À quel point l'animal ",
   "sources.fig.tiesEm": "dépend",
-  "sources.fig.tiesFrom2": " de cette plante, en revanche, relève de notre lecture de ces sources.",
+  "sources.fig.tiesFrom2":
+    " de cette plante, en revanche, relève de notre lecture de ces sources. Beaucoup de ces associations ont été trouvées en interrogeant une base ouverte d'observations publiées entre plantes et animaux, et chacune garde le nom de l'étude dont elle provient.",
   "sources.fig.sun": "Heures de soleil",
   "sources.fig.sunFrom":
     "— votre appareil calcule la course du soleil au-dessus de votre lieu tout au long de l'année, avec la méthode standard de la NOAA. Aucune requête, aucun réseau.",

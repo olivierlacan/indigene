@@ -14,6 +14,12 @@ export const FRANCE_CONTINENTAL: ProseTable = {
   // France continentale — arbres.
   // -------------------------------------------------------------------------
   "Quercus petraea": {
+    supportNotes: {
+      "eurasian-jay":
+        "Le geai emporte les glands un par un dans sa gorge et les enterre isolément dans toute la forêt — des milliers par automne. Ceux qu'il ne revient jamais chercher, c'est ainsi qu'une chênaie remonte la pente.",
+      "hazel-dormouse":
+        "Les glands sont ce sur quoi le muscardin prend son poids d'hiver en octobre, dans les derniers jours avant de se rouler en boule pour sept mois de sommeil.",
+    },
     nativeNote:
       "Le chêne dominant des forêts de l'est de la France — les grandes chênaies de Tronçais, le piémont vosgien et la Bourgogne, c'est largement cet arbre.",
     careNote:
@@ -24,6 +30,12 @@ export const FRANCE_CONTINENTAL: ProseTable = {
       "Ramassez les glands à leur chute en automne et faites-les flotter dans l'eau — jetez ceux qui remontent, semez aussitôt ceux qui coulent. Les glands de chêne germent dès l'automne, sans passage au froid, et ne doivent jamais sécher. À cause de la racine pivotante, démarrez-le en pot haut, ou semez-le là où il vivra.",
   },
   "Acer campestre": {
+    supportNotes: {
+      "holly-blue":
+        "Les petites fleurs verdâtres de l'érable champêtre s'ouvrent avant presque tout le reste de la haie, et les premiers azurés des nerpruns d'avril les visitent.",
+      "hawfinch":
+        "Les samares ailées sont une graine d'hiver, et le gros-bec les ouvre là où un pinson renonce.",
+    },
     nativeNote:
       "L'érable des haies de l'est et du centre de la France, sur les terres agricoles calcaires et les lisières.",
     careNote:
@@ -45,6 +57,12 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     },
   },
   "Sorbus torminalis": {
+    supportNotes: {
+      "winter-thrushes":
+        "Les alises restent dures et acides jusqu'aux premières gelées qui les blettissent — le moment exact où les grives musiciennes et les merles les veulent.",
+      "hawfinch":
+        "Le gros-bec extrait les pépins des fruits tombés, noyau compris.",
+    },
     nativeNote:
       "Un arbre dispersé dans les vieilles chênaies-charmaies sur calcaire du centre et de l'est de la France — un indicateur de forêt ancienne.",
     careNote:
@@ -103,6 +121,10 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     },
   },
   "Cornus mas": {
+    supportNotes: {
+      "winter-thrushes":
+        "Les cornouilles tombent écarlates et acidulées en août, et merles et grives les ramassent au sol sous l'arbuste.",
+    },
     nativeNote:
       "Un arbuste des lisières et des haies sur calcaire chaud de l'est et du sud-est de la France.",
     careNote:
@@ -113,6 +135,10 @@ export const FRANCE_CONTINENTAL: ProseTable = {
       "Débarrassez les fruits mûrs de leur pulpe et semez aussitôt dehors — les noyaux sont durs et la plupart ne lèveront qu'au second printemps. Le marcottage d'une branche basse est plus rapide et certain.",
   },
   "Viburnum lantana": {
+    supportNotes: {
+      "winter-thrushes":
+        "Les baies mûrissent irrégulièrement — rouges et noires dans la même grappe — si bien qu'un merle travaille le même buisson pendant des semaines au lieu de le vider en un jour.",
+    },
     nativeNote:
       "Un arbuste des haies, des broussailles et des lisières sur calcaire sec, dans tout l'est et le centre de la France.",
     careNote:
@@ -139,6 +165,12 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     },
   },
   "Euonymus europaeus": {
+    supportNotes: {
+      "winter-thrushes":
+        "Les capsules rose vif du fusain s'ouvrent en octobre sur des graines orange. Elles sont toxiques pour nous et partent vite chez les rouges-gorges et les merles, qui emportent la graine et la déposent ailleurs.",
+      "hazel-dormouse":
+        "Le muscardin prend aussi les fruits du fusain, en circulant la nuit le long des branches fines.",
+    },
     nativeNote:
       "Un arbuste de haie et de lisière du pays calcaire, dans tout l'est et le centre de la France.",
     careNote:
@@ -195,6 +227,12 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     },
   },
   "Salvia pratensis": {
+    supportNotes: {
+      "bumble-bees":
+        "La fleur de la sauge des prés est un levier. Un bourdon qui pousse pour atteindre le nectar bascule un bras caché qui tamponne du pollen sur son dos — le mécanisme est calibré pour un insecte de ce poids, et peu d'autres arrivent à l'actionner.",
+      "hummingbird-hawk-moth":
+        "Le moro-sphinx boit en vol stationnaire par l'avant de la fleur sans jamais déclencher le levier — tout le nectar, rien du travail.",
+    },
     nativeNote:
       "La haute sauge bleue des prairies et des bords de route sur calcaire, de la Bourgogne à la Lorraine et à la vallée du Rhône.",
     careNote:
@@ -205,6 +243,14 @@ export const FRANCE_CONTINENTAL: ProseTable = {
       "Semez la graine fraîche à l'automne en pot laissé dehors — elle germe facilement. Les touffes installées se divisent au début du printemps, mais la racine pivotante fait que les vieux pieds se déplacent mal.",
   },
   "Knautia arvensis": {
+    supportNotes: {
+      "mason-bees":
+        "Une andrène, Andrena hattorfiana, récolte le pollen de la knautie et presque rien d'autre — on la reconnaît en vol à la charge gris-lilas sur ses pattes.",
+      "bumble-bees":
+        "Un capitule serré de fleurons veut dire qu'une abeille peut se nourrir longtemps sans avoir à voler, et c'est pour cela que la knautie est si travaillée en août.",
+      "glanville-fritillary":
+        "L'une des fleurs préférées des mélitées pour refaire le plein dans une prairie sèche.",
+    },
     nativeNote:
       "La pelote d'épingles lilas des prairies de fauche, des bords de route et des talus secs de tout l'est et le centre de la France.",
     careNote:
@@ -229,6 +275,12 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     },
   },
   "Clematis vitalba": {
+    supportNotes: {
+      "mason-bees":
+        "La clématite fleurit tard et garde son nectar à découvert, si bien que les petites abeilles solitaires encore en vol en septembre l'atteignent toutes.",
+      "bumble-bees":
+        "Des haies entières fleurissent d'un coup, ce qui vaut beaucoup dans les semaines maigres avant l'ouverture du lierre.",
+    },
     nativeNote:
       "La clématite sauvage qui drape les haies et les lisières sur calcaire de tout l'est et le centre de la France, en têtes argentées tout l'hiver.",
     careNote:
@@ -245,6 +297,14 @@ export const FRANCE_CONTINENTAL: ProseTable = {
   // celles-ci, qualifiées par la région, portent la version continentale.
   // -------------------------------------------------------------------------
   "Fagus sylvatica@france-continental": {
+    supportNotes: {
+      "hawfinch":
+        "Le bec du gros-bec se referme avec assez de force pour casser un noyau de cerise. La faîne est un travail facile à côté, et une année à graines remplit la hêtraie de gros-becs.",
+      "hazel-dormouse":
+        "La faîne est riche en huile et elle tombe exactement dans les semaines où le muscardin doit doubler de poids.",
+      "eurasian-jay":
+        "Le geai enterre les faînes comme il enterre les glands — et plante la génération suivante des deux en oubliant où.",
+    },
     nativeNote:
       "L'arbre-cathédrale des forêts de l'est et du nord-est de la France, des Vosges et du Jura aux plateaux bourguignons.",
     careNote:
@@ -264,6 +324,8 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     propagationNote:
       "Récoltez les graines ailées à l'automne et semez-les aussitôt dehors — prises bien mûres il leur faut un hiver, mais si elles ont séché elles peuvent bouder deux ans. De la patience et un pot dehors sont tout ce qu'elles demandent.",
     supportNotes: {
+      "eurasian-jay":
+        "Encore une graine que le geai met en réserve pour l'hiver et oublie à moitié.",
       hawfinch:
         "La graine de charme est ce qui fait passer l'hiver européen aux gros-becs, plus que celle d'aucun autre arbre. Les petites noix côtelées tiennent dans une aile papyracée à trois pointes et restent sur les rameaux longtemps après que les feuilles ont bruni, et les oiseaux les travaillent jusqu'en mars.",
     },
@@ -278,6 +340,10 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     propagationNote:
       "La graine de tilleul est réputée lente — le tégument et l'embryon la retiennent tous deux, si bien que les fruits récoltés attendent souvent deux hivers. Semez-les frais et encore un peu verts, en pot dehors. Beaucoup plus rapide : marcottez une pousse basse, ou déterrez l'un des rejets qu'un vieil arbre pousse à son pied.",
     supportNotes: {
+      "hummingbird-hawk-moth":
+        "Le tilleul livre l'essentiel de son nectar vers le soir, l'heure où le moro-sphinx arrive et se tient en vol devant les fleurs.",
+      "eurasian-jay":
+        "Sa graine n'intéresse pas grand monde, mais son houppier dense d'été est un site de nid classique pour le geai.",
       "bumble-bees":
         "Un tilleul en fleur à la fin juin s'entend de l'autre côté du jardin. Il arrive au moment le plus creux de l'année, et pendant quinze jours c'est le plus gros repas disponible pour les bourdons à des kilomètres.",
     },

@@ -109,6 +109,12 @@ export const MID_ATLANTIC: ProseTable = {
     },
   },
   "Cercis canadensis": {
+    supportNotes: {
+      "eastern-carpenter-bee":
+        "Les fleurs du gainier s'ouvrent avant les feuilles et sont faites pour être écartées par quelque chose de lourd. Le xylocope l'est assez — et là où on le laisse tranquille, il perce plutôt une fente à la base et boit par là.",
+      "bumble-bees":
+        "Un gainier en avril est l'un des premiers grands repas de l'année pour les reines qui viennent de sortir d'hibernation avec un nid à fonder.",
+    },
     nativeNote: "Arbre de sous-bois indigène de l'est des États-Unis.",
     careNote:
       "Petit et robuste ; heureux à mi-ombre en lisière boisée ou en arbre de terrasse.",
@@ -178,6 +184,12 @@ export const MID_ATLANTIC: ProseTable = {
   // Mid-Atlantic — arbustes.
   // -------------------------------------------------------------------------
   "Hamamelis virginiana": {
+    supportNotes: {
+      "cecropia-moth":
+        "Les feuilles de l'hamamélis nourrissent les chenilles du plus grand papillon de nuit d'Amérique du Nord — un géant vert épais comme un pouce au moment de tisser son cocon.",
+      "luna-moth":
+        "Les chenilles du papillon lune l'acceptent aussi : il fait partie de la courte liste d'arbres qu'elles prennent.",
+    },
     nativeNote:
       "Arbuste ou petit arbre de sous-bois indigène de tout l'Est.",
     careNote: "Un arbuste de lisière boisée accommodant, pour la mi-ombre.",
@@ -219,6 +231,16 @@ export const MID_ATLANTIC: ProseTable = {
     },
   },
   "Cephalanthus occidentalis": {
+    supportNotes: {
+      "silver-spotted-skipper":
+        "La fleur du céphalanthe est une pelote d'aiguilles de longs tubes blancs, et une hespérie peut y travailler une bonne minute sans bouger.",
+      "red-admiral":
+        "En juillet, un céphalanthe au bord d'un bassin porte plus de papillons à la fois que n'importe quoi d'autre dans un jardin humide.",
+      "spicebush-swallowtail":
+        "Les grands papillons à queues s'y nourrissent sans cesser de battre des ailes, faisant le tour de la sphère au fur et à mesure.",
+      "bumble-bees":
+        "Il fleurit dans le creux du milieu de l'été, quand le printemps est fini et que les verges d'or n'ont pas commencé.",
+    },
     nativeNote:
       "Indigène des bords d'étang et des terrains humides de tout l'Est.",
     careNote:
@@ -229,6 +251,12 @@ export const MID_ATLANTIC: ProseTable = {
       "Le céphalanthe s'enracine très volontiers. En hiver, coupez des rameaux nus gros comme un crayon en morceaux longs d'une main et enfoncez-les en terre humide ; ou au début de l'été, faites raciner des extrémités de pousses vertes tendres dans un mélange humide. Dans les deux cas il aime rester mouillé pendant l'enracinement, ce qui convient parfaitement à cet amateur d'eau.",
   },
   "Physocarpus opulifolius": {
+    supportNotes: {
+      "red-admiral":
+        "Les petites ombelles bombées du physocarpe sortent en juin et sont travaillées en même temps par les papillons, les coléoptères et les petites abeilles.",
+      "mason-bees":
+        "Des fleurs ouvertes et peu profondes : une abeille solitaire à langue courte y accède aussi facilement qu'une à longue langue.",
+    },
     nativeNote:
       "Indigène des berges et des pentes rocheuses de l'Est.",
     careNote:
@@ -279,6 +307,12 @@ export const MID_ATLANTIC: ProseTable = {
     },
   },
   "Ceanothus americanus": {
+    supportNotes: {
+      "bumble-bees":
+        "Le thé de New Jersey fleurit dans la chaleur du début juillet, en écumes blanches que les abeilles repèrent de loin.",
+      "mason-bees":
+        "Son nectar est à découvert dans une minuscule coupe, et c'est pour cela qu'autant de petites abeilles et de guêpes solitaires peuvent s'en servir.",
+    },
     nativeNote:
       "Indigène des prairies sèches, des clairières et des talus rocheux.",
     careNote:
@@ -557,6 +591,12 @@ export const MID_ATLANTIC: ProseTable = {
     },
   },
   "Geranium maculatum": {
+    supportNotes: {
+      "mason-bees":
+        "Une andrène, Andrena distans, récolte le pollen du géranium sauvage et presque rien d'autre — elle vole les quelques semaines où il est en fleur, puis disparaît pour l'année.",
+      "bumble-bees":
+        "Une fleur précoce de lisière de bois, sortie quand les arbres sont encore nus et que la lumière atteint encore le sol.",
+    },
     nativeNote:
       "Fleur sauvage de sous-bois indigène de tout l'Est.",
     careNote:
@@ -571,6 +611,10 @@ export const MID_ATLANTIC: ProseTable = {
   // Mid-Atlantic — graminées, grimpantes, couvre-sols et fougères.
   // -------------------------------------------------------------------------
   "Schizachyrium scoparium": {
+    supportNotes: {
+      "grass-skippers":
+        "C'est sur le barbon à balais que grandissent les satyres et plusieurs hespéries, et les chenilles passent l'hiver au fond de la touffe. La raser à l'automne, c'est raser les papillons de l'été suivant.",
+    },
     nativeNote:
       "Graminée indigène en touffe des prairies sèches et des landes rocailleuses de tout l'Est.",
     careNote:
@@ -592,6 +636,10 @@ export const MID_ATLANTIC: ProseTable = {
     },
   },
   "Panicum virgatum": {
+    supportNotes: {
+      "grass-skippers":
+        "Le panic érigé élève les hespéries du Delaware et à ailes larges — de petits papillons orange dont la chenille vit dans un tube de limbe cousu de soie.",
+    },
     nativeNote:
       "Graminée de prairie indigène de l'est et du centre des États-Unis.",
     careNote:
@@ -613,6 +661,10 @@ export const MID_ATLANTIC: ProseTable = {
     },
   },
   "Andropogon gerardii": {
+    supportNotes: {
+      "grass-skippers":
+        "Le grand barbon est la graminée à chenilles de l'hespérie byssus — un papillon qui a suivi la prairie haute dans ce qu'il en reste.",
+    },
     nativeNote:
       "La graminée emblématique de la prairie à hautes herbes, indigène jusqu'à l'Atlantique.",
     careNote:
@@ -633,6 +685,12 @@ export const MID_ATLANTIC: ProseTable = {
       "De loin le plus facile est la division : cette laîche court par coulants souterrains, vous pouvez donc soulever une plaque au printemps et la séparer en de nombreux petits morceaux enracinés à planter pour qu'ils se rejoignent. Le semis est lent et capricieux ; la plupart des jardiniers s'en passent et divisent.",
   },
   "Parthenocissus quinquefolia": {
+    supportNotes: {
+      "cedar-waxwing":
+        "Les baies bleu-noir de la vigne vierge restent accrochées à leurs pédoncules écarlates longtemps après la chute des feuilles, et une bande de jaseurs nettoie tout un mur en une après-midi.",
+      "berry-songbirds":
+        "Grives, moqueurs-chats et pics les prennent aussi, tout l'automne et jusque dans l'hiver.",
+    },
     nativeNote:
       "Liane grimpante indigène de tout l'est des États-Unis.",
     careNote:
@@ -679,6 +737,12 @@ export const MID_ATLANTIC: ProseTable = {
     },
   },
   "Fragaria virginiana": {
+    supportNotes: {
+      "berry-songbirds":
+        "Les fraises sauvages sont minuscules et intensément sucrées, et merles américains et grives arrivent à presque toutes avant qui que ce soit d'autre.",
+      "bumble-bees":
+        "De petites fleurs blanches à cinq pétales, au ras du sol dès avril, parmi les premières qu'une reine de bourdon puisse atteindre.",
+    },
     nativeNote:
       "Fraisier couvre-sol indigène de tout l'Est.",
     careNote:
@@ -689,6 +753,12 @@ export const MID_ATLANTIC: ProseTable = {
       "La plante la plus simple à multiplier d'ici : elle émet des stolons qui font de petits plants sur leur longueur. Fixez-en un sur la terre (ou dans un petit pot) jusqu'à ce qu'il s'enracine, puis détachez-le du pied mère et déplacez-le. Vous pouvez aussi simplement soulever et séparer une plaque installée.",
   },
   "Packera aurea": {
+    supportNotes: {
+      "sunflower-specialist-bees":
+        "Le séneçon doré est une fleur de la famille des astéracées en avril, des mois avant les asters et les verges d'or — ce qui en fait l'une des rares ressources précoces pour les abeilles qui ne savent utiliser que le pollen de cette famille.",
+      "mason-bees":
+        "Petites andrènes et osmies travaillent les capitules jaunes plats pendant qu'elles approvisionnent leurs nids de printemps.",
+    },
     nativeNote:
       "Couvre-sol semi-persistant indigène des bois frais et des suintements.",
     careNote:

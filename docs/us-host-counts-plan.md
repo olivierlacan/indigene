@@ -1,9 +1,21 @@
 # Plan: real US host counts, or an honest admission that we can't have them
 
-**Status: answered — GloBI cannot do it.** The probe ran on 2026-08-06 and
-Q2, the gate, failed. Nothing is shipped, no number has moved, and none will
-from this source. The verdict is in §2; the fallback is the Tallamy primary
-literature.
+**Status: answered — GloBI cannot do it, and the wildlife-ties layer got it
+instead.** The probe ran on 2026-08-06 and Q2, the gate, failed; it was re-run
+correctly on 2026-08-07 and failed again, for a narrower and better-evidenced
+reason. No host-count number has moved and none will from this source. The
+verdict is in §2; the fallback is the Tallamy primary literature.
+
+**One thing in the first run's verdict was wrong, and it mattered.** The 2026-08-06
+run reported that GloBI's life-stage and citation columns were *empty*. They are
+not — they are empty in the **default** `/interaction` response, which collapses
+records into distinct interactions and drops every per-observation column on the
+way. `includeObservations=true` fills them in. The gate's answer is unchanged
+(life stage is on about an eighth of records, still far too few to count with),
+but the *citation* answer flipped completely: every record names its source
+study. That is what the wildlife-ties layer needed, and
+`app/scripts/wildlife-candidates.mjs` now runs on it. The correction, and the
+measurement in both modes, are in `data/sources/globi/probe.json`.
 
 This is the European story again, in reverse. `docs/host-counts-plan.md`
 replaced Atlantic France's estimated host counts with computed ones from the
@@ -52,13 +64,18 @@ what fraction of records actually carry a life stage. That is Q2 of the probe,
 and it is the only question that matters first:
 
 > **Verdict: Q2 fails. GloBI cannot source `hostLepCount`.**
-> Run 2026-08-06, snapshot in `data/sources/globi/probe.json`.
+> Run 2026-08-06; re-measured correctly 2026-08-07. Snapshot in
+> `data/sources/globi/probe.json`.
 >
-> The two life-stage columns exist — `source_specimen_life_stage` and
-> `target_specimen_life_stage` — and they are **empty**. Not sparse: empty. Zero
-> of the 25 records in the probe's own sample carried one, and a deliberate
-> follow-up over 500 `Lepidoptera eats Quercus` records found **0 with a life
-> stage and 0 with coordinates**.
+> The two life-stage columns — `source_specimen_life_stage` and
+> `target_specimen_life_stage` — are populated on **17 of 200** sampled
+> observation records (`larva`, `Young`, `adult`). Sparse, not empty: the
+> first run's "empty" was an artifact of reading the aggregated response,
+> which cannot carry the column at all. The corrected number is worse for the
+> gate in the only way that counts — about one record in eight is not a basis
+> for a species tally — and better for everything else, because a life stage
+> that *is* recorded can corroborate a single named tie even when it can't
+> support a count.
 >
 > So a GloBI count of "Lepidoptera that eat oak" mixes a caterpillar stripping a
 > leaf with an adult resting on one, and there is no field to separate them.
@@ -72,8 +89,8 @@ and it is the only question that matters first:
 > Tallamy's figure for the same genus in the same place is 511. So a localised
 > count would rest on about one percent of the records and would read as an
 > ecological claim while actually measuring which studies happened to record a
-> place. And because the coordinate columns come back empty even for those 12,
-> there is no way to audit where they are.
+> place. Coordinates are on **2 of 500** records in observation mode, so there
+> is effectively no way to audit where those 12 are.
 
 Two outcomes, both fine:
 
@@ -81,12 +98,21 @@ Two outcomes, both fine:
   `build-host-counts.mjs` — same genus-level aggregation, same output shape,
   same "a shipped plant must not take a silent zero" guard — so American and
   European numbers stay on one scale and one method. Then §4 below.
-- **Q2 fails.** Say so here, and stop. GloBI remains valuable for the
-  **wildlife-ties** layer, where a named animal and a citation *are* the
-  deliverable and no count is involved — which is `coverage-plan.md` §3's fifth
-  unused source, and after this round of work the ties are the layer growing
-  fastest. The count fallback is then the Tallamy primary literature, already
+- **Q2 fails.** Say so here, and stop *building a count*. GloBI remains
+  valuable for the **wildlife-ties** layer, where a named animal and a citation
+  *are* the deliverable and no count is involved. That is no longer a promise:
+  Q6 was added to the probe to ask the ties layer's own question — does a record
+  name its source study? — and it passes at 100 of 100 sampled records, so
+  `app/scripts/wildlife-candidates.mjs` proposes ties with the study behind each
+  one. The count fallback is then the Tallamy primary literature, already
   flagged in `PROJECT_BRIEF.md` as a re-sourcing task.
+
+  **The general lesson, worth more than the verdict.** A gate can fail for the
+  wrong reason and still give the right answer, and that is a dangerous place to
+  stop. Q2's conclusion survived re-measurement; the sentence next to it about
+  citations did not, and it had been quietly closing off a whole feature for a
+  day. When a probe reports that a field is empty, ask whether the *query shape*
+  could produce that answer before concluding the *data* did.
 
 ## 3. What the probe asks
 
@@ -94,9 +120,10 @@ Two outcomes, both fine:
 |---|---|---|
 | Q1 | Is GloBI reachable, and what does it call its interaction types? | The vocabulary has moved between versions; don't hard-code a guess. |
 | Q2 | **Larval host vs adult nectaring** | The gate. Everything else is moot. |
-| Q3 | What fields does a record carry? | Sampled, never assumed — this script can't be run in the build sandbox, so it must not hard-code a field name nobody has seen answered. |
+| Q3 | What fields does a record carry? | Sampled, never assumed — and now sampled in **both** response modes, because the default one blanks every per-observation column and the first run mistook those blanks for missing data. |
 | Q4 | Does the method reproduce numbers we already trust? | Run the same query against genera where Gaytán's answer is committed. GloBI is worldwide and Gaytán's column is one European zone, so GloBI should be the larger of the two; an order of magnitude either way means the query is wrong. |
 | Q5 | Can records be cut to a region? | A count with no locality is a continental count. A Pacific Northwest figure has to mean the Pacific Northwest, or say that it doesn't. **Answered: technically yes, usefully no** — see §2. (`lat`/`lng`, which the probe tried first, is not a filter at all: it returns an empty body, which the first run reported as a JSON error.) |
+| Q6 | **Does a record name the study it came from?** | The wildlife-ties layer's own gate, and a different question from Q2 with a different answer. A tie is a named animal and a citation; without the citation there is nothing to put in `basis`. **Answered: yes, 100 of 100 sampled records** — see `data/sources/globi/README.md` §3. |
 
 ## 3b. What the answer costs, and what it doesn't
 
@@ -117,9 +144,10 @@ estimate rather than a computed count. That is worse than France's and it is
 still far better than memory, which is what it replaces. What the failed gate
 costs is precision in the *fourth* term only.
 
-GloBI also remains useful where it was always strongest and no count is
+GloBI is now doing the job it was always strongest at, where no count is
 involved: the **wildlife-ties layer**, where a named animal plus a citation is
-the whole deliverable.
+the whole deliverable. See `data/sources/globi/README.md` §3 and the per-region
+shortlists in `docs/candidates/wildlife-*.md`.
 
 ## 4. If the gate had passed (kept for the record)
 

@@ -36,6 +36,12 @@ export const FLORIDA: ProseTable = {
     },
   },
   "Pinus palustris": {
+    supportNotes: {
+      "brown-headed-nuthatch":
+        "La sittelle à tête brune vit dans le pin des marais et presque nulle part ailleurs — elle fouille l'écorce à la recherche d'insectes et creuse son nid dans un chicot mort. Laissez le bois mort debout et vous gardez l'oiseau.",
+      "acorn-birds":
+        "Les dindons sauvages travaillent le sol sous les pins pour la graine tombée, et les pics travaillent les troncs au-dessus.",
+    },
     nativeNote:
       "Le pin clé de voûte des collines sableuses et des flatwoods à pin des marais — ces pinèdes plates du bas pays — un milieu menacé qui couvrait autrefois une grande partie de la Floride.",
     careNote:
@@ -46,6 +52,10 @@ export const FLORIDA: ProseTable = {
       "Récoltez la graine des cônes mûrs à l'automne et semez-la fraîche la même saison — elle lève rapidement et n'a besoin d'aucun froid. La graine ne se conserve pas : ne la laissez pas sécher au fond d'un tiroir tout l'hiver.",
   },
   "Taxodium distichum": {
+    supportNotes: {
+      "cecropia-moth":
+        "Le cyprès chauve fait partie des arbres que les chenilles du grand paon d'Amérique acceptent — un choix curieux pour un grand bombyx, et un choix documenté.",
+    },
     nativeNote:
       "Le conifère à feuilles caduques classique des marécages, des berges et des bords d'étang de Floride.",
     careNote:
@@ -56,6 +66,12 @@ export const FLORIDA: ProseTable = {
       "Ramassez les cônes ronds à l'automne et émiettez-les pour libérer la graine. Semez-la fraîche sur une terre mouillée ou dans la vase — un bon trempage préalable aide — et maintenez-la constamment humide. Aucun passage au froid n'est nécessaire.",
   },
   "Magnolia grandiflora": {
+    supportNotes: {
+      "eastern-carpenter-bee":
+        "Une fleur de magnolia est un dessin très ancien — pas de guides de nectar, pas de piste d'atterrissage, juste une coupe de pollen. Les gros coléoptères pataud et les xylocopes sont exactement ce pour quoi elle a évolué.",
+      "acorn-mammals":
+        "Le cône s'ouvre à l'automne pour suspendre ses graines écarlates au bout de fils, et les écureuils gris et fauves viennent les chercher.",
+    },
     nativeNote:
       "Le feuillu persistant des hammocks et des coteaux du nord et du centre de la Floride.",
     careNote:
@@ -66,6 +82,14 @@ export const FLORIDA: ProseTable = {
       "Quand les cônes s'ouvrent à l'automne, prélevez les graines et frottez-en l'enveloppe rouge charnue (un trempage la ramollit) — cette enveloppe empêche la germination. Semez frais et ne laissez jamais sécher ; un court passage frais et humide pendant l'hiver les aide à se réveiller au printemps.",
   },
   "Sabal palmetto": {
+    supportNotes: {
+      "berry-songbirds":
+        "Un palmier de Floride en fruit est une mangeoire de la taille d'un arbre — merles américains, moqueurs-chats, moqueurs polyglottes et viréos prennent les drupes noires pendant des semaines.",
+      "cedar-waxwing":
+        "Les bandes de jaseurs se posent dans un palmier en fruit et vident l'équivalent d'une palme de drupes en quelques minutes.",
+      "acorn-mammals":
+        "Ratons laveurs, cerfs et ours noirs prennent tous le fruit du palmier, ce qui explique qu'un hammock à sabals nourrisse autant de monde à la fois.",
+    },
     nativeNote:
       "L'arbre emblème de l'État de Floride ; indigène partout, des hammocks aux bords de marais littoraux.",
     careNote:
@@ -87,6 +111,10 @@ export const FLORIDA: ProseTable = {
     },
   },
   "Chionanthus virginicus": {
+    supportNotes: {
+      "cecropia-moth":
+        "L'arbre à frange nourrit les chenilles des grands sphinx et bombyx indigènes — dont le sphinx ondulé, dont la larve a exactement la couleur de la feuille sous laquelle elle se tient.",
+    },
     nativeNote:
       "Petit arbre indigène à floraison des lisières boisées du nord et du centre de la Floride.",
     careNote:
@@ -287,6 +315,12 @@ export const FLORIDA: ProseTable = {
       "Une graminée de saison chaude — semez la graine sur une terre chaude au printemps ou en été et elle lève sans aucun froid. Le moyen le plus rapide d'en avoir plus est de déterrer une touffe installée au printemps et de la séparer en éclats enracinés.",
   },
   "Tripsacum dactyloides": {
+    supportNotes: {
+      "grass-skippers":
+        "Le tripsaque élève l'hespérie byssus — une grande hespérie orange dont la chenille vit dans un tube de limbe fermé par de la soie.",
+      "bumble-bees":
+        "Les graminées nourrissent rarement les abeilles, mais les grosses anthères pendantes du tripsaque sont travaillées par les bourdons pour leur pollen.",
+    },
     nativeNote:
       "Grande graminée indigène en touffe des bords de marais, des fossés et des prairies humides de Floride.",
     careNote:
@@ -313,6 +347,12 @@ export const FLORIDA: ProseTable = {
     },
   },
   "Mimosa strigillosa": {
+    supportNotes: {
+      "bumble-bees":
+        "Les houppes roses de la mimosa rampante restent à plat dans une pelouse où l'on marche, et les bourdons les travaillent tout l'été entre deux tontes.",
+      "grass-skippers":
+        "Hespéries fauves et petites piérides jaunes y descendent sans arrêt — c'est l'une des rares plantes à nectar qui survit au piétinement.",
+    },
     nativeNote:
       "Couvre-sol indigène bas des bords de route, des champs et des terrains ouverts de Floride — une alternative indigène au gazon.",
     careNote:
@@ -385,6 +425,12 @@ export const FLORIDA: ProseTable = {
   // Floride du Sud et les Keys — les espèces qui n'appartiennent qu'ici.
   // -------------------------------------------------------------------------
   "Bursera simaruba": {
+    supportNotes: {
+      "berry-songbirds":
+        "Le gommier rouge fructifie en fin d'hiver, exactement quand les tyrans et les viréos migrateurs passent et qu'il n'y a presque rien d'autre de mûr.",
+      "atala":
+        "Les atalas viennent à ses petites fleurs verdâtres — la zamie élève leurs chenilles, mais les adultes doivent manger aussi.",
+    },
     nativeNote:
       "L'arbre emblématique des hammocks du sud de la Floride, à l'écorce rouge qui pèle (l'« arbre du touriste »).",
     careNote:
@@ -423,6 +469,12 @@ export const FLORIDA: ProseTable = {
     },
   },
   "Conocarpus erectus": {
+    supportNotes: {
+      "grass-skippers":
+        "Les petites fleurs en cône du palétuvier gris sont travaillées par les hespéries de la mangrove et des hammocks et par les grands papillons-dagues — les papillons de la frange côtière.",
+      "berry-songbirds":
+        "Les passerins nonpareils prennent les têtes de graines, et le houppier dense et tolérant au sel est un couvert de nidification là où presque rien ne pousse.",
+    },
     nativeNote:
       "Arbre littoral des rivages du sud de la Floride, compagnon des palétuviers.",
     careNote:
@@ -488,6 +540,10 @@ export const FLORIDA: ProseTable = {
     },
   },
   "Sophora tomentosa var. truncata": {
+    supportNotes: {
+      "bumble-bees":
+        "Les fleurs jaunes en papilionacée du sophora doivent être forcées, et sur une dune littorale les insectes assez lourds pour le faire sont surtout les bourdons.",
+    },
     nativeNote:
       "Arbuste littoral du sud de la Floride — plantez la variété indigène de Floride, truncata, et non la forme exotique duveteuse.",
     careNote:
@@ -550,6 +606,12 @@ export const FLORIDA: ProseTable = {
     },
   },
   "Rivina humilis": {
+    supportNotes: {
+      "berry-songbirds":
+        "Les baies rouges translucides de la rivine restent sur la tige des mois durant, et les cardinaux rouges remontent une grappe entière à l'ombre d'un hammock.",
+      "white-peacock":
+        "Ses minuscules fleurs blanches sont ouvertes toute l'année, ce qu'il faut à un papillon qui vole en janvier.",
+    },
     nativeNote:
       "Indigène amie de l'ombre des hammocks et des lisières ombragées du sud de la Floride.",
     careNote:
@@ -597,6 +659,12 @@ export const FLORIDA: ProseTable = {
     },
   },
   "Sabal palmetto@florida-south": {
+    supportNotes: {
+      "berry-songbirds":
+        "Un sabal en fruit nourrit d'un coup moqueurs-chats, moqueurs polyglottes, merles américains et viréos, et cela dure des semaines.",
+      "acorn-mammals":
+        "Les ratons laveurs grimpent pour le fruit et les cerfs prennent ce qui tombe — un seul palmier voit passer beaucoup de monde.",
+    },
     nativeNote:
       "L'arbre emblème de l'État de Floride ; indigène partout, des hammocks au littoral du Sud et aux Keys.",
     careNote:
@@ -618,6 +686,14 @@ export const FLORIDA: ProseTable = {
     },
   },
   "Serenoa repens@florida-south": {
+    supportNotes: {
+      "grass-skippers":
+        "Les chenilles de l'hespérie du palmier nain ne mangent que le palmier de Floride, et rien d'autre, dans une section de palme enroulée. Arrachez le palmier nain d'une lande et le papillon s'en va avec.",
+      "mason-bees":
+        "Un palmier nain en fleur est l'une des plantes les plus visitées de Floride — des dizaines d'espèces d'abeilles solitaires indigènes y ont été relevées, dont plusieurs ne se trouvent guère ailleurs.",
+      "berry-songbirds":
+        "Le fruit noir de l'automne nourrit tour à tour merles américains, moqueurs, ratons laveurs, renards et ours.",
+    },
     nativeNote:
       "Le palmier de sous-bois qui définit les pinèdes et le scrub de Floride, vers le sud jusque dans les Keys — l'une des plantes les plus importantes de l'État pour la faune.",
     careNote:
@@ -693,6 +769,10 @@ export const FLORIDA: ProseTable = {
       "C'est une graminée de saison chaude : semez la graine cotonneuse à la surface d'une terre chaude au printemps ou en été plutôt qu'en terre froide. Le plus simple pour en avoir plus est de déterrer une touffe installée au printemps et de la fendre en morceaux, chacun avec des racines, puis de les replanter.",
   },
   "Tripsacum dactyloides@florida-south": {
+    supportNotes: {
+      "grass-skippers":
+        "C'est le tripsaque que mangent les chenilles de l'hespérie byssus, roulées dans une de ses feuilles.",
+    },
     nativeNote:
       "Grande graminée indigène en touffe des bords de marais, des fossés et des terrains frais du sud de la Floride.",
     careNote:

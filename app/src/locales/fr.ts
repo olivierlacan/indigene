@@ -1145,14 +1145,14 @@ export const fr: Dict = {
   // Faune.
   // ---------------------------------------------------------------------
   "wildlife.coverageNote":
-    "Voici les liens avec la faune les mieux documentés que nous ayons cartographiés jusqu'ici — pas tous les insectes qu'une plante fait vivre. Un seul chêne héberge les chenilles de centaines d'espèces de papillons ; ici nous nommons celles pour lesquelles il vaut la peine de choisir une plante. Chaque lien indique sa source, et la liste grandit aussi prudemment que celles des plantes. Les régions que nous citons pour un animal sont celles où nous avons cartographié des plantes qui le font vivre ; son aire de répartition va souvent bien au-delà.",
+    "Les liens que nous avons vérifiés et sourcés — pas tous les insectes qu'une plante fait vivre. Un seul chêne héberge des centaines d'espèces de papillons de nuit ; voici celles pour lesquelles il vaut la peine de choisir une plante.",
   "wildlife.indexDocTitle": "Parcourir les plantes indigènes par la faune qu'elles font vivre — Indigene",
   "wildlife.indexTitle": "Parcourir par animal",
   "wildlife.indexLede":
     "Choisissez l'insecte ou l'animal que vous aimeriez voir chez vous, et découvrez quelles plantes indigènes le font vivre — et comment. {n} espèces cartographiées jusqu'ici.",
   "wildlife.allNative": "🌿 Chaque animal listé ici est lui-même indigène. ",
   "wildlife.allNativeRest":
-    "C'est tout l'intérêt — une plante indigène qui nourrit une faune indigène — et l'abeille domestique, introduite, est donc écartée. Plutôt qu'une étiquette « indigène » sur chaque fiche, le chiffre 📍 compte les régions où nous avons cartographié l'espèce — ouvrez-le pour leurs noms.",
+    "C'est tout l'intérêt — des plantes indigènes qui nourrissent une faune indigène — et l'abeille domestique, introduite, est donc écartée. Le chiffre 📍 compte les régions où nous avons cartographié l'espèce ; ouvrez-le pour leurs noms.",
   "wildlife.browsePlants": "← Parcourir plutôt les plantes",
   "wildlife.browsePlantsShort": "Parcourir les plantes",
   "wildlife.startFromSpot": "Partir d'un lieu",
@@ -1163,7 +1163,7 @@ export const fr: Dict = {
   "wildlife.inRegions": "Indigène dans {n} des régions d'Indigene : {regions}. Ouvrez pour les liens.",
   "wildlife.inRegionsTitle": "Indigène dans {n} régions",
   "wildlife.inRegionsBody":
-    "Indigene cartographie des plantes indigènes qui font vivre {animal} dans {n} de ses listes régionales. Ouvrez-en une pour voir toutes les espèces que ces plantes font vivre.",
+    "Indigene cartographie des plantes indigènes qui font vivre {animal} dans {n} de ses listes régionales. Ouvrez-en une pour voir toutes les espèces que ces plantes font vivre. L'aire de répartition de l'animal va souvent bien au-delà.",
   "wildlife.nativeTo": "📍 Indigène dans",
   "wildlife.regionPillTitle": "{region} — toute la faune que ses plantes indigènes font vivre",
   "wildlife.docTitle": "Les plantes indigènes qui font vivre {animal} — Indigene",
@@ -1176,6 +1176,26 @@ export const fr: Dict = {
   "wildlife.onlyOption.one": "C'est sa seule option — retirez-la et {animal} n'a plus nulle part où aller.",
   "wildlife.onlyOption.other":
     "{n} d'entre elles sont sa seule option — retirez-les et {animal} n'a plus nulle part où aller.",
+  // La portée de l'animal, en tuiles.
+  "wlStat.glance": "{animal} en un coup d'œil",
+  "wlStat.plants.label": "Plantes pour lui",
+  "wlStat.plants.sub": "sur nos listes",
+  "wlStat.plants.explain":
+    "Combien des plantes indigènes cartographiées par Indigene font vivre {animal} — en le nourrissant, en l'abritant ou en accueillant ses petits. Elles sont listées ci-dessous, région par région.",
+  "wlStat.host.label": "Élève ses petits sur",
+  "wlStat.host.sub": "le lien le plus fort",
+  "wlStat.host.explain":
+    "Les plantes sur lesquelles {animal} peut réellement grandir. Une chenille ne devient un papillon que sur les bonnes feuilles : c'est ce qui décide s'il peut se reproduire chez vous, et pas seulement passer.",
+  "wlStat.shelter.label": "S'abrite dans",
+  "wlStat.shelter.sub": "nids et couvert",
+  "wlStat.shelter.explain":
+    "Les plantes où {animal} niche, se cache ou passe l'hiver. Un endroit où être tranquille, c'est la moitié du jardin qui n'est pas de la nourriture.",
+  "wlStat.sole.label": "Sans remplaçante",
+  "wlStat.sole.sub": "tout ou rien",
+  "wlStat.sole.explain.one":
+    "L'une de ces plantes est la seule option d'{animal}. Retirez-la d'un quartier et l'animal s'en va avec elle.",
+  "wlStat.sole.explain.other":
+    "Ces plantes sont la seule option d'{animal}. Retirez-les d'un quartier et l'animal s'en va avec elles.",
   "wildlife.speciesRecord": "Voir la fiche de l'espèce : ",
   "wildlife.fullProfile": "{name} — fiche complète",
   "wildlife.allSources": "Toutes les sources et licences →",

@@ -2805,6 +2805,11 @@ details.weights {
   margin-top: 0.75rem;
   padding-top: 0.5rem;
 }
+/* The wildlife pages' honesty note: a footnote at the foot of the page, so it
+   keeps a little more air above it than a note inside a card does. */
+.wildlife-coverage {
+  margin-top: 1.25rem;
+}
 
 /* Saved spots */
 .saved-list {
@@ -3826,6 +3831,35 @@ body[data-layout="profile"] .wip-banner-text {
 @media (min-width: 64rem) {
   body[data-layout="profile"] {
     --maxw: 62rem;
+  }
+
+  /* ---- "See it near you", on a laptop ----
+     Four stacked pieces — a line of explanation, the two ways to give a spot,
+     and the "not there right now?" fallback — made a card two thirds of a
+     screen tall to hold two controls. Side by side they read as what they are:
+     one question with two answers. The results, when they arrive, still get
+     the full width; a grid of photographs wants it. */
+  .wl-nearby {
+    display: grid;
+    /* The ask keeps enough width to hold its button and box on one line; the
+       fallback takes what's left and wraps its region buttons inside it. An
+       `auto` second column let a monarch's four regions squeeze the ask into a
+       stack. */
+    grid-template-columns: minmax(21rem, 1fr) minmax(0, 1fr);
+    column-gap: 1.5rem;
+    align-items: start;
+  }
+  .wl-nearby > h3,
+  .wl-nearby > .obs-section-lede,
+  .wl-nearby > .wl-nearby-out {
+    grid-column: 1 / -1;
+  }
+  .wl-nearby > .obs-elsewhere {
+    margin-top: 0.5rem;
+    text-align: right;
+  }
+  .wl-nearby > .obs-elsewhere .obs-elsewhere-row {
+    justify-content: flex-end;
   }
 
   /* ---- The profile card, on either page ---- */

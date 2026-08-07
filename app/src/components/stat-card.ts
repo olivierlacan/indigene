@@ -15,7 +15,7 @@ import { t, fmtNumber, monthName } from "../lib/i18n";
 import { lengthTick, temperatureSpan } from "../lib/units";
 import { commonName } from "../lib/names";
 
-interface Stat {
+export interface Stat {
   icon: string;
   label: string;
   value: string;
@@ -30,7 +30,18 @@ interface Stat {
 }
 
 export function statGrid(p: Plant): HTMLElement {
-  const stats = statsFor(p);
+  return statTiles(statsFor(p), t("stat.glance", { name: commonName(p) }));
+}
+
+/**
+ * The grid itself, for any page with numbers worth scanning — a plant's
+ * characteristics, an animal's reach. An animal's page used to say the same
+ * figures in a sentence ("3 native plants in Indigene support Hazel dormouse,
+ * 1 of them as a caterpillar host"), which is a paragraph doing a tile's job:
+ * longer to read, longer to translate, and impossible to compare at a glance
+ * against the plant pages that had tiles all along.
+ */
+export function statTiles(stats: Stat[], ariaLabel: string): HTMLElement {
   const dialog = el("dialog", { class: "stat-dialog" }) as HTMLDialogElement;
   dialog.addEventListener("click", (e) => {
     if (e.target === dialog) dialog.close(); // tap the backdrop to dismiss
@@ -60,7 +71,7 @@ export function statGrid(p: Plant): HTMLElement {
     dialog.showModal();
   };
 
-  return el("div", { class: "stat-grid", "aria-label": t("stat.glance", { name: commonName(p) }) }, [
+  return el("div", { class: "stat-grid", "aria-label": ariaLabel }, [
     ...stats.map((s) =>
       el("button", {
         class: "stat-tile",

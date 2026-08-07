@@ -48,10 +48,12 @@ import { keystoneIcon } from "../components/keystone-icon";
 import { wildlifeNearbySection } from "../components/wildlife-nearby";
 import { wildlifeThumb, wildlifeHero } from "../components/wildlife-thumb";
 import { cardStats } from "../components/card-stats";
-import type { SupportLink } from "../types";
+import { statTiles } from "../components/stat-card";
+import type { Stat } from "../components/stat-card";
+import type { SupportLink, Wildlife } from "../types";
 import { t, tn, fmtNumber, fmtList, getLang } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
-import { wildlifeBlurb, supportNote, wildlifeUntranslated } from "../lib/prose";
+import { wildlifeBlurb, wildlifeLead, supportNote, wildlifeUntranslated } from "../lib/prose";
 import { reportUntranslated } from "../components/wip-banner";
 
 // Shared honesty note: this is the notable, mapped wildlife — never a claim to
@@ -59,6 +61,21 @@ import { reportUntranslated } from "../components/wip-banner";
 // function, not a constant: a constant would be frozen in whatever language
 // was active when this module first loaded.
 const coverageNote = (): string => t("wildlife.coverageNote");
+
+// …rendered as what it is: a footnote, not a paragraph. It used to run five
+// lines above the buttons in body type, which reads as something the page
+// wants you to stop and read; the two sentences that actually qualify what's
+// on the page now sit in small type with the sources link on the end of them,
+// where a reader looks when they want to check us. The part about an animal's
+// real range outgrowing our regions moved into the 📍 pills' own dialog — the
+// place somebody asks that question.
+const coverageLine = (): HTMLElement =>
+  el("p", { class: "confidence wildlife-coverage" }, [
+    el("span", { "aria-hidden": "true" }, "🔎 "),
+    coverageNote(),
+    " ",
+    el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, t("wildlife.allSources")),
+  ]);
 
 /** The route prefix that makes `#/wildlife/…` an index filtered to a region
  *  rather than one animal's page — "in" reads as the sentence does ("wildlife
@@ -242,7 +259,7 @@ export function renderWildlifeIndex(main: HTMLElement, view: IndexView = {}): vo
     })] : []),
     kindChips(all, kind ?? null, region ?? null),
     ...groups,
-    el("p", { class: "note", style: "margin-top:1.25rem" }, coverageNote()),
+    coverageLine(),
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
       kind || region
         ? el("a", { class: "btn btn-secondary", href: "#/wildlife" }, t("wildlife.allWildlife"))
@@ -359,7 +376,7 @@ function wildlifeCard(row: WildlifeIndexRow, region: RegionDef | null): FilterRo
         el("a", { href: `#/wildlife/${w.id}` }, [title]),
         sub,
       ]),
-      el("p", { class: "wildlife-card-blurb" }, wildlifeBlurb(w)),
+      el("p", { class: "wildlife-card-blurb" }, wildlifeLead(w)),
       cardStats([
         {
           icon: "🌱",
@@ -487,6 +504,10 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
 
   const plantCount = supports.length;
   const hosts = supports.filter((s) => s.link.support === "host").length;
+  // Where it raises young or sits out the winter, as opposed to where it eats:
+  // a bird's nest site and a caterpillar's food plant are the same promise from
+  // the plant's side, so they earn a tile of their own rather than a footnote.
+  const shelter = supports.filter((s) => s.link.support === "shelter").length;
   const soleCount = supports.filter((s) => relianceOf(s.link) === "sole").length;
 
   // The chosen photograph, if there is one. Keyed to the first region this
@@ -545,16 +566,12 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
               ...citation(w.nativeBasis),
             ]),
             speciesLink(w),
-            el("p", { style: "margin:0.4rem 0 0;font-weight:650" }, [
-              tn("wildlife.supportedBy", plantCount, { n: fmtNumber(plantCount), animal: names.title }),
-              hosts ? tn("wildlife.ofThemHosts", hosts, { n: fmtNumber(hosts) }) : ".",
-            ]),
-            soleCount
-              ? el("p", { class: "note info", style: "margin:0.5rem 0 0" }, [
-                  el("strong", {}, tn("wildlife.cantLiveWithout", soleCount)),
-                  tn("wildlife.onlyOption", soleCount, { n: fmtNumber(soleCount), animal: names.title }),
-                ])
-              : null,
+            // The same figures the sentence underneath the plants used to
+            // spell out, as the tiles a plant's page has always had: how many
+            // of our plants feed it, how many raise its young, and how many it
+            // has no substitute for. The list of plants is right there below —
+            // a paragraph counting it was the page reading itself aloud.
+            reachTiles(w, names.title, { plantCount, hosts, shelter, soleCount }),
           ]),
         ]),
       ]),
@@ -584,15 +601,63 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
   }
 
   main.append(
-    el("p", { class: "note", style: "margin-top:1.25rem" }, coverageNote()),
-    el("p", { class: "confidence", style: "margin-top:0.5rem" }, [
-      el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, t("wildlife.allSources")),
-    ]),
+    coverageLine(),
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("wildlife") }, t("wildlife.allWildlife")),
       el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("wildlife.rankForSpot")),
     ]),
   );
+}
+
+/**
+ * What Indigene can vouch for about one animal, as scannable tiles: the plants
+ * that support it, the ones it raises its young on or shelters in, and the ones
+ * it has no substitute for. Each opens the same explain-it dialog a plant's
+ * tiles do, so the sentence that used to carry this survives where somebody
+ * actually asks for it.
+ */
+function reachTiles(
+  w: Wildlife,
+  animal: string,
+  counts: { plantCount: number; hosts: number; shelter: number; soleCount: number },
+): HTMLElement {
+  const tiles: Stat[] = [
+    {
+      icon: "🌱",
+      label: t("wlStat.plants.label"),
+      value: fmtNumber(counts.plantCount),
+      sub: t("wlStat.plants.sub"),
+      explain: t("wlStat.plants.explain", { animal }),
+    },
+  ];
+  if (counts.hosts) {
+    tiles.push({
+      icon: "🐛",
+      label: t("wlStat.host.label"),
+      value: fmtNumber(counts.hosts),
+      sub: t("wlStat.host.sub"),
+      explain: t("wlStat.host.explain", { animal }),
+    });
+  }
+  if (counts.shelter) {
+    tiles.push({
+      icon: "🏠",
+      label: t("wlStat.shelter.label"),
+      value: fmtNumber(counts.shelter),
+      sub: t("wlStat.shelter.sub"),
+      explain: t("wlStat.shelter.explain", { animal }),
+    });
+  }
+  if (counts.soleCount) {
+    tiles.push({
+      icon: "⭐",
+      label: t("wlStat.sole.label"),
+      value: fmtNumber(counts.soleCount),
+      sub: t("wlStat.sole.sub"),
+      explain: tn("wlStat.sole.explain", counts.soleCount, { animal }),
+    });
+  }
+  return statTiles(tiles, t("wlStat.glance", { animal: commonName(w) }));
 }
 
 // Strongest dependence first: sole > narrow > broad, then host over other

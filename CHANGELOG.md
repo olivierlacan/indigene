@@ -37,6 +37,34 @@ subtitle on the What's new page.
 - **And you can move between them.** The ‹ › buttons, the ← → keys and a swipe
   all page through a release's pictures. Escape, ✕, the backdrop or a swipe
   down puts them away.
+- **The wildlife list is a list again.** [Browse by
+  wildlife](https://indigene.app/wildlife) printed each creature's whole
+  description, so a screenful of cards was a wall of text. A card now opens
+  with a sentence or two; the animal's own page still has the rest.
+- **Every animal reads shorter, in French too.** All 73 descriptions were
+  rewritten to say the same thing and stop — the longest ran to 101 words —
+  and the French was rewritten to match, so neither edition is the long one.
+- **An animal's page counts its plants in tiles.** [The
+  monarch](https://indigene.app/wildlife/monarch) shows how many of our natives
+  feed it, how many raise its young, and how many it has no substitute for —
+  the same tiles a plant's page has. Tap one for what it means.
+- **"See it near you" is half as tall on a computer.** Asking where to look and
+  offering to look somewhere else were stacked down the page; they now sit side
+  by side. On a phone, nothing moves.
+- **The honesty note at the foot of the wildlife pages is a footnote now** — two
+  sentences in small type with the sources link on the end, instead of a
+  paragraph in the middle of the page. What it dropped moved into the 📍 pills.
+- Internal: `lead()` in `lib/prose.ts` gives the index the opening of the blurb
+  the page carries, so there is no second, shorter description to write,
+  translate and keep in step. It takes the first sentence, plus the second when
+  the first is under 12 words, and knows `Argynnis spp.` doesn't end one.
+  `npm run blurbs:check` holds openings to 28 words and blurbs to 55, with a
+  ×1.2 allowance for French — a translation that runs long is a French reader
+  getting the wall of text an English reader no longer gets.
+- Internal: `statGrid(plant)` splits into `statTiles(stats, label)`, so any page
+  can have the tiles. The animal pages' three (`plants`, `host`, `shelter`,
+  `sole`, each shown only when it isn't zero) replace two prose lines that
+  counted the list printed directly below them.
 - Internal: the What's new page carries a cut-down copy of the app's lightbox
   (`LIGHTBOX_SCRIPT` in `build-release-notes.mjs`) — same gestures, thresholds
   and classes, no bundle behind it. Each release's reel is read off its own

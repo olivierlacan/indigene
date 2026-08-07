@@ -9,6 +9,14 @@
 //      binomial. A "monarch" is a monarch everywhere, so the catalog is shared
 //      across regions; only the plant ties differ by region.
 //
+//      **The blurb's first sentence is the card.** The index shows the opening
+//      of this paragraph (`lead()` in `lib/prose.ts`) rather than a second,
+//      shorter description written by hand — one that would have to be
+//      translated and kept in step forever. So open with what the creature
+//      *is*, in a sentence that stands on its own, and let the story follow.
+//      `npm run blurbs:check` holds both ends: the opening card-sized, the
+//      paragraph a paragraph (it was a 51-word median and a 101-word worst).
+//
 //   2. SUPPORT — the ties, keyed by region id, then by plant id, then a list of
 //      links. Keyed by region because the same plant id can appear in two
 //      regions (live oak spans both Florida lists) with a different local story.
@@ -188,7 +196,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "An orange-and-black butterfly with two big blue eyespots underneath. Its caterpillars eat the silver-leaved everlastings and pussytoes, wrapping themselves in the woolly leaves and their own silk to hide.",
+      "An orange-and-black butterfly with two big blue eyespots underneath. Its caterpillars eat everlastings and pussytoes, hiding in the woolly leaves and their own silk.",
     native: true,
     nativeBasis: "Native across North America. BAMONA; Xerces Society.",
     inat: { name: "Vanessa virginiensis", iconic: "Insecta" },
@@ -211,7 +219,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "The big orange butterflies of western meadows and forest openings, their undersides spangled with silver — the hydaspe, the zerene, the great spangled, and the coastal Oregon silverspot that sits on the federal threatened list. Older books call the whole group Speyeria. Every one of them grows up on violets and on nothing else, and they do it in a strange order: the female lays in late summer on dry ground where the violets have already shrivelled away, the caterpillar hatches, eats nothing at all, and sleeps out the winter waiting for the leaves to come back.",
+      "The big orange butterflies of western meadows, their undersides spangled with silver. Every one of them grows up on violets and nothing else — and the female lays in late summer, on dry ground where the violets have already died back, for caterpillars that sleep out the winter before they eat.",
     native: true,
     nativeBasis:
       "Native greater fritillaries of North America (Argynnis, long known as Speyeria). Xerces Society; BAMONA; US Fish & Wildlife Service (Oregon silverspot recovery plan).",
@@ -238,7 +246,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "The small butterflies of hot dry ground — thumbnail-sized blues, and green hairstreaks that most people take for moths if they notice them at all. A whole run of them raise their caterpillars on native buckwheats, and several will lay on nothing else, which is why a patch of buckwheat on a poor sunny bank is worth more to them than a border full of nectar.",
+      "The small butterflies of hot dry ground — thumbnail-sized blues, and green hairstreaks most people take for moths. A whole run of them raise their caterpillars on native buckwheats, several on nothing else, so a patch on a poor sunny bank is worth more than a border full of nectar.",
     native: true,
     nativeBasis:
       "Native western blues and hairstreaks (acmon blue, Sheridan's green hairstreak and their relatives). Xerces Society; BAMONA.",
@@ -250,7 +258,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "The most widespread butterfly on earth, and the one that turns up in millions across southern California in the spring after a wet winter — a moving front of orange and black heading north, sometimes thousands of miles from the deserts where they hatched. Its caterpillars live in little silk tents on mallows, thistles and lupines, which is why a mallow in a garden is on the flight path.",
+      "The most widespread butterfly on earth, and the one that crosses southern California in millions after a wet winter — a front of orange and black heading north. Its caterpillars live in little silk tents on mallows, thistles and lupines.",
     native: true,
     nativeBasis: "Native to North America and nearly everywhere else. BAMONA; Xerces Society.",
     inat: { name: "Vanessa cardui", iconic: "Insecta" },
@@ -262,7 +270,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "California's state butterfly, and one almost nobody has seen. The male's yellow forewing carries a dark marking shaped like a poodle's head in profile — which is where the name comes from — over a wash of purple that only shows at the right angle. It lives in the foothills, it is fast and high-flying, and its caterpillars eat one shrub: California false indigo. No false indigo in a valley means no dogface in it either.",
+      "California's state butterfly, and one almost nobody has seen. The male's yellow forewing carries a dark poodle's-head marking — hence the name — over a wash of purple. It is fast and high-flying, and its caterpillars eat one shrub: California false indigo.",
     native: true,
     nativeBasis: "Endemic to California. Xerces Society; BAMONA; California Native Plant Society.",
     inat: { name: "Zerene eurydice", iconic: "Insecta" },
@@ -274,7 +282,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "A butterfly the size of a thumbnail, blue above with two orange spots, that flies in February and March along southern California rock faces and road cuts — one of the earliest butterflies of the year anywhere in the state. Its caterpillars burrow into the fleshy leaves of dudleyas and eat them from the inside, so it lives only where those silver rosettes cling to a cliff.",
+      "A thumbnail-sized butterfly, blue above with two orange spots, that flies along southern California rock faces in February — among the year's earliest anywhere in the state. Its caterpillars burrow into the fleshy leaves of dudleyas, so it lives where those silver rosettes cling to a cliff.",
     native: true,
     nativeBasis: "Native to California and northern Baja California. Xerces Society; BAMONA.",
     inat: { name: "Philotes sonorensis", iconic: "Insecta" },
@@ -286,7 +294,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "A chequered black, cream and brick-red butterfly of western hillsides, and a reliable garden visitor where its caterpillars' food grows — sticky monkeyflower above all, with penstemons and their relatives as alternatives. The spiny black caterpillars feed together in a little silk shelter, then rest out the dry summer half-grown and finish the following spring.",
+      "A chequered black, cream and brick-red butterfly of western hillsides, and a reliable garden visitor where sticky monkeyflower grows. The spiny black caterpillars feed together in a silk shelter, then rest out the dry summer half-grown and finish the following spring.",
     native: true,
     nativeBasis: "Native to western North America. Xerces Society; BAMONA.",
     inat: { name: "Euphydryas chalcedona", iconic: "Insecta" },
@@ -298,7 +306,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "A dark chocolate butterfly edged in ragged cream, with a line of blue spots set inside the border. It is often the first butterfly anyone sees in a year here, because it never went anywhere — it spends the winter as an adult wedged behind loose bark or down in a woodpile, and comes out on a warm late-winter afternoon before a single flower is open. Its caterpillars feed in a black spiny huddle on willow, cottonwood and birch.",
+      "A dark chocolate butterfly edged in ragged cream, with a line of blue spots inside the border. It is often the first butterfly of the year here, because it never left: it winters as an adult behind loose bark, out before a single flower opens. Its caterpillars feed on willow, cottonwood and birch.",
     native: true,
     nativeBasis: "Native across North America. BAMONA; Xerces Society.",
     inat: { name: "Nymphalis antiopa", iconic: "Insecta" },
@@ -311,7 +319,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "The big lemon-yellow butterfly that is, across most of France, the first one anybody sees each year. It spends the winter as an adult — wings closed and shaped exactly like a leaf, tucked into ivy or holly — and comes out on the first warm February day looking impossibly bright against a bare hedge. It lives longer than almost any other European butterfly, nearly a year on the wing, and its caterpillars eat buckthorns and nothing else.",
+      "The big lemon-yellow butterfly that is, across most of France, the first one anybody sees each year. It winters as an adult — wings closed and shaped exactly like a leaf, tucked into ivy or holly — and its caterpillars eat buckthorns and nothing else.",
     native: true,
     nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN); European butterfly foodplant checklist (Dryad).",
     inat: { name: "Gonepteryx rhamni", iconic: "Insecta" },
@@ -323,7 +331,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "The brimstone's southern sister — the same lemon yellow with a burnt-orange flash across the forewing, and often the first thing flying in a southern French February, because the adults sleep through winter and wake on the first warm day. Like the brimstone, its caterpillars eat only buckthorns.",
+      "The brimstone's southern sister — the same lemon yellow, with a burnt-orange flash across the forewing. Often the first thing flying in a southern French February, because the adults sleep through winter. Like the brimstone, its caterpillars eat only buckthorns.",
     native: true,
     nativeBasis: "Native to the Mediterranean basin, including southern France. INPN (MNHN); European butterfly foodplant checklist (Dryad).",
     inat: { name: "Gonepteryx cleopatra", iconic: "Insecta" },
@@ -335,7 +343,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "A small butterfly that lives its whole life in the top of an oak. It rarely visits a flower — it drinks the sticky honeydew aphids leave on the leaves instead — so hardly anyone notices it. Stand under a big oak on a still July evening and look up: the specks flickering round the crown, catching purple as they turn, are these.",
+      "A small butterfly that lives its whole life in the top of an oak. It drinks the honeydew aphids leave on the leaves rather than visiting flowers, so hardly anyone notices it — look up under a big oak on a still July evening.",
     native: true,
     nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN); European butterfly foodplant checklist (Dryad).",
     inat: { name: "Favonius quercus", iconic: "Insecta" },
@@ -347,7 +355,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "A big woodland butterfly whose males burn electric purple from one angle and go plain brown from the next, depending on how the light hits the wing. It spends its days in the crowns of the tallest trees and ignores flowers completely, coming down only for damp ground, oozing sap and things far less polite. Its caterpillar is a green slug-like thing with two horns that spends the winter pressed flat against a sallow twig, the exact colour of the bark.",
+      "A big woodland butterfly whose males burn electric purple from one angle and plain brown from the next. It spends its days in the crowns of the tallest trees and ignores flowers completely, coming down for damp ground and oozing sap. Its caterpillar winters flat against a sallow twig, the exact colour of the bark.",
     native: true,
     nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN); European butterfly foodplant checklist (Dryad).",
     inat: { name: "Apatura iris", iconic: "Insecta" },
@@ -359,7 +367,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "The pale silvery-blue butterfly flying high round a hedge, a wall or a churchyard yew in April, weeks before any other blue is out. It has two broods a year and each one uses a different plant — the spring brood lays on holly, the summer brood on ivy — which is why it is the blue that does well in towns.",
+      "The pale silvery-blue butterfly flying high round a hedge or a wall in April, weeks before any other blue is out. Its two broods use different plants — holly in spring, ivy in summer — which is why it does well in towns.",
     native: true,
     nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN); European butterfly foodplant checklist (Dryad).",
     inat: { name: "Celastrina argiolus", iconic: "Insecta" },
@@ -371,7 +379,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "A small chequered orange-and-brown butterfly that looks like a miniature fritillary and is not related to one — it is Europe's only member of an otherwise tropical family. It has fallen away badly as meadows were tidied and coppiced woods abandoned, and it is particular: the females lay only on cowslips and primroses, and only on plants sitting in the right amount of shelter.",
+      "A small chequered orange-and-brown butterfly that looks like a miniature fritillary without being one — it is Europe's only member of an otherwise tropical family. It has fallen away as meadows were tidied, and it is particular: the females lay only on cowslips and primroses.",
     native: true,
     nativeBasis: "Native across Europe, including France, and in long-term decline. INPN (MNHN); Butterfly Conservation; European butterfly foodplant checklist (Dryad).",
     inat: { name: "Hamearis lucina", iconic: "Insecta" },
@@ -407,7 +415,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "Ragged-edged and orange, with a small white comma mark underneath. It spends the winter as an adult clamped to a twig, where the torn wing outline makes it a dead leaf. Its caterpillars grow up on hops, nettles and elms.",
+      "Ragged-edged and orange, with a small white comma mark underneath. It winters as an adult on a twig, where the torn outline makes it a dead leaf. Its caterpillars grow up on hops, nettles and elms.",
     native: true,
     nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN); European butterfly foodplant checklist (Dryad).",
     inat: { name: "Polygonia c-album", iconic: "Insecta" },
@@ -431,7 +439,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "A protected butterfly with one of the strangest lives in Europe. Its caterpillar eats wild thyme flowers for a few weeks, then drops to the ground and is carried into a red ants' nest — it smells and even sounds like an ant grub — where it spends ten months eating the ants' own young. It needs the thyme and the right ant, or it needs nothing.",
+      "A protected butterfly with one of the strangest lives in Europe. Its caterpillar eats wild thyme for a few weeks, then drops to the ground and is carried into a red ants' nest, where it spends ten months eating the ants' own young.",
     native: true,
     nativeBasis: "Native to Europe; protected in France. INPN (MNHN); European butterfly foodplant checklist (Dryad).",
     inat: { name: "Phengaris arion", iconic: "Insecta" },
@@ -455,7 +463,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "A little butterfly the colour of a new coin — forewings burnished orange, edged in dark brown. It picks one warm stone or bare patch of path and comes back to it all afternoon, launching at anything that flies over and settling again in the same spot. Its caterpillars eat sorrels and docks and nothing else, which is why it belongs to rough corners rather than tidy beds.",
+      "A little butterfly the colour of a new coin — forewings burnished orange, edged in dark brown. It picks one warm stone and comes back to it all afternoon, launching at anything that flies over. Its caterpillars eat sorrels and docks, so it belongs to rough corners rather than tidy beds.",
     native: true,
     nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN); European butterfly foodplant checklist (Dryad).",
     inat: { name: "Lycaena phlaeas", iconic: "Insecta" },
@@ -467,7 +475,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "A small dark butterfly with a thin white W scrawled across the underwing, which is where it gets its name. It spends its life in the top of an elm and comes down so seldom — for bramble flowers and thistles in July — that most people with one overhead never learn it is there. It fell away with the elms when Dutch elm disease came through, and it only comes back where elms do.",
+      "A small dark butterfly with a thin white W scrawled across the underwing, which is where its name comes from. It lives in the top of an elm and comes down so seldom that most people never learn it is there. It fell away with the elms, and comes back only where they do.",
     native: true,
     nativeBasis:
       "Native across Europe, including France, and in long-term decline with its host tree. INPN (MNHN); Butterfly Conservation; European butterfly foodplant checklist (Dryad).",
@@ -480,7 +488,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "The only green butterfly in Europe — and it never shows you the top of its wings. It rests with them shut, and the underside is a hard bright leaf-green that makes it disappear against a shrub the instant it lands. Look in April and May on a sunny heath or a scrubby bank: two of them spiralling up together and dropping back to the same twig is usually how you find one.",
+      "The only green butterfly in Europe — and it never shows you the top of its wings. It rests with them shut, and the bright leaf-green underside makes it disappear against a shrub the instant it lands. Look on a sunny heath in April.",
     native: true,
     nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN); European butterfly foodplant checklist (Dryad).",
     inat: { name: "Callophrys rubi", iconic: "Insecta" },
@@ -492,7 +500,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "A small blue butterfly of open heath, named for the tiny metallic flecks along the rim of its underwing. Its whole life runs through an ant: black ants find the caterpillar, drink the sweet liquid it gives off, and in return carry it about, guard it, and often see the chrysalis through inside their own nest. So it needs the heather, the bare warm ground the ants nest in, and the ants themselves — lose any one and the butterfly goes.",
+      "A small blue butterfly of open heath, named for the tiny metallic flecks along its underwing. Its whole life runs through an ant: black ants drink the sweet liquid the caterpillar gives off, and carry and guard it in return. So it needs heather, ants, and the warm bare ground they nest in.",
     native: true,
     nativeBasis:
       "Native across Europe, including France; a heathland specialist in decline. INPN (MNHN); Butterfly Conservation; European butterfly foodplant checklist (Dryad).",
@@ -505,7 +513,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "An orange-and-black chequered butterfly of warm rough grassland, at its best near the western coast. Its caterpillars live as a family: they hatch together on ribwort plantain, spin a shared silk tent over it, spend the winter inside as a huddle, and on the first properly sunny days of spring come out and bask on top of the web in a black knot you can spot from the path.",
+      "An orange-and-black chequered butterfly of warm rough grassland, at its best near the western coast. Its caterpillars live as a family: they hatch together on ribwort plantain, spin a shared silk tent, and spend the winter inside it as a huddle.",
     native: true,
     nativeBasis:
       "Native across Europe, including western France. INPN (MNHN); Butterfly Conservation; European butterfly foodplant checklist (Dryad).",
@@ -531,7 +539,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "moth",
     icon: "🌙",
     blurb:
-      "North America's largest native moth — a hand-sized, red-banded giant. Its caterpillars grow fat on the leaves of cherry, maple, birch, and other trees before spinning a big papery cocoon for winter.",
+      "North America's largest native moth — a hand-sized, red-banded giant. Its caterpillars fatten on cherry, maple and birch before spinning a papery cocoon for winter.",
     native: true,
     nativeBasis: "Native to eastern and central North America. BAMONA.",
     inat: { name: "Hyalophora cecropia", iconic: "Insecta" },
@@ -555,7 +563,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "moth",
     icon: "🌙",
     blurb:
-      "A small pale moth that does something almost no other insect does: it pollinates on purpose. A female gathers yucca pollen into a ball under her head, flies to another flower, lays her eggs in it, and then deliberately packs the pollen onto the stigma — making sure the seeds her caterpillars will eat actually get made. She leaves most of them uneaten. The yucca has no other pollinator and the moth has no other food, so the two have been keeping each other alive for millions of years.",
+      "A small pale moth that does something almost no other insect does: it pollinates on purpose. A female carries a ball of yucca pollen to another flower, lays her eggs there, and packs the pollen onto the stigma — making the seeds her caterpillars will eat. The yucca has no other pollinator.",
     native: true,
     nativeBasis: "Native to California and northern Baja California, on Hesperoyucca whipplei. Xerces Society; the yucca-moth literature (Pellmyr).",
     inat: { name: "Tegeticula maculata", iconic: "Insecta" },
@@ -567,7 +575,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "moth",
     icon: "🌙",
     blurb:
-      "The West's great silkmoth — a red-brown moth as wide as a hand, with a white crescent on each wing, that flies at dusk in spring and never feeds at all as an adult: it has no working mouth, and lives a week or two on what the caterpillar stored. The caterpillar is a fat green thing with orange knobs, and it grows up on ceanothus, manzanita and coffeeberry.",
+      "The West's great silkmoth — red-brown, as wide as a hand, with a white crescent on each wing. It flies at dusk in spring and never feeds as an adult: it has no working mouth, and lives a week or two on what the caterpillar stored on ceanothus and manzanita.",
     native: true,
     nativeBasis: "Native to western North America. BAMONA; Xerces Society.",
     inat: { name: "Hyalophora euryalus", iconic: "Insecta" },
@@ -580,7 +588,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "moth",
     icon: "🌙",
     blurb:
-      "The largest moth in France — pink-and-black barred, the size of a palm — that flies at dusk and hovers at scented flowers on wings too fast to see. Its caterpillar is just as startling: a fat bright-green thing with lilac stripes and a horn on its tail, grown fat on privet leaves.",
+      "The largest moth in France — pink-and-black barred, the size of a palm — that flies at dusk and hovers at scented flowers. Its caterpillar is just as startling: a fat bright-green thing with lilac stripes and a horn on its tail, grown fat on privet.",
     native: true,
     nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN).",
     inat: { name: "Sphinx ligustri", iconic: "Insecta" },
@@ -592,7 +600,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "moth",
     icon: "🌙",
     blurb:
-      "A day-flying moth, glossy blue-black with six scarlet spots, that drifts slowly over summer meadows because it has nothing to fear — it makes cyanide from the bird's-foot trefoil its caterpillars eat, and everything knows it.",
+      "A day-flying moth, glossy blue-black with six scarlet spots, drifting slowly over summer meadows. It has nothing to fear: it makes cyanide from the bird's-foot trefoil its caterpillars eat, and everything knows it.",
     native: true,
     nativeBasis: "Native across Europe, including France. INPN (MNHN).",
     inat: { name: "Zygaena filipendulae", iconic: "Insecta" },
@@ -604,7 +612,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "moth",
     icon: "🌙",
     blurb:
-      "The commonest big hawk-moth in France, and the strangest-looking at rest: it holds its hindwings out in front of the forewings, so a moth sitting on a wall reads as a grey dead leaf that somebody has put together wrong. The adult has no working mouthparts and never eats a thing — everything it needs it took in as a caterpillar, off poplar and willow leaves.",
+      "The commonest big hawk-moth in France, and the strangest at rest: it holds its hindwings out in front of the forewings. A moth on a wall reads as a grey dead leaf put together wrong. The adult never eats: everything it needs it took in as a caterpillar, off poplar and willow leaves.",
     native: true,
     nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN).",
     inat: { name: "Laothoe populi", iconic: "Insecta" },
@@ -616,7 +624,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "moth",
     icon: "🌙",
     blurb:
-      "Pink and olive-green, like something that belongs in a much warmer country, hovering at honeysuckle after dark. The caterpillar is where the name comes from, and where a good many alarmed phone calls come from: a fat grey-brown thing as long as a finger, with a trunk-like snout it pulls back in when touched — which swells up four big eyespots and makes it look, briefly and very convincingly, like a small snake.",
+      "Pink and olive-green, like something from a much warmer country, hovering at honeysuckle after dark. The caterpillar is where the name comes from: a fat grey-brown thing as long as a finger, with a trunk-like snout it pulls in when touched — which swells four eyespots and makes it a small snake.",
     native: true,
     nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN).",
     inat: { name: "Deilephila elpenor", iconic: "Insecta" },
@@ -628,7 +636,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "moth",
     icon: "🌙",
     blurb:
-      "The moth everyone has seen and almost nobody believes: a plump grey-and-orange thing that hovers at a flower in broad daylight with its wings a blur, uncoiling a tongue longer than its own body — and gets reported every summer as a baby hummingbird. It flies up across France in spring, and it learns a good patch of flowers well enough to come back to it at the same time the next day.",
+      "The moth everyone has seen and almost nobody believes: it hovers at a flower in broad daylight and gets reported every summer as a baby hummingbird. Its tongue is longer than its body, and it comes back to a good patch of flowers at the same hour the next day.",
     native: true,
     nativeBasis: "Native across Europe and the Mediterranean, including all of metropolitan France. INPN (MNHN).",
     inat: { name: "Macroglossum stellatarum", iconic: "Insecta" },
@@ -640,7 +648,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "moth",
     icon: "🌙",
     blurb:
-      "The heathland's silk moth — soft grey and pink, with a big eyespot on each of its four wings. The male flies fast in the April sunshine, zigzagging low over the heather on feathered antennae that can pick up a female's scent from a kilometre away; she sits still all day and flies only at night. The caterpillar is worth finding too: bright green, ringed with black and studded with orange warts.",
+      "The heathland's silk moth — soft grey and pink, with a big eyespot on each of its four wings. The male flies fast in the April sunshine on feathered antennae that pick up a female's scent a kilometre away; she flies only at night.",
     native: true,
     nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN).",
     inat: { name: "Saturnia pavonia", iconic: "Insecta" },
@@ -656,7 +664,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "bee",
     icon: "🐝",
     blurb:
-      "The big fuzzy bees that fly cold and early. They can \"buzz-pollinate\" — shaking pollen loose with a shiver of their flight muscles — which some native flowers depend on. They nest in the ground and in old grass tussocks, and a spring-to-frost run of flowers keeps a colony fed.",
+      "The big fuzzy bees that fly cold and early. They shake pollen loose with a shiver of their flight muscles, which some native flowers depend on. They nest in the ground and in old grass tussocks, and a spring-to-frost run of flowers keeps a colony fed.",
     native: true,
     nativeBasis: "Native bumble bees (Bombus) — unlike the introduced honey bee. Xerces Society; USGS Native Bee Inventory.",
     // A genus scope: iNaturalist returns every Bombus species, so "bumble bees
@@ -705,7 +713,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "bird",
     icon: "🐦",
     blurb:
-      "The West's garden hummingbirds. The rufous times its spring migration to native currants and columbines coming into bloom, so an early red flower is fuel arriving exactly when it's needed.",
+      "The West's garden hummingbirds. The rufous times its migration to native currants coming into bloom, so an early red flower is fuel arriving when it's needed.",
     native: true,
     nativeBasis: "Native to western North America. Cornell Lab of Ornithology.",
   },
@@ -751,7 +759,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "bird",
     icon: "🐦",
     blurb:
-      "The acorn eaters. Jays in particular — blue jays in the east, scrub-jays in the west — carry off and bury far more acorns than they ever eat, and the forgotten ones grow, so a jay isn't just fed by an oak, it plants the next one.",
+      "The acorn eaters, jays above all: blue jays in the east, scrub-jays in the west. A jay buries far more acorns than it ever eats, and the forgotten ones grow — so it doesn't just live off an oak, it plants the next one.",
     native: true,
     nativeBasis: "Native birds (blue jay, California scrub-jay, acorn woodpecker, wild turkey). Cornell Lab of Ornithology.",
   },
@@ -772,7 +780,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "bird",
     icon: "🐦",
     blurb:
-      "The plump grey bird with a teardrop plume nodding off its forehead, running along the ground in a family party rather than flying. It is California's state bird, and it lives its whole life in the bottom three feet of the world: it needs low dense cover to hide in, bare ground to dust-bathe in, and seeds within walking distance. A garden of lawn and clipped shrubs offers none of the three, which is why quail have quietly gone from so many neighbourhoods.",
+      "The plump grey bird with a teardrop plume nodding off its forehead, running along the ground in a family party rather than flying. It lives in the bottom three feet of the world: low dense cover to hide in, bare ground to dust-bathe in, seeds within walking distance.",
     native: true,
     nativeBasis: "Native to California and the west coast. Cornell Lab of Ornithology; Audubon California.",
     inat: { name: "Callipepla californica", iconic: "Aves" },
@@ -784,7 +792,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "bird",
     icon: "🐦",
     blurb:
-      "A tiny grey bird with a long black tail and a call like a kitten mewing, which lives in coastal sage scrub and essentially nowhere else. It picks insects off California sagebrush and the sages all year — it doesn't migrate, so it needs that habitat every day of its life. Most of that scrub is now houses, and the bird is federally listed as threatened, which makes a garden of sagebrush and sage more than decorative.",
+      "A tiny grey bird with a long black tail and a call like a kitten mewing, which lives in coastal sage scrub and nowhere else. It doesn't migrate, so it needs that habitat every day of its life — and most of the scrub is now houses.",
     native: true,
     nativeBasis: "Native to coastal southern California and Baja California; federally listed as threatened. US Fish & Wildlife Service; Cornell Lab of Ornithology.",
     inat: { name: "Polioptila californica", iconic: "Aves" },
@@ -809,7 +817,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "bird",
     icon: "🐦",
     blurb:
-      "Small insect-eating birds that switch to fruit for the autumn journey south — and then live on it all winter, whether that means ivy and holly on an Atlantic hedge or mastic and myrtle on a Mediterranean hillside. Oily berries are the fuel, and they are worth fighting over: a blackcap will hold one fruiting bush against every other bird for weeks. More and more of them now skip the sea crossing altogether and spend the whole winter in western France on exactly this food.",
+      "Small insect-eating birds that switch to fruit for the autumn journey south, and then live on it all winter. That means ivy and holly on an Atlantic hedge, mastic and myrtle on a Mediterranean hillside — and a blackcap will hold one fruiting bush against every other bird for weeks.",
     native: true,
     nativeBasis: "Native European birds (blackcap, Sardinian warbler, garden warbler, robin). INPN (MNHN); Ligue pour la Protection des Oiseaux (LPO).",
   },
@@ -819,7 +827,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "bird",
     icon: "🐦",
     blurb:
-      "The finches that live on tree seed through the winter. The crossbill is the specialist — its beak crosses at the tip, a tool for prising a closed cone apart, and in the Pacific Northwest whole populations have their own bill size and their own call for the cone they work. Siskins and redpolls take the smaller seed of hemlock, larch, alder and birch, usually hanging upside down to do it.",
+      "The finches that live on tree seed right through the winter — crossbills, siskins and redpolls. The crossbill is the specialist: its beak crosses at the tip, a tool for prising a closed cone apart. The others take the smaller seed of hemlock, alder and birch.",
     native: true,
     nativeBasis: "Native seed-eating finches of the conifer forests of both Europe and North America (common/red crossbill, Eurasian and pine siskins, redpolls). INPN (MNHN); Ligue pour la Protection des Oiseaux (LPO); Cornell Lab of Ornithology.",
   },
@@ -830,7 +838,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "bird",
     icon: "🐦",
     blurb:
-      "A heavy, shy finch, warm orange-brown with a black bib and a bill so big it looks like a mistake. It isn't one: half the bird's head is the muscle that works it, and it can put something like fifty kilos of pressure on a cherry stone and split it clean open for the kernel inside. Nothing else in a French garden can do that. It feeds high in the canopy and slips off before you spot it, so what you usually find is the evidence — a scatter of neatly halved stones under the tree.",
+      "A heavy, shy finch with a bill so big it looks like a mistake. It isn't one: half the bird's head is the muscle that works it, and it splits a cherry stone clean open for the kernel. What you usually find is a scatter of halved stones under the tree.",
     native: true,
     nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN); Ligue pour la Protection des Oiseaux (LPO).",
     inat: { name: "Coccothraustes coccothraustes", iconic: "Aves" },
@@ -841,7 +849,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "bird",
     icon: "🐦",
     blurb:
-      "The small finches that live on the seed of wild flowers — goldfinches with their red faces and gold wing-bars hanging upside down off a knapweed head, linnets and greenfinches going over in twittering parties. What they need is seed left standing through autumn and winter, which is exactly what a tidied garden hasn't got: cut everything down in September and they simply go somewhere else.",
+      "The small finches that live on the seed of wild flowers — goldfinches hanging upside down off a knapweed head, linnets and greenfinches going over in twittering parties. What they need is seed left standing through the winter: cut everything down in September and they go elsewhere.",
     native: true,
     nativeBasis:
       "Native European finches (European goldfinch, common linnet, greenfinch, Eurasian siskin). INPN (MNHN); Ligue pour la Protection des Oiseaux (LPO).",
@@ -853,7 +861,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "bird",
     icon: "🐦",
     blurb:
-      "The pink-and-grey crow with a patch of barred sky-blue on its wing, heard screeching far more often than it is seen. Every autumn one jay carries and buries a few thousand acorns, a couple at a time and often hundreds of metres from the tree, and it never comes back for all of them. That is how oak woods cross open ground and climb hills — the bird doesn't just live off an oak, it plants the next one.",
+      "The pink-and-grey crow with a patch of barred sky-blue on its wing, heard screeching far more often than it is seen. Every autumn one jay buries a few thousand acorns, often hundreds of metres from the tree, and never comes back for them all — which is how oak woods climb hills.",
     native: true,
     nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN); Ligue pour la Protection des Oiseaux (LPO).",
     inat: { name: "Garrulus glandarius", iconic: "Aves" },
@@ -865,7 +873,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "bird",
     icon: "🐦",
     blurb:
-      "A dark, white-speckled crow of the high Alpine forest with one job: each autumn it buries tens of thousands of arolla pine seeds across the mountainside, and the ones it forgets become the next forest. The pine's seeds have no wings and cannot travel any other way — the bird and the tree cannot do without each other.",
+      "A dark, white-speckled crow of the high Alpine forest, with one job. Each autumn it buries tens of thousands of arolla pine seeds across the mountainside, and the ones it forgets become the next forest — the seeds have no wings and cannot travel any other way.",
     native: true,
     nativeBasis: "Native to the Alps and the boreal conifer forests. INPN (MNHN); Ligue pour la Protection des Oiseaux (LPO).",
     inat: { name: "Nucifraga caryocatactes", iconic: "Aves" },
@@ -877,7 +885,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "bird",
     icon: "🐦",
     blurb:
-      "The lyre-tailed bird of the Alpine treeline, whose males gather at dawn in spring to bubble and spar on the same patch of ground their ancestors used. It is in trouble across the Alps, and its life runs through one plant: bilberry — insects off it for the chicks, berries and leaves for the adults, and its low thickets to hide in under the snow.",
+      "The lyre-tailed bird of the Alpine treeline, whose males gather at dawn in spring to bubble and spar on the same ground their ancestors used. It is in trouble across the Alps, and its life runs through one plant: bilberry.",
     native: true,
     nativeBasis: "Native to the Alps and northern Europe; in decline and monitored in France. INPN (MNHN); Observatoire des Galliformes de Montagne.",
     inat: { name: "Lyrurus tetrix", iconic: "Aves" },
@@ -900,7 +908,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "mammal",
     icon: "🐿️",
     blurb:
-      "A golden, furry-tailed little climber with enormous black eyes that sleeps through more of the year than it is awake — six months curled up in a nest the size of a tennis ball, and a good deal of the summer too when the weather turns poor. It almost never crosses open ground, so it needs hedges and woodland edges joined up to get anywhere, and it fattens in autumn on hazelnuts. You will probably never see one. What you find is the shell it opened: a neat round hole, with the toothmarks angled around the rim like a tiny lathe.",
+      "A golden, furry-tailed little climber with enormous black eyes that sleeps through more of the year than it is awake. It almost never crosses open ground, so it needs hedges and woodland edges joined up, and it fattens on hazelnuts. What you find is the shell it opened: a neat round hole.",
     native: true,
     nativeBasis: "Native to western and central Europe, including France, where it is a protected species. INPN (MNHN); IUCN Red List.",
     inat: { name: "Muscardinus avellanarius", iconic: "Mammalia" },

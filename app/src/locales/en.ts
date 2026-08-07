@@ -1133,14 +1133,14 @@ export const en = {
   // Wildlife.
   // ---------------------------------------------------------------------
   "wildlife.coverageNote":
-    "These are the notable, well-documented wildlife ties we've mapped so far — not every insect a plant supports. A single oak is a caterpillar host to hundreds of moth species; here we name the ones worth choosing a plant for. Every tie shows its source, and the list grows as carefully as the plant lists do. The regions we name for an animal are the ones where we've mapped plants supporting it; its own range often reaches well past them.",
+    "The ties we've checked and sourced — not every insect a plant feeds. An oak alone hosts hundreds of moths; these are the ones worth choosing a plant for.",
   "wildlife.indexDocTitle": "Browse native plants by the wildlife they support — Indigene",
   "wildlife.indexTitle": "Browse by wildlife",
   "wildlife.indexLede":
     "Pick the insect or animal you want in your yard, and see which native plants support it — and how. {n} creatures mapped so far, from monarchs to the gopher tortoise.",
   "wildlife.allNative": "🌿 Every animal here is itself native. ",
   "wildlife.allNativeRest":
-    "That's the whole point — a native plant feeding native wildlife — so the introduced honey bee is left out. So instead of a “native” tag on every card, the 📍 figure counts the regions we've mapped a creature in — open it for their names.",
+    "That's the whole point — native plants feeding native wildlife — so the introduced honey bee is left out. The 📍 figure counts the regions we've mapped a creature in; open it for their names.",
   "wildlife.browsePlants": "← Browse plants instead",
   "wildlife.browsePlantsShort": "Browse plants",
   "wildlife.startFromSpot": "Start from a spot",
@@ -1151,7 +1151,7 @@ export const en = {
   "wildlife.inRegions": "Native to {n} of Indigene's regions: {regions}. Open for links.",
   "wildlife.inRegionsTitle": "Native to {n} regions",
   "wildlife.inRegionsBody":
-    "Indigene maps native plants supporting {animal} on {n} of its regional lists. Open one to see every creature those plants support.",
+    "Indigene maps native plants supporting {animal} on {n} of its regional lists. Open one to see every creature those plants support. The animal's own range often reaches well past them.",
   "wildlife.nativeTo": "📍 Native to",
   "wildlife.regionPillTitle": "{region} — all the wildlife its natives support",
   "wildlife.docTitle": "Native plants that support {animal} — Indigene",
@@ -1163,6 +1163,27 @@ export const en = {
   "wildlife.cantLiveWithout.other": "⭐ It can't live without these plants. ",
   "wildlife.onlyOption.one": "This is its only option — remove it and {animal} has nowhere to go.",
   "wildlife.onlyOption.other": "{n} of these are its only option — remove them and {animal} has nowhere to go.",
+  // The animal's reach, as tiles. What used to be a sentence under the plants
+  // that counted the plants beside it.
+  "wlStat.glance": "{animal} at a glance",
+  "wlStat.plants.label": "Plants for it",
+  "wlStat.plants.sub": "on our lists",
+  "wlStat.plants.explain":
+    "How many of the natives Indigene maps support {animal} — with food, shelter, or somewhere to raise young. They're listed below, by region.",
+  "wlStat.host.label": "Raises young on",
+  "wlStat.host.sub": "the strongest tie",
+  "wlStat.host.explain":
+    "Plants {animal} can actually grow up on. A caterpillar only becomes a butterfly on the right leaves, so this is what decides whether it can breed where you live rather than just visit.",
+  "wlStat.shelter.label": "Shelters in",
+  "wlStat.shelter.sub": "nests & cover",
+  "wlStat.shelter.explain":
+    "Plants {animal} nests in, hides in, or sits out the winter in. Somewhere safe to be is the half of a garden that isn't food.",
+  "wlStat.sole.label": "No substitute",
+  "wlStat.sole.sub": "make or break",
+  "wlStat.sole.explain.one":
+    "One of these plants is {animal}'s only option. Take it out of a neighbourhood and the animal goes with it.",
+  "wlStat.sole.explain.other":
+    "These plants are {animal}'s only option. Take them out of a neighbourhood and the animal goes with them.",
   "wildlife.speciesRecord": "See the species record: ",
   "wildlife.fullProfile": "{name} — full profile",
   "wildlife.allSources": "All sources & licensing →",

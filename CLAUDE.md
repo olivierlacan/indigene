@@ -23,6 +23,15 @@ plant and animal prose, empty states, error messages, and release notes.
 - **Put the depth where someone went looking for it.** A plant's own page is
   the right home for the yucca-moth story. A release note, a card, a tooltip
   is not.
+- **A card shows the opening of the page, never a second copy of it.** The
+  wildlife index prints the first sentence of the blurb the animal's page
+  carries (`lead()` in `lib/prose.ts`), so there's one paragraph to write, one
+  to translate, and nothing that can drift. Write the opening sentence to stand
+  on its own; `npm run blurbs:check` keeps it card-sized in both languages.
+- **A number belongs in a tile, not a sentence.** "3 native plants in Indigene
+  support the hazel dormouse, 1 of them as a caterpillar host" is a paragraph
+  doing a tile's job — slower to read, and a translation besides. `statTiles()`
+  takes any page's figures.
 - **Every word is also a translation.** French is written by hand from this
   English (`src/locales/`, `src/locales/prose.fr/`). A paragraph we didn't
   need is a paragraph somebody translates, reviews and maintains forever.

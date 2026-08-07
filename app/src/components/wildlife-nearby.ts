@@ -50,7 +50,7 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
   // guard's control-flow narrowing) still see a defined scope.
   const scope: InatScope = maybeScope;
 
-  const out = el("div", { "aria-live": "polite" });
+  const out = el("div", { class: "wl-nearby-out", "aria-live": "polite" });
 
   const prompt = locationPrompt({
     idBase: `wl-${w.id}`,
@@ -156,7 +156,11 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
     ]);
   }
 
-  return el("section", { class: "card", style: "margin-top:1rem" }, [
+  // On a laptop the four pieces below stack into a card two thirds of a screen
+  // tall for two controls. `.wl-nearby` puts the ask and the fallback side by
+  // side there (styles.css, "Profile pages on a laptop"); on a phone it is the
+  // stack it has always been.
+  return el("section", { class: "card wl-nearby", style: "margin-top:1rem" }, [
     el("h3", { style: "margin-top:0" }, t("wlNearby.seeItNear")),
     el("p", { class: "obs-section-lede" }, t("wlNearby.seeItNearLede", { name: commonName(w) })),
     prompt,

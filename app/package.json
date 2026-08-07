@@ -16,6 +16,7 @@
     "routes:check": "node scripts/check-routes.mjs",
     "release-notes": "node scripts/build-release-notes.mjs",
     "coverage": "node scripts/coverage.mjs",
+    "candidates": "NODE_USE_ENV_PROXY=1 node scripts/candidates.mjs",
     "host-counts": "node scripts/build-host-counts.mjs",
     "registry:build": "node scripts/build-registry.mjs",
     "registry:check": "node scripts/check-registry.mjs",

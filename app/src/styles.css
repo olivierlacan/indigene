@@ -3782,32 +3782,26 @@ body[data-layout="profile"] .wip-banner-text {
    nothing is stretched and nothing is stranded. `align-items: start` keeps the
    map card its natural height instead of stretching it to match the stats. */
 @media (min-width: 52rem) {
-  /* The map card lies down instead of standing up, and the caption flows round
-     it.
+  /* The card is as wide as the map, and no wider.
 
-     Three earlier tries got this wrong. Capping the map's width left a small
-     picture marooned in a full-width card. Putting the card in a column beside
-     the stats left a hole the height of the map, because the card is twice the
-     stats' height. Stretching the tiles to close that hole made four big boxes
-     with a line of text floating in each. And laying the card out as a rigid
-     two-column grid stranded the caption in the middle of its own column.
+     This took several wrong turns. Capping only the map's width left a small
+     picture marooned in a full-width card; putting the card in a column beside
+     the stats left a hole the height of the map; stretching the tiles to close
+     that hole made four big boxes with a line of text floating in each; and
+     floating the map so the caption could flow round it worked right up until
+     the caption itself came out, at which point the card was a map with an
+     acre of empty beside it.
 
-     A float is the old answer and the right one: the map takes the left of the
-     card at a fixed, sensible size, the caption and its source link set beside
-     it and wrap underneath if they run long. Nothing is stretched, nothing is
-     stranded, and the card is as tall as its own contents. */
-  .region-where::after {
-    content: "";
-    display: block;
-    clear: both;
+     With the caption gone there is nothing to lay out *around* the map, so the
+     card simply stops where the map stops: a compact figure at the left of the
+     page with its source link underneath, and the roster starting right below
+     it. */
+  .region-where {
+    max-width: 22rem;
   }
   .region-map {
-    float: left;
-    width: 17rem;
-    max-width: 40%;
-    margin: 0 1.1rem 0.5rem 0;
-  }
-  .region-map-legend {
+    width: 100%;
+    max-width: none;
     margin: 0 0 0.6rem;
   }
 }

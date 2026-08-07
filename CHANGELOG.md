@@ -55,9 +55,12 @@ subtitle on the What's new page.
   (south & the Keys)" is now **South Florida**; "Pacific Northwest (west of the
   Cascades)" is **Pacific Northwest**. The brackets had been pushing a name onto
   three lines on a phone.
-- **On a laptop the region map is a sensible size now, with its caption beside
-  it.** It used to stretch the whole width of the page, which pushed the plant
-  list off the bottom of the screen. On a phone, nothing changes.
+- **On a laptop the region map is a sensible size now.** It used to stretch the
+  whole width of the page, which pushed the plant list off the bottom of the
+  screen. On a phone, nothing changes.
+- **The list of ecoregion names under each map is gone.** It read like a
+  geology exam — "Ridge and Valley, Western Allegheny Plateau" — and the link
+  underneath already says whose map the lines come from.
 - **Each region map is one shape now, and its coastline is smoother.** The lines
   dividing it into a dozen pieces answered no question anyone asks, and the
   jagged edges were an artefact of keeping the file small.

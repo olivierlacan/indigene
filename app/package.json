@@ -2,7 +2,7 @@
   "name": "indigene",
   "version": "0.24.0",
   "private": true,
-  "description": "Native Indigene — a mobile-first PWA that recommends locally native plants for the exact spot you're standing in.",
+  "description": "Native Indigene \u2014 a mobile-first PWA that recommends locally native plants for the exact spot you're standing in.",
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -15,6 +15,7 @@
     "publish:gh-pages": "node scripts/publish.mjs gh-pages",
     "routes:check": "node scripts/check-routes.mjs",
     "release-notes": "node scripts/build-release-notes.mjs",
+    "notes:check": "node scripts/check-notes-lightbox.mjs",
     "coverage": "node scripts/coverage.mjs",
     "candidates": "NODE_USE_ENV_PROXY=1 node scripts/candidates.mjs",
     "host-counts": "node scripts/build-host-counts.mjs",

@@ -1,5 +1,37 @@
 # Working in this repo
 
+## Every word is short by default
+
+Indigene is a tool for someone with a goal — *what do I plant in this corner?*
+— not an encyclopedia of native plants. Copy that answers the question and
+stops is doing its job; copy that keeps going is charging the reader for our
+enthusiasm. **Default to brevity and clarity. Length has to be earned, every
+time.**
+
+This applies to everything a person reads: buttons, headings, explanations,
+plant and animal prose, empty states, error messages, and release notes.
+
+- **Say the thing, then stop.** One idea per sentence, one point per paragraph.
+  If a sentence survives being cut, it wasn't carrying anything.
+- **Cut the run-up.** "It's worth knowing that…", "The way this works is…",
+  "One consequence worth saying plainly:" — the reader wanted the sentence
+  after those, not the sentence itself.
+- **One example, not four.** A list of six species names becomes three; the
+  second story illustrating the same point goes.
+- **Don't re-explain what the page already says.** The surrounding heading,
+  the card, the section title are all context you can lean on.
+- **Put the depth where someone went looking for it.** A plant's own page is
+  the right home for the yucca-moth story. A release note, a card, a tooltip
+  is not.
+- **Every word is also a translation.** French is written by hand from this
+  English (`src/locales/`, `src/locales/prose.fr/`). A paragraph we didn't
+  need is a paragraph somebody translates, reviews and maintains forever.
+
+The exception is the same one the button rule makes: a term the reader can't
+be expected to know still gets explained in place, and a number still gets its
+source. Warmth isn't padding either — "plants nobody has chosen a picture for
+yet keep the drawing" is worth its words. Trim the essay, keep the voice.
+
 ## Mobile-first UI: buttons stay on one line
 
 This is a mobile-first PWA — assume a narrow phone (≈360 px wide) is the common
@@ -127,7 +159,7 @@ the shot.
 
 `CHANGELOG.md` (Keep a Changelog format) is the single source of the public
 **What's new** page at `/release-notes/` — the Pages deploy compiles it with
-`npm run release-notes` on every push to `main`. That gives the changelog three
+`npm run release-notes` on every push to `main`. That gives the changelog four
 rules:
 
 - **Add an entry in the same PR as the change**, under `## [Unreleased]`. The
@@ -140,6 +172,16 @@ rules:
   housekeeping goes in the same sections as a bullet starting with
   `Internal:` — the compiler cleans those out of the page, and the sections
   stay exactly Keep a Changelog's (no custom sections).
+- **A bullet is one change, said once: aim for ~35 words, 50 is the hard
+  ceiling.** `npm run release-notes` fails the build over it, so the
+  `Changelog` check catches it in review — including bullets still sitting
+  under `Unreleased`. What changed, who it's for, one example, done. If it
+  won't fit, you're writing the feature's documentation: that belongs on the
+  page itself, and the reasoning behind it belongs in an `Internal:` bullet
+  (which is exempt — nobody outside the repo reads those). Two 35-word bullets
+  beat one 70-word bullet when there really were two changes. See *Every word
+  is short by default* at the top of this file; the notes drifted to a 65-word
+  median once already.
 - **Cut versions at feature boundaries, Maison-style.** When a coherent piece
   of the product has landed, retitle `Unreleased` to `## [0.x] - YYYY-MM-DD`,
   give it a bold one-line name on the next line, bump `app/package.json`'s
@@ -174,6 +216,9 @@ Two more conventions the compiler understands:
   small thumbnail is copied into the build (so the page renders even before
   the file reaches `main`) while full-size screenshots are direct-linked from
   `raw.githubusercontent.com` — no copying multi-MB images into the deploy.
+  The thumbnail and the Before/After links are one reel in the page's own
+  picture viewer (‹ › / ← → / swipe), so keep them to the two lines above:
+  they're what the reader pages through. `npm run notes:check` drives it.
 
 Preview the page locally with `npm run release-notes` (writes
 `app/dist/release-notes/index.html`); the script fails loudly if the changelog

@@ -40,7 +40,10 @@ subtitle on the What's new page.
   Sonoran blue whose caterpillars grow up inside a dudleya's leaves, and the
   monarch, whose western population has fallen by more than ninety percent. See
   the whole roster at
-  [Southern California](https://indigene.app/regions/ca-south-coast).
+  [Southern California](https://indigene.app/regions/ca-south-coast), which
+  opens with a map of exactly how far the region reaches — you can see Palm
+  Springs sitting outside the shading, on the desert side of the mountains,
+  because that is a different flora and a list for it would cook.
 - **Eight more southern California natives, chosen by asking the data rather
   than remembering.** Laurel sumac, California wild rose, chaparral yucca,
   deerweed, golden yarrow, silver bush lupine, blue dicks and chaparral bush

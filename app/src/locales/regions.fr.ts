@@ -47,6 +47,7 @@ export const REGIONS_FR: Record<string, RegionText> = {
     short: "Californie du Sud",
     reference: "Plaine côtière de Los Angeles à San Diego",
     note: "Le statut d'indigène est établi pour la Californie du Sud cismontane — la côte, les vallées intérieures et les contreforts à l'ouest de la crête des montagnes, en gros de Santa Barbara à la frontière mexicaine. De l'autre côté de la crête, les déserts Mojave et du Colorado forment une flore différente, et la haute montagne est plus froide que ce que cette liste suppose ; considérez ces recommandations comme non vérifiées dans les deux cas.",
+    extent: "De Santa Barbara au sud jusqu'à la frontière mexicaine, et du Pacifique vers l'intérieur jusqu'à la crête des montagnes — les chaînes Transverses et Péninsulaires — et pas au-delà. Palm Springs et le désert qui suit sont de l'autre côté de cette ligne.",
   },
   "florida-central": {
     name: "Floride (nord et centre)",

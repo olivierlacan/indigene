@@ -41,6 +41,9 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { openLoader } from "./_load-ts.mjs";
+import { requireProxyAwareFetch } from "./_net.mjs";
+
+requireProxyAwareFetch("maps:build");
 
 const APP_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT_DIR = join(APP_ROOT, "public", "maps");

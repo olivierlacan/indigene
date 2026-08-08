@@ -233,7 +233,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "A dark swallowtail dusted blue-green. Its caterpillar is one of the strangest things in an eastern garden: bright green with two huge false eyespots, hiding by day in a leaf it has rolled into a tube.",
+      "A dark swallowtail dusted with blue-green, at home wherever spicebush and sassafras grow. Its caterpillar is one of the strangest things in an eastern garden: bright green with two huge false eyespots, hiding by day in a leaf it has rolled into a tube.",
     native: true,
     nativeBasis: "Native to eastern North America. BAMONA; Xerces Society.",
     inat: { name: "Papilio troilus", iconic: "Insecta" },
@@ -245,7 +245,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "A black butterfly with a white band and orange wingtips, and the habit of coming out to meet you — it will chase a bird, or a person, off its patch of streamside and then glide straight back to the same twig.",
+      "A black butterfly with a white band and orange wingtips, and the habit of coming out to meet you. It will chase a bird, or a person, off its patch of streamside, then glide straight back to the same twig.",
     native: true,
     nativeBasis: "Native to the Pacific states and British Columbia. BAMONA; Xerces Society.",
     inat: { name: "Limenitis lorquini", iconic: "Insecta" },
@@ -761,7 +761,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "bee",
     icon: "🐝",
     blurb:
-      "The big shiny-backed bee that looks like a bumble bee with a bald patch. It nests in dead wood rather than the ground, and it is strong enough to force open flowers most bees can't — or, when a flower is too deep even for it, to bite a hole in the side and drink through that.",
+      "The big shiny-backed bee that looks like a bumble bee with a bald patch. It nests in dead wood rather than the ground, and it is strong enough to force open flowers most bees can't — or to bite a hole in the side of one too deep even for it.",
     native: true,
     nativeBasis: "Native to eastern North America. Xerces Society; USGS Native Bee Inventory.",
     inat: { name: "Xylocopa virginica", iconic: "Insecta" },
@@ -833,7 +833,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "bird",
     icon: "🐦",
     blurb:
-      "A grey scrap of a bird, barely heavier than two paperclips, that travels in chattering flocks of twenty and works a shrub over from the inside. Its nest is the strangest thing in a Californian garden: a soft hanging sock of lichen and spider silk, a foot long, that takes the pair a month to build.",
+      "A grey scrap of a bird, barely heavier than two paperclips, that travels in chattering flocks of twenty and works a shrub over from the inside. Its nest is a soft hanging sock of lichen and spider silk, a foot long, that takes the pair a month to build.",
     native: true,
     nativeBasis: "Native to the western US and Mexico, resident year-round. Cornell Lab of Ornithology.",
     inat: { name: "Psaltriparus minimus", iconic: "Aves" },

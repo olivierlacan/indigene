@@ -1,0 +1,51 @@
+# Checks that every animal's description is still the length a card can carry.
+#
+# The wildlife index doesn't hold a second, shorter description written by hand
+# — a card prints the opening of the blurb the animal's page carries (`lead()`
+# in `src/lib/prose.ts`), so there's one paragraph to write, one to translate,
+# and nothing that can drift. The cost of that is a writing rule: the first
+# sentence has to stand on its own, and the paragraph has to stop.
+#
+# The reason this is a CI job and not a code review: nothing looks broken when
+# it slips. The animal's own page is fine — a long paragraph on a page is just a
+# long paragraph — and the card that goes wrong is on a different screen, three
+# taps away, in a list of eighty. Nine new creatures arrived in #114 and four of
+# them landed over the line without anyone noticing, which is exactly the shape
+# of failure a person doesn't catch by reading a diff.
+#
+# `npm run blurbs:check` is the same command locally. It reads the TypeScript
+# through vite, so `npm ci` is all it needs — no build, no browser.
+name: Blurbs
+
+on:
+  pull_request:
+    paths:
+      - "app/src/data/wildlife.ts"
+      - "app/src/locales/prose.fr/wildlife.ts"
+      - "app/src/lib/prose.ts"
+      - "app/scripts/check-blurbs.mjs"
+      - ".github/workflows/blurbs.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Card-sized descriptions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      - name: Check every animal's opening and blurb
+        working-directory: app
+        run: npm run blurbs:check

@@ -11,6 +11,7 @@ import { renderConfirm } from "./steps/confirm";
 import { renderPriorities } from "./steps/priorities";
 import { renderResults } from "./steps/results";
 import { renderSaved } from "./steps/saved";
+import { renderSpot } from "./steps/spot";
 import { renderExplore } from "./steps/explore";
 import { renderBrowse } from "./steps/browse";
 import { renderPlants } from "./steps/plants";
@@ -93,6 +94,7 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
  * the card (steps/settings.ts) or section (steps/privacy.ts) that was asked for.
  */
 const PARAM_RENDERERS: Record<string, StepFn> = {
+  saved: renderSpot,
   plants: renderPlant,
   regions: renderRegion,
   wildlife: renderWildlife,

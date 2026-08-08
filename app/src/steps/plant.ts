@@ -29,6 +29,7 @@ import { statGrid } from "../components/stat-card";
 import { drawSizeViz } from "../components/size-viz";
 import { entryForPlant, deepLinks } from "../lib/registry";
 import { nearbyObservationsSection } from "../components/nearby-observations";
+import { plantedControl } from "../components/planted-control";
 import { anchoredHeading } from "../components/anchor-head";
 import { plantSectionHref, isHashRoute } from "../lib/routes";
 import { privacyNote } from "../components/privacy-link";
@@ -718,6 +719,9 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
       el("p", { style: "margin:0.3rem 0 0.6rem" },
         t("plant.checkSpotLede", { region: regionName(region.meta) })),
       savedFit,
+      // Already got one in the ground? The log is on the spot's page; this
+      // hands the plant over to it (see `components/planted-control.ts`).
+      plantedControl(all[0].plant.id),
       locateBtn,
       privacyNote(t("plant.checkPrivacy")),
       status,

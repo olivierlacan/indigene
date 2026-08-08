@@ -66,6 +66,26 @@
 //                         photograph knowing it
 //   --photos DIR          answer iNaturalist photo requests from a local
 //                         mirror instead of the network — see below
+//   --api FILE            answer iNaturalist *API* requests from a local
+//                         mirror, for the same reason and on the same terms as
+//                         --photos: the bodies are real responses, saved with
+//                         curl, so the shot is the truth — fetched from disk so
+//                         it is the same truth every time, and capturable where
+//                         the browser has no outbound network at all. FILE is a
+//                         JSON array of `{ "match": ["substring", …], "file":
+//                         "body.json" }` rules, tried in order against the full
+//                         request URL; paths are relative to FILE. A request
+//                         matching no rule is failed rather than fetched, so a
+//                         missing rule shows up as the feature reporting no
+//                         answer instead of quietly going to the network.
+//   --seed-garden         put an example saved spot and planting log into the
+//                         device's storage before shooting. The Saved list and
+//                         a spot's own page only exist once somebody has one,
+//                         and a log worth photographing has entries years old —
+//                         which no walk through the app can produce in the
+//                         second a capture takes. See `seedGarden` below for
+//                         exactly what is written; it is the same shape the app
+//                         itself writes, through the app's own database.
 //
 // ## --photos, and why the shots need it
 //
@@ -94,7 +114,7 @@
 // The output width always equals viewport-width × dpr; anything else means
 // the page overflows sideways (see CLAUDE.md — fix the page, don't publish).
 import { existsSync, readFileSync } from "node:fs";
-import { extname, join, resolve } from "node:path";
+import { dirname, extname, join, resolve } from "node:path";
 import { chromium } from "playwright";
 
 const args = process.argv.slice(2);
@@ -133,6 +153,8 @@ const open = flag("--open", "");
 const clicks = flags("--click");
 const geo = flag("--geo", "");
 const photos = flag("--photos", "");
+const seedGardenFlag = has("--seed-garden");
+const api = flag("--api", "");
 const [url, out] = args;
 
 if (!url || !out || !(dpr > 0) || !(vw > 0) || !(vh > 0)) {
@@ -148,6 +170,14 @@ const browser = await chromium.launch(
 );
 const [geoLat, geoLon] = geo.split(",").map(Number);
 const context = await browser.newContext({
+  // A mirror only works if the page's own requests are the ones intercepted.
+  // The built app registers a service worker, and a service worker's fetches
+  // are *its* requests, not the page's — Playwright's routing never sees them,
+  // so a mirrored photo went to the real network behind our back and came back
+  // empty in a sandbox with no way out. Blocked whenever a mirror is in use,
+  // and only then: everywhere else the service worker is part of what is being
+  // photographed.
+  ...(photos || api ? { serviceWorkers: "block" } : {}),
   viewport: { width: vw, height: vh },
   deviceScaleFactor: dpr,
   colorScheme: scheme,
@@ -174,7 +204,19 @@ if (photos) {
     });
   }
 }
+if (api) {
+  const rulesPath = resolve(api);
+  const root = dirname(rulesPath);
+  const rules = JSON.parse(readFileSync(rulesPath, "utf8"));
+  await page.route("https://api.inaturalist.org/**", (route) => {
+    const target = route.request().url();
+    const rule = rules.find((r) => r.match.every((m) => target.includes(m)));
+    if (!rule) return route.abort();
+    route.fulfill({ body: readFileSync(join(root, rule.file)), contentType: "application/json" });
+  });
+}
 await page.goto(url, { waitUntil: "networkidle" });
+if (seedGardenFlag) await seedGarden(page);
 if (picks) await walkToPicks(page, picks, stopAt);
 if (tapPick) await tapFirstPick(page);
 // After the walk the app knows the reader's region; this opens a page that
@@ -261,4 +303,65 @@ async function comeBackLater(page, base, route) {
 async function tapFirstPick(page) {
   await page.locator("article.plant-pick a.plant-pick-link").first().click();
   await page.waitForURL("**#/plants/**");
+}
+
+/**
+ * Write one saved spot and a few dated plantings into the app's own database,
+ * then reload so the app reads them the way it reads a returning visitor's.
+ *
+ * The first `goto` is what creates the database — the app opens it on boot —
+ * so this opens it with no version of its own and simply puts records in the
+ * stores that are there. A build that predates a store (the "before" half of a
+ * comparison) is missing `plantings`, and that's fine: the spot still lands, so
+ * both halves of the pair show a Saved list with something in it.
+ *
+ * The dates are what a walk through the app can't produce: a bed planted over
+ * three years, so the log shows a plant past its first year beside one just in.
+ */
+async function seedGarden(page) {
+  const spot = {
+    id: "example-spot",
+    createdAt: Date.UTC(2023, 3, 8),
+    label: "Front bed, north side",
+    lat: 40.0379,
+    lon: -75.3557,
+    site: null,
+    sun: { hours: 4.5, low: 3.5, high: 5.5, label: "part shade", deciduousAdjusted: false, source: "manual" },
+    horizon: null,
+    soilOverride: null,
+    deciduousOverhead: false,
+    regionOverride: null,
+    weights: { host: 3, pollinator: 2, bird: 2, stormwater: 1, erosion: 1, carbon: 1, establishment: 2 },
+  };
+  const plantings = [
+    { id: "p1", spotId: spot.id, plantId: "cercis-canadensis", count: 1,
+      planted: { year: 2023, month: 4 }, observationIds: [], createdAt: Date.UTC(2023, 3, 8) },
+    // Two sightings the gardener posted of their own plant, linked back to the
+    // row it belongs to — the feature that stands in for progress photos.
+    { id: "p2", spotId: spot.id, plantId: "asclepias-tuberosa", count: 6,
+      planted: { year: 2024, month: 5, day: 18 },
+      observationIds: [373658728, 384926161], createdAt: Date.UTC(2024, 4, 18) },
+    { id: "p3", spotId: spot.id, plantId: "ilex-verticillata", count: 2,
+      planted: { year: 2026 }, observationIds: [], createdAt: Date.UTC(2026, 2, 1) },
+  ];
+  await page.evaluate(async ({ spot, plantings }) => {
+    const db = await new Promise((resolve, reject) => {
+      const req = indexedDB.open("indigene");
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
+    });
+    const put = (store, value) =>
+      new Promise((resolve, reject) => {
+        if (!db.objectStoreNames.contains(store)) return resolve();
+        const req = db.transaction(store, "readwrite").objectStore(store).put(value);
+        req.onsuccess = () => resolve();
+        req.onerror = () => reject(req.error);
+      });
+    await put("spots", spot);
+    for (const p of plantings) await put("plantings", p);
+  }, { spot, plantings });
+  // A reload, not a `goto`: the address is already the page being photographed,
+  // and a goto that changes nothing but the hash doesn't reload — the app would
+  // still be showing the empty list it drew before the records landed.
+  await page.reload({ waitUntil: "networkidle" });
 }

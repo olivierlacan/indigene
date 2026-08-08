@@ -99,7 +99,9 @@ export async function loadSightings(
 ): Promise<SightingResult> {
   const cached = await getCachedObservations(key).catch(() => undefined);
   if (!isStale(cached, now)) {
-    return { observations: cached.observations, from: cached.from, fromCache: true };
+    // `from` is optional on the record only because a hand-linked observation
+    // has none (see `db.ts`); every record this path writes carries one.
+    return { observations: cached.observations, from: cached.from ?? from, fromCache: true };
   }
   const observations = await fetcher();
   await putCachedObservations({ key, from, capturedAt: now, observations }).catch(() => {});

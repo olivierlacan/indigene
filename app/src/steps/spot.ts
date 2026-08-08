@@ -1,0 +1,472 @@
+// One saved spot, and what has actually gone into it — `#/saved/<id>`.
+//
+// The rest of the app plans a garden. This page is the garden: a dated list of
+// what was planted, how long it has been in, and what it should be doing by now
+// (see `lib/garden.ts` for the arithmetic and the honesty rules around it).
+//
+// It has no address anybody can share, on purpose. `canonicalPath` returns null
+// for it, so no file is written and nothing is prerendered — a page listing
+// where somebody's garden is and what's in it should not have a link that works
+// for a stranger. It lives behind the Saved list, on this device, like the spot
+// it belongs to.
+import { el, clear, toast } from "../ui";
+import { navigate, openSavedSpot } from "../state";
+import { getSpot, plantingsForSpot, savePlanting, deletePlanting } from "../db";
+import type { Planting, PlantedDate, SavedSpot } from "../types";
+import type { Plant } from "../types";
+import { REGIONS, loadPlants, regionForSite } from "../lib/plants";
+import type { RegionDef } from "../lib/plants";
+import {
+  growthNote,
+  plantedLabel,
+  plantingId,
+  tally,
+  timeInGround,
+  today,
+} from "../lib/garden";
+import { linkedObservation, observationUrl, parseObservationRef } from "../lib/observation-link";
+import { observationList } from "../components/observation-ui";
+import { statTiles, type Stat } from "../components/stat-card";
+import { privacyNote } from "../components/privacy-link";
+import { sunPlain } from "../lib/plain";
+import { commonName, searchAliases, regionName } from "../lib/names";
+import { hashParam } from "../lib/plant-view";
+import { t, fmtNumber, monthName } from "../lib/i18n";
+
+/** Rows shown in the plant picker before it stops listing. A search that still
+ *  matches forty things hasn't been narrowed yet, and forty tap targets is a
+ *  scroll, not a choice. */
+const MAX_MATCHES = 8;
+
+export async function renderSpot(main: HTMLElement, param?: string): Promise<void> {
+  clear(main);
+  const id = param ?? "";
+  const spot = await getSpot(id).catch(() => undefined);
+  if (!spot) {
+    main.append(
+      el("h2", { class: "step-title" }, t("spot.notFound")),
+      el("button", { class: "btn btn-primary btn-block", onClick: () => navigate("saved") }, t("spot.backToSaved"))
+    );
+    return;
+  }
+
+  document.title = t("spot.docTitle", { label: spot.label });
+  const plantings = await plantingsForSpot(spot.id).catch(() => [] as Planting[]);
+  const region = regionOf(spot);
+  const roster = rosterFor(region);
+  const byId = new Map(roster.map((p) => [p.id, p]));
+  // A plant logged from another region's list — a spot near a boundary, or a
+  // list the reader browsed to — still has to render its own name and size
+  // table, so fall back to the whole catalog for anything the roster misses.
+  const plantOf = (plantId: string): Plant | undefined =>
+    byId.get(plantId) ?? everyPlant().get(plantId);
+
+  const redraw = (): void => void renderSpot(main, param);
+
+  main.append(
+    el("h2", { class: "step-title" }, spot.label),
+    el("p", { class: "step-lede" }, [
+      spot.sun ? sunPlain(spot.sun.hours) : t("saved.sunUnknown"),
+      region ? ` · ${regionName(region.meta)}` : "",
+    ]),
+    countsCard(plantings, plantOf),
+    logCard(plantings, plantOf, redraw),
+    addCard(spot, roster, redraw),
+    el("button", {
+      class: "btn btn-secondary btn-block",
+      style: "margin-top:1rem",
+      onClick: () => openSavedSpot(spot),
+    }, t("spot.seePlants")),
+    privacyNote(t("spot.privacy"), undefined, "log")
+  );
+}
+
+// --- the tally -------------------------------------------------------------
+
+/**
+ * How the spot is doing, as three numbers rather than a sentence about them.
+ *
+ * The third tile is the one that isn't bookkeeping: how many of the kinds
+ * planted here raise caterpillars, which is the food-web measure the whole app
+ * ranks on. A garden can hold twenty plants and feed nothing much; this says
+ * whether yours does.
+ */
+function countsCard(plantings: Planting[], plantOf: (id: string) => Plant | undefined): HTMLElement {
+  const counts = tally(plantings);
+  const hosts = new Set(
+    plantings.map((p) => p.plantId).filter((id) => (plantOf(id)?.hostLepCount ?? 0) > 0)
+  ).size;
+  const stats: Stat[] = [
+    {
+      icon: "🌱",
+      label: t("spot.tilePlants"),
+      value: fmtNumber(counts.plants),
+      explain: t("spot.tilePlantsExplain"),
+    },
+    {
+      icon: "🎨",
+      label: t("spot.tileKinds"),
+      value: fmtNumber(counts.kinds),
+      explain: t("spot.tileKindsExplain"),
+    },
+    {
+      icon: "🐛",
+      label: t("spot.tileHosts"),
+      value: fmtNumber(hosts),
+      explain: t("spot.tileHostsExplain"),
+    },
+  ];
+  return el("section", { class: "card" }, [statTiles(stats, t("spot.tilesLabel"))]);
+}
+
+// --- the log ---------------------------------------------------------------
+
+function logCard(
+  plantings: Planting[],
+  plantOf: (id: string) => Plant | undefined,
+  redraw: () => void
+): HTMLElement {
+  const body: (HTMLElement | string)[] = [el("h3", { style: "margin:0 0 0.5rem" }, t("spot.logTitle"))];
+  if (!plantings.length) {
+    body.push(el("p", { class: "note" }, t("spot.logEmpty")));
+  } else {
+    body.push(el("ul", { class: "log-list" }, plantings.map((p) => logRow(p, plantOf(p.plantId), redraw))));
+  }
+  return el("section", { class: "card" }, body);
+}
+
+function logRow(
+  planting: Planting,
+  plant: Plant | undefined,
+  redraw: () => void
+): HTMLElement {
+  const name = plant ? commonName(plant) : planting.plantId;
+  const growth = plant ? growthNote(plant.size, planting.planted) : null;
+
+  const when = planting.planted
+    ? `${plantedLabel(planting.planted)} · ${timeInGround(planting.planted)}`
+    : t("spot.whenUnknown");
+
+  const head = el("div", { class: "log-head" }, [
+    el("div", {}, [
+      plant
+        ? el("a", { class: "log-name", href: `#/plants/${encodeURIComponent(plant.id)}` }, name)
+        : el("span", { class: "log-name" }, name),
+      planting.count > 1 ? el("span", { class: "log-count" }, `×${fmtNumber(planting.count)}`) : null,
+      el("div", { class: "coords" }, when),
+    ]),
+    el("button", {
+      class: "btn btn-ghost log-remove",
+      "aria-label": t("spot.removeLabel", { name }),
+      onClick: async () => {
+        if (!confirm(t("spot.confirmRemove", { name }))) return;
+        await deletePlanting(planting.id);
+        toast(t("spot.removed"));
+        redraw();
+      },
+    }, "🗑"),
+  ]);
+
+  const row = el("li", { class: "log-item" }, [head]);
+  if (growth) row.append(el("p", { class: "log-growth" }, growth));
+  row.append(sightingsBlock(planting, name, redraw));
+  return row;
+}
+
+// --- linked sightings ------------------------------------------------------
+
+/**
+ * The photos, and the field that adds one.
+ *
+ * Each linked observation is fetched and drawn with the same gallery, lightbox
+ * and credit every other iNaturalist photo in the app gets — the gardener's own
+ * sighting is somebody's licensed work too, even when that somebody is them.
+ */
+function sightingsBlock(planting: Planting, name: string, redraw: () => void): HTMLElement {
+  const block = el("div", { class: "log-sightings" });
+  const gallery = el("div", { "aria-live": "polite" });
+  block.append(gallery);
+
+  if (planting.observationIds.length) {
+    void Promise.all(planting.observationIds.map((id) => linkedObservation(id).catch(() => null)))
+      .then((found) => {
+        const shown = found.filter((o): o is NonNullable<typeof o> => Boolean(o));
+        clear(gallery);
+        if (shown.length) gallery.append(observationList(shown, name));
+        // Ids that answered with nothing showable still keep their link: the
+        // observation may be photo-less, licensed all-rights-reserved, or just
+        // unreachable right now, and dropping the gardener's own record of it
+        // would be worse than a plain link out.
+        const missing = planting.observationIds.filter(
+          (id) => !shown.some((o) => o.id === id)
+        );
+        if (missing.length) {
+          gallery.append(
+            el("p", { class: "coords" }, [
+              t("spot.obsPlainLink"),
+              " ",
+              ...missing.map((id) =>
+                el("a", { href: observationUrl(id), target: "_blank", rel: "noopener" }, `#${id} `)
+              ),
+            ])
+          );
+        }
+      });
+  }
+
+  const input = el("input", {
+    type: "url",
+    class: "log-obs-input",
+    inputmode: "url",
+    placeholder: t("spot.obsPlaceholder"),
+    "aria-label": t("spot.obsLabel"),
+  }) as HTMLInputElement;
+
+  const form = el("form", {
+    class: "log-obs-form",
+    hidden: true,
+    onSubmit: async (e: Event) => {
+      e.preventDefault();
+      const id = parseObservationRef(input.value);
+      if (!id) {
+        toast(t("spot.obsBad"));
+        return;
+      }
+      if (planting.observationIds.includes(id)) {
+        toast(t("spot.obsAlready"));
+        return;
+      }
+      await savePlanting({ ...planting, observationIds: [...planting.observationIds, id] });
+      toast(t("spot.obsAdded"));
+      redraw();
+    },
+  }, [
+    el("div", { class: "log-obs-row" }, [
+      input,
+      el("button", { class: "btn btn-secondary btn-compact", type: "submit" }, t("spot.obsAdd")),
+    ]),
+    el("p", { class: "hint" }, t("spot.obsHelp")),
+  ]) as HTMLFormElement;
+
+  const toggle = el("button", {
+    class: "btn btn-ghost btn-compact log-obs-toggle",
+    onClick: () => {
+      form.hidden = !form.hidden;
+      if (!form.hidden) input.focus();
+    },
+  }, t("spot.obsLink"));
+
+  block.append(toggle, form);
+  return block;
+}
+
+// --- adding ----------------------------------------------------------------
+
+/**
+ * "I planted one of these." A plant, a date to whatever precision is honest,
+ * and how many.
+ *
+ * The picker searches the spot's own region roster, because that is the list
+ * this spot's plants come from — and `?add=<slug>` opens it with the plant
+ * already chosen, which is how the button on a plant's page hands over (see
+ * `components/planted-control.ts`).
+ */
+function addCard(spot: SavedSpot, roster: Plant[], redraw: () => void): HTMLElement {
+  let chosen: Plant | undefined = roster.find((p) => p.id === hashParam("add"));
+
+  const picked = el("div", { class: "log-picked" });
+  const results = el("div", { "aria-live": "polite" });
+  const form = el("form", { hidden: true });
+
+  const search = el("input", {
+    type: "search",
+    id: "log-plant-q",
+    autocomplete: "off",
+    placeholder: t("spot.searchPlaceholder"),
+    onInput: () => showMatches(),
+  }) as HTMLInputElement;
+
+  function showMatches(): void {
+    clear(results);
+    const q = norm(search.value);
+    if (q.length < 2) return;
+    const matches = roster
+      .filter((p) => searchAliases(p).some((a) => norm(a).includes(q)))
+      .slice(0, MAX_MATCHES);
+    if (!matches.length) {
+      results.append(el("p", { class: "note warn" }, t("spot.searchNone")));
+      return;
+    }
+    results.append(
+      ...matches.map((p) =>
+        el("button", {
+          type: "button",
+          class: "choice",
+          onClick: () => choose(p),
+        }, [
+          el("span", { class: "choice-title" }, commonName(p)),
+          el("span", { class: "choice-sub" }, p.latin),
+        ])
+      )
+    );
+  }
+
+  function choose(p: Plant): void {
+    chosen = p;
+    search.value = "";
+    clear(results);
+    clear(picked);
+    picked.append(
+      el("p", { class: "log-picked-name" }, [
+        el("strong", {}, commonName(p)),
+        " ",
+        el("button", {
+          type: "button",
+          class: "btn btn-ghost btn-compact",
+          onClick: () => {
+            chosen = undefined;
+            clear(picked);
+            form.hidden = true;
+            search.focus();
+          },
+        }, t("spot.changePlant")),
+      ])
+    );
+    form.hidden = false;
+  }
+
+  // The date, given to whatever precision the person actually has. Month and day
+  // both offer "not sure" and the year stands alone, because most people know
+  // the season they planted something and not the date — and a date field that
+  // demands a day gets a made-up day (see `PlantedDate` in `types.ts`).
+  const now = today();
+  const year = el("input", {
+    type: "number",
+    id: "log-year",
+    class: "log-year",
+    inputmode: "numeric",
+    min: "1900",
+    max: String(now.year + 1),
+    value: String(now.year),
+  }) as HTMLInputElement;
+
+  const month = el("select", { id: "log-month", onChange: () => syncDays() }, [
+    el("option", { value: "" }, t("spot.notSure")),
+    ...Array.from({ length: 12 }, (_, i) =>
+      el("option", { value: String(i + 1), selected: i + 1 === now.month }, monthName(i + 1))
+    ),
+  ]) as HTMLSelectElement;
+
+  const day = el("select", { id: "log-day" }, [
+    el("option", { value: "" }, t("spot.notSure")),
+    ...Array.from({ length: 31 }, (_, i) =>
+      el("option", { value: String(i + 1), selected: i + 1 === now.day }, fmtNumber(i + 1))
+    ),
+  ]) as HTMLSelectElement;
+
+  /** A day with no month is a date nobody can read, so the day field follows
+   *  the month's lead rather than offering an answer that means nothing. */
+  function syncDays(): void {
+    day.disabled = !month.value;
+    if (!month.value) day.value = "";
+  }
+
+  const count = el("input", {
+    type: "number",
+    id: "log-count",
+    class: "log-count-input",
+    inputmode: "numeric",
+    min: "1",
+    max: "999",
+    value: "1",
+  }) as HTMLInputElement;
+
+  form.append(
+    el("div", { class: "field" }, [
+      el("label", { for: "log-year" }, t("spot.whenLabel")),
+      el("div", { class: "log-date-row" }, [
+        el("span", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.year")), year]),
+        el("span", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.month")), month]),
+        el("span", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.day")), day]),
+      ]),
+    ]),
+    el("div", { class: "field field-inline" }, [
+      el("label", { for: "log-count" }, t("spot.howMany")),
+      count,
+    ]),
+    el("button", { class: "btn btn-primary btn-block", type: "submit" }, t("spot.addButton"))
+  );
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const pick = chosen;
+    if (!pick) return;
+    const y = Number(year.value);
+    const planted: PlantedDate | null = Number.isFinite(y) && y > 1000
+      ? {
+          year: y,
+          ...(month.value ? { month: Number(month.value) } : {}),
+          ...(month.value && day.value ? { day: Number(day.value) } : {}),
+        }
+      : null;
+    await savePlanting({
+      id: plantingId(),
+      spotId: spot.id,
+      plantId: pick.id,
+      count: Math.max(1, Math.min(999, Number(count.value) || 1)),
+      planted,
+      observationIds: [],
+      createdAt: Date.now(),
+    });
+    toast(t("spot.added", { name: commonName(pick) }));
+    // The query that pre-chose a plant has been acted on; leaving it in the
+    // address would re-choose it every time this page is redrawn.
+    if (hashParam("add")) location.hash = `#/saved/${encodeURIComponent(spot.id)}`;
+    else redraw();
+  });
+
+  syncDays();
+  if (chosen) choose(chosen);
+
+  return el("section", { class: "card" }, [
+    el("h3", { style: "margin:0 0 0.5rem" }, t("spot.addTitle")),
+    el("div", { class: "field" }, [
+      el("label", { for: "log-plant-q" }, t("spot.searchLabel")),
+      search,
+    ]),
+    results,
+    picked,
+    form,
+  ]);
+}
+
+// --- plumbing --------------------------------------------------------------
+
+/** Fold case and strip accents, so "cerisier tardif" finds "Cerisier tardif"
+ *  and an unaccented typing of it finds it too. */
+function norm(s: string): string {
+  return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+}
+
+/** The region this spot's plants come from — the reader's own pick first, the
+ *  coordinates otherwise, exactly as everywhere else in the app. */
+function regionOf(spot: SavedSpot): RegionDef | null {
+  const picked = spot.regionOverride
+    ? REGIONS.find((r) => r.meta.id === spot.regionOverride) ?? null
+    : null;
+  return picked ?? regionForSite(spot.lat, spot.lon, spot.site);
+}
+
+function rosterFor(region: RegionDef | null): Plant[] {
+  if (region) return loadPlants(region);
+  return [...everyPlant().values()];
+}
+
+let _all: Map<string, Plant> | null = null;
+function everyPlant(): Map<string, Plant> {
+  if (!_all) {
+    _all = new Map();
+    for (const region of REGIONS) for (const p of loadPlants(region)) _all.set(p.id, p);
+  }
+  return _all;
+}

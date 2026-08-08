@@ -35,6 +35,7 @@ const SECTION_IDS: Record<string, string> = {
   location: "privacy-location",
   lookups: "privacy-lookups",
   saved: "privacy-saved",
+  log: "privacy-log",
   whatsnew: "privacy-whats-new",
   counting: "privacy-counting",
   children: "privacy-children",
@@ -92,6 +93,14 @@ export function renderPrivacy(main: HTMLElement, param?: string): void {
 
       el("h3", { id: "privacy-saved" }, t("privacy.savedTitle")),
       el("p", {}, tx("privacy.saved", { save: el("strong", {}, t("privacy.saveButton")) })),
+
+      // The planting log is the one thing here that holds a *history* of a
+      // place rather than a reading of it, and the one place someone might
+      // reasonably expect their photos to end up. Both get said in full: where
+      // the log lives, and why there are no photos in it.
+      el("h3", { id: "privacy-log" }, t("privacy.logTitle")),
+      el("p", {}, t("privacy.log1")),
+      el("p", {}, t("privacy.log2")),
 
       // The green dot is the app volunteering that it knows something about
       // your history, so it gets its own section rather than a line inside

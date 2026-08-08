@@ -218,6 +218,88 @@ export const fr: Dict = {
   "saved.privacy":
     "Ces lieux ne vivent que sur cet appareil — ils n'en sortent jamais, et nous ne pouvons pas les voir",
   "saved.findAnother": "Trouver un autre lieu",
+  "saved.tally.one": "{count} plante en terre",
+  "saved.tally.other": "{count} plantes en terre, {kinds} espèces",
+  "saved.openLog": "Ce que vous avez planté →",
+  "saved.startLog": "Commencer un journal →",
+
+  // ---------------------------------------------------------------------
+  // La page d'un lieu : le journal des plantations. Ce qui a été planté,
+  // quand, et où ça devrait en être aujourd'hui.
+  // ---------------------------------------------------------------------
+  "spot.docTitle": "{label} — Indigene",
+  "spot.notFound": "Ce lieu n'est pas sur cet appareil.",
+  "spot.backToSaved": "Vos lieux enregistrés",
+  "spot.seePlants": "Les plantes de ce lieu",
+  "spot.privacy": "Votre journal reste sur cet appareil — les plantes, les dates, tout",
+  "spot.tilesLabel": "Ce qui pousse ici",
+  "spot.tilePlants": "En terre",
+  "spot.tilePlantsExplain": "Chaque plante inscrite ici : six asclépiades comptent pour six.",
+  "spot.tileKinds": "Espèces",
+  "spot.tileKindsExplain":
+    "Combien de plantes différentes vous avez mises. Un mélange fait tenir un jardin toute l'année — une floraison en avril, des baies en octobre.",
+  "spot.tileHosts": "Nourrissent des chenilles",
+  "spot.tileHostsExplain":
+    "Combien de vos espèces élèvent des chenilles. Les chenilles sont ce que les oiseaux donnent à leurs petits : c'est le chiffre qui transforme un jardin en garde-manger.",
+  "spot.logTitle": "Ce que vous avez planté",
+  "spot.logEmpty":
+    "Rien d'inscrit ici pour l'instant. Ajoutez la première plante mise en terre — la date peut rester vague, « 2024 » suffit.",
+  "spot.whenUnknown": "Date non renseignée",
+  "spot.removeLabel": "Retirer {name} de ce journal",
+  "spot.confirmRemove": "Retirer {name} de ce journal ?",
+  "spot.removed": "Retiré de votre journal.",
+  "spot.addTitle": "Ajouter une plante que vous avez plantée",
+  "spot.searchLabel": "Quelle plante ?",
+  "spot.searchPlaceholder": "Chercher par son nom",
+  "spot.searchNone": "Rien à ce nom dans la liste de cette région.",
+  "spot.changePlant": "changer",
+  "spot.whenLabel": "Quand l'avez-vous plantée ?",
+  "spot.year": "Année",
+  "spot.month": "Mois",
+  "spot.day": "Jour",
+  "spot.notSure": "Je ne sais plus",
+  "spot.howMany": "Combien ?",
+  "spot.addButton": "Ajouter à ce lieu",
+  "spot.added": "{name} ajoutée à votre journal.",
+  "spot.obsLink": "📷 Relier une photo d'iNaturalist",
+  "spot.obsLabel": "Lien vers une observation iNaturalist",
+  "spot.obsPlaceholder": "inaturalist.org/observations/…",
+  "spot.obsAdd": "Relier",
+  "spot.obsHelp":
+    "Les photos restent sur iNaturalist ; nous ne gardons que le numéro de l'observation, ici, sur votre appareil. Une observation que vous avez rendue floue le reste pour tout le monde — cette page se souvient seulement de laquelle de vos plantes il s'agissait.",
+  "spot.obsBad": "Cela ne ressemble pas à un lien d'observation iNaturalist.",
+  "spot.obsAlready": "Déjà reliée à cette plante.",
+  "spot.obsAdded": "Photo reliée.",
+  "spot.obsPlainLink": "Également reliées :",
+
+  "planted.button": "🌱 J'en ai planté une",
+  "planted.whichSpot": "Dans quel lieu l'avez-vous plantée ?",
+
+  // ---------------------------------------------------------------------
+  // Le temps passé en terre, et ce qu'on peut en attendre.
+  // ---------------------------------------------------------------------
+  "log.notYet": "Pas encore en terre",
+  "log.justPlanted": "Tout juste plantée",
+  "log.months.one": "{n} mois en terre",
+  "log.months.other": "{n} mois en terre",
+  "log.years.one": "{n} an en terre",
+  "log.years.other": "{n} ans en terre",
+  "log.firstYear":
+    "La première année, tout se passe sous terre : ne guettez pas grand-chose au-dessus. Elle dort, elle rampe, elle bondit — le bond arrive la troisième année.",
+  "log.expect": "Elle devrait faire environ {height} de haut et {spread} de large aujourd'hui, si elle se plaît.",
+
+  // ---------------------------------------------------------------------
+  // À quel point une plante est courante autour d'un lieu (relevés iNaturalist).
+  // ---------------------------------------------------------------------
+  "rarity.none":
+    "Personne n'a relevé cette plante à moins de {radius} d'ici. Si votre terrain lui convient, la vôtre sera peut-être la seule pendant un moment.",
+  "rarity.scarce":
+    "Rarement relevée par ici — {count} relevés à moins de {radius}. En planter une remet en place ce qui manque au coin.",
+  "rarity.occasional": "Relevée de temps en temps — {count} relevés à moins de {radius}.",
+  "rarity.common":
+    "L'une des plantes les plus relevées par ici — {count} relevés à moins de {radius}.",
+  "rarity.caveat":
+    "Un relevé compte quelqu'un qui a remarqué une plante, pas la quantité qui pousse ici.",
 
   // ---------------------------------------------------------------------
   // Explorer.
@@ -1417,8 +1499,10 @@ export const fr: Dict = {
   "privacy.whereLede":
     "Pour que vous voyiez exactement ce qui se passe : quand une recherche a besoin de votre lieu, votre navigateur s'adresse directement à ces services publics. Chacun ne voit que cette recherche-là, n'obtient ni nom ni compte (il n'y en a pas), et applique sa propre politique de confidentialité à cette requête.",
   "privacy.svc.sentWrap": "(on lui envoie {sent}).",
-  "privacy.svc.inat.for": "des photos de plantes et d'animaux observés à proximité",
-  "privacy.svc.inat.sent": "une coordonnée ou une zone de carte, plus l'espèce recherchée",
+  "privacy.svc.inat.for":
+    "des photos de plantes et d'animaux observés à proximité, la fréquence à laquelle une espèce y a été relevée, et toute observation que vous reliez à votre journal de plantation",
+  "privacy.svc.inat.sent":
+    "une coordonnée ou une zone de carte, plus l'espèce recherchée — ou, pour une observation reliée, seulement le numéro d'observation que vous avez collé",
   "privacy.svc.meteo.for":
     "votre climat — la pluie et la rigueur des hivers ; et la conversion d'un code postal ou d'une commune en un point sur la carte",
   "privacy.svc.meteo.sent": "une coordonnée, ou le nom de lieu que vous avez saisi",
@@ -1437,6 +1521,11 @@ export const fr: Dict = {
   "privacy.saveButton": "Enregistrer ce lieu",
   "privacy.saved":
     "Quand vous touchez {save}, il est conservé dans le stockage propre à votre navigateur, sur cet appareil uniquement. Il ne quitte jamais votre appareil, n'atteint aucun serveur (il n'y en a pas), et nous ne pouvons jamais le voir. Il est à vous : ouvrez ou supprimez un lieu enregistré quand vous voulez depuis le menu « Lieux », et effacer les données de ce site dans votre navigateur les efface définitivement.",
+  "privacy.logTitle": "Votre journal de plantation, et pourquoi il ne contient pas de photos",
+  "privacy.log1":
+    "Ce que vous avez planté dans un lieu — les plantes, les dates, les quantités — est conservé avec ce lieu, sur cet appareil, et ne va nulle part ailleurs. Supprimer le lieu supprime son journal avec lui.",
+  "privacy.log2":
+    "Les photos de suivi ne sont pas stockées ici du tout. Un navigateur peut reprendre son espace de stockage sans prévenir, et perdre ainsi des années de journal serait terrible — vous pouvez donc relier une observation iNaturalist que vous avez déjà publiée, et nous n'en gardons que le numéro. Votre observation reste exactement comme vous l'avez réglée : si vous en floutez la position là-bas, elle reste floutée. Cet appareil connaît le lieu précis ; personne d'autre, et iNaturalist n'apprend jamais que les deux sont liés.",
   "privacy.whatsNewTitle": "Comment nous savons ce qui est nouveau pour vous",
   "privacy.whatsNew1":
     "Indigene affiche un petit point vert à côté des nouveautés — dans le menu ⚙️ et en bas de chaque page — quand quelque chose a été ajouté depuis votre dernier passage, et signale ces nouveautés sur la page des nouveautés. Pour cela, il doit retenir un peu de choses — les voici, exactement :",

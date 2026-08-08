@@ -68,6 +68,11 @@ export const PHOTOS_SEGMENT = "photos";
 
 /** Steps that take a `<step>/<param>` second segment. */
 export const PARAM_STEPS = new Set<string>([
+  // `saved/<spot id>` is one saved spot and its planting log. It is the one
+  // param step with nothing shareable behind it — `canonicalPath` returns null
+  // for it and the prerenderer writes no file, because a page saying where
+  // somebody's garden is should not have an address that works for a stranger.
+  "saved",
   "plants",
   "regions",
   "wildlife",

@@ -4100,3 +4100,160 @@ body[data-layout="profile"] .wip-banner-text {
   margin-top: 0.8rem;
 }
 
+
+/* ---------------------------------------------------------------------------
+   The planting log — one saved spot's page (steps/spot.ts).
+
+   A chronicle, so it reads as a list of entries rather than a grid of cards:
+   each row is a name, a date, what it should be doing by now, and the photos
+   tied to it. The only decoration is the hairline between rows, because the
+   thing being scanned is the dates.
+   ------------------------------------------------------------------------ */
+.log-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.log-item {
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--line);
+}
+.log-item:first-child {
+  border-top: 0;
+  padding-top: 0.25rem;
+}
+.log-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+.log-name {
+  font-weight: 700;
+}
+.log-count {
+  margin-left: 0.35rem;
+  color: var(--ink-soft);
+  font-weight: 650;
+}
+/* The bin sits beside the name at a full tap size without stretching the row. */
+.log-remove {
+  flex: none;
+  min-height: 2.4rem;
+  padding: 0.3rem 0.5rem;
+}
+/* What it should be by now. Given the brand tint because it's the one line on
+   the row that is the app talking rather than the gardener's own record. */
+.log-growth {
+  margin: 0.35rem 0 0;
+  color: var(--brand-ink);
+  font-size: 0.95rem;
+}
+.log-sightings {
+  margin-top: 0.4rem;
+}
+.log-obs-toggle {
+  padding-left: 0;
+}
+.log-obs-row {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+.log-obs-input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.log-obs-form .hint {
+  margin-top: 0.35rem;
+}
+/* The add form's three date fields, side by side on a phone: a year wide
+   enough for four digits, and the two pickers sharing what's left. */
+.log-date-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+.log-date-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+/* Year and day are fixed to what they hold — four digits and two — so the
+   month keeps everything left over. Sharing the width equally clipped the year
+   to "202" the moment the month was a French one ("septembre" is twice the
+   width of "May"). */
+.log-date-field:first-child {
+  flex: 0 0 5.25rem;
+}
+.log-date-field:last-child {
+  flex: 0 0 4.75rem;
+}
+.log-date-field:nth-child(2) {
+  flex: 1 1 auto;
+}
+.log-date-field .hint {
+  margin: 0;
+}
+.log-year {
+  width: 100%;
+}
+.log-count-input {
+  max-width: 6rem;
+}
+.log-picked-name {
+  margin: 0.5rem 0;
+}
+
+/* The way from the Saved list into one spot's log. A full-width link under the
+   row's two buttons, so a phone never has three tap targets sharing its width. */
+.saved-item {
+  flex-wrap: wrap;
+}
+.saved-tally {
+  font-size: 0.9rem;
+  color: var(--brand-ink);
+  font-weight: 650;
+}
+.saved-log-link {
+  flex: 1 0 100%;
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--line);
+  font-weight: 650;
+}
+
+/* "I planted one", on a plant's page (components/planted-control.ts). */
+.planted-control {
+  margin-bottom: 0.6rem;
+}
+.planted-lede {
+  margin: 0 0 0.5rem;
+  font-weight: 650;
+}
+
+/* ---------------------------------------------------------------------------
+   How common a plant is around here (components/rarity-line.ts).
+
+   The verdict reads first and the caveat under it in small type — present
+   every time, because a count of records is not a count of plants and the
+   sentence saying so has to travel with the number.
+   ------------------------------------------------------------------------ */
+.rarity-note {
+  margin-top: 0.6rem;
+  background: var(--surface-2);
+}
+.rarity-note.rarity-scarce,
+.rarity-note.rarity-none {
+  background: var(--brand-bg);
+  color: var(--brand-ink);
+}
+.rarity-verdict {
+  margin: 0;
+  font-weight: 650;
+}
+.rarity-caveat {
+  margin: 0.3rem 0 0;
+  font-size: 0.88rem;
+  opacity: 0.85;
+}

@@ -3,14 +3,15 @@
 // app preferences (weights, last spot), and a cache of trimmed iNaturalist
 // observations so the "growing near you" layer hits the network at most once
 // per area (see `lib/nearby.ts`).
-import type { SavedSpot } from "./types";
+import type { Planting, SavedSpot } from "./types";
 import type { ObservationSummary } from "./lib/inaturalist";
 
 const DB_NAME = "indigene";
-const DB_VERSION = 2;
+const DB_VERSION = 3;
 const SPOTS = "spots";
 const KV = "kv";
 const OBS = "observations";
+const PLANTINGS = "plantings";
 
 let dbp: Promise<IDBDatabase> | null = null;
 
@@ -42,6 +43,13 @@ function open(): Promise<IDBDatabase> {
       }
       if (!db.objectStoreNames.contains(OBS)) {
         db.createObjectStore(OBS, { keyPath: "key" });
+      }
+      // What the gardener has actually planted, keyed by its own id and
+      // carrying the spot's id as a field. No index: a person's log is tens of
+      // rows, not thousands, so reading the store and filtering in JS is both
+      // faster to write and one less thing to migrate.
+      if (!db.objectStoreNames.contains(PLANTINGS)) {
+        db.createObjectStore(PLANTINGS, { keyPath: "id" });
       }
     };
     req.onsuccess = () => {
@@ -96,8 +104,18 @@ export async function saveSpot(spot: SavedSpot): Promise<void> {
   await tx(SPOTS, "readwrite", (s) => s.put(spot));
 }
 
+/**
+ * Delete a spot **and everything logged against it**.
+ *
+ * The planting log is keyed by spot id, so a spot deleted on its own would
+ * leave rows describing a garden that no longer exists — invisible, undeletable
+ * and counted in nothing. Deleting both here means there is no code path that
+ * can create an orphan, rather than a rule every caller has to remember.
+ */
 export async function deleteSpot(id: string): Promise<void> {
   await tx(SPOTS, "readwrite", (s) => s.delete(id));
+  const mine = await plantingsForSpot(id).catch(() => [] as Planting[]);
+  await Promise.all(mine.map((p) => deletePlanting(p.id))).catch(() => {});
 }
 
 export async function listSpots(): Promise<SavedSpot[]> {
@@ -107,6 +125,30 @@ export async function listSpots(): Promise<SavedSpot[]> {
 
 export async function getSpot(id: string): Promise<SavedSpot | undefined> {
   return tx(SPOTS, "readonly", (s) => s.get(id));
+}
+
+// --- The planting log ------------------------------------------------------
+// What went into the ground, per spot. Same local-first contract as the spots
+// themselves: it lives here and nowhere else.
+
+export async function savePlanting(p: Planting): Promise<void> {
+  await tx(PLANTINGS, "readwrite", (s) => s.put(p));
+}
+
+export async function deletePlanting(id: string): Promise<void> {
+  await tx(PLANTINGS, "readwrite", (s) => s.delete(id));
+}
+
+/** Every planting on this device, newest first. */
+export async function listPlantings(): Promise<Planting[]> {
+  const all = await tx<Planting[]>(PLANTINGS, "readonly", (s) => s.getAll());
+  return all.sort((a, b) => b.createdAt - a.createdAt);
+}
+
+/** One spot's log, oldest planting first — a garden reads as a chronicle. */
+export async function plantingsForSpot(spotId: string): Promise<Planting[]> {
+  const all = await listPlantings();
+  return all.filter((p) => p.spotId === spotId).reverse();
 }
 
 export async function kvGet<T>(key: string): Promise<T | undefined> {
@@ -128,8 +170,10 @@ export interface CachedObservations {
   key: string;
   /** When the list was captured (epoch ms), for staleness checks. */
   capturedAt: number;
-  /** The point distances were measured from (the spot; a region's box center). */
-  from: { lat: number; lon: number };
+  /** The point distances were measured from (the spot; a region's box center).
+   *  Absent for a record that answers no "what's near me" question at all — one
+   *  observation the gardener linked to a planting by hand. */
+  from?: { lat: number; lon: number };
   /** Search radius (spot lookups only). */
   radiusKm?: number;
   /** The region id this list covers (region lookups only). */

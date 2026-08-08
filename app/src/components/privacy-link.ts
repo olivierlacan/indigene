@@ -16,6 +16,7 @@ export type PrivacySection =
   | "location"
   | "lookups"
   | "saved"
+  | "log"
   | "whatsnew"
   | "counting"
   | "children";
@@ -30,11 +31,17 @@ export function privacyRoute(section?: PrivacySection): string {
  * meant to sit right under the control it's about (a location button, a save
  * button). `lead` is the plain-words promise; the link carries the details.
  */
-export function privacyNote(lead: string, linkText = t("privacy.howHandled")): HTMLElement {
+export function privacyNote(
+  lead: string,
+  linkText = t("privacy.howHandled"),
+  /** Open the page at the section that answers *this* control's question,
+   *  rather than at the top of a long document. */
+  section?: PrivacySection
+): HTMLElement {
   return el("p", { class: "privacy-note" }, [
     el("span", { "aria-hidden": "true" }, "🔒 "),
     `${lead} `,
-    el("a", { href: PRIVACY_ROUTE }, linkText),
+    el("a", { href: privacyRoute(section) }, linkText),
     ".",
   ]);
 }

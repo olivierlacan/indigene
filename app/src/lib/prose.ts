@@ -160,6 +160,62 @@ export function wildlifeBlurb(w: Wildlife): string {
   return entry(w.latin ?? `#${w.id}`)?.blurb ?? w.blurb;
 }
 
+// ---- Openings ----
+//
+// A card shows the *beginning* of the description its page carries, not a
+// second, shorter description written by hand. A card that says the same thing
+// in fewer words is a paragraph somebody translates, reviews and maintains
+// forever — see CLAUDE.md, "Every word is short by default" — and it can drift
+// out of step with the page it summarises. Taking the opening cannot.
+//
+// That makes it a writing rule as much as a function: a blurb opens with what
+// the creature *is*, in one sentence that stands on its own, and the story
+// follows in the sentences after it. `data/wildlife.ts` says so at the top.
+//
+// A very short opener ("The famous orange-and-black migrant.") takes the next
+// sentence with it, so a card is never left as a fragment.
+const LEAD_MIN_WORDS = 12;
+const LEAD_MAX_WORDS = 34;
+
+/** Abbreviations whose full stop doesn't end a sentence — `Argynnis spp.` and
+ *  friends, in both languages. A lone capital covers an initial. */
+const NOT_AN_END = /(?:\b(?:spp|ssp|subsp|var|cf|env|etc|approx|St|Ste|Mt|Dr|vs|e\.g|i\.e|U\.S)|\s[A-Z])\.$/;
+
+const wordCount = (s: string): number => (s.trim() ? s.trim().split(/\s+/).length : 0);
+
+/** Split prose into sentences, keeping each one's own punctuation. */
+function sentences(text: string): string[] {
+  const out: string[] = [];
+  const stop = /[.!?…](?=["»”)]?(?:\s|$))/g;
+  let start = 0;
+  let m: RegExpExecArray | null;
+  while ((m = stop.exec(text)) !== null) {
+    const end = m.index + 1;
+    const head = text.slice(start, end);
+    if (NOT_AN_END.test(head)) continue;
+    out.push(head.trim());
+    start = end;
+  }
+  const tail = text.slice(start).trim();
+  if (tail) out.push(tail);
+  return out;
+}
+
+/** The opening of a paragraph: its first sentence, plus the second when the
+ *  first is too short to carry a card on its own. */
+export function lead(text: string): string {
+  const parts = sentences(text);
+  if (parts.length < 2) return text.trim();
+  const first = parts[0];
+  const pair = `${first} ${parts[1]}`;
+  return wordCount(first) < LEAD_MIN_WORDS && wordCount(pair) <= LEAD_MAX_WORDS ? pair : first;
+}
+
+/** What an animal's card says: the opening of the blurb its page carries. */
+export function wildlifeLead(w: Wildlife): string {
+  return lead(wildlifeBlurb(w));
+}
+
 /** The plant-specific "why this animal cares about this plant" line. */
 export function supportNote(plantLatin: string, link: SupportLink, regionId?: string): string {
   return entry(plantLatin, regionId)?.supportNotes?.[link.wildlifeId] ?? link.note;

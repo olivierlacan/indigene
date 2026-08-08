@@ -29,6 +29,7 @@
     "reconcile": "NODE_USE_ENV_PROXY=1 node scripts/reconcile.mjs",
     "names:check": "NODE_USE_ENV_PROXY=1 node scripts/check-vernacular.mjs",
     "prose:check": "node scripts/check-prose.mjs",
+    "blurbs:check": "node scripts/check-blurbs.mjs",
     "lookalikes:check": "NODE_USE_ENV_PROXY=1 node scripts/check-lookalikes.mjs",
     "inat:check": "NODE_USE_ENV_PROXY=1 node scripts/inat-coverage-check.mjs",
     "probe:globi": "NODE_USE_ENV_PROXY=1 node scripts/probe-globi.mjs",

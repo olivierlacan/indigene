@@ -25,6 +25,13 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Fixed
+
+- **Twenty plants were citing a command you can't run.** Their sources note said
+  a plant was "surfaced by `npm run candidates`" — one of our tools, meaningless
+  to a reader. It names the evidence now: "Occurrence records in this region's
+  box: 6,819 ([GBIF](https://www.gbif.org/))."
+
 ## [0.25] - 2026-08-08
 
 **Who else this plant feeds, and the study that says so**

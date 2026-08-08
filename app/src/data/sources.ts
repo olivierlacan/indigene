@@ -96,6 +96,11 @@ export const SOURCE_LINKS: SourceSite[] = [
   // not check from this build environment.
   { name: "Global Biotic Interactions", url: "https://www.globalbioticinteractions.org/" },
   { name: "GloBI", url: "https://www.globalbioticinteractions.org/" },
+  // Where the occurrence counts in a plant's basis come from — "Occurrence
+  // records in this region's box: 6,819 (GBIF)". A reader who wants to know
+  // what a record is can go and look.
+  { name: "Global Biodiversity Information Facility", url: "https://www.gbif.org/" },
+  { name: "GBIF", url: "https://www.gbif.org/" },
 ];
 
 const BAMONA_SPECIES = "https://www.butterfliesandmoths.org/species/";

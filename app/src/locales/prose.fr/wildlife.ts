@@ -81,11 +81,11 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Papilio troilus": {
     blurb:
-      "Un papillon à queues sombre, poudré de bleu-vert. Sa chenille est l'une des choses les plus étranges d'un jardin de l'est : vert vif, avec deux énormes faux yeux, cachée le jour dans une feuille qu'elle a roulée en tube.",
+      "Un papillon à queues sombre, poudré de bleu-vert, chez lui partout où poussent le benjoin et le sassafras. Sa chenille est l'une des choses les plus étranges d'un jardin de l'est : vert vif, avec deux énormes faux yeux, cachée le jour dans une feuille qu'elle a roulée en tube.",
   },
   "Limenitis lorquini": {
     blurb:
-      "Un papillon noir à bande blanche et bouts d'ailes orange, avec l'habitude de venir à votre rencontre — il chasse un oiseau, ou une personne, hors de son bout de berge, puis revient planer jusqu'au même rameau.",
+      "Un papillon noir à bande blanche et bouts d'ailes orange, avec l'habitude de venir à votre rencontre. Il chasse un oiseau, ou une personne, hors de son bout de berge, puis revient planer jusqu'au même rameau.",
   },
   "Papilio zelicaon": {
     blurb:
@@ -241,7 +241,7 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Xylocopa virginica": {
     blurb:
-      "La grosse abeille au dos luisant, comme un bourdon avec une plaque chauve. Elle niche dans le bois mort plutôt que dans le sol, et elle est assez forte pour ouvrir des fleurs que la plupart des abeilles ne peuvent pas — ou, quand une fleur est trop profonde même pour elle, pour en percer la base et boire par ce trou.",
+      "La grosse abeille au dos luisant, comme un bourdon avec une plaque chauve. Elle niche dans le bois mort plutôt que dans le sol, et elle est assez forte pour ouvrir des fleurs que la plupart des abeilles ne peuvent pas — ou pour en percer la base quand l'une est trop profonde même pour elle.",
   },
 
   // -------------------------------------------------------------------------
@@ -265,7 +265,7 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Psaltriparus minimus": {
     blurb:
-      "Un bout d'oiseau gris, à peine plus lourd que deux trombones, qui circule en bandes bavardes d'une vingtaine et retourne un arbuste de l'intérieur. Son nid est la chose la plus étrange d'un jardin californien : une chaussette suspendue de lichen et de soie d'araignée, longue de trente centimètres, que le couple met un mois à construire.",
+      "Un bout d'oiseau gris, à peine plus lourd que deux trombones, qui circule en bandes bavardes d'une vingtaine et retourne un arbuste de l'intérieur. Son nid est une chaussette suspendue de lichen et de soie d'araignée, longue de trente centimètres, que le couple met un mois à construire.",
   },
   "Spinus psaltria": {
     blurb:

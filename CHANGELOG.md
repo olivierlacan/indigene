@@ -25,6 +25,18 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Changed
+
+- **Four of the new creatures now open with a sentence instead of a fragment or
+  a paragraph.** Lorquin's admiral led a card with 42 words; the spicebush
+  swallowtail led with five. Same stories, said properly, in French too. [Browse
+  by wildlife](https://indigene.app/wildlife).
+- Internal: `npm run blurbs:check` runs in CI now
+  (`.github/workflows/blurbs.yml`), on the two wildlife files, `lib/prose.ts`
+  and the checker itself. Nothing looks broken when a blurb slips: the animal's
+  page is merely long, and the card that goes wrong is on another screen, in a
+  list of eighty. Four of #114's nine creatures landed over the line.
+
 ## [0.25] - 2026-08-08
 
 **Who else this plant feeds, and the study that says so**

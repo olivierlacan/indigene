@@ -25,12 +25,22 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+## [0.25] - 2026-08-08
+
+**Who else this plant feeds, and the study that says so**
+
+[![The sessile oak's page, naming the Eurasian jay and the hazel dormouse among the wildlife it brings in](docs/screenshots/pr-114/thumb.png)](docs/screenshots/pr-114/plant-after-dark.png)
+[The oak's page before](docs/screenshots/pr-114/plant-before-dark.png) · [and after](docs/screenshots/pr-114/plant-after-dark.png)
+
 ### Added
 
 - **A hundred and thirty-six more animals named on the plants you can grow.**
   Nine regions searched against an open database of published plant-and-animal
   records. Pairings went from 415 to 551; plants naming nothing at all fell from
   78 to 19. Browse them at [Wildlife](https://indigene.app/wildlife).
+- **Every new pairing names the study that found it** — a Swiss food web, a
+  European pollinator network, the Natural History Museum's world list of what
+  caterpillars eat. The [sources page](https://indigene.app/sources) says so too.
 - **Four regions now name a creature for every plant they ship** —
   [Continental France](https://indigene.app/regions/france-continental),
   [Mediterranean France](https://indigene.app/regions/france-mediterranean),
@@ -51,6 +61,13 @@ subtitle on the What's new page.
 - **Cow parsnip has a dangerous twin, and the app now says which is which.**
   Giant hogweed is twice the height and its sap can blind. Both burn skin in
   sunlight, so the look-alike page gives you the tells from a safe distance.
+- Internal: new `npm run wildlife -- --region <id>`
+  (`app/scripts/wildlife-candidates.mjs`) proposes wildlife for a region with the
+  evidence for each candidate — GloBI for the interaction, iNaturalist and GBIF
+  for whether the animal is present and native there, and the source study for
+  every tie. It proposes; it never writes a row. Shortlists land in
+  `docs/candidates/wildlife-<region>.md`, raw answers in
+  `data/sources/globi/wildlife-ties.json`.
 
 ### Changed
 
@@ -109,10 +126,6 @@ subtitle on the What's new page.
   written rule is in CLAUDE.md under *Every word is short by default*, which
   applies to all site copy — every word here is also a word somebody
   translates into French.
-- **Every new pairing names the study that found it** — a Swiss food web, a
-  European pollinator network, the Natural History Museum's world list of what
-  caterpillars eat. The [sources page](https://indigene.app/sources) says so too.
-
 - **Region names are shorter, with the qualifier on the line below.** "Florida
   (south & the Keys)" is now **South Florida**; "Pacific Northwest (west of the
   Cascades)" is **Pacific Northwest**. The brackets had been pushing a name onto
@@ -142,13 +155,6 @@ subtitle on the What's new page.
   is built on. `probe-globi.mjs` now asks every per-observation question in both
   modes and records both answers; `data/sources/globi/README.md` §1 writes up the
   trap so nobody falls into it twice.
-- Internal: new `npm run wildlife -- --region <id>`
-  (`app/scripts/wildlife-candidates.mjs`) proposes wildlife for a region with the
-  evidence for each candidate — GloBI for the interaction, iNaturalist and GBIF
-  for whether the animal is present and native there, and the source study for
-  every tie. It proposes; it never writes a row. Shortlists land in
-  `docs/candidates/wildlife-<region>.md`, raw answers in
-  `data/sources/globi/wildlife-ties.json`.
 
 ## [0.24] - 2026-08-07
 
@@ -1825,7 +1831,8 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/8f6327b...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/4536697...HEAD
+[0.25]: https://github.com/olivierlacan/indigene/compare/8f6327b...4536697
 [0.24]: https://github.com/olivierlacan/indigene/compare/e8860f8...8f6327b
 [0.23]: https://github.com/olivierlacan/indigene/compare/221a9ee...e8860f8
 [0.22]: https://github.com/olivierlacan/indigene/compare/9f09ba2...221a9ee

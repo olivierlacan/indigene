@@ -971,7 +971,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "The fastest big evergreen screen in this list, and the toughest — new leaves come out folded and red, and it resprouts from the base after fire or a hard cut. It is a frost thermometer: the reason it stops where it does is cold, so in an inland valley that dips below the mid-20s it will burn back. Give it room; people plant it three feet from a path and regret it.",
     givesNote: "Dense evergreen cover that wrentits, towhees and gnatcatchers nest and shelter in, cream flower plumes worked by bees and beneficial wasps in early summer, and small white fruits that birds and coyotes take in autumn. On a raw cut bank its roots hold ground that nothing else will.",
     confidence: "high",
-    basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Frost limit and fire response: USFS FEIS; UC ANR. Host count: Malosma/Rhus, rounded western estimate. Surfaced by `npm run candidates` as the most-recorded plant in this region's box that the list did not carry.",
+    basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Frost limit and fire response: USFS FEIS; UC ANR. Host count: Malosma/Rhus, rounded western estimate. The most-recorded plant in this region's box that the list did not carry (GBIF).",
     propagation: {
       methods: ["seed-scarify", "cuttings-semi-hardwood"],
       note: "The seed has a hard coat — pour just-boiled water over it and let it soak overnight before sowing in autumn. Half-firm cuttings taken in late summer root under cover, more slowly than the sages.",
@@ -1006,7 +1006,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Wants more water than most of this list — a low spot, a creek edge, a downspout — and it suckers into a thicket once it has it, so give it a bank or a hedgerow rather than a border. Cut the oldest canes out at the base each winter. The single pink flowers are nothing like a florist's rose and smell far better.",
     givesNote: "Roses are one of the highest-value caterpillar genera in the West, so this is a serious bird-feeding shrub before you count the fruit — and then the hips hang on into winter for thrashers, robins, waxwings and quail. Its open flowers, unlike a double garden rose, actually let a bee reach the pollen. The thorny thicket is safe nesting cover.",
     confidence: "high",
-    basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Host count: Rosa genus, rounded western estimate anchored on Tallamy/NWF. Bird use: Cornell Lab; USFS FEIS. Surfaced by `npm run candidates` as the region's highest-scoring absent genus.",
+    basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Host count: Rosa genus, rounded western estimate anchored on Tallamy/NWF. Bird use: Cornell Lab; USFS FEIS. The region's highest-scoring absent genus by occurrence (GBIF).",
     propagation: {
       methods: ["suckers", "cuttings-hardwood", "seed-cold-moist"],
       note: "The easiest route is to dig a rooted sucker in winter and move it. Leafless winter cuttings root well too. From seed, clean the hips and give the seed a long cold damp spell — it is slow and uneven.",
@@ -1076,7 +1076,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Silver enough to light up a dry bank even out of flower, and covered in blue-purple spikes in spring. It is famously short-lived — three to five years is a full life — so let a few seed heads ripen and it will replace itself. Sharp drainage and no summer water; this is a plant that dies of kindness. Lupine seed and foliage are toxic to livestock and pets.",
     givesNote: "Spring flower spikes worked hard by bumble bees and carpenter bees, which are heavy enough to trip the flower open — small bees mostly can't. Lupines are the larval plant of several western blues, and like all peas it feeds nitrogen back into poor soil.",
     confidence: "high",
-    basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Toxicity: ASPCA; UC ANR. Host count: Lupinus genus, rounded western estimate. The genus was surfaced by `npm run candidates` (four annual lupines in the region's top eight); the perennial species is the garden-durable member of it.",
+    basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Toxicity: ASPCA; UC ANR. Host count: Lupinus genus, rounded western estimate. Four annual lupines rank in this region's top eight by occurrence (GBIF); the perennial species is the garden-durable member of the genus.",
     propagation: {
       methods: ["seed-scarify", "seed-direct"],
       note: "Nick the hard seed coat or pour hot water over the seed and soak it overnight, then sow in autumn where the plant is to stay — lupines make a deep root and resent being moved.",
@@ -1111,7 +1111,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Fast, soft and a bit rangy — cut it back hard in winter and it comes again denser. It runs at the root and will come up several feet away, which is a virtue on a bank and a nuisance in a small bed. Months of pale pink hollyhock-like flowers for almost no water.",
     givesNote: "Mallows are the larval plant of the painted lady and the west coast lady — the painted lady being the butterfly that turns up in millions across southern California in a wet spring — and the open flowers are worked all summer by bumble bees and the small native bees that specialise on the mallow family.",
     confidence: "medium",
-    basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Larval host records (Vanessa cardui, V. annabella): BAMONA; Xerces Society. Host count: Malacothamnus, rounded estimate for a native mallow. Surfaced by `npm run candidates`.",
+    basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Larval host records (Vanessa cardui, V. annabella): BAMONA; Xerces Society. Host count: Malacothamnus, rounded estimate for a native mallow.",
     propagation: {
       methods: ["cuttings-softwood", "seed-scarify", "suckers"],
       note: "Soft spring cuttings root easily. The seed wants its coat nicked or a hot-water soak first. Easiest of all: dig one of the suckers it throws up around itself in winter.",
@@ -1569,7 +1569,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "It spends five to ten years as a ball of stiff, needle-tipped leaves, then throws a flower spike ten feet into the air, sets seed, and dies — that is its whole life, not a failure. (Some plants leave an offset behind; many don't, so let a pod ripen.) The leaf tips genuinely draw blood, so keep it well back from a path. The mature height above is that flower spike; the plant itself stays knee-high.",
     givesNote: "One of the most complete partnerships in the region: the California yucca moth pollinates it deliberately — gathering pollen, packing it onto the stigma by hand — and lays its eggs in the flower, and the caterpillars eat some of the seeds that result. Neither species can survive without the other. The spike is also a lookout post for hawks and shrikes, and the seed feeds rodents and quail.",
     confidence: "high",
-    basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Monocarpic habit: USFS FEIS. Obligate mutualism with Tegeticula maculata: Xerces Society; Pellmyr, yucca-moth literature. Host count: deliberately low — the moth is the relationship that matters, not a tally. Surfaced by `npm run candidates`.",
+    basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Monocarpic habit: USFS FEIS. Obligate mutualism with Tegeticula maculata: Xerces Society; Pellmyr, yucca-moth literature. Host count: deliberately low — the moth is the relationship that matters, not a tally.",
     propagation: {
       methods: ["seed-direct", "suckers"],
       note: "Collect the big papery pods when they dry in late summer and sow the flat black seed in autumn — it germinates readily and needs no treatment, then takes years to build a rosette. If a plant leaves an offset after flowering, that can be separated too.",
@@ -1604,7 +1604,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "One of the easiest natives here and one of the longest-flowering — full sun, poor soil, no summer water, and a shear after the main flush to keep it tidy and bring a second round. Short-lived, five years or so, and it reseeds gently where the ground is bare.",
     givesNote: "Flat clusters of gold that flower from April into August, straight through the gap when the spring shrubs have finished. Being a sunflower-family plant it feeds the native bees that collect that family's pollen and nothing else, and the small butterflies work it steadily; finches take the seed after.",
     confidence: "high",
-    basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Specialist-bee value: Fowler & Droege, Pollen Specialist Bees (West). Host count: Eriophyllum, rounded estimate. Surfaced by `npm run candidates` with 12,174 records in this region's box.",
+    basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Specialist-bee value: Fowler & Droege, Pollen Specialist Bees (West). Host count: Eriophyllum, rounded estimate. Occurrence records in this region's box: 12,174 (GBIF).",
     propagation: {
       methods: ["seed-surface-light", "cuttings-softwood"],
       note: "Scatter the small seed on bare ground in autumn and press it in without covering — it wants light. Soft spring cuttings root readily if you want a plant of known shape.",
@@ -1639,7 +1639,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "A corm, so it does the opposite of a garden perennial: up with the winter rain, flowering in February, gone by early summer and resting underground through the heat. Plant it among bunchgrasses or under an oak where its disappearance won't leave a hole, and never water the ground in summer. It multiplies quietly into a drift.",
     givesNote: "One of the first real nectar sources of the year, when the early solitary bees and bee flies are out and little else is open. The corms were a staple food across California for thousands of years — dug with a digging stick in a way that broke off the small offsets and replanted them, so harvesting increased the patch.",
     confidence: "high",
-    basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Cultural use and tending: UC ANR; M. Kat Anderson, Tending the Wild. Host count: very low — included for early bloom and for the geophyte layer the list had none of. Surfaced by `npm run candidates`.",
+    basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Cultural use and tending: UC ANR; M. Kat Anderson, Tending the Wild. Host count: very low — included for early bloom and for the geophyte layer the list had none of.",
     propagation: {
       methods: ["seed-direct", "division"],
       note: "Sow the black seed fresh in autumn in a deep pot left outside; it comes up with the rains and takes two or three years to reach flowering size. Established clumps make small offset corms that can be separated once the leaves have died back.",

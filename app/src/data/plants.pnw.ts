@@ -676,7 +676,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Give it full sun and room — it gets very large and lives for centuries, and the low branches self-prune away as it goes, leaving that cinnamon-jigsaw bark. Ask for Willamette Valley stock if you are planting on the west side; seed from east of the mountains is adapted to a drier winter and sulks in valley clay. Thick bark makes it the most fire-tolerant tree in this list.",
     givesNote: "Pines carry one of the heaviest caterpillar loads of any conifer genus, which is what feeds chickadees, nuthatches and kinglets working the needles. The big seeds feed crossbills, jays, nuthatches and squirrels; the furrowed bark is where brown creepers nest; and an old snag is woodpecker country for decades.",
     confidence: "high",
-    basis: "Native status/range incl. the Willamette Valley population: OregonFlora, USDA PLANTS, USFS Silvics. Host count: Pinus genus, rounded western estimate anchored on Tallamy/NWF keystone lists. Surfaced by `npm run candidates` as the region's highest-scoring absent genus.",
+    basis: "Native status/range incl. the Willamette Valley population: OregonFlora, USDA PLANTS, USFS Silvics. Host count: Pinus genus, rounded western estimate anchored on Tallamy/NWF keystone lists. The region's highest-scoring absent genus by occurrence (GBIF).",
     propagation: {
       methods: ["seed-cold-moist", "seed-direct"],
       note: "Collect cones as they ripen brown in late summer, dry them until they open and shake out the winged seed. A month of cold, damp storage in the fridge evens up germination; sow in a deep pot, because the root goes down fast and hates being cut.",
@@ -711,7 +711,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "One of the easiest natives to place: it takes shade or sun, wet ground or ordinary, and stays small enough for a garden. Birds plant it for you, so expect seedlings. The bark and fresh berries are a violent purgative — that is what it was harvested for — so it is a poor choice where a small child or a dog grazes.",
     givesNote: "The berries go red then black in late summer and are stripped by band-tailed pigeons, robins, thrushes and waxwings, and its small green flowers are worked hard by native bees and hoverflies. Cascara is also a larval host of the pale swallowtail, alongside oceanspray and ceanothus.",
     confidence: "high",
-    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Bark harvest history: USFS FEIS. Toxicity: ASPCA; OSU Extension. Host count: Frangula/Rhamnus genus, rounded western estimate. Surfaced by `npm run candidates`.",
+    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Bark harvest history: USFS FEIS. Toxicity: ASPCA; OSU Extension. Host count: Frangula/Rhamnus genus, rounded western estimate.",
     propagation: {
       methods: ["seed-cold-moist"],
       note: "Squeeze the pulp off ripe berries in autumn, wash the seed and give it two or three months of cold, damp storage before sowing in spring. Fresh autumn sowing in a pot left outdoors does the same job without the fridge.",
@@ -1276,7 +1276,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Full sun and sharp drainage, and then the rule every ceanothus lives by: no summer water once it is established, and no rich soil. Its red-brown stems carry foaming white flower clusters in late spring. It is naturally short-lived — fifteen or twenty years — and resents being cut into old wood, so prune lightly and plan on a replacement rather than a rescue.",
     givesNote: "This is the genus the west-side list had been missing. Ceanothus is a keystone shrub for caterpillars here — the pale swallowtail and the big ceanothus silkmoth both grow up on it — and it fixes its own nitrogen, feeding the poor ground it colonises. Deer browse it hard, quail take the seed, and the flowers are covered in native bees.",
     confidence: "high",
-    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Fire ecology, lifespan and nitrogen fixation: USFS FEIS. Keystone status: NWF/Tallamy keystone plant lists. Host count: Ceanothus genus, rounded western estimate. Named by `npm run coverage` as this region\'s one absent keystone genus.",
+    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Fire ecology, lifespan and nitrogen fixation: USFS FEIS. Keystone status: NWF/Tallamy keystone plant lists. Host count: Ceanothus genus, rounded western estimate. This region's one absent keystone genus.",
     propagation: {
       methods: ["seed-scarify", "seed-cold-moist", "cuttings-semi-hardwood"],
       note: "Ceanothus seed is built to wait in the soil for a fire: pour just-boiled water over it, leave it overnight, then give it a month of cold damp in the fridge before sowing. Half-firm summer cuttings are the surer route for a garden.",
@@ -1311,7 +1311,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "The one native here that genuinely wants rotten wood: acid soil, dappled shade, and a buried log or a bed of coarse bark to root into. Plant it in ordinary garden loam in full sun and it sulks and dies. Given the right spot it needs nothing at all. Bright green twigs carry it through winter after the leaves drop.",
     givesNote: "Blueberries and huckleberries are one of the West\'s keystone caterpillar genera, and the small red berries are taken by thrushes, towhees, grouse and — enthusiastically — by people. Its early nodding flowers are worked by bumble bee queens and by the mason bees out before the shrubs bloom.",
     confidence: "high",
-    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Nurse-log habit: USFS FEIS. Keystone status: NWF/Tallamy keystone plant lists. Host count: Vaccinium genus, rounded western estimate. Surfaced by `npm run candidates` (11,980 records in this region\'s box).",
+    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Nurse-log habit: USFS FEIS. Keystone status: NWF/Tallamy keystone plant lists. Host count: Vaccinium genus, rounded western estimate. Occurrence records in this region's box: 11,980 (GBIF).",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-cold-moist"],
       note: "Take half-firm summer cuttings and root them in pure milled bark or peat — never garden soil. From seed, mash ripe berries, wash the pulp off, and sow the seed on the surface of an acid mix; it is slow but reliable.",
@@ -1736,7 +1736,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Salt wind, poor soil, summer drought, a parking strip — it shrugs at all of them, which is what a bluff plant is for. The flower buds are covered in a white milky gum you can feel on a fingertip; that is the name. Cut the old stems down in late winter. Short-lived, and it reseeds itself where the ground is bare.",
     givesNote: "Its value is the calendar. It flowers from July straight through October, weeks after the region\'s other natives have finished, so it is the last full meal for the sunflower-family specialist bees and for the butterflies still flying. Goldfinches then work the seed heads through winter.",
     confidence: "high",
-    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Late-season bee value: Xerces Society; Fowler & Droege, Pollen Specialist Bees (West). Host count: Grindelia, rounded estimate. Chosen for the October gap `npm run coverage` flags in this region\'s bloom calendar.",
+    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Late-season bee value: Xerces Society; Fowler & Droege, Pollen Specialist Bees (West). Host count: Grindelia, rounded estimate. Chosen for the October gap in this region's bloom calendar.",
     propagation: {
       methods: ["seed-surface-light", "division"],
       note: "Collect seed from the dried heads in autumn and scatter it on bare, gritty ground — press it in and leave it uncovered, because it wants light. Established clumps can also be split in early spring.",
@@ -1771,7 +1771,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "It runs at the root and seeds on the wind, so this is a plant for a bank, a hedgerow or a wild corner rather than a border — put it somewhere it can colonise and it will do exactly that. Cut it to the ground in late winter. In a small garden it is genuinely too much.",
     givesNote: "One of the great honey plants of the north, and it flowers from the bottom of the spike upward through July and August, when the spring shrubs are long finished. Bumble bees work it constantly, hummingbirds visit, and the elephant hawk-moth\'s American relatives raise caterpillars on it.",
     confidence: "high",
-    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Colonising behaviour: USFS FEIS. Host count: Chamaenerion/Epilobium genus, rounded western estimate. Surfaced by `npm run candidates`.",
+    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Colonising behaviour: USFS FEIS. Host count: Chamaenerion/Epilobium genus, rounded western estimate.",
     propagation: {
       methods: ["division", "root-cuttings", "seed-surface-light"],
       note: "Easiest from a piece of the running root lifted in winter with a bud on it. The plumed seed needs only to be pressed onto damp bare ground in autumn — and it will arrive on its own from a surprising distance.",
@@ -1806,7 +1806,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Shade, leaf litter and patience. A trillium takes something like seven years to get from seed to its first flower, which is why picking one matters: the flower sits directly on the plant\'s only three leaves, so picking it takes the whole year\'s food supply and can kill a plant older than the person picking it. Buy nursery-propagated stock, never a dug one. The white flower ages to pink and then purple; that is normal, not fading.",
     givesNote: "Ants plant it. Each seed carries a little oil-rich parcel that ants carry home, eat, and discard underground — which is how a trillium colony moves a few feet in a generation. Early bumble bee queens and beetles work the flowers in March, when almost nothing else is open on a forest floor.",
     confidence: "high",
-    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Seven-year seed-to-flower and picking damage: USFS FEIS; Burke Herbarium. Ant dispersal (myrmecochory): USFS FEIS. Host count: Trillium, very low. Top of the `npm run candidates` shortlist by occurrence (21,010 records).",
+    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Seven-year seed-to-flower and picking damage: USFS FEIS; Burke Herbarium. Ant dispersal (myrmecochory): USFS FEIS. Host count: Trillium, very low. The most-recorded native the list did not carry: 21,010 occurrence records (GBIF).",
     propagation: {
       methods: ["seed-double-dormant", "division"],
       note: "From seed this is a project measured in years: sow fresh in autumn, and expect two winters before a leaf appears and several more before a flower. Established clumps can be lifted and split as the leaves die back, which is far quicker.",
@@ -1841,7 +1841,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "One of the easiest shade perennials here: give it damp ground under trees and it spreads gently into a soft groundcover without ever becoming a nuisance. It stays green in a mild winter. A little summer water keeps it looking fresh; without any it goes limp but comes back.",
     givesNote: "A long, quiet bloom from May into August — unusual for a shade plant — worked by small solitary bees, hoverflies and beetles that have very little else to visit under a closed canopy. The mat of leaves keeps bare woodland soil covered and cool.",
     confidence: "high",
-    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Host count: Tiarella, low. Surfaced by `npm run candidates` (6,819 records in this region\'s box).",
+    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Host count: Tiarella, low. Occurrence records in this region's box: 6,819 (GBIF).",
     propagation: {
       methods: ["division", "seed-surface-light"],
       note: "Split a clump in spring or autumn — it comes apart easily and re-establishes fast. The dust-fine seed is pressed onto the surface of damp compost and left uncovered.",
@@ -1876,7 +1876,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "A bulb, so it does its whole year in spring: leaves in February, nodding white flowers in March, and gone underground by June. Plant it among camas and bunchgrasses where the gap it leaves is not a hole, and never water it in summer — a wet dormant bulb rots. Slow to establish, and worth it.",
     givesNote: "One of the earliest real nectar sources on the west side, timed for the queen bumble bees just out of hibernation and for the mining bees that emerge with the oaks. Like the trillium, ants carry its seed. Its bulbs were a food plant for Coast Salish peoples.",
     confidence: "high",
-    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Phenology and ant dispersal: Burke Herbarium; USFS FEIS. Host count: Erythronium, very low. Surfaced by `npm run candidates` (9,290 records).",
+    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Phenology and ant dispersal: Burke Herbarium; USFS FEIS. Host count: Erythronium, very low. Occurrence records in this region's box: 9,290 (GBIF).",
     propagation: {
       methods: ["seed-cold-moist", "division"],
       note: "Sow fresh seed in autumn in a deep pot left outside; it wants a cold damp winter and takes four or five years to reach flowering size. Established clumps can be lifted and separated as the leaves die back.",
@@ -1911,7 +1911,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Worth knowing before you plant it: the sap contains compounds that react with sunlight, so getting it on skin on a bright day can raise a burn and a stain that lasts months. Wear sleeves and gloves to cut it, and site it away from paths and children. That is the same chemistry as its enormous invasive cousin, giant hogweed — cow parsnip is the native one, at half the height. It wants damp ground and seeds itself about.",
     givesNote: "A landing platform the size of a plate, held at chest height and covered from May to July in short-tongued insects that cannot use a deep flower: hoverflies, soldier beetles, small solitary bees and the parasitic wasps that keep aphids down. Swallowtail caterpillars feed on the leaves.",
     confidence: "high",
-    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Phototoxic sap (furanocoumarins): OSU Extension; WA State Noxious Weed Control Board (giant hogweed comparison). Host count: Heracleum/Apiaceae, rounded estimate. Surfaced by `npm run candidates`.",
+    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Phototoxic sap (furanocoumarins): OSU Extension; WA State Noxious Weed Control Board (giant hogweed comparison). Host count: Heracleum/Apiaceae, rounded estimate.",
     propagation: {
       methods: ["seed-cold-moist", "seed-direct"],
       note: "Sow the flat seed fresh in autumn where the plant is to stand — it wants a cold damp winter and resents being moved once the taproot is down. Wear gloves collecting it.",
@@ -2480,7 +2480,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "The answer to deep, damp shade where grass will not grow and bark mulch just sits there. It runs at the root and makes a continuous carpet, which is the point — give it a woodland corner rather than a border edge. It dies down completely in winter, so pair it with a fern for something to look at.",
     givesNote: "A spike of small white flowers for the little solitary bees and hoverflies that work a forest floor, then speckled red berries that thrushes and towhees take in late summer. The carpet itself is cover for beetles, salamanders and the small things a wood is made of.",
     confidence: "high",
-    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Host count: Maianthemum, low. Surfaced by `npm run candidates` (8,607 records in this region\'s box).",
+    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Host count: Maianthemum, low. Occurrence records in this region's box: 8,607 (GBIF).",
     propagation: {
       methods: ["division", "seed-cold-moist"],
       note: "Lift a piece of the running rhizome in autumn or early spring with a shoot on it and replant it — quick and almost always successful. Seed wants cleaning and a cold damp winter, and is much slower.",
@@ -2515,7 +2515,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Fussier than the rest of this list and worth the trouble: it wants cool, acid, humus-rich shade — a north side, a mossy bank, the foot of a conifer — and never dries out entirely. It trails rather than clumps, rooting as it goes. Slow for two years, then it knits.",
     givesNote: "Paired, faintly vanilla-scented bells through midsummer, held at a height that suits the very small bees and hoverflies of a shaded forest floor. Evergreen, so it holds thin woodland soil on a slope through the wet season when everything else has died back.",
     confidence: "medium",
-    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Habitat requirements: USFS FEIS. Host count: Linnaea, low. Surfaced by `npm run candidates` (6,158 records).",
+    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Habitat requirements: USFS FEIS. Host count: Linnaea, low. Occurrence records in this region's box: 6,158 (GBIF).",
     propagation: {
       methods: ["layering", "cuttings-softwood", "division"],
       note: "It layers itself — lift a trailing stem and you will usually find roots along it, so cut a rooted length off and replant it into leaf mould. Soft summer cuttings root in a shaded frame kept damp.",
@@ -2550,7 +2550,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "It keeps the opposite calendar to every other fern here: green and growing right through the wet winter, then shrivelling away in summer and coming back with the autumn rain. That August disappearance is not death. Grow it on a mossy log, a north-facing wall or a shaded bank rather than in a bed, and leave it alone.",
     givesNote: "Winter cover, when a west-side garden has very little that is green and alive at ground level, and a mossy limb or a wall face is habitat that otherwise holds nothing. Ferns feed very few caterpillars — this is here for cover and for growing where nothing else does.",
     confidence: "high",
-    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Epiphytic habit and summer dormancy: USFS FEIS; Hardy Fern Foundation. Ferns support very few Lepidoptera (honest low host value). Surfaced by `npm run candidates` (15,663 records).",
+    basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Epiphytic habit and summer dormancy: USFS FEIS; Hardy Fern Foundation. Ferns support very few Lepidoptera (honest low host value). Occurrence records in this region's box: 15,663 (GBIF).",
     propagation: {
       methods: ["division", "spores"],
       note: "Cut a length of the creeping rhizome in autumn with a frond or two attached and press it onto damp moss or rough bark, holding it down until it grips. Spores from the frond backs work, slowly.",

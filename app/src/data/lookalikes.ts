@@ -296,6 +296,16 @@ export const LOOKALIKES: Lookalike[] = [
     originBasis: "Missouri Botanical Garden; Penn State Extension; Invasive Plant Atlas.",
   },
   {
+    id: "heracleum-mantegazzianum",
+    common: "Giant hogweed",
+    latin: "Heracleum mantegazzianum",
+    form: "perennial",
+    origin: "Native to the western Caucasus; brought to Britain and North America in the 1800s as a spectacle for large gardens.",
+    blurb:
+      "A carrot-family plant the size of a small tree — fifteen feet up, with flower heads two feet across — and the most dangerous plant on this list. Its sap stops skin from protecting itself against sunlight, so a smear and a sunny afternoon give a burn that blisters, then a brown stain that can last years, and a splash in an eye can blind. It is a listed noxious weed across the Pacific Northwest, and in most places you are required to report it rather than tackle it yourself.",
+    originBasis: "WA State Noxious Weed Control Board; OSU Extension; King County Noxious Weeds.",
+  },
+  {
     id: "cortaderia-selloana",
     common: "Pampas grass",
     latin: "Cortaderia selloana",
@@ -537,6 +547,20 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
   },
 
   pnw: {
+    "heracleum-maximum": [
+      {
+        lookalikeId: "heracleum-mantegazzianum",
+        status: "invasive",
+        why: "Two white-flowered giants of damp ground, in the same family, with sap that burns skin in sunlight — and one of them is four times the size and a notifiable weed.",
+        tells: [
+          { feature: "Height", native: "Head high at most — six to eight feet.", lookalike: "Ten to fifteen feet, taller than a room." },
+          { feature: "The flower head", native: "Up to about a foot across.", lookalike: "Two to two and a half feet across — the width of a bin lid." },
+          { feature: "The stem", native: "Green, ridged, softly hairy all over, an inch or two thick.", lookalike: "Two to four inches thick, blotched dark purple, with stiff bristles at the leaf joints." },
+          { feature: "Both sting", native: "The sap burns in sunlight too. Cover your arms and cut it on a dull day.", lookalike: "Worse, and it can blind. Don't cut it — in Washington and Oregon it is a noxious weed you are asked to report." },
+        ],
+        basis: "WA State Noxious Weed Control Board; King County Noxious Weeds; OSU Extension; Burke Herbarium (WTU).",
+      },
+    ],
     "berberis-aquifolium": [
       {
         lookalikeId: "ilex-aquifolium",

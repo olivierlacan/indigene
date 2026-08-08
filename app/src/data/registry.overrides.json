@@ -3107,5 +3107,148 @@
       "gbif": "3006252",
       "wikidata": "Q143186"
     }
+  },
+  "Ceanothus sanguineus": {
+    "identifiers": {
+      "ipni": "317381-2",
+      "wfo": "wfo-0000592072",
+      "usda": "CESA",
+      "itis": "28506",
+      "inat": "76197",
+      "gbif": "3039303",
+      "wikidata": "Q2943642"
+    }
+  },
+  "Chamaenerion angustifolium": {
+    "identifiers": {
+      "ipni": "611374-1",
+      "wfo": "wfo-0000599740",
+      "usda": "CHAN9",
+      "itis": "510710",
+      "inat": "564969",
+      "gbif": "6428353",
+      "wikidata": "Q160104"
+    }
+  },
+  "Erythronium oregonum": {
+    "identifiers": {
+      "ipni": "96849-2",
+      "wfo": "wfo-0000766958",
+      "usda": "EROR4",
+      "itis": "196382",
+      "inat": "59520",
+      "gbif": "2752808",
+      "wikidata": "Q954818"
+    }
+  },
+  "Frangula purshiana": {
+    "identifiers": {
+      "ipni": "30426867-2",
+      "wfo": "wfo-0000691925",
+      "usda": "FRPU7",
+      "itis": "506987",
+      "inat": "77156",
+      "gbif": "8286637",
+      "wikidata": "Q15540797"
+    }
+  },
+  "Grindelia integrifolia": {
+    "identifiers": {
+      "ipni": "210611-1",
+      "wfo": "wfo-0000136528",
+      "usda": "GRIN",
+      "itis": "37457",
+      "inat": "124526",
+      "gbif": "3146296",
+      "wikidata": "Q15548087"
+    }
+  },
+  "Heracleum maximum": {
+    "identifiers": {
+      "ipni": "843087-1",
+      "wfo": "wfo-0001068396",
+      "usda": "HEMA80",
+      "itis": "502953",
+      "inat": "53094",
+      "gbif": "3034826",
+      "wikidata": "Q2896924"
+    }
+  },
+  "Linnaea borealis": {
+    "identifiers": {
+      "ipni": "140689-2",
+      "wfo": "wfo-0000358023",
+      "usda": "LIBO3",
+      "itis": "35314",
+      "inat": "77780",
+      "gbif": "5334220",
+      "wikidata": "Q161525"
+    }
+  },
+  "Maianthemum dilatatum": {
+    "identifiers": {
+      "ipni": "149429-2",
+      "wfo": "wfo-0000691294",
+      "usda": "MADI",
+      "itis": "503654",
+      "inat": "63939",
+      "gbif": "2769435",
+      "wikidata": "Q777131"
+    }
+  },
+  "Pinus ponderosa": {
+    "identifiers": {
+      "ipni": "307165-2",
+      "wfo": "wfo-0000481903",
+      "usda": "PIPO",
+      "itis": "183365",
+      "inat": "81248",
+      "gbif": "5285053",
+      "wikidata": "Q460523"
+    }
+  },
+  "Polypodium glycyrrhiza": {
+    "identifiers": {
+      "ipni": "17189950-1",
+      "wfo": "wfo-0001109244",
+      "usda": "POGL8",
+      "itis": "17234",
+      "inat": "55104",
+      "gbif": "5274957",
+      "wikidata": "Q3395763"
+    }
+  },
+  "Tiarella trifoliata": {
+    "identifiers": {
+      "ipni": "794902-1",
+      "wfo": "wfo-0001135731",
+      "usda": "TITR",
+      "itis": "24531",
+      "inat": "51643",
+      "gbif": "5371609",
+      "wikidata": "Q3991104"
+    }
+  },
+  "Trillium ovatum": {
+    "identifiers": {
+      "ipni": "317429-2",
+      "wfo": "wfo-0000750666",
+      "usda": "TROV2",
+      "itis": "43080",
+      "inat": "49463",
+      "gbif": "2742413",
+      "wikidata": "Q3024360"
+    }
+  },
+  "Vaccinium parvifolium": {
+    "identifiers": {
+      "ipni": "317275-2",
+      "wfo": "wfo-0001046870",
+      "usda": "VAPA",
+      "itis": "23612",
+      "inat": "48354",
+      "gbif": "2882910",
+      "wikidata": "Q3299248"
+    }
   }
 }

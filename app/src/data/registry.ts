@@ -1459,6 +1459,36 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:317381-2",
+    "scientificName": "Ceanothus sanguineus",
+    "family": "Rhamnaceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "317381-2",
+      "wfo": "wfo-0000592072",
+      "gbif": "3039303",
+      "usda": "CESA",
+      "itis": "28506",
+      "inat": "76197",
+      "wikidata": "Q2943642",
+      "indigene": "ceanothus-sanguineus"
+    },
+    "commonNames": [
+      "Redstem Ceanothus",
+      "Buckbrush"
+    ],
+    "aliases": [
+      "buckbrush",
+      "ceanothus sanguineus",
+      "redstem ceanothus"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:850999-1",
     "scientificName": "Celtis australis",
     "family": "Cannabaceae",
@@ -1602,6 +1632,34 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic"
+    ]
+  },
+  {
+    "primaryId": "ipni:611374-1",
+    "scientificName": "Chamaenerion angustifolium",
+    "family": "Onagraceae",
+    "form": "perennial",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "611374-1",
+      "wfo": "wfo-0000599740",
+      "gbif": "6428353",
+      "usda": "CHAN9",
+      "itis": "510710",
+      "inat": "564969",
+      "wikidata": "Q160104",
+      "indigene": "chamaenerion-angustifolium"
+    },
+    "commonNames": [
+      "Fireweed"
+    ],
+    "aliases": [
+      "chamaenerion angustifolium",
+      "fireweed"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {
@@ -2800,6 +2858,34 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:96849-2",
+    "scientificName": "Erythronium oregonum",
+    "family": "Liliaceae",
+    "form": "perennial",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "96849-2",
+      "wfo": "wfo-0000766958",
+      "gbif": "2752808",
+      "usda": "EROR4",
+      "itis": "196382",
+      "inat": "59520",
+      "wikidata": "Q954818",
+      "indigene": "erythronium-oregonum"
+    },
+    "commonNames": [
+      "White Fawn Lily"
+    ],
+    "aliases": [
+      "erythronium oregonum",
+      "white fawn lily"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:672740-1",
     "scientificName": "Eschscholzia californica",
     "family": "Papaveraceae",
@@ -3174,6 +3260,34 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:30426867-2",
+    "scientificName": "Frangula purshiana",
+    "family": "Rhamnaceae",
+    "form": "tree",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "30426867-2",
+      "wfo": "wfo-0000691925",
+      "gbif": "8286637",
+      "usda": "FRPU7",
+      "itis": "506987",
+      "inat": "77156",
+      "wikidata": "Q15540797",
+      "indigene": "frangula-purshiana"
+    },
+    "commonNames": [
+      "Cascara"
+    ],
+    "aliases": [
+      "cascara",
+      "frangula purshiana"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:609072-1",
     "scientificName": "Fraxinus latifolia",
     "family": "Oleaceae",
@@ -3374,6 +3488,34 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:210611-1",
+    "scientificName": "Grindelia integrifolia",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "210611-1",
+      "wfo": "wfo-0000136528",
+      "gbif": "3146296",
+      "usda": "GRIN",
+      "itis": "37457",
+      "inat": "124526",
+      "wikidata": "Q15548087",
+      "indigene": "grindelia-integrifolia"
+    },
+    "commonNames": [
+      "Puget Sound Gumweed"
+    ],
+    "aliases": [
+      "grindelia integrifolia",
+      "puget sound gumweed"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:430697-1",
     "scientificName": "Hamamelis virginiana",
     "family": "Hamamelidaceae",
@@ -3545,6 +3687,34 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": "ipni:843087-1",
+    "scientificName": "Heracleum maximum",
+    "family": "Apiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "843087-1",
+      "wfo": "wfo-0001068396",
+      "gbif": "3034826",
+      "usda": "HEMA80",
+      "itis": "502953",
+      "inat": "53094",
+      "wikidata": "Q2896924",
+      "indigene": "heracleum-maximum"
+    },
+    "commonNames": [
+      "Cow Parsnip"
+    ],
+    "aliases": [
+      "cow parsnip",
+      "heracleum maximum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {
@@ -4158,6 +4328,34 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:140689-2",
+    "scientificName": "Linnaea borealis",
+    "family": "Caprifoliaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "140689-2",
+      "wfo": "wfo-0000358023",
+      "gbif": "5334220",
+      "usda": "LIBO3",
+      "itis": "35314",
+      "inat": "77780",
+      "wikidata": "Q161525",
+      "indigene": "linnaea-borealis"
+    },
+    "commonNames": [
+      "Twinflower"
+    ],
+    "aliases": [
+      "linnaea borealis",
+      "twinflower"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:142115-2",
     "scientificName": "Lobelia cardinalis",
     "family": "Campanulaceae",
@@ -4415,6 +4613,34 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-central"
+    ]
+  },
+  {
+    "primaryId": "ipni:149429-2",
+    "scientificName": "Maianthemum dilatatum",
+    "family": "Asparagaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "149429-2",
+      "wfo": "wfo-0000691294",
+      "gbif": "2769435",
+      "usda": "MADI",
+      "itis": "503654",
+      "inat": "63939",
+      "wikidata": "Q777131",
+      "indigene": "maianthemum-dilatatum"
+    },
+    "commonNames": [
+      "False Lily-of-the-Valley"
+    ],
+    "aliases": [
+      "false lily-of-the-valley",
+      "maianthemum dilatatum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {
@@ -5252,6 +5478,34 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:307165-2",
+    "scientificName": "Pinus ponderosa",
+    "family": "Pinaceae",
+    "form": "tree",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "307165-2",
+      "wfo": "wfo-0000481903",
+      "gbif": "5285053",
+      "usda": "PIPO",
+      "itis": "183365",
+      "inat": "81248",
+      "wikidata": "Q460523",
+      "indigene": "pinus-ponderosa"
+    },
+    "commonNames": [
+      "Ponderosa Pine"
+    ],
+    "aliases": [
+      "pinus ponderosa",
+      "ponderosa pine"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:263353-1",
     "scientificName": "Pinus sylvestris",
     "family": "Pinaceae",
@@ -5393,6 +5647,34 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic"
+    ]
+  },
+  {
+    "primaryId": "ipni:17189950-1",
+    "scientificName": "Polypodium glycyrrhiza",
+    "family": "Polypodiaceae",
+    "form": "fern",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "17189950-1",
+      "wfo": "wfo-0001109244",
+      "gbif": "5274957",
+      "usda": "POGL8",
+      "itis": "17234",
+      "inat": "55104",
+      "wikidata": "Q3395763",
+      "indigene": "polypodium-glycyrrhiza"
+    },
+    "commonNames": [
+      "Licorice Fern"
+    ],
+    "aliases": [
+      "licorice fern",
+      "polypodium glycyrrhiza"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {
@@ -7592,6 +7874,34 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:794902-1",
+    "scientificName": "Tiarella trifoliata",
+    "family": "Saxifragaceae",
+    "form": "perennial",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "794902-1",
+      "wfo": "wfo-0001135731",
+      "gbif": "5371609",
+      "usda": "TITR",
+      "itis": "24531",
+      "inat": "51643",
+      "wikidata": "Q3991104",
+      "indigene": "tiarella-trifoliata"
+    },
+    "commonNames": [
+      "Foamflower"
+    ],
+    "aliases": [
+      "foamflower",
+      "tiarella trifoliata"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:835277-1",
     "scientificName": "Tilia cordata",
     "family": "Malvaceae",
@@ -7648,6 +7958,36 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic"
+    ]
+  },
+  {
+    "primaryId": "ipni:317429-2",
+    "scientificName": "Trillium ovatum",
+    "family": "Melanthiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "317429-2",
+      "wfo": "wfo-0000750666",
+      "gbif": "2742413",
+      "usda": "TROV2",
+      "itis": "43080",
+      "inat": "49463",
+      "wikidata": "Q3024360",
+      "indigene": "trillium-ovatum"
+    },
+    "commonNames": [
+      "Western Trillium",
+      "Wake Robin"
+    ],
+    "aliases": [
+      "trillium ovatum",
+      "wake robin",
+      "western trillium"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {
@@ -7877,6 +8217,34 @@ export const REGISTRY: RegistryEntry[] = [
     "aliases": [
       "evergreen huckleberry",
       "vaccinium ovatum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:317275-2",
+    "scientificName": "Vaccinium parvifolium",
+    "family": "Ericaceae",
+    "form": "shrub",
+    "rank": "species",
+    "identifiers": {
+      "ipni": "317275-2",
+      "wfo": "wfo-0001046870",
+      "gbif": "2882910",
+      "usda": "VAPA",
+      "itis": "23612",
+      "inat": "48354",
+      "wikidata": "Q3299248",
+      "indigene": "vaccinium-parvifolium"
+    },
+    "commonNames": [
+      "Red Huckleberry"
+    ],
+    "aliases": [
+      "red huckleberry",
+      "vaccinium parvifolium"
     ],
     "cultivarOf": null,
     "regions": [

@@ -1270,16 +1270,6 @@ export const fr: Dict = {
   "region.nothingHere": "Il n'y a rien à cette adresse",
   "region.browseNatives": "Parcourir les indigènes",
   "regionWhere.title": "Jusqu'où va cette région",
-  "regionWhere.shadedEpa.one":
-    "En teinte : l'écorégion {list} — la carte que l'agence américaine de l'environnement (EPA) dresse de ce dont le terrain est fait, et ce qui détermine les plantes affichées ici.",
-  "regionWhere.shadedEpa.other":
-    "En teinte : les écorégions {list} — la carte que l'agence américaine de l'environnement (EPA) dresse de ce dont le terrain est fait, et ce qui détermine les plantes affichées ici.",
-  "regionWhere.shadedEea.one":
-    "En teinte : la région biogéographique {list} — la carte que l'Agence européenne pour l'environnement (AEE) dresse du climat, des sols et de la flore sauvage, et ce qui détermine les plantes affichées ici.",
-  "regionWhere.shadedEea.other":
-    "En teinte : les régions biogéographiques {list} — la carte que l'Agence européenne pour l'environnement (AEE) dresse du climat, des sols et de la flore sauvage, et ce qui détermine les plantes affichées ici.",
-  "regionWhere.more.one": "{n} autre",
-  "regionWhere.more.other": "{n} autres",
   "regionWhere.shadedBox":
     "En pointillés : le rectangle que cette région est encore. Ses limites ne sont pas encore reprises de la carte des écorégions — considérez les marges comme approximatives.",
   "regionWhere.linkEpa": "Voir les cartes des écorégions de l'EPA",

@@ -24,10 +24,9 @@
 import type { RegionMeta } from "../data/region";
 import type { EcoregionProvider } from "../types";
 import { el } from "../ui";
-import { EPA_L3_NAMES } from "../data/ecoregions";
 import { REGION_MAP_SIZES } from "../data/region-maps";
 import { EEA_BIOREGION_MAP_URL, EPA_ECOREGION_MAP_URL } from "../lib/plain";
-import { fmtList, fmtNumber, t, tn, tOptional } from "../lib/i18n";
+import { t } from "../lib/i18n";
 import { regionExtent } from "../lib/names";
 
 export function regionBoundaryCard(meta: RegionMeta): HTMLElement {
@@ -36,14 +35,19 @@ export function regionBoundaryCard(meta: RegionMeta): HTMLElement {
   return el("section", { class: "card region-where" }, [
     el("h3", { style: "margin:0 0 0.5rem;font-size:1.05rem" }, t("regionWhere.title")),
     regionMap(meta),
-    el("p", { class: "region-map-legend" },
-      // Plural-aware: a region is one mapped area or fifteen, and the sentence
-      // has to agree with it in both languages.
-      eco
-        ? tn(eea ? "regionWhere.shadedEea" : "regionWhere.shadedEpa", eco.codes.length, {
-            list: ecoregionList(eco.provider, eco.codes),
-          })
-        : t("regionWhere.shadedBox")),
+    // No caption when the shape is real. It used to name the mapped ecoregions
+    // — "the Northeastern Highlands, Ridge and Valley, Western Allegheny
+    // Plateau, Central Appalachians, and 11 more" — which is jargon a gardener
+    // has no use for, in a sentence longer than the picture it described. The
+    // same argument that removed the internal boundaries removes their names:
+    // the shape is the answer, and the link below credits whose lines they are.
+    //
+    // The one caption worth keeping is the opposite case: a region with no
+    // ecoregion codes is drawn as its coverage *box*, dashed, and a dashed
+    // rectangle over a coastline needs to say it is a rectangle rather than a
+    // boundary. Every shipped region traces real lines today; this is for the
+    // next one that doesn't.
+    ...(eco ? [] : [el("p", { class: "region-map-legend" }, t("regionWhere.shadedBox"))]),
     el("p", { style: "margin:0" }, [
       el("a", {
         href: eea ? EEA_BIOREGION_MAP_URL : EPA_ECOREGION_MAP_URL,
@@ -78,21 +82,6 @@ function regionMap(meta: RegionMeta): HTMLElement {
   });
 }
 
-/** The mapped areas, named — but a region can be fifteen of them (the
- *  Mid-Atlantic is), and fifteen names is a paragraph nobody reads. So past a
- *  point: the four largest by name, then a count of the rest, joined the way
- *  the reader's language joins a list.
- *
- *  The cut-off is four *plus a couple*, not four flat, because "A, B, C, D and
- *  1 more" is a worse sentence than naming all five would have been. */
-const NAMED = 4;
-function ecoregionList(provider: EcoregionProvider, codes: string[]): string {
-  const all = codes.map((c) => ecoregionName(provider, c));
-  if (all.length <= NAMED + 2) return fmtList(all);
-  const rest = all.length - NAMED;
-  return fmtList([...all.slice(0, NAMED), tn("regionWhere.more", rest, { n: fmtNumber(rest) })]);
-}
-
 /** Which authority's map to send this region's reader to. Normally the region
  *  says so itself; a region that hasn't declared its ecoregions yet (the
  *  Mid-Atlantic, box-only) is placed by longitude, which is the one thing a
@@ -100,13 +89,4 @@ function ecoregionList(provider: EcoregionProvider, codes: string[]): string {
 function providerFor(meta: RegionMeta): EcoregionProvider {
   if (meta.ecoregion) return meta.ecoregion.provider;
   return meta.bounds.maxLon < -30 ? "epa-omernik" : "eea-biogeo";
-}
-
-/** A code as a reader can find it on the atlas. EPA Level III names are
- *  American place names and stay in English (same rule as `ecoregionLabel`);
- *  the EEA's eleven regions have a settled name in each language. An
- *  unrecognized code shows as itself — still findable, never blank. */
-function ecoregionName(provider: EcoregionProvider, code: string): string {
-  if (provider === "eea-biogeo") return tOptional(`ecoregion.eea.${code}`) ?? code;
-  return EPA_L3_NAMES[code] ?? code;
 }

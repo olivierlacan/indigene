@@ -28,9 +28,9 @@ export type { RawPlant };
 
 export const REGION: RegionMeta = {
   id: "florida-south",
-  name: "Florida (south & the Keys)",
+  name: "South Florida",
   short: "South Florida",
-  reference: "Greater Miami & the Keys",
+  reference: "Greater Miami, the Everglades & the Keys",
   zones: "10a–11a",
   note: "Native status is asserted for subtropical south Florida and the Keys, south of roughly Lake Okeechobee. Many species here are frost-tender and belong only in this region; north & central Florida has its own list.",
   extent: "From about Lake Okeechobee south through the Everglades, the Miami–Naples coasts and the whole chain of the Keys.",

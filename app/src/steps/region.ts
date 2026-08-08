@@ -90,13 +90,20 @@ export function renderRegion(main: HTMLElement, param?: string): void {
     regionRefLine(region.meta, "region-ref"),
     el("p", { class: "step-lede" },
       t("region.lede", { reference: regionReference(region.meta) })),
-    regionStatGrid(region, plants),
-    el("p", { style: "font-size:0.9rem;color:var(--ink-soft)" }, regionNote(region.meta)),
-    // "Native here" having been defined, say where *here* is — in landmarks,
-    // then in the mapped ecoregions those landmarks trace, then as a link to
-    // the map itself. Sits above the roster because "does this include me?"
-    // comes before "what's on the list".
-    regionBoundaryCard(region.meta),
+    // The stats, the caveat and the map are one block: three answers to "what
+    // is this region and does it include me?", asked before the roster. They
+    // stack on a phone in that order. On a wide screen they'd otherwise run
+    // down the page one full-width row at a time, with the map — a small
+    // diagram — stretched across a laptop and pushing the plants out of sight,
+    // so past 52rem this becomes two columns and the map sits beside the stats
+    // rather than under them.
+    el("div", { class: "region-head" }, [
+      el("div", { class: "region-head-main" }, [
+        regionStatGrid(region, plants),
+        el("p", { class: "region-head-note" }, regionNote(region.meta)),
+      ]),
+      regionBoundaryCard(region.meta),
+    ]),
     // Which of these plants we can't name in the reader's language. (The
     // *writing* we haven't translated is the page-top banner's job, reported
     // below.) `main.append` is the DOM's, so an absent note has to vanish from

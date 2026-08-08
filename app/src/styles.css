@@ -3765,6 +3765,51 @@ body[data-layout="profile"] .wip-banner-text {
   margin: 0 -0.4rem 0.6rem;
   border-radius: calc(var(--radius) - 6px);
 }
+.region-head-note {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+/* Past phone width the full-bleed rule stops helping. A map is a diagram, not a
+   photograph: a coastline, a shaded area and five town names get no clearer at
+   900px, and the picture starts dominating the roster it was supposed to
+   introduce. Between phone and laptop, cap it. */
+@media (min-width: 40rem) {
+  .region-map {
+    width: 100%;
+    max-width: 24rem;
+    margin: 0 0 0.6rem;
+  }
+}
+/* At laptop width, capping the map alone left a small picture marooned in a
+   card the full width of the window — the map got smaller and the empty space
+   around it got bigger, which is worse than the problem. The card belongs
+   *beside* the stats: two columns, the map's own column sized to the map, so
+   nothing is stretched and nothing is stranded. `align-items: start` keeps the
+   map card its natural height instead of stretching it to match the stats. */
+@media (min-width: 52rem) {
+  /* The card is as wide as the map, and no wider.
+
+     This took several wrong turns. Capping only the map's width left a small
+     picture marooned in a full-width card; putting the card in a column beside
+     the stats left a hole the height of the map; stretching the tiles to close
+     that hole made four big boxes with a line of text floating in each; and
+     floating the map so the caption could flow round it worked right up until
+     the caption itself came out, at which point the card was a map with an
+     acre of empty beside it.
+
+     With the caption gone there is nothing to lay out *around* the map, so the
+     card simply stops where the map stops: a compact figure at the left of the
+     page with its source link underneath, and the roster starting right below
+     it. */
+  .region-where {
+    max-width: 22rem;
+  }
+  .region-map {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 0.6rem;
+  }
+}
 .region-map-legend {
   margin: 0 0 0.6rem;
   font-size: 0.9rem;

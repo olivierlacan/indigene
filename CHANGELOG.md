@@ -102,6 +102,20 @@ subtitle on the What's new page.
   European pollinator network, the Natural History Museum's world list of what
   caterpillars eat. The [sources page](https://indigene.app/sources) says so too.
 
+- **Region names are shorter, with the qualifier on the line below.** "Florida
+  (south & the Keys)" is now **South Florida**; "Pacific Northwest (west of the
+  Cascades)" is **Pacific Northwest**. The brackets had been pushing a name onto
+  three lines on a phone.
+- **On a laptop the region map is a sensible size now.** It used to stretch the
+  whole width of the page, which pushed the plant list off the bottom of the
+  screen. On a phone, nothing changes.
+- **The list of ecoregion names under each map is gone.** It read like a
+  geology exam — "Ridge and Valley, Western Allegheny Plateau" — and the link
+  underneath already says whose map the lines come from.
+- **Each region map is one shape now, and its coastline is smoother.** The lines
+  dividing it into a dozen pieces answered no question anyone asks, and the
+  jagged edges were an artefact of keeping the file small.
+
 ### Fixed
 
 - **Four notes meant for the people building Indigene had been appearing on

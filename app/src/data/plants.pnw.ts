@@ -26,9 +26,9 @@ export type { RawPlant };
 
 export const REGION: RegionMeta = {
   id: "pnw",
-  name: "Pacific Northwest (west of the Cascades)",
+  name: "Pacific Northwest",
   short: "Pacific Northwest",
-  reference: "Portland–Seattle lowlands",
+  reference: "West of the Cascades, Portland–Seattle lowlands",
   zones: "8a–9a",
   note: "Native status is asserted for the maritime, west-of-the-Cascades Pacific Northwest. East of the Cascade crest is a drier, different flora — treat these recommendations as untested there.",
   extent: "North to the Canadian border, south to the Oregon–California line, and from the Pacific coast inland only as far as the crest of the Cascades — the wet, west-facing side of the mountains.",

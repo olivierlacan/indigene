@@ -315,6 +315,16 @@ export const en = {
   // ---------------------------------------------------------------------
   // How common a plant is around a spot (iNaturalist record counts).
   // ---------------------------------------------------------------------
+  "rarity.around": "Around {place}",
+  "rarity.counted": "Counted {date}",
+  "rarity.region.none":
+    "Nobody has recorded this plant anywhere in {region} yet. If it belongs in your ground, yours may be the only one for a while.",
+  "rarity.region.scarce":
+    "Seldom recorded across {region} — {count} records. Planting one puts back something the area is short of.",
+  "rarity.region.occasional": "Recorded here and there across {region} — {count} records.",
+  "rarity.region.common":
+    "One of the plants people record most across {region} — {count} records.",
+  "rarity.aroundSpot": "Around your spot",
   "rarity.none":
     "Nobody has recorded this plant within {radius} of here. If it belongs in your ground, yours may be the only one for a while.",
   "rarity.scarce":

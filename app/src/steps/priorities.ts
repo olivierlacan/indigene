@@ -41,7 +41,7 @@ import type { Weights } from "../types";
  *  reporting on the top three alone would call it "nothing moved". */
 const PREVIEW_DEPTH = 25;
 
-export function renderPriorities(main: HTMLElement): (() => void) | void {
+export async function renderPriorities(main: HTMLElement): Promise<(() => void) | void> {
   clear(main);
   const { region, hasCoords } = draftRegion();
   if (!hasCoords && !store.draft.regionOverride) return void navigate("location");
@@ -49,7 +49,7 @@ export function renderPriorities(main: HTMLElement): (() => void) | void {
   // plainly, with a way out) — there's nothing to prioritise here.
   if (!region) return void navigate("results");
 
-  const plants = draftPlants(region);
+  const plants = await draftPlants(region);
   const context = draftContext(region);
   const rc = recompute("goals");
 

@@ -17,6 +17,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { openLoader } from "./_load-ts.mjs";
+import { withSeeds } from "./_regions.mjs";
 
 // Identifier order in the output (stable diffs). indigene is always present;
 // external schemes appear only when reconciled. ipni/wfo can anchor primaryId.
@@ -29,7 +30,8 @@ const ANCHOR_ORDER = ["ipni", "wfo"];
 // the registry — and a projection of the catalog that quietly omits part of the
 // catalog is worse than no projection at all.
 const loader = await openLoader();
-const { REGIONS } = await loader.load("/src/data/regions.ts");
+const { REGIONS: REGIONS_RAW } = await loader.load("/src/data/regions.ts");
+const REGIONS = await withSeeds(REGIONS_RAW);
 await loader.close();
 
 const REGION_ORDER = REGIONS.map((r) => r.meta.id);
@@ -64,6 +66,10 @@ for (const { meta, seed } of REGIONS) {
         family: p.family,
         form: p.form,
         rank: /\s/.test(p.latin.trim()) ? "species" : "genus",
+        // Carried so pages that only need to *describe* a taxon — the region
+        // cards, chiefly — never have to fetch a region's whole plant list for
+        // one boolean. It is the same in every region that lists a taxon.
+        keystone: Boolean(p.keystone),
         commonNames: commonNames(p.common),
         cultivarOf: null,
         regions: [],
@@ -104,6 +110,7 @@ function finalize(e) {
     family: e.family,
     form: e.form,
     rank: e.rank,
+    keystone: e.keystone,
     identifiers,
     commonNames: e.commonNames,
     aliases: [...e._aliasSet].sort(),

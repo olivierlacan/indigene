@@ -21,15 +21,37 @@ function build(raw: RawPlant): Plant {
   return { ...raw, scores };
 }
 
-// Built plant lists are cached per region id so we only derive scores once.
-const cache = new Map<string, Plant[]>();
+// Built plant lists are cached per region id so we only derive scores once —
+// and, now that the list arrives over the network, so we only fetch once. The
+// cache holds the in-flight promise rather than the finished array: two pages
+// asking at the same moment (the ranked list and the plant page behind it)
+// would otherwise each start their own download of the same file.
+const cache = new Map<string, Promise<Plant[]>>();
 
-export function loadPlants(region: RegionDef): Plant[] {
+/**
+ * One region's plants, fetching the region's list the first time.
+ *
+ * Async because each region's list is a separate download (see `data/regions.ts`
+ * — a reader gets the region they garden in, not all nine). After the first
+ * call it resolves from memory, and the service worker keeps the file, so it
+ * survives a reload and works offline.
+ */
+export function loadPlants(region: RegionDef): Promise<Plant[]> {
   const cached = cache.get(region.meta.id);
   if (cached) return cached;
-  const built = region.seed.map(build);
+  const built = region.load().then((seed) => seed.map(build));
+  // A failed fetch must not be remembered as the answer: drop it so a later
+  // call (back online, or just a retry) can try again.
+  built.catch(() => cache.delete(region.meta.id));
   cache.set(region.meta.id, built);
   return built;
+}
+
+/** The plants already in memory for a region, or null if none have been
+ *  fetched. For the few places that can show something useful straight away and
+ *  fill in the rest when the list lands. */
+export function loadedPlants(region: RegionDef): Promise<Plant[]> | null {
+  return cache.get(region.meta.id) ?? null;
 }
 
 /**

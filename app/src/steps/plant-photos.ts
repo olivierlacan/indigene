@@ -77,9 +77,9 @@ interface Shot {
   pick: HeroPhoto;
 }
 
-export function renderPlantPhotos(main: HTMLElement, slug: string): void {
+export async function renderPlantPhotos(main: HTMLElement, slug: string): Promise<void> {
   clear(main);
-  const entries = findPlant(slug);
+  const entries = await findPlant(slug);
   if (!entries.length) {
     renderNotFound(main, slug);
     return;

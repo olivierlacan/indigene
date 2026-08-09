@@ -67,12 +67,18 @@ const regionById = new Map(REGIONS.map((r) => [r.meta.id, r]));
  * is left to the caller (the detail page shows one region block at a time).
  * Ties whose plant id isn't in that region's roster are skipped defensively.
  */
-export function plantsForWildlife(wildlifeId: string): PlantSupport[] {
+export async function plantsForWildlife(wildlifeId: string): Promise<PlantSupport[]> {
   const out: PlantSupport[] = [];
+  // Only the regions that actually tie a plant to this animal are fetched — an
+  // animal is usually a story about one or two regions, not all nine.
   for (const [regionId, byPlant] of Object.entries(SUPPORT)) {
     const region = regionById.get(regionId);
     if (!region) continue;
-    const plants = loadPlants(region);
+    const ties = Object.values(byPlant).some((links) =>
+      links.some((l) => l.wildlifeId === wildlifeId)
+    );
+    if (!ties) continue;
+    const plants = await loadPlants(region);
     for (const [plantId, links] of Object.entries(byPlant)) {
       const link = links.find((l) => l.wildlifeId === wildlifeId);
       if (!link) continue;
@@ -110,7 +116,16 @@ export function wildlifeForPlant(regionId: string, plantId: string): WildlifeFor
  *  offer "look it up where it's found" buttons on the wildlife page, the same way
  *  a plant offers its native regions. */
 export function regionsForWildlife(wildlifeId: string): RegionDef[] {
-  const ids = new Set(plantsForWildlife(wildlifeId).map((s) => s.region.meta.id));
+  // Read straight off the tie table rather than through the resolved plants:
+  // the question is which regions mention this animal, and the table answers it
+  // without fetching a single plant list.
+  const ids = new Set(
+    Object.entries(SUPPORT)
+      .filter(([, byPlant]) =>
+        Object.values(byPlant).some((links) => links.some((l) => l.wildlifeId === wildlifeId))
+      )
+      .map(([regionId]) => regionId)
+  );
   return REGIONS.filter((r) => ids.has(r.meta.id));
 }
 
@@ -135,18 +150,27 @@ interface IndexEntry {
 }
 let entryCache: IndexEntry[] | null = null;
 
+// Counted from the tie table, not from resolved plants: the browse index needs
+// *how many* plants support each animal in each region, which is a count of
+// ties. Going through the plants would have meant downloading all nine region
+// lists to draw an index of animals. `auditSupport` is what makes the two the
+// same number — it fails in development if a tie names a plant no roster has.
 function indexEntries(): IndexEntry[] {
   if (entryCache) return entryCache;
   const entries: IndexEntry[] = [];
   for (const wildlife of WILDLIFE) {
-    const supports = plantsForWildlife(wildlife.id);
-    if (!supports.length) continue;
     const byRegion = new Map<string, number>();
-    for (const s of supports) {
-      const id = s.region.meta.id;
-      byRegion.set(id, (byRegion.get(id) ?? 0) + 1);
+    let total = 0;
+    for (const [regionId, byPlant] of Object.entries(SUPPORT)) {
+      if (!regionById.has(regionId)) continue;
+      for (const links of Object.values(byPlant)) {
+        if (!links.some((l) => l.wildlifeId === wildlife.id)) continue;
+        byRegion.set(regionId, (byRegion.get(regionId) ?? 0) + 1);
+        total++;
+      }
     }
-    entries.push({ wildlife, total: supports.length, byRegion });
+    if (!total) continue;
+    entries.push({ wildlife, total, byRegion });
   }
   entryCache = entries;
   return entries;
@@ -211,7 +235,7 @@ export function wildlifeCountForRegion(regionId: string): number {
  * at module load in dev so a typo in a tie is caught immediately, not silently
  * dropped. Costs nothing in production (tree-shaken via import.meta.env.DEV).
  */
-export function auditSupport(): string[] {
+export async function auditSupport(): Promise<string[]> {
   const problems: string[] = [];
   // The hard invariant: every listed animal must be native and cite where it's
   // native. The `native: true` literal type already blocks this at compile
@@ -239,7 +263,7 @@ export function auditSupport(): string[] {
       problems.push(`SUPPORT references unknown region "${regionId}"`);
       continue;
     }
-    const roster = loadPlants(region);
+    const roster = await loadPlants(region);
     const ids = new Set(roster.map((p) => p.id));
     // A plant id repeated in a seed list would inflate every roster-derived
     // figure (plant count, keystone count) and show the plant twice.
@@ -277,8 +301,9 @@ export function auditSupport(): string[] {
 }
 
 if (import.meta.env.DEV) {
-  const problems = auditSupport();
-  if (problems.length) {
-    console.warn("[wildlife] SUPPORT integrity problems:\n" + problems.join("\n"));
-  }
+  void auditSupport().then((problems) => {
+    if (problems.length) {
+      console.warn("[wildlife] SUPPORT integrity problems:\n" + problems.join("\n"));
+    }
+  });
 }

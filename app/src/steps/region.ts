@@ -8,6 +8,7 @@
 import { el, clear } from "../ui";
 import { navigate } from "../state";
 import { REGIONS, loadPlants } from "../lib/plants";
+import { formCountForRegion } from "../lib/registry";
 import type { RegionDef } from "../lib/plants";
 import { filterField, highlight, norm } from "../components/filter-field";
 import type { FilterRow, FilterSection } from "../components/filter-field";
@@ -42,21 +43,21 @@ const SLUG_TO_FORM = new Map<string, PlantForm>(
   FORM_ORDER.map((f) => [FORM_SLUGS[f], f])
 );
 
-export function renderRegion(main: HTMLElement, param?: string): void {
+export async function renderRegion(main: HTMLElement, param?: string): Promise<void> {
   clear(main);
   const [id, catSlug] = (param ?? "").split("/");
   const region = REGIONS.find((r) => r.meta.id === id);
   if (!region) {
-    renderNotFound(main, t("region.noSuchRegion"));
+    await renderNotFound(main, t("region.noSuchRegion"));
     return;
   }
   const form = catSlug ? SLUG_TO_FORM.get(catSlug) : undefined;
   if (catSlug && !form) {
-    renderNotFound(main, t("region.noSuchCategory", { slug: catSlug }), region);
+    await renderNotFound(main, t("region.noSuchCategory", { slug: catSlug }), region);
     return;
   }
 
-  const plants = loadPlants(region);
+  const plants = await loadPlants(region);
 
   if (form) {
     renderCategory(main, region, plants, form);
@@ -146,8 +147,11 @@ function renderCategory(
   reportRosterUntranslated(inForm, region.meta.id);
 
   // The same category elsewhere — only regions that actually have one.
+  // Counted from the registry, not from the other regions' lists: this is a
+  // row of buttons about eight regions, and fetching eight plant lists to
+  // number them would undo the whole point of splitting them up.
   const elsewhere = REGIONS.filter(
-    (r) => r.meta.id !== region.meta.id && loadPlants(r).some((p) => p.form === form)
+    (r) => r.meta.id !== region.meta.id && formCountForRegion(r.meta.id, form) > 0
   );
   const switcher = elsewhere.length
     ? el("div", { class: "card", style: "margin-top:1rem" }, [
@@ -158,7 +162,7 @@ function renderCategory(
               class: "btn btn-secondary",
               style: "flex:0 1 auto;min-height:2.4rem;padding:0.4rem 0.7rem;font-size:0.9rem;text-decoration:none",
               href: categoryHref(r, form),
-            }, `${regionName(r.meta)} (${fmtNumber(loadPlants(r).filter((p) => p.form === form).length)})`)
+            }, `${regionName(r.meta)} (${fmtNumber(formCountForRegion(r.meta.id, form))})`)
           )
         ),
       ])
@@ -314,11 +318,11 @@ function plantRow(p: Plant, regionId: string): { node: HTMLElement; mark: (nq: s
   return { node, mark };
 }
 
-function renderNotFound(main: HTMLElement, why: string, region?: RegionDef): void {
+async function renderNotFound(main: HTMLElement, why: string, region?: RegionDef): Promise<void> {
   main.append(
     el("h2", { class: "step-title" }, t("region.nothingHere")),
     el("p", { class: "step-lede" }, why),
-    ...(region ? [categoryChips(region, loadPlants(region), null)] : []),
+    ...(region ? [categoryChips(region, await loadPlants(region), null)] : []),
     el("div", { class: "btn-row" }, [
       el("button", { class: "btn btn-primary", onClick: () => navigate("plants") }, t("region.browseNatives")),
       el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("browse.home")),

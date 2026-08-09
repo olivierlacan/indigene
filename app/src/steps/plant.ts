@@ -56,7 +56,7 @@ const HERO_PX = 152;
 type Section = (typeof SECTIONS)[number];
 const sectionDomId = (s: Section): string => `sec-${s}`;
 
-export function renderPlant(main: HTMLElement, param?: string): (() => void) | void {
+export async function renderPlant(main: HTMLElement, param?: string): Promise<(() => void) | void> {
   clear(main);
   const raw = param ?? "";
   const slash = raw.indexOf("/");
@@ -84,7 +84,7 @@ export function renderPlant(main: HTMLElement, param?: string): (() => void) | v
   const wanted = fromFragment || fromRoute;
   const section = (SECTIONS as readonly string[]).includes(wanted) ? (wanted as Section) : null;
 
-  const entries = findPlant(slug);
+  const entries = await findPlant(slug);
   if (!entries.length) {
     renderNotFound(main, slug);
     return;

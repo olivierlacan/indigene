@@ -11,6 +11,7 @@ import type { Lookalike, LookalikeLink, LookalikeStatus, Plant } from "../types"
 import type { RegionDef } from "../data/region";
 import { REGIONS, loadPlants } from "./plants";
 import { CONFUSIONS, LOOKALIKES } from "../data/lookalikes";
+import { REGISTRY } from "../data/registry";
 
 const lookalikeById = new Map(LOOKALIKES.map((l) => [l.id, l]));
 
@@ -58,12 +59,18 @@ export interface NativeForLookalike {
  * around the Mediterranean, and describing it twice would be describing it
  * twice. Ties pointing at a plant the roster doesn't carry are skipped.
  */
-export function nativesForLookalike(lookalikeId: string): NativeForLookalike[] {
+export async function nativesForLookalike(lookalikeId: string): Promise<NativeForLookalike[]> {
   const out: NativeForLookalike[] = [];
   for (const region of REGIONS) {
     const byPlant = CONFUSIONS[region.meta.id];
     if (!byPlant) continue;
-    const plants = loadPlants(region);
+    // Skip a region before fetching its list when nothing there is confused
+    // with this impostor — most regions, for most impostors.
+    const ties = Object.values(byPlant).some((links) =>
+      links.some((l) => l.lookalikeId === lookalikeId)
+    );
+    if (!ties) continue;
+    const plants = await loadPlants(region);
     for (const [plantId, links] of Object.entries(byPlant)) {
       const link = links.find((l) => l.lookalikeId === lookalikeId);
       if (!link) continue;
@@ -100,11 +107,30 @@ let indexCache: LookalikeIndexRow[] | null = null;
  *
  * Pass a region id to narrow it to the impostors that matter there.
  */
-export function lookalikeIndex(regionId?: string): LookalikeIndexRow[] {
+/**
+ * The impostors that at least one region ties to a native — by id, straight
+ * from the tie table.
+ *
+ * The router asks this on every navigation (is `#/lookalikes/<x>` a real page?)
+ * and the prerenderer asks it for the page list. Neither needs a plant, and
+ * neither can afford to wait on nine downloads to answer.
+ */
+export function mappedLookalikeIds(regionId?: string): Set<string> {
+  const out = new Set<string>();
+  for (const [id, byPlant] of Object.entries(CONFUSIONS)) {
+    if (regionId && id !== regionId) continue;
+    for (const links of Object.values(byPlant)) {
+      for (const link of links) out.add(link.lookalikeId);
+    }
+  }
+  return out;
+}
+
+export async function lookalikeIndex(regionId?: string): Promise<LookalikeIndexRow[]> {
   if (!indexCache) {
     indexCache = [];
     for (const lookalike of LOOKALIKES) {
-      const natives = nativesForLookalike(lookalike.id);
+      const natives = await nativesForLookalike(lookalike.id);
       if (!natives.length) continue;
       const regionIds = [...new Set(natives.map((n) => n.region.meta.id))];
       const worstStatus = natives
@@ -122,7 +148,7 @@ export function lookalikeIndex(regionId?: string): LookalikeIndexRow[] {
 
 /** Total impostors with at least one mapped native — for the index lede. */
 export function mappedLookalikeCount(): number {
-  return lookalikeIndex().length;
+  return mappedLookalikeIds().size;
 }
 
 /**
@@ -135,9 +161,17 @@ export function mappedLookalikeCount(): number {
  *
  * Matched on the scientific name, because that's the identity both sides carry.
  */
-export function nativeSomewhere(latin: string): { region: RegionDef; plant: Plant } | null {
-  for (const region of REGIONS) {
-    const plant = loadPlants(region).find((p) => p.latin === latin);
+export async function nativeSomewhere(
+  latin: string
+): Promise<{ region: RegionDef; plant: Plant } | null> {
+  // The registry knows which regions carry a scientific name, so this asks one
+  // region for its list instead of walking all nine until it finds a match.
+  const entry = REGISTRY.find((e) => e.scientificName === latin);
+  const search = entry
+    ? REGIONS.filter((r) => entry.regions.includes(r.meta.id))
+    : [];
+  for (const region of search) {
+    const plant = (await loadPlants(region)).find((p) => p.latin === latin);
     if (plant) return { region, plant };
   }
   return null;
@@ -168,7 +202,7 @@ export function lookalikeCountForRegion(regionId: string): number {
  * tell must fill in *both* sides — a tell that describes only the native is
  * half a sentence, and the reader is the one left holding it.
  */
-export function auditLookalikes(): string[] {
+export async function auditLookalikes(): Promise<string[]> {
   const problems: string[] = [];
   const catalogIds = new Set<string>();
   const latinSeen = new Map<string, string>();
@@ -188,7 +222,8 @@ export function auditLookalikes(): string[] {
       problems.push(`CONFUSIONS references unknown region "${regionId}"`);
       continue;
     }
-    const ids = new Set(loadPlants(region).map((p) => p.id));
+    const roster = await loadPlants(region);
+    const ids = new Set(roster.map((p) => p.id));
     for (const [plantId, links] of Object.entries(byPlant)) {
       if (!ids.has(plantId)) problems.push(`${regionId}: no plant "${plantId}" in roster`);
       const tied = new Set<string>();
@@ -216,7 +251,7 @@ export function auditLookalikes(): string[] {
         // invasive in the very region whose native roster recommends it. (The
         // reverse is fine — meadow death camas is native to the Pacific
         // Northwest and will never be on a list of plants to put in a garden.)
-        if (known && link.status !== "native" && loadPlants(region).some((p) => p.latin === known.latin)) {
+        if (known && link.status !== "native" && roster.some((p) => p.latin === known.latin)) {
           problems.push(`${regionId}/${plantId}: "${link.lookalikeId}" is marked ${link.status} in a region whose own roster lists it as native`);
         }
       }
@@ -226,8 +261,9 @@ export function auditLookalikes(): string[] {
 }
 
 if (import.meta.env.DEV) {
-  const problems = auditLookalikes();
-  if (problems.length) {
-    console.warn("[lookalikes] CONFUSIONS integrity problems:\n" + problems.join("\n"));
-  }
+  void auditLookalikes().then((problems) => {
+    if (problems.length) {
+      console.warn("[lookalikes] CONFUSIONS integrity problems:\n" + problems.join("\n"));
+    }
+  });
 }

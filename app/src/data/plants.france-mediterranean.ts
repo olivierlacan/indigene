@@ -42,30 +42,9 @@
 //
 // Like the other region files, this is deliberately data-only and heavily
 // commented so a non-programmer can audit any row.
-import type { RawPlant, RegionMeta } from "./region";
+import type { RawPlant } from "./region";
 
 export type { RawPlant };
-
-export const REGION: RegionMeta = {
-  id: "france-mediterranean",
-  name: "Mediterranean France",
-  short: "Mediterranean France",
-  reference: "Marseille, Montpellier & Nice",
-  zones: "≈8b–10a",
-  note: "Native status is asserted for the Mediterranean biogeographical region of metropolitan France — the hot, dry south and Corsica. The oceanic west, the Continental east and the Alps are different floras with their own lists; treat these recommendations as untested there. Host-insect figures are counted from the open European Lepidoptera–plant matrix (Gaytán et al. 2026) for native, Mediterranean-zone relatives of each plant.",
-  extent: "The southern coast and the country behind it, from the Spanish border east to Menton on the Italian one — plus the whole of Corsica.",
-  // Coarse box over the French Mediterranean: the coast and its hinterland from
-  // the Spanish border eastward to Menton, plus Corsica. It deliberately
-  // overlaps the Atlantic France box around Montpellier and Narbonne, because
-  // no rectangle separates the two zones there — online the EEA region code
-  // decides between them, and offline the tighter box wins (see regions.ts).
-  bounds: { minLat: 41.3, maxLat: 44.3, minLon: 2.4, maxLon: 9.6 },
-  // EEA biogeographical region this list represents.
-  ecoregion: { provider: "eea-biogeo", codes: ["mediterranean"] },
-  // Holm oak: the evergreen oak the whole southern landscape is built on, and
-  // by a long way the biggest single food source on this list.
-  featuredPlantId: "quercus-ilex",
-};
 
 export const SEED_RAW: RawPlant[] = [
   // ---------------- TREES ----------------

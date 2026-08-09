@@ -88,6 +88,14 @@
 //                         without letting go, so the capture catches the
 //                         pull-to-reload pill mid-gesture. Needs --home-screen
 //                         (the gesture doesn't exist anywhere else)
+//   --remember-spot lat,lon
+//                         write the spot this device remembers, the way the app
+//                         writes it when somebody gives one (`lib/sticky.ts`),
+//                         then reload. For the pages that answer something
+//                         about the reader's own ground without being asked —
+//                         they only have anything to say once a spot has been
+//                         given, and a spot given *last visit* is the state a
+//                         URL can otherwise never reach
 //   --seed-garden         put an example saved spot and planting log into the
 //                         device's storage before shooting. The Saved list and
 //                         a spot's own page only exist once somebody has one,
@@ -164,6 +172,7 @@ const clicks = flags("--click");
 const geo = flag("--geo", "");
 const photos = flag("--photos", "");
 const seedGardenFlag = has("--seed-garden");
+const rememberSpot = flag("--remember-spot", "");
 const api = flag("--api", "");
 const homeScreen = has("--home-screen");
 const pull = Number(flag("--pull", "0"));
@@ -247,6 +256,7 @@ if (api) {
 }
 await page.goto(url, { waitUntil: "networkidle" });
 if (seedGardenFlag) await seedGarden(page);
+if (rememberSpot) await rememberDeviceSpot(page, rememberSpot);
 if (picks) await walkToPicks(page, picks, stopAt);
 if (tapPick) await tapFirstPick(page);
 // After the walk the app knows the reader's region; this opens a page that
@@ -367,6 +377,41 @@ async function comeBackLater(page, base, route) {
 async function tapFirstPick(page) {
   await page.locator("article.plant-pick a.plant-pick-link").first().click();
   await page.waitForURL("**#/plants/**");
+}
+
+/**
+ * Give the device the memory of a spot, then reload so the app boots with it.
+ *
+ * The same record `rememberSpot` writes — coordinates together with the sun and
+ * soil answers given for that ground — under the same `sticky` key. Sun and
+ * moisture are left unanswered here: a spot is remembered from the moment its
+ * coordinates are, and the readings that come with it are a different feature's
+ * business.
+ */
+async function rememberDeviceSpot(page, at) {
+  const [lat, lon] = at.split(",").map(Number);
+  await page.evaluate(async ({ lat, lon }) => {
+    const db = await new Promise((resolve, reject) => {
+      const req = indexedDB.open("indigene");
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
+    });
+    const spot = {
+      lat, lon,
+      regionId: null,
+      sun: null,
+      horizon: null,
+      deciduousOverhead: false,
+      moisture: null,
+      savedAt: Date.now(),
+    };
+    await new Promise((resolve, reject) => {
+      const req = db.transaction("kv", "readwrite").objectStore("kv").put({ spot }, "sticky");
+      req.onsuccess = () => resolve();
+      req.onerror = () => reject(req.error);
+    });
+  }, { lat, lon });
+  await page.reload({ waitUntil: "networkidle" });
 }
 
 /**

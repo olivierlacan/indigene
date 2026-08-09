@@ -85,6 +85,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { openLoader } from "./_load-ts.mjs";
 import { requireProxyAwareFetch } from "./_net.mjs";
+import { withSeeds } from "./_regions.mjs";
 
 requireProxyAwareFetch("wildlife");
 
@@ -411,7 +412,8 @@ function shortCitation(c) {
 
 // --------------------------------------------------------------- the regions
 const loader = await openLoader();
-const { REGIONS } = await loader.load("/src/data/regions.ts");
+const { REGIONS: REGIONS_RAW } = await loader.load("/src/data/regions.ts");
+const REGIONS = await withSeeds(REGIONS_RAW);
 const { WILDLIFE, SUPPORT } = await loader.load("/src/data/wildlife.ts");
 await loader.close();
 

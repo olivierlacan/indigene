@@ -32,6 +32,7 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { openLoader } from "./_load-ts.mjs";
+import { withSeeds } from "./_regions.mjs";
 
 const HOST_COUNTS = fileURLToPath(
   new URL("../../data/sources/eu-lep-plant-matrix/host-counts.json", import.meta.url),
@@ -76,7 +77,8 @@ const only = argOf("region", null);
 const TOP = Number(argOf("top", 30));
 
 const loader = await openLoader();
-const { REGIONS } = await loader.load("/src/data/regions.ts");
+const { REGIONS: REGIONS_RAW } = await loader.load("/src/data/regions.ts");
+const REGIONS = await withSeeds(REGIONS_RAW);
 const { WILDLIFE, SUPPORT } = await loader.load("/src/data/wildlife.ts");
 await loader.close();
 

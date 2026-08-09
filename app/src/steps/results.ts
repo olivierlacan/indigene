@@ -27,7 +27,7 @@ import type { Plant } from "../types";
  *  window the goals step previews, so the two pages report on the same thing. */
 const COMPARE_DEPTH = 25;
 
-export function renderResults(main: HTMLElement): (() => void) | void {
+export async function renderResults(main: HTMLElement): Promise<(() => void) | void> {
   clear(main);
   const { region, chosen, hasCoords } = draftRegion();
   if (!hasCoords && !store.draft.regionOverride) return void navigate("location");
@@ -42,7 +42,7 @@ export function renderResults(main: HTMLElement): (() => void) | void {
     return;
   }
 
-  const plants = draftPlants(region);
+  const plants = await draftPlants(region);
   // Captured rather than read inside `rerender`: the narrowing above doesn't
   // survive into a closure, and every card needs to say which region's row —
   // and so which region's translation — it is showing.

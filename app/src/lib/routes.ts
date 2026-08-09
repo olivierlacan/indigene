@@ -17,9 +17,10 @@
 // Nothing here touches the DOM, so a Node script can import it. That's the
 // point: the check reads the same function the browser does, rather than a
 // second copy of the rules that can quietly fall behind.
-import { REGIONS, loadPlants } from "./plants";
+import { REGIONS } from "./plants";
+import { REGISTRY } from "../data/registry";
 import { getWildlife, wildlifeKindRoute, KIND_ORDER, KIND_SLUGS } from "./wildlife";
-import { getLookalike, lookalikeIndex } from "./lookalikes";
+import { getLookalike, mappedLookalikeIds } from "./lookalikes";
 import { TECHNIQUES, techniqueBySlug } from "./planting";
 import { WILDLIFE } from "../data/wildlife";
 
@@ -226,15 +227,21 @@ export function plantSectionHref(section: string): string {
  * Every plant slug in the catalog.
  *
  * A species native to more than one covered region (live oak spans both Florida
- * lists) has one slug and one page, so this is a set rather than a count. Built
- * once on first use: `loadPlants` walks every region's roster, and the router
- * asks this question on every navigation.
+ * lists) has one slug and one page, so this is a set rather than a count.
+ *
+ * Read from the registry, which lists every catalog taxon once and is always
+ * here. It used to walk every region's roster — a question the router asks on
+ * *every navigation*, and one that would now mean waiting on nine downloads
+ * before it could tell a plant page from a typo.
  */
 let _plantIds: Set<string> | null = null;
 function plantIds(): Set<string> {
   if (!_plantIds) {
     _plantIds = new Set<string>();
-    for (const region of REGIONS) for (const p of loadPlants(region)) _plantIds.add(p.id);
+    for (const e of REGISTRY) {
+      const id = e.identifiers.indigene;
+      if (id) _plantIds.add(id);
+    }
   }
   return _plantIds;
 }
@@ -253,7 +260,7 @@ export function shareablePaths(): string[] {
   for (const id of plantIds()) paths.push(`plants/${id}`, `plants/${id}/${PHOTOS_SEGMENT}`);
   for (const w of WILDLIFE) paths.push(`wildlife/${w.id}`);
   for (const kind of KIND_ORDER) paths.push(`wildlife/${KIND_SLUGS[kind]}`);
-  for (const row of lookalikeIndex()) paths.push(`lookalikes/${row.lookalike.id}`);
+  for (const id of mappedLookalikeIds()) paths.push(`lookalikes/${id}`);
   for (const tech of TECHNIQUES) paths.push(`planting/${tech.slug}`);
   return paths;
 }

@@ -15,8 +15,12 @@
  *     of re-downloading a screenful of JPEGs. Bounded, because they're the
  *     largest thing we keep: oldest out past PHOTO_CACHE_LIMIT.
  *
- * The seed plant database is bundled into the app JS, so it is covered by the
- * shell cache and needs no special handling.
+ * Each region's plant list is a file of its own, fetched when a page needs it
+ * (see `src/data/regions.ts`). They are ordinary same-origin assets, so the
+ * rule above already keeps them: a region you have opened works offline
+ * forever after. The app also fetches your own region's list in the background
+ * right after boot (`warmOwnRegion` in main.ts), so the list you actually
+ * garden with is here before you ever lose signal.
  */
 const VERSION = "indigene-v1";
 const SHELL_CACHE = `${VERSION}-shell`;

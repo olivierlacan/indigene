@@ -9,6 +9,7 @@
 import type { MoistureBand, Plant, SiteData, SunEstimate } from "../types";
 import type { RegionDef } from "../data/region";
 import { REGIONS, loadPlants, regionForSite } from "./plants";
+import { entryForPlant, plantSummary, type PlantSummary } from "./registry";
 import { computeFit, siteMoisture } from "./ranking";
 import { zoneFromMinTemp } from "./site";
 import { fmtList, fmtNumber, t } from "./i18n";
@@ -21,16 +22,15 @@ export interface PlantEntry {
 }
 
 /**
- * The region's showcase plant. Every region declares an editorial pick; the
- * fallback (highest host-count keystone, then highest host-count overall)
- * only exists so a future region without a pick still shows something honest.
+ * The region's showcase plant, as much of it as a card needs — name, form and
+ * whether it's a keystone.
+ *
+ * Read from the registry, not from the region's plant list, so the explore grid
+ * can show nine regions without fetching nine lists. `null` only if the pick
+ * names a plant the catalog doesn't have, which the registry check catches.
  */
-export function featuredPlant(region: RegionDef): Plant {
-  const plants = loadPlants(region);
-  const picked = plants.find((p) => p.id === region.meta.featuredPlantId);
-  if (picked) return picked;
-  const byHost = [...plants].sort((a, b) => b.hostLepCount - a.hostLepCount);
-  return byHost.find((p) => p.keystone) ?? byHost[0];
+export function featuredSummary(region: RegionDef): PlantSummary | null {
+  return plantSummary(region.meta.featuredPlantId);
 }
 
 /**
@@ -39,13 +39,22 @@ export function featuredPlant(region: RegionDef): Plant {
  * per region — native notes and sizes are tuned locally — so the caller picks
  * which entry to show (usually the one matching the reader's location).
  */
-export function findPlant(slug: string): PlantEntry[] {
-  const out: PlantEntry[] = [];
-  for (const region of REGIONS) {
-    const plant = loadPlants(region).find((p) => p.id === slug);
-    if (plant) out.push({ plant, region });
-  }
-  return out;
+export async function findPlant(slug: string): Promise<PlantEntry[]> {
+  // Which regions to even look in comes from the registry, which lists every
+  // taxon's regions and is already here. That matters now that a region's plant
+  // list is a separate download: a plant page fetches the one or two lists that
+  // can contain this plant instead of all nine. The fallback — a slug the
+  // registry doesn't know — looks everywhere, and a dev-time audit keeps that
+  // from happening for anything in the catalog.
+  const known = entryForPlant(slug)?.regions;
+  const search = known ? REGIONS.filter((r) => known.includes(r.meta.id)) : REGIONS;
+  const found = await Promise.all(
+    search.map(async (region) => {
+      const plant = (await loadPlants(region)).find((p) => p.id === slug);
+      return plant ? { plant, region } : null;
+    }),
+  );
+  return found.filter((e): e is PlantEntry => e !== null);
 }
 
 /**

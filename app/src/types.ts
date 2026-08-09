@@ -399,6 +399,10 @@ export interface RegistryEntry {
   family: string;
   form: PlantForm;
   rank: TaxonRank;
+  /** True when this is a keystone taxon — one of the few that carry most of an
+   *  area's caterpillars. Mirrored from the plant lists so a page can say so
+   *  without downloading one (see `scripts/build-registry.mjs`). */
+  keystone: boolean;
   /** Cross-reference identifiers by scheme, each a bare accession. Always carries
    *  `indigene` (our catalog id); external schemes are filled by reconciliation. */
   identifiers: Partial<Record<IdScheme, string>>;
@@ -414,6 +418,29 @@ export interface RegistryEntry {
   /** Indigene region ids whose lists include this taxon (a taxon native to two
    *  regions is one entry, listed in both). */
   regions: string[];
+}
+
+/**
+ * One region's iNaturalist record counts, taken once and shipped with the app
+ * (`scripts/build-region-counts.mjs` writes them; `data/region-counts.ts` holds
+ * them).
+ *
+ * The same arithmetic as the spot reading in `lib/rarity.ts` — this plant's
+ * share of every plant record in the same area — but the area is the region's
+ * whole coverage box rather than a circle around somebody. That makes it a
+ * coarser answer to a *different* question, so it is only ever shown where
+ * there is no spot to ask about, with copy that names the region.
+ */
+export interface RegionCounts {
+  regionId: string;
+  /** ISO date the counts were taken, printed so a reader can judge their age. */
+  capturedAt: string;
+  /** Research-grade records of every plant in the box — the yardstick. */
+  total: number;
+  /** iNaturalist taxon id → research-grade records of it in the box. A native
+   *  with no records at all is present with a count of zero, which is a real
+   *  answer rather than a gap. */
+  counts: Record<string, number>;
 }
 
 export interface HorizonMask {

@@ -215,8 +215,8 @@ export function renderPlantingIndex(main: HTMLElement): void {
 /** The plants in the catalog raised this way — the way back out of a how-to and
  *  into something you could actually go and plant. Capped, with the count told
  *  honestly rather than the list quietly truncated. */
-function usedBySection(tech: Technique): HTMLElement | null {
-  const rows = plantsUsing(tech.method);
+async function usedBySection(tech: Technique): Promise<HTMLElement | null> {
+  const rows = await plantsUsing(tech.method);
   if (!rows.length) return null;
   const shown = rows.slice(0, PLANTS_SHOWN);
   const rest = rows.length - shown.length;
@@ -250,7 +250,7 @@ function alsoOpenSection(tech: Technique): HTMLElement | null {
   ]);
 }
 
-function renderTechnique(main: HTMLElement, tech: Technique): void {
+async function renderTechnique(main: HTMLElement, tech: Technique): Promise<void> {
   clear(main);
   const g = propagationMethod(tech.method);
   document.title = t("planting.techniqueDocTitle", { name: g.name });
@@ -300,7 +300,7 @@ function renderTechnique(main: HTMLElement, tech: Technique): void {
         ]),
       ]),
       el("div", { class: "planting-col" }, [
-        usedBySection(tech),
+        await usedBySection(tech),
         alsoOpenSection(tech),
       ]),
     ]),
@@ -325,7 +325,7 @@ function renderNotFound(main: HTMLElement, slug: string): void {
 /** The `#/planting/<slug>` route. A param that isn't a technique says so
  *  plainly rather than falling back to the index, which would leave a stale or
  *  mistyped link looking like it worked. */
-export function renderPlanting(main: HTMLElement, param?: string): void {
+export async function renderPlanting(main: HTMLElement, param?: string): Promise<void> {
   if (!param) return renderPlantingIndex(main);
   const tech = techniqueBySlug(param);
   return tech ? renderTechnique(main, tech) : renderNotFound(main, param);

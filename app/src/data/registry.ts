@@ -11,6 +11,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Sapindaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "781250-1",
       "wfo": "wfo-0000514040",
@@ -41,6 +42,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Sapindaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "317375-2",
       "wfo": "wfo-0000514128",
@@ -69,6 +71,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Sapindaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "317376-2",
       "wfo": "wfo-0000514511",
@@ -97,6 +100,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Sapindaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "781402-1",
       "wfo": "wfo-0000514593",
@@ -125,6 +129,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Sapindaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "781462-1",
       "wfo": "wfo-0000514908",
@@ -155,6 +160,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Sapindaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "781490-1",
       "wfo": "wfo-0000514966",
@@ -184,6 +190,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "2294-2",
       "wfo": "wfo-0000042097",
@@ -215,6 +222,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fabaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "60448516-2",
       "wfo": "wfo-0000508280",
@@ -242,6 +250,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Pteridaceae",
     "form": "fern",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "271629-2",
       "wfo": "wfo-0001114717",
@@ -270,6 +279,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Sapindaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "781583-1",
       "wfo": "wfo-0000522247",
@@ -298,6 +308,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Betulaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "30015316-2",
       "wfo": "wfo-0000944137",
@@ -327,6 +338,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Betulaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30036759-2",
       "wfo": "wfo-0000945215",
@@ -355,6 +367,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Betulaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "294986-1",
       "wfo": "wfo-0000947467",
@@ -383,6 +396,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30005905-2",
       "wfo": "wfo-0001009073",
@@ -411,6 +425,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30053201-2",
       "wfo": "wfo-0001007218",
@@ -439,6 +454,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fabaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "473778-1",
       "wfo": "wfo-0000173836",
@@ -467,6 +483,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "176437-1",
       "wfo": "wfo-0000092746",
@@ -495,6 +512,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Poaceae",
     "form": "grass",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "gbif": "4932035",
       "inat": "121968",
@@ -518,6 +536,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fabaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "128124-3",
       "wfo": "wfo-0000212115",
@@ -548,6 +567,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Ranunculaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30028287-2",
       "wfo": "wfo-0000541210",
@@ -576,6 +596,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Ranunculaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "16830-2",
       "wfo": "wfo-0000541324",
@@ -604,6 +625,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Ericaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "326479-1",
       "wfo": "wfo-0000543147",
@@ -632,6 +654,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Ericaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "326526-1",
       "wfo": "wfo-0000543204",
@@ -662,6 +685,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Ericaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "17800-2",
       "wfo": "wfo-0000543536",
@@ -690,6 +714,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Ericaceae",
     "form": "groundcover",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "1024084-2",
       "wfo": "wfo-0000543738",
@@ -720,6 +745,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "179291-1",
       "wfo": "wfo-0000022700",
@@ -748,6 +774,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "309108-2",
       "wfo": "wfo-0000091420",
@@ -776,6 +803,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "180284-1",
       "wfo": "wfo-0000115588",
@@ -804,6 +832,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Apocynaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "94272-1",
       "wfo": "wfo-0000551316",
@@ -832,6 +861,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Apocynaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "94351-1",
       "wfo": "wfo-0000551403",
@@ -860,6 +890,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Apocynaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "94654-1",
       "wfo": "wfo-0000551772",
@@ -888,6 +919,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Apocynaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "94704-1",
       "wfo": "wfo-0000551830",
@@ -917,6 +949,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Aspleniaceae",
     "form": "fern",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "17051170-1",
       "wfo": "wfo-0001110391",
@@ -945,6 +978,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "183599-1",
       "wfo": "wfo-0000084764",
@@ -973,6 +1007,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fabaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "480953-1",
       "wfo": "wfo-0000182246",
@@ -1001,6 +1036,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Berberidaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "31334-2",
       "wfo": "wfo-0000562782",
@@ -1028,6 +1064,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Betulaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "295155-1",
       "wfo": "wfo-0000334917",
@@ -1056,6 +1093,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Betulaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "32197-2",
       "wfo": "wfo-0000335192",
@@ -1084,6 +1122,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Betulaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "295174-1",
       "wfo": "wfo-0000335449",
@@ -1115,6 +1154,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Poaceae",
     "form": "grass",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "67790-3",
       "wfo": "wfo-0000854513",
@@ -1145,6 +1185,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Poaceae",
     "form": "grass",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "393178-1",
       "wfo": "wfo-0000854576",
@@ -1174,6 +1215,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Burseraceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "38669-2",
       "wfo": "wfo-0000576316",
@@ -1202,6 +1244,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Lamiaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "319128-2",
       "wfo": "wfo-0000767775",
@@ -1230,6 +1273,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Ericaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "327304-1",
       "wfo": "wfo-0000580837",
@@ -1263,6 +1307,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asparagaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30019006-2",
       "wfo": "wfo-0000762884",
@@ -1291,6 +1336,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Cyperaceae",
     "form": "grass",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "46763-2",
       "wfo": "wfo-0000349408",
@@ -1319,6 +1365,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Cyperaceae",
     "form": "grass",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "301498-1",
       "wfo": "wfo-0000349907",
@@ -1347,6 +1394,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Cyperaceae",
     "form": "grass",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "301682-1",
       "wfo": "wfo-0000350242",
@@ -1375,6 +1423,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Betulaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "295248-1",
       "wfo": "wfo-0000804581",
@@ -1406,6 +1455,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rhamnaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "319138-2",
       "wfo": "wfo-0000591761",
@@ -1434,6 +1484,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rhamnaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "716787-1",
       "wfo": "wfo-0000591805",
@@ -1464,6 +1515,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rhamnaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "317381-2",
       "wfo": "wfo-0000592072",
@@ -1494,6 +1546,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Cannabaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "850999-1",
       "wfo": "wfo-0000593422",
@@ -1524,6 +1577,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "191100-1",
       "wfo": "wfo-0000043513",
@@ -1554,6 +1608,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "57128-3",
       "wfo": "wfo-0000013986",
@@ -1584,6 +1639,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rubiaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "319140-2",
       "wfo": "wfo-0000829890",
@@ -1612,6 +1668,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fabaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "485668-1",
       "wfo": "wfo-0000174035",
@@ -1640,6 +1697,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Onagraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "611374-1",
       "wfo": "wfo-0000599740",
@@ -1668,6 +1726,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Oleaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "319141-2",
       "wfo": "wfo-0000830265",
@@ -1696,6 +1755,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Chrysobalanaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "722181-1",
       "wfo": "wfo-0000830291",
@@ -1724,6 +1784,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Cistaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "168163-1",
       "wfo": "wfo-0000607197",
@@ -1752,6 +1813,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Ranunculaceae",
     "form": "vine",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "709687-1",
       "wfo": "wfo-0000609903",
@@ -1782,6 +1844,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Ranunculaceae",
     "form": "vine",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30025729-2",
       "wfo": "wfo-0000610181",
@@ -1812,6 +1875,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Ranunculaceae",
     "form": "vine",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "709845-1",
       "wfo": "wfo-0000610199",
@@ -1840,6 +1904,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Ranunculaceae",
     "form": "vine",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "710194-1",
       "wfo": "wfo-0000610926",
@@ -1870,6 +1935,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Lamiaceae",
     "form": "groundcover",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "61186-2",
       "wfo": "wfo-0000891513",
@@ -1898,6 +1964,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Polygonaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "693641-1",
       "wfo": "wfo-0000613093",
@@ -1926,6 +1993,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Polygonaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "693918-1",
       "wfo": "wfo-0000613437",
@@ -1954,6 +2022,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Combretaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "319151-2",
       "wfo": "wfo-0000618338",
@@ -1982,6 +2051,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "198072-1",
       "wfo": "wfo-0000137822",
@@ -2010,6 +2080,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Cornaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "271574-1",
       "wfo": "wfo-0000924674",
@@ -2038,6 +2109,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Cornaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "271612-1",
       "wfo": "wfo-0000924760",
@@ -2068,6 +2140,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Cornaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "66154-2",
       "wfo": "wfo-0000924781",
@@ -2096,6 +2169,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Cornaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "271661-1",
       "wfo": "wfo-0000924828",
@@ -2124,6 +2198,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Cornaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "66169-2",
       "wfo": "wfo-0000924839",
@@ -2153,6 +2228,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Betulaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "295439-1",
       "wfo": "wfo-0000925248",
@@ -2181,6 +2257,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Betulaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "295446-1",
       "wfo": "wfo-0000925259",
@@ -2209,6 +2286,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Betulaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "108018-1",
       "wfo": "wfo-0000925296",
@@ -2237,6 +2315,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "723298-1",
       "wfo": "wfo-0001003993",
@@ -2265,6 +2344,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "723644-1",
       "wfo": "wfo-0001009174",
@@ -2295,6 +2375,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "723820-1",
       "wfo": "wfo-0001009785",
@@ -2325,6 +2406,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fabaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "489963-1",
       "wfo": "wfo-0000213711",
@@ -2353,6 +2435,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Poaceae",
     "form": "grass",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "397953-1",
       "wfo": "wfo-0000862467",
@@ -2381,6 +2464,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Plantaginaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "802077-1",
       "wfo": "wfo-0000647394",
@@ -2409,6 +2493,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Phrymaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "802107-1",
       "wfo": "wfo-0000650077",
@@ -2437,6 +2522,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asparagaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "82063-2",
       "wfo": "wfo-0000765518",
@@ -2463,6 +2549,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fabaceae",
     "form": "groundcover",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "493388-1",
       "wfo": "wfo-0000212137",
@@ -2493,6 +2580,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "groundcover",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "724675-1",
       "wfo": "wfo-0000996365",
@@ -2523,6 +2611,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Dryopteridaceae",
     "form": "fern",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "17436370-1",
       "wfo": "wfo-0001110267",
@@ -2551,6 +2640,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Dryopteridaceae",
     "form": "fern",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "17094880-1",
       "wfo": "wfo-0001109081",
@@ -2579,6 +2669,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Crassulaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "85620-2",
       "wfo": "wfo-0000657737",
@@ -2609,6 +2700,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "1174497-2",
       "wfo": "wfo-0000036347",
@@ -2637,6 +2729,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Poaceae",
     "form": "grass",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "400271-1",
       "wfo": "wfo-0000866302",
@@ -2665,6 +2758,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "203105-1",
       "wfo": "wfo-0000035355",
@@ -2693,6 +2787,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Onagraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "92449-2",
       "wfo": "wfo-0000668881",
@@ -2723,6 +2818,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Polygonaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "694152-1",
       "wfo": "wfo-0000674787",
@@ -2751,6 +2847,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Polygonaceae",
     "form": "groundcover",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "694339-1",
       "wfo": "wfo-0000675279",
@@ -2779,6 +2876,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Polygonaceae",
     "form": "groundcover",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30010704-2",
       "wfo": "wfo-0000675570",
@@ -2807,6 +2905,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "204850-1",
       "wfo": "wfo-0000133670",
@@ -2835,6 +2934,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "1105505-2",
       "wfo": "wfo-0000081244",
@@ -2863,6 +2963,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Liliaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "96849-2",
       "wfo": "wfo-0000766958",
@@ -2891,6 +2992,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Papaveraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "672740-1",
       "wfo": "wfo-0000680430",
@@ -2919,6 +3021,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Celastraceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "160876-1",
       "wfo": "wfo-0000681728",
@@ -2949,6 +3052,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Euphorbiaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "346016-1",
       "wfo": "wfo-0000961343",
@@ -2979,6 +3083,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "60437842-2",
       "wfo": "wfo-0000077471",
@@ -3007,6 +3112,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "305836-2",
       "wfo": "wfo-0000966507",
@@ -3038,6 +3144,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Poaceae",
     "form": "grass",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "403162-1",
       "wfo": "wfo-0000871130",
@@ -3067,6 +3174,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Poaceae",
     "form": "grass",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "277175-2",
       "wfo": "wfo-0000871845",
@@ -3094,6 +3202,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Poaceae",
     "form": "grass",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "30010036-2",
       "wfo": "wfo-0000871854",
@@ -3122,6 +3231,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "groundcover",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "105458-2",
       "wfo": "wfo-0000989973",
@@ -3150,6 +3260,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "groundcover",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30074127-2",
       "wfo": "wfo-0000993770",
@@ -3181,6 +3292,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "groundcover",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "318974-2",
       "wfo": "wfo-0001005555",
@@ -3209,6 +3321,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rhamnaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "717344-1",
       "wfo": "wfo-0000691852",
@@ -3237,6 +3350,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rhamnaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30435046-2",
       "wfo": "wfo-0000691873",
@@ -3265,6 +3379,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rhamnaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30426867-2",
       "wfo": "wfo-0000691925",
@@ -3293,6 +3408,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Oleaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "609072-1",
       "wfo": "wfo-0000832626",
@@ -3321,6 +3437,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Oleaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "609128-1",
       "wfo": "wfo-0000832712",
@@ -3351,6 +3468,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rubiaceae",
     "form": "groundcover",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "750829-1",
       "wfo": "wfo-0000970562",
@@ -3379,6 +3497,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Ericaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "317388-2",
       "wfo": "wfo-0000695411",
@@ -3407,6 +3526,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fabaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "496408-1",
       "wfo": "wfo-0000213769",
@@ -3435,6 +3555,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Gentianaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "368453-1",
       "wfo": "wfo-0000697915",
@@ -3465,6 +3586,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Geraniaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "322491-2",
       "wfo": "wfo-0000700788",
@@ -3493,6 +3615,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "210611-1",
       "wfo": "wfo-0000136528",
@@ -3521,6 +3644,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Hamamelidaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "430697-1",
       "wfo": "wfo-0001065240",
@@ -3549,6 +3673,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rubiaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "752194-1",
       "wfo": "wfo-0000979110",
@@ -3578,6 +3703,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Araliaceae",
     "form": "vine",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "90723-1",
       "wfo": "wfo-0000979730",
@@ -3606,6 +3732,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Cistaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "169032-1",
       "wfo": "wfo-0000717621",
@@ -3636,6 +3763,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "groundcover",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "167393-3",
       "wfo": "wfo-0000115987",
@@ -3667,6 +3795,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "213382-1",
       "wfo": "wfo-0000000535",
@@ -3695,6 +3824,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Apiaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "843087-1",
       "wfo": "wfo-0001068396",
@@ -3723,6 +3853,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asparagaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "1095274-2",
       "wfo": "wfo-0000658097",
@@ -3753,6 +3884,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "725491-1",
       "gbif": "5370154",
@@ -3782,6 +3914,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Saxifragaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "121607-2",
       "wfo": "wfo-0001135501",
@@ -3810,6 +3943,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "1027403-2",
       "wfo": "wfo-0001013826",
@@ -3838,6 +3972,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Cannabaceae",
     "form": "vine",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "303502-2",
       "wfo": "wfo-0000725866",
@@ -3869,6 +4004,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asparagaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "971733-1",
       "wfo": "wfo-0000664295",
@@ -3897,6 +4033,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Aquifoliaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "83051-1",
       "wfo": "wfo-0000729203",
@@ -3925,6 +4062,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Aquifoliaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "83852-1",
       "wfo": "wfo-0001078505",
@@ -3953,6 +4091,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Aquifoliaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "83863-1",
       "wfo": "wfo-0000729937",
@@ -3981,6 +4120,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "962494-1",
       "wfo": "wfo-0000116480",
@@ -4009,6 +4149,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Juglandaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30014392-2",
       "wfo": "wfo-0001067449",
@@ -4037,6 +4178,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Juncaceae",
     "form": "grass",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "443335-1",
       "wfo": "wfo-0000777034",
@@ -4067,6 +4209,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Cupressaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30088655-2",
       "wfo": "wfo-0000355532",
@@ -4097,6 +4240,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Cupressaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "262299-1",
       "wfo": "wfo-0000355658",
@@ -4127,6 +4271,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Plantaginaceae",
     "form": "vine",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "133347-2",
       "wfo": "wfo-0001136780",
@@ -4157,6 +4302,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Caprifoliaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "319318-1",
       "wfo": "wfo-0000356720",
@@ -4187,6 +4333,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Pinaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "262420-1",
       "wfo": "wfo-0000443338",
@@ -4217,6 +4364,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Lamiaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "449008-1",
       "wfo": "wfo-0000224116",
@@ -4247,6 +4395,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Poaceae",
     "form": "grass",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "139353-2",
       "wfo": "wfo-0000878172",
@@ -4275,6 +4424,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "139575-2",
       "wfo": "wfo-0000075008",
@@ -4303,6 +4453,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Oleaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "610130-1",
       "wfo": "wfo-0000815984",
@@ -4333,6 +4484,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Caprifoliaceae",
     "form": "groundcover",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "140689-2",
       "wfo": "wfo-0000358023",
@@ -4361,6 +4513,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Campanulaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "142115-2",
       "wfo": "wfo-0000814269",
@@ -4389,6 +4542,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Caprifoliaceae",
     "form": "vine",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "1021717-2",
       "wfo": "wfo-0001290653",
@@ -4417,6 +4571,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Caprifoliaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "148846-1",
       "wfo": "wfo-0001290592",
@@ -4445,6 +4600,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Caprifoliaceae",
     "form": "vine",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "149006-1",
       "wfo": "wfo-0000367818",
@@ -4475,6 +4631,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Caprifoliaceae",
     "form": "vine",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30080890-2",
       "wfo": "wfo-0001290705",
@@ -4503,6 +4660,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fabaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "30179739-2",
       "wfo": "wfo-0000212180",
@@ -4537,6 +4695,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fabaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30008684-2",
       "wfo": "wfo-0000174684",
@@ -4565,6 +4724,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fabaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "504939-1",
       "wfo": "wfo-0000213847",
@@ -4593,6 +4753,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Magnoliaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "554723-1",
       "wfo": "wfo-0000233174",
@@ -4621,6 +4782,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asparagaceae",
     "form": "groundcover",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "149429-2",
       "wfo": "wfo-0000691294",
@@ -4649,6 +4811,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Malvaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "149662-2",
       "wfo": "wfo-0001077089",
@@ -4677,6 +4840,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Anacardiaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "1032103-2",
       "wfo": "wfo-0001051353",
@@ -4705,6 +4869,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "150114-2",
       "wfo": "wfo-0001013573",
@@ -4733,6 +4898,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fabaceae",
     "form": "groundcover",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "313006-2",
       "wfo": "wfo-0000174650",
@@ -4763,6 +4929,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Lamiaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "452042-1",
       "wfo": "wfo-0000245324",
@@ -4791,6 +4958,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Lamiaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "452072-1",
       "wfo": "wfo-0000245372",
@@ -4821,6 +4989,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Myricaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "164286-2",
       "wfo": "wfo-0000448186",
@@ -4851,6 +5020,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Poaceae",
     "form": "grass",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "408959-1",
       "wfo": "wfo-0000880650",
@@ -4880,6 +5050,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Poaceae",
     "form": "grass",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "164873-2",
       "wfo": "wfo-0000880911",
@@ -4908,6 +5079,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Myrtaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "166091-2",
       "wfo": "wfo-0000248020",
@@ -4937,6 +5109,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Myrtaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "599719-1",
       "wfo": "wfo-0000248712",
@@ -4967,6 +5140,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "33923-1",
       "wfo": "wfo-0000984299",
@@ -4997,6 +5171,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Lamiaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "453395-1",
       "wfo": "wfo-0000260765",
@@ -5027,6 +5202,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "groundcover",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "1016222-2",
       "wfo": "wfo-0000006878",
@@ -5055,6 +5231,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Poaceae",
     "form": "grass",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "413537-1",
       "wfo": "wfo-0000886863",
@@ -5083,6 +5260,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Vitaceae",
     "form": "vine",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "68399-1",
       "wfo": "wfo-0000474309",
@@ -5111,6 +5289,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Passifloraceae",
     "form": "vine",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "675096-1",
       "wfo": "wfo-0001090757",
@@ -5141,6 +5320,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Passifloraceae",
     "form": "vine",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "321973-2",
       "wfo": "wfo-0000480120",
@@ -5169,6 +5349,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Plantaginaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "187353-2",
       "wfo": "wfo-0001136588",
@@ -5197,6 +5378,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Plantaginaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "60456598-2",
       "wfo": "wfo-0001136600",
@@ -5225,6 +5407,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Plantaginaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "808298-1",
       "wfo": "wfo-0001137141",
@@ -5253,6 +5436,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Pteridaceae",
     "form": "fern",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "1129486-2",
       "wfo": "wfo-0001114298",
@@ -5281,6 +5465,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Oleaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "610935-1",
       "wfo": "wfo-0000817995",
@@ -5309,6 +5494,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "195615-2",
       "wfo": "wfo-0001013796",
@@ -5337,6 +5523,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "20005342-1",
       "wfo": "wfo-0001017550",
@@ -5365,6 +5552,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Pinaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "262609-1",
       "wfo": "wfo-0000482030",
@@ -5395,6 +5583,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Pinaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "262848-1",
       "wfo": "wfo-0000482273",
@@ -5425,6 +5614,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Pinaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "262982-1",
       "wfo": "wfo-0000481363",
@@ -5455,6 +5645,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Pinaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "263186-1",
       "wfo": "wfo-0000481804",
@@ -5483,6 +5674,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Pinaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "307165-2",
       "wfo": "wfo-0000481903",
@@ -5511,6 +5703,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Pinaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "263353-1",
       "wfo": "wfo-0000481648",
@@ -5541,6 +5734,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Anacardiaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "70253-1",
       "wfo": "wfo-0000394118",
@@ -5571,6 +5765,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Plantaginaceae",
     "form": "groundcover",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "321285-2",
       "wfo": "wfo-0000486603",
@@ -5599,6 +5794,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Platanaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "685878-1",
       "wfo": "wfo-0000487091",
@@ -5627,6 +5823,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Poaceae",
     "form": "grass",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "320039-2",
       "wfo": "wfo-0000893068",
@@ -5655,6 +5852,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Polypodiaceae",
     "form": "fern",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "17189950-1",
       "wfo": "wfo-0001109244",
@@ -5683,6 +5881,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Dryopteridaceae",
     "form": "fern",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "17205300-1",
       "wfo": "wfo-0001109261",
@@ -5711,6 +5910,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Dryopteridaceae",
     "form": "fern",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "17207740-1",
       "wfo": "wfo-0001109274",
@@ -5740,6 +5940,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Dryopteridaceae",
     "form": "fern",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "17414550-1",
       "wfo": "wfo-0001107397",
@@ -5766,6 +5967,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Salicaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "306544-2",
       "wfo": "wfo-0000928140",
@@ -5794,6 +5996,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Salicaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "776884-1",
       "wfo": "wfo-0000928205",
@@ -5824,6 +6027,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Salicaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "776891-1",
       "wfo": "wfo-0000928244",
@@ -5851,6 +6055,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Primulaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "702751-1",
       "wfo": "wfo-0000482741",
@@ -5879,6 +6084,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "30093848-2",
       "wfo": "wfo-0001005630",
@@ -5909,6 +6115,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "30051006-2",
       "wfo": "wfo-0001013841",
@@ -5937,6 +6144,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "30123157-2",
       "wfo": "wfo-0001013868",
@@ -5965,6 +6173,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "729931-1",
       "wfo": "wfo-0001013325",
@@ -5995,6 +6204,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "30010850-2",
       "wfo": "wfo-0000995988",
@@ -6023,6 +6233,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "730297-1",
       "wfo": "wfo-0001007437",
@@ -6053,6 +6264,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Pinaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "211600-2",
       "wfo": "wfo-0000478194",
@@ -6081,6 +6293,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rubiaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "329821-2",
       "wfo": "wfo-0000286803",
@@ -6109,6 +6322,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "77066454-1",
       "wfo": "wfo-0000983612",
@@ -6136,6 +6350,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "295759-1",
       "wfo": "wfo-0000289442",
@@ -6164,6 +6379,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "295763-1",
       "wfo": "wfo-0000289457",
@@ -6192,6 +6408,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "296175-1",
       "wfo": "wfo-0000290875",
@@ -6222,6 +6439,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "296290-1",
       "wfo": "wfo-0000291202",
@@ -6252,6 +6470,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "359961-1",
       "wfo": "wfo-0000292459",
@@ -6282,6 +6501,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "326376-2",
       "wfo": "wfo-0000292685",
@@ -6310,6 +6530,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "296690-1",
       "wfo": "wfo-0000292858",
@@ -6340,6 +6561,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "296701-1",
       "wfo": "wfo-0000293006",
@@ -6368,6 +6590,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "324846-2",
       "wfo": "wfo-0000293884",
@@ -6397,6 +6620,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rhamnaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "718169-1",
       "wfo": "wfo-0000462513",
@@ -6427,6 +6651,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Ericaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "332420-1",
       "wfo": "wfo-0000400806",
@@ -6456,6 +6681,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Anacardiaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "70615-1",
       "wfo": "wfo-0001049906",
@@ -6484,6 +6710,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Grossulariaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "317405-2",
       "wfo": "wfo-0000405232",
@@ -6512,6 +6739,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Grossulariaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "792998-1",
       "wfo": "wfo-0001135632",
@@ -6540,6 +6768,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Petiveriaceae",
     "form": "groundcover",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "221479-2",
       "wfo": "wfo-0000404539",
@@ -6570,6 +6799,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Papaveraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "673954-1",
       "wfo": "wfo-0001090302",
@@ -6600,6 +6830,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "731660-1",
       "wfo": "wfo-0001012155",
@@ -6628,6 +6859,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "30033304-2",
       "wfo": "wfo-0001014357",
@@ -6656,6 +6888,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "731955-1",
       "wfo": "wfo-0001005999",
@@ -6686,6 +6919,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30027683-2",
       "wfo": "wfo-0001014416",
@@ -6714,6 +6948,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "gbif": "2988638",
       "inat": "1449268",
@@ -6739,6 +6974,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "223579-2",
       "wfo": "wfo-0000984083",
@@ -6767,6 +7003,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "vine",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "741021-1",
       "wfo": "wfo-0001007329",
@@ -6795,6 +7032,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "241701-1",
       "wfo": "wfo-0000014241",
@@ -6823,6 +7061,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Polygonaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "332105-2",
       "wfo": "wfo-0000403595",
@@ -6851,6 +7090,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Arecaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "669727-1",
       "wfo": "wfo-0000299302",
@@ -6882,6 +7122,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Salicaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "777256-1",
       "wfo": "wfo-0000929313",
@@ -6915,6 +7156,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Salicaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "301954-2",
       "wfo": "wfo-0000928742",
@@ -6943,6 +7185,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Salicaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "226166-2",
       "wfo": "wfo-0000930287",
@@ -6971,6 +7214,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Lamiaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "290024-2",
       "wfo": "wfo-0000300281",
@@ -6999,6 +7243,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Lamiaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "226502-2",
       "wfo": "wfo-0000300707",
@@ -7027,6 +7272,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Lamiaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "455978-1",
       "wfo": "wfo-0000300715",
@@ -7058,6 +7304,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Lamiaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "289832-2",
       "wfo": "wfo-0000301567",
@@ -7086,6 +7333,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Lamiaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "457007-1",
       "wfo": "wfo-0000301989",
@@ -7116,6 +7364,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Adoxaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30122169-2",
       "wfo": "wfo-0000439308",
@@ -7144,6 +7393,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Adoxaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "1045079-2",
       "wfo": "wfo-0001367132",
@@ -7171,6 +7421,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Adoxaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30056767-2",
       "wfo": "wfo-0000439333",
@@ -7199,6 +7450,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Poaceae",
     "form": "grass",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "420956-1",
       "wfo": "wfo-0000898183",
@@ -7227,6 +7479,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Crassulaceae",
     "form": "groundcover",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "284824-2",
       "wfo": "wfo-0001299441",
@@ -7255,6 +7508,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Arecaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "941782-1",
       "wfo": "wfo-0000309573",
@@ -7284,6 +7538,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Iridaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "1001300-2",
       "wfo": "wfo-0000786457",
@@ -7312,6 +7567,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "240318-2",
       "wfo": "wfo-0000136548",
@@ -7339,6 +7595,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "249846-1",
       "wfo": "wfo-0000027996",
@@ -7367,6 +7624,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "1086574-2",
       "wfo": "wfo-0000108899",
@@ -7393,6 +7651,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fabaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "240593-2",
       "wfo": "wfo-0000165358",
@@ -7421,6 +7680,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "741641-1",
       "wfo": "wfo-0001016186",
@@ -7454,6 +7714,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "742021-1",
       "wfo": "wfo-0001014076",
@@ -7484,6 +7745,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Rosaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30135991-2",
       "wfo": "wfo-0000985407",
@@ -7514,6 +7776,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Verbenaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "1092351-2",
       "wfo": "wfo-0000314894",
@@ -7542,6 +7805,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Poaceae",
     "form": "grass",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "285668-2",
       "wfo": "wfo-0000902718",
@@ -7569,6 +7833,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Blechnaceae",
     "form": "fern",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30048227-2",
       "wfo": "wfo-0001110263",
@@ -7596,6 +7861,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Caprifoliaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "320331-1",
       "wfo": "wfo-0000500443",
@@ -7624,6 +7890,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Caprifoliaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "247027-2",
       "wfo": "wfo-0000439047",
@@ -7652,6 +7919,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Caprifoliaceae",
     "form": "groundcover",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "149459-1",
       "wfo": "wfo-0001290667",
@@ -7680,6 +7948,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "981782-1",
       "wfo": "wfo-0000090638",
@@ -7708,6 +7977,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "981863-1",
       "wfo": "wfo-0000115996",
@@ -7736,6 +8006,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "981907-1",
       "wfo": "wfo-0000126131",
@@ -7764,6 +8035,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Cupressaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30052311-2",
       "wfo": "wfo-0000408602",
@@ -7792,6 +8064,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Cupressaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "60443333-2",
       "wfo": "wfo-0000407856",
@@ -7820,6 +8093,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Lamiaceae",
     "form": "groundcover",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "461649-1",
       "wfo": "wfo-0000324739",
@@ -7849,6 +8123,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Lamiaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "461765-1",
       "wfo": "wfo-0000324951",
@@ -7879,6 +8154,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Saxifragaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "794902-1",
       "wfo": "wfo-0001135731",
@@ -7907,6 +8183,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Malvaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "835277-1",
       "wfo": "wfo-0000457451",
@@ -7938,6 +8215,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Fabaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "523575-1",
       "wfo": "wfo-0000213053",
@@ -7966,6 +8244,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Melanthiaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "317429-2",
       "wfo": "wfo-0000750666",
@@ -7996,6 +8275,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Poaceae",
     "form": "grass",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "424990-1",
       "wfo": "wfo-0000904805",
@@ -8027,6 +8307,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Ranunculaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "306789-2",
       "wfo": "wfo-0000455242",
@@ -8056,6 +8337,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Pinaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "264010-1",
       "wfo": "wfo-0000456392",
@@ -8084,6 +8366,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Ulmaceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "856863-1",
       "wfo": "wfo-0000416717",
@@ -8112,6 +8395,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Lauraceae",
     "form": "tree",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "30189264-2",
       "wfo": "wfo-0001071259",
@@ -8142,6 +8426,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Ericaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "261823-2",
       "wfo": "wfo-0000422953",
@@ -8170,6 +8455,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Ericaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "30006039-2",
       "wfo": "wfo-0000422209",
@@ -8201,6 +8487,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Ericaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "859071-1",
       "wfo": "wfo-0001047102",
@@ -8229,6 +8516,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Ericaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "317275-2",
       "wfo": "wfo-0001046870",
@@ -8257,6 +8545,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Ericaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "293975-2",
       "wfo": "wfo-0000421966",
@@ -8287,6 +8576,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Adoxaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "326264-2",
       "wfo": "wfo-0001290753",
@@ -8315,6 +8605,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Adoxaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "326265-2",
       "wfo": "wfo-0000421166",
@@ -8345,6 +8636,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Adoxaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "149845-1",
       "wfo": "wfo-0001290681",
@@ -8373,6 +8665,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Adoxaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "326271-2",
       "wfo": "wfo-0000422887",
@@ -8403,6 +8696,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Violaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "265687-2",
       "wfo": "wfo-0001144419",
@@ -8431,6 +8725,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Vitaceae",
     "form": "vine",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "266086-2",
       "wfo": "wfo-0001145338",
@@ -8459,6 +8754,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Blechnaceae",
     "form": "fern",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "17365470-1",
       "wfo": "wfo-0001111079",
@@ -8488,6 +8784,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Zamiaceae",
     "form": "shrub",
     "rank": "species",
+    "keystone": true,
     "identifiers": {
       "ipni": "270527-2",
       "wfo": "wfo-0000429999",
@@ -8515,6 +8812,7 @@ export const REGISTRY: RegistryEntry[] = [
     "family": "Apiaceae",
     "form": "perennial",
     "rank": "species",
+    "keystone": false,
     "identifiers": {
       "ipni": "850044-1",
       "wfo": "wfo-0001067721",

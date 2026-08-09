@@ -7,6 +7,7 @@
 // Plain JS + Vite's ssrLoadModule (via _load-ts.mjs) so it runs on any Node
 // version without native TypeScript support.
 import { openLoader } from "./_load-ts.mjs";
+import { withSeeds } from "./_regions.mjs";
 
 const loader = await openLoader();
 const { REGISTRY } = await loader.load("/src/data/registry.ts");
@@ -16,7 +17,8 @@ const { buildIndex, resolveName, entryForPlant, deepLinks, auditRegistry } = awa
 // Same source of truth the app and the builder use, so the audit can never be
 // checking a smaller catalog than the one that shipped.
 const coverage = [];
-const { REGIONS } = await loader.load("/src/data/regions.ts");
+const { REGIONS: REGIONS_RAW } = await loader.load("/src/data/regions.ts");
+const REGIONS = await withSeeds(REGIONS_RAW);
 for (const { meta, seed } of REGIONS) {
   for (const p of seed) coverage.push({ regionId: meta.id, plantId: p.id, scientificName: p.latin });
 }
@@ -114,6 +116,30 @@ check("deepLinks: inaturalist is a direct taxon link when an inat id is present"
 check("indigene ids are unique", new Set(REGISTRY.map(local)).size === REGISTRY.length);
 check("scientific names are unique", new Set(REGISTRY.map((x) => x.scientificName.toLowerCase())).size === REGISTRY.length);
 check("every entry lists ≥1 region", REGISTRY.every((x) => x.regions.length >= 1));
+
+// --- Region cards can describe a region without loading it --------------------
+// The explore grid prints each region's star, its caterpillar count and its
+// keystone tally for nine regions at once, from the registry and the region's
+// own description — never from the plant lists, which are separate downloads
+// (see `data/regions.ts`). These are the invariants that keeps honest.
+for (const { meta, seed } of REGIONS) {
+  const star = seed.find((p) => p.id === meta.featuredPlantId);
+  check(`${meta.id}: the featured plant is on the region's list`, Boolean(star), meta.featuredPlantId);
+  if (!star) continue;
+  check(
+    `${meta.id}: featuredHostLepCount matches the plant list`,
+    meta.featuredHostLepCount === star.hostLepCount,
+    `meta ${meta.featuredHostLepCount} vs list ${star.hostLepCount}`
+  );
+  const listed = REGISTRY.filter((e) => e.regions.includes(meta.id));
+  check(`${meta.id}: registry holds every plant on the list`, listed.length === seed.length,
+    `registry ${listed.length} vs list ${seed.length}`);
+  check(
+    `${meta.id}: registry keystone flags match the list`,
+    listed.filter((e) => e.keystone).length === seed.filter((p) => p.keystone).length,
+    `registry ${listed.filter((e) => e.keystone).length} vs list ${seed.filter((p) => p.keystone).length}`
+  );
+}
 
 console.log(`\n${failures === 0 ? "All checks passed." : failures + " check(s) failed."}  (${REGISTRY.length} taxa)`);
 process.exit(failures === 0 ? 0 : 1);

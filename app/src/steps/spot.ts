@@ -15,6 +15,7 @@ import { getSpot, plantingsForSpot, savePlanting, deletePlanting } from "../db";
 import type { Planting, PlantedDate, SavedSpot } from "../types";
 import type { Plant } from "../types";
 import { REGIONS, loadPlants, regionForSite } from "../lib/plants";
+import { findPlant } from "../lib/explore";
 import type { RegionDef } from "../lib/plants";
 import {
   growthNote,
@@ -53,13 +54,19 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
   document.title = t("spot.docTitle", { label: spot.label });
   const plantings = await plantingsForSpot(spot.id).catch(() => [] as Planting[]);
   const region = regionOf(spot);
-  const roster = rosterFor(region);
+  const roster = await rosterFor(region);
   const byId = new Map(roster.map((p) => [p.id, p]));
   // A plant logged from another region's list — a spot near a boundary, or a
   // list the reader browsed to — still has to render its own name and size
-  // table, so fall back to the whole catalog for anything the roster misses.
-  const plantOf = (plantId: string): Plant | undefined =>
-    byId.get(plantId) ?? everyPlant().get(plantId);
+  // table. Those are looked up by id before anything is drawn, which fetches
+  // only the region each one actually belongs to (see `findPlant`), so the rest
+  // of the page can stay a plain synchronous lookup.
+  const strays = [...new Set(plantings.map((pl) => pl.plantId))].filter((id) => !byId.has(id));
+  for (const entries of await Promise.all(strays.map((id) => findPlant(id)))) {
+    const first = entries[0];
+    if (first) byId.set(first.plant.id, first.plant);
+  }
+  const plantOf = (plantId: string): Plant | undefined => byId.get(plantId);
 
   const redraw = (): void => void renderSpot(main, param);
 
@@ -481,16 +488,20 @@ function regionOf(spot: SavedSpot): RegionDef | null {
   return picked ?? regionForSite(spot.lat, spot.lon, spot.site);
 }
 
-function rosterFor(region: RegionDef | null): Plant[] {
+async function rosterFor(region: RegionDef | null): Promise<Plant[]> {
   if (region) return loadPlants(region);
-  return [...everyPlant().values()];
+  return [...(await everyPlant()).values()];
 }
 
-let _all: Map<string, Plant> | null = null;
-function everyPlant(): Map<string, Plant> {
-  if (!_all) {
-    _all = new Map();
-    for (const region of REGIONS) for (const p of loadPlants(region)) _all.set(p.id, p);
-  }
+// The fallback for a spot with no region of its own, and for a planting logged
+// from a list the reader browsed to. It wants every region — rare, and only on
+// a page about a garden somebody has already described.
+let _all: Promise<Map<string, Plant>> | null = null;
+function everyPlant(): Promise<Map<string, Plant>> {
+  _all ??= Promise.all(REGIONS.map((r) => loadPlants(r))).then((lists) => {
+    const all = new Map<string, Plant>();
+    for (const list of lists) for (const p of list) all.set(p.id, p);
+    return all;
+  });
   return _all;
 }

@@ -4,7 +4,7 @@
 import { el, clear } from "../ui";
 import { navigate } from "../state";
 import { REGIONS } from "../lib/plants";
-import { featuredPlant } from "../lib/explore";
+import { featuredSummary } from "../lib/explore";
 import { zoneChip } from "../components/zone-chip";
 import { ISSUES_URL } from "../lib/plain";
 import { t, tn, tx } from "../lib/i18n";
@@ -38,7 +38,8 @@ export function renderBrowse(main: HTMLElement): void {
       el("p", {}, t("browse.plantLede")),
       el("ul", { style: "margin:0.4rem 0 0.6rem;padding-left:1.2rem" },
         REGIONS.map((r) => {
-          const p = featuredPlant(r);
+          const p = featuredSummary(r);
+          if (!p) return null;
           return el("li", { style: "margin-bottom:0.35rem" }, [
             el("a", { href: `#/plants/${p.id}`, style: "font-weight:650" }, commonName(p)),
             " — ",

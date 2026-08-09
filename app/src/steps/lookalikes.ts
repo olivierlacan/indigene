@@ -100,9 +100,14 @@ export function tellTable(plantLatin: string, nativeName: string, lookalikeName:
 // #/lookalikes and #/lookalikes/in/<region> — the index
 // ---------------------------------------------------------------------------
 
-export function renderLookalikeIndex(main: HTMLElement, region?: RegionDef): void {
+export async function renderLookalikeIndex(main: HTMLElement, region?: RegionDef): Promise<void> {
   clear(main);
-  const rows = lookalikeIndex(region?.meta.id);
+  const rows = await lookalikeIndex(region?.meta.id);
+  // Counted once, here, so the region picker below doesn't ask again per region.
+  const perRegion = new Map<string, number>();
+  for (const row of await lookalikeIndex()) {
+    for (const id of row.regionIds) perRegion.set(id, (perRegion.get(id) ?? 0) + 1);
+  }
 
   document.title = region
     ? t("lookalikes.regionDocTitle", { region: regionName(region.meta) })
@@ -124,7 +129,7 @@ export function renderLookalikeIndex(main: HTMLElement, region?: RegionDef): voi
 
   const cards = rows.map((r) => indexCard(r, region ?? null));
   main.append(
-    regionFilter(region ?? null),
+    regionFilter(region ?? null, perRegion),
     ...(cards.length > 1 ? [filterField(cards, [], {
       label: t("lookalikes.filterAria"),
       placeholder: t("lookalikes.filterPlaceholder"),
@@ -145,11 +150,11 @@ export function renderLookalikeIndex(main: HTMLElement, region?: RegionDef): voi
 
 /** The region picker, in the shape the wildlife index established: a real
  *  select, with a count on every option, and no option that leads nowhere. */
-function regionFilter(active: RegionDef | null): HTMLElement {
+function regionFilter(active: RegionDef | null, perRegion: Map<string, number>): HTMLElement {
   const select = el("select", { id: "lookalike-region" }, [
     el("option", { value: "", selected: !active },
       t("lookalikes.regionFilterAll", { n: fmtNumber(mappedLookalikeCount()) })),
-    ...REGIONS.map((r) => ({ r, n: lookalikeIndex(r.meta.id).length }))
+    ...REGIONS.map((r) => ({ r, n: perRegion.get(r.meta.id) ?? 0 }))
       .filter(({ n }) => n)
       .map(({ r, n }) =>
         el("option", { value: r.meta.id, selected: r.meta.id === active?.meta.id },
@@ -218,7 +223,7 @@ function indexCard(row: LookalikeIndexRow, region: RegionDef | null): FilterRow 
 // #/lookalikes/<id> — one impostor
 // ---------------------------------------------------------------------------
 
-export function renderLookalike(main: HTMLElement, param?: string): void {
+export async function renderLookalike(main: HTMLElement, param?: string): Promise<void> {
   // `#/lookalikes/in/<region>` is the index narrowed, not an impostor called
   // "in" — the router hands both shapes here and this is where they part.
   const regionId = lookalikeRegionParam(param);
@@ -230,9 +235,9 @@ export function renderLookalike(main: HTMLElement, param?: string): void {
   const lookalike = param ? getLookalike(param) : undefined;
   if (!lookalike) return renderNotFound(main, param ?? "");
 
-  const natives = nativesForLookalike(lookalike.id);
+  const natives = await nativesForLookalike(lookalike.id);
   const names = nameLines(lookalike);
-  const elsewhere = nativeSomewhere(lookalike.latin);
+  const elsewhere = await nativeSomewhere(lookalike.latin);
   document.title = t("lookalikes.docTitle", { name: names.title });
 
   main.append(

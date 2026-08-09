@@ -57,7 +57,8 @@ and the app doesn't either.
 There are good apps for running a garden — what you watered, what's blooming,
 what to do next weekend. There are good apps for pointing a camera at a leaf and
 getting a name back. There are excellent platforms for recording what you saw
-and where, and they're the backbone of modern ecology.
+and where, and they are the backbone of modern ecology. Indigene is built on one
+of those, which I'll come back to.
 
 Indigene isn't any of those and doesn't want to be. Each of them starts from
 something that already exists: a plant you own, a plant you found, a plant you
@@ -87,6 +88,39 @@ to avoid.
 None of that is a feat of engineering. It's the unglamorous half: reading
 licences, reconciling names across sources that disagree, and refusing to fill
 a gap.
+
+## What we owe iNaturalist
+
+That claim has a name behind it, and it should be said plainly rather than left
+in a licence table. A great deal of what makes Indigene trustworthy was built by
+[iNaturalist](https://www.inaturalist.org/) and the people who use it.
+
+Five things in the app lean on it. The photographs of a plant growing near you
+are theirs — real specimens somebody stood in front of, not my drawings. So are
+the sightings on an animal's page. The line telling you a plant is seldom
+recorded around here is two of their counts, one for the plant and one for every
+plant, so the figure means something in a quiet county and in central London
+alike. When I check whether a candidate is genuinely native to a region rather
+than a garden escape that settled in, I'm reading their per-place establishment
+records. And when a plant page names the impostor it gets confused with, the
+evidence that people *actually* make that mistake is their identification
+history — a record no expert database publishes, because it isn't a fact about a
+plant. It's a fact about us.
+
+None of that is scraped, and none of it is clever. It exists because a great
+many people went outside, photographed something, and — the part that matters —
+other people confirmed the identification. "Research grade" means a community
+agreed, not that a model guessed. Those confirmed records then flow onward into
+GBIF, so the occurrence counts underneath our region work are partly the same
+people's labour reaching us a second time.
+
+That is the better part of two decades of unglamorous infrastructure and
+volunteer identification, given away for nothing, and wiring it in took me a few
+days. The least the debt deserves is care with it: every photo Indigene shows
+carries its observer and its licence and links back to the original record,
+anything marked all rights reserved is dropped rather than displayed, and the
+app asks about a plant once per area and caches the answer instead of hammering
+a free service that owes me nothing.
 
 ## Where this comes from
 
@@ -163,5 +197,6 @@ care about a roadside plant than any interpretive sign ever has. The Florida
 Native Plant Society, and the native plant societies everywhere else, doing this
 with volunteers and folding tables for decades before anyone made an app about
 it. Doug Tallamy and the researchers whose host-plant counts make any of this
-countable. And everyone who logged an observation that ended up in a database I
-read.
+countable. And the people who keep the unfashionable machinery running — the
+herbaria, the national inventories, the extension offices writing the bulletin
+on how to tell a native from the thing that looks like it.

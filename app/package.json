@@ -22,6 +22,7 @@
     "host-counts": "node scripts/build-host-counts.mjs",
     "maps:build": "NODE_USE_ENV_PROXY=1 node scripts/build-region-maps.mjs",
     "registry:build": "node scripts/build-registry.mjs",
+    "region-counts": "NODE_USE_ENV_PROXY=1 node scripts/build-region-counts.mjs",
     "registry:check": "node scripts/check-registry.mjs",
     "hero:harvest": "NODE_USE_ENV_PROXY=1 node scripts/harvest-hero-photos.mjs",
     "hero:review": "node scripts/build-hero-review.mjs",

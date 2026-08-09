@@ -197,6 +197,17 @@ export function knownSpot(): { lat: number; lon: number; spotId: string | null }
   return null;
 }
 
+/**
+ * The region the reader picked by hand, if they did — the other way a person
+ * tells this app where they garden, and the one that yields no coordinates.
+ *
+ * The draft's choice first, then the one the device remembered. For pages that
+ * can still say something regional to somebody who declined to give a point.
+ */
+export function knownRegion(): string | null {
+  return store.draft.regionOverride ?? sticky().spot?.regionId ?? null;
+}
+
 export function navigate(step: string): void {
   location.hash = `#/${step}`;
 }

@@ -29,12 +29,12 @@ import { plantSightingsNear, plantSightingsInRegion } from "../lib/nearby";
 import type { SightingResult } from "../lib/nearby";
 import { isBusy, DEFAULT_RADIUS_KM } from "../lib/inaturalist";
 import type { Bounds } from "../lib/inaturalist";
-import { rarityCached, rarityNear, type Rarity } from "../lib/rarity";
+import { rarityCached, rarityInRegion, rarityNear, type Rarity } from "../lib/rarity";
 import { warmProminence } from "../lib/prominence";
-import { knownSpot } from "../state";
+import { knownRegion, knownSpot } from "../state";
 import { stickyReady } from "../lib/sticky";
 import { getSpot } from "../db";
-import { rarityLine } from "./rarity-line";
+import { rarityLine, regionRarityLine } from "./rarity-line";
 import { observationList, freshnessLine } from "./observation-ui";
 import { locationPrompt } from "./location-prompt";
 import { anchoredHeading } from "./anchor-head";
@@ -64,6 +64,9 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
   const prominence = el("div", { "aria-live": "polite" });
   /** Bumped per prominence lookup, so a stale answer can tell it's stale. */
   let prominenceAsk = 0;
+  /** True once a spot's own circle has answered, which the region's bundled
+   *  numbers must never paint over (see `showForRegion`). */
+  let hasSpotReading = false;
 
   const prompt = locationPrompt({
     idBase: `plant-${plant.id}`,
@@ -146,6 +149,7 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
     const mine = ++prominenceAsk;
     const paint = (r: Rarity): void => {
       if (mine !== prominenceAsk) return;
+      hasSpotReading = true;
       clear(prominence);
       prominence.append(rarityLine(r, place));
     };
@@ -158,7 +162,27 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
       DEFAULT_RADIUS_KM,
     ).catch(() => {});
     const fresh = await rarityNear(inatId, lat, lon, DEFAULT_RADIUS_KM).catch(() => null);
+    // Offline, or iNaturalist unreachable: the region's own bundled numbers are
+    // a coarser answer to a nearby question, which beats no answer — and the
+    // line it prints names the region, so nobody is told it means their street.
     if (fresh) paint(fresh);
+    else if (mine === prominenceAsk) showForRegion(region);
+  }
+
+  /**
+   * The bundled region reading — no spot, no network, nothing sent anywhere.
+   *
+   * Never over a spot reading: the circle around somebody's garden is the
+   * better answer to the question this section asks, and swapping a sentence
+   * the reader has already read for a coarser one would be a downgrade
+   * disguised as an update.
+   */
+  function showForRegion(region: RegionDef): void {
+    if (!inatId || hasSpotReading) return;
+    const r = rarityInRegion(inatId, region.meta.id);
+    if (!r) return;
+    clear(prominence);
+    prominence.append(regionRarityLine(r, regionShort(region.meta)));
   }
 
   /**
@@ -177,13 +201,28 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
     // nothing, which is precisely the case this exists for.
     await stickyReady();
     const spot = knownSpot();
-    if (!spot) return;
+    if (!spot) return showForPickedRegion();
     const region = regionForSite(spot.lat, spot.lon);
     if (!region || !nativeRegionIds.includes(region.meta.id)) return;
     // A saved spot has a name the reader gave it, which is a better answer to
     // "around where?" than "your spot".
     const saved = spot.spotId ? await getSpot(spot.spotId).catch(() => undefined) : undefined;
     await showProminence(region, spot.lat, spot.lon, saved?.label);
+  }
+
+  /**
+   * No coordinates, but a region picked by hand — say what we can about that.
+   *
+   * This is the reader who declined to give a point and chose their region from
+   * a list, which the whole app treats as an equally good way to say where you
+   * garden. Before, this section had nothing at all for them; the bundled
+   * numbers cost nothing and are true of the region they named.
+   */
+  function showForPickedRegion(): void {
+    const id = knownRegion();
+    if (!id || !nativeRegionIds.includes(id)) return;
+    const region = REGIONS.find((r) => r.meta.id === id);
+    if (region) showForRegion(region);
   }
 
   // "Look it up in a region it's native to" — no spot needed. Query iNaturalist
@@ -200,6 +239,9 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
     try {
       const result = await plantSightingsInRegion(inatId, region.meta.id, toBounds(region));
       renderResults(result, region, "region");
+      // What the photos don't say: whether the region has many of these or
+      // hardly any. Free, and skipped when a spot has already answered better.
+      showForRegion(region);
     } catch (err) {
       showNote(t(isBusy(err) ? "nearby.busy" : "nearby.unreachable"));
     } finally {

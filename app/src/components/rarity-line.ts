@@ -13,8 +13,8 @@
 // tight: a record counts somebody noticing a plant, which is a different thing
 // from the plant being there.
 import { el } from "../ui";
-import { type Rarity } from "../lib/rarity";
-import { t, fmtNumber } from "../lib/i18n";
+import { type Rarity, type RegionRarity } from "../lib/rarity";
+import { t, fmtNumber, langTag } from "../lib/i18n";
 import { distance } from "../lib/units";
 
 /**
@@ -30,6 +30,33 @@ export function rarityLine(r: Rarity, place?: string): HTMLElement {
   return el("div", { class: `note rarity-note rarity-${r.level}` }, [
     el("p", { class: "rarity-where" }, place ? t("rarity.around", { place }) : t("rarity.aroundSpot")),
     el("p", { class: "rarity-verdict" }, t(key, { count: fmtNumber(r.count), radius: where })),
+    el("p", { class: "rarity-caveat" }, t("rarity.caveat")),
+  ]);
+}
+
+/** "August 2026" in the reader's own language — `Intl`, not a sentence built
+ *  from parts, because the order of month and year is the language's business. */
+function monthYear(iso: string): string {
+  const [y, m] = iso.split("-").map(Number);
+  return new Intl.DateTimeFormat(langTag(), { month: "long", year: "numeric" })
+    .format(new Date(y, (m || 1) - 1, 1));
+}
+
+/**
+ * The same note for a whole region, from the numbers shipped with the app.
+ *
+ * Two differences from the line above, both load-bearing. The verdict names the
+ * region rather than saying "here", because a region is not where you are. And
+ * the top line is the month it was counted, not a place: these numbers were
+ * taken once and travel with the app, so how old they are is the thing a reader
+ * can't otherwise know.
+ */
+export function regionRarityLine(r: RegionRarity, regionName: string): HTMLElement {
+  const key = `rarity.region.${r.level}` as const;
+  return el("div", { class: `note rarity-note rarity-${r.level}` }, [
+    el("p", { class: "rarity-where" }, t("rarity.counted", { date: monthYear(r.capturedAt) })),
+    el("p", { class: "rarity-verdict" },
+      t(key, { count: fmtNumber(r.count), region: regionName })),
     el("p", { class: "rarity-caveat" }, t("rarity.caveat")),
   ]);
 }

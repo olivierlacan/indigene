@@ -335,6 +335,14 @@ export const fr: Dict = {
   // À quel point une plante est courante autour d'un lieu (relevés iNaturalist).
   // ---------------------------------------------------------------------
   "rarity.around": "Autour de {place}",
+  "rarity.counted": "Relevés de {date}",
+  "rarity.region.none":
+    "Personne n'a encore relevé cette plante nulle part en {region}. Si votre terrain lui convient, la vôtre sera peut-être la seule pendant un moment.",
+  "rarity.region.scarce":
+    "Rarement relevée en {region} — {count} relevés. En planter une remet en place ce qui manque à la région.",
+  "rarity.region.occasional": "Relevée de temps en temps en {region} — {count} relevés.",
+  "rarity.region.common":
+    "L'une des plantes les plus relevées en {region} — {count} relevés.",
   "rarity.aroundSpot": "Autour de votre emplacement",
   "rarity.none":
     "Personne n'a relevé cette plante à moins de {radius} d'ici. Si votre terrain lui convient, la vôtre sera peut-être la seule pendant un moment.",

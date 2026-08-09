@@ -42,6 +42,9 @@ subtitle on the What's new page.
   being asked.** If you've given the app a spot, "See it growing near you" opens
   with how often people have recorded that plant nearby — and says which spot it
   counted.
+- **A region gets an answer too.** Picked your region from a list instead of
+  sharing a spot? The page now says how often the plant is recorded across that
+  whole region, from dated figures that travel with the app.
 
 ### Changed
 
@@ -53,6 +56,10 @@ subtitle on the What's new page.
   arrives on its own, and the photos still wait until you ask for them.
 - Internal: bundle re-measured at ~418 KB gzipped after the new module; the
   figure updated across README, PROJECT_BRIEF and the ecoregion plan
+- Internal: per-region counts are baked by `npm run region-counts` (scheduled
+  monthly, opens a PR, no API key — iNaturalist answers anonymous GETs) into
+  `data/region-counts.ts`, ~8 KB. Kept out of the deploy build so it stays
+  hermetic, same as the registry reconcile.
 - Internal: one `species_counts` call fills the whole region roster's rarity
   cache (`lib/prominence.ts`), keyed the same way `rarity.ts` reads it, so a
   region of 71 plants costs one ~10 KB request a week instead of 71 round trips.

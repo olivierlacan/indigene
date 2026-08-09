@@ -40,6 +40,7 @@
 import { InatError } from "./inaturalist";
 import { kvGet, kvSet } from "../db";
 import { cacheKey, CACHE_TTL_MS } from "./nearby";
+import { REGION_COUNTS } from "../data/region-counts";
 
 const API_BASE = "https://api.inaturalist.org/v1/observations";
 
@@ -212,4 +213,52 @@ export async function rarityCached(
   ]);
   if (count == null || total == null) return null;
   return { level: rarityLevel(count, total), count, total, radiusKm };
+}
+
+// ---------------------------------------------------------------------------
+// The same reading at region scale, from numbers shipped with the app.
+//
+// Not every reader has a spot. Someone who picked their region from a list has
+// no coordinates at all, and "Where it's native" is deliberately nowhere in
+// particular — for both, the circle above has nothing to measure. So the counts
+// for each region's own coverage box are taken once, by a scheduled job, and
+// bundled (`data/region-counts.ts`).
+//
+// **It answers a different question, and the copy has to say which.** A region
+// box spans hundreds of miles; against a 50 km circle around one city, a
+// seventh of a region's natives land in a different band. So this never
+// substitutes for the spot reading — it fills in where there isn't one, naming
+// the region and the month it was counted.
+// ---------------------------------------------------------------------------
+
+/** How this plant stands against everything else recorded in a whole region. */
+export interface RegionRarity {
+  level: RarityLevel;
+  /** Research-grade records of this plant inside the region's box. */
+  count: number;
+  /** Research-grade records of every plant inside it — the yardstick. */
+  total: number;
+  regionId: string;
+  /** ISO date the counts were taken, so the line can say how old they are. */
+  capturedAt: string;
+}
+
+/**
+ * The bundled reading for one plant in one region, or null when we have no
+ * numbers for that region (a region added since the last refresh) or the plant
+ * isn't among the ones counted there. Synchronous and free — no network, no
+ * database, nothing sent to iNaturalist.
+ */
+export function rarityInRegion(inatId: string, regionId: string): RegionRarity | null {
+  const row = REGION_COUNTS.find((r) => r.regionId === regionId);
+  if (!row) return null;
+  const count = row.counts[inatId];
+  if (count == null) return null;
+  return {
+    level: rarityLevel(count, row.total),
+    count,
+    total: row.total,
+    regionId,
+    capturedAt: row.capturedAt,
+  };
 }

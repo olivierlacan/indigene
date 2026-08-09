@@ -34,6 +34,10 @@ subtitle on the What's new page.
 - **Reading a copy never overwrites anything.** Spots you already have are kept
   as they are, so bringing the same file in twice changes nothing — and a file
   we can't make sense of is turned away with a reason.
+- Internal: a draft 1.0 announcement in `docs/announcement-1.0.md`, written to be
+  published on the blog rather than in the app — what Indigene is for, who it's
+  for, how it differs from garden-management and plant-ID tools, and a plain
+  account of building it with Claude Code. Nothing in the product changed.
 
 ### Changed
 

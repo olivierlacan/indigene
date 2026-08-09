@@ -32,6 +32,13 @@ plant and animal prose, empty states, error messages, and release notes.
   support the hazel dormouse, 1 of them as a caterpillar host" is a paragraph
   doing a tile's job — slower to read, and a translation besides. `statTiles()`
   takes any page's figures.
+- **Never name our own tooling.** The reader has no terminal and no checkout, so
+  "Surfaced by `npm run candidates`" tells them nothing about whether to trust
+  the line — it just asks them to take our word for it in a language they don't
+  speak. Cite what the tool consulted instead: "Occurrence records in this
+  region's box: 6,819 (GBIF)". Same for file paths, function names, workflow
+  names and internal jargon. The script name belongs in the commit message, the
+  code comment, or an `Internal:` changelog bullet.
 - **Every word is also a translation.** French is written by hand from this
   English (`src/locales/`, `src/locales/prose.fr/`). A paragraph we didn't
   need is a paragraph somebody translates, reviews and maintains forever.

@@ -49,6 +49,10 @@ subtitle on the What's new page.
 
 ### Fixed
 
+- **Twenty plants were citing a command you can't run.** Their sources note said
+  a plant was "surfaced by `npm run candidates`" — one of our tools, meaningless
+  to a reader. It names the evidence now: "Occurrence records in this region's
+  box: 6,819 ([GBIF](https://www.gbif.org/))."
 - Internal: screenshots taken against a local mirror of iNaturalist blocked the
   service worker, which had been fetching those requests itself and going to the
   real network behind the mirror's back — leaving empty photo tiles in captures.

@@ -34,10 +34,11 @@ subtitle on the What's new page.
 - **Reading a copy never overwrites anything.** Spots you already have are kept
   as they are, so bringing the same file in twice changes nothing — and a file
   we can't make sense of is turned away with a reason.
-- **Pull down to reload, on an iPhone Home Screen app.** Added to the iPhone
-  icon, Indigene opens without Safari's reload button. Now a drag down from the
-  top of any page refreshes it, and the menu carries a Reload row for hands that
-  can't drag.
+- **Pull down to reload, on an iPhone Home Screen app.** Installed to the Home
+  Screen, Indigene opens without Safari's reload button. Now a drag down from
+  the top of a page brings the bee over to fetch a fresh copy.
+- **A Reload button as well, in the menu.** A drag isn't for every pair of
+  hands, so the gear menu grows a Reload row wherever the pull-down lives.
 - **A plant's page now tells you how common it is around your garden, without
   being asked.** If you've given the app a spot, "See it growing near you" opens
   with how often people have recorded that plant nearby — and says which spot it

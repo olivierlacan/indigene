@@ -218,8 +218,10 @@ export const fr: Dict = {
   "saved.privacy":
     "Ces lieux ne vivent que sur cet appareil — ils n'en sortent jamais, et nous ne pouvons pas les voir",
   "saved.findAnother": "Trouver un autre lieu",
-  "saved.tally.one": "{count} plante en terre",
-  "saved.tally.other": "{count} plantes en terre, {kinds} espèces",
+  "saved.statPlants.one": "{count} plante en terre ici",
+  "saved.statPlants.other": "{count} plantes en terre ici",
+  "saved.statKinds.one": "{count} espèce de plante",
+  "saved.statKinds.other": "{count} espèces de plantes différentes",
   "saved.openLog": "Ce que vous avez planté →",
   "saved.startLog": "Commencer un journal →",
 

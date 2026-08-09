@@ -5,6 +5,7 @@ import type { Planting } from "../types";
 import { sunPlain } from "../lib/plain";
 import { tally } from "../lib/garden";
 import { privacyNote } from "../components/privacy-link";
+import { cardStats } from "../components/card-stats";
 import { t, tn, fmtNumber } from "../lib/i18n";
 
 // Saved spots — local-first, no account. Open one to reload its readings and
@@ -35,15 +36,28 @@ export async function renderSaved(main: HTMLElement): Promise<void> {
         el("div", { class: "coords" }, `${s.lat.toFixed(4)}, ${s.lon.toFixed(4)}`),
         el("div", { style: "font-size:0.9rem;color:var(--ink-soft)" },
           s.sun ? sunPlain(s.sun.hours) : t("saved.sunUnknown")),
-        // What's actually in the ground here, when anything is. A spot with an
-        // empty log says nothing rather than "0 plants": the log is an offer,
-        // not a chore somebody is behind on.
+        // What's actually in the ground here, when anything is — as figures
+        // rather than a sentence about them, the same row a region's card
+        // carries. "9 plants in the ground, 3 kinds" was a paragraph doing a
+        // tile's job: slower to read, wider than a phone at two spots, and a
+        // translation besides. The full sentence is still there, in the
+        // tooltip and as the accessible name.
+        //
+        // A spot with an empty log shows nothing rather than a row of zeroes:
+        // the log is an offer, not a chore somebody is behind on.
         counts.plants
-          ? el("div", { class: "saved-tally" },
-              tn("saved.tally", counts.plants, {
-                count: fmtNumber(counts.plants),
-                kinds: fmtNumber(counts.kinds),
-              }))
+          ? cardStats([
+              {
+                icon: "🌱",
+                value: fmtNumber(counts.plants),
+                label: tn("saved.statPlants", counts.plants, { count: fmtNumber(counts.plants) }),
+              },
+              {
+                icon: "🎨",
+                value: fmtNumber(counts.kinds),
+                label: tn("saved.statKinds", counts.kinds, { count: fmtNumber(counts.kinds) }),
+              },
+            ])
           : null,
       ]),
       el("div", { style: "display:flex;gap:0.4rem;flex:none" }, [

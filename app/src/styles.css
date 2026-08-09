@@ -4211,11 +4211,6 @@ body[data-layout="profile"] .wip-banner-text {
 .saved-item {
   flex-wrap: wrap;
 }
-.saved-tally {
-  font-size: 0.9rem;
-  color: var(--brand-ink);
-  font-weight: 650;
-}
 .saved-log-link {
   flex: 1 0 100%;
   padding-top: 0.35rem;

@@ -202,8 +202,10 @@ export const en = {
   "saved.deleted": "Deleted.",
   "saved.privacy": "These spots live on this device only — they never leave it, and we can't see them",
   "saved.findAnother": "Find another spot",
-  "saved.tally.one": "{count} plant in the ground",
-  "saved.tally.other": "{count} plants in the ground, {kinds} kinds",
+  "saved.statPlants.one": "{count} plant in the ground here",
+  "saved.statPlants.other": "{count} plants in the ground here",
+  "saved.statKinds.one": "{count} kind of plant",
+  "saved.statKinds.other": "{count} different kinds of plant",
   "saved.openLog": "What you've planted →",
   "saved.startLog": "Start a planting log →",
 

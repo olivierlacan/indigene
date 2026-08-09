@@ -1403,11 +1403,17 @@ input[type="range"] {
 
 /* The picture of where a spot is, on the pages that only had its coordinates
    (components/spot-map.ts). Static: no dragging, no zooming — the streets are
-   the whole point. */
+   the whole point.
+
+   A small square, not a banner. It's a thumbnail answering "which one is
+   this?", so it sits beside the name it belongs to rather than pushing it down
+   the screen — a list of spots stays a list you can see at once. */
 .spot-map {
   position: relative;
-  width: 100%;
-  height: 128px;
+  width: 6.5rem;
+  height: 6.5rem;
+  flex: none;
+  align-self: flex-start;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--line);
@@ -1423,14 +1429,16 @@ input[type="range"] {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -100%);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   pointer-events: none;
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.4));
 }
-/* On a settings card the map is a figure between two paragraphs, so it needs
-   its own breathing room; in a saved row it's the top band of the row. */
-.card > .spot-map {
-  margin: 0.8rem 0;
+/* On the Settings card the map is half of what "where" means, so it sits in
+   that row beside the coordinates. */
+.memory-where {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
 }
 
 /* --- Sky scan --- */
@@ -4378,9 +4386,22 @@ body[data-layout="profile"] .wip-banner-text {
 .saved-item {
   flex-wrap: wrap;
 }
-/* Full width across the top of the row, above the name it belongs to. */
-.saved-item .spot-map {
+/* The map and the spot's name share the top row; the sun reading takes a full
+   line of its own under both, and the buttons another. */
+.saved-item-body {
+  flex: 1 1 7rem;
+  min-width: 0;
+}
+.saved-item-sun {
   flex: 1 0 100%;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+.saved-item-actions {
+  display: flex;
+  gap: 0.4rem;
+  flex: none;
+  margin-left: auto;
 }
 .saved-log-link {
   flex: 1 0 100%;

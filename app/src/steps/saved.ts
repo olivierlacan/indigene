@@ -32,15 +32,16 @@ export async function renderSaved(main: HTMLElement): Promise<void> {
   for (const s of spots) {
     const counts = tally(plantings.filter((p) => p.spotId === s.id));
     const item = el("li", { class: "saved-item" }, [
-      // Across the top of the row, because the label under it is the only other
-      // thing telling one saved spot from another — and a name you gave a
-      // corner of a garden last spring doesn't always come back on its own.
+      // Beside the name, because the name is the only other thing telling one
+      // saved spot from another — and one you gave a corner of a garden last
+      // spring doesn't always come back on its own.
       spotMap(s.lat, s.lon, { label: t("map.spotLabelNamed", { label: s.label }) }),
-      el("div", {}, [
+      // Beside the map: what names this spot. The sun reading follows on its
+      // own line below, because it's a sentence — squeezed into the column left
+      // over beside a picture it wraps six times and reads like a receipt.
+      el("div", { class: "saved-item-body" }, [
         el("div", { style: "font-weight:700" }, s.label),
         el("div", { class: "coords" }, `${s.lat.toFixed(4)}, ${s.lon.toFixed(4)}`),
-        el("div", { style: "font-size:0.9rem;color:var(--ink-soft)" },
-          s.sun ? sunPlain(s.sun.hours) : t("saved.sunUnknown")),
         // What's actually in the ground here, when anything is — as figures
         // rather than a sentence about them, the same row a region's card
         // carries. "9 plants in the ground, 3 kinds" was a paragraph doing a
@@ -65,7 +66,9 @@ export async function renderSaved(main: HTMLElement): Promise<void> {
             ])
           : null,
       ]),
-      el("div", { style: "display:flex;gap:0.4rem;flex:none" }, [
+      el("div", { class: "saved-item-sun" },
+        s.sun ? sunPlain(s.sun.hours) : t("saved.sunUnknown")),
+      el("div", { class: "saved-item-actions" }, [
         el("button", {
           class: "btn btn-secondary", style: "min-height:2.6rem;padding:0.4rem 0.7rem",
           onClick: () => openSavedSpot(s),

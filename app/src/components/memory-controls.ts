@@ -59,11 +59,15 @@ export function lastSpotCard(): HTMLElement {
     }
     card.append(
       el("p", {}, t("memory.spotLede")),
-      // The picture before the numbers: "48, -122" is a spot only a machine can
-      // place, and this card exists to be legible.
-      ...(spot.lat != null && spot.lon != null ? [spotMap(spot.lat, spot.lon)] : []),
       el("dl", { class: "memory-list" }, [
-        ...row(t("memory.spotWhere"), whereWords(spot)),
+        // The picture is part of the answer to "where", so it sits in that
+        // row's value beside the numbers rather than floating above the list:
+        // "40.0379, -75.3557" is a spot only a machine can place.
+        el("dt", {}, t("memory.spotWhere")),
+        el("dd", { class: "memory-where" }, [
+          ...(spot.lat != null && spot.lon != null ? [spotMap(spot.lat, spot.lon)] : []),
+          el("span", {}, whereWords(spot)),
+        ]),
         ...row(t("memory.spotSun"), spot.sun ? sunPlain(spot.sun.hours) : t("memory.unanswered")),
         ...row(t("memory.spotSoil"), spot.moisture ? moisturePlain(spot.moisture) : t("memory.unanswered")),
       ]),

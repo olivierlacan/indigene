@@ -27,13 +27,14 @@ import type { StickySpot } from "../lib/sticky";
 import { REGIONS } from "../lib/plants";
 import { regionName, regionReference } from "../lib/names";
 import { zoneChip } from "./zone-chip";
+import { spotMap } from "./spot-map";
 import { moisturePlain, sunPlain } from "../lib/plain";
 import { DEFAULT_WEIGHTS } from "../lib/ranking";
 import { matchingPreset, priorityName } from "../lib/priorities";
 import { privacyNote } from "./privacy-link";
 import { forgetVisits, visits } from "../lib/visits";
 import { countingChosen, refusedByBrowser, setAnalyticsEnabled } from "../lib/analytics";
-import { t, fmtNumber, fmtDate } from "../lib/i18n";
+import { t, fmtDate } from "../lib/i18n";
 
 /**
  * The last spot, in full: where it is and what's remembered about it.
@@ -58,6 +59,9 @@ export function lastSpotCard(): HTMLElement {
     }
     card.append(
       el("p", {}, t("memory.spotLede")),
+      // The picture before the numbers: "48, -122" is a spot only a machine can
+      // place, and this card exists to be legible.
+      ...(spot.lat != null && spot.lon != null ? [spotMap(spot.lat, spot.lon)] : []),
       el("dl", { class: "memory-list" }, [
         ...row(t("memory.spotWhere"), whereWords(spot)),
         ...row(t("memory.spotSun"), spot.sun ? sunPlain(spot.sun.hours) : t("memory.unanswered")),
@@ -94,9 +98,14 @@ function whereWords(spot: StickySpot): string {
     return region ? t("memory.spotWhereRegion", { region: regionName(region.meta) }) : t("memory.unanswered");
   }
   if (spot.lat == null || spot.lon == null) return t("memory.unanswered");
+  // Four decimals, and not through the number formatter: it rounds to whole
+  // degrees by default, which had this card reporting a spot in Pennsylvania
+  // as "40, -75" — a point a hundred kilometres wide. Coordinates also keep
+  // the decimal *point* in every language, as the Saved list writes them: a
+  // French "40,038, -75,356" is four numbers separated by commas.
   return t("memory.spotWhereCoords", {
-    lat: fmtNumber(Number(spot.lat.toFixed(4))),
-    lon: fmtNumber(Number(spot.lon.toFixed(4))),
+    lat: spot.lat.toFixed(4),
+    lon: spot.lon.toFixed(4),
   });
 }
 

@@ -392,6 +392,10 @@ export const fr: Dict = {
     "Carte. Le repère reste au centre. Faites glisser ou touchez pour amener votre lieu dessous, ou utilisez les flèches du clavier pour l'ajuster — maintenez Maj pour de plus grands pas.",
   "location.osmAttribution": "© les contributeurs d'OpenStreetMap",
   "location.gpsFix": "point GPS",
+
+  "map.spotLabel": "Carte des rues autour de ce lieu",
+  "map.spotLabelNamed": "Carte des rues autour de {label}",
+  "map.osmShort": "© OSM",
   "location.accuracy": " · précision GPS ±{m} m",
   "location.nudged": " · déplacé de {m} m",
   "location.noGeolocation": "Cet appareil ne peut pas partager sa position — essayez la recherche par commune.",

@@ -46,6 +46,10 @@ subtitle on the What's new page.
 - **A region gets an answer too.** Picked your region from a list instead of
   sharing a spot? The page now says how often the plant is recorded across that
   whole region, from dated figures that travel with the app.
+- **A little map on every saved spot.** [Your spots](https://indigene.app/#/saved)
+  and your last one in [Settings](https://indigene.app/#/settings/spot) now show
+  the streets around the pin, so you can tell the alley bed from the front bed
+  without reading two rows of digits.
 
 ### Changed
 
@@ -75,6 +79,13 @@ subtitle on the What's new page.
   region of 71 plants costs one ~10 KB request a week instead of 71 round trips.
   Verified against the per-taxon counts for all 71 PNW taxa, subspecies roll-up
   included.
+
+### Fixed
+
+- **Your last spot said where it was to the nearest hundred kilometres.**
+  Settings rounded the coordinates to whole degrees, so a garden outside
+  Philadelphia read "40, -75". It now keeps the four decimals the saved list
+  already showed.
 
 ## [0.26] - 2026-08-09
 

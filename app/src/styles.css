@@ -1396,6 +1396,42 @@ input[type="range"] {
   color: #333;
   border-top-left-radius: 8px;
 }
+.map-attrib-compact {
+  font-size: 0.62rem;
+  padding: 0.05rem 0.35rem;
+}
+
+/* The picture of where a spot is, on the pages that only had its coordinates
+   (components/spot-map.ts). Static: no dragging, no zooming — the streets are
+   the whole point. */
+.spot-map {
+  position: relative;
+  width: 100%;
+  height: 128px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+}
+.spot-map canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.spot-map .pin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -100%);
+  font-size: 1.5rem;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.4));
+}
+/* On a settings card the map is a figure between two paragraphs, so it needs
+   its own breathing room; in a saved row it's the top band of the row. */
+.card > .spot-map {
+  margin: 0.8rem 0;
+}
 
 /* --- Sky scan --- */
 .scanner {
@@ -4341,6 +4377,10 @@ body[data-layout="profile"] .wip-banner-text {
    row's two buttons, so a phone never has three tap targets sharing its width. */
 .saved-item {
   flex-wrap: wrap;
+}
+/* Full width across the top of the row, above the name it belongs to. */
+.saved-item .spot-map {
+  flex: 1 0 100%;
 }
 .saved-log-link {
   flex: 1 0 100%;

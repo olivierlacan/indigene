@@ -6,6 +6,7 @@ import { sunPlain } from "../lib/plain";
 import { tally } from "../lib/garden";
 import { privacyNote } from "../components/privacy-link";
 import { cardStats } from "../components/card-stats";
+import { spotMap } from "../components/spot-map";
 import { t, tn, fmtNumber } from "../lib/i18n";
 
 // Saved spots — local-first, no account. Open one to reload its readings and
@@ -31,6 +32,10 @@ export async function renderSaved(main: HTMLElement): Promise<void> {
   for (const s of spots) {
     const counts = tally(plantings.filter((p) => p.spotId === s.id));
     const item = el("li", { class: "saved-item" }, [
+      // Across the top of the row, because the label under it is the only other
+      // thing telling one saved spot from another — and a name you gave a
+      // corner of a garden last spring doesn't always come back on its own.
+      spotMap(s.lat, s.lon, { label: t("map.spotLabelNamed", { label: s.label }) }),
       el("div", {}, [
         el("div", { style: "font-weight:700" }, s.label),
         el("div", { class: "coords" }, `${s.lat.toFixed(4)}, ${s.lon.toFixed(4)}`),

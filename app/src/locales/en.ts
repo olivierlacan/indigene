@@ -371,6 +371,13 @@ export const en = {
     "Map. The pin stays in the centre. Drag or tap to move the spot under it, or use the arrow keys to nudge it — hold Shift for bigger steps.",
   "location.osmAttribution": "© OpenStreetMap contributors",
   "location.gpsFix": "GPS fix",
+
+  // The small map that shows where a saved (or last) spot is — see
+  // `components/spot-map.ts`. The short credit is the full one abbreviated to
+  // fit a picture this small; the link's title carries it in full.
+  "map.spotLabel": "Map of the streets around this spot",
+  "map.spotLabelNamed": "Map of the streets around {label}",
+  "map.osmShort": "© OSM",
   "location.accuracy": " · GPS accuracy ±{m} m",
   "location.nudged": " · nudged {m} m",
   "location.noGeolocation": "This device can't share location — try the town search instead.",

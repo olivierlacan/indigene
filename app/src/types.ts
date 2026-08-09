@@ -499,6 +499,64 @@ export interface Weights {
   establishment: number;
 }
 
+/**
+ * When a plant went into the ground, to whatever precision the person actually
+ * remembers.
+ *
+ * Most people don't know the day. They know "last spring", or "the year we
+ * moved in". A single `Date` would force a lie — a day nobody chose, printed
+ * back as if it were recorded fact — so the month and the day are optional and
+ * the app only ever shows what was given. The reading is deliberately
+ * conservative wherever it feeds an expectation: a year on its own is read as
+ * the *end* of that year, so "planted in 2024" never claims more growing time
+ * than it can prove (see `plantedSince` in `lib/plantings.ts`).
+ */
+export interface PlantedDate {
+  year: number;
+  /** 1–12, when known. */
+  month?: number;
+  /** 1–31, when known. Never set without a month. */
+  day?: number;
+}
+
+/**
+ * One entry in a spot's planting log: something you planted, where, and when.
+ *
+ * It's a *record*, not a recommendation — the app's other layers say what a
+ * spot should have; this one says what it does have, in the gardener's own
+ * account. Like every saved spot it lives in IndexedDB on the device and has
+ * nowhere else to go.
+ *
+ * Progress pictures are the one thing it deliberately doesn't hold. Photos are
+ * megabytes each, and a browser can evict a database it decides is too big —
+ * losing three years of a garden's record to a storage sweep would be the
+ * cruellest possible failure. So a planting carries *references* to
+ * iNaturalist observations instead: the picture stays where the gardener
+ * already put it, and this log holds the thread back to it (see
+ * `lib/observation-link.ts`).
+ */
+export interface Planting {
+  id: string;
+  /** The saved spot this went into. */
+  spotId: string;
+  /** Catalog slug of the plant (`Plant.id`). */
+  plantId: string;
+  /** How many of it went in. At least 1. */
+  count: number;
+  /** When, to whatever precision was given — null when it wasn't given at all. */
+  planted: PlantedDate | null;
+  /**
+   * iNaturalist observations tied to this planting, in the order they were
+   * linked. Each is whichever name the gardener had — the number out of a link,
+   * or the UUID the site's copy button gives — kept as text exactly as given
+   * (`ObservationRef` in `lib/observation-link.ts`).
+   */
+  observations: string[];
+  /** The gardener's own words about it, when they wrote any. */
+  note?: string;
+  createdAt: number;
+}
+
 export interface SavedSpot {
   id: string;
   createdAt: number;

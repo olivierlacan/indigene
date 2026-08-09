@@ -202,6 +202,89 @@ export const en = {
   "saved.deleted": "Deleted.",
   "saved.privacy": "These spots live on this device only — they never leave it, and we can't see them",
   "saved.findAnother": "Find another spot",
+  "saved.statPlants.one": "{count} plant in the ground here",
+  "saved.statPlants.other": "{count} plants in the ground here",
+  "saved.statKinds.one": "{count} kind of plant",
+  "saved.statKinds.other": "{count} different kinds of plant",
+  "saved.openLog": "What you've planted →",
+  "saved.startLog": "Start a planting log →",
+
+  // ---------------------------------------------------------------------
+  // One spot's page: the planting log. What went in, when, and what it
+  // should be doing by now.
+  // ---------------------------------------------------------------------
+  "spot.docTitle": "{label} — Indigene",
+  "spot.notFound": "That spot isn't on this device.",
+  "spot.backToSaved": "Your saved spots",
+  "spot.seePlants": "Plants for this spot",
+  "spot.privacy": "Your log stays on this device — the plants, the dates, all of it",
+  "spot.tilesLabel": "What's growing here",
+  "spot.tilePlants": "In the ground",
+  "spot.tilePlantsExplain": "Every plant you've logged here, counting six milkweeds as six.",
+  "spot.tileKinds": "Kinds",
+  "spot.tileKindsExplain":
+    "How many different plants you've got in. A mix carries a garden through the year — something in flower in April, something with berries in October.",
+  "spot.tileHosts": "Feed caterpillars",
+  "spot.tileHostsExplain":
+    "How many of your kinds raise caterpillars. Caterpillars are what songbirds feed their chicks, so this is the number that turns a garden into food.",
+  "spot.logTitle": "What you've planted",
+  "spot.logEmpty": "Nothing logged here yet. Add the first thing you put in — the date can be as vague as “2024”.",
+  "spot.whenUnknown": "Date not recorded",
+  "spot.removeLabel": "Remove {name} from this log",
+  "spot.confirmRemove": "Remove {name} from this log?",
+  "spot.removed": "Removed from your log.",
+  "spot.addTitle": "Add a plant you've planted",
+  "spot.searchLabel": "Which plant?",
+  "spot.searchPlaceholder": "Search by name",
+  "spot.searchNone": "Nothing by that name in this region's list.",
+  "spot.changePlant": "change",
+  "spot.whenLabel": "When did it go in?",
+  "spot.year": "Year",
+  "spot.month": "Month",
+  "spot.day": "Day",
+  "spot.notSure": "Not sure",
+  "spot.howMany": "How many?",
+  "spot.addButton": "Add to this spot",
+  "spot.added": "{name} added to your log.",
+  // Linking an iNaturalist sighting instead of storing photos here.
+  "spot.obsLink": "📷 Link an iNaturalist sighting",
+  "spot.obsLabel": "iNaturalist observation link, number or UUID",
+  "spot.obsPlaceholder": "Link, number or UUID",
+  "spot.obsAdd": "Link",
+  "spot.obsHelp":
+    "Paste the link, or the UUID the observation's own page copies for you; every photo on it appears here. They stay on iNaturalist — we keep only that reference, on your device. An observation you've obscured stays obscured to everyone else; this page just remembers which plant of yours it was.",
+  "spot.obsBad": "That isn't a link, number or UUID we recognise.",
+  "spot.obsAlready": "Already linked to this plant.",
+  "spot.obsAdded": "Sighting linked.",
+  "spot.obsPlainLink": "Also linked:",
+
+  // The button on a plant's page that starts a log entry for it.
+  "planted.button": "🌱 I planted one",
+  "planted.whichSpot": "Which spot did it go into?",
+
+  // ---------------------------------------------------------------------
+  // Time in the ground, and what to expect by now (the planting log).
+  // ---------------------------------------------------------------------
+  "log.notYet": "Not in yet",
+  "log.justPlanted": "Just planted",
+  "log.months.one": "{n} month in",
+  "log.months.other": "{n} months in",
+  "log.years.one": "{n} year in",
+  "log.years.other": "{n} years in",
+  "log.firstYear":
+    "First year is roots: expect little above ground. Sleep, creep, leap — the leaping comes in year three.",
+  "log.expect": "Should be around {height} tall and {spread} across by now, if it's thriving.",
+
+  // ---------------------------------------------------------------------
+  // How common a plant is around a spot (iNaturalist record counts).
+  // ---------------------------------------------------------------------
+  "rarity.none":
+    "Nobody has recorded this plant within {radius} of here. If it belongs in your ground, yours may be the only one for a while.",
+  "rarity.scarce":
+    "Seldom recorded around here — {count} records within {radius}. Planting one puts back something the area is short of.",
+  "rarity.occasional": "Recorded here and there — {count} records within {radius}.",
+  "rarity.common": "One of the plants people record most around here — {count} records within {radius}.",
+  "rarity.caveat": "Records count people noticing a plant, not how much of it grows here.",
 
   // ---------------------------------------------------------------------
   // Explore (region cards).
@@ -1401,8 +1484,9 @@ export const en = {
   "privacy.whereLede":
     "So you can see exactly what happens: when a lookup needs your spot, your browser talks directly to these public services. Each sees only that one lookup, gets no name or account (there isn't one), and has its own privacy policy for that request.",
   "privacy.svc.sentWrap": "(it's sent {sent}).",
-  "privacy.svc.inat.for": "photos of plants and animals seen near there",
-  "privacy.svc.inat.sent": "a coordinate or a map area, plus the species being looked up",
+  "privacy.svc.inat.for": "photos of plants and animals seen near there, how often one has been recorded there, and any sighting you link to your planting log",
+  "privacy.svc.inat.sent":
+    "a coordinate or a map area, plus the species being looked up — or, for a linked sighting, only the observation reference you pasted",
   "privacy.svc.meteo.for": "your climate — rainfall and how cold winters get; and turning a postal code or town into a point on the map",
   "privacy.svc.meteo.sent": "a coordinate, or the place name you typed",
   "privacy.svc.osm.for": "the name of the nearest town (shown instead of raw numbers), and the map picture",
@@ -1420,6 +1504,11 @@ export const en = {
   "privacy.saveButton": "Save this spot",
   "privacy.saved":
     "When you tap {save}, it's kept in your browser's own storage, on that device only. It never leaves your device, never reaches a server (there is none), and we can never see it. It's yours: open or delete a saved spot anytime from the Saved menu, and clearing your browser's data for this site erases them for good.",
+  "privacy.logTitle": "Your planting log, and why it has no photos",
+  "privacy.log1":
+    "What you've planted in a spot — the plants, the dates, how many — is kept beside that spot, on this device, and goes nowhere else. Deleting the spot deletes its log with it.",
+  "privacy.log2":
+    "Progress photos aren't stored here at all. A browser can reclaim its storage without asking, and losing years of a garden's record that way would be awful — so instead you can link an iNaturalist sighting you already posted — pasting its link, or the UUID the site copies for you — and we keep only that reference. Your observation stays exactly as you set it: if you obscure your location there, it stays obscured. This device knows the precise spot; nobody else does, and iNaturalist is never told the two are connected.",
   "privacy.whatsNewTitle": "How we know what's new to you",
   "privacy.whatsNew1":
     "Indigene shows a small green dot beside What's new — in the ⚙️ menu, and at the foot of every page — when something has been added since you last looked, and marks those entries on the What's new page. To do that it has to remember a little — so here is all of it, exactly:",

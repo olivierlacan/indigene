@@ -25,6 +25,34 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Added
+
+- **A planting log for every saved spot.** Write down what you've put in the
+  ground, and the app keeps the tally: plants, kinds, and how many of them raise
+  caterpillars. Open it from [your saved spots](https://indigene.app/#/saved).
+- **Dates can be as vague as you are.** Say the day, the month, or just the
+  year — whatever you actually remember. The log then tells you how long a plant
+  has been in and roughly how big it should be by now, from that plant's own
+  measured growth.
+- **Photos, without handing us your photos.** Paste a sighting you posted on
+  iNaturalist — its link, or the UUID the site copies for you — and every photo
+  on it appears beside that plant. One you obscured there stays obscured; only
+  your device knows the corner of the garden.
+- **"Seldom recorded around here."** On a plant's page, under the nearby
+  photos, how often people have recorded it within 31 miles compared with every
+  other plant — so you can put back the ones your area is short of.
+
+### Changed
+
+- **Your saved spots list what's in them.** Each spot now shows its tally and a
+  way through to its planting log.
+
+### Fixed
+
+- Internal: screenshots taken against a local mirror of iNaturalist blocked the
+  service worker, which had been fetching those requests itself and going to the
+  real network behind the mirror's back — leaving empty photo tiles in captures.
+
 ## [0.25] - 2026-08-08
 
 **Who else this plant feeds, and the study that says so**

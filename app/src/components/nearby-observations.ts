@@ -17,8 +17,9 @@ import { regionForSite, REGIONS } from "../lib/plants";
 import type { RegionDef } from "../lib/plants";
 import { plantSightingsNear, plantSightingsInRegion } from "../lib/nearby";
 import type { SightingResult } from "../lib/nearby";
-import { isBusy } from "../lib/inaturalist";
+import { isBusy, DEFAULT_RADIUS_KM } from "../lib/inaturalist";
 import type { Bounds } from "../lib/inaturalist";
+import { mountRarity } from "./rarity-line";
 import { observationList, freshnessLine } from "./observation-ui";
 import { locationPrompt } from "./location-prompt";
 import { anchoredHeading } from "./anchor-head";
@@ -90,6 +91,10 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
       // already refused to look anywhere our data doesn't vouch for it.
       const result = await plantSightingsNear(inatId, lat, lon);
       renderResults(result, region, "near", label);
+      // How common it is around here, in the same circle the photos came from.
+      // Appended after, and quietly: it's an aside, and the photos are what was
+      // asked for (see `components/rarity-line.ts`).
+      mountRarity(out, inatId, lat, lon, DEFAULT_RADIUS_KM);
     } catch (err) {
       showNote(t(isBusy(err) ? "nearby.busy" : "nearby.unreachable"));
     }

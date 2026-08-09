@@ -1,9 +1,12 @@
 import { el, clear, toast } from "../ui";
 import { navigate, openSavedSpot } from "../state";
-import { listSpots, deleteSpot } from "../db";
+import { listSpots, deleteSpot, listPlantings } from "../db";
+import type { Planting } from "../types";
 import { sunPlain } from "../lib/plain";
+import { tally } from "../lib/garden";
 import { privacyNote } from "../components/privacy-link";
-import { t } from "../lib/i18n";
+import { cardStats } from "../components/card-stats";
+import { t, tn, fmtNumber } from "../lib/i18n";
 
 // Saved spots — local-first, no account. Open one to reload its readings and
 // jump back to the plant list, or delete it.
@@ -20,14 +23,42 @@ export async function renderSaved(main: HTMLElement): Promise<void> {
     return;
   }
 
+  // One read for every spot's log, rather than one per row: the whole store is
+  // a person's own garden, tens of rows at most.
+  const plantings = await listPlantings().catch(() => [] as Planting[]);
+
   const list = el("ul", { class: "saved-list" });
   for (const s of spots) {
+    const counts = tally(plantings.filter((p) => p.spotId === s.id));
     const item = el("li", { class: "saved-item" }, [
       el("div", {}, [
         el("div", { style: "font-weight:700" }, s.label),
         el("div", { class: "coords" }, `${s.lat.toFixed(4)}, ${s.lon.toFixed(4)}`),
         el("div", { style: "font-size:0.9rem;color:var(--ink-soft)" },
           s.sun ? sunPlain(s.sun.hours) : t("saved.sunUnknown")),
+        // What's actually in the ground here, when anything is — as figures
+        // rather than a sentence about them, the same row a region's card
+        // carries. "9 plants in the ground, 3 kinds" was a paragraph doing a
+        // tile's job: slower to read, wider than a phone at two spots, and a
+        // translation besides. The full sentence is still there, in the
+        // tooltip and as the accessible name.
+        //
+        // A spot with an empty log shows nothing rather than a row of zeroes:
+        // the log is an offer, not a chore somebody is behind on.
+        counts.plants
+          ? cardStats([
+              {
+                icon: "🌱",
+                value: fmtNumber(counts.plants),
+                label: tn("saved.statPlants", counts.plants, { count: fmtNumber(counts.plants) }),
+              },
+              {
+                icon: "🎨",
+                value: fmtNumber(counts.kinds),
+                label: tn("saved.statKinds", counts.kinds, { count: fmtNumber(counts.kinds) }),
+              },
+            ])
+          : null,
       ]),
       el("div", { style: "display:flex;gap:0.4rem;flex:none" }, [
         el("button", {
@@ -47,6 +78,13 @@ export async function renderSaved(main: HTMLElement): Promise<void> {
           },
         }, "🗑"),
       ]),
+      // Full width under the row: the way into this spot's own page, where the
+      // planting log lives. A third button beside the other two would have made
+      // three tap targets share a phone's width.
+      el("a", {
+        class: "saved-log-link",
+        href: `#/saved/${encodeURIComponent(s.id)}`,
+      }, counts.plants ? t("saved.openLog") : t("saved.startLog")),
     ]);
     list.append(item);
   }

@@ -54,7 +54,7 @@ subtitle on the What's new page.
 - **The count no longer comes with a gallery attached.** It used to take the
   same tap, and the same big download, as the photographs. Now the number
   arrives on its own, and the photos still wait until you ask for them.
-- Internal: bundle re-measured at ~418 KB gzipped after the new module; the
+- Internal: bundle re-measured at ~422 KB gzipped after the new modules; the
   figure updated across README, PROJECT_BRIEF and the ecoregion plan
 - Internal: per-region counts are baked by `npm run region-counts` (scheduled
   monthly, opens a PR, no API key — iNaturalist answers anonymous GETs) into

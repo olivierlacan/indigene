@@ -41,6 +41,7 @@ let pull = 0;
 let tracking = false;
 let engaged = false;
 let reloading = false;
+let settle: number | undefined;
 
 /** Wire up the gesture, if this is a device that needs it. */
 export function initPullToReload(): void {
@@ -156,7 +157,7 @@ function retract(): void {
   pill.classList.add("is-settling");
   paint();
   const done = pill;
-  window.setTimeout(() => {
+  settle = window.setTimeout(() => {
     done.hidden = true;
     done.classList.remove("is-settling");
   }, 260);
@@ -165,6 +166,10 @@ function retract(): void {
 function show(): void {
   if (!pill) build();
   if (!pill) return;
+  // A pull that starts while the last one is still sliding home: without this,
+  // the old retract's timer arrives mid-gesture and hides a pill that is at
+  // that moment following a finger.
+  window.clearTimeout(settle);
   // The pill starts hidden *behind* the header, so where the header ends is
   // where it has to be pinned. Measured per gesture: the header wraps to two
   // rows at large text sizes, and the step rail comes and goes with the flow.

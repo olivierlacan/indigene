@@ -263,15 +263,15 @@ export const fr: Dict = {
   "spot.howMany": "Combien ?",
   "spot.addButton": "Ajouter à ce lieu",
   "spot.added": "{name} ajoutée à votre journal.",
-  "spot.obsLink": "📷 Relier une photo d'iNaturalist",
+  "spot.obsLink": "📷 Relier une observation iNaturalist",
   "spot.obsLabel": "Lien, numéro ou UUID d'une observation iNaturalist",
   "spot.obsPlaceholder": "Lien, numéro ou UUID",
   "spot.obsAdd": "Relier",
   "spot.obsHelp":
-    "Collez le lien, ou l'UUID que la page de l'observation copie pour vous. Les photos restent sur iNaturalist ; nous ne gardons que cette référence, ici, sur votre appareil. Une observation que vous avez rendue floue le reste pour tout le monde — cette page se souvient seulement de laquelle de vos plantes il s'agissait.",
+    "Collez le lien, ou l'UUID que la page de l'observation copie pour vous ; toutes ses photos apparaissent ici. Elles restent sur iNaturalist — nous ne gardons que cette référence, sur votre appareil. Une observation que vous avez rendue floue le reste pour tout le monde ; cette page se souvient seulement de laquelle de vos plantes il s'agissait.",
   "spot.obsBad": "Ce n'est pas un lien, un numéro ni un UUID que nous reconnaissons.",
   "spot.obsAlready": "Déjà reliée à cette plante.",
-  "spot.obsAdded": "Photo reliée.",
+  "spot.obsAdded": "Observation reliée.",
   "spot.obsPlainLink": "Également reliées :",
 
   "planted.button": "🌱 J'en ai planté une",

@@ -35,9 +35,9 @@ subtitle on the What's new page.
   has been in and roughly how big it should be by now, from that plant's own
   measured growth.
 - **Photos, without handing us your photos.** Paste a sighting you posted on
-  iNaturalist — its link, or the UUID the site copies for you — and it shows up
-  beside that plant. A sighting you obscured there stays obscured; only your
-  device knows which corner of the garden it was.
+  iNaturalist — its link, or the UUID the site copies for you — and every photo
+  on it appears beside that plant. One you obscured there stays obscured; only
+  your device knows the corner of the garden.
 - **"Seldom recorded around here."** On a plant's page, under the nearby
   photos, how often people have recorded it within 31 miles compared with every
   other plant — so you can put back the ones your area is short of.

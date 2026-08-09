@@ -247,15 +247,15 @@ export const en = {
   "spot.addButton": "Add to this spot",
   "spot.added": "{name} added to your log.",
   // Linking an iNaturalist sighting instead of storing photos here.
-  "spot.obsLink": "📷 Link a photo from iNaturalist",
+  "spot.obsLink": "📷 Link an iNaturalist sighting",
   "spot.obsLabel": "iNaturalist observation link, number or UUID",
   "spot.obsPlaceholder": "Link, number or UUID",
   "spot.obsAdd": "Link",
   "spot.obsHelp":
-    "Paste the link, or the UUID the observation's own page copies for you. Photos stay on iNaturalist; we keep only that reference, here on your device. An observation you've obscured stays obscured to everyone else — this page just remembers which plant of yours it was.",
+    "Paste the link, or the UUID the observation's own page copies for you; every photo on it appears here. They stay on iNaturalist — we keep only that reference, on your device. An observation you've obscured stays obscured to everyone else; this page just remembers which plant of yours it was.",
   "spot.obsBad": "That isn't a link, number or UUID we recognise.",
   "spot.obsAlready": "Already linked to this plant.",
-  "spot.obsAdded": "Photo linked.",
+  "spot.obsAdded": "Sighting linked.",
   "spot.obsPlainLink": "Also linked:",
 
   // The button on a plant's page that starts a log entry for it.

@@ -29,6 +29,7 @@ import { renderSources } from "./steps/sources";
 import { renderSettings } from "./steps/settings";
 import { renderAbout } from "./steps/about";
 import { initAppMenu, closeAppMenu } from "./components/app-menu";
+import { initPullToReload } from "./components/pull-to-reload";
 import { closeTermDialog } from "./components/term-dialog";
 import { applyDocumentLang, consumeLangParam, onLangChange, t } from "./lib/i18n";
 import type { TKey } from "./locales/en";
@@ -463,6 +464,10 @@ async function boot(): Promise<void> {
   // `stickyReady`) almost never actually waits.
   void loadSticky().catch(() => {});
   initAppMenu();
+  // Installed on an iOS Home Screen there is no reload button, so the app
+  // brings its own gesture. Everywhere else this returns immediately and
+  // listens to nothing.
+  initPullToReload();
   updateOnline();
   await route();
   // Register the hand-written service worker for offline + installability.

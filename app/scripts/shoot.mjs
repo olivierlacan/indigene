@@ -78,6 +78,16 @@
 //                         matching no rule is failed rather than fetched, so a
 //                         missing rule shows up as the feature reporting no
 //                         answer instead of quietly going to the network.
+//   --home-screen         pretend the app was opened from an iOS Home Screen
+//                         icon rather than in Safari — an iPhone user agent
+//                         plus `navigator.standalone`, which is what
+//                         lib/standalone.ts reads. The only way to photograph
+//                         the things that exist solely in an installed app: the
+//                         menu's Reload row, and the pull-down below
+//   --pull PX             drag the page down PX pixels from the top and hold,
+//                         without letting go, so the capture catches the
+//                         pull-to-reload pill mid-gesture. Needs --home-screen
+//                         (the gesture doesn't exist anywhere else)
 //   --seed-garden         put an example saved spot and planting log into the
 //                         device's storage before shooting. The Saved list and
 //                         a spot's own page only exist once somebody has one,
@@ -155,6 +165,8 @@ const geo = flag("--geo", "");
 const photos = flag("--photos", "");
 const seedGardenFlag = has("--seed-garden");
 const api = flag("--api", "");
+const homeScreen = has("--home-screen");
+const pull = Number(flag("--pull", "0"));
 const [url, out] = args;
 
 if (!url || !out || !(dpr > 0) || !(vw > 0) || !(vh > 0)) {
@@ -184,10 +196,28 @@ const context = await browser.newContext({
   locale,
   isMobile: true,
   hasTouch: true,
+  // An installed app is a *Safari* window without its chrome, so the shot has
+  // to be taken as Safari: the detection asks for iOS first (lib/standalone.ts)
+  // and Chromium's own user agent would fail it before anything else was read.
+  ...(homeScreen
+    ? {
+        userAgent:
+          "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1",
+      }
+    : {}),
   ...(geo
     ? { geolocation: { latitude: geoLat, longitude: geoLon }, permissions: ["geolocation"] }
     : {}),
 });
+// The other half of --home-screen: Safari's own "you are installed" flag. It is
+// read-only and browser-set, so it has to be defined before the app's first
+// line runs.
+if (homeScreen) {
+  await context.addInitScript(() => {
+    Object.defineProperty(navigator, "standalone", { value: true, configurable: true });
+  });
+}
+
 const page = await context.newPage();
 
 // The photo mirror. Same two hosts the service worker knows about
@@ -243,6 +273,7 @@ for (const sel of clicks) {
   await page.waitForTimeout(wait);
 }
 await page.waitForTimeout(wait);
+if (pull) await holdPull(page, pull, vw);
 if (unstick) {
   await page.addStyleTag({ content: "*{position:static !important}" });
   await page.waitForTimeout(200);
@@ -251,6 +282,39 @@ if (shootEl) await page.locator(shootEl).first().screenshot({ path: out });
 else await page.screenshot({ path: out, fullPage });
 await browser.close();
 console.log(`shot: ${url} → ${out} (${vw}x${vh} @${dpr}x, ${scheme}, ${locale}${picks ? ", ranked picks" : ""}${fullPage ? ", full-page" : ""})`);
+
+/**
+ * Drag the page down from the top and stop there, finger still down.
+ *
+ * Playwright's touchscreen can tap and nothing else, so the three events go in
+ * by hand. No `touchend`: letting go is what reloads the page, and the state
+ * worth photographing is the one just before that.
+ */
+async function holdPull(page, distance, width) {
+  await page.evaluate(
+    ([x, distance]) => {
+      const send = (type, y) => {
+        const touch = new Touch({ identifier: 1, target: document.body, clientX: x, clientY: y });
+        document.body.dispatchEvent(
+          new TouchEvent(type, {
+            bubbles: true,
+            cancelable: true,
+            touches: [touch],
+            targetTouches: [touch],
+            changedTouches: [touch],
+          })
+        );
+      };
+      const from = 180;
+      send("touchstart", from);
+      // In steps, because the first move is what decides the gesture's
+      // direction and the rest is what follows it.
+      for (let d = 10; d <= distance; d += 10) send("touchmove", from + d);
+    },
+    [Math.round(width / 2), distance]
+  );
+  await page.waitForTimeout(300);
+}
 
 /**
  * Walk the flow to the ranked plant list, which is the one page no URL can

@@ -34,6 +34,10 @@ subtitle on the What's new page.
 - **Reading a copy never overwrites anything.** Spots you already have are kept
   as they are, so bringing the same file in twice changes nothing — and a file
   we can't make sense of is turned away with a reason.
+- **Pull down to reload, on an iPhone Home Screen app.** Added to the iPhone
+  icon, Indigene opens without Safari's reload button. Now a drag down from the
+  top of any page refreshes it, and the menu carries a Reload row for hands that
+  can't drag.
 
 ### Changed
 

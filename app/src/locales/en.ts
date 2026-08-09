@@ -45,6 +45,13 @@ export const en = {
   "nav.savedLocations": "Saved locations",
   "nav.settings": "Settings",
   "nav.languageAndUnits": "Language & units",
+  // Only ever shown when the app was opened from a Home Screen icon, which has
+  // no reload button of its own (components/pull-to-reload.ts).
+  "nav.reload": "Reload",
+  // The three things the pull-down pill says, in the order you meet them.
+  "pullToReload.pull": "Pull to reload",
+  "pullToReload.release": "Release to reload",
+  "pullToReload.reloading": "Reloading…",
   "footer.text":
     "Open-source (MIT), built on public scientific data — {sources}, and how sure we are of each one. {about}. {releaseNotes}. {privacy}.",
   "footer.about": "About",

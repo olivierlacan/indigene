@@ -101,10 +101,47 @@ export const fr: Dict = {
   "settings.namesNote":
     "Les noms de plantes et d'animaux viennent de la liste nationale de référence de chaque pays, pas d'une traduction automatique — {link}.",
   "settings.namesNoteLink": "voir d'où vient chaque nom",
+  "settings.spotsTitle": "Vos lieux enregistrés",
+  "settings.spotsLede":
+    "Ils vivent dans ce navigateur seulement, et c'est pourquoi un téléphone et un ordinateur ne savent rien l'un de l'autre. Voici comment faire le pont vous-même.",
   "settings.countingTitle": "Compter les visites",
   "settings.countingLede":
     "La seule chose qu'Indigene dise au monde extérieur de votre passage — et l'interrupteur qui l'arrête.",
   "settings.done": "Terminé",
+
+  // ---------------------------------------------------------------------
+  // Emporter ses lieux avec soi : écrire une copie, en relire une.
+  // ---------------------------------------------------------------------
+  "backup.title": "Vos lieux, dans un fichier",
+  "backup.lede":
+    "Chaque lieu enregistré, et ce que vous avez planté dans chacun, écrits dans un seul fichier qui vous appartient. Ouvrez ce fichier dans un autre navigateur et les mêmes lieux y sont.",
+  "backup.statSpots.one": "{count} lieu enregistré",
+  "backup.statSpots.other": "{count} lieux enregistrés",
+  "backup.statPlantings.one": "{count} plantation notée",
+  "backup.statPlantings.other": "{count} plantations notées",
+  "backup.empty":
+    "Rien d'enregistré pour l'instant — il n'y a donc rien à copier. Un fichier venu d'un autre navigateur peut tout de même entrer.",
+  "backup.save": "Enregistrer une copie",
+  "backup.open": "Faire entrer une copie",
+  "backup.saved": "Enregistré, là où votre navigateur met ses téléchargements.",
+  "backup.privacy":
+    "Votre navigateur écrit le fichier directement sur cet appareil — il ne passe jamais par nous",
+  "backup.readTitle": "Copie lue.",
+  "backup.rowSpots": "Lieux ajoutés",
+  "backup.rowPlantings": "Plantations ajoutées",
+  "backup.rowSpotsKnown": "Lieux déjà présents",
+  "backup.rowSkipped": "Entrées illisibles",
+  "backup.nothingNew": "Tout ce que contenait cette copie était déjà là. Rien n'a changé.",
+  "backup.seeSaved": "Voir vos lieux enregistrés",
+  "backup.errUnreadable":
+    "Ce fichier ne peut pas être lu. Il a peut-être été modifié, ou enregistré à moitié.",
+  "backup.errNotOurs":
+    "Ce n'est pas une copie Indigene. Cherchez un fichier dont le nom commence par « indigene-spots ».",
+  "backup.errTooNew":
+    "Cette copie vient d'un Indigene plus récent que celui-ci. Rechargez la page pour le mettre à jour, puis réessayez.",
+  "backup.errEmpty": "Ce fichier ne contenait aucun lieu.",
+  "backup.errStore":
+    "Votre navigateur ne nous a pas laissés atteindre vos lieux enregistrés à l'instant. Réessayez dans un moment.",
 
   // ---------------------------------------------------------------------
   // Les trois choses retenues, en fiches de réglages.
@@ -1485,7 +1522,7 @@ export const fr: Dict = {
   "privacy.short2":
     "Pas de publicité, et rien vous concernant n'est vendu ni partagé. Nous comptons combien de fois chaque page est ouverte — c'est tout, et cela ne permet pas de vous distinguer de quelqu'un d'autre.",
   "privacy.short3":
-    "Vos lieux enregistrés restent sur votre appareil. Il n'y a aucun serveur Indigene où ils pourraient aller.",
+    "Vos lieux enregistrés restent sur votre appareil — et vous pouvez les emporter dans un fichier, quand vous voulez. Il n'y a aucun serveur Indigene où ils pourraient aller.",
   "privacy.short4":
     "Vous n'êtes jamais obligé de partager votre position exacte — un code postal ou une commune suffit partout.",
   "privacy.short5": "C'est un logiciel libre : n'importe qui peut lire exactement ce qu'il fait.",
@@ -1523,6 +1560,9 @@ export const fr: Dict = {
   "privacy.saveButton": "Enregistrer ce lieu",
   "privacy.saved":
     "Quand vous touchez {save}, il est conservé dans le stockage propre à votre navigateur, sur cet appareil uniquement. Il ne quitte jamais votre appareil, n'atteint aucun serveur (il n'y en a pas), et nous ne pouvons jamais le voir. Il est à vous : ouvrez ou supprimez un lieu enregistré quand vous voulez depuis le menu « Lieux », et effacer les données de ce site dans votre navigateur les efface définitivement.",
+  "privacy.savedPortable":
+    "À vous veut aussi dire à emporter. {settings} écrit chaque lieu et son journal de plantation dans un fichier simple qui vous appartient — lisible dans n'importe quel éditeur de texte, sans compte ni autorisation — et en relit un dans un autre navigateur. C'est ainsi que vous avez les mêmes lieux sur votre téléphone et sur votre ordinateur : c'est vous qui les portez, pas nous.",
+  "privacy.savedPortableLink": "Les réglages",
   "privacy.logTitle": "Votre journal de plantation, et pourquoi il ne contient pas de photos",
   "privacy.log1":
     "Ce que vous avez planté dans un lieu — les plantes, les dates, les quantités — est conservé avec ce lieu, sur cet appareil, et ne va nulle part ailleurs. Supprimer le lieu supprime son journal avec lui.",
@@ -1895,6 +1935,9 @@ export const fr: Dict = {
   "about.stance.yours": "Elle n'attend rien de vous.",
   "about.stance.yoursBody":
     "Pas de compte, pas d'inscription, pas de publicité, pas de statistiques, rien de vendu. Les lieux enregistrés restent dans votre navigateur, sur votre appareil, parce qu'il n'existe aucun serveur où les envoyer. Il n'y a rien à acheter, et aucun moyen pour un inconnu de vous contacter par ce biais.",
+  "about.stance.portable": "Elle ne retient pas vos données.",
+  "about.stance.portableBody":
+    "Les réglages écrivent chaque lieu enregistré et son journal de plantation dans un fichier simple qui vous appartient, et en relisent un dans un autre navigateur. Passer d'un téléphone à un ordinateur demande un fichier, pas un compte — et ce fichier est à vous : à ouvrir, à garder, ou à confier à tout autre outil.",
   "about.stance.offline": "Elle fonctionne là où sont les jardins.",
   "about.stance.offlineBody":
     "Conçue pour marcher hors ligne et pour s'installer sur l'écran d'accueil, parce que le fond d'un jardin est précisément l'endroit où le réseau disparaît. Tout sauf les consultations en direct continue de fonctionner sans aucune connexion.",

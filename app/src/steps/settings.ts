@@ -11,16 +11,18 @@
 // what's stored lives on this page, once, instead of being re-read in a garden
 // every visit.
 //
-// A third half, one card long, is neither: whether this browser is counted in
-// the site's visit total. It sits here because it is the other thing a reader
-// might want to switch off, and because the Privacy page has to be able to
-// point at it (`#/settings/counting`).
+// Then two more, one card each, that are neither. **Your saved spots** — the
+// file that carries them and their planting logs to another browser
+// (`components/backup-controls.ts`), which belongs on this page because it is
+// the only place that accounts for what's on the device. And **counting
+// visits**, the other thing a reader might want to switch off, which the
+// Privacy page has to be able to point at (`#/settings/counting`).
 //
 // Every card is addressable — `#/settings/language`, `#/settings/units`,
 // `#/settings/spot`, `#/settings/region`, `#/settings/goal`,
-// `#/settings/whatsnew`, `#/settings/counting` — so a link can land on the
-// thing it names instead of dropping the reader at the top of the page to hunt
-// for it.
+// `#/settings/whatsnew`, `#/settings/spots`, `#/settings/counting` — so a link
+// can land on the thing it names instead of dropping the reader at the top of
+// the page to hunt for it.
 import { el, clear } from "../ui";
 import { t } from "../lib/i18n";
 import { languageCard, unitsCard } from "../components/prefs-controls";
@@ -31,6 +33,7 @@ import {
   visitCountCard,
   whatsNewCard,
 } from "../components/memory-controls";
+import { spotsFileCard } from "../components/backup-controls";
 import { stickyReady } from "../lib/sticky";
 import { prefsReady } from "../state";
 
@@ -43,16 +46,18 @@ const CARD_IDS: Record<string, string> = {
   goal: "settings-goal",
   whatsnew: "settings-whatsnew",
   counting: "settings-counting",
+  spots: "settings-spots",
 };
 
 export async function renderSettings(main: HTMLElement, param?: string): Promise<void> {
-  // Four of the six cards report what's stored on this device, and the two
-  // background reads that fill them (the spot and the ranking weights) are
-  // separate. Wait for both: a settings screen that says "nothing remembered"
-  // or names the wrong goal because it drew a few milliseconds early is worse
-  // than a beat of delay. Both are bounded by the db module's open watchdog.
-  // The fourth card needs no wait at all — it reads localStorage, which answers
-  // at once (see `lib/visits.ts`).
+  // Most of the cards report what's stored on this device, and the background
+  // reads that fill them (the spot and the ranking weights) are separate. Wait
+  // for both: a settings screen that says "nothing remembered" or names the
+  // wrong goal because it drew a few milliseconds early is worse than a beat of
+  // delay. Both are bounded by the db module's open watchdog. What's-new needs
+  // no wait at all — it reads localStorage, which answers at once
+  // (`lib/visits.ts`) — and the spots card does its own read, for the same
+  // reason: a count of your spots must not be wrong even for a frame.
   await Promise.all([stickyReady(), prefsReady()]);
   clear(main);
   const cards: Record<string, HTMLElement> = {
@@ -63,6 +68,7 @@ export async function renderSettings(main: HTMLElement, param?: string): Promise
     goal: rankingGoalCard(),
     whatsnew: whatsNewCard(),
     counting: visitCountCard(),
+    spots: await spotsFileCard(),
   };
   for (const [key, card] of Object.entries(cards)) card.id = CARD_IDS[key];
 
@@ -78,6 +84,9 @@ export async function renderSettings(main: HTMLElement, param?: string): Promise
     cards.region,
     cards.goal,
     cards.whatsnew,
+    el("h3", { class: "settings-group" }, t("settings.spotsTitle")),
+    el("p", { class: "step-lede" }, t("settings.spotsLede")),
+    cards.spots,
     el("h3", { class: "settings-group" }, t("settings.countingTitle")),
     el("p", { class: "step-lede" }, t("settings.countingLede")),
     cards.counting,

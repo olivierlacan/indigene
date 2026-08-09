@@ -25,6 +25,24 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Added
+
+- **Your saved spots, as a file you keep.** Settings can now write every spot
+  and its planting log to one plain file, and read one back in another browser —
+  so a phone and a laptop can hold the same garden.
+  [Take a copy](https://indigene.app/#/settings/spots).
+- **Reading a copy never overwrites anything.** Spots you already have are kept
+  as they are, so bringing the same file in twice changes nothing — and a file
+  we can't make sense of is turned away with a reason.
+
+### Changed
+
+- **"It's yours" now includes taking it with you.**
+  [Privacy](https://indigene.app/privacy) and [About](https://indigene.app/about)
+  both say so, and Privacy links straight to the button that does it.
+- Internal: bundle re-measured at ~418 KB gzipped after the new module; the
+  figure updated across README, PROJECT_BRIEF and the ecoregion plan
+
 ## [0.26] - 2026-08-09
 
 **What you actually planted, and how it should be doing**

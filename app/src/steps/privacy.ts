@@ -93,6 +93,13 @@ export function renderPrivacy(main: HTMLElement, param?: string): void {
 
       el("h3", { id: "privacy-saved" }, t("privacy.savedTitle")),
       el("p", {}, tx("privacy.saved", { save: el("strong", {}, t("privacy.saveButton")) })),
+      // The other half of "it's yours": not just that we can't see it, but that
+      // you can walk off with it. Said here rather than only in Settings,
+      // because this is the page someone reads when deciding whether to trust
+      // a tool with a garden's worth of record.
+      el("p", {}, tx("privacy.savedPortable", {
+        settings: el("a", { href: "#/settings/spots" }, t("privacy.savedPortableLink")),
+      })),
 
       // The planting log is the one thing here that holds a *history* of a
       // place rather than a reading of it, and the one place someone might

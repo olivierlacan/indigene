@@ -37,6 +37,7 @@ const STANCES: { title: TKey; body: TKey }[] = [
   { title: "about.stance.uncertain", body: "about.stance.uncertainBody" },
   { title: "about.stance.sourced", body: "about.stance.sourcedBody" },
   { title: "about.stance.yours", body: "about.stance.yoursBody" },
+  { title: "about.stance.portable", body: "about.stance.portableBody" },
   { title: "about.stance.offline", body: "about.stance.offlineBody" },
 ];
 

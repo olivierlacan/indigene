@@ -100,9 +100,39 @@ export const en = {
   "settings.units.imperialSub": "Feet, inches, inches of rain, °F.",
   "settings.namesNote": "Plant and animal names come from each country's own national list, not from machine translation — {link}.",
   "settings.namesNoteLink": "see where each name comes from",
+  "settings.spotsTitle": "Your saved spots",
+  "settings.spotsLede": "They live in this browser only, which is why a phone and a laptop don't know about each other. Here's how to bridge that yourself.",
   "settings.countingTitle": "Counting visits",
   "settings.countingLede": "The one thing Indigene tells the outside world about you being here — and the switch that stops it.",
   "settings.done": "Done",
+
+  // ---------------------------------------------------------------------
+  // Taking your spots with you (`components/backup-controls.ts`). Two moves —
+  // write a copy out, read a copy in — and an honest account of what each did.
+  // ---------------------------------------------------------------------
+  "backup.title": "Your spots, as a file",
+  "backup.lede": "Every spot you've saved, and what you've planted in each, written to one file you keep. Open that file in another browser and the same spots are there.",
+  "backup.statSpots.one": "{count} saved spot",
+  "backup.statSpots.other": "{count} saved spots",
+  "backup.statPlantings.one": "{count} planting logged",
+  "backup.statPlantings.other": "{count} plantings logged",
+  "backup.empty": "Nothing saved yet — so there's nothing to copy out. A file from another browser can still come in.",
+  "backup.save": "Save a copy",
+  "backup.open": "Bring a copy in",
+  "backup.saved": "Saved, wherever your browser puts downloads.",
+  "backup.privacy": "Your browser writes the file straight to this device — it never passes through us",
+  "backup.readTitle": "Read that copy.",
+  "backup.rowSpots": "Spots added",
+  "backup.rowPlantings": "Plantings added",
+  "backup.rowSpotsKnown": "Spots already here",
+  "backup.rowSkipped": "Entries we couldn't read",
+  "backup.nothingNew": "Everything in that copy was already here. Nothing changed.",
+  "backup.seeSaved": "See your saved spots",
+  "backup.errUnreadable": "That file can't be read. It may have been edited, or saved only halfway.",
+  "backup.errNotOurs": "That isn't an Indigene copy. Look for a file whose name starts with “indigene-spots”.",
+  "backup.errTooNew": "That copy was made by a newer Indigene than this one. Reload this page to update, then try again.",
+  "backup.errEmpty": "There were no spots in that file.",
+  "backup.errStore": "Your browser wouldn't let us reach your saved spots just now. Try again in a moment.",
 
   // ---------------------------------------------------------------------
   // The three remembered things, as Settings cards. Written for someone who
@@ -1469,7 +1499,7 @@ export const en = {
   "privacy.short1": "No account, no sign-up, no password — nothing that identifies you.",
   "privacy.short2":
     "No ads, and nothing about you is sold or shared. We count how many times each page is opened — that's all, and it can't tell you apart from anyone else.",
-  "privacy.short3": "Your saved spots stay on your device. There's no Indigene server for them to go to.",
+  "privacy.short3": "Your saved spots stay on your device — and you can take them with you as a file, whenever you like. There's no Indigene server for them to go to.",
   "privacy.short4": "You never have to share your exact location — a postal code or town works everywhere it's used.",
   "privacy.short5": "It's open source: anyone can read exactly what it does.",
   "privacy.locationTitle": "Your location: only when you ask",
@@ -1504,6 +1534,9 @@ export const en = {
   "privacy.saveButton": "Save this spot",
   "privacy.saved":
     "When you tap {save}, it's kept in your browser's own storage, on that device only. It never leaves your device, never reaches a server (there is none), and we can never see it. It's yours: open or delete a saved spot anytime from the Saved menu, and clearing your browser's data for this site erases them for good.",
+  "privacy.savedPortable":
+    "Yours also means yours to take. {settings} writes every spot and its planting log to a plain file you keep — readable in any text editor, no account and no permission needed — and reads one back in another browser. That's how you get the same spots on your phone and your laptop: you carry them, not us.",
+  "privacy.savedPortableLink": "Settings",
   "privacy.logTitle": "Your planting log, and why it has no photos",
   "privacy.log1":
     "What you've planted in a spot — the plants, the dates, how many — is kept beside that spot, on this device, and goes nowhere else. Deleting the spot deletes its log with it.",
@@ -1880,6 +1913,9 @@ export const en = {
   "about.stance.yours": "It doesn't want anything from you.",
   "about.stance.yoursBody":
     "No account, no sign-up, no advertising, no analytics, nothing sold. Saved spots stay in your browser on your device, because there is no server for them to go to. There is nothing to buy, and no way for a stranger to contact you through it.",
+  "about.stance.portable": "It won't hold your data in.",
+  "about.stance.portableBody":
+    "Settings writes every saved spot and its planting log to a plain file you keep, and reads one back in another browser. Moving from a phone to a laptop takes a file, not an account — and the file is yours to open, keep or hand to something else entirely.",
   "about.stance.offline": "It works where gardens are.",
   "about.stance.offlineBody":
     "Offline-first and installable, because the far end of a garden is exactly where a signal disappears. Everything but the live lookups keeps working with no connection at all.",

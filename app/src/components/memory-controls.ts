@@ -28,7 +28,8 @@ import { REGIONS } from "../lib/plants";
 import { regionName, regionReference } from "../lib/names";
 import { zoneChip } from "./zone-chip";
 import { spotMap } from "./spot-map";
-import { moisturePlain, sunPlain } from "../lib/plain";
+import { townFor } from "../lib/places";
+import { latPlain, lonPlain, moisturePlain, sunPlain } from "../lib/plain";
 import { DEFAULT_WEIGHTS } from "../lib/ranking";
 import { matchingPreset, priorityName } from "../lib/priorities";
 import { privacyNote } from "./privacy-link";
@@ -66,7 +67,7 @@ export function lastSpotCard(): HTMLElement {
         el("dt", {}, t("memory.spotWhere")),
         el("dd", { class: "memory-where" }, [
           ...(spot.lat != null && spot.lon != null ? [spotMap(spot.lat, spot.lon)] : []),
-          el("span", {}, whereWords(spot)),
+          el("div", {}, whereWords(spot)),
         ]),
         ...row(t("memory.spotSun"), spot.sun ? sunPlain(spot.sun.hours) : t("memory.unanswered")),
         ...row(t("memory.spotSoil"), spot.moisture ? moisturePlain(spot.moisture) : t("memory.unanswered")),
@@ -95,22 +96,29 @@ export function lastSpotCard(): HTMLElement {
   }
 }
 
-/** Where the remembered spot is, said the way it was chosen. */
-function whereWords(spot: StickySpot): string {
+/**
+ * Where the remembered spot is, said the way it was chosen.
+ *
+ * The town first when this device has been told one (never looked up here —
+ * see `lib/places.ts`), then the coordinates, each labelled with what it is.
+ * The numbers used to go through the number formatter, which rounds to whole
+ * degrees by default: a garden outside Philadelphia read "40, -75", a point a
+ * hundred kilometres wide.
+ */
+function whereWords(spot: StickySpot): (string | Node)[] {
   if (spot.regionId) {
     const region = REGIONS.find((r) => r.meta.id === spot.regionId);
-    return region ? t("memory.spotWhereRegion", { region: regionName(region.meta) }) : t("memory.unanswered");
+    return [region ? t("memory.spotWhereRegion", { region: regionName(region.meta) }) : t("memory.unanswered")];
   }
-  if (spot.lat == null || spot.lon == null) return t("memory.unanswered");
-  // Four decimals, and not through the number formatter: it rounds to whole
-  // degrees by default, which had this card reporting a spot in Pennsylvania
-  // as "40, -75" — a point a hundred kilometres wide. Coordinates also keep
-  // the decimal *point* in every language, as the Saved list writes them: a
-  // French "40,038, -75,356" is four numbers separated by commas.
-  return t("memory.spotWhereCoords", {
-    lat: spot.lat.toFixed(4),
-    lon: spot.lon.toFixed(4),
-  });
+  if (spot.lat == null || spot.lon == null) return [t("memory.unanswered")];
+  const town = townFor(spot.lat, spot.lon);
+  return [
+    ...(town ? [el("div", { class: "spot-town" }, t("coord.near", { place: town }))] : []),
+    el("div", { class: "coords" }, [
+      el("div", {}, latPlain(spot.lat)),
+      el("div", {}, lonPlain(spot.lon)),
+    ]),
+  ];
 }
 
 /**

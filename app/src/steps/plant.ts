@@ -15,7 +15,7 @@ import { renderPlantPhotos, PHOTOS_ROUTE, photosHref } from "./plant-photos";
 import type { PlantEntry, Suitability } from "../lib/explore";
 import { wildlifeForPlant, relianceOf } from "../lib/wildlife";
 import { lookalikesForPlant } from "../lib/lookalikes";
-import { supportLabel } from "../lib/plain";
+import { latPlain, lonPlain, supportLabel } from "../lib/plain";
 import { supportIcon } from "../components/support-icon";
 import { SCORE_KEYS, scoreLabel, bloomSentence, confidencePlain, growthPlain, moistureWord, propagationMethod, sunLabel, PROPAGATION_SOURCE_URL, SOURCES_ROUTE } from "../lib/plain";
 import { techniqueFor, techniqueHref } from "../lib/planting";
@@ -505,7 +505,9 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
 
     function renderStatus(): void {
       if (lat == null || lon == null) return;
-      const where = spotName ?? `${lat.toFixed(5)}, ${lon.toFixed(5)}`;
+      // Named when the town lookup landed; otherwise the numbers, each said as
+      // what it is — "-75.35570" on its own is a spot only a machine can place.
+      const where = spotName ?? `${latPlain(lat)}, ${lonPlain(lon)}`;
       status.textContent = lookingUp ? t("plant.checkingSpot", { where }) : where;
     }
 

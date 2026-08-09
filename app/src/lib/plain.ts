@@ -350,3 +350,30 @@ function fracWord(f: number): string {
 export function confidencePlain(c: "high" | "medium" | "low"): string {
   return t(`confidence.${c}` as const);
 }
+
+/**
+ * A latitude and a longitude, each said as what it is.
+ *
+ * Two bare numbers with a minus sign in front of one of them is a notation, not
+ * a sentence: nobody who hasn't met it before can tell which figure is which,
+ * and "−75" doesn't announce itself as "three-quarters of the way west". So the
+ * word comes with the number, and the direction is a letter rather than a sign.
+ *
+ * Kept to the four decimals a spot is actually known to (about 10 m — finer
+ * than the soil grid, the climate normals or the ecoregion behind it), and the
+ * decimal *point* in every language: a French "40,0379, −75,3557" would be four
+ * numbers separated by commas.
+ */
+export function latPlain(lat: number): string {
+  return t("coord.lat", {
+    deg: Math.abs(lat).toFixed(4),
+    hemi: t(lat < 0 ? "coord.south" : "coord.north"),
+  });
+}
+
+export function lonPlain(lon: number): string {
+  return t("coord.lon", {
+    deg: Math.abs(lon).toFixed(4),
+    hemi: t(lon < 0 ? "coord.west" : "coord.east"),
+  });
+}

@@ -150,7 +150,6 @@ export const en = {
   "memory.spotLede": "Where you were the last time, so you don't start from scratch. The sun and soil answers belong to this spot only — somewhere new asks again, because the answers really are different there.",
   "memory.spotEmpty": "Nothing yet. Once you've found a spot, it'll be waiting here — and the next visit starts with it instead of a blank map.",
   "memory.spotWhere": "Spot",
-  "memory.spotWhereCoords": "{lat}, {lon}",
   "memory.spotWhereRegion": "{region} (picked by hand, no map point)",
   "memory.spotSun": "Sun",
   "memory.spotSoil": "How wet it stays",
@@ -378,6 +377,18 @@ export const en = {
   "map.spotLabel": "Map of the streets around this spot",
   "map.spotLabelNamed": "Map of the streets around {label}",
   "map.osmShort": "© OSM",
+
+  // A coordinate, said as words rather than notation. The hemisphere letter
+  // replaces the minus sign, which is the part nobody can read.
+  "coord.lat": "Latitude {deg}° {hemi}",
+  "coord.lon": "Longitude {deg}° {hemi}",
+  "coord.north": "N",
+  "coord.south": "S",
+  "coord.east": "E",
+  "coord.west": "W",
+  // The nearest town, when this device has been told one (`lib/places.ts`).
+  // "near", because the name is true of an area, not of the pin.
+  "coord.near": "near {place}",
   "location.accuracy": " · GPS accuracy ±{m} m",
   "location.nudged": " · nudged {m} m",
   "location.noGeolocation": "This device can't share location — try the town search instead.",

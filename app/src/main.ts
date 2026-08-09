@@ -1,6 +1,7 @@
 import "./styles.css";
 import { knownRegion, knownSpot, loadPrefs } from "./state";
 import { loadSticky, stickyReady } from "./lib/sticky";
+import { loadTowns } from "./lib/places";
 import { REGIONS, loadPlants, regionForSite } from "./lib/plants";
 import { noteVisit } from "./lib/visits";
 import { startAnalytics, trackPageview } from "./lib/analytics";
@@ -464,6 +465,9 @@ async function boot(): Promise<void> {
   // screen whose opening state depends on it (the location step, which awaits
   // `stickyReady`) almost never actually waits.
   void loadSticky().catch(() => {});
+  // And for the town names those spots were saved beside — read here so the
+  // Saved list and the Settings card can print one without a lookup.
+  void loadTowns().catch(() => {});
   initAppMenu();
   // Installed on an iOS Home Screen there is no reload button, so the app
   // brings its own gesture. Everywhere else this returns immediately and

@@ -1383,6 +1383,17 @@ input[type="range"] {
   font-size: 0.95rem;
   color: var(--ink-soft);
 }
+/* "near Radnor, Pennsylvania" — the part of a spot's address a person can
+   actually picture, so it reads ahead of the numbers under it. */
+.spot-town {
+  font-size: 0.95rem;
+}
+/* Two labelled lines in a column beside the map, where 0.95rem would run past
+   the edge of a 360 px phone at "Longitude 75.3557° W". */
+.saved-item .coords,
+.memory-where .coords {
+  font-size: 0.85rem;
+}
 /* OSM attribution, pinned to the map's corner (required by the tile policy).
    Fixed light colors: it sits on map imagery, not on the app theme. */
 .map-attrib {

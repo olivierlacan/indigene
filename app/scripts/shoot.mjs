@@ -502,6 +502,20 @@ async function seedGarden(page) {
       });
     await put("spots", spot);
     for (const p of plantings) await put("plantings", p);
+    // The town this device was told while the spot was being found, keyed the
+    // way lib/places.ts keys it (one name per ~5 km cell). Without it the pages
+    // show only coordinates — which is what they do for anyone who saved a spot
+    // offline, but not what a screenshot of the feature should show.
+    await new Promise((resolve, reject) => {
+      if (!db.objectStoreNames.contains("kv")) return resolve();
+      const cell = (v) => (Math.round(v / 0.05) * 0.05).toFixed(2);
+      const req = db.transaction("kv", "readwrite").objectStore("kv").put(
+        { [`${cell(spot.lat)},${cell(spot.lon)}`]: "Radnor, Pennsylvania" },
+        "towns"
+      );
+      req.onsuccess = () => resolve();
+      req.onerror = () => reject(req.error);
+    });
     // The same ground as the last spot the device remembers, so Settings'
     // "Your last spot" card has something to show. A walk through the app can
     // only leave a *region* there without a GPS fix, and a card whose whole

@@ -68,6 +68,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { openLoader } from "./_load-ts.mjs";
 import { requireProxyAwareFetch } from "./_net.mjs";
+import { withSeeds } from "./_regions.mjs";
 
 requireProxyAwareFetch("candidates");
 
@@ -107,7 +108,8 @@ async function getJson(url, tries = 3) {
 
 // ---------------------------------------------------------------- the region
 const loader = await openLoader();
-const { REGIONS } = await loader.load("/src/data/regions.ts");
+const { REGIONS: REGIONS_RAW } = await loader.load("/src/data/regions.ts");
+const REGIONS = await withSeeds(REGIONS_RAW);
 await loader.close();
 
 if (!REGION_ID) {

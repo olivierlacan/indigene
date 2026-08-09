@@ -81,9 +81,26 @@ export interface RegionMeta {
    * The one plant this region leads with when someone is browsing plants rather
    * than checking a spot — its showcase pick on the explore page. An editorial
    * choice (charismatic, plantable, tells the region's story), not a computed
-   * one. Optional: without it the region's highest-host keystone plant stands in.
+   * one.
+   *
+   * Required, and that is the point: a region card names its star without
+   * loading the region's plant list, so there is nowhere to compute a stand-in
+   * from. Declaring the pick costs one line; computing it would cost the reader
+   * a download of every region on the page.
    */
-  featuredPlantId?: string;
+  featuredPlantId: string;
+
+  /**
+   * How many caterpillar species the pick above feeds, here.
+   *
+   * The same number as the plant's own row, repeated because the explore grid
+   * prints it for nine regions at once and must not fetch nine plant lists to
+   * do it. It is a *regional* figure — a birch feeds 327 species in the Alps
+   * and 306 on the Atlantic coast — so it can't be read off a per-taxon index
+   * the way the plant and keystone counts are. `npm run registry:check` fails
+   * if this and the plant list ever disagree.
+   */
+  featuredHostLepCount: number;
 
   /**
    * The real ecoregions this seed list represents, tagged with the provider that
@@ -102,7 +119,16 @@ export interface RegionMeta {
   ecoregion?: { provider: EcoregionProvider; codes: string[] };
 }
 
+/**
+ * A region: its description, and the way to its plants.
+ *
+ * `meta` is here, in the app's first download — it's what decides which region
+ * a spot falls in, and what names a region anywhere it's mentioned. The plant
+ * list is not: `load()` fetches it, and each region's list is a file of its own,
+ * so a reader downloads the one region they're gardening in rather than all
+ * nine. See `regions.ts`, and `loadPlants` in `lib/plants.ts` for the caching.
+ */
 export interface RegionDef {
   meta: RegionMeta;
-  seed: RawPlant[];
+  load: () => Promise<RawPlant[]>;
 }

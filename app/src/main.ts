@@ -1,6 +1,7 @@
 import "./styles.css";
-import { loadPrefs } from "./state";
-import { loadSticky } from "./lib/sticky";
+import { knownRegion, knownSpot, loadPrefs } from "./state";
+import { loadSticky, stickyReady } from "./lib/sticky";
+import { REGIONS, loadPlants, regionForSite } from "./lib/plants";
 import { noteVisit } from "./lib/visits";
 import { startAnalytics, trackPageview } from "./lib/analytics";
 import { renderWelcome } from "./steps/welcome";
@@ -476,6 +477,30 @@ async function boot(): Promise<void> {
       .register(`${import.meta.env.BASE_URL}sw.js`)
       .catch(() => {});
   }
+  void warmOwnRegion();
+}
+
+/**
+ * Fetch this device's own region's plant list, quietly, once the app is up.
+ *
+ * Each region's plants are a separate file now, fetched when a page needs them
+ * (see `data/regions.ts`) — which is the whole saving, and which would also
+ * mean that a reader who installed the app, went to the garden and lost signal
+ * had the app but not their plants. So: after the first route has painted and
+ * the service worker is registered, the one region this device actually
+ * gardens in is fetched in the background and cached with everything else.
+ *
+ * Only ever that one. Nothing is fetched for a device that has never given a
+ * spot, and nothing waits on this — it fails silently, because the pages that
+ * need the list ask for it themselves anyway.
+ */
+async function warmOwnRegion(): Promise<void> {
+  await stickyReady();
+  const spot = knownSpot();
+  const region = spot
+    ? regionForSite(spot.lat, spot.lon)
+    : REGIONS.find((r) => r.meta.id === knownRegion());
+  if (region) await loadPlants(region).catch(() => {});
 }
 
 boot();

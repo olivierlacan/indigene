@@ -173,14 +173,17 @@ export interface PlantUsing {
  * Built once per method and cached: the technique page asks on every render,
  * and the answer walks every region's whole roster.
  */
+// One of the few places that really does want the whole catalog: "which plants
+// can I take cuttings from?" is a question about all of them. So this fetches
+// every region's list — on a page the reader chose to open, and once per visit.
 const usedByCache = new Map<PropagationMethod, PlantUsing[]>();
-export function plantsUsing(method: PropagationMethod): PlantUsing[] {
+export async function plantsUsing(method: PropagationMethod): Promise<PlantUsing[]> {
   const hit = usedByCache.get(method);
   if (hit) return hit;
   const seen = new Set<string>();
   const out: PlantUsing[] = [];
   for (const region of REGIONS) {
-    for (const plant of loadPlants(region)) {
+    for (const plant of await loadPlants(region)) {
       if (!plant.propagation.methods.includes(method) || seen.has(plant.id)) continue;
       seen.add(plant.id);
       out.push({ plant, region });

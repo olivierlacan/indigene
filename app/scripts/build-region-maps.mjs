@@ -42,6 +42,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { openLoader } from "./_load-ts.mjs";
 import { requireProxyAwareFetch } from "./_net.mjs";
+import { withSeeds } from "./_regions.mjs";
 
 requireProxyAwareFetch("maps:build");
 
@@ -617,7 +618,8 @@ ${rows.join("\n")}
 const only = process.argv.slice(2).filter((a) => !a.startsWith("-"));
 const loader = await openLoader();
 try {
-  const { REGIONS } = await loader.load("/src/data/regions.ts");
+  const { REGIONS: REGIONS_RAW } = await loader.load("/src/data/regions.ts");
+  const REGIONS = await withSeeds(REGIONS_RAW);
   mkdirSync(OUT_DIR, { recursive: true });
   const wanted = REGIONS.filter((r) => !only.length || only.includes(r.meta.id));
   if (!wanted.length) throw new Error(`no region matched ${only.join(", ")}`);

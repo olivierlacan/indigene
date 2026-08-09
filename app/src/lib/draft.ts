@@ -46,8 +46,8 @@ export function rankDraft(plants: Plant[]): Ranked[] {
   });
 }
 
-/** The roster to rank, for a region. */
-export function draftPlants(region: RegionDef): Plant[] {
+/** The roster to rank, for a region — fetched the first time (see `loadPlants`). */
+export function draftPlants(region: RegionDef): Promise<Plant[]> {
   return loadPlants(region);
 }
 

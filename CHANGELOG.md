@@ -54,8 +54,17 @@ subtitle on the What's new page.
 - **The count no longer comes with a gallery attached.** It used to take the
   same tap, and the same big download, as the photographs. Now the number
   arrives on its own, and the photos still wait until you ask for them.
-- Internal: bundle re-measured at ~422 KB gzipped after the new modules; the
-  figure updated across README, PROJECT_BRIEF and the ecoregion plan
+- **The app downloads about a third less to get started.** It used to carry the
+  plant lists for all nine regions before showing you anything. Now it fetches
+  the one region you're gardening in, and keeps it for offline.
+- Internal: region seeds are per-region chunks (`data/regions.ts` reaches them
+  through `import()`); the shell drops 422 → 277 KB gzipped, plus 9–36 KB for a
+  reader's own region. Figures updated across README, PROJECT_BRIEF and the
+  ecoregion plan.
+- Internal: pages that only *describe* regions now read the registry instead of
+  the lists — explore, browse, the plants index and the wildlife index fetch no
+  region at all, and a plant page fetches the one or two that carry it.
+  `npm run chunks:check` holds each page to that budget.
 - Internal: per-region counts are baked by `npm run region-counts` (scheduled
   monthly, opens a PR, no API key — iNaturalist answers anonymous GETs) into
   `data/region-counts.ts`, ~8 KB. Kept out of the deploy build so it stays

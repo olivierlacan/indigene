@@ -47,6 +47,7 @@ import { openLoader } from "./_load-ts.mjs";
 import { scoreImages } from "./_photo-quality.mjs";
 import { fit, suggest, PHENOLOGY, PHENOLOGY_LABEL } from "./_photo-angle.mjs";
 import { requireProxyAwareFetch } from "./_net.mjs";
+import { withSeeds } from "./_regions.mjs";
 
 requireProxyAwareFetch("hero:harvest");
 
@@ -94,7 +95,8 @@ if (!["plants", "wildlife", "both"].includes(onlyKind)) {
 
 const loader = await openLoader();
 const { REGISTRY } = await loader.load("/src/data/registry.ts");
-const { REGIONS } = await loader.load("/src/data/regions.ts");
+const { REGIONS: REGIONS_RAW } = await loader.load("/src/data/regions.ts");
+const REGIONS = await withSeeds(REGIONS_RAW);
 const { WILDLIFE } = await loader.load("/src/data/wildlife.ts");
 const { regionsForWildlife } = await loader.load("/src/lib/wildlife.ts");
 // The app's own "which taxon does this name mean" rules, imported rather than

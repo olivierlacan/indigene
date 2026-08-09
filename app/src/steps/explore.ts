@@ -9,9 +9,10 @@
 // tap away.
 import { el, clear } from "../ui";
 import { navigate } from "../state";
-import { REGIONS, loadPlants } from "../lib/plants";
+import { REGIONS } from "../lib/plants";
 import type { RegionDef } from "../lib/plants";
-import { featuredPlant } from "../lib/explore";
+import { featuredSummary } from "../lib/explore";
+import { keystoneCountForRegion, plantCountForRegion, totalPlantRows } from "../lib/registry";
 import { wildlifeCountForRegion } from "../lib/wildlife";
 import { plantThumb } from "../components/plant-thumb";
 import { keystoneIcon } from "../components/keystone-icon";
@@ -23,7 +24,7 @@ export function renderExplore(main: HTMLElement): void {
   clear(main);
   document.title = t("explore.docTitle");
 
-  const totalPlants = REGIONS.reduce((n, r) => n + loadPlants(r).length, 0);
+  const totalPlants = totalPlantRows();
 
   main.append(
     el("h2", { class: "step-title" }, t("explore.title")),
@@ -59,13 +60,14 @@ export function renderExplore(main: HTMLElement): void {
  * link to its profile; those two are the card's only destinations.
  */
 function regionCard(region: RegionDef): HTMLElement {
-  const plants = loadPlants(region);
-  const p = featuredPlant(region);
+  // Every figure here comes from the registry rather than the region's plant
+  // list, so a grid of nine cards costs no downloads (see `lib/registry.ts`).
+  const p = featuredSummary(region);
   const name = regionName(region.meta);
-  const count = plants.length;
-  const keystones = plants.filter((k) => k.keystone).length;
+  const count = plantCountForRegion(region.meta.id);
+  const keystones = keystoneCountForRegion(region.meta.id);
   const creatures = wildlifeCountForRegion(region.meta.id);
-  const star = nameLines(p);
+  const star = p ? nameLines(p) : null;
 
   return el("article", { class: "region-card" }, [
     el("h3", { class: "region-card-name" }, [
@@ -78,28 +80,32 @@ function regionCard(region: RegionDef): HTMLElement {
     // chosen. It still rides along on the region page, where a reader who's
     // already picked their place is asking what grows there.
     el("p", { class: "region-card-ref" }, regionReference(region.meta)),
-    el("a", { class: "region-card-star", href: `#/plants/${p.id}` }, [
-      plantThumb(p.id, p.form, { regionId: region.meta.id }),
-      el("span", { class: "region-card-star-text" }, [
-        el("span", { class: "region-card-kicker" }, t("explore.starring")),
-        el("span", { class: "region-card-plant" }, [
-          star.title,
-          p.keystone
-            ? el("span", {
-                title: t("explore.keystoneTitle"),
-                role: "img",
-                "aria-label": t("explore.keystoneLabel"),
-                style: "margin-left:0.3rem;color:var(--brand)",
-              }, [keystoneIcon(13)])
-            : null,
-        ]),
-        el("span", { class: "plant-latin" }, star.sub),
-        el("span", { class: "region-card-host" }, [
-          el("span", { "aria-hidden": "true" }, "🐛 "),
-          t("explore.caterpillarSpecies", { n: fmtNumber(p.hostLepCount) }),
-        ]),
-      ]),
-    ]),
+    // No star if the registry doesn't know the pick — the rest of the card
+    // is still true, and `npm run registry:check` fails on that case anyway.
+    p && star
+      ? el("a", { class: "region-card-star", href: `#/plants/${p.id}` }, [
+          plantThumb(p.id, p.form, { regionId: region.meta.id }),
+          el("span", { class: "region-card-star-text" }, [
+            el("span", { class: "region-card-kicker" }, t("explore.starring")),
+            el("span", { class: "region-card-plant" }, [
+              star.title,
+              p.keystone
+                ? el("span", {
+                    title: t("explore.keystoneTitle"),
+                    role: "img",
+                    "aria-label": t("explore.keystoneLabel"),
+                    style: "margin-left:0.3rem;color:var(--brand)",
+                  }, [keystoneIcon(13)])
+                : null,
+            ]),
+            el("span", { class: "plant-latin" }, star.sub),
+            el("span", { class: "region-card-host" }, [
+              el("span", { "aria-hidden": "true" }, "🐛 "),
+              t("explore.caterpillarSpecies", { n: fmtNumber(region.meta.featuredHostLepCount) }),
+            ]),
+          ]),
+        ])
+      : null,
     // What the roster adds up to, as figures rather than adjectives — and the
     // plant count among them, which is why the card needs no "all N natives"
     // link. Nothing here is a new claim: it's the same data the region page's

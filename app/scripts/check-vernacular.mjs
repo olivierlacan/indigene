@@ -35,6 +35,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { openLoader } from "./_load-ts.mjs";
 import { requireProxyAwareFetch } from "./_net.mjs";
+import { withSeeds } from "./_regions.mjs";
 
 requireProxyAwareFetch("names:check");
 
@@ -68,7 +69,8 @@ const loader = await openLoader();
 
 /** The table under test, plus every taxon the app can display. */
 const table = (await loader.load(`/src/locales/taxa.${lang}.ts`))[`TAXA_${lang.toUpperCase()}`];
-const { REGIONS } = await loader.load("/src/data/regions.ts");
+const { REGIONS: REGIONS_RAW } = await loader.load("/src/data/regions.ts");
+const REGIONS = await withSeeds(REGIONS_RAW);
 const { WILDLIFE } = await loader.load("/src/data/wildlife.ts");
 const { LOOKALIKES } = await loader.load("/src/data/lookalikes.ts");
 

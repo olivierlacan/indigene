@@ -48,6 +48,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { openLoader } from "./_load-ts.mjs";
 import { requireProxyAwareFetch } from "./_net.mjs";
+import { withSeeds } from "./_regions.mjs";
 
 requireProxyAwareFetch("lookalikes:check");
 
@@ -75,7 +76,8 @@ const asJson = args.includes("--json");
 
 const loader = await openLoader();
 const { LOOKALIKES, CONFUSIONS } = await loader.load("/src/data/lookalikes.ts");
-const { REGIONS } = await loader.load("/src/data/regions.ts");
+const { REGIONS: REGIONS_RAW } = await loader.load("/src/data/regions.ts");
+const REGIONS = await withSeeds(REGIONS_RAW);
 
 const lookalikeById = new Map(LOOKALIKES.map((l) => [l.id, l]));
 const plantsByRegion = new Map(REGIONS.map((r) => [r.meta.id, r.seed]));

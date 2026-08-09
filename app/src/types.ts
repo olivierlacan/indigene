@@ -399,6 +399,10 @@ export interface RegistryEntry {
   family: string;
   form: PlantForm;
   rank: TaxonRank;
+  /** True when this is a keystone taxon — one of the few that carry most of an
+   *  area's caterpillars. Mirrored from the plant lists so a page can say so
+   *  without downloading one (see `scripts/build-registry.mjs`). */
+  keystone: boolean;
   /** Cross-reference identifiers by scheme, each a bare accession. Always carries
    *  `indigene` (our catalog id); external schemes are filled by reconciliation. */
   identifiers: Partial<Record<IdScheme, string>>;

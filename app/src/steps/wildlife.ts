@@ -456,7 +456,7 @@ function regionPills(regions: RegionDef[]): HTMLElement {
 }
 
 // ---- #/wildlife/<id> — one animal ----
-export function renderWildlife(main: HTMLElement, param?: string): void {
+export async function renderWildlife(main: HTMLElement, param?: string): Promise<void> {
   clear(main);
 
   // "in/<region>[/<group>]" is an index, not an animal — and it's checked on
@@ -492,7 +492,7 @@ export function renderWildlife(main: HTMLElement, param?: string): void {
   document.title = t("wildlife.docTitle", { animal: commonName(w) });
   if (wildlifeUntranslated([w])) reportUntranslated(t("wip.wildlife"));
 
-  const supports = plantsForWildlife(w.id);
+  const supports = await plantsForWildlife(w.id);
   const label = wildlifeKindLabel(w.kind);
   const names = nameLines(w);
 

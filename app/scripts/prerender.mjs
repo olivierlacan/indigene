@@ -250,7 +250,8 @@ async function collectPages(load) {
   // `#/search` is deliberately absent: it's the plants index's old address, and
   // main.ts folds it into `#/plants`. Giving it a file would give a retired
   // address a canonical page of its own; the 404.html bounce still redirects it.
-  const totalPlants = REGIONS.reduce((n, r) => n + loadPlants(r).length, 0);
+  const perRegion = await Promise.all(REGIONS.map((r) => loadPlants(r)));
+  const totalPlants = perRegion.reduce((n, list) => n + list.length, 0);
   add("plants", en["plants.docTitle"], en["plants.lede"]);
   add("regions", en["explore.docTitle"], fill(en["explore.lede"], {
     plants: totalPlants,
@@ -258,7 +259,7 @@ async function collectPages(load) {
   }));
   add("browse", en["browse.docTitle"], en["browse.lede"]);
   add("wildlife", en["wildlife.indexDocTitle"], fill(en["wildlife.indexLede"], { n: WILDLIFE.length }));
-  const impostors = lookalikeIndex();
+  const impostors = await lookalikeIndex();
   add("lookalikes", en["lookalikes.indexDocTitle"], fill(en["lookalikes.indexLede"], { n: impostors.length }));
   add("planting", en["planting.docTitle"], en["planting.lede"], {
     image: plantingCard("index"),
@@ -283,7 +284,7 @@ async function collectPages(load) {
   // — the same choice the profile itself makes (steps/plant.ts).
   const seen = new Set();
   for (const region of REGIONS) {
-    for (const plant of loadPlants(region)) {
+    for (const plant of await loadPlants(region)) {
       if (seen.has(plant.id)) continue;
       seen.add(plant.id);
       // The one kind of page with a picture of its own. The alt text says what

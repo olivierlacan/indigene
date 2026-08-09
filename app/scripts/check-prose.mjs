@@ -28,6 +28,7 @@
 //   npm run prose:check -- --strict        exit non-zero on any gap too
 //   npm run prose:check -- --quiet         totals only, no per-field list
 import { openLoader } from "./_load-ts.mjs";
+import { withSeeds } from "./_regions.mjs";
 
 const args = process.argv.slice(2);
 const flag = (name) => args.includes(`--${name}`);
@@ -38,7 +39,8 @@ const opt = (name) => {
 
 const { load, close } = await openLoader();
 try {
-  const { REGIONS } = await load("/src/data/regions.ts");
+  const { REGIONS: REGIONS_RAW } = await load("/src/data/regions.ts");
+  const REGIONS = await withSeeds(REGIONS_RAW);
   const { WILDLIFE, SUPPORT } = await load("/src/data/wildlife.ts");
   const { LOOKALIKES, CONFUSIONS } = await load("/src/data/lookalikes.ts");
 

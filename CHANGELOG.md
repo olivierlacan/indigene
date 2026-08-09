@@ -48,9 +48,9 @@ subtitle on the What's new page.
 - **"It's yours" now includes taking it with you.**
   [Privacy](https://indigene.app/privacy) and [About](https://indigene.app/about)
   both say so, and Privacy links straight to the button that does it.
-- **Photographs wait until you want them.** The record count and the photos used
-  to arrive together; now only the count comes on its own, so a page you're
-  skimming doesn't quietly download a gallery you never opened.
+- **The count no longer comes with a gallery attached.** It used to take the
+  same tap, and the same big download, as the photographs. Now the number
+  arrives on its own, and the photos still wait until you ask for them.
 - Internal: bundle re-measured at ~418 KB gzipped after the new module; the
   figure updated across README, PROJECT_BRIEF and the ecoregion plan
 - Internal: one `species_counts` call fills the whole region roster's rarity

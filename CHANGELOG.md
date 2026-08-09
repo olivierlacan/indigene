@@ -38,14 +38,26 @@ subtitle on the What's new page.
   icon, Indigene opens without Safari's reload button. Now a drag down from the
   top of any page refreshes it, and the menu carries a Reload row for hands that
   can't drag.
+- **A plant's page now tells you how common it is around your garden, without
+  being asked.** If you've given the app a spot, "See it growing near you" opens
+  with how often people have recorded that plant nearby — and says which spot it
+  counted.
 
 ### Changed
 
 - **"It's yours" now includes taking it with you.**
   [Privacy](https://indigene.app/privacy) and [About](https://indigene.app/about)
   both say so, and Privacy links straight to the button that does it.
+- **Photographs wait until you want them.** The record count and the photos used
+  to arrive together; now only the count comes on its own, so a page you're
+  skimming doesn't quietly download a gallery you never opened.
 - Internal: bundle re-measured at ~418 KB gzipped after the new module; the
   figure updated across README, PROJECT_BRIEF and the ecoregion plan
+- Internal: one `species_counts` call fills the whole region roster's rarity
+  cache (`lib/prominence.ts`), keyed the same way `rarity.ts` reads it, so a
+  region of 71 plants costs one ~10 KB request a week instead of 71 round trips.
+  Verified against the per-taxon counts for all 71 PNW taxa, subspecies roll-up
+  included.
 
 ## [0.26] - 2026-08-09
 

@@ -3,23 +3,38 @@
 // so the to-scale drawing is backed by "here's an actual mature one three miles
 // from here, go look at it."
 //
-// The whole exchange is explicit and credited:
-//   - Nothing loads until the person asks and gives a spot — by sharing their
-//     location or typing a ZIP code / town (see `location-prompt.ts`); the two
-//     are equally weighted, so declining precise location isn't a dead end.
+// **Photographs are what needs asking for.** They're the expensive half: a
+// hundred sightings' worth of JSON so a dozen tiles can be laid out, ~190 KB of
+// it, and it doesn't move until the person taps. How *often* the plant has been
+// recorded around here is the cheap half — a number, no photo attached — and
+// that half is already in hand for anyone who has set a spot, because the whole
+// roster's counts arrive in one request and keep for a week
+// (`lib/prominence.ts`). So the section opens with the count and waits to be
+// asked for the pictures.
+//
+// The rest of the exchange is explicit and credited:
+//   - The photographs load only when the person asks and gives a spot — by
+//     sharing their location or typing a ZIP code / town (see
+//     `location-prompt.ts`); the two are equally weighted, so declining precise
+//     location isn't a dead end.
 //   - A standing note says their *browser* is the one calling iNaturalist —
 //     we don't proxy it — so it's clear whose request this is.
 //   - iNaturalist is credited on the section, and every photo carries its own
 //     observer + licence credit straight from the API.
 import { el, clear } from "../ui";
-import { entryForPlant } from "../lib/registry";
+import { entryForPlant, inatIdsForRegions } from "../lib/registry";
 import { regionForSite, REGIONS } from "../lib/plants";
 import type { RegionDef } from "../lib/plants";
 import { plantSightingsNear, plantSightingsInRegion } from "../lib/nearby";
 import type { SightingResult } from "../lib/nearby";
 import { isBusy, DEFAULT_RADIUS_KM } from "../lib/inaturalist";
 import type { Bounds } from "../lib/inaturalist";
-import { mountRarity } from "./rarity-line";
+import { rarityCached, rarityNear, type Rarity } from "../lib/rarity";
+import { warmProminence } from "../lib/prominence";
+import { knownSpot } from "../state";
+import { stickyReady } from "../lib/sticky";
+import { getSpot } from "../db";
+import { rarityLine } from "./rarity-line";
 import { observationList, freshnessLine } from "./observation-ui";
 import { locationPrompt } from "./location-prompt";
 import { anchoredHeading } from "./anchor-head";
@@ -44,6 +59,11 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
   const nativeRegionIds = entry?.regions ?? [];
 
   const out = el("div", { "aria-live": "polite" });
+  // How often it's been recorded around the reader's spot. Sits above the
+  // prompt because it's the part that doesn't need asking for.
+  const prominence = el("div", { "aria-live": "polite" });
+  /** Bumped per prominence lookup, so a stale answer can tell it's stale. */
+  let prominenceAsk = 0;
 
   const prompt = locationPrompt({
     idBase: `plant-${plant.id}`,
@@ -91,13 +111,79 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
       // already refused to look anywhere our data doesn't vouch for it.
       const result = await plantSightingsNear(inatId, lat, lon);
       renderResults(result, region, "near", label);
-      // How common it is around here, in the same circle the photos came from.
-      // Appended after, and quietly: it's an aside, and the photos are what was
-      // asked for (see `components/rarity-line.ts`).
-      mountRarity(out, inatId, lat, lon, DEFAULT_RADIUS_KM);
+      // The spot the reader just picked may not be the one the line above was
+      // counted around, so re-read it for this one — from cache when we've been
+      // here before, which is the common case.
+      void showProminence(region, lat, lon, label);
     } catch (err) {
       showNote(t(isBusy(err) ? "nearby.busy" : "nearby.unreachable"));
     }
+  }
+
+  /**
+   * Print how often this plant is recorded around a spot.
+   *
+   * Cache first, and usually cache only: the counts for a region's whole roster
+   * are fetched together, so the answer for one plant is normally already on
+   * the device. When it isn't, one batched request gets it *and* every other
+   * plant on the same list, and `rarityNear` falls back to a single count if
+   * that batch couldn't be had. No photographs are touched on this path.
+   *
+   * Silent on failure, on purpose: this is a helpful aside on a page that has
+   * already done its job, and "we couldn't work out how common it is" is a
+   * sentence nobody needs. The photographs below report their own trouble.
+   */
+  async function showProminence(
+    region: RegionDef,
+    lat: number,
+    lon: number,
+    place?: string,
+  ): Promise<void> {
+    if (!inatId) return;
+    // Which spot this line is about, as a number. The reader can pick a spot
+    // while the one the app already knew is still being counted, and the slower
+    // answer must not land on top of the one they asked for.
+    const mine = ++prominenceAsk;
+    const paint = (r: Rarity): void => {
+      if (mine !== prominenceAsk) return;
+      clear(prominence);
+      prominence.append(rarityLine(r, place));
+    };
+    const cached = await rarityCached(inatId, lat, lon, DEFAULT_RADIUS_KM).catch(() => null);
+    if (cached) return paint(cached);
+    await warmProminence(
+      inatIdsForRegions([region.meta.id]),
+      lat,
+      lon,
+      DEFAULT_RADIUS_KM,
+    ).catch(() => {});
+    const fresh = await rarityNear(inatId, lat, lon, DEFAULT_RADIUS_KM).catch(() => null);
+    if (fresh) paint(fresh);
+  }
+
+  /**
+   * The same line, for the spot the app already holds — no tap needed.
+   *
+   * Runs on the same two gates the photo lookup uses: outside every region we
+   * cover, or in one our data doesn't call this plant native to, it prints
+   * nothing. Silence rather than the "it's native elsewhere" note, because that
+   * note answers a question somebody asked, and nobody asked this one.
+   */
+  async function showForKnownSpot(): Promise<void> {
+    if (!inatId) return;
+    // Landing straight on a plant page — a reload, a shared link — draws it
+    // before the background read of what this device remembers has landed.
+    // Without this wait the section would decide there was no spot and say
+    // nothing, which is precisely the case this exists for.
+    await stickyReady();
+    const spot = knownSpot();
+    if (!spot) return;
+    const region = regionForSite(spot.lat, spot.lon);
+    if (!region || !nativeRegionIds.includes(region.meta.id)) return;
+    // A saved spot has a name the reader gave it, which is a better answer to
+    // "around where?" than "your spot".
+    const saved = spot.spotId ? await getSpot(spot.spotId).catch(() => undefined) : undefined;
+    await showProminence(region, spot.lat, spot.lon, saved?.label);
   }
 
   // "Look it up in a region it's native to" — no spot needed. Query iNaturalist
@@ -198,6 +284,10 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
     });
   }
 
+  // The one thing this section does without being asked, and only because the
+  // answer is usually already here (see `showForKnownSpot`).
+  void showForKnownSpot();
+
   // No top margin of its own: the card above already carries a bottom one, and
   // in the plant page's laptop columns (where margins don't collapse) a second
   // one would open a gap twice the size of every other.
@@ -213,6 +303,7 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
       t("plant.sectionLink")
     ),
     el("p", { class: "obs-section-lede" }, t("nearby.seeItGrowingLede", { name: commonName(plant) })),
+    prominence,
     prompt,
     regionButtons(),
     out,

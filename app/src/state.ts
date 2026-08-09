@@ -12,7 +12,7 @@ import type {
 import { DEFAULT_WEIGHTS, NO_FILTERS } from "./lib/ranking";
 import type { ActiveFilters } from "./lib/ranking";
 import { kvGet, kvSet } from "./db";
-import { rememberSpot } from "./lib/sticky";
+import { rememberSpot, sticky } from "./lib/sticky";
 
 export interface Draft {
   lat: number | null;
@@ -174,6 +174,27 @@ export function rememberDraftSpot(): void {
     deciduousOverhead: d.deciduousOverhead,
     moisture: d.moistureOverride,
   });
+}
+
+/**
+ * The spot the app already has, if it has one — the working draft's
+ * coordinates, or the last spot this device remembered.
+ *
+ * For pages that can answer something *about* where the reader gardens without
+ * asking them again. Nothing here is new information: the draft is the spot
+ * they're planning right now, and the remembered one is the spot they gave last
+ * visit (see `lib/sticky.ts`). `spotId` is set when the draft is an open saved
+ * spot, so a caller can name it rather than saying "your spot".
+ *
+ * Null on the hand-picked-region path: a region is not a point, and nothing
+ * measured in a circle can be measured from it.
+ */
+export function knownSpot(): { lat: number; lon: number; spotId: string | null } | null {
+  const d = store.draft;
+  if (d.lat != null && d.lon != null) return { lat: d.lat, lon: d.lon, spotId: d.editingId };
+  const s = sticky().spot;
+  if (s && s.lat != null && s.lon != null) return { lat: s.lat, lon: s.lon, spotId: null };
+  return null;
 }
 
 export function navigate(step: string): void {

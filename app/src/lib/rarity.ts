@@ -29,9 +29,14 @@
 //
 // Both requests ask for `per_page=0` — iNaturalist returns the count and no
 // rows at all, a few dozen bytes. The area yardstick is fetched once per area
-// and reused by every plant asked about there; the per-plant count is one
-// request per plant per area. Both are cached for a week in the same key/value
-// store the app's preferences live in.
+// and reused by every plant asked about there. Both are cached for a week in
+// the same key/value store the app's preferences live in.
+//
+// The per-plant count normally doesn't cost a request at all: `prominence.ts`
+// fills these same cache entries for a whole region's roster in one call, so
+// the fetch below is the fallback for a plant that batch didn't cover. Neither
+// count ever carries a photo — the photographs are a separate, much larger
+// request that only happens when somebody asks to see them (`nearby.ts`).
 import { InatError } from "./inaturalist";
 import { kvGet, kvSet } from "../db";
 import { cacheKey, CACHE_TTL_MS } from "./nearby";
@@ -118,13 +123,46 @@ interface CachedCount {
   count: number;
 }
 
+/** Where one count lives: a taxon id, or `all` for the area's yardstick, inside
+ *  the area the two were taken in. Shared with `prominence.ts`, which fills the
+ *  same entries in bulk — one name for the key so the two can't drift apart. */
+export function countKey(what: string, area: string): string {
+  return `count:${what}:${area}`;
+}
+
+/** A count from the cache, or undefined when it's missing or past the TTL.
+ *  Never touches the network — the read a page does before deciding whether it
+ *  has anything to ask for. */
+export async function cachedCount(key: string, now: number): Promise<number | undefined> {
+  const hit = await kvGet<CachedCount>(key).catch(() => undefined);
+  return hit && now - hit.capturedAt <= CACHE_TTL_MS ? hit.count : undefined;
+}
+
+/** Write one count back. Best-effort: a full or blocked IndexedDB costs us the
+ *  saved request next time, nothing more. */
+export async function storeCount(key: string, count: number, now: number): Promise<void> {
+  await kvSet<CachedCount>(key, { capturedAt: now, count }).catch(() => {});
+}
+
 /** One count, cached for a week under its own key. */
 async function countCached(key: string, url: string, now: number): Promise<number> {
-  const hit = await kvGet<CachedCount>(key).catch(() => undefined);
-  if (hit && now - hit.capturedAt <= CACHE_TTL_MS) return hit.count;
+  const hit = await cachedCount(key, now);
+  if (hit != null) return hit;
   const count = await fetchCount(url);
-  await kvSet<CachedCount>(key, { capturedAt: now, count }).catch(() => {});
+  await storeCount(key, count, now);
   return count;
+}
+
+/** The area's yardstick: research-grade records of *every* plant in the circle.
+ *  One request per area, reused by every plant asked about there. */
+export function areaTotal(
+  lat: number,
+  lon: number,
+  radiusKm: number,
+  now: number = Date.now()
+): Promise<number> {
+  const area = cacheKey(lat, lon, radiusKm);
+  return countCached(countKey("all", area), buildCountUrl(lat, lon, radiusKm), now);
 }
 
 /**
@@ -145,8 +183,33 @@ export async function rarityNear(
 ): Promise<Rarity> {
   const area = cacheKey(lat, lon, radiusKm);
   const [count, total] = await Promise.all([
-    countCached(`count:${inatId}:${area}`, buildCountUrl(lat, lon, radiusKm, inatId), now),
-    countCached(`count:all:${area}`, buildCountUrl(lat, lon, radiusKm), now),
+    countCached(countKey(inatId, area), buildCountUrl(lat, lon, radiusKm, inatId), now),
+    areaTotal(lat, lon, radiusKm, now),
   ]);
+  return { level: rarityLevel(count, total), count, total, radiusKm };
+}
+
+/**
+ * The same reading, but only if both counts are already here — otherwise null,
+ * and nothing is asked of iNaturalist.
+ *
+ * This is the ordinary path now that a spot's whole roster is counted in one
+ * call (`prominence.ts`): a plant page opened from a list the reader has
+ * already set a spot for answers "how common is this around here?" out of the
+ * device, with no network at all.
+ */
+export async function rarityCached(
+  inatId: string,
+  lat: number,
+  lon: number,
+  radiusKm: number,
+  now: number = Date.now()
+): Promise<Rarity | null> {
+  const area = cacheKey(lat, lon, radiusKm);
+  const [count, total] = await Promise.all([
+    cachedCount(countKey(inatId, area), now),
+    cachedCount(countKey("all", area), now),
+  ]);
+  if (count == null || total == null) return null;
   return { level: rarityLevel(count, total), count, total, radiusKm };
 }

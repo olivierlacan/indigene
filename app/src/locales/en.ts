@@ -315,6 +315,8 @@ export const en = {
   // ---------------------------------------------------------------------
   // How common a plant is around a spot (iNaturalist record counts).
   // ---------------------------------------------------------------------
+  "rarity.around": "Around {place}",
+  "rarity.aroundSpot": "Around your spot",
   "rarity.none":
     "Nobody has recorded this plant within {radius} of here. If it belongs in your ground, yours may be the only one for a while.",
   "rarity.scarce":

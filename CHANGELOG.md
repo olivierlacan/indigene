@@ -25,6 +25,13 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+## [0.26] - 2026-08-09
+
+**What you actually planted, and how it should be doing**
+
+[![A spot's planting log: eastern redbud three years in, butterfly weed two, each with the size it should be by now](docs/screenshots/pr-118/thumb.png)](docs/screenshots/pr-118/log-after-dark.png)
+[Your saved spots before](docs/screenshots/pr-118/saved-before-dark.png) · [and after](docs/screenshots/pr-118/saved-after-dark.png)
+
 ### Added
 
 - **A planting log for every saved spot.** Write down what you've put in the
@@ -1872,7 +1879,8 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/4536697...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/22a030f...HEAD
+[0.26]: https://github.com/olivierlacan/indigene/compare/b57fea1...22a030f
 [0.25]: https://github.com/olivierlacan/indigene/compare/8f6327b...4536697
 [0.24]: https://github.com/olivierlacan/indigene/compare/e8860f8...8f6327b
 [0.23]: https://github.com/olivierlacan/indigene/compare/221a9ee...e8860f8

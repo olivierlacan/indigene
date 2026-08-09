@@ -44,6 +44,10 @@ export const fr: Dict = {
   "nav.savedLocations": "Lieux enregistrés",
   "nav.settings": "Réglages",
   "nav.languageAndUnits": "Langue et unités",
+  "nav.reload": "Recharger",
+  "pullToReload.pull": "Tirez pour recharger",
+  "pullToReload.release": "Relâchez pour recharger",
+  "pullToReload.reloading": "Rechargement…",
   "footer.text":
     "Libre (licence MIT), bâti sur des données scientifiques publiques — {sources}, et à quel point nous en sommes sûrs. {about}. {releaseNotes}. {privacy}.",
   "footer.about": "À propos",

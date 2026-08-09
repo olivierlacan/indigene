@@ -39,6 +39,7 @@ import { el } from "../ui";
 import { t } from "../lib/i18n";
 import { langLabel, unitsLabel } from "./chrome";
 import { hasUnseenRelease } from "../lib/visits";
+import { isHomeScreenApp } from "../lib/standalone";
 import { newDot } from "./new-dot";
 
 let btn: HTMLButtonElement | null = null;
@@ -147,6 +148,26 @@ function fill(target: HTMLElement): void {
     }),
     row("#/settings/units", "📏", unitsLabel(), {
       label: t("footer.unitsIs", { value: unitsLabel() }),
-    })
+    }),
+    // Last, and only on a Home Screen app, where the browser's own reload
+    // button isn't there to be reached for. The pull-down gesture
+    // (components/pull-to-reload.ts) is the fast way to the same thing; this is
+    // the way that asks nothing of your hands.
+    ...(isHomeScreenApp() ? [reloadRow()] : [])
+  );
+}
+
+/** Reload, as a button: it acts on the page you're on rather than going
+ *  anywhere, so it isn't a link. */
+function reloadRow(): HTMLElement {
+  return el(
+    "button",
+    {
+      type: "button",
+      role: "menuitem",
+      class: "nav-menu-pref nav-menu-divide",
+      onClick: () => location.reload(),
+    },
+    [el("span", { class: "nav-menu-pref-icon", "aria-hidden": "true" }, "🔄"), t("nav.reload")]
   );
 }

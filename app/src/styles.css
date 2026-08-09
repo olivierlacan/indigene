@@ -647,6 +647,38 @@ a {
   text-align: center;
 }
 
+/* Reload is a <button> among links — it acts on this page instead of going to
+   another one — and has to read as one more row of the same menu. */
+.nav-menu-panel button.nav-menu-pref {
+  background: none;
+  border: 0;
+  font-family: inherit;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  /* Every other row is an anchor, so its size comes from `.site-nav a` and
+     rides the header's shrink-to-fit ladder down. A button matches no part of
+     that and would sit at the document's own size — a quarter larger than the
+     row above it, which is exactly what it looked like. So it repeats the
+     ladder, and only the ladder. */
+  font-size: 0.95rem;
+}
+@media (max-width: 500px) {
+  .nav-menu-panel button.nav-menu-pref {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 365px) {
+  .nav-menu-panel button.nav-menu-pref {
+    font-size: 0.76rem;
+  }
+}
+@media (max-width: 340px) {
+  .nav-menu-panel button.nav-menu-pref {
+    font-size: 0.7rem;
+  }
+}
+
 /* The menu's "Try again" action is a <button>, but it should read exactly
    like the link row above it. */
 .nav-menu-panel button.nav-menu-all {
@@ -2843,6 +2875,52 @@ details.weights {
   max-width: 90vw;
   z-index: 50;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Pull down to reload.
+   Only ever built on an iOS Home Screen app, where there is no reload button to
+   fall back on (components/pull-to-reload.ts). It hangs above `--pull-top` —
+   the bottom edge of the header, measured per gesture — and `--pull` walks it
+   down from there, so at rest it is tucked out of sight behind the header. That
+   tuck is the whole reason for the z-index: 9 is under the header's 10, so the
+   pill slides out from behind it rather than across it. */
+.pull-reload {
+  position: fixed;
+  top: var(--pull-top, 0px);
+  left: 50%;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  /* Never in the way of the finger that's dragging it. */
+  pointer-events: none;
+  transform: translate(-50%, calc(var(--pull, 0px) - 100% - 0.6rem));
+}
+/* Following a finger, so no transition — except on the way back, when there is
+   no finger left to follow. */
+.pull-reload.is-settling {
+  transition: transform 0.25s ease;
+}
+.pull-reload-icon {
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+.pull-reload.is-armed .pull-reload-icon {
+  transform: rotate(180deg);
+}
+.pull-reload .spinner {
+  width: 1rem;
+  height: 1rem;
+  border-width: 2px;
 }
 
 .spinner {

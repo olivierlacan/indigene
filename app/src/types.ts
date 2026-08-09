@@ -530,9 +530,10 @@ export interface PlantedDate {
  * Progress pictures are the one thing it deliberately doesn't hold. Photos are
  * megabytes each, and a browser can evict a database it decides is too big —
  * losing three years of a garden's record to a storage sweep would be the
- * cruellest possible failure. So a planting carries iNaturalist observation
- * *numbers* instead: the picture stays where the gardener already put it, and
- * this log holds the thread back to it (see `lib/observation-link.ts`).
+ * cruellest possible failure. So a planting carries *references* to
+ * iNaturalist observations instead: the picture stays where the gardener
+ * already put it, and this log holds the thread back to it (see
+ * `lib/observation-link.ts`).
  */
 export interface Planting {
   id: string;
@@ -544,8 +545,13 @@ export interface Planting {
   count: number;
   /** When, to whatever precision was given — null when it wasn't given at all. */
   planted: PlantedDate | null;
-  /** iNaturalist observation ids tied to this planting, oldest first. */
-  observationIds: number[];
+  /**
+   * iNaturalist observations tied to this planting, in the order they were
+   * linked. Each is whichever name the gardener had — the number out of a link,
+   * or the UUID the site's copy button gives — kept as text exactly as given
+   * (`ObservationRef` in `lib/observation-link.ts`).
+   */
+  observations: string[];
   /** The gardener's own words about it, when they wrote any. */
   note?: string;
   createdAt: number;

@@ -248,12 +248,12 @@ export const en = {
   "spot.added": "{name} added to your log.",
   // Linking an iNaturalist sighting instead of storing photos here.
   "spot.obsLink": "📷 Link a photo from iNaturalist",
-  "spot.obsLabel": "iNaturalist observation link",
-  "spot.obsPlaceholder": "inaturalist.org/observations/…",
+  "spot.obsLabel": "iNaturalist observation link, number or UUID",
+  "spot.obsPlaceholder": "Link, number or UUID",
   "spot.obsAdd": "Link",
   "spot.obsHelp":
-    "Photos stay on iNaturalist; we keep only the observation number, here on your device. An observation you've obscured stays obscured to everyone else — this page just remembers which plant of yours it was.",
-  "spot.obsBad": "That doesn't look like an iNaturalist observation link.",
+    "Paste the link, or the UUID the observation's own page copies for you. Photos stay on iNaturalist; we keep only that reference, here on your device. An observation you've obscured stays obscured to everyone else — this page just remembers which plant of yours it was.",
+  "spot.obsBad": "That isn't a link, number or UUID we recognise.",
   "spot.obsAlready": "Already linked to this plant.",
   "spot.obsAdded": "Photo linked.",
   "spot.obsPlainLink": "Also linked:",
@@ -1486,7 +1486,7 @@ export const en = {
   "privacy.svc.sentWrap": "(it's sent {sent}).",
   "privacy.svc.inat.for": "photos of plants and animals seen near there, how often one has been recorded there, and any sighting you link to your planting log",
   "privacy.svc.inat.sent":
-    "a coordinate or a map area, plus the species being looked up — or, for a linked sighting, only the observation number you pasted",
+    "a coordinate or a map area, plus the species being looked up — or, for a linked sighting, only the observation reference you pasted",
   "privacy.svc.meteo.for": "your climate — rainfall and how cold winters get; and turning a postal code or town into a point on the map",
   "privacy.svc.meteo.sent": "a coordinate, or the place name you typed",
   "privacy.svc.osm.for": "the name of the nearest town (shown instead of raw numbers), and the map picture",
@@ -1508,7 +1508,7 @@ export const en = {
   "privacy.log1":
     "What you've planted in a spot — the plants, the dates, how many — is kept beside that spot, on this device, and goes nowhere else. Deleting the spot deletes its log with it.",
   "privacy.log2":
-    "Progress photos aren't stored here at all. A browser can reclaim its storage without asking, and losing years of a garden's record that way would be awful — so instead you can link an iNaturalist sighting you already posted, and we keep only its number. Your observation stays exactly as you set it: if you obscure your location there, it stays obscured. This device knows the precise spot; nobody else does, and iNaturalist is never told the two are connected.",
+    "Progress photos aren't stored here at all. A browser can reclaim its storage without asking, and losing years of a garden's record that way would be awful — so instead you can link an iNaturalist sighting you already posted — pasting its link, or the UUID the site copies for you — and we keep only that reference. Your observation stays exactly as you set it: if you obscure your location there, it stays obscured. This device knows the precise spot; nobody else does, and iNaturalist is never told the two are connected.",
   "privacy.whatsNewTitle": "How we know what's new to you",
   "privacy.whatsNew1":
     "Indigene shows a small green dot beside What's new — in the ⚙️ menu, and at the foot of every page — when something has been added since you last looked, and marks those entries on the What's new page. To do that it has to remember a little — so here is all of it, exactly:",

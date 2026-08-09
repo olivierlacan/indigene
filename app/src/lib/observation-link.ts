@@ -24,33 +24,70 @@ import { getCachedObservations, putCachedObservations } from "../db";
 
 const API_BASE = "https://api.inaturalist.org/v1/observations";
 
-/** Where a reader goes to see the observation itself. */
-export function observationUrl(id: number): string {
-  return `https://www.inaturalist.org/observations/${id}`;
-}
-
 /**
- * Read an observation id out of whatever the gardener pasted.
+ * How one observation is named, in whichever of iNaturalist's two ways the
+ * gardener had to hand: the number in its address bar (`384926161`), or the
+ * UUID its own page offers a copy button for
+ * (`776ee855-bf3d-4030-8c45-4c8424b03a56`).
  *
- * People paste the address bar, and the address bar is rarely the tidy form:
- * it may carry a locale prefix (`/es/observations/…`), a query string, a
- * trailing slash, or be the bare number they read off the page. All of those
- * are the same answer, so all of them are accepted; anything else returns null
- * and the field says so rather than storing a number that means nothing.
+ * Both are kept as text, exactly as given. Canonicalizing a UUID to its number
+ * would mean a network call before anything could be saved — so a link pasted
+ * on a phone with no signal would fail to save at all, which is precisely the
+ * moment somebody is standing in the garden doing this.
  */
-export function parseObservationRef(input: string): number | null {
-  const raw = input.trim();
-  if (!raw) return null;
-  const bare = /^\d+$/.test(raw) ? raw : /\/observations\/(\d+)/.exec(raw)?.[1];
-  const id = bare ? Number(bare) : NaN;
-  return Number.isSafeInteger(id) && id > 0 ? id : null;
+export type ObservationRef = string;
+
+/** True for the UUID form. The two forms are fetched differently — see
+ *  `fetchObservation` — and this is the one place that tells them apart. */
+export function isUuid(ref: ObservationRef): boolean {
+  return /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(ref);
+}
+
+/** Where a reader goes to see the observation itself. Given a resolved
+ *  observation, pass its number: that is the address iNaturalist's own pages
+ *  link to, and the one a person can read and recognise. */
+export function observationUrl(ref: ObservationRef | number): string {
+  return `https://www.inaturalist.org/observations/${ref}`;
 }
 
 /**
- * Fetch one observation by id and trim it the same way every other iNaturalist
+ * Read an observation's name out of whatever the gardener pasted.
+ *
+ * iNaturalist hands out two of them and this takes either, because which one
+ * you have depends only on which button you happened to press. The address bar
+ * gives a link with a number in it; the observation's own page has a copy
+ * button that gives a UUID and nothing else. Someone who has copied a UUID has
+ * no easy way to find the number, so refusing it would send them back to the
+ * site to hunt for a different string that means the same thing.
+ *
+ * Every reasonable shape of both is accepted: a bare number, a bare UUID, and
+ * any link containing either — the address bar is rarely tidy, and may carry a
+ * locale prefix (`/es/observations/…`), a query string or a trailing slash.
+ * Anything else returns null and the field says so, rather than storing a
+ * reference that names nothing.
+ */
+export function parseObservationRef(input: string): ObservationRef | null {
+  const raw = input.trim().toLowerCase();
+  if (!raw) return null;
+  const uuid = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/.exec(raw)?.[0];
+  if (uuid) return uuid;
+  const digits = /^\d+$/.test(raw) ? raw : /\/observations\/(\d+)/.exec(raw)?.[1];
+  if (!digits) return null;
+  const id = Number(digits);
+  return Number.isSafeInteger(id) && id > 0 ? String(id) : null;
+}
+
+/**
+ * Fetch one observation and trim it the same way every other iNaturalist
  * response is trimmed (`summarizeObservations`) — so a linked sighting renders
  * with the same card, the same licence check and the same credit as the ones on
  * a plant's page.
+ *
+ * The two forms take two different endpoints, because iNaturalist's
+ * `/observations/<id>` answers 422 to a UUID rather than resolving it. A UUID
+ * goes to the search endpoint's own `uuid=` filter instead, which returns the
+ * same one-row `results` array — so the trim, the cache and everything
+ * downstream can't tell the two apart.
  *
  * Returns null when the observation doesn't exist, was deleted, or carries no
  * licensed photo: all three mean "there's nothing we may show", and the log
@@ -58,10 +95,13 @@ export function parseObservationRef(input: string): number | null {
  * can tell "no signal" from "nothing to show".
  */
 export async function fetchObservation(
-  id: number,
+  ref: ObservationRef,
   signal?: AbortSignal
 ): Promise<ObservationSummary | null> {
-  const res = await fetch(`${API_BASE}/${id}`, { signal });
+  const url = isUuid(ref)
+    ? `${API_BASE}?uuid=${encodeURIComponent(ref)}`
+    : `${API_BASE}/${encodeURIComponent(ref)}`;
+  const res = await fetch(url, { signal });
   if (res.status === 404) return null;
   if (!res.ok) throw new InatError(res.status, "observation");
   const data = await res.json();
@@ -82,14 +122,14 @@ export async function fetchObservation(
  * learned once rather than re-asked every time the page is opened.
  */
 export async function linkedObservation(
-  id: number,
+  ref: ObservationRef,
   now: number = Date.now()
 ): Promise<ObservationSummary | null> {
-  const key = `obs:${id}`;
+  const key = `obs:${ref}`;
   const cached = await getCachedObservations(key).catch(() => undefined);
   if (cached && now - cached.capturedAt <= CACHE_TTL_MS) return cached.observations[0] ?? null;
   try {
-    const observation = await fetchObservation(id);
+    const observation = await fetchObservation(ref);
     await putCachedObservations({
       key,
       capturedAt: now,

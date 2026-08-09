@@ -264,12 +264,12 @@ export const fr: Dict = {
   "spot.addButton": "Ajouter à ce lieu",
   "spot.added": "{name} ajoutée à votre journal.",
   "spot.obsLink": "📷 Relier une photo d'iNaturalist",
-  "spot.obsLabel": "Lien vers une observation iNaturalist",
-  "spot.obsPlaceholder": "inaturalist.org/observations/…",
+  "spot.obsLabel": "Lien, numéro ou UUID d'une observation iNaturalist",
+  "spot.obsPlaceholder": "Lien, numéro ou UUID",
   "spot.obsAdd": "Relier",
   "spot.obsHelp":
-    "Les photos restent sur iNaturalist ; nous ne gardons que le numéro de l'observation, ici, sur votre appareil. Une observation que vous avez rendue floue le reste pour tout le monde — cette page se souvient seulement de laquelle de vos plantes il s'agissait.",
-  "spot.obsBad": "Cela ne ressemble pas à un lien d'observation iNaturalist.",
+    "Collez le lien, ou l'UUID que la page de l'observation copie pour vous. Les photos restent sur iNaturalist ; nous ne gardons que cette référence, ici, sur votre appareil. Une observation que vous avez rendue floue le reste pour tout le monde — cette page se souvient seulement de laquelle de vos plantes il s'agissait.",
+  "spot.obsBad": "Ce n'est pas un lien, un numéro ni un UUID que nous reconnaissons.",
   "spot.obsAlready": "Déjà reliée à cette plante.",
   "spot.obsAdded": "Photo reliée.",
   "spot.obsPlainLink": "Également reliées :",
@@ -1504,7 +1504,7 @@ export const fr: Dict = {
   "privacy.svc.inat.for":
     "des photos de plantes et d'animaux observés à proximité, la fréquence à laquelle une espèce y a été relevée, et toute observation que vous reliez à votre journal de plantation",
   "privacy.svc.inat.sent":
-    "une coordonnée ou une zone de carte, plus l'espèce recherchée — ou, pour une observation reliée, seulement le numéro d'observation que vous avez collé",
+    "une coordonnée ou une zone de carte, plus l'espèce recherchée — ou, pour une observation reliée, seulement la référence d'observation que vous avez collée",
   "privacy.svc.meteo.for":
     "votre climat — la pluie et la rigueur des hivers ; et la conversion d'un code postal ou d'une commune en un point sur la carte",
   "privacy.svc.meteo.sent": "une coordonnée, ou le nom de lieu que vous avez saisi",
@@ -1527,7 +1527,7 @@ export const fr: Dict = {
   "privacy.log1":
     "Ce que vous avez planté dans un lieu — les plantes, les dates, les quantités — est conservé avec ce lieu, sur cet appareil, et ne va nulle part ailleurs. Supprimer le lieu supprime son journal avec lui.",
   "privacy.log2":
-    "Les photos de suivi ne sont pas stockées ici du tout. Un navigateur peut reprendre son espace de stockage sans prévenir, et perdre ainsi des années de journal serait terrible — vous pouvez donc relier une observation iNaturalist que vous avez déjà publiée, et nous n'en gardons que le numéro. Votre observation reste exactement comme vous l'avez réglée : si vous en floutez la position là-bas, elle reste floutée. Cet appareil connaît le lieu précis ; personne d'autre, et iNaturalist n'apprend jamais que les deux sont liés.",
+    "Les photos de suivi ne sont pas stockées ici du tout. Un navigateur peut reprendre son espace de stockage sans prévenir, et perdre ainsi des années de journal serait terrible — vous pouvez donc relier une observation iNaturalist que vous avez déjà publiée — en collant son lien, ou l'UUID que le site copie pour vous — et nous n'en gardons que cette référence. Votre observation reste exactement comme vous l'avez réglée : si vous en floutez la position là-bas, elle reste floutée. Cet appareil connaît le lieu précis ; personne d'autre, et iNaturalist n'apprend jamais que les deux sont liés.",
   "privacy.whatsNewTitle": "Comment nous savons ce qui est nouveau pour vous",
   "privacy.whatsNew1":
     "Indigene affiche un petit point vert à côté des nouveautés — dans le menu ⚙️ et en bas de chaque page — quand quelque chose a été ajouté depuis votre dernier passage, et signale ces nouveautés sur la page des nouveautés. Pour cela, il doit retenir un peu de choses — les voici, exactement :",

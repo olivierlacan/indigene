@@ -34,10 +34,10 @@ subtitle on the What's new page.
   year — whatever you actually remember. The log then tells you how long a plant
   has been in and roughly how big it should be by now, from that plant's own
   measured growth.
-- **Photos, without handing us your photos.** Paste a link to a sighting you
-  posted on iNaturalist and it shows up beside that plant. We keep only the
-  number. A sighting you obscured there stays obscured; only your device knows
-  which corner of the garden it was.
+- **Photos, without handing us your photos.** Paste a sighting you posted on
+  iNaturalist — its link, or the UUID the site copies for you — and it shows up
+  beside that plant. A sighting you obscured there stays obscured; only your
+  device knows which corner of the garden it was.
 - **"Seldom recorded around here."** On a plant's page, under the nearby
   photos, how often people have recorded it within 31 miles compared with every
   other plant — so you can put back the ones your area is short of.

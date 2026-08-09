@@ -24,7 +24,7 @@ import {
   timeInGround,
   today,
 } from "../lib/garden";
-import { linkedObservation, observationUrl, parseObservationRef } from "../lib/observation-link";
+import { isUuid, linkedObservation, observationUrl, parseObservationRef } from "../lib/observation-link";
 import { observationList } from "../components/observation-ui";
 import { statTiles, type Stat } from "../components/stat-card";
 import { privacyNote } from "../components/privacy-link";
@@ -187,37 +187,61 @@ function sightingsBlock(planting: Planting, name: string, redraw: () => void): H
   const gallery = el("div", { "aria-live": "polite" });
   block.append(gallery);
 
-  if (planting.observationIds.length) {
-    void Promise.all(planting.observationIds.map((id) => linkedObservation(id).catch(() => null)))
-      .then((found) => {
-        const shown = found.filter((o): o is NonNullable<typeof o> => Boolean(o));
-        clear(gallery);
-        if (shown.length) gallery.append(observationList(shown, name));
-        // Ids that answered with nothing showable still keep their link: the
-        // observation may be photo-less, licensed all-rights-reserved, or just
-        // unreachable right now, and dropping the gardener's own record of it
-        // would be worse than a plain link out.
-        const missing = planting.observationIds.filter(
-          (id) => !shown.some((o) => o.id === id)
+  // The numbers of the sightings that came back, so a second link to one the
+  // gardener already has — pasted the other way round, a UUID where a number
+  // went in — is recognised as the same sighting rather than added twice.
+  const resolved = new Set<string>();
+
+  if (planting.observations.length) {
+    // Kept as pairs: a reference resolves to a summary or to nothing, and the
+    // ones that resolved to nothing still need their own reference to link out.
+    void Promise.all(
+      planting.observations.map((ref) =>
+        linkedObservation(ref)
+          .catch(() => null)
+          .then((observation) => ({ ref, observation }))
+      )
+    ).then((rows) => {
+      const shown = rows.map((r) => r.observation).filter((o): o is NonNullable<typeof o> => Boolean(o));
+      shown.forEach((o) => resolved.add(String(o.id)));
+      clear(gallery);
+      if (shown.length) gallery.append(observationList(shown, name));
+      // A reference that answered with nothing showable still keeps its link:
+      // the observation may be photo-less, licensed all-rights-reserved, or
+      // just unreachable right now, and dropping the gardener's own record of
+      // it would be worse than a plain link out.
+      const missing = rows.filter((r) => !r.observation).map((r) => r.ref);
+      if (missing.length) {
+        gallery.append(
+          el("p", { class: "coords" }, [
+            t("spot.obsPlainLink"),
+            " ",
+            ...missing.map((ref) =>
+              el(
+                "a",
+                { href: observationUrl(ref), target: "_blank", rel: "noopener" },
+                // A UUID is 36 characters of hex nobody reads; its first block
+                // is enough to tell two of them apart in a list of links.
+                `${isUuid(ref) ? ref.slice(0, 8) : `#${ref}`} `
+              )
+            ),
+          ])
         );
-        if (missing.length) {
-          gallery.append(
-            el("p", { class: "coords" }, [
-              t("spot.obsPlainLink"),
-              " ",
-              ...missing.map((id) =>
-                el("a", { href: observationUrl(id), target: "_blank", rel: "noopener" }, `#${id} `)
-              ),
-            ])
-          );
-        }
-      });
+      }
+    });
   }
 
+  // Text, not `type="url"`: two of the three things this accepts — a bare
+  // number, a bare UUID — are not URLs, and a `url` field refuses to submit a
+  // value the browser doesn't consider one. The field would simply have sat
+  // there doing nothing for anyone who used the copy button.
   const input = el("input", {
-    type: "url",
+    type: "text",
     class: "log-obs-input",
     inputmode: "url",
+    autocomplete: "off",
+    autocapitalize: "off",
+    spellcheck: "false",
     placeholder: t("spot.obsPlaceholder"),
     "aria-label": t("spot.obsLabel"),
   }) as HTMLInputElement;
@@ -227,16 +251,16 @@ function sightingsBlock(planting: Planting, name: string, redraw: () => void): H
     hidden: true,
     onSubmit: async (e: Event) => {
       e.preventDefault();
-      const id = parseObservationRef(input.value);
-      if (!id) {
+      const ref = parseObservationRef(input.value);
+      if (!ref) {
         toast(t("spot.obsBad"));
         return;
       }
-      if (planting.observationIds.includes(id)) {
+      if (planting.observations.includes(ref) || resolved.has(ref)) {
         toast(t("spot.obsAlready"));
         return;
       }
-      await savePlanting({ ...planting, observationIds: [...planting.observationIds, id] });
+      await savePlanting({ ...planting, observations: [...planting.observations, ref] });
       toast(t("spot.obsAdded"));
       redraw();
     },
@@ -415,7 +439,7 @@ function addCard(spot: SavedSpot, roster: Plant[], redraw: () => void): HTMLElem
       plantId: pick.id,
       count: Math.max(1, Math.min(999, Number(count.value) || 1)),
       planted,
-      observationIds: [],
+      observations: [],
       createdAt: Date.now(),
     });
     toast(t("spot.added", { name: commonName(pick) }));

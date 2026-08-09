@@ -335,14 +335,16 @@ async function seedGarden(page) {
   };
   const plantings = [
     { id: "p1", spotId: spot.id, plantId: "cercis-canadensis", count: 1,
-      planted: { year: 2023, month: 4 }, observationIds: [], createdAt: Date.UTC(2023, 3, 8) },
+      planted: { year: 2023, month: 4 }, observations: [], createdAt: Date.UTC(2023, 3, 8) },
     // Two sightings the gardener posted of their own plant, linked back to the
     // row it belongs to — the feature that stands in for progress photos.
     { id: "p2", spotId: spot.id, plantId: "asclepias-tuberosa", count: 6,
       planted: { year: 2024, month: 5, day: 18 },
-      observationIds: [373658728, 384926161], createdAt: Date.UTC(2024, 4, 18) },
+      // One linked by its number, one by the UUID iNaturalist copies for you.
+      observations: ["373658728", "776ee855-bf3d-4030-8c45-4c8424b03a56"],
+      createdAt: Date.UTC(2024, 4, 18) },
     { id: "p3", spotId: spot.id, plantId: "ilex-verticillata", count: 2,
-      planted: { year: 2026 }, observationIds: [], createdAt: Date.UTC(2026, 2, 1) },
+      planted: { year: 2026 }, observations: [], createdAt: Date.UTC(2026, 2, 1) },
   ];
   await page.evaluate(async ({ spot, plantings }) => {
     const db = await new Promise((resolve, reject) => {

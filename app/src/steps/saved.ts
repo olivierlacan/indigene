@@ -2,15 +2,20 @@ import { el, clear, toast } from "../ui";
 import { navigate, openSavedSpot } from "../state";
 import { listSpots, deleteSpot, listPlantings } from "../db";
 import type { Planting } from "../types";
-import { sunPlain } from "../lib/plain";
+import { latPlain, lonPlain, sunPlain } from "../lib/plain";
 import { tally } from "../lib/garden";
 import { privacyNote } from "../components/privacy-link";
 import { cardStats } from "../components/card-stats";
+import { spotMap } from "../components/spot-map";
+import { townFor, townsReady } from "../lib/places";
 import { t, tn, fmtNumber } from "../lib/i18n";
 
 // Saved spots — local-first, no account. Open one to reload its readings and
 // jump back to the plant list, or delete it.
 export async function renderSaved(main: HTMLElement): Promise<void> {
+  // The town names are read from the device in the background at boot; wait for
+  // that read so a list doesn't draw once without them and again with.
+  await townsReady();
   clear(main);
   main.append(el("h2", { class: "step-title" }, t("saved.title")));
 
@@ -31,11 +36,25 @@ export async function renderSaved(main: HTMLElement): Promise<void> {
   for (const s of spots) {
     const counts = tally(plantings.filter((p) => p.spotId === s.id));
     const item = el("li", { class: "saved-item" }, [
-      el("div", {}, [
+      // Beside the name, because the name is the only other thing telling one
+      // saved spot from another — and one you gave a corner of a garden last
+      // spring doesn't always come back on its own.
+      spotMap(s.lat, s.lon, { label: t("map.spotLabelNamed", { label: s.label }) }),
+      // Beside the map: what names this spot. The sun reading follows on its
+      // own line below, because it's a sentence — squeezed into the column left
+      // over beside a picture it wraps six times and reads like a receipt.
+      el("div", { class: "saved-item-body" }, [
         el("div", { style: "font-weight:700" }, s.label),
-        el("div", { class: "coords" }, `${s.lat.toFixed(4)}, ${s.lon.toFixed(4)}`),
-        el("div", { style: "font-size:0.9rem;color:var(--ink-soft)" },
-          s.sun ? sunPlain(s.sun.hours) : t("saved.sunUnknown")),
+        // The town, when this device was told one while the spot was being
+        // found — read from storage, never looked up here, because these spots
+        // are promised not to leave the device.
+        townFor(s.lat, s.lon)
+          ? el("div", { class: "spot-town" }, t("coord.near", { place: townFor(s.lat, s.lon)! }))
+          : null,
+        el("div", { class: "coords" }, [
+          el("div", {}, latPlain(s.lat)),
+          el("div", {}, lonPlain(s.lon)),
+        ]),
         // What's actually in the ground here, when anything is — as figures
         // rather than a sentence about them, the same row a region's card
         // carries. "9 plants in the ground, 3 kinds" was a paragraph doing a
@@ -60,7 +79,9 @@ export async function renderSaved(main: HTMLElement): Promise<void> {
             ])
           : null,
       ]),
-      el("div", { style: "display:flex;gap:0.4rem;flex:none" }, [
+      el("div", { class: "saved-item-sun" },
+        s.sun ? sunPlain(s.sun.hours) : t("saved.sunUnknown")),
+      el("div", { class: "saved-item-actions" }, [
         el("button", {
           class: "btn btn-secondary", style: "min-height:2.6rem;padding:0.4rem 0.7rem",
           onClick: () => openSavedSpot(s),

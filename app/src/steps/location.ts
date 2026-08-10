@@ -5,13 +5,14 @@ import { searchPlaces, placeLabel } from "../lib/geocode";
 import { REGIONS } from "../lib/plants";
 import { regionForCoords } from "../data/regions";
 import { zoneChip } from "../components/zone-chip";
-import { ISSUES_URL } from "../lib/plain";
+import { ISSUES_URL, latPlain, lonPlain } from "../lib/plain";
 import { TILE_SIZE, getTile, metersPerPixel, tileCoords } from "../lib/tiles";
 import { whyThis } from "../components/learn";
 import { privacyNote } from "../components/privacy-link";
 import { t, tx, fmtNumber } from "../lib/i18n";
 import { regionName, regionReference } from "../lib/names";
 import { defaultRegion, rememberedSpotFor, sticky, stickyReady } from "../lib/sticky";
+import { learnTown, noteTown } from "../lib/places";
 
 // The out-of-coverage message, shown the moment a person selects a location
 // (GPS fix or search pick) outside every covered region — not sprung on them
@@ -159,7 +160,10 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
     const off = Math.hypot(offN, offE);
     const acc = accuracy != null ? t("location.accuracy", { m: fmtNumber(Math.round(accuracy)) }) : "";
     const moved = off > 1 ? t("location.nudged", { m: fmtNumber(Math.round(off)) }) : "";
-    status.textContent = `${effLat().toFixed(5)}, ${effLon().toFixed(5)}${acc}${moved}`;
+    // Each number said as what it is: a reader who has never met a coordinate
+    // can't tell which figure is which, and the minus sign in front of one of
+    // them is the least readable part of the pair.
+    status.textContent = `${latPlain(effLat())}, ${lonPlain(effLon())}${acc}${moved}`;
     drawMap();
   }
 
@@ -364,6 +368,10 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
             onClick: () => {
               lat = p.lat; lon = p.lon;
               offN = 0; offE = 0; accuracy = null;
+              // Somebody who searched for their town has just told us its name.
+              // Keeping it here is the one path to a named spot that costs
+              // nothing at all — no second lookup, ever.
+              noteTown(p.lat, p.lon, placeLabel(p));
               clear(searchOut);
               clear(coverageOut); // a search pick supersedes any GPS-fix warning
               clear(spotNote); // …and moves the pin off the remembered spot
@@ -573,6 +581,11 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
               return s;
             })
           );
+          // And the name of the town, once, for the pages that list this spot
+          // later. It belongs here rather than there: this is the tap that
+          // sends the coordinate out anyway, and this is the page that says so
+          // — the Saved list promises those spots never leave the device.
+          learnTown(fLat, fLon);
           rememberDraftSpot();
           navigate("sun");
         },

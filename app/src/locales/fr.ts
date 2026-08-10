@@ -156,7 +156,6 @@ export const fr: Dict = {
   "memory.spotEmpty":
     "Rien pour l'instant. Dès que vous aurez trouvé un endroit, il vous attendra ici — et la prochaine visite commencera par lui plutôt que par une carte vierge.",
   "memory.spotWhere": "Endroit",
-  "memory.spotWhereCoords": "{lat}, {lon}",
   "memory.spotWhereRegion": "{region} (choisie à la main, sans point sur la carte)",
   "memory.spotSun": "Soleil",
   "memory.spotSoil": "Humidité du sol",
@@ -392,6 +391,19 @@ export const fr: Dict = {
     "Carte. Le repère reste au centre. Faites glisser ou touchez pour amener votre lieu dessous, ou utilisez les flèches du clavier pour l'ajuster — maintenez Maj pour de plus grands pas.",
   "location.osmAttribution": "© les contributeurs d'OpenStreetMap",
   "location.gpsFix": "point GPS",
+
+  "map.spotLabel": "Carte des rues autour de ce lieu",
+  "map.spotLabelNamed": "Carte des rues autour de {label}",
+  "map.osmShort": "© OSM",
+
+  // « O » pour Ouest : la lettre française, pas le W anglais.
+  "coord.lat": "Latitude {deg}° {hemi}",
+  "coord.lon": "Longitude {deg}° {hemi}",
+  "coord.north": "N",
+  "coord.south": "S",
+  "coord.east": "E",
+  "coord.west": "O",
+  "coord.near": "près de {place}",
   "location.accuracy": " · précision GPS ±{m} m",
   "location.nudged": " · déplacé de {m} m",
   "location.noGeolocation": "Cet appareil ne peut pas partager sa position — essayez la recherche par commune.",

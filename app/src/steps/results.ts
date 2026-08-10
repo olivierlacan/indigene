@@ -17,6 +17,7 @@ import {
   moistureWord,
 } from "../lib/plain";
 import { saveSpot } from "../db";
+import { townFor } from "../lib/places";
 import { t, tn, tx, fmtNumber } from "../lib/i18n";
 import { maxHeightChoices, maxSpreadChoices, temperature } from "../lib/units";
 import { commonName, regionName, regionReference } from "../lib/names";
@@ -341,7 +342,13 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
     toast(t("results.saved"));
   }
 
+  // The name offered in the "what shall we call this?" box. A town beats two
+  // numbers by a mile as an opening suggestion — "Radnor, Pennsylvania" is
+  // something you can accept and edit, "Spot at 40.0379, -75.3557" is something
+  // you have to replace. Falls back to the numbers when no town is known.
   function defaultLabel(): string {
+    const town = townFor(store.draft.lat!, store.draft.lon!);
+    if (town) return town;
     return t("results.defaultLabel", {
       lat: store.draft.lat!.toFixed(4),
       lon: store.draft.lon!.toFixed(4),

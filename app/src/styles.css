@@ -1383,6 +1383,17 @@ input[type="range"] {
   font-size: 0.95rem;
   color: var(--ink-soft);
 }
+/* "near Radnor, Pennsylvania" — the part of a spot's address a person can
+   actually picture, so it reads ahead of the numbers under it. */
+.spot-town {
+  font-size: 0.95rem;
+}
+/* Two labelled lines in a column beside the map, where 0.95rem would run past
+   the edge of a 360 px phone at "Longitude 75.3557° W". */
+.saved-item .coords,
+.memory-where .coords {
+  font-size: 0.85rem;
+}
 /* OSM attribution, pinned to the map's corner (required by the tile policy).
    Fixed light colors: it sits on map imagery, not on the app theme. */
 .map-attrib {
@@ -1395,6 +1406,50 @@ input[type="range"] {
   background: rgba(255, 255, 255, 0.85);
   color: #333;
   border-top-left-radius: 8px;
+}
+.map-attrib-compact {
+  font-size: 0.62rem;
+  padding: 0.05rem 0.35rem;
+}
+
+/* The picture of where a spot is, on the pages that only had its coordinates
+   (components/spot-map.ts). Static: no dragging, no zooming — the streets are
+   the whole point.
+
+   A small square, not a banner. It's a thumbnail answering "which one is
+   this?", so it sits beside the name it belongs to rather than pushing it down
+   the screen — a list of spots stays a list you can see at once. */
+.spot-map {
+  position: relative;
+  width: 6.5rem;
+  height: 6.5rem;
+  flex: none;
+  align-self: flex-start;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+}
+.spot-map canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.spot-map .pin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -100%);
+  font-size: 1.25rem;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.4));
+}
+/* On the Settings card the map is half of what "where" means, so it sits in
+   that row beside the coordinates. */
+.memory-where {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
 }
 
 /* --- Sky scan --- */
@@ -4341,6 +4396,23 @@ body[data-layout="profile"] .wip-banner-text {
    row's two buttons, so a phone never has three tap targets sharing its width. */
 .saved-item {
   flex-wrap: wrap;
+}
+/* The map and the spot's name share the top row; the sun reading takes a full
+   line of its own under both, and the buttons another. */
+.saved-item-body {
+  flex: 1 1 7rem;
+  min-width: 0;
+}
+.saved-item-sun {
+  flex: 1 0 100%;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+.saved-item-actions {
+  display: flex;
+  gap: 0.4rem;
+  flex: none;
+  margin-left: auto;
 }
 .saved-log-link {
   flex: 1 0 100%;

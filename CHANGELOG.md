@@ -46,6 +46,21 @@ subtitle on the What's new page.
 - **A region gets an answer too.** Picked your region from a list instead of
   sharing a spot? The page now says how often the plant is recorded across that
   whole region, from dated figures that travel with the app.
+- **A little map on every saved spot.** [Your spots](https://indigene.app/#/saved)
+  and your last one in [Settings](https://indigene.app/#/settings/spot) now show
+  the streets around the pin, so you can tell the alley bed from the front bed
+  without reading two rows of digits.
+- **Spots say where they are in words.** "near Radnor, Pennsylvania", and each
+  number now says which it is — "Latitude 40.0379° N" rather than a bare pair
+  with a minus sign in front. The town is remembered when you find the spot.
+- **Saving a spot offers its town as the name.** The box that asks what to call
+  it starts with "Radnor, Pennsylvania" instead of a pair of coordinates —
+  something to accept or edit, not something to replace.
+- Internal: town names are learned once per ~5 km cell, only on the location
+  step's confirm (where the coordinate is already going out for soil and
+  climate, and the page says so), and read from device storage everywhere else
+  — the Saved list promises those spots never leave the device, so it must not
+  reverse-geocode while drawing. A town search stores the name for free.
 
 ### Changed
 
@@ -75,6 +90,13 @@ subtitle on the What's new page.
   region of 71 plants costs one ~10 KB request a week instead of 71 round trips.
   Verified against the per-taxon counts for all 71 PNW taxa, subspecies roll-up
   included.
+
+### Fixed
+
+- **Your last spot said where it was to the nearest hundred kilometres.**
+  Settings rounded the coordinates to whole degrees, so a garden outside
+  Philadelphia read "40, -75". It now keeps the four decimals the saved list
+  already showed.
 
 ## [0.26] - 2026-08-09
 

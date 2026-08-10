@@ -27,13 +27,15 @@ import type { StickySpot } from "../lib/sticky";
 import { REGIONS } from "../lib/plants";
 import { regionName, regionReference } from "../lib/names";
 import { zoneChip } from "./zone-chip";
-import { moisturePlain, sunPlain } from "../lib/plain";
+import { spotMap } from "./spot-map";
+import { townFor } from "../lib/places";
+import { latPlain, lonPlain, moisturePlain, sunPlain } from "../lib/plain";
 import { DEFAULT_WEIGHTS } from "../lib/ranking";
 import { matchingPreset, priorityName } from "../lib/priorities";
 import { privacyNote } from "./privacy-link";
 import { forgetVisits, visits } from "../lib/visits";
 import { countingChosen, refusedByBrowser, setAnalyticsEnabled } from "../lib/analytics";
-import { t, fmtNumber, fmtDate } from "../lib/i18n";
+import { t, fmtDate } from "../lib/i18n";
 
 /**
  * The last spot, in full: where it is and what's remembered about it.
@@ -59,7 +61,14 @@ export function lastSpotCard(): HTMLElement {
     card.append(
       el("p", {}, t("memory.spotLede")),
       el("dl", { class: "memory-list" }, [
-        ...row(t("memory.spotWhere"), whereWords(spot)),
+        // The picture is part of the answer to "where", so it sits in that
+        // row's value beside the numbers rather than floating above the list:
+        // "40.0379, -75.3557" is a spot only a machine can place.
+        el("dt", {}, t("memory.spotWhere")),
+        el("dd", { class: "memory-where" }, [
+          ...(spot.lat != null && spot.lon != null ? [spotMap(spot.lat, spot.lon)] : []),
+          el("div", {}, whereWords(spot)),
+        ]),
         ...row(t("memory.spotSun"), spot.sun ? sunPlain(spot.sun.hours) : t("memory.unanswered")),
         ...row(t("memory.spotSoil"), spot.moisture ? moisturePlain(spot.moisture) : t("memory.unanswered")),
       ]),
@@ -87,17 +96,29 @@ export function lastSpotCard(): HTMLElement {
   }
 }
 
-/** Where the remembered spot is, said the way it was chosen. */
-function whereWords(spot: StickySpot): string {
+/**
+ * Where the remembered spot is, said the way it was chosen.
+ *
+ * The town first when this device has been told one (never looked up here —
+ * see `lib/places.ts`), then the coordinates, each labelled with what it is.
+ * The numbers used to go through the number formatter, which rounds to whole
+ * degrees by default: a garden outside Philadelphia read "40, -75", a point a
+ * hundred kilometres wide.
+ */
+function whereWords(spot: StickySpot): (string | Node)[] {
   if (spot.regionId) {
     const region = REGIONS.find((r) => r.meta.id === spot.regionId);
-    return region ? t("memory.spotWhereRegion", { region: regionName(region.meta) }) : t("memory.unanswered");
+    return [region ? t("memory.spotWhereRegion", { region: regionName(region.meta) }) : t("memory.unanswered")];
   }
-  if (spot.lat == null || spot.lon == null) return t("memory.unanswered");
-  return t("memory.spotWhereCoords", {
-    lat: fmtNumber(Number(spot.lat.toFixed(4))),
-    lon: fmtNumber(Number(spot.lon.toFixed(4))),
-  });
+  if (spot.lat == null || spot.lon == null) return [t("memory.unanswered")];
+  const town = townFor(spot.lat, spot.lon);
+  return [
+    ...(town ? [el("div", { class: "spot-town" }, t("coord.near", { place: town }))] : []),
+    el("div", { class: "coords" }, [
+      el("div", {}, latPlain(spot.lat)),
+      el("div", {}, lonPlain(spot.lon)),
+    ]),
+  ];
 }
 
 /**

@@ -35,6 +35,7 @@ import {
 } from "../components/memory-controls";
 import { spotsFileCard } from "../components/backup-controls";
 import { stickyReady } from "../lib/sticky";
+import { townsReady } from "../lib/places";
 import { prefsReady } from "../state";
 
 /** The cards a `#/settings/<param>` link can ask for, by their route word. */
@@ -58,7 +59,7 @@ export async function renderSettings(main: HTMLElement, param?: string): Promise
   // no wait at all — it reads localStorage, which answers at once
   // (`lib/visits.ts`) — and the spots card does its own read, for the same
   // reason: a count of your spots must not be wrong even for a frame.
-  await Promise.all([stickyReady(), prefsReady()]);
+  await Promise.all([stickyReady(), prefsReady(), townsReady()]);
   clear(main);
   const cards: Record<string, HTMLElement> = {
     language: languageCard(),

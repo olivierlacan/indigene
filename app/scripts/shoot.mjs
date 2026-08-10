@@ -64,6 +64,12 @@
 //                         reader's region: the walk is what makes the app know
 //                         where "here" is, and this picks *which* page to then
 //                         photograph knowing it
+//   --tiles DIR           answer OpenStreetMap tile requests from a local
+//                         mirror laid out like the URLs (DIR/<z>/<x>/<y>.png),
+//                         for the same reason as --photos: the map pictures on
+//                         the Saved and Settings pages otherwise race the
+//                         network, and can't be captured at all in a sandbox
+//                         with no way out
 //   --photos DIR          answer iNaturalist photo requests from a local
 //                         mirror instead of the network — see below
 //   --api FILE            answer iNaturalist *API* requests from a local
@@ -96,8 +102,9 @@
 //                         they only have anything to say once a spot has been
 //                         given, and a spot given *last visit* is the state a
 //                         URL can otherwise never reach
-//   --seed-garden         put an example saved spot and planting log into the
-//                         device's storage before shooting. The Saved list and
+//   --seed-garden         put an example saved spot, planting log, last-spot
+//                         memory and the town it was found in into the device's
+//                         storage before shooting. The Saved list and
 //                         a spot's own page only exist once somebody has one,
 //                         and a log worth photographing has entries years old —
 //                         which no walk through the app can produce in the
@@ -176,6 +183,7 @@ const rememberSpot = flag("--remember-spot", "");
 const api = flag("--api", "");
 const homeScreen = has("--home-screen");
 const pull = Number(flag("--pull", "0"));
+const tiles = flag("--tiles", "");
 const [url, out] = args;
 
 if (!url || !out || !(dpr > 0) || !(vw > 0) || !(vh > 0)) {
@@ -198,7 +206,7 @@ const context = await browser.newContext({
   // empty in a sandbox with no way out. Blocked whenever a mirror is in use,
   // and only then: everywhere else the service worker is part of what is being
   // photographed.
-  ...(photos || api ? { serviceWorkers: "block" } : {}),
+  ...(photos || api || tiles ? { serviceWorkers: "block" } : {}),
   viewport: { width: vw, height: vh },
   deviceScaleFactor: dpr,
   colorScheme: scheme,
@@ -243,6 +251,21 @@ if (photos) {
     });
   }
 }
+// The map-tile mirror, for the same reason and on the same terms as --photos:
+// a tile URL names one square of the world at one zoom, so a file on disk is a
+// complete and permanent answer, and it makes the map pictures capturable where
+// the browser has no outbound network at all. Mirror what a shot needs with
+// curl (tile.openstreetmap.org/<z>/<x>/<y>.png → DIR/<z>/<x>/<y>.png); a tile
+// the mirror doesn't have is failed rather than fetched, so a missing file
+// shows up as the schematic grid the app itself falls back to.
+if (tiles) {
+  const root = resolve(tiles);
+  await page.route("https://tile.openstreetmap.org/**", (route) => {
+    const file = join(root, new URL(route.request().url()).pathname);
+    if (!file.startsWith(root) || !existsSync(file)) return route.abort();
+    route.fulfill({ body: readFileSync(file), contentType: "image/png" });
+  });
+}
 if (api) {
   const rulesPath = resolve(api);
   const root = dirname(rulesPath);
@@ -285,7 +308,16 @@ for (const sel of clicks) {
 await page.waitForTimeout(wait);
 if (pull) await holdPull(page, pull, vw);
 if (unstick) {
-  await page.addStyleTag({ content: "*{position:static !important}" });
+  // Only what actually sticks. A blanket `*{position:static}` also flattens
+  // every *absolutely* positioned child onto the end of its parent — which
+  // silently dropped the pin and the OpenStreetMap credit off the map pictures,
+  // photographing a card that no reader ever sees.
+  await page.evaluate(() => {
+    for (const node of document.querySelectorAll("*")) {
+      const pos = getComputedStyle(node).position;
+      if (pos === "sticky" || pos === "fixed") node.style.position = "static";
+    }
+  });
   await page.waitForTimeout(200);
 }
 if (shootEl) await page.locator(shootEl).first().screenshot({ path: out });
@@ -470,6 +502,41 @@ async function seedGarden(page) {
       });
     await put("spots", spot);
     for (const p of plantings) await put("plantings", p);
+    // The town this device was told while the spot was being found, keyed the
+    // way lib/places.ts keys it (one name per ~5 km cell). Without it the pages
+    // show only coordinates — which is what they do for anyone who saved a spot
+    // offline, but not what a screenshot of the feature should show.
+    await new Promise((resolve, reject) => {
+      if (!db.objectStoreNames.contains("kv")) return resolve();
+      const cell = (v) => (Math.round(v / 0.05) * 0.05).toFixed(2);
+      const req = db.transaction("kv", "readwrite").objectStore("kv").put(
+        { [`${cell(spot.lat)},${cell(spot.lon)}`]: "Radnor, Pennsylvania" },
+        "towns"
+      );
+      req.onsuccess = () => resolve();
+      req.onerror = () => reject(req.error);
+    });
+    // The same ground as the last spot the device remembers, so Settings'
+    // "Your last spot" card has something to show. A walk through the app can
+    // only leave a *region* there without a GPS fix, and a card whose whole
+    // subject is a point on the ground needs a point.
+    await new Promise((resolve, reject) => {
+      if (!db.objectStoreNames.contains("kv")) return resolve();
+      const req = db.transaction("kv", "readwrite").objectStore("kv").put({
+        spot: {
+          lat: spot.lat,
+          lon: spot.lon,
+          regionId: null,
+          sun: spot.sun,
+          horizon: null,
+          deciduousOverhead: false,
+          moisture: "dry",
+          savedAt: spot.createdAt,
+        },
+      }, "sticky");
+      req.onsuccess = () => resolve();
+      req.onerror = () => reject(req.error);
+    });
   }, { spot, plantings });
   // A reload, not a `goto`: the address is already the page being photographed,
   // and a goto that changes nothing but the hash doesn't reload — the app would

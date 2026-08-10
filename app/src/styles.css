@@ -35,6 +35,9 @@
   --danger-bg: #f7dcd8;
   --danger-ink: #7a1f16;
   --good: #175e33;
+  /* Sunlight. The same gold the sun-exposure glyphs are drawn in, and it reads
+     as sun on both themes, so there is one value rather than two. */
+  --sun: #e2a516;
   --focus: #1747b3; /* ≥7:1 on --surface and --bg */
   --radius: 14px;
   --tap: 3rem; /* 48px minimum tap target */
@@ -93,6 +96,22 @@ body {
      document's new edge. `clip` rather than `hidden`: it forbids scrolling
      entirely instead of creating a scroll container. */
   overflow-x: clip;
+}
+
+/* A Home Screen app has no browser chrome, so an over-pull at the top of a page
+   bounces the whole document and shows the canvas behind it. Left as the page's
+   cream that opened a pale gap above the green header — the one part of the
+   gesture we can't paint ourselves, because it happens when the browser has
+   already claimed the touch. Taking the canvas to the brand green makes an
+   over-pull look like more header instead.
+   Only in an installed app: in a browser tab the canvas colour is what Safari
+   tints its own toolbars with, and this page is not a green page. Body keeps
+   its own background and covers the viewport, so nothing else changes. */
+html[data-home-screen] {
+  background: var(--brand);
+}
+html[data-home-screen] body {
+  min-height: 100vh;
 }
 
 h1,
@@ -2879,48 +2898,82 @@ details.weights {
 
 /* Pull down to reload.
    Only ever built on an iOS Home Screen app, where there is no reload button to
-   fall back on (components/pull-to-reload.ts). It hangs above `--pull-top` —
-   the bottom edge of the header, measured per gesture — and `--pull` walks it
-   down from there, so at rest it is tucked out of sight behind the header. That
-   tuck is the whole reason for the z-index: 9 is under the header's 10, so the
-   pill slides out from behind it rather than across it. */
+   fall back on (components/pull-to-reload.ts).
+
+   It reads as the header itself stretching: the band is pinned to `--pull-top`
+   (the header's bottom edge, measured per gesture) and `--pull` is its height,
+   so it grows straight out of the green rather than floating over the page. It
+   opens on the header's own green and warms toward sunlight at the leading
+   edge, which is the only part of it a short pull ever shows. */
 .pull-reload {
   position: fixed;
   top: var(--pull-top, 0px);
-  left: 50%;
-  z-index: 9;
+  left: 0;
+  right: 0;
+  height: var(--pull, 0px);
+  z-index: 9; /* under the header's 10 — it comes out from behind it */
   display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.4rem 0.85rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--surface);
-  color: var(--ink);
-  font-size: 0.85rem;
-  font-weight: 600;
-  white-space: nowrap;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    var(--brand) 0%,
+    color-mix(in srgb, var(--brand) 88%, var(--sun)) 55%,
+    color-mix(in srgb, var(--brand) 62%, var(--sun)) 100%
+  );
+  color: var(--on-brand);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
   /* Never in the way of the finger that's dragging it. */
   pointer-events: none;
-  transform: translate(-50%, calc(var(--pull, 0px) - 100% - 0.6rem));
 }
 /* Following a finger, so no transition — except on the way back, when there is
    no finger left to follow. */
 .pull-reload.is-settling {
-  transition: transform 0.25s ease;
+  transition: height 0.25s ease;
 }
-.pull-reload-icon {
-  display: inline-block;
-  transition: transform 0.15s ease;
+.pull-reload-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 650;
+  white-space: nowrap;
 }
-.pull-reload.is-armed .pull-reload-icon {
-  transform: rotate(180deg);
+/* The bee leaves the logo and comes over to see what you're doing — the same
+   errand it runs when the brand name is hovered, on the one gesture that has
+   nothing else to say it has started. It flies in from the left, where the
+   logo is, and the band's own overflow hides where it came from. */
+.pull-reload-bee.is-arriving {
+  animation: pull-bee-arrive 0.45s ease-out both;
 }
-.pull-reload .spinner {
-  width: 1rem;
-  height: 1rem;
-  border-width: 2px;
+@keyframes pull-bee-arrive {
+  from {
+    transform: translate(-38vw, -0.6rem) rotate(-10deg);
+    opacity: 0;
+  }
+  55% {
+    opacity: 1;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+/* Arrived, and now hovering: let go and it has something to do. */
+.pull-reload.is-armed .pull-reload-bee,
+.pull-reload.is-reloading .pull-reload-bee {
+  animation: pull-bee-hover 0.45s ease-in-out infinite;
+}
+@keyframes pull-bee-hover {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-0.18rem) rotate(7deg);
+  }
 }
 
 .spinner {

@@ -8,10 +8,11 @@
 // only there — `lib/standalone.ts` says where — because everywhere else the
 // browser already does this better than we can.
 //
-// The gesture: at the very top of a page, drag down. A pill slides out from
-// behind the header and follows your finger at about half speed; past a
-// threshold it flips its arrow and says it's ready. Let go and the page
-// reloads; let go short of it and the pill goes back where it came from.
+// The gesture: at the very top of a page, drag down. The header appears to
+// stretch — a green band grows out from under it, warming toward sunlight at
+// its leading edge — and the bee leaves the logo to come and see what you're
+// doing. Past a threshold it hovers and the words change; let go and the page
+// reloads, let go short of it and the band closes back into the header.
 //
 // A drag is not something everyone can do, so it is not the only way: the
 // header's gear menu carries a Reload row in the same situation
@@ -20,19 +21,20 @@ import { el } from "../ui";
 import { t } from "../lib/i18n";
 import { isHomeScreenApp } from "../lib/standalone";
 
-/** How far the pill travels before letting go means "reload". */
+/** How far the band opens before letting go means "reload". */
 const ARM = 48;
-/** Where the pill stops following, however far the finger keeps going. */
+/** Where it stops following, however far the finger keeps going. */
 const MAX_PULL = 88;
-/** The pill moves about half as far as the finger: a reload should take a
- *  deliberate drag, and the resistance is what a phone owner expects here. */
+/** The band opens about half as far as the finger travels: a reload should take
+ *  a deliberate drag, and the resistance is what a phone owner expects here. */
 const DAMPING = 0.55;
-/** Under this much movement a touch is still a tap, or the start of a sideways
- *  swipe — nothing to take over yet. */
-const DEADZONE = 6;
+/** Enough movement to tell down from sideways, and no more. The gesture takes
+ *  the touch as early as it honestly can: every pixel it waits is a pixel of
+ *  the browser's own bounce, which opens a pale gap above the header. */
+const DEADZONE = 3;
 
-let pill: HTMLElement | null = null;
-let icon: HTMLElement | null = null;
+let band: HTMLElement | null = null;
+let bee: HTMLElement | null = null;
 let text: HTMLElement | null = null;
 
 let startX = 0;
@@ -46,6 +48,9 @@ let settle: number | undefined;
 /** Wire up the gesture, if this is a device that needs it. */
 export function initPullToReload(): void {
   if (!isHomeScreenApp()) return;
+  // Turns the page's canvas green, so a bounce this gesture doesn't catch shows
+  // more header rather than a pale gap (see the note in styles.css).
+  document.documentElement.dataset.homeScreen = "";
   document.addEventListener("touchstart", onStart, { passive: true });
 }
 
@@ -105,14 +110,14 @@ function onMove(e: TouchEvent): void {
     }
     if (window.scrollY > 0) return stop();
     // Already committed to a scroll or a bounce: the browser won't hand this
-    // gesture over, and taking half of it would mean a pill moving beside a
+    // gesture over, and taking half of it would mean a band opening beside a
     // page moving on its own.
     if (!e.cancelable) return stop();
     engaged = true;
     show();
   }
 
-  // Ours now. Without this the page rubber-bands under the pill and the two
+  // Ours now. Without this the page rubber-bands under the band and the two
   // move at different speeds.
   e.preventDefault();
   pull = Math.min(MAX_PULL, Math.max(0, dy * DAMPING));
@@ -128,7 +133,7 @@ function onEnd(): void {
   reloading = true;
   pull = ARM;
   paint();
-  // A beat, so the pill has a frame to say what's happening before the page
+  // A beat, so the band has a frame to say what's happening before the page
   // goes away. The reload itself is the plain one a toolbar button does: the
   // service worker answers navigations from the network first (`public/sw.js`),
   // so this really does fetch the current app rather than re-serving the copy
@@ -141,7 +146,7 @@ function onCancel(): void {
   retract();
 }
 
-/** Let go of the gesture — the listeners, not the pill. */
+/** Let go of the gesture — the listeners, not the band. */
 function stop(): void {
   tracking = false;
   engaged = false;
@@ -150,13 +155,13 @@ function stop(): void {
   document.removeEventListener("touchcancel", onCancel);
 }
 
-/** Slide the pill back behind the header and leave nothing behind. */
+/** Close the band back into the header and leave nothing behind. */
 function retract(): void {
-  if (!pill) return;
+  if (!band) return;
   pull = 0;
-  pill.classList.add("is-settling");
+  band.classList.add("is-settling");
   paint();
-  const done = pill;
+  const done = band;
   settle = window.setTimeout(() => {
     done.hidden = true;
     done.classList.remove("is-settling");
@@ -164,41 +169,47 @@ function retract(): void {
 }
 
 function show(): void {
-  if (!pill) build();
-  if (!pill) return;
-  // A pull that starts while the last one is still sliding home: without this,
-  // the old retract's timer arrives mid-gesture and hides a pill that is at
-  // that moment following a finger.
+  if (!band) build();
+  if (!band || !bee) return;
+  // A pull that starts while the last one is still closing: without this, the
+  // old retract's timer arrives mid-gesture and hides a band that is at that
+  // moment following a finger.
   window.clearTimeout(settle);
-  // The pill starts hidden *behind* the header, so where the header ends is
-  // where it has to be pinned. Measured per gesture: the header wraps to two
-  // rows at large text sizes, and the step rail comes and goes with the flow.
+  // The band grows *from* the header, so where the header ends is where it has
+  // to be pinned. Measured per gesture: the header wraps to two rows at large
+  // text sizes, and the step rail comes and goes with the flow.
   const header = document.querySelector(".app-header");
   const top = header ? header.getBoundingClientRect().bottom : 0;
-  pill.style.setProperty("--pull-top", `${Math.round(top)}px`);
-  pill.classList.remove("is-settling");
-  pill.hidden = false;
+  band.style.setProperty("--pull-top", `${Math.round(top)}px`);
+  band.classList.remove("is-settling");
+  band.hidden = false;
+  // Fly the bee in again. Removing the class isn't enough on its own — an
+  // animation only restarts once the element has been laid out without it,
+  // which is what reading `offsetWidth` forces.
+  bee.classList.remove("is-arriving");
+  void bee.offsetWidth;
+  bee.classList.add("is-arriving");
 }
 
 function paint(): void {
-  if (!pill || !icon || !text) return;
-  pill.style.setProperty("--pull", `${Math.round(pull)}px`);
+  if (!band || !text) return;
+  band.style.setProperty("--pull", `${Math.round(pull)}px`);
   const armed = pull >= ARM;
-  pill.classList.toggle("is-armed", armed && !reloading);
-  pill.classList.toggle("is-reloading", reloading);
-  icon.className = reloading ? "spinner" : "pull-reload-icon";
-  icon.textContent = reloading ? "" : "↓";
+  band.classList.toggle("is-armed", armed && !reloading);
+  band.classList.toggle("is-reloading", reloading);
   text.textContent = t(
     reloading ? "pullToReload.reloading" : armed ? "pullToReload.release" : "pullToReload.pull"
   );
 }
 
 function build(): void {
-  icon = el("span", { class: "pull-reload-icon" }, "↓");
+  bee = el("span", { class: "pull-reload-bee" }, "\u{1F41D}");
   text = el("span", { class: "pull-reload-label" });
   // Hidden from screen readers: it is the visible half of a drag, and a drag is
   // not how a reader using one navigates. Their way to the same thing is the
   // gear menu's Reload row, which needs no commentary from here.
-  pill = el("div", { class: "pull-reload", "aria-hidden": "true", hidden: true }, [icon, text]);
-  document.body.append(pill);
+  band = el("div", { class: "pull-reload", "aria-hidden": "true", hidden: true }, [
+    el("div", { class: "pull-reload-inner" }, [bee, text]),
+  ]);
+  document.body.append(band);
 }

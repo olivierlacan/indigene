@@ -71,9 +71,18 @@ subtitle on the What's new page.
 
 ### Changed
 
-- **The little fact boxes are all one size now.** A label long enough to run
+- **A spot's fact boxes lead with the number.** Plants, Species, Nurtured,
+  Sustained — one word each, and the figure set large enough to read at arm's
+  length.
+- **All the little fact boxes are one size now.** A label long enough to run
   onto two lines used to make its box taller than the one beside it and knock
   the numbers out of line. On spots, plants and regions alike, they line up.
+- **A planted row says its size in five words.** "6.6 ft × 4.6 ft if thriving"
+  in place of the sentence that used to wrap onto a second line, so a plant in
+  your log is one line to read.
+- **A linked photo says "Sighting".** It used to show the observation's number,
+  which told you nothing — now a row with a sighting looks different from one
+  without, and the button below offers to add another.
 - **"It's yours" now includes taking it with you.**
   [Privacy](https://indigene.app/privacy) and [About](https://indigene.app/about)
   both say so, and Privacy links straight to the button that does it.

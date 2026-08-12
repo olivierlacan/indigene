@@ -26,7 +26,7 @@ import {
   today,
 } from "../lib/garden";
 import { spotValue, type SpotValue } from "../lib/spot-value";
-import { wildlifeChips } from "../components/wildlife-chips";
+import { wildlifeGroups } from "../components/wildlife-chips";
 import { isUuid, linkedObservation, observationUrl, parseObservationRef } from "../lib/observation-link";
 import { observationList } from "../components/observation-ui";
 import { statTiles, type Stat } from "../components/stat-card";
@@ -132,14 +132,14 @@ function countsCard(plantings: Planting[], value: SpotValue | null): HTMLElement
       explain: t("spot.tileWildlifeExplain"),
     });
   }
-  return el("section", { class: "card" }, [statTiles(stats, t("spot.tilesLabel"))]);
+  // `figures`: every value here is a bare count, so the count is what should
+  // carry the tile (see `TileOptions`).
+  return el("section", { class: "card" }, [
+    statTiles(stats, t("spot.tilesLabel"), { figures: true }),
+  ]);
 }
 
 // --- who it can feed -------------------------------------------------------
-
-/** Animals shown before the row folds. A long log can document forty, and forty
- *  chips is a scroll rather than a picture. */
-const WILDLIFE_SHOWN = 12;
 
 /**
  * The named animals this planting can feed — the one thing a garden's plants
@@ -152,28 +152,18 @@ const WILDLIFE_SHOWN = 12;
  * have. A list of ties is what the data actually holds: this plant, this
  * animal, one cited source each.
  *
- * The line under the heading keeps even that honest. A documented tie means the
- * animal *can* use the plant, not that it has found yours.
+ * Shown by group rather than as one long column of names, because a dozen
+ * plants can document forty animals and forty names is a wall (see
+ * `wildlifeGroups`). The line under the heading keeps the whole thing honest:
+ * a documented tie means the animal *can* use the plant, not that it has found
+ * yours.
  */
 function feedsCard(value: SpotValue): HTMLElement {
-  const body: (HTMLElement | string)[] = [
+  return el("section", { class: "card" }, [
     el("h3", { style: "margin:0 0 0.3rem" }, t("spot.feedsTitle")),
     el("p", { class: "note" }, t("spot.feedsNote")),
-  ];
-  const chips = wildlifeChips(value.wildlife.slice(0, WILDLIFE_SHOWN));
-  const rest = value.wildlife.slice(WILDLIFE_SHOWN);
-  body.push(chips);
-  if (rest.length) {
-    const more = el("button", {
-      class: "btn btn-ghost btn-compact",
-      onClick: () => {
-        chips.append(...Array.from(wildlifeChips(rest).children));
-        more.remove();
-      },
-    }, t("spot.feedsMore", { n: fmtNumber(rest.length) }));
-    body.push(more);
-  }
-  return el("section", { class: "card" }, body);
+    wildlifeGroups(value.wildlife, "spot-feeds"),
+  ]);
 }
 
 // --- the log ---------------------------------------------------------------
@@ -267,22 +257,28 @@ function sightingsBlock(planting: Planting, name: string, redraw: () => void): H
       // the observation may be photo-less, licensed all-rights-reserved, or
       // just unreachable right now, and dropping the gardener's own record of
       // it would be worse than a plain link out.
+      //
+      // It says "Sighting" rather than "#373658728", because the number is the
+      // one thing about it nobody reads — and a row that has one should be
+      // legible as *having a sighting* at a glance, next to rows that don't.
+      // The reference itself stays in the link's title, for anyone who wants it.
       const missing = rows.filter((r) => !r.observation).map((r) => r.ref);
       if (missing.length) {
         gallery.append(
-          el("p", { class: "coords" }, [
-            t("spot.obsPlainLink"),
-            " ",
-            ...missing.map((ref) =>
-              el(
-                "a",
-                { href: observationUrl(ref), target: "_blank", rel: "noopener" },
-                // A UUID is 36 characters of hex nobody reads; its first block
-                // is enough to tell two of them apart in a list of links.
-                `${isUuid(ref) ? ref.slice(0, 8) : `#${ref}`} `
-              )
-            ),
-          ])
+          el("p", { class: "log-obs-refs" }, missing.map((ref) =>
+            el("a", {
+              class: "log-obs-ref",
+              href: observationUrl(ref),
+              target: "_blank",
+              rel: "noopener",
+              // A UUID is 36 characters of hex; its first block is enough to
+              // tell two of them apart.
+              title: isUuid(ref) ? ref.slice(0, 8) : `#${ref}`,
+            }, [
+              el("span", { "aria-hidden": "true" }, "🖼️"),
+              t("spot.obsSighting"),
+            ])
+          ))
         );
       }
     });
@@ -329,13 +325,16 @@ function sightingsBlock(planting: Planting, name: string, redraw: () => void): H
     el("p", { class: "hint" }, t("spot.obsHelp")),
   ]) as HTMLFormElement;
 
+  // "Add sighting" once there is one, because the long form is an explanation
+  // — what a sighting is here, and that it lives on iNaturalist — and somebody
+  // who has already linked one has had that explained.
   const toggle = el("button", {
     class: "btn btn-ghost btn-compact log-obs-toggle",
     onClick: () => {
       form.hidden = !form.hidden;
       if (!form.hidden) input.focus();
     },
-  }, t("spot.obsLink"));
+  }, t(planting.observations.length ? "spot.obsLinkMore" : "spot.obsLink"));
 
   block.append(toggle, form);
   return block;

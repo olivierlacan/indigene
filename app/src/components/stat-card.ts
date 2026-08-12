@@ -33,6 +33,20 @@ export function statGrid(p: Plant): HTMLElement {
   return statTiles(statsFor(p), t("stat.glance", { name: commonName(p) }));
 }
 
+export interface TileOptions {
+  /**
+   * Draw the grid as a row of **figures**: a one-word label in small caps over
+   * a number twice the usual size.
+   *
+   * For grids where every value really is a bare count — a spot's tally. It is
+   * not the default because most tiles hold a phrase rather than a number
+   * ("5–12 h/day", "height × spread, eventually"), and a phrase set at figure
+   * size wraps into a mess in a tile 8 rem wide. The trade is deliberate:
+   * where the value *is* a number, the number should be the thing you see.
+   */
+  figures?: boolean;
+}
+
 /**
  * The grid itself, for any page with numbers worth scanning — a plant's
  * characteristics, an animal's reach. An animal's page used to say the same
@@ -41,7 +55,7 @@ export function statGrid(p: Plant): HTMLElement {
  * longer to read, longer to translate, and impossible to compare at a glance
  * against the plant pages that had tiles all along.
  */
-export function statTiles(stats: Stat[], ariaLabel: string): HTMLElement {
+export function statTiles(stats: Stat[], ariaLabel: string, opts: TileOptions = {}): HTMLElement {
   const dialog = el("dialog", { class: "stat-dialog" }) as HTMLDialogElement;
   dialog.addEventListener("click", (e) => {
     if (e.target === dialog) dialog.close(); // tap the backdrop to dismiss
@@ -71,7 +85,10 @@ export function statTiles(stats: Stat[], ariaLabel: string): HTMLElement {
     dialog.showModal();
   };
 
-  return el("div", { class: "stat-grid", "aria-label": ariaLabel }, [
+  return el("div", {
+    class: `stat-grid${opts.figures ? " stat-grid-figures" : ""}`,
+    "aria-label": ariaLabel,
+  }, [
     ...stats.map((s) =>
       el("button", {
         class: "stat-tile",
@@ -84,7 +101,14 @@ export function statTiles(stats: Stat[], ariaLabel: string): HTMLElement {
         }),
         onClick: () => open(s),
       }, [
-        el("span", { class: "stat-k", "aria-hidden": "true" }, [`${s.icon} ${s.label}`]),
+        // Icon and label are separate elements rather than one string, so the
+        // figures variant can grow the one and shrink the other.
+        el("span", { class: "stat-k", "aria-hidden": "true" }, [
+          el("span", { class: "stat-name" }, [
+            el("span", { class: "stat-icon" }, s.icon),
+            el("span", { class: "stat-label" }, s.label),
+          ]),
+        ]),
         el("span", { class: "stat-v", "aria-hidden": "true" }, [
           s.value,
           s.sub ? el("span", { class: "stat-sub" }, s.sub) : null,

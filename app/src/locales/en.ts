@@ -257,21 +257,20 @@ export const en = {
   "spot.seePlants": "Plants for this spot",
   "spot.privacy": "Your log stays on this device — the plants, the dates, all of it",
   "spot.tilesLabel": "What's growing here",
-  "spot.tilePlants": "In the ground",
+  "spot.tilePlants": "Plants",
   "spot.tilePlantsExplain": "Every plant you've logged here, counting six milkweeds as six.",
-  "spot.tileKinds": "Kinds",
+  "spot.tileKinds": "Species",
   "spot.tileKindsExplain":
     "How many different plants you've got in. A mix carries a garden through the year — something in flower in April, something with berries in October.",
-  "spot.tileHosts": "Feed caterpillars",
+  "spot.tileHosts": "Nurtured",
   "spot.tileHostsExplain":
-    "How many of your kinds raise caterpillars. Caterpillars are what songbirds feed their chicks, so this is the number that turns a garden into food.",
-  "spot.tileWildlife": "Can feed",
+    "How many of your species raise caterpillars. Caterpillars are what songbirds feed their chicks, so this is the number that turns a garden into food.",
+  "spot.tileWildlife": "Sustained",
   "spot.tileWildlifeExplain":
-    "Named insects and animals your plants are documented to support here. It says they can use what you've planted — not that they've found it yet.",
+    "Insects and animals your plants are documented to support here. It says they can use what you've planted — not that they've found it yet.",
   "spot.feedsTitle": "What it can feed",
   "spot.feedsNote":
-    "Every animal documented to use one of these plants — which says they can, not that they've found yours. A star marks one with no other plant to turn to.",
-  "spot.feedsMore": "Show {n} more",
+    "Documented to use these plants, not spotted in yours. ⭐ = no other plant will do.",
   "spot.logTitle": "What you've planted",
   "spot.logEmpty": "Nothing logged here yet. Add the first thing you put in — the date can be as vague as “2024”.",
   "spot.whenUnknown": "Date not recorded",
@@ -293,6 +292,7 @@ export const en = {
   "spot.added": "{name} added to your log.",
   // Linking an iNaturalist sighting instead of storing photos here.
   "spot.obsLink": "📷 Link an iNaturalist sighting",
+  "spot.obsLinkMore": "📷 Add sighting",
   "spot.obsLabel": "iNaturalist observation link, number or UUID",
   "spot.obsPlaceholder": "Link, number or UUID",
   "spot.obsAdd": "Link",
@@ -301,7 +301,7 @@ export const en = {
   "spot.obsBad": "That isn't a link, number or UUID we recognise.",
   "spot.obsAlready": "Already linked to this plant.",
   "spot.obsAdded": "Sighting linked.",
-  "spot.obsPlainLink": "Also linked:",
+  "spot.obsSighting": "Sighting",
 
   // The button on a plant's page that starts a log entry for it.
   "planted.button": "🌱 I planted one",
@@ -316,9 +316,8 @@ export const en = {
   "log.months.other": "{n} months in",
   "log.years.one": "{n} year in",
   "log.years.other": "{n} years in",
-  "log.firstYear":
-    "First year is roots: expect little above ground. Sleep, creep, leap — the leaping comes in year three.",
-  "log.expect": "Should be around {height} tall and {spread} across by now, if it's thriving.",
+  "log.firstYear": "First year is roots, not shoots.",
+  "log.expect": "{height} × {spread} if thriving",
 
   // ---------------------------------------------------------------------
   // How common a plant is around a spot (iNaturalist record counts).
@@ -621,15 +620,20 @@ export const en = {
   "score.establishment.plain": "How likely it is to make it with no watering or fuss after you plant it.",
 
   "wildlifeKind.butterfly.title": "Butterflies",
+  "wildlifeKind.butterfly.short": "Butterflies",
   "wildlifeKind.butterfly.blurb": "Choose a butterfly to see which natives raise its caterpillars or feed the adults.",
   "wildlifeKind.moth.title": "Moths",
+  "wildlifeKind.moth.short": "Moths",
   "wildlifeKind.moth.blurb":
     "The night shift — including the giant silk moths, whose caterpillars are prime baby-bird food.",
   "wildlifeKind.bee.title": "Bees & other pollinators",
+  "wildlifeKind.bee.short": "Bees",
   "wildlifeKind.bee.blurb": "Native bees, many of which can raise their young on only one family of flowers.",
   "wildlifeKind.bird.title": "Birds",
+  "wildlifeKind.bird.short": "Birds",
   "wildlifeKind.bird.blurb": "The berries, seeds, nectar, and caterpillars behind the birds you want in the yard.",
   "wildlifeKind.mammal.title": "Mammals & others",
+  "wildlifeKind.mammal.short": "Mammals",
   "wildlifeKind.mammal.blurb": "Acorns and fruit for the four-legged neighbors — and a reptile or two.",
 
   "support.host.term": "Host",

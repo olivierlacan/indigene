@@ -242,6 +242,8 @@ export const en = {
   "saved.statPlants.other": "{count} plants in the ground here",
   "saved.statKinds.one": "{count} kind of plant",
   "saved.statKinds.other": "{count} different kinds of plant",
+  "saved.statWildlife.one": "{count} kind of wildlife these plants can feed",
+  "saved.statWildlife.other": "{count} kinds of wildlife these plants can feed",
   "saved.openLog": "What you've planted →",
   "saved.startLog": "Start a planting log →",
 
@@ -263,6 +265,14 @@ export const en = {
   "spot.tileHosts": "Feed caterpillars",
   "spot.tileHostsExplain":
     "How many of your kinds raise caterpillars. Caterpillars are what songbirds feed their chicks, so this is the number that turns a garden into food.",
+  "spot.tileWildlife": "Can feed",
+  "spot.tileWildlifeExplain":
+    "Named insects and animals your plants are documented to support here. It says they can use what you've planted — not that they've found it yet.",
+  "spot.valueTitle": "What it gives back",
+  "spot.valueNote":
+    "Averaged from what each plant is measured to do where it was studied — a picture of the planting, not a reading of your garden.",
+  "spot.valueFeeds": "What's here can feed: ",
+  "spot.valueMore": "Show {n} more",
   "spot.logTitle": "What you've planted",
   "spot.logEmpty": "Nothing logged here yet. Add the first thing you put in — the date can be as vague as “2024”.",
   "spot.whenUnknown": "Date not recorded",

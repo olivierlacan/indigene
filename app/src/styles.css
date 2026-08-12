@@ -2218,6 +2218,26 @@ details.weights {
   flex: 0 0 auto;
   vertical-align: -0.12em; /* used when a glyph sits inline (e.g. plant-page chips) */
 }
+/* The row of animals a plant — or a whole planting log — brings in. A wrapping
+   row of secondary buttons: each name is its own tap target and its own link,
+   and a name is never split across two lines. */
+.wl-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.wl-chip {
+  flex: 0 1 auto;
+  min-height: 2.4rem;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.wl-chip-tie {
+  opacity: 0.7;
+  margin-left: 0.3rem;
+  display: inline-flex;
+}
 /* Per-kind pills: a deep, saturated color carrying a white glyph + label. Each
    is dark enough that white clears ≥7:1 (well past the 4.5:1 floor), so the
    monochrome glyph never blends into its pill; the pill is the background, so

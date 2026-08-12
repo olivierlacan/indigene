@@ -56,6 +56,16 @@ subtitle on the What's new page.
 - **Saving a spot offers its town as the name.** The box that asks what to call
   it starts with "Radnor, Pennsylvania" instead of a pair of coordinates —
   something to accept or edit, not something to replace.
+- **A saved spot now says what it gives back.** Its page adds a card showing
+  what the plants you've logged there do — feeding bees, soaking up rain,
+  holding soil — averaged across everything in the ground, strongest first.
+  [Your spots](https://indigene.app/saved).
+- **And who they can feed.** Under those bars, every named butterfly, bee, bird
+  and animal your plants are documented to support, each a link to its page. A
+  star marks one that has no other plant to turn to.
+- **Two new figures at a glance.** A spot's tiles gain the number of creatures
+  its plants can feed, and each row in your saved list carries it too — so a
+  garden's reach shows without opening it.
 - Internal: town names are learned once per ~5 km cell, only on the location
   step's confirm (where the coordinate is already going out for soil and
   climate, and the page says so), and read from device storage everywhere else
@@ -73,6 +83,12 @@ subtitle on the What's new page.
 - **The app downloads about a third less to get started.** It used to carry the
   plant lists for all nine regions before showing you anything. Now it fetches
   the one region you're gardening in, and keeps it for offline.
+- Internal: the eco-score bars and the wildlife chips are shared components
+  (`components/score-list.ts`, `components/wildlife-chips.ts`) drawn by both a
+  plant's page and a spot's; ties fold through one `bestTies` in `lib/wildlife.ts`.
+  A spot's figures come from the registry and the tie table, so the saved list
+  counts a garden's wildlife without downloading a plant list —
+  `npm run chunks:check` holds it to that.
 - Internal: region seeds are per-region chunks (`data/regions.ts` reaches them
   through `import()`); the shell drops 422 → 277 KB gzipped, plus 9–36 KB for a
   reader's own region. Figures updated across README, PROJECT_BRIEF and the

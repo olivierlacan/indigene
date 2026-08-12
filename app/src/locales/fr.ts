@@ -262,6 +262,8 @@ export const fr: Dict = {
   "saved.statPlants.other": "{count} plantes en terre ici",
   "saved.statKinds.one": "{count} espèce de plante",
   "saved.statKinds.other": "{count} espèces de plantes différentes",
+  "saved.statWildlife.one": "{count} espèce animale que ces plantes peuvent nourrir",
+  "saved.statWildlife.other": "{count} espèces animales que ces plantes peuvent nourrir",
   "saved.openLog": "Ce que vous avez planté →",
   "saved.startLog": "Commencer un journal →",
 
@@ -283,6 +285,14 @@ export const fr: Dict = {
   "spot.tileHosts": "Nourrissent des chenilles",
   "spot.tileHostsExplain":
     "Combien de vos espèces élèvent des chenilles. Les chenilles sont ce que les oiseaux donnent à leurs petits : c'est le chiffre qui transforme un jardin en garde-manger.",
+  "spot.tileWildlife": "Peuvent nourrir",
+  "spot.tileWildlifeExplain":
+    "Les insectes et animaux que vos plantes sont documentées pour soutenir ici. Cela dit qu'ils peuvent profiter de ce que vous avez planté — pas qu'ils l'ont déjà trouvé.",
+  "spot.valueTitle": "Ce que ça rend",
+  "spot.valueNote":
+    "Une moyenne de ce que chaque plante fait là où elle a été mesurée — une image de la plantation, pas une mesure de votre jardin.",
+  "spot.valueFeeds": "Ce qui est là peut nourrir : ",
+  "spot.valueMore": "Afficher {n} de plus",
   "spot.logTitle": "Ce que vous avez planté",
   "spot.logEmpty":
     "Rien d'inscrit ici pour l'instant. Ajoutez la première plante mise en terre — la date peut rester vague, « 2024 » suffit.",

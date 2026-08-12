@@ -14,7 +14,7 @@ import { navigate, openSavedSpot } from "../state";
 import { getSpot, plantingsForSpot, savePlanting, deletePlanting } from "../db";
 import type { Planting, PlantedDate, SavedSpot } from "../types";
 import type { Plant } from "../types";
-import { REGIONS, loadPlants, regionForSite } from "../lib/plants";
+import { REGIONS, loadPlants, regionForSpot } from "../lib/plants";
 import { findPlant } from "../lib/explore";
 import type { RegionDef } from "../lib/plants";
 import {
@@ -25,6 +25,9 @@ import {
   timeInGround,
   today,
 } from "../lib/garden";
+import { spotValue, type SpotValue } from "../lib/spot-value";
+import { scoreList } from "../components/score-list";
+import { wildlifeChips } from "../components/wildlife-chips";
 import { isUuid, linkedObservation, observationUrl, parseObservationRef } from "../lib/observation-link";
 import { observationList } from "../components/observation-ui";
 import { statTiles, type Stat } from "../components/stat-card";
@@ -53,7 +56,7 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
 
   document.title = t("spot.docTitle", { label: spot.label });
   const plantings = await plantingsForSpot(spot.id).catch(() => [] as Planting[]);
-  const region = regionOf(spot);
+  const region = regionForSpot(spot);
   const roster = await rosterFor(region);
   const byId = new Map(roster.map((p) => [p.id, p]));
   // A plant logged from another region's list — a spot near a boundary, or a
@@ -67,6 +70,7 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
     if (first) byId.set(first.plant.id, first.plant);
   }
   const plantOf = (plantId: string): Plant | undefined => byId.get(plantId);
+  const value = spotValue(plantings, plantOf, region?.meta.id ?? null);
 
   const redraw = (): void => void renderSpot(main, param);
 
@@ -76,7 +80,8 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
       spot.sun ? sunPlain(spot.sun.hours) : t("saved.sunUnknown"),
       region ? ` · ${regionName(region.meta)}` : "",
     ]),
-    countsCard(plantings, plantOf),
+    countsCard(plantings, value),
+    ...(value ? [valueCard(value)] : []),
     logCard(plantings, plantOf, redraw),
     addCard(spot, roster, redraw),
     el("button", {
@@ -91,18 +96,15 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
 // --- the tally -------------------------------------------------------------
 
 /**
- * How the spot is doing, as three numbers rather than a sentence about them.
+ * How the spot is doing, as four numbers rather than a sentence about them.
  *
- * The third tile is the one that isn't bookkeeping: how many of the kinds
- * planted here raise caterpillars, which is the food-web measure the whole app
- * ranks on. A garden can hold twenty plants and feed nothing much; this says
- * whether yours does.
+ * The last two are the ones that aren't bookkeeping: how many of the kinds
+ * planted here raise caterpillars — the food-web measure the whole app ranks on
+ * — and how many named animals the planting is documented to support. A garden
+ * can hold twenty plants and feed nothing much; these say whether yours does.
  */
-function countsCard(plantings: Planting[], plantOf: (id: string) => Plant | undefined): HTMLElement {
+function countsCard(plantings: Planting[], value: SpotValue | null): HTMLElement {
   const counts = tally(plantings);
-  const hosts = new Set(
-    plantings.map((p) => p.plantId).filter((id) => (plantOf(id)?.hostLepCount ?? 0) > 0)
-  ).size;
   const stats: Stat[] = [
     {
       icon: "🌱",
@@ -119,11 +121,72 @@ function countsCard(plantings: Planting[], plantOf: (id: string) => Plant | unde
     {
       icon: "🐛",
       label: t("spot.tileHosts"),
-      value: fmtNumber(hosts),
+      value: fmtNumber(value?.hostKinds ?? 0),
       explain: t("spot.tileHostsExplain"),
     },
   ];
+  if (value?.wildlife.length) {
+    stats.push({
+      icon: "🦋",
+      label: t("spot.tileWildlife"),
+      value: fmtNumber(value.wildlife.length),
+      explain: t("spot.tileWildlifeExplain"),
+    });
+  }
   return el("section", { class: "card" }, [statTiles(stats, t("spot.tilesLabel"))]);
+}
+
+// --- what it gives back ----------------------------------------------------
+
+/** Animals shown before the row folds. A long log can document forty, and forty
+ *  chips is a scroll rather than a picture. */
+const WILDLIFE_SHOWN = 12;
+
+/**
+ * The service this planting provides, as far as the catalog can say: the seven
+ * ecosystem benefits averaged across what's in the ground, and the animals
+ * those plants are documented to support.
+ *
+ * The bars are ordered by this spot's own values rather than the app's usual
+ * fixed order, so the top row answers "what is this corner *for*" without a
+ * sentence saying it. That's the one place the order differs from a plant's
+ * page, and it's deliberate: a plant's rows are read against other plants, a
+ * garden's are read against each other.
+ *
+ * The caveat under the heading is not boilerplate. These are the plants'
+ * measured values somewhere else, averaged — not a reading of this garden — and
+ * a documented tie means an animal *can* use the plant, not that it has found
+ * yours. Saying so once, plainly, is what earns the rest of the card.
+ */
+function valueCard(value: SpotValue): HTMLElement {
+  const rows = [...value.services].sort((a, b) => b.value - a.value);
+  const body: (HTMLElement | string)[] = [
+    el("h3", { style: "margin:0 0 0.3rem" }, t("spot.valueTitle")),
+    el("p", { class: "note" }, t("spot.valueNote")),
+    scoreList(rows, "spot-score"),
+  ];
+  if (value.wildlife.length) {
+    body.push(
+      el("p", { class: "kv", style: "margin:0.9rem 0 0.4rem" }, [
+        el("span", { class: "k" }, t("spot.valueFeeds")),
+      ])
+    );
+    const shown = value.wildlife.slice(0, WILDLIFE_SHOWN);
+    const rest = value.wildlife.slice(WILDLIFE_SHOWN);
+    const chips = wildlifeChips(shown);
+    body.push(chips);
+    if (rest.length) {
+      const more = el("button", {
+        class: "btn btn-ghost btn-compact",
+        onClick: () => {
+          chips.append(...Array.from(wildlifeChips(rest).children));
+          more.remove();
+        },
+      }, t("spot.valueMore", { n: fmtNumber(rest.length) }));
+      body.push(more);
+    }
+  }
+  return el("section", { class: "card" }, body);
 }
 
 // --- the log ---------------------------------------------------------------
@@ -477,15 +540,6 @@ function addCard(spot: SavedSpot, roster: Plant[], redraw: () => void): HTMLElem
  *  and an unaccented typing of it finds it too. */
 function norm(s: string): string {
   return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
-}
-
-/** The region this spot's plants come from — the reader's own pick first, the
- *  coordinates otherwise, exactly as everywhere else in the app. */
-function regionOf(spot: SavedSpot): RegionDef | null {
-  const picked = spot.regionOverride
-    ? REGIONS.find((r) => r.meta.id === spot.regionOverride) ?? null
-    : null;
-  return picked ?? regionForSite(spot.lat, spot.lon, spot.site);
 }
 
 async function rosterFor(region: RegionDef | null): Promise<Plant[]> {

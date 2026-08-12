@@ -909,6 +909,7 @@ export const fr: Dict = {
   // Pourquoi une plante obtient cette note pour ce coin de jardin.
   // ---------------------------------------------------------------------
   "fit.sun.tooLittle": "Veut plus de soleil que ce coin n'en reçoit (il lui en faut ~{needs} h, ce coin en donne ~{has}).",
+  "fit.sun.near": "Un peu moins de soleil qu'elle n'aime — elle poussera peut-être moins bien.",
   "fit.sun.tooMuch": "Préfère plus d'ombre que ce coin n'en offre — elle risque de griller en plein soleil.",
   "fit.sun.good": "Le soleil lui convient bien ({sun}).",
   "fit.moisture.good": "Elle s'accommode de l'humidité d'ici (sol {band}).",

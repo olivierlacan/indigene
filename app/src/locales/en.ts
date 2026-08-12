@@ -900,6 +900,9 @@ export const en = {
   // what it says.
   // ---------------------------------------------------------------------
   "fit.sun.tooLittle": "Wants more sun than this spot gets (needs ~{needs}+ hours, spot gets ~{has}).",
+  // Under an hour short: no numbers, because the two would round to the same
+  // one and read as a contradiction (`SUN_NEAR_HOURS` in lib/ranking.ts).
+  "fit.sun.near": "A bit less sun than it likes — it may not grow as well.",
   "fit.sun.tooMuch": "Prefers more shade than this spot offers — may scorch in full sun.",
   "fit.sun.good": "Sun is a good match ({sun}).",
   "fit.moisture.good": "Handles the moisture here ({band} soil).",

@@ -23,6 +23,7 @@ import type { Plant, Weights } from "../types";
 import { el } from "../ui";
 import { SCORE_KEYS, scoreLabel, bloomSentence } from "../lib/plain";
 import { keystoneIcon } from "./keystone-icon";
+import { plantThumb } from "./plant-thumb";
 import { t, fmtNumber, fmtList } from "../lib/i18n";
 import { length } from "../lib/units";
 import { nameLines } from "../lib/names";
@@ -71,7 +72,10 @@ export function plantCard(r: Ranked, weights: Weights, nq = "", regionId?: strin
   // rather than a `::after`, because the link's `::after` is the overlay that
   // stretches it across the card.
   const head = el("div", { class: "plant-head" }, [
-    el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
+    // The plant, where the ranked list previously drew a generic one of its
+    // kind. This is the list a reader makes a decision from — nine shrubs
+    // wearing the same shrub is the one place the drawing was least use.
+    plantThumb(p.id, p.form, { regionId }),
     el("div", {}, [
       el("h3", { class: "plant-name" }, [
         el("a", { class: "plant-pick-link", href: `#/plants/${p.id}` }, [

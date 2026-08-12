@@ -39,12 +39,12 @@ const THUMB_PX = 72;
 export function plantThumb(
   plantId: string,
   form: PlantForm,
-  opts: { regionId?: string; attrs?: Record<string, string> } = {},
+  opts: { regionId?: string; attrs?: Record<string, string>; href?: string; label?: string } = {},
 ): HTMLElement {
   // On a metered or 2G connection the drawing is the whole answer: a list of
   // decorative thumbnails is not what someone rationing their data came for.
   const pick = budget() === "essential" ? undefined : heroPhotoFor(plantId, opts.regionId);
-  return thumb(form, pick, opts.attrs);
+  return thumb(form, pick, opts);
 }
 
 /**
@@ -60,15 +60,33 @@ export function lookalikeThumb(
   opts: { attrs?: Record<string, string> } = {},
 ): HTMLElement {
   const pick = budget() === "essential" ? undefined : lookalikePhotoFor(lookalikeId);
-  return thumb(form, pick, opts.attrs);
+  return thumb(form, pick, opts);
 }
 
-function thumb(form: PlantForm, pick: HeroPhoto | undefined, attrs?: Record<string, string>): HTMLElement {
-  const box = el("span", {
-    class: "plant-photo",
-    "aria-hidden": "true",
-    ...attrs,
-  }, [silhouetteFor(form)]);
+/**
+ * The slot itself. Decorative and `aria-hidden` by default — the row names the
+ * plant twice already — except where the slot is *itself* the way in: an
+ * animal's list of plants makes the picture a link, and a link with nothing
+ * readable in it is a link a screen reader has to call "unlabelled". `label` is
+ * what it says there.
+ */
+function thumb(
+  form: PlantForm,
+  pick: HeroPhoto | undefined,
+  opts: { attrs?: Record<string, string>; href?: string; label?: string },
+): HTMLElement {
+  const box = opts.href
+    ? el("a", {
+        class: "plant-photo",
+        href: opts.href,
+        ...(opts.label ? { "aria-label": opts.label } : {}),
+        ...opts.attrs,
+      }, [silhouetteFor(form)])
+    : el("span", {
+        class: "plant-photo",
+        "aria-hidden": "true",
+        ...opts.attrs,
+      }, [silhouetteFor(form)]);
   if (!pick) return box;
 
   const img = el("img", { class: "photo-fade", alt: "", width: 144, height: 144 });

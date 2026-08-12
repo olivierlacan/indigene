@@ -27,6 +27,10 @@ subtitle on the What's new page.
 
 ### Added
 
+- **The ranked list shows the plants.** The plants matched to your spot — and
+  the plants on an animal's page — now carry a photograph beside the name
+  instead of a drawing of a generic shrub, like every other list in the app.
+
 - **A region's page now names the wildlife too.** Under the plants, every region
   lists the butterflies, moths, bees, birds and mammals they're documented to
   feed — tap a group for the names, and the number beside each one is how many
@@ -185,6 +189,10 @@ subtitle on the What's new page.
   included.
 
 ### Fixed
+
+- **Nearly enough sun is no longer a complaint.** A plant wanting an hour more
+  sun than your spot gets was told off for it, quoting two numbers that rounded
+  to the same one. It now says it may just not grow as well.
 
 - **A row with no photograph looked like a broken one.** Some entries in the
   wildlife list — "Mason & mining bees" — are a group rather than one species,

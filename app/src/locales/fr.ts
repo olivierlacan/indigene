@@ -1328,6 +1328,7 @@ export const fr: Dict = {
   "wildlife.regionPillTitle": "{region} — toute la faune que ses plantes indigènes font vivre",
   "wildlife.docTitle": "Les plantes indigènes qui font vivre {animal} — Indigene",
   "wildlife.allWildlife": "← Toute la faune",
+  "wildlife.plantsHeading": "Plantes pour lui",
   "wildlife.ofThemHosts.one": ", dont {n} comme plante nourricière de ses chenilles — le lien le plus fort.",
   "wildlife.ofThemHosts.other": ", dont {n} comme plantes nourricières de ses chenilles — le lien le plus fort.",
   "wildlife.cantLiveWithout.one": "⭐ Il ne peut pas vivre sans cette plante. ",
@@ -1337,20 +1338,14 @@ export const fr: Dict = {
     "{n} d'entre elles sont sa seule option — retirez-les et {animal} n'a plus nulle part où aller.",
   // La portée de l'animal, en tuiles.
   "wlStat.glance": "{animal} en un coup d'œil",
-  "wlStat.plants.label": "Plantes pour lui",
-  "wlStat.plants.sub": "sur nos listes",
-  "wlStat.plants.explain":
-    "Combien des plantes indigènes cartographiées par Indigene font vivre {animal} — en le nourrissant, en l'abritant ou en accueillant ses petits. Elles sont listées ci-dessous, région par région.",
-  "wlStat.host.label": "Élève ses petits sur",
-  "wlStat.host.sub": "le lien le plus fort",
+  // Un mot chacun, au-dessus d'un nombre (voir `TileOptions.figures`).
+  "wlStat.host.label": "Hôte",
   "wlStat.host.explain":
     "Les plantes sur lesquelles {animal} peut réellement grandir. Une chenille ne devient un papillon que sur les bonnes feuilles : c'est ce qui décide s'il peut se reproduire chez vous, et pas seulement passer.",
-  "wlStat.shelter.label": "S'abrite dans",
-  "wlStat.shelter.sub": "nids et couvert",
+  "wlStat.shelter.label": "Abri",
   "wlStat.shelter.explain":
     "Les plantes où {animal} niche, se cache ou passe l'hiver. Un endroit où être tranquille, c'est la moitié du jardin qui n'est pas de la nourriture.",
-  "wlStat.sole.label": "Sans remplaçante",
-  "wlStat.sole.sub": "tout ou rien",
+  "wlStat.sole.label": "Vitales",
   "wlStat.sole.explain.one":
     "L'une de ces plantes est la seule option d'{animal}. Retirez-la d'un quartier et l'animal s'en va avec elle.",
   "wlStat.sole.explain.other":
@@ -1843,7 +1838,7 @@ export const fr: Dict = {
   "photos.enlarge": "Voir en grand la photo « {angle} » de {name}",
   "photos.shotAlt": "{name} — {angle}",
   "photos.noneYet":
-    "Personne n'a encore choisi de gros plans de {name}. La recherche ci-dessous fonctionne quand même : elle demande à iNaturalist de vraies observations près d'un lieu que vous choisissez.",
+    "Personne n'a encore choisi de gros plans. La recherche ci-dessous trouve de vraies observations près d'un lieu que vous choisissez.",
   "photos.someMissing":
     "{n} pour l'instant. Restent à choisir : {angles}. La recherche ci-dessous en trouve d'autres, près de chez vous, aujourd'hui.",
   "photos.allChosen": "Les {n} photos ont été choisies pour celle-ci.",
@@ -1864,7 +1859,7 @@ export const fr: Dict = {
   "nearby.foundNear": "Nous en avons trouvé {n} à proximité : ",
   "nearby.seeItGrowing": "La voir pousser près de chez vous",
   "nearby.seeItGrowingLede":
-    "Des photos vérifiées par la communauté iNaturalist, de vrais spécimens près d'un lieu que vous choisissez — ou partout où l'espèce est indigène.",
+    "Des photos iNaturalist vérifiées, près d'un lieu que vous choisissez.",
   "nearby.outsideYou":
     "Vous êtes en dehors des régions pour lesquelles Indigene a des données sur les plantes indigènes : nous ne pouvons donc pas garantir ce qui y est vraiment indigène — et nous ne ferons pas passer des observations voisines pour des indigènes locales. Les mesures de soleil, de sol et de climat fonctionnent partout.",
   "nearby.outsidePlace":
@@ -1883,8 +1878,7 @@ export const fr: Dict = {
     "observation de qualité recherche de {name} en {region} — vérifiée et photographiée par la communauté iNaturalist (vous n'avez pas besoin d'y être) :",
   "nearby.foundRest.other":
     "observations de qualité recherche de {name} en {region} — vérifiées et photographiées par la communauté iNaturalist (vous n'avez pas besoin d'y être) :",
-  "nearby.notThereNative": "Vous n'y êtes pas ?",
-  "nearby.whereNative": "Là où elle est indigène",
+  "nearby.notThereNative": "Pas sur place ? Là où elle est indigène :",
   "nearby.busy":
     "iNaturalist nous demande de ralentir : le service est très sollicité. Patientez une minute et réessayez.",
   "nearby.nativeToList": "indigène de {list}",
@@ -1893,7 +1887,7 @@ export const fr: Dict = {
     "Nos données donnent {name} comme {belongs}, et non de {region}. Elle peut apparaître sur iNaturalist là-bas comme sujet planté ou échappé de culture, mais nous ne la présenterons pas comme une indigène locale là où elle n'a pas sa place — ce serait le contraire de ce à quoi Indigene sert.",
   "wlNearby.seeItNear": "Le voir près de chez vous",
   "wlNearby.seeItNearLede":
-    "Des photos vérifiées par la communauté iNaturalist, de vrais individus observés près d'un lieu que vous choisissez — ou partout où l'espèce est présente.",
+    "Des photos iNaturalist vérifiées, près d'un lieu que vous choisissez.",
   "wlNearby.outsideYou":
     "Vous êtes en dehors des régions couvertes par Indigene : nous ne pouvons donc pas faire de recherche à proximité. Vous pouvez tout de même le chercher dans une région où il est présent, ci-dessous.",
   "wlNearby.outsidePlace":
@@ -1910,8 +1904,7 @@ export const fr: Dict = {
     "observation de qualité recherche de {name} en {region} — vérifiée et photographiée par la communauté iNaturalist (vous n'avez pas besoin d'y être) :",
   "wlNearby.foundRest.other":
     "observations de qualité recherche de {name} en {region} — vérifiées et photographiées par la communauté iNaturalist (vous n'avez pas besoin d'y être) :",
-  "wlNearby.notThereFound": "Vous n'y êtes pas ?",
-  "wlNearby.whereFound": "Là où il est présent",
+  "wlNearby.notThereFound": "Pas sur place ? Là où il est présent :",
 
   // ---------------------------------------------------------------------
   // Écorégions.

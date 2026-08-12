@@ -862,14 +862,38 @@ a {
 .footer-prefs {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem 1.25rem;
+  gap: 0.4rem;
 }
-/* Each label is one phrase — "Units: Imperial", "Langue : Français" — so it
-   breaks between the two links, never inside one. Without this the pair fits
-   at 390px by splitting "Langue :" from "Français", which reads as two
-   settings again, and strands a colon at the end of a line. */
+/* Not links, to look at: these two say what the app is *set to*, and an
+   underlined blue phrase claims to be somewhere to go instead. They're the
+   same quiet pill a region wears (`.region-pill`) — the border says tappable,
+   the muted ink says "this is the current value", and the brand green on the
+   value is the part you came to check.
+
+   Each stays one phrase — "Units: Imperial", "Langue : Français" — so a pair
+   breaks between the pills, never inside one. Without that they fit at 390px
+   by splitting "Langue :" from "Français", which reads as two settings again
+   and strands a colon at the end of a line. */
 .footer-prefs a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  padding: 0.15rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink-soft);
+  text-decoration: none;
   white-space: nowrap;
+  font-size: 0.85rem;
+}
+.footer-prefs .pref-v {
+  color: var(--brand-ink);
+  font-weight: 650;
+}
+.footer-prefs a:hover,
+.footer-prefs a:focus-visible {
+  border-color: var(--brand);
+  color: var(--ink);
 }
 
 .step-title {
@@ -1226,22 +1250,33 @@ details[open] > summary::after {
    it — and with the value pinned to the bottom of each tile (see
    `.stat-tile`), the numbers line up across a row instead of floating at
    whatever height the wrapping left them. */
+/* How many tiles fit is a question about the *box they are in*, not about the
+   phone. It used to be two columns, then four past a 480px viewport — and a
+   spot's card is 538px wide on a laptop, so four tiles there came out 126px
+   each, narrower than the same tiles on a phone, and "NURTURED" and
+   "SUSTAINED" ellipsised on the big screen while fitting on the small one.
+   `auto-fit` asks the container instead: two on a phone, three in a card that
+   holds three, four across a region's full-width row. (The ceiling that stops
+   a one-tile grid stretching into a banner is `max-width` on the tile, not the
+   track: a definite max in `minmax()` is what `auto-fit` counts with, so
+   `minmax(8rem, 16rem)` asks for 16rem-wide tracks and fits one per phone.) */
 .stat-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
   grid-auto-rows: 1fr;
   gap: 0.65rem;
   margin: 0.85rem 0;
-}
-@media (min-width: 480px) {
-  .stat-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
 }
 /* Inside a plant card the grid gets the card's gutter, since the card itself
    has no horizontal padding (its media runs full-bleed). */
 .plant .stat-grid {
   padding: 0 1rem;
+}
+/* …but not when it is already inside a `.plant-body`, which carries that same
+   gutter. An animal's tiles sit there, and paying for it twice left them a
+   column narrower than the identical grid on a spot's card. */
+.plant .plant-body .stat-grid {
+  padding: 0;
 }
 .stat-tile {
   background: var(--surface-2);
@@ -1328,6 +1363,14 @@ details[open] > summary::after {
    grown to match. One-word labels are the price of admission — they fit on a
    line at 360 px, which is what lets the reserved second line go and the tile
    close up around its figure. */
+/* A figures tile holds a one-word caption and a count, so it has a natural
+   width and nothing to gain past it. Without a ceiling, an animal with one
+   tally to its name got a 288px-wide box with "5" at one end and the info mark
+   at the other. (Phrase tiles have no ceiling — theirs is where the wrapping
+   goes.) */
+.stat-grid-figures .stat-tile {
+  max-width: 11rem;
+}
 .stat-grid-figures .stat-k {
   min-height: 0;
 }
@@ -2181,6 +2224,11 @@ details.weights {
 }
 .photos-missing {
   margin-top: 0.7rem;
+}
+/* When it's the "nothing chosen yet" note it ends the section, so it keeps the
+   full width of the card and drops the trailing margin `.note` carries. */
+.note.photos-missing {
+  margin-bottom: 0;
 }
 
 /* --- An animal's slot, on the wildlife index ----------------------------
@@ -3500,10 +3548,29 @@ details.weights {
   font-size: 0.9rem;
   color: var(--ink-soft);
 }
+/* One line of places, whatever the count. Wrapped, an animal found in five
+   regions was five full-width buttons stacked down the card — more of the
+   phone screen than the lookup they're an alternative to. It scrolls sideways
+   instead, with a chip cut off at the edge as the sign there are more; every
+   chip is still a button, so tabbing reaches the ones off-screen and the row
+   follows the focus. */
 .obs-elsewhere-row {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.4rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  /* A row cut off mid-chip reads as scrollable; a row cut off mid-*border*
+     reads as a bug, so the last chip gets a hair of room past it. */
+  padding-right: 0.15rem;
+}
+.obs-elsewhere-row::-webkit-scrollbar {
+  display: none;
+}
+.obs-elsewhere-row > .btn {
+  scroll-snap-align: start;
 }
 .btn-compact {
   flex: 0 1 auto;
@@ -4221,6 +4288,7 @@ body[data-layout="profile"] .wip-banner-text {
 }
 .support-row {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.7rem;
   align-items: flex-start;
   padding: 0.6rem 0.8rem;
@@ -4231,6 +4299,20 @@ body[data-layout="profile"] .wip-banner-text {
 }
 .support-row-text {
   min-width: 0;
+  /* Takes the rest of the row beside the thumbnail, so the citation below it
+     is the only thing on its own line. */
+  flex: 1 1 0;
+}
+/* The citation, across the whole card. It used to sit in the text column, in a
+   two-thirds measure with a picture and empty space beside it — three lines of
+   small print where the card had room for two. */
+.support-row-source {
+  flex: 0 0 100%;
+  margin-top: 0.1rem;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  opacity: 0.85;
 }
 
 /* --- Profile pages on a laptop -------------------------------------------
@@ -4290,8 +4372,12 @@ body[data-layout="profile"] .wip-banner-text {
     margin-top: 0.5rem;
     text-align: right;
   }
+  /* `safe`, because the row is a scroller now: plain `flex-end` pushes an
+     overflowing row off its own left edge, where no amount of scrolling can
+     reach the first chip. Safe alignment gives up and starts from the left the
+     moment the chips don't fit. */
   .wl-nearby > .obs-elsewhere .obs-elsewhere-row {
-    justify-content: flex-end;
+    justify-content: safe flex-end;
   }
 
   /* ---- The profile card, on either page ---- */

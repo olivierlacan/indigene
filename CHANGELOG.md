@@ -83,6 +83,33 @@ subtitle on the What's new page.
 - **A linked photo says "Sighting".** It used to show the observation's number,
   which told you nothing — now a row with a sighting looks different from one
   without, and the button below offers to add another.
+- **An animal's plants are counted where the list starts.** "Plants for it —
+  18" used to be a tile a screen above them. The count is now the list's own
+  heading, with each region's under it. [Wildlife](https://indigene.app/wildlife)
+- **Shorter cards in that list.** Each carried a sentence about the tie, so five
+  plants filled two screens. A card now gives the name, what the plant offers,
+  and the source across its full width; the sentence is a tap away, on the chip.
+- **A way to search a long list.** An animal with more than a screenful of
+  plants gets the same type-to-narrow box the region lists have — try it on the
+  [sunflower-family specialist bees](https://indigene.app/wildlife/sunflower-specialist-bees).
+- **The tallies show up where they tell you something.** "Raises young on: 1"
+  over a list of two plants was counting to two for you. Those boxes now wait
+  for the long lists, like the [monarch](https://indigene.app/wildlife/monarch)'s.
+- **And they're the boxes a saved spot has.** Host, Shelter, Vital — one word
+  over a big number, matching your spots. Each word is the one the plants below
+  wear, so you can see which five of eleven the box means.
+- **The gear menu offers Settings, not two settings.** Language and Units each
+  had a row of their own; one Settings row now opens the page that holds them,
+  and everything else you can change. [Settings](https://indigene.app/#/settings)
+- **Your language and units read as settings, not links.** At the foot of every
+  page they're quiet pills with the value picked out, instead of two underlined
+  blue phrases that looked like somewhere else to go.
+- **The sightings lookup opens in one line.** "See it near you", and a plant's
+  "See it growing near you", took three lines to say what they now say in one:
+  community-verified iNaturalist photos, near a place you pick.
+- **The other places to look are one row you can swipe.** A monarch is found in
+  four regions, and each was a full-width button down the card. They're chips on
+  a single line now, and each still runs the lookup there.
 - **"It's yours" now includes taking it with you.**
   [Privacy](https://indigene.app/privacy) and [About](https://indigene.app/about)
   both say so, and Privacy links straight to the button that does it.
@@ -124,6 +151,12 @@ subtitle on the What's new page.
   Settings rounded the coordinates to whole degrees, so a garden outside
   Philadelphia read "40, -75". It now keeps the four decimals the saved list
   already showed.
+- **"No close-ups yet" was squeezed into a thin column.** On a plant nobody has
+  photographed for us, that line sat in one narrow photo slot, a word or two per
+  line. It now runs the full width of the card, and says it in fewer words.
+- **Fact boxes stopped cutting their labels short on a big screen.** On a laptop
+  a spot's boxes were narrower than the same ones on a phone, so "NURTURED" came
+  out "NURTUR…". Every box now sizes itself to the space it's actually in.
 
 ## [0.26] - 2026-08-09
 

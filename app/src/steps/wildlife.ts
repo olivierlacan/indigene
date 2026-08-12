@@ -43,14 +43,14 @@ import { citation } from "../components/citation";
 import { termTag, openTermDialog } from "../components/term-dialog";
 import { supportIcon, relianceIcon } from "../components/support-icon";
 import { silhouetteFor } from "../components/plant-card";
-import { sectionHeading } from "../components/section-link";
+import { sectionHeading, sectionTitle } from "../components/section-link";
 import { keystoneIcon } from "../components/keystone-icon";
 import { wildlifeNearbySection } from "../components/wildlife-nearby";
 import { wildlifeThumb, wildlifeHero } from "../components/wildlife-thumb";
 import { cardStats } from "../components/card-stats";
 import { statTiles } from "../components/stat-card";
 import type { Stat } from "../components/stat-card";
-import type { SupportLink, Wildlife } from "../types";
+import type { Wildlife } from "../types";
 import { t, tn, fmtNumber, fmtList, getLang } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
 import { wildlifeBlurb, wildlifeLead, supportNote, wildlifeUntranslated } from "../lib/prose";
@@ -61,6 +61,14 @@ import { reportUntranslated } from "../components/wip-banner";
 // function, not a constant: a constant would be frozen in whatever language
 // was active when this module first loaded.
 const coverageNote = (): string => t("wildlife.coverageNote");
+
+/**
+ * Past how many plants an animal's page grows tools for its list — the tally
+ * tiles above it and the type-to-narrow field on top of it. Roughly a phone
+ * screenful of cards: below that the list answers both for itself, and the
+ * median animal here supports three plants.
+ */
+const LONG_LIST = 6;
 
 // …rendered as what it is: a footnote, not a paragraph. It used to run five
 // lines above the buttons in body type, which reads as something the page
@@ -502,13 +510,21 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
     items: supports.filter((s) => s.region.meta.id === r.meta.id),
   })).filter((g) => g.items.length);
 
-  const plantCount = supports.length;
-  const hosts = supports.filter((s) => s.link.support === "host").length;
+  const hostTies = supports.filter((s) => s.link.support === "host");
   // Where it raises young or sits out the winter, as opposed to where it eats:
   // a bird's nest site and a caterpillar's food plant are the same promise from
   // the plant's side, so they earn a tile of their own rather than a footnote.
   const shelter = supports.filter((s) => s.link.support === "shelter").length;
-  const soleCount = supports.filter((s) => relianceOf(s.link) === "sole").length;
+  const soleTies = supports.filter((s) => relianceOf(s.link) === "sole");
+  // Two tiles, or one? Across the catalog these count different plants — most
+  // caterpillar hosts are one of several a butterfly could use, and a couple of
+  // make-or-break ties aren't hosts at all (a black grouse's cover, a
+  // nutcracker's seed). But for an animal like the monarch every host *is* its
+  // only option, and then "Host 5" beside "Vital 5" is the page saying one
+  // thing twice. Compared as sets, not counts: equal totals over different
+  // plants are two real facts.
+  const soleKeys = new Set(soleTies.map(tieKey));
+  const hostsAllVital = hostTies.length > 0 && hostTies.every((s) => soleKeys.has(tieKey(s)));
 
   // The chosen photograph, if there is one. Keyed to the first region this
   // animal is documented in, which is the one whose plants the page leads with
@@ -568,12 +584,18 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
               ...citation(w.nativeBasis),
             ]),
             speciesLink(w),
-            // The same figures the sentence underneath the plants used to
-            // spell out, as the tiles a plant's page has always had: how many
-            // of our plants feed it, how many raise its young, and how many it
-            // has no substitute for. The list of plants is right there below —
-            // a paragraph counting it was the page reading itself aloud.
-            reachTiles(w, names.title, { plantCount, hosts, shelter, soleCount }),
+            // How many of the plants below raise its young, shelter it, or
+            // have no substitute — but only on a list too long to tally by
+            // eye. Every one of those facts is a chip on the card that carries
+            // it, so on a page with three plants the tiles are the reader
+            // counting to three for us.
+            supports.length > LONG_LIST
+              ? reachTiles(w, names.title, {
+                  hosts: hostsAllVital ? 0 : hostTies.length,
+                  shelter,
+                  soleCount: soleTies.length,
+                })
+              : null,
           ]),
         ]),
       ]),
@@ -585,22 +607,40 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
   const nearby = wildlifeNearbySection(w);
   if (nearby) main.append(nearby);
 
-  for (const group of byRegion) {
-    main.append(
-      el("section", {}, [
-        sectionHeading(`#/regions/${group.region.meta.id}`, "📍", regionName(group.region.meta)),
-        // A grid, not a stack: one column at phone width, as many as fit on a
-        // laptop (see `.wildlife-supports`). An animal with a dozen plants was
-        // a dozen full-width rows down the middle of a desktop window.
-        el("div", { class: "wildlife-supports" },
-          group.items
-            .slice()
-            .sort(sortByStrength)
-            .map((s) => supportRow(s)),
-        ),
-      ]),
-    );
+  // The plants themselves, region by region — each heading carrying its own
+  // count. That figure used to sit in a tile above ("Plants for it / 18 / on
+  // our lists"), which is a number introducing itself two screens from the list
+  // it counts. It belongs on the list's own header.
+  const filterRows: FilterRow[] = [];
+  const sections: FilterSection[] = [];
+  const groups = byRegion.map((group) => {
+    const rows = group.items.slice().sort(sortByStrength).map(supportRow);
+    const node = el("section", {}, [
+      sectionHeading(
+        `#/regions/${group.region.meta.id}`,
+        "📍",
+        regionName(group.region.meta),
+        fmtNumber(group.items.length),
+      ),
+      // A grid, not a stack: one column at phone width, as many as fit on a
+      // laptop (see `.wildlife-supports`). An animal with a dozen plants was
+      // a dozen full-width rows down the middle of a desktop window.
+      el("div", { class: "wildlife-supports" }, rows.map((r) => r.node)),
+    ]);
+    filterRows.push(...rows);
+    sections.push({ node, rows });
+    return node;
+  });
+
+  // The total, where a total belongs: at the head of the list it counts. Only
+  // where there's more than one region under it — with one, the region's own
+  // heading is already carrying the same number a line below.
+  if (byRegion.length > 1) {
+    main.append(sectionTitle("🌱", t("wildlife.plantsHeading"), fmtNumber(filterRows.length)));
   }
+  // The roster's filter, on the pages that need one — same rule as the tiles.
+  if (filterRows.length > LONG_LIST) main.append(plantFilterField(filterRows, sections));
+  main.append(...groups);
 
   main.append(
     coverageLine(),
@@ -621,23 +661,14 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
 function reachTiles(
   w: Wildlife,
   animal: string,
-  counts: { plantCount: number; hosts: number; shelter: number; soleCount: number },
-): HTMLElement {
-  const tiles: Stat[] = [
-    {
-      icon: "🌱",
-      label: t("wlStat.plants.label"),
-      value: fmtNumber(counts.plantCount),
-      sub: t("wlStat.plants.sub"),
-      explain: t("wlStat.plants.explain", { animal }),
-    },
-  ];
+  counts: { hosts: number; shelter: number; soleCount: number },
+): HTMLElement | null {
+  const tiles: Stat[] = [];
   if (counts.hosts) {
     tiles.push({
       icon: "🐛",
       label: t("wlStat.host.label"),
       value: fmtNumber(counts.hosts),
-      sub: t("wlStat.host.sub"),
       explain: t("wlStat.host.explain", { animal }),
     });
   }
@@ -646,7 +677,6 @@ function reachTiles(
       icon: "🏠",
       label: t("wlStat.shelter.label"),
       value: fmtNumber(counts.shelter),
-      sub: t("wlStat.shelter.sub"),
       explain: t("wlStat.shelter.explain", { animal }),
     });
   }
@@ -655,11 +685,24 @@ function reachTiles(
       icon: "⭐",
       label: t("wlStat.sole.label"),
       value: fmtNumber(counts.soleCount),
-      sub: t("wlStat.sole.sub"),
       explain: tn("wlStat.sole.explain", counts.soleCount, { animal }),
     });
   }
-  return statTiles(tiles, t("wlStat.glance", { animal: commonName(w) }));
+  // Nothing left to show for a plain nectar tie — an empty grid would be a
+  // heading's worth of space saying nothing.
+  if (!tiles.length) return null;
+  // `figures`: every value here is a plain count of the plants below, so the
+  // count leads and the label is its caption — the same tiles a saved spot
+  // carries. The labels are the cards' own chip words where they fit in one
+  // (Host, Shelter); the make-or-break tile reads "Vital" rather than the
+  // chip's "Essential", which clips in a tile 119 px wide at the 360 px floor.
+  return statTiles(tiles, t("wlStat.glance", { animal: commonName(w) }), { figures: true });
+}
+
+/** One tie, identified by the plant *and* the region it's listed in — the same
+ *  plant is a separate row on each region's list, and the tiles count rows. */
+function tieKey(s: PlantSupport): string {
+  return `${s.region.meta.id}/${s.plant.id}`;
 }
 
 // Strongest dependence first: sole > narrow > broad, then host over other
@@ -679,10 +722,16 @@ function sortByStrength(a: PlantSupport, b: PlantSupport): number {
 
 // A plant row on an animal's page. The card is a plain div (not a link) so the
 // tie chips can be real buttons; the plant name is the link to its profile.
-function supportRow(s: PlantSupport): HTMLElement {
+//
+// What it says is deliberately short: the name, the tie, and who says so. The
+// sentence explaining the tie in full lives on the plant's own page — a dozen
+// of them stacked here turned a list you scan into a page you read.
+function supportRow(s: PlantSupport): FilterRow {
   const p = s.plant;
   const names = nameLines(p);
-  return el("div", { class: "card support-row" }, [
+  const title = el("a", { href: `#/plants/${p.id}`, style: "color:inherit" });
+  const sub = el("div", { class: "plant-latin", style: "font-size:0.85rem" });
+  const node = el("div", { class: "card support-row" }, [
     el("a", {
       href: `#/plants/${p.id}`,
       class: "plant-photo",
@@ -691,7 +740,7 @@ function supportRow(s: PlantSupport): HTMLElement {
     }, [silhouetteFor(p.form)]),
     el("div", { class: "support-row-text" }, [
       el("div", { style: "font-weight:700" }, [
-        el("a", { href: `#/plants/${p.id}`, style: "color:inherit" }, names.title),
+        title,
         p.keystone
           ? el("span", {
               title: t("explore.keystoneTitle"),
@@ -701,17 +750,48 @@ function supportRow(s: PlantSupport): HTMLElement {
             }, [keystoneIcon(13)])
           : null,
       ]),
-      el("div", { class: "plant-latin", style: "font-size:0.85rem" }, names.sub),
-      el("div", { style: "display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.35rem" }, tieTags(s.link)),
-      el("div", { style: "font-size:0.85rem;color:var(--ink-soft);margin-top:0.3rem" }, supportNote(p.latin, s.link, s.region.meta.id)),
-      // Every relationship shows its source, with authority names linked out.
-      el("div", { style: "font-size:0.75rem;color:var(--ink-soft);opacity:0.85;margin-top:0.2rem" }, [
-        el("span", { "aria-hidden": "true" }, "🔎 "),
-        t("card.source"),
-        ...citation(s.link.basis),
-      ]),
+      sub,
+      el("div", { style: "display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.35rem" }, tieTags(s)),
+    ]),
+    // Every relationship shows its source, with authority names linked out.
+    // The word "Source:" is only there for a screen reader now: on screen the
+    // magnifier and a row of linked authorities say it, and this line repeats
+    // once per card down a list of twenty.
+    //
+    // A child of the card, not of the text column: set beside the thumbnail it
+    // was a citation in a two-thirds measure, wrapping to three lines under
+    // a picture with nothing beside it. It gets the card's full width instead.
+    el("div", { class: "support-row-source" }, [
+      el("span", { "aria-hidden": "true" }, "🔎 "),
+      el("span", { class: "sr-only" }, t("card.source")),
+      ...citation(s.link.basis),
     ]),
   ]);
+
+  // The names carry the filter's underlining, the way a roster row and a search
+  // result do — so a row that stayed on screen says which word kept it there.
+  const mark = (nq: string): void => {
+    title.replaceChildren(...highlight(names.title, nq));
+    sub.replaceChildren(...highlight(names.sub, nq));
+  };
+  mark("");
+  return { hay: norm(`${commonName(p)} ${p.common} ${p.latin}`), node, mark };
+}
+
+/** The same type-to-narrow field a region's roster carries, over one animal's
+ *  plants. Same words, same behaviour — it's the same list of plants. */
+function plantFilterField(rows: FilterRow[], sections: FilterSection[]): HTMLElement {
+  return filterField(rows, sections, {
+    label: t("region.filterAria"),
+    placeholder: t("region.filterPlaceholder"),
+    count: (shown, total, q) =>
+      tn("region.filterCount", shown, { shown: fmtNumber(shown), total: fmtNumber(total), q }),
+    fallback: (q) => [
+      t("region.filterNone"),
+      el("a", { href: `#/plants?q=${encodeURIComponent(q)}` }, t("region.filterSearchAll")),
+      t("region.filterNoneRest"),
+    ],
+  });
 }
 
 // A deep link to the animal's own record where a stable scheme exists (BAMONA
@@ -731,11 +811,21 @@ function speciesLink(w: Parameters<typeof speciesRecordUrl>[0]): HTMLElement | n
 // "Essential" (make-or-break) or "Specialist". A generalist tie shows no
 // strength chip, so an unmarked plant reads as "one of many" without clutter.
 // Each chip carries its own pill color (see the `.tag-*` rules).
-function tieTags(link: SupportLink): HTMLElement[] {
-  const kind = link.support;
-  const role = { ...supportLabel(kind), glyph: () => supportIcon(kind) };
+//
+// The role chip's dialog also carries this pair's own sentence — what *this*
+// plant gives *this* animal. It used to be printed under every card, which is
+// a paragraph per row on a list you're scanning; the reader who wants it taps
+// the chip that makes the claim.
+function tieTags(s: PlantSupport): HTMLElement[] {
+  const kind = s.link.support;
+  const note = supportNote(s.plant.latin, s.link, s.region.meta.id);
+  const role = {
+    ...supportLabel(kind),
+    glyph: () => supportIcon(kind),
+    extra: note ? [el("p", { style: "margin:0 0 0.9rem" }, note)] : undefined,
+  };
   const tags = [termTag(role, kind)];
-  const r = relianceOf(link);
+  const r = relianceOf(s.link);
   if (r !== "broad") {
     const strength = { ...relianceLabel(r), glyph: () => relianceIcon(r) as SVGElement };
     tags.push(termTag(strength, r));

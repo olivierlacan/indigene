@@ -289,12 +289,11 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
       .map((id) => REGIONS.find((r) => r.meta.id === id))
       .filter((r): r is RegionDef => Boolean(r));
     if (!regions.length) return null;
-    // The label leans on the line above it. With one native region there is
-    // nothing to choose between, so the button says what it does and skips the
-    // name entirely; with several it needs to tell them apart, and the short
-    // form does that without the parenthetical qualifier that made the full name
-    // wrap ("Pacific Northwest", not "Pacific Northwest (west of the Cascades)").
-    const many = regions.length > 1;
+    // A chip is a place and nothing else — the question above it supplies the
+    // verb, so neither the map emoji nor "Where it's native" has to be repeated
+    // per button. The short form keeps the parenthetical qualifier out of it
+    // ("Pacific Northwest", not "Pacific Northwest (west of the Cascades)");
+    // the row itself scrolls rather than stacks (see `.obs-elsewhere-row`).
     return el("div", { class: "obs-elsewhere" }, [
       el("p", { class: "obs-elsewhere-lede" }, t("nearby.notThereNative")),
       el("div", { class: "obs-elsewhere-row" },
@@ -303,7 +302,7 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
             type: "button",
             class: "btn btn-secondary btn-compact",
             onClick: () => void loadRegion(r, btn),
-          }, `🗺️ ${many ? regionShort(r.meta) : t("nearby.whereNative")}`) as HTMLButtonElement;
+          }, regionShort(r.meta)) as HTMLButtonElement;
           return btn;
         }),
       ),

@@ -1317,6 +1317,9 @@ export const en = {
   "wildlife.regionPillTitle": "{region} — all the wildlife its natives support",
   "wildlife.docTitle": "Native plants that support {animal} — Indigene",
   "wildlife.allWildlife": "← All wildlife",
+  // The header of the plant list itself, carrying the count. On an animal's
+  // page "it" is the animal, named an inch above.
+  "wildlife.plantsHeading": "Plants for it",
   "wildlife.ofThemHosts.one": ", {n} of them as a caterpillar host — the strongest tie.",
   "wildlife.ofThemHosts.other": ", {n} of them as caterpillar hosts — the strongest tie.",
   "wildlife.cantLiveWithout.one": "⭐ It can't live without this plant. ",
@@ -1326,20 +1329,16 @@ export const en = {
   // The animal's reach, as tiles. What used to be a sentence under the plants
   // that counted the plants beside it.
   "wlStat.glance": "{animal} at a glance",
-  "wlStat.plants.label": "Plants for it",
-  "wlStat.plants.sub": "on our lists",
-  "wlStat.plants.explain":
-    "How many of the natives Indigene maps support {animal} — with food, shelter, or somewhere to raise young. They're listed below, by region.",
-  "wlStat.host.label": "Raises young on",
-  "wlStat.host.sub": "the strongest tie",
+  // One word each, over a count: these tiles lead with the figure (see
+  // `TileOptions.figures`). Each is the word the cards below wear on their own
+  // chips, so the tile and the plants it counts say the same thing.
+  "wlStat.host.label": "Host",
   "wlStat.host.explain":
     "Plants {animal} can actually grow up on. A caterpillar only becomes a butterfly on the right leaves, so this is what decides whether it can breed where you live rather than just visit.",
-  "wlStat.shelter.label": "Shelters in",
-  "wlStat.shelter.sub": "nests & cover",
+  "wlStat.shelter.label": "Shelter",
   "wlStat.shelter.explain":
     "Plants {animal} nests in, hides in, or sits out the winter in. Somewhere safe to be is the half of a garden that isn't food.",
-  "wlStat.sole.label": "No substitute",
-  "wlStat.sole.sub": "make or break",
+  "wlStat.sole.label": "Vital",
   "wlStat.sole.explain.one":
     "One of these plants is {animal}'s only option. Take it out of a neighbourhood and the animal goes with it.",
   "wlStat.sole.explain.other":
@@ -1828,7 +1827,7 @@ export const en = {
   "photos.enlarge": "See the “{angle}” photo of {name} full size",
   "photos.shotAlt": "{name} — {angle}",
   "photos.noneYet":
-    "Nobody has chosen close-ups of {name} yet. The lookup below still works: it asks iNaturalist for real sightings near a spot you pick.",
+    "Nobody has chosen close-ups yet. The lookup below finds real sightings near a spot you pick.",
   "photos.someMissing":
     "{n} chosen so far. Still to be picked: {angles}. The lookup below finds more, near you, today.",
   "photos.allChosen": "All {n} photographs have been chosen for this one.",
@@ -1848,8 +1847,9 @@ export const en = {
   "nearby.found": "Found {n} ",
   "nearby.foundNear": "Found {n} nearby ",
   "nearby.seeItGrowing": "See it growing near you",
+  // Two lines at the 360px floor, and the row of regions below says the rest.
   "nearby.seeItGrowingLede":
-    "Real, community-verified iNaturalist photos of one growing near a spot you pick — or anywhere it's native.",
+    "Community-verified iNaturalist photos, near a spot you pick.",
   "nearby.outsideYou":
     "You're outside the regions Indigene has native-plant data for, so we can't vouch for what's truly native there — and we won't dress up nearby sightings as local natives. The sun, soil and climate readings still work everywhere.",
   "nearby.outsidePlace":
@@ -1868,8 +1868,7 @@ export const en = {
     "research-grade sighting of {name} in {region} — verified and photographed by the iNaturalist community (you don't have to be there):",
   "nearby.foundRest.other":
     "research-grade sightings of {name} in {region} — verified and photographed by the iNaturalist community (you don't have to be there):",
-  "nearby.notThereNative": "Not there right now?",
-  "nearby.whereNative": "Where it's native",
+  "nearby.notThereNative": "Not there? Look where it's native:",
   "nearby.busy":
     "iNaturalist asked us to slow down — it's busy right now. Give it a minute and try again.",
   "nearby.nativeToList": "native to {list}",
@@ -1878,7 +1877,7 @@ export const en = {
     "Our data lists {name} as {belongs}, not {region}. It may turn up on iNaturalist there as a planted or escaped specimen, but we won't showcase it as a local native where it doesn't belong — that's the opposite of what Indigene is for.",
   "wlNearby.seeItNear": "See it near you",
   "wlNearby.seeItNearLede":
-    "Community-verified photos from iNaturalist of real ones spotted near a place you pick — or anywhere it's found.",
+    "Community-verified iNaturalist photos, near a place you pick.",
   "wlNearby.outsideYou":
     "You're outside the regions Indigene covers, so we can't do a nearby lookup there. You can still look it up in a region where it's found, below.",
   "wlNearby.outsidePlace":
@@ -1893,8 +1892,7 @@ export const en = {
     "research-grade sighting of {name} in {region} — verified and photographed by the iNaturalist community (you don't have to be there):",
   "wlNearby.foundRest.other":
     "research-grade sightings of {name} in {region} — verified and photographed by the iNaturalist community (you don't have to be there):",
-  "wlNearby.notThereFound": "Not there right now?",
-  "wlNearby.whereFound": "Where it's found",
+  "wlNearby.notThereFound": "Not there? Look where it's found:",
 
   // ---------------------------------------------------------------------
   // Ecoregion labels. The EEA's eleven regions have a settled name in each

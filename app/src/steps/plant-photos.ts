@@ -138,7 +138,7 @@ export async function renderPlantPhotos(main: HTMLElement, slug: string): Promis
       if (!pick || shots.some((s) => s.pick.photoId === pick.photoId)) continue;
       addShot(gallery, shots, { angle, pick }, plant);
     }
-    describeGaps(missingNote, gallery, shots, name);
+    describeGaps(missingNote, shots);
   });
 }
 
@@ -213,10 +213,13 @@ function addShot(gallery: HTMLElement, shots: Shot[], shot: Shot, plant: Plant):
  * that the flower shot is coming rather than that this plant has no flowers, and
  * it points at the live gallery below, which very often does have one today.
  */
-function describeGaps(note: HTMLElement, gallery: HTMLElement, shots: Shot[], name: string): void {
+function describeGaps(note: HTMLElement, shots: Shot[]): void {
   clear(note);
+  // "Nothing yet" is the section's own line, not a tile: dropped into the grid
+  // it would take one column and read as a sentence in a 7.5rem gutter.
+  note.className = shots.length ? "obs-attribution photos-missing" : "note warn photos-missing";
   if (!shots.length) {
-    gallery.append(el("p", { class: "note warn", style: "margin:0" }, t("photos.noneYet", { name })));
+    note.textContent = t("photos.noneYet");
     return;
   }
   const missing = PHOTO_ANGLES.filter((angle) => !shots.some((s) => s.angle === angle));

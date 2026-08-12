@@ -27,6 +27,10 @@ subtitle on the What's new page.
 
 ### Added
 
+- **The ranked list shows the plants.** The plants matched to your spot — and
+  the plants on an animal's page — now carry a photograph beside the name
+  instead of a drawing of a generic shrub, like every other list in the app.
+
 - **A region's page now names the wildlife too.** Under the plants, every region
   lists the butterflies, moths, bees, birds and mammals they're documented to
   feed — tap a group for the names, and the number beside each one is how many

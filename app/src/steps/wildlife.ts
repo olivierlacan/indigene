@@ -42,7 +42,7 @@ import { speciesRecordUrl } from "../data/sources";
 import { citation } from "../components/citation";
 import { termTag, openTermDialog } from "../components/term-dialog";
 import { supportIcon, relianceIcon } from "../components/support-icon";
-import { silhouetteFor } from "../components/plant-card";
+import { plantThumb } from "../components/plant-thumb";
 import { sectionHeading, sectionTitle } from "../components/section-link";
 import { keystoneIcon } from "../components/keystone-icon";
 import { wildlifeNearbySection } from "../components/wildlife-nearby";
@@ -732,12 +732,15 @@ function supportRow(s: PlantSupport): FilterRow {
   const title = el("a", { href: `#/plants/${p.id}`, style: "color:inherit" });
   const sub = el("div", { class: "plant-latin", style: "font-size:0.85rem" });
   const node = el("div", { class: "card support-row" }, [
-    el("a", {
+    // The plant's own photograph, and still the way into its page: this slot
+    // was already the link, so it keeps its label rather than becoming a
+    // decorative square beside one.
+    plantThumb(p.id, p.form, {
+      regionId: s.region.meta.id,
       href: `#/plants/${p.id}`,
-      class: "plant-photo",
-      "aria-label": t("wildlife.fullProfile", { name: names.title }),
-      style: "flex:0 0 auto",
-    }, [silhouetteFor(p.form)]),
+      label: t("wildlife.fullProfile", { name: names.title }),
+      attrs: { style: "flex:0 0 auto" },
+    }),
     el("div", { class: "support-row-text" }, [
       el("div", { style: "font-weight:700" }, [
         title,

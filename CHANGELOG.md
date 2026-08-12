@@ -92,6 +92,9 @@ subtitle on the What's new page.
 - **A way to search a long list.** An animal with more than a screenful of
   plants gets the same type-to-narrow box the region lists have — try it on the
   [sunflower-family specialist bees](https://indigene.app/wildlife/sunflower-specialist-bees).
+- **The tallies show up where they tell you something.** "Raises young on: 1"
+  over a list of two plants was counting to two for you. Those boxes now wait
+  for the long lists, like the [monarch](https://indigene.app/wildlife/monarch)'s.
 - **"It's yours" now includes taking it with you.**
   [Privacy](https://indigene.app/privacy) and [About](https://indigene.app/about)
   both say so, and Privacy links straight to the button that does it.

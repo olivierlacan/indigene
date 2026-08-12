@@ -62,6 +62,14 @@ import { reportUntranslated } from "../components/wip-banner";
 // was active when this module first loaded.
 const coverageNote = (): string => t("wildlife.coverageNote");
 
+/**
+ * Past how many plants an animal's page grows tools for its list — the tally
+ * tiles above it and the type-to-narrow field on top of it. Roughly a phone
+ * screenful of cards: below that the list answers both for itself, and the
+ * median animal here supports three plants.
+ */
+const LONG_LIST = 6;
+
 // …rendered as what it is: a footnote, not a paragraph. It used to run five
 // lines above the buttons in body type, which reads as something the page
 // wants you to stop and read; the two sentences that actually qualify what's
@@ -567,11 +575,12 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
               ...citation(w.nativeBasis),
             ]),
             speciesLink(w),
-            // What's true of *some* of the plants below: how many raise its
-            // young, how many shelter it, how many it has no substitute for.
-            // How many there are in total isn't here — that's the heading of
-            // the list itself, a screen down.
-            reachTiles(w, names.title, { hosts, shelter, soleCount }),
+            // How many of the plants below raise its young, shelter it, or
+            // have no substitute — but only on a list too long to tally by
+            // eye. Every one of those facts is a chip on the card that carries
+            // it, so on a page with three plants the tiles are the reader
+            // counting to three for us.
+            supports.length > LONG_LIST ? reachTiles(w, names.title, { hosts, shelter, soleCount }) : null,
           ]),
         ]),
       ]),
@@ -614,10 +623,8 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
   if (byRegion.length > 1) {
     main.append(sectionTitle("🌱", t("wildlife.plantsHeading"), fmtNumber(filterRows.length)));
   }
-  // The roster's filter, on the pages that need one. Most animals here have
-  // three or four plants — a search field over a list you can already see is
-  // clutter — so it appears past a phone screenful of cards.
-  if (filterRows.length > 6) main.append(plantFilterField(filterRows, sections));
+  // The roster's filter, on the pages that need one — same rule as the tiles.
+  if (filterRows.length > LONG_LIST) main.append(plantFilterField(filterRows, sections));
   main.append(...groups);
 
   main.append(
@@ -723,9 +730,12 @@ function supportRow(s: PlantSupport): FilterRow {
       sub,
       el("div", { style: "display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.35rem" }, tieTags(s)),
       // Every relationship shows its source, with authority names linked out.
+      // The word "Source:" is only there for a screen reader now: on screen the
+      // magnifier and a row of linked authorities say it, and this line repeats
+      // once per card down a list of twenty.
       el("div", { style: "font-size:0.75rem;color:var(--ink-soft);opacity:0.85;margin-top:0.2rem" }, [
         el("span", { "aria-hidden": "true" }, "🔎 "),
-        t("card.source"),
+        el("span", { class: "sr-only" }, t("card.source")),
         ...citation(s.link.basis),
       ]),
     ]),

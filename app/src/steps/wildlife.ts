@@ -510,12 +510,21 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
     items: supports.filter((s) => s.region.meta.id === r.meta.id),
   })).filter((g) => g.items.length);
 
-  const hosts = supports.filter((s) => s.link.support === "host").length;
+  const hostTies = supports.filter((s) => s.link.support === "host");
   // Where it raises young or sits out the winter, as opposed to where it eats:
   // a bird's nest site and a caterpillar's food plant are the same promise from
   // the plant's side, so they earn a tile of their own rather than a footnote.
   const shelter = supports.filter((s) => s.link.support === "shelter").length;
-  const soleCount = supports.filter((s) => relianceOf(s.link) === "sole").length;
+  const soleTies = supports.filter((s) => relianceOf(s.link) === "sole");
+  // Two tiles, or one? Across the catalog these count different plants — most
+  // caterpillar hosts are one of several a butterfly could use, and a couple of
+  // make-or-break ties aren't hosts at all (a black grouse's cover, a
+  // nutcracker's seed). But for an animal like the monarch every host *is* its
+  // only option, and then "Host 5" beside "Vital 5" is the page saying one
+  // thing twice. Compared as sets, not counts: equal totals over different
+  // plants are two real facts.
+  const soleKeys = new Set(soleTies.map(tieKey));
+  const hostsAllVital = hostTies.length > 0 && hostTies.every((s) => soleKeys.has(tieKey(s)));
 
   // The chosen photograph, if there is one. Keyed to the first region this
   // animal is documented in, which is the one whose plants the page leads with
@@ -580,7 +589,13 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
             // eye. Every one of those facts is a chip on the card that carries
             // it, so on a page with three plants the tiles are the reader
             // counting to three for us.
-            supports.length > LONG_LIST ? reachTiles(w, names.title, { hosts, shelter, soleCount }) : null,
+            supports.length > LONG_LIST
+              ? reachTiles(w, names.title, {
+                  hosts: hostsAllVital ? 0 : hostTies.length,
+                  shelter,
+                  soleCount: soleTies.length,
+                })
+              : null,
           ]),
         ]),
       ]),
@@ -682,6 +697,12 @@ function reachTiles(
   // (Host, Shelter); the make-or-break tile reads "Vital" rather than the
   // chip's "Essential", which clips in a tile 119 px wide at the 360 px floor.
   return statTiles(tiles, t("wlStat.glance", { animal: commonName(w) }), { figures: true });
+}
+
+/** One tie, identified by the plant *and* the region it's listed in — the same
+ *  plant is a separate row on each region's list, and the tiles count rows. */
+function tieKey(s: PlantSupport): string {
+  return `${s.region.meta.id}/${s.plant.id}`;
 }
 
 // Strongest dependence first: sole > narrow > broad, then host over other

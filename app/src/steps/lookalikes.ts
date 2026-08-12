@@ -27,12 +27,18 @@ import {
   nativesForLookalike,
   nativeSomewhere,
   inatSearchUrl,
+  statusRegions,
 } from "../lib/lookalikes";
 import type { LookalikeIndexRow, NativeForLookalike } from "../lib/lookalikes";
 import { filterField, highlight, norm } from "../components/filter-field";
 import type { FilterRow } from "../components/filter-field";
 import { citation } from "../components/citation";
 import { silhouetteFor } from "../components/plant-card";
+import { lookalikeThumb } from "../components/plant-thumb";
+import { heroFigure } from "../components/hero-figure";
+import { heroPhotoFor, lookalikePhotoFor, asObservation, heroSourceUrl, type HeroPhoto } from "../lib/hero-photo";
+import { openObservationLightbox, licenseLabel } from "../components/lightbox";
+import { loadPhoto } from "../lib/photo";
 import type { Lookalike, LookalikeLink, LookalikeStatus } from "../types";
 import { t, tn, tx, fmtNumber } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
@@ -64,6 +70,17 @@ const STATUS_CLASS: Record<LookalikeStatus, string> = {
   native: "neutral",
 };
 
+/**
+ * "Invasive here" — and *here* has to be a real place.
+ *
+ * Every use of this badge is inside something that has already named one
+ * region: a comparison card that says which region's tie it is, or an index
+ * narrowed to a region by the picker above it. Nothing that spans regions may
+ * print one, because the status is a fact about a plant *in a place* and not
+ * about the plant. Douglas-fir is a planted curiosity in the French Alps and one
+ * of the Pacific Northwest's great trees; a placeless "Not from here" badge on
+ * it is simply false. Those places use `whereRows` below.
+ */
 export function statusBadge(status: LookalikeStatus): HTMLElement {
   return el("span", {
     class: `badge ${STATUS_CLASS[status]}`,
@@ -71,9 +88,104 @@ export function statusBadge(status: LookalikeStatus): HTMLElement {
   }, t(`lookalike.status.${status}` as const));
 }
 
+/**
+ * Where this impostor is what — one row per status, the regions as pills:
+ *
+ *   Invasive in   Mid-Atlantic · Atlantic France
+ *   Native to     Pacific Northwest
+ *
+ * The same shape, and the same reading, as the "Native to" row on a plant's or
+ * an animal's page: a status belongs to a region, so it is printed next to the
+ * regions that hold it and nowhere else. That also lets one impostor say two
+ * things at once, which several of them need — a Mexican fan palm is planted in
+ * central Florida and invasive in the south, and picking one word for both
+ * would be wrong in one of them.
+ *
+ * `link` makes each pill a way into that region's look-alikes. Off on the index,
+ * where the card is itself one link and a link inside a link is neither.
+ */
+function whereRows(natives: NativeForLookalike[], link: boolean): HTMLElement[] {
+  return statusRegions(natives).map(({ status, regions }) =>
+    el("p", { class: "region-pills where-row" }, [
+      el("span", { class: `region-pills-k where-k is-${status}` }, t(`lookalike.where.${status}` as const)),
+      ...regions.map((r) =>
+        link
+          ? el("a", {
+              class: "region-pill",
+              href: indexHref(r.meta.id),
+              title: t(`lookalike.statusPlain.${status}` as const),
+            }, regionShort(r.meta))
+          : el("span", {
+              class: "region-pill",
+              title: t(`lookalike.statusPlain.${status}` as const),
+            }, regionShort(r.meta))
+      ),
+    ])
+  );
+}
+
 /** The short form of a name for the cramped side-by-side labels: "Cabbage Palm
  *  (Sabal Palm)" is a fine heading and a terrible column header. */
 const shortLabel = (name: string): string => name.replace(/\s*[([].*$/, "");
+
+/** The drawn width of one of the two comparison photographs: half the content
+ *  column on a phone, which is what makes them a pair rather than a stack. */
+const TELL_PX = 160;
+
+/**
+ * The two plants, side by side, above the words that separate them.
+ *
+ * Every other photograph in this app answers "what does this look like?". These
+ * two answer "which of them am I looking at?", which is a different question and
+ * the only one this page is for — so they are the one place in the app where two
+ * pictures sit in one row **on a phone**, small, rather than stacking. Two
+ * thumbnails you can compare beat one photograph you can see properly here.
+ *
+ * They open into the same reel, so the lightbox pages between the native and the
+ * impostor at full size with a swipe: the comparison at the size it deserves,
+ * without either one leaving the other's side.
+ *
+ * Null when neither has a photograph — the tells below have always been the
+ * substance, and a card with one empty box in it would look broken.
+ */
+function tellPhotos(lookalike: Lookalike, n: NativeForLookalike): HTMLElement | null {
+  const sides = [
+    { pick: heroPhotoFor(n.plant.id, n.region.meta.id), latin: n.plant.latin, name: commonName(n.plant), cls: "is-native" },
+    { pick: lookalikePhotoFor(lookalike.id), latin: lookalike.latin, name: commonName(lookalike), cls: "is-impostor" },
+  ].filter((s): s is { pick: HeroPhoto; latin: string; name: string; cls: string } => Boolean(s.pick));
+  if (!sides.length) return null;
+
+  const reel = sides.map((s) => asObservation(s.pick, s.latin));
+  return el("div", { class: "tell tell-pictures" }, sides.map((s, i) => {
+    const label = shortLabel(s.name);
+    const btn = el("button", {
+      type: "button",
+      class: "tell-shot",
+      ...(s.pick.color ? { style: `background:${s.pick.color}` } : {}),
+      "aria-label": t("hero.enlarge", { name: label }),
+      onClick: () => openObservationLightbox(reel, { observation: i, photo: 0 }, label, btn),
+    }, [
+      el("img", {
+        class: "photo-fade",
+        alt: t("obs.photoAlt", { name: s.latin, observer: s.pick.observer ?? "an iNaturalist observer" }),
+        width: 300,
+        height: 300,
+      }),
+    ]) as HTMLButtonElement;
+    loadPhoto(btn.querySelector("img")!, s.pick.mediumUrl, TELL_PX);
+    return el("div", { class: `tell-side tell-photo ${s.cls}` }, [
+      el("span", { class: "tell-who" }, label),
+      btn,
+      el("span", {
+        class: "tell-credit",
+        title: s.pick.attribution ?? `© ${s.pick.observer} · ${licenseLabel(s.pick.license)} · iNaturalist`,
+      }, [
+        el("a", { href: heroSourceUrl(s.pick), target: "_blank", rel: "noopener" },
+          `© ${s.pick.observer ?? "iNaturalist"}`),
+      ]),
+    ]);
+  }));
+}
 
 /**
  * The comparison itself: one block per difference, each naming both plants.
@@ -180,17 +292,27 @@ function indexCard(row: LookalikeIndexRow, region: RegionDef | null): FilterRow 
   const mistaken = el("span", {});
 
   const node = el("article", { class: "card lookalike-card" }, [
-    el("div", { class: "lookalike-head" }, [
-      el("h4", { style: "margin:0" }, [
-        el("a", { href: `#/lookalikes/${row.lookalike.id}` }, [title]),
+    // The picture leads the card, as it does on the plants index and for the
+    // same reason doubled: the question this index answers is a visual one —
+    // somebody is standing under a street tree working out which of these it is.
+    lookalikeThumb(row.lookalike.id, row.lookalike.form),
+    el("div", { class: "lookalike-body" }, [
+      el("div", { class: "lookalike-head" }, [
+        el("h4", { style: "margin:0" }, [
+          el("a", { href: `#/lookalikes/${row.lookalike.id}` }, [title]),
+        ]),
+        // Only where the picker above has narrowed the index to one region does
+        // "Invasive here" have a *here* to mean. Unnarrowed, the card says where
+        // instead, below — see `whereRows`.
+        region ? statusBadge(row.worstStatus) : null,
       ]),
-      statusBadge(row.worstStatus),
-    ]),
-    sub ? el("div", { class: "lookalike-latin" }, [sub]) : null,
-    el("p", { class: "score-why", style: "margin:0.35rem 0 0" }, lookalikeOrigin(row.lookalike)),
-    el("p", { class: "kv", style: "margin:0.5rem 0 0" }, [
-      el("span", { class: "k" }, region ? t("lookalikes.mistakenForHere") : t("lookalikes.mistakenFor")),
-      mistaken,
+      sub ? el("div", { class: "lookalike-latin" }, [sub]) : null,
+      el("p", { class: "score-why", style: "margin:0.35rem 0 0" }, lookalikeOrigin(row.lookalike)),
+      el("p", { class: "kv", style: "margin:0.5rem 0 0" }, [
+        el("span", { class: "k" }, region ? t("lookalikes.mistakenForHere") : t("lookalikes.mistakenFor")),
+        mistaken,
+      ]),
+      ...(region ? [] : whereRows(row.natives, false)),
     ]),
   ]);
 
@@ -238,24 +360,35 @@ export async function renderLookalike(main: HTMLElement, param?: string): Promis
   const natives = await nativesForLookalike(lookalike.id);
   const names = nameLines(lookalike);
   const elsewhere = await nativeSomewhere(lookalike.latin);
+  const portrait = lookalikePhotoFor(lookalike.id);
   document.title = t("lookalikes.docTitle", { name: names.title });
 
   main.append(
     el("p", { class: "back-trail" }, [
       el("a", { href: "#/lookalikes" }, t("lookalikes.backToIndex")),
     ]),
-    el("article", { class: "plant" }, [
+    // `lookalike-profile` earns the card's gutter for its loose paragraphs: a
+    // plant card carries no padding of its own (so a photograph can run
+    // full-bleed) and hands it out per child, and this page's prose is plain
+    // `<p>`s that were never on that list — they ran to both edges of the card.
+    el("article", { class: "plant lookalike-profile" }, [
       el("div", { class: "plant-head" }, [
-        el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(lookalike.form)]),
+        // The impostor's own photograph where a plant's page carries its hero:
+        // the reader is here to recognise this plant, and a drawing of a generic
+        // tree was never going to do that.
+        portrait
+          ? heroFigure(portrait, commonName(lookalike), lookalike.latin)
+          : el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(lookalike.form)]),
         el("div", {}, [
           el("h2", { class: "plant-name", style: "margin:0" }, names.title),
           el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" }, names.sub),
-          // One badge per distinct status across the regions it appears in: a
-          // plant can be invasive in one place and merely planted in another,
-          // and flattening that to a single word would be false in one of them.
-          el("div", {}, [...new Set(natives.map((n) => n.link.status))].map(statusBadge)),
         ]),
       ]),
+      // What it is, region by region. A plant can be invasive in one place and
+      // merely planted in another — and native in a third — so this says which
+      // is which rather than flattening it to one word that would be false
+      // somewhere.
+      ...whereRows(natives, true),
       el("p", { class: "kv", style: "margin-top:0.75rem" }, [
         el("span", { class: "k" }, t("lookalikes.whereItsFrom")),
         lookalikeOrigin(lookalike),
@@ -304,6 +437,7 @@ function comparisonCard(lookalike: Lookalike, n: NativeForLookalike): HTMLElemen
       el("span", { class: "k" }, t("lookalike.whyMixedUp")),
       lookalikeWhy(n.plant.latin, n.link, n.region.meta.id),
     ]),
+    tellPhotos(lookalike, n),
     tellTable(n.plant.latin, nativeName, commonName(lookalike), n.link, n.region.meta.id),
     el("p", { class: "confidence", style: "margin-top:0.6rem" }, [
       el("span", {}, [t("lookalike.tellsSource"), ...citation(n.link.basis)]),

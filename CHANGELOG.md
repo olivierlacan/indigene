@@ -27,6 +27,11 @@ subtitle on the What's new page.
 
 ### Added
 
+- **A region's page now names the wildlife too.** Under the plants, every region
+  lists the butterflies, moths, bees, birds and mammals they're documented to
+  feed — tap a group for the names, and the number beside each one is how many
+  plants here it can use. [Regions](https://indigene.app/regions)
+
 - **Your saved spots, as a file you keep.** Settings can now write every spot
   and its planting log to one plain file, and read one back in another browser —
   so a phone and a laptop can hold the same garden.
@@ -67,6 +72,23 @@ subtitle on the What's new page.
   nobody had chosen a photo for now show the one iNaturalist's own species page
   opens with, credited to the photographer. [Wildlife](https://indigene.app/wildlife)
   is a page of real butterflies instead of identical emoji.
+- **The plants in your log, with their pictures.** A saved spot's "What you've
+  planted" list now shows each plant beside its name, so a log read standing in
+  the garden matches its rows to what's actually growing there.
+  [Your spots](https://indigene.app/saved)
+- **The impostor and the real thing, side by side.** Every look-alike now has a
+  photograph, shown next to the native it gets mistaken for — two pictures in one
+  row, above the words that tell them apart. Tap either to swap between them full
+  size. [Look-alikes](https://indigene.app/lookalikes)
+- **And a picture on every card in that list.** The look-alikes index used to be
+  names and paragraphs; now each one leads with the plant, for the reader
+  standing under a street tree trying to work out which it is.
+- Internal: `--kind lookalikes` fills `src/data/inat-lookalikes.json` (its own
+  file: Douglas-fir, English holly and common ivy are natives on one roster and
+  impostors on another, so the ids collide). Two `pickTaxon` fixes got the last
+  of them: `var.` in a name returns nothing from iNaturalist's search, and an
+  exact name match now prefers the expected rank over a same-named "complex" —
+  which also moved two animals onto their species record.
 - Internal: `npm run hero:inat` writes `src/data/inat-heroes.json` — iNaturalist's
   default taxon photo per unreviewed subject, walked down their own gallery until
   a republishable licence turns up (36 needed that; red elderberry has none). 76
@@ -81,6 +103,10 @@ subtitle on the What's new page.
 
 ### Changed
 
+- **A look-alike is only invasive *somewhere*.** The list called plants invasive
+  or not-from-here before you'd picked a region — and a few of them are natives
+  of ours. Each now names the regions where it's a problem, on the list and on
+  its own page. [Look-alikes](https://indigene.app/lookalikes)
 - **The strip above the page matches the header.** Added to a phone's Home
   Screen, Indigene showed a slightly different green up at the top — and in dark
   mode a dark one under a pale header. Now it wears the header's own colour.
@@ -160,6 +186,14 @@ subtitle on the What's new page.
 
 ### Fixed
 
+- **A row with no photograph looked like a broken one.** Some entries in the
+  wildlife list — "Mason & mining bees" — are a group rather than one species,
+  so there's nothing to photograph them as. Their names now line up with
+  everyone else's. [Wildlife](https://indigene.app/wildlife)
+
+- **A look-alike's write-up ran to the edges of its card.** The description and
+  its sources sat flush against the border while everything above them was
+  indented. They line up now.
 - **Your last spot said where it was to the nearest hundred kilometres.**
   Settings rounded the coordinates to whole degrees, so a garden outside
   Philadelphia read "40, -75". It now keeps the four decimals the saved list

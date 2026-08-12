@@ -29,6 +29,7 @@ import { spotValue, type SpotValue } from "../lib/spot-value";
 import { wildlifeGroups } from "../components/wildlife-chips";
 import { isUuid, linkedObservation, observationUrl, parseObservationRef } from "../lib/observation-link";
 import { observationList } from "../components/observation-ui";
+import { plantThumb } from "../components/plant-thumb";
 import { statTiles, type Stat } from "../components/stat-card";
 import { privacyNote } from "../components/privacy-link";
 import { sunPlain } from "../lib/plain";
@@ -81,7 +82,7 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
     ]),
     countsCard(plantings, value),
     ...(value?.wildlife.length ? [feedsCard(value)] : []),
-    logCard(plantings, plantOf, redraw),
+    logCard(plantings, plantOf, redraw, region?.meta.id),
     addCard(spot, roster, redraw),
     el("button", {
       class: "btn btn-secondary btn-block",
@@ -171,13 +172,14 @@ function feedsCard(value: SpotValue): HTMLElement {
 function logCard(
   plantings: Planting[],
   plantOf: (id: string) => Plant | undefined,
-  redraw: () => void
+  redraw: () => void,
+  regionId?: string
 ): HTMLElement {
   const body: (HTMLElement | string)[] = [el("h3", { style: "margin:0 0 0.5rem" }, t("spot.logTitle"))];
   if (!plantings.length) {
     body.push(el("p", { class: "note" }, t("spot.logEmpty")));
   } else {
-    body.push(el("ul", { class: "log-list" }, plantings.map((p) => logRow(p, plantOf(p.plantId), redraw))));
+    body.push(el("ul", { class: "log-list" }, plantings.map((p) => logRow(p, plantOf(p.plantId), redraw, regionId))));
   }
   return el("section", { class: "card" }, body);
 }
@@ -185,7 +187,8 @@ function logCard(
 function logRow(
   planting: Planting,
   plant: Plant | undefined,
-  redraw: () => void
+  redraw: () => void,
+  regionId?: string
 ): HTMLElement {
   const name = plant ? commonName(plant) : planting.plantId;
   const growth = plant ? growthNote(plant.size, planting.planted) : null;
@@ -194,13 +197,23 @@ function logRow(
     ? `${plantedLabel(planting.planted)} · ${timeInGround(planting.planted)}`
     : t("spot.whenUnknown");
 
+  // The plant's own picture, as every other list of plants in the app shows it
+  // — the photograph over its drawing, the drawing alone until somebody has
+  // chosen one. A log read standing in the garden is matching rows to things
+  // growing in front of you, which is the one job a name in a list can't do.
+  //
+  // The size line joins the name beside it rather than starting a row of its
+  // own under the picture: those three lines are one description of one plant.
+  // The sightings below stay full width, because their thumbnails need it.
   const head = el("div", { class: "log-head" }, [
-    el("div", {}, [
+    plant ? plantThumb(plant.id, plant.form, { regionId }) : null,
+    el("div", { class: "log-text" }, [
       plant
         ? el("a", { class: "log-name", href: `#/plants/${encodeURIComponent(plant.id)}` }, name)
         : el("span", { class: "log-name" }, name),
       planting.count > 1 ? el("span", { class: "log-count" }, `×${fmtNumber(planting.count)}`) : null,
       el("div", { class: "coords" }, when),
+      growth ? el("p", { class: "log-growth" }, growth) : null,
     ]),
     el("button", {
       class: "btn btn-ghost log-remove",
@@ -215,7 +228,6 @@ function logRow(
   ]);
 
   const row = el("li", { class: "log-item" }, [head]);
-  if (growth) row.append(el("p", { class: "log-growth" }, growth));
   row.append(sightingsBlock(planting, name, redraw));
   return row;
 }

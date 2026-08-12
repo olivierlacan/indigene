@@ -1199,6 +1199,12 @@ export const en = {
     "Brought here and planted. Not known to spread on its own — it simply isn't the plant the local wildlife grew up with.",
   "lookalike.statusPlain.native":
     "Grows here wild, just like the plant it's confused with. The mix-up still matters.",
+  // The same status, said where it is true: a row of regions rather than a word
+  // on its own. See `whereRows` in steps/lookalikes.ts for why nothing that
+  // spans regions prints a bare status.
+  "lookalike.where.invasive": "Invasive in",
+  "lookalike.where.introduced": "Not native in",
+  "lookalike.where.native": "Native to",
   "lookalike.nativeElsewhere": "It's a genuine native somewhere — {link}.",
   "lookalike.nativeElsewhereLink": "we recommend it on our {region} list",
   "lookalike.coverageNote":
@@ -1392,6 +1398,9 @@ export const en = {
   "region.docTitle": "Natives of {region} — Indigene",
   "region.categoryDocTitle": "{label} native to {region} — Indigene",
   "region.lede": "Every native we know for {reference} — tap any plant for its full profile.",
+  "region.wildlifeTitle": "Wildlife these plants feed",
+  "region.wildlifeLede": "Tap a group to see who turns up. The number on each name is how many plants here it can use.",
+  "region.wildlifePlants": "{n} plants here support the {name}",
   "region.noSuchRegion": "That link doesn't match any region Indigene covers.",
   "region.noSuchCategory": "“{slug}” isn't a plant category we know — try one of the groups below.",
   "region.featured": "← Featured natives",

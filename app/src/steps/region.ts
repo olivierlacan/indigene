@@ -17,6 +17,8 @@ import { plantThumb } from "../components/plant-thumb";
 import { sectionHeading } from "../components/section-link";
 import { keystoneIcon } from "../components/keystone-icon";
 import { regionStatGrid } from "../components/region-stats";
+import { wildlifeRegionGroups } from "../components/wildlife-chips";
+import { wildlifeIndex } from "../lib/wildlife";
 import { regionRefLine, zoneChip } from "../components/zone-chip";
 import { regionBoundaryCard } from "../components/region-boundary";
 import type { Plant, PlantForm } from "../types";
@@ -113,11 +115,41 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
     plantFilterField(allRows, sections),
     categoryChips(region, plants, null),
     ...groups,
+    // And who eats them. A roster is half the answer to "what lives here" —
+    // the plants are the other half's food — and the two were a page apart:
+    // the animals had their own index and this page never named one.
+    //
+    // Folded into the five groups rather than listed, because forty names under
+    // seventy plants is a second roster nobody scrolled here for. The heading
+    // opens the region's own wildlife index, where they get the full cards.
+    // Counted from the tie table, so this costs no extra download (see
+    // `wildlifeIndex`) — the page still fetches exactly one region's plants.
+    ...wildlifeSection(region),
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("regions") }, t("region.featured")),
       el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("wildlife.rankForSpot")),
     ])
   );
+}
+
+/** The animals this region's plants are documented to support, as the wildlife
+ *  index's own five groups. Empty — and absent — for a region with no ties yet
+ *  rather than a heading over nothing. */
+function wildlifeSection(region: RegionDef): HTMLElement[] {
+  const rows = wildlifeIndex(region.meta.id);
+  if (!rows.length) return [];
+  return [
+    el("section", { style: "margin-top:1.5rem" }, [
+      sectionHeading(
+        `#/wildlife/in/${region.meta.id}`,
+        "🦋",
+        t("region.wildlifeTitle"),
+        fmtNumber(rows.length)
+      ),
+      el("p", { class: "obs-section-lede" }, t("region.wildlifeLede")),
+      wildlifeRegionGroups(rows, `region-wildlife-${region.meta.id}`),
+    ]),
+  ];
 }
 
 /**

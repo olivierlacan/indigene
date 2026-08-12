@@ -19,7 +19,7 @@
 // drawing.
 import { el } from "../ui";
 import { silhouetteFor } from "./plant-card";
-import { heroPhotoFor } from "../lib/hero-photo";
+import { heroPhotoFor, lookalikePhotoFor, type HeroPhoto } from "../lib/hero-photo";
 import { loadPhoto, budget } from "../lib/photo";
 import type { PlantForm } from "../types";
 
@@ -41,15 +41,34 @@ export function plantThumb(
   form: PlantForm,
   opts: { regionId?: string; attrs?: Record<string, string> } = {},
 ): HTMLElement {
-  const box = el("span", {
-    class: "plant-photo",
-    "aria-hidden": "true",
-    ...opts.attrs,
-  }, [silhouetteFor(form)]);
-
   // On a metered or 2G connection the drawing is the whole answer: a list of
   // decorative thumbnails is not what someone rationing their data came for.
   const pick = budget() === "essential" ? undefined : heroPhotoFor(plantId, opts.regionId);
+  return thumb(form, pick, opts.attrs);
+}
+
+/**
+ * The same slot for an impostor, on the look-alikes index and at the head of
+ * its own page. Its photograph is always iNaturalist's own — nobody shortlists
+ * a Callery pear — and it matters more here than in a list of natives: the
+ * index is scanned by somebody trying to work out which of these is the tree in
+ * their own street.
+ */
+export function lookalikeThumb(
+  lookalikeId: string,
+  form: PlantForm,
+  opts: { attrs?: Record<string, string> } = {},
+): HTMLElement {
+  const pick = budget() === "essential" ? undefined : lookalikePhotoFor(lookalikeId);
+  return thumb(form, pick, opts.attrs);
+}
+
+function thumb(form: PlantForm, pick: HeroPhoto | undefined, attrs?: Record<string, string>): HTMLElement {
+  const box = el("span", {
+    class: "plant-photo",
+    "aria-hidden": "true",
+    ...attrs,
+  }, [silhouetteFor(form)]);
   if (!pick) return box;
 
   const img = el("img", { class: "photo-fade", alt: "", width: 144, height: 144 });

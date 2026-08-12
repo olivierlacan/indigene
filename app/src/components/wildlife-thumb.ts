@@ -9,8 +9,10 @@
 // **The emoji is the placeholder, and it is never removed.** It paints
 // instantly, it is already the right size, and it says something true. So there
 // is no grey box, no spinner, no layout shift, and nothing to do when the photo
-// never arrives — offline, on a metered connection, or for the animals nobody
-// has reviewed yet. The page looks exactly as it did; some rows just get better.
+// never arrives — offline, on a metered connection, or for the informal groups
+// ("Jays, turkeys & woodpeckers") that are no one species and can never have
+// one. The slot is the same square either way, so a list of a dozen animals
+// starts every name at the same place whether or not the picture came.
 //
 // **Decorative, and marked as such.** The row already names the animal; a
 // photograph of it adds nothing for a screen reader and would only repeat the
@@ -24,10 +26,9 @@
 // same page with a different subject, and a second set of near-identical rules
 // would be two places to keep one layout.
 import { el } from "../ui";
-import { wildlifePhotoFor, asObservation, heroSourceUrl } from "../lib/hero-photo";
-import { openObservationLightbox, licenseLabel } from "./lightbox";
+import { wildlifePhotoFor } from "../lib/hero-photo";
+import { heroFigure } from "./hero-figure";
 import { loadPhoto, budget } from "../lib/photo";
-import { t } from "../lib/i18n";
 import { commonName } from "../lib/names";
 import type { Wildlife } from "../types";
 
@@ -55,11 +56,6 @@ export function wildlifeThumb(
   const pick = budget() === "essential" ? undefined : wildlifePhotoFor(wildlifeId, opts.regionId);
   if (!pick) return box;
 
-  // Only now does the slot become a square tile. An animal nobody has reviewed
-  // keeps the bare emoji it always had, at the size it always was — so adding
-  // this changed no page until the first photograph was chosen, and a list of
-  // twelve animals doesn't hold twelve empty boxes open waiting for them.
-  box.classList.add("has-photo");
   // The photograph's own average colour underneath it, so it fades up out of
   // its own greens and browns rather than out of the app's placeholder tint.
   if (pick.color) box.style.background = pick.color;
@@ -69,55 +65,16 @@ export function wildlifeThumb(
   return box;
 }
 
-/** The animal hero's widest drawn size, matching `.plant-hero` in the
- *  stylesheet (`min(33vw, 9.5rem)`). */
-const HERO_PX = 152;
-
 /**
  * The chosen photograph at the head of an animal's page — or null when nobody
  * has picked one, in which case the emoji stays and the page is unchanged.
  *
- * Credited on the spot, in one line, with the licence and the original record a
- * tap away in the lightbox: `asObservation` reshapes the pick into the same
- * summary every other iNaturalist photo in the app is shown through, so an
- * animal's hero is credited in exactly the same words as a plant's and as a
- * sighting someone found near them.
+ * Credited on the spot and enlargeable, through the one figure a plant's page
+ * and an impostor's page also use (`components/hero-figure.ts`) — so an animal's
+ * hero is credited in exactly the same words as a plant's and as a sighting
+ * somebody found near them.
  */
 export function wildlifeHero(w: Wildlife, regionId?: string): HTMLElement | null {
   const pick = wildlifePhotoFor(w.id, regionId);
-  if (!pick) return null;
-  const name = commonName(w);
-  const observation = asObservation(pick, w.latin ?? name);
-
-  const btn = el("button", {
-    type: "button",
-    class: "plant-hero-shot",
-    ...(pick.color ? { style: `background:${pick.color}` } : {}),
-    "aria-label": t("hero.enlarge", { name }),
-    onClick: () => openObservationLightbox([observation], { observation: 0, photo: 0 }, name, btn),
-  }, [
-    el("img", {
-      class: "photo-fade",
-      alt: t("obs.photoAlt", { name: w.latin ?? name, observer: pick.observer ?? "an iNaturalist observer" }),
-      width: 180,
-      height: 180,
-    }),
-  ]) as HTMLButtonElement;
-  // The subject of the page, at the top of it: straight to the front of the
-  // queue rather than waiting to be scrolled near.
-  loadPhoto(btn.querySelector("img")!, pick.mediumUrl, HERO_PX, true);
-
-  return el("figure", { class: "plant-hero" }, [
-    btn,
-    el("figcaption", {
-      class: "plant-hero-credit",
-      title: pick.attribution ?? `© ${pick.observer} · ${licenseLabel(pick.license)} · iNaturalist`,
-    }, [
-      el("a", {
-        href: heroSourceUrl(pick),
-        target: "_blank",
-        rel: "noopener",
-      }, `© ${pick.observer ?? "iNaturalist"}`),
-    ]),
-  ]);
+  return pick ? heroFigure(pick, commonName(w), w.latin ?? commonName(w)) : null;
 }

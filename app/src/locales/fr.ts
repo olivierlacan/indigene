@@ -1210,6 +1210,12 @@ export const fr: Dict = {
     "Introduite et plantée ici. On ne la connaît pas comme envahissante — elle n'est simplement pas la plante avec laquelle la faune d'ici a grandi.",
   "lookalike.statusPlain.native":
     "Elle pousse ici à l'état sauvage, tout comme la plante avec laquelle on la confond. La confusion compte quand même.",
+  // Deux-points plutôt qu'une préposition : « en Californie du Sud » mais
+  // « dans les Alpes » — le nom de région décide, et une seule formule ne peut
+  // pas être juste partout.
+  "lookalike.where.invasive": "Envahissante :",
+  "lookalike.where.introduced": "Pas indigène :",
+  "lookalike.where.native": "Indigène :",
   "lookalike.nativeElsewhere": "Elle est bel et bien indigène quelque part — {link}.",
   "lookalike.nativeElsewhereLink": "nous la recommandons dans notre liste {region}",
   "lookalike.coverageNote":
@@ -1402,6 +1408,9 @@ export const fr: Dict = {
   "region.categoryDocTitle": "{label} indigènes de {region} — Indigene",
   "region.lede":
     "Toutes les indigènes que nous connaissons pour {reference} — touchez une plante pour sa fiche complète.",
+  "region.wildlifeTitle": "La faune que ces plantes nourrissent",
+  "region.wildlifeLede": "Touchez un groupe pour voir qui vient. Le nombre après chaque nom, c'est combien de plantes d'ici lui servent.",
+  "region.wildlifePlants": "{n} plantes d'ici soutiennent {name}",
   "region.noSuchRegion": "Ce lien ne correspond à aucune région couverte par Indigene.",
   "region.noSuchCategory":
     "« {slug} » n'est pas une catégorie de plantes que nous connaissons — essayez l'un des groupes ci-dessous.",

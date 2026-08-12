@@ -315,7 +315,11 @@ export async function renderLookalike(main: HTMLElement, param?: string): Promis
     el("p", { class: "back-trail" }, [
       el("a", { href: "#/lookalikes" }, t("lookalikes.backToIndex")),
     ]),
-    el("article", { class: "plant" }, [
+    // `lookalike-profile` earns the card's gutter for its loose paragraphs: a
+    // plant card carries no padding of its own (so a photograph can run
+    // full-bleed) and hands it out per child, and this page's prose is plain
+    // `<p>`s that were never on that list — they ran to both edges of the card.
+    el("article", { class: "plant lookalike-profile" }, [
       el("div", { class: "plant-head" }, [
         // The impostor's own photograph where a plant's page carries its hero:
         // the reader is here to recognise this plant, and a drawing of a generic

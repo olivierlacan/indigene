@@ -2014,7 +2014,11 @@ details.weights {
 .plant > .kv,
 .plant .region-switch,
 .plant .plant-why,
-.plant .lookalike-line {
+.plant .lookalike-line,
+/* An impostor's profile is loose paragraphs rather than the plant page's named
+   blocks — its blurb, its "native elsewhere" note and its sources all sit
+   directly in the card, and without this they run to both of its edges. */
+.lookalike-profile > p {
   padding: 0 1rem;
 }
 .plant .plant-why {
@@ -4675,6 +4679,15 @@ body[data-layout="profile"] .wip-banner-text {
   justify-content: space-between;
   align-items: flex-start;
   gap: 0.6rem;
+}
+/* The plant's picture, at the size every other list of plants uses. */
+.log-head > .plant-photo {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+.log-text {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 .log-name {
   font-weight: 700;

@@ -67,6 +67,10 @@ subtitle on the What's new page.
   nobody had chosen a photo for now show the one iNaturalist's own species page
   opens with, credited to the photographer. [Wildlife](https://indigene.app/wildlife)
   is a page of real butterflies instead of identical emoji.
+- **The plants in your log, with their pictures.** A saved spot's "What you've
+  planted" list now shows each plant beside its name, so a log read standing in
+  the garden matches its rows to what's actually growing there.
+  [Your spots](https://indigene.app/saved)
 - **The impostor and the real thing, side by side.** Every look-alike now has a
   photograph, shown next to the native it gets mistaken for — two pictures in one
   row, above the words that tell them apart. Tap either to swap between them full
@@ -173,6 +177,9 @@ subtitle on the What's new page.
 
 ### Fixed
 
+- **A look-alike's write-up ran to the edges of its card.** The description and
+  its sources sat flush against the border while everything above them was
+  indented. They line up now.
 - **Your last spot said where it was to the nearest hundred kilometres.**
   Settings rounded the coordinates to whole degrees, so a garden outside
   Philadelphia read "40, -75". It now keeps the four decimals the saved list

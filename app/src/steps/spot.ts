@@ -26,7 +26,6 @@ import {
   today,
 } from "../lib/garden";
 import { spotValue, type SpotValue } from "../lib/spot-value";
-import { scoreList } from "../components/score-list";
 import { wildlifeChips } from "../components/wildlife-chips";
 import { isUuid, linkedObservation, observationUrl, parseObservationRef } from "../lib/observation-link";
 import { observationList } from "../components/observation-ui";
@@ -81,7 +80,7 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
       region ? ` · ${regionName(region.meta)}` : "",
     ]),
     countsCard(plantings, value),
-    ...(value ? [valueCard(value)] : []),
+    ...(value?.wildlife.length ? [feedsCard(value)] : []),
     logCard(plantings, plantOf, redraw),
     addCard(spot, roster, redraw),
     el("button", {
@@ -136,55 +135,43 @@ function countsCard(plantings: Planting[], value: SpotValue | null): HTMLElement
   return el("section", { class: "card" }, [statTiles(stats, t("spot.tilesLabel"))]);
 }
 
-// --- what it gives back ----------------------------------------------------
+// --- who it can feed -------------------------------------------------------
 
 /** Animals shown before the row folds. A long log can document forty, and forty
  *  chips is a scroll rather than a picture. */
 const WILDLIFE_SHOWN = 12;
 
 /**
- * The service this planting provides, as far as the catalog can say: the seven
- * ecosystem benefits averaged across what's in the ground, and the animals
- * those plants are documented to support.
+ * The named animals this planting can feed — the one thing a garden's plants
+ * add up to that we can say without inventing a figure.
  *
- * The bars are ordered by this spot's own values rather than the app's usual
- * fixed order, so the top row answers "what is this corner *for*" without a
- * sentence saying it. That's the one place the order differs from a plant's
- * page, and it's deliberate: a plant's rows are read against other plants, a
- * garden's are read against each other.
+ * Deliberately not a score. Each plant carries seven eco-values, and averaging
+ * them across a log would produce a confident-looking number built out of
+ * estimates that were never meant to be added together — a garden's "77 for
+ * pollinators" reads as a measurement of the garden, which is not something we
+ * have. A list of ties is what the data actually holds: this plant, this
+ * animal, one cited source each.
  *
- * The caveat under the heading is not boilerplate. These are the plants'
- * measured values somewhere else, averaged — not a reading of this garden — and
- * a documented tie means an animal *can* use the plant, not that it has found
- * yours. Saying so once, plainly, is what earns the rest of the card.
+ * The line under the heading keeps even that honest. A documented tie means the
+ * animal *can* use the plant, not that it has found yours.
  */
-function valueCard(value: SpotValue): HTMLElement {
-  const rows = [...value.services].sort((a, b) => b.value - a.value);
+function feedsCard(value: SpotValue): HTMLElement {
   const body: (HTMLElement | string)[] = [
-    el("h3", { style: "margin:0 0 0.3rem" }, t("spot.valueTitle")),
-    el("p", { class: "note" }, t("spot.valueNote")),
-    scoreList(rows, "spot-score"),
+    el("h3", { style: "margin:0 0 0.3rem" }, t("spot.feedsTitle")),
+    el("p", { class: "note" }, t("spot.feedsNote")),
   ];
-  if (value.wildlife.length) {
-    body.push(
-      el("p", { class: "kv", style: "margin:0.9rem 0 0.4rem" }, [
-        el("span", { class: "k" }, t("spot.valueFeeds")),
-      ])
-    );
-    const shown = value.wildlife.slice(0, WILDLIFE_SHOWN);
-    const rest = value.wildlife.slice(WILDLIFE_SHOWN);
-    const chips = wildlifeChips(shown);
-    body.push(chips);
-    if (rest.length) {
-      const more = el("button", {
-        class: "btn btn-ghost btn-compact",
-        onClick: () => {
-          chips.append(...Array.from(wildlifeChips(rest).children));
-          more.remove();
-        },
-      }, t("spot.valueMore", { n: fmtNumber(rest.length) }));
-      body.push(more);
-    }
+  const chips = wildlifeChips(value.wildlife.slice(0, WILDLIFE_SHOWN));
+  const rest = value.wildlife.slice(WILDLIFE_SHOWN);
+  body.push(chips);
+  if (rest.length) {
+    const more = el("button", {
+      class: "btn btn-ghost btn-compact",
+      onClick: () => {
+        chips.append(...Array.from(wildlifeChips(rest).children));
+        more.remove();
+      },
+    }, t("spot.feedsMore", { n: fmtNumber(rest.length) }));
+    body.push(more);
   }
   return el("section", { class: "card" }, body);
 }

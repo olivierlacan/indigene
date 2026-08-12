@@ -268,11 +268,10 @@ export const en = {
   "spot.tileWildlife": "Can feed",
   "spot.tileWildlifeExplain":
     "Named insects and animals your plants are documented to support here. It says they can use what you've planted — not that they've found it yet.",
-  "spot.valueTitle": "What it gives back",
-  "spot.valueNote":
-    "Averaged from what each plant is measured to do where it was studied — a picture of the planting, not a reading of your garden.",
-  "spot.valueFeeds": "What's here can feed: ",
-  "spot.valueMore": "Show {n} more",
+  "spot.feedsTitle": "What it can feed",
+  "spot.feedsNote":
+    "Every animal documented to use one of these plants — which says they can, not that they've found yours. A star marks one with no other plant to turn to.",
+  "spot.feedsMore": "Show {n} more",
   "spot.logTitle": "What you've planted",
   "spot.logEmpty": "Nothing logged here yet. Add the first thing you put in — the date can be as vague as “2024”.",
   "spot.whenUnknown": "Date not recorded",

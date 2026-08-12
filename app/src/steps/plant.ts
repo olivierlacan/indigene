@@ -17,8 +17,7 @@ import { bestTies } from "../lib/wildlife";
 import { lookalikesForPlant } from "../lib/lookalikes";
 import { latPlain, lonPlain } from "../lib/plain";
 import { wildlifeChips } from "../components/wildlife-chips";
-import { scoreList } from "../components/score-list";
-import { SCORE_KEYS, bloomSentence, confidencePlain, growthPlain, moistureWord, propagationMethod, sunLabel, PROPAGATION_SOURCE_URL, SOURCES_ROUTE } from "../lib/plain";
+import { SCORE_KEYS, scoreLabel, bloomSentence, confidencePlain, growthPlain, moistureWord, propagationMethod, sunLabel, PROPAGATION_SOURCE_URL, SOURCES_ROUTE } from "../lib/plain";
 import { techniqueFor, techniqueHref } from "../lib/planting";
 import { citation } from "../components/citation";
 import { silhouetteFor } from "../components/plant-card";
@@ -780,9 +779,14 @@ async function copyLink(url: string): Promise<void> {
 }
 
 /**
- * The seven ecosystem-benefit scores, drawn by the shared folding list
- * (`components/score-list.ts`) — the same rows a saved spot's page shows for
- * the average of what's planted there.
+ * The seven ecosystem-benefit scores, each with its fixed icon, its bar, and a
+ * plain-words gloss that is now folded away until asked for.
+ *
+ * All seven glosses open at once made the tallest card on the page: seven
+ * headings, seven bars and roughly twenty lines of explanation, with no space
+ * between any two of them, so the numbers — the part you came for — had to be
+ * hunted out of a wall of prose. Folded, the card is a scannable table of seven
+ * rows, and the sentence is one hover or one tap away.
  *
  * The glosses are the one thing on this page that can honestly be folded. They
  * explain the *label*, not the plant: "Soaks up rain" already says what
@@ -790,20 +794,47 @@ async function copyLink(url: string): Promise<void> {
  * greater length. Nothing about this plant in particular hides here — which is
  * the bar the rest of the page is deliberately held to (see `sectionCard`).
  *
+ * Three ways in, because a screen is one of three things:
+ *   - a pointer: hovering a row opens its gloss, no click needed (CSS only);
+ *   - a finger: the row is a real button, and a tap opens it — the chevron is
+ *     drawn at rest so there is something to aim at;
+ *   - a keyboard: focus opens it, and Enter latches it open.
+ *
  * @param expanded Start with every gloss open — what a link straight to this
  *   card means, since asking for the ecosystem section is asking for the
  *   detail in it.
  */
 function ecosystemSection(p: Plant, entries: PlantEntry[], expanded: boolean): HTMLElement {
-  const rows = SCORE_KEYS.map((key) => ({
-    key,
-    value: p.scores[key],
-    sub: key === "host" ? t("card.hostSpecies", { n: fmtNumber(p.hostLepCount) }) : undefined,
-  }));
+  const scoreParts = SCORE_KEYS.map((key) => {
+    const val = (p.scores as unknown as Record<string, number>)[key];
+    const label = scoreLabel(key);
+    const whyId = `score-why-${key}`;
+    const toggle = el("button", {
+      type: "button",
+      class: "score-toggle",
+      "aria-expanded": expanded ? "true" : "false",
+      "aria-controls": whyId,
+      onClick: () => {
+        const open = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", open ? "false" : "true");
+      },
+    }, [
+      el("div", { class: "score-head" }, [
+        el("span", { class: "score-name" }, [el("span", { "aria-hidden": "true" }, `${label.icon} `), label.name]),
+        el("span", { class: "score-value" }, `${fmtNumber(val)}${key === "host" ? ` · ${t("card.hostSpecies", { n: fmtNumber(p.hostLepCount) })}` : ""}`),
+        el("span", { class: "score-chevron", "aria-hidden": "true" }, "›"),
+      ]),
+      el("div", { class: "score-bar" }, [el("span", { style: `width:${val}%` })]),
+    ]);
+    return el("li", { class: "score-item" }, [
+      toggle,
+      el("div", { class: "score-why", id: whyId }, [el("p", { class: "score-why-text" }, label.plain)]),
+    ]);
+  });
   const feeds = whoItFeeds(entries);
   return sectionCard("ecosystem", t("plant.ecosystemTitle"), [
     ...(feeds ? [feeds] : []),
-    scoreList(rows, "score", expanded),
+    el("ul", { class: "score-list score-list-folding" }, scoreParts),
   ]);
 }
 

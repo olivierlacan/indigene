@@ -1,33 +1,29 @@
-// What a planting log adds up to: the ecosystem benefits the plants in one spot
-// are documented to give, and the animals they're documented to feed.
+// What a planting log adds up to: the animals the plants in one spot are
+// documented to feed.
 //
-// Every number here is already in the app — each plant carries seven eco scores
-// (`Plant.scores`, sourced in its `basis`) and the plant→animal ties live in
-// `data/wildlife.ts`. This module does one thing to them: reads them for the
-// plants somebody actually put in the ground, so a garden has a shape rather
-// than a list.
+// The ties already exist, in `data/wildlife.ts` — plant → animal, one cited
+// source each. This module does one thing to them: reads them for the plants
+// somebody actually put in the ground, so a garden has a shape rather than a
+// list.
 //
-// **What this is not.** It is not a measurement of a garden. A score is what
-// that plant does where it was measured, not what your plant is doing in your
-// soil in its second dry summer — and a documented tie says the animal *can*
-// use the plant, not that it has found yours. The page says so in as many
-// words; this file's job is to make sure the arithmetic under that sentence is
-// as modest as the sentence is.
+// **Why there is no score here.** Each plant also carries seven eco-values, and
+// the obvious move is to average them across a log and draw seven bars. We
+// don't. Those values are estimates on a 0–100 comparison scale, not amounts of
+// anything, and averaging estimates produces a confident-looking figure with
+// nothing underneath it — "77 for pollinators" reads as a measurement of *this
+// garden*, which is not something anyone has. A tie is different in kind: it is
+// a specific documented claim about a specific plant and a specific animal, and
+// it survives being counted.
 //
-// Two rules keep it modest:
-//
-// **Average, never total.** The scores are 0–100 comparisons between plants,
-// not amounts of anything. Adding them would make a hedge of twenty ordinary
-// shrubs beat three oaks, which is not what the numbers mean. So each benefit
-// is the mean across the plants in the ground — six milkweeds counting six,
-// because six of them really are six plants' worth of nectar.
+// Two rules keep even the counting modest:
 //
 // **An animal counts once.** A garden with three oaks and a cherry doesn't feed
 // four times the wildlife; it feeds the union of what they feed. Ties fold by
 // animal, keeping the strongest one (see `bestTies`).
+//
+// **Can, not does.** A tie says the animal is able to use the plant. Whether it
+// has found this particular garden is not ours to claim, and the page says so.
 import type { Plant, Planting } from "../types";
-import type { ScoreKey } from "./plain";
-import { SCORE_KEYS } from "./plain";
 import { entryForPlant } from "./registry";
 import { bestTies, type TieScope, type TieSummary } from "./wildlife";
 
@@ -56,20 +52,14 @@ function scopesFor(plantIds: Iterable<string>, spotRegionId: string | null): Tie
   return scopes;
 }
 
-/** How many named animals a log's plants support — the figure a saved-spot row
+/** How many named animals a log's plants can feed — the figure a saved-spot row
  *  shows, and the same one that spot's page shows in its tiles. */
 export function spotWildlifeCount(plantIds: Iterable<string>, spotRegionId: string | null): number {
   return bestTies(scopesFor(new Set(plantIds), spotRegionId)).length;
 }
 
 export interface SpotValue {
-  /** Individual plants the averages are over — the honest denominator. */
-  plants: number;
-  /** Distinct catalog entries behind them. */
-  kinds: number;
-  /** Mean of each benefit across those plants, 0–100, in `SCORE_KEYS` order. */
-  services: { key: ScoreKey; value: number }[];
-  /** Animals the logged plants support, make-or-break ties first. */
+  /** Animals the logged plants can feed, make-or-break ties first. */
   wildlife: TieSummary[];
   /** Kinds that raise caterpillars — the food-web measure the app ranks on. */
   hostKinds: number;
@@ -77,35 +67,24 @@ export interface SpotValue {
 
 /**
  * The picture, from a spot's log. Plantings whose plant we can't resolve are
- * skipped rather than counted as zero: an unknown plant is a gap in what we
- * know, not a plant that does nothing.
+ * skipped: an unknown plant is a gap in what we know, not a plant that feeds
+ * nothing.
  */
 export function spotValue(
   plantings: Planting[],
   plantOf: (plantId: string) => Plant | undefined,
   spotRegionId: string | null
 ): SpotValue | null {
-  const rows = plantings
-    .map((p) => ({ count: Math.max(1, p.count), plant: plantOf(p.plantId) }))
-    .filter((r): r is { count: number; plant: Plant } => Boolean(r.plant));
-  if (!rows.length) return null;
-
-  const total = rows.reduce((n, r) => n + r.count, 0);
-  const services = SCORE_KEYS.map((key) => ({
-    key,
-    value: Math.round(rows.reduce((sum, r) => sum + r.plant.scores[key] * r.count, 0) / total),
-  }));
-
   // Deduped by plant id, because the log holds one row per planting: a second
   // batch of the same shrub is more plants, not another kind, and its ties are
   // the same ties.
   const kinds = new Map<string, Plant>();
-  for (const r of rows) kinds.set(r.plant.id, r.plant);
-
+  for (const p of plantings) {
+    const plant = plantOf(p.plantId);
+    if (plant) kinds.set(plant.id, plant);
+  }
+  if (!kinds.size) return null;
   return {
-    plants: total,
-    kinds: kinds.size,
-    services,
     wildlife: bestTies(scopesFor(kinds.keys(), spotRegionId)),
     hostKinds: [...kinds.values()].filter((p) => p.hostLepCount > 0).length,
   };

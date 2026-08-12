@@ -1220,9 +1220,16 @@ details[open] > summary::after {
    Tiles are borderless soft chips (a border per tile made adjacent edges read
    as one cramped lattice) and every tile is a button that opens a dialog
    explaining the metric. */
+/* Every tile the same size, whatever its label does. `1fr` rows in an
+   auto-height grid all take the tallest row's height, so a two-line label
+   ("Feed caterpillars") no longer makes its own row taller than the one above
+   it — and with the value pinned to the bottom of each tile (see
+   `.stat-tile`), the numbers line up across a row instead of floating at
+   whatever height the wrapping left them. */
 .stat-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
   gap: 0.65rem;
   margin: 0.85rem 0;
 }
@@ -1246,16 +1253,35 @@ details[open] > summary::after {
   text-align: left;
   color: inherit;
   cursor: pointer;
-  display: block;
-  width: 100%;
-}
-.stat-k {
+  /* Flex, and pinned to the start, for one reason: a <button> centres its own
+     content vertically once its box is taller than the content needs — so the
+     tile with the shortest sub-line sat lower than the one beside it, and a
+     row of numbers came out ragged. */
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+}
+/* Grid, not flex, purely so the reserved second line below can be honoured:
+   `align-content` does nothing on a single-line flex container, which left a
+   one-line label floating in the middle of its own reserve. */
+.stat-k {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: baseline;
+  align-content: start;
   gap: 0.3rem;
   font-size: 0.75rem;
   font-weight: 650;
+  line-height: 1.25;
+  /* Two lines' worth whether the label uses them or not. A label that wraps
+     ("Feed caterpillars") would otherwise push its own number a line below the
+     one beside it, and a row of tiles stops reading as a row. Reserving the
+     line here — rather than pinning the numbers to the tile floor — keeps the
+     slack at the bottom of a short tile, where it reads as padding instead of
+     a hole between the label and the figure. */
+  min-height: 2.5em;
   color: var(--ink-soft);
   letter-spacing: 0.01em;
 }
@@ -1278,6 +1304,7 @@ details[open] > summary::after {
   display: block;
   font-weight: 450;
   font-size: 0.75rem;
+  line-height: 1.3;
   color: var(--ink-soft);
   margin-top: 0.1rem;
 }

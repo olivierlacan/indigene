@@ -288,11 +288,10 @@ export const fr: Dict = {
   "spot.tileWildlife": "Peuvent nourrir",
   "spot.tileWildlifeExplain":
     "Les insectes et animaux que vos plantes sont documentées pour soutenir ici. Cela dit qu'ils peuvent profiter de ce que vous avez planté — pas qu'ils l'ont déjà trouvé.",
-  "spot.valueTitle": "Ce que ça rend",
-  "spot.valueNote":
-    "Une moyenne de ce que chaque plante fait là où elle a été mesurée — une image de la plantation, pas une mesure de votre jardin.",
-  "spot.valueFeeds": "Ce qui est là peut nourrir : ",
-  "spot.valueMore": "Afficher {n} de plus",
+  "spot.feedsTitle": "Ce que ça peut nourrir",
+  "spot.feedsNote":
+    "Chaque animal documenté comme profitant de l'une de ces plantes — ils le peuvent, ce qui ne dit pas qu'ils ont trouvé les vôtres. Une étoile signale ceux qui n'ont aucune autre plante vers qui se tourner.",
+  "spot.feedsMore": "Afficher {n} de plus",
   "spot.logTitle": "Ce que vous avez planté",
   "spot.logEmpty":
     "Rien d'inscrit ici pour l'instant. Ajoutez la première plante mise en terre — la date peut rester vague, « 2024 » suffit.",

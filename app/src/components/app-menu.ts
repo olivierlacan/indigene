@@ -5,16 +5,16 @@
 // is now the app's general menu, because it is the only spare surface in a
 // header measured to the pixel (see the ≤500px rules in styles.css — title +
 // four items with ~25 px of slack at 360 px). Anything that should be reachable
-// from every page without owning a tab belongs here. Today that's four rows, in
-// this order:
+// from every page without owning a tab belongs here. Today that's three rows,
+// in this order:
 //
 //   1. What's new, first, because it's the row that wears the "something landed
 //      since you were last here" dot — and a menu you opened to check that
-//      shouldn't make you read past two settings to find it.
+//      shouldn't make you read past the settings to find it.
 //   2. Saved spots, as a way through to the Saved page.
-//   3–4. Language and units, one row each — the settings most likely to be
-//      wanted by someone who can't read the page they're looking at, and
-//      therefore the ones worst served by living only at the bottom of it.
+//   3. Settings, as one row rather than one row per setting. Language and units
+//      used to be listed here by value ("English", "Imperial"), which was two
+//      of four rows spent on two of the five things that page holds.
 //
 // ## Why the panel no longer lists the spots themselves
 //
@@ -37,7 +37,6 @@
 // Escape, on selection, and on navigation (the router calls closeAppMenu).
 import { el } from "../ui";
 import { t } from "../lib/i18n";
-import { langLabel, unitsLabel } from "./chrome";
 import { hasUnseenRelease } from "../lib/visits";
 import { isHomeScreenApp } from "../lib/standalone";
 import { newDot } from "./new-dot";
@@ -91,13 +90,9 @@ export function closeAppMenu(): void {
  * One row of the panel: an icon, a label, and optionally the "there's something
  * new" dot.
  *
- * The two settings rows show their current *value* rather than the word
- * "Settings", for the reader they're really for: someone looking at a page in a
- * language they don't read recognises "English" as the thing to press long
- * before they parse a label they can't read either. The icon carries the other
- * half of the meaning, and `label` spells out both for the accessible name —
- * which is why a row whose visible text is already its own full name (What's
- * new, Saved spots) passes no `label` at all rather than repeating itself.
+ * `label` overrides the accessible name where the visible text is shorter than
+ * what a screen reader should hear; every row today says its own full name, so
+ * none passes one.
  */
 function row(
   href: string,
@@ -138,17 +133,11 @@ function fill(target: HTMLElement): void {
   target.replaceChildren(
     row(notesHref, "✨", t("footer.releaseNotes"), { dot: hasUnseenRelease() }),
     row("#/saved", "🔖", t("nav.savedLocations")),
-    // The accessible name is the whole phrase — "Language: English" — from the
-    // dictionary rather than glued together here with a colon, because the
-    // punctuation around a colon is a language's own business (French wants a
-    // space before it). These are the same two keys the footer uses.
-    row("#/settings/language", "🌐", langLabel(), {
-      label: t("footer.languageIs", { value: langLabel() }),
-      divide: true,
-    }),
-    row("#/settings/units", "📏", unitsLabel(), {
-      label: t("footer.unitsIs", { value: unitsLabel() }),
-    }),
+    // One row, not one per setting. Language and units used to sit here as
+    // their own values ("English", "Imperial") — two of the menu's four rows
+    // spent on two of the settings page's five, and a menu that grows a row
+    // every time a setting is worth reaching quickly.
+    row("#/settings", "⚙️", t("nav.settings"), { divide: true }),
     // Last, and only on a Home Screen app, where the browser's own reload
     // button isn't there to be reached for. The pull-down gesture
     // (components/pull-to-reload.ts) is the fast way to the same thing; this is

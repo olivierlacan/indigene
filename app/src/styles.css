@@ -862,14 +862,38 @@ a {
 .footer-prefs {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem 1.25rem;
+  gap: 0.4rem;
 }
-/* Each label is one phrase — "Units: Imperial", "Langue : Français" — so it
-   breaks between the two links, never inside one. Without this the pair fits
-   at 390px by splitting "Langue :" from "Français", which reads as two
-   settings again, and strands a colon at the end of a line. */
+/* Not links, to look at: these two say what the app is *set to*, and an
+   underlined blue phrase claims to be somewhere to go instead. They're the
+   same quiet pill a region wears (`.region-pill`) — the border says tappable,
+   the muted ink says "this is the current value", and the brand green on the
+   value is the part you came to check.
+
+   Each stays one phrase — "Units: Imperial", "Langue : Français" — so a pair
+   breaks between the pills, never inside one. Without that they fit at 390px
+   by splitting "Langue :" from "Français", which reads as two settings again
+   and strands a colon at the end of a line. */
 .footer-prefs a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  padding: 0.15rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink-soft);
+  text-decoration: none;
   white-space: nowrap;
+  font-size: 0.85rem;
+}
+.footer-prefs .pref-v {
+  color: var(--brand-ink);
+  font-weight: 650;
+}
+.footer-prefs a:hover,
+.footer-prefs a:focus-visible {
+  border-color: var(--brand);
+  color: var(--ink);
 }
 
 .step-title {

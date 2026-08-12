@@ -71,16 +71,35 @@ function renderFooter(): void {
     );
   }
 
-  // Two links, each naming its setting as well as its value: "Language:
+  // Two pills, each naming its setting as well as its value: "Language:
   // English", not a bare "English" that leaves you to work out what it's
   // offering. The footer has the room the header's menu doesn't, and this is
   // where a reader arrives *looking* for a setting rather than recognising a
   // familiar word in passing. Said in full, the visible text is also the
   // accessible name, so there's no aria-label to keep in sync.
-  const lang = document.getElementById("prefs-lang");
-  if (lang) lang.textContent = t("footer.languageIs", { value: langLabel() });
-  const units = document.getElementById("prefs-units");
-  if (units) units.textContent = t("footer.unitsIs", { value: unitsLabel() });
+  setPref(document.getElementById("prefs-lang"), t("footer.languageIs", { value: langLabel() }), langLabel());
+  setPref(document.getElementById("prefs-units"), t("footer.unitsIs", { value: unitsLabel() }), unitsLabel());
+}
+
+/**
+ * "Language: **English**" — the phrase as its language writes it, with the
+ * value picked out so it can be coloured as the setting rather than as prose
+ * (see `.footer-prefs`). Split from the rendered phrase rather than assembled
+ * here, because the punctuation around a colon belongs to the language (French
+ * puts a space before it) and only the dictionary knows it.
+ */
+function setPref(node: HTMLElement | null, phrase: string, value: string): void {
+  if (!node) return;
+  const at = phrase.lastIndexOf(value);
+  if (at === -1) {
+    node.textContent = phrase;
+    return;
+  }
+  node.replaceChildren(
+    phrase.slice(0, at),
+    el("span", { class: "pref-v" }, value),
+    phrase.slice(at + value.length)
+  );
 }
 
 /** "Français" — the active language, in its own name. */

@@ -98,6 +98,12 @@ subtitle on the What's new page.
 - **And they're the boxes a saved spot has.** Host, Shelter, Vital — one word
   over a big number, matching your spots. Each word is the one the plants below
   wear, so you can see which five of eleven the box means.
+- **The gear menu offers Settings, not two settings.** Language and Units each
+  had a row of their own; one Settings row now opens the page that holds them,
+  and everything else you can change. [Settings](https://indigene.app/#/settings)
+- **Your language and units read as settings, not links.** At the foot of every
+  page they're quiet pills with the value picked out, instead of two underlined
+  blue phrases that looked like somewhere else to go.
 - **The sightings lookup opens in one line.** "See it near you", and a plant's
   "See it growing near you", took three lines to say what they now say in one:
   community-verified iNaturalist photos, near a place you pick.

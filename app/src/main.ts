@@ -32,6 +32,7 @@ import { renderSettings } from "./steps/settings";
 import { renderAbout } from "./steps/about";
 import { initAppMenu, closeAppMenu } from "./components/app-menu";
 import { initPullToReload } from "./components/pull-to-reload";
+import { watchRestore } from "./lib/restore";
 import { closeTermDialog } from "./components/term-dialog";
 import { applyDocumentLang, consumeLangParam, onLangChange, t } from "./lib/i18n";
 import type { TKey } from "./locales/en";
@@ -473,6 +474,9 @@ async function boot(): Promise<void> {
   // brings its own gesture. Everywhere else this returns immediately and
   // listens to nothing.
   initPullToReload();
+  // A tab left open for a day can come back missing its whole palette — see
+  // lib/restore.ts. Listeners only; nothing runs until the page is restored.
+  watchRestore();
   updateOnline();
   await route();
   // Register the hand-written service worker for offline + installability.

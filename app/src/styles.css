@@ -1226,22 +1226,33 @@ details[open] > summary::after {
    it — and with the value pinned to the bottom of each tile (see
    `.stat-tile`), the numbers line up across a row instead of floating at
    whatever height the wrapping left them. */
+/* How many tiles fit is a question about the *box they are in*, not about the
+   phone. It used to be two columns, then four past a 480px viewport — and a
+   spot's card is 538px wide on a laptop, so four tiles there came out 126px
+   each, narrower than the same tiles on a phone, and "NURTURED" and
+   "SUSTAINED" ellipsised on the big screen while fitting on the small one.
+   `auto-fit` asks the container instead: two on a phone, three in a card that
+   holds three, four across a region's full-width row. (The ceiling that stops
+   a one-tile grid stretching into a banner is `max-width` on the tile, not the
+   track: a definite max in `minmax()` is what `auto-fit` counts with, so
+   `minmax(8rem, 16rem)` asks for 16rem-wide tracks and fits one per phone.) */
 .stat-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
   grid-auto-rows: 1fr;
   gap: 0.65rem;
   margin: 0.85rem 0;
-}
-@media (min-width: 480px) {
-  .stat-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
 }
 /* Inside a plant card the grid gets the card's gutter, since the card itself
    has no horizontal padding (its media runs full-bleed). */
 .plant .stat-grid {
   padding: 0 1rem;
+}
+/* …but not when it is already inside a `.plant-body`, which carries that same
+   gutter. An animal's tiles sit there, and paying for it twice left them a
+   column narrower than the identical grid on a spot's card. */
+.plant .plant-body .stat-grid {
+  padding: 0;
 }
 .stat-tile {
   background: var(--surface-2);
@@ -1328,6 +1339,14 @@ details[open] > summary::after {
    grown to match. One-word labels are the price of admission — they fit on a
    line at 360 px, which is what lets the reserved second line go and the tile
    close up around its figure. */
+/* A figures tile holds a one-word caption and a count, so it has a natural
+   width and nothing to gain past it. Without a ceiling, an animal with one
+   tally to its name got a 288px-wide box with "5" at one end and the info mark
+   at the other. (Phrase tiles have no ceiling — theirs is where the wrapping
+   goes.) */
+.stat-grid-figures .stat-tile {
+  max-width: 11rem;
+}
 .stat-grid-figures .stat-k {
   min-height: 0;
 }

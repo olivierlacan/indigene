@@ -142,6 +142,9 @@ subtitle on the What's new page.
 - **"No close-ups yet" was squeezed into a thin column.** On a plant nobody has
   photographed for us, that line sat in one narrow photo slot, a word or two per
   line. It now runs the full width of the card, and says it in fewer words.
+- **Fact boxes stopped cutting their labels short on a big screen.** On a laptop
+  a spot's boxes were narrower than the same ones on a phone, so "NURTURED" came
+  out "NURTUR…". Every box now sizes itself to the space it's actually in.
 
 ## [0.26] - 2026-08-09
 

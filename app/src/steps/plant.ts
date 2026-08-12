@@ -21,7 +21,7 @@ import { SCORE_KEYS, scoreLabel, bloomSentence, confidencePlain, growthPlain, mo
 import { techniqueFor, techniqueHref } from "../lib/planting";
 import { citation } from "../components/citation";
 import { silhouetteFor } from "../components/plant-card";
-import { heroPhotoFor, asObservation } from "../lib/hero-photo";
+import { heroPhotoFor, asObservation, heroSourceUrl } from "../lib/hero-photo";
 import { loadPhoto } from "../lib/photo";
 import { openObservationLightbox, licenseLabel } from "../components/lightbox";
 import { keystoneIcon } from "../components/keystone-icon";
@@ -313,7 +313,7 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
       title: pick.attribution ?? `© ${pick.observer} · ${licenseLabel(pick.license)} · iNaturalist`,
     }, [
       el("a", {
-        href: `https://www.inaturalist.org/observations/${pick.observationId}`,
+        href: heroSourceUrl(pick),
         target: "_blank",
         rel: "noopener",
       }, `© ${pick.observer ?? "iNaturalist"}`),

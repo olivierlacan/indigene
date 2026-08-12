@@ -29,7 +29,7 @@ import { el, clear } from "../ui";
 import { navigate } from "../state";
 import { findPlant } from "../lib/explore";
 import { activeEntry } from "../lib/plant-view";
-import { heroPhotoFor, asObservation } from "../lib/hero-photo";
+import { heroPhotoFor, asObservation, heroSourceUrl } from "../lib/hero-photo";
 import type { HeroPhoto } from "../lib/hero-photo";
 import { loadAnglePicks, anglesFor, PHOTO_ANGLES } from "../lib/plant-photos";
 import type { PhotoAngle } from "../lib/plant-photos";
@@ -194,7 +194,7 @@ function addShot(gallery: HTMLElement, shots: Shot[], shot: Shot, plant: Plant):
           title: pick.attribution ?? `© ${pick.observer} · ${licenseLabel(pick.license)} · iNaturalist`,
         }, [
           el("a", {
-            href: `https://www.inaturalist.org/observations/${pick.observationId}`,
+            href: heroSourceUrl(pick),
             target: "_blank",
             rel: "noopener",
           }, `© ${pick.observer ?? "iNaturalist"}`),

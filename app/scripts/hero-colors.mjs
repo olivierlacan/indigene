@@ -52,14 +52,17 @@ const HERE = dirname(fileURLToPath(import.meta.url));
  *   flat    `id → region → pick`         — the plant heroes, the animal heroes
  *   angled  `id → region → angle → pick` — a plant's whole-plant/leaf/flower/
  *                                          fruit close-ups
+ *   plain   `id → pick`                  — iNaturalist's own photo per species,
+ *                                          which has no region to file under
  *
- * All three want the same treatment for the same reason, so they are walked by
- * one loop rather than by three scripts that would drift.
+ * All four want the same treatment for the same reason, so they are walked by
+ * one loop rather than by four scripts that would drift.
  */
 const FILES = [
   { path: resolve(HERE, "../src/data/hero-photos.json"), shape: "flat" },
   { path: resolve(HERE, "../src/data/wildlife-photos.json"), shape: "flat" },
   { path: resolve(HERE, "../src/data/plant-photos.json"), shape: "angled" },
+  { path: resolve(HERE, "../src/data/inat-heroes.json"), shape: "plain" },
 ];
 
 /** Analysis raster. Averaging 16×16 downscaled pixels rather than asking the
@@ -100,16 +103,24 @@ const files = FILES.map((f) => {
 // down four levels of keys with the same chance of getting them wrong.
 const jobs = [];
 for (const file of files) {
-  for (const [id, byRegion] of Object.entries(file.picks)) {
-    for (const [regionId, value] of Object.entries(byRegion ?? {})) {
-      const found = file.shape === "angled"
-        ? Object.entries(value ?? {}).map(([angle, pick]) => ({ label: `${id}/${regionId}/${angle}`, pick }))
-        : [{ label: `${id}/${regionId}`, pick: value }];
-      for (const { label, pick } of found) {
-        if (!pick?.thumbUrl) continue;
-        if (pick.color && !force) continue;
-        jobs.push({ file, label, pick, url: pick.thumbUrl });
-      }
+  for (const [id, value] of Object.entries(file.picks)) {
+    // How deep the photograph sits is the only difference between the files, so
+    // each shape is flattened to the same (label, pick) pairs here and every
+    // rule after this point is written once.
+    const found = file.shape === "plain"
+      ? [{ label: id, pick: value }]
+      : Object.entries(value ?? {}).flatMap(([regionId, inner]) =>
+          file.shape === "angled"
+            ? Object.entries(inner ?? {}).map(([angle, pick]) => ({ label: `${id}/${regionId}/${angle}`, pick }))
+            : [{ label: `${id}/${regionId}`, pick: inner }]);
+    for (const { label, pick } of found) {
+      // A reviewed pick names all three renditions; iNaturalist's own photo
+      // stores one address and derives the rest. Either way the square is what
+      // gets averaged.
+      const url = pick?.thumbUrl ?? pick?.url;
+      if (!url) continue;
+      if (pick.color && !force) continue;
+      jobs.push({ file, label, pick, url });
     }
   }
 }

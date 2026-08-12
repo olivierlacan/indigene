@@ -16,6 +16,45 @@ region, not an afternoon per subject.
                 (CC only)   (pixels)  (angle)   (top 10 ea.)   (pick)    JSON
 ```
 
+## Under all of it: the photograph iNaturalist already chose
+
+Review is the good path and the slow one. Nobody had sat down for 110 of the 298
+plants or any of the 82 animals, so those pages opened with a drawing of a
+generic shrub or an emoji — and would have until somebody did.
+
+iNaturalist has already done a version of this work: every taxon page opens with
+a photograph their curators picked to represent the species. It isn't
+region-aware and nobody chose it for us, but it is a real photograph of the right
+species, chosen by people who know the group.
+
+```
+  iNaturalist ──▶ ask "which photo do you show?" ──▶ first one we may
+   taxon page      (one request per 30 subjects)     republish ──▶ committed JSON
+```
+
+`app/scripts/inat-heroes.mjs`, run as `npm run hero:inat`, writes
+`app/src/data/inat-heroes.json` — one photograph per subject, no region, no
+image downloads and no scoring. It is a **floor, not a ceiling**: `hero-photo.ts`
+reads it only where the reviewed files have nothing, so a subject that goes
+through review stops reading from it, and nothing about the pipeline above
+changes.
+
+Three details worth knowing:
+
+- **The licence check is ours.** iNaturalist happily shows an all-rights-reserved
+  photo on a taxon page and we can't republish one, so the candidates are walked
+  in their own order — the chosen photo, then the gallery behind it — and the
+  first one we may republish with its credit wins. 36 of 179 subjects needed that
+  step; one (red elderberry) has nothing republishable at all and keeps its
+  drawing.
+- **A taxon photo has no sighting behind it.** No place, no date, no observer
+  account — iNaturalist names the photographer, who may never have had one. So
+  the lightbox prints the name as plain text and links "View original photo"
+  to the photograph's own page instead of an observation.
+- **Animals are resolved by name first**, through `pickTaxon` — the app's own
+  function, imported — for the same reason the harvest does it: a script that
+  resolved a name differently from the page would picture a different animal.
+
 ## What gets chosen
 
 | Slot | Where it shows | File |
@@ -23,6 +62,7 @@ region, not an afternoon per subject.
 | **hero** (plant) | the profile, every list, the region cards | `app/src/data/hero-photos.json` |
 | **habit / leaf / flower / fruit** | `…/plants/<slug>/photos` | `app/src/data/plant-photos.json` |
 | **hero** (animal) | the animal's page, the wildlife index | `app/src/data/wildlife-photos.json` |
+| **hero**, unreviewed | anywhere the two above are empty | `app/src/data/inat-heroes.json` |
 
 The four angles exist because one photograph answers one question. "Roughly,
 what is this?" is what a hero is for. Standing in front of a shrub with a leaf in
@@ -239,8 +279,9 @@ photograph, for which region?" and not two. The angles live in
 `plant-photos.json` behind `app/src/lib/plant-photos.ts`, which imports it
 *dynamically*: it is fetched the first time someone opens a photo page and never
 otherwise, because four angles per plant per region has no business in the
-bundle every reader downloads. Each file ships as `{}` — every subject keeps its
-drawing or its emoji until someone picks a photo. The region asked for is the *active* one
+bundle every reader downloads. Under both, `inat-heroes.json` answers for
+everything nobody has reviewed — a subject in neither file keeps its drawing or
+its emoji. The region asked for is the *active* one
 (see `activeEntry` in `steps/plant.ts`), so a multi-region plant's photograph
 follows the same region as its figures.
 
@@ -272,6 +313,12 @@ gets a photo everywhere, and a region-specific pick overrides it where one
 exists. Reviewing can start with one photo per plant and improve over time
 rather than being all-or-nothing.
 
+**And across tiers.** A reviewed pick for any region beats iNaturalist's taxon
+photograph, which beats the drawing. So reviewing a subject is an upgrade rather
+than a prerequisite, and it never has to be undone: the moment a pick lands in
+`hero-photos.json`, that subject's row in `inat-heroes.json` stops being read
+(`hero:inat` skips it on the next run, and the row can be dropped).
+
 ## Running it
 
 The harvest needs open internet, which the build sandbox blocks. Two ways:
@@ -285,6 +332,11 @@ The harvest needs open internet, which the build sandbox blocks. Two ways:
 `npm run hero:colors` needs network too, for the same reason and on the same
 terms — but it only fetches the 75 px renditions of picks already committed, so
 it is a much smaller errand than a harvest.
+
+`npm run hero:inat` is smaller still: 180 subjects is 76 requests and no images
+at all, about two minutes. It skips anything already reviewed or already stored,
+so re-running it after the catalog grows asks only about the new subjects
+(`--force` re-asks about all of them).
 
 It paces itself at roughly one request a second, well under iNaturalist's
 published limits, and sends a `User-Agent` identifying the project — Node can,

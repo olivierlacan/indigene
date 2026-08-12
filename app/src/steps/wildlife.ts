@@ -729,15 +729,19 @@ function supportRow(s: PlantSupport): FilterRow {
       ]),
       sub,
       el("div", { style: "display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.35rem" }, tieTags(s)),
-      // Every relationship shows its source, with authority names linked out.
-      // The word "Source:" is only there for a screen reader now: on screen the
-      // magnifier and a row of linked authorities say it, and this line repeats
-      // once per card down a list of twenty.
-      el("div", { style: "font-size:0.75rem;color:var(--ink-soft);opacity:0.85;margin-top:0.2rem" }, [
-        el("span", { "aria-hidden": "true" }, "🔎 "),
-        el("span", { class: "sr-only" }, t("card.source")),
-        ...citation(s.link.basis),
-      ]),
+    ]),
+    // Every relationship shows its source, with authority names linked out.
+    // The word "Source:" is only there for a screen reader now: on screen the
+    // magnifier and a row of linked authorities say it, and this line repeats
+    // once per card down a list of twenty.
+    //
+    // A child of the card, not of the text column: set beside the thumbnail it
+    // was a citation in a two-thirds measure, wrapping to three lines under
+    // a picture with nothing beside it. It gets the card's full width instead.
+    el("div", { class: "support-row-source" }, [
+      el("span", { "aria-hidden": "true" }, "🔎 "),
+      el("span", { class: "sr-only" }, t("card.source")),
+      ...citation(s.link.basis),
     ]),
   ]);
 

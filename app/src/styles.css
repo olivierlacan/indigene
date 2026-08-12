@@ -4226,6 +4226,7 @@ body[data-layout="profile"] .wip-banner-text {
 }
 .support-row {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.7rem;
   align-items: flex-start;
   padding: 0.6rem 0.8rem;
@@ -4236,6 +4237,20 @@ body[data-layout="profile"] .wip-banner-text {
 }
 .support-row-text {
   min-width: 0;
+  /* Takes the rest of the row beside the thumbnail, so the citation below it
+     is the only thing on its own line. */
+  flex: 1 1 0;
+}
+/* The citation, across the whole card. It used to sit in the text column, in a
+   two-thirds measure with a picture and empty space beside it — three lines of
+   small print where the card had room for two. */
+.support-row-source {
+  flex: 0 0 100%;
+  margin-top: 0.1rem;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  opacity: 0.85;
 }
 
 /* --- Profile pages on a laptop -------------------------------------------

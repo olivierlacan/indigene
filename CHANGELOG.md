@@ -87,8 +87,8 @@ subtitle on the What's new page.
   18" used to be a tile a screen above them. The count is now the list's own
   heading, with each region's under it. [Wildlife](https://indigene.app/wildlife)
 - **Shorter cards in that list.** Each carried a sentence about the tie, so five
-  plants filled two screens. A card now shows the name, what the plant gives and
-  its source — the sentence is a tap away, on the chip that claims it.
+  plants filled two screens. A card now gives the name, what the plant offers,
+  and the source across its full width; the sentence is a tap away, on the chip.
 - **A way to search a long list.** An animal with more than a screenful of
   plants gets the same type-to-narrow box the region lists have — try it on the
   [sunflower-family specialist bees](https://indigene.app/wildlife/sunflower-specialist-bees).

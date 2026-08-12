@@ -1,11 +1,12 @@
 // Take iNaturalist's own photograph for every plant and animal nobody has
 // reviewed yet — the picture their taxon page opens with.
 //
-//   npm run hero:inat                    # fill every gap
-//   npm run hero:inat -- --kind wildlife # only the animals
-//   npm run hero:inat -- --only monarch  # one subject
-//   npm run hero:inat -- --force         # refetch the ones already stored
-//   npm run hero:inat -- --dry-run       # print the plan, ask nothing
+//   npm run hero:inat                      # fill every gap
+//   npm run hero:inat -- --kind wildlife    # only the animals
+//   npm run hero:inat -- --kind lookalikes  # only the impostors
+//   npm run hero:inat -- --only monarch     # one subject
+//   npm run hero:inat -- --force            # refetch the ones already stored
+//   npm run hero:inat -- --dry-run          # print the plan, ask nothing
 //
 // ## Why this exists beside `harvest-hero-photos.mjs`
 //
@@ -30,11 +31,16 @@
 // ## What it asks for, and what it refuses
 //
 // One request per 30 subjects (`/v1/taxa/<id>,<id>,…` batches, which is why a
-// gap of 180 costs six requests and no image downloads at all). Animals need one
-// extra request each first, because the wildlife catalog stores a scientific
-// name rather than a number — resolved through `pickTaxon`, **the app's own
+// gap of 180 costs six requests and no image downloads at all). Animals and
+// impostors need one extra request each first, because neither catalog stores a
+// number — only a scientific name, resolved through `pickTaxon`, **the app's own
 // function, imported**, so this script and the page can't disagree about which
-// animal is meant.
+// creature or which plant is meant.
+//
+// **The impostors are here for a different reason than the rest.** A hero photo
+// answers "what does this look like?"; a look-alike's photo answers "is the one
+// in front of me the native or the other one?" — which is a comparison, and a
+// comparison needs both pictures. See `steps/lookalikes.ts`.
 //
 // The licence check is ours, not theirs: iNaturalist happily shows an
 // all-rights-reserved photo on a taxon page, and we can't. So the candidates are
@@ -50,10 +56,22 @@ import { requireProxyAwareFetch } from "./_net.mjs";
 requireProxyAwareFetch("hero:inat");
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const OUT = resolve(HERE, "../src/data/inat-heroes.json");
+/** Where each kind of subject's answer is written. Look-alikes get a file of
+ *  their own rather than a section of the first one, because their ids share a
+ *  namespace with the plants': Douglas-fir, English holly and common ivy are all
+ *  natives on one of our rosters *and* impostors somewhere else, so one table
+ *  keyed by id would have them overwrite each other. */
+const OUT = {
+  plant: resolve(HERE, "../src/data/inat-heroes.json"),
+  wildlife: resolve(HERE, "../src/data/inat-heroes.json"),
+  lookalike: resolve(HERE, "../src/data/inat-lookalikes.json"),
+};
 const REVIEWED = {
   plant: resolve(HERE, "../src/data/hero-photos.json"),
   wildlife: resolve(HERE, "../src/data/wildlife-photos.json"),
+  // Impostors have no review pipeline of their own: nobody shortlists a Callery
+  // pear. iNaturalist's answer is the only photograph they get.
+  lookalike: null,
 };
 const API = "https://api.inaturalist.org/v1/taxa";
 
@@ -77,20 +95,23 @@ const flag = (name, fallback) => {
   const i = args.indexOf(name);
   return i >= 0 ? args[i + 1] : fallback;
 };
-const onlyKind = flag("--kind", "both");
+const onlyKind = flag("--kind", "all");
 const only = flag("--only");
 const limit = flag("--limit") ? Number(flag("--limit")) : undefined;
 const dryRun = args.includes("--dry-run");
 const force = args.includes("--force");
 
-if (!["plants", "wildlife", "both"].includes(onlyKind)) {
-  console.error(`--kind must be plants, wildlife or both (got "${onlyKind}").`);
+const KINDS = { plants: "plant", wildlife: "wildlife", lookalikes: "lookalike" };
+if (!Object.keys(KINDS).includes(onlyKind) && onlyKind !== "all") {
+  console.error(`--kind must be ${Object.keys(KINDS).join(", ")} or all (got "${onlyKind}").`);
   process.exit(1);
 }
+const wants = (kind) => onlyKind === "all" || KINDS[onlyKind] === kind;
 
 const loader = await openLoader();
 const { REGISTRY } = await loader.load("/src/data/registry.ts");
 const { WILDLIFE } = await loader.load("/src/data/wildlife.ts");
+const { LOOKALIKES } = await loader.load("/src/data/lookalikes.ts");
 const { buildTaxaUrl, pickTaxon } = await loader.load("/src/lib/inaturalist.ts");
 await loader.close();
 
@@ -104,14 +125,20 @@ const readJson = (path) => {
 const reviewed = {
   plant: readJson(REVIEWED.plant),
   wildlife: readJson(REVIEWED.wildlife),
+  lookalike: {},
 };
-const stored = existsSync(OUT) ? readJson(OUT) : {};
+// Each output file read once, however many kinds write to it.
+const stored = {};
+for (const path of new Set(Object.values(OUT))) {
+  stored[path] = existsSync(path) ? readJson(path) : {};
+}
+const storedFor = (job) => stored[OUT[job.subject]];
 
 // One job per subject — not per subject *and region*, which is the whole
 // difference from the harvester. iNaturalist shows one photograph per taxon
 // wherever you are, so there is one answer to store.
 const jobs = [];
-if (onlyKind !== "wildlife") {
+if (wants("plant")) {
   for (const entry of REGISTRY) {
     const id = entry.identifiers?.indigene;
     const taxonId = Number(entry.identifiers?.inat);
@@ -119,13 +146,20 @@ if (onlyKind !== "wildlife") {
     jobs.push({ subject: "plant", id, taxonId, name: entry.scientificName });
   }
 }
-if (onlyKind !== "plants") {
+if (wants("wildlife")) {
   for (const w of WILDLIFE) {
     // An informal group ("Jays, turkeys & woodpeckers") maps to no single taxon,
     // so there is nothing to photograph it *as* — the same reason it gets no
     // species-record link and no "see it near you" lookup.
     if (!w.inat) continue;
     jobs.push({ subject: "wildlife", id: w.id, scope: w.inat, name: w.inat.name });
+  }
+}
+if (wants("lookalike")) {
+  // The impostor catalog carries a scientific name and no number, like the
+  // animals — so it is resolved the same way, scoped to plants.
+  for (const l of LOOKALIKES) {
+    jobs.push({ subject: "lookalike", id: l.id, scope: { name: l.latin, iconic: "Plantae" }, name: l.latin });
   }
 }
 
@@ -139,7 +173,7 @@ for (const job of jobs) {
   // A reviewed pick wins wherever it exists, so storing iNaturalist's answer
   // beside it would be bytes in everyone's download that nothing ever reads.
   if (reviewed[job.subject][job.id]) skipped.reviewed++;
-  else if (stored[job.id] && !force) skipped.stored++;
+  else if (storedFor(job)[job.id] && !force) skipped.stored++;
   else wanted.push(job);
 }
 const todo = limit ? wanted.slice(0, limit) : wanted;
@@ -153,7 +187,7 @@ if (!todo.length) {
   process.exit(0);
 }
 
-const names = todo.filter((j) => j.subject === "wildlife").length;
+const names = todo.filter((j) => j.scope).length;
 const batches = Math.ceil(todo.length / BATCH);
 if (dryRun) {
   console.log(`\n  ${names} name lookups + ${batches} taxon batches of up to ${BATCH}`);
@@ -172,8 +206,9 @@ async function askJson(url) {
 
 const problems = [];
 
-// Stage one: give every animal a taxon id, the same way the page does.
-for (const job of todo.filter((j) => j.subject === "wildlife")) {
+// Stage one: give every subject that has only a name a taxon id — the animals
+// and the impostors — the same way the page does.
+for (const job of todo.filter((j) => j.scope)) {
   try {
     const data = await askJson(buildTaxaUrl(job.scope.name, job.scope.iconic));
     job.taxonId = pickTaxon(data?.results, job.scope.name) ?? undefined;
@@ -243,11 +278,17 @@ for (let i = 0; i < ids.length; i += BATCH) {
   await sleep(PACE_MS);
 }
 
-const picks = { ...stored };
+// One table per output file, starting from what is already committed there.
+const picks = Object.fromEntries(Object.entries(stored).map(([path, table]) => [path, { ...table }]));
+const touched = new Set();
 const report = { taken: 0, past: 0, none: 0 };
 for (const [taxonId, jobsForTaxon] of byTaxon) {
   const pick = chosen.get(taxonId);
+  // A taxon can be two subjects at once — common ivy is a native in Atlantic
+  // France and an impostor in North America — so one answer is filed under both
+  // ids, in their own files, from the one request.
   for (const job of jobsForTaxon) {
+    const path = OUT[job.subject];
     if (!pick) {
       // Either the taxon didn't come back, or nothing in its gallery is
       // republishable. Both mean the same thing to the app: keep the drawing.
@@ -259,21 +300,25 @@ for (const [taxonId, jobsForTaxon] of byTaxon) {
     report.taken++;
     if (rank > 0) report.past++;
     // A colour already computed for this exact photograph is still true.
-    const before = stored[job.id];
+    const before = stored[path][job.id];
     if (before?.color && before.photoId === record.photoId) record.color = before.color;
-    picks[job.id] = record;
+    picks[path][job.id] = record;
+    touched.add(path);
   }
 }
 
 // Sorted by subject id: the file is read by people in diffs, and insertion
-// order would reshuffle it every time the catalog grows.
-const sorted = Object.fromEntries(Object.keys(picks).sort().map((k) => [k, picks[k]]));
-writeFileSync(OUT, JSON.stringify(sorted, null, 2) + "\n");
+// order would reshuffle it every time a catalog grows.
+for (const path of touched) {
+  const table = picks[path];
+  const sorted = Object.fromEntries(Object.keys(table).sort().map((k) => [k, table[k]]));
+  writeFileSync(path, JSON.stringify(sorted, null, 2) + "\n");
+  console.log(`\nwrote ${path.replace(resolve(HERE, "../.."), ".")} — ${Object.keys(sorted).length} subjects`);
+}
 
-console.log(`\nwrote ${OUT.replace(resolve(HERE, "../.."), ".")}`);
 console.log(
   `  ${report.taken} photographs · ${report.past} from past their first choice · ` +
-    `${report.none} with nothing republishable · ${Object.keys(sorted).length} in the file`,
+    `${report.none} with nothing republishable`,
 );
 if (problems.length) {
   console.log(`\n${problems.length} without a photograph:`);

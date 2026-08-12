@@ -3056,6 +3056,9 @@ details.weights {
   position: relative;
   height: 100%;
   margin: 0;
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
 }
 .lookalike-card:hover {
   border-color: var(--line-strong);
@@ -3138,6 +3141,78 @@ details.weights {
   .tell-side {
     margin-bottom: 0;
   }
+}
+
+/* The two photographs at the head of a comparison. Every other pair in this
+   file stacks on a phone and pairs up at 32rem; this one is side by side at
+   every width on purpose — two pictures you can hold in one glance is the
+   whole point, and one above the other is not a comparison. */
+.tell-pictures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+  margin: 0 0 0.65rem;
+}
+.tell-photo {
+  margin-bottom: 0;
+  padding: 0.4rem 0.5rem 0.45rem;
+}
+.tell-shot {
+  display: block;
+  width: 100%;
+  /* The square belongs to the button: until the loader gives the image a
+     `src` it lays out as its alt text, so the slot would be a text-high bar
+     of colour and then jump. Same reasoning as `.plant-hero-shot`. */
+  aspect-ratio: 1;
+  margin: 0.3rem 0 0.15rem;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--brand-bg);
+}
+.tell-shot:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+.tell-shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+/* One line, ellipsised: a credit belongs with its photograph, and a
+   photographer's name is not what the reader is comparing. */
+.tell-credit {
+  display: block;
+  font-size: 0.72rem;
+  line-height: 1.3;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tell-credit a {
+  color: inherit;
+}
+.tell-photo.is-impostor .tell-credit,
+.tell-photo.is-impostor .tell-credit a {
+  color: inherit;
+  opacity: 0.85;
+}
+/* The impostor index is scanned by eye, so its cards carry the thumbnail the
+   plant index cards do, at the same size and in the same place: a row, picture
+   first, everything else in a column beside it (the row itself is set on
+   `.lookalike-card` above). */
+.lookalike-card > .plant-photo {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+.lookalike-body {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .match {

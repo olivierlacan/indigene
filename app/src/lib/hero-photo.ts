@@ -38,9 +38,17 @@
 // rather than by us (`scripts/inat-heroes.mjs`). It is the floor, not the
 // ceiling: a reviewed pick wins wherever one exists, so a subject that goes
 // through review stops reading from it.
+//
+// **The impostors have one too, for a different reason.** A look-alike's photo
+// isn't there to say "this is what it looks like" — it's there to sit next to
+// the native's and answer "which of these two is in front of me?". Same table,
+// same credit path, its own file (`inat-lookalikes.json`) because three of the
+// impostors share an id with a plant on one of our rosters: Douglas-fir, English
+// holly and common ivy are all natives somewhere and impostors somewhere else.
 import PICKS from "../data/hero-photos.json";
 import WILDLIFE_PICKS from "../data/wildlife-photos.json";
 import TAXON_PHOTOS from "../data/inat-heroes.json";
+import LOOKALIKE_PHOTOS from "../data/inat-lookalikes.json";
 import type { ObservationSummary } from "./inaturalist";
 
 /** One chosen photograph, as `hero-photos.json` stores it — the shape the
@@ -93,6 +101,7 @@ interface TaxonPhoto {
 const picks = PICKS as PickTable;
 const wildlifePicks = WILDLIFE_PICKS as PickTable;
 const taxonPhotos = TAXON_PHOTOS as Record<string, TaxonPhoto>;
+const lookalikePhotos = LOOKALIKE_PHOTOS as Record<string, TaxonPhoto>;
 
 /** iNaturalist serves every rendition at the same address with the size
  *  swapped, which is what lets the stored record carry one URL. */
@@ -155,6 +164,16 @@ export function heroPhotoFor(plantId: string, regionId?: string): HeroPhoto | un
  */
 export function wildlifePhotoFor(wildlifeId: string, regionId?: string): HeroPhoto | undefined {
   return pickFrom(wildlifePicks, wildlifeId, regionId);
+}
+
+/**
+ * The photograph of an impostor — the plant somebody is about to mistake for a
+ * native. Always iNaturalist's own: nobody shortlists a Callery pear, and the
+ * comparison it's for needs *a* correct picture rather than the best one.
+ */
+export function lookalikePhotoFor(lookalikeId: string): HeroPhoto | undefined {
+  const photo = lookalikePhotos[lookalikeId];
+  return photo ? asHero(photo) : undefined;
 }
 
 /**

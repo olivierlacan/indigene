@@ -55,6 +55,36 @@ Three details worth knowing:
   function, imported — for the same reason the harvest does it: a script that
   resolved a name differently from the page would picture a different animal.
 
+### The impostors, for a different reason
+
+The look-alikes (`--kind lookalikes` → `inat-lookalikes.json`) are the one set
+of photographs here that isn't answering "what does this look like?". A
+look-alike's picture only means anything **beside the native's**: the question
+on that page is "is the tree in front of me the serviceberry or the Callery
+pear?", and half a comparison answers nothing. So the pair sits side by side in
+one row at every screen width — the only place in the app where two pictures
+share a row on a phone — above the tells that separate them, and both open into
+one lightbox reel so a swipe crosses from one to the other at full size.
+
+They get a file of their own because the two id spaces overlap: Douglas-fir,
+English holly and common ivy are each a native on one of our rosters *and* an
+impostor somewhere else, so one table keyed by id would have them overwrite each
+other. The harvest still asks once — one taxon, two subjects, two files.
+
+Two of the thirty took a fix to reach at all, both in `pickTaxon`
+(`lib/inaturalist.ts`), and both worth knowing about:
+
+- **`var.` finds nothing.** Botany writes *Hamelia patens* var. *glabra*;
+  iNaturalist's taxon is "Hamelia patens glabra", and searching with the
+  connector in returns zero results — not the wrong plant, *nothing*. The rank
+  connector is now dropped before the search.
+- **A name can belong to two ranks.** "Ficaria verna" is both a species and a
+  *complex* — iNaturalist's grouping for taxa people can't reliably tell apart —
+  and the complex comes back first, with no photographs on it. Among exact
+  name matches the expected rank now wins. Two animals moved the same way
+  (eastern tiger swallowtail, common blue), from a complex to the species, and
+  their photographs were refreshed.
+
 ## What gets chosen
 
 | Slot | Where it shows | File |
@@ -63,6 +93,7 @@ Three details worth knowing:
 | **habit / leaf / flower / fruit** | `…/plants/<slug>/photos` | `app/src/data/plant-photos.json` |
 | **hero** (animal) | the animal's page, the wildlife index | `app/src/data/wildlife-photos.json` |
 | **hero**, unreviewed | anywhere the two above are empty | `app/src/data/inat-heroes.json` |
+| **hero** (impostor) | the look-alikes index, its page, beside the native | `app/src/data/inat-lookalikes.json` |
 
 The four angles exist because one photograph answers one question. "Roughly,
 what is this?" is what a hero is for. Standing in front of a shrub with a leaf in
@@ -336,7 +367,8 @@ it is a much smaller errand than a harvest.
 `npm run hero:inat` is smaller still: 180 subjects is 76 requests and no images
 at all, about two minutes. It skips anything already reviewed or already stored,
 so re-running it after the catalog grows asks only about the new subjects
-(`--force` re-asks about all of them).
+(`--force` re-asks about all of them, `--kind plants|wildlife|lookalikes` narrows
+it to one catalog).
 
 It paces itself at roughly one request a second, well under iNaturalist's
 published limits, and sends a `User-Agent` identifying the project — Node can,

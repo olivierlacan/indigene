@@ -33,6 +33,11 @@ import { filterField, highlight, norm } from "../components/filter-field";
 import type { FilterRow } from "../components/filter-field";
 import { citation } from "../components/citation";
 import { silhouetteFor } from "../components/plant-card";
+import { lookalikeThumb } from "../components/plant-thumb";
+import { heroFigure } from "../components/hero-figure";
+import { heroPhotoFor, lookalikePhotoFor, asObservation, heroSourceUrl, type HeroPhoto } from "../lib/hero-photo";
+import { openObservationLightbox, licenseLabel } from "../components/lightbox";
+import { loadPhoto } from "../lib/photo";
 import type { Lookalike, LookalikeLink, LookalikeStatus } from "../types";
 import { t, tn, tx, fmtNumber } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
@@ -74,6 +79,65 @@ export function statusBadge(status: LookalikeStatus): HTMLElement {
 /** The short form of a name for the cramped side-by-side labels: "Cabbage Palm
  *  (Sabal Palm)" is a fine heading and a terrible column header. */
 const shortLabel = (name: string): string => name.replace(/\s*[([].*$/, "");
+
+/** The drawn width of one of the two comparison photographs: half the content
+ *  column on a phone, which is what makes them a pair rather than a stack. */
+const TELL_PX = 160;
+
+/**
+ * The two plants, side by side, above the words that separate them.
+ *
+ * Every other photograph in this app answers "what does this look like?". These
+ * two answer "which of them am I looking at?", which is a different question and
+ * the only one this page is for — so they are the one place in the app where two
+ * pictures sit in one row **on a phone**, small, rather than stacking. Two
+ * thumbnails you can compare beat one photograph you can see properly here.
+ *
+ * They open into the same reel, so the lightbox pages between the native and the
+ * impostor at full size with a swipe: the comparison at the size it deserves,
+ * without either one leaving the other's side.
+ *
+ * Null when neither has a photograph — the tells below have always been the
+ * substance, and a card with one empty box in it would look broken.
+ */
+function tellPhotos(lookalike: Lookalike, n: NativeForLookalike): HTMLElement | null {
+  const sides = [
+    { pick: heroPhotoFor(n.plant.id, n.region.meta.id), latin: n.plant.latin, name: commonName(n.plant), cls: "is-native" },
+    { pick: lookalikePhotoFor(lookalike.id), latin: lookalike.latin, name: commonName(lookalike), cls: "is-impostor" },
+  ].filter((s): s is { pick: HeroPhoto; latin: string; name: string; cls: string } => Boolean(s.pick));
+  if (!sides.length) return null;
+
+  const reel = sides.map((s) => asObservation(s.pick, s.latin));
+  return el("div", { class: "tell tell-pictures" }, sides.map((s, i) => {
+    const label = shortLabel(s.name);
+    const btn = el("button", {
+      type: "button",
+      class: "tell-shot",
+      ...(s.pick.color ? { style: `background:${s.pick.color}` } : {}),
+      "aria-label": t("hero.enlarge", { name: label }),
+      onClick: () => openObservationLightbox(reel, { observation: i, photo: 0 }, label, btn),
+    }, [
+      el("img", {
+        class: "photo-fade",
+        alt: t("obs.photoAlt", { name: s.latin, observer: s.pick.observer ?? "an iNaturalist observer" }),
+        width: 300,
+        height: 300,
+      }),
+    ]) as HTMLButtonElement;
+    loadPhoto(btn.querySelector("img")!, s.pick.mediumUrl, TELL_PX);
+    return el("div", { class: `tell-side tell-photo ${s.cls}` }, [
+      el("span", { class: "tell-who" }, label),
+      btn,
+      el("span", {
+        class: "tell-credit",
+        title: s.pick.attribution ?? `© ${s.pick.observer} · ${licenseLabel(s.pick.license)} · iNaturalist`,
+      }, [
+        el("a", { href: heroSourceUrl(s.pick), target: "_blank", rel: "noopener" },
+          `© ${s.pick.observer ?? "iNaturalist"}`),
+      ]),
+    ]);
+  }));
+}
 
 /**
  * The comparison itself: one block per difference, each naming both plants.
@@ -180,17 +244,23 @@ function indexCard(row: LookalikeIndexRow, region: RegionDef | null): FilterRow 
   const mistaken = el("span", {});
 
   const node = el("article", { class: "card lookalike-card" }, [
-    el("div", { class: "lookalike-head" }, [
-      el("h4", { style: "margin:0" }, [
-        el("a", { href: `#/lookalikes/${row.lookalike.id}` }, [title]),
+    // The picture leads the card, as it does on the plants index and for the
+    // same reason doubled: the question this index answers is a visual one —
+    // somebody is standing under a street tree working out which of these it is.
+    lookalikeThumb(row.lookalike.id, row.lookalike.form),
+    el("div", { class: "lookalike-body" }, [
+      el("div", { class: "lookalike-head" }, [
+        el("h4", { style: "margin:0" }, [
+          el("a", { href: `#/lookalikes/${row.lookalike.id}` }, [title]),
+        ]),
+        statusBadge(row.worstStatus),
       ]),
-      statusBadge(row.worstStatus),
-    ]),
-    sub ? el("div", { class: "lookalike-latin" }, [sub]) : null,
-    el("p", { class: "score-why", style: "margin:0.35rem 0 0" }, lookalikeOrigin(row.lookalike)),
-    el("p", { class: "kv", style: "margin:0.5rem 0 0" }, [
-      el("span", { class: "k" }, region ? t("lookalikes.mistakenForHere") : t("lookalikes.mistakenFor")),
-      mistaken,
+      sub ? el("div", { class: "lookalike-latin" }, [sub]) : null,
+      el("p", { class: "score-why", style: "margin:0.35rem 0 0" }, lookalikeOrigin(row.lookalike)),
+      el("p", { class: "kv", style: "margin:0.5rem 0 0" }, [
+        el("span", { class: "k" }, region ? t("lookalikes.mistakenForHere") : t("lookalikes.mistakenFor")),
+        mistaken,
+      ]),
     ]),
   ]);
 
@@ -238,6 +308,7 @@ export async function renderLookalike(main: HTMLElement, param?: string): Promis
   const natives = await nativesForLookalike(lookalike.id);
   const names = nameLines(lookalike);
   const elsewhere = await nativeSomewhere(lookalike.latin);
+  const portrait = lookalikePhotoFor(lookalike.id);
   document.title = t("lookalikes.docTitle", { name: names.title });
 
   main.append(
@@ -246,7 +317,12 @@ export async function renderLookalike(main: HTMLElement, param?: string): Promis
     ]),
     el("article", { class: "plant" }, [
       el("div", { class: "plant-head" }, [
-        el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(lookalike.form)]),
+        // The impostor's own photograph where a plant's page carries its hero:
+        // the reader is here to recognise this plant, and a drawing of a generic
+        // tree was never going to do that.
+        portrait
+          ? heroFigure(portrait, commonName(lookalike), lookalike.latin)
+          : el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(lookalike.form)]),
         el("div", {}, [
           el("h2", { class: "plant-name", style: "margin:0" }, names.title),
           el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" }, names.sub),
@@ -304,6 +380,7 @@ function comparisonCard(lookalike: Lookalike, n: NativeForLookalike): HTMLElemen
       el("span", { class: "k" }, t("lookalike.whyMixedUp")),
       lookalikeWhy(n.plant.latin, n.link, n.region.meta.id),
     ]),
+    tellPhotos(lookalike, n),
     tellTable(n.plant.latin, nativeName, commonName(lookalike), n.link, n.region.meta.id),
     el("p", { class: "confidence", style: "margin-top:0.6rem" }, [
       el("span", {}, [t("lookalike.tellsSource"), ...citation(n.link.basis)]),

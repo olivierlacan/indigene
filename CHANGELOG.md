@@ -67,6 +67,19 @@ subtitle on the What's new page.
   nobody had chosen a photo for now show the one iNaturalist's own species page
   opens with, credited to the photographer. [Wildlife](https://indigene.app/wildlife)
   is a page of real butterflies instead of identical emoji.
+- **The impostor and the real thing, side by side.** Every look-alike now has a
+  photograph, shown next to the native it gets mistaken for — two pictures in one
+  row, above the words that tell them apart. Tap either to swap between them full
+  size. [Look-alikes](https://indigene.app/lookalikes)
+- **And a picture on every card in that list.** The look-alikes index used to be
+  names and paragraphs; now each one leads with the plant, for the reader
+  standing under a street tree trying to work out which it is.
+- Internal: `--kind lookalikes` fills `src/data/inat-lookalikes.json` (its own
+  file: Douglas-fir, English holly and common ivy are natives on one roster and
+  impostors on another, so the ids collide). Two `pickTaxon` fixes got the last
+  of them: `var.` in a name returns nothing from iNaturalist's search, and an
+  exact name match now prefers the expected rank over a same-named "complex" —
+  which also moved two animals onto their species record.
 - Internal: `npm run hero:inat` writes `src/data/inat-heroes.json` — iNaturalist's
   default taxon photo per unreviewed subject, walked down their own gallery until
   a republishable licence turns up (36 needed that; red elderberry has none). 76

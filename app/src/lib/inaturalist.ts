@@ -412,11 +412,23 @@ export async function fetchRegionObservations(
 // an unresolvable name yields null, and the caller shows nothing.
 // ---------------------------------------------------------------------------
 
+/**
+ * The name as iNaturalist writes it. Botany writes the rank of an infraspecific
+ * name out — *Hamelia patens* var. *glabra* — and iNaturalist doesn't: its taxon
+ * is "Hamelia patens glabra", and searching for the form with `var.` in it
+ * returns **nothing at all**. Dropping the connector is the whole fix, and it is
+ * done in one place so the search and the match below can't disagree about what
+ * was asked for.
+ */
+function searchName(name: string): string {
+  return name.replace(/\b(var|subsp|ssp|f|cv)\.\s*/gi, "").replace(/\s+/g, " ").trim();
+}
+
 /** Build the taxa-search URL for a scientific name, scoped to one iconic taxon
  *  so a cross-kingdom homonym can't win. Pure and exported for inspection. */
 export function buildTaxaUrl(name: string, iconicTaxa: string): string {
   const params = new URLSearchParams({
-    q: name,
+    q: searchName(name),
     iconic_taxa: iconicTaxa,
     is_active: "true",
     per_page: "10",
@@ -428,22 +440,31 @@ export function buildTaxaUrl(name: string, iconicTaxa: string): string {
  * Pick the taxon id that best matches a scientific name from a taxa-search
  * `results` array, or null if nothing plausible matches. Pure, so the choice is
  * testable without a network call. The preference order:
- *   1. an active taxon whose accepted name equals the query exactly,
+ *   1. an active taxon whose accepted name equals the query exactly — and where
+ *      several do, the one of the expected rank,
  *   2. else an active taxon of the expected rank (a genus name → a genus; a
  *      binomial → a species), which is where a synonym search lands (the query
  *      name is a synonym, the accepted name differs),
  *   3. else the first active result.
  * The iconic-taxon filter was already applied in the query, so every candidate
  * here is in the right group of life.
+ *
+ * The tie-break in (1) is not hypothetical: "Ficaria verna" is the name of both
+ * a species and a *complex* — iNaturalist's grouping for a knot of taxa people
+ * can't tell apart — and the complex comes back first. It is a real record with
+ * no photographs and far fewer observations, so taking it would answer a
+ * question about lesser celandine with a rank nobody outside taxonomy has heard
+ * of.
  */
 export function pickTaxon(results: unknown, name: string): number | null {
   const rows: any[] = Array.isArray(results) ? results : [];
   const active = rows.filter((r) => r?.is_active !== false && num(r?.id) != null);
   if (!active.length) return null;
-  const want = name.trim().toLowerCase();
+  const want = searchName(name).toLowerCase();
   const expectedRank = want.includes(" ") ? "species" : "genus";
-  const exact = active.find((r) => str(r?.name)?.toLowerCase() === want);
-  if (exact) return num(exact.id);
+  const exact = active.filter((r) => str(r?.name)?.toLowerCase() === want);
+  const best = exact.find((r) => str(r?.rank) === expectedRank) ?? exact[0];
+  if (best) return num(best.id);
   const byRank = active.find((r) => str(r?.rank) === expectedRank);
   if (byRank) return num(byRank.id);
   return num(active[0].id);

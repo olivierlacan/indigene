@@ -387,13 +387,13 @@
     "color": "#936e41"
   },
   "common-blue": {
-    "taxonId": 1468172,
-    "photoId": 254623479,
-    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/254623479/square.jpeg",
-    "observer": "lastovka",
+    "taxonId": 55641,
+    "photoId": 393850131,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/393850131/square.jpg",
+    "observer": "Manuel Raab",
     "license": "cc-by-nc",
-    "attribution": "(c) lastovka, some rights reserved (CC BY-NC), uploaded by lastovka",
-    "color": "#857025"
+    "attribution": "(c) Manuel Raab, some rights reserved (CC BY-NC), uploaded by Manuel Raab",
+    "color": "#798c4b"
   },
   "crataegus-douglasii": {
     "taxonId": 76469,
@@ -486,7 +486,7 @@
     "color": "#9a8b56"
   },
   "eastern-tiger-swallowtail": {
-    "taxonId": 1613196,
+    "taxonId": 60551,
     "photoId": 147896974,
     "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/147896974/square.jpg",
     "observer": "David Alan Rogers",

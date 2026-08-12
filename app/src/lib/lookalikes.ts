@@ -96,6 +96,44 @@ export interface LookalikeIndexRow {
 
 const STATUS_RANK: Record<LookalikeStatus, number> = { invasive: 0, introduced: 1, native: 2 };
 
+/** One status an impostor holds, and the regions that give it. */
+export interface StatusRegions {
+  status: LookalikeStatus;
+  regions: RegionDef[];
+}
+
+/**
+ * Where an impostor is what, grouped by status — the answer to "invasive
+ * *where*?".
+ *
+ * The status is a property of a plant **in a place**, never of the plant: a
+ * Douglas-fir is a planted curiosity in the French Alps and one of the Pacific
+ * Northwest's great trees, and death camas is as native to a Cascade meadow as
+ * the camas beside it. So nothing outside a region may print a status word on
+ * its own, and this is what everything that shows one reads instead. Ordered
+ * invasive → introduced → native, so the serious case leads.
+ *
+ * A region resolves to one status even where it carries several ties: two
+ * natives confused with the same impostor in the same place cannot make it two
+ * different things, and if the data ever disagreed the stronger claim is the
+ * safer one to show.
+ */
+export function statusRegions(natives: NativeForLookalike[]): StatusRegions[] {
+  const byRegion = new Map<string, { region: RegionDef; status: LookalikeStatus }>();
+  for (const n of natives) {
+    const seen = byRegion.get(n.region.meta.id);
+    if (!seen || STATUS_RANK[n.link.status] < STATUS_RANK[seen.status]) {
+      byRegion.set(n.region.meta.id, { region: n.region, status: n.link.status });
+    }
+  }
+  const out: StatusRegions[] = [];
+  for (const status of ["invasive", "introduced", "native"] as const) {
+    const regions = [...byRegion.values()].filter((r) => r.status === status).map((r) => r.region);
+    if (regions.length) out.push({ status, regions });
+  }
+  return out;
+}
+
 /** The whole index computed once — the joins walk every region's roster for
  *  every impostor, and the answer can't change at runtime. */
 let indexCache: LookalikeIndexRow[] | null = null;

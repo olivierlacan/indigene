@@ -98,6 +98,10 @@ subtitle on the What's new page.
 
 ### Changed
 
+- **A look-alike is only invasive *somewhere*.** The list called plants invasive
+  or not-from-here before you'd picked a region — and a few of them are natives
+  of ours. Each now names the regions where it's a problem, on the list and on
+  its own page. [Look-alikes](https://indigene.app/lookalikes)
 - **The strip above the page matches the header.** Added to a phone's Home
   Screen, Indigene showed a slightly different green up at the top — and in dark
   mode a dark one under a pale header. Now it wears the header's own colour.

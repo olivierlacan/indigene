@@ -3206,6 +3206,20 @@ details.weights {
   color: inherit;
   opacity: 0.85;
 }
+/* Where an impostor is what. The label carries the status colour the badge
+   would have — red for invasive, amber for merely introduced — so the index is
+   still scannable at a glance now that the badge only appears where a region
+   has actually been named. */
+.where-row {
+  margin-top: 0.35rem;
+}
+.where-k.is-invasive {
+  color: var(--danger-ink);
+}
+.where-k.is-introduced {
+  color: var(--warn-ink);
+}
+
 /* The impostor index is scanned by eye, so its cards carry the thumbnail the
    plant index cards do, at the same size and in the same place: a row, picture
    first, everything else in a column beside it (the row itself is set on

@@ -1210,6 +1210,12 @@ export const fr: Dict = {
     "Introduite et plantée ici. On ne la connaît pas comme envahissante — elle n'est simplement pas la plante avec laquelle la faune d'ici a grandi.",
   "lookalike.statusPlain.native":
     "Elle pousse ici à l'état sauvage, tout comme la plante avec laquelle on la confond. La confusion compte quand même.",
+  // Deux-points plutôt qu'une préposition : « en Californie du Sud » mais
+  // « dans les Alpes » — le nom de région décide, et une seule formule ne peut
+  // pas être juste partout.
+  "lookalike.where.invasive": "Envahissante :",
+  "lookalike.where.introduced": "Pas indigène :",
+  "lookalike.where.native": "Indigène :",
   "lookalike.nativeElsewhere": "Elle est bel et bien indigène quelque part — {link}.",
   "lookalike.nativeElsewhereLink": "nous la recommandons dans notre liste {region}",
   "lookalike.coverageNote":

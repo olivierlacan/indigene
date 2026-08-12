@@ -27,6 +27,7 @@ import {
   nativesForLookalike,
   nativeSomewhere,
   inatSearchUrl,
+  statusRegions,
 } from "../lib/lookalikes";
 import type { LookalikeIndexRow, NativeForLookalike } from "../lib/lookalikes";
 import { filterField, highlight, norm } from "../components/filter-field";
@@ -69,11 +70,58 @@ const STATUS_CLASS: Record<LookalikeStatus, string> = {
   native: "neutral",
 };
 
+/**
+ * "Invasive here" — and *here* has to be a real place.
+ *
+ * Every use of this badge is inside something that has already named one
+ * region: a comparison card that says which region's tie it is, or an index
+ * narrowed to a region by the picker above it. Nothing that spans regions may
+ * print one, because the status is a fact about a plant *in a place* and not
+ * about the plant. Douglas-fir is a planted curiosity in the French Alps and one
+ * of the Pacific Northwest's great trees; a placeless "Not from here" badge on
+ * it is simply false. Those places use `whereRows` below.
+ */
 export function statusBadge(status: LookalikeStatus): HTMLElement {
   return el("span", {
     class: `badge ${STATUS_CLASS[status]}`,
     title: t(`lookalike.statusPlain.${status}` as const),
   }, t(`lookalike.status.${status}` as const));
+}
+
+/**
+ * Where this impostor is what — one row per status, the regions as pills:
+ *
+ *   Invasive in   Mid-Atlantic · Atlantic France
+ *   Native to     Pacific Northwest
+ *
+ * The same shape, and the same reading, as the "Native to" row on a plant's or
+ * an animal's page: a status belongs to a region, so it is printed next to the
+ * regions that hold it and nowhere else. That also lets one impostor say two
+ * things at once, which several of them need — a Mexican fan palm is planted in
+ * central Florida and invasive in the south, and picking one word for both
+ * would be wrong in one of them.
+ *
+ * `link` makes each pill a way into that region's look-alikes. Off on the index,
+ * where the card is itself one link and a link inside a link is neither.
+ */
+function whereRows(natives: NativeForLookalike[], link: boolean): HTMLElement[] {
+  return statusRegions(natives).map(({ status, regions }) =>
+    el("p", { class: "region-pills where-row" }, [
+      el("span", { class: `region-pills-k where-k is-${status}` }, t(`lookalike.where.${status}` as const)),
+      ...regions.map((r) =>
+        link
+          ? el("a", {
+              class: "region-pill",
+              href: indexHref(r.meta.id),
+              title: t(`lookalike.statusPlain.${status}` as const),
+            }, regionShort(r.meta))
+          : el("span", {
+              class: "region-pill",
+              title: t(`lookalike.statusPlain.${status}` as const),
+            }, regionShort(r.meta))
+      ),
+    ])
+  );
 }
 
 /** The short form of a name for the cramped side-by-side labels: "Cabbage Palm
@@ -253,7 +301,10 @@ function indexCard(row: LookalikeIndexRow, region: RegionDef | null): FilterRow 
         el("h4", { style: "margin:0" }, [
           el("a", { href: `#/lookalikes/${row.lookalike.id}` }, [title]),
         ]),
-        statusBadge(row.worstStatus),
+        // Only where the picker above has narrowed the index to one region does
+        // "Invasive here" have a *here* to mean. Unnarrowed, the card says where
+        // instead, below — see `whereRows`.
+        region ? statusBadge(row.worstStatus) : null,
       ]),
       sub ? el("div", { class: "lookalike-latin" }, [sub]) : null,
       el("p", { class: "score-why", style: "margin:0.35rem 0 0" }, lookalikeOrigin(row.lookalike)),
@@ -261,6 +312,7 @@ function indexCard(row: LookalikeIndexRow, region: RegionDef | null): FilterRow 
         el("span", { class: "k" }, region ? t("lookalikes.mistakenForHere") : t("lookalikes.mistakenFor")),
         mistaken,
       ]),
+      ...(region ? [] : whereRows(row.natives, false)),
     ]),
   ]);
 
@@ -330,12 +382,13 @@ export async function renderLookalike(main: HTMLElement, param?: string): Promis
         el("div", {}, [
           el("h2", { class: "plant-name", style: "margin:0" }, names.title),
           el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" }, names.sub),
-          // One badge per distinct status across the regions it appears in: a
-          // plant can be invasive in one place and merely planted in another,
-          // and flattening that to a single word would be false in one of them.
-          el("div", {}, [...new Set(natives.map((n) => n.link.status))].map(statusBadge)),
         ]),
       ]),
+      // What it is, region by region. A plant can be invasive in one place and
+      // merely planted in another — and native in a third — so this says which
+      // is which rather than flattening it to one word that would be false
+      // somewhere.
+      ...whereRows(natives, true),
       el("p", { class: "kv", style: "margin-top:0.75rem" }, [
         el("span", { class: "k" }, t("lookalikes.whereItsFrom")),
         lookalikeOrigin(lookalike),

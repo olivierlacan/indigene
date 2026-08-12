@@ -190,6 +190,17 @@ subtitle on the What's new page.
 
 ### Fixed
 
+- Internal: the candidate-plant finder was asking iNaturalist the wrong
+  question. It read `listed_taxa` off the taxon record and looked for its own
+  states in it — but that array stops at 100, and for thimbleberry all 100 are
+  European and Australian records saying "introduced", so Oregon, Washington and
+  BC never appeared and a plant native from Alaska to California was filed under
+  "no answer". It now asks once per place (`?place_id=`), which answers in one
+  field. Names are also resolved through iNaturalist's synonymy — but only when
+  it confirms our exact string names the taxon, never on the search's best guess
+  (`Brassica nigra` still must not inherit *Hirschfeldia incana*). Pacific
+  Northwest unknowns: 27 → 3. Southern California: 20 → 2.
+
 - **Nearly enough sun is no longer a complaint.** A plant wanting an hour more
   sun than your spot gets was told off for it, quoting two numbers that rounded
   to the same one. It now says it may just not grow as well.

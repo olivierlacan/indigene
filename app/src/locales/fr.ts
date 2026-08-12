@@ -1843,7 +1843,7 @@ export const fr: Dict = {
   "photos.enlarge": "Voir en grand la photo « {angle} » de {name}",
   "photos.shotAlt": "{name} — {angle}",
   "photos.noneYet":
-    "Personne n'a encore choisi de gros plans de {name}. La recherche ci-dessous fonctionne quand même : elle demande à iNaturalist de vraies observations près d'un lieu que vous choisissez.",
+    "Personne n'a encore choisi de gros plans. La recherche ci-dessous trouve de vraies observations près d'un lieu que vous choisissez.",
   "photos.someMissing":
     "{n} pour l'instant. Restent à choisir : {angles}. La recherche ci-dessous en trouve d'autres, près de chez vous, aujourd'hui.",
   "photos.allChosen": "Les {n} photos ont été choisies pour celle-ci.",

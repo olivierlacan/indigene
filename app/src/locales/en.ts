@@ -1828,7 +1828,7 @@ export const en = {
   "photos.enlarge": "See the “{angle}” photo of {name} full size",
   "photos.shotAlt": "{name} — {angle}",
   "photos.noneYet":
-    "Nobody has chosen close-ups of {name} yet. The lookup below still works: it asks iNaturalist for real sightings near a spot you pick.",
+    "Nobody has chosen close-ups yet. The lookup below finds real sightings near a spot you pick.",
   "photos.someMissing":
     "{n} chosen so far. Still to be picked: {angles}. The lookup below finds more, near you, today.",
   "photos.allChosen": "All {n} photographs have been chosen for this one.",

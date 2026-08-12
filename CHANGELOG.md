@@ -124,6 +124,9 @@ subtitle on the What's new page.
   Settings rounded the coordinates to whole degrees, so a garden outside
   Philadelphia read "40, -75". It now keeps the four decimals the saved list
   already showed.
+- **"No close-ups yet" was squeezed into a thin column.** On a plant nobody has
+  photographed for us, that line sat in one narrow photo slot, a word or two per
+  line. It now runs the full width of the card, and says it in fewer words.
 
 ## [0.26] - 2026-08-09
 

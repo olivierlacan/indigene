@@ -2182,6 +2182,11 @@ details.weights {
 .photos-missing {
   margin-top: 0.7rem;
 }
+/* When it's the "nothing chosen yet" note it ends the section, so it keeps the
+   full width of the card and drops the trailing margin `.note` carries. */
+.note.photos-missing {
+  margin-bottom: 0;
+}
 
 /* --- An animal's slot, on the wildlife index ----------------------------
    The emoji alone until a photograph has been chosen for that animal — same

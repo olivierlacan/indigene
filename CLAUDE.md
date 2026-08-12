@@ -178,9 +178,17 @@ the shot.
 `npm run release-notes` on every push to `main`. That gives the changelog four
 rules:
 
-- **Add an entry in the same PR as the change**, under `## [Unreleased]`. The
-  `Changelog` CI check reminds you; apply the `skip-changelog` label only when
-  nothing notable changed (screenshots, CI plumbing, typos).
+- **Add an entry in the same PR as the change, as a file of its own** —
+  `changelog.d/<your-branch>.md`, holding the `### Fixed` heading and the
+  bullets you'd otherwise have appended under `## [Unreleased]`. One entry, one
+  file, because an entry appended to a shared section is a merge conflict for
+  every other open PR the moment one of them lands (`changelog.d/README.md`
+  explains it, `app/scripts/_changelog.mjs` implements it). The compiler folds
+  the loose entries in on every build, so the rules below bite in review exactly
+  as they did; `npm run changelog:fold` writes them into `Unreleased` for real
+  when a version is cut. The `Changelog` CI check reminds you; apply the
+  `skip-changelog` label only when nothing notable changed (screenshots, CI
+  plumbing, typos).
 - **Write `Added` / `Changed` / `Fixed` bullets for everyone.** They're
   published verbatim to a general audience — including kids and grandparents —
   so use plain, warm words and explain any term of art in place. Reviewing the
@@ -199,7 +207,10 @@ rules:
   is short by default* at the top of this file; the notes drifted to a 65-word
   median once already.
 - **Cut versions at feature boundaries, Maison-style.** When a coherent piece
-  of the product has landed, retitle `Unreleased` to `## [0.x] - YYYY-MM-DD`,
+  of the product has landed, run `npm run changelog:fold` to move the loose
+  entries into `Unreleased` (it copies them verbatim, in filename order — read
+  the section back and set the order yourself). Then retitle `Unreleased` to
+  `## [0.x] - YYYY-MM-DD`,
   give it a bold one-line name on the next line, bump `app/package.json`'s
   `version` to match, add the compare link at the bottom, and start a fresh
   `Unreleased`. No fixed cadence, no conventional commits — the version number

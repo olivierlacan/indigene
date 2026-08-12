@@ -81,6 +81,9 @@ subtitle on the What's new page.
 
 ### Changed
 
+- **The strip above the page matches the header.** Added to a phone's Home
+  Screen, Indigene showed a slightly different green up at the top — and in dark
+  mode a dark one under a pale header. Now it wears the header's own colour.
 - **A spot's fact boxes lead with the number.** Plants, Species, Nurtured,
   Sustained — one word each, and the figure set large enough to read at arm's
   length.
@@ -167,6 +170,22 @@ subtitle on the What's new page.
 - **Fact boxes stopped cutting their labels short on a big screen.** On a laptop
   a spot's boxes were narrower than the same ones on a phone, so "NURTURED" came
   out "NURTUR…". Every box now sizes itself to the space it's actually in.
+
+### Fixed
+
+- Internal: pull-to-reload wired itself up from `boot()`, after WebKit had
+  already settled two things it reads while setting a page up — the colour
+  behind an over-pull, and which touches need to reach the page at all. So a
+  freshly opened Home Screen app showed `--bg` above the header and every
+  `touchmove` arrived uncancellable; it only came to life a couple of
+  navigations later, once an unrelated re-render had refreshed WebKit's copy.
+  Detection now runs in an inline `<head>` script that stamps
+  `data-home-screen` before first paint (`lib/standalone.ts` reads that verdict
+  instead of computing its own), and the non-passive `touchmove` listener is
+  registered once in `initPullToReload()` rather than added in `onStart` and
+  removed in `stop()` — a listener attached mid-touch is too late to change
+  that touch's fate. The direction lock decides on the first move for the same
+  reason: an unclaimed move is a lost gesture.
 
 ## [0.26] - 2026-08-09
 

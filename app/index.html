@@ -6,7 +6,46 @@
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <meta name="theme-color" content="#1f6b3b" />
+    <!-- The header's own green, per theme, so the strip iOS paints above an
+         installed app matches the header underneath it instead of being a
+         third green nobody chose. Keep these in step with `--brand` in
+         src/styles.css. The bare one last, for anything that ignores `media`. -->
+    <meta name="theme-color" content="#7ec894" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#175e33" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#175e33" />
+
+    <!-- Is this an iOS Home Screen app? Answered here, in the head, before the
+         page has been laid out once — which is the whole point of it living in
+         a script tag instead of in the app.
+         An installed app has no reload button, so the app draws its own
+         pull-down gesture (src/components/pull-to-reload.ts). WebKit reads the
+         colour behind an over-pull and works out which touches it can handle
+         without asking us, and it does both while setting the page up. A page
+         that changes the answer afterwards keeps the old one until some later
+         re-render happens to refresh it — which is why the gesture used to do
+         nothing on a page you had just opened, and start working once you had
+         followed a couple of links.
+         Only iOS: every other browser has a reload button of its own, and the
+         green would be tinting toolbars on a page that isn't green.
+         src/lib/standalone.ts reads the verdict back. -->
+    <script>
+      (function () {
+        var ios =
+          /iPhone|iPad|iPod/.test(navigator.userAgent) ||
+          // iPadOS 13+ sends a desktop Safari user agent. A Mac with a
+          // touchscreen is the false positive this admits, and Apple doesn't
+          // sell one.
+          (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+        // Both signals, because they cover different vintages: `standalone` is
+        // Safari's own long-standing flag, `display-mode` the standard one it
+        // grew later. Either is enough.
+        var installed =
+          navigator.standalone === true ||
+          (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches);
+        if (ios && installed) document.documentElement.dataset.homeScreen = "";
+      })();
+    </script>
+
     <meta
       name="description"
       content="Stand in a spot, and find native plants that will actually thrive there — ranked by what they do for the local ecosystem."

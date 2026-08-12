@@ -28,10 +28,13 @@ const MAX_PULL = 88;
 /** The band opens about half as far as the finger travels: a reload should take
  *  a deliberate drag, and the resistance is what a phone owner expects here. */
 const DAMPING = 0.55;
-/** Enough movement to tell down from sideways, and no more. The gesture takes
- *  the touch as early as it honestly can: every pixel it waits is a pixel of
- *  the browser's own bounce, which opens a pale gap above the header. */
-const DEADZONE = 3;
+/** Enough movement to tell down from sideways, and no more — one pixel, on the
+ *  first move of the gesture. There is no cheaper moment: WebKit hands the
+ *  touch to its own scrolling the instant a move goes by unclaimed, and once it
+ *  has, `preventDefault` does nothing for the rest of the drag. So the choice
+ *  is made on the first move that has any downward travel in it, and a move
+ *  with more sideways travel than downward is somebody else's. */
+const DEADZONE = 1;
 
 let band: HTMLElement | null = null;
 let bee: HTMLElement | null = null;
@@ -45,21 +48,31 @@ let engaged = false;
 let reloading = false;
 let settle: number | undefined;
 
-/** Wire up the gesture, if this is a device that needs it. */
+/**
+ * Wire up the gesture, if this is a device that needs it.
+ *
+ * All four listeners go on now and stay on for the life of the page — the
+ * non-passive one above all. WebKit works out whether a touch needs to reach us
+ * at the moment the finger lands, from the listeners that were already there;
+ * one added while the touch is being delivered is too late to change that
+ * touch's fate, and removing it again afterwards puts the page back to
+ * "nothing here wants this" before the next finger lands. Which is what used to
+ * happen: the move listener went on in `onStart` and came off in `stop()`, so
+ * every drag arrived after the decision had gone against it and every
+ * `touchmove` was already uncancellable. The cost of holding them is a few
+ * property reads per tap, in `onMove`, and only on an installed iOS app.
+ */
 export function initPullToReload(): void {
   if (!isHomeScreenApp()) return;
-  // Turns the page's canvas green, so a bounce this gesture doesn't catch shows
-  // more header rather than a pale gap (see the note in styles.css).
-  document.documentElement.dataset.homeScreen = "";
   document.addEventListener("touchstart", onStart, { passive: true });
+  document.addEventListener("touchmove", onMove, { passive: false });
+  document.addEventListener("touchend", onEnd);
+  document.addEventListener("touchcancel", onCancel);
 }
 
-/**
- * A touch begins. Cheap checks only — this runs on every tap in the app, and
- * the expensive one (a non-passive move listener, which makes the browser wait
- * on us before it scrolls) is attached only once a gesture looks plausible.
- */
+/** A touch begins: remember where, and whether a pull from here would be ours. */
 function onStart(e: TouchEvent): void {
+  tracking = false;
   if (reloading || e.touches.length !== 1) return;
   if (window.scrollY > 0) return; // the gesture belongs to the top of the page
   if (!canPullFrom(e.target)) return;
@@ -69,9 +82,6 @@ function onStart(e: TouchEvent): void {
   pull = 0;
   tracking = true;
   engaged = false;
-  document.addEventListener("touchmove", onMove, { passive: false });
-  document.addEventListener("touchend", onEnd);
-  document.addEventListener("touchcancel", onCancel);
 }
 
 /**
@@ -101,13 +111,11 @@ function onMove(e: TouchEvent): void {
   const dx = touch.clientX - startX;
 
   if (!engaged) {
-    // Direction lock, decided once: a sideways drag is a carousel's or a
-    // gallery's, and an upward one is an ordinary scroll. Either way we're out,
-    // and the page keeps the gesture — we haven't prevented anything yet.
-    if (Math.abs(dx) > Math.abs(dy) || dy < DEADZONE) {
-      if (Math.abs(dx) > DEADZONE || dy < -DEADZONE) stop();
-      return;
-    }
+    // Direction lock, decided on the first move rather than a few pixels in: a
+    // sideways drag is a carousel's or a gallery's, and an upward one is an
+    // ordinary scroll. Either way we're out, and the page keeps the gesture —
+    // we haven't prevented anything yet.
+    if (dy < DEADZONE || Math.abs(dx) > dy) return stop();
     if (window.scrollY > 0) return stop();
     // Already committed to a scroll or a bounce: the browser won't hand this
     // gesture over, and taking half of it would mean a band opening beside a
@@ -142,17 +150,17 @@ function onEnd(): void {
 }
 
 function onCancel(): void {
+  if (!tracking) return;
   stop();
   retract();
 }
 
-/** Let go of the gesture — the listeners, not the band. */
+/** Let go of the gesture. The state only: the listeners stay for the life of
+ *  the page, because taking them off is what broke this (see
+ *  `initPullToReload`). */
 function stop(): void {
   tracking = false;
   engaged = false;
-  document.removeEventListener("touchmove", onMove);
-  document.removeEventListener("touchend", onEnd);
-  document.removeEventListener("touchcancel", onCancel);
 }
 
 /** Close the band back into the header and leave nothing behind. */

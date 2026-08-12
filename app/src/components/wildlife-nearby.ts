@@ -138,9 +138,12 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
   function regionButtons(): HTMLElement | null {
     const regions = regionsForWildlife(w.id);
     if (!regions.length) return null;
-    // Same thrift as the plant twin: one region needs no name (the line above
-    // said it), several need only the short form to tell them apart.
-    const many = regions.length > 1;
+    // One line of chips, however many regions there are — an animal found in
+    // five of them used to be five full-width buttons stacked down the card,
+    // which is most of a phone screen spent on an alternative to the thing
+    // above it. The row scrolls sideways instead (see `.obs-elsewhere-row`),
+    // and the question above it names what the chips are, so a chip is only a
+    // place — no map emoji four times over, no "Where it's found" on each.
     return el("div", { class: "obs-elsewhere" }, [
       el("p", { class: "obs-elsewhere-lede" }, t("wlNearby.notThereFound")),
       el("div", { class: "obs-elsewhere-row" },
@@ -149,7 +152,7 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
             type: "button",
             class: "btn btn-secondary btn-compact",
             onClick: () => void loadRegion(r, btn),
-          }, `🗺️ ${many ? regionShort(r.meta) : t("wlNearby.whereFound")}`) as HTMLButtonElement;
+          }, regionShort(r.meta)) as HTMLButtonElement;
           return btn;
         }),
       ),

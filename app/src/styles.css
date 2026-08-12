@@ -3524,10 +3524,29 @@ details.weights {
   font-size: 0.9rem;
   color: var(--ink-soft);
 }
+/* One line of places, whatever the count. Wrapped, an animal found in five
+   regions was five full-width buttons stacked down the card — more of the
+   phone screen than the lookup they're an alternative to. It scrolls sideways
+   instead, with a chip cut off at the edge as the sign there are more; every
+   chip is still a button, so tabbing reaches the ones off-screen and the row
+   follows the focus. */
 .obs-elsewhere-row {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.4rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  /* A row cut off mid-chip reads as scrollable; a row cut off mid-*border*
+     reads as a bug, so the last chip gets a hair of room past it. */
+  padding-right: 0.15rem;
+}
+.obs-elsewhere-row::-webkit-scrollbar {
+  display: none;
+}
+.obs-elsewhere-row > .btn {
+  scroll-snap-align: start;
 }
 .btn-compact {
   flex: 0 1 auto;
@@ -4329,8 +4348,12 @@ body[data-layout="profile"] .wip-banner-text {
     margin-top: 0.5rem;
     text-align: right;
   }
+  /* `safe`, because the row is a scroller now: plain `flex-end` pushes an
+     overflowing row off its own left edge, where no amount of scrolling can
+     reach the first chip. Safe alignment gives up and starts from the left the
+     moment the chips don't fit. */
   .wl-nearby > .obs-elsewhere .obs-elsewhere-row {
-    justify-content: flex-end;
+    justify-content: safe flex-end;
   }
 
   /* ---- The profile card, on either page ---- */

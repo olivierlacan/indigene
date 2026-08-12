@@ -98,6 +98,12 @@ subtitle on the What's new page.
 - **And they're the boxes a saved spot has.** Host, Shelter, Vital — one word
   over a big number, matching your spots. Each word is the one the plants below
   wear, so you can see which five of eleven the box means.
+- **The sightings lookup opens in one line.** "See it near you", and a plant's
+  "See it growing near you", took three lines to say what they now say in one:
+  community-verified iNaturalist photos, near a place you pick.
+- **The other places to look are one row you can swipe.** A monarch is found in
+  four regions, and each was a full-width button down the card. They're chips on
+  a single line now, and each still runs the lookup there.
 - **"It's yours" now includes taking it with you.**
   [Privacy](https://indigene.app/privacy) and [About](https://indigene.app/about)
   both say so, and Privacy links straight to the button that does it.

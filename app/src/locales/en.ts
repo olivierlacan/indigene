@@ -1847,8 +1847,9 @@ export const en = {
   "nearby.found": "Found {n} ",
   "nearby.foundNear": "Found {n} nearby ",
   "nearby.seeItGrowing": "See it growing near you",
+  // Two lines at the 360px floor, and the row of regions below says the rest.
   "nearby.seeItGrowingLede":
-    "Real, community-verified iNaturalist photos of one growing near a spot you pick — or anywhere it's native.",
+    "Community-verified iNaturalist photos, near a spot you pick.",
   "nearby.outsideYou":
     "You're outside the regions Indigene has native-plant data for, so we can't vouch for what's truly native there — and we won't dress up nearby sightings as local natives. The sun, soil and climate readings still work everywhere.",
   "nearby.outsidePlace":
@@ -1867,8 +1868,7 @@ export const en = {
     "research-grade sighting of {name} in {region} — verified and photographed by the iNaturalist community (you don't have to be there):",
   "nearby.foundRest.other":
     "research-grade sightings of {name} in {region} — verified and photographed by the iNaturalist community (you don't have to be there):",
-  "nearby.notThereNative": "Not there right now?",
-  "nearby.whereNative": "Where it's native",
+  "nearby.notThereNative": "Not there? Look where it's native:",
   "nearby.busy":
     "iNaturalist asked us to slow down — it's busy right now. Give it a minute and try again.",
   "nearby.nativeToList": "native to {list}",
@@ -1877,7 +1877,7 @@ export const en = {
     "Our data lists {name} as {belongs}, not {region}. It may turn up on iNaturalist there as a planted or escaped specimen, but we won't showcase it as a local native where it doesn't belong — that's the opposite of what Indigene is for.",
   "wlNearby.seeItNear": "See it near you",
   "wlNearby.seeItNearLede":
-    "Community-verified photos from iNaturalist of real ones spotted near a place you pick — or anywhere it's found.",
+    "Community-verified iNaturalist photos, near a place you pick.",
   "wlNearby.outsideYou":
     "You're outside the regions Indigene covers, so we can't do a nearby lookup there. You can still look it up in a region where it's found, below.",
   "wlNearby.outsidePlace":
@@ -1892,8 +1892,7 @@ export const en = {
     "research-grade sighting of {name} in {region} — verified and photographed by the iNaturalist community (you don't have to be there):",
   "wlNearby.foundRest.other":
     "research-grade sightings of {name} in {region} — verified and photographed by the iNaturalist community (you don't have to be there):",
-  "wlNearby.notThereFound": "Not there right now?",
-  "wlNearby.whereFound": "Where it's found",
+  "wlNearby.notThereFound": "Not there? Look where it's found:",
 
   // ---------------------------------------------------------------------
   // Ecoregion labels. The EEA's eleven regions have a settled name in each

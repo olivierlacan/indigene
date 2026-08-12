@@ -43,14 +43,14 @@ import { citation } from "../components/citation";
 import { termTag, openTermDialog } from "../components/term-dialog";
 import { supportIcon, relianceIcon } from "../components/support-icon";
 import { silhouetteFor } from "../components/plant-card";
-import { sectionHeading } from "../components/section-link";
+import { sectionHeading, sectionTitle } from "../components/section-link";
 import { keystoneIcon } from "../components/keystone-icon";
 import { wildlifeNearbySection } from "../components/wildlife-nearby";
 import { wildlifeThumb, wildlifeHero } from "../components/wildlife-thumb";
 import { cardStats } from "../components/card-stats";
 import { statTiles } from "../components/stat-card";
 import type { Stat } from "../components/stat-card";
-import type { SupportLink, Wildlife } from "../types";
+import type { Wildlife } from "../types";
 import { t, tn, fmtNumber, fmtList, getLang } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
 import { wildlifeBlurb, wildlifeLead, supportNote, wildlifeUntranslated } from "../lib/prose";
@@ -502,7 +502,6 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
     items: supports.filter((s) => s.region.meta.id === r.meta.id),
   })).filter((g) => g.items.length);
 
-  const plantCount = supports.length;
   const hosts = supports.filter((s) => s.link.support === "host").length;
   // Where it raises young or sits out the winter, as opposed to where it eats:
   // a bird's nest site and a caterpillar's food plant are the same promise from
@@ -568,12 +567,11 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
               ...citation(w.nativeBasis),
             ]),
             speciesLink(w),
-            // The same figures the sentence underneath the plants used to
-            // spell out, as the tiles a plant's page has always had: how many
-            // of our plants feed it, how many raise its young, and how many it
-            // has no substitute for. The list of plants is right there below —
-            // a paragraph counting it was the page reading itself aloud.
-            reachTiles(w, names.title, { plantCount, hosts, shelter, soleCount }),
+            // What's true of *some* of the plants below: how many raise its
+            // young, how many shelter it, how many it has no substitute for.
+            // How many there are in total isn't here — that's the heading of
+            // the list itself, a screen down.
+            reachTiles(w, names.title, { hosts, shelter, soleCount }),
           ]),
         ]),
       ]),
@@ -585,22 +583,42 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
   const nearby = wildlifeNearbySection(w);
   if (nearby) main.append(nearby);
 
-  for (const group of byRegion) {
-    main.append(
-      el("section", {}, [
-        sectionHeading(`#/regions/${group.region.meta.id}`, "📍", regionName(group.region.meta)),
-        // A grid, not a stack: one column at phone width, as many as fit on a
-        // laptop (see `.wildlife-supports`). An animal with a dozen plants was
-        // a dozen full-width rows down the middle of a desktop window.
-        el("div", { class: "wildlife-supports" },
-          group.items
-            .slice()
-            .sort(sortByStrength)
-            .map((s) => supportRow(s)),
-        ),
-      ]),
-    );
+  // The plants themselves, region by region — each heading carrying its own
+  // count. That figure used to sit in a tile above ("Plants for it / 18 / on
+  // our lists"), which is a number introducing itself two screens from the list
+  // it counts. It belongs on the list's own header.
+  const filterRows: FilterRow[] = [];
+  const sections: FilterSection[] = [];
+  const groups = byRegion.map((group) => {
+    const rows = group.items.slice().sort(sortByStrength).map(supportRow);
+    const node = el("section", {}, [
+      sectionHeading(
+        `#/regions/${group.region.meta.id}`,
+        "📍",
+        regionName(group.region.meta),
+        fmtNumber(group.items.length),
+      ),
+      // A grid, not a stack: one column at phone width, as many as fit on a
+      // laptop (see `.wildlife-supports`). An animal with a dozen plants was
+      // a dozen full-width rows down the middle of a desktop window.
+      el("div", { class: "wildlife-supports" }, rows.map((r) => r.node)),
+    ]);
+    filterRows.push(...rows);
+    sections.push({ node, rows });
+    return node;
+  });
+
+  // The total, where a total belongs: at the head of the list it counts. Only
+  // where there's more than one region under it — with one, the region's own
+  // heading is already carrying the same number a line below.
+  if (byRegion.length > 1) {
+    main.append(sectionTitle("🌱", t("wildlife.plantsHeading"), fmtNumber(filterRows.length)));
   }
+  // The roster's filter, on the pages that need one. Most animals here have
+  // three or four plants — a search field over a list you can already see is
+  // clutter — so it appears past a phone screenful of cards.
+  if (filterRows.length > 6) main.append(plantFilterField(filterRows, sections));
+  main.append(...groups);
 
   main.append(
     coverageLine(),
@@ -621,17 +639,9 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
 function reachTiles(
   w: Wildlife,
   animal: string,
-  counts: { plantCount: number; hosts: number; shelter: number; soleCount: number },
-): HTMLElement {
-  const tiles: Stat[] = [
-    {
-      icon: "🌱",
-      label: t("wlStat.plants.label"),
-      value: fmtNumber(counts.plantCount),
-      sub: t("wlStat.plants.sub"),
-      explain: t("wlStat.plants.explain", { animal }),
-    },
-  ];
+  counts: { hosts: number; shelter: number; soleCount: number },
+): HTMLElement | null {
+  const tiles: Stat[] = [];
   if (counts.hosts) {
     tiles.push({
       icon: "🐛",
@@ -659,6 +669,9 @@ function reachTiles(
       explain: tn("wlStat.sole.explain", counts.soleCount, { animal }),
     });
   }
+  // Nothing left to show for a plain nectar tie — an empty grid would be a
+  // heading's worth of space saying nothing.
+  if (!tiles.length) return null;
   return statTiles(tiles, t("wlStat.glance", { animal: commonName(w) }));
 }
 
@@ -679,10 +692,16 @@ function sortByStrength(a: PlantSupport, b: PlantSupport): number {
 
 // A plant row on an animal's page. The card is a plain div (not a link) so the
 // tie chips can be real buttons; the plant name is the link to its profile.
-function supportRow(s: PlantSupport): HTMLElement {
+//
+// What it says is deliberately short: the name, the tie, and who says so. The
+// sentence explaining the tie in full lives on the plant's own page — a dozen
+// of them stacked here turned a list you scan into a page you read.
+function supportRow(s: PlantSupport): FilterRow {
   const p = s.plant;
   const names = nameLines(p);
-  return el("div", { class: "card support-row" }, [
+  const title = el("a", { href: `#/plants/${p.id}`, style: "color:inherit" });
+  const sub = el("div", { class: "plant-latin", style: "font-size:0.85rem" });
+  const node = el("div", { class: "card support-row" }, [
     el("a", {
       href: `#/plants/${p.id}`,
       class: "plant-photo",
@@ -691,7 +710,7 @@ function supportRow(s: PlantSupport): HTMLElement {
     }, [silhouetteFor(p.form)]),
     el("div", { class: "support-row-text" }, [
       el("div", { style: "font-weight:700" }, [
-        el("a", { href: `#/plants/${p.id}`, style: "color:inherit" }, names.title),
+        title,
         p.keystone
           ? el("span", {
               title: t("explore.keystoneTitle"),
@@ -701,9 +720,8 @@ function supportRow(s: PlantSupport): HTMLElement {
             }, [keystoneIcon(13)])
           : null,
       ]),
-      el("div", { class: "plant-latin", style: "font-size:0.85rem" }, names.sub),
-      el("div", { style: "display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.35rem" }, tieTags(s.link)),
-      el("div", { style: "font-size:0.85rem;color:var(--ink-soft);margin-top:0.3rem" }, supportNote(p.latin, s.link, s.region.meta.id)),
+      sub,
+      el("div", { style: "display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.35rem" }, tieTags(s)),
       // Every relationship shows its source, with authority names linked out.
       el("div", { style: "font-size:0.75rem;color:var(--ink-soft);opacity:0.85;margin-top:0.2rem" }, [
         el("span", { "aria-hidden": "true" }, "🔎 "),
@@ -712,6 +730,31 @@ function supportRow(s: PlantSupport): HTMLElement {
       ]),
     ]),
   ]);
+
+  // The names carry the filter's underlining, the way a roster row and a search
+  // result do — so a row that stayed on screen says which word kept it there.
+  const mark = (nq: string): void => {
+    title.replaceChildren(...highlight(names.title, nq));
+    sub.replaceChildren(...highlight(names.sub, nq));
+  };
+  mark("");
+  return { hay: norm(`${commonName(p)} ${p.common} ${p.latin}`), node, mark };
+}
+
+/** The same type-to-narrow field a region's roster carries, over one animal's
+ *  plants. Same words, same behaviour — it's the same list of plants. */
+function plantFilterField(rows: FilterRow[], sections: FilterSection[]): HTMLElement {
+  return filterField(rows, sections, {
+    label: t("region.filterAria"),
+    placeholder: t("region.filterPlaceholder"),
+    count: (shown, total, q) =>
+      tn("region.filterCount", shown, { shown: fmtNumber(shown), total: fmtNumber(total), q }),
+    fallback: (q) => [
+      t("region.filterNone"),
+      el("a", { href: `#/plants?q=${encodeURIComponent(q)}` }, t("region.filterSearchAll")),
+      t("region.filterNoneRest"),
+    ],
+  });
 }
 
 // A deep link to the animal's own record where a stable scheme exists (BAMONA
@@ -731,11 +774,21 @@ function speciesLink(w: Parameters<typeof speciesRecordUrl>[0]): HTMLElement | n
 // "Essential" (make-or-break) or "Specialist". A generalist tie shows no
 // strength chip, so an unmarked plant reads as "one of many" without clutter.
 // Each chip carries its own pill color (see the `.tag-*` rules).
-function tieTags(link: SupportLink): HTMLElement[] {
-  const kind = link.support;
-  const role = { ...supportLabel(kind), glyph: () => supportIcon(kind) };
+//
+// The role chip's dialog also carries this pair's own sentence — what *this*
+// plant gives *this* animal. It used to be printed under every card, which is
+// a paragraph per row on a list you're scanning; the reader who wants it taps
+// the chip that makes the claim.
+function tieTags(s: PlantSupport): HTMLElement[] {
+  const kind = s.link.support;
+  const note = supportNote(s.plant.latin, s.link, s.region.meta.id);
+  const role = {
+    ...supportLabel(kind),
+    glyph: () => supportIcon(kind),
+    extra: note ? [el("p", { style: "margin:0 0 0.9rem" }, note)] : undefined,
+  };
   const tags = [termTag(role, kind)];
-  const r = relianceOf(link);
+  const r = relianceOf(s.link);
   if (r !== "broad") {
     const strength = { ...relianceLabel(r), glyph: () => relianceIcon(r) as SVGElement };
     tags.push(termTag(strength, r));

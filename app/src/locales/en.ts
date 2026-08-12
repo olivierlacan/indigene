@@ -1317,6 +1317,9 @@ export const en = {
   "wildlife.regionPillTitle": "{region} — all the wildlife its natives support",
   "wildlife.docTitle": "Native plants that support {animal} — Indigene",
   "wildlife.allWildlife": "← All wildlife",
+  // The header of the plant list itself, carrying the count. On an animal's
+  // page "it" is the animal, named an inch above.
+  "wildlife.plantsHeading": "Plants for it",
   "wildlife.ofThemHosts.one": ", {n} of them as a caterpillar host — the strongest tie.",
   "wildlife.ofThemHosts.other": ", {n} of them as caterpillar hosts — the strongest tie.",
   "wildlife.cantLiveWithout.one": "⭐ It can't live without this plant. ",
@@ -1326,10 +1329,6 @@ export const en = {
   // The animal's reach, as tiles. What used to be a sentence under the plants
   // that counted the plants beside it.
   "wlStat.glance": "{animal} at a glance",
-  "wlStat.plants.label": "Plants for it",
-  "wlStat.plants.sub": "on our lists",
-  "wlStat.plants.explain":
-    "How many of the natives Indigene maps support {animal} — with food, shelter, or somewhere to raise young. They're listed below, by region.",
   "wlStat.host.label": "Raises young on",
   "wlStat.host.sub": "the strongest tie",
   "wlStat.host.explain":

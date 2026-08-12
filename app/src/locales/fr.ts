@@ -1328,6 +1328,7 @@ export const fr: Dict = {
   "wildlife.regionPillTitle": "{region} — toute la faune que ses plantes indigènes font vivre",
   "wildlife.docTitle": "Les plantes indigènes qui font vivre {animal} — Indigene",
   "wildlife.allWildlife": "← Toute la faune",
+  "wildlife.plantsHeading": "Plantes pour lui",
   "wildlife.ofThemHosts.one": ", dont {n} comme plante nourricière de ses chenilles — le lien le plus fort.",
   "wildlife.ofThemHosts.other": ", dont {n} comme plantes nourricières de ses chenilles — le lien le plus fort.",
   "wildlife.cantLiveWithout.one": "⭐ Il ne peut pas vivre sans cette plante. ",
@@ -1337,10 +1338,6 @@ export const fr: Dict = {
     "{n} d'entre elles sont sa seule option — retirez-les et {animal} n'a plus nulle part où aller.",
   // La portée de l'animal, en tuiles.
   "wlStat.glance": "{animal} en un coup d'œil",
-  "wlStat.plants.label": "Plantes pour lui",
-  "wlStat.plants.sub": "sur nos listes",
-  "wlStat.plants.explain":
-    "Combien des plantes indigènes cartographiées par Indigene font vivre {animal} — en le nourrissant, en l'abritant ou en accueillant ses petits. Elles sont listées ci-dessous, région par région.",
   "wlStat.host.label": "Élève ses petits sur",
   "wlStat.host.sub": "le lien le plus fort",
   "wlStat.host.explain":

@@ -83,6 +83,15 @@ subtitle on the What's new page.
 - **A linked photo says "Sighting".** It used to show the observation's number,
   which told you nothing — now a row with a sighting looks different from one
   without, and the button below offers to add another.
+- **An animal's plants are counted where the list starts.** "Plants for it —
+  18" used to be a tile a screen above them. The count is now the list's own
+  heading, with each region's under it. [Wildlife](https://indigene.app/wildlife)
+- **Shorter cards in that list.** Each carried a sentence about the tie, so five
+  plants filled two screens. A card now shows the name, what the plant gives and
+  its source — the sentence is a tap away, on the chip that claims it.
+- **A way to search a long list.** An animal with more than a screenful of
+  plants gets the same type-to-narrow box the region lists have — try it on the
+  [sunflower-family specialist bees](https://indigene.app/wildlife/sunflower-specialist-bees).
 - **"It's yours" now includes taking it with you.**
   [Privacy](https://indigene.app/privacy) and [About](https://indigene.app/about)
   both say so, and Privacy links straight to the button that does it.

@@ -33,3 +33,18 @@ export function sectionHeading(
     ]),
   ]);
 }
+
+/** The same heading where the section has no page of its own to open — so no
+ *  chevron promising one. An animal's plants are the case: they're on this
+ *  page, split by region under it, and what the heading adds is the count. */
+export function sectionTitle(
+  icon: Node | string | null,
+  label: string,
+  count?: string
+): HTMLElement {
+  return el("h3", { class: "section-head" }, [
+    icon ? el("span", { class: "section-link-icon", "aria-hidden": "true" }, [icon]) : null,
+    label,
+    count != null ? el("span", { class: "section-count" }, count) : null,
+  ]);
+}

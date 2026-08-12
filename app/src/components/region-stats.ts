@@ -120,7 +120,9 @@ function statsFor(region: RegionDef, plants: Plant[]): RegionStat[] {
       value: fmtNumber(wildlife),
       sub: t("regionStat.wildlife.sub"),
       explain: t("regionStat.wildlife.explain", { n: fmtNumber(wildlife) }),
-      moreHref: "#/wildlife",
+      // This region's animals, not every region's: the number above them counts
+      // one region, so the way out of it should land in the same place.
+      moreHref: `#/wildlife/in/${region.meta.id}`,
       moreLabel: t("regionStat.wildlife.more"),
     });
   }

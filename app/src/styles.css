@@ -2250,21 +2250,25 @@ details.weights {
      always did and a photo tile sits beside the name it belongs to. */
   align-self: start;
   line-height: 1;
-}
-.wildlife-photo > * {
-  grid-area: 1 / 1;
-}
-.wildlife-photo.has-photo {
+  /* One box, photograph or not. Most animals have a photograph now and the
+     informal groups — "Jays, turkeys & woodpeckers" — never will, because they
+     are no single species to photograph. Sizing the slot only when a photo
+     turned up left every one of those rows starting its text a centimetre
+     further left than the rows above it, which reads as a broken list rather
+     than as a missing picture. Same square, same gutter, every row. */
   width: 3.25rem;
   height: 3.25rem;
   border-radius: 10px;
   overflow: hidden;
   background: var(--brand-bg);
 }
+.wildlife-photo > * {
+  grid-area: 1 / 1;
+}
 /* The emoji stays under the photograph as its placeholder — the right size and
    the right shape from the first paint, and still the whole answer when the
    photo never arrives. */
-.wildlife-photo.has-photo .wildlife-photo-icon {
+.wildlife-photo .wildlife-photo-icon {
   font-size: 1.6rem;
 }
 .wildlife-photo img {

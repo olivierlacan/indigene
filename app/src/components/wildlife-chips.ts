@@ -10,8 +10,8 @@
 // A star marks a plant the animal can't live without. The small glyph after the
 // name says how the plant helps: raising its young, feeding an adult, berries,
 // seed, cover.
-import type { WildlifeKind } from "../types";
-import type { TieSummary } from "../lib/wildlife";
+import type { Wildlife, WildlifeKind } from "../types";
+import type { TieSummary, WildlifeIndexRow } from "../lib/wildlife";
 import { el } from "../ui";
 import { supportIcon } from "./support-icon";
 import { supportLabel, wildlifeKindShort, WILDLIFE_KINDS } from "../lib/plain";
@@ -55,11 +55,47 @@ export function wildlifeChips(ties: TieSummary[]): HTMLElement {
  *   claim the same `aria-controls` target.
  */
 export function wildlifeGroups(ties: TieSummary[], idBase: string): HTMLElement {
-  const byKind = new Map<WildlifeKind, TieSummary[]>();
-  for (const tie of ties) {
-    const list = byKind.get(tie.wildlife.kind);
-    if (list) list.push(tie);
-    else byKind.set(tie.wildlife.kind, [tie]);
+  return kindGroups(ties.map((tie) => ({ wildlife: tie.wildlife, chip: wildlifeChip(tie) })), idBase);
+}
+
+/**
+ * The same five pills for a whole *region* rather than for a set of plants: the
+ * animals a region's roster feeds, on the region's own page.
+ *
+ * The chip carries a count instead of a support glyph, because "how the plant
+ * helps" is a fact about one tie and this is forty of them — what a region can
+ * say is *how many of its plants* each animal has to turn to.
+ */
+export function wildlifeRegionGroups(rows: WildlifeIndexRow[], idBase: string): HTMLElement {
+  return kindGroups(
+    rows.map((row) => ({
+      wildlife: row.wildlife,
+      chip: el("a", {
+        href: `#/wildlife/${row.wildlife.id}`,
+        class: "btn btn-secondary wl-chip",
+        title: t("region.wildlifePlants", {
+          n: fmtNumber(row.plantCount),
+          name: commonName(row.wildlife),
+        }),
+      }, [
+        el("span", { "aria-hidden": "true" }, `${row.wildlife.icon} `),
+        commonName(row.wildlife),
+        el("span", { "aria-hidden": "true", class: "wl-chip-tie" }, fmtNumber(row.plantCount)),
+      ]),
+    })),
+    idBase
+  );
+}
+
+/** The accordion both of the above are: five pills, one open at a time, the
+ *  chips behind them. Written once so a group of animals reads the same
+ *  wherever it's counted from. */
+function kindGroups(items: Array<{ wildlife: Wildlife; chip: HTMLElement }>, idBase: string): HTMLElement {
+  const byKind = new Map<WildlifeKind, HTMLElement[]>();
+  for (const item of items) {
+    const list = byKind.get(item.wildlife.kind);
+    if (list) list.push(item.chip);
+    else byKind.set(item.wildlife.kind, [item.chip]);
   }
 
   const pills = el("div", { class: "wl-groups" });
@@ -73,7 +109,7 @@ export function wildlifeGroups(ties: TieSummary[], idBase: string): HTMLElement 
     if (!group) continue;
     const panelId = `${idBase}-${kind}`;
     const panel = el("div", { class: "wl-group-panel", id: panelId, hidden: true }, [
-      wildlifeChips(group),
+      el("div", { class: "wl-chips" }, group),
     ]);
     const pill = el("button", {
       type: "button",

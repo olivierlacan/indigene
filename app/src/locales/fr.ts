@@ -1408,6 +1408,9 @@ export const fr: Dict = {
   "region.categoryDocTitle": "{label} indigènes de {region} — Indigene",
   "region.lede":
     "Toutes les indigènes que nous connaissons pour {reference} — touchez une plante pour sa fiche complète.",
+  "region.wildlifeTitle": "La faune que ces plantes nourrissent",
+  "region.wildlifeLede": "Touchez un groupe pour voir qui vient. Le nombre après chaque nom, c'est combien de plantes d'ici lui servent.",
+  "region.wildlifePlants": "{n} plantes d'ici soutiennent {name}",
   "region.noSuchRegion": "Ce lien ne correspond à aucune région couverte par Indigene.",
   "region.noSuchCategory":
     "« {slug} » n'est pas une catégorie de plantes que nous connaissons — essayez l'un des groupes ci-dessous.",

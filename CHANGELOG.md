@@ -27,6 +27,11 @@ subtitle on the What's new page.
 
 ### Added
 
+- **A region's page now names the wildlife too.** Under the plants, every region
+  lists the butterflies, moths, bees, birds and mammals they're documented to
+  feed — tap a group for the names, and the number beside each one is how many
+  plants here it can use. [Regions](https://indigene.app/regions)
+
 - **Your saved spots, as a file you keep.** Settings can now write every spot
   and its planting log to one plain file, and read one back in another browser —
   so a phone and a laptop can hold the same garden.
@@ -180,6 +185,11 @@ subtitle on the What's new page.
   included.
 
 ### Fixed
+
+- **A row with no photograph looked like a broken one.** Some entries in the
+  wildlife list — "Mason & mining bees" — are a group rather than one species,
+  so there's nothing to photograph them as. Their names now line up with
+  everyone else's. [Wildlife](https://indigene.app/wildlife)
 
 - **A look-alike's write-up ran to the edges of its card.** The description and
   its sources sat flush against the border while everything above them was

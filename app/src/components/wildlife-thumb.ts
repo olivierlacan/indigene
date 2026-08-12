@@ -9,8 +9,10 @@
 // **The emoji is the placeholder, and it is never removed.** It paints
 // instantly, it is already the right size, and it says something true. So there
 // is no grey box, no spinner, no layout shift, and nothing to do when the photo
-// never arrives — offline, on a metered connection, or for the animals nobody
-// has reviewed yet. The page looks exactly as it did; some rows just get better.
+// never arrives — offline, on a metered connection, or for the informal groups
+// ("Jays, turkeys & woodpeckers") that are no one species and can never have
+// one. The slot is the same square either way, so a list of a dozen animals
+// starts every name at the same place whether or not the picture came.
 //
 // **Decorative, and marked as such.** The row already names the animal; a
 // photograph of it adds nothing for a screen reader and would only repeat the
@@ -54,11 +56,6 @@ export function wildlifeThumb(
   const pick = budget() === "essential" ? undefined : wildlifePhotoFor(wildlifeId, opts.regionId);
   if (!pick) return box;
 
-  // Only now does the slot become a square tile. An animal nobody has reviewed
-  // keeps the bare emoji it always had, at the size it always was — so adding
-  // this changed no page until the first photograph was chosen, and a list of
-  // twelve animals doesn't hold twelve empty boxes open waiting for them.
-  box.classList.add("has-photo");
   // The photograph's own average colour underneath it, so it fades up out of
   // its own greens and browns rather than out of the app's placeholder tint.
   if (pick.color) box.style.background = pick.color;

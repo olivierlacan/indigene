@@ -190,6 +190,10 @@ subtitle on the What's new page.
 
 ### Fixed
 
+- **Nearly enough sun is no longer a complaint.** A plant wanting an hour more
+  sun than your spot gets was told off for it, quoting two numbers that rounded
+  to the same one. It now says it may just not grow as well.
+
 - **A row with no photograph looked like a broken one.** Some entries in the
   wildlife list — "Mason & mining bees" — are a group rather than one species,
   so there's nothing to photograph them as. Their names now line up with

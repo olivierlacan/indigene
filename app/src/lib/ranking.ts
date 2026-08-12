@@ -93,6 +93,11 @@ function siteZoneNumber(site: SiteData | null): number | null {
   return Number.isFinite(n) ? n : null;
 }
 
+/** How far under a plant's minimum the sun can fall and still count as "about
+ *  right" rather than as too little. One hour: less than that is inside the
+ *  error of every way this app has of knowing how sunny a spot is. */
+const SUN_NEAR_HOURS = 1;
+
 export function computeFit(
   plant: Plant,
   site: SiteData | null,
@@ -106,9 +111,20 @@ export function computeFit(
   if (sun) {
     const h = sun.hours;
     if (h < plant.sun.minHours) {
-      sunFit = clamp01(1 - (plant.sun.minHours - h) / 4);
+      const short = plant.sun.minHours - h;
+      sunFit = clamp01(1 - short / 4);
+      // A shortfall inside the estimate's own error is not news. "Shade" is
+      // recorded as 1.5 hours and a plant asking for 2 was printing "needs ~2+
+      // hours, spot gets ~2" — two numbers that round to the same one, under a
+      // sentence saying they differ. Nothing we measure sun with is accurate to
+      // the half hour: a scan reads a horizon, and the hand-picked bands are a
+      // guess at a whole afternoon. So an hour short says what is actually true
+      // — it will probably do less well — and says it without numbers, which at
+      // this scale are noise dressed as precision.
       reasons.push(
-        t("fit.sun.tooLittle", { needs: fmtNumber(plant.sun.minHours), has: fmtNumber(h) })
+        short <= SUN_NEAR_HOURS
+          ? t("fit.sun.near")
+          : t("fit.sun.tooLittle", { needs: fmtNumber(plant.sun.minHours), has: fmtNumber(h) })
       );
     } else if (h > plant.sun.maxHours) {
       sunFit = clamp01(1 - (h - plant.sun.maxHours) / 5);

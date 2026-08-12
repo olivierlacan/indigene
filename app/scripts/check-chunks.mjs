@@ -30,6 +30,7 @@ const PAGES = [
   { label: "plant page (one region)", path: "/#/plants/ribes-sanguineum", max: 1 },
   { label: "plant page (two regions)", path: "/#/plants/quercus-virginiana", max: 2, note: "native to both Florida lists" },
   { label: "region page", path: "/#/regions/pnw", max: 1 },
+  { label: "saved spots", path: "/#/saved", max: 0, note: "wildlife per spot comes from the registry + tie table" },
   { label: "wildlife index", path: "/#/wildlife", max: 0, note: "counted from the tie table" },
   { label: "wildlife page", path: "/#/wildlife/monarch", max: 4, note: "the regions that tie to it" },
   { label: "look-alikes index", path: "/#/lookalikes", max: 9, note: "resolves natives in every region" },

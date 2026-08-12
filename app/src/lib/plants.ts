@@ -3,7 +3,7 @@
 // host-species count in the data (honest, checkable) and normalize it here on a
 // log scale, because the difference between 5 and 50 host species matters far
 // more than the difference between 450 and 500.
-import type { EcoScores, Plant, SiteData } from "../types";
+import type { EcoScores, Plant, SavedSpot, SiteData } from "../types";
 import type { RawPlant, RegionDef } from "../data/region";
 import { REGIONS, regionsForCoords } from "../data/regions";
 
@@ -96,6 +96,16 @@ export function regionForSite(
     }
   }
   return candidates[0];
+}
+
+/** The region a saved spot's plants come from — the reader's own pick first,
+ *  the coordinates otherwise, exactly as everywhere else in the app. Shared so
+ *  the spot's page and the saved list can't answer it two different ways. */
+export function regionForSpot(spot: SavedSpot): RegionDef | null {
+  const picked = spot.regionOverride
+    ? REGIONS.find((r) => r.meta.id === spot.regionOverride) ?? null
+    : null;
+  return picked ?? regionForSite(spot.lat, spot.lon, spot.site);
 }
 
 export { REGIONS };

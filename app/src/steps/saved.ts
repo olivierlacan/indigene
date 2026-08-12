@@ -4,6 +4,8 @@ import { listSpots, deleteSpot, listPlantings } from "../db";
 import type { Planting } from "../types";
 import { latPlain, lonPlain, sunPlain } from "../lib/plain";
 import { tally } from "../lib/garden";
+import { spotWildlifeCount } from "../lib/spot-value";
+import { regionForSpot } from "../lib/plants";
 import { privacyNote } from "../components/privacy-link";
 import { cardStats } from "../components/card-stats";
 import { spotMap } from "../components/spot-map";
@@ -34,7 +36,15 @@ export async function renderSaved(main: HTMLElement): Promise<void> {
 
   const list = el("ul", { class: "saved-list" });
   for (const s of spots) {
-    const counts = tally(plantings.filter((p) => p.spotId === s.id));
+    const mine = plantings.filter((p) => p.spotId === s.id);
+    const counts = tally(mine);
+    // Counted off the tie table and the registry, both already here — so a row
+    // can say what a garden feeds without downloading a single plant list, and
+    // says the same number the spot's own page does.
+    const wildlife = spotWildlifeCount(
+      mine.map((p) => p.plantId),
+      regionForSpot(s)?.meta.id ?? null
+    );
     const item = el("li", { class: "saved-item" }, [
       // Beside the name, because the name is the only other thing telling one
       // saved spot from another — and one you gave a corner of a garden last
@@ -76,6 +86,13 @@ export async function renderSaved(main: HTMLElement): Promise<void> {
                 value: fmtNumber(counts.kinds),
                 label: tn("saved.statKinds", counts.kinds, { count: fmtNumber(counts.kinds) }),
               },
+              wildlife
+                ? {
+                    icon: "🦋",
+                    value: fmtNumber(wildlife),
+                    label: tn("saved.statWildlife", wildlife, { count: fmtNumber(wildlife) }),
+                  }
+                : null,
             ])
           : null,
       ]),

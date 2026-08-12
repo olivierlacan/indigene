@@ -13,10 +13,10 @@ import { savedSpotsThatSuit } from "../lib/saved-fit";
 import { activeEntry } from "../lib/plant-view";
 import { renderPlantPhotos, PHOTOS_ROUTE, photosHref } from "./plant-photos";
 import type { PlantEntry, Suitability } from "../lib/explore";
-import { wildlifeForPlant, relianceOf } from "../lib/wildlife";
+import { bestTies } from "../lib/wildlife";
 import { lookalikesForPlant } from "../lib/lookalikes";
-import { latPlain, lonPlain, supportLabel } from "../lib/plain";
-import { supportIcon } from "../components/support-icon";
+import { latPlain, lonPlain } from "../lib/plain";
+import { wildlifeChips } from "../components/wildlife-chips";
 import { SCORE_KEYS, scoreLabel, bloomSentence, confidencePlain, growthPlain, moistureWord, propagationMethod, sunLabel, PROPAGATION_SOURCE_URL, SOURCES_ROUTE } from "../lib/plain";
 import { techniqueFor, techniqueHref } from "../lib/planting";
 import { citation } from "../components/citation";
@@ -33,7 +33,7 @@ import { plantedControl } from "../components/planted-control";
 import { anchoredHeading } from "../components/anchor-head";
 import { plantSectionHref, isHashRoute } from "../lib/routes";
 import { privacyNote } from "../components/privacy-link";
-import type { Plant, SiteData, SunEstimate, SupportKind } from "../types";
+import type { Plant, SiteData, SunEstimate } from "../types";
 import { t, tn, fmtNumber, fmtList } from "../lib/i18n";
 import { length, humanHeightLabel } from "../lib/units";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
@@ -844,46 +844,11 @@ function ecosystemSection(p: Plant, entries: PlantEntry[], expanded: boolean): H
 // plant native to more than one region shows the union of its ties, deduped by
 // creature (the strongest tie — a larval host — wins the label).
 function whoItFeeds(entries: PlantEntry[]): HTMLElement | null {
-  const supportRank: Record<string, number> = { host: 0, nectar: 1, berries: 2, seeds: 3, shelter: 4 };
-  // A star marks a plant this animal can't live without — the make-or-break tie.
-  const best = new Map<string, { name: string; icon: string; support: string; id: string; sole: boolean }>();
-  for (const e of entries) {
-    for (const { wildlife, link } of wildlifeForPlant(e.region.meta.id, e.plant.id)) {
-      const prev = best.get(wildlife.id);
-      const sole = (prev?.sole ?? false) || relianceOf(link) === "sole";
-      if (!prev || supportRank[link.support] < supportRank[prev.support]) {
-        best.set(wildlife.id, { name: commonName(wildlife), icon: wildlife.icon, support: link.support, id: wildlife.id, sole });
-      } else {
-        prev.sole = sole; // keep the star even if a weaker-labeled tie sorted first
-      }
-    }
-  }
-  if (!best.size) return null;
-  // Make-or-break ties first, then by support strength.
-  const items = [...best.values()].sort(
-    (a, b) => Number(b.sole) - Number(a.sole) || supportRank[a.support] - supportRank[b.support]
-  );
+  const ties = bestTies(entries.map((e) => ({ regionId: e.region.meta.id, plantId: e.plant.id })));
+  if (!ties.length) return null;
   return el("div", { style: "margin:0 0 0.8rem" }, [
     el("p", { class: "kv", style: "margin:0 0 0.4rem" }, [el("span", { class: "k" }, t("plant.wildlifeItBrings"))]),
-    el("div", { style: "display:flex;flex-wrap:wrap;gap:0.4rem" },
-      items.map((w) =>
-        el("a", {
-          href: `#/wildlife/${w.id}`,
-          class: "btn btn-secondary",
-          style: "flex:0 1 auto;min-height:2.4rem;padding:0.35rem 0.65rem;font-size:0.9rem;text-decoration:none",
-          title: w.sole
-            ? t("plant.soleTie", { name: w.name })
-            : `${supportLabel(w.support as SupportKind).term} — ${supportLabel(w.support as SupportKind).plain}`,
-        }, [
-          w.sole ? el("span", { "aria-hidden": "true" }, "⭐ ") : null,
-          el("span", { "aria-hidden": "true" }, `${w.icon} `),
-          w.name,
-          el("span", { "aria-hidden": "true", style: "opacity:0.7;margin-left:0.3rem;display:inline-flex" }, [
-            supportIcon(w.support as SupportKind, 13),
-          ]),
-        ])
-      )
-    ),
+    wildlifeChips(ties),
   ]);
 }
 

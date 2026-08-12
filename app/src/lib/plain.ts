@@ -234,6 +234,19 @@ export function wildlifeKindLabel(kind: WildlifeKind): { icon: string; title: st
 }
 
 /**
+ * The same group, named for a pill rather than a heading: one word where the
+ * language has one. A section heading can afford "Bees & other pollinators";
+ * a chip in a row of five cannot, and a chip that wraps to two lines is the
+ * one thing this shape must never do.
+ */
+export function wildlifeKindShort(kind: WildlifeKind): { icon: string; title: string } {
+  return {
+    icon: WILDLIFE_KIND_ICONS[kind],
+    title: t(`wildlifeKind.${kind}.short` as const),
+  };
+}
+
+/**
  * How a plant supports an animal, glossed once. `term` is the one-word chip
  * ("Host", "Nectar") — kept to a single noun so it reads at a glance; `plain`
  * is the tap-to-open explanation, which is where a word like "Host" that a

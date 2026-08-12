@@ -56,6 +56,13 @@ subtitle on the What's new page.
 - **Saving a spot offers its town as the name.** The box that asks what to call
   it starts with "Radnor, Pennsylvania" instead of a pair of coordinates —
   something to accept or edit, not something to replace.
+- **A saved spot now says what it can feed.** Its page lists every butterfly,
+  bee, bird and animal the plants you've logged there are documented to support
+  — with a star on any that has no other plant to turn to.
+  [Your spots](https://indigene.app/saved).
+- **Two new figures at a glance.** A spot's tiles gain the number of creatures
+  its plants can feed, and each row in your saved list carries it too — so a
+  garden's reach shows without opening it.
 - Internal: town names are learned once per ~5 km cell, only on the location
   step's confirm (where the coordinate is already going out for soil and
   climate, and the page says so), and read from device storage everywhere else
@@ -64,6 +71,18 @@ subtitle on the What's new page.
 
 ### Changed
 
+- **A spot's fact boxes lead with the number.** Plants, Species, Nurtured,
+  Sustained — one word each, and the figure set large enough to read at arm's
+  length.
+- **All the little fact boxes are one size now.** A label long enough to run
+  onto two lines used to make its box taller than the one beside it and knock
+  the numbers out of line. On spots, plants and regions alike, they line up.
+- **A planted row says its size in five words.** "6.6 ft × 4.6 ft if thriving"
+  in place of the sentence that used to wrap onto a second line, so a plant in
+  your log is one line to read.
+- **A linked photo says "Sighting".** It used to show the observation's number,
+  which told you nothing — now a row with a sighting looks different from one
+  without, and the button below offers to add another.
 - **"It's yours" now includes taking it with you.**
   [Privacy](https://indigene.app/privacy) and [About](https://indigene.app/about)
   both say so, and Privacy links straight to the button that does it.
@@ -73,6 +92,14 @@ subtitle on the What's new page.
 - **The app downloads about a third less to get started.** It used to carry the
   plant lists for all nine regions before showing you anything. Now it fetches
   the one region you're gardening in, and keeps it for offline.
+- Internal: a spot's wildlife is deliberately a list of cited ties and not a
+  score — averaging seven 0–100 eco-estimates across a log reads as a
+  measurement of that garden, which nobody has. The chips are one component
+  (`components/wildlife-chips.ts`) and ties fold through one `bestTies` in
+  `lib/wildlife.ts`; the counts come from the registry and the tie table, so
+  the saved list needs no plant list. `npm run chunks:check` holds it to that.
+- Internal: `.stat-grid` uses `grid-auto-rows: 1fr` and pins each tile's value
+  to the bottom of a flex column, so a wrapping label can't resize its row.
 - Internal: region seeds are per-region chunks (`data/regions.ts` reaches them
   through `import()`); the shell drops 422 → 277 KB gzipped, plus 9–36 KB for a
   reader's own region. Figures updated across README, PROJECT_BRIEF and the

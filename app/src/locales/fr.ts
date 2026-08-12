@@ -262,6 +262,8 @@ export const fr: Dict = {
   "saved.statPlants.other": "{count} plantes en terre ici",
   "saved.statKinds.one": "{count} espèce de plante",
   "saved.statKinds.other": "{count} espèces de plantes différentes",
+  "saved.statWildlife.one": "{count} espèce animale que ces plantes peuvent nourrir",
+  "saved.statWildlife.other": "{count} espèces animales que ces plantes peuvent nourrir",
   "saved.openLog": "Ce que vous avez planté →",
   "saved.startLog": "Commencer un journal →",
 
@@ -275,14 +277,20 @@ export const fr: Dict = {
   "spot.seePlants": "Les plantes de ce lieu",
   "spot.privacy": "Votre journal reste sur cet appareil — les plantes, les dates, tout",
   "spot.tilesLabel": "Ce qui pousse ici",
-  "spot.tilePlants": "En terre",
+  "spot.tilePlants": "Plantes",
   "spot.tilePlantsExplain": "Chaque plante inscrite ici : six asclépiades comptent pour six.",
   "spot.tileKinds": "Espèces",
   "spot.tileKindsExplain":
     "Combien de plantes différentes vous avez mises. Un mélange fait tenir un jardin toute l'année — une floraison en avril, des baies en octobre.",
-  "spot.tileHosts": "Nourrissent des chenilles",
+  "spot.tileHosts": "Chenilles",
   "spot.tileHostsExplain":
     "Combien de vos espèces élèvent des chenilles. Les chenilles sont ce que les oiseaux donnent à leurs petits : c'est le chiffre qui transforme un jardin en garde-manger.",
+  "spot.tileWildlife": "Faune",
+  "spot.tileWildlifeExplain":
+    "Les insectes et animaux que vos plantes sont documentées pour soutenir ici. Cela dit qu'ils peuvent profiter de ce que vous avez planté — pas qu'ils l'ont déjà trouvé.",
+  "spot.feedsTitle": "Ce que ça peut nourrir",
+  "spot.feedsNote":
+    "Documenté comme profitant de ces plantes, pas observé chez vous. ⭐ = aucune autre plante ne convient.",
   "spot.logTitle": "Ce que vous avez planté",
   "spot.logEmpty":
     "Rien d'inscrit ici pour l'instant. Ajoutez la première plante mise en terre — la date peut rester vague, « 2024 » suffit.",
@@ -304,6 +312,7 @@ export const fr: Dict = {
   "spot.addButton": "Ajouter à ce lieu",
   "spot.added": "{name} ajoutée à votre journal.",
   "spot.obsLink": "📷 Relier une observation iNaturalist",
+  "spot.obsLinkMore": "📷 Ajouter une observation",
   "spot.obsLabel": "Lien, numéro ou UUID d'une observation iNaturalist",
   "spot.obsPlaceholder": "Lien, numéro ou UUID",
   "spot.obsAdd": "Relier",
@@ -312,7 +321,7 @@ export const fr: Dict = {
   "spot.obsBad": "Ce n'est pas un lien, un numéro ni un UUID que nous reconnaissons.",
   "spot.obsAlready": "Déjà reliée à cette plante.",
   "spot.obsAdded": "Observation reliée.",
-  "spot.obsPlainLink": "Également reliées :",
+  "spot.obsSighting": "Observation",
 
   "planted.button": "🌱 J'en ai planté une",
   "planted.whichSpot": "Dans quel lieu l'avez-vous plantée ?",
@@ -326,9 +335,8 @@ export const fr: Dict = {
   "log.months.other": "{n} mois en terre",
   "log.years.one": "{n} an en terre",
   "log.years.other": "{n} ans en terre",
-  "log.firstYear":
-    "La première année, tout se passe sous terre : ne guettez pas grand-chose au-dessus. Elle dort, elle rampe, elle bondit — le bond arrive la troisième année.",
-  "log.expect": "Elle devrait faire environ {height} de haut et {spread} de large aujourd'hui, si elle se plaît.",
+  "log.firstYear": "Première année : des racines, pas des pousses.",
+  "log.expect": "{height} × {spread} si elle se plaît",
 
   // ---------------------------------------------------------------------
   // À quel point une plante est courante autour d'un lieu (relevés iNaturalist).
@@ -636,18 +644,23 @@ export const fr: Dict = {
   "score.establishment.plain": "Ses chances de s'en sortir sans arrosage ni soins une fois plantée.",
 
   "wildlifeKind.butterfly.title": "Papillons de jour",
+  "wildlifeKind.butterfly.short": "Papillons",
   "wildlifeKind.butterfly.blurb":
     "Choisissez un papillon pour voir quelles indigènes élèvent ses chenilles ou nourrissent les adultes.",
   "wildlifeKind.moth.title": "Papillons de nuit",
+  "wildlifeKind.moth.short": "Nocturnes",
   "wildlifeKind.moth.blurb":
     "L'équipe de nuit — y compris les grands paons et sphinx, dont les chenilles sont la nourriture de choix des oisillons.",
   "wildlifeKind.bee.title": "Abeilles et autres pollinisateurs",
+  "wildlifeKind.bee.short": "Abeilles",
   "wildlifeKind.bee.blurb":
     "Les abeilles sauvages, dont beaucoup ne peuvent élever leurs larves que sur une seule famille de fleurs.",
   "wildlifeKind.bird.title": "Oiseaux",
+  "wildlifeKind.bird.short": "Oiseaux",
   "wildlifeKind.bird.blurb":
     "Les baies, les graines, le nectar et les chenilles qui expliquent la présence des oiseaux que vous aimeriez voir.",
   "wildlifeKind.mammal.title": "Mammifères et autres",
+  "wildlifeKind.mammal.short": "Mammifères",
   "wildlifeKind.mammal.blurb": "Glands et fruits pour les voisins à quatre pattes — et un reptile ou deux.",
 
   "support.host.term": "Nourricière",

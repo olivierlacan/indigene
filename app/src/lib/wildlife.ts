@@ -10,7 +10,7 @@
 // path the rest of the app uses, so a wildlife page can never show a plant the
 // region roster doesn't — and a tie pointing at an unknown id is dropped, not
 // rendered as a broken row (guarded, and surfaced in dev by `auditSupport`).
-import type { Plant, SupportLink, SupportReliance, Wildlife, WildlifeKind } from "../types";
+import type { Plant, SupportKind, SupportLink, SupportReliance, Wildlife, WildlifeKind } from "../types";
 import type { RegionDef } from "../data/region";
 import { REGIONS, loadPlants } from "./plants";
 import { SUPPORT, WILDLIFE } from "../data/wildlife";
@@ -19,6 +19,17 @@ import { SUPPORT, WILDLIFE } from "../data/wildlife";
 export function relianceOf(link: SupportLink): SupportReliance {
   return link.reliance ?? "broad";
 }
+
+/** How strong a promise each support kind is, strongest first. Raising the next
+ *  generation beats feeding a passing adult, so a plant that does both is
+ *  labelled by the host tie. */
+const SUPPORT_RANK: Record<SupportKind, number> = {
+  host: 0,
+  nectar: 1,
+  berries: 2,
+  seeds: 3,
+  shelter: 4,
+};
 
 const wildlifeById = new Map(WILDLIFE.map((w) => [w.id, w]));
 
@@ -109,6 +120,62 @@ export function wildlifeForPlant(regionId: string, plantId: string): WildlifeFor
     if (wildlife) out.push({ wildlife, link });
   }
   return out;
+}
+
+/** One plant, in the region whose ties should be read for it. A plant on two
+ *  region lists has a row on each, and the ties are authored per region. */
+export interface TieScope {
+  regionId: string;
+  plantId: string;
+}
+
+/** An animal several plants can point at, folded down to one row: the strongest
+ *  way any of them supports it, whether any of them is make-or-break, and which
+ *  plants they were. */
+export interface TieSummary {
+  wildlife: Wildlife;
+  /** The strongest support kind among the ties that produced this row. */
+  support: SupportKind;
+  /** True when at least one of those plants is this animal's only option. */
+  sole: boolean;
+  /** Distinct plant ids that support it — one plant on two region lists counts
+   *  once, so a garden's figure matches what the reader sees in their log. */
+  plantIds: string[];
+}
+
+/**
+ * Every animal a set of plants supports, deduped and ranked: make-or-break ties
+ * first, then by how strong the support is.
+ *
+ * Shared by the two places that ask the same question of different scopes — one
+ * plant across the regions it grows in (its profile), and a whole planting log
+ * across one garden (a saved spot). Both want the union, not a repeat of the
+ * same animal per region.
+ */
+export function bestTies(scopes: TieScope[]): TieSummary[] {
+  const best = new Map<string, TieSummary & { plants: Set<string> }>();
+  for (const { regionId, plantId } of scopes) {
+    for (const { wildlife, link } of wildlifeForPlant(regionId, plantId)) {
+      const prev = best.get(wildlife.id);
+      const sole = (prev?.sole ?? false) || relianceOf(link) === "sole";
+      if (!prev) {
+        best.set(wildlife.id, {
+          wildlife,
+          support: link.support,
+          sole,
+          plantIds: [],
+          plants: new Set([plantId]),
+        });
+        continue;
+      }
+      prev.plants.add(plantId);
+      prev.sole = sole;
+      if (SUPPORT_RANK[link.support] < SUPPORT_RANK[prev.support]) prev.support = link.support;
+    }
+  }
+  return [...best.values()]
+    .map((r) => ({ wildlife: r.wildlife, support: r.support, sole: r.sole, plantIds: [...r.plants] }))
+    .sort((a, b) => Number(b.sole) - Number(a.sole) || SUPPORT_RANK[a.support] - SUPPORT_RANK[b.support]);
 }
 
 /** The regions Indigene documents this animal in — i.e. the regions whose plant

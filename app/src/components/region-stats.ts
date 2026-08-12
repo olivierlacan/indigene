@@ -68,7 +68,10 @@ export function regionStatGrid(region: RegionDef, plants: Plant[]): HTMLElement 
         onClick: () => open(s),
       }, [
         el("span", { class: "stat-k", "aria-hidden": "true" }, [
-          el("span", { style: "display:inline-flex;align-items:center;gap:0.3rem" }, [iconNode(s), s.label]),
+          el("span", { class: "stat-name" }, [
+            el("span", { class: "stat-icon" }, [iconNode(s)]),
+            el("span", { class: "stat-label" }, s.label),
+          ]),
         ]),
         el("span", { class: "stat-v", "aria-hidden": "true" }, [
           s.value,

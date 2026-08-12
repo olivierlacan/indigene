@@ -176,6 +176,9 @@ subtitle on the What's new page.
   survives. `lib/restore.ts` watches `pageshow`/`visibilitychange`, re-inserts
   the stylesheet links to rebuild the style tree, and reloads once if that
   isn't enough.
+- Internal: `.gitattributes` marks CHANGELOG.md `merge=union`, so two branches
+  appending bullets to the same section rebase without a hand resolution. Every
+  merged pull request used to leave the others conflicting on this file alone.
 
 ## [0.26] - 2026-08-09
 

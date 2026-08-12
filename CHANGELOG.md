@@ -95,6 +95,9 @@ subtitle on the What's new page.
 - **The tallies show up where they tell you something.** "Raises young on: 1"
   over a list of two plants was counting to two for you. Those boxes now wait
   for the long lists, like the [monarch](https://indigene.app/wildlife/monarch)'s.
+- **And they're the boxes a saved spot has.** Host, Shelter, Vital — one word
+  over a big number, matching your spots. Each word is the one the plants below
+  wear, so you can see which five of eleven the box means.
 - **"It's yours" now includes taking it with you.**
   [Privacy](https://indigene.app/privacy) and [About](https://indigene.app/about)
   both say so, and Privacy links straight to the button that does it.

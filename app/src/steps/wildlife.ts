@@ -654,7 +654,6 @@ function reachTiles(
       icon: "🐛",
       label: t("wlStat.host.label"),
       value: fmtNumber(counts.hosts),
-      sub: t("wlStat.host.sub"),
       explain: t("wlStat.host.explain", { animal }),
     });
   }
@@ -663,7 +662,6 @@ function reachTiles(
       icon: "🏠",
       label: t("wlStat.shelter.label"),
       value: fmtNumber(counts.shelter),
-      sub: t("wlStat.shelter.sub"),
       explain: t("wlStat.shelter.explain", { animal }),
     });
   }
@@ -672,14 +670,18 @@ function reachTiles(
       icon: "⭐",
       label: t("wlStat.sole.label"),
       value: fmtNumber(counts.soleCount),
-      sub: t("wlStat.sole.sub"),
       explain: tn("wlStat.sole.explain", counts.soleCount, { animal }),
     });
   }
   // Nothing left to show for a plain nectar tie — an empty grid would be a
   // heading's worth of space saying nothing.
   if (!tiles.length) return null;
-  return statTiles(tiles, t("wlStat.glance", { animal: commonName(w) }));
+  // `figures`: every value here is a plain count of the plants below, so the
+  // count leads and the label is its caption — the same tiles a saved spot
+  // carries. The labels are the cards' own chip words where they fit in one
+  // (Host, Shelter); the make-or-break tile reads "Vital" rather than the
+  // chip's "Essential", which clips in a tile 119 px wide at the 360 px floor.
+  return statTiles(tiles, t("wlStat.glance", { animal: commonName(w) }), { figures: true });
 }
 
 // Strongest dependence first: sole > narrow > broad, then host over other

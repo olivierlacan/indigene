@@ -1329,16 +1329,16 @@ export const en = {
   // The animal's reach, as tiles. What used to be a sentence under the plants
   // that counted the plants beside it.
   "wlStat.glance": "{animal} at a glance",
-  "wlStat.host.label": "Raises young on",
-  "wlStat.host.sub": "the strongest tie",
+  // One word each, over a count: these tiles lead with the figure (see
+  // `TileOptions.figures`). Each is the word the cards below wear on their own
+  // chips, so the tile and the plants it counts say the same thing.
+  "wlStat.host.label": "Host",
   "wlStat.host.explain":
     "Plants {animal} can actually grow up on. A caterpillar only becomes a butterfly on the right leaves, so this is what decides whether it can breed where you live rather than just visit.",
-  "wlStat.shelter.label": "Shelters in",
-  "wlStat.shelter.sub": "nests & cover",
+  "wlStat.shelter.label": "Shelter",
   "wlStat.shelter.explain":
     "Plants {animal} nests in, hides in, or sits out the winter in. Somewhere safe to be is the half of a garden that isn't food.",
-  "wlStat.sole.label": "No substitute",
-  "wlStat.sole.sub": "make or break",
+  "wlStat.sole.label": "Vital",
   "wlStat.sole.explain.one":
     "One of these plants is {animal}'s only option. Take it out of a neighbourhood and the animal goes with it.",
   "wlStat.sole.explain.other":

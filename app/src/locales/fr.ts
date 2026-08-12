@@ -1338,16 +1338,14 @@ export const fr: Dict = {
     "{n} d'entre elles sont sa seule option — retirez-les et {animal} n'a plus nulle part où aller.",
   // La portée de l'animal, en tuiles.
   "wlStat.glance": "{animal} en un coup d'œil",
-  "wlStat.host.label": "Élève ses petits sur",
-  "wlStat.host.sub": "le lien le plus fort",
+  // Un mot chacun, au-dessus d'un nombre (voir `TileOptions.figures`).
+  "wlStat.host.label": "Hôte",
   "wlStat.host.explain":
     "Les plantes sur lesquelles {animal} peut réellement grandir. Une chenille ne devient un papillon que sur les bonnes feuilles : c'est ce qui décide s'il peut se reproduire chez vous, et pas seulement passer.",
-  "wlStat.shelter.label": "S'abrite dans",
-  "wlStat.shelter.sub": "nids et couvert",
+  "wlStat.shelter.label": "Abri",
   "wlStat.shelter.explain":
     "Les plantes où {animal} niche, se cache ou passe l'hiver. Un endroit où être tranquille, c'est la moitié du jardin qui n'est pas de la nourriture.",
-  "wlStat.sole.label": "Sans remplaçante",
-  "wlStat.sole.sub": "tout ou rien",
+  "wlStat.sole.label": "Vitales",
   "wlStat.sole.explain.one":
     "L'une de ces plantes est la seule option d'{animal}. Retirez-la d'un quartier et l'animal s'en va avec elle.",
   "wlStat.sole.explain.other":

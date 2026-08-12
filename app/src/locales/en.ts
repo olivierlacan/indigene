@@ -1836,6 +1836,7 @@ export const en = {
   "lightbox.close": "Close",
   "lightbox.viewer": "Photo viewer",
   "lightbox.viewOriginal": "View original sighting ↗",
+  "lightbox.viewPhoto": "View original photo ↗",
   "lightbox.sightingOf": "sighting {i} of {n}",
   "lightbox.credit": "Photo © {observer} · {licence} · via {site}",
   "nearby.useMyLocation": "My location",

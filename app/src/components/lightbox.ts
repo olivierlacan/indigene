@@ -313,13 +313,20 @@ function paint(): void {
   // back to the original sighting. Rebuilt each paint so all of it tracks the
   // photo — paging into the next observer's photos re-credits them.
   const seen = whereWhen(observation);
+  // A species photograph from iNaturalist's own taxon gallery has no sighting
+  // behind it: its credit names the photographer as iNaturalist states them —
+  // which may be someone who never had an account — so there is no profile to
+  // link, and "original" means the photo's page rather than a record.
+  const taxonPhoto = observation.taxonPhoto === true;
   caption.replaceChildren(
     el("p", { class: "lb-title" }, observation.taxonName ?? plantName),
     el("p", { class: "lb-credit" }, [
       ...tx(
         "lightbox.credit",
         {
-          observer: el("a", { href: `${INAT}/people/${observation.observer}`, target: "_blank", rel: "noopener" }, observation.observer),
+          observer: taxonPhoto
+            ? el("span", {}, observation.observer)
+            : el("a", { href: `${INAT}/people/${observation.observer}`, target: "_blank", rel: "noopener" }, observation.observer),
           site: el("a", { href: INAT, target: "_blank", rel: "noopener" }, "iNaturalist"),
         },
         { licence: licenseLabel(photo.license) }
@@ -328,10 +335,10 @@ function paint(): void {
     ]),
     el("a", {
       class: "lb-source",
-      href: `${INAT}/observations/${observation.id}`,
+      href: taxonPhoto ? `${INAT}/photos/${photo.id}` : `${INAT}/observations/${observation.id}`,
       target: "_blank",
       rel: "noopener",
-    }, t("lightbox.viewOriginal")),
+    }, t(taxonPhoto ? "lightbox.viewPhoto" : "lightbox.viewOriginal")),
   );
 }
 

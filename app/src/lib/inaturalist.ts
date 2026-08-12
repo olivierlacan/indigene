@@ -154,6 +154,12 @@ export interface ObservationSummary {
   observedOn: string | null;
   /** Licence-bearing photos only; an observation with none is dropped. */
   photos: ObservationPhoto[];
+  /** True when this isn't a sighting at all: the photograph iNaturalist files
+   *  under a *species*, shown as a hero where nobody has reviewed one
+   *  (`lib/hero-photo.ts`). It has a photo page rather than an observation
+   *  page, credits a person rather than an account, and has no where-and-when —
+   *  so the lightbox says "photo" where it would say "sighting". */
+  taxonPhoto?: boolean;
 }
 
 /** "~3 km away · seen Jun 2023" — the honest context line for one sighting.

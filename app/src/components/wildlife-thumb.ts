@@ -24,7 +24,7 @@
 // same page with a different subject, and a second set of near-identical rules
 // would be two places to keep one layout.
 import { el } from "../ui";
-import { wildlifePhotoFor, asObservation } from "../lib/hero-photo";
+import { wildlifePhotoFor, asObservation, heroSourceUrl } from "../lib/hero-photo";
 import { openObservationLightbox, licenseLabel } from "./lightbox";
 import { loadPhoto, budget } from "../lib/photo";
 import { t } from "../lib/i18n";
@@ -114,7 +114,7 @@ export function wildlifeHero(w: Wildlife, regionId?: string): HTMLElement | null
       title: pick.attribution ?? `© ${pick.observer} · ${licenseLabel(pick.license)} · iNaturalist`,
     }, [
       el("a", {
-        href: `https://www.inaturalist.org/observations/${pick.observationId}`,
+        href: heroSourceUrl(pick),
         target: "_blank",
         rel: "noopener",
       }, `© ${pick.observer ?? "iNaturalist"}`),

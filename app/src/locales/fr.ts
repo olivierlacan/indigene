@@ -1847,6 +1847,7 @@ export const fr: Dict = {
   "lightbox.close": "Fermer",
   "lightbox.viewer": "Visionneuse de photos",
   "lightbox.viewOriginal": "Voir l'observation d'origine ↗",
+  "lightbox.viewPhoto": "Voir la photo d'origine ↗",
   "lightbox.sightingOf": "observation {i} sur {n}",
   "lightbox.credit": "Photo © {observer} · {licence} · via {site}",
   "nearby.useMyLocation": "Ma position",

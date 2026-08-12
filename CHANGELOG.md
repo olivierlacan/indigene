@@ -63,6 +63,16 @@ subtitle on the What's new page.
 - **Two new figures at a glance.** A spot's tiles gain the number of creatures
   its plants can feed, and each row in your saved list carries it too — so a
   garden's reach shows without opening it.
+- **A picture for nearly every plant and animal.** The 109 plants and 70 animals
+  nobody had chosen a photo for now show the one iNaturalist's own species page
+  opens with, credited to the photographer. [Wildlife](https://indigene.app/wildlife)
+  is a page of real butterflies instead of identical emoji.
+- Internal: `npm run hero:inat` writes `src/data/inat-heroes.json` — iNaturalist's
+  default taxon photo per unreviewed subject, walked down their own gallery until
+  a republishable licence turns up (36 needed that; red elderberry has none). 76
+  requests, no image downloads, no review sitting. Reviewed picks still win
+  everywhere, so the harvest pipeline is unchanged; the main bundle grows 9 KB
+  gzipped for it.
 - Internal: town names are learned once per ~5 km cell, only on the location
   step's confirm (where the coordinate is already going out for soil and
   climate, and the page says so), and read from device storage everywhere else

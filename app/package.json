@@ -26,6 +26,7 @@
     "region-counts": "NODE_USE_ENV_PROXY=1 node scripts/build-region-counts.mjs",
     "registry:check": "node scripts/check-registry.mjs",
     "hero:harvest": "NODE_USE_ENV_PROXY=1 node scripts/harvest-hero-photos.mjs",
+    "hero:inat": "NODE_USE_ENV_PROXY=1 node scripts/inat-heroes.mjs",
     "hero:review": "node scripts/build-hero-review.mjs",
     "hero:colors": "NODE_USE_ENV_PROXY=1 node scripts/hero-colors.mjs",
     "reconcile": "NODE_USE_ENV_PROXY=1 node scripts/reconcile.mjs",

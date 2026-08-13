@@ -27,6 +27,20 @@ subtitle on the What's new page.
 
 ### Added
 
+- **A plant or animal in trouble now says so on its page.** Longleaf pine reads
+  "Worldwide, this one is endangered (EN)", naming the body that assessed it.
+  Eleven plants and animals have something like that to say; the rest are doing
+  fine. [Plants](https://indigene.app/plants)
+- **And it says what to do about it.** A rank is a reason to buy nursery-grown
+  stock rather than dig a plant out of the wild — and, for an animal, a reason
+  to plant what it needs. The same line says so, every time.
+- **Internal:** `scripts/conservation.mjs` (`npm run conservation`) keeps only
+  two claims per subject: a global assessment, and the rank in the one state or
+  province a region's box mostly falls in, found by grid-sampling that box. 136
+  of 368 subjects carry a worrying rank *somewhere* — white oak is S1 in
+  Nebraska while being the Mid-Atlantic's best tree — so "the statuses we have"
+  would have been mostly false where it matters. Eleven survive the scoping.
+
 - **The ranked list shows the plants.** The plants matched to your spot — and
   the plants on an animal's page — now carry a photograph beside the name
   instead of a drawing of a generic shrub, like every other list in the app.

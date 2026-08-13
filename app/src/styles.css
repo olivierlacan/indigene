@@ -3210,6 +3210,20 @@ details.weights {
   color: inherit;
   opacity: 0.85;
 }
+/* The assessed-status line. Not a badge and not a warning colour: the fact is
+   about the species in the wild, not about whether this plant suits the reader's
+   garden, and a red pill on a plant we recommend reads as an instruction to go
+   and find one. A quiet card with the app's own accent down its edge. */
+.conservation-note {
+  border-left: 4px solid var(--accent);
+  background: var(--surface-2);
+  padding: 0.5rem 0.7rem;
+  margin: 0.6rem 0 0;
+}
+.conservation-buy {
+  color: var(--ink-soft);
+}
+
 /* Where an impostor is what. The label carries the status colour the badge
    would have — red for invasive, amber for merely introduced — so the index is
    still scannable at a glance now that the badge only appears where a region

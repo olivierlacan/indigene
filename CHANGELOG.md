@@ -107,6 +107,16 @@ subtitle on the What's new page.
 
 ### Changed
 
+- Internal: the candidate-plant finder now asks **WCVP** (Kew's World Checklist,
+  CC BY, via GBIF) about native status before iNaturalist, and falls back to
+  iNaturalist only for names WCVP has no row for. WCVP answers per state or
+  province, keeps its own synonymy, and is expert-reviewed. Every shortlisted
+  row prints which source spoke and for which places. **USDA PLANTS** is a
+  printed cross-check, not a filter: measured against it, its native status
+  covers the whole Lower 48 at once and calls black locust native in a region
+  where WCVP knows it is introduced. Pacific Northwest rows with no answer on
+  native status: 3 → 0.
+
 - **A look-alike is only invasive *somewhere*.** The list called plants invasive
   or not-from-here before you'd picked a region — and a few of them are natives
   of ours. Each now names the regions where it's a problem, on the list and on

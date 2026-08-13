@@ -20,6 +20,7 @@
     "guide": "node scripts/build-guide.mjs",
     "guide:check": "node scripts/build-guide.mjs --check",
     "coverage": "node scripts/coverage.mjs",
+    "conservation": "NODE_USE_ENV_PROXY=1 node scripts/conservation.mjs",
     "wildlife": "NODE_USE_ENV_PROXY=1 node scripts/wildlife-candidates.mjs",
     "candidates": "NODE_USE_ENV_PROXY=1 node scripts/candidates.mjs",
     "host-counts": "node scripts/build-host-counts.mjs",

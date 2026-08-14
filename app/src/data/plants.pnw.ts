@@ -723,7 +723,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "A coastal tree, and the honest version of that is: within sight of the ocean or the lower Columbia it is unkillable, and in a hot Willamette Valley summer it sulks and often dies. It takes salt wind better than anything else here. The needles are genuinely sharp — not a tree to plant beside a path where children run. And it gets very large.",
     givesNote: "Seeds that crossbills, siskins and chickadees work all winter, and the bark furrows that brown creepers nest behind. Old coastal spruces are where bald eagles and marbled murrelets put their nests.",
     confidence: "high",
-    basis: "Native status/range: WCVP (Kew, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU). Size and coastal limits: USFS Silvics / FEIS. Host count: Picea, genus-level western estimate. Occurrence records in this region's box: 5,400 (GBIF).",
+    basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU). Size and coastal limits: USFS Silvics / FEIS. Host count: Picea, genus-level western estimate. Occurrence records in this region's box: 5,400 (GBIF).",
     propagation: {
       methods: ["seed-cold-moist"],
       note: "Pick cones in early autumn as they turn brown but before they open, dry them in a paper bag until the seed shakes free, then give it about a month cold and damp in the fridge before sowing in spring. Seedlings want shade and constant moisture their first summer.",
@@ -758,7 +758,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "The range of ground it will take is the whole reason to plant it: beach sand, salt wind, hardpan, and soil that stands wet all winter. It stays a manageable size for a garden where Douglas-fir does not, and it grows into a picturesque leaning thing rather than a straight pole. Don't prune it into a shape; the shape is the point.",
     givesNote: "Pine is one of the biggest caterpillar hosts in the West, which means the small birds that hunt them work it all summer. Then seeds for chickadees, nuthatches and crossbills, and dense evergreen cover in the months when almost nothing else offers any.",
     confidence: "high",
-    basis: "Native status/range: WCVP (Kew, CC BY) for British Columbia, Oregon and Washington; OregonFlora; USDA PICO. Tolerances: USFS Silvics / FEIS. Host count: Pinus genus, the same rounded western estimate this list uses for ponderosa pine, anchored on Tallamy/NWF keystone lists. Occurrence records in this region's box: 6,265 (GBIF).",
+    basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; USDA PICO. Tolerances: USFS Silvics / FEIS. Host count: Pinus genus, the same rounded western estimate this list uses for ponderosa pine, anchored on Tallamy/NWF keystone lists. Occurrence records in this region's box: 6,265 (GBIF).",
     propagation: {
       methods: ["seed-cold-moist", "seed-direct"],
       note: "Collect closed cones in autumn and warm them indoors until they open. A month of cold damp storage before spring sowing evens out germination, though coastal seed often comes up without it. Sow into a deep pot — the taproot goes down fast and resents being cut.",
@@ -1393,7 +1393,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "The one bramble you can weed around bare-handed — no prickles anywhere on it, and big soft maple-shaped leaves instead. It runs underground into a thicket, so give it a bank, a hedge line or the back of a big bed rather than a border. Cut the oldest canes out at the base each winter.",
     givesNote: "Wide white flowers, the largest of any bramble here, worked hard by bumblebees. Then soft scarlet fruit that thrushes, towhees and tanagers strip within days. Rubus is one of the West's best caterpillar hosts, and the thicket is nesting cover in its own right.",
     confidence: "high",
-    basis: "Native status/range: WCVP (Kew, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA RUPA. Host count: Rubus genus, the same western estimate this list uses for salmonberry, discounted from the eastern Tallamy/NWF figure. Occurrence records in this region's box: 15,171 (GBIF).",
+    basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA RUPA. Host count: Rubus genus, the same western estimate this list uses for salmonberry, discounted from the eastern Tallamy/NWF figure. Occurrence records in this region's box: 15,171 (GBIF).",
     propagation: {
       methods: ["suckers", "division", "seed-cold-moist"],
       note: "Easiest from the rooted shoots it sends up around the clump — slice one free with a spade in late winter and move it. Seed needs the pulp washed off and a cold damp winter, and is slow enough that nobody bothers when suckers are there for the taking.",
@@ -1428,7 +1428,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Easy to admire and easy to kill. It wants coarse, acid, sharply drained ground — old conifer duff, not a watered clay bed — and it must be planted high, with the root ball proud of the soil. Buy a small nursery-grown plant: wild ones almost never survive being moved, and digging them is illegal on public land anyway. Slow for its first five years.",
     givesNote: "Trusses of pink bells in May that bumblebee queens force their way into. Evergreen leaves make winter cover on a shaded slope. Worth knowing: the nectar carries the same toxin as the leaves, so honey from a big wild stand can be dangerous — a fact about wild bee colonies, not about your garden.",
     confidence: "medium",
-    basis: "Native status/range: WCVP (Kew, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA RHMA3. Establishment difficulty and soil requirements: OSU Extension; American Rhododendron Society. Grayanotoxin in nectar and leaves: USDA PLANTS; Oregon Poison Center. Host count: Rhododendron, genus-level western estimate. Occurrence records in this region's box: 3,366 (GBIF).",
+    basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA RHMA3. Establishment difficulty and soil requirements: OSU Extension; American Rhododendron Society. Grayanotoxin in nectar and leaves: USDA PLANTS; Oregon Poison Center. Host count: Rhododendron, genus-level western estimate. Occurrence records in this region's box: 3,366 (GBIF).",
     propagation: {
       methods: ["layering", "cuttings-semi-hardwood", "seed-surface-light"],
       note: "The reliable way is layering: bend a low branch to the ground in spring, wound the underside, peg it down under an inch of grit, and cut it free a year or two later once it has rooted. Seed is dust-fine — press it onto damp milled moss, give it light, and don't let it dry out. Cuttings root slowly and need bottom heat.",
@@ -2063,7 +2063,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "One of the longest bloom seasons of any shade plant here — March into July if the ground stays damp. In a dry summer it yellows and vanishes by August; that is the plant resting, not dying, and it comes back with the autumn rain. It creeps gently at the root and fills in, without ever becoming a problem.",
     givesNote: "Among the first things a bumblebee queen can work in a shaded garden, and it keeps going long after the spring flowers have finished. Each seed carries an oil body that ants carry off and plant for you, which is how it spreads down a bank on its own.",
     confidence: "high",
-    basis: "Native status/range: WCVP (Kew, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA DIFO. Ant seed dispersal: Oregon State University Extension. Toxicity (isoquinoline alkaloids): USDA PLANTS. Occurrence records in this region's box: 11,616 (GBIF).",
+    basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA DIFO. Ant seed dispersal: Oregon State University Extension. Toxicity (isoquinoline alkaloids): USDA PLANTS. Occurrence records in this region's box: 11,616 (GBIF).",
     propagation: {
       methods: ["division", "seed-cold-moist"],
       note: "Split the brittle rhizome in early spring just as it wakes, keeping a growing point on each piece, and replant shallow. Seed must be sown fresh with its oil body intact and given a full cold damp winter outdoors — dried seed usually never comes up.",
@@ -2098,7 +2098,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "The answer to dry shade under a big conifer, which is the hardest spot most west-side gardens have. The rosette of scalloped leaves stays green through winter, and it self-sows politely into gaps — pull what you don't want, it comes out easily.",
     givesNote: "Wands of small fringed bells that open greenish and age to pink, worked by hoverflies and small solitary bees by day and by moths at dusk. The winter rosettes are cover for the ground beetles and spiders that a garden's pest control actually runs on.",
     confidence: "high",
-    basis: "Native status/range: WCVP (Kew, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA TEGR2. Dry-shade performance: WSU Extension; Xerces Society Maritime Northwest planting guide. Occurrence records in this region's box: 11,374 (GBIF).",
+    basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA TEGR2. Dry-shade performance: WSU Extension; Xerces Society Maritime Northwest planting guide. Occurrence records in this region's box: 11,374 (GBIF).",
     propagation: {
       methods: ["seed-surface-light", "division"],
       note: "Shake the ripe stalks over bare damp ground in late summer — the seed is tiny, wants light, and needs only to be pressed on, not covered. Clumps divide easily in autumn or early spring.",
@@ -2133,7 +2133,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "It flowers in February on bare stalks, before it has a single leaf, and then throws up leaves the size of a dinner plate. It runs hard at the root — give it a ditch, a pond edge or a wet corner it is allowed to have, and never a mixed border. It needs ground that stays wet; in an ordinary bed it fails.",
     givesNote: "February nectar, in the month a bumblebee queen coming out of hibernation has almost nothing to work — she has to feed before she can found a colony at all. Later the leaves shade a wet edge and hold the bank together.",
     confidence: "high",
-    basis: "Native status/range: WCVP (Kew, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA PEFR5. Bloom timing and early-season bumblebee value: Xerces Society Maritime Northwest planting guide. Pyrrolizidine alkaloids: USDA PLANTS. Occurrence records in this region's box: 6,341 (GBIF).",
+    basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA PEFR5. Bloom timing and early-season bumblebee value: Xerces Society Maritime Northwest planting guide. Pyrrolizidine alkaloids: USDA PLANTS. Occurrence records in this region's box: 6,341 (GBIF).",
     propagation: {
       methods: ["division", "seed-surface-light"],
       note: "Lift a length of the running rhizome with a bud on it in autumn and push it into wet ground — almost always takes. The seed is a dandelion-like parachute, blows off fast, and is worth catching only if you want it somewhere the rhizome can't reach.",
@@ -2168,7 +2168,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Only for ground that is wet all year — a seep, a ditch, a pond margin, the low corner that never dries. In an ordinary bed it dies. It sends a root down several feet and does not forgive being moved once it is big, so plant it small and then leave it. The smell is real but it is a March smell, and it is not strong away from the flower.",
     givesNote: "The yellow hood warms itself above the air temperature and traps the rove beetles that pollinate it — one of them breeds almost nowhere else. Bears come to the shoots in spring, and the huge leaves shade a stream edge all summer.",
     confidence: "high",
-    basis: "Native status/range: WCVP (Kew, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA LYAM3. Beetle pollination and thermogenesis: USFS FEIS; published pollination studies of Lysichiton. Calcium oxalate toxicity: USDA PLANTS. Occurrence records in this region's box: 13,264 (GBIF).",
+    basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA LYAM3. Beetle pollination and thermogenesis: USFS FEIS; published pollination studies of Lysichiton. Calcium oxalate toxicity: USDA PLANTS. Occurrence records in this region's box: 13,264 (GBIF).",
     propagation: {
       methods: ["seed-cold-moist", "division"],
       note: "Press the fresh seed into wet mud in autumn and let winter do the rest — it must never dry out, and it takes several years to reach flowering size. Established clumps can sometimes be split in early spring, but a big one usually resents it.",
@@ -2841,7 +2841,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "A slow, even carpet for deep shade that stays damp — it will not take a dry summer or an afternoon of sun. Dries away completely in winter, so put it where bare ground in January doesn't matter. The dried leaves smell strongly of vanilla, which is why people used to hang them indoors.",
     givesNote: "A white spike with no petals at all, worked by the small flies, beetles and solitary bees that make a living on a forest floor. The carpet itself holds a shaded slope against winter rain and shelters ground beetles and salamanders.",
     confidence: "high",
-    basis: "Native status/range: WCVP (Kew, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA ACTR. Habit and vanilla scent on drying: USFS FEIS. Occurrence records in this region's box: 6,019 (GBIF).",
+    basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA ACTR. Habit and vanilla scent on drying: USFS FEIS. Occurrence records in this region's box: 6,019 (GBIF).",
     propagation: {
       methods: ["division", "seed-cold-moist"],
       note: "Lift a length of the shallow running rhizome in autumn with a bud on it and lay it just under the leaf litter. Seed wants sowing fresh and a cold damp winter outdoors, and is slow enough that division is what everyone actually does.",
@@ -2876,7 +2876,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Damp shade along a path, a north wall or a stream edge, where it knits in among ferns without smothering them. It wants the ground to stay moist into summer; in a dry bed it goes over early. Self-sows freely and is easy to pull where it isn't wanted.",
     givesNote: "Violets are the only food of fritillary caterpillars — no violets on the ground, no fritillaries in the garden, however much nectar you plant for the adults. This is the shade violet to that list's dry-meadow one, so the two together cover far more of a garden.",
     confidence: "high",
-    basis: "Native status/range: WCVP (Kew, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA VIGL. Fritillary host relationship: Xerces Society; BAMONA. Host count: Viola genus, the same estimate this list uses for early blue violet. Occurrence records in this region's box: 5,652 (GBIF).",
+    basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA VIGL. Fritillary host relationship: Xerces Society; BAMONA. Host count: Viola genus, the same estimate this list uses for early blue violet. Occurrence records in this region's box: 5,652 (GBIF).",
     propagation: {
       methods: ["division", "seed-cold-moist"],
       note: "Split a clump in autumn or early spring — it comes apart in the hand. Seed ripens in capsules that fling it, so bag a few heads before they open, then sow fresh and leave the pot outside for the winter.",

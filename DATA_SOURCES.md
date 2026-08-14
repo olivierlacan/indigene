@@ -223,7 +223,7 @@ all either public domain or openly licensed with attribution:
 
 | Source | Scope | Licence | Role |
 |---|---|---|---|
-| **World Checklist of Vascular Plants (WCVP)** / Plants of the World Online (POWO), Kew | Global | **CC BY 4.0** (downloadable via Kew FTP + GBIF as a Darwin Core Archive) | **The recommended global spine.** Accepted names + synonymy for all vascular plants, expert-reviewed. |
+| **World Checklist of Vascular Plants (WCVP)** / Plants of the World Online (POWO), Royal Botanic Gardens, Kew | Global | **CC BY 4.0** (downloadable via Kew's FTP + GBIF as a Darwin Core Archive) | **The recommended global spine.** Accepted names + synonymy for all vascular plants, expert-reviewed. |
 | **GBIF Backbone Taxonomy** | Global | CC BY 4.0 | Stable `usageKey`s to reconcile any source's names to one id; the practical crosswalk hub. |
 | **ITIS** (Integrated Taxonomic Information System) | Global, N. America–strong | US Gov **public domain** | TSN identifiers; good North American coverage, easy to redistribute. |
 | **USDA PLANTS Database** | U.S. + territories | US Gov **public domain** | U.S. spine: the `Symbol` code (e.g. `QUGA4`), accepted names, growth habit. |

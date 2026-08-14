@@ -263,8 +263,8 @@ const shortlist = provisional.slice(0, checkCount);
 // equals. `DATA_SOURCES.md` picked the order years before this script asked the
 // question, and this is it:
 //
-//   1. **WCVP** (Kew's World Checklist of Vascular Plants, CC BY, read through
-//      the copy GBIF hosts). Expert-reviewed, and it answers per *botanical
+//   1. **WCVP** (the World Checklist of Vascular Plants, CC BY, read through the
+//      copy GBIF hosts). Expert-reviewed, and it answers per *botanical
 //      country* — which for North America is the state or province, exactly the
 //      grain our regions need. It also keeps its own synonymy, so it resolves
 //      "Mahonia nervosa" to *Berberis nervosa* without being asked.
@@ -302,7 +302,7 @@ async function wcvpUsage(latin) {
   return { key: to.acceptedKey, name: (to.accepted ?? "").split(/\s+/).slice(0, 2).join(" ") || null };
 }
 
-console.log("\n  asking WCVP (Kew, via GBIF) — the accepted name and its native range");
+console.log("\n  asking WCVP (World Checklist of Vascular Plants, via GBIF) — the accepted name and its native range");
 let wcvpAsked = 0;
 for (const c of shortlist) {
   try {
@@ -522,7 +522,8 @@ lines.push(
   `Pool: the ${counts.length} most-recorded plant species inside the region's coverage box, ` +
     `out of ${facet.count.toLocaleString()} georeferenced plant records (GBIF). ` +
     `Native status for ${places.map((p) => p.display_name ?? p.name).join(", ")}, asked of **WCVP** ` +
-    `(Kew's World Checklist of Vascular Plants, CC BY, via GBIF) first and of **iNaturalist** only for ` +
+    `(the World Checklist of Vascular Plants, CC BY, via ` +
+    `GBIF) first and of **iNaturalist** only for ` +
     `the names WCVP has no row for. Every row below says which of the two answered it. ` +
     `**USDA PLANTS** appears as a public-domain cross-check and is not used to rank or rule out: it ` +
     `publishes one status for the whole Lower 48, which calls black locust native in a region where ` +

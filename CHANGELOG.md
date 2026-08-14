@@ -124,8 +124,9 @@ subtitle on the What's new page.
 
 ### Changed
 
-- Internal: the candidate-plant finder now asks **WCVP** (Kew's World Checklist,
-  CC BY, via GBIF) about native status before iNaturalist, and falls back to
+- Internal: the candidate-plant finder now asks **WCVP** (the World Checklist of
+  Vascular Plants, CC BY, via GBIF) about
+  native status before iNaturalist, and falls back to
   iNaturalist only for names WCVP has no row for. WCVP answers per state or
   province, keeps its own synonymy, and is expert-reviewed. Every shortlisted
   row prints which source spoke and for which places. **USDA PLANTS** is a

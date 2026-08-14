@@ -97,7 +97,8 @@ photos, nurseries/e-commerce, bed-layout designer.
 ## Open questions / Phase 2
 
 - **Canonical catalog backbone** for scaling past hand-authored lists: adopt
-  Kew's **WCVP/POWO** (CC BY 4.0) as the global name + native-range spine,
+  the **World Checklist of Vascular Plants (WCVP)** / POWO (CC BY 4.0) as the
+  global name + native-range spine,
   reconcile ids through the **GBIF backbone**, and key U.S. plants on the
   **USDA PLANTS** symbol (public domain). Full rationale and the source table are
   in `DATA_SOURCES.md` → "Scaling the catalog."

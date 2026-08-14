@@ -1288,7 +1288,7 @@ export const en = {
   "ref.title": "🔎 Look it up elsewhere",
   "ref.lede":
     "Find {name} in the botanical and observation databases — the same plant, keyed by a shared identifier so you land on the right record.",
-  "ref.powo": "Kew — accepted name & native range",
+  "ref.powo": "accepted name & native range",
   "ref.ipni": "the nomenclatural record",
   "ref.wfo": "global taxon record",
   "ref.gbif": "where it's been recorded growing",

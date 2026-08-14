@@ -217,6 +217,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:106370-1",
+    "scientificName": "Achlys triphylla",
+    "family": "Berberidaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "106370-1",
+      "wfo": "wfo-0000516103",
+      "gbif": "5371714",
+      "usda": "ACTR",
+      "itis": "18813",
+      "inat": "75263",
+      "wikidata": "Q15313061",
+      "indigene": "achlys-triphylla"
+    },
+    "commonNames": [
+      "Vanilla Leaf"
+    ],
+    "aliases": [
+      "achlys triphylla",
+      "vanilla leaf"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:60448516-2",
     "scientificName": "Acmispon glaber",
     "family": "Fabaceae",
@@ -2456,6 +2485,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic"
+    ]
+  },
+  {
+    "primaryId": "ipni:672641-1",
+    "scientificName": "Dicentra formosa",
+    "family": "Papaveraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "672641-1",
+      "wfo": "wfo-0000644965",
+      "gbif": "2888553",
+      "usda": "DIFO",
+      "itis": "18947",
+      "inat": "51048",
+      "wikidata": "Q1871251",
+      "indigene": "dicentra-formosa"
+    },
+    "commonNames": [
+      "Pacific Bleeding Heart"
+    ],
+    "aliases": [
+      "dicentra formosa",
+      "pacific bleeding heart"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {
@@ -4748,6 +4806,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:147962-2",
+    "scientificName": "Lysichiton americanus",
+    "family": "Araceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "147962-2",
+      "wfo": "wfo-0000231603",
+      "gbif": "2869311",
+      "usda": "LYAM3",
+      "itis": "503629",
+      "inat": "48537",
+      "wikidata": "Q469972",
+      "indigene": "lysichiton-americanus"
+    },
+    "commonNames": [
+      "Western Skunk Cabbage"
+    ],
+    "aliases": [
+      "lysichiton americanus",
+      "western skunk cabbage"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:554723-1",
     "scientificName": "Magnolia grandiflora",
     "family": "Magnoliaceae",
@@ -5460,6 +5547,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:1061719-2",
+    "scientificName": "Petasites frigidus",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "1061719-2",
+      "wfo": "wfo-0000126786",
+      "gbif": "3088323",
+      "usda": "PEFR5",
+      "itis": "36054",
+      "inat": "55780",
+      "wikidata": "Q1997222",
+      "indigene": "petasites-frigidus"
+    },
+    "commonNames": [
+      "Sweet Coltsfoot"
+    ],
+    "aliases": [
+      "petasites frigidus",
+      "sweet coltsfoot"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:610935-1",
     "scientificName": "Phillyrea angustifolia",
     "family": "Oleaceae",
@@ -5578,6 +5694,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:676986-1",
+    "scientificName": "Picea sitchensis",
+    "family": "Pinaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "676986-1",
+      "wfo": "wfo-0000482639",
+      "gbif": "5284827",
+      "usda": "PISI",
+      "itis": "183309",
+      "inat": "68131",
+      "wikidata": "Q147426",
+      "indigene": "picea-sitchensis"
+    },
+    "commonNames": [
+      "Sitka Spruce"
+    ],
+    "aliases": [
+      "picea sitchensis",
+      "sitka spruce"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:262848-1",
     "scientificName": "Pinus cembra",
     "family": "Pinaceae",
@@ -5606,6 +5751,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:30000492-2",
+    "scientificName": "Pinus contorta",
+    "family": "Pinaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "30000492-2",
+      "wfo": "wfo-0000481330",
+      "gbif": "5285750",
+      "usda": "PICO",
+      "itis": "183327",
+      "inat": "48934",
+      "wikidata": "Q165091",
+      "indigene": "pinus-contorta"
+    },
+    "commonNames": [
+      "Shore Pine"
+    ],
+    "aliases": [
+      "pinus contorta",
+      "shore pine"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {
@@ -6676,6 +6850,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:332831-1",
+    "scientificName": "Rhododendron macrophyllum",
+    "family": "Ericaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "332831-1",
+      "wfo": "wfo-0001047073",
+      "gbif": "7894533",
+      "usda": "RHMA3",
+      "itis": "23720",
+      "inat": "57360",
+      "wikidata": "Q2714739",
+      "indigene": "rhododendron-macrophyllum"
+    },
+    "commonNames": [
+      "Pacific Rhododendron"
+    ],
+    "aliases": [
+      "pacific rhododendron",
+      "rhododendron macrophyllum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:70615-1",
     "scientificName": "Rhus integrifolia",
     "family": "Anacardiaceae",
@@ -6966,6 +7169,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic"
+    ]
+  },
+  {
+    "primaryId": "ipni:738961-1",
+    "scientificName": "Rubus parviflorus",
+    "family": "Rosaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "738961-1",
+      "wfo": "wfo-0001016292",
+      "gbif": "7872219",
+      "usda": "RUPA",
+      "itis": "25007",
+      "inat": "51646",
+      "wikidata": "Q2614003",
+      "indigene": "rubus-parviflorus"
+    },
+    "commonNames": [
+      "Thimbleberry"
+    ],
+    "aliases": [
+      "rubus parviflorus",
+      "thimbleberry"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {
@@ -8059,6 +8291,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:794860-1",
+    "scientificName": "Tellima grandiflora",
+    "family": "Saxifragaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "794860-1",
+      "wfo": "wfo-0000459248",
+      "gbif": "3032698",
+      "usda": "TEGR2",
+      "itis": "24527",
+      "inat": "51655",
+      "wikidata": "Q847750",
+      "indigene": "tellima-grandiflora"
+    },
+    "commonNames": [
+      "Fringecup"
+    ],
+    "aliases": [
+      "fringecup",
+      "tellima grandiflora"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:60443333-2",
     "scientificName": "Thuja plicata",
     "family": "Cupressaceae",
@@ -8713,6 +8974,35 @@ export const REGISTRY: RegistryEntry[] = [
     "aliases": [
       "early blue violet",
       "viola adunca"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:868221-1",
+    "scientificName": "Viola glabella",
+    "family": "Violaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "868221-1",
+      "wfo": "wfo-0001144633",
+      "gbif": "5331176",
+      "usda": "VIGL",
+      "itis": "22082",
+      "inat": "71113",
+      "wikidata": "Q12847265",
+      "indigene": "viola-glabella"
+    },
+    "commonNames": [
+      "Stream Violet"
+    ],
+    "aliases": [
+      "stream violet",
+      "viola glabella"
     ],
     "cultivarOf": null,
     "regions": [

@@ -1459,6 +1459,29 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "mason-bees", support: "nectar", note: "White spring flowers low to the ground, opening with the first solitary bees and easy for a small one to work.", basis: "Xerces Society." },
       { wildlifeId: "berry-songbirds", support: "berries", note: "Small deep-red strawberries in summer for towhees, robins, and sparrows — and for whoever gets there first.", basis: "Cornell Lab; USDA PLANTS." },
     ],
+    "rubus-parviflorus": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The widest, flattest flower of any bramble here, with the pollen in plain reach — a bumble bee can work one without having to force her way into anything.", basis: "Xerces Society Maritime Northwest planting guide." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "The soft scarlet fruit falls apart at a touch, so it never lasts: thrushes, towhees and tanagers strip a patch within days of it ripening.", basis: "Cornell Lab; USDA PLANTS." },
+    ],
+    "rhododendron-macrophyllum": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The flower is built to be pushed apart by something heavy, and in these woods that something is a bumble bee queen — she is the main pollinator of the wild rhododendron.", basis: "Xerces Society; OSU Extension." },
+    ],
+    "pinus-contorta": [
+      { wildlifeId: "conifer-seed-finches", support: "seeds", note: "Small cones that stay on the tree, which is what suits a crossbill: it works them where they hang rather than waiting for them to drop.", basis: "Cornell Lab; USDA PLANTS." },
+    ],
+    "picea-sitchensis": [
+      { wildlifeId: "conifer-seed-finches", support: "seeds", note: "Papery spruce seed is winter food for siskins and crossbills, and the deep furrowed bark of an old coastal spruce is where brown creepers wedge a nest.", basis: "Cornell Lab; USFS Silvics of North America." },
+    ],
+    "viola-glabella": [
+      { wildlifeId: "greater-fritillaries", support: "host", reliance: "sole", note: "Violets are the only thing a greater fritillary caterpillar can eat, and this is the one for damp shade — a violet patch under trees reaches a part of a garden the dry-meadow violet never will.", basis: "Xerces Society; BAMONA." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Shallow yellow flowers that open early and stay open in shade, which suits the small solitary bees out before the shrubs bloom.", basis: "Xerces Society." },
+    ],
+    "dicentra-formosa": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The nectar sits at the top of a narrow heart, out of reach of most insects — a long-tongued bumble bee is one of the few that can get at it, and she can do it from March.", basis: "Xerces Society; OSU Extension." },
+    ],
+    "petasites-frigidus": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "It flowers in February on bare stalks, in the weeks when a queen out of hibernation has to feed before she can start a colony at all.", basis: "Xerces Society Maritime Northwest planting guide." },
+    ],
   },
 
   "ca-south-coast": {

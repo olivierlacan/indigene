@@ -28,7 +28,7 @@ uncertainty; no gamification.
 
 | Question from the brief | Decision | Why |
 |---|---|---|
-| **Framework** | **None.** Vanilla TS + DOM + real web APIs, bundled by Vite. Zero runtime deps. | Per direction ("Do not use React… respect the DOM"). Keeps the bundle ~292 KB gzipped (plus one region's plant list) and the code legible. |
+| **Framework** | **None.** Vanilla TS + DOM + real web APIs, bundled by Vite. Zero runtime deps. | Per direction ("Do not use React… respect the DOM"). Keeps the bundle ~295 KB gzipped (plus one region's plant list) and the code legible. |
 | **Sky scan tech** | `getUserMedia` + `DeviceOrientationEvent` on a `<canvas>` overlay — **not** WebXR. | WebXR doesn't work in iOS Safari. |
 | **Sun math** | Local NOAA solar-position implementation (no API), integrated against the horizon mask. | Works fully offline; no dependency. |
 | **License** | **MIT.** | A civic tool on public data should maximize reuse; AGPL's network-copyleft would deter the land trusts / extension offices / other apps we want integrating. |
@@ -97,7 +97,8 @@ photos, nurseries/e-commerce, bed-layout designer.
 ## Open questions / Phase 2
 
 - **Canonical catalog backbone** for scaling past hand-authored lists: adopt
-  Kew's **WCVP/POWO** (CC BY 4.0) as the global name + native-range spine,
+  the **World Checklist of Vascular Plants (WCVP)** / POWO (CC BY 4.0) as the
+  global name + native-range spine,
   reconcile ids through the **GBIF backbone**, and key U.S. plants on the
   **USDA PLANTS** symbol (public domain). Full rationale and the source table are
   in `DATA_SOURCES.md` → "Scaling the catalog."

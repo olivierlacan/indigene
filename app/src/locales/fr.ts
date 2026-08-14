@@ -1297,7 +1297,7 @@ export const fr: Dict = {
   "ref.title": "🔎 La chercher ailleurs",
   "ref.lede":
     "Retrouvez {name} dans les bases botaniques et naturalistes — la même plante, reliée par un identifiant commun pour tomber sur la bonne fiche.",
-  "ref.powo": "Kew — nom accepté et aire d'indigénat",
+  "ref.powo": "nom accepté et aire d'indigénat",
   "ref.ipni": "la référence nomenclaturale",
   "ref.wfo": "fiche taxonomique mondiale",
   "ref.gbif": "où sa présence a été enregistrée",

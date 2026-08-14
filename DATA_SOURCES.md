@@ -223,7 +223,7 @@ all either public domain or openly licensed with attribution:
 
 | Source | Scope | Licence | Role |
 |---|---|---|---|
-| **World Checklist of Vascular Plants (WCVP)** / Plants of the World Online (POWO), Kew | Global | **CC BY 4.0** (downloadable via Kew FTP + GBIF as a Darwin Core Archive) | **The recommended global spine.** Accepted names + synonymy for all vascular plants, expert-reviewed. |
+| **World Checklist of Vascular Plants (WCVP)** / Plants of the World Online (POWO), Royal Botanic Gardens, Kew | Global | **CC BY 4.0** (downloadable via Kew's FTP + GBIF as a Darwin Core Archive) | **The recommended global spine.** Accepted names + synonymy for all vascular plants, expert-reviewed. |
 | **GBIF Backbone Taxonomy** | Global | CC BY 4.0 | Stable `usageKey`s to reconcile any source's names to one id; the practical crosswalk hub. |
 | **ITIS** (Integrated Taxonomic Information System) | Global, N. America–strong | US Gov **public domain** | TSN identifiers; good North American coverage, easy to redistribute. |
 | **USDA PLANTS Database** | U.S. + territories | US Gov **public domain** | U.S. spine: the `Symbol` code (e.g. `QUGA4`), accepted names, growth habit. |
@@ -233,8 +233,8 @@ all either public domain or openly licensed with attribution:
 
 | Source | Scope | Licence | Role |
 |---|---|---|---|
-| **USDA PLANTS** | U.S., **state-level** native/introduced/invasive | **Public domain** | The backbone for U.S. regions. State resolution now; a Phase-2 path to county via its distribution data. |
-| **WCVP native ranges** | Global, by TDWG "botanical country" (WGSRPD level 3) | **CC BY 4.0** | The global answer: native-vs-introduced range per region for essentially every species. |
+| **WCVP native ranges** | Global, by TDWG "botanical country" (WGSRPD level 3 — a US state, a Canadian province) | **CC BY 4.0** | **The answer we use**, first, for every candidate: native-vs-introduced per region, expert-reviewed, and it carries its own synonymy. Read through the copy GBIF hosts (`scripts/candidates.mjs`). |
+| **USDA PLANTS** | U.S., native status **for the whole Lower 48 at once** (`L48`, `AK`, `CAN`, `HI`, `PR`) | **Public domain** | A cross-check a human reads, never a filter — **measured, not assumed**: it calls black locust `L48: Native`, where WCVP knows it is introduced in Oregon, Washington and California. A region is not a country, so this cannot decide one. The `Symbol` remains our U.S. per-plant key. |
 | **GBIF occurrences** (incl. research-grade iNaturalist) | Global point observations | CC BY / CC0 (per record) | Validate that a species actually occurs at/near a spot; ground-truth the range polygons. |
 | **EPA Level III/IV Ecoregions** | U.S. | US Gov **public domain** | Real ecoregion boundaries that refine our coarse bounding boxes (integrated for US regions). |
 | **EEA Biogeographical Regions of Europe** | Europe | **CC BY 4.0** | The Europe-side equivalent — integrated for the France region (Atlantic/Continental/Alpine/Mediterranean). |
@@ -253,9 +253,12 @@ all either public domain or openly licensed with attribution:
 | **Xerces Society** regional lists | U.S. regions | prose © / facts usable | Pollinator & establishment associations. |
 
 **Recommended approach.** Adopt **WCVP/POWO (CC BY)** as the global name spine and
-native-range source, reconcile identifiers through the **GBIF backbone**, and
-prefer **USDA PLANTS (public domain)** for U.S. native status and its `Symbol`
-as our per-plant key. Attribution for the CC BY sources (WCVP, GBIF, Open-Meteo,
+native-range source, reconcile identifiers through the **GBIF backbone**, and take
+**USDA PLANTS (public domain)** for its `Symbol` as our per-plant key — but not for
+native status, which it publishes a country at a time (see the row above; this was
+tested, not assumed). *Done for the candidate finder:* WCVP answers first,
+iNaturalist only for the names it has no row for, and every shortlisted row prints
+which of the two spoke. Attribution for the CC BY sources (WCVP, GBIF, Open-Meteo,
 SoilGrids, RESOLVE) is cheap and non-viral, so none of them can hold the app
 hostage. This keeps every future region assembled from the same public backbones
 the Phase-1 data already leans on, rather than from any single restrictive

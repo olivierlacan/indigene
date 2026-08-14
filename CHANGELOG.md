@@ -27,6 +27,23 @@ subtitle on the What's new page.
 
 ### Added
 
+- **Ten more Pacific Northwest natives.** Thimbleberry, Pacific bleeding heart
+  and shore pine among them, each with its own page, photograph and growing
+  notes — and sweet coltsfoot, which flowers in February, when a bumblebee queen
+  coming out of hibernation has almost nothing to feed on.
+  [Pacific Northwest](https://indigene.app/regions/pnw)
+- **A violet for damp shade, and what depends on it.** Stream violet joins the
+  meadow violet on that list. Fritillary caterpillars eat violets and nothing
+  else, so the two together reach far more of a garden than either alone.
+  [Stream violet](https://indigene.app/plants/viola-glabella)
+- Internal: the ten come from the region's own candidate report, filtered by
+  hand for whether the plant can be grown at all — the shortlist also surfaced
+  two orchids that die when moved, a mycoheterotroph with no roots of its own,
+  and two aggressive spreaders. No availability check was run; coverage-plan §2
+  step 5 asks for one and nothing implements it. Registry, occurrence counts,
+  hero photos and share cards regenerated; `gen-plant-cards.mjs` had been broken
+  since `loadPlants` became async.
+
 - **The ranked list shows the plants.** The plants matched to your spot — and
   the plants on an animal's page — now carry a photograph beside the name
   instead of a drawing of a generic shrub, like every other list in the app.
@@ -106,6 +123,17 @@ subtitle on the What's new page.
   reverse-geocode while drawing. A town search stores the name for free.
 
 ### Changed
+
+- Internal: the candidate-plant finder now asks **WCVP** (the World Checklist of
+  Vascular Plants, CC BY, via GBIF) about
+  native status before iNaturalist, and falls back to
+  iNaturalist only for names WCVP has no row for. WCVP answers per state or
+  province, keeps its own synonymy, and is expert-reviewed. Every shortlisted
+  row prints which source spoke and for which places. **USDA PLANTS** is a
+  printed cross-check, not a filter: measured against it, its native status
+  covers the whole Lower 48 at once and calls black locust native in a region
+  where WCVP knows it is introduced. Pacific Northwest rows with no answer on
+  native status: 3 → 0.
 
 - **A look-alike is only invasive *somewhere*.** The list called plants invasive
   or not-from-here before you'd picked a region — and a few of them are natives
@@ -189,6 +217,17 @@ subtitle on the What's new page.
   included.
 
 ### Fixed
+
+- Internal: the candidate-plant finder was asking iNaturalist the wrong
+  question. It read `listed_taxa` off the taxon record and looked for its own
+  states in it — but that array stops at 100, and for thimbleberry all 100 are
+  European and Australian records saying "introduced", so Oregon, Washington and
+  BC never appeared and a plant native from Alaska to California was filed under
+  "no answer". It now asks once per place (`?place_id=`), which answers in one
+  field. Names are also resolved through iNaturalist's synonymy — but only when
+  it confirms our exact string names the taxon, never on the search's best guess
+  (`Brassica nigra` still must not inherit *Hirschfeldia incana*). Pacific
+  Northwest unknowns: 27 → 3. Southern California: 20 → 2.
 
 - **Nearly enough sun is no longer a complaint.** A plant wanting an hour more
   sun than your spot gets was told off for it, quoting two numbers that rounded

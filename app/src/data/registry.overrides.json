@@ -3250,5 +3250,115 @@
       "gbif": "2882910",
       "wikidata": "Q3299248"
     }
+  },
+  "Achlys triphylla": {
+    "identifiers": {
+      "ipni": "106370-1",
+      "wfo": "wfo-0000516103",
+      "usda": "ACTR",
+      "itis": "18813",
+      "inat": "75263",
+      "gbif": "5371714",
+      "wikidata": "Q15313061"
+    }
+  },
+  "Dicentra formosa": {
+    "identifiers": {
+      "ipni": "672641-1",
+      "wfo": "wfo-0000644965",
+      "usda": "DIFO",
+      "itis": "18947",
+      "inat": "51048",
+      "gbif": "2888553",
+      "wikidata": "Q1871251"
+    }
+  },
+  "Lysichiton americanus": {
+    "identifiers": {
+      "ipni": "147962-2",
+      "wfo": "wfo-0000231603",
+      "usda": "LYAM3",
+      "itis": "503629",
+      "inat": "48537",
+      "gbif": "2869311",
+      "wikidata": "Q469972"
+    }
+  },
+  "Petasites frigidus": {
+    "identifiers": {
+      "ipni": "1061719-2",
+      "wfo": "wfo-0000126786",
+      "usda": "PEFR5",
+      "itis": "36054",
+      "inat": "55780",
+      "gbif": "3088323",
+      "wikidata": "Q1997222"
+    }
+  },
+  "Picea sitchensis": {
+    "identifiers": {
+      "ipni": "676986-1",
+      "wfo": "wfo-0000482639",
+      "usda": "PISI",
+      "itis": "183309",
+      "inat": "68131",
+      "gbif": "5284827",
+      "wikidata": "Q147426"
+    }
+  },
+  "Pinus contorta": {
+    "identifiers": {
+      "ipni": "30000492-2",
+      "wfo": "wfo-0000481330",
+      "usda": "PICO",
+      "itis": "183327",
+      "inat": "48934",
+      "gbif": "5285750",
+      "wikidata": "Q165091"
+    }
+  },
+  "Rhododendron macrophyllum": {
+    "identifiers": {
+      "ipni": "332831-1",
+      "wfo": "wfo-0001047073",
+      "usda": "RHMA3",
+      "itis": "23720",
+      "inat": "57360",
+      "gbif": "7894533",
+      "wikidata": "Q2714739"
+    }
+  },
+  "Rubus parviflorus": {
+    "identifiers": {
+      "ipni": "738961-1",
+      "wfo": "wfo-0001016292",
+      "usda": "RUPA",
+      "itis": "25007",
+      "inat": "51646",
+      "gbif": "7872219",
+      "wikidata": "Q2614003"
+    }
+  },
+  "Tellima grandiflora": {
+    "identifiers": {
+      "ipni": "794860-1",
+      "wfo": "wfo-0000459248",
+      "usda": "TEGR2",
+      "itis": "24527",
+      "inat": "51655",
+      "gbif": "3032698",
+      "wikidata": "Q847750"
+    }
+  },
+  "Viola glabella": {
+    "identifiers": {
+      "ipni": "868221-1",
+      "wfo": "wfo-0001144633",
+      "usda": "VIGL",
+      "itis": "22082",
+      "inat": "71113",
+      "gbif": "5331176",
+      "wikidata": "Q12847265"
+    }
   }
 }

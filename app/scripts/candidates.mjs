@@ -161,7 +161,6 @@ if (!places.length) {
   console.error("iNaturalist has no standard place for this box, so native status can't be checked.");
   process.exit(1);
 }
-const placeIds = new Set(places.map((p) => p.id));
 console.log(
   `native status will be read for: ${places.map((p) => p.display_name ?? p.name).join(", ")}\n`,
 );
@@ -212,12 +211,136 @@ console.log(`  ${fresh.length} to check for native status\n`);
 // ------------------------------------------------------ term 2: native status
 // Ask about the best-scoring candidates first, so a small --top doesn't spend
 // the whole run on the long tail.
+/**
+ * The taxon iNaturalist means by a name, or null when it won't say.
+ *
+ * An exact name match is the easy case. The hard one is a name iNaturalist has
+ * since renamed: it files dull Oregon-grape under *Berberis nervosa*, so a
+ * candidate list written as *Mahonia nervosa* used to come back "no match" and
+ * be parked — for a plant that grows on half the forest floors in the region.
+ *
+ * What it must not do is take the search's best guess. Searching "Brassica
+ * nigra" returns *Hirschfeldia incana* first, and inheriting that record would
+ * be a fabricated answer about a plant nobody asked about. So a non-exact hit
+ * is accepted only when iNaturalist itself says our exact string names it —
+ * `matched_term` is the string their index matched, and it is either the name
+ * we asked for or the autonym spelling of it ("Mahonia nervosa nervosa"). A
+ * third word that *isn't* the epithet repeated is a different plant, and
+ * "Brassica nigra incana" is exactly that.
+ *
+ * Anything else is left for a human, which is what the "no answer" section of
+ * the report is for.
+ */
+function resolveName(results, latin) {
+  const rows = Array.isArray(results) ? results : [];
+  const want = latin.trim().toLowerCase();
+  const exact = rows.find((t) => t.name?.toLowerCase() === want);
+  if (exact) return { taxon: exact, exact: true };
+  const synonym = rows.find(
+    (t) => t.rank === "species" && t.matched_term && namesTheSame(t.matched_term, want),
+  );
+  return synonym ? { taxon: synonym, exact: false } : null;
+}
+
+/** True when `term` is `want`, or `want` written as its own autonym. */
+function namesTheSame(term, want) {
+  const t = String(term).trim().toLowerCase().split(/\s+/);
+  const w = want.split(/\s+/);
+  if (t.join(" ") === w.join(" ")) return true;
+  return t.length === 3 && w.length === 2 && t[0] === w[0] && t[1] === w[1] && t[2] === t[1];
+}
+
 const provisional = fresh
   .map((c) => ({ ...c, genus: c.latin.split(/\s+/)[0] }))
   .sort((a, b) => b.records - a.records);
 
 const checkCount = Math.min(provisional.length, Math.max(TOP * 4, 60));
 const shortlist = provisional.slice(0, checkCount);
+
+// ---------------------------------------------------- native status, in order
+//
+// Three sources can answer "is this plant native *here*", and they are not
+// equals. `DATA_SOURCES.md` picked the order years before this script asked the
+// question, and this is it:
+//
+//   1. **WCVP** (the World Checklist of Vascular Plants, CC BY, read through the
+//      copy GBIF hosts). Expert-reviewed, and it answers per *botanical
+//      country* — which for North America is the state or province, exactly the
+//      grain our regions need. It also keeps its own synonymy, so it resolves
+//      "Mahonia nervosa" to *Berberis nervosa* without being asked.
+//   2. **iNaturalist**, for the names WCVP has no row for — *Taraxacum
+//      officinale* resolves there to an apomictic aggregate with nothing useful
+//      attached. Crowd-curated place checklists: good, not authoritative.
+//   3. **USDA PLANTS** is deliberately *not* in this ladder, though it is public
+//      domain and the registry already stores its symbols. Its native status is
+//      published for the whole Lower 48 at once, and a region is not a country:
+//      black locust is "L48: Native" there while WCVP knows it is introduced in
+//      Oregon, Washington and California. Used as a ranking term it would wave
+//      an invasive onto a Pacific Northwest list. It appears in the report as a
+//      cross-check a human can read, and nowhere near the filtering.
+//
+// Every row says which source answered it. A shortlist whose evidence can't be
+// checked is a shortlist nobody should trust.
+const WCVP_DATASET = "f382f0ce-323a-4091-bb9f-add557f3a9a2";
+const GBIF_SPECIES = "https://api.gbif.org/v1/species";
+
+/** The WCVP usage for a name: the accepted one, following synonymy once.
+ *  Homonyms are why this insists on the accepted row — "Rubus parviflorus" is
+ *  also, under another author, a synonym of a Cretan bramble. */
+async function wcvpUsage(latin) {
+  const res = await getJson(
+    `${GBIF_SPECIES}/search?datasetKey=${WCVP_DATASET}&q=${encodeURIComponent(latin)}&rank=SPECIES&limit=8`,
+  );
+  const rows = (res?.results ?? []).filter((r) => (r.species ?? "").toLowerCase() === latin.toLowerCase());
+  const accepted = rows.find((r) => r.taxonomicStatus === "ACCEPTED");
+  if (accepted) return { key: accepted.key, name: accepted.species };
+  const synonyms = rows.filter((r) => r.taxonomicStatus === "SYNONYM" && r.acceptedKey);
+  // Two synonyms pointing at two different plants is a question for a person.
+  const keys = new Set(synonyms.map((r) => r.acceptedKey));
+  if (keys.size !== 1) return null;
+  const to = synonyms[0];
+  return { key: to.acceptedKey, name: (to.accepted ?? "").split(/\s+/).slice(0, 2).join(" ") || null };
+}
+
+console.log("\n  asking WCVP (World Checklist of Vascular Plants, via GBIF) — the accepted name and its native range");
+let wcvpAsked = 0;
+for (const c of shortlist) {
+  try {
+    const usage = await wcvpUsage(c.latin);
+    await sleep(350);
+    if (usage) {
+      if (usage.name && usage.name.toLowerCase() !== c.latin.toLowerCase()) {
+        c.renamedTo = usage.name;
+        c.genus = usage.name.split(/\s+/)[0];
+        if (have.has(usage.name.toLowerCase())) c.shipped = true;
+      }
+      const dist = await getJson(`${GBIF_SPECIES}/${usage.key}/distributions?limit=400`);
+      const rows = dist?.results ?? [];
+      // WCVP marks an introduction and leaves a native range blank, so "this
+      // place is listed and says nothing" *is* the native answer — and a place
+      // that isn't listed at all is not an answer, it's an absence.
+      const here = [];
+      for (const place of places) {
+        const row = rows.find((r) => (r.locality ?? "").toLowerCase() === place.name.toLowerCase());
+        if (row) here.push({ where: place.name, means: (row.establishmentMeans ?? "native").toLowerCase() });
+      }
+      if (here.length) {
+        const values = [...new Set(here.map((h) => h.means))];
+        c.status = values.length === 1 ? values[0] : values.join("/");
+        c.statusPlaces = here.map((h) => `${h.where}: ${h.means}`).join(", ");
+        c.statusSource = "WCVP";
+      }
+      await sleep(350);
+    }
+  } catch {
+    /* leave it to iNaturalist below, which is what the ladder is for */
+  }
+  wcvpAsked++;
+  process.stdout.write(`\r  asked WCVP about ${wcvpAsked}/${shortlist.length}`);
+}
+console.log(
+  `\n  WCVP answered ${shortlist.filter((c) => c.statusSource === "WCVP").length} of ${shortlist.length}`,
+);
 
 // Two steps, because the obvious one-step version is wrong. The search endpoint
 // carries an `establishment` field that is populated for some places (California)
@@ -227,50 +350,77 @@ const shortlist = provisional.slice(0, checkCount);
 // tried, Oregon and Washington among them. So: resolve the name, then read the
 // detail — and batch the details, which iNaturalist allows comma-separated.
 const byId = new Map();
-for (const c of shortlist) {
+const leftToiNat = shortlist.filter((c) => !c.statusSource);
+if (leftToiNat.length) console.log(`  asking iNaturalist about the remaining ${leftToiNat.length}`);
+for (const c of leftToiNat) {
   try {
     const res = await getJson(`${INAT}/taxa?q=${encodeURIComponent(c.latin)}&rank=species&per_page=5`);
-    // Exact name only. A fuzzy search for "Brassica nigra" happily returns
-    // Hirschfeldia incana, and inheriting that record's status would be a
-    // fabricated answer about a plant nobody asked about.
-    const hit = (res?.results ?? []).find((t) => t.name?.toLowerCase() === c.latin.toLowerCase());
+    const hit = resolveName(res?.results, c.latin);
     if (hit) {
-      c.inat = hit.id;
-      byId.set(hit.id, c);
+      c.inat = hit.taxon.id;
+      c.renamedTo = hit.exact ? null : hit.taxon.name;
+      // Judge "do we already have this?" on the name iNaturalist keeps. Our own
+      // rows say *Berberis aquifolium*; the occurrence records say *Mahonia
+      // aquifolium*; they are one plant, and without this the report offers a
+      // shrub already growing three rows above it as a **new genus**.
+      if (c.renamedTo) {
+        c.genus = c.renamedTo.split(/\s+/)[0];
+        if (have.has(c.renamedTo.toLowerCase())) c.shipped = true;
+      }
+      byId.set(hit.taxon.id, c);
     } else {
       c.status = "no-inat-match";
     }
   } catch {
     c.status = "lookup-failed";
   }
-  process.stdout.write(`\r  named ${shortlist.filter((x) => x.inat || x.status).length}/${checkCount}`);
+  process.stdout.write(`\r  named ${leftToiNat.filter((x) => x.inat || x.status).length}/${leftToiNat.length}`);
   await sleep(650); // iNaturalist asks for ~1 request/second
 }
 console.log("");
 
 const ids = [...byId.keys()];
-for (let i = 0; i < ids.length; i += 25) {
-  const batch = ids.slice(i, i + 25);
-  try {
-    const res = await getJson(`${INAT}/taxa/${batch.join(",")}`);
-    for (const t of res?.results ?? []) {
-      const c = byId.get(t.id);
-      if (!c) continue;
-      const listed = (t.listed_taxa ?? []).filter((l) => placeIds.has(l?.place?.id));
-      // "Native somewhere in this region's own states" is the claim. If the
-      // states disagree — native in Oregon, introduced in British Columbia —
-      // say so rather than picking the flattering one.
-      const values = [...new Set(listed.map((l) => l.establishment_means).filter(Boolean))];
-      c.status = values.length === 0 ? "unknown" : values.length === 1 ? values[0] : values.join("/");
-      c.statusPlaces = listed
-        .map((l) => `${l.place.display_name ?? l.place.name}: ${l.establishment_means}`)
-        .join(", ");
+// One pass per place, batched. Asking *for a place* is the whole trick: the
+// answer arrives as one field about that place, instead of a page of the
+// world's listings that we then have to find our own states in — which is what
+// the earlier version did, and why it decided thimbleberry's status was
+// unknown in the Pacific Northwest.
+const answers = new Map(ids.map((id) => [id, []]));
+let asked = 0;
+for (const place of places) {
+  for (let i = 0; i < ids.length; i += 25) {
+    const batch = ids.slice(i, i + 25);
+    try {
+      const res = await getJson(`${INAT}/taxa/${batch.join(",")}?place_id=${place.id}`);
+      for (const t of res?.results ?? []) {
+        const means = t.establishment_means?.establishment_means;
+        if (!means) continue;
+        // The listing iNaturalist answers with may be the state's own or an
+        // ancestor's ("United States"); name whichever it used, not what we
+        // asked about, so the evidence column stays checkable.
+        const where = t.establishment_means.place?.display_name ??
+          t.establishment_means.place?.name ?? (place.display_name ?? place.name);
+        answers.get(t.id)?.push({ where, means });
+      }
+    } catch {
+      for (const id of batch) byId.get(id).status ??= "lookup-failed";
     }
-  } catch {
-    for (const id of batch) byId.get(id).status ??= "lookup-failed";
+    asked += batch.length;
+    process.stdout.write(`\r  status for ${asked}/${ids.length * places.length}`);
+    await sleep(650);
   }
-  process.stdout.write(`\r  status for ${Math.min(i + 25, ids.length)}/${ids.length}`);
-  await sleep(650);
+}
+for (const [id, found] of answers) {
+  const c = byId.get(id);
+  if (!c || c.status) continue;
+  // "Native somewhere in this region's own states" is the claim. If the states
+  // disagree — native in Oregon, introduced in British Columbia — say so rather
+  // than picking the flattering one.
+  const seen = [...new Map(found.map((f) => [`${f.where}|${f.means}`, f])).values()];
+  const values = [...new Set(seen.map((f) => f.means))];
+  c.status = values.length === 0 ? "unknown" : values.length === 1 ? values[0] : values.join("/");
+  c.statusPlaces = seen.map((f) => `${f.where}: ${f.means}`).join(", ");
+  if (values.length) c.statusSource = "iNaturalist";
 }
 for (const c of shortlist) c.status ??= "unknown";
 const checked = shortlist;
@@ -279,7 +429,12 @@ console.log("\n");
 // A status of "native/introduced" means the region's own states disagree about
 // this plant. That is a real answer and a human should see it, so it goes to the
 // unsure pile rather than being counted either way.
-const natives = checked.filter((c) => c.status === "native" || c.status === "endemic");
+// `shipped` is a plant we already carry under the name iNaturalist keeps for it
+// — caught only after the rename, which is why it is dropped here rather than
+// with the rest of the already-shipped pool further up.
+const natives = checked.filter(
+  (c) => (c.status === "native" || c.status === "endemic") && !c.shipped,
+);
 const rejected = checked.filter((c) => c.status === "introduced");
 const unsure = checked.filter((c) => !["native", "endemic", "introduced"].includes(c.status));
 
@@ -299,9 +454,45 @@ const ranked = natives
   .sort((a, b) => b.total - a.total)
   .slice(0, TOP);
 
+// A public-domain second opinion on the rows that made the list, for the US
+// regions only — and never as a filter. USDA PLANTS publishes native status for
+// the whole Lower 48 at once, so it cannot see a state: it calls black locust
+// "L48: Native" where WCVP knows it is introduced in Oregon. Printed beside the
+// per-place answer, a disagreement like that is exactly what a reviewer should
+// notice; used to rank, it would be a lie about the region.
+const USDA = "https://plantsservices.sc.egov.usda.gov/api";
+const inTheUS = places.some((p) => /,\s*US$/.test(p.display_name ?? ""));
+if (inTheUS) {
+  console.log(`\n  cross-checking the top ${ranked.length} against USDA PLANTS (public domain)`);
+  for (const c of ranked) {
+    try {
+      const found = await getJson(`${USDA}/PlantSearch?searchText=${encodeURIComponent(c.renamedTo ?? c.latin)}`);
+      const rows = Object.values(found ?? {});
+      const symbol = rows.map((r) => r?.Plant).find((pl) => pl?.Symbol)?.Symbol;
+      await sleep(350);
+      if (!symbol) continue;
+      const profile = await getJson(`${USDA}/PlantProfile?symbol=${encodeURIComponent(symbol)}`);
+      const statuses = profile?.NativeStatuses ?? [];
+      // L48 is the one that speaks to any region we cover in the lower 48; AK
+      // and CAN are printed when they are what the plant has.
+      const said = statuses.map((n) => `${n.Region} ${String(n.Type ?? n.Status).toLowerCase()}`);
+      if (said.length) c.usda = { symbol, said: said.join(", ") };
+      await sleep(350);
+    } catch {
+      /* a cross-check that fails is a cross-check we don't print */
+    }
+  }
+}
+
 const why = (c) => {
   const bits = [];
   bits.push(`${c.records.toLocaleString()} records in the box`);
+  // Never let a rename happen silently: the status below was read for the name
+  // iNaturalist actually keeps, and a reader checking the row has to be able to
+  // find it there.
+  if (c.renamedTo) bits.push(`accepted name **${c.renamedTo}**`);
+  if (c.statusSource) bits.push(`native here per ${c.statusSource} (${c.statusPlaces || "—"})`);
+  if (c.usda) bits.push(`USDA ${c.usda.symbol}: ${c.usda.said}`);
   if (!haveGenus.has(c.genus)) bits.push(`**new genus** for this list`);
   else bits.push(`genus already on the list`);
   const h = hostByGenus.get(c.genus);
@@ -330,7 +521,13 @@ lines.push("");
 lines.push(
   `Pool: the ${counts.length} most-recorded plant species inside the region's coverage box, ` +
     `out of ${facet.count.toLocaleString()} georeferenced plant records (GBIF). ` +
-    `Native status from iNaturalist's per-place listings for ${places.map((p) => p.display_name ?? p.name).join(", ")}. ` +
+    `Native status for ${places.map((p) => p.display_name ?? p.name).join(", ")}, asked of **WCVP** ` +
+    `(the World Checklist of Vascular Plants, CC BY, via ` +
+    `GBIF) first and of **iNaturalist** only for ` +
+    `the names WCVP has no row for. Every row below says which of the two answered it. ` +
+    `**USDA PLANTS** appears as a public-domain cross-check and is not used to rank or rule out: it ` +
+    `publishes one status for the whole Lower 48, which calls black locust native in a region where ` +
+    `WCVP knows it is introduced. ` +
     `Caterpillar figures are **our own genus-level estimates**, not computed counts — ` +
     `\`docs/us-host-counts-plan.md\` §2.`,
 );
@@ -352,8 +549,8 @@ lines.push("");
 lines.push(`## No answer on native status (${unsure.length})`);
 lines.push("");
 lines.push(
-  "Not silently dropped: iNaturalist had no exact name match, or no establishment record for this place. " +
-    "Any of these could be a fine candidate — somebody has to check by hand.",
+  "Not silently dropped: neither WCVP nor iNaturalist holds a name — or a status for these places — " +
+    "that we may act on. Any of these could be a fine candidate; somebody has to check by hand.",
 );
 lines.push("");
 lines.push(

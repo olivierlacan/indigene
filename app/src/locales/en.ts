@@ -1664,6 +1664,8 @@ export const en = {
   "sources.short2": "Some numbers are counted from real datasets. Others are careful estimates — we label those honestly.",
   "sources.short3": "Our plant lists are starter lists, not the complete flora of anywhere.",
   "sources.short4": "We'd genuinely rather be corrected than believed. If a number looks wrong to you, it might be.",
+  "sources.short5":
+    "No source is believed wholesale. We check what each one actually records, and a person still makes the call.",
   "sources.everyNumberTitle": "Every number, and how sure we are",
   "sources.everyNumberLede":
     "Every figure in the app comes to us in one of three ways, and they're not equally firm. Here they are grouped by which, firmest first.",
@@ -1709,6 +1711,28 @@ export const en = {
   "sources.fig.scores": "The six 0–100 scores",
   "sources.fig.scoresFrom":
     "— pollinators, birds, soaking up rain, holding soil, storing carbon, ease of establishing. Informed by the sources on each plant's page, but these are judgments we made, on a scale we invented.",
+  // Why we believed a source in the first place. The section above says where
+  // each number came from; this one answers the question that follows it — and
+  // is blunt that a person, not a dataset, writes what you read.
+  "sources.trustTitle": "How we decide who to believe",
+  "sources.trustLede":
+    "We don't take a source's word for it, and we don't have a laboratory either. Every source has to answer four questions before a number from it reaches you:",
+  "sources.trust1": "Does it record the thing we're claiming? ",
+  "sources.trust1Rest":
+    "An insect seen on a flower doesn't tell you how many caterpillars that plant raises. One large open database of plant-and-animal records notes the difference on about one record in twelve — so we let it name the animal, and never let it count.",
+  "sources.trust2": "Could you check it without us? ",
+  "sources.trust2Rest":
+    "We prefer sources you could download and recount yourself. Where the best one isn't open — the American caterpillar counts — we say so, rather than presenting both continents as equally checkable.",
+  "sources.trust3": "Is it the authority where you live? ",
+  "sources.trust3Rest":
+    "Whether a plant is native is answered by that country's own botanical reference, never a world average. It's also why an excellent Canadian list of French plant names is the wrong source for the French of France, and we left it out.",
+  "sources.trust4": "What happens when it goes quiet? ",
+  "sources.trust4Rest":
+    "A source that stops answering must not read as an answer. The check that re-asks the national name lists fails when they disagree with us — and equally when one of them says nothing at all.",
+  "sources.trustCall":
+    "Then a person decides. No dataset writes a plant's page. A search turns up the animals recorded on a shrub; someone reads the study behind each record, drops what doesn't hold, and writes the line you read. So every fact names its source, and every plant says how solid we think its evidence is.",
+  "sources.trustRefused":
+    "Some sources are turned away. The most detailed county-by-county map of American plants is off limits — its terms forbid reuse. Machine translation would have filled every missing French name in an afternoon, and invented every one of them.",
   "sources.assumptionsTitle": "The assumptions behind them",
   "sources.assumptionsLede":
     "Every number above rests on something we decided. These are the decisions that would move the most if we got them wrong:",

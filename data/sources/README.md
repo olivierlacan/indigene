@@ -37,3 +37,9 @@ raw datasets are re-fetched into the same paths the build steps already expect.
 **Committed vs ignored:** keep provenance snapshots small and committed; never
 commit multi-MB raw datasets — add their extension to `.gitignore` and document
 the fetch in the subfolder README instead.
+
+**Before adding a subfolder here**, the source has to have passed the tests in
+[`DATA_SOURCES.md` → How a source gets in](../../DATA_SOURCES.md#how-a-source-gets-in):
+what claim it's admitted for, which of the five jobs it holds, and what happens
+when it goes quiet. The probe files in this folder are how the first of those
+questions gets answered on the record.

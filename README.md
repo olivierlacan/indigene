@@ -13,7 +13,9 @@ A mobile-first, **offline-first Progressive Web App**. No account, no App Store.
 Built on the DOM and real web APIs — no framework.
 
 See **[`PROJECT_BRIEF.md`](PROJECT_BRIEF.md)** for the vision and decisions, and
-**[`DATA_SOURCES.md`](DATA_SOURCES.md)** for the data-licensing audit.
+**[`DATA_SOURCES.md`](DATA_SOURCES.md)** for the data-licensing audit — starting
+with [How a source gets in](DATA_SOURCES.md#how-a-source-gets-in), the tests a
+dataset has to pass before anything here depends on it.
 
 ## Layout
 

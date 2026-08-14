@@ -9,6 +9,11 @@
 // this page ends by naming the weakest numbers in the app and asking to be
 // corrected, rather than waiting to be caught.
 //
+// It also answers the question that follows "where did this come from?" —
+// *why believe that place?* The four tests a source has to pass, and the fact
+// that a person, not a dataset, writes every row. The developer-facing version
+// of the same policy is `DATA_SOURCES.md` § "How a source gets in".
+//
 // Since localization it also answers a second "how do you know that?": where the
 // *names* come from. A French reader seeing "Chêne pédonculé" where an English
 // one sees "Pedunculate Oak" is owed the same accounting as a host count — so
@@ -84,7 +89,7 @@ export function renderSources(main: HTMLElement): void {
 
       el("div", { class: "note info lede-note" }, [
         el("strong", {}, t("privacy.shortVersion")),
-        el("ul", {}, (["sources.short1", "sources.short2", "sources.short3", "sources.short4"] as TKey[])
+        el("ul", {}, (["sources.short1", "sources.short2", "sources.short3", "sources.short4", "sources.short5"] as TKey[])
           .map((k) => el("li", {}, t(k)))),
       ]),
 
@@ -115,6 +120,20 @@ export function renderSources(main: HTMLElement): void {
         figureKeys("sources.fig.size", "sources.fig.sizeFrom"),
         figureKeys("sources.fig.scores", "sources.fig.scoresFrom"),
       ]),
+
+      // The question the section above provokes: fine, but why believe *those*
+      // places? Answered before the names, so the name lists below read as an
+      // instance of the policy rather than a separate courtesy.
+      el("h3", {}, t("sources.trustTitle")),
+      el("p", {}, t("sources.trustLede")),
+      el("ul", {}, [
+        boldLead("sources.trust1", "sources.trust1Rest"),
+        boldLead("sources.trust2", "sources.trust2Rest"),
+        boldLead("sources.trust3", "sources.trust3Rest"),
+        boldLead("sources.trust4", "sources.trust4Rest"),
+      ]),
+      el("p", {}, t("sources.trustCall")),
+      el("p", {}, t("sources.trustRefused")),
 
       // Names are a claim like any other, so they get the same accounting.
       el("h3", {}, t("names.sourcesTitle")),

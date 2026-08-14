@@ -1680,6 +1680,8 @@ export const fr: Dict = {
   "sources.short3": "Nos listes de plantes sont des listes de départ, pas la flore complète d'un territoire.",
   "sources.short4":
     "Nous préférons sincèrement être corrigés que crus. Si un chiffre vous paraît faux, il l'est peut-être.",
+  "sources.short5":
+    "Aucune source n'est crue en bloc. Nous vérifions ce que chacune enregistre vraiment, et c'est une personne qui tranche.",
   "sources.everyNumberTitle": "Chaque chiffre, et notre degré de certitude",
   "sources.everyNumberLede":
     "Chaque chiffre de l'application nous parvient de l'une de trois façons, et elles ne se valent pas. Les voici regroupés par façon, la plus solide d'abord.",
@@ -1726,6 +1728,28 @@ export const fr: Dict = {
   "sources.fig.scores": "Les six notes sur 100",
   "sources.fig.scoresFrom":
     "— pollinisateurs, oiseaux, absorption de la pluie, maintien du sol, stockage du carbone, facilité d'installation. Éclairées par les sources citées sur chaque fiche, mais ce sont des jugements que nous avons portés, sur une échelle que nous avons inventée.",
+  // Pourquoi nous avons cru une source. La section précédente dit d'où vient
+  // chaque chiffre ; celle-ci répond à la question suivante — et dit franchement
+  // que c'est une personne, et non un jeu de données, qui écrit ce que vous lisez.
+  "sources.trustTitle": "Comment nous décidons qui croire",
+  "sources.trustLede":
+    "Nous ne croyons pas une source sur parole, et nous n'avons pas de laboratoire non plus. Chaque source doit répondre à quatre questions avant qu'un de ses chiffres ne vous parvienne :",
+  "sources.trust1": "Enregistre-t-elle bien ce que nous affirmons ? ",
+  "sources.trust1Rest":
+    "Un insecte aperçu sur une fleur ne dit pas combien de chenilles cette plante élève. Une grande base ouverte d'observations plantes-animaux note la différence sur environ un enregistrement sur douze — nous la laissons donc nommer l'animal, jamais le compter.",
+  "sources.trust2": "Pourriez-vous la vérifier sans nous ? ",
+  "sources.trust2Rest":
+    "Nous préférons les sources que vous pourriez télécharger et recompter vous-même. Quand la meilleure disponible n'est pas ouverte — les comptes de chenilles américains — nous le disons, plutôt que de présenter les deux continents comme également vérifiables.",
+  "sources.trust3": "Fait-elle autorité là où vous vivez ? ",
+  "sources.trust3Rest":
+    "Qu'une plante soit indigène, c'est le référentiel botanique du pays qui le dit, jamais une moyenne mondiale. C'est aussi pourquoi un excellent référentiel canadien de noms français est la mauvaise source pour le français de France, et que nous l'avons écarté.",
+  "sources.trust4": "Que se passe-t-il quand elle se tait ? ",
+  "sources.trust4Rest":
+    "Une source qui cesse de répondre ne doit pas passer pour une réponse. Le contrôle qui réinterroge les référentiels nationaux de noms échoue quand ils nous contredisent — et tout autant quand l'un d'eux ne répond rien du tout.",
+  "sources.trustCall":
+    "Ensuite, c'est une personne qui tranche. Aucun jeu de données n'écrit la fiche d'une plante. Une recherche remonte les animaux observés sur un arbuste ; quelqu'un lit l'étude derrière chaque observation, écarte ce qui ne tient pas, et écrit la ligne que vous lisez. Chaque fait cite donc sa source, et chaque plante dit à quel point nous jugeons ses indices solides.",
+  "sources.trustRefused":
+    "Certaines sources sont écartées. La carte la plus fine des plantes américaines, comté par comté, nous est interdite : ses conditions d'utilisation l'excluent. La traduction automatique aurait comblé tous les noms français manquants en une après-midi — et les aurait tous inventés.",
   "sources.assumptionsTitle": "Les hypothèses derrière ces chiffres",
   "sources.assumptionsLede":
     "Chacun des chiffres ci-dessus repose sur une décision que nous avons prise. Voici celles qui pèseraient le plus lourd si nous nous étions trompés :",

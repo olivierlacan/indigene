@@ -13,6 +13,139 @@ at [`#/sources`](https://indigene.app/#/sources)
 (`app/src/steps/sources.ts`). Anything claimed here should be consistent with
 what that page tells the public.
 
+## How a source gets in
+
+The tables in this document say what each source is *allowed* to give us. This
+section says why we believed it in the first place: the questions asked before a
+dataset is wired into anything, the job it's admitted for, and the reasons some
+were turned away.
+
+The short version, because it's the part people assume we skip: **no source is
+trusted wholesale, and no source writes a row.** A source is admitted for one
+specific claim, at one specific strength, and a person still makes the call.
+
+### The four questions
+
+**1. Does it record the claim we intend to make?**
+
+Asked *before* anything is designed around the source — the "verify before
+trusting" rule in
+[`docs/france-localization-plan.md`](docs/france-localization-plan.md) §4.3 —
+because a dataset that measures something adjacent is the cheapest way to ship
+a confident falsehood. `hostLepCount` claims *"this many butterflies and moths raise their
+caterpillars on this plant"* — much stronger than *"an adult was seen on this
+flower"* — so both candidate sources were held to it:
+
+- The **Gaytán matrix** passed. Its own README says it documents larval
+  host-plant associations, which is exactly the claim. It supplies the European
+  counts.
+- **GloBI** failed. Life stage is present on **17 of 200** sampled observation
+  records, so a count built on it would blend a caterpillar stripping a leaf
+  with an adult resting on one
+  ([`docs/us-host-counts-plan.md`](docs/us-host-counts-plan.md) §2). No shipped
+  number comes from it.
+
+GloBI then passed a *different*, smaller question — *does a record name the
+study behind it?* **100 of 100** — so it proposes named ties and never counts
+anything. One publisher, two verdicts, because admission is per claim, not per
+publisher.
+
+**2. Can a reader check it, independently of us?**
+
+We prefer a source someone can download and recompute from scratch, and we rank
+sources by that. It's why the CC-BY Gaytán matrix replaced the interim European
+estimates outright, and why the terms-uncertain NWF/Tallamy figures are flagged
+in their own row rather than quietly relied on. Where the best available source
+isn't open, the number says so — the in-app page names the American host counts
+as the weaker half for exactly this reason, rather than presenting both
+continents as equally checkable.
+
+**3. Is it the authority for *that place*?**
+
+A global average is not an answer to "is this native here". Native status comes
+from the national reference for the country in question — USDA PLANTS in the
+US, TAXREF/INPN and Tela Botanica in France — and the boundary that selects a
+region comes from that continent's own agency (EPA Omernik, EEA biogeographical
+regions). This is also why a perfectly good source can be refused on fit alone:
+VASCAN is an excellent Canadian list and the wrong authority for an fr-FR
+edition (see *Vernacular names* below).
+
+**4. What happens when it's wrong, absent, or silent?**
+
+Every live source degrades to `null` rather than to a guess, so no provider's
+outage or terms can hold the app hostage. And a check that can only report
+agreement isn't a check: `check-vernacular.mjs` fails on a **disagreement** and
+equally on **an authority that answers nothing at all**, because a national
+reference gone quiet behind a changed header would otherwise read as "no French
+name exists for any of these 258 taxa".
+
+### The five jobs, and what each one may decide
+
+A source is admitted to one of these. The job is the permission — a finder never
+becomes a citation, and a display source never touches a verdict.
+
+| Job | May decide | Examples |
+|---|---|---|
+| **Backbone** | Identity only: that two sources mean the same taxon | IPNI (the anchor), GBIF `usageKey`, ITIS, USDA `Symbol`, TAXREF |
+| **Authority** | The fact itself, cited per row in `basis` | USDA PLANTS (native status), Gaytán matrix (host counts), EPA/EEA (ecoregion), SoilGrids, Open-Meteo |
+| **Finder** | Nothing. Proposes candidates for a human to accept or reject | GloBI (`wildlife-candidates.mjs`), GBIF occurrence density (`candidates.mjs`) — neither is ever the citation; the study *behind* the record is |
+| **Corroborator** | Nothing on its own; it can contradict what we already assert | iNaturalist `similar_species` for look-alikes, Tela Botanica as a second opinion on TAXREF, DBIF v2 (identified, not yet run) |
+| **Display-only** | Nothing at all | iNaturalist photos and sightings, Nominatim place names, Natural Earth outlines |
+
+### Yes, there is an editorial call — here's where it sits
+
+A finder proposes; a person disposes. `wildlife-candidates.mjs` returns the
+animals GloBI records on a plant we ship; someone reads the study behind each
+record, discards what doesn't hold, and writes the tie — its support kind, its
+`reliance`, and its `basis` naming *the study*, not "GloBI says so". Same for
+plants: `candidates.mjs` produces a shortlist with evidence and explicitly does
+not write rows, because a row carries size curves, eco-scores and care notes
+that no dataset published.
+
+Two things make that judgment auditable rather than a matter of trusting us:
+
+- **Every fact carries its own `basis`**, and the dev-time audits refuse a claim
+  without one — `auditSupport` for wildlife ties, `auditLookalikes` for
+  look-alikes (which also refuses a tell that describes only one of the two
+  plants).
+- **Every plant carries a `confidence`**, our read of how well *that row* is
+  sourced — because regions are not equally well served and averaging over that
+  would be the dishonest move.
+
+The one place we invented a scale outright is the six 0–100 eco-scores, and the
+in-app page says so and puts them first on the list of things to doubt.
+
+### Grounds for refusal
+
+"We didn't use it" covers several different things, and collapsing them loses
+the reason. A source is refused on terms, on claim, on place, or on there being
+no source at all:
+
+| Refused | Reason | Kind |
+|---|---|---|
+| **BONAP county maps** | Reuse terms forbid it | Terms |
+| **GloBI, for host counts** | Doesn't record life stage often enough to support the claim | Wrong claim |
+| **VASCAN** | Canadian French in an fr-FR edition — "douglas de Menzies" beside "sapin de Douglas" | Wrong place |
+| **Machine translation** for missing names | Produces plausible names no reference list backs | No source at all |
+| **Apis mellifera** in the wildlife catalog | Introduced; the point is native plants feeding native wildlife | Out of scope by design |
+
+A refusal is recorded here rather than forgotten, so nobody rediscovers a bad
+source as a good idea six months later.
+
+### After it ships, it keeps getting asked
+
+Admission isn't permanent. `check-vernacular.mjs` re-asks all three name
+authorities quarterly in CI and commits the answer;
+`check-lookalikes.mjs` asks iNaturalist whether people are recorded actually
+making each mix-up we describe; `probe-eea.mjs` and `probe-globi.mjs` commit
+what an upstream service answered and when, so drift shows up in a diff. The
+GloBI probe is also the standing reminder that a *query* can be wrong in a way
+that looks like a fact about the data: its first run concluded GloBI carried no
+citations, which was true of the default response shape and false of the data,
+and it cost this repo a shipped feature until it was re-measured.
+
+## The sources
+
 | Source | Used for | Access | Licence / terms | Verdict |
 |---|---|---|---|---|
 | **NOAA solar position algorithm** | Sun path & sun-hours, computed on-device | Reimplemented locally (`src/lib/solar.ts`) | Public-domain US Government work; the algorithm is published, not a service | ✅ Safe. No network, works offline. |

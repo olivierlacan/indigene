@@ -37,10 +37,12 @@ subtitle on the What's new page.
   else, so the two together reach far more of a garden than either alone.
   [Stream violet](https://indigene.app/plants/viola-glabella)
 - Internal: the ten come from the region's own candidate report, filtered by
-  hand against what the regional nursery trade sells — the shortlist also
-  surfaced orchids, a mycoheterotroph and bracken, none of which anybody can
-  plant. Registry, occurrence counts, hero photos and share cards regenerated;
-  `gen-plant-cards.mjs` had been broken since `loadPlants` became async.
+  hand for whether the plant can be grown at all — the shortlist also surfaced
+  two orchids that die when moved, a mycoheterotroph with no roots of its own,
+  and two aggressive spreaders. No availability check was run; coverage-plan §2
+  step 5 asks for one and nothing implements it. Registry, occurrence counts,
+  hero photos and share cards regenerated; `gen-plant-cards.mjs` had been broken
+  since `loadPlants` became async.
 
 - **The ranked list shows the plants.** The plants matched to your spot — and
   the plants on an animal's page — now carry a photograph beside the name

@@ -186,13 +186,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:56795-1",
     "scientificName": "Acer saccharum",
     "family": "Sapindaceae",
     "form": "tree",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "56795-1",
+      "wfo": "wfo-0000515026",
+      "gbif": "3189859",
+      "usda": "ACSA3",
+      "itis": "28731",
+      "inat": "52543",
+      "wikidata": "Q214733",
       "indigene": "acer-saccharum"
     },
     "commonNames": [
@@ -472,13 +479,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:11206-2",
     "scientificName": "Amelanchier laevis",
     "family": "Rosaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "11206-2",
+      "wfo": "wfo-0001009248",
+      "gbif": "3023832",
+      "usda": "AMLA",
+      "itis": "182046",
+      "inat": "54814",
+      "wikidata": "Q163825",
       "indigene": "amelanchier-laevis"
     },
     "commonNames": [
@@ -1382,13 +1396,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:30036649-2",
     "scientificName": "Campanula rotundifolia",
     "family": "Campanulaceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "30036649-2",
+      "wfo": "wfo-0000828550",
+      "gbif": "5410907",
+      "usda": "CARO2",
+      "itis": "34497",
+      "inat": "62312",
+      "wikidata": "Q27989",
       "indigene": "campanula-rotundifolia"
     },
     "commonNames": [
@@ -2150,13 +2171,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:271519-1",
     "scientificName": "Cornus canadensis",
     "family": "Cornaceae",
     "form": "groundcover",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "271519-1",
+      "wfo": "wfo-0000924607",
+      "gbif": "3082270",
+      "usda": "COCA13",
+      "itis": "27816",
+      "inat": "47192",
+      "wikidata": "Q1420828",
       "indigene": "cornus-canadensis"
     },
     "commonNames": [
@@ -2558,13 +2586,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:148473-1",
     "scientificName": "Diervilla lonicera",
     "family": "Caprifoliaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "148473-1",
+      "wfo": "wfo-0000647174",
+      "gbif": "2888711",
+      "usda": "DILO",
+      "itis": "35310",
+      "inat": "67983",
+      "wikidata": "Q5274994",
       "indigene": "diervilla-lonicera"
     },
     "commonNames": [
@@ -3199,13 +3234,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:60437839-2",
     "scientificName": "Eutrochium maculatum",
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "60437839-2",
+      "wfo": "wfo-0000095626",
+      "gbif": "3138195",
+      "usda": "EUMA9",
+      "itis": "780333",
+      "inat": "117440",
+      "wikidata": "Q1951405",
       "indigene": "eutrochium-maculatum"
     },
     "commonNames": [
@@ -3250,13 +3292,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:295597-1",
     "scientificName": "Fagus grandifolia",
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "295597-1",
+      "wfo": "wfo-0000966434",
+      "gbif": "2882274",
+      "usda": "FAGR",
+      "itis": "19462",
+      "inat": "49202",
+      "wikidata": "Q149219",
       "indigene": "fagus-grandifolia"
     },
     "commonNames": [
@@ -4888,13 +4937,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:504907-1",
     "scientificName": "Lupinus perennis",
     "family": "Fabaceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "504907-1",
+      "wfo": "wfo-0000213846",
+      "gbif": "2964435",
+      "usda": "LUPE3",
+      "itis": "26091",
+      "inat": "81528",
+      "wikidata": "Q2365593",
       "indigene": "lupinus-perennis"
     },
     "commonNames": [
@@ -5084,13 +5140,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:17145680-1",
     "scientificName": "Matteuccia struthiopteris",
     "family": "Onocleaceae",
     "form": "fern",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "17145680-1",
+      "wfo": "wfo-0001109164",
+      "gbif": "2650999",
+      "usda": "MAST",
+      "itis": "17596",
+      "inat": "82574",
+      "wikidata": "Q1130386",
       "indigene": "matteuccia-struthiopteris"
     },
     "commonNames": [
@@ -5914,13 +5977,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:263339-1",
     "scientificName": "Pinus strobus",
     "family": "Pinaceae",
     "form": "tree",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "263339-1",
+      "wfo": "wfo-0000481530",
+      "gbif": "5284982",
+      "usda": "PIST",
+      "itis": "183385",
+      "inat": "52391",
+      "wikidata": "Q157230",
       "indigene": "pinus-strobus"
     },
     "commonNames": [
@@ -6261,13 +6331,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:776886-1",
     "scientificName": "Populus tremuloides",
     "family": "Salicaceae",
     "form": "tree",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "776886-1",
+      "wfo": "wfo-0000928260",
+      "gbif": "3040215",
+      "usda": "POTR5",
+      "itis": "195773",
+      "inat": "54840",
+      "wikidata": "Q469576",
       "indigene": "populus-tremuloides"
     },
     "commonNames": [
@@ -7319,13 +7396,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:223740-2",
     "scientificName": "Rudbeckia hirta",
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "223740-2",
+      "wfo": "wfo-0000027627",
+      "gbif": "3114225",
+      "usda": "RUHI2",
+      "itis": "36765",
+      "inat": "62741",
+      "wikidata": "Q2532820",
       "indigene": "rudbeckia-hirta"
     },
     "commonNames": [
@@ -7436,13 +7520,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:284528-2",
     "scientificName": "Salix discolor",
     "family": "Salicaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "284528-2",
+      "wfo": "wfo-0000928583",
+      "gbif": "5372785",
+      "usda": "SADI",
+      "itis": "22524",
+      "inat": "54844",
+      "wikidata": "Q3124760",
       "indigene": "salix-discolor"
     },
     "commonNames": [
@@ -7928,13 +8019,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:240517-2",
     "scientificName": "Solidago speciosa",
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "240517-2",
+      "wfo": "wfo-0000032825",
+      "gbif": "5389063",
+      "usda": "SOSP2",
+      "itis": "36310",
+      "inat": "130376",
+      "wikidata": "Q664217",
       "indigene": "solidago-speciosa"
     },
     "commonNames": [
@@ -8303,13 +8401,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:911502-1",
     "scientificName": "Symphyotrichum laeve",
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "911502-1",
+      "wfo": "wfo-0000129622",
+      "gbif": "8421156",
+      "usda": "SYLA3",
+      "itis": "522218",
+      "inat": "129607",
+      "wikidata": "Q544417",
       "indigene": "symphyotrichum-laeve"
     },
     "commonNames": [
@@ -8413,13 +8518,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:263956-1",
     "scientificName": "Thuja occidentalis",
     "family": "Cupressaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "263956-1",
+      "wfo": "wfo-0000407772",
+      "gbif": "2684178",
+      "usda": "THOC2",
+      "itis": "505490",
+      "inat": "54037",
+      "wikidata": "Q147468",
       "indigene": "thuja-occidentalis"
     },
     "commonNames": [
@@ -8554,13 +8666,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:286108-2",
     "scientificName": "Tilia americana",
     "family": "Malvaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "286108-2",
+      "wfo": "wfo-0000457477",
+      "gbif": "3152042",
+      "usda": "TIAM",
+      "itis": "21536",
+      "inat": "54854",
+      "wikidata": "Q163981",
       "indigene": "tilia-americana"
     },
     "commonNames": [
@@ -8730,13 +8849,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:264005-1",
     "scientificName": "Tsuga canadensis",
     "family": "Pinaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "264005-1",
+      "wfo": "wfo-0000456302",
+      "gbif": "2687182",
+      "usda": "TSCA",
+      "itis": "183397",
+      "inat": "48734",
+      "wikidata": "Q1137143",
       "indigene": "tsuga-canadensis"
     },
     "commonNames": [
@@ -8841,13 +8967,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:261779-2",
     "scientificName": "Vaccinium angustifolium",
     "family": "Ericaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "261779-2",
+      "wfo": "wfo-0000422967",
+      "gbif": "2882868",
+      "usda": "VAAN",
+      "itis": "23579",
+      "inat": "84542",
+      "wikidata": "Q512441",
       "indigene": "vaccinium-angustifolium"
     },
     "commonNames": [
@@ -9073,13 +9206,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:326266-2",
     "scientificName": "Viburnum lentago",
     "family": "Adoxaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "326266-2",
+      "wfo": "wfo-0001290597",
+      "gbif": "2888586",
+      "usda": "VILE",
+      "itis": "35266",
+      "inat": "54773",
+      "wikidata": "Q3321544",
       "indigene": "viburnum-lentago"
     },
     "commonNames": [
@@ -9213,13 +9353,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:69009-1",
     "scientificName": "Vitis riparia",
     "family": "Vitaceae",
     "form": "vine",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "69009-1",
+      "wfo": "wfo-0000421816",
+      "gbif": "5372385",
+      "usda": "VIRI",
+      "itis": "28624",
+      "inat": "119936",
+      "wikidata": "Q1081461",
       "indigene": "vitis-riparia"
     },
     "commonNames": [

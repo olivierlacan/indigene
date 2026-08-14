@@ -1,8 +1,11 @@
 // The region registry. This is the one place that knows the full set of regions
-// Indigene covers. Adding a region is: write a `region.<id>.ts` description and
-// a `plants.<id>.ts` list, then add two lines here. Everything downstream (which
-// plant list to load, what the welcome screen advertises, whether a spot is
-// covered) reads from this list, so nothing else has to change.
+// Indigene covers. Adding a region *to the app* is: write a `region.<id>.ts`
+// description and a `plants.<id>.ts` list, then add two lines here — everything
+// downstream (which plant list to load, what the welcome screen advertises,
+// whether a spot is covered) reads from this list, so nothing else has to
+// change to make it *load*. Making it reach parity with the regions already
+// shipped — the boundary map, share cards, wildlife names, record counts,
+// photographs — is more; the full checklist is `docs/adding-a-region.md`.
 //
 // **Each region's plants are a separate download.** The descriptions below are
 // imported the ordinary way — they're small, and the app needs all of them at

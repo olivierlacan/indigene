@@ -27,6 +27,14 @@ subtitle on the What's new page.
 
 ### Added
 
+- **Northern Michigan is on the map.** Indigene now covers the tip of Michigan's
+  Lower Peninsula around Petoskey and Little Traverse Bay — 46 native plants for
+  its cool, lime-rich northern-hardwood and white-pine country.
+  [See the region](https://indigene.app/regions/north-michigan)
+- Internal: `gen-plant-cards.mjs` now awaits `loadPlants`, which became async when
+  each region's plant list moved to its own download — the share-card generator
+  had been unable to run since, and adding a region surfaced it.
+
 - **The ranked list shows the plants.** The plants matched to your spot — and
   the plants on an animal's page — now carry a photograph beside the name
   instead of a drawing of a generic shrub, like every other list in the app.

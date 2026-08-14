@@ -18,6 +18,7 @@
 // `lib/plants.ts` is the front door; it caches, so a list is fetched once.
 import type { RegionDef } from "./region";
 import { REGION as MID_ATLANTIC } from "./region.mid-atlantic";
+import { REGION as NORTH_MICHIGAN } from "./region.north-michigan";
 import { REGION as PNW } from "./region.pnw";
 import { REGION as CA_SOUTH_COAST } from "./region.ca-south-coast";
 import { REGION as FLORIDA_CENTRAL } from "./region.florida";
@@ -29,6 +30,10 @@ import { REGION as FRANCE_ALPINE } from "./region.france-alpine";
 
 export const REGIONS: RegionDef[] = [
   { meta: MID_ATLANTIC, load: () => import("./plants.mid-atlantic").then((m) => m.SEED_RAW) },
+  // Northern Lower Michigan — the northern-hardwood and white-pine country at the
+  // tip of the Lower Peninsula (Petoskey / Little Traverse Bay). The temperate
+  // south of the state and the boreal Upper Peninsula each want their own list.
+  { meta: NORTH_MICHIGAN, load: () => import("./plants.north-michigan").then((m) => m.SEED_RAW) },
   { meta: PNW, load: () => import("./plants.pnw").then((m) => m.SEED_RAW) },
   // The West Coast, continued southward — see docs/west-coast-plan.md for the
   // rest of the carve (central and north coast California, the Central Valley,

@@ -1,4 +1,12 @@
 {
+  "achlys-triphylla": {
+    "taxonId": 75263,
+    "photoId": 129720546,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/129720546/square.jpg",
+    "observer": "David F. Fraser",
+    "license": "cc-by-nc",
+    "attribution": "(c) David F. Fraser, some rights reserved (CC BY-NC), uploaded by David F. Fraser"
+  },
   "acmispon-glaber": {
     "taxonId": 53134,
     "photoId": 272983126,
@@ -412,6 +420,14 @@
     "license": "cc-by-nc",
     "attribution": "(c) Ina Siebert, some rights reserved (CC BY-NC), uploaded by Ina Siebert",
     "color": "#6b743f"
+  },
+  "dicentra-formosa": {
+    "taxonId": 51048,
+    "photoId": 76022505,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/76022505/square.jpg",
+    "observer": "brock",
+    "license": "cc-by-nc",
+    "attribution": "(c) brock, some rights reserved (CC BY-NC), uploaded by brock"
   },
   "diplacus-aurantiacus": {
     "taxonId": 777371,
@@ -881,6 +897,14 @@
     "attribution": "(c) J. Maughn, some rights reserved (CC BY-NC), uploaded by J. Maughn",
     "color": "#757c7a"
   },
+  "lysichiton-americanus": {
+    "taxonId": 48537,
+    "photoId": 34312912,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/34312912/square.jpeg",
+    "observer": "Barbara L. Wilson",
+    "license": "cc-by-nc",
+    "attribution": "(c) Barbara L. Wilson, some rights reserved (CC BY-NC), uploaded by Barbara L. Wilson"
+  },
   "maianthemum-dilatatum": {
     "taxonId": 63939,
     "photoId": 40236053,
@@ -1015,6 +1039,30 @@
     "license": "cc-by-nc-sa",
     "attribution": "(c) Belinda Lo, some rights reserved (CC BY-NC-SA)",
     "color": "#536843"
+  },
+  "petasites-frigidus": {
+    "taxonId": 55780,
+    "photoId": 272664283,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/272664283/square.jpg",
+    "observer": "christinelind",
+    "license": "cc-by-nc",
+    "attribution": "(c) christinelind, some rights reserved (CC BY-NC)"
+  },
+  "picea-sitchensis": {
+    "taxonId": 68131,
+    "photoId": 35647222,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/35647222/square.jpg",
+    "observer": "Christopher J. Earle",
+    "license": "cc-by-nc",
+    "attribution": "(c) Christopher J. Earle, some rights reserved (CC BY-NC), uploaded by Christopher J. Earle"
+  },
+  "pinus-contorta": {
+    "taxonId": 48934,
+    "photoId": 45880976,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/45880976/square.jpeg",
+    "observer": "Alison Northup",
+    "license": "cc-by",
+    "attribution": "(c) Alison Northup, some rights reserved (CC BY), uploaded by Alison Northup"
   },
   "pinus-ponderosa": {
     "taxonId": 81248,
@@ -1178,6 +1226,14 @@
     "attribution": "(c) Gilles San Martin, some rights reserved (CC BY-SA), uploaded by Gilles San Martin",
     "color": "#5f5d38"
   },
+  "rhododendron-macrophyllum": {
+    "taxonId": 57360,
+    "photoId": 396805527,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/396805527/square.jpeg",
+    "observer": "Karla Salp",
+    "license": "cc-by-nc",
+    "attribution": "(c) Karla Salp, some rights reserved (CC BY-NC), uploaded by Karla Salp"
+  },
   "rhus-integrifolia": {
     "taxonId": 55009,
     "photoId": 14516370,
@@ -1231,6 +1287,14 @@
     "license": "cc-by-sa",
     "attribution": "(c) jraus, some rights reserved (CC BY-SA)",
     "color": "#4f5938"
+  },
+  "rubus-parviflorus": {
+    "taxonId": 51646,
+    "photoId": 132211198,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/132211198/square.jpeg",
+    "observer": "Gavin Slater",
+    "license": "cc-by",
+    "attribution": "(c) Gavin Slater, some rights reserved (CC BY), uploaded by Gavin Slater"
   },
   "rubus-ursinus": {
     "taxonId": 53445,
@@ -1448,6 +1512,14 @@
     "attribution": "(c) Ken-ichi Ueda, some rights reserved (CC BY), uploaded by Ken-ichi Ueda",
     "color": "#90854f"
   },
+  "tellima-grandiflora": {
+    "taxonId": 51655,
+    "photoId": 143999155,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/143999155/square.jpg",
+    "observer": "Scott Ranger",
+    "license": "cc-by-nc",
+    "attribution": "(c) Scott Ranger, some rights reserved (CC BY-NC), uploaded by Scott Ranger"
+  },
   "thymus-serpyllum": {
     "taxonId": 322051,
     "photoId": 147682040,
@@ -1546,6 +1618,14 @@
     "license": "cc-by-nc",
     "attribution": "(c) Ryan Sawby, some rights reserved (CC BY-NC), uploaded by Ryan Sawby",
     "color": "#5f5f58"
+  },
+  "viola-glabella": {
+    "taxonId": 71113,
+    "photoId": 291898703,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/291898703/square.jpg",
+    "observer": "erinlovesflowers",
+    "license": "cc-by-nc",
+    "attribution": "(c) erinlovesflowers, some rights reserved (CC BY-NC)"
   },
   "vitis-girdiana": {
     "taxonId": 64104,

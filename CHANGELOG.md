@@ -27,6 +27,21 @@ subtitle on the What's new page.
 
 ### Added
 
+- **Ten more Pacific Northwest natives.** Thimbleberry, Pacific bleeding heart
+  and shore pine among them, each with its own page, photograph and growing
+  notes — and sweet coltsfoot, which flowers in February, when a bumblebee queen
+  coming out of hibernation has almost nothing to feed on.
+  [Pacific Northwest](https://indigene.app/regions/pnw)
+- **A violet for damp shade, and what depends on it.** Stream violet joins the
+  meadow violet on that list. Fritillary caterpillars eat violets and nothing
+  else, so the two together reach far more of a garden than either alone.
+  [Stream violet](https://indigene.app/plants/viola-glabella)
+- Internal: the ten come from the region's own candidate report, filtered by
+  hand against what the regional nursery trade sells — the shortlist also
+  surfaced orchids, a mycoheterotroph and bracken, none of which anybody can
+  plant. Registry, occurrence counts, hero photos and share cards regenerated;
+  `gen-plant-cards.mjs` had been broken since `loadPlants` became async.
+
 - **The ranked list shows the plants.** The plants matched to your spot — and
   the plants on an animal's page — now carry a photograph beside the name
   instead of a drawing of a generic shrub, like every other list in the app.

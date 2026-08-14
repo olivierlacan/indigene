@@ -402,7 +402,7 @@ try {
   // grows in, because the card names the plant, not the plant-in-a-place.
   const seen = new Map();
   for (const region of REGIONS) {
-    for (const plant of loadPlants(region)) {
+    for (const plant of await loadPlants(region)) {
       const prev = seen.get(plant.id);
       const ties = wildlifeForPlant(region.meta.id, plant.id).length;
       if (prev) prev.wildlifeCount = Math.max(prev.wildlifeCount, ties);

@@ -261,3 +261,18 @@ exactly this). Trivial edits don't need a re-measure. When you do update it,
 keep the wording's intent (e.g. the ecoregion-plan comparison still has to read
 as "polygons would dwarf the bundle") and use one consistent number across all
 the docs.
+
+## A map needs somewhere to stand
+
+A map exists to answer *"does this include me?"* — and it can't if it's a shaded
+shape with nothing named on it. A region drawn as a green blob on an unlabelled
+coastline is not a map, it's decoration: the reader can't find themselves on it,
+so it fails at the one job it had.
+
+So **every map carries a handful of spatial references — major cities, at
+least — enough to fix its edges (north, south, and the inland side).** For
+region maps that's the `LANDMARKS` table in `scripts/build-region-maps.mjs`;
+the builder now refuses to draw a region that declares fewer than three, so the
+mistake can't ship silently. When you add or review a map, **look at the
+rendered image** and check you can find a place you know on it — a size number
+or a passing build is not that check.

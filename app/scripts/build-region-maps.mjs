@@ -107,6 +107,13 @@ const LANDMARKS = {
     { name: "Washington", lat: 38.9, lon: -77.04 },
     { name: "Richmond", lat: 37.54, lon: -77.44 },
   ],
+  "north-michigan": [
+    { name: "Mackinaw City", lat: 45.78, lon: -84.72 },
+    { name: "Petoskey", lat: 45.37, lon: -84.96 },
+    { name: "Alpena", lat: 45.06, lon: -83.43 },
+    { name: "Traverse City", lat: 44.76, lon: -85.62 },
+    { name: "Cadillac", lat: 44.25, lon: -85.4 },
+  ],
   "florida-central": [
     { name: "Pensacola", lat: 30.42, lon: -87.22 },
     { name: "Tallahassee", lat: 30.44, lon: -84.28 },

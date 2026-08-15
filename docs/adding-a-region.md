@@ -38,7 +38,7 @@ depend on. Run them after the data is written.
 | # | Command | Produces | Gotcha |
 |---|---------|----------|--------|
 | 7 | `npm run registry:build` | `src/data/registry.ts` (+ `public/registry/…json`) | Required for `registry:check`. New taxa land with `primaryId: null` — reconciliation fills the external ids later (§4). |
-| 8 | `npm run maps:build <id>` | `public/maps/<id>.svg` | **Network** (EPA + Natural Earth). A *partial* run prints the drawn size but leaves `src/data/region-maps.ts` untouched — add the `{ w, h }` entry it reports by hand. |
+| 8 | `npm run maps:build <id>` | `public/maps/<id>.svg` | **Network** (EPA + Natural Earth). First add the region to the `LANDMARKS` table in the script — a few major cities that fix its edges; the builder now **refuses** to draw a region with fewer than three, because a shape with no labelled places is a blob nobody can locate themselves on. A *partial* run prints the drawn size but leaves `src/data/region-maps.ts` untouched — add the `{ w, h }` entry it reports by hand. Then look at the rendered map and check you can find a place you know on it. |
 | 9 | `node scripts/gen-plant-cards.mjs <slug…>` | `public/og/plants/<slug>.jpg` | The share/preview card for every new plant. `routes:check` fails without them. |
 | 10 | CHANGELOG entry | `CHANGELOG.md` under `## [Unreleased]` | One warm `Added` bullet; developer notes as `Internal:`. |
 

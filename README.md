@@ -54,9 +54,10 @@ survives, the one thing any host has to do (serve `404.html` for unknown
 paths, or every deep link breaks), and how to fail the domain over.
 
 The deploy also publishes a plain-words **What's new** page at
-`/release-notes/`, compiled from [`CHANGELOG.md`](CHANGELOG.md) — so release
-notes update themselves whenever a merged PR touched the changelog. The
-changelog's header explains the format; `CLAUDE.md` explains the workflow.
+`/release-notes/`, compiled from [`CHANGELOG.md`](CHANGELOG.md) and the entries
+still loose in [`changelog.d/`](changelog.d/README.md) — so release notes update
+themselves whenever a merged PR carried one. The changelog's header explains the
+format; `CLAUDE.md` explains the workflow.
 
 ## What it does
 

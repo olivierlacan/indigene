@@ -7,8 +7,12 @@ with three house rules:
 
 - **Versions are feature releases, not schedules.** A version is cut when a
   coherent piece of the product lands, and gets a number, a name and a date
-  (the way [Maison](https://github.com/olivierlacan/maison) does it). Add
-  plain bullets to **Unreleased** as you go.
+  (the way [Maison](https://github.com/olivierlacan/maison) does it).
+- **A pull request's entry is a file of its own**, in
+  [`changelog.d/`](changelog.d/README.md) — one entry, one file, so two branches
+  never write the same lines. `npm run changelog:fold` moves them into
+  **Unreleased** when a version is cut; until then the compiler reads them from
+  there, so everything below is also true of a loose entry.
 - **The public "What's new" page is compiled from this file.** Bullets are
   published verbatim to a general audience — including kids and grandparents —
   so write them in plain, warm words. Reviewing a changelog entry in a PR *is*

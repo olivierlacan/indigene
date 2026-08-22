@@ -107,6 +107,14 @@ subtitle on the What's new page.
 
 ### Changed
 
+- **Where our numbers come from now says why we believe them.** The page adds
+  the four questions a source has to answer before we use it, and is plain that
+  a person, not a database, writes every line.
+  [Where our numbers come from](https://indigene.app/sources)
+- **Internal:** `DATA_SOURCES.md` gains a "How a source gets in" section — the
+  four gates, the five jobs a source can hold (backbone, authority, finder,
+  corroborator, display-only), where the editorial call sits, and the grounds
+  each refused source was refused on.
 - **A look-alike is only invasive *somewhere*.** The list called plants invasive
   or not-from-here before you'd picked a region — and a few of them are natives
   of ours. Each now names the regions where it's a problem, on the list and on

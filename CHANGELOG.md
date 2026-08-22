@@ -220,6 +220,18 @@ subtitle on the What's new page.
 - **Fact boxes stopped cutting their labels short on a big screen.** On a laptop
   a spot's boxes were narrower than the same ones on a phone, so "NURTURED" came
   out "NURTUR…". Every box now sizes itself to the space it's actually in.
+- **A tab you come back to keeps its colours.** A page left open for a day
+  could come back washed out — the green header gone grey, the buttons blank —
+  until you reloaded it. Indigene now spots that on the way back in and paints
+  itself again.
+- Internal: iOS Safari can restore a page whose `:root` custom properties are
+  gone, so every `var()` colour resolves to nothing while the literal layout
+  survives. `lib/restore.ts` watches `pageshow`/`visibilitychange`, re-inserts
+  the stylesheet links to rebuild the style tree, and reloads once if that
+  isn't enough.
+- Internal: `.gitattributes` marks CHANGELOG.md `merge=union`, so two branches
+  appending bullets to the same section rebase without a hand resolution. Every
+  merged pull request used to leave the others conflicting on this file alone.
 
 ### Fixed
 

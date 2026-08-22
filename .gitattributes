@@ -1,0 +1,20 @@
+# Every pull request adds a bullet to CHANGELOG.md, and every bullet goes at the
+# end of the same three sections under `## [Unreleased]`. Two branches appending
+# there is two insertions at one line boundary, which Git can only call a
+# conflict — so merging any pull request leaves every other one needing a manual
+# resolution of a file nobody actually disagreed about.
+#
+# `union` takes both sides instead: the merged file keeps the bullets from each
+# branch, in that order, with no markers to clean up. A rebase onto a moved main
+# resolves itself.
+#
+# The catch, so it isn't a surprise: union keeps both versions of a line that was
+# *changed* on both sides too. Reword a bullet on two branches at once and you
+# get both wordings, silently. That's fine for a file that is almost always
+# appended to, and `npm run release-notes` still parses the result — but it does
+# mean reading the changelog hunk of a rebase rather than trusting it.
+#
+# GitHub's own merge doesn't read this file, so a pull request will still be
+# reported as conflicting until the branch is rebased and pushed. This makes that
+# rebase a single command; it doesn't make it unnecessary.
+CHANGELOG.md merge=union

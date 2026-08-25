@@ -5,6 +5,7 @@
 // reserve exactly the right box for it and nothing shifts when the file lands.
 export const REGION_MAP_SIZES: Record<string, { w: number; h: number }> = {
   "mid-atlantic": { w: 640, h: 615 },
+  "north-michigan": { w: 640, h: 671 },
   "pnw": { w: 640, h: 768 },
   "ca-south-coast": { w: 640, h: 551 },
   "florida-central": { w: 640, h: 353 },

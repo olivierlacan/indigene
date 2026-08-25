@@ -27,6 +27,8 @@ export const EPA_L3_NAMES: Record<string, string> = {
   "3": "Willamette Valley",
   "4": "Cascades",
   "45": "Piedmont",
+  "50": "Northern Lakes and Forests",
+  "51": "North Central Hardwood Forests",
   "58": "Northeastern Highlands",
   "59": "Northeastern Coastal Zone",
   "60": "Northern Allegheny Plateau",

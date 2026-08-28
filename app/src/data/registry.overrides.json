@@ -3481,5 +3481,59 @@
       "gbif": "5372385",
       "wikidata": "Q1081461"
     }
+  },
+  "Aruncus dioicus": {
+    "identifiers": {
+      "ipni": "20973-2",
+      "wfo": "wfo-0001018107",
+      "usda": "ARDI8",
+      "itis": "25130",
+      "inat": "75600",
+      "gbif": "5362136",
+      "wikidata": "Q163763"
+    }
+  },
+  "Berberis nervosa": {
+    "identifiers": {
+      "ipni": "31492-2",
+      "wfo": "wfo-0000563585",
+      "itis": "18825",
+      "inat": "75756",
+      "gbif": "3033877",
+      "wikidata": "Q19848987"
+    }
+  },
+  "Dicentra formosa": {
+    "identifiers": {
+      "ipni": "672641-1",
+      "wfo": "wfo-0000644965",
+      "usda": "DIFO",
+      "itis": "18947",
+      "inat": "51048",
+      "gbif": "2888553",
+      "wikidata": "Q1871251"
+    }
+  },
+  "Rubus parviflorus": {
+    "identifiers": {
+      "ipni": "738961-1",
+      "wfo": "wfo-0001016292",
+      "usda": "RUPA",
+      "itis": "25007",
+      "inat": "51646",
+      "gbif": "7872219",
+      "wikidata": "Q2614003"
+    }
+  },
+  "Sidalcea campestris": {
+    "identifiers": {
+      "ipni": "564393-1",
+      "wfo": "wfo-0001077112",
+      "usda": "SICA2",
+      "itis": "21858",
+      "inat": "168939",
+      "gbif": "3152730",
+      "wikidata": "Q17579205"
+    }
   }
 }

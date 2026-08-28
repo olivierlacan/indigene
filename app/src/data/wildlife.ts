@@ -190,6 +190,30 @@ export const WILDLIFE: Wildlife[] = [
     inat: { name: "Papilio eurymedon", iconic: "Insecta" },
   },
   {
+    id: "echo-azure",
+    common: "Echo azure",
+    latin: "Celastrina echo",
+    kind: "butterfly",
+    icon: "🦋",
+    blurb:
+      "A small powder-blue butterfly, one of the first on the wing in spring. Its caterpillars aren't fussy — they eat the flower buds of many native shrubs, oceanspray and ceanothus among the favourites.",
+    native: true,
+    nativeBasis: "Native to western North America. Washington Butterfly Association; Butterflies and Moths of North America (BAMONA).",
+    inat: { name: "Celastrina echo", iconic: "Insecta" },
+  },
+  {
+    id: "clodius-parnassian",
+    common: "Clodius parnassian",
+    latin: "Parnassius clodius",
+    kind: "butterfly",
+    icon: "🦋",
+    blurb:
+      "A ghostly white, black-spotted butterfly that drifts low through Northwest woods and meadows. Its caterpillars eat only bleeding heart, whose alkaloids make both the young and the adult distasteful to birds.",
+    native: true,
+    nativeBasis: "Native to western North America. Butterflies and Moths of North America (BAMONA); PSU Garden Ecology.",
+    inat: { name: "Parnassius clodius", iconic: "Insecta" },
+  },
+  {
     id: "propertius-duskywing",
     common: "Propertius duskywing",
     latin: "Erynnis propertius",
@@ -756,6 +780,18 @@ export const WILDLIFE: Wildlife[] = [
     nativeBasis: "Native solitary bees. Fowler & Droege, Pollen Specialist Bees; USGS Native Bee Inventory.",
   },
   {
+    id: "mallow-specialist-bees",
+    common: "Mallow specialist bees",
+    latin: "Diadasia",
+    kind: "bee",
+    icon: "🐝",
+    blurb:
+      "Fast, solitary ground-nesting bees that gather pollen from almost nothing but mallows. In the Willamette Valley one, Diadasia nigrifrons, rides on the native checkermallows — no checkermallow, no bee.",
+    native: true,
+    nativeBasis: "Native solitary bees; Diadasia are New World mallow specialists. Xerces Society; USDA Plant Guide (Sidalcea).",
+    inat: { name: "Diadasia", iconic: "Insecta" },
+  },
+  {
     id: "mason-bees",
     common: "Mason & mining bees",
     latin: "Osmia, Andrena spp.",
@@ -790,6 +826,18 @@ export const WILDLIFE: Wildlife[] = [
     native: true,
     nativeBasis: "Native to eastern North America. Cornell Lab of Ornithology.",
     inat: { name: "Archilochus colubris", iconic: "Aves" },
+  },
+  {
+    id: "band-tailed-pigeon",
+    common: "Band-tailed pigeon",
+    latin: "Patagioenas fasciata",
+    kind: "bird",
+    icon: "🕊️",
+    blurb:
+      "The Northwest's native forest pigeon — bigger and wilder than a city pigeon, with a white half-collar. Flocks roam the canopy after fruit, and in western Oregon they live largely on elderberry and cascara.",
+    native: true,
+    nativeBasis: "Native to western North America. Washington Dept. of Fish & Wildlife; Cornell Lab of Ornithology.",
+    inat: { name: "Patagioenas fasciata", iconic: "Aves" },
   },
   {
     id: "annas-rufous-hummingbird",
@@ -1396,6 +1444,33 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
   },
 
   pnw: {
+    "rubus-parviflorus": [
+      { wildlifeId: "echo-azure", support: "host", note: "Thimbleberry is one of the many native shrubs the echo azure lays on — its caterpillars chew the flower buds and young fruit.", basis: "Washington Butterfly Association; BAMONA." },
+      { wildlifeId: "band-tailed-pigeon", support: "berries", note: "The soft scarlet raspberries ripen through summer and are a favourite of band-tailed pigeons, which travel the canopy after exactly this kind of fruit.", basis: "WDFW; Cornell Lab." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Robins, thrushes and tanagers strip the berries as fast as they colour.", basis: "Cornell Lab; USDA PLANTS." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Big open white flowers through late spring, an easy landing pad heavy with pollen for bumble and mason bees.", basis: "Xerces Society." },
+    ],
+    "berberis-nervosa": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Upright yellow spikes open in a shaded, early-season gap, feeding bumble bee queens when the forest floor has little else.", basis: "Xerces Society." },
+      { wildlifeId: "band-tailed-pigeon", support: "berries", note: "The dusty-blue berries are taken by band-tailed pigeons, robins and waxwings.", basis: "WDFW; USDA PLANTS." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Thrushes and waxwings work the tart blue fruit in late summer.", basis: "Cornell Lab." },
+    ],
+    "aruncus-dioicus": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "The great cream plumes are a broad, open table of tiny flowers — easy nectar and pollen for solitary bees, in the shade where few big flowers grow.", basis: "Xerces Society." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees and hoverflies work the plumes through early summer.", basis: "Xerces Society." },
+    ],
+    "sidalcea-campestris": [
+      { wildlifeId: "mallow-specialist-bees", support: "nectar", reliance: "narrow", note: "Diadasia nigrifrons collects pollen from Willamette Valley checkermallows and almost nothing else — lose the checkermallow and this bee goes with it.", basis: "USDA Plant Guide (Sidalcea campestris); Xerces Society; Fowler & Droege." },
+      { wildlifeId: "painted-lady", support: "host", note: "A mallow, so its leaves are a caterpillar food for the painted lady and West Coast lady.", basis: "USDA Plant Guide; BAMONA." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The pink flower spikes are a heavy summer draw for bumble bees.", basis: "Xerces Society." },
+    ],
+    "deschampsia-cespitosa": [
+      { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "Tufted hairgrass raises wood nymphs and several skippers, whose caterpillars overwinter deep in the tussock — reason enough to leave it standing until spring.", basis: "Xerces Society; NWF Native Plant Finder." },
+    ],
+    "dicentra-formosa": [
+      { wildlifeId: "clodius-parnassian", support: "host", reliance: "sole", note: "Bleeding heart is the only thing a Clodius parnassian caterpillar eats — the alkaloids it takes from the leaves make the butterfly itself distasteful to birds.", basis: "BAMONA; PSU Garden Ecology; butterfliesoforegon.com." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Dangling pink hearts from early spring are worked by bumble bee queens strong enough to push into them.", basis: "Xerces Society." },
+    ],
     "quercus-garryana": [
       { wildlifeId: "lorquins-admiral", support: "shelter", note: "An oak in a Garry oak meadow is where a Lorquin's admiral sits to watch its patch, dropping off the branch to chase anything that flies through.", basis: "GloBI — iNaturalist observation records; BAMONA." },
       { wildlifeId: "propertius-duskywing", support: "host", reliance: "sole", note: "Garry (Oregon white) oak is the sole larval host for the propertius duskywing — no oak, no butterfly.", basis: "Xerces Society; Washington NHP oak-prairie work." },
@@ -1415,6 +1490,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "mason-bees", support: "nectar", note: "Its heavy early flower clusters feed newly emerged bees before most plants bloom.", basis: "Xerces Society." },
     ],
     "holodiscus-discolor": [
+      { wildlifeId: "echo-azure", support: "host", note: "Oceanspray is a documented echo azure host — eggs turn up on the flower buds in early spring, and the caterpillars feed on the buds and developing seed.", basis: "Washington Butterfly Association; Xerces Society." },
       { wildlifeId: "variable-checkerspot", support: "nectar", note: "Ocean spray's cream plumes are a checkerspot's refuelling stop through the dry part of summer.", basis: "GloBI — iNaturalist observation records; Xerces Society." },
       { wildlifeId: "pale-swallowtail", support: "host", reliance: "narrow", note: "Oceanspray is a classic larval host for the pale swallowtail (and the Lorquin's admiral).", basis: "Xerces Society; NWF Native Plant Finder." },
       { wildlifeId: "bumble-bees", support: "nectar", note: "Foaming cream flower plumes are covered in bees in early summer.", basis: "Xerces Society." },
@@ -1447,6 +1523,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "A western sunflower-family bloom supporting the region's aster/sunflower pollen specialists.", basis: "Fowler & Droege, Pollen Specialist Bees (West)." },
     ],
     "arbutus-menziesii": [
+      { wildlifeId: "band-tailed-pigeon", support: "berries", note: "Madrone berries are a signature fall-and-winter food of band-tailed pigeons, which move through the canopy in flocks to strip a laden tree.", basis: "WDFW; Audubon." },
       { wildlifeId: "ceanothus-silkmoth", support: "host", note: "Madrone leaves feed the silkmoth's caterpillars, which is a rare thing — very little eats an evergreen leaf that tough.", basis: "GloBI — HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM); Xerces Society." },
       { wildlifeId: "painted-lady", support: "nectar", note: "Its little urn-shaped flowers come out in spring and are worked by butterflies as well as bees.", basis: "GloBI — iNaturalist observation records; Xerces Society." },
       { wildlifeId: "acorn-birds", support: "berries", note: "Madrone berries are a signature fall-winter food of band-tailed pigeons and are taken by robins and waxwings.", basis: "Audubon; USDA PLANTS." },
@@ -1491,6 +1568,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "berry-songbirds", support: "berries", note: "A heavy early crop of orange-to-red berries for thrushes, tanagers, and robins.", basis: "Cornell Lab; USDA PLANTS." },
     ],
     "sambucus-racemosa": [
+      { wildlifeId: "band-tailed-pigeon", support: "berries", note: "In western Oregon, band-tailed pigeons feed heavily on red elderberry — one of the two or three fruits they lean on most through the season.", basis: "WDFW; USFS FEIS." },
       { wildlifeId: "cedar-waxwing", support: "berries", note: "The June avalanche of scarlet berries is stripped by waxwings and band-tailed pigeons within days.", basis: "Cornell Lab; USDA PLANTS." },
       { wildlifeId: "berry-songbirds", support: "berries", note: "Tanagers, grosbeaks, and thrushes all crowd into a fruiting red elderberry.", basis: "Cornell Lab." },
     ],
@@ -1605,6 +1683,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "berry-songbirds", support: "berries", note: "The fat hips hold on through the winter for robins, towhees, and grouse, and the thorny thicket is deep nesting cover.", basis: "Cornell Lab; USDA PLANTS." },
     ],
     "ceanothus-sanguineus": [
+      { wildlifeId: "echo-azure", support: "host", note: "Ceanothus is a favourite of the echo azure too; its little caterpillars feed among the frothy flower clusters.", basis: "Washington Butterfly Association; BAMONA." },
       { wildlifeId: "pale-swallowtail", support: "host", reliance: "narrow", note: "Ceanothus is the pale swallowtail's classic caterpillar plant, and this is the west side's own species of it — the genus this list had been missing.", basis: "BAMONA; Xerces Society." },
       { wildlifeId: "ceanothus-silkmoth", support: "host", reliance: "narrow", note: "The West's giant silkmoth is named after this shrub: the fat green caterpillars grow up on ceanothus and spin their cocoons in it.", basis: "BAMONA; Xerces Society." },
       { wildlifeId: "mason-bees", support: "nectar", note: "Foaming white flower clusters in late spring, worked steadily by mason and mining bees.", basis: "Xerces Society." },
@@ -1615,6 +1694,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "bumble-bees", support: "nectar", note: "Blueberry-family flowers need a bumble bee's buzz to shake the pollen loose, which is why she is the one you see on them.", basis: "Xerces Society; USDA NRCS." },
     ],
     "frangula-purshiana": [
+      { wildlifeId: "band-tailed-pigeon", support: "berries", note: "Cascara is the other pillar of the band-tailed pigeon's Northwest diet — its berries taken as they blacken in late summer.", basis: "WDFW; USFS FEIS." },
       { wildlifeId: "pale-swallowtail", support: "host", note: "Cascara is one of the pale swallowtail's caterpillar trees, alongside oceanspray and ceanothus.", basis: "BAMONA; Xerces Society." },
       { wildlifeId: "berry-songbirds", support: "berries", note: "Berries turn red then black in late summer and are stripped by band-tailed pigeons, robins and thrushes — which is how cascara seedlings arrive in a garden.", basis: "Cornell Lab; USFS FEIS." },
       { wildlifeId: "bumble-bees", support: "nectar", note: "Small green flowers that look like nothing and are covered in bees, hoverflies and predatory wasps.", basis: "Xerces Society." },

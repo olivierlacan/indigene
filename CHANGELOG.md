@@ -27,6 +27,15 @@ subtitle on the What's new page.
 
 ### Added
 
+- **Six more Northwest natives.** The Pacific Northwest roster gains thimbleberry,
+  dwarf Oregon grape, goat's beard, Pacific bleeding heart, meadow checkermallow
+  and tufted hairgrass — filling out its moist-shade, dry-shade and wet-prairie
+  corners. [See the region](https://indigene.app/regions/pnw)
+- **And four creatures to meet.** New on the wildlife pages: the echo azure, the
+  ghostly Clodius parnassian (its caterpillars eat only bleeding heart), the
+  band-tailed pigeon that lives on elderberry and cascara, and the native bees
+  that specialize on checkermallow. [Meet them](https://indigene.app/wildlife)
+
 - **Northern Michigan is on the map.** Indigene now covers the tip of Michigan's
   Lower Peninsula around Petoskey and Little Traverse Bay — 46 native plants for
   its cool, lime-rich northern-hardwood and white-pine country.

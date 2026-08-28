@@ -18,7 +18,7 @@
     ],
     "note": "External identifiers are filled by scripts/reconcile.mjs; 'indigene' is our catalog id."
   },
-  "count": 319,
+  "count": 324,
   "unreconciled": 2,
   "entries": [
     {
@@ -905,6 +905,35 @@
       ]
     },
     {
+      "primaryId": "ipni:20973-2",
+      "scientificName": "Aruncus dioicus",
+      "family": "Rosaceae",
+      "form": "perennial",
+      "rank": "species",
+      "keystone": false,
+      "identifiers": {
+        "ipni": "20973-2",
+        "wfo": "wfo-0001018107",
+        "gbif": "5362136",
+        "usda": "ARDI8",
+        "itis": "25130",
+        "inat": "75600",
+        "wikidata": "Q163763",
+        "indigene": "aruncus-dioicus"
+      },
+      "commonNames": [
+        "Goat's Beard"
+      ],
+      "aliases": [
+        "aruncus dioicus",
+        "goat's beard"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
       "primaryId": "ipni:94272-1",
       "scientificName": "Asclepias fascicularis",
       "family": "Apocynaceae",
@@ -1132,6 +1161,34 @@
       "aliases": [
         "berberis aquifolium",
         "tall oregon grape"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
+      "primaryId": "ipni:31492-2",
+      "scientificName": "Berberis nervosa",
+      "family": "Berberidaceae",
+      "form": "shrub",
+      "rank": "species",
+      "keystone": false,
+      "identifiers": {
+        "ipni": "31492-2",
+        "wfo": "wfo-0000563585",
+        "gbif": "3033877",
+        "itis": "18825",
+        "inat": "75756",
+        "wikidata": "Q19848987",
+        "indigene": "berberis-nervosa"
+      },
+      "commonNames": [
+        "Dwarf Oregon Grape"
+      ],
+      "aliases": [
+        "berberis nervosa",
+        "dwarf oregon grape"
       ],
       "cultivarOf": null,
       "regions": [
@@ -2590,15 +2647,47 @@
         "indigene": "deschampsia-cespitosa"
       },
       "commonNames": [
+        "Tufted Hairgrass",
         "Tufted Hair-grass"
       ],
       "aliases": [
         "deschampsia cespitosa",
-        "tufted hair-grass"
+        "tufted hair-grass",
+        "tufted hairgrass"
       ],
       "cultivarOf": null,
       "regions": [
+        "pnw",
         "france-atlantic"
+      ]
+    },
+    {
+      "primaryId": "ipni:672641-1",
+      "scientificName": "Dicentra formosa",
+      "family": "Papaveraceae",
+      "form": "perennial",
+      "rank": "species",
+      "keystone": false,
+      "identifiers": {
+        "ipni": "672641-1",
+        "wfo": "wfo-0000644965",
+        "gbif": "2888553",
+        "usda": "DIFO",
+        "itis": "18947",
+        "inat": "51048",
+        "wikidata": "Q1871251",
+        "indigene": "dicentra-formosa"
+      },
+      "commonNames": [
+        "Pacific Bleeding Heart"
+      ],
+      "aliases": [
+        "dicentra formosa",
+        "pacific bleeding heart"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
       ]
     },
     {
@@ -7325,6 +7414,35 @@
       ]
     },
     {
+      "primaryId": "ipni:738961-1",
+      "scientificName": "Rubus parviflorus",
+      "family": "Rosaceae",
+      "form": "shrub",
+      "rank": "species",
+      "keystone": true,
+      "identifiers": {
+        "ipni": "738961-1",
+        "wfo": "wfo-0001016292",
+        "gbif": "7872219",
+        "usda": "RUPA",
+        "itis": "25007",
+        "inat": "51646",
+        "wikidata": "Q2614003",
+        "indigene": "rubus-parviflorus"
+      },
+      "commonNames": [
+        "Thimbleberry"
+      ],
+      "aliases": [
+        "rubus parviflorus",
+        "thimbleberry"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
+      ]
+    },
+    {
       "primaryId": "ipni:223579-2",
       "scientificName": "Rubus spectabilis",
       "family": "Rosaceae",
@@ -7946,6 +8064,35 @@
       "regions": [
         "florida-central",
         "florida-south"
+      ]
+    },
+    {
+      "primaryId": "ipni:564393-1",
+      "scientificName": "Sidalcea campestris",
+      "family": "Malvaceae",
+      "form": "perennial",
+      "rank": "species",
+      "keystone": false,
+      "identifiers": {
+        "ipni": "564393-1",
+        "wfo": "wfo-0001077112",
+        "gbif": "3152730",
+        "usda": "SICA2",
+        "itis": "21858",
+        "inat": "168939",
+        "wikidata": "Q17579205",
+        "indigene": "sidalcea-campestris"
+      },
+      "commonNames": [
+        "Meadow Checkermallow"
+      ],
+      "aliases": [
+        "meadow checkermallow",
+        "sidalcea campestris"
+      ],
+      "cultivarOf": null,
+      "regions": [
+        "pnw"
       ]
     },
     {

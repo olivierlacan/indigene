@@ -37,10 +37,39 @@ depend on. Run them after the data is written.
 
 | # | Command | Produces | Gotcha |
 |---|---------|----------|--------|
-| 7 | `npm run registry:build` | `src/data/registry.ts` (+ `public/registry/…json`) | Required for `registry:check`. New taxa land with `primaryId: null` — reconciliation fills the external ids later (§4). |
+| 7 | `npm run registry:build` | `src/data/registry.ts` (+ `public/registry/…json`) | Required for `registry:check`. New taxa land with `primaryId: null` — the in-branch chain below (`reconcile` → rebuild) fills the external ids and the hero photos. |
 | 8 | `npm run maps:build <id>` | `public/maps/<id>.svg` | **Network** (EPA + Natural Earth). First add the region to the `LANDMARKS` table in the script — a few major cities that fix its edges; the builder now **refuses** to draw a region with fewer than three, because a shape with no labelled places is a blob nobody can locate themselves on. A *partial* run prints the drawn size but leaves `src/data/region-maps.ts` untouched — add the `{ w, h }` entry it reports by hand. Then look at the rendered map and check you can find a place you know on it. |
 | 9 | `node scripts/gen-plant-cards.mjs <slug…>` | `public/og/plants/<slug>.jpg` | The share/preview card for every new plant. `routes:check` fails without them. |
 | 10 | CHANGELOG entry | `CHANGELOG.md` under `## [Unreleased]` | One warm `Added` bullet; developer notes as `Internal:`. |
+
+### Populate the live-data tiers in-branch (recommended)
+
+The three network jobs in §4 *can* be left to their schedules, but for a clean,
+fully-populated PR — real photos, resolved links, real record counts on day one
+— run them by hand in the branch. They have a **strict order**, because each
+feeds the next:
+
+1. `npm run reconcile -- --missing inat` — fill the new taxa's external ids
+   (IPNI/GBIF/iNaturalist). **Do this first:** the next two both read the
+   iNaturalist id it writes.
+2. `npm run registry:build` — bake the reconciled ids into `registry.ts`.
+3. `npm run hero:inat` then `npm run hero:colors` — pull each new plant's and
+   animal's own iNaturalist photograph (the first that's CC-licensed, carried
+   with its credit) into `inat-heroes.json`, and give each an average colour to
+   fade up from. **This is what puts a real photo on a new plant or animal
+   instead of the generic drawing — always run it when adding subjects.** The
+   plant path needs the id from step 1, so a run *before* reconcile silently
+   skips every new plant; animals resolve by name and don't. A subject whose
+   whole gallery is all-rights-reserved keeps its drawing (honestly).
+4. `npm run region-counts` — refresh per-region record counts; also reads the
+   iNaturalist id, so it comes after reconcile too. It rewrites *every* region's
+   counts, so expect the others' numbers to advance to today.
+
+Commit the results: `registry.ts`, `registry.overrides.json`, the public
+registry copy, `inat-heroes.json`, `region-counts.ts`, and any new share cards.
+The screenshots won't show these photos (the headless capture can't load
+external images), but they render in a real browser — check there, not in a
+capture.
 
 ## 3. Validate before merge
 
@@ -58,20 +87,25 @@ Local tools that are **not** CI-gated but should be run for a new region:
 - `npm run prose:check` — reports locale coverage; the overlay is deliberately partial, so it never fails on a missing translation.
 - `npm run lookalikes:check` — validates any look-alike ties (network); passes cleanly when a region declares none.
 
-## 4. Heals itself after merge (scheduled)
+## 4. The schedule as a fallback (if you skip §2's chain)
 
-These run on a schedule against `main` and open their own follow-up PRs. Each
-already iterates every region / the whole registry, so a newly merged region is
-**picked up automatically** — no per-region code. They are not needed to ship,
-but a region isn't fully at parity until they've run once.
+The same jobs run on a schedule against `main` and open their own follow-up PRs.
+Each iterates every region / the whole registry, so a merged region is **picked
+up automatically** — no per-region code. If you ran §2's in-branch chain, these
+are just the ongoing refresh; if you didn't, this is how the region eventually
+reaches parity.
 
 | Phase | Workflow / command | Fills |
 |-------|--------------------|-------|
-| Record counts | `region-counts` (`build-region-counts.mjs`) | `region-counts.ts` — "how common near you / across this region." New taxa count 0 until reconciled + recounted. |
+| Record counts | `region-counts` (`build-region-counts.mjs`) | `region-counts.ts` — "how common near you / across this region." |
 | Identifier reconciliation | `reconcile` (`reconcile.mjs`) | Registry external ids (IPNI/GBIF/iNaturalist/…), so `primaryId` stops being null and external links resolve. |
-| Hero photos | `hero-photos` (`harvest-hero-photos.mjs` → review → shortlist PR) | `hero-photos.json`. Until harvested, plant cards degrade to the drawn silhouette — by design. |
+| iNaturalist hero floor | `hero:inat` (in §2 above) — no scheduled job | `inat-heroes.json` — a real photo per subject. Run in-branch; there is no workflow that fills this for you. |
 
-> To not wait for the schedule, any of these can be run by hand (all network-heavy).
+The one genuinely later step is the **reviewed** hero tier: `hero:harvest`
+ranks CC candidates per region into a shortlist, and a person picks the winner
+into `hero-photos.json`, which overrides the iNaturalist floor wherever a pick
+exists. That review sitting is optional and can happen any time — the floor from
+§2 means a new subject already shows a real photo until then.
 
 ## 5. French (separate pass — excluded here)
 
@@ -94,11 +128,16 @@ measures the coverage.
 [ ] npm run maps:build <id>             + region-maps.ts size entry
 [ ] node scripts/gen-plant-cards.mjs <slugs>
 [ ] CHANGELOG.md Unreleased bullet
+— live-data tiers, IN ORDER (reconcile feeds the rest) —
+[ ] npm run reconcile -- --missing inat   (external ids for the new taxa)
+[ ] npm run registry:build                (bake the ids in)
+[ ] npm run hero:inat && hero:colors      (real iNaturalist photo per new plant/animal)
+[ ] npm run region-counts                 (record counts; rewrites every region)
 [ ] typecheck · build · registry:check · routes:check · blurbs:check · release-notes
 [ ] coverage -- --region <id>           (read the gaps)
 [ ] chunks:check · prose:check · lookalikes:check
-— after merge, automatically —
-[ ] region-counts · reconcile · hero-photos  (scheduled; auto-pick-up)
+— optional, any time —
+[ ] hero:harvest → review → hero-photos.json  (reviewed pick overrides the floor)
 — separate pass —
 [ ] French: regions.fr.ts · taxa.fr.ts · prose.fr/
 ```

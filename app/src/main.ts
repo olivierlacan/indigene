@@ -479,6 +479,19 @@ async function boot(): Promise<void> {
   if ("serviceWorker" in navigator && import.meta.env.PROD) {
     navigator.serviceWorker
       .register(`${import.meta.env.BASE_URL}sw.js`)
+      .then((reg) => {
+        // Ask for a newer worker now and every time the app returns to the
+        // foreground. An installed iOS Home Screen app otherwise only checks on
+        // its own lazy schedule, so a shipped fix (this one included) could take
+        // a day to reach a device that's always "open". The worker calls
+        // skipWaiting + clients.claim, so a found update takes over promptly and
+        // the next navigation is served fresh.
+        const check = () => void reg.update().catch(() => {});
+        check();
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState === "visible") check();
+        });
+      })
       .catch(() => {});
   }
   void warmOwnRegion();

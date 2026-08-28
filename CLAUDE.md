@@ -137,10 +137,20 @@ new UI — the MR description must show it, not just describe it. The procedure:
      "http://127.0.0.1:4173/#/<route>" before-dark.png --scheme dark
    ```
 
-   Repeat with `--scheme light` and against the after port. Use
-   `--no-full-page` when the change is tiny (a viewport crop is kinder), and
-   `--dpr 1` for very long pages (a results list or the release notes at 3×
-   makes a 30k-pixel-tall bitmap — huge files, and Chromium may clip it).
+   Repeat with `--scheme light` and against the after port.
+
+   **Default to a focused viewport crop, not a full-page shot.** These images
+   commit to the repo and accumulate, and a towering full-page capture of a long
+   list — a plant page, a wildlife page, a region roster, the release notes — is
+   a multi-hundred-KB (often megabyte) file that mostly shows a list already in
+   the diff. So pass `--no-full-page` (optionally `--viewport` to frame the part
+   that changed) and screenshot **the thing that actually changed**, not the
+   whole scroll. A full-page shot is earned only when the layout of the *whole
+   page* is the subject — a genuine design/layout comparison — and even then use
+   `--dpr 1` on a long page (a 3× full-page list becomes a 30k-pixel-tall bitmap
+   Chromium may clip). When in doubt, fewer and smaller: one crop that shows the
+   change beats a stack of full-page towers.
+
    The script exists because the Playwright CLI can't set pixel ratio with
    chromium — its iPhone descriptors force WebKit, which isn't installed.
 

@@ -134,6 +134,15 @@
     "attribution": "(c) Valentin Hamon, some rights reserved (CC BY-NC), uploaded by Valentin Hamon",
     "color": "#8a7a64"
   },
+  "aruncus-dioicus": {
+    "taxonId": 75600,
+    "photoId": 153826729,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/153826729/square.jpg",
+    "observer": "BlueRidgeKitties",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) BlueRidgeKitties, some rights reserved (CC BY-NC-SA)",
+    "color": "#3f4b42"
+  },
   "asclepias-fascicularis": {
     "taxonId": 56851,
     "photoId": 514857843,
@@ -169,6 +178,24 @@
     "license": "cc-by-nc-sa",
     "attribution": "(c) c michael hogan, some rights reserved (CC BY-NC-SA), uploaded by c michael hogan",
     "color": "#525b3f"
+  },
+  "band-tailed-pigeon": {
+    "taxonId": 3108,
+    "photoId": 4610902,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/4610902/square.jpeg",
+    "observer": "Paul Fenwick",
+    "license": "cc-by-nc",
+    "attribution": "(c) Paul Fenwick, some rights reserved (CC BY-NC), uploaded by Paul Fenwick",
+    "color": "#8e866d"
+  },
+  "berberis-nervosa": {
+    "taxonId": 75756,
+    "photoId": 127348129,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/127348129/square.jpg",
+    "observer": "Emily Scherer",
+    "license": "cc-by-nc",
+    "attribution": "(c) Emily Scherer, some rights reserved (CC BY-NC), uploaded by Emily Scherer",
+    "color": "#828340"
   },
   "betula-papyrifera": {
     "taxonId": 49883,
@@ -404,6 +431,15 @@
     "attribution": "(c) Damon Tighe, some rights reserved (CC BY-NC), uploaded by Damon Tighe",
     "color": "#8c915c"
   },
+  "clodius-parnassian": {
+    "taxonId": 68239,
+    "photoId": 670629145,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/670629145/square.jpg",
+    "observer": "lygodactylus",
+    "license": "cc-by-nc",
+    "attribution": "(c) lygodactylus, some rights reserved (CC BY-NC)",
+    "color": "#887d59"
+  },
   "comma": {
     "taxonId": 56225,
     "photoId": 155133827,
@@ -448,6 +484,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Ina Siebert, some rights reserved (CC BY-NC), uploaded by Ina Siebert",
     "color": "#6b743f"
+  },
+  "dicentra-formosa": {
+    "taxonId": 51048,
+    "photoId": 76022505,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/76022505/square.jpg",
+    "observer": "brock",
+    "license": "cc-by-nc",
+    "attribution": "(c) brock, some rights reserved (CC BY-NC), uploaded by brock",
+    "color": "#5d955f"
   },
   "diervilla-lonicera": {
     "taxonId": 67983,
@@ -538,6 +583,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) David Alan Rogers, some rights reserved (CC BY-NC), uploaded by David Alan Rogers",
     "color": "#837d58"
+  },
+  "echo-azure": {
+    "taxonId": 52484,
+    "photoId": 367063891,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/367063891/square.jpg",
+    "observer": "Jack Wickel",
+    "license": "cc-by-nc",
+    "attribution": "(c) Jack Wickel, some rights reserved (CC BY-NC), uploaded by Jack Wickel",
+    "color": "#6d7953"
   },
   "elephant-hawk-moth": {
     "taxonId": 55996,
@@ -980,6 +1034,15 @@
     "attribution": "(c) Thorny Toad Photography, some rights reserved (CC BY-NC), uploaded by Thorny Toad Photography",
     "color": "#87836c"
   },
+  "mallow-specialist-bees": {
+    "taxonId": 121512,
+    "photoId": 34710610,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/34710610/square.jpg",
+    "observer": "Tom Barnes",
+    "license": "cc-by-nc",
+    "attribution": "(c) Tom Barnes, some rights reserved (CC BY-NC), uploaded by Tom Barnes",
+    "color": "#9d7d17"
+  },
   "malosma-laurina": {
     "taxonId": 64122,
     "photoId": 2121812,
@@ -1340,6 +1403,15 @@
     "attribution": "(c) jraus, some rights reserved (CC BY-SA)",
     "color": "#4f5938"
   },
+  "rubus-parviflorus": {
+    "taxonId": 51646,
+    "photoId": 132211198,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/132211198/square.jpeg",
+    "observer": "Gavin Slater",
+    "license": "cc-by",
+    "attribution": "(c) Gavin Slater, some rights reserved (CC BY), uploaded by Gavin Slater",
+    "color": "#697d4c"
+  },
   "rubus-ursinus": {
     "taxonId": 53445,
     "photoId": 624755302,
@@ -1438,6 +1510,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Devon Bradley, some rights reserved (CC BY-NC), uploaded by Devon Bradley",
     "color": "#837433"
+  },
+  "sidalcea-campestris": {
+    "taxonId": 168939,
+    "photoId": 3907847,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/3907847/square.JPG",
+    "observer": "Mart Hughes",
+    "license": "cc-by-nc",
+    "attribution": "(c) Mart Hughes, some rights reserved (CC BY-NC), uploaded by Mart Hughes",
+    "color": "#878674"
   },
   "silver-spotted-skipper": {
     "taxonId": 81559,

@@ -4,7 +4,8 @@
  *
  * Strategy:
  *   - App shell + built assets: stale-while-revalidate (instant, self-healing).
- *   - Navigations: serve the cached shell so the app boots offline.
+ *   - Navigations: network-first with the HTTP cache bypassed, so a fresh
+ *     deploy shows on the next load; the cached shell answers only when offline.
  *   - Site-data API calls (soil, elevation, climate): network-first, but every
  *     successful response is cached so a spot you looked up once works forever
  *     offline. This is the promise the product makes: "every result cached".
@@ -99,10 +100,18 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET") return;
   const url = new URL(request.url);
 
-  // Navigations: shell-first so the app opens with no network.
+  // Navigations: always go to the network, and **bypass the HTTP disk cache**
+  // (`cache: "no-store"`) so a fresh deploy shows up on the very next load.
+  // Without that, an installed iOS PWA answers a page load — a tapped link, a
+  // `location.reload()` from the Reload row or the pull-down — out of its own
+  // disk cache, and a new release (the What's new page is the obvious victim)
+  // can stay invisible for hours no matter how many times you reload. The HTML
+  // is small and the assets it pulls are hashed and cached separately, so the
+  // cost is one conditional-free request per navigation. Offline, the fetch
+  // rejects and we fall back to the cached shell so the app still opens.
   if (request.mode === "navigate") {
     event.respondWith(
-      fetch(request).catch(() =>
+      fetch(request, { cache: "no-store" }).catch(() =>
         caches.match(`${BASE}index.html`).then((r) => r || caches.match(BASE))
       )
     );

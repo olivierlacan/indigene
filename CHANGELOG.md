@@ -219,6 +219,11 @@ subtitle on the What's new page.
 
 ### Fixed
 
+- **The app picks up a new release without a fight now.** Installed to an iPhone
+  Home Screen, Indigene could keep showing an old version through every reload,
+  because it reloaded from its own cache. A reload now always checks the web
+  first. [What's new](https://indigene.app/release-notes/)
+
 - **Nearly enough sun is no longer a complaint.** A plant wanting an hour more
   sun than your spot gets was told off for it, quoting two numbers that rounded
   to the same one. It now says it may just not grow as well.

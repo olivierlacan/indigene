@@ -25,6 +25,10 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+## [0.27] - 2026-08-28
+
+**The creatures your plants feed, now with faces to match**
+
 ### Added
 
 - **Six more Northwest natives.** The Pacific Northwest roster gains thimbleberry,
@@ -2112,7 +2116,8 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/22a030f...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/ba4c7c1...HEAD
+[0.27]: https://github.com/olivierlacan/indigene/compare/22a030f...ba4c7c1
 [0.26]: https://github.com/olivierlacan/indigene/compare/b57fea1...22a030f
 [0.25]: https://github.com/olivierlacan/indigene/compare/8f6327b...4536697
 [0.24]: https://github.com/olivierlacan/indigene/compare/e8860f8...8f6327b

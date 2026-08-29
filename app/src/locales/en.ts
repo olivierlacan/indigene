@@ -53,9 +53,10 @@ export const en = {
   "pullToReload.release": "Release to reload",
   "pullToReload.reloading": "Reloading…",
   "footer.text":
-    "Open-source (MIT), built on public scientific data — {sources}, and how sure we are of each one.",
+    "{repo}, {sources}.",
+  "footer.repo": "Open-source",
   "footer.about": "About",
-  "footer.sources": "where our numbers come from",
+  "footer.sources": "built on public data",
   "footer.guide": "Guide",
   "footer.releaseNotes": "What's new",
   "footer.privacy": "Privacy & safety",

@@ -77,6 +77,7 @@ function renderFooter(): void {
   if (p) {
     p.replaceChildren(
       ...tx("footer.text", {
+        repo: el("a", { href: "https://github.com/olivierlacan/indigene" }, t("footer.repo")),
         sources: el("a", { href: "#/sources" }, t("footer.sources")),
       })
     );

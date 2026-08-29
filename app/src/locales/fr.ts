@@ -49,9 +49,10 @@ export const fr: Dict = {
   "pullToReload.release": "Relâchez pour recharger",
   "pullToReload.reloading": "Rechargement…",
   "footer.text":
-    "Libre (licence MIT), bâti sur des données scientifiques publiques — {sources}, et à quel point nous en sommes sûrs.",
+    "{repo}, {sources}.",
+  "footer.repo": "Libre",
   "footer.about": "À propos",
-  "footer.sources": "d'où viennent nos chiffres",
+  "footer.sources": "bâti sur des données publiques",
   "footer.guide": "Guide",
   "footer.releaseNotes": "Nouveautés",
   "footer.privacy": "Vie privée et sécurité",

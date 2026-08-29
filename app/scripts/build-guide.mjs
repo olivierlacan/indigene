@@ -264,7 +264,7 @@ a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .card-body { min-width: 0; }
 .card-body h2 { margin: 0; font-size: 1.15rem; color: var(--brand-ink); }
 .card-body p { margin: 0.2rem 0 0; color: var(--ink-soft); font-size: 0.95rem; }
-.card-updated { margin: 0.35rem 0 0; font-size: 0.8rem; color: var(--ink-soft); }
+.updated { margin: 0.1rem 0 0; font-size: 0.85rem; color: var(--ink-soft); }
 .card-arrow { margin-left: auto; align-self: center; color: var(--brand); flex: none; }
 
 /* A single section's page. */
@@ -400,6 +400,7 @@ function renderSectionPage(section, items) {
     body: `<a class="back" href="../">&larr; The guide</a>
 <h1>${escapeHtml(section.title)}</h1>
 <p class="lede">${escapeHtml(section.tagline)}</p>
+${items.length ? `<p class="updated">Last updated ${escapeHtml(monthYear(items[0].date))}</p>` : ""}
 ${doc.join("\n")}
 ${renderHistory(items)}`,
   });
@@ -407,21 +408,16 @@ ${renderHistory(items)}`,
 
 function renderIndex(published, historyById) {
   const cards = published
-    .map((s) => {
-      const items = historyById.get(s.id);
-      const updated = items.length
-        ? `<p class="card-updated">Last updated ${escapeHtml(monthYear(items[0].date))}</p>`
-        : "";
-      return `<a class="card" href="${s.id}/">
+    .map(
+      (s) => `<a class="card" href="${s.id}/">
 <span class="card-emoji" aria-hidden="true">${s.emoji}</span>
 <span class="card-body">
 <h2>${escapeHtml(s.title)}</h2>
 <p>${escapeHtml(s.tagline)}</p>
-${updated}
 </span>
 <span class="card-arrow" aria-hidden="true">&rarr;</span>
-</a>`;
-    })
+</a>`,
+    )
     .join("\n");
 
   return shell({

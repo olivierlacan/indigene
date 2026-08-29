@@ -47,34 +47,37 @@ export function renderChrome(): void {
 }
 
 function renderFooter(): void {
+  // The row of other pages. Guide and What's new are real paths, not hash
+  // routes, and Vite has already substituted %BASE_URL% into the static markup
+  // — so read those hrefs back off the existing anchors rather than rebuilding
+  // them and getting the base wrong. About and Privacy are hash routes.
+  const nav = document.getElementById("footer-nav");
+  if (nav) {
+    const hrefOf = (suffix: string, fallback: string) =>
+      nav.querySelector<HTMLAnchorElement>(`a[href$="${suffix}"]`)?.getAttribute("href") ?? fallback;
+    const sep = () => el("span", { class: "footer-nav-sep", "aria-hidden": "true" }, "·");
+    nav.replaceChildren(
+      el("a", { href: hrefOf("guide/", "guide/") }, t("footer.guide")),
+      sep(),
+      // The dot rides inside the link, so the words it carries become part of
+      // the link's own accessible name rather than a separate stop.
+      el(
+        "a",
+        { href: hrefOf("release-notes/", "release-notes/") },
+        hasUnseenRelease() ? [t("footer.releaseNotes"), newDot()] : [t("footer.releaseNotes")]
+      ),
+      sep(),
+      el("a", { href: "#/about" }, t("footer.about")),
+      sep(),
+      el("a", { href: "#/privacy" }, t("footer.privacy"))
+    );
+  }
+
   const p = document.getElementById("footer-text");
   if (p) {
-    // The release-notes link is a real path, not a hash route, and Vite has
-    // already substituted %BASE_URL% into the markup — so read the href off
-    // the existing anchor rather than rebuilding it and getting the base wrong.
-    const existingNotes = p.querySelector<HTMLAnchorElement>('a[href$="release-notes/"]');
-    // The guide is a real path too, resolved by Vite; read its href off the
-    // existing anchor for the same reason the notes link does.
-    const existingGuide = p.querySelector<HTMLAnchorElement>('a[href$="guide/"]');
     p.replaceChildren(
       ...tx("footer.text", {
         sources: el("a", { href: "#/sources" }, t("footer.sources")),
-        about: el("a", { href: "#/about" }, t("footer.about")),
-        guide: el(
-          "a",
-          { href: existingGuide?.getAttribute("href") ?? "guide/" },
-          t("footer.guide")
-        ),
-        // The dot rides inside the link, so the words it carries become part of
-        // the link's own accessible name rather than a separate stop.
-        releaseNotes: el(
-          "a",
-          { href: existingNotes?.getAttribute("href") ?? "release-notes/" },
-          hasUnseenRelease()
-            ? [t("footer.releaseNotes"), newDot()]
-            : [t("footer.releaseNotes")]
-        ),
-        privacy: el("a", { href: "#/privacy" }, t("footer.privacy")),
       })
     );
   }

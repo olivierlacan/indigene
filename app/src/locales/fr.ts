@@ -49,8 +49,8 @@ export const fr: Dict = {
   "pullToReload.release": "Relâchez pour recharger",
   "pullToReload.reloading": "Rechargement…",
   "footer.text":
-    "{repo}, {sources}.",
-  "footer.repo": "Libre",
+    "Indigene est {repo} et {sources}.",
+  "footer.repo": "libre",
   "footer.about": "À propos",
   "footer.sources": "bâti sur des données publiques",
   "footer.guide": "Guide",

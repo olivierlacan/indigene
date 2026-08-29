@@ -53,8 +53,8 @@ export const en = {
   "pullToReload.release": "Release to reload",
   "pullToReload.reloading": "Reloading…",
   "footer.text":
-    "{repo}, {sources}.",
-  "footer.repo": "Open-source",
+    "Indigene is {repo} and {sources}.",
+  "footer.repo": "open source",
   "footer.about": "About",
   "footer.sources": "built on public data",
   "footer.guide": "Guide",

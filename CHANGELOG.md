@@ -45,6 +45,12 @@ subtitle on the What's new page.
   leading word that isn't a known section is just prose, so this never fails a
   build; `guide:check` reports what filed where.
 
+### Changed
+
+- **New gardens start in metric.** Metres and centimetres are the default now,
+  wherever you are; switch to imperial — or “follow my device” — any time under
+  Units in Settings.
+
 ## [0.27] - 2026-08-28
 
 **The creatures your plants feed, now with faces to match**

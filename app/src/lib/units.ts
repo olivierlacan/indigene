@@ -23,8 +23,10 @@
 import { fmtNumber, getLang, t } from "./i18n";
 
 export type UnitSystem = "imperial" | "metric";
-/** What the user actually chose. "auto" means "follow my language", and it's
- *  the default — but an explicit pick is remembered and always wins. */
+/** What the user actually chose. "auto" means "follow my device's region"; an
+ *  explicit pick is remembered and always wins. Before any pick, the default is
+ *  metric — the units most of the world gardens in — and "auto" is there for
+ *  anyone who'd rather the app read it from their device. */
 export type UnitPref = UnitSystem | "auto";
 
 const STORAGE_KEY = "indigene:units";
@@ -53,9 +55,11 @@ function readPref(): UnitPref {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (isPref(saved)) return saved;
   } catch {
-    // Private-mode Safari throws. Fall through to auto.
+    // Private-mode Safari throws. Fall through to the default.
   }
-  return "auto";
+  // The default before anyone picks: metric, everywhere. Someone who wants
+  // their device's region to decide can choose "auto" in Settings.
+  return "metric";
 }
 
 let pref: UnitPref = readPref();

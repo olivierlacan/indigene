@@ -852,8 +852,34 @@ a {
 }
 .app-footer p {
   margin: 0;
+}
+/* The top edge of the footer, and the line before the settings, sit on the nav
+   row and the prefs row. The sentence between them shares the nav's group, so
+   it carries no line of its own — otherwise the four links, the sentence and
+   the two pills read as three unrelated blocks. */
+.footer-nav,
+.footer-prefs {
   border-top: 1px solid var(--line);
   padding-top: 1rem;
+}
+/* The other pages, in a row. Wraps at 360px (or with the text scaled up) rather
+   than pushing the page wider; a middot sits between links but never leads a
+   wrapped line, because it's a separate item the wrap can land on. */
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.15rem 0.55rem;
+  margin-bottom: 0.85rem;
+}
+.footer-nav a {
+  color: var(--focus);
+}
+.footer-nav-sep {
+  color: var(--ink-soft);
+}
+#footer-text {
+  margin-bottom: 0.85rem;
 }
 /* Language and units, side by side — two settings, so two links (see the note
    in index.html). Flex with a wrap so that at 360px, or with the text scaled

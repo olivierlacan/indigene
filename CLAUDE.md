@@ -215,8 +215,30 @@ rules:
   `Unreleased`. No fixed cadence, no conventional commits — the version number
   just increments when a feature ships.
 
-Two more conventions the compiler understands:
+Three more conventions the compiler understands:
 
+- **Name the section, when it isn't already linked.** The guide at
+  `/guide/` is compiled from this changelog: each entry is filed under the
+  part of the app it changed, and shows up in that part's plain-words history.
+  An entry that links to the part (`https://indigene.app/wildlife`) is filed by
+  that link, so most need nothing extra. For one that links nowhere — or that
+  touches more than one part — start it with the section's name and a colon:
+
+  ```markdown
+  - Regions: North Michigan is on the map — 46 native plants for its cool,
+    lime-rich country.
+  - Regions & Wildlife: the ranked list now shows a photo beside each plant.
+  ```
+
+  This is prose, not syntax: it reads as a sentence, it shows on the What's-new
+  page like any other words, and it only files a change because it matches a
+  section name — the same shape as this file's `Internal:` and Keep a
+  Changelog 2.0's `**Breaking:**`. A leading word that *isn't* a section name
+  is just prose ("Note: …"), so a prefix can never break the build. The names
+  are the `label`s in `app/scripts/guide-catalog.mjs` (currently Finder,
+  Wildlife, Regions, Plants, Planting, Look-alikes, Privacy, Sources); most
+  entries need no prefix at all. Don't force one — a change that isn't really
+  about a section stays plain.
 - **Link what you describe.** When an entry mentions something with an
   address — a page, a section — link it with the full live URL
   (`https://indigene.app/wildlife`), so a reader who

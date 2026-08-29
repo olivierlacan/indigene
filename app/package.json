@@ -17,6 +17,8 @@
     "chunks:check": "node scripts/check-chunks.mjs",
     "release-notes": "node scripts/build-release-notes.mjs",
     "notes:check": "node scripts/check-notes-lightbox.mjs",
+    "guide": "node scripts/build-guide.mjs",
+    "guide:check": "node scripts/build-guide.mjs --check",
     "coverage": "node scripts/coverage.mjs",
     "wildlife": "NODE_USE_ENV_PROXY=1 node scripts/wildlife-candidates.mjs",
     "candidates": "NODE_USE_ENV_PROXY=1 node scripts/candidates.mjs",

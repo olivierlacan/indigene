@@ -75,6 +75,16 @@ jobs:
         working-directory: app
         run: npm run release-notes
 
+      # The guide (a plain-words user guide and discovery tool) is compiled from
+      # the same CHANGELOG.md plus the curated catalog in scripts/guide-catalog.mjs.
+      # Entries file under a section by the indigene.app link they carry or a
+      # prose prefix ("Regions: …") matched against the catalog's labels. It
+      # lands in dist/guide/ before the artifact upload, so it republishes on
+      # every merge that touches the changelog; a malformed changelog fails here.
+      - name: Build the guide from CHANGELOG.md
+        working-directory: app
+        run: npm run guide
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: app/dist

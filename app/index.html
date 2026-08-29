@@ -184,12 +184,22 @@
     <!-- Site-wide footer: static so it shows on every page, even if a render
          fails. %BASE_URL% is replaced by Vite at build time. -->
     <footer class="app-footer">
+      <!-- The other pages, as a row of their own so the sentence below isn't a
+           pile-up of links. chrome.ts rebuilds this to localise the labels and
+           put the "new" dot on What's new; the hrefs it reads back from here,
+           since Vite has already resolved %BASE_URL%. -->
+      <nav class="footer-nav" id="footer-nav" aria-label="More pages">
+        <a href="%BASE_URL%guide/">Guide</a>
+        <span class="footer-nav-sep" aria-hidden="true">·</span>
+        <a href="%BASE_URL%release-notes/">What's new</a>
+        <span class="footer-nav-sep" aria-hidden="true">·</span>
+        <a href="#/about">About</a>
+        <span class="footer-nav-sep" aria-hidden="true">·</span>
+        <a href="#/privacy">Privacy &amp; safety</a>
+      </nav>
       <p id="footer-text">
-        Open-source (MIT), built on public scientific data —
-        <a href="#/sources">where our numbers come from</a>, and how sure we are
-        of each one. <a href="#/about">About</a>.
-        <a href="%BASE_URL%release-notes/">See what's new</a>.
-        <a href="#/privacy">Privacy &amp; safety</a>.
+        Indigene is <a href="https://github.com/olivierlacan/indigene">open source</a>
+        and <a href="#/sources">built on public data</a>.
       </p>
       <!-- Language & units — two links, because they are two settings. Written
            as one "English · Imperial" line they read as a single "locale"

@@ -49,10 +49,12 @@ export const fr: Dict = {
   "pullToReload.release": "Relâchez pour recharger",
   "pullToReload.reloading": "Rechargement…",
   "footer.text":
-    "Libre (licence MIT), bâti sur des données scientifiques publiques — {sources}, et à quel point nous en sommes sûrs. {about}. {releaseNotes}. {privacy}.",
+    "Indigene est {repo} et {sources}.",
+  "footer.repo": "libre",
   "footer.about": "À propos",
-  "footer.sources": "d'où viennent nos chiffres",
-  "footer.releaseNotes": "Voir les nouveautés",
+  "footer.sources": "bâti sur des données publiques",
+  "footer.guide": "Guide",
+  "footer.releaseNotes": "Nouveautés",
   "footer.privacy": "Vie privée et sécurité",
   // Lu à voix haute à côté du point vert, et intégré au nom accessible de la
   // roue dentée. Un point est une couleur et une forme : seul, il ne dit rien

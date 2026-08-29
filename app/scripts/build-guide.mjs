@@ -226,6 +226,7 @@ function shell({ title, description, canonical, body, root = "../" }) {
 :root {
   --bg: #f7f5ef; --surface: #ffffff; --ink: #14140f; --ink-soft: #3d3d34;
   --line: #cfcabb; --brand: #175e33; --brand-ink: #0d3d20; --brand-bg: #e2efe4;
+  --on-brand: #ffffff; /* text on a --brand fill; flips dark so it never goes white-on-light-green */
   --focus: #1747b3; --radius: 14px; --maxw: 34rem;
   color-scheme: light dark; font-size: 112.5%;
 }
@@ -233,7 +234,7 @@ function shell({ title, description, canonical, body, root = "../" }) {
   :root {
     --bg: #14160f; --surface: #1e2118; --ink: #f2f1e8; --ink-soft: #cdcdbd;
     --line: #3c4232; --brand: #7ec894; --brand-ink: #b9e6c6; --brand-bg: #1f3326;
-    --focus: #8fb3ff;
+    --on-brand: #082b16; --focus: #8fb3ff;
   }
 }
 * { box-sizing: border-box; }
@@ -282,7 +283,7 @@ a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.4rem 0 0; }
 .chip {
   display: inline-block; padding: 0.4rem 0.85rem; border-radius: 999px;
-  background: var(--brand); color: #fff; text-decoration: none;
+  background: var(--brand); color: var(--on-brand); text-decoration: none;
   font-size: 0.9rem; font-weight: 600;
 }
 .chip.ghost { background: transparent; color: var(--focus); border: 1px solid var(--line); }

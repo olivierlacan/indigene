@@ -72,7 +72,7 @@ subtitle on the What's new page.
   each region's plant list moved to its own download — the share-card generator
   had been unable to run since, and adding a region surfaced it.
 
-- Finder & Wildlife: **the ranked list shows the plants.** The plants matched to
+- Matches & Wildlife: **The ranked list shows the plants.** The plants matched to
   your spot — and the plants on an animal's page — now carry a photograph beside
   the name instead of a drawing of a generic shrub, like every other list in the app.
 
@@ -81,11 +81,11 @@ subtitle on the What's new page.
   feed — tap a group for the names, and the number beside each one is how many
   plants here it can use. [Regions](https://indigene.app/regions)
 
-- **Your saved spots, as a file you keep.** Settings can now write every spot
+- Matches: **Your saved spots, as a file you keep.** Settings can now write every spot
   and its planting log to one plain file, and read one back in another browser —
   so a phone and a laptop can hold the same garden.
   [Take a copy](https://indigene.app/#/settings/spots).
-- **Reading a copy never overwrites anything.** Spots you already have are kept
+- Matches: **Reading a copy never overwrites anything.** Spots you already have are kept
   as they are, so bringing the same file in twice changes nothing — and a file
   we can't make sense of is turned away with a reason.
 - **Pull down to reload, on an iPhone Home Screen app.** Installed to the Home
@@ -93,28 +93,28 @@ subtitle on the What's new page.
   the top of a page brings the bee over to fetch a fresh copy.
 - **A Reload button as well, in the menu.** A drag isn't for every pair of
   hands, so the gear menu grows a Reload row wherever the pull-down lives.
-- **A plant's page now tells you how common it is around your garden, without
+- Plants: **A plant's page now tells you how common it is around your garden, without
   being asked.** If you've given the app a spot, "See it growing near you" opens
   with how often people have recorded that plant nearby — and says which spot it
   counted.
-- **A region gets an answer too.** Picked your region from a list instead of
+- Plants: **A region gets an answer too.** Picked your region from a list instead of
   sharing a spot? The page now says how often the plant is recorded across that
   whole region, from dated figures that travel with the app.
 - **A little map on every saved spot.** [Your spots](https://indigene.app/#/saved)
   and your last one in [Settings](https://indigene.app/#/settings/spot) now show
   the streets around the pin, so you can tell the alley bed from the front bed
   without reading two rows of digits.
-- **Spots say where they are in words.** "near Radnor, Pennsylvania", and each
+- Matches: **Spots say where they are in words.** "near Radnor, Pennsylvania", and each
   number now says which it is — "Latitude 40.0379° N" rather than a bare pair
   with a minus sign in front. The town is remembered when you find the spot.
-- **Saving a spot offers its town as the name.** The box that asks what to call
+- Matches: **Saving a spot offers its town as the name.** The box that asks what to call
   it starts with "Radnor, Pennsylvania" instead of a pair of coordinates —
   something to accept or edit, not something to replace.
 - **A saved spot now says what it can feed.** Its page lists every butterfly,
   bee, bird and animal the plants you've logged there are documented to support
   — with a star on any that has no other plant to turn to.
   [Your spots](https://indigene.app/saved).
-- **Two new figures at a glance.** A spot's tiles gain the number of creatures
+- Matches: **Two new figures at a glance.** A spot's tiles gain the number of creatures
   its plants can feed, and each row in your saved list carries it too — so a
   garden's reach shows without opening it.
 - **A picture for nearly every plant and animal.** The 109 plants and 70 animals
@@ -129,7 +129,7 @@ subtitle on the What's new page.
   photograph, shown next to the native it gets mistaken for — two pictures in one
   row, above the words that tell them apart. Tap either to swap between them full
   size. [Look-alikes](https://indigene.app/lookalikes)
-- **And a picture on every card in that list.** The look-alikes index used to be
+- Look-alikes: **And a picture on every card in that list.** The look-alikes index used to be
   names and paragraphs; now each one leads with the plant, for the reader
   standing under a street tree trying to work out which it is.
 - Internal: `--kind lookalikes` fills `src/data/inat-lookalikes.json` (its own
@@ -167,22 +167,22 @@ subtitle on the What's new page.
 - **The strip above the page matches the header.** Added to a phone's Home
   Screen, Indigene showed a slightly different green up at the top — and in dark
   mode a dark one under a pale header. Now it wears the header's own colour.
-- **A spot's fact boxes lead with the number.** Plants, Species, Nurtured,
+- Matches: **A spot's fact boxes lead with the number.** Plants, Species, Nurtured,
   Sustained — one word each, and the figure set large enough to read at arm's
   length.
-- **All the little fact boxes are one size now.** A label long enough to run
+- Matches: **All the little fact boxes are one size now.** A label long enough to run
   onto two lines used to make its box taller than the one beside it and knock
   the numbers out of line. On spots, plants and regions alike, they line up.
-- **A planted row says its size in five words.** "6.6 ft × 4.6 ft if thriving"
+- Matches: **A planted row says its size in five words.** "6.6 ft × 4.6 ft if thriving"
   in place of the sentence that used to wrap onto a second line, so a plant in
   your log is one line to read.
-- **A linked photo says "Sighting".** It used to show the observation's number,
+- Plants: **A linked photo says "Sighting".** It used to show the observation's number,
   which told you nothing — now a row with a sighting looks different from one
   without, and the button below offers to add another.
 - **An animal's plants are counted where the list starts.** "Plants for it —
   18" used to be a tile a screen above them. The count is now the list's own
   heading, with each region's under it. [Wildlife](https://indigene.app/wildlife)
-- **Shorter cards in that list.** Each carried a sentence about the tie, so five
+- Wildlife: **Shorter cards in that list.** Each carried a sentence about the tie, so five
   plants filled two screens. A card now gives the name, what the plant offers,
   and the source across its full width; the sentence is a tap away, on the chip.
 - **A way to search a long list.** An animal with more than a screenful of
@@ -191,7 +191,7 @@ subtitle on the What's new page.
 - **The tallies show up where they tell you something.** "Raises young on: 1"
   over a list of two plants was counting to two for you. Those boxes now wait
   for the long lists, like the [monarch](https://indigene.app/wildlife/monarch)'s.
-- **And they're the boxes a saved spot has.** Host, Shelter, Vital — one word
+- Matches: **And they're the boxes a saved spot has.** Host, Shelter, Vital — one word
   over a big number, matching your spots. Each word is the one the plants below
   wear, so you can see which five of eleven the box means.
 - **The gear menu offers Settings, not two settings.** Language and Units each
@@ -200,16 +200,16 @@ subtitle on the What's new page.
 - **Your language and units read as settings, not links.** At the foot of every
   page they're quiet pills with the value picked out, instead of two underlined
   blue phrases that looked like somewhere else to go.
-- **The sightings lookup opens in one line.** "See it near you", and a plant's
+- Plants: **The sightings lookup opens in one line.** "See it near you", and a plant's
   "See it growing near you", took three lines to say what they now say in one:
   community-verified iNaturalist photos, near a place you pick.
-- **The other places to look are one row you can swipe.** A monarch is found in
+- Wildlife: **The other places to look are one row you can swipe.** A monarch is found in
   four regions, and each was a full-width button down the card. They're chips on
   a single line now, and each still runs the lookup there.
 - **"It's yours" now includes taking it with you.**
   [Privacy](https://indigene.app/privacy) and [About](https://indigene.app/about)
   both say so, and Privacy links straight to the button that does it.
-- **The count no longer comes with a gallery attached.** It used to take the
+- Plants: **The count no longer comes with a gallery attached.** It used to take the
   same tap, and the same big download, as the photographs. Now the number
   arrives on its own, and the photos still wait until you ask for them.
 - **The app downloads about a third less to get started.** It used to carry the
@@ -248,7 +248,7 @@ subtitle on the What's new page.
   because it reloaded from its own cache. A reload now always checks the web
   first. [What's new](https://indigene.app/release-notes/)
 
-- Finder: **nearly enough sun is no longer a complaint.** A plant wanting an hour
+- Matches: **Nearly enough sun is no longer a complaint.** A plant wanting an hour
   more sun than your spot gets was told off for it, quoting two numbers that
   rounded to the same one. It now says it may just not grow as well.
 
@@ -257,17 +257,17 @@ subtitle on the What's new page.
   so there's nothing to photograph them as. Their names now line up with
   everyone else's. [Wildlife](https://indigene.app/wildlife)
 
-- **A look-alike's write-up ran to the edges of its card.** The description and
+- Look-alikes: **A look-alike's write-up ran to the edges of its card.** The description and
   its sources sat flush against the border while everything above them was
   indented. They line up now.
-- **Your last spot said where it was to the nearest hundred kilometres.**
+- Matches: **Your last spot said where it was to the nearest hundred kilometres.**
   Settings rounded the coordinates to whole degrees, so a garden outside
   Philadelphia read "40, -75". It now keeps the four decimals the saved list
   already showed.
-- **"No close-ups yet" was squeezed into a thin column.** On a plant nobody has
+- Plants: **"No close-ups yet" was squeezed into a thin column.** On a plant nobody has
   photographed for us, that line sat in one narrow photo slot, a word or two per
   line. It now runs the full width of the card, and says it in fewer words.
-- **Fact boxes stopped cutting their labels short on a big screen.** On a laptop
+- Matches: **Fact boxes stopped cutting their labels short on a big screen.** On a laptop
   a spot's boxes were narrower than the same ones on a phone, so "NURTURED" came
   out "NURTUR…". Every box now sizes itself to the space it's actually in.
 
@@ -299,21 +299,21 @@ subtitle on the What's new page.
 - **A planting log for every saved spot.** Write down what you've put in the
   ground, and the app keeps the tally: plants, kinds, and how many of them raise
   caterpillars. Open it from [your saved spots](https://indigene.app/#/saved).
-- **Dates can be as vague as you are.** Say the day, the month, or just the
+- Matches: **Dates can be as vague as you are.** Say the day, the month, or just the
   year — whatever you actually remember. The log then tells you how long a plant
   has been in and roughly how big it should be by now, from that plant's own
   measured growth.
-- **Photos, without handing us your photos.** Paste a sighting you posted on
+- Matches: **Photos, without handing us your photos.** Paste a sighting you posted on
   iNaturalist — its link, or the UUID the site copies for you — and every photo
   on it appears beside that plant. One you obscured there stays obscured; only
   your device knows the corner of the garden.
-- **"Seldom recorded around here."** On a plant's page, under the nearby
+- Plants: **"Seldom recorded around here."** On a plant's page, under the nearby
   photos, how often people have recorded it within 31 miles compared with every
   other plant — so you can put back the ones your area is short of.
 
 ### Changed
 
-- **Your saved spots list what's in them.** Each spot now shows its tally and a
+- Matches: **Your saved spots list what's in them.** Each spot now shows its tally and a
   way through to its planting log.
 - **Four of the new creatures now open with a sentence instead of a fragment or
   a paragraph.** Lorquin's admiral led a card with 42 words; the spicebush
@@ -327,7 +327,7 @@ subtitle on the What's new page.
 
 ### Fixed
 
-- **Twenty plants were citing a command you can't run.** Their sources note said
+- Sources: **Twenty plants were citing a command you can't run.** Their sources note said
   a plant was "surfaced by `npm run candidates`" — one of our tools, meaningless
   to a reader. It names the evidence now: "Occurrence records in this region's
   box: 6,819 ([GBIF](https://www.gbif.org/))."
@@ -356,19 +356,19 @@ subtitle on the What's new page.
   [Mediterranean France](https://indigene.app/regions/france-mediterranean),
   [the Alps](https://indigene.app/regions/france-alpine), and, but for two ferns,
   [the Mid-Atlantic](https://indigene.app/regions/mid-atlantic).
-- **Nine new creatures.** The red admiral, silver-spotted skipper, spicebush
+- Wildlife: **Nine new creatures.** The red admiral, silver-spotted skipper, spicebush
   swallowtail, Lorquin's admiral, anise swallowtail, eastern carpenter bee,
   bushtit, lesser goldfinch, and the brown-headed nuthatch — which uses a flake
   of bark as a tool to pry up more bark.
-- **Thirteen more Pacific Northwest natives, including the shrub the list most
+- Regions: **Thirteen more Pacific Northwest natives, including the shrub the list most
   needed.** Redstem ceanothus feeds more caterpillars than almost anything else
   out there and had been missing entirely. With it: red huckleberry, cascara,
   western trillium, fireweed, licorice fern and eight more. Seventy-one plants
   now.
-- **Something is in flower in October now.** The region had exactly one plant
+- Regions: **Something is in flower in October now.** The region had exactly one plant
   open that month. Puget Sound gumweed flowers from July until the rain
   returns, so the last bees of the year have somewhere to go.
-- **Cow parsnip has a dangerous twin, and the app now says which is which.**
+- Look-alikes: **Cow parsnip has a dangerous twin, and the app now says which is which.**
   Giant hogweed is twice the height and its sap can blind. Both burn skin in
   sunlight, so the look-alike page gives you the tells from a safe distance.
 - Internal: new `npm run wildlife -- --region <id>`
@@ -395,7 +395,7 @@ subtitle on the What's new page.
   wildlife](https://indigene.app/wildlife) printed each creature's whole
   description, so a screenful of cards was a wall of text. A card now opens
   with a sentence or two; the animal's own page still has the rest.
-- **Every animal reads shorter, in French too.** All 73 descriptions were
+- Wildlife: **Every animal reads shorter, in French too.** All 73 descriptions were
   rewritten to say the same thing and stop — the longest ran to 101 words —
   and the French was rewritten to match, so neither edition is the long one.
 - **An animal's page counts its plants in tiles.** [The
@@ -406,10 +406,10 @@ subtitle on the What's new page.
   [Wildlife](https://indigene.app/wildlife) is native, and the page names the
   regions right beside it. What's left is the part that isn't repeated: where
   it's native in the wild, and who says so.
-- **"See it near you" is half as tall on a computer.** Asking where to look and
+- Plants: **"See it near you" is half as tall on a computer.** Asking where to look and
   offering to look somewhere else were stacked down the page; they now sit side
   by side. On a phone, nothing moves.
-- **The honesty note at the foot of the wildlife pages is a footnote now** — two
+- Wildlife: **The honesty note at the foot of the wildlife pages is a footnote now** — two
   sentences in small type with the sources link on the end, instead of a
   paragraph in the middle of the page. What it dropped moved into the 📍 pills.
 - Internal: `lead()` in `lib/prose.ts` gives the index the opening of the blurb
@@ -436,17 +436,17 @@ subtitle on the What's new page.
   written rule is in CLAUDE.md under *Every word is short by default*, which
   applies to all site copy — every word here is also a word somebody
   translates into French.
-- **Region names are shorter, with the qualifier on the line below.** "Florida
+- Regions: **Region names are shorter, with the qualifier on the line below.** "Florida
   (south & the Keys)" is now **South Florida**; "Pacific Northwest (west of the
   Cascades)" is **Pacific Northwest**. The brackets had been pushing a name onto
   three lines on a phone.
-- **On a laptop the region map is a sensible size now.** It used to stretch the
+- Regions: **On a laptop the region map is a sensible size now.** It used to stretch the
   whole width of the page, which pushed the plant list off the bottom of the
   screen. On a phone, nothing changes.
-- **The list of ecoregion names under each map is gone.** It read like a
+- Regions: **The list of ecoregion names under each map is gone.** It read like a
   geology exam — "Ridge and Valley, Western Allegheny Plateau" — and the link
   underneath already says whose map the lines come from.
-- **Each region map is one shape now, and its coastline is smoother.** The lines
+- Regions: **Each region map is one shape now, and its coastline is smoother.** The lines
   dividing it into a dozen pieces answered no question anyone asks, and the
   jagged edges were an artefact of keeping the file small.
 
@@ -557,7 +557,7 @@ subtitle on the What's new page.
   succeeds on a day the deploy job can't. Runbook, including what any host has
   to do with `404.html` and how to prepare the domain for failover, in
   `docs/publishing.md`.
-- **We now count how many times each page is opened.** One outside service is
+- Privacy: **We now count how many times each page is opened.** One outside service is
   told that a page was opened, and which one. No cookie, nothing kept to
   recognise you, never your location or a spot you've saved, and search words
   are stripped off first.
@@ -565,10 +565,10 @@ subtitle on the What's new page.
   techniques now has a page of its own, with the season to do it in. [Ways to
   grow more](https://indigene.app/planting) lays them all against the four
   seasons.
-- **Every technique page says how long you'll be waiting, and how it usually
+- Planting: **Every technique page says how long you'll be waiting, and how it usually
   goes wrong.** Three to six weeks for a soft green cutting; eighteen months for
   a seed with double dormancy. Each names the one slip that wastes the attempt.
-- **The windows are seasons and signs, never dates.** February in the Florida
+- Planting: **The windows are seasons and signs, never dates.** February in the Florida
   Keys is April in Pennsylvania. So: take the cutting if a bent shoot tip snaps
   cleanly, collect fern spores when the frond backs turn brown, sow fresh seed
   the week it ripens.
@@ -590,7 +590,7 @@ subtitle on the What's new page.
   buttons and then hand you English paragraphs. Every one of them is now in
   French: all 229 plants, the 65 [animals](https://indigene.app/wildlife) and
   the 27 [look-alikes](https://indigene.app/lookalikes).
-- **Plants that grow in two regions now say the right thing in each.** Hornbeam
+- Regions: **Plants that grow in two regions now say the right thing in each.** Hornbeam
   is a garden hedge in the west of France and a great forest tree in the east.
   The French follows that split, as the English always did.
 - **You can send someone straight to one part of a plant's page.** Every heading
@@ -600,7 +600,7 @@ subtitle on the What's new page.
 
 ### Fixed
 
-- **Three groups of animals had French names that never appeared.** "Osmies et
+- Wildlife: **Three groups of animals had French names that never appeared.** "Osmies et
   andrènes", "Abeilles spécialistes des astéracées" and "Colibri d'Anna et
   colibri roux" were written down, but filed in a way that showed a French
   reader the scientific name instead.
@@ -611,7 +611,7 @@ subtitle on the What's new page.
   page](https://indigene.app/planting) was a narrow strip of cards with empty
   space either side; the techniques now lay out three across, and it is half as
   tall. On a phone, nothing changes.
-- **"What it does for the ecosystem" is a third shorter.** The seven things a
+- Plants: **"What it does for the ecosystem" is a third shorter.** The seven things a
   plant does now sit as a list you can read in one look, with each explanation
   appearing when you ask for it — hover on a computer, tap on a phone.
 - Internal: the photo-harvesting pipeline now asks iNaturalist for a plant's
@@ -711,14 +711,14 @@ subtitle on the What's new page.
 
 ### Added
 
-- **A lot more to plant in the Pacific Northwest.** The list grew from 44 plants
+- Regions: **A lot more to plant in the Pacific Northwest.** The list grew from 44 plants
   to 58, and deliberately not with more trees: sedges and a rush for wet ground,
   two more ferns, stonecrop and buckwheat for a dry sunny edge, trailing
   blackberry, Indian plum.
-- **Early blue violet, and why it matters.** Also new to the Northwest, and the
+- Regions: **Early blue violet, and why it matters.** Also new to the Northwest, and the
   only thing a fritillary caterpillar will eat — but it hatches in late summer
   and doesn't feed until April, so the patch has to still be there next spring.
-- **Atlantic France doubled, from 23 plants to 46.** Heather, broom, bramble,
+- Regions: **Atlantic France doubled, from 23 plants to 46.** Heather, broom, bramble,
   bird's-foot trefoil, red clover, hop, aspen, bilberry, wych elm, wild pear,
   beech and more. Several flower in August, September and October — which is
   when the old list ran out of flowers.
@@ -761,7 +761,7 @@ subtitle on the What's new page.
 
 ### Added
 
-- **Real photographs on plant pages.** Where we've found a good, freely-licensed
+- Plants: **Real photographs on plant pages.** Where we've found a good, freely-licensed
   picture, a plant's profile opens with a photograph of the species instead of
   the drawing — 188 plants so far, each credited to the naturalist who took it.
 - **Swipe through the photos.** When a photo of something [someone spotted near
@@ -815,7 +815,7 @@ subtitle on the What's new page.
 - **Someone arriving for the first time gets no dot at all.** "New since your
   last visit" means nothing to a person who has never visited. They start level
   with today, and get a dot the next time something lands.
-- **What that costs you, in full: a version number and two dates.** No account,
+- Privacy: **What that costs you, in full: a version number and two dates.** No account,
   no count of how often you come, no record of what you looked at. It stays in
   your browser, and [Settings](https://indigene.app/settings) shows you both
   values with a button that throws them away.
@@ -873,25 +873,25 @@ subtitle on the What's new page.
 
 ### Added
 
-- **Indigene remembers the spot you were last standing in.** Come back tomorrow
+- Matches: **Indigene remembers the spot you were last standing in.** Come back tomorrow
   and it opens where you left off, with the sun and soil answers you gave for
   it. Move somewhere new and it asks again — those answers belong to that patch
   of ground.
 
-- Finder: **a starting region, if you'd rather skip the map for good.** If you
+- Matches: **A starting region, if you'd rather skip the map for good.** If you
   already know your area, choose it once under **Starting region** in
   [Settings](https://indigene.app/settings) and every visit begins there.
 
-- **Settings now lists everything this device remembers about you**, in plain
+- Privacy: **Settings now lists everything this device remembers about you**, in plain
   words, each with a button that throws it away: your last spot, your starting
   region, and the goal your plant lists are ranked by. All of it stays in your
   browser.
 
-- **The goal you last chose sticks, and now says so.** Ask for a list that
+- Matches: **The goal you last chose sticks, and now says so.** Ask for a list that
   favours birds and it stays that way next visit. That was always true, but
   nothing told you, so the order looked like Indigene's own opinion. Settings
   names it, with one button back.
-- **A real photograph where a plant's page had a drawing.** The picture beside a
+- Plants: **A real photograph where a plant's page had a drawing.** The picture beside a
   plant's name used to be chosen by its *type* — the same shrub shape for every
   shrub. It can now be a photo of that species, with the photographer named
   below.
@@ -1028,7 +1028,7 @@ subtitle on the What's new page.
   from `STEPS` — `priorities`, `lookalikes`, `settings` and `about` were
   missing.
 
-- **The quarterly check that keeps those names honest had stopped checking.**
+- Sources: **The quarterly check that keeps those names honest had stopped checking.**
   France's national list had been answering nothing at all, and the check read
   that silence as "no French name exists". A list that answers nothing now fails
   loudly instead of passing.
@@ -1059,11 +1059,11 @@ subtitle on the What's new page.
   them: a smell, a thorn, a hollow twig. Start with the [Callery
   pear](https://indigene.app/lookalikes/pyrus-calleryana).
 
-- **Every plant page says what it gets confused with, in one line.** Under "Why
+- Look-alikes: **Every plant page says what it gets confused with, in one line.** Under "Why
   it belongs here" you'll find *Don't confuse it with* and the names, each
   linking to the full comparison.
 
-- **The label says which kind of impostor it is.** Some spread into wild places
+- Look-alikes: **The label says which kind of impostor it is.** Some spread into wild places
   and cost us something; some are ordinary garden plants from elsewhere that do
   no harm. So each is marked *Invasive here*, *Not from here* or *Native here
   too* — for the region you're looking at.
@@ -1095,7 +1095,7 @@ subtitle on the What's new page.
   the figure updated in `README.md`, `PROJECT_BRIEF.md`, `app/README.md` and
   `docs/ecoregion-plan.md`.
 
-- **Reading about a plant that grows in more than one region? You can switch.**
+- Regions: **Reading about a plant that grows in more than one region? You can switch.**
   Those plants now have a row of buttons under their name — *Figures for:
   Mid-Atlantic · North & Central Florida* — so you can see how the same plant
   behaves somewhere else.
@@ -1126,15 +1126,15 @@ subtitle on the What's new page.
   are laid out several across instead of one long stack. It's about a third
   shorter on a laptop.
 
-- **The "ZIP or town" box is the size of a ZIP or a town again.** It used to
+- Matches: **The "ZIP or town" box is the size of a ZIP or a town again.** It used to
   stretch to fill the line, which on a wide screen meant a box half a window
   wide waiting for five characters. Unchanged on a phone.
 
-- **The *Figures for* buttons line up with the rest of the page.** On a plant
+- Regions: **The *Figures for* buttons line up with the rest of the page.** On a plant
   that grows in more than one region, the row of region buttons under the name
   was sitting a little further left than everything around it.
 
-- **Where to look a plant up has moved to the very bottom of its page.** The
+- Plants: **Where to look a plant up has moved to the very bottom of its page.** The
   list of botanical databases is where you go once this page has run out of
   answers, so it now comes after *Want to plant it? Check your spot* rather than
   before it.
@@ -1166,7 +1166,7 @@ subtitle on the What's new page.
 
 ### Fixed
 
-- **A plant that grows in two regions was telling some readers the wrong
+- Regions: **A plant that grows in two regions was telling some readers the wrong
   thing.** Butterfly weed survives to zone 3 in the Mid-Atlantic but only zone 8
   in Florida — and the page showed whichever region came first in our list. It
   now shows yours. Seventeen plants affected.
@@ -1195,7 +1195,7 @@ subtitle on the What's new page.
   monarch](https://indigene.app/wildlife/monarch) and you get that page's own
   words. 261 pages in all.
 
-- **Found photos are a gallery now.** They used to arrive as a stack of boxes,
+- Plants: **Found photos are a gallery now.** They used to arrive as a stack of boxes,
   three-quarters of it small grey type. Every photo the lookup found now sits in
   one grid of thumbnails; tap any of them and the big view carries the credit,
   licence and date.
@@ -1232,12 +1232,12 @@ subtitle on the What's new page.
 
 ### Fixed
 
-- **A plant's own address used to answer "page not found".** Not to you — the
+- Plants: **A plant's own address used to answer "page not found".** Not to you — the
   app opened fine — but to the machines that build the preview boxes in
   Messages, Slack and WhatsApp. Every page Indigene invites you to share now
   answers as a real page.
 
-- **"See it growing near you" was coming up empty for common plants.** We had
+- Plants: **"See it growing near you" was coming up empty for common plants.** We had
   been asking iNaturalist for the hundred most recent photos of *every* native
   in your region, then hunting for yours among them. Indigene now asks about the
   one plant you're looking at.
@@ -1246,7 +1246,7 @@ subtitle on the What's new page.
   read "we couldn't reach iNaturalist", which sounds broken. Being asked to slow
   down for a minute now says that instead, so you know to try again.
 
-- **The little captions on the photo thumbnails are gone.** They tried to fit
+- Plants: **The little captions on the photo thumbnails are gone.** They tried to fit
   "under 1 km away · seen June 2023" into a 90-pixel square, and on a phone,
   which has no hover, you could never see them at all. Tap a photo for all of
   it.
@@ -1284,19 +1284,19 @@ subtitle on the What's new page.
 
 ### Added
 
-- **Indigene asks what you want the spot to do, before it shows you plants.** A
+- Matches: **Indigene asks what you want the spot to do, before it shows you plants.** A
   new **Goals** step sits between the soil question and your list: *feed the
   most wildlife*, *butterflies & moths*, *birds*, *stop erosion*, *soak up
   rain*, *easiest to grow*. The order is now something you chose.
-- **You can see what a slider does while you move it.** Open *Fine-tune each
+- Matches: **You can see what a slider does while you move it.** Open *Fine-tune each
   one* and each slider says its setting in words — "counts a lot", "ignore it" —
   while a panel that follows you down the page names the three plants leading
   right now.
-- **Indigene says out loud when it has recalculated — even when nothing moved.**
+- Matches: **Indigene says out loud when it has recalculated — even when nothing moved.**
   Change a goal and a line reports what happened: *"Recomputed — Black Cherry
   now leads"*, or plainly *"the order didn't change"*. Silence used to leave you
   guessing which it was.
-- **Tap any plant in your list to open its full page — and get back where you
+- Matches: **Tap any plant in your list to open its full page — and get back where you
   left it.** Every card is now a door to that plant's own page, and *"← Back to
   your plant list"* returns you to the plant you tapped, not the top.
 - **A bee has moved into the logo.** Point at the Indigene name and a bee
@@ -1306,15 +1306,15 @@ subtitle on the What's new page.
 
 ### Changed
 
-- **The cards in your plant list are much shorter.** Each carries what you need
+- Matches: **The cards in your plant list are much shorter.** Each carries what you need
   to decide whether to open it: the name, whether it suits your spot, how big it
   gets, and the two things your goals weighted most. A card used to run two
   screens tall.
-- **The plant list is a list again, not a control panel.** The ⚖️ sliders panel
+- Matches: **The plant list is a list again, not a control panel.** The ⚖️ sliders panel
   has moved to the Goals step; in its place a line says what the list was ranked
   for, with a **Change** button. Filters stay — they narrow the list rather than
   reorder it.
-- **A heading that leads somewhere now looks like it.** The headings that group
+- Regions: **A heading that leads somewhere now looks like it.** The headings that group
   a region's plants each end in a small green arrow, with the count beside them
   as a quiet round badge instead of "(14)". The plain underline used to run
   under the picture and the bracket.
@@ -1382,7 +1382,7 @@ subtitle on the What's new page.
   list](https://indigene.app/wildlife) narrows to the 15 creatures its natives
   support. Every combination has its own address, like [the butterflies of the
   French Alps](https://indigene.app/#/wildlife/in/france-alpine/butterflies).
-- **Your plant list for a spot has the same "Filter by name…" box.** Type "oak",
+- Matches: **Your plant list for a spot has the same "Filter by name…" box.** Type "oak",
   "milkweed", "fern", and the part you typed is underlined in green on each
   match. It searches the whole ranked list, not just the cards on screen.
 
@@ -1402,22 +1402,22 @@ subtitle on the What's new page.
 - **The home page no longer stops to ask about language and units** halfway
   down. That belonged in the menu and the footer, not in the middle of the page
   you came to read.
-- **Sharing a plant is a small link button at the top of its page**, beside the
+- Plants: **Sharing a plant is a small link button at the top of its page**, beside the
   regions it's native to, instead of a full-width button at the bottom. It's in
   reach the moment you recognise a plant, and it no longer spends a whole row of
   a phone screen.
-- **Every creature now says where it lives, instead of wearing a "native"
+- Wildlife: **Every creature now says where it lives, instead of wearing a "native"
   badge.** Every animal on these pages is native, so the tag told you nothing. A
   creature found in more than one region now shows a pin and a number — 📍 3 for
   the monarch.
 - When you filter a region's plant list — say you type "oak" on
   [Florida](https://indigene.app/regions/florida-central) — the part you typed
   is now **underlined in green**, exactly as it already was on the plants page.
-- **Your plants come sooner on the page.** The explanation of how the ranking
+- Matches: **Your plants come sooner on the page.** The explanation of how the ranking
   works used to sit open above the list, so every visit began with five lines
   about method. It now waits inside **What matters most?**, where you'd go to
   change it anyway.
-- **The buttons on your plant list moved below the plants.** "Back" and "Save
+- Matches: **The buttons on your plant list moved below the plants.** "Back" and "Save
   this spot" used to sit above the list, so the first thing on the page that
   finally shows your plants was a way to leave it.
 - The French plant descriptions for **Atlantic France** — Paris, Nantes and
@@ -1597,12 +1597,12 @@ subtitle on the What's new page.
   plants](https://indigene.app/regions/france-atlantic) — oak and hawthorn,
   blackthorn and hazel, bluebells and foxgloves — ranked for your spot. (The app
   itself still speaks English.)
-- The app now understands Europe's natural regions, not only North America's.
+- Regions: The app now understands Europe's natural regions, not only North America's.
   Online, it checks the official European map of [biogeographical
   regions](https://www.eea.europa.eu/en/datahub/eea-data-policy) to tell whether
   a French spot is in the Atlantic zone this first list is for, and says so
   plainly when it isn't.
-- Elevation and slope now work anywhere in the world, not just the US: outside
+- Matches: Elevation and slope now work anywhere in the world, not just the US: outside
   the United States the app reads the land's height from a global source, so the
   new French spots get the same "how high, how steep" reading.
 - Internal: the ecoregion layer is now provider-agnostic — a spot resolves to a
@@ -1641,7 +1641,7 @@ subtitle on the What's new page.
   properly.** On a laptop they were a phone-shaped ribbon down the middle; the
   cards now spread into columns. Sentences keep their comfortable reading width
   — it's the cards that wanted the room.
-- **The USDA hardiness zone is its own little badge now**, instead of trailing
+- Plants: **The USDA hardiness zone is its own little badge now**, instead of trailing
   in brackets after the place: "Pennsylvania" with a small `USDA 6b–7a` tag
   beside it. Hover or tap-and-hold it and it explains what the zone means.
 - **The little counts on each card sit at the bottom now, always in the same
@@ -1649,7 +1649,7 @@ subtitle on the What's new page.
   every card. They're shorter too — an icon and a number, which stops them
   wrapping on a phone.
 
-- **The French caterpillar counts are now counted, not estimated.** An open
+- Wildlife: **The French caterpillar counts are now counted, not estimated.** An open
   dataset of 5,152 European butterflies and moths replaced our honest guesses.
   Blackthorn feeds 318 kinds of caterpillar, not the 100 we'd estimated; holly
   feeds 7, not 12. Some French lists are now in a fairer order.
@@ -1715,7 +1715,7 @@ subtitle on the What's new page.
   browser](https://indigene.app/wildlife) now has a "See it near you" section:
   share your location or type a ZIP code, and Indigene pulls real, credited
   photos of that animal spotted near there, live from iNaturalist.
-- **Don't want to share your exact location? Type a ZIP code instead.** "See it
+- Matches: **Don't want to share your exact location? Type a ZIP code instead.** "See it
   near you" and "See it growing near you" now offer sharing your location and
   typing a ZIP code as two equal choices. It works the same on a desktop with no
   GPS.
@@ -1741,19 +1741,19 @@ subtitle on the What's new page.
   with the same number tiles a plant's page has: how many natives are on the
   list, how many caterpillars its best plant feeds, how much wildlife we can
   name, how many keystone plants. Tap a tile for what it means.
-- A filter box on region pages: start typing a name — common or scientific —
+- Regions: A filter box on region pages: start typing a name — common or scientific —
   and the plant list narrows as you type, no more hunting through 40 rows or
   bouncing out to the search page.
-- The category buttons on region pages (Trees, Shrubs, Ferns…) now each carry
+- Regions: The category buttons on region pages (Trees, Shrubs, Ferns…) now each carry
   their little plant silhouette, matching the drawings on the plant rows below.
 
 ### Changed
 
-- **One tap now takes you through every sighting's photos, not just one
+- Plants: **One tap now takes you through every sighting's photos, not just one
   person's.** The viewer used to stop at the edge of the sighting you tapped.
   The arrows now carry on into the next, telling you where you are: "9 / 11 ·
   sighting 3 of 4".
-- **Bigger, tidier photo thumbnails.** A sighting's little squares now sit three
+- Plants: **Bigger, tidier photo thumbnails.** A sighting's little squares now sit three
   to a row and fill the card, instead of leaving a lonely fourth picture on a
   second row. Where there are more than fit, the last wears a "+2" badge.
 - Internal: `observation-ui.ts` now exports `observationList()` rather than a
@@ -1767,21 +1767,21 @@ subtitle on the What's new page.
 - Opening a sighting photo is smoother now. The viewer used to open small, jump
   taller, then draw the photo in stuttery strips. It now opens at full size,
   shows a spinner while the photo travels, and fades it in gently.
-- Region pages now lead with just the region's name — "Mid-Atlantic /
+- Regions: Region pages now lead with just the region's name — "Mid-Atlantic /
   Northeast Piedmont" instead of "Every native we know for Mid-Atlantic /
   Northeast Piedmont" — and say the rest in one short line underneath.
 - The showcase cards on [Meet the natives](https://indigene.app/#/plants)
   are more compact: the keystone mark now sits beside the plant's name as a
   small arch, and "Full profile →" tucks in at the end of the description
   instead of taking a line of its own.
-- The fine print about what "native" means on a region's page is shorter and
+- Regions: The fine print about what "native" means on a region's page is shorter and
   plainer: native here means native to this region specifically — outside it,
   treat the picks as untested.
-- The [Where are you standing?](https://indigene.app/#/location) step now shows
+- Matches: The [Where are you standing?](https://indigene.app/#/location) step now shows
   one way of setting your spot at a time. Using your device's location leads,
   and a small link swaps in the town search or the region list. Less to scroll
   past, and Next is always close by.
-- Picking your region by hand is now two taps: choose a region and the list
+- Matches: Picking your region by hand is now two taps: choose a region and the list
   folds down to just your choice (a "Show all regions" link brings the rest
   back), then press Next when you're sure — instead of being whisked to the
   next step the moment you tap.
@@ -1807,10 +1807,10 @@ subtitle on the What's new page.
 - The footer — the fine print about open source and data sources, plus the
   "See what's new" link — now appears at the bottom of every page, not just
   the home screen.
-- The little person standing beside each plant in the growth chart now looks
+- Plants: The little person standing beside each plant in the growth chart now looks
   like a person — head, shoulders, arms and legs — instead of a featureless
   post, at every size from towering oak to knee-high wildflower.
-- The growth chart's labels are a touch bigger and drawn in the page's
+- Plants: The growth chart's labels are a touch bigger and drawn in the page's
   strongest text color, so the feet markings and year captions are easy to
   read in both light and dark mode — even in bright sun.
 - When you [search for a plant](https://indigene.app/plants), each result now
@@ -1847,18 +1847,18 @@ subtitle on the What's new page.
 - The page now appears instantly on every load — the brief pause some
   browsers still showed is gone, because nothing waits on on-device storage
   before drawing anymore.
-- The Saved menu no longer sticks on "Loading…" when on-device storage won't
+- Matches: The Saved menu no longer sticks on "Loading…" when on-device storage won't
   answer (Safari sometimes leaves it hanging). After a couple of seconds it
   says it couldn't open your saved spots, suggests closing other Indigene
   tabs, and offers a Try again button.
-- "See it growing near you" could get stuck at "Asking iNaturalist…" for the
+- Plants: "See it growing near you" could get stuck at "Asking iNaturalist…" for the
   same reason — the app checks its on-device photo cache before asking, and
   that check could hang forever. It now gives the cache a couple of seconds,
   then asks iNaturalist directly.
-- The bottom row of the growth chart's labels — like "(5′6″)" under the
+- Plants: The bottom row of the growth chart's labels — like "(5′6″)" under the
   little person — was getting cut off by the caption below. The chart now
   leaves proper room for both label rows.
-- The growth chart could be drawn with the wrong colors — pale, hard-to-read
+- Plants: The growth chart could be drawn with the wrong colors — pale, hard-to-read
   labels on a light page — if your device switched between light and dark
   looks after the page loaded. The chart now redraws itself when that
   happens, and also when the screen size changes.
@@ -1894,14 +1894,14 @@ subtitle on the What's new page.
 
 ### Added
 
-- A [Browse page](https://indigene.app/#/browse) of its
+- Regions: A [Browse page](https://indigene.app/#/browse) of its
   own: the regions we cover and "start from a plant" now live one tap from
   the home page — for anyone who'd rather look around
   without sharing their location.
 
 ### Changed
 
-- Almost nothing hides behind a tap anymore. A plant's ecosystem, propagation
+- Plants: Almost nothing hides behind a tap anymore. A plant's ecosystem, propagation
   and reference sections, the 60-second soil check and each result's score
   breakdown are simply visible on the page. Only the two big panels on results
   still fold away.
@@ -1926,20 +1926,20 @@ subtitle on the What's new page.
 
 ### Added
 
-- Real photos of recommended plants growing near you, taken by people in your
+- Plants: Real photos of recommended plants growing near you, taken by people in your
   area and shared on [iNaturalist](https://www.inaturalist.org). Open a
   plant's page and tap "See it growing near you" — nothing loads until you ask.
-- Not standing there right now? Tap "Look it up where it's native" and pick a
+- Matches: Not standing there right now? Tap "Look it up where it's native" and pick a
   region instead: you'll see photos of the plant from anywhere it naturally
   grows, no location sharing needed.
-- Photos open in a full-screen viewer inside the app, so you can look closely
+- Plants: Photos open in a full-screen viewer inside the app, so you can look closely
   and then get right back to where you were.
 
 ### Changed
 
-- Nearby photo results only show plants that are truly native around that
+- Plants: Nearby photo results only show plants that are truly native around that
   spot, so a garden escapee never sneaks into your recommendations.
-- Every photo credits the person who took it and links back to their original
+- Plants: Every photo credits the person who took it and links back to their original
   sighting, and only photos their takers chose to share openly are shown.
 
 ## [0.8] - 2026-07-22
@@ -1951,15 +1951,15 @@ subtitle on the What's new page.
 
 ### Added
 
-- A built-in plant name book (a *registry*): every plant Indigene knows has
+- Plants: A built-in plant name book (a *registry*): every plant Indigene knows has
   exactly one entry tying together its scientific name, its common names, and
   its identity in the world's big plant databases.
 - A [search page](https://indigene.app/#/search): type any
   name — common or scientific — and Indigene finds the
   plant, or says honestly when a name could mean more than one plant.
-- Plant pages now show **references**: links to the very same plant at USDA,
+- Plants: Plant pages now show **references**: links to the very same plant at USDA,
   GBIF, and other authorities, so you can double-check anything we say.
-- iNaturalist links now land directly on that exact species' page.
+- Plants: iNaturalist links now land directly on that exact species' page.
 - Internal: the registry is generated from the catalog (`npm run
   registry:build`) and audited (`npm run registry:check`); it also ships as a
   hostable static JSON artifact under `app/public/registry/`. External
@@ -1986,24 +1986,24 @@ subtitle on the What's new page.
   start from a butterfly, moth, bee, bird, or mammal and
   see which native plants support it — because "which plants bring monarchs?"
   is often the real question.
-- Every plant–animal tie says *how* the plant helps (caterpillar food, nectar,
+- Wildlife: Every plant–animal tie says *how* the plant helps (caterpillar food, nectar,
   berries, seeds, or shelter) and how much the animal depends on it — from
   "this is its only host plant" to "one of many it can use".
-- Every wildlife relationship names its source, with links straight to the
+- Wildlife: Every wildlife relationship names its source, with links straight to the
   species record where the source has one.
-- Plant pages show the wildlife each plant brings in, with links both ways.
+- Wildlife: Plant pages show the wildlife each plant brings in, with links both ways.
 
 ### Changed
 
-- You can now cap results by mature height and spread — handy for planting
+- Matches: You can now cap results by mature height and spread — handy for planting
   under a window or a power line.
 - The header now fits every phone: "Saved" moved into a compact menu, and the
   app's name is never cut off.
-- Relationship tags are one short word each; tap one to read the full meaning.
+- Wildlife: Relationship tags are one short word each; tap one to read the full meaning.
 
 ### Fixed
 
-- Wildlife pages got the same comfortable margins as the rest of the app.
+- Wildlife: Wildlife pages got the same comfortable margins as the rest of the app.
 
 ## [0.6] - 2026-07-19
 
@@ -2027,7 +2027,7 @@ subtitle on the What's new page.
 
 ### Added
 
-- Every plant now has "how to make more of it": plain-words tips for growing
+- Planting: Every plant now has "how to make more of it": plain-words tips for growing
   new plants from seed, cuttings, or division — free plants for you, your
   neighbors, and the birds.
 
@@ -2035,9 +2035,9 @@ subtitle on the What's new page.
 
 - Every expandable section in the app now looks and works the same way — once
   you've opened one, you know how to open them all.
-- Section titles are shorter and clearer, and the first step is now simply
+- Matches: Section titles are shorter and clearer, and the first step is now simply
   called "Spot".
-- You can share a link that opens a specific section of a plant's page, like
+- Plants: You can share a link that opens a specific section of a plant's page, like
   its propagation tips.
 
 ## [0.4] - 2026-07-17
@@ -2046,24 +2046,24 @@ subtitle on the What's new page.
 
 ### Added
 
-- Type your town or ZIP code instead of sharing your location — or just pick
+- Matches: Type your town or ZIP code instead of sharing your location — or just pick
   your region from a list. Nobody is ever asked for coordinates.
-- If Indigene doesn't have a plant list for a spot yet, it says so the moment
+- Matches: If Indigene doesn't have a plant list for a spot yet, it says so the moment
   you pick it — and shows you what it does cover, plus where to request your
   area.
 
 ### Changed
 
-- Place lookups now come from OpenStreetMap, and the app always shows town
+- Matches: Place lookups now come from OpenStreetMap, and the app always shows town
   names, never raw numbers.
 - Garden jargon never stands alone: terms like "zone 8b" always come with a
   plain-words translation and a link to learn more.
 
 ### Fixed
 
-- The place-search button now sits right beside the search box, at a matching
+- Matches: The place-search button now sits right beside the search box, at a matching
   size.
-- The map no longer promises that fine-tuning the pin sharpens the sun
+- Matches: The map no longer promises that fine-tuning the pin sharpens the sun
   estimate (it doesn't).
 
 ## [0.3] - 2026-07-16
@@ -2072,15 +2072,15 @@ subtitle on the What's new page.
 
 ### Added
 
-- [Explore pages](https://indigene.app/#/explore): browse
+- Plants: [Explore pages](https://indigene.app/#/explore): browse
   every plant Indigene knows without sharing your
   location — and every plant, region, and category has its own address you can
   share with anyone.
-- Full plant lists for each region at shareable addresses, with a switcher to
+- Regions: Full plant lists for each region at shareable addresses, with a switcher to
   hop between regions.
-- A stat grid on every plant, like a trading card. Tap any stat to read what
+- Plants: A stat grid on every plant, like a trading card. Tap any stat to read what
   it means in plain words.
-- The location map now draws real streets from OpenStreetMap (with a simple
+- Matches: The location map now draws real streets from OpenStreetMap (with a simple
   grid when you're offline).
 - Short explanations appear right where a new idea first shows up, so you
   learn as you go — and growth expectations now come from the data, not
@@ -2092,7 +2092,7 @@ subtitle on the What's new page.
   page, and region links right on the home page.
 - The re-sort panel can be closed, the growth chart is right-sized, keystone
   species wear a little arch icon, and species counts show their sources.
-- The GPS map starts one zoom level farther out, so the neighborhood you see
+- Matches: The GPS map starts one zoom level farther out, so the neighborhood you see
   is one you recognize.
 
 ## [0.2] - 2026-07-15
@@ -2101,14 +2101,14 @@ subtitle on the What's new page.
 
 ### Added
 
-- Three new regional plant lists: the Pacific Northwest west of the Cascades,
+- Regions: Three new regional plant lists: the Pacific Northwest west of the Cascades,
   north & central Florida, and south Florida & the Keys — and the app picks
   the right list from where you're standing.
-- Regions now follow real ecological boundaries (EPA ecoregions), not straight
+- Regions: Regions now follow real ecological boundaries (EPA ecoregions), not straight
   lines on a map — so a spot just east of the Cascade crest no longer gets the
   west-side list, and Florida splits where the subtropics truly begin. The
   confirm screen names the actual ecoregion you're standing in.
-- Every plant's naming and classification is backed by named, linkable
+- Sources: Every plant's naming and classification is backed by named, linkable
   taxonomy sources.
 - Indigene went live on the public web — free to visit in any browser, nothing
   to install (though you can add it to your home screen).
@@ -2121,21 +2121,21 @@ subtitle on the What's new page.
 
 ### Added
 
-- The first version of Indigene. Stand somewhere, share your location, and get
+- Matches: The first version of Indigene. Stand somewhere, share your location, and get
   native plants that will truly thrive right there — ranked by what they do
   for birds, butterflies, bees, soil, and water.
-- Sun, measured honestly: answer one simple question about your spot's sun, or
+- Matches: Sun, measured honestly: answer one simple question about your spot's sun, or
   point your camera at the sky and let the app measure sun-hours itself. The
   simple question always works; the camera is optional.
-- The ground gets checked, not assumed: the app says "the soil map says clay —
+- Matches: The ground gets checked, not assumed: the app says "the soil map says clay —
   here's a 60-second hand test to see if that's true where you're standing."
-- Every plant shows how big it will really get in 1, 3, 5, and 10 years, drawn
+- Plants: Every plant shows how big it will really get in 1, 3, 5, and 10 years, drawn
   to scale beside a person — no surprises a decade later.
-- The ranking is transparent and yours to adjust, with filters for deer
+- Matches: The ranking is transparent and yours to adjust, with filters for deer
   resistance, thorns, pet safety, and plants that survive with zero watering.
-- Saved spots stay on your phone. The whole app works offline, installs to
+- Matches: Saved spots stay on your phone. The whole app works offline, installs to
   your home screen, and never asks for an account.
-- A starting list of 40 Mid-Atlantic / Northeast Piedmont natives with real
+- Regions: A starting list of 40 Mid-Atlantic / Northeast Piedmont natives with real
   size-over-time and ecosystem numbers.
 - Internal: vanilla TypeScript on the DOM — no framework, zero runtime
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)

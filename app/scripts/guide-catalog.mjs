@@ -57,8 +57,8 @@ export const APP = "https://indigene.app";
 export const SECTIONS = [
   {
     id: "find",
-    label: "Finder",
-    aliases: ["find", "finding plants", "matches", "spot"],
+    label: "Matches",
+    aliases: ["find", "finder", "finding plants", "spot"],
     emoji: "🌱",
     title: "Finding your plants",
     tagline: "Tell Indigene where you are. It finds the plants that belong there.",

@@ -528,18 +528,6 @@ function parseChangelog(text) {
 
   if (releases.length === 0) fail("no released versions found in CHANGELOG.md");
 
-  // Guide markers (`<!-- guide: … -->`) file a bullet under a section on the
-  // guide page (see scripts/build-guide.mjs). They're invisible on GitHub, and
-  // must be invisible here too — this page escapes HTML rather than dropping
-  // comments, so an unstripped marker would print as literal text. Cleaned
-  // before the word count, so "guide: wildlife" never counts against a bullet.
-  const GUIDE_MARKER = /<!--\s*guide:[^>]*-->/gi;
-  for (const r of [unreleased, ...releases]) {
-    for (const s of r.sections) {
-      s.items = s.items.map((i) => i.replace(GUIDE_MARKER, "").replace(/\s{2,}/g, " ").trim());
-    }
-  }
-
   // Length, before anything is filtered — a bullet nobody can read to the end
   // of is a bug in the release notes the same way a broken heading is.
   const tooLong = [];

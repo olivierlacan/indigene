@@ -17,8 +17,15 @@
 //
 // Each section is:
 //
-//   id        Stable slug. Its page is /guide/<id>/, and it is the name a
-//             changelog bullet uses in a `<!-- guide: <id> -->` marker.
+//   id        Stable slug. Its page is /guide/<id>/.
+//   label     The word a changelog entry prefixes itself with to file here —
+//             `- Regions: North Michigan is on the map.` This is prose, not
+//             syntax: it reads as a sentence, it shows on the What's-new page
+//             like any other words, and it only classifies because it matches a
+//             name we defined. Same shape as Keep a Changelog 2.0's own
+//             `**Breaking:**` lead-in and this changelog's `Internal:`.
+//   aliases   Other words that file to the same section (a plural, a synonym),
+//             matched case- and punctuation-insensitively.
 //   emoji     One glyph for the card. Decorative — the title carries the name.
 //   title     What this part of the app is called, in plain words.
 //   tagline   One line. Shown on the card and under the page title.
@@ -31,14 +38,15 @@
 //             things a garden app has no business explaining in full. `source`
 //             names who runs it, because a link the reader is asked to trust
 //             should say whose word it is.
-//   match     How the changelog finds this section:
-//               segments  first path part of an indigene.app link in a bullet
-//                         (a bullet linking …/wildlife/monarch is "wildlife").
-//               A bullet with none of these still lands here if it carries an
-//               explicit `<!-- guide: <id> -->` marker — that's the escape
-//               hatch for the many bullets that link nowhere.
+//   match     How the changelog finds this section, two honest ways:
+//               segments  first path part of an indigene.app link in an entry
+//                         (an entry linking …/wildlife/monarch is "wildlife").
+//                         Free — most section-relevant entries already link.
+//               The `label`/`aliases` prefix above is the other way, for the
+//               entries that link nowhere and for a change touching more than
+//               one section: `- Regions & Wildlife: …`.
 //   published Whether the guide renders a page for it yet. A section can be
-//             declared here — so a changelog marker for it is valid and its
+//             declared here — so its prefix is a valid, known name and its
 //             history accrues — before its prose is written. The index and the
 //             page build skip the unpublished ones; nothing half-written ships.
 //
@@ -49,6 +57,8 @@ export const APP = "https://indigene.app";
 export const SECTIONS = [
   {
     id: "find",
+    label: "Finder",
+    aliases: ["find", "finding plants", "matches", "spot"],
     emoji: "🌱",
     title: "Finding your plants",
     tagline: "Tell Indigene where you are. It finds the plants that belong there.",
@@ -88,6 +98,8 @@ export const SECTIONS = [
 
   {
     id: "wildlife",
+    label: "Wildlife",
+    aliases: ["creatures"],
     emoji: "🦋",
     title: "The creatures your plants feed",
     tagline: "Every plant here is somebody’s food, home, or nursery.",
@@ -132,6 +144,8 @@ export const SECTIONS = [
 
   {
     id: "regions",
+    label: "Regions",
+    aliases: ["region"],
     emoji: "🗺️",
     title: "Your region",
     tagline: "The app covers real places, one at a time.",
@@ -172,13 +186,15 @@ export const SECTIONS = [
 
   // ---- Declared, not yet written -----------------------------------------
   //
-  // These are real parts of the app. Listing them here makes a
-  // `<!-- guide: <id> -->` marker for them valid *today*, so their history
-  // starts accruing from the changelog before anyone sits down to write the
-  // prose. Flip `published` to true once the lede and steps are filled in —
-  // the index and the page build pick them up then, and not before.
+  // These are real parts of the app. Listing them here makes their prefix a
+  // known, valid name *today* — `- Plants: …` files, and its history starts
+  // accruing — before anyone sits down to write the prose. Flip `published` to
+  // true once the lede and steps are filled in; the index and the page build
+  // pick them up then, and not before.
   {
     id: "plants",
+    label: "Plants",
+    aliases: ["plant"],
     emoji: "🌾",
     title: "A plant’s own page",
     tagline: "Everything about one plant, in one place.",
@@ -190,6 +206,8 @@ export const SECTIONS = [
   },
   {
     id: "planting",
+    label: "Planting",
+    aliases: ["how to plant", "propagation"],
     emoji: "🪴",
     title: "Growing them",
     tagline: "How to start a native plant, and when.",
@@ -201,6 +219,8 @@ export const SECTIONS = [
   },
   {
     id: "lookalikes",
+    label: "Look-alikes",
+    aliases: ["lookalikes", "look-alike"],
     emoji: "👀",
     title: "Telling look-alikes apart",
     tagline: "The native, and the impostor next to it.",
@@ -212,6 +232,8 @@ export const SECTIONS = [
   },
   {
     id: "privacy",
+    label: "Privacy",
+    aliases: [],
     emoji: "🔒",
     title: "Your privacy",
     tagline: "Where your location goes: nowhere.",
@@ -223,6 +245,8 @@ export const SECTIONS = [
   },
   {
     id: "sources",
+    label: "Sources",
+    aliases: ["data", "citations"],
     emoji: "📚",
     title: "Where the numbers come from",
     tagline: "Public science, cited, with our confidence shown.",
@@ -254,3 +278,50 @@ export const SEGMENT_TO_ID = (() => {
   }
   return m;
 })();
+
+// A prose prefix matches a section by its `label` or an alias, compared with
+// case, spaces and hyphens ignored — so "Look-alikes", "lookalikes" and
+// "look alikes" are one name, and "Regions" reads the same as "regions".
+const normalize = (s) => s.toLowerCase().replace(/[\s-]+/g, "");
+export const LABEL_TO_ID = (() => {
+  const m = new Map();
+  for (const s of SECTIONS) {
+    for (const name of [s.label, ...(s.aliases ?? [])]) {
+      if (!name) continue;
+      const key = normalize(name);
+      if (m.has(key) && m.get(key) !== s.id) {
+        throw new Error(
+          `guide catalog: label "${name}" is claimed by both ` +
+            `"${m.get(key)}" and "${s.id}" — a prefix can only file one way`,
+        );
+      }
+      m.set(key, s.id);
+    }
+  }
+  return m;
+})();
+
+/**
+ * Read a changelog entry's leading prose prefix as a list of section ids.
+ *
+ * `head` is the text before the entry's first colon (e.g. "Regions",
+ * "Regions & Wildlife"). It's split on commas, ampersands and "and", and each
+ * part must match a known label — that is the whole guard: a prefix files a
+ * change only when every name in it is one we defined. If any part is unknown,
+ * this returns null and the caller treats the colon as ordinary punctuation, so
+ * "Fixed: …" or "Note: …" is never mistaken for a section.
+ */
+export function matchLabels(head) {
+  const parts = head.split(/\s*[,&]\s*|\s+and\s+/i).map((p) => p.trim()).filter(Boolean);
+  if (parts.length === 0) return null;
+  const ids = [];
+  for (const p of parts) {
+    const id = LABEL_TO_ID.get(normalize(p));
+    if (!id) return null; // one unknown name → the whole prefix is just prose
+    if (!ids.includes(id)) ids.push(id);
+  }
+  return ids;
+}
+
+/** The canonical prefix labels, for humans writing entries and for docs. */
+export const SECTION_LABELS = SECTIONS.map((s) => s.label);

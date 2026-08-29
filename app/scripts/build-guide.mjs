@@ -12,21 +12,25 @@
 // plain history of how that part of the app grew, kept current by the same
 // changelog the "What's new" page is built from.
 //
-// A bullet is filed two ways, both honest and neither guessed:
+// An entry is filed two ways, both honest and neither guessed:
 //   1. the indigene.app link it already carries (…/wildlife/monarch → wildlife);
-//   2. an optional `<!-- guide: wildlife, regions -->` marker, invisible on
-//      GitHub and on the published pages, for the many bullets that link
-//      nowhere and for a change that touches more than one section.
-// A bullet that matches neither is simply left out — no page claims a change
-// it can't prove is theirs.
+//   2. a prose prefix that names the section — `- Regions: North Michigan is on
+//      the map.` — for the many entries that link nowhere, and `- Regions &
+//      Wildlife: …` for a change that touches more than one.
+// The prefix is not syntax: it reads as a sentence, it stays visible on the
+// What's-new page like any other words, and it only files a change because it
+// matches a name defined in guide-catalog.mjs. It's the same shape as Keep a
+// Changelog 2.0's own `**Breaking:**` lead-in and this changelog's `Internal:`.
+// An entry that matches neither is simply left out — no page claims a change it
+// can't prove is theirs.
 //
-// Like the release-notes build, it fails loudly: an unknown section in a
-// marker, or a malformed changelog heading, stops the build rather than
-// shipping a half-filed page.
+// Like the release-notes build, it fails loudly on a malformed changelog
+// heading. It never fails on a prefix, though: a leading word that isn't a
+// known section is just prose ("Note: …"), so writing entries can't break here.
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { SECTIONS, SECTION_BY_ID, SEGMENT_TO_ID, APP } from "./guide-catalog.mjs";
+import { SECTIONS, SEGMENT_TO_ID, matchLabels, SECTION_LABELS, APP } from "./guide-catalog.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO = resolve(HERE, "../..");
@@ -131,38 +135,42 @@ function parseChangelog(text) {
 
 // ---------- file each bullet under its sections ----------
 
-const GUIDE_MARKER = /<!--\s*guide:\s*([^>]*?)\s*-->/gi;
+// The entry's leading prose prefix: the words before its first colon, as long
+// as they're a plain label and not the start of a sentence with a link or
+// emphasis in it. Kept short and bracket-free so a mid-sentence colon can never
+// be read as a prefix. Tolerates a bold wrapper so `**Regions:**` works too.
+const PREFIX = /^(?:\*\*)?\s*([A-Za-z][A-Za-z ,&/-]{0,46}?)\s*:(?:\*\*)?\s+/;
 // Any indigene.app or in-app link, reduced to its first path part. Matches
 // both the shareable path form (indigene.app/wildlife) and the hash form
 // (#/saved) the changelog uses for pages with no file of their own.
 const APP_LINK = /\((?:https?:\/\/indigene\.app\/#?\/?|#\/)([a-z0-9-]+)/gi;
 
-/** The set of section ids a bullet belongs to, and its display text. */
-function classify(md, where) {
+/** The set of section ids an entry belongs to, and its display text. */
+function classify(md) {
   const ids = new Set();
+  let text = md;
 
-  // 1. Explicit markers — the deliberate, multi-section signal.
-  for (const m of md.matchAll(GUIDE_MARKER)) {
-    for (const id of m[1].split(/[,\s]+/).map((s) => s.trim()).filter(Boolean)) {
-      if (!SECTION_BY_ID.has(id)) {
-        fail(
-          `${where}: guide marker names "${id}", which is not a section. ` +
-            `Known sections: ${[...SECTION_BY_ID.keys()].join(", ")}.`,
-        );
-      }
-      ids.add(id);
+  // 1. The prose prefix — the deliberate, multi-section signal. Only a leading
+  //    word (or list of words) that every part matches a known section counts;
+  //    otherwise the colon is left alone and the line is filed by its link, if
+  //    any. On the section's own page the prefix is redundant, so it's stripped
+  //    from the shown text; on the What's-new page it stays, as ordinary prose.
+  const pm = md.match(PREFIX);
+  if (pm) {
+    const labelIds = matchLabels(pm[1]);
+    if (labelIds) {
+      for (const id of labelIds) ids.add(id);
+      text = md.slice(pm[0].length);
     }
   }
 
-  // 2. The link the bullet already carries.
+  // 2. The link the entry already carries.
   for (const m of md.matchAll(APP_LINK)) {
     const id = SEGMENT_TO_ID.get(m[1].toLowerCase());
     if (id) ids.add(id);
   }
 
-  // The markers are for the source; a reader never sees them.
-  const text = md.replace(GUIDE_MARKER, "").replace(/\s{2,}/g, " ").trim();
-  return { ids, text };
+  return { ids, text: text.replace(/\s{2,}/g, " ").trim() };
 }
 
 /**
@@ -174,7 +182,7 @@ function fileHistory(releases) {
   for (const r of releases) {
     for (const item of r.items) {
       if (INTERNAL.test(item.md)) continue;
-      const { ids, text } = classify(item.md, `version ${r.version}`);
+      const { ids, text } = classify(item.md);
       for (const id of ids) {
         byId.get(id).push({ version: r.version, date: r.date, name: r.name, type: item.type, text });
       }
@@ -451,8 +459,9 @@ if (CHECK) {
   const filed = [...historyById.values()].reduce((n, arr) => n + arr.length, 0);
   console.log(
     `guide check: ${published.length} published section(s), ${filed} changelog ` +
-      `bullet(s) filed across ${SECTIONS.length} declared section(s). OK.`,
+      `entries filed across ${SECTIONS.length} declared section(s). OK.`,
   );
+  console.log(`valid entry prefixes: ${SECTION_LABELS.join(", ")}`);
   process.exit(0);
 }
 

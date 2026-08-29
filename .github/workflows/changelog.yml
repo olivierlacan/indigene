@@ -46,9 +46,10 @@ jobs:
         working-directory: app
         run: node scripts/build-release-notes.mjs --out /tmp/release-notes-check.html
 
-      # The guide is filed from the same changelog. This catches a `<!-- guide:
-      # … -->` marker that names a section which doesn't exist, in the PR that
-      # writes it rather than at deploy time.
+      # The guide is filed from the same changelog. This confirms it still
+      # parses and reports what filed where (which section prefixes and links
+      # matched), in the PR rather than at deploy time. A prefix that names no
+      # known section is just prose, so this never fails on wording alone.
       - name: Verify the guide still files
         if: ${{ !contains(github.event.pull_request.labels.*.name, 'skip-changelog') }}
         working-directory: app

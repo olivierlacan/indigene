@@ -3,7 +3,7 @@
 All notable changes to Indigene are recorded here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-with three house rules:
+with four house rules:
 
 - **Versions are feature releases, not schedules.** A version is cut when a
   coherent piece of the product lands, and gets a number, a name and a date
@@ -19,6 +19,12 @@ with three house rules:
   needs the page it describes, not the release notes; reasoning goes in an
   `Internal:` bullet. The compiler fails the build over the limit, because
   every word here is also a word somebody translates.
+- **Name the section when it helps, in prose.** The guide at `/guide/` is
+  compiled from this file, so an entry can open with the part of the app it
+  changed — `- Regions: North Michigan is on the map.`, or `- Regions &
+  Wildlife: …` for one that touches two. It reads as a sentence and needs no
+  prefix when the entry already links to that part. A leading word that isn't a
+  section name is just ordinary prose.
 
 The bold line under each version heading is the release's name; it becomes the
 subtitle on the What's new page.
@@ -32,10 +38,12 @@ subtitle on the What's new page.
   it, and trusted places to learn more — and keeps itself current from these
   very notes. [Open the guide](https://indigene.app/guide)
 - Internal: the guide is compiled from CHANGELOG.md by `build-guide.mjs` using
-  the curated catalog in `guide-catalog.mjs`. Each reader-facing bullet files
-  under a section by the indigene.app link it carries or an optional
-  `<!-- guide: … -->` marker (invisible on GitHub and the notes page,
-  multi-section); an unknown section id fails `guide:check` in CI.
+  the curated catalog in `guide-catalog.mjs`. Each reader-facing entry files
+  under a section by the indigene.app link it carries or a prose prefix that
+  names the section (`- Regions & Wildlife: …`), matched against the catalog's
+  labels — the same shape as KAC 2.0's `**Breaking:**` and our `Internal:`. A
+  leading word that isn't a known section is just prose, so this never fails a
+  build; `guide:check` reports what filed where.
 
 ## [0.27] - 2026-08-28
 
@@ -64,9 +72,9 @@ subtitle on the What's new page.
   each region's plant list moved to its own download — the share-card generator
   had been unable to run since, and adding a region surfaced it.
 
-- **The ranked list shows the plants.** The plants matched to your spot — and
-  the plants on an animal's page — now carry a photograph beside the name
-  instead of a drawing of a generic shrub, like every other list in the app. <!-- guide: find, wildlife -->
+- Finder & Wildlife: **the ranked list shows the plants.** The plants matched to
+  your spot — and the plants on an animal's page — now carry a photograph beside
+  the name instead of a drawing of a generic shrub, like every other list in the app.
 
 - **A region's page now names the wildlife too.** Under the plants, every region
   lists the butterflies, moths, bees, birds and mammals they're documented to
@@ -240,9 +248,9 @@ subtitle on the What's new page.
   because it reloaded from its own cache. A reload now always checks the web
   first. [What's new](https://indigene.app/release-notes/)
 
-- **Nearly enough sun is no longer a complaint.** A plant wanting an hour more
-  sun than your spot gets was told off for it, quoting two numbers that rounded
-  to the same one. It now says it may just not grow as well. <!-- guide: find -->
+- Finder: **nearly enough sun is no longer a complaint.** A plant wanting an hour
+  more sun than your spot gets was told off for it, quoting two numbers that
+  rounded to the same one. It now says it may just not grow as well.
 
 - **A row with no photograph looked like a broken one.** Some entries in the
   wildlife list — "Mason & mining bees" — are a group rather than one species,
@@ -870,9 +878,9 @@ subtitle on the What's new page.
   it. Move somewhere new and it asks again — those answers belong to that patch
   of ground.
 
-- **A starting region, if you'd rather skip the map for good.** If you already
-  know your area, choose it once under **Starting region** in
-  [Settings](https://indigene.app/settings) and every visit begins there. <!-- guide: find -->
+- Finder: **a starting region, if you'd rather skip the map for good.** If you
+  already know your area, choose it once under **Starting region** in
+  [Settings](https://indigene.app/settings) and every visit begins there.
 
 - **Settings now lists everything this device remembers about you**, in plain
   words, each with a button that throws it away: your last spot, your starting

@@ -25,6 +25,18 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Added
+
+- **A guide to the whole app.** A new [guide](https://indigene.app/guide)
+  walks through each part of Indigene in plain words — what it’s for, how to use
+  it, and trusted places to learn more — and keeps itself current from these
+  very notes. [Open the guide](https://indigene.app/guide)
+- Internal: the guide is compiled from CHANGELOG.md by `build-guide.mjs` using
+  the curated catalog in `guide-catalog.mjs`. Each reader-facing bullet files
+  under a section by the indigene.app link it carries or an optional
+  `<!-- guide: … -->` marker (invisible on GitHub and the notes page,
+  multi-section); an unknown section id fails `guide:check` in CI.
+
 ## [0.27] - 2026-08-28
 
 **The creatures your plants feed, now with faces to match**
@@ -54,7 +66,7 @@ subtitle on the What's new page.
 
 - **The ranked list shows the plants.** The plants matched to your spot — and
   the plants on an animal's page — now carry a photograph beside the name
-  instead of a drawing of a generic shrub, like every other list in the app.
+  instead of a drawing of a generic shrub, like every other list in the app. <!-- guide: find, wildlife -->
 
 - **A region's page now names the wildlife too.** Under the plants, every region
   lists the butterflies, moths, bees, birds and mammals they're documented to
@@ -230,7 +242,7 @@ subtitle on the What's new page.
 
 - **Nearly enough sun is no longer a complaint.** A plant wanting an hour more
   sun than your spot gets was told off for it, quoting two numbers that rounded
-  to the same one. It now says it may just not grow as well.
+  to the same one. It now says it may just not grow as well. <!-- guide: find -->
 
 - **A row with no photograph looked like a broken one.** Some entries in the
   wildlife list — "Mason & mining bees" — are a group rather than one species,
@@ -860,7 +872,7 @@ subtitle on the What's new page.
 
 - **A starting region, if you'd rather skip the map for good.** If you already
   know your area, choose it once under **Starting region** in
-  [Settings](https://indigene.app/settings) and every visit begins there.
+  [Settings](https://indigene.app/settings) and every visit begins there. <!-- guide: find -->
 
 - **Settings now lists everything this device remembers about you**, in plain
   words, each with a button that throws it away: your last spot, your starting

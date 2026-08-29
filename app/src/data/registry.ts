@@ -181,7 +181,37 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "north-michigan",
       "florida-central"
+    ]
+  },
+  {
+    "primaryId": "ipni:56795-1",
+    "scientificName": "Acer saccharum",
+    "family": "Sapindaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "56795-1",
+      "wfo": "wfo-0000515026",
+      "gbif": "3189859",
+      "usda": "ACSA3",
+      "itis": "28731",
+      "inat": "52543",
+      "wikidata": "Q214733",
+      "indigene": "acer-saccharum"
+    },
+    "commonNames": [
+      "Sugar Maple"
+    ],
+    "aliases": [
+      "acer saccharum",
+      "sugar maple"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
     ]
   },
   {
@@ -449,6 +479,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:11206-2",
+    "scientificName": "Amelanchier laevis",
+    "family": "Rosaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "11206-2",
+      "wfo": "wfo-0001009248",
+      "gbif": "3023832",
+      "usda": "AMLA",
+      "itis": "182046",
+      "inat": "54814",
+      "wikidata": "Q163825",
+      "indigene": "amelanchier-laevis"
+    },
+    "commonNames": [
+      "Allegheny Serviceberry"
+    ],
+    "aliases": [
+      "allegheny serviceberry",
+      "amelanchier laevis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
+    ]
+  },
+  {
     "primaryId": "ipni:473778-1",
     "scientificName": "Amorpha californica",
     "family": "Fabaceae",
@@ -503,6 +562,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "north-michigan",
       "pnw"
     ]
   },
@@ -587,7 +647,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "north-michigan"
     ]
   },
   {
@@ -726,8 +787,8 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "arctostaphylos-uva-ursi"
     },
     "commonNames": [
-      "Kinnikinnick",
-      "Bearberry"
+      "Bearberry",
+      "Kinnikinnick"
     ],
     "aliases": [
       "arctostaphylos uva-ursi",
@@ -736,6 +797,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "north-michigan",
       "pnw"
     ]
   },
@@ -827,6 +889,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:20973-2",
+    "scientificName": "Aruncus dioicus",
+    "family": "Rosaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "20973-2",
+      "wfo": "wfo-0001018107",
+      "gbif": "5362136",
+      "usda": "ARDI8",
+      "itis": "25130",
+      "inat": "75600",
+      "wikidata": "Q163763",
+      "indigene": "aruncus-dioicus"
+    },
+    "commonNames": [
+      "Goat's Beard"
+    ],
+    "aliases": [
+      "aruncus dioicus",
+      "goat's beard"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:94272-1",
     "scientificName": "Asclepias fascicularis",
     "family": "Apocynaceae",
@@ -881,7 +972,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "north-michigan"
     ]
   },
   {
@@ -940,6 +1032,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "north-michigan",
       "florida-central"
     ]
   },
@@ -1059,6 +1152,34 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:31492-2",
+    "scientificName": "Berberis nervosa",
+    "family": "Berberidaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "31492-2",
+      "wfo": "wfo-0000563585",
+      "gbif": "3033877",
+      "itis": "18825",
+      "inat": "75756",
+      "wikidata": "Q19848987",
+      "indigene": "berberis-nervosa"
+    },
+    "commonNames": [
+      "Dwarf Oregon Grape"
+    ],
+    "aliases": [
+      "berberis nervosa",
+      "dwarf oregon grape"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:295155-1",
     "scientificName": "Betula nigra",
     "family": "Betulaceae",
@@ -1113,6 +1234,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "north-michigan",
       "pnw"
     ]
   },
@@ -1331,6 +1453,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:30036649-2",
+    "scientificName": "Campanula rotundifolia",
+    "family": "Campanulaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "30036649-2",
+      "wfo": "wfo-0000828550",
+      "gbif": "5410907",
+      "usda": "CARO2",
+      "itis": "34497",
+      "inat": "62312",
+      "wikidata": "Q27989",
+      "indigene": "campanula-rotundifolia"
+    },
+    "commonNames": [
+      "Harebell"
+    ],
+    "aliases": [
+      "campanula rotundifolia",
+      "harebell"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
+    ]
+  },
+  {
     "primaryId": "ipni:46763-2",
     "scientificName": "Carex obnupta",
     "family": "Cyperaceae",
@@ -1385,7 +1536,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "north-michigan"
     ]
   },
   {
@@ -1475,7 +1627,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "north-michigan"
     ]
   },
   {
@@ -2075,6 +2228,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:271519-1",
+    "scientificName": "Cornus canadensis",
+    "family": "Cornaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "271519-1",
+      "wfo": "wfo-0000924607",
+      "gbif": "3082270",
+      "usda": "COCA13",
+      "itis": "27816",
+      "inat": "47192",
+      "wikidata": "Q1420828",
+      "indigene": "cornus-canadensis"
+    },
+    "commonNames": [
+      "Bunchberry"
+    ],
+    "aliases": [
+      "bunchberry",
+      "cornus canadensis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
+    ]
+  },
+  {
     "primaryId": "ipni:271574-1",
     "scientificName": "Cornus florida",
     "family": "Cornaceae",
@@ -2219,6 +2401,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "north-michigan",
       "pnw"
     ]
   },
@@ -2306,6 +2489,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "north-michigan",
       "pnw"
     ]
   },
@@ -2447,15 +2631,76 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "deschampsia-cespitosa"
     },
     "commonNames": [
+      "Tufted Hairgrass",
       "Tufted Hair-grass"
     ],
     "aliases": [
       "deschampsia cespitosa",
-      "tufted hair-grass"
+      "tufted hair-grass",
+      "tufted hairgrass"
     ],
     "cultivarOf": null,
     "regions": [
+      "pnw",
       "france-atlantic"
+    ]
+  },
+  {
+    "primaryId": "ipni:672641-1",
+    "scientificName": "Dicentra formosa",
+    "family": "Papaveraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "672641-1",
+      "wfo": "wfo-0000644965",
+      "gbif": "2888553",
+      "usda": "DIFO",
+      "itis": "18947",
+      "inat": "51048",
+      "wikidata": "Q1871251",
+      "indigene": "dicentra-formosa"
+    },
+    "commonNames": [
+      "Pacific Bleeding Heart"
+    ],
+    "aliases": [
+      "dicentra formosa",
+      "pacific bleeding heart"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:148473-1",
+    "scientificName": "Diervilla lonicera",
+    "family": "Caprifoliaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "148473-1",
+      "wfo": "wfo-0000647174",
+      "gbif": "2888711",
+      "usda": "DILO",
+      "itis": "35310",
+      "inat": "67983",
+      "wikidata": "Q5274994",
+      "indigene": "diervilla-lonicera"
+    },
+    "commonNames": [
+      "Northern Bush Honeysuckle"
+    ],
+    "aliases": [
+      "diervilla lonicera",
+      "northern bush honeysuckle"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
     ]
   },
   {
@@ -3078,6 +3323,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:60437839-2",
+    "scientificName": "Eutrochium maculatum",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "60437839-2",
+      "wfo": "wfo-0000095626",
+      "gbif": "3138195",
+      "usda": "EUMA9",
+      "itis": "780333",
+      "inat": "117440",
+      "wikidata": "Q1951405",
+      "indigene": "eutrochium-maculatum"
+    },
+    "commonNames": [
+      "Spotted Joe-Pye Weed"
+    ],
+    "aliases": [
+      "eutrochium maculatum",
+      "spotted joe-pye weed"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
+    ]
+  },
+  {
     "primaryId": "ipni:60437842-2",
     "scientificName": "Eutrochium purpureum",
     "family": "Asteraceae",
@@ -3104,6 +3378,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic"
+    ]
+  },
+  {
+    "primaryId": "ipni:295597-1",
+    "scientificName": "Fagus grandifolia",
+    "family": "Fagaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "295597-1",
+      "wfo": "wfo-0000966434",
+      "gbif": "2882274",
+      "usda": "FAGR",
+      "itis": "19462",
+      "inat": "49202",
+      "wikidata": "Q149219",
+      "indigene": "fagus-grandifolia"
+    },
+    "commonNames": [
+      "American Beech"
+    ],
+    "aliases": [
+      "american beech",
+      "fagus grandifolia"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
     ]
   },
   {
@@ -3312,7 +3615,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "north-michigan"
     ]
   },
   {
@@ -3664,7 +3968,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "north-michigan"
     ]
   },
   {
@@ -4082,7 +4387,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "north-michigan"
     ]
   },
   {
@@ -4533,7 +4839,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "north-michigan"
     ]
   },
   {
@@ -4719,6 +5026,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:504907-1",
+    "scientificName": "Lupinus perennis",
+    "family": "Fabaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "504907-1",
+      "wfo": "wfo-0000213846",
+      "gbif": "2964435",
+      "usda": "LUPE3",
+      "itis": "26091",
+      "inat": "81528",
+      "wikidata": "Q2365593",
+      "indigene": "lupinus-perennis"
+    },
+    "commonNames": [
+      "Wild Lupine"
+    ],
+    "aliases": [
+      "lupinus perennis",
+      "wild lupine"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
+    ]
+  },
+  {
     "primaryId": "ipni:504939-1",
     "scientificName": "Lupinus polyphyllus",
     "family": "Fabaceae",
@@ -4893,6 +5229,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:17145680-1",
+    "scientificName": "Matteuccia struthiopteris",
+    "family": "Onocleaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "17145680-1",
+      "wfo": "wfo-0001109164",
+      "gbif": "2650999",
+      "usda": "MAST",
+      "itis": "17596",
+      "inat": "82574",
+      "wikidata": "Q1130386",
+      "indigene": "matteuccia-struthiopteris"
+    },
+    "commonNames": [
+      "Ostrich Fern"
+    ],
+    "aliases": [
+      "matteuccia struthiopteris",
+      "ostrich fern"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
+    ]
+  },
+  {
     "primaryId": "ipni:313006-2",
     "scientificName": "Mimosa strigillosa",
     "family": "Fabaceae",
@@ -4949,7 +5314,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "north-michigan"
     ]
   },
   {
@@ -5280,7 +5646,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "north-michigan"
     ]
   },
   {
@@ -5543,7 +5910,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "north-michigan"
     ]
   },
   {
@@ -5695,6 +6063,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:263339-1",
+    "scientificName": "Pinus strobus",
+    "family": "Pinaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "263339-1",
+      "wfo": "wfo-0000481530",
+      "gbif": "5284982",
+      "usda": "PIST",
+      "itis": "183385",
+      "inat": "52391",
+      "wikidata": "Q157230",
+      "indigene": "pinus-strobus"
+    },
+    "commonNames": [
+      "Eastern White Pine"
+    ],
+    "aliases": [
+      "eastern white pine",
+      "pinus strobus"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
     ]
   },
   {
@@ -5901,7 +6298,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "north-michigan"
     ]
   },
   {
@@ -6019,6 +6417,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic"
+    ]
+  },
+  {
+    "primaryId": "ipni:776886-1",
+    "scientificName": "Populus tremuloides",
+    "family": "Salicaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "776886-1",
+      "wfo": "wfo-0000928260",
+      "gbif": "3040215",
+      "usda": "POTR5",
+      "itis": "195773",
+      "inat": "54840",
+      "wikidata": "Q469576",
+      "indigene": "populus-tremuloides"
+    },
+    "commonNames": [
+      "Quaking Aspen"
+    ],
+    "aliases": [
+      "populus tremuloides",
+      "quaking aspen"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
     ]
   },
   {
@@ -6224,7 +6651,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "north-michigan"
     ]
   },
   {
@@ -6581,7 +7009,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "north-michigan"
     ]
   },
   {
@@ -6969,6 +7398,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:738961-1",
+    "scientificName": "Rubus parviflorus",
+    "family": "Rosaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "738961-1",
+      "wfo": "wfo-0001016292",
+      "gbif": "7872219",
+      "usda": "RUPA",
+      "itis": "25007",
+      "inat": "51646",
+      "wikidata": "Q2614003",
+      "indigene": "rubus-parviflorus"
+    },
+    "commonNames": [
+      "Thimbleberry"
+    ],
+    "aliases": [
+      "rubus parviflorus",
+      "thimbleberry"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:223579-2",
     "scientificName": "Rubus spectabilis",
     "family": "Rosaceae",
@@ -7053,6 +7511,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic"
+    ]
+  },
+  {
+    "primaryId": "ipni:223740-2",
+    "scientificName": "Rudbeckia hirta",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "223740-2",
+      "wfo": "wfo-0000027627",
+      "gbif": "3114225",
+      "usda": "RUHI2",
+      "itis": "36765",
+      "inat": "62741",
+      "wikidata": "Q2532820",
+      "indigene": "rudbeckia-hirta"
+    },
+    "commonNames": [
+      "Black-eyed Susan"
+    ],
+    "aliases": [
+      "black-eyed susan",
+      "rudbeckia hirta"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
     ]
   },
   {
@@ -7148,6 +7635,35 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:284528-2",
+    "scientificName": "Salix discolor",
+    "family": "Salicaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "284528-2",
+      "wfo": "wfo-0000928583",
+      "gbif": "5372785",
+      "usda": "SADI",
+      "itis": "22524",
+      "inat": "54844",
+      "wikidata": "Q3124760",
+      "indigene": "salix-discolor"
+    },
+    "commonNames": [
+      "Pussy Willow"
+    ],
+    "aliases": [
+      "pussy willow",
+      "salix discolor"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
     ]
   },
   {
@@ -7441,6 +7957,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "north-michigan",
       "pnw"
     ]
   },
@@ -7470,7 +7987,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "north-michigan"
     ]
   },
   {
@@ -7530,6 +8048,35 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "florida-central",
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:564393-1",
+    "scientificName": "Sidalcea campestris",
+    "family": "Malvaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "564393-1",
+      "wfo": "wfo-0001077112",
+      "gbif": "3152730",
+      "usda": "SICA2",
+      "itis": "21858",
+      "inat": "168939",
+      "wikidata": "Q17579205",
+      "indigene": "sidalcea-campestris"
+    },
+    "commonNames": [
+      "Meadow Checkermallow"
+    ],
+    "aliases": [
+      "meadow checkermallow",
+      "sidalcea campestris"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {
@@ -7616,6 +8163,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic"
+    ]
+  },
+  {
+    "primaryId": "ipni:240517-2",
+    "scientificName": "Solidago speciosa",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "240517-2",
+      "wfo": "wfo-0000032825",
+      "gbif": "5389063",
+      "usda": "SOSP2",
+      "itis": "36310",
+      "inat": "130376",
+      "wikidata": "Q664217",
+      "indigene": "solidago-speciosa"
+    },
+    "commonNames": [
+      "Showy Goldenrod"
+    ],
+    "aliases": [
+      "showy goldenrod",
+      "solidago speciosa"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
     ]
   },
   {
@@ -7972,6 +8548,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:911502-1",
+    "scientificName": "Symphyotrichum laeve",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "911502-1",
+      "wfo": "wfo-0000129622",
+      "gbif": "8421156",
+      "usda": "SYLA3",
+      "itis": "522218",
+      "inat": "129607",
+      "wikidata": "Q544417",
+      "indigene": "symphyotrichum-laeve"
+    },
+    "commonNames": [
+      "Smooth Blue Aster"
+    ],
+    "aliases": [
+      "smooth blue aster",
+      "symphyotrichum laeve"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
+    ]
+  },
+  {
     "primaryId": "ipni:981863-1",
     "scientificName": "Symphyotrichum novae-angliae",
     "family": "Asteraceae",
@@ -7997,7 +8602,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "north-michigan"
     ]
   },
   {
@@ -8056,6 +8662,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-central"
+    ]
+  },
+  {
+    "primaryId": "ipni:263956-1",
+    "scientificName": "Thuja occidentalis",
+    "family": "Cupressaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "263956-1",
+      "wfo": "wfo-0000407772",
+      "gbif": "2684178",
+      "usda": "THOC2",
+      "itis": "505490",
+      "inat": "54037",
+      "wikidata": "Q147468",
+      "indigene": "thuja-occidentalis"
+    },
+    "commonNames": [
+      "Northern White Cedar"
+    ],
+    "aliases": [
+      "northern white cedar",
+      "thuja occidentalis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
     ]
   },
   {
@@ -8175,6 +8810,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:286108-2",
+    "scientificName": "Tilia americana",
+    "family": "Malvaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "286108-2",
+      "wfo": "wfo-0000457477",
+      "gbif": "3152042",
+      "usda": "TIAM",
+      "itis": "21536",
+      "inat": "54854",
+      "wikidata": "Q163981",
+      "indigene": "tilia-americana"
+    },
+    "commonNames": [
+      "American Basswood"
+    ],
+    "aliases": [
+      "american basswood",
+      "tilia americana"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
     ]
   },
   {
@@ -8332,6 +8996,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:264005-1",
+    "scientificName": "Tsuga canadensis",
+    "family": "Pinaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "264005-1",
+      "wfo": "wfo-0000456302",
+      "gbif": "2687182",
+      "usda": "TSCA",
+      "itis": "183397",
+      "inat": "48734",
+      "wikidata": "Q1137143",
+      "indigene": "tsuga-canadensis"
+    },
+    "commonNames": [
+      "Eastern Hemlock"
+    ],
+    "aliases": [
+      "eastern hemlock",
+      "tsuga canadensis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
+    ]
+  },
+  {
     "primaryId": "ipni:264010-1",
     "scientificName": "Tsuga heterophylla",
     "family": "Pinaceae",
@@ -8418,6 +9111,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:261779-2",
+    "scientificName": "Vaccinium angustifolium",
+    "family": "Ericaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "261779-2",
+      "wfo": "wfo-0000422967",
+      "gbif": "2882868",
+      "usda": "VAAN",
+      "itis": "23579",
+      "inat": "84542",
+      "wikidata": "Q512441",
+      "indigene": "vaccinium-angustifolium"
+    },
+    "commonNames": [
+      "Lowbush Blueberry"
+    ],
+    "aliases": [
+      "lowbush blueberry",
+      "vaccinium angustifolium"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
     ]
   },
   {
@@ -8631,6 +9353,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:326266-2",
+    "scientificName": "Viburnum lentago",
+    "family": "Adoxaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "326266-2",
+      "wfo": "wfo-0001290597",
+      "gbif": "2888586",
+      "usda": "VILE",
+      "itis": "35266",
+      "inat": "54773",
+      "wikidata": "Q3321544",
+      "indigene": "viburnum-lentago"
+    },
+    "commonNames": [
+      "Nannyberry"
+    ],
+    "aliases": [
+      "nannyberry",
+      "viburnum lentago"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
+    ]
+  },
+  {
     "primaryId": "ipni:149845-1",
     "scientificName": "Viburnum obovatum",
     "family": "Adoxaceae",
@@ -8749,6 +9500,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:69009-1",
+    "scientificName": "Vitis riparia",
+    "family": "Vitaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "69009-1",
+      "wfo": "wfo-0000421816",
+      "gbif": "5372385",
+      "usda": "VIRI",
+      "itis": "28624",
+      "inat": "119936",
+      "wikidata": "Q1081461",
+      "indigene": "vitis-riparia"
+    },
+    "commonNames": [
+      "Riverbank Grape"
+    ],
+    "aliases": [
+      "riverbank grape",
+      "vitis riparia"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
+    ]
+  },
+  {
     "primaryId": "ipni:17365470-1",
     "scientificName": "Woodwardia fimbriata",
     "family": "Blechnaceae",
@@ -8832,7 +9612,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "north-michigan"
     ]
   }
 ];

@@ -107,6 +107,13 @@ const LANDMARKS = {
     { name: "Washington", lat: 38.9, lon: -77.04 },
     { name: "Richmond", lat: 37.54, lon: -77.44 },
   ],
+  "north-michigan": [
+    { name: "Mackinaw City", lat: 45.78, lon: -84.72 },
+    { name: "Petoskey", lat: 45.37, lon: -84.96 },
+    { name: "Alpena", lat: 45.06, lon: -83.43 },
+    { name: "Traverse City", lat: 44.76, lon: -85.62 },
+    { name: "Cadillac", lat: 44.25, lon: -85.4 },
+  ],
   "florida-central": [
     { name: "Pensacola", lat: 30.42, lon: -87.22 },
     { name: "Tallahassee", lat: 30.44, lon: -84.28 },
@@ -576,9 +583,20 @@ async function buildRegion(meta) {
   const source = eea
     ? "EEA Biogeographical Regions of Europe (2016), CC BY 4.0 © European Environment Agency"
     : "US EPA Level III Ecoregions of the Conterminous United States (2011), public domain";
+  // A map with no labelled places is a blob nobody can find themselves on, which
+  // defeats the point of drawing it. Refuse to build one: every region must
+  // declare a handful of cities in LANDMARKS above that fix its edges.
+  const places = LANDMARKS[meta.id] ?? [];
+  if (places.length < 3) {
+    throw new Error(
+      `${meta.id}: a region map needs spatial reference. Add a handful of major ` +
+        `cities (ideally four or five, at least three) to the LANDMARKS table in ` +
+        `this script — enough to fix the shape's north, south and inland edges.`,
+    );
+  }
   const svg = svgFor({
     view, land, admin, cover,
-    places: LANDMARKS[meta.id] ?? [],
+    places,
     boxOnly: !meta.ecoregion,
     credit: {
       title: escape(`Where the ${meta.name} region reaches`),

@@ -3250,5 +3250,290 @@
       "gbif": "2882910",
       "wikidata": "Q3299248"
     }
+  },
+  "Acer saccharum": {
+    "identifiers": {
+      "ipni": "56795-1",
+      "wfo": "wfo-0000515026",
+      "usda": "ACSA3",
+      "itis": "28731",
+      "inat": "52543",
+      "gbif": "3189859",
+      "wikidata": "Q214733"
+    }
+  },
+  "Amelanchier laevis": {
+    "identifiers": {
+      "ipni": "11206-2",
+      "wfo": "wfo-0001009248",
+      "usda": "AMLA",
+      "itis": "182046",
+      "inat": "54814",
+      "gbif": "3023832",
+      "wikidata": "Q163825"
+    }
+  },
+  "Campanula rotundifolia": {
+    "identifiers": {
+      "ipni": "30036649-2",
+      "wfo": "wfo-0000828550",
+      "usda": "CARO2",
+      "itis": "34497",
+      "inat": "62312",
+      "gbif": "5410907",
+      "wikidata": "Q27989"
+    }
+  },
+  "Cornus canadensis": {
+    "identifiers": {
+      "ipni": "271519-1",
+      "wfo": "wfo-0000924607",
+      "usda": "COCA13",
+      "itis": "27816",
+      "inat": "47192",
+      "gbif": "3082270",
+      "wikidata": "Q1420828"
+    }
+  },
+  "Diervilla lonicera": {
+    "identifiers": {
+      "ipni": "148473-1",
+      "wfo": "wfo-0000647174",
+      "usda": "DILO",
+      "itis": "35310",
+      "inat": "67983",
+      "gbif": "2888711",
+      "wikidata": "Q5274994"
+    }
+  },
+  "Eutrochium maculatum": {
+    "identifiers": {
+      "ipni": "60437839-2",
+      "wfo": "wfo-0000095626",
+      "usda": "EUMA9",
+      "itis": "780333",
+      "inat": "117440",
+      "gbif": "3138195",
+      "wikidata": "Q1951405"
+    }
+  },
+  "Fagus grandifolia": {
+    "identifiers": {
+      "ipni": "295597-1",
+      "wfo": "wfo-0000966434",
+      "usda": "FAGR",
+      "itis": "19462",
+      "inat": "49202",
+      "gbif": "2882274",
+      "wikidata": "Q149219"
+    }
+  },
+  "Lupinus perennis": {
+    "identifiers": {
+      "ipni": "504907-1",
+      "wfo": "wfo-0000213846",
+      "usda": "LUPE3",
+      "itis": "26091",
+      "inat": "81528",
+      "gbif": "2964435",
+      "wikidata": "Q2365593"
+    }
+  },
+  "Matteuccia struthiopteris": {
+    "identifiers": {
+      "ipni": "17145680-1",
+      "wfo": "wfo-0001109164",
+      "usda": "MAST",
+      "itis": "17596",
+      "inat": "82574",
+      "gbif": "2650999",
+      "wikidata": "Q1130386"
+    }
+  },
+  "Pinus strobus": {
+    "identifiers": {
+      "ipni": "263339-1",
+      "wfo": "wfo-0000481530",
+      "usda": "PIST",
+      "itis": "183385",
+      "inat": "52391",
+      "gbif": "5284982",
+      "wikidata": "Q157230"
+    }
+  },
+  "Populus tremuloides": {
+    "identifiers": {
+      "ipni": "776886-1",
+      "wfo": "wfo-0000928260",
+      "usda": "POTR5",
+      "itis": "195773",
+      "inat": "54840",
+      "gbif": "3040215",
+      "wikidata": "Q469576"
+    }
+  },
+  "Rudbeckia hirta": {
+    "identifiers": {
+      "ipni": "223740-2",
+      "wfo": "wfo-0000027627",
+      "usda": "RUHI2",
+      "itis": "36765",
+      "inat": "62741",
+      "gbif": "3114225",
+      "wikidata": "Q2532820"
+    }
+  },
+  "Salix discolor": {
+    "identifiers": {
+      "ipni": "284528-2",
+      "wfo": "wfo-0000928583",
+      "usda": "SADI",
+      "itis": "22524",
+      "inat": "54844",
+      "gbif": "5372785",
+      "wikidata": "Q3124760"
+    }
+  },
+  "Solidago speciosa": {
+    "identifiers": {
+      "ipni": "240517-2",
+      "wfo": "wfo-0000032825",
+      "usda": "SOSP2",
+      "itis": "36310",
+      "inat": "130376",
+      "gbif": "5389063",
+      "wikidata": "Q664217"
+    }
+  },
+  "Symphyotrichum laeve": {
+    "identifiers": {
+      "ipni": "911502-1",
+      "wfo": "wfo-0000129622",
+      "usda": "SYLA3",
+      "itis": "522218",
+      "inat": "129607",
+      "gbif": "8421156",
+      "wikidata": "Q544417"
+    }
+  },
+  "Thuja occidentalis": {
+    "identifiers": {
+      "ipni": "263956-1",
+      "wfo": "wfo-0000407772",
+      "usda": "THOC2",
+      "itis": "505490",
+      "inat": "54037",
+      "gbif": "2684178",
+      "wikidata": "Q147468"
+    }
+  },
+  "Tilia americana": {
+    "identifiers": {
+      "ipni": "286108-2",
+      "wfo": "wfo-0000457477",
+      "usda": "TIAM",
+      "itis": "21536",
+      "inat": "54854",
+      "gbif": "3152042",
+      "wikidata": "Q163981"
+    }
+  },
+  "Tsuga canadensis": {
+    "identifiers": {
+      "ipni": "264005-1",
+      "wfo": "wfo-0000456302",
+      "usda": "TSCA",
+      "itis": "183397",
+      "inat": "48734",
+      "gbif": "2687182",
+      "wikidata": "Q1137143"
+    }
+  },
+  "Vaccinium angustifolium": {
+    "identifiers": {
+      "ipni": "261779-2",
+      "wfo": "wfo-0000422967",
+      "usda": "VAAN",
+      "itis": "23579",
+      "inat": "84542",
+      "gbif": "2882868",
+      "wikidata": "Q512441"
+    }
+  },
+  "Viburnum lentago": {
+    "identifiers": {
+      "ipni": "326266-2",
+      "wfo": "wfo-0001290597",
+      "usda": "VILE",
+      "itis": "35266",
+      "inat": "54773",
+      "gbif": "2888586",
+      "wikidata": "Q3321544"
+    }
+  },
+  "Vitis riparia": {
+    "identifiers": {
+      "ipni": "69009-1",
+      "wfo": "wfo-0000421816",
+      "usda": "VIRI",
+      "itis": "28624",
+      "inat": "119936",
+      "gbif": "5372385",
+      "wikidata": "Q1081461"
+    }
+  },
+  "Aruncus dioicus": {
+    "identifiers": {
+      "ipni": "20973-2",
+      "wfo": "wfo-0001018107",
+      "usda": "ARDI8",
+      "itis": "25130",
+      "inat": "75600",
+      "gbif": "5362136",
+      "wikidata": "Q163763"
+    }
+  },
+  "Berberis nervosa": {
+    "identifiers": {
+      "ipni": "31492-2",
+      "wfo": "wfo-0000563585",
+      "itis": "18825",
+      "inat": "75756",
+      "gbif": "3033877",
+      "wikidata": "Q19848987"
+    }
+  },
+  "Dicentra formosa": {
+    "identifiers": {
+      "ipni": "672641-1",
+      "wfo": "wfo-0000644965",
+      "usda": "DIFO",
+      "itis": "18947",
+      "inat": "51048",
+      "gbif": "2888553",
+      "wikidata": "Q1871251"
+    }
+  },
+  "Rubus parviflorus": {
+    "identifiers": {
+      "ipni": "738961-1",
+      "wfo": "wfo-0001016292",
+      "usda": "RUPA",
+      "itis": "25007",
+      "inat": "51646",
+      "gbif": "7872219",
+      "wikidata": "Q2614003"
+    }
+  },
+  "Sidalcea campestris": {
+    "identifiers": {
+      "ipni": "564393-1",
+      "wfo": "wfo-0001077112",
+      "usda": "SICA2",
+      "itis": "21858",
+      "inat": "168939",
+      "gbif": "3152730",
+      "wikidata": "Q17579205"
+    }
   }
 }

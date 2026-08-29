@@ -130,7 +130,12 @@ function fill(target: HTMLElement): void {
     document
       .querySelector<HTMLAnchorElement>('#footer-text a[href$="release-notes/"]')
       ?.getAttribute("href") ?? "release-notes/";
+  const guideHref =
+    document
+      .querySelector<HTMLAnchorElement>('#footer-text a[href$="guide/"]')
+      ?.getAttribute("href") ?? "guide/";
   target.replaceChildren(
+    row(guideHref, "📖", t("footer.guide")),
     row(notesHref, "✨", t("footer.releaseNotes"), { dot: hasUnseenRelease() }),
     row("#/saved", "🔖", t("nav.savedLocations")),
     // One row, not one per setting. Language and units used to sit here as

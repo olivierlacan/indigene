@@ -137,10 +137,20 @@ new UI — the MR description must show it, not just describe it. The procedure:
      "http://127.0.0.1:4173/#/<route>" before-dark.png --scheme dark
    ```
 
-   Repeat with `--scheme light` and against the after port. Use
-   `--no-full-page` when the change is tiny (a viewport crop is kinder), and
-   `--dpr 1` for very long pages (a results list or the release notes at 3×
-   makes a 30k-pixel-tall bitmap — huge files, and Chromium may clip it).
+   Repeat with `--scheme light` and against the after port.
+
+   **Default to a focused viewport crop, not a full-page shot.** These images
+   commit to the repo and accumulate, and a towering full-page capture of a long
+   list — a plant page, a wildlife page, a region roster, the release notes — is
+   a multi-hundred-KB (often megabyte) file that mostly shows a list already in
+   the diff. So pass `--no-full-page` (optionally `--viewport` to frame the part
+   that changed) and screenshot **the thing that actually changed**, not the
+   whole scroll. A full-page shot is earned only when the layout of the *whole
+   page* is the subject — a genuine design/layout comparison — and even then use
+   `--dpr 1` on a long page (a 3× full-page list becomes a 30k-pixel-tall bitmap
+   Chromium may clip). When in doubt, fewer and smaller: one crop that shows the
+   change beats a stack of full-page towers.
+
    The script exists because the Playwright CLI can't set pixel ratio with
    chromium — its iPhone descriptors force WebKit, which isn't installed.
 
@@ -205,8 +215,30 @@ rules:
   `Unreleased`. No fixed cadence, no conventional commits — the version number
   just increments when a feature ships.
 
-Two more conventions the compiler understands:
+Three more conventions the compiler understands:
 
+- **Name the section, when it isn't already linked.** The guide at
+  `/guide/` is compiled from this changelog: each entry is filed under the
+  part of the app it changed, and shows up in that part's plain-words history.
+  An entry that links to the part (`https://indigene.app/wildlife`) is filed by
+  that link, so most need nothing extra. For one that links nowhere — or that
+  touches more than one part — start it with the section's name and a colon:
+
+  ```markdown
+  - Regions: North Michigan is on the map — 46 native plants for its cool,
+    lime-rich country.
+  - Regions & Wildlife: the ranked list now shows a photo beside each plant.
+  ```
+
+  This is prose, not syntax: it reads as a sentence, it shows on the What's-new
+  page like any other words, and it only files a change because it matches a
+  section name — the same shape as this file's `Internal:` and Keep a
+  Changelog 2.0's `**Breaking:**`. A leading word that *isn't* a section name
+  is just prose ("Note: …"), so a prefix can never break the build. The names
+  are the `label`s in `app/scripts/guide-catalog.mjs` (currently Finder,
+  Wildlife, Regions, Plants, Planting, Look-alikes, Privacy, Sources); most
+  entries need no prefix at all. Don't force one — a change that isn't really
+  about a section stays plain.
 - **Link what you describe.** When an entry mentions something with an
   address — a page, a section — link it with the full live URL
   (`https://indigene.app/wildlife`), so a reader who
@@ -261,3 +293,18 @@ exactly this). Trivial edits don't need a re-measure. When you do update it,
 keep the wording's intent (e.g. the ecoregion-plan comparison still has to read
 as "polygons would dwarf the bundle") and use one consistent number across all
 the docs.
+
+## A map needs somewhere to stand
+
+A map exists to answer *"does this include me?"* — and it can't if it's a shaded
+shape with nothing named on it. A region drawn as a green blob on an unlabelled
+coastline is not a map, it's decoration: the reader can't find themselves on it,
+so it fails at the one job it had.
+
+So **every map carries a handful of spatial references — major cities, at
+least — enough to fix its edges (north, south, and the inland side).** For
+region maps that's the `LANDMARKS` table in `scripts/build-region-maps.mjs`;
+the builder now refuses to draw a region that declares fewer than three, so the
+mistake can't ship silently. When you add or review a map, **look at the
+rendered image** and check you can find a place you know on it — a size number
+or a passing build is not that check.

@@ -109,9 +109,9 @@ function factsFor(s) {
     facts.push({ icon: "sprout", value: String(s.plants), label: s.plants === 1 ? "native plant" : "native plants" });
   }
   if (s.host > 0) facts.push({ icon: "caterpillar", value: String(s.host), label: "raise young" });
-  if (s.nectar > 0) facts.push({ icon: "bloom", value: String(s.nectar), label: "for nectar" });
-  if (s.berries > 0) facts.push({ icon: "berries", value: String(s.berries), label: "for berries" });
-  if (s.seeds > 0) facts.push({ icon: "seeds", value: String(s.seeds), label: "for seeds" });
+  if (s.nectar > 0) facts.push({ icon: "bloom", value: String(s.nectar), label: "give nectar" });
+  if (s.berries > 0) facts.push({ icon: "berries", value: String(s.berries), label: "give berries" });
+  if (s.seeds > 0) facts.push({ icon: "seeds", value: String(s.seeds), label: "give seeds" });
   if (s.shelter > 0) facts.push({ icon: "shelter", value: String(s.shelter), label: "shelter it" });
   return facts.slice(0, 4);
 }

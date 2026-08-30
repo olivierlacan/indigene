@@ -342,6 +342,97 @@ export interface LookalikeLink {
 }
 
 // ---------------------------------------------------------------------------
+// Native alternatives: the "grow this instead" layer.
+//
+// Look-alikes (above) answer "is the thing in front of me actually it?". This
+// layer answers the question a gardener asks *before* they buy: "I want a lawn,
+// a hedge, a shade tree, a butterfly plant — what native does that job here?"
+// The answer isn't a plant that *looks like* the ornamental (Bermuda grass and
+// little bluestem look nothing alike); it's a native that fills the same role
+// and is at least as tough, so the swap costs nothing and gives the local food
+// web back.
+//
+// Same two-part shape as the look-alike and wildlife layers:
+//
+//   1. ORNAMENTALS — the catalog. Each commonly-planted non-native described
+//      once: what it's planted *for* (`role`), where it's really from, and the
+//      weakness a native beats. Bermuda grass is Bermuda grass in every region.
+//
+//   2. ALTERNATIVES — the ties, keyed by region → ornamental id → the natives
+//      that stand in for it there. Keyed by region because the right swap is a
+//      local question: the lawn grass that shrugs off a Mid-Atlantic summer is
+//      not the one for a Florida one.
+//
+// Honesty stance, as everywhere else:
+//   - A swap earns its place only when the native genuinely does the same job.
+//     "Plant a wildflower meadow instead of a lawn" is a real answer for a
+//     border; it is not an answer for the strip a child plays football on, and
+//     we don't pretend it is — the `why` says what the native is *for*.
+//   - The comparison is two-sided and honest: where the ornamental wins on a
+//     trait, the edge simply isn't claimed. Every tie carries a `basis`.
+// ---------------------------------------------------------------------------
+
+/**
+ * One commonly-planted non-native ornamental, described once. `latin` is what
+ * makes it findable — the app builds its iNaturalist link from the scientific
+ * name, exactly as the look-alike catalog and the registry do.
+ */
+export interface Ornamental {
+  id: string; // stable slug, e.g. "cynodon-dactylon"
+  common: string; // "Bermuda grass"
+  latin: string; // "Cynodon dactylon"
+  form: PlantForm;
+  /** What people plant it *for*, in two or three words: "Lawn / turf",
+   *  "Street shade tree", "Clipped hedge". This is the role a native has to
+   *  fill to be a real alternative, so it leads the card. */
+  role: string;
+  /** Where it's really from, in plain words: "Native to East Africa." */
+  origin: string;
+  /** What it is, why it's planted so widely, and the weakness a native beats. */
+  blurb: string;
+  /** A dependable, citable source for the origin. */
+  originBasis: string;
+}
+
+/**
+ * Which trait a swap is being compared on. Small and plain on purpose — the
+ * three the feature was built to answer (see the plant data: `noWaterEstablish`
+ * + `moisture` back water; the eco-scores back wildlife; disease is editorial
+ * and cited). `care` is reserved for a later pass.
+ */
+export type SwapAxis = "water" | "disease" | "wildlife" | "care";
+
+/**
+ * One trait where the native meets or beats the ornamental. Two-sided, like
+ * `TellApart`: "the native needs no watering" only lands next to what the
+ * ornamental needs instead. Read as a sentence: **Water** — the native does
+ * this, the ornamental does that.
+ */
+export interface SwapEdge {
+  axis: SwapAxis;
+  /** What the native does on this trait — the side that leads. */
+  native: string;
+  /** What the ornamental does, for the contrast. */
+  ornamental: string;
+}
+
+/**
+ * One ornamental→native substitution, keyed under the ornamental in a region's
+ * alternatives map. Points at a native in that region's roster.
+ */
+export interface AlternativeLink {
+  /** The recommended native's plant id, in this region's roster. */
+  plantId: string;
+  /** Why this native fills the same role, in one plain sentence. */
+  why: string;
+  /** How it compares, water/disease/wildlife-first. May be empty when the
+   *  `why` already carries the whole case. */
+  edges: SwapEdge[];
+  /** A dependable, citable source for the swap and its edges. */
+  basis: string;
+}
+
+// ---------------------------------------------------------------------------
 // Registry: the canonical identity layer.
 //
 // The plant lists answer "what should I plant here". The registry answers a

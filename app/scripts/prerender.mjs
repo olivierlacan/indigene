@@ -231,13 +231,14 @@ function headMeta({ title, description, path, image, imageAlt }) {
  * sentences the row already carries.
  */
 async function collectPages(load) {
-  const [{ en }, { REGIONS, loadPlants }, { WILDLIFE }, { KIND_ORDER, KIND_SLUGS }, { lookalikeIndex }, { TECHNIQUES }, { shareablePaths, PHOTOS_SEGMENT }] =
+  const [{ en }, { REGIONS, loadPlants }, { WILDLIFE }, { KIND_ORDER, KIND_SLUGS }, { lookalikeIndex }, { alternativeIndex }, { TECHNIQUES }, { shareablePaths, PHOTOS_SEGMENT }] =
     await Promise.all([
       load("/src/locales/en.ts"),
       load("/src/lib/plants.ts"),
       load("/src/data/wildlife.ts"),
       load("/src/lib/wildlife.ts"),
       load("/src/lib/lookalikes.ts"),
+      load("/src/lib/alternatives.ts"),
       load("/src/lib/planting.ts"),
       load("/src/lib/routes.ts"),
     ]);
@@ -261,6 +262,8 @@ async function collectPages(load) {
   add("wildlife", en["wildlife.indexDocTitle"], fill(en["wildlife.indexLede"], { n: WILDLIFE.length }));
   const impostors = await lookalikeIndex();
   add("lookalikes", en["lookalikes.indexDocTitle"], fill(en["lookalikes.indexLede"], { n: impostors.length }));
+  const ornamentals = await alternativeIndex();
+  add("alternatives", en["alternatives.indexDocTitle"], fill(en["alternatives.indexLede"], { n: ornamentals.length }));
   add("planting", en["planting.docTitle"], en["planting.lede"], {
     image: plantingCard("index"),
     imageAlt: "Ways to grow more — the four seasons, and the count of techniques and sources behind the page",
@@ -332,6 +335,17 @@ async function collectPages(load) {
       `lookalikes/${row.lookalike.id}`,
       fill(en["lookalikes.docTitle"], { name: row.lookalike.common }),
       `${row.lookalike.origin} ${row.lookalike.blurb}`
+    );
+  }
+
+  // --- one page per ornamental worth swapping ---
+  // Shareable for the same reason: "you were going to plant Bermuda grass —
+  // here's the native that does the same job" is a link somebody sends.
+  for (const row of ornamentals) {
+    add(
+      `alternatives/${row.ornamental.id}`,
+      fill(en["alternatives.docTitle"], { name: row.ornamental.common }),
+      `${row.ornamental.origin} ${row.ornamental.blurb}`
     );
   }
 

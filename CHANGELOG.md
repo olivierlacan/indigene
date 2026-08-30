@@ -57,16 +57,42 @@ subtitle on the What's new page.
   *somewhere* (white oak is S1 in Nebraska while being the Mid-Atlantic's best
   tree); eleven survive the scoping. The ranks are NatureServe's and the IUCN's,
   relayed by iNaturalist; what they mean lives at /guide/conservation.
+- **Native swaps: what to grow instead.** A new page sets the ornamentals people
+  plant everywhere — and that aren’t from here — beside a native that does the
+  same job, as tough on water and disease and better for wildlife. A
+  Bermuda-grass lawn, meet little bluestem. [See them](https://indigene.app/alternatives)
+- Internal: `data/alternatives.ts` mirrors the look-alike layer — a shared
+  `ORNAMENTALS` catalog (~21 non-natives) plus region-keyed `ALTERNATIVES` ties
+  across all ten regions, audited by `lib/alternatives.ts`. Water and wildlife
+  edges come from `noWaterEstablish` and the eco-scores; disease is editorial
+  and cited. The French catalog prose falls back to English behind the WIP
+  banner until it’s translated. Follow-ups: ornamental photos for the entries
+  that lack one, French translation, and cross-linking the invasive ones to
+  their look-alike status.
+- Internal: `npm run swaps:coverage` reports the layer native-first — for each
+  region, how many of the plants we already catalogue carry a “grow me instead
+  of X” story, and the ones that don’t, by form and highest ecological value
+  first (keystones lead). This is the authoring queue, and it sets the
+  priority: grow the ties outward from our own roster (what does this native
+  replace?) rather than by hunting up ornamentals to disapprove of. A first
+  keystones-first pass off that queue took coverage from 63/377 (17%) to
+  111/377 (29%) — every 300-plus-host oak, willow, cherry, birch and aspen now
+  names the common non-native (London plane, weeping willow, ornamental cherry,
+  European birch, blue spruce, garden mum, sago palm) it stands in for. The
+  keystones left uncovered are honest skips: a native that is itself the good
+  choice (silver birch in France), a lawn fescue, a meadow legume — plants with
+  no common ornamental counterpart to name.
 
 ### Changed
 
 - **New gardens start in metric.** Metres and centimetres are the default now,
   wherever you are; switch to imperial — or “follow my device” — any time under
   Units in Settings.
-- **Two clearer ways in on the plant list.** The pointers under
-  [the plant search](https://indigene.app/plants) — check a look-alike, or make
-  more of a plant you have — are now a pair of tidy cards with an icon each,
-  side by side, instead of two oddly spaced lines of text.
+- **Clearer ways in on the plant list.** The pointers under
+  [the plant search](https://indigene.app/plants) — check a look-alike, find a
+  native to grow instead of a common ornamental, or make more of a plant you
+  have — are now tidy cards with an icon each, instead of oddly spaced lines of
+  text.
 
 ## [0.27] - 2026-08-28
 

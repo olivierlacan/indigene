@@ -88,10 +88,11 @@ subtitle on the What's new page.
 - **New gardens start in metric.** Metres and centimetres are the default now,
   wherever you are; switch to imperial — or “follow my device” — any time under
   Units in Settings.
-- **Two clearer ways in on the plant list.** The pointers under
-  [the plant search](https://indigene.app/plants) — check a look-alike, or make
-  more of a plant you have — are now a pair of tidy cards with an icon each,
-  side by side, instead of two oddly spaced lines of text.
+- **Clearer ways in on the plant list.** The pointers under
+  [the plant search](https://indigene.app/plants) — check a look-alike, find a
+  native to grow instead of a common ornamental, or make more of a plant you
+  have — are now tidy cards with an icon each, instead of oddly spaced lines of
+  text.
 
 ## [0.27] - 2026-08-28
 

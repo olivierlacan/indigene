@@ -145,7 +145,17 @@ function regionFilter(active: RegionDef | null, perRegion: Map<string, number>):
  *  one: *what to grow instead*. That's what a reader scans the index for. */
 function indexCard(row: AlternativeIndexRow, region: RegionDef | null): FilterRow {
   const names = nameLines(row.ornamental);
-  const natives = row.natives.map((n) => commonName(n.plant));
+  // Deduped by plant: the unfiltered index flattens the natives across every
+  // region, and one native can stand in for the same ornamental in two of them
+  // (beach sunflower replaces a Bermuda lawn in both Florida regions). Listing
+  // it twice reads as a mistake — the region filter is where the split lives.
+  const seenNative = new Set<string>();
+  const nativePlants = row.natives.filter((n) => {
+    if (seenNative.has(n.plant.id)) return false;
+    seenNative.add(n.plant.id);
+    return true;
+  });
+  const natives = nativePlants.map((n) => commonName(n.plant));
   const title = el("span", {});
   const sub = names.sub ? el("em", {}) : null;
   const instead = el("span", {});

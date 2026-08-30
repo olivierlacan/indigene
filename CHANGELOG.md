@@ -48,10 +48,16 @@ subtitle on the What's new page.
   and the preview now shows that creature, the regions it's native to, and how
   many native plants feed or shelter it — not one generic picture for all of
   them. [Browse wildlife](https://indigene.app/wildlife)
-- Internal: `gen-wildlife-cards.mjs` draws one 1200×630 JPEG per animal into
-  `public/og/wildlife/`, the same committed-card pattern as the plant and
-  planting cards; `prerender.mjs` points each `wildlife/<id>` page at its own,
-  and `routes:check` fails if one is missing.
+- **Animals are drawn, not borrowed.** Each creature now wears a hand-drawn
+  silhouette in Indigene's green — a butterfly with its wings up, a bee, a bird,
+  a tortoise — across the [wildlife lists](https://indigene.app/wildlife) and
+  pages and on the share card, replacing the phone's flat, wings-pinned emoji.
+- Internal: `components/wildlife-glyphs.ts` holds the six kind silhouettes (the
+  gopher tortoise resolves by iconic taxon, not its "mammal" browse kind), drawn
+  to the plant-glyph rules and shared by the app and `gen-wildlife-cards.mjs`,
+  which draws one 1200×630 JPEG per animal into `public/og/wildlife/`;
+  `prerender.mjs` points each `wildlife/<id>` page at its own card and
+  `routes:check` fails if one is missing.
 
 ### Changed
 

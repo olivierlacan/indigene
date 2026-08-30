@@ -17,6 +17,8 @@ import { supportIcon } from "./support-icon";
 import { supportLabel, wildlifeKindShort, WILDLIFE_KINDS } from "../lib/plain";
 import { commonName } from "../lib/names";
 import { t, fmtNumber } from "../lib/i18n";
+import { wildlifeIcon } from "./wildlife-thumb";
+import { glyphKeyFor } from "./wildlife-glyphs";
 
 /** One chip. Exported for the pages that need to lay them out themselves. */
 export function wildlifeChip(tie: TieSummary): HTMLElement {
@@ -28,7 +30,8 @@ export function wildlifeChip(tie: TieSummary): HTMLElement {
     title: tie.sole ? t("plant.soleTie", { name }) : `${support.term} — ${support.plain}`,
   }, [
     tie.sole ? el("span", { "aria-hidden": "true" }, "⭐ ") : null,
-    el("span", { "aria-hidden": "true" }, `${tie.wildlife.icon} `),
+    wildlifeIcon(glyphKeyFor(tie.wildlife.kind, tie.wildlife.inat?.iconic), 15),
+    " ",
     name,
     el("span", { "aria-hidden": "true", class: "wl-chip-tie" }, [supportIcon(tie.support, 13)]),
   ]);
@@ -78,7 +81,8 @@ export function wildlifeRegionGroups(rows: WildlifeIndexRow[], idBase: string): 
           name: commonName(row.wildlife),
         }),
       }, [
-        el("span", { "aria-hidden": "true" }, `${row.wildlife.icon} `),
+        wildlifeIcon(glyphKeyFor(row.wildlife.kind, row.wildlife.inat?.iconic), 15),
+        " ",
         commonName(row.wildlife),
         el("span", { "aria-hidden": "true", class: "wl-chip-tie" }, fmtNumber(row.plantCount)),
       ]),
@@ -125,7 +129,7 @@ function kindGroups(items: Array<{ wildlife: Wildlife; chip: HTMLElement }>, idB
         }
       },
     }, [
-      el("span", { class: "wl-group-icon", "aria-hidden": "true" }, wildlifeKindShort(kind).icon),
+      el("span", { class: "wl-group-icon", "aria-hidden": "true" }, [wildlifeIcon(kind, 18)]),
       el("span", { class: "wl-group-name" }, wildlifeKindShort(kind).title),
       el("span", { class: "wl-group-count" }, fmtNumber(group.length)),
     ]);

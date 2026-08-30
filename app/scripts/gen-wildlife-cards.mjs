@@ -15,11 +15,12 @@
 //
 // The English common name, big; the scientific name under it in italics (an
 // informal group like "Jays, turkeys & woodpeckers" has none, and the line is
-// simply dropped); the animal's own emoji at hero size — the same 🦋/🐝/🐦 the
-// app shows everywhere for it, because an animal has no drawn silhouette the way
-// a plant has a form, and a photograph can't ride a share card (see the licence
-// note in gen-plant-cards.mjs); and up to four facts as an icon and a number,
-// because a card is read in half a second and a sentence isn't.
+// simply dropped); the animal's drawn kind glyph at hero size — the same
+// butterfly, moth, bee, bird, mammal or tortoise silhouette the app shows for it
+// (`components/wildlife-glyphs.ts`), drawn in a living pose rather than the flat
+// specimen the OS emoji is, and a photograph can't ride a share card (see the
+// licence note in gen-plant-cards.mjs); and up to four facts as an icon and a
+// number, because a card is read in half a second and a sentence isn't.
 //
 // The facts are the animal's reach: how many of our regions it's native to, how
 // many native plants support it, and the shape of that support — the plants it
@@ -253,7 +254,7 @@ function nameSize(name) {
   return 54;
 }
 
-function cardHtml({ name, latin, icon, kind, facts }) {
+function cardHtml({ name, latin, glyph, kind, facts }) {
   const chips = facts
     .map(
       (f) => `<li>
@@ -302,15 +303,10 @@ function cardHtml({ name, latin, icon, kind, facts }) {
     margin-top: 14px; font-size: 34px; font-style: italic;
     color: ${BRAND}; letter-spacing: -0.005em;
   }
-  /* The emoji at hero size. It's the animal's identity everywhere else in the
-     app, and it's what an unfurler's square crop should keep beside the name,
-     so it's pushed to the right and sized to hold the column. */
-  .creature {
-    margin-left: auto; flex: none; font-size: 230px; line-height: 1;
-    /* Emoji ship with their own colour; a hair of contrast lift keeps them from
-       muddying against the dark ground. */
-    filter: saturate(1.05);
-  }
+  /* The drawn kind glyph at hero size — the same silhouette the app shows for
+     this animal, in the brand green. Pushed right so an unfurler's square crop
+     keeps both it and the name. */
+  .creature { margin-left: auto; flex: none; line-height: 0; opacity: 0.95; }
 
   /* Four facts and an address share 1040 px, so nothing here may wrap. */
   ul { position: relative; display: flex; gap: 30px; list-style: none; align-items: center; }
@@ -331,7 +327,7 @@ function cardHtml({ name, latin, icon, kind, facts }) {
     <h1>${esc(name)}</h1>
     ${latin ? `<div class="latin">${esc(latin)}</div>` : ""}
   </div>
-  <div class="creature" aria-hidden="true">${icon}</div>
+  <div class="creature" aria-hidden="true">${glyph}</div>
 </div>
 <ul>${chips}<li class="url">indigene.app</li></ul>
 `;
@@ -342,9 +338,10 @@ function cardHtml({ name, latin, icon, kind, facts }) {
 const loader = await openLoader();
 let animals;
 try {
-  const [{ WILDLIFE }, { plantsForWildlife, regionsForWildlife }] = await Promise.all([
+  const [{ WILDLIFE }, { plantsForWildlife, regionsForWildlife }, { wildlifeGlyphMarkup, glyphKeyFor }] = await Promise.all([
     loader.load("/src/data/wildlife.ts"),
     loader.load("/src/lib/wildlife.ts"),
+    loader.load("/src/components/wildlife-glyphs.ts"),
   ]);
   // The same counts the animal's own page shows: ties across regions, so a plant
   // native to two lists is counted on each — exactly what the page's region
@@ -357,7 +354,7 @@ try {
       slug: w.id,
       name: w.common,
       latin: w.latin ?? "",
-      icon: w.icon,
+      glyph: wildlifeGlyphMarkup(glyphKeyFor(w.kind, w.inat?.iconic), 240, BRAND),
       kind: KIND_LABEL[w.kind] ?? "",
       facts: factsFor({
         regions: regionsForWildlife(w.id).length,

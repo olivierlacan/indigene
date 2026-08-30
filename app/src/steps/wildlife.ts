@@ -46,7 +46,8 @@ import { plantThumb } from "../components/plant-thumb";
 import { sectionHeading, sectionTitle } from "../components/section-link";
 import { keystoneIcon } from "../components/keystone-icon";
 import { wildlifeNearbySection } from "../components/wildlife-nearby";
-import { wildlifeThumb, wildlifeHero } from "../components/wildlife-thumb";
+import { wildlifeThumb, wildlifeHero, wildlifeIcon, wildlifeSilhouette } from "../components/wildlife-thumb";
+import { glyphKeyFor } from "../components/wildlife-glyphs";
 import { cardStats } from "../components/card-stats";
 import { statTiles } from "../components/stat-card";
 import type { Stat } from "../components/stat-card";
@@ -169,7 +170,8 @@ export function renderWildlifeIndex(main: HTMLElement, view: IndexView = {}): vo
   if (label) {
     main.append(
       el("h2", { class: "step-title" }, [
-        el("span", { "aria-hidden": "true" }, `${label.icon} `),
+        kind ? wildlifeIcon(kind, 26) : null,
+        kind ? " " : null,
         label.title,
       ]),
       el("p", { class: "step-lede" },
@@ -224,7 +226,7 @@ export function renderWildlifeIndex(main: HTMLElement, view: IndexView = {}): vo
       const node = el("section", {}, [
         sectionHeading(
           indexHref(region?.meta.id ?? null, k),
-          kindLabel.icon,
+          wildlifeIcon(k, 24),
           kindLabel.title,
           fmtNumber(inKind.length)
         ),
@@ -300,7 +302,7 @@ function kindChips(
       href: indexHref(region?.meta.id ?? null, k),
       "aria-current": k === current ? "page" : undefined,
     }, [
-      el("span", { "aria-hidden": "true" }, label.icon),
+      wildlifeIcon(k),
       ` ${label.title} (${fmtNumber(count)})`,
     ]));
   }
@@ -371,10 +373,10 @@ function wildlifeCard(row: WildlifeIndexRow, region: RegionDef | null): FilterRo
     ? el("span", { class: "plant-latin", style: "font-weight:400;font-size:0.82rem" })
     : null;
   const node = el("article", { class: "card wildlife-card" }, [
-    // The emoji, with the animal's chosen photograph fading in over it where
-    // one has been picked — the same arrangement the plant lists use, and for
-    // the same reason: the row is never empty and never jumps.
-    wildlifeThumb(w.id, w.icon, {
+    // The drawn kind glyph, with the animal's chosen photograph fading in over
+    // it where one has been picked — the same arrangement the plant lists use,
+    // and for the same reason: the row is never empty and never jumps.
+    wildlifeThumb(w.id, glyphKeyFor(w.kind, w.inat?.iconic), {
       px: 56,
       regionId: region?.meta.id,
       attrs: { class: "wildlife-photo wildlife-card-icon" },
@@ -537,7 +539,7 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
       el("p", { class: "region-tag", style: "margin:0 0 0.4rem;font-size:0.9rem;color:var(--ink-soft)" }, [
         el("a", { href: "#/wildlife" }, t("wildlife.allWildlife")),
         "  ·  ",
-        el("a", { href: `#/wildlife/${KIND_SLUGS[w.kind]}` }, `${label.icon} ${label.title}`),
+        el("a", { href: `#/wildlife/${KIND_SLUGS[w.kind]}` }, [wildlifeIcon(w.kind), ` ${label.title}`]),
       ]),
       // Who it is on the left, what we know about it on the right — but only on
       // a laptop. Both wrappers are `display: contents` below that breakpoint,
@@ -545,13 +547,13 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
       // pair a plant's page uses; see "Profile pages on a laptop".)
       el("div", { class: "plant-cols" }, [
         el("div", { class: "plant-col" }, [
-          // The photograph where one has been chosen, the emoji where none has
-          // — the same two layouts a plant's profile has, and the same reason
-          // for the float: a name, a binomial and a row of region pills are
+          // The photograph where one has been chosen, the drawn kind glyph where
+          // none has — the same two layouts a plant's profile has, and the same
+          // reason for the float: a name, a binomial and a row of region pills are
           // shorter than a photograph is tall, and a flex column would leave
           // that difference blank.
           el("div", { class: hero ? "plant-head plant-head-photo" : "plant-head" }, [
-            hero ?? el("div", { "aria-hidden": "true", style: "font-size:2.4rem;line-height:1;flex:0 0 auto" }, w.icon),
+            hero ?? el("div", { "aria-hidden": "true", style: "line-height:1;flex:0 0 auto" }, [wildlifeSilhouette(glyphKeyFor(w.kind, w.inat?.iconic), 44)]),
             el("div", {}, [
               el("h2", { class: "plant-name", style: "margin:0" }, names.title),
               names.sub ? el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" }, names.sub) : null,

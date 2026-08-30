@@ -1185,6 +1185,31 @@ export const fr: Dict = {
   "plant.sizeAria": "Taille de {name} au fil du temps",
   "plant.figuresFor": "Données pour :",
   "plant.nativeTo": "📍 Indigène de : ",
+  // Court, le statut en tête : « Vulnérable (G3) dans le monde. » Les termes de
+  // rang sont invariables (« vulnérable », « en danger »…), donc pas de souci
+  // d'accord entre une plante et un animal. Ce que signifie un rang, et qui le
+  // publie, est expliqué une seule fois sur /guide/conservation (lien `learnMore`).
+  "conservation.rank": "{words} ({rank})",
+  "conservation.globally": "{status} dans le monde.",
+  "conservation.here": "En {place}, {status}.",
+  "conservation.learnMore": "Ce que signifient ces statuts",
+  "conservation.buyNursery": "À acheter en pépinière — n'en prélevez jamais dans la nature.",
+  "conservation.plantForIt": "Planter ce dont il a besoin, voilà l'aide utile.",
+  "conservation.span": "{from} à {to}",
+  "conservation.words.1": "gravement en péril",
+  "conservation.words.2": "en péril",
+  "conservation.words.3": "vulnérable",
+  "conservation.words.4": "apparemment en sécurité",
+  "conservation.words.5": "en sécurité",
+  "conservation.words.CR": "en danger critique",
+  "conservation.words.EN": "en danger",
+  "conservation.words.VU": "vulnérable",
+  "conservation.words.NT": "quasi menacée",
+  "conservation.words.LC": "préoccupation mineure",
+  // Les lieux arrivent en anglais (iNaturalist) ; seuls les États et provinces
+  // de nos régions peuvent apparaître ici, d'où la brièveté de la liste.
+  "conservation.place.florida-us": "Floride",
+  "conservation.place.pennsylvania-us": "Pennsylvanie",
   "plant.whyBelongs": "Pourquoi elle est chez elle ici : ",
   "plant.share": "Partager cette plante",
   "plant.shareShort": "Partager",

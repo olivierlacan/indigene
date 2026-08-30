@@ -47,6 +47,7 @@ import { sectionHeading, sectionTitle } from "../components/section-link";
 import { keystoneIcon } from "../components/keystone-icon";
 import { wildlifeNearbySection } from "../components/wildlife-nearby";
 import { wildlifeThumb, wildlifeHero } from "../components/wildlife-thumb";
+import { conservationNote } from "../components/conservation-note";
 import { cardStats } from "../components/card-stats";
 import { statTiles } from "../components/stat-card";
 import type { Stat } from "../components/stat-card";
@@ -570,6 +571,9 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
           // .plant-body's padding, so the phone stack is unchanged.
           el("div", { class: "plant-body plant-body-lead" }, [
             el("p", { style: "margin:0" }, wildlifeBlurb(w)),
+            // Where somebody has assessed it. The region shown is the first one
+            // it lives in, matching the photograph above it.
+            conservationNote(w.id, byRegion[0]?.region.meta.id, "animal"),
           ]),
         ]),
         el("div", { class: "plant-col" }, [

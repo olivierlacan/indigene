@@ -1,0 +1,97 @@
+{
+  "atala": {
+    "regions": {
+      "florida-south": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Florida, US"
+      }
+    }
+  },
+  "baptisia-australis": {
+    "global": {
+      "rank": "G3G4",
+      "authority": "NatureServe"
+    },
+    "regions": {
+      "mid-atlantic": {
+        "rank": "S2",
+        "authority": "NatureServe",
+        "place": "Pennsylvania, US"
+      }
+    }
+  },
+  "brown-headed-nuthatch": {
+    "regions": {
+      "florida-central": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Florida, US"
+      }
+    }
+  },
+  "california-dogface": {
+    "global": {
+      "rank": "G2G3",
+      "authority": "NatureServe"
+    }
+  },
+  "gopher-tortoise": {
+    "global": {
+      "rank": "CR",
+      "authority": "IUCN Red List"
+    }
+  },
+  "pinus-palustris": {
+    "global": {
+      "rank": "EN",
+      "authority": "IUCN Red List"
+    }
+  },
+  "rivina-humilis": {
+    "regions": {
+      "florida-south": {
+        "rank": "S3S4",
+        "authority": "NatureServe",
+        "place": "Florida, US"
+      }
+    }
+  },
+  "rudbeckia-fulgida": {
+    "regions": {
+      "mid-atlantic": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Pennsylvania, US"
+      }
+    }
+  },
+  "sonoran-blue": {
+    "global": {
+      "rank": "G3G4",
+      "authority": "NatureServe"
+    }
+  },
+  "sophora-tomentosa-truncata": {
+    "regions": {
+      "florida-south": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Florida, US"
+      }
+    }
+  },
+  "zamia-integrifolia": {
+    "global": {
+      "rank": "G3",
+      "authority": "NatureServe"
+    },
+    "regions": {
+      "florida-south": {
+        "rank": "S3S4",
+        "authority": "NatureServe",
+        "place": "Florida, US"
+      }
+    }
+  }
+}

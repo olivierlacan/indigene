@@ -21,7 +21,7 @@ dataset has to pass before anything here depends on it.
 
 | Path | What it is |
 |---|---|
-| [`app/`](app/) | The PWA — vanilla TypeScript on the DOM, no framework, zero runtime deps, ~292 KB gzipped plus the one region you garden in (9–36 KB). This is the product. Offline-first, installable. |
+| [`app/`](app/) | The PWA — vanilla TypeScript on the DOM, no framework, zero runtime deps, ~305 KB gzipped plus the one region you garden in (9–36 KB). This is the product. Offline-first, installable. |
 | [`server/`](server/) | A thin **Hanami 2** JSON API. Its job: fetch site data (soil/elevation/climate) server-side to dodge browser CORS and keep future API keys off the client. The PWA works without it. |
 
 ## Quick start

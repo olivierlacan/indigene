@@ -44,6 +44,19 @@ subtitle on the What's new page.
   labels — the same shape as KAC 2.0's `**Breaking:**` and our `Internal:`. A
   leading word that isn't a known section is just prose, so this never fails a
   build; `guide:check` reports what filed where.
+- Conservation: **a plant or animal in trouble now says so.** Longleaf pine
+  reads “Endangered (EN) worldwide”; eleven of our plants and animals carry a
+  rank like that, and the rest are doing fine. A link explains what the ranks
+  mean and who assesses them. [What the ranks mean](https://indigene.app/guide/conservation)
+- Conservation: **and what to do about it.** The same line ends by saying to buy
+  nursery-grown stock rather than dig a plant from the wild — and, for an animal,
+  to plant what it needs.
+- Internal: `scripts/conservation.mjs` keeps two claims per subject — a global
+  assessment, and the rank in the one state or province a region mostly is
+  (grid-sampled from its box). 136 of 368 subjects carry a worrying rank
+  *somewhere* (white oak is S1 in Nebraska while being the Mid-Atlantic's best
+  tree); eleven survive the scoping. The ranks are NatureServe's and the IUCN's,
+  relayed by iNaturalist; what they mean lives at /guide/conservation.
 
 ### Changed
 

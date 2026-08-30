@@ -1171,6 +1171,38 @@ export const en = {
   "plant.sizeAria": "Size of {name} over time",
   "plant.figuresFor": "Figures for:",
   "plant.nativeTo": "📍 Native to: ",
+  // The assessed-status line (`components/conservation-note.ts`). Eleven pages
+  // carry one, and it's kept short: the status leads, the rank code sits beside
+  // its meaning so a reader can look it up, and the advice is there because the
+  // fact before it is the reason somebody might go and take one. What a rank is,
+  // and who publishes it, is explained once at /guide/conservation — the
+  // `learnMore` link — not on every page.
+  "conservation.rank": "{words} ({rank})",
+  "conservation.globally": "{status} worldwide.",
+  "conservation.here": "In {place}, {status}.",
+  "conservation.learnMore": "What these ranks mean",
+  "conservation.buyNursery": "Buy it from a nursery — never dig one from the wild.",
+  "conservation.plantForIt": "Planting what it needs is the help it can use.",
+  // The ranks in words. NatureServe's five and the IUCN's five, which overlap
+  // on "vulnerable" and nowhere else. `conservation.span` joins the two ends of
+  // a rank an assessor couldn't narrow down (`G3G4`).
+  "conservation.span": "{from} to {to}",
+  "conservation.words.1": "critically imperiled",
+  "conservation.words.2": "imperiled",
+  "conservation.words.3": "vulnerable",
+  "conservation.words.4": "apparently secure",
+  "conservation.words.5": "secure",
+  "conservation.words.CR": "critically endangered",
+  "conservation.words.EN": "endangered",
+  "conservation.words.VU": "vulnerable",
+  "conservation.words.NT": "near threatened",
+  "conservation.words.LC": "least concern",
+  // Place names arrive from iNaturalist in English, with a country on the end
+  // that a sentence doesn't need. Only a region's own state or province can
+  // appear here, which is why two entries cover it; anything else prints as
+  // published rather than guessed at.
+  "conservation.place.florida-us": "Florida",
+  "conservation.place.pennsylvania-us": "Pennsylvania",
   "plant.whyBelongs": "Why it belongs here: ",
   // The accessible name of the share control; the icon carries the 🔗 itself.
   "plant.share": "Share this plant",

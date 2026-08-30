@@ -65,37 +65,46 @@ export const WILDLIFE_GLYPHS: Record<WildlifeGlyphKey, Mark[]> = {
     S("M22.5 9.5C19 6.5 14 5.5 10 7"),
     S("M25.5 9.5C29 6.5 34 5.5 38 7"),
   ],
-  // Top-down bee: a fat, rounded body and a round head, two pairs of wings held
-  // up and out. Single colour loses the stripes, so the heft of the body carries
-  // it — rounder and stouter than the moth.
+  // A bee in profile, flying left — the view that tells it from a bird. A fat
+  // body tapering to a stinger at the back, a round head with two antennae, two
+  // wings held up and back, and three legs dangling. Single colour loses the
+  // stripes, so the tapered body and the hanging legs carry it.
   bee: [
-    F("M24 15.5C28.4 15.5 31 20 31 27C31 34.5 28 40.5 24 40.5C20 40.5 17 34.5 17 27C17 20 19.6 15.5 24 15.5Z"),
-    F("M24 9.5a4 4 0 1 0 0 8 4 4 0 1 0 0-8Z"),
-    F("M20.5 20C15.5 16.5 8.5 16.5 5.2 21C3.2 24 6 27.5 11 27.5C15.5 27.5 19.5 24 20.5 20Z"),
-    F("M27.5 20C32.5 16.5 39.5 16.5 42.8 21C44.8 24 42 27.5 37 27.5C32.5 27.5 28.5 24 27.5 20Z"),
-    S("M22.5 8C20.5 5.5 18 4.5 15.5 5"),
-    S("M25.5 8C27.5 5.5 30 4.5 32.5 5"),
+    F("M10 25C10 19.5 15.5 16 24 16C33 16 39.5 19.5 40.5 24.5C41 27 39 29.5 34 30.5C24 32.5 10 30.5 10 25Z"),
+    F("M39.5 22.5L44.5 25L39.5 27.5Z"),
+    F(circle(8.5, 24, 3.8)),
+    S("M6.5 20.5C5 18 3.5 17 2 17"),
+    S("M8 20C7.2 17.2 6.2 16.2 4.8 15.8"),
+    F("M20 16C18 8.5 22.5 3.5 28.5 4C33.5 4.4 34 9.5 30 13C27 15.5 23 16.5 20 16Z"),
+    F("M26 16.5C25 9.5 29.5 5 35 6C39 6.7 39 11.5 35 14.5C32 16.7 28 16.8 26 16.5Z"),
+    S("M15 30L13.5 35"),
+    S("M21 31L20.5 36"),
+    S("M27 30.5L27.5 35.5"),
   ],
   // A songbird perched in profile, facing left — a plump breast, a round head
-  // set off by a short beak, a long tail cocked to the right, two legs. The most
-  // recognizable single-colour bird there is.
+  // set off by a short beak, a folded wing on the flank, a tail behind, two
+  // legs. The folded wing and the short beak are what keep it a bird and not a
+  // blob.
   bird: [
-    F("M14 32C13 25 19 19.5 26 20.5C31 21.2 33.5 25 33 29.5C32.5 34 29 36.8 23.5 37C17.5 37.2 15 36 14 32Z"),
-    F("M15.5 22.5a5.6 5.6 0 1 0 0 11.2 5.6 5.6 0 1 0 0-11.2Z"),
-    F("M10.5 26.5L4 28.5L10.5 30.5Z"),
-    F("M31.5 30C36.5 30.3 41.5 32.5 44.5 35.2C45 36.7 43.5 37.4 41.5 36.6L30.5 33.5Z"),
-    S("M20 36.5L20 41.5"),
-    S("M24.5 36.5L24.5 41.5"),
+    F("M12 31C11.5 24.5 15.5 20 22 20C30 20 34.5 24 34.5 29C34.5 33.5 30.5 36.8 24 37.2C17 37.6 12.5 35 12 31Z"),
+    F(circle(15, 19.5, 5.4)),
+    F("M10.2 18.5L5 20L10.2 21.6Z"),
+    F("M32.5 27.5C37 27.5 41.5 29.5 44 32.5C44.6 33.6 43.4 34.6 41.8 34L31 31Z"),
+    F("M22 27C26.5 26 31 27.5 32.5 31C29.5 33 24 33 22 30.5Z"),
+    S("M20 37L19.5 41.5"),
+    S("M24.5 37L25 41.5"),
   ],
-  // A small mammal sitting in profile, facing left — a dormouse or squirrel: a
-  // round head with a cocked ear, a plump sitting body, and the big curled tail
-  // sweeping up behind. The tail is the tell.
+  // A squirrel sitting in profile, facing left — a round head with a pointed
+  // snout and a cocked ear, a plump upright body with a paw at the chest, and the
+  // big bushy tail arcing up behind. The ear and the fat tail are what keep it a
+  // mammal and not a bird.
   mammal: [
-    F("M28 40C34 40 39 34 39.5 26C40 19 36.5 13.5 31 13.5C33.5 16.5 34.5 20.5 33 25C31.5 29.5 28 33 24.5 34.5C22.5 35.5 24.5 40 28 40Z"),
-    F("M13 33C12.5 27 16 22.5 21 22.5C26 22.5 30 27 30 33C30 38.5 26 42 20.5 42C15 42 13.5 37.5 13 33Z"),
-    F("M14 18.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 1 0 0-11Z"),
-    F("M10 19C8.5 16 9.5 13 12 12.5C13.5 14 13.5 17 12 19.5Z"),
-    F("M9 22.5L4.5 24.5L9 26.5Z"),
+    F("M27 40C35 39.5 41 32.5 41 22.5C41 14.5 36 9 28.5 9.5C33 12.5 34.5 17.5 33 22.5C31.4 28 27.5 31.5 23.5 33.5C21.3 34.6 23.5 40.4 27 40Z"),
+    F("M11 34.5C10.5 28 14 23.5 19.5 23.5C24.5 23.5 28.5 27 29 32C29.5 37.5 25 41.5 19 41.5C13.5 41.5 11.5 39 11 34.5Z"),
+    F(circle(15, 18.5, 5.2)),
+    F("M9.5 18.5L5 20.2L9.8 21.8Z"),
+    F("M12 13.5C10.7 9 12.6 6.3 15.2 6.9C16.3 9 15.8 12.2 14.2 13.9Z"),
+    F("M11 31.5C8.8 31 7.6 32.6 8.2 34.2C9.8 34.7 11.5 33.6 12 32Z"),
   ],
   // A tortoise in profile — a high domed shell over a flat plastron line, a head
   // reaching forward and two stumped legs. Slow, and unmistakably not a mammal.

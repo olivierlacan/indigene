@@ -26,24 +26,31 @@ import type { Mark } from "./plant-glyphs";
 const F = (d: string): Mark => ({ d });
 const S = (d: string): Mark => ({ d, stem: true });
 
+/** A circle as two explicit arcs — starts at the left edge and returns, so the
+ *  shape sits centred on (cx, cy) rather than half a radius off. */
+const circle = (cx: number, cy: number, r: number): string =>
+  `M${cx - r} ${cy}a${r} ${r} 0 1 0 ${r * 2} 0a${r} ${r} 0 1 0 ${-r * 2} 0Z`;
+
 /** The glyph keys — the five kinds plus the tortoise the reptile borrows. */
 export type WildlifeGlyphKey = WildlifeKind | "tortoise";
 
 export const WILDLIFE_GLYPHS: Record<WildlifeGlyphKey, Mark[]> = {
-  // Dorsal, forewings swept up toward the top corners — the flying pose, not the
-  // pinned one. The body is a slender spindle; the antennae clear the wings and
-  // club at the ends, or the whole thing reads as a leaf.
+  // Wings up in a heart, not spread flat on a board — the difference between a
+  // butterfly fluttering and one pinned in a drawer. The forewings sweep up and
+  // nearly meet at the top; the hindwings round out below; the body is a short
+  // spindle tucked within them so nothing pokes out like a stinger; the antennae
+  // clear the wings and club at the ends.
   butterfly: [
-    F("M23 18C21.3 11 14.5 5.5 8.5 6.6C3.2 7.6 3.4 15.8 8.4 20.4C12.4 24.1 18.4 25.3 23 25Z"),
-    F("M25 18C26.7 11 33.5 5.5 39.5 6.6C44.8 7.6 44.6 15.8 39.6 20.4C35.6 24.1 29.6 25.3 25 25Z"),
-    F("M23 27C20 29.6 13.3 31.1 10.7 34.7C8 38.5 12.3 43.6 17 42C21 40.6 23.2 34.8 23 27Z"),
-    F("M25 27C28 29.6 34.7 31.1 37.3 34.7C40 38.5 35.7 43.6 31 42C27 40.6 24.8 34.8 25 27Z"),
-    F("M24 13.5C25.5 13.5 26.3 15.1 26.3 17.7V34.3C26.3 37.4 25.4 39.4 24 39.4C22.6 39.4 21.7 37.4 21.7 34.3V17.7C21.7 15.1 22.5 13.5 24 13.5Z"),
-    F("M24 8.5a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 1 0 0-5.4Z"),
-    S("M23 10C21 6.5 18.5 5 16 4.6"),
-    S("M25 10C27 6.5 29.5 5 32 4.6"),
-    F("M15.6 3a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 1 0 0-3.8Z"),
-    F("M32.4 3a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 1 0 0-3.8Z"),
+    F("M22.6 20C20.2 11.5 15 4.5 10 4.8C6.4 5 5.5 10 7.6 16.2C9.7 22.4 15 27 22 28C23.1 24 23.1 22.2 22.6 20Z"),
+    F("M25.4 20C27.8 11.5 33 4.5 38 4.8C41.6 5 42.5 10 40.4 16.2C38.3 22.4 33 27 26 28C24.9 24 24.9 22.2 25.4 20Z"),
+    F("M22.5 28C19.5 29.5 13.5 30.5 10.5 34.5C8.2 37.5 10.3 42 14.8 40.6C19 39.3 22.7 34.5 23 29Z"),
+    F("M25.5 28C28.5 29.5 34.5 30.5 37.5 34.5C39.8 37.5 37.7 42 33.2 40.6C29 39.3 25.3 34.5 25 29Z"),
+    F("M24 16C25.3 16 26 17.6 26 20V34C26 37 25.1 38.8 24 38.8C22.9 38.8 22 37 22 34V20C22 17.6 22.7 16 24 16Z"),
+    F(circle(24, 14.5, 2.6)),
+    S("M23 12C21.3 8.5 19 7 16.5 7"),
+    S("M25 12C26.7 8.5 29 7 31.5 7"),
+    F(circle(16, 6.6, 1.8)),
+    F(circle(32, 6.6, 1.8)),
   ],
   // A moth at rest: broad forewings swept back into a delta over a stout, furry
   // body, with feathered antennae combed back. The triangle is what tells it

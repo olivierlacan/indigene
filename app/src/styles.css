@@ -931,6 +931,65 @@ a {
   margin: 0 0 1rem;
 }
 
+/* The two "ways in" under the plants lede (look-alikes, propagation): a pair of
+   callout cards, each a distinct side-door set apart from the search that is the
+   section's real job. Two-up where there's room, stacked on a phone. The whole
+   card is the link, so its measure is capped a touch wider than prose (two cards
+   don't fit at the 36rem reading width) on the wide/profile layouts below. */
+.plant-doors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.7rem;
+  margin: 0 0 1.25rem;
+}
+.plant-door {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.7rem 0.85rem;
+  margin: 0;
+  text-decoration: none;
+  color: inherit;
+}
+.plant-door:hover {
+  border-color: var(--line-strong);
+}
+/* The tinted rounded slot the icon sits in — the same one the plant thumbnails
+   use, so a drawn glyph on `--brand-bg` looks native. `currentColor` in the
+   glyph resolves to the brand green set here. */
+.plant-door-icon {
+  flex: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 10px;
+  background: var(--brand-bg);
+  color: var(--brand);
+  display: grid;
+  place-items: center;
+}
+.plant-door-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+/* The action phrase, picked out of the sentence so the card reads as a way in
+   without being a nested link. Underlines on hover, the way a link would. */
+.plant-door-cta {
+  color: var(--brand-ink);
+  font-weight: 650;
+}
+.plant-door:hover .plant-door-cta {
+  text-decoration: underline;
+}
+.plant-door-chevron {
+  flex: none;
+  align-self: center;
+  color: var(--ink-soft);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
 /* --- Cards & surfaces --- */
 .card {
   background: var(--surface);
@@ -4259,6 +4318,13 @@ body[data-layout="profile"] .note,
 body[data-layout="profile"] .confidence,
 body[data-layout="profile"] .app-footer p {
   max-width: 36rem;
+}
+/* The callout pair is two cards, not prose, so it keeps a wider measure than the
+   36rem reading width — enough for both to sit side by side — but still stops
+   short of the full page so it doesn't tower over the search below it. */
+body[data-layout="wide"] .plant-doors,
+body[data-layout="profile"] .plant-doors {
+  max-width: 44rem;
 }
 /* The banner is the exception: it's a sign about the whole page, not prose
    within it, so on a wide index it spans the page the way a sign would. Its

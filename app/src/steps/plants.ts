@@ -16,11 +16,23 @@ import { REGIONS } from "../lib/plants";
 // name matches — and *looks* matched — identically wherever you type it.
 import { highlight, norm } from "../components/filter-field";
 import { plantThumb } from "../components/plant-thumb";
+import { lookalikeIcon, propagateIcon } from "../components/door-icons";
 import type { PlantForm } from "../types";
 import { t, tx, fmtNumber, getLang } from "../lib/i18n";
 import { regionName, regionShort, searchAliases, localName } from "../lib/names";
 
 const regionMetaOf = (id: string) => REGIONS.find((x) => x.meta.id === id)?.meta;
+
+// One "way in" callout: the whole card links to `href`, with a drawn icon in a
+// tinted slot, the sentence (its action phrase already picked out by the caller
+// as a `.plant-door-cta` span), and a chevron. `body` is the `tx(...)` node list.
+function door(href: string, icon: SVGElement, body: (string | Node)[]): HTMLElement {
+  return el("a", { href, class: "card plant-door" }, [
+    el("span", { class: "plant-door-icon", "aria-hidden": "true" }, [icon]),
+    el("span", { class: "plant-door-text" }, body),
+    el("span", { class: "plant-door-chevron", "aria-hidden": "true" }, "›"),
+  ]);
+}
 
 type Row = {
   slug: string;
@@ -185,19 +197,26 @@ export function renderPlants(main: HTMLElement): void {
   main.append(
     el("h2", { class: "step-title" }, t("plants.title")),
     el("p", { class: "step-lede" }, t("plants.lede")),
-    // The way in to the impostors. It sits here, on the catalog, because that's
-    // where the question arises — you look a plant up because you're not sure
-    // what you're holding — and because the header has no room for a fifth nav
-    // item (see components/app-menu.ts on how tightly it's measured).
-    el("p", { class: "note", style: "margin-top:0" }, tx("plants.lookalikesLink", {
-      link: el("a", { href: "#/lookalikes" }, t("plants.lookalikesLinkText")),
-    })),
-    // And the way in to the how-tos, for the same reason and in the same place:
-    // once you already own one of these, the next question is how to make more
-    // of it, and when in the year that's done.
-    el("p", { class: "note", style: "margin-top:0" }, tx("plants.plantingLink", {
-      link: el("a", { href: "#/planting" }, t("plants.plantingLinkText")),
-    })),
+    // Two ways in, as a pair of callout cards rather than running prose — each is
+    // a distinct side-door, so it reads as one, set apart from the search that is
+    // the section's actual job. The whole card is the link (like the plant cards
+    // below), with a drawn icon, the sentence, and its action phrase picked out;
+    // they sit two-up on a laptop and stack on a phone.
+    //
+    // Look-alikes first: it sits here, on the catalog, because that's where the
+    // question arises — you look a plant up because you're not sure what you're
+    // holding — and because the header has no room for a fifth nav item (see
+    // components/app-menu.ts on how tightly it's measured). Then the how-tos, for
+    // the same reason and place: once you own one, the next question is how to
+    // make more of it, and when in the year that's done.
+    el("div", { class: "plant-doors" }, [
+      door("#/lookalikes", lookalikeIcon(), tx("plants.lookalikesLink", {
+        link: el("span", { class: "plant-door-cta" }, t("plants.lookalikesLinkText")),
+      })),
+      door("#/planting", propagateIcon(), tx("plants.plantingLink", {
+        link: el("span", { class: "plant-door-cta" }, t("plants.plantingLinkText")),
+      })),
+    ]),
     el("div", { class: "field" }, [el("label", { for: "plant-q" }, t("plants.label")), input]),
     count,
     results,

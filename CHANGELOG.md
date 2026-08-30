@@ -57,6 +57,17 @@ subtitle on the What's new page.
   *somewhere* (white oak is S1 in Nebraska while being the Mid-Atlantic's best
   tree); eleven survive the scoping. The ranks are NatureServe's and the IUCN's,
   relayed by iNaturalist; what they mean lives at /guide/conservation.
+- **Native swaps: what to grow instead.** A new page sets the ornamentals people
+  plant everywhere — and that aren’t from here — beside a native that does the
+  same job, as tough on water and disease and better for wildlife. A
+  Bermuda-grass lawn, meet little bluestem. [See them](https://indigene.app/alternatives)
+- Internal: `data/alternatives.ts` mirrors the look-alike layer — an
+  `ORNAMENTALS` catalog plus region-keyed `ALTERNATIVES` ties, audited by
+  `lib/alternatives.ts`. Water and wildlife edges come from `noWaterEstablish`
+  and the eco-scores; disease is editorial and cited. Mid-Atlantic only for now
+  (six ornamentals); the French catalog prose falls back to English behind the
+  WIP banner until it’s translated. Follow-ups: more regions, ornamental photos,
+  and cross-linking the invasive ones to their look-alike status.
 
 ### Changed
 

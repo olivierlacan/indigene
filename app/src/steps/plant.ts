@@ -15,6 +15,7 @@ import { renderPlantPhotos, PHOTOS_ROUTE, photosHref } from "./plant-photos";
 import type { PlantEntry, Suitability } from "../lib/explore";
 import { bestTies } from "../lib/wildlife";
 import { lookalikesForPlant } from "../lib/lookalikes";
+import { ornamentalsForPlant } from "../lib/alternatives";
 import { latPlain, lonPlain } from "../lib/plain";
 import { wildlifeChips } from "../components/wildlife-chips";
 import { SCORE_KEYS, scoreLabel, bloomSentence, confidencePlain, growthPlain, moistureWord, propagationMethod, sunLabel, PROPAGATION_SOURCE_URL, SOURCES_ROUTE } from "../lib/plain";
@@ -37,7 +38,7 @@ import type { Plant, SiteData, SunEstimate } from "../types";
 import { t, tn, fmtNumber, fmtList } from "../lib/i18n";
 import { length, humanHeightLabel } from "../lib/units";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
-import { prose, propagationNote, isUntranslated, lookalikesUntranslated } from "../lib/prose";
+import { prose, propagationNote, isUntranslated, lookalikesUntranslated, alternativesUntranslated } from "../lib/prose";
 import { reportUntranslated } from "../components/wip-banner";
 
 // The anchorable cards below the profile. Each one's address is a fragment on
@@ -100,9 +101,11 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
   // The look-alike writing is part of the same promise: a page that is otherwise
   // fully in the reader's language mustn't quietly grow an English section.
   const allLookalikes = entries.flatMap((e) => lookalikesForPlant(e.region.meta.id, e.plant.id));
+  const allAlternatives = entries.flatMap((e) => ornamentalsForPlant(e.region.meta.id, e.plant.id));
   if (
     isUntranslated(plant, region.meta.id) ||
-    lookalikesUntranslated(plant.latin, allLookalikes, region.meta.id)
+    lookalikesUntranslated(plant.latin, allLookalikes, region.meta.id) ||
+    allAlternatives.some(({ ornamental, link }) => alternativesUntranslated(ornamental.latin, [link]))
   ) {
     reportUntranslated(t("wip.plant"));
   }
@@ -361,6 +364,10 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
           // The impostor warning belongs with the plant's identity, so it stays
           // in this column: you read the name, then who gets mistaken for it.
           lookalikeLine(all),
+          // And, right after, what this native is a good stand-in for: the
+          // reader who came here weighing it against a Bermuda-grass lawn or a
+          // barberry hedge.
+          alternativeLine(all),
           statGrid(p),
         ]),
         el("div", { class: "plant-col" }, [
@@ -835,6 +842,33 @@ function lookalikeLine(all: PlantEntry[]): HTMLElement | null {
     ...[...seen].flatMap(([id, name], i) => [
       i > 0 ? " · " : null,
       el("a", { href: `#/lookalikes/${id}` }, name),
+    ]),
+  ]);
+}
+
+/**
+ * The positive twin of `lookalikeLine`: the common ornamentals this native is a
+ * good stand-in for, named and linked. The whole side-by-side case lives on the
+ * ornamental's own page (`#/alternatives/<id>`), for the same reason the
+ * look-alike comparison does — the same swap would otherwise be printed on
+ * every native it fits. A plant on two rosters shows the deduped union.
+ */
+function alternativeLine(all: PlantEntry[]): HTMLElement | null {
+  const seen = new Map<string, string>(); // id → name to show
+  for (const e of all) {
+    for (const { ornamental } of ornamentalsForPlant(e.region.meta.id, e.plant.id)) {
+      if (!seen.has(ornamental.id)) seen.set(ornamental.id, commonName(ornamental));
+    }
+  }
+  if (!seen.size) return null;
+  return el("p", { class: "kv lookalike-line" }, [
+    el("span", { class: "k" }, [
+      el("span", { "aria-hidden": "true" }, "🌿 "),
+      t("plant.alternativesTitle"),
+    ]),
+    ...[...seen].flatMap(([id, name], i) => [
+      i > 0 ? " · " : null,
+      el("a", { href: `#/alternatives/${id}` }, name),
     ]),
   ]);
 }

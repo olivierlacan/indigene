@@ -22,6 +22,7 @@ import { renderRegion } from "./steps/region";
 import { renderWildlifeIndex, renderWildlife, wildlifeRegionParam } from "./steps/wildlife";
 import { wildlifeKindRoute } from "./lib/wildlife";
 import { renderLookalikeIndex, renderLookalike, lookalikeRegionParam } from "./steps/lookalikes";
+import { renderAlternativeIndex, renderAlternative } from "./steps/alternatives";
 import { renderPlantingIndex, renderPlanting } from "./steps/planting";
 import { techniqueBySlug } from "./lib/planting";
 import { canonicalPath, parseRoute, isHashRoute } from "./lib/routes";
@@ -79,6 +80,10 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
   // The impostors. `#/lookalikes` alone is the whole index; a param is either
   // one impostor or `in/<region>`, and `renderLookalike` tells them apart.
   lookalikes: { fn: (m) => renderLookalikeIndex(m), labelKey: "steps.lookalikes", inFlow: false },
+  // The ornamentals worth swapping. `#/alternatives` alone is the whole index;
+  // a param is either one ornamental or `in/<region>`, and `renderAlternative`
+  // tells them apart — the same shape as look-alikes.
+  alternatives: { fn: (m) => renderAlternativeIndex(m), labelKey: "steps.alternatives", inFlow: false },
   // The propagation techniques: `#/planting` is all fifteen against the
   // calendar, `#/planting/<slug>` is one of them in full.
   planting: { fn: renderPlantingIndex, labelKey: "steps.planting", inFlow: false },
@@ -102,6 +107,7 @@ const PARAM_RENDERERS: Record<string, StepFn> = {
   regions: renderRegion,
   wildlife: renderWildlife,
   lookalikes: renderLookalike,
+  alternatives: renderAlternative,
   planting: renderPlanting,
   settings: renderSettings,
   privacy: renderPrivacy,
@@ -235,6 +241,7 @@ const SECTION_OF: Record<string, string> = {
   regions: "regions",
   plants: "plants",
   lookalikes: "plants",
+  alternatives: "plants",
   wildlife: "wildlife",
   saved: "menu",
   settings: "menu",
@@ -257,7 +264,7 @@ function sectionOf(step: string): string | undefined {
  * techniques at `#/planting`. The profile pages widen differently — see
  * `updateLayout`.
  */
-const WIDE_STEPS = new Set(["plants", "regions", "wildlife", "lookalikes", "planting"]);
+const WIDE_STEPS = new Set(["plants", "regions", "wildlife", "lookalikes", "alternatives", "planting"]);
 
 function updateLayout(step: AppStep, param?: string): void {
   // Two of the documents — a plant's page and an animal's — get a mode of their

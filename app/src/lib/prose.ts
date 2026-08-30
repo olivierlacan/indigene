@@ -49,7 +49,7 @@
 //
 // Callers that don't know their region (there are none today) simply get the
 // plain key, which is a real translation of a real row — not a blank.
-import type { Lookalike, LookalikeLink, Plant, SupportLink, TellApart, Wildlife } from "../types";
+import type { AlternativeLink, Lookalike, LookalikeLink, Ornamental, Plant, SupportLink, SwapEdge, TellApart, Wildlife } from "../types";
 import { getLang } from "./i18n";
 
 /** The prose fields on a plant row that a locale may override. */
@@ -76,6 +76,19 @@ export interface TaxonProse {
   /** Look-alike ties, keyed by the *other* end of the tie — the impostor's id —
    *  exactly as `supportNotes` is, so one plant's mix-ups live together. */
   lookalikeNotes?: Record<string, { why?: string; tells?: TellApart[] }>;
+  /** Native-alternatives only: what an ornamental is planted *for*
+   *  (`Ornamental.role`), where it's from (`Ornamental.origin`) and its blurb.
+   *  Kept under their own keys rather than reusing `origin`/`blurb`, because an
+   *  ornamental can also be a look-alike (Norway maple, Callery pear) and the
+   *  two write about it differently — one says how to tell it apart, the other
+   *  what to grow instead. All keyed, like `blurb`, under the ornamental's
+   *  scientific name. */
+  altRole?: string;
+  altOrigin?: string;
+  altBlurb?: string;
+  /** Alternative ties, keyed by the *native* plant's id — one ornamental's
+   *  swaps live together, the same shape as `lookalikeNotes`. */
+  alternativeNotes?: Record<string, { why?: string; edges?: SwapEdge[] }>;
 }
 
 export type ProseTable = Record<string, TaxonProse>;
@@ -266,6 +279,54 @@ export function lookalikesUntranslated(
       tie?.why === undefined ||
       tie?.tells?.length !== link.tells.length
     );
+  });
+}
+
+// ---- Native alternatives ----
+// The ornamental's own writing (role, origin, blurb) is keyed under its
+// scientific name; each swap's writing (why, and the edge table) under the
+// native plant's id, the way `alternativeNotes` stores it. Every getter falls
+// back to the authored English on its own, so a locale can translate one half
+// and not the other without leaving a blank.
+
+export function alternativeRole(o: Ornamental): string {
+  return entry(o.latin)?.altRole ?? o.role;
+}
+
+export function alternativeOrigin(o: Ornamental): string {
+  return entry(o.latin)?.altOrigin ?? o.origin;
+}
+
+export function alternativeBlurb(o: Ornamental): string {
+  return entry(o.latin)?.altBlurb ?? o.blurb;
+}
+
+export function alternativeWhy(ornamentalLatin: string, link: AlternativeLink): string {
+  return entry(ornamentalLatin)?.alternativeNotes?.[link.plantId]?.why ?? link.why;
+}
+
+/** The edges in the reader's language — all of them or none, never a table half
+ *  in each language. */
+export function alternativeEdges(ornamentalLatin: string, link: AlternativeLink): SwapEdge[] {
+  const translated = entry(ornamentalLatin)?.alternativeNotes?.[link.plantId]?.edges;
+  return translated?.length === link.edges.length ? translated : link.edges;
+}
+
+/**
+ * Is any of the native-alternatives writing on this page still in English?
+ * Asked of the whole section at once, like `lookalikesUntranslated`.
+ */
+export function alternativesUntranslated(
+  ornamentalLatin: string,
+  links: AlternativeLink[],
+): boolean {
+  if (getLang() === "en" || !links.length) return false;
+  const o = entry(ornamentalLatin);
+  if (o?.altOrigin === undefined || o?.altBlurb === undefined) return true;
+  const notes = o?.alternativeNotes;
+  return links.some((link) => {
+    const tie = notes?.[link.plantId];
+    return tie?.why === undefined || (link.edges.length > 0 && tie?.edges?.length !== link.edges.length);
   });
 }
 

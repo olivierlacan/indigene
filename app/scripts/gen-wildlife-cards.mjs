@@ -86,20 +86,25 @@ const KIND_LABEL = {
  * plant count comes next: it's the promise of the page you're about to open,
  * the same number the page's lede prints. Then the shape of that support, in the
  * order the animal's page ranks it — the plants it can breed on first (a
- * caterpillar only becomes a butterfly on the right leaf), then what it eats
- * (nectar for the pollinators, berries and seeds for the birds), and last the
- * plants it shelters in.
+ * caterpillar only becomes a butterfly on the right leaf), then the ones that
+ * feed it (nectar for the pollinators, berries and seeds for the birds), and
+ * last the ones it shelters in.
  *
  * Every count here is a count of plant→animal ties across regions — one plant on
  * two region lists counts on each — which is exactly what the animal's own page
  * tiles and region headings count, so the card and the page never disagree.
  *
- * Labels are one or two short words and none wraps: four facts, a URL and
- * 1040 px is not a lot of room, and a label that breaks over two lines drags its
- * own number out of line with the rest. Only the two counting a whole plant get
- * a singular ("1 region", "1 plant"); the support words read the same at any
- * number.
+ * Every label is a **kind of plant**, not a verb, and that's deliberate. The
+ * card's subject is the animal — its name and its silhouette are the biggest
+ * things on it — so a verb ("gives berries", "shelters it") gets read with the
+ * animal as its subject, which is backwards: it's the plant that bears the
+ * berry. Naming the plant instead ("berry plants") keeps every fact a subset of
+ * the "native plants" total above it, and can't be misread. Each is one or two
+ * short words so none wraps — four facts, a URL and 1040 px is not much room —
+ * and each takes a singular at one ("1 region", "1 host plant").
  */
+const plantsLabel = (n, adj) => `${adj} plant${n === 1 ? "" : "s"}`;
+
 function factsFor(s) {
   const facts = [];
   if (s.regions > 0) {
@@ -108,11 +113,11 @@ function factsFor(s) {
   if (s.plants > 0) {
     facts.push({ icon: "sprout", value: String(s.plants), label: s.plants === 1 ? "native plant" : "native plants" });
   }
-  if (s.host > 0) facts.push({ icon: "caterpillar", value: String(s.host), label: "raise young" });
-  if (s.nectar > 0) facts.push({ icon: "bloom", value: String(s.nectar), label: "give nectar" });
-  if (s.berries > 0) facts.push({ icon: "berries", value: String(s.berries), label: "give berries" });
-  if (s.seeds > 0) facts.push({ icon: "seeds", value: String(s.seeds), label: "give seeds" });
-  if (s.shelter > 0) facts.push({ icon: "shelter", value: String(s.shelter), label: "shelter it" });
+  if (s.host > 0) facts.push({ icon: "caterpillar", value: String(s.host), label: plantsLabel(s.host, "host") });
+  if (s.nectar > 0) facts.push({ icon: "bloom", value: String(s.nectar), label: plantsLabel(s.nectar, "nectar") });
+  if (s.berries > 0) facts.push({ icon: "berries", value: String(s.berries), label: plantsLabel(s.berries, "berry") });
+  if (s.seeds > 0) facts.push({ icon: "seeds", value: String(s.seeds), label: plantsLabel(s.seeds, "seed") });
+  if (s.shelter > 0) facts.push({ icon: "shelter", value: String(s.shelter), label: plantsLabel(s.shelter, "shelter") });
   return facts.slice(0, 4);
 }
 

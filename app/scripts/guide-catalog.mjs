@@ -261,11 +261,36 @@ export const SECTIONS = [
     emoji: "👀",
     title: "Telling look-alikes apart",
     tagline: "The native, and the impostor next to it.",
-    lede: "",
-    visit: [{ label: "Look-alikes", href: `${APP}/lookalikes` }],
-    learn: [],
+    lede:
+      "You look a plant up because you're not sure what you're holding — and " +
+      "half the time the plant on the nursery bench isn't quite the one on the " +
+      "label. A garden centre sells the invasive Callery pear beside the native " +
+      "serviceberry; a hedge of cherry laurel reads as holly at a glance. So for " +
+      "each native we recommend, we've written up the plants it gets mistaken " +
+      "for, and — standing right in front of it — how to tell them apart: a " +
+      "smell, a thorn, a leaf stalk that bleeds white, not a botanical key you'd " +
+      "need a lens for. Not every look-alike is a villain, and the label on each " +
+      "says which: invasive here, merely not from here, or a wild native the " +
+      "mix-up still matters for. When you're truly unsure, photograph it and ask " +
+      "iNaturalist — real people identify what you've found.",
+    visit: [
+      { label: "See the look-alikes", href: `${APP}/lookalikes` },
+      { label: "Browse the plants", href: `${APP}/plants` },
+    ],
+    learn: [
+      {
+        label: "Identify a plant from a photo",
+        source: "iNaturalist",
+        href: "https://www.inaturalist.org",
+      },
+      {
+        label: "Why invasive plants are a problem",
+        source: "National Invasive Species Information Center",
+        href: "https://www.invasivespeciesinfo.gov/subject/plants",
+      },
+    ],
     match: { segments: ["lookalikes"] },
-    published: false,
+    published: true,
   },
   {
     id: "alternatives",
@@ -274,11 +299,36 @@ export const SECTIONS = [
     emoji: "🌿",
     title: "What to grow instead",
     tagline: "The native that does the ornamental's job.",
-    lede: "",
-    visit: [{ label: "Native swaps", href: `${APP}/alternatives` }],
-    learn: [],
+    lede:
+      "Before you buy, the question is what to plant — and the usual answer at " +
+      "the nursery is something that isn't from here. This is the other way " +
+      "round. Start from the garden job you have — a lawn, a hedge, a shade " +
+      "tree, a plant “for butterflies” — and find the native that does " +
+      "it at least as well. Each swap sets the two side by side on the things " +
+      "that actually decide it: water (will it want the hose all summer?), " +
+      "disease, and what it feeds. Where the native only ties the ornamental we " +
+      "say so; where it wins — a Bermuda-grass lawn against little bluestem, a " +
+      "butterfly bush against the milkweed a monarch actually needs — the page " +
+      "shows you why. It's a positive list, not a scold: a better choice, freely " +
+      "made.",
+    visit: [
+      { label: "See the native swaps", href: `${APP}/alternatives` },
+      { label: "Browse the plants", href: `${APP}/plants` },
+    ],
+    learn: [
+      {
+        label: "Why a native feeds more than an ornamental",
+        source: "Homegrown National Park",
+        href: "https://homegrownnationalpark.org",
+      },
+      {
+        label: "Find native plants for your area",
+        source: "Lady Bird Johnson Wildflower Center",
+        href: "https://www.wildflower.org/plants/",
+      },
+    ],
     match: { segments: ["alternatives"] },
-    published: false,
+    published: true,
   },
   {
     id: "privacy",

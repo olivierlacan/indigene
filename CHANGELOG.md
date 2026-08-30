@@ -31,6 +31,13 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+## [0.28] - 2026-08-30
+
+**Grow this instead**
+
+[![Little Bluestem's page now says what to grow it in place of — Bermuda grass — right beside the look-alike it gets confused with](docs/screenshots/pr-143/thumb.png)](docs/screenshots/pr-143/plant-after-dark.png)
+[Before](docs/screenshots/pr-143/plant-before-dark.png) · [and after](docs/screenshots/pr-143/plant-after-dark.png)
+
 ### Added
 
 - **A guide to the whole app.** A new [guide](https://indigene.app/guide)
@@ -89,10 +96,9 @@ subtitle on the What's new page.
   wherever you are; switch to imperial — or “follow my device” — any time under
   Units in Settings.
 - **Clearer ways in on the plant list.** The pointers under
-  [the plant search](https://indigene.app/plants) — check a look-alike, find a
-  native to grow instead of a common ornamental, or make more of a plant you
-  have — are now tidy cards with an icon each, instead of oddly spaced lines of
-  text.
+  [the plant search](https://indigene.app/plants) — spot a look-alike, find a
+  native to grow instead of a common ornamental, or make more of a plant — are
+  now tidy cards, an icon each.
 
 ## [0.27] - 2026-08-28
 
@@ -2190,7 +2196,8 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/ba4c7c1...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/95c967f...HEAD
+[0.28]: https://github.com/olivierlacan/indigene/compare/ba4c7c1...95c967f
 [0.27]: https://github.com/olivierlacan/indigene/compare/22a030f...ba4c7c1
 [0.26]: https://github.com/olivierlacan/indigene/compare/b57fea1...22a030f
 [0.25]: https://github.com/olivierlacan/indigene/compare/8f6327b...4536697

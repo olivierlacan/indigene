@@ -69,6 +69,13 @@ subtitle on the What's new page.
   banner until it’s translated. Follow-ups: ornamental photos for the entries
   that lack one, French translation, and cross-linking the invasive ones to
   their look-alike status.
+- Internal: `npm run swaps:coverage` reports the layer native-first — for each
+  region, how many of the plants we already catalogue carry a “grow me instead
+  of X” story, and the ones that don’t, by form and highest ecological value
+  first (keystones lead). This is the authoring queue, and it sets the
+  priority: grow the ties outward from our own roster (what does this native
+  replace?) rather than by hunting up ornamentals to disapprove of. Current
+  coverage is 63/377 (17%).
 
 ### Changed
 

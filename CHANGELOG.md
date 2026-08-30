@@ -74,8 +74,14 @@ subtitle on the What's new page.
   of X” story, and the ones that don’t, by form and highest ecological value
   first (keystones lead). This is the authoring queue, and it sets the
   priority: grow the ties outward from our own roster (what does this native
-  replace?) rather than by hunting up ornamentals to disapprove of. Current
-  coverage is 63/377 (17%).
+  replace?) rather than by hunting up ornamentals to disapprove of. A first
+  keystones-first pass off that queue took coverage from 63/377 (17%) to
+  111/377 (29%) — every 300-plus-host oak, willow, cherry, birch and aspen now
+  names the common non-native (London plane, weeping willow, ornamental cherry,
+  European birch, blue spruce, garden mum, sago palm) it stands in for. The
+  keystones left uncovered are honest skips: a native that is itself the good
+  choice (silver birch in France), a lawn fescue, a meadow legume — plants with
+  no common ornamental counterpart to name.
 
 ### Changed
 

@@ -222,7 +222,29 @@ export const ORNAMENTALS: Ornamental[] = [
       "The neat herringbone shrub for a low wall, hung with red berries. Birds carry those berries into limestone hills and screes, where it is now a listed invader of exactly the thin, open ground its rarest wildflowers need.",
     originBasis: "RHS; INPN.",
   },
+  {
+    id: "cycas-revoluta",
+    common: "Sago palm",
+    latin: "Cycas revoluta",
+    form: "shrub",
+    role: "Architectural evergreen",
+    origin: "Native to southern Japan; not a palm at all, but an ancient cycad.",
+    blurb:
+      "The stiff, glossy rosette in a thousand Florida front yards. It looks the part and asks for nothing — but it feeds nothing native, and every part of it is poisonous enough to kill a dog that chews a seed.",
+    originBasis: "UF/IFAS; ASPCA.",
+  },
   // ---------------- Perennials ----------------
+  {
+    id: "chrysanthemum-morifolium",
+    common: "Garden mum",
+    latin: "Chrysanthemum × morifolium",
+    form: "perennial",
+    role: "Autumn colour perennial",
+    origin: "A long-cultivated East Asian plant, known only in gardens.",
+    blurb:
+      "The tray of instant autumn colour outside every supermarket in September. Most are bred so tightly for bloom that they offer little nectar and set no seed — a mound of colour the bees and birds pass straight over, planted and binned in a season.",
+    originBasis: "Missouri Botanical Garden; Mt. Cuba Center.",
+  },
   {
     id: "ruellia-simplex",
     common: "Mexican petunia",
@@ -289,6 +311,61 @@ export const ORNAMENTALS: Ornamental[] = [
     blurb:
       "The instant evergreen wall. It never stops growing, browns out from the inside where it's cut, and gives a garden a dark, dead-bottomed edge — a lot of height, fast, that shelters and feeds almost nothing.",
     originBasis: "RHS.",
+  },
+  {
+    id: "platanus-x-hispanica",
+    common: "London plane",
+    latin: "Platanus × hispanica",
+    form: "tree",
+    role: "Big street / park shade tree",
+    origin: "A garden hybrid, planted along city streets the world over.",
+    blurb:
+      "The mottled-bark giant that lines the avenues. It takes pavement and pollution and gives real shade — but it feeds little here, drops itchy bristles and a heavy pollen that's a notable allergen, and comes down with anthracnose year after year.",
+    originBasis: "RHS; Morton Arboretum.",
+  },
+  {
+    id: "prunus-serrulata",
+    common: "Japanese flowering cherry",
+    latin: "Prunus serrulata",
+    form: "tree",
+    role: "Spring-blossom ornamental tree",
+    origin: "Native to Japan, Korea and China; the cherry of the blossom festivals.",
+    blurb:
+      "A fortnight of pink froth in spring, and then a tree that gives very little else — short-lived, prone to canker and rot, and host to almost none of the caterpillars our songbirds raise their young on.",
+    originBasis: "Missouri Botanical Garden; Morton Arboretum.",
+  },
+  {
+    id: "salix-babylonica",
+    common: "Weeping willow",
+    latin: "Salix babylonica",
+    form: "tree",
+    role: "Waterside / lawn specimen tree",
+    origin: "Native to northern China; planted beside water the world over.",
+    blurb:
+      "The trailing green curtain by the pond. It grows fast and reads as romantic — then its greedy roots find every drain and pipe, its brittle limbs shed in storms, and it's usually rotten at heart inside forty years.",
+    originBasis: "Missouri Botanical Garden; RHS.",
+  },
+  {
+    id: "betula-pendula-ornamental",
+    common: "European weeping birch",
+    latin: "Betula pendula",
+    form: "tree",
+    role: "White-barked specimen tree",
+    origin: "Native across Europe and northern Asia; a favourite white-stemmed lawn tree.",
+    blurb:
+      "The graceful white-barked birch sold for a lawn centrepiece across North America. Away from its cool European home it's a magnet for the bronze birch borer, which kills these trees young from the top down.",
+    originBasis: "Morton Arboretum; U.S. Forest Service.",
+  },
+  {
+    id: "picea-pungens",
+    common: "Colorado blue spruce",
+    latin: "Picea pungens",
+    form: "tree",
+    role: "Specimen evergreen",
+    origin: "Native to the central Rocky Mountains; planted far outside it for its blue colour.",
+    blurb:
+      "The steel-blue specimen conifer on a thousand lawns. In the humid East and Midwest it's living in the wrong climate, and it's increasingly failing there to needlecast and canker — a striking tree that browns out and dies back from the bottom.",
+    originBasis: "Morton Arboretum; Missouri Botanical Garden.",
   },
 ];
 
@@ -413,6 +490,86 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         basis: "Missouri Botanical Garden; Penn State Extension.",
       },
     ],
+    "platanus-x-hispanica": [
+      {
+        plantId: "quercus-alba",
+        why: "For a great shade tree on a street or a big lawn, a white oak is the one to reach past the plane for: the same broad canopy and clean trunk, with five centuries of life and the richest food web of any tree here.",
+        edges: [
+          { axis: "wildlife", native: "Feeds over 500 caterpillar species — the single most important tree for songbirds; acorns feed dozens more.", ornamental: "Feeds almost nothing native." },
+          { axis: "disease", native: "Sound and famously long-lived.", ornamental: "Anthracnose year after year; a heavy allergenic pollen." },
+        ],
+        basis: "Penn State Extension; Morton Arboretum.",
+      },
+      {
+        plantId: "quercus-rubra",
+        why: "For faster shade than a white oak, red oak grows quickly to a broad street-tree crown, turns russet-red in fall, and carries the same vast community of life.",
+        edges: [
+          { axis: "wildlife", native: "Over 500 caterpillar species; acorns for jays, woodpeckers and mammals.", ornamental: "Feeds almost nothing native." },
+          { axis: "disease", native: "Long-lived and sound in the ground it belongs in.", ornamental: "Recurring anthracnose; itchy bristles and heavy pollen." },
+        ],
+        basis: "Penn State Extension; Morton Arboretum.",
+      },
+    ],
+    "prunus-serrulata": [
+      {
+        plantId: "prunus-serotina",
+        why: "For spring blossom that actually feeds a garden, black cherry hangs out its own white flower, then dark fruit the birds strip — and lives for a century where the ornamental cherry is spent in twenty years.",
+        edges: [
+          { axis: "wildlife", native: "Hosts over 300 caterpillar species; its fruit feeds dozens of birds.", ornamental: "Nectar aside, it raises almost none of the next generation of insects." },
+          { axis: "disease", native: "Tough and long-lived.", ornamental: "Short-lived and prone to canker, rot and borers." },
+        ],
+        basis: "Penn State Extension; Morton Arboretum.",
+      },
+    ],
+    "betula-pendula-ornamental": [
+      {
+        plantId: "betula-nigra",
+        why: "For the same white-barked grace on a lawn, river birch peels in sheets of cinnamon and cream — and unlike the European birch it simply shrugs off the borer that kills them.",
+        edges: [
+          { axis: "disease", native: "Resistant to the bronze birch borer that dooms the ornamental one here.", ornamental: "Killed young, top-down, by the borer away from its cool home." },
+          { axis: "wildlife", native: "Hosts hundreds of caterpillar species; its seed feeds finches through winter.", ornamental: "Feeds little native." },
+        ],
+        basis: "Morton Arboretum; U.S. Forest Service.",
+      },
+    ],
+    "euonymus-alatus": [
+      {
+        plantId: "vaccinium-corymbosum",
+        why: "If it was the autumn scarlet you wanted, highbush blueberry burns just as red — and gives you white spring bells, a crop of berries, and a shrub that feeds the woods instead of seeding into them.",
+        edges: [
+          { axis: "wildlife", native: "Hosts over 200 caterpillar species; flowers feed bees, berries feed birds and people.", ornamental: "Bird-spread into the woods; feeds little of value." },
+          { axis: "disease", native: "A well-behaved native of acid soils.", ornamental: "A shade-casting thicket-former banned in several states." },
+        ],
+        basis: "Penn State Extension; Missouri Botanical Garden.",
+      },
+      {
+        plantId: "ilex-verticillata",
+        why: "For winter fire, winterberry holds a blaze of scarlet berries on bare stems long after the burning bush has dropped its one week of leaf colour.",
+        edges: [
+          { axis: "wildlife", native: "Berries feed robins, waxwings and more deep into winter.", ornamental: "Seeds into the woods; feeds little of value." },
+        ],
+        basis: "Missouri Botanical Garden; Penn State Extension.",
+      },
+    ],
+    "chrysanthemum-morifolium": [
+      {
+        plantId: "symphyotrichum-novae-angliae",
+        why: "For the same mound of autumn colour that actually feeds something, New England aster covers itself in purple daisies right when the pollinators need a last meal before winter.",
+        edges: [
+          { axis: "wildlife", native: "A top late-season nectar source; a larval host for the pearl crescent and over 100 moths.", ornamental: "Bred so tightly for bloom it offers little nectar and sets no seed." },
+          { axis: "care", native: "A perennial that returns and spreads on its own.", ornamental: "Planted and binned in a single season." },
+        ],
+        basis: "Mt. Cuba Center; Xerces Society.",
+      },
+      {
+        plantId: "solidago-rugosa",
+        why: "For a haze of gold in the same autumn slot, wrinkleleaf goldenrod lights up and hums with bees — the nectar bar the mums only look like.",
+        edges: [
+          { axis: "wildlife", native: "One of the very best late nectar and pollen plants; hosts over 100 caterpillar species.", ornamental: "Little nectar, no seed, no host value." },
+        ],
+        basis: "Mt. Cuba Center; Xerces Society.",
+      },
+    ],
   },
 
   "north-michigan": {
@@ -424,6 +581,15 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
           { axis: "water", native: "Deep-rooted and self-reliant once established.", ornamental: "Shallow greedy roots that bare the ground beneath it." },
           { axis: "disease", native: "Long-lived and broadly sound in cool country.", ornamental: "Prone to girdling roots and verticillium wilt with age." },
           { axis: "wildlife", native: "Hosts hundreds of caterpillar species; its seed and sap feed more.", ornamental: "Casts shade so dense little grows below it." },
+        ],
+        basis: "Morton Arboretum; Penn State Extension.",
+      },
+      {
+        plantId: "acer-rubrum",
+        why: "For quicker shade, red maple gives it — the same clean crown and scarlet fall — and feeds the food web the Norway maple starves.",
+        edges: [
+          { axis: "disease", native: "Broadly trouble-free; no bare circle of dead ground beneath it.", ornamental: "Girdling roots and verticillium wilt with age." },
+          { axis: "wildlife", native: "Hosts hundreds of caterpillar species.", ornamental: "Shade so dense the ground beneath it is bare." },
         ],
         basis: "Morton Arboretum; Penn State Extension.",
       },
@@ -458,6 +624,14 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         ],
         basis: "Lady Bird Johnson Wildflower Center; Morton Arboretum.",
       },
+      {
+        plantId: "vaccinium-angustifolium",
+        why: "For a low, tidy shrub that burns scarlet in fall, lowbush blueberry does it — and hands you a crop of sweet berries the burning bush never could.",
+        edges: [
+          { axis: "wildlife", native: "Flowers feed early bees; berries feed birds, bears and people; a heavy caterpillar host.", ornamental: "Bird-spread into the woods; feeds little of value." },
+        ],
+        basis: "Morton Arboretum; USDA NRCS.",
+      },
     ],
     "berberis-thunbergii": [
       {
@@ -468,6 +642,97 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
           { axis: "wildlife", native: "Feeds specialist bees and native moths.", ornamental: "Little native wildlife value; seeds into the woods." },
         ],
         basis: "Connecticut Agricultural Experiment Station; Morton Arboretum.",
+      },
+    ],
+    "platanus-x-hispanica": [
+      {
+        plantId: "quercus-rubra",
+        why: "For a big street or lawn shade tree, red oak grows fast to a broad crown, turns russet in fall, and carries the richest food web of any tree in the North Woods.",
+        edges: [
+          { axis: "wildlife", native: "Feeds over 500 caterpillar species; acorns feed jays, turkeys and mammals.", ornamental: "Feeds almost nothing native." },
+          { axis: "disease", native: "Long-lived and sound.", ornamental: "Recurring anthracnose; a heavy allergenic pollen." },
+        ],
+        basis: "Morton Arboretum; Penn State Extension.",
+      },
+    ],
+    "salix-babylonica": [
+      {
+        plantId: "salix-discolor",
+        why: "For a fast, graceful native by water, pussy willow throws out the silver catkins of late winter that feed the first bees of the year — where the weeping willow only finds your drains.",
+        edges: [
+          { axis: "wildlife", native: "Hosts nearly 400 caterpillar species; its catkins are a vital first pollen source.", ornamental: "Feeds little native." },
+          { axis: "disease", native: "A resilient native of wet ground.", ornamental: "Greedy roots that wreck drains; brittle, short-lived and rot-prone." },
+        ],
+        basis: "Morton Arboretum; Xerces Society.",
+      },
+      {
+        plantId: "populus-tremuloides",
+        why: "For a shimmering fast tree with movement and light, quaking aspen trembles at the least breeze and turns pure gold in fall — a keystone of the North Woods, not a liability by the pond.",
+        edges: [
+          { axis: "wildlife", native: "Hosts hundreds of caterpillar species; buds and bark feed grouse, hare and more.", ornamental: "Feeds little native." },
+          { axis: "disease", native: "A tough pioneer of cold country.", ornamental: "Brittle, drain-seeking and rotten at heart within forty years." },
+        ],
+        basis: "Morton Arboretum; U.S. Forest Service.",
+      },
+    ],
+    "prunus-serrulata": [
+      {
+        plantId: "prunus-serotina",
+        why: "For spring blossom that feeds the whole wood, black cherry hangs white flower then dark fruit the birds strip — and lives for a century where the ornamental cherry is spent in twenty years.",
+        edges: [
+          { axis: "wildlife", native: "Hosts over 300 caterpillar species; its fruit feeds dozens of birds.", ornamental: "Raises almost none of the next generation of insects." },
+          { axis: "disease", native: "Tough and long-lived.", ornamental: "Short-lived and prone to canker, rot and borers." },
+        ],
+        basis: "Morton Arboretum; Penn State Extension.",
+      },
+    ],
+    "betula-pendula-ornamental": [
+      {
+        plantId: "betula-papyrifera",
+        why: "For a white-barked birch on a Northern lawn, paper birch is the real thing — chalk-white peeling bark and gold fall colour, on a native that stands up to the borer far better than the European tree.",
+        edges: [
+          { axis: "disease", native: "Northern-hardy and far more borer-resistant in its own climate.", ornamental: "Killed young, top-down, by the bronze birch borer here." },
+          { axis: "wildlife", native: "Hosts hundreds of caterpillar species; its seed feeds redpolls and siskins.", ornamental: "Feeds little native." },
+        ],
+        basis: "Morton Arboretum; U.S. Forest Service.",
+      },
+    ],
+    "picea-pungens": [
+      {
+        plantId: "pinus-strobus",
+        why: "For a big, soft, fast specimen evergreen, eastern white pine gives blue-green needles and real presence — a Northern native at home in the climate, where the blue spruce increasingly is not.",
+        edges: [
+          { axis: "disease", native: "Adapted to the region and broadly healthy in it.", ornamental: "Failing to needlecast and canker outside its dry mountain home." },
+          { axis: "wildlife", native: "Hosts over 200 caterpillar species; its seed feeds crossbills, chickadees and more.", ornamental: "Feeds little native." },
+        ],
+        basis: "Morton Arboretum; Missouri Botanical Garden.",
+      },
+    ],
+    "chrysanthemum-morifolium": [
+      {
+        plantId: "symphyotrichum-novae-angliae",
+        why: "For the same mound of autumn colour that actually feeds something, New England aster covers itself in purple daisies just when the pollinators need a last meal.",
+        edges: [
+          { axis: "wildlife", native: "A top late nectar source; a larval host for the pearl crescent and many moths.", ornamental: "Little nectar, no seed, no host value." },
+          { axis: "care", native: "A perennial that returns and spreads on its own.", ornamental: "Planted and binned in a single season." },
+        ],
+        basis: "Mt. Cuba Center; Xerces Society.",
+      },
+      {
+        plantId: "solidago-speciosa",
+        why: "For a spire of gold in the same slot, showy goldenrod stands tall and hums with bees — the nectar bar the mums only look like.",
+        edges: [
+          { axis: "wildlife", native: "One of the best late nectar and pollen plants; hosts over 100 caterpillar species.", ornamental: "Little nectar, no seed, no host value." },
+        ],
+        basis: "Mt. Cuba Center; Xerces Society.",
+      },
+      {
+        plantId: "symphyotrichum-laeve",
+        why: "For clouds of blue rather than purple, smooth blue aster gives the same late daisies on tidy arching stems, alive with bees and butterflies.",
+        edges: [
+          { axis: "wildlife", native: "Late nectar for pollinators; a host for the pearl crescent and other butterflies.", ornamental: "Feeds almost nothing." },
+        ],
+        basis: "Mt. Cuba Center; Xerces Society.",
       },
     ],
   },
@@ -549,6 +814,89 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         edges: [
           { axis: "water", native: "Thoroughly drought-proof once established.", ornamental: "Thirsty, and a listed invader of Northwest river bars." },
           { axis: "wildlife", native: "A larval host for many moths and butterflies as well as a nectar source.", ornamental: "Feeds the adults; hosts no native caterpillars." },
+        ],
+        basis: "Oregon State University; Xerces Society.",
+      },
+    ],
+    "platanus-x-hispanica": [
+      {
+        plantId: "quercus-garryana",
+        why: "For a great, spreading shade tree, Oregon white oak is the Northwest's own — a slow, magnificent, century-spanning tree whose vanishing savanna carries more life than almost any habitat here.",
+        edges: [
+          { axis: "water", native: "Thoroughly drought-proof once established; a dry-summer native.", ornamental: "A thirsty street tree." },
+          { axis: "wildlife", native: "Hosts hundreds of caterpillar species; its acorns and oak habitat feed a whole community.", ornamental: "Feeds almost nothing native." },
+        ],
+        basis: "Oregon State University; Morton Arboretum.",
+      },
+    ],
+    "salix-babylonica": [
+      {
+        plantId: "salix-scouleriana",
+        why: "For a fast native willow away from water too, Scouler's willow takes drier ground than most, throws early catkins for the first bees, and feeds a huge web of life.",
+        edges: [
+          { axis: "wildlife", native: "Hosts around 300 caterpillar species; its catkins are a vital first pollen source.", ornamental: "Feeds little native." },
+          { axis: "disease", native: "A tough, adaptable native.", ornamental: "Greedy roots that wreck drains; brittle and short-lived." },
+        ],
+        basis: "Oregon State University; Xerces Society.",
+      },
+      {
+        plantId: "populus-trichocarpa",
+        why: "For a tall, fast tree by water, black cottonwood shoots up into a fragrant giant whose spring balsam scents the whole valley — a keystone of Northwest rivers, not a threat to the plumbing.",
+        edges: [
+          { axis: "wildlife", native: "Hosts around 300 caterpillar species; a pillar of riverside life.", ornamental: "Feeds little native." },
+          { axis: "disease", native: "A vigorous native of wet ground.", ornamental: "Drain-seeking, brittle and rotten at heart within decades." },
+        ],
+        basis: "Oregon State University; U.S. Forest Service.",
+      },
+    ],
+    "prunus-serrulata": [
+      {
+        plantId: "prunus-emarginata",
+        why: "For spring blossom that feeds the wood, bitter cherry hangs clusters of white flower then small red fruit the birds strip — a Northwest native that raises the caterpillars the ornamental cherry can't.",
+        edges: [
+          { axis: "wildlife", native: "Hosts around 200 caterpillar species; its fruit feeds many birds.", ornamental: "Raises almost none of the next generation of insects." },
+          { axis: "water", native: "Drought-tough once established.", ornamental: "Short-lived and prone to canker and rot." },
+        ],
+        basis: "Oregon State University; Xerces Society.",
+      },
+    ],
+    "betula-pendula-ornamental": [
+      {
+        plantId: "betula-papyrifera",
+        why: "For white bark on a lawn, paper birch is the native version — chalk-white and peeling, hardier, and far better able to shrug off the borer that kills the European birch here.",
+        edges: [
+          { axis: "disease", native: "More resistant to the bronze birch borer in its own climate.", ornamental: "Killed young, top-down, by the borer." },
+          { axis: "wildlife", native: "Hosts hundreds of caterpillar species; its seed feeds finches.", ornamental: "Feeds little native." },
+        ],
+        basis: "Oregon State University; U.S. Forest Service.",
+      },
+    ],
+    "picea-pungens": [
+      {
+        plantId: "pinus-ponderosa",
+        why: "For a big specimen conifer that belongs here, ponderosa pine gives real stature, warm bark that smells of vanilla in the sun, and drought-hardiness the blue spruce can't match east of the mountains.",
+        edges: [
+          { axis: "water", native: "Thoroughly drought-proof; a dry-country native.", ornamental: "Struggles and fails to canker and needlecast outside its range." },
+          { axis: "wildlife", native: "Hosts around 200 caterpillar species; its seed feeds birds and squirrels.", ornamental: "Feeds little native." },
+        ],
+        basis: "Oregon State University; Morton Arboretum.",
+      },
+    ],
+    "chrysanthemum-morifolium": [
+      {
+        plantId: "symphyotrichum-subspicatum",
+        why: "For a mound of autumn colour that feeds the last pollinators, Douglas aster covers itself in violet daisies right when little else is flowering.",
+        edges: [
+          { axis: "wildlife", native: "A key late nectar source; a larval host for several butterflies.", ornamental: "Bred for bloom; little nectar and no seed." },
+          { axis: "care", native: "A perennial that returns each year.", ornamental: "Planted and binned in a single season." },
+        ],
+        basis: "Oregon State University; Xerces Society.",
+      },
+      {
+        plantId: "solidago-lepida",
+        why: "For gold in the same slot, western goldenrod stands in a haze of bees — the nectar bar the mums only resemble.",
+        edges: [
+          { axis: "wildlife", native: "One of the best late nectar and pollen plants; a caterpillar host besides.", ornamental: "Little nectar, no seed, no host value." },
         ],
         basis: "Oregon State University; Xerces Society.",
       },
@@ -656,6 +1004,68 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         basis: "California Native Plant Society.",
       },
     ],
+    "platanus-x-hispanica": [
+      {
+        plantId: "quercus-agrifolia",
+        why: "For a great evergreen shade tree, coast live oak is the one Southern California grew up under — a broad, dark, century-spanning canopy that anchors more life than any other local tree.",
+        edges: [
+          { axis: "water", native: "Thoroughly drought-proof once established; a true dry-summer native.", ornamental: "A thirsty street tree in a dry climate." },
+          { axis: "wildlife", native: "Hosts around 200 caterpillar species; its acorns fed people and feed wildlife still.", ornamental: "Feeds almost nothing native." },
+        ],
+        basis: "California Native Plant Society; Morton Arboretum.",
+      },
+    ],
+    "salix-babylonica": [
+      {
+        plantId: "salix-lasiolepis",
+        why: "For a fast native by a pond or a swale, arroyo willow throws early catkins for the first bees and holds a streambank together — where the weeping willow only finds the drains.",
+        edges: [
+          { axis: "wildlife", native: "Hosts over 200 caterpillar species; a vital early pollen source.", ornamental: "Feeds little native." },
+          { axis: "disease", native: "A tough native of California creeks.", ornamental: "Greedy roots that wreck pipes; brittle and short-lived." },
+        ],
+        basis: "California Native Plant Society; Xerces Society.",
+      },
+      {
+        plantId: "populus-fremontii",
+        why: "For a big fast shade tree by water, Fremont cottonwood is the giant of California's rivers — quick, cooling, and the backbone of the wildlife that follows the water.",
+        edges: [
+          { axis: "wildlife", native: "Hosts around 200 caterpillar species; a pillar of riverside life.", ornamental: "Feeds little native." },
+          { axis: "disease", native: "A vigorous native of wet ground.", ornamental: "Drain-seeking, brittle and short-lived." },
+        ],
+        basis: "California Native Plant Society; U.S. Forest Service.",
+      },
+    ],
+    "prunus-serrulata": [
+      {
+        plantId: "prunus-ilicifolia",
+        why: "For evergreen structure with spring flower, hollyleaf cherry gives glossy holly-like leaves, cream blossom and dark fruit — a chaparral native that flowers and feeds where the ornamental cherry only flowers.",
+        edges: [
+          { axis: "water", native: "Thoroughly drought-proof once established.", ornamental: "Thirsty, short-lived and disease-prone here." },
+          { axis: "wildlife", native: "Flowers feed pollinators; fruit feeds birds and mammals; a caterpillar host.", ornamental: "Raises almost no native insects." },
+        ],
+        basis: "California Native Plant Society.",
+      },
+    ],
+    "chrysanthemum-morifolium": [
+      {
+        plantId: "symphyotrichum-chilense",
+        why: "For a mound of autumn daisies that actually feeds something, Pacific aster spreads into a haze of lavender bloom the late pollinators work.",
+        edges: [
+          { axis: "wildlife", native: "A late nectar source for bees and butterflies; a caterpillar host.", ornamental: "Bred for bloom; little nectar and no seed." },
+          { axis: "care", native: "A perennial that returns and spreads.", ornamental: "Planted and binned in a season." },
+        ],
+        basis: "California Native Plant Society; Xerces Society.",
+      },
+      {
+        plantId: "solidago-velutina-californica",
+        why: "For gold in the same slot, California goldenrod stands alive with bees — the nectar bar the mums only look like.",
+        edges: [
+          { axis: "water", native: "Drought-tough once established.", ornamental: "A thirsty annual thrown away each year." },
+          { axis: "wildlife", native: "A top late nectar and pollen plant; a caterpillar host besides.", ornamental: "Little nectar, no seed, no host value." },
+        ],
+        basis: "California Native Plant Society; Xerces Society.",
+      },
+    ],
   },
 
   "florida-central": {
@@ -740,6 +1150,26 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         basis: "UF/IFAS; Xerces Society.",
       },
     ],
+    "cupaniopsis-anacardioides": [
+      {
+        plantId: "quercus-virginiana",
+        why: "For a great, spreading shade tree, Southern live oak is the tree the fast carrotwood was standing in for — a broad, evergreen, storm-firm canopy that outlives the house and feeds a whole community.",
+        edges: [
+          { axis: "wildlife", native: "Hosts over 400 caterpillar species; its acorns feed jays, turkeys and mammals.", ornamental: "A bird-spread invader, now banned in Florida; feeds little native." },
+          { axis: "water", native: "Thoroughly drought- and salt-proof; famously wind-firm.", ornamental: "Tough too — which is exactly how it invades." },
+        ],
+        basis: "UF/IFAS; Morton Arboretum.",
+      },
+      {
+        plantId: "acer-rubrum",
+        why: "For quicker shade with autumn colour, red maple grows fast in the damp ground carrotwood likes, turns red in the Florida winter, and feeds the food web the carrotwood starves.",
+        edges: [
+          { axis: "wildlife", native: "Hosts hundreds of caterpillar species — the songbirds' larder.", ornamental: "An invasive of hammocks and mangrove edges." },
+          { axis: "disease", native: "A trouble-free native of wet and dry ground alike.", ornamental: "Banned for sale in the state." },
+        ],
+        basis: "UF/IFAS; FLEPPC.",
+      },
+    ],
   },
 
   "florida-south": {
@@ -822,6 +1252,26 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         ],
         basis: "UF/IFAS; FLEPPC.",
       },
+      {
+        plantId: "quercus-virginiana",
+        why: "For the biggest shade of all, Southern live oak spreads a broad evergreen canopy that outlasts the house — the great native tree the fast carrotwood only stands in for.",
+        edges: [
+          { axis: "wildlife", native: "Hosts over 400 caterpillar species; its acorns feed a whole community.", ornamental: "A banned, bird-spread invader of hammocks and mangroves." },
+          { axis: "water", native: "Drought- and salt-proof, and famously wind-firm.", ornamental: "Tough — which is how it invades." },
+        ],
+        basis: "UF/IFAS; Morton Arboretum.",
+      },
+    ],
+    "cycas-revoluta": [
+      {
+        plantId: "zamia-integrifolia",
+        why: "For the same stiff, glossy, prehistoric rosette, coontie is the real thing — Florida's own native cycad, and the one and only plant the rare atala butterfly can raise its young on.",
+        edges: [
+          { axis: "wildlife", native: "The sole host of the atala butterfly, brought back from the brink of extinction with it.", ornamental: "Feeds nothing native." },
+          { axis: "disease", native: "A tough, trouble-free native.", ornamental: "Poisonous enough to kill a dog, and a magnet for cycad scale." },
+        ],
+        basis: "UF/IFAS; Florida Native Plant Society.",
+      },
     ],
   },
 
@@ -886,6 +1336,57 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         basis: "RHS; INPN.",
       },
     ],
+    "platanus-x-hispanica": [
+      {
+        plantId: "quercus-robur",
+        why: "For a great park or avenue tree, pedunculate oak is the one to plant past the plane: the slow, vast, thousand-year tree that carries more wildlife than any other in Europe.",
+        edges: [
+          { axis: "wildlife", native: "Hosts around 400 caterpillar species — the richest food web of any tree here; acorns feed jays and mammals.", ornamental: "Feeds almost nothing native." },
+          { axis: "disease", native: "Famously long-lived and sound.", ornamental: "Recurring anthracnose; a heavy, allergenic pollen." },
+        ],
+        basis: "INPN; RHS.",
+      },
+    ],
+    "salix-babylonica": [
+      {
+        plantId: "salix-caprea",
+        why: "For a fast native by water, goat willow throws out the silver 'pussy willow' catkins of late winter that feed the first bees — where the weeping willow only finds the drains.",
+        edges: [
+          { axis: "wildlife", native: "Hosts around 370 caterpillar species; its early catkins are a vital first pollen source.", ornamental: "Feeds little native." },
+          { axis: "disease", native: "A tough, adaptable native.", ornamental: "Greedy roots that wreck drains; brittle and short-lived." },
+        ],
+        basis: "INPN; RHS.",
+      },
+      {
+        plantId: "populus-tremula",
+        why: "For a tall tree with light and movement, aspen shimmers at the least breeze and turns gold in autumn — a keystone of European woods, not a liability by the pond.",
+        edges: [
+          { axis: "wildlife", native: "Hosts around 260 caterpillar species; a pillar of woodland life.", ornamental: "Feeds little native." },
+          { axis: "disease", native: "A vigorous native pioneer.", ornamental: "Drain-seeking, brittle and rotten at heart within decades." },
+        ],
+        basis: "INPN; RHS.",
+      },
+    ],
+    "prunus-serrulata": [
+      {
+        plantId: "prunus-avium",
+        why: "For spring blossom that feeds the wood, wild cherry hangs clouds of white flower then dark fruit the birds strip — and grows into a real tree where the ornamental cherry is spent in twenty years.",
+        edges: [
+          { axis: "wildlife", native: "Hosts around 300 caterpillar species; its fruit feeds birds and mammals.", ornamental: "Raises almost none of the next generation of insects." },
+          { axis: "disease", native: "A vigorous, long-lived native.", ornamental: "Short-lived and prone to canker and rot." },
+        ],
+        basis: "INPN; RHS.",
+      },
+      {
+        plantId: "prunus-spinosa",
+        why: "For blossom on a smaller, tougher scale, blackthorn foams white on bare black twigs in earliest spring, then hangs sloes into winter — the hedgerow tree the ornamental cherry only imitates.",
+        edges: [
+          { axis: "wildlife", native: "Hosts around 300 caterpillar species; blossom for early bees, sloes for winter birds.", ornamental: "Raises almost no native insects." },
+          { axis: "water", native: "Thoroughly self-reliant once established.", ornamental: "Short-lived and disease-prone." },
+        ],
+        basis: "INPN; RHS.",
+      },
+    ],
   },
 
   "france-continental": {
@@ -945,6 +1446,37 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         edges: [
           { axis: "water", native: "Drought-tolerant once established; a shrub of dry limestone country.", ornamental: "A self-seeding coloniser of open ground." },
           { axis: "wildlife", native: "Nectar for insects; a larval host for several moths; berries for birds.", ornamental: "Hosts no native caterpillars." },
+        ],
+        basis: "INPN; RHS.",
+      },
+    ],
+    "platanus-x-hispanica": [
+      {
+        plantId: "quercus-petraea",
+        why: "For a great avenue or park tree, sessile oak is the one to plant past the plane: a vast, long-lived native that carries the richest food web of any tree in the region.",
+        edges: [
+          { axis: "wildlife", native: "Hosts around 400 caterpillar species; its acorns feed jays, boar and mammals.", ornamental: "Feeds almost nothing native." },
+          { axis: "disease", native: "Famously long-lived and sound.", ornamental: "Recurring anthracnose; a heavy, allergenic pollen." },
+        ],
+        basis: "INPN; RHS.",
+      },
+    ],
+    "prunus-serrulata": [
+      {
+        plantId: "prunus-mahaleb",
+        why: "For fragrant spring blossom on a small tree, St Lucie cherry drips scented white flower then dark fruit the birds take — a tough limestone native where the ornamental cherry is thirsty and short-lived.",
+        edges: [
+          { axis: "wildlife", native: "Hosts over 300 caterpillar species; blossom for bees, fruit for birds.", ornamental: "Raises almost no native insects." },
+          { axis: "water", native: "Thoroughly drought-tolerant once established.", ornamental: "Short-lived and disease-prone." },
+        ],
+        basis: "INPN; RHS.",
+      },
+      {
+        plantId: "crataegus-laevigata",
+        why: "For blossom on a hedge scale, midland hawthorn foams white in May then reddens with haws — the wildlife tree the ornamental cherry only looks like.",
+        edges: [
+          { axis: "wildlife", native: "Hosts around 200 caterpillar species; nectar for many insects, haws for winter birds.", ornamental: "Raises almost no native insects." },
+          { axis: "water", native: "Self-reliant once established.", ornamental: "Short-lived and prone to canker." },
         ],
         basis: "INPN; RHS.",
       },
@@ -1012,6 +1544,26 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         basis: "INPN.",
       },
     ],
+    "platanus-x-hispanica": [
+      {
+        plantId: "quercus-ilex",
+        why: "For a great evergreen shade tree, holm oak is the dark, broad, drought-proof canopy of the Mediterranean itself — the tree that belongs where the plane is only watered into place.",
+        edges: [
+          { axis: "water", native: "Thoroughly drought-proof once established.", ornamental: "A thirsty tree in a dry land." },
+          { axis: "wildlife", native: "Hosts around 400 caterpillar species; its acorns feed a whole community.", ornamental: "Feeds almost nothing native." },
+        ],
+        basis: "INPN; Morton Arboretum.",
+      },
+      {
+        plantId: "quercus-pubescens",
+        why: "For a deciduous shade tree with autumn warmth, downy oak spreads a broad drought-hardy crown that holds its russet leaves into winter — a hillside native carrying the region's richest food web.",
+        edges: [
+          { axis: "water", native: "Thoroughly drought-proof; a dry-country native.", ornamental: "Thirsty, and prone to anthracnose." },
+          { axis: "wildlife", native: "Hosts around 400 caterpillar species; acorns for jays, boar and mammals.", ornamental: "Feeds almost nothing native." },
+        ],
+        basis: "INPN; Morton Arboretum.",
+      },
+    ],
   },
 
   "france-alpine": {
@@ -1053,6 +1605,17 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
           { axis: "wildlife", native: "Its cones feed birds; it hosts several specialist moths.", ornamental: "Feeds birds — which is how it spreads — and little else." },
         ],
         basis: "INPN.",
+      },
+    ],
+    "salix-babylonica": [
+      {
+        plantId: "salix-caprea",
+        why: "For a fast native in a mountain garden or by a stream, goat willow throws out the silver catkins of late winter that feed the valley's first bees — a keystone of the uplands, not a threat to the drains.",
+        edges: [
+          { axis: "wildlife", native: "Hosts around 350 caterpillar species; its early catkins are a vital first pollen source.", ornamental: "Feeds little native." },
+          { axis: "disease", native: "A hardy native of cold country.", ornamental: "Greedy, drain-seeking roots; brittle and short-lived." },
+        ],
+        basis: "INPN; RHS.",
       },
     ],
   },

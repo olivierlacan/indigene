@@ -43,7 +43,9 @@
 // same way (`scripts/gen-planting-cards.mjs` → public/og/planting/), and there
 // the index gets one too: its card is the year with every season lit, which is
 // a true picture of a page about all fifteen techniques rather than a portrait
-// of one of them.
+// of one of them. An animal's page has one as well
+// (`scripts/gen-wildlife-cards.mjs` → public/og/wildlife/): its emoji and the
+// count of regions and native plants that support it.
 //
 // Every other page still shows the site-wide card, which is honest for a
 // region and for a catalog: those pages are a list, and a drawing of one member
@@ -79,6 +81,11 @@ const plantCard = (slug) => `${ORIGIN}${BASE}og/plants/${slug}.jpg`;
  *  The index has one too, under the reserved slug `index`. Everything else
  *  still shows the site-wide card, which is honest for a list. */
 const plantingCard = (slug) => `${ORIGIN}${BASE}og/planting/${slug}.jpg`;
+
+/** An animal's own card — its emoji, its name, and its reach (the regions it's
+ *  native to and the native plants that support it) — drawn by
+ *  `scripts/gen-wildlife-cards.mjs` and committed under public/og/wildlife/. */
+const wildlifeCard = (id) => `${ORIGIN}${BASE}og/wildlife/${id}.jpg`;
 
 /** Locale-style `{name}` interpolation, matching `t()` in lib/i18n.ts. */
 const fill = (s, vars = {}) =>
@@ -321,8 +328,16 @@ async function collectPages(load) {
   }
 
   // --- one page per animal, and one per group ---
+  // Each animal carries its own card now (`scripts/gen-wildlife-cards.mjs`): its
+  // emoji, its name, and its reach. The alt text says what the picture shows
+  // rather than repeating the title, which reaches a screen reader through
+  // `og:title` either way. A group ("all the butterflies") still shows the
+  // site-wide card — a drawing of one animal would be a lie about the rest.
   for (const w of WILDLIFE) {
-    add(`wildlife/${w.id}`, fill(en["wildlife.docTitle"], { animal: w.common }), w.blurb);
+    add(`wildlife/${w.id}`, fill(en["wildlife.docTitle"], { animal: w.common }), w.blurb, {
+      image: wildlifeCard(w.id),
+      imageAlt: `${w.common}${w.latin ? ` (${w.latin})` : ""} — the regions it's native to and the native plants that support it`,
+    });
   }
   // --- one page per impostor ---
   // Shareable for the same reason a plant is: "that tree in your yard is a

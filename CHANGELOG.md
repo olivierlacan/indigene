@@ -168,6 +168,14 @@ subtitle on the What's new page.
   keystones left uncovered are honest skips: a native that is itself the good
   choice (silver birch in France), a lawn fescue, a meadow legume — plants with
   no common ornamental counterpart to name.
+- **A share card for every animal.** Post a link to a butterfly, bee or bird
+  and the preview now shows that creature, the regions it's native to, and how
+  many native plants feed or shelter it — not one generic picture for all of
+  them. [Browse wildlife](https://indigene.app/wildlife)
+- Internal: `gen-wildlife-cards.mjs` draws one 1200×630 JPEG per animal into
+  `public/og/wildlife/`, the same committed-card pattern as the plant and
+  planting cards; `prerender.mjs` points each `wildlife/<id>` page at its own,
+  and `routes:check` fails if one is missing.
 
 ### Changed
 

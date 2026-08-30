@@ -3249,6 +3249,11 @@ details.weights {
 .conservation-buy {
   color: var(--ink-soft);
 }
+/* The "what these ranks mean" link — to the one page that explains a rank, so
+   the note itself can stay a sentence. Ordinary link colour; kept whole. */
+.conservation-more {
+  white-space: nowrap;
+}
 
 /* Where an impostor is what. The label carries the status colour the badge
    would have — red for invasive, amber for merely introduced — so the index is

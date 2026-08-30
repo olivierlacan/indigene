@@ -1172,13 +1172,15 @@ export const en = {
   "plant.figuresFor": "Figures for:",
   "plant.nativeTo": "📍 Native to: ",
   // The assessed-status line (`components/conservation-note.ts`). Eleven pages
-  // carry one. The rank code is printed beside its meaning so a reader can look
-  // it up, and the last sentence is there because the fact before it is the
-  // reason somebody might go and take one.
+  // carry one, and it's kept short: the status leads, the rank code sits beside
+  // its meaning so a reader can look it up, and the advice is there because the
+  // fact before it is the reason somebody might go and take one. What a rank is,
+  // and who publishes it, is explained once at /guide/conservation — the
+  // `learnMore` link — not on every page.
   "conservation.rank": "{words} ({rank})",
-  "conservation.globally": "Worldwide, this one is {status}.",
-  "conservation.here": "In {place} it's {status}.",
-  "conservation.by": "Assessed by {authority}.",
+  "conservation.globally": "{status} worldwide.",
+  "conservation.here": "In {place}, {status}.",
+  "conservation.learnMore": "What these ranks mean",
   "conservation.buyNursery": "Buy it from a nursery — never dig one from the wild.",
   "conservation.plantForIt": "Planting what it needs is the help it can use.",
   // The ranks in words. NatureServe's five and the IUCN's five, which overlap

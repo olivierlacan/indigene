@@ -184,6 +184,43 @@ export const SECTIONS = [
     published: true,
   },
 
+  {
+    id: "conservation",
+    label: "Conservation",
+    aliases: ["vulnerability", "at risk", "in trouble", "status"],
+    emoji: "🛟",
+    title: "When something's in trouble",
+    tagline: "A few natives we recommend are themselves at risk. Here's what that means.",
+    lede:
+      "Some plants and animals here carry a conservation rank — an expert's read " +
+      "on how close it is to disappearing. A rank belongs to a place: a plant " +
+      "can be everywhere in one state and nearly gone in the next, so Indigene " +
+      "shows one only where it means something to you — worldwide, or in your " +
+      "own region's state. The code is worth a glance: a letter for the scale " +
+      "(G is the whole world, S a single state) and a number from 1 (most at " +
+      "risk) to 5 (secure); the IUCN uses words like Endangered instead. A span " +
+      "such as G3G4 means the assessor placed it between the two.",
+    note:
+      "Most of what you'll plant is doing fine — the note shows only on the few " +
+      "pages where it isn't. Where it does: buy from a nursery, never dig one " +
+      "from the wild; for an animal, planting what it needs is the help it can use.",
+    visit: [{ label: "Browse the plants", href: `${APP}/plants` }],
+    learn: [
+      {
+        label: "How NatureServe ranks a species (G, N, S · 1–5)",
+        source: "NatureServe",
+        href: "https://www.natureserve.org/nsexplorer/about-the-data/statuses/conservation-status-categories",
+      },
+      {
+        label: "What the Red List categories mean (CR, EN, VU…)",
+        source: "IUCN Red List",
+        href: "https://www.iucnredlist.org/resources/categories-and-criteria",
+      },
+    ],
+    match: { segments: [] },
+    published: true,
+  },
+
   // ---- Declared, not yet written -----------------------------------------
   //
   // These are real parts of the app. Listing them here makes their prefix a

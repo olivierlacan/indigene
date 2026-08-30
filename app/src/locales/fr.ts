@@ -1185,13 +1185,14 @@ export const fr: Dict = {
   "plant.sizeAria": "Taille de {name} au fil du temps",
   "plant.figuresFor": "Données pour :",
   "plant.nativeTo": "📍 Indigène de : ",
-  // Les statuts sont donnés sous forme d'étiquette (« Statut mondial : … »)
-  // plutôt que « elle est … » : l'espèce peut être une plante ou un animal, et
-  // l'accord changerait à chaque page.
+  // Court, le statut en tête : « Vulnérable (G3) dans le monde. » Les termes de
+  // rang sont invariables (« vulnérable », « en danger »…), donc pas de souci
+  // d'accord entre une plante et un animal. Ce que signifie un rang, et qui le
+  // publie, est expliqué une seule fois sur /guide/conservation (lien `learnMore`).
   "conservation.rank": "{words} ({rank})",
-  "conservation.globally": "Statut mondial : {status}.",
-  "conservation.here": "En {place} : {status}.",
-  "conservation.by": "Évaluation : {authority}.",
+  "conservation.globally": "{status} dans le monde.",
+  "conservation.here": "En {place}, {status}.",
+  "conservation.learnMore": "Ce que signifient ces statuts",
   "conservation.buyNursery": "À acheter en pépinière — n'en prélevez jamais dans la nature.",
   "conservation.plantForIt": "Planter ce dont il a besoin, voilà l'aide utile.",
   "conservation.span": "{from} à {to}",

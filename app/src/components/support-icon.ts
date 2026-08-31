@@ -1,5 +1,5 @@
 // Monochrome SVG glyphs for the tie chips — the support kinds (Host, Nectar,
-// Berries, Seeds, Shelter) and the two notable dependence strengths (Essential,
+// Berries, Seeds, Shelter) and the two notable dependence strengths (Vital,
 // Specialist). Single-color, drawn with `currentColor`, so they read as a clean
 // white glyph on the chip's colored pill (and inherit the ink color in the
 // dialog title) — the site's keystone-badge idiom, not multicolor emoji.

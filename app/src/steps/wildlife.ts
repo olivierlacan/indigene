@@ -697,9 +697,10 @@ function reachTiles(
   if (!tiles.length) return null;
   // `figures`: every value here is a plain count of the plants below, so the
   // count leads and the label is its caption — the same tiles a saved spot
-  // carries. The labels are the cards' own chip words where they fit in one
-  // (Host, Shelter); the make-or-break tile reads "Vital" rather than the
-  // chip's "Essential", which clips in a tile 119 px wide at the 360 px floor.
+  // carries. Each label is the word the cards below wear on their own chips, so
+  // the tile and the plants it counts say the same thing: Host, Shelter, and
+  // "Vital" for the make-or-break tie — one word short enough to hold in a tile
+  // at the 360 px floor, in English and French alike.
   return statTiles(tiles, t("wlStat.glance", { animal: commonName(w) }), { figures: true });
 }
 
@@ -815,7 +816,7 @@ function speciesLink(w: Parameters<typeof speciesRecordUrl>[0]): HTMLElement | n
 
 // The tie as one-word, tap-to-explain chips with monochrome glyphs: the role
 // ("Host", "Nectar") always, then a strength chip only when it's notable —
-// "Essential" (make-or-break) or "Specialist". A generalist tie shows no
+// "Vital" (make-or-break) or "Specialist". A generalist tie shows no
 // strength chip, so an unmarked plant reads as "one of many" without clutter.
 // Each chip carries its own pill color (see the `.tag-*` rules).
 //

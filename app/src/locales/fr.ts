@@ -680,7 +680,7 @@ export const fr: Dict = {
   "support.shelter.term": "Abri",
   "support.shelter.plain": "Un couvert où nicher, brouter, se percher ou passer la mauvaise saison.",
 
-  "reliance.sole.term": "Indispensable",
+  "reliance.sole.term": "Vitale",
   "reliance.sole.plain":
     "Cette plante est la seule option de l'animal — un lien obligatoire, sans remplaçante. Elle disparaît d'ici, l'animal disparaît avec elle. Ce sont les relations vitales (le monarque a besoin d'asclépiade ; l'atala a besoin de zamia).",
   "reliance.narrow.term": "Spécialiste",
@@ -1427,7 +1427,7 @@ export const fr: Dict = {
   "wlStat.shelter.label": "Abri",
   "wlStat.shelter.explain":
     "Les plantes où {animal} niche, se cache ou passe l'hiver. Un endroit où être tranquille, c'est la moitié du jardin qui n'est pas de la nourriture.",
-  "wlStat.sole.label": "Vitales",
+  "wlStat.sole.label": "Vitale",
   "wlStat.sole.explain.one":
     "L'une de ces plantes est la seule option d'{animal}. Retirez-la d'un quartier et l'animal s'en va avec elle.",
   "wlStat.sole.explain.other":

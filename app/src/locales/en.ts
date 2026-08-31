@@ -652,7 +652,7 @@ export const en = {
   "support.shelter.term": "Shelter",
   "support.shelter.plain": "Cover and habitat to nest, graze, roost, or ride out the season in.",
 
-  "reliance.sole.term": "Essential",
+  "reliance.sole.term": "Vital",
   "reliance.sole.plain":
     "This plant is the animal's only option — an obligate tie with no substitute. Lose it here and you lose the animal. These are the make-or-break relationships (a monarch needs milkweed; an atala needs coontie).",
   "reliance.narrow.term": "Specialist",

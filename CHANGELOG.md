@@ -31,6 +31,12 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Fixed
+
+- Wildlife & Regions: the star that marks a plant an animal can’t live without
+  now says the same word everywhere — “Vital.” It used to read “Essential” on
+  the plant and “Vital” on the animal’s summary.
+
 ## [0.28] - 2026-08-30
 
 **Grow this instead**

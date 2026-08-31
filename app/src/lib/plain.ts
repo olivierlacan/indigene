@@ -272,7 +272,7 @@ export function supportLabel(kind: SupportKind): { term: string; icon: string; p
 /**
  * How much an animal depends on a plant, glossed once. `term` is the one-word
  * chip; `plain` is the tap-to-open meaning. Only the two notable levels get a
- * chip on screen — "Essential" (make-or-break) and "Specialist" (few options);
+ * chip on screen — "Vital" (make-or-break) and "Specialist" (few options);
  * the generalist "broad" default shows none, so an unmarked tie simply means
  * "one of many". The `broad` entry is kept so that meaning can still be spelled
  * out in a dialog when needed.

@@ -35,7 +35,7 @@ subtitle on the What's new page.
 
 **Grow this instead**
 
-[![Little Bluestem's page now says what to grow it in place of — Bermuda grass — right beside the look-alike it gets confused with](docs/screenshots/pr-143/thumb.png)](docs/screenshots/pr-143/plant-after-dark.png)
+[![Little bluestem against Bermuda grass, side by side: on water the native needs none once established while the lawn grass browns off without irrigation, and it carries no turf disease](docs/screenshots/pr-143/thumb.png)](docs/screenshots/pr-143/bermuda-swap-dark.png)
 [Before](docs/screenshots/pr-143/plant-before-dark.png) · [and after](docs/screenshots/pr-143/plant-after-dark.png)
 
 ### Added

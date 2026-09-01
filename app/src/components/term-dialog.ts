@@ -1,5 +1,5 @@
 // A tappable term chip + the small dialog it opens — the same just-in-time
-// education idiom the stat grid uses, so a one-word tag ("Host", "Essential")
+// education idiom the stat grid uses, so a one-word tag ("Host", "Vital")
 // can stay short while its meaning is one tap away. One shared <dialog> lives on
 // <body> and is reused for every chip on the page (a closed <dialog> is inert).
 //

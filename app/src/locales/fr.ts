@@ -1247,6 +1247,8 @@ export const fr: Dict = {
   "lookalike.where.native": "Indigène :",
   "lookalike.nativeElsewhere": "Elle est bel et bien indigène quelque part — {link}.",
   "lookalike.nativeElsewhereLink": "nous la recommandons dans notre liste {region}",
+  "lookalike.growInstead": "Envie de la planter ? {link}.",
+  "lookalike.growInsteadLink": "voyez l'indigène à planter à la place",
   "lookalike.coverageNote":
     "Ce sont les confusions que nous avons documentées, pas toutes celles qui sont possibles. Dans le doute, photographiez la plante et demandez à iNaturalist — ce sont de vraies personnes qui identifient.",
   // ---------------------------------------------------------------------
@@ -1336,6 +1338,9 @@ export const fr: Dict = {
   "alternative.seeOnInat": "Photos sur iNaturalist ↗",
   "alternative.nativeElsewhere": "C'est une véritable indigène quelque part — {link}.",
   "alternative.nativeElsewhereLink": "nous la recommandons sur notre liste {region}",
+  "alternative.alsoLookalike": "C'est aussi l'un de nos sosies — {link}.",
+  "alternative.alsoLookalikeInvasive": "Invasive en {regions}, et l'un de nos sosies — {link}.",
+  "alternative.tellApartLink": "voyez comment la distinguer de l'indigène",
   "plant.propagationTitle": "🪴 Comment en faire plus",
   "plant.forThisPlant": "Pour cette plante : ",
   "plant.howToSource": "Source du mode d'emploi : ",

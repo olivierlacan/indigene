@@ -1245,6 +1245,11 @@ export const en = {
   "lookalike.where.native": "Native to",
   "lookalike.nativeElsewhere": "It's a genuine native somewhere — {link}.",
   "lookalike.nativeElsewhereLink": "we recommend it on our {region} list",
+  // Cross-link to the native-swaps layer: people plant this one on purpose, so
+  // point them at the native to grow instead. Shown only when both catalogs
+  // carry the plant.
+  "lookalike.growInstead": "Thinking of planting it? {link}.",
+  "lookalike.growInsteadLink": "see the native to grow instead",
   "lookalike.coverageNote":
     "These are the mix-ups we've written up, not every plant that could be confused with this one. If you're unsure about something in front of you, photograph it and ask iNaturalist — real people identify them.",
   // ---------------------------------------------------------------------
@@ -1334,6 +1339,11 @@ export const en = {
   "alternative.seeOnInat": "Photos on iNaturalist ↗",
   "alternative.nativeElsewhere": "It's a genuine native somewhere — {link}.",
   "alternative.nativeElsewhereLink": "we recommend it on our {region} list",
+  // Cross-link to the look-alike layer: this ornamental is also one people
+  // mistake for a native. Shown only when the two catalogs share the plant.
+  "alternative.alsoLookalike": "It's also one of our look-alikes — {link}.",
+  "alternative.alsoLookalikeInvasive": "Invasive in {regions}, and one of our look-alikes — {link}.",
+  "alternative.tellApartLink": "see how to tell it from the native",
   "plant.propagationTitle": "🪴 How to grow more",
   "plant.forThisPlant": "For this plant: ",
   "plant.howToSource": "How-to source: ",

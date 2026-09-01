@@ -44,6 +44,16 @@ subtitle on the What's new page.
   shade groundcover, sunny border perennials, ornamental grasses and roses. The
   large remainder (chaparral sages, native bulbs, woodland specialists) mostly
   has no common ornamental counterpart, and stays an honest skip.
+- Native swaps: **a photo of each, and linked to the look-alikes.** Every
+  ornamental now opens with a real picture, and where one is also a plant people
+  mistake for a native, the two pages link across — “tell it apart” one way,
+  “grow a native instead” the other. [See them](https://indigene.app/alternatives)
+- Internal: `npm run hero:inat -- --kind alternatives` fills
+  `data/inat-alternatives.json` with iNaturalist's own taxon photo for each
+  ornamental (36 of 37; a bedding rose has no single wild taxon, so it keeps its
+  drawing). The cross-links match on scientific name — `getLookalikeByLatin` /
+  `getOrnamentalByLatin` — and the alternatives page leads with where the
+  look-alike is actually invasive, read from the same per-region status.
 
 ### Fixed
 

@@ -19,7 +19,7 @@
 // drawing.
 import { el } from "../ui";
 import { silhouetteFor } from "./plant-card";
-import { heroPhotoFor, lookalikePhotoFor, type HeroPhoto } from "../lib/hero-photo";
+import { heroPhotoFor, lookalikePhotoFor, alternativePhotoFor, type HeroPhoto } from "../lib/hero-photo";
 import { loadPhoto, budget } from "../lib/photo";
 import type { PlantForm } from "../types";
 
@@ -60,6 +60,19 @@ export function lookalikeThumb(
   opts: { attrs?: Record<string, string> } = {},
 ): HTMLElement {
   const pick = budget() === "essential" ? undefined : lookalikePhotoFor(lookalikeId);
+  return thumb(form, pick, opts);
+}
+
+/**
+ * The same slot for an ornamental, on the native-swaps index and at the head of
+ * its own page — iNaturalist's own photograph of the plant a native replaces.
+ */
+export function alternativeThumb(
+  ornamentalId: string,
+  form: PlantForm,
+  opts: { attrs?: Record<string, string> } = {},
+): HTMLElement {
+  const pick = budget() === "essential" ? undefined : alternativePhotoFor(ornamentalId);
   return thumb(form, pick, opts);
 }
 

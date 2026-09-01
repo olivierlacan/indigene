@@ -30,6 +30,7 @@ import {
   statusRegions,
 } from "../lib/lookalikes";
 import type { LookalikeIndexRow, NativeForLookalike } from "../lib/lookalikes";
+import { getOrnamentalByLatin } from "../lib/alternatives";
 import { filterField, highlight, norm } from "../components/filter-field";
 import type { FilterRow } from "../components/filter-field";
 import { citation } from "../components/citation";
@@ -360,6 +361,9 @@ export async function renderLookalike(main: HTMLElement, param?: string): Promis
   const natives = await nativesForLookalike(lookalike.id);
   const names = nameLines(lookalike);
   const elsewhere = await nativeSomewhere(lookalike.latin);
+  // If people plant this one on purpose — a butterfly bush, a Norway maple — and
+  // we've written up the native to grow instead, cross-link to it.
+  const swap = getOrnamentalByLatin(lookalike.latin);
   const portrait = lookalikePhotoFor(lookalike.id);
   document.title = t("lookalikes.docTitle", { name: names.title });
 
@@ -400,6 +404,11 @@ export async function renderLookalike(main: HTMLElement, param?: string): Promis
         ? el("p", { class: "note" }, tx("lookalike.nativeElsewhere", {
             link: el("a", { href: `#/plants/${elsewhere.plant.id}` },
               t("lookalike.nativeElsewhereLink", { region: regionShort(elsewhere.region.meta) })),
+          }))
+        : null,
+      swap
+        ? el("p", { class: "note" }, tx("lookalike.growInstead", {
+            link: el("a", { href: `#/alternatives/${swap.id}` }, t("lookalike.growInsteadLink")),
           }))
         : null,
       el("p", { class: "confidence" }, [

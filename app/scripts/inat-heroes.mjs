@@ -65,6 +65,10 @@ const OUT = {
   plant: resolve(HERE, "../src/data/inat-heroes.json"),
   wildlife: resolve(HERE, "../src/data/inat-heroes.json"),
   lookalike: resolve(HERE, "../src/data/inat-lookalikes.json"),
+  // The ornamentals a native stands in for get their own file, keyed by
+  // ornamental id, for the same reason the impostors do: some share an id with
+  // an impostor (Norway maple, Callery pear) and would collide in one table.
+  alternative: resolve(HERE, "../src/data/inat-alternatives.json"),
 };
 const REVIEWED = {
   plant: resolve(HERE, "../src/data/hero-photos.json"),
@@ -72,6 +76,8 @@ const REVIEWED = {
   // Impostors have no review pipeline of their own: nobody shortlists a Callery
   // pear. iNaturalist's answer is the only photograph they get.
   lookalike: null,
+  // Nor do the ornamentals — the same reasoning, and the same one photograph.
+  alternative: null,
 };
 const API = "https://api.inaturalist.org/v1/taxa";
 
@@ -101,7 +107,7 @@ const limit = flag("--limit") ? Number(flag("--limit")) : undefined;
 const dryRun = args.includes("--dry-run");
 const force = args.includes("--force");
 
-const KINDS = { plants: "plant", wildlife: "wildlife", lookalikes: "lookalike" };
+const KINDS = { plants: "plant", wildlife: "wildlife", lookalikes: "lookalike", alternatives: "alternative" };
 if (!Object.keys(KINDS).includes(onlyKind) && onlyKind !== "all") {
   console.error(`--kind must be ${Object.keys(KINDS).join(", ")} or all (got "${onlyKind}").`);
   process.exit(1);
@@ -112,6 +118,7 @@ const loader = await openLoader();
 const { REGISTRY } = await loader.load("/src/data/registry.ts");
 const { WILDLIFE } = await loader.load("/src/data/wildlife.ts");
 const { LOOKALIKES } = await loader.load("/src/data/lookalikes.ts");
+const { ORNAMENTALS } = await loader.load("/src/data/alternatives.ts");
 const { buildTaxaUrl, pickTaxon } = await loader.load("/src/lib/inaturalist.ts");
 await loader.close();
 
@@ -126,6 +133,7 @@ const reviewed = {
   plant: readJson(REVIEWED.plant),
   wildlife: readJson(REVIEWED.wildlife),
   lookalike: {},
+  alternative: {},
 };
 // Each output file read once, however many kinds write to it.
 const stored = {};
@@ -160,6 +168,13 @@ if (wants("lookalike")) {
   // animals — so it is resolved the same way, scoped to plants.
   for (const l of LOOKALIKES) {
     jobs.push({ subject: "lookalike", id: l.id, scope: { name: l.latin, iconic: "Plantae" }, name: l.latin });
+  }
+}
+if (wants("alternative")) {
+  // The ornamentals carry a scientific name and no number too, resolved the
+  // same way and scoped to plants.
+  for (const o of ORNAMENTALS) {
+    jobs.push({ subject: "alternative", id: o.id, scope: { name: o.latin, iconic: "Plantae" }, name: o.latin });
   }
 }
 

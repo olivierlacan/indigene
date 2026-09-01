@@ -14,10 +14,18 @@ import { REGIONS, loadPlants } from "./plants";
 import { ALTERNATIVES, ORNAMENTALS } from "../data/alternatives";
 
 const ornamentalById = new Map(ORNAMENTALS.map((o) => [o.id, o]));
+const ornamentalByLatin = new Map(ORNAMENTALS.map((o) => [o.latin.trim().toLowerCase(), o]));
 
 /** The catalog entry for an id, or undefined if it isn't one we know. */
 export function getOrnamental(id: string): Ornamental | undefined {
   return ornamentalById.get(id);
+}
+
+/** The ornamental for a scientific name — how the look-alike layer finds the
+ *  swap for an impostor people plant on purpose (a butterfly bush, a Norway
+ *  maple), so its page can point to "grow a native instead". */
+export function getOrnamentalByLatin(latin: string): Ornamental | undefined {
+  return ornamentalByLatin.get(latin.trim().toLowerCase());
 }
 
 /** One native that stands in for an ornamental, resolved to plant + tie. */

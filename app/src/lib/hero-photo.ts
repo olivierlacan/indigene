@@ -49,6 +49,7 @@ import PICKS from "../data/hero-photos.json";
 import WILDLIFE_PICKS from "../data/wildlife-photos.json";
 import TAXON_PHOTOS from "../data/inat-heroes.json";
 import LOOKALIKE_PHOTOS from "../data/inat-lookalikes.json";
+import ALTERNATIVE_PHOTOS from "../data/inat-alternatives.json";
 import type { ObservationSummary } from "./inaturalist";
 
 /** One chosen photograph, as `hero-photos.json` stores it — the shape the
@@ -102,6 +103,7 @@ const picks = PICKS as PickTable;
 const wildlifePicks = WILDLIFE_PICKS as PickTable;
 const taxonPhotos = TAXON_PHOTOS as Record<string, TaxonPhoto>;
 const lookalikePhotos = LOOKALIKE_PHOTOS as Record<string, TaxonPhoto>;
+const alternativePhotos = ALTERNATIVE_PHOTOS as Record<string, TaxonPhoto>;
 
 /** iNaturalist serves every rendition at the same address with the size
  *  swapped, which is what lets the stored record carry one URL. */
@@ -173,6 +175,18 @@ export function wildlifePhotoFor(wildlifeId: string, regionId?: string): HeroPho
  */
 export function lookalikePhotoFor(lookalikeId: string): HeroPhoto | undefined {
   const photo = lookalikePhotos[lookalikeId];
+  return photo ? asHero(photo) : undefined;
+}
+
+/**
+ * The photograph of an ornamental — the plant a native stands in for. Always
+ * iNaturalist's own, for the same reason the impostors' are: nobody shortlists
+ * a Bermuda-grass lawn, and the page needs *a* correct picture of it beside the
+ * native, not the best one. Its own file (`inat-alternatives.json`) because
+ * several ornamentals share an id with an impostor (Norway maple, Callery pear).
+ */
+export function alternativePhotoFor(ornamentalId: string): HeroPhoto | undefined {
+  const photo = alternativePhotos[ornamentalId];
   return photo ? asHero(photo) : undefined;
 }
 

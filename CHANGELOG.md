@@ -54,6 +54,15 @@ subtitle on the What's new page.
   drawing). The cross-links match on scientific name — `getLookalikeByLatin` /
   `getOrnamentalByLatin` — and the alternatives page leads with where the
   look-alike is actually invasive, read from the same per-region status.
+- Native swaps: **now in French for Atlantic France.** Every ornamental there
+  and the native that betters it reads in French — what each plant is, and the
+  side-by-side on the water it saves, the disease it dodges and the wildlife it
+  feeds. Other regions follow. [See them](https://indigene.app/alternatives)
+- Internal: `locales/prose.fr/alternatives.ts` holds the ornamentals that aren't
+  also look-alikes; the shared ones (cherry laurel, butterfly bush, Chinese
+  silvergrass) carry their swap prose in `prose.fr/lookalikes.ts`, one taxon one
+  file, so `prose:check` stays collision-free. `check-prose.mjs` lists the new
+  part.
 
 ### Fixed
 

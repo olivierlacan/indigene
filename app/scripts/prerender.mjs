@@ -44,8 +44,11 @@
 // the index gets one too: its card is the year with every season lit, which is
 // a true picture of a page about all fifteen techniques rather than a portrait
 // of one of them. An animal's page has one as well
-// (`scripts/gen-wildlife-cards.mjs` → public/og/wildlife/): its emoji and the
-// count of regions and native plants that support it.
+// (`scripts/gen-wildlife-cards.mjs` → public/og/wildlife/): its drawn kind glyph
+// and the count of regions and native plants that support it. An impostor's does
+// too (`scripts/gen-lookalike-cards.mjs` → public/og/lookalikes/, index and all):
+// its form in a cautioning amber, where it's really from, and how many natives
+// it's mistaken for.
 //
 // Every other page still shows the site-wide card, which is honest for a
 // region and for a catalog: those pages are a list, and a drawing of one member
@@ -86,6 +89,12 @@ const plantingCard = (slug) => `${ORIGIN}${BASE}og/planting/${slug}.jpg`;
  *  native to and the native plants that support it) — drawn by
  *  `scripts/gen-wildlife-cards.mjs` and committed under public/og/wildlife/. */
 const wildlifeCard = (id) => `${ORIGIN}${BASE}og/wildlife/${id}.jpg`;
+
+/** An impostor's own card — its form in a cautioning amber, where it's really
+ *  from, and how many natives it's mistaken for — drawn by
+ *  `scripts/gen-lookalike-cards.mjs` and committed under public/og/lookalikes/.
+ *  The index has one too, under the reserved slug `index`. */
+const lookalikeCard = (slug) => `${ORIGIN}${BASE}og/lookalikes/${slug}.jpg`;
 
 /** Locale-style `{name}` interpolation, matching `t()` in lib/i18n.ts. */
 const fill = (s, vars = {}) =>
@@ -267,7 +276,10 @@ async function collectPages(load) {
   add("browse", en["browse.docTitle"], en["browse.lede"]);
   add("wildlife", en["wildlife.indexDocTitle"], fill(en["wildlife.indexLede"], { n: WILDLIFE.length }));
   const impostors = await lookalikeIndex();
-  add("lookalikes", en["lookalikes.indexDocTitle"], fill(en["lookalikes.indexLede"], { n: impostors.length }));
+  add("lookalikes", en["lookalikes.indexDocTitle"], fill(en["lookalikes.indexLede"], { n: impostors.length }), {
+    image: lookalikeCard("index"),
+    imageAlt: "Look-alikes — a native and its impostor side by side, and the count of impostors and regions behind the page",
+  });
   add("planting", en["planting.docTitle"], en["planting.lede"], {
     image: plantingCard("index"),
     imageAlt: "Ways to grow more — the four seasons, and the count of techniques and sources behind the page",
@@ -346,7 +358,13 @@ async function collectPages(load) {
     add(
       `lookalikes/${row.lookalike.id}`,
       fill(en["lookalikes.docTitle"], { name: row.lookalike.common }),
-      `${row.lookalike.origin} ${row.lookalike.blurb}`
+      `${row.lookalike.origin} ${row.lookalike.blurb}`,
+      {
+        image: lookalikeCard(row.lookalike.id),
+        // The card names where it's really from and how many natives it apes,
+        // never a status word — that's a fact about a place, not the plant.
+        imageAlt: `${row.lookalike.common} (${row.lookalike.latin}) — where it's really from and the native plants it's mistaken for`,
+      }
     );
   }
 

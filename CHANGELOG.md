@@ -58,6 +58,15 @@ subtitle on the What's new page.
   which draws one 1200×630 JPEG per animal into `public/og/wildlife/`;
   `prerender.mjs` points each `wildlife/<id>` page at its own card and
   `routes:check` fails if one is missing.
+- **A share card for every look-alike.** Post a link to a plant often mistaken
+  for a native and the preview now shows it in a cautioning amber, where it's
+  really from, and how many natives it's confused with — the
+  [look-alikes page](https://indigene.app/lookalikes) gets one too.
+- Internal: `gen-lookalike-cards.mjs` draws one JPEG per impostor plus an index
+  card into `public/og/lookalikes/`; `prerender.mjs` points `/lookalikes` and
+  each `lookalikes/<id>` at its own. The card leads with origin and never prints
+  a status word — invasive/introduced are facts about a place, not the plant, so
+  a region-spanning card can't claim one. `routes:check` fails on a missing card.
 
 ### Changed
 

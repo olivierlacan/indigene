@@ -61,6 +61,10 @@ const RAW_BASE = "https://raw.githubusercontent.com/olivierlacan/indigene/main/"
 // this, so search engines and link previews credit one address per release
 // rather than treating the index and its anchors as duplicates.
 const SITE = "https://indigene.app/release-notes/";
+// The share card for the notes — drawn by scripts/gen-page-cards.mjs and
+// committed under public/og/pages/. Every notes page (the index and each
+// version) shows it: the section's card, not a portrait of one release.
+const CARD = "https://indigene.app/og/pages/release-notes.jpg";
 const resolveUrl = (url) =>
   /^(https?:|mailto:|#|\/|\.\.?\/)/.test(url) ? url : RAW_BASE + url;
 
@@ -682,6 +686,18 @@ function shell({ title, description, canonical, body, root = "../" }) {
 <title>${escapeHtml(title)}</title>
 <meta name="description" content="${escapeHtml(description)}">
 <link rel="canonical" href="${canonical}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Indigene">
+<meta property="og:url" content="${canonical}">
+<meta property="og:title" content="${escapeHtml(title)}">
+<meta property="og:description" content="${escapeHtml(description)}">
+<meta property="og:image" content="${CARD}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${escapeHtml(title)}">
+<meta name="twitter:description" content="${escapeHtml(description)}">
+<meta name="twitter:image" content="${CARD}">
 <style>
 /* Tokens mirrored from app/src/styles.css so the page feels like the app. */
 :root {

@@ -96,6 +96,12 @@ const wildlifeCard = (id) => `${ORIGIN}${BASE}og/wildlife/${id}.jpg`;
  *  The index has one too, under the reserved slug `index`. */
 const lookalikeCard = (slug) => `${ORIGIN}${BASE}og/lookalikes/${slug}.jpg`;
 
+/** A standing page's card — the guide, the notes, About, Sources, Privacy, and
+ *  the section indexes — drawn by `scripts/gen-page-cards.mjs` and committed
+ *  under public/og/pages/. (The guide and the notes are built by their own
+ *  scripts, which point at the same files.) */
+const pageCard = (slug) => `${ORIGIN}${BASE}og/pages/${slug}.jpg`;
+
 /** Locale-style `{name}` interpolation, matching `t()` in lib/i18n.ts. */
 const fill = (s, vars = {}) =>
   s.replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
@@ -268,13 +274,25 @@ async function collectPages(load) {
   // address a canonical page of its own; the 404.html bounce still redirects it.
   const perRegion = await Promise.all(REGIONS.map((r) => loadPlants(r)));
   const totalPlants = perRegion.reduce((n, list) => n + list.length, 0);
-  add("plants", en["plants.docTitle"], en["plants.lede"]);
+  add("plants", en["plants.docTitle"], en["plants.lede"], {
+    image: pageCard("plants"),
+    imageAlt: "Native plants — every plant Indigene knows, and how many, across how many regions",
+  });
   add("regions", en["explore.docTitle"], fill(en["explore.lede"], {
     plants: totalPlants,
     regions: REGIONS.length,
-  }));
-  add("browse", en["browse.docTitle"], en["browse.lede"]);
-  add("wildlife", en["wildlife.indexDocTitle"], fill(en["wildlife.indexLede"], { n: WILDLIFE.length }));
+  }), {
+    image: pageCard("regions"),
+    imageAlt: "Meet the natives — the regions Indigene covers and the size of their rosters",
+  });
+  add("browse", en["browse.docTitle"], en["browse.lede"], {
+    image: pageCard("browse"),
+    imageAlt: "Browse — start from a region or a standout plant, no location needed",
+  });
+  add("wildlife", en["wildlife.indexDocTitle"], fill(en["wildlife.indexLede"], { n: WILDLIFE.length }), {
+    image: pageCard("wildlife"),
+    imageAlt: "Browse by wildlife — pick a creature and see the native plants that feed it",
+  });
   const impostors = await lookalikeIndex();
   add("lookalikes", en["lookalikes.indexDocTitle"], fill(en["lookalikes.indexLede"], { n: impostors.length }), {
     image: lookalikeCard("index"),
@@ -284,9 +302,18 @@ async function collectPages(load) {
     image: plantingCard("index"),
     imageAlt: "Ways to grow more — the four seasons, and the count of techniques and sources behind the page",
   });
-  add("privacy", en["privacy.docTitle"], en["privacy.lede"]);
-  add("sources", en["sources.docTitle"], en["sources.lede"]);
-  add("about", en["about.docTitle"], en["about.lede"]);
+  add("privacy", en["privacy.docTitle"], en["privacy.lede"], {
+    image: pageCard("privacy"),
+    imageAlt: "Privacy & safety — what we ask for, what we never do, made safe for everyone",
+  });
+  add("sources", en["sources.docTitle"], en["sources.lede"], {
+    image: pageCard("sources"),
+    imageAlt: "Where our numbers come from — what's counted, what's judgment, and where we'd bet we're wrong",
+  });
+  add("about", en["about.docTitle"], en["about.lede"], {
+    image: pageCard("about"),
+    imageAlt: "About Indigene — a native of a place, and what this app measures for yours",
+  });
 
   // --- one page per region ---
   for (const region of REGIONS) {

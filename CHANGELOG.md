@@ -67,6 +67,14 @@ subtitle on the What's new page.
   each `lookalikes/<id>` at its own. The card leads with origin and never prints
   a status word — invasive/introduced are facts about a place, not the plant, so
   a region-spanning card can't claim one. `routes:check` fails on a missing card.
+- **Every page previews as itself now.** Share a link to the
+  [guide](https://indigene.app/guide), the What's-new notes, About, Sources or
+  Privacy — or the plants, regions and wildlife indexes — and the preview shows
+  that page's own title and words, not one generic picture for the whole site.
+- Internal: `gen-page-cards.mjs` draws a type-forward card per standing page into
+  `public/og/pages/`; `prerender.mjs` points the section indexes and footer pages
+  at them, and `build-guide.mjs`/`build-release-notes.mjs` add og:image, og:title
+  and twitter tags to their heads (those two pages carried no share image before).
 
 ### Changed
 

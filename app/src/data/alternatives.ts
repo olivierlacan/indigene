@@ -367,6 +367,106 @@ export const ORNAMENTALS: Ornamental[] = [
       "The steel-blue specimen conifer on a thousand lawns. In the humid East and Midwest it's living in the wrong climate, and it's increasingly failing there to needlecast and canker — a striking tree that browns out and dies back from the bottom.",
     originBasis: "Morton Arboretum; Missouri Botanical Garden.",
   },
+  // ---------------- More grasses, groundcovers, perennials, shrubs & trees ----------------
+  {
+    id: "miscanthus-sinensis",
+    common: "Chinese silvergrass (maiden grass)",
+    latin: "Miscanthus sinensis",
+    form: "grass",
+    role: "Big ornamental grass",
+    origin: "Native to eastern Asia; the tall feather-plumed grass of a thousand borders.",
+    blurb:
+      "The fountain of arching blades and silver autumn plumes sold as a easy-care centrepiece. It seeds itself into old fields and roadsides — several states now list it — and carries fire the way its native-grass look-alikes don't.",
+    originBasis: "Missouri Botanical Garden; USDA.",
+  },
+  {
+    id: "vinca-minor",
+    common: "Common periwinkle",
+    latin: "Vinca minor",
+    form: "groundcover",
+    role: "Evergreen shade groundcover",
+    origin: "Native to central and southern Europe.",
+    blurb:
+      "The glossy evergreen mat with little blue pinwheels, sold for dry shade under trees. It does cover the ground — then creeps out of the bed and into the woods, where it smothers the spring wildflowers and feeds next to nothing.",
+    originBasis: "Missouri Botanical Garden; USDA.",
+  },
+  {
+    id: "pachysandra-terminalis",
+    common: "Japanese pachysandra",
+    latin: "Pachysandra terminalis",
+    form: "groundcover",
+    role: "Evergreen shade carpet",
+    origin: "Native to Japan; the default green carpet under a shade tree.",
+    blurb:
+      "A uniform ankle-high evergreen carpet, planted by the flat under maples and along foundations. It's a monoculture by design — nothing native eats it, nothing nests in it — and it spreads by runner into the woodland beyond.",
+    originBasis: "Missouri Botanical Garden.",
+  },
+  {
+    id: "rosa-hybrids",
+    common: "Hybrid tea & landscape roses",
+    latin: "Rosa hybrids",
+    form: "shrub",
+    role: "Flowering / bedding rose",
+    origin: "Garden hybrids, bred over centuries for the flower.",
+    blurb:
+      "The bedding rose bought for the bloom, and the bloom is most of what it gives: thirsty, prone to black spot and needing the spray that goes with it, and — where the flower is fully double — packed so tight that a bee can't reach the middle.",
+    originBasis: "Missouri Botanical Garden; RHS.",
+  },
+  {
+    id: "ligustrum-sinense",
+    common: "Chinese privet",
+    latin: "Ligustrum sinense",
+    form: "shrub",
+    role: "Fast evergreen hedge",
+    origin: "Native to China; the cheap fast hedge of the American South.",
+    blurb:
+      "A quick, dense, semi-evergreen hedge — and one of the Southeast's worst invaders, its berries carried by birds into every fencerow and floodplain until it crowds the understorey out. Its heavy bloom is a common allergen besides.",
+    originBasis: "UF/IFAS; USDA.",
+  },
+  {
+    id: "hemerocallis-fulva",
+    common: "Daylily",
+    latin: "Hemerocallis fulva",
+    form: "perennial",
+    role: "Sunny border perennial",
+    origin: "Native to Asia; the orange 'ditch lily' naturalised along roadsides everywhere.",
+    blurb:
+      "Tough, cheap, and everywhere — each flower lasts a day and the plant asks nothing of you. It asks nothing and gives about as much back: little nectar a native bee can use, no caterpillars, and the common orange one runs into dense sterile clumps that shoulder everything else aside.",
+    originBasis: "Missouri Botanical Garden; Mt. Cuba Center.",
+  },
+  {
+    id: "hosta",
+    common: "Hosta (plantain lily)",
+    latin: "Hosta",
+    form: "perennial",
+    role: "Shade foliage clump",
+    origin: "Native to East Asia; the shade garden's default leafy mound.",
+    blurb:
+      "The go-to clump of bold leaves for a shady spot — and the slugs' favourite dinner, so it often ends the summer in holes. Nothing native raises its young on it; it's greenery, and greenery only.",
+    originBasis: "Missouri Botanical Garden.",
+  },
+  {
+    id: "iris-pseudacorus",
+    common: "Yellow flag iris",
+    latin: "Iris pseudacorus",
+    form: "perennial",
+    role: "Pond / rain-garden perennial",
+    origin: "Native to Europe and North Africa; sold for the water's edge.",
+    blurb:
+      "The tall yellow iris of the pond margin. Away from home it takes a wet edge over entirely — a dense mat of rhizomes that shoulders out every other marsh plant and is toxic to graze — and it's banned for sale in a growing list of states.",
+    originBasis: "USDA; Missouri Botanical Garden.",
+  },
+  {
+    id: "syagrus-romanzoffiana",
+    common: "Queen palm",
+    latin: "Syagrus romanzoffiana",
+    form: "tree",
+    role: "Feather-palm street tree",
+    origin: "Native to South America; the fast feather palm on every Florida street.",
+    blurb:
+      "The quick, glossy, feather-leaved palm sold for instant tropics. It's shallow-rooted and forever hungry — chronically short of manganese and potassium in Florida sand — and it feeds little next to the native palm it so often replaced.",
+    originBasis: "UF/IFAS.",
+  },
 ];
 
 // ---- The ties: region → ornamental id → the natives that stand in for it ----
@@ -376,6 +476,126 @@ export const ORNAMENTALS: Ornamental[] = [
 // and here is how the two compare on water, disease and wildlife.
 export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   "mid-atlantic": {
+    "hemerocallis-fulva": [
+      {
+        plantId: "rudbeckia-fulgida",
+        why: "For a mound of easy, cheerful summer colour, black-eyed Susan gives it for weeks on end — and unlike the daylily it's mobbed by bees and finches and raises native caterpillars besides.",
+        edges: [
+          { axis: "wildlife", native: "Nectar and pollen for a crowd of bees and butterflies; seed for finches; a host for several moths.", ornamental: "Little a native bee can use, and no caterpillars." },
+          { axis: "care", native: "A tough perennial that seeds itself around gently.", ornamental: "Fine, but it feeds the garden nothing while it does it." },
+        ],
+        basis: "Mt. Cuba Center; Xerces Society.",
+      },
+      {
+        plantId: "echinacea-purpurea",
+        why: "For a bold, long-blooming clump, purple coneflower stands all summer, feeds butterflies through it, and holds seed heads the goldfinches ride into winter.",
+        edges: [
+          { axis: "water", native: "Deep-rooted and drought-tough once established.", ornamental: "Thirstier, and gives little back for the water." },
+          { axis: "wildlife", native: "A top butterfly nectar plant; winter seed for finches.", ornamental: "Feeds almost nothing native." },
+        ],
+        basis: "Mt. Cuba Center; Xerces Society.",
+      },
+    ],
+    "hosta": [
+      {
+        plantId: "geranium-maculatum",
+        why: "For a leafy mound in the shade, wild geranium spreads a soft green clump lit by pink spring flowers — the foliage hostas are grown for, plus a bloom the bees actually want.",
+        edges: [
+          { axis: "wildlife", native: "Early nectar for native bees; a host for several moths.", ornamental: "Nothing native eats it." },
+          { axis: "care", native: "Quietly fills its space and asks for nothing.", ornamental: "The slugs' favourite — often in holes by August." },
+        ],
+        basis: "Mt. Cuba Center; Xerces Society.",
+      },
+      {
+        plantId: "polystichum-acrostichoides",
+        why: "For bold evergreen texture in dry shade, Christmas fern holds its dark fronds right through winter where the hosta has died back to bare ground.",
+        edges: [
+          { axis: "care", native: "Evergreen and slug-proof; shrugs off dry shade.", ornamental: "Chewed by slugs and gone by winter." },
+          { axis: "wildlife", native: "Cover for salamanders, insects and ground-nesting bees.", ornamental: "Little native value." },
+        ],
+        basis: "Mt. Cuba Center; USDA NRCS.",
+      },
+    ],
+    "vinca-minor": [
+      {
+        plantId: "packera-aurea",
+        why: "For a spreading evergreen carpet in shade, golden groundsel knits the same weed-smothering mat — then throws up a haze of gold spring daisies, and stays in the bed instead of invading the woods.",
+        edges: [
+          { axis: "wildlife", native: "Early nectar for small native bees and flies.", ornamental: "Feeds next to nothing, and smothers the spring wildflowers where it escapes." },
+          { axis: "care", native: "A vigorous native groundcover that holds shade and slopes.", ornamental: "Creeps into the woods and is hard to be rid of." },
+        ],
+        basis: "Mt. Cuba Center; USDA NRCS.",
+      },
+      {
+        plantId: "fragaria-virginiana",
+        why: "For a low green mat in sun to part shade, wild strawberry runs into cover as fast as periwinkle, flowers white in spring, and hands out small sweet berries.",
+        edges: [
+          { axis: "wildlife", native: "Feeds pollinators in spring, then birds, mammals and people; a host for several butterflies.", ornamental: "Little to no wildlife value." },
+          { axis: "care", native: "Drought-tough once knit together.", ornamental: "An escapee that smothers the ground flora." },
+        ],
+        basis: "Lady Bird Johnson Wildflower Center; Xerces Society.",
+      },
+    ],
+    "pachysandra-terminalis": [
+      {
+        plantId: "polystichum-acrostichoides",
+        why: "For an evergreen carpet under trees, a colony of Christmas fern gives the same year-round green — living texture instead of a monoculture, and cover for the small life of the leaf litter.",
+        edges: [
+          { axis: "wildlife", native: "Shelters salamanders, insects and ground-nesting bees.", ornamental: "A monoculture nothing native uses." },
+          { axis: "care", native: "Evergreen, slug-proof and undemanding in dry shade.", ornamental: "Spreads by runner into the woodland beyond the bed." },
+        ],
+        basis: "Mt. Cuba Center; USDA NRCS.",
+      },
+      {
+        plantId: "packera-aurea",
+        why: "For a fast evergreen groundcover in moist shade, golden groundsel covers ground as thoroughly as pachysandra and lights up in spring with gold daisies the bees work.",
+        edges: [
+          { axis: "wildlife", native: "Early nectar for small native bees and flies.", ornamental: "Feeds nothing native." },
+          { axis: "care", native: "A tough native mat for shade and slopes.", ornamental: "Creeps into the woods; a green blank." },
+        ],
+        basis: "Mt. Cuba Center; USDA NRCS.",
+      },
+    ],
+    "miscanthus-sinensis": [
+      {
+        plantId: "panicum-virgatum",
+        why: "For an upright fountain of a grass with airy autumn seed heads, switchgrass gives the same height and movement — a native of the same meadows, that won't seed down the roadside or carry fire the way the maiden grass does.",
+        edges: [
+          { axis: "wildlife", native: "Seed for winter birds; cover for ground life; a host for several skippers.", ornamental: "Feeds little native, and seeds into wild grassland." },
+          { axis: "water", native: "Deep-rooted and thoroughly drought-proof once established.", ornamental: "Tough too — which is how it escapes." },
+        ],
+        basis: "Lady Bird Johnson Wildflower Center; Xerces Society.",
+      },
+      {
+        plantId: "andropogon-gerardii",
+        why: "For real stature, big bluestem stands head-high with bronze 'turkey-foot' seed heads — the tallgrass-prairie giant, in place of an Asian grass that jumps the garden fence.",
+        edges: [
+          { axis: "wildlife", native: "Seed and cover for birds; a host for several skippers.", ornamental: "Little native value; a listed invader in several states." },
+          { axis: "water", native: "Thoroughly drought-proof once its deep roots are down.", ornamental: "Drought-tough, and fire-carrying where it escapes." },
+        ],
+        basis: "Lady Bird Johnson Wildflower Center; Xerces Society.",
+      },
+    ],
+    "iris-pseudacorus": [
+      {
+        plantId: "lobelia-cardinalis",
+        why: "For a jolt of colour at the water's edge, cardinal flower sends up spikes of pure scarlet the hummingbirds cross the garden for — where the yellow flag only chokes the margin into a single-species mat.",
+        edges: [
+          { axis: "wildlife", native: "A hummingbird magnet, and nectar for swallowtails.", ornamental: "Feeds little, and its rhizome mat crowds every other marsh plant out." },
+          { axis: "care", native: "A well-behaved clump for a pond edge or rain garden.", ornamental: "A banned invader of wetlands across a growing list of states." },
+        ],
+        basis: "Lady Bird Johnson Wildflower Center; Xerces Society.",
+      },
+      {
+        plantId: "asclepias-incarnata",
+        why: "For height and bloom in a damp spot, swamp milkweed carries flat pink flower heads humming with pollinators — and, being a milkweed, feeds monarch caterpillars the flag iris can't.",
+        edges: [
+          { axis: "wildlife", native: "A monarch host, and nectar for a crowd of butterflies and bees.", ornamental: "A wildlife dead end that takes the wetland over." },
+          { axis: "care", native: "A clumping native that stays where you plant it.", ornamental: "Invasive and toxic to grazing animals." },
+        ],
+        basis: "Xerces Society; Monarch Joint Venture.",
+      },
+    ],
     "cynodon-dactylon": [
       {
         plantId: "schizachyrium-scoparium",
@@ -456,6 +676,15 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
           { axis: "wildlife", native: "Nectar for a long roll-call of pollinators, and a larval host for several moths.", ornamental: "Feeds the adults; hosts no native caterpillars." },
         ],
         basis: "Mt. Cuba Center; Xerces Society.",
+      },
+      {
+        plantId: "cephalanthus-occidentalis",
+        why: "For a damp corner, buttonbush is the butterfly magnet to plant: its white pincushion flowers are smothered in bees and butterflies all summer, and it feeds the caterpillars and waterbirds the butterfly bush never could.",
+        edges: [
+          { axis: "wildlife", native: "A top summer nectar shrub; a host for several sphinx moths; seed for ducks and shorebirds.", ornamental: "Nectar for adults only; raises no native caterpillars." },
+          { axis: "care", native: "A native of wet ground that thrives where it's too damp for most.", ornamental: "Seeds itself into open ground." },
+        ],
+        basis: "Xerces Society; Lady Bird Johnson Wildflower Center.",
       },
     ],
     "acer-platanoides": [
@@ -573,6 +802,126 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "north-michigan": {
+    "hemerocallis-fulva": [
+      {
+        plantId: "rudbeckia-hirta",
+        why: "For easy summer gold in a border, black-eyed Susan blooms for weeks and pulls in bees and finches — where the daylily gives a day of colour and the pollinators nothing.",
+        edges: [
+          { axis: "wildlife", native: "Nectar for bees and butterflies; seed for goldfinches; a host for several moths.", ornamental: "Little a native bee can use, and no caterpillars." },
+          { axis: "water", native: "Drought-tough once established.", ornamental: "Thirstier, and feeds the garden nothing." },
+        ],
+        basis: "Mt. Cuba Center; Xerces Society.",
+      },
+      {
+        plantId: "monarda-fistulosa",
+        why: "For a long-blooming clump alive with life, wild bergamot throws up lavender heads worked all day by bees, butterflies and hummingbirds.",
+        edges: [
+          { axis: "wildlife", native: "Nectar for a long roll-call of pollinators; a host for several moths.", ornamental: "Feeds almost nothing native." },
+          { axis: "water", native: "Drought-tough once established; takes lean soil.", ornamental: "Runs into sterile clumps and gives little back." },
+        ],
+        basis: "Mt. Cuba Center; Xerces Society.",
+      },
+    ],
+    "hosta": [
+      {
+        plantId: "matteuccia-struthiopteris",
+        why: "For a big bold clump in moist shade, ostrich fern unfurls shuttlecocks of fresh green four feet high — far more presence than a hosta, and none of the slug holes.",
+        edges: [
+          { axis: "care", native: "Vigorous and slug-proof; spreads into a lush colony.", ornamental: "Chewed ragged by slugs by midsummer." },
+          { axis: "wildlife", native: "Cover for the small life of the shade; its fiddleheads a spring food.", ornamental: "Nothing native eats it." },
+        ],
+        basis: "USDA NRCS; Lady Bird Johnson Wildflower Center.",
+      },
+      {
+        plantId: "aquilegia-canadensis",
+        why: "For a lighter touch in part shade, wild columbine dangles red-and-gold lanterns in spring that the returning hummingbirds head straight for.",
+        edges: [
+          { axis: "wildlife", native: "Early nectar for hummingbirds and long-tongued bees; a host for the columbine duskywing.", ornamental: "Feeds nothing native." },
+          { axis: "care", native: "Self-sows gently into the shade and asks for nothing.", ornamental: "A slug target that gives the garden no life." },
+        ],
+        basis: "Mt. Cuba Center; Xerces Society.",
+      },
+    ],
+    "vinca-minor": [
+      {
+        plantId: "cornus-canadensis",
+        why: "For an evergreen carpet in cool shade, bunchberry lays down a neat mat topped with white spring 'flowers' and red autumn berries — a dogwood shrunk to ankle height, and a native of these very woods.",
+        edges: [
+          { axis: "wildlife", native: "Its explosive flowers feed native bees; its berries feed birds.", ornamental: "Feeds next to nothing, and smothers the woodland flowers where it escapes." },
+          { axis: "care", native: "A slow, well-behaved native groundcover for acid shade.", ornamental: "An escapee that's hard to be rid of." },
+        ],
+        basis: "USDA NRCS; Lady Bird Johnson Wildflower Center.",
+      },
+      {
+        plantId: "arctostaphylos-uva-ursi",
+        why: "For a tough evergreen mat in sun or a dry bank, bearberry trails glossy leaves, pink spring bells and red berries where periwinkle would never hold.",
+        edges: [
+          { axis: "water", native: "Thoroughly drought-proof; thrives on poor, sandy, exposed ground.", ornamental: "Wants moist shade, and invades it." },
+          { axis: "wildlife", native: "Early flowers feed queen bumblebees; berries feed birds and bears.", ornamental: "Little wildlife value." },
+        ],
+        basis: "USDA NRCS; Xerces Society.",
+      },
+    ],
+    "pachysandra-terminalis": [
+      {
+        plantId: "polystichum-acrostichoides",
+        why: "For an evergreen carpet under trees, a colony of Christmas fern holds its dark fronds all winter — living texture in place of a monoculture, and shelter for the leaf-litter's small life.",
+        edges: [
+          { axis: "wildlife", native: "Cover for salamanders, insects and ground-nesting bees.", ornamental: "A monoculture nothing native uses." },
+          { axis: "care", native: "Evergreen, slug-proof and undemanding in dry shade.", ornamental: "Runs by stolon into the woodland beyond." },
+        ],
+        basis: "Mt. Cuba Center; USDA NRCS.",
+      },
+      {
+        plantId: "fragaria-virginiana",
+        why: "For a low green mat in sun to part shade, wild strawberry covers ground fast, flowers white in spring and gives up small sweet berries — a groundcover that feeds instead of only spreading.",
+        edges: [
+          { axis: "wildlife", native: "Feeds pollinators, then birds and mammals; a host for several butterflies.", ornamental: "Little to no wildlife value." },
+          { axis: "care", native: "Drought-tough once knit together.", ornamental: "A green blank that creeps into the woods." },
+        ],
+        basis: "Lady Bird Johnson Wildflower Center; Xerces Society.",
+      },
+    ],
+    "miscanthus-sinensis": [
+      {
+        plantId: "schizachyrium-scoparium",
+        why: "For a fine-textured clumping grass that colours in fall, little bluestem turns copper and stands all winter — a prairie native that won't seed itself down the roadside the way maiden grass does.",
+        edges: [
+          { axis: "water", native: "None once established; roots plunge five feet.", ornamental: "Tough too — which is how it escapes into wild grassland." },
+          { axis: "wildlife", native: "Hosts skipper butterflies; shelters ground-nesting birds through winter.", ornamental: "Feeds little native, and carries fire where it invades." },
+        ],
+        basis: "Lady Bird Johnson Wildflower Center; Xerces Society.",
+      },
+      {
+        plantId: "carex-pensylvanica",
+        why: "For a soft, fine, low fountain in shade, Pennsylvania sedge makes a flowing carpet — the movement people want from an ornamental grass, on a native that belongs in the North Woods.",
+        edges: [
+          { axis: "wildlife", native: "A larval host for several skippers; cover for small ground life.", ornamental: "Feeds nothing native." },
+          { axis: "care", native: "Drought-tough once knit together; mow it once a year or never.", ornamental: "A big clump that seeds itself around." },
+        ],
+        basis: "Mt. Cuba Center; Lady Bird Johnson Wildflower Center.",
+      },
+    ],
+    "iris-pseudacorus": [
+      {
+        plantId: "lobelia-cardinalis",
+        why: "For scarlet at the water's edge, cardinal flower sends up spikes of pure red the hummingbirds cross the garden for — where the yellow flag only chokes the margin into a single-species mat.",
+        edges: [
+          { axis: "wildlife", native: "A hummingbird magnet and swallowtail nectar.", ornamental: "Feeds little, and its rhizomes crowd every other marsh plant out." },
+          { axis: "care", native: "A well-behaved clump for a pond edge or rain garden.", ornamental: "A banned wetland invader in a growing list of states." },
+        ],
+        basis: "Lady Bird Johnson Wildflower Center; Xerces Society.",
+      },
+      {
+        plantId: "eutrochium-maculatum",
+        why: "For stately height in a damp spot, spotted Joe-Pye weed lifts dusky-pink flower heads to head height, alive with butterflies through late summer.",
+        edges: [
+          { axis: "wildlife", native: "One of the great late-summer nectar plants for butterflies and bees; a host for several moths.", ornamental: "A wildlife dead end that takes the wet edge over." },
+          { axis: "care", native: "A clumping native of wet meadows that stays put.", ornamental: "Invasive, and toxic to grazing animals." },
+        ],
+        basis: "Mt. Cuba Center; Xerces Society.",
+      },
+    ],
     "acer-platanoides": [
       {
         plantId: "acer-saccharum",
@@ -738,6 +1087,97 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "pnw": {
+    "hemerocallis-fulva": [
+      {
+        plantId: "aquilegia-formosa",
+        why: "For easy summer colour in sun or part shade, western columbine dangles scarlet-and-gold lanterns the returning hummingbirds head straight for — where the daylily gives a day of bloom and the pollinators nothing.",
+        edges: [
+          { axis: "wildlife", native: "Nectar for hummingbirds and long-tongued bees; a host for the columbine duskywing.", ornamental: "Little a native can use." },
+          { axis: "care", native: "Self-sows gently and asks for nothing.", ornamental: "Runs into sterile clumps that give the garden no life." },
+        ],
+        basis: "Oregon State University; Xerces Society.",
+      },
+      {
+        plantId: "eriophyllum-lanatum",
+        why: "For a mound of gold in a hot dry border, Oregon sunshine covers itself in daisies through the summer and hums with native bees — on a fraction of the daylily's water.",
+        edges: [
+          { axis: "water", native: "Thoroughly drought-proof; wants poor, dry, sunny ground.", ornamental: "Thirstier, and feeds nothing back." },
+          { axis: "wildlife", native: "A favourite of native bees and butterflies; a host for painted ladies.", ornamental: "Feeds almost nothing native." },
+        ],
+        basis: "Oregon State University; Xerces Society.",
+      },
+    ],
+    "hosta": [
+      {
+        plantId: "dicentra-formosa",
+        why: "For soft ferny foliage and a long bloom in shade, Pacific bleeding heart spreads a blue-green carpet hung with pink lockets from spring into summer — far more than a hosta gives, and none of the slug holes.",
+        edges: [
+          { axis: "wildlife", native: "Nectar for early bumblebees; the sole host of Clodius parnassian butterflies.", ornamental: "Nothing native eats it." },
+          { axis: "care", native: "Spreads into a lush shade colony on its own.", ornamental: "Chewed ragged by slugs by midsummer." },
+        ],
+        basis: "Oregon State University; Xerces Society.",
+      },
+      {
+        plantId: "polystichum-munitum",
+        why: "For bold evergreen structure in dry shade, western sword fern stands in dark two-foot fronds all year where the hosta dies back to bare ground.",
+        edges: [
+          { axis: "care", native: "Evergreen, slug-proof and famously tough in dry shade.", ornamental: "A slug magnet, gone by winter." },
+          { axis: "wildlife", native: "Cover for the small life of the forest floor.", ornamental: "Little native value." },
+        ],
+        basis: "Oregon State University; Washington Native Plant Society.",
+      },
+    ],
+    "vinca-minor": [
+      {
+        plantId: "linnaea-borealis",
+        why: "For a fine evergreen carpet in cool shade, twinflower threads a delicate mat hung with paired pink bells — a woodland native that belongs under the firs where periwinkle only invades.",
+        edges: [
+          { axis: "wildlife", native: "Its fragrant twin flowers feed small native bees.", ornamental: "Feeds next to nothing, and smothers the ground flora it escapes into." },
+          { axis: "care", native: "A slow, well-behaved native of the forest floor.", ornamental: "An escapee that's hard to remove from the woods." },
+        ],
+        basis: "Oregon State University; Washington Native Plant Society.",
+      },
+      {
+        plantId: "maianthemum-dilatatum",
+        why: "For a lush groundcover in moist shade, false lily-of-the-valley lays down glossy heart-shaped leaves and white spring spikes — a fast native carpet in place of an escaping one.",
+        edges: [
+          { axis: "wildlife", native: "Flowers feed small pollinators; berries feed birds.", ornamental: "Little native value; invades the woodland understorey." },
+          { axis: "care", native: "Spreads readily into shade cover and stays in the woods where it belongs.", ornamental: "Creeps out of the bed and into the forest." },
+        ],
+        basis: "Oregon State University; Washington Native Plant Society.",
+      },
+    ],
+    "miscanthus-sinensis": [
+      {
+        plantId: "deschampsia-cespitosa",
+        why: "For a fine airy fountain of a grass, tufted hairgrass throws up a golden summer haze of flower — the movement people plant maiden grass for, on a Northwest native that stays put.",
+        edges: [
+          { axis: "wildlife", native: "Cover and seed for birds; a host for several skippers and satyrs.", ornamental: "Feeds little native, and seeds into wild grassland." },
+          { axis: "care", native: "A tough, adaptable native of sun or part shade, wet or dry.", ornamental: "Escapes the garden and carries fire." },
+        ],
+        basis: "Oregon State University; Xerces Society.",
+      },
+      {
+        plantId: "festuca-roemeri",
+        why: "For a smaller blue-green tuft, Roemer's fescue makes a neat drought-proof clump — the fine grass of the Northwest prairie, in place of an Asian one that jumps the fence.",
+        edges: [
+          { axis: "water", native: "Thoroughly drought-proof once established.", ornamental: "Tough too — which is how it invades." },
+          { axis: "wildlife", native: "A larval host for several prairie butterflies; cover for ground life.", ornamental: "Little native value." },
+        ],
+        basis: "Oregon State University; Xerces Society.",
+      },
+    ],
+    "rosa-hybrids": [
+      {
+        plantId: "rosa-nutkana",
+        why: "For a shrub rose with a real scent, Nootka rose gives big single pink flowers the bees can actually get into, then scarlet hips the birds take — and it never needs the spray a hybrid tea does.",
+        edges: [
+          { axis: "disease", native: "A tough native that shrugs off the black spot and mildew that plague garden roses.", ornamental: "Prone to black spot and mildew; often kept going only by spraying." },
+          { axis: "wildlife", native: "Open flowers feed native bees; hips feed birds; a host for many moths.", ornamental: "Double blooms lock pollinators out; little wildlife value." },
+        ],
+        basis: "Oregon State University; Xerces Society.",
+      },
+    ],
     "prunus-laurocerasus": [
       {
         plantId: "vaccinium-ovatum",
@@ -904,6 +1344,77 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "ca-south-coast": {
+    "hemerocallis-fulva": [
+      {
+        plantId: "epilobium-canum",
+        why: "For a blaze of late colour in a hot dry border, California fuchsia throws scarlet trumpets just as the hummingbirds fuel up for migration — and asks for none of the water a daylily wants.",
+        edges: [
+          { axis: "water", native: "Thoroughly drought-proof; wants poor, dry ground and full sun.", ornamental: "Thirsty in a dry climate, and gives nothing back." },
+          { axis: "wildlife", native: "A crucial late-season nectar plant for hummingbirds and bees.", ornamental: "Feeds almost nothing native." },
+        ],
+        basis: "California Native Plant Society; Xerces Society.",
+      },
+      {
+        plantId: "penstemon-spectabilis",
+        why: "For tall, showy spikes in a sunny bed, showy penstemon lifts electric blue-purple flowers alive with bees and hummingbirds — on a fraction of the daylily's water.",
+        edges: [
+          { axis: "water", native: "Drought-proof once established; a chaparral native.", ornamental: "Thirstier, and a wildlife blank." },
+          { axis: "wildlife", native: "Nectar for native bees and hummingbirds; a host for the variable checkerspot.", ornamental: "Feeds little native." },
+        ],
+        basis: "California Native Plant Society.",
+      },
+    ],
+    "hosta": [
+      {
+        plantId: "heuchera-maxima",
+        why: "For a bold leafy clump in shade, island alum root is the native coral-bells hostas only imitate — big scalloped evergreen leaves and airy sprays of tiny flowers the bees and hummingbirds work.",
+        edges: [
+          { axis: "water", native: "Drought-tolerant in shade once established; evergreen year-round.", ornamental: "Thirsty, dies back in winter, and feeds nothing." },
+          { axis: "wildlife", native: "Its flower sprays feed native bees and hummingbirds.", ornamental: "Nothing native eats it." },
+        ],
+        basis: "California Native Plant Society.",
+      },
+      {
+        plantId: "dryopteris-arguta",
+        why: "For evergreen texture in dry shade, coastal wood fern holds its fronds through the Californian summer where a hosta would need constant water just to stand up.",
+        edges: [
+          { axis: "water", native: "Summer-drought-tolerant in shade — rare and valuable in California.", ornamental: "Needs steady water and still collapses in heat." },
+          { axis: "wildlife", native: "Cover for the small life of the shaded garden floor.", ornamental: "Little native value." },
+        ],
+        basis: "California Native Plant Society.",
+      },
+    ],
+    "vinca-minor": [
+      {
+        plantId: "symphoricarpos-mollis",
+        why: "For a spreading groundcover in dry shade, creeping snowberry knits a low native mat with pink summer bells and white winter berries — cover that belongs in these hills, where periwinkle escapes into them.",
+        edges: [
+          { axis: "water", native: "Drought-tolerant in shade once established.", ornamental: "Wants moisture, and invades the woodland it escapes into." },
+          { axis: "wildlife", native: "Flowers feed native bees; berries feed birds.", ornamental: "Feeds next to nothing native." },
+        ],
+        basis: "California Native Plant Society.",
+      },
+      {
+        plantId: "fragaria-vesca",
+        why: "For a soft green carpet in part shade, woodland strawberry runs into cover as fast as periwinkle, flowers white in spring, and hands out tiny sweet berries.",
+        edges: [
+          { axis: "wildlife", native: "Feeds pollinators, then birds and mammals; a host for several butterflies.", ornamental: "Little to no wildlife value." },
+          { axis: "care", native: "A well-behaved native mat for dappled shade.", ornamental: "An escapee that smothers the ground flora." },
+        ],
+        basis: "California Native Plant Society; Xerces Society.",
+      },
+    ],
+    "rosa-hybrids": [
+      {
+        plantId: "rosa-californica",
+        why: "For a fragrant shrub rose, California wild rose gives big single pink flowers the bees can reach, scarlet hips the birds strip, and thicket cover for nesting — none of it needing the spray a hybrid tea lives on.",
+        edges: [
+          { axis: "disease", native: "A tough native that shrugs off the black spot and mildew of garden roses.", ornamental: "Prone to black spot and mildew; kept going by spraying." },
+          { axis: "wildlife", native: "Open flowers feed native bees; hips feed birds; a host for many moths and butterflies.", ornamental: "Double blooms shut pollinators out; little wildlife value." },
+        ],
+        basis: "California Native Plant Society; Xerces Society.",
+      },
+    ],
     "carpobrotus-edulis": [
       {
         plantId: "eriogonum-parvifolium",
@@ -1069,6 +1580,77 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "florida-central": {
+    "hemerocallis-fulva": [
+      {
+        plantId: "coreopsis-leavenworthii",
+        why: "For easy, tireless yellow in a sunny bed, Leavenworth's tickseed — Florida's state wildflower — blooms nearly year-round and reseeds itself, feeding bees and butterflies the daylily can't.",
+        edges: [
+          { axis: "wildlife", native: "Nectar for bees and butterflies; seed for small birds.", ornamental: "Little a native can use; no caterpillars." },
+          { axis: "care", native: "A self-sowing native that thrives on neglect.", ornamental: "Runs into sterile clumps and gives nothing back." },
+        ],
+        basis: "UF/IFAS; Florida Native Plant Society.",
+      },
+      {
+        plantId: "liatris-gracilis",
+        why: "For a vertical accent in a dry border, slender blazing star sends up wands of purple every fall that butterflies and bees swarm.",
+        edges: [
+          { axis: "water", native: "Drought-proof once established; thrives on dry sand.", ornamental: "Thirstier, and a wildlife blank." },
+          { axis: "wildlife", native: "A magnet for butterflies and bees; seed for birds.", ornamental: "Feeds almost nothing native." },
+        ],
+        basis: "UF/IFAS; Xerces Society.",
+      },
+    ],
+    "miscanthus-sinensis": [
+      {
+        plantId: "muhlenbergia-capillaris",
+        why: "For a fine grass that turns to a cloud of colour, pink muhly grass fogs rose-pink each autumn — the drama people buy maiden grass for, on a Florida native that won't seed into the scrub.",
+        edges: [
+          { axis: "wildlife", native: "Cover and seed for birds; a host for several skippers.", ornamental: "Feeds little native, and escapes into wild ground." },
+          { axis: "water", native: "Thoroughly drought- and salt-proof once established.", ornamental: "Tough too — which is how it invades." },
+        ],
+        basis: "UF/IFAS; Xerces Society.",
+      },
+      {
+        plantId: "tripsacum-dactyloides",
+        why: "For a big architectural clump, Fakahatchee grass throws up arching four-foot fountains of green — a bold native of the same wet-to-dry ground, in place of an Asian grass gone wild.",
+        edges: [
+          { axis: "wildlife", native: "A larval host for skippers and the tiny 'grass-eating' satyrs; cover for birds.", ornamental: "Little native value; a listed invader." },
+          { axis: "care", native: "Tough and adaptable from wet to dry, sun to part shade.", ornamental: "Seeds itself around the garden and beyond." },
+        ],
+        basis: "UF/IFAS; Xerces Society.",
+      },
+    ],
+    "syagrus-romanzoffiana": [
+      {
+        plantId: "sabal-palmetto",
+        why: "For a feather of a palm on a street or a lawn, the cabbage palm — Florida's state tree — is the native the queen palm stands in for: hurricane-firm, salt- and drought-proof, and it feeds a whole community.",
+        edges: [
+          { axis: "wildlife", native: "Its flowers feed clouds of bees; its fruit feeds birds and mammals; its boots shelter ferns and wildlife.", ornamental: "Feeds little native." },
+          { axis: "disease", native: "Tough and self-sufficient in Florida sand.", ornamental: "Chronically short of manganese and potassium; prone to lethal bronzing and trunk-snapping deficiency." },
+        ],
+        basis: "UF/IFAS; Florida Native Plant Society.",
+      },
+    ],
+    "ligustrum-sinense": [
+      {
+        plantId: "ilex-vomitoria",
+        why: "For a fast evergreen hedge you clip, yaupon holly gives the same dense wall — glossy small leaves, red winter berries the birds eat — as a Florida native that won't seed into every fencerow.",
+        edges: [
+          { axis: "wildlife", native: "Flowers feed bees; berries feed many birds through winter.", ornamental: "A bird-spread invader that crowds the understorey out; little on offer." },
+          { axis: "care", native: "Drought- and salt-proof; takes hard clipping.", ornamental: "One of the Southeast's worst invaders, and a heavy allergen in bloom." },
+        ],
+        basis: "UF/IFAS; Florida Native Plant Society.",
+      },
+      {
+        plantId: "viburnum-obovatum",
+        why: "For a small-leaved evergreen screen that flowers, Walter's viburnum foams with white spring bloom and feeds a crowd — a tidy native in place of a hedge that jumps the fence.",
+        edges: [
+          { axis: "wildlife", native: "Early nectar for bees and butterflies; berries for birds.", ornamental: "Little native value, and invasive." },
+          { axis: "care", native: "Drought-proof once established; clips to a formal hedge.", ornamental: "Seeds into floodplains and fencerows across the region." },
+        ],
+        basis: "UF/IFAS; Florida Native Plant Society.",
+      },
+    ],
     "cynodon-dactylon": [
       {
         plantId: "mimosa-strigillosa",
@@ -1173,6 +1755,48 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "florida-south": {
+    "miscanthus-sinensis": [
+      {
+        plantId: "tripsacum-dactyloides",
+        why: "For a big architectural clump of grass, Fakahatchee grass arches into four-foot green fountains — a bold South Florida native for the same job, in place of an Asian grass that seeds into wild ground.",
+        edges: [
+          { axis: "wildlife", native: "A larval host for skippers and satyrs; cover and seed for birds.", ornamental: "Feeds little native; a listed invader." },
+          { axis: "care", native: "Tough from wet to dry, sun to part shade.", ornamental: "Seeds itself around and beyond the garden." },
+        ],
+        basis: "UF/IFAS; Xerces Society.",
+      },
+    ],
+    "syagrus-romanzoffiana": [
+      {
+        plantId: "sabal-palmetto",
+        why: "For a feather palm on a street or lawn, the cabbage palm — Florida's state tree — does the queen palm's job and outlasts it: hurricane-firm, salt- and drought-proof, and the backbone of coastal wildlife.",
+        edges: [
+          { axis: "wildlife", native: "Flowers feed clouds of bees; fruit feeds birds and mammals; its crown shelters a whole community.", ornamental: "Feeds little native." },
+          { axis: "disease", native: "Self-sufficient in Florida sand.", ornamental: "Chronically deficient in manganese and potassium, and prone to lethal bronzing." },
+        ],
+        basis: "UF/IFAS; Florida Native Plant Society.",
+      },
+    ],
+    "ligustrum-sinense": [
+      {
+        plantId: "morella-cerifera",
+        why: "For a fast evergreen privacy hedge, wax myrtle shoots up into a soft aromatic screen in a season — the native that does Chinese privet's job, feeds the winter birds its waxy berries, and doesn't invade the woods.",
+        edges: [
+          { axis: "wildlife", native: "Its berries are winter fuel for yellow-rumped warblers and more; dense cover for nesting.", ornamental: "A bird-spread invader that shades the understorey out." },
+          { axis: "care", native: "Fast, salt- and drought-proof, and clips to a hedge.", ornamental: "One of the Southeast's worst invaders; a heavy allergen." },
+        ],
+        basis: "UF/IFAS; Florida Native Plant Society.",
+      },
+      {
+        plantId: "myrcianthes-fragrans",
+        why: "For a slower, glossy, formal evergreen, Simpson's stopper clips to a fragrant hedge with fine leaves, white flowers and orange berries — a South Florida native that earns its place all year.",
+        edges: [
+          { axis: "wildlife", native: "Flowers feed pollinators; berries feed mockingbirds and other birds.", ornamental: "Little native value; invasive." },
+          { axis: "care", native: "Drought-proof once established; takes sun or shade.", ornamental: "Seeds into every fencerow and floodplain." },
+        ],
+        basis: "UF/IFAS; Florida Native Plant Society.",
+      },
+    ],
     "cynodon-dactylon": [
       {
         plantId: "helianthus-debilis",
@@ -1276,6 +1900,48 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "france-atlantic": {
+    "hosta": [
+      {
+        plantId: "dryopteris-filix-mas",
+        why: "For a big bold clump in shade, male fern unfurls tall arching fronds that hold half the winter — far more presence than a hosta, and none of the slug holes.",
+        edges: [
+          { axis: "care", native: "Vigorous, near-evergreen and slug-proof in dry shade.", ornamental: "Chewed ragged by slugs by midsummer." },
+          { axis: "wildlife", native: "Cover for the small life of the shaded garden.", ornamental: "Nothing native eats it." },
+        ],
+        basis: "RHS; INPN.",
+      },
+      {
+        plantId: "asplenium-scolopendrium",
+        why: "For glossy evergreen strap-leaves that light a dark corner, hart's-tongue fern holds its shine all year where a hosta dies back to bare earth.",
+        edges: [
+          { axis: "care", native: "Evergreen, slug-proof and happy in deep shade.", ornamental: "A slug target, gone by winter." },
+          { axis: "wildlife", native: "Shelter for the small life of walls and shade.", ornamental: "Little native value." },
+        ],
+        basis: "RHS; INPN.",
+      },
+    ],
+    "miscanthus-sinensis": [
+      {
+        plantId: "deschampsia-cespitosa",
+        why: "For a fine airy fountain of a grass, tufted hair-grass throws up a golden summer haze — the movement people plant maiden grass for, on a native that belongs in the meadow rather than escaping into it.",
+        edges: [
+          { axis: "wildlife", native: "Cover and seed for birds; a host for several meadow butterflies.", ornamental: "Feeds little native, and self-seeds into wild ground." },
+          { axis: "care", native: "Tough and adaptable in sun or part shade, wet or dry.", ornamental: "A big clump that seeds itself around." },
+        ],
+        basis: "RHS; INPN.",
+      },
+    ],
+    "rosa-hybrids": [
+      {
+        plantId: "rosa-arvensis",
+        why: "For a scrambling shrub rose with scent, field rose gives loose white single flowers the bees dive into, then red hips for the birds — a hedgerow native that never needs the spray a hybrid tea lives on.",
+        edges: [
+          { axis: "disease", native: "A tough native that shrugs off the black spot and mildew of garden roses.", ornamental: "Prone to black spot and mildew; kept going by spraying." },
+          { axis: "wildlife", native: "Open flowers feed bees; hips feed winter birds; a host for many moths.", ornamental: "Double blooms shut pollinators out; little wildlife value." },
+        ],
+        basis: "RHS; INPN.",
+      },
+    ],
     "prunus-laurocerasus": [
       {
         plantId: "ilex-aquifolium",
@@ -1390,6 +2056,28 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "france-continental": {
+    "miscanthus-sinensis": [
+      {
+        plantId: "brachypodium-pinnatum",
+        why: "For a soft, fine, drought-proof grass on dry limestone ground, tor-grass makes a flowing tuft — the movement of an ornamental grass, on a native of the local dry meadows that won't seed itself into wild ground.",
+        edges: [
+          { axis: "water", native: "Thoroughly drought-proof; a grass of thin, dry, chalky soil.", ornamental: "Tough too — which is how it escapes the garden." },
+          { axis: "wildlife", native: "A larval host for several meadow butterflies; cover for ground life.", ornamental: "Feeds little native." },
+        ],
+        basis: "INPN; RHS.",
+      },
+    ],
+    "rosa-hybrids": [
+      {
+        plantId: "rosa-canina",
+        why: "For a big fragrant shrub rose, dog rose arches into a thicket of pale single flowers the bees can reach, then scarlet hips for the birds and the kitchen — with none of the black-spot spraying a hybrid tea needs.",
+        edges: [
+          { axis: "disease", native: "A tough native that shrugs off the diseases of garden roses.", ornamental: "Prone to black spot and mildew; kept going by spraying." },
+          { axis: "wildlife", native: "Open flowers feed bees; hips feed winter birds; a host for many moths.", ornamental: "Double blooms shut pollinators out; little wildlife value." },
+        ],
+        basis: "INPN; RHS.",
+      },
+    ],
     "prunus-laurocerasus": [
       {
         plantId: "ligustrum-vulgare",
@@ -1484,6 +2172,17 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "france-mediterranean": {
+    "miscanthus-sinensis": [
+      {
+        plantId: "brachypodium-retusum",
+        why: "For a fine drought-proof grass in a hot dry garden, Mediterranean false brome makes a low tufted sward that greens with the first rain — a garrigue native for the ornamental-grass look, that never wants the water maiden grass does.",
+        edges: [
+          { axis: "water", native: "Bone-dry-tolerant; the backbone grass of the garrigue.", ornamental: "Thirsty in a Mediterranean summer, and seeds into wild ground." },
+          { axis: "wildlife", native: "A larval host for several grass-feeding butterflies; cover for ground life.", ornamental: "Feeds little native." },
+        ],
+        basis: "INPN.",
+      },
+    ],
     "prunus-laurocerasus": [
       {
         plantId: "viburnum-tinus",

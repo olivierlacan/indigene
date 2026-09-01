@@ -31,6 +31,20 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Added
+
+- Native swaps: **the everyday garden staples now have native answers too.**
+  Daylilies, hostas, periwinkle, maiden grass, garden roses and yellow flag iris
+  each meet the native that does their job — so nearly half of every plant we
+  recommend now names what it stands in for. [See them](https://indigene.app/alternatives)
+- Internal: nine ornamentals added to `data/alternatives.ts` — daylily, hosta,
+  periwinkle, pachysandra, Miscanthus, hybrid rose, yellow flag iris, queen palm
+  and Chinese privet — taking `swaps:coverage` from 111/377 (29%) to 164/377
+  (44%). These were the biggest honest gaps the native-first queue surfaced:
+  shade groundcover, sunny border perennials, ornamental grasses and roses. The
+  large remainder (chaparral sages, native bulbs, woodland specialists) mostly
+  has no common ornamental counterpart, and stays an honest skip.
+
 ### Fixed
 
 - Wildlife & Regions: the star that marks a plant an animal can’t live without

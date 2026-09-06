@@ -18,6 +18,7 @@
 import { copyFileSync, existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { foldFragments, readFragments, reportFragmentError } from "./_changelog.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO = resolve(HERE, "../..");
@@ -919,7 +920,16 @@ ${pager.length ? `<nav class="pager">\n${pager.join("\n")}\n</nav>` : ""}`,
   });
 }
 
-const releases = parseChangelog(readFileSync(CHANGELOG, "utf8"));
+// The changelog, plus every entry still sitting loose in `changelog.d/` (see
+// _changelog.mjs for why they're loose). Folded in here rather than on disk, so
+// a fragment is checked — its sections, its shape, its length — in the pull
+// request that writes it. None of it reaches the page: Unreleased never does.
+let releases;
+try {
+  releases = parseChangelog(foldFragments(readFileSync(CHANGELOG, "utf8"), readFragments(REPO)));
+} catch (err) {
+  reportFragmentError(err, "build-release-notes");
+}
 
 // The app decides whether to show its "something's new" dot by comparing the
 // version it was built with (`package.json`, imported by `src/lib/visits.ts`)

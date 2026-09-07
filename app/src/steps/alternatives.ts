@@ -29,14 +29,14 @@ import {
   inatSearchUrl,
 } from "../lib/alternatives";
 import type { AlternativeIndexRow, NativeForOrnamental } from "../lib/alternatives";
-import { nativeSomewhere } from "../lib/lookalikes";
+import { nativeSomewhere, getLookalikeByLatin, invasiveRegionsFor } from "../lib/lookalikes";
 import { filterField, highlight, norm } from "../components/filter-field";
 import type { FilterRow } from "../components/filter-field";
 import { citation } from "../components/citation";
 import { silhouetteFor } from "../components/plant-card";
-import { plantThumb, lookalikeThumb } from "../components/plant-thumb";
+import { plantThumb, alternativeThumb } from "../components/plant-thumb";
 import { heroFigure } from "../components/hero-figure";
-import { lookalikePhotoFor } from "../lib/hero-photo";
+import { alternativePhotoFor } from "../lib/hero-photo";
 import type { Ornamental, AlternativeLink, SwapAxis } from "../types";
 import { t, tn, tx, fmtNumber } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
@@ -161,7 +161,7 @@ function indexCard(row: AlternativeIndexRow, region: RegionDef | null): FilterRo
   const instead = el("span", {});
 
   const node = el("article", { class: "card lookalike-card" }, [
-    lookalikeThumb(row.ornamental.id, row.ornamental.form),
+    alternativeThumb(row.ornamental.id, row.ornamental.form),
     el("div", { class: "lookalike-body" }, [
       el("div", { class: "lookalike-head" }, [
         el("h4", { style: "margin:0" }, [
@@ -224,7 +224,12 @@ export async function renderAlternative(main: HTMLElement, param?: string): Prom
   const natives = await nativesForOrnamental(ornamental.id);
   const names = nameLines(ornamental);
   const elsewhere = await nativeSomewhere(ornamental.latin);
-  const portrait = lookalikePhotoFor(ornamental.id);
+  // If this ornamental is also on the look-alike list — a plant people mistake
+  // for a native as well as buy on purpose (Norway maple, cherry laurel) — cross-
+  // link the two, and lead with where it's actually invasive.
+  const alsoLookalike = getLookalikeByLatin(ornamental.latin);
+  const invasiveIn = alsoLookalike ? await invasiveRegionsFor(alsoLookalike.id) : [];
+  const portrait = alternativePhotoFor(ornamental.id);
   document.title = t("alternatives.docTitle", { name: names.title });
   if (alternativesUntranslated(ornamental.latin, natives.map((n) => n.link))) {
     reportUntranslated(t("wip.alternatives"));
@@ -261,6 +266,13 @@ export async function renderAlternative(main: HTMLElement, param?: string): Prom
             link: el("a", { href: `#/plants/${elsewhere.plant.id}` },
               t("alternative.nativeElsewhereLink", { region: regionShort(elsewhere.region.meta) })),
           }))
+        : null,
+      alsoLookalike
+        ? el("p", { class: "note" }, tx(
+            invasiveIn.length ? "alternative.alsoLookalikeInvasive" : "alternative.alsoLookalike",
+            { link: el("a", { href: `#/lookalikes/${alsoLookalike.id}` }, t("alternative.tellApartLink")) },
+            invasiveIn.length ? { regions: invasiveIn.map((r) => regionShort(r.meta)).join(", ") } : undefined,
+          ))
         : null,
       el("p", { class: "confidence" }, [
         el("span", {}, [

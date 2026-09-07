@@ -1245,6 +1245,11 @@ export const en = {
   "lookalike.where.native": "Native to",
   "lookalike.nativeElsewhere": "It's a genuine native somewhere — {link}.",
   "lookalike.nativeElsewhereLink": "we recommend it on our {region} list",
+  // Cross-link to the native-swaps layer: people plant this one on purpose, so
+  // point them at the native to grow instead. Shown only when both catalogs
+  // carry the plant.
+  "lookalike.growInstead": "Thinking of planting it? {link}.",
+  "lookalike.growInsteadLink": "see the native to grow instead",
   "lookalike.coverageNote":
     "These are the mix-ups we've written up, not every plant that could be confused with this one. If you're unsure about something in front of you, photograph it and ask iNaturalist — real people identify them.",
   // ---------------------------------------------------------------------
@@ -1290,7 +1295,7 @@ export const en = {
   // ---------------------------------------------------------------------
   // Native alternatives: "grow this instead of a common ornamental".
   // ---------------------------------------------------------------------
-  "plants.alternativesLink": "About to buy something for a spot? Some of the usual choices aren't from here, and a native does the same job — {link}.",
+  "plants.alternativesLink": "About to buy something for a spot? Some of the usual choices aren't from here — and a native does the job better, feeding the wildlife they can't. {link}.",
   "plants.alternativesLinkText": "see what to grow instead",
   "plant.alternativesTitle": "Grow it instead of: ",
   "steps.alternatives": "Native swaps",
@@ -1299,9 +1304,9 @@ export const en = {
   "alternatives.regionDocTitle": "Native swaps in {region} — Indigene",
   "alternatives.docTitle": "{name} — what to grow instead — Indigene",
   "alternatives.indexLede":
-    "{n} plants that get bought and planted everywhere, and aren't from here. Open one to see the native that does the same job — and how the two compare on water, disease and what they feed.",
+    "{n} plants that get bought and planted everywhere, and aren't from here. Open one for the native that fills the same spot and does more — as tough or tougher, and feeding the wildlife the ornamental can't. The two are set side by side on water, disease and what they feed.",
   "alternatives.indexLedeRegion":
-    "{n} of them are worth swapping in {region}. Open one to see the native that stands in for it, and how they compare.",
+    "{n} of them are worth swapping in {region}. Open one for the native that fills the same spot and gives back more — shown beside the ornamental, trait by trait.",
   "alternatives.role": "Planted for: ",
   "alternatives.growInstead": "Grow instead: ",
   "alternatives.growInsteadHere": "Grow instead, here: ",
@@ -1334,6 +1339,11 @@ export const en = {
   "alternative.seeOnInat": "Photos on iNaturalist ↗",
   "alternative.nativeElsewhere": "It's a genuine native somewhere — {link}.",
   "alternative.nativeElsewhereLink": "we recommend it on our {region} list",
+  // Cross-link to the look-alike layer: this ornamental is also one people
+  // mistake for a native. Shown only when the two catalogs share the plant.
+  "alternative.alsoLookalike": "It's also one of our look-alikes — {link}.",
+  "alternative.alsoLookalikeInvasive": "Invasive in {regions}, and one of our look-alikes — {link}.",
+  "alternative.tellApartLink": "see how to tell it from the native",
   "plant.propagationTitle": "🪴 How to grow more",
   "plant.forThisPlant": "For this plant: ",
   "plant.howToSource": "How-to source: ",

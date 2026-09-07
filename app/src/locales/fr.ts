@@ -1247,6 +1247,8 @@ export const fr: Dict = {
   "lookalike.where.native": "Indigène :",
   "lookalike.nativeElsewhere": "Elle est bel et bien indigène quelque part — {link}.",
   "lookalike.nativeElsewhereLink": "nous la recommandons dans notre liste {region}",
+  "lookalike.growInstead": "Envie de la planter ? {link}.",
+  "lookalike.growInsteadLink": "voyez l'indigène à planter à la place",
   "lookalike.coverageNote":
     "Ce sont les confusions que nous avons documentées, pas toutes celles qui sont possibles. Dans le doute, photographiez la plante et demandez à iNaturalist — ce sont de vraies personnes qui identifient.",
   // ---------------------------------------------------------------------
@@ -1292,7 +1294,7 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   // Alternatives natives : « planter ceci plutôt qu'un ornemental courant ».
   // ---------------------------------------------------------------------
-  "plants.alternativesLink": "Sur le point d'acheter pour un coin de jardin ? Certains choix habituels ne sont pas d'ici, et une plante indigène fait le même travail — {link}.",
+  "plants.alternativesLink": "Sur le point d'acheter pour un coin de jardin ? Certains choix habituels ne sont pas d'ici — et une indigène fait mieux le travail, en nourrissant la faune qu'ils laissent de côté. {link}.",
   "plants.alternativesLinkText": "voyez quoi planter à la place",
   "plant.alternativesTitle": "À planter plutôt que : ",
   "steps.alternatives": "Alternatives",
@@ -1301,9 +1303,9 @@ export const fr: Dict = {
   "alternatives.regionDocTitle": "Alternatives natives en {region} — Indigene",
   "alternatives.docTitle": "{name} — quoi planter à la place — Indigene",
   "alternatives.indexLede":
-    "{n} plantes que l'on achète et installe partout, et qui ne sont pas d'ici. Ouvrez-en une pour voir l'indigène qui fait le même travail — et comment les deux se comparent sur l'eau, les maladies et ce qu'elles nourrissent.",
+    "{n} plantes que l'on achète et installe partout, et qui ne sont pas d'ici. Ouvrez-en une pour l'indigène qui occupe le même coin et fait davantage — aussi robuste ou plus, et nourrissant la faune que l'ornementale laisse de côté. Les deux sont comparées sur l'eau, les maladies et ce qu'elles nourrissent.",
   "alternatives.indexLedeRegion":
-    "{n} d'entre elles valent la peine d'être remplacées en {region}. Ouvrez-en une pour voir l'indigène qui prend sa place, et comment elles se comparent.",
+    "{n} d'entre elles valent la peine d'être remplacées en {region}. Ouvrez-en une pour l'indigène qui occupe le même coin et rend davantage — présentée à côté de l'ornementale, critère par critère.",
   "alternatives.role": "Plantée pour : ",
   "alternatives.growInstead": "À la place : ",
   "alternatives.growInsteadHere": "À la place, ici : ",
@@ -1336,6 +1338,9 @@ export const fr: Dict = {
   "alternative.seeOnInat": "Photos sur iNaturalist ↗",
   "alternative.nativeElsewhere": "C'est une véritable indigène quelque part — {link}.",
   "alternative.nativeElsewhereLink": "nous la recommandons sur notre liste {region}",
+  "alternative.alsoLookalike": "C'est aussi l'un de nos sosies — {link}.",
+  "alternative.alsoLookalikeInvasive": "Invasive en {regions}, et l'un de nos sosies — {link}.",
+  "alternative.tellApartLink": "voyez comment la distinguer de l'indigène",
   "plant.propagationTitle": "🪴 Comment en faire plus",
   "plant.forThisPlant": "Pour cette plante : ",
   "plant.howToSource": "Source du mode d'emploi : ",

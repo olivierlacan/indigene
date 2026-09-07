@@ -31,6 +31,27 @@ export const LOOKALIKES_FR: ProseTable = {
     origin: "Indigène des Balkans, de Turquie et des rivages de la mer Noire.",
     blurb:
       "La haie persistante par défaut de la moitié de l'Europe. Les oiseaux emportent ses fruits noirs jusque dans les bois, où il forme un sous-étage sombre et dense que rien ne traverse. Froissées ou broyées, ses feuilles dégagent du cyanure — raison pour laquelle ses déchets de taille ne doivent jamais approcher un animal.",
+    // Aussi un ornemental (data/alternatives.ts) : ce qu'on plante à sa place.
+    altRole: "Haie persistante d'intimité",
+    altOrigin: "Indigène du sud-est de l'Europe et du sud-ouest de l'Asie.",
+    altBlurb:
+      "Le mur persistant rapide par défaut — lustré, gourmand en eau, et qui se ressème dans les bois de l'Oregon à l'Europe de l'Ouest à mesure que les oiseaux en lâchent les noyaux. Froissées, ses feuilles sentent l'amande parce qu'elles dégagent du cyanure, et il est sujet à la criblure qui le perce de trous.",
+    alternativeNotes: {
+      "ilex-aquifolium": {
+        why: "Pour une haie persistante et dense, le houx indigène dresse le même mur lustré toute l'année — taillable, riche en vie, et ici chez lui, là où le laurier-cerise est un évadé en route vers les bois.",
+        edges: [
+          { axis: "disease", native: "Sain et de longue vie.", ornamental: "Criblé par le champignon de la criblure ; ses feuilles dégagent du cyanure." },
+          { axis: "wildlife", native: "Ses baies tardives nourrissent grives et merles ; l'azuré du houx y pond.", ornamental: "Disséminé par les oiseaux dans les bois, où il étouffe la flore du sol." },
+        ],
+      },
+      "corylus-avellana": {
+        why: "Pour un écran rapide et libre qu'on peut plesser ou recéper, le noisetier fait un mur vert et souple en une saison, s'égoutte de chatons à la fin de l'hiver, et laisse tomber des noisettes pour tout le bois.",
+        edges: [
+          { axis: "water", native: "Peu exigeant et autonome une fois installé.", ornamental: "Gourmand en eau, et se ressème dans les bois au-delà du jardin." },
+          { axis: "wildlife", native: "Ses chatons nourrissent les premières abeilles ; ses noisettes, muscardins, écureuils et geais.", ornamental: "Nourrit peu d'indigène, et envahit." },
+        ],
+      },
+    },
   },
   "Lonicera japonica": {
     origin: "Indigène d'Asie de l'Est.",
@@ -98,6 +119,27 @@ export const LOOKALIKES_FR: ProseTable = {
     origin: "Indigène du centre de la Chine.",
     blurb:
       "Vendu comme *la* plante à papillons, et les papillons adultes y boivent réellement. Mais aucune chenille d'ici ne peut manger ses feuilles : il nourrit donc les visiteurs et n'en élève aucun. Le long des rivières du Nord-Ouest Pacifique, il se ressème dans les bancs de gravier assez densément pour être classé plante nuisible en Oregon comme dans l'État de Washington.",
+    // Aussi un ornemental (data/alternatives.ts) : ce qu'on plante à sa place.
+    altRole: "Arbuste à nectar pour massif ensoleillé",
+    altOrigin: "Indigène de Chine ; vendu, par son nom, comme la plante qui attire les papillons.",
+    altBlurb:
+      "Il attire bien les papillons — ses épis d'été sont un vrai bar à nectar. Mais le nectar est la moitié facile : pas une chenille indigène ne peut manger ses feuilles ; il nourrit les adultes et n'élève aucune génération suivante. C'est un buffet, pas une pouponnière — et il se ressème dans la moindre friche.",
+    alternativeNotes: {
+      "crataegus-monogyna": {
+        why: "Pour un grand arbuste bourdonnant de pollinisateurs, la floraison de mai de l'aubépine est un bar à nectar long comme une haie — et, contrairement au buddleia, elle élève aussi les chenilles, puis nourrit les oiseaux de ses cenelles.",
+        edges: [
+          { axis: "water", native: "Autonome une fois installée.", ornamental: "Se ressème sur les murs, les friches et le ballast des voies." },
+          { axis: "wildlife", native: "Nectar pour bien des insectes, plante-hôte de centaines de papillons de nuit, cenelles pour les oiseaux d'hiver.", ornamental: "Du nectar pour les adultes seulement ; n'élève aucune chenille indigène." },
+        ],
+      },
+      "sambucus-nigra": {
+        why: "Pour un arbuste rapide, léger, à fleurs et à baies, le sureau noir déploie ses plateaux de fleurs crème que couvrent les pollinisateurs, puis des baies noires que les oiseaux dévorent — et dont vous pouvez profiter aussi.",
+        edges: [
+          { axis: "water", native: "Rapide et peu exigeant une fois installé.", ornamental: "Un colonisateur des terrains ouverts, qui se ressème." },
+          { axis: "wildlife", native: "Nectar et pollen pour les insectes ; baies pour une vingtaine d'espèces d'oiseaux.", ornamental: "Nourrit les adultes ; n'héberge aucune chenille indigène." },
+        ],
+      },
+    },
   },
   "Asclepias curassavica": {
     origin: "Indigène des régions tropicales d'Amérique centrale et du Sud.",
@@ -108,6 +150,20 @@ export const LOOKALIKES_FR: ProseTable = {
     origin: "Indigène d'Asie de l'Est.",
     blurb:
       "La grande graminée ornementale en fontaine, à plumets argentés, en vente dans toutes les jardineries. Sa graine est portée par le vent dans les prés, les bords de route et les terrains brûlés, et ses touffes mortes restées debout propagent bien le feu.",
+    // Aussi un ornemental (data/alternatives.ts) : ce qu'on plante à sa place.
+    altRole: "Grande graminée ornementale",
+    altOrigin: "Indigène d'Asie de l'Est ; la haute graminée à plumets de mille massifs.",
+    altBlurb:
+      "La fontaine de lames arquées et de plumets argentés d'automne, vendue comme pièce maîtresse sans entretien. Elle se ressème dans les friches et les bords de route — plusieurs États la classent désormais — et porte le feu, contrairement aux graminées indigènes qui lui ressemblent.",
+    alternativeNotes: {
+      "deschampsia-cespitosa": {
+        why: "Pour une fontaine de graminée fine et légère, la canche cespiteuse lève une brume dorée en été — le mouvement pour lequel on plante le miscanthus, sur un indigène qui reste à sa place dans la prairie au lieu de s'en échapper.",
+        edges: [
+          { axis: "wildlife", native: "Abri et graines pour les oiseaux ; hôte de plusieurs papillons de prairie.", ornamental: "Nourrit peu d'indigène, et se ressème dans la nature." },
+          { axis: "care", native: "Robuste et adaptable au soleil ou à mi-ombre, en sol humide ou sec.", ornamental: "Une grosse touffe qui se ressème alentour." },
+        ],
+      },
+    },
   },
   "Rubus armeniacus": {
     origin:

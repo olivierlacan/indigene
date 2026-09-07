@@ -48,6 +48,7 @@ try {
   // two files that disagree rather than just the key.
   const PARTS = {
     fr: [
+      ["alternatives", "ALTERNATIVES_FR"],
       ["florida", "FLORIDA"],
       ["france-alpine", "FRANCE_ALPINE"],
       ["france-atlantic", "FRANCE_ATLANTIC"],

@@ -298,13 +298,14 @@ export const SECTIONS = [
     aliases: ["alternatives", "swaps", "native swaps"],
     emoji: "🌿",
     title: "What to grow instead",
-    tagline: "The native that does the ornamental's job.",
+    tagline: "The native that does the ornamental's job, and gives more back.",
     lede:
       "Before you buy, the question is what to plant — and the usual answer at " +
       "the nursery is something that isn't from here. This is the other way " +
       "round. Start from the garden job you have — a lawn, a hedge, a shade " +
       "tree, a plant “for butterflies” — and find the native that does " +
-      "it at least as well. Each swap sets the two side by side on the things " +
+      "it at least as well, and usually better: for the wildlife it feeds and " +
+      "the water it saves. Each swap sets the two side by side on the things " +
       "that actually decide it: water (will it want the hose all summer?), " +
       "disease, and what it feeds. Where the native only ties the ornamental we " +
       "say so; where it wins — a Bermuda-grass lawn against little bluestem, a " +

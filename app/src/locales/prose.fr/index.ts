@@ -38,6 +38,7 @@ import { FRANCE_ALPINE } from "./france-alpine";
 import { FRANCE_ATLANTIC } from "./france-atlantic";
 import { FRANCE_CONTINENTAL } from "./france-continental";
 import { FRANCE_MEDITERRANEAN } from "./france-mediterranean";
+import { ALTERNATIVES_FR } from "./alternatives";
 import { LOOKALIKES_FR } from "./lookalikes";
 import { MID_ATLANTIC } from "./mid-atlantic";
 import { PNW } from "./pnw";
@@ -53,4 +54,5 @@ export const PROSE_FR: ProseTable = {
   ...FLORIDA,
   ...WILDLIFE_FR,
   ...LOOKALIKES_FR,
+  ...ALTERNATIVES_FR,
 };

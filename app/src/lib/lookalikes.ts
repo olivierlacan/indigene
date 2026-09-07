@@ -14,10 +14,27 @@ import { CONFUSIONS, LOOKALIKES } from "../data/lookalikes";
 import { REGISTRY } from "../data/registry";
 
 const lookalikeById = new Map(LOOKALIKES.map((l) => [l.id, l]));
+const lookalikeByLatin = new Map(LOOKALIKES.map((l) => [l.latin.trim().toLowerCase(), l]));
 
 /** The catalog entry for an id, or undefined if it isn't one we know. */
 export function getLookalike(id: string): Lookalike | undefined {
   return lookalikeById.get(id);
+}
+
+/** The catalog entry for a scientific name — how the alternatives layer finds
+ *  the impostor that shares an ornamental's identity, so a page can cross-link
+ *  "you were about to plant this" to "and here's how to tell it from the native
+ *  it's mistaken for". Matched on the name both catalogs carry. */
+export function getLookalikeByLatin(latin: string): Lookalike | undefined {
+  return lookalikeByLatin.get(latin.trim().toLowerCase());
+}
+
+/** The regions where this impostor is invasive, for the cross-link that warns a
+ *  would-be buyer. Empty when it's merely introduced or a native everywhere we
+ *  cover. */
+export async function invasiveRegionsFor(lookalikeId: string): Promise<RegionDef[]> {
+  const natives = await nativesForLookalike(lookalikeId);
+  return statusRegions(natives).find((s) => s.status === "invasive")?.regions ?? [];
 }
 
 /** One impostor a plant is mistaken for, resolved to the catalog entry + tie. */

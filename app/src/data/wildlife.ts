@@ -349,6 +349,19 @@ export const WILDLIFE: Wildlife[] = [
       "Native western blues and hairstreaks (acmon blue, Sheridan's green hairstreak and their relatives). Xerces Society; BAMONA.",
   },
   {
+    id: "juniper-hairstreak",
+    common: "Juniper & cypress hairstreaks",
+    latin: "Callophrys gryneus",
+    kind: "butterfly",
+    icon: "\u{1F98B}",
+    blurb:
+      "A butterfly the exact green of the foliage it sits on, which is why almost nobody sees one. Its caterpillars eat cypress and juniper and nothing else, so each race is stuck to its own tree — and the one on Tecate cypress has the smallest range of any butterfly in the country.",
+    native: true,
+    nativeBasis:
+      "Native to North America. The southern-California races are the loki juniper hairstreak, on California juniper, and Thorne's hairstreak, on Tecate cypress. Xerces Society; BAMONA; US Fish & Wildlife Service (Thorne's hairstreak 12-month finding).",
+    inat: { name: "Callophrys gryneus", iconic: "Insecta" },
+  },
+  {
     id: "painted-lady",
     common: "Painted lady",
     latin: "Vanessa cardui",
@@ -1738,6 +1751,26 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
   },
 
   "ca-south-coast": {
+    "hesperocyparis-forbesii": [
+      { wildlifeId: "juniper-hairstreak", support: "host", reliance: "sole", note: "Thorne's hairstreak eats Tecate cypress and nothing else, and flies around Otay Mountain and nowhere else on earth \u2014 the smallest range of any butterfly in the country. A tree planted in a Los Angeles garden will not bring one; the wild groves are what hold the butterfly. It is still the reason this tree matters more than its size suggests.", basis: "US Fish & Wildlife Service (Thorne's hairstreak 12-month finding); Xerces Society; BAMONA." },
+      { wildlifeId: "lesser-goldfinch", support: "seeds", note: "The little round cones break down into fine seed, and the goldfinches pick it out on the branch, hanging sideways to reach.", basis: "Cornell Lab; USFS FEIS." },
+      { wildlifeId: "bushtit", support: "shelter", note: "Dense evergreen foliage is where a bushtit flock roosts and hangs its long woven sock of a nest \u2014 cover a chaparral garden otherwise has none of.", basis: "Cornell Lab." },
+    ],
+    "pinus-torreyana": [
+      { wildlifeId: "acorn-birds", support: "seeds", note: "The seeds are far too heavy for the wind, so the pine depends on scrub-jays to carry and bury them \u2014 the ones a jay forgets are how a grove moves at all.", basis: "Cornell Lab; USFS FEIS." },
+      { wildlifeId: "acorn-mammals", support: "seeds", note: "Dusky-footed and desert woodrats take so much of the crop that on the bluffs they are most of what stands between a cone and a seedling.", basis: "USFS FEIS." },
+      { wildlifeId: "bushtit", support: "shelter", note: "Bushtit flocks work through the needles all winter after the small insects living in them.", basis: "Cornell Lab." },
+    ],
+    "pinus-coulteri": [
+      { wildlifeId: "acorn-birds", support: "seeds", note: "White-headed and acorn woodpeckers work the huge cones, and scrub-jays haul the big oily seeds off to bury \u2014 the only way a seed that heavy gets anywhere.", basis: "Cornell Lab; USFS FEIS." },
+      { wildlifeId: "acorn-mammals", support: "seeds", note: "Western gray squirrels live on Coulter pine seed the year round, storing what they can't eat.", basis: "USFS FEIS." },
+      { wildlifeId: "conifer-seed-finches", support: "seeds", note: "Big pine seeds are what a crossbill's crossed bill is a tool for; the siskins and nuthatches follow on behind for what it drops.", basis: "Cornell Lab." },
+    ],
+    "juniperus-californica": [
+      { wildlifeId: "juniper-hairstreak", support: "host", reliance: "sole", note: "The loki juniper hairstreak lays on California juniper and nothing else, in the dry inland country at this region's eastern edge. It is the same green as the foliage and sits dead still on it, so the way to find one is to tap a branch and watch what flies out.", basis: "Xerces Society; BAMONA." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "The dusty-blue berries take two years to ripen and then hang on \u2014 one of the very few winter fruits in a dry inland garden. A mockingbird will hold one bush against every other bird for weeks.", basis: "Cornell Lab; USFS FEIS." },
+      { wildlifeId: "lesser-goldfinch", support: "berries", note: "Goldfinches, mourning doves and Scott's orioles all take the berries, and the seed comes out the far end scarified and ready to grow.", basis: "USFS FEIS; Cornell Lab." },
+    ],
     "artemisia-douglasiana": [
       { wildlifeId: "american-lady", support: "host", note: "Mugwort is one of the silver-leaved plants the American lady's caterpillars grow up on, wrapping themselves in the leaves and their own silk to hide while they eat.", basis: "GloBI — HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM), NHM Interactions Bank, Ferrer-Paris et al. 2013; BAMONA." },
     ],

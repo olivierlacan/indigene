@@ -8,6 +8,15 @@
       }
     }
   },
+  "band-tailed-pigeon": {
+    "regions": {
+      "pnw": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Oregon, US"
+      }
+    }
+  },
   "baptisia-australis": {
     "global": {
       "rank": "G3G4",
@@ -42,9 +51,24 @@
       "authority": "IUCN Red List"
     }
   },
+  "karner-blue": {
+    "regions": {
+      "north-michigan": {
+        "rank": "S2",
+        "authority": "NatureServe",
+        "place": "Michigan, US"
+      }
+    }
+  },
   "pinus-palustris": {
     "global": {
       "rank": "EN",
+      "authority": "IUCN Red List"
+    }
+  },
+  "pinus-torreyana": {
+    "global": {
+      "rank": "CR",
       "authority": "IUCN Red List"
     }
   },

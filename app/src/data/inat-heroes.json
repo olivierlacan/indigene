@@ -845,6 +845,15 @@
     "attribution": "(c) rangerkelly, some rights reserved (CC BY-NC), uploaded by rangerkelly",
     "color": "#727d62"
   },
+  "hesperocyparis-forbesii": {
+    "taxonId": 1515464,
+    "photoId": 475472900,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/475472900/square.jpg",
+    "observer": "Nathan J Taylor",
+    "license": "cc-by-nc",
+    "attribution": "(c) Nathan J Taylor, some rights reserved (CC BY-NC), uploaded by Nathan J Taylor",
+    "color": "#2d3523"
+  },
   "hesperoyucca-whipplei": {
     "taxonId": 58362,
     "photoId": 122618669,
@@ -925,6 +934,24 @@
     "license": "cc-by-nc",
     "attribution": "(c) Susie, some rights reserved (CC BY-NC), uploaded by Susie",
     "color": "#788773"
+  },
+  "juniper-hairstreak": {
+    "taxonId": 84239,
+    "photoId": 3652251,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/3652251/square.jpg",
+    "observer": "Greg Lasley",
+    "license": "cc-by-nc",
+    "attribution": "(c) Greg Lasley, some rights reserved (CC BY-NC), uploaded by Greg Lasley",
+    "color": "#726831"
+  },
+  "juniperus-californica": {
+    "taxonId": 57889,
+    "photoId": 480392764,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/480392764/square.jpg",
+    "observer": "Roberto Daniel Avila",
+    "license": "cc-by",
+    "attribution": "(c) Roberto Daniel Avila, some rights reserved (CC BY), uploaded by Roberto Daniel Avila",
+    "color": "#565531"
   },
   "karner-blue": {
     "taxonId": 484122,
@@ -1169,6 +1196,15 @@
     "attribution": "(c) Belinda Lo, some rights reserved (CC BY-NC-SA)",
     "color": "#536843"
   },
+  "pinus-coulteri": {
+    "taxonId": 67330,
+    "photoId": 481901684,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/481901684/square.jpg",
+    "observer": "Ad Konings",
+    "license": "cc-by-nc",
+    "attribution": "(c) Ad Konings, some rights reserved (CC BY-NC), uploaded by Ad Konings",
+    "color": "#6a86af"
+  },
   "pinus-ponderosa": {
     "taxonId": 81248,
     "photoId": 8702067,
@@ -1186,6 +1222,15 @@
     "license": "cc-by",
     "attribution": "(c) Forest and Kim Starr, some rights reserved (CC BY)",
     "color": "#7d9063"
+  },
+  "pinus-torreyana": {
+    "taxonId": 78587,
+    "photoId": 475593552,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/475593552/square.jpg",
+    "observer": "Lonnie Pilkington",
+    "license": "cc-by-nc",
+    "attribution": "(c) Lonnie Pilkington, some rights reserved (CC BY-NC), uploaded by Lonnie Pilkington",
+    "color": "#666d70"
   },
   "plantago-lanceolata": {
     "taxonId": 53178,

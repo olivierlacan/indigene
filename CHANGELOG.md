@@ -31,6 +31,17 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Added
+
+- Southern California's list had no evergreen trees in it at all. Four are in
+  now: [Tecate cypress](https://indigene.app/plants/hesperocyparis-forbesii) —
+  the region's own, and the only food of one rare butterfly — with Torrey pine,
+  Coulter pine and California juniper.
+- Wildlife: the [juniper & cypress
+  hairstreaks](https://indigene.app/wildlife/juniper-hairstreak) join the
+  catalogue. They are the green of the foliage they sit on, and their
+  caterpillars eat cypress and juniper and nothing else.
+
 ### Fixed
 
 - Wildlife & Regions: the star that marks a plant an animal can’t live without

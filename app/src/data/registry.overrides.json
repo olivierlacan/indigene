@@ -3535,5 +3535,49 @@
       "gbif": "3152730",
       "wikidata": "Q17579205"
     }
+  },
+  "Hesperocyparis forbesii": {
+    "identifiers": {
+      "ipni": "60451550-2",
+      "wfo": "wfo-0000912965",
+      "usda": "HEFO10",
+      "itis": "1222570",
+      "inat": "1515464",
+      "gbif": "2684007",
+      "wikidata": "Q32856050"
+    }
+  },
+  "Juniperus californica": {
+    "identifiers": {
+      "ipni": "262163-1",
+      "wfo": "wfo-0000355594",
+      "usda": "JUCA7",
+      "itis": "194816",
+      "inat": "57889",
+      "gbif": "2684627",
+      "wikidata": "Q1722255"
+    }
+  },
+  "Pinus coulteri": {
+    "identifiers": {
+      "ipni": "196961-2",
+      "wfo": "wfo-0000481341",
+      "usda": "PICO3",
+      "itis": "183333",
+      "inat": "67330",
+      "gbif": "5285113",
+      "wikidata": "Q1137001"
+    }
+  },
+  "Pinus torreyana": {
+    "identifiers": {
+      "ipni": "282913-2",
+      "wfo": "wfo-0000481576",
+      "usda": "PITO",
+      "itis": "183391",
+      "inat": "78587",
+      "gbif": "5285764",
+      "wikidata": "Q2746149"
+    }
   }
 }

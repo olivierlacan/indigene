@@ -63,6 +63,14 @@ subtitle on the What's new page.
   silvergrass) carry their swap prose in `prose.fr/lookalikes.ts`, one taxon one
   file, so `prose:check` stays collision-free. `check-prose.mjs` lists the new
   part.
+- Southern California's list had no evergreen trees in it at all. Four are in
+  now: [Tecate cypress](https://indigene.app/plants/hesperocyparis-forbesii) —
+  the region's own, and the only food of one rare butterfly — with Torrey pine,
+  Coulter pine and California juniper.
+- Wildlife: the [juniper & cypress
+  hairstreaks](https://indigene.app/wildlife/juniper-hairstreak) join the
+  catalogue. They are the green of the foliage they sit on, and their
+  caterpillars eat cypress and juniper and nothing else.
 
 ### Fixed
 

@@ -4153,6 +4153,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:60451550-2",
+    "scientificName": "Hesperocyparis forbesii",
+    "family": "Cupressaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "60451550-2",
+      "wfo": "wfo-0000912965",
+      "gbif": "2684007",
+      "usda": "HEFO10",
+      "itis": "1222570",
+      "inat": "1515464",
+      "wikidata": "Q32856050",
+      "indigene": "hesperocyparis-forbesii"
+    },
+    "commonNames": [
+      "Tecate Cypress"
+    ],
+    "aliases": [
+      "hesperocyparis forbesii",
+      "tecate cypress"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
     "primaryId": "ipni:1095274-2",
     "scientificName": "Hesperoyucca whipplei",
     "family": "Asparagaceae",
@@ -4507,6 +4536,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:262163-1",
+    "scientificName": "Juniperus californica",
+    "family": "Cupressaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "262163-1",
+      "wfo": "wfo-0000355594",
+      "gbif": "2684627",
+      "usda": "JUCA7",
+      "itis": "194816",
+      "inat": "57889",
+      "wikidata": "Q1722255",
+      "indigene": "juniperus-californica"
+    },
+    "commonNames": [
+      "California Juniper"
+    ],
+    "aliases": [
+      "california juniper",
+      "juniperus californica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {
@@ -5977,6 +6035,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:196961-2",
+    "scientificName": "Pinus coulteri",
+    "family": "Pinaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "196961-2",
+      "wfo": "wfo-0000481341",
+      "gbif": "5285113",
+      "usda": "PICO3",
+      "itis": "183333",
+      "inat": "67330",
+      "wikidata": "Q1137001",
+      "indigene": "pinus-coulteri"
+    },
+    "commonNames": [
+      "Coulter Pine"
+    ],
+    "aliases": [
+      "coulter pine",
+      "pinus coulteri"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
+    ]
+  },
+  {
     "primaryId": "ipni:262982-1",
     "scientificName": "Pinus halepensis",
     "family": "Pinaceae",
@@ -6123,6 +6210,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-continental"
+    ]
+  },
+  {
+    "primaryId": "ipni:282913-2",
+    "scientificName": "Pinus torreyana",
+    "family": "Pinaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "282913-2",
+      "wfo": "wfo-0000481576",
+      "gbif": "5285764",
+      "usda": "PITO",
+      "itis": "183391",
+      "inat": "78587",
+      "wikidata": "Q2746149",
+      "indigene": "pinus-torreyana"
+    },
+    "commonNames": [
+      "Torrey Pine"
+    ],
+    "aliases": [
+      "pinus torreyana",
+      "torrey pine"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ca-south-coast"
     ]
   },
   {

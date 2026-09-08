@@ -115,6 +115,10 @@ export const WILDLIFE_FR: ProseTable = {
   // -------------------------------------------------------------------------
   // Papillons de jour — Europe.
   // -------------------------------------------------------------------------
+  "Anthocharis cardamines": {
+    blurb:
+      "Le mâle porte des bouts d'ailes orange vif et ne se confond avec rien ; la femelle n'en a pas et se fait prendre pour une piéride tout le printemps. Tous deux se posent ailes fermées, et le revers marbré de vert les efface contre un capitule — précisément là où la femelle est en train de pondre.",
+  },
   "Gonepteryx rhamni": {
     blurb:
       "Le grand papillon jaune citron qui est, dans la plus grande partie de la France, le premier que chacun voie chaque année. Il passe l'hiver adulte — ailes fermées et exactement en forme de feuille, blotti dans du lierre ou du houx — et ses chenilles ne mangent que des nerpruns.",

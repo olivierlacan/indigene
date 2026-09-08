@@ -222,6 +222,12 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     propagationNote:
       "Récoltez les capitules secs à l'automne et frottez-en la graine. Elle lève sans peine d'un semis d'automne dehors ; un semis de printemps réussit mieux après un mois de froid humide au réfrigérateur.",
     supportNotes: {
+      "painted-lady":
+        "Les grands papillons travaillent les têtes de centaurée plusieurs minutes d'affilée — belles-dames, nacrés et demi-deuils d'une prairie sèche.",
+      "six-spot-burnet":
+        "Les zygènes diurnes à points rouges s'y rassemblent en nombre, plusieurs par capitule, en pleine chaleur de l'après-midi.",
+      "goldfinches-linnets":
+        "Laissez les têtes de graines debout et les chardonnerets les démontent tout l'automne.",
       "bumble-bees":
         "Un puits de nectar profond que seuls les insectes à longue langue peuvent atteindre — bourdons, grands nacrés et zygènes.",
     },
@@ -379,5 +385,32 @@ export const FRANCE_CONTINENTAL: ProseTable = {
       "bumble-bees":
         "Une longue saison de petites fleurs jaunes, de mai à septembre, travaillée sans arrêt par les bourdons.",
     },
+  },
+  // -------------------------------------------------------------------------
+  // France continentale — le sol de la hêtraie : laîche d'ombre et fougère dure.
+  // -------------------------------------------------------------------------
+  "Carex sylvatica": {
+    supportNotes: {
+      "grass-skippers":
+        "Les laîches nourrissent une longue liste de petits papillons bruns et de papillons de nuit, et une touffe de laîche à l'ombre est là où ils passent l'année.",
+    },
+    nativeNote:
+      "La laîche souple et arquée des sous-bois frais et ombragés de l'est, qui sort en mai de minces épis verts pendants, comme une plante qui aurait renoncé à se faire remarquer.",
+    careNote:
+      "La plante de l'ombre humide sous les arbres, là où le gazon ne se referme pas et où presque tout boude. Elle veut de l'ombre et un sol qui ne sèche pas ; dans un massif ensoleillé elle grille. Plantez-la en nappes espacées d'une trentaine de centimètres et elle fait un tapis vert de sous-bois en trois ans. Rabattez-la en fin d'hiver, avant que la nouvelle pousse ne monte.",
+    givesNote:
+      "Les laîches sont les plantes-hôtes d'un nombre surprenant de petits papillons bruns et de papillons de nuit, et une touffe de laîche à l'ombre est là où ils passent l'année. Les touradons et la litière en dessous sont un abri humide pour les coléoptères, les araignées et les amphibiens pendant les mois où tout le reste sèche.",
+    propagationNote:
+      "Divisez une touffe établie au printemps et replantez les éclats aussitôt, en les gardant humides le premier été. Elle se ressème aussi seule dans une ombre qui lui convient.",
+  },
+  "Polystichum aculeatum": {
+    nativeNote:
+      "Une fougère sombre, dure et luisante des talus ombragés et des bois calcaires de l'est — des frondes rétrécies aux deux bouts, vertes et rigides tout l'hiver.",
+    careNote:
+      "La plus résistante des trois : une fois installée, elle accepte l'ombre réellement sèche — le sol sous un hêtre ou le pied d'un mur nord — et n'y demande aucun arrosage d'été. Plantez le collet dégagé pour qu'il ne pourrisse pas, sur une pente si vous en avez une. Persistante et lente. Ne coupez que les frondes affaissées, en fin d'hiver.",
+    givesNote:
+      "Une fougère dure et persistante à l'ombre sèche fait le travail que rien d'autre ne fera : elle tient un talus qui autrement se ravinerait, et garde un carré de sol frais et abrité à travers la sécheresse d'été comme à travers l'hiver. C'est dans cet abri que vivent réellement les coléoptères, les araignées et les amphibiens d'un jardin. Très peu d'insectes mangent les fougères.",
+    propagationNote:
+      "Semez les spores mûres à l'automne sur un terreau stérilisé, maintenu humide sous verre : c'est lent mais fiable. Une grosse touffe ancienne peut être divisée en fin d'hiver si elle a formé plusieurs collets.",
   },
 };

@@ -351,4 +351,195 @@ export const FRANCE_ALPINE: ProseTable = {
         "Les chenilles de zygène tirent des composés cyanurés du lotier et les gardent à vie.",
     },
   },
+  // -------------------------------------------------------------------------
+  // Les Alpes — l'arbuste de fond de vallée, la pelouse calcaire et la fissure.
+  // -------------------------------------------------------------------------
+  "Prunus padus": {
+    supportNotes: {
+      "emperor-moth":
+        "Les chenilles du petit paon de nuit acceptent le merisier à grappes parmi la courte liste d'arbustes et d'arbres qu'elles mangent, dans les vallées sous la ceinture des résineux.",
+      "bumble-bees":
+        "De longues grappes pendantes de fleurs blanches parfumées en mai, au moment où l'année alpine s'ouvre vraiment et où les reines de bourdons fondent leurs nids.",
+      "winter-thrushes":
+        "Des cerises noires en août, prises par les grives litornes, les merles et les merles à plastron — et par les martres, qui grimpent les chercher.",
+      "blackcaps-warblers":
+        "Les fauvettes qui font leurs réserves pour le voyage vers le sud travaillent dur un merisier à grappes en fin d'été.",
+    },
+    nativeNote:
+      "Le cerisier des vallées alpines humides et des bords de ruisseaux — non pas le merisier à tête ronde des plaines, mais un arbre plus petit, chargé en mai de longues grappes pendantes de fleurs blanches parfumées.",
+    careNote:
+      "Il veut un fond de vallée plutôt qu'un versant : un sol qui reste humide, et du soleil au moins la moitié de la journée. Il drageonne doucement, ce qui le rend bon sur une berge et brouillon dans un petit massif. Attendez-vous à le voir entièrement toilé certains printemps par l'hyponomeute du merisier — l'arbre est mis à nu, paraît fini, et refait des feuilles en juillet. Ne traitez pas : cette pullulation est un garde-manger à oiseaux. Les noyaux sont toxiques si on les croque.",
+    givesNote:
+      "L'une des toutes premières plantes à chenilles de montagne, et un bon tiers de cette valeur se voit en un seul printemps, quand les hyponomeutes éclosent et que toutes les mésanges et fauvettes de la vallée travaillent l'arbre. Puis des grappes de cerises noires en août pour les grives, les fauvettes à tête noire et les martres, et une floraison lourde et parfumée en mai pour les bourdons et les syrphes.",
+    propagationNote:
+      "Semez les noyaux dehors dès la chute des fruits, en terrine protégée des rongeurs : il leur faut l'hiver entier au froid pour lever au printemps. Les drageons prélevés avec leurs racines en fin d'hiver reprennent aussi et vont plus vite.",
+  },
+  "Rubus idaeus": {
+    supportNotes: {
+      "bumble-bees":
+        "Un carré de framboisiers en juin a des bourdons dessus dès le lever du jour — l'une des meilleures plantes à nectar de tout l'été montagnard.",
+      "green-hairstreak":
+        "Le seul papillon vert d'Europe pond sur le framboisier parmi les autres arbustes des clairières, et se pose sur un talus ensoleillé ailes fermées, impossible à distinguer d'une feuille.",
+      "blackcaps-warblers":
+        "Fauvettes et grives travaillent un fourré de framboisiers en août, et les cannes sont assez denses pour qu'elles y nichent aussi.",
+      "hazel-dormouse":
+        "Le muscardin circule le long des cannes de ronce et de framboisier et en mange les fruits — une haie qui en contient est un couloir, une haie taillée au carré est un mur.",
+    },
+    nativeNote:
+      "Vraiment sauvage dans les Alpes — le premier venu dans une clairière, un brûlis ou un couloir d'avalanche, et le framboisier dont descendent tous les cultivés.",
+    careNote:
+      "Il trace au niveau des racines et ressort à plusieurs pas de là : donnez-lui un coin rustique ou une limite plutôt qu'un massif. Coupez chaque hiver à ras les cannes qui ont fructifié en laissant les vertes neuves — c'est toute la taille dont il a besoin. Piquant sans être méchant. Le fruit sauvage est plus petit et infiniment meilleur que tout ce qui se vend en barquette.",
+    givesNote:
+      "L'une des plus grosses plantes à chenilles de montagne et l'une des meilleures plantes à nectar de tout l'été — un carré de framboisiers en juin a des bourdons dessus dès le lever du jour. Puis des fruits en août pour les grives, les fauvettes, les martres et les ours là où il y en a, et un fourré qui est un couvert de nidification sûr sur un versant autrement ouvert.",
+    propagationNote:
+      "Déterrez un drageon avec ses racines en fin d'hiver et replantez-le aussitôt : c'est immédiat et c'est ainsi que la plante se propage seule. Rien d'autre à tenter.",
+  },
+  "Rosa pendulina": {
+    supportNotes: {
+      "bumble-bees":
+        "Une rose simple et ouverte est une rose où une abeille peut réellement entrer — une rose de jardin bien double ne lui donne rien du tout.",
+      "mason-bees":
+        "Les mégachiles découpent dans les feuilles de rosier des demi-cercles nets pour tapisser leurs cellules ; ces encoches sont le signe que le jardin fonctionne.",
+      "winter-thrushes":
+        "De longs cynorhodons rouges tiennent sur l'arbuste jusqu'en hiver, et c'est ce que les litornes et les mauvis viennent chercher quand la neige a couvert le sol.",
+    },
+    nativeNote:
+      "Le rosier de montagne des lisières et des pentes rocheuses de tout l'arc alpin — fleurs simples rose vif, cynorhodons allongés en flacon, et presque aucune épine, ce qui est rare chez un rosier.",
+    careNote:
+      "Facile sur tout sol de montagne drainant, au soleil ou à mi-ombre, et c'est l'un des rares rosiers qu'on peut planter au bord d'un sentier sans le regretter : les tiges sont presque inermes. Il drageonne lentement en fourré bas. Retirez les plus vieilles tiges en fin d'hiver et laissez les cynorhodons tranquilles : ils sont la moitié hivernale de la valeur de la plante.",
+    givesNote:
+      "Une fleur simple et ouverte, ce qu'une rose doit être pour que les abeilles atteignent le pollen — une rose de jardin double ne leur donne rien. Le genre rosier est l'un des plus lourds en chenilles ici, et les longs cynorhodons rouges tiennent sur l'arbuste jusqu'en hiver pour les grives, les litornes et les fringilles, quand la neige a tout couvert au ras du sol.",
+    propagationNote:
+      "Le drageon est le plus simple : détachez-en un enraciné en fin d'hiver. Par semis, ouvrez les cynorhodons mûrs, nettoyez les akènes et semez-les dehors à l'automne — il leur faut souvent deux hivers pour lever.",
+  },
+  "Daphne mezereum": {
+    supportNotes: {
+      "brimstone":
+        "Le citron hiverne à l'état adulte et sort au premier après-midi tiède de février en cherchant n'importe quoi de fleuri — dans un bois alpin, c'est le bois-joli, et presque rien d'autre.",
+      "bumble-bees":
+        "Une fleur de février dans un bois de montagne, c'est à peu près un monopole : une reine de bourdon sortie tôt a cela ou n'a rien.",
+      "blackcaps-warblers":
+        "Les baies rouges qui nous empoisonneraient sont prises sans dommage par les fauvettes à tête noire et les grives en juillet, et c'est ainsi que la plante se déplace dans un bois.",
+    },
+    nativeNote:
+      "Un petit arbuste dressé des hêtraies-sapinières alpines, qui fleurit sur le bois nu en février et mars et qu'on sent à vingt pas avant de le voir.",
+    careNote:
+      "Mi-ombre, sol de terreau de feuilles qui reste frais et humide, puis laissez-le entièrement tranquille : il déteste être déplacé, déteste avoir les racines sèches, et n'accepte aucune taille. Lent, et jamais de longue vie. **Toutes ses parties sont fortement toxiques**, et les baies rouges sont la chose la plus tentante du bois : réfléchissez bien avant de le planter là où de jeunes enfants jouent.",
+    givesNote:
+      "Il fleurit en février, ce qui dans un jardin de montagne veut dire qu'il est à peu près le seul à offrir du nectar à une reine de bourdon ou à un citron précoce, le premier après-midi tiède de l'année. Les baies de juillet vont aux fauvettes à tête noire et aux grives, que ne gêne pas ce qui nous empoisonnerait.",
+    propagationNote:
+      "Semez les baies nettoyées dès la récolte, dehors, et attendez : la levée demande souvent deux hivers. Portez des gants. Ne tentez pas de le transplanter une fois installé — il n'y survit pas.",
+  },
+  "Erica carnea": {
+    supportNotes: {
+      "bumble-bees":
+        "La bruyère des neiges fleurit de janvier à avril, souvent en perçant la neige, et au premier jour doux de l'année montagnarde c'est là que sont les reines de bourdons, parce que rien d'autre n'est ouvert.",
+      "silver-studded-blue":
+        "Les azurés des bruyères pondent sur les Erica et la callune, et leurs chenilles sont soignées par des fourmis qui les traient contre protection.",
+      "mason-bees":
+        "Les premières abeilles solitaires travaillent la bruyère des neiges dès mars, bien avant que les prairies aient quoi que ce soit à offrir.",
+    },
+    nativeNote:
+      "La bruyère rose et basse des pinèdes claires et des versants calcaires des Alpes — et, seule parmi les bruyères d'Europe, une plante des sols calcaires plutôt que des tourbes acides.",
+    careNote:
+      "L'exception utile chez les bruyères : elle accepte le calcaire, donc elle pousse dans les sols alcalins alpins qui tuent les autres. Soleil ou ombre légère, drainage vif, aucun engrais. Tondez-la légèrement une fois les fleurs brunies en fin de printemps, et elle reste un tapis dense pendant des années au lieu de s'ouvrir en son milieu.",
+    givesNote:
+      "Elle fleurit de janvier à avril, souvent en perçant la neige, et c'est tout son intérêt : au premier jour doux de l'année montagnarde, les reines de bourdons et les abeilles domestiques sont sur la bruyère des neiges parce qu'il n'y a rien d'autre. Elle porte aussi une vraie charge de chenilles pour sa taille, et le tapis est un couvert d'hiver au ras du sol.",
+    propagationNote:
+      "Le marcottage se fait tout seul : buttez un peu de terre sableuse sur les tiges basses au printemps, et elles s'enracinent d'ici l'automne — détachez alors les éclats. Les boutures de pousses semi-aoûtées prises en été marchent aussi, à l'étouffée.",
+  },
+  "Colchicum autumnale": {
+    supportNotes: {
+      "bumble-bees":
+        "Il fleurit en septembre et octobre, quand la prairie de montagne a fini, et les derniers bourdons et syrphes de l'année y viennent parce qu'il ne reste rien d'autre d'ouvert.",
+    },
+    nativeNote:
+      "Les calices roses qui sortent de l'herbe rase en septembre, sans une seule feuille — la dernière fleur de la prairie alpine, et la raison pour laquelle ces prairies ont brièvement un air de printemps en automne.",
+    careNote:
+      "Plantez les bulbes dans une prairie humide en été, puis composez avec son calendrier bizarre : fleurs seules en septembre, larges feuilles du printemps au cœur de l'été, puis plus rien. Ne fauchez pas entre mars et juillet, sinon vous l'affamez. **Fortement toxique dans toutes ses parties** — c'est la plante à l'origine de la plupart des intoxications du bétail dans le foin alpin, alors tenez-la hors d'un pré pâturé et loin de tout animal qui broute.",
+    givesNote:
+      "Il fleurit en septembre et octobre, quand la prairie de montagne a fini et que les derniers bourdons et syrphes volent encore sans rien trouver. Ce calendrier est tout le cadeau : deux ou trois semaines de nectar ouvert en fin de saison, sur un sol qui a déjà l'air d'en avoir terminé pour l'année.",
+    propagationNote:
+      "Divisez les bulbes en été, pendant la dormance, et replantez-les aussitôt à la profondeur d'une main — ils se multiplient vite d'eux-mêmes. Portez des gants : le bulbe est aussi toxique que le reste.",
+  },
+  "Cardamine pratensis": {
+    supportNotes: {
+      "orange-tip":
+        "L'aurore pond un œuf unique sur une tige florale, et la chenille mange les siliques à mesure qu'elles se forment. Fauchez le coin humide en juin et toute la génération part avec ; laissez-le jusqu'en août et vous gardez le papillon.",
+      "bumble-bees":
+        "Un nectar précoce dans une prairie humide de printemps, au moment où les reines de bourdons fondent encore leurs nids.",
+    },
+    nativeNote:
+      "La fleur lilas pâle des prairies humides alpines, des sources et des bords de ruisseaux ombragés, en avril et mai — en même temps que le premier coucou, d'où son autre nom de cresson des prés.",
+    careNote:
+      "Il lui faut un sol qui reste mouillé au printemps — un suintement, un bord de fossé, le bas d'une prairie humide — et elle y accepte une vraie ombre. Ne la fauchez pas avant le cœur de l'été : elle doit monter en graines et, plus important, les chenilles y sont encore. Elle se ressème et laisse aussi tomber des feuilles qui s'enracinent où elles touchent, si bien qu'une tache se remplit toute seule.",
+    givesNote:
+      "C'est la plante de l'aurore : le papillon aux bouts d'ailes orange vif pond un œuf orange unique sur une tige florale, et sa chenille mange les siliques en formation et rien d'autre — ce pour quoi faucher une prairie humide en juin efface la génération de l'année. Elle nourrit aussi la piéride du navet, et son nectar précoce va aux reines de bourdons et aux syrphes.",
+    propagationNote:
+      "Le plus sûr est de coucher une feuille mûre sur de la terre humide : elle s'enracine à la base des folioles et fait un nouveau pied. Sinon, semez frais en fin de printemps sans laisser sécher la graine.",
+  },
+  "Sesleria caerulea": {
+    supportNotes: {
+      "grass-skippers":
+        "Les moirés et les hespéries de montagne élèvent leurs chenilles sur des graminées comme celle-ci, chacune cachée dans une feuille qu'elle a cousue.",
+    },
+    nativeNote:
+      "La touffe nette gris-bleu des vires calcaires et des pelouses alpines maigres — l'une des premières graminées à fleurir en montagne, avec de courts épis sombres poussés dès avril alors que le sol est encore nu.",
+    careNote:
+      "Drainage vif et calcaire : c'est une plante de calcaire et elle ne vous remerciera pas d'un sol riche et humide. Persistante, basse, et faisant lentement touffe plutôt que traçant, elle convient donc à un jardin de gravier, à une tête de mur ou au premier rang d'un massif sec. Peignez les feuilles mortes à la main au début du printemps ; ne la rabattez pas.",
+    givesNote:
+      "Elle fleurit en avril, ce qui pour une graminée de montagne est remarquablement tôt, et les touffes restent vertes tout l'hiver — un couvert au ras du sol sur des terres maigres et pierreuses qui n'en ont presque aucun. Les hespéries et les moirés de montagne élèvent leurs chenilles sur des graminées comme celle-ci, et la graine nourrit fringilles et bruants.",
+    propagationNote:
+      "Divisez une touffe établie au début du printemps et replantez les éclats aussitôt dans un mélange graveleux. La graine, semée fraîche dehors à l'automne, lève après l'hiver.",
+  },
+  "Carex sempervirens": {
+    supportNotes: {
+      "grass-skippers":
+        "La pelouse de laîches au-dessus de la limite des arbres est le terrain à chenilles des petits moirés et des hespéries de montagne, c'est-à-dire de l'essentiel de ce qui vole là-haut.",
+      "black-grouse":
+        "Une pelouse de laîches en touradons est là où la poule de tétras-lyre installe son nid et où les poussins trouvent les insectes dont ils ont besoin les premières semaines.",
+    },
+    nativeNote:
+      "La laîche qui fait la pelouse des pâturages alpins calcaires — le tapis élastique sous le pied au-dessus de la limite des arbres, qui retient un sol mince sur une pente raide.",
+    careNote:
+      "Plein soleil à ombre légère sur un sol pierreux et drainant, et pas d'arrosage une fois reprise. Elle est persistante et forme un tapis dense de racines fibreuses réellement efficace pour tenir un talus raide — c'est son métier dans la nature et la raison de la planter dans un jardin taillé dans une pente. Elle ne demande aucune taille ; peignez-la au printemps si elle a l'air fatiguée.",
+    givesNote:
+      "Les laîches portent une charge de chenilles surprenante, et les petits moirés et hespéries de montagne grandissent sur une pelouse comme celle-là. Au-delà, le tapis est l'habitat : il retient la terre sur un sol qui glisserait sans lui, garde une mince peau d'ombre et d'humidité sur la pierre, et abrite les coléoptères, araignées et sauterelles d'un versant alpin.",
+    propagationNote:
+      "Divisez au printemps et replantez aussitôt en gardant les éclats humides le premier été. Le semis d'automne dehors marche, mais la division installe un tapis bien plus vite.",
+  },
+  "Clematis alpina": {
+    supportNotes: {
+      "bumble-bees":
+        "Des clochettes pendantes dans lesquelles un bourdon doit entrer tout entier, ce pour quoi elles sont exactement faites — en mai, sur une paroi rocheuse où peu d'autre est sorti.",
+    },
+    nativeNote:
+      "Une clématite grêle des bois rocheux et des fourrés de montagne, qui suspend en mai et juin des clochettes pendantes bleu-violet, puis toute la belle saison une houppe de fils argentés.",
+    careNote:
+      "La vieille règle tient : le pied à l'ombre fraîche, la tête à la lumière. Plantez-la au nord ou à l'est d'un arbuste, d'un mur ou d'un petit arbre et laissez-la grimper. Elle veut un sol qui ne sèche pas et n'aime pas le soleil chaud sur ses racines : paillez-la ou posez une pierre plate sur son pied. Elle fleurit sur le bois de l'année précédente, alors taillez-la — si vous y tenez — juste après la floraison, jamais en hiver.",
+    givesNote:
+      "Des clochettes pendantes en début d'été dans lesquelles un bourdon doit entrer tout entier, ce pour quoi elles sont faites. La clématite porte une vraie charge de chenilles pour une grimpante, et les houppes de graines argentées qui suivent tiennent jusqu'en hiver et sont défaites par les petits oiseaux au printemps pour garnir leurs nids.",
+    propagationNote:
+      "Le marcottage est la méthode sûre : couchez une longue pousse dans la terre au printemps, laissez-la un an, détachez-la enracinée. Par semis, semez les têtes plumeuses en pot dehors à l'automne et laissez l'hiver faire le froid ; c'est lent.",
+  },
+  "Polystichum lonchitis": {
+    nativeNote:
+      "Une fougère raide, sombre et à bord épineux des éboulis calcaires d'altitude et des vires rocheuses — l'une des rares fougères qui vivent en pleine pelouse alpine, bien au-dessus des arbres.",
+    careNote:
+      "Une plante de rocaille plutôt que de massif : placez-la dans une fissure calcaire graveleuse ou du côté ombragé d'un rocher, le collet bien dégagé pour que l'eau n'y stagne pas. Elle est lente, persistante et de longue vie, et elle veut des hivers froids — c'est l'une des rares choses de cette liste plus heureuse en altitude qu'en vallée. Ne la nourrissez pas et ne la déplacez pas.",
+    givesNote:
+      "Elle garnit le côté ombragé de la roche, qui est en montagne l'endroit où beaucoup de petite vie s'abrite à la fois du soleil et du gel — coléoptères, araignées, et les insectes que chassent lézards et pipits. Très peu d'insectes mangent les fougères : la valeur est ici l'anfractuosité, pas le repas.",
+    propagationNote:
+      "Les spores mûres, semées à l'automne sur un terreau stérilisé maintenu humide sous verre, lèvent lentement mais sûrement. Ne prélevez pas dans la nature et ne divisez pas un pied établi : il n'aime pas être dérangé.",
+  },
+  "Asplenium viride": {
+    nativeNote:
+      "Une petite fougère délicate des fissures calcaires ombragées d'altitude — comme la capillaire des murailles des vieux murs, mais à pétiole vert au lieu de noir.",
+    careNote:
+      "Pas une plante de massif : glissez un jeune pied dans une fissure ombragée de calcaire ou de mur de pierre sèche, avec du gravier et rien d'autre aux racines, et laissez-le entièrement tranquille. Elle veut une exposition fraîche au nord ou à l'est et n'aime ni le vent desséchant ni l'eau stagnante. Lente, minuscule, et de longue vie là où elle se plaît.",
+    givesNote:
+      "Ce que donne une fougère de fissure, c'est la fissure : une poche verte, humide et abritée sur une paroi qui n'offrirait rien sans elle, et avec elle les araignées, les collemboles et les petits coléoptères qui y vivent, puis les mousses qui suivent. Comme toute fougère, elle nourrit très peu de chenilles, et le dire est plus utile que de faire semblant.",
+    propagationNote:
+      "Frottez une fronde mûre au-dessus d'un joint ombragé humide en fin d'été et laissez faire, ou semez les spores sous verre sur un terreau stérilisé. Dans les deux cas, il faut de la patience et une exposition fraîche.",
+  },
 };

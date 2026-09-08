@@ -364,4 +364,175 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     propagationNote:
       "Comme chez la plupart des légumineuses, le tégument est dur : entaillez-le à la lime ou faites-le tremper une nuit dans de l'eau tiède avant de semer à l'automne. Les boutures en voie d'aoûtement prises en fin d'été s'enracinent aussi dans un mélange graveleux.",
   },
+  // -------------------------------------------------------------------------
+  // France méditerranéenne — la ripisylve, la ronce et les fougères de murs.
+  // -------------------------------------------------------------------------
+  "Salix alba": {
+    supportNotes: {
+      "poplar-hawk-moth":
+        "La grosse chenille verte du sphinx du peuplier grandit sur les saules et les peupliers ; l'adulte passe la journée posé, ailes postérieures poussées en avant des antérieures, exactement comme un paquet de feuilles mortes.",
+      "purple-emperor":
+        "Le grand mars changeant ne pond que sur les saules, haut dans la canopée — le mâle passe sa vie à la cime des arbres et n'en descend que pour les flaques et les charognes dont personne n'aime parler.",
+      "mourning-cloak":
+        "Les chenilles noires et épineuses du morio mangent en groupe sur le saule, et l'adulte hiverne au lieu de migrer : c'est l'un des tout premiers papillons d'un printemps méridional.",
+      "mason-bees":
+        "Les chatons de mars sont le premier vrai pollen de l'année au bord d'une rivière méditerranéenne, et les abeilles solitaires sortent à leur rencontre.",
+    },
+    nativeNote:
+      "Le grand saule des berges et des canaux d'irrigation du Midi — des feuilles à revers argenté qui pâlissent l'arbre entier quand le mistral le traverse.",
+    careNote:
+      "À ne planter que là où il y a vraiment de l'eau : une berge, un fossé, un bas-fond qui reste humide. Il est rapide, il est grand, et ses racines trouvent une canalisation qui fuit ou un vieux drain de très loin — tenez-le à l'écart des deux. On le recèpe traditionnellement en têtard tous les quelques années, ce qui le garde à taille raisonnable et donne l'osier ; si c'est ce que vous voulez, commencez tant que l'arbre est jeune.",
+    givesNote:
+      "La plante à chenilles la plus lourde de cette liste — rien d'autre dans le Midi n'en approche — et c'est elle qui nourrit les fauvettes, les mésanges et les rossignols qui nichent le long d'une rivière. Les chatons de mars sont le premier pollen sérieux de l'année pour les abeilles qui sortent dans un printemps méditerranéen, et un vieux têtard se creuse en gîte pour les chauves-souris et les chevêches.",
+    propagationNote:
+      "Le saule s'enracine plus facilement que presque tout : coupez en hiver une baguette d'un an de la longueur d'un avant-bras, enfoncez-en les deux tiers dans un sol humide, et laissez-la faire. Rien d'autre à ajouter.",
+  },
+  "Populus nigra": {
+    supportNotes: {
+      "poplar-hawk-moth":
+        "Le peuplier est l'autre arbre du sphinx, et c'est sur un peuplier noir de bord de rivière qu'on trouve les chenilles — grosses, vertes, armées d'une corne émoussée à l'arrière.",
+      "mourning-cloak":
+        "Les chenilles du morio prennent le peuplier aussi volontiers que le saule, serrées en un tas noir bien visible avant de se disperser pour se transformer.",
+      "blackcaps-warblers":
+        "Un peuplier de berge est là où les fauvettes nichent et se nourrissent au passage — la charge de chenilles de la canopée est la raison de leur arrêt.",
+    },
+    nativeNote:
+      "Le peuplier noir sauvage des graviers de rivière méditerranéens — l'arbre large, sombre et crevassé, et non la mince colonne d'Italie plantée le long des routes, qui n'en est qu'une forme cultivée.",
+    careNote:
+      "Un grand arbre de rivière et un mauvais arbre de petit jardin : ne le plantez que si vous avez la place et un sol humide, et gardez-le loin des drains. Demandez la vraie espèce sauvage plutôt qu'un peuplier hybride — le peuplier noir sauvage est l'un des arbres indigènes les plus menacés d'Europe, réduit à de vieux individus dispersés le long de rivières qui ne débordent plus, et un pied de jardin qui fleurit est une contribution réelle. Les pieds femelles lâchent du coton en juin, ce pour quoi les pépinières vendent surtout des mâles.",
+    givesNote:
+      "Deuxième derrière le saule pour les chenilles : un peuplier de bord d'eau est le garde-manger d'un oiseau nicheur. Les chatons pourpres de mars sont un pollen précoce, les sillons de l'écorce abritent les insectes qui hivernent, et les vieux troncs se fendent en cavités où logent chouettes, rougequeues et chauves-souris.",
+    propagationNote:
+      "Comme le saule : une baguette d'un an coupée en hiver et enfoncée dans un sol humide s'enracine. Achetez le pied d'origine auprès d'une pépinière qui garantit l'espèce sauvage, puis multipliez-le vous-même.",
+  },
+  "Rubus ulmifolius": {
+    supportNotes: {
+      "bumble-bees":
+        "Des mois de fleurs ouvertes à partir de mai : une ronce au soleil est la plante la plus bruyante d'un jardin du Midi — bourdons, abeilles solitaires, syrphes et coléoptères en même temps.",
+      "green-hairstreak":
+        "L'argus vert — le seul papillon vert d'Europe, et qu'on trouve en surveillant un talus broussailleux ensoleillé plutôt qu'un massif — pond sur la ronce parmi quelques autres arbustes de terrain vague.",
+      "painted-lady":
+        "Les belles-dames qui remontent la côte au printemps se gavent sur la ronce, parfois à une douzaine sur un même buisson.",
+      "blackcaps-warblers":
+        "Les mûres d'août sont ce sur quoi une fauvette prend son poids pour le voyage vers le sud, et le fouillis épineux est là où elle a niché en juin.",
+    },
+    nativeNote:
+      "La ronce du Midi — talus de haies, bords de ruisseaux et pied ombragé de tous les vieux murs, avec un revers de feuille feutré de blanc et des cannes arquées qui s'enracinent là où elles touchent.",
+    careNote:
+      "Sachez ce que vous acceptez : elle s'enracine par la pointe de ses cannes et fait un fourré, et c'est la plante de cette liste la plus susceptible de prendre plus de place que vous ne lui en offriez. C'est précisément pourquoi elle a sa place sur une limite rustique ou un talus à couvrir, et nulle part près d'un massif. Coupez chaque hiver à la base les cannes qui ont fructifié et elle reste productive et praticable.",
+    givesNote:
+      "Sans doute la meilleure plante à faune d'un jardin du sud de la France. Des mois de fleurs que tout le monde travaille — bourdons, abeilles solitaires, syrphes, et plus d'espèces de papillons que sur toute autre plante d'ici ; puis des mûres dès août pour les fauvettes, les fauvettes à tête noire, les renards et les blaireaux ; et un enchevêtrement épineux qui est le couvert de nidification le plus sûr du paysage.",
+    propagationNote:
+      "Le plus simple est de laisser faire : couchez la pointe d'une canne au sol en fin d'été, fixez-la, et elle s'enracine avant l'hiver — coupez alors le lien avec la plante mère. Les graines demandent de passer par un oiseau ou par un long hiver dehors.",
+  },
+  "Salvia rosmarinus": {
+    supportNotes: {
+      "bumble-bees":
+        "Le romarin fleurit de novembre à avril — tout l'hiver méditerranéen — si bien qu'un après-midi doux de janvier, c'est à peu près la seule chose ouverte qu'une reine de bourdon puisse trouver.",
+      "mason-bees":
+        "Les premières abeilles solitaires sortent sur le romarin, des semaines avant la floraison des amandiers à qui on en donne d'ordinaire le crédit.",
+      "cleopatra":
+        "Le citron de Provence — le cousin méridional du citron, avec une éclaboussure orange sur l'aile antérieure — se nourrit au romarin les jours chauds de tout l'hiver.",
+    },
+    nativeNote:
+      "Sauvage sur la garrigue calcaire de Provence et du Languedoc bien avant d'être une herbe de cuisine — et sous ce climat, c'est l'arbuste qui fleurit quand l'année est au plus vide.",
+    careNote:
+      "Plein soleil, sol pauvre et caillouteux, drainage vif, et pas une goutte d'eau en été : un romarin dans un massif arrosé s'empâte et pourrit au collet. Taillez-le légèrement après la floraison principale ; ne recoupez jamais dans le vieux bois nu, il n'en repart pas. Les variétés vendues comme culinaires sont la même espèce et fleurissent tout aussi bien, mais un pied issu de souche sauvage locale est plus dur et mieux charpenté pour un jardin qui prend le mistral.",
+    givesNote:
+      "Il fleurit de novembre à avril, à travers tout l'hiver méditerranéen, quand presque rien d'autre n'est ouvert : c'est donc la plante qui porte les reines de bourdons, les abeilles domestiques et les premières abeilles solitaires à travers les mois maigres. Par un janvier doux, un gros romarin est ce qu'il y a de plus bruyant au jardin. Sa masse persistante est un abri d'hiver pour les petits oiseaux.",
+    propagationNote:
+      "Les boutures sont si faciles qu'il n'y a pas de raison de semer : prélevez en fin d'été des pousses de la longueur d'un doigt, effeuillez le bas, piquez-les dans du sable grossier à l'ombre légère, et gardez-les à peine humides. Comptez six semaines.",
+  },
+  "Scabiosa columbaria": {
+    supportNotes: {
+      "six-spot-burnet":
+        "Les têtes de scabieuse sont l'endroit où les zygènes passent l'après-midi, plusieurs par fleur, ailes fermées et sans aucune hâte.",
+      "bumble-bees":
+        "Cinq mois de capitules plats et ouverts sur un sol pauvre et sec, ce qui est exactement là où une colonie de bourdons passe la fin d'été ici.",
+      "painted-lady":
+        "Les papillons de toutes tailles travaillent la scabieuse à la hauteur qui leur convient — demi-deuils, azurés et hespéries à côté des belles-dames.",
+    },
+    nativeNote:
+      "La pelote d'épingles lilas pâle des pelouses calcaires sèches et des bords de garrigue, sur des tiges de fil de fer que le moindre vent fait bouger.",
+    careNote:
+      "Drainage vif et plein soleil sur un calcaire pauvre ; elle pourrit dans un massif riche et arrosé et boude dans l'argile. Rabattez les tiges défleuries au milieu de l'été et elle refleurit jusqu'en septembre. De vie courte — trois ou quatre ans — alors laissez quelques semis se lever pour la remplacer.",
+    givesNote:
+      "Cinq mois de capitules plats et ouverts, exactement à la hauteur où un papillon travaille, dans une saison où la garrigue a fini : demi-deuils, hespéries, azurés et syrphes y sont sans arrêt. Plusieurs abeilles solitaires récoltent spécifiquement le pollen des scabieuses, et les têtes de graines portent les chardonnerets jusqu'à l'automne.",
+    propagationNote:
+      "Semez frais en fin d'été, dehors, en terrine sableuse : la graine lève sans traitement au froid et le jeune plant passe l'hiver en pot. Ou laissez-la simplement se ressemer, ce qu'elle fait bien sur un gravier.",
+  },
+  "Arum italicum": {
+    supportNotes: {
+      "winter-thrushes":
+        "L'épi de baies rouges se dresse sur la terre nue en fin d'été, une fois les feuilles parties, et merles et grives le dépouillent — c'est ainsi que le gouet avance le long d'une haie.",
+    },
+    nativeNote:
+      "Les feuilles en fer de flèche marbrées de blanc qui montent à l'ombre humide dès l'automne et restent vertes tout l'hiver, au bord des ruisseaux et sous les haies de tout le Midi — puis disparaissent en juillet en laissant un épi de baies rouges sur la terre nue.",
+    careNote:
+      "L'ombre humide au pied d'une haie, d'un mur ou d'un arbre — le seul coin qu'un jardin méditerranéen a d'ordinaire et ne plante presque jamais. Son année tourne à l'envers de tout le reste d'ici : feuilles de l'automne à l'hiver, fleur en avril, puis disparition complète dans la chaleur ; mettez-le donc là où une place vide en août n'a pas d'importance. Il se ressème librement. **Toute la plante est toxique** et les baies attirent les enfants : réfléchissez avant de le planter près d'une aire de jeu.",
+    givesNote:
+      "Il couvre le sol ombragé pendant tout l'hiver, quand rien d'autre ici n'est vert, et retient la terre d'un talus ombragé pendant la saison des orages. Sa fleur fonctionne comme un piège : elle chauffe, sent la matière en décomposition, et enferme pour la nuit de petites mouches qui font la pollinisation avant d'être relâchées. Les baies d'automne vont aux merles et aux grives, et c'est ainsi qu'il se déplace le long d'une haie.",
+    propagationNote:
+      "Divisez les tubercules en fin d'été, pendant la dormance, et replantez-les aussitôt à la profondeur d'une main. Les baies semées fraîches lèvent aussi, mais le pied met trois ou quatre ans à fleurir — portez des gants dans les deux cas.",
+  },
+  "Carex flacca": {
+    supportNotes: {
+      "grass-skippers":
+        "Les laîches sont les plantes-hôtes de toute une liste de petits papillons bruns et de papillons de nuit, et une touffe de laîche humide est l'endroit où ils traversent un été méditerranéen.",
+    },
+    nativeNote:
+      "La laîche gris-bleu des calcaires humides — lignes de sources, bords de fossés et sols suintants là où un versant de garrigue rencontre un ruisseau.",
+    careNote:
+      "Elle trace au niveau des racines en un tapis bas gris-bleu, ce qui est précisément le travail demandé — un talus humide, le fond d'un jardin de pluie, la bordure ombragée d'une allée — et non ce que vous voulez dans un petit massif. Elle accepte le calcaire, l'argile et la mi-ombre sans se plaindre, et garde sa couleur toute l'année. Peignez les vieilles feuilles à la main en fin d'hiver.",
+    givesNote:
+      "Les laîches nourrissent les chenilles d'une longue liste de petits papillons bruns que personne ne nomme, et une touffe de laîche humide est là où ils passent l'été. Elle fait aussi le travail le plus simple qui soit : ralentir le ruissellement et filtrer ce qui s'infiltre, sur un sol qui autrement enverrait une averse directement à la rue.",
+    propagationNote:
+      "Divisez une touffe établie au printemps, à la bêche, et replantez les éclats aussitôt en les gardant humides le premier été. Le semis marche aussi, mais la division est plus rapide et donne le tapis d'un coup.",
+  },
+  "Lonicera implexa": {
+    supportNotes: {
+      "privet-hawk-moth":
+        "Les longs tubes crème s'ouvrent au crépuscule et sentent le plus fort à ce moment-là, parce qu'ils sont faits pour la trompe d'un sphinx — les grands sphinx du troène et du liseron travaillent un chèvrefeuille dans la dernière lumière d'un soir de juin.",
+      "blackcaps-warblers":
+        "Des baies rouges à l'automne pour les fauvettes, sur un enchevêtrement persistant où elles nicheront aussi.",
+    },
+    nativeNote:
+      "Le chèvrefeuille persistant du maquis, qui s'enroule dans le chêne vert et le lentisque — les paires de feuilles du haut soudées en un disque au milieu duquel se pose le bouquet de fleurs.",
+    careNote:
+      "L'ombre au pied et le soleil à la tête : la vieille règle est la bonne — plantez-le au pied d'un arbuste ou sur le côté ombragé d'une pergola. Il est persistant, ce que les chèvrefeuilles du Nord ne sont pas, et il veut un drainage vif et pas d'eau en été. Rabattez-le après la floraison s'il se dégarnit du bas. Les baies sont toxiques si on les mange.",
+    givesNote:
+      "De longs tubes crème qui s'ouvrent au crépuscule et sentent le plus fort à cette heure-là, parce qu'ils sont bâtis pour les sphinx — un chèvrefeuille méditerranéen au soir de juin est le meilleur endroit pour voir travailler le moro-sphinx et le grand sphinx du liseron. Baies rouges à l'automne pour les fauvettes, et fouillis persistant pour la nidification.",
+    propagationNote:
+      "Bouturez en fin d'été des pousses en voie d'aoûtement de la longueur d'une main, dans un mélange graveleux, à l'ombre. Le marcottage marche aussi : couchez une tige, fixez-la, et détachez-la l'année suivante.",
+  },
+  "Asplenium ceterach": {
+    nativeNote:
+      "La fougère des vieux murs de pierre sèche et des fissures calcaires de tout le Midi — verte dessus, couverte dessous d'écailles rouillées, d'où lui vient son nom.",
+    careNote:
+      "Pas du tout une plante de massif : elle veut une fissure verticale dans un mortier ou un calcaire, à l'ombre la plus grande partie de la journée, et rien d'autre que du gravier aux racines. Glissez un jeune pied dans un joint de mur et oubliez-le. Dans un août sec, les frondes s'enroulent en poings bruns serrés et paraissent tout à fait mortes ; elles se rouvrent dans les heures qui suivent la première pluie, et l'arroser en été est la seule chose qui puisse la tuer.",
+    givesNote:
+      "Ce que donne une fougère de mur, c'est la fissure fraîche et humide elle-même — l'endroit où araignées, cloportes, petits coléoptères et geckos passent vivants un été méditerranéen. Très peu d'insectes mangent les fougères, et prétendre le contraire serait malhonnête : la valeur est ici l'abri, sur une surface qui n'en offre aucun.",
+    propagationNote:
+      "Elle arrive seule si le mur lui convient : les spores voyagent, et la meilleure « multiplication » est de ne pas rejointoyer. Pour l'aider, frottez une fronde mûre au-dessus d'un joint ombragé humide en fin d'été.",
+  },
+  "Asplenium trichomanes": {
+    nativeNote:
+      "La petite fougère à tige noire des joints de mortier de tous les vieux murs et de toutes les parois rocheuses ombragées du Midi — des rangées régulières de folioles rondes sur un pétiole fin comme un fil.",
+    careNote:
+      "Même règle que le cétérach : une fissure ombragée, pas une bordure. Elle prend un peu plus d'humidité et un peu moins de soleil que sa voisine, si bien que la face nord d'un mur ou le côté ombragé d'un puits lui convient. Persistante, elle garde donc le mur vert tout l'hiver. Ne la nourrissez pas, ne l'arrosez pas, et ne rejointoyez pas le mur.",
+    givesNote:
+      "Une surface vivante sur un mur qui serait nu sans elle — et avec elle l'anfractuosité humide dont dépendent araignées, cloportes et petits coléoptères pendant les mois secs, puis les mousses et les lichens qui suivent. Comme toutes les fougères d'ici, elle ne nourrit presque aucune chenille : son travail est l'abri.",
+    propagationNote:
+      "Comme le cétérach : laissez les spores faire, et n'y touchez pas. Un vieux mur non rejointoyé, à l'ombre d'un côté, se garnit tout seul en quelques années.",
+  },
+  "Adiantum capillus-veneris": {
+    nativeNote:
+      "La fougère des suintements calcaires, des tufs ruisselants et des vieilles fontaines du littoral méditerranéen — des folioles en éventail sur un fil noir, toujours là où l'eau glisse sur la roche.",
+    careNote:
+      "La seule plante de cette liste qui ne peut vraiment pas sécher. Elle veut un calcaire ombragé et humide en permanence — un trop-plein de fontaine, un robinet qui goutte sur un mur nord, la margelle mouillée d'un bassin — et elle ne survivra pas à un massif méditerranéen ordinaire, quoi que vous l'arrosiez. Dans la bonne fissure, elle n'a besoin de rien d'autre et vit des années. Une forte gelée la rabat ; elle repart du rhizome.",
+    givesNote:
+      "Un coin ombragé et mouillé est l'habitat le plus rare d'un jardin du Midi, et c'est la plante qui fait qu'il en a l'air et la fraîcheur. Ce qui y vit est l'essentiel : grenouilles, salamandres, coléoptères des lieux humides et toute la vie minuscule dont le reste se nourrit. Les fougères nourrissent très peu de chenilles, et celle-ci ne fait pas exception.",
+    propagationNote:
+      "Divisez le rhizome au printemps et calez les éclats dans une fissure humide ombragée, ou laissez les spores coloniser une paroi qui ruisselle. Dans les deux cas, l'eau permanente est la condition, pas un détail.",
+  },
 };

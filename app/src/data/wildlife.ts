@@ -362,6 +362,32 @@ export const WILDLIFE: Wildlife[] = [
     inat: { name: "Callophrys gryneus", iconic: "Insecta" },
   },
   {
+    id: "pipevine-swallowtail",
+    common: "Pipevine swallowtail",
+    latin: "Battus philenor",
+    kind: "butterfly",
+    icon: "\u{1F98B}",
+    blurb:
+      "A big butterfly whose upper wings flash iridescent blue-black in the sun and look plain the moment it lands in shade. Its caterpillars eat California pipevine and nothing else, take up the vine's poison and keep it \u2014 which is why they are scarlet, unhurried, and eaten by almost nothing.",
+    native: true,
+    nativeBasis:
+      "Native to North America; the race on this coast is Battus philenor hirsuta, which lives where California pipevine grows and nowhere else. Xerces Society; BAMONA.",
+    inat: { name: "Battus philenor", iconic: "Insecta" },
+  },
+  {
+    id: "lupine-blues",
+    common: "Lupine blues",
+    latin: "Icaricia icarioides",
+    kind: "butterfly",
+    icon: "\u{1F98B}",
+    blurb:
+      "Small silver-blue butterflies that live wherever the right lupines do, and nowhere in between. Around San Francisco Bay one of them is the mission blue, down to a few hills; its caterpillars feed on lupine leaves and then sleep out the whole dry summer at the base of the plant.",
+    native: true,
+    nativeBasis:
+      "Native to western North America \u2014 Boisduval's blue and its local races, including the endangered mission blue (Icaricia icarioides missionensis) of the San Francisco Bay hills. Xerces Society; BAMONA; US Fish & Wildlife Service.",
+    inat: { name: "Icaricia icarioides", iconic: "Insecta" },
+  },
+  {
     id: "painted-lady",
     common: "Painted lady",
     latin: "Vanessa cardui",
@@ -839,6 +865,19 @@ export const WILDLIFE: Wildlife[] = [
     native: true,
     nativeBasis: "Native to eastern North America. Cornell Lab of Ornithology.",
     inat: { name: "Archilochus colubris", iconic: "Aves" },
+  },
+  {
+    id: "chestnut-backed-chickadee",
+    common: "Chestnut-backed chickadee",
+    latin: "Poecile rufescens",
+    kind: "bird",
+    icon: "\u{1F426}",
+    blurb:
+      "A tiny bird with a chestnut back and a voice like a rusty hinge, tied to the damp conifer and oak country of this coast. It hunts caterpillars along the undersides of leaves all spring, and one nesting pair needs thousands of them to get a brood away.",
+    native: true,
+    nativeBasis:
+      "Native to the Pacific coast from Alaska to central California. Cornell Lab of Ornithology; Audubon California.",
+    inat: { name: "Poecile rufescens", iconic: "Aves" },
   },
   {
     id: "band-tailed-pigeon",
@@ -1750,6 +1789,299 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
   },
 
+  "ca-central-coast": {
+    "quercus-agrifolia": [
+      { wildlifeId: "propertius-duskywing", support: "host", reliance: "sole", note: "The propertius duskywing lays on oak and nothing else, and its caterpillars overwinter rolled up in the fallen leaves — which is the argument for leaving the litter where it falls under the tree.", basis: "Xerces Society; BAMONA." },
+      { wildlifeId: "chestnut-backed-chickadee", support: "shelter", note: "A chickadee pair works the new oak leaves from dawn all through spring, because a brood of nestlings needs thousands of caterpillars and an oak is where they are.", basis: "Cornell Lab; Tallamy, caterpillar-provisioning research." },
+      { wildlifeId: "acorn-birds", support: "seeds", note: "Acorn woodpeckers drill storage granaries full of them and scrub-jays bury thousands each autumn, planting the next generation of oaks by forgetting where.", basis: "Cornell Lab; UC Oak Woodland Management." },
+      { wildlifeId: "acorn-mammals", support: "seeds", note: "Ground squirrels, dusky-footed woodrats and deer all live off the acorn crop through the autumn.", basis: "USDA PLANTS; UC ANR." },
+      { wildlifeId: "bushtit", support: "shelter", note: "Coast live oak is the bushtit's tree above all others: it feeds in the canopy and hangs its long woven sock of a nest from an outer branch.", basis: "GloBI — iNaturalist observation records; Cornell Lab." },
+    ],
+    "quercus-lobata": [
+      { wildlifeId: "propertius-duskywing", support: "host", reliance: "sole", note: "Oak leaves and nothing else, on the valley oak just as on the live oak — and the caterpillars spend the winter in the leaf litter underneath.", basis: "Xerces Society; BAMONA." },
+      { wildlifeId: "acorn-birds", support: "seeds", note: "The long pointed acorns are the ones the jays and acorn woodpeckers want most; a single old valley oak can feed a neighbourhood of them.", basis: "Cornell Lab; UC Oak Woodland Management." },
+      { wildlifeId: "acorn-mammals", support: "seeds", note: "Woodrats, ground squirrels and deer take the crop, and an old hollow trunk becomes a woodrat house in its own right.", basis: "UC ANR; USFS FEIS." },
+      { wildlifeId: "chestnut-backed-chickadee", support: "shelter", note: "Chickadees and titmice hunt caterpillars through the new leaves in spring and nest in the cavities an old valley oak accumulates.", basis: "Cornell Lab." },
+    ],
+    "sequoia-sempervirens": [
+      { wildlifeId: "band-tailed-pigeon", support: "shelter", note: "Band-tailed pigeons perch and roost high in redwood crowns and drop down to feed elsewhere — the tree is the safe place, not the food.", basis: "Cornell Lab; Audubon California." },
+      { wildlifeId: "chestnut-backed-chickadee", support: "shelter", note: "This is the chickadee's home forest: it forages along the sprays of foliage all year and nests in soft rotten wood in a dead limb.", basis: "Cornell Lab; Audubon California." },
+    ],
+    "pseudotsuga-menziesii": [
+      { wildlifeId: "conifer-seed-finches", support: "seeds", note: "Red crossbills are tied to Douglas-fir more closely than to any other tree — a flock working the crown of one big fir is a sound of these coast ranges.", basis: "Cornell Lab; USDA Silvics of North America." },
+      { wildlifeId: "ceanothus-silkmoth", support: "host", note: "Douglas-fir is one of the trees the ceanothus silkmoth's caterpillars accept — a palm-sized moth with no mouth, which lives its whole adult life on what it ate as a larva.", basis: "GloBI — HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM); Xerces Society." },
+      { wildlifeId: "chestnut-backed-chickadee", support: "shelter", note: "Chickadees work the needle sprays for insects right through the winter, hanging upside-down at the branch tips where nothing heavier can reach.", basis: "Cornell Lab." },
+    ],
+    "hesperocyparis-sargentii": [
+      { wildlifeId: "juniper-hairstreak", support: "host", reliance: "sole", note: "The juniper hairstreak's caterpillars eat cypress and juniper foliage and nothing else. It is the same green as the leaves and sits dead still on them, so the way to find one is to tap a branch and watch what flies out.", basis: "Xerces Society; BAMONA." },
+      { wildlifeId: "lesser-goldfinch", support: "seeds", note: "The little round cones break down into fine seed the goldfinches pick out on the branch, hanging sideways to reach it.", basis: "Cornell Lab; USFS FEIS." },
+      { wildlifeId: "bushtit", support: "shelter", note: "Dense evergreen foliage on a hot poor slope is roosting and nesting cover a grassland otherwise has none of.", basis: "Cornell Lab." },
+    ],
+    "arbutus-menziesii": [
+      { wildlifeId: "band-tailed-pigeon", support: "berries", note: "Madrone berries in autumn are a band-tailed pigeon staple — a fruiting tree pulls flocks in from a long way off and they strip it in days.", basis: "Cornell Lab; USFS FEIS." },
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "Waxwings, robins and varied thrushes work the same orange-red crop, usually arriving after the pigeons have had the best of it.", basis: "Cornell Lab." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Urn-shaped spring flowers a bumble bee has to buzz to shake the pollen loose from — a trick the honey bee cannot do.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+      { wildlifeId: "annas-rufous-hummingbird", support: "nectar", note: "Hummingbirds take the hanging urns too, working up a spray from underneath.", basis: "Audubon California." },
+    ],
+    "umbellularia-californica": [
+      { wildlifeId: "pale-swallowtail", support: "host", note: "California bay is one of the handful of trees the pale swallowtail's caterpillars grow up on — the big pale-and-black butterfly patrolling a canyon in early summer came off one of these.", basis: "BAMONA; Xerces Society." },
+      { wildlifeId: "band-tailed-pigeon", support: "berries", note: "The olive-like fruits are a staple: band-tailed pigeons will cross a valley for a bay tree in fruit and strip it.", basis: "Cornell Lab; USFS FEIS." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Thrushes, robins and jays take the fruits through autumn, and the dense evergreen canopy is a favourite winter roost.", basis: "Cornell Lab." },
+    ],
+    "aesculus-californica": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Foot-long candles of flower in May and June, at the exact moment the spring shrubs have finished and the summer ones have not started — the native bees that evolved with it work it hard.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+      { wildlifeId: "pale-swallowtail", support: "nectar", note: "Big swallowtails feed at the flower spikes with their wings still beating, working up one candle and on to the next.", basis: "GloBI — iNaturalist observation records; Xerces Society." },
+      { wildlifeId: "anise-swallowtail", support: "nectar", note: "A hilltopping swallowtail comes down to a buckeye in flower between patrols, and stays a while.", basis: "GloBI — iNaturalist observation records; BAMONA." },
+      { wildlifeId: "acorn-mammals", support: "seeds", note: "Squirrels and woodrats take the big glossy seeds, which is most of how a buckeye gets anywhere, since they are far too heavy to blow.", basis: "USFS FEIS; UC ANR." },
+    ],
+    "acer-macrophyllum": [
+      { wildlifeId: "western-tiger-swallowtail", support: "host", note: "Bigleaf maple is one of the main caterpillar trees of the big yellow swallowtail you see sailing along a creek in summer.", basis: "BAMONA; Xerces Society." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Hanging chains of yellow-green flowers in March are early, rich and easy to reach — mason bees and mining bees are all over them.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+      { wildlifeId: "chestnut-backed-chickadee", support: "shelter", note: "Maple carries one of the West's heaviest caterpillar loads, which is exactly what a chickadee is hunting through the canopy in spring.", basis: "Cornell Lab." },
+      { wildlifeId: "american-goldfinch", support: "seeds", note: "Goldfinches and grosbeaks work the winged seeds as they ripen in late summer.", basis: "Cornell Lab." },
+    ],
+    "alnus-rhombifolia": [
+      { wildlifeId: "lorquins-admiral", support: "host", note: "Lorquin's admiral — the brown butterfly with white bands that patrols a creek and chases everything that passes — grows up on willow and alder along the water.", basis: "BAMONA; Xerces Society." },
+      { wildlifeId: "conifer-seed-finches", support: "seeds", note: "Pine siskins swarm a fruiting alder in winter, hanging upside-down off the little woody cones for the seed inside.", basis: "Cornell Lab." },
+      { wildlifeId: "lesser-goldfinch", support: "seeds", note: "Goldfinches work the same cones alongside the siskins, and both come back to the same tree day after day.", basis: "Cornell Lab; GloBI — iNaturalist observation records." },
+    ],
+    "salix-lasiolepis": [
+      { wildlifeId: "western-tiger-swallowtail", support: "host", note: "Willow is the main caterpillar tree of the big yellow swallowtail of these creeks.", basis: "BAMONA; Xerces Society." },
+      { wildlifeId: "mourning-cloak", support: "host", note: "Mourning cloak caterpillars feed together in a spiny black huddle on willow — and the adults overwinter here rather than migrating, so they are the first butterfly of the year.", basis: "BAMONA; Xerces Society." },
+      { wildlifeId: "lorquins-admiral", support: "host", note: "The other creek-side admiral: it lays on willow, and the adults spend the summer defending a stretch of stream bank.", basis: "BAMONA; Xerces Society." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "February catkins are the richest early pollen in the region, opening exactly when the solitary bees come out.", basis: "Xerces Society." },
+    ],
+    "sambucus-nigra-caerulea": [
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "A waxwing flock finds an elderberry in fruit and takes the crop in an afternoon, passing berries down the line to each other as they go.", basis: "Cornell Lab." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Robins, grosbeaks, orioles and mockingbirds are on it from midsummer — around forty bird species take elderberry across its range.", basis: "Cornell Lab; USFS FEIS." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The huge flat flower heads feed bumble bees, hoverflies, beetles and dozens of small native bee species at once.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+    ],
+    "ceanothus-thyrsiflorus": [
+      { wildlifeId: "ceanothus-silkmoth", support: "host", reliance: "narrow", note: "The moth is named after this shrub and the connection is real: its caterpillars grow up on ceanothus, spin a papery cocoon on a stem, and emerge as a palm-sized moth with no mouth and about a week to find a mate.", basis: "GloBI — HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM); Xerces Society." },
+      { wildlifeId: "echo-azure", support: "host", note: "The echo azure lays on the flower buds, so its caterpillars eat the blossom rather than the leaves — which is why the butterfly appears exactly when the shrub turns blue.", basis: "BAMONA; Xerces Society." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "For three weeks in spring the whole shrub hums: bumble bees, mining bees, hoverflies and beetles at once, and nothing else in the garden comes close.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "The flowers are tiny and shallow, which suits the small solitary bees that cannot reach into anything deeper.", basis: "Xerces Society." },
+      { wildlifeId: "california-quail", support: "shelter", note: "A dense young ceanothus is exactly the low thick cover a quail covey will cross open ground to reach.", basis: "Cornell Lab; Audubon California." },
+    ],
+    "arctostaphylos-manzanita": [
+      { wildlifeId: "annas-rufous-hummingbird", support: "nectar", note: "It flowers from Christmas into March, which on this coast is when Anna's hummingbird is already nesting — a big manzanita is a territory a bird will hold against all comers.", basis: "Audubon California; Cornell Lab." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The first bumble bee queens out of hibernation go straight to manzanita, because in February there is very little else.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "The little apple-like fruits go to thrashers, robins and towhees, and what they miss the foxes and coyotes take.", basis: "USFS FEIS; Cornell Lab." },
+      { wildlifeId: "bushtit", support: "shelter", note: "Bushtits and wrentits nest in the branch structure and work through it all year after insects.", basis: "Cornell Lab." },
+    ],
+    "heteromeles-arbutifolia": [
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "Toyon holds its red berries until midwinter and then a waxwing flock arrives and strips the shrub in a day.", basis: "Cornell Lab; USFS FEIS." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Robins, mockingbirds and band-tailed pigeons work the same crop from December onward — the reason it was ever called Christmas berry.", basis: "Cornell Lab." },
+      { wildlifeId: "american-lady", support: "nectar", note: "Toyon's white flower heads open in the hottest weeks of summer, when a butterfly has few other options.", basis: "GloBI — iNaturalist observation records; Xerces Society." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Midsummer flower heads carry bees and beetles through the thinnest weeks of the year.", basis: "Xerces Society." },
+    ],
+    "frangula-californica": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The flowers look like nothing and are covered from May onward in native bees, hoverflies and the tiny wasps that keep garden pests down.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+      { wildlifeId: "pale-swallowtail", support: "host", note: "Coffeeberry is one of the plants the pale swallowtail's caterpillars accept, along with the bay and the ceanothus it grows among.", basis: "BAMONA; Xerces Society." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Berries turn red then black through autumn for robins, thrashers, jays and mockingbirds, on a shrub dense enough for them to nest inside.", basis: "Cornell Lab; USFS FEIS." },
+    ],
+    "ribes-sanguineum": [
+      { wildlifeId: "annas-rufous-hummingbird", support: "nectar", note: "Hanging pink tassels from January — on this coast that is exactly when Anna's is nesting and the rufous hummingbirds are arriving from the south, and for a few weeks this shrub is most of what they have.", basis: "Audubon California; Cornell Lab." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Early solitary bees work the tassels alongside the hummingbirds, weeks before the orchard trees open.", basis: "Xerces Society." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "The blue-black berries in summer go to thrushes, robins and towhees.", basis: "Cornell Lab." },
+    ],
+    "ribes-speciosum": [
+      { wildlifeId: "annas-rufous-hummingbird", support: "nectar", note: "Rows of red tubes hanging under every arching branch in January and February, built for a hummingbird and used by little else. Anna's will defend a big one.", basis: "Audubon California; Xerces Society." },
+      { wildlifeId: "bushtit", support: "shelter", note: "The spiny thicket is safe nesting cover for bushtits, wrentits and towhees.", basis: "Cornell Lab." },
+    ],
+    "baccharis-pilularis": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The thing that matters is *when*: coyote brush flowers from September to December, after everything else has finished, and a big one in October is louder than any spring shrub.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+      { wildlifeId: "monarch", support: "nectar", note: "Monarchs heading for the overwintering groves along this coast in autumn feed on coyote brush on the way — it is often the last full meal available.", basis: "Xerces Society (Western Monarch Count); Cornell Lab." },
+      { wildlifeId: "painted-lady", support: "nectar", note: "Painted ladies and other late butterflies crowd onto the flat cream flower heads through the autumn.", basis: "GloBI — iNaturalist observation records; BAMONA." },
+      { wildlifeId: "california-quail", support: "shelter", note: "A stand of coyote brush is the cover a quail covey lives in — dense at the bottom, open enough underneath to run through.", basis: "Cornell Lab; Audubon California." },
+    ],
+    "diplacus-aurantiacus": [
+      { wildlifeId: "variable-checkerspot", support: "host", reliance: "narrow", note: "The variable checkerspot lays on a short list of plants and monkeyflower is one of the main ones here — the spiny black caterpillars feed in a group and are easy to find once you know the leaf.", basis: "Xerces Society; BAMONA." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The flower is a tube a bumble bee has to force its way into, and it is open from March to August.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+      { wildlifeId: "annas-rufous-hummingbird", support: "nectar", note: "Hummingbirds take it too, working along a bank of monkeyflower flower by flower.", basis: "Audubon California." },
+    ],
+    "vaccinium-ovatum": [
+      { wildlifeId: "chestnut-backed-chickadee", support: "shelter", note: "Huckleberry carries one of the heaviest caterpillar loads of any shrub in the West, which is what the chickadees are working over in a coastal hedge all spring.", basis: "Cornell Lab; Tallamy/NWF keystone lists." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bell-shaped flowers a bumble bee buzzes to shake the pollen out of — a trick honey bees cannot do.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+      { wildlifeId: "band-tailed-pigeon", support: "berries", note: "Band-tailed pigeons come to huckleberry in late summer and take the fruit whole.", basis: "Cornell Lab; USFS FEIS." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Robins and thrushes work the same crop into autumn, and generally beat you to it.", basis: "Cornell Lab." },
+    ],
+    "gaultheria-shallon": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Rows of little pink urns in spring, which a bumble bee works hanging upside-down underneath.", basis: "Xerces Society." },
+      { wildlifeId: "band-tailed-pigeon", support: "berries", note: "Salal berries in late summer are a staple for band-tailed pigeons in the fog-belt forests.", basis: "Cornell Lab; USFS FEIS." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Thrushes and towhees take the dark fruit, and the thicket underneath is where they nest.", basis: "Cornell Lab." },
+    ],
+    "corylus-cornuta": [
+      { wildlifeId: "acorn-birds", support: "seeds", note: "Jays and woodpeckers take the nuts as soon as they fill, usually well before you get to them.", basis: "Cornell Lab; USFS FEIS." },
+      { wildlifeId: "acorn-mammals", support: "seeds", note: "Squirrels and woodrats cache hazelnuts, and the ones they forget are how a hazel gets planted.", basis: "USFS FEIS." },
+      { wildlifeId: "chestnut-backed-chickadee", support: "shelter", note: "A heavy caterpillar plant, so a chickadee works a hazel thoroughly in spring — soft leaves, plenty on them.", basis: "Cornell Lab." },
+    ],
+    "holodiscus-discolor": [
+      { wildlifeId: "echo-azure", support: "host", note: "The echo azure lays on the flower buds of oceanspray, so the caterpillars eat the blossom — one of the reasons the butterfly appears exactly when the plumes open.", basis: "BAMONA; Xerces Society." },
+      { wildlifeId: "variable-checkerspot", support: "host", note: "Oceanspray is one of the woody plants the variable checkerspot's caterpillars will take, alongside the monkeyflower and the bee plant.", basis: "BAMONA; Xerces Society." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "In late June the plumes are solid with small native bees and hoverflies, at the point in summer when the spring shrubs have finished.", basis: "Xerces Society." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees work the plumes too, and the dry seed heads left standing carry insects through the winter.", basis: "Xerces Society." },
+    ],
+    "symphoricarpos-albus": [
+      { wildlifeId: "annas-rufous-hummingbird", support: "nectar", note: "Small pink bells in summer that hummingbirds work along a shaded fence line.", basis: "Audubon California; Cornell Lab." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees are the main visitors — the flower is deep and narrow and suits a long tongue.", basis: "Xerces Society." },
+      { wildlifeId: "variable-checkerspot", support: "host", note: "Snowberry is one of the plants the checkerspot's caterpillars accept, which is a lot to ask of a shrub that also grows in dry shade.", basis: "BAMONA; Xerces Society." },
+      { wildlifeId: "california-quail", support: "berries", note: "The white berries hang on through the winter as the emergency ration — quail, robins and waxwings take them in late winter when everything better has gone.", basis: "Cornell Lab; USFS FEIS." },
+    ],
+    "garrya-elliptica": [
+      { wildlifeId: "bushtit", support: "shelter", note: "Dense evergreen structure on a wind-scoured slope, which is winter shelter and nesting cover when little else there is thick enough.", basis: "Cornell Lab." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "The purple fruits on the female plants go to thrushes and band-tailed pigeons in late summer.", basis: "Cornell Lab; USFS FEIS." },
+    ],
+    "rosa-californica": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Open single flowers all summer, worked for pollen by bumble bees and dozens of smaller native bees — a garden rose with a packed double flower gives them nothing.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Leafcutter bees cut neat semicircles out of rose leaves to line their nest cells — the notches are a sign the garden is working, not a pest.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "The hips hold into midwinter and waxwings, robins and quail work through them when the softer fruit has gone.", basis: "Cornell Lab." },
+      { wildlifeId: "california-quail", support: "shelter", note: "A rose thicket is where the small birds nest and the quail run — thorny enough that almost nothing follows them in.", basis: "Cornell Lab; Audubon California." },
+    ],
+    "lupinus-albifrons": [
+      { wildlifeId: "lupine-blues", support: "host", reliance: "sole", note: "The lupine blues lay on lupines and their caterpillars eat lupine leaves and nothing else. On the hills around San Francisco Bay that includes the mission blue, which survives on a handful of hillsides and needs exactly this plant to be there.", basis: "US Fish & Wildlife Service (mission blue recovery documents); Xerces Society; BAMONA." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A lupine flower has to be levered open, which a bumble bee is strong enough to do and most smaller bees are not.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+      { wildlifeId: "painted-lady", support: "host", note: "Painted lady caterpillars live in little silk tents on lupines as well as on thistles and mallows.", basis: "BAMONA; Xerces Society." },
+    ],
+    "eriophyllum-staechadifolium": [
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "Flat yellow daisy heads from May to September on ground where nothing else flowers — and a run of native bees collect pollen from the sunflower family and nothing else at all.", basis: "Fowler & Droege, Pollen Specialist Bees (West); Xerces Society." },
+      { wildlifeId: "buckwheat-butterflies", support: "nectar", note: "The small blues and hairstreaks of the bluff tops feed here, because on an exposed headland this is most of the nectar there is.", basis: "Xerces Society; BAMONA." },
+      { wildlifeId: "painted-lady", support: "nectar", note: "Painted ladies coming up the coast in spring stop on it, sometimes in numbers.", basis: "GloBI — iNaturalist observation records; BAMONA." },
+    ],
+    "salvia-spathacea": [
+      { wildlifeId: "annas-rufous-hummingbird", support: "nectar", note: "Whorls of magenta flowers stacked up a stem at exactly hummingbird height, from March to June — Allen's hummingbird arrives on this coast in February to breed, just as it starts.", basis: "Audubon California; Cornell Lab." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees work the same whorls from below, pushing up into each flower in turn.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+    ],
+    "iris-douglasiana": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The flower is a landing platform with a tunnel behind it, sized for a big bee to crawl in and out past the pollen.", basis: "Xerces Society." },
+    ],
+    "eschscholzia-californica": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "A poppy offers no nectar at all — everything on it is there for pollen, and the small solitary bees roll around in the middle of the flower to collect it.", basis: "UC Berkeley Urban Bee Lab; Xerces Society." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees work poppies for pollen from February, weeks before most of the garden opens.", basis: "Xerces Society." },
+    ],
+    "erigeron-glaucus": [
+      { wildlifeId: "buckwheat-butterflies", support: "nectar", note: "The coastal blues and hairstreaks feed at seaside daisy through the summer — flat open flowers with no depth to reach into suit a small butterfly exactly.", basis: "Xerces Society; BAMONA." },
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "Five months of daisies on a bluff, for the bees that collect sunflower-family pollen and nothing else.", basis: "Fowler & Droege, Pollen Specialist Bees (West); Xerces Society." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "One of the steadiest nectar sources on the immediate coast, in flower from April into autumn.", basis: "Xerces Society." },
+    ],
+    "asclepias-speciosa": [
+      { wildlifeId: "monarch", support: "host", reliance: "sole", note: "Monarch caterpillars eat milkweed and nothing else. This is the broad-leaved one of the inland valleys — plant it over the hills rather than in the fog belt, and plant it instead of the evergreen tropical milkweed, which keeps monarchs breeding when they should be moving on.", basis: "Xerces Society (Western Monarch Call to Action); US Fish & Wildlife Service." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A milkweed in flower is the busiest square foot in the garden — bumble bees, wasps, beetles and butterflies all at once.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+      { wildlifeId: "western-tiger-swallowtail", support: "nectar", note: "The big swallowtails feed at milkweed heads through midsummer.", basis: "GloBI — iNaturalist observation records; BAMONA." },
+    ],
+    "asclepias-fascicularis": [
+      { wildlifeId: "monarch", support: "host", reliance: "sole", note: "The milkweed that grows on the coast side of the hills, and the one to plant here. The western monarchs that winter in the groves along this coast are down to a fraction of their old numbers, and the caterpillars eat this and nothing else.", basis: "Xerces Society (Western Monarch Count); US Fish & Wildlife Service." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The flower heads feed native bees, wasps and hoverflies right through the driest months.", basis: "Xerces Society." },
+    ],
+    "sidalcea-malviflora": [
+      { wildlifeId: "mallow-specialist-bees", support: "nectar", reliance: "narrow", note: "A small group of native bees collect pollen from mallows and almost nothing else, so a patch of checkerbloom is the difference between them nesting in your garden or not.", basis: "Fowler & Droege, Pollen Specialist Bees (West); Xerces Society." },
+      { wildlifeId: "painted-lady", support: "host", note: "Painted lady and west coast lady caterpillars eat mallow leaves, spinning themselves a little silk tent to feed inside.", basis: "BAMONA; Xerces Society." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees and skippers work the pink cups through the spring.", basis: "Xerces Society." },
+    ],
+    "scrophularia-californica": [
+      { wildlifeId: "bumble-bees", support: "nectar", reliance: "narrow", note: "Those dull little jug-shaped flowers hold some of the richest nectar in the whole California flora, and they are open from February to July — the plant is called the bee plant for a reason.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+      { wildlifeId: "variable-checkerspot", support: "host", reliance: "narrow", note: "One of the short list of plants the variable checkerspot's caterpillars will eat, along with monkeyflower.", basis: "BAMONA; Xerces Society." },
+      { wildlifeId: "annas-rufous-hummingbird", support: "nectar", note: "Hummingbirds work the maroon jugs too, which is easier to believe once you have seen how much nectar is in one.", basis: "Audubon California." },
+    ],
+    "achillea-millefolium": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "A flat head packed with hundreds of tiny flowers is exactly what a short-tongued solitary bee needs — no depth to reach into, hundreds of sips in one place.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", note: "Yarrow is in the sunflower family, so the bees that collect only that family's pollen use it through the summer.", basis: "Fowler & Droege, Pollen Specialist Bees (West)." },
+      { wildlifeId: "american-lady", support: "host", note: "American lady caterpillars grow up on the silver-leaved daisies, yarrow among them, wrapping themselves in leaves and their own silk while they eat.", basis: "BAMONA; Xerces Society." },
+    ],
+    "solidago-velutina-californica": [
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "Goldenrod flowers from July to October when the region is at its driest, and several native bees collect goldenrod pollen and nothing else — miss this and their year has a hole in it.", basis: "Fowler & Droege, Pollen Specialist Bees (West); Xerces Society." },
+      { wildlifeId: "monarch", support: "nectar", note: "Monarchs moving down the coast to the overwintering groves in autumn refuel on goldenrod.", basis: "Xerces Society (Western Monarch Count)." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The last big nectar source of the year for bumble bee colonies trying to raise next spring's queens.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+      { wildlifeId: "american-goldfinch", support: "seeds", note: "Leave the seed heads standing and the goldfinches work them all winter.", basis: "Cornell Lab." },
+    ],
+    "symphyotrichum-chilense": [
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "Aster pollen is what a run of native bees collect and nothing else will do, and this one flowers from June into November.", basis: "Fowler & Droege, Pollen Specialist Bees (West); Xerces Society." },
+      { wildlifeId: "monarch", support: "nectar", note: "The other half of the autumn pair with goldenrod, feeding monarchs and everything else at the end of the season.", basis: "Xerces Society." },
+      { wildlifeId: "painted-lady", support: "nectar", note: "Late butterflies crowd onto aster after the first autumn rains, when it starts again.", basis: "GloBI — iNaturalist observation records; BAMONA." },
+      { wildlifeId: "american-goldfinch", support: "seeds", note: "Goldfinches take the seed through the winter from stems left standing.", basis: "Cornell Lab." },
+    ],
+    "epilobium-canum": [
+      { wildlifeId: "annas-rufous-hummingbird", support: "nectar", note: "Scarlet tubes from August to November, precisely when the hummingbirds need to put weight on and everything else has finished — for Anna's, which stays here all year, this bridges summer and the winter currants.", basis: "Audubon California; Xerces Society." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees cannot reach down the tube, so they bite through it from the side and drink from there — worth watching for.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+      { wildlifeId: "lesser-goldfinch", support: "seeds", note: "The fine seed and its silk go to goldfinches, for food and for nest lining.", basis: "Cornell Lab." },
+    ],
+    "heuchera-micrantha": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Sprays of tiny white flowers held above the leaves, sized for the small solitary bees and hoverflies of a shaded bank.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+    ],
+    "aquilegia-formosa": [
+      { wildlifeId: "annas-rufous-hummingbird", support: "nectar", note: "Nodding red flowers with long spurs — a hummingbird shape, and hummingbirds hover underneath and reach up into them.", basis: "Audubon California; Cornell Lab." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Long-tongued bumble bees get in the front way; the short-tongued ones bite through the spur from outside, which you can watch happening on the same plant.", basis: "Xerces Society." },
+    ],
+    "sisyrinchium-bellum": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Small blue flowers with a yellow eye, open in the morning and shut by afternoon — the very small solitary bees that bigger flowers are no use to work them for pollen.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+    ],
+    "artemisia-douglasiana": [
+      { wildlifeId: "american-lady", support: "host", note: "Mugwort is one of the silver-leaved plants the American lady's caterpillars grow up on, hidden in a shelter of leaves and silk.", basis: "GloBI — HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM); BAMONA." },
+      { wildlifeId: "california-quail", support: "shelter", note: "A mugwort patch on a damp bank is dense cover a quail covey can move through unseen.", basis: "Cornell Lab; Audubon California." },
+    ],
+    "viola-adunca": [
+      { wildlifeId: "greater-fritillaries", support: "host", reliance: "sole", note: "The fritillaries lay on violets and their caterpillars eat violet leaves and nothing else. On this coast that includes Myrtle's silverspot, which hangs on at a handful of sites around Point Reyes because that is where the violets still are.", basis: "US Fish & Wildlife Service (Myrtle's silverspot recovery documents); Xerces Society; BAMONA." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees and small solitary bees take the early spring flowers, before the plant switches to making seed from closed flowers at ground level.", basis: "Xerces Society." },
+    ],
+    "stipa-pulchra": [
+      { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "The skippers — small fast orange butterflies that hold their wings half open — raise their caterpillars on native bunchgrasses, each rolled into a leaf it sews shut behind itself.", basis: "Xerces Society; BAMONA." },
+      { wildlifeId: "california-quail", support: "seeds", note: "Quail work through a bunchgrass stand for seed and use the tussocks as cover between runs.", basis: "Cornell Lab; Audubon California." },
+      { wildlifeId: "lesser-goldfinch", support: "seeds", note: "Goldfinches and sparrows strip the seed heads in early summer.", basis: "Cornell Lab." },
+    ],
+    "festuca-californica": [
+      { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "Native bunchgrasses are what skipper caterpillars eat, and this is the one that grows in the shade under an oak where the others will not.", basis: "Xerces Society; BAMONA." },
+      { wildlifeId: "california-quail", support: "shelter", note: "A big evergreen tussock is cover at exactly the height a quail lives at, and it stays that way all winter.", basis: "Cornell Lab; Audubon California." },
+    ],
+    "danthonia-californica": [
+      { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "Another of the coastal prairie grasses the skippers grow up on — and the bunched habit, with bare soil between tufts, is what the ground-nesting bees of that habitat need too.", basis: "Xerces Society; BAMONA." },
+    ],
+    "elymus-glaucus": [
+      { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "Blue wildrye is a caterpillar grass for the skippers, and it is the one that will grow in shade where the others will not.", basis: "Xerces Society; BAMONA." },
+      { wildlifeId: "lesser-goldfinch", support: "seeds", note: "Sparrows, juncos and goldfinches work the heavy seed heads into autumn.", basis: "Cornell Lab." },
+    ],
+    "carex-tumulicola": [
+      { wildlifeId: "grass-skippers", support: "host", note: "Sedges are the caterpillar plants for several skippers, and this one keeps its leaves all year for them.", basis: "Xerces Society; BAMONA." },
+      { wildlifeId: "california-quail", support: "seeds", note: "Quail and juncos pick seed out of a sedge meadow and scratch through the litter beneath it.", basis: "Cornell Lab." },
+    ],
+    "juncus-patens": [
+      { wildlifeId: "california-quail", support: "shelter", note: "A damp rush stand is cover and a drinking place at once, which is why a garden with a wet corner gets birds a dry one never will.", basis: "Cornell Lab; Audubon California." },
+    ],
+    "aristolochia-californica": [
+      { wildlifeId: "pipevine-swallowtail", support: "host", reliance: "sole", note: "This vine is the whole world of the pipevine swallowtail: its caterpillars eat pipevine and nothing else on earth, take up the plant's poison and keep it, and are bright red and entirely unhurried because nothing will touch them. Plant one and the butterflies find it, sometimes within a season.", basis: "Xerces Society; BAMONA; UC ANR." },
+    ],
+    "vitis-californica": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Small purple grapes in autumn that robins, thrushes, jays and mockingbirds all take — and the tangled growth is some of the safest nesting cover a garden can offer.", basis: "Cornell Lab; USFS FEIS." },
+      { wildlifeId: "band-tailed-pigeon", support: "berries", note: "Band-tailed pigeons come down to a fruiting grape in flocks and clear it.", basis: "Cornell Lab." },
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "Waxwings take grapes late, after the softer fruit has gone.", basis: "Cornell Lab." },
+      { wildlifeId: "acorn-mammals", support: "berries", note: "Foxes, coyotes and raccoons eat wild grapes in quantity, which is how the seed gets moved along a creek.", basis: "USFS FEIS." },
+    ],
+    "lonicera-hispidula": [
+      { wildlifeId: "annas-rufous-hummingbird", support: "nectar", note: "Whorls of pink tubes in early summer, worked by hummingbirds through the day and by hawk moths at dusk — a honeysuckle at twilight is the best place here to see one hovering.", basis: "Audubon California; Xerces Society." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Translucent red berries in autumn for thrushes, towhees and robins.", basis: "Cornell Lab." },
+      { wildlifeId: "bushtit", support: "shelter", note: "The loose tangle it makes through a shrub is nesting cover for bushtits and wrentits.", basis: "Cornell Lab." },
+    ],
+    "rubus-ursinus": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Spring blossom that bumble bees, mining bees and butterflies work hard — and unlike the introduced Himalayan bramble beside it, this one belongs here.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Thrushes, jays and towhees take the berries through summer, and foxes and coyotes finish what is left.", basis: "Cornell Lab; USFS FEIS." },
+      { wildlifeId: "california-quail", support: "shelter", note: "A blackberry thicket is the safest nesting cover in the garden — towhees, wrentits and sparrows all use it, and a quail covey lives under it.", basis: "Cornell Lab; Audubon California." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Small solitary bees work the open flowers, and some of them nest in the pithy centre of a cut cane afterwards.", basis: "Xerces Society." },
+    ],
+    "fragaria-chiloensis": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Open white flowers over a long spring, shallow enough for the smallest solitary bees and the hoverflies to use.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "The small fruits go to towhees, robins and sparrows working the mat at ground level.", basis: "Cornell Lab." },
+    ],
+    "clinopodium-douglasii": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Small white flowers scattered through the shade from spring to autumn, worked by the little solitary bees and hoverflies that bigger flowers are no use to.", basis: "Xerces Society." },
+    ],
+    "oxalis-oregana": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Pink-veined flowers on the forest floor for months, feeding the small bees and hoverflies that live in the shade rather than the sun.", basis: "Xerces Society." },
+    ],
+    "symphoricarpos-mollis": [
+      { wildlifeId: "annas-rufous-hummingbird", support: "nectar", note: "Little pink bells in early summer in dry shade, which is not a place a hummingbird usually finds anything.", basis: "Audubon California; Cornell Lab." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees work the bells — deep and narrow, and suited to a long tongue.", basis: "Xerces Society." },
+      { wildlifeId: "california-quail", support: "berries", note: "White berries hold into winter, and the low tangle is exactly the cover ground-feeding birds need to cross a garden safely.", basis: "Cornell Lab; USFS FEIS." },
+    ],
+  },
   "ca-south-coast": {
     "hesperocyparis-forbesii": [
       { wildlifeId: "juniper-hairstreak", support: "host", reliance: "sole", note: "Thorne's hairstreak eats Tecate cypress and nothing else, and flies around Otay Mountain and nowhere else on earth \u2014 the smallest range of any butterfly in the country. A tree planted in a Los Angeles garden will not bring one; the wild groves are what hold the butterfly. It is still the reason this tree matters more than its size suggests.", basis: "US Fish & Wildlife Service (Thorne's hairstreak 12-month finding); Xerces Society; BAMONA." },

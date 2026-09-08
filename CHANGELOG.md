@@ -33,6 +33,12 @@ subtitle on the What's new page.
 
 ### Added
 
+- Regions: **the central California coast is on the map** — 64 native plants for
+  the country from Sonoma and Marin through San Francisco Bay to Big Sur and the
+  Salinas Valley. [See the region](https://indigene.app/regions/ca-central-coast)
+- Regions & Wildlife: three creatures join the roster — the pipevine swallowtail,
+  whose caterpillars eat one vine and nothing else; the lupine blues, the mission
+  blue among them; and the chestnut-backed chickadee of the fog-belt forests.
 - Native swaps: **the everyday garden staples now have native answers too.**
   Daylilies, hostas, periwinkle, maiden grass, garden roses and yellow flag iris
   each meet the native that does their job — so nearly half of every plant we

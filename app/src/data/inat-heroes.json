@@ -26,6 +26,15 @@
     "attribution": "(c) beck16, some rights reserved (CC BY-NC)",
     "color": "#4e9056"
   },
+  "adiantum-capillus-veneris": {
+    "taxonId": 63916,
+    "photoId": 170713050,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/170713050/square.jpeg",
+    "observer": "Jorge Leandro",
+    "license": "cc-by-nc",
+    "attribution": "(c) Jorge Leandro, some rights reserved (CC BY-NC), uploaded by Jorge Leandro",
+    "color": "#5b6f2e"
+  },
   "adiantum-jordanii": {
     "taxonId": 56032,
     "photoId": 10294,
@@ -170,6 +179,15 @@
     "attribution": "(c) Valentin Hamon, some rights reserved (CC BY-NC), uploaded by Valentin Hamon",
     "color": "#8a7a64"
   },
+  "arum-italicum": {
+    "taxonId": 61168,
+    "photoId": 459227620,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/459227620/square.jpeg",
+    "observer": "odenwaelder",
+    "license": "cc-by-nc",
+    "attribution": "(c) odenwaelder, some rights reserved (CC BY-NC), uploaded by odenwaelder",
+    "color": "#3e512a"
+  },
   "aruncus-dioicus": {
     "taxonId": 75600,
     "photoId": 153826729,
@@ -188,6 +206,15 @@
     "attribution": "(c) Thorny Toad Photography, some rights reserved (CC BY-NC), uploaded by Thorny Toad Photography",
     "color": "#6e6855"
   },
+  "asplenium-ceterach": {
+    "taxonId": 82591,
+    "photoId": 52096887,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/52096887/square.jpg",
+    "observer": "benoitteyssendier",
+    "license": "cc-by-nc",
+    "attribution": "(c) benoitteyssendier, some rights reserved (CC BY-NC), uploaded by benoitteyssendier",
+    "color": "#667142"
+  },
   "asplenium-scolopendrium": {
     "taxonId": 156224,
     "photoId": 191671,
@@ -196,6 +223,24 @@
     "license": "cc-by-nc",
     "attribution": "(c) HermannFalkner/sokol, some rights reserved (CC BY-NC)",
     "color": "#5f7a48"
+  },
+  "asplenium-trichomanes": {
+    "taxonId": 75609,
+    "photoId": 511602695,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/511602695/square.jpg",
+    "observer": "David Claro",
+    "license": "cc-by-nc",
+    "attribution": "(c) David Claro, some rights reserved (CC BY-NC), uploaded by David Claro",
+    "color": "#707637"
+  },
+  "asplenium-viride": {
+    "taxonId": 75611,
+    "photoId": 21288890,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/21288890/square.jpeg",
+    "observer": "wallyjenkins",
+    "license": "cc-by-nc",
+    "attribution": "(c) wallyjenkins, some rights reserved (CC BY-NC), uploaded by wallyjenkins",
+    "color": "#676e59"
   },
   "atala": {
     "taxonId": 50075,
@@ -350,6 +395,24 @@
     "attribution": "(c) Sandy Rae, some rights reserved (CC BY)",
     "color": "#5a594a"
   },
+  "cardamine-pratensis": {
+    "taxonId": 54531,
+    "photoId": 601068973,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/601068973/square.jpg",
+    "observer": "Karen Andrea Boehme",
+    "license": "cc-by-nc",
+    "attribution": "(c) Karen Andrea Boehme, some rights reserved (CC BY-NC), uploaded by Karen Andrea Boehme",
+    "color": "#778252"
+  },
+  "carex-flacca": {
+    "taxonId": 159951,
+    "photoId": 665084,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/665084/square.jpg",
+    "observer": "Biopix",
+    "license": "cc-by-nc",
+    "attribution": "(c) Biopix, some rights reserved (CC BY-NC)",
+    "color": "#90945a"
+  },
   "carex-obnupta": {
     "taxonId": 61000,
     "photoId": 104971370,
@@ -367,6 +430,24 @@
     "license": "cc-by",
     "attribution": "(c) Trevor Van Loon, some rights reserved (CC BY), uploaded by Trevor Van Loon",
     "color": "#5b5d4a"
+  },
+  "carex-sempervirens": {
+    "taxonId": 154310,
+    "photoId": 140187398,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/140187398/square.jpeg",
+    "observer": "Wolfgang Jauch",
+    "license": "cc-by",
+    "attribution": "(c) Wolfgang Jauch, some rights reserved (CC BY), uploaded by Wolfgang Jauch",
+    "color": "#82a663"
+  },
+  "carex-sylvatica": {
+    "taxonId": 69640,
+    "photoId": 399699675,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/399699675/square.jpeg",
+    "observer": "Peter Dunwiddie",
+    "license": "cc-by-nc",
+    "attribution": "(c) Peter Dunwiddie, some rights reserved (CC BY-NC), uploaded by Peter Dunwiddie",
+    "color": "#607130"
   },
   "carex-tumulicola": {
     "taxonId": 64183,
@@ -458,6 +539,15 @@
     "attribution": "(c) Garth Harwood, some rights reserved (CC BY), uploaded by Garth Harwood",
     "color": "#828175"
   },
+  "clematis-alpina": {
+    "taxonId": 160679,
+    "photoId": 1177945,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/1177945/square.jpg",
+    "observer": "Fred Inklaar",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) Fred Inklaar, some rights reserved (CC BY-NC-SA)",
+    "color": "#466267"
+  },
   "clematis-lasiantha": {
     "taxonId": 49876,
     "photoId": 35793724,
@@ -502,6 +592,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) lygodactylus, some rights reserved (CC BY-NC)",
     "color": "#887d59"
+  },
+  "colchicum-autumnale": {
+    "taxonId": 131586,
+    "photoId": 93970680,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/93970680/square.jpeg",
+    "observer": "Walter Welss",
+    "license": "cc-by-nc",
+    "attribution": "(c) Walter Welss, some rights reserved (CC BY-NC), uploaded by Walter Welss",
+    "color": "#5e5354"
   },
   "comma": {
     "taxonId": 56225,
@@ -556,6 +655,15 @@
     "license": "cc-by-nc-sa",
     "attribution": "(c) Belinda Lo, some rights reserved (CC BY-NC-SA)",
     "color": "#6d7c54"
+  },
+  "daphne-mezereum": {
+    "taxonId": 133034,
+    "photoId": 76021443,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/76021443/square.jpeg",
+    "observer": "Lola Smirnova",
+    "license": "cc-by-nc",
+    "attribution": "(c) Lola Smirnova, some rights reserved (CC BY-NC), uploaded by Lola Smirnova",
+    "color": "#736455"
   },
   "dicentra-formosa": {
     "taxonId": 51048,
@@ -1151,6 +1259,15 @@
     "attribution": "(c) Eric Cleveland, some rights reserved (CC BY-NC), uploaded by Eric Cleveland",
     "color": "#727156"
   },
+  "lonicera-implexa": {
+    "taxonId": 82664,
+    "photoId": 544580319,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/544580319/square.jpg",
+    "observer": "Julio Grande",
+    "license": "cc-by-nc",
+    "attribution": "(c) Julio Grande, some rights reserved (CC BY-NC), uploaded by Julio Grande",
+    "color": "#594643"
+  },
   "lorquins-admiral": {
     "taxonId": 50880,
     "photoId": 22582464,
@@ -1304,6 +1421,15 @@
     "attribution": "no rights reserved, uploaded by Bolinas Frank",
     "color": "#5f6257"
   },
+  "orange-tip": {
+    "taxonId": 51495,
+    "photoId": 118125338,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/118125338/square.jpg",
+    "observer": "Felipe Hidalgo",
+    "license": "cc-by-nc",
+    "attribution": "(c) Felipe Hidalgo, some rights reserved (CC BY-NC), uploaded by Felipe Hidalgo",
+    "color": "#7f7544"
+  },
   "oxalis-oregana": {
     "taxonId": 47757,
     "photoId": 257059959,
@@ -1439,6 +1565,24 @@
     "attribution": "(c) Rich Hoyer, some rights reserved (CC BY-NC-SA), uploaded by Rich Hoyer",
     "color": "#6a9a6d"
   },
+  "polystichum-aculeatum": {
+    "taxonId": 275961,
+    "photoId": 84319246,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/84319246/square.jpeg",
+    "observer": "kajetanduell",
+    "license": "cc-by-nc",
+    "attribution": "(c) kajetanduell, some rights reserved (CC BY-NC)",
+    "color": "#508d66"
+  },
+  "polystichum-lonchitis": {
+    "taxonId": 78697,
+    "photoId": 78449242,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/78449242/square.jpg",
+    "observer": "stemyh",
+    "license": "cc-by-nc",
+    "attribution": "(c) stemyh, some rights reserved (CC BY-NC)",
+    "color": "#6a7e53"
+  },
   "polystichum-setiferum": {
     "taxonId": 319738,
     "photoId": 78921548,
@@ -1465,6 +1609,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) riverbetty, some rights reserved (CC BY-NC)",
     "color": "#566c63"
+  },
+  "populus-nigra": {
+    "taxonId": 47565,
+    "photoId": 259215781,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/259215781/square.jpg",
+    "observer": "\n\nAyotte, Gilles, 1948-",
+    "license": "cc-by-sa",
+    "attribution": "(c) \n\nAyotte, Gilles, 1948-, some rights reserved (CC BY-SA)",
+    "color": "#393e37"
   },
   "populus-tremula": {
     "taxonId": 47571,
@@ -1510,6 +1663,15 @@
     "license": "cc-by",
     "attribution": "(c) rappman, some rights reserved (CC BY), uploaded by rappman",
     "color": "#645632"
+  },
+  "prunus-padus": {
+    "taxonId": 143793,
+    "photoId": 11624584,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/11624584/square.jpg",
+    "observer": "Sciadopitys",
+    "license": "cc-by-sa",
+    "attribution": "(c) Sciadopitys, some rights reserved (CC BY-SA)",
+    "color": "#314028"
   },
   "purple-emperor": {
     "taxonId": 343324,
@@ -1619,6 +1781,15 @@
     "attribution": "(c) Wintertanager, some rights reserved (CC BY-SA)",
     "color": "#676852"
   },
+  "rosa-pendulina": {
+    "taxonId": 198887,
+    "photoId": 3035412,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/3035412/square.jpeg",
+    "observer": "Meneerke bloem",
+    "license": "cc-by-sa",
+    "attribution": "(c) Meneerke bloem, some rights reserved (CC BY-SA)",
+    "color": "#70664f"
+  },
   "rubus-fruticosus": {
     "taxonId": 1449268,
     "photoId": 452392676,
@@ -1628,6 +1799,15 @@
     "attribution": "(c) jraus, some rights reserved (CC BY-SA)",
     "color": "#4f5938"
   },
+  "rubus-idaeus": {
+    "taxonId": 54436,
+    "photoId": 358785151,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/358785151/square.jpg",
+    "observer": "Ole Husby",
+    "license": "cc-by-sa",
+    "attribution": "(c) Ole Husby, some rights reserved (CC BY-SA)",
+    "color": "#947169"
+  },
   "rubus-parviflorus": {
     "taxonId": 51646,
     "photoId": 132211198,
@@ -1636,6 +1816,15 @@
     "license": "cc-by",
     "attribution": "(c) Gavin Slater, some rights reserved (CC BY), uploaded by Gavin Slater",
     "color": "#697d4c"
+  },
+  "rubus-ulmifolius": {
+    "taxonId": 78895,
+    "photoId": 37606,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/37606/square.jpg",
+    "observer": "Joan Simon",
+    "license": "cc-by-sa",
+    "attribution": "(c) Joan Simon, some rights reserved (CC BY-SA)",
+    "color": "#5d604f"
   },
   "rubus-ursinus": {
     "taxonId": 53445,
@@ -1672,6 +1861,15 @@
     "license": "cc-by",
     "attribution": "(c) Patrick Hacker, some rights reserved (CC BY), uploaded by Patrick Hacker",
     "color": "#8fa339"
+  },
+  "salix-alba": {
+    "taxonId": 54841,
+    "photoId": 70159039,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/70159039/square.jpeg",
+    "observer": "saartje281",
+    "license": "cc-by-nc",
+    "attribution": "(c) saartje281, some rights reserved (CC BY-NC)",
+    "color": "#5d625c"
   },
   "salix-discolor": {
     "taxonId": 54844,
@@ -1718,6 +1916,15 @@
     "attribution": "(c) smfang, some rights reserved (CC BY-NC), uploaded by smfang",
     "color": "#70774e"
   },
+  "salvia-rosmarinus": {
+    "taxonId": 636795,
+    "photoId": 466148684,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/466148684/square.jpg",
+    "observer": "Sergio Ibarra",
+    "license": "cc-by-nc",
+    "attribution": "(c) Sergio Ibarra, some rights reserved (CC BY-NC), uploaded by Sergio Ibarra",
+    "color": "#5b5b50"
+  },
   "salvia-spathacea": {
     "taxonId": 64133,
     "photoId": 526697773,
@@ -1735,6 +1942,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) there_be_dragons, some rights reserved (CC BY-NC), uploaded by there_be_dragons",
     "color": "#333a27"
+  },
+  "scabiosa-columbaria": {
+    "taxonId": 85047,
+    "photoId": 57492218,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/57492218/square.jpg",
+    "observer": "Rebecca Ryen-Stols",
+    "license": "cc-by-sa",
+    "attribution": "(c) Rebecca Ryen-Stols, some rights reserved (CC BY-SA), uploaded by Rebecca Ryen-Stols",
+    "color": "#988f77"
   },
   "scrophularia-californica": {
     "taxonId": 50812,
@@ -1762,6 +1978,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) kaylamarie7718, some rights reserved (CC BY-NC)",
     "color": "#60718a"
+  },
+  "sesleria-caerulea": {
+    "taxonId": 363774,
+    "photoId": 66832415,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/66832415/square.jpeg",
+    "observer": "Wolfgang Jauch",
+    "license": "cc-by",
+    "attribution": "(c) Wolfgang Jauch, some rights reserved (CC BY), uploaded by Wolfgang Jauch",
+    "color": "#837764"
   },
   "sidalcea-campestris": {
     "taxonId": 168939,

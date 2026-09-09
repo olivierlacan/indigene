@@ -3819,5 +3819,269 @@
       "gbif": "2704915",
       "wikidata": "Q5445865"
     }
+  },
+  "Adiantum capillus-veneris": {
+    "identifiers": {
+      "ipni": "17009280-1",
+      "wfo": "wfo-0001109469",
+      "usda": "ADCA",
+      "itis": "17308",
+      "inat": "63916",
+      "gbif": "2651816",
+      "wikidata": "Q4678994"
+    }
+  },
+  "Arum italicum": {
+    "identifiers": {
+      "ipni": "86047-1",
+      "wfo": "wfo-0000279414",
+      "usda": "ARIT",
+      "itis": "42544",
+      "inat": "61168",
+      "gbif": "5330661",
+      "wikidata": "Q30968"
+    }
+  },
+  "Asplenium ceterach": {
+    "identifiers": {
+      "ipni": "17040860-1",
+      "wfo": "wfo-0001115841",
+      "itis": "616715",
+      "inat": "82591",
+      "gbif": "2650617",
+      "wikidata": "Q1754958"
+    }
+  },
+  "Asplenium trichomanes": {
+    "identifiers": {
+      "ipni": "310197-2",
+      "wfo": "wfo-0001109364",
+      "usda": "ASTR2",
+      "itis": "17364",
+      "inat": "75609",
+      "gbif": "8108066",
+      "wikidata": "Q902211"
+    }
+  },
+  "Asplenium viride": {
+    "identifiers": {
+      "ipni": "17053570-1",
+      "wfo": "wfo-0001109866",
+      "itis": "192116",
+      "inat": "75611",
+      "gbif": "2650716",
+      "wikidata": "Q1552374"
+    }
+  },
+  "Cardamine pratensis": {
+    "identifiers": {
+      "ipni": "45334-2",
+      "wfo": "wfo-0000587355",
+      "usda": "CAPR3",
+      "itis": "22773",
+      "inat": "54531",
+      "gbif": "7972010",
+      "wikidata": "Q27490"
+    }
+  },
+  "Carex flacca": {
+    "identifiers": {
+      "ipni": "299756-1",
+      "wfo": "wfo-0000346645",
+      "usda": "CAFL8",
+      "itis": "39603",
+      "inat": "159951",
+      "gbif": "2727938",
+      "wikidata": "Q158524"
+    }
+  },
+  "Carex sempervirens": {
+    "identifiers": {
+      "ipni": "302193-1",
+      "wfo": "wfo-0000351168",
+      "usda": "CASE28",
+      "itis": "808440",
+      "inat": "154310",
+      "gbif": "2722326",
+      "wikidata": "Q159891"
+    }
+  },
+  "Carex sylvatica": {
+    "identifiers": {
+      "ipni": "302516-1",
+      "wfo": "wfo-0000351795",
+      "usda": "CASY3",
+      "itis": "39834",
+      "inat": "69640",
+      "gbif": "2722602",
+      "wikidata": "Q158168"
+    }
+  },
+  "Clematis alpina": {
+    "identifiers": {
+      "ipni": "30129020-2",
+      "wfo": "wfo-0000609451",
+      "itis": "501582",
+      "inat": "160679",
+      "gbif": "3033599",
+      "wikidata": "Q157768"
+    }
+  },
+  "Colchicum autumnale": {
+    "identifiers": {
+      "ipni": "533232-1",
+      "wfo": "wfo-0000763824",
+      "usda": "COAU4",
+      "itis": "42907",
+      "inat": "131586",
+      "gbif": "2739622",
+      "wikidata": "Q152553"
+    }
+  },
+  "Daphne mezereum": {
+    "identifiers": {
+      "ipni": "831294-1",
+      "wfo": "wfo-0000637755",
+      "usda": "DAME3",
+      "itis": "27126",
+      "inat": "133034",
+      "gbif": "5420852",
+      "wikidata": "Q165166"
+    }
+  },
+  "Erica carnea": {
+    "identifiers": {
+      "ipni": "332092-2",
+      "wfo": "wfo-0000671633",
+      "inat": "56308",
+      "gbif": "5682465",
+      "wikidata": "Q248958"
+    }
+  },
+  "Lonicera implexa": {
+    "identifiers": {
+      "ipni": "148839-1",
+      "wfo": "wfo-0000359592",
+      "inat": "82664",
+      "gbif": "7272699",
+      "wikidata": "Q1537828"
+    }
+  },
+  "Polystichum aculeatum": {
+    "identifiers": {
+      "ipni": "17205720-1",
+      "wfo": "wfo-0001239724",
+      "inat": "275961",
+      "gbif": "7319269",
+      "wikidata": "Q28957"
+    }
+  },
+  "Polystichum lonchitis": {
+    "identifiers": {
+      "ipni": "17414110-1",
+      "wfo": "wfo-0001109272",
+      "usda": "POLO4",
+      "itis": "17686",
+      "inat": "78697",
+      "gbif": "2651113",
+      "wikidata": "Q542735"
+    }
+  },
+  "Populus nigra": {
+    "identifiers": {
+      "ipni": "776790-1",
+      "wfo": "wfo-0000928297",
+      "usda": "PONI",
+      "itis": "22468",
+      "inat": "47565",
+      "gbif": "3040227",
+      "wikidata": "Q147064"
+    }
+  },
+  "Prunus padus": {
+    "identifiers": {
+      "ipni": "730076-1",
+      "wfo": "wfo-0001008273",
+      "usda": "PRPA5",
+      "itis": "24798",
+      "inat": "143793",
+      "gbif": "3021037",
+      "wikidata": "Q165424"
+    }
+  },
+  "Rosa pendulina": {
+    "identifiers": {
+      "ipni": "733641-1",
+      "wfo": "wfo-0001018161",
+      "usda": "ROPE4",
+      "itis": "836420",
+      "inat": "198887",
+      "gbif": "3006974",
+      "wikidata": "Q102088"
+    }
+  },
+  "Rubus idaeus": {
+    "identifiers": {
+      "ipni": "298089-2",
+      "wfo": "wfo-0001000827",
+      "usda": "RUID",
+      "itis": "24947",
+      "inat": "54436",
+      "gbif": "2993094",
+      "wikidata": "Q12252383"
+    }
+  },
+  "Rubus ulmifolius": {
+    "identifiers": {
+      "ipni": "740982-1",
+      "wfo": "wfo-0000985000",
+      "usda": "RUUL",
+      "itis": "504890",
+      "inat": "78895",
+      "gbif": "2996929",
+      "wikidata": "Q59843"
+    }
+  },
+  "Salix alba": {
+    "identifiers": {
+      "ipni": "776974-1",
+      "wfo": "wfo-0000929085",
+      "usda": "SAAL2",
+      "itis": "565478",
+      "inat": "54841",
+      "gbif": "5372513",
+      "wikidata": "Q156918"
+    }
+  },
+  "Salvia rosmarinus": {
+    "identifiers": {
+      "ipni": "60474677-2",
+      "wfo": "wfo-0000302167",
+      "inat": "636795",
+      "gbif": "10902460",
+      "wikidata": "Q102240169"
+    }
+  },
+  "Scabiosa columbaria": {
+    "identifiers": {
+      "ipni": "319793-1",
+      "wfo": "wfo-0000500277",
+      "usda": "SCCO6",
+      "itis": "35412",
+      "inat": "85047",
+      "gbif": "2888802",
+      "wikidata": "Q159263"
+    }
+  },
+  "Sesleria caerulea": {
+    "identifiers": {
+      "ipni": "1005554-2",
+      "wfo": "wfo-0000898775",
+      "usda": "SECA22",
+      "itis": "784903",
+      "inat": "363774",
+      "gbif": "4119608",
+      "wikidata": "Q1160185"
+    }
   }
 }

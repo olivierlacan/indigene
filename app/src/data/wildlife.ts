@@ -444,7 +444,8 @@ export const WILDLIFE: Wildlife[] = [
     blurb:
       "A dark chocolate butterfly edged in ragged cream, with a line of blue spots inside the border. It is often the first butterfly of the year here, because it never left: it winters as an adult behind loose bark, out before a single flower opens. Its caterpillars feed on willow, cottonwood and birch.",
     native: true,
-    nativeBasis: "Native across North America. BAMONA; Xerces Society.",
+    nativeBasis:
+      "Native across North America and Europe, where it is called the Camberwell beauty. BAMONA; Xerces Society; INPN (MNHN).",
     inat: { name: "Nymphalis antiopa", iconic: "Insecta" },
   },
   // ---- European butterflies (the France regions) ----
@@ -543,6 +544,19 @@ export const WILDLIFE: Wildlife[] = [
     native: true,
     nativeBasis: "Native to southern Europe, including Mediterranean France. INPN (MNHN); European butterfly foodplant checklist (Dryad).",
     inat: { name: "Libythea celtis", iconic: "Insecta" },
+  },
+  {
+    id: "orange-tip",
+    common: "Orange-tip",
+    latin: "Anthocharis cardamines",
+    kind: "butterfly",
+    icon: "\u{1F98B}",
+    blurb:
+      "The male has bright orange wingtips and is unmistakable; the female has none and gets taken for a cabbage white all spring. Both settle with their wings shut, and the mottled green underside makes them vanish against a flower head \u2014 which is exactly where the female is laying.",
+    native: true,
+    nativeBasis:
+      "Native across Europe, including all of metropolitan France. INPN (MNHN); European butterfly foodplant checklist (Dryad).",
+    inat: { name: "Anthocharis cardamines", iconic: "Insecta" },
   },
   {
     id: "comma",
@@ -2670,6 +2684,70 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
   },
 
   "france-continental": {
+    "salix-caprea": [
+      { wildlifeId: "purple-emperor", support: "host", reliance: "narrow", note: "The purple emperor lays on goat willow and nothing else. The males spend their lives in the tops of tall trees and come down only for damp ground — so the butterfly needs the willow in the wood, not the oak everyone plants for it.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "poplar-hawk-moth", support: "host", note: "The big green caterpillar with the blunt tail horn feeds on willow and poplar; the adult rests by day with its hind wings pushed out in front, looking like a heap of dead leaves.", basis: "INPN (MNHN); European foodplant checklists." },
+      { wildlifeId: "mourning-cloak", support: "host", note: "Camberwell beauty caterpillars feed together on willow in a spiny black mass, and the adults overwinter as adults, so they are the first big butterfly of the eastern spring.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "March catkins are the first serious pollen of the year, opening exactly when the solitary bees come out of their tubes.", basis: "INPN; European pollinator literature." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A goat willow in flower in March is where the newly-woken bumble bee queens go, and there is very little competition for their attention that early.", basis: "INPN; European pollinator literature." },
+    ],
+    "betula-pendula": [
+      { wildlifeId: "emperor-moth", support: "host", note: "Emperor moth caterpillars feed on birch among a short list of shrubs and trees; the adult male has false eyes on all four wings and flies by day in April looking for females by scent.", basis: "INPN (MNHN)." },
+      { wildlifeId: "mourning-cloak", support: "host", note: "Birch is the Camberwell beauty's other tree, and a group of birches on rough ground is where you are most likely to meet one.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "conifer-seed-finches", support: "seeds", note: "Siskins and redpolls hang in flocks off the hanging catkins all winter, working out seed that is barely bigger than the wind.", basis: "INPN; LPO." },
+    ],
+    "populus-tremula": [
+      { wildlifeId: "poplar-hawk-moth", support: "host", note: "Aspen is one of the poplar hawk-moth's main trees; the caterpillars are on it through the summer and pupate in the soil beneath.", basis: "INPN (MNHN); European foodplant checklists." },
+      { wildlifeId: "purple-emperor", support: "host", note: "Aspen is the purple emperor's second tree after goat willow, and an aspen stand in a wood is where the whole colony is.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "eurasian-jay", support: "shelter", note: "Aspens rot from the inside as they age, which makes the woodpecker holes that jays, owls, redstarts and bats all end up using.", basis: "INPN; LPO." },
+    ],
+    "alnus-glutinosa": [
+      { wildlifeId: "conifer-seed-finches", support: "seeds", note: "A wet alder wood in January is a siskin wood: flocks working the little cones upside-down, calling constantly.", basis: "INPN; LPO." },
+      { wildlifeId: "goldfinches-linnets", support: "seeds", note: "Goldfinches take the same seed alongside the siskins, and both return to the same trees day after day.", basis: "INPN; LPO." },
+    ],
+    "corylus-avellana": [
+      { wildlifeId: "hazel-dormouse", support: "seeds", reliance: "narrow", note: "The dormouse is named after this plant in every European language, and the hazelnuts are what it fattens on before hibernating. A nut opened by a dormouse has a smooth round hole with tooth marks angled around the rim — the way to know it is there at all.", basis: "INPN (MNHN); European dormouse survey methods (nut-hunt protocol)." },
+      { wildlifeId: "eurasian-jay", support: "seeds", note: "Jays carry hazelnuts off and bury them singly, and the ones they forget are how a hazel gets planted somewhere new.", basis: "INPN; LPO." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Hazel catkins in January are the very first pollen of the eastern year, on a warm afternoon when almost nothing is flying.", basis: "INPN; European pollinator literature." },
+    ],
+    "rubus-fruticosus": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Months of open flower, and a bramble in July has more insects on it at once than anything else in the garden — bumble bees, solitary bees, hoverflies and beetles.", basis: "INPN; European pollinator literature." },
+      { wildlifeId: "green-hairstreak", support: "host", note: "Europe's only green butterfly lays on bramble among the other shrubs of rough ground, and rests with its wings shut on a sunny bank looking exactly like a leaf.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "hazel-dormouse", support: "berries", note: "Dormice work brambles for the fruit in late summer and travel along the canes, which is why a hedge with bramble in it is a corridor and a clipped one is a wall.", basis: "INPN (MNHN); European dormouse ecology." },
+      { wildlifeId: "blackcaps-warblers", support: "berries", note: "Blackberries are what a warbler puts on weight with before going south, and the thorny mass is where it nested in June.", basis: "INPN; LPO." },
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Fieldfares and redwings clear whatever fruit is left when they arrive from the north in October.", basis: "INPN; LPO." },
+    ],
+    "calluna-vulgaris": [
+      { wildlifeId: "silver-studded-blue", support: "host", reliance: "narrow", note: "The silver-studded blue lives on heathland and nowhere else, lays on heather, and its caterpillars are tended underground by ants that milk them for sugar — lose the heath and you lose the whole arrangement.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "emperor-moth", support: "host", note: "The emperor moth is a heathland insect above all, and heather is the plant its green ringed caterpillars are usually found on.", basis: "INPN (MNHN)." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Heather flowers from July into October, which is precisely the gap when a bumble bee colony is trying to raise next year's queens and everything else has finished.", basis: "INPN; European beekeeping and pollinator literature." },
+    ],
+    "deschampsia-cespitosa": [
+      { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "Meadow browns, ringlets and skippers all raise their caterpillars on grass tussocks like this one, each caterpillar hidden in a leaf it has sewn shut behind itself.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+    ],
+    "carex-sylvatica": [
+      { wildlifeId: "grass-skippers", support: "host", note: "Sedges feed a long list of small brown butterflies and moths, and a shaded sedge patch is where they get through the year.", basis: "INPN (MNHN); European foodplant checklists." },
+    ],
+    "plantago-lanceolata": [
+      { wildlifeId: "glanville-fritillary", support: "host", reliance: "narrow", note: "The Glanville fritillary lays a batch of eggs on ribwort plantain, and the caterpillars spend the entire winter together in a silk web spun on the plant — which is why an autumn cut takes the whole brood.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "goldfinches-linnets", support: "seeds", note: "Goldfinches and linnets work the seed spikes from late summer on, one head at a time along a path edge.", basis: "INPN; LPO." },
+    ],
+    "galium-verum": [
+      { wildlifeId: "hummingbird-hawk-moth", support: "host", reliance: "narrow", note: "The day-flying moth that everyone takes for a tiny hummingbird lays on bedstraw — so a patch in rough grass turns a visitor into a resident.", basis: "INPN (MNHN); European foodplant checklists." },
+      { wildlifeId: "elephant-hawk-moth", support: "host", reliance: "narrow", note: "The elephant hawk-moth's grey caterpillar, with the false eyes it puffs up when alarmed, feeds on bedstraw and willowherb in late summer.", basis: "INPN (MNHN); European foodplant checklists." },
+    ],
+    "fragaria-vesca": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Open white flowers over a long spring, shallow enough for the smallest solitary bees and hoverflies to use — which the deep garden flowers are not.", basis: "INPN; European pollinator literature." },
+      { wildlifeId: "hazel-dormouse", support: "berries", note: "Dormice take wild strawberries where the runners reach into a hedge bottom, along with everything else soft and sweet in a hedgerow summer.", basis: "INPN (MNHN); European dormouse ecology." },
+      { wildlifeId: "blackcaps-warblers", support: "berries", note: "Warblers, robins and blackbirds all take the fruit off the ground layer, which is one of the few crops down at their level.", basis: "INPN; LPO." },
+    ],
+    "hedera-helix": [
+      { wildlifeId: "mason-bees", support: "nectar", reliance: "narrow", note: "The ivy bee is a mining bee whose entire year is timed to this plant: it emerges in September as the ivy opens and is finished by the time the flowers are. Nothing else it can use is out then.", basis: "INPN; European pollinator literature (Colletes hederae)." },
+      { wildlifeId: "holly-blue", support: "host", reliance: "narrow", note: "The holly blue alternates between two plants across its two broods a year — holly in spring, ivy buds in late summer. A garden needs both if it wants to keep the butterfly.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "red-admiral", support: "nectar", note: "Red admirals crowd onto ivy flowers in October, and are often the last butterflies anyone sees before the winter.", basis: "INPN (MNHN); European butterfly literature." },
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Ivy berries ripen in late winter, long after everything else has gone, which makes them what carries thrushes and wood pigeons through February.", basis: "INPN; LPO." },
+      { wildlifeId: "blackcaps-warblers", support: "berries", note: "Blackcaps that now stay for the winter rather than going south depend heavily on that late crop.", basis: "INPN; LPO." },
+    ],
     "quercus-petraea": [
       { wildlifeId: "eurasian-jay", support: "seeds", note: "A jay carries acorns off in its throat and buries them one at a time, spread across the whole wood — thousands in an autumn. The ones it never comes back for are how an oak wood walks uphill.", basis: "GloBI — trophiCH food web for Switzerland (Reji Chacko et al. 2024); LPO." },
       { wildlifeId: "hazel-dormouse", support: "seeds", note: "Acorns are what a dormouse puts its winter weight on in October, in the last days before it curls up and sleeps for seven months.", basis: "GloBI — trophiCH food web for Switzerland (Reji Chacko et al. 2024); INPN." },
@@ -2756,6 +2834,79 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
   },
 
   "france-mediterranean": {
+    "salix-alba": [
+      { wildlifeId: "poplar-hawk-moth", support: "host", note: "The poplar hawk-moth's fat green caterpillar grows up on willow and poplar; the adult sits by day looking exactly like a bundle of dead leaves, hind wings pushed out in front of the fore wings.", basis: "INPN (MNHN); European butterfly and moth foodplant checklists." },
+      { wildlifeId: "purple-emperor", support: "host", reliance: "narrow", note: "The purple emperor lays on willow and nothing else, high in the canopy — the male spends its life in the tree tops and only comes down for the puddles and the carrion nobody wants to talk about.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "mourning-cloak", support: "host", note: "The Camberwell beauty's spiny black caterpillars feed in a group on willow, and the adults hibernate through the winter rather than migrating, so they are among the first butterflies flying in a southern spring.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "March catkins are the first real pollen of the year on a Mediterranean river, and the solitary bees emerge to meet them.", basis: "INPN; European pollinator literature." },
+    ],
+    "populus-nigra": [
+      { wildlifeId: "poplar-hawk-moth", support: "host", note: "Poplar is the moth's other tree, and a black poplar along a river is where you find the caterpillars — big, green, and armed with a single blunt horn at the tail.", basis: "INPN (MNHN); European foodplant checklists." },
+      { wildlifeId: "mourning-cloak", support: "host", note: "Camberwell beauty caterpillars take poplar as readily as willow, feeding together in a conspicuous black huddle before scattering to pupate.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "blackcaps-warblers", support: "shelter", note: "A riverside poplar is where the warblers nest and feed on the way through — the caterpillar load in the canopy is the reason they stop.", basis: "INPN; Ligue pour la Protection des Oiseaux (LPO)." },
+    ],
+    "alnus-glutinosa": [
+      { wildlifeId: "goldfinches-linnets", support: "seeds", note: "A fruiting alder in winter carries goldfinches and siskins hanging upside-down off the little cones, working the seed out one at a time.", basis: "INPN; Ligue pour la Protection des Oiseaux (LPO)." },
+      { wildlifeId: "conifer-seed-finches", support: "seeds", note: "Siskins and redpolls swarm alder catkins from November onward, and a stand beside water will hold a flock all winter.", basis: "INPN; LPO." },
+    ],
+    "prunus-spinosa": [
+      { wildlifeId: "brimstone", support: "nectar", note: "The brimstone comes out of hibernation in February looking for the first flower there is, and in a southern hedge that is blackthorn — the yellow butterfly on the white blossom is the start of the year.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "emperor-moth", support: "host", note: "Emperor moth caterpillars — green, ringed with black and studded with orange warts — feed on blackthorn among a short list of shrubs, and the adult male flies by day looking for females by scent alone.", basis: "INPN (MNHN)." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "February blossom on bare wood is what a bumble bee queen coming out of the ground needs, and there is very little else open that early.", basis: "INPN; European pollinator literature." },
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Sloes hang on the bush long after everything softer has gone, which is why the winter thrushes work a blackthorn hedge in January.", basis: "INPN; LPO." },
+      { wildlifeId: "blackcaps-warblers", support: "berries", note: "Blackcaps take the sloes too, and the thorny tangle underneath is some of the safest nesting cover in a southern hedge.", basis: "INPN; LPO." },
+    ],
+    "rubus-ulmifolius": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Months of open flower from May, and a bramble in the sun is the loudest plant in a southern garden — bumble bees, solitary bees, hoverflies and beetles all at once.", basis: "INPN; European pollinator literature." },
+      { wildlifeId: "green-hairstreak", support: "host", note: "The green hairstreak — Europe's only green butterfly, and one you find by watching a sunny scrubby bank rather than a flower bed — lays on bramble among several other shrubs of rough ground.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "painted-lady", support: "nectar", note: "Painted ladies arriving up the coast in spring feed heavily at bramble, sometimes a dozen on one bush.", basis: "INPN; European butterfly literature." },
+      { wildlifeId: "blackcaps-warblers", support: "berries", note: "Blackberries from August are what a warbler puts weight on for the journey south, and the thorny mass is where it nested in June.", basis: "INPN; LPO." },
+    ],
+    "poa-nemoralis": [
+      { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "The meadow browns, marbled whites and skippers all raise their caterpillars on grasses, and this is the one that grows in the shade where those butterflies come to rest out of the afternoon heat.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+    ],
+    "plantago-lanceolata": [
+      { wildlifeId: "glanville-fritillary", support: "host", reliance: "narrow", note: "The Glanville fritillary lays a batch of eggs on ribwort plantain and the caterpillars spend the whole winter together inside a silk web spun on the plant — so a mown verge in autumn takes the entire brood with it.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "goldfinches-linnets", support: "seeds", note: "Goldfinches and linnets strip the seed spikes from late summer on, working along a path edge one head at a time.", basis: "INPN; LPO." },
+    ],
+    "galium-verum": [
+      { wildlifeId: "hummingbird-hawk-moth", support: "host", reliance: "narrow", note: "The moth everybody mistakes for a tiny hummingbird lays on bedstraw — so a patch in the rough grass is the difference between watching one at the lavender and having them breed with you.", basis: "INPN (MNHN); European foodplant checklists." },
+      { wildlifeId: "elephant-hawk-moth", support: "host", reliance: "narrow", note: "The elephant hawk-moth's caterpillar — enormous, grey, with false eyes it inflates when alarmed — turns up on bedstraw in late summer and is the most startling thing in a French garden.", basis: "INPN (MNHN); European foodplant checklists." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Hundreds of tiny flowers with no depth to them, which is exactly what the smallest solitary bees and hoverflies can use.", basis: "INPN; European pollinator literature." },
+    ],
+    "centaurea-scabiosa": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Knapweed flowers through the worst of the summer, when the garrigue has shut down and a bumble bee colony still has mouths to feed.", basis: "INPN; European pollinator literature." },
+      { wildlifeId: "painted-lady", support: "nectar", note: "Big butterflies work knapweed heads for minutes at a time — painted ladies, fritillaries and the marbled whites of a dry meadow.", basis: "INPN; European butterfly literature." },
+      { wildlifeId: "six-spot-burnet", support: "nectar", note: "The red-spotted day-flying burnet moths gather on knapweed in numbers, several to a head, in the full heat of the afternoon.", basis: "INPN (MNHN)." },
+      { wildlifeId: "goldfinches-linnets", support: "seeds", note: "Leave the seed heads standing and the goldfinches take them apart through the autumn.", basis: "INPN; LPO." },
+    ],
+    "carex-flacca": [
+      { wildlifeId: "grass-skippers", support: "host", note: "Sedges are the caterpillar plants of a long list of the small brown butterflies and moths, and a damp sedge patch is where they get through a Mediterranean summer.", basis: "INPN (MNHN); European foodplant checklists." },
+    ],
+    "salvia-rosmarinus": [
+      { wildlifeId: "bumble-bees", support: "nectar", reliance: "narrow", note: "Rosemary flowers from November to April — right through the Mediterranean winter — so on a mild January afternoon it is very nearly the only thing a bumble bee queen can find open.", basis: "INPN; French beekeeping literature." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "The earliest solitary bees emerge to rosemary, weeks before the almond blossom that usually gets the credit.", basis: "INPN; European pollinator literature." },
+      { wildlifeId: "cleopatra", support: "nectar", note: "The cleopatra — the brimstone's southern cousin, with an orange flush across the forewing — feeds at rosemary on warm days all winter.", basis: "INPN (MNHN)." },
+    ],
+    "scabiosa-columbaria": [
+      { wildlifeId: "six-spot-burnet", support: "nectar", note: "Scabious heads are where the burnet moths sit out the afternoon, several to a flower, wings closed and in no hurry.", basis: "INPN (MNHN)." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Five months of flat open flower heads on poor dry ground, which is where a bumble bee colony gets through the late summer here.", basis: "INPN; European pollinator literature." },
+      { wildlifeId: "painted-lady", support: "nectar", note: "Butterflies of every size work scabious at exactly the height they like it — marbled whites, blues and skippers alongside the painted ladies.", basis: "INPN; European butterfly literature." },
+    ],
+    "lonicera-implexa": [
+      { wildlifeId: "privet-hawk-moth", support: "nectar", note: "The long cream tubes open at dusk and smell strongest then, because they are built for a hawk moth's tongue — the big privet and convolvulus hawk-moths work a honeysuckle in the last light of a June evening.", basis: "INPN (MNHN); European pollinator literature." },
+      { wildlifeId: "blackcaps-warblers", support: "berries", note: "Red berries in autumn for warblers and blackcaps, on an evergreen tangle they will also nest in.", basis: "INPN; LPO." },
+    ],
+    "hedera-helix": [
+      { wildlifeId: "mason-bees", support: "nectar", reliance: "narrow", note: "The ivy bee is a mining bee whose whole year is built around this one plant: it emerges in September as the ivy opens, and is gone by the time the flowers are over. Nothing else it could use is flowering then.", basis: "INPN; European pollinator literature (Colletes hederae)." },
+      { wildlifeId: "holly-blue", support: "host", reliance: "narrow", note: "The holly blue has two broods a year and swaps plants between them — the spring one lays on holly, the summer one on ivy buds. A garden needs both to keep it.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "red-admiral", support: "nectar", note: "Red admirals crowd onto ivy in October — often the last butterflies of the year, feeding on the last flowers of the year.", basis: "INPN (MNHN); European butterfly literature." },
+      { wildlifeId: "blackcaps-warblers", support: "berries", note: "Ivy berries ripen in late winter, months after everything else, which makes them the food that carries blackcaps through February.", basis: "INPN; LPO." },
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Thrushes and wood pigeons take the same late crop, and the evergreen cover is where half the garden's birds roost on a cold night.", basis: "INPN; LPO." },
+    ],
+    "arum-italicum": [
+      { wildlifeId: "winter-thrushes", support: "berries", note: "The spike of red berries stands on bare ground in late summer after the leaves have gone, and blackbirds and thrushes strip it — which is how arum moves along a hedge.", basis: "INPN; LPO." },
+    ],
     "quercus-ilex": [
       { wildlifeId: "eurasian-jay", support: "seeds", note: "Holm-oak acorns are a jay's winter store. It buries them singly, all over the hillside, and the ones it never returns for come up as seedlings under the scrub that hid them.", basis: "GloBI — interaction records via the Encyclopedia of Life (Thessen 2014) and Groom et al. 2020; LPO." },
       { wildlifeId: "blackcaps-warblers", support: "shelter", note: "An evergreen oak keeps its cover all winter, which is why so many small birds roost in one when the mistral is up.", basis: "GloBI — Groom et al. 2020, interactions extracted from literature; LPO." },
@@ -2831,6 +2982,82 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
   },
 
   "france-alpine": {
+    "hedera-helix": [
+      { wildlifeId: "mason-bees", support: "nectar", reliance: "narrow", note: "The ivy bee's whole year is timed to this plant: it emerges in September as the flowers open on a warm valley wall and is done when they are. Nothing else it can use is out that late.", basis: "INPN; European pollinator literature (Colletes hederae)." },
+      { wildlifeId: "holly-blue", support: "host", reliance: "narrow", note: "The holly blue swaps plants between its two broods — holly in spring, ivy buds in late summer — so a garden needs both to keep it.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "red-admiral", support: "nectar", note: "Red admirals coming down off the passes in autumn feed on ivy flowers, and are usually the last butterflies of the year.", basis: "INPN (MNHN); European butterfly literature." },
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Ivy berries ripen in late winter, after everything else has been stripped, which is what carries thrushes through the hardest weeks.", basis: "INPN; LPO." },
+    ],
+    "prunus-padus": [
+      { wildlifeId: "emperor-moth", support: "host", note: "Emperor moth caterpillars take bird cherry among the short list of shrubs and trees they accept, in the valleys below the conifer belt.", basis: "INPN (MNHN)." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Long drooping racemes of scented white flower in May, at the moment the alpine year properly opens and the bumble bee queens are founding nests.", basis: "INPN; European pollinator literature." },
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Black cherries in August, taken by fieldfares, blackbirds and ring ouzels — and by pine martens, which climb for them.", basis: "INPN; LPO." },
+      { wildlifeId: "blackcaps-warblers", support: "berries", note: "Warblers feeding up for the journey south work a bird cherry hard in late summer.", basis: "INPN; LPO." },
+    ],
+    "populus-tremula": [
+      { wildlifeId: "poplar-hawk-moth", support: "host", note: "Aspen is one of the poplar hawk-moth's main trees; the caterpillar is big, green and blunt-horned, and pupates in the soil beneath.", basis: "INPN (MNHN); European foodplant checklists." },
+      { wildlifeId: "mourning-cloak", support: "host", note: "Camberwell beauty caterpillars feed together on aspen and willow, and the adults hibernate as adults, so they are among the first butterflies on the wing in an alpine spring.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "black-grouse", support: "shelter", note: "A suckering aspen thicket on an old avalanche track is exactly the low broken cover a black grouse brood needs, and the buds are winter food.", basis: "INPN; LPO; alpine game-bird ecology." },
+    ],
+    "corylus-avellana": [
+      { wildlifeId: "hazel-dormouse", support: "seeds", reliance: "narrow", note: "The dormouse is named after this plant in every European language, and hazelnuts are what it fattens on before it hibernates. A nut opened by a dormouse has a smooth round hole with tooth marks angled round the rim, which is how surveyors find out it is there at all.", basis: "INPN (MNHN); European dormouse survey methods (nut-hunt protocol)." },
+      { wildlifeId: "spotted-nutcracker", support: "seeds", note: "The nutcracker caches tens of thousands of nuts and seeds each autumn and remembers most of them under a metre of snow; the ones it forgets are how hazel and pine both get uphill.", basis: "INPN; LPO; alpine seed-caching studies." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Catkins in February, weeks before anything else in the valley opens, for the first solitary bees out on a warm afternoon.", basis: "INPN; European pollinator literature." },
+    ],
+    "rubus-idaeus": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A raspberry patch in June has bumble bees on it from first light — one of the best nectar plants of the whole mountain summer.", basis: "INPN; European pollinator literature." },
+      { wildlifeId: "green-hairstreak", support: "host", note: "Europe's only green butterfly lays on raspberry among the other shrubs of rough clearings, and rests on a sunny bank with its wings shut, indistinguishable from a leaf.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "blackcaps-warblers", support: "berries", note: "Warblers and thrushes work a raspberry thicket in August, and the canes are dense enough that they nest there too.", basis: "INPN; LPO." },
+      { wildlifeId: "hazel-dormouse", support: "berries", note: "Dormice travel along bramble and raspberry canes and feed on the fruit — a hedge with them in it is a corridor, a clipped one is a wall.", basis: "INPN (MNHN); European dormouse ecology." },
+    ],
+    "rosa-pendulina": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A single open rose is one a bee can actually get into — a packed double garden rose gives it nothing at all.", basis: "INPN; European pollinator literature." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Leafcutter bees cut neat semicircles from rose leaves to line their nest cells; the notches are a sign the garden is working.", basis: "INPN; European pollinator literature." },
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Long red hips hang on the bush into the winter, which is what fieldfares and redwings come down to when the snow has covered the ground.", basis: "INPN; LPO." },
+    ],
+    "daphne-mezereum": [
+      { wildlifeId: "brimstone", support: "nectar", note: "The brimstone hibernates as an adult and comes out on the first warm February afternoon looking for anything at all in flower — in an alpine wood that is mezereon, and almost nothing else.", basis: "INPN (MNHN); European butterfly literature." },
+      { wildlifeId: "bumble-bees", support: "nectar", reliance: "narrow", note: "February flower in a mountain wood is very nearly a monopoly: a bumble bee queen out of hibernation early has this or she has nothing.", basis: "INPN; European pollinator literature." },
+      { wildlifeId: "blackcaps-warblers", support: "berries", note: "The red berries that would poison us are taken safely by blackcaps and thrushes in July, which is how the plant moves through a wood.", basis: "INPN; LPO." },
+    ],
+    "erica-carnea": [
+      { wildlifeId: "bumble-bees", support: "nectar", reliance: "narrow", note: "Winter heath flowers from January into April, often up through the snow, and on the first mild day of the mountain year it is what the bumble bee queens are on because nothing else is open.", basis: "INPN; European pollinator literature." },
+      { wildlifeId: "silver-studded-blue", support: "host", note: "The heath blues lay on Erica and Calluna, and their caterpillars are tended by ants that milk them for sugar in exchange for protection.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "The earliest solitary bees work winter heath in March, well before the meadows have anything to offer.", basis: "INPN; European pollinator literature." },
+    ],
+    "trifolium-pratense": [
+      { wildlifeId: "bumble-bees", support: "nectar", reliance: "narrow", note: "A red clover head is deep, so only the long-tongued bumble bees can reach the nectar — the garden bumble bee and the great yellow among them. Short-tongued bees are locked out, which is why clover-rich meadows and long-tongued bumble bees have declined together.", basis: "INPN; Xerces Society; European pollinator literature." },
+      { wildlifeId: "common-blue", support: "host", note: "The common blue's caterpillars eat clovers and trefoils, and a hay meadow that has not been fertilised is where the butterfly still is.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "six-spot-burnet", support: "nectar", note: "The red-spotted day-flying burnets gather on clover heads in the afternoon, several to a flower.", basis: "INPN (MNHN)." },
+    ],
+    "colchicum-autumnale": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "It flowers in September and October when the mountain meadow is finished, and the last bumble bees and hoverflies of the year come to it because there is nothing else left open.", basis: "INPN; European pollinator literature." },
+    ],
+    "cardamine-pratensis": [
+      { wildlifeId: "orange-tip", support: "host", reliance: "narrow", note: "The orange-tip lays a single egg on a flower stem and the caterpillar eats the seed pods as they form. Cut the damp corner in June and the whole brood goes with it; leave it until August and you keep the butterfly.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Early nectar in a wet spring meadow, at the point when bumble bee queens are still founding their nests.", basis: "INPN; European pollinator literature." },
+    ],
+    "sesleria-caerulea": [
+      { wildlifeId: "grass-skippers", support: "host", note: "The mountain browns and skippers raise their caterpillars on grasses like this, each one hidden inside a leaf it has sewn shut.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+    ],
+    "carex-sempervirens": [
+      { wildlifeId: "grass-skippers", support: "host", note: "Sedge turf above the treeline is the caterpillar ground of the small mountain browns and skippers, which is most of what flies up there.", basis: "INPN (MNHN); European foodplant checklists." },
+      { wildlifeId: "black-grouse", support: "shelter", note: "A tussocky sedge sward is where a black grouse hen puts her nest and where the chicks find the insects they need in their first weeks.", basis: "INPN; LPO; alpine game-bird ecology." },
+    ],
+    "clematis-alpina": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Nodding bells that a bumble bee has to climb right inside, which is exactly what they are shaped for — in May, on a rock face where little else is out.", basis: "INPN; European pollinator literature." },
+    ],
+    "humulus-lupulus": [
+      { wildlifeId: "comma", support: "host", reliance: "narrow", note: "The comma — the butterfly with the ragged wing edges, which overwinters looking exactly like a dead leaf — lays on hop and nettle, and its caterpillar disguises itself as a bird dropping.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+    ],
+    "fragaria-vesca": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Shallow open flowers through the mountain summer for the small solitary bees and hoverflies that deeper flowers exclude.", basis: "INPN; European pollinator literature." },
+      { wildlifeId: "hazel-dormouse", support: "berries", note: "Dormice take wild strawberries at the hedge bottom along with everything else soft and sweet in an alpine summer.", basis: "INPN (MNHN); European dormouse ecology." },
+    ],
+    "galium-verum": [
+      { wildlifeId: "hummingbird-hawk-moth", support: "host", reliance: "narrow", note: "The moth people mistake for a tiny hummingbird lays on bedstraw, so a patch in the rough grass is what turns a visitor into a resident.", basis: "INPN (MNHN); European foodplant checklists." },
+      { wildlifeId: "elephant-hawk-moth", support: "host", reliance: "narrow", note: "The elephant hawk-moth's huge grey caterpillar, with the false eyes it inflates when startled, feeds on bedstraw in late summer.", basis: "INPN (MNHN); European foodplant checklists." },
+    ],
     "acer-pseudoplatanus": [
       { wildlifeId: "bumble-bees", support: "nectar", reliance: "narrow", note: "Sycamore flowers in May at an altitude where there is almost nothing else out, and a single old tree can carry a whole valley's bumble bee queens through the week they most need it.", basis: "GloBI — EuPPollNet (Lanuza et al. 2025), trophiCH (Reji Chacko et al. 2024), Redhead et al. 2018 (CEH); INPN." },
     ],

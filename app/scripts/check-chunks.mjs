@@ -23,7 +23,7 @@ const BASE = `http://127.0.0.1:${port}`;
 /** `max` is how many region plant lists the page may fetch; `note` says why. */
 const PAGES = [
   { label: "home", path: "/#/", max: 0 },
-  { label: "explore (10 region cards)", path: "/#/regions", max: 0, note: "counts come from the registry" },
+  { label: "explore (11 region cards)", path: "/#/regions", max: 0, note: "counts come from the registry" },
   { label: "browse", path: "/#/browse", max: 0 },
   { label: "all plants index", path: "/#/plants", max: 0, note: "the search index is the registry" },
   { label: "plant page (one region)", path: "/#/plants/baptisia-australis", max: 1 },

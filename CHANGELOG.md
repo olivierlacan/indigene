@@ -77,9 +77,35 @@ subtitle on the What's new page.
   hairstreaks](https://indigene.app/wildlife/juniper-hairstreak) join the
   catalogue. They are the green of the foliage they sit on, and their
   caterpillars eat cypress and juniper and nothing else.
+- Regions: **the three thinner French lists caught up.** [Mediterranean](https://indigene.app/regions/france-mediterranean),
+  [continental](https://indigene.app/regions/france-continental) and
+  [alpine](https://indigene.app/regions/france-alpine) France gained 44 plants —
+  riverside willow and poplar, bramble, raspberry, winter heath, wall ferns.
+- Regions: every one of those 44 reads in French the day it lands — what the
+  plant is, how to grow it, how to propagate it, and a line for each animal it
+  feeds.
+- Wildlife: the [orange-tip](https://indigene.app/wildlife/orange-tip) joins the
+  catalogue. The male's bright wingtips are unmistakable; the female has none,
+  and lays on cuckooflower in the damp corner people mow in June.
+- Internal: audited every existing region against `coverage-plan.md` §1. The
+  three France lists were the real gap; measured against the Gaytán 2026
+  European matrix they now ship 47% of Mediterranean caterpillar records (was
+  10%), 68% continental (32%) and 56% alpine (34%), and all three clear the
+  floors with nothing short. Florida, the Mid-Atlantic and Northern Michigan
+  are short on ferns, vines and grasses; their candidate shortlists are in
+  `docs/candidates/` for follow-up PRs.
+- Internal: re-measured the bundle. The core chunk is 365 KB gzipped (was cited
+  as 305, already drifted; the France rows took it to 350 and the central-coast
+  ties to 365) and the French prose chunk 145 KB (was 130). `README.md`,
+  `PROJECT_BRIEF.md`, `app/README.md` and `docs/ecoregion-plan.md` all carry the
+  same pair. The wildlife tie table sits in the core chunk, so it is the line
+  that grows with every new region.
 
 ### Fixed
 
+- Wildlife: the [mourning cloak](https://indigene.app/wildlife/mourning-cloak)
+  is native to Europe as well, where it is called the Camberwell beauty. Its
+  page said North America only.
 - Wildlife & Regions: the star that marks a plant an animal can’t live without
   now says the same word everywhere — “Vital.” It used to read “Essential” on
   the plant and “Vital” on the animal’s summary.

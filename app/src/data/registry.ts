@@ -304,6 +304,37 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:17009280-1",
+    "scientificName": "Adiantum capillus-veneris",
+    "family": "Pteridaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "17009280-1",
+      "wfo": "wfo-0001109469",
+      "gbif": "2651816",
+      "usda": "ADCA",
+      "itis": "17308",
+      "inat": "63916",
+      "wikidata": "Q4678994",
+      "indigene": "adiantum-capillus-veneris"
+    },
+    "commonNames": [
+      "Southern Maidenhair",
+      "Capillaire de Montpellier"
+    ],
+    "aliases": [
+      "adiantum capillus-veneris",
+      "capillaire de montpellier",
+      "southern maidenhair"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
+    ]
+  },
+  {
     "primaryId": "ipni:781583-1",
     "scientificName": "Aesculus californica",
     "family": "Sapindaceae",
@@ -380,15 +411,19 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "alnus-glutinosa"
     },
     "commonNames": [
-      "Common Alder"
+      "Common Alder",
+      "Aulne glutineux"
     ],
     "aliases": [
       "alnus glutinosa",
+      "aulne glutineux",
       "common alder"
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "france-continental",
+      "france-mediterranean"
     ]
   },
   {
@@ -889,6 +924,37 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:86047-1",
+    "scientificName": "Arum italicum",
+    "family": "Araceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "86047-1",
+      "wfo": "wfo-0000279414",
+      "gbif": "5330661",
+      "usda": "ARIT",
+      "itis": "42544",
+      "inat": "61168",
+      "wikidata": "Q30968",
+      "indigene": "arum-italicum"
+    },
+    "commonNames": [
+      "Italian Lord-and-Ladies",
+      "Gouet d'Italie"
+    ],
+    "aliases": [
+      "arum italicum",
+      "gouet d'italie",
+      "italian lord-and-ladies"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
+    ]
+  },
+  {
     "primaryId": "ipni:20973-2",
     "scientificName": "Aruncus dioicus",
     "family": "Rosaceae",
@@ -1037,6 +1103,36 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:17040860-1",
+    "scientificName": "Asplenium ceterach",
+    "family": "Aspleniaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "17040860-1",
+      "wfo": "wfo-0001115841",
+      "gbif": "2650617",
+      "itis": "616715",
+      "inat": "82591",
+      "wikidata": "Q1754958",
+      "indigene": "asplenium-ceterach"
+    },
+    "commonNames": [
+      "Rustyback",
+      "Cétérach"
+    ],
+    "aliases": [
+      "asplenium ceterach",
+      "cétérach",
+      "rustyback"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
+    ]
+  },
+  {
     "primaryId": "ipni:17051170-1",
     "scientificName": "Asplenium scolopendrium",
     "family": "Aspleniaceae",
@@ -1054,15 +1150,79 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "asplenium-scolopendrium"
     },
     "commonNames": [
-      "Hart's-tongue Fern"
+      "Hart's-tongue Fern",
+      "Scolopendre"
     ],
     "aliases": [
       "asplenium scolopendrium",
-      "hart's-tongue fern"
+      "hart's-tongue fern",
+      "scolopendre"
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "france-continental"
+    ]
+  },
+  {
+    "primaryId": "ipni:310197-2",
+    "scientificName": "Asplenium trichomanes",
+    "family": "Aspleniaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "310197-2",
+      "wfo": "wfo-0001109364",
+      "gbif": "8108066",
+      "usda": "ASTR2",
+      "itis": "17364",
+      "inat": "75609",
+      "wikidata": "Q902211",
+      "indigene": "asplenium-trichomanes"
+    },
+    "commonNames": [
+      "Maidenhair Spleenwort",
+      "Capillaire des murailles"
+    ],
+    "aliases": [
+      "asplenium trichomanes",
+      "capillaire des murailles",
+      "maidenhair spleenwort"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": "ipni:17053570-1",
+    "scientificName": "Asplenium viride",
+    "family": "Aspleniaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "17053570-1",
+      "wfo": "wfo-0001109866",
+      "gbif": "2650716",
+      "itis": "192116",
+      "inat": "75611",
+      "wikidata": "Q1552374",
+      "indigene": "asplenium-viride"
+    },
+    "commonNames": [
+      "Green Spleenwort",
+      "Doradille verte"
+    ],
+    "aliases": [
+      "asplenium viride",
+      "doradille verte",
+      "green spleenwort"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -1267,6 +1427,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-continental",
       "france-alpine"
     ]
   },
@@ -1420,6 +1581,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-continental",
       "france-alpine"
     ]
   },
@@ -1479,6 +1641,68 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "north-michigan"
+    ]
+  },
+  {
+    "primaryId": "ipni:45334-2",
+    "scientificName": "Cardamine pratensis",
+    "family": "Brassicaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "45334-2",
+      "wfo": "wfo-0000587355",
+      "gbif": "7972010",
+      "usda": "CAPR3",
+      "itis": "22773",
+      "inat": "54531",
+      "wikidata": "Q27490",
+      "indigene": "cardamine-pratensis"
+    },
+    "commonNames": [
+      "Cuckooflower",
+      "Cardamine des prés"
+    ],
+    "aliases": [
+      "cardamine des prés",
+      "cardamine pratensis",
+      "cuckooflower"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:299756-1",
+    "scientificName": "Carex flacca",
+    "family": "Cyperaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "299756-1",
+      "wfo": "wfo-0000346645",
+      "gbif": "2727938",
+      "usda": "CAFL8",
+      "itis": "39603",
+      "inat": "159951",
+      "wikidata": "Q158524",
+      "indigene": "carex-flacca"
+    },
+    "commonNames": [
+      "Glaucous Sedge",
+      "Laîche glauque"
+    ],
+    "aliases": [
+      "carex flacca",
+      "glaucous sedge",
+      "laîche glauque"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
     ]
   },
   {
@@ -1567,6 +1791,68 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:302193-1",
+    "scientificName": "Carex sempervirens",
+    "family": "Cyperaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "302193-1",
+      "wfo": "wfo-0000351168",
+      "gbif": "2722326",
+      "usda": "CASE28",
+      "itis": "808440",
+      "inat": "154310",
+      "wikidata": "Q159891",
+      "indigene": "carex-sempervirens"
+    },
+    "commonNames": [
+      "Evergreen Sedge",
+      "Laîche toujours verte"
+    ],
+    "aliases": [
+      "carex sempervirens",
+      "evergreen sedge",
+      "laîche toujours verte"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:302516-1",
+    "scientificName": "Carex sylvatica",
+    "family": "Cyperaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "302516-1",
+      "wfo": "wfo-0000351795",
+      "gbif": "2722602",
+      "usda": "CASY3",
+      "itis": "39834",
+      "inat": "69640",
+      "wikidata": "Q158168",
+      "indigene": "carex-sylvatica"
+    },
+    "commonNames": [
+      "Wood Sedge",
+      "Laîche des bois"
+    ],
+    "aliases": [
+      "carex sylvatica",
+      "laîche des bois",
+      "wood sedge"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
     ]
   },
   {
@@ -1783,7 +2069,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-continental"
+      "france-continental",
+      "france-mediterranean"
     ]
   },
   {
@@ -1958,6 +2245,36 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": "ipni:30129020-2",
+    "scientificName": "Clematis alpina",
+    "family": "Ranunculaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "30129020-2",
+      "wfo": "wfo-0000609451",
+      "gbif": "3033599",
+      "itis": "501582",
+      "inat": "160679",
+      "wikidata": "Q157768",
+      "indigene": "clematis-alpina"
+    },
+    "commonNames": [
+      "Alpine Clematis",
+      "Clématite des Alpes"
+    ],
+    "aliases": [
+      "alpine clematis",
+      "clematis alpina",
+      "clématite des alpes"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -2167,6 +2484,37 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:533232-1",
+    "scientificName": "Colchicum autumnale",
+    "family": "Colchicaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "533232-1",
+      "wfo": "wfo-0000763824",
+      "gbif": "2739622",
+      "usda": "COAU4",
+      "itis": "42907",
+      "inat": "131586",
+      "wikidata": "Q152553",
+      "indigene": "colchicum-autumnale"
+    },
+    "commonNames": [
+      "Autumn Crocus",
+      "Colchique des prés"
+    ],
+    "aliases": [
+      "autumn crocus",
+      "colchicum autumnale",
+      "colchique des prés"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -2452,15 +2800,19 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "corylus-avellana"
     },
     "commonNames": [
-      "Hazel"
+      "Hazel",
+      "Noisetier"
     ],
     "aliases": [
       "corylus avellana",
-      "hazel"
+      "hazel",
+      "noisetier"
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "france-continental",
+      "france-alpine"
     ]
   },
   {
@@ -2614,6 +2966,37 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:831294-1",
+    "scientificName": "Daphne mezereum",
+    "family": "Thymelaeaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "831294-1",
+      "wfo": "wfo-0000637755",
+      "gbif": "5420852",
+      "usda": "DAME3",
+      "itis": "27126",
+      "inat": "133034",
+      "wikidata": "Q165166",
+      "indigene": "daphne-mezereum"
+    },
+    "commonNames": [
+      "Mezereon",
+      "Bois-joli"
+    ],
+    "aliases": [
+      "bois-joli",
+      "daphne mezereum",
+      "mezereon"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
     "primaryId": "ipni:397953-1",
     "scientificName": "Deschampsia cespitosa",
     "family": "Poaceae",
@@ -2632,9 +3015,11 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Tufted Hairgrass",
-      "Tufted Hair-grass"
+      "Tufted Hair-grass",
+      "Canche cespiteuse"
     ],
     "aliases": [
+      "canche cespiteuse",
       "deschampsia cespitosa",
       "tufted hair-grass",
       "tufted hairgrass"
@@ -2642,7 +3027,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw",
-      "france-atlantic"
+      "france-atlantic",
+      "france-continental"
     ]
   },
   {
@@ -2897,15 +3283,19 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "dryopteris-filix-mas"
     },
     "commonNames": [
-      "Male Fern"
+      "Male Fern",
+      "Fougère mâle"
     ],
     "aliases": [
       "dryopteris filix-mas",
+      "fougère mâle",
       "male fern"
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "france-continental",
+      "france-alpine"
     ]
   },
   {
@@ -3055,6 +3445,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:332092-2",
+    "scientificName": "Erica carnea",
+    "family": "Ericaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "332092-2",
+      "wfo": "wfo-0000671633",
+      "gbif": "5682465",
+      "inat": "56308",
+      "wikidata": "Q248958",
+      "indigene": "erica-carnea"
+    },
+    "commonNames": [
+      "Winter Heath",
+      "Bruyère des neiges"
+    ],
+    "aliases": [
+      "bruyère des neiges",
+      "erica carnea",
+      "winter heath"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -3576,17 +3995,21 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Woodland Strawberry",
-      "Wild Strawberry"
+      "Wild Strawberry",
+      "Fraisier des bois"
     ],
     "aliases": [
       "fragaria vesca",
+      "fraisier des bois",
       "wild strawberry",
       "woodland strawberry"
     ],
     "cultivarOf": null,
     "regions": [
       "ca-south-coast",
-      "france-atlantic"
+      "france-atlantic",
+      "france-continental",
+      "france-alpine"
     ]
   },
   {
@@ -3784,15 +4207,20 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "galium-verum"
     },
     "commonNames": [
-      "Lady's Bedstraw"
+      "Lady's Bedstraw",
+      "Gaillet jaune"
     ],
     "aliases": [
+      "gaillet jaune",
       "galium verum",
       "lady's bedstraw"
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "france-continental",
+      "france-mediterranean",
+      "france-alpine"
     ]
   },
   {
@@ -4020,15 +4448,22 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "hedera-helix"
     },
     "commonNames": [
-      "Common Ivy"
+      "Common Ivy",
+      "Ivy",
+      "Lierre"
     ],
     "aliases": [
       "common ivy",
-      "hedera helix"
+      "hedera helix",
+      "ivy",
+      "lierre"
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "france-continental",
+      "france-mediterranean",
+      "france-alpine"
     ]
   },
   {
@@ -4329,7 +4764,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
-      "france-continental"
+      "france-continental",
+      "france-alpine"
     ]
   },
   {
@@ -4928,6 +5364,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:148839-1",
+    "scientificName": "Lonicera implexa",
+    "family": "Caprifoliaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "148839-1",
+      "wfo": "wfo-0000359592",
+      "gbif": "7272699",
+      "inat": "82664",
+      "wikidata": "Q1537828",
+      "indigene": "lonicera-implexa"
+    },
+    "commonNames": [
+      "Mediterranean Honeysuckle",
+      "Chèvrefeuille des Baléares"
+    ],
+    "aliases": [
+      "chèvrefeuille des baléares",
+      "lonicera implexa",
+      "mediterranean honeysuckle"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
     ]
   },
   {
@@ -6290,15 +6755,19 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "plantago-lanceolata"
     },
     "commonNames": [
-      "Ribwort Plantain"
+      "Ribwort Plantain",
+      "Plantain lancéolé"
     ],
     "aliases": [
       "plantago lanceolata",
+      "plantain lancéolé",
       "ribwort plantain"
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "france-continental",
+      "france-mediterranean"
     ]
   },
   {
@@ -6348,15 +6817,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "poa-nemoralis"
     },
     "commonNames": [
-      "Wood Meadow-grass"
+      "Wood Meadow-grass",
+      "Pâturin des bois"
     ],
     "aliases": [
       "poa nemoralis",
+      "pâturin des bois",
       "wood meadow-grass"
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "france-mediterranean"
     ]
   },
   {
@@ -6416,6 +6888,66 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan"
+    ]
+  },
+  {
+    "primaryId": "ipni:17205720-1",
+    "scientificName": "Polystichum aculeatum",
+    "family": "Dryopteridaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "17205720-1",
+      "wfo": "wfo-0001239724",
+      "gbif": "7319269",
+      "inat": "275961",
+      "wikidata": "Q28957",
+      "indigene": "polystichum-aculeatum"
+    },
+    "commonNames": [
+      "Hard Shield Fern",
+      "Polystic à aiguillons"
+    ],
+    "aliases": [
+      "hard shield fern",
+      "polystic à aiguillons",
+      "polystichum aculeatum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
+    ]
+  },
+  {
+    "primaryId": "ipni:17414110-1",
+    "scientificName": "Polystichum lonchitis",
+    "family": "Dryopteridaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "17414110-1",
+      "wfo": "wfo-0001109272",
+      "gbif": "2651113",
+      "usda": "POLO4",
+      "itis": "17686",
+      "inat": "78697",
+      "wikidata": "Q542735",
+      "indigene": "polystichum-lonchitis"
+    },
+    "commonNames": [
+      "Holly Fern",
+      "Polystic en fer de lance"
+    ],
+    "aliases": [
+      "holly fern",
+      "polystic en fer de lance",
+      "polystichum lonchitis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -6505,6 +7037,37 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:776790-1",
+    "scientificName": "Populus nigra",
+    "family": "Salicaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "776790-1",
+      "wfo": "wfo-0000928297",
+      "gbif": "3040227",
+      "usda": "PONI",
+      "itis": "22468",
+      "inat": "47565",
+      "wikidata": "Q147064",
+      "indigene": "populus-nigra"
+    },
+    "commonNames": [
+      "Black Poplar",
+      "Peuplier noir"
+    ],
+    "aliases": [
+      "black poplar",
+      "peuplier noir",
+      "populus nigra"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
+    ]
+  },
+  {
     "primaryId": "ipni:776884-1",
     "scientificName": "Populus tremula",
     "family": "Salicaceae",
@@ -6523,16 +7086,20 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Aspen",
-      "Trembling Poplar"
+      "Trembling Poplar",
+      "Tremble"
     ],
     "aliases": [
       "aspen",
       "populus tremula",
+      "tremble",
       "trembling poplar"
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "france-continental",
+      "france-alpine"
     ]
   },
   {
@@ -6742,6 +7309,37 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:730076-1",
+    "scientificName": "Prunus padus",
+    "family": "Rosaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "730076-1",
+      "wfo": "wfo-0001008273",
+      "gbif": "3021037",
+      "usda": "PRPA5",
+      "itis": "24798",
+      "inat": "143793",
+      "wikidata": "Q165424",
+      "indigene": "prunus-padus"
+    },
+    "commonNames": [
+      "Bird Cherry",
+      "Merisier à grappes"
+    ],
+    "aliases": [
+      "bird cherry",
+      "merisier à grappes",
+      "prunus padus"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
     "primaryId": "ipni:30010850-2",
     "scientificName": "Prunus serotina",
     "family": "Rosaceae",
@@ -6790,16 +7388,19 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Blackthorn",
-      "Sloe"
+      "Sloe",
+      "Prunellier"
     ],
     "aliases": [
       "blackthorn",
+      "prunellier",
       "prunus spinosa",
       "sloe"
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "france-mediterranean"
     ]
   },
   {
@@ -7488,6 +8089,37 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:733641-1",
+    "scientificName": "Rosa pendulina",
+    "family": "Rosaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "733641-1",
+      "wfo": "wfo-0001018161",
+      "gbif": "3006974",
+      "usda": "ROPE4",
+      "itis": "836420",
+      "inat": "198887",
+      "wikidata": "Q102088",
+      "indigene": "rosa-pendulina"
+    },
+    "commonNames": [
+      "Alpine Rose",
+      "Rosier des Alpes"
+    ],
+    "aliases": [
+      "alpine rose",
+      "rosa pendulina",
+      "rosier des alpes"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
     "primaryId": null,
     "scientificName": "Rubus fruticosus agg.",
     "family": "Rosaceae",
@@ -7501,16 +8133,50 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Bramble",
-      "Blackberry"
+      "Blackberry",
+      "Ronce commune"
     ],
     "aliases": [
       "blackberry",
       "bramble",
+      "ronce commune",
       "rubus fruticosus agg."
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "france-continental"
+    ]
+  },
+  {
+    "primaryId": "ipni:298089-2",
+    "scientificName": "Rubus idaeus",
+    "family": "Rosaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "298089-2",
+      "wfo": "wfo-0001000827",
+      "gbif": "2993094",
+      "usda": "RUID",
+      "itis": "24947",
+      "inat": "54436",
+      "wikidata": "Q12252383",
+      "indigene": "rubus-idaeus"
+    },
+    "commonNames": [
+      "Wild Raspberry",
+      "Framboisier sauvage"
+    ],
+    "aliases": [
+      "framboisier sauvage",
+      "rubus idaeus",
+      "wild raspberry"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -7569,6 +8235,37 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:740982-1",
+    "scientificName": "Rubus ulmifolius",
+    "family": "Rosaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "740982-1",
+      "wfo": "wfo-0000985000",
+      "gbif": "2996929",
+      "usda": "RUUL",
+      "itis": "504890",
+      "inat": "78895",
+      "wikidata": "Q59843",
+      "indigene": "rubus-ulmifolius"
+    },
+    "commonNames": [
+      "Mediterranean Bramble",
+      "Ronce à feuilles d'orme"
+    ],
+    "aliases": [
+      "mediterranean bramble",
+      "ronce à feuilles d'orme",
+      "rubus ulmifolius"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
     ]
   },
   {
@@ -7720,6 +8417,37 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:776974-1",
+    "scientificName": "Salix alba",
+    "family": "Salicaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "776974-1",
+      "wfo": "wfo-0000929085",
+      "gbif": "5372513",
+      "usda": "SAAL2",
+      "itis": "565478",
+      "inat": "54841",
+      "wikidata": "Q156918",
+      "indigene": "salix-alba"
+    },
+    "commonNames": [
+      "White Willow",
+      "Saule blanc"
+    ],
+    "aliases": [
+      "salix alba",
+      "saule blanc",
+      "white willow"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
+    ]
+  },
+  {
     "primaryId": "ipni:777256-1",
     "scientificName": "Salix caprea",
     "family": "Salicaceae",
@@ -7750,6 +8478,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-continental",
       "france-alpine"
     ]
   },
@@ -7991,6 +8720,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:60474677-2",
+    "scientificName": "Salvia rosmarinus",
+    "family": "Lamiaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "60474677-2",
+      "wfo": "wfo-0000302167",
+      "gbif": "10902460",
+      "inat": "636795",
+      "wikidata": "Q102240169",
+      "indigene": "salvia-rosmarinus"
+    },
+    "commonNames": [
+      "Rosemary",
+      "Romarin"
+    ],
+    "aliases": [
+      "romarin",
+      "rosemary",
+      "salvia rosmarinus"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
+    ]
+  },
+  {
     "primaryId": "ipni:30122169-2",
     "scientificName": "Sambucus nigra",
     "family": "Adoxaceae",
@@ -8075,6 +8833,37 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "north-michigan",
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:319793-1",
+    "scientificName": "Scabiosa columbaria",
+    "family": "Caprifoliaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "319793-1",
+      "wfo": "wfo-0000500277",
+      "gbif": "2888802",
+      "usda": "SCCO6",
+      "itis": "35412",
+      "inat": "85047",
+      "wikidata": "Q159263",
+      "indigene": "scabiosa-columbaria"
+    },
+    "commonNames": [
+      "Small Scabious",
+      "Scabieuse colombaire"
+    ],
+    "aliases": [
+      "scabieuse colombaire",
+      "scabiosa columbaria",
+      "small scabious"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
     ]
   },
   {
@@ -8164,6 +8953,37 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "florida-central",
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:1005554-2",
+    "scientificName": "Sesleria caerulea",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "1005554-2",
+      "wfo": "wfo-0000898775",
+      "gbif": "4119608",
+      "usda": "SECA22",
+      "itis": "784903",
+      "inat": "363774",
+      "wikidata": "Q1160185",
+      "indigene": "sesleria-caerulea"
+    },
+    "commonNames": [
+      "Blue Moor-grass",
+      "Seslérie bleue"
+    ],
+    "aliases": [
+      "blue moor-grass",
+      "sesleria caerulea",
+      "seslérie bleue"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -9007,15 +9827,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "trifolium-pratense"
     },
     "commonNames": [
-      "Red Clover"
+      "Red Clover",
+      "Trèfle des prés"
     ],
     "aliases": [
       "red clover",
-      "trifolium pratense"
+      "trifolium pratense",
+      "trèfle des prés"
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "france-alpine"
     ]
   },
   {

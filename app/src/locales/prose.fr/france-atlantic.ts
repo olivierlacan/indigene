@@ -37,6 +37,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
     propagationNote:
       "Récoltez les chatons mûrs à la fin de l'été, quand ils s'effritent, et répandez la graine, fine comme de la poussière, à la surface d'une terre humide — il lui faut la lumière, ne l'enterrez pas. Semée à l'automne et laissée dehors pour l'hiver, elle lève sans difficulté au printemps.",
     supportNotes: {
+      "emperor-moth":
+        "Les chenilles du petit paon de nuit mangent le bouleau parmi une courte liste d'arbustes et d'arbres ; le mâle porte de faux yeux sur ses quatre ailes et vole de jour en avril, guidé par la seule odeur des femelles.",
       "mourning-cloak":
         "Les feuilles de bouleau nourrissent les chenilles noires épineuses du morio, qui restent en groupe sur une même branche jusqu'à être presque adultes.",
       "conifer-seed-finches":
@@ -53,6 +55,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
     propagationNote:
       "Le plus facile qui soit : coupez en fin d'hiver des rameaux nus gros comme un crayon et enfoncez-les en terre humide, ils s'enracinent tout seuls. (Le saule marsault s'enracine un peu moins volontiers que ses cousins : prenez-en quelques-uns de plus.) Sa graine cotonneuse ne vit que quelques jours ; si vous passez par elle, semez-la aussitôt sur de la vase.",
     supportNotes: {
+      "poplar-hawk-moth":
+        "La grosse chenille verte à corne émoussée mange les saules et les peupliers ; l'adulte passe le jour posé, ailes postérieures poussées en avant, avec l'air d'un tas de feuilles mortes.",
+      "mason-bees":
+        "Les chatons de mars sont le premier pollen sérieux de l'année, ouverts exactement quand les abeilles solitaires sortent de leurs tubes.",
       "mourning-cloak":
         "Le saule est l'autre arbre à chenilles du morio — et l'adulte, qui passe l'hiver caché, est souvent le premier papillon que l'on voit en février.",
       "purple-emperor":
@@ -126,6 +132,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
     propagationNote:
       "Récoltez les petits cônes ligneux à l'automne, séchez-les jusqu'à ce qu'ils libèrent leurs graines, et semez en surface sur une terre humide — il lui faut lumière et humidité, pas de froid. Des boutures ligneuses enfoncées en sol mouillé prennent aussi.",
     supportNotes: {
+      "goldfinches-linnets":
+        "Un aulne en fruits l'hiver porte chardonnerets et tarins suspendus tête en bas à ses petits cônes, dont ils extraient les graines une à une.",
       "conifer-seed-finches":
         "Les petits cônes ligneux de l'aulne gardent leur graine tout l'hiver, et tarins et sizerins les travaillent suspendus la tête en bas en bandes jacassantes — l'image classique d'un mois de janvier au bord d'une rivière française.",
     },
@@ -140,6 +148,14 @@ export const FRANCE_ATLANTIC: ProseTable = {
     propagationNote:
       "De loin le plus facile : déterrez un drageon enraciné en hiver et replantez-le. De courts morceaux de racine, gros comme un doigt, couchés au début du printemps dans un pot de terreau sableux, poussent aussi. La graine cotonneuse est un mauvais pari — elle ne vit que quelques jours, il faut donc l'attraper à la fin du printemps et la semer aussitôt sur de la vase.",
     supportNotes: {
+      "purple-emperor":
+        "Le tremble est le deuxième arbre du grand mars changeant après le saule marsault, et un bouquet de trembles dans un bois est là où se tient toute la colonie.",
+      "eurasian-jay":
+        "Le tremble pourrit de l'intérieur en vieillissant, ce qui fait les loges de pics dont finissent par se servir les geais, les chouettes, les rougequeues et les chauves-souris.",
+      "mourning-cloak":
+        "Les chenilles du morio mangent en groupe sur le tremble et le saule, et l'adulte hiverne tel quel : c'est l'un des premiers papillons en vol dans un printemps alpin.",
+      "black-grouse":
+        "Un fourré de trembles drageonnants sur un ancien couloir d'avalanche est exactement le couvert bas et cassé dont une nichée de tétras-lyre a besoin, et les bourgeons sont une nourriture d'hiver.",
       "poplar-hawk-moth":
         "Le tremble et les autres peupliers, avec les saules, sont ce sur quoi grandit le sphinx du peuplier. C'est le grand sphinx que les gens trouvent vraiment — sur un mur près d'une lampe d'entrée en juin, posé de cette façon bizarre, ailes postérieures poussées en avant — et chacun d'eux a mangé des feuilles de peuplier pour arriver là.",
       "mason-bees":
@@ -236,6 +252,14 @@ export const FRANCE_ATLANTIC: ProseTable = {
     propagationNote:
       "De loin le plus simple : soulevez en hiver les drageons enracinés qu'il produit et replantez-les. Par les fruits c'est lent — nettoyez les noyaux des prunelles mûres et comptez jusqu'à deux hivers dehors avant la levée.",
     supportNotes: {
+      "brimstone":
+        "Le citron sort d'hibernation en février en cherchant la première fleur venue, et dans une haie du Midi c'est le prunellier — le papillon jaune sur la fleur blanche est le début de l'année.",
+      "emperor-moth":
+        "Les chenilles du petit paon de nuit — vertes, cerclées de noir et ponctuées de verrues orange — mangent le prunellier parmi une courte liste d'arbustes, et le mâle vole de jour, guidé par la seule odeur des femelles.",
+      "bumble-bees":
+        "Une floraison de février sur bois nu est ce dont a besoin une reine de bourdon qui sort de terre, et il n'y a presque rien d'autre d'ouvert aussi tôt.",
+      "blackcaps-warblers":
+        "Les fauvettes à tête noire prennent aussi les prunelles, et le fouillis épineux du dessous est l'un des couverts de nidification les plus sûrs d'une haie méridionale.",
       "winter-thrushes":
         "Les prunelles tiennent longtemps après que les autres fruits ont disparu — exactement quand les grives hivernantes en ont besoin.",
       "mason-bees":
@@ -252,6 +276,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
     propagationNote:
       "Semez les noisettes entières et mûres à l'automne, à l'abri des mulots, et laissez-leur un hiver froid ; elles lèvent au printemps suivant. Plus simple encore : couchez une tige basse au sol pour l'enraciner (marcottage), ou soulevez les rejets qu'il fait à la base.",
     supportNotes: {
+      "eurasian-jay":
+        "Le geai emporte les noisettes et les enterre une à une, et celles qu'il oublie sont la façon dont un noisetier se plante ailleurs.",
+      "spotted-nutcracker":
+        "Le cassenoix met en cache des dizaines de milliers de noisettes et de graines chaque automne et se souvient de la plupart sous un mètre de neige ; celles qu'il oublie sont la façon dont le noisetier et le pin remontent tous deux la pente.",
       "hazel-dormouse":
         "Un muscardin doit à peu près doubler son poids avant de dormir six mois, et c'est sur les noisettes qu'il le fait. Il ouvre chacune d'un trou rond bien net, marques de dents inclinées autour du bord — souvent la seule preuve qu'on ait jamais que des muscardins vivent dans une haie.",
       "mason-bees":
@@ -382,6 +410,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
     propagationNote:
       "Vous n'aurez presque jamais besoin d'essayer, mais sa propre méthode est le marcottage par la pointe : couchez en fin d'été une tige arquée, enterrez ses derniers centimètres, et au printemps cette pointe est un plant enraciné que vous pouvez détacher et déplacer. Les drageons enracinés et les boutures ligneuses d'hiver prennent tout aussi facilement.",
     supportNotes: {
+      "green-hairstreak":
+        "Le seul papillon vert d'Europe pond sur la ronce parmi les autres arbustes des terrains vagues, et se pose ailes fermées sur un talus ensoleillé, exactement semblable à une feuille.",
+      "winter-thrushes":
+        "Litornes et mauvis nettoient ce qui reste de fruits à leur arrivée du nord en octobre.",
       "bumble-bees":
         "La ronce fleurit tout au long d'août et de septembre, quand les prés ont séché et que la floraison des haies n'est plus qu'un souvenir. Un talus de ronces en fleur est, à ce moment de l'année, la chose la plus animée d'un jardin français.",
       "blackcaps-warblers":
@@ -544,6 +576,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
     propagationNote:
       "Une graine fraîche semée sur une terre griffée au printemps ou au début de l'automne germe vite et n'a besoin d'aucun froid. Une graine plus vieille et plus dure fait mieux si vous la frottez d'abord entre deux feuilles de papier de verre. Il se divise mal — semez-le plutôt que de le déplacer.",
     supportNotes: {
+      "common-blue":
+        "Les chenilles de l'azuré commun mangent les trèfles et les lotiers, et une prairie de fauche non fertilisée est là où le papillon subsiste.",
+      "six-spot-burnet":
+        "Les zygènes diurnes à points rouges se rassemblent l'après-midi sur les têtes de trèfle, plusieurs par fleur.",
       "bumble-bees":
         "Le tube floral du trèfle des prés est trop profond pour qu'une abeille domestique le vide : le nectar du fond appartient donc aux bourdons à longue langue — le bourdon des jardins et le bourdon des champs — ce qui est une des raisons pour lesquelles ces espèces et cette plante ont décliné ensemble.",
     },
@@ -665,6 +701,12 @@ export const FRANCE_ATLANTIC: ProseTable = {
     propagationNote:
       "Le plus facile qui soit : coupez en fin d'été un morceau de pousse juvénile non grimpante et enfoncez-le dans une terre humide ou un pot, il s'enracine sans façon. Les tiges qui rampent au sol s'enracinent en chemin : vous pouvez soulever et déplacer les morceaux enracinés à tout moment.",
     supportNotes: {
+      "mason-bees":
+        "La collète du lierre est une abeille des sables dont l'année entière est réglée sur cette seule plante : elle sort en septembre quand le lierre s'ouvre et a fini quand les fleurs ont fini. Rien d'autre qui lui convienne n'est ouvert à ce moment-là.",
+      "red-admiral":
+        "Les vulcains se pressent sur les fleurs de lierre en octobre, et ce sont souvent les derniers papillons que l'on voit avant l'hiver.",
+      "winter-thrushes":
+        "Les baies de lierre mûrissent en fin d'hiver, longtemps après que tout le reste a disparu, et c'est ce qui porte les grives et les pigeons ramiers à travers février.",
       "nettle-tree-butterfly":
         "Le lierre fleurit en octobre, quand plus rien ne fleurit, et c'est ce dont se remplissent les papillons qui hivernent à l'état adulte avant de s'endormir.",
       "holly-blue":
@@ -699,6 +741,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
     propagationNote:
       "De loin le plus facile : tranchez un morceau enraciné au bord d'un tapis à l'automne ou au début du printemps et replantez-le — il le remarque à peine. Par semis, semez à l'automne et laissez le pot dehors pour le froid qu'il demande.",
     supportNotes: {
+      "mason-bees":
+        "Des centaines de fleurs minuscules et sans profondeur, ce qui est exactement ce que les plus petites abeilles solitaires et les syrphes savent utiliser.",
       "elephant-hawk-moth":
         "Les gaillets sont la principale plante nourricière du grand sphinx de la vigne, avec les épilobes. Ce qu'on trouve, c'est la chenille, pas le papillon : une chose gris-brun de la longueur d'un doigt qui rentre son museau quand on la touche et gonfle quatre ocelles, et qui fait un serpent assez convaincant pour faire reculer un adulte.",
       "hummingbird-hawk-moth":
@@ -731,6 +775,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
     propagationNote:
       "Le plus simple de tous : elle émet des stolons qui enracinent de petits plants en chemin — coupez un plant enraciné et déplacez-le là où vous en voulez d'autres. Les touffes trop denses se soulèvent et se divisent aussi.",
     supportNotes: {
+      "hazel-dormouse":
+        "Le muscardin prend les fraises des bois là où les stolons atteignent le pied d'une haie, avec tout ce qui est tendre et sucré dans un été de bocage.",
+      "blackcaps-warblers":
+        "Fauvettes, rougegorges et merles prennent tous ce fruit à même la strate basse, l'une des rares récoltes à leur niveau.",
       "mason-bees":
         "Des fleurs blanches ouvertes, portées juste au-dessus du sol à partir d'avril — assez peu profondes pour que les plus petites andrènes puissent les travailler, ce que la plupart des fleurs de printemps ne sont pas.",
     },

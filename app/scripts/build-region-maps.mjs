@@ -92,6 +92,14 @@ const LANDMARKS = {
     { name: "Eugene", lat: 44.05, lon: -123.09 },
     { name: "Medford", lat: 42.33, lon: -122.87 },
   ],
+  "ca-central-coast": [
+    { name: "Santa Rosa", lat: 38.44, lon: -122.71 },
+    { name: "San Francisco", lat: 37.77, lon: -122.42 },
+    { name: "Modesto", lat: 37.64, lon: -121.0 },
+    { name: "San Jose", lat: 37.34, lon: -121.89 },
+    { name: "Monterey", lat: 36.6, lon: -121.89 },
+    { name: "San Luis Obispo", lat: 35.28, lon: -120.66 },
+  ],
   "ca-south-coast": [
     { name: "Santa Barbara", lat: 34.42, lon: -119.7 },
     { name: "Los Angeles", lat: 34.05, lon: -118.24 },

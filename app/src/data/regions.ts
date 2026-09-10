@@ -24,6 +24,7 @@ import { REGION as MID_ATLANTIC } from "./region.mid-atlantic";
 import { REGION as NORTH_MICHIGAN } from "./region.north-michigan";
 import { REGION as PNW } from "./region.pnw";
 import { REGION as CA_SOUTH_COAST } from "./region.ca-south-coast";
+import { REGION as CA_CENTRAL_COAST } from "./region.ca-central-coast";
 import { REGION as FLORIDA_CENTRAL } from "./region.florida";
 import { REGION as FLORIDA_SOUTH } from "./region.florida-south";
 import { REGION as FRANCE_ATLANTIC } from "./region.france-atlantic";
@@ -42,6 +43,11 @@ export const REGIONS: RegionDef[] = [
   // rest of the carve (central and north coast California, the Central Valley,
   // the Sierra, eastern Oregon, and the deserts last).
   { meta: CA_SOUTH_COAST, load: () => import("./plants.ca-south-coast").then((m) => m.SEED_RAW) },
+  // Central California: the coast ranges from Sonoma to Big Sur. Its box overlaps
+  // southern California at 35.0–35.2° N and will overlap the north-coast list
+  // once that exists; the live ecoregion code decides between them, and the
+  // tighter box wins offline.
+  { meta: CA_CENTRAL_COAST, load: () => import("./plants.ca-central-coast").then((m) => m.SEED_RAW) },
   { meta: FLORIDA_CENTRAL, load: () => import("./plants.florida").then((m) => m.SEED_RAW) },
   { meta: FLORIDA_SOUTH, load: () => import("./plants.florida-south").then((m) => m.SEED_RAW) },
   // Metropolitan France, complete: all four of its EEA biogeographical regions.

@@ -33,6 +33,12 @@ subtitle on the What's new page.
 
 ### Added
 
+- Regions: **the central California coast is on the map** — 64 native plants for
+  the country from Sonoma and Marin through San Francisco Bay to Big Sur and the
+  Salinas Valley. [See the region](https://indigene.app/regions/ca-central-coast)
+- Regions & Wildlife: three creatures join the roster — the pipevine swallowtail,
+  whose caterpillars eat one vine and nothing else; the lupine blues, the mission
+  blue among them; and the chestnut-backed chickadee of the fog-belt forests.
 - Native swaps: **the everyday garden staples now have native answers too.**
   Daylilies, hostas, periwinkle, maiden grass, garden roses and yellow flag iris
   each meet the native that does their job — so nearly half of every plant we
@@ -88,10 +94,12 @@ subtitle on the What's new page.
   floors with nothing short. Florida, the Mid-Atlantic and Northern Michigan
   are short on ferns, vines and grasses; their candidate shortlists are in
   `docs/candidates/` for follow-up PRs.
-- Internal: re-measured the bundle. The core chunk is 350 KB gzipped (was cited
-  as 305, already drifted before this change) and the French prose chunk 145 KB
-  (was 130); `README.md`, `PROJECT_BRIEF.md`, `app/README.md` and
-  `docs/ecoregion-plan.md` all updated to the same pair of numbers.
+- Internal: re-measured the bundle. The core chunk is 365 KB gzipped (was cited
+  as 305, already drifted; the France rows took it to 350 and the central-coast
+  ties to 365) and the French prose chunk 145 KB (was 130). `README.md`,
+  `PROJECT_BRIEF.md`, `app/README.md` and `docs/ecoregion-plan.md` all carry the
+  same pair. The wildlife tie table sits in the core chunk, so it is the line
+  that grows with every new region.
 
 ### Fixed
 

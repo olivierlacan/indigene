@@ -26,6 +26,8 @@ export const EPA_L3_NAMES: Record<string, string> = {
   "2": "Puget Lowland",
   "3": "Willamette Valley",
   "4": "Cascades",
+  "6": "Central California Foothills and Coastal Mountains",
+  "8": "Southern California Mountains",
   "45": "Piedmont",
   "50": "Northern Lakes and Forests",
   "51": "North Central Hardwood Forests",
@@ -46,4 +48,5 @@ export const EPA_L3_NAMES: Record<string, string> = {
   "78": "Klamath Mountains",
   "83": "Eastern Great Lakes Lowlands",
   "84": "Atlantic Coastal Pine Barrens",
+  "85": "Southern California/Northern Baja Coast",
 };

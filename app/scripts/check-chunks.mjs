@@ -23,16 +23,16 @@ const BASE = `http://127.0.0.1:${port}`;
 /** `max` is how many region plant lists the page may fetch; `note` says why. */
 const PAGES = [
   { label: "home", path: "/#/", max: 0 },
-  { label: "explore (10 region cards)", path: "/#/regions", max: 0, note: "counts come from the registry" },
+  { label: "explore (11 region cards)", path: "/#/regions", max: 0, note: "counts come from the registry" },
   { label: "browse", path: "/#/browse", max: 0 },
   { label: "all plants index", path: "/#/plants", max: 0, note: "the search index is the registry" },
   { label: "plant page (one region)", path: "/#/plants/baptisia-australis", max: 1 },
-  { label: "plant page (one region)", path: "/#/plants/ribes-sanguineum", max: 1 },
+  { label: "plant page (two regions)", path: "/#/plants/ribes-sanguineum", max: 2, note: "flowering currant is on the PNW and central-coast lists" },
   { label: "plant page (two regions)", path: "/#/plants/quercus-virginiana", max: 2, note: "native to both Florida lists" },
   { label: "region page", path: "/#/regions/pnw", max: 1 },
   { label: "saved spots", path: "/#/saved", max: 0, note: "wildlife per spot comes from the registry + tie table" },
   { label: "wildlife index", path: "/#/wildlife", max: 0, note: "counted from the tie table" },
-  { label: "wildlife page", path: "/#/wildlife/monarch", max: 5, note: "the regions that tie to it (now incl. northern Michigan)" },
+  { label: "wildlife page", path: "/#/wildlife/monarch", max: 6, note: "the regions that tie to it (now incl. the central California coast)" },
   { label: "look-alikes index", path: "/#/lookalikes", max: 9, note: "resolves natives in every region" },
   { label: "propagation index", path: "/#/planting", max: 0 },
 ];

@@ -50,9 +50,9 @@ Six of these are new. The first column is the region id, which is also the URL
 | Region | Where | Omernik Level III | Reference / zones | Status |
 |---|---|---|---|---|
 | `pnw` | Western OR & WA, west of the Cascade crest | 1, 2, 3, 4, 78 | Portland–Seattle, 8a–9a | **shipped** |
-| `ca-south-coast` | LA, Orange, San Diego, Inland Empire, Santa Barbara — cismontane southern California | 6, 8, 85 | LA–San Diego coastal plain, 9b–10b | **this PR** |
-| `ca-central-coast` | Sonoma & the Bay Area south to Big Sur and the Salinas Valley | 6 | San Francisco Bay, 9a–10a | next |
-| `ca-north-coast` | Del Norte to Mendocino, plus the Klamath–Siskiyou (spilling into SW Oregon) | 1, 78 | Humboldt Bay redwood belt, 9a–9b | next |
+| `ca-south-coast` | LA, Orange, San Diego, Inland Empire, Santa Barbara — cismontane southern California | 6, 8, 85 | LA–San Diego coastal plain, 9b–10b | **shipped** |
+| `ca-central-coast` | Sonoma & the Bay Area south to Big Sur and the Salinas Valley | 6 | San Francisco Bay, 9a–10a | **shipped** |
+| `ca-north-coast` | Del Norte to Mendocino, plus the Klamath–Siskiyou (spilling into SW Oregon) | 1, 78 | Humboldt Bay redwood belt, 9a–9b | **next** |
 | `ca-valley` | The Central Valley floor and the Sierra foothill oak woodland | 7, and the low edge of 5 | Sacramento–Fresno, 9a–9b | after |
 | `ca-sierra` | The Sierra Nevada above the foothills, plus the Southern Cascades | 5, 9 (CA portion) | Tahoe basin & the west slope, 6b–8a | after |
 | `or-east` | Oregon east of the Cascade crest — high desert, Columbia Plateau, Blue Mountains | 9, 10, 11, 12, 80 | Bend & the Columbia Basin, 5b–7a | after |
@@ -88,7 +88,7 @@ area.
 |---|---|---|
 | `pnw` | 42.0, 49.0, −124.9, −120.5 | East edge is the Cascade crest. Bend (−121.3, ecoregion 9) is inside the box and *falls through* on the code. |
 | `ca-south-coast` | 32.5, 35.2, −120.8, −116.6 | East edge is the crest of the Transverse and Peninsular ranges. Palm Springs (−116.55) sits **outside** it, so a desert spot gets no list even offline. |
-| `ca-central-coast` | 35.0, 38.9, −123.6, −120.4 | East edge is the Diablo/Gabilan crest, before the Central Valley floor. |
+| `ca-central-coast` | 35.0, 38.9, −123.6, −120.4 | East edge is the Diablo/Gabilan crest, before the Central Valley floor. **As shipped:** claiming only ecoregion 6 keeps the valley floor (7) and the Sonoma redwood coast (1) out when the code is available. Offline the box alone decides, and it does reach Tracy, Modesto and Los Banos — the mildest version of this trade-off in the table, since the inner coast ranges and the valley share most of their woody flora, but real until `ca-valley` ships. |
 | `ca-north-coast` | 38.5, 42.6, −124.6, −122.4 | Reaches north over the state line for the Klamath–Siskiyou; overlaps `pnw`, resolved on the code. |
 | `ca-valley` | 34.8, 40.6, −122.5, −119.6 | The valley floor plus the foothill oak belt, stopping below the Sierra conifers. |
 | `ca-sierra` | 35.4, 41.5, −121.5, −117.8 | Elevation is the real boundary and a box can't say elevation; the ecoregion code does the work here, so this box is the one that leans hardest on the live lookup. |

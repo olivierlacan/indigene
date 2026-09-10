@@ -199,6 +199,12 @@ subtitle on the What's new page.
   `public/og/pages/`; `prerender.mjs` points the section indexes and footer pages
   at them, and `build-guide.mjs`/`build-release-notes.mjs` add og:image, og:title
   and twitter tags to their heads (those two pages carried no share image before).
+- **A share card for every region.** Share a link to a region and the preview
+  now shows its own map — with a few cities to place you on it — beside how many
+  native plants, keystones and animals it lists. [Browse regions](https://indigene.app/regions)
+- Internal: `gen-region-cards.mjs` inlines each region's committed map SVG,
+  rendered in dark scheme so the theme-aware map matches the card, beside its
+  roster figures; `prerender.mjs` points each `regions/<id>` at it.
 
 ### Changed
 

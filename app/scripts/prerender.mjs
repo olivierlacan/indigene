@@ -48,11 +48,15 @@
 // and the count of regions and native plants that support it. An impostor's does
 // too (`scripts/gen-lookalike-cards.mjs` → public/og/lookalikes/, index and all):
 // its form in a cautioning amber, where it's really from, and how many natives
-// it's mistaken for.
+// it's mistaken for. A region's page shows its own map
+// (`scripts/gen-region-cards.mjs` → public/og/regions/): the drawn map with a
+// few cities to place it, and the size of its roster. The standing pages — the
+// guide, the notes, About and the section indexes — carry type cards too
+// (`scripts/gen-page-cards.mjs` → public/og/pages/).
 //
 // Every other page still shows the site-wide card, which is honest for a
-// region and for a catalog: those pages are a list, and a drawing of one member
-// of it would be a lie about the rest.
+// catalog: those pages are a list, and a drawing of one member of it would be a
+// lie about the rest.
 //
 // ## What it does not do yet
 //
@@ -101,6 +105,11 @@ const lookalikeCard = (slug) => `${ORIGIN}${BASE}og/lookalikes/${slug}.jpg`;
  *  under public/og/pages/. (The guide and the notes are built by their own
  *  scripts, which point at the same files.) */
 const pageCard = (slug) => `${ORIGIN}${BASE}og/pages/${slug}.jpg`;
+
+/** A region's own card — its map (with a few cities to place it) and the size of
+ *  its roster — drawn by `scripts/gen-region-cards.mjs` and committed under
+ *  public/og/regions/. */
+const regionCard = (id) => `${ORIGIN}${BASE}og/regions/${id}.jpg`;
 
 /** Locale-style `{name}` interpolation, matching `t()` in lib/i18n.ts. */
 const fill = (s, vars = {}) =>
@@ -323,7 +332,11 @@ async function collectPages(load) {
     add(
       `regions/${region.meta.id}`,
       fill(en["region.docTitle"], { region: region.meta.name }),
-      fill(en["region.lede"], { reference: region.meta.reference })
+      fill(en["region.lede"], { reference: region.meta.reference }),
+      {
+        image: regionCard(region.meta.id),
+        imageAlt: `${region.meta.name} — its map with a few cities to place it, and how many native plants, keystones and animals it lists`,
+      }
     );
   }
 

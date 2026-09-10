@@ -50,9 +50,11 @@
 // its form in a cautioning amber, where it's really from, and how many natives
 // it's mistaken for. A region's page shows its own map
 // (`scripts/gen-region-cards.mjs` → public/og/regions/): the drawn map with a
-// few cities to place it, and the size of its roster. The standing pages — the
-// guide, the notes, About and the section indexes — carry type cards too
-// (`scripts/gen-page-cards.mjs` → public/og/pages/).
+// few cities to place it, and the size of its roster. An ornamental's page has
+// one too (`scripts/gen-alternative-cards.mjs` → public/og/alternatives/, index
+// and all): its form in amber, what it's planted for, and how many natives do
+// the same job. The standing pages — the guide, the notes, About and the section
+// indexes — carry type cards too (`scripts/gen-page-cards.mjs` → public/og/pages/).
 //
 // Every other page still shows the site-wide card, which is honest for a
 // catalog: those pages are a list, and a drawing of one member of it would be a
@@ -110,6 +112,12 @@ const pageCard = (slug) => `${ORIGIN}${BASE}og/pages/${slug}.jpg`;
  *  its roster — drawn by `scripts/gen-region-cards.mjs` and committed under
  *  public/og/regions/. */
 const regionCard = (id) => `${ORIGIN}${BASE}og/regions/${id}.jpg`;
+
+/** An ornamental's own card — its form in a cautioning amber, what it's planted
+ *  for, and how many natives do the same job — drawn by
+ *  `scripts/gen-alternative-cards.mjs` and committed under public/og/alternatives/.
+ *  The index has one too, under the reserved slug `index`. */
+const alternativeCard = (slug) => `${ORIGIN}${BASE}og/alternatives/${slug}.jpg`;
 
 /** Locale-style `{name}` interpolation, matching `t()` in lib/i18n.ts. */
 const fill = (s, vars = {}) =>
@@ -309,7 +317,10 @@ async function collectPages(load) {
     imageAlt: "Look-alikes — a native and its impostor side by side, and the count of impostors and regions behind the page",
   });
   const ornamentals = await alternativeIndex();
-  add("alternatives", en["alternatives.indexDocTitle"], fill(en["alternatives.indexLede"], { n: ornamentals.length }));
+  add("alternatives", en["alternatives.indexDocTitle"], fill(en["alternatives.indexLede"], { n: ornamentals.length }), {
+    image: alternativeCard("index"),
+    imageAlt: "Native swaps — an ornamental beside the native to grow instead, and the count of swaps and regions behind the page",
+  });
   add("planting", en["planting.docTitle"], en["planting.lede"], {
     image: plantingCard("index"),
     imageAlt: "Ways to grow more — the four seasons, and the count of techniques and sources behind the page",
@@ -418,7 +429,11 @@ async function collectPages(load) {
     add(
       `alternatives/${row.ornamental.id}`,
       fill(en["alternatives.docTitle"], { name: row.ornamental.common }),
-      `${row.ornamental.origin} ${row.ornamental.blurb}`
+      `${row.ornamental.origin} ${row.ornamental.blurb}`,
+      {
+        image: alternativeCard(row.ornamental.id),
+        imageAlt: `${row.ornamental.common} (${row.ornamental.latin}) — what it's planted for, and how many native plants do the same job`,
+      }
     );
   }
 

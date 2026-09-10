@@ -205,6 +205,14 @@ subtitle on the What's new page.
 - Internal: `gen-region-cards.mjs` inlines each region's committed map SVG,
   rendered in dark scheme so the theme-aware map matches the card, beside its
   roster figures; `prerender.mjs` points each `regions/<id>` at it.
+- **A share card for every native swap.** Share a link to an ornamental people
+  plant everywhere and the preview now shows it in a cautioning amber, what it's
+  grown for, and how many natives do the same job — the
+  [native-swaps page](https://indigene.app/alternatives) gets one too.
+- Internal: `gen-alternative-cards.mjs` draws one JPEG per ornamental plus an
+  index card (an amber ornamental, an arrow, a green native) into
+  `public/og/alternatives/`; `prerender.mjs` points `/alternatives` and each
+  `alternatives/<id>` at its own.
 
 ### Changed
 

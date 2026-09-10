@@ -43,11 +43,22 @@
 // same way (`scripts/gen-planting-cards.mjs` → public/og/planting/), and there
 // the index gets one too: its card is the year with every season lit, which is
 // a true picture of a page about all fifteen techniques rather than a portrait
-// of one of them.
+// of one of them. An animal's page has one as well
+// (`scripts/gen-wildlife-cards.mjs` → public/og/wildlife/): its drawn kind glyph
+// and the count of regions and native plants that support it. An impostor's does
+// too (`scripts/gen-lookalike-cards.mjs` → public/og/lookalikes/, index and all):
+// its form in a cautioning amber, where it's really from, and how many natives
+// it's mistaken for. A region's page shows its own map
+// (`scripts/gen-region-cards.mjs` → public/og/regions/): the drawn map with a
+// few cities to place it, and the size of its roster. An ornamental's page has
+// one too (`scripts/gen-alternative-cards.mjs` → public/og/alternatives/, index
+// and all): its form in amber, what it's planted for, and how many natives do
+// the same job. The standing pages — the guide, the notes, About and the section
+// indexes — carry type cards too (`scripts/gen-page-cards.mjs` → public/og/pages/).
 //
 // Every other page still shows the site-wide card, which is honest for a
-// region and for a catalog: those pages are a list, and a drawing of one member
-// of it would be a lie about the rest.
+// catalog: those pages are a list, and a drawing of one member of it would be a
+// lie about the rest.
 //
 // ## What it does not do yet
 //
@@ -79,6 +90,34 @@ const plantCard = (slug) => `${ORIGIN}${BASE}og/plants/${slug}.jpg`;
  *  The index has one too, under the reserved slug `index`. Everything else
  *  still shows the site-wide card, which is honest for a list. */
 const plantingCard = (slug) => `${ORIGIN}${BASE}og/planting/${slug}.jpg`;
+
+/** An animal's own card — its emoji, its name, and its reach (the regions it's
+ *  native to and the native plants that support it) — drawn by
+ *  `scripts/gen-wildlife-cards.mjs` and committed under public/og/wildlife/. */
+const wildlifeCard = (id) => `${ORIGIN}${BASE}og/wildlife/${id}.jpg`;
+
+/** An impostor's own card — its form in a cautioning amber, where it's really
+ *  from, and how many natives it's mistaken for — drawn by
+ *  `scripts/gen-lookalike-cards.mjs` and committed under public/og/lookalikes/.
+ *  The index has one too, under the reserved slug `index`. */
+const lookalikeCard = (slug) => `${ORIGIN}${BASE}og/lookalikes/${slug}.jpg`;
+
+/** A standing page's card — the guide, the notes, About, Sources, Privacy, and
+ *  the section indexes — drawn by `scripts/gen-page-cards.mjs` and committed
+ *  under public/og/pages/. (The guide and the notes are built by their own
+ *  scripts, which point at the same files.) */
+const pageCard = (slug) => `${ORIGIN}${BASE}og/pages/${slug}.jpg`;
+
+/** A region's own card — its map (with a few cities to place it) and the size of
+ *  its roster — drawn by `scripts/gen-region-cards.mjs` and committed under
+ *  public/og/regions/. */
+const regionCard = (id) => `${ORIGIN}${BASE}og/regions/${id}.jpg`;
+
+/** An ornamental's own card — its form in a cautioning amber, what it's planted
+ *  for, and how many natives do the same job — drawn by
+ *  `scripts/gen-alternative-cards.mjs` and committed under public/og/alternatives/.
+ *  The index has one too, under the reserved slug `index`. */
+const alternativeCard = (slug) => `${ORIGIN}${BASE}og/alternatives/${slug}.jpg`;
 
 /** Locale-style `{name}` interpolation, matching `t()` in lib/i18n.ts. */
 const fill = (s, vars = {}) =>
@@ -253,31 +292,62 @@ async function collectPages(load) {
   // address a canonical page of its own; the 404.html bounce still redirects it.
   const perRegion = await Promise.all(REGIONS.map((r) => loadPlants(r)));
   const totalPlants = perRegion.reduce((n, list) => n + list.length, 0);
-  add("plants", en["plants.docTitle"], en["plants.lede"]);
+  add("plants", en["plants.docTitle"], en["plants.lede"], {
+    image: pageCard("plants"),
+    imageAlt: "Native plants — every plant Indigene knows, and how many, across how many regions",
+  });
   add("regions", en["explore.docTitle"], fill(en["explore.lede"], {
     plants: totalPlants,
     regions: REGIONS.length,
-  }));
-  add("browse", en["browse.docTitle"], en["browse.lede"]);
-  add("wildlife", en["wildlife.indexDocTitle"], fill(en["wildlife.indexLede"], { n: WILDLIFE.length }));
+  }), {
+    image: pageCard("regions"),
+    imageAlt: "Meet the natives — the regions Indigene covers and the size of their rosters",
+  });
+  add("browse", en["browse.docTitle"], en["browse.lede"], {
+    image: pageCard("browse"),
+    imageAlt: "Browse — start from a region or a standout plant, no location needed",
+  });
+  add("wildlife", en["wildlife.indexDocTitle"], fill(en["wildlife.indexLede"], { n: WILDLIFE.length }), {
+    image: pageCard("wildlife"),
+    imageAlt: "Browse by wildlife — pick a creature and see the native plants that feed it",
+  });
   const impostors = await lookalikeIndex();
-  add("lookalikes", en["lookalikes.indexDocTitle"], fill(en["lookalikes.indexLede"], { n: impostors.length }));
+  add("lookalikes", en["lookalikes.indexDocTitle"], fill(en["lookalikes.indexLede"], { n: impostors.length }), {
+    image: lookalikeCard("index"),
+    imageAlt: "Look-alikes — a native and its impostor side by side, and the count of impostors and regions behind the page",
+  });
   const ornamentals = await alternativeIndex();
-  add("alternatives", en["alternatives.indexDocTitle"], fill(en["alternatives.indexLede"], { n: ornamentals.length }));
+  add("alternatives", en["alternatives.indexDocTitle"], fill(en["alternatives.indexLede"], { n: ornamentals.length }), {
+    image: alternativeCard("index"),
+    imageAlt: "Native swaps — an ornamental beside the native to grow instead, and the count of swaps and regions behind the page",
+  });
   add("planting", en["planting.docTitle"], en["planting.lede"], {
     image: plantingCard("index"),
     imageAlt: "Ways to grow more — the four seasons, and the count of techniques and sources behind the page",
   });
-  add("privacy", en["privacy.docTitle"], en["privacy.lede"]);
-  add("sources", en["sources.docTitle"], en["sources.lede"]);
-  add("about", en["about.docTitle"], en["about.lede"]);
+  add("privacy", en["privacy.docTitle"], en["privacy.lede"], {
+    image: pageCard("privacy"),
+    imageAlt: "Privacy & safety — what we ask for, what we never do, made safe for everyone",
+  });
+  add("sources", en["sources.docTitle"], en["sources.lede"], {
+    image: pageCard("sources"),
+    imageAlt: "Where our numbers come from — what's counted, what's judgment, and where we'd bet we're wrong",
+  });
+  add("about", en["about.docTitle"], en["about.lede"], {
+    image: pageCard("about"),
+    imageAlt: "About Indigene — a native of a place, and what this app measures for yours",
+  });
 
   // --- one page per region ---
   for (const region of REGIONS) {
     add(
       `regions/${region.meta.id}`,
       fill(en["region.docTitle"], { region: region.meta.name }),
-      fill(en["region.lede"], { reference: region.meta.reference })
+      fill(en["region.lede"], { reference: region.meta.reference }),
+      {
+        image: regionCard(region.meta.id),
+        imageAlt: `${region.meta.name} — its map with a few cities to place it, and how many native plants, keystones and animals it lists`,
+      }
     );
   }
 
@@ -324,8 +394,16 @@ async function collectPages(load) {
   }
 
   // --- one page per animal, and one per group ---
+  // Each animal carries its own card now (`scripts/gen-wildlife-cards.mjs`): its
+  // emoji, its name, and its reach. The alt text says what the picture shows
+  // rather than repeating the title, which reaches a screen reader through
+  // `og:title` either way. A group ("all the butterflies") still shows the
+  // site-wide card — a drawing of one animal would be a lie about the rest.
   for (const w of WILDLIFE) {
-    add(`wildlife/${w.id}`, fill(en["wildlife.docTitle"], { animal: w.common }), w.blurb);
+    add(`wildlife/${w.id}`, fill(en["wildlife.docTitle"], { animal: w.common }), w.blurb, {
+      image: wildlifeCard(w.id),
+      imageAlt: `${w.common}${w.latin ? ` (${w.latin})` : ""} — the regions it's native to and the native plants that support it`,
+    });
   }
   // --- one page per impostor ---
   // Shareable for the same reason a plant is: "that tree in your yard is a
@@ -334,7 +412,13 @@ async function collectPages(load) {
     add(
       `lookalikes/${row.lookalike.id}`,
       fill(en["lookalikes.docTitle"], { name: row.lookalike.common }),
-      `${row.lookalike.origin} ${row.lookalike.blurb}`
+      `${row.lookalike.origin} ${row.lookalike.blurb}`,
+      {
+        image: lookalikeCard(row.lookalike.id),
+        // The card names where it's really from and how many natives it apes,
+        // never a status word — that's a fact about a place, not the plant.
+        imageAlt: `${row.lookalike.common} (${row.lookalike.latin}) — where it's really from and the native plants it's mistaken for`,
+      }
     );
   }
 
@@ -345,7 +429,11 @@ async function collectPages(load) {
     add(
       `alternatives/${row.ornamental.id}`,
       fill(en["alternatives.docTitle"], { name: row.ornamental.common }),
-      `${row.ornamental.origin} ${row.ornamental.blurb}`
+      `${row.ornamental.origin} ${row.ornamental.blurb}`,
+      {
+        image: alternativeCard(row.ornamental.id),
+        imageAlt: `${row.ornamental.common} (${row.ornamental.latin}) — what it's planted for, and how many native plants do the same job`,
+      }
     );
   }
 

@@ -168,6 +168,51 @@ subtitle on the What's new page.
   keystones left uncovered are honest skips: a native that is itself the good
   choice (silver birch in France), a lawn fescue, a meadow legume — plants with
   no common ornamental counterpart to name.
+- **A share card for every animal.** Post a link to a butterfly, bee or bird
+  and the preview now shows that creature, the regions it's native to, and how
+  many native plants feed or shelter it — not one generic picture for all of
+  them. [Browse wildlife](https://indigene.app/wildlife)
+- **Animals are drawn, not borrowed.** Each creature now wears a hand-drawn
+  silhouette in Indigene's green — a butterfly with its wings up, a bee, a bird,
+  a tortoise — across the [wildlife lists](https://indigene.app/wildlife) and
+  pages and on the share card, replacing the phone's flat, wings-pinned emoji.
+- Internal: `components/wildlife-glyphs.ts` holds the six kind silhouettes (the
+  gopher tortoise resolves by iconic taxon, not its "mammal" browse kind), drawn
+  to the plant-glyph rules and shared by the app and `gen-wildlife-cards.mjs`,
+  which draws one 1200×630 JPEG per animal into `public/og/wildlife/`;
+  `prerender.mjs` points each `wildlife/<id>` page at its own card and
+  `routes:check` fails if one is missing.
+- **A share card for every look-alike.** Post a link to a plant often mistaken
+  for a native and the preview now shows it in a cautioning amber, where it's
+  really from, and how many natives it's confused with — the
+  [look-alikes page](https://indigene.app/lookalikes) gets one too.
+- Internal: `gen-lookalike-cards.mjs` draws one JPEG per impostor plus an index
+  card into `public/og/lookalikes/`; `prerender.mjs` points `/lookalikes` and
+  each `lookalikes/<id>` at its own. The card leads with origin and never prints
+  a status word — invasive/introduced are facts about a place, not the plant, so
+  a region-spanning card can't claim one. `routes:check` fails on a missing card.
+- **Every page previews as itself now.** Share a link to the
+  [guide](https://indigene.app/guide), the What's-new notes, About, Sources or
+  Privacy — or the plants, regions and wildlife indexes — and the preview shows
+  that page's own title and words, not one generic picture for the whole site.
+- Internal: `gen-page-cards.mjs` draws a type-forward card per standing page into
+  `public/og/pages/`; `prerender.mjs` points the section indexes and footer pages
+  at them, and `build-guide.mjs`/`build-release-notes.mjs` add og:image, og:title
+  and twitter tags to their heads (those two pages carried no share image before).
+- **A share card for every region.** Share a link to a region and the preview
+  now shows its own map — with a few cities to place you on it — beside how many
+  native plants, keystones and animals it lists. [Browse regions](https://indigene.app/regions)
+- Internal: `gen-region-cards.mjs` inlines each region's committed map SVG,
+  rendered in dark scheme so the theme-aware map matches the card, beside its
+  roster figures; `prerender.mjs` points each `regions/<id>` at it.
+- **A share card for every native swap.** Share a link to an ornamental people
+  plant everywhere and the preview now shows it in a cautioning amber, what it's
+  grown for, and how many natives do the same job — the
+  [native-swaps page](https://indigene.app/alternatives) gets one too.
+- Internal: `gen-alternative-cards.mjs` draws one JPEG per ornamental plus an
+  index card (an amber ornamental, an arrow, a green native) into
+  `public/og/alternatives/`; `prerender.mjs` points `/alternatives` and each
+  `alternatives/<id>` at its own.
 
 ### Changed
 

@@ -53,6 +53,10 @@ const MONTHS = [
 ];
 // The guide's own address, for the canonical links search engines read.
 const SITE = `${APP}/guide/`;
+// The share card for the guide — drawn by scripts/gen-page-cards.mjs and
+// committed under public/og/pages/. Every guide page (the index and each
+// section) shows it: the section's own card.
+const CARD = `${APP}/og/pages/guide.jpg`;
 
 function fail(msg) {
   console.error(`build-guide: ${msg}`);
@@ -221,6 +225,18 @@ function shell({ title, description, canonical, body, root = "../" }) {
 <title>${escapeHtml(title)}</title>
 <meta name="description" content="${escapeHtml(description)}">
 <link rel="canonical" href="${canonical}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Indigene">
+<meta property="og:url" content="${canonical}">
+<meta property="og:title" content="${escapeHtml(title)}">
+<meta property="og:description" content="${escapeHtml(description)}">
+<meta property="og:image" content="${CARD}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${escapeHtml(title)}">
+<meta name="twitter:description" content="${escapeHtml(description)}">
+<meta name="twitter:image" content="${CARD}">
 <style>
 /* Tokens mirrored from app/src/styles.css so the page feels like the app. */
 :root {

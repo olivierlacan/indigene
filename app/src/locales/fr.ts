@@ -1242,6 +1242,25 @@ export const fr: Dict = {
   // Deux-points plutôt qu'une préposition : « en Californie du Sud » mais
   // « dans les Alpes » — le nom de région décide, et une seule formule ne peut
   // pas être juste partout.
+  "lookalike.pressure.transforms": "Prend la place",
+  "lookalike.pressure.spreads": "Gagne du terrain",
+  "lookalike.pressure.patchy": "Par taches",
+  "lookalike.pressurePlain.transforms":
+    "Il change le milieu lui-même : les indigènes s'en vont, et il ne reste qu'un peuplement de celui-ci.",
+  "lookalike.pressurePlain.spreads":
+    "Installé dans la nature et gagnant du terrain, avec de vrais dégâts, mais sans refaire le paysage.",
+  "lookalike.pressurePlain.patchy":
+    "Échappé des jardins ici, et pour l'instant cantonné à quelques stations.",
+  "lookalike.scaleNote":
+    "Trois degrés, du pire au moindre : prend la place, gagne du terrain, par taches. Ils traduisent une échelle publiée par ceux qui étudient chaque région — pas la nôtre.",
+  "lookalike.listedImpact": "Classé {as} ici par {by}.",
+  "lookalike.listedRegulation": "{by} l'inscrit comme {as}. {means}",
+  "lookalike.means.waClassA":
+    "Encore assez rare ici pour que l'État impose la destruction de chaque pied trouvé et en interdise la vente.",
+  "lookalike.means.waClassC":
+    "Cette classe ne dit rien de sa nocivité : elle signifie que la plante est déjà partout, et que l'État laisse la lutte à chaque comté au lieu de l'imposer.",
+  "lookalike.unassessed":
+    "Personne n'a encore évalué la pression qu'il exerce ici.",
   "lookalike.where.invasive": "Envahissante :",
   "lookalike.where.introduced": "Pas indigène :",
   "lookalike.where.native": "Indigène :",

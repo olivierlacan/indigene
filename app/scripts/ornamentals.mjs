@@ -22,13 +22,26 @@
 // publishes that table; this is the nearest honest thing to it, and the counts
 // are checkable by anyone with the same URL.
 //
-// **It ranks by how often a plant is photographed, not how often it is planted**
-// — those differ, and in knowable ways. A street tree in a walkable city is
-// photographed more than the same tree on a rural verge; a lawn is barely
-// photographed at all, because nobody points a phone at turf. So a turf grass
-// ranking low here is not evidence that turf is rare, and the report says so
-// rather than letting a reader forget it. Treat the order as a strong hint and
-// the presence of a taxon as the real signal.
+// **It ranks how often a plant is photographed, not how often it is planted**
+// — those differ, and in two knowable ways.
+//
+//   1. *Nobody points a phone at a lawn.* Turf, bedding and hedging are
+//      undercounted by more than an order of magnitude: St. Augustine returns
+//      122 observations in the Florida box against crape myrtle's 2,557, on
+//      ground where turf covers millions of acres.
+//   2. *The better a plant has escaped, the less of it this query sees.* A
+//      cultivated observation is one an observer marked as planted; once a
+//      species is common in the wild, most of its observations are wild ones and
+//      only the ones still obviously in a garden are counted. Cherry plum in the
+//      Pacific Northwest has 913 cultivated observations against 2,806 wild, and
+//      falls out of the top thirty on the cultivated count alone — a tree sold in
+//      every nursery and planted down whole streets. The queue under-ranks
+//      exactly the ornamentals that have got loose, which are the ones with the
+//      strongest case for a row.
+//
+// So the order is a strong hint and the presence of a taxon is the real signal.
+// The plants these two blind spots hide come in from the extension services'
+// turf and landscape guides, and from the invasive lists in `lookalikes.ts`.
 //
 // **Nothing here writes a row.** Like `candidates.mjs` and
 // `wildlife-candidates.mjs`, this proposes and a person disposes: an ornamental

@@ -45,6 +45,9 @@ subtitle on the What's new page.
 - Internal: the census undercounts turf twentyfold — nobody photographs a lawn —
   and proposed St. Augustine grass, whose nativity the Flora of the Southeastern
   US calls impossible to determine. Both written down rather than worked around.
+- Internal: second census blind spot — the better an ornamental has escaped, the
+  fewer *cultivated* records it has. Cherry plum: 913 planted against 2,806 wild
+  in the PNW, so it drops out of the top thirty.
 
 - Look-alikes: an impostor now says **how hard it pushes here**, not just that
   it's invasive — takes over, gaining ground, or in patches — with the body that

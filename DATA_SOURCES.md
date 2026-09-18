@@ -362,14 +362,21 @@ An observation marked *captive/cultivated* is a plant somebody planted, so a
 count of them inside a region's box is the closest thing there is to a census of
 its gardens. Nobody publishes that table.
 
-**Its blind spot is worth stating, because it is large and it is systematic.**
+**Its two blind spots are worth stating, because both are large and systematic.**
 The counts rank how often a plant is *photographed*, not how often it is
-planted, and nobody points a phone at a lawn: St. Augustine grass returns 122
+planted. First, nobody points a phone at a lawn: St. Augustine grass returns 122
 observations in the Florida box against crape myrtle's 2,557, on ground where
-turf covers millions of acres. So turf, bedding annuals and hedging are
-undercounted by more than an order of magnitude, and they come in from the
-extension services' turf and landscape guides instead. Presence in the list is
-the real signal; the order is a strong hint.
+turf covers millions of acres — so turf, bedding annuals and hedging are
+undercounted by more than an order of magnitude. Second, and less obvious: **the
+better an ornamental has escaped, the less of it this query sees.** A cultivated
+observation is one somebody marked as planted, so once a species is common in
+the wild most of its records are wild ones. Cherry plum in the Pacific Northwest
+has 913 cultivated observations against 2,806 wild, and drops out of the top
+thirty on the cultivated count alone — a tree sold in every nursery and planted
+down whole streets, which Cal-IPC rates *Limited*. The queue under-ranks exactly
+the ornamentals that have got loose. Those come in from the extension guides and
+from the invasive lists instead; presence in the list is the real signal, and the
+order is a strong hint.
 
 **And a finder can propose a plant we have no business calling non-native.** St.
 Augustine grass was the first thing this queue suggested for Florida turf, and

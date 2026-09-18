@@ -33,6 +33,19 @@ subtitle on the What's new page.
 
 ### Added
 
+- Native swaps: **crape myrtle** now has natives beside it — serviceberry and
+  redbud in the Mid-Atlantic, fringetree and Simpson's stopper in Florida. It's
+  a fine tree on nobody's invasive list; about three kinds of caterpillar live
+  on it. [See the swaps](https://indigene.app/alternatives)
+- Native swaps: a **bahiagrass** lawn in central Florida meets sunshine mimosa —
+  a low pink-flowered mat you mow two or three times a year instead of weekly.
+- Internal: `npm run ornamentals` ranks the plants people actually grow in each
+  region, from iNaturalist's cultivated observations, so the authoring queue is
+  a census rather than whoever happened to notice one.
+- Internal: the census undercounts turf twentyfold — nobody photographs a lawn —
+  and proposed St. Augustine grass, whose nativity the Flora of the Southeastern
+  US calls impossible to determine. Both written down rather than worked around.
+
 - Look-alikes: an impostor now says **how hard it pushes here**, not just that
   it's invasive — takes over, gaining ground, or in patches — with the body that
   scored it named beside it.

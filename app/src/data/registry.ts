@@ -4103,6 +4103,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "mid-atlantic",
       "north-michigan"
     ]
   },
@@ -7132,6 +7133,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "mid-atlantic",
       "north-michigan"
     ]
   },
@@ -10427,6 +10429,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "mid-atlantic",
       "north-michigan"
     ]
   },
@@ -10613,6 +10616,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "mid-atlantic",
       "north-michigan"
     ]
   },
@@ -11210,6 +11214,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "florida-central",
       "florida-south"
     ]
   },

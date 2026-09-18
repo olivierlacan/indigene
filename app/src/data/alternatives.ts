@@ -841,13 +841,42 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     ],
     "fagus-sylvatica": [
       {
+        plantId: "fagus-grandifolia",
+        why: "It is the same tree in every way that shows — smooth grey trunk, cathedral canopy, copper leaves held all winter — except that this one is from here.",
+        edges: [
+          { axis: "wildlife", native: "Beech nuts that turkeys, jays and bears fatten on, and a canopy raising well over a hundred caterpillar species.", ornamental: "The same architecture, feeding almost nothing local." },
+          { axis: "care", native: "Built for this ground.", ornamental: "Shallow-rooted, and its dense shade leaves bare earth beneath." },
+        ],
+        basis: "Mt. Cuba Center; Morton Arboretum; Tallamy & Shropshire.",
+      },
+      {
         plantId: "quercus-alba",
-        why: "For a tree to stand under in a hundred years, white oak is the one this country grew — and it holds its leaves through winter the way a beech does.",
+        why: "If it was a tree to stand under in a hundred years, white oak is the one — and it holds its brown leaves through winter the way a beech does.",
         edges: [
           { axis: "wildlife", native: "Host to more caterpillar species than any other plant here, and acorns that feed everything from jays to deer.", ornamental: "A great tree of Europe; its caterpillars are all in Europe." },
-          { axis: "care", native: "Deep-rooted and long-lived on this ground.", ornamental: "Shallow-rooted, and its dense shade leaves bare earth beneath." },
+          { axis: "care", native: "Deep-rooted and long-lived on this ground.", ornamental: "Shallow-rooted, and bare earth beneath." },
         ],
         basis: "Mt. Cuba Center; Tallamy & Shropshire; Morton Arboretum.",
+      },
+    ],
+    "picea-abies": [
+      {
+        plantId: "tsuga-canadensis",
+        why: "For a soft, dense evergreen that holds its skirt to the ground and takes the shade a spruce won't, eastern hemlock is the one these ravines are made of.",
+        edges: [
+          { axis: "wildlife", native: "Nesting cover and winter shelter for warblers and chickadees, and seed for siskins.", ornamental: "Little lives in a planted spruce here." },
+          { axis: "care", native: "Thrives in shade and cool moist ground.", ornamental: "Shallow-rooted, goes bare at the bottom by thirty, and topples in wet soil." },
+        ],
+        basis: "Mt. Cuba Center; Penn State Extension; Morton Arboretum.",
+      },
+      {
+        plantId: "pinus-strobus",
+        why: "If it was the fast big evergreen screen you were after, white pine grows faster than the spruce, lives far longer, and is the tallest tree in the East.",
+        edges: [
+          { axis: "wildlife", native: "A couple of hundred caterpillar species, seed for finches, and shelter the year round.", ornamental: "A green wall." },
+          { axis: "care", native: "Deep-rooted and storm-firm.", ornamental: "Blows over in wet ground." },
+        ],
+        basis: "Mt. Cuba Center; Penn State Extension; Tallamy & Shropshire.",
       },
     ],
     "ginkgo-biloba": [

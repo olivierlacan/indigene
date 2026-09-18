@@ -33,6 +33,16 @@ subtitle on the What's new page.
 
 ### Added
 
+- Plants: five natives the lists were missing — **American beech, American
+  basswood, eastern hemlock and eastern white pine** join the Mid-Atlantic, and
+  **coontie** joins North & Central Florida.
+  [See the plants](https://indigene.app/plants)
+- Plants: American beech is now the answer to a European one, which is a better
+  sentence than the oak we had to offer before. Same grey trunk, same copper
+  winter leaves, and the caterpillars are here.
+- Plants: coontie is the only plant an Atala butterfly caterpillar can eat, and
+  its range is creeping back north as people replant it. It belonged on the
+  central Florida list all along.
 - Native swaps: nine more from the top of the list — rosemary planted by the
   hundred on banks, Norway spruce, giant sequoia, European beech, oakleaf
   hydrangea, star magnolia, blue passionflower, jade plant and garden tulips.

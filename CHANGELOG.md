@@ -43,6 +43,9 @@ subtitle on the What's new page.
 - Look-alikes: tap "Gaining ground" and it tells you what it means, where it
   sits on the three steps, and who scored it — a tooltip only works if you have
   a mouse, and most of you don't.
+- Look-alikes: the index now spells out the whole scale, where the words come
+  from, and what a card with no badge means — nobody has scored that ground
+  yet, which is not the same as harmless.
 - Internal: `LookalikeListing` is a union — only an impact assessment may carry
   a level, a regulation must state what it asks. A region nobody has assessed
   gets no rank rather than a borrowed one; the Pacific Northwest and Atlantic

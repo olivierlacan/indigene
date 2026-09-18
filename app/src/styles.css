@@ -3209,6 +3209,20 @@ details.weights {
   text-decoration-style: solid;
 }
 
+/* The ladder written out, folded shut on the index. A definition list rather
+   than a table: at 360 px a three-column table is four words to a line, and the
+   badge already reads as the term. */
+.scale-legend-list {
+  margin: 0.6rem 0 0;
+}
+.scale-legend-list dt {
+  margin: 0.5rem 0 0.15rem;
+}
+.scale-legend-list dd {
+  margin: 0 0 0 0.1rem;
+  font-size: 0.9rem;
+}
+
 /* The ladder, under the sentence that places this rung on it. */
 .term-dialog-scale {
   font-size: 0.85rem;

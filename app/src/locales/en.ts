@@ -1287,6 +1287,11 @@ export const en = {
     "{n} plants that get bought, planted and photographed in place of a native. Open one to see, side by side, what tells it apart from the real thing.",
   "lookalikes.indexLedeRegion":
     "{n} of them turn up in {region}. Open one to see, side by side, what tells it apart from the native it stands in for.",
+  "lookalikes.scaleTitle": "What \u201ctakes over\u201d and \u201cgaining ground\u201d mean",
+  "lookalikes.scaleSource":
+    "The words are ours; the judgement isn\u2019t. Each one reads off the scale published by the people who survey that region \u2014 California\u2019s invasive-plant council, Virginia\u2019s natural heritage programme, Florida\u2019s invasive species council, the French botanical conservatories.",
+  "lookalikes.scaleGaps":
+    "A card with no such badge isn\u2019t a mild plant. It means nobody has scored that ground yet, or that all anyone has published there is a weed law \u2014 which says what you must do about a plant, not how much of the place it takes.",
   "lookalikes.notAllVillains": "Not all of these are villains. ",
   "lookalikes.notAllVillainsRest":
     "Some spread into wild places and cost us something. Some are ordinary garden plants that simply aren't from here. One or two grow here wild, like the plant they're confused with — and the mix-up still matters, because one of them can kill you. The label on each says which.",

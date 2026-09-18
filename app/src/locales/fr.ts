@@ -1286,6 +1286,11 @@ export const fr: Dict = {
     "{n} plantes qu'on achète, plante et photographie à la place d'une indigène. Ouvrez-en une pour voir, côte à côte, ce qui la distingue de la vraie.",
   "lookalikes.indexLedeRegion":
     "{n} d'entre elles se rencontrent en {region}. Ouvrez-en une pour voir, côte à côte, ce qui la distingue de l'indigène dont elle tient la place.",
+  "lookalikes.scaleTitle": "Ce que veulent dire \u00ab prend la place \u00bb et \u00ab gagne du terrain \u00bb",
+  "lookalikes.scaleSource":
+    "Les mots sont de nous ; le jugement, non. Chacun traduit l\u2019\u00e9chelle publi\u00e9e par ceux qui \u00e9tudient la r\u00e9gion \u2014 le conseil des plantes envahissantes de Californie, le patrimoine naturel de Virginie, celui de Floride, les conservatoires botaniques nationaux.",
+  "lookalikes.scaleGaps":
+    "Une fiche sans ce badge ne d\u00e9signe pas une plante inoffensive. Personne n\u2019a encore \u00e9valu\u00e9 ce terrain-l\u00e0, ou bien tout ce qui y est publi\u00e9 est une loi sur les mauvaises herbes \u2014 qui dit ce qu\u2019il faut faire d\u2019une plante, pas la place qu\u2019elle prend.",
   "lookalikes.notAllVillains": "Toutes ne sont pas des coupables. ",
   "lookalikes.notAllVillainsRest":
     "Certaines gagnent les milieux naturels et nous coûtent quelque chose. D'autres sont de simples plantes de jardin qui ne sont pas d'ici. Une ou deux poussent ici à l'état sauvage, comme la plante avec laquelle on les confond — et la confusion compte quand même, car l'une d'elles peut vous tuer. L'étiquette de chacune le dit.",

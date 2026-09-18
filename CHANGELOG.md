@@ -33,6 +33,19 @@ subtitle on the What's new page.
 
 ### Added
 
+- Native swaps: eight more of the plants people actually buy now have natives
+  beside them — mophead hydrangea, lilac, Japanese spirea, Indian hawthorn,
+  lantana, Japanese andromeda, horse-chestnut and Chinese wisteria.
+  [See the swaps](https://indigene.app/alternatives)
+- Native swaps: horse-chestnut goes brown and shrivelled by high summer now, all
+  over Europe — a leaf-mining moth spread with it. Small-leaved lime keeps its
+  leaves, and hums with bees in July.
+- Native swaps: lantana really is a nectar bar, and Florida's worst-tier
+  invasive besides. California fuchsia brings the hummingbirds without the
+  thickets or the berries that poison livestock.
+- Native swaps: a mophead hydrangea's big florets are sterile — bred for size,
+  so no nectar and no pollen. Arrowwood viburnum and Pacific ninebark carry the
+  same white plates, every floret working.
 - Native swaps: **crape myrtle** now has natives beside it — serviceberry and
   redbud in the Mid-Atlantic, fringetree and Simpson's stopper in Florida. It's
   a fine tree on nobody's invasive list; about three kinds of caterpillar live

@@ -137,4 +137,48 @@ export const ALTERNATIVES_FR: ProseTable = {
       },
     },
   },
+  "Hydrangea macrophylla": {
+    altRole: "Arbuste à grosses fleurs pour la mi-ombre",
+    altOrigin: "Indigène des côtes du Japon ; l'arbuste qu'on achète quand un coin ombragé a besoin qu'il s'y passe quelque chose.",
+    altBlurb:
+      "Des têtes de fleurs grandes comme une assiette, dans une couleur qui dépend du sol — personne ne prétendra que ce n'est pas un beau tour. C'est aussi un arbuste qui s'affaisse au premier après-midi chaud et redemande l'arrosoir, et la partie spectaculaire est stérile : les gros fleurons n'ont ni nectar ni pollen, puisqu'on les a sélectionnés pour être gros.",
+    alternativeNotes: {
+      "sambucus-nigra": {
+        why: "Pour de larges ombelles crème dans un coin mi-ombragé, le sureau noir fait la même masse de fleur à la même taille — et chacun de ses fleurons est fertile.",
+        edges: [
+          { axis: "wildlife", native: "Nectar et pollen pour les syrphes et les abeilles, puis des fruits que prennent une vingtaine d'espèces d'oiseaux — et de quoi faire sirop et confiture.", ornamental: "Les fleurons spectaculaires sont stériles : ni nectar, ni pollen, ni chenilles." },
+          { axis: "water", native: "Enraciné profond ; traverse un été atlantique sec sans aide.", ornamental: "S'affaisse à la chaleur et redemande l'eau." },
+        ],
+      },
+      "cornus-sanguinea": {
+        why: "Pour un arbuste de même taille qui tient toute l'année, le cornouiller sanguin donne fleur blanche, fruit noir, feuillage pourpre en automne et des rameaux rouge sang tout l'hiver.",
+        edges: [
+          { axis: "wildlife", native: "Nectar pour les abeilles solitaires, fruits pour les migrateurs d'automne, et hôte de plusieurs papillons de nuit.", ornamental: "Ne nourrit rien." },
+          { axis: "care", native: "Tous les sols, sans engrais ni arrosage.", ornamental: "Engrais et arrosage pour ressembler à l'étiquette." },
+        ],
+      },
+    },
+  },
+  "Wisteria sinensis": {
+    altRole: "Grimpante de pergola",
+    altOrigin: "Indigène de Chine ; sur les pergolas d'Europe et d'Amérique depuis les années 1810.",
+    altBlurb:
+      "Trois semaines de bleu suspendu en mai, et le reste de l'année une tige qui s'épaissit comme un câble et soulève la pergola de ses poteaux. Là où l'hiver est doux, elle passe la clôture, gagne les arbres et les étrangle — la Virginie évalue son caractère envahissant à « moyen » et la Floride l'inscrit sur sa liste.",
+    alternativeNotes: {
+      "lonicera-periclymenum": {
+        why: "Pour couvrir la même pergola d'un parfum du soir, le chèvrefeuille des bois fleurit de juin à septembre au lieu de trois semaines en mai — et ne soulève pas la structure.",
+        edges: [
+          { axis: "wildlife", native: "Un parfum nocturne qui attire les sphinx, puis des baies rouges pour les fauvettes et les grives.", ornamental: "Trois semaines de nectar, et des tiges qui épaississent jusqu'à soulever une pergola de ses poteaux." },
+          { axis: "care", native: "Volubile et léger ; un coup de sécateur par an suffit.", ornamental: "Passe la clôture et étrangle ce qu'elle atteint." },
+        ],
+      },
+      "humulus-lupulus": {
+        why: "Pour couvrir vite une tonnelle entière en une saison, le houblon monte de cinq mètres chaque été et repart de la souche chaque printemps — rien à démonter, rien à contenir.",
+        edges: [
+          { axis: "wildlife", native: "Plante-hôte du Robert-le-diable, et des cônes qui nourrissent les petits oiseaux en automne.", ornamental: "Ne nourrit presque rien ici." },
+          { axis: "care", native: "Disparaît au ras du sol chaque hiver : elle ne peut jamais dépasser la structure.", ornamental: "Un câble ligneux permanent, à rabattre sévèrement chaque année." },
+        ],
+      },
+    },
+  },
 };

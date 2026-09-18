@@ -270,6 +270,72 @@ export const ORNAMENTALS: Ornamental[] = [
       "The stiff, glossy rosette in a thousand Florida front yards. It looks the part and asks for nothing — but it feeds nothing native, and every part of it is poisonous enough to kill a dog that chews a seed.",
     originBasis: "UF/IFAS; ASPCA.",
   },
+  {
+    id: "hydrangea-macrophylla",
+    common: "Mophead hydrangea",
+    latin: "Hydrangea macrophylla",
+    form: "shrub",
+    role: "Big-flowered shade shrub",
+    origin: "Native to coastal Japan; the shrub people buy when a shady corner needs something to happen in it.",
+    blurb:
+      "Flower heads the size of a dinner plate, in a colour that depends on the soil — nobody is going to pretend that isn't a good trick. It is also a shrub that wilts flat on the first hot afternoon and wants the hose to come back, and the showy part is sterile: the big florets have no nectar and no pollen, because they were bred to be big.",
+    originBasis: "Missouri Botanical Garden; RHS.",
+  },
+  {
+    id: "syringa-vulgaris",
+    common: "Common lilac",
+    latin: "Syringa vulgaris",
+    form: "shrub",
+    role: "Scented spring shrub",
+    origin: "Native to the rocky hills of the Balkans; in North American gardens since the 1750s.",
+    blurb:
+      "Two weeks of the best scent in the garden, and fifty of a plain green shrub with mildew on it. Nobody is asking anyone to dig out their grandmother's lilac — but if a space is still empty, the natives below flower as hard, smell nearly as good, and feed something while they do it.",
+    originBasis: "Missouri Botanical Garden; Morton Arboretum.",
+  },
+  {
+    id: "spiraea-japonica",
+    common: "Japanese spirea",
+    latin: "Spiraea japonica",
+    form: "shrub",
+    role: "Low pink flowering shrub",
+    origin: "Native to Japan, Korea and China; sold by the trolley-load as a tidy front-of-border filler.",
+    blurb:
+      "Knee-high, flat pink flower heads all summer, and cheap — which is why it is in every car park in the eastern states. It also seeds into stream banks and old fields and forms a low thicket there, and Virginia's own assessment ranks its invasiveness Medium.",
+    originBasis: "Missouri Botanical Garden; Virginia Natural Heritage invasive plant list (2024).",
+  },
+  {
+    id: "rhaphiolepis-indica",
+    common: "Indian hawthorn",
+    latin: "Rhaphiolepis indica",
+    form: "shrub",
+    role: "Low evergreen foundation shrub",
+    origin: "Native to southern China; the commonest planted shrub in Southern California gardens.",
+    blurb:
+      "The low evergreen meatball under half the windows in the state — neat, cheap, pink in spring, and fungus-blighted by the time it is five. What it does not do is feed anything: no caterpillar here can eat its leaves, so the birds that hunt this hedge for chick food go through it and find nothing.",
+    originBasis: "Missouri Botanical Garden; UC Master Gardeners.",
+  },
+  {
+    id: "lantana-camara",
+    common: "Lantana",
+    latin: "Lantana camara",
+    form: "shrub",
+    role: "Nectar bedding shrub",
+    origin: "Native to tropical America; sold across the warm world with a butterfly on the label.",
+    blurb:
+      "It really is a nectar bar — that part of the label is true, and butterflies do work it all day. The rest is the problem: it is on Florida's invasive list at the top tier, it makes thickets that shade out everything beneath, and its berries are poisonous to livestock and children. California has it on the watch list. Plenty of natives bring the butterflies without any of that.",
+    originBasis: "Florida Invasive Species Council (Category I); California Invasive Plant Council (Watch); CABI.",
+  },
+  {
+    id: "pieris-japonica",
+    common: "Japanese andromeda",
+    latin: "Pieris japonica",
+    form: "shrub",
+    role: "Evergreen shade shrub",
+    origin: "Native to Japan, Taiwan and eastern China.",
+    blurb:
+      "Glossy evergreen, red new growth, and strings of white bells in February when nothing else is out — a genuinely good shrub for a dark corner, and on no invasive list here. Every part of it is poisonous, though, including to the deer it is sold to defeat, and nothing native eats a leaf of it.",
+    originBasis: "Missouri Botanical Garden; Oregon State University; ASPCA Animal Poison Control.",
+  },
   // ---------------- Perennials ----------------
   {
     id: "chrysanthemum-morifolium",
@@ -404,6 +470,28 @@ export const ORNAMENTALS: Ornamental[] = [
       "The steel-blue specimen conifer on a thousand lawns. In the humid East and Midwest it's living in the wrong climate, and it's increasingly failing there to needlecast and canker — a striking tree that browns out and dies back from the bottom.",
     originBasis: "Morton Arboretum; Missouri Botanical Garden.",
   },
+  {
+    id: "aesculus-hippocastanum",
+    common: "Horse-chestnut",
+    latin: "Aesculus hippocastanum",
+    form: "tree",
+    role: "Big avenue shade tree",
+    origin: "Native to a handful of mountain valleys in the Balkans; planted down European avenues since the 1600s.",
+    blurb:
+      "Candles of white flower in May, conkers in September, and a crown wide enough to park a village under. Since the 1980s a leaf-mining moth has spread across the whole continent with it, and the leaves now go brown and shrivelled by high summer — so the second half of its season is spent looking half dead.",
+    originBasis: "Tela Botanica; INPN; Forest Research (Cameraria ohridella).",
+  },
+  {
+    id: "wisteria-sinensis",
+    common: "Chinese wisteria",
+    latin: "Wisteria sinensis",
+    form: "vine",
+    role: "Pergola climber",
+    origin: "Native to China; on European and American pergolas since the 1810s.",
+    blurb:
+      "Three weeks of hanging blue in May, and the rest of the year a stem that thickens like a cable and lifts the pergola off its posts. Where winters are mild it goes over the fence and into the trees, and strangles them — Virginia ranks its invasiveness Medium and Florida lists it outright.",
+    originBasis: "Missouri Botanical Garden; Virginia Natural Heritage (2024); Florida Invasive Species Council (Category II).",
+  },
   // ---------------- More grasses, groundcovers, perennials, shrubs & trees ----------------
   {
     id: "miscanthus-sinensis",
@@ -513,6 +601,57 @@ export const ORNAMENTALS: Ornamental[] = [
 // and here is how the two compare on water, disease and wildlife.
 export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   "mid-atlantic": {
+    "hydrangea-macrophylla": [
+      {
+        plantId: "viburnum-dentatum",
+        why: "For the same broad white plates of flower in a half-shaded border, arrowwood viburnum holds them on a shrub that doesn't lie down every hot afternoon — and every floret on it is fertile.",
+        edges: [
+          { axis: "wildlife", native: "Nectar and pollen bees can actually reach, then blue berries the thrushes strip, and leaves several moths raise young on.", ornamental: "The showy florets are sterile — no nectar, no pollen, no caterpillars." },
+          { axis: "water", native: "Deep-rooted; rides out a dry August without help.", ornamental: "Wilts flat in afternoon heat and wants the hose back." },
+        ],
+        basis: "Mt. Cuba Center; Missouri Botanical Garden; Penn State Extension.",
+      },
+      {
+        plantId: "cephalanthus-occidentalis",
+        why: "If the corner is damp — which is usually why the hydrangea struggles — buttonbush turns out perfect white pincushions through July, on a shrub that likes wet feet.",
+        edges: [
+          { axis: "wildlife", native: "One of the heaviest native nectar shrubs there is; swallowtails and bumblebees work it all day, and ducks take the seed.", ornamental: "A wildlife blank." },
+          { axis: "care", native: "Thrives in the wet spot nothing else wants.", ornamental: "Sulks wet and sulks dry." },
+        ],
+        basis: "Mt. Cuba Center; Lady Bird Johnson Wildflower Center; Xerces Society.",
+      },
+    ],
+    "syringa-vulgaris": [
+      {
+        plantId: "ceanothus-americanus",
+        why: "For scented white froth on a low rounded shrub in early summer, New Jersey tea does what lilac does at half the size, and holds its shape without pruning.",
+        edges: [
+          { axis: "wildlife", native: "A host plant for spring azure and summer azure butterflies, and covered in small bees while it flowers.", ornamental: "Nectar for a fortnight and nothing else all year." },
+          { axis: "water", native: "A deep taproot; drought-proof once established, and fixes its own nitrogen.", ornamental: "Wants feeding, and mildews in a close corner." },
+        ],
+        basis: "Mt. Cuba Center; Xerces Society; Missouri Botanical Garden.",
+      },
+      {
+        plantId: "viburnum-dentatum",
+        why: "If it was the size and the spring flush you wanted rather than the scent, arrowwood makes the same big rounded screen and carries flower, berry and burgundy autumn instead of one good fortnight.",
+        edges: [
+          { axis: "wildlife", native: "Berries a dozen bird species take, and leaves that feed native moths.", ornamental: "Feeds almost nothing here." },
+          { axis: "care", native: "Shrugs off the mildew that greys a lilac by August.", ornamental: "Powdery mildew most summers." },
+        ],
+        basis: "Mt. Cuba Center; Penn State Extension.",
+      },
+    ],
+    "spiraea-japonica": [
+      {
+        plantId: "physocarpus-opulifolius",
+        why: "For a tough, cheap, front-of-border shrub that flowers and then does something in autumn, ninebark gives white flower clusters, red seed heads and bark that peels in strips all winter.",
+        edges: [
+          { axis: "wildlife", native: "Nectar for small native bees, and a host for several moths.", ornamental: "Nectar only, and it seeds into stream banks from the garden." },
+          { axis: "care", native: "Takes any soil, wet or dry, and needs nothing.", ornamental: "Equally tough — which is the problem." },
+        ],
+        basis: "Mt. Cuba Center; Missouri Botanical Garden; Virginia Natural Heritage.",
+      },
+    ],
     "lagerstroemia-indica": [
       {
         plantId: "amelanchier-canadensis",
@@ -859,6 +998,37 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "north-michigan": {
+    "syringa-vulgaris": [
+      {
+        plantId: "viburnum-lentago",
+        why: "For a big scented white spring shrub you can let grow into a small tree, nannyberry does both — cream flower plates in May, blue-black fruit in autumn, and no mildew.",
+        edges: [
+          { axis: "wildlife", native: "Fruit that carries cedar waxwings and thrushes through autumn, and leaves several moths use.", ornamental: "Two weeks of nectar; nothing lives on it." },
+          { axis: "care", native: "Hardy well past anything this region throws at it, in sun or part shade.", ornamental: "Greys over with mildew by August most years." },
+        ],
+        basis: "Missouri Botanical Garden; Michigan State University Extension; Lady Bird Johnson Wildflower Center.",
+      },
+    ],
+    "spiraea-japonica": [
+      {
+        plantId: "diervilla-lonicera",
+        why: "For a low suckering shrub that fills a difficult bank and flowers all summer, northern bush honeysuckle does it in dry shade where almost nothing else will.",
+        edges: [
+          { axis: "wildlife", native: "Yellow tube flowers bumblebees and hummingbirds work from June to frost.", ornamental: "Nectar for generalists, and seedlings in the nearest wet ground." },
+          { axis: "care", native: "Holds a dry bank on poor soil with no watering and no feeding.", ornamental: "Wants better soil to look like the label." },
+        ],
+        basis: "Michigan State University Extension; Missouri Botanical Garden; Xerces Society.",
+      },
+      {
+        plantId: "physocarpus-opulifolius",
+        why: "If you wanted the tidy mounded shape, ninebark holds it at the same size and adds peeling winter bark the spirea has no answer to.",
+        edges: [
+          { axis: "wildlife", native: "Native bees on the flowers, and a host for several moths.", ornamental: "A flowering surface and nothing more." },
+          { axis: "care", native: "Any soil, wet or dry, no feeding.", ornamental: "Seeds into stream banks and old fields." },
+        ],
+        basis: "Missouri Botanical Garden; Michigan State University Extension.",
+      },
+    ],
     "hemerocallis-fulva": [
       {
         plantId: "rudbeckia-hirta",
@@ -1144,6 +1314,46 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "pnw": {
+    "hydrangea-macrophylla": [
+      {
+        plantId: "physocarpus-capitatus",
+        why: "For a big loose shrub carrying flat white flower heads in a damp half-shaded corner, Pacific ninebark does it at the same size and then peels its bark all winter.",
+        edges: [
+          { axis: "wildlife", native: "Small native bees on every head, and leaves that feed local moths.", ornamental: "Sterile showy florets — no nectar, no pollen, nothing eats it." },
+          { axis: "water", native: "Happy in the wet end of a garden and fine when it dries.", ornamental: "Lies down flat on a hot afternoon." },
+        ],
+        basis: "WSU Extension; Burke Herbarium (University of Washington); Xerces Society.",
+      },
+      {
+        plantId: "sambucus-racemosa",
+        why: "If you wanted something to happen fast in a shady corner, red elderberry throws up creamy domes in April and scarlet fruit by July, on a shrub that gets there in two seasons.",
+        edges: [
+          { axis: "wildlife", native: "Fruit that band-tailed pigeons and a dozen songbirds strip, and early nectar for queen bumblebees.", ornamental: "Feeds nothing native." },
+          { axis: "care", native: "Fast, forgiving, and cuts back hard when it outgrows the spot.", ornamental: "Needs steady summer water to look like the label." },
+        ],
+        basis: "Oregon State University; Burke Herbarium; WSU Extension.",
+      },
+    ],
+    "pieris-japonica": [
+      {
+        plantId: "vaccinium-ovatum",
+        why: "For a glossy evergreen with bronze new growth and little white bells, evergreen huckleberry is the same shrub in every respect that matters — and the bells turn into berries.",
+        edges: [
+          { axis: "wildlife", native: "Nectar for early bumblebees, then berries for birds and people both.", ornamental: "Nectar only, and every part of it is poisonous." },
+          { axis: "care", native: "Takes deep shade, poor acid soil and coastal wind.", ornamental: "Wants shelter and even moisture." },
+        ],
+        basis: "Oregon State University; Burke Herbarium; WSU Extension.",
+      },
+      {
+        plantId: "berberis-nervosa",
+        why: "For the low glossy evergreen layer under trees, dwarf Oregon grape holds the same architecture and lights up with yellow flowers on the greyest week of the year.",
+        edges: [
+          { axis: "wildlife", native: "The earliest nectar many native bees get, then blue fruit for birds.", ornamental: "Poisonous to the deer it is sold to defeat, and to everything else." },
+          { axis: "water", native: "Dry shade under conifers is exactly its place — no summer water once rooted.", ornamental: "Needs watering through a Northwest summer." },
+        ],
+        basis: "Oregon State University; Burke Herbarium; Xerces Society.",
+      },
+    ],
     "hemerocallis-fulva": [
       {
         plantId: "aquilegia-formosa",
@@ -1401,6 +1611,46 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "ca-south-coast": {
+    "rhaphiolepis-indica": [
+      {
+        plantId: "rhus-integrifolia",
+        why: "For a dense evergreen with leathery leaves and pink spring flower, lemonade berry does the same job at any size you clip it to, and never blights.",
+        edges: [
+          { axis: "wildlife", native: "Nectar for native bees and butterflies, then sticky red fruit the birds take.", ornamental: "Feeds nothing; no caterpillar here can eat it." },
+          { axis: "water", native: "No summer water at all once established.", ornamental: "Wants irrigation, and gets leaf spot when it gets it." },
+        ],
+        basis: "California Native Plant Society; Cal-IPC; Las Pilitas.",
+      },
+      {
+        plantId: "frangula-californica",
+        why: "For a neat rounded evergreen that takes shade as well as sun, coffeeberry holds a clipped shape and carries berries from green to red to black on the same branch.",
+        edges: [
+          { axis: "wildlife", native: "A host for the pale swallowtail, heavy with bees in flower, and a bird magnet in fruit.", ornamental: "A green surface and nothing else." },
+          { axis: "water", native: "Drought-proof, and untroubled by the fungal blight that disfigures the hedge it replaces.", ornamental: "Entomosporium leaf spot is close to inevitable under irrigation." },
+        ],
+        basis: "California Native Plant Society; UC Master Gardeners; Xerces Society.",
+      },
+    ],
+    "lantana-camara": [
+      {
+        plantId: "epilobium-canum",
+        why: "For the butterflies the label promised, California fuchsia opens scarlet trumpets exactly when the hummingbirds need them most — late summer, when everything else has finished.",
+        edges: [
+          { axis: "wildlife", native: "The main late nectar source for Anna's hummingbird, and worked by native bees.", ornamental: "Real nectar, on a shrub that is a top-tier invasive in Florida and a watch-list plant here." },
+          { axis: "water", native: "Flowers hardest with no summer water at all.", ornamental: "Berries poisonous to livestock and to children." },
+        ],
+        basis: "California Native Plant Society; Xerces Society; Cal-IPC.",
+      },
+      {
+        plantId: "diplacus-aurantiacus",
+        why: "For the same low mound of hot colour all summer, sticky monkeyflower flowers apricot to orange for months and takes the same dry sunny spot.",
+        edges: [
+          { axis: "wildlife", native: "The larval host for the common buckeye and the variable checkerspot — caterpillars, not just nectar.", ornamental: "Nectar only, and it spreads from gardens into wild ground." },
+          { axis: "water", native: "Wants the dry summer it evolved in.", ornamental: "Needs water to keep flowering." },
+        ],
+        basis: "California Native Plant Society; Xerces Society.",
+      },
+    ],
     "hemerocallis-fulva": [
       {
         plantId: "epilobium-canum",
@@ -1637,6 +1887,26 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "florida-central": {
+    "rhaphiolepis-indica": [
+      {
+        plantId: "viburnum-obovatum",
+        why: "For a small-leaved evergreen you can clip into a low hedge or let go as a shrub, Walter's viburnum does both and smothers itself in white in February.",
+        edges: [
+          { axis: "wildlife", native: "Early nectar for bees and butterflies, then black fruit the songbirds take.", ornamental: "Feeds nothing native, and blights under irrigation." },
+          { axis: "water", native: "Takes Florida sand, sun and drought once rooted.", ornamental: "Wants steady water, which is what brings the leaf spot." },
+        ],
+        basis: "UF/IFAS; Florida Native Plant Society.",
+      },
+      {
+        plantId: "ilex-vomitoria",
+        why: "If it was an evergreen that takes shearing, yaupon holly is the one Florida hedges were made of before this arrived — and the dwarf forms sit at exactly the same height.",
+        edges: [
+          { axis: "wildlife", native: "Red berries through winter for mockingbirds and cedar waxwings; heavy bee traffic in spring.", ornamental: "A green wall and nothing more." },
+          { axis: "care", native: "Salt-, drought- and flood-tolerant, and disease-free.", ornamental: "Entomosporium leaf spot disfigures most planted hedges." },
+        ],
+        basis: "UF/IFAS; Florida Native Plant Society.",
+      },
+    ],
     "lagerstroemia-indica": [
       {
         plantId: "chionanthus-virginicus",
@@ -2008,6 +2278,46 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "france-atlantic": {
+    "hydrangea-macrophylla": [
+      {
+        plantId: "sambucus-nigra",
+        why: "For broad cream plates of flower in a half-shaded corner, elder makes the same mass of it at the same size — and every floret on it is fertile.",
+        edges: [
+          { axis: "wildlife", native: "Nectar and pollen for hoverflies and bees, then fruit two dozen bird species take — and elderflower and elderberry for the kitchen.", ornamental: "The showy florets are sterile: no nectar, no pollen, no caterpillars." },
+          { axis: "water", native: "Deep-rooted; rides out a dry Atlantic summer.", ornamental: "Wilts flat in heat and wants watering." },
+        ],
+        basis: "Tela Botanica; Conservatoire botanique national de Brest; Noé.",
+      },
+      {
+        plantId: "cornus-sanguinea",
+        why: "For a shrub the same size that carries the whole year, common dogwood gives white flower, black fruit, plum-purple autumn leaves and blood-red stems all winter.",
+        edges: [
+          { axis: "wildlife", native: "Nectar for solitary bees, fruit for autumn migrants, and a host for several moths.", ornamental: "A wildlife blank." },
+          { axis: "care", native: "Any soil, no feeding, no watering.", ornamental: "Feeding and watering to look like the label." },
+        ],
+        basis: "Tela Botanica; INPN; Conservatoire botanique national de Brest.",
+      },
+    ],
+    "wisteria-sinensis": [
+      {
+        plantId: "lonicera-periclymenum",
+        why: "For the same pergola and an evening scent to sit under, honeysuckle flowers from June to September instead of three weeks in May — and never lifts the structure.",
+        edges: [
+          { axis: "wildlife", native: "Night scent that brings in hawk-moths, then red berries for warblers and thrushes.", ornamental: "Three weeks of nectar, and stems that thicken until they lift a pergola off its posts." },
+          { axis: "care", native: "Twines lightly; a pair of secateurs once a year is the whole job.", ornamental: "Goes over the fence and strangles what it reaches." },
+        ],
+        basis: "Tela Botanica; OFB Centre de ressources EEE; Noé.",
+      },
+      {
+        plantId: "humulus-lupulus",
+        why: "To cover a whole arbour fast, hop climbs five metres every summer and starts again from the root each spring — nothing to dismantle, nothing to keep in check.",
+        edges: [
+          { axis: "wildlife", native: "The larval host of the comma butterfly, and cones that feed small birds through autumn.", ornamental: "Feeds almost nothing here." },
+          { axis: "care", native: "Dies back to the ground each winter, so it can never outgrow the structure.", ornamental: "A permanent woody cable that has to be cut back hard every year." },
+        ],
+        basis: "Tela Botanica; INPN; Noé.",
+      },
+    ],
     "hosta": [
       {
         plantId: "dryopteris-filix-mas",
@@ -2164,6 +2474,37 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "france-continental": {
+    "aesculus-hippocastanum": [
+      {
+        plantId: "tilia-cordata",
+        why: "For the shade of a long avenue, small-leaved lime gives the same wide crown — and, in early July, a whole tree humming, that you can smell twenty metres away.",
+        edges: [
+          { axis: "wildlife", native: "One of the heaviest nectar trees in Europe; bees work a flowering lime from dawn to dusk, and it hosts dozens of moths.", ornamental: "Flowers for a fortnight, and feeds little." },
+          { axis: "disease", native: "Holds clean green leaves until the autumn turn.", ornamental: "The leaf-mining moth has spread across the continent since the 1980s; leaves go brown and shrivelled by high summer." },
+        ],
+        basis: "Tela Botanica; INPN; Forest Research (Cameraria ohridella).",
+      },
+      {
+        plantId: "acer-campestre",
+        why: "If the space is smaller than an avenue, field maple casts the same dense shade at garden size, and turns gold in November.",
+        edges: [
+          { axis: "wildlife", native: "A host for several moths, and pollen that matters early in the year.", ornamental: "Nothing native eats a leaf of it." },
+          { axis: "disease", native: "Untroubled by the leaf miner and by the bleeding canker that is killing horse-chestnuts across Europe.", ornamental: "Both, most years." },
+        ],
+        basis: "Tela Botanica; INPN; OFB.",
+      },
+    ],
+    "wisteria-sinensis": [
+      {
+        plantId: "clematis-vitalba",
+        why: "To cover an arbour and give it something to show in winter, traveller's joy climbs by itself and covers itself in November with silver plumes that hold until February.",
+        edges: [
+          { axis: "wildlife", native: "Late nectar when little else is open, and seed heads small birds pull apart for nest lining.", ornamental: "Three weeks in May, then a woody cable." },
+          { axis: "care", native: "Cut back hard whenever it gets ahead of you.", ornamental: "Lifts a pergola off its posts, and strangles trees it reaches." },
+        ],
+        basis: "Tela Botanica; INPN; OFB Centre de ressources EEE.",
+      },
+    ],
     "miscanthus-sinensis": [
       {
         plantId: "brachypodium-pinnatum",
@@ -2374,6 +2715,26 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "france-alpine": {
+    "aesculus-hippocastanum": [
+      {
+        plantId: "acer-pseudoplatanus",
+        why: "For the shade over a mountain village square, sycamore maple makes the same wide crown and takes wind and snow far higher up than horse-chestnut will.",
+        edges: [
+          { axis: "wildlife", native: "Early pollen for queen bumblebees, and a host for a long list of moths.", ornamental: "Feeds little, and the leaf miner arrived with it." },
+          { axis: "disease", native: "Green to the autumn turn.", ornamental: "Brown and shrivelled by August across the continent since the 1980s." },
+        ],
+        basis: "Tela Botanica; INPN; Forest Research (Cameraria ohridella).",
+      },
+      {
+        plantId: "sorbus-aucuparia",
+        why: "If the space is smaller, rowan gives white flower in May and scarlet bunches in August, on a tree that climbs higher than any other here.",
+        edges: [
+          { axis: "wildlife", native: "Berries that carry thrushes and waxwings through autumn, and nectar for hoverflies in spring.", ornamental: "Conkers nothing local eats." },
+          { axis: "care", native: "Thrives on thin mountain soil and hard winters.", ornamental: "Wants depth and moisture it rarely gets up here." },
+        ],
+        basis: "Tela Botanica; INPN; Conservatoire botanique national alpin.",
+      },
+    ],
     "lupinus-polyphyllus": [
       {
         plantId: "anthyllis-vulneraria",

@@ -1,6 +1,1357 @@
 {
-  "fetched": "2026-09-18",
   "report": [
+    {
+      "region": "mid-atlantic",
+      "name": "Mid-Atlantic / Northeast Piedmont",
+      "rows": [
+        {
+          "latin": "Hydrangea quercifolia",
+          "common": "oakleaf hydrangea",
+          "count": 8796,
+          "taxonId": 83156,
+          "nativeOn": []
+        },
+        {
+          "latin": "Picea abies",
+          "common": "Norway spruce",
+          "count": 8300,
+          "taxonId": 63567,
+          "nativeOn": [
+            "france-alpine"
+          ]
+        },
+        {
+          "latin": "Gleditsia triacanthos",
+          "common": "honey locust",
+          "count": 7497,
+          "taxonId": 54797,
+          "nativeOn": []
+        },
+        {
+          "latin": "Hibiscus syriacus",
+          "common": "common hibiscus",
+          "count": 7157,
+          "taxonId": 126585,
+          "nativeOn": []
+        },
+        {
+          "latin": "Pinus strobus",
+          "common": "eastern white pine",
+          "count": 7140,
+          "taxonId": 52391,
+          "nativeOn": [
+            "north-michigan"
+          ]
+        },
+        {
+          "latin": "Monarda didyma",
+          "common": "Scarlet Beebalm",
+          "count": 6559,
+          "taxonId": 52735,
+          "nativeOn": []
+        },
+        {
+          "latin": "Tulipa gesneriana",
+          "common": "Garden Tulip",
+          "count": 6548,
+          "taxonId": 129054,
+          "nativeOn": []
+        },
+        {
+          "latin": "Metasequoia glyptostroboides",
+          "common": "dawn redwood",
+          "count": 6193,
+          "taxonId": 69150,
+          "nativeOn": []
+        },
+        {
+          "latin": "Buxus sempervirens",
+          "common": "common box",
+          "count": 5824,
+          "taxonId": 133397,
+          "nativeOn": []
+        },
+        {
+          "latin": "Fagus sylvatica",
+          "common": "European beech",
+          "count": 5654,
+          "taxonId": 54227,
+          "nativeOn": [
+            "france-atlantic",
+            "france-continental"
+          ]
+        },
+        {
+          "latin": "Hydrangea paniculata",
+          "common": "Panicle Hydrangea",
+          "count": 5090,
+          "taxonId": 133390,
+          "nativeOn": []
+        },
+        {
+          "latin": "Platanus occidentalis",
+          "common": "American sycamore",
+          "count": 5045,
+          "taxonId": 49662,
+          "nativeOn": []
+        },
+        {
+          "latin": "Rhododendron indicum",
+          "common": "southern Indian azalea",
+          "count": 4785,
+          "taxonId": 208830,
+          "nativeOn": []
+        },
+        {
+          "latin": "Thuja occidentalis",
+          "common": "northern whitecedar",
+          "count": 4731,
+          "taxonId": 54037,
+          "nativeOn": [
+            "north-michigan"
+          ]
+        },
+        {
+          "latin": "Zinnia elegans",
+          "common": "Elegant Zinnia",
+          "count": 4723,
+          "taxonId": 181901,
+          "nativeOn": []
+        },
+        {
+          "latin": "Magnolia stellata",
+          "common": "star magnolia",
+          "count": 4697,
+          "taxonId": 126710,
+          "nativeOn": []
+        },
+        {
+          "latin": "Solanum lycopersicum",
+          "common": "tomato",
+          "count": 4627,
+          "taxonId": 51737,
+          "nativeOn": []
+        },
+        {
+          "latin": "Stachys byzantina",
+          "common": "woolly hedgenettle",
+          "count": 4461,
+          "taxonId": 127480,
+          "nativeOn": []
+        },
+        {
+          "latin": "Coleus scutellarioides",
+          "common": "Coleus",
+          "count": 4400,
+          "taxonId": 291284,
+          "nativeOn": []
+        },
+        {
+          "latin": "Hyacinthus orientalis",
+          "common": "Hyacinth",
+          "count": 4371,
+          "taxonId": 126637,
+          "nativeOn": []
+        },
+        {
+          "latin": "Phlox subulata",
+          "common": "moss phlox",
+          "count": 4264,
+          "taxonId": 68884,
+          "nativeOn": []
+        },
+        {
+          "latin": "Narcissus pseudonarcissus",
+          "common": "wild daffodil",
+          "count": 4253,
+          "taxonId": 55848,
+          "nativeOn": []
+        },
+        {
+          "latin": "Viola × wittrockiana",
+          "common": "garden pansy",
+          "count": 4196,
+          "taxonId": 171203,
+          "nativeOn": []
+        },
+        {
+          "latin": "Lamprocapnos spectabilis",
+          "common": "Asian Bleeding-heart",
+          "count": 4152,
+          "taxonId": 204340,
+          "nativeOn": []
+        },
+        {
+          "latin": "Liriope muscari",
+          "common": "Liriope",
+          "count": 3762,
+          "taxonId": 223938,
+          "nativeOn": []
+        },
+        {
+          "latin": "Acer saccharinum",
+          "common": "silver maple",
+          "count": 3761,
+          "taxonId": 54762,
+          "nativeOn": []
+        },
+        {
+          "latin": "Euonymus japonicus",
+          "common": "Japanese spindle tree",
+          "count": 3721,
+          "taxonId": 349786,
+          "nativeOn": []
+        },
+        {
+          "latin": "Magnolia × soulangeana",
+          "common": "Saucer Magnolia",
+          "count": 3626,
+          "taxonId": 204586,
+          "nativeOn": []
+        },
+        {
+          "latin": "Liriodendron tulipifera",
+          "common": "American tuliptree",
+          "count": 3600,
+          "taxonId": 53582,
+          "nativeOn": []
+        },
+        {
+          "latin": "Phlox paniculata",
+          "common": "fall phlox",
+          "count": 3478,
+          "taxonId": 117437,
+          "nativeOn": []
+        }
+      ],
+      "fetched": "2026-09-18"
+    },
+    {
+      "region": "north-michigan",
+      "name": "Northern Lower Michigan",
+      "rows": [
+        {
+          "latin": "Lavandula angustifolia",
+          "common": "Common Lavender",
+          "count": 70,
+          "taxonId": 133395,
+          "nativeOn": [
+            "france-mediterranean"
+          ]
+        },
+        {
+          "latin": "Echinacea purpurea",
+          "common": "purple coneflower",
+          "count": 49,
+          "taxonId": 48627,
+          "nativeOn": [
+            "mid-atlantic"
+          ]
+        },
+        {
+          "latin": "Hydrangea paniculata",
+          "common": "Panicle Hydrangea",
+          "count": 48,
+          "taxonId": 133390,
+          "nativeOn": []
+        },
+        {
+          "latin": "Zinnia elegans",
+          "common": "Elegant Zinnia",
+          "count": 43,
+          "taxonId": 181901,
+          "nativeOn": []
+        },
+        {
+          "latin": "Coleus scutellarioides",
+          "common": "Coleus",
+          "count": 39,
+          "taxonId": 291284,
+          "nativeOn": []
+        },
+        {
+          "latin": "Salvia yangii",
+          "common": "Swanleaf Clouding Sage",
+          "count": 38,
+          "taxonId": 941713,
+          "nativeOn": []
+        },
+        {
+          "latin": "Monarda didyma",
+          "common": "Scarlet Beebalm",
+          "count": 37,
+          "taxonId": 52735,
+          "nativeOn": []
+        },
+        {
+          "latin": "Sequoiadendron giganteum",
+          "common": "giant sequoia",
+          "count": 36,
+          "taxonId": 59567,
+          "nativeOn": []
+        },
+        {
+          "latin": "Coreopsis lanceolata",
+          "common": "Lance-leaved Coreopsis",
+          "count": 36,
+          "taxonId": 76444,
+          "nativeOn": []
+        },
+        {
+          "latin": "Dahlia pinnata",
+          "common": "Garden Dahlia",
+          "count": 35,
+          "taxonId": 161582,
+          "nativeOn": []
+        },
+        {
+          "latin": "Phlox paniculata",
+          "common": "fall phlox",
+          "count": 33,
+          "taxonId": 117437,
+          "nativeOn": []
+        },
+        {
+          "latin": "Petunia × atkinsiana",
+          "common": "garden petunia",
+          "count": 32,
+          "taxonId": 170914,
+          "nativeOn": []
+        },
+        {
+          "latin": "Pelargonium × hybridum",
+          "common": "garden geranium",
+          "count": 30,
+          "taxonId": 181543,
+          "nativeOn": []
+        },
+        {
+          "latin": "Liriodendron tulipifera",
+          "common": "American tuliptree",
+          "count": 29,
+          "taxonId": 53582,
+          "nativeOn": []
+        },
+        {
+          "latin": "Tulipa gesneriana",
+          "common": "Garden Tulip",
+          "count": 29,
+          "taxonId": 129054,
+          "nativeOn": []
+        },
+        {
+          "latin": "Lamprocapnos spectabilis",
+          "common": "Asian Bleeding-heart",
+          "count": 29,
+          "taxonId": 204340,
+          "nativeOn": []
+        },
+        {
+          "latin": "Dasiphora fruticosa",
+          "common": "shrubby cinquefoil",
+          "count": 28,
+          "taxonId": 76606,
+          "nativeOn": []
+        },
+        {
+          "latin": "Salvia officinalis",
+          "common": "garden sage",
+          "count": 26,
+          "taxonId": 51738,
+          "nativeOn": []
+        },
+        {
+          "latin": "Gleditsia triacanthos",
+          "common": "honey locust",
+          "count": 26,
+          "taxonId": 54797,
+          "nativeOn": []
+        },
+        {
+          "latin": "Origanum vulgare",
+          "common": "Oregano",
+          "count": 26,
+          "taxonId": 61396,
+          "nativeOn": [
+            "france-continental"
+          ]
+        },
+        {
+          "latin": "Tagetes erecta",
+          "common": "Mexican Marigold",
+          "count": 26,
+          "taxonId": 79312,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cotinus coggygria",
+          "common": "Smokebush",
+          "count": 26,
+          "taxonId": 133366,
+          "nativeOn": []
+        },
+        {
+          "latin": "Hosta sieboldii",
+          "common": "Small-leaved Plantain Lily",
+          "count": 26,
+          "taxonId": 426065,
+          "nativeOn": []
+        },
+        {
+          "latin": "Solanum lycopersicum",
+          "common": "tomato",
+          "count": 25,
+          "taxonId": 51737,
+          "nativeOn": []
+        },
+        {
+          "latin": "Baptisia australis",
+          "common": "tall blue wild indigo",
+          "count": 25,
+          "taxonId": 83902,
+          "nativeOn": [
+            "mid-atlantic"
+          ]
+        },
+        {
+          "latin": "Hemerocallis lilioasphodelus",
+          "common": "yellow daylily",
+          "count": 24,
+          "taxonId": 163663,
+          "nativeOn": []
+        },
+        {
+          "latin": "Antirrhinum majus",
+          "common": "Snapdragon",
+          "count": 23,
+          "taxonId": 48969,
+          "nativeOn": []
+        },
+        {
+          "latin": "Salvia nemorosa",
+          "common": "Purple Wood Sage",
+          "count": 23,
+          "taxonId": 168387,
+          "nativeOn": []
+        },
+        {
+          "latin": "Fagus sylvatica",
+          "common": "European beech",
+          "count": 22,
+          "taxonId": 54227,
+          "nativeOn": [
+            "france-atlantic",
+            "france-continental"
+          ]
+        },
+        {
+          "latin": "Lobelia erinus",
+          "common": "Garden Lobelia",
+          "count": 22,
+          "taxonId": 77797,
+          "nativeOn": []
+        }
+      ],
+      "fetched": "2026-09-18"
+    },
+    {
+      "region": "pnw",
+      "name": "Pacific Northwest",
+      "rows": [
+        {
+          "latin": "Sequoiadendron giganteum",
+          "common": "giant sequoia",
+          "count": 3551,
+          "taxonId": 59567,
+          "nativeOn": []
+        },
+        {
+          "latin": "Sequoia sempervirens",
+          "common": "coast redwood",
+          "count": 2380,
+          "taxonId": 47372,
+          "nativeOn": [
+            "ca-central-coast"
+          ]
+        },
+        {
+          "latin": "Cedrus deodara",
+          "common": "Deodar cedar",
+          "count": 2076,
+          "taxonId": 69820,
+          "nativeOn": []
+        },
+        {
+          "latin": "Araucaria araucana",
+          "common": "monkey-puzzle",
+          "count": 1762,
+          "taxonId": 126404,
+          "nativeOn": []
+        },
+        {
+          "latin": "Salvia rosmarinus",
+          "common": "Rosemary",
+          "count": 1721,
+          "taxonId": 636795,
+          "nativeOn": [
+            "france-mediterranean"
+          ]
+        },
+        {
+          "latin": "Ceanothus thyrsiflorus",
+          "common": "blueblossom",
+          "count": 1629,
+          "taxonId": 56617,
+          "nativeOn": [
+            "ca-central-coast"
+          ]
+        },
+        {
+          "latin": "Camellia japonica",
+          "common": "Japanese camellia",
+          "count": 1526,
+          "taxonId": 83056,
+          "nativeOn": []
+        },
+        {
+          "latin": "Viburnum davidii",
+          "common": "David Viburnum",
+          "count": 1440,
+          "taxonId": 128767,
+          "nativeOn": []
+        },
+        {
+          "latin": "Acer rubrum",
+          "common": "red maple",
+          "count": 1434,
+          "taxonId": 48098,
+          "nativeOn": [
+            "mid-atlantic",
+            "north-michigan",
+            "florida-central"
+          ]
+        },
+        {
+          "latin": "Euphorbia characias",
+          "common": "Mediterranean spurge",
+          "count": 1425,
+          "taxonId": 181594,
+          "nativeOn": [
+            "france-mediterranean"
+          ]
+        },
+        {
+          "latin": "Lavandula angustifolia",
+          "common": "Common Lavender",
+          "count": 1380,
+          "taxonId": 133395,
+          "nativeOn": [
+            "france-mediterranean"
+          ]
+        },
+        {
+          "latin": "Dahlia pinnata",
+          "common": "Garden Dahlia",
+          "count": 1230,
+          "taxonId": 161582,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cercidiphyllum japonicum",
+          "common": "katsura tree",
+          "count": 1192,
+          "taxonId": 133356,
+          "nativeOn": []
+        },
+        {
+          "latin": "Rhododendron × hybridum",
+          "common": "garden rhododendron",
+          "count": 1174,
+          "taxonId": 793886,
+          "nativeOn": []
+        },
+        {
+          "latin": "Chamaecyparis lawsoniana",
+          "common": "Lawson's cypress",
+          "count": 1149,
+          "taxonId": 76237,
+          "nativeOn": []
+        },
+        {
+          "latin": "Rhododendron macrophyllum",
+          "common": "Pacific rhododendron",
+          "count": 1126,
+          "taxonId": 57360,
+          "nativeOn": []
+        },
+        {
+          "latin": "Helleborus orientalis",
+          "common": "Lenten-rose",
+          "count": 1097,
+          "taxonId": 126550,
+          "nativeOn": []
+        },
+        {
+          "latin": "Clarkia amoena",
+          "common": "Farewell-To-Spring",
+          "count": 1074,
+          "taxonId": 61048,
+          "nativeOn": []
+        },
+        {
+          "latin": "Picea abies",
+          "common": "Norway spruce",
+          "count": 1074,
+          "taxonId": 63567,
+          "nativeOn": [
+            "france-alpine"
+          ]
+        },
+        {
+          "latin": "Glandora prostrata",
+          "common": "creeping gromwell",
+          "count": 1053,
+          "taxonId": 425378,
+          "nativeOn": []
+        },
+        {
+          "latin": "Acer griseum",
+          "common": "Paperbark Maple",
+          "count": 1031,
+          "taxonId": 120525,
+          "nativeOn": []
+        },
+        {
+          "latin": "Magnolia stellata",
+          "common": "star magnolia",
+          "count": 1030,
+          "taxonId": 126710,
+          "nativeOn": []
+        },
+        {
+          "latin": "Narcissus pseudonarcissus",
+          "common": "wild daffodil",
+          "count": 1025,
+          "taxonId": 55848,
+          "nativeOn": []
+        },
+        {
+          "latin": "Fuchsia magellanica",
+          "common": "Hardy Fuchsia",
+          "count": 1025,
+          "taxonId": 163112,
+          "nativeOn": []
+        },
+        {
+          "latin": "Daphne odora",
+          "common": "Winter daphne",
+          "count": 962,
+          "taxonId": 126930,
+          "nativeOn": []
+        },
+        {
+          "latin": "Erica carnea",
+          "common": "Spring Heath",
+          "count": 960,
+          "taxonId": 56306,
+          "nativeOn": [
+            "france-alpine"
+          ]
+        },
+        {
+          "latin": "Calendula officinalis",
+          "common": "pot marigold",
+          "count": 955,
+          "taxonId": 75931,
+          "nativeOn": []
+        },
+        {
+          "latin": "Calocedrus decurrens",
+          "common": "California incense-cedar",
+          "count": 952,
+          "taxonId": 53723,
+          "nativeOn": []
+        },
+        {
+          "latin": "Choisya ternata",
+          "common": "Mexican orange",
+          "count": 929,
+          "taxonId": 287309,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cedrus atlantica",
+          "common": "Atlas cedar",
+          "count": 919,
+          "taxonId": 136234,
+          "nativeOn": []
+        }
+      ],
+      "fetched": "2026-09-18"
+    },
+    {
+      "region": "ca-south-coast",
+      "name": "Southern California",
+      "rows": [
+        {
+          "latin": "Agave attenuata",
+          "common": "Swan-neck Agave",
+          "count": 4256,
+          "taxonId": 209357,
+          "nativeOn": []
+        },
+        {
+          "latin": "Salvia rosmarinus",
+          "common": "Rosemary",
+          "count": 4189,
+          "taxonId": 636795,
+          "nativeOn": [
+            "france-mediterranean"
+          ]
+        },
+        {
+          "latin": "Carissa macrocarpa",
+          "common": "Natal Plum",
+          "count": 4043,
+          "taxonId": 130215,
+          "nativeOn": []
+        },
+        {
+          "latin": "Crassula ovata",
+          "common": "jade plant",
+          "count": 3618,
+          "taxonId": 76465,
+          "nativeOn": []
+        },
+        {
+          "latin": "Jacaranda mimosifolia",
+          "common": "blue jacaranda",
+          "count": 3597,
+          "taxonId": 77541,
+          "nativeOn": []
+        },
+        {
+          "latin": "Strelitzia reginae",
+          "common": "common bird-of-paradise flower",
+          "count": 3082,
+          "taxonId": 49143,
+          "nativeOn": []
+        },
+        {
+          "latin": "Euphorbia tirucalli",
+          "common": "Fire Stick",
+          "count": 2828,
+          "taxonId": 162855,
+          "nativeOn": []
+        },
+        {
+          "latin": "Aeonium arboreum",
+          "common": "Tree Aeonium",
+          "count": 2783,
+          "taxonId": 67717,
+          "nativeOn": []
+        },
+        {
+          "latin": "Tecomaria capensis",
+          "common": "Cape Honeysuckle",
+          "count": 2753,
+          "taxonId": 286772,
+          "nativeOn": []
+        },
+        {
+          "latin": "Aloe arborescens",
+          "common": "Candelabra Aloe",
+          "count": 2434,
+          "taxonId": 81518,
+          "nativeOn": []
+        },
+        {
+          "latin": "Echium candicans",
+          "common": "Pride of Madeira",
+          "count": 2150,
+          "taxonId": 57723,
+          "nativeOn": []
+        },
+        {
+          "latin": "Pinus canariensis",
+          "common": "Canary Island pine",
+          "count": 2111,
+          "taxonId": 47560,
+          "nativeOn": []
+        },
+        {
+          "latin": "Eriobotrya japonica",
+          "common": "Loquat",
+          "count": 2098,
+          "taxonId": 76949,
+          "nativeOn": []
+        },
+        {
+          "latin": "Dietes grandiflora",
+          "common": "Large Fortnight Lily",
+          "count": 2058,
+          "taxonId": 291342,
+          "nativeOn": []
+        },
+        {
+          "latin": "Punica granatum",
+          "common": "pomegranate",
+          "count": 1888,
+          "taxonId": 58300,
+          "nativeOn": []
+        },
+        {
+          "latin": "Aloe vera",
+          "common": "aloe vera",
+          "count": 1833,
+          "taxonId": 126882,
+          "nativeOn": []
+        },
+        {
+          "latin": "Ceiba speciosa",
+          "common": "Silk floss tree",
+          "count": 1819,
+          "taxonId": 154290,
+          "nativeOn": []
+        },
+        {
+          "latin": "Trachelospermum jasminoides",
+          "common": "Star jasmine",
+          "count": 1793,
+          "taxonId": 169856,
+          "nativeOn": []
+        },
+        {
+          "latin": "Dietes bicolor",
+          "common": "Yellow Fortnight Lily",
+          "count": 1765,
+          "taxonId": 125855,
+          "nativeOn": []
+        },
+        {
+          "latin": "Asparagus densiflorus",
+          "common": "Sprenger's Asparagus",
+          "count": 1754,
+          "taxonId": 127598,
+          "nativeOn": []
+        },
+        {
+          "latin": "Tulbaghia violacea",
+          "common": "Society Garlic",
+          "count": 1736,
+          "taxonId": 179304,
+          "nativeOn": []
+        },
+        {
+          "latin": "Pelargonium × hybridum",
+          "common": "garden geranium",
+          "count": 1727,
+          "taxonId": 181543,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cistanthe grandiflora",
+          "common": "Rock Purslane",
+          "count": 1706,
+          "taxonId": 542062,
+          "nativeOn": []
+        },
+        {
+          "latin": "Agave americana",
+          "common": "American century plant",
+          "count": 1664,
+          "taxonId": 64103,
+          "nativeOn": []
+        },
+        {
+          "latin": "Sequoia sempervirens",
+          "common": "coast redwood",
+          "count": 1632,
+          "taxonId": 47372,
+          "nativeOn": [
+            "ca-central-coast"
+          ]
+        },
+        {
+          "latin": "Limonium perezii",
+          "common": "Perez's sea lavender",
+          "count": 1622,
+          "taxonId": 77755,
+          "nativeOn": []
+        },
+        {
+          "latin": "Agapanthus praecox",
+          "common": "blue lily",
+          "count": 1604,
+          "taxonId": 199324,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cassia leptophylla",
+          "common": "Gold medallion tree",
+          "count": 1598,
+          "taxonId": 335464,
+          "nativeOn": []
+        },
+        {
+          "latin": "Kroenleinia grusonii",
+          "common": "golden barrel cactus",
+          "count": 1501,
+          "taxonId": 869962,
+          "nativeOn": []
+        },
+        {
+          "latin": "Passiflora caerulea",
+          "common": "Bluecrown passionflower",
+          "count": 1432,
+          "taxonId": 51454,
+          "nativeOn": []
+        }
+      ],
+      "fetched": "2026-09-18"
+    },
+    {
+      "region": "ca-central-coast",
+      "name": "Central California Coast",
+      "rows": [
+        {
+          "latin": "Salvia rosmarinus",
+          "common": "Rosemary",
+          "count": 4178,
+          "taxonId": 636795,
+          "nativeOn": [
+            "france-mediterranean"
+          ]
+        },
+        {
+          "latin": "Fremontodendron californicum",
+          "common": "California flannelbush",
+          "count": 2641,
+          "taxonId": 63609,
+          "nativeOn": []
+        },
+        {
+          "latin": "Aeonium arboreum",
+          "common": "Tree Aeonium",
+          "count": 2556,
+          "taxonId": 67717,
+          "nativeOn": []
+        },
+        {
+          "latin": "Echium candicans",
+          "common": "Pride of Madeira",
+          "count": 2424,
+          "taxonId": 57723,
+          "nativeOn": []
+        },
+        {
+          "latin": "Crassula ovata",
+          "common": "jade plant",
+          "count": 2231,
+          "taxonId": 76465,
+          "nativeOn": []
+        },
+        {
+          "latin": "Aloe arborescens",
+          "common": "Candelabra Aloe",
+          "count": 2177,
+          "taxonId": 81518,
+          "nativeOn": []
+        },
+        {
+          "latin": "Salvia leucophylla",
+          "common": "purple sage",
+          "count": 1990,
+          "taxonId": 58191,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cercis occidentalis",
+          "common": "Western Redbud",
+          "count": 1973,
+          "taxonId": 59556,
+          "nativeOn": []
+        },
+        {
+          "latin": "Acanthus mollis",
+          "common": "Bear's breeches",
+          "count": 1915,
+          "taxonId": 70045,
+          "nativeOn": []
+        },
+        {
+          "latin": "Callianthe picta",
+          "common": "Redvein Abutilon",
+          "count": 1913,
+          "taxonId": 570676,
+          "nativeOn": []
+        },
+        {
+          "latin": "Dietes grandiflora",
+          "common": "Large Fortnight Lily",
+          "count": 1896,
+          "taxonId": 291342,
+          "nativeOn": []
+        },
+        {
+          "latin": "Salvia microphylla",
+          "common": "Baby Sage",
+          "count": 1870,
+          "taxonId": 168386,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cistanthe grandiflora",
+          "common": "Rock Purslane",
+          "count": 1868,
+          "taxonId": 542062,
+          "nativeOn": []
+        },
+        {
+          "latin": "Agapanthus praecox",
+          "common": "blue lily",
+          "count": 1804,
+          "taxonId": 199324,
+          "nativeOn": []
+        },
+        {
+          "latin": "Eriobotrya japonica",
+          "common": "Loquat",
+          "count": 1640,
+          "taxonId": 76949,
+          "nativeOn": []
+        },
+        {
+          "latin": "Limonium perezii",
+          "common": "Perez's sea lavender",
+          "count": 1633,
+          "taxonId": 77755,
+          "nativeOn": []
+        },
+        {
+          "latin": "Malva subovata",
+          "common": "Sea Mallow",
+          "count": 1568,
+          "taxonId": 490378,
+          "nativeOn": []
+        },
+        {
+          "latin": "Quercus suber",
+          "common": "cork oak",
+          "count": 1567,
+          "taxonId": 50868,
+          "nativeOn": []
+        },
+        {
+          "latin": "Pelargonium × hybridum",
+          "common": "garden geranium",
+          "count": 1527,
+          "taxonId": 181543,
+          "nativeOn": []
+        },
+        {
+          "latin": "Corymbia ficifolia",
+          "common": "Red-flowering gum",
+          "count": 1478,
+          "taxonId": 122024,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cedrus deodara",
+          "common": "Deodar cedar",
+          "count": 1394,
+          "taxonId": 69820,
+          "nativeOn": []
+        },
+        {
+          "latin": "Romneya coulteri",
+          "common": "Coulter's matilija poppy",
+          "count": 1351,
+          "taxonId": 61946,
+          "nativeOn": [
+            "ca-south-coast"
+          ]
+        },
+        {
+          "latin": "Lycianthes rantonnetii",
+          "common": "blue potatobush",
+          "count": 1313,
+          "taxonId": 339360,
+          "nativeOn": []
+        },
+        {
+          "latin": "Loropetalum chinense",
+          "common": "Chinese fringe flower",
+          "count": 1285,
+          "taxonId": 186063,
+          "nativeOn": []
+        },
+        {
+          "latin": "Asparagus densiflorus",
+          "common": "Sprenger's Asparagus",
+          "count": 1248,
+          "taxonId": 127598,
+          "nativeOn": []
+        },
+        {
+          "latin": "Passiflora caerulea",
+          "common": "Bluecrown passionflower",
+          "count": 1222,
+          "taxonId": 51454,
+          "nativeOn": []
+        },
+        {
+          "latin": "Trachelospermum jasminoides",
+          "common": "Star jasmine",
+          "count": 1217,
+          "taxonId": 169856,
+          "nativeOn": []
+        },
+        {
+          "latin": "Camellia japonica",
+          "common": "Japanese camellia",
+          "count": 1196,
+          "taxonId": 83056,
+          "nativeOn": []
+        },
+        {
+          "latin": "Punica granatum",
+          "common": "pomegranate",
+          "count": 1179,
+          "taxonId": 58300,
+          "nativeOn": []
+        },
+        {
+          "latin": "Zantedeschia aethiopica",
+          "common": "calla lily",
+          "count": 1166,
+          "taxonId": 56006,
+          "nativeOn": []
+        }
+      ],
+      "fetched": "2026-09-18"
+    },
+    {
+      "region": "florida-central",
+      "name": "North & Central Florida",
+      "rows": [
+        {
+          "latin": "Zamia integrifolia",
+          "common": "Coontie",
+          "count": 1849,
+          "taxonId": 135560,
+          "nativeOn": [
+            "florida-south"
+          ]
+        },
+        {
+          "latin": "Codiaeum variegatum",
+          "common": "Variegated Croton",
+          "count": 1610,
+          "taxonId": 127387,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cordyline fruticosa",
+          "common": "Ti",
+          "count": 1592,
+          "taxonId": 123572,
+          "nativeOn": []
+        },
+        {
+          "latin": "Rhododendron indicum",
+          "common": "southern Indian azalea",
+          "count": 1534,
+          "taxonId": 208830,
+          "nativeOn": []
+        },
+        {
+          "latin": "Thaumatophyllum bipinnatifidum",
+          "common": "Tree Philodendron",
+          "count": 1387,
+          "taxonId": 985710,
+          "nativeOn": []
+        },
+        {
+          "latin": "Heptapleurum arboricola",
+          "common": "Miniature umbrella tree",
+          "count": 1379,
+          "taxonId": 1239449,
+          "nativeOn": []
+        },
+        {
+          "latin": "Pentas lanceolata",
+          "common": "Egyptian Star-cluster",
+          "count": 1260,
+          "taxonId": 68317,
+          "nativeOn": []
+        },
+        {
+          "latin": "Podocarpus macrophyllus",
+          "common": "kusamaki",
+          "count": 1209,
+          "taxonId": 135329,
+          "nativeOn": []
+        },
+        {
+          "latin": "Loropetalum chinense",
+          "common": "Chinese fringe flower",
+          "count": 1017,
+          "taxonId": 186063,
+          "nativeOn": []
+        },
+        {
+          "latin": "Ligustrum japonicum",
+          "common": "wax-leaf ligustrum",
+          "count": 988,
+          "taxonId": 77739,
+          "nativeOn": []
+        },
+        {
+          "latin": "Crinum asiaticum",
+          "common": "Tree Crinum",
+          "count": 918,
+          "taxonId": 161124,
+          "nativeOn": []
+        },
+        {
+          "latin": "Asparagus densiflorus",
+          "common": "Sprenger's Asparagus",
+          "count": 914,
+          "taxonId": 127598,
+          "nativeOn": []
+        },
+        {
+          "latin": "Catharanthus roseus",
+          "common": "Madagascar Periwinkle",
+          "count": 839,
+          "taxonId": 62924,
+          "nativeOn": []
+        },
+        {
+          "latin": "Phoenix roebelenii",
+          "common": "Pygmy Date Palm",
+          "count": 773,
+          "taxonId": 204744,
+          "nativeOn": []
+        },
+        {
+          "latin": "Jatropha integerrima",
+          "common": "Peregrina",
+          "count": 738,
+          "taxonId": 164240,
+          "nativeOn": []
+        },
+        {
+          "latin": "Tradescantia pallida",
+          "common": "Purple Heart",
+          "count": 677,
+          "taxonId": 169872,
+          "nativeOn": []
+        },
+        {
+          "latin": "Alpinia zerumbet",
+          "common": "Shell ginger",
+          "count": 671,
+          "taxonId": 154776,
+          "nativeOn": []
+        },
+        {
+          "latin": "Ixora coccinea",
+          "common": "Jungle flame",
+          "count": 661,
+          "taxonId": 133309,
+          "nativeOn": []
+        },
+        {
+          "latin": "Euphorbia milii",
+          "common": "Crown-of-Thorns",
+          "count": 649,
+          "taxonId": 162839,
+          "nativeOn": []
+        },
+        {
+          "latin": "Dietes grandiflora",
+          "common": "Large Fortnight Lily",
+          "count": 647,
+          "taxonId": 291342,
+          "nativeOn": []
+        },
+        {
+          "latin": "Clerodendrum paniculatum",
+          "common": "Pagoda Flower",
+          "count": 640,
+          "taxonId": 343901,
+          "nativeOn": []
+        },
+        {
+          "latin": "Aloe vera",
+          "common": "aloe vera",
+          "count": 633,
+          "taxonId": 126882,
+          "nativeOn": []
+        },
+        {
+          "latin": "Zamia furfuracea",
+          "common": "cardboard cycad",
+          "count": 632,
+          "taxonId": 135559,
+          "nativeOn": []
+        },
+        {
+          "latin": "Strelitzia reginae",
+          "common": "common bird-of-paradise flower",
+          "count": 623,
+          "taxonId": 49143,
+          "nativeOn": []
+        },
+        {
+          "latin": "Camellia japonica",
+          "common": "Japanese camellia",
+          "count": 618,
+          "taxonId": 83056,
+          "nativeOn": []
+        },
+        {
+          "latin": "Evolvulus glomeratus",
+          "common": "Blue daze",
+          "count": 612,
+          "taxonId": 83424,
+          "nativeOn": []
+        },
+        {
+          "latin": "Epipremnum aureum",
+          "common": "Golden Pothos",
+          "count": 609,
+          "taxonId": 69223,
+          "nativeOn": []
+        },
+        {
+          "latin": "Plumeria rubra",
+          "common": "Mexican Plumeria",
+          "count": 588,
+          "taxonId": 123438,
+          "nativeOn": []
+        },
+        {
+          "latin": "Coccoloba uvifera",
+          "common": "sea grape",
+          "count": 543,
+          "taxonId": 127284,
+          "nativeOn": [
+            "florida-south"
+          ]
+        },
+        {
+          "latin": "Araucaria columnaris",
+          "common": "Cook pine",
+          "count": 538,
+          "taxonId": 53717,
+          "nativeOn": []
+        }
+      ],
+      "fetched": "2026-09-18"
+    },
     {
       "region": "florida-south",
       "name": "South Florida",
@@ -46,8 +1397,1071 @@
           "count": 1555,
           "taxonId": 62839,
           "nativeOn": []
+        },
+        {
+          "latin": "Roystonea regia",
+          "common": "Royal Palm",
+          "count": 1312,
+          "taxonId": 201453,
+          "nativeOn": []
+        },
+        {
+          "latin": "Jatropha integerrima",
+          "common": "Peregrina",
+          "count": 1284,
+          "taxonId": 164240,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cordyline fruticosa",
+          "common": "Ti",
+          "count": 1152,
+          "taxonId": 123572,
+          "nativeOn": []
+        },
+        {
+          "latin": "Mangifera indica",
+          "common": "Indian mango",
+          "count": 1013,
+          "taxonId": 48872,
+          "nativeOn": []
+        },
+        {
+          "latin": "Bougainvillea glabra",
+          "common": "lesser bougainvillea",
+          "count": 988,
+          "taxonId": 159346,
+          "nativeOn": []
+        },
+        {
+          "latin": "Chrysalidocarpus lutescens",
+          "common": "Areca Palm",
+          "count": 974,
+          "taxonId": 276548,
+          "nativeOn": []
+        },
+        {
+          "latin": "Adonidia merrillii",
+          "common": "Manila Palm",
+          "count": 877,
+          "taxonId": 208746,
+          "nativeOn": []
+        },
+        {
+          "latin": "Dracaena reflexa",
+          "common": "Song of India",
+          "count": 758,
+          "taxonId": 126510,
+          "nativeOn": []
+        },
+        {
+          "latin": "Pentas lanceolata",
+          "common": "Egyptian Star-cluster",
+          "count": 751,
+          "taxonId": 68317,
+          "nativeOn": []
+        },
+        {
+          "latin": "Euphorbia milii",
+          "common": "Crown-of-Thorns",
+          "count": 748,
+          "taxonId": 162839,
+          "nativeOn": []
+        },
+        {
+          "latin": "Plumeria rubra",
+          "common": "Mexican Plumeria",
+          "count": 700,
+          "taxonId": 123438,
+          "nativeOn": []
+        },
+        {
+          "latin": "Epipremnum aureum",
+          "common": "Golden Pothos",
+          "count": 681,
+          "taxonId": 69223,
+          "nativeOn": []
+        },
+        {
+          "latin": "Crinum asiaticum",
+          "common": "Tree Crinum",
+          "count": 663,
+          "taxonId": 161124,
+          "nativeOn": []
+        },
+        {
+          "latin": "Clerodendrum quadriloculare",
+          "common": "Starburst Bush",
+          "count": 658,
+          "taxonId": 343820,
+          "nativeOn": []
+        },
+        {
+          "latin": "Zamia furfuracea",
+          "common": "cardboard cycad",
+          "count": 645,
+          "taxonId": 135559,
+          "nativeOn": []
+        },
+        {
+          "latin": "Phoenix roebelenii",
+          "common": "Pygmy Date Palm",
+          "count": 631,
+          "taxonId": 204744,
+          "nativeOn": []
+        },
+        {
+          "latin": "Aloe vera",
+          "common": "aloe vera",
+          "count": 615,
+          "taxonId": 126882,
+          "nativeOn": []
+        },
+        {
+          "latin": "Swietenia mahagoni",
+          "common": "West Indian Mahogany",
+          "count": 593,
+          "taxonId": 497641,
+          "nativeOn": []
+        },
+        {
+          "latin": "Eugenia uniflora",
+          "common": "Surinam cherry",
+          "count": 589,
+          "taxonId": 83642,
+          "nativeOn": []
+        },
+        {
+          "latin": "Plumeria pudica",
+          "common": "Hammerleaf Frangipani",
+          "count": 589,
+          "taxonId": 346367,
+          "nativeOn": []
+        },
+        {
+          "latin": "Asparagus densiflorus",
+          "common": "Sprenger's Asparagus",
+          "count": 571,
+          "taxonId": 127598,
+          "nativeOn": []
+        },
+        {
+          "latin": "Catharanthus roseus",
+          "common": "Madagascar Periwinkle",
+          "count": 561,
+          "taxonId": 62924,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cordia sebestena",
+          "common": "Scarlet Cordia",
+          "count": 552,
+          "taxonId": 160878,
+          "nativeOn": []
+        },
+        {
+          "latin": "Acalypha wilkesiana",
+          "common": "Copperleaf",
+          "count": 537,
+          "taxonId": 281562,
+          "nativeOn": []
         }
-      ]
+      ],
+      "fetched": "2026-09-18"
+    },
+    {
+      "region": "france-atlantic",
+      "name": "Atlantic France",
+      "rows": [
+        {
+          "latin": "Passiflora caerulea",
+          "common": "Bluecrown passionflower",
+          "count": 2121,
+          "taxonId": 51454,
+          "nativeOn": []
+        },
+        {
+          "latin": "Salvia microphylla",
+          "common": "Baby Sage",
+          "count": 1310,
+          "taxonId": 168386,
+          "nativeOn": []
+        },
+        {
+          "latin": "Salvia rosmarinus",
+          "common": "Rosemary",
+          "count": 1236,
+          "taxonId": 636795,
+          "nativeOn": [
+            "france-mediterranean"
+          ]
+        },
+        {
+          "latin": "Hibiscus syriacus",
+          "common": "common hibiscus",
+          "count": 1041,
+          "taxonId": 126585,
+          "nativeOn": []
+        },
+        {
+          "latin": "Lavandula angustifolia",
+          "common": "Common Lavender",
+          "count": 946,
+          "taxonId": 133395,
+          "nativeOn": [
+            "france-mediterranean"
+          ]
+        },
+        {
+          "latin": "Tulipa gesneriana",
+          "common": "Garden Tulip",
+          "count": 904,
+          "taxonId": 129054,
+          "nativeOn": []
+        },
+        {
+          "latin": "Ficus carica",
+          "common": "common fig",
+          "count": 860,
+          "taxonId": 60218,
+          "nativeOn": []
+        },
+        {
+          "latin": "Viburnum tinus",
+          "common": "Laurustinus viburnum",
+          "count": 838,
+          "taxonId": 82666,
+          "nativeOn": [
+            "france-mediterranean"
+          ]
+        },
+        {
+          "latin": "Albizia julibrissin",
+          "common": "Persian silk tree",
+          "count": 806,
+          "taxonId": 47443,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cedrus atlantica",
+          "common": "Atlas cedar",
+          "count": 699,
+          "taxonId": 136234,
+          "nativeOn": []
+        },
+        {
+          "latin": "Sequoiadendron giganteum",
+          "common": "giant sequoia",
+          "count": 690,
+          "taxonId": 59567,
+          "nativeOn": []
+        },
+        {
+          "latin": "Euphorbia characias",
+          "common": "Mediterranean spurge",
+          "count": 680,
+          "taxonId": 181594,
+          "nativeOn": [
+            "france-mediterranean"
+          ]
+        },
+        {
+          "latin": "Dahlia pinnata",
+          "common": "Garden Dahlia",
+          "count": 670,
+          "taxonId": 161582,
+          "nativeOn": []
+        },
+        {
+          "latin": "Choisya ternata",
+          "common": "Mexican orange",
+          "count": 658,
+          "taxonId": 287309,
+          "nativeOn": []
+        },
+        {
+          "latin": "Olea europaea",
+          "common": "Olive",
+          "count": 626,
+          "taxonId": 57140,
+          "nativeOn": []
+        },
+        {
+          "latin": "Camellia japonica",
+          "common": "Japanese camellia",
+          "count": 598,
+          "taxonId": 83056,
+          "nativeOn": []
+        },
+        {
+          "latin": "Araucaria araucana",
+          "common": "monkey-puzzle",
+          "count": 590,
+          "taxonId": 126404,
+          "nativeOn": []
+        },
+        {
+          "latin": "Malus domestica",
+          "common": "apple",
+          "count": 588,
+          "taxonId": 469472,
+          "nativeOn": []
+        },
+        {
+          "latin": "Salvia officinalis",
+          "common": "garden sage",
+          "count": 574,
+          "taxonId": 51738,
+          "nativeOn": []
+        },
+        {
+          "latin": "Liriodendron tulipifera",
+          "common": "American tuliptree",
+          "count": 573,
+          "taxonId": 53582,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cotinus coggygria",
+          "common": "Smokebush",
+          "count": 557,
+          "taxonId": 133366,
+          "nativeOn": []
+        },
+        {
+          "latin": "Trachelospermum jasminoides",
+          "common": "Star jasmine",
+          "count": 556,
+          "taxonId": 169856,
+          "nativeOn": []
+        },
+        {
+          "latin": "Buxus sempervirens",
+          "common": "common box",
+          "count": 548,
+          "taxonId": 133397,
+          "nativeOn": []
+        },
+        {
+          "latin": "Vitis vinifera",
+          "common": "wine grape",
+          "count": 529,
+          "taxonId": 79519,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cercis siliquastrum",
+          "common": "Judas-tree",
+          "count": 529,
+          "taxonId": 153440,
+          "nativeOn": []
+        },
+        {
+          "latin": "Solanum lycopersicum",
+          "common": "tomato",
+          "count": 525,
+          "taxonId": 51737,
+          "nativeOn": []
+        },
+        {
+          "latin": "Eriocapitella hupehensis",
+          "common": "Hubei Anemone",
+          "count": 523,
+          "taxonId": 950312,
+          "nativeOn": []
+        },
+        {
+          "latin": "Fatsia japonica",
+          "common": "Japanese aralia",
+          "count": 514,
+          "taxonId": 126735,
+          "nativeOn": []
+        },
+        {
+          "latin": "Acanthus mollis",
+          "common": "Bear's breeches",
+          "count": 491,
+          "taxonId": 70045,
+          "nativeOn": []
+        },
+        {
+          "latin": "Trachycarpus fortunei",
+          "common": "Chusan Palm",
+          "count": 489,
+          "taxonId": 64323,
+          "nativeOn": []
+        }
+      ],
+      "fetched": "2026-09-18"
+    },
+    {
+      "region": "france-continental",
+      "name": "Continental France",
+      "rows": [
+        {
+          "latin": "Hibiscus syriacus",
+          "common": "common hibiscus",
+          "count": 393,
+          "taxonId": 126585,
+          "nativeOn": []
+        },
+        {
+          "latin": "Sequoiadendron giganteum",
+          "common": "giant sequoia",
+          "count": 379,
+          "taxonId": 59567,
+          "nativeOn": []
+        },
+        {
+          "latin": "Salvia rosmarinus",
+          "common": "Rosemary",
+          "count": 335,
+          "taxonId": 636795,
+          "nativeOn": [
+            "france-mediterranean"
+          ]
+        },
+        {
+          "latin": "Lavandula angustifolia",
+          "common": "Common Lavender",
+          "count": 333,
+          "taxonId": 133395,
+          "nativeOn": [
+            "france-mediterranean"
+          ]
+        },
+        {
+          "latin": "Juglans regia",
+          "common": "Persian walnut",
+          "count": 327,
+          "taxonId": 63935,
+          "nativeOn": []
+        },
+        {
+          "latin": "Ficus carica",
+          "common": "common fig",
+          "count": 295,
+          "taxonId": 60218,
+          "nativeOn": []
+        },
+        {
+          "latin": "Passiflora caerulea",
+          "common": "Bluecrown passionflower",
+          "count": 285,
+          "taxonId": 51454,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cedrus atlantica",
+          "common": "Atlas cedar",
+          "count": 281,
+          "taxonId": 136234,
+          "nativeOn": []
+        },
+        {
+          "latin": "Vitis vinifera",
+          "common": "wine grape",
+          "count": 277,
+          "taxonId": 79519,
+          "nativeOn": []
+        },
+        {
+          "latin": "Tulipa gesneriana",
+          "common": "Garden Tulip",
+          "count": 268,
+          "taxonId": 129054,
+          "nativeOn": []
+        },
+        {
+          "latin": "Viburnum tinus",
+          "common": "Laurustinus viburnum",
+          "count": 236,
+          "taxonId": 82666,
+          "nativeOn": [
+            "france-mediterranean"
+          ]
+        },
+        {
+          "latin": "Liriodendron tulipifera",
+          "common": "American tuliptree",
+          "count": 228,
+          "taxonId": 53582,
+          "nativeOn": []
+        },
+        {
+          "latin": "Prunus cerasifera",
+          "common": "Cherry-plum",
+          "count": 224,
+          "taxonId": 55837,
+          "nativeOn": []
+        },
+        {
+          "latin": "Koelreuteria paniculata",
+          "common": "golden rain tree",
+          "count": 196,
+          "taxonId": 58320,
+          "nativeOn": []
+        },
+        {
+          "latin": "Solanum lycopersicum",
+          "common": "tomato",
+          "count": 193,
+          "taxonId": 51737,
+          "nativeOn": []
+        },
+        {
+          "latin": "Salvia officinalis",
+          "common": "garden sage",
+          "count": 181,
+          "taxonId": 51738,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cercis siliquastrum",
+          "common": "Judas-tree",
+          "count": 174,
+          "taxonId": 153440,
+          "nativeOn": []
+        },
+        {
+          "latin": "Taxus baccata",
+          "common": "common yew",
+          "count": 172,
+          "taxonId": 47553,
+          "nativeOn": []
+        },
+        {
+          "latin": "Pelargonium × hybridum",
+          "common": "garden geranium",
+          "count": 170,
+          "taxonId": 181543,
+          "nativeOn": []
+        },
+        {
+          "latin": "Araucaria araucana",
+          "common": "monkey-puzzle",
+          "count": 169,
+          "taxonId": 126404,
+          "nativeOn": []
+        },
+        {
+          "latin": "Aesculus × carnea",
+          "common": "Red horse-chestnut",
+          "count": 166,
+          "taxonId": 478638,
+          "nativeOn": []
+        },
+        {
+          "latin": "Buxus sempervirens",
+          "common": "common box",
+          "count": 164,
+          "taxonId": 133397,
+          "nativeOn": []
+        },
+        {
+          "latin": "Salvia microphylla",
+          "common": "Baby Sage",
+          "count": 164,
+          "taxonId": 168386,
+          "nativeOn": []
+        },
+        {
+          "latin": "Artemisia absinthium",
+          "common": "absinthe wormwood",
+          "count": 159,
+          "taxonId": 60350,
+          "nativeOn": []
+        },
+        {
+          "latin": "Paulownia tomentosa",
+          "common": "princess tree",
+          "count": 159,
+          "taxonId": 119792,
+          "nativeOn": []
+        },
+        {
+          "latin": "Chaenomeles speciosa",
+          "common": "Chinese quince",
+          "count": 155,
+          "taxonId": 160369,
+          "nativeOn": []
+        },
+        {
+          "latin": "Kalanchoe blossfeldiana",
+          "common": "Flaming Katy",
+          "count": 154,
+          "taxonId": 164326,
+          "nativeOn": []
+        },
+        {
+          "latin": "Malus domestica",
+          "common": "apple",
+          "count": 152,
+          "taxonId": 469472,
+          "nativeOn": []
+        },
+        {
+          "latin": "Albizia julibrissin",
+          "common": "Persian silk tree",
+          "count": 150,
+          "taxonId": 47443,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cotinus coggygria",
+          "common": "Smokebush",
+          "count": 150,
+          "taxonId": 133366,
+          "nativeOn": []
+        }
+      ],
+      "fetched": "2026-09-18"
+    },
+    {
+      "region": "france-mediterranean",
+      "name": "Mediterranean France",
+      "rows": [
+        {
+          "latin": "Passiflora caerulea",
+          "common": "Bluecrown passionflower",
+          "count": 730,
+          "taxonId": 51454,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cupressus sempervirens",
+          "common": "Mediterranean cypress",
+          "count": 592,
+          "taxonId": 64261,
+          "nativeOn": []
+        },
+        {
+          "latin": "Olea europaea",
+          "common": "Olive",
+          "count": 494,
+          "taxonId": 57140,
+          "nativeOn": []
+        },
+        {
+          "latin": "Salvia microphylla",
+          "common": "Baby Sage",
+          "count": 442,
+          "taxonId": 168386,
+          "nativeOn": []
+        },
+        {
+          "latin": "Teucrium fruticans",
+          "common": "Tree Germander",
+          "count": 423,
+          "taxonId": 181666,
+          "nativeOn": []
+        },
+        {
+          "latin": "Bougainvillea glabra",
+          "common": "lesser bougainvillea",
+          "count": 344,
+          "taxonId": 159346,
+          "nativeOn": []
+        },
+        {
+          "latin": "Trachelospermum jasminoides",
+          "common": "Star jasmine",
+          "count": 323,
+          "taxonId": 169856,
+          "nativeOn": []
+        },
+        {
+          "latin": "Phlomis fruticosa",
+          "common": "Jerusalem Lampwick",
+          "count": 270,
+          "taxonId": 135327,
+          "nativeOn": []
+        },
+        {
+          "latin": "Agave americana",
+          "common": "American century plant",
+          "count": 262,
+          "taxonId": 64103,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cercis siliquastrum",
+          "common": "Judas-tree",
+          "count": 262,
+          "taxonId": 153440,
+          "nativeOn": []
+        },
+        {
+          "latin": "Polygala myrtifolia",
+          "common": "Sweet Pea Shrub",
+          "count": 253,
+          "taxonId": 181610,
+          "nativeOn": []
+        },
+        {
+          "latin": "Eriobotrya japonica",
+          "common": "Loquat",
+          "count": 252,
+          "taxonId": 76949,
+          "nativeOn": []
+        },
+        {
+          "latin": "Albizia julibrissin",
+          "common": "Persian silk tree",
+          "count": 240,
+          "taxonId": 47443,
+          "nativeOn": []
+        },
+        {
+          "latin": "Tulbaghia violacea",
+          "common": "Society Garlic",
+          "count": 226,
+          "taxonId": 179304,
+          "nativeOn": []
+        },
+        {
+          "latin": "Vitis vinifera",
+          "common": "wine grape",
+          "count": 225,
+          "taxonId": 79519,
+          "nativeOn": []
+        },
+        {
+          "latin": "Phoenix canariensis",
+          "common": "Canary Island palm",
+          "count": 222,
+          "taxonId": 78554,
+          "nativeOn": []
+        },
+        {
+          "latin": "Salvia officinalis",
+          "common": "garden sage",
+          "count": 219,
+          "taxonId": 51738,
+          "nativeOn": []
+        },
+        {
+          "latin": "Crassula ovata",
+          "common": "jade plant",
+          "count": 214,
+          "taxonId": 76465,
+          "nativeOn": []
+        },
+        {
+          "latin": "Lycianthes rantonnetii",
+          "common": "blue potatobush",
+          "count": 207,
+          "taxonId": 339360,
+          "nativeOn": []
+        },
+        {
+          "latin": "Melia azedarach",
+          "common": "Chinaberry",
+          "count": 205,
+          "taxonId": 53720,
+          "nativeOn": []
+        },
+        {
+          "latin": "Punica granatum",
+          "common": "pomegranate",
+          "count": 203,
+          "taxonId": 58300,
+          "nativeOn": []
+        },
+        {
+          "latin": "Citrus × limon",
+          "common": "Lemon",
+          "count": 192,
+          "taxonId": 331124,
+          "nativeOn": []
+        },
+        {
+          "latin": "Schinus molle",
+          "common": "Peruvian Pepper Tree",
+          "count": 185,
+          "taxonId": 57354,
+          "nativeOn": []
+        },
+        {
+          "latin": "Strelitzia reginae",
+          "common": "common bird-of-paradise flower",
+          "count": 181,
+          "taxonId": 49143,
+          "nativeOn": []
+        },
+        {
+          "latin": "Diospyros kaki",
+          "common": "Japanese Persimmon",
+          "count": 175,
+          "taxonId": 83468,
+          "nativeOn": []
+        },
+        {
+          "latin": "Campsis radicans",
+          "common": "American trumpet vine",
+          "count": 164,
+          "taxonId": 75995,
+          "nativeOn": []
+        },
+        {
+          "latin": "Ficus carica",
+          "common": "common fig",
+          "count": 161,
+          "taxonId": 60218,
+          "nativeOn": []
+        },
+        {
+          "latin": "Pinus pinea",
+          "common": "Stone pine",
+          "count": 160,
+          "taxonId": 63621,
+          "nativeOn": []
+        },
+        {
+          "latin": "Phytolacca dioica",
+          "common": "Ombu",
+          "count": 160,
+          "taxonId": 129582,
+          "nativeOn": []
+        },
+        {
+          "latin": "Feijoa sellowiana",
+          "common": "Feijoa",
+          "count": 160,
+          "taxonId": 1341071,
+          "nativeOn": []
+        }
+      ],
+      "fetched": "2026-09-18"
+    },
+    {
+      "region": "france-alpine",
+      "name": "The French Alps",
+      "rows": [
+        {
+          "latin": "Cedrus atlantica",
+          "common": "Atlas cedar",
+          "count": 156,
+          "taxonId": 136234,
+          "nativeOn": []
+        },
+        {
+          "latin": "Hibiscus syriacus",
+          "common": "common hibiscus",
+          "count": 143,
+          "taxonId": 126585,
+          "nativeOn": []
+        },
+        {
+          "latin": "Lavandula angustifolia",
+          "common": "Common Lavender",
+          "count": 128,
+          "taxonId": 133395,
+          "nativeOn": [
+            "france-mediterranean"
+          ]
+        },
+        {
+          "latin": "Artemisia absinthium",
+          "common": "absinthe wormwood",
+          "count": 121,
+          "taxonId": 60350,
+          "nativeOn": []
+        },
+        {
+          "latin": "Salvia rosmarinus",
+          "common": "Rosemary",
+          "count": 120,
+          "taxonId": 636795,
+          "nativeOn": [
+            "france-mediterranean"
+          ]
+        },
+        {
+          "latin": "Sequoiadendron giganteum",
+          "common": "giant sequoia",
+          "count": 115,
+          "taxonId": 59567,
+          "nativeOn": []
+        },
+        {
+          "latin": "Tulipa gesneriana",
+          "common": "Garden Tulip",
+          "count": 88,
+          "taxonId": 129054,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cercis siliquastrum",
+          "common": "Judas-tree",
+          "count": 83,
+          "taxonId": 153440,
+          "nativeOn": []
+        },
+        {
+          "latin": "Liriodendron tulipifera",
+          "common": "American tuliptree",
+          "count": 79,
+          "taxonId": 53582,
+          "nativeOn": []
+        },
+        {
+          "latin": "Pelargonium × hybridum",
+          "common": "garden geranium",
+          "count": 78,
+          "taxonId": 181543,
+          "nativeOn": []
+        },
+        {
+          "latin": "Olea europaea",
+          "common": "Olive",
+          "count": 76,
+          "taxonId": 57140,
+          "nativeOn": []
+        },
+        {
+          "latin": "Vitis vinifera",
+          "common": "wine grape",
+          "count": 76,
+          "taxonId": 79519,
+          "nativeOn": []
+        },
+        {
+          "latin": "Tilia platyphyllos",
+          "common": "Bigleaf Linden",
+          "count": 75,
+          "taxonId": 169761,
+          "nativeOn": []
+        },
+        {
+          "latin": "Taxus baccata",
+          "common": "common yew",
+          "count": 74,
+          "taxonId": 47553,
+          "nativeOn": []
+        },
+        {
+          "latin": "Viburnum tinus",
+          "common": "Laurustinus viburnum",
+          "count": 73,
+          "taxonId": 82666,
+          "nativeOn": [
+            "france-mediterranean"
+          ]
+        },
+        {
+          "latin": "Fagus sylvatica",
+          "common": "European beech",
+          "count": 72,
+          "taxonId": 54227,
+          "nativeOn": [
+            "france-atlantic",
+            "france-continental"
+          ]
+        },
+        {
+          "latin": "Passiflora caerulea",
+          "common": "Bluecrown passionflower",
+          "count": 70,
+          "taxonId": 51454,
+          "nativeOn": []
+        },
+        {
+          "latin": "Ficus carica",
+          "common": "common fig",
+          "count": 70,
+          "taxonId": 60218,
+          "nativeOn": []
+        },
+        {
+          "latin": "Prunus cerasifera",
+          "common": "Cherry-plum",
+          "count": 67,
+          "taxonId": 55837,
+          "nativeOn": []
+        },
+        {
+          "latin": "Leontopodium nivale",
+          "common": "Edelweiss",
+          "count": 66,
+          "taxonId": 326185,
+          "nativeOn": []
+        },
+        {
+          "latin": "Tilia cordata",
+          "common": "Little-leaf Linden",
+          "count": 65,
+          "taxonId": 132600,
+          "nativeOn": [
+            "france-atlantic",
+            "france-continental"
+          ]
+        },
+        {
+          "latin": "Petunia × atkinsiana",
+          "common": "garden petunia",
+          "count": 63,
+          "taxonId": 170914,
+          "nativeOn": []
+        },
+        {
+          "latin": "Pterocarya fraxinifolia",
+          "common": "Caucasian Wingnut",
+          "count": 63,
+          "taxonId": 371700,
+          "nativeOn": []
+        },
+        {
+          "latin": "Acer saccharinum",
+          "common": "silver maple",
+          "count": 57,
+          "taxonId": 54762,
+          "nativeOn": []
+        },
+        {
+          "latin": "Juglans regia",
+          "common": "Persian walnut",
+          "count": 57,
+          "taxonId": 63935,
+          "nativeOn": []
+        },
+        {
+          "latin": "Cedrus deodara",
+          "common": "Deodar cedar",
+          "count": 57,
+          "taxonId": 69820,
+          "nativeOn": []
+        },
+        {
+          "latin": "Eryngium alpinum",
+          "common": "Queen-of-the-Alps",
+          "count": 56,
+          "taxonId": 191914,
+          "nativeOn": []
+        },
+        {
+          "latin": "Solanum lycopersicum",
+          "common": "tomato",
+          "count": 55,
+          "taxonId": 51737,
+          "nativeOn": []
+        },
+        {
+          "latin": "Philadelphus coronarius",
+          "common": "Sweet Mock Orange",
+          "count": 54,
+          "taxonId": 52468,
+          "nativeOn": []
+        },
+        {
+          "latin": "Aesculus × carnea",
+          "common": "Red horse-chestnut",
+          "count": 54,
+          "taxonId": 478638,
+          "nativeOn": []
+        }
+      ],
+      "fetched": "2026-09-18"
     }
   ]
 }

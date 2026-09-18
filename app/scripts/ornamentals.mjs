@@ -52,7 +52,7 @@
 // **It needs open internet**, which the local build sandbox does not have.
 // Same arrangement as `lookalikes:check`: run it on a laptop or a runner. The
 // snapshot it writes is committed, so the queue can be read without running it.
-import { writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync, readFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { openLoader } from "./_load-ts.mjs";
@@ -129,6 +129,7 @@ const norm = (s) => s.replace(/\s*×\s*/g, " ").replace(/\s+/g, " ").trim().toLo
 
 const loader = await openLoader();
 let report;
+let REGION_ORDER = [];
 try {
   const [{ REGIONS }, { ORNAMENTALS }, { LOOKALIKES }] = await Promise.all([
     loader.load("/src/data/regions.ts"),
@@ -154,6 +155,7 @@ try {
   //     wrong place, not a menace, and its page already exists to link to.
   //   - on nobody's list → the plain exotic, and the usual case.
   const allRegions = await withSeeds(REGIONS);
+  REGION_ORDER = allRegions.map((r) => r.meta.id);
   const nativeWhere = new Map();
   for (const r of allRegions) {
     for (const p of r.seed) {
@@ -181,11 +183,48 @@ try {
   await loader.close();
 }
 
-mkdirSync(OUT_DIR, { recursive: true });
-writeFileSync(
-  join(OUT_DIR, "cultivated.json"),
-  JSON.stringify({ fetched: new Date().toISOString().slice(0, 10), report }, null, 2) + "\n"
+// ---------------------------------------------------------------------------
+// The snapshot is merged, never replaced.
+//
+// `--region pnw` asks about one region; it must not throw away the other ten.
+// Replacing the file wholesale meant a single-region run left a "census of every
+// region" holding one region — which is worse than no snapshot, because it looks
+// like a census and reads like one. (It shipped that way once.)
+//
+// Each region carries its own `fetched` date instead of one for the file, so a
+// region nobody has re-run in a year is visible as itself rather than hidden
+// behind a fresh date earned by some other region.
+// ---------------------------------------------------------------------------
+const SNAPSHOT = join(OUT_DIR, "cultivated.json");
+const today = new Date().toISOString().slice(0, 10);
+
+let previous = [];
+try {
+  previous = JSON.parse(readFileSync(SNAPSHOT, "utf8")).report ?? [];
+} catch {
+  // No snapshot yet, or an unreadable one — this run writes the first.
+}
+
+const merged = new Map(previous.map((r) => [r.region, r]));
+for (const r of report) merged.set(r.region, { ...r, fetched: today });
+
+// Region order follows `REGIONS`, not the order they were fetched in, so the
+// file reads the same however it was produced and its diffs stay small.
+const order = new Map(REGION_ORDER.map((id, i) => [id, i]));
+const out = [...merged.values()].sort(
+  (a, b) => (order.get(a.region) ?? 99) - (order.get(b.region) ?? 99)
 );
+
+mkdirSync(OUT_DIR, { recursive: true });
+writeFileSync(SNAPSHOT, JSON.stringify({ report: out }, null, 2) + "\n");
+
+const stale = out.filter((r) => r.fetched !== today).length;
+if (stale) {
+  console.log(
+    `\nMerged into the existing snapshot: ${report.length} region(s) refreshed today, ` +
+      `${stale} left as they were.`
+  );
+}
 
 if (json) {
   console.log(JSON.stringify(report, null, 2));

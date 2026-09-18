@@ -33,6 +33,22 @@ subtitle on the What's new page.
 
 ### Added
 
+- Native swaps: nine more from the top of the list — rosemary planted by the
+  hundred on banks, Norway spruce, giant sequoia, European beech, oakleaf
+  hydrangea, star magnolia, blue passionflower, jade plant and garden tulips.
+  [See the swaps](https://indigene.app/alternatives)
+- Native swaps: if a passionflower appealed because of the butterflies,
+  California pipevine is the local version of that bargain — the only plant the
+  pipevine swallowtail's caterpillars can eat, anywhere.
+- Native swaps: a bed of modern tulips is a shop window with nothing on the
+  shelves — the nectar has been bred out of the doubles and parrots. Bluebells
+  come back thicker every year instead of thinner.
+- Native swaps: keep the rosemary by the kitchen door. This is about the banks
+  and car parks planted with it by the hundred, a hundred miles from anywhere
+  it grew up.
+- Internal: a `--region` run used to overwrite the whole census snapshot, so one
+  region's queue shipped as a census of eleven. It merges now, and each region
+  carries its own date.
 - Native swaps: the **Central California Coast** has its first swap stories —
   madrone for a strawberry tree, hummingbird sage for a Mexican one, beach
   strawberry for trailing lantana.

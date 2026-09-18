@@ -591,6 +591,105 @@ export const ORNAMENTALS: Ornamental[] = [
       "A mat of mauve over a wall or a dry bank, flowering nearly all year, and butterflies do visit. Like its upright cousin it carries berries that are poisonous to livestock and to children, and it roots wherever a stem touches down.",
     originBasis: "Missouri Botanical Garden; UC Master Gardeners; CABI.",
   },
+  {
+    id: "salvia-rosmarinus",
+    common: "Rosemary",
+    latin: "Salvia rosmarinus",
+    form: "shrub",
+    role: "Aromatic drought shrub",
+    origin: "Native to the Mediterranean — it is on our own Mediterranean France list.",
+    blurb:
+      "Keep the one by the kitchen door; this is not about the herb. It is about the other use rosemary gets — banks and verges and car parks planted with it by the hundred, a hundred miles from anywhere it grew up. At that scale the question stops being what you cook with and starts being what lives there.",
+    originBasis: "Tela Botanica; Missouri Botanical Garden.",
+  },
+  {
+    id: "picea-abies",
+    common: "Norway spruce",
+    latin: "Picea abies",
+    form: "tree",
+    role: "Fast evergreen screen",
+    origin: "Native to northern and mountain Europe — it is on our own French Alps list.",
+    blurb:
+      "The quickest big evergreen there is, which is why it lines so many driveways. It is also shallow-rooted, blows over in wet ground, goes bare at the bottom by thirty, and where it is planted away from its own mountains nothing much lives in it.",
+    originBasis: "Tela Botanica; Missouri Botanical Garden; Oregon State University.",
+  },
+  {
+    id: "sequoiadendron-giganteum",
+    common: "Giant sequoia",
+    latin: "Sequoiadendron giganteum",
+    form: "tree",
+    role: "Specimen evergreen",
+    origin: "Native to about seventy groves on the western slope of the Sierra Nevada.",
+    blurb:
+      "The largest living thing there is, planted in gardens and parks across two continents by people who loved it — and who is going to argue with that. Away from the Sierra it is a tree with no company: the insects, the fungi and the fire it evolved with are all three thousand kilometres away, and in a small garden it is a fifty-year mistake.",
+    originBasis: "Missouri Botanical Garden; Oregon State University; Tela Botanica.",
+  },
+  {
+    id: "fagus-sylvatica",
+    common: "European beech",
+    latin: "Fagus sylvatica",
+    form: "tree",
+    role: "Grand shade tree",
+    origin: "Native to western and central Europe — it is on our own Atlantic and Continental France lists.",
+    blurb:
+      "Smooth grey trunks, a cathedral canopy and copper leaves held half the winter. A great tree of Europe, and in an American park a great tree from somewhere else: the caterpillars that should be in that canopy are on the beech two valleys over, the one nobody planted.",
+    originBasis: "Tela Botanica; Missouri Botanical Garden; Morton Arboretum.",
+  },
+  {
+    id: "hydrangea-quercifolia",
+    common: "Oakleaf hydrangea",
+    latin: "Hydrangea quercifolia",
+    form: "shrub",
+    role: "Big-flowered shade shrub",
+    origin: "Native to the south-eastern United States — Georgia, Alabama and the Florida panhandle.",
+    blurb:
+      "Cones of white that age to pink, oak-shaped leaves that go wine-red, and bark that peels all winter. Far better behaved than its Japanese cousin and a genuinely fine shrub. It is simply a southern plant: a few hundred miles north of its range it is a garden plant like any other, and the local insects treat it as one.",
+    originBasis: "Missouri Botanical Garden; USDA PLANTS; Mt. Cuba Center.",
+  },
+  {
+    id: "magnolia-stellata",
+    common: "Star magnolia",
+    latin: "Magnolia stellata",
+    form: "shrub",
+    role: "Early flowering shrub",
+    origin: "Native to a small part of central Japan.",
+    blurb:
+      "Bare branches covered in white stars in March, before anything has leaves — which is exactly why people plant it, and exactly when a frost turns the whole display brown overnight. The natives below flower as early, take the frost, and carry the first insects out of winter with them.",
+    originBasis: "Missouri Botanical Garden; Morton Arboretum.",
+  },
+  {
+    id: "passiflora-caerulea",
+    common: "Blue passionflower",
+    latin: "Passiflora caerulea",
+    form: "vine",
+    role: "Fast flowering climber",
+    origin: "Native to Argentina, Brazil and Paraguay.",
+    blurb:
+      "The most extraordinary flower anyone can grow on a fence, and it covers one in a season. In South America it raises whole broods of longwing butterflies. Here it raises nobody — and the local climber that does have a butterfly depending on it is usually the one nobody stocks.",
+    originBasis: "Missouri Botanical Garden; Tela Botanica; UC Master Gardeners.",
+  },
+  {
+    id: "crassula-ovata",
+    common: "Jade plant",
+    latin: "Crassula ovata",
+    form: "shrub",
+    role: "Succulent accent",
+    origin: "Native to the Eastern Cape of South Africa.",
+    blurb:
+      "Thick jade paddles on a small bare trunk, indestructible in a pot and out of it, and it flowers white in midwinter. It asks for nothing and gives the same back: nothing native feeds on it, and it roots from any leaf that falls into a bed.",
+    originBasis: "Missouri Botanical Garden; UC Master Gardeners.",
+  },
+  {
+    id: "tulipa-gesneriana",
+    common: "Garden tulip",
+    latin: "Tulipa gesneriana",
+    form: "perennial",
+    role: "Spring bedding bulb",
+    origin: "A garden plant of hybrid origin, from wild tulips of Turkey and central Asia.",
+    blurb:
+      "Three weeks of the loudest colour in the year, then a gap, then usually a poorer showing the year after and a bag of new bulbs each autumn. Modern doubles and parrots have had the nectar bred out of them, so a bed of them in April is a shop window with nothing on the shelves.",
+    originBasis: "Missouri Botanical Garden; RHS; Tela Botanica.",
+  },
   // ---------------- More grasses, groundcovers, perennials, shrubs & trees ----------------
   {
     id: "miscanthus-sinensis",
@@ -700,6 +799,57 @@ export const ORNAMENTALS: Ornamental[] = [
 // and here is how the two compare on water, disease and wildlife.
 export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   "mid-atlantic": {
+    "hydrangea-quercifolia": [
+      {
+        plantId: "viburnum-dentatum",
+        why: "For the same big white flower in half-shade on a shrub of the same size, arrowwood viburnum is the one this ground actually made — and it fruits, which the hydrangea doesn't.",
+        edges: [
+          { axis: "wildlife", native: "Blue berries a dozen bird species take, and leaves that raise native moths.", ornamental: "A fine shrub from four states south; the insects here treat it as a garden plant." },
+          { axis: "care", native: "Sun or shade, wet or dry, no feeding.", ornamental: "Wants shelter from a hard winter this far north." },
+        ],
+        basis: "Mt. Cuba Center; Missouri Botanical Garden.",
+      },
+      {
+        plantId: "hamamelis-virginiana",
+        why: "If it was autumn you were buying it for, witch hazel turns the same clear gold and then does something no other shrub does — opens yellow ribbons of flower in November, after the leaves have gone.",
+        edges: [
+          { axis: "wildlife", native: "The last nectar of the year, for the winter moths that pollinate it; a host for several others.", ornamental: "Autumn colour and nothing else." },
+          { axis: "care", native: "Fully hardy here, in shade or sun.", ornamental: "Buds can be cut by a cold winter." },
+        ],
+        basis: "Mt. Cuba Center; Missouri Botanical Garden; Penn State Extension.",
+      },
+    ],
+    "magnolia-stellata": [
+      {
+        plantId: "hamamelis-virginiana",
+        why: "For bare branches breaking into flower out of season, witch hazel does it at the other end — yellow ribbons in November, and unlike a magnolia's petals a frost doesn't touch them.",
+        edges: [
+          { axis: "wildlife", native: "Feeds the winter moths that pollinate it, and raises several caterpillar species.", ornamental: "Nectar for whatever is flying in March, which is little." },
+          { axis: "care", native: "Its flowers shrug off frost.", ornamental: "One cold night turns the whole display brown." },
+        ],
+        basis: "Mt. Cuba Center; Missouri Botanical Garden.",
+      },
+      {
+        plantId: "amelanchier-canadensis",
+        why: "If you wanted white flower on bare wood in early spring, serviceberry gives it a fortnight later — and then berries in June, which is the part a star magnolia has no answer to.",
+        edges: [
+          { axis: "wildlife", native: "Well over a hundred caterpillar species, and fruit a dozen birds strip.", ornamental: "Feeds almost nothing here." },
+          { axis: "care", native: "Flowers late enough to miss most frosts.", ornamental: "Flowers early enough to catch them." },
+        ],
+        basis: "Mt. Cuba Center; Penn State Extension.",
+      },
+    ],
+    "fagus-sylvatica": [
+      {
+        plantId: "quercus-alba",
+        why: "For a tree to stand under in a hundred years, white oak is the one this country grew — and it holds its leaves through winter the way a beech does.",
+        edges: [
+          { axis: "wildlife", native: "Host to more caterpillar species than any other plant here, and acorns that feed everything from jays to deer.", ornamental: "A great tree of Europe; its caterpillars are all in Europe." },
+          { axis: "care", native: "Deep-rooted and long-lived on this ground.", ornamental: "Shallow-rooted, and its dense shade leaves bare earth beneath." },
+        ],
+        basis: "Mt. Cuba Center; Tallamy & Shropshire; Morton Arboretum.",
+      },
+    ],
     "ginkgo-biloba": [
       {
         plantId: "acer-rubrum",
@@ -1117,6 +1267,17 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "north-michigan": {
+    "fagus-sylvatica": [
+      {
+        plantId: "fagus-grandifolia",
+        why: "It is the same tree in every way that shows — smooth grey trunk, cathedral canopy, copper leaves held all winter — except that this one is from here.",
+        edges: [
+          { axis: "wildlife", native: "Beech nuts that bears, turkeys and jays depend on, and a canopy that raises well over a hundred caterpillar species.", ornamental: "The same architecture, feeding almost nothing local." },
+          { axis: "care", native: "Built for these winters.", ornamental: "Shallow-rooted, and its shade leaves bare earth." },
+        ],
+        basis: "Michigan State University Extension; Morton Arboretum; Tallamy & Shropshire.",
+      },
+    ],
     "syringa-vulgaris": [
       {
         plantId: "viburnum-lentago",
@@ -1433,6 +1594,57 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "pnw": {
+    "picea-abies": [
+      {
+        plantId: "thuja-plicata",
+        why: "For a fast, dense evergreen screen that stays furnished to the ground, western redcedar does it better and doesn't go bare at the bottom by thirty.",
+        edges: [
+          { axis: "wildlife", native: "Cavity trees for owls and woodpeckers, and cover half the small birds of this coast winter in.", ornamental: "Little lives in a planted spruce here." },
+          { axis: "care", native: "Deep-rooted; holds in the wet winter soil that topples a spruce.", ornamental: "Shallow-rooted and prone to blowing over." },
+        ],
+        basis: "Oregon State University; Burke Herbarium; WSU Extension.",
+      },
+      {
+        plantId: "tsuga-heterophylla",
+        why: "If it was the soft conifer shape you wanted, western hemlock has the finer, weeping version of it and takes deep shade no spruce will.",
+        edges: [
+          { axis: "wildlife", native: "Seed for crossbills and siskins, and the nurse log the next forest grows on.", ornamental: "A green wall." },
+          { axis: "care", native: "Grows in the shade of what is already there.", ornamental: "Needs full sun to stay furnished." },
+        ],
+        basis: "Oregon State University; Burke Herbarium.",
+      },
+    ],
+    "sequoiadendron-giganteum": [
+      {
+        plantId: "pseudotsuga-menziesii",
+        why: "If you want the tallest thing you can honestly plant, Douglas-fir gets there — and it is the tree this whole forest is built around.",
+        edges: [
+          { axis: "wildlife", native: "Seed that feeds crossbills, squirrels and the spotted owl's prey; bark that shelters a whole community.", ornamental: "Magnificent, and three thousand kilometres from everything that evolved with it." },
+          { axis: "care", native: "At home in this rainfall and these soils.", ornamental: "In a small garden it is a fifty-year mistake." },
+        ],
+        basis: "Oregon State University; Burke Herbarium.",
+      },
+    ],
+    "magnolia-stellata": [
+      {
+        plantId: "oemleria-cerasiformis",
+        why: "For the first flower of the year on bare wood, osoberry beats it — white bells and the smell of cucumber in February, three weeks before anything else in the woods wakes up.",
+        edges: [
+          { axis: "wildlife", native: "The first nectar of the year for queen bumblebees and the rufous hummingbird's arrival; then fruit for birds.", ornamental: "Nectar for whatever is flying, which in March is little." },
+          { axis: "care", native: "Takes shade, and frost doesn't touch it.", ornamental: "One cold night browns the whole display." },
+        ],
+        basis: "Oregon State University; Burke Herbarium; Xerces Society.",
+      },
+      {
+        plantId: "ribes-sanguineum",
+        why: "If it was a shrub covered in colour before the leaves that you wanted, red-flowering currant hangs pink tassels in March — and the hummingbirds time their arrival to it.",
+        edges: [
+          { axis: "wildlife", native: "The rufous hummingbird's migration is built around this shrub flowering.", ornamental: "Feeds almost nothing here." },
+          { axis: "water", native: "No summer water once established.", ornamental: "Wants it." },
+        ],
+        basis: "Oregon State University; Burke Herbarium; Xerces Society.",
+      },
+    ],
     "ginkgo-biloba": [
       {
         plantId: "acer-macrophyllum",
@@ -1781,6 +1993,37 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "ca-south-coast": {
+    "salvia-rosmarinus": [
+      {
+        plantId: "artemisia-californica",
+        why: "For the grey aromatic mound that rosemary is planted by the hundred to make, California sagebrush makes it softer, smells stronger on a hot afternoon, and belongs to the hill it is on.",
+        edges: [
+          { axis: "wildlife", native: "A host for several moths, cover for the California gnatcatcher, and seed for sparrows.", ornamental: "Nectar for bees; nothing raised on it." },
+          { axis: "water", native: "Wants no summer water at all.", ornamental: "Also drought-proof — the difference is what lives in it." },
+        ],
+        basis: "California Native Plant Society; Xerces Society; UC Master Gardeners.",
+      },
+      {
+        plantId: "salvia-mellifera",
+        why: "If you wanted an aromatic evergreen sage that takes clipping, black sage is one — same family, same scent on the fingers, and the source of the coast's best honey.",
+        edges: [
+          { axis: "wildlife", native: "One of the heaviest nectar plants in the chaparral, and a host for several moths.", ornamental: "Bees do work it, and nothing eats a leaf." },
+          { axis: "water", native: "No irrigation whatever.", ornamental: "Rots if over-watered, same as the native." },
+        ],
+        basis: "California Native Plant Society; Xerces Society.",
+      },
+    ],
+    "crassula-ovata": [
+      {
+        plantId: "dudleya-pulverulenta",
+        why: "For a succulent that stops people, chalk dudleya is a two-foot rosette of powder-white leaves on a rock face, with arching red flower stems in spring.",
+        edges: [
+          { axis: "wildlife", native: "Its flowers are built for hummingbirds and native bees.", ornamental: "Winter flowers little uses, and it roots from any leaf that drops into a bed." },
+          { axis: "water", native: "Wants a bone-dry summer and sharp drainage.", ornamental: "Tolerates anything, which is how it spreads." },
+        ],
+        basis: "California Native Plant Society; Las Pilitas; Xerces Society.",
+      },
+    ],
     "salvia-leucantha": [
       {
         plantId: "salvia-clevelandii",
@@ -2130,6 +2373,37 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "ca-central-coast": {
+    "salvia-rosmarinus": [
+      {
+        plantId: "salvia-spathacea",
+        why: "For an aromatic evergreen sage that spreads gently and smells of fruit when you brush past, hummingbird sage does it in the dry shade under oaks, where rosemary will not grow at all.",
+        edges: [
+          { axis: "wildlife", native: "A hummingbird plant first and last, and worked by native bees.", ornamental: "Bees do work it; nothing is raised on it." },
+          { axis: "care", native: "Dry shade — the hardest place in a Californian garden to plant.", ornamental: "Needs full sun." },
+        ],
+        basis: "California Native Plant Society; Xerces Society.",
+      },
+    ],
+    "passiflora-caerulea": [
+      {
+        plantId: "aristolochia-californica",
+        why: "If a passionflower appealed because of the butterflies, California pipevine is the local version of that bargain — it is the only plant the pipevine swallowtail's caterpillars can eat, anywhere.",
+        edges: [
+          { axis: "wildlife", native: "The sole larval host of the pipevine swallowtail; plant it and the butterfly turns up.", ornamental: "Raises longwing butterflies in Brazil, and nobody here." },
+          { axis: "care", native: "Dies back and returns; never gets away from you.", ornamental: "Covers a fence in a season and keeps going." },
+        ],
+        basis: "California Native Plant Society; Xerces Society; Las Pilitas.",
+      },
+      {
+        plantId: "vitis-californica",
+        why: "For fast cover over a fence or an arbour with something to show in autumn, California wild grape puts on six metres in a season and turns crimson and gold.",
+        edges: [
+          { axis: "wildlife", native: "Fruit that carries a dozen bird species through autumn, and a host for the western grapeleaf skeletonizer.", ornamental: "An extraordinary flower, and a wildlife blank." },
+          { axis: "water", native: "Finds its own water once rooted.", ornamental: "Wants watering to keep flowering." },
+        ],
+        basis: "California Native Plant Society; Las Pilitas.",
+      },
+    ],
     "arbutus-unedo": [
       {
         plantId: "arbutus-menziesii",
@@ -2606,6 +2880,28 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "france-atlantic": {
+    "passiflora-caerulea": [
+      {
+        plantId: "lonicera-periclymenum",
+        why: "For fast cover on a fence and a flower worth stopping for, honeysuckle scents the whole evening from June to September — and a hawk-moth will find it.",
+        edges: [
+          { axis: "wildlife", native: "Night scent that brings in hawk-moths, then red berries for warblers and thrushes.", ornamental: "Raises longwing butterflies in Brazil and nothing here." },
+          { axis: "care", native: "Hardy; comes through any winter this coast has.", ornamental: "Cut to the ground by a hard frost, and back from the root next year." },
+        ],
+        basis: "Tela Botanica; INPN; Noé.",
+      },
+    ],
+    "tulipa-gesneriana": [
+      {
+        plantId: "hyacinthoides-non-scripta",
+        why: "For a sheet of colour under bare trees in April, bluebells do it at a scale no bed of tulips reaches — and they come back thicker every year instead of thinner.",
+        edges: [
+          { axis: "wildlife", native: "Early nectar for queen bumblebees and the first hoverflies, when almost nothing else is open.", ornamental: "The doubles and parrots have had the nectar bred out of them — a shop window with nothing on the shelves." },
+          { axis: "care", native: "Planted once; spreads by itself for decades.", ornamental: "A poorer showing each year, and a bag of new bulbs every autumn." },
+        ],
+        basis: "Tela Botanica; INPN; Conservatoire botanique national de Brest.",
+      },
+    ],
     "magnolia-grandiflora": [
       {
         plantId: "ilex-aquifolium",
@@ -2813,6 +3109,17 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "france-continental": {
+    "sequoiadendron-giganteum": [
+      {
+        plantId: "pinus-sylvestris",
+        why: "For a big evergreen with real presence, Scots pine gives the orange upper trunk and the flat old crown that make a tree worth looking at for two hundred years.",
+        edges: [
+          { axis: "wildlife", native: "Seed for crossbills and nuthatches, and a host for a long list of moths.", ornamental: "Magnificent, and every insect that evolved with it is in California." },
+          { axis: "care", native: "At home on poor, dry, sandy ground.", ornamental: "In a garden-sized plot it is a fifty-year mistake." },
+        ],
+        basis: "Tela Botanica; INPN; OFB.",
+      },
+    ],
     "ginkgo-biloba": [
       {
         plantId: "acer-campestre",
@@ -2971,6 +3278,26 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "france-mediterranean": {
+    "passiflora-caerulea": [
+      {
+        plantId: "clematis-flammula",
+        why: "For fast cover on a pergola and a scent that carries across a garden, fragrant clematis foams white in August — the month a Mediterranean garden most needs something to happen.",
+        edges: [
+          { axis: "wildlife", native: "High-summer nectar when little else is open, then silver seed heads birds take for nests.", ornamental: "A remarkable flower that feeds nothing here." },
+          { axis: "water", native: "No summer water once rooted.", ornamental: "Wants some to keep flowering." },
+        ],
+        basis: "Tela Botanica; INPN; Conservatoire botanique national méditerranéen.",
+      },
+      {
+        plantId: "lonicera-implexa",
+        why: "If you wanted an evergreen climber that flowers and then fruits, Mediterranean honeysuckle holds its leaves through the winter and feeds the birds in autumn.",
+        edges: [
+          { axis: "wildlife", native: "Scent for hawk-moths, then red berries for warblers on passage.", ornamental: "Neither." },
+          { axis: "care", native: "Built for this drought.", ornamental: "Needs watering through August." },
+        ],
+        basis: "Tela Botanica; INPN; Conservatoire botanique national méditerranéen.",
+      },
+    ],
     "pittosporum-tobira": [
       {
         plantId: "rhamnus-alaternus",

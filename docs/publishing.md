@@ -70,6 +70,29 @@ This builds, then force-pushes `dist/` to the `gh-pages` branch as a single
 commit. Nothing touches your working tree — it stages into a temp directory with
 its own throwaway git repository.
 
+### If the push fails
+
+The staging repo shares no history with the remote, so there is nothing to send
+incrementally: every publish is all ~897 files and ~14 MiB in one go. Over HTTPS
+that runs into GitHub's limits, and the error looks like this:
+
+```
+error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+send-pack: unexpected disconnect while reading sideband packet
+```
+
+The script already sets `http.version HTTP/1.1` and a large `http.postBuffer` on
+the staging repo, which is usually enough, and falls back to SSH automatically
+when it isn't. If you want to skip straight to SSH — the most reliable route,
+since it streams the pack instead of posting it — name the remote yourself:
+
+```sh
+PUBLISH_REMOTE=git@github.com:olivierlacan/indigene.git npm run publish:gh-pages
+```
+
+A failed push leaves nothing behind: the branch is only created remotely if the
+push succeeds, so a retry starts from the same clean state.
+
 **It is not live until you flip a switch.** GitHub Pages serves *either* a
 branch *or* an Actions artifact, never both, and the choice is in
 **Settings → Pages → Build and deployment → Source**:

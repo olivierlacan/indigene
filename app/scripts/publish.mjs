@@ -84,6 +84,27 @@ function capture(cmd, cmdArgs, opts = {}) {
   return execFileSync(cmd, cmdArgs, { encoding: "utf8", cwd: APP, ...opts }).trim();
 }
 
+/** Like `run`, but a failure is an answer rather than the end. */
+function tryRun(cmd, cmdArgs, opts = {}) {
+  try {
+    run(cmd, cmdArgs, opts);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * The SSH form of a GitHub HTTPS remote, or null if it isn't one.
+ *
+ * Used as the fallback when an HTTPS push fails — see `publishGhPages`, where
+ * the reason that happens is explained.
+ */
+function sshFormOf(url) {
+  const m = /^https:\/\/(?:[^@/]+@)?github\.com\/(.+?)(?:\.git)?\/?$/.exec(url);
+  return m ? `git@github.com:${m[1]}.git` : null;
+}
+
 /**
  * Build exactly what the workflow builds, in exactly its order.
  *
@@ -155,9 +176,30 @@ function publishCloudflare() {
  * one moment you run this is the moment you least want a publish script
  * rearranging your working tree. Nothing here touches it: a temp directory, a
  * fresh `git init`, one commit, one push, and the directory goes away.
+ *
+ * ## Why the push needs help
+ *
+ * That throwaway repository is also what makes the push hard. It shares no
+ * history with the remote, so there is nothing to send incrementally: every
+ * publish is all 897 files and ~14 MiB as a single pack, in one HTTP POST.
+ * Over HTTPS that reliably fails against GitHub with
+ *
+ *     error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+ *     send-pack: unexpected disconnect while reading sideband packet
+ *
+ * so three things happen below, cheapest first. `http.version HTTP/1.1` avoids
+ * the HTTP/2 framing that produces that 400; `http.postBuffer` gives the whole
+ * pack room to be buffered rather than truncated. Both are set *on the
+ * throwaway repo only* — one of the quieter benefits of staging this way is
+ * that publish-time git settings can never leak into the repository you work
+ * in.
+ *
+ * If it still fails, the push is retried over SSH, which streams the pack
+ * instead of posting it and doesn't have the problem at all. Set
+ * `PUBLISH_REMOTE` to skip straight to a URL of your choosing.
  */
 function publishGhPages() {
-  const remote = capture("git", ["remote", "get-url", "origin"]);
+  const remote = process.env.PUBLISH_REMOTE || capture("git", ["remote", "get-url", "origin"]);
   const sha = capture("git", ["rev-parse", "--short", "HEAD"]);
   const staging = mkdtempSync(join(tmpdir(), "indigene-pages-"));
   try {
@@ -168,14 +210,29 @@ function publishGhPages() {
 
     const git = (...a) => run("git", a, { cwd: staging });
     git("init", "-q", "-b", PAGES_BRANCH);
+    git("config", "http.version", "HTTP/1.1");
+    git("config", "http.postBuffer", "524288000");
     git("add", "-A");
     git(
       "-c", "user.name=publish.mjs",
       "-c", "user.email=publish@indigene.app",
       "commit", "-q", "-m", `Publish ${sha} without Actions`
     );
-    console.log(`→ force-pushing ${PAGES_BRANCH} to origin…`);
-    git("push", "--force", remote, `${PAGES_BRANCH}:${PAGES_BRANCH}`);
+
+    const refspec = `${PAGES_BRANCH}:${PAGES_BRANCH}`;
+    console.log(`→ force-pushing ${PAGES_BRANCH} to ${remote}…`);
+    if (!tryRun("git", ["push", "--force", remote, refspec], { cwd: staging })) {
+      const ssh = sshFormOf(remote);
+      if (!ssh) {
+        throw new Error(
+          `publish: the push to ${remote} failed.\n` +
+            "  Set PUBLISH_REMOTE to an SSH URL and try again — a fresh 14 MiB\n" +
+            "  pack over HTTPS is what GitHub tends to reject."
+        );
+      }
+      console.log(`\n→ HTTPS push failed; retrying over SSH (${ssh})…`);
+      run("git", ["push", "--force", ssh, refspec], { cwd: staging });
+    }
     console.log(
       `\n  Pushed. This is live only once Settings → Pages has\n` +
         `  Source = "Deploy from a branch", branch ${PAGES_BRANCH} / root.\n` +
@@ -186,11 +243,24 @@ function publishGhPages() {
   }
 }
 
-build();
-if (dryRun) {
-  console.log(`\n  --dry-run: built only, nothing published to ${target}.`);
-} else if (target === "cloudflare") {
-  publishCloudflare();
-} else {
-  publishGhPages();
+// A stack trace is the wrong thing to hand someone who is publishing by hand
+// because the usual deploy is broken. They want the sentence, not the frames.
+try {
+  build();
+  if (dryRun) {
+    console.log(`\n  --dry-run: built only, nothing published to ${target}.`);
+  } else if (target === "cloudflare") {
+    publishCloudflare();
+  } else {
+    publishGhPages();
+  }
+} catch (err) {
+  // A failed child process has already printed its own diagnosis to the
+  // terminal (`stdio: "inherit"`), so repeating Node's wrapper around it adds
+  // nothing. Our own errors carry the message worth reading.
+  const message = /^Command failed:/.test(err?.message ?? "")
+    ? `publish: ${err.message.split("\n")[0]}\n  See the output above for why.`
+    : (err?.message ?? String(err));
+  console.error(`\n${message}`);
+  process.exit(1);
 }

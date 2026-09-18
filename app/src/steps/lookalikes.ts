@@ -189,6 +189,30 @@ function listingLine(link: LookalikeLink): HTMLElement | null {
 }
 
 /**
+ * The ladder, written out once on the index.
+ *
+ * The badges explain themselves on tap, but that only helps a reader who
+ * already wonders. Somebody scanning a page of them wants to see the whole
+ * scale at once, and — more to the point — wants to know where the words come
+ * from and why some cards carry none. Folded shut, because it is reference:
+ * the reader who needs it opens it, and the reader who doesn't loses no room.
+ */
+function scaleLegend(): HTMLElement {
+  const levels: PressureLevel[] = ["transforms", "spreads", "patchy"];
+  return el("details", { class: "weights scale-legend" }, [
+    el("summary", {}, t("lookalikes.scaleTitle")),
+    el("dl", { class: "scale-legend-list" }, levels.flatMap((level) => [
+      el("dt", {}, [el("span", { class: `badge ${PRESSURE_CLASS[level]}` },
+        t(`lookalike.pressure.${level}` as const))]),
+      el("dd", {}, t(`lookalike.pressurePlain.${level}` as const)),
+    ])),
+    el("p", { class: "confidence", style: "margin:0.6rem 0 0" }, t("lookalikes.scaleSource")),
+    // The blanks are the part a reader would otherwise read as "harmless".
+    el("p", { class: "confidence", style: "margin:0.4rem 0 0" }, t("lookalikes.scaleGaps")),
+  ]);
+}
+
+/**
  * Where this impostor is what — one row per status, the regions as pills:
  *
  *   Invasive in   Mid-Atlantic · Atlantic France
@@ -337,6 +361,7 @@ export async function renderLookalikeIndex(main: HTMLElement, region?: RegionDef
       el("strong", {}, t("lookalikes.notAllVillains")),
       t("lookalikes.notAllVillainsRest"),
     ]),
+    scaleLegend(),
   );
 
   const cards = rows.map((r) => indexCard(r, region ?? null));

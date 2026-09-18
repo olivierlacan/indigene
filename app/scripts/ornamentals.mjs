@@ -115,7 +115,17 @@ async function cultivated(bounds, perPage = 200) {
   }));
 }
 
-const norm = (s) => s.trim().toLowerCase();
+/**
+ * A scientific name in the one shape both sides can be compared in.
+ *
+ * iNaturalist writes a hybrid with the multiplication sign — `Hibiscus ×
+ * rosa-sinensis` — and our catalog writes the same plant `Hibiscus
+ * rosa-sinensis`. A plain lowercase compare calls those two different plants,
+ * so an ornamental we already answer comes back up the queue as if nobody had
+ * written it. That is the worst failure this script has: it sends somebody off
+ * to write a row that exists.
+ */
+const norm = (s) => s.replace(/\s*×\s*/g, " ").replace(/\s+/g, " ").trim().toLowerCase();
 
 const loader = await openLoader();
 let report;

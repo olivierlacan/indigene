@@ -33,6 +33,22 @@ subtitle on the What's new page.
 
 ### Added
 
+- Native swaps: the **Central California Coast** has its first swap stories —
+  madrone for a strawberry tree, hummingbird sage for a Mexican one, beach
+  strawberry for trailing lantana.
+  [See the swaps](https://indigene.app/alternatives)
+- Native swaps: nine more, taken in order of how widely they're grown — ginkgo,
+  sweetgum, southern magnolia, strawberry tree, Mexican bush sage, Cape
+  plumbago, bottlebrush, Japanese cheesewood and trailing lantana.
+- Native swaps: a ginkgo is a marvel and no caterpillar on this continent has
+  ever met one, so a ginkgo avenue is a place birds hunt and find nothing. Red
+  maple feeds close to three hundred kinds.
+- Internal: the census matched `Hibiscus rosa-sinensis` against iNaturalist's
+  `Hibiscus × rosa-sinensis` and called them different plants, sending an
+  answered ornamental back up the queue. Hybrid signs are folded away now.
+- Internal: `prose:check` now fails on a French sentence in the English data
+  files. It happened twice while the France rows were being written, and the
+  failure is silent in the worst direction — an English reader gets French.
 - Native swaps: eight more of the plants people actually buy now have natives
   beside them — mophead hydrangea, lilac, Japanese spirea, Indian hawthorn,
   lantana, Japanese andromeda, horse-chestnut and Chinese wisteria.

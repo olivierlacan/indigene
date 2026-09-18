@@ -48,6 +48,21 @@
 //     the OFB Centre de ressources EEE and INPN (France)
 //   - Connecticut Agricultural Experiment Station (the barberry–tick work)
 //
+// **Which ornamentals get a row is not a matter of taste either.** The queue
+// comes from `npm run ornamentals`, which asks iNaturalist for the *cultivated*
+// plant observations inside each region's box and ranks them — a census of what
+// people there actually grow, in the order they grow it. It is how crape myrtle
+// got a row: commonest unanswered garden plant in Florida, sixth in the
+// Mid-Atlantic. The script proposes and never writes; a `role`, a weakness and a
+// cited swap are not things an observation count knows.
+//
+// Two blind spots that report names, and that this file has to work around:
+// nobody photographs a lawn, so turf is undercounted by a factor of twenty or
+// more (St. Augustine 122 observations against crape myrtle's 2,557, on ground
+// where turf covers millions of acres), and the same goes for bedding annuals.
+// Those come in from the extension services' own turf and landscape guides
+// instead.
+//
 // The native side is not editorial: `noWaterEstablish`, `moisture` and the
 // eco-scores on each plant row are where the water and wildlife edges come
 // from. Disease and the "what it's planted for" framing are editorial, cited.
@@ -66,6 +81,28 @@ export const ORNAMENTALS: Ornamental[] = [
     blurb:
       "The green that comes out of a hose. It makes a tough, fine lawn in full sun — but only while it's watered and fed, browns off the moment the heat comes or the tap stops, and runs by the yard into every bed it can reach. Its roots are shallow, so the ground under it sheds water instead of drinking it.",
     originBasis: "USDA PLANTS; Missouri Botanical Garden.",
+  },
+  {
+    id: "paspalum-notatum",
+    common: "Bahiagrass",
+    latin: "Paspalum notatum",
+    form: "grass",
+    role: "Lawn / turf",
+    origin: "Native to South America; brought from Brazil in 1914 as cattle pasture, and on over two million Florida acres since.",
+    blurb:
+      "The tough, coarse lawn that survives Florida sand on almost nothing — no argument there, and it is genuinely frugal with water. What it isn't is habitat: it feeds no caterpillar any local bird raises its young on, and it throws up tall Y-shaped seed heads that pull a mower back over it every week of the summer.",
+    originBasis: "UF/IFAS Extension; USDA PLANTS.",
+  },
+  {
+    id: "lagerstroemia-indica",
+    common: "Crape myrtle",
+    latin: "Lagerstroemia indica",
+    form: "tree",
+    role: "Small flowering tree",
+    origin: "Native to China, Korea and Indochina; the South's default front-garden tree since the 1700s.",
+    blurb:
+      "A hundred days of flower, bark that peels to cinnamon, and a size that fits a small garden — it earns its place, and nothing here is on any invasive list. The case for a native beside it is simply what lives on it: about three kinds of caterpillar, against several hundred on a native cherry. The birds that need those caterpillars to raise a brood find a beautiful tree and nothing to eat.",
+    originBasis: "Missouri Botanical Garden; NC State Extension; Tallamy & Shropshire (Lepidoptera use of native vs introduced woody plants).",
   },
   {
     id: "pennisetum-setaceum",
@@ -476,6 +513,26 @@ export const ORNAMENTALS: Ornamental[] = [
 // and here is how the two compare on water, disease and wildlife.
 export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   "mid-atlantic": {
+    "lagerstroemia-indica": [
+      {
+        plantId: "amelanchier-canadensis",
+        why: "For a small tree that carries a garden all year, serviceberry gives white spring flowers, sweet June berries and orange autumn on the same smooth grey trunk — the four-season job crape myrtle is bought to do, on a tree the birds can actually live off.",
+        edges: [
+          { axis: "wildlife", native: "Host to well over a hundred kinds of caterpillar, and berries a dozen bird species strip in June.", ornamental: "About three caterpillar species; the berries are dry capsules nothing eats." },
+          { axis: "care", native: "No annual butchering — its shape is the point.", ornamental: "Usually topped every winter, and now host to crape myrtle bark scale." },
+        ],
+        basis: "Mt. Cuba Center; Penn State Extension; Tallamy & Shropshire.",
+      },
+      {
+        plantId: "cercis-canadensis",
+        why: "For the same size and a harder colour hit, eastern redbud throws magenta straight out of its bare branches in April, before anything else is awake.",
+        edges: [
+          { axis: "wildlife", native: "Early nectar when almost nothing else is open, and a host for several butterflies and moths.", ornamental: "Blooms in high summer, when nectar is least scarce." },
+          { axis: "care", native: "Happy in the part shade a small garden actually has.", ornamental: "Wants full sun, and sulks and mildews without it." },
+        ],
+        basis: "Missouri Botanical Garden; Mt. Cuba Center; Lady Bird Johnson Wildflower Center.",
+      },
+    ],
     "hemerocallis-fulva": [
       {
         plantId: "rudbeckia-fulgida",
@@ -1580,6 +1637,37 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "florida-central": {
+    "lagerstroemia-indica": [
+      {
+        plantId: "chionanthus-virginicus",
+        why: "For a small tree that stops people in the street, fringetree hangs itself with drifts of white thread in spring — the showiest native tree of its size, and a real food plant besides.",
+        edges: [
+          { axis: "wildlife", native: "Blue fruit the mockingbirds and cardinals take, and a host for sphinx moths.", ornamental: "Feeds almost nothing; roughly three caterpillar species." },
+          { axis: "care", native: "Takes Florida sun, sand and wet feet without complaint.", ornamental: "Prone to bark scale, and usually pruned back to knuckles." },
+        ],
+        basis: "UF/IFAS; Florida Native Plant Society; Lady Bird Johnson Wildflower Center.",
+      },
+      {
+        plantId: "myrcianthes-fragrans",
+        why: "If it was the bark you wanted, Simpson's stopper peels to the same cinnamon and mottled grey, and keeps its leaves — with white flowers in spring and orange fruit the birds finish in a week.",
+        edges: [
+          { axis: "wildlife", native: "Nectar for bees, fruit for birds, and leaves that feed native caterpillars.", ornamental: "A bare stem and three caterpillars." },
+          { axis: "water", native: "Drought-proof once rooted, and salt-tolerant on the coast.", ornamental: "Wants watering to flower well." },
+        ],
+        basis: "UF/IFAS; Florida Native Plant Society.",
+      },
+    ],
+    "paspalum-notatum": [
+      {
+        plantId: "mimosa-strigillosa",
+        why: "For ground you walk on and mow rarely, sunshine mimosa makes a low green mat studded with pink powderpuffs, takes being trodden on, and folds its leaves when you touch it.",
+        edges: [
+          { axis: "care", native: "Mown two or three times a year, if at all.", ornamental: "Seed heads shoot up within days of a cut, all summer." },
+          { axis: "wildlife", native: "A larval host for the little sulphur butterflies, and nectar all season.", ornamental: "Feeds nothing that a bird can feed a chick on." },
+        ],
+        basis: "UF/IFAS Extension; Florida Native Plant Society; Xerces Society.",
+      },
+    ],
     "hemerocallis-fulva": [
       {
         plantId: "coreopsis-leavenworthii",
@@ -1755,6 +1843,26 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
   },
 
   "florida-south": {
+    "lagerstroemia-indica": [
+      {
+        plantId: "myrcianthes-fragrans",
+        why: "For a small tree with peeling cinnamon bark and a long season of interest, Simpson's stopper does the same work evergreen — white flowers, orange fruit, and a scent like nutmeg when you brush past.",
+        edges: [
+          { axis: "wildlife", native: "Fruit for mockingbirds and catbirds, nectar for bees, leaves for native caterpillars.", ornamental: "About three caterpillar species, and fruit nothing eats." },
+          { axis: "water", native: "Drought- and salt-proof once established.", ornamental: "Flowers poorly dry, and is losing bark to a new scale insect." },
+        ],
+        basis: "UF/IFAS; Florida Native Plant Society.",
+      },
+      {
+        plantId: "hamelia-patens",
+        why: "If it was the long summer flowering you were after, firebush simply doesn't stop — orange-red tubes from spring to frost, with hummingbirds and zebra longwings on them all day.",
+        edges: [
+          { axis: "wildlife", native: "A hummingbird and butterfly magnet, then berries the birds take.", ornamental: "Nectar few things use, and nothing else." },
+          { axis: "care", native: "Grows back from the base after a cold snap and flowers the same year.", ornamental: "Needs annual pruning to look like anything." },
+        ],
+        basis: "UF/IFAS; Florida Native Plant Society; Xerces Society.",
+      },
+    ],
     "miscanthus-sinensis": [
       {
         plantId: "tripsacum-dactyloides",

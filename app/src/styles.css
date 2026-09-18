@@ -3182,6 +3182,40 @@ details.weights {
   font-size: 1.02rem;
 }
 
+/* A badge that answers for itself when tapped. It has to look like the badge
+   beside it — "Invasive here" and "Gaining ground" are one thought in two
+   capsules — so it borrows `.badge` wholesale and only undoes what a <button>
+   brings with it. The dotted underline is the affordance: enough to say "there
+   is more here", not so much that it reads as a link out of the page. */
+.badge-ask {
+  border: 0;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: inherit;
+  cursor: pointer;
+  /* The capsule is small, so the tap target is grown downward with padding
+     rather than by making the capsule itself bigger and breaking the pairing. */
+  padding: 0.3rem 0.5rem;
+}
+.badge-ask .badge-ask-label,
+.badge-ask {
+  text-decoration: underline dotted currentColor;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+.badge-ask:hover,
+.badge-ask:focus-visible {
+  text-decoration-style: solid;
+}
+
+/* The ladder, under the sentence that places this rung on it. */
+.term-dialog-scale {
+  font-size: 0.85rem;
+  margin: 0 0 0.9rem;
+  opacity: 0.85;
+}
+
 /* Who says the plant is what the badge above says it is. Sits directly under the
    badges and reads as a footnote to them, not as another sentence of the page —
    the substance is the tells further down. */

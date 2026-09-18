@@ -22,9 +22,12 @@ export interface TermInfo {
   extra?: (Node | string)[];
 }
 
-// The icon as DOM: the SVG glyph when given, else the emoji as text.
-function iconNode(info: TermInfo, trailingSpace: boolean): Node {
+// The icon as DOM: the SVG glyph when given, else the emoji as text, else
+// nothing at all — a caller with no picture to show would otherwise get a span
+// holding a single space, which indents the title by a character for no reason.
+function iconNode(info: TermInfo, trailingSpace: boolean): Node | null {
   if (info.glyph) return info.glyph();
+  if (!info.icon) return null;
   return document.createTextNode(`${info.icon}${trailingSpace ? " " : ""}`);
 }
 
@@ -52,7 +55,8 @@ export function openTermDialog(info: TermInfo): void {
   const d = dialog();
   d.replaceChildren(
     el("h3", { class: "term-dialog-title", style: "margin:0 0 0.5rem" }, [
-      el("span", { class: "term-dialog-glyph", "aria-hidden": "true" }, [iconNode(info, true)]),
+      iconNode(info, true) &&
+        el("span", { class: "term-dialog-glyph", "aria-hidden": "true" }, [iconNode(info, true)!]),
       info.term,
     ]),
     el("p", { style: "margin:0 0 0.9rem" }, info.plain),
@@ -79,7 +83,7 @@ export function termTag(info: TermInfo, variant = ""): HTMLButtonElement {
       openTermDialog(info);
     },
   }, [
-    el("span", { class: "tag-glyph", "aria-hidden": "true" }, [iconNode(info, false)]),
+    el("span", { class: "tag-glyph", "aria-hidden": "true" }, [iconNode(info, false)!]),
     el("span", { class: "tag-label" }, info.term),
   ]) as HTMLButtonElement;
 }

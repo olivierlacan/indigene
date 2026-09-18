@@ -1249,6 +1249,8 @@ export const en = {
     "Out in the wild and gaining ground, doing real damage, but not remaking the place.",
   "lookalike.pressurePlain.patchy":
     "Loose in the wild here, and so far staying local.",
+  "lookalike.scaleNote":
+    "Three steps, worst first: takes over, gaining ground, in patches. They're the reading of a scale the people who survey each region publish — not ours.",
   "lookalike.listedImpact": "Listed {as} here by {by}.",
   "lookalike.listedRegulation": "{by} lists it {as}. {means}",
   "lookalike.means.waClassA":

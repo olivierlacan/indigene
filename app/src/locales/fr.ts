@@ -1251,6 +1251,8 @@ export const fr: Dict = {
     "Installé dans la nature et gagnant du terrain, avec de vrais dégâts, mais sans refaire le paysage.",
   "lookalike.pressurePlain.patchy":
     "Échappé des jardins ici, et pour l'instant cantonné à quelques stations.",
+  "lookalike.scaleNote":
+    "Trois degrés, du pire au moindre : prend la place, gagne du terrain, par taches. Ils traduisent une échelle publiée par ceux qui étudient chaque région — pas la nôtre.",
   "lookalike.listedImpact": "Classé {as} ici par {by}.",
   "lookalike.listedRegulation": "{by} l'inscrit comme {as}. {means}",
   "lookalike.means.waClassA":

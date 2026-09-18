@@ -37,6 +37,7 @@ import { getOrnamentalByLatin } from "../lib/alternatives";
 import { filterField, highlight, norm } from "../components/filter-field";
 import type { FilterRow } from "../components/filter-field";
 import { citation } from "../components/citation";
+import { openTermDialog } from "../components/term-dialog";
 import { silhouetteFor } from "../components/plant-card";
 import { lookalikeThumb } from "../components/plant-thumb";
 import { heroFigure } from "../components/hero-figure";
@@ -47,6 +48,7 @@ import type {
   ListingMeans,
   Lookalike,
   LookalikeLink,
+  LookalikeListing,
   LookalikeStatus,
   PressureLevel,
 } from "../types";
@@ -121,12 +123,45 @@ const PRESSURE_CLASS: Record<PressureLevel, string> = {
  * the status badge is: Cal-IPC rates pampas grass High for California and says
  * in its own notes that the rating is a statewide sum, so a placeless "takes
  * the ground over" would be a claim nobody made.
+ *
+ * **It is a button, not a badge with a `title`.** "Gaining ground" is two words
+ * standing in for a paragraph, and this is a phone app: a `title` tooltip needs
+ * a mouse to hover, so on the device most readers hold it explains nothing at
+ * all. It's the same just-in-time idiom the stat grid and the wildlife tags
+ * use — the word stays short, its meaning is one tap away — and the dialog
+ * carries the whole three-step ladder, because "gaining ground" only means
+ * anything next to the step above and below it.
  */
-function pressureBadge(level: PressureLevel): HTMLElement {
-  return el("span", {
-    class: `badge ${PRESSURE_CLASS[level]}`,
-    title: t(`lookalike.pressurePlain.${level}` as const),
-  }, t(`lookalike.pressure.${level}` as const));
+function pressureBadge(level: PressureLevel, listing?: LookalikeListing): HTMLElement {
+  const term = t(`lookalike.pressure.${level}` as const);
+  return el("button", {
+    type: "button",
+    class: `badge badge-ask ${PRESSURE_CLASS[level]}`,
+    "aria-haspopup": "dialog",
+    "aria-label": t("term.tapToLearn", { term }),
+    onClick: (e: Event) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openTermDialog({
+        icon: "",
+        term,
+        plain: t(`lookalike.pressurePlain.${level}` as const),
+        extra: [
+          el("p", { class: "term-dialog-scale" }, t("lookalike.scaleNote")),
+          // Who scored it, repeated from the card below — because on the index
+          // there is no card below, and the word without its author is just us
+          // asserting something.
+          ...(listing?.kind === "impact"
+            ? [el("p", { class: "stat-dialog-source" },
+                tx("lookalike.listedImpact", {
+                  by: el("a", { href: listing.url, target: "_blank", rel: "noopener" }, listing.by),
+                  as: listing.as,
+                }))]
+            : []),
+        ],
+      });
+    },
+  }, term);
 }
 
 /**
@@ -353,6 +388,13 @@ function indexCard(row: LookalikeIndexRow, region: RegionDef | null): FilterRow 
   const names = nameLines(row.lookalike);
   const natives = row.natives.map((n) => commonName(n.plant));
   const pressure = worstPressure(row.natives.map((n) => n.link));
+  // The index card has no "who says so" line under it, so the dialog is the
+  // only place that can carry one — but only when the region's ties agree on a
+  // single assessment. Two natives confused with the same impostor here are two
+  // rows of the same list; two *different* lists would need naming separately,
+  // and a card is not the place for that.
+  const listings = new Set(row.natives.map((n) => n.link.listing).filter(Boolean));
+  const onlyListing = listings.size === 1 ? [...listings][0] : undefined;
   const title = el("span", {});
   const sub = names.sub ? el("em", {}) : null;
   const mistaken = el("span", {});
@@ -374,7 +416,7 @@ function indexCard(row: LookalikeIndexRow, region: RegionDef | null): FilterRow 
         // Same rule as the badge beside it: *here* needs a here. Unnarrowed, an
         // impostor can be two things in two places and neither word would be
         // true of the card as a whole.
-        region && pressure ? pressureBadge(pressure) : null,
+        region && pressure ? pressureBadge(pressure, onlyListing) : null,
       ]),
       sub ? el("div", { class: "lookalike-latin" }, [sub]) : null,
       el("p", { class: "score-why", style: "margin:0.35rem 0 0" }, lookalikeOrigin(row.lookalike)),

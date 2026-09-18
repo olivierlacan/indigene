@@ -7,7 +7,13 @@
 // uses, so a tie pointing at a plant no roster carries is dropped rather than
 // rendered as a broken row (guarded here, and surfaced in dev by
 // `auditLookalikes`).
-import type { Lookalike, LookalikeLink, LookalikeStatus, Plant } from "../types";
+import type {
+  Lookalike,
+  LookalikeLink,
+  LookalikeStatus,
+  PressureLevel,
+  Plant,
+} from "../types";
 import type { RegionDef } from "../data/region";
 import { REGIONS, loadPlants } from "./plants";
 import { CONFUSIONS, LOOKALIKES } from "../data/lookalikes";
@@ -109,6 +115,41 @@ export interface LookalikeIndexRow {
   /** The strongest status any region gives it, so a card can lead with the
    *  serious case: invasive somewhere beats merely introduced everywhere. */
   worstStatus: LookalikeStatus;
+}
+
+/**
+ * Worst first, so a list of impostors leads with the one to deal with first.
+ * A tie nobody has assessed sorts *below* the assessed ones rather than at the
+ * bottom of everything: "not scored" is an absence of knowledge, not a finding
+ * that it is harmless.
+ */
+const PRESSURE_RANK: Record<PressureLevel, number> = { transforms: 0, spreads: 1, patchy: 2 };
+
+/** The pressure level a tie carries, or null — a regulation never yields one
+ *  (see `LookalikeListing`: a weed class says what the law asks, not how much
+ *  harm is done), and most ties outside an assessed region carry nothing. */
+export function pressureOf(link: LookalikeLink): PressureLevel | null {
+  return link.listing?.kind === "impact" ? link.listing.level : null;
+}
+
+/**
+ * The hardest-pushing assessment across a set of ties, for a card that has to
+ * lead with one word. Null when none of them has been assessed.
+ */
+export function worstPressure(links: LookalikeLink[]): PressureLevel | null {
+  let worst: PressureLevel | null = null;
+  for (const link of links) {
+    const p = pressureOf(link);
+    if (p && (!worst || PRESSURE_RANK[p] < PRESSURE_RANK[worst])) worst = p;
+  }
+  return worst;
+}
+
+/** Sort key for a tie: invasive before the rest, and within invasive, the ones
+ *  that take the ground over before the ones that merely spread. */
+export function tieOrder(link: LookalikeLink): number {
+  const p = pressureOf(link);
+  return STATUS_RANK[link.status] * 10 + (p ? PRESSURE_RANK[p] : 3);
 }
 
 const STATUS_RANK: Record<LookalikeStatus, number> = { invasive: 0, introduced: 1, native: 2 };
@@ -296,6 +337,25 @@ export async function auditLookalikes(): Promise<string[]> {
         }
         if (!link.tells.length) {
           problems.push(`${regionId}/${plantId}: tie to "${link.lookalikeId}" has no tells — name a difference or drop the tie`);
+        }
+        // A listing is a claim about a plant *in a place*, and only ever about
+        // one that is loose there. Hanging one on an introduced or native tie
+        // would print "Category I" beside a plant we've just said stays in the
+        // bed it was planted in.
+        if (link.listing && link.status !== "invasive") {
+          problems.push(`${regionId}/${plantId}: tie to "${link.lookalikeId}" is ${link.status} but carries a listing — a listing describes a plant that is loose here`);
+        }
+        if (link.listing) {
+          const l = link.listing;
+          if (!l.by.trim() || !l.as.trim() || !l.url.trim()) {
+            problems.push(`${regionId}/${plantId}: listing on "${link.lookalikeId}" must name who lists it, their own category, and where to check it`);
+          }
+          // The whole point of the two shapes: a weed class is a management
+          // instruction, so it has to say what it asks rather than let a reader
+          // infer a severity from the letter.
+          if (l.kind === "regulation" && !l.means.trim()) {
+            problems.push(`${regionId}/${plantId}: regulation listing on "${link.lookalikeId}" must say what the listing asks — a class letter alone reads as a severity, which it isn't`);
+          }
         }
         for (const tell of link.tells) {
           if (!tell.feature.trim() || !tell.native.trim() || !tell.lookalike.trim()) {

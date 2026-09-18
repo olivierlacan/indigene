@@ -33,6 +33,22 @@ subtitle on the What's new page.
 
 ### Added
 
+- Look-alikes: an impostor now says **how hard it pushes here**, not just that
+  it's invasive — takes over, gaining ground, or in patches — with the body that
+  scored it named beside it.
+  [See the look-alikes](https://indigene.app/lookalikes)
+- Look-alikes: where the law is all anyone has published, we print the law and
+  say what it asks. Washington's Class C doesn't mean a blackberry is mild; it
+  means it's already everywhere.
+- Internal: `LookalikeListing` is a union — only an impact assessment may carry
+  a level, a regulation must state what it asks. A region nobody has assessed
+  gets no rank rather than a borrowed one; the Pacific Northwest and Atlantic
+  France are blank on purpose.
+- Internal: `npm run listings:check` re-reads every listing from the body that
+  issued it (Cal-IPC's table, Washington's weed pages, EPPO, the conservatory
+  PDFs) and fails on silence as loudly as on disagreement. `listings.yml` runs
+  it every March and September and opens an issue when one has moved.
+
 - Regions: **the central California coast is on the map** — 64 native plants for
   the country from Sonoma and Marin through San Francisco Bay to Big Sur and the
   Salinas Valley. [See the region](https://indigene.app/regions/ca-central-coast)

@@ -3181,6 +3181,17 @@ details.weights {
   margin: 0;
   font-size: 1.02rem;
 }
+
+/* Who says the plant is what the badge above says it is. Sits directly under the
+   badges and reads as a footnote to them, not as another sentence of the page —
+   the substance is the tells further down. */
+.listing-line {
+  margin-top: 0.15rem;
+}
+.listing-line a {
+  color: inherit;
+  text-decoration-thickness: from-font;
+}
 .lookalike-latin {
   margin: 0.1rem 0 0;
   font-size: 0.9rem;

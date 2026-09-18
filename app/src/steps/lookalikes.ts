@@ -28,6 +28,9 @@ import {
   nativeSomewhere,
   inatSearchUrl,
   statusRegions,
+  pressureOf,
+  worstPressure,
+  tieOrder,
 } from "../lib/lookalikes";
 import type { LookalikeIndexRow, NativeForLookalike } from "../lib/lookalikes";
 import { getOrnamentalByLatin } from "../lib/alternatives";
@@ -40,7 +43,13 @@ import { heroFigure } from "../components/hero-figure";
 import { heroPhotoFor, lookalikePhotoFor, asObservation, heroSourceUrl, type HeroPhoto } from "../lib/hero-photo";
 import { openObservationLightbox, licenseLabel } from "../components/lightbox";
 import { loadPhoto } from "../lib/photo";
-import type { Lookalike, LookalikeLink, LookalikeStatus } from "../types";
+import type {
+  ListingMeans,
+  Lookalike,
+  LookalikeLink,
+  LookalikeStatus,
+  PressureLevel,
+} from "../types";
 import { t, tn, tx, fmtNumber } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
 import { lookalikeBlurb, lookalikeOrigin, lookalikeWhy, lookalikeTells } from "../lib/prose";
@@ -87,6 +96,62 @@ export function statusBadge(status: LookalikeStatus): HTMLElement {
     class: `badge ${STATUS_CLASS[status]}`,
     title: t(`lookalike.statusPlain.${status}` as const),
   }, t(`lookalike.status.${status}` as const));
+}
+
+/** The sentence that says what each listing category asks. Spelled out rather
+ *  than built by template, so `t`'s key union stays exhaustive: an unwritten
+ *  explanation is a compile error, not a blank line on the page. */
+const MEANS_KEY = {
+  waClassA: "lookalike.means.waClassA",
+  waClassC: "lookalike.means.waClassC",
+  euConcern: "lookalike.means.euConcern",
+} as const satisfies Record<ListingMeans, string>;
+
+/** The badge class each pressure level wears — the same caution red as
+ *  "Invasive here" at the top, easing off as the claim does. */
+const PRESSURE_CLASS: Record<PressureLevel, string> = {
+  transforms: "caution",
+  spreads: "nowater",
+  patchy: "neutral",
+};
+
+/**
+ * *How hard*, here — the second half of "invasive here".
+ *
+ * Only ever printed beside a region that has been named, for the same reason
+ * the status badge is: Cal-IPC rates pampas grass High for California and says
+ * in its own notes that the rating is a statewide sum, so a placeless "takes
+ * the ground over" would be a claim nobody made.
+ */
+function pressureBadge(level: PressureLevel): HTMLElement {
+  return el("span", {
+    class: `badge ${PRESSURE_CLASS[level]}`,
+    title: t(`lookalike.pressurePlain.${level}` as const),
+  }, t(`lookalike.pressure.${level}` as const));
+}
+
+/**
+ * Who says so, in one line under the badges.
+ *
+ * An impact assessment prints its own category — "California Invasive Plant
+ * Council rates it High" — because the word we chose is a reading of theirs and
+ * the reader should see both. A regulation prints what it *asks* instead, which
+ * is the whole reason the two are different shapes: a reader who sees "Class C"
+ * next to a blackberry swallowing a ravine will conclude the state thinks it's
+ * mild, and the state thinks nothing of the kind.
+ */
+function listingLine(link: LookalikeLink): HTMLElement | null {
+  const l = link.listing;
+  if (!l) return null;
+  const source = el("a", { href: l.url, target: "_blank", rel: "noopener" }, l.by);
+  return el("p", { class: "confidence listing-line", style: "margin:0 0 0.6rem" },
+    l.kind === "impact"
+      ? tx("lookalike.listedImpact", { by: source, as: l.as })
+      : tx("lookalike.listedRegulation", {
+          by: source,
+          as: l.as,
+          means: t(MEANS_KEY[l.means]),
+        }));
 }
 
 /**
@@ -288,6 +353,7 @@ function regionFilter(active: RegionDef | null, perRegion: Map<string, number>):
 function indexCard(row: LookalikeIndexRow, region: RegionDef | null): FilterRow {
   const names = nameLines(row.lookalike);
   const natives = row.natives.map((n) => commonName(n.plant));
+  const pressure = worstPressure(row.natives.map((n) => n.link));
   const title = el("span", {});
   const sub = names.sub ? el("em", {}) : null;
   const mistaken = el("span", {});
@@ -306,6 +372,10 @@ function indexCard(row: LookalikeIndexRow, region: RegionDef | null): FilterRow 
         // "Invasive here" have a *here* to mean. Unnarrowed, the card says where
         // instead, below — see `whereRows`.
         region ? statusBadge(row.worstStatus) : null,
+        // Same rule as the badge beside it: *here* needs a here. Unnarrowed, an
+        // impostor can be two things in two places and neither word would be
+        // true of the card as a whole.
+        region && pressure ? pressureBadge(pressure) : null,
       ]),
       sub ? el("div", { class: "lookalike-latin" }, [sub]) : null,
       el("p", { class: "score-why", style: "margin:0.35rem 0 0" }, lookalikeOrigin(row.lookalike)),
@@ -421,7 +491,11 @@ export async function renderLookalike(main: HTMLElement, param?: string): Promis
         ]),
       ]),
     ]),
-    ...natives.map((n) => comparisonCard(lookalike, n)),
+    // Hardest-pushing first: a reader who opens cherry laurel wants the region
+    // where it is actually taking woodland, not whichever roster we wrote first.
+    ...[...natives]
+      .sort((a, b) => tieOrder(a.link) - tieOrder(b.link))
+      .map((n) => comparisonCard(lookalike, n)),
     el("p", { class: "confidence", style: "margin-top:1rem" }, t("lookalike.coverageNote")),
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
       el("a", { class: "btn btn-secondary", href: "#/lookalikes" }, t("lookalikes.more")),
@@ -434,14 +508,19 @@ export async function renderLookalike(main: HTMLElement, param?: string): Promis
  *  they're mixed up, and the side-by-side tells. */
 function comparisonCard(lookalike: Lookalike, n: NativeForLookalike): HTMLElement {
   const nativeName = commonName(n.plant);
+  const pressure = pressureOf(n.link);
   return el("section", { class: "card" }, [
     el("div", { class: "lookalike-head" }, [
       el("h3", { style: "margin:0" }, t("lookalikes.mistakenForHeading", { name: nativeName })),
       statusBadge(n.link.status),
+      // Second badge, same row: "Invasive here" says whether, this says how
+      // hard. Only where somebody has actually scored this ground.
+      pressure ? pressureBadge(pressure) : null,
     ]),
     el("p", { class: "score-why", style: "margin:0.2rem 0 0.6rem" }, [
       el("a", { href: `#/regions/${n.region.meta.id}` }, regionName(n.region.meta)),
     ]),
+    listingLine(n.link),
     el("p", { class: "kv", style: "margin:0 0 0.5rem" }, [
       el("span", { class: "k" }, t("lookalike.whyMixedUp")),
       lookalikeWhy(n.plant.latin, n.link, n.region.meta.id),

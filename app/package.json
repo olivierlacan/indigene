@@ -38,6 +38,7 @@
     "prose:check": "node scripts/check-prose.mjs",
     "blurbs:check": "node scripts/check-blurbs.mjs",
     "lookalikes:check": "NODE_USE_ENV_PROXY=1 node scripts/check-lookalikes.mjs",
+    "listings:check": "NODE_USE_ENV_PROXY=1 node scripts/check-listings.mjs",
     "inat:check": "NODE_USE_ENV_PROXY=1 node scripts/inat-coverage-check.mjs",
     "probe:globi": "NODE_USE_ENV_PROXY=1 node scripts/probe-globi.mjs",
     "probe:eea": "NODE_USE_ENV_PROXY=1 node scripts/probe-eea.mjs",

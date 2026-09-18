@@ -287,6 +287,55 @@ surfaces mix-ups no extension bulletin ever got round to writing up. The script
 never gates the build — an unbacked tie usually means a garden plant nobody
 photographs in the wild (dwarf firebush, lavandin), not a false claim.
 
+### How invasive, and who says so (`LookalikeLink.listing`)
+
+"Invasive" is one word for two very different plants. Himalayan blackberry
+buries a Cascade clearing; narrowleaf firethorn turns up in a California canyon
+now and then and mostly stays put. `listing` carries the difference, and it is
+the one field in this layer that repeats somebody else's verdict rather than
+writing its own — so it prints their category, in their words, with a link.
+
+There is no single dataset. There is a single **protocol**: NatureServe's
+*Invasive Species Assessment Protocol*, which scores ecological impact as High /
+Medium / Low for "a nation, state, province, or ecological region" — the unit
+this app is built on — and which the regional bodies below each apply to their
+own ground.
+
+| Source | Used for | Its own categories | Verdict |
+|---|---|---|---|
+| **Cal-IPC Inventory** (California Invasive Plant Council) | The California regions | High · Moderate · Limited, plus *Alert* and *Watch* | ✅ Authority. Published as one HTML table, so `listings:check` re-reads it in full. |
+| **Virginia Invasive Plant Species List** (Dept. of Conservation & Recreation, Natural Heritage) | The Mid-Atlantic / Northeast Piedmont | High · Medium · Low, explicitly the NatureServe I-Rank | ✅ Authority. The list is also broken out by physiographic province, Piedmont among them. |
+| **Florida Invasive Species Council** (FISC, formerly FLEPPC) | The two Florida regions | Category I (documented ecological damage) · Category II (increasing, damage not yet shown) | ✅ Authority. Revised at least every two years. |
+| **Conservatoires botaniques nationaux** — regional *listes catégorisées des EEE* | The France regions | *EEE implantée* · *EEE émergente* · *potentiellement invasive* · *liste d'observation*, scored by the EPPO method | ✅ Authority, per *région*. Only Grand Est is wired up so far. |
+| **EU Regulation 1143/2014** — species of Union concern, via **EPPO** | Europe-wide legal listing | On the Union list, or not | ✅ Authority, and a **regulation**, not an impact score — see below. |
+
+**A weed class is not a severity, and the type refuses to let it become one.**
+Washington lists Himalayan blackberry and English holly in the same noxious-weed
+class, C. The blackberry is there because it is already in every ditch in the
+state and requiring control would be asking the impossible; the holly is there
+because it was listed in 2025 and is still early. Same class, opposite stories.
+A weed class is a **management instruction** — what the law asks of you — and a
+reader who infers a severity from the letter gets the blackberry exactly
+backwards. So `LookalikeListing` is a union of two shapes: only the `impact` one
+carries a level, and the `regulation` one has to say what the listing *asks*.
+
+| Source | Used for | Access | Verdict |
+|---|---|---|---|
+| **Washington State Noxious Weed Control Board** · **Oregon Dept. of Agriculture** | What the law asks in the Pacific Northwest, printed as that and nothing more | Referenced | ✅ Facts referenced, as a `regulation` listing. Never a level. |
+
+**No rank where nobody ranked.** A region whose ground nobody has assessed gets
+no level, rather than one borrowed from a region that has one — the same
+"wrong place" refusal that kept VASCAN out of the French names. The Pacific
+Northwest and Atlantic France are both in that position today, and the page says
+so instead of guessing. That is a visible gap, which is the point: a blank is an
+invitation to go and find the assessment, and a borrowed number never is.
+
+**`npm run listings:check` re-reads every one of them.** It asks each body for
+its own list and compares, species by species, and it fails on **silence** —
+unreachable, moved, or dropped from the list — exactly as loudly as it fails on
+disagreement, on the rule `check-vernacular.mjs` set: a check that can only
+report agreement isn't a check.
+
 **Status is per region, never per plant.** Common ivy is a listed invasive in
 North America and an ordinary native woodland climber in Atlantic France, where
 it's on our own roster; Douglas-fir is a Pacific Northwest keystone and an

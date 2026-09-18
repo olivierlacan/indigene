@@ -328,11 +328,96 @@ export interface TellApart {
   lookalike: string;
 }
 
+/**
+ * How hard an invasive plant actually pushes, **in one region**.
+ *
+ * "Invasive" is one word for two very different plants. Himalayan blackberry
+ * buries a Cascade clearing under ten feet of cane; narrowleaf firethorn turns
+ * up in a California canyon now and then and mostly stays put. A reader
+ * deciding what to pull first is owed the difference.
+ *
+ * The words are the ones the assessing bodies use between them — severe,
+ * substantial, minor — and the scale is the one the NatureServe Invasive
+ * Species Assessment Protocol established and California, Virginia and the
+ * French botanical conservatories each apply to their own ground.
+ *
+ *  - "transforms" It changes the habitat itself: the natives go, and what
+ *                 replaces them is a stand of this. Cal-IPC *High*, Virginia
+ *                 *High*, FISC *Category I*, « EEE implantée ».
+ *  - "spreads"    Out in the wild and gaining, with real damage, but not
+ *                 remaking the place. Cal-IPC *Moderate*, Virginia *Medium*,
+ *                 FISC *Category II*, « EEE émergente ».
+ *  - "patchy"     Loose in the wild, and staying local. Cal-IPC *Limited*,
+ *                 Virginia *Low*, « plante potentiellement invasive ».
+ */
+export type PressureLevel = "transforms" | "spreads" | "patchy";
+
+/**
+ * What the authorities for **this place** say about this plant — and which of
+ * two quite different things they are saying.
+ *
+ * They get separate shapes because collapsing them is the mistake this whole
+ * field exists to prevent. Washington lists Himalayan blackberry and English
+ * holly in the same noxious-weed class, C. The blackberry is there because it
+ * is already in every ditch in the state and requiring control would be asking
+ * the impossible; the holly is there because it was listed in 2025 and is
+ * still early. Same class, opposite stories. A weed class is a **management
+ * instruction**, and reading a severity off it gets the blackberry exactly
+ * backwards.
+ *
+ * So only `kind: "impact"` — a body that scored the ecological harm — may carry
+ * a `level`. A regulation is printed as itself, with what it actually asks.
+ */
+/**
+ * The sentences that say what a listing **asks**, one per listing category —
+ * `lookalike.means.*` in the locale files. A closed union rather than free text
+ * so that a new category can't ship without its explanation being written, and
+ * so two species in the same class can never be given different accounts of it.
+ */
+export type ListingMeans = "waClassA" | "waClassC" | "euConcern";
+
+export type LookalikeListing =
+  | {
+      kind: "impact";
+      /** Where the assessment puts it (see `PressureLevel`). */
+      level: PressureLevel;
+      /** Who assessed it, **for this region**: "California Invasive Plant Council". */
+      by: string;
+      /** Their own category for it, in their own words: "High", "Category I". */
+      as: string;
+      /** Where a reader checks it for themselves. */
+      url: string;
+    }
+  | {
+      kind: "regulation";
+      /** Who lists it: "Washington State Noxious Weed Control Board". */
+      by: string;
+      /** The listing, in its own words: "Class C noxious weed". */
+      as: string;
+      /**
+       * Which `lookalike.means.*` sentence says what the listing **asks**, never
+       * what harm it implies. A key rather than prose because a weed class means
+       * the same thing for every species that carries it: the sentence is
+       * written once, translated once, and can't drift between two species in
+       * the same class.
+       */
+      means: ListingMeans;
+      /** Where a reader checks it for themselves. */
+      url: string;
+    };
+
 /** One native→impostor tie, keyed under the native in the region confusion map. */
 export interface LookalikeLink {
   lookalikeId: string;
   /** What the impostor is **in this region** (see `LookalikeStatus`). */
   status: LookalikeStatus;
+  /**
+   * What this region's own authorities say about it — how much harm it does,
+   * or what the law asks. Only ever on an `invasive` tie, and absent where
+   * nobody has assessed this ground yet: a region with no published assessment
+   * gets no rank rather than one borrowed from a region that has one.
+   */
+  listing?: LookalikeListing;
   /** Why these two get mixed up, in one plain sentence. */
   why: string;
   /** How to tell them apart, most decisive tell first. */

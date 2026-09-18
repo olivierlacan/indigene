@@ -15,6 +15,31 @@
 //      America and an ordinary native climber in Atlantic France, where it's on
 //      our own roster. That's why `status` lives on the tie, not the catalog.
 //
+//      `listing` lives there for the same reason, and answers the question
+//      `status` can't: *how hard does it push here?* "Invasive" covers both a
+//      blackberry burying a clearing and a firethorn that turns up in a canyon
+//      now and then, and a reader deciding what to pull first is owed the
+//      difference. It repeats the verdict of the body that assessed **that
+//      ground** — Cal-IPC for California, the Virginia list for the Piedmont,
+//      FISC for Florida, the botanical conservatories for a French région —
+//      with their category in their own words and a link to check it.
+//
+//      Two rules keep it honest, and `types.ts` enforces the first in the type:
+//
+//      - **A weed class is not a severity.** Washington lists Himalayan
+//        blackberry and English holly in the same class, C — the blackberry
+//        because it is already in every ditch in the state, the holly because it
+//        was only listed in 2025. So a regulation is a different shape from an
+//        impact assessment, can never carry a level, and prints what it *asks*
+//        instead.
+//      - **No rank where nobody ranked.** A region with no published assessment
+//        gets no level rather than one borrowed from a region that has one. The
+//        Pacific Northwest and Atlantic France are both in that position today;
+//        the page says so rather than guessing.
+//
+//      `npm run listings:check` asks each body whether it still says what we
+//      print, and fails on silence as well as disagreement.
+//
 // What earns a row here:
 //   - Real people really mix these two up — at a nursery bench, on a verge, in
 //     their own garden. Not "a non-native plant we disapprove of".
@@ -368,6 +393,13 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
       {
         lookalikeId: "pyrus-calleryana",
         status: "invasive",
+        listing: {
+          kind: "impact",
+          level: "spreads",
+          by: "Virginia Natural Heritage, 2024 list",
+          as: "Medium",
+          url: "https://www.dcr.virginia.gov/natural-heritage/invsppdflist",
+        },
         why: "Both are small trees smothered in white flowers in the same warm week of early spring, often in the same parking lot.",
         tells: [
           { feature: "Smell", native: "Almost none — you have to put your nose right in it.", lookalike: "A strong sour, fishy smell you can catch from across the road." },
@@ -396,6 +428,13 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
       {
         lookalikeId: "acer-platanoides",
         status: "invasive",
+        listing: {
+          kind: "impact",
+          level: "spreads",
+          by: "Virginia Natural Heritage, 2024 list",
+          as: "Medium",
+          url: "https://www.dcr.virginia.gov/natural-heritage/invsppdflist",
+        },
         why: "Two big street maples with red-tinted new growth and paired winged seeds, planted along the same streets for the same reasons.",
         tells: [
           { feature: "Break a leaf stalk", native: "Clear sap.", lookalike: "A bead of milky white sap — no native maple here does this." },
@@ -410,6 +449,13 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
       {
         lookalikeId: "lonicera-japonica",
         status: "invasive",
+        listing: {
+          kind: "impact",
+          level: "transforms",
+          by: "Virginia Natural Heritage, 2024 list",
+          as: "High",
+          url: "https://www.dcr.virginia.gov/natural-heritage/invsppdflist",
+        },
         why: "Both are twining honeysuckles, and the Japanese one is on so many fences that people take it for the wild native.",
         tells: [
           { feature: "Flowers", native: "Long coral-red trumpets with an orange throat, clustered at the shoot tip, with barely any scent.", lookalike: "Flowers in pairs all along the stem, white turning butter-yellow, powerfully sweet." },
@@ -424,6 +470,13 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
       {
         lookalikeId: "lonicera-maackii",
         status: "invasive",
+        listing: {
+          kind: "impact",
+          level: "transforms",
+          by: "Virginia Natural Heritage, 2024 list",
+          as: "High",
+          url: "https://www.dcr.virginia.gov/natural-heritage/invsppdflist",
+        },
         why: "Two shrubs of the same height with paired leaves and dark berries, growing side by side along the same woodland edges.",
         tells: [
           { feature: "Snap a twig", native: "Solid white pith inside.", lookalike: "Hollow — a clean brown tube." },
@@ -438,6 +491,13 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
       {
         lookalikeId: "ficaria-verna",
         status: "invasive",
+        listing: {
+          kind: "impact",
+          level: "transforms",
+          by: "Virginia Natural Heritage, 2024 list",
+          as: "High",
+          url: "https://www.dcr.virginia.gov/natural-heritage/invsppdflist",
+        },
         why: "Both carpet damp ground with yellow flowers in April, and both spread sideways into one solid patch.",
         tells: [
           { feature: "The flower", native: "A daisy: a ring of about a dozen yellow rays around a yellow button, several to a stalk, held well up.", lookalike: "A buttercup: 8 to 12 narrow, shining petals, sitting low over the leaves." },
@@ -452,6 +512,13 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
       {
         lookalikeId: "lythrum-salicaria",
         status: "invasive",
+        listing: {
+          kind: "impact",
+          level: "transforms",
+          by: "Virginia Natural Heritage, 2024 list",
+          as: "High",
+          url: "https://www.dcr.virginia.gov/natural-heritage/invsppdflist",
+        },
         why: "Two tall mauve-purple flowers of damp ground, blooming at the same moment in high summer.",
         tells: [
           { feature: "Flower head", native: "A wide domed cloud of soft, fuzzy flowers on top of the stem.", lookalike: "A stiff upright spike packed with magenta flowers, each with six crinkled petals." },
@@ -466,6 +533,13 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
       {
         lookalikeId: "hedera-helix",
         status: "invasive",
+        listing: {
+          kind: "impact",
+          level: "spreads",
+          by: "Virginia Natural Heritage, 2024 list",
+          as: "Medium",
+          url: "https://www.dcr.virginia.gov/natural-heritage/invsppdflist",
+        },
         why: "Both climb trunks and walls, and both get called \"the ivy on the house\".",
         tells: [
           { feature: "Leaf", native: "Five leaflets fanned out from one point, like fingers.", lookalike: "A single dark glossy leaf, lobed when young, plain oval on the old flowering growth." },
@@ -480,6 +554,13 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
       {
         lookalikeId: "miscanthus-sinensis",
         status: "invasive",
+        listing: {
+          kind: "impact",
+          level: "spreads",
+          by: "Virginia Natural Heritage, 2024 list",
+          as: "Medium",
+          url: "https://www.dcr.virginia.gov/natural-heritage/invsppdflist",
+        },
         why: "Both are clumping ornamental grasses sold for the same border, and both go tawny and fluffy in autumn.",
         tells: [
           { feature: "Size", native: "Knee to waist high, in a clump about the size of a dinner plate.", lookalike: "Head high, in a clump you'd need both arms around." },
@@ -494,6 +575,13 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
       {
         lookalikeId: "miscanthus-sinensis",
         status: "invasive",
+        listing: {
+          kind: "impact",
+          level: "spreads",
+          by: "Virginia Natural Heritage, 2024 list",
+          as: "Medium",
+          url: "https://www.dcr.virginia.gov/natural-heritage/invsppdflist",
+        },
         why: "Two tall clumping grasses sold from the same bench for the same job — height, movement and winter structure.",
         tells: [
           { feature: "The blade", native: "Plain green or blue-green, with no stripe.", lookalike: "A silver-white stripe down the middle of every blade." },
@@ -551,6 +639,13 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
       {
         lookalikeId: "heracleum-mantegazzianum",
         status: "invasive",
+        listing: {
+          kind: "regulation",
+          by: "Washington State Noxious Weed Control Board",
+          as: "Class A noxious weed",
+          means: "waClassA",
+          url: "https://www.nwcb.wa.gov/weeds/giant-hogweed",
+        },
         why: "Two white-flowered giants of damp ground, in the same family, with sap that burns skin in sunlight — and one of them is four times the size and a notifiable weed.",
         tells: [
           { feature: "Height", native: "Head high at most — six to eight feet.", lookalike: "Ten to fifteen feet, taller than a room." },
@@ -565,6 +660,13 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
       {
         lookalikeId: "ilex-aquifolium",
         status: "invasive",
+        listing: {
+          kind: "regulation",
+          by: "Washington State Noxious Weed Control Board",
+          as: "Class C noxious weed",
+          means: "waClassC",
+          url: "https://www.nwcb.wa.gov/weeds/english-holly",
+        },
         why: "Two glossy evergreens with spine-tipped, holly-shaped leaves — and the second word of one's Latin name is the other's.",
         tells: [
           { feature: "The leaf", native: "A compound leaf: five to nine spiny leaflets ranged along one stalk.", lookalike: "One spiny leaf at a time, thick and wavy." },
@@ -579,6 +681,13 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
       {
         lookalikeId: "rubus-armeniacus",
         status: "invasive",
+        listing: {
+          kind: "regulation",
+          by: "Washington State Noxious Weed Control Board",
+          as: "Class C noxious weed",
+          means: "waClassC",
+          url: "https://www.nwcb.wa.gov/weeds/himalayan-blackberry",
+        },
         why: "Two brambles in the same damp edges, both with arching prickly canes and berries you'd want to pick.",
         tells: [
           { feature: "Canes", native: "Slender, round and brown, with fine soft prickles you can grip through.", lookalike: "Thick as a thumb, five-sided in section, with broad-based hooked thorns." },
@@ -638,6 +747,13 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
       {
         lookalikeId: "cortaderia-selloana",
         status: "invasive",
+        listing: {
+          kind: "impact",
+          level: "transforms",
+          by: "California Invasive Plant Council",
+          as: "High",
+          url: "https://www.cal-ipc.org/plants/inventory/",
+        },
         why: "Both are big fountain-shaped bunchgrasses sold as an architectural clump for a dry garden.",
         tells: [
           { feature: "Size", native: "Waist high, four or five feet across.", lookalike: "Head high or more, and twice as wide." },
@@ -742,6 +858,13 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
       {
         lookalikeId: "ardisia-crenata",
         status: "invasive",
+        listing: {
+          kind: "impact",
+          level: "transforms",
+          by: "Florida Invasive Species Council",
+          as: "Category I",
+          url: "https://www.floridainvasives.org/plant-list/",
+        },
         why: "Two shade shrubs of the same size with glossy leaves and red berries, often in the same hammock.",
         tells: [
           { feature: "Leaf surface", native: "Deeply quilted — the veins are pressed in, so the whole leaf looks corrugated.", lookalike: "Smooth and flat, with wavy, scalloped edges." },
@@ -784,6 +907,13 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
       {
         lookalikeId: "washingtonia-robusta",
         status: "invasive",
+        listing: {
+          kind: "impact",
+          level: "spreads",
+          by: "Florida Invasive Species Council",
+          as: "Category II",
+          url: "https://www.floridainvasives.org/plant-list/",
+        },
         why: "Two fan palms on the same street — and the tall thin one on the postcard is not Florida's state tree.",
         tells: [
           { feature: "The fan", native: "The leaf stalk runs on into the fan and curves it, so the leaf folds like a taco.", lookalike: "The stalk stops where the fan begins; the leaf is flat." },
@@ -846,6 +976,13 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
       {
         lookalikeId: "acer-negundo",
         status: "invasive",
+        listing: {
+          kind: "impact",
+          level: "transforms",
+          by: "Conservatoires botaniques nationaux, Grand Est 2020",
+          as: "Plante Exotique Envahissante implantée",
+          url: "https://especes-exotiques-envahissantes.fr/wp-content/uploads/2023/07/20200402_plfcbnne_cba_cbnbp_liste-categorisee-des-eee-du-grand-est_vff.pdf",
+        },
         why: "Both are maples of hedgerows and riverbanks — but only one of them has a maple-shaped leaf.",
         tells: [
           { feature: "Leaf", native: "One leaf with five blunt rounded lobes; break the stalk and it bleeds milky white.", lookalike: "A leaf split into three to five separate leaflets, coarsely toothed, the end one often three-pointed." },
@@ -863,6 +1000,13 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
       {
         lookalikeId: "ailanthus-altissima",
         status: "invasive",
+        listing: {
+          kind: "regulation",
+          by: "European Union",
+          as: "Species of Union concern",
+          means: "euConcern",
+          url: "https://gd.eppo.int/taxon/AILAL/categorization",
+        },
         why: "Two trees with long leaves split into many leaflets, both quick, both everywhere along Mediterranean roads and railways.",
         tells: [
           { feature: "How the leaves sit", native: "In opposite pairs on the twig.", lookalike: "Alternately, one after another." },

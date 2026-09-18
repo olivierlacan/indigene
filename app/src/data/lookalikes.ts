@@ -396,7 +396,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         listing: {
           kind: "impact",
           level: "spreads",
-          by: "Virginia Natural Heritage, 2024 list",
+          by: "Virginia Natural Heritage",
           as: "Medium",
           url: "https://www.dcr.virginia.gov/natural-heritage/invsppdflist",
         },
@@ -431,7 +431,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         listing: {
           kind: "impact",
           level: "spreads",
-          by: "Virginia Natural Heritage, 2024 list",
+          by: "Virginia Natural Heritage",
           as: "Medium",
           url: "https://www.dcr.virginia.gov/natural-heritage/invsppdflist",
         },
@@ -452,7 +452,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         listing: {
           kind: "impact",
           level: "transforms",
-          by: "Virginia Natural Heritage, 2024 list",
+          by: "Virginia Natural Heritage",
           as: "High",
           url: "https://www.dcr.virginia.gov/natural-heritage/invsppdflist",
         },
@@ -473,7 +473,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         listing: {
           kind: "impact",
           level: "transforms",
-          by: "Virginia Natural Heritage, 2024 list",
+          by: "Virginia Natural Heritage",
           as: "High",
           url: "https://www.dcr.virginia.gov/natural-heritage/invsppdflist",
         },
@@ -494,7 +494,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         listing: {
           kind: "impact",
           level: "transforms",
-          by: "Virginia Natural Heritage, 2024 list",
+          by: "Virginia Natural Heritage",
           as: "High",
           url: "https://www.dcr.virginia.gov/natural-heritage/invsppdflist",
         },
@@ -515,7 +515,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         listing: {
           kind: "impact",
           level: "transforms",
-          by: "Virginia Natural Heritage, 2024 list",
+          by: "Virginia Natural Heritage",
           as: "High",
           url: "https://www.dcr.virginia.gov/natural-heritage/invsppdflist",
         },
@@ -536,7 +536,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         listing: {
           kind: "impact",
           level: "spreads",
-          by: "Virginia Natural Heritage, 2024 list",
+          by: "Virginia Natural Heritage",
           as: "Medium",
           url: "https://www.dcr.virginia.gov/natural-heritage/invsppdflist",
         },
@@ -557,7 +557,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         listing: {
           kind: "impact",
           level: "spreads",
-          by: "Virginia Natural Heritage, 2024 list",
+          by: "Virginia Natural Heritage",
           as: "Medium",
           url: "https://www.dcr.virginia.gov/natural-heritage/invsppdflist",
         },
@@ -578,7 +578,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         listing: {
           kind: "impact",
           level: "spreads",
-          by: "Virginia Natural Heritage, 2024 list",
+          by: "Virginia Natural Heritage",
           as: "Medium",
           url: "https://www.dcr.virginia.gov/natural-heritage/invsppdflist",
         },
@@ -641,7 +641,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         status: "invasive",
         listing: {
           kind: "regulation",
-          by: "Washington State Noxious Weed Control Board",
+          by: "the Washington State Noxious Weed Control Board",
           as: "Class A noxious weed",
           means: "waClassA",
           url: "https://www.nwcb.wa.gov/weeds/giant-hogweed",
@@ -662,7 +662,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         status: "invasive",
         listing: {
           kind: "regulation",
-          by: "Washington State Noxious Weed Control Board",
+          by: "the Washington State Noxious Weed Control Board",
           as: "Class C noxious weed",
           means: "waClassC",
           url: "https://www.nwcb.wa.gov/weeds/english-holly",
@@ -683,7 +683,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         status: "invasive",
         listing: {
           kind: "regulation",
-          by: "Washington State Noxious Weed Control Board",
+          by: "the Washington State Noxious Weed Control Board",
           as: "Class C noxious weed",
           means: "waClassC",
           url: "https://www.nwcb.wa.gov/weeds/himalayan-blackberry",
@@ -750,7 +750,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         listing: {
           kind: "impact",
           level: "transforms",
-          by: "California Invasive Plant Council",
+          by: "the California Invasive Plant Council",
           as: "High",
           url: "https://www.cal-ipc.org/plants/inventory/",
         },
@@ -861,7 +861,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         listing: {
           kind: "impact",
           level: "transforms",
-          by: "Florida Invasive Species Council",
+          by: "the Florida Invasive Species Council",
           as: "Category I",
           url: "https://www.floridainvasives.org/plant-list/",
         },
@@ -910,7 +910,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         listing: {
           kind: "impact",
           level: "spreads",
-          by: "Florida Invasive Species Council",
+          by: "the Florida Invasive Species Council",
           as: "Category II",
           url: "https://www.floridainvasives.org/plant-list/",
         },
@@ -979,7 +979,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         listing: {
           kind: "impact",
           level: "transforms",
-          by: "Conservatoires botaniques nationaux, Grand Est 2020",
+          by: "the Grand Est botanical conservatories",
           as: "Plante Exotique Envahissante implantée",
           url: "https://especes-exotiques-envahissantes.fr/wp-content/uploads/2023/07/20200402_plfcbnne_cba_cbnbp_liste-categorisee-des-eee-du-grand-est_vff.pdf",
         },
@@ -1001,11 +1001,11 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         lookalikeId: "ailanthus-altissima",
         status: "invasive",
         listing: {
-          kind: "regulation",
-          by: "European Union",
-          as: "Species of Union concern",
-          means: "euConcern",
-          url: "https://gd.eppo.int/taxon/AILAL/categorization",
+          kind: "impact",
+          level: "transforms",
+          by: "the Mediterranean botanical conservatories",
+          as: "Majeure",
+          url: "https://invmed.fr/src/listes/index.php?idma=20",
         },
         why: "Two trees with long leaves split into many leaflets, both quick, both everywhere along Mediterranean roads and railways.",
         tells: [

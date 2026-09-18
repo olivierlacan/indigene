@@ -374,7 +374,7 @@ export type PressureLevel = "transforms" | "spreads" | "patchy";
  * so that a new category can't ship without its explanation being written, and
  * so two species in the same class can never be given different accounts of it.
  */
-export type ListingMeans = "waClassA" | "waClassC" | "euConcern";
+export type ListingMeans = "waClassA" | "waClassC";
 
 export type LookalikeListing =
   | {

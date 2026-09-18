@@ -45,9 +45,9 @@ subtitle on the What's new page.
   gets no rank rather than a borrowed one; the Pacific Northwest and Atlantic
   France are blank on purpose.
 - Internal: `npm run listings:check` re-reads every listing from the body that
-  issued it (Cal-IPC's table, Washington's weed pages, EPPO, the conservatory
-  PDFs) and fails on silence as loudly as on disagreement. `listings.yml` runs
-  it every March and September and opens an issue when one has moved.
+  issued it — Cal-IPC's table, Virginia's PDF, the FISC list, Washington's weed
+  pages, INVMED, the Grand Est PDF — and fails on silence as loudly as on
+  disagreement. All 17 verify. `listings.yml` runs it every March and September.
 
 - Regions: **the central California coast is on the map** — 64 native plants for
   the country from Sonoma and Marin through San Francisco Bay to Big Sur and the

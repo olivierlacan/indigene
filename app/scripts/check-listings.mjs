@@ -86,12 +86,22 @@ function nwcb() {
   };
 }
 
-/** EPPO's categorization tab lists the regulatory lists a taxon sits on. We only
- *  ask whether the EU one is still among them. */
-function eppo() {
-  return async (_latin, url) => {
-    const text = plain(await getText(url));
-    return /IAS of Union concern/i.test(text) ? "Species of Union concern" : null;
+/**
+ * INVMED holds the Mediterranean conservatories' lists — PACA, Occitanie, Corse —
+ * and serves the rows from a small endpoint the page itself calls, one card per
+ * taxon with « Catégorie PACA : Majeure » in it. Asked per species, with `zone=P`
+ * for Provence-Alpes-Côte d'Azur.
+ */
+function invmed() {
+  return async (latin) => {
+    const text = plain(
+      await getText(
+        `https://invmed.fr/src/listes/evee-liste.php?zone=P&taxon=${encodeURIComponent(latin)}`
+      )
+    );
+    if (!text.includes(latin)) return null;
+    const m = text.match(/Cat[ée]gorie PACA\s*:\s*([A-Za-zÀ-ÿ]+)/);
+    return m ? m[1] : null;
   };
 }
 
@@ -145,20 +155,54 @@ function pdfText(buf) {
       continue; // not a Flate stream (an image, a font) — skip it
     }
     const s = body.toString("latin1");
-    for (const m of s.matchAll(/\((?:\\.|[^\\()])*\)/g)) {
-      out.push(m[0].slice(1, -1).replace(/\\([()\\])/g, "$1"));
-    }
+    // Only the streams that actually draw text. A tagged PDF also carries a
+    // structure tree full of strings like "R17C1_Ficaria_", and those come
+    // *before* the page content — searching them finds the species in a cell
+    // label with no rank next to it, and the check reports silence on a list
+    // that is perfectly intact.
+    if (!/\)\s*T[jJ]|\]\s*TJ/.test(s)) continue;
+    for (const m of s.matchAll(/\((?:\\.|[^\\()])*\)/g)) out.push(unescapePdf(m[0].slice(1, -1)));
     out.push("\n");
   }
   // The bytes are whatever the document's font encoding chose. Try UTF-8 first;
-  // when that produces replacement characters the file is single-byte WinAnsi
-  // (which is what these 2020-vintage conservatory PDFs are), and the accents
-  // only survive if it's read as Latin-1. Guessing wrong loses the é in
-  // « implantée », which is the one character this comparison turns on.
+  // when that produces replacement characters the file is single-byte WinAnsi,
+  // which is what both of these lists are, and the characters only survive if
+  // it's read one byte at a time. Guessing wrong loses the é in « implantée »,
+  // which is the one character that comparison turns on.
   const raw = Buffer.from(out.join(""), "latin1");
   const utf8 = raw.toString("utf8");
-  const text = utf8.includes("\ufffd") ? raw.toString("latin1") : utf8;
+  const text = utf8.includes("\ufffd") ? winAnsi(raw) : utf8;
   return text.replace(/[ \t]+/g, " ");
+}
+
+/**
+ * WinAnsi, not Latin-1 — they agree everywhere except 0x80–0x9F, and that range
+ * is where the punctuation lives.
+ *
+ * It is not a pedantic difference. Virginia writes the dot in each physiographic
+ * province column as `\225`, which is WinAnsi 0x95, **•**. Read as Latin-1 it
+ * becomes U+0095, an invisible control character, and the check concludes the
+ * species has been dropped from every province in the state.
+ */
+function winAnsi(buf) {
+  // cp1252 0x80–0x9F, in order. Written as escapes because two of them are the
+  // curly double quotes, which a source file cannot hold literally here.
+  const high = "\u20ac\u0081\u201a\u0192\u201e\u2026\u2020\u2021\u02c6\u2030\u0160\u2039\u0152\u008d\u017d\u008f\u0090\u2018\u2019\u201c\u201d\u2022\u2013\u2014\u02dc\u2122\u0161\u203a\u0153\u009d\u017e\u0178";
+  let out = "";
+  for (const b of buf) out += b >= 0x80 && b <= 0x9f ? high[b - 0x80] : String.fromCharCode(b);
+  return out;
+}
+
+/** A PDF string literal's escapes. The octal ones matter here: Virginia's
+ *  province columns are bullets, written `\\225`, and without this they arrive
+ *  as a literal backslash-two-two-five in the middle of every row. */
+function unescapePdf(s) {
+  return s
+    .replace(/\\([0-7]{1,3})/g, (_, o) => String.fromCharCode(parseInt(o, 8)))
+    .replace(/\\n/g, "\n")
+    .replace(/\\r/g, "\r")
+    .replace(/\\t/g, "\t")
+    .replace(/\\([()\\])/g, "$1");
 }
 
 /**
@@ -176,27 +220,61 @@ function same(found, claimed) {
   return fold(found) === fold(claimed);
 }
 
-/** Bodies whose lists this session cannot reach are still asked — a refusal has
- *  to show up as `silent`, not as a row we quietly skip. */
-function pageMentions(pattern) {
-  return async (latin, url) => {
-    const text = plain(await getText(url));
+/**
+ * Virginia publishes its list as one PDF, a row per species: scientific name,
+ * common name, the invasiveness rank, then a dot in each physiographic province
+ * the plant is established in — Mountain, Piedmont, Coastal Plain.
+ *
+ * The rank is what we print, and it is what this compares. The province columns
+ * are why Virginia is the right authority for our Mid-Atlantic region at all —
+ * every species we cite carries the Piedmont dot — but flattening the PDF loses
+ * which column a dot sat in, so all this can add is that the species is still
+ * established somewhere in the state. Which province is a human reading.
+ *
+ * The URL is the PDF rather than the landing page the data links to, because the
+ * landing page is for a reader and this is for a parser.
+ */
+function virginia() {
+  let text = null;
+  return async (latin) => {
+    if (text === null) {
+      const res = await fetch(
+        "https://www.dcr.virginia.gov/natural-heritage/document/nh-invasive-plant-list-2024.pdf",
+        { headers: { "user-agent": UA } }
+      );
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      text = pdfText(Buffer.from(await res.arrayBuffer()));
+    }
     const i = text.indexOf(latin);
     if (i < 0) return null;
-    const m = text.slice(i, i + 400).match(pattern);
-    return m ? m[0] : null;
+    const row = text.slice(i, i + 160);
+    const rank = row.match(/\b(High|Medium|Low)\b/);
+    if (!rank) return null;
+    const provinces = (row.slice(rank.index).match(/[\u2022\u00b7]/g) ?? []).length;
+    return provinces ? rank[1] : null;
   };
 }
 
+/** FISC publishes the list as an HTML table: scientific name, common name, the
+ *  zones it's in (N/C/S), and the category. */
+async function fisc() {
+  const rows = new Map();
+  const html = await getText("https://www.floridainvasives.org/plant-list/2023-invasive-plant-species/");
+  for (const tr of html.match(/<tr[\s\S]*?<\/tr>/gi) ?? []) {
+    const cells = [...tr.matchAll(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/gi)].map((m) => plain(m[1]).trim());
+    if (cells.length >= 4 && /^I{1,2}$/.test(cells[3])) rows.set(cells[0], `Category ${cells[3]}`);
+  }
+  if (rows.size < 50) throw new Error(`FISC list parsed to ${rows.size} rows — the table shape changed`);
+  return (latin) => rows.get(latin) ?? null;
+}
+
 const READERS = {
-  "California Invasive Plant Council": { build: calipc },
-  "Washington State Noxious Weed Control Board": { build: async () => nwcb() },
-  "European Union": { build: async () => eppo() },
-  "Conservatoires botaniques nationaux, Grand Est 2020": { build: async () => frenchList() },
-  "Virginia Natural Heritage, 2024 list": {
-    build: async () => pageMentions(/\b(High|Medium|Low)\b/),
-  },
-  "Florida Invasive Species Council": { build: async () => pageMentions(/Category (I{1,2})\b/) },
+  "the California Invasive Plant Council": { build: calipc },
+  "the Washington State Noxious Weed Control Board": { build: async () => nwcb() },
+  "the Mediterranean botanical conservatories": { build: async () => invmed() },
+  "the Grand Est botanical conservatories": { build: async () => frenchList() },
+  "Virginia Natural Heritage": { build: async () => virginia() },
+  "the Florida Invasive Species Council": { build: fisc },
 };
 
 // ---------------------------------------------------------------------------

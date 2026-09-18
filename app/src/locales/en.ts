@@ -1249,14 +1249,12 @@ export const en = {
     "Out in the wild and gaining ground, doing real damage, but not remaking the place.",
   "lookalike.pressurePlain.patchy":
     "Loose in the wild here, and so far staying local.",
-  "lookalike.listedImpact": "{by} rates it {as} here.",
+  "lookalike.listedImpact": "Listed {as} here by {by}.",
   "lookalike.listedRegulation": "{by} lists it {as}. {means}",
   "lookalike.means.waClassA":
     "Still rare enough here that the state requires every plant found to be destroyed, and bans its sale.",
   "lookalike.means.waClassC":
     "That class isn't a verdict on how bad it is — it means the plant is already everywhere, so the state leaves control to each county instead of requiring it.",
-  "lookalike.means.euConcern":
-    "Across the EU it may not be sold, planted, kept or moved.",
   "lookalike.unassessed":
     "Nobody has scored how hard it pushes here yet.",
   "lookalike.where.invasive": "Invasive in",

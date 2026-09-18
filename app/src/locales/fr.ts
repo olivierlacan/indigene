@@ -1251,14 +1251,12 @@ export const fr: Dict = {
     "Installé dans la nature et gagnant du terrain, avec de vrais dégâts, mais sans refaire le paysage.",
   "lookalike.pressurePlain.patchy":
     "Échappé des jardins ici, et pour l'instant cantonné à quelques stations.",
-  "lookalike.listedImpact": "{by} le classe {as} ici.",
+  "lookalike.listedImpact": "Classé {as} ici par {by}.",
   "lookalike.listedRegulation": "{by} l'inscrit comme {as}. {means}",
   "lookalike.means.waClassA":
     "Encore assez rare ici pour que l'État impose la destruction de chaque pied trouvé et en interdise la vente.",
   "lookalike.means.waClassC":
     "Cette classe ne dit rien de sa nocivité : elle signifie que la plante est déjà partout, et que l'État laisse la lutte à chaque comté au lieu de l'imposer.",
-  "lookalike.means.euConcern":
-    "Dans toute l'Union européenne, il est interdit de le vendre, de le planter, de le détenir ou de le transporter.",
   "lookalike.unassessed":
     "Personne n'a encore évalué la pression qu'il exerce ici.",
   "lookalike.where.invasive": "Envahissante :",

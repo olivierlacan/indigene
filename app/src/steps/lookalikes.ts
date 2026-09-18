@@ -104,7 +104,6 @@ export function statusBadge(status: LookalikeStatus): HTMLElement {
 const MEANS_KEY = {
   waClassA: "lookalike.means.waClassA",
   waClassC: "lookalike.means.waClassC",
-  euConcern: "lookalike.means.euConcern",
 } as const satisfies Record<ListingMeans, string>;
 
 /** The badge class each pressure level wears — the same caution red as

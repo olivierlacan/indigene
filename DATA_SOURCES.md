@@ -306,8 +306,8 @@ own ground.
 | **Cal-IPC Inventory** (California Invasive Plant Council) | The California regions | High · Moderate · Limited, plus *Alert* and *Watch* | ✅ Authority. Published as one HTML table, so `listings:check` re-reads it in full. |
 | **Virginia Invasive Plant Species List** (Dept. of Conservation & Recreation, Natural Heritage) | The Mid-Atlantic / Northeast Piedmont | High · Medium · Low, explicitly the NatureServe I-Rank | ✅ Authority. The list is also broken out by physiographic province, Piedmont among them. |
 | **Florida Invasive Species Council** (FISC, formerly FLEPPC) | The two Florida regions | Category I (documented ecological damage) · Category II (increasing, damage not yet shown) | ✅ Authority. Revised at least every two years. |
-| **Conservatoires botaniques nationaux** — regional *listes catégorisées des EEE* | The France regions | *EEE implantée* · *EEE émergente* · *potentiellement invasive* · *liste d'observation*, scored by the EPPO method | ✅ Authority, per *région*. Only Grand Est is wired up so far. |
-| **EU Regulation 1143/2014** — species of Union concern, via **EPPO** | Europe-wide legal listing | On the Union list, or not | ✅ Authority, and a **regulation**, not an impact score — see below. |
+| **Conservatoires botaniques nationaux** — *liste catégorisée des EEE du Grand Est* | Continental France | *EEE implantée* · *EEE émergente* · *potentiellement invasive* · *liste d'observation*, scored by the EPPO method | ✅ Authority, per *région*. |
+| **INVMED** — the Mediterranean conservatories' lists (PACA, Occitanie, Corse) | Mediterranean France | *Majeure* · *Modérée* · *Émergente* · *Alerte* · *Non envahissante* | ✅ Authority, per *région*. *Alerte* is a watch flag, not an impact score, so it yields no level. |
 
 **A weed class is not a severity, and the type refuses to let it become one.**
 Washington lists Himalayan blackberry and English holly in the same noxious-weed
@@ -325,10 +325,13 @@ carries a level, and the `regulation` one has to say what the listing *asks*.
 
 **No rank where nobody ranked.** A region whose ground nobody has assessed gets
 no level, rather than one borrowed from a region that has one — the same
-"wrong place" refusal that kept VASCAN out of the French names. The Pacific
-Northwest and Atlantic France are both in that position today, and the page says
-so instead of guessing. That is a visible gap, which is the point: a blank is an
-invitation to go and find the assessment, and a borrowed number never is.
+"wrong place" refusal that kept VASCAN out of the French names. Four ties are
+blank today: three in Atlantic France, whose conservatory list we have no
+reachable copy of, and cherry laurel around the Mediterranean, which INVMED
+flags *Alerte* — a species to watch for, which is not a statement about how much
+ground it takes. The page says so instead of guessing. That is a visible gap,
+which is the point: a blank is an invitation to go and find the assessment, and
+a borrowed number never is.
 
 **`npm run listings:check` re-reads every one of them.** It asks each body for
 its own list and compares, species by species, and it fails on **silence** —

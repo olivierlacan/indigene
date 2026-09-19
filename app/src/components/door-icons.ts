@@ -1,6 +1,7 @@
-// Three glyphs for the "ways in" callouts on the plants index (see steps/plants
+// Four glyphs for the "ways in" callouts on the plants index (see steps/plants
 // .ts): one for identifying a plant you're unsure about, one for the native to
-// grow in a common ornamental's place, one for making more of a plant you have.
+// grow in a common ornamental's place, one for whether that planting costs you
+// the harvest, and one for making more of a plant you have.
 // Same flat 48×48 idiom as the plant silhouettes and the sun glyphs, drawn in
 // `currentColor` so the tinted slot they sit in colours them (brand green on
 // `--brand-bg`). Decorative — the callout carries the words.
@@ -115,5 +116,37 @@ export function propagateIcon(size = 30): SVGSVGElement {
   runner.setAttribute("stroke-width", "3.6");
   runner.setAttribute("stroke-linecap", "round");
   s.append(runner, sprout("translate(16 41)"), sprout("translate(33 41) scale(0.6)"));
+  return s;
+}
+
+/** A carrot: the "will planting this cost me the vegetables?" way in.
+ *
+ *  The other three glyphs draw a *relationship* — two leaves that resemble each
+ *  other, a leaf being swapped in, a parent with an offshoot — and the first go
+ *  at this one tried the same, a native flowering beside a vegetable on shared
+ *  ground. At the 30px these are actually drawn at, the pair turned to mush:
+ *  the bloom read as a pin and the root as a tuft of grass. One bold shape
+ *  survives the size, and the carrot is the only thing in the set that isn't a
+ *  leaf, so it is also the one you can tell apart at a glance. It matches the
+ *  🥕 the plant pages use for the same door.
+ */
+export function cropsIcon(size = 30): SVGSVGElement {
+  const s = svg(size);
+  // The root: a softly domed shoulder tapering to a tip, filled. Drawn wide —
+  // a narrow triangle is a spike, and the shoulder is what makes it a carrot.
+  const root = document.createElementNS(NS, "path");
+  root.setAttribute("d", "M13 18Q24 12 35 18L24 42Z");
+  root.setAttribute("fill", "currentColor");
+  // Three fronds off the shoulder, stroked in the same weight as the sprouts.
+  const frond = (d: string): SVGPathElement => {
+    const p = document.createElementNS(NS, "path");
+    p.setAttribute("d", d);
+    p.setAttribute("fill", "none");
+    p.setAttribute("stroke", "currentColor");
+    p.setAttribute("stroke-width", "3.4");
+    p.setAttribute("stroke-linecap", "round");
+    return p;
+  };
+  s.append(root, frond("M24 15V6"), frond("M19 16L13 8"), frond("M29 16L35 8"));
   return s;
 }

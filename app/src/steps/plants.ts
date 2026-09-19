@@ -16,7 +16,7 @@ import { REGIONS } from "../lib/plants";
 // name matches — and *looks* matched — identically wherever you type it.
 import { highlight, norm } from "../components/filter-field";
 import { plantThumb } from "../components/plant-thumb";
-import { lookalikeIcon, alternativeIcon, propagateIcon } from "../components/door-icons";
+import { lookalikeIcon, alternativeIcon, cropsIcon, propagateIcon } from "../components/door-icons";
 import type { PlantForm } from "../types";
 import { t, tx, fmtNumber, getLang } from "../lib/i18n";
 import { regionName, regionShort, searchAliases, localName } from "../lib/names";
@@ -197,7 +197,7 @@ export function renderPlants(main: HTMLElement): void {
   main.append(
     el("h2", { class: "step-title" }, t("plants.title")),
     el("p", { class: "step-lede" }, t("plants.lede")),
-    // Three ways in, as callout cards rather than running prose — each is a
+    // Four ways in, as callout cards rather than running prose — each is a
     // distinct side-door, so it reads as one, set apart from the search that is
     // the section's actual job. The whole card is the link (like the plant cards
     // below), with a drawn icon, the sentence, and its action phrase picked out;
@@ -207,14 +207,19 @@ export function renderPlants(main: HTMLElement): void {
     // because you're not sure what you're holding — and the header has no room for
     // a fifth nav item (see components/app-menu.ts on how tightly it's measured).
     // Then swaps: the reader weighing a Bermuda-grass lawn or a barberry hedge
-    // against the native that does the same job. Then the how-tos: once you own
-    // one, the next question is how to make more of it, and when in the year.
+    // against the native that does the same job. Then the hesitation that stops
+    // people between deciding and digging — will it cost me the vegetables? Then
+    // the how-tos: once you own one, the next question is how to make more of it,
+    // and when in the year.
     el("div", { class: "plant-doors" }, [
       door("#/lookalikes", lookalikeIcon(), tx("plants.lookalikesLink", {
         link: el("span", { class: "plant-door-cta" }, t("plants.lookalikesLinkText")),
       })),
       door("#/alternatives", alternativeIcon(), tx("plants.alternativesLink", {
         link: el("span", { class: "plant-door-cta" }, t("plants.alternativesLinkText")),
+      })),
+      door("#/crops", cropsIcon(), tx("plants.cropsLink", {
+        link: el("span", { class: "plant-door-cta" }, t("plants.cropsLinkText")),
       })),
       door("#/planting", propagateIcon(), tx("plants.plantingLink", {
         link: el("span", { class: "plant-door-cta" }, t("plants.plantingLinkText")),

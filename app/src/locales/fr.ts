@@ -1320,6 +1320,8 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   "plants.alternativesLink": "Sur le point d'acheter pour un coin de jardin ? Certains choix habituels ne sont pas d'ici — et une indigène fait mieux le travail, en nourrissant la faune qu'ils laissent de côté. {link}.",
   "plants.alternativesLinkText": "voyez quoi planter à la place",
+  "plants.cropsLink": "Peur des ravageurs ? Des fermes ont mesuré ce qu'une bordure d'indigènes fait à la culture d'à côté — {link}.",
+  "plants.cropsLinkText": "voyez ce qu'elles ont trouvé",
   "plant.alternativesTitle": "À planter plutôt que : ",
   "plant.cropsTitle": "Près du potager : ",
   "plant.cropsLink": "ce que les fermes ont mesuré",

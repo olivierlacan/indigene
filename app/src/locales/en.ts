@@ -1321,6 +1321,10 @@ export const en = {
   // ---------------------------------------------------------------------
   "plants.alternativesLink": "About to buy something for a spot? Some of the usual choices aren't from here — and a native does the job better, feeding the wildlife they can't. {link}.",
   "plants.alternativesLinkText": "see what to grow instead",
+  // The third door on the plants index, between the swap and the how-to: the
+  // hesitation that stops people between deciding and digging.
+  "plants.cropsLink": "Worried about pests? Farms measured what a native border does to the crop beside it — {link}.",
+  "plants.cropsLinkText": "see what they found",
   "plant.alternativesTitle": "Grow it instead of: ",
   // The third line of the same stack, and the only one that is the same on
   // every plant page: the way into `#/crops`. It states where the question

@@ -39,6 +39,10 @@ plant and animal prose, empty states, error messages, and release notes.
   region's box: 6,819 (GBIF)". Same for file paths, function names, workflow
   names and internal jargon. The script name belongs in the commit message, the
   code comment, or an `Internal:` changelog bullet.
+- **A title names the thing; a pronoun names nothing.** "How hard it pushes"
+  asks the reader to hold a blank until the next sentence fills it in — and a
+  title has no next sentence. Say what *it* was. This binds every heading, card
+  title, button label and release name in the app.
 - **Every word is also a translation.** French is written by hand from this
   English (`src/locales/`, `src/locales/prose.fr/`). A paragraph we didn't
   need is a paragraph somebody translates, reviews and maintains forever.
@@ -214,6 +218,18 @@ rules:
   `version` to match, add the compare link at the bottom, and start a fresh
   `Unreleased`. No fixed cadence, no conventional commits — the version number
   just increments when a feature ships.
+- **A release name says what shipped, in words a reader can repeat.** No
+  pronoun — *What's new, and where it would go* and *A spot it remembers, and
+  links that travel* are the ones nobody can quote back, because the pronoun is
+  carrying the half that mattered. Name the thing instead: *Indigene speaks
+  French*, *Meet the wildlife*, *Degrees of invasiveness*.
+- **Two things shipped? Name both, with an ampersand.** *California's Central
+  Coast & more native swaps*. Brevity is not the goal here and cutting to three
+  words is how a name goes wrong: a release that added a whole region got named
+  *A native for every staple*, which was true of the smaller half and silently
+  deleted the region from the record. A name that omits the headline is worse
+  than a long one. Where the thing has a proper name — a region, a language, a
+  place — that name is the release name, and it is not shortened.
 
 Three more conventions the compiler understands:
 

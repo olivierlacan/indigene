@@ -31,6 +31,12 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+## [0.32] - 2026-09-19
+
+**Whether natives bring pests & photographs for the native swaps**
+
+[![Three pest chains, each starting at a plant sold in garden centres](docs/screenshots/pr-155/thumb.png)](docs/screenshots/pr-155/crops-chain-dark.png)
+
 ### Added
 
 - Will the bees and birds you invite eat your fruit and vegetables? A new page
@@ -68,10 +74,9 @@ subtitle on the What's new page.
   the full list already did, instead of squeezing into a narrow column down
   the middle.
 - Internal: the gzipped bundle figure in `README.md`, `PROJECT_BRIEF.md`,
-  `app/README.md` and `docs/ecoregion-plan.md` said ~365 KB and measured ~390;
-  re-measured and updated.
-- Internal: re-measured again after the vegetables page — the same four docs
-  now say ~401 KB. The page's English and French text is the whole difference.
+  `app/README.md` and `docs/ecoregion-plan.md` had drifted — it said ~365 KB
+  against a real ~390. Re-measured twice over this release and now ~401 KB,
+  the rise being the vegetables page's English and French text.
 
 ## [0.31] - 2026-09-18
 
@@ -2488,7 +2493,8 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/95c967f...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/e0f70ef...HEAD
+[0.32]: https://github.com/olivierlacan/indigene/compare/655cb62...e0f70ef
 [0.31]: https://github.com/olivierlacan/indigene/compare/46a1ff0...655cb62
 [0.30]: https://github.com/olivierlacan/indigene/compare/d82b7ce...46a1ff0
 [0.29]: https://github.com/olivierlacan/indigene/compare/95c967f...d82b7ce

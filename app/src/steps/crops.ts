@@ -109,7 +109,9 @@ function figures(): Stat[] {
       source: "Mols & Visser 2007, PLOS ONE",
     },
     {
-      icon: "🪳",
+      // A spider, because there is no tick emoji and a tick is an arachnid.
+      // The cockroach that was here is a different order entirely.
+      icon: "🕷️",
       label: t("crops.tile.ticks.label"),
       value: t("crops.tile.ticks.value"),
       sub: t("crops.tile.ticks.sub"),

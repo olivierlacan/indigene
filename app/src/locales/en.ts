@@ -2161,9 +2161,12 @@ export const en = {
 
   // The four figures worth scanning, as tiles. Each tap opens the study.
   "crops.tilesLabel": "Four figures from the farm studies, at a glance",
+  // "41 of 41" on its own is trivia: it asks the reader to already know how
+  // many crops were studied. The value says the finding and the sub says the
+  // sample, which is the order they're read in.
   "crops.tile.set.label": "Wild bees",
-  "crops.tile.set.value": "41 of 41",
-  "crops.tile.set.sub": "crops they helped",
+  "crops.tile.set.value": "every crop",
+  "crops.tile.set.sub": "of the 41 they tested",
   "crops.tile.set.explain":
     "Across 41 crop systems worldwide, more visits from wild insects meant more fruit set in every single one — and per visit, twice as much as a honey bee. Honey bees added to that rather than standing in for it.",
   "crops.tile.control.label": "Pest control",
@@ -2178,7 +2181,7 @@ export const en = {
     "In commercial orchards, blocks where great tits raised a brood had half the caterpillar damage of blocks where they didn't. The cost to the grower was about two nest boxes per hectare.",
   "crops.tile.ticks.label": "Infected ticks",
   "crops.tile.ticks.value": "280 vs 30",
-  "crops.tile.ticks.sub": "per hectare, barberry or none",
+  "crops.tile.ticks.sub": "per hectare, with barberry or without",
   "crops.tile.ticks.explain":
     "Connecticut woodland under intact Japanese barberry — a shrub sold for hedging — held about 280 Lyme-infected blacklegged ticks per hectare. Where the barberry had been cut back: 121. Where there had never been any: 30.",
 

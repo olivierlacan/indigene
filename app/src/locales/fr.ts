@@ -2150,8 +2150,8 @@ export const fr: Dict = {
   // Les quatre chiffres à parcourir d'un coup d'œil. Chaque tuile ouvre l'étude.
   "crops.tilesLabel": "Quatre chiffres tirés des études agricoles, en un coup d'œil",
   "crops.tile.set.label": "Abeilles sauvages",
-  "crops.tile.set.value": "41 sur 41",
-  "crops.tile.set.sub": "cultures aidées",
+  "crops.tile.set.value": "toutes",
+  "crops.tile.set.sub": "les 41 cultures testées",
   "crops.tile.set.explain":
     "Sur 41 systèmes de culture dans le monde, plus de visites d'insectes sauvages a voulu dire plus de fleurs devenues fruits, dans chacun d'eux — et, à visite égale, deux fois plus qu'une abeille domestique. Les abeilles domestiques s'ajoutaient à cela plutôt qu'elles ne le remplaçaient.",
   "crops.tile.control.label": "Lutte naturelle",

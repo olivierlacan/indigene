@@ -26,7 +26,7 @@ import {
   alternativeIndex,
   mappedOrnamentalCount,
   nativesForOrnamental,
-  inatSearchUrl,
+  inatTaxonUrl,
 } from "../lib/alternatives";
 import type { AlternativeIndexRow, NativeForOrnamental } from "../lib/alternatives";
 import { nativeSomewhere, getLookalikeByLatin, invasiveRegionsFor } from "../lib/lookalikes";
@@ -36,7 +36,7 @@ import { citation } from "../components/citation";
 import { silhouetteFor } from "../components/plant-card";
 import { plantThumb, alternativeThumb } from "../components/plant-thumb";
 import { heroFigure } from "../components/hero-figure";
-import { alternativePhotoFor } from "../lib/hero-photo";
+import { alternativePhotoFor, inatTaxonIdFor } from "../lib/hero-photo";
 import type { Ornamental, AlternativeLink, SwapAxis } from "../types";
 import { t, tn, tx, fmtNumber } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
@@ -279,7 +279,11 @@ export async function renderAlternative(main: HTMLElement, param?: string): Prom
           t("alternatives.originSource"),
           ...citation(ornamental.originBasis),
           " ",
-          el("a", { href: inatSearchUrl(ornamental.latin), target: "_blank", rel: "noopener" },
+          el("a", {
+            href: inatTaxonUrl(ornamental.latin, inatTaxonIdFor("ornamental", ornamental.id)),
+            target: "_blank",
+            rel: "noopener",
+          },
             t("alternative.seeOnInat")),
         ]),
       ]),
@@ -294,14 +298,24 @@ export async function renderAlternative(main: HTMLElement, param?: string): Prom
 }
 
 /** One native that stands in for this ornamental: which plant, in which region,
- *  why it fills the same job, and the water/disease/wildlife case side by side. */
+ *  why it fills the same job, and the water/disease/wildlife case side by side.
+ *
+ *  **The heading is the way to the plant.** It used to be a full-width "See the
+ *  native's page" button under the card, which cost a row of height per swap
+ *  and repeated what the heading above it already said. A reader who wants the
+ *  plant taps the plant's name; the square beside it opens its photograph. */
 function swapCard(ornamental: Ornamental, n: NativeForOrnamental): HTMLElement {
   const nativeName = commonName(n.plant);
-  return el("section", { class: "card" }, [
+  return el("section", { class: "card alt-swap" }, [
     el("div", { class: "lookalike-head" }, [
-      plantThumb(n.plant.id, n.plant.form, { regionId: n.region.meta.id }),
+      plantThumb(n.plant.id, n.plant.form, {
+        regionId: n.region.meta.id,
+        enlarge: { name: nativeName, latin: n.plant.latin },
+      }),
       el("div", {}, [
-        el("h3", { style: "margin:0" }, t("alternatives.swapHeading", { name: nativeName })),
+        el("h3", { class: "swap-name", style: "margin:0" }, [
+          el("a", { href: `#/plants/${n.plant.id}` }, t("alternatives.swapHeading", { name: nativeName })),
+        ]),
         el("p", { class: "score-why", style: "margin:0.2rem 0 0" }, [
           el("a", { href: `#/regions/${n.region.meta.id}` }, regionName(n.region.meta)),
         ]),
@@ -315,8 +329,6 @@ function swapCard(ornamental: Ornamental, n: NativeForOrnamental): HTMLElement {
     el("p", { class: "confidence", style: "margin-top:0.6rem" }, [
       el("span", {}, [t("alternatives.tellsSource"), ...citation(n.link.basis)]),
     ]),
-    el("a", { class: "btn btn-secondary btn-block", style: "margin-top:0.6rem", href: `#/plants/${n.plant.id}` },
-      t("alternatives.seeTheNative")),
   ]);
 }
 

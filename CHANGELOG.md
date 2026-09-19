@@ -31,6 +31,34 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Added
+
+- Native swaps: tap the small picture beside a suggested plant and it opens
+  full size, with the photographer's name and licence — the same viewer the
+  big photographs use.
+- Native swaps: 27 more of the garden plants we suggest a native for now have
+  a photograph of their own, instead of a drawing of a generic shrub.
+
+### Changed
+
+- Native swaps: the plant's name in each suggestion is the link to its page
+  now, in place of the wide button underneath it — so a page of five
+  suggestions is a screenful shorter.
+- Look-alikes & Native swaps: on a laptop these pages use the width they have.
+  The photograph sits beside the text, and each thing being compared reads
+  across one line instead of three.
+
+### Fixed
+
+- Look-alikes & Native swaps: "Photos on iNaturalist" opens the plant's own
+  page there, rather than a list of search results to pick from.
+- Native swaps: the list of swaps for one region fills a laptop screen like
+  the full list already did, instead of squeezing into a narrow column down
+  the middle.
+- Internal: the gzipped bundle figure in `README.md`, `PROJECT_BRIEF.md`,
+  `app/README.md` and `docs/ecoregion-plan.md` said ~365 KB and measured ~390;
+  re-measured and updated.
+
 ## [0.31] - 2026-09-18
 
 **More native swaps & missing natives**

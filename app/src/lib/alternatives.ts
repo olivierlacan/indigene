@@ -147,15 +147,9 @@ export function alternativeCountForRegion(regionId: string): number {
   return Object.keys(ALTERNATIVES[regionId] ?? {}).length;
 }
 
-/**
- * Where to go and look at the ornamental: iNaturalist's own taxon search, by
- * scientific name — the same choice `inatSearchUrl` in `lib/lookalikes.ts`
- * makes, and for the same reason (a name search follows synonymy and can't rot
- * into the wrong species the way a hand-copied id can).
- */
-export function inatSearchUrl(latin: string): string {
-  return `https://www.inaturalist.org/taxa/search?q=${encodeURIComponent(latin)}`;
-}
+/** The same link rule the impostors use, written once in `lib/lookalikes.ts`
+ *  and re-exported so the ornamentals page needn't reach across for it. */
+export { inatTaxonUrl } from "./lookalikes";
 
 /**
  * Dev-only integrity check, in the same spirit as `auditLookalikes`: every

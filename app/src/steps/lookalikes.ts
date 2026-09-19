@@ -26,7 +26,7 @@ import {
   mappedLookalikeCount,
   nativesForLookalike,
   nativeSomewhere,
-  inatSearchUrl,
+  inatTaxonUrl,
   statusRegions,
   pressureOf,
   worstPressure,
@@ -41,7 +41,7 @@ import { openTermDialog } from "../components/term-dialog";
 import { silhouetteFor } from "../components/plant-card";
 import { lookalikeThumb } from "../components/plant-thumb";
 import { heroFigure } from "../components/hero-figure";
-import { heroPhotoFor, lookalikePhotoFor, asObservation, heroSourceUrl, type HeroPhoto } from "../lib/hero-photo";
+import { heroPhotoFor, inatTaxonIdFor, lookalikePhotoFor, asObservation, heroSourceUrl, type HeroPhoto } from "../lib/hero-photo";
 import { openObservationLightbox, licenseLabel } from "../components/lightbox";
 import { loadPhoto } from "../lib/photo";
 import type {
@@ -552,7 +552,11 @@ export async function renderLookalike(main: HTMLElement, param?: string): Promis
           t("lookalikes.originSource"),
           ...citation(lookalike.originBasis),
           " ",
-          el("a", { href: inatSearchUrl(lookalike.latin), target: "_blank", rel: "noopener" },
+          el("a", {
+            href: inatTaxonUrl(lookalike.latin, inatTaxonIdFor("lookalike", lookalike.id)),
+            target: "_blank",
+            rel: "noopener",
+          },
             t("lookalike.seeOnInat")),
         ]),
       ]),
@@ -571,13 +575,18 @@ export async function renderLookalike(main: HTMLElement, param?: string): Promis
 }
 
 /** One native this impostor stands in for: which plant, in which region, why
- *  they're mixed up, and the side-by-side tells. */
+ *  they're mixed up, and the side-by-side tells.
+ *
+ *  The heading is the link to the plant's own page — a full-width button under
+ *  the card said the same thing a second time, one card-height lower down. */
 function comparisonCard(lookalike: Lookalike, n: NativeForLookalike): HTMLElement {
   const nativeName = commonName(n.plant);
   const pressure = pressureOf(n.link);
   return el("section", { class: "card" }, [
     el("div", { class: "lookalike-head" }, [
-      el("h3", { style: "margin:0" }, t("lookalikes.mistakenForHeading", { name: nativeName })),
+      el("h3", { class: "swap-name", style: "margin:0" }, [
+        el("a", { href: `#/plants/${n.plant.id}` }, t("lookalikes.mistakenForHeading", { name: nativeName })),
+      ]),
       statusBadge(n.link.status),
       // Second badge, same row: "Invasive here" says whether, this says how
       // hard. Only where somebody has actually scored this ground.
@@ -596,10 +605,6 @@ function comparisonCard(lookalike: Lookalike, n: NativeForLookalike): HTMLElemen
     el("p", { class: "confidence", style: "margin-top:0.6rem" }, [
       el("span", {}, [t("lookalike.tellsSource"), ...citation(n.link.basis)]),
     ]),
-    // No plant name in the label: it changes width per plant and the heading
-    // right above already says which one this card is about.
-    el("a", { class: "btn btn-secondary btn-block", style: "margin-top:0.6rem", href: `#/plants/${n.plant.id}` },
-      t("lookalikes.seeTheNative")),
   ]);
 }
 

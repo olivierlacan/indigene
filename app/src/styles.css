@@ -2206,6 +2206,34 @@ details.weights {
   object-fit: cover;
 }
 
+/* The slot as a control, where the photograph is worth a proper look — the
+   swap cards, where 72 px of plant is a hint that there's a plant to see and
+   not a look at one. It keeps the slot's size, corners and stacking and only
+   undoes what a <button> brings with it. The zoom cursor and the hover nudge
+   are the hero photo's, so a small picture that opens says so the same way the
+   big one does. */
+.plant-photo-zoom {
+  padding: 0;
+  border: 0;
+  cursor: zoom-in;
+  line-height: 0;
+}
+/* Both transitions in one declaration, for the same reason `.plant-hero-shot`
+   states them together: a second `transition` would silently replace the fade
+   rather than add to it. */
+.plant-photo-zoom img {
+  transition: transform 0.15s ease, opacity 0.3s ease;
+}
+@media (hover: hover) {
+  .plant-photo-zoom:hover img {
+    transform: scale(1.06);
+  }
+}
+.plant-photo-zoom:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
 /* Every iNaturalist photo in the app arrives this way: decoded off-screen
    first, then faded up (see `lib/photo.ts`). Until `is-ready`, the image is
    invisible — so a slot never shows a JPEG painting itself in bands, and a
@@ -3180,6 +3208,38 @@ details.weights {
 .lookalike-head h4 {
   margin: 0;
   font-size: 1.02rem;
+}
+
+/* The plant's name is the way to its page. A full-width "See the native's
+   page" button used to sit at the foot of every swap card, which cost a row of
+   height per swap to repeat what the heading already said. Quiet underline
+   rather than link blue: six of these in a column, and a stack of blue
+   headings reads as a page that lost its stylesheet. */
+.swap-name a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.swap-name a:hover {
+  text-decoration-color: currentColor;
+}
+/* The swap card's square is bigger than a list thumbnail because it is doing a
+   different job: it is the only picture of this plant on the page, and the
+   reader is deciding whether to grow it. Tapping it opens it full size. */
+.alt-swap .lookalike-head {
+  align-items: start;
+  flex-wrap: nowrap;
+  gap: 0.7rem;
+}
+.alt-swap .lookalike-head > .plant-photo {
+  width: 6rem;
+  height: 6rem;
+}
+.alt-swap .lookalike-head > div {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 /* A badge that answers for itself when tapped. It has to look like the badge
@@ -5027,4 +5087,115 @@ body[data-layout="profile"] .wip-banner-text {
   margin: 0.3rem 0 0;
   font-size: 0.88rem;
   opacity: 0.85;
+}
+
+/* ---------------------------------------------------------------------------
+   The comparison cards on a laptop
+   ---------------------------------------------------------------------------
+   A trait is three things — what is being compared, the native's answer, the
+   other plant's — and on a phone they have to stack, because a three-column
+   table at 360 px is four words per line. Above the profile breakpoint there
+   is room for all three on one line, which halves the height of every
+   comparison on the page and puts the two answers where a reader's eye can
+   cross between them instead of travelling down.
+
+   Nothing is reordered and nothing is hidden: read left to right and you get
+   the phone's order. The plant's square grows with the room, too. */
+@media (min-width: 64rem) {
+  /* Sentences keep the reading measure they have everywhere else — the
+     comparison wanted the width, the prose around it never did. Same 36rem the
+     ledes, notes and source lines are held to above. */
+  body[data-layout="profile"] .lookalike-profile > p,
+  body[data-layout="profile"] .alt-swap > p {
+    max-width: 36rem;
+  }
+  /* And the photo pair stops growing with the page: at the full width these
+     are two squares half a laptop screen tall each, and a comparison you have
+     to scroll between is not one. */
+  body[data-layout="profile"] .tell-pictures {
+    max-width: 32rem;
+  }
+
+  /* Not the photo pair: `.tell-pictures` is a `.tell` too, and it is two
+     pictures side by side with no label column — a third column would put a
+     gap where the comparison is. */
+  body[data-layout="profile"] .tell:not(.tell-pictures) {
+    grid-template-columns: minmax(6rem, 8.5rem) minmax(0, 1fr) minmax(0, 1fr);
+    align-items: stretch;
+    gap: 0.4rem;
+    margin: 0.35rem 0;
+  }
+  /* The label stops being a banner over the pair and becomes the row's first
+     cell — centred against two blocks that are usually a line or two tall. */
+  body[data-layout="profile"] .tell:not(.tell-pictures) .tell-feature {
+    grid-column: auto;
+    align-self: center;
+  }
+  /* --- A swap card, on a laptop ---
+     Same move as the card above it: the plant's square takes a rail of its own
+     on the left and the whole card runs down the other column, instead of the
+     picture pushing the comparison below itself and leaving the space beside
+     the heading empty. */
+  body[data-layout="profile"] .alt-swap .lookalike-head {
+    display: contents;
+  }
+  body[data-layout="profile"] .alt-swap {
+    display: grid;
+    grid-template-columns: 9.5rem minmax(0, 1fr);
+    column-gap: 1.1rem;
+    align-items: start;
+  }
+  body[data-layout="profile"] .alt-swap > * ,
+  body[data-layout="profile"] .alt-swap .lookalike-head > div:not(.plant-photo) {
+    grid-column: 2;
+  }
+  body[data-layout="profile"] .alt-swap .lookalike-head > .plant-photo {
+    grid-column: 1;
+    /* The rail runs the height of the card, so the picture is beside the
+       comparison rather than above it. A row span rather than `1 / -1`:
+       these rows are implicit — there is one per trait — and `-1` on an
+       implicit grid resolves to the end of the *explicit* one, which is row
+       one, which is the bug this is fixing. */
+    grid-row: 1 / span 50;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  /* --- The card at the top of the page, on a laptop ---
+     The impostor's and the ornamental's own card is a photograph beside a name
+     and then four short paragraphs underneath it, which at this width leaves a
+     hand-width of nothing to the right of the name and pushes everything the
+     card actually says below the picture. Giving the photograph a rail of its
+     own and running the whole text down the other column fills that space and
+     costs the card a third of its height. The columns own the gutters, as they
+     do on the plant page, so nothing is indented twice. */
+  body[data-layout="profile"] .lookalike-profile {
+    display: grid;
+    grid-template-columns: 9.5rem minmax(0, 1fr);
+    column-gap: 1.25rem;
+    align-items: start;
+    padding: 0.9rem 1rem 1rem;
+  }
+  /* The head stops being a row of its own so its two halves can take their
+     places in the card's grid: the picture on the rail, the name at the top of
+     the text. */
+  body[data-layout="profile"] .lookalike-profile > .plant-head {
+    display: contents;
+  }
+  body[data-layout="profile"] .lookalike-profile > * ,
+  body[data-layout="profile"] .lookalike-profile > .plant-head > div:not(.plant-photo) {
+    grid-column: 2;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  body[data-layout="profile"] .lookalike-profile > .plant-head > .plant-hero,
+  body[data-layout="profile"] .lookalike-profile > .plant-head > .plant-photo {
+    grid-column: 1;
+    grid-row: 1 / span 50;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    margin: 0;
+  }
 }

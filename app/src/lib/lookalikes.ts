@@ -274,15 +274,29 @@ export async function nativeSomewhere(
 }
 
 /**
- * Where to go and look at the impostor: iNaturalist's own taxon search, by
- * scientific name. Deliberately the *name* rather than a stored numeric taxon
- * id — the same choice the registry makes for an unreconciled native, and the
- * same one `resolveTaxon` makes for the sightings lookup. A name search follows
- * iNaturalist's synonymy and can't rot into pointing at the wrong species,
- * which a hand-copied id eventually can.
+ * Where to go and look at the plant on iNaturalist.
+ *
+ * **The taxon page when we know which taxon, a name search when we don't** —
+ * the rule `registry-core.ts` already applies to every native, which these two
+ * catalogs simply never got. A search is a poor place to land: "Cynodon
+ * dactylon" returns four things, two of them varieties and one a fungus that
+ * grows on it, and the reader has to pick the plant out of a list they came
+ * here to be shown.
+ *
+ * The earlier reasoning against a stored id was that a hand-copied number can
+ * rot into pointing at the wrong species. That still holds for a number
+ * somebody types in — but this one is not typed in. It is the same id the photo
+ * harvester resolved to fetch the picture on the page, read from the same row,
+ * so the link and the photograph cannot disagree: if the id were wrong the
+ * reader would already be looking at the wrong plant.
+ *
+ * A bare `/taxa/<id>` rather than the `<id>-Genus-species` slug: iNaturalist
+ * redirects one to the other, and the short form has no name in it to go stale.
  */
-export function inatSearchUrl(latin: string): string {
-  return `https://www.inaturalist.org/taxa/search?q=${encodeURIComponent(latin)}`;
+export function inatTaxonUrl(latin: string, taxonId?: number): string {
+  return taxonId
+    ? `https://www.inaturalist.org/taxa/${taxonId}`
+    : `https://www.inaturalist.org/taxa/search?q=${encodeURIComponent(latin)}`;
 }
 
 /** How many native plants in a region have at least one impostor mapped —

@@ -22,7 +22,7 @@ import { renderRegion } from "./steps/region";
 import { renderWildlifeIndex, renderWildlife, wildlifeRegionParam } from "./steps/wildlife";
 import { wildlifeKindRoute } from "./lib/wildlife";
 import { renderLookalikeIndex, renderLookalike, lookalikeRegionParam } from "./steps/lookalikes";
-import { renderAlternativeIndex, renderAlternative } from "./steps/alternatives";
+import { renderAlternativeIndex, renderAlternative, alternativeRegionParam } from "./steps/alternatives";
 import { renderPlantingIndex, renderPlanting } from "./steps/planting";
 import { techniqueBySlug } from "./lib/planting";
 import { canonicalPath, parseRoute, isHashRoute } from "./lib/routes";
@@ -276,9 +276,6 @@ function updateLayout(step: AppStep, param?: string): void {
   // past the laptop breakpoint, which is why the widening itself lives in the
   // stylesheet rather than here.
   //
-  // An impostor's page (`#/lookalikes/<id>`) is not in that club: it's a short
-  // comparison, and it keeps the reading measure.
-  //
   // A technique's page (`#/planting/<slug>`) is: six card sections about one way
   // of raising a plant, which ran to two and a half screenfuls of ribbon. It
   // splits the same way. A slug that isn't a technique renders the short
@@ -288,21 +285,36 @@ function updateLayout(step: AppStep, param?: string): void {
   const animalProfile =
     step === "wildlife" && !!param && !wildlifeKindRoute(param) && wildlifeRegionParam(param) === null;
   const techniqueProfile = step === "planting" && !!param && !!techniqueBySlug(param);
-  if (plantProfile || animalProfile || techniqueProfile) {
+  // An impostor's page and an ornamental's are the same document as a plant's —
+  // a portrait, a few paragraphs, then a stack of comparison cards — and they
+  // were the two that never got the laptop treatment. On a wide screen each ran
+  // to a narrow ribbon down the middle with the window empty either side, which
+  // is the exact complaint the plant page was widened to answer.
+  // Both pages also answer to `…/in/<region>`, which is the *index* filtered to
+  // one region — a grid of cards, not a document — so the region routes are
+  // excluded here and widen with the other indexes below.
+  const lookalikeProfile =
+    step === "lookalikes" && !!param && lookalikeRegionParam(param) === null;
+  const ornamentalProfile =
+    step === "alternatives" && !!param && alternativeRegionParam(param) === null;
+  if (plantProfile || animalProfile || techniqueProfile || lookalikeProfile || ornamentalProfile) {
     document.body.dataset.layout = "profile";
     return;
   }
   // Of what's left, only the parameter-less index of each widens, plus the card
   // lists that take a param: `#/regions/<id>` is a roster, both slices of the
   // wildlife index — `#/wildlife/<group>` ("…/butterflies") and
-  // `#/wildlife/in/<region>` — are grids of cards, and so is
-  // `#/lookalikes/in/<region>`.
+  // `#/wildlife/in/<region>` — are grids of cards, and so are
+  // `#/lookalikes/in/<region>` and `#/alternatives/in/<region>`. (That last was
+  // reading as narrow, so the same index of cards was one width with a region
+  // chosen and another without.)
   const wide =
     WIDE_STEPS.has(step) &&
     (!param ||
       step === "regions" ||
       (step === "wildlife" && (!!wildlifeKindRoute(param) || wildlifeRegionParam(param) !== null)) ||
-      (step === "lookalikes" && lookalikeRegionParam(param) !== null));
+      (step === "lookalikes" && lookalikeRegionParam(param) !== null) ||
+      (step === "alternatives" && alternativeRegionParam(param) !== null));
   document.body.dataset.layout = wide ? "wide" : "narrow";
 }
 

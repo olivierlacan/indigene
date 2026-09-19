@@ -179,6 +179,16 @@ export function lookalikePhotoFor(lookalikeId: string): HeroPhoto | undefined {
 }
 
 /**
+ * The iNaturalist taxon an impostor or ornamental was photographed from, when
+ * one was stored. Same table as the photograph, so there is nothing new to keep
+ * in step: the id that chose the picture is the id the link uses.
+ */
+export function inatTaxonIdFor(kind: "lookalike" | "ornamental", id: string): number | undefined {
+  const row = (kind === "lookalike" ? lookalikePhotos : alternativePhotos)[id];
+  return row?.taxonId || undefined;
+}
+
+/**
  * The photograph of an ornamental — the plant a native stands in for. Always
  * iNaturalist's own, for the same reason the impostors' are: nobody shortlists
  * a Bermuda-grass lawn, and the page needs *a* correct picture of it beside the

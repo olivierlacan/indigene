@@ -31,6 +31,18 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Added
+
+- Plants & Vegetables: the plant list has a fourth card at the top, for the
+  question that stops people between choosing a native and digging the hole —
+  will it bring pests? https://indigene.app/crops
+
+### Fixed
+
+- Plants: on a phone, the last card you tapped at the top of the plant list
+  stayed lit up with its link underlined, as though a mouse were resting on it.
+  It lets go now.
+
 ## [0.32] - 2026-09-19
 
 **Whether natives bring pests & photographs for the native swaps**

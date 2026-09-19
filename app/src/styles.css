@@ -951,8 +951,14 @@ a {
   text-decoration: none;
   color: inherit;
 }
-.plant-door:hover {
-  border-color: var(--line-strong);
+/* Hover only where there is a pointer. A phone has none, and iOS keeps the
+   hover state on the last card you tapped until you tap elsewhere — so one card
+   in four sat there with a highlighted border and an underlined action phrase,
+   looking like the odd one out long after the tap that caused it. */
+@media (hover: hover) {
+  .plant-door:hover {
+    border-color: var(--line-strong);
+  }
 }
 /* The tinted rounded slot the icon sits in — the same one the plant thumbnails
    use, so a drawn glyph on `--brand-bg` looks native. `currentColor` in the
@@ -979,8 +985,10 @@ a {
   color: var(--brand-ink);
   font-weight: 650;
 }
-.plant-door:hover .plant-door-cta {
-  text-decoration: underline;
+@media (hover: hover) {
+  .plant-door:hover .plant-door-cta {
+    text-decoration: underline;
+  }
 }
 .plant-door-chevron {
   flex: none;

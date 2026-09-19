@@ -37,6 +37,22 @@ subtitle on the What's new page.
   question that stops people between choosing a native and digging the hole —
   will it bring pests? https://indigene.app/crops
 
+- Internal: `docs/region-queue.md` — a measured queue for the next regions.
+  Three of the four candidates turned out to be something other than a new
+  region: Boston already has a list and Portland, Maine doesn't (same
+  ecoregion, wrong box edge); Provence and Languedoc already ship and are our
+  thinnest-sourced region at 47% of their zone's caterpillar records; British
+  Columbia and Québec are real, and both wait on one missing piece.
+- Internal: `npm run probe:vascan` admits VASCAN for two claims it was never
+  refused for — provincial native status (108 of our 375 plants are native in
+  British Columbia, 71 in Québec) and the fr-CA names for the 87 rows fr-FR
+  can't source. It reads the Darwin Core Archive, because the search API
+  records distribution on the variety and returns an empty one for the species.
+- Internal: `npm run probe:cec` asks the question that gates both Canadian
+  regions — can a point in Canada be resolved to an ecoregion at all? The EPA
+  service answers nothing north of the border. Unanswered so far: the sandbox
+  can't reach the candidate hosts, and the probe says so rather than guessing.
+
 ### Fixed
 
 - Plants: on a phone, the last card you tapped at the top of the plant list

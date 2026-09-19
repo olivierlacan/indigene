@@ -15,3 +15,8 @@
 *.cpg
 *.xlsx
 *.parquet
+
+# VASCAN's Darwin Core Archive — 2.9 MB zipped, ~37 MB unpacked, and refetched
+# by `npm run probe:vascan`. Only the probe's summary is committed.
+vascan/vascan-dwca.zip
+vascan/dwca/

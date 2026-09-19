@@ -43,6 +43,8 @@
     "inat:check": "NODE_USE_ENV_PROXY=1 node scripts/inat-coverage-check.mjs",
     "probe:globi": "NODE_USE_ENV_PROXY=1 node scripts/probe-globi.mjs",
     "probe:eea": "NODE_USE_ENV_PROXY=1 node scripts/probe-eea.mjs",
+    "probe:vascan": "NODE_USE_ENV_PROXY=1 node scripts/probe-vascan.mjs",
+    "probe:cec": "NODE_USE_ENV_PROXY=1 node scripts/probe-cec.mjs",
     "swipe:check": "node scripts/check-lightbox-swipe.mjs"
   },
   "devDependencies": {

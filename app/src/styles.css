@@ -5199,3 +5199,262 @@ body[data-layout="profile"] .wip-banner-text {
     margin: 0;
   }
 }
+
+/* --- "Will native plants bring pests to my yard?" ------------------------ */
+/* The objection page (steps/crops.ts) carries four drawn pieces rather than
+   four more paragraphs, because what it argues is *which animal does what* and
+   a diagram says that in one glance. All four are HTML rather than SVG so the
+   words can wrap — a French label runs 30–40% longer than its English original
+   and SVG <text> does not reflow (components/crops-figures.ts).
+
+   Every rule here is scoped to `.crops-page`, both to keep the page's lists out
+   of `.privacy-page`'s prose list styling (which is more specific than a bare
+   class) and to keep these shapes from leaking onto pages they were not
+   designed for. */
+.crops-page .crops-fig {
+  margin: 1rem 0 1.4rem;
+}
+.crops-page .crops-fig figcaption {
+  margin: 0.55rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+/* Figure 1 — the three crowds a flower border actually feeds. The left rule
+   carries the verdict: green where the crowd helps your vegetables, grey where
+   it never reaches them. */
+.crops-page .feeds {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+.crops-page .feeds-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 0.65rem;
+  align-items: start;
+  margin: 0;
+  padding: 0.7rem 0.85rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border-left: 4px solid var(--line-strong);
+  color: var(--ink);
+}
+.crops-page .feeds-good {
+  border-left-color: var(--good);
+}
+.crops-page .feeds-icon {
+  font-size: 1.5rem;
+  line-height: 1.15;
+  grid-row: span 2;
+}
+.crops-page .feeds-what b {
+  display: block;
+  color: var(--ink);
+}
+.crops-page .feeds-what p {
+  margin: 0.1rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+.crops-page .feeds-out {
+  grid-column: 2;
+  justify-self: start;
+  margin-top: 0.5rem;
+  padding: 0.12rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 650;
+  background: var(--brand-bg);
+  color: var(--brand-ink);
+}
+.crops-page .feeds-none .feeds-out {
+  background: var(--surface-2);
+  color: var(--ink-soft);
+}
+
+/* Figure 2 — three chains, each starting at a plant somebody bought. The first
+   link is amber because it is the one you can cut; the last is the one it costs
+   you. On a phone the chips wrap, and the arrows wrap with them. */
+.crops-page .chain-lede {
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 650;
+  color: var(--ink);
+}
+.crops-page .chain-cut {
+  margin-right: 0.35rem;
+  color: var(--accent);
+}
+.crops-page .chains {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+.crops-page .chain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0.6rem 0.7rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.crops-page .chain-link {
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+.crops-page .chain-from {
+  background: var(--warn-bg);
+  color: var(--warn-ink);
+}
+.crops-page .chain-pest {
+  background: var(--danger-bg);
+  color: var(--danger-ink);
+}
+.crops-page .chain-cost {
+  background: var(--surface-2);
+  color: var(--ink);
+}
+.crops-page .chain-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-width: 0;
+}
+.crops-page .chain-arrow {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  flex: none;
+}
+
+/* Figure 3 — fat in the fruit, on one 0–50% axis so the gap is to scale rather
+   than illustrative. The native bar is a *range* (6–48%), so it is offset from
+   the axis start; the invasive bar is the sliver under 1% that it really is. */
+.crops-page .fat {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+.crops-page .fat-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.2rem;
+  margin: 0;
+}
+.crops-page .fat-label {
+  font-size: 0.88rem;
+  font-weight: 650;
+  color: var(--ink);
+}
+.crops-page .fat-track {
+  display: block;
+  height: 1.1rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+.crops-page .fat-bar {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  /* A range that starts at 6% of the axis would otherwise be invisible at its
+     thin end; a minimum keeps the sliver a shape rather than a hairline. */
+  min-width: 3px;
+}
+.crops-page .fat-good {
+  background: var(--good);
+}
+.crops-page .fat-bad {
+  background: var(--accent);
+}
+.crops-page .fat-value {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.crops-page .fat-axis {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.3rem 0 0;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+}
+
+/* Figure 4 — the ledger. Two columns on anything wider than a small phone, one
+   above the other below that; the point is that they are read as a pair, so
+   they never sit further apart than a glance. */
+.crops-page .ledger {
+  display: grid;
+  gap: 0.6rem;
+}
+@media (min-width: 30rem) {
+  .crops-page .ledger {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.crops-page .ledger-col {
+  padding: 0.75rem 0.85rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border-top: 3px solid var(--line-strong);
+}
+.crops-page .ledger-yes {
+  border-top-color: var(--good);
+}
+.crops-page .ledger-no {
+  border-top-color: var(--accent);
+}
+.crops-page .ledger-col h4 {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+  line-height: 1.25;
+  color: var(--ink);
+}
+.crops-page .ledger-yes h4 {
+  color: var(--good);
+}
+.crops-page .ledger-no h4 {
+  color: var(--accent);
+}
+.crops-page .ledger-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+.crops-page .ledger-col li {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+/* The counter-evidence section is the other half of the argument, and it is
+   marked as such: an amber rule down the side, the same one the chains use for
+   "this is the link that bites". It is not a warning — it is the part a reader
+   should be able to quote back at us. */
+.crops-page .counter {
+  margin: 0.9rem 0 0;
+  padding-left: 0.8rem;
+  border-left: 3px solid var(--accent);
+}
+.crops-page .counter > ol {
+  margin: 0.4rem 0 0;
+  padding-left: 1.2rem;
+}
+.crops-page .counter > ol > li {
+  margin: 0.65rem 0;
+}

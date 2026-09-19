@@ -2124,15 +2124,18 @@ export const fr: Dict = {
     "La chose la plus utile que vous puissiez envoyer, c'est une correction accompagnée d'une source. Tout — les données sur les plantes, les scripts, chaque ligne qui transforme un chiffre en recommandation — est public sur {repo}, et si quelque chose vous paraît faux, vous pouvez {issue}. Demander la couverture de votre propre région est tout aussi bienvenu : c'est ainsi que la carte s'agrandit.",
 
   // ---------------------------------------------------------------------
-  // « Les indigènes à côté du potager » (steps/crops.ts) — la page qui répond
-  // à l'objection. Les noms d'auteurs et de revues restent dans le code, non
-  // traduits : ce sont des noms propres, et l'article est en anglais quelle
-  // que soit la langue du lecteur.
+  // « Les plantes indigènes attirent-elles les ravageurs ? » (steps/crops.ts)
+  // — la page qui répond à l'objection. Elle argumente aussi dans l'autre
+  // sens : le lecteur emmène ces phrases dans une discussion, et personne ne
+  // doit pouvoir le prendre en défaut avec un fait que nous aurions écarté.
+  // Les noms d'auteurs et de revues restent dans le code, non traduits : ce
+  // sont des noms propres, et l'article est en anglais quelle que soit la
+  // langue du lecteur.
   // ---------------------------------------------------------------------
-  "crops.docTitle": "Les indigènes à côté du potager — Indigene",
-  "crops.title": "Les indigènes à côté du potager",
+  "crops.docTitle": "Les plantes indigènes attirent-elles les ravageurs ? — Indigene",
+  "crops.title": "Les plantes indigènes attirent-elles les ravageurs ?",
   "crops.lede":
-    "Un jardin planté pour les abeilles et les oiseaux est censé y perdre ses fruits. Des exploitations agricoles ont vérifié, en vraie grandeur, et ont le plus souvent constaté l'inverse.",
+    "Des exploitations agricoles l'ont mesuré en vraie grandeur : non. Certaines indigènes éloignent même discrètement des ravageurs, et quelques-unes font un mauvais voisin pour telle ou telle culture. Tout est sur cette page.",
   "crops.short1":
     "Une abeille ne peut pas manger une tomate. Abeilles, papillons et syrphes vivent de nectar et de pollen — aucune pièce buccale pour un fruit, ni même pour une feuille.",
   "crops.short2":
@@ -2140,6 +2143,8 @@ export const fr: Dict = {
   "crops.short3":
     "Les fermes qui ont semé des bandes fleuries ont eu plus de pollinisateurs et plus de mangeurs de ravageurs dans la culture d'à côté, et pas plus de ravageurs.",
   "crops.short4":
+    "Dans la plupart des jardins, le réservoir à ravageurs est une plante que quelqu'un a achetée. L'ailante nourrit la fulgore tachetée, le nerprun abrite l'hiver le puceron du soja, l'épine-vinette héberge les tiques.",
+  "crops.short5":
     "Les oiseaux prennent bien plus de ravageurs que de fruits. Là où les fruits rouges sont vraiment menacés, la solution est le filet — pas moins de plantes.",
 
   // Les quatre chiffres à parcourir d'un coup d'œil. Chaque tuile ouvre l'étude.
@@ -2159,15 +2164,30 @@ export const fr: Dict = {
   "crops.tile.damage.sub": "là où nichaient des mésanges",
   "crops.tile.damage.explain":
     "Dans des vergers commerciaux, les parcelles où des mésanges charbonnières ont élevé une nichée ont subi deux fois moins de dégâts de chenilles que les autres. Le coût pour l'arboriculteur : environ deux nichoirs par hectare.",
-  "crops.tile.payback.label": "Rentabilisé",
-  "crops.tile.payback.value": "4 ans",
-  "crops.tile.payback.sub": "myrtille, Michigan",
-  "crops.tile.payback.explain":
-    "Des fleurs sauvages indigènes semées au bord de champs de myrtilles ont attiré plus d'abeilles sauvages et augmenté la récolte. Dès la quatrième année, le supplément de fruits avait couvert le coût de l'installation.",
+  "crops.tile.ticks.label": "Tiques infectées",
+  "crops.tile.ticks.value": "280 contre 30",
+  "crops.tile.ticks.sub": "par hectare, avec ou sans épine-vinette",
+  "crops.tile.ticks.explain":
+    "Dans des bois du Connecticut, sous une épine-vinette du Japon intacte — un arbuste vendu pour les haies — on comptait environ 280 tiques porteuses de la maladie de Lyme par hectare. Là où l'arbuste avait été coupé : 121. Là où il n'y en avait jamais eu : 30.",
 
-  "crops.mouthTitle": "Une abeille n'a pas de bouche pour un fruit",
-  "crops.mouth1":
-    "L'inquiétude confond trois animaux différents. Abeilles, papillons et syrphes ne mangent rien de ce que vous avez planté : adultes, ils vivent de nectar et de pollen, et leurs pièces buccales ne viennent pas à bout d'une feuille, encore moins d'une pomme. Les insectes qui rongent les légumes sont un tout autre monde, et ce n'est pas une bande fleurie qui les fait venir.",
+  // --- ce qu'une bande fleurie nourrit vraiment --------------------------
+  "crops.feedsTitle": "Trois populations, et ce que chacune fait",
+  "crops.feeds1":
+    "L'inquiétude traite « la faune » comme un seul animal. Une plantation indigène en fait venir trois bien différentes, et une seule mange des plantes — celle-là est liée aux plantes avec lesquelles elle a évolué, qui ne sont pas celles de votre potager.",
+  "crops.fig.feeds.pollWho": "Pollinisateurs",
+  "crops.fig.feeds.pollEats":
+    "Abeilles, papillons, syrphes. Nectar et pollen — leurs pièces buccales ne viennent pas à bout d'une feuille.",
+  "crops.fig.feeds.pollOut": "Plus de fruits noués",
+  "crops.fig.feeds.enemyWho": "Mangeurs de ravageurs",
+  "crops.fig.feeds.enemyEats":
+    "Coccinelles, chrysopes, minuscules guêpes qui pondent dans les pucerons. Chasseurs à l'état de larve, buveurs de nectar à l'état adulte.",
+  "crops.fig.feeds.enemyOut": "Moins de ravageurs",
+  "crops.fig.feeds.leafWho": "Mangeurs de feuilles",
+  "crops.fig.feeds.leafEats":
+    "Chenilles et apparentés. La plupart ne digèrent qu'une ou deux plantes, celles sur lesquelles ils ont grandi.",
+  "crops.fig.feeds.leafOut": "N'atteint jamais le potager",
+  "crops.fig.feeds.caption":
+    "Ce qu'une bordure de fleurs et d'arbustes indigènes nourrit réellement, et ce que chaque population fait quand elle arrive à votre potager.",
 
   "crops.fussyTitle": "Les insectes qu'une indigène nourrit ne peuvent pas manger vos légumes",
   "crops.fussy1":
@@ -2175,6 +2195,7 @@ export const fr: Dict = {
   "crops.fussy2":
     "L'inverse est vrai aussi. La tomate, le poivron et la pomme de terre viennent des Andes, le chou et le chou kale de Méditerranée, la courge du Mexique. Les insectes d'ici n'ont aucune histoire commune avec eux. Les ravageurs qui les mangent sont surtout arrivés avec eux : environ 40 % des insectes et acariens ravageurs des cultures américaines sont des espèces introduites, et aucune haie que vous plantez ne les fait apparaître.",
 
+  // --- ce que les essais agricoles ont trouvé ----------------------------
   "crops.farmsTitle": "Ce qui s'est passé quand des fermes ont essayé",
   "crops.farms1":
     "Des producteurs de myrtilles du Michigan ont semé des fleurs sauvages indigènes au bord de leurs champs. En trois ans, les insectes mangeurs de ravageurs présents dans la culture ont augmenté, les ravageurs non, et la bande fleurie était rentabilisée dès la quatrième année.",
@@ -2195,31 +2216,85 @@ export const fr: Dict = {
   "crops.birds1":
     "Deux grandes synthèses ont cherché ce que les oiseaux font réellement à une culture. Sur 104 études, l'effet d'ensemble est positif : environ la moitié des mesures montrent les oiseaux faisant baisser le nombre de ravageurs, la plupart des autres ne montrent aucune différence, et 5 % vont dans l'autre sens. Là où les oiseaux étaient tenus à l'écart, les dégâts et les ravageurs ont augmenté et le rendement a baissé.",
   "crops.birds2":
-    "Le pire voleur de fruits d'Amérique du Nord est l'étourneau sansonnet, un oiseau venu d'Europe qui prospère sur la pelouse tondue et les terrains dégagés. Une pelouse fabrique des étourneaux. Une haie, non.",
-  "crops.birds3":
-    "Les oiseaux frugivores vont aussi là où le fruit est rare. C'est la rangée isolée de cerises précoces, sans rien d'autre de mûr aux alentours, qui se fait dévaliser ; plus il y a de fruits autour, sauvages et cultivés, moins chaque plantation en perd.",
+    "Le pire voleur de fruits d'Amérique du Nord est l'étourneau sansonnet, un oiseau venu d'Europe qui prospère sur la pelouse tondue et les terrains dégagés. Une pelouse fabrique des étourneaux. Une haie, non. Et ce qu'une haie fabrique — des chenilles sur des feuilles indigènes — est précisément ce qu'il faut à une mésange pour élever une nichée : une étude a montré qu'un jardin n'y suffit plus dès que les plantes non indigènes dépassent environ 70 % de sa végétation.",
 
-  // Les concessions. Une page qui n'argumenterait que dans un sens serait une
-  // publicité, et le lecteur visé a déjà entendu la publicité.
-  "crops.rightTitle": "Là où l'inquiétude a raison",
-  "crops.rightLede":
-    "Quatre de ces points sont des moyennes plutôt que des promesses, et l'un d'eux est un vrai coût. Le dire est la seule chose qui donne de la valeur au reste.",
-  "crops.right1": "Ce n'est pas une loi de la nature. ",
-  "crops.right1Rest":
-    "La plus grande synthèse sur le sujet — 132 études, près de 7 000 sites — montre que les ravageurs et leurs prédateurs réagissent très différemment à la végétation sauvage voisine, d'un endroit à l'autre. Les bandes fleuries aident en moyenne. Elles n'aident pas partout.",
-  "crops.right2": "Une bande fleurie vaut mieux qu'une haie. ",
-  "crops.right2Rest":
-    "Pour la régulation des ravageurs, du moins. Les mélanges fleuris étaient choisis pour les insectes qu'ils nourrissent, les haies rarement : c'est l'explication la plus probable. Une haie garde tout son intérêt, pour les oiseaux et pour l'abri.",
-  "crops.right3": "Le retour sur investissement se compte en années. ",
-  "crops.right3Rest":
-    "Quatre dans le cas de la myrtille. Une quinzaine pour une haie californienne, en ne comptant que les traitements économisés. C'est une chose que l'on plante une fois et dont on se félicite plus tard, pas une astuce pour cette saison.",
-  "crops.right4": "Les dégâts d'oiseaux sur les fruits rouges sont réels. ",
-  "crops.right4Rest":
-    "De l'ordre de 10 à 20 % sur la myrtille, 5 à 30 % sur la cerise, 5 à 10 % sur le raisin. Un filet coûte moins cher qu'une seule saison comme celle-là. Arracher les indigènes n'y change rien.",
+  // --- la moitié de l'argument que personne ne fait ----------------------
+  "crops.takeAwayTitle": "Certaines indigènes éloignent les ravageurs",
+  "crops.takeAway1":
+    "Voilà la moitié de l'argument que personne ne fait. Dans un jardin, le réservoir à ravageurs est le plus souvent une plante que quelqu'un a achetée, et plusieurs des pires ravageurs d'Amérique du Nord en dépendent. Remplacez cette plante par une indigène et vous coupez la chaîne sous leurs pieds.",
+  "crops.fig.chain.cut": "Changez la plante, coupez la chaîne",
+  "crops.fig.chain.ailanthus": "Ailante",
+  "crops.fig.chain.lanternfly": "Fulgore tachetée",
+  "crops.fig.chain.grapes": "Votre vigne",
+  "crops.fig.chain.buckthorn": "Nerprun purgatif",
+  "crops.fig.chain.aphid": "Puceron du soja",
+  "crops.fig.chain.beans": "Vos haricots",
+  "crops.fig.chain.barberry": "Épine-vinette du Japon",
+  "crops.fig.chain.ticks": "Tiques",
+  "crops.fig.chain.you": "Vous",
+  "crops.fig.chain.caption":
+    "Trois chaînes qui commencent par une plante vendue en jardinerie. Le puceron du soja passe l'hiver sous forme d'œuf sur le nerprun et nulle part ailleurs ; l'hôte préféré de la fulgore est l'ailante. Le premier maillon est celui que vous pouvez couper.",
+  "crops.takeAway2":
+    "Le cas de l'épine-vinette a été compté. Dans des bois du Connecticut, sous une épine-vinette du Japon intacte, on trouvait environ 280 tiques porteuses de la maladie de Lyme par hectare ; là où l'arbuste avait été coupé, 121 ; là où il n'y en avait jamais eu, 30. Un seul dégagement a tenu six ans avant que l'arbuste ne revienne.",
+  "crops.takeAway3":
+    "N'en faites pas trop, cependant. Arracher un ailante ne fera pas disparaître la fulgore tachetée — elle se nourrit sur une soixantaine d'autres arbres et lianes. Couper la chaîne réduit un ravageur. Elle ne l'efface pas.",
+
+  // --- l'affirmation la plus facile à sur-citer --------------------------
+  "crops.redirectTitle": "Iront-ils manger la haie plutôt que mes cerises ?",
+  "crops.redirect1":
+    "En partie, et ce n'est pas une affaire de goût : c'est une affaire de gras. Le fruit d'un arbuste indigène titre de 6 à 48 % de matière grasse. Les arbustes envahissants plantés pour le même effet restent sous 1 %. Mis en présence des deux, des passereaux en migration ont vidé les indigènes plus vite.",
+  "crops.fig.fat.native": "Fruits d'arbustes indigènes",
+  "crops.fig.fat.nativeValue": "6 à 48 %",
+  "crops.fig.fat.invasive": "Fruits d'arbustes envahissants",
+  "crops.fig.fat.invasiveValue": "moins de 1 %",
+  "crops.fig.fat.caption":
+    "Matière grasse dans le fruit, en pourcentage du poids. Un oiseau qui fait le plein pour migrer cherche le gras : c'est pour cela que, s'il a le choix, il vide l'arbuste indigène en premier.",
+  "crops.redirect2":
+    "Et les dégâts sont les pires là où le fruit est rare. Sur trois États et trois saisons, la part d'une récolte de cerises perdue à cause des oiseaux était la plus forte l'année de faible rendement, et dans les parcelles ayant le moins de fruits autour d'elles. Les oiseaux mangent à peu près ce qu'ils mangent ; quand il y a moins à se partager, vos fruits en représentent une plus grosse part.",
+  "crops.fig.ledger.yesHead": "Ce que les données montrent",
+  "crops.fig.ledger.yes1": "Les passereaux ont mangé le fruit indigène plus vite que le fruit envahissant quand les deux étaient offerts.",
+  "crops.fig.ledger.yes2": "Une culture perd une plus grosse part d'elle-même les années et dans les lieux où le fruit est rare.",
+  "crops.fig.ledger.yes3": "Les parcelles de cerisiers en pays boisé ont moins perdu que celles en pays dégagé.",
+  "crops.fig.ledger.noHead": "Ce qu'elles ne montrent pas",
+  "crops.fig.ledger.no1":
+    "Qu'une haie détourne les oiseaux de cerises mûres. Les fruits cultivés sont sélectionnés pour être gros et sucrés, et personne n'a testé une plantation indigène comme leurre en montrant la récolte protégée.",
+  "crops.fig.ledger.no2":
+    "Que plus de milieu naturel veut toujours dire moins de dégâts. Dans cette même étude, les oiseaux frugivores franchissaient les lisières de forêt vers les vergers plus souvent que n'importe quelle autre lisière.",
+  "crops.fig.ledger.no3":
+    "Quoi que ce soit sur votre jardin en particulier. Ce sont des vergers commerciaux, mesurés sur des hectares et sur des années.",
+  "crops.fig.ledger.caption":
+    "L'affirmation de cette page la plus facile à sur-citer, coupée en deux. Emmenez la première moitié dans une discussion et c'est la seconde qui vous revient : apprenez les deux.",
+  "crops.redirect3":
+    "Plantez donc les indigènes pour la pollinisation et pour les mangeurs de ravageurs, qui sont mesurés et importants. Prenez une baisse des dégâts d'oiseaux pour une prime que vous n'avez pas payée — et posez un filet sur les cerises.",
+
+  // --- et l'autre côté ---------------------------------------------------
+  "crops.counterTitle": "Les données contraires, et ce que nous en faisons",
+  "crops.counterLede":
+    "Tout ce qui précède est une moyenne, et l'un de ces points est un vrai coût. Qui ne lit que la bonne moitié se fera prendre en défaut par le premier voisin qui en connaît un — les voici donc, sans les adoucir.",
+  "crops.counter1": "Ce n'est pas une loi de la nature. ",
+  "crops.counter1Rest":
+    "La plus grande synthèse sur le sujet — 132 études, près de 7 000 sites — montre que les ravageurs et leurs prédateurs réagissent très différemment à la végétation sauvage voisine, d'un endroit à l'autre. Les bandes fleuries aident en moyenne. Elles n'aident pas partout, et personne ne peut vous dire d'avance de quel côté vous tomberez.",
+  "crops.counter2": "Une bordure abrite les ravageurs autant que les prédateurs. ",
+  "crops.counter2Rest":
+    "Les bandes fleuries ont amélioré la régulation de 16 % ; les haies, dans la même synthèse, n'ont montré aucun gain significatif. Et une étude de 2024 sur les bordures de champs de melons a trouvé des haies et des bandes fleuries abritant plus de prédateurs qu'une bordure ordinaire — et plus de ravageurs avec eux.",
+  "crops.counter3": "Quelques indigènes font un mauvais voisin pour telle culture précise. ",
+  "crops.counter3Rest":
+    "La rouille du pommier et du genévrier a besoin des deux hôtes à la fois, en général à {distance} près : un verger et un genévrier de Virginie font donc mauvais ménage. Les punaises ternes passent l'hiver dans les bordures enherbées et broussailleuses et gagnent les fraisiers et le coton quand la bordure se dessèche. Ce sont des couples plante-culture précis, pas un argument contre les indigènes — mais si vous cultivez des pommes, ce couple-là est le vôtre.",
+  "crops.counter4": "Exotique ne veut pas automatiquement dire pire. ",
+  "crops.counter4Rest":
+    "Une étude sur des érables et des chênes de ville a trouvé que les espèces exotiques conservaient des communautés d'auxiliaires très proches de celles de leurs parentes indigènes — et portaient moins de ravageurs. Être indigène prédit ce qu'un insecte peut manger. Cela ne prédit pas tout.",
+  "crops.counter5": "Dix-neuf écologues ont contesté le cadre lui-même. ",
+  "crops.counter5Rest":
+    "Dans Nature, Mark Davis et dix-huit co-auteurs ont défendu l'idée qu'une espèce doit être jugée sur ce qu'elle fait plutôt que sur son origine. Nous pensons que l'origine reste le meilleur raccourci disponible pour un jardinier qui veut nourrir le réseau alimentaire local. C'est un raccourci, et nous préférons le dire.",
+  "crops.counter6": "Les dégâts d'oiseaux sur les fruits rouges sont réels, et le retour sur investissement se compte en années. ",
+  "crops.counter6Rest":
+    "De l'ordre de 10 à 20 % sur la myrtille, 5 à 30 % sur la cerise, 5 à 10 % sur le raisin. Une bande fleurie s'est remboursée en quatre ans dans une étude sur la myrtille ; une haie californienne a mis une quinzaine d'années, en ne comptant que les traitements économisés.",
+  "crops.counterEnd":
+    "Rien de tout cela ne déplace les deux résultats principaux : plus de pollinisation, et plus d'insectes mangeurs de ravageurs, sans hausse des ravageurs eux-mêmes. Cela veut dire que la phrase honnête est « cela aide le plus souvent, et voici pourquoi », et non « cela marche à tous les coups ».",
 
   "crops.sourcesTitle": "D'où viennent ces chiffres",
   "crops.sourcesLede":
-    "Chaque chiffre ci-dessus, et l'étude où il a été mesuré. La plupart sont en accès libre ; quelques-unes n'affichent que leur résumé sans abonnement.",
+    "Chaque chiffre ci-dessus, et l'étude où il a été mesuré. Les six dernières sont celles qui compliquent le tableau. La plupart sont en accès libre ; quelques-unes n'affichent que leur résumé sans abonnement.",
   "crops.src.garibaldi": "les insectes sauvages et les fruits, sur 41 cultures",
   "crops.src.klein": "quelles cultures du monde ont besoin d'un pollinisateur",
   "crops.src.blaauw14": "récolte de myrtilles à côté d'une bande fleurie semée",
@@ -2227,11 +2302,22 @@ export const fr: Dict = {
   "crops.src.morandin": "les haies, et les champs de tomates d'à côté",
   "crops.src.albrecht": "529 sites : ce qu'une bande fleurie change à la régulation",
   "crops.src.forister": "ce que 7 500 insectes mangeurs de plantes mangent vraiment",
+  "crops.src.narango": "ce qu'une mésange trouve pour nourrir ses petits",
   "crops.src.monteagudo": "104 études sur les oiseaux face aux ravageurs",
   "crops.src.diaz": "des cultures dont les oiseaux étaient exclus",
   "crops.src.mols": "mésanges charbonnières dans des vergers commerciaux",
-  "crops.src.karp": "là où le schéma ne tient pas, et pourquoi",
+  "crops.src.smith": "le gras des fruits indigènes face aux envahissants, et lesquels les oiseaux ont vidés",
+  "crops.src.lindell": "pourquoi une mauvaise année fruitière est la pire pour les dégâts d'oiseaux",
+  "crops.src.bahlai": "l'hiver du puceron du soja, passé sur le nerprun purgatif",
+  "crops.src.williams": "les tiques sous l'épine-vinette du Japon, et après sa coupe",
+  "crops.src.psu": "l'ailante, et la fulgore tachetée qui le préfère",
   "crops.src.cast": "combien de ravageurs des cultures américaines viennent d'ailleurs",
   "crops.src.osu": "les dégâts d'oiseaux sur les fruits, et ce qui les réduit",
   "crops.src.aphis": "les étourneaux dans les fruits et les céréales, et leur coût",
+  "crops.src.karp": "là où le schéma ne tient pas, sur 132 études",
+  "crops.src.frank": "arbres exotiques en ville : les mêmes auxiliaires, moins de ravageurs",
+  "crops.src.davis": "plaidoyer pour juger une espèce sur ce qu'elle fait, non sur son origine",
+  "crops.src.margins": "des bordures de culture abritant plus de prédateurs — et plus de ravageurs",
+  "crops.src.rust": "la rouille du pommier et du genévrier, et ses deux hôtes",
+  "crops.src.lygus": "la punaise qui quitte une bordure desséchée pour les fraisiers",
 };

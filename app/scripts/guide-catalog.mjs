@@ -336,7 +336,7 @@ export const SECTIONS = [
     label: "Vegetables",
     aliases: ["crops", "vegetable patch", "the vegetable patch", "kitchen garden"],
     emoji: "🥕",
-    title: "Natives next to the vegetables",
+    title: "Will native plants bring pests?",
     tagline: "Planting for wildlife, without losing the harvest.",
     lede:
       "Won’t all those bees and birds eat the fruit and vegetables? It’s the " +
@@ -344,16 +344,17 @@ export const SECTIONS = [
       "do it — and it is one of the few garden arguments that has actually been " +
       "measured. Farms sowed wildflower strips along commercial fields, then " +
       "weighed the crop: more pollinators, more of the insects that eat pests, " +
-      "and no more pests. This page collects what they found, with the study " +
-      "behind every figure — including the places where the worry turns out to " +
-      "be right, because bird damage to soft fruit is real and pretending " +
-      "otherwise would make the rest of it worthless.",
+      "and no more pests. Some natives go further and take a pest away, because " +
+      "the worst ones lean on a plant that isn’t from here either — the " +
+      "spotted lanternfly on tree-of-heaven, the soybean aphid wintering on " +
+      "buckthorn. The page carries the study behind every figure, and the ones " +
+      "that argue the other way as well.",
     note:
       "A bee has no mouthparts for a fruit, and a caterpillar raised on oak " +
       "would starve on lettuce. The animals that eat vegetables are a different " +
       "crowd from the ones a flower border feeds.",
     visit: [
-      { label: "Natives next to the vegetables", href: `${APP}/crops` },
+      { label: "Will native plants bring pests?", href: `${APP}/crops` },
       { label: "Meet the wildlife", href: `${APP}/wildlife` },
     ],
     learn: [

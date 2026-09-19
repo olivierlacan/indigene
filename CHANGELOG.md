@@ -33,7 +33,7 @@ subtitle on the What's new page.
 
 ## [0.31] - 2026-09-18
 
-**A census of the gardens**
+**More native swaps & missing natives**
 
 [![California pipevine offered in place of a blue passionflower](docs/screenshots/pr-152/thumb.png)](docs/screenshots/pr-152/passionflower-dark.png)
 
@@ -112,7 +112,7 @@ subtitle on the What's new page.
 
 ## [0.30] - 2026-09-18
 
-**Takes over, or just spreads**
+**Degrees of invasiveness**
 
 [![Tapping the Gaining ground badge explains what it means](docs/screenshots/pr-151/thumb.png)](docs/screenshots/pr-151/explain-dark.png)
 [Before](docs/screenshots/pr-151/index-before-dark.png) · [After](docs/screenshots/pr-151/index-after-dark.png)
@@ -143,7 +143,7 @@ subtitle on the What's new page.
 
 ## [0.29] - 2026-09-18
 
-**A native for every staple**
+**California's Central Coast & more native swaps**
 
 [![The Central California Coast region, drawn from Sonoma to Big Sur](docs/screenshots/pr-149/thumb.png)](docs/screenshots/pr-149/regions-after-dark.png)
 [Before](docs/screenshots/pr-149/regions-before-dark.png) · [After](docs/screenshots/pr-149/regions-after-dark.png)

@@ -218,15 +218,18 @@ rules:
   `version` to match, add the compare link at the bottom, and start a fresh
   `Unreleased`. No fixed cadence, no conventional commits — the version number
   just increments when a feature ships.
-- **Name a release so somebody could repeat it a week later.** Three or four
-  words, concrete, no pronoun. The ones that stuck are the short ones — *Stand
-  in a spot*, *Meet the wildlife*, *One plant, one name*, *Indigene speaks
-  French*, *Grow this instead*. The ones nobody can quote are the long "X, and
-  Y" pairs that hand the second half to a pronoun: *What's new, and where it
-  would go*, *A spot it remembers, and links that travel*. Two tests, and a
-  name has to pass both: if it needs "it", the thing *it* stands for is the
-  name; and if it runs past about five words, it is a summary, and the bullets
-  underneath are already doing that job.
+- **A release name says what shipped, in words a reader can repeat.** No
+  pronoun — *What's new, and where it would go* and *A spot it remembers, and
+  links that travel* are the ones nobody can quote back, because the pronoun is
+  carrying the half that mattered. Name the thing instead: *Indigene speaks
+  French*, *Meet the wildlife*, *Degrees of invasiveness*.
+- **Two things shipped? Name both, with an ampersand.** *California's Central
+  Coast & more native swaps*. Brevity is not the goal here and cutting to three
+  words is how a name goes wrong: a release that added a whole region got named
+  *A native for every staple*, which was true of the smaller half and silently
+  deleted the region from the record. A name that omits the headline is worse
+  than a long one. Where the thing has a proper name — a region, a language, a
+  place — that name is the release name, and it is not shortened.
 
 Three more conventions the compiler understands:
 

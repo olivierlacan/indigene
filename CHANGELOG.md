@@ -31,50 +31,20 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+## [0.31] - 2026-09-18
+
+**A census of the gardens**
+
+[![California pipevine offered in place of a blue passionflower](docs/screenshots/pr-152/thumb.png)](docs/screenshots/pr-152/passionflower-dark.png)
+
 ### Added
 
-- Plants: five natives the lists were missing — **American beech, American
-  basswood, eastern hemlock and eastern white pine** join the Mid-Atlantic, and
-  **coontie** joins North & Central Florida.
-  [See the plants](https://indigene.app/plants)
-- Plants: American beech is now the answer to a European one, which is a better
-  sentence than the oak we had to offer before. Same grey trunk, same copper
-  winter leaves, and the caterpillars are here.
-- Plants: coontie is the only plant an Atala butterfly caterpillar can eat, and
-  its range is creeping back north as people replant it. It belonged on the
-  central Florida list all along.
-- Native swaps: nine more from the top of the list — rosemary planted by the
-  hundred on banks, Norway spruce, giant sequoia, European beech, oakleaf
-  hydrangea, star magnolia, blue passionflower, jade plant and garden tulips.
-  [See the swaps](https://indigene.app/alternatives)
-- Native swaps: if a passionflower appealed because of the butterflies,
-  California pipevine is the local version of that bargain — the only plant the
-  pipevine swallowtail's caterpillars can eat, anywhere.
-- Native swaps: a bed of modern tulips is a shop window with nothing on the
-  shelves — the nectar has been bred out of the doubles and parrots. Bluebells
-  come back thicker every year instead of thinner.
-- Native swaps: keep the rosemary by the kitchen door. This is about the banks
-  and car parks planted with it by the hundred, a hundred miles from anywhere
-  it grew up.
-- Internal: a `--region` run used to overwrite the whole census snapshot, so one
-  region's queue shipped as a census of eleven. It merges now, and each region
-  carries its own date.
-- Native swaps: the **Central California Coast** has its first swap stories —
-  madrone for a strawberry tree, hummingbird sage for a Mexican one, beach
-  strawberry for trailing lantana.
-  [See the swaps](https://indigene.app/alternatives)
-- Native swaps: nine more, taken in order of how widely they're grown — ginkgo,
-  sweetgum, southern magnolia, strawberry tree, Mexican bush sage, Cape
-  plumbago, bottlebrush, Japanese cheesewood and trailing lantana.
-- Native swaps: a ginkgo is a marvel and no caterpillar on this continent has
-  ever met one, so a ginkgo avenue is a place birds hunt and find nothing. Red
-  maple feeds close to three hundred kinds.
-- Internal: the census matched `Hibiscus rosa-sinensis` against iNaturalist's
-  `Hibiscus × rosa-sinensis` and called them different plants, sending an
-  answered ornamental back up the queue. Hybrid signs are folded away now.
-- Internal: `prose:check` now fails on a French sentence in the English data
-  files. It happened twice while the France rows were being written, and the
-  failure is silent in the worst direction — an English reader gets French.
+- Native swaps: **crape myrtle** now has natives beside it — serviceberry and
+  redbud in the Mid-Atlantic, fringetree and Simpson's stopper in Florida. It's
+  a fine tree on nobody's invasive list; about three kinds of caterpillar live
+  on it. [See the swaps](https://indigene.app/alternatives)
+- Native swaps: a **bahiagrass** lawn in central Florida meets sunshine mimosa —
+  a low pink-flowered mat you mow two or three times a year instead of weekly.
 - Native swaps: eight more of the plants people actually buy now have natives
   beside them — mophead hydrangea, lilac, Japanese spirea, Indian hawthorn,
   lantana, Japanese andromeda, horse-chestnut and Chinese wisteria.
@@ -88,12 +58,39 @@ subtitle on the What's new page.
 - Native swaps: a mophead hydrangea's big florets are sterile — bred for size,
   so no nectar and no pollen. Arrowwood viburnum and Pacific ninebark carry the
   same white plates, every floret working.
-- Native swaps: **crape myrtle** now has natives beside it — serviceberry and
-  redbud in the Mid-Atlantic, fringetree and Simpson's stopper in Florida. It's
-  a fine tree on nobody's invasive list; about three kinds of caterpillar live
-  on it. [See the swaps](https://indigene.app/alternatives)
-- Native swaps: a **bahiagrass** lawn in central Florida meets sunshine mimosa —
-  a low pink-flowered mat you mow two or three times a year instead of weekly.
+- Native swaps: nine more, taken in order of how widely they're grown — ginkgo,
+  sweetgum, southern magnolia, strawberry tree, Mexican bush sage, Cape
+  plumbago, bottlebrush, Japanese cheesewood and trailing lantana.
+- Native swaps: a ginkgo is a marvel and no caterpillar on this continent has
+  ever met one, so a ginkgo avenue is a place birds hunt and find nothing. Red
+  maple feeds close to three hundred kinds.
+- Native swaps: the **Central California Coast** has its first swap stories —
+  madrone for a strawberry tree, hummingbird sage for a Mexican one, beach
+  strawberry for trailing lantana.
+  [See the swaps](https://indigene.app/alternatives)
+- Native swaps: nine more from the top of the list — rosemary planted by the
+  hundred on banks, Norway spruce, giant sequoia, European beech, oakleaf
+  hydrangea, star magnolia, blue passionflower, jade plant and garden tulips.
+  [See the swaps](https://indigene.app/alternatives)
+- Native swaps: if a passionflower appealed because of the butterflies,
+  California pipevine is the local version of that bargain — the only plant the
+  pipevine swallowtail's caterpillars can eat, anywhere.
+- Native swaps: a bed of modern tulips is a shop window with nothing on the
+  shelves — the nectar has been bred out of the doubles and parrots. Bluebells
+  come back thicker every year instead of thinner.
+- Native swaps: keep the rosemary by the kitchen door. This is about the banks
+  and car parks planted with it by the hundred, a hundred miles from anywhere
+  it grew up.
+- Plants: five natives the lists were missing — **American beech, American
+  basswood, eastern hemlock and eastern white pine** join the Mid-Atlantic, and
+  **coontie** joins North & Central Florida.
+  [See the plants](https://indigene.app/plants)
+- Plants: American beech is now the answer to a European one, which is a better
+  sentence than the oak we had to offer before. Same grey trunk, same copper
+  winter leaves, and the caterpillars are here.
+- Plants: coontie is the only plant an Atala butterfly caterpillar can eat, and
+  its range is creeping back north as people replant it. It belonged on the
+  central Florida list all along.
 - Internal: `npm run ornamentals` ranks the plants people actually grow in each
   region, from iNaturalist's cultivated observations, so the authoring queue is
   a census rather than whoever happened to notice one.
@@ -103,6 +100,24 @@ subtitle on the What's new page.
 - Internal: second census blind spot — the better an ornamental has escaped, the
   fewer *cultivated* records it has. Cherry plum: 913 planted against 2,806 wild
   in the PNW, so it drops out of the top thirty.
+- Internal: the census matched `Hibiscus rosa-sinensis` against iNaturalist's
+  `Hibiscus × rosa-sinensis` and called them different plants, sending an
+  answered ornamental back up the queue. Hybrid signs are folded away now.
+- Internal: `prose:check` now fails on a French sentence in the English data
+  files. It happened twice while the France rows were being written, and the
+  failure is silent in the worst direction — an English reader gets French.
+- Internal: a `--region` run used to overwrite the whole census snapshot, so one
+  region's queue shipped as a census of eleven. It merges now, and each region
+  carries its own date.
+
+## [0.30] - 2026-09-18
+
+**How hard it pushes, here**
+
+[![Tapping the Gaining ground badge explains what it means](docs/screenshots/pr-151/thumb.png)](docs/screenshots/pr-151/explain-dark.png)
+[Before](docs/screenshots/pr-151/index-before-dark.png) · [After](docs/screenshots/pr-151/index-after-dark.png)
+
+### Added
 
 - Look-alikes: an impostor now says **how hard it pushes here**, not just that
   it's invasive — takes over, gaining ground, or in patches — with the body that
@@ -126,12 +141,15 @@ subtitle on the What's new page.
   pages, INVMED, the Grand Est PDF — and fails on silence as loudly as on
   disagreement. All 17 verify. `listings.yml` runs it every March and September.
 
-- Regions: **the central California coast is on the map** — 64 native plants for
-  the country from Sonoma and Marin through San Francisco Bay to Big Sur and the
-  Salinas Valley. [See the region](https://indigene.app/regions/ca-central-coast)
-- Regions & Wildlife: three creatures join the roster — the pipevine swallowtail,
-  whose caterpillars eat one vine and nothing else; the lupine blues, the mission
-  blue among them; and the chestnut-backed chickadee of the fog-belt forests.
+## [0.29] - 2026-09-18
+
+**California's central coast, and a native for every garden staple**
+
+[![The Central California Coast region, drawn from Sonoma to Big Sur](docs/screenshots/pr-149/thumb.png)](docs/screenshots/pr-149/regions-after-dark.png)
+[Before](docs/screenshots/pr-149/regions-before-dark.png) · [After](docs/screenshots/pr-149/regions-after-dark.png)
+
+### Added
+
 - Native swaps: **the everyday garden staples now have native answers too.**
   Daylilies, hostas, periwinkle, maiden grass, garden roses and yellow flag iris
   each meet the native that does their job — so nearly half of every plant we
@@ -180,6 +198,12 @@ subtitle on the What's new page.
 - Wildlife: the [orange-tip](https://indigene.app/wildlife/orange-tip) joins the
   catalogue. The male's bright wingtips are unmistakable; the female has none,
   and lays on cuckooflower in the damp corner people mow in June.
+- Regions: **the central California coast is on the map** — 64 native plants for
+  the country from Sonoma and Marin through San Francisco Bay to Big Sur and the
+  Salinas Valley. [See the region](https://indigene.app/regions/ca-central-coast)
+- Regions & Wildlife: three creatures join the roster — the pipevine swallowtail,
+  whose caterpillars eat one vine and nothing else; the lupine blues, the mission
+  blue among them; and the chestnut-backed chickadee of the fog-belt forests.
 - Internal: audited every existing region against `coverage-plan.md` §1. The
   three France lists were the real gap; measured against the Gaytán 2026
   European matrix they now ship 47% of Mediterranean caterpillar records (was
@@ -202,6 +226,15 @@ subtitle on the What's new page.
 - Wildlife & Regions: the star that marks a plant an animal can’t live without
   now says the same word everywhere — “Vital.” It used to read “Essential” on
   the plant and “Vital” on the animal’s summary.
+- **A tab you come back to keeps its colours.** A page left open for a day
+  could come back washed out — the green header gone grey, the buttons blank —
+  until you reloaded it. Indigene now spots that on the way back in and paints
+  itself again.
+- Internal: iOS Safari can restore a page whose `:root` custom properties are
+  gone, so every `var()` colour resolves to nothing while the literal layout
+  survives. `lib/restore.ts` watches `pageshow`/`visibilitychange`, re-inserts
+  the stylesheet links to rebuild the style tree, and reloads once if that
+  isn't enough.
 
 ## [0.28] - 2026-08-30
 
@@ -542,15 +575,6 @@ subtitle on the What's new page.
 - Matches: **Fact boxes stopped cutting their labels short on a big screen.** On a laptop
   a spot's boxes were narrower than the same ones on a phone, so "NURTURED" came
   out "NURTUR…". Every box now sizes itself to the space it's actually in.
-- **A tab you come back to keeps its colours.** A page left open for a day
-  could come back washed out — the green header gone grey, the buttons blank —
-  until you reloaded it. Indigene now spots that on the way back in and paints
-  itself again.
-- Internal: iOS Safari can restore a page whose `:root` custom properties are
-  gone, so every `var()` colour resolves to nothing while the literal layout
-  survives. `lib/restore.ts` watches `pageshow`/`visibilitychange`, re-inserts
-  the stylesheet links to rebuild the style tree, and reloads once if that
-  isn't enough.
 
 ### Fixed
 
@@ -2423,6 +2447,9 @@ subtitle on the What's new page.
   proxies site data; the PWA works without it.
 
 [Unreleased]: https://github.com/olivierlacan/indigene/compare/95c967f...HEAD
+[0.31]: https://github.com/olivierlacan/indigene/compare/46a1ff0...655cb62
+[0.30]: https://github.com/olivierlacan/indigene/compare/d82b7ce...46a1ff0
+[0.29]: https://github.com/olivierlacan/indigene/compare/95c967f...d82b7ce
 [0.28]: https://github.com/olivierlacan/indigene/compare/ba4c7c1...95c967f
 [0.27]: https://github.com/olivierlacan/indigene/compare/22a030f...ba4c7c1
 [0.26]: https://github.com/olivierlacan/indigene/compare/b57fea1...22a030f

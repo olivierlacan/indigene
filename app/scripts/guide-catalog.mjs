@@ -332,6 +332,51 @@ export const SECTIONS = [
     published: true,
   },
   {
+    id: "crops",
+    label: "Vegetables",
+    aliases: ["crops", "vegetable patch", "the vegetable patch", "kitchen garden"],
+    emoji: "🥕",
+    title: "Natives next to the vegetables",
+    tagline: "Planting for wildlife, without losing the harvest.",
+    lede:
+      "Won’t all those bees and birds eat the fruit and vegetables? It’s the " +
+      "commonest reason somebody likes the idea of native planting and doesn’t " +
+      "do it — and it is one of the few garden arguments that has actually been " +
+      "measured. Farms sowed wildflower strips along commercial fields, then " +
+      "weighed the crop: more pollinators, more of the insects that eat pests, " +
+      "and no more pests. This page collects what they found, with the study " +
+      "behind every figure — including the places where the worry turns out to " +
+      "be right, because bird damage to soft fruit is real and pretending " +
+      "otherwise would make the rest of it worthless.",
+    note:
+      "A bee has no mouthparts for a fruit, and a caterpillar raised on oak " +
+      "would starve on lettuce. The animals that eat vegetables are a different " +
+      "crowd from the ones a flower border feeds.",
+    visit: [
+      { label: "Natives next to the vegetables", href: `${APP}/crops` },
+      { label: "Meet the wildlife", href: `${APP}/wildlife` },
+    ],
+    learn: [
+      {
+        label: "What pollinators are and what they do for food crops",
+        source: "U.S. Forest Service",
+        href: "https://www.fs.usda.gov/wildflowers/pollinators/index.shtml",
+      },
+      {
+        label: "Beneficial insects on a farm or in a garden, in depth",
+        source: "The Xerces Society",
+        href: "https://www.xerces.org/",
+      },
+      {
+        label: "Keeping birds off fruit without harming them",
+        source: "Oregon State University Extension",
+        href: "https://extension.oregonstate.edu/catalog/em-9286-nonlethal-bird-deterrent-strategies",
+      },
+    ],
+    match: { segments: ["crops"] },
+    published: true,
+  },
+  {
     id: "privacy",
     label: "Privacy",
     aliases: [],

@@ -337,6 +337,14 @@ async function collectPages(load) {
     image: pageCard("about"),
     imageAlt: "About Indigene — a native of a place, and what this app measures for yours",
   });
+  // The objection page. Its description is the lede rather than a summary of
+  // the evidence, because an unfurled card that asserted "natives don't cost
+  // you the harvest" would be making the claim without any of the page's
+  // caveats attached to it.
+  add("crops", en["crops.docTitle"], en["crops.lede"], {
+    image: pageCard("crops"),
+    imageAlt: "Natives next to the vegetables — what farms measured when they planted for pollinators and birds",
+  });
 
   // --- one page per region ---
   for (const region of REGIONS) {

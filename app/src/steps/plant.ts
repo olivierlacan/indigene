@@ -368,6 +368,9 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
           // reader who came here weighing it against a Bermuda-grass lawn or a
           // barberry hedge.
           alternativeLine(all),
+          // Third of the same stack, and the one line on this page that is the
+          // same for every plant: the way into `#/crops`.
+          cropsLine(),
           statGrid(p),
         ]),
         el("div", { class: "plant-col" }, [
@@ -870,6 +873,31 @@ function alternativeLine(all: PlantEntry[]): HTMLElement | null {
       i > 0 ? " · " : null,
       el("a", { href: `#/alternatives/${id}` }, name),
     ]),
+  ]);
+}
+
+/**
+ * "Near the vegetables: what farms measured" — the one line on a plant page
+ * that doesn't depend on the plant.
+ *
+ * The commonest reason somebody likes the idea of native planting and doesn't
+ * do it is the fear that the wildlife it brings will cost them their fruit and
+ * vegetables. That gets answered once, on `#/crops`, rather than on 200 plant
+ * pages — the same reason the look-alike comparison and the swap live on their
+ * own pages: it is the same evidence whichever plant you arrived on.
+ *
+ * The line names *where the question comes up* rather than answering it. A
+ * one-line "natives won't cost you the harvest" would be the advert the page
+ * itself refuses to be — the evidence is an average with real caveats, and they
+ * don't fit beside a plant's name.
+ */
+function cropsLine(): HTMLElement {
+  return el("p", { class: "kv lookalike-line" }, [
+    el("span", { class: "k" }, [
+      el("span", { "aria-hidden": "true" }, "🥕 "),
+      t("plant.cropsTitle"),
+    ]),
+    el("a", { href: "#/crops" }, t("plant.cropsLink")),
   ]);
 }
 

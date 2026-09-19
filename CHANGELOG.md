@@ -33,6 +33,9 @@ subtitle on the What's new page.
 
 ### Added
 
+- Will the bees and birds you invite eat your fruit and vegetables? A new page
+  answers it with what farms measured when they planted wildflower borders —
+  https://indigene.app/crops. Every plant's page links to it.
 - Native swaps: tap the small picture beside a suggested plant and it opens
   full size, with the photographer's name and licence — the same viewer the
   big photographs use.
@@ -58,6 +61,8 @@ subtitle on the What's new page.
 - Internal: the gzipped bundle figure in `README.md`, `PROJECT_BRIEF.md`,
   `app/README.md` and `docs/ecoregion-plan.md` said ~365 KB and measured ~390;
   re-measured and updated.
+- Internal: re-measured again after the vegetables page — the same four docs
+  now say ~395 KB. The page's English and French text is the whole difference.
 
 ## [0.31] - 2026-09-18
 

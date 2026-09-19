@@ -80,6 +80,7 @@ export const fr: Dict = {
   "steps.privacy": "Vie privée",
   "steps.sources": "Sources",
   "steps.about": "À propos",
+  "steps.crops": "Potager",
   "steps.settings": "Réglages",
 
   // ---------------------------------------------------------------------
@@ -1320,6 +1321,8 @@ export const fr: Dict = {
   "plants.alternativesLink": "Sur le point d'acheter pour un coin de jardin ? Certains choix habituels ne sont pas d'ici — et une indigène fait mieux le travail, en nourrissant la faune qu'ils laissent de côté. {link}.",
   "plants.alternativesLinkText": "voyez quoi planter à la place",
   "plant.alternativesTitle": "À planter plutôt que : ",
+  "plant.cropsTitle": "Près du potager : ",
+  "plant.cropsLink": "ce que les fermes ont mesuré",
   "steps.alternatives": "Alternatives",
   "alternatives.indexTitle": "Des indigènes à planter plutôt que les ornementaux courants",
   "alternatives.indexDocTitle": "Alternatives natives — à planter à la place — Indigene",
@@ -2120,4 +2123,115 @@ export const fr: Dict = {
   "about.help":
     "La chose la plus utile que vous puissiez envoyer, c'est une correction accompagnée d'une source. Tout — les données sur les plantes, les scripts, chaque ligne qui transforme un chiffre en recommandation — est public sur {repo}, et si quelque chose vous paraît faux, vous pouvez {issue}. Demander la couverture de votre propre région est tout aussi bienvenu : c'est ainsi que la carte s'agrandit.",
 
+  // ---------------------------------------------------------------------
+  // « Les indigènes à côté du potager » (steps/crops.ts) — la page qui répond
+  // à l'objection. Les noms d'auteurs et de revues restent dans le code, non
+  // traduits : ce sont des noms propres, et l'article est en anglais quelle
+  // que soit la langue du lecteur.
+  // ---------------------------------------------------------------------
+  "crops.docTitle": "Les indigènes à côté du potager — Indigene",
+  "crops.title": "Les indigènes à côté du potager",
+  "crops.lede":
+    "Un jardin planté pour les abeilles et les oiseaux est censé y perdre ses fruits. Des exploitations agricoles ont vérifié, en vraie grandeur, et ont le plus souvent constaté l'inverse.",
+  "crops.short1":
+    "Une abeille ne peut pas manger une tomate. Abeilles, papillons et syrphes vivent de nectar et de pollen — aucune pièce buccale pour un fruit, ni même pour une feuille.",
+  "crops.short2":
+    "Une chenille élevée sur un chêne ne peut pas manger de la laitue. La plupart des insectes qui mangent des plantes ne digèrent que les quelques espèces avec lesquelles ils ont évolué.",
+  "crops.short3":
+    "Les fermes qui ont semé des bandes fleuries ont eu plus de pollinisateurs et plus de mangeurs de ravageurs dans la culture d'à côté, et pas plus de ravageurs.",
+  "crops.short4":
+    "Les oiseaux prennent bien plus de ravageurs que de fruits. Là où les fruits rouges sont vraiment menacés, la solution est le filet — pas moins de plantes.",
+
+  // Les quatre chiffres à parcourir d'un coup d'œil. Chaque tuile ouvre l'étude.
+  "crops.tilesLabel": "Quatre chiffres tirés des études agricoles, en un coup d'œil",
+  "crops.tile.set.label": "Abeilles sauvages",
+  "crops.tile.set.value": "41 sur 41",
+  "crops.tile.set.sub": "cultures aidées",
+  "crops.tile.set.explain":
+    "Sur 41 systèmes de culture dans le monde, plus de visites d'insectes sauvages a voulu dire plus de fleurs devenues fruits, dans chacun d'eux — et, à visite égale, deux fois plus qu'une abeille domestique. Les abeilles domestiques s'ajoutaient à cela plutôt qu'elles ne le remplaçaient.",
+  "crops.tile.control.label": "Lutte naturelle",
+  "crops.tile.control.value": "+16 %",
+  "crops.tile.control.sub": "à côté d'une bande fleurie",
+  "crops.tile.control.explain":
+    "Rassemblé à partir de 529 sites agricoles en Amérique du Nord, en Europe et en Nouvelle-Zélande. Dans la culture voisine d'une bande fleurie semée, la régulation des ravageurs était en moyenne 16 % plus efficace. Les haies n'ont pas montré le même gain.",
+  "crops.tile.damage.label": "Dégâts sur pommes",
+  "crops.tile.damage.value": "moitié moins",
+  "crops.tile.damage.sub": "là où nichaient des mésanges",
+  "crops.tile.damage.explain":
+    "Dans des vergers commerciaux, les parcelles où des mésanges charbonnières ont élevé une nichée ont subi deux fois moins de dégâts de chenilles que les autres. Le coût pour l'arboriculteur : environ deux nichoirs par hectare.",
+  "crops.tile.payback.label": "Rentabilisé",
+  "crops.tile.payback.value": "4 ans",
+  "crops.tile.payback.sub": "myrtille, Michigan",
+  "crops.tile.payback.explain":
+    "Des fleurs sauvages indigènes semées au bord de champs de myrtilles ont attiré plus d'abeilles sauvages et augmenté la récolte. Dès la quatrième année, le supplément de fruits avait couvert le coût de l'installation.",
+
+  "crops.mouthTitle": "Une abeille n'a pas de bouche pour un fruit",
+  "crops.mouth1":
+    "L'inquiétude confond trois animaux différents. Abeilles, papillons et syrphes ne mangent rien de ce que vous avez planté : adultes, ils vivent de nectar et de pollen, et leurs pièces buccales ne viennent pas à bout d'une feuille, encore moins d'une pomme. Les insectes qui rongent les légumes sont un tout autre monde, et ce n'est pas une bande fleurie qui les fait venir.",
+
+  "crops.fussyTitle": "Les insectes qu'une indigène nourrit ne peuvent pas manger vos légumes",
+  "crops.fussy1":
+    "Les insectes qui mangent des plantes sont bien plus difficiles qu'on ne le croit. Un relevé portant sur 7 500 d'entre eux et 2 000 plantes montre que la plupart ne digèrent que la poignée d'espèces avec lesquelles ils ont évolué. Une chenille élevée sur un chêne ou un saule ne préfère pas le chêne à votre laitue — elle mourrait de faim sur la laitue.",
+  "crops.fussy2":
+    "L'inverse est vrai aussi. La tomate, le poivron et la pomme de terre viennent des Andes, le chou et le chou kale de Méditerranée, la courge du Mexique. Les insectes d'ici n'ont aucune histoire commune avec eux. Les ravageurs qui les mangent sont surtout arrivés avec eux : environ 40 % des insectes et acariens ravageurs des cultures américaines sont des espèces introduites, et aucune haie que vous plantez ne les fait apparaître.",
+
+  "crops.farmsTitle": "Ce qui s'est passé quand des fermes ont essayé",
+  "crops.farms1":
+    "Des producteurs de myrtilles du Michigan ont semé des fleurs sauvages indigènes au bord de leurs champs. En trois ans, les insectes mangeurs de ravageurs présents dans la culture ont augmenté, les ravageurs non, et la bande fleurie était rentabilisée dès la quatrième année.",
+  // {near} et {far} viennent de `length()` : le lecteur voit la distance dans
+  // le système qu'il a choisi — l'étude mesurait de 100 à 200 m.
+  "crops.farms2":
+    "Des fermes californiennes ont fait de même avec des haies et ont eu besoin de moins de traitements insecticides ; le bénéfice portait jusqu'à {near} à {far} à l'intérieur du champ, et pas seulement en bordure. Sur 529 sites répartis sur trois continents, la régulation des ravageurs à côté d'une bande fleurie s'est révélée 16 % plus efficace en moyenne.",
+  "crops.farms3":
+    "La raison est simple. Coccinelles, chrysopes, syrphes et les minuscules guêpes qui pondent dans les pucerons chassent toutes à l'état de larve, et ont toutes besoin de nectar et de pollen à l'état adulte. Enlevez les fleurs : vous gardez les pucerons et vous perdez ce qui les mange.",
+
+  "crops.moreFruitTitle": "Plus de fruits, pas moins",
+  "crops.moreFruit1":
+    "Presque tout ce que vous voudriez cueillir passe d'abord par un insecte : 87 des 115 grandes cultures alimentaires mondiales produisent mieux grâce à la pollinisation animale. Dans les 41 systèmes de culture déjà cités, les insectes sauvages ont augmenté le nombre de fleurs devenues fruits dans chacun d'eux.",
+  "crops.moreFruit2":
+    "La tomate et la myrtille ont besoin d'une pollinisation par vibration : une abeille s'agrippe à la fleur et fait tomber le pollen en faisant vibrer ses muscles de vol. L'abeille domestique n'en est pas capable. Le bourdon, si.",
+
+  "crops.birdsTitle": "Les oiseaux mangent plus de ravageurs que de fruits",
+  "crops.birds1":
+    "Deux grandes synthèses ont cherché ce que les oiseaux font réellement à une culture. Sur 104 études, l'effet d'ensemble est positif : environ la moitié des mesures montrent les oiseaux faisant baisser le nombre de ravageurs, la plupart des autres ne montrent aucune différence, et 5 % vont dans l'autre sens. Là où les oiseaux étaient tenus à l'écart, les dégâts et les ravageurs ont augmenté et le rendement a baissé.",
+  "crops.birds2":
+    "Le pire voleur de fruits d'Amérique du Nord est l'étourneau sansonnet, un oiseau venu d'Europe qui prospère sur la pelouse tondue et les terrains dégagés. Une pelouse fabrique des étourneaux. Une haie, non.",
+  "crops.birds3":
+    "Les oiseaux frugivores vont aussi là où le fruit est rare. C'est la rangée isolée de cerises précoces, sans rien d'autre de mûr aux alentours, qui se fait dévaliser ; plus il y a de fruits autour, sauvages et cultivés, moins chaque plantation en perd.",
+
+  // Les concessions. Une page qui n'argumenterait que dans un sens serait une
+  // publicité, et le lecteur visé a déjà entendu la publicité.
+  "crops.rightTitle": "Là où l'inquiétude a raison",
+  "crops.rightLede":
+    "Quatre de ces points sont des moyennes plutôt que des promesses, et l'un d'eux est un vrai coût. Le dire est la seule chose qui donne de la valeur au reste.",
+  "crops.right1": "Ce n'est pas une loi de la nature. ",
+  "crops.right1Rest":
+    "La plus grande synthèse sur le sujet — 132 études, près de 7 000 sites — montre que les ravageurs et leurs prédateurs réagissent très différemment à la végétation sauvage voisine, d'un endroit à l'autre. Les bandes fleuries aident en moyenne. Elles n'aident pas partout.",
+  "crops.right2": "Une bande fleurie vaut mieux qu'une haie. ",
+  "crops.right2Rest":
+    "Pour la régulation des ravageurs, du moins. Les mélanges fleuris étaient choisis pour les insectes qu'ils nourrissent, les haies rarement : c'est l'explication la plus probable. Une haie garde tout son intérêt, pour les oiseaux et pour l'abri.",
+  "crops.right3": "Le retour sur investissement se compte en années. ",
+  "crops.right3Rest":
+    "Quatre dans le cas de la myrtille. Une quinzaine pour une haie californienne, en ne comptant que les traitements économisés. C'est une chose que l'on plante une fois et dont on se félicite plus tard, pas une astuce pour cette saison.",
+  "crops.right4": "Les dégâts d'oiseaux sur les fruits rouges sont réels. ",
+  "crops.right4Rest":
+    "De l'ordre de 10 à 20 % sur la myrtille, 5 à 30 % sur la cerise, 5 à 10 % sur le raisin. Un filet coûte moins cher qu'une seule saison comme celle-là. Arracher les indigènes n'y change rien.",
+
+  "crops.sourcesTitle": "D'où viennent ces chiffres",
+  "crops.sourcesLede":
+    "Chaque chiffre ci-dessus, et l'étude où il a été mesuré. La plupart sont en accès libre ; quelques-unes n'affichent que leur résumé sans abonnement.",
+  "crops.src.garibaldi": "les insectes sauvages et les fruits, sur 41 cultures",
+  "crops.src.klein": "quelles cultures du monde ont besoin d'un pollinisateur",
+  "crops.src.blaauw14": "récolte de myrtilles à côté d'une bande fleurie semée",
+  "crops.src.blaauw15": "les mêmes champs : plus de prédateurs, pas plus de ravageurs",
+  "crops.src.morandin": "les haies, et les champs de tomates d'à côté",
+  "crops.src.albrecht": "529 sites : ce qu'une bande fleurie change à la régulation",
+  "crops.src.forister": "ce que 7 500 insectes mangeurs de plantes mangent vraiment",
+  "crops.src.monteagudo": "104 études sur les oiseaux face aux ravageurs",
+  "crops.src.diaz": "des cultures dont les oiseaux étaient exclus",
+  "crops.src.mols": "mésanges charbonnières dans des vergers commerciaux",
+  "crops.src.karp": "là où le schéma ne tient pas, et pourquoi",
+  "crops.src.cast": "combien de ravageurs des cultures américaines viennent d'ailleurs",
+  "crops.src.osu": "les dégâts d'oiseaux sur les fruits, et ce qui les réduit",
+  "crops.src.aphis": "les étourneaux dans les fruits et les céréales, et leur coût",
 };

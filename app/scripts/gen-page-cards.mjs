@@ -128,6 +128,7 @@ try {
     { slug: "regions", title: "Meet the natives", subtitle: "the regions Indigene covers, and their rosters", stat: `<b>${nRegions}</b> regions · <b>${totalPlants}</b> native plants` },
     { slug: "wildlife", title: "Browse by wildlife", subtitle: "pick a creature, see the natives that feed it", stat: `<b>${nCreatures}</b> creatures mapped so far` },
     { slug: "browse", title: "Browse", subtitle: "start from a region or a standout plant" },
+    { slug: "crops", title: "Natives next to the vegetables", subtitle: "pollinators, birds, and the harvest", stat: `<b>14</b> studies \u00b7 <b>+16%</b> pest control next door` },
   ];
 } finally {
   await loader.close();

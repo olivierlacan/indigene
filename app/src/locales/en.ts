@@ -86,6 +86,7 @@ export const en = {
   "steps.privacy": "Privacy",
   "steps.sources": "Sources",
   "steps.about": "About",
+  "steps.crops": "Vegetables",
   "steps.settings": "Settings",
 
   // ---------------------------------------------------------------------
@@ -1321,6 +1322,12 @@ export const en = {
   "plants.alternativesLink": "About to buy something for a spot? Some of the usual choices aren't from here — and a native does the job better, feeding the wildlife they can't. {link}.",
   "plants.alternativesLinkText": "see what to grow instead",
   "plant.alternativesTitle": "Grow it instead of: ",
+  // The third line of the same stack, and the only one that is the same on
+  // every plant page: the way into `#/crops`. It states where the question
+  // comes up rather than answering it, because the answer has caveats and a
+  // one-line summary of it would be the advert the page refuses to be.
+  "plant.cropsTitle": "Near the vegetables: ",
+  "plant.cropsLink": "what farms measured",
   "steps.alternatives": "Native swaps",
   "alternatives.indexTitle": "Natives to grow instead of common ornamentals",
   "alternatives.indexDocTitle": "Native swaps — grow these instead — Indigene",
@@ -2125,6 +2132,120 @@ export const en = {
   "about.helpTitle": "Help make it better",
   "about.help":
     "The most useful thing you can send is a correction with a source behind it. All of it — the plant data, the scripts, every line that turns a number into a recommendation — is public at {repo}, and if something looks wrong you can {issue}. Asking for your own region to be covered is welcome too; that's how the map grows.",
+  // ---------------------------------------------------------------------
+  // "Natives next to the vegetables" (steps/crops.ts) — the objection page.
+  // The commonest reason somebody who likes native planting doesn't do it is
+  // the fear that it costs them the harvest, and it is the one objection with
+  // a real literature behind it: farms have run this on commercial acreage and
+  // weighed the crop. So every figure here names the study it came from. The
+  // author lists and journal names live in the step file, untranslated — they
+  // are proper nouns, and the paper is in English whatever the reader is.
+  // ---------------------------------------------------------------------
+  "crops.docTitle": "Natives next to the vegetables — Indigene",
+  "crops.title": "Natives next to the vegetables",
+  "crops.lede":
+    "A garden planted for bees and birds is supposed to lose its fruit to them. Farms tested that on real acreage, and mostly found the opposite.",
+  "crops.short1":
+    "A bee cannot eat a tomato. Bees, butterflies and hoverflies live on nectar and pollen — no mouthparts for fruit, or even for a leaf.",
+  "crops.short2":
+    "A caterpillar raised on oak cannot eat lettuce. Most plant-eating insects can only digest the few plants they evolved alongside.",
+  "crops.short3":
+    "Farms that sowed wildflower borders got more pollinators and more pest-eaters in the crop beside them, and no more pests.",
+  "crops.short4":
+    "Birds take far more pests than fruit. Where soft fruit really is at risk, netting is the fix — not fewer plants.",
+
+  // The four figures worth scanning, as tiles. Each tap opens the study.
+  "crops.tilesLabel": "Four figures from the farm studies, at a glance",
+  "crops.tile.set.label": "Wild bees",
+  "crops.tile.set.value": "41 of 41",
+  "crops.tile.set.sub": "crops they helped",
+  "crops.tile.set.explain":
+    "Across 41 crop systems worldwide, more visits from wild insects meant more fruit set in every single one — and per visit, twice as much as a honey bee. Honey bees added to that rather than standing in for it.",
+  "crops.tile.control.label": "Pest control",
+  "crops.tile.control.value": "+16%",
+  "crops.tile.control.sub": "beside a flower border",
+  "crops.tile.control.explain":
+    "Pulled together from 529 farm sites across North America, Europe and New Zealand. Pest control in the crop next to a sown flower border came out 16% better on average. Hedgerows did not show the same gain.",
+  "crops.tile.damage.label": "Apple damage",
+  "crops.tile.damage.value": "halved",
+  "crops.tile.damage.sub": "where great tits nested",
+  "crops.tile.damage.explain":
+    "In commercial orchards, blocks where great tits raised a brood had half the caterpillar damage of blocks where they didn't. The cost to the grower was about two nest boxes per hectare.",
+  "crops.tile.payback.label": "Paid for itself",
+  "crops.tile.payback.value": "4 years",
+  "crops.tile.payback.sub": "Michigan blueberry",
+  "crops.tile.payback.explain":
+    "Native wildflowers sown beside blueberry fields brought in more wild bees and lifted the harvest. By the fourth year the extra fruit had covered what the planting cost to put in.",
+
+  "crops.mouthTitle": "A bee has no mouth for fruit",
+  "crops.mouth1":
+    "The worry bundles three different animals into one. Bees, butterflies and hoverflies are not eating anything you planted: as adults they live on nectar and pollen, and their mouthparts can't manage a leaf, let alone an apple. The insects that chew vegetables are a separate crowd, and a flower border is not what invites them.",
+
+  "crops.fussyTitle": "The insects a native feeds can't eat your vegetables",
+  "crops.fussy1":
+    "Plant-eating insects are far pickier than people expect. A survey of 7,500 of them against 2,000 plants found that most can only digest the handful of plants they evolved alongside. A caterpillar raised on oak or willow isn't choosing oak over your lettuce — it would starve on lettuce.",
+  "crops.fussy2":
+    "It runs the other way too. Tomatoes, peppers and potatoes come from the Andes, cabbage and kale from the Mediterranean, squash from Mexico. The insects here have no history with any of them. The pests that do eat them mostly arrived with them: about 40% of the insect and mite pests of American crops are introduced species, and no hedge you plant summons those.",
+
+  "crops.farmsTitle": "What happened when farms tried it",
+  "crops.farms1":
+    "Michigan blueberry growers sowed native wildflowers beside their fields. Over three years the pest-eating insects in the crop went up, the pest insects did not, and the planting had paid for itself by the fourth year.",
+  // {near} and {far} come from `length()`, so the reader sees the distance in
+  // whichever system they've chosen — the study measured 100 to 200 m.
+  "crops.farms2":
+    "Californian farms did the same with hedgerows and needed fewer insecticide sprays; the benefit reached {near} to {far} into the field, not just along its edge. Across 529 sites on three continents, pest control next to a flower border came out 16% better on average.",
+  "crops.farms3":
+    "The reason is plain enough. Ladybirds, lacewings, hoverflies and the tiny wasps that lay their eggs in aphids all hunt as larvae, and all need nectar and pollen as adults. Take the flowers away and you keep the aphids and lose what eats them.",
+
+  "crops.moreFruitTitle": "More fruit, not less",
+  "crops.moreFruit1":
+    "Most of what you'd want to pick needs an insect first: 87 of the world's 115 leading food crops do better for animal pollination. In those 41 crop systems, wild insects raised fruit set in every one of them.",
+  "crops.moreFruit2":
+    "Tomatoes and blueberries need buzz pollination — a bee that grips the flower and shakes the pollen loose with its flight muscles. A honey bee can't do it. A bumblebee can.",
+
+  "crops.birdsTitle": "Birds eat more pests than fruit",
+  "crops.birds1":
+    "Two large reviews asked what birds actually do to a crop. Across 104 studies the overall effect was positive: about half the measurements showed birds cutting pest numbers, most of the rest showed no difference, and 5% went the other way. Where birds were fenced out, damage and pest numbers rose and the yield fell.",
+  "crops.birds2":
+    "The worst fruit thief in North America is the European starling, a bird brought over from Europe that thrives on mown grass and open ground. A lawn makes starlings. A hedge doesn't.",
+  "crops.birds3":
+    "Fruit-eating birds also go where fruit is scarce. An isolated row of early cherries with nothing else ripe nearby is the one that gets stripped; the more fruit there is around, wild and grown, the less any single planting loses.",
+
+  // The concessions. A page that only argued one way would be an advert, and
+  // the reader this page is for has already heard the advert.
+  "crops.rightTitle": "Where the worry is right",
+  "crops.rightLede":
+    "Four of these are averages rather than promises, and one is a real cost. Saying so is the only thing that makes the rest worth anything.",
+  "crops.right1": "It isn't a law of nature. ",
+  "crops.right1Rest":
+    "The largest survey of this — 132 studies, nearly 7,000 sites — found that pests and their predators respond to nearby wild ground very differently from one place to the next. Borders help on average. They don't help everywhere.",
+  "crops.right2": "A flower border beats a hedge. ",
+  "crops.right2Rest":
+    "For pest control, at least. The flower mixes were chosen for the insects they feed and the hedges usually weren't, which is the likeliest reason. A hedge still earns its place, for the birds and the shelter.",
+  "crops.right3": "The payback is in years. ",
+  "crops.right3Rest":
+    "Four in the blueberry case. Around sixteen for a Californian hedgerow, counting only the sprays it saved. This is something you plant once and are glad of later, not a trick for this season.",
+  "crops.right4": "Bird damage to soft fruit is real. ",
+  "crops.right4Rest":
+    "Roughly 10 to 20% in blueberries, 5 to 30% in cherries, 5 to 10% in grapes. Netting costs less than one season of that. Taking the natives out changes none of it.",
+
+  "crops.sourcesTitle": "Where these numbers come from",
+  "crops.sourcesLede":
+    "Every figure above, and the study it was measured in. Most are open to read; a few show only their summary without a subscription.",
+  "crops.src.garibaldi": "wild insects and fruit set, across 41 crops",
+  "crops.src.klein": "which of the world's crops need a pollinator",
+  "crops.src.blaauw14": "blueberry yield beside a sown wildflower planting",
+  "crops.src.blaauw15": "the same fields: pest-eaters up, pests not",
+  "crops.src.morandin": "hedgerows, and the tomato fields next to them",
+  "crops.src.albrecht": "529 sites: what a flower border does for pest control",
+  "crops.src.forister": "what 7,500 plant-eating insects will actually eat",
+  "crops.src.monteagudo": "104 studies of birds against crop pests",
+  "crops.src.diaz": "crops grown with the birds fenced out",
+  "crops.src.mols": "great tits in commercial apple orchards",
+  "crops.src.karp": "where the pattern doesn't hold, and why",
+  "crops.src.cast": "how many US crop pests came from somewhere else",
+  "crops.src.osu": "bird damage to fruit, and what reduces it",
+  "crops.src.aphis": "starlings in fruit and grain, and what they cost",
 } as const;
 
 /** Every valid string key. Derived, so it can never drift from the strings. */

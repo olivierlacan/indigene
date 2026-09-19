@@ -31,6 +31,7 @@ import { renderPrivacy } from "./steps/privacy";
 import { renderSources } from "./steps/sources";
 import { renderSettings } from "./steps/settings";
 import { renderAbout } from "./steps/about";
+import { renderCrops } from "./steps/crops";
 import { initAppMenu, closeAppMenu } from "./components/app-menu";
 import { initPullToReload } from "./components/pull-to-reload";
 import { watchRestore } from "./lib/restore";
@@ -92,6 +93,10 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
   sources: { fn: renderSources, labelKey: "steps.sources", inFlow: false },
   settings: { fn: renderSettings, labelKey: "steps.settings", inFlow: false },
   about: { fn: renderAbout, labelKey: "steps.about", inFlow: false },
+  // "Will the wildlife I invite eat my fruit and vegetables?" — the objection
+  // page. Reached from every plant page's top block, beside the look-alike
+  // warning and the native swap.
+  crops: { fn: renderCrops, labelKey: "steps.crops", inFlow: false },
 };
 
 /**

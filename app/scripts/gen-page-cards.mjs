@@ -128,6 +128,10 @@ try {
     { slug: "regions", title: "Meet the natives", subtitle: "the regions Indigene covers, and their rosters", stat: `<b>${nRegions}</b> regions · <b>${totalPlants}</b> native plants` },
     { slug: "wildlife", title: "Browse by wildlife", subtitle: "pick a creature, see the natives that feed it", stat: `<b>${nCreatures}</b> creatures mapped so far` },
     { slug: "browse", title: "Browse", subtitle: "start from a region or a standout plant" },
+    // The one card that leads with the question rather than the answer. It is
+    // the sentence people actually say out loud, and a card that argued back at
+    // them in 30 characters would be the advert the page refuses to be.
+    { slug: "crops", title: "Will native plants bring pests to my yard?", subtitle: "no \u2014 and some of them take pests away", stat: `<b>25</b> studies \u00b7 the ones that disagree too` },
   ];
 } finally {
   await loader.close();

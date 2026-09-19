@@ -17,6 +17,16 @@
 //   3. Collisions — two part files claiming one key, where the plain spread in
 //      `index.ts` makes one silently win. That is never intentional and always a
 //      bug, so it exits non-zero.
+//   4. French in the English data — a sentence in `data/*.ts` written in the
+//      wrong language. Also an error, and also always a bug.
+//
+// **Why the fourth one exists.** The data files hold the *English*; the French
+// lives in `locales/prose.fr/`. Writing a row for a French region tempts you
+// straight past that, and the failure is silent in the worst direction: an
+// English reader gets French, while `prose.fr` still reports the field as
+// untranslated, so the coverage number above looks unchanged. It happened twice
+// in one sitting while the France swap rows were being written, which is what
+// this is for.
 //
 // A taxon that is a native plant *and* an impostor elsewhere (Douglas-fir, holly,
 // common ivy) legitimately holds both kinds of writing under one key — that is
@@ -27,10 +37,22 @@
 //   npm run prose:check -- --lang fr       one language (default: all with a table)
 //   npm run prose:check -- --strict        exit non-zero on any gap too
 //   npm run prose:check -- --quiet         totals only, no per-field list
+import { readFileSync } from "node:fs";
 import { openLoader } from "./_load-ts.mjs";
 import { withSeeds } from "./_regions.mjs";
 
 const args = process.argv.slice(2);
+/** The authored-English data files, read as text — this check is about the
+ *  literal strings in them, not the objects they evaluate to. */
+function dataSources() {
+  const dir = new URL("../src/data/", import.meta.url);
+  const out = {};
+  for (const name of ["alternatives.ts", "lookalikes.ts"]) {
+    out[name] = readFileSync(new URL(name, dir), "utf8");
+  }
+  return out;
+}
+
 const flag = (name) => args.includes(`--${name}`);
 const opt = (name) => {
   const i = args.indexOf(`--${name}`);
@@ -173,8 +195,32 @@ try {
     }
   }
 
+  // ---- 4. French sentences in the English data ----------------------------
+  //
+  // Markers, not a language model: two or more of these in one string is French
+  // past any reasonable doubt, and one alone never fires. English prose in this
+  // repo does use « » for a French *term* it is glossing, so a quotation mark on
+  // its own is not evidence; "qui", "une", "pour un" together are.
+  const FRENCH = [
+    /«|»/, /\bqui\b/, /\bque\b/, /\bune\b/, /\bdes\b/, /\best\b/,
+    /\bpour\b/, /\bdans\b/, /\bsur un\b/, /\bc'est\b/, /\bde la\b/, /\bfait\b/,
+  ];
+  const strayFrench = [];
+  for (const [file, text] of Object.entries(dataSources())) {
+    for (const m of text.matchAll(/^\s*(why|blurb|origin|role|means):\s*\n?\s*"((?:[^"\\]|\\.)*)"/gm)) {
+      const hits = FRENCH.filter((re) => re.test(m[2])).length;
+      if (hits >= 2) strayFrench.push(`${file}: ${m[1]} — ${m[2].slice(0, 70)}…`);
+    }
+  }
+  if (strayFrench.length) {
+    console.log(`\n  ❌ ${strayFrench.length} French sentence(s) in the English data:`);
+    for (const line of strayFrench) console.log(`     ${line}`);
+    console.log("     The data files are English. French belongs in locales/prose.fr/.");
+    failed = true;
+  }
+
   if (failed) {
-    console.log("\nFailed. A collision is always a bug; a gap is one only under --strict.");
+    console.log("\nFailed. A collision and French in the English data are always bugs; a gap is one only under --strict.");
     process.exitCode = 1;
   }
 } finally {

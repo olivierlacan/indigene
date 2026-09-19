@@ -33,6 +33,77 @@ subtitle on the What's new page.
 
 ### Added
 
+- Plants: five natives the lists were missing — **American beech, American
+  basswood, eastern hemlock and eastern white pine** join the Mid-Atlantic, and
+  **coontie** joins North & Central Florida.
+  [See the plants](https://indigene.app/plants)
+- Plants: American beech is now the answer to a European one, which is a better
+  sentence than the oak we had to offer before. Same grey trunk, same copper
+  winter leaves, and the caterpillars are here.
+- Plants: coontie is the only plant an Atala butterfly caterpillar can eat, and
+  its range is creeping back north as people replant it. It belonged on the
+  central Florida list all along.
+- Native swaps: nine more from the top of the list — rosemary planted by the
+  hundred on banks, Norway spruce, giant sequoia, European beech, oakleaf
+  hydrangea, star magnolia, blue passionflower, jade plant and garden tulips.
+  [See the swaps](https://indigene.app/alternatives)
+- Native swaps: if a passionflower appealed because of the butterflies,
+  California pipevine is the local version of that bargain — the only plant the
+  pipevine swallowtail's caterpillars can eat, anywhere.
+- Native swaps: a bed of modern tulips is a shop window with nothing on the
+  shelves — the nectar has been bred out of the doubles and parrots. Bluebells
+  come back thicker every year instead of thinner.
+- Native swaps: keep the rosemary by the kitchen door. This is about the banks
+  and car parks planted with it by the hundred, a hundred miles from anywhere
+  it grew up.
+- Internal: a `--region` run used to overwrite the whole census snapshot, so one
+  region's queue shipped as a census of eleven. It merges now, and each region
+  carries its own date.
+- Native swaps: the **Central California Coast** has its first swap stories —
+  madrone for a strawberry tree, hummingbird sage for a Mexican one, beach
+  strawberry for trailing lantana.
+  [See the swaps](https://indigene.app/alternatives)
+- Native swaps: nine more, taken in order of how widely they're grown — ginkgo,
+  sweetgum, southern magnolia, strawberry tree, Mexican bush sage, Cape
+  plumbago, bottlebrush, Japanese cheesewood and trailing lantana.
+- Native swaps: a ginkgo is a marvel and no caterpillar on this continent has
+  ever met one, so a ginkgo avenue is a place birds hunt and find nothing. Red
+  maple feeds close to three hundred kinds.
+- Internal: the census matched `Hibiscus rosa-sinensis` against iNaturalist's
+  `Hibiscus × rosa-sinensis` and called them different plants, sending an
+  answered ornamental back up the queue. Hybrid signs are folded away now.
+- Internal: `prose:check` now fails on a French sentence in the English data
+  files. It happened twice while the France rows were being written, and the
+  failure is silent in the worst direction — an English reader gets French.
+- Native swaps: eight more of the plants people actually buy now have natives
+  beside them — mophead hydrangea, lilac, Japanese spirea, Indian hawthorn,
+  lantana, Japanese andromeda, horse-chestnut and Chinese wisteria.
+  [See the swaps](https://indigene.app/alternatives)
+- Native swaps: horse-chestnut goes brown and shrivelled by high summer now, all
+  over Europe — a leaf-mining moth spread with it. Small-leaved lime keeps its
+  leaves, and hums with bees in July.
+- Native swaps: lantana really is a nectar bar, and Florida's worst-tier
+  invasive besides. California fuchsia brings the hummingbirds without the
+  thickets or the berries that poison livestock.
+- Native swaps: a mophead hydrangea's big florets are sterile — bred for size,
+  so no nectar and no pollen. Arrowwood viburnum and Pacific ninebark carry the
+  same white plates, every floret working.
+- Native swaps: **crape myrtle** now has natives beside it — serviceberry and
+  redbud in the Mid-Atlantic, fringetree and Simpson's stopper in Florida. It's
+  a fine tree on nobody's invasive list; about three kinds of caterpillar live
+  on it. [See the swaps](https://indigene.app/alternatives)
+- Native swaps: a **bahiagrass** lawn in central Florida meets sunshine mimosa —
+  a low pink-flowered mat you mow two or three times a year instead of weekly.
+- Internal: `npm run ornamentals` ranks the plants people actually grow in each
+  region, from iNaturalist's cultivated observations, so the authoring queue is
+  a census rather than whoever happened to notice one.
+- Internal: the census undercounts turf twentyfold — nobody photographs a lawn —
+  and proposed St. Augustine grass, whose nativity the Flora of the Southeastern
+  US calls impossible to determine. Both written down rather than worked around.
+- Internal: second census blind spot — the better an ornamental has escaped, the
+  fewer *cultivated* records it has. Cherry plum: 913 planted against 2,806 wild
+  in the PNW, so it drops out of the top thirty.
+
 - Look-alikes: an impostor now says **how hard it pushes here**, not just that
   it's invasive — takes over, gaining ground, or in patches — with the body that
   scored it named beside it.
@@ -43,6 +114,9 @@ subtitle on the What's new page.
 - Look-alikes: tap "Gaining ground" and it tells you what it means, where it
   sits on the three steps, and who scored it — a tooltip only works if you have
   a mouse, and most of you don't.
+- Look-alikes: the index now spells out the whole scale, where the words come
+  from, and what a card with no badge means — nobody has scored that ground
+  yet, which is not the same as harmless.
 - Internal: `LookalikeListing` is a union — only an impact assessment may carry
   a level, a regulation must state what it asks. A region nobody has assessed
   gets no rank rather than a borrowed one; the Pacific Northwest and Atlantic

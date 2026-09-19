@@ -39,6 +39,10 @@ plant and animal prose, empty states, error messages, and release notes.
   region's box: 6,819 (GBIF)". Same for file paths, function names, workflow
   names and internal jargon. The script name belongs in the commit message, the
   code comment, or an `Internal:` changelog bullet.
+- **A title names the thing; a pronoun names nothing.** "How hard it pushes"
+  asks the reader to hold a blank until the next sentence fills it in — and a
+  title has no next sentence. Say what *it* was. This binds every heading, card
+  title, button label and release name in the app.
 - **Every word is also a translation.** French is written by hand from this
   English (`src/locales/`, `src/locales/prose.fr/`). A paragraph we didn't
   need is a paragraph somebody translates, reviews and maintains forever.
@@ -214,6 +218,15 @@ rules:
   `version` to match, add the compare link at the bottom, and start a fresh
   `Unreleased`. No fixed cadence, no conventional commits — the version number
   just increments when a feature ships.
+- **Name a release so somebody could repeat it a week later.** Three or four
+  words, concrete, no pronoun. The ones that stuck are the short ones — *Stand
+  in a spot*, *Meet the wildlife*, *One plant, one name*, *Indigene speaks
+  French*, *Grow this instead*. The ones nobody can quote are the long "X, and
+  Y" pairs that hand the second half to a pronoun: *What's new, and where it
+  would go*, *A spot it remembers, and links that travel*. Two tests, and a
+  name has to pass both: if it needs "it", the thing *it* stands for is the
+  name; and if it runs past about five words, it is a summary, and the bullets
+  underneath are already doing that job.
 
 Three more conventions the compiler understands:
 

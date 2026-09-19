@@ -112,7 +112,7 @@ subtitle on the What's new page.
 
 ## [0.30] - 2026-09-18
 
-**How hard it pushes, here**
+**Takes over, or just spreads**
 
 [![Tapping the Gaining ground badge explains what it means](docs/screenshots/pr-151/thumb.png)](docs/screenshots/pr-151/explain-dark.png)
 [Before](docs/screenshots/pr-151/index-before-dark.png) · [After](docs/screenshots/pr-151/index-after-dark.png)
@@ -143,7 +143,7 @@ subtitle on the What's new page.
 
 ## [0.29] - 2026-09-18
 
-**California's central coast, and a native for every garden staple**
+**A native for every staple**
 
 [![The Central California Coast region, drawn from Sonoma to Big Sur](docs/screenshots/pr-149/thumb.png)](docs/screenshots/pr-149/regions-after-dark.png)
 [Before](docs/screenshots/pr-149/regions-before-dark.png) · [After](docs/screenshots/pr-149/regions-after-dark.png)

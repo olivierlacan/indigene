@@ -8,6 +8,15 @@
     "attribution": "(c) Michael John Oldham, some rights reserved (CC BY-NC), uploaded by Michael John Oldham",
     "color": "#6d8b72"
   },
+  "achlys-triphylla": {
+    "taxonId": 75263,
+    "photoId": 129720546,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/129720546/square.jpg",
+    "observer": "David F. Fraser",
+    "license": "cc-by-nc",
+    "attribution": "(c) David F. Fraser, some rights reserved (CC BY-NC), uploaded by David F. Fraser",
+    "color": "#5d6b4f"
+  },
   "acmispon-glaber": {
     "taxonId": 53134,
     "photoId": 272983126,
@@ -1412,6 +1421,15 @@
     "attribution": "(c) Ted Gilliland, some rights reserved (CC BY-NC), uploaded by Ted Gilliland",
     "color": "#668338"
   },
+  "lysichiton-americanus": {
+    "taxonId": 48537,
+    "photoId": 34312912,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/34312912/square.jpeg",
+    "observer": "Barbara L. Wilson",
+    "license": "cc-by-nc",
+    "attribution": "(c) Barbara L. Wilson, some rights reserved (CC BY-NC), uploaded by Barbara L. Wilson",
+    "color": "#42621b"
+  },
   "lythrum-salicaria": {
     "taxonId": 61321,
     "photoId": 713413897,
@@ -1645,6 +1663,33 @@
     "license": "cc-by-nc-sa",
     "attribution": "(c) Belinda Lo, some rights reserved (CC BY-NC-SA)",
     "color": "#536843"
+  },
+  "petasites-frigidus": {
+    "taxonId": 55780,
+    "photoId": 366989332,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/366989332/square.jpeg",
+    "observer": "August",
+    "license": "cc-by-nc",
+    "attribution": "(c) August, some rights reserved (CC BY-NC), uploaded by August",
+    "color": "#739242"
+  },
+  "picea-sitchensis": {
+    "taxonId": 68131,
+    "photoId": 35647222,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/35647222/square.jpg",
+    "observer": "Christopher J. Earle",
+    "license": "cc-by-nc",
+    "attribution": "(c) Christopher J. Earle, some rights reserved (CC BY-NC), uploaded by Christopher J. Earle",
+    "color": "#263635"
+  },
+  "pinus-contorta": {
+    "taxonId": 48934,
+    "photoId": 45880976,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/45880976/square.jpeg",
+    "observer": "Alison Northup",
+    "license": "cc-by",
+    "attribution": "(c) Alison Northup, some rights reserved (CC BY), uploaded by Alison Northup",
+    "color": "#868868"
   },
   "pinus-coulteri": {
     "taxonId": 67330,
@@ -1915,6 +1960,15 @@
     "license": "cc-by-sa",
     "attribution": "(c) Gilles San Martin, some rights reserved (CC BY-SA), uploaded by Gilles San Martin",
     "color": "#5f5d38"
+  },
+  "rhododendron-macrophyllum": {
+    "taxonId": 57360,
+    "photoId": 396805527,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/396805527/square.jpeg",
+    "observer": "Karla Salp",
+    "license": "cc-by-nc",
+    "attribution": "(c) Karla Salp, some rights reserved (CC BY-NC), uploaded by Karla Salp",
+    "color": "#5e5c37"
   },
   "rhus-integrifolia": {
     "taxonId": 55009,
@@ -2384,6 +2438,15 @@
     "attribution": "(c) Jonathan Tyler, some rights reserved (CC BY-NC-SA)",
     "color": "#5d6b33"
   },
+  "tellima-grandiflora": {
+    "taxonId": 51655,
+    "photoId": 143999155,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/143999155/square.jpg",
+    "observer": "Scott Ranger",
+    "license": "cc-by-nc",
+    "attribution": "(c) Scott Ranger, some rights reserved (CC BY-NC), uploaded by Scott Ranger",
+    "color": "#3f432c"
+  },
   "teucrium-scorodonia": {
     "taxonId": 57439,
     "photoId": 148039076,
@@ -2590,6 +2653,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Ryan Sawby, some rights reserved (CC BY-NC), uploaded by Ryan Sawby",
     "color": "#5f5f58"
+  },
+  "viola-glabella": {
+    "taxonId": 71113,
+    "photoId": 291898703,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/291898703/square.jpg",
+    "observer": "erinlovesflowers",
+    "license": "cc-by-nc",
+    "attribution": "(c) erinlovesflowers, some rights reserved (CC BY-NC)",
+    "color": "#748b41"
   },
   "vitis-californica": {
     "taxonId": 63923,

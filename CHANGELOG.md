@@ -48,6 +48,20 @@ subtitle on the What's new page.
   Checklist of Vascular Plants with `npm run native:check`, which re-asks the
   source per plant and writes a committed snapshot. All 67 pass. It caught that
   beech is introduced in Ireland and that lime and hornbeam never arrived.
+- Planting: eight more Pacific Northwest natives — Sitka spruce, shore pine,
+  wild rhododendron, fringecup, sweet coltsfoot, western skunk cabbage, vanilla
+  leaf and stream violet. Sweet coltsfoot flowers in February, on bare stalks,
+  when a bumblebee queen has almost nothing else to feed on.
+  https://indigene.app/regions/pnw
+- Internal: the candidate finder asks Kew's World Checklist first and
+  iNaturalist only for the names Kew has no row for, and every shortlisted row
+  says which answered. It also stops losing plants: asking iNaturalist *for a
+  place* rather than reading its first hundred listings takes the Pacific
+  Northwest's "no answer on native status" count from 27 to 0.
+- Internal: `DATA_SOURCES.md` said USDA PLANTS gives native status per state. It
+  gives it per country group, which is why it calls black locust a Lower-48
+  native where Kew knows it is introduced in Oregon. Corrected, with the
+  measurement, and it is now a printed cross-check rather than a ranking term.
 - Internal: `docs/region-queue.md` — a measured queue for the next regions.
   Three of the four candidates turned out to be something other than a new
   region: Boston already has a list and Portland, Maine doesn't (same

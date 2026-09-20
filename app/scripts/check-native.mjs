@@ -21,11 +21,8 @@
 //   no-match     WCVP has no accepted taxon under this name → check the spelling
 //                against the accepted name, or the row's `basis`
 //
-// **Pin the rank, or pin the name.** A plain `search?q=Crataegus+monogyna`
-// returns twenty results without the species among them — infraspecific taxa
-// crowd it out — so a common binomial reads as absent. This script uses the
-// exact `name=` filter; `candidates.mjs` asks the ranked endpoint with
-// `rank=SPECIES`, which is equally correct. Either works; neither is optional.
+// How to ask WCVP without the question quietly failing — and it has a real trap
+// in it — lives in `_wcvp.mjs`, which `candidates.mjs` shares.
 //
 // ## Where it disagrees with a national flora
 //
@@ -39,6 +36,7 @@ import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { requireProxyAwareFetch } from "./_net.mjs";
+import { wcvpAccepted, wcvpDistributions, wcvpStatus, WCVP_DATASET } from "./_wcvp.mjs";
 
 requireProxyAwareFetch("native:check");
 
@@ -46,8 +44,6 @@ const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const DATA_DIR = join(REPO_ROOT, "app", "src", "data");
 const OUT_DIR = join(REPO_ROOT, "data", "sources", "wcvp");
 
-const WCVP_DATASET = "f382f0ce-323a-4091-bb9f-add557f3a9a2";
-const GBIF = "https://api.gbif.org/v1";
 
 /** Which TDWG level-3 botanical area each region's native claim is about.
  *  Only regions whose status comes from WCVP appear here; the others cite a
@@ -73,27 +69,14 @@ if (!area) {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function json(url) {
-  const res = await fetch(url, { headers: { accept: "application/json" } });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return res.json();
-}
-
 /** WCVP's verdict for one binomial in one TDWG area. */
 async function statusFor(latin, tdwg) {
-  // `name=` is an exact canonical-name filter, so rank never needs pinning.
-  // The ranked endpoint works too, with `rank=SPECIES` — see the header.
-  const hits = (await json(`${GBIF}/species?datasetKey=${WCVP_DATASET}&name=${encodeURIComponent(latin)}&limit=50`))
-    .results ?? [];
-  const accepted = hits.find((r) => r.taxonomicStatus === "ACCEPTED");
-  const synonym = hits.find((r) => r.acceptedKey);
-  const key = accepted?.key ?? synonym?.acceptedKey;
-  if (!key) return { verdict: "no-match" };
-  const dists = (await json(`${GBIF}/species/${key}/distributions?limit=500`)).results ?? [];
-  const here = dists.find((d) => d.locationId === `TDWG:${tdwg}`);
+  const usage = await wcvpAccepted(latin);
+  if (!usage) return { verdict: "no-match" };
+  const rows = await wcvpDistributions(usage.key);
   return {
-    verdict: !here ? "ABSENT" : (here.establishmentMeans ?? "NATIVE"),
-    via: accepted ? null : synonym?.accepted ?? null,
+    verdict: wcvpStatus(rows, (d) => d.locationId === `TDWG:${tdwg}`),
+    via: usage.viaSynonym,
   };
 }
 

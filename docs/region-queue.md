@@ -121,16 +121,20 @@ lineage the EPA layers come from, extended across all three countries. The full
 question and the fallback are in
 [`data/sources/cec-ecoregions/README.md`](../data/sources/cec-ecoregions/README.md).
 
-It is unanswered right now, and honestly so: this repo's sandbox refuses the
-connection before it leaves the machine, so nothing has been learned about the
-service. `probe-eea.mjs` was written from exactly that position and the EEA
-service turned out to be fine.
+**It has since been answered: yes.** With the hosts allowlisted, `probe:cec`
+resolved Victoria, Seattle, Montréal, Québec City and Portland. The service is
+CC BY 4.0, allows CORS, and carries its names in French as well as English. Two
+findings changed the plan below: `gis.cec.org` itself returns 403 — the atlas
+lives on the CEC's ArcGIS Online account instead — and **Victoria and Seattle
+come back as one ecoregion, 7.1.7 "Strait of Georgia/Puget Lowland"**, which is
+the cross-border claim this document made from the flora and could not check.
+The full measurement is in
+[`data/sources/cec-ecoregions/README.md`](../data/sources/cec-ecoregions/README.md).
 
-**If the answer is no**, the fallback is to bundle simplified polygons for the
-two Canadian boxes only and do point-in-polygon on-device — the scoped version of
-what `ecoregion-plan.md` §3 deferred. The size objection that killed it for all
-84 US ecoregions is much weaker for two boxes; `build-region-maps.mjs` already
-clips and simplifies to a box and gets 8–27 KB out of it.
+**The fallback is no longer needed.** It was to bundle simplified polygons for
+the two Canadian boxes and do point-in-polygon on-device — the scoped version of
+what `ecoregion-plan.md` §3 deferred. Keep it in mind only if the ArcGIS Online
+copy ever goes away.
 
 **What we must not do** is ship a box-only Canadian region. Every region we have
 stopped doing that when Phase B landed.

@@ -21,10 +21,11 @@
 //   no-match     WCVP has no accepted taxon under this name → check the spelling
 //                against the accepted name, or the row's `basis`
 //
-// A name must be filtered **exactly**: the GBIF search endpoint ranks and pages,
-// so a common binomial can sit behind hundreds of fuzzy hits and read as absent.
-// The `name=` filter is what makes this reliable, and it is the difference
-// between "Crataegus monogyna: no-wcvp-match" and the truth.
+// **Pin the rank, or pin the name.** A plain `search?q=Crataegus+monogyna`
+// returns twenty results without the species among them — infraspecific taxa
+// crowd it out — so a common binomial reads as absent. This script uses the
+// exact `name=` filter; `candidates.mjs` asks the ranked endpoint with
+// `rank=SPECIES`, which is equally correct. Either works; neither is optional.
 //
 // ## Where it disagrees with a national flora
 //
@@ -80,8 +81,8 @@ async function json(url) {
 
 /** WCVP's verdict for one binomial in one TDWG area. */
 async function statusFor(latin, tdwg) {
-  // `name=` is an exact canonical-name filter. `search?q=` is NOT a substitute:
-  // it ranks and pages, and loses common names behind hundreds of hits.
+  // `name=` is an exact canonical-name filter, so rank never needs pinning.
+  // The ranked endpoint works too, with `rank=SPECIES` — see the header.
   const hits = (await json(`${GBIF}/species?datasetKey=${WCVP_DATASET}&name=${encodeURIComponent(latin)}&limit=50`))
     .results ?? [];
   const accepted = hits.find((r) => r.taxonomicStatus === "ACCEPTED");

@@ -27,17 +27,29 @@ makes a region *possible* where no such list is ours to use.
 
 ## How to query it, and the trap
 
-Through GBIF's species API, with an **exact** name filter:
+Through GBIF's species API:
 
 ```
 /v1/species?datasetKey=<wcvp>&name=Crataegus%20monogyna
 /v1/species/<key>/distributions
 ```
 
-`search?q=` is not a substitute. It ranks and pages, so a common binomial sits
-behind hundreds of fuzzy hits and reads as absent — the first version of this
-lookup reported that hawthorn, foxglove, bramble, ribwort plantain and red
-clover were unknown to WCVP. All five are in it.
+**The trap is asking without pinning the rank.** A plain
+`search?q=Crataegus+monogyna` returns twenty results and the species itself is
+not among them — infraspecific taxa crowd it out — so a common binomial reads as
+absent. The first version of this lookup duly reported that hawthorn, foxglove,
+bramble, ribwort plantain and red clover were unknown to WCVP. All five are in
+it, and the fault was in the question.
+
+Two ways to ask it properly, both correct:
+
+| | |
+|---|---|
+| `species?…&name=<binomial>` | an exact canonical-name filter. What this script uses. |
+| `species/search?…&q=<binomial>&rank=SPECIES` | ranked search, pinned to species rank. What `candidates.mjs` uses. |
+
+Measured 2026-09-20: without `rank=SPECIES`, hawthorn, foxglove and ribwort
+plantain return 0 exact matches in the top 20; with it, 1 accepted match each.
 
 Reading a distribution row:
 

@@ -188,6 +188,15 @@
     "attribution": "(c) Jordan Collins, some rights reserved (CC BY-NC), uploaded by Jordan Collins",
     "color": "#3b3019"
   },
+  "artemisia-alba": {
+    "taxonId": 496125,
+    "photoId": 98762383,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/98762383/square.jpg",
+    "observer": "Emanuele Santarelli",
+    "license": "cc-by-sa",
+    "attribution": "(c) Emanuele Santarelli, some rights reserved (CC BY-SA), uploaded by Emanuele Santarelli",
+    "color": "#646054"
+  },
   "artemisia-californica": {
     "taxonId": 53357,
     "photoId": 121001827,
@@ -710,6 +719,15 @@
     "attribution": "(c) Ina Siebert, some rights reserved (CC BY-NC), uploaded by Ina Siebert",
     "color": "#6b743f"
   },
+  "cytisus-villosus": {
+    "taxonId": 161579,
+    "photoId": 35261588,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/35261588/square.jpeg",
+    "observer": "fischair",
+    "license": "cc-by-nc",
+    "attribution": "(c) fischair, some rights reserved (CC BY-NC), uploaded by fischair",
+    "color": "#5e7344"
+  },
   "danthonia-californica": {
     "taxonId": 57165,
     "photoId": 431713,
@@ -1007,6 +1025,15 @@
     "attribution": "(c) Javier Peralta de Andrés, some rights reserved (CC BY-NC), uploaded by Javier Peralta de Andrés",
     "color": "#4e6f28"
   },
+  "festuca-ovina": {
+    "taxonId": 125903,
+    "photoId": 75690048,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/75690048/square.jpeg",
+    "observer": "Руслан Цвірко",
+    "license": "cc-by-nc",
+    "attribution": "(c) Руслан Цвірко, some rights reserved (CC BY-NC), uploaded by Руслан Цвірко",
+    "color": "#626c58"
+  },
   "festuca-rubra": {
     "taxonId": 61061,
     "photoId": 33024046,
@@ -1060,6 +1087,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Dan Fitzgerald (Fitz), some rights reserved (CC BY-NC), uploaded by Dan Fitzgerald (Fitz)",
     "color": "#676248"
+  },
+  "genista-scorpius": {
+    "taxonId": 328040,
+    "photoId": 115340065,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/115340065/square.jpg",
+    "observer": "brugorraiztelefonicanet",
+    "license": "cc-by-nc",
+    "attribution": "(c) brugorraiztelefonicanet, some rights reserved (CC BY-NC), uploaded by brugorraiztelefonicanet",
+    "color": "#5f5734"
   },
   "genista-tinctoria": {
     "taxonId": 163222,
@@ -1925,6 +1961,15 @@
     "attribution": "(c) Claudio Flamigni, some rights reserved (CC BY-NC), uploaded by Claudio Flamigni",
     "color": "#3f4628"
   },
+  "pyrus-spinosa": {
+    "taxonId": 335885,
+    "photoId": 118540408,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/118540408/square.jpeg",
+    "observer": "Σάββας Ζαφειρίου (Savvas Zafeiriou)",
+    "license": "cc-by-nc",
+    "attribution": "(c) Σάββας Ζαφειρίου (Savvas Zafeiriou), some rights reserved (CC BY-NC), uploaded by Σάββας Ζαφειρίου (Savvas Zafeiriou)",
+    "color": "#46463d"
+  },
   "queen-butterfly": {
     "taxonId": 51743,
     "photoId": 163708904,
@@ -2024,6 +2069,15 @@
     "attribution": "(c) Meneerke bloem, some rights reserved (CC BY-SA)",
     "color": "#70664f"
   },
+  "rosa-sempervirens": {
+    "taxonId": 204401,
+    "photoId": 4001408,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/4001408/square.JPG",
+    "observer": "David Renoult",
+    "license": "cc-by-nc",
+    "attribution": "(c) David Renoult, some rights reserved (CC BY-NC), uploaded by David Renoult",
+    "color": "#6a6d62"
+  },
   "rosa-spinosissima": {
     "taxonId": 167993,
     "photoId": 4860944,
@@ -2104,6 +2158,15 @@
     "license": "cc-by",
     "attribution": "(c) Patrick Hacker, some rights reserved (CC BY), uploaded by Patrick Hacker",
     "color": "#8fa339"
+  },
+  "rumex-acetosella": {
+    "taxonId": 53195,
+    "photoId": 203599374,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/203599374/square.jpg",
+    "observer": "Antti Henttonen",
+    "license": "cc-by-nc",
+    "attribution": "(c) Antti Henttonen, some rights reserved (CC BY-NC), uploaded by Antti Henttonen",
+    "color": "#928c6c"
   },
   "salix-alba": {
     "taxonId": 54841,
@@ -2347,6 +2410,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Tony Iwane, some rights reserved (CC BY-NC)",
     "color": "#5e6b6a"
+  },
+  "sorbus-domestica": {
+    "taxonId": 198878,
+    "photoId": 1636317,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/1636317/square.jpg",
+    "observer": "Werner Witte",
+    "license": "cc-by-nc",
+    "attribution": "(c) Werner Witte, some rights reserved (CC BY-NC)",
+    "color": "#859987"
   },
   "sorbus-torminalis": {
     "taxonId": 198879,

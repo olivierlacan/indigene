@@ -1079,6 +1079,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:60464254-2",
+    "scientificName": "Artemisia alba",
+    "family": "Asteraceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "60464254-2",
+      "wfo": "wfo-0000002713",
+      "gbif": "3121088",
+      "inat": "496125",
+      "wikidata": "Q669023",
+      "indigene": "artemisia-alba"
+    },
+    "commonNames": [
+      "White Wormwood",
+      "Armoise blanche"
+    ],
+    "aliases": [
+      "armoise blanche",
+      "artemisia alba",
+      "white wormwood"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
+    ]
+  },
+  {
     "primaryId": "ipni:179291-1",
     "scientificName": "Artemisia californica",
     "family": "Asteraceae",
@@ -1858,6 +1887,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "france-continental",
+      "france-mediterranean",
       "france-alpine",
       "ireland"
     ]
@@ -3167,10 +3197,12 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Hazel",
-      "Noisetier"
+      "Noisetier",
+      "Coudrier"
     ],
     "aliases": [
       "corylus avellana",
+      "coudrier",
       "hazel",
       "noisetier"
     ],
@@ -3178,6 +3210,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "france-continental",
+      "france-mediterranean",
       "france-alpine",
       "ireland"
     ]
@@ -3294,9 +3327,11 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Hawthorn",
-      "Whitethorn"
+      "Whitethorn",
+      "Aubépine à un style"
     ],
     "aliases": [
+      "aubépine à un style",
       "crataegus monogyna",
       "hawthorn",
       "whitethorn"
@@ -3304,6 +3339,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-mediterranean",
       "ireland"
     ]
   },
@@ -3335,6 +3371,37 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:490033-1",
+    "scientificName": "Cytisus villosus",
+    "family": "Fabaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "490033-1",
+      "wfo": "wfo-0000213303",
+      "gbif": "5354639",
+      "usda": "CYVI8",
+      "itis": "501967",
+      "inat": "161579",
+      "wikidata": "Q15531513",
+      "indigene": "cytisus-villosus"
+    },
+    "commonNames": [
+      "Hairy Broom",
+      "Cytise velu"
+    ],
+    "aliases": [
+      "cytise velu",
+      "cytisus villosus",
+      "hairy broom"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
     ]
   },
   {
@@ -4446,6 +4513,37 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:403212-1",
+    "scientificName": "Festuca ovina",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "403212-1",
+      "wfo": "wfo-0000871222",
+      "gbif": "2704951",
+      "usda": "FEOV",
+      "itis": "40804",
+      "inat": "125903",
+      "wikidata": "Q157885",
+      "indigene": "festuca-ovina"
+    },
+    "commonNames": [
+      "Sheep's Fescue",
+      "Fétuque des moutons"
+    ],
+    "aliases": [
+      "festuca ovina",
+      "fétuque des moutons",
+      "sheep's fescue"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
+    ]
+  },
+  {
     "primaryId": "ipni:277175-2",
     "scientificName": "Festuca roemeri",
     "family": "Poaceae",
@@ -4872,6 +4970,35 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "pnw",
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:496342-1",
+    "scientificName": "Genista scorpius",
+    "family": "Fabaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "496342-1",
+      "wfo": "wfo-0000213360",
+      "gbif": "5347727",
+      "inat": "328040",
+      "wikidata": "Q3101011",
+      "indigene": "genista-scorpius"
+    },
+    "commonNames": [
+      "Scorpion Broom",
+      "Genêt épineux"
+    ],
+    "aliases": [
+      "genista scorpius",
+      "genêt épineux",
+      "scorpion broom"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
     ]
   },
   {
@@ -6309,11 +6436,13 @@ export const REGISTRY: RegistryEntry[] = [
     "commonNames": [
       "Bird's-foot Trefoil",
       "Eggs and Bacon",
-      "Lotier corniculé"
+      "Lotier corniculé",
+      "Lotier commun"
     ],
     "aliases": [
       "bird's-foot trefoil",
       "eggs and bacon",
+      "lotier commun",
       "lotier corniculé",
       "lotus corniculatus"
     ],
@@ -6321,6 +6450,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "france-continental",
+      "france-mediterranean",
       "france-alpine",
       "ireland"
     ]
@@ -8653,6 +8783,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:731262-1",
+    "scientificName": "Pyrus spinosa",
+    "family": "Rosaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "731262-1",
+      "wfo": "wfo-0000998826",
+      "gbif": "5362560",
+      "inat": "335885",
+      "wikidata": "Q2294122",
+      "indigene": "pyrus-spinosa"
+    },
+    "commonNames": [
+      "Almond-leaved Pear",
+      "Poirier à feuilles d'amandier"
+    ],
+    "aliases": [
+      "almond-leaved pear",
+      "poirier à feuilles d'amandier",
+      "pyrus spinosa"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
+    ]
+  },
+  {
     "primaryId": "ipni:295759-1",
     "scientificName": "Quercus agrifolia",
     "family": "Fagaceae",
@@ -9350,6 +9509,37 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:734215-1",
+    "scientificName": "Rosa sempervirens",
+    "family": "Rosaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "734215-1",
+      "wfo": "wfo-0000992954",
+      "gbif": "3002660",
+      "usda": "ROSE3",
+      "itis": "504832",
+      "inat": "204401",
+      "wikidata": "Q2703655",
+      "indigene": "rosa-sempervirens"
+    },
+    "commonNames": [
+      "Evergreen Rose",
+      "Églantier sempervirent"
+    ],
+    "aliases": [
+      "evergreen rose",
+      "rosa sempervirens",
+      "églantier sempervirent"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
+    ]
+  },
+  {
     "primaryId": "ipni:324822-2",
     "scientificName": "Rosa spinosissima",
     "family": "Rosaceae",
@@ -9646,6 +9836,37 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:145048-3",
+    "scientificName": "Rumex acetosella",
+    "family": "Polygonaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "145048-3",
+      "wfo": "wfo-0000403586",
+      "gbif": "2888995",
+      "usda": "RUAC3",
+      "itis": "20934",
+      "inat": "53195",
+      "wikidata": "Q29951",
+      "indigene": "rumex-acetosella"
+    },
+    "commonNames": [
+      "Sheep's Sorrel",
+      "Petite Oseille"
+    ],
+    "aliases": [
+      "petite oseille",
+      "rumex acetosella",
+      "sheep's sorrel"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
     ]
   },
   {
@@ -10668,6 +10889,37 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:324828-2",
+    "scientificName": "Sorbus domestica",
+    "family": "Rosaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "324828-2",
+      "wfo": "wfo-0001019042",
+      "gbif": "3013206",
+      "usda": "SODO5",
+      "itis": "505296",
+      "inat": "198878",
+      "wikidata": "Q159558",
+      "indigene": "sorbus-domestica"
+    },
+    "commonNames": [
+      "Service Tree",
+      "Cormier"
+    ],
+    "aliases": [
+      "cormier",
+      "service tree",
+      "sorbus domestica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
+    ]
+  },
+  {
     "primaryId": "ipni:742021-1",
     "scientificName": "Sorbus torminalis",
     "family": "Rosaceae",
@@ -11429,16 +11681,19 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Red Clover",
+      "Trèfle commun",
       "Trèfle des prés"
     ],
     "aliases": [
       "red clover",
       "trifolium pratense",
+      "trèfle commun",
       "trèfle des prés"
     ],
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-mediterranean",
       "france-alpine"
     ]
   },

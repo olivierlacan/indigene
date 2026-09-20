@@ -48,6 +48,22 @@ subtitle on the What's new page.
   Checklist of Vascular Plants with `npm run native:check`, which re-asks the
   source per plant and writes a committed snapshot. All 67 pass. It caught that
   beech is introduced in Ireland and that lime and hornbeam never arrived.
+- Mediterranean France has thirteen more natives, chosen for the caterpillars
+  they feed: hawthorn, sheep's sorrel, sheep's fescue, white wormwood, scorpion
+  broom, hazel, almond-leaved pear, heather, hairy broom, bird's-foot trefoil,
+  the evergreen rose, the service tree and red clover.
+  https://indigene.app/regions/france-mediterranean
+- Planting: heather flowers from July into October, the emptiest stretch of the
+  southern year for nectar — everything else has shut down for the drought.
+  That is why it is on the Mediterranean list.
+- Internal: the region now carries 24 of the 30 biggest caterpillar-host genera
+  of its zone, up from 11 — 82% of their records against 47%. Five of the six
+  still missing are montane or introduced in the Midi, so this is near the
+  ceiling rather than a gap.
+- Internal: `npm run names:check` could never confirm a name from Tela
+  Botanica. Its query used a parameter the service ignores, so every plant got
+  the first row of the whole database, and the French name it wanted was never
+  asked for. Fixed — the first eight names sourced from it are on these rows.
 - Planting: eight more Pacific Northwest natives — Sitka spruce, shore pine,
   wild rhododendron, fringecup, sweet coltsfoot, western skunk cabbage, vanilla
   leaf and stream violet. Sweet coltsfoot flowers in February, on bare stalks,

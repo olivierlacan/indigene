@@ -3034,6 +3034,57 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     "brachypodium-retusum": [
       { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "The browns, graylings and skippers that flicker over a June hillside spend their caterpillar lives — and their winters — down inside these tufts.", basis: "INPN; European butterfly foodplant checklist (Dryad)." },
     ],
+    "crataegus-monogyna": [
+      { wildlifeId: "winter-thrushes", support: "berries", note: "A hedge of haws is what carries the thrushes and blackcaps through a southern winter — they arrive off the mountains in flocks and strip one hedge at a time.", basis: "LPO; INPN." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The April froth of hawthorn is the biggest single nectar event of the garrigue year, and it is over in a fortnight.", basis: "INPN; French pollinator surveys; RHS Plants for Pollinators." },
+      { wildlifeId: "green-hairstreak", support: "host", note: "Hawthorn is one of the green hairstreak's many caterpillar plants, and the butterfly — the only green one here — is easiest to find on a sunny hedge edge in April.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+    ],
+    "pyrus-spinosa": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "An open, shallow pear flower in March is one a small solitary bee can actually use, weeks before the cistus opens.", basis: "INPN; French pollinator surveys." },
+      { wildlifeId: "winter-thrushes", support: "berries", note: "The small hard pears hang until frost softens them, which is exactly when the thrushes want them.", basis: "LPO; INPN." },
+    ],
+    "sorbus-domestica": [
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Brown pear-shaped fruit in autumn, taken by blackbirds and mistle thrushes once it has gone soft on the tree.", basis: "LPO; INPN." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Flat heads of cream flowers — a landing platform rather than a tube, which is what the short-tongued solitary bees and hoverflies need.", basis: "INPN; French pollinator surveys." },
+    ],
+    "artemisia-alba": [
+      { wildlifeId: "painted-lady", support: "nectar", note: "In a painted lady year, when millions come up from North Africa in one summer, the August-flowering wormwoods are among the few things still open on a burnt hillside.", basis: "INPN; European butterfly foodplant checklist (Dryad)." },
+    ],
+    "genista-scorpius": [
+      { wildlifeId: "green-hairstreak", support: "host", note: "Brooms are the green hairstreak's main caterpillar plants in the garrigue. The adult shuts its wings the instant it lands and disappears against the foliage.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The flower is a trap set for a heavy bee: her weight trips the keel and the stamens spring up and strike pollen onto her back. Too light an insect gets nothing and gives nothing.", basis: "INPN; French pollinator surveys." },
+    ],
+    "cytisus-villosus": [
+      { wildlifeId: "green-hairstreak", support: "host", note: "The acid-ground broom of the Maures and the Esterel, and the same caterpillar plant story as the limestone brooms across the valley.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Thornless, unlike most of the maquis, so a bumble bee can work it without fighting the shrub.", basis: "INPN; French pollinator surveys." },
+    ],
+    "calluna-vulgaris": [
+      { wildlifeId: "emperor-moth", support: "host", reliance: "narrow", note: "Heather is the emperor moth's plant on the acid maquis. The male flies by day in spring, fast and low over the heather, following the female's scent from a mile away — the only big day-flying moth most people here will see.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "It flowers from July into October, when the garrigue has shut down for the drought and there is almost nothing else open. A hillside of it in September is the last big meal of the year.", basis: "INPN; French pollinator surveys; RHS Plants for Pollinators." },
+      { wildlifeId: "green-hairstreak", support: "host", note: "Heather joins the brooms on the green hairstreak's list — plant any two of them and you have made a heath the butterfly can use.", basis: "European butterfly foodplant checklist (Dryad)." },
+    ],
+    "corylus-avellana": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Hazel is wind-pollinated and needs no insect at all, but the catkins shed pollen in January and the earliest solitary bees collect it anyway — the first pollen of the Mediterranean year.", basis: "INPN; French pollinator surveys; Buglife." },
+      { wildlifeId: "eurasian-jay", support: "seeds", note: "Jays take hazelnuts as readily as acorns and bury them along the wood edge, which is how a hazel thicket climbs a shaded slope.", basis: "LPO; INPN." },
+    ],
+    "rumex-acetosella": [
+      { wildlifeId: "small-copper", support: "host", reliance: "narrow", note: "The small copper lays on sorrels and docks, and sheep's sorrel is the one for the dry acid ground of the Maures. It is the little flashing orange butterfly of a southern verge, and fiercely territorial for something the size of a thumbnail.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "goldfinches-linnets", support: "seeds", note: "The rusty seed heads feed linnets and serins through the summer if they are left standing.", basis: "LPO; INPN." },
+    ],
+    "trifolium-pratense": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A tube deep enough that only a long-tongued bumble bee reaches the bottom, open from April to September — five months of nectar in a region whose flowers mostly finish in June.", basis: "INPN; French pollinator surveys; RHS Plants for Pollinators." },
+    ],
+    "lotus-corniculatus": [
+      { wildlifeId: "common-blue", support: "host", reliance: "narrow", note: "Bird's-foot trefoil is the common blue's caterpillar plant, and the butterfly is common only where the plant is — which means short, hungry, unfertilised turf rather than a watered lawn.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "six-spot-burnet", support: "host", reliance: "sole", note: "The burnet moths eat bird's-foot trefoil and little else. They take cyanide compounds out of the plant and keep them — which is what the scarlet spots are advertising, and why they fly slowly in broad daylight without being eaten.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+    ],
+    "rosa-sempervirens": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "A single open rose is full of pollen a solitary bee can reach, which a double garden rose is not. They roll in it.", basis: "INPN; French pollinator surveys." },
+      { wildlifeId: "blackcaps-warblers", support: "berries", note: "Small red hips that hold into winter, on an evergreen scramble that gives cover at the same time — which is why warblers work a hedge with this rose in it.", basis: "LPO; INPN." },
+    ],
+    "festuca-ovina": [
+      { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "The browns and skippers that drift over a southern hillside in June eat nothing but grasses like this, and they overwinter as small caterpillars down inside the tussock. That is why a mown slope has none of them.", basis: "INPN; European butterfly foodplant checklist (Dryad)." },
+    ],
   },
 
   "france-alpine": {

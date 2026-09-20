@@ -3,8 +3,13 @@
 //
 // A genuinely different flora rather than a warmer version of the Atlantic
 // list: the limit here is summer drought, not winter cold, and nothing on this
-// page expects to be watered in July. Every taxon is unique to this region, so
-// there are no region-qualified keys. See `./index.ts`.
+// page expects to be watered in July.
+//
+// It is no longer true that every taxon here is unique to this region. The
+// host-genus pass added five plants the Atlantic list already carried —
+// hawthorn, heather, hazel, red clover and bird's-foot trefoil — and a taxon
+// lives in exactly one file, so theirs stay in `france-atlantic.ts`, widened to
+// name the Midi as well as the west. See `./index.ts`.
 import type { ProseTable } from "../../lib/prose";
 
 export const FRANCE_MEDITERRANEAN: ProseTable = {
@@ -534,5 +539,134 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
       "Un coin ombragé et mouillé est l'habitat le plus rare d'un jardin du Midi, et c'est la plante qui fait qu'il en a l'air et la fraîcheur. Ce qui y vit est l'essentiel : grenouilles, salamandres, coléoptères des lieux humides et toute la vie minuscule dont le reste se nourrit. Les fougères nourrissent très peu de chenilles, et celle-ci ne fait pas exception.",
     propagationNote:
       "Divisez le rhizome au printemps et calez les éclats dans une fissure humide ombragée, ou laissez les spores coloniser une paroi qui ruisselle. Dans les deux cas, l'eau permanente est la condition, pas un détail.",
+  },
+  // -------------------------------------------------------------------------
+  // Ajouts de la passe « genres hôtes » — les genres du haut du classement
+  // Gaytán qui manquaient à cette liste, chacun représenté par une espèce
+  // réellement méditerranéenne plutôt que par sa cousine montagnarde.
+  // -------------------------------------------------------------------------
+  "Pyrus spinosa": {
+    supportNotes: {
+      "mason-bees":
+        "Une fleur de poirier, ouverte et peu profonde, est accessible à une petite abeille solitaire dès mars — des semaines avant l'ouverture des cistes.",
+      "winter-thrushes":
+        "Les petites poires dures tiennent sur l'arbre jusqu'à ce que le gel les ramollisse, ce qui est précisément le moment où les grives les veulent.",
+    },
+    nativeNote:
+      "Le poirier sauvage des coteaux du Midi — épineux, à feuilles étroites et grises, sur les pentes calcaires sèches et les vieilles restanques, du Languedoc aux Alpes-Maritimes.",
+    careNote:
+      "Un vrai arbre de sécheresse : il veut un sol pierreux, le plein soleil et pas une goutte d'eau en été, et il est assez épineux pour faire une limite infranchissable. Lent, de longue vie, et parfaitement indifférent à la chaleur qui achève un poirier de verger.",
+    givesNote:
+      "Une floraison blanche en mars que travaillent toutes les abeilles précoces, et 123 espèces de chenilles derrière elle — l'une des plus grandes plantes nourricières de la garrigue. Les petites poires, immangeables pour nous, sont prises par les grives, les renards et les sangliers une fois ramollies par le gel.",
+    propagationNote:
+      "Prenez les pépins des fruits tombés et blets en automne, nettoyez-les et semez-les dans un pot laissé dehors tout l'hiver — il lui faut un vrai passage au froid. Les semis détestent être déplacés : semez en pot profond et plantez jeune.",
+  },
+  "Sorbus domestica": {
+    supportNotes: {
+      "winter-thrushes":
+        "Des fruits bruns en forme de petites poires en automne, pris par les merles et les grives draines une fois blets sur l'arbre.",
+      "mason-bees":
+        "Des corymbes plats de fleurs crème — une piste d'atterrissage plutôt qu'un tube, ce qu'il faut aux abeilles solitaires à langue courte et aux syrphes.",
+    },
+    nativeNote:
+      "Disséminé dans les collines chaudes du Midi et les vieilles lisières de champs — un arbre que l'on plantait pour son fruit et qu'on a oublié, et l'un des feuillus les plus durables de France.",
+    careNote:
+      "Lent — il peut mettre quinze ans à fructifier — puis pratiquement éternel : il y a des cormiers de quatre siècles dans le Midi. Il veut du soleil et du drainage, supporte le calcaire et la sécheresse, et ne demande plus rien une fois parti. Plantez-le petit : le pivot déteste être dérangé.",
+    givesNote:
+      "Des fleurs crème pour les syrphes et les abeilles solitaires, 109 espèces de chenilles, et de petits fruits que grives, merles et martres prennent en automne — blets, les gens les mangent aussi, et c'est pour cela que l'arbre est là où il est.",
+    propagationNote:
+      "Laissez le fruit blettir, nettoyez la graine et semez en automne dans un pot laissé dehors — attendez le deuxième printemps plutôt que le premier, parfois le troisième. La patience est toute la méthode avec cet arbre.",
+  },
+  "Artemisia alba": {
+    supportNotes: {
+      "painted-lady":
+        "Les années à belles-dames, quand elles remontent d'Afrique du Nord par millions en un seul été, les armoises d'août sont parmi les rares choses encore ouvertes sur un coteau grillé.",
+    },
+    nativeNote:
+      "Un sous-arbrisseau argenté finement découpé, des garrigues calcaires sèches et des steppes rocailleuses — l'une des plantes qui donnent son odeur au coteau provençal en août.",
+    careNote:
+      "Le coin le plus sec, le plus pierreux et le plus brûlé de soleil que vous ayez, et rien d'autre. L'eau d'été la fait pourrir. Taillez-la légèrement au printemps pour la garder dense ; jamais dans le vieux bois nu, qui ne repart pas.",
+    givesNote:
+      "143 espèces de chenilles — un chiffre énorme pour une plante de cette taille, et le deuxième de cette liste après les chênes et l'aubépine. Elle fleurit en août et septembre, quand la garrigue n'a presque plus rien d'ouvert, et son feuillage argenté garde sa couleur toute la sécheresse.",
+    propagationNote:
+      "Des pousses latérales à talon en fin d'été s'enracinent vite dans un mélange graveleux et calcaire. La graine est fine comme de la poussière et a besoin de lumière : pressez-la à la surface et ne la couvrez pas.",
+  },
+  "Genista scorpius": {
+    supportNotes: {
+      "green-hairstreak":
+        "Les genêts sont les principales plantes hôtes de l'argus vert dans la garrigue. L'adulte referme les ailes dès qu'il se pose et disparaît dans le feuillage.",
+      "bumble-bees":
+        "La fleur est un piège réglé pour une abeille lourde : son poids fait basculer la carène, les étamines se détendent et lui frappent du pollen sur le dos. Un insecte trop léger n'obtient rien et ne donne rien.",
+    },
+    nativeNote:
+      "Le genêt épineux jaune des garrigues languedociennes et provençales — celui qui dore un coteau calcaire en avril et le rend infranchissable en pantalon.",
+    careNote:
+      "Calcaire pauvre et sec en plein soleil, et pas d'engrais : il fixe son propre azote, et la richesse ne fait que le ramollir et l'écourter. Les épines sont sérieuses : mettez-le en limite plutôt qu'au bord d'un passage. Il déteste être déplacé — plantez-le petit et laissez-le.",
+    givesNote:
+      "134 espèces de chenilles, et une fleur qu'il faut déclencher avec une abeille assez lourde pour la faire basculer : regardez un xylocope en faire partir une. Il tient un versant calcaire nu et améliore le sol pour tout ce qui pousse à côté.",
+    propagationNote:
+      "Récoltez les gousses avant qu'elles ne se vrillent au début de l'été. Le tégument est dur : entaillez-le ou frottez-le au papier de verre, faites tremper une nuit, et semez directement dans le pot définitif — les racines détestent être dérangées.",
+  },
+  "Cytisus villosus": {
+    supportNotes: {
+      "green-hairstreak":
+        "Le genêt des terrains acides des Maures et de l'Esterel, et la même histoire de plante hôte que les genêts calcaires de l'autre côté de la vallée.",
+      "bumble-bees":
+        "Sans épines, contrairement à l'essentiel du maquis, si bien qu'un bourdon peut le travailler sans se battre avec l'arbuste.",
+    },
+    nativeNote:
+      "Un genêt du maquis acide — les Maures, l'Esterel et la Corse — là où le sol passe du calcaire au schiste et au granite, et où toute la flore change avec lui.",
+    careNote:
+      "C'est celui des terrains **acides** : sur le calcaire qui couvre l'essentiel de la Provence il jaunit et meurt, et c'est le genêt épineux qu'il vous faut à la place. Sans épines. Vie courte, une quinzaine d'années, et il se ressème.",
+    givesNote:
+      "117 espèces de chenilles sur un arbuste qui ne demande rien, et de l'azote pour les sols de schiste pauvres où il pousse. Les gousses sombres claquent de façon audible par un après-midi chaud et projettent la graine à plusieurs mètres.",
+    propagationNote:
+      "Ramassez les gousses avant qu'elles n'éclatent, entaillez ou poncez la graine dure, faites tremper une nuit et semez dans un mélange graveleux sans calcaire — dans son pot définitif, car les genêts n'aiment pas qu'on touche à leurs racines.",
+  },
+  "Rumex acetosella": {
+    supportNotes: {
+      "small-copper":
+        "Le cuivré commun pond sur les oseilles et les patiences, et la petite oseille est celle des terrains acides et secs des Maures. C'est le petit papillon orange qui file le long d'un talus du Midi, et il est farouchement territorial pour quelque chose de la taille d'un ongle.",
+      "goldfinches-linnets":
+        "Les inflorescences rouillées nourrissent les linottes et les serins tout l'été si on les laisse debout.",
+    },
+    nativeNote:
+      "Sur les sables acides et les sols de schiste maigres des Maures, de l'Esterel et de la Corse, et partout où le calcaire s'arrête — petite, acidulée, et bien plus importante qu'elle n'en a l'air.",
+    careNote:
+      "Sol acide, pauvre et sec au soleil — c'est une plante des terrains que personne n'a amendés. Elle voyage par les racines et colonisera un lit de gravier, ce qui est utile sur un talus et gênant dans une plate-bande : donnez-lui une bordure à tenir plutôt qu'un massif à partager.",
+    givesNote:
+      "199 espèces de chenilles, en troisième position de toute cette liste après les chênes et l'aubépine — et la plante hôte du cuivré commun. Anémophile, donc les fleurs sont pour les chenilles ; les graines, elles, nourrissent les fringilles.",
+    propagationNote:
+      "Semez à la volée sur un sol acide nu en automne — elle n'a besoin de rien d'autre. Les fragments enracinés se déplacent à tout moment, ce qui est aussi la façon dont elle s'échappe.",
+  },
+  "Festuca ovina": {
+    supportNotes: {
+      "grass-skippers":
+        "Les satyrinés et les hespéries qui dérivent au-dessus d'un coteau du Midi en juin ne mangent que des graminées comme celle-ci, et ils passent l'hiver en petites chenilles au cœur de la touffe. C'est pour cela qu'une pente tondue n'en a aucun.",
+    },
+    nativeNote:
+      "La fine graminée bleutée en touffes des pelouses sèches du Midi, des clairières de garrigue et des sols rocailleux maigres — l'herbe que les moutons ont laissée parce qu'elle est trop dure pour valoir la peine.",
+    careNote:
+      "Sec, pauvre, ensoleillé et parfaitement drainé — elle garde sa couleur bleue au plus fort de la sécheresse et n'a besoin d'aucun arrosage. Peignez les brins secs à la main au printemps plutôt que de la couper.",
+    givesNote:
+      "190 espèces de chenilles — les satyrinés et les hespéries qui dérivent au-dessus d'un coteau en juin ont tous grandi sur une herbe comme celle-ci, et ils hivernent au cœur de la touffe. Elle tient un sol maigre sur un talus mieux que presque tout.",
+    propagationNote:
+      "Divisez une touffe en automne ou au début du printemps — la division la plus simple de cette liste. La graine semée sur un sol nu griffé en automne lève avec les pluies d'hiver.",
+  },
+  "Rosa sempervirens": {
+    supportNotes: {
+      "mason-bees":
+        "Une églantine simple est pleine d'un pollen qu'une abeille solitaire peut atteindre, ce qu'une rose double de jardin n'offre pas. Elles s'y roulent.",
+      "blackcaps-warblers":
+        "De petits cynorhodons rouges qui tiennent jusqu'en hiver, sur une liane persistante qui donne du couvert en même temps — d'où l'intérêt des fauvettes pour une haie qui contient cette rose.",
+    },
+    nativeNote:
+      "L'églantier méditerranéen — il grimpe à travers le maquis, les haies et les lisières de chênaie verte tout autour de la côte, et garde ses feuilles luisantes tout l'hiver, ce qu'aucune autre rose d'ici ne fait.",
+    careNote:
+      "Donnez-lui une haie, un vieux mur ou un arbuste solide où grimper — il s'accroche plutôt qu'il ne s'enroule et a besoin d'un appui. Heureux à mi-ombre, ce qui est rare ici, et sans arrosage d'été une fois installé.",
+    givesNote:
+      "111 espèces de chenilles, une fleur simple dont une abeille solitaire atteint vraiment le pollen — ce qu'une rose double ne permet pas — et de petits cynorhodons rouges qui tiennent l'hiver pour les fauvettes et les grives. Persistant, donc du couvert dans les mois où le maquis est nu.",
+    propagationNote:
+      "Des boutures de bois dormant grosses comme un crayon, en automne, dans une tranchée abritée, s'enracinent bien. Une tige basse couchée en terre se marcotte en un an, et c'est ainsi qu'il progresse le long d'une haie.",
   },
 };

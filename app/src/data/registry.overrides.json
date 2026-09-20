@@ -4489,5 +4489,87 @@
       "gbif": "5331176",
       "wikidata": "Q12847265"
     }
+  },
+  "Artemisia alba": {
+    "identifiers": {
+      "ipni": "60464254-2",
+      "wfo": "wfo-0000002713",
+      "inat": "496125",
+      "gbif": "3121088",
+      "wikidata": "Q669023"
+    }
+  },
+  "Cytisus villosus": {
+    "identifiers": {
+      "ipni": "490033-1",
+      "wfo": "wfo-0000213303",
+      "usda": "CYVI8",
+      "itis": "501967",
+      "inat": "161579",
+      "gbif": "5354639",
+      "wikidata": "Q15531513"
+    }
+  },
+  "Festuca ovina": {
+    "identifiers": {
+      "ipni": "403212-1",
+      "wfo": "wfo-0000871222",
+      "usda": "FEOV",
+      "itis": "40804",
+      "inat": "125903",
+      "gbif": "2704951",
+      "wikidata": "Q157885"
+    }
+  },
+  "Genista scorpius": {
+    "identifiers": {
+      "ipni": "496342-1",
+      "wfo": "wfo-0000213360",
+      "inat": "328040",
+      "gbif": "5347727",
+      "wikidata": "Q3101011"
+    }
+  },
+  "Pyrus spinosa": {
+    "identifiers": {
+      "ipni": "731262-1",
+      "wfo": "wfo-0000998826",
+      "inat": "335885",
+      "gbif": "5362560",
+      "wikidata": "Q2294122"
+    }
+  },
+  "Rosa sempervirens": {
+    "identifiers": {
+      "ipni": "734215-1",
+      "wfo": "wfo-0000992954",
+      "usda": "ROSE3",
+      "itis": "504832",
+      "inat": "204401",
+      "gbif": "3002660",
+      "wikidata": "Q2703655"
+    }
+  },
+  "Rumex acetosella": {
+    "identifiers": {
+      "ipni": "145048-3",
+      "wfo": "wfo-0000403586",
+      "usda": "RUAC3",
+      "itis": "20934",
+      "inat": "53195",
+      "gbif": "2888995",
+      "wikidata": "Q29951"
+    }
+  },
+  "Sorbus domestica": {
+    "identifiers": {
+      "ipni": "324828-2",
+      "wfo": "wfo-0001019042",
+      "usda": "SODO5",
+      "itis": "505296",
+      "inat": "198878",
+      "gbif": "3013206",
+      "wikidata": "Q159558"
+    }
   }
 }

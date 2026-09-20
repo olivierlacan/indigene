@@ -231,6 +231,12 @@ subtitle on the What's new page.
   regions — can a point in Canada be resolved to an ecoregion at all? The EPA
   service answers nothing north of the border. Unanswered so far: the sandbox
   can't reach the candidate hosts, and the probe says so rather than guessing.
+- Internal: `docs/outreach/` collects the native plant societies, botanical
+  conservatories and biodiversity bodies that cover each of the twelve shipped
+  regions — who they are, which role to write to, and where their current
+  officers are listed — plus a playbook for approaching them. France and Ireland
+  have no native-plant-society equivalent; the directory says what stands in for
+  one in each. Research only, nothing in the app.
 
 ### Fixed
 

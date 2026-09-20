@@ -83,6 +83,15 @@ const UA = "Mozilla/5.0 (indigene region maps; +https://github.com/olivierlacan/
  * which is a few hundred metres: far finer than a dot at this scale.
  */
 const LANDMARKS = {
+  ireland: [
+    { name: "Derry", lat: 54.99, lon: -7.31 },
+    { name: "Belfast", lat: 54.6, lon: -5.93 },
+    { name: "Sligo", lat: 54.27, lon: -8.48 },
+    { name: "Galway", lat: 53.27, lon: -9.06 },
+    { name: "Dublin", lat: 53.35, lon: -6.26 },
+    { name: "Limerick", lat: 52.66, lon: -8.63 },
+    { name: "Cork", lat: 51.9, lon: -8.47 },
+  ],
   pnw: [
     { name: "Vancouver", lat: 49.28, lon: -123.12 },
     { name: "Seattle", lat: 47.61, lon: -122.33 },

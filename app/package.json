@@ -36,6 +36,7 @@
     "hero:colors": "NODE_USE_ENV_PROXY=1 node scripts/hero-colors.mjs",
     "reconcile": "NODE_USE_ENV_PROXY=1 node scripts/reconcile.mjs",
     "names:check": "NODE_USE_ENV_PROXY=1 node scripts/check-vernacular.mjs",
+    "native:check": "NODE_USE_ENV_PROXY=1 node scripts/check-native.mjs",
     "prose:check": "node scripts/check-prose.mjs",
     "blurbs:check": "node scripts/check-blurbs.mjs",
     "lookalikes:check": "NODE_USE_ENV_PROXY=1 node scripts/check-lookalikes.mjs",

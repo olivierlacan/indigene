@@ -37,6 +37,17 @@ subtitle on the What's new page.
   question that stops people between choosing a native and digging the hole —
   will it bring pests? https://indigene.app/crops
 
+- Ireland is on the map — 67 native plants for the whole island, north and
+  south, from the oaks of Killarney to the gorse on a headland and the wild
+  thyme in a Burren gryke. https://indigene.app/regions/ireland
+- Wildlife: the marsh fritillary, the cryptic wood white and the peacock
+  butterfly have joined the roster. The first is Ireland's only protected
+  insect, and it lays on one plant — devil's-bit scabious — and nothing else.
+  https://indigene.app/wildlife
+- Internal: every Irish row's "native here" is checked against Kew's World
+  Checklist of Vascular Plants with `npm run native:check`, which re-asks the
+  source per plant and writes a committed snapshot. All 67 pass. It caught that
+  beech is introduced in Ireland and that lime and hornbeam never arrived.
 - Internal: `docs/region-queue.md` — a measured queue for the next regions.
   Three of the four candidates turned out to be something other than a new
   region: Boston already has a list and Portland, Maine doesn't (same

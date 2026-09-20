@@ -559,6 +559,45 @@ export const WILDLIFE: Wildlife[] = [
     inat: { name: "Anthocharis cardamines", iconic: "Insecta" },
   },
   {
+    id: "marsh-fritillary",
+    common: "Marsh fritillary",
+    latin: "Euphydryas aurinia",
+    kind: "butterfly",
+    icon: "\u{1F98B}",
+    blurb:
+      "A small, brilliantly chequered orange, cream and brown butterfly of damp unimproved grassland, and the only insect in Ireland protected by law. Its caterpillars hatch together on devil's-bit scabious, spin a silk tent over the plant, and spend the winter inside it in a black huddle.",
+    native: true,
+    nativeBasis:
+      "Native across Ireland, Britain and continental Europe; listed on Annex II of the EU Habitats Directive and protected in Ireland. National Parks & Wildlife Service (Ireland); National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad).",
+    inat: { name: "Euphydryas aurinia", iconic: "Insecta" },
+  },
+  {
+    id: "cryptic-wood-white",
+    common: "Cryptic wood white",
+    latin: "Leptidea juvernica",
+    kind: "butterfly",
+    icon: "\u{1F98B}",
+    blurb:
+      "A small, weak-flying white butterfly that drifts along hedge banks and verges rather than flying across them. It was only recognised as its own species in 2011, and in Britain and Ireland it lives only in Ireland \u2014 which makes it the closest thing the island has to a butterfly of its own.",
+    native: true,
+    nativeBasis:
+      "Native to Ireland and eastern Europe; in these islands found only in Ireland. National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad); Butterfly Conservation.",
+    inat: { name: "Leptidea juvernica", iconic: "Insecta" },
+  },
+  {
+    id: "peacock-butterfly",
+    common: "Peacock butterfly",
+    latin: "Aglais io",
+    kind: "butterfly",
+    icon: "\u{1F98B}",
+    blurb:
+      "Four huge blue-and-black eyespots on a deep red wing, and a near-black underside so it disappears the moment it closes up. It winters as an adult in sheds and hollow trees, and hisses by rubbing its wings together if something disturbs it. Its caterpillars eat nettle and nothing else.",
+    native: true,
+    nativeBasis:
+      "Native across Ireland, Britain and Europe. National Biodiversity Data Centre (Ireland); INPN (MNHN); European butterfly foodplant checklist (Dryad).",
+    inat: { name: "Aglais io", iconic: "Insecta" },
+  },
+  {
     id: "comma",
     common: "Comma butterfly",
     latin: "Polygonia c-album",
@@ -3132,4 +3171,239 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "The Alps' cast of brown butterflies — ringlets, graylings, marbled whites — eat nothing but grasses like this, and overwinter inside the tussocks.", basis: "INPN; European butterfly foodplant checklist (Dryad)." },
     ],
   },
+  // Ireland. Almost every animal here is reused from the European catalog the
+  // French regions built — the birds and bees of an Irish hedge are the birds
+  // and bees of a Breton one. What needed care was the other direction: the
+  // coverage report happily offers ties for animals that are **not in Ireland**,
+  // because it matches on plants rather than on range. Hazel dormouse, purple
+  // emperor, white-letter hairstreak, silver-studded blue, Glanville fritillary,
+  // black grouse, spotted nutcracker and hawfinch all tie to plants this region
+  // ships and none of them lives here, so none of them is tied. Ireland's own
+  // three — the marsh fritillary, the cryptic wood white and the peacock — are
+  // new to the catalog.
+  ireland: {
+    "quercus-petraea": [
+      { wildlifeId: "purple-hairstreak", support: "host", reliance: "sole", note: "Purple hairstreak caterpillars eat oak and nothing else. The entire butterfly happens in the canopy — eggs on the buds, caterpillars in the opening leaves, adults circling the crown on a July evening — so an old oak in an Irish hedge is usually a colony nobody standing under it has ever noticed.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad); Butterfly Conservation." },
+      { wildlifeId: "eurasian-jay", support: "seeds", note: "A jay buries a few thousand acorns each autumn and forgets enough of them that it is the main reason oak woods move at all. Plant one oak; the jays will plant the rest of the wood.", basis: "BirdWatch Ireland; National Biodiversity Data Centre (Ireland)." },
+    ],
+    "quercus-robur": [
+      { wildlifeId: "purple-hairstreak", support: "host", reliance: "sole", note: "Either native oak will do — the hairstreak is after oak leaves, not a particular species of oak.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "eurasian-jay", support: "seeds", note: "The long-stalked acorns of this oak are the ones you most often find wedged in a lawn, dropped by a jay in a hurry.", basis: "BirdWatch Ireland." },
+    ],
+    "betula-pubescens": [
+      { wildlifeId: "conifer-seed-finches", support: "seeds", note: "Birch catkins crumble all winter into seed so fine only the small finches bother — siskins and redpolls hang upside down along the outer twigs, usually in one noisy party.", basis: "BirdWatch Ireland; National Biodiversity Data Centre (Ireland)." },
+      { wildlifeId: "emperor-moth", support: "host", note: "Emperor moth caterpillars — fat, green, ringed with black and studded with orange warts — feed on birch as readily as on heather, and are one of the more startling things to find on a bog-edge sapling in July.", basis: "National Biodiversity Data Centre (Ireland); Butterfly Conservation." },
+    ],
+    "alnus-glutinosa": [
+      { wildlifeId: "conifer-seed-finches", support: "seeds", note: "Alder's small woody cones hold their seed all winter, and siskins and redpolls work them upside down in chattering flocks — the classic January sight along an Irish river.", basis: "BirdWatch Ireland." },
+    ],
+    "salix-caprea": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A bumble bee queen comes out of hibernation in March with nothing in reserve and has to found a whole colony alone — for that she needs pollen, protein for the first grubs, not just sugar. Sallow catkins are the first real supply of it in an Irish year, which is why a sally in flower is audible from across the garden.", basis: "All-Ireland Pollinator Plan; National Biodiversity Data Centre (Ireland)." },
+      { wildlifeId: "poplar-hawk-moth", support: "host", note: "The poplar hawk-moth lays on willows as often as poplars. Its caterpillar is thumb-thick, apple-green, with a blue-grey horn at the tail, and it rests holding its head up in a sphinx pose — which is where the whole family's name comes from.", basis: "National Biodiversity Data Centre (Ireland); Butterfly Conservation." },
+    ],
+    "rosa-spinosissima": [
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Burnet rose is the only rose here with black hips rather than red, and the thrushes take them late — after the dog-rose hips on the same dune have gone.", basis: "BirdWatch Ireland." },
+    ],
+    "salix-cinerea": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Grey willow is the commonest sallow in the country, so in most of Ireland it is *this* plant doing the March pollen job rather than its taller cousin.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "populus-tremula": [
+      { wildlifeId: "poplar-hawk-moth", support: "host", note: "Aspen is the moth's namesake tree. The adult rests with its hindwings pushed forward past the forewings, which no other moth here does, and looks exactly like a clump of dead leaves for it.", basis: "National Biodiversity Data Centre (Ireland); Butterfly Conservation." },
+    ],
+    "prunus-avium": [
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Blackbirds and mistle thrushes strip a wild cherry in July, weeks before anyone gets a ladder to it.", basis: "BirdWatch Ireland." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "An open, shallow cherry flower is one solitary bees can actually use — a red mason bee can reach the nectar in a flower a bumble bee would have to force.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "prunus-padus": [
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Small bitter black cherries in August that blackbirds and thrushes take once the sweeter fruit is gone.", basis: "BirdWatch Ireland." },
+    ],
+    "sorbus-aucuparia": [
+      { wildlifeId: "winter-thrushes", support: "berries", note: "A rowan in fruit is the loudest tree of the Irish autumn: redwings and fieldfares come off the Scandinavian crossing straight into it and can have it bare in two days. A mistle thrush will try to hold one against the whole flock and lose.", basis: "BirdWatch Ireland; National Biodiversity Data Centre (Ireland)." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Flat open heads of cream flowers in May — a landing platform rather than a tube, which is what short-tongued solitary bees and hoverflies need.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "taxus-baccata": [
+      { wildlifeId: "winter-thrushes", support: "berries", note: "The red flesh around a yew seed is the one part of the tree that is not poisonous, and blackbirds and mistle thrushes eat it through the winter, passing the seed on unharmed. The tree and the bird have that arrangement worked out.", basis: "BirdWatch Ireland; Royal Horticultural Society." },
+    ],
+    "ilex-aquifolium": [
+      { wildlifeId: "holly-blue", support: "host", reliance: "narrow", note: "The spring brood of the holly blue lays on holly flower buds and the caterpillars eat the developing berries; the summer brood then moves to ivy. A garden with both keeps the butterfly right through the year, which is why it is one of the few Irish butterflies that is genuinely a garden species.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Holly holds its berries longer than anything else in the hedge, and a mistle thrush will guard a single bush against every other bird through the hardest weeks of the year.", basis: "BirdWatch Ireland." },
+    ],
+    "malus-sylvestris": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Apple blossom is the classic red mason bee flower — one bee visits several hundred in a morning and pollinates far more effectively than a honeybee doing the same round.", basis: "All-Ireland Pollinator Plan." },
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Crab apples hang on after the leaves drop and go soft with the first frosts, which is exactly when fieldfares want them.", basis: "BirdWatch Ireland." },
+    ],
+    "corylus-avellana": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Hazel is wind-pollinated and needs no insect at all, but its lamb's-tail catkins shed pollen in January and February and the earliest solitary bees collect it anyway — the first trickle of the year, before the sallows open.", basis: "All-Ireland Pollinator Plan." },
+      { wildlifeId: "eurasian-jay", support: "seeds", note: "Jays take and bury hazelnuts as well as acorns. **Ireland has no hazel dormouse** — the animal most associated with this shrub across Europe simply never arrived here — so in an Irish hedge it is jays, wood mice and red squirrels that the nuts are feeding.", basis: "BirdWatch Ireland; National Biodiversity Data Centre (Ireland)." },
+    ],
+    "crataegus-monogyna": [
+      { wildlifeId: "winter-thrushes", support: "berries", note: "A hedge of haws is what carries fieldfares and redwings through an Irish winter — they arrive in flocks and strip one hedge at a time.", basis: "BirdWatch Ireland." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The May froth of whitethorn is the single biggest nectar event of the hedgerow year here, and it is over in a fortnight.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "prunus-spinosa": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Blackthorn flowers on bare black wood in March, before its own leaves and before almost anything else — an early meal for solitary bees just out of the ground.", basis: "All-Ireland Pollinator Plan." },
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Sloes hang on long after the other fruit is gone, which is exactly when the winter thrushes need them.", basis: "BirdWatch Ireland." },
+      { wildlifeId: "emperor-moth", support: "host", note: "Blackthorn is one of the emperor moth's main caterpillar plants away from the bog, so a thorny hedge and a heather bank feed the same spectacular moth.", basis: "National Biodiversity Data Centre (Ireland)." },
+    ],
+    "calluna-vulgaris": [
+      { wildlifeId: "emperor-moth", support: "host", reliance: "narrow", note: "Heather is the emperor moth's plant on Irish bog and mountain. The male flies by day in April, fast and low over the heather, following the female's scent from a mile off — the only big day-flying moth most people here will see.", basis: "National Biodiversity Data Centre (Ireland); Butterfly Conservation." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "When the meadows are cut and the hedge flowers are finished, an August heather hill is the last great nectar source of the Irish year. Heather honey comes from these three weeks.", basis: "All-Ireland Pollinator Plan." },
+      { wildlifeId: "green-hairstreak", support: "host", note: "Green hairstreak caterpillars feed on heather, gorse, broom and bilberry — the whole heath, effectively. The adult is the only green butterfly in Ireland and it shuts its wings and disappears the moment it lands.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
+    ],
+    "erica-cinerea": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bell heather opens in June, a month before ling, and bridges the gap between the hedge blossom and the August heather — a genuinely important few weeks for bumblebee colonies at full size.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "erica-tetralix": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The heather of wet ground, and so the nectar source on blanket bog where nothing else is flowering at all.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "vaccinium-myrtillus": [
+      { wildlifeId: "green-hairstreak", support: "host", note: "Bilberry is one of the green hairstreak's main caterpillar plants on Irish hillsides — look for the butterfly basking on a bilberry leaf on the first warm days of May.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bilberry's small pink bells open in April, early enough to matter, and are shaped for a bumble bee to hang under and reach up into.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "rubus-fruticosus": [
+      { wildlifeId: "blackcaps-warblers", support: "berries", note: "Blackberries in late summer are migration fuel: blackcaps, whitethroats and garden warblers pile into a fruiting bramble and eat little else while it lasts.", basis: "BirdWatch Ireland." },
+      { wildlifeId: "red-admiral", support: "nectar", note: "A sunny bramble in September is where you find the red admirals — they feed on the overripe fruit as much as the flowers, and it is the last big meal before they head south or try to overwinter.", basis: "National Biodiversity Data Centre (Ireland)." },
+      { wildlifeId: "green-hairstreak", support: "host", note: "Bramble is on the green hairstreak's long list of caterpillar plants, which is part of why it turns up on hedge banks as well as open heath.", basis: "European butterfly foodplant checklist (Dryad)." },
+    ],
+    "rosa-canina": [
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Hips hold on the bush into January, long after the haws and sloes are gone — the reserve tank of an Irish hedge.", basis: "BirdWatch Ireland." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "A single open rose is full of accessible pollen, which is exactly what a double garden rose is not. Solitary bees roll in it.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "frangula-alnus": [
+      { wildlifeId: "brimstone", support: "host", reliance: "sole", note: "Buckthorns are the only thing a brimstone caterpillar can eat, and alder buckthorn is the one for damp, acid Irish ground. The brimstone has been spreading west across Ireland for decades and this shrub is what it is following — so a single bush is a specific, traceable contribution rather than a general good deed. The adult hibernates in ivy and is usually the first butterfly of the Irish spring.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad); Butterfly Conservation." },
+    ],
+    "euonymus-europaeus": [
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Shocking pink capsules split in October to show orange seed, and robins and blackbirds take them straight away.", basis: "BirdWatch Ireland." },
+    ],
+    "viburnum-opulus": [
+      { wildlifeId: "blackcaps-warblers", support: "berries", note: "Translucent red berries that hang late — bullfinches and blackcaps take them once the sweeter fruit has gone.", basis: "BirdWatch Ireland." },
+    ],
+    "ulex-europaeus": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A bumble bee out on a mild January day in Ireland is almost certainly on gorse. Nothing else is open, and that coconut-scented pollen is what gets an early queen through to the sallows.", basis: "All-Ireland Pollinator Plan; National Biodiversity Data Centre (Ireland)." },
+      { wildlifeId: "green-hairstreak", support: "host", note: "Gorse is a main caterpillar plant for the green hairstreak, and a gorse bank in May is the best place in the country to look for one.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
+    ],
+    "cytisus-scoparius": [
+      { wildlifeId: "green-hairstreak", support: "host", note: "Broom joins gorse, heather and bilberry on the green hairstreak's list — plant any two of them and you have made a heath the butterfly can use.", basis: "European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The flower is a trap set for a heavy bee: her weight trips the keel, the stamens spring up and slap pollen onto her back. Too light an insect gets nothing and gives nothing.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "sambucus-nigra": [
+      { wildlifeId: "blackcaps-warblers", support: "berries", note: "The August elderberry crop is what blackcaps and garden warblers put on weight with before flying south — a fruiting elder holds them for a fortnight.", basis: "BirdWatch Ireland." },
+    ],
+    "juniperus-communis": [
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Juniper cones take three years to ripen and then feed ring ouzels, mistle thrushes and fieldfares, and the spines make one of very few safe nest sites on an open Irish hillside.", basis: "BirdWatch Ireland." },
+    ],
+    "myrica-gale": [
+      { wildlifeId: "emperor-moth", support: "host", note: "Bog myrtle is one of the emperor moth's bog plants, alongside the heather it shares the ground with.", basis: "National Biodiversity Data Centre (Ireland)." },
+    ],
+    "succisa-pratensis": [
+      { wildlifeId: "marsh-fritillary", support: "host", reliance: "sole", note: "This is the whole story of Ireland's only protected insect. A female marsh fritillary lays her entire batch of eggs under one devil's-bit scabious leaf; the caterpillars hatch together, spin a silk tent over the plant, and spend the winter inside it in a black huddle. On the first warm days of spring they come out and bask on top of the web in a knot, which is how anyone ever finds them. No devil's-bit, no marsh fritillary — and the plant only persists on damp ground that is neither fertilised nor cut in summer, which is why the butterfly went when the meadows did.", basis: "National Parks & Wildlife Service (Ireland) species action plan; National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "It flowers from July into October, after nearly everything else has finished, which is exactly when a bumblebee colony is producing next year's queens and needs the most food it will need all year.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "digitalis-purpurea": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A foxglove is built for one animal. The spotted throat is a landing strip and a set of directions, and the tube is deep enough that only a long-tongued bumble bee reaches the end. Watch one climb right inside and reverse out dusted along the back.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "primula-vulgaris": [
+      { wildlifeId: "brimstone", support: "nectar", note: "A brimstone coming out of hibernation in March finds almost nothing open. Primroses on a ditch bank are one of the few things it can feed on before the blossom starts.", basis: "National Biodiversity Data Centre (Ireland)." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Primrose flowers in February on a sheltered Irish bank, weeks ahead of most of Europe, and the first solitary bees of the year work them.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "hyacinthoides-non-scripta": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Bluebells flower in the weeks between the ground warming and the canopy closing — exactly when the spring solitary bees are stocking their nests. Mining bees work them all morning.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "anemone-nemorosa": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Wood anemone offers pollen rather than nectar, and pollen is what an early solitary bee is actually collecting — protein to stock a nest cell, not sugar for herself.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "allium-ursinum": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Acres of white in deep shade in May, and one of the few good nectar sources in Irish woodland once the canopy has closed over.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "filipendula-ulmaria": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Meadowsweet offers pollen and no nectar at all, which sounds like a poor deal until you watch the hoverflies and short-tongued bees on it — pollen is precisely what they came for.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "lythrum-salicaria": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Three months of flowering on wet ground, worked by bumblebees from the bottom of the spike upward — it is one of the longest-serving nectar plants an Irish pond edge can carry.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "caltha-palustris": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Big open gold cups in late March, exactly when the first mining bees emerge and have essentially nothing else to work.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "centaurea-nigra": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Knapweed comes near the top of every Irish nectar survey, and it keeps going into September when the summer flowers have gone over.", basis: "All-Ireland Pollinator Plan." },
+      { wildlifeId: "goldfinches-linnets", support: "seeds", note: "Leave the dead heads standing and goldfinches take them apart through the autumn, hanging sideways off the stems.", basis: "BirdWatch Ireland." },
+      { wildlifeId: "painted-lady", support: "nectar", note: "In a painted lady year — when millions arrive from North Africa in one summer — knapweed and thistles are what they feed on across Irish grassland.", basis: "National Biodiversity Data Centre (Ireland)." },
+    ],
+    "lotus-corniculatus": [
+      { wildlifeId: "common-blue", support: "host", reliance: "narrow", note: "Bird's-foot trefoil is the common blue's caterpillar plant, and the butterfly is common only where the plant is. It needs the trefoil in short, hungry, unfertilised turf — which is to say a lawn nobody has fed, and a verge nobody has sprayed.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "six-spot-burnet", support: "host", reliance: "sole", note: "The six-spot burnet is the scarlet-spotted, metallic-green day-flying moth of Irish dunes in July, and its caterpillars eat bird's-foot trefoil and nothing else. It takes cyanide compounds out of the plant and keeps them — which is what the red spots are advertising.", basis: "National Biodiversity Data Centre (Ireland); Butterfly Conservation." },
+    ],
+    "rumex-acetosa": [
+      { wildlifeId: "small-copper", support: "host", reliance: "narrow", note: "The small copper lays on sorrels and docks. It is the little flashing orange butterfly of Irish verges, dunes and bare sunny ground, and it is fiercely territorial for something the size of a thumbnail — a male will chase off anything that crosses his patch, including birds.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "goldfinches-linnets", support: "seeds", note: "The rusty seed heads feed linnets and goldfinches through the autumn if they are left standing.", basis: "BirdWatch Ireland." },
+    ],
+    "urtica-dioica": [
+      { wildlifeId: "peacock-butterfly", support: "host", reliance: "sole", note: "Peacock caterpillars eat nettle and nothing else. They hatch in a batch of a hundred or more, live together under a shared web of silk on the growing tips, and are jet black with white flecks and spines — a mass of them on a nettle patch is unmistakable. The butterfly then overwinters as an adult in a shed or a hollow tree and comes out in March.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad); Butterfly Conservation." },
+      { wildlifeId: "red-admiral", support: "host", reliance: "sole", note: "Red admiral caterpillars are nettle-only too, but they live alone rather than in a huddle, each one folding a single leaf over itself and stitching it shut with silk.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "comma", support: "host", note: "The comma is a recent arrival in Ireland — first recorded here in 2000 and now spreading north — and nettle is one of the main plants it lays on. Its caterpillar is disguised as a bird dropping, white on black, which is a good enough trick to be worth looking for.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
+    ],
+    "taraxacum-officinale": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The single most useful thing in an Irish garden in April, and it is the thing most people are trying to kill. A queen bumblebee founding a colony that month has dandelions or she has nothing.", basis: "All-Ireland Pollinator Plan; National Biodiversity Data Centre (Ireland)." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "A flat open disc packed with pollen, at ground level, in the weeks when solitary bees are emerging — there is no better shape for them.", basis: "All-Ireland Pollinator Plan." },
+      { wildlifeId: "goldfinches-linnets", support: "seeds", note: "Goldfinches take dandelion clocks apart seed by seed, hovering at them like tiny parrots.", basis: "BirdWatch Ireland." },
+    ],
+    "teucrium-scorodonia": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Wood sage flowers in late summer on dry shaded banks where almost nothing else is in flower at all, and long-tongued bumblebees work it hard for that reason.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "silene-dioica": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Seven months of flowers on a hedge bank, from April to October — very few native perennials keep going that long, and the bumblebees find it at both ends of the season.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "geranium-sanguineum": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Big open magenta flowers on dry limestone through midsummer — on the Burren it is one of the main nectar plants over bare rock.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "festuca-rubra": [
+      { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "Ireland's cast of brown butterflies — meadow brown, ringlet, speckled wood, wall brown — eat nothing but grasses like this, and overwinter as small caterpillars down inside the tussock. That is the real reason a close-mown lawn has no butterflies in it.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
+    ],
+    "poa-trivialis": [
+      { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "The damp-ground, part-shade grass of the same story — which is why speckled woods, the butterflies of dappled hedge shade, turn up where this grass is and not where the fescue is.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
+    ],
+    "molinia-caerulea": [
+      { wildlifeId: "grass-skippers", support: "host", note: "Purple moor-grass is the bog's own grass butterfly plant, and the large heath — a bog specialist in serious decline — is one of the browns that depends on tussocky wet grassland like this.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
+    ],
+    "deschampsia-cespitosa": [
+      { wildlifeId: "grass-skippers", support: "host", note: "An old hair-grass tussock is a whole winter habitat — grass-feeding caterpillars, spiders and beetles all sit it out inside one.", basis: "European butterfly foodplant checklist (Dryad)." },
+    ],
+    "hedera-helix": [
+      { wildlifeId: "red-admiral", support: "nectar", note: "Ivy flowers in October, when a red admiral trying to survive an Irish winter or fly south has nothing else at all. An ivy-covered wall in autumn sunshine is the busiest thing in the garden, and most of it is insects nobody expected to still be flying.", basis: "All-Ireland Pollinator Plan; National Biodiversity Data Centre (Ireland)." },
+      { wildlifeId: "holly-blue", support: "host", reliance: "narrow", note: "The summer brood of the holly blue lays on ivy, having spent the spring on holly. Both plants in one garden gives you the butterfly twice a year.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Ivy berries ripen in February, the hungriest month, when the haws and hips are long gone. Blackbirds and wood pigeons live on them.", basis: "BirdWatch Ireland." },
+      { wildlifeId: "comma", support: "nectar", note: "Commas feed up on ivy flowers before hibernating as adults on a twig, where their torn outline passes for a dead leaf all winter.", basis: "National Biodiversity Data Centre (Ireland)." },
+    ],
+    "lonicera-periclymenum": [
+      { wildlifeId: "hummingbird-hawk-moth", support: "nectar", note: "Honeysuckle is pale so it shows at dusk, opens in the evening, and throws its scent for yards — all of that is advertising to moths with long tongues. A hummingbird hawk-moth hovering at one at nine on a July evening is the thing it was designed for.", basis: "National Biodiversity Data Centre (Ireland); All-Ireland Pollinator Plan." },
+      { wildlifeId: "blackcaps-warblers", support: "berries", note: "Clusters of red berries in autumn that warblers and thrushes take on the way south.", basis: "BirdWatch Ireland." },
+    ],
+    "vicia-cracca": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Tufted vetch is near the top of Irish nectar rankings — the one-sided violet spires are worked by long-tongued bumblebees all summer.", basis: "All-Ireland Pollinator Plan." },
+      { wildlifeId: "cryptic-wood-white", support: "host", note: "Vetches are among the handful of plants the cryptic wood white lays on. It flies weakly along a hedge bank rather than across a field, so a strip of vetch in rough grass is a corridor as much as a meal.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
+    ],
+    "lathyrus-pratensis": [
+      { wildlifeId: "cryptic-wood-white", support: "host", reliance: "narrow", note: "Meadow vetchling is the main caterpillar plant of a butterfly that exists, in Britain and Ireland, only here — and that was not even recognised as its own species until 2011. It lives on verges, railway banks and rough damp grassland, which are exactly the places that get tidied. Leaving a strip uncut until September is the whole intervention.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad); Butterfly Conservation." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A yellow pea flower needs a bee heavy enough to trip it, so this is bumblebee food rather than something a hoverfly can use.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "fragaria-vesca": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Open white flowers from April at ankle height — easy landing for mining bees working a sunny bank.", basis: "All-Ireland Pollinator Plan." },
+      { wildlifeId: "blackcaps-warblers", support: "berries", note: "Tiny, intense berries that robins and blackcaps find long before anyone with a bowl does.", basis: "BirdWatch Ireland." },
+    ],
+    "galium-verum": [
+      { wildlifeId: "elephant-hawk-moth", support: "host", reliance: "narrow", note: "Elephant hawk-moth caterpillars feed on bedstraws and willowherbs. The caterpillar is the size of a finger, grey-brown, with four eyespots it inflates when alarmed until the front end looks like a small snake — the single most startling thing an Irish garden produces. The adult is pink and olive and feeds at honeysuckle after dark.", basis: "National Biodiversity Data Centre (Ireland); Butterfly Conservation." },
+      { wildlifeId: "hummingbird-hawk-moth", support: "host", reliance: "narrow", note: "The hummingbird hawk-moth lays on bedstraws too. It arrives in Ireland as a migrant from the south, hovers at flowers in full daylight with an audible hum, and is reported to BirdWatch Ireland every summer by people certain they have seen a hummingbird.", basis: "National Biodiversity Data Centre (Ireland)." },
+    ],
+    "plantago-lanceolata": [
+      { wildlifeId: "goldfinches-linnets", support: "seeds", note: "Linnets and goldfinches strip the seed spikes through late summer. Leave a strip of lawn unmown from April and this is one of the plants that pays for it.", basis: "BirdWatch Ireland; All-Ireland Pollinator Plan." },
+    ],
+    "trifolium-repens": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Among the highest-ranked nectar plants in Irish surveys, and it is already in the lawn. Raise the mower blade and cut every six weeks instead of every fortnight and it flowers — the cheapest, least effortful thing on this whole list.", basis: "All-Ireland Pollinator Plan." },
+    ],
+    "thymus-praecox": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A thyme mat in July is audible from a few feet away. Per square foot it is one of the densest nectar sources in the whole catalog.", basis: "All-Ireland Pollinator Plan." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Short tubes at ground level, which is what the small solitary bees of dry limestone and dune sand can actually reach into.", basis: "All-Ireland Pollinator Plan." },
+    ],
+  },
+
 };

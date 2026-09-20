@@ -1,8 +1,10 @@
 # What a society's own list says about ours
 
-`npm run harvest:audubon` then `npm run societies`. Run 2026-09-20 against the
-National Audubon Society's Plants for Birds database, sampled at two or three
-ZIP codes per region.
+`npm run harvest:audubon`, `npm run harvest:wildflower`, then `npm run
+societies`. Run 2026-09-20 against two lists: the **National Audubon Society**'s
+Plants for Birds (ZIP-scoped, with a flora tier) and the **Lady Bird Johnson
+Wildflower Center**'s Recommended Species by state (state-scoped, no flora
+tier).
 
 ## Why this was worth doing
 
@@ -11,118 +13,144 @@ inside a region's box. That answers *does it grow here*, which is not the same
 question as *would anybody recommend planting it*. Occurrence data has no
 opinion.
 
-Audubon's database has one, and it is the same kind of artifact as ours: native
-plants, chosen by a conservation society, addressed to somebody deciding what to
-put in their garden. Holding the two lists side by side answers two things at
-once — what they recommend and we don't carry, and whether our native claims
-survive a source that didn't help write them.
+These lists have one, and they are the same kind of artifact as ours: native
+plants chosen by a conservation organization for somebody deciding what to put
+in their garden.
+
+## Why two sources
+
+The first one only worked in half the country. Audubon has a flora tier, which
+is the only thing that makes a native-status check possible — but its western
+coverage is thin enough to be useless: its flora for Portland has no
+Douglas-fir. The Wildflower Center covers the West properly and already splits
+California and Florida, but it is a recommendation list with no flora tier, so
+it can show a gap and can never settle native status.
+
+Neither is authoritative and the report never averages them. Every block names
+its source and what that source can be evidence of.
 
 ## The headline
 
-| Region | Ours | Their picks | Ours among their picks | Their picks we lack | …new genera | Ours absent from their flora |
+| Region | Ours | Audubon picks | …we lack | Wildflower picks | …we lack | Ours absent from Audubon's flora |
 |---|---|---|---|---|---|---|
-| Mid-Atlantic | 44 | 159 | 35 (80%) | **124** | 71 | 2 |
-| Northern Michigan | 46 | 109 | 34 (74%) | **75** | 49 | 1 |
-| N & C Florida | 24 | 65 | 13 (54%) | **52** | 39 | 4 |
-| South Florida | 21 | 26 | 8 (38%) | 18 | 17 | 5 |
-| Pacific Northwest | 85 | 47 | 30 (35%) | 17 | 9 | **38** |
-| Southern California | 64 | 33 | 13 (20%) | 20 | 13 | **39** |
-| Central California Coast | 64 | 23 | 11 (17%) | 12 | 8 | **43** |
+| Mid-Atlantic | 44 | 159 | 124 | 212 | 180 | 2 |
+| Northern Michigan | 46 | 109 | 75 | 157 | 123 | 1 |
+| N & C Florida | 24 | 65 | 52 | **374** | **354** | 4 |
+| South Florida | 21 | 26 | 18 | 118 | 106 | 5 |
+| Pacific Northwest | 85 | 47 | 17 | 228 | 174 | 38 ⚠ |
+| Southern California | 64 | 33 | 20 | 219 | 196 | 39 ⚠ |
+| Central California Coast | 64 | 23 | 12 | **300** | **253** | 43 ⚠ |
 
-Read the last column first, because it decides whether the rest of the row means
-anything.
+⚠ = the script refuses these as a native-status check. A flora that cannot place
+a quarter of a region's rows is not describing the same ground we are, so the
+run prints *"not usable as a native-status check here"* and the number is about
+Audubon's coverage, not our claims. It fires in exactly the three western
+regions and nowhere else.
 
-**The comparison works in the East and breaks in the West.** In the Mid-Atlantic
-and Michigan, 1–2 of our plants are missing from Audubon's flora — the two lists
-are describing the same ground. West of the Rockies, 38 to 43 of ours are
-missing, and the missing ones are Douglas-fir, ponderosa pine, red-flowering
-currant, snowberry and red-osier dogwood. Nobody thinks those aren't native to
-Portland. That is their coverage failing, not ours, and it means **no western
-row in this table is evidence about Indigene.** Their Key West sample returned
-nothing at all.
+## Finding 1 — the gap is real, and bigger than one source suggested
 
-So there are two findings, not one.
+Both lists recommend several times what we carry, everywhere:
 
-## Finding 1 — in the East, the gap is real and large
+- **North & Central Florida is furthest behind** — 24 rows against 374
+  recommendations, 222 of them genera the region has never carried.
+- **Central California Coast**: 64 against 300.
+- **Pacific Northwest**: 85 against 228, and this is our longest list.
+- **Mid-Atlantic**: 44 against 212, 98 new genera — hornbeam, hickory,
+  hackberry, buttonbush, chokeberry, turtlehead.
 
-Where the benchmark holds, they recommend two to three times what we carry:
+This is not the list `npm run candidates` produces. Candidates ranks by
+occurrence density and host-genus weight; these are plants an organization
+decided to put in front of a gardener.
 
-- **Mid-Atlantic: 124 of their 159 picks we don't have**, 71 of them genera this
-  region's list has never carried — hornbeam, hickory, hackberry, buttonbush,
-  chokeberry, turtlehead, sea oats, nodding onion.
-- **North & Central Florida is our thinnest region against theirs** — 24 rows
-  against 65 picks, missing 39 genera including persimmon, coralbean, crossvine,
-  Carolina jessamine and blanketflower.
-- **Michigan: 75 missing, 49 new genera** — balsam fir, hickory, hornbeam,
-  buttonbush, yarrow.
+## Finding 2 — the validation
 
-This is not the same list `npm run candidates` produces. Candidates ranks by
-occurrence density and host-genus weight; these are plants a society decided to
-put in front of a gardener. Where the two agree, the case for adding is about as
-strong as it gets from a desk.
+Where the benchmark holds, **80% of our Mid-Atlantic rows and 74% of Michigan's
+are among Audubon's own curated picks.** We are not carrying a list of eccentric
+choices; we chose much the same plants and stopped sooner.
 
-## Finding 2 — the validation is the better news
+## Finding 3 — the native-status check comes back almost clean
 
-Of our Mid-Atlantic rows, **80% are among Audubon's own curated picks**; Michigan
-74%. We are not carrying a list of eccentric choices. Where we and they cover
-the same ground, we mostly chose the same plants — we just stopped sooner.
-
-## What to actually look at
-
-Five rows where a flora that didn't help write our data doesn't list our plant on
-our ground. Most look like gaps in *their* database. One does not:
+Against the sources that can actually answer it, **the Mid-Atlantic has zero
+rows that no consulted list carries.** Michigan has one, and the Floridas two
+and three.
 
 | Row | Region | Read |
 |---|---|---|
-| **Echinacea purpurea** | Mid-Atlantic | **Check this one.** Our own note hedges — "widely native in the East/Midwest" — and the flora puts its native range in the Ohio Valley and Southeast, with the Northeast as introduced. Purple coneflower is one of the most recommended perennials we carry. |
-| *Andropogon gerardii* | Mid-Atlantic | Big bluestem in Pennsylvania is not in doubt; likelier their sampling. Worth one look. |
-| *Matteuccia struthiopteris* | Michigan | Their flora carries five ferns in total. Their gap. |
-| *Zamia integrifolia*, *Bursera simaruba* | Florida | Coontie is a cycad and gumbo limbo is our South Florida featured plant. Their gap — and their South Florida sample is a single ZIP. |
+| *Matteuccia struthiopteris* | Michigan | Ostrich fern. Audubon's flora carries five ferns in total. Their gap. |
+| *Zamia integrifolia*, *Myrcianthes fragrans* | N & C Florida | Coontie is a cycad; neither list handles those well. |
+| *Zamia integrifolia*, *Rivina humilis*, *Passiflora suberosa* | South Florida | Their South Florida sample is effectively one ZIP — Key West returned nothing at all. |
+
+**Correction to the first run of this report.** It flagged *Echinacea purpurea*
+in the Mid-Atlantic as a native claim to re-check, on Audubon's flora alone. The
+Wildflower Center **does** recommend it across PA, NJ, MD, DE and VA, and the
+species is uncontroversially native to Virginia, which our region includes. Two
+sources disagree and the region spans both answers, so it is not the finding it
+looked like. *Andropogon gerardii*, flagged the same way, is likewise
+recommended. Both are vouched; neither needs changing.
+
+That is the honest result of the second source: it removed the only finding the
+first one produced.
 
 ## Limits of this, stated once
 
 - **Audubon is a bird organization.** Its curation over-weights fruit, nuts and
-  seed and under-weights herbaceous pollinator plants. A plant it skips is not
-  thereby unimportant.
-- **Their two tiers are different kinds of list** and are never pooled here. The
-  curated picks are the comparison; the county flora is only ever used to check
-  native status. Diffing our 44 against their 652-species flora would print a
-  "gap" of 600 that means nothing.
-- **A ZIP is a county.** Our regions are much bigger, so each is sampled at two
-  or three points and the union is compared.
-- **Generic limits differ.** We write *Berberis aquifolium*, they write
-  *Mahonia*. `societies.mjs` carries an explicit synonym table and reports what
-  falls outside it rather than merging it.
+  seed and under-weights herbaceous pollinator plants.
+- **The Wildflower Center is selective, not comprehensive** — 226
+  recommendations for a state with thousands of natives. Snowberry, camas and
+  black cottonwood are all absent from its Washington and Oregon lists. Nobody
+  thinks those aren't native to Washington.
+- **It is also state-scoped**, wider than any region we ship, so its gap column
+  over-counts: Washington and Oregon both run east of the Cascade crest into
+  country our list deliberately excludes.
+- **And it is not fully independent.** We already cite the Center for size,
+  bloom and culture notes. Only the *selection* is outside evidence.
+- **Audubon's two tiers are never pooled.** Its curated picks are the gap
+  comparison; its county flora is only ever used for native status. Diffing 44
+  rows against a 652-species flora would print a gap of 600 that means nothing.
+- **Generic limits differ, and California is the worst of it.** We write
+  *Berberis aquifolium*, they write *Mahonia*; deerweed is *Acmispon glaber* to
+  us and *Lotus scoparius* to them, where both halves of the name moved.
+  `societies.mjs` carries an explicit genus table, a whole-name table for the
+  cases where the epithet moved too, and reports anything outside them rather
+  than merging it.
 
-## France and Ireland: no comparison possible
+## What we could not get
 
-Not for want of trying. **No equivalent artifact exists.** France's botanical
-bodies publish floras (Conservatoires botaniques nationaux, Tela Botanica's
-BDTFX) and nursery provenance lists (Végétal local) — nobody publishes a
-regional "plant these" list for gardeners, which is the thing this compares.
-Ireland's All-Ireland Pollinator Plan publishes short themed lists ("top 10 for
-a hedgerow"), which is closer in intent but far too small to diff a 67-row
-region against.
-
-Both are also unreachable from this sandbox. That is the lesser problem: even
-with full network access, there is nothing of the right shape to fetch. The
-outreach directory in [`outreach/`](outreach/native-plant-societies.md) says the
-same thing from the other direction — these countries have no native plant
-society in the US sense, and the function is split across bodies that each do
-one part of it.
+- **Calscape** — CNPS's own garden database, and the one list that would settle
+  California. It sits behind a Cloudflare bot challenge (`cf-mitigated:
+  challenge`). That is CNPS deliberately declining automated access and it was
+  not worked around. The right way to get it is to ask them, which is what
+  [`outreach/playbook.md`](outreach/playbook.md) is for.
+- **Ireland** — reachable now, and still not comparable. The All-Ireland
+  Pollinator Plan's lists are *pollinator-friendly*, not native-only: they
+  deliberately include garden exotics. Diffing a 67-row native list against them
+  would measure the wrong thing, and the lists live in a PDF booklet rather than
+  as data.
+- **France** — unchanged, and not a network problem. The Conservatoires
+  botaniques nationaux publish floras and Végétal local publishes nursery
+  provenance lists. Nobody publishes a regional "plant these" list for
+  gardeners, which is the artifact this compares. The outreach directory says
+  the same thing from the other side.
 
 ## What this changes
 
-Nothing shipped. No row was edited and no score moved on the strength of this;
-the committed artifact records what an outside list said about our rows, the way
-`wcvp/` records what Kew said. Two follow-ups it argues for:
+Nothing shipped. No row was edited and no score moved; the committed artifacts
+record what outside lists said about our rows, the way `wcvp/` records what Kew
+said.
 
-1. **Re-check *Echinacea purpurea* for the Mid-Atlantic** against USDA PLANTS.
-2. **The eastern regions are the ones to grow**, and for the first time the next
-   forty species are named by somebody outside this repo. Mid-Atlantic and North
-   & Central Florida are furthest behind their own society's recommendations.
+1. **No native-status finding survived.** The one the first run produced —
+   *Echinacea purpurea* in the Mid-Atlantic — was withdrawn when the second
+   source vouched for it. Adding a source removed a finding rather than adding
+   one, which is the outcome worth having.
+2. **The eastern and Florida regions are the ones to grow**, and the next
+   several dozen species are now named by organizations outside this repo.
+   North & Central Florida is furthest behind its own societies' lists by a wide
+   margin: 24 rows against 374 recommendations.
+3. **California needs a California source.** Both benchmarks are weakest exactly
+   where our two California lists are longest, and the list that would fix it is
+   the one we have to ask for.
 
 It also gives the outreach initiative its opening line. The playbook's first ask
 is *"here are the plants we list for your region — what did we get wrong?"* This
-is that question answered by machine for one organization. A chapter's
-horticulture chair would answer it better.
+is that question answered by machine, twice. A chapter's horticulture chair
+would answer it better, and in California they are the only ones who can.

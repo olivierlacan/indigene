@@ -1,17 +1,18 @@
 {
   "source": "National Audubon Society — Plants for Birds",
   "url": "https://www.audubon.org/native-plants",
-  "note": "What a society's own list says about the rows we ship. Their plant data is BONAP-derived, so their list itself is not stored here — see this folder's README.",
+  "note": "curated = Audubon's own picks for the ZIP; full = every species BONAP records as native to that ZIP's county. The two are different kinds of list and must not be pooled.",
+  "hasFloraTier": true,
   "region": "florida-south",
-  "zips": [
+  "scope": [
     "33133",
     "33040"
   ],
   "harvested": "2026-09-20",
   "counts": {
     "ours": 21,
-    "theirCuratedPicks": 26,
-    "theirCountyFlora": 241,
+    "theirPicks": 26,
+    "theirFlora": 241,
     "oursAmongTheirPicks": 8,
     "theirPicksWeLack": 18,
     "generaNewToUs": 16

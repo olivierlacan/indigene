@@ -246,6 +246,14 @@ subtitle on the What's new page.
   against (their Portland flora has no Douglas-fir). The raw harvest stays
   git-ignored because their plant data is BONAP-derived; only the verdict on our
   own rows is committed.
+- Internal: a second society benchmark, the Lady Bird Johnson Wildflower
+  Center's per-state Recommended Species, because the first one was unusable
+  west of the Rockies. `npm run societies` now reads both, refuses a flora as a
+  native-status check when it cannot place a quarter of a region's rows, and
+  handles the renames that were scoring one plant as two findings (Berberis /
+  Mahonia, Acmispon glaber / Lotus scoparius). It withdrew the one finding the
+  first run produced: Echinacea purpurea in the Mid-Atlantic is recommended by
+  the Center across PA, NJ, MD, DE and VA, so the claim stands.
 
 ### Fixed
 

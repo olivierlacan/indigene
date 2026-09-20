@@ -40,11 +40,32 @@ layers come from, extended across all three countries — can.
 
 ## The current answer
 
-**Unanswered.** The run in `probe.json` reached none of the candidate hosts —
-this repo's sandbox refuses the connection before it leaves the machine, so
-nothing was learned about the service. `probe-eea.mjs` was written from exactly
-this position and the EEA service turned out to be fine. Re-run from an
-unblocked network.
+**Unanswered, and it cannot be answered from this repo's sandbox.** Every
+candidate host — `gis.cec.org`, `maps-cartes.services.geo.ca` and ArcGIS Online
+— refuses the connection before the request leaves the machine. That is this
+network's egress policy, not the service's answer, and `probe.json` records it
+as `verdict: "unanswered"` rather than as a verdict on CEC.
+
+What *was* verified here: the probe's own machinery. Pointed at a service it
+can reach (the EEA one), it discovered the polygon layer, auto-detected the
+field holding the region, point-queried six places and printed a paste-ready
+config. So a run from an unblocked network will give a real answer rather than
+fail for a code reason.
+
+Everything reachable has been ruled out, for the record: the EPA's server has
+no North American product in any of its 24 folders, GitHub's search API and npm
+are closed off or empty, and Canada's own geo services are blocked. There is no
+way around this from inside the sandbox.
+
+**Run it from anywhere with open internet:**
+
+```sh
+cd app && npm run probe:cec
+```
+
+It needs Node 18+ and nothing else, takes a few seconds, and writes
+`data/sources/cec-ecoregions/probe.json`. Commit that file either way — a "no"
+is as useful as a "yes", because it is what sends us to the fallback below.
 
 ## The fallback, if the answer is no
 

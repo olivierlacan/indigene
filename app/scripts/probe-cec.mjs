@@ -57,6 +57,29 @@ const CANDIDATES = [
   "https://maps-cartes.services.geo.ca/server_serveur/rest/services",
 ];
 
+// If none of the fixed roots answers, ask ArcGIS Online what it has. A hosted
+// copy of the CEC layers is as good as the CEC's own server for a point query,
+// and this is what saves the run when a URL has simply moved — which, for a
+// tri-national agency's GIS server, is the likeliest way this fails.
+const AGOL_SEARCH =
+  "https://www.arcgis.com/sharing/rest/search?f=json&num=20&q=" +
+  encodeURIComponent('(ecoregions AND ("north america" OR CEC)) type:("Map Service" OR "Feature Service")');
+
+async function discoverFromArcGisOnline() {
+  const found = [];
+  try {
+    const data = await json(AGOL_SEARCH);
+    for (const r of data.results ?? []) {
+      if (!r.url) continue;
+      // A layer url ends in /0; we want the service root the prober walks.
+      found.push({ url: String(r.url).replace(/\/\d+$/, ""), title: r.title, owner: r.owner });
+    }
+  } catch (e) {
+    return { error: e.message, found };
+  }
+  return { found };
+}
+
 // A field name that looks like a North American ecoregion code or name.
 const FIELD_RE = /^(NA_L[123](CODE|NAME)|NAME_L[123]|ECO_?(CODE|NAME)|LEVEL[123])/i;
 
@@ -115,7 +138,8 @@ async function main() {
     verdict: null,
   };
 
-  for (const base of CANDIDATES) {
+  const roots = [...CANDIDATES];
+  for (const base of roots) {
     const entry = { base, reachable: false };
     console.log(`\n=== ${base}`);
     try {
@@ -151,6 +175,19 @@ async function main() {
     }
     report.candidates.push(entry);
     if (report.resolved) break;
+
+    // Exhausted the fixed roots with nothing to show → ask ArcGIS Online.
+    if (base === CANDIDATES[CANDIDATES.length - 1] && !report.resolved) {
+      const { found, error } = await discoverFromArcGisOnline();
+      report.arcgisOnline = { searched: AGOL_SEARCH, error: error ?? null, hits: found };
+      if (found.length) {
+        console.log(`\n=== ArcGIS Online offered ${found.length} candidate service(s)`);
+        for (const f of found) console.log(`    ${f.title} (${f.owner}) → ${f.url}`);
+        roots.push(...found.map((f) => f.url));
+      } else if (error) {
+        console.log(`\n=== ArcGIS Online search failed: ${error}`);
+      }
+    }
   }
 
   // A host that refuses the TCP connect outright is a *local egress* answer, not

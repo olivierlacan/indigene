@@ -31,6 +31,7 @@ import { REGION as FRANCE_ATLANTIC } from "./region.france-atlantic";
 import { REGION as FRANCE_CONTINENTAL } from "./region.france-continental";
 import { REGION as FRANCE_MEDITERRANEAN } from "./region.france-mediterranean";
 import { REGION as FRANCE_ALPINE } from "./region.france-alpine";
+import { REGION as IRELAND } from "./region.ireland";
 
 export const REGIONS: RegionDef[] = [
   { meta: MID_ATLANTIC, load: () => import("./plants.mid-atlantic").then((m) => m.SEED_RAW) },
@@ -60,6 +61,12 @@ export const REGIONS: RegionDef[] = [
   { meta: FRANCE_CONTINENTAL, load: () => import("./plants.france-continental").then((m) => m.SEED_RAW) },
   { meta: FRANCE_MEDITERRANEAN, load: () => import("./plants.france-mediterranean").then((m) => m.SEED_RAW) },
   { meta: FRANCE_ALPINE, load: () => import("./plants.france-alpine").then((m) => m.SEED_RAW) },
+
+  // Ireland is the same EEA *Atlantic* code as Atlantic France, so the code
+  // cannot tell them apart — but the boxes can, being a sea and 700 km apart.
+  // It is the first region whose native claim rests on Kew's WCVP rather than a
+  // national flora; see the head of `plants.ireland.ts`.
+  { meta: IRELAND, load: () => import("./plants.ireland").then((m) => m.SEED_RAW) },
 ];
 
 /**

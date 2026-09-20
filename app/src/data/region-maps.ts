@@ -15,4 +15,5 @@ export const REGION_MAP_SIZES: Record<string, { w: number; h: number }> = {
   "france-continental": { w: 640, h: 768 },
   "france-mediterranean": { w: 640, h: 385 },
   "france-alpine": { w: 640, h: 768 },
+  "ireland": { w: 640, h: 768 },
 };

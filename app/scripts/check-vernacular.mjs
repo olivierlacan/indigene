@@ -177,18 +177,27 @@ async function fromTaxref(latin) {
  */
 async function fromBdtfx(latin) {
   const accept = { Accept: "application/json" };
+  // `masque=` and not `masque.nom_sci=`. The service silently ignores the
+  // qualified form — it rewrites it to `masque.nom.sci`, matches nothing, and
+  // returns the *whole database* with `total: 101477`. Taking the first row of
+  // that gives every plant the same `num_taxonomique` (9732, a Dactylorhiza
+  // hybrid), so BDTFX could never confirm a name and never proposed one for the
+  // rows sitting in `pending`. Measured 2026-09-20.
   const nameUrl =
-    `${TELA_EFLORE}/bdtfx/noms?masque.nom_sci=${encodeURIComponent(latin)}` +
-    `&recherche=stricte&retour.champs=num_taxonomique&navigation.limite=5`;
+    `${TELA_EFLORE}/bdtfx/noms?masque=${encodeURIComponent(latin)}` +
+    `&retour.champs=num_taxonomique&navigation.limite=5`;
   const found = await getJson("bdtfx", nameUrl, accept);
   const nt = Object.values(found?.resultat ?? {})
     .map((r) => r?.num_taxonomique ?? r?.["num_taxonomique"])
     .find(Boolean);
   if (!nt) return null;
 
+  // `nom_vernaculaire` has to be *asked for*: a field left out of
+  // `retour.champs` comes back null rather than omitted, so reading it without
+  // requesting it looks exactly like a taxon with no French name.
   const vernUrl =
     `${TELA_EFLORE}/nvjfl/noms-vernaculaires?masque.nt=${encodeURIComponent(nt)}` +
-    `&retour.champs=num_statut,conseil_emploi&navigation.limite=30`;
+    `&retour.champs=nom_vernaculaire,num_statut,conseil_emploi&navigation.limite=30`;
   const verns = await getJson("bdtfx", vernUrl, accept);
   const rows = Object.values(verns?.resultat ?? {}).filter(Boolean);
   const pick =

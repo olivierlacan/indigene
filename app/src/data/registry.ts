@@ -249,6 +249,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:106370-1",
+    "scientificName": "Achlys triphylla",
+    "family": "Berberidaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "106370-1",
+      "wfo": "wfo-0000516103",
+      "gbif": "5371714",
+      "usda": "ACTR",
+      "itis": "18813",
+      "inat": "75263",
+      "wikidata": "Q15313061",
+      "indigene": "achlys-triphylla"
+    },
+    "commonNames": [
+      "Vanilla Leaf"
+    ],
+    "aliases": [
+      "achlys triphylla",
+      "vanilla leaf"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:60448516-2",
     "scientificName": "Acmispon glaber",
     "family": "Fabaceae",
@@ -396,6 +425,37 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:529088-1",
+    "scientificName": "Allium ursinum",
+    "family": "Amaryllidaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "529088-1",
+      "wfo": "wfo-0000757676",
+      "gbif": "2857601",
+      "usda": "ALUR",
+      "itis": "810202",
+      "inat": "56152",
+      "wikidata": "Q130882",
+      "indigene": "allium-ursinum"
+    },
+    "commonNames": [
+      "Wild Garlic",
+      "Ramsons"
+    ],
+    "aliases": [
+      "allium ursinum",
+      "ramsons",
+      "wild garlic"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
+    ]
+  },
+  {
     "primaryId": "ipni:30015316-2",
     "scientificName": "Alnus alnobetula",
     "family": "Betulaceae",
@@ -444,9 +504,11 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Common Alder",
-      "Aulne glutineux"
+      "Aulne glutineux",
+      "Alder"
     ],
     "aliases": [
+      "alder",
       "alnus glutinosa",
       "aulne glutineux",
       "common alder"
@@ -455,7 +517,8 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "france-continental",
-      "france-mediterranean"
+      "france-mediterranean",
+      "ireland"
     ]
   },
   {
@@ -684,6 +747,64 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic"
+    ]
+  },
+  {
+    "primaryId": "ipni:13472-2",
+    "scientificName": "Anemone nemorosa",
+    "family": "Ranunculaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "13472-2",
+      "wfo": "wfo-0000535569",
+      "gbif": "3033263",
+      "usda": "ANNE4",
+      "itis": "181875",
+      "inat": "950603",
+      "wikidata": "Q161056",
+      "indigene": "anemone-nemorosa"
+    },
+    "commonNames": [
+      "Wood Anemone"
+    ],
+    "aliases": [
+      "anemone nemorosa",
+      "wood anemone"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:389034-1",
+    "scientificName": "Anthoxanthum odoratum",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "389034-1",
+      "wfo": "wfo-0000848178",
+      "gbif": "2705975",
+      "usda": "ANOD",
+      "itis": "41395",
+      "inat": "75475",
+      "wikidata": "Q157751",
+      "indigene": "anthoxanthum-odoratum"
+    },
+    "commonNames": [
+      "Sweet Vernal-grass"
+    ],
+    "aliases": [
+      "anthoxanthum odoratum",
+      "sweet vernal-grass"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
     ]
   },
   {
@@ -955,6 +1076,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:60464254-2",
+    "scientificName": "Artemisia alba",
+    "family": "Asteraceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "60464254-2",
+      "wfo": "wfo-0000002713",
+      "gbif": "3121088",
+      "inat": "496125",
+      "wikidata": "Q669023",
+      "indigene": "artemisia-alba"
+    },
+    "commonNames": [
+      "White Wormwood",
+      "Armoise blanche"
+    ],
+    "aliases": [
+      "armoise blanche",
+      "artemisia alba",
+      "white wormwood"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
     ]
   },
   {
@@ -1285,7 +1435,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
-      "france-continental"
+      "france-continental",
+      "ireland"
     ]
   },
   {
@@ -1557,6 +1708,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:295185-1",
+    "scientificName": "Betula pubescens",
+    "family": "Betulaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "295185-1",
+      "wfo": "wfo-0000335985",
+      "gbif": "9118014",
+      "usda": "BEPU5",
+      "itis": "183543",
+      "inat": "119061",
+      "wikidata": "Q157624",
+      "indigene": "betula-pubescens"
+    },
+    "commonNames": [
+      "Downy Birch"
+    ],
+    "aliases": [
+      "betula pubescens",
+      "downy birch"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
+    ]
+  },
+  {
     "primaryId": "ipni:67790-3",
     "scientificName": "Brachypodium pinnatum",
     "family": "Poaceae",
@@ -1707,7 +1887,38 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "france-continental",
-      "france-alpine"
+      "france-mediterranean",
+      "france-alpine",
+      "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:42867-2",
+    "scientificName": "Caltha palustris",
+    "family": "Ranunculaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "42867-2",
+      "wfo": "wfo-0000581660",
+      "gbif": "5371685",
+      "usda": "CAPA5",
+      "itis": "18454",
+      "inat": "56224",
+      "wikidata": "Q147192",
+      "indigene": "caltha-palustris"
+    },
+    "commonNames": [
+      "Marsh Marigold"
+    ],
+    "aliases": [
+      "caltha palustris",
+      "marsh marigold"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
     ]
   },
   {
@@ -2221,7 +2432,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "ireland"
     ]
   },
   {
@@ -2985,10 +3197,12 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Hazel",
-      "Noisetier"
+      "Noisetier",
+      "Coudrier"
     ],
     "aliases": [
       "corylus avellana",
+      "coudrier",
       "hazel",
       "noisetier"
     ],
@@ -2996,7 +3210,9 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "france-continental",
-      "france-alpine"
+      "france-mediterranean",
+      "france-alpine",
+      "ireland"
     ]
   },
   {
@@ -3111,16 +3327,20 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Hawthorn",
-      "Whitethorn"
+      "Whitethorn",
+      "Aubépine à un style"
     ],
     "aliases": [
+      "aubépine à un style",
       "crataegus monogyna",
       "hawthorn",
       "whitethorn"
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "france-mediterranean",
+      "ireland"
     ]
   },
   {
@@ -3149,7 +3369,39 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:490033-1",
+    "scientificName": "Cytisus villosus",
+    "family": "Fabaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "490033-1",
+      "wfo": "wfo-0000213303",
+      "gbif": "5354639",
+      "usda": "CYVI8",
+      "itis": "501967",
+      "inat": "161579",
+      "wikidata": "Q15531513",
+      "indigene": "cytisus-villosus"
+    },
+    "commonNames": [
+      "Hairy Broom",
+      "Cytise velu"
+    ],
+    "aliases": [
+      "cytise velu",
+      "cytisus villosus",
+      "hairy broom"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
     ]
   },
   {
@@ -3244,7 +3496,8 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "pnw",
       "france-atlantic",
-      "france-continental"
+      "france-continental",
+      "ireland"
     ]
   },
   {
@@ -3331,7 +3584,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "ireland"
     ]
   },
   {
@@ -3513,7 +3767,8 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "france-continental",
-      "france-alpine"
+      "france-alpine",
+      "ireland"
     ]
   },
   {
@@ -3694,6 +3949,64 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:328424-1",
+    "scientificName": "Erica cinerea",
+    "family": "Ericaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "328424-1",
+      "wfo": "wfo-0000671681",
+      "gbif": "5333411",
+      "usda": "ERCI3",
+      "itis": "23648",
+      "inat": "55775",
+      "wikidata": "Q1543735",
+      "indigene": "erica-cinerea"
+    },
+    "commonNames": [
+      "Bell Heather"
+    ],
+    "aliases": [
+      "bell heather",
+      "erica cinerea"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:329737-1",
+    "scientificName": "Erica tetralix",
+    "family": "Ericaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "329737-1",
+      "wfo": "wfo-0000673399",
+      "gbif": "5333412",
+      "usda": "ERTE4",
+      "itis": "23650",
+      "inat": "162431",
+      "wikidata": "Q1421121",
+      "indigene": "erica-tetralix"
+    },
+    "commonNames": [
+      "Cross-leaved Heath"
+    ],
+    "aliases": [
+      "cross-leaved heath",
+      "erica tetralix"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
     ]
   },
   {
@@ -3985,7 +4298,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-continental"
+      "france-continental",
+      "ireland"
     ]
   },
   {
@@ -4199,6 +4513,37 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:403212-1",
+    "scientificName": "Festuca ovina",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "403212-1",
+      "wfo": "wfo-0000871222",
+      "gbif": "2704951",
+      "usda": "FEOV",
+      "itis": "40804",
+      "inat": "125903",
+      "wikidata": "Q157885",
+      "indigene": "festuca-ovina"
+    },
+    "commonNames": [
+      "Sheep's Fescue",
+      "Fétuque des moutons"
+    ],
+    "aliases": [
+      "festuca ovina",
+      "fétuque des moutons",
+      "sheep's fescue"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
+    ]
+  },
+  {
     "primaryId": "ipni:277175-2",
     "scientificName": "Festuca roemeri",
     "family": "Poaceae",
@@ -4252,7 +4597,37 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:724943-1",
+    "scientificName": "Filipendula ulmaria",
+    "family": "Rosaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "724943-1",
+      "wfo": "wfo-0000983427",
+      "gbif": "2987999",
+      "usda": "FIUL",
+      "itis": "25171",
+      "inat": "63134",
+      "wikidata": "Q147176",
+      "indigene": "filipendula-ulmaria"
+    },
+    "commonNames": [
+      "Meadowsweet"
+    ],
+    "aliases": [
+      "filipendula ulmaria",
+      "meadowsweet"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
     ]
   },
   {
@@ -4320,7 +4695,8 @@ export const REGISTRY: RegistryEntry[] = [
       "ca-south-coast",
       "france-atlantic",
       "france-continental",
-      "france-alpine"
+      "france-alpine",
+      "ireland"
     ]
   },
   {
@@ -4379,7 +4755,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "ireland"
     ]
   },
   {
@@ -4532,7 +4909,8 @@ export const REGISTRY: RegistryEntry[] = [
       "france-atlantic",
       "france-continental",
       "france-mediterranean",
-      "france-alpine"
+      "france-alpine",
+      "ireland"
     ]
   },
   {
@@ -4592,6 +4970,35 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "pnw",
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:496342-1",
+    "scientificName": "Genista scorpius",
+    "family": "Fabaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "496342-1",
+      "wfo": "wfo-0000213360",
+      "gbif": "5347727",
+      "inat": "328040",
+      "wikidata": "Q3101011",
+      "indigene": "genista-scorpius"
+    },
+    "commonNames": [
+      "Scorpion Broom",
+      "Genêt épineux"
+    ],
+    "aliases": [
+      "genista scorpius",
+      "genêt épineux",
+      "scorpion broom"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
     ]
   },
   {
@@ -4681,6 +5088,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic"
+    ]
+  },
+  {
+    "primaryId": "ipni:373620-1",
+    "scientificName": "Geranium sanguineum",
+    "family": "Geraniaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "373620-1",
+      "wfo": "wfo-0000701279",
+      "gbif": "2890920",
+      "usda": "GESA2",
+      "itis": "29121",
+      "inat": "129853",
+      "wikidata": "Q158387",
+      "indigene": "geranium-sanguineum"
+    },
+    "commonNames": [
+      "Bloody Cranesbill"
+    ],
+    "aliases": [
+      "bloody cranesbill",
+      "geranium sanguineum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
     ]
   },
   {
@@ -4805,7 +5241,8 @@ export const REGISTRY: RegistryEntry[] = [
       "france-atlantic",
       "france-continental",
       "france-mediterranean",
-      "france-alpine"
+      "france-alpine",
+      "ireland"
     ]
   },
   {
@@ -5195,7 +5632,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "ireland"
     ]
   },
   {
@@ -5224,7 +5662,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "ireland"
     ]
   },
   {
@@ -5453,16 +5892,19 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Common Juniper",
-      "Genévrier commun"
+      "Genévrier commun",
+      "Juniper"
     ],
     "aliases": [
       "common juniper",
       "genévrier commun",
+      "juniper",
       "juniperus communis"
     ],
     "cultivarOf": null,
     "regions": [
-      "france-alpine"
+      "france-alpine",
+      "ireland"
     ]
   },
   {
@@ -5587,6 +6029,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:501954-1",
+    "scientificName": "Lathyrus pratensis",
+    "family": "Fabaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "501954-1",
+      "wfo": "wfo-0000212701",
+      "gbif": "5356701",
+      "usda": "LAPR",
+      "itis": "25874",
+      "inat": "125787",
+      "wikidata": "Q161639",
+      "indigene": "lathyrus-pratensis"
+    },
+    "commonNames": [
+      "Meadow Vetchling"
+    ],
+    "aliases": [
+      "lathyrus pratensis",
+      "meadow vetchling"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
     ]
   },
   {
@@ -5912,7 +6383,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "ireland"
     ]
   },
   {
@@ -5964,11 +6436,13 @@ export const REGISTRY: RegistryEntry[] = [
     "commonNames": [
       "Bird's-foot Trefoil",
       "Eggs and Bacon",
-      "Lotier corniculé"
+      "Lotier corniculé",
+      "Lotier commun"
     ],
     "aliases": [
       "bird's-foot trefoil",
       "eggs and bacon",
+      "lotier commun",
       "lotier corniculé",
       "lotus corniculatus"
     ],
@@ -5976,7 +6450,9 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "france-continental",
-      "france-alpine"
+      "france-mediterranean",
+      "france-alpine",
+      "ireland"
     ]
   },
   {
@@ -6065,6 +6541,64 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:147962-2",
+    "scientificName": "Lysichiton americanus",
+    "family": "Araceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "147962-2",
+      "wfo": "wfo-0000231603",
+      "gbif": "2869311",
+      "usda": "LYAM3",
+      "itis": "503629",
+      "inat": "48537",
+      "wikidata": "Q469972",
+      "indigene": "lysichiton-americanus"
+    },
+    "commonNames": [
+      "Western Skunk Cabbage"
+    ],
+    "aliases": [
+      "lysichiton americanus",
+      "western skunk cabbage"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:147990-2",
+    "scientificName": "Lythrum salicaria",
+    "family": "Lythraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "147990-2",
+      "wfo": "wfo-0000366878",
+      "gbif": "3188736",
+      "usda": "LYSA2",
+      "itis": "27079",
+      "inat": "61321",
+      "wikidata": "Q157513",
+      "indigene": "lythrum-salicaria"
+    },
+    "commonNames": [
+      "Purple Loosestrife"
+    ],
+    "aliases": [
+      "lythrum salicaria",
+      "purple loosestrife"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
     ]
   },
   {
@@ -6213,6 +6747,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:726415-1",
+    "scientificName": "Malus sylvestris",
+    "family": "Rosaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "726415-1",
+      "wfo": "wfo-0001016475",
+      "gbif": "3001509",
+      "usda": "MASY2",
+      "itis": "25264",
+      "inat": "61223",
+      "wikidata": "Q47161",
+      "indigene": "malus-sylvestris"
+    },
+    "commonNames": [
+      "Crab Apple"
+    ],
+    "aliases": [
+      "crab apple",
+      "malus sylvestris"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
+    ]
+  },
+  {
     "primaryId": "ipni:17145680-1",
     "scientificName": "Matteuccia struthiopteris",
     "family": "Onocleaceae",
@@ -6270,6 +6833,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-central"
+    ]
+  },
+  {
+    "primaryId": "ipni:408809-1",
+    "scientificName": "Molinia caerulea",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "408809-1",
+      "wfo": "wfo-0000880418",
+      "gbif": "5289877",
+      "usda": "MOCA2",
+      "itis": "41876",
+      "inat": "165499",
+      "wikidata": "Q157772",
+      "indigene": "molinia-caerulea"
+    },
+    "commonNames": [
+      "Purple Moor-grass"
+    ],
+    "aliases": [
+      "molinia caerulea",
+      "purple moor-grass"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
     ]
   },
   {
@@ -6454,6 +7046,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:300581-2",
+    "scientificName": "Myrica gale",
+    "family": "Myricaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "300581-2",
+      "wfo": "wfo-0000447393",
+      "gbif": "5414202",
+      "usda": "MYGA",
+      "itis": "19265",
+      "inat": "82203",
+      "wikidata": "Q161681",
+      "indigene": "myrica-gale"
+    },
+    "commonNames": [
+      "Bog Myrtle"
+    ],
+    "aliases": [
+      "bog myrtle",
+      "myrica gale"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
+    ]
+  },
+  {
     "primaryId": "ipni:599719-1",
     "scientificName": "Myrtus communis",
     "family": "Myrtaceae",
@@ -6544,6 +7165,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-continental"
+    ]
+  },
+  {
+    "primaryId": "ipni:305721-2",
+    "scientificName": "Osmunda regalis",
+    "family": "Osmundaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "305721-2",
+      "wfo": "wfo-0001109067",
+      "gbif": "8049341",
+      "usda": "OSRE",
+      "itis": "17218",
+      "inat": "200042",
+      "wikidata": "Q733398",
+      "indigene": "osmunda-regalis"
+    },
+    "commonNames": [
+      "Royal Fern"
+    ],
+    "aliases": [
+      "osmunda regalis",
+      "royal fern"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
     ]
   },
   {
@@ -6840,6 +7490,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:1061719-2",
+    "scientificName": "Petasites frigidus",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "1061719-2",
+      "wfo": "wfo-0000126786",
+      "gbif": "3088323",
+      "usda": "PEFR5",
+      "itis": "36054",
+      "inat": "55780",
+      "wikidata": "Q1997222",
+      "indigene": "petasites-frigidus"
+    },
+    "commonNames": [
+      "Sweet Coltsfoot"
+    ],
+    "aliases": [
+      "petasites frigidus",
+      "sweet coltsfoot"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:610935-1",
     "scientificName": "Phillyrea angustifolia",
     "family": "Oleaceae",
@@ -6959,6 +7638,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:676986-1",
+    "scientificName": "Picea sitchensis",
+    "family": "Pinaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "676986-1",
+      "wfo": "wfo-0000482639",
+      "gbif": "5284827",
+      "usda": "PISI",
+      "itis": "183309",
+      "inat": "68131",
+      "wikidata": "Q147426",
+      "indigene": "picea-sitchensis"
+    },
+    "commonNames": [
+      "Sitka Spruce"
+    ],
+    "aliases": [
+      "picea sitchensis",
+      "sitka spruce"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:262848-1",
     "scientificName": "Pinus cembra",
     "family": "Pinaceae",
@@ -6987,6 +7695,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:30000492-2",
+    "scientificName": "Pinus contorta",
+    "family": "Pinaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "30000492-2",
+      "wfo": "wfo-0000481330",
+      "gbif": "5285750",
+      "usda": "PICO",
+      "itis": "183327",
+      "inat": "48934",
+      "wikidata": "Q165091",
+      "indigene": "pinus-contorta"
+    },
+    "commonNames": [
+      "Shore Pine"
+    ],
+    "aliases": [
+      "pinus contorta",
+      "shore pine"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {
@@ -7258,7 +7995,8 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "france-continental",
-      "france-mediterranean"
+      "france-mediterranean",
+      "ireland"
     ]
   },
   {
@@ -7320,6 +8058,35 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": "ipni:320346-2",
+    "scientificName": "Poa trivialis",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "320346-2",
+      "wfo": "wfo-0000894135",
+      "gbif": "8300875",
+      "usda": "POTR2",
+      "itis": "41163",
+      "inat": "78657",
+      "wikidata": "Q159118",
+      "indigene": "poa-trivialis"
+    },
+    "commonNames": [
+      "Rough Meadow-grass"
+    ],
+    "aliases": [
+      "poa trivialis",
+      "rough meadow-grass"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
     ]
   },
   {
@@ -7496,7 +8263,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "ireland"
     ]
   },
   {
@@ -7591,7 +8359,8 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "france-continental",
-      "france-alpine"
+      "france-alpine",
+      "ireland"
     ]
   },
   {
@@ -7681,6 +8450,34 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:702779-1",
+    "scientificName": "Primula vulgaris",
+    "family": "Primulaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "702779-1",
+      "wfo": "wfo-0000482762",
+      "gbif": "5414335",
+      "itis": "504607",
+      "inat": "56136",
+      "wikidata": "Q159537",
+      "indigene": "primula-vulgaris"
+    },
+    "commonNames": [
+      "Primrose"
+    ],
+    "aliases": [
+      "primrose",
+      "primula vulgaris"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
+    ]
+  },
+  {
     "primaryId": "ipni:30093848-2",
     "scientificName": "Prunus avium",
     "family": "Rosaceae",
@@ -7708,7 +8505,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "ireland"
     ]
   },
   {
@@ -7828,7 +8626,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-alpine"
+      "france-alpine",
+      "ireland"
     ]
   },
   {
@@ -7892,7 +8691,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
-      "france-mediterranean"
+      "france-mediterranean",
+      "ireland"
     ]
   },
   {
@@ -7980,6 +8780,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic"
+    ]
+  },
+  {
+    "primaryId": "ipni:731262-1",
+    "scientificName": "Pyrus spinosa",
+    "family": "Rosaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "731262-1",
+      "wfo": "wfo-0000998826",
+      "gbif": "5362560",
+      "inat": "335885",
+      "wikidata": "Q2294122",
+      "indigene": "pyrus-spinosa"
+    },
+    "commonNames": [
+      "Almond-leaved Pear",
+      "Poirier à feuilles d'amandier"
+    ],
+    "aliases": [
+      "almond-leaved pear",
+      "poirier à feuilles d'amandier",
+      "pyrus spinosa"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
     ]
   },
   {
@@ -8160,7 +8989,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-continental"
+      "france-continental",
+      "ireland"
     ]
   },
   {
@@ -8220,7 +9050,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "ireland"
     ]
   },
   {
@@ -8342,6 +9173,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:332831-1",
+    "scientificName": "Rhododendron macrophyllum",
+    "family": "Ericaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "332831-1",
+      "wfo": "wfo-0001047073",
+      "gbif": "7894533",
+      "usda": "RHMA3",
+      "itis": "23720",
+      "inat": "57360",
+      "wikidata": "Q2714739",
+      "indigene": "rhododendron-macrophyllum"
+    },
+    "commonNames": [
+      "Pacific Rhododendron"
+    ],
+    "aliases": [
+      "pacific rhododendron",
+      "rhododendron macrophyllum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {
@@ -8584,7 +9444,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-continental"
+      "france-continental",
+      "ireland"
     ]
   },
   {
@@ -8648,6 +9509,66 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:734215-1",
+    "scientificName": "Rosa sempervirens",
+    "family": "Rosaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "734215-1",
+      "wfo": "wfo-0000992954",
+      "gbif": "3002660",
+      "usda": "ROSE3",
+      "itis": "504832",
+      "inat": "204401",
+      "wikidata": "Q2703655",
+      "indigene": "rosa-sempervirens"
+    },
+    "commonNames": [
+      "Evergreen Rose",
+      "Églantier sempervirent"
+    ],
+    "aliases": [
+      "evergreen rose",
+      "rosa sempervirens",
+      "églantier sempervirent"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": "ipni:324822-2",
+    "scientificName": "Rosa spinosissima",
+    "family": "Rosaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "324822-2",
+      "wfo": "wfo-0001014557",
+      "gbif": "3002333",
+      "usda": "ROSP2",
+      "itis": "24840",
+      "inat": "167993",
+      "wikidata": "Q158359",
+      "indigene": "rosa-spinosissima"
+    },
+    "commonNames": [
+      "Burnet Rose"
+    ],
+    "aliases": [
+      "burnet rose",
+      "rosa spinosissima"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
+    ]
+  },
+  {
     "primaryId": null,
     "scientificName": "Rubus fruticosus agg.",
     "family": "Rosaceae",
@@ -8673,7 +9594,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
-      "france-continental"
+      "france-continental",
+      "ireland"
     ]
   },
   {
@@ -8912,7 +9834,39 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:145048-3",
+    "scientificName": "Rumex acetosella",
+    "family": "Polygonaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "145048-3",
+      "wfo": "wfo-0000403586",
+      "gbif": "2888995",
+      "usda": "RUAC3",
+      "itis": "20934",
+      "inat": "53195",
+      "wikidata": "Q29951",
+      "indigene": "rumex-acetosella"
+    },
+    "commonNames": [
+      "Sheep's Sorrel",
+      "Petite Oseille"
+    ],
+    "aliases": [
+      "petite oseille",
+      "rumex acetosella",
+      "sheep's sorrel"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
     ]
   },
   {
@@ -9010,7 +9964,39 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "france-continental",
-      "france-alpine"
+      "france-alpine",
+      "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:777326-1",
+    "scientificName": "Salix cinerea",
+    "family": "Salicaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "777326-1",
+      "wfo": "wfo-0000929149",
+      "gbif": "5372605",
+      "usda": "SACI",
+      "itis": "22519",
+      "inat": "168326",
+      "wikidata": "Q157540",
+      "indigene": "salix-cinerea"
+    },
+    "commonNames": [
+      "Grey Willow",
+      "Sally"
+    ],
+    "aliases": [
+      "grey willow",
+      "salix cinerea",
+      "sally"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
     ]
   },
   {
@@ -9335,7 +10321,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "ireland"
     ]
   },
   {
@@ -9665,6 +10652,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:157239-1",
+    "scientificName": "Silene dioica",
+    "family": "Caryophyllaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "157239-1",
+      "wfo": "wfo-0000440478",
+      "gbif": "5384795",
+      "usda": "SIDI4",
+      "itis": "20064",
+      "inat": "55759",
+      "wikidata": "Q161699",
+      "indigene": "silene-dioica"
+    },
+    "commonNames": [
+      "Red Campion"
+    ],
+    "aliases": [
+      "red campion",
+      "silene dioica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
+    ]
+  },
+  {
     "primaryId": "ipni:1001300-2",
     "scientificName": "Sisyrinchium bellum",
     "family": "Iridaceae",
@@ -9868,7 +10884,39 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
-      "france-alpine"
+      "france-alpine",
+      "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:324828-2",
+    "scientificName": "Sorbus domestica",
+    "family": "Rosaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "324828-2",
+      "wfo": "wfo-0001019042",
+      "gbif": "3013206",
+      "usda": "SODO5",
+      "itis": "505296",
+      "inat": "198878",
+      "wikidata": "Q159558",
+      "indigene": "sorbus-domestica"
+    },
+    "commonNames": [
+      "Service Tree",
+      "Cormier"
+    ],
+    "aliases": [
+      "cormier",
+      "service tree",
+      "sorbus domestica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-mediterranean"
     ]
   },
   {
@@ -10008,15 +11056,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "struthiopteris-spicant"
     },
     "commonNames": [
-      "Deer Fern"
+      "Deer Fern",
+      "Hard Fern"
     ],
     "aliases": [
       "deer fern",
+      "hard fern",
       "struthiopteris spicant"
     ],
     "cultivarOf": null,
     "regions": [
-      "pnw"
+      "pnw",
+      "ireland"
     ]
   },
   {
@@ -10045,7 +11096,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "ireland"
     ]
   },
   {
@@ -10227,6 +11279,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:1003018-2",
+    "scientificName": "Taraxacum officinale",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "1003018-2",
+      "wfo": "wfo-0000062154",
+      "gbif": "5394163",
+      "usda": "TAOF",
+      "itis": "36213",
+      "inat": "47602",
+      "wikidata": "Q131219",
+      "indigene": "taraxacum-officinale"
+    },
+    "commonNames": [
+      "Dandelion"
+    ],
+    "aliases": [
+      "dandelion",
+      "taraxacum officinale"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
+    ]
+  },
+  {
     "primaryId": "ipni:30052311-2",
     "scientificName": "Taxodium distichum",
     "family": "Cupressaceae",
@@ -10253,6 +11334,93 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-central"
+    ]
+  },
+  {
+    "primaryId": "ipni:306036-2",
+    "scientificName": "Taxus baccata",
+    "family": "Taxaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "306036-2",
+      "wfo": "wfo-0000408637",
+      "gbif": "5284517",
+      "usda": "TABA80",
+      "itis": "194883",
+      "inat": "47553",
+      "wikidata": "Q179729",
+      "indigene": "taxus-baccata"
+    },
+    "commonNames": [
+      "Yew"
+    ],
+    "aliases": [
+      "taxus baccata",
+      "yew"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:794860-1",
+    "scientificName": "Tellima grandiflora",
+    "family": "Saxifragaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "794860-1",
+      "wfo": "wfo-0000459248",
+      "gbif": "3032698",
+      "usda": "TEGR2",
+      "itis": "24527",
+      "inat": "51655",
+      "wikidata": "Q847750",
+      "indigene": "tellima-grandiflora"
+    },
+    "commonNames": [
+      "Fringecup"
+    ],
+    "aliases": [
+      "fringecup",
+      "tellima grandiflora"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:460717-1",
+    "scientificName": "Teucrium scorodonia",
+    "family": "Lamiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "460717-1",
+      "wfo": "wfo-0000322618",
+      "gbif": "2926901",
+      "usda": "TESC",
+      "itis": "32360",
+      "inat": "57439",
+      "wikidata": "Q161748",
+      "indigene": "teucrium-scorodonia"
+    },
+    "commonNames": [
+      "Wood Sage"
+    ],
+    "aliases": [
+      "teucrium scorodonia",
+      "wood sage"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
     ]
   },
   {
@@ -10311,6 +11479,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:461536-1",
+    "scientificName": "Thymus praecox",
+    "family": "Lamiaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "461536-1",
+      "wfo": "wfo-0000324555",
+      "gbif": "5341449",
+      "usda": "THPR",
+      "itis": "32821",
+      "inat": "169752",
+      "wikidata": "Q2697123",
+      "indigene": "thymus-praecox"
+    },
+    "commonNames": [
+      "Wild Thyme"
+    ],
+    "aliases": [
+      "thymus praecox",
+      "wild thyme"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
     ]
   },
   {
@@ -10484,17 +11681,49 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Red Clover",
+      "Trèfle commun",
       "Trèfle des prés"
     ],
     "aliases": [
       "red clover",
       "trifolium pratense",
+      "trèfle commun",
       "trèfle des prés"
     ],
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-mediterranean",
       "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:523626-1",
+    "scientificName": "Trifolium repens",
+    "family": "Fabaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "523626-1",
+      "wfo": "wfo-0000213062",
+      "gbif": "5358748",
+      "usda": "TRRE3",
+      "itis": "26206",
+      "inat": "55745",
+      "wikidata": "Q148675",
+      "indigene": "trifolium-repens"
+    },
+    "commonNames": [
+      "White Clover"
+    ],
+    "aliases": [
+      "trifolium repens",
+      "white clover"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
     ]
   },
   {
@@ -10650,6 +11879,37 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:524298-1",
+    "scientificName": "Ulex europaeus",
+    "family": "Fabaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "524298-1",
+      "wfo": "wfo-0000213410",
+      "gbif": "2951984",
+      "usda": "ULEU",
+      "itis": "27013",
+      "inat": "51751",
+      "wikidata": "Q161794",
+      "indigene": "ulex-europaeus"
+    },
+    "commonNames": [
+      "Gorse",
+      "Furze"
+    ],
+    "aliases": [
+      "furze",
+      "gorse",
+      "ulex europaeus"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
+    ]
+  },
+  {
     "primaryId": "ipni:856863-1",
     "scientificName": "Ulmus glabra",
     "family": "Ulmaceae",
@@ -10708,6 +11968,35 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "ca-south-coast",
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:260630-2",
+    "scientificName": "Urtica dioica",
+    "family": "Urticaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "260630-2",
+      "wfo": "wfo-0000416616",
+      "gbif": "7960979",
+      "usda": "URDI",
+      "itis": "19152",
+      "inat": "51884",
+      "wikidata": "Q155909",
+      "indigene": "urtica-dioica"
+    },
+    "commonNames": [
+      "Common Nettle"
+    ],
+    "aliases": [
+      "common nettle",
+      "urtica dioica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
     ]
   },
   {
@@ -10787,17 +12076,20 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Bilberry",
-      "Myrtille"
+      "Myrtille",
+      "Fraochán"
     ],
     "aliases": [
       "bilberry",
+      "fraochán",
       "myrtille",
       "vaccinium myrtillus"
     ],
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
-      "france-alpine"
+      "france-alpine",
+      "ireland"
     ]
   },
   {
@@ -11009,6 +12301,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:326268-2",
+    "scientificName": "Viburnum opulus",
+    "family": "Adoxaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "326268-2",
+      "wfo": "wfo-0000422807",
+      "gbif": "2888605",
+      "usda": "VIOP",
+      "itis": "35270",
+      "inat": "55969",
+      "wikidata": "Q156928",
+      "indigene": "viburnum-opulus"
+    },
+    "commonNames": [
+      "Guelder Rose"
+    ],
+    "aliases": [
+      "guelder rose",
+      "viburnum opulus"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
+    ]
+  },
+  {
     "primaryId": "ipni:326271-2",
     "scientificName": "Viburnum tinus",
     "family": "Adoxaceae",
@@ -11037,6 +12358,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": "ipni:73031-3",
+    "scientificName": "Vicia cracca",
+    "family": "Fabaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "73031-3",
+      "wfo": "wfo-0000214046",
+      "gbif": "2975287",
+      "usda": "VICR",
+      "itis": "26335",
+      "inat": "52471",
+      "wikidata": "Q147159",
+      "indigene": "vicia-cracca"
+    },
+    "commonNames": [
+      "Tufted Vetch"
+    ],
+    "aliases": [
+      "tufted vetch",
+      "vicia cracca"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland"
     ]
   },
   {
@@ -11069,6 +12419,35 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "pnw",
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:868221-1",
+    "scientificName": "Viola glabella",
+    "family": "Violaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "868221-1",
+      "wfo": "wfo-0001144633",
+      "gbif": "5331176",
+      "usda": "VIGL",
+      "itis": "22082",
+      "inat": "71113",
+      "wikidata": "Q12847265",
+      "indigene": "viola-glabella"
+    },
+    "commonNames": [
+      "Stream Violet"
+    ],
+    "aliases": [
+      "stream violet",
+      "viola glabella"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {

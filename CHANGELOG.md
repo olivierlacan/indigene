@@ -37,6 +37,63 @@ subtitle on the What's new page.
   question that stops people between choosing a native and digging the hole —
   will it bring pests? https://indigene.app/crops
 
+- Ireland is on the map — 67 native plants for the whole island, north and
+  south, from the oaks of Killarney to the gorse on a headland and the wild
+  thyme in a Burren gryke. https://indigene.app/regions/ireland
+- Wildlife: the marsh fritillary, the cryptic wood white and the peacock
+  butterfly have joined the roster. The first is Ireland's only protected
+  insect, and it lays on one plant — devil's-bit scabious — and nothing else.
+  https://indigene.app/wildlife
+- Internal: every Irish row's "native here" is checked against Kew's World
+  Checklist of Vascular Plants with `npm run native:check`, which re-asks the
+  source per plant and writes a committed snapshot. All 67 pass. It caught that
+  beech is introduced in Ireland and that lime and hornbeam never arrived.
+- Mediterranean France has thirteen more natives, chosen for the caterpillars
+  they feed: hawthorn, sheep's sorrel, sheep's fescue, white wormwood, scorpion
+  broom, hazel, almond-leaved pear, heather, hairy broom, bird's-foot trefoil,
+  the evergreen rose, the service tree and red clover.
+  https://indigene.app/regions/france-mediterranean
+- Planting: heather flowers from July into October, the emptiest stretch of the
+  southern year for nectar — everything else has shut down for the drought.
+  That is why it is on the Mediterranean list.
+- Internal: the region now carries 24 of the 30 biggest caterpillar-host genera
+  of its zone, up from 11 — 82% of their records against 47%. Five of the six
+  still missing are montane or introduced in the Midi, so this is near the
+  ceiling rather than a gap.
+- Internal: `npm run names:check` could never confirm a name from Tela
+  Botanica. Its query used a parameter the service ignores, so every plant got
+  the first row of the whole database, and the French name it wanted was never
+  asked for. Fixed — the first eight names sourced from it are on these rows.
+- Planting: eight more Pacific Northwest natives — Sitka spruce, shore pine,
+  wild rhododendron, fringecup, sweet coltsfoot, western skunk cabbage, vanilla
+  leaf and stream violet. Sweet coltsfoot flowers in February, on bare stalks,
+  when a bumblebee queen has almost nothing else to feed on.
+  https://indigene.app/regions/pnw
+- Internal: the candidate finder asks Kew's World Checklist first and
+  iNaturalist only for the names Kew has no row for, and every shortlisted row
+  says which answered. It also stops losing plants: asking iNaturalist *for a
+  place* rather than reading its first hundred listings takes the Pacific
+  Northwest's "no answer on native status" count from 27 to 0.
+- Internal: `DATA_SOURCES.md` said USDA PLANTS gives native status per state. It
+  gives it per country group, which is why it calls black locust a Lower-48
+  native where Kew knows it is introduced in Oregon. Corrected, with the
+  measurement, and it is now a printed cross-check rather than a ranking term.
+- Internal: `docs/region-queue.md` — a measured queue for the next regions.
+  Three of the four candidates turned out to be something other than a new
+  region: Boston already has a list and Portland, Maine doesn't (same
+  ecoregion, wrong box edge); Provence and Languedoc already ship and are our
+  thinnest-sourced region at 47% of their zone's caterpillar records; British
+  Columbia and Québec are real, and both wait on one missing piece.
+- Internal: `npm run probe:vascan` admits VASCAN for two claims it was never
+  refused for — provincial native status (108 of our 375 plants are native in
+  British Columbia, 71 in Québec) and the fr-CA names for the 87 rows fr-FR
+  can't source. It reads the Darwin Core Archive, because the search API
+  records distribution on the variety and returns an empty one for the species.
+- Internal: `npm run probe:cec` asks the question that gates both Canadian
+  regions — can a point in Canada be resolved to an ecoregion at all? The EPA
+  service answers nothing north of the border. Unanswered so far: the sandbox
+  can't reach the candidate hosts, and the probe says so rather than guessing.
+
 ### Fixed
 
 - Plants: on a phone, the last card you tapped at the top of the plant list

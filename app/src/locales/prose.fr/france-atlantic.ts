@@ -228,7 +228,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
   // -------------------------------------------------------------------------
   "Crataegus monogyna": {
     nativeNote:
-      "L'arbuste qui fait l'ossature du bocage atlantique — ces haies vives qui recousent la campagne française.",
+      "L'arbuste qui fait l'ossature du bocage atlantique — ces haies vives qui recousent la campagne française — et qui garnit tout aussi bien les haies, les fourrés et les vieilles terrasses du Midi.",
     careNote:
       "Quasi indestructible — il encaisse le vent, l'argile, la sécheresse et la taille sévère, et forme une haie épineuse impénétrable, la meilleure structure pour la faune que vous puissiez planter. Placez les épines à l'écart des passages.",
     givesNote:
@@ -236,6 +236,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
     propagationNote:
       "Les cenelles sont têtues : nettoyez la graine et comptez deux hivers dehors avant la levée — semez en pot et prenez patience. Bien plus rapide pour une haie : achetez ou prélevez des plants à racines nues en hiver.",
     supportNotes: {
+      "green-hairstreak":
+        "Dans le Midi, l'aubépine fait aussi partie des plantes hôtes de l'argus vert — le seul papillon vert d'ici, qu'on repère sur une lisière de haie ensoleillée en avril.",
       "winter-thrushes":
         "Une haie d'aubépines est ce qui fait passer l'hiver français aux grives litornes et mauvis — elles arrivent en bandes et dépouillent une haie après l'autre.",
       "bumble-bees":
@@ -364,7 +366,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
   },
   "Calluna vulgaris": {
     nativeNote:
-      "La bruyère des landes atlantiques — le violet des landes bretonnes, des Landes de Gascogne et des coteaux littoraux de Normandie à la fin de l'été.",
+      "La bruyère des landes atlantiques — le violet des landes bretonnes, des Landes de Gascogne et des coteaux normands à la fin de l'été — et, dans le Midi, des terrains acides des Maures, de l'Esterel et de la Corse, là où le calcaire s'arrête.",
     careNote:
       "Terre acide, sableuse, ensoleillée et affamée — c'est toute la recette, et un sol riche ou une poignée de chaux la tue. Si votre terre est calcaire, elle ne s'installera jamais : cultivez-la alors en bac surélevé ou en large pot de terreau sans calcaire plutôt que de lutter contre le sol. Taillez-la légèrement chaque printemps, en n'entamant que la pousse tendre de l'an passé, sinon elle se dégarnit et devient ligneuse au centre. Elle vit une vingtaine d'années et se ressème doucement.",
     givesNote:
@@ -372,6 +374,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
     propagationNote:
       "Prélevez des extrémités de pousses en voie d'aoûtement à la fin de l'été et faites-les raciner sous abri dans un mélange sableux sans calcaire. Plus simple encore : butez du terreau acide sur la base d'un vieux pied au printemps ; les tiges enterrées s'enracinent et se détachent en nouveaux plants un an plus tard.",
     supportNotes: {
+      "green-hairstreak":
+        "Sur le maquis acide du Midi, la callune rejoint les genêts sur la liste de l'argus vert : deux d'entre elles suffisent à faire une lande que le papillon peut utiliser.",
       "painted-lady":
         "Une lande en août est l'endroit où les belles-dames font le plein avant de repartir vers le sud — certaines atteindront l'Afrique du Nord.",
       "silver-studded-blue":
@@ -550,7 +554,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
   },
   "Lotus corniculatus": {
     nativeNote:
-      "La petite légumineuse jaune des pelouses dunaires atlantiques, des hauts de falaise, des bords de route et des gazons ras — l'une des fleurs sauvages les plus communes de France, et l'une des plus importantes.",
+      "La petite légumineuse jaune des pelouses dunaires atlantiques, des hauts de falaise et des bords de route, et des pelouses sèches et clairières de garrigue du Midi — l'une des fleurs sauvages les plus communes de France, et l'une des plus importantes.",
     careNote:
       "Semez-la dans un terrain maigre, pauvre et ensoleillé — c'est l'une des rares choses véritablement bonnes qu'on puisse faire d'un bord de route tassé ou d'un talus de sous-sol de chantier — puis fauchez une seule fois, tard, en septembre. Elle fabrique son propre azote, ne la nourrissez donc jamais, et elle disparaît de tout ce qui est riche, ombragé ou tondu court.",
     givesNote:

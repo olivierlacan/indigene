@@ -1,0 +1,29 @@
+{
+  "question": "Can a point in Canada be resolved to an ecoregion by a live point query?",
+  "ranAt": "2026-09-20T05:45:07.941Z",
+  "behindProxy": true,
+  "candidates": [
+    {
+      "base": "https://gis.cec.org/arcgis/rest/services/Atlas/Ecoregions/MapServer",
+      "reachable": false,
+      "error": "fetch failed"
+    },
+    {
+      "base": "https://gis.cec.org/arcgis/rest/services",
+      "reachable": false,
+      "error": "fetch failed"
+    },
+    {
+      "base": "https://maps-cartes.services.geo.ca/server_serveur/rest/services",
+      "reachable": false,
+      "error": "fetch failed"
+    }
+  ],
+  "resolved": null,
+  "verdict": "unanswered — every candidate host refused the connection from this machine's proxy, so the question was never put to the service. Re-run from an unblocked network.",
+  "arcgisOnline": {
+    "searched": "https://www.arcgis.com/sharing/rest/search?f=json&num=20&q=(ecoregions%20AND%20(%22north%20america%22%20OR%20CEC))%20type%3A(%22Map%20Service%22%20OR%20%22Feature%20Service%22)",
+    "error": "fetch failed",
+    "hits": []
+  }
+}

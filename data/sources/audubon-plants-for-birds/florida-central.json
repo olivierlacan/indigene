@@ -1,0 +1,203 @@
+{
+  "source": "National Audubon Society — Plants for Birds",
+  "url": "https://www.audubon.org/native-plants",
+  "note": "What a society's own list says about the rows we ship. Their plant data is BONAP-derived, so their list itself is not stored here — see this folder's README.",
+  "region": "florida-central",
+  "zips": [
+    "32801",
+    "32216"
+  ],
+  "harvested": "2026-09-20",
+  "counts": {
+    "ours": 24,
+    "theirCuratedPicks": 65,
+    "theirCountyFlora": 404,
+    "oursAmongTheirPicks": 13,
+    "theirPicksWeLack": 52,
+    "generaNewToUs": 36
+  },
+  "ourRows": [
+    {
+      "latin": "Acer rubrum",
+      "common": "Red Maple",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Asclepias tuberosa",
+      "common": "Butterfly Weed",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Callicarpa americana",
+      "common": "American Beautyberry",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Chionanthus virginicus",
+      "common": "Fringetree",
+      "amongTheirPicks": false,
+      "inTheirFlora": false
+    },
+    {
+      "latin": "Coreopsis leavenworthii",
+      "common": "Leavenworth's Tickseed",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Hamelia patens",
+      "common": "Firebush",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Helianthus debilis",
+      "common": "Beach / Dune Sunflower",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Ilex vomitoria",
+      "common": "Yaupon Holly",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Liatris gracilis",
+      "common": "Slender Blazing Star",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Magnolia grandiflora",
+      "common": "Southern Magnolia",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Mimosa strigillosa",
+      "common": "Sunshine Mimosa (Powderpuff)",
+      "amongTheirPicks": false,
+      "inTheirFlora": false
+    },
+    {
+      "latin": "Monarda punctata",
+      "common": "Spotted Beebalm (Dotted Horsemint)",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Muhlenbergia capillaris",
+      "common": "Pink Muhly Grass",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Myrcianthes fragrans",
+      "common": "Simpson's Stopper",
+      "amongTheirPicks": false,
+      "inTheirFlora": false
+    },
+    {
+      "latin": "Passiflora incarnata",
+      "common": "Purple Passionflower (Maypop)",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Pinus palustris",
+      "common": "Longleaf Pine",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Quercus virginiana",
+      "common": "Southern Live Oak",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Sabal palmetto",
+      "common": "Cabbage Palm (Sabal Palm)",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Salvia coccinea",
+      "common": "Tropical Sage (Scarlet Sage)",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Serenoa repens",
+      "common": "Saw Palmetto",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Taxodium distichum",
+      "common": "Bald Cypress",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Tripsacum dactyloides",
+      "common": "Fakahatchee Grass (Eastern Gamagrass)",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Viburnum obovatum",
+      "common": "Walter's Viburnum",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Zamia integrifolia",
+      "common": "Coontie",
+      "amongTheirPicks": false,
+      "inTheirFlora": false
+    }
+  ],
+  "generaNewToUs": [
+    "aesculus",
+    "aralia",
+    "arisaema",
+    "bignonia",
+    "campsis",
+    "carpinus",
+    "celtis",
+    "cephalanthus",
+    "diospyros",
+    "erythrina",
+    "forestiera",
+    "gaillardia",
+    "gelsemium",
+    "hyptis",
+    "ipomopsis",
+    "juniperus",
+    "liquidambar",
+    "liriodendron",
+    "lobelia",
+    "lonicera",
+    "morella",
+    "nyssa",
+    "ostrya",
+    "panicum",
+    "parthenocissus",
+    "phytolacca",
+    "platanus",
+    "psychotria",
+    "rhus",
+    "rudbeckia",
+    "rumex",
+    "sassafras",
+    "schizachyrium",
+    "solidago",
+    "ulmus",
+    "vaccinium"
+  ]
+}

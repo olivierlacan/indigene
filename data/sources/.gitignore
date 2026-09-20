@@ -31,3 +31,10 @@ hosts/hosts-raw.json
 
 # …but the per-area HOSTS records are an archive we keep (CC0, ~0.6 MB).
 !hosts/records/*.csv
+# Audubon's Plants for Birds harvest. Their plant data comes from BONAP's North
+# American Plant Atlas, and DATA_SOURCES.md carries a standing ⛔ on BONAP
+# ("do not scrape or embed" — restrictive reuse terms). So the raw per-ZIP
+# lists stay out of the repo; only the reduced snapshot about *our own rows*
+# (`<region>.json`, written by `npm run societies`) is committed, the way
+# `wcvp/` records what Kew said about them.
+audubon-plants-for-birds/raw/

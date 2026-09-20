@@ -26,6 +26,8 @@
     "guide": "node scripts/build-guide.mjs",
     "guide:check": "node scripts/build-guide.mjs --check",
     "coverage": "node scripts/coverage.mjs",
+    "harvest:audubon": "NODE_USE_ENV_PROXY=1 node scripts/harvest-audubon.mjs",
+    "societies": "node scripts/societies.mjs",
     "swaps:coverage": "node scripts/alternatives-coverage.mjs",
     "ornamentals": "NODE_USE_ENV_PROXY=1 node scripts/ornamentals.mjs",
     "invasives:count": "NODE_USE_ENV_PROXY=1 node scripts/invasive-counts.mjs",

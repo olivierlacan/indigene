@@ -237,6 +237,15 @@ subtitle on the What's new page.
   officers are listed — plus a playbook for approaching them. France and Ireland
   have no native-plant-society equivalent; the directory says what stands in for
   one in each. Research only, nothing in the app.
+- Internal: `npm run harvest:audubon` and `npm run societies` measure each US
+  region against a native plant society's own garden list — the first outside
+  list of the same kind as ours, where `npm run candidates` only had occurrence
+  density. Findings in `docs/society-list-comparison.md`: the eastern regions
+  carry a third of what Audubon recommends, 80% of our Mid-Atlantic rows are
+  among their curated picks, and their western coverage is too thin to measure
+  against (their Portland flora has no Douglas-fir). The raw harvest stays
+  git-ignored because their plant data is BONAP-derived; only the verdict on our
+  own rows is committed.
 
 ### Fixed
 

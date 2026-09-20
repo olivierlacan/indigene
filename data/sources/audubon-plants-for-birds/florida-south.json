@@ -1,0 +1,165 @@
+{
+  "source": "National Audubon Society — Plants for Birds",
+  "url": "https://www.audubon.org/native-plants",
+  "note": "What a society's own list says about the rows we ship. Their plant data is BONAP-derived, so their list itself is not stored here — see this folder's README.",
+  "region": "florida-south",
+  "zips": [
+    "33133",
+    "33040"
+  ],
+  "harvested": "2026-09-20",
+  "counts": {
+    "ours": 21,
+    "theirCuratedPicks": 26,
+    "theirCountyFlora": 241,
+    "oursAmongTheirPicks": 8,
+    "theirPicksWeLack": 18,
+    "generaNewToUs": 16
+  },
+  "ourRows": [
+    {
+      "latin": "Bursera simaruba",
+      "common": "Gumbo Limbo",
+      "amongTheirPicks": false,
+      "inTheirFlora": false
+    },
+    {
+      "latin": "Chrysobalanus icaco",
+      "common": "Cocoplum",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Coccoloba diversifolia",
+      "common": "Pigeon Plum",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Coccoloba uvifera",
+      "common": "Seagrape",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Conocarpus erectus",
+      "common": "Green Buttonwood",
+      "amongTheirPicks": false,
+      "inTheirFlora": false
+    },
+    {
+      "latin": "Hamelia patens",
+      "common": "Firebush",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Helianthus debilis",
+      "common": "Beach / Dune Sunflower",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Morella cerifera",
+      "common": "Wax Myrtle (Southern Bayberry)",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Muhlenbergia capillaris",
+      "common": "Pink Muhly Grass",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Myrcianthes fragrans",
+      "common": "Simpson's Stopper",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Passiflora suberosa",
+      "common": "Corkystem Passionflower",
+      "amongTheirPicks": false,
+      "inTheirFlora": false
+    },
+    {
+      "latin": "Psychotria nervosa",
+      "common": "Wild Coffee",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Quercus virginiana",
+      "common": "Southern Live Oak",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Rivina humilis",
+      "common": "Rougeplant (Bloodberry)",
+      "amongTheirPicks": false,
+      "inTheirFlora": false
+    },
+    {
+      "latin": "Sabal palmetto",
+      "common": "Cabbage Palm (Sabal Palm)",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Salvia coccinea",
+      "common": "Tropical Sage (Scarlet Sage)",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Serenoa repens",
+      "common": "Saw Palmetto",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Sophora tomentosa var. truncata",
+      "common": "Yellow Necklacepod",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Stachytarpheta jamaicensis",
+      "common": "Blue Porterweed",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Tripsacum dactyloides",
+      "common": "Fakahatchee Grass (Eastern Gamagrass)",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Zamia integrifolia",
+      "common": "Coontie",
+      "amongTheirPicks": false,
+      "inTheirFlora": false
+    }
+  ],
+  "generaNewToUs": [
+    "asclepias",
+    "bourreria",
+    "callicarpa",
+    "calyptranthes",
+    "chrysophyllum",
+    "citharexylum",
+    "colubrina",
+    "erythrina",
+    "forestiera",
+    "gaillardia",
+    "hyptis",
+    "ilex",
+    "liatris",
+    "phytolacca",
+    "rumex",
+    "solidago"
+  ]
+}

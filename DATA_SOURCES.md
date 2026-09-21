@@ -144,6 +144,83 @@ that looks like a fact about the data: its first run concluded GloBI carried no
 citations, which was true of the default response shape and false of the data,
 and it cost this repo a shipped feature until it was re-measured.
 
+## What "native here" means, exactly
+
+Every plant we list makes one claim before it makes any other: **this plant is
+native to this region.** Everything else on a plant page — the caterpillar
+count, the care note, the swap suggestion — is worthless if that claim is
+loose. So here is the whole rule, in one place.
+
+### 1. "Here" is an ecoregion, not a state or a country
+
+A region is defined by the ecoregion codes it claims — EPA Level III over the
+US, EEA biogeographical regions over Europe — plus a coarse box that decides
+things offline. A plant native *to the state* but not *to this ecoregion* does
+not qualify. That is why the Southern California list stops at the mountain
+crest and a Palm Springs spot gets no list rather than a chaparral one, and why
+the Mid-Atlantic list declines the Corn Belt ecoregions its box happens to
+overlap. `src/data/region.*.ts` records the claimed codes and the deliberate
+exclusions, one comment per region.
+
+### 2. A named authority must assert it, for that ground
+
+Not occurrence data, not "it grows there". Occurrence records say a plant was
+*seen* somewhere, which is equally true of an escaped ornamental. The claim
+comes from a flora or checklist, and the ladder is:
+
+1. **The national or regional flora for that place**, where one exists — USDA
+   PLANTS in the US, with OregonFlora, the Burke Herbarium, the Atlas of Florida
+   Plants and the IRC for regional detail; TAXREF/INPN and Tela Botanica's BDTFX
+   in France.
+2. **Kew's World Checklist of Vascular Plants** where no national flora is
+   machine-readable — Ireland's list rests on it outright.
+
+Each row names what it stands on in its own `basis` string, which the plant page
+prints. A row with an empty `basis` is a bug, and the audits fail on it.
+
+### 3. Introduced does not become native with time
+
+Naturalised, long-established, "it's been here for centuries", planted by the
+Romans — none of these make a plant native. Ireland is the worked example: beech
+and sycamore look like they belong and are introductions, and the region's own
+note says so. The catalog carries the species as floras circumscribe them —
+species and subspecies binomials, no cultivars and no nativars.
+
+### 4. Where the claim can be re-asked, it is — and the answer is dated
+
+A citation is a sentence somebody typed; it cannot go stale visibly.
+`npm run native:check -- --region <id>` re-asks Kew's checklist about every row
+in a region and commits the verdict with a date to `data/sources/wcvp/`. All
+twelve regions are covered. `npm run native-evidence` reduces those to
+`src/data/native-evidence.json`, and **the plant page shows the result** — the
+authority, the place, and the month it was last checked.
+
+### 5. The grain of the check is stated, never hidden
+
+The checklist answers by TDWG level-3 area, which is a **state** in the US and a
+**country** in Europe. So "native in Michigan" is a statement about the region;
+"native in California" is not — one area covers the coast and the Mojave alike.
+Where the area checked is wider than the region, the plant page says so in
+words. A weak check is admitted; a weak check dressed as a strong one is not.
+
+### 6. A disagreement is recorded, not smoothed
+
+A world checklist and a regional flora will differ, and neither is automatically
+right. Twelve of 592 rows are in that position today — Kew calls *Penstemon
+digitalis* introduced across the Mid-Atlantic, and does not record *Achillea
+millefolium* in the west at all. Those rows still ship, and **their pages say
+the checklist does not confirm them** rather than showing a clean bill. The
+decision about what to do with a disagreement is editorial and belongs in the
+region file; see [`data/sources/wcvp/README.md`](data/sources/wcvp/README.md)
+and [`docs/source-ledger.md`](docs/source-ledger.md).
+
+### 7. Three kinds of source, not three of the same kind
+
+A region ships on at least three sources spanning at least three of the five
+jobs below, one of which must be an authority a script can re-ask. Two
+recommendation lists that agree may simply share a blind spot — which is exactly
+what happened, and what `docs/source-ledger.md` exists to stop repeating.
+
 ## The sources
 
 | Source | Used for | Access | Licence / terms | Verdict |

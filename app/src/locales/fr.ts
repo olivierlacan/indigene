@@ -1256,6 +1256,15 @@ export const fr: Dict = {
   // rang sont invariables (« vulnérable », « en danger »…), donc pas de souci
   // d'accord entre une plante et un animal. Ce que signifie un rang, et qui le
   // publie, est expliqué une seule fois sur /guide/conservation (lien `learnMore`).
+  "native.checklist": "la Liste mondiale de Kew",
+  "native.confirmedBefore": "Indigène en {area} — ",
+  "native.confirmedAfter": " le confirme, vérifié en {when}.",
+  "native.coarse": "Cette liste décrit l'aire à l'échelle de {area}, pas plus finement.",
+  "native.unconfirmed.introduced": " la dit introduite en {area}, et non indigène.",
+  "native.unconfirmed.absent": " ne la recense pas en {area}.",
+  "native.unconfirmed.unmatched": " n'a aucune entrée sous ce nom.",
+  "native.unconfirmed.inconclusive": " n'a pas d'entrée pour cette sous-espèce : la vérification n'a pas pu aboutir.",
+  "native.stands": "Nous la maintenons sur la flore régionale citée plus bas.",
   "conservation.rank": "{words} ({rank})",
   "conservation.globally": "{status} dans le monde.",
   "conservation.here": "En {place}, {status}.",

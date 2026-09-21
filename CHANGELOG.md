@@ -64,6 +64,10 @@ subtitle on the What's new page.
   southern area (`data/sources/hosts/`). It's usable for Sydney, thin for the
   Cape and near-empty for Argentina. Every record for each candidate area is
   archived as CSV in `data/sources/hosts/records/`.
+- Plants: each plant page now says who checked that it is native where you are,
+  and when — and says so plainly on the twelve plants where a world checklist
+  disagrees with the regional flora we list them on.
+  https://indigene.app/plants/quercus-alba
 
 ### Changed
 
@@ -267,6 +271,11 @@ subtitle on the What's new page.
   rows, the strongest being Penstemon digitalis (Kew calls it introduced in all
   ten Mid-Atlantic states) and Achillea millefolium. The standard and the
   scoreboard are in `docs/source-ledger.md`.
+- Internal: DATA_SOURCES.md states the native-status rule in one place — what
+  "here" means, which authority may assert it, that introduced never becomes
+  native, that the claim is re-asked and dated, and that the grain of the check
+  is printed rather than hidden. `npm run native-evidence` reduces the WCVP
+  checks to the 2.8 KB the plant page reads.
 
 ### Fixed
 

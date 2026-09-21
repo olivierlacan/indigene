@@ -1245,6 +1245,20 @@ export const en = {
   // fact before it is the reason somebody might go and take one. What a rank is,
   // and who publishes it, is explained once at /guide/conservation — the
   // `learnMore` link — not on every page.
+  // The line under "why it belongs here": who re-checked the native claim, and
+  // when. Split around the linked checklist name, which is why it is three
+  // fragments rather than one sentence with a placeholder.
+  "native.checklist": "Kew's World Checklist",
+  "native.confirmedBefore": "Native in {area} — ",
+  "native.confirmedAfter": " agrees, checked {when}.",
+  // Only where the place checked is wider than the region, so the check is a
+  // floor rather than a verdict about this ground.
+  "native.coarse": "That checklist records range by {area} as a whole, no finer.",
+  "native.unconfirmed.introduced": " calls it introduced in {area}, not native.",
+  "native.unconfirmed.absent": " doesn't record it in {area} at all.",
+  "native.unconfirmed.unmatched": " has no entry under this name.",
+  "native.unconfirmed.inconclusive": " has no entry for this subspecies, so it couldn't be checked.",
+  "native.stands": "We've kept it on the regional flora named below.",
   "conservation.rank": "{words} ({rank})",
   "conservation.globally": "{status} worldwide.",
   "conservation.here": "In {place}, {status}.",

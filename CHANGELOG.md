@@ -276,6 +276,13 @@ subtitle on the What's new page.
   native, that the claim is re-asked and dated, and that the grain of the check
   is printed rather than hidden. `npm run native-evidence` reduces the WCVP
   checks to the 2.8 KB the plant page reads.
+- Internal: the academic sources the ledger had listed as "would be a genuine
+  third opinion" were each tried. Calflora is no finer than Kew, OregonFlora is
+  a JavaScript shell, the Atlas of Florida Plants is behind a WebForms search,
+  and Jepson declines bots with a note that automated traffic is hurting its
+  servers — so it was left alone. The one real upgrade is USDA PLANTS county
+  distribution, public domain, whose undocumented endpoint and its `masterId`
+  key are now written down in `docs/source-ledger.md`.
 
 ### Fixed
 

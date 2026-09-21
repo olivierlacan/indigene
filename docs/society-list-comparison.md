@@ -91,6 +91,104 @@ recommended. Both are vouched; neither needs changing.
 That is the honest result of the second source: it removed the only finding the
 first one produced.
 
+## So what are we actually missing?
+
+Counting is not an answer. The list below is the **consensus shortlist**: plants
+*both* organizations recommend for a region, that we don't carry, restricted to
+genera the region has never had. Two independent curations agreeing is the
+strongest evidence available from a desk.
+
+| Region | Both recommend | We lack | …new genera |
+|---|---|---|---|
+| Mid-Atlantic | 87 | 61 | **35** |
+| N & C Florida | 57 | 45 | **33** |
+| Northern Michigan | 61 | 35 | **24** |
+| Southern California | 15 | 9 | 6 ⚠ |
+| Pacific Northwest | 29 | 7 | 3 |
+| South Florida | 12 | 7 | 7 |
+| Central California Coast | 11 | 2 | 1 |
+
+The western rows are small because both sources are thin there, not because
+those lists are complete. ⚠ Southern California's six are mostly *desert*
+plants — mesquite, jojoba, four-wing saltbush, apricot globemallow — which our
+cismontane region excludes on purpose. That is the state-scope over-count
+showing up, and those are the correct answer to reject.
+
+### The finding that matters most: four keystone host genera, missing
+
+Our whole argument is caterpillars. Ranked by our own `hostLepCount`, the
+Mid-Atlantic's best plants are Quercus 511, Prunus 340, Acer 285, Betula 284.
+In the same genus-level series, **willow and poplar sit between the first two** —
+and the Mid-Atlantic list carries neither.
+
+| Genus | Regions of ours carrying it | Recommended by both societies in |
+|---|---|---|
+| ***Salix*** (willow) | 4 of 7 — **not the Mid-Atlantic** | — |
+| ***Populus*** (poplar, aspen) | 4 of 7 — **not the Mid-Atlantic** | Mid-Atlantic, Michigan |
+| ***Carya*** (hickory) | **0 of 7** | Mid-Atlantic, Michigan, N & C Florida |
+| ***Juglans*** (walnut) | 1 of 7 | Mid-Atlantic, Michigan |
+
+Hickory is absent from every region we ship while both organizations recommend
+it in three of them. Willow is in every US region *except* the one whose list is
+oldest, which reads as an oversight rather than a decision — the same is true of
+poplar. These four are worth more to the food web than any twenty perennials.
+
+### Mid-Atlantic — 35 genera, the trees first
+
+Canopy and understory, the ones a reader would expect to find and doesn't:
+**tuliptree, sweetgum, sycamore, black tupelo, black walnut, shagbark hickory,
+American hornbeam, hop-hornbeam, sassafras, eastern red-cedar, quaking aspen,
+bald-cypress, sweetbay magnolia, spicebush**. Spicebush is the spicebush
+swallowtail's host and we don't carry it.
+
+Then shrubs and herbs: wild hydrangea, four sumacs, coralberry, smooth azalea,
+side-oats grama, prairie dropseed, Indian grass, cup-plant, dense gayfeather,
+wild blue phlox, yarrow, lance-leaf tickseed.
+
+### North & Central Florida — 33 genera, and it is our thinnest region
+
+24 rows against 374 recommendations. Missing: **red buckeye, crossvine,
+trumpet-creeper, sugarberry, persimmon, coralbean, yellow jessamine, American
+elm, southern bayberry, highbush blueberry, sparkleberry, hornbeam,
+hop-hornbeam, sycamore, sweetgum, tuliptree, sassafras, red-cedar,
+buttonbush** — plus cardinal-flower, firewheel, black-eyed-susan, seaside
+goldenrod, little bluestem, switchgrass, standing-cypress.
+
+Two *Vaccinium* here matters: the genus carries 217 in our own Mid-Atlantic
+rows, and Florida has none.
+
+### Northern Michigan — 24 genera
+
+**American larch (tamarack), hornbeam, hop-hornbeam, hickory, black walnut,
+sycamore, red-cedar, prairie crabapple, buttonbush**, and the wet-meadow herbs:
+boneset, turtlehead, Virginia mountain-mint, foxglove beardtongue, spotted
+crane's-bill, smooth oxeye, Jack-in-the-pulpit, cord grass, Indian grass.
+
+### South Florida — 7, but the list is short
+
+**American beautyberry, satinleaf, coralbean, Florida swamp-privet, butterfly
+milkweed, firewheel, seaside goldenrod.** Beautyberry is our *featured plant for
+North & Central Florida* — we carry it one region north and not here.
+
+### Pacific Northwest and Central California — nearly nothing
+
+3 and 1 new genera respectively, which says more about the sources than about
+the lists. The PNW's 85 rows already cover 29 of the 29 genera both sources
+agree on bar three (nodding onion, harebell, rubber rabbitbrush — and the last
+is an east-side plant we exclude). These two regions are the most complete work
+in the catalog and the benchmarks cannot see past them.
+
+### The shape of it
+
+**Every region is short of trees and shrubs, and the eastern ones are short of
+the specific woody genera that carry the most insects.** Six names recur across
+three or more regions — *Carya*, *Carpinus*, *Ostrya*, *Juniperus virginiana*,
+*Platanus occidentalis*, *Cephalanthus occidentalis* — so one batch of
+editorial work on those rows would serve the Mid-Atlantic, Michigan and Florida
+at once. That is the cheapest list growth available, and `npm run candidates`
+never surfaced it because occurrence density does not know that a hickory feeds
+two hundred caterpillars.
+
 ## Limits of this, stated once
 
 - **Audubon is a bird organization.** Its curation over-weights fruit, nuts and

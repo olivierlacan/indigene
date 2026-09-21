@@ -1,16 +1,43 @@
 # WCVP — the World Checklist of Vascular Plants (Kew)
 
-**Status: admitted as the native-status source for regions with no national
-flora of our own.** `DATA_SOURCES.md` has named WCVP as the global backbone
-since the scaling section was written; Ireland is the first region that actually
-stands on it.
+**Status: the one native-status source every region can be re-asked against.**
+`DATA_SOURCES.md` has named WCVP as the global backbone since the scaling
+section was written. Ireland was the first region to stand on it; all twelve now
+do.
+
+Widening it was not the original plan. It happened because
+[`society-list-comparison.md`](../../docs/society-list-comparison.md) needed a
+native-status check in the West and the society lists could not give one —
+Audubon's flora for Portland has no Douglas-fir. WCVP answers in Oregon exactly
+as well as in Ireland, at the same grain, under the same licence, and it had
+simply never been asked. See [`source-ledger.md`](../../docs/source-ledger.md)
+for the three-kinds-of-source rule this now satisfies.
+
+## Scope, and where it is weaker
+
+TDWG level-3 areas are **states** over the US and **countries** over Europe, so
+the check is as fine as the region:
+
+| Region | Areas | Strength |
+|---|---|---|
+| Mid-Atlantic | PEN NWJ DEL MRY VRG NWY CNT RHO MAS WVA | good — one native area is enough, and the breakdown is stored |
+| Northern Michigan | MIC | good |
+| Pacific Northwest | WAS ORE | good |
+| Both Californias | CAL | **weak** — one area for deserts and coast alike |
+| Both Floridas | FLA | **weak** — one area for the panhandle and the Keys |
+| Ireland | IRE | good — the whole island, which is the claim |
+| The four French regions | FRA (+ COR) | **floor check only** — it can catch a plant that is not French at all; it cannot tell Provence from Picardy. The rows' `basis` lines cite the CBN network and INPN for the finer claim |
+
+A weak area still earns its place: it catches the plant that is not native to
+the country or state at all, which is the error that matters most.
 
 - Upstream: <https://powo.science.kew.org/> · reached through the GBIF checklist
   dataset `f382f0ce-323a-4091-bb9f-add557f3a9a2`
 - Publisher: Royal Botanic Gardens, Kew
 - Licence: **CC BY 4.0**. Attribution: "Native range from the World Checklist of
   Vascular Plants (WCVP), Royal Botanic Gardens Kew."
-- Refresh: `cd app && npm run native:check -- --region ireland` → `ireland.json`
+- Refresh: `cd app && npm run native:check -- --region <id>` → `<id>.json`, for any
+  region in the script's `TDWG_AREA` table (all twelve)
 
 ## What it is admitted for
 

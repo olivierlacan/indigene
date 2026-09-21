@@ -43,10 +43,29 @@ export const WCVP_DATASET = "f382f0ce-323a-4091-bb9f-add557f3a9a2";
 
 const GBIF_SPECIES = "https://api.gbif.org/v1/species";
 
-async function getJson(url) {
-  const res = await fetch(url, { headers: { accept: "application/json" } });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return res.json();
+/**
+ * One GBIF call, retried on a transient failure.
+ *
+ * A checklist run is hundreds of sequential calls, so a single dropped
+ * connection used to surface as a row that "failed" — `error fetch failed
+ * Quercus alba` in the middle of an otherwise clean Mid-Atlantic run, which
+ * reads like a finding about white oak and is nothing of the kind. Four of
+ * those appeared in one pass over the US regions.
+ */
+async function getJson(url, attempt = 0) {
+  try {
+    const res = await fetch(url, { headers: { accept: "application/json" } });
+    // 5xx and 429 are worth another go; a 404 is an answer.
+    if (!res.ok) {
+      if ((res.status >= 500 || res.status === 429) && attempt < 3) throw new Error(`HTTP ${res.status}`);
+      throw Object.assign(new Error(`HTTP ${res.status}`), { final: true });
+    }
+    return res.json();
+  } catch (err) {
+    if (err.final || attempt >= 3) throw err;
+    await new Promise((r) => setTimeout(r, 500 * 2 ** attempt));
+    return getJson(url, attempt + 1);
+  }
 }
 
 /**
@@ -67,13 +86,26 @@ export async function wcvpAccepted(latin) {
   )).results ?? [];
 
   // 2. Ranked search as a fallback, for a spelling `name=` won't match.
+  //
+  // The rank filter follows the question. Pinning `rank=SPECIES` is right for a
+  // binomial, and wrong for an infraspecific name: WCVP carries `Solidago
+  // velutina subsp. californica` as an accepted SUBSPECIES, and filtering to
+  // SPECIES threw it away and reported no-match — which reads as "Kew has never
+  // heard of this plant" about a plant Kew accepts.
+  const infraspecific = want.split(/\s+/).length > 2;
   if (!rows.length) {
+    const rank = infraspecific ? "" : "&rank=SPECIES";
     const res = await getJson(
-      `${GBIF_SPECIES}/search?datasetKey=${WCVP_DATASET}&q=${encodeURIComponent(latin)}&rank=SPECIES&limit=8`,
+      `${GBIF_SPECIES}/search?datasetKey=${WCVP_DATASET}&q=${encodeURIComponent(latin)}${rank}&limit=8`,
     );
-    rows = (res?.results ?? []).filter(
-      (r) => (r.species ?? r.canonicalName ?? "").toLowerCase() === want,
-    );
+    rows = (res?.results ?? []).filter((r) => {
+      const canon = (r.canonicalName ?? "").toLowerCase();
+      // For a binomial keep the old, stricter test; for an infraspecific name
+      // the canonical form drops the rank marker, so compare without it.
+      return infraspecific
+        ? canon === want.replace(/\s+(subsp|ssp|var|f)\.?\s+/i, " ")
+        : (r.species ?? r.canonicalName ?? "").toLowerCase() === want;
+    });
   }
   if (!rows.length) return null;
 

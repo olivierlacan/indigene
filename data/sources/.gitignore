@@ -43,3 +43,9 @@ audubon-plants-for-birds/raw/
 # recommendation lists stay out, the reduced snapshot about our own rows
 # (`<region>.json`, written by `npm run societies`) is committed.
 wildflower-center/raw/
+
+# The two state floras, pulled from the downloads their own sites offer (see
+# each folder's README). Same split as the harvests above: the raw checklists
+# stay out of the repo, only the reduced verdict on our own rows is committed.
+waflora/raw/
+oregonflora/raw/

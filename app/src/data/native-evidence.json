@@ -1,0 +1,147 @@
+{
+  "source": "World Checklist of Vascular Plants (WCVP), Royal Botanic Gardens Kew",
+  "license": "CC BY 4.0",
+  "url": "https://powo.science.kew.org/",
+  "note": "Only the rows WCVP did not confirm are listed. A plant in a checked region that is absent from `unconfirmed` came back native.",
+  "regions": {
+    "ca-central-coast": {
+      "area": {
+        "en": "California",
+        "fr": "la Californie"
+      },
+      "coarse": true,
+      "checked": "2026-09-21",
+      "rows": 64,
+      "unconfirmed": {
+        "sambucus-nigra-caerulea": "inconclusive",
+        "achillea-millefolium": "absent"
+      }
+    },
+    "ca-south-coast": {
+      "area": {
+        "en": "California",
+        "fr": "la Californie"
+      },
+      "coarse": true,
+      "checked": "2026-09-21",
+      "rows": 64,
+      "unconfirmed": {
+        "sambucus-nigra-caerulea": "inconclusive",
+        "achillea-millefolium": "absent"
+      }
+    },
+    "florida-central": {
+      "area": {
+        "en": "Florida",
+        "fr": "la Floride"
+      },
+      "coarse": true,
+      "checked": "2026-09-21",
+      "rows": 24,
+      "unconfirmed": {}
+    },
+    "florida-south": {
+      "area": {
+        "en": "Florida",
+        "fr": "la Floride"
+      },
+      "coarse": true,
+      "checked": "2026-09-21",
+      "rows": 21,
+      "unconfirmed": {
+        "passiflora-suberosa": "absent"
+      }
+    },
+    "france-alpine": {
+      "area": {
+        "en": "France",
+        "fr": "France"
+      },
+      "coarse": true,
+      "checked": "2026-09-21",
+      "rows": 41,
+      "unconfirmed": {
+        "sesleria-caerulea": "absent"
+      }
+    },
+    "france-atlantic": {
+      "area": {
+        "en": "France",
+        "fr": "France"
+      },
+      "coarse": true,
+      "checked": "2026-09-21",
+      "rows": 46,
+      "unconfirmed": {}
+    },
+    "france-continental": {
+      "area": {
+        "en": "France",
+        "fr": "France"
+      },
+      "coarse": true,
+      "checked": "2026-09-21",
+      "rows": 38,
+      "unconfirmed": {}
+    },
+    "france-mediterranean": {
+      "area": {
+        "en": "France and Corsica",
+        "fr": "France et Corse"
+      },
+      "coarse": true,
+      "checked": "2026-09-21",
+      "rows": 52,
+      "unconfirmed": {}
+    },
+    "ireland": {
+      "area": {
+        "en": "the island of Ireland",
+        "fr": "l'île d'Irlande"
+      },
+      "coarse": false,
+      "checked": "2026-09-21",
+      "rows": 67,
+      "unconfirmed": {}
+    },
+    "mid-atlantic": {
+      "area": {
+        "en": "Pennsylvania and the nine states around it",
+        "fr": "la Pennsylvanie et les neuf États voisins"
+      },
+      "coarse": false,
+      "checked": "2026-09-21",
+      "rows": 44,
+      "unconfirmed": {
+        "penstemon-digitalis": "introduced",
+        "andropogon-gerardii": "unmatched"
+      }
+    },
+    "north-michigan": {
+      "area": {
+        "en": "Michigan",
+        "fr": "le Michigan"
+      },
+      "coarse": false,
+      "checked": "2026-09-21",
+      "rows": 46,
+      "unconfirmed": {
+        "solidago-speciosa": "absent",
+        "campanula-rotundifolia": "absent",
+        "matteuccia-struthiopteris": "absent"
+      }
+    },
+    "pnw": {
+      "area": {
+        "en": "Washington and Oregon",
+        "fr": "Washington et l'Oregon"
+      },
+      "coarse": false,
+      "checked": "2026-09-21",
+      "rows": 85,
+      "unconfirmed": {
+        "achillea-millefolium": "absent"
+      }
+    }
+  }
+}

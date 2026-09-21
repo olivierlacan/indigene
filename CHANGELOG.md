@@ -260,6 +260,13 @@ subtitle on the What's new page.
   Central Florida. The headline: hickory is missing from all seven regions and
   willow and poplar from the Mid-Atlantic alone, which are four of the biggest
   caterpillar hosts in the eastern flora.
+- Internal: every region now stands on at least three kinds of source, not two
+  of the same kind. `npm run native:check` was Ireland-only; it now covers all
+  twelve regions against Kew's WCVP, which answers in Oregon as well as in
+  Ireland and settles what a recommendation list cannot. Eleven flags over 578
+  rows, the strongest being Penstemon digitalis (Kew calls it introduced in all
+  ten Mid-Atlantic states) and Achillea millefolium. The standard and the
+  scoreboard are in `docs/source-ledger.md`.
 
 ### Fixed
 

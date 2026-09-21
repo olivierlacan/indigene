@@ -201,6 +201,9 @@ for (const region of regions) {
   // Tracked across sources so the combined verdict can be stricter than any
   // one of them: a plant no consulted list carries is the one worth a look.
   const vouchedSomewhere = new Set();
+  // Each source's curated picks, kept so the consensus block below can ask what
+  // they agree on — the strongest signal here, and the one worth acting on.
+  const pickSets = [];
 
   for (const src of available) {
     const doc = JSON.parse(readFileSync(`${dataDir(src.dir)}raw/${id}.json`, "utf8"));
@@ -322,6 +325,8 @@ for (const region of regions) {
       )}\n`,
     );
 
+    pickSets.push({ label: src.label, keys: curatedKeys, rows: curated });
+
     summary.push({
       region: region.meta.name,
       source: src.label,
@@ -334,7 +339,32 @@ for (const region of regions) {
     });
   }
 
-  if (available.length > 1) {
+  if (pickSets.length > 1) {
+    // Plants every consulted organization recommends and we don't carry, new
+    // genera first. Two independent curations agreeing is the strongest
+    // evidence a desk can produce, and it is a far shorter list than any single
+    // source's gap column.
+    const [first, ...rest] = pickSets;
+    const consensus = [...first.rows.entries()]
+      .filter(([k]) => rest.every((o) => hasAny(o.keys, k)))
+      .filter(([k]) => !hasAny(ourKeys, k))
+      .map(([k, p]) => ({ k, p, newGenus: !ourGenera.has(genusOf(k)) }))
+      .sort((a, b) => Number(b.newGenus) - Number(a.newGenus) || a.k.localeCompare(b.k));
+    const newGeneraCount = consensus.filter((c) => c.newGenus).length;
+    console.log(
+      `\n  \x1b[1mBoth lists recommend it and we don't carry it\x1b[0m — ${consensus.length}, ${newGeneraCount} bringing a new genus`,
+    );
+    for (const { p, newGenus } of consensus.slice(0, showMissing)) {
+      console.log(`    ${newGenus ? "+" : " "} ${p.latin.padEnd(32)} ${p.common ?? ""}`);
+    }
+    if (consensus.length > showMissing) {
+      console.log(`    … ${consensus.length - showMissing} more`);
+    }
+    console.log(
+      "    The shortlist to act on. Check it against the region's own extent first:\n" +
+        "    a state-scoped source recommends desert plants for cismontane California.",
+    );
+
     const nowhere = [...ours.entries()].filter(([k]) => !vouchedSomewhere.has(k));
     console.log(
       `\n  \x1b[1mVouched by no source consulted\x1b[0m — ${nowhere.length} of ${ours.size}`,

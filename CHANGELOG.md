@@ -254,6 +254,12 @@ subtitle on the What's new page.
   Mahonia, Acmispon glaber / Lotus scoparius). It withdrew the one finding the
   first run produced: Echinacea purpurea in the Mid-Atlantic is recommended by
   the Center across PA, NJ, MD, DE and VA, so the claim stands.
+- Internal: `docs/society-list-comparison.md` now names the plants, not just
+  the counts — the consensus shortlist of species both organizations recommend
+  and we don't carry, 35 new genera for the Mid-Atlantic and 33 for North &
+  Central Florida. The headline: hickory is missing from all seven regions and
+  willow and poplar from the Mid-Atlantic alone, which are four of the biggest
+  caterpillar hosts in the eastern flora.
 
 ### Fixed
 

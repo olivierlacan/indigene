@@ -59,15 +59,15 @@ the same grain — it just had never been asked outside Ireland.
   [`society-list-comparison.md`](society-list-comparison.md).
 - **California's botanical authority is the whole state.** TDWG's level-3 areas
   are states, so a `NATIVE` for California cannot tell cismontane coast from
-  the Mojave. Calscape would fix this and sits behind a Cloudflare bot
-  challenge; Jepson is reachable and not yet harvested.
+  the Mojave. The two sources that would fix it — Calscape and Jepson — both
+  decline automated access; USDA county data is the open route, and is
+  described below.
 - **The academic column is referenced, not machine-checked**, everywhere except
-  the Wildflower Center. OregonFlora, Jepson and the Atlas of Florida Plants are
-  all reachable and would each be a genuine third opinion in the region that
-  needs it most.
-- **USDA PLANTS is referenced, not re-asked.** Its API answers per-plant
-  profiles but the state-level distribution endpoint did not respond to the
-  obvious shapes; the governmental column is the weakest machine-checked one.
+  the Wildflower Center — and *The academic column, checked* below is what
+  happened when each candidate was tried.
+- **USDA PLANTS is referenced, not re-asked** — but the endpoint has since been
+  found, and it answers at **county** level. Details below; it is the best
+  open move left.
 
 ## What the third source actually caught
 
@@ -90,6 +90,72 @@ questions, and a disagreement between Kew and a regional flora is a real thing
 to weigh, not a bug to smooth over — the same call
 [`wcvp/README.md`](../data/sources/wcvp/README.md) already records for Ireland's
 Lusitanian element.
+
+## The academic column, checked
+
+The ledger listed OregonFlora, Jepson, Calflora, the Atlas of Florida Plants and
+the Burke Herbarium as *referenced* and said each "would be a genuine third
+opinion in the region that needs it most". They were checked on 2026-09-21.
+Only one of them turned out to be both reachable and finer-grained than what we
+already have, and it is not an academic source at all.
+
+| Source | Reachable | Grain it offers | Verdict |
+|---|---|---|---|
+| **USDA PLANTS county distribution** | **yes** | **county** | **The one real upgrade.** Public domain, and already named in DATA_SOURCES as the intended answer |
+| Calflora | yes | state | No finer than Kew. Its taxon page says "native to California" and stops; the counties on it are the map's clickable labels, not the plant's range |
+| Atlas of Florida Plants | yes | county, with native/non-native/endemic per taxon | The right source for Florida, behind an ASP.NET search form — VIEWSTATE POSTs and no name→id route. Possible, not cheap |
+| OregonFlora | yes, as a shell | — | A JavaScript application; the page is 3 KB of loader and the Symbiota API paths answer 404/403 |
+| **Jepson eFlora** | **no — declines bots** | bioregion, the best grain in California | **Not attempted.** See below |
+| Burke Herbarium | no | — | Unreachable from here even after the allowlist change |
+
+### Jepson: asked us not to, in as many words
+
+Jepson would have been the best of them — its bioregions (`CCo`, `SCo`, `SnFrB`)
+are sub-state and land close to our two California regions. It sits behind a
+Cloudflare Turnstile whose page says:
+
+> Recent automated website traffic has affected the performance of the Jepson
+> eFlora.
+
+That is not an obstacle to route around; it is a herbarium telling us its
+servers are hurting. Calscape said the same thing with a bare 403. Both are now
+arguments for the outreach work in [`outreach/`](outreach/playbook.md) rather
+than for a cleverer scraper — UC Berkeley and CNPS both publish contact
+addresses, and a project that asks is likelier to get a data dump than one that
+hammers a public endpoint.
+
+### USDA PLANTS county distribution — found, not yet built
+
+`DATA_SOURCES.md` has said since the BONAP row was written that "Phase 2 should
+use USDA PLANTS county data (public domain) for county resolution". The endpoint
+exists and answers; it is undocumented, and the key that unlocks it is
+`masterId` — the numeric `Id` from a plant's profile, not its symbol:
+
+```sh
+# 1. symbol → id
+curl 'https://plantsservices.sc.egov.usda.gov/api/PlantProfile?symbol=QUAL'   # → Id 70172
+# 2. id → county distribution, as CSV
+curl -X POST 'https://plantsservices.sc.egov.usda.gov/api/PlantProfile/getDownloadDistributionDocumentation' \
+  -H 'content-type: application/json' -d '{"masterId":70172}'
+# Symbol,Country,State,State FIP,County,County FIP  → 1,495 rows for white oak
+```
+
+Every other payload shape tried (`Symbol`, `plantId`, `Ids`, `symbols`) returns
+the CSV header and no rows — which looks exactly like "this plant has no
+distribution" and is why this is written down rather than rediscovered.
+
+**What it would and would not settle.** It is a *distribution*, not a native
+status: USDA records native status at lower-48 level, and the counties say where
+the plant occurs. So it cannot tell a county where a plant is introduced. What
+it can do is tighten the claim where our authority is weakest — "Kew says native
+in California" plus "USDA records it in Los Angeles, Orange and San Diego
+counties" is a far closer statement about a Los Angeles garden than the first
+half alone, and the same for Florida.
+
+**The work it needs** is a county list per region, written by hand, and an
+honest note where a county straddles the line — San Bernardino and Riverside are
+half cismontane and half desert, which is precisely the boundary the Southern
+California region draws its box to exclude.
 
 ## The rule, going forward
 

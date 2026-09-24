@@ -42,7 +42,8 @@ subtitle on the What's new page.
 
 - Regions: Auckland & Northland is on the map — 47 native plants from Cape
   Reinga to the Coromandel, from pōhutukawa to kawakawa, named the way New
-  Zealanders say them. Our first region south of the equator.
+  Zealanders say them, with real caterpillar counts. Our first region south of
+  the equator.
   https://indigene.app/regions/nz-auckland
 - Eight New Zealand animals join the wildlife pages, from tūī and kererū to the
   pūriri moth, each with the plants that feed it.
@@ -54,18 +55,20 @@ subtitle on the What's new page.
   `probe:resolve`. `npm run resolve:fetch` downloads RESOLVE's shapefile once
   and writes simplified GeoJSON (git-ignored) plus a committed `index.json`;
   `maps:build` traces RESOLVE regions from it, and keeps a box's corners sharp.
+- Internal: NZ caterpillar counts come from Plant-SyNZ (Manaaki Whenua).
+  `npm run host-counts:nz` counts native Lepidoptera with reliability ≥ 7 per
+  genus, searching older names (*Hebe*, *Tetrapathaea*…) and asking WCVP when a
+  row has no biostatus; results in `data/sources/plant-synz/host-counts.json`.
 - Each region's five most-wanted invasives now have a page of their own, with
   a preview picture listing all five, so you can send a neighbour one link.
   https://indigene.app/invasives/in/pnw
 
 ### Changed
 
-- Plants: where we have no caterpillar count we can cite yet — New Zealand, for
-  now — a plant says "Not counted" instead of showing a zero, and is ranked
-  on its other strengths.
 - Internal: `hostLepCount` and `featuredHostLepCount` accept `null` (not
-  counted); `ecoScore` drops the host term for such plants, and the region's
-  host tile and explore-card line are omitted rather than printing 0.
+  counted yet) for a future region with no host source; the plant tile says
+  "Not counted", `ecoScore` drops the host term, and the region's host tile and
+  explore-card line are omitted rather than printing 0. No shipped region uses it.
 
 - The "what to do this season" card now knows which side of the equator your
   garden is on, so a spot in Sydney or Cape Town sees spring now, not autumn.

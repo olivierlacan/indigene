@@ -15,13 +15,18 @@
 //    carries. The North Island is a coarse area, so each `nativeNote` also says
 //    where on it the plant grows wild; every plant here does so north of the
 //    Waikato.
-//  - **hostLepCount is null on every row: not yet counted.** No source in hand
-//    gives a citable count of the moths and butterflies that raise their
-//    caterpillars on New Zealand plants (Plant-SyNZ and the NHM's HOSTS
-//    database are the candidates; see docs/southern-hemisphere-plan.md). The
-//    app says "not counted yet" and ranks on the other scores, rather than
-//    printing a 0 that would read as "feeds nothing". `keystone` is false for
-//    the same reason: it is a claim about host counts.
+//  - **hostLepCount** is a genus-level count of native moths and butterflies
+//    recorded breeding on the plant's New Zealand relatives — **computed, not
+//    estimated**, from Plant-SyNZ (Manaaki Whenua – Landcare Research), a
+//    database of invertebrate herbivores on New Zealand's native plants. It
+//    counts Lepidoptera Plant-SyNZ marks endemic or native, with a reliability
+//    score of 7 or more (its own threshold for good evidence of breeding),
+//    across every NZ native species of the genus, as the US and European
+//    figures do. Regenerate with `npm run host-counts:nz`; the numbers and the
+//    moths behind them live in data/sources/plant-synz/host-counts.json. The
+//    counts run smaller than America's or Europe's because New Zealand has far
+//    fewer moths, and a genus Plant-SyNZ records nothing on says 0 and says
+//    why. `keystone` stays false: no New Zealand source names keystone genera.
 //  - **size arrays**: typical growth on an average Auckland site, in feet like
 //    every other region. mature*Ft is the honest eventual ceiling.
 //  - **other scores (0–100)**: informed estimates from the New Zealand Plant
@@ -63,8 +68,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 60,
     matureSpreadFt: 70,
     scores: { pollinator: 85, bird: 90, stormwater: 55, erosion: 85, carbon: 75, establishment: 80 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 17,
     keystone: false,
     bloom: { startMonth: 12, endMonth: 1, color: "red" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -72,7 +76,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Frost-tender while young, so shelter a new one for its first two winters. Give it room: a pōhutukawa grows wider than tall, and its roots lift paving. Salt wind, drought and poor soil it shrugs off.",
     givesNote: "Crimson brushes in December packed with nectar — tūī, silvereyes and native bees crowd a flowering tree. Its aerial roots and gnarled limbs hold whole cliffs together.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 17 native Lepidoptera recorded breeding on New Zealand Metrosideros (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-surface-light", "cuttings-semi-hardwood"],
       note: "Pick the capsules in February–March as they brown, dry them in a paper bag, and sow the dust-fine seed on the surface of damp mix. Collect from wild coastal trees: street trees often cross with the Kermadec pōhutukawa.",
@@ -99,8 +103,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 100,
     matureSpreadFt: 50,
     scores: { pollinator: 0, bird: 45, stormwater: 70, erosion: 60, carbon: 98, establishment: 55 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 3,
     keystone: false,
     bloom: null,
     filters: { deerResistant: false, thorny: false, allergenic: true, petToxic: false, aggressive: false },
@@ -108,7 +111,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Slow, and famous for it. **Kauri dieback**, a soil-borne disease, is killing trees across the region: buy only from a nursery that follows dieback hygiene, clean boots and tools, and never plant near a wild kauri stand. Poor, free-draining soil suits it.",
     givesNote: "Over decades a kauri builds its own deep, acid litter layer, which a whole community of plants and invertebrates lives in — and it becomes, eventually, the tallest thing in the landscape.",
     confidence: "medium",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants. Kauri dieback: Tiakina Kauri (Kauri Protection Agency).",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 3 native Lepidoptera recorded breeding on New Zealand Agathis (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants. Kauri dieback: Tiakina Kauri (Kauri Protection Agency).",
     propagation: {
       methods: ["seed-warm"],
       note: "Cones shatter in March–April; catch the winged seed and sow it at once, since it dies within weeks. Keep seedlings in part shade for their first years.",
@@ -135,8 +138,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 60,
     matureSpreadFt: 50,
     scores: { pollinator: 70, bird: 95, stormwater: 65, erosion: 55, carbon: 85, establishment: 70 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 2,
     keystone: false,
     bloom: { startMonth: 5, endMonth: 10, color: "pink" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -144,7 +146,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Frost-tender when young and happiest in deep, fertile soil with shelter. It becomes a broad, dense tree, so it wants a park, a street or a big section, not a courtyard.",
     givesNote: "In flower and fruit almost all year, so in the lean winter months it is what kererū and tūī live on. Its trunk is the nursery of the pūriri moth, New Zealand's largest.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 2 native Lepidoptera recorded breeding on New Zealand Vitex (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-warm"],
       note: "Gather ripe red fruit whenever the tree has it, clean off the flesh and sow fresh. Germination is uneven, spread over weeks to months.",
@@ -171,8 +173,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 30,
     matureSpreadFt: 20,
     scores: { pollinator: 60, bird: 90, stormwater: 50, erosion: 65, carbon: 55, establishment: 80 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 8,
     keystone: false,
     bloom: { startMonth: 8, endMonth: 10, color: "yellow" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: true, aggressive: false },
@@ -180,7 +181,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Ask for it by its botanical name: garden-centre kōwhai is usually a different species or a hybrid. Full sun and drained soil. **The seeds are poisonous**, so keep them from children and dogs.",
     givesNote: "Yellow bells in early spring, when little else is out: tūī and kererū gorge on the nectar and flowers, and the leaves feed kōwhai moth caterpillars.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants. Toxicity: National Poisons Centre (New Zealand).",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 8 native Lepidoptera recorded breeding on New Zealand Sophora (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants. Toxicity: National Poisons Centre (New Zealand).",
     propagation: {
       methods: ["seed-scarify"],
       note: "Pods ripen in late summer and autumn. Nick or sand the hard yellow seed, soak it overnight, and sow in spring — quick and easy once scarified.",
@@ -207,8 +208,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 45,
     matureSpreadFt: 30,
     scores: { pollinator: 30, bird: 85, stormwater: 60, erosion: 55, carbon: 75, establishment: 80 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 4,
     keystone: false,
     bloom: { startMonth: 8, endMonth: 11, color: "green" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: true, aggressive: false },
@@ -216,7 +216,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Takes shade and salt, and makes a dense evergreen screen by the sea. **The raw kernel is poisonous, to dogs above all**, so plant it where fallen fruit won't be chewed.",
     givesNote: "Orange fruit in late summer that kererū swallow whole and carry off. It is one of the big-fruited trees only the kererū can still spread.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants. Toxicity: National Poisons Centre (New Zealand).",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 4 native Lepidoptera recorded breeding on New Zealand Corynocarpus (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants. Toxicity: National Poisons Centre (New Zealand).",
     propagation: {
       methods: ["seed-warm"],
       note: "Clean the flesh off ripe orange fruit in late summer (wear gloves) and sow the seed fresh; it comes up readily.",
@@ -243,8 +243,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 70,
     matureSpreadFt: 15,
     scores: { pollinator: 75, bird: 85, stormwater: 55, erosion: 60, carbon: 75, establishment: 75 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 3,
     keystone: false,
     bloom: { startMonth: 10, endMonth: 12, color: "red" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -252,7 +251,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Narrow and upright, so it fits where a spreading tree won't. Poor, free-draining soil is best; fertiliser, and phosphate above all, harms it.",
     givesNote: "Velvety red flowers in spring full of nectar for tūī and native bees.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 3 native Lepidoptera recorded breeding on New Zealand Knightia (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-direct"],
       note: "The woody pods ripen a year after flowering; collect them in summer as they split and sow the seed fresh, barely covered.",
@@ -279,8 +278,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 45,
     matureSpreadFt: 30,
     scores: { pollinator: 55, bird: 80, stormwater: 60, erosion: 50, carbon: 75, establishment: 55 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 1,
     keystone: false,
     bloom: { startMonth: 5, endMonth: 7, color: "white" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -288,7 +286,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Frost-tender, and possums strip it bare where they can reach it. Shelter and shade while young, in deep, moist soil.",
     givesNote: "Sprays of waxy white flowers in midwinter, straight from the trunk — nectar for tūī when almost nothing else is flowering.",
     confidence: "medium",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 1 native Lepidoptera recorded breeding on New Zealand Dysoxylum (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-warm"],
       note: "The capsules take over a year to ripen. Collect them when they split in late summer to show red-coated seed, and sow at once.",
@@ -315,8 +313,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 40,
     matureSpreadFt: 30,
     scores: { pollinator: 30, bird: 80, stormwater: 60, erosion: 60, carbon: 70, establishment: 75 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 11,
     keystone: false,
     bloom: { startMonth: 10, endMonth: 12, color: "maroon" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -324,7 +321,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Tough, tidy and happy on heavier soil — a good medium-sized shade tree for a section or a street.",
     givesNote: "Its pods split to show a black seed in a scarlet, fleshy cup — summer food for tūī, kererū and silvereyes.",
     confidence: "medium",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 11 native Lepidoptera recorded breeding on New Zealand Alectryon (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-warm"],
       note: "Collect split capsules in summer, rub off the red flesh and sow fresh. Up within weeks.",
@@ -351,8 +348,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 70,
     matureSpreadFt: 30,
     scores: { pollinator: 0, bird: 70, stormwater: 60, erosion: 70, carbon: 90, establishment: 85 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 11,
     keystone: false,
     bloom: null,
     filters: { deerResistant: false, thorny: false, allergenic: true, petToxic: false, aggressive: false },
@@ -360,7 +356,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "About as tough as native trees get: wind, drought, frost and clay. The leaves are prickle-tipped, and it clips into a dense hedge if a 20-metre tree is too much.",
     givesNote: "Female trees carry sweet red seed stalks in autumn that kererū, tūī and silvereyes eat, and the dense crown is shelter all year.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 11 native Lepidoptera recorded breeding on New Zealand Podocarpus (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-warm", "cuttings-semi-hardwood"],
       note: "Collect the seeds with their swollen red stalks from a female tree in March–May, and sow fresh. Semi-hardwood cuttings root too.",
@@ -387,8 +383,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 100,
     matureSpreadFt: 25,
     scores: { pollinator: 0, bird: 80, stormwater: 95, erosion: 70, carbon: 90, establishment: 70 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 7,
     keystone: false,
     bloom: null,
     filters: { deerResistant: false, thorny: false, allergenic: true, petToxic: false, aggressive: false },
@@ -396,7 +391,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "The tree for a wet site: it stands in winter-waterlogged ground that drowns most trees. Plant a group, the way it grows wild.",
     givesNote: "Big crops of orange-red seed stalks in autumn that kererū, tūī and silvereyes gorge on, and roots that soak up wet ground and slow run-off.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 7 native Lepidoptera recorded breeding on New Zealand Dacrycarpus (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-warm"],
       note: "Collect the fleshy seed stalks from a female tree in autumn and sow the seed fresh.",
@@ -423,8 +418,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 40,
     matureSpreadFt: 15,
     scores: { pollinator: 75, bird: 70, stormwater: 70, erosion: 65, carbon: 40, establishment: 90 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 6,
     keystone: false,
     bloom: { startMonth: 10, endMonth: 12, color: "creamy-white" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -432,7 +426,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Wet or dry, sun or wind — it takes almost anything. Old leaves pile up and rot slowly: clear them off paths, but leave some on the tree for insects and lizards.",
     givesNote: "Huge sprays of scented flowers in late spring that hum with native bees and moths, then small pale berries that silvereyes and kererū strip.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 6 native Lepidoptera recorded breeding on New Zealand Cordyline (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-direct", "cuttings-hardwood"],
       note: "Sow the small black seed fresh in autumn. Or cut a length of trunk or branch and set it in the ground; it sprouts.",
@@ -459,8 +453,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 40,
     matureSpreadFt: 20,
     scores: { pollinator: 85, bird: 55, stormwater: 60, erosion: 80, carbon: 70, establishment: 90 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 15,
     keystone: false,
     bloom: { startMonth: 11, endMonth: 1, color: "white" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -468,7 +461,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Fast, tough and cheap: the classic first tree for a bare, windy or dry site, because it makes the shelter slower trees need. It lives for decades rather than centuries and hands over to the forest.",
     givesNote: "Masses of tiny white flowers in early summer that native bees, flies and beetles swarm, then cover and nest sites for small birds.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 15 native Lepidoptera recorded breeding on New Zealand Kunzea (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-surface-light"],
       note: "Pick the woody capsules in late summer, dry them in a paper bag and sprinkle the fine seed on damp mix. Up in a few weeks.",
@@ -495,8 +488,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 25,
     matureSpreadFt: 15,
     scores: { pollinator: 75, bird: 45, stormwater: 50, erosion: 50, carbon: 55, establishment: 80 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 18,
     keystone: false,
     bloom: { startMonth: 2, endMonth: 4, color: "white" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -504,7 +496,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Quick, small and upright — a tree for the corner of a section. Short-lived as trees go.",
     givesNote: "Clouds of white flowers in late summer and autumn, when pollinators have little else to work.",
     confidence: "medium",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 18 native Lepidoptera recorded breeding on New Zealand Hoheria (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-direct", "cuttings-semi-hardwood"],
       note: "Sow seed fresh in autumn, or take semi-hardwood cuttings in late summer.",
@@ -531,16 +523,15 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 30,
     matureSpreadFt: 20,
     scores: { pollinator: 45, bird: 75, stormwater: 55, erosion: 55, carbon: 60, establishment: 85 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 22,
     keystone: false,
     bloom: { startMonth: 11, endMonth: 1, color: "greenish" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
     noWaterEstablish: false,
     careNote: "Fast, shade-tolerant and forgiving — the filler that turns a thin planting into a forest quickly.",
-    givesNote: "Violet berries along the stems in autumn for birds, and wood that pūriri moth caterpillars tunnel into.",
+    givesNote: "Violet berries along the stems in autumn for birds, and leaves that some twenty native moths raise their caterpillars on.",
     confidence: "medium",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 22 native Lepidoptera recorded breeding on New Zealand Melicytus (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-direct"],
       note: "Squash the violet berries in autumn, rinse out the seed and sow fresh.",
@@ -568,8 +559,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 15,
     matureSpreadFt: 10,
     scores: { pollinator: 85, bird: 45, stormwater: 60, erosion: 80, carbon: 55, establishment: 90 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 29,
     keystone: false,
     bloom: { startMonth: 9, endMonth: 1, color: "white" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -577,7 +567,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Takes poor, wet or dry ground that little else will. Choose the plain wild white form from a local source; the double red garden kinds give insects less.",
     givesNote: "White flowers from spring into summer for native bees and flies, and stiff, twiggy cover where small birds nest safely.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 29 native Lepidoptera recorded breeding on New Zealand Leptospermum (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-surface-light", "cuttings-semi-hardwood"],
       note: "Dry the capsules in a paper bag in late summer and sow the fine seed on the surface of damp mix. Semi-hardwood cuttings root in autumn.",
@@ -604,8 +594,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 25,
     matureSpreadFt: 12,
     scores: { pollinator: 55, bird: 60, stormwater: 50, erosion: 60, carbon: 50, establishment: 85 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 10,
     keystone: false,
     bloom: { startMonth: 9, endMonth: 11, color: "maroon" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -613,7 +602,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Clips into a tight hedge, or leave it to become a small tree. The wild green form is the toughest.",
     givesNote: "Near-black flowers that scent the evening and draw moths in spring, and sticky seed that birds take in autumn.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 10 native Lepidoptera recorded breeding on New Zealand Pittosporum (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-direct", "cuttings-semi-hardwood"],
       note: "The seed is sticky: wash it with a drop of detergent, rinse, and sow in autumn.",
@@ -640,8 +629,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 25,
     matureSpreadFt: 15,
     scores: { pollinator: 55, bird: 60, stormwater: 45, erosion: 70, carbon: 45, establishment: 90 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 10,
     keystone: false,
     bloom: { startMonth: 9, endMonth: 11, color: "maroon" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -649,7 +637,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "A front-line windbreak at the beach: salt, wind and poor sand. It turns weedy outside its home range, so keep it in the north.",
     givesNote: "Dark red flowers in spring, big black seeds in sticky orange pulp for birds, and a dense shelter hedge where nothing else stands.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 10 native Lepidoptera recorded breeding on New Zealand Pittosporum (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-direct"],
       note: "Collect the split capsules in autumn, wash the sticky seed and sow at once.",
@@ -676,8 +664,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 20,
     matureSpreadFt: 15,
     scores: { pollinator: 25, bird: 75, stormwater: 45, erosion: 75, carbon: 45, establishment: 95 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 27,
     keystone: false,
     bloom: { startMonth: 9, endMonth: 10, color: "green" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -685,7 +672,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Unkillable at the beach, and it seeds itself freely. That's fine here; it is a weed overseas, so don't carry it abroad.",
     givesNote: "Female plants bear orange-red berries in autumn that birds strip, and the dense, salt-proof hedge shelters everything behind it.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 27 native Lepidoptera recorded breeding on New Zealand Coprosma (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-direct", "cuttings-semi-hardwood"],
       note: "Squash ripe berries in autumn, rinse out the seed and sow. Cuttings root easily almost any time.",
@@ -712,8 +699,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 18,
     matureSpreadFt: 12,
     scores: { pollinator: 25, bird: 85, stormwater: 60, erosion: 70, carbon: 50, establishment: 95 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 27,
     keystone: false,
     bloom: { startMonth: 9, endMonth: 10, color: "green" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -721,7 +707,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "A nurse plant: fast, cheap and happy in wet ground, it shades out grass so slower trees can follow.",
     givesNote: "Heavy crops of orange berries in autumn — one of the best bird foods a planting can have.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 27 native Lepidoptera recorded breeding on New Zealand Coprosma (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-direct", "cuttings-hardwood"],
       note: "Sow cleaned seed in autumn, or push leafless cuttings into damp ground in winter.",
@@ -748,8 +734,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 8,
     matureSpreadFt: 6,
     scores: { pollinator: 90, bird: 20, stormwater: 40, erosion: 60, carbon: 25, establishment: 90 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 18,
     keystone: false,
     bloom: { startMonth: 12, endMonth: 4, color: "lavender" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -757,7 +742,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Quick and short-lived — ten years or so. Trim lightly after flowering and replace it when it gets leggy. Give it air: leaf spot likes a humid corner.",
     givesNote: "Long spikes of pale lilac flowers all summer, among the busiest native plants for native bees, butterflies and hoverflies.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 18 native Lepidoptera recorded breeding on New Zealand Veronica (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["cuttings-softwood", "cuttings-semi-hardwood"],
       note: "Take tip cuttings any time from spring to autumn; they root within weeks.",
@@ -784,8 +769,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 10,
     matureSpreadFt: 8,
     scores: { pollinator: 20, bird: 70, stormwater: 45, erosion: 50, carbon: 25, establishment: 80 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 5,
     keystone: false,
     bloom: { startMonth: 11, endMonth: 2, color: "green" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -793,7 +777,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Shade and shelter; frost and hard sun scorch it. The holes in the leaves are the kawakawa looper at work — leave it be.",
     givesNote: "Female plants carry orange fruit spikes in summer for kererū and tūī, and the leaves raise the kawakawa looper.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 5 native Lepidoptera recorded breeding on New Zealand Piper (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-direct"],
       note: "Semi-hardwood cuttings root readily in late summer. Or squash ripe orange fruit onto damp mix and keep it warm.",
@@ -820,8 +804,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 20,
     matureSpreadFt: 10,
     scores: { pollinator: 50, bird: 60, stormwater: 40, erosion: 60, carbon: 40, establishment: 85 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 16,
     keystone: false,
     bloom: { startMonth: 12, endMonth: 2, color: "greenish" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -829,7 +812,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Tidy, upright and wind-hardy — a native answer to the clipped evergreen by the front door.",
     givesNote: "Greenish flower clusters in summer for bees and flies, then purple-black fruit for birds.",
     confidence: "medium",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 16 native Lepidoptera recorded breeding on New Zealand Pseudopanax (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-direct"],
       note: "Semi-hardwood cuttings root in late summer and autumn; seed is slower.",
@@ -856,8 +839,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 25,
     matureSpreadFt: 20,
     scores: { pollinator: 60, bird: 55, stormwater: 40, erosion: 75, carbon: 50, establishment: 90 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 4,
     keystone: false,
     bloom: { startMonth: 9, endMonth: 12, color: "white" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: true, aggressive: false },
@@ -865,7 +847,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Fast shelter by the sea. **The leaves are poisonous** to stock and pets, so keep it away from grazing animals.",
     givesNote: "White, purple-spotted flowers in spring for native bees, and small purple fruit for birds.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants. Toxicity: National Poisons Centre (New Zealand).",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 4 native Lepidoptera recorded breeding on New Zealand Myoporum (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants. Toxicity: National Poisons Centre (New Zealand).",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-direct"],
       note: "Cuttings root easily in late summer; seed sown fresh in autumn is slower.",
@@ -892,8 +874,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 8,
     matureSpreadFt: 6,
     scores: { pollinator: 70, bird: 10, stormwater: 30, erosion: 70, carbon: 20, establishment: 60 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 3,
     keystone: false,
     bloom: { startMonth: 8, endMonth: 10, color: "yellow" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -901,7 +882,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Wants poor, hard, free-draining clay in full sun — exactly what most gardens try to fix. Don't feed it. Short-lived, so let it seed itself.",
     givesNote: "Frothy golden flowers in early spring for bees. Gumdiggers used them as soap: rub a handful in wet hands and it lathers.",
     confidence: "medium",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 3 native Lepidoptera recorded breeding on New Zealand Pomaderris (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-scarify"],
       note: "The seed is hard: pour just-boiled water over it, soak overnight, and sow in spring.",
@@ -929,8 +910,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 10,
     matureSpreadFt: 8,
     scores: { pollinator: 60, bird: 90, stormwater: 80, erosion: 85, carbon: 35, establishment: 95 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 8,
     keystone: false,
     bloom: { startMonth: 11, endMonth: 1, color: "red" },
     filters: { deerResistant: true, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -938,7 +918,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Grows anywhere wet and most places dry. Cut old leaves at the base, outer ones first, never the middle three — the weavers' rule, and it keeps the plant healthy.",
     givesNote: "Tall stalks of dark red, nectar-dripping flowers in early summer — tūī fight over a flowering clump. Holds stream banks and swamp edges.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 8 native Lepidoptera recorded breeding on New Zealand Phormium (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["division", "seed-direct"],
       note: "Split off a fan with roots in autumn or spring and trim its leaves by half. Seed sown in spring is slower, and wild clumps cross freely.",
@@ -965,8 +945,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 5,
     matureSpreadFt: 5,
     scores: { pollinator: 55, bird: 80, stormwater: 50, erosion: 80, carbon: 25, establishment: 90 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 8,
     keystone: false,
     bloom: { startMonth: 11, endMonth: 1, color: "greenish-yellow" },
     filters: { deerResistant: true, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -974,7 +953,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "The smaller, softer flax: the one for a garden bed or a clifftop. Same rule as harakeke — outer leaves out, the heart left alone.",
     givesNote: "Greenish-yellow flowers that tūī and silvereyes probe, and twisted seed pods that hang on all winter.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 8 native Lepidoptera recorded breeding on New Zealand Phormium (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["division", "seed-direct"],
       note: "Divide in autumn or spring, as for harakeke.",
@@ -1001,8 +980,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 4,
     matureSpreadFt: 5,
     scores: { pollinator: 30, bird: 55, stormwater: 40, erosion: 60, carbon: 15, establishment: 85 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 4,
     keystone: false,
     bloom: { startMonth: 11, endMonth: 12, color: "greenish" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -1010,7 +988,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Silver, sword-leaved and tough on dry banks and under coastal trees. Plant a few: males and females are separate plants and only females fruit.",
     givesNote: "Clusters of purplish berries in autumn for birds and lizards.",
     confidence: "medium",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 4 native Lepidoptera recorded breeding on New Zealand Astelia (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["division", "seed-direct"],
       note: "Divide clumps in autumn, or sow the cleaned seed of ripe berries.",
@@ -1037,8 +1015,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 3,
     matureSpreadFt: 3,
     scores: { pollinator: 55, bird: 10, stormwater: 30, erosion: 50, carbon: 10, establishment: 85 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 3,
     keystone: false,
     bloom: { startMonth: 11, endMonth: 12, color: "white" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -1046,7 +1023,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "A dry-shade plant: under trees, beside a wall. Slugs and snails love it, and it's frost-tender.",
     givesNote: "Airy sprays of starry white flowers in late spring for native bees, and lush cover under trees.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 3 native Lepidoptera recorded breeding on New Zealand Arthropodium (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["division", "seed-direct"],
       note: "Divide in autumn, or sow the black seed fresh in summer.",
@@ -1073,8 +1050,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 3,
     matureSpreadFt: 2,
     scores: { pollinator: 40, bird: 20, stormwater: 30, erosion: 50, carbon: 10, establishment: 85 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 0,
     keystone: false,
     bloom: { startMonth: 10, endMonth: 12, color: "white" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -1082,7 +1058,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Easy in part shade or sun, and it seeds itself gently. Tidy it by pulling old brown leaves.",
     givesNote: "White three-petalled flowers in spring, then round seed heads that birds pick over.",
     confidence: "medium",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 0 — Plant-SyNZ (Manaaki Whenua – Landcare Research) records no native moth or butterfly breeding on New Zealand Libertia at reliability ≥ 7. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["division", "seed-direct"],
       note: "Divide in autumn, or sow seed fresh from the ripe heads.",
@@ -1110,8 +1086,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 8,
     matureSpreadFt: 6,
     scores: { pollinator: 10, bird: 50, stormwater: 70, erosion: 85, carbon: 30, establishment: 90 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 3,
     keystone: false,
     bloom: { startMonth: 9, endMonth: 12, color: "cream" },
     filters: { deerResistant: false, thorny: false, allergenic: true, petToxic: false, aggressive: false },
@@ -1119,7 +1094,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "**Buy it by name.** Pampas grass, its invasive South American look-alike, is sold for the same spot. Toetoe flowers in spring with drooping plumes; pampas in autumn with stiff upright ones. The leaf edges cut, so wear gloves.",
     givesNote: "Binds stream banks and cuttings, and the seed heads feed birds.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 3 native Lepidoptera recorded breeding on New Zealand Austroderia (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["division", "seed-direct"],
       note: "Divide with a spade in spring. Seed sown on the surface in spring comes up readily.",
@@ -1146,8 +1121,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 4,
     matureSpreadFt: 8,
     scores: { pollinator: 5, bird: 40, stormwater: 90, erosion: 90, carbon: 20, establishment: 80 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 2,
     keystone: false,
     bloom: { startMonth: 10, endMonth: 12, color: "brown" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -1155,7 +1129,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Wet and salty is what it wants. It spreads slowly into a dense stand, ideal for a rain garden or pond edge.",
     givesNote: "Slows and filters run-off, and gives wetland birds and insects cover.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 2 native Lepidoptera recorded breeding on New Zealand Apodasmia (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["division"],
       note: "Divide clumps in spring, keeping a good wedge of rhizome with each piece.",
@@ -1182,8 +1156,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 3,
     matureSpreadFt: 3,
     scores: { pollinator: 5, bird: 30, stormwater: 75, erosion: 85, carbon: 15, establishment: 95 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 3,
     keystone: false,
     bloom: { startMonth: 10, endMonth: 1, color: "brown" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -1191,7 +1164,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Dry sand or wet clay, salt spray or rain garden — one of the most adaptable plants on this list. Leave it alone.",
     givesNote: "Holds dunes and swales, and its dense tussocks shelter skinks and insects.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 3 native Lepidoptera recorded breeding on New Zealand Ficinia (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["division"],
       note: "Divide in autumn or spring.",
@@ -1218,8 +1191,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 5,
     matureSpreadFt: 4,
     scores: { pollinator: 5, bird: 40, stormwater: 90, erosion: 90, carbon: 20, establishment: 90 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 8,
     keystone: false,
     bloom: { startMonth: 9, endMonth: 11, color: "brown" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -1227,7 +1199,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Wet ground or the water's edge; in a dry bed it sulks. Sharp-edged leaves.",
     givesNote: "Stabilises banks and filters run-off, and its pedestal tussocks shelter insects at the waterline.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 8 native Lepidoptera recorded breeding on New Zealand Carex (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["division", "seed-direct"],
       note: "Divide in spring, or sow seed on wet mix.",
@@ -1254,8 +1226,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 1.5,
     matureSpreadFt: 4,
     scores: { pollinator: 0, bird: 30, stormwater: 55, erosion: 65, carbon: 10, establishment: 75 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 1,
     keystone: false,
     bloom: { startMonth: 10, endMonth: 3, color: "green" },
     filters: { deerResistant: false, thorny: false, allergenic: true, petToxic: false, aggressive: false },
@@ -1263,7 +1234,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "A shade-tolerant native lawn: mow it high, or let it flop. It holds on in dry shade under trees, where lawn gives up.",
     givesNote: "Seed for birds and cover for insects in dry shade, where grass won't grow.",
     confidence: "medium",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 1 native Lepidoptera recorded breeding on New Zealand Microlaena (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["division", "seed-direct"],
       note: "Divide in autumn, or scatter fresh seed onto bare soil.",
@@ -1291,8 +1262,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 0.3,
     matureSpreadFt: 6,
     scores: { pollinator: 5, bird: 5, stormwater: 50, erosion: 60, carbon: 5, establishment: 80 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 3,
     keystone: false,
     bloom: { startMonth: 10, endMonth: 12, color: "greenish" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -1300,7 +1270,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "A low lawn for light shade and light feet. Keep it damp while it knits together.",
     givesNote: "Covers bare soil in shade, keeping it cool and in place.",
     confidence: "medium",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 3 native Lepidoptera recorded breeding on New Zealand Dichondra (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["division", "runners"],
       note: "Lift rooted pieces of runner in spring and press them into damp soil.",
@@ -1327,8 +1297,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 0.2,
     matureSpreadFt: 4,
     scores: { pollinator: 30, bird: 25, stormwater: 45, erosion: 55, carbon: 5, establishment: 75 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 3,
     keystone: false,
     bloom: { startMonth: 11, endMonth: 3, color: "white" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -1336,7 +1305,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Keep it damp: it runs over moist soil and between pavers, and vanishes if it dries out.",
     givesNote: "Tiny white flowers all summer, then purple-red berries that skinks eat.",
     confidence: "medium",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 3 native Lepidoptera recorded breeding on New Zealand Lobelia (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["division", "runners"],
       note: "Lift rooted runners in spring or autumn and replant.",
@@ -1363,8 +1332,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 0.2,
     matureSpreadFt: 6,
     scores: { pollinator: 30, bird: 5, stormwater: 60, erosion: 70, carbon: 5, establishment: 75 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 2,
     keystone: false,
     bloom: { startMonth: 11, endMonth: 3, color: "white" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -1372,7 +1340,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "For a wet, sunny, salty spot — a pond margin, or a dip in a coastal lawn.",
     givesNote: "Fan-shaped white flowers all summer for small native bees and flies.",
     confidence: "medium",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 2 native Lepidoptera recorded breeding on New Zealand Selliera (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["division", "runners"],
       note: "Lift rooted runners in spring and replant them in wet ground.",
@@ -1399,8 +1367,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 0.4,
     matureSpreadFt: 5,
     scores: { pollinator: 45, bird: 5, stormwater: 25, erosion: 70, carbon: 5, establishment: 85 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 0,
     keystone: false,
     bloom: { startMonth: 10, endMonth: 2, color: "pink" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -1408,7 +1375,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Full sun and fast drainage; salt is no problem. **Buy it by name:** the South African ice plant sold for the same job is a weed on New Zealand coasts.",
     givesNote: "Pink-to-white flowers through summer for native bees, and a mat that holds sand and gravel on a sunny bank.",
     confidence: "medium",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 0 — Plant-SyNZ (Manaaki Whenua – Landcare Research) records no native moth or butterfly breeding on New Zealand Disphyma at reliability ≥ 7. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["cuttings-softwood", "division"],
       note: "Snap off a piece of stem in spring or summer, let it dry a day, and push it into sandy mix.",
@@ -1436,8 +1403,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 35,
     matureSpreadFt: 10,
     scores: { pollinator: 55, bird: 20, stormwater: 30, erosion: 30, carbon: 25, establishment: 60 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 2,
     keystone: false,
     bloom: { startMonth: 8, endMonth: 10, color: "white" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -1445,7 +1411,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Roots cool and shaded, top in the light: plant it at the foot of a tree it can climb. Male plants have the larger flowers.",
     givesNote: "Starry white flowers in early spring, among the first of the year, for native bees and flies.",
     confidence: "medium",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 2 native Lepidoptera recorded breeding on New Zealand Clematis (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering", "seed-direct"],
       note: "Take cuttings between two leaf pairs in late summer, or peg a stem to the ground and wait for roots.",
@@ -1472,8 +1438,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 30,
     matureSpreadFt: 10,
     scores: { pollinator: 40, bird: 60, stormwater: 20, erosion: 25, carbon: 20, establishment: 55 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 0,
     keystone: false,
     bloom: { startMonth: 10, endMonth: 12, color: "greenish-white" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -1481,7 +1446,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "A vigorous climber for a fence or a tree; it needs support and shade at its roots. Male and female flowers are on separate plants.",
     givesNote: "Bright orange fruit in autumn for birds, and flowers that moths and bees visit.",
     confidence: "medium",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 0 — Plant-SyNZ (Manaaki Whenua – Landcare Research) records no native moth or butterfly breeding on New Zealand Passiflora at reliability ≥ 7. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-warm", "cuttings-semi-hardwood"],
       note: "Sow seed from ripe orange fruit fresh in autumn and keep it warm.",
@@ -1508,8 +1473,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 6,
     matureSpreadFt: 20,
     scores: { pollinator: 35, bird: 50, stormwater: 45, erosion: 85, carbon: 15, establishment: 95 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 32,
     keystone: false,
     bloom: { startMonth: 11, endMonth: 3, color: "greenish" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: true },
@@ -1517,7 +1481,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "A wiry tangle that covers a bank or fence fast — and your shrubs too, if you let it. Plant it where a mound of it is what you want.",
     givesNote: "The food plant of New Zealand's copper butterflies, and white, fleshy fruit that lizards and birds eat. Binds sand and banks.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 32 native Lepidoptera recorded breeding on New Zealand Muehlenbeckia (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering", "seed-direct"],
       note: "Any stem touching soil roots; cut it off and move it. Cuttings take easily in late summer.",
@@ -1544,8 +1508,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 25,
     matureSpreadFt: 6,
     scores: { pollinator: 55, bird: 15, stormwater: 20, erosion: 25, carbon: 15, establishment: 60 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 5,
     keystone: false,
     bloom: { startMonth: 10, endMonth: 12, color: "creamy-white" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -1553,7 +1516,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "A slender twiner for a trellis or small tree; it won't smother its host.",
     givesNote: "Fragrant creamy flowers in late spring for moths and native bees.",
     confidence: "medium",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 5 native Lepidoptera recorded breeding on New Zealand Parsonsia (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-direct", "cuttings-semi-hardwood"],
       note: "Sow the silky-tufted seed fresh in autumn, or take cuttings in late summer.",
@@ -1581,8 +1544,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 30,
     matureSpreadFt: 12,
     scores: { pollinator: 0, bird: 30, stormwater: 55, erosion: 55, carbon: 30, establishment: 60 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 15,
     keystone: false,
     bloom: null,
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -1590,7 +1552,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Drier and more sun-tolerant than most tree ferns, but it still wants shelter from wind. Water the trunk as well as the roots in a drought — tree ferns drink through it.",
     givesNote: "A shade canopy in a few years, and a trunk that other ferns and orchids grow on.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 15 native Lepidoptera recorded breeding on New Zealand Cyathea (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["spores"],
       note: "Sow spores from the silvery undersides of ripe fronds onto sterile damp mix under glass, and wait months.",
@@ -1617,8 +1579,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 50,
     matureSpreadFt: 20,
     scores: { pollinator: 0, bird: 35, stormwater: 65, erosion: 60, carbon: 40, establishment: 70 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 15,
     keystone: false,
     bloom: null,
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -1626,7 +1587,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Fast and huge, with fronds up to six metres, so give it a gully, not a courtyard. It needs moisture and shelter.",
     givesNote: "An instant forest canopy over a bare gully, and shade for everything planted under it.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 15 native Lepidoptera recorded breeding on New Zealand Cyathea (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["spores"],
       note: "Sow spores on sterile damp mix under glass; the black tree fern is among the quickest from spore.",
@@ -1653,8 +1614,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 20,
     matureSpreadFt: 10,
     scores: { pollinator: 0, bird: 30, stormwater: 55, erosion: 60, carbon: 30, establishment: 75 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 5,
     keystone: false,
     bloom: null,
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -1662,7 +1622,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Tough for a tree fern, and it spreads by underground runners into a small grove.",
     givesNote: "Dense, rough-trunked shade that other ferns soon colonise.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 5 native Lepidoptera recorded breeding on New Zealand Dicksonia (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["spores", "division"],
       note: "Dig up a young offshoot from its runner in spring, or sow spores.",
@@ -1689,8 +1649,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 2.5,
     matureSpreadFt: 3,
     scores: { pollinator: 0, bird: 10, stormwater: 40, erosion: 45, carbon: 10, establishment: 70 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 3,
     keystone: false,
     bloom: null,
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -1698,7 +1657,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Deep shade and steady moisture. Slugs and caterpillars chew it, and it grows back.",
     givesNote: "Soft green cover on a shaded floor, and the easiest fern to share: the little 'chickens' on the fronds are baby plants.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 3 native Lepidoptera recorded breeding on New Zealand Asplenium (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["division", "spores"],
       note: "Pin a frond carrying bulbils onto damp mix, and the chickens root where they sit.",
@@ -1725,8 +1684,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 5,
     matureSpreadFt: 8,
     scores: { pollinator: 0, bird: 15, stormwater: 60, erosion: 80, carbon: 15, establishment: 85 },
-    // Not yet counted: no citable New Zealand host source in hand (see the head of this file).
-    hostLepCount: null,
+    hostLepCount: 5,
     keystone: false,
     bloom: null,
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
@@ -1734,7 +1692,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "More sun-tolerant than most ferns, as long as its roots stay damp. It spreads into a colony on a bank.",
     givesNote: "Holds wet clay banks and cuttings together, and its new fronds come up red-pink in spring.",
     confidence: "high",
-    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: not yet counted — no citable New Zealand source in hand. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+    basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 5 native Lepidoptera recorded breeding on New Zealand Blechnum (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["division", "spores"],
       note: "Divide a clump in spring with a spade.",

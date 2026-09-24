@@ -28,6 +28,7 @@
     "wildlife": "NODE_USE_ENV_PROXY=1 node scripts/wildlife-candidates.mjs",
     "candidates": "NODE_USE_ENV_PROXY=1 node scripts/candidates.mjs",
     "host-counts": "node scripts/build-host-counts.mjs",
+    "host-counts:nz": "NODE_USE_ENV_PROXY=1 node scripts/nz-host-counts.mjs",
     "maps:build": "NODE_USE_ENV_PROXY=1 node scripts/build-region-maps.mjs",
     "registry:build": "node scripts/build-registry.mjs",
     "region-counts": "NODE_USE_ENV_PROXY=1 node scripts/build-region-counts.mjs",

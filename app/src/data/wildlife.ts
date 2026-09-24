@@ -3596,6 +3596,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "tui", support: "nectar", note: "Kohekohe flowers in midwinter, straight from the trunk — one of the few nectar sources tūī have in June.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
     ],
     "alectryon-excelsus": [
+      { wildlifeId: "puriri-moth", support: "host", note: "Tītoki is one of the pūriri moth's best-recorded hosts after pūriri itself: the caterpillar bores into the trunk and lives there for years.", basis: "Plant-SyNZ (Manaaki Whenua – Landcare Research), reliability 10." },
       { wildlifeId: "kereru", support: "berries", note: "Kererū and tūī take the scarlet, fleshy cups around tītoki seeds in summer.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
     ],
     "podocarpus-totara": [
@@ -3604,6 +3605,9 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "dacrycarpus-dacrydioides": [
       { wildlifeId: "kereru", support: "berries", note: "A fruiting kahikatea stand feeds kererū for weeks in autumn.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+    ],
+    "hoheria-populnea": [
+      { wildlifeId: "puriri-moth", support: "host", note: "Pūriri moth caterpillars also tunnel into houhere, and lacebark is small enough for a garden where a pūriri isn't.", basis: "Plant-SyNZ (Manaaki Whenua – Landcare Research), reliability 10." },
     ],
     "cordyline-australis": [
       { wildlifeId: "tauhou", support: "berries", note: "Silvereyes strip the small pale berries of cabbage trees in late summer.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
@@ -3626,7 +3630,6 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "nz-native-bees", support: "nectar", note: "Koromiko flowers all summer, and native bees work its spikes.", basis: "Manaaki Whenua – Landcare Research." },
     ],
     "melicytus-ramiflorus": [
-      { wildlifeId: "puriri-moth", support: "host", note: "Māhoe is one of the trees pūriri moth caterpillars tunnel into besides pūriri.", basis: "Manaaki Whenua – Landcare Research." },
       { wildlifeId: "tauhou", support: "berries", note: "Silvereyes eat the violet berries on the stems in autumn.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
     ],
     "piper-excelsum": [

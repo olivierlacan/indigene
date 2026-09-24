@@ -53,12 +53,11 @@ Ireland's rows cite WCVP and France's cite TAXREF.
    local copy of the shapes, for maps and for checking a new box. Cape Town
    sits in renosterveld (90) while Table Mountain's fynbos is 89, so the Cape
    region probably claims both. Details: `data/sources/resolve-ecoregions/`.
-2. **Host counts: the real gap.** `hostLepCount` is the ranking's strongest
-   signal. The US figures come from Tallamy / NWF and Europe's from the Gaytán
-   matrix, and no southern equivalent is in hand. Candidates to probe, none
-   confirmed:
-   - NHM's HOSTS database (global; licence to confirm) as the floor for all four
-   - Plant-SyNZ (Manaaki Whenua) for New Zealand
+2. **Host counts: New Zealand done, the rest open.** `hostLepCount` is the
+   ranking's strongest signal. New Zealand's come from **Plant-SyNZ**
+   (`npm run host-counts:nz`; `data/sources/plant-synz/`). For the other
+   three, candidates to probe, none confirmed:
+   - NHM's HOSTS database (global; `data.nhm.ac.uk` still refuses this sandbox)
    - Braby's *Butterflies of Australia* for butterflies only
 
    Southern hosts are also less recorded, so counts will run low against
@@ -79,8 +78,7 @@ record counts. None of it is hemisphere-specific.
 
 1. **Auckland.** English; one WCVP area that matches the region; the best
    single host source (Plant-SyNZ). **Shipped in 0.34** (PR #166) with 47
-   plants and RESOLVE ecoregion 173. Host counts are marked "not counted"
-   until a host source is reachable.
+   plants, RESOLVE ecoregion 173 and Plant-SyNZ caterpillar counts.
 2. **Sydney.** English; the most readers; host counts start from HOSTS.
 3. **Cape Town.** English; the richest flora of the four, so the list is about
    choosing. Planting there is an autumn job (April–June, with the rains), so a

@@ -12,7 +12,7 @@ export const REGION: RegionMeta = {
   short: "Auckland & Northland",
   reference: "Auckland",
   zones: "≈9b–10b",
-  note: "Native status is asserted for New Zealand's North Island from Kew's World Checklist of Vascular Plants, and every plant here grows wild north of the Waikato. Caterpillar counts aren't in yet: no published count for New Zealand plants is one we can cite, so each plant is ranked on its other strengths until one is.",
+  note: "Native status is from Kew's World Checklist of Vascular Plants, and every plant here grows wild north of the Waikato. Caterpillar counts are from Plant-SyNZ, Manaaki Whenua – Landcare Research's record of which insects breed on which native plants.",
   extent: "From Cape Reinga south through Northland to Auckland, the Hauraki Gulf islands and the Coromandel Peninsula, stopping short of Hamilton and the Waikato.",
   // Coarse box over the northern North Island: Cape Reinga and the Three Kings
   // (~-34.1°) south to the Firth of Thames and the base of the Coromandel at
@@ -31,8 +31,7 @@ export const REGION: RegionMeta = {
   // Hamilton, and against the local shapes for the rest of the box.
   ecoregion: { provider: "resolve-2017", codes: ["173"] },
   // Pōhutukawa: the New Zealand Christmas tree, crimson on every Auckland
-  // cliff in December, and the tūī's summer larder. Its caterpillar count is
-  // not in yet — see `note` — so the figure below is null, never 0.
+  // cliff in December, and the tūī's summer larder.
   featuredPlantId: "metrosideros-excelsa",
-  featuredHostLepCount: null,
+  featuredHostLepCount: 17,
 };

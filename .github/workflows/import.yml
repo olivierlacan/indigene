@@ -1,0 +1,40 @@
+# Checks how the iNaturalist import sorts a gardener's sightings.
+#
+# The sorting is the part that can hurt someone: a native filed as an invasive
+# gets a healthy plant pulled out. `npm run import:check` runs it over a fixed
+# set of sightings in real regions — a planted native at casual grade, an
+# invasive held until others confirm it, ivy staying native in Atlantic France —
+# and checks the request never asks iNaturalist for a location.
+name: iNaturalist import
+
+on:
+  pull_request:
+    paths:
+      - "app/src/lib/inat-*.ts"
+      - "app/src/lib/registry*.ts"
+      - "app/src/lib/invasives.ts"
+      - "app/src/lib/lookalikes.ts"
+      - "app/src/data/**"
+      - "app/scripts/check-import.mjs"
+      - ".github/workflows/import.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Sorting and request
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+      - name: Check the import
+        working-directory: app
+        run: npm run import:check

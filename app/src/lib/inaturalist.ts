@@ -312,6 +312,12 @@ function isPhotoUrl(url: string): boolean {
   }
 }
 
+/** An observation's reusable photos, trimmed — exported for the import, which
+ *  reads the gardener's own sightings through a different endpoint. */
+export function licensedPhotos(raw: unknown): ObservationPhoto[] {
+  return trimPhotos(raw);
+}
+
 function trimPhotos(raw: any): ObservationPhoto[] {
   const photos: any[] = Array.isArray(raw?.photos) ? raw.photos : [];
   const out: ObservationPhoto[] = [];

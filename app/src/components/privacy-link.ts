@@ -17,6 +17,7 @@ export type PrivacySection =
   | "lookups"
   | "saved"
   | "log"
+  | "inat"
   | "whatsnew"
   | "counting"
   | "children";

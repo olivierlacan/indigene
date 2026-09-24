@@ -11,7 +11,7 @@
 // it belongs to.
 import { el, clear, toast } from "../ui";
 import { navigate, openSavedSpot } from "../state";
-import { getSpot, plantingsForSpot, savePlanting, deletePlanting } from "../db";
+import { getSpot, plantingsForSpot, savePlanting, saveSpot, deletePlanting } from "../db";
 import type { Planting, PlantedDate, SavedSpot } from "../types";
 import type { Plant } from "../types";
 import { REGIONS, loadPlants, regionForSpot } from "../lib/plants";
@@ -29,13 +29,15 @@ import { spotValue, type SpotValue } from "../lib/spot-value";
 import { wildlifeGroups } from "../components/wildlife-chips";
 import { isUuid, linkedObservation, observationUrl, parseObservationRef } from "../lib/observation-link";
 import { observationList } from "../components/observation-ui";
-import { plantThumb } from "../components/plant-thumb";
+import { plantThumb, invasiveThumb } from "../components/plant-thumb";
 import { statTiles, type Stat } from "../components/stat-card";
 import { privacyNote } from "../components/privacy-link";
 import { sunPlain } from "../lib/plain";
 import { commonName, searchAliases, regionName } from "../lib/names";
 import { hashParam } from "../lib/plant-view";
 import { t, fmtNumber, monthName } from "../lib/i18n";
+import { linkedLogin } from "../lib/inat-account";
+import { getInvasive } from "../lib/invasives";
 
 /** Rows shown in the plant picker before it stops listing. A search that still
  *  matches forty things hasn't been narrowed yet, and forty tap targets is a
@@ -83,7 +85,18 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
     countsCard(plantings, value),
     ...(value?.wildlife.length ? [feedsCard(value)] : []),
     logCard(plantings, plantOf, redraw, region?.meta.id),
+    ...(spot.invasives?.length ? [invasivesCard(spot, redraw)] : []),
     addCard(spot, roster, redraw),
+    // Only once an account is linked: without one the page it opens can only
+    // send you to Settings, and Settings is where linking is offered.
+    ...(linkedLogin()
+      ? [el("a", {
+          class: "btn btn-secondary btn-block",
+          style: "margin-top:1rem",
+          // The spot goes in the query, which the page count drops.
+          href: `#/import?spot=${encodeURIComponent(spot.id)}`,
+        }, t("spot.importLink"))]
+      : []),
     el("button", {
       class: "btn btn-secondary btn-block",
       style: "margin-top:1rem",
@@ -230,6 +243,50 @@ function logRow(
   const row = el("li", { class: "log-item" }, [head]);
   row.append(sightingsBlock(planting, name, redraw));
   return row;
+}
+
+// --- invasives to deal with -------------------------------------------------
+
+/**
+ * The invasives the gardener found here, from their own confirmed sightings
+ * (`steps/import.ts`). Each row opens the invasive's own page, which says how
+ * to remove it — the depth lives there, not in this card.
+ */
+function invasivesCard(spot: SavedSpot, redraw: () => void): HTMLElement {
+  const rows = (spot.invasives ?? []).flatMap((entry) => {
+    const inv = getInvasive(entry.invasiveId);
+    if (!inv) return [];
+    const name = commonName(inv);
+    const ref = entry.observations[0];
+    return [el("li", { class: "log-item" }, [
+      el("div", { class: "log-head" }, [
+        invasiveThumb(inv.id, inv.form),
+        el("div", { class: "log-text" }, [
+          el("a", { class: "log-name", href: `#/invasives/${encodeURIComponent(inv.id)}` }, name),
+          ref
+            ? el("div", { class: "coords" }, [
+                el("a", { href: observationUrl(ref), target: "_blank", rel: "noopener" }, t("import.onInat")),
+              ])
+            : null,
+        ]),
+        el("button", {
+          class: "btn btn-ghost log-remove",
+          "aria-label": t("spot.invasiveRemoveLabel", { name }),
+          onClick: async () => {
+            if (!confirm(t("spot.confirmInvasiveRemove", { name }))) return;
+            const invasives = (spot.invasives ?? []).filter((i) => i !== entry);
+            await saveSpot({ ...spot, invasives });
+            toast(t("spot.invasiveRemoved"));
+            redraw();
+          },
+        }, "🗑"),
+      ]),
+    ])];
+  });
+  return el("section", { class: "card" }, [
+    el("h3", { style: "margin:0 0 0.5rem" }, t("spot.invasivesTitle")),
+    el("ul", { class: "log-list" }, rows),
+  ]);
 }
 
 // --- linked sightings ------------------------------------------------------

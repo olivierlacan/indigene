@@ -58,6 +58,7 @@ export const APP_STEPS = [
   "settings",
   "about",
   "crops",
+  "import",
 ] as const;
 
 export type AppStep = (typeof APP_STEPS)[number];

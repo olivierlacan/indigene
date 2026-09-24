@@ -1,6 +1,8 @@
 // The most-wanted invasives, as pages.
 //
 //   #/invasives        → every region's list, one after the other.
+//   #/invasives/in/<r> → one region's list alone — the page to send somebody
+//                        who asks "what should I be pulling round here?".
 //   #/invasives/<id>   → one plant: how to know it, where it's most wanted and
 //                        who says so, what to grow instead, and real
 //                        photographs from a region where it's wanted.
@@ -17,6 +19,9 @@ import {
   regionIsRated,
   sightingsAsOf,
   wantedRowsFor,
+  wantedRegionParam,
+  wantedRegionHref,
+  wantedRegionIds,
   REMOVAL_ICONS,
   MARK_ICONS,
   DISPOSE_ICON,
@@ -48,7 +53,7 @@ export function renderInvasiveIndex(main: HTMLElement): void {
     const rows = mostWanted(region.meta.id);
     if (!rows.length) return [];
     return [el("section", { style: "margin-top:1.25rem" }, [
-      sectionHeading(`#/regions/${region.meta.id}`, "📍", regionName(region.meta)),
+      sectionHeading(wantedRegionHref(region.meta.id), "📍", regionName(region.meta)),
       regionIsRated(region.meta.id)
         ? null
         : el("p", { class: "confidence", style: "margin:0 0 0.4rem" }, t("wanted.unratedShort")),
@@ -65,8 +70,48 @@ export function renderInvasiveIndex(main: HTMLElement): void {
 }
 
 /** One invasive's page. */
+/** One region's list, alone: the shareable answer for one place. */
+function renderInvasiveRegion(main: HTMLElement, region: RegionDef): void {
+  const rows = mostWanted(region.meta.id);
+  document.title = t("wanted.regionDocTitle", { region: regionName(region.meta) });
+  const others = wantedRegionIds()
+    .filter((id) => id !== region.meta.id)
+    .map((id) => REGIONS.find((r) => r.meta.id === id))
+    .filter((r): r is RegionDef => !!r);
+  main.append(
+    el("p", { class: "back-trail" }, [el("a", { href: "#/invasives" }, t("wanted.backToIndex"))]),
+    el("h2", { class: "step-title" }, t("wanted.title")),
+    el("p", { class: "region-tag", style: "margin:0 0 0.3rem;font-size:0.95rem" }, [
+      "📍 ",
+      el("a", { href: `#/regions/${region.meta.id}` }, regionName(region.meta)),
+    ]),
+    el("p", { class: "step-lede" },
+      t(regionIsRated(region.meta.id) ? "wanted.lede" : "wanted.ledeUnrated")),
+    wantedList(rows),
+    el("p", { class: "confidence", style: "margin:0.6rem 0 0" },
+      t("wanted.countsNote", { date: fmtDate(Date.parse(sightingsAsOf)) })),
+    // The same list for the other regions — a row of places, as the region
+    // category pages offer "the trees of the other regions".
+    el("div", { class: "card", style: "margin-top:1rem" }, [
+      el("p", { style: "margin:0 0 0.4rem;font-weight:650" }, t("wanted.otherRegions")),
+      el("div", { style: "display:flex;flex-wrap:wrap;gap:0.4rem" }, others.map((r) =>
+        el("a", {
+          class: "btn btn-secondary btn-compact",
+          style: "flex:0 1 auto;text-decoration:none",
+          href: wantedRegionHref(r.meta.id),
+        }, regionShort(r.meta)))),
+    ]),
+  );
+}
+
 export function renderInvasive(main: HTMLElement, param?: string): void {
   clear(main);
+  const regionId = wantedRegionParam(param);
+  const listRegion = regionId ? REGIONS.find((r) => r.meta.id === regionId) : undefined;
+  if (listRegion) {
+    renderInvasiveRegion(main, listRegion);
+    return;
+  }
   const inv = param ? getInvasive(param) : undefined;
   const places = inv ? wantedRowsFor(inv.id) : [];
   if (!inv || !places.length) {
@@ -132,7 +177,7 @@ function placeCard(region: RegionDef, row: ReturnType<typeof wantedRowsFor>[numb
   return el("div", { class: "card", style: "margin:0.6rem 0 0" }, [
     el("div", { class: "wanted-meta", style: "margin:0" }, [
       el("span", { class: "wanted-rank" }, fmtNumber(row.rank)),
-      el("a", { href: `#/regions/${region.meta.id}`, style: "font-weight:700" }, regionName(region.meta)),
+      el("a", { href: wantedRegionHref(region.meta.id), style: "font-weight:700" }, regionName(region.meta)),
     ]),
     el("div", { class: "wanted-meta" }, [
       row.level ? pressureBadge(row.level, row.link.listing) : null,

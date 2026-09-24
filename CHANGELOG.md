@@ -31,6 +31,16 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Added
+
+- Each region's five most-wanted invasives now have a page of their own, with
+  a preview picture listing all five, so you can send a neighbour one link.
+  https://indigene.app/invasives/in/pnw
+
+### Changed
+
+- Internal: `app/package-lock.json` now says 0.33.0, matching `package.json`.
+
 ### Changed
 
 - The "what to do this season" card now knows which side of the equator your

@@ -14,6 +14,7 @@ import { filterField, highlight, norm } from "../components/filter-field";
 import type { FilterRow, FilterSection } from "../components/filter-field";
 import { silhouetteFor } from "../components/plant-card";
 import { plantThumb } from "../components/plant-thumb";
+import { societiesSection } from "../components/societies-section";
 import { sectionHeading } from "../components/section-link";
 import { keystoneIcon } from "../components/keystone-icon";
 import { regionStatGrid } from "../components/region-stats";
@@ -132,6 +133,10 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
     // Counted from the tie table, so this costs no extra download (see
     // `wildlifeIndex`) — the page still fetches exactly one region's plants.
     ...wildlifeSection(region),
+    // And who to ask. The roster says what belongs here; this says who else
+    // already knows, which is the question a reader asks after their first
+    // six plants go in. Last on the page because that is when it comes up.
+    ...societiesSection(region.meta.id),
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("regions") }, t("region.featured")),
       el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("wildlife.rankForSpot")),

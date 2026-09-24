@@ -131,13 +131,23 @@
         "matteuccia-struthiopteris": "absent"
       }
     },
-    "pnw": {
+    "nz-auckland": {
       "area": {
-        "en": "Washington and Oregon",
-        "fr": "Washington et l'Oregon"
+        "en": "the North Island of New Zealand",
+        "fr": "l'île du Nord de Nouvelle-Zélande"
       },
       "coarse": false,
-      "checked": "2026-09-21",
+      "checked": "2026-09-24",
+      "rows": 47,
+      "unconfirmed": {}
+    },
+    "pnw": {
+      "area": {
+        "en": "Washington, Oregon and British Columbia",
+        "fr": "Washington, l'Oregon et la Colombie-Britannique"
+      },
+      "coarse": false,
+      "checked": "2026-09-24",
       "rows": 85,
       "unconfirmed": {
         "achillea-millefolium": "absent"

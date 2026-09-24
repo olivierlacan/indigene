@@ -2,9 +2,9 @@
   "source": "World Checklist of Vascular Plants (WCVP), Royal Botanic Gardens Kew",
   "license": "CC BY 4.0",
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
-  "area": "Washington & Oregon (TDWG:WAS, ORE)",
+  "area": "Washington, Oregon & British Columbia (TDWG:WAS, ORE, BRC)",
   "region": "pnw",
-  "ranAt": "2026-09-21T06:59:11.849Z",
+  "ranAt": "2026-09-24T08:31:18.007Z",
   "rows": [
     {
       "id": "quercus-garryana",
@@ -13,7 +13,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -24,7 +25,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -35,7 +37,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -46,7 +49,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -57,7 +61,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": "Populus tristis Fisch."
     },
@@ -68,7 +73,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -79,7 +85,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -90,7 +97,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -101,7 +109,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -112,7 +121,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -123,7 +133,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -134,7 +145,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -145,7 +157,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -156,7 +169,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -167,7 +181,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -178,7 +193,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -189,7 +205,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -200,7 +217,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -211,7 +229,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -222,7 +241,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -233,7 +253,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -244,7 +265,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -255,7 +277,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -266,7 +289,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -277,7 +301,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -288,7 +313,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -299,7 +325,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -310,7 +337,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -321,7 +349,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -332,7 +361,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -343,7 +373,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -354,7 +385,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -365,7 +397,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -376,7 +409,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -387,7 +421,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -398,7 +433,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -409,7 +445,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -420,7 +457,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -431,7 +469,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -442,7 +481,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -453,7 +493,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -464,7 +505,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -475,7 +517,8 @@
       "verdict": "ABSENT",
       "areas": {
         "WAS": "ABSENT",
-        "ORE": "ABSENT"
+        "ORE": "ABSENT",
+        "BRC": "ABSENT"
       },
       "viaSynonym": null
     },
@@ -486,7 +529,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -497,7 +541,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -508,7 +553,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -519,7 +565,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -530,7 +577,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "ABSENT",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -541,7 +589,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -552,7 +601,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -563,7 +613,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -574,7 +625,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -585,7 +637,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -596,7 +649,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": "Epilobium angustifolium L."
     },
@@ -607,7 +661,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -618,7 +673,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -629,7 +685,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "ABSENT",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "ABSENT"
       },
       "viaSynonym": null
     },
@@ -640,7 +697,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -651,7 +709,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -662,7 +721,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -673,7 +733,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -684,7 +745,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -695,7 +757,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -706,7 +769,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -717,7 +781,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -728,7 +793,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -739,7 +805,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -750,7 +817,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -761,7 +829,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "ABSENT"
       },
       "viaSynonym": null
     },
@@ -772,7 +841,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -783,7 +853,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -794,7 +865,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -805,7 +877,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -816,7 +889,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -827,7 +901,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -838,7 +913,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": "Blechnum spicant (L.) Roth"
     },
@@ -849,7 +925,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -860,7 +937,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -871,7 +949,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -882,7 +961,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -893,7 +973,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -904,7 +985,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -915,7 +997,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -926,7 +1009,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -937,7 +1021,8 @@
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
-        "ORE": "NATIVE"
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     }

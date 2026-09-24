@@ -5651,3 +5651,30 @@ body[data-layout="profile"] .wip-banner-text {
   margin: 0.25rem 1rem 0.6rem;
   border-radius: var(--radius);
 }
+
+/* --- Native plant groups, last on a region page -------------------------- */
+/* A list of links off the site, so it reads as a list and not as cards: the
+   name carries the weight, the phrase after it is quiet enough to skim past.
+   On a phone the two stack, because "Pennsylvania Native Plant Society" and
+   "local chapters and meetings" do not share a 360 px line. */
+.society-list {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+.society-row {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.5rem;
+  align-items: baseline;
+}
+.society-name {
+  font-weight: 600;
+}
+.society-what {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}

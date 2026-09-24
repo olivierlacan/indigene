@@ -132,9 +132,19 @@ places; we don't have to invent it, only to know where the rungs are.
 
 The gap Indigene sits in is the first rung, and the rung after it is where
 people fall off: somebody plants six natives, likes it, and then has nowhere
-obvious to go. Every organization in the directory is that next step. Saying so
-inside the app — *here is the group nearest you* — is the one product change
-this whole exercise argues for, and it is not built yet.
+obvious to go. Every organization in the directory is that next step.
+
+**The app now says so.** Each region page ends with the groups whose ground it
+is — `app/src/data/societies.ts`, three to five per region, chosen for the
+region rather than the country. That changes the ask in the letters above: we
+are no longer asking a chapter to consider a tool, we are telling them their
+own region page already points readers at them.
+
+Two are missing and should be added once somebody can load them: the **Native
+Plant Society of British Columbia** (its addresses disagree — `npsbc.ca`, a
+`vcn.bc.ca` path and a WordPress mirror — and none could be loaded to settle
+which is live) and **Forest & Bird** for Auckland. A live page is the bar for a
+link we put in front of a reader.
 
 ## Rules
 

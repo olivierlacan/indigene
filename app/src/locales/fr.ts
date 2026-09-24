@@ -1256,6 +1256,17 @@ export const fr: Dict = {
   // rang sont invariables (« vulnérable », « en danger »…), donc pas de souci
   // d'accord entre une plante et un animal. Ce que signifie un rang, et qui le
   // publie, est expliqué une seule fois sur /guide/conservation (lien `learnMore`).
+  "society.title": "Associations de plantes indigènes",
+  "society.lede": "Ventes de plantes, sorties et conseils de gens qui jardinent ce sol.",
+  "society.what.chapters": "sections locales et rencontres",
+  "society.what.walks": "sorties et conférences",
+  "society.what.sales": "ventes de plantes indigènes",
+  "society.what.advice": "conseils de culture",
+  "society.what.certify": "labellise les jardins de nature",
+  "society.what.records": "la flore, recensée",
+  "society.what.woodland": "plantation de forêts indigènes",
+  "society.what.provenance": "pépinières d'origine locale",
+  "society.what.pollinators": "guides de plantation pour pollinisateurs",
   "native.checklist": "la Liste mondiale de Kew",
   "native.confirmedBefore": "Indigène en {area} — ",
   "native.confirmedAfter": " le confirme, vérifié en {when}.",

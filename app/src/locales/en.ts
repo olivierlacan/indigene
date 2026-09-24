@@ -1248,6 +1248,20 @@ export const en = {
   // The line under "why it belongs here": who re-checked the native claim, and
   // when. Split around the linked checklist name, which is why it is three
   // fragments rather than one sentence with a placeholder.
+  // The last section on a region page: who else already knows this flora.
+  // The "what they do" phrases are shared — four societies running chapters
+  // share one string to write and one to translate.
+  "society.title": "Native plant groups",
+  "society.lede": "Plant sales, walks, and advice from people who garden this ground.",
+  "society.what.chapters": "local chapters and meetings",
+  "society.what.walks": "field walks and talks",
+  "society.what.sales": "native plant sales",
+  "society.what.advice": "growing advice",
+  "society.what.certify": "certifies wildlife gardens",
+  "society.what.records": "the flora, recorded",
+  "society.what.woodland": "native woodland planting",
+  "society.what.provenance": "nurseries selling local stock",
+  "society.what.pollinators": "pollinator planting guides",
   "native.checklist": "Kew's World Checklist",
   "native.confirmedBefore": "Native in {area} — ",
   "native.confirmedAfter": " agrees, checked {when}.",

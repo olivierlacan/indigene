@@ -12,10 +12,15 @@
 // Zealand has Plant-SyNZ, which is far richer (see `nz-host-counts.mjs`).
 //
 // Writes:
-//   data/sources/hosts/hosts-raw.json     every record, 52 MB — git-ignored
-//   data/sources/hosts/genus-counts.json  committed — for each southern area,
-//                                         distinct Lepidoptera species per host
-//                                         genus
+//   data/sources/hosts/hosts-raw.json          every record, 48 MB — git-ignored
+//   data/sources/hosts/records/<area>.csv      committed — the full HOSTS records
+//                                              for each candidate area, so the
+//                                              evidence behind a count survives
+//                                              upstream changes and can be read
+//                                              without re-downloading 48 MB
+//   data/sources/hosts/genus-counts.json       committed — for each area,
+//                                              distinct Lepidoptera species per
+//                                              host genus
 //
 // The Data Portal serves at most 1,000 records a request and refuses deep
 // offsets, so this walks its `after` cursor — 141 polite requests.
@@ -33,6 +38,18 @@ const UA = "IndigeneHosts/0.1 (https://github.com/olivierlacan/indigene)";
 const DIR = join(dirname(fileURLToPath(import.meta.url)), "..", "..", "data", "sources", "hosts");
 const RAW = join(DIR, "hosts-raw.json");
 const OUT = join(DIR, "genus-counts.json");
+const RECORDS_DIR = join(DIR, "records");
+
+/** The columns kept in the archived CSVs, in HOSTS' own names and order. */
+const COLUMNS = [
+  "HOSTS ID", "Insect Family", "Insect Genus", "Insect Species", "Insect Subspecies", "Insect Author",
+  "Hostplant Family", "Hostplant Genus", "Hostplant Species", "Hostplant Subspecies/var",
+  "Location", "Damage", "Lab Rearing",
+];
+const csvCell = (v) => {
+  const s = v == null ? "" : String(v);
+  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+};
 
 /**
  * HOSTS locations that stand for each southern area. Only the country (or the
@@ -79,8 +96,20 @@ if (existsSync(RAW) && !process.argv.includes("--refresh")) {
 }
 
 const out = {};
+mkdirSync(RECORDS_DIR, { recursive: true });
 for (const [area, locations] of Object.entries(AREAS)) {
   const want = new Set(locations);
+  // Every record for the area, sorted by host plant then moth so a re-fetch
+  // diffs line by line.
+  const mine = rows
+    .filter((r) => want.has(r.Location))
+    .sort((a, b) =>
+      `${a["Hostplant Genus"]} ${a["Hostplant Species"]} ${a["Insect Genus"]} ${a["Insect Species"]} ${a["HOSTS ID"]}`
+        .localeCompare(`${b["Hostplant Genus"]} ${b["Hostplant Species"]} ${b["Insect Genus"]} ${b["Insect Species"]} ${b["HOSTS ID"]}`));
+  writeFileSync(
+    join(RECORDS_DIR, `${area}.csv`),
+    [COLUMNS.join(","), ...mine.map((r) => COLUMNS.map((c) => csvCell(r[c])).join(","))].join("\n") + "\n",
+  );
   const byGenus = new Map();
   let records = 0;
   for (const r of rows) {

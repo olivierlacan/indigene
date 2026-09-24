@@ -12,7 +12,26 @@
 | File | Committed? | What |
 |---|---|---|
 | `hosts-raw.json` | no (48 MB) | All 140,485 records: moth, host plant, location |
-| `genus-counts.json` | yes (26 KB) | For each southern area, distinct moth and butterfly species per host genus |
+| `records/<area>.csv` | yes (~510 KB in all) | **The archive:** every HOSTS record for each candidate area, all of HOSTS' columns, sorted by host plant then moth |
+| `genus-counts.json` | yes (26 KB) | For each area, distinct moth and butterfly species per host genus |
+
+### The archive
+
+| File | HOSTS locations | Records | For |
+|---|---|---|---|
+| `records/australia.csv` | Australia | 2,856 | Sydney |
+| `records/southern-africa.csv` | South Africa, Southern Africa | 2,311 | Cape Town |
+| `records/rio-de-la-plata.csv` | Argentina, Uruguay | 268 | Buenos Aires |
+| `records/new-zealand.csv` | New Zealand | 357 | a cross-check on Plant-SyNZ |
+
+It's kept so the evidence behind a count survives upstream edits and can be
+read without the 48 MB download. HOSTS is CC0, so keeping it is fine. The counts
+use fewer rows than the archive (2,635 for Australia): they skip rows with no
+named host genus, like HOSTS' "Polyphagous" and "Detritophagous" categories.
+
+Broad locations are left out on purpose: "Australasia", "Indo-Australian",
+"Neotropical" and "East Africa" mix in records from New Guinea, the Amazon or
+Kenya. `AREAS` in `app/scripts/fetch-hosts.mjs` is where to add one.
 
 The Data Portal serves 1,000 records per request and refuses deep offsets, so
 the script walks its `after` cursor. Its homepage returns 403 to scripts and so

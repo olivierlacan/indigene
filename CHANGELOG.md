@@ -62,7 +62,8 @@ subtitle on the What's new page.
 - Internal: `npm run hosts:fetch` downloads HOSTS, the NHM's CC0 world database
   of Lepidoptera host plants, and counts moth species per host genus for each
   southern area (`data/sources/hosts/`). It's usable for Sydney, thin for the
-  Cape and near-empty for Argentina.
+  Cape and near-empty for Argentina. Every record for each candidate area is
+  archived as CSV in `data/sources/hosts/records/`.
 
 ### Changed
 

@@ -28,3 +28,6 @@ plant-synz/cache/
 # HOSTS, the full 52 MB download from `npm run hosts:fetch`. Only the derived
 # genus-counts.json is committed.
 hosts/hosts-raw.json
+
+# …but the per-area HOSTS records are an archive we keep (CC0, ~0.6 MB).
+!hosts/records/*.csv

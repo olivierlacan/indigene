@@ -70,7 +70,7 @@ subtitle on the What's new page.
   One shared reader now serves both scripts; BC's catalog count goes 108 → 130.
 - Link your iNaturalist username in [Settings](https://indigene.app/#/settings/inat) to bring the past year's plant sightings into a spot. Tick the natives you planted; invasives others have confirmed go on a to-deal-with list.
 - Privacy: your iNaturalist username stays on your device, goes only to iNaturalist, and never with a location. Remove it in Settings anytime.
-- Internal: `lib/inat-account.ts` (username in localStorage, never in backups or addresses), `lib/inat-import.ts` (v2 `fields=` request with no location fields; sorting against the spot region's roster and most-wanted list), `#/import` step, `SavedSpot.invasives` (round-trips through backups), `npm run import:check` plus an `iNaturalist import` workflow. Pages are fetched a second apart and one request is shared per visit. Bundle ~442 KB gzipped (+7 KB).
+- Internal: `lib/inat-account.ts` (username in localStorage, never in backups or addresses), `lib/inat-import.ts` (v2 `fields=` request with no location fields; sorting against the spot region's roster and most-wanted list), `#/import` step, `SavedSpot.invasives` (round-trips through backups), `npm run import:check` plus an `iNaturalist import` workflow. Pages are fetched a second apart and one request is shared per visit. Bundle ~443 KB gzipped (+7 KB).
 - Each region's five most-wanted invasives now have a page of their own, with
   a preview picture listing all five, so you can send a neighbour one link.
   https://indigene.app/invasives/in/pnw

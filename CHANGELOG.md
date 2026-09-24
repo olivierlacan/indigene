@@ -31,6 +31,13 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+## [0.34] - 2026-09-24
+
+**Auckland & Northland, south of the equator**
+
+[![The Auckland & Northland region page](docs/screenshots/pr-166/thumb.png)](docs/screenshots/pr-166/region-after-dark.png)
+[Before](docs/screenshots/pr-166/regions-before-dark.png) · [After](docs/screenshots/pr-166/regions-after-dark.png)
+
 ### Added
 
 - Regions: Auckland & Northland is on the map — 47 native plants from Cape
@@ -2622,7 +2629,8 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/c4e7c44...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/c1efb0a...HEAD
+[0.34]: https://github.com/olivierlacan/indigene/compare/c4e7c44...c1efb0a
 [0.33]: https://github.com/olivierlacan/indigene/compare/e0f70ef...c4e7c44
 [0.32]: https://github.com/olivierlacan/indigene/compare/655cb62...e0f70ef
 [0.31]: https://github.com/olivierlacan/indigene/compare/46a1ff0...655cb62

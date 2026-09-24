@@ -79,7 +79,9 @@ record counts. None of it is hemisphere-specific.
 ## 4. Order
 
 1. **Auckland.** English; one WCVP area that matches the region; the best
-   single host source (Plant-SyNZ).
+   single host source (Plant-SyNZ). **Shipped in 0.34** (PR #166) with 47
+   plants, box-only selection and host counts marked "not counted" until
+   the probe and a host source are reachable.
 2. **Sydney.** English; the most readers; host counts start from HOSTS.
 3. **Cape Town.** English; the richest flora of the four, so the list is about
    choosing. Planting there is an autumn job (April–June, with the rains), so a

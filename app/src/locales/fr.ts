@@ -1258,6 +1258,8 @@ export const fr: Dict = {
   "lookalike.listedRegulation": "{by} l'inscrit comme {as}. {means}",
   "lookalike.means.waClassA":
     "Encore assez rare ici pour que l'État impose la destruction de chaque pied trouvé et en interdise la vente.",
+  "lookalike.means.waClassB":
+    "Cette classe signifie qu'elle est courante dans une partie de l'État : la lutte est obligatoire là où elle est encore rare, et laissée à chaque comté ailleurs.",
   "lookalike.means.waClassC":
     "Cette classe ne dit rien de sa nocivité : elle signifie que la plante est déjà partout, et que l'État laisse la lutte à chaque comté au lieu de l'imposer.",
   "lookalike.unassessed":
@@ -2027,6 +2029,25 @@ export const fr: Dict = {
   "nearby.nativeToOther": "indigène d'une autre région",
   "nearby.nativeElsewhere":
     "Nos données donnent {name} comme {belongs}, et non de {region}. Elle peut apparaître sur iNaturalist là-bas comme sujet planté ou échappé de culture, mais nous ne la présenterons pas comme une indigène locale là où elle n'a pas sa place — ce serait le contraire de ce à quoi Indigene sert.",
+  // ---------------------------------------------------------------------
+  // Les invasives les plus recherchées : la liste classée d'une région.
+  // ---------------------------------------------------------------------
+  "wanted.title": "Invasives les plus recherchées",
+  "wanted.lede":
+    "Les plantes invasives à arracher en premier ici : classées selon la pression qu'elles exercent, puis selon le nombre d'observations à l'état sauvage. Touchez-en une pour apprendre à la reconnaître.",
+  "wanted.ledeUnrated":
+    "Les plantes invasives les plus observées ici. Personne n'a encore évalué la pression de chacune sur ce territoire : elles sont classées selon les observations seules. Touchez-en une pour apprendre à la reconnaître.",
+  "wanted.rankAria": "Numéro {n}",
+  "wanted.sightings": "{n} observations à l'état sauvage sur iNaturalist dans le cadre de cette région",
+  "wanted.countsNote":
+    "Les observations sont les données sauvages d'iNaturalist dans le cadre de cette région, comptées le {date}. Elles mesurent où les gens ont regardé autant que là où la plante pousse.",
+  "wanted.growInstead": "Que planter à la place",
+  "wanted.tellApart": "Avec quoi on la confond",
+  "wanted.photosHere": "Voir les photos d'ici",
+  "wanted.noPhotos": "Aucune photo vérifiée de cette région sur iNaturalist pour l'instant.",
+  "wanted.onLists": "Parmi les plus recherchées : {places}",
+  "wanted.placeLink": "{region} (n° {n})",
+
   "wlNearby.seeItNear": "Le voir près de chez vous",
   "wlNearby.seeItNearLede":
     "Des photos iNaturalist vérifiées, près d'un lieu que vous choisissez.",

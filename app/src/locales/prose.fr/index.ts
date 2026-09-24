@@ -13,7 +13,7 @@
 // claiming the same taxon is an error, not a silent last-one-wins.
 //
 // The animals and the impostors get their own two files, because neither
-// belongs to a region: `data/wildlife.ts` is one pool the whole catalog draws
+// belongs to a region (and the ornamentals and most-wanted invasives likewise): `data/wildlife.ts` is one pool the whole catalog draws
 // from, and a look-alike is cited by whichever region confuses it.
 //
 // Translation, not paraphrase, with three deliberate exceptions:
@@ -39,6 +39,7 @@ import { FRANCE_ATLANTIC } from "./france-atlantic";
 import { FRANCE_CONTINENTAL } from "./france-continental";
 import { FRANCE_MEDITERRANEAN } from "./france-mediterranean";
 import { ALTERNATIVES_FR } from "./alternatives";
+import { INVASIVES_FR } from "./invasives";
 import { LOOKALIKES_FR } from "./lookalikes";
 import { MID_ATLANTIC } from "./mid-atlantic";
 import { PNW } from "./pnw";
@@ -55,4 +56,5 @@ export const PROSE_FR: ProseTable = {
   ...WILDLIFE_FR,
   ...LOOKALIKES_FR,
   ...ALTERNATIVES_FR,
+  ...INVASIVES_FR,
 };

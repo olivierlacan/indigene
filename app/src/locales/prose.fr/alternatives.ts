@@ -57,6 +57,12 @@ export const ALTERNATIVES_FR: ProseTable = {
     },
   },
   "Rhododendron ponticum": {
+    // Les signes pour la reconnaître (data/invasives.ts).
+    marks: [
+      { feature: "Feuilles", text: "Coriaces, sombres et persistantes, plus pâles dessous." },
+      { feature: "Fleurs", text: "De grosses grappes mauves au début de l'été." },
+      { feature: "Où", text: "Des fourrés denses sous les chênaies, sur un sol nu." },
+    ],
     altRole: "Écran persistant à fleurs",
     altOrigin: "Indigène de la péninsule Ibérique et des rivages de la mer Noire.",
     altBlurb:

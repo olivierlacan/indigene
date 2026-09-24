@@ -49,7 +49,7 @@
 //
 // Callers that don't know their region (there are none today) simply get the
 // plain key, which is a real translation of a real row — not a blank.
-import type { AlternativeLink, Lookalike, LookalikeLink, Ornamental, Plant, SupportLink, SwapEdge, TellApart, Wildlife } from "../types";
+import type { AlternativeLink, Invasive, InvasiveMark, Lookalike, LookalikeLink, Ornamental, Plant, SupportLink, SwapEdge, TellApart, Wildlife } from "../types";
 import { getLang } from "./i18n";
 
 /** The prose fields on a plant row that a locale may override. */
@@ -89,6 +89,9 @@ export interface TaxonProse {
   /** Alternative ties, keyed by the *native* plant's id — one ornamental's
    *  swaps live together, the same shape as `lookalikeNotes`. */
   alternativeNotes?: Record<string, { why?: string; edges?: SwapEdge[] }>;
+  /** Most-wanted invasives only: how to know the plant (`Invasive.marks`).
+   *  One list per taxon, whatever region it's wanted in. */
+  marks?: InvasiveMark[];
 }
 
 export type ProseTable = Record<string, TaxonProse>;
@@ -280,6 +283,21 @@ export function lookalikesUntranslated(
       tie?.tells?.length !== link.tells.length
     );
   });
+}
+
+// ---- Most-wanted invasives ----
+
+/** How to know it, in the reader's language — all three marks or none, the
+ *  same rule the tells follow. */
+export function invasiveMarks(inv: Invasive): InvasiveMark[] {
+  const translated = entry(inv.latin)?.marks;
+  return translated?.length === inv.marks.length ? translated : inv.marks;
+}
+
+/** Are any of these plants' marks still in the authored English? */
+export function invasivesUntranslated(invasives: Invasive[]): boolean {
+  if (getLang() === "en") return false;
+  return invasives.some((inv) => entry(inv.latin)?.marks?.length !== inv.marks.length);
 }
 
 // ---- Native alternatives ----

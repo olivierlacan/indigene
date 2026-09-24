@@ -4,6 +4,7 @@
 //   npm run hero:inat                      # fill every gap
 //   npm run hero:inat -- --kind wildlife    # only the animals
 //   npm run hero:inat -- --kind lookalikes  # only the impostors
+//   npm run hero:inat -- --kind invasives   # only the most-wanted invasives
 //   npm run hero:inat -- --only monarch     # one subject
 //   npm run hero:inat -- --force            # refetch the ones already stored
 //   npm run hero:inat -- --dry-run          # print the plan, ask nothing
@@ -69,6 +70,9 @@ const OUT = {
   // ornamental id, for the same reason the impostors do: some share an id with
   // an impostor (Norway maple, Callery pear) and would collide in one table.
   alternative: resolve(HERE, "../src/data/inat-alternatives.json"),
+  // The most-wanted invasives: their own file for the same reason again — ivy,
+  // holly and broom are natives on one of our rosters and invasives elsewhere.
+  invasive: resolve(HERE, "../src/data/inat-invasives.json"),
 };
 const REVIEWED = {
   plant: resolve(HERE, "../src/data/hero-photos.json"),
@@ -78,6 +82,7 @@ const REVIEWED = {
   lookalike: null,
   // Nor do the ornamentals — the same reasoning, and the same one photograph.
   alternative: null,
+  invasive: null,
 };
 const API = "https://api.inaturalist.org/v1/taxa";
 
@@ -107,7 +112,13 @@ const limit = flag("--limit") ? Number(flag("--limit")) : undefined;
 const dryRun = args.includes("--dry-run");
 const force = args.includes("--force");
 
-const KINDS = { plants: "plant", wildlife: "wildlife", lookalikes: "lookalike", alternatives: "alternative" };
+const KINDS = {
+  plants: "plant",
+  wildlife: "wildlife",
+  lookalikes: "lookalike",
+  alternatives: "alternative",
+  invasives: "invasive",
+};
 if (!Object.keys(KINDS).includes(onlyKind) && onlyKind !== "all") {
   console.error(`--kind must be ${Object.keys(KINDS).join(", ")} or all (got "${onlyKind}").`);
   process.exit(1);
@@ -119,6 +130,7 @@ const { REGISTRY } = await loader.load("/src/data/registry.ts");
 const { WILDLIFE } = await loader.load("/src/data/wildlife.ts");
 const { LOOKALIKES } = await loader.load("/src/data/lookalikes.ts");
 const { ORNAMENTALS } = await loader.load("/src/data/alternatives.ts");
+const { INVASIVES } = await loader.load("/src/data/invasives.ts");
 const { buildTaxaUrl, pickTaxon } = await loader.load("/src/lib/inaturalist.ts");
 await loader.close();
 
@@ -134,6 +146,7 @@ const reviewed = {
   wildlife: readJson(REVIEWED.wildlife),
   lookalike: {},
   alternative: {},
+  invasive: {},
 };
 // Each output file read once, however many kinds write to it.
 const stored = {};
@@ -175,6 +188,12 @@ if (wants("alternative")) {
   // same way and scoped to plants.
   for (const o of ORNAMENTALS) {
     jobs.push({ subject: "alternative", id: o.id, scope: { name: o.latin, iconic: "Plantae" }, name: o.latin });
+  }
+}
+
+if (wants("invasive")) {
+  for (const inv of INVASIVES) {
+    jobs.push({ subject: "invasive", id: inv.id, scope: { name: inv.latin, iconic: "Plantae" }, name: inv.latin });
   }
 }
 

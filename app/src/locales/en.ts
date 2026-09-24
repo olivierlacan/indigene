@@ -1256,6 +1256,8 @@ export const en = {
   "lookalike.listedRegulation": "{by} lists it {as}. {means}",
   "lookalike.means.waClassA":
     "Still rare enough here that the state requires every plant found to be destroyed, and bans its sale.",
+  "lookalike.means.waClassB":
+    "That class means it's common in parts of the state: control is required where it's still rare, and left to each county elsewhere.",
   "lookalike.means.waClassC":
     "That class isn't a verdict on how bad it is — it means the plant is already everywhere, so the state leaves control to each county instead of requiring it.",
   "lookalike.unassessed":
@@ -2037,6 +2039,25 @@ export const en = {
   "nearby.nativeToOther": "native to another region",
   "nearby.nativeElsewhere":
     "Our data lists {name} as {belongs}, not {region}. It may turn up on iNaturalist there as a planted or escaped specimen, but we won't showcase it as a local native where it doesn't belong — that's the opposite of what Indigene is for.",
+  // ---------------------------------------------------------------------
+  // Most-wanted invasives: the ranked list on a region's page.
+  // ---------------------------------------------------------------------
+  "wanted.title": "Most-wanted invasives",
+  "wanted.lede":
+    "The invasive plants to pull first here: ranked by how hard each one pushes, then by how often it's been recorded wild. Tap one to learn to spot it.",
+  "wanted.ledeUnrated":
+    "The invasive plants recorded most often here. Nobody has rated how hard each one pushes on this ground, so they're ranked by sightings alone. Tap one to learn to spot it.",
+  "wanted.rankAria": "Number {n}",
+  "wanted.sightings": "{n} wild sightings on iNaturalist in this region's box",
+  "wanted.countsNote":
+    "Sightings are wild records on iNaturalist inside this region's box, counted {date}. They measure where people have looked as well as where the plant grows.",
+  "wanted.growInstead": "What to grow instead",
+  "wanted.tellApart": "What it's mistaken for",
+  "wanted.photosHere": "Show photos from here",
+  "wanted.noPhotos": "No verified photos from this region on iNaturalist yet.",
+  "wanted.onLists": "Most wanted: {places}",
+  "wanted.placeLink": "{region} (#{n})",
+
   "wlNearby.seeItNear": "See it near you",
   "wlNearby.seeItNearLede":
     "Community-verified iNaturalist photos, near a place you pick.",

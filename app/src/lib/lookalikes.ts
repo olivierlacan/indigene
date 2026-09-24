@@ -123,12 +123,12 @@ export interface LookalikeIndexRow {
  * bottom of everything: "not scored" is an absence of knowledge, not a finding
  * that it is harmless.
  */
-const PRESSURE_RANK: Record<PressureLevel, number> = { transforms: 0, spreads: 1, patchy: 2 };
+export const PRESSURE_RANK: Record<PressureLevel, number> = { transforms: 0, spreads: 1, patchy: 2 };
 
 /** The pressure level a tie carries, or null — a regulation never yields one
  *  (see `LookalikeListing`: a weed class says what the law asks, not how much
  *  harm is done), and most ties outside an assessed region carry nothing. */
-export function pressureOf(link: LookalikeLink): PressureLevel | null {
+export function pressureOf(link: Pick<LookalikeLink, "listing">): PressureLevel | null {
   return link.listing?.kind === "impact" ? link.listing.level : null;
 }
 

@@ -1,0 +1,89 @@
+{
+  "asOf": "2026-09-24",
+  "counts": {
+    "mid-atlantic": {
+      "alliaria-petiolata": 94278,
+      "celastrus-orbiculatus": 54024,
+      "elaeagnus-umbellata": 47066,
+      "reynoutria-japonica": 46560,
+      "lythrum-salicaria": 45005
+    },
+    "north-michigan": {
+      "centaurea-stoebe": 1804,
+      "elaeagnus-umbellata": 1020,
+      "securigera-varia": 818,
+      "lythrum-salicaria": 552,
+      "lonicera-morrowii": 441
+    },
+    "pnw": {
+      "cytisus-scoparius": 19331,
+      "geranium-robertianum": 17815,
+      "ilex-aquifolium": 14953,
+      "hedera-helix": 11882,
+      "jacobaea-vulgaris": 10475
+    },
+    "ca-south-coast": {
+      "spartium-junceum": 4391,
+      "carpobrotus-edulis": 4021,
+      "oncosiphon-pilulifer": 3384,
+      "arundo-donax": 3321,
+      "cortaderia-selloana": 2815
+    },
+    "ca-central-coast": {
+      "genista-monspessulana": 11570,
+      "rubus-armeniacus": 10168,
+      "centaurea-solstitialis": 6628,
+      "carpobrotus-edulis": 5362,
+      "hedera-helix": 4296
+    },
+    "florida-central": {
+      "schinus-terebinthifolia": 6953,
+      "urena-lobata": 6520,
+      "ardisia-crenata": 4693,
+      "nephrolepis-cordifolia": 4520,
+      "ludwigia-peruviana": 3875
+    },
+    "florida-south": {
+      "schinus-terebinthifolia": 5669,
+      "urena-lobata": 2700,
+      "abrus-precatorius": 2675,
+      "dioscorea-bulbifera": 2024,
+      "ardisia-elliptica": 1992
+    },
+    "france-atlantic": {
+      "buddleja-davidii": 4935,
+      "robinia-pseudoacacia": 3644,
+      "prunus-laurocerasus": 3293,
+      "reynoutria-japonica": 2968,
+      "senecio-inaequidens": 2771
+    },
+    "france-continental": {
+      "robinia-pseudoacacia": 5078,
+      "ailanthus-altissima": 3699,
+      "impatiens-glandulifera": 1842,
+      "buddleja-davidii": 1581,
+      "reynoutria-japonica": 1354
+    },
+    "france-mediterranean": {
+      "agave-americana": 1532,
+      "robinia-pseudoacacia": 1376,
+      "ailanthus-altissima": 1250,
+      "oxalis-pes-caprae": 1192,
+      "carpobrotus-edulis": 1058
+    },
+    "france-alpine": {
+      "buddleja-davidii": 875,
+      "phytolacca-americana": 800,
+      "robinia-pseudoacacia": 756,
+      "ailanthus-altissima": 506,
+      "reynoutria-japonica": 448
+    },
+    "ireland": {
+      "buddleja-davidii": 826,
+      "rhododendron-ponticum": 747,
+      "prunus-laurocerasus": 599,
+      "impatiens-glandulifera": 597,
+      "gunnera-tinctoria": 332
+    }
+  }
+}

@@ -374,7 +374,7 @@ export type PressureLevel = "transforms" | "spreads" | "patchy";
  * so that a new category can't ship without its explanation being written, and
  * so two species in the same class can never be given different accounts of it.
  */
-export type ListingMeans = "waClassA" | "waClassC";
+export type ListingMeans = "waClassA" | "waClassB" | "waClassC";
 
 export type LookalikeListing =
   | {
@@ -423,6 +423,64 @@ export interface LookalikeLink {
   /** How to tell them apart, most decisive tell first. */
   tells: TellApart[];
   /** A dependable, citable source for the confusion and the tells. */
+  basis: string;
+}
+
+// ---------------------------------------------------------------------------
+// Most wanted: the worst invasives in each region, and how to know one.
+//
+// The look-alike layer only meets an invasive when it happens to resemble a
+// native, so a region's worst offender — garlic mustard, air potato, stinknet —
+// could go unmentioned because nothing on our lists looks like it. This layer
+// asks the question directly: *which invasives here are worth pulling first,
+// and how do I recognise one?*
+//
+// Same two-part shape as the other layers:
+//
+//   1. INVASIVES — the catalog. Each plant described once, by the marks a
+//      person can check standing in front of it. Japanese knotweed is Japanese
+//      knotweed in Virginia and in Burgundy.
+//
+//   2. MOST_WANTED — the ties, keyed by region. Each names the plant and what
+//      this region's own authority says about it (the same `LookalikeListing`
+//      the look-alikes carry, and the same "no rank where nobody ranked" rule).
+//
+// The order is not ours to choose. `lib/invasives.ts` ranks a region's list by
+// the authority's rating first — the judgement of risk — and then by how often
+// the plant has actually been recorded inside the region's box on iNaturalist
+// (`data/invasive-counts.json`, from `npm run invasives:count`) — the measure
+// of spread.
+// ---------------------------------------------------------------------------
+
+/**
+ * One thing to check to know the plant. Read as a sentence: **Stems** — hollow,
+ * bamboo-like canes. One-sided, unlike `TellApart`: there is no native beside
+ * it to contrast with, only the plant itself.
+ */
+export interface InvasiveMark {
+  /** What you're looking at: "Leaves", "Stems", "Smell". */
+  feature: string;
+  /** What it shows. */
+  text: string;
+}
+
+/** One invasive plant, described once. */
+export interface Invasive {
+  id: string; // stable slug, e.g. "alliaria-petiolata"
+  common: string; // "Garlic mustard"
+  latin: string; // "Alliaria petiolata"
+  form: PlantForm;
+  /** How to know it, most decisive mark first. Three, checkable without a lens. */
+  marks: InvasiveMark[];
+}
+
+/** One region's tie to an invasive on its most-wanted list. */
+export interface WantedLink {
+  invasiveId: string;
+  /** What this region's authority says (see `LookalikeListing`). Absent where
+   *  nobody has rated this ground: the list is then ranked by sightings alone. */
+  listing?: LookalikeListing;
+  /** A dependable, citable source for calling it invasive here. */
   basis: string;
 }
 

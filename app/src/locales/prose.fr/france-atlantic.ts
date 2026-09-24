@@ -289,6 +289,12 @@ export const FRANCE_ATLANTIC: ProseTable = {
     },
   },
   "Ilex aquifolium": {
+    // Les signes pour la reconnaître (data/invasives.ts).
+    marks: [
+      { feature: "Feuilles", text: "Épaisses, luisantes et sombres, au bord ondulé et piquant." },
+      { feature: "Baies", text: "Rouges, en hiver, sur les pieds femelles." },
+      { feature: "Où", text: "Des semis à l'ombre d'un bois, loin de tout jardin." },
+    ],
     // Native here, impostor in the Pacific Northwest — so this one key carries
     // both kinds of writing, as `lib/prose.ts` expects. The plant fields serve
     // this page; `origin`/`blurb` serve `#/lookalikes/ilex-aquifolium`.
@@ -427,6 +433,12 @@ export const FRANCE_ATLANTIC: ProseTable = {
     },
   },
   "Cytisus scoparius": {
+    // Les signes pour la reconnaître (data/invasives.ts).
+    marks: [
+      { feature: "Tiges", text: "Vertes, anguleuses et presque sans feuilles — la plante ressemble à un balai." },
+      { feature: "Fleurs", text: "Des fleurs jaune vif en papillon tout le long des tiges, au printemps." },
+      { feature: "Gousses", text: "Plates, noircissant, et s'ouvrant d'un claquement en été." },
+    ],
     nativeNote:
       "L'arbuste d'or des landes atlantiques, des talus sableux et des tranchées de voie ferrée — un mois de mai breton, c'est en grande partie lui et l'ajonc.",
     careNote:
@@ -690,6 +702,12 @@ export const FRANCE_ATLANTIC: ProseTable = {
     },
   },
   "Hedera helix": {
+    // Les signes pour la reconnaître (data/invasives.ts).
+    marks: [
+      { feature: "Feuilles", text: "Persistantes, lobées sur les tiges qui grimpent, simples ovales sur celles qui fleurissent." },
+      { feature: "Tiges", text: "Des radicelles poilues la collent à l'écorce et aux murs." },
+      { feature: "Baies", text: "Des grappes rondes de baies noires à la fin de l'hiver." },
+    ],
     // Native here, impostor in the Mid-Atlantic — one key, both kinds of
     // writing (see `lib/prose.ts`). `origin`/`blurb` serve the look-alike page.
     origin:

@@ -5466,3 +5466,95 @@ body[data-layout="profile"] .wip-banner-text {
 .crops-page .counter > ol > li {
   margin: 0.65rem 0;
 }
+
+/* --- Most-wanted invasives (region page) ----------------------------------
+   A ranked list of folded cards. The closed row carries what a scan needs —
+   rank, picture, name, how hard it pushes, how often it's been seen — and
+   opening it is the "how do I know one?" answer. The global summary's
+   "Open ▾" pill is swapped for a bare chevron: the row is already full at
+   360 px, and the chevron needs no translating. */
+.wanted-list {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+.wanted-card {
+  margin: 0;
+  padding: 0.6rem 0.8rem;
+}
+.wanted-summary {
+  gap: 0.6rem;
+  align-items: center;
+  font-weight: 400;
+}
+.wanted-summary::after {
+  content: "▾";
+  align-self: center;
+  border: 0;
+  padding: 0 0.1rem;
+  font-size: 1rem;
+  color: var(--ink-soft);
+}
+details[open] > .wanted-summary::after {
+  content: "▴";
+  color: var(--ink-soft);
+  background: none;
+}
+.wanted-summary .plant-photo {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+/* The rank is the list's whole point, so it reads as a number first — a small
+   filled disc in the caution colour the "Takes over" badge wears. */
+.wanted-rank {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 999px;
+  background: var(--danger-bg);
+  color: var(--danger-ink);
+  font-weight: 750;
+  font-size: 0.95rem;
+}
+.wanted-names {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.wanted-name {
+  font-weight: 700;
+}
+.wanted-sub {
+  font-size: 0.85rem;
+}
+.wanted-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.2rem 0.6rem;
+  margin-top: 0.25rem;
+}
+.wanted-meta .card-stats {
+  padding-top: 0;
+  margin: 0;
+}
+.wanted-body {
+  padding-top: 0.4rem;
+}
+.wanted-marks {
+  margin: 0.2rem 0 0.6rem;
+}
+.wanted-marks dt {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: 0.45rem;
+}
+.wanted-marks dd {
+  margin: 0.05rem 0 0;
+}
+.wanted-links {
+  margin: 0 0 0.6rem;
+}

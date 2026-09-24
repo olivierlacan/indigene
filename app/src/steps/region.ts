@@ -26,6 +26,7 @@ import { t, tn, fmtNumber, getLang } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionNote, regionReference, localNameCoverage } from "../lib/names";
 import { prose } from "../lib/prose";
 import { reportRosterUntranslated } from "../components/wip-banner";
+import { mostWantedSection } from "../components/most-wanted";
 
 const FORM_ORDER: PlantForm[] = ["tree", "shrub", "perennial", "grass", "vine", "groundcover", "fern"];
 /** The category headings. A function, not a record: a record built at import
@@ -115,6 +116,12 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
     plantFilterField(allRows, sections),
     categoryChips(region, plants, null),
     ...groups,
+    // And what to pull. The roster answers "what belongs here"; this answers
+    // the question a person clearing a corner asks next — which of the plants
+    // that *don't* belong to go after first, and how to know one. Ranked by the
+    // region's own authority and by how often each has been recorded wild (see
+    // `lib/invasives.ts`), folded shut so it costs five rows until opened.
+    ...mostWantedSection(region),
     // And who eats them. A roster is half the answer to "what lives here" —
     // the plants are the other half's food — and the two were a page apart:
     // the animals had their own index and this page never named one.

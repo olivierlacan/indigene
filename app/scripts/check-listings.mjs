@@ -1,5 +1,5 @@
-// Check every `listing` in `app/src/data/lookalikes.ts` against the body that
-// issued it.
+// Check every `listing` in `app/src/data/lookalikes.ts` and
+// `app/src/data/invasives.ts` against the body that issued it.
 //
 //   node app/scripts/check-listings.mjs          # check every listing
 //   node app/scripts/check-listings.mjs --json   # machine-readable
@@ -126,9 +126,18 @@ function frenchList() {
       cache.set(url, pdfText(Buffer.from(await res.arrayBuffer())));
     }
     const text = cache.get(url);
-    const i = text.indexOf(latin);
-    if (i < 0) return null;
-    const headings = [...text.slice(0, i).matchAll(/Plantes? [Ee]xotiques?[^\n]{0,60}/g)];
+    // The species' own row, not a mention of it: the introduction names
+    // Japanese knotweed and ragweed in passing, in parentheses, long before the
+    // table does. A row carries the author and year straight after the name.
+    const row = new RegExp(`${latin.replace(/ /g, "\\s+")}\\s+[A-Z(][^,\\n]{0,40},\\s*\\d{4}`).exec(text);
+    if (!row) return null;
+    // The category headings the table uses, and only those — the introduction
+    // defines each one in a sentence that starts the same way.
+    const headings = [
+      ...text
+        .slice(0, row.index)
+        .matchAll(/Plante Exotique (?:Envahissante (?:implant|[ée]mergente)\S*|potentiellement invasive|[àa] pr[ée]occupation mineure)/g),
+    ];
     return headings.length ? headings[headings.length - 1][0].trim() : null;
   };
 }
@@ -283,7 +292,9 @@ const loader = await openLoader();
 let results;
 try {
   const { CONFUSIONS, LOOKALIKES } = await loader.load("/src/data/lookalikes.ts");
+  const { INVASIVES, MOST_WANTED } = await loader.load("/src/data/invasives.ts");
   const latinOf = new Map(LOOKALIKES.map((l) => [l.id, l.latin]));
+  const invasiveLatin = new Map(INVASIVES.map((i) => [i.id, i.latin]));
 
   /** Every listing we print, flattened: region, impostor, and what we claim. */
   const claims = [];
@@ -299,6 +310,21 @@ try {
           ...link.listing,
         });
       }
+    }
+  }
+
+  // The most-wanted lists repeat an authority's verdict the same way, so they
+  // are checked the same way. `plantId` names the list rather than a plant.
+  for (const [regionId, links] of Object.entries(MOST_WANTED)) {
+    for (const link of links) {
+      if (!link.listing) continue;
+      claims.push({
+        regionId,
+        plantId: "most-wanted",
+        id: link.invasiveId,
+        latin: invasiveLatin.get(link.invasiveId) ?? link.invasiveId,
+        ...link.listing,
+      });
     }
   }
 

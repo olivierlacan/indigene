@@ -93,7 +93,7 @@ record counts. None of it is hemisphere-specific.
 ## 4. Order
 
 1. **Auckland.** English; one WCVP area that matches the region; the best
-   single host source (Plant-SyNZ). **Shipped in 0.34** (PR #166) with 47
+   single host source (Plant-SyNZ). **Shipped in 0.35** (PR #166) with 47
    plants, RESOLVE ecoregion 173 and Plant-SyNZ caterpillar counts.
 2. **Sydney.** English; the most readers; host counts start from HOSTS.
 3. **Cape Town.** English; the richest flora of the four, so the list is about

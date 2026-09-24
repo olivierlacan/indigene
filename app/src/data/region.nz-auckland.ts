@@ -21,14 +21,15 @@ export const REGION: RegionMeta = {
   // (-37.69°) fall outside it, on purpose — the Waikato and the Bay of Plenty
   // want their own lists.
   //
-  // **Box only, for now.** South of the equator the ecoregion comes from
-  // RESOLVE (`resolve-2017`), whose hosted layer hasn't been confirmed from the
-  // build sandbox yet (`npm run probe:resolve`). That is safe here in a way it
-  // would not be in Canada: the box has sea on three sides and no other
-  // region's box anywhere near it, so there is no neighbour's list for a point
-  // to fall into by mistake. Add `ecoregion` with the probe's ECO_IDs when it
-  // answers.
+  // The box is the coarse claim; the RESOLVE code below refines it. Every
+  // point on land inside the box is in ecoregion 173 — so is Hamilton, just
+  // outside it, which is why the box's south edge, not the ecoregion, is what
+  // hands the Waikato to a list of its own one day.
   bounds: { minLat: -37.45, maxLat: -34.1, minLon: 172.0, maxLon: 176.0 },
+  // RESOLVE Ecoregions 2017, ECO_ID 173: Northland temperate kauri forests.
+  // Confirmed live (`npm run probe:resolve`) for Auckland, Whangārei and
+  // Hamilton, and against the local shapes for the rest of the box.
+  ecoregion: { provider: "resolve-2017", codes: ["173"] },
   // Pōhutukawa: the New Zealand Christmas tree, crimson on every Auckland
   // cliff in December, and the tūī's summer larder. Its caterpillar count is
   // not in yet — see `note` — so the figure below is null, never 0.

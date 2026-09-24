@@ -43,6 +43,7 @@ import { dirname, join } from "node:path";
 import { openLoader } from "./_load-ts.mjs";
 import { requireProxyAwareFetch } from "./_net.mjs";
 import { withSeeds } from "./_regions.mjs";
+import { ecoregionFeatures } from "./_resolve.mjs";
 
 requireProxyAwareFetch("maps:build");
 
@@ -56,12 +57,6 @@ const EPA_L3_LAYER = 11;
 const EPA_STATES_LAYER = 0;
 const EEA_LAYER =
   "https://bio.discomap.eea.europa.eu/arcgis/rest/services/BioRegions/BiogeographicalRegions_WM/MapServer/0";
-/** RESOLVE Ecoregions 2017, for regions south of the equator — the same hosted
- *  layer `site.ts` point-queries, so the drawn shape is the one that selects.
- *  Unconfirmed from the build sandbox (its egress refuses services.arcgis.com);
- *  `npm run probe:resolve` checks it. */
-const RESOLVE_LAYER =
-  "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/Resolve_Ecoregions/FeatureServer/0";
 /** Country outlines for the European maps. The EEA layer alone would draw
  *  France as an unlabelled blob of biogeographical regions — recognizable as a
  *  coastline, useless as a place. Natural Earth 1:50m is the standard
@@ -598,12 +593,12 @@ async function buildRegion(meta) {
   } else if (resolve) {
     // Country outlines only, as in Europe: no state layer to borrow here, and
     // the cities in LANDMARKS do the placing.
-    const ids = meta.ecoregion.codes.map(Number).filter(Number.isFinite);
-    const mine = await queryGeoJson(RESOLVE_LAYER, {
-      where: `ECO_ID IN (${ids.join(",")})`, box: view, offset, outFields: "ECO_ID",
-    });
-    if (!mine.features.length) throw new Error(`${meta.id}: no RESOLVE polygon for ${ids}`);
-    cover = ringsIn(mine.features, meta.bounds, minArea);
+    // RESOLVE shapes come from the local copy `npm run resolve:fetch` writes
+    // (the same polygons `site.ts` asks the hosted layer about, simplified to
+    // ~500 m), so a map build doesn't hang on a remote service.
+    const mine = ecoregionFeatures(meta.ecoregion.codes);
+    if (!mine.length) throw new Error(`${meta.id}: no RESOLVE polygon for ${meta.ecoregion.codes}`);
+    cover = ringsIn(mine, meta.bounds, minArea);
   } else if (southBox) {
     cover = rect(meta.bounds);
   } else {

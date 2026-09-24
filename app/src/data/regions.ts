@@ -70,8 +70,8 @@ export const REGIONS: RegionDef[] = [
   { meta: IRELAND, load: () => import("./plants.ireland").then((m) => m.SEED_RAW) },
 
   // The first region south of the equator. Seasons, sun hours and the sun
-  // picker flip on their own (`lib/hemisphere.ts`); the box decides alone until
-  // RESOLVE's ecoregion codes are confirmed — see `region.nz-auckland.ts`.
+  // picker flip on their own (`lib/hemisphere.ts`), and the RESOLVE ecoregion
+  // code refines the box the way EPA and EEA codes do up north.
   { meta: NZ_AUCKLAND, load: () => import("./plants.nz-auckland").then((m) => m.SEED_RAW) },
 ];
 

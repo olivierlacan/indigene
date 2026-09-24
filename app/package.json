@@ -48,6 +48,7 @@
     "probe:vascan": "NODE_USE_ENV_PROXY=1 node scripts/probe-vascan.mjs",
     "probe:cec": "NODE_USE_ENV_PROXY=1 node scripts/probe-cec.mjs",
     "probe:resolve": "NODE_USE_ENV_PROXY=1 node scripts/probe-resolve.mjs",
+    "resolve:fetch": "NODE_USE_ENV_PROXY=1 node --max-old-space-size=6144 scripts/fetch-resolve.mjs",
     "swipe:check": "node scripts/check-lightbox-swipe.mjs"
   },
   "devDependencies": {

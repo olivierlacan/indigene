@@ -50,8 +50,10 @@ subtitle on the What's new page.
 - Internal: `region.nz-auckland.ts` and `plants.nz-auckland.ts` (47 rows, all
   WCVP-native in `TDWG:NZN`; `native:check` now covers the region), eight
   catalog animals and their ties, map, cards, iNaturalist photos and record
-  counts. Selection is box-only until `probe:resolve` yields ECO_IDs; the map
-  builder now draws a box-only southern region and keeps a box's corners sharp.
+  counts. The region selects on RESOLVE ECO_ID 173, confirmed live by
+  `probe:resolve`. `npm run resolve:fetch` downloads RESOLVE's shapefile once
+  and writes simplified GeoJSON (git-ignored) plus a committed `index.json`;
+  `maps:build` traces RESOLVE regions from it, and keeps a box's corners sharp.
 
 ### Changed
 
@@ -70,8 +72,8 @@ subtitle on the What's new page.
   sun-hours sampling window and the sun picker's "south side"; technique copy
   names seasons, not northern months; a third ecoregion provider,
   `resolve-2017` (RESOLVE Ecoregions 2017), is asked south of the equator and
-  drawn by `maps:build`; `npm run probe:resolve` confirms the hosted layer,
-  which the sandbox's proxy refuses; `coverage` measures a southern list's
+  drawn by `maps:build`; `npm run probe:resolve` checks the hosted layer;
+  `coverage` measures a southern list's
   bloom against its own spring.
 
 ## [0.33] - 2026-09-24

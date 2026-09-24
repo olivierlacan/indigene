@@ -33,7 +33,7 @@ soil (SoilGrids), rain and elevation (Open-Meteo) are global.
 |---|---|---|---|---|
 | Proposed id | `au-sydney` | `nz-auckland` | `za-cape` | `ar-pampas` |
 | Reaches | Sydney, the Blue Mountains edge, Wollongong | Whangārei to Auckland; Hamilton is the south edge to check | Cape Peninsula, Cape Flats, Boland to Stellenbosch | Buenos Aires, La Plata, the Río de la Plata shore |
-| RESOLVE ecoregion (expected; `ECO_ID` from the probe) | Southeast Australia temperate forests | Northland temperate kauri forests | Lowland fynbos and renosterveld (+ Montane) | Humid Pampas |
+| RESOLVE ecoregion (`ECO_ID`, confirmed live) | 168 Eastern Australian temperate forests | 173 Northland temperate kauri forests | 90 Renosterveld shrubland, likely + 89 Fynbos shrubland | 576 Humid Pampas |
 | WCVP area (native check) | `NSW` | `NZN` | `CPP` | `AGE` |
 | Finer national flora | Australian Plant Census + NSW PlantNET | NZ Plant Conservation Network | SANBI (POSA) | Flora Argentina (Darwinion), by province |
 | Language | English | English, with te reo Māori names | English | **Spanish** |
@@ -48,12 +48,11 @@ Ireland's rows cite WCVP and France's cite TAXREF.
 
 ## 3. The gates, in the order they bite
 
-1. **Ecoregion lookup: one probe.** `npm run probe:resolve` from an unblocked
-   machine. It confirms the layer, fields and CORS, and records the `ECO_ID`
-   for each city above. Those numbers become each region's `ecoregion.codes`.
-   If CORS fails, bundle simplified polygons for the four boxes instead
-   (the Canadian fallback in `region-queue.md`). Details:
-   `data/sources/resolve-ecoregions/`.
+1. **Ecoregion lookup: done.** `npm run probe:resolve` confirmed the layer,
+   fields and CORS, and the ECO_IDs above. `npm run resolve:fetch` keeps a
+   local copy of the shapes, for maps and for checking a new box. Cape Town
+   sits in renosterveld (90) while Table Mountain's fynbos is 89, so the Cape
+   region probably claims both. Details: `data/sources/resolve-ecoregions/`.
 2. **Host counts: the real gap.** `hostLepCount` is the ranking's strongest
    signal. The US figures come from Tallamy / NWF and Europe's from the Gaytán
    matrix, and no southern equivalent is in hand. Candidates to probe, none
@@ -80,8 +79,8 @@ record counts. None of it is hemisphere-specific.
 
 1. **Auckland.** English; one WCVP area that matches the region; the best
    single host source (Plant-SyNZ). **Shipped in 0.34** (PR #166) with 47
-   plants, box-only selection and host counts marked "not counted" until
-   the probe and a host source are reachable.
+   plants and RESOLVE ecoregion 173. Host counts are marked "not counted"
+   until a host source is reachable.
 2. **Sydney.** English; the most readers; host counts start from HOSTS.
 3. **Cape Town.** English; the richest flora of the four, so the list is about
    choosing. Planting there is an autumn job (April–June, with the rains), so a

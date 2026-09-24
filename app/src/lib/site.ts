@@ -2,7 +2,7 @@
 // best-effort: a failure degrades to null rather than blocking the flow, and
 // the confirm screen lets the user correct anything. Soil especially is always
 // presented as "the map says…", never as measured fact (see honesty rules).
-import type { EcoregionInfo, SiteData } from "../types";
+import type { EcoregionInfo, EcoregionProvider, SiteData } from "../types";
 import { t, tOptional } from "./i18n";
 
 const TIMEOUT_MS = 12000;
@@ -424,6 +424,26 @@ function scanForEeaRegion(attrs: Record<string, unknown>): { slug: string; name:
 // data/sources/resolve-ecoregions/.
 const RESOLVE_ECOREGION_QUERY_URL =
   "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/Resolve_Ecoregions/FeatureServer/0/query";
+
+/**
+ * Every ecoregion service the app point-queries, by the provider it answers for.
+ *
+ * Exported so the Content-Security-Policy can be held to it. A host the app
+ * calls that `lib/csp.ts` doesn't list is refused by the reader's own browser,
+ * and the failure is silent: the lookup just returns nothing and selection
+ * falls back to the coverage box, which is a legitimate answer offline. That
+ * happened — `services7.arcgis.com` is not `services.arcgis.com`, and the CEC's
+ * host was missing for a while. `csp.test.ts` now checks the two lists agree.
+ *
+ * Typed against `EcoregionProvider`, so adding a provider without adding the
+ * service it reads is a compile error rather than a quiet gap.
+ */
+export const ECOREGION_QUERY_URLS: Record<EcoregionProvider, string> = {
+  "epa-omernik": EPA_ECOREGION_QUERY_URL,
+  "eea-biogeo": EEA_ECOREGION_QUERY_URL,
+  "cec-na": CEC_ECOREGION_QUERY_URL,
+  "resolve-2017": RESOLVE_ECOREGION_QUERY_URL,
+};
 
 async function fetchEcoregionResolve(lat: number, lon: number): Promise<EcoregionInfo | null> {
   const url =

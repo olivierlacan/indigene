@@ -1827,7 +1827,7 @@ export const en = {
     "— from the national botanical records: USDA PLANTS in the US, Tela Botanica and the INPN in France, plus regional floras.",
   "sources.fig.ecoregion": "Your ecoregion",
   "sources.fig.ecoregionFrom":
-    "— the US EPA's ecoregion map, or the European Environment Agency's, asked about your exact point.",
+    "— whichever ecoregion map covers where you are, asked about your exact point: the US EPA's, the European Environment Agency's, the CEC's across North America, or RESOLVE's south of the equator.",
   "sources.fig.soil": "Your soil and its acidity",
   "sources.fig.soilFrom":
     "— from SoilGrids, a global soil map. Coarse: it describes a 250-metre square, not your flower bed.",

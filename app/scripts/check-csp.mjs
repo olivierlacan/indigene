@@ -60,6 +60,7 @@ const browser = await chromium.launch({
 
 const refusals = [];
 const unfinished = [];
+const missed = [];
 const leaks = [];
 
 /**
@@ -69,7 +70,7 @@ const leaks = [];
  */
 const FATHOM_STUB = "window.fathom = { trackPageview() {} };";
 
-async function visit(label, { path, geo, then, counted }) {
+async function visit(label, { path, geo, then, counted, reaches }) {
   const context = await browser.newContext({
     // The worker would answer navigations from the real site, not this build.
     serviceWorkers: "block",
@@ -137,7 +138,7 @@ async function visit(label, { path, geo, then, counted }) {
   });
   try {
     await page.goto(ORIGIN + path, { waitUntil: "networkidle", timeout: 30_000 });
-    if (then) await then(page);
+    if (then) await then(page, reaches ? () => hosts.has(reaches) : null);
     await page.waitForTimeout(1500);
   } catch (err) {
     // A walk that stopped short checked less than it claims, so it fails too —
@@ -166,13 +167,27 @@ async function visit(label, { path, geo, then, counted }) {
       if (decodeURIComponent(b).includes(counted.secret)) leaks.push(`${label}: "${counted.secret}" went over the wire: ${b}`);
     }
   }
+  // **A walk that never reached the service it exists for proves nothing.**
+  // The hosts were already printed for a reader to notice that; this makes the
+  // machine notice. Caught a real one: a Vancouver walk added to exercise the
+  // CEC's host stopped a step too early, reached neither, and would have gone
+  // on passing with that host deleted from the policy.
+  if (reaches && !hosts.has(reaches)) {
+    missed.push(`${label}: never reached ${reaches}, so it checked nothing about it`);
+  }
   console.log(`${all.length ? "✗" : "✓"} ${label}${hosts.size ? ` — ${[...hosts].sort().join(", ")}` : ""}`);
   await context.close();
 }
 
 /** Tap on through the flow — sun, soil, goals — to the ranked plants. */
-async function onToResults(page) {
+async function onToResults(page, gotWhatItCameFor) {
   for (let i = 0; i < 6 && !page.url().includes("#/results"); i++) {
+    // A walk that named the host it exists for can stop the moment it has made
+    // that request: the ecoregion lookup happens once the spot is known, well
+    // before the ranked list, and the steps after it only re-walk ground the
+    // Pennsylvania and France walks already cover — at up to a minute each when
+    // a service is slow to answer.
+    if (gotWhatItCameFor?.()) return;
     const choice = page.locator("button.choice:visible").first();
     if (await choice.count()) await choice.click();
     await page.locator("button.btn-primary:visible").last().click();
@@ -180,10 +195,10 @@ async function onToResults(page) {
   }
 }
 
-async function byGps(page) {
+async function byGps(page, gotWhatItCameFor) {
   await page.locator("button.btn-primary.btn-block").first().click();
   await page.waitForLoadState("networkidle");
-  await onToResults(page);
+  await onToResults(page, gotWhatItCameFor);
 }
 
 function byTown(town) {
@@ -223,17 +238,30 @@ await visit("GPS in Pennsylvania, to ranked plants", {
   path: "/#/location",
   geo: { latitude: 40.7934, longitude: -77.86 },
   then: byGps,
+  reaches: "gispub.epa.gov",
 });
 await visit("GPS in France, to ranked plants", {
   path: "/#/location",
   geo: { latitude: 47.2184, longitude: -1.5536 },
   then: byGps,
+  reaches: "bio.discomap.eea.europa.eu",
 });
+// **No walk for the CEC, on purpose.** North of the US border the ecoregion
+// comes from `services7.arcgis.com`, and that host was missing from the policy
+// while this check stayed green — nothing it visited asked the CEC anything.
+// The obvious repair was a Vancouver walk, and it was the wrong one: reaching
+// the lookup means walking the whole flow, which cost this job fifteen minutes
+// and more, against a service on another continent. The question was never
+// really about a browser. It is whether the two lists agree, and that is now
+// `src/lib/csp.test.ts` — the same failure, caught offline, in a millisecond.
+// What is left here is what only a browser can answer: that the built policy
+// actually permits the app's real traffic.
 // South of the equator the ecoregion comes from a third service (RESOLVE).
 await visit("GPS in Sydney", {
   path: "/#/location",
   geo: { latitude: -33.8688, longitude: 151.2093 },
   then: byGps,
+  reaches: "services.arcgis.com",
 });
 await visit("town search", { path: "/#/location", then: byTown("Nantes") });
 
@@ -252,5 +280,10 @@ if (leaks.length) {
   console.error(`\n${leaks.length} problem(s) with what the page count was told:`);
   for (const l of leaks) console.error(`  ${l}`);
 }
-if (refusals.length || unfinished.length || leaks.length) process.exit(1);
+if (missed.length) {
+  console.error(`\n${missed.length} walk(s) didn't exercise the service they exist for:`);
+  for (const m of missed) console.error(`  ${m}`);
+  console.error("\nA green walk that never made the request is not evidence the policy allows it.");
+}
+if (refusals.length || unfinished.length || leaks.length || missed.length) process.exit(1);
 console.log("\nNothing refused.");

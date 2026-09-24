@@ -2076,6 +2076,8 @@ export const fr: Dict = {
   "wanted.method.pro": "Se faire aider",
   "wanted.method.replant": "Replanter",
   "wanted.method.water": "Près de l'eau",
+  "wanted.regionDocTitle": "Invasives les plus recherchées — {region} — Indigene",
+  "wanted.otherRegions": "Les listes des autres régions",
   "wanted.whereWanted": "Où elle est la plus recherchée",
   "wanted.photosTitle": "La voir dans la nature",
   "wanted.photosLede": "Des photos vérifiées sur iNaturalist, prises dans une région où elle est recherchée.",

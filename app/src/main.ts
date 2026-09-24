@@ -24,6 +24,7 @@ import { wildlifeKindRoute } from "./lib/wildlife";
 import { renderLookalikeIndex, renderLookalike, lookalikeRegionParam } from "./steps/lookalikes";
 import { renderAlternativeIndex, renderAlternative, alternativeRegionParam } from "./steps/alternatives";
 import { renderInvasiveIndex, renderInvasive } from "./steps/invasives";
+import { wantedRegionParam } from "./lib/invasives";
 import { renderPlantingIndex, renderPlanting } from "./steps/planting";
 import { techniqueBySlug } from "./lib/planting";
 import { canonicalPath, parseRoute, isHashRoute } from "./lib/routes";
@@ -307,7 +308,7 @@ function updateLayout(step: AppStep, param?: string): void {
     step === "lookalikes" && !!param && lookalikeRegionParam(param) === null;
   const ornamentalProfile =
     step === "alternatives" && !!param && alternativeRegionParam(param) === null;
-  const invasiveProfile = step === "invasives" && !!param;
+  const invasiveProfile = step === "invasives" && !!param && wantedRegionParam(param) === null;
   if (plantProfile || animalProfile || techniqueProfile || lookalikeProfile || ornamentalProfile || invasiveProfile) {
     document.body.dataset.layout = "profile";
     return;
@@ -325,7 +326,8 @@ function updateLayout(step: AppStep, param?: string): void {
       step === "regions" ||
       (step === "wildlife" && (!!wildlifeKindRoute(param) || wildlifeRegionParam(param) !== null)) ||
       (step === "lookalikes" && lookalikeRegionParam(param) !== null) ||
-      (step === "alternatives" && alternativeRegionParam(param) !== null));
+      (step === "alternatives" && alternativeRegionParam(param) !== null) ||
+      (step === "invasives" && wantedRegionParam(param) !== null));
   document.body.dataset.layout = wide ? "wide" : "narrow";
 }
 

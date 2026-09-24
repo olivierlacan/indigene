@@ -22,7 +22,7 @@ import { REGISTRY } from "../data/registry";
 import { getWildlife, wildlifeKindRoute, KIND_ORDER, KIND_SLUGS } from "./wildlife";
 import { getLookalike, mappedLookalikeIds } from "./lookalikes";
 import { getOrnamental, mappedOrnamentalIds } from "./alternatives";
-import { mappedInvasiveIds } from "./invasives";
+import { mappedInvasiveIds, wantedRegionIds, wantedRegionParam, WANTED_REGION_PREFIX } from "./invasives";
 import { TECHNIQUES, techniqueBySlug } from "./planting";
 import { WILDLIFE } from "../data/wildlife";
 
@@ -181,8 +181,13 @@ export function canonicalPath(step: string, param?: string): string | null {
       return getLookalike(param) ? at(param) : null;
     case "alternatives":
       return getOrnamental(param) ? at(param) : null;
-    case "invasives":
-      return mappedInvasiveIds().has(param) ? at(param) : null;
+    // One plant (`…/invasives/garlic-mustard`), or one region's list
+    // (`…/invasives/in/pnw`) — both pages with a file and a card of their own.
+    case "invasives": {
+      if (mappedInvasiveIds().has(param)) return at(param);
+      const region = wantedRegionParam(param);
+      return region ? `${step}/${WANTED_REGION_PREFIX}${encodeURIComponent(region)}` : null;
+    }
     // One propagation technique's how-to and its window in the year.
     case "planting":
       return techniqueBySlug(param) ? at(param) : null;
@@ -277,6 +282,7 @@ export function shareablePaths(): string[] {
   for (const id of mappedLookalikeIds()) paths.push(`lookalikes/${id}`);
   for (const id of mappedOrnamentalIds()) paths.push(`alternatives/${id}`);
   for (const id of mappedInvasiveIds()) paths.push(`invasives/${id}`);
+  for (const id of wantedRegionIds()) paths.push(`invasives/${WANTED_REGION_PREFIX}${id}`);
   for (const tech of TECHNIQUES) paths.push(`planting/${tech.slug}`);
   return paths;
 }

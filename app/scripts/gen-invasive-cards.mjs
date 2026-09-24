@@ -1,5 +1,8 @@
-// Draws one share card per most-wanted invasive, plus one for the index — the
-// picture an unfurler shows beside an "/invasives" link.
+// Draws one share card per most-wanted invasive, one per region's list, plus
+// one for the index — the picture an unfurler shows beside an "/invasives"
+// link. A region's card (`in-<region>.jpg`, for `/invasives/in/<region>`) names
+// the place and lists its five, ranked: the whole answer to "what should I be
+// pulling round here?" before anyone taps.
 //
 //   node scripts/gen-invasive-cards.mjs               # every invasive + index
 //   node scripts/gen-invasive-cards.mjs alliaria-petiolata index
@@ -167,15 +170,37 @@ function indexHtml({ fakeGlyph, facts }) {
 <ul>${factRow(facts)}<li class="url">indigene.app</li></ul>`;
 }
 
+/** A region's card: the place, and its five in rank order beside it. */
+function regionHtml({ name, ranked, facts }) {
+  return `<!doctype html><meta charset="utf-8"><style>${STYLE}
+  h1 { font-size: ${nameSize(name)}px; max-width: 11ch; }
+  .rank { margin-left: auto; flex: none; list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .rank li { display: flex; align-items: center; gap: 16px; font-size: 30px; font-weight: 650; }
+  .rank .n { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 999px;
+    background: #3d1f1a; color: ${AMBER}; font-size: 26px; font-weight: 800; flex: none; }
+  </style>
+<div class="wash"></div>
+<header>${mark}<span class="wordmark">Indigene</span><span class="badge">Most wanted</span></header>
+<div class="mid">
+  <div class="names">
+    <h1>${esc(name)}</h1>
+    <div class="role">The invasive plants to pull first</div>
+  </div>
+  <ol class="rank">${ranked.map((r, i) => `<li><span class="n">${i + 1}</span><span class="rname">${esc(r)}</span></li>`).join("")}</ol>
+</div>
+<ul>${factRow(facts)}<li class="url">indigene.app</li></ul>`;
+}
+
 // ---------------------------------------------------------------------------
 
 const loader = await openLoader();
 let cards;
 try {
-  const [{ INVASIVES }, { mappedInvasiveIds, wantedRowsFor }, { glyphMarkup }] = await Promise.all([
+  const [{ INVASIVES }, { mappedInvasiveIds, wantedRowsFor, wantedRegionIds, mostWanted, regionIsRated }, { glyphMarkup }, { REGIONS }] = await Promise.all([
     loader.load("/src/data/invasives.ts"),
     loader.load("/src/lib/invasives.ts"),
     loader.load("/src/components/plant-glyphs.ts"),
+    loader.load("/src/data/regions.ts"),
   ]);
   const ids = mappedInvasiveIds();
   const invasives = INVASIVES.filter((i) => ids.has(i.id)).map((inv) => {
@@ -202,7 +227,21 @@ try {
       { icon: "region", value: "5", label: "per region" },
     ],
   };
-  cards = [indexCard, ...invasives];
+  const regionCards = wantedRegionIds().map((id) => {
+    const region = REGIONS.find((r) => r.meta.id === id);
+    const rows = mostWanted(id);
+    return {
+      slug: `in-${id}`,
+      region: true,
+      name: region.meta.short,
+      ranked: rows.map((r) => displayName(r.invasive.common)),
+      facts: [
+        { icon: "flag", value: String(rows.length), label: "ranked worst first" },
+        { icon: "region", value: regionIsRated(id) ? "Rated" : "Seen", label: regionIsRated(id) ? "by local experts" : "most often, wild" },
+      ],
+    };
+  });
+  cards = [indexCard, ...regionCards, ...invasives];
 } finally {
   await loader.close();
 }
@@ -237,7 +276,7 @@ async function overflows() {
       const el = document.querySelector(sel);
       if (el && el.scrollWidth > el.clientWidth + 1) bad.push(`${what} is ${el.scrollWidth - el.clientWidth}px too wide`);
     }
-    for (const el of document.querySelectorAll("li b, li i, .latin, .role, h1")) {
+    for (const el of document.querySelectorAll("li b, li i, .latin, .role, .rname, h1")) {
       const lines = el.getClientRects().length;
       const allowed = el.tagName === "H1" ? 2 : 1;
       if (lines > allowed) bad.push(`"${el.textContent}" wrapped onto ${lines} lines`);
@@ -248,7 +287,7 @@ async function overflows() {
 
 let n = 0;
 for (const card of wanted) {
-  await page.setContent(card.index ? indexHtml(card) : invasiveHtml(card), { waitUntil: "load" });
+  await page.setContent(card.index ? indexHtml(card) : card.region ? regionHtml(card) : invasiveHtml(card), { waitUntil: "load" });
   const bad = await overflows();
   if (bad.length) {
     await browser.close();

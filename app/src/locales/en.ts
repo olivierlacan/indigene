@@ -2087,6 +2087,8 @@ export const en = {
   "wanted.method.pro": "Get help",
   "wanted.method.replant": "Replant",
   "wanted.method.water": "Near water",
+  "wanted.regionDocTitle": "Most-wanted invasives — {region} — Indigene",
+  "wanted.otherRegions": "Other regions' lists",
   "wanted.whereWanted": "Where it's most wanted",
   "wanted.photosTitle": "See it in the wild",
   "wanted.photosLede": "Verified iNaturalist photos from a region where it's wanted.",

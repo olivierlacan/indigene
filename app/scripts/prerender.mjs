@@ -287,7 +287,7 @@ async function collectPages(load) {
       load("/src/lib/planting.ts"),
       load("/src/lib/routes.ts"),
     ]);
-  const [{ INVASIVES }, { mappedInvasiveIds }] = await Promise.all([
+  const [{ INVASIVES }, { mappedInvasiveIds, wantedRegionIds, mostWanted }] = await Promise.all([
     load("/src/data/invasives.ts"),
     load("/src/lib/invasives.ts"),
   ]);
@@ -471,6 +471,23 @@ async function collectPages(load) {
       {
         image: invasiveCard(inv.id),
         imageAlt: `${inv.common} (${inv.latin}) — how many regions list it as most wanted, and its highest place`,
+      }
+    );
+  }
+
+  // --- one page per region's most-wanted list ---
+  // The address somebody sends when the question is "what should I be pulling
+  // round here?". Its description names the five, in order.
+  for (const id of wantedRegionIds()) {
+    const region = REGIONS.find((r) => r.meta.id === id);
+    const names = mostWanted(id).map((r, i) => `${i + 1}. ${r.invasive.common}`).join(" · ");
+    add(
+      `invasives/in/${id}`,
+      fill(en["wanted.regionDocTitle"], { region: region.meta.name }),
+      `The invasive plants to pull first here: ${names}.`,
+      {
+        image: invasiveCard(`in-${id}`),
+        imageAlt: `${region.meta.name} — its five most-wanted invasive plants, ranked`,
       }
     );
   }

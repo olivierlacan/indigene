@@ -1,0 +1,342 @@
+{
+  "source": "National Audubon Society — Plants for Birds",
+  "url": "https://www.audubon.org/native-plants",
+  "note": "curated = Audubon's own picks for the ZIP; full = every species BONAP records as native to that ZIP's county. The two are different kinds of list and must not be pooled.",
+  "hasFloraTier": true,
+  "region": "north-michigan",
+  "scope": [
+    "49770",
+    "49684"
+  ],
+  "harvested": "2026-09-20",
+  "counts": {
+    "ours": 46,
+    "theirPicks": 109,
+    "theirFlora": 479,
+    "oursAmongTheirPicks": 34,
+    "theirPicksWeLack": 75,
+    "generaNewToUs": 42
+  },
+  "ourRows": [
+    {
+      "latin": "Acer rubrum",
+      "common": "Red Maple",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Acer saccharum",
+      "common": "Sugar Maple",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Amelanchier laevis",
+      "common": "Allegheny Serviceberry",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Anaphalis margaritacea",
+      "common": "Pearly Everlasting",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Aquilegia canadensis",
+      "common": "Wild Columbine",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Arctostaphylos uva-ursi",
+      "common": "Bearberry",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Asclepias incarnata",
+      "common": "Swamp Milkweed",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Asclepias tuberosa",
+      "common": "Butterfly Weed",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Betula papyrifera",
+      "common": "Paper Birch",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Campanula rotundifolia",
+      "common": "Harebell",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Carex pensylvanica",
+      "common": "Pennsylvania Sedge",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Ceanothus americanus",
+      "common": "New Jersey Tea",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Cornus canadensis",
+      "common": "Bunchberry",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Cornus sericea",
+      "common": "Red-osier Dogwood",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Corylus cornuta",
+      "common": "Beaked Hazelnut",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Diervilla lonicera",
+      "common": "Northern Bush Honeysuckle",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Eutrochium maculatum",
+      "common": "Spotted Joe-Pye Weed",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Fagus grandifolia",
+      "common": "American Beech",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Fragaria virginiana",
+      "common": "Wild Strawberry",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Hamamelis virginiana",
+      "common": "Witch Hazel",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Ilex verticillata",
+      "common": "Winterberry Holly",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Lobelia cardinalis",
+      "common": "Cardinal Flower",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Lupinus perennis",
+      "common": "Wild Lupine",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Matteuccia struthiopteris",
+      "common": "Ostrich Fern",
+      "amongTheirPicks": false,
+      "inTheirFlora": false
+    },
+    {
+      "latin": "Monarda fistulosa",
+      "common": "Wild Bergamot",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Parthenocissus quinquefolia",
+      "common": "Virginia Creeper",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Physocarpus opulifolius",
+      "common": "Ninebark",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Pinus strobus",
+      "common": "Eastern White Pine",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Polystichum acrostichoides",
+      "common": "Christmas Fern",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Populus tremuloides",
+      "common": "Quaking Aspen",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Prunus serotina",
+      "common": "Black Cherry",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Quercus rubra",
+      "common": "Northern Red Oak",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Rudbeckia hirta",
+      "common": "Black-eyed Susan",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Salix discolor",
+      "common": "Pussy Willow",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Sambucus racemosa",
+      "common": "Red Elderberry",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Schizachyrium scoparium",
+      "common": "Little Bluestem",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Solidago speciosa",
+      "common": "Showy Goldenrod",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Symphyotrichum laeve",
+      "common": "Smooth Blue Aster",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Symphyotrichum novae-angliae",
+      "common": "New England Aster",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Thuja occidentalis",
+      "common": "Northern White Cedar",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Tilia americana",
+      "common": "American Basswood",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Tsuga canadensis",
+      "common": "Eastern Hemlock",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Vaccinium angustifolium",
+      "common": "Lowbush Blueberry",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Viburnum lentago",
+      "common": "Nannyberry",
+      "amongTheirPicks": true,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Vitis riparia",
+      "common": "Riverbank Grape",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    },
+    {
+      "latin": "Zizia aurea",
+      "common": "Golden Alexanders",
+      "amongTheirPicks": false,
+      "inTheirFlora": true
+    }
+  ],
+  "generaNewToUs": [
+    "abies",
+    "achillea",
+    "allium",
+    "arisaema",
+    "artemisia",
+    "carpinus",
+    "carya",
+    "cephalanthus",
+    "chamaenerion",
+    "chelone",
+    "coreopsis",
+    "crataegus",
+    "echinacea",
+    "eupatorium",
+    "geranium",
+    "helianthus",
+    "heliopsis",
+    "impatiens",
+    "juglans",
+    "juniperus",
+    "larix",
+    "lindera",
+    "mahonia",
+    "maianthemum",
+    "malus",
+    "oenothera",
+    "ostrya",
+    "panicum",
+    "penstemon",
+    "phlox",
+    "picea",
+    "platanus",
+    "pycnanthemum",
+    "rhus",
+    "rubus",
+    "sassafras",
+    "sorbus",
+    "sorghastrum",
+    "spartina",
+    "symphoricarpos",
+    "ulmus",
+    "zanthoxylum"
+  ]
+}

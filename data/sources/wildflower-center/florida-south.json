@@ -1,0 +1,220 @@
+{
+  "source": "Lady Bird Johnson Wildflower Center — Recommended Species",
+  "url": "https://www.wildflower.org/collections/",
+  "note": "A recommendation list, not a flora: absence means they did not recommend it, never that it is not native. State-scoped, so wider than any region we ship.",
+  "hasFloraTier": false,
+  "region": "florida-south",
+  "scope": [
+    "FL_south"
+  ],
+  "harvested": "2026-09-20",
+  "counts": {
+    "ours": 21,
+    "theirPicks": 118,
+    "theirFlora": null,
+    "oursAmongTheirPicks": 12,
+    "theirPicksWeLack": 106,
+    "generaNewToUs": 92
+  },
+  "ourRows": [
+    {
+      "latin": "Bursera simaruba",
+      "common": "Gumbo Limbo",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Chrysobalanus icaco",
+      "common": "Cocoplum",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Coccoloba diversifolia",
+      "common": "Pigeon Plum",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Coccoloba uvifera",
+      "common": "Seagrape",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Conocarpus erectus",
+      "common": "Green Buttonwood",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Hamelia patens",
+      "common": "Firebush",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Helianthus debilis",
+      "common": "Beach / Dune Sunflower",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Morella cerifera",
+      "common": "Wax Myrtle (Southern Bayberry)",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Muhlenbergia capillaris",
+      "common": "Pink Muhly Grass",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Myrcianthes fragrans",
+      "common": "Simpson's Stopper",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Passiflora suberosa",
+      "common": "Corkystem Passionflower",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Psychotria nervosa",
+      "common": "Wild Coffee",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Quercus virginiana",
+      "common": "Southern Live Oak",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Rivina humilis",
+      "common": "Rougeplant (Bloodberry)",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Sabal palmetto",
+      "common": "Cabbage Palm (Sabal Palm)",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Salvia coccinea",
+      "common": "Tropical Sage (Scarlet Sage)",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Serenoa repens",
+      "common": "Saw Palmetto",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Sophora tomentosa var. truncata",
+      "common": "Yellow Necklacepod",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Stachytarpheta jamaicensis",
+      "common": "Blue Porterweed",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Tripsacum dactyloides",
+      "common": "Fakahatchee Grass (Eastern Gamagrass)",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Zamia integrifolia",
+      "common": "Coontie",
+      "amongTheirPicks": false
+    }
+  ],
+  "generaNewToUs": [
+    "acer",
+    "ambrosia",
+    "annona",
+    "ardisia",
+    "asclepias",
+    "avicennia",
+    "baccharis",
+    "batis",
+    "bejaria",
+    "borrichia",
+    "callicarpa",
+    "canna",
+    "capparis",
+    "carya",
+    "celtis",
+    "cephalanthus",
+    "chiococca",
+    "chrysophyllum",
+    "cirsium",
+    "cladium",
+    "clusia",
+    "coccothrinax",
+    "conoclinium",
+    "coreopsis",
+    "cornus",
+    "crinum",
+    "diospyros",
+    "distichlis",
+    "dodonaea",
+    "ernodea",
+    "erythrina",
+    "eugenia",
+    "ficus",
+    "forestiera",
+    "fraxinus",
+    "gaillardia",
+    "hibiscus",
+    "hydrolea",
+    "hymenocallis",
+    "ilex",
+    "ipomoea",
+    "iris",
+    "itea",
+    "iva",
+    "jacquinia",
+    "juncus",
+    "lachnanthes",
+    "laguncularia",
+    "lantana",
+    "lilium",
+    "ludwigia",
+    "lycium",
+    "lyonia",
+    "magnolia",
+    "morus",
+    "nephrolepis",
+    "nuphar",
+    "nymphaea",
+    "osmunda",
+    "panicum",
+    "parthenocissus",
+    "paspalum",
+    "persea",
+    "pinus",
+    "piscidia",
+    "pityopsis",
+    "polygonum",
+    "pontederia",
+    "portulaca",
+    "rhizophora",
+    "rhus",
+    "rudbeckia",
+    "ruellia",
+    "salix",
+    "saururus",
+    "scaevola",
+    "sesuvium",
+    "simarouba",
+    "solidago",
+    "spartina",
+    "suriana",
+    "taxodium",
+    "thalia",
+    "ulmus",
+    "uniola",
+    "vaccinium",
+    "vallisneria",
+    "vitis",
+    "woodwardia",
+    "ximenia",
+    "yucca",
+    "zanthoxylum"
+  ]
+}

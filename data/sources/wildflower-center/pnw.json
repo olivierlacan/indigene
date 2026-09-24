@@ -1,0 +1,553 @@
+{
+  "source": "Lady Bird Johnson Wildflower Center — Recommended Species",
+  "url": "https://www.wildflower.org/collections/",
+  "note": "A recommendation list, not a flora: absence means they did not recommend it, never that it is not native. State-scoped, so wider than any region we ship.",
+  "hasFloraTier": false,
+  "region": "pnw",
+  "scope": [
+    "WA",
+    "OR"
+  ],
+  "harvested": "2026-09-20",
+  "counts": {
+    "ours": 85,
+    "theirPicks": 228,
+    "theirFlora": null,
+    "oursAmongTheirPicks": 54,
+    "theirPicksWeLack": 174,
+    "generaNewToUs": 104
+  },
+  "ourRows": [
+    {
+      "latin": "Acer circinatum",
+      "common": "Vine Maple",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Acer macrophyllum",
+      "common": "Bigleaf Maple",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Achillea millefolium",
+      "common": "Yarrow",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Achlys triphylla",
+      "common": "Vanilla Leaf",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Adiantum aleuticum",
+      "common": "Western Maidenhair Fern",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Alnus rubra",
+      "common": "Red Alder",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Amelanchier alnifolia",
+      "common": "Saskatoon Serviceberry",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Anaphalis margaritacea",
+      "common": "Pearly Everlasting",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Aquilegia formosa",
+      "common": "Western Columbine",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Arbutus menziesii",
+      "common": "Pacific Madrone",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Arctostaphylos uva-ursi",
+      "common": "Kinnikinnick (Bearberry)",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Aruncus dioicus",
+      "common": "Goat's Beard",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Asclepias speciosa",
+      "common": "Showy Milkweed",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Berberis aquifolium",
+      "common": "Tall Oregon Grape",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Berberis nervosa",
+      "common": "Dwarf Oregon Grape",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Betula papyrifera",
+      "common": "Paper Birch",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Camassia quamash",
+      "common": "Common Camas",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Carex obnupta",
+      "common": "Slough Sedge",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Ceanothus sanguineus",
+      "common": "Redstem Ceanothus (Buckbrush)",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Chamaenerion angustifolium",
+      "common": "Fireweed",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Clematis ligusticifolia",
+      "common": "Western White Clematis",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Cornus nuttallii",
+      "common": "Pacific Dogwood",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Cornus sericea",
+      "common": "Red-osier Dogwood",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Corylus cornuta",
+      "common": "Beaked Hazelnut",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Crataegus douglasii",
+      "common": "Black Hawthorn",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Deschampsia cespitosa",
+      "common": "Tufted Hairgrass",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Dicentra formosa",
+      "common": "Pacific Bleeding Heart",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Elymus glaucus",
+      "common": "Blue Wildrye",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Eriogonum umbellatum",
+      "common": "Sulphur Buckwheat",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Eriophyllum lanatum",
+      "common": "Oregon Sunshine",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Erythronium oregonum",
+      "common": "White Fawn Lily",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Festuca roemeri",
+      "common": "Roemer's Fescue",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Fragaria chiloensis",
+      "common": "Coastal Strawberry",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Frangula purshiana",
+      "common": "Cascara",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Fraxinus latifolia",
+      "common": "Oregon Ash",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Gaultheria shallon",
+      "common": "Salal",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Grindelia integrifolia",
+      "common": "Puget Sound Gumweed",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Heracleum maximum",
+      "common": "Cow Parsnip",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Holodiscus discolor",
+      "common": "Oceanspray",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Juncus patens",
+      "common": "Spreading Rush (Grey Rush)",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Linnaea borealis",
+      "common": "Twinflower",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Lonicera ciliosa",
+      "common": "Orange Honeysuckle",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Lonicera involucrata",
+      "common": "Black Twinberry",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Lupinus polyphyllus",
+      "common": "Bigleaf Lupine",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Lysichiton americanus",
+      "common": "Western Skunk Cabbage",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Maianthemum dilatatum",
+      "common": "False Lily-of-the-Valley",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Malus fusca",
+      "common": "Pacific Crabapple",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Oemleria cerasiformis",
+      "common": "Indian Plum (Osoberry)",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Penstemon serrulatus",
+      "common": "Cascade Penstemon",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Petasites frigidus",
+      "common": "Sweet Coltsfoot",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Physocarpus capitatus",
+      "common": "Pacific Ninebark",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Picea sitchensis",
+      "common": "Sitka Spruce",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Pinus contorta",
+      "common": "Shore Pine",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Pinus ponderosa",
+      "common": "Ponderosa Pine",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Polypodium glycyrrhiza",
+      "common": "Licorice Fern",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Polystichum munitum",
+      "common": "Western Sword Fern",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Populus trichocarpa",
+      "common": "Black Cottonwood",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Prunus emarginata",
+      "common": "Bitter Cherry",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Pseudotsuga menziesii",
+      "common": "Douglas-fir",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Quercus garryana",
+      "common": "Oregon White Oak (Garry Oak)",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Rhododendron macrophyllum",
+      "common": "Pacific Rhododendron",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Ribes sanguineum",
+      "common": "Red-flowering Currant",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Rosa nutkana",
+      "common": "Nootka Rose",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Rubus parviflorus",
+      "common": "Thimbleberry",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Rubus spectabilis",
+      "common": "Salmonberry",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Rubus ursinus",
+      "common": "Trailing Blackberry",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Salix scouleriana",
+      "common": "Scouler's Willow",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Sambucus racemosa",
+      "common": "Red Elderberry",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Sedum oreganum",
+      "common": "Oregon Stonecrop",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Sidalcea campestris",
+      "common": "Meadow Checkermallow",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Solidago lepida",
+      "common": "Western Goldenrod",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Spiraea douglasii",
+      "common": "Douglas Spirea (Hardhack)",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Struthiopteris spicant",
+      "common": "Deer Fern",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Symphoricarpos albus",
+      "common": "Common Snowberry",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Symphyotrichum subspicatum",
+      "common": "Douglas Aster",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Tellima grandiflora",
+      "common": "Fringecup",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Thuja plicata",
+      "common": "Western Redcedar",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Tiarella trifoliata",
+      "common": "Foamflower",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Trillium ovatum",
+      "common": "Western Trillium (Wake Robin)",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Tsuga heterophylla",
+      "common": "Western Hemlock",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Vaccinium ovatum",
+      "common": "Evergreen Huckleberry",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Vaccinium parvifolium",
+      "common": "Red Huckleberry",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Viola adunca",
+      "common": "Early Blue Violet",
+      "amongTheirPicks": false
+    },
+    {
+      "latin": "Viola glabella",
+      "common": "Stream Violet",
+      "amongTheirPicks": true
+    },
+    {
+      "latin": "Woodwardia fimbriata",
+      "common": "Giant Chain Fern",
+      "amongTheirPicks": true
+    }
+  ],
+  "generaNewToUs": [
+    "abies",
+    "achnatherum",
+    "aconitum",
+    "agrostis",
+    "allium",
+    "anemone",
+    "arnica",
+    "artemisia",
+    "asarum",
+    "aspidotis",
+    "asplenium",
+    "athyrium",
+    "bolboschoenus",
+    "bromus",
+    "calamagrostis",
+    "callitropsis",
+    "calocedrus",
+    "calochortus",
+    "caltha",
+    "campanula",
+    "cercocarpus",
+    "chamaecyparis",
+    "cheilanthes",
+    "chrysolepis",
+    "clarkia",
+    "clinopodium",
+    "clintonia",
+    "collinsia",
+    "collomia",
+    "cystopteris",
+    "danthonia",
+    "dasiphora",
+    "delphinium",
+    "dichanthelium",
+    "distichlis",
+    "dodecatheon",
+    "dryas",
+    "dryopteris",
+    "ericameria",
+    "erigeron",
+    "erythranthe",
+    "fritillaria",
+    "gaillardia",
+    "garrya",
+    "gilia",
+    "glyceria",
+    "gymnocarpium",
+    "hesperostipa",
+    "heterotheca",
+    "heuchera",
+    "hierochloe",
+    "ipomopsis",
+    "iris",
+    "juniperus",
+    "kalmia",
+    "kalmiopsis",
+    "koeleria",
+    "krascheninnikovia",
+    "larix",
+    "layia",
+    "ledum",
+    "leucothoe",
+    "lewisia",
+    "leymus",
+    "lilium",
+    "linum",
+    "luetkea",
+    "mahonia",
+    "mentzelia",
+    "mertensia",
+    "minuartia",
+    "monardella",
+    "morella",
+    "nothochelone",
+    "paxistima",
+    "pedicularis",
+    "peritoma",
+    "phacelia",
+    "phlox",
+    "phyllodoce",
+    "poa",
+    "polemonium",
+    "prosartes",
+    "pseudoroegneria",
+    "purshia",
+    "rhus",
+    "salvia",
+    "saxifraga",
+    "schoenoplectus",
+    "shepherdia",
+    "silene",
+    "sisyrinchium",
+    "sporobolus",
+    "taxus",
+    "tolmiea",
+    "trientalis",
+    "trisetum",
+    "typha",
+    "umbellularia",
+    "vancouveria",
+    "viburnum",
+    "whipplea",
+    "wyethia",
+    "xerophyllum"
+  ]
+}

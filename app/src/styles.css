@@ -2107,6 +2107,7 @@ details.weights {
 .plant > .kv,
 .plant .region-switch,
 .plant .plant-why,
+.plant .native-evidence,
 .plant .lookalike-line,
 /* An impostor's profile is loose paragraphs rather than the plant page's named
    blocks — its blurb, its "native elsewhere" note and its sources all sit
@@ -5623,4 +5624,57 @@ body[data-layout="profile"] .wip-banner-text {
 }
 .wanted-links {
   margin: 0 0 0.6rem;
+}
+/* --- "Says who, and when?" under the native claim ------------------------ */
+/* Quieter than the conservation note beside it: this is provenance, not a
+   thing to act on, so it takes the soft ink and no accent bar. The one that
+   *does* need a second look — a row a world checklist won't confirm — borrows
+   the warn colour, because a reader weighing this plant should see that the
+   sources disagree before they read the rest of the page. */
+.native-evidence {
+  color: var(--ink-soft);
+  background: none;
+  /* The card's gutter, same as `.plant-why` above it — a `.note` brings its own
+     padding, and without this the line sits a gutter's width left of the
+     sentence it is evidence for. */
+  padding: 0.15rem 1rem;
+  margin: 0.25rem 0 0.6rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+.native-evidence-open {
+  color: var(--warn-ink);
+  background: var(--warn-bg);
+  /* The box is inset by the gutter instead of padded by it, so its *text*
+     lines up with the quiet variant's and with everything else in the card. */
+  padding: 0.5rem 0.7rem;
+  margin: 0.25rem 1rem 0.6rem;
+  border-radius: var(--radius);
+}
+
+/* --- Native plant groups, last on a region page -------------------------- */
+/* A list of links off the site, so it reads as a list and not as cards: the
+   name carries the weight, the phrase after it is quiet enough to skim past.
+   On a phone the two stack, because "Pennsylvania Native Plant Society" and
+   "local chapters and meetings" do not share a 360 px line. */
+.society-list {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+.society-row {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.5rem;
+  align-items: baseline;
+}
+.society-name {
+  font-weight: 600;
+}
+.society-what {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
 }

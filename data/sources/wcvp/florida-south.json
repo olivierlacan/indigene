@@ -1,0 +1,220 @@
+{
+  "source": "World Checklist of Vascular Plants (WCVP), Royal Botanic Gardens Kew",
+  "license": "CC BY 4.0",
+  "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
+  "area": "Florida (TDWG:FLA — whole state)",
+  "region": "florida-south",
+  "ranAt": "2026-09-21T07:01:07.240Z",
+  "rows": [
+    {
+      "id": "quercus-virginiana",
+      "latin": "Quercus virginiana",
+      "asked": "Quercus virginiana",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "bursera-simaruba",
+      "latin": "Bursera simaruba",
+      "asked": "Bursera simaruba",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "coccoloba-uvifera",
+      "latin": "Coccoloba uvifera",
+      "asked": "Coccoloba uvifera",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "coccoloba-diversifolia",
+      "latin": "Coccoloba diversifolia",
+      "asked": "Coccoloba diversifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "sabal-palmetto",
+      "latin": "Sabal palmetto",
+      "asked": "Sabal palmetto",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "conocarpus-erectus",
+      "latin": "Conocarpus erectus",
+      "asked": "Conocarpus erectus",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "morella-cerifera",
+      "latin": "Morella cerifera",
+      "asked": "Morella cerifera",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": "Myrica cerifera L."
+    },
+    {
+      "id": "hamelia-patens",
+      "latin": "Hamelia patens",
+      "asked": "Hamelia patens",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "chrysobalanus-icaco",
+      "latin": "Chrysobalanus icaco",
+      "asked": "Chrysobalanus icaco",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "psychotria-nervosa",
+      "latin": "Psychotria nervosa",
+      "asked": "Psychotria nervosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "myrcianthes-fragrans",
+      "latin": "Myrcianthes fragrans",
+      "asked": "Myrcianthes fragrans",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "serenoa-repens",
+      "latin": "Serenoa repens",
+      "asked": "Serenoa repens",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "sophora-tomentosa-truncata",
+      "latin": "Sophora tomentosa var. truncata",
+      "asked": "Sophora tomentosa var. truncata",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": "Sophora tomentosa subsp. bahamensis Yakovlev"
+    },
+    {
+      "id": "zamia-integrifolia",
+      "latin": "Zamia integrifolia",
+      "asked": "Zamia integrifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "salvia-coccinea",
+      "latin": "Salvia coccinea",
+      "asked": "Salvia coccinea",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "stachytarpheta-jamaicensis",
+      "latin": "Stachytarpheta jamaicensis",
+      "asked": "Stachytarpheta jamaicensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rivina-humilis",
+      "latin": "Rivina humilis",
+      "asked": "Rivina humilis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "helianthus-debilis",
+      "latin": "Helianthus debilis",
+      "asked": "Helianthus debilis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "muhlenbergia-capillaris",
+      "latin": "Muhlenbergia capillaris",
+      "asked": "Muhlenbergia capillaris",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "tripsacum-dactyloides",
+      "latin": "Tripsacum dactyloides",
+      "asked": "Tripsacum dactyloides",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "passiflora-suberosa",
+      "latin": "Passiflora suberosa",
+      "asked": "Passiflora suberosa",
+      "verdict": "ABSENT",
+      "areas": {
+        "FLA": "ABSENT"
+      },
+      "viaSynonym": null
+    }
+  ]
+}

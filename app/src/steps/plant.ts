@@ -23,6 +23,7 @@ import { techniqueFor, techniqueHref } from "../lib/planting";
 import { citation } from "../components/citation";
 import { silhouetteFor } from "../components/plant-card";
 import { heroPhotoFor } from "../lib/hero-photo";
+import { nativeEvidenceLine } from "../components/native-evidence";
 import { conservationNote } from "../components/conservation-note";
 import { heroFigure } from "../components/hero-figure";
 import { keystoneIcon } from "../components/keystone-icon";
@@ -357,6 +358,10 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
             ]),
           ]),
           el("p", { class: "kv plant-why" }, [el("span", { class: "k" }, t("plant.whyBelongs")), prose(p, "nativeNote", region.meta.id)]),
+          // Who re-checked that claim, and when. Straight under the sentence it
+          // is evidence for — and it says so equally when the checklist
+          // disagrees, which is the only way the line means anything.
+          nativeEvidenceLine(p.id, region.meta.id),
           // What the assessors say, where they say anything — under the name,
           // because it changes how the plant should be treated rather than
           // whether it suits the spot.

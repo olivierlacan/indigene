@@ -1,0 +1,650 @@
+{
+  "source": "World Checklist of Vascular Plants (WCVP), Royal Botanic Gardens Kew",
+  "license": "CC BY 4.0",
+  "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
+  "area": "California (TDWG:CAL — whole state)",
+  "region": "ca-central-coast",
+  "ranAt": "2026-09-21T07:00:21.936Z",
+  "rows": [
+    {
+      "id": "quercus-agrifolia",
+      "latin": "Quercus agrifolia",
+      "asked": "Quercus agrifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "quercus-lobata",
+      "latin": "Quercus lobata",
+      "asked": "Quercus lobata",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "sequoia-sempervirens",
+      "latin": "Sequoia sempervirens",
+      "asked": "Sequoia sempervirens",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "pseudotsuga-menziesii",
+      "latin": "Pseudotsuga menziesii",
+      "asked": "Pseudotsuga menziesii",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "hesperocyparis-sargentii",
+      "latin": "Hesperocyparis sargentii",
+      "asked": "Hesperocyparis sargentii",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "arbutus-menziesii",
+      "latin": "Arbutus menziesii",
+      "asked": "Arbutus menziesii",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "umbellularia-californica",
+      "latin": "Umbellularia californica",
+      "asked": "Umbellularia californica",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "aesculus-californica",
+      "latin": "Aesculus californica",
+      "asked": "Aesculus californica",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "acer-macrophyllum",
+      "latin": "Acer macrophyllum",
+      "asked": "Acer macrophyllum",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "alnus-rhombifolia",
+      "latin": "Alnus rhombifolia",
+      "asked": "Alnus rhombifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "salix-lasiolepis",
+      "latin": "Salix lasiolepis",
+      "asked": "Salix lasiolepis",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "sambucus-nigra-caerulea",
+      "latin": "Sambucus nigra subsp. caerulea",
+      "asked": "Sambucus nigra",
+      "verdict": "INCONCLUSIVE",
+      "areas": {
+        "CAL": "ABSENT"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "ceanothus-thyrsiflorus",
+      "latin": "Ceanothus thyrsiflorus",
+      "asked": "Ceanothus thyrsiflorus",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "arctostaphylos-manzanita",
+      "latin": "Arctostaphylos manzanita",
+      "asked": "Arctostaphylos manzanita",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "heteromeles-arbutifolia",
+      "latin": "Heteromeles arbutifolia",
+      "asked": "Heteromeles arbutifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "frangula-californica",
+      "latin": "Frangula californica",
+      "asked": "Frangula californica",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "ribes-sanguineum",
+      "latin": "Ribes sanguineum",
+      "asked": "Ribes sanguineum",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "ribes-speciosum",
+      "latin": "Ribes speciosum",
+      "asked": "Ribes speciosum",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "baccharis-pilularis",
+      "latin": "Baccharis pilularis",
+      "asked": "Baccharis pilularis",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "diplacus-aurantiacus",
+      "latin": "Diplacus aurantiacus",
+      "asked": "Diplacus aurantiacus",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "vaccinium-ovatum",
+      "latin": "Vaccinium ovatum",
+      "asked": "Vaccinium ovatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "gaultheria-shallon",
+      "latin": "Gaultheria shallon",
+      "asked": "Gaultheria shallon",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "corylus-cornuta",
+      "latin": "Corylus cornuta",
+      "asked": "Corylus cornuta",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "holodiscus-discolor",
+      "latin": "Holodiscus discolor",
+      "asked": "Holodiscus discolor",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "symphoricarpos-albus",
+      "latin": "Symphoricarpos albus",
+      "asked": "Symphoricarpos albus",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "garrya-elliptica",
+      "latin": "Garrya elliptica",
+      "asked": "Garrya elliptica",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rosa-californica",
+      "latin": "Rosa californica",
+      "asked": "Rosa californica",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lupinus-albifrons",
+      "latin": "Lupinus albifrons",
+      "asked": "Lupinus albifrons",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "eriophyllum-staechadifolium",
+      "latin": "Eriophyllum staechadifolium",
+      "asked": "Eriophyllum staechadifolium",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "salvia-spathacea",
+      "latin": "Salvia spathacea",
+      "asked": "Salvia spathacea",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "iris-douglasiana",
+      "latin": "Iris douglasiana",
+      "asked": "Iris douglasiana",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "eschscholzia-californica",
+      "latin": "Eschscholzia californica",
+      "asked": "Eschscholzia californica",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "erigeron-glaucus",
+      "latin": "Erigeron glaucus",
+      "asked": "Erigeron glaucus",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "asclepias-speciosa",
+      "latin": "Asclepias speciosa",
+      "asked": "Asclepias speciosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "asclepias-fascicularis",
+      "latin": "Asclepias fascicularis",
+      "asked": "Asclepias fascicularis",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "sidalcea-malviflora",
+      "latin": "Sidalcea malviflora",
+      "asked": "Sidalcea malviflora",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "scrophularia-californica",
+      "latin": "Scrophularia californica",
+      "asked": "Scrophularia californica",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "achillea-millefolium",
+      "latin": "Achillea millefolium",
+      "asked": "Achillea millefolium",
+      "verdict": "ABSENT",
+      "areas": {
+        "CAL": "ABSENT"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "solidago-velutina-californica",
+      "latin": "Solidago velutina subsp. californica",
+      "asked": "Solidago velutina subsp. californica",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "symphyotrichum-chilense",
+      "latin": "Symphyotrichum chilense",
+      "asked": "Symphyotrichum chilense",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "epilobium-canum",
+      "latin": "Epilobium canum",
+      "asked": "Epilobium canum",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "heuchera-micrantha",
+      "latin": "Heuchera micrantha",
+      "asked": "Heuchera micrantha",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "aquilegia-formosa",
+      "latin": "Aquilegia formosa",
+      "asked": "Aquilegia formosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "sisyrinchium-bellum",
+      "latin": "Sisyrinchium bellum",
+      "asked": "Sisyrinchium bellum",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "artemisia-douglasiana",
+      "latin": "Artemisia douglasiana",
+      "asked": "Artemisia douglasiana",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "viola-adunca",
+      "latin": "Viola adunca",
+      "asked": "Viola adunca",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "stipa-pulchra",
+      "latin": "Stipa pulchra",
+      "asked": "Stipa pulchra",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": "Nassella pulchra (Hitchc.) Barkworth"
+    },
+    {
+      "id": "festuca-californica",
+      "latin": "Festuca californica",
+      "asked": "Festuca californica",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "danthonia-californica",
+      "latin": "Danthonia californica",
+      "asked": "Danthonia californica",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "elymus-glaucus",
+      "latin": "Elymus glaucus",
+      "asked": "Elymus glaucus",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "carex-tumulicola",
+      "latin": "Carex tumulicola",
+      "asked": "Carex tumulicola",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "juncus-patens",
+      "latin": "Juncus patens",
+      "asked": "Juncus patens",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "aristolochia-californica",
+      "latin": "Aristolochia californica",
+      "asked": "Aristolochia californica",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "vitis-californica",
+      "latin": "Vitis californica",
+      "asked": "Vitis californica",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lonicera-hispidula",
+      "latin": "Lonicera hispidula",
+      "asked": "Lonicera hispidula",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rubus-ursinus",
+      "latin": "Rubus ursinus",
+      "asked": "Rubus ursinus",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "fragaria-chiloensis",
+      "latin": "Fragaria chiloensis",
+      "asked": "Fragaria chiloensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "clinopodium-douglasii",
+      "latin": "Clinopodium douglasii",
+      "asked": "Clinopodium douglasii",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "oxalis-oregana",
+      "latin": "Oxalis oregana",
+      "asked": "Oxalis oregana",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "symphoricarpos-mollis",
+      "latin": "Symphoricarpos mollis",
+      "asked": "Symphoricarpos mollis",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "polystichum-munitum",
+      "latin": "Polystichum munitum",
+      "asked": "Polystichum munitum",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "dryopteris-arguta",
+      "latin": "Dryopteris arguta",
+      "asked": "Dryopteris arguta",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "woodwardia-fimbriata",
+      "latin": "Woodwardia fimbriata",
+      "asked": "Woodwardia fimbriata",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "adiantum-jordanii",
+      "latin": "Adiantum jordanii",
+      "asked": "Adiantum jordanii",
+      "verdict": "NATIVE",
+      "areas": {
+        "CAL": "NATIVE"
+      },
+      "viaSynonym": null
+    }
+  ]
+}

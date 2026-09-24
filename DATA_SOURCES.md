@@ -144,6 +144,83 @@ that looks like a fact about the data: its first run concluded GloBI carried no
 citations, which was true of the default response shape and false of the data,
 and it cost this repo a shipped feature until it was re-measured.
 
+## What "native here" means, exactly
+
+Every plant we list makes one claim before it makes any other: **this plant is
+native to this region.** Everything else on a plant page — the caterpillar
+count, the care note, the swap suggestion — is worthless if that claim is
+loose. So here is the whole rule, in one place.
+
+### 1. "Here" is an ecoregion, not a state or a country
+
+A region is defined by the ecoregion codes it claims — EPA Level III over the
+US, EEA biogeographical regions over Europe — plus a coarse box that decides
+things offline. A plant native *to the state* but not *to this ecoregion* does
+not qualify. That is why the Southern California list stops at the mountain
+crest and a Palm Springs spot gets no list rather than a chaparral one, and why
+the Mid-Atlantic list declines the Corn Belt ecoregions its box happens to
+overlap. `src/data/region.*.ts` records the claimed codes and the deliberate
+exclusions, one comment per region.
+
+### 2. A named authority must assert it, for that ground
+
+Not occurrence data, not "it grows there". Occurrence records say a plant was
+*seen* somewhere, which is equally true of an escaped ornamental. The claim
+comes from a flora or checklist, and the ladder is:
+
+1. **The national or regional flora for that place**, where one exists — USDA
+   PLANTS in the US, with OregonFlora, the Burke Herbarium, the Atlas of Florida
+   Plants and the IRC for regional detail; TAXREF/INPN and Tela Botanica's BDTFX
+   in France.
+2. **Kew's World Checklist of Vascular Plants** where no national flora is
+   machine-readable — Ireland's list rests on it outright.
+
+Each row names what it stands on in its own `basis` string, which the plant page
+prints. A row with an empty `basis` is a bug, and the audits fail on it.
+
+### 3. Introduced does not become native with time
+
+Naturalised, long-established, "it's been here for centuries", planted by the
+Romans — none of these make a plant native. Ireland is the worked example: beech
+and sycamore look like they belong and are introductions, and the region's own
+note says so. The catalog carries the species as floras circumscribe them —
+species and subspecies binomials, no cultivars and no nativars.
+
+### 4. Where the claim can be re-asked, it is — and the answer is dated
+
+A citation is a sentence somebody typed; it cannot go stale visibly.
+`npm run native:check -- --region <id>` re-asks Kew's checklist about every row
+in a region and commits the verdict with a date to `data/sources/wcvp/`. All
+twelve regions are covered. `npm run native-evidence` reduces those to
+`src/data/native-evidence.json`, and **the plant page shows the result** — the
+authority, the place, and the month it was last checked.
+
+### 5. The grain of the check is stated, never hidden
+
+The checklist answers by TDWG level-3 area, which is a **state** in the US and a
+**country** in Europe. So "native in Michigan" is a statement about the region;
+"native in California" is not — one area covers the coast and the Mojave alike.
+Where the area checked is wider than the region, the plant page says so in
+words. A weak check is admitted; a weak check dressed as a strong one is not.
+
+### 6. A disagreement is recorded, not smoothed
+
+A world checklist and a regional flora will differ, and neither is automatically
+right. Twelve of 592 rows are in that position today — Kew calls *Penstemon
+digitalis* introduced across the Mid-Atlantic, and does not record *Achillea
+millefolium* in the west at all. Those rows still ship, and **their pages say
+the checklist does not confirm them** rather than showing a clean bill. The
+decision about what to do with a disagreement is editorial and belongs in the
+region file; see [`data/sources/wcvp/README.md`](data/sources/wcvp/README.md)
+and [`docs/source-ledger.md`](docs/source-ledger.md).
+
+### 7. Three kinds of source, not three of the same kind
+
+A region ships on at least three sources spanning at least three of the five
+jobs below, one of which must be an authority a script can re-ask. Two
+recommendation lists that agree may simply share a blind spot — which is exactly
+what happened, and what `docs/source-ledger.md` exists to stop repeating.
+
 ## The sources
 
 | Source | Used for | Access | Licence / terms | Verdict |
@@ -159,6 +236,7 @@ and it cost this repo a shipped feature until it was re-measured.
 | **USDA hardiness zones** | Zone label | *Derived locally* from Open-Meteo minimum temperatures using the USDA 10°F/zone definition | Zone *definition* is public; the official USDA GIS layer has its own terms | ✅ We compute the zone rather than depend on the map service, which sidesteps the licensing question. |
 | **USDA PLANTS Database** | Native status, distribution | Referenced for the seed data | US Government public domain | ✅ Safe. |
 | **Tallamy host-plant counts / NWF Native Plant Finder** | Lepidoptera host-species counts (the host score) | Used to populate the seed dataset by genus | ⚠️ The underlying research (Narango, Tallamy et al.) is published science; the NWF tool's database is not offered under an explicit open-data licence | ⚠️ **Facts, used at genus level, with attribution.** Host *counts* are factual figures from published ecology, cited in each row's `basis`. We do not copy NWF's database wholesale or mirror their tool. If NWF later asserts terms, the counts can be re-sourced from the primary literature. Flagged here rather than assumed safe. |
+| **Kew WCVP, widened to every region** | The native-status check all twelve regions can be re-asked against — `npm run native:check -- --region <id>`, previously Ireland only | GBIF checklist dataset, one call per taxon, committed per region to `data/sources/wcvp/` | CC BY 4.0 (RBG Kew) | ✅ **The third kind of source the society lists could not be.** They are recommendation lists and cannot settle range; the one with a flora tier has no Douglas-fir in Portland. WCVP answers everywhere at the same grain. Scope follows TDWG level 3, so it is state-fine in the Mid-Atlantic and country-coarse in France — recorded per region in the folder README, and a coarse area is still admitted because it catches the plant that is not native to the country at all. Eleven flags over 578 rows; none acted on, because a disagreement between Kew and a regional flora is editorial. See `docs/source-ledger.md`. |
 | **Lady Bird Johnson Wildflower Center** | Size, bloom, culture notes | Referenced for the seed data | Educational reference; individual facts (mature size, bloom month) are not copyrightable | ✅ Facts referenced, not text copied. |
 | **USFS Native Plant Network — Propagation Protocol Database** (`npn.rngr.net`) | Propagation & seed-saving method per plant ("how to make more of it") | Referenced for the propagation notes | USDA Forest Service / RNGR resource; individual propagation facts (needs cold stratification, roots from hardwood cuttings) are not copyrightable | ✅ **The dependable propagation anchor.** Method facts referenced per row (`propagation.basis`), written in our own plain words; we don't copy any protocol's prose. Each method term is glossed inline in `lib/plain.ts`. |
 | **USFS Woody Plant Seed Manual** (Agric. Handbook 727, Bonner & Karrfalt 2008) | Seed handling for trees & shrubs (stratification weeks, scarification, cleaning) | Referenced for the woody-plant propagation notes | US Government public domain | ✅ Safe. Public-domain federal handbook; the standard reference for woody-plant seed. |
@@ -184,6 +262,9 @@ and it cost this repo a shipped feature until it was re-measured.
 | **DBIF v2** (CEH/BRC *Database of Insects and their Food Plants*) | GB cross-check for the European host counts — ships a per-plant "insect species richness" file | *Identified, not yet run* — the intended independent check on the Gaytán counts | **Open Government Licence** ("Contains data supplied by NERC") | ⏳ Safe with attribution, and still the open follow-up. Great Britain only, but the Atlantic-France flora overlaps almost entirely, so it can corroborate our genus counts without sharing the Gaytán dataset's assumptions. Deliberately deferred (`docs/host-counts-plan.md` §8): no shipped number depends on it. |
 | **BRC DBIF / Southwood foliage-insect rankings** | Formerly the basis for the *interim* France host-count estimates | *No longer used for any shipped number* | Facts referenced, not prose | ✅ **Retired.** The France rows now carry counts computed from the Gaytán matrix above, so these rankings no longer stand behind any figure in the app. DBIF v2 (row above) remains the intended independent cross-check of those counts; it has not been run yet. |
 | **RHS "Plants for Pollinators", Buglife, Plantlife, Woodland Trust, Butterfly Conservation** | Pollinator value, propagation, notable wildlife ties for the France seed data | Referenced for all four France lists | Publications © ; we use the factual associations, not the prose | ✅ Facts referenced. |
+| **National Audubon Society — Plants for Birds** (`audubon.org/native-plants`) | **Audit only, nothing shipped.** The first outside list of the same *kind* as ours — native plants curated for gardeners — used to ask two questions our occurrence-based tooling cannot: which of their picks a region of ours lacks, and whether our native claims survive a source that did not help write them | Harvested **once, by hand** (`cd app && npm run harvest:audubon`) into `data/sources/audubon-plants-for-birds/raw/`, which is **git-ignored**; reduced by `npm run societies` to a committed per-region snapshot of the verdict on *our own rows* | ⚠️ Their plant data comes from **BONAP**, whose row below this one is a standing ⛔ | ⚠️ **Deliberately not embedded.** Their curated tier and their county flora are two different kinds of list and are never pooled: the flora is used only to check native status, never to count a gap. The raw harvest stays out of the repo precisely because it is BONAP-derived — what we commit is the same shape as `wcvp/`, a record of what an upstream said about the rows *we* wrote, plus the genera we lack. Known limits are recorded in the folder README and bound what the comparison may claim: western coverage is much weaker than eastern (their Portland flora has no Douglas-fir), the bird groups on a card are capped at five, and generic limits differ from ours (`Berberis`/`Mahonia`). Nothing in the app reads it and no shipped number depends on it. |
+| **Lady Bird Johnson Wildflower Center — Recommended Species by State** (`wildflower.org/collections`) | **Audit only, nothing shipped.** The second society benchmark, added because the first (Audubon, row above) is unusable west of the Rockies. Per-state recommendation lists, already split into CA north/south and FL north/central/south | Harvested by hand (`cd app && npm run harvest:wildflower`) into a **git-ignored** `raw/`; reduced by `npm run societies` to a committed per-region snapshot of the verdict on *our own rows* | Individual facts (which species a state list names) are not copyrightable; the Center is already cited above as a reference for size/bloom/culture | ⚠️ **Three limits, all stated in the folder README and enforced by the report.** It is a *recommendation* list with no flora tier, so absence never means "not native" — it means they didn't recommend it, and snowberry and camas are both absent from the Washington list. It is *state*-scoped, wider than any region we ship, so the gap column over-counts. And it is *not fully independent*: we already reference the Center for culture notes, so only the species **selection** is outside evidence. Nothing in the app reads it. |
+| **USDA PLANTS county distribution** (`plantsservices.sc.egov.usda.gov`) | County-level distribution — the open answer to the county-resolution question the BONAP row below has always pointed at. **Found and documented, not yet built** | Undocumented endpoint: `POST /api/PlantProfile/getDownloadDistributionDocumentation` with `{"masterId": <the profile's numeric Id>}`, returning CSV. Every other key shape returns a header and no rows, which reads as "no distribution" — hence `docs/source-ledger.md` writing it down | US Government **public domain** | ⏳ **The best open move left, with one limit stated up front.** It is a *distribution*, not a native status: USDA asserts native status at lower-48 level, so this says where a plant occurs and cannot name a county where it is introduced. Paired with a native-status authority it tightens exactly where ours is weakest — "Kew says native in California" plus "recorded in Los Angeles, Orange and San Diego" is a much closer claim about a Los Angeles garden. Needs a hand-written county list per region, and an honest note where a county straddles the line (San Bernardino and Riverside are half cismontane, half desert). |
 | **BONAP county distribution** | County-level native status | *Not yet integrated* | ⚠️ BONAP maps have restrictive reuse terms | ⛔ **Do not scrape or embed.** Phase 2 should use USDA PLANTS county data (public domain) for county resolution instead. Noted so we don't build on it by accident. |
 | **Basemap tiles** (for the location map) | — | *Not used* | OSM/other tile terms + offline concerns | ⏳ Phase 1 uses a schematic metric grid instead of external tiles, to stay offline-first and avoid tile-usage terms. |
 

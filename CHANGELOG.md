@@ -64,6 +64,15 @@ subtitle on the What's new page.
   southern area (`data/sources/hosts/`). It's usable for Sydney, thin for the
   Cape and near-empty for Argentina. Every record for each candidate area is
   archived as CSV in `data/sources/hosts/records/`.
+- Regions: every region page now ends with the native plant groups whose ground
+  it is — plant sales, walks and advice from people who garden it. Three to five
+  per region, chosen for the region rather than the country.
+  https://indigene.app/regions/mid-atlantic
+
+- Plants: each plant page now says who checked that it is native where you are,
+  and when — and says so plainly on the twelve plants where a world checklist
+  disagrees with the regional flora we list them on.
+  https://indigene.app/plants/quercus-alba
 
 ### Changed
 
@@ -231,6 +240,54 @@ subtitle on the What's new page.
   regions — can a point in Canada be resolved to an ecoregion at all? The EPA
   service answers nothing north of the border. Unanswered so far: the sandbox
   can't reach the candidate hosts, and the probe says so rather than guessing.
+- Internal: `docs/outreach/` collects the native plant societies, botanical
+  conservatories and biodiversity bodies that cover each of the twelve shipped
+  regions — who they are, which role to write to, and where their current
+  officers are listed — plus a playbook for approaching them. France and Ireland
+  have no native-plant-society equivalent; the directory says what stands in for
+  one in each. Research only, nothing in the app.
+- Internal: `npm run harvest:audubon` and `npm run societies` measure each US
+  region against a native plant society's own garden list — the first outside
+  list of the same kind as ours, where `npm run candidates` only had occurrence
+  density. Findings in `docs/society-list-comparison.md`: the eastern regions
+  carry a third of what Audubon recommends, 80% of our Mid-Atlantic rows are
+  among their curated picks, and their western coverage is too thin to measure
+  against (their Portland flora has no Douglas-fir). The raw harvest stays
+  git-ignored because their plant data is BONAP-derived; only the verdict on our
+  own rows is committed.
+- Internal: a second society benchmark, the Lady Bird Johnson Wildflower
+  Center's per-state Recommended Species, because the first one was unusable
+  west of the Rockies. `npm run societies` now reads both, refuses a flora as a
+  native-status check when it cannot place a quarter of a region's rows, and
+  handles the renames that were scoring one plant as two findings (Berberis /
+  Mahonia, Acmispon glaber / Lotus scoparius). It withdrew the one finding the
+  first run produced: Echinacea purpurea in the Mid-Atlantic is recommended by
+  the Center across PA, NJ, MD, DE and VA, so the claim stands.
+- Internal: `docs/society-list-comparison.md` now names the plants, not just
+  the counts — the consensus shortlist of species both organizations recommend
+  and we don't carry, 35 new genera for the Mid-Atlantic and 33 for North &
+  Central Florida. The headline: hickory is missing from all seven regions and
+  willow and poplar from the Mid-Atlantic alone, which are four of the biggest
+  caterpillar hosts in the eastern flora.
+- Internal: every region now stands on at least three kinds of source, not two
+  of the same kind. `npm run native:check` was Ireland-only; it now covers all
+  twelve regions against Kew's WCVP, which answers in Oregon as well as in
+  Ireland and settles what a recommendation list cannot. Eleven flags over 578
+  rows, the strongest being Penstemon digitalis (Kew calls it introduced in all
+  ten Mid-Atlantic states) and Achillea millefolium. The standard and the
+  scoreboard are in `docs/source-ledger.md`.
+- Internal: DATA_SOURCES.md states the native-status rule in one place — what
+  "here" means, which authority may assert it, that introduced never becomes
+  native, that the claim is re-asked and dated, and that the grain of the check
+  is printed rather than hidden. `npm run native-evidence` reduces the WCVP
+  checks to the 2.8 KB the plant page reads.
+- Internal: the academic sources the ledger had listed as "would be a genuine
+  third opinion" were each tried. Calflora is no finer than Kew, OregonFlora is
+  a JavaScript shell, the Atlas of Florida Plants is behind a WebForms search,
+  and Jepson declines bots with a note that automated traffic is hurting its
+  servers — so it was left alone. The one real upgrade is USDA PLANTS county
+  distribution, public domain, whose undocumented endpoint and its `masterId`
+  key are now written down in `docs/source-ledger.md`.
 
 ### Fixed
 

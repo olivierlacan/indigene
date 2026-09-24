@@ -24,6 +24,7 @@
 // else entirely is an ordinary thing to meet, and the answer to it is a row
 // left out and counted — never a broken screen.
 import { listPlantings, listSpots, savePlanting, saveSpot } from "../db";
+import { ECOREGION_PROVIDERS } from "../types";
 import type {
   EcoregionInfo,
   HorizonMask,
@@ -363,10 +364,10 @@ function toSite(v: unknown): SiteData | null {
 function toEcoregionInfo(v: unknown): EcoregionInfo | null {
   const r = asRecord(v);
   if (!r) return null;
-  const provider = r.provider;
+  const provider = ECOREGION_PROVIDERS.find((p) => p === r.provider);
   const code = str(r.code);
   const name = str(r.name);
-  if ((provider !== "epa-omernik" && provider !== "eea-biogeo") || !code || !name) return null;
+  if (!provider || !code || !name) return null;
   const detail = asRecord(r.detail);
   const detailCode = detail ? str(detail.code) : null;
   const detailName = detail ? str(detail.name) : null;

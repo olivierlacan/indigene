@@ -23,14 +23,16 @@
 import type { Plant, PropagationMethod } from "../types";
 import { REGIONS, loadPlants } from "./plants";
 import type { RegionDef } from "./plants";
+import { mirrorMonth } from "./hemisphere";
+import type { Hemisphere } from "./hemisphere";
 
 /**
  * The four seasons, in the order a year runs them.
  *
- * Every region Indigene covers is north of the equator, so these mean what a
- * reader in Pennsylvania, Oregon, Florida or France means by them, and the
- * index says as much rather than assuming it. If a southern-hemisphere region
- * is ever added, this is the one place that has to learn to flip.
+ * Named, not dated: "spring" is September to November in Sydney and March to
+ * May in Pennsylvania, and every window on the planting pages is written as a
+ * season so it reads true on both sides of the equator. Only the "which season
+ * is it now" question needs a hemisphere — see `seasonOfMonth`.
  */
 export type Season = "spring" | "summer" | "fall" | "winter";
 
@@ -38,17 +40,19 @@ export const SEASONS: readonly Season[] = ["spring", "summer", "fall", "winter"]
 
 /** Which season a month (0-11, as `Date` counts them) belongs to. Meteorological
  *  seasons — whole months — because "spring starts on the equinox" is a fact
- *  about the sky and this is a question about soil. */
-export function seasonOfMonth(month: number): Season {
-  if (month <= 1 || month === 11) return "winter"; // Dec–Feb
-  if (month <= 4) return "spring"; // Mar–May
-  if (month <= 7) return "summer"; // Jun–Aug
-  return "fall"; // Sep–Nov
+ *  about the sky and this is a question about soil. South of the equator the
+ *  same month is six months further round the year. */
+export function seasonOfMonth(month: number, hemisphere: Hemisphere = "north"): Season {
+  const m = hemisphere === "south" ? mirrorMonth(month) : month;
+  if (m <= 1 || m === 11) return "winter"; // Dec–Feb (Jun–Aug south)
+  if (m <= 4) return "spring"; // Mar–May (Sep–Nov south)
+  if (m <= 7) return "summer"; // Jun–Aug (Dec–Feb south)
+  return "fall"; // Sep–Nov (Mar–May south)
 }
 
 /** The season it is right now, for the "what to do this season" card. */
-export function currentSeason(now: Date = new Date()): Season {
-  return seasonOfMonth(now.getMonth());
+export function currentSeason(hemisphere: Hemisphere = "north", now: Date = new Date()): Season {
+  return seasonOfMonth(now.getMonth(), hemisphere);
 }
 
 /** Where the new plant comes from: seed you save, or the living plant itself.

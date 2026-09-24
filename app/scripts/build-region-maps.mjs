@@ -56,6 +56,12 @@ const EPA_L3_LAYER = 11;
 const EPA_STATES_LAYER = 0;
 const EEA_LAYER =
   "https://bio.discomap.eea.europa.eu/arcgis/rest/services/BioRegions/BiogeographicalRegions_WM/MapServer/0";
+/** RESOLVE Ecoregions 2017, for regions south of the equator — the same hosted
+ *  layer `site.ts` point-queries, so the drawn shape is the one that selects.
+ *  Unconfirmed from the build sandbox (its egress refuses services.arcgis.com);
+ *  `npm run probe:resolve` checks it. */
+const RESOLVE_LAYER =
+  "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/Resolve_Ecoregions/FeatureServer/0";
 /** Country outlines for the European maps. The EEA layer alone would draw
  *  France as an unlabelled blob of biogeographical regions — recognizable as a
  *  coastline, useless as a place. Natural Earth 1:50m is the standard
@@ -561,6 +567,7 @@ async function buildRegion(meta) {
   // most of the file-size win on a coastline full of islands.
   const minArea = (offset * offset) / 5;
   const eea = meta.ecoregion?.provider === "eea-biogeo";
+  const resolve = meta.ecoregion?.provider === "resolve-2017";
 
   // Countries are the land everywhere: without them a US map stops dead at the
   // Canadian border, and the empty half of the picture reads as ocean.
@@ -574,6 +581,15 @@ async function buildRegion(meta) {
     );
     if (!mine.length) throw new Error(`${meta.id}: no EEA polygon matched ${meta.ecoregion.codes}`);
     cover = ringsIn(mine, meta.bounds, minArea);
+  } else if (resolve) {
+    // Country outlines only, as in Europe: no state layer to borrow here, and
+    // the cities in LANDMARKS do the placing.
+    const ids = meta.ecoregion.codes.map(Number).filter(Number.isFinite);
+    const mine = await queryGeoJson(RESOLVE_LAYER, {
+      where: `ECO_ID IN (${ids.join(",")})`, box: view, offset, outFields: "ECO_ID",
+    });
+    if (!mine.features.length) throw new Error(`${meta.id}: no RESOLVE polygon for ${ids}`);
+    cover = ringsIn(mine.features, meta.bounds, minArea);
   } else {
     // State lines, from the ecoregion service's own layer — drawn as lines over
     // the land, since in the US "which state is that?" is how people place a
@@ -599,6 +615,8 @@ async function buildRegion(meta) {
 
   const source = eea
     ? "EEA Biogeographical Regions of Europe (2016), CC BY 4.0 © European Environment Agency"
+    : resolve
+    ? "RESOLVE Ecoregions 2017 (Dinerstein et al. 2017), CC BY 4.0"
     : "US EPA Level III Ecoregions of the Conterminous United States (2011), public domain";
   // A map with no labelled places is a blob nobody can find themselves on, which
   // defeats the point of drawing it. Refuse to build one: every region must

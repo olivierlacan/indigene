@@ -1,5 +1,5 @@
 import { el, clear } from "../ui";
-import { navigate, store, rememberDraftSpot } from "../state";
+import { navigate, store, rememberDraftSpot, readerHemisphere } from "../state";
 import { manualSunEstimate } from "../lib/solar";
 import { sunPlain } from "../lib/plain";
 import { sunIcon } from "../components/sun-icon";
@@ -15,10 +15,12 @@ export function renderSun(main: HTMLElement): void {
   const hasCoords = store.draft.lat != null;
   if (!hasCoords && !store.draft.regionOverride) return void navigate("location");
 
+  // "The south side" is the sunny one only north of the equator.
+  const south = readerHemisphere() === "south";
   const buckets: { key: "full" | "half" | "shade"; title: string; sub: string }[] = [
-    { key: "full", title: t("sun.full"), sub: t("sun.fullSub") },
+    { key: "full", title: t("sun.full"), sub: t(south ? "sun.fullSubSouth" : "sun.fullSub") },
     { key: "half", title: t("sun.half"), sub: t("sun.halfSub") },
-    { key: "shade", title: t("sun.shade"), sub: t("sun.shadeSub") },
+    { key: "shade", title: t("sun.shade"), sub: t(south ? "sun.shadeSubSouth" : "sun.shadeSub") },
   ];
 
   const result = el("div", { "aria-live": "polite" });

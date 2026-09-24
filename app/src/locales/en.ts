@@ -264,7 +264,7 @@ export const en = {
   "spot.tilePlantsExplain": "Every plant you've logged here, counting six milkweeds as six.",
   "spot.tileKinds": "Species",
   "spot.tileKindsExplain":
-    "How many different plants you've got in. A mix carries a garden through the year — something in flower in April, something with berries in October.",
+    "How many different plants you've got in. A mix carries a garden through the year — something in flower in spring, something with berries in autumn.",
   "spot.tileHosts": "Nurtured",
   "spot.tileHostsExplain":
     "How many of your species raise caterpillars. Caterpillars are what songbirds feed their chicks, so this is the number that turns a garden into food.",
@@ -459,10 +459,12 @@ export const en = {
     "Hours of direct sun decide more about what will thrive than anything else you can measure. And shade isn't a flaw — there's a native for every light level, from prairie flowers to forest-floor ferns. The light just decides which ones.",
   "sun.full": "Sunny most of the day",
   "sun.fullSub": "Direct sun for 6+ hours — open lawn, south side, no big trees close by.",
+  "sun.fullSubSouth": "Direct sun for 6+ hours — open lawn, north side, no big trees close by.",
   "sun.half": "Sun for about half the day",
   "sun.halfSub": "A few hours of direct sun, shade the rest — near a building or scattered trees.",
   "sun.shade": "Mostly shady",
   "sun.shadeSub": "Little direct sun — under trees, north side, or hemmed in by walls.",
+  "sun.shadeSubSouth": "Little direct sun — under trees, south side, or hemmed in by walls.",
   "sun.thisSpotGets": "This spot gets ",
   "sun.bestGuess": "Best guess {hours} hours, likely somewhere between {low} and {high}.",
   "sun.fromScan": "Measured from your sky scan.",
@@ -723,8 +725,9 @@ export const en = {
   //             than a worry ("nothing for eighteen months" is a fact, not a
   //             failure).
   //   .timing   the paragraph: the *cue to watch for* rather than a date.
-  //             Dates lie across eight regions — a Floridian's February is a
-  //             Pennsylvanian's April — while "when the pods turn dark" and
+  //             Dates lie across regions and hemispheres — a Floridian's
+  //             February is a Pennsylvanian's April, and Sydney's October is
+  //             Paris's April — while "when the pods turn dark" and
   //             "when the shoot snaps cleanly" are true everywhere.
   //   .mistake  the one slip that wastes the whole attempt, said plainly.
   // -------------------------------------------------------------------------
@@ -743,13 +746,13 @@ export const en = {
   "prop.seed-cold-moist.when": "Sow outdoors in autumn, or start the fridge in midwinter.",
   "prop.seed-cold-moist.wait": "Four to twelve weeks of cold, then it sprouts.",
   "prop.seed-cold-moist.timing":
-    "There are two routes, and the calendar question is really which one you're on. Outdoors: sow the pot in October or November, stand it somewhere it will be rained and snowed on, and real winter does the counting for you. In the fridge: count backwards from when you want seedlings — ten weeks of cold and an April sowing means the bag goes in around late January. Either way the seed has to stay *damp* the whole time. Dry cold does nothing at all, which is why a packet posted into the fridge in November is still sitting there unchanged in spring.",
+    "There are two routes, and the calendar question is really which one you're on. Outdoors: sow the pot in mid-autumn, stand it somewhere it will be rained and snowed on, and real winter does the counting for you. In the fridge: count backwards from when you want seedlings — ten weeks of cold before a spring sowing means the bag goes in around midwinter. Either way the seed has to stay *damp* the whole time. Dry cold does nothing at all, which is why a packet posted into the fridge in autumn is still sitting there unchanged in spring.",
   "prop.seed-cold-moist.mistake":
     "Not looking. Some seed sprouts inside the bag before its weeks are up, and the little white root snaps off if you find it late — open it every couple of weeks from halfway on.",
   "prop.seed-scarify.when": "Right before you sow, whenever that is.",
   "prop.seed-scarify.wait": "Days rather than weeks, once it's in the ground.",
   "prop.seed-scarify.timing":
-    "Scarifying isn't a season, it's the last step before sowing — so the real question is when you're sowing, and this follows it. Do it the evening before: scuff or nick the coat, soak overnight, sow in the morning. What you must not do is scarify a batch in January to sow in April. Breaching the coat takes away the seed's raincoat; from then on it can take up water, and a damp scarified seed in a jar will either rot or sprout in the dark. The soak doubles as a check — seed that has drunk swells visibly and looks fatter than its neighbours, and the ones still small and hard want another pass on the sandpaper.",
+    "Scarifying isn't a season, it's the last step before sowing — so the real question is when you're sowing, and this follows it. Do it the evening before: scuff or nick the coat, soak overnight, sow in the morning. What you must not do is scarify a batch in winter to sow in spring. Breaching the coat takes away the seed's raincoat; from then on it can take up water, and a damp scarified seed in a jar will either rot or sprout in the dark. The soak doubles as a check — seed that has drunk swells visibly and looks fatter than its neighbours, and the ones still small and hard want another pass on the sandpaper.",
   "prop.seed-scarify.mistake":
     "Going too deep. Stop the moment the paler inside shows: you want the coat breached, not the seed wounded.",
   "prop.seed-surface-light.when": "Late winter to spring under cover; autumn outdoors.",
@@ -779,13 +782,13 @@ export const en = {
   "prop.cuttings-semi-hardwood.when": "Mid-summer to early autumn, as the shoots firm up.",
   "prop.cuttings-semi-hardwood.wait": "Six to twelve weeks.",
   "prop.cuttings-semi-hardwood.timing":
-    "Later in the same year's growth, once the base of a shoot has stiffened and turned woody while the tip is still green — for most shrubs that's July through September. Slower to root than a soft cutting and far more forgiving: this one can sit for a week without collapsing, which makes it the right choice for anyone who can't look at a pot every day. Root them in a shaded frame or a sheltered corner, leave them there over the winter, and move them on the following spring.",
+    "Later in the same year's growth, once the base of a shoot has stiffened and turned woody while the tip is still green — for most shrubs that's midsummer to early autumn. Slower to root than a soft cutting and far more forgiving: this one can sit for a week without collapsing, which makes it the right choice for anyone who can't look at a pot every day. Root them in a shaded frame or a sheltered corner, leave them there over the winter, and move them on the following spring.",
   "prop.cuttings-semi-hardwood.mistake":
     "Leaving every leaf on. A cutting with no roots yet can't supply a full head of foliage — strip the lower leaves and cut the remaining big ones in half.",
   "prop.cuttings-hardwood.when": "Deep winter, while the plant is bare.",
   "prop.cuttings-hardwood.wait": "Rooted by spring; planted out the autumn after.",
   "prop.cuttings-hardwood.timing":
-    "After the leaves are down and before the buds swell — roughly December to February across most of the ground this app covers. The plant is asleep, so the cutting doesn't have to keep a head of leaves alive while it grows roots, and that is what makes this the least demanding cutting there is: pencil-thick pieces about a forearm long, pushed half their length into damp ground, and left alone until spring. Willows and dogwoods root so readily that they're often stuck straight into the spot where the new plant is wanted.",
+    "After the leaves are down and before the buds swell — the depth of winter, whichever months that is where you are. The plant is asleep, so the cutting doesn't have to keep a head of leaves alive while it grows roots, and that is what makes this the least demanding cutting there is: pencil-thick pieces about a forearm long, pushed half their length into damp ground, and left alone until spring. Willows and dogwoods root so readily that they're often stuck straight into the spot where the new plant is wanted.",
   "prop.cuttings-hardwood.mistake":
     "Planting them upside down. A bare twig looks the same both ways, so mark the top as you cut — the buds point up the stem, and that's the end that must stay up.",
   "prop.layering.when": "Pin the branch down in spring; cut it free a year later.",
@@ -803,7 +806,7 @@ export const en = {
   "prop.runners.when": "Late summer into autumn, once the plantlet has roots.",
   "prop.runners.wait": "Ready to move a few weeks after it roots.",
   "prop.runners.timing":
-    "Wait for the baby to root itself, which it does wherever it touches soil over the summer; tug it very gently and a rooted one holds on. Late summer and autumn is when most are ready, and it is also the kindest time to move them — warm soil, cooling air, and months before they're asked to do anything. The tidy version: in July, pin each plantlet into a small pot of compost sunk beside the parent; in September cut the runner and lift a pot already full of roots.",
+    "Wait for the baby to root itself, which it does wherever it touches soil over the summer; tug it very gently and a rooted one holds on. Late summer and autumn is when most are ready, and it is also the kindest time to move them — warm soil, cooling air, and months before they're asked to do anything. The tidy version: in midsummer, pin each plantlet into a small pot of compost sunk beside the parent; come early autumn, cut the runner and lift a pot already full of roots.",
   "prop.runners.mistake":
     "Snipping the runner first and hoping. Until the plantlet has roots of its own, the parent is what's keeping it alive.",
   "prop.root-cuttings.when": "Late autumn to midwinter, while everything is dormant.",
@@ -1561,6 +1564,7 @@ export const en = {
     "Dashed: the rectangle this region still is. We haven't traced its edges from the ecoregion map yet, so treat the margins as approximate.",
   "regionWhere.linkEpa": "See the EPA's ecoregion maps",
   "regionWhere.linkEea": "See the EEA's region map",
+  "regionWhere.linkResolve": "See the world ecoregion map",
   "regionStat.plants.label": "Native plants",
   "regionStat.plants.sub": "curated for this region",
   "regionStat.plants.explain":
@@ -1610,7 +1614,9 @@ export const en = {
     "Fifteen ways to turn one plant into several — from seed you collect, or from the plant already in the ground. Each one has a season, and picking the right week matters more than any other thing you'll do.",
   "planting.nowTitle": "What to do in {season}",
   "planting.nowLede":
-    "It's {season} where the seasons are northern, which is everywhere Indigene covers. These are the techniques whose window is open now.",
+    "It's {season} in the northern hemisphere. These techniques are in season now.",
+  "planting.nowLedeSouth":
+    "It's {season} in the southern hemisphere, where your spot is. These techniques are in season now.",
   "planting.nowEmpty": "Nothing is calling for you this season — a good time to read ahead.",
   "planting.seasonNoteTitle": "Seasons, not dates. ",
   "planting.seasonNote":
@@ -2109,6 +2115,7 @@ export const en = {
   // ---------------------------------------------------------------------
   "ecoregion.suffixEea": "EEA biogeographical region",
   "ecoregion.suffixEpa": "EPA Level III ecoregion",
+  "ecoregion.suffixResolve": "RESOLVE ecoregion",
   "ecoregion.eea.alpine": "Alpine",
   "ecoregion.eea.atlantic": "Atlantic",
   "ecoregion.eea.black-sea": "Black Sea",

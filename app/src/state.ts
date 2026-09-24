@@ -13,6 +13,9 @@ import { DEFAULT_WEIGHTS, NO_FILTERS } from "./lib/ranking";
 import type { ActiveFilters } from "./lib/ranking";
 import { kvGet, kvSet } from "./db";
 import { rememberSpot, sticky } from "./lib/sticky";
+import { REGIONS } from "./data/regions";
+import { hemisphereOf, regionHemisphere } from "./lib/hemisphere";
+import type { Hemisphere } from "./lib/hemisphere";
 
 export interface Draft {
   lat: number | null;
@@ -206,6 +209,19 @@ export function knownSpot(): { lat: number; lon: number; spotId: string | null }
  */
 export function knownRegion(): string | null {
   return store.draft.regionOverride ?? sticky().spot?.regionId ?? null;
+}
+
+/**
+ * Which half of the world this reader gardens in: their spot's latitude, else
+ * the region they picked by hand, else north — where a page read before anyone
+ * has given a place has to land somewhere. Whatever says "spring" or "the
+ * south side" asks here.
+ */
+export function readerHemisphere(): Hemisphere {
+  const spot = knownSpot();
+  if (spot) return hemisphereOf(spot.lat);
+  const region = REGIONS.find((r) => r.meta.id === knownRegion());
+  return region ? regionHemisphere(region.meta) : "north";
 }
 
 export function navigate(step: string): void {

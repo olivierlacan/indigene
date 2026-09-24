@@ -208,9 +208,10 @@ export function zoneFromMinTemp(tF: number): string {
 }
 
 // --- Ecoregion: a real, provider-tagged classification via ArcGIS point query.
-// Two public services, picked by where the point is: US EPA (Omernik) for the
-// conterminous US (public domain), and EEA Biogeographical Regions of Europe for
-// Europe (CC-BY 4.0). Both are best-effort — on any failure (offline, CORS, a
+// Three public services, picked by where the point is: US EPA (Omernik) for the
+// conterminous US (public domain), EEA Biogeographical Regions of Europe for
+// Europe (CC-BY 4.0), and RESOLVE Ecoregions 2017 south of the equator (CC-BY
+// 4.0), where neither of the others reaches. All are best-effort — on any failure (offline, CORS, a
 // coastline point that hits no polygon, outside coverage) we fall back to the
 // coarse box guess below, and region *selection* still works from the box alone.
 // See docs/ecoregion-plan.md and docs/france-localization-plan.md.
@@ -220,6 +221,7 @@ async function fetchEcoregion(
 ): Promise<EcoregionInfo | null> {
   if (inEurope(lat, lon)) return fetchEcoregionEEA(lat, lon);
   if (inConus(lat, lon)) return fetchEcoregionEPA(lat, lon);
+  if (inResolveCoverage(lat)) return fetchEcoregionResolve(lat, lon);
   return null;
 }
 
@@ -231,6 +233,13 @@ export function inConus(lat: number, lon: number): boolean {
 }
 export function inEurope(lat: number, lon: number): boolean {
   return lat >= 34 && lat <= 72 && lon >= -25 && lon <= 45;
+}
+/** RESOLVE is global, but we only ask it south of the equator — where the
+ *  southern regions are, and where no national service of ours answers. A
+ *  reader in Canada or Japan gains nothing from the extra request until a
+ *  region there declares RESOLVE codes. */
+export function inResolveCoverage(lat: number): boolean {
+  return lat < 0;
 }
 
 // EPA Omernik: one point-in-polygon query on the Level IV layer returns the full
@@ -333,6 +342,49 @@ function scanForEeaRegion(attrs: Record<string, unknown>): { slug: string; name:
   return null;
 }
 
+// RESOLVE Ecoregions 2017 (Dinerstein et al., BioScience 2017; CC-BY 4.0): 846
+// terrestrial ecoregions covering every continent, the successor to WWF's
+// Terrestrial Ecoregions of the World. Esri hosts it as a public feature service.
+// **Not yet confirmed from here**: the build sandbox's egress refuses
+// services.arcgis.com, so the layer id and field names are the published
+// dataset's (ECO_ID, ECO_NAME, BIOME_NAME, REALM), and the parser reads them
+// case-insensitively in case the hosted copy renamed them. `npm run
+// probe:resolve` asks the live service and records what it answers — see
+// data/sources/resolve-ecoregions/.
+const RESOLVE_ECOREGION_QUERY_URL =
+  "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/Resolve_Ecoregions/FeatureServer/0/query";
+
+async function fetchEcoregionResolve(lat: number, lon: number): Promise<EcoregionInfo | null> {
+  const url =
+    `${RESOLVE_ECOREGION_QUERY_URL}?geometry=${lon},${lat}&geometryType=esriGeometryPoint` +
+    `&inSR=4326&spatialRel=esriSpatialRelIntersects` +
+    `&outFields=*&returnGeometry=false&f=json`;
+  const data = await fetchJson(url);
+  return parseEcoregionResolve(data);
+}
+
+// Pure parser for the RESOLVE response. The code is ECO_ID — a stable integer
+// per ecoregion ("Sydney Basin" is one number however the name is spelled) —
+// and the biome and realm become the roll-up, broad first, like Omernik's
+// Level I/II. RESOLVE has one level, so there is no local detail.
+export function parseEcoregionResolve(data: any): EcoregionInfo | null {
+  const raw = data?.features?.[0]?.attributes;
+  if (!raw) return null;
+  const attrs: Record<string, unknown> = {};
+  for (const [k, v] of Object.entries(raw)) attrs[k.toUpperCase()] = v;
+  const code = str(attrs.ECO_ID);
+  const name = str(attrs.ECO_NAME);
+  // ECO_ID 0 is the dataset's "Rock and Ice" filler, not an ecoregion.
+  if (!code || code === "0" || !name) return null;
+  return {
+    provider: "resolve-2017",
+    code,
+    name,
+    hierarchy: [str(attrs.REALM), str(attrs.BIOME_NAME)].filter((s): s is string => !!s),
+    detail: null,
+  };
+}
+
 // Display label: the real region name plus which classification it came from,
 // or the coarse box guess when the live lookup failed.
 export function ecoregionLabel(
@@ -344,12 +396,17 @@ export function ecoregionLabel(
     // The EEA's eleven regions have settled names in each language ("Atlantic"
     // is *atlantique*), so those translate off the canonical slug. EPA Level III
     // names are American place names — "Willamette Valley" is not translated,
-    // any more than we'd translate "Bordeaux". Only the suffix that says which
+    // any more than we'd translate "Bordeaux", and RESOLVE's ("Southeast
+    // Australia temperate forests") are left as published. Only the suffix that says which
     // classification answered is a sentence, and that always translates.
     const name = info.provider === "eea-biogeo"
       ? tOptional(`ecoregion.eea.${info.code}`) ?? info.name
       : info.name;
-    const suffix = t(info.provider === "eea-biogeo" ? "ecoregion.suffixEea" : "ecoregion.suffixEpa");
+    const suffix = t(
+      info.provider === "eea-biogeo" ? "ecoregion.suffixEea"
+        : info.provider === "resolve-2017" ? "ecoregion.suffixResolve"
+        : "ecoregion.suffixEpa"
+    );
     return `${name} (${suffix})`;
   }
   return ecoregionGuess(lat, lon);

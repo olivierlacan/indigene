@@ -4,6 +4,7 @@
 // sun clears the scanned horizon, averaged across the growing season.
 import type { HorizonMask, SunEstimate } from "../types";
 import { sunLabel } from "./plain";
+import { hemisphereOf, mirrorMonth } from "./hemisphere";
 
 const D2R = Math.PI / 180;
 const R2D = 180 / Math.PI;
@@ -105,7 +106,10 @@ export function estimateSunHours(opts: {
   const { lat, lon, mask, deciduousOverhead, source } = opts;
 
   // Midpoints of the growing season, plus the shoulder months where a
-  // deciduous canopy overhead is bare and lets more light through.
+  // deciduous canopy overhead is bare and lets more light through. Written as
+  // the northern season (April–October); south of the equator the same days
+  // fall six months later (October–April), when the sun there is high.
+  const south = hemisphereOf(lat) === "south";
   const sampleDays: { month: number; day: number; leafOff: boolean }[] = [
     { month: 4, day: 15, leafOff: true }, // April — many trees not leafed out
     { month: 5, day: 15, leafOff: false },
@@ -114,7 +118,7 @@ export function estimateSunHours(opts: {
     { month: 8, day: 15, leafOff: false },
     { month: 9, day: 15, leafOff: false },
     { month: 10, day: 15, leafOff: true }, // October — leaves dropping
-  ];
+  ].map((d) => (south ? { ...d, month: mirrorMonth(d.month - 1) + 1 } : d));
 
   const central = averageHours(0);
   const optimistic = averageHours(-5); // horizon 5° lower than scanned

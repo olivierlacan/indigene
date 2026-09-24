@@ -31,6 +31,13 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+## [0.34] - 2026-09-24
+
+**British Columbia & your iNaturalist sightings**
+
+[![Your own iNaturalist sightings, sorted into natives you planted and invasives to deal with](docs/screenshots/pr-168/thumb.png)](docs/screenshots/pr-168/import-light.png)
+[Settings](docs/screenshots/pr-168/settings-linked-dark.png) · [Import](docs/screenshots/pr-168/import-dark.png) · [Your spot](docs/screenshots/pr-168/spot-invasives-dark.png)
+
 ### Added
 
 - The Pacific Northwest now reaches into British Columbia — Vancouver, Victoria,

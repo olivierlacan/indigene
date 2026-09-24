@@ -43,6 +43,30 @@ try {
   try { imp.buildOwnSightingsUrl("bad name&x=1", 1); } catch { threw = true; }
   expect(threw, "won't build a request from an invalid username");
 
+  // --- pacing: one page at a time, a second apart ------------------------------
+  const pace = async (total) => {
+    const log = [];
+    const net = {
+      fetch: async (url) => {
+        const page = Number(new URL(url).searchParams.get("page"));
+        log.push(`fetch ${page}`);
+        const left = Math.max(0, Math.min(200, total - (page - 1) * 200));
+        const results = Array.from({ length: left }, (_, i) => ({ id: page * 1000 + i + 1, taxon: { id: 1, name: "Acer rubrum" } }));
+        return new Response(JSON.stringify({ total_results: total, results }));
+      },
+      wait: async (ms) => { log.push(`wait ${ms}`); },
+    };
+    const out = await imp.fetchOwnSightings("kueda", undefined, net);
+    return { log: log.join(", "), out };
+  };
+  const one = await pace(120);
+  expect(one.log === "fetch 1", `a one-page account is one request (${one.log})`);
+  const three = await pace(450);
+  expect(three.log === "fetch 1, wait 1000, fetch 2, wait 1000, fetch 3", `pages go a second apart (${three.log})`);
+  expect(three.out.sightings.length === 450 && !three.out.truncated, "every page is read");
+  const many = await pace(5000);
+  expect(many.log.split("fetch").length - 1 === 3 && many.out.truncated, "stops at three pages and says so");
+
   // --- sorting, in the Mid-Atlantic ------------------------------------------------
   const region = REGIONS.find((r) => r.meta.id === "mid-atlantic");
   const roster = await loadPlants(region);

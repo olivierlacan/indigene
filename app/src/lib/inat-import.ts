@@ -41,6 +41,10 @@ export const LOOKBACK_DAYS = 365;
 const PER_PAGE = 200;
 const MAX_PAGES = 3;
 
+/** The pause between pages. iNaturalist asks API clients to stay around one
+ *  request a second; a free service run by a nonprofit is owed that much. */
+export const PAGE_GAP_MS = 1000;
+
 /** Exactly what's asked for — and so exactly what iNaturalist is asked. */
 const FIELDS = [
   "id",
@@ -107,11 +111,20 @@ export async function loginExists(login: string, signal?: AbortSignal): Promise<
   return true;
 }
 
-/** Fetch the gardener's recent plant sightings, newest first. */
-export async function fetchOwnSightings(login: string, signal?: AbortSignal): Promise<OwnSightings> {
+/** Fetch the gardener's recent plant sightings, newest first — one page at a
+ *  time, `PAGE_GAP_MS` apart. `net` stands in for the network in the checks. */
+export async function fetchOwnSightings(
+  login: string,
+  signal?: AbortSignal,
+  net: { fetch: typeof fetch; wait: (ms: number) => Promise<void> } = {
+    fetch: (...args) => fetch(...args),
+    wait: (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
+  }
+): Promise<OwnSightings> {
   const sightings: OwnSighting[] = [];
   for (let page = 1; page <= MAX_PAGES; page++) {
-    const res = await fetch(buildOwnSightingsUrl(login, page), { signal });
+    if (page > 1) await net.wait(PAGE_GAP_MS);
+    const res = await net.fetch(buildOwnSightingsUrl(login, page), { signal });
     if (!res.ok) throw new InatError(res.status, "observations");
     const data = await res.json();
     const results: unknown[] = Array.isArray(data?.results) ? data.results : [];

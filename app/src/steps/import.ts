@@ -38,8 +38,21 @@ import { t, tn, tx, fmtDate } from "../lib/i18n";
 import type { SavedSpot } from "../types";
 
 /** This visit's answer, per username, so choosing another spot doesn't ask
- *  iNaturalist again. Gone on reload; never written anywhere. */
-const fetched = new Map<string, OwnSightings>();
+ *  iNaturalist again. Kept as the request itself, not its result, so two quick
+ *  taps share one request instead of starting two. Gone on reload; never
+ *  written anywhere. */
+const fetched = new Map<string, Promise<OwnSightings>>();
+
+function ownSightings(login: string): Promise<OwnSightings> {
+  let pending = fetched.get(login);
+  if (!pending) {
+    pending = fetchOwnSightings(login);
+    // A failure isn't an answer: forget it, so trying again really asks again.
+    pending.catch(() => fetched.delete(login));
+    fetched.set(login, pending);
+  }
+  return pending;
+}
 
 export async function renderImport(main: HTMLElement): Promise<void> {
   clear(main);
@@ -70,12 +83,17 @@ export async function renderImport(main: HTMLElement): Promise<void> {
   const body = el("div");
   main.append(body, privacyNote(t("import.privacy", { login }), undefined, "inat"));
 
+  // Which spot is on screen. A slower answer for a spot the reader has since
+  // moved on from is dropped rather than drawn over the one they chose.
+  let showing = 0;
+
   const wanted = hashParam("spot");
   const start = spots.find((s) => s.id === wanted) ?? (spots.length === 1 ? spots[0] : null);
   if (start) void showSpot(start);
   else pickSpot();
 
   function pickSpot(): void {
+    showing++;
     clear(body);
     body.append(
       el("h3", {}, t("import.whichSpot")),
@@ -92,6 +110,7 @@ export async function renderImport(main: HTMLElement): Promise<void> {
   }
 
   async function showSpot(spot: SavedSpot): Promise<void> {
+    const mine = ++showing;
     clear(body);
     const head = el("p", { class: "import-spot" }, [
       el("strong", {}, spot.label),
@@ -111,9 +130,9 @@ export async function renderImport(main: HTMLElement): Promise<void> {
     body.append(status);
     let result: OwnSightings;
     try {
-      result = fetched.get(login!) ?? (await fetchOwnSightings(login!));
-      fetched.set(login!, result);
+      result = await ownSightings(login!);
     } catch (err) {
+      if (mine !== showing) return;
       status.className = "note warn";
       status.textContent = t(isBusy(err) ? "nearby.busy" : "nearby.unreachable");
       return;
@@ -122,6 +141,7 @@ export async function renderImport(main: HTMLElement): Promise<void> {
       loadPlants(region),
       plantingsForSpot(spot.id).catch(() => []),
     ]);
+    if (mine !== showing) return;
     const sorted = sortSightings(result.sightings, region, roster, spot, plantings);
     status.remove();
 

@@ -33,7 +33,8 @@
 // propagate* is better served by being handed the libraries themselves — all
 // free, most of them public institutions.
 import { el, clear } from "../ui";
-import { navigate } from "../state";
+import { navigate, readerHemisphere } from "../state";
+import { stickyReady } from "../lib/sticky";
 import {
   PLANTING_SOURCES,
   SEASONS,
@@ -72,7 +73,7 @@ const seasonInline = (s: Season): string => t(`planting.seasonIn.${s}` as const)
  * giving out noise rather than the answer.
  */
 function seasonStrip(tech: Technique): HTMLElement {
-  const now = currentSeason();
+  const now = currentSeason(readerHemisphere());
   return el("ol", { class: "season-strip", "aria-hidden": "true" },
     SEASONS.map((s) => {
       const on = tech.anyTime || tech.seasons.includes(s);
@@ -130,15 +131,16 @@ function techniqueGroup(from: TechniqueFrom): HTMLElement {
  * This is the answer to the question the whole page exists for — someone
  * standing in their garden in October wants to know what October is *for*, not
  * to read fifteen entries and work it out. The season comes from the device
- * clock and the northern hemisphere, which is every region Indigene covers; the
- * note under it says so rather than leaving a southern reader to discover it.
+ * clock and the reader's hemisphere, and the lede names which half it assumed,
+ * so a reader who hasn't given a place yet can tell it isn't theirs.
  */
 function thisSeasonCard(): HTMLElement {
-  const season = currentSeason();
+  const hemisphere = readerHemisphere();
+  const season = currentSeason(hemisphere);
   const open = techniquesInSeason(season);
   return el("section", { class: "card season-now" }, [
     el("h3", {}, t("planting.nowTitle", { season: seasonName(season) })),
-    el("p", { class: "season-now-lede" }, t("planting.nowLede", { season: seasonInline(season) })),
+    el("p", { class: "season-now-lede" }, t(hemisphere === "south" ? "planting.nowLedeSouth" : "planting.nowLede", { season: seasonInline(season) })),
     open.length
       ? el("ul", { class: "season-now-list" }, open.map((tech) => {
           const g = propagationMethod(tech.method);
@@ -175,7 +177,10 @@ function sourcesSection(): HTMLElement {
   ]);
 }
 
-export function renderPlantingIndex(main: HTMLElement): void {
+export async function renderPlantingIndex(main: HTMLElement): Promise<void> {
+  // "This season" reads the remembered spot, which a reload that lands here
+  // would otherwise race.
+  await stickyReady();
   clear(main);
   document.title = t("planting.docTitle");
 
@@ -234,7 +239,7 @@ async function usedBySection(tech: Technique): Promise<HTMLElement | null> {
 /** The other techniques whose window is open right now — the same nudge the
  *  index leads with, offered to someone who arrived on one page from a plant. */
 function alsoOpenSection(tech: Technique): HTMLElement | null {
-  const season = currentSeason();
+  const season = currentSeason(readerHemisphere());
   const others = techniquesInSeason(season).filter((o) => o.slug !== tech.slug);
   if (!others.length) return null;
   return el("section", { class: "card" }, [
@@ -251,6 +256,7 @@ function alsoOpenSection(tech: Technique): HTMLElement | null {
 }
 
 async function renderTechnique(main: HTMLElement, tech: Technique): Promise<void> {
+  await stickyReady();
   clear(main);
   const g = propagationMethod(tech.method);
   document.title = t("planting.techniqueDocTitle", { name: g.name });

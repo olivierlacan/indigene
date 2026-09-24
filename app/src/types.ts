@@ -91,6 +91,9 @@ export interface Plant {
   hostLepCount: number;
   keystone: boolean;
 
+  /** Calendar months, 1-12, as the plant flowers *in its region*. A southern
+   *  summer bloom wraps the new year (`startMonth: 11, endMonth: 2`) and reads
+   *  as "November to February" — nothing sorts or compares these as numbers. */
   bloom: { startMonth: number; endMonth: number; color: string } | null;
 
   filters: {
@@ -757,8 +760,13 @@ export interface SunEstimate {
  *  the coarse box offline:
  *   - "epa-omernik": US EPA (Omernik) ecoregions — conterminous US, public domain.
  *   - "eea-biogeo":  EEA Biogeographical Regions of Europe — CC-BY 4.0. Coarse
- *     (Atlantic, Continental, Alpine, Mediterranean…), one flat level. */
-export type EcoregionProvider = "epa-omernik" | "eea-biogeo";
+ *     (Atlantic, Continental, Alpine, Mediterranean…), one flat level.
+ *   - "resolve-2017": RESOLVE Ecoregions 2017 — global, CC-BY 4.0, asked south
+ *     of the equator. One level; `code` is the numeric ECO_ID. */
+export type EcoregionProvider = "epa-omernik" | "eea-biogeo" | "resolve-2017";
+
+/** Every provider, for code that has to validate one read back from storage. */
+export const ECOREGION_PROVIDERS: readonly EcoregionProvider[] = ["epa-omernik", "eea-biogeo", "resolve-2017"];
 
 /**
  * A real ecoregion from a live lookup, normalized across providers so the rest

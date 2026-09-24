@@ -47,6 +47,7 @@
     "probe:eea": "NODE_USE_ENV_PROXY=1 node scripts/probe-eea.mjs",
     "probe:vascan": "NODE_USE_ENV_PROXY=1 node scripts/probe-vascan.mjs",
     "probe:cec": "NODE_USE_ENV_PROXY=1 node scripts/probe-cec.mjs",
+    "probe:resolve": "NODE_USE_ENV_PROXY=1 node scripts/probe-resolve.mjs",
     "swipe:check": "node scripts/check-lightbox-swipe.mjs"
   },
   "devDependencies": {

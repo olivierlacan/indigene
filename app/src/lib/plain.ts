@@ -51,6 +51,10 @@ export const EPA_ECOREGION_MAP_URL =
 export const EEA_BIOREGION_MAP_URL =
   "https://www.eea.europa.eu/en/datahub/datahubitem-view/11db8d14-f167-4cd5-9205-95638dfd9618";
 
+/** The southern hemisphere's equivalent: RESOLVE's own interactive map of all
+ * 846 ecoregions, from the team that published the dataset the live lookup asks. */
+export const RESOLVE_ECOREGION_MAP_URL = "https://ecoregions.appspot.com/";
+
 /** Explainer for the moisture bands ("mesic" and its dry/wet siblings).
  * Same rule: say "evenly moist" first; "mesic" only ever in parentheses. */
 export const MOISTURE_INFO_URL = "https://en.wikipedia.org/wiki/Mesic_habitat";

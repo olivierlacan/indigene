@@ -68,6 +68,10 @@ const BLOOM_FLOOR = 2; // every growing-season month wants this many in flower
 // mud in Brittany and snow at 1,800 m. The window is printed with the shortfall
 // so a reader can discount the months that don't apply to their region.
 const SEASON = [2, 10];
+// South of the equator the same window is six months on — August to April,
+// wrapping the new year — so a southern list is measured against its own spring.
+const seasonMonths = (south) =>
+  Array.from({ length: SEASON[1] - SEASON[0] + 1 }, (_, i) => ((SEASON[0] + i - 1 + (south ? 6 : 0)) % 12) + 1);
 
 const argOf = (name, fallback) => {
   const i = process.argv.indexOf(`--${name}`);
@@ -97,6 +101,7 @@ const flag = (n, floor) => (n < floor ? " ←" : "");
 
 for (const { meta, seed } of regions) {
   console.log(`\n${"─".repeat(72)}\n${meta.name} — ${seed.length} plants\n`);
+  const season = seasonMonths((meta.bounds.minLat + meta.bounds.maxLat) / 2 < 0);
 
   // Every row the region is short of a floor, summed at the end. A floor is not
   // a target — clearing it means the list has stopped failing anyone outright,
@@ -139,7 +144,7 @@ for (const { meta, seed } of regions) {
   console.log("\n  in flower, by month");
   console.log(`    ${MONTHS.map((m) => num(m.slice(0, 3), 5)).join("")}`);
   console.log(`    ${inFlower.slice(1).map((n) => num(`${n}${n < BLOOM_FLOOR ? "←" : ""}`, 5)).join("")}`);
-  for (let m = SEASON[0]; m <= SEASON[1]; m++) short += Math.max(0, BLOOM_FLOOR - inFlower[m]);
+  for (const m of season) short += Math.max(0, BLOOM_FLOOR - inFlower[m]);
 
   // ---- 4. Host genera ----
   const zone = (meta.ecoregion?.codes ?? []).map((c) => ZONE_FOR_EEA_REGION[c]).find(Boolean);
@@ -216,7 +221,7 @@ for (const { meta, seed } of regions) {
   console.log(
     `\n  short of §1's floors by ${short} plant rows` +
       ` (forms ≥${FORM_FLOOR}, every site cell ≥${SITE_FLOOR},` +
-      ` ≥${BLOOM_FLOOR} in flower ${MONTHS[SEASON[0] - 1]}–${MONTHS[SEASON[1] - 1]}).`,
+      ` ≥${BLOOM_FLOOR} in flower ${MONTHS[season[0] - 1]}–${MONTHS[season.at(-1) - 1]}).`,
   );
   console.log(`  ${untied.length} of its ${seed.length} plants name no animal at all.`);
 }

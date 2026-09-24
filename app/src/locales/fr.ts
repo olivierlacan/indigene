@@ -284,7 +284,7 @@ export const fr: Dict = {
   "spot.tilePlantsExplain": "Chaque plante inscrite ici : six asclépiades comptent pour six.",
   "spot.tileKinds": "Espèces",
   "spot.tileKindsExplain":
-    "Combien de plantes différentes vous avez mises. Un mélange fait tenir un jardin toute l'année — une floraison en avril, des baies en octobre.",
+    "Combien de plantes différentes vous avez mises. Un mélange fait tenir un jardin toute l'année — une floraison au printemps, des baies à l'automne.",
   "spot.tileHosts": "Chenilles",
   "spot.tileHostsExplain":
     "Combien de vos espèces élèvent des chenilles. Les chenilles sont ce que les oiseaux donnent à leurs petits : c'est le chiffre qui transforme un jardin en garde-manger.",
@@ -472,11 +472,13 @@ export const fr: Dict = {
     "Le nombre d'heures de soleil direct décide de ce qui poussera mieux que tout ce que vous pourriez mesurer d'autre. Et l'ombre n'est pas un défaut : il existe une indigène pour chaque niveau de lumière, des fleurs de prairie aux fougères de sous-bois. La lumière décide seulement lesquelles.",
   "sun.full": "Ensoleillé la plus grande partie du jour",
   "sun.fullSub": "Six heures de soleil direct ou plus — pelouse dégagée, côté sud, pas de grand arbre à proximité.",
+  "sun.fullSubSouth": "Six heures de soleil direct ou plus — pelouse dégagée, côté nord, pas de grand arbre à proximité.",
   "sun.half": "Du soleil environ la moitié du jour",
   "sun.halfSub":
     "Quelques heures de soleil direct, de l'ombre le reste du temps — près d'un bâtiment ou sous des arbres épars.",
   "sun.shade": "Plutôt ombragé",
   "sun.shadeSub": "Peu de soleil direct — sous les arbres, au nord, ou encadré par des murs.",
+  "sun.shadeSubSouth": "Peu de soleil direct — sous les arbres, au sud, ou encadré par des murs.",
   "sun.thisSpotGets": "Ce lieu reçoit ",
   "sun.bestGuess": "Estimation : {hours} heures, sans doute entre {low} et {high}.",
   "sun.fromScan": "Mesuré à partir de votre balayage du ciel.",
@@ -761,13 +763,13 @@ export const fr: Dict = {
   "prop.seed-cold-moist.when": "Semer dehors à l'automne, ou lancer le réfrigérateur en plein hiver.",
   "prop.seed-cold-moist.wait": "De quatre à douze semaines de froid, puis la levée.",
   "prop.seed-cold-moist.timing":
-    "Il y a deux chemins, et la question du calendrier est surtout de savoir lequel vous prenez. Dehors : semez le pot en octobre ou en novembre, posez-le là où il recevra la pluie et la neige, et le vrai hiver compte les semaines à votre place. Au réfrigérateur : comptez à rebours depuis la date où vous voulez des plantules — dix semaines de froid et un semis en avril, c'est un sachet mis au frais vers la fin janvier. Dans les deux cas, la graine doit rester *humide* tout du long. Un froid sec ne fait strictement rien, et c'est pourquoi un sachet glissé au réfrigérateur en novembre est encore là, inchangé, au printemps.",
+    "Il y a deux chemins, et la question du calendrier est surtout de savoir lequel vous prenez. Dehors : semez le pot en plein automne, posez-le là où il recevra la pluie et la neige, et le vrai hiver compte les semaines à votre place. Au réfrigérateur : comptez à rebours depuis la date où vous voulez des plantules — dix semaines de froid avant un semis de printemps, c'est un sachet mis au frais vers le cœur de l'hiver. Dans les deux cas, la graine doit rester *humide* tout du long. Un froid sec ne fait strictement rien, et c'est pourquoi un sachet glissé au réfrigérateur à l'automne est encore là, inchangé, au printemps.",
   "prop.seed-cold-moist.mistake":
     "Ne pas regarder. Certaines graines germent dans le sachet avant la fin des semaines prévues, et la petite racine blanche casse si vous les découvrez trop tard — ouvrez le sachet toutes les deux semaines à partir de la moitié.",
   "prop.seed-scarify.when": "Juste avant de semer, quel que soit le moment.",
   "prop.seed-scarify.wait": "Des jours plutôt que des semaines, une fois en terre.",
   "prop.seed-scarify.timing":
-    "La scarification n'est pas une saison, c'est la dernière étape avant le semis — la vraie question est donc : quand semez-vous ? Faites-le la veille au soir : entaillez ou râpez le tégument, laissez tremper la nuit, semez au matin. Ce qu'il ne faut surtout pas faire, c'est scarifier un lot en janvier pour semer en avril. Ouvrir le tégument, c'est retirer son imperméable à la graine : elle peut désormais absorber l'eau, et une graine scarifiée humide au fond d'un bocal va soit pourrir, soit germer dans le noir. Le trempage sert aussi de contrôle — une graine qui a bu gonfle visiblement et paraît plus grosse que ses voisines ; celles qui restent petites et dures méritent un nouveau passage sur le papier de verre.",
+    "La scarification n'est pas une saison, c'est la dernière étape avant le semis — la vraie question est donc : quand semez-vous ? Faites-le la veille au soir : entaillez ou râpez le tégument, laissez tremper la nuit, semez au matin. Ce qu'il ne faut surtout pas faire, c'est scarifier un lot en hiver pour semer au printemps. Ouvrir le tégument, c'est retirer son imperméable à la graine : elle peut désormais absorber l'eau, et une graine scarifiée humide au fond d'un bocal va soit pourrir, soit germer dans le noir. Le trempage sert aussi de contrôle — une graine qui a bu gonfle visiblement et paraît plus grosse que ses voisines ; celles qui restent petites et dures méritent un nouveau passage sur le papier de verre.",
   "prop.seed-scarify.mistake":
     "Aller trop loin. Arrêtez dès que la couche plus claire apparaît : on veut le tégument ouvert, pas la graine blessée.",
   "prop.seed-surface-light.when": "De la fin de l'hiver au printemps à l'abri ; à l'automne dehors.",
@@ -797,13 +799,13 @@ export const fr: Dict = {
   "prop.cuttings-semi-hardwood.when": "Du milieu de l'été au début de l'automne, quand la pousse durcit.",
   "prop.cuttings-semi-hardwood.wait": "De six à douze semaines.",
   "prop.cuttings-semi-hardwood.timing":
-    "Plus tard dans la même pousse de l'année, quand la base a raidi et bruni tandis que la pointe est encore verte — pour la plupart des arbustes, de juillet à septembre. Plus lente à s'enraciner qu'une bouture tendre, et bien plus indulgente : celle-ci tient une semaine sans s'effondrer, ce qui en fait le bon choix pour qui ne peut pas surveiller un pot tous les jours. Enracinez-les sous châssis ombré ou dans un coin abrité, laissez-les y passer l'hiver, et rempotez au printemps suivant.",
+    "Plus tard dans la même pousse de l'année, quand la base a raidi et bruni tandis que la pointe est encore verte — pour la plupart des arbustes, du plein été au début de l'automne. Plus lente à s'enraciner qu'une bouture tendre, et bien plus indulgente : celle-ci tient une semaine sans s'effondrer, ce qui en fait le bon choix pour qui ne peut pas surveiller un pot tous les jours. Enracinez-les sous châssis ombré ou dans un coin abrité, laissez-les y passer l'hiver, et rempotez au printemps suivant.",
   "prop.cuttings-semi-hardwood.mistake":
     "Laisser toutes les feuilles. Une bouture encore sans racines ne peut pas alimenter un feuillage entier — ôtez les feuilles du bas et coupez en deux les grandes qui restent.",
   "prop.cuttings-hardwood.when": "En plein hiver, quand la plante est nue.",
   "prop.cuttings-hardwood.wait": "Enracinée au printemps, plantée l'automne d'après.",
   "prop.cuttings-hardwood.timing":
-    "Après la chute des feuilles et avant que les bourgeons ne gonflent — grosso modo de décembre à février sur presque tout le territoire couvert ici. La plante dort, donc la bouture n'a pas à maintenir un feuillage en vie pendant qu'elle s'enracine : c'est ce qui en fait la bouture la moins exigeante qui soit. Des morceaux gros comme un crayon, longs comme un avant-bras, enfoncés de moitié en terre humide, et on n'y touche plus jusqu'au printemps. Saules et cornouillers reprennent si volontiers qu'on les plante souvent directement à l'endroit voulu.",
+    "Après la chute des feuilles et avant que les bourgeons ne gonflent — au cœur de l'hiver, quels que soient ces mois-là chez vous. La plante dort, donc la bouture n'a pas à maintenir un feuillage en vie pendant qu'elle s'enracine : c'est ce qui en fait la bouture la moins exigeante qui soit. Des morceaux gros comme un crayon, longs comme un avant-bras, enfoncés de moitié en terre humide, et on n'y touche plus jusqu'au printemps. Saules et cornouillers reprennent si volontiers qu'on les plante souvent directement à l'endroit voulu.",
   "prop.cuttings-hardwood.mistake":
     "Les planter à l'envers. Un rameau nu se ressemble des deux bouts : marquez le haut en coupant, car les bourgeons pointent vers le haut et c'est ce bout-là qui doit rester en l'air.",
   "prop.layering.when": "Coucher la branche au printemps ; la sevrer un an plus tard.",
@@ -821,7 +823,7 @@ export const fr: Dict = {
   "prop.runners.when": "De la fin de l'été à l'automne, quand le plantule est enraciné.",
   "prop.runners.wait": "Déplaçable quelques semaines après l'enracinement.",
   "prop.runners.timing":
-    "Attendez que le bébé s'enracine tout seul, ce qu'il fait partout où il touche la terre pendant l'été ; tirez très doucement dessus, un plantule enraciné résiste. La fin de l'été et l'automne, c'est le moment où la plupart sont prêts, et c'est aussi le plus doux pour les déplacer : sol tiède, air qui fraîchit, et des mois avant qu'on leur demande quoi que ce soit. La version soignée : en juillet, épinglez chaque plantule dans un petit pot de terreau enterré près du pied mère ; en septembre, coupez le stolon et levez un pot déjà plein de racines.",
+    "Attendez que le bébé s'enracine tout seul, ce qu'il fait partout où il touche la terre pendant l'été ; tirez très doucement dessus, un plantule enraciné résiste. La fin de l'été et l'automne, c'est le moment où la plupart sont prêts, et c'est aussi le plus doux pour les déplacer : sol tiède, air qui fraîchit, et des mois avant qu'on leur demande quoi que ce soit. La version soignée : en plein été, épinglez chaque plantule dans un petit pot de terreau enterré près du pied mère ; au début de l'automne, coupez le stolon et levez un pot déjà plein de racines.",
   "prop.runners.mistake":
     "Couper le stolon d'abord, en espérant. Tant que le plantule n'a pas ses propres racines, c'est le pied mère qui le maintient en vie.",
   "prop.root-cuttings.when": "De la fin de l'automne au cœur de l'hiver, en pleine dormance.",
@@ -1550,6 +1552,7 @@ export const fr: Dict = {
     "En pointillés : le rectangle que cette région est encore. Ses limites ne sont pas encore reprises de la carte des écorégions — considérez les marges comme approximatives.",
   "regionWhere.linkEpa": "Voir les cartes des écorégions de l'EPA",
   "regionWhere.linkEea": "Voir la carte des régions de l'AEE",
+  "regionWhere.linkResolve": "Voir la carte mondiale des écorégions",
   "regionStat.plants.label": "Plantes indigènes",
   "regionStat.plants.sub": "choisies pour cette région",
   "regionStat.plants.explain":
@@ -1599,7 +1602,9 @@ export const fr: Dict = {
     "Quinze façons de faire plusieurs plantes d'une seule — à partir des graines que vous récoltez, ou du pied déjà en terre. Chacune a sa saison, et choisir la bonne semaine compte plus que tout le reste.",
   "planting.nowTitle": "Que faire en {season}",
   "planting.nowLede":
-    "Nous sommes en {season}, au sens de l'hémisphère nord — c'est-à-dire partout où Indigene est présent. Voici les techniques dont la fenêtre est ouverte en ce moment.",
+    "Saison en cours dans l'hémisphère nord : {season}. Voici les techniques de saison.",
+  "planting.nowLedeSouth":
+    "Saison en cours dans l'hémisphère sud, où se trouve votre coin : {season}. Voici les techniques de saison.",
   "planting.nowEmpty": "Rien ne vous réclame cette saison — le bon moment pour lire en avance.",
   "planting.seasonNoteTitle": "Des saisons, pas des dates. ",
   "planting.seasonNote":
@@ -2099,6 +2104,7 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   "ecoregion.suffixEea": "région biogéographique, AEE",
   "ecoregion.suffixEpa": "écorégion EPA de niveau III",
+  "ecoregion.suffixResolve": "écorégion RESOLVE",
   "ecoregion.eea.alpine": "Alpine",
   "ecoregion.eea.atlantic": "Atlantique",
   "ecoregion.eea.black-sea": "Mer Noire",

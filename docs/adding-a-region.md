@@ -23,7 +23,7 @@ Run it first and last.
 
 | # | What | Where | Notes |
 |---|------|-------|-------|
-| 1 | Region description | `src/data/region.<id>.ts` | Bounds, ecoregion codes, `featuredPlantId` + `featuredHostLepCount`, `extent`/`note`/`zones`. The box is coarse; the codes refine it (see `data/region.ts`). |
+| 1 | Region description | `src/data/region.<id>.ts` | Bounds, ecoregion codes, `featuredPlantId` + `featuredHostLepCount`, `extent`/`note`/`zones`. The box is coarse; the codes refine it (see `data/region.ts`). South of the equator the codes are RESOLVE `ECO_ID`s (`provider: "resolve-2017"`), and seasons, sun hours and the sun picker flip on their own — see `southern-hemisphere-plan.md`. |
 | 2 | Seed plant list | `src/data/plants.<id>.ts` | Every field per row. Match the flora to the codes, not the box. |
 | 3 | Register both | `src/data/regions.ts` | One import, one `REGIONS` entry. The plant list is reached by `import()` so it stays a separate download. |
 | 4 | Ecoregion names | `src/data/ecoregions.ts` (US Omernik) or the locale (EEA slugs) | Add a name for any **new** L3 code the region cites, so the page can name the shape it draws. |

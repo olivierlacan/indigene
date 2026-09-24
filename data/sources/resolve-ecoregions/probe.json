@@ -1,0 +1,13 @@
+{
+  "question": "Does the hosted RESOLVE Ecoregions 2017 layer answer a point query south of the equator, from a browser?",
+  "service": "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/Resolve_Ecoregions/FeatureServer",
+  "ranAt": "2026-09-24T06:52:55.717Z",
+  "behindProxy": true,
+  "reachable": false,
+  "fields": null,
+  "missingFields": null,
+  "cors": null,
+  "points": [],
+  "verdict": "unanswered — the proxy refused services.arcgis.com, so the question never reached the service. Re-run from an unblocked network.",
+  "error": "fetch failed"
+}

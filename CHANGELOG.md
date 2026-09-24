@@ -31,6 +31,20 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Changed
+
+- The "what to do this season" card now knows which side of the equator your
+  garden is on, so a spot in Sydney or Cape Town sees spring now, not autumn.
+  https://indigene.app/planting
+- Internal: groundwork for the first southern regions (plan in
+  `docs/southern-hemisphere-plan.md`). `lib/hemisphere.ts` flips seasons, the
+  sun-hours sampling window and the sun picker's "south side"; technique copy
+  names seasons, not northern months; a third ecoregion provider,
+  `resolve-2017` (RESOLVE Ecoregions 2017), is asked south of the equator and
+  drawn by `maps:build`; `npm run probe:resolve` confirms the hosted layer,
+  which the sandbox's proxy refuses; `coverage` measures a southern list's
+  bloom against its own spring.
+
 ## [0.33] - 2026-09-24
 
 **Ireland & the most-wanted invasives**

@@ -58,6 +58,10 @@ subtitle on the What's new page.
 - Internal: a Content-Security-Policy `<meta>` built from `src/lib/csp.ts` is stamped into every app page and 404.html at build time, with inline-script hashes computed from the built HTML. `npm run csp:check` walks the built app in Chromium (GPS in the US, France and Sydney, town search, iNaturalist sightings, the page count) and fails on any refusal; a new `Content-Security-Policy` workflow runs it on PRs.
 - Internal: `el()` no longer accepts an `html` attribute, so nothing can reach `innerHTML` through it, and iNaturalist photo URLs from API responses are dropped unless they're https on iNaturalist's two photo hosts.
 
+### Fixed
+
+- Privacy: opening a saved spot told our visit counter which spot it was, by its private code. Now it only hears that a saved spot was opened, so visits to the same garden can't be linked.
+
 ## [0.33] - 2026-09-24
 
 **Ireland & the most-wanted invasives**

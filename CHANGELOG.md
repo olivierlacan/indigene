@@ -33,15 +33,16 @@ subtitle on the What's new page.
 
 ### Added
 
-- Every region page now lists its five most-wanted invasive plants, ranked by
-  the local experts' rating, then by how often each has been seen wild. Open
-  one for three ways to recognise it and real photos from the region.
-  https://indigene.app/regions/mid-atlantic
+- Regions: every region page now lists its five most-wanted invasive plants,
+  ranked by the local experts' rating, then by how often each has been seen
+  wild. Each has its own page: three ways to recognise it, and real photos.
+  https://indigene.app/invasives
 - Internal: `npm run invasives:count` counts each most-wanted plant's wild
   iNaturalist records in its region's box, and `lib/invasives.ts` ranks by the
   authority's rating, then that count. `listings:check` now verifies all 40 new
   ratings (57/57 agree); its Grand Est reader finds a species' table row rather
-  than a passing mention in the introduction.
+  than a passing mention in the introduction. Share cards come from
+  `scripts/gen-invasive-cards.mjs`.
 
 - Plants & Vegetables: the plant list has a fourth card at the top, for the
   question that stops people between choosing a native and digging the hole —

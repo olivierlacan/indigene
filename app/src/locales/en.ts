@@ -852,6 +852,7 @@ export const en = {
   "wip.rosterAll.other": "These {n} descriptions are still in English — we're translating region by region.",
   "wip.wildlife": "The animal descriptions are still in English — we're translating region by region.",
   "wip.alternatives": "The swap descriptions are still in English — we're translating them.",
+  "wip.invasives": "How to spot this plant is still in English — we're translating it.",
 
   // The size drawing.
   "sizeViz.you": "You",
@@ -1281,6 +1282,7 @@ export const en = {
   "plants.lookalikesLinkText": "see the look-alikes we've written up",
   "plants.plantingLink": "Already have one, and want another? There are fifteen ways to make more of a plant, each with its own season — {link}.",
   "plants.plantingLinkText": "see when and how",
+  "steps.invasives": "Most-wanted invasives",
   "steps.lookalikes": "Look-alikes",
   "lookalikes.indexTitle": "Plants that get mistaken for natives",
   "lookalikes.indexDocTitle": "Look-alikes — plants mistaken for natives — Indigene",
@@ -2052,8 +2054,16 @@ export const en = {
   "wanted.countsNote":
     "Sightings are wild records on iNaturalist inside this region's box, counted {date}. They measure where people have looked as well as where the plant grows.",
   "wanted.growInstead": "What to grow instead",
+  "wanted.indexDocTitle": "Most-wanted invasives — Indigene",
+  "wanted.docTitle": "{name} — most-wanted invasive — Indigene",
+  "wanted.indexLede": "Each region's five invasive plants to pull first. Open one to learn to spot it.",
+  "wanted.unratedShort": "Nobody has rated these here, so they're ranked by sightings alone.",
+  "wanted.backToIndex": "← All most-wanted invasives",
+  "wanted.howToSpot": "How to spot it",
+  "wanted.whereWanted": "Where it's most wanted",
+  "wanted.photosTitle": "See it in the wild",
+  "wanted.photosLede": "Verified iNaturalist photos from a region where it's wanted.",
   "wanted.tellApart": "What it's mistaken for",
-  "wanted.photosHere": "Show photos from here",
   "wanted.noPhotos": "No verified photos from this region on iNaturalist yet.",
   "wanted.onLists": "Most wanted: {places}",
   "wanted.placeLink": "{region} (#{n})",

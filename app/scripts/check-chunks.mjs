@@ -35,6 +35,8 @@ const PAGES = [
   { label: "wildlife page", path: "/#/wildlife/monarch", max: 6, note: "the regions that tie to it (now incl. the central California coast)" },
   { label: "look-alikes index", path: "/#/lookalikes", max: 9, note: "resolves natives in every region" },
   { label: "propagation index", path: "/#/planting", max: 0 },
+  { label: "most-wanted index", path: "/#/invasives", max: 0, note: "ranked from the tie table and the counts" },
+  { label: "most-wanted plant", path: "/#/invasives/reynoutria-japonica", max: 0 },
 ];
 
 const prebuilt = "/opt/pw-browsers/chromium";

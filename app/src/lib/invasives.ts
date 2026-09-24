@@ -69,6 +69,23 @@ export function regionIsRated(regionId: string): boolean {
   return (MOST_WANTED[regionId] ?? []).some((l) => pressureOf(l) !== null);
 }
 
+/** Every invasive on at least one region's list — the pages that exist. */
+export function mappedInvasiveIds(): Set<string> {
+  const out = new Set<string>();
+  for (const links of Object.values(MOST_WANTED)) for (const l of links) out.add(l.invasiveId);
+  return out;
+}
+
+/** This plant's row on every list it's on, in the app's region order. */
+export function wantedRowsFor(invasiveId: string): { regionId: string; row: WantedRow }[] {
+  const out: { regionId: string; row: WantedRow }[] = [];
+  for (const regionId of Object.keys(MOST_WANTED)) {
+    const row = mostWanted(regionId).find((r) => r.invasive.id === invasiveId);
+    if (row) out.push({ regionId, row });
+  }
+  return out;
+}
+
 /** Where a plant stands on each list it's on, for the swap and look-alike
  *  pages to link back: "#2 most wanted in the Mid-Atlantic". Matched on the
  *  scientific name, which is what the three catalogs share. */
@@ -76,12 +93,7 @@ export function wantedPlacesFor(latin: string): { regionId: string; rank: number
   const key = latin.trim().toLowerCase();
   const inv = INVASIVES.find((i) => i.latin.toLowerCase() === key);
   if (!inv) return [];
-  const out: { regionId: string; rank: number }[] = [];
-  for (const regionId of Object.keys(MOST_WANTED)) {
-    const row = mostWanted(regionId).find((r) => r.invasive.id === inv.id);
-    if (row) out.push({ regionId, rank: row.rank });
-  }
-  return out;
+  return wantedRowsFor(inv.id).map(({ regionId, row }) => ({ regionId, rank: row.rank }));
 }
 
 /**

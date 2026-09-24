@@ -867,6 +867,7 @@ export const fr: Dict = {
   "wip.rosterAll.other": "Ces {n} descriptions sont encore en anglais — nous traduisons région par région.",
   "wip.wildlife": "Les descriptions d'animaux sont encore en anglais — nous traduisons région par région.",
   "wip.alternatives": "Les descriptions des alternatives sont encore en anglais — nous les traduisons.",
+  "wip.invasives": "Les signes pour reconnaître cette plante sont encore en anglais — nous les traduisons.",
 
   // Le dessin des tailles.
   "sizeViz.you": "Vous",
@@ -1280,6 +1281,7 @@ export const fr: Dict = {
   "plants.lookalikesLinkText": "voyez les sosies que nous avons documentés",
   "plants.plantingLink": "Vous en avez déjà une et vous en voulez une autre ? Il existe quinze façons de multiplier une plante, chacune avec sa saison — {link}.",
   "plants.plantingLinkText": "voir quand et comment",
+  "steps.invasives": "Invasives recherchées",
   "steps.lookalikes": "Sosies",
   "lookalikes.indexTitle": "Les plantes qu'on prend pour des indigènes",
   "lookalikes.indexDocTitle": "Sosies — les plantes qu'on prend pour des indigènes — Indigene",
@@ -2042,8 +2044,16 @@ export const fr: Dict = {
   "wanted.countsNote":
     "Les observations sont les données sauvages d'iNaturalist dans le cadre de cette région, comptées le {date}. Elles mesurent où les gens ont regardé autant que là où la plante pousse.",
   "wanted.growInstead": "Que planter à la place",
+  "wanted.indexDocTitle": "Invasives les plus recherchées — Indigene",
+  "wanted.docTitle": "{name} — invasive recherchée — Indigene",
+  "wanted.indexLede": "Les cinq plantes invasives à arracher en premier dans chaque région. Ouvrez-en une pour apprendre à la reconnaître.",
+  "wanted.unratedShort": "Personne ne les a évaluées ici : elles sont classées selon les observations seules.",
+  "wanted.backToIndex": "← Toutes les invasives recherchées",
+  "wanted.howToSpot": "Comment la reconnaître",
+  "wanted.whereWanted": "Où elle est la plus recherchée",
+  "wanted.photosTitle": "La voir dans la nature",
+  "wanted.photosLede": "Des photos vérifiées sur iNaturalist, prises dans une région où elle est recherchée.",
   "wanted.tellApart": "Avec quoi on la confond",
-  "wanted.photosHere": "Voir les photos d'ici",
   "wanted.noPhotos": "Aucune photo vérifiée de cette région sur iNaturalist pour l'instant.",
   "wanted.onLists": "Parmi les plus recherchées : {places}",
   "wanted.placeLink": "{region} (n° {n})",

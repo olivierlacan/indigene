@@ -23,6 +23,7 @@ import { renderWildlifeIndex, renderWildlife, wildlifeRegionParam } from "./step
 import { wildlifeKindRoute } from "./lib/wildlife";
 import { renderLookalikeIndex, renderLookalike, lookalikeRegionParam } from "./steps/lookalikes";
 import { renderAlternativeIndex, renderAlternative, alternativeRegionParam } from "./steps/alternatives";
+import { renderInvasiveIndex, renderInvasive } from "./steps/invasives";
 import { renderPlantingIndex, renderPlanting } from "./steps/planting";
 import { techniqueBySlug } from "./lib/planting";
 import { canonicalPath, parseRoute, isHashRoute } from "./lib/routes";
@@ -86,6 +87,8 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
   // a param is either one ornamental or `in/<region>`, and `renderAlternative`
   // tells them apart — the same shape as look-alikes.
   alternatives: { fn: (m) => renderAlternativeIndex(m), labelKey: "steps.alternatives", inFlow: false },
+  // The most-wanted invasives: every region's list, and one page per plant.
+  invasives: { fn: renderInvasiveIndex, labelKey: "steps.invasives", inFlow: false },
   // The propagation techniques: `#/planting` is all fifteen against the
   // calendar, `#/planting/<slug>` is one of them in full.
   planting: { fn: renderPlantingIndex, labelKey: "steps.planting", inFlow: false },
@@ -114,6 +117,7 @@ const PARAM_RENDERERS: Record<string, StepFn> = {
   wildlife: renderWildlife,
   lookalikes: renderLookalike,
   alternatives: renderAlternative,
+  invasives: renderInvasive,
   planting: renderPlanting,
   settings: renderSettings,
   privacy: renderPrivacy,
@@ -248,6 +252,7 @@ const SECTION_OF: Record<string, string> = {
   plants: "plants",
   lookalikes: "plants",
   alternatives: "plants",
+  invasives: "plants",
   wildlife: "wildlife",
   saved: "menu",
   settings: "menu",
@@ -270,7 +275,7 @@ function sectionOf(step: string): string | undefined {
  * techniques at `#/planting`. The profile pages widen differently — see
  * `updateLayout`.
  */
-const WIDE_STEPS = new Set(["plants", "regions", "wildlife", "lookalikes", "alternatives", "planting"]);
+const WIDE_STEPS = new Set(["plants", "regions", "wildlife", "lookalikes", "alternatives", "invasives", "planting"]);
 
 function updateLayout(step: AppStep, param?: string): void {
   // Two of the documents — a plant's page and an animal's — get a mode of their
@@ -302,7 +307,8 @@ function updateLayout(step: AppStep, param?: string): void {
     step === "lookalikes" && !!param && lookalikeRegionParam(param) === null;
   const ornamentalProfile =
     step === "alternatives" && !!param && alternativeRegionParam(param) === null;
-  if (plantProfile || animalProfile || techniqueProfile || lookalikeProfile || ornamentalProfile) {
+  const invasiveProfile = step === "invasives" && !!param;
+  if (plantProfile || animalProfile || techniqueProfile || lookalikeProfile || ornamentalProfile || invasiveProfile) {
     document.body.dataset.layout = "profile";
     return;
   }

@@ -119,6 +119,11 @@ const regionCard = (id) => `${ORIGIN}${BASE}og/regions/${id}.jpg`;
  *  The index has one too, under the reserved slug `index`. */
 const alternativeCard = (slug) => `${ORIGIN}${BASE}og/alternatives/${slug}.jpg`;
 
+/** A most-wanted invasive's card — its form in warning red, how many regions
+ *  list it and its best rank — drawn by `scripts/gen-invasive-cards.mjs` and
+ *  committed under public/og/invasives/. The index has one under `index`. */
+const invasiveCard = (slug) => `${ORIGIN}${BASE}og/invasives/${slug}.jpg`;
+
 /** Locale-style `{name}` interpolation, matching `t()` in lib/i18n.ts. */
 const fill = (s, vars = {}) =>
   s.replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
@@ -281,6 +286,10 @@ async function collectPages(load) {
       load("/src/lib/planting.ts"),
       load("/src/lib/routes.ts"),
     ]);
+  const [{ INVASIVES }, { mappedInvasiveIds }] = await Promise.all([
+    load("/src/data/invasives.ts"),
+    load("/src/lib/invasives.ts"),
+  ]);
 
   const pages = [];
   const add = (path, title, description, extra) =>
@@ -320,6 +329,10 @@ async function collectPages(load) {
   add("alternatives", en["alternatives.indexDocTitle"], fill(en["alternatives.indexLede"], { n: ornamentals.length }), {
     image: alternativeCard("index"),
     imageAlt: "Native swaps — an ornamental beside the native to grow instead, and the count of swaps and regions behind the page",
+  });
+  add("invasives", en["wanted.indexDocTitle"], en["wanted.indexLede"], {
+    image: invasiveCard("index"),
+    imageAlt: "Most-wanted invasives — each region's five invasive plants to pull first",
   });
   add("planting", en["planting.docTitle"], en["planting.lede"], {
     image: plantingCard("index"),
@@ -441,6 +454,22 @@ async function collectPages(load) {
       {
         image: alternativeCard(row.ornamental.id),
         imageAlt: `${row.ornamental.common} (${row.ornamental.latin}) — what it's planted for, and how many native plants do the same job`,
+      }
+    );
+  }
+
+  // --- one page per most-wanted invasive ---
+  // "That's garlic mustard — here's how to know it" is a link somebody sends.
+  // The description is how to spot it, which is what the page is for.
+  const wantedIds = mappedInvasiveIds();
+  for (const inv of INVASIVES.filter((i) => wantedIds.has(i.id))) {
+    add(
+      `invasives/${inv.id}`,
+      fill(en["wanted.docTitle"], { name: inv.common }),
+      inv.marks.map((m) => `${m.feature}: ${m.text}`).join(" "),
+      {
+        image: invasiveCard(inv.id),
+        imageAlt: `${inv.common} (${inv.latin}) — how many regions list it as most wanted, and its highest place`,
       }
     );
   }

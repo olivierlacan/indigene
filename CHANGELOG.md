@@ -31,6 +31,13 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+## [0.33] - 2026-09-24
+
+**Ireland & the most-wanted invasives**
+
+[![The five most-wanted invasives in the Mid-Atlantic, ranked](docs/screenshots/pr-160/thumb.png)](docs/screenshots/pr-160/after-dark.png)
+[Before](docs/screenshots/pr-160/before-dark.png) · [After](docs/screenshots/pr-160/after-dark.png)
+
 ### Added
 
 - Regions: every region page now lists its five most-wanted invasive plants,
@@ -40,6 +47,9 @@ subtitle on the What's new page.
 - Each most-wanted plant's page now says how to get rid of it for good, by
   hand: the root piece that resprouts, the stump that suckers, and what to do
   with what you pulled. https://indigene.app/invasives/reynoutria-japonica
+- Each tip on those pages now leads with a small picture — a leaf, a berry, a
+  hand pulling, a spade digging — so you can find the one you need at a
+  glance. https://indigene.app/invasives/hedera-helix
 - Internal: `npm run invasives:count` counts each most-wanted plant's wild
   iNaturalist records in its region's box, and `lib/invasives.ts` ranks by the
   authority's rating, then that count. `listings:check` now verifies all 40 new
@@ -2576,7 +2586,8 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/e0f70ef...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/c4e7c44...HEAD
+[0.33]: https://github.com/olivierlacan/indigene/compare/e0f70ef...c4e7c44
 [0.32]: https://github.com/olivierlacan/indigene/compare/655cb62...e0f70ef
 [0.31]: https://github.com/olivierlacan/indigene/compare/46a1ff0...655cb62
 [0.30]: https://github.com/olivierlacan/indigene/compare/d82b7ce...46a1ff0

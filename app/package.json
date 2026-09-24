@@ -20,6 +20,7 @@
     "selection:check": "NODE_USE_ENV_PROXY=1 node scripts/check-selection.mjs",
     "chunks:check": "node scripts/check-chunks.mjs",
     "csp:check": "node scripts/check-csp.mjs",
+    "import:check": "node scripts/check-import.mjs",
     "release-notes": "node scripts/build-release-notes.mjs",
     "notes:check": "node scripts/check-notes-lightbox.mjs",
     "guide": "node scripts/build-guide.mjs",

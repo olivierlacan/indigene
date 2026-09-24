@@ -906,4 +906,16 @@ export interface SavedSpot {
   /** Region id the user picked by hand for this spot (e.g. just over a boundary). */
   regionOverride?: string | null;
   weights: Weights;
+  /** Invasives the gardener has found here and means to deal with — added from
+   *  their own iNaturalist sightings (`lib/inat-import.ts`), oldest first. */
+  invasives?: SpotInvasive[];
+}
+
+/** One invasive on a spot's to-deal-with list. */
+export interface SpotInvasive {
+  /** Catalog id of the invasive (`Invasive.id`). */
+  invasiveId: string;
+  /** The sightings that put it here, kept as text like `Planting.observations`. */
+  observations: string[];
+  addedAt: number;
 }

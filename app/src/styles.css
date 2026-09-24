@@ -4953,6 +4953,35 @@ body[data-layout="profile"] .wip-banner-text {
   color: var(--ink-soft);
   font-weight: 650;
 }
+/* An import row: the whole row is the checkbox's label, so the tap target is
+   the row. The box itself sits at the start, sized for a thumb. */
+.import-row {
+  justify-content: flex-start;
+  cursor: pointer;
+  /* A label, so it would pick up the form-label weight; the row is a list row. */
+  font-weight: inherit;
+  margin: 0;
+}
+.import-row > input[type="checkbox"] {
+  flex: none;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin: 0.9rem 0 0;
+  accent-color: var(--brand);
+}
+.import-lookalike {
+  margin: 0.4rem 0 0;
+}
+.import-spot {
+  margin: 0 0 0.8rem;
+}
+/* The save button stays in reach while a long list scrolls under it. */
+.import-save {
+  position: sticky;
+  bottom: 0;
+  padding: 0.75rem 0;
+  background: var(--bg);
+}
 /* The bin sits beside the name at a full tap size without stretching the row. */
 .log-remove {
   flex: none;

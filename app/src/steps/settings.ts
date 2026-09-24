@@ -24,6 +24,7 @@
 // can land on the thing it names instead of dropping the reader at the top of
 // the page to hunt for it.
 import { el, clear } from "../ui";
+import { inatCard } from "../components/inat-controls";
 import { t } from "../lib/i18n";
 import { languageCard, unitsCard } from "../components/prefs-controls";
 import {
@@ -48,6 +49,7 @@ const CARD_IDS: Record<string, string> = {
   whatsnew: "settings-whatsnew",
   counting: "settings-counting",
   spots: "settings-spots",
+  inat: "settings-inat",
 };
 
 export async function renderSettings(main: HTMLElement, param?: string): Promise<void> {
@@ -70,6 +72,7 @@ export async function renderSettings(main: HTMLElement, param?: string): Promise
     whatsnew: whatsNewCard(),
     counting: visitCountCard(),
     spots: await spotsFileCard(),
+    inat: inatCard(),
   };
   for (const [key, card] of Object.entries(cards)) card.id = CARD_IDS[key];
 
@@ -88,6 +91,7 @@ export async function renderSettings(main: HTMLElement, param?: string): Promise
     el("h3", { class: "settings-group" }, t("settings.spotsTitle")),
     el("p", { class: "step-lede" }, t("settings.spotsLede")),
     cards.spots,
+    cards.inat,
     el("h3", { class: "settings-group" }, t("settings.countingTitle")),
     el("p", { class: "step-lede" }, t("settings.countingLede")),
     cards.counting,

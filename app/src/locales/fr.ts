@@ -2050,6 +2050,8 @@ export const fr: Dict = {
   "wanted.unratedShort": "Personne ne les a évaluées ici : elles sont classées selon les observations seules.",
   "wanted.backToIndex": "← Toutes les invasives recherchées",
   "wanted.howToSpot": "Comment la reconnaître",
+  "wanted.howToRemove": "Comment s'en débarrasser",
+  "wanted.afterwards": "Ensuite : ",
   "wanted.whereWanted": "Où elle est la plus recherchée",
   "wanted.photosTitle": "La voir dans la nature",
   "wanted.photosLede": "Des photos vérifiées sur iNaturalist, prises dans une région où elle est recherchée.",

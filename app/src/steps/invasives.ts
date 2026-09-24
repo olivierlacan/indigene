@@ -23,7 +23,7 @@ import { getLookalikeByLatin, mappedLookalikeIds, inatTaxonUrl } from "../lib/lo
 import { invasivePhotoFor, inatTaxonIdFor } from "../lib/hero-photo";
 import { fetchRegionObservations, isBusy, resolveTaxon, boundsCenter, type Bounds } from "../lib/inaturalist";
 import { loadSightings, regionCacheKey } from "../lib/nearby";
-import { invasiveMarks, invasivesUntranslated } from "../lib/prose";
+import { invasiveMarks, invasiveRemoval, invasivesUntranslated } from "../lib/prose";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
 import { t, fmtNumber, fmtDate } from "../lib/i18n";
 import { wantedList } from "../components/most-wanted";
@@ -95,6 +95,7 @@ export function renderInvasive(main: HTMLElement, param?: string): void {
         el("dt", {}, m.feature),
         el("dd", {}, m.text),
       ])),
+      removalSection(inv),
       ...swapLinks(inv, places.map((p) => p.regionId)),
       el("p", { class: "confidence" }, [
         el("a", {
@@ -139,6 +140,22 @@ function placeCard(region: RegionDef, row: ReturnType<typeof wantedRowsFor>[numb
       el("p", { class: "confidence", style: "margin:0.4rem 0 0" }, [
         t("lookalike.unassessed"), " ", t("alternatives.originSource"), ...citation(row.link.basis),
       ]),
+  ]);
+}
+
+/** How to get rid of it so it stays gone: the steps in order, what to do with
+ *  what you pulled, and whose method it is. */
+function removalSection(inv: Invasive): HTMLElement {
+  const { steps, dispose } = invasiveRemoval(inv);
+  return el("div", {}, [
+    el("h3", { style: "margin:1rem 0 0.3rem" }, t("wanted.howToRemove")),
+    el("ol", { class: "wanted-steps" }, steps.map((step) => el("li", {}, step))),
+    el("p", { class: "kv", style: "margin:0.5rem 0 0" }, [
+      el("span", { class: "k" }, t("wanted.afterwards")),
+      dispose,
+    ]),
+    el("p", { class: "confidence", style: "margin:0.4rem 0 0.6rem" },
+      [t("alternatives.originSource"), ...citation(inv.removal.basis)]),
   ]);
 }
 

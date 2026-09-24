@@ -109,6 +109,9 @@ export function auditInvasives(): string[] {
     if (seen.has(inv.id)) problems.push(`invasive id "${inv.id}" appears twice`);
     seen.add(inv.id);
     if (inv.marks.length !== 3) problems.push(`${inv.id}: ${inv.marks.length} marks, want 3`);
+    const { steps, dispose, basis } = inv.removal;
+    if (!steps.length || steps.length > 3) problems.push(`${inv.id}: ${steps.length} removal steps, want 1–3`);
+    if (!dispose.trim() || !basis.trim()) problems.push(`${inv.id}: removal needs a disposal line and a source`);
     for (const m of inv.marks) {
       if (!m.feature.trim() || !m.text.trim()) problems.push(`${inv.id}: a mark with an empty half`);
     }

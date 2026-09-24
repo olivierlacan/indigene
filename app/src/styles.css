@@ -5555,6 +5555,13 @@ body[data-layout="profile"] .wip-banner-text {
 .wanted-marks dd {
   margin: 0.05rem 0 0;
 }
+.wanted-steps {
+  margin: 0;
+  padding-left: 1.3rem;
+}
+.wanted-steps li + li {
+  margin-top: 0.35rem;
+}
 .wanted-links {
   margin: 0 0 0.6rem;
 }

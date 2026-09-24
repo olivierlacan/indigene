@@ -2060,6 +2060,8 @@ export const en = {
   "wanted.unratedShort": "Nobody has rated these here, so they're ranked by sightings alone.",
   "wanted.backToIndex": "← All most-wanted invasives",
   "wanted.howToSpot": "How to spot it",
+  "wanted.howToRemove": "How to get rid of it",
+  "wanted.afterwards": "Afterwards: ",
   "wanted.whereWanted": "Where it's most wanted",
   "wanted.photosTitle": "See it in the wild",
   "wanted.photosLede": "Verified iNaturalist photos from a region where it's wanted.",

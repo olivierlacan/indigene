@@ -63,6 +63,14 @@ export const ALTERNATIVES_FR: ProseTable = {
       { feature: "Fleurs", text: "De grosses grappes mauves au début de l'été." },
       { feature: "Où", text: "Des fourrés denses sous les chênaies, sur un sol nu." },
     ],
+    removal: {
+      steps: [
+        "Arrachez les semis et les petits buissons, racine comprise.",
+        "Coupez les grands au pied et dessouchez, ou coupez chaque rejet jusqu'à ce qu'il abandonne.",
+        "Ne laissez pas de branches sur le sol : elles s'enracinent.",
+      ],
+      dispose: "Entassez les branches coupées hors du sol pour qu'elles sèchent.",
+    },
     altRole: "Écran persistant à fleurs",
     altOrigin: "Indigène de la péninsule Ibérique et des rivages de la mer Noire.",
     altBlurb:

@@ -464,6 +464,16 @@ export interface InvasiveMark {
   text: string;
 }
 
+/** How to get rid of it for good, without chemicals. */
+export interface InvasiveRemoval {
+  /** What to do, in order — each aimed at what makes it come back. Three at most. */
+  steps: string[];
+  /** What to do with what you pulled, so it doesn't start again elsewhere. */
+  dispose: string;
+  /** A dependable, citable source for the method. */
+  basis: string;
+}
+
 /** One invasive plant, described once. */
 export interface Invasive {
   id: string; // stable slug, e.g. "alliaria-petiolata"
@@ -472,6 +482,7 @@ export interface Invasive {
   form: PlantForm;
   /** How to know it, most decisive mark first. Three, checkable without a lens. */
   marks: InvasiveMark[];
+  removal: InvasiveRemoval;
 }
 
 /** One region's tie to an invasive on its most-wanted list. */

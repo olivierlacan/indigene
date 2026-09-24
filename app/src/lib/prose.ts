@@ -49,7 +49,7 @@
 //
 // Callers that don't know their region (there are none today) simply get the
 // plain key, which is a real translation of a real row — not a blank.
-import type { AlternativeLink, Invasive, InvasiveMark, Lookalike, LookalikeLink, Ornamental, Plant, SupportLink, SwapEdge, TellApart, Wildlife } from "../types";
+import type { AlternativeLink, Invasive, InvasiveMark, InvasiveRemoval, Lookalike, LookalikeLink, Ornamental, Plant, SupportLink, SwapEdge, TellApart, Wildlife } from "../types";
 import { getLang } from "./i18n";
 
 /** The prose fields on a plant row that a locale may override. */
@@ -92,6 +92,8 @@ export interface TaxonProse {
   /** Most-wanted invasives only: how to know the plant (`Invasive.marks`).
    *  One list per taxon, whatever region it's wanted in. */
   marks?: InvasiveMark[];
+  /** Most-wanted invasives only: how to get rid of it (`Invasive.removal`). */
+  removal?: Pick<InvasiveRemoval, "steps" | "dispose">;
 }
 
 export type ProseTable = Record<string, TaxonProse>;
@@ -294,10 +296,21 @@ export function invasiveMarks(inv: Invasive): InvasiveMark[] {
   return translated?.length === inv.marks.length ? translated : inv.marks;
 }
 
-/** Are any of these plants' marks still in the authored English? */
+/** How to get rid of it, in the reader's language — every step or none. */
+export function invasiveRemoval(inv: Invasive): Pick<InvasiveRemoval, "steps" | "dispose"> {
+  const translated = entry(inv.latin)?.removal;
+  return translated?.steps.length === inv.removal.steps.length && translated.dispose
+    ? translated
+    : inv.removal;
+}
+
+/** Is any of these plants' writing still in the authored English? */
 export function invasivesUntranslated(invasives: Invasive[]): boolean {
   if (getLang() === "en") return false;
-  return invasives.some((inv) => entry(inv.latin)?.marks?.length !== inv.marks.length);
+  return invasives.some((inv) => {
+    const e = entry(inv.latin);
+    return e?.marks?.length !== inv.marks.length || e?.removal?.steps.length !== inv.removal.steps.length;
+  });
 }
 
 // ---- Native alternatives ----

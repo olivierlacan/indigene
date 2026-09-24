@@ -33,10 +33,12 @@ export const REGION: RegionMeta = {
   // Huron/Erie Lake Plains (57), the warmer southern-Lower-Michigan flora, and
   // the boreal north of 50 in the Upper Peninsula. A spot in those now gets an
   // honest "no list yet" when we can ask the EPA; offline the box still decides.
-  ecoregion: {
-    provider: "epa-omernik",
-    codes: ["50", "51"],
-  },
+  ecoregion: [
+    {
+      provider: "epa-omernik",
+      codes: ["50", "51"],
+    },
+  ],
   // Eastern White Pine: Michigan's state tree and the giant that defined the
   // North — a keystone conifer that still towers over these woods and feeds
   // hundreds of caterpillars.

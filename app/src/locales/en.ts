@@ -1563,6 +1563,7 @@ export const en = {
   "regionWhere.shadedBox":
     "Dashed: the rectangle this region still is. We haven't traced its edges from the ecoregion map yet, so treat the margins as approximate.",
   "regionWhere.linkEpa": "See the EPA's ecoregion maps",
+  "regionWhere.linkCec": "See the CEC's North American atlas",
   "regionWhere.linkEea": "See the EEA's region map",
   "regionWhere.linkResolve": "See the world ecoregion map",
   "regionStat.plants.label": "Native plants",
@@ -1826,7 +1827,7 @@ export const en = {
     "— from the national botanical records: USDA PLANTS in the US, Tela Botanica and the INPN in France, plus regional floras.",
   "sources.fig.ecoregion": "Your ecoregion",
   "sources.fig.ecoregionFrom":
-    "— the US EPA's ecoregion map, or the European Environment Agency's, asked about your exact point.",
+    "— whichever ecoregion map covers where you are, asked about your exact point: the US EPA's, the European Environment Agency's, the CEC's across North America, or RESOLVE's south of the equator.",
   "sources.fig.soil": "Your soil and its acidity",
   "sources.fig.soilFrom":
     "— from SoilGrids, a global soil map. Coarse: it describes a 250-metre square, not your flower bed.",
@@ -2124,6 +2125,7 @@ export const en = {
   "ecoregion.suffixEea": "EEA biogeographical region",
   "ecoregion.suffixEpa": "EPA Level III ecoregion",
   "ecoregion.suffixResolve": "RESOLVE ecoregion",
+  "ecoregion.suffixCec": "CEC Level III ecoregion, North America",
   "ecoregion.eea.alpine": "Alpine",
   "ecoregion.eea.atlantic": "Atlantic",
   "ecoregion.eea.black-sea": "Black Sea",

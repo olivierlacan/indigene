@@ -19,6 +19,12 @@
 // States, the same classification the live service returns (`lib/site.ts`) and
 // the maps we link to (`EPA_ECOREGION_MAP_URL`). See docs/ecoregion-plan.md for
 // which region claims which code, and why.
+//
+// **The EPA's codes only.** A region may also claim CEC North American codes
+// (`7.1.7`, `6.2.11`) — the Pacific Northwest does, because it crosses into
+// British Columbia and the EPA's map stops at the border. Those are a separate
+// code space with a separate atlas, and each one is named where it is claimed,
+// in the region's own file, rather than copied into a second table here.
 
 /** EPA (Omernik) Level III code → the name on the atlas. */
 export const EPA_L3_NAMES: Record<string, string> = {

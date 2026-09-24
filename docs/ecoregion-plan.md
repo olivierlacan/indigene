@@ -224,9 +224,21 @@ a concrete need. The shipped product is §1 (labels) + §2 (selection).
   Cleveland→Eastern Great Lakes Lowlands (83), Danville VA→Piedmont (45),
   Columbus OH→Eastern Corn Belt Plains (55, deliberately uncovered), Toledo→
   Huron/Erie Lake Plains (57, deliberately uncovered).
-- Unit-test the L3-code→region mapping with a **mocked** ArcGIS response so CI
-  stays offline and deterministic.
-- Assert the box fallback still selects correctly when `site.ecoregion` is null.
+- ~~Unit-test the L3-code→region mapping with a **mocked** ArcGIS response so CI
+  stays offline and deterministic.~~ **Done** — `app/src/lib/site.test.ts`. Each
+  provider's parser gets a trimmed copy of what its service really returns, and
+  the routing predicates are pinned too: `inConus` is asserted to include
+  Vancouver, because that is *why* a null from the EPA has to fall through to
+  the CEC rather than to the box.
+- ~~Assert the box fallback still selects correctly when `site.ecoregion` is
+  null.~~ **Done** — `app/src/lib/plants.test.ts`, against the real bundled
+  region data rather than a fixture, so a region's declared codes can't drift
+  out from under the rule that reads them.
+
+These run on every pull request (`.github/workflows/tests.yml`), offline. The
+live half of the same question — *does the service still answer what it used
+to?* — is `npm run selection:check`, which stands in eighteen real places and
+asserts both the region and how it was decided.
 
 ## Risks / notes
 - Field names and layer IDs must be confirmed against the live service.

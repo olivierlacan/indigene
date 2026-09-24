@@ -1551,6 +1551,7 @@ export const fr: Dict = {
   "regionWhere.shadedBox":
     "En pointillés : le rectangle que cette région est encore. Ses limites ne sont pas encore reprises de la carte des écorégions — considérez les marges comme approximatives.",
   "regionWhere.linkEpa": "Voir les cartes des écorégions de l'EPA",
+  "regionWhere.linkCec": "Voir l'atlas nord-américain de la CCE",
   "regionWhere.linkEea": "Voir la carte des régions de l'AEE",
   "regionWhere.linkResolve": "Voir la carte mondiale des écorégions",
   "regionStat.plants.label": "Plantes indigènes",
@@ -1824,7 +1825,7 @@ export const fr: Dict = {
     "— d'après les référentiels botaniques nationaux : USDA PLANTS aux États-Unis, Tela Botanica et l'INPN en France, plus les flores régionales.",
   "sources.fig.ecoregion": "Votre écorégion",
   "sources.fig.ecoregionFrom":
-    "— la carte des écorégions de l'EPA américaine, ou celle de l'Agence européenne pour l'environnement, interrogée sur votre point exact.",
+    "— la carte des écorégions qui couvre l'endroit où vous êtes, interrogée sur votre point exact : celle de l'EPA américaine, celle de l'Agence européenne pour l'environnement, celle de la CCE pour l'Amérique du Nord, ou celle de RESOLVE au sud de l'équateur.",
   "sources.fig.soil": "Votre sol et son acidité",
   "sources.fig.soilFrom":
     "— d'après SoilGrids, une carte mondiale des sols. Grossière : elle décrit un carré de 250 mètres, pas votre massif.",
@@ -2113,6 +2114,7 @@ export const fr: Dict = {
   "ecoregion.suffixEea": "région biogéographique, AEE",
   "ecoregion.suffixEpa": "écorégion EPA de niveau III",
   "ecoregion.suffixResolve": "écorégion RESOLVE",
+  "ecoregion.suffixCec": "écorégion CEC de niveau III, Amérique du Nord",
   "ecoregion.eea.alpine": "Alpine",
   "ecoregion.eea.atlantic": "Atlantique",
   "ecoregion.eea.black-sea": "Mer Noire",

@@ -121,16 +121,20 @@ lineage the EPA layers come from, extended across all three countries. The full
 question and the fallback are in
 [`data/sources/cec-ecoregions/README.md`](../data/sources/cec-ecoregions/README.md).
 
-It is unanswered right now, and honestly so: this repo's sandbox refuses the
-connection before it leaves the machine, so nothing has been learned about the
-service. `probe-eea.mjs` was written from exactly that position and the EEA
-service turned out to be fine.
+**It has since been answered: yes.** With the hosts allowlisted, `probe:cec`
+resolved Victoria, Seattle, Montréal, Québec City and Portland. The service is
+CC BY 4.0, allows CORS, and carries its names in French as well as English. Two
+findings changed the plan below: `gis.cec.org` itself returns 403 — the atlas
+lives on the CEC's ArcGIS Online account instead — and **Victoria and Seattle
+come back as one ecoregion, 7.1.7 "Strait of Georgia/Puget Lowland"**, which is
+the cross-border claim this document made from the flora and could not check.
+The full measurement is in
+[`data/sources/cec-ecoregions/README.md`](../data/sources/cec-ecoregions/README.md).
 
-**If the answer is no**, the fallback is to bundle simplified polygons for the
-two Canadian boxes only and do point-in-polygon on-device — the scoped version of
-what `ecoregion-plan.md` §3 deferred. The size objection that killed it for all
-84 US ecoregions is much weaker for two boxes; `build-region-maps.mjs` already
-clips and simplifies to a box and gets 8–27 KB out of it.
+**The fallback is no longer needed.** It was to bundle simplified polygons for
+the two Canadian boxes and do point-in-polygon on-device — the scoped version of
+what `ecoregion-plan.md` §3 deferred. Keep it in mind only if the ArcGIS Online
+copy ever goes away.
 
 **What we must not do** is ship a box-only Canadian region. Every region we have
 stopped doing that when Phase B landed.
@@ -139,26 +143,30 @@ stopped doing that when Phase B landed.
 
 ## Then — in this order
 
-### 3. British Columbia, south coast — the cheapest region we will ever add
+### 3. British Columbia, south coast — ~~the cheapest region we will ever add~~
+
+**Shipped, but not as a region.** See the note at the end of this section: the
+answer turned out to be that there is no British Columbia region to add.
 
 Vancouver, Victoria, the Sunshine Coast and the Fraser Valley. This is the
 Puget Lowland and the Coast Range continuing north across a line the plants do
 not observe.
 
-**73 of the Pacific Northwest's 77 rows are recorded native in British Columbia
-by VASCAN**, and 108 plants across the whole catalog are. Those rows are
+**81 of the Pacific Northwest's 85 rows are recorded native in British Columbia
+by VASCAN**, and 130 plants across the whole catalog are. Those rows are
 finished: Douglas-fir, western redcedar, red-flowering currant, salal, vine
 maple, sword fern, camas, Garry oak — written, scored, tied to wildlife,
 photographed, and already named in French.
 
-Read that 73 as a ceiling, not a list. It is *provincial* status, and British
+Read that 81 as a ceiling, not a list. It is *provincial* status, and British
 Columbia spans the Pacific coast, a dry interior and the boreal north, so "native
-in BC" is a much weaker claim there than in a small province. Only four rows
-fall out, and they are instructive: three are the Willamette Valley and Oregon
-end of the list (*Sidalcea campestris*, *Juncus patens*, *Grindelia
-integrifolia*), and the fourth is *Achillea millefolium*, which VASCAN treats as
-introduced at the species rank and native only as a variety. The real south-coast
-list will lose more than four once an ecoregion decides instead of a province.
+in BC" is a much weaker claim there than in a small province. Only four rows fall
+out, and on inspection two of those are not absences at all but disagreements
+about names: *Grindelia integrifolia* is VASCAN's *G. stricta*, and yarrow is
+its *A. borealis* — VASCAN keeps *A. millefolium* for the introduced European
+plant. That leaves two rows that genuinely stop short of Canada, both the
+Oregon end of the list: *Sidalcea campestris* and *Juncus patens*. Each says so
+in its own note, and `npm run vascan:check` is what found them.
 
 Everything else is in place:
 
@@ -172,17 +180,29 @@ Everything else is in place:
 | Wildlife ties | mostly reuse — the PNW's 29 animals are largely the same animals |
 | Language | English |
 
-What it is **not**: a copy of the PNW list with a new name on it. Garry oak and
-arbutus hang on in the Gulf Islands and around Victoria and belong; the Klamath
-and Willamette species do not. The judgement of which is which is exactly the
-work, and it is the kind we already know how to do.
+**What happened instead.** This section assumed the answer was a new region, and
+worried it would come out as a copy of the PNW list with a new name on it. The
+ecoregion gate answered differently: the CEC calls the lowland from Tacoma to
+Campbell River **one** ecoregion, 7.1.7, and has named it after both ends —
+*Strait of Georgia/Puget Lowland*. Victoria and Seattle are not neighbouring
+regions; they are the same one.
+
+So the Pacific Northwest was extended north to Campbell River rather than
+cloned. A region can now declare more than one classification — the EPA's codes
+for the half the EPA can see, the CEC's for the whole — and selection matches
+whichever authority answered. There is no British Columbia region to add, and
+the four-row shortfall above is the whole of the judgement this section expected
+to be the work.
+
+The narrower worry survives and was answered separately: the Klamath and
+Willamette species really don't reach BC, and the two that don't now say so.
 
 ### 4. Québec — the only place our French and our plants meet
 
 The St Lawrence lowlands and the southern Appalachians: Montréal, Québec City,
 Sherbrooke, the Eastern Townships.
 
-**71 catalog plants are VASCAN-native in Québec** — 40 of Northern Lower
+**82 catalog plants are VASCAN-native in Québec** — 40 of Northern Lower
 Michigan's 46 rows, 33 of the Mid-Atlantic's 44, 50 distinct across the two.
 Sugar maple, white pine, paper birch, serviceberry, bunchberry, the
 northern-hardwood set: already written. What falls out is the southern half of

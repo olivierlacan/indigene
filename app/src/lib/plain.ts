@@ -54,6 +54,12 @@ export const EEA_BIOREGION_MAP_URL =
 /** The southern hemisphere's equivalent: RESOLVE's own interactive map of all
  * 846 ecoregions, from the team that published the dataset the live lookup asks. */
 export const RESOLVE_ECOREGION_MAP_URL = "https://ecoregions.appspot.com/";
+/** And the one that does not stop at a border: the CEC's North American
+ *  Environmental Atlas, whose Level III ecoregions are what answer for a spot
+ *  in Canada or Mexico — and what let one region hold ground on both sides of
+ *  the 49th parallel. */
+export const CEC_ECOREGION_MAP_URL =
+  "https://www.cec.org/north-american-environmental-atlas/terrestrial-ecoregions-level-iii/";
 
 /** Explainer for the moisture bands ("mesic" and its dry/wet siblings).
  * Same rule: say "evenly moist" first; "mesic" only ever in parentheses. */

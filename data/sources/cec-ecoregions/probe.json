@@ -1,29 +1,256 @@
 {
   "question": "Can a point in Canada be resolved to an ecoregion by a live point query?",
-  "ranAt": "2026-09-20T05:45:07.941Z",
+  "ranAt": "2026-09-20T18:56:12.187Z",
   "behindProxy": true,
   "candidates": [
     {
       "base": "https://gis.cec.org/arcgis/rest/services/Atlas/Ecoregions/MapServer",
       "reachable": false,
-      "error": "fetch failed"
+      "error": "HTTP 403"
     },
     {
       "base": "https://gis.cec.org/arcgis/rest/services",
       "reachable": false,
-      "error": "fetch failed"
+      "error": "HTTP 403"
     },
     {
       "base": "https://maps-cartes.services.geo.ca/server_serveur/rest/services",
-      "reachable": false,
-      "error": "fetch failed"
+      "reachable": true,
+      "serviceName": null,
+      "layers": []
+    },
+    {
+      "base": "https://services7.arcgis.com/oF9CDB4lUYF7Um9q/arcgis/rest/services/NA_Terrestrial_Ecoregions_Level_3/FeatureServer",
+      "reachable": true,
+      "serviceName": "Ecological regions are areas of general similarity in ecosystems and in the type, quality, and quantity of environmental resources. A Roman numeral hierarchical scheme has been adopted for different levels of ecological regions. Level I is the coarsest level, dividing North America into 15 broad ecological regions. The 50 level II North American ecological regions provide a more detailed description of the large ecological areas nested within the level I regions and are useful for national and sub-continental overviews of ecological patterns. The 182 level III ecological regions, smaller ecological areas nested within level II regions.",
+      "layers": [
+        {
+          "id": 3,
+          "name": "NA_Terrestrial_Ecoregions_v2_level3",
+          "ecoregionFields": [
+            "LEVEL1",
+            "LEVEL2",
+            "LEVEL3"
+          ],
+          "allFields": [
+            "FID",
+            "OBJECTID",
+            "LEVEL1",
+            "NameL1_En",
+            "NameL1_Es",
+            "NameL1_Fr",
+            "LEVEL2",
+            "NameL2_En",
+            "NameL2_Es",
+            "NameL2_Fr",
+            "LEVEL3",
+            "NameL3_En",
+            "NameL3_Es",
+            "NameL3_Fr",
+            "L3Key_En",
+            "L3Key_Es",
+            "L3Key_Fr",
+            "L2Key_En",
+            "L2Key_Es",
+            "L2Key_Fr",
+            "Area_SqKm",
+            "Shape__Area",
+            "Shape__Length"
+          ]
+        }
+      ],
+      "probes": [
+        {
+          "name": "Vancouver, BC",
+          "lat": 49.2827,
+          "lon": -123.1207,
+          "expect": "Pacific maritime / Coast Range",
+          "layer": 3,
+          "attrs": null,
+          "error": null
+        },
+        {
+          "name": "Victoria, BC",
+          "lat": 48.4284,
+          "lon": -123.3656,
+          "expect": "Pacific maritime / Puget-Georgia",
+          "layer": 3,
+          "attrs": {
+            "LEVEL1": "7",
+            "LEVEL2": "7.1",
+            "LEVEL3": "7.1.7"
+          },
+          "error": null
+        },
+        {
+          "name": "Seattle, WA",
+          "lat": 47.6062,
+          "lon": -122.3321,
+          "expect": "same unit as Victoria",
+          "layer": 3,
+          "attrs": {
+            "LEVEL1": "7",
+            "LEVEL2": "7.1",
+            "LEVEL3": "7.1.7"
+          },
+          "error": null
+        },
+        {
+          "name": "Montréal, QC",
+          "lat": 45.5019,
+          "lon": -73.5674,
+          "expect": "Mixed wood plains / St Lawrence lowlands",
+          "layer": 3,
+          "attrs": {
+            "LEVEL1": "8",
+            "LEVEL2": "8.1",
+            "LEVEL3": "8.1.1"
+          },
+          "error": null
+        },
+        {
+          "name": "Québec City, QC",
+          "lat": 46.8139,
+          "lon": -71.208,
+          "expect": "Mixed wood plains",
+          "layer": 3,
+          "attrs": {
+            "LEVEL1": "8",
+            "LEVEL2": "8.1",
+            "LEVEL3": "8.1.1"
+          },
+          "error": null
+        },
+        {
+          "name": "Portland, ME",
+          "lat": 43.6591,
+          "lon": -70.2568,
+          "expect": "same unit as the Québec Appalachians",
+          "layer": 3,
+          "attrs": {
+            "LEVEL1": "8",
+            "LEVEL2": "8.1",
+            "LEVEL3": "8.1.7"
+          },
+          "error": null
+        }
+      ]
     }
   ],
-  "resolved": null,
-  "verdict": "unanswered — every candidate host refused the connection from this machine's proxy, so the question was never put to the service. Re-run from an unblocked network.",
+  "resolved": {
+    "base": "https://services7.arcgis.com/oF9CDB4lUYF7Um9q/arcgis/rest/services/NA_Terrestrial_Ecoregions_Level_3/FeatureServer",
+    "layer": 3,
+    "fields": [
+      "LEVEL1",
+      "LEVEL2",
+      "LEVEL3"
+    ]
+  },
+  "verdict": "resolved",
   "arcgisOnline": {
     "searched": "https://www.arcgis.com/sharing/rest/search?f=json&num=20&q=(ecoregions%20AND%20(%22north%20america%22%20OR%20CEC))%20type%3A(%22Map%20Service%22%20OR%20%22Feature%20Service%22)",
-    "error": "fetch failed",
-    "hits": []
+    "error": null,
+    "hits": [
+      {
+        "url": "https://services7.arcgis.com/oF9CDB4lUYF7Um9q/arcgis/rest/services/NA_Terrestrial_Ecoregions_Level_3/FeatureServer",
+        "title": "North America Terrestrial Ecoregions Level 3",
+        "owner": "CECAtlas"
+      },
+      {
+        "url": "https://services7.arcgis.com/oF9CDB4lUYF7Um9q/arcgis/rest/services/NA_Terrestrial_Ecoregions_Level_1/FeatureServer",
+        "title": "North America Terrestrial Ecoregions Level 1",
+        "owner": "CECAtlas"
+      },
+      {
+        "url": "https://services7.arcgis.com/oF9CDB4lUYF7Um9q/arcgis/rest/services/NA_Terrestrial_Ecoregions_Level_2/FeatureServer",
+        "title": "North America Terrestrial Ecoregions Level 2",
+        "owner": "CECAtlas"
+      },
+      {
+        "url": "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/EPA_Level_III_Ecoregions/FeatureServer",
+        "title": "Level III Ecoregions of North America",
+        "owner": "Federal_User_Community"
+      },
+      {
+        "url": "https://services7.arcgis.com/oF9CDB4lUYF7Um9q/arcgis/rest/services/North_American_Marine_Ecoregions_2008/FeatureServer",
+        "title": "North America Marine Ecoregions 2008",
+        "owner": "CECAtlas"
+      },
+      {
+        "url": "https://services.arcgis.com/EVsTT4nNRCwmHNyb/arcgis/rest/services/NA_CEC_Ecoregs_v2_2021_L3_prwiseDSLV/FeatureServer",
+        "title": "NA_CEC_Ecoregs_v2_2021_L3_prwiseDSLV",
+        "owner": "Sara_DeCaro_Natureserve"
+      },
+      {
+        "url": "https://services.arcgis.com/FvF9MZKp3JWPrSkg/arcgis/rest/services/Level_II_Ecoregions/FeatureServer",
+        "title": "Level II Ecoregions",
+        "owner": "zaugg99@byu.edu_byu"
+      },
+      {
+        "url": "https://services1.arcgis.com/gGHDlz6USftL5Pau/arcgis/rest/services/Forests_of_North_America/FeatureServer",
+        "title": "Forests of North America by FAO ecological zones",
+        "owner": "USFS_FIA"
+      },
+      {
+        "url": "https://services7.arcgis.com/oF9CDB4lUYF7Um9q/arcgis/rest/services/North_American_Forests_2011/FeatureServer",
+        "title": "North America Forests 2011",
+        "owner": "CECAtlas"
+      },
+      {
+        "url": "https://services7.arcgis.com/oF9CDB4lUYF7Um9q/arcgis/rest/services/North_American_Marine_Protected_Areas_Network/FeatureServer",
+        "title": "North America Marine Protected Areas Network",
+        "owner": "CECAtlas"
+      },
+      {
+        "url": "https://services7.arcgis.com/oF9CDB4lUYF7Um9q/arcgis/rest/services/North_American_Forests_2021/FeatureServer",
+        "title": "North America Forests 2021",
+        "owner": "CECAtlas"
+      },
+      {
+        "url": "https://services7.arcgis.com/oF9CDB4lUYF7Um9q/arcgis/rest/services/North_American_Baja_to_Bering_Region/FeatureServer",
+        "title": "North America Baja to Bering Region",
+        "owner": "CECAtlas"
+      },
+      {
+        "url": "https://services7.arcgis.com/oF9CDB4lUYF7Um9q/arcgis/rest/services/North_American_Priority_Conservation_Areas_Baja_to_Bering_2005/FeatureServer",
+        "title": "North America Priority Conservation Areas (Baja to Bering 2005)",
+        "owner": "CECAtlas"
+      },
+      {
+        "url": "https://services7.arcgis.com/oF9CDB4lUYF7Um9q/arcgis/rest/services/NA_Marine_Ecoregions_2008/FeatureServer",
+        "title": "North America Marine Ecoregions 2008",
+        "owner": "susanp@pitzer.edu_claremont"
+      },
+      {
+        "url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUB_Omernik_Ecoregions/FeatureServer",
+        "title": "NDGISHUB Omernik Ecoregions",
+        "owner": "NDGISHDP-GNF"
+      },
+      {
+        "url": "https://services1.arcgis.com/KbxwQRRfWyEYLgp4/arcgis/rest/services/Ecoregions_aae66/FeatureServer",
+        "title": "Ecoregions",
+        "owner": "BLM_WY_Public"
+      },
+      {
+        "url": "https://services.arcgis.com/v01gqwM5QqNysAAi/arcgis/rest/services/Ecoregions_Level_shp/FeatureServer",
+        "title": "Level 1 Ecoregions",
+        "owner": "mbeauchamp@usgs.gov_USGS"
+      },
+      {
+        "url": "https://services3.arcgis.com/ikRDfkW4bXGU9PjA/arcgis/rest/services/Level_I_Ecoregions/FeatureServer",
+        "title": "Level I Ecoregions",
+        "owner": "gary.hayden"
+      },
+      {
+        "url": "https://maps7.arcgisonline.com/arcgis/rest/services/US_EPA_NorthAmerica_Ecoregions/MapServer",
+        "title": "North American Ecoregions - Level I ",
+        "owner": "USFSMapsandApps"
+      },
+      {
+        "url": "https://services4.arcgis.com/MMybESiUA82igqDG/arcgis/rest/services/Ecoregions_Level_2/FeatureServer",
+        "title": "Ecoregions Level 2",
+        "owner": "emanderson_krsd"
+      }
+    ]
   }
 }

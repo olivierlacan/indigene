@@ -21,7 +21,7 @@ export const REGION: RegionMeta = {
   // offline the tighter box wins (see regions.ts).
   bounds: { minLat: 44.0, maxLat: 46.5, minLon: 5.3, maxLon: 7.8 },
   // EEA biogeographical region this list represents.
-  ecoregion: { provider: "eea-biogeo", codes: ["alpine"] },
+  ecoregion: [{ provider: "eea-biogeo", codes: ["alpine"] }],
   // Bilberry: the low blue-berried shrub the whole subalpine forest floor is
   // made of, and by far the biggest food source among the mountain shrubs.
   featuredPlantId: "vaccinium-myrtillus",

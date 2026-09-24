@@ -36,8 +36,12 @@ export const CONNECT_HOSTS: readonly string[] = [
   "https://nominatim.openstreetmap.org", // the nearest town's name
   "https://rest.isric.org", // soil
   "https://epqs.nationalmap.gov", // elevation and slope (USGS)
-  "https://gispub.epa.gov", // ecoregion, North America (US EPA)
+  "https://gispub.epa.gov", // ecoregion, conterminous US (US EPA)
   "https://bio.discomap.eea.europa.eu", // biogeographical region, Europe (EEA)
+  // The CEC's own ArcGIS Online account, and a *different host* from the one
+  // below however alike they read: `services7` is not `services`, and CSP
+  // matches hosts exactly. This is what answers north of the US border.
+  "https://services7.arcgis.com", // ecoregion, North America (CEC)
   "https://services.arcgis.com", // ecoregion, south of the equator (RESOLVE, hosted by Esri)
   "https://cdn.usefathom.com", // the page count (lib/analytics.ts)
 ];

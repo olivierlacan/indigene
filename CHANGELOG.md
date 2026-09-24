@@ -33,6 +33,41 @@ subtitle on the What's new page.
 
 ### Added
 
+- The Pacific Northwest now reaches into British Columbia — Vancouver, Victoria,
+  the Fraser Valley and Vancouver Island up to Campbell River. The lowland from
+  Tacoma north is one ecoregion, and the plants have never stopped at the
+  border. https://indigene.app/regions/pnw
+- Planting: the yarrow you buy as seed is often the European kind, naturalized
+  here rather than native. The plant's page now says so, and says to ask for the
+  western one instead. https://indigene.app/regions/pnw
+- Internal: a region may now claim more than one ecoregion classification. Every
+  authority stops at some border — the EPA's at the edge of the US — so a region
+  that crosses one needs the map that can see both halves, and selection matches
+  whichever service answered.
+- Internal: `npm run vascan:check` puts all 85 Pacific Northwest rows to VASCAN
+  for British Columbia. 81 are native there outright, two under names VASCAN
+  draws differently, and two are the Oregon end of the list, which now say so.
+- Internal: the region finder sent Vancouver and Victoria to a US-only service,
+  got nothing, and silently fell back to the coverage box. `npm run
+  selection:check` stands in 18 real places and asserts the region *and* how it
+  was decided, because the right region for the wrong reason was the bug.
+- Internal: the app has unit tests now — 55 of them, offline, in about a second
+  (`npm test`, Vitest). They cover the ecoregion parsers, the region-selection
+  rules, the registry resolver, the hemisphere maths and the sentence splitter
+  behind every card.
+- Internal: one of those tests holds the list of services the browser is allowed
+  to contact against the list the code actually contacts. They had drifted: the
+  service naming a region in Canada was called but not allowed, so the lookup
+  would have been refused with nothing to show for it.
+- Internal: a Tests workflow runs those and `typecheck` on every pull request,
+  with no path filter. Until now no pull-request job ran `typecheck` at all —
+  the two that build are path-filtered, so a change to `src/lib/` alone could
+  merge without the compiler seeing it.
+- Internal: `docs/ecoregion-plan.md` asked for two of these tests under
+  "Testing" and they were never written. They are now, and the plan says so.
+- Internal: the roll-up that reads Canada's plant database missed a plant's own
+  distribution rows, reporting Sitka spruce as not native to British Columbia.
+  One shared reader now serves both scripts; BC's catalog count goes 108 → 130.
 - Each region's five most-wanted invasives now have a page of their own, with
   a preview picture listing all five, so you can send a neighbour one link.
   https://indigene.app/invasives/in/pnw
@@ -40,9 +75,6 @@ subtitle on the What's new page.
 ### Changed
 
 - Internal: `app/package-lock.json` now says 0.33.0, matching `package.json`.
-
-### Changed
-
 - The "what to do this season" card now knows which side of the equator your
   garden is on, so a spot in Sydney or Cape Town sees spring now, not autumn.
   https://indigene.app/planting

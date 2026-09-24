@@ -42,10 +42,12 @@ export const REGION: RegionMeta = {
   // Ordered biggest-share-first, not numerically: the region page names the
   // first few and counts the rest, so the ones a reader is most likely to be
   // standing in should come first.
-  ecoregion: {
-    provider: "epa-omernik",
-    codes: ["58", "67", "70", "69", "60", "83", "59", "45", "61", "64", "62", "63", "65", "84", "66"],
-  },
+  ecoregion: [
+    {
+      provider: "epa-omernik",
+      codes: ["58", "67", "70", "69", "60", "83", "59", "45", "61", "64", "62", "63", "65", "84", "66"],
+    },
+  ],
   // White Oak: the East's single most consequential wildlife plant, and the
   // clearest possible introduction to what "keystone" means.
   featuredPlantId: "quercus-alba",

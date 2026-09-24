@@ -30,6 +30,11 @@ jobs:
   check:
     name: Nothing refused
     runs-on: ubuntu-latest
+    # Each walk is bounded by Playwright's own 30-second timeouts, but a run of
+    # them is not: when an outside service stops answering, every step waits out
+    # its own clock and the job can sit for the better part of an hour holding a
+    # runner and telling nobody anything. It should give up and say so instead.
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 

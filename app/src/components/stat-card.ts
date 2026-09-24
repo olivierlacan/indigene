@@ -169,10 +169,12 @@ function statsFor(p: Plant): Stat[] {
     },
     {
       icon: "🌱",
-      label: t("stat.year.label", { n: grown.year }),
-      value: t("stat.year.value", { height: lengthTick(grown.heightFt) }),
-      sub: paceWord(grown.heightFt, p.matureHeightFt),
-      explain: `${growthPlain(p)} ${t("stat.year.explain")}`,
+      // The pace is the figure; the height it reaches by the last snapshot
+      // qualifies it. Led by the height, this tile read as a second "Full size".
+      label: t("stat.growth.label"),
+      value: paceWord(grown.heightFt, p.matureHeightFt),
+      sub: t("stat.growth.sub", { height: lengthTick(grown.heightFt), n: grown.year }),
+      explain: `${growthPlain(p)} ${t("stat.growth.explain")}`,
     },
     p.hostLepCount === null
       ? {

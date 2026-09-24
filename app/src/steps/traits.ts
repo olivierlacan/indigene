@@ -21,6 +21,7 @@ const FIGURES: { id: string; icon: string; label: TKey; explain: () => string }[
   { id: "zones", icon: "❄️", label: "stat.zones.label", explain: () => t("stat.zones.explain", { step: temperatureSpan(10) }) },
   { id: "ph", icon: "🧪", label: "stat.ph.label", explain: () => t("stat.ph.explain") },
   { id: "size", icon: "📏", label: "stat.size.label", explain: () => t("stat.size.explain") },
+  { id: "growth", icon: "🌱", label: "stat.growth.label", explain: () => t("stat.growth.explain") },
   { id: "hosts", icon: "🐛", label: "stat.host.label", explain: () => t("stat.host.explain") },
   { id: "bloom", icon: "🌸", label: "stat.bloom.label", explain: () => t("stat.bloom.explain") },
 ];

@@ -98,7 +98,8 @@ subtitle on the What's new page.
   Care and wildlife writing moved into two cards: Growing needs and Ecosystem
   services.
 - Plants: figure labels are shorter in English and French ("Caterpillars",
-  "Hardiness"), and a wrapped label no longer knocks its tile out of line.
+  "Hardiness"), and a wrapped label no longer knocks its tile out of line. The
+  "Year 10" tile is now "Growth": how fast it grows, then its height by year 10.
 - Internal: dropped the size caption and the "Bloom & moisture" line, which
   repeated the drawing and the tiles; `.stat-grid` rows now size to their own
   tallest tile instead of all matching the tallest on the page.

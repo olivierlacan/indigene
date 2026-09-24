@@ -1214,13 +1214,13 @@ export const en = {
   "stat.size.sub": "height × width",
   "stat.size.explain":
     "The honest eventual size from our cited records — often far bigger than a nursery tag admits. Give a native room for its mature self from day one and it will never need shearing into submission; the drawing below shows the pace year by year.",
-  "stat.year.label": "Year {n}",
-  "stat.year.value": "{height} tall",
-  "stat.year.explain":
+  "stat.growth.label": "Growth",
+  "stat.growth.sub": "{height} by year {n}",
+  "stat.growth.explain":
     "The pace comes from typical field growth at years 1, 3, 5, and 10 in this plant's cited records — not nursery-tag optimism. Site, water, and luck all shift it.",
-  "pace.quick": "quick to full size",
-  "pace.steady": "steady grower",
-  "pace.slow": "slow and long-lived",
+  "pace.quick": "Fast grower",
+  "pace.steady": "Steady grower",
+  "pace.slow": "Slow grower",
   "stat.host.label": "Caterpillars",
   "stat.host.value": "{n} species",
   "stat.host.subKeystone": "keystone plant",

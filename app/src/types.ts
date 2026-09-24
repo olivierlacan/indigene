@@ -458,6 +458,10 @@ export interface LookalikeLink {
  * it to contrast with, only the plant itself.
  */
 export interface InvasiveMark {
+  /** Which part of the plant the mark is about, from a closed vocabulary, so
+   *  each heading can wear an icon (`MARK_ICONS` in `lib/invasives.ts`). The
+   *  `feature` keeps its own words — "Flower heads", "Bracts" — under it. */
+  part: MarkPart;
   /** What you're looking at: "Leaves", "Stems", "Smell". */
   feature: string;
   /** What it shows. */
@@ -499,6 +503,20 @@ export interface InvasiveRemoval {
   /** A dependable, citable source for the method. */
   basis: string;
 }
+
+/** The part of a plant a recognition mark is about. */
+export type MarkPart =
+  | "leaf"
+  | "flower"
+  | "stem"
+  | "thorn"
+  | "fruit"
+  | "root"
+  | "smell"
+  | "shape"
+  | "where"
+  | "when"
+  | "wildlife";
 
 /** One invasive plant, described once. */
 export interface Invasive {

@@ -91,7 +91,7 @@ export interface TaxonProse {
   alternativeNotes?: Record<string, { why?: string; edges?: SwapEdge[] }>;
   /** Most-wanted invasives only: how to know the plant (`Invasive.marks`).
    *  One list per taxon, whatever region it's wanted in. */
-  marks?: InvasiveMark[];
+  marks?: Omit<InvasiveMark, "part">[];
   /** Most-wanted invasives only: how to get rid of it (`Invasive.removal`). */
   removal?: { steps: string[]; dispose: string };
 }
@@ -293,7 +293,11 @@ export function lookalikesUntranslated(
  *  same rule the tells follow. */
 export function invasiveMarks(inv: Invasive): InvasiveMark[] {
   const translated = entry(inv.latin)?.marks;
-  return translated?.length === inv.marks.length ? translated : inv.marks;
+  // Words from the translation, the part (and its icon) from the data, by
+  // position — so the icons can't drift between languages.
+  return translated?.length === inv.marks.length
+    ? inv.marks.map((m, i) => ({ part: m.part, ...translated[i] }))
+    : inv.marks;
 }
 
 /** How to get rid of it, in the reader's language — every step or none. */

@@ -59,9 +59,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Ailanthus altissima",
     form: "tree",
     marks: [
-      { feature: "Smell", text: "Crushed leaves smell rank, like burnt peanut butter." },
-      { feature: "Leaves", text: "Very long, with many leaflets, each with a notch and a bump near its base." },
-      { feature: "Seeds", text: "Papery, twisted wings in big hanging clusters." },
+      { part: "smell", feature: "Smell", text: "Crushed leaves smell rank, like burnt peanut butter." },
+      { part: "leaf", feature: "Leaves", text: "Very long, with many leaflets, each with a notch and a bump near its base." },
+      { part: "fruit", feature: "Seeds", text: "Papery, twisted wings in big hanging clusters." },
     ],
     removal: {
       steps: [
@@ -79,9 +79,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Robinia pseudoacacia",
     form: "tree",
     marks: [
-      { feature: "Thorns", text: "A pair of sharp thorns where each leaf meets the twig." },
-      { feature: "Leaves", text: "Feathery, with small rounded leaflets in pairs." },
-      { feature: "Flowers", text: "Hanging clusters of white, scented pea-flowers in late spring." },
+      { part: "thorn", feature: "Thorns", text: "A pair of sharp thorns where each leaf meets the twig." },
+      { part: "leaf", feature: "Leaves", text: "Feathery, with small rounded leaflets in pairs." },
+      { part: "flower", feature: "Flowers", text: "Hanging clusters of white, scented pea-flowers in late spring." },
     ],
     removal: {
       steps: [
@@ -99,9 +99,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Ilex aquifolium",
     form: "tree",
     marks: [
-      { feature: "Leaves", text: "Thick, glossy and dark, with wavy, spiny edges." },
-      { feature: "Berries", text: "Red, in winter, on the female trees." },
-      { feature: "Where", text: "Seedlings in the shade of a wood, far from any garden." },
+      { part: "leaf", feature: "Leaves", text: "Thick, glossy and dark, with wavy, spiny edges." },
+      { part: "fruit", feature: "Berries", text: "Red, in winter, on the female trees." },
+      { part: "where", feature: "Where", text: "Seedlings in the shade of a wood, far from any garden." },
     ],
     removal: {
       steps: [
@@ -119,9 +119,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Schinus terebinthifolia",
     form: "tree",
     marks: [
-      { feature: "Smell", text: "Crushed leaves smell of pepper and turpentine." },
-      { feature: "Leaves", text: "Leaflets in pairs, on a stalk that's often red." },
-      { feature: "Berries", text: "Bright red clusters through the winter." },
+      { part: "smell", feature: "Smell", text: "Crushed leaves smell of pepper and turpentine." },
+      { part: "leaf", feature: "Leaves", text: "Leaflets in pairs, on a stalk that's often red." },
+      { part: "fruit", feature: "Berries", text: "Bright red clusters through the winter." },
     ],
     removal: {
       steps: [
@@ -140,9 +140,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Elaeagnus umbellata",
     form: "shrub",
     marks: [
-      { feature: "Leaves", text: "Silvery underneath, as if dusted with metal flakes." },
-      { feature: "Berries", text: "Small, red and speckled with silver, in autumn." },
-      { feature: "Flowers", text: "Creamy, sweet-scented little trumpets in spring." },
+      { part: "leaf", feature: "Leaves", text: "Silvery underneath, as if dusted with metal flakes." },
+      { part: "fruit", feature: "Berries", text: "Small, red and speckled with silver, in autumn." },
+      { part: "flower", feature: "Flowers", text: "Creamy, sweet-scented little trumpets in spring." },
     ],
     removal: {
       steps: [
@@ -160,9 +160,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Lonicera morrowii",
     form: "shrub",
     marks: [
-      { feature: "Twigs", text: "Snap one: the middle is hollow. A native honeysuckle's is solid." },
-      { feature: "Leaves", text: "Soft and downy, in pairs, and among the first green in spring." },
-      { feature: "Berries", text: "Red, in pairs, in summer." },
+      { part: "stem", feature: "Twigs", text: "Snap one: the middle is hollow. A native honeysuckle's is solid." },
+      { part: "leaf", feature: "Leaves", text: "Soft and downy, in pairs, and among the first green in spring." },
+      { part: "fruit", feature: "Berries", text: "Red, in pairs, in summer." },
     ],
     removal: {
       steps: [
@@ -180,9 +180,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Cytisus scoparius",
     form: "shrub",
     marks: [
-      { feature: "Stems", text: "Green, ridged and nearly leafless — the plant looks like a broom." },
-      { feature: "Flowers", text: "Bright yellow pea-flowers all along the stems in spring." },
-      { feature: "Pods", text: "Flat, turning black, and snapping open with a click in summer." },
+      { part: "stem", feature: "Stems", text: "Green, ridged and nearly leafless — the plant looks like a broom." },
+      { part: "flower", feature: "Flowers", text: "Bright yellow pea-flowers all along the stems in spring." },
+      { part: "fruit", feature: "Pods", text: "Flat, turning black, and snapping open with a click in summer." },
     ],
     removal: {
       steps: [
@@ -200,9 +200,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Spartium junceum",
     form: "shrub",
     marks: [
-      { feature: "Stems", text: "Round, smooth and rush-like, with hardly a leaf." },
-      { feature: "Flowers", text: "Large yellow pea-flowers, sweetly scented, spring into summer." },
-      { feature: "Size", text: "Taller than a person, and taller than Scotch broom." },
+      { part: "stem", feature: "Stems", text: "Round, smooth and rush-like, with hardly a leaf." },
+      { part: "flower", feature: "Flowers", text: "Large yellow pea-flowers, sweetly scented, spring into summer." },
+      { part: "shape", feature: "Size", text: "Taller than a person, and taller than Scotch broom." },
     ],
     removal: {
       steps: [
@@ -220,9 +220,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Genista monspessulana",
     form: "shrub",
     marks: [
-      { feature: "Leaves", text: "Leafy stems, each leaf split into three small, hairy leaflets." },
-      { feature: "Flowers", text: "Yellow pea-flowers in small clusters on short side shoots." },
-      { feature: "Pods", text: "Short and covered in silvery hairs." },
+      { part: "leaf", feature: "Leaves", text: "Leafy stems, each leaf split into three small, hairy leaflets." },
+      { part: "flower", feature: "Flowers", text: "Yellow pea-flowers in small clusters on short side shoots." },
+      { part: "fruit", feature: "Pods", text: "Short and covered in silvery hairs." },
     ],
     removal: {
       steps: [
@@ -240,9 +240,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Rubus armeniacus",
     form: "shrub",
     marks: [
-      { feature: "Canes", text: "Thick, ridged and arching, with big hooked thorns." },
-      { feature: "Leaves", text: "Usually five leaflets, whitish underneath." },
-      { feature: "Fruit", text: "Large, sweet blackberries in late summer." },
+      { part: "stem", feature: "Canes", text: "Thick, ridged and arching, with big hooked thorns." },
+      { part: "leaf", feature: "Leaves", text: "Usually five leaflets, whitish underneath." },
+      { part: "fruit", feature: "Fruit", text: "Large, sweet blackberries in late summer." },
     ],
     removal: {
       steps: [
@@ -260,9 +260,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Urena lobata",
     form: "shrub",
     marks: [
-      { feature: "Leaves", text: "Maple-shaped, soft and hairy." },
-      { feature: "Flowers", text: "Small pink flowers, like a tiny hibiscus." },
-      { feature: "Burs", text: "Little burs that cling to socks and fur." },
+      { part: "leaf", feature: "Leaves", text: "Maple-shaped, soft and hairy." },
+      { part: "flower", feature: "Flowers", text: "Small pink flowers, like a tiny hibiscus." },
+      { part: "fruit", feature: "Burs", text: "Little burs that cling to socks and fur." },
     ],
     removal: {
       steps: [
@@ -280,9 +280,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Ardisia crenata",
     form: "shrub",
     marks: [
-      { feature: "Berries", text: "Bright red clusters hanging below the leaves, all year." },
-      { feature: "Leaves", text: "Dark and glossy, with small bumps along a wavy edge." },
-      { feature: "Where", text: "Knee-high carpets on the shady floor of a wood." },
+      { part: "fruit", feature: "Berries", text: "Bright red clusters hanging below the leaves, all year." },
+      { part: "leaf", feature: "Leaves", text: "Dark and glossy, with small bumps along a wavy edge." },
+      { part: "where", feature: "Where", text: "Knee-high carpets on the shady floor of a wood." },
     ],
     removal: {
       steps: [
@@ -300,9 +300,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Ardisia elliptica",
     form: "shrub",
     marks: [
-      { feature: "Berries", text: "Red, then glossy black, like the buttons on an old boot." },
-      { feature: "Leaves", text: "Thick and leathery; new leaves come out pink." },
-      { feature: "Flowers", text: "Pale pink stars in clusters under the leaves." },
+      { part: "fruit", feature: "Berries", text: "Red, then glossy black, like the buttons on an old boot." },
+      { part: "leaf", feature: "Leaves", text: "Thick and leathery; new leaves come out pink." },
+      { part: "flower", feature: "Flowers", text: "Pale pink stars in clusters under the leaves." },
     ],
     removal: {
       steps: [
@@ -320,9 +320,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Ludwigia peruviana",
     form: "shrub",
     marks: [
-      { feature: "Flowers", text: "Big, bright yellow, with four round petals." },
-      { feature: "Leaves", text: "Hairy and lance-shaped." },
-      { feature: "Where", text: "Standing in water at lake edges, ditches and marshes." },
+      { part: "flower", feature: "Flowers", text: "Big, bright yellow, with four round petals." },
+      { part: "leaf", feature: "Leaves", text: "Hairy and lance-shaped." },
+      { part: "where", feature: "Where", text: "Standing in water at lake edges, ditches and marshes." },
     ],
     removal: {
       steps: [
@@ -340,9 +340,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Agave americana",
     form: "shrub",
     marks: [
-      { feature: "Leaves", text: "Huge, fleshy and blue-grey, tipped with a spine and edged with hooks." },
-      { feature: "Flower", text: "One mast taller than a house, after many years — then the plant dies." },
-      { feature: "Offsets", text: "Ringed by young rosettes rising from its roots." },
+      { part: "leaf", feature: "Leaves", text: "Huge, fleshy and blue-grey, tipped with a spine and edged with hooks." },
+      { part: "flower", feature: "Flower", text: "One mast taller than a house, after many years — then the plant dies." },
+      { part: "shape", feature: "Offsets", text: "Ringed by young rosettes rising from its roots." },
     ],
     removal: {
       steps: [
@@ -360,9 +360,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Buddleja davidii",
     form: "shrub",
     marks: [
-      { feature: "Flowers", text: "Long cones of purple or white, honey-scented flowers." },
-      { feature: "Leaves", text: "Long and pointed, felted white underneath." },
-      { feature: "Where", text: "Old walls, railway ballast, gravel and riverbanks." },
+      { part: "flower", feature: "Flowers", text: "Long cones of purple or white, honey-scented flowers." },
+      { part: "leaf", feature: "Leaves", text: "Long and pointed, felted white underneath." },
+      { part: "where", feature: "Where", text: "Old walls, railway ballast, gravel and riverbanks." },
     ],
     removal: {
       steps: [
@@ -380,9 +380,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Prunus laurocerasus",
     form: "shrub",
     marks: [
-      { feature: "Smell", text: "Crushed leaves smell of almonds — that's cyanide." },
-      { feature: "Leaves", text: "Big, glossy and bright green." },
-      { feature: "Flowers", text: "Upright candles of small white flowers in spring." },
+      { part: "smell", feature: "Smell", text: "Crushed leaves smell of almonds — that's cyanide." },
+      { part: "leaf", feature: "Leaves", text: "Big, glossy and bright green." },
+      { part: "flower", feature: "Flowers", text: "Upright candles of small white flowers in spring." },
     ],
     removal: {
       steps: [
@@ -400,9 +400,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Rhododendron ponticum",
     form: "shrub",
     marks: [
-      { feature: "Leaves", text: "Leathery, dark and evergreen, paler underneath." },
-      { feature: "Flowers", text: "Big mauve trusses in early summer." },
-      { feature: "Where", text: "Dense thickets under oak woods, with bare ground beneath." },
+      { part: "leaf", feature: "Leaves", text: "Leathery, dark and evergreen, paler underneath." },
+      { part: "flower", feature: "Flowers", text: "Big mauve trusses in early summer." },
+      { part: "where", feature: "Where", text: "Dense thickets under oak woods, with bare ground beneath." },
     ],
     removal: {
       steps: [
@@ -421,9 +421,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Alliaria petiolata",
     form: "perennial",
     marks: [
-      { feature: "Smell", text: "Crush a leaf: it smells of garlic." },
-      { feature: "Leaves", text: "Kidney-shaped and scalloped low down; triangular and toothed up the stem." },
-      { feature: "Flowers", text: "Small, white, four petals in a cross, in spring." },
+      { part: "smell", feature: "Smell", text: "Crush a leaf: it smells of garlic." },
+      { part: "leaf", feature: "Leaves", text: "Kidney-shaped and scalloped low down; triangular and toothed up the stem." },
+      { part: "flower", feature: "Flowers", text: "Small, white, four petals in a cross, in spring." },
     ],
     removal: {
       steps: [
@@ -441,9 +441,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Reynoutria japonica",
     form: "perennial",
     marks: [
-      { feature: "Stems", text: "Hollow, jointed canes like bamboo, speckled purple." },
-      { feature: "Leaves", text: "Shield-shaped with a flat base, zigzagging up the stem." },
-      { feature: "Flowers", text: "Sprays of tiny cream flowers in late summer." },
+      { part: "stem", feature: "Stems", text: "Hollow, jointed canes like bamboo, speckled purple." },
+      { part: "leaf", feature: "Leaves", text: "Shield-shaped with a flat base, zigzagging up the stem." },
+      { part: "flower", feature: "Flowers", text: "Sprays of tiny cream flowers in late summer." },
     ],
     removal: {
       steps: [
@@ -461,9 +461,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Lythrum salicaria",
     form: "perennial",
     marks: [
-      { feature: "Flowers", text: "Tall spikes of magenta flowers with crinkled petals." },
-      { feature: "Stems", text: "Square, and woody at the base." },
-      { feature: "Where", text: "Wet ground: ditches, marsh edges, lake shores." },
+      { part: "flower", feature: "Flowers", text: "Tall spikes of magenta flowers with crinkled petals." },
+      { part: "stem", feature: "Stems", text: "Square, and woody at the base." },
+      { part: "where", feature: "Where", text: "Wet ground: ditches, marsh edges, lake shores." },
     ],
     removal: {
       steps: [
@@ -481,9 +481,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Centaurea stoebe",
     form: "perennial",
     marks: [
-      { feature: "Flower heads", text: "Pink-purple, like a thistle's, but with no prickles." },
-      { feature: "Bracts", text: "The scales under each flower are black-tipped — the “spots”." },
-      { feature: "Leaves", text: "Grey-green, cut into narrow lobes." },
+      { part: "flower", feature: "Flower heads", text: "Pink-purple, like a thistle's, but with no prickles." },
+      { part: "flower", feature: "Bracts", text: "The scales under each flower are black-tipped — the “spots”." },
+      { part: "leaf", feature: "Leaves", text: "Grey-green, cut into narrow lobes." },
     ],
     removal: {
       steps: [
@@ -501,9 +501,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Centaurea solstitialis",
     form: "perennial",
     marks: [
-      { feature: "Flower heads", text: "Yellow, ringed by long stiff spines like a star." },
-      { feature: "Stems", text: "Grey-green, cottony, with thin wings along them." },
-      { feature: "When", text: "Flowering in dry grassland in high summer, when little else does." },
+      { part: "flower", feature: "Flower heads", text: "Yellow, ringed by long stiff spines like a star." },
+      { part: "stem", feature: "Stems", text: "Grey-green, cottony, with thin wings along them." },
+      { part: "when", feature: "When", text: "Flowering in dry grassland in high summer, when little else does." },
     ],
     removal: {
       steps: [
@@ -521,9 +521,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Geranium robertianum",
     form: "perennial",
     marks: [
-      { feature: "Smell", text: "Crushed leaves smell bad, like burnt rubber." },
-      { feature: "Leaves", text: "Lacy and deeply cut, often flushed red." },
-      { feature: "Flowers", text: "Small, pink, five petals, then a long beak-shaped pod." },
+      { part: "smell", feature: "Smell", text: "Crushed leaves smell bad, like burnt rubber." },
+      { part: "leaf", feature: "Leaves", text: "Lacy and deeply cut, often flushed red." },
+      { part: "flower", feature: "Flowers", text: "Small, pink, five petals, then a long beak-shaped pod." },
     ],
     removal: {
       steps: [
@@ -541,9 +541,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Jacobaea vulgaris",
     form: "perennial",
     marks: [
-      { feature: "Flowers", text: "Flat-topped clusters of small yellow daisies." },
-      { feature: "Leaves", text: "Ragged and deeply cut." },
-      { feature: "Caterpillars", text: "Often striped yellow and black: cinnabar moths, brought in to eat it." },
+      { part: "flower", feature: "Flowers", text: "Flat-topped clusters of small yellow daisies." },
+      { part: "leaf", feature: "Leaves", text: "Ragged and deeply cut." },
+      { part: "wildlife", feature: "Caterpillars", text: "Often striped yellow and black: cinnabar moths, brought in to eat it." },
     ],
     removal: {
       steps: [
@@ -561,9 +561,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Oncosiphon pilulifer",
     form: "perennial",
     marks: [
-      { feature: "Flowers", text: "Yellow buttons, no petals, like little balls." },
-      { feature: "Smell", text: "Brush it and it smells sharp, like turpentine." },
-      { feature: "Leaves", text: "Finely cut and lacy." },
+      { part: "flower", feature: "Flowers", text: "Yellow buttons, no petals, like little balls." },
+      { part: "smell", feature: "Smell", text: "Brush it and it smells sharp, like turpentine." },
+      { part: "leaf", feature: "Leaves", text: "Finely cut and lacy." },
     ],
     removal: {
       steps: [
@@ -581,9 +581,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Impatiens glandulifera",
     form: "perennial",
     marks: [
-      { feature: "Flowers", text: "Pink, shaped like a policeman's helmet." },
-      { feature: "Stems", text: "Thick, hollow, reddish and brittle, taller than a person." },
-      { feature: "Pods", text: "Burst open when touched, flinging the seeds." },
+      { part: "flower", feature: "Flowers", text: "Pink, shaped like a policeman's helmet." },
+      { part: "stem", feature: "Stems", text: "Thick, hollow, reddish and brittle, taller than a person." },
+      { part: "fruit", feature: "Pods", text: "Burst open when touched, flinging the seeds." },
     ],
     removal: {
       steps: [
@@ -601,9 +601,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Senecio inaequidens",
     form: "perennial",
     marks: [
-      { feature: "Flowers", text: "Yellow daisies from summer until the frosts." },
-      { feature: "Leaves", text: "Narrow, almost like grass blades." },
-      { feature: "Where", text: "Roadsides, railways, vineyards and sunny waste ground." },
+      { part: "flower", feature: "Flowers", text: "Yellow daisies from summer until the frosts." },
+      { part: "leaf", feature: "Leaves", text: "Narrow, almost like grass blades." },
+      { part: "where", feature: "Where", text: "Roadsides, railways, vineyards and sunny waste ground." },
     ],
     removal: {
       steps: [
@@ -621,9 +621,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Phytolacca americana",
     form: "perennial",
     marks: [
-      { feature: "Stems", text: "Thick, smooth and magenta-red." },
-      { feature: "Berries", text: "Drooping clusters of shiny purple-black berries. Poisonous." },
-      { feature: "Leaves", text: "Big, smooth and oval." },
+      { part: "stem", feature: "Stems", text: "Thick, smooth and magenta-red." },
+      { part: "fruit", feature: "Berries", text: "Drooping clusters of shiny purple-black berries. Poisonous." },
+      { part: "leaf", feature: "Leaves", text: "Big, smooth and oval." },
     ],
     removal: {
       steps: [
@@ -641,9 +641,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Gunnera tinctoria",
     form: "perennial",
     marks: [
-      { feature: "Leaves", text: "Enormous, like rhubarb, wider than an umbrella." },
-      { feature: "Stalks", text: "Thick and covered in soft spines." },
-      { feature: "Flowers", text: "A cone of tiny flowers like a bottle brush." },
+      { part: "leaf", feature: "Leaves", text: "Enormous, like rhubarb, wider than an umbrella." },
+      { part: "stem", feature: "Stalks", text: "Thick and covered in soft spines." },
+      { part: "flower", feature: "Flowers", text: "A cone of tiny flowers like a bottle brush." },
     ],
     removal: {
       steps: [
@@ -662,9 +662,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Arundo donax",
     form: "grass",
     marks: [
-      { feature: "Stems", text: "Thick canes like bamboo, far taller than a person." },
-      { feature: "Leaves", text: "Broad, grey-green blades hugging the cane all the way up." },
-      { feature: "Plumes", text: "Big feathery plumes in late summer." },
+      { part: "stem", feature: "Stems", text: "Thick canes like bamboo, far taller than a person." },
+      { part: "leaf", feature: "Leaves", text: "Broad, grey-green blades hugging the cane all the way up." },
+      { part: "flower", feature: "Plumes", text: "Big feathery plumes in late summer." },
     ],
     removal: {
       steps: [
@@ -682,9 +682,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Cortaderia selloana",
     form: "grass",
     marks: [
-      { feature: "Plumes", text: "Tall, silvery or pink, held high over the clump." },
-      { feature: "Leaves", text: "Long and arching, with edges that cut bare skin." },
-      { feature: "Clump", text: "A dense fountain wider than your arm span." },
+      { part: "flower", feature: "Plumes", text: "Tall, silvery or pink, held high over the clump." },
+      { part: "leaf", feature: "Leaves", text: "Long and arching, with edges that cut bare skin." },
+      { part: "shape", feature: "Clump", text: "A dense fountain wider than your arm span." },
     ],
     removal: {
       steps: [
@@ -703,9 +703,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Celastrus orbiculatus",
     form: "vine",
     marks: [
-      { feature: "Berries", text: "Yellow husks open on orange-red berries, all along the stem." },
-      { feature: "Leaves", text: "Round, glossy and finely toothed." },
-      { feature: "Stems", text: "Twining around trees tightly enough to strangle them." },
+      { part: "fruit", feature: "Berries", text: "Yellow husks open on orange-red berries, all along the stem." },
+      { part: "leaf", feature: "Leaves", text: "Round, glossy and finely toothed." },
+      { part: "stem", feature: "Stems", text: "Twining around trees tightly enough to strangle them." },
     ],
     removal: {
       steps: [
@@ -723,9 +723,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Hedera helix",
     form: "vine",
     marks: [
-      { feature: "Leaves", text: "Evergreen, lobed on climbing stems, plain ovals on flowering ones." },
-      { feature: "Stems", text: "Hairy rootlets glue it to bark and walls." },
-      { feature: "Berries", text: "Round clusters of black berries in late winter." },
+      { part: "leaf", feature: "Leaves", text: "Evergreen, lobed on climbing stems, plain ovals on flowering ones." },
+      { part: "stem", feature: "Stems", text: "Hairy rootlets glue it to bark and walls." },
+      { part: "fruit", feature: "Berries", text: "Round clusters of black berries in late winter." },
     ],
     removal: {
       steps: [
@@ -743,9 +743,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Abrus precatorius",
     form: "vine",
     marks: [
-      { feature: "Seeds", text: "Glossy scarlet with a black spot. Deadly if chewed." },
-      { feature: "Leaves", text: "Feathery, with many small leaflets in pairs." },
-      { feature: "Stems", text: "Thin and twining over shrubs." },
+      { part: "fruit", feature: "Seeds", text: "Glossy scarlet with a black spot. Deadly if chewed." },
+      { part: "leaf", feature: "Leaves", text: "Feathery, with many small leaflets in pairs." },
+      { part: "stem", feature: "Stems", text: "Thin and twining over shrubs." },
     ],
     removal: {
       steps: [
@@ -763,9 +763,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Dioscorea bulbifera",
     form: "vine",
     marks: [
-      { feature: "Bulbils", text: "Potato-like lumps hanging from the vine." },
-      { feature: "Leaves", text: "Big and heart-shaped, with curved veins." },
-      { feature: "Stems", text: "Twining right up to the tops of trees." },
+      { part: "fruit", feature: "Bulbils", text: "Potato-like lumps hanging from the vine." },
+      { part: "leaf", feature: "Leaves", text: "Big and heart-shaped, with curved veins." },
+      { part: "stem", feature: "Stems", text: "Twining right up to the tops of trees." },
     ],
     removal: {
       steps: [
@@ -784,9 +784,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Carpobrotus edulis",
     form: "groundcover",
     marks: [
-      { feature: "Leaves", text: "Fat, fleshy and three-sided, like fingers." },
-      { feature: "Flowers", text: "Big, yellow or pink, with many narrow petals." },
-      { feature: "Habit", text: "Thick mats over dunes and cliffs, reddening in the sun." },
+      { part: "leaf", feature: "Leaves", text: "Fat, fleshy and three-sided, like fingers." },
+      { part: "flower", feature: "Flowers", text: "Big, yellow or pink, with many narrow petals." },
+      { part: "shape", feature: "Habit", text: "Thick mats over dunes and cliffs, reddening in the sun." },
     ],
     removal: {
       steps: [
@@ -804,9 +804,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Securigera varia",
     form: "groundcover",
     marks: [
-      { feature: "Flowers", text: "Pink-and-white pea-flowers in a round crown on a long stalk." },
-      { feature: "Leaves", text: "Many small leaflets in pairs, with no tendrils." },
-      { feature: "Habit", text: "Sprawling mats over roadside banks and dunes." },
+      { part: "flower", feature: "Flowers", text: "Pink-and-white pea-flowers in a round crown on a long stalk." },
+      { part: "leaf", feature: "Leaves", text: "Many small leaflets in pairs, with no tendrils." },
+      { part: "shape", feature: "Habit", text: "Sprawling mats over roadside banks and dunes." },
     ],
     removal: {
       steps: [
@@ -824,9 +824,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Oxalis pes-caprae",
     form: "groundcover",
     marks: [
-      { feature: "Flowers", text: "Bright yellow bells, in winter and spring." },
-      { feature: "Leaves", text: "Like clover: three heart-shaped leaflets, often spotted." },
-      { feature: "When", text: "Carpets the ground, then vanishes underground by summer." },
+      { part: "flower", feature: "Flowers", text: "Bright yellow bells, in winter and spring." },
+      { part: "leaf", feature: "Leaves", text: "Like clover: three heart-shaped leaflets, often spotted." },
+      { part: "when", feature: "When", text: "Carpets the ground, then vanishes underground by summer." },
     ],
     removal: {
       steps: [
@@ -845,9 +845,9 @@ export const INVASIVES: Invasive[] = [
     latin: "Nephrolepis cordifolia",
     form: "fern",
     marks: [
-      { feature: "Roots", text: "Small round tubers on the roots, like beads." },
-      { feature: "Fronds", text: "Upright and narrow, with many small leaflets." },
-      { feature: "Habit", text: "Dense colonies spreading on wiry runners." },
+      { part: "root", feature: "Roots", text: "Small round tubers on the roots, like beads." },
+      { part: "leaf", feature: "Fronds", text: "Upright and narrow, with many small leaflets." },
+      { part: "shape", feature: "Habit", text: "Dense colonies spreading on wiry runners." },
     ],
     removal: {
       steps: [

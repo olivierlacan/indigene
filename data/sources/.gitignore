@@ -20,3 +20,14 @@
 # by `npm run probe:vascan`. Only the probe's summary is committed.
 vascan/vascan-dwca.zip
 vascan/dwca/
+
+# Plant-SyNZ raw reports, cached by `npm run host-counts:nz`. Only the
+# derived counts (host-counts.json) are committed.
+plant-synz/cache/
+
+# HOSTS, the full 52 MB download from `npm run hosts:fetch`. Only the derived
+# genus-counts.json is committed.
+hosts/hosts-raw.json
+
+# …but the per-area HOSTS records are an archive we keep (CC0, ~0.6 MB).
+!hosts/records/*.csv

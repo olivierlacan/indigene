@@ -1,13 +1,189 @@
 {
   "question": "Does the hosted RESOLVE Ecoregions 2017 layer answer a point query south of the equator, from a browser?",
   "service": "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/Resolve_Ecoregions/FeatureServer",
-  "ranAt": "2026-09-24T06:52:55.717Z",
+  "ranAt": "2026-09-24T07:30:22.240Z",
   "behindProxy": true,
-  "reachable": false,
-  "fields": null,
-  "missingFields": null,
-  "cors": null,
-  "points": [],
-  "verdict": "unanswered — the proxy refused services.arcgis.com, so the question never reached the service. Re-run from an unblocked network.",
-  "error": "fetch failed"
+  "reachable": true,
+  "fields": [
+    "FID",
+    "OBJECTID",
+    "ECO_NAME",
+    "BIOME_NUM",
+    "BIOME_NAME",
+    "REALM",
+    "ECO_BIOME_",
+    "NNH",
+    "ECO_ID",
+    "SHAPE_LENG",
+    "NNH_NAME",
+    "COLOR",
+    "COLOR_BIO",
+    "COLOR_NNH",
+    "LICENSE",
+    "Shape__Area",
+    "Shape__Length"
+  ],
+  "missingFields": [],
+  "cors": "*",
+  "points": [
+    {
+      "region": "Sydney Basin",
+      "name": "Sydney, NSW",
+      "lat": -33.8688,
+      "lon": 151.2093,
+      "attrs": {
+        "ECO_NAME": "Eastern Australian temperate forests",
+        "BIOME_NAME": "Temperate Broadleaf & Mixed Forests",
+        "REALM": "Australasia",
+        "ECO_ID": 168
+      },
+      "error": null
+    },
+    {
+      "region": "Sydney Basin",
+      "name": "Blue Mountains, NSW",
+      "lat": -33.7125,
+      "lon": 150.3119,
+      "attrs": {
+        "ECO_NAME": "Eastern Australian temperate forests",
+        "BIOME_NAME": "Temperate Broadleaf & Mixed Forests",
+        "REALM": "Australasia",
+        "ECO_ID": 168
+      },
+      "error": null
+    },
+    {
+      "region": "Sydney Basin",
+      "name": "Wollongong, NSW",
+      "lat": -34.4278,
+      "lon": 150.8931,
+      "attrs": {
+        "ECO_NAME": "Eastern Australian temperate forests",
+        "BIOME_NAME": "Temperate Broadleaf & Mixed Forests",
+        "REALM": "Australasia",
+        "ECO_ID": 168
+      },
+      "error": null
+    },
+    {
+      "region": "Auckland & Northland",
+      "name": "Auckland",
+      "lat": -36.8485,
+      "lon": 174.7633,
+      "attrs": {
+        "ECO_NAME": "Northland temperate kauri forests",
+        "BIOME_NAME": "Temperate Broadleaf & Mixed Forests",
+        "REALM": "Australasia",
+        "ECO_ID": 173
+      },
+      "error": null
+    },
+    {
+      "region": "Auckland & Northland",
+      "name": "Whangārei",
+      "lat": -35.7251,
+      "lon": 174.3237,
+      "attrs": {
+        "ECO_NAME": "Northland temperate kauri forests",
+        "BIOME_NAME": "Temperate Broadleaf & Mixed Forests",
+        "REALM": "Australasia",
+        "ECO_ID": 173
+      },
+      "error": null
+    },
+    {
+      "region": "Auckland & Northland",
+      "name": "Hamilton",
+      "lat": -37.787,
+      "lon": 175.2793,
+      "attrs": {
+        "ECO_NAME": "Northland temperate kauri forests",
+        "BIOME_NAME": "Temperate Broadleaf & Mixed Forests",
+        "REALM": "Australasia",
+        "ECO_ID": 173
+      },
+      "error": null
+    },
+    {
+      "region": "Cape fynbos lowlands",
+      "name": "Cape Town",
+      "lat": -33.9249,
+      "lon": 18.4241,
+      "attrs": {
+        "ECO_NAME": "Renosterveld shrubland",
+        "BIOME_NAME": "Mediterranean Forests, Woodlands & Scrub",
+        "REALM": "Afrotropic",
+        "ECO_ID": 90
+      },
+      "error": null
+    },
+    {
+      "region": "Cape fynbos lowlands",
+      "name": "Stellenbosch",
+      "lat": -33.9321,
+      "lon": 18.8602,
+      "attrs": {
+        "ECO_NAME": "Renosterveld shrubland",
+        "BIOME_NAME": "Mediterranean Forests, Woodlands & Scrub",
+        "REALM": "Afrotropic",
+        "ECO_ID": 90
+      },
+      "error": null
+    },
+    {
+      "region": "(control: Albany thicket, not fynbos)",
+      "name": "Port Elizabeth",
+      "lat": -33.9608,
+      "lon": 25.6022,
+      "attrs": {
+        "ECO_NAME": "Fynbos shrubland",
+        "BIOME_NAME": "Mediterranean Forests, Woodlands & Scrub",
+        "REALM": "Afrotropic",
+        "ECO_ID": 89
+      },
+      "error": null
+    },
+    {
+      "region": "Buenos Aires pampas",
+      "name": "Buenos Aires",
+      "lat": -34.6037,
+      "lon": -58.3816,
+      "attrs": {
+        "ECO_NAME": "Humid Pampas",
+        "BIOME_NAME": "Temperate Grasslands, Savannas & Shrublands",
+        "REALM": "Neotropic",
+        "ECO_ID": 576
+      },
+      "error": null
+    },
+    {
+      "region": "Buenos Aires pampas",
+      "name": "La Plata",
+      "lat": -34.9205,
+      "lon": -57.9536,
+      "attrs": {
+        "ECO_NAME": "Humid Pampas",
+        "BIOME_NAME": "Temperate Grasslands, Savannas & Shrublands",
+        "REALM": "Neotropic",
+        "ECO_ID": 576
+      },
+      "error": null
+    },
+    {
+      "region": "(control: Uruguayan savanna?)",
+      "name": "Montevideo",
+      "lat": -34.9011,
+      "lon": -56.1645,
+      "attrs": {
+        "ECO_NAME": "Uruguayan savanna",
+        "BIOME_NAME": "Tropical & Subtropical Grasslands, Savannas & Shrublands",
+        "REALM": "Neotropic",
+        "ECO_ID": 574
+      },
+      "error": null
+    }
+  ],
+  "verdict": "resolved — copy each region's ECO_IDs into its region file.",
+  "layerName": "Biomes and Ecoregions 2017",
+  "copyright": ""
 }

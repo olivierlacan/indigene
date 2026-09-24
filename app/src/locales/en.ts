@@ -1217,6 +1217,10 @@ export const en = {
     "How many butterfly and moth species can raise their caterpillars on this plant. Caterpillars are what nearly all baby songbirds are fed, so this is the best single measure of how much life a plant supports — and it's exactly where non-native plants score near zero.",
   "stat.host.explainKeystone":
     "This one is a keystone: it hosts far more species than most, and local food webs lean on it.",
+  "stat.host.uncounted": "Not counted",
+  "stat.host.uncountedSub": "no source yet",
+  "stat.host.explainUncounted":
+    "For this region we don't yet have a published count we can cite, so this plant is ranked on its other strengths until we do.",
   "stat.bloom.label": "Bloom",
   "stat.bloom.explain":
     "When it flowers. Native bloom windows are timed to local pollinators — some bees emerge for exactly these weeks. Plant a few natives with staggered bloom times and something is serving nectar from early spring to frost.",

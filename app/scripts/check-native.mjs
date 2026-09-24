@@ -50,6 +50,7 @@ const OUT_DIR = join(REPO_ROOT, "data", "sources", "wcvp");
  *  national flora this script can't query and are skipped with a note. */
 const TDWG_AREA = {
   ireland: { code: "IRE", label: "Ireland (TDWG:IRE — the whole island)" },
+  "nz-auckland": { code: "NZN", label: "New Zealand North (TDWG:NZN — the North Island)" },
 };
 
 const args = process.argv.slice(2);

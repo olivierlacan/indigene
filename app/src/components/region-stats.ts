@@ -89,7 +89,11 @@ function statsFor(region: RegionDef, plants: Plant[]): RegionStat[] {
   // Host counts are per-plant tallies of overlapping species, so summing them
   // would double-count — the honest roster-level figure is the single best
   // plant's count, said as "up to N on one plant".
-  const topHost = plants.reduce((best, p) => (p.hostLepCount > best.hostLepCount ? p : best), plants[0]);
+  // A region with no counts yet (New Zealand) gets no tile rather than "up to 0".
+  const counted = plants.filter((p): p is Plant & { hostLepCount: number } => p.hostLepCount !== null);
+  const topHost = counted.length
+    ? counted.reduce((best, p) => (p.hostLepCount > best.hostLepCount ? p : best), counted[0])
+    : null;
   const stats: RegionStat[] = [
     {
       icon: "🌿",
@@ -98,7 +102,7 @@ function statsFor(region: RegionDef, plants: Plant[]): RegionStat[] {
       sub: t("regionStat.plants.sub"),
       explain: t("regionStat.plants.explain"),
     },
-    {
+    ...(topHost ? [{
       icon: "🐛",
       label: t("regionStat.hosts.label"),
       value: t("regionStat.hosts.value", { n: fmtNumber(topHost.hostLepCount) }),
@@ -107,7 +111,7 @@ function statsFor(region: RegionDef, plants: Plant[]): RegionStat[] {
         plant: commonName(topHost),
         n: fmtNumber(topHost.hostLepCount),
       }),
-    },
+    }] : []),
   ];
   if (wildlife > 0) {
     stats.push({

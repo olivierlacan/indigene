@@ -1,40 +1,56 @@
 # RESOLVE Ecoregions 2017
 
-**Status: wired, unconfirmed.** The ecoregion lookup for every point south of
-the equator — where neither the EPA nor the EEA answers. No shipped region
-declares it yet, so nothing selects on it today.
+**Status: integrated.** The ecoregion lookup for every point south of the
+equator, where neither the EPA nor the EEA answers. Auckland & Northland
+selects on it (ECO_ID 173).
 
 - Dataset: Dinerstein et al. 2017, "An Ecoregion-Based Approach to Protecting
   Half the Terrestrial Realm", *BioScience* 67(6). <https://ecoregions.appspot.com/>
-- Service: Esri's hosted copy,
-  `https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/Resolve_Ecoregions/FeatureServer/0`
 - Licence: **CC BY 4.0**. Attribution: "RESOLVE Ecoregions 2017 (CC BY 4.0)".
-- Refresh: `cd app && npm run probe:resolve` → `probe.json`
+- Live service (the app, one point at a time): Esri's hosted copy,
+  `https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/Resolve_Ecoregions/FeatureServer/0`
+- Shapes (the build): the publisher's own shapefile,
+  `https://storage.googleapis.com/teow2016/Ecoregions2017.zip` (149 MB)
 
-## What it is admitted for
+## What's in this folder
 
-**One claim: which ecoregion is this point in?** — the same job EPA Level III
-does in the US and the EEA regions do in Europe. It is one flat level of 846
-ecoregions; `code` is the numeric `ECO_ID`, and biome and realm are shown as
-the roll-up above it.
+| File | Committed? | What it is | Made by |
+|---|---|---|---|
+| `probe.json` | yes | The live layer's answer for twelve southern cities, its fields, and its CORS header | `cd app && npm run probe:resolve` |
+| `index.json` | yes | One line per ecoregion: `id`, `name`, `biome`, `realm`, `bbox` (139 KB) | `npm run resolve:fetch` |
+| `Ecoregions2017.zip` | no | The raw download, kept so a re-run doesn't fetch it again | `npm run resolve:fetch` |
+| `ecoregions-2017.geojson` | no | All 847 shapes, simplified to ~500 m, coordinates to 4 decimals (27 MB; 8.5 MB gzipped) | `npm run resolve:fetch` |
 
-It is coarser than either national scheme. Sydney's ecoregion runs from the
-Hunter to Gippsland; the Cape's lowland fynbos is one polygon. So, as with the
-EEA, the region's **box** does the fine work and the code keeps a list from
-bleeding into the next ecoregion over.
+`resolve:fetch` takes about 20 seconds after the download. It needs no
+dependencies: it reads the zip with Node's zlib and parses the shapefile and
+its attribute table by hand. `--tolerance 0.01` makes a coarser, smaller file.
 
-## What is not yet known
+The GeoJSON is git-ignored because it can be rebuilt from a pinned public URL in
+seconds, and 27 MB of coordinates in the history would outweigh the rest of the
+repo. `index.json` is what a reviewer needs: the ECO_ID a region file cites,
+spelled out.
 
-The build sandbox's egress refuses `services.arcgis.com` (HTTP 403 from the
-proxy, 2026-09-24), so four things are the published dataset's, not measured:
+## Using it
 
-| Question | Assumed | Where it matters |
+- **Which ecoregion is a place in?** `scripts/_resolve.mjs` → `ecoregionAt(lat, lon)`.
+  On the probe's twelve cities it agrees with the live service on all twelve. It
+  can miss a point right on the shore, where simplification moved the coast
+  inland (Cape Reinga, Thames); ask the live layer for those.
+- **Draw a region:** `maps:build` reads the shapes of a `resolve-2017` region's
+  codes from here, so a map build doesn't wait on a remote service.
+
+## What it answered (2026-09-24)
+
+| City | ECO_ID | Ecoregion |
 |---|---|---|
-| Layer id | `0` | `site.ts`, `build-region-maps.mjs` |
-| Field names | `ECO_ID`, `ECO_NAME`, `BIOME_NAME`, `REALM` (read case-insensitively) | `parseEcoregionResolve` |
-| Browser access | CORS allowed, as on Esri's other hosted layers | whether the app can call it at all |
-| Each city's `ECO_ID` | — | the first regions' `ecoregion.codes` |
+| Sydney, Blue Mountains, Wollongong | 168 | Eastern Australian temperate forests |
+| Auckland, Whangārei, Hamilton | 173 | Northland temperate kauri forests |
+| Cape Town, Stellenbosch | 90 | Renosterveld shrubland |
+| Port Elizabeth | 89 | Fynbos shrubland |
+| Buenos Aires, La Plata | 576 | Humid Pampas |
+| Montevideo | 574 | Uruguayan savanna |
 
-`probe.json` in this folder is the unblocked run's answer. If CORS fails, the
-fallback is the one `docs/region-queue.md` describes for Canada: bundle
-simplified polygons for the southern boxes and test the point on-device.
+It is coarser than the national schemes. Sydney's ecoregion runs far up and
+down the coast, and Hamilton shares Auckland's. As with the EEA, the region's
+**box** does the fine work, and the code keeps a list from spilling into the
+next ecoregion over.

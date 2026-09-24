@@ -1,6 +1,6 @@
 {
   "name": "indigene",
-  "version": "0.34.0",
+  "version": "0.35.0",
   "private": true,
   "description": "Native Indigene — a mobile-first PWA that recommends locally native plants for the exact spot you're standing in.",
   "license": "MIT",
@@ -33,6 +33,8 @@
     "wildlife": "NODE_USE_ENV_PROXY=1 node scripts/wildlife-candidates.mjs",
     "candidates": "NODE_USE_ENV_PROXY=1 node scripts/candidates.mjs",
     "host-counts": "node scripts/build-host-counts.mjs",
+    "host-counts:nz": "NODE_USE_ENV_PROXY=1 node scripts/nz-host-counts.mjs",
+    "hosts:fetch": "NODE_USE_ENV_PROXY=1 node scripts/fetch-hosts.mjs",
     "maps:build": "NODE_USE_ENV_PROXY=1 node scripts/build-region-maps.mjs",
     "registry:build": "node scripts/build-registry.mjs",
     "region-counts": "NODE_USE_ENV_PROXY=1 node scripts/build-region-counts.mjs",
@@ -54,6 +56,7 @@
     "probe:vascan": "NODE_USE_ENV_PROXY=1 node scripts/probe-vascan.mjs",
     "probe:cec": "NODE_USE_ENV_PROXY=1 node scripts/probe-cec.mjs",
     "probe:resolve": "NODE_USE_ENV_PROXY=1 node scripts/probe-resolve.mjs",
+    "resolve:fetch": "NODE_USE_ENV_PROXY=1 node --max-old-space-size=6144 scripts/fetch-resolve.mjs",
     "swipe:check": "node scripts/check-lightbox-swipe.mjs"
   },
   "devDependencies": {

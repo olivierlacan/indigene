@@ -17,7 +17,9 @@ export function hostScore(count: number): number {
 }
 
 function build(raw: RawPlant): Plant {
-  const scores: EcoScores = { ...raw.scores, host: hostScore(raw.hostLepCount) };
+  // Not counted yet scores 0 here, and `ecoScore` leaves it out of the average
+  // rather than let a missing number read as a poor plant.
+  const scores: EcoScores = { ...raw.scores, host: raw.hostLepCount === null ? 0 : hostScore(raw.hostLepCount) };
   return { ...raw, scores };
 }
 

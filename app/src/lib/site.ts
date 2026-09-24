@@ -416,12 +416,10 @@ function scanForEeaRegion(attrs: Record<string, unknown>): { slug: string; name:
 // RESOLVE Ecoregions 2017 (Dinerstein et al., BioScience 2017; CC-BY 4.0): 846
 // terrestrial ecoregions covering every continent, the successor to WWF's
 // Terrestrial Ecoregions of the World. Esri hosts it as a public feature service.
-// **Not yet confirmed from here**: the build sandbox's egress refuses
-// services.arcgis.com, so the layer id and field names are the published
-// dataset's (ECO_ID, ECO_NAME, BIOME_NAME, REALM), and the parser reads them
-// case-insensitively in case the hosted copy renamed them. `npm run
-// probe:resolve` asks the live service and records what it answers — see
-// data/sources/resolve-ecoregions/.
+// Layer 0, its fields (ECO_ID, ECO_NAME, BIOME_NAME, REALM) and browser access
+// (CORS `*`) are confirmed live — `npm run probe:resolve`, recorded in
+// data/sources/resolve-ecoregions/probe.json. The parser still reads the fields
+// case-insensitively, in case the hosted copy is ever republished.
 const RESOLVE_ECOREGION_QUERY_URL =
   "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/Resolve_Ecoregions/FeatureServer/0/query";
 

@@ -31,6 +31,47 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+## [0.35] - 2026-09-24
+
+**Auckland & Northland, south of the equator**
+
+[![The Auckland & Northland region page](docs/screenshots/pr-166/thumb.png)](docs/screenshots/pr-166/region-after-dark.png)
+[Before](docs/screenshots/pr-166/regions-before-dark.png) · [After](docs/screenshots/pr-166/regions-after-dark.png)
+
+### Added
+
+- Regions: Auckland & Northland is on the map — 47 native plants from Cape
+  Reinga to the Coromandel, from pōhutukawa to kawakawa, named the way New
+  Zealanders say them, with real caterpillar counts. Our first region south of
+  the equator.
+  https://indigene.app/regions/nz-auckland
+- Eight New Zealand animals join the wildlife pages, from tūī and kererū to the
+  pūriri moth, each with the plants that feed it.
+  https://indigene.app/wildlife/in/nz-auckland
+- Internal: `region.nz-auckland.ts` and `plants.nz-auckland.ts` (47 rows, all
+  WCVP-native in `TDWG:NZN`; `native:check` now covers the region), eight
+  catalog animals and their ties, map, cards, iNaturalist photos and record
+  counts. The region selects on RESOLVE ECO_ID 173, confirmed live by
+  `probe:resolve`. `npm run resolve:fetch` downloads RESOLVE's shapefile once
+  and writes simplified GeoJSON (git-ignored) plus a committed `index.json`;
+  `maps:build` traces RESOLVE regions from it, and keeps a box's corners sharp.
+- Internal: NZ caterpillar counts come from Plant-SyNZ (Manaaki Whenua).
+  `npm run host-counts:nz` counts native Lepidoptera with reliability ≥ 7 per
+  genus, searching older names (*Hebe*, *Tetrapathaea*…) and asking WCVP when a
+  row has no biostatus; results in `data/sources/plant-synz/host-counts.json`.
+- Internal: `npm run hosts:fetch` downloads HOSTS, the NHM's CC0 world database
+  of Lepidoptera host plants, and counts moth species per host genus for each
+  southern area (`data/sources/hosts/`). It's usable for Sydney, thin for the
+  Cape and near-empty for Argentina. Every record for each candidate area is
+  archived as CSV in `data/sources/hosts/records/`.
+
+### Changed
+
+- Internal: `hostLepCount` and `featuredHostLepCount` accept `null` (not
+  counted yet) for a future region with no host source; the plant tile says
+  "Not counted", `ecoScore` drops the host term, and the region's host tile and
+  explore-card line are omitted rather than printing 0. No shipped region uses it.
+
 ## [0.34] - 2026-09-24
 
 **British Columbia & your iNaturalist sightings**
@@ -77,7 +118,7 @@ subtitle on the What's new page.
   One shared reader now serves both scripts; BC's catalog count goes 108 → 130.
 - Link your iNaturalist username in [Settings](https://indigene.app/#/settings/inat) to bring the past year's plant sightings into a spot. Tick the natives you planted; invasives others have confirmed go on a to-deal-with list.
 - Privacy: your iNaturalist username stays on your device, goes only to iNaturalist, and never with a location. Remove it in Settings anytime.
-- Internal: `lib/inat-account.ts` (username in localStorage, never in backups or addresses), `lib/inat-import.ts` (v2 `fields=` request with no location fields; sorting against the spot region's roster and most-wanted list), `#/import` step, `SavedSpot.invasives` (round-trips through backups), `npm run import:check` plus an `iNaturalist import` workflow. Pages are fetched a second apart and one request is shared per visit. Bundle ~443 KB gzipped (+7 KB).
+- Internal: `lib/inat-account.ts` (username in localStorage, never in backups or addresses), `lib/inat-import.ts` (v2 `fields=` request with no location fields; sorting against the spot region's roster and most-wanted list), `#/import` step, `SavedSpot.invasives` (round-trips through backups), `npm run import:check` plus an `iNaturalist import` workflow. Pages are fetched a second apart and one request is shared per visit. Bundle ~453 KB gzipped (+7 KB).
 - Each region's five most-wanted invasives now have a page of their own, with
   a preview picture listing all five, so you can send a neighbour one link.
   https://indigene.app/invasives/in/pnw
@@ -2659,7 +2700,8 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/39c9b05...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/ea9aef5...HEAD
+[0.35]: https://github.com/olivierlacan/indigene/compare/39c9b05...ea9aef5
 [0.34]: https://github.com/olivierlacan/indigene/compare/c4e7c44...39c9b05
 [0.33]: https://github.com/olivierlacan/indigene/compare/e0f70ef...c4e7c44
 [0.32]: https://github.com/olivierlacan/indigene/compare/655cb62...e0f70ef

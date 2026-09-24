@@ -87,8 +87,13 @@ export interface Plant {
   matureSpreadFt: number;
 
   scores: EcoScores;
-  /** Raw Lepidoptera host-species count behind the host score (for honesty). */
-  hostLepCount: number;
+  /**
+   * Raw Lepidoptera host-species count behind the host score (for honesty).
+   * `null` means **not counted yet** — a region whose flora has no citable
+   * host source in hand (New Zealand, first). Never 0 as a stand-in: 0 is a
+   * claim that nothing feeds on the plant, and the pages print it as one.
+   */
+  hostLepCount: number | null;
   keystone: boolean;
 
   /** Calendar months, 1-12, as the plant flowers *in its region*. A southern

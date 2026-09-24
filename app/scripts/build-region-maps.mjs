@@ -48,6 +48,7 @@ import { dirname, join } from "node:path";
 import { openLoader } from "./_load-ts.mjs";
 import { requireProxyAwareFetch } from "./_net.mjs";
 import { withSeeds } from "./_regions.mjs";
+import { ecoregionFeatures } from "./_resolve.mjs";
 
 requireProxyAwareFetch("maps:build");
 
@@ -61,12 +62,6 @@ const EPA_L3_LAYER = 11;
 const EPA_STATES_LAYER = 0;
 const EEA_LAYER =
   "https://bio.discomap.eea.europa.eu/arcgis/rest/services/BioRegions/BiogeographicalRegions_WM/MapServer/0";
-/** RESOLVE Ecoregions 2017, for regions south of the equator — the same hosted
- *  layer `site.ts` point-queries, so the drawn shape is the one that selects.
- *  Unconfirmed from the build sandbox (its egress refuses services.arcgis.com);
- *  `npm run probe:resolve` checks it. */
-const RESOLVE_LAYER =
-  "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/Resolve_Ecoregions/FeatureServer/0";
 /** CEC North American Terrestrial Ecoregions, Level III — the one North American
  *  set of polygons that doesn't stop at a national border. Layer 3, on the CEC's
  *  own ArcGIS Online account (their `gis.cec.org` serves 403; see
@@ -101,6 +96,15 @@ const UA = "Mozilla/5.0 (indigene region maps; +https://github.com/olivierlacan/
  * which is a few hundred metres: far finer than a dot at this scale.
  */
 const LANDMARKS = {
+  // Hamilton sits just south of the box on purpose: it is the edge a reader in
+  // the Waikato is asking about.
+  "nz-auckland": [
+    { name: "Kaitaia", lat: -35.11, lon: 173.26 },
+    { name: "Whangārei", lat: -35.73, lon: 174.32 },
+    { name: "Auckland", lat: -36.85, lon: 174.76 },
+    { name: "Thames", lat: -37.14, lon: 175.54 },
+    { name: "Hamilton", lat: -37.79, lon: 175.28 },
+  ],
   ireland: [
     { name: "Derry", lat: 54.99, lon: -7.31 },
     { name: "Belfast", lat: 54.6, lon: -5.93 },
@@ -342,7 +346,9 @@ const COLLINEAR = 0.35; // user units of sag below which three points are "strai
  *  landform, and never gets curved. */
 const FRAME = 0.6;
 
-function pathData(rings, project, frame) {
+/** `sharp` draws straight edges only — for a coverage box, whose four corners
+ *  the smoothing would otherwise round into a blob that misses its own edges. */
+function pathData(rings, project, frame, sharp = false) {
   const parts = [];
   const r1 = (n) => Math.round(n * 10) / 10;
   for (const ring of rings) {
@@ -387,7 +393,7 @@ function pathData(rings, project, frame) {
         frame &&
         (cur[0] <= FRAME || cur[0] >= frame.w - FRAME ||
          cur[1] <= FRAME || cur[1] >= frame.h - FRAME);
-      d += onFrame || sag(prev, cur, next) < COLLINEAR
+      d += sharp || onFrame || sag(prev, cur, next) < COLLINEAR
         ? `L${cur.join(" ")}L${end.join(" ")}`
         : `Q${cur.join(" ")} ${end.join(" ")}`;
     }
@@ -517,7 +523,7 @@ function svgFor({ view, land, admin, cover, places, boxOnly, credit }) {
   const layers = [
     `<path class="land" fill-rule="evenodd" d="${pathData(land, project, frame)}"/>`,
     ...(admin?.length ? [`<path class="admin" d="${pathData(admin, project, frame)}"/>`] : []),
-    `<path class="${boxOnly ? "cover-box" : "cover"}" fill-rule="evenodd" d="${pathData(cover, project, frame)}"/>`,
+    `<path class="${boxOnly ? "cover-box" : "cover"}" fill-rule="evenodd" d="${pathData(cover, project, frame, boxOnly)}"/>`,
     ...landmarks(inView, project, h),
   ];
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${WIDTH} ${h}" width="${WIDTH}" height="${h}" role="img">
@@ -600,6 +606,9 @@ async function buildRegion(meta) {
     setFor("cec-na") ?? setFor("resolve-2017") ?? setFor("eea-biogeo") ?? setFor("epa-omernik") ?? null;
   const european = drawn?.provider === "eea-biogeo";
   const resolve = drawn?.provider === "resolve-2017";
+  // South of the equator with no ecoregion codes: the box is the claim, and
+  // there is no US state layer to borrow for lines.
+  const southBox = !drawn && (meta.bounds.minLat + meta.bounds.maxLat) / 2 < 0;
 
   // Countries are the land everywhere: without them a US map stops dead at the
   // Canadian border, and the empty half of the picture reads as ocean.
@@ -616,12 +625,14 @@ async function buildRegion(meta) {
   } else if (resolve) {
     // Country outlines only, as in Europe: no state layer to borrow here, and
     // the cities in LANDMARKS do the placing.
-    const ids = drawn.codes.map(Number).filter(Number.isFinite);
-    const mine = await queryGeoJson(RESOLVE_LAYER, {
-      where: `ECO_ID IN (${ids.join(",")})`, box: view, offset, outFields: "ECO_ID",
-    });
-    if (!mine.features.length) throw new Error(`${meta.id}: no RESOLVE polygon for ${ids}`);
-    cover = ringsIn(mine.features, meta.bounds, minArea);
+    // RESOLVE shapes come from the local copy `npm run resolve:fetch` writes
+    // (the same polygons `site.ts` asks the hosted layer about, simplified to
+    // ~500 m), so a map build doesn't hang on a remote service.
+    const mine = ecoregionFeatures(drawn.codes);
+    if (!mine.length) throw new Error(`${meta.id}: no RESOLVE polygon for ${drawn.codes}`);
+    cover = ringsIn(mine, meta.bounds, minArea);
+  } else if (southBox) {
+    cover = rect(meta.bounds);
   } else {
     // State lines, from the EPA's own layer — drawn as lines over the land,
     // since in the US "which state is that?" is how people place a shape. Their
@@ -649,7 +660,7 @@ async function buildRegion(meta) {
     }
   }
 
-  const source = {
+  const source = southBox ? "coverage box over Natural Earth country outlines (public domain)" : {
     "eea-biogeo":
       "EEA Biogeographical Regions of Europe (2016), CC BY 4.0 © European Environment Agency",
     "epa-omernik":

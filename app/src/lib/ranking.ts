@@ -60,7 +60,8 @@ export interface Ranked {
 export function ecoScore(plant: Plant, weights: Weights): number {
   const s = plant.scores;
   const parts: [number, number][] = [
-    [s.host, weights.host],
+    // An uncounted host figure is absent, not zero: drop it from the average.
+    [s.host, plant.hostLepCount === null ? 0 : weights.host],
     [s.pollinator, weights.pollinator],
     [s.bird, weights.bird],
     [s.stormwater, weights.stormwater],

@@ -179,7 +179,7 @@ for (const { meta, seed } of regions) {
     console.log("  host genera — no bundled source for this region; showing our own rows only");
     const ranked = [...seed].sort((a, b) => b.hostLepCount - a.hostLepCount).slice(0, 10);
     for (const p of ranked) {
-      console.log(`      ${pad(p.latin.split(/\s+/)[0], 16)}${num(p.hostLepCount, 5)}  ${p.keystone ? "keystone" : ""}`);
+      console.log(`      ${pad(p.latin.split(/\s+/)[0], 16)}${num(p.hostLepCount ?? "—", 5)}  ${p.keystone ? "keystone" : ""}`);
     }
   }
 
@@ -195,7 +195,7 @@ for (const { meta, seed } of regions) {
   );
   if (untied.length) {
     console.log("    plants with no animal named, highest host count first:");
-    for (const p of untied) console.log(`      ${num(p.hostLepCount, 5)}  ${p.id}`);
+    for (const p of untied) console.log(`      ${num(p.hostLepCount ?? "—", 5)}  ${p.id}`);
   }
   // An animal is "reachable" here if some *other* region already ties it to a
   // plant this region also ships — the cheapest ties available, needing no new

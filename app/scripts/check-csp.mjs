@@ -167,14 +167,10 @@ await visit("GPS in France, to ranked plants", {
   then: byGps,
 });
 // South of the equator the ecoregion comes from a third service (RESOLVE).
-// No region covers Sydney yet, so this stops at the spot rather than the plants.
-await visit("GPS in Sydney, the ecoregion lookup", {
+await visit("GPS in Sydney", {
   path: "/#/location",
   geo: { latitude: -33.8688, longitude: 151.2093 },
-  then: async (page) => {
-    await page.locator("button.btn-primary.btn-block").first().click();
-    await page.waitForLoadState("networkidle");
-  },
+  then: byGps,
 });
 await visit("town search", { path: "/#/location", then: byTown("Nantes") });
 

@@ -44,8 +44,8 @@ subtitle on the What's new page.
   drawn by `maps:build`; `npm run probe:resolve` confirms the hosted layer,
   which the sandbox's proxy refuses; `coverage` measures a southern list's
   bloom against its own spring.
-- The list of services on the [Privacy page](https://indigene.app/privacy) is now enforced, not just promised: your browser refuses any lookup to an address that isn't on it. The European Environment Agency, which names your region for spots in Europe, joins the list.
-- Internal: a Content-Security-Policy `<meta>` built from `src/lib/csp.ts` is stamped into every app page and 404.html at build time, with inline-script hashes computed from the built HTML. `npm run csp:check` walks the built app in Chromium (GPS in the US and France, town search, iNaturalist sightings, the page count) and fails on any refusal; a new `Content-Security-Policy` workflow runs it on PRs.
+- The list of services on the [Privacy page](https://indigene.app/privacy) is now enforced, not just promised: your browser refuses any lookup to an address that isn't on it. Two missing entries join it: the services naming your region in Europe and south of the equator.
+- Internal: a Content-Security-Policy `<meta>` built from `src/lib/csp.ts` is stamped into every app page and 404.html at build time, with inline-script hashes computed from the built HTML. `npm run csp:check` walks the built app in Chromium (GPS in the US, France and Sydney, town search, iNaturalist sightings, the page count) and fails on any refusal; a new `Content-Security-Policy` workflow runs it on PRs.
 - Internal: `el()` no longer accepts an `html` attribute, so nothing can reach `innerHTML` through it, and iNaturalist photo URLs from API responses are dropped unless they're https on iNaturalist's two photo hosts.
 
 ## [0.33] - 2026-09-24

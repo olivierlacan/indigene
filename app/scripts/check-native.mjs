@@ -74,7 +74,11 @@ const TDWG_AREA = {
     label: "Mid-Atlantic & Northeast (PA NJ DE MD VA NY CT RI MA WV)",
   },
   "north-michigan": { codes: ["MIC"], label: "Michigan (TDWG:MIC)" },
-  pnw: { codes: ["WAS", "ORE"], label: "Washington & Oregon (TDWG:WAS, ORE)" },
+  // British Columbia joined this region on main while the branch was open —
+  // the lowland from Tacoma to Campbell River is one ecoregion and the plants
+  // never stopped at the border. Without BRC the check would mark a Fraser
+  // Valley plant absent from its own region.
+  pnw: { codes: ["WAS", "ORE", "BRC"], label: "Washington, Oregon & British Columbia (TDWG:WAS, ORE, BRC)" },
   // TDWG has one area for the whole state, so it cannot separate cismontane
   // southern California from the deserts, or the Bay Area from the Sierra.
   // A NATIVE here means "native somewhere in California" — weaker than the

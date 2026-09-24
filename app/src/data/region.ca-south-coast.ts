@@ -26,7 +26,7 @@ export const REGION: RegionMeta = {
   // Mountains (8), Southern California/Northern Baja Coast (85). Deliberately
   // excludes Mojave Basin and Range (14) and Sonoran Basin and Range (81), so a
   // point in the box but over the crest correctly falls through.
-  ecoregion: { provider: "epa-omernik", codes: ["6", "8", "85"] },
+  ecoregion: [{ provider: "epa-omernik", codes: ["6", "8", "85"] }],
   // Cleveland sage: you smell it before you reach it, it is covered in bees and
   // hummingbirds, and it asks for nothing all summer — the region's argument in
   // one plant.

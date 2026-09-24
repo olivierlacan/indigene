@@ -26,7 +26,7 @@ export const REGION: RegionMeta = {
   // rather than being handed a coastal list, and it excludes Coast Range (1),
   // so the Sonoma coast north of the Russian River waits for the north-coast
   // list instead of getting a Bay Area one.
-  ecoregion: { provider: "epa-omernik", codes: ["6"] },
+  ecoregion: [{ provider: "epa-omernik", codes: ["6"] }],
   // Blueblossom: the week the coast ranges turn blue, on a shrub that carries
   // more caterpillars than anything else its size and fixes its own nitrogen.
   featuredPlantId: "ceanothus-thyrsiflorus",

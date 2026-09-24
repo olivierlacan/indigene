@@ -756,17 +756,27 @@ export interface SunEstimate {
 }
 
 /** Which ecoregion classification answered the lookup. Each covers a different
- *  part of the world, so the app picks one by coordinates and both fall back to
+ *  part of the world, so the app picks one by coordinates and all fall back to
  *  the coarse box offline:
  *   - "epa-omernik": US EPA (Omernik) ecoregions — conterminous US, public domain.
  *   - "eea-biogeo":  EEA Biogeographical Regions of Europe — CC-BY 4.0. Coarse
  *     (Atlantic, Continental, Alpine, Mediterranean…), one flat level.
+ *   - "cec-na":      CEC North American Terrestrial Ecoregions — CC-BY 4.0, and
+ *     the one North American set that does not stop at a border. Level III,
+ *     numbered `7.1.7`-style. It answers north of the conterminous US, and its
+ *     units are why a region can span a border honestly: Seattle and Vancouver
+ *     are both 7.1.7, "Strait of Georgia/Puget Lowland".
  *   - "resolve-2017": RESOLVE Ecoregions 2017 — global, CC-BY 4.0, asked south
  *     of the equator. One level; `code` is the numeric ECO_ID. */
-export type EcoregionProvider = "epa-omernik" | "eea-biogeo" | "resolve-2017";
+export type EcoregionProvider = "epa-omernik" | "eea-biogeo" | "cec-na" | "resolve-2017";
 
 /** Every provider, for code that has to validate one read back from storage. */
-export const ECOREGION_PROVIDERS: readonly EcoregionProvider[] = ["epa-omernik", "eea-biogeo", "resolve-2017"];
+export const ECOREGION_PROVIDERS: readonly EcoregionProvider[] = [
+  "epa-omernik",
+  "eea-biogeo",
+  "cec-na",
+  "resolve-2017",
+];
 
 /**
  * A real ecoregion from a live lookup, normalized across providers so the rest
@@ -778,7 +788,8 @@ export interface EcoregionInfo {
   /** Which classification answered — decides the label suffix and the codes a
    *  region declares to refine selection. */
   provider: EcoregionProvider;
-  /** Selection key. Omernik Level III code ("3"); EEA region slug ("atlantic"). */
+  /** Selection key. Omernik Level III code ("3"); EEA region slug ("atlantic");
+   *  CEC Level III code ("7.1.7"). */
   code: string;
   /** Display name. "Willamette Valley"; "Atlantic". */
   name: string;

@@ -105,18 +105,27 @@ export interface RegionMeta {
   /**
    * The real ecoregions this seed list represents, tagged with the provider that
    * classifies them (EPA Omernik codes for US regions, EEA biogeographical-region
-   * slugs for European ones). When present AND a live lookup of the same provider
-   * gave us the spot's code, selection *refines within the box*: the point must be
-   * both inside `bounds` and in one of these ecoregions. This is what lets a point
-   * just east of the Cascade crest — same box, different ecoregion — correctly
-   * fall through, and likewise a Mediterranean point inside a broad France box.
-   * Omitted → the box alone decides (and offline, the box always decides, since
-   * there's no live code). Always a refinement of `bounds`, never a replacement:
-   * some ecoregions span several regions' turf (Omernik 75, Southern Coastal
-   * Plain; EEA Atlantic across several countries), so the box still prevents one
-   * list bleeding into a neighbor's.
+   * slugs for European ones, CEC Level III codes across North America). When a
+   * live lookup gives us the spot's code, selection *refines within the box*: the
+   * point must be both inside `bounds` and in one of these ecoregions. This is
+   * what lets a point just east of the Cascade crest — same box, different
+   * ecoregion — correctly fall through, and likewise a Mediterranean point inside
+   * a broad France box. Omitted or empty → the box alone decides (and offline,
+   * the box always decides, since there's no live code). Always a refinement of
+   * `bounds`, never a replacement: some ecoregions span several regions' turf
+   * (Omernik 75, Southern Coastal Plain; EEA Atlantic across several countries),
+   * so the box still prevents one list bleeding into a neighbor's.
+   *
+   * **A list, because one region can outlive one authority's map.** Every
+   * classification here stops at some border: the EPA's at the edge of the
+   * conterminous US, the EEA's at Europe's. A region whose ground is genuinely
+   * continuous across such a line — the Pacific Northwest, where the same
+   * lowland runs from Tacoma to Campbell River — needs the EPA's codes for its
+   * southern half and the CEC's for its northern one, because only one of the
+   * two services will answer for any given spot. Selection matches whichever
+   * provider replied; the others sit unused for that point.
    */
-  ecoregion?: { provider: EcoregionProvider; codes: string[] };
+  ecoregion?: { provider: EcoregionProvider; codes: string[] }[];
 }
 
 /**

@@ -25,13 +25,18 @@ import type { RegionMeta } from "../data/region";
 import type { EcoregionProvider } from "../types";
 import { el } from "../ui";
 import { REGION_MAP_SIZES } from "../data/region-maps";
-import { EEA_BIOREGION_MAP_URL, EPA_ECOREGION_MAP_URL, RESOLVE_ECOREGION_MAP_URL } from "../lib/plain";
+import {
+  CEC_ECOREGION_MAP_URL,
+  EEA_BIOREGION_MAP_URL,
+  EPA_ECOREGION_MAP_URL,
+  RESOLVE_ECOREGION_MAP_URL,
+} from "../lib/plain";
 import { t } from "../lib/i18n";
 import { regionExtent } from "../lib/names";
 import { regionHemisphere } from "../lib/hemisphere";
 
 export function regionBoundaryCard(meta: RegionMeta): HTMLElement {
-  const eco = meta.ecoregion;
+  const eco = meta.ecoregion?.length ? meta.ecoregion : null;
   const link = MAP_LINKS[providerFor(meta)];
   return el("section", { class: "card region-where" }, [
     el("h3", { style: "margin:0 0 0.5rem;font-size:1.05rem" }, t("regionWhere.title")),
@@ -65,6 +70,7 @@ const MAP_LINKS = {
   "epa-omernik": { href: EPA_ECOREGION_MAP_URL, label: "regionWhere.linkEpa" },
   "eea-biogeo": { href: EEA_BIOREGION_MAP_URL, label: "regionWhere.linkEea" },
   "resolve-2017": { href: RESOLVE_ECOREGION_MAP_URL, label: "regionWhere.linkResolve" },
+  "cec-na": { href: CEC_ECOREGION_MAP_URL, label: "regionWhere.linkCec" },
 } as const satisfies Record<EcoregionProvider, { href: string; label: string }>;
 
 /** The drawn boundary. The extent sentence is its `alt`, not a caption under
@@ -96,7 +102,17 @@ function regionMap(meta: RegionMeta): HTMLElement {
  *  thing a coverage box always knows: south of the equator is RESOLVE's, and
  *  north of it the Atlantic splits the EPA's from the EEA's. */
 function providerFor(meta: RegionMeta): EcoregionProvider {
-  if (meta.ecoregion) return meta.ecoregion.provider;
+  // **Whose lines is the reader looking at?** A region may declare more than one
+  // classification, and this names the authority that *drew* the shape above —
+  // not whichever happens to be listed first. `scripts/build-region-maps.mjs`
+  // chooses the same way and for the same reason: a region declaring the CEC
+  // declared it because it crosses a border the others stop at. Sending a reader
+  // in Vancouver to the EPA's atlas to find a shape the EPA's map does not
+  // contain is the failure this avoids.
+  const eco = meta.ecoregion ?? [];
+  const declared = (p: EcoregionProvider) => eco.find((e) => e.provider === p)?.provider;
+  const drawn = declared("cec-na") ?? declared("resolve-2017") ?? declared("eea-biogeo") ?? declared("epa-omernik");
+  if (drawn) return drawn;
   if (regionHemisphere(meta) === "south") return "resolve-2017";
   return meta.bounds.maxLon < -30 ? "epa-omernik" : "eea-biogeo";
 }

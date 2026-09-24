@@ -133,6 +133,27 @@ subtitle on the What's new page.
   gives it per country group, which is why it calls black locust a Lower-48
   native where Kew knows it is introduced in Oregon. Corrected, with the
   measurement, and it is now a printed cross-check rather than a ranking term.
+- The Pacific Northwest now reaches into British Columbia — Vancouver, Victoria,
+  the Fraser Valley and Vancouver Island up to Campbell River. The lowland from
+  Tacoma north is one ecoregion, and the plants have never stopped at the
+  border. https://indigene.app/regions/pnw
+- Planting: the yarrow you buy as seed is often the European kind, naturalized
+  here rather than native. The plant's page now says so, and says to ask for the
+  western one instead. https://indigene.app/regions/pnw
+- Internal: a region may now claim more than one ecoregion classification. Every
+  authority stops at some border — the EPA's at the edge of the US — so a region
+  that crosses one needs the map that can see both halves, and selection matches
+  whichever service answered.
+- Internal: `npm run vascan:check` puts all 85 Pacific Northwest rows to VASCAN
+  for British Columbia. 81 are native there outright, two under names VASCAN
+  draws differently, and two are the Oregon end of the list, which now say so.
+- Internal: the region finder sent Vancouver and Victoria to a US-only service,
+  got nothing, and silently fell back to the coverage box. `npm run
+  selection:check` stands in 18 real places and asserts the region *and* how it
+  was decided, because the right region for the wrong reason was the bug.
+- Internal: the roll-up that reads Canada's plant database missed a plant's own
+  distribution rows, reporting Sitka spruce as not native to British Columbia.
+  One shared reader now serves both scripts; BC's catalog count goes 108 → 130.
 - Internal: `docs/region-queue.md` — a measured queue for the next regions.
   Three of the four candidates turned out to be something other than a new
   region: Boston already has a list and Portland, Maine doesn't (same

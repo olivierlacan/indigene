@@ -8,7 +8,8 @@
 // runtime dependency, a third-party request per page view (with the privacy
 // paperwork that implies), and nothing to look at offline. The boundaries,
 // meanwhile, never move: EPA Level III ecoregions are a 2011 dataset, the EEA's
-// biogeographical regions a 2016 one. So we fetch the polygons **here**,
+// biogeographical regions a 2016 one, the CEC's North American ecoregions a 2021
+// one. So we fetch the polygons **here**,
 // simplify and clip them, and commit one small self-contained SVG per region
 // (`public/maps/<id>.svg`). The app just shows an <img>: no dependency, no
 // third-party call, works offline through the service worker, and the file is
@@ -37,6 +38,10 @@
 //     public domain.
 //   - EEA Biogeographical Regions of Europe (2016) — CC BY 4.0, © European
 //     Environment Agency; administrative boundaries © EuroGeographics.
+//   - CEC North American Environmental Atlas, Ecological Regions Level III
+//     (2021) — CC BY 4.0, © Commission for Environmental Cooperation. The only
+//     one of the three that crosses a national border, and so the one that draws
+//     any region that does.
 import { writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -62,6 +67,13 @@ const EEA_LAYER =
  *  `npm run probe:resolve` checks it. */
 const RESOLVE_LAYER =
   "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/Resolve_Ecoregions/FeatureServer/0";
+/** CEC North American Terrestrial Ecoregions, Level III — the one North American
+ *  set of polygons that doesn't stop at a national border. Layer 3, on the CEC's
+ *  own ArcGIS Online account (their `gis.cec.org` serves 403; see
+ *  data/sources/cec-ecoregions/README.md). */
+const CEC_L3_LAYER =
+  "https://services7.arcgis.com/oF9CDB4lUYF7Um9q/arcgis/rest/services/" +
+  "NA_Terrestrial_Ecoregions_Level_3/FeatureServer/3";
 /** Country outlines for the European maps. The EEA layer alone would draw
  *  France as an unlabelled blob of biogeographical regions — recognizable as a
  *  coastline, useless as a place. Natural Earth 1:50m is the standard
@@ -98,13 +110,16 @@ const LANDMARKS = {
     { name: "Limerick", lat: 52.66, lon: -8.63 },
     { name: "Cork", lat: 51.9, lon: -8.47 },
   ],
+  // Campbell River and Medford are the north and south ends of the claim, and
+  // Victoria earns its label twice over: it is the far side of the border this
+  // region crosses, and it is on an island, which nothing else here fixes.
   pnw: [
+    { name: "Campbell River", lat: 50.02, lon: -125.24 },
     { name: "Vancouver", lat: 49.28, lon: -123.12 },
+    { name: "Victoria", lat: 48.43, lon: -123.37 },
     { name: "Seattle", lat: 47.61, lon: -122.33 },
-    { name: "Spokane", lat: 47.66, lon: -117.43 },
     { name: "Portland", lat: 45.52, lon: -122.68 },
     { name: "Bend", lat: 44.06, lon: -121.31 },
-    { name: "Eugene", lat: 44.05, lon: -123.09 },
     { name: "Medford", lat: 42.33, lon: -122.87 },
   ],
   "ca-central-coast": [
@@ -566,45 +581,66 @@ async function buildRegion(meta) {
   // Slivers below a fifth of a squared tolerance are specks; dropping them is
   // most of the file-size win on a coastline full of islands.
   const minArea = (offset * offset) / 5;
-  const eea = meta.ecoregion?.provider === "eea-biogeo";
-  const resolve = meta.ecoregion?.provider === "resolve-2017";
+  // **Which authority draws, when a region declares more than one.** The
+  // coverage is one path with a subpath per ring and `fill-rule="evenodd"`, so
+  // two sets that overlap don't union — they cancel, and the overlap comes out
+  // as a hole. The Pacific Northwest declares both the EPA's codes and the
+  // CEC's, and the CEC's Puget Lowland *is* the EPA's Puget Lowland, so drawing
+  // both would punch a hole through Seattle.
+  //
+  // So one set draws, and the choice isn't arbitrary: take the provider that can
+  // see the whole region. The EPA's polygons end at the Canadian border and the
+  // EEA's at Europe's; the CEC's cover the continent and RESOLVE's the world. A
+  // region that declares one of the wider two declared it *because* it crosses a
+  // line the narrower ones stop at, so it is the only set that traces it end to
+  // end. `components/region-boundary.ts` picks the atlas link the same way.
+  const sets = meta.ecoregion ?? [];
+  const setFor = (p) => sets.find((e) => e.provider === p);
+  const drawn =
+    setFor("cec-na") ?? setFor("resolve-2017") ?? setFor("eea-biogeo") ?? setFor("epa-omernik") ?? null;
+  const european = drawn?.provider === "eea-biogeo";
+  const resolve = drawn?.provider === "resolve-2017";
 
   // Countries are the land everywhere: without them a US map stops dead at the
   // Canadian border, and the empty half of the picture reads as ocean.
   const land = ringsIn(await countries(), view, minArea);
   let admin = null;
   let cover;
-  if (eea) {
+  if (european) {
     const all = await queryGeoJson(EEA_LAYER, { box: view, offset, outFields: "short_name" });
     const mine = all.features.filter((f) =>
-      meta.ecoregion.codes.includes(String(f.properties.short_name ?? "").toLowerCase())
+      drawn.codes.includes(String(f.properties.short_name ?? "").toLowerCase())
     );
-    if (!mine.length) throw new Error(`${meta.id}: no EEA polygon matched ${meta.ecoregion.codes}`);
+    if (!mine.length) throw new Error(`${meta.id}: no EEA polygon matched ${drawn.codes}`);
     cover = ringsIn(mine, meta.bounds, minArea);
   } else if (resolve) {
     // Country outlines only, as in Europe: no state layer to borrow here, and
     // the cities in LANDMARKS do the placing.
-    const ids = meta.ecoregion.codes.map(Number).filter(Number.isFinite);
+    const ids = drawn.codes.map(Number).filter(Number.isFinite);
     const mine = await queryGeoJson(RESOLVE_LAYER, {
       where: `ECO_ID IN (${ids.join(",")})`, box: view, offset, outFields: "ECO_ID",
     });
     if (!mine.features.length) throw new Error(`${meta.id}: no RESOLVE polygon for ${ids}`);
     cover = ringsIn(mine.features, meta.bounds, minArea);
   } else {
-    // State lines, from the ecoregion service's own layer — drawn as lines over
-    // the land, since in the US "which state is that?" is how people place a
-    // shape. Their clipped edges all fall on the view's rectangle, so they
-    // read as the map's frame rather than as invented borders.
+    // State lines, from the EPA's own layer — drawn as lines over the land,
+    // since in the US "which state is that?" is how people place a shape. Their
+    // clipped edges all fall on the view's rectangle, so they read as the map's
+    // frame rather than as invented borders. The layer is US-only, so on a map
+    // that crosses into Canada the lines simply stop at the border — which is
+    // the Natural Earth country outline, already drawn.
     const states = await queryGeoJson(`${EPA_BASE}/${EPA_STATES_LAYER}`, {
       box: view, offset, outFields: "STATE_NAME",
     });
     admin = ringsIn(states.features, view, minArea);
-    if (meta.ecoregion) {
-      const codes = meta.ecoregion.codes.map((c) => `'${c}'`).join(",");
-      const mine = await queryGeoJson(`${EPA_BASE}/${EPA_L3_LAYER}`, {
-        where: `US_L3CODE IN (${codes})`, box: view, offset, outFields: "US_L3CODE",
+    if (drawn) {
+      const codes = drawn.codes.map((c) => `'${c}'`).join(",");
+      const cec = drawn.provider === "cec-na";
+      const mine = await queryGeoJson(cec ? CEC_L3_LAYER : `${EPA_BASE}/${EPA_L3_LAYER}`, {
+        where: cec ? `LEVEL3 IN (${codes})` : `US_L3CODE IN (${codes})`,
+        box: view, offset, outFields: cec ? "LEVEL3" : "US_L3CODE",
       });
-      if (!mine.features.length) throw new Error(`${meta.id}: no EPA polygon for ${codes}`);
+      if (!mine.features.length) throw new Error(`${meta.id}: no polygon for ${codes}`);
       cover = ringsIn(mine.features, meta.bounds, minArea);
     } else {
       // No declared ecoregions: the coverage really is the rectangle, and the
@@ -613,11 +649,16 @@ async function buildRegion(meta) {
     }
   }
 
-  const source = eea
-    ? "EEA Biogeographical Regions of Europe (2016), CC BY 4.0 © European Environment Agency"
-    : resolve
-    ? "RESOLVE Ecoregions 2017 (Dinerstein et al. 2017), CC BY 4.0"
-    : "US EPA Level III Ecoregions of the Conterminous United States (2011), public domain";
+  const source = {
+    "eea-biogeo":
+      "EEA Biogeographical Regions of Europe (2016), CC BY 4.0 © European Environment Agency",
+    "epa-omernik":
+      "US EPA Level III Ecoregions of the Conterminous United States (2011), public domain",
+    "cec-na":
+      "CEC, North American Environmental Atlas — Ecological Regions, Level III (2021), " +
+      "CC BY 4.0 © Commission for Environmental Cooperation",
+    "resolve-2017": "RESOLVE Ecoregions 2017 (Dinerstein et al. 2017), CC BY 4.0",
+  }[drawn?.provider ?? "epa-omernik"];
   // A map with no labelled places is a blob nobody can find themselves on, which
   // defeats the point of drawing it. Refuse to build one: every region must
   // declare a handful of cities in LANDMARKS above that fix its edges.
@@ -632,7 +673,7 @@ async function buildRegion(meta) {
   const svg = svgFor({
     view, land, admin, cover,
     places,
-    boxOnly: !meta.ecoregion,
+    boxOnly: !drawn,
     credit: {
       title: escape(`Where the ${meta.name} region reaches`),
       desc: escape(`${meta.extent} Boundary data: ${source}.`),

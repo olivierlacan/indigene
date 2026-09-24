@@ -12,8 +12,8 @@ export const REGION: RegionMeta = {
   short: "Pacific Northwest",
   reference: "West of the crest, Portland–Seattle–Vancouver",
   zones: "8a–9a",
-  note: "Native status is asserted for the maritime, west-of-the-crest Pacific Northwest — Oregon and Washington west of the Cascades, and British Columbia's south coast west of the Coast Mountains. East of the crest is a drier, different flora; treat these recommendations as untested there. This region crosses the Canada–US border on purpose: the lowland from Tacoma to Campbell River is one ecoregion, and the plants have never observed the line. A handful of rows are the Oregon end of the list and do not reach British Columbia — each says so.",
-  extent: "From the Oregon–California line north to Campbell River and the Strait of Georgia, taking in the Willamette Valley, Puget Sound, the Fraser Valley, the Sunshine Coast and the east side of Vancouver Island — and inland only as far as the crest of the Cascades and the Coast Mountains.",
+  note: "Native status is asserted for the maritime Pacific Northwest, west of the crest: Oregon and Washington west of the Cascades, and British Columbia's south coast west of the Coast Mountains. It crosses the border because the lowland from Tacoma to Campbell River is one ecoregion. East of the crest is a drier, different flora — treat these recommendations as untested there.",
+  extent: "From the Oregon–California line north to Campbell River, taking in the Willamette Valley, Puget Sound, the Fraser Valley and the east side of Vancouver Island — and inland only as far as the crest of the Cascades and the Coast Mountains.",
   // Coarse box over the maritime Northwest on both sides of the border: from the
   // Oregon–California line (42° N) to just past Campbell River (50.3° N), and
   // from the outer coast (-125.6) inland to roughly the Cascade crest (-120.5).
@@ -35,24 +35,32 @@ export const REGION: RegionMeta = {
   // excludes Eastern Cascades Slopes and Foothills (9), so Bend correctly gets
   // no list.
   //
-  // The CEC set (the half the EPA can't see), confirmed by point query against
-  // the live service — see data/sources/cec-ecoregions/README.md:
-  //   7.1.7  Strait of Georgia/Puget Lowland — **the reason this region now
-  //          crosses the border.** It is one unit and the CEC has named it after
-  //          both ends: Tacoma, Seattle and Bellingham are 7.1.7, and so are
+  // The CEC set, confirmed point by point against the live service — see
+  // data/sources/cec-ecoregions/README.md. It is deliberately the **whole**
+  // region, not just the Canadian part: the CEC is the one authority here that
+  // sees all of North America, so it is the only set that can describe this
+  // region's ground end to end — which is what the boundary map is drawn from,
+  // and what answers a coastal point in Washington the EPA's polygons miss.
+  //   7.1.7  Strait of Georgia/Puget Lowland — **the reason this region crosses
+  //          the border.** It is one unit and the CEC has named it after both
+  //          ends: Tacoma, Seattle and Bellingham are 7.1.7, and so are
   //          Victoria, Vancouver, Surrey, Abbotsford, the Sunshine Coast and
   //          east Vancouver Island up to Campbell River.
-  //   7.1.6  Pacific and Nass Ranges — the Coast Mountains behind Vancouver, the
-  //          northern counterpart of the Cascades this list already claims.
-  //   7.1.5  Coastal Western Hemlock–Sitka Spruce Forests — the wet outer coast,
-  //          the counterpart of the Coast Range (EPA 1).
-  // Deliberately excluded, though the box's north-east corner reaches them:
-  // Thompson-Okanagan Plateau (10.1.1, Merritt and Lillooet) and Columbia
-  // Plateau (10.1.2), the dry interior — exactly the call that excludes EPA 9 on
-  // the American side, and for the same reason.
+  //   7.1.6  Pacific and Nass Ranges — the Coast Mountains behind Vancouver.
+  //   7.1.5  Coastal Western Hemlock–Sitka Spruce Forests — the wet outer coast.
+  // And the American half, each one the CEC's name for a code already above:
+  //   7.1.8  Coastal Range          = EPA 1   (and the Olympics)
+  //   7.1.9  Willamette Valley      = EPA 3
+  //   6.2.5  North Cascades         = EPA 4, north of Snoqualmie
+  //   6.2.7  Cascades               = EPA 4, south of it
+  //   6.2.11 Klamath Mountains      = EPA 78
+  // Deliberately excluded, though the box's east edge reaches them: Eastern
+  // Cascades Slopes and Foothills (6.2.8, Bend), Columbia Plateau (10.1.2,
+  // Yakima) and Thompson-Okanagan Plateau (10.1.1, Merritt) — the dry interior
+  // on both sides of the border, the same call EPA 9 gets on the American side.
   ecoregion: [
     { provider: "epa-omernik", codes: ["1", "2", "3", "4", "78"] },
-    { provider: "cec-na", codes: ["7.1.7", "7.1.6", "7.1.5"] },
+    { provider: "cec-na", codes: ["7.1.5", "7.1.6", "7.1.7", "7.1.8", "7.1.9", "6.2.5", "6.2.7", "6.2.11"] },
   ],
   // Red-flowering Currant: blooms when the first hummingbirds arrive — the
   // region's most charismatic case for planting native.

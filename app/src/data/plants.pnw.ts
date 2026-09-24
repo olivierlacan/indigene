@@ -1,8 +1,18 @@
-// Seed dataset — the Pacific Northwest, west of the Cascades: the maritime
-// Willamette Valley / Puget Sound / coastal lowlands, using Portland–Seattle
+// Seed dataset — the Pacific Northwest, west of the crest: the maritime
+// Willamette Valley / Puget Sound / Salish Sea lowlands, using Portland–Seattle
 // (USDA zones 8a–9a) as the reference. This is the second region, added to make
 // on-the-ground testing possible where the author lives. It is intentionally a
 // solid *starter* list, not exhaustive; more species can be appended over time.
+//
+// **This list crosses into British Columbia**, so it is checked against a
+// Canadian authority and not just assumed from latitude. `npm run vascan:check`
+// puts every row to VASCAN — the Database of Vascular Plants of Canada — for
+// BC. Of the 85: 81 are recorded native there outright, two more are native
+// under a name VASCAN draws differently (yarrow, Puget Sound gumweed — the
+// check names both and verifies the taxon it substitutes), and two are the
+// Oregon end of the list that genuinely does not reach Canada. Those two say so
+// in their own `nativeNote`, the way the list has always bounded a row that
+// doesn't span the whole region.
 //
 // Numbers and their provenance:
 //  - hostLepCount: genus-level count of Lepidoptera species that use the plant
@@ -1512,7 +1522,7 @@ export const SEED_RAW: RawPlant[] = [
     latin: "Achillea millefolium",
     family: "Asteraceae",
     form: "perennial",
-    nativeNote: "Native (in its wild form) across west-side meadows, prairies and roadsides.",
+    nativeNote: "Native across west-side meadows, prairies and roadsides. Plain \"yarrow\" seed is often the European form, which is naturalized here rather than native — ask for the western one, sometimes sold as var. occidentalis.",
     sun: { minHours: 5, maxHours: 12 },
     moisture: ["dry", "mesic"],
     ph: { min: 5.0, max: 7.8 },

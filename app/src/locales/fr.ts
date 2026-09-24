@@ -1551,7 +1551,7 @@ export const fr: Dict = {
   "regionWhere.shadedBox":
     "En pointillés : le rectangle que cette région est encore. Ses limites ne sont pas encore reprises de la carte des écorégions — considérez les marges comme approximatives.",
   "regionWhere.linkEpa": "Voir les cartes des écorégions de l'EPA",
-  "regionWhere.linkCec": "Voir ces écorégions sur l'atlas nord-américain de la CCE",
+  "regionWhere.linkCec": "Voir l'atlas nord-américain de la CCE",
   "regionWhere.linkEea": "Voir la carte des régions de l'AEE",
   "regionWhere.linkResolve": "Voir la carte mondiale des écorégions",
   "regionStat.plants.label": "Plantes indigènes",

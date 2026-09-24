@@ -39,26 +39,26 @@ VASCAN gives every taxon an `establishmentMeans` per province, keyed on ISO
 USDA PLANTS status our American regions already assert from, at the same
 resolution, from a national authority, openly licensed.
 
-Measured against the 375 distinct plants the catalog already ships
-(run of 2026-09-19):
+Measured against the 420 distinct plants the catalog ships today:
 
 | Province | Catalog plants VASCAN records as native |
 |---|---|
-| British Columbia | **108** |
-| Ontario | 81 |
-| Québec | **71** |
-| Alberta · New Brunswick | 56 |
-| Manitoba | 55 |
-| Nova Scotia | 52 |
-| Saskatchewan | 45 |
-| Prince Edward Island | 39 |
+| British Columbia | **130** |
+| Ontario | 96 |
+| Québec | **82** |
+| New Brunswick | 70 |
+| Alberta | 69 |
+| Saskatchewan | 64 |
+| Nova Scotia | 62 |
+| Manitoba | 60 |
+| Prince Edward Island | 52 |
 
-147 of the 375 have no VASCAN entry at all — the Florida subtropicals, the
+156 of the 420 have no VASCAN entry at all — the Florida subtropicals, the
 southern-California chaparral and the French flora. That is the expected shape
 and a good sign the join is real rather than fuzzy.
 
-The number that decides a work queue is the per-list one: **73 of the Pacific
-Northwest's 77 rows are native in British Columbia**, and **40 of Northern Lower
+The number that decides a work queue is the per-list one: **81 of the Pacific
+Northwest's 85 rows are native in British Columbia**, and **40 of Northern Lower
 Michigan's 46 are native in Québec**. Those rows already carry a size curve,
 seven scores, care and propagation notes, wildlife ties, a photograph and a
 French name. See `docs/region-queue.md` for what that does to the ordering.
@@ -70,6 +70,14 @@ Pacific coast, a dry interior and the boreal north — so "native in BC" is a mu
 weaker claim there than in Prince Edward Island. It is a floor for the candidate
 list, not the native assertion a region's rows make. That is one more reason the
 ecoregion gate in `../cec-ecoregions/` comes first.
+
+**How to read a name, and the bug that came of not doing it.** VASCAN records
+distribution on the taxon that *has* it, so a species with named varieties
+carries an empty distribution and the varieties carry the real one — and a
+rollup that misses one of those quietly reports a plant as not native. This one
+did, twice, and the second time it said Sitka spruce is not native to British
+Columbia. The rollup now lives in one place, `app/scripts/_vascan.mjs`, shared
+by the probe and by `npm run vascan:check`, so the two can no longer disagree.
 
 ## Q2 — a name for the rows fr-FR can't source
 

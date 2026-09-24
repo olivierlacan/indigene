@@ -49,6 +49,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { execFileSync } from "node:child_process";
 import { requireProxyAwareFetch } from "./_net.mjs";
+import { openVascan, PROVINCE_NAMES } from "./_vascan.mjs";
 
 requireProxyAwareFetch("probe:vascan");
 
@@ -113,51 +114,13 @@ function pendingFrenchRows() {
 async function main() {
   await ensureArchive();
 
+  // Name resolution and the roll-up over varieties and synonyms live in
+  // `_vascan.mjs`, shared with `check-vascan.mjs`. They used to be written out
+  // twice, and the two copies disagreed: this one had Sitka spruce not native
+  // to British Columbia.
+  const vascan = openVascan();
+
   const taxa = readDwc("taxon.txt");
-  const byId = new Map(taxa.map((t) => [t.taxonID, t]));
-
-  // Binomial → the accepted taxon id, following synonymy. Keyed on genus +
-  // specific epithet so an authorship string can't miss a match.
-  const binomial = (t) => [t.genus, t.specificEpithet].filter(Boolean).join(" ");
-  const acceptedFor = new Map();
-  for (const t of taxa) {
-    if (t.infraspecificEpithet) continue; // species-rank key only
-    const name = binomial(t);
-    if (!name) continue;
-    const id = t.taxonomicStatus === "accepted" ? t.taxonID : t.acceptedNameUsageID || t.taxonID;
-    if (!acceptedFor.has(name) || t.taxonomicStatus === "accepted") acceptedFor.set(name, id);
-  }
-
-  // Every taxon that rolls up into a given species: itself plus its descendants.
-  // **This is the whole point of using the archive** — distribution is recorded
-  // on the variety, not on the species above it.
-  const childrenOf = new Map();
-  for (const t of taxa) {
-    const p = t.parentNameUsageID;
-    if (!p) continue;
-    if (!childrenOf.has(p)) childrenOf.set(p, []);
-    childrenOf.get(p).push(t.taxonID);
-  }
-  function family(id) {
-    const out = [];
-    const stack = [id];
-    while (stack.length) {
-      const cur = stack.pop();
-      out.push(cur);
-      for (const c of childrenOf.get(cur) ?? []) stack.push(c);
-      // A synonym carries its own distribution rows in VASCAN; fold them in.
-      for (const t of taxa) if (t.acceptedNameUsageID === cur && t.taxonID !== cur) out.push(t.taxonID);
-    }
-    return [...new Set(out)];
-  }
-
-  const distRows = readDwc("distribution.txt");
-  const distByTaxon = new Map();
-  for (const d of distRows) {
-    if (!distByTaxon.has(d.id)) distByTaxon.set(d.id, []);
-    distByTaxon.get(d.id).push(d);
-  }
-
   const vernRows = readDwc("vernacularname.txt");
   const frByTaxon = new Map();
   for (const v of vernRows) {
@@ -181,30 +144,18 @@ async function main() {
   const resolved = {};
   const notInVascan = [];
   for (const n of names) {
-    const id = acceptedFor.get(n);
-    if (!id || !byId.has(id)) { notInVascan.push(n); continue; }
-    const ids = family(id);
-    const provs = new Set();
-    for (const tid of ids) {
-      for (const d of distByTaxon.get(tid) ?? []) {
-        if (d.establishmentMeans === "native" && d.countryCode === "CA") provs.add(d.locality);
-      }
-    }
-    const fr = ids.map((tid) => frByTaxon.get(tid)).find(Boolean);
+    const provs = vascan.provinces(n);
+    if (!provs) { notInVascan.push(n); continue; }
     resolved[n] = {
-      taxonID: id,
-      rolledUpOver: ids.length,
-      nativeProvinces: [...provs].sort(),
-      frenchName: fr?.vernacularName ?? null,
+      nativeProvinces: [...provs].filter(([, means]) => means === "native").map(([p]) => p).sort(),
+      frenchName:
+        (vascan.taxonIdsFor(n) ?? []).map((t) => frByTaxon.get(t)).find(Boolean)
+          ?.vernacularName ?? null,
     };
   }
 
   // `locality` is the province's full name; map to the codes we report on.
-  const CODE = {
-    BC: "British Columbia", QC: "Quebec", ON: "Ontario", NB: "New Brunswick",
-    NS: "Nova Scotia", PE: "Prince Edward Island", AB: "Alberta",
-    MB: "Manitoba", SK: "Saskatchewan",
-  };
+  const CODE = PROVINCE_NAMES;
   const nativeIn = (n, code) => !!resolved[n]?.nativeProvinces.includes(CODE[code]);
 
   const provinces = {};
@@ -233,8 +184,9 @@ async function main() {
   const pending = pendingFrenchRows();
   const naming = { named: 0, differs: [], unnamed: [] };
   for (const row of pending) {
-    const id = acceptedFor.get(row.taxon);
-    const fr = id ? family(id).map((t) => frByTaxon.get(t)).find(Boolean)?.vernacularName ?? null : null;
+    const fr =
+      (vascan.taxonIdsFor(row.taxon) ?? []).map((t) => frByTaxon.get(t)).find(Boolean)
+        ?.vernacularName ?? null;
     if (!fr) { naming.unnamed.push(row.taxon); continue; }
     naming.named++;
     if (fr.toLowerCase() !== row.shown.toLowerCase()) {

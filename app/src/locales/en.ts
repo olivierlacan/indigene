@@ -1563,7 +1563,7 @@ export const en = {
   "regionWhere.shadedBox":
     "Dashed: the rectangle this region still is. We haven't traced its edges from the ecoregion map yet, so treat the margins as approximate.",
   "regionWhere.linkEpa": "See the EPA's ecoregion maps",
-  "regionWhere.linkCec": "See these ecoregions on the CEC's North American atlas",
+  "regionWhere.linkCec": "See the CEC's North American atlas",
   "regionWhere.linkEea": "See the EEA's region map",
   "regionWhere.linkResolve": "See the world ecoregion map",
   "regionStat.plants.label": "Native plants",

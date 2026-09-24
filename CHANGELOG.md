@@ -31,6 +31,15 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Added
+
+- Regions: each region now shows a small flag beside its name, two where a
+  region crosses a border, like the Pacific Northwest, so you can find your
+  country at a glance. https://indigene.app/regions
+- Internal: `RegionMeta.countries` (ISO codes) and `components/flags.ts`,
+  five flags drawn as inline SVG (~2 KB) because Windows has no flag emoji;
+  shown on the Regions cards, the region page title and the region picker.
+
 ## [0.35] - 2026-09-24
 
 **Auckland & Northland, south of the equator**
@@ -2700,8 +2709,8 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/ea9aef5...HEAD
-[0.35]: https://github.com/olivierlacan/indigene/compare/39c9b05...ea9aef5
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/a50be1c...HEAD
+[0.35]: https://github.com/olivierlacan/indigene/compare/39c9b05...a50be1c
 [0.34]: https://github.com/olivierlacan/indigene/compare/c4e7c44...39c9b05
 [0.33]: https://github.com/olivierlacan/indigene/compare/e0f70ef...c4e7c44
 [0.32]: https://github.com/olivierlacan/indigene/compare/655cb62...e0f70ef

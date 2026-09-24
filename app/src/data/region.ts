@@ -70,6 +70,14 @@ export interface RegionMeta {
    */
   extent: string;
   /**
+   * Every country the region reaches, as ISO 3166-1 alpha-2 codes, the one it
+   * mostly lies in first: `["US", "CA"]` for the Pacific Northwest, which
+   * crosses the border. Drawn as small flags beside the region's name wherever
+   * regions are listed, so a reader can find their country before reading
+   * (`components/flags.ts`).
+   */
+  countries: string[];
+  /**
    * Coarse coverage box. Deliberately a bounding box, not a real ecoregion
    * polygon — it matches the app's other coarse-but-honest signals (soil,
    * ecoregion). A spot inside the box gets this region's plant list; outside

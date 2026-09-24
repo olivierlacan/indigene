@@ -1525,6 +1525,29 @@ details[open] > summary::after {
 .stat-dialog p {
   color: var(--ink-soft);
 }
+/* Country flags beside a region's name (components/flags.ts). Small and quiet:
+   they help a scan find a country, and the name still does the naming. The
+   hairline edge keeps white stripes from dissolving into a light card, and
+   dark ones into a dark card. */
+.flags {
+  display: inline-flex;
+  gap: 0.2em;
+  margin-inline-end: 0.4em;
+  vertical-align: -0.06em;
+}
+/* In a page title they'd scale up with the heading and shout; keep them at
+   body-text size, centred on the name's cap height. */
+.step-title .flags {
+  font-size: 1rem;
+  vertical-align: 0.2em;
+}
+.flag {
+  flex: none;
+  width: 1.2em;
+  height: 0.8em;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px var(--line);
+}
 .choice .choice-title {
   font-weight: 700;
   display: block;

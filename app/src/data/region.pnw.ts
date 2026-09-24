@@ -14,6 +14,7 @@ export const REGION: RegionMeta = {
   zones: "8a–9a",
   note: "Native status is asserted for the maritime Pacific Northwest, west of the crest: Oregon and Washington west of the Cascades, and British Columbia's south coast west of the Coast Mountains. It crosses the border because the lowland from Tacoma to Campbell River is one ecoregion. East of the crest is a drier, different flora — treat these recommendations as untested there.",
   extent: "From the Oregon–California line north to Campbell River, taking in the Willamette Valley, Puget Sound, the Fraser Valley and the east side of Vancouver Island — and inland only as far as the crest of the Cascades and the Coast Mountains.",
+  countries: ["US", "CA"],
   // Coarse box over the maritime Northwest on both sides of the border: from the
   // Oregon–California line (42° N) to just past Campbell River (50.3° N), and
   // from the outer coast (-125.6) inland to roughly the Cascade crest (-120.5).

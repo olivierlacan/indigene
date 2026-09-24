@@ -11,6 +11,7 @@ import { whyThis } from "../components/learn";
 import { privacyNote } from "../components/privacy-link";
 import { t, tx, fmtNumber } from "../lib/i18n";
 import { regionName, regionReference } from "../lib/names";
+import { flagRow } from "../components/flags";
 import { defaultRegion, rememberedSpotFor, sticky, stickyReady } from "../lib/sticky";
 import { learnTown, noteTown } from "../lib/places";
 
@@ -458,7 +459,7 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
           },
         }, [
           el("span", { class: "choice-title" }, regionName(r.meta)),
-          el("span", { class: "choice-sub" }, [regionReference(r.meta), " ", zoneChip(r.meta)]),
+          el("span", { class: "choice-sub" }, [flagRow(r.meta.countries), regionReference(r.meta), " ", zoneChip(r.meta)]),
         ])
       )
     );

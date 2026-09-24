@@ -14,6 +14,7 @@ export const REGION: RegionMeta = {
   zones: "≈8b–10a",
   note: "Native status is asserted for the island of Ireland — both the Republic and Northern Ireland — from Kew's World Checklist of Vascular Plants. Ireland's flora is smaller than Britain's or France's: the sea closed behind the retreating ice before many species arrived, so there is no native maple, lime or hornbeam here, and beech and sycamore are introductions however old they look. Host-insect figures are counted from the open European Lepidoptera–plant matrix (Gaytán et al. 2026) for native, oceanic-temperate relatives of each plant.",
   extent: "The whole island, from Mizen Head and Cork north to Malin Head and the Antrim coast, and from the Atlantic cliffs of Kerry, Clare and Donegal east to Dublin and the Ards peninsula.",
+  countries: ["IE"],
   // Coarse box over the island of Ireland: Mizen Head (~51.42° N) to Malin Head
   // (~55.38° N), and from the Kerry headlands (~-10.48° E) east to Burr Point in
   // Co. Down (~-5.43° E). The east edge at -5.37 is chosen to fall in the gap

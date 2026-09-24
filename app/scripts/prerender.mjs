@@ -207,6 +207,7 @@ function stripHeadMeta(html) {
     'rel="manifest"',
     'name="theme-color"',
     'name="viewport"',
+    'http-equiv="Content-Security-Policy"',
     '<script type="module"',
     "</head>",
   ];
@@ -540,6 +541,11 @@ const loader = await openLoader();
 let pages;
 try {
   pages = await collectPages(loader.load);
+  // 404.html is copied from public/ untouched, so it gets its policy here — the
+  // same one, hashed against its own inline script (src/lib/csp.ts).
+  const { withCsp } = await loader.load("/src/lib/csp.ts");
+  const notFound = join(dist, "404.html");
+  writeFileSync(notFound, await withCsp(readFileSync(notFound, "utf8")));
 } finally {
   await loader.close();
 }

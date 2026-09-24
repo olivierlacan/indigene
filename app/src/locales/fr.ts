@@ -1713,6 +1713,12 @@ export const fr: Dict = {
   "privacy.svc.usgs.sent": "une coordonnée",
   "privacy.svc.epa.for": "le nom de votre écorégion",
   "privacy.svc.epa.sent": "une coordonnée",
+  "privacy.svc.eea.for": "le nom de votre région d'Europe, pour un lieu en Europe",
+  "privacy.svc.eea.sent": "une coordonnée",
+  "privacy.svc.resolve.for": "le nom de votre écorégion, pour un lieu au sud de l'équateur",
+  "privacy.svc.resolve.sent": "une coordonnée",
+  "privacy.whereEnforced":
+    "Cette liste n'est pas qu'une promesse : Indigene demande à votre navigateur de refuser toute recherche vers une adresse qui n'y figure pas.",
   "privacy.whereFooter":
     "Ce sont des institutions publiques reconnues — universités, agences gouvernementales et une communauté naturaliste à but non lucratif — pas des publicitaires. À dessein, aucune de ces recherches n'a besoin de votre adresse : une commune, un code postal ou une grille grossière suffisent à la science. La liste technique complète, avec liens et licences, est dans {link}.",
   "privacy.dataSourcesLink": "notre document public sur les sources de données",

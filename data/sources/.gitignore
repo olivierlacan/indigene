@@ -24,3 +24,7 @@ vascan/dwca/
 # Plant-SyNZ raw reports, cached by `npm run host-counts:nz`. Only the
 # derived counts (host-counts.json) are committed.
 plant-synz/cache/
+
+# HOSTS, the full 52 MB download from `npm run hosts:fetch`. Only the derived
+# genus-counts.json is committed.
+hosts/hosts-raw.json

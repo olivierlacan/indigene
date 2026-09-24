@@ -59,6 +59,10 @@ subtitle on the What's new page.
   `npm run host-counts:nz` counts native Lepidoptera with reliability ≥ 7 per
   genus, searching older names (*Hebe*, *Tetrapathaea*…) and asking WCVP when a
   row has no biostatus; results in `data/sources/plant-synz/host-counts.json`.
+- Internal: `npm run hosts:fetch` downloads HOSTS, the NHM's CC0 world database
+  of Lepidoptera host plants, and counts moth species per host genus for each
+  southern area (`data/sources/hosts/`). It's usable for Sydney, thin for the
+  Cape and near-empty for Argentina.
 - Each region's five most-wanted invasives now have a page of their own, with
   a preview picture listing all five, so you can send a neighbour one link.
   https://indigene.app/invasives/in/pnw

@@ -55,10 +55,26 @@ Ireland's rows cite WCVP and France's cite TAXREF.
    region probably claims both. Details: `data/sources/resolve-ecoregions/`.
 2. **Host counts: New Zealand done, the rest open.** `hostLepCount` is the
    ranking's strongest signal. New Zealand's come from **Plant-SyNZ**
-   (`npm run host-counts:nz`; `data/sources/plant-synz/`). For the other
-   three, candidates to probe, none confirmed:
-   - NHM's HOSTS database (global; `data.nhm.ac.uk` still refuses this sandbox)
-   - Braby's *Butterflies of Australia* for butterflies only
+   (`npm run host-counts:nz`; `data/sources/plant-synz/`). The NHM's global
+   **HOSTS** database (CC0) is fetched by `npm run hosts:fetch` and measured
+   per area in `data/sources/hosts/`:
+   - **Sydney: usable.** Eucalyptus 257, Acacia 118, Melaleuca 87, Banksia 34,
+     as Australia-wide figures.
+   - **Cape Town: too thin alone.** Protea 33, but Erica 1 and Pelargonium 1.
+     Needs a South African source.
+   - **Buenos Aires: not usable.** 235 records in all; Erythrina and
+     Passiflora 0. Needs an Argentine source.
+
+   Leads for the two gaps, not yet checked for data access or licence:
+   - Cape: the southern African Lepidoptera–host database behind the
+     Caterpillar Rearing Group (11,628 rearings, 2,826 species), published
+     in *Metamorphosis*, the Lepidopterists' Society of Africa's journal.
+   - Buenos Aires: Pastrana, *Los Lepidópteros argentinos: sus plantas
+     hospedadoras y otros sustratos alimenticios* (Sociedad Entomológica
+     Argentina, 2004). A book, so counts would need extracting from it.
+
+   A host that refuses this sandbox can still be read by a GitHub Actions job
+   or a script run locally. HOSTS turned out not to need either.
 
    Southern hosts are also less recorded, so counts will run low against
    `HOST_ANCHOR` (520). Ranking within a region still works. Keystone flags

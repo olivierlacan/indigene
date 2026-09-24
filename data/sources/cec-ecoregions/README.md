@@ -1,85 +1,78 @@
 # CEC North American Terrestrial Ecoregions
 
-**Status: the open question, and the gate on both Canadian regions.**
+**Status: answered — yes.** A point in Canada can be resolved to an ecoregion by
+a live point query, the service allows CORS, and the data is CC BY 4.0. This was
+the gate on both Canadian regions and it is open.
 
-`fetchEcoregion` in `app/src/lib/site.ts` asks the EPA for a point in the
-conterminous US and the EEA for a point in Europe. A point in Vancouver or
-Montréal gets neither — the EPA service returns **no polygon anywhere in
-Canada** (measured 2026-09-19 for Vancouver, Victoria, Montréal, Québec City,
-Sherbrooke and Halifax; all six came back empty).
+- Service: `https://services7.arcgis.com/oF9CDB4lUYF7Um9q/arcgis/rest/services/NA_Terrestrial_Ecoregions_Level_3/FeatureServer`
+  — layer **3**, `NA_Terrestrial_Ecoregions_v2_level3`
+- Publisher: Commission for Environmental Cooperation (CEC), on their own
+  `CECAtlas` ArcGIS Online account
+- Licence: **CC BY 4.0**, stated on the item. Required attribution, verbatim from
+  the layer's `copyrightText`:
 
-So a Canadian region would select on its bounding box alone. Every region we
-ship stopped doing that when `docs/ecoregion-plan.md` Phase B landed, and going
-back on it for two new regions is the kind of quiet regression this folder
-exists to prevent.
+  > Commission for Environmental Cooperation (CEC). 2021. "North American
+  > Environmental Atlas — Ecological Regions, Level III". Agriculture and
+  > Agri-Food Canada, U.S. Environmental Protection Agency (EPA), Instituto
+  > Nacional de Estadística y Geografía (INEGI). Ed. 2.0, Vector digital data
+  > [1:10,000,000].
 
-- Candidate upstream: <https://www.cec.org/north-american-environmental-atlas/>
-- Publisher: Commission for Environmental Cooperation (Canada · US · Mexico)
-- Licence: to confirm as part of the probe — CEC Atlas layers are generally
-  open with attribution, and this has **not** been verified.
-- Refresh: `cd app && npm run probe:cec` → `probe.json`
+- Refresh / re-verify: `cd app && npm run probe:cec` → `probe.json`
 
-## Why this one
+## Why this URL and not the CEC's own server
 
-Two of the four candidate regions straddle the 49th parallel ecologically and
-not politically. Victoria and Seattle are the same lowland; the Québec
-Appalachians and northern New England are the same forest. A classification that
-stops at the border cannot say that, and CEC — the same Omernik lineage the EPA
-layers come from, extended across all three countries — can.
+**`gis.cec.org` returns 403.** Both service roots under it were tried with the
+host allowlisted, and both refused — this is the service's own answer, not a
+network policy. The probe's ArcGIS Online discovery step is what found the
+working copy, and the copy it found is published by the CEC themselves, so
+nothing is lost by going through it.
 
-## What the probe has to answer
+That is worth remembering the next time a plan names `gis.cec.org`: the atlas is
+on ArcGIS Online, and the agency's own GIS host is not serving it.
 
-1. **Is there a live point-in-polygon service at all?** Discovery-first: the
-   script walks candidate roots, looks for a layer with an ecoregion-shaped
-   field, and queries six known points either side of the border. It assumes no
-   host, layer id or field name, because none is confirmed.
-2. **Does it allow CORS?** The app calls it from the browser. The existing
-   Hanami proxy (`server/app/site_fetcher.rb`) is the fallback, as it is for the
-   EPA call.
-3. **What are its terms?**
+## What the probe measured
 
-## The current answer
+| Place | Level III | Name |
+|---|---|---|
+| Victoria, BC | **7.1.7** | Strait of Georgia/Puget Lowland |
+| **Seattle, WA** | **7.1.7** | *the same unit* |
+| Squamish, BC | 7.1.6 | Pacific and Nass Ranges |
+| Montréal · Québec City · Trois-Rivières | **8.1.1** | Eastern Great Lakes and Hudson Lowlands |
+| Sherbrooke · Rimouski | 5.3.1 | Northern Appalachians and Atlantic Maritime Highlands |
+| Portland, ME | 8.1.7 | — |
 
-**Unanswered, and it cannot be answered from this repo's sandbox.** Every
-candidate host — `gis.cec.org`, `maps-cartes.services.geo.ca` and ArcGIS Online
-— refuses the connection before the request leaves the machine. That is this
-network's egress policy, not the service's answer, and `probe.json` records it
-as `verdict: "unanswered"` rather than as a verdict on CEC.
+**Victoria and Seattle are the same ecoregion**, which is the claim
+`docs/region-queue.md` made from the flora and could not then check. The source
+agrees, and has named the unit after both sides of the border.
 
-What *was* verified here: the probe's own machinery. Pointed at a service it
-can reach (the EEA one), it discovered the polygon layer, auto-detected the
-field holding the region, point-queried six places and printed a paste-ready
-config. So a run from an unblocked network will give a real answer rather than
-fail for a code reason.
+Squamish coming back 7.1.6 matters just as much in the other direction: the code
+discriminates *inside* a coastal British Columbia box, which is the whole reason
+to want it rather than the box alone.
 
-Everything reachable has been ruled out, for the record: the EPA's server has
-no North American product in any of its 24 folders, GitHub's search API and npm
-are closed off or empty, and Canada's own geo services are blocked. There is no
-way around this from inside the sandbox.
+## Three things to design around
 
-**Run it from anywhere with open internet:**
-
-```sh
-cd app && npm run probe:cec
-```
-
-It needs Node 18+ and nothing else, takes a few seconds, and writes
-`data/sources/cec-ecoregions/probe.json`. Commit that file either way — a "no"
-is as useful as a "yes", because it is what sends us to the fallback below.
-
-## The fallback, if the answer is no
-
-Bundle simplified CEC Level II/III polygons **for the two Canadian coverage
-boxes only** and do point-in-polygon on-device. This is the scoped version of
-the offline work `docs/ecoregion-plan.md` §3 deferred, and the size objection
-that killed it is much weaker for two boxes than for all 84 US ecoregions —
-`scripts/build-region-maps.mjs` already clips and simplifies polygons to a
-region's box and gets 8–27 KB of drawing out of it.
-
-## A note on codes
-
-CEC Level III is numbered `5.2.1`-style (`NA_L3CODE`), not the US `1`–`84`
-(`US_L3CODE`) that `RegionMeta.ecoregion` carries. A Canadian region means a
+**1. The codes are not EPA's.** Level III here is `7.1.7` — Level 1, Level 2 and
+Level 3 nested — where `US_L3CODE` is a bare `1`–`84`. A Canadian region needs a
 **third `EcoregionProvider` with its own code space**, not new codes in the EPA
-one. Helpfully, the EPA layer we already query returns `NA_L1NAME`/`NA_L2NAME`,
-so the two sides can be lined up by hand while that is designed.
+one. The layer carries `LEVEL1`, `LEVEL2` and `LEVEL3` separately, so a region
+can gate at whichever depth it means.
+
+**2. Coastline points can miss.** Vancouver's downtown peninsula and Halifax
+harbour both return no polygon at 1:10,000,000; Kitsilano, Burnaby, Richmond and
+Surrey all resolve. `docs/ecoregion-plan.md` anticipated this ("coastline / water
+points may intersect no polygon → fall back to box"), and `regionForSite`
+already falls through to the coverage box when the lookup is null, so a downtown
+Vancouver reader gets the box answer — which for a BC region is the right one
+anyway. Nothing to fix; worth not being surprised by.
+
+**3. It speaks French.** Every name field comes in three languages —
+`NameL3_En`, `NameL3_Es`, `NameL3_Fr`. A Québec page can show *"Basses terres de
+l'est des Grands Lacs et du Saint-Laurent"* from the service itself rather than
+from a hand-written translation. Neither the EPA nor the EEA lookup offers that.
+
+## CORS
+
+`access-control-allow-origin: *`, confirmed against an `Origin: https://indigene.app`
+request. The app can call this client-side like the EPA and EEA lookups, with no
+need for the Hanami proxy that `server/app/site_fetcher.rb` provides as a
+fallback.

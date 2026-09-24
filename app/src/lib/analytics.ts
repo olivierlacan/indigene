@@ -141,9 +141,24 @@ export function pageAddress(): string {
   // /plants/quercus-alba, written by scripts/prerender.mjs) and the hash route
   // (#/results, for the flow steps that have no file). Never `location.search`,
   // and never the hash's own query string — both carry what the reader typed.
-  const hash = location.hash.startsWith("#/") ? location.hash.split("?")[0] : "";
+  let hash = location.hash.startsWith("#/") ? location.hash.split("?")[0] : "";
+  // A private page is counted by its kind, never by which one it was.
+  const step = hash.slice(2).split("/")[0];
+  if (PRIVATE_PARAM_STEPS.has(step)) hash = `#/${step}`;
   return `${location.origin}${location.pathname}${hash}`;
 }
+
+/**
+ * Pages whose second segment belongs to the reader rather than the catalog.
+ *
+ * `#/saved/<id>` is one saved spot, and its id is a random string minted on
+ * this device and kept for good. Sent as-is it would be the one thing the rest
+ * of this file refuses to send: a value that ties this visit to the last one —
+ * the same garden, opened again. Every other param step names something in the
+ * catalog (a plant, a region, a Settings card), which is the same word for
+ * everyone and says nothing about who is reading.
+ */
+const PRIVATE_PARAM_STEPS = new Set(["saved"]);
 
 interface Fathom {
   trackPageview?: (opts?: { url?: string; referrer?: string }) => void;

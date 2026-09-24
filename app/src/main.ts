@@ -34,6 +34,7 @@ import { renderSources } from "./steps/sources";
 import { renderSettings } from "./steps/settings";
 import { renderAbout } from "./steps/about";
 import { renderCrops } from "./steps/crops";
+import { renderImport } from "./steps/import";
 import { initAppMenu, closeAppMenu } from "./components/app-menu";
 import { initPullToReload } from "./components/pull-to-reload";
 import { watchRestore } from "./lib/restore";
@@ -101,6 +102,7 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
   // page. Reached from every plant page's top block, beside the look-alike
   // warning and the native swap.
   crops: { fn: renderCrops, labelKey: "steps.crops", inFlow: false },
+  import: { fn: renderImport, labelKey: "steps.import", inFlow: false },
 };
 
 /**
@@ -257,6 +259,7 @@ const SECTION_OF: Record<string, string> = {
   wildlife: "wildlife",
   saved: "menu",
   settings: "menu",
+  import: "menu",
 };
 
 function sectionOf(step: string): string | undefined {

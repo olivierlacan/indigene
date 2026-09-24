@@ -31,6 +31,7 @@ import type {
   PlantedDate,
   Planting,
   SavedSpot,
+  SpotInvasive,
   SiteData,
   SunEstimate,
   Weights,
@@ -252,7 +253,26 @@ function toSpot(row: unknown): SavedSpot | null {
     deciduousOverhead: typeof r.deciduousOverhead === "boolean" ? r.deciduousOverhead : undefined,
     regionOverride: str(r.regionOverride),
     weights: toWeights(r.weights),
+    invasives: toSpotInvasives(r.invasives),
   };
+}
+
+/** A spot's invasives list, rebuilt row by row like a planting. A row without
+ *  an invasive id names nothing and is dropped. */
+function toSpotInvasives(v: unknown): SpotInvasive[] | undefined {
+  if (!Array.isArray(v)) return undefined;
+  const out: SpotInvasive[] = [];
+  for (const row of v) {
+    const r = asRecord(row);
+    const invasiveId = r && str(r.invasiveId);
+    if (!r || !invasiveId) continue;
+    out.push({
+      invasiveId,
+      observations: Array.isArray(r.observations) ? r.observations.filter((o): o is string => typeof o === "string") : [],
+      addedAt: num(r.addedAt) ?? Date.now(),
+    });
+  }
+  return out;
 }
 
 const WEIGHT_KEYS: (keyof Weights)[] = [

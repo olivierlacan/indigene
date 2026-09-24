@@ -83,18 +83,21 @@ export function regionForSite(
   if (!candidates.length) return null;
   const info = site?.ecoregionInfo ?? null;
   if (info) {
-    // Only regions classified by the *same* provider can be tested — an
-    // Omernik code never gets checked against an EEA region set.
-    const comparable = candidates.filter(
-      (r) => r.meta.ecoregion?.provider === info.provider && r.meta.ecoregion.codes.length
-    );
-    const matched = comparable.find((r) => r.meta.ecoregion!.codes.includes(info.code));
+    // Only a classification from the *same* provider can be tested — an Omernik
+    // code never gets checked against an EEA region set. A region may declare
+    // several (see `RegionMeta.ecoregion`); we test the one that speaks the same
+    // language as the answer, and a region with no entry for this provider is
+    // simply not part of this conversation.
+    const setFor = (r: RegionDef) =>
+      r.meta.ecoregion?.find((e) => e.provider === info.provider && e.codes.length);
+    const comparable = candidates.filter((r) => setFor(r));
+    const matched = comparable.find((r) => setFor(r)!.codes.includes(info.code));
     if (matched) return matched;
     // A comparable candidate that failed is a real "not here" answer, so we
     // don't quietly fall back to it; but a box-only region was never in that
     // conversation and still stands.
     if (comparable.length) {
-      return candidates.find((r) => !r.meta.ecoregion?.codes.length) ?? null;
+      return candidates.find((r) => !r.meta.ecoregion?.some((e) => e.codes.length)) ?? null;
     }
   }
   return candidates[0];

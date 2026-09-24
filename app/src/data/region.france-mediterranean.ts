@@ -21,7 +21,7 @@ export const REGION: RegionMeta = {
   // decides between them, and offline the tighter box wins (see regions.ts).
   bounds: { minLat: 41.3, maxLat: 44.3, minLon: 2.4, maxLon: 9.6 },
   // EEA biogeographical region this list represents.
-  ecoregion: { provider: "eea-biogeo", codes: ["mediterranean"] },
+  ecoregion: [{ provider: "eea-biogeo", codes: ["mediterranean"] }],
   // Holm oak: the evergreen oak the whole southern landscape is built on, and
   // by a long way the biggest single food source on this list.
   featuredPlantId: "quercus-ilex",

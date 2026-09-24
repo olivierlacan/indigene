@@ -36,6 +36,7 @@ const SECTION_IDS: Record<string, string> = {
   lookups: "privacy-lookups",
   saved: "privacy-saved",
   log: "privacy-log",
+  inat: "privacy-inat",
   whatsnew: "privacy-whats-new",
   counting: "privacy-counting",
   children: "privacy-children",
@@ -112,6 +113,11 @@ export function renderPrivacy(main: HTMLElement, param?: string): void {
       el("h3", { id: "privacy-log" }, t("privacy.logTitle")),
       el("p", {}, t("privacy.log1")),
       el("p", {}, t("privacy.log2")),
+
+      // Linking an account is the one time the app holds something that names
+      // a person, so what happens to it is said in full, in its own section.
+      el("h3", { id: "privacy-inat" }, t("privacy.inatTitle")),
+      bullets(["privacy.inat1", "privacy.inat2", "privacy.inat3", "privacy.inat4"]),
 
       // The green dot is the app volunteering that it knows something about
       // your history, so it gets its own section rather than a line inside

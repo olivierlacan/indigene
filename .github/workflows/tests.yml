@@ -1,0 +1,60 @@
+# The two checks that need nothing but the code: do the types hold, and do the
+# unit tests pass.
+#
+# **Why this one has no `paths:` filter.** Every other check here is scoped to
+# the files it reads — the routes check to the routers and the data, the blurbs
+# check to the wildlife list — because each builds the site or calls a service
+# to answer its question, and running that for an unrelated typo is waste.
+#
+# These two are the opposite case. They are offline and they take about a
+# second, so the cost of running them always is nothing, and the cost of *not*
+# is that a scoped filter decides in advance which files could possibly break
+# them. That guess is wrong exactly when it matters: a change to a shared helper
+# breaks a caller three directories away, which is the failure a filter hides.
+#
+# It also closes a real gap. Until this job existed no pull-request workflow ran
+# `typecheck` at all — the two that build are path-filtered, so a change to
+# `src/lib/` alone could merge without the compiler ever seeing it.
+#
+# What does *not* belong here: anything that asks a service a question. Those
+# are the check scripts (`native:check`, `names:check`, `selection:check` and
+# friends), which need the open internet and are run deliberately, because they
+# are asking whether a *fact* is still true. See `app/vitest.config.ts` for
+# where that line is drawn and why.
+name: Tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Types and unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      # Typecheck first: it covers the tests themselves, so a broken test file
+      # reports as a type error here rather than as a confusing runtime failure
+      # below.
+      - name: Typecheck
+        working-directory: app
+        run: npm run typecheck
+
+      - name: Unit tests
+        working-directory: app
+        run: npm test

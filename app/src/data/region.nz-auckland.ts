@@ -29,7 +29,7 @@ export const REGION: RegionMeta = {
   // RESOLVE Ecoregions 2017, ECO_ID 173: Northland temperate kauri forests.
   // Confirmed live (`npm run probe:resolve`) for Auckland, Whangārei and
   // Hamilton, and against the local shapes for the rest of the box.
-  ecoregion: { provider: "resolve-2017", codes: ["173"] },
+  ecoregion: [{ provider: "resolve-2017", codes: ["173"] }],
   // Pōhutukawa: the New Zealand Christmas tree, crimson on every Auckland
   // cliff in December, and the tūī's summer larder.
   featuredPlantId: "metrosideros-excelsa",

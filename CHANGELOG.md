@@ -31,7 +31,7 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
-## [0.34] - 2026-09-24
+## [0.35] - 2026-09-24
 
 **Auckland & Northland, south of the equator**
 
@@ -63,9 +63,6 @@ subtitle on the What's new page.
   of Lepidoptera host plants, and counts moth species per host genus for each
   southern area (`data/sources/hosts/`). It's usable for Sydney, thin for the
   Cape and near-empty for Argentina.
-- Each region's five most-wanted invasives now have a page of their own, with
-  a preview picture listing all five, so you can send a neighbour one link.
-  https://indigene.app/invasives/in/pnw
 
 ### Changed
 
@@ -74,6 +71,60 @@ subtitle on the What's new page.
   "Not counted", `ecoScore` drops the host term, and the region's host tile and
   explore-card line are omitted rather than printing 0. No shipped region uses it.
 
+## [0.34] - 2026-09-24
+
+**British Columbia & your iNaturalist sightings**
+
+[![Your own iNaturalist sightings, sorted into natives you planted and invasives to deal with](docs/screenshots/pr-168/thumb.png)](docs/screenshots/pr-168/import-light.png)
+[Settings](docs/screenshots/pr-168/settings-linked-dark.png) · [Import](docs/screenshots/pr-168/import-dark.png) · [Your spot](docs/screenshots/pr-168/spot-invasives-dark.png)
+
+### Added
+
+- The Pacific Northwest now reaches into British Columbia — Vancouver, Victoria,
+  the Fraser Valley and Vancouver Island up to Campbell River. The lowland from
+  Tacoma north is one ecoregion, and the plants have never stopped at the
+  border. https://indigene.app/regions/pnw
+- Planting: the yarrow you buy as seed is often the European kind, naturalized
+  here rather than native. The plant's page now says so, and says to ask for the
+  western one instead. https://indigene.app/regions/pnw
+- Internal: a region may now claim more than one ecoregion classification. Every
+  authority stops at some border — the EPA's at the edge of the US — so a region
+  that crosses one needs the map that can see both halves, and selection matches
+  whichever service answered.
+- Internal: `npm run vascan:check` puts all 85 Pacific Northwest rows to VASCAN
+  for British Columbia. 81 are native there outright, two under names VASCAN
+  draws differently, and two are the Oregon end of the list, which now say so.
+- Internal: the region finder sent Vancouver and Victoria to a US-only service,
+  got nothing, and silently fell back to the coverage box. `npm run
+  selection:check` stands in 18 real places and asserts the region *and* how it
+  was decided, because the right region for the wrong reason was the bug.
+- Internal: the app has unit tests now — 55 of them, offline, in about a second
+  (`npm test`, Vitest). They cover the ecoregion parsers, the region-selection
+  rules, the registry resolver, the hemisphere maths and the sentence splitter
+  behind every card.
+- Internal: one of those tests holds the list of services the browser is allowed
+  to contact against the list the code actually contacts. They had drifted: the
+  service naming a region in Canada was called but not allowed, so the lookup
+  would have been refused with nothing to show for it.
+- Internal: a Tests workflow runs those and `typecheck` on every pull request,
+  with no path filter. Until now no pull-request job ran `typecheck` at all —
+  the two that build are path-filtered, so a change to `src/lib/` alone could
+  merge without the compiler seeing it.
+- Internal: `docs/ecoregion-plan.md` asked for two of these tests under
+  "Testing" and they were never written. They are now, and the plan says so.
+- Internal: the roll-up that reads Canada's plant database missed a plant's own
+  distribution rows, reporting Sitka spruce as not native to British Columbia.
+  One shared reader now serves both scripts; BC's catalog count goes 108 → 130.
+- Link your iNaturalist username in [Settings](https://indigene.app/#/settings/inat) to bring the past year's plant sightings into a spot. Tick the natives you planted; invasives others have confirmed go on a to-deal-with list.
+- Privacy: your iNaturalist username stays on your device, goes only to iNaturalist, and never with a location. Remove it in Settings anytime.
+- Internal: `lib/inat-account.ts` (username in localStorage, never in backups or addresses), `lib/inat-import.ts` (v2 `fields=` request with no location fields; sorting against the spot region's roster and most-wanted list), `#/import` step, `SavedSpot.invasives` (round-trips through backups), `npm run import:check` plus an `iNaturalist import` workflow. Pages are fetched a second apart and one request is shared per visit. Bundle ~453 KB gzipped (+7 KB).
+- Each region's five most-wanted invasives now have a page of their own, with
+  a preview picture listing all five, so you can send a neighbour one link.
+  https://indigene.app/invasives/in/pnw
+
+### Changed
+
+- Internal: `app/package-lock.json` now says 0.33.0, matching `package.json`.
 - The "what to do this season" card now knows which side of the equator your
   garden is on, so a spot in Sydney or Cape Town sees spring now, not autumn.
   https://indigene.app/planting
@@ -82,13 +133,16 @@ subtitle on the What's new page.
   sun-hours sampling window and the sun picker's "south side"; technique copy
   names seasons, not northern months; a third ecoregion provider,
   `resolve-2017` (RESOLVE Ecoregions 2017), is asked south of the equator and
-  drawn by `maps:build`; `npm run probe:resolve` checks the hosted layer;
-  `coverage` measures a southern list's
+  drawn by `maps:build`; `npm run probe:resolve` confirms the hosted layer,
+  which the sandbox's proxy refuses; `coverage` measures a southern list's
   bloom against its own spring.
-- Internal: `app/package-lock.json` now matches `package.json`'s version.
 - The list of services on the [Privacy page](https://indigene.app/privacy) is now enforced, not just promised: your browser refuses any lookup to an address that isn't on it. Two missing entries join it: the services naming your region in Europe and south of the equator.
 - Internal: a Content-Security-Policy `<meta>` built from `src/lib/csp.ts` is stamped into every app page and 404.html at build time, with inline-script hashes computed from the built HTML. `npm run csp:check` walks the built app in Chromium (GPS in the US, France and Sydney, town search, iNaturalist sightings, the page count) and fails on any refusal; a new `Content-Security-Policy` workflow runs it on PRs.
 - Internal: `el()` no longer accepts an `html` attribute, so nothing can reach `innerHTML` through it, and iNaturalist photo URLs from API responses are dropped unless they're https on iNaturalist's two photo hosts.
+
+### Fixed
+
+- Privacy: opening a saved spot told our visit counter which spot it was, by its private code. Now it only hears that a saved spot was opened, so visits to the same garden can't be linked.
 
 ## [0.33] - 2026-09-24
 
@@ -2645,8 +2699,9 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/c1efb0a...HEAD
-[0.34]: https://github.com/olivierlacan/indigene/compare/c4e7c44...c1efb0a
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/c07ebcb...HEAD
+[0.35]: https://github.com/olivierlacan/indigene/compare/39c9b05...c07ebcb
+[0.34]: https://github.com/olivierlacan/indigene/compare/c4e7c44...39c9b05
 [0.33]: https://github.com/olivierlacan/indigene/compare/e0f70ef...c4e7c44
 [0.32]: https://github.com/olivierlacan/indigene/compare/655cb62...e0f70ef
 [0.31]: https://github.com/olivierlacan/indigene/compare/46a1ff0...655cb62

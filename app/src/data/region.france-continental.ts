@@ -21,7 +21,7 @@ export const REGION: RegionMeta = {
   // western edge stops short of Paris, which is Atlantic.
   bounds: { minLat: 45.0, maxLat: 49.5, minLon: 3.0, maxLon: 8.3 },
   // EEA biogeographical region this list represents.
-  ecoregion: { provider: "eea-biogeo", codes: ["continental"] },
+  ecoregion: [{ provider: "eea-biogeo", codes: ["continental"] }],
   // Sessile oak: the tree the eastern woodlands are built on, and the single
   // biggest food source on the list by a wide margin.
   featuredPlantId: "quercus-petraea",

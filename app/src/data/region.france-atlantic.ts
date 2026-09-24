@@ -23,7 +23,7 @@ export const REGION: RegionMeta = {
   bounds: { minLat: 43.2, maxLat: 51.2, minLon: -5.2, maxLon: 5.0 },
   // EEA biogeographical region this list represents. Online, a spot must resolve
   // to the Atlantic region to get this list; offline, the box alone decides.
-  ecoregion: { provider: "eea-biogeo", codes: ["atlantic"] },
+  ecoregion: [{ provider: "eea-biogeo", codes: ["atlantic"] }],
   // Hawthorn: the signature hedgerow shrub of the Atlantic bocage — a froth of
   // May blossom for pollinators, red haws for winter birds, and one of the top
   // host plants. The friendliest, most recognizable door into French natives.

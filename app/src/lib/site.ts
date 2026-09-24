@@ -2,7 +2,7 @@
 // best-effort: a failure degrades to null rather than blocking the flow, and
 // the confirm screen lets the user correct anything. Soil especially is always
 // presented as "the map says…", never as measured fact (see honesty rules).
-import type { EcoregionInfo, SiteData } from "../types";
+import type { EcoregionInfo, EcoregionProvider, SiteData } from "../types";
 import { t, tOptional } from "./i18n";
 
 const TIMEOUT_MS = 12000;
@@ -210,17 +210,38 @@ export function zoneFromMinTemp(tF: number): string {
 // --- Ecoregion: a real, provider-tagged classification via ArcGIS point query.
 // Three public services, picked by where the point is: US EPA (Omernik) for the
 // conterminous US (public domain), EEA Biogeographical Regions of Europe for
-// Europe (CC-BY 4.0), and RESOLVE Ecoregions 2017 south of the equator (CC-BY
-// 4.0), where neither of the others reaches. All are best-effort — on any failure (offline, CORS, a
-// coastline point that hits no polygon, outside coverage) we fall back to the
-// coarse box guess below, and region *selection* still works from the box alone.
-// See docs/ecoregion-plan.md and docs/france-localization-plan.md.
+// Europe (CC-BY 4.0), the CEC's North American ecoregions for the rest of North
+// America (CC-BY 4.0), and RESOLVE Ecoregions 2017 south of the equator (CC-BY
+// 4.0), where none of the others reaches. All are best-effort — on any failure
+// (offline, CORS, a coastline point that hits no polygon, outside coverage) we
+// fall back to the coarse box guess below, and region *selection* still works
+// from the box alone. See docs/ecoregion-plan.md and
+// docs/france-localization-plan.md.
+//
+// **The EPA goes first where it answers, and the CEC picks up wherever it does
+// not.** Both would answer for Seattle; the EPA's is the finer classification
+// and the one the US regions' codes are written in, so it wins there.
+//
+// The fall-through is not a nicety, it is the whole mechanism. `inConus` is a
+// crude rectangle and its top-left corner takes in southern British Columbia —
+// Vancouver, Victoria and Nanaimo all sit inside it. Routing on the rectangle
+// alone sent those points to a service that has no polygon north of the border,
+// got null, and quietly dropped them to the coverage box, losing exactly the
+// refinement this is for. So a null from the EPA means "not mine", and the
+// question goes to the CEC, which covers the continent. That also rescues a
+// coastline point the EPA's own polygons miss.
 async function fetchEcoregion(
   lat: number,
   lon: number
 ): Promise<EcoregionInfo | null> {
   if (inEurope(lat, lon)) return fetchEcoregionEEA(lat, lon);
-  if (inConus(lat, lon)) return fetchEcoregionEPA(lat, lon);
+  if (inNorthAmerica(lat, lon)) {
+    if (inConus(lat, lon)) {
+      const epa = await fetchEcoregionEPA(lat, lon).catch(() => null);
+      if (epa) return epa;
+    }
+    return fetchEcoregionCEC(lat, lon);
+  }
   if (inResolveCoverage(lat)) return fetchEcoregionResolve(lat, lon);
   return null;
 }
@@ -233,6 +254,12 @@ export function inConus(lat: number, lon: number): boolean {
 }
 export function inEurope(lat: number, lon: number): boolean {
   return lat >= 34 && lat <= 72 && lon >= -25 && lon <= 45;
+}
+/** North America wide enough to cover Canada, Alaska and Mexico — the CEC is
+ *  asked only after `inConus` has declined, so in practice this is "the rest of
+ *  it". */
+export function inNorthAmerica(lat: number, lon: number): boolean {
+  return lat >= 14 && lat <= 84 && lon >= -172 && lon <= -52;
 }
 /** RESOLVE is global, but we only ask it south of the equator — where the
  *  southern regions are, and where no national service of ours answers. A
@@ -299,6 +326,50 @@ async function fetchEcoregionEEA(lat: number, lon: number): Promise<EcoregionInf
   return parseEcoregionEEA(data);
 }
 
+// CEC North American Terrestrial Ecoregions, Level III (2021, ed. 2.0), served
+// from the Commission's own ArcGIS Online account. Layer 3 carries the nested
+// code (`7.1.7`) and the region's name in English, Spanish and French — so a
+// French reader standing in Québec gets "Basses terres de l'est des Grands Lacs
+// et du Saint-Laurent" from the source rather than from a hand translation.
+//
+// Confirmed live (see data/sources/cec-ecoregions/probe.json): the CEC's own
+// `gis.cec.org` returns 403, this copy answers, and it sends
+// `access-control-allow-origin: *`, so the browser can call it directly.
+//
+// Attribution (CC BY 4.0): Commission for Environmental Cooperation (CEC). 2021.
+// "North American Environmental Atlas — Ecological Regions, Level III".
+const CEC_ECOREGION_QUERY_URL =
+  "https://services7.arcgis.com/oF9CDB4lUYF7Um9q/arcgis/rest/services/" +
+  "NA_Terrestrial_Ecoregions_Level_3/FeatureServer/3/query";
+
+async function fetchEcoregionCEC(lat: number, lon: number): Promise<EcoregionInfo | null> {
+  const url =
+    `${CEC_ECOREGION_QUERY_URL}?geometry=${lon},${lat}&geometryType=esriGeometryPoint` +
+    `&inSR=4326&spatialRel=esriSpatialRelIntersects` +
+    `&outFields=LEVEL1,NameL1_En,LEVEL2,NameL2_En,LEVEL3,NameL3_En,NameL3_Fr` +
+    `&returnGeometry=false&f=json`;
+  const data = await fetchJson(url);
+  return parseEcoregionCEC(data);
+}
+
+/** Pure parser for the CEC response, split out so it can be tested without the
+ *  network. Level III is the selection key; Levels I and II are the roll-ups
+ *  shown above it, the same shape the EPA answer takes. */
+export function parseEcoregionCEC(data: any): EcoregionInfo | null {
+  const attrs = data?.features?.[0]?.attributes;
+  if (!attrs) return null;
+  const code = str(attrs.LEVEL3);
+  const name = str(attrs.NameL3_En);
+  if (!code || !name) return null;
+  return {
+    provider: "cec-na",
+    code,
+    name,
+    hierarchy: [str(attrs.NameL1_En), str(attrs.NameL2_En)].filter((x): x is string => !!x),
+    detail: null,
+  };
+}
+
 // The eleven EEA biogeographical regions, canonicalized from whatever spelling
 // the service returns to a stable slug (the selection code) and a clean name.
 const EEA_REGIONS: { slug: string; name: string; match: RegExp }[] = [
@@ -352,6 +423,26 @@ function scanForEeaRegion(attrs: Record<string, unknown>): { slug: string; name:
 const RESOLVE_ECOREGION_QUERY_URL =
   "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/Resolve_Ecoregions/FeatureServer/0/query";
 
+/**
+ * Every ecoregion service the app point-queries, by the provider it answers for.
+ *
+ * Exported so the Content-Security-Policy can be held to it. A host the app
+ * calls that `lib/csp.ts` doesn't list is refused by the reader's own browser,
+ * and the failure is silent: the lookup just returns nothing and selection
+ * falls back to the coverage box, which is a legitimate answer offline. That
+ * happened — `services7.arcgis.com` is not `services.arcgis.com`, and the CEC's
+ * host was missing for a while. `csp.test.ts` now checks the two lists agree.
+ *
+ * Typed against `EcoregionProvider`, so adding a provider without adding the
+ * service it reads is a compile error rather than a quiet gap.
+ */
+export const ECOREGION_QUERY_URLS: Record<EcoregionProvider, string> = {
+  "epa-omernik": EPA_ECOREGION_QUERY_URL,
+  "eea-biogeo": EEA_ECOREGION_QUERY_URL,
+  "cec-na": CEC_ECOREGION_QUERY_URL,
+  "resolve-2017": RESOLVE_ECOREGION_QUERY_URL,
+};
+
 async function fetchEcoregionResolve(lat: number, lon: number): Promise<EcoregionInfo | null> {
   const url =
     `${RESOLVE_ECOREGION_QUERY_URL}?geometry=${lon},${lat}&geometryType=esriGeometryPoint` +
@@ -402,6 +493,7 @@ export function ecoregionLabel(
       : info.name;
     const suffix = t(
       info.provider === "eea-biogeo" ? "ecoregion.suffixEea"
+        : info.provider === "cec-na" ? "ecoregion.suffixCec"
         : info.provider === "resolve-2017" ? "ecoregion.suffixResolve"
         : "ecoregion.suffixEpa"
     );

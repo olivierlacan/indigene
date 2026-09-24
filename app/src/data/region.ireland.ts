@@ -33,7 +33,7 @@ export const REGION: RegionMeta = {
   // Atlantic, the same code Atlantic France claims — so online the code cannot
   // tell the two apart and the boxes do it, which they can: the two are 700 km
   // and one sea apart.
-  ecoregion: { provider: "eea-biogeo", codes: ["atlantic"] },
+  ecoregion: [{ provider: "eea-biogeo", codes: ["atlantic"] }],
   // Rowan: the tree of Irish folklore, small enough for any garden, covered in
   // blossom for pollinators and then in berries the winter thrushes strip — and
   // it grows where almost nothing else will.

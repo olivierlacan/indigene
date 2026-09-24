@@ -52,6 +52,21 @@ be expected to know still gets explained in place, and a number still gets its
 source. Warmth isn't padding either — "plants nobody has chosen a picture for
 yet keep the drawing" is worth its words. Trim the essay, keep the voice.
 
+## No folding boxes: link to a detail page
+
+**Never hide content in a collapse/expand control** — no `<details>`
+disclosures, accordions, "show more" toggles or cards that open in place. They
+make the reader open and close things over and over, they hide what's on the
+page from a scan, and they turn a list into a chore. This is a fast app: a page
+load costs nothing.
+
+So when a list item has more to say than fits in its row, **the row is a link
+to that thing's own page**, and the depth lives there — the way a plant row
+opens the plant's page. Show what a scan needs in the row (name, picture, one
+or two figures), link the rest. If something has no page yet and deserves more
+than its row, give it one. This is a baseline expectation for every new piece
+of UI, not a preference to weigh.
+
 ## Mobile-first UI: buttons stay on one line
 
 This is a mobile-first PWA — assume a narrow phone (≈360 px wide) is the common

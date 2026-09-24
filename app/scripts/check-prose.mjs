@@ -47,7 +47,7 @@ const args = process.argv.slice(2);
 function dataSources() {
   const dir = new URL("../src/data/", import.meta.url);
   const out = {};
-  for (const name of ["alternatives.ts", "lookalikes.ts"]) {
+  for (const name of ["alternatives.ts", "lookalikes.ts", "invasives.ts"]) {
     out[name] = readFileSync(new URL(name, dir), "utf8");
   }
   return out;
@@ -76,6 +76,7 @@ try {
       ["france-atlantic", "FRANCE_ATLANTIC"],
       ["france-continental", "FRANCE_CONTINENTAL"],
       ["france-mediterranean", "FRANCE_MEDITERRANEAN"],
+      ["invasives", "INVASIVES_FR"],
       ["lookalikes", "LOOKALIKES_FR"],
       ["mid-atlantic", "MID_ATLANTIC"],
       ["pnw", "PNW"],

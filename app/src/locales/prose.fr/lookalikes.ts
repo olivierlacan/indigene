@@ -22,12 +22,40 @@ export const LOOKALIKES_FR: ProseTable = {
   // Europe.
   // -------------------------------------------------------------------------
   "Robinia pseudoacacia": {
+    // Les signes pour la reconnaître (data/invasives.ts).
+    marks: [
+      { feature: "Épines", text: "Une paire d'épines acérées là où chaque feuille rejoint le rameau." },
+      { feature: "Feuilles", text: "Composées, à petites folioles arrondies, par paires." },
+      { feature: "Fleurs", text: "Des grappes pendantes de fleurs blanches parfumées, à la fin du printemps." },
+    ],
+    removal: {
+      steps: [
+        "Arrachez jeunes les semis et les rejets, avec la racine.",
+        "N'abattez pas un grand arbre — la coupe déclenche des rejets tout autour. Entaillez l'écorce en anneau en laissant une fine bande la première année, et fermez-le l'année suivante.",
+        "Arrachez les rejets qui viennent encore, plusieurs années durant.",
+      ],
+      dispose: "Le bois fait un bon bois de chauffage ; les morceaux de racine vont à la poubelle.",
+    },
     origin:
       "Indigène des Appalaches, en Amérique du Nord ; planté en Europe depuis les années 1600.",
     blurb:
       "En France on l'appelle « acacia », il donne le miel du même nom, et c'est l'un des arbres exotiques envahissants les plus répandus d'Europe. Chaque racine coupée renvoie des rejets, et l'azote que ses racines apportent aux sols pauvres change la terre elle-même : ce sont les orties et les ronces qui suivent, et non la prairie qui était là.",
   },
   "Prunus laurocerasus": {
+    // Les signes pour la reconnaître (data/invasives.ts).
+    marks: [
+      { feature: "Odeur", text: "Froissées, les feuilles sentent l'amande — c'est du cyanure." },
+      { feature: "Feuilles", text: "Grandes, luisantes et vert vif." },
+      { feature: "Fleurs", text: "Des chandelles dressées de petites fleurs blanches au printemps." },
+    ],
+    removal: {
+      steps: [
+        "Arrachez les semis, racine comprise.",
+        "Dessouchez les sujets plus grands : une souche coupée repart.",
+        "Portez des gants, et ne le broyez pas en lieu clos — les feuilles écrasées dégagent du cyanure.",
+      ],
+      dispose: "Les branches à baies vont à la poubelle.",
+    },
     origin: "Indigène des Balkans, de Turquie et des rivages de la mer Noire.",
     blurb:
       "La haie persistante par défaut de la moitié de l'Europe. Les oiseaux emportent ses fruits noirs jusque dans les bois, où il forme un sous-étage sombre et dense que rien ne traverse. Froissées ou broyées, ses feuilles dégagent du cyanure — raison pour laquelle ses déchets de taille ne doivent jamais approcher un animal.",
@@ -64,6 +92,20 @@ export const LOOKALIKES_FR: ProseTable = {
       "L'érable qui n'en a pas l'air — sa feuille est découpée en folioles séparées. Le long des rivières françaises, il forme maintenant des bois entiers de jeunes sujets, poussant vite, cassant facilement, et prenant le terrain que les saules et les peupliers de la berge devraient tenir.",
   },
   "Ailanthus altissima": {
+    // Les signes pour la reconnaître (data/invasives.ts).
+    marks: [
+      { feature: "Odeur", text: "Froissées, les feuilles sentent fort, comme du beurre de cacahuète brûlé." },
+      { feature: "Feuilles", text: "Très longues, à nombreuses folioles, chacune avec une dent et une petite bosse près de la base." },
+      { feature: "Graines", text: "Des ailes de papier torsadées, en grosses grappes pendantes." },
+    ],
+    removal: {
+      steps: [
+        "Arrachez les semis quand le sol est humide, avec toute la racine : un morceau oublié repart.",
+        "N'abattez pas un grand arbre — il répond par une forêt de rejets. Entaillez l'écorce tout autour en laissant une fine bande la première année, et fermez l'anneau l'année suivante.",
+        "Arrachez chaque rejet dès qu'il paraît, plusieurs années durant.",
+      ],
+      dispose: "Les grappes de graines et les morceaux de racine vont à la poubelle, pas au compost.",
+    },
     origin:
       "Indigène de Chine ; planté à travers l'Europe et l'Amérique du Nord depuis les années 1700.",
     blurb:
@@ -75,6 +117,20 @@ export const LOOKALIKES_FR: ProseTable = {
       "Une renoncule jaune luisante qui tapisse les terrains frais au début du printemps et disparaît avant juin — laissant une terre nue, facilement emportée, là où les fleurs de printemps se trouvaient. Elle voyage sous forme de minuscules bulbilles qui montent sur les bottes, les pneus et les eaux de crue.",
   },
   "Lythrum salicaria": {
+    // Les signes pour la reconnaître (data/invasives.ts).
+    marks: [
+      { feature: "Fleurs", text: "De hauts épis de fleurs magenta aux pétales froissés." },
+      { feature: "Tiges", text: "Carrées, et ligneuses à la base." },
+      { feature: "Où", text: "Les sols humides : fossés, bords de marais, rives des lacs." },
+    ],
+    removal: {
+      steps: [
+        "Déterrez les jeunes pieds avec toute la souche.",
+        "Coupez les épis avant les graines : un seul pied en fait des millions.",
+        "Un grand massif en zone humide est l'affaire du service local de lutte contre les invasives.",
+      ],
+      dispose: "Mettez les épis en sac.",
+    },
     origin: "Indigène d'Europe et d'Asie.",
     blurb:
       "De hauts épis magenta le long des fossés et des bords de marais, et franchement beaux. Un seul pied peut produire plus d'un million de graines en une saison, et un peuplement transforme une zone humide variée en une seule culture que très peu d'insectes indigènes savent utiliser.",
@@ -116,6 +172,20 @@ export const LOOKALIKES_FR: ProseTable = {
       "L'arbuste qui feuille le premier au printemps et reste vert le plus longtemps à l'automne — ce qui est exactement la façon de prendre un sous-bois. Les oiseaux mangent bien ses baies rouges, mais c'est la malbouffe des bois : beaucoup moins de graisses qu'une baie indigène, à la saison où un oiseau en a le plus besoin.",
   },
   "Buddleja davidii": {
+    // Les signes pour la reconnaître (data/invasives.ts).
+    marks: [
+      { feature: "Fleurs", text: "De longs épis de fleurs violettes ou blanches, au parfum de miel." },
+      { feature: "Feuilles", text: "Longues et pointues, feutrées de blanc dessous." },
+      { feature: "Où", text: "Vieux murs, ballast des voies ferrées, graviers et berges." },
+    ],
+    removal: {
+      steps: [
+        "Arrachez les semis : ils viennent facilement.",
+        "Dessouchez les grands sujets ; une souche coupée repart.",
+        "Si vous en gardez un, coupez chaque épi fané avant qu'il fasse ses graines.",
+      ],
+      dispose: "Les épis en graines vont à la poubelle.",
+    },
     origin: "Indigène du centre de la Chine.",
     blurb:
       "Vendu comme *la* plante à papillons, et les papillons adultes y boivent réellement. Mais aucune chenille d'ici ne peut manger ses feuilles : il nourrit donc les visiteurs et n'en élève aucun. Le long des rivières du Nord-Ouest Pacifique, il se ressème dans les bancs de gravier assez densément pour être classé plante nuisible en Oregon comme dans l'État de Washington.",
@@ -166,6 +236,20 @@ export const LOOKALIKES_FR: ProseTable = {
     },
   },
   "Rubus armeniacus": {
+    // Les signes pour la reconnaître (data/invasives.ts).
+    marks: [
+      { feature: "Cannes", text: "Épaisses, cannelées et arquées, armées de grosses épines crochues." },
+      { feature: "Feuilles", text: "Le plus souvent à cinq folioles, blanchâtres dessous." },
+      { feature: "Fruits", text: "De grosses mûres sucrées à la fin de l'été." },
+    ],
+    removal: {
+      steps: [
+        "Coupez les tiges au ras du sol.",
+        "Déterrez les souches — la base noueuse — sinon elles relancent de nouvelles tiges.",
+        "Coupez les pousses qui reviennent, et plantez de quoi faire de l'ombre : elle déteste l'ombre.",
+      ],
+      dispose: "Les tiges s'enracinent là où elles touchent le sol : entassez-les sur une bâche pour qu'elles sèchent.",
+    },
     origin:
       "Indigène d'Arménie et du nord de l'Iran, malgré le nom qu'on lui a donné.",
     blurb:
@@ -187,6 +271,20 @@ export const LOOKALIKES_FR: ProseTable = {
       "Le palmier très haut et très mince des cartes postales de Miami et de Los Angeles. Dans le sud de la Floride, il se ressème dans les hammocks et le long des berges de canaux, et c'est le palmier le plus souvent acheté par quelqu'un qui voulait acheter un Sabal palmetto.",
   },
   "Ardisia crenata": {
+    // Les signes pour la reconnaître (data/invasives.ts).
+    marks: [
+      { feature: "Baies", text: "Des grappes rouge vif pendant sous les feuilles, toute l'année." },
+      { feature: "Feuilles", text: "Sombres et luisantes, avec de petites bosses le long d'un bord ondulé." },
+      { feature: "Où", text: "Des tapis à hauteur de genou sur le sol ombragé d'un bois." },
+    ],
+    removal: {
+      steps: [
+        "Arrachez-la à la main avec toute la racine : une racine cassée repart.",
+        "Cueillez d'abord les baies et mettez-les en sac.",
+        "Revenez chaque année : les graines continuent de germer.",
+      ],
+      dispose: "Mettez les baies en sac ; ne les compostez pas.",
+    },
     origin: "Indigène d'Asie de l'Est.",
     blurb:
       "Un vieil arbuste de devant-de-porte aux baies rouge laqué que les oiseaux emportent dans les hammocks et les bois de plaine inondable. Les semis lèvent dessous si densément qu'ils tapissent le sol — ce qui a transformé une plante de jardin bien élevée en l'une des envahissantes classées de Floride.",

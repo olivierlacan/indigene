@@ -54,6 +54,7 @@ import type {
 } from "../types";
 import { t, tn, tx, fmtNumber } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
+import { wantedLine } from "../components/wanted-line";
 import { lookalikeBlurb, lookalikeOrigin, lookalikeWhy, lookalikeTells } from "../lib/prose";
 
 /** The route prefix that makes `#/lookalikes/…` an index filtered to a region
@@ -105,6 +106,7 @@ export function statusBadge(status: LookalikeStatus): HTMLElement {
  *  explanation is a compile error, not a blank line on the page. */
 const MEANS_KEY = {
   waClassA: "lookalike.means.waClassA",
+  waClassB: "lookalike.means.waClassB",
   waClassC: "lookalike.means.waClassC",
 } as const satisfies Record<ListingMeans, string>;
 
@@ -132,7 +134,7 @@ const PRESSURE_CLASS: Record<PressureLevel, string> = {
  * carries the whole three-step ladder, because "gaining ground" only means
  * anything next to the step above and below it.
  */
-function pressureBadge(level: PressureLevel, listing?: LookalikeListing): HTMLElement {
+export function pressureBadge(level: PressureLevel, listing?: LookalikeListing): HTMLElement {
   const term = t(`lookalike.pressure.${level}` as const);
   return el("button", {
     type: "button",
@@ -174,7 +176,7 @@ function pressureBadge(level: PressureLevel, listing?: LookalikeListing): HTMLEl
  * next to a blackberry swallowing a ravine will conclude the state thinks it's
  * mild, and the state thinks nothing of the kind.
  */
-function listingLine(link: LookalikeLink): HTMLElement | null {
+export function listingLine(link: Pick<LookalikeLink, "listing">): HTMLElement | null {
   const l = link.listing;
   if (!l) return null;
   const source = el("a", { href: l.url, target: "_blank", rel: "noopener" }, l.by);
@@ -529,6 +531,8 @@ export async function renderLookalike(main: HTMLElement, param?: string): Promis
       // is which rather than flattening it to one word that would be false
       // somewhere.
       ...whereRows(natives, true),
+      // And, where it's one of a region's worst, how high it ranks there.
+      wantedLine(lookalike.latin),
       el("p", { class: "kv", style: "margin-top:0.75rem" }, [
         el("span", { class: "k" }, t("lookalikes.whereItsFrom")),
         lookalikeOrigin(lookalike),

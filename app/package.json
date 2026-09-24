@@ -22,6 +22,7 @@
     "coverage": "node scripts/coverage.mjs",
     "swaps:coverage": "node scripts/alternatives-coverage.mjs",
     "ornamentals": "NODE_USE_ENV_PROXY=1 node scripts/ornamentals.mjs",
+    "invasives:count": "NODE_USE_ENV_PROXY=1 node scripts/invasive-counts.mjs",
     "conservation": "NODE_USE_ENV_PROXY=1 node scripts/conservation.mjs",
     "wildlife": "NODE_USE_ENV_PROXY=1 node scripts/wildlife-candidates.mjs",
     "candidates": "NODE_USE_ENV_PROXY=1 node scripts/candidates.mjs",

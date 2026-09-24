@@ -1,0 +1,362 @@
+{
+  "abrus-precatorius": {
+    "taxonId": 122099,
+    "photoId": 66780796,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/66780796/square.jpeg",
+    "observer": "Shiwalee Samant",
+    "license": "cc-by-nc",
+    "attribution": "(c) Shiwalee Samant, some rights reserved (CC BY-NC), uploaded by Shiwalee Samant",
+    "color": "#668441"
+  },
+  "agave-americana": {
+    "taxonId": 64103,
+    "photoId": 62291291,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/62291291/square.jpeg",
+    "observer": "Pau Arranz Morell",
+    "license": "cc-by-nc",
+    "attribution": "(c) Pau Arranz Morell, some rights reserved (CC BY-NC), uploaded by Pau Arranz Morell",
+    "color": "#55584a"
+  },
+  "ailanthus-altissima": {
+    "taxonId": 57278,
+    "photoId": 115499048,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/115499048/square.jpeg",
+    "observer": "raviner",
+    "license": "cc-by-nc",
+    "attribution": "(c) raviner, some rights reserved (CC BY-NC)",
+    "color": "#505c5c"
+  },
+  "alliaria-petiolata": {
+    "taxonId": 56061,
+    "photoId": 52681308,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/52681308/square.jpeg",
+    "observer": "Douglas Goldman",
+    "license": "cc-by-sa",
+    "attribution": "(c) Douglas Goldman, some rights reserved (CC BY-SA), uploaded by Douglas Goldman",
+    "color": "#454f36"
+  },
+  "ardisia-crenata": {
+    "taxonId": 158586,
+    "photoId": 246420921,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/246420921/square.jpg",
+    "observer": "arlet_orozco",
+    "license": "cc-by-nc",
+    "attribution": "(c) arlet_orozco, some rights reserved (CC BY-NC)",
+    "color": "#54897a"
+  },
+  "ardisia-elliptica": {
+    "taxonId": 158587,
+    "photoId": 39977935,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/39977935/square.jpeg",
+    "observer": "葉子",
+    "license": "cc0",
+    "attribution": "no rights reserved, uploaded by 葉子",
+    "color": "#717c34"
+  },
+  "arundo-donax": {
+    "taxonId": 64017,
+    "photoId": 627890218,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/627890218/square.jpg",
+    "observer": "columbidaeperson",
+    "license": "cc-by-nc",
+    "attribution": "(c) columbidaeperson, some rights reserved (CC BY-NC), uploaded by columbidaeperson",
+    "color": "#a19266"
+  },
+  "buddleja-davidii": {
+    "taxonId": 75916,
+    "photoId": 411134966,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/411134966/square.jpeg",
+    "observer": "aquadragonfly",
+    "license": "cc-by-nc",
+    "attribution": "(c) aquadragonfly, some rights reserved (CC BY-NC)",
+    "color": "#627855"
+  },
+  "carpobrotus-edulis": {
+    "taxonId": 49322,
+    "photoId": 176298740,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/176298740/square.jpg",
+    "observer": "Cida Werneck",
+    "license": "cc-by-nc",
+    "attribution": "(c) Cida Werneck, some rights reserved (CC BY-NC), uploaded by Cida Werneck",
+    "color": "#757f57"
+  },
+  "celastrus-orbiculatus": {
+    "taxonId": 64540,
+    "photoId": 59337841,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/59337841/square.jpg",
+    "observer": "Jeff Skrentny",
+    "license": "cc-by-nc",
+    "attribution": "(c) Jeff Skrentny, some rights reserved (CC BY-NC), uploaded by Jeff Skrentny",
+    "color": "#926955"
+  },
+  "centaurea-solstitialis": {
+    "taxonId": 52588,
+    "photoId": 231234789,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/231234789/square.jpg",
+    "observer": "mick_photo",
+    "license": "cc-by-nc",
+    "attribution": "(c) mick_photo, some rights reserved (CC BY-NC), uploaded by mick_photo",
+    "color": "#868163"
+  },
+  "centaurea-stoebe": {
+    "taxonId": 76214,
+    "photoId": 21348164,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/21348164/square.jpg",
+    "observer": "Lioneska",
+    "license": "cc-by-nc",
+    "attribution": "(c) Lioneska, some rights reserved (CC BY-NC), uploaded by Lioneska",
+    "color": "#a09a5f"
+  },
+  "cortaderia-selloana": {
+    "taxonId": 64240,
+    "photoId": 173109660,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/173109660/square.jpg",
+    "observer": "Fernando de Gorocica",
+    "license": "cc-by-sa",
+    "attribution": "(c) Fernando de Gorocica, some rights reserved (CC BY-SA)",
+    "color": "#60768c"
+  },
+  "cytisus-scoparius": {
+    "taxonId": 48538,
+    "photoId": 70985676,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/70985676/square.jpg",
+    "observer": "Ina Siebert",
+    "license": "cc-by-nc",
+    "attribution": "(c) Ina Siebert, some rights reserved (CC BY-NC), uploaded by Ina Siebert",
+    "color": "#6b743f"
+  },
+  "dioscorea-bulbifera": {
+    "taxonId": 84537,
+    "photoId": 569462991,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/569462991/square.jpg",
+    "observer": "Oliver g jones",
+    "license": "cc-by-nc",
+    "attribution": "(c) Oliver g jones, some rights reserved (CC BY-NC), uploaded by Oliver g jones",
+    "color": "#69972c"
+  },
+  "elaeagnus-umbellata": {
+    "taxonId": 64697,
+    "photoId": 575611447,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/575611447/square.jpg",
+    "observer": "Shawn",
+    "license": "cc0",
+    "attribution": "no rights reserved, uploaded by Shawn",
+    "color": "#7a764c"
+  },
+  "genista-monspessulana": {
+    "taxonId": 53403,
+    "photoId": 111354296,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/111354296/square.jpg",
+    "observer": "madison_marie",
+    "license": "cc-by-nc",
+    "attribution": "(c) madison_marie, some rights reserved (CC BY-NC)",
+    "color": "#7c7720"
+  },
+  "geranium-robertianum": {
+    "taxonId": 55925,
+    "photoId": 70283020,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/70283020/square.jpg",
+    "observer": "Gilles San Martin",
+    "license": "cc-by-sa",
+    "attribution": "(c) Gilles San Martin, some rights reserved (CC BY-SA), uploaded by Gilles San Martin",
+    "color": "#695f61"
+  },
+  "gunnera-tinctoria": {
+    "taxonId": 77310,
+    "photoId": 14549029,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/14549029/square.jpeg",
+    "observer": "Oliver Barker",
+    "license": "cc-by-nc",
+    "attribution": "(c) Oliver Barker, some rights reserved (CC BY-NC), uploaded by Oliver Barker",
+    "color": "#858b7c"
+  },
+  "hedera-helix": {
+    "taxonId": 55882,
+    "photoId": 38428455,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/38428455/square.jpeg",
+    "observer": "Marianna Boi",
+    "license": "cc-by",
+    "attribution": "(c) Marianna Boi, some rights reserved (CC BY), uploaded by Marianna Boi",
+    "color": "#7a8351"
+  },
+  "ilex-aquifolium": {
+    "taxonId": 53856,
+    "photoId": 117929954,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/117929954/square.jpg",
+    "observer": "Joan Septembre",
+    "license": "cc-by-nc",
+    "attribution": "(c) Joan Septembre, some rights reserved (CC BY-NC), uploaded by Joan Septembre",
+    "color": "#606843"
+  },
+  "impatiens-glandulifera": {
+    "taxonId": 47892,
+    "photoId": 1204644,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/1204644/square.",
+    "observer": "John Barkla",
+    "license": "cc-by",
+    "attribution": "(c) John Barkla, some rights reserved (CC BY), uploaded by John Barkla",
+    "color": "#58503e"
+  },
+  "jacobaea-vulgaris": {
+    "taxonId": 62498,
+    "photoId": 48560335,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/48560335/square.jpg",
+    "observer": "Arne Åsnes",
+    "license": "cc-by-nc",
+    "attribution": "(c) Arne Åsnes, some rights reserved (CC BY-NC), uploaded by Arne Åsnes",
+    "color": "#777632"
+  },
+  "lonicera-morrowii": {
+    "taxonId": 59773,
+    "photoId": 334855,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/334855/square.JPG",
+    "observer": "Fluff Berger",
+    "license": "cc-by-sa",
+    "attribution": "(c) Fluff Berger, some rights reserved (CC BY-SA), uploaded by Fluff Berger",
+    "color": "#747e51"
+  },
+  "ludwigia-peruviana": {
+    "taxonId": 50338,
+    "photoId": 155924185,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/155924185/square.jpeg",
+    "observer": "mfeaver",
+    "license": "cc-by",
+    "attribution": "(c) mfeaver, some rights reserved (CC BY), uploaded by mfeaver",
+    "color": "#7e730a"
+  },
+  "lythrum-salicaria": {
+    "taxonId": 61321,
+    "photoId": 713413897,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/713413897/square.jpg",
+    "observer": "Nika Martynova",
+    "license": "cc-by-nc",
+    "attribution": "(c) Nika Martynova, some rights reserved (CC BY-NC), uploaded by Nika Martynova",
+    "color": "#78685f"
+  },
+  "nephrolepis-cordifolia": {
+    "taxonId": 48233,
+    "photoId": 260680022,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/260680022/square.jpeg",
+    "observer": "cyunf",
+    "license": "cc-by-nc",
+    "attribution": "(c) cyunf, some rights reserved (CC BY-NC), uploaded by cyunf",
+    "color": "#64673f"
+  },
+  "oncosiphon-pilulifer": {
+    "taxonId": 78258,
+    "photoId": 71346367,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/71346367/square.jpeg",
+    "observer": "Andy Bridges",
+    "license": "cc-by-nc",
+    "attribution": "(c) Andy Bridges, some rights reserved (CC BY-NC), uploaded by Andy Bridges",
+    "color": "#878137"
+  },
+  "oxalis-pes-caprae": {
+    "taxonId": 53169,
+    "photoId": 454705867,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/454705867/square.jpg",
+    "observer": "portioid",
+    "license": "cc-by",
+    "attribution": "(c) portioid, some rights reserved (CC BY), uploaded by portioid",
+    "color": "#494e04"
+  },
+  "phytolacca-americana": {
+    "taxonId": 48599,
+    "photoId": 164206478,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/164206478/square.jpeg",
+    "observer": "Craig K. Hunt",
+    "license": "cc-by-nc",
+    "attribution": "(c) Craig K. Hunt, some rights reserved (CC BY-NC), uploaded by Craig K. Hunt",
+    "color": "#968b45"
+  },
+  "prunus-laurocerasus": {
+    "taxonId": 61432,
+    "photoId": 146285013,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/146285013/square.jpg",
+    "observer": "edgeplot",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) edgeplot, some rights reserved (CC BY-NC-SA)",
+    "color": "#53583b"
+  },
+  "reynoutria-japonica": {
+    "taxonId": 914922,
+    "photoId": 74418856,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/74418856/square.jpg",
+    "observer": "AnRo0002",
+    "license": "pd",
+    "attribution": "AnRo0002, no known copyright restrictions (public domain)",
+    "color": "#607983"
+  },
+  "rhododendron-ponticum": {
+    "taxonId": 60364,
+    "photoId": 136245,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/136245/square.jpg",
+    "observer": "103917170835602529469",
+    "license": "cc-by-nc",
+    "attribution": "(c) 103917170835602529469, some rights reserved (CC BY-NC), uploaded by 103917170835602529469",
+    "color": "#65513e"
+  },
+  "robinia-pseudoacacia": {
+    "taxonId": 56088,
+    "photoId": 37431398,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/37431398/square.jpeg",
+    "observer": "Eric Koberle",
+    "license": "cc-by-nc",
+    "attribution": "(c) Eric Koberle, some rights reserved (CC BY-NC), uploaded by Eric Koberle",
+    "color": "#526338"
+  },
+  "rubus-armeniacus": {
+    "taxonId": 61317,
+    "photoId": 174566736,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/174566736/square.jpeg",
+    "observer": "Brian Finzel",
+    "license": "cc-by-sa",
+    "attribution": "(c) Brian Finzel, some rights reserved (CC BY-SA), uploaded by Brian Finzel",
+    "color": "#4e4c42"
+  },
+  "schinus-terebinthifolia": {
+    "taxonId": 130872,
+    "photoId": 57240422,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/57240422/square.jpg",
+    "observer": "Mary Keim",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) Mary Keim, some rights reserved (CC BY-NC-SA)",
+    "color": "#807749"
+  },
+  "securigera-varia": {
+    "taxonId": 127186,
+    "photoId": 81152446,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/81152446/square.jpg",
+    "observer": "tomandcathybishop",
+    "license": "cc-by-nc",
+    "attribution": "(c) tomandcathybishop, some rights reserved (CC BY-NC)",
+    "color": "#6c7c62"
+  },
+  "senecio-inaequidens": {
+    "taxonId": 55607,
+    "photoId": 44550290,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/44550290/square.jpg",
+    "observer": "Thorsten Usée",
+    "license": "cc-by-nc",
+    "attribution": "(c) Thorsten Usée, some rights reserved (CC BY-NC), uploaded by Thorsten Usée",
+    "color": "#4e6c42"
+  },
+  "spartium-junceum": {
+    "taxonId": 47406,
+    "photoId": 158311409,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/158311409/square.jpg",
+    "observer": "Amelia Tauber",
+    "license": "cc-by",
+    "attribution": "(c) Amelia Tauber, some rights reserved (CC BY), uploaded by Amelia Tauber",
+    "color": "#8c858b"
+  },
+  "urena-lobata": {
+    "taxonId": 127638,
+    "photoId": 642852036,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/642852036/square.jpg",
+    "observer": "藜梓柠",
+    "license": "cc-by-nc",
+    "attribution": "(c) 藜梓柠, some rights reserved (CC BY-NC), uploaded by 藜梓柠",
+    "color": "#4c4b48"
+  }
+}

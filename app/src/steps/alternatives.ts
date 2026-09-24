@@ -40,6 +40,7 @@ import { alternativePhotoFor, inatTaxonIdFor } from "../lib/hero-photo";
 import type { Ornamental, AlternativeLink, SwapAxis } from "../types";
 import { t, tn, tx, fmtNumber } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
+import { wantedLine } from "../components/wanted-line";
 import { alternativeBlurb, alternativeOrigin, alternativeRole, alternativeWhy, alternativeEdges, alternativesUntranslated } from "../lib/prose";
 import { reportUntranslated } from "../components/wip-banner";
 
@@ -258,6 +259,8 @@ export async function renderAlternative(main: HTMLElement, param?: string): Prom
         alternativeOrigin(ornamental),
       ]),
       el("p", {}, alternativeBlurb(ornamental)),
+      // Where it's one of a region's worst invasives, say how high it ranks.
+      wantedLine(ornamental.latin),
       // Where it's a native of its own somewhere we cover (English ivy in
       // Atlantic France), say so and link to the page that recommends it —
       // "not from here" is a fact about a place, not a character judgement.

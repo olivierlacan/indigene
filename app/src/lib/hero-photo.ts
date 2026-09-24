@@ -50,6 +50,7 @@ import WILDLIFE_PICKS from "../data/wildlife-photos.json";
 import TAXON_PHOTOS from "../data/inat-heroes.json";
 import LOOKALIKE_PHOTOS from "../data/inat-lookalikes.json";
 import ALTERNATIVE_PHOTOS from "../data/inat-alternatives.json";
+import INVASIVE_PHOTOS from "../data/inat-invasives.json";
 import type { ObservationSummary } from "./inaturalist";
 
 /** One chosen photograph, as `hero-photos.json` stores it — the shape the
@@ -104,6 +105,7 @@ const wildlifePicks = WILDLIFE_PICKS as PickTable;
 const taxonPhotos = TAXON_PHOTOS as Record<string, TaxonPhoto>;
 const lookalikePhotos = LOOKALIKE_PHOTOS as Record<string, TaxonPhoto>;
 const alternativePhotos = ALTERNATIVE_PHOTOS as Record<string, TaxonPhoto>;
+const invasivePhotos = INVASIVE_PHOTOS as Record<string, TaxonPhoto>;
 
 /** iNaturalist serves every rendition at the same address with the size
  *  swapped, which is what lets the stored record carry one URL. */
@@ -183,9 +185,19 @@ export function lookalikePhotoFor(lookalikeId: string): HeroPhoto | undefined {
  * one was stored. Same table as the photograph, so there is nothing new to keep
  * in step: the id that chose the picture is the id the link uses.
  */
-export function inatTaxonIdFor(kind: "lookalike" | "ornamental", id: string): number | undefined {
-  const row = (kind === "lookalike" ? lookalikePhotos : alternativePhotos)[id];
-  return row?.taxonId || undefined;
+export function inatTaxonIdFor(kind: "lookalike" | "ornamental" | "invasive", id: string): number | undefined {
+  const table = { lookalike: lookalikePhotos, ornamental: alternativePhotos, invasive: invasivePhotos }[kind];
+  return table[id]?.taxonId || undefined;
+}
+
+/**
+ * The photograph of a most-wanted invasive — iNaturalist's own, like the
+ * impostors'. Its own file (`inat-invasives.json`) because ivy, holly and broom
+ * are natives on one of our rosters and would collide with the plant table.
+ */
+export function invasivePhotoFor(invasiveId: string): HeroPhoto | undefined {
+  const photo = invasivePhotos[invasiveId];
+  return photo ? asHero(photo) : undefined;
 }
 
 /**

@@ -22,6 +22,7 @@ import { REGISTRY } from "../data/registry";
 import { getWildlife, wildlifeKindRoute, KIND_ORDER, KIND_SLUGS } from "./wildlife";
 import { getLookalike, mappedLookalikeIds } from "./lookalikes";
 import { getOrnamental, mappedOrnamentalIds } from "./alternatives";
+import { mappedInvasiveIds } from "./invasives";
 import { TECHNIQUES, techniqueBySlug } from "./planting";
 import { WILDLIFE } from "../data/wildlife";
 
@@ -50,6 +51,7 @@ export const APP_STEPS = [
   "wildlife",
   "lookalikes",
   "alternatives",
+  "invasives",
   "planting",
   "privacy",
   "sources",
@@ -82,6 +84,7 @@ export const PARAM_STEPS = new Set<string>([
   "wildlife",
   "lookalikes",
   "alternatives",
+  "invasives",
   "planting",
   "settings",
   "privacy",
@@ -96,6 +99,7 @@ export const SHAREABLE_INDEXES: readonly string[] = [
   "wildlife",
   "lookalikes",
   "alternatives",
+  "invasives",
   "planting",
   "privacy",
   "sources",
@@ -177,6 +181,8 @@ export function canonicalPath(step: string, param?: string): string | null {
       return getLookalike(param) ? at(param) : null;
     case "alternatives":
       return getOrnamental(param) ? at(param) : null;
+    case "invasives":
+      return mappedInvasiveIds().has(param) ? at(param) : null;
     // One propagation technique's how-to and its window in the year.
     case "planting":
       return techniqueBySlug(param) ? at(param) : null;
@@ -270,6 +276,7 @@ export function shareablePaths(): string[] {
   for (const kind of KIND_ORDER) paths.push(`wildlife/${KIND_SLUGS[kind]}`);
   for (const id of mappedLookalikeIds()) paths.push(`lookalikes/${id}`);
   for (const id of mappedOrnamentalIds()) paths.push(`alternatives/${id}`);
+  for (const id of mappedInvasiveIds()) paths.push(`invasives/${id}`);
   for (const tech of TECHNIQUES) paths.push(`planting/${tech.slug}`);
   return paths;
 }

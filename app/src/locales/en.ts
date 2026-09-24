@@ -852,6 +852,7 @@ export const en = {
   "wip.rosterAll.other": "These {n} descriptions are still in English — we're translating region by region.",
   "wip.wildlife": "The animal descriptions are still in English — we're translating region by region.",
   "wip.alternatives": "The swap descriptions are still in English — we're translating them.",
+  "wip.invasives": "How to spot this plant is still in English — we're translating it.",
 
   // The size drawing.
   "sizeViz.you": "You",
@@ -1256,6 +1257,8 @@ export const en = {
   "lookalike.listedRegulation": "{by} lists it {as}. {means}",
   "lookalike.means.waClassA":
     "Still rare enough here that the state requires every plant found to be destroyed, and bans its sale.",
+  "lookalike.means.waClassB":
+    "That class means it's common in parts of the state: control is required where it's still rare, and left to each county elsewhere.",
   "lookalike.means.waClassC":
     "That class isn't a verdict on how bad it is — it means the plant is already everywhere, so the state leaves control to each county instead of requiring it.",
   "lookalike.unassessed":
@@ -1279,6 +1282,7 @@ export const en = {
   "plants.lookalikesLinkText": "see the look-alikes we've written up",
   "plants.plantingLink": "Already have one, and want another? There are fifteen ways to make more of a plant, each with its own season — {link}.",
   "plants.plantingLinkText": "see when and how",
+  "steps.invasives": "Most-wanted invasives",
   "steps.lookalikes": "Look-alikes",
   "lookalikes.indexTitle": "Plants that get mistaken for natives",
   "lookalikes.indexDocTitle": "Look-alikes — plants mistaken for natives — Indigene",
@@ -2037,6 +2041,48 @@ export const en = {
   "nearby.nativeToOther": "native to another region",
   "nearby.nativeElsewhere":
     "Our data lists {name} as {belongs}, not {region}. It may turn up on iNaturalist there as a planted or escaped specimen, but we won't showcase it as a local native where it doesn't belong — that's the opposite of what Indigene is for.",
+  // ---------------------------------------------------------------------
+  // Most-wanted invasives: the ranked list on a region's page.
+  // ---------------------------------------------------------------------
+  "wanted.title": "Most-wanted invasives",
+  "wanted.lede":
+    "The invasive plants to pull first here: ranked by how hard each one pushes, then by how often it's been recorded wild. Tap one to learn to spot it.",
+  "wanted.ledeUnrated":
+    "The invasive plants recorded most often here. Nobody has rated how hard each one pushes on this ground, so they're ranked by sightings alone. Tap one to learn to spot it.",
+  "wanted.rankAria": "Number {n}",
+  "wanted.sightings": "{n} wild sightings on iNaturalist in this region's box",
+  "wanted.countsNote":
+    "Sightings are wild records on iNaturalist inside this region's box, counted {date}. They measure where people have looked as well as where the plant grows.",
+  "wanted.growInstead": "What to grow instead",
+  "wanted.indexDocTitle": "Most-wanted invasives — Indigene",
+  "wanted.docTitle": "{name} — most-wanted invasive — Indigene",
+  "wanted.indexLede": "Each region's five invasive plants to pull first. Open one to learn to spot it.",
+  "wanted.unratedShort": "Nobody has rated these here, so they're ranked by sightings alone.",
+  "wanted.backToIndex": "← All most-wanted invasives",
+  "wanted.howToSpot": "How to spot it",
+  "wanted.howToRemove": "How to get rid of it",
+  "wanted.afterwards": "Afterwards: ",
+  "wanted.method.pull": "Pull",
+  "wanted.method.dig": "Dig",
+  "wanted.method.cut": "Cut",
+  "wanted.method.girdle": "Ring the bark",
+  "wanted.method.cover": "Cover",
+  "wanted.method.bag": "Bag",
+  "wanted.method.repeat": "Come back",
+  "wanted.method.timing": "Timing",
+  "wanted.method.gear": "Protect yourself",
+  "wanted.method.avoid": "Don't",
+  "wanted.method.pro": "Get help",
+  "wanted.method.replant": "Replant",
+  "wanted.method.water": "Near water",
+  "wanted.whereWanted": "Where it's most wanted",
+  "wanted.photosTitle": "See it in the wild",
+  "wanted.photosLede": "Verified iNaturalist photos from a region where it's wanted.",
+  "wanted.tellApart": "What it's mistaken for",
+  "wanted.noPhotos": "No verified photos from this region on iNaturalist yet.",
+  "wanted.onLists": "Most wanted: {places}",
+  "wanted.placeLink": "{region} (#{n})",
+
   "wlNearby.seeItNear": "See it near you",
   "wlNearby.seeItNearLede":
     "Community-verified iNaturalist photos, near a place you pick.",

@@ -49,7 +49,7 @@
 //
 // Callers that don't know their region (there are none today) simply get the
 // plain key, which is a real translation of a real row — not a blank.
-import type { AlternativeLink, Lookalike, LookalikeLink, Ornamental, Plant, SupportLink, SwapEdge, TellApart, Wildlife } from "../types";
+import type { AlternativeLink, Invasive, InvasiveMark, InvasiveRemoval, Lookalike, LookalikeLink, Ornamental, Plant, SupportLink, SwapEdge, TellApart, Wildlife } from "../types";
 import { getLang } from "./i18n";
 
 /** The prose fields on a plant row that a locale may override. */
@@ -89,6 +89,11 @@ export interface TaxonProse {
   /** Alternative ties, keyed by the *native* plant's id — one ornamental's
    *  swaps live together, the same shape as `lookalikeNotes`. */
   alternativeNotes?: Record<string, { why?: string; edges?: SwapEdge[] }>;
+  /** Most-wanted invasives only: how to know the plant (`Invasive.marks`).
+   *  One list per taxon, whatever region it's wanted in. */
+  marks?: InvasiveMark[];
+  /** Most-wanted invasives only: how to get rid of it (`Invasive.removal`). */
+  removal?: { steps: string[]; dispose: string };
 }
 
 export type ProseTable = Record<string, TaxonProse>;
@@ -279,6 +284,37 @@ export function lookalikesUntranslated(
       tie?.why === undefined ||
       tie?.tells?.length !== link.tells.length
     );
+  });
+}
+
+// ---- Most-wanted invasives ----
+
+/** How to know it, in the reader's language — all three marks or none, the
+ *  same rule the tells follow. */
+export function invasiveMarks(inv: Invasive): InvasiveMark[] {
+  const translated = entry(inv.latin)?.marks;
+  return translated?.length === inv.marks.length ? translated : inv.marks;
+}
+
+/** How to get rid of it, in the reader's language — every step or none. */
+export function invasiveRemoval(inv: Invasive): Pick<InvasiveRemoval, "steps" | "dispose"> {
+  const translated = entry(inv.latin)?.removal;
+  // The translation carries the words; which kind of step each is comes from
+  // the data, by position, so the icons can't drift between languages.
+  return translated?.steps.length === inv.removal.steps.length && translated.dispose
+    ? {
+        steps: inv.removal.steps.map((step, i) => ({ method: step.method, text: translated.steps[i] })),
+        dispose: translated.dispose,
+      }
+    : inv.removal;
+}
+
+/** Is any of these plants' writing still in the authored English? */
+export function invasivesUntranslated(invasives: Invasive[]): boolean {
+  if (getLang() === "en") return false;
+  return invasives.some((inv) => {
+    const e = entry(inv.latin);
+    return e?.marks?.length !== inv.marks.length || e?.removal?.steps.length !== inv.removal.steps.length;
   });
 }
 

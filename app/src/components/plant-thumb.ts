@@ -25,6 +25,7 @@ import {
   heroPhotoFor,
   lookalikePhotoFor,
   alternativePhotoFor,
+  invasivePhotoFor,
   asObservation,
   type HeroPhoto,
 } from "../lib/hero-photo";
@@ -98,6 +99,16 @@ export function alternativeThumb(
   opts: { attrs?: Record<string, string> } = {},
 ): HTMLElement {
   const pick = budget() === "essential" ? undefined : alternativePhotoFor(ornamentalId);
+  return thumb(form, pick, opts);
+}
+
+/** The same slot for a most-wanted invasive, on a region's list. */
+export function invasiveThumb(
+  invasiveId: string,
+  form: PlantForm,
+  opts: { attrs?: Record<string, string> } = {},
+): HTMLElement {
+  const pick = budget() === "essential" ? undefined : invasivePhotoFor(invasiveId);
   return thumb(form, pick, opts);
 }
 

@@ -5466,3 +5466,127 @@ body[data-layout="profile"] .wip-banner-text {
 .crops-page .counter > ol > li {
   margin: 0.65rem 0;
 }
+
+/* --- Most-wanted invasives ---------------------------------------------------
+   A ranked list of rows, each a link to the plant's own page — no folding (see
+   "No folding boxes" in CLAUDE.md). The name's link is stretched over the whole
+   row, the look-alike cards' trick, so the pressure badge can stay a button of
+   its own above it. */
+.wanted-list {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+.wanted-row {
+  position: relative;
+  margin: 0;
+  padding: 0.6rem 0.8rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+.wanted-row:hover {
+  border-color: var(--line-strong);
+}
+.wanted-row .plant-photo {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+.wanted-name {
+  margin: 0;
+  font-size: 1rem;
+}
+.wanted-name a {
+  color: inherit;
+  text-decoration: none;
+}
+.wanted-name a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+}
+.wanted-row .badge {
+  position: relative;
+  z-index: 1;
+}
+/* The rank is the list's whole point, so it reads as a number first — a small
+   filled disc in the caution colour the "Takes over" badge wears. */
+.wanted-rank {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 999px;
+  background: var(--danger-bg);
+  color: var(--danger-ink);
+  font-weight: 750;
+  font-size: 0.95rem;
+}
+.wanted-names {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.wanted-sub {
+  font-size: 0.85rem;
+}
+.wanted-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.2rem 0.6rem;
+  margin-top: 0.25rem;
+}
+.wanted-meta .card-stats {
+  padding-top: 0;
+  margin: 0;
+}
+.wanted-marks {
+  margin: 0.2rem 0 0.6rem;
+}
+.wanted-marks dt {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: 0.45rem;
+}
+.wanted-marks dd {
+  margin: 0.05rem 0 0;
+}
+/* The invasive profile's marks and removal steps, inside a card that pads
+   nothing itself — the same 1rem gutter its paragraphs get. */
+.wanted-profile-body {
+  padding: 0 1rem;
+}
+/* Each removal step leads with its method's icon instead of a number, like a
+   propagation technique's card; the disposal line wears the bin to match. Kept
+   small and a touch faded so the words still lead. */
+.wanted-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.wanted-steps li,
+.wanted-dispose {
+  display: flex;
+  gap: 0.55rem;
+  align-items: baseline;
+}
+.wanted-steps li + li {
+  margin-top: 0.4rem;
+}
+.wanted-dispose {
+  margin: 0.55rem 0 0;
+}
+.step-icon {
+  flex: none;
+  width: 1.3em;
+  text-align: center;
+  font-size: 0.95em;
+  opacity: 0.85;
+}
+.wanted-links {
+  margin: 0 0 0.6rem;
+}

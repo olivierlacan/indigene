@@ -73,6 +73,7 @@ const { REGIONS: REGIONS_RAW } = await loader.load("/src/data/regions.ts");
 const REGIONS = await withSeeds(REGIONS_RAW);
 const { WILDLIFE } = await loader.load("/src/data/wildlife.ts");
 const { LOOKALIKES } = await loader.load("/src/data/lookalikes.ts");
+const { INVASIVES } = await loader.load("/src/data/invasives.ts");
 
 /** Every scientific name the app shows, deduped — plants, animals, impostors.
  *  The look-alikes count: they are named on a plant's page exactly as the plant
@@ -90,6 +91,10 @@ function allTaxa() {
   }
   for (const l of LOOKALIKES ?? []) {
     if (!seen.has(l.latin)) seen.set(l.latin, { latin: l.latin, kind: "lookalike", common: l.common });
+  }
+  // The most-wanted invasives are named on a region's page the same way.
+  for (const i of INVASIVES ?? []) {
+    if (!seen.has(i.latin)) seen.set(i.latin, { latin: i.latin, kind: "invasive", common: i.common });
   }
   return [...seen.values()].filter((t) => !onlyName || t.latin === onlyName);
 }

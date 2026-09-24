@@ -65,6 +65,7 @@ const FILES = [
   { path: resolve(HERE, "../src/data/inat-heroes.json"), shape: "plain" },
   { path: resolve(HERE, "../src/data/inat-lookalikes.json"), shape: "plain" },
   { path: resolve(HERE, "../src/data/inat-alternatives.json"), shape: "plain" },
+  { path: resolve(HERE, "../src/data/inat-invasives.json"), shape: "plain" },
 ];
 
 /** Analysis raster. Averaging 16×16 downscaled pixels rather than asking the

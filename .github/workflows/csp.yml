@@ -1,0 +1,58 @@
+# Checks that the Content-Security-Policy lets the app do everything it does,
+# and nothing else.
+#
+# The policy (app/src/lib/csp.ts) is the browser-enforced form of the Privacy
+# page's list of services: any host not on it is refused. Getting it wrong
+# fails silently for readers — a lookup just stops working — and nothing short
+# of loading the pages shows it. So this builds the app, walks it in a browser
+# (the main pages, a spot found by GPS in the US and in France, a town search),
+# and fails on any refusal.
+#
+# `npm run csp:check` is the same command locally, after `npm run build`.
+name: Content-Security-Policy
+
+on:
+  pull_request:
+    paths:
+      - "app/src/**"
+      - "app/index.html"
+      - "app/public/**"
+      - "app/vite.config.ts"
+      - "app/scripts/prerender.mjs"
+      - "app/scripts/check-csp.mjs"
+      - "app/package.json"
+      - ".github/workflows/csp.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Nothing refused
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      - name: Install Chromium
+        working-directory: app
+        run: npx playwright install --with-deps chromium
+
+      - name: Build
+        working-directory: app
+        env:
+          BASE_PATH: /
+        run: npm run build
+
+      - name: Walk the app under its policy
+        working-directory: app
+        run: npm run csp:check

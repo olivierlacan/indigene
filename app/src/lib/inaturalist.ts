@@ -297,6 +297,21 @@ function pointOf(raw: any): { lat: number; lon: number } | null {
   return null;
 }
 
+/** Where iNaturalist keeps photos (the same two hosts `public/sw.js` caches and
+ *  `lib/csp.ts` allows). A photo address anywhere else is refused here, before
+ *  it can become an `<img>`: a response is someone else's data, and an image
+ *  from a host of their choosing is a request to that host from this reader. */
+const PHOTO_HOSTS = new Set(["inaturalist-open-data.s3.amazonaws.com", "static.inaturalist.org"]);
+
+function isPhotoUrl(url: string): boolean {
+  try {
+    const u = new URL(url);
+    return u.protocol === "https:" && PHOTO_HOSTS.has(u.hostname);
+  } catch {
+    return false;
+  }
+}
+
 function trimPhotos(raw: any): ObservationPhoto[] {
   const photos: any[] = Array.isArray(raw?.photos) ? raw.photos : [];
   const out: ObservationPhoto[] = [];
@@ -305,6 +320,7 @@ function trimPhotos(raw: any): ObservationPhoto[] {
     const url = str(p?.url);
     const license = str(p?.license_code); // null ⇒ "all rights reserved"
     if (id == null || !url || !license) continue; // keep only reusable photos
+    if (!isPhotoUrl(url)) continue;
     out.push({
       id,
       thumbUrl: photoUrlForSize(url, "square"),

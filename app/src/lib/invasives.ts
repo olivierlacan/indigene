@@ -105,6 +105,30 @@ export function mostWanted(regionId: string): WantedRow[] {
   return rows;
 }
 
+/**
+ * One region's list as a page of its own: `/invasives/in/<region>`. The
+ * address somebody sends when the answer to "what should I be pulling round
+ * here?" is five plants — so it has a file and a share card of its own, unlike
+ * the look-alikes' `in/<region>`, which is only a filter on an index.
+ */
+export const WANTED_REGION_PREFIX = "in/";
+
+/** The region ids with a most-wanted list, in the order they were authored. */
+export function wantedRegionIds(): string[] {
+  return Object.keys(MOST_WANTED).filter((id) => MOST_WANTED[id].length > 0);
+}
+
+/** The region an `invasives/in/<id>` param names, or null when it names none
+ *  with a list. */
+export function wantedRegionParam(param: string | undefined): string | null {
+  if (!param?.startsWith(WANTED_REGION_PREFIX)) return null;
+  const id = param.slice(WANTED_REGION_PREFIX.length);
+  return MOST_WANTED[id]?.length ? id : null;
+}
+
+/** The in-app link to one region's list. */
+export const wantedRegionHref = (regionId: string): string => `#/invasives/${WANTED_REGION_PREFIX}${regionId}`;
+
 /** Whether any authority rated this region's list — which decides whether the
  *  page can say "ranked by rating, then sightings" or only "by sightings". */
 export function regionIsRated(regionId: string): boolean {

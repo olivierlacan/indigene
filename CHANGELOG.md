@@ -54,6 +54,9 @@ subtitle on the What's new page.
   `probe:resolve`. `npm run resolve:fetch` downloads RESOLVE's shapefile once
   and writes simplified GeoJSON (git-ignored) plus a committed `index.json`;
   `maps:build` traces RESOLVE regions from it, and keeps a box's corners sharp.
+- Each region's five most-wanted invasives now have a page of their own, with
+  a preview picture listing all five, so you can send a neighbour one link.
+  https://indigene.app/invasives/in/pnw
 
 ### Changed
 
@@ -75,6 +78,10 @@ subtitle on the What's new page.
   drawn by `maps:build`; `npm run probe:resolve` checks the hosted layer;
   `coverage` measures a southern list's
   bloom against its own spring.
+- Internal: `app/package-lock.json` now matches `package.json`'s version.
+- The list of services on the [Privacy page](https://indigene.app/privacy) is now enforced, not just promised: your browser refuses any lookup to an address that isn't on it. Two missing entries join it: the services naming your region in Europe and south of the equator.
+- Internal: a Content-Security-Policy `<meta>` built from `src/lib/csp.ts` is stamped into every app page and 404.html at build time, with inline-script hashes computed from the built HTML. `npm run csp:check` walks the built app in Chromium (GPS in the US, France and Sydney, town search, iNaturalist sightings, the page count) and fails on any refusal; a new `Content-Security-Policy` workflow runs it on PRs.
+- Internal: `el()` no longer accepts an `html` attribute, so nothing can reach `innerHTML` through it, and iNaturalist photo URLs from API responses are dropped unless they're https on iNaturalist's two photo hosts.
 
 ## [0.33] - 2026-09-24
 

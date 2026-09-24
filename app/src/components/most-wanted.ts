@@ -8,7 +8,7 @@
 // boxes" in CLAUDE.md.
 import { el } from "../ui";
 import type { RegionDef } from "../lib/plants";
-import { mostWanted, regionIsRated, sightingsAsOf, type WantedRow } from "../lib/invasives";
+import { mostWanted, regionIsRated, sightingsAsOf, wantedRegionHref, type WantedRow } from "../lib/invasives";
 import { nameLines } from "../lib/names";
 import { t, fmtNumber, fmtDate } from "../lib/i18n";
 import { invasiveThumb } from "./plant-thumb";
@@ -22,7 +22,9 @@ export function mostWantedSection(region: RegionDef): HTMLElement[] {
   if (!rows.length) return [];
   return [
     el("section", { style: "margin-top:1.5rem" }, [
-      sectionHeading("#/invasives", "🚩", t("wanted.title"), fmtNumber(rows.length)),
+      // Opens this region's list on a page of its own — the address with its
+      // own share card, for "here's what to pull round here".
+      sectionHeading(wantedRegionHref(region.meta.id), "🚩", t("wanted.title"), fmtNumber(rows.length)),
       el("p", { class: "obs-section-lede" },
         t(regionIsRated(region.meta.id) ? "wanted.lede" : "wanted.ledeUnrated")),
       wantedList(rows),

@@ -1,5 +1,9 @@
 // Tiny DOM helpers. No framework — just enough sugar to build elements
 // declaratively while keeping full control of the real DOM.
+//
+// Text is only ever text: a string child becomes a text node, never markup.
+// There is deliberately no way to pass HTML through `el()` — a name, a note or
+// an API response can't turn into a script by being displayed.
 
 type Attrs = Record<string, string | number | boolean | EventListener | undefined>;
 type Child = Node | string | null | undefined | false;
@@ -16,8 +20,6 @@ export function el<K extends keyof HTMLElementTagNameMap>(
       node.addEventListener(k.slice(2).toLowerCase(), v as EventListener);
     } else if (k === "class") {
       node.className = String(v);
-    } else if (k === "html") {
-      node.innerHTML = String(v);
     } else if (v === true) {
       node.setAttribute(k, "");
     } else {

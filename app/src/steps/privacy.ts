@@ -50,6 +50,8 @@ const SERVICES: { name: string; forWhat: TKey; sent: TKey }[] = [
   { name: "SoilGrids (ISRIC)", forWhat: "privacy.svc.soil.for", sent: "privacy.svc.soil.sent" },
   { name: "USGS", forWhat: "privacy.svc.usgs.for", sent: "privacy.svc.usgs.sent" },
   { name: "US EPA", forWhat: "privacy.svc.epa.for", sent: "privacy.svc.epa.sent" },
+  { name: "European Environment Agency", forWhat: "privacy.svc.eea.for", sent: "privacy.svc.eea.sent" },
+  { name: "RESOLVE Ecoregions (hosted by Esri)", forWhat: "privacy.svc.resolve.for", sent: "privacy.svc.resolve.sent" },
 ];
 
 /** One "who your browser talks to" row: the service, what it's for, what's sent. */
@@ -87,6 +89,8 @@ export function renderPrivacy(main: HTMLElement, param?: string): void {
       el("h3", { id: "privacy-lookups" }, t("privacy.whereTitle")),
       el("p", {}, t("privacy.whereLede")),
       el("ul", { class: "who-list" }, SERVICES.map((s) => service(s.name, t(s.forWhat), t(s.sent)))),
+      // Not a promise but a rule: `lib/csp.ts` hands the browser this same list.
+      el("p", {}, t("privacy.whereEnforced")),
       el("p", {}, tx("privacy.whereFooter", {
         link: el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, t("privacy.dataSourcesLink")),
       })),

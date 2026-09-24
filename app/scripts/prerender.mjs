@@ -207,6 +207,7 @@ function stripHeadMeta(html) {
     'rel="manifest"',
     'name="theme-color"',
     'name="viewport"',
+    'http-equiv="Content-Security-Policy"',
     '<script type="module"',
     "</head>",
   ];
@@ -286,7 +287,7 @@ async function collectPages(load) {
       load("/src/lib/planting.ts"),
       load("/src/lib/routes.ts"),
     ]);
-  const [{ INVASIVES }, { mappedInvasiveIds }] = await Promise.all([
+  const [{ INVASIVES }, { mappedInvasiveIds, wantedRegionIds, mostWanted }] = await Promise.all([
     load("/src/data/invasives.ts"),
     load("/src/lib/invasives.ts"),
   ]);
@@ -474,6 +475,23 @@ async function collectPages(load) {
     );
   }
 
+  // --- one page per region's most-wanted list ---
+  // The address somebody sends when the question is "what should I be pulling
+  // round here?". Its description names the five, in order.
+  for (const id of wantedRegionIds()) {
+    const region = REGIONS.find((r) => r.meta.id === id);
+    const names = mostWanted(id).map((r, i) => `${i + 1}. ${r.invasive.common}`).join(" · ");
+    add(
+      `invasives/in/${id}`,
+      fill(en["wanted.regionDocTitle"], { region: region.meta.name }),
+      `The invasive plants to pull first here: ${names}.`,
+      {
+        image: invasiveCard(`in-${id}`),
+        imageAlt: `${region.meta.name} — its five most-wanted invasive plants, ranked`,
+      }
+    );
+  }
+
   // --- one page per propagation technique ---
   // Shareable in its own right: "here's how and when to take hardwood cuttings"
   // is a link someone sends a neighbour in January, with no plant attached.
@@ -540,6 +558,11 @@ const loader = await openLoader();
 let pages;
 try {
   pages = await collectPages(loader.load);
+  // 404.html is copied from public/ untouched, so it gets its policy here — the
+  // same one, hashed against its own inline script (src/lib/csp.ts).
+  const { withCsp } = await loader.load("/src/lib/csp.ts");
+  const notFound = join(dist, "404.html");
+  writeFileSync(notFound, await withCsp(readFileSync(notFound, "utf8")));
 } finally {
   await loader.close();
 }

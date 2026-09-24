@@ -1725,6 +1725,12 @@ export const en = {
   "privacy.svc.usgs.sent": "a coordinate",
   "privacy.svc.epa.for": "the name of your ecoregion",
   "privacy.svc.epa.sent": "a coordinate",
+  "privacy.svc.eea.for": "the name of your region of Europe, for spots in Europe",
+  "privacy.svc.eea.sent": "a coordinate",
+  "privacy.svc.resolve.for": "the name of your ecoregion, for spots south of the equator",
+  "privacy.svc.resolve.sent": "a coordinate",
+  "privacy.whereEnforced":
+    "This list isn't just a promise: Indigene tells your browser to refuse lookups to any address not on it.",
   "privacy.whereFooter":
     "These are reputable public institutions — universities, government agencies, and a nonprofit naturalist community — not advertisers. On purpose, none of these lookups need your street address: a town, postal code, or a coarse grid is all the science uses. The full technical list, with links and licences, is in {link}.",
   "privacy.dataSourcesLink": "our public data-sources document",
@@ -2085,6 +2091,8 @@ export const en = {
   "wanted.method.pro": "Get help",
   "wanted.method.replant": "Replant",
   "wanted.method.water": "Near water",
+  "wanted.regionDocTitle": "Most-wanted invasives — {region} — Indigene",
+  "wanted.otherRegions": "Other regions' lists",
   "wanted.whereWanted": "Where it's most wanted",
   "wanted.photosTitle": "See it in the wild",
   "wanted.photosLede": "Verified iNaturalist photos from a region where it's wanted.",

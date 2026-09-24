@@ -37,6 +37,7 @@ const PAGES = [
   { label: "propagation index", path: "/#/planting", max: 0 },
   { label: "most-wanted index", path: "/#/invasives", max: 0, note: "ranked from the tie table and the counts" },
   { label: "most-wanted plant", path: "/#/invasives/reynoutria-japonica", max: 0 },
+  { label: "most-wanted, one region", path: "/#/invasives/in/pnw", max: 0 },
 ];
 
 const prebuilt = "/opt/pw-browsers/chromium";

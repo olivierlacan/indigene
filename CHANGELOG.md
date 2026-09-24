@@ -51,6 +51,16 @@ subtitle on the What's new page.
   got nothing, and silently fell back to the coverage box. `npm run
   selection:check` stands in 18 real places and asserts the region *and* how it
   was decided, because the right region for the wrong reason was the bug.
+- Internal: the app has unit tests now — 52 of them, offline, in about a second
+  (`npm test`, Vitest). They cover the ecoregion parsers, the region-selection
+  rules, the registry resolver, the hemisphere maths and the sentence splitter
+  behind every card.
+- Internal: a Tests workflow runs those and `typecheck` on every pull request,
+  with no path filter. Until now no pull-request job ran `typecheck` at all —
+  the two that build are path-filtered, so a change to `src/lib/` alone could
+  merge without the compiler seeing it.
+- Internal: `docs/ecoregion-plan.md` asked for two of these tests under
+  "Testing" and they were never written. They are now, and the plan says so.
 - Internal: the roll-up that reads Canada's plant database missed a plant's own
   distribution rows, reporting Sitka spruce as not native to British Columbia.
   One shared reader now serves both scripts; BC's catalog count goes 108 → 130.

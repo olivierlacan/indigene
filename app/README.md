@@ -21,7 +21,21 @@ npm run dev        # http://localhost:5173
 npm run build      # → dist/ (static, deployable anywhere)
 npm run preview    # serve the production build (service worker active)
 npm run typecheck
+npm test           # unit tests (offline, ~1s); `npm run test:watch` while editing
 ```
+
+**Two kinds of check, and the difference matters.** `npm test` covers the logic
+that needs nothing — the ecoregion parsers, the region-selection rules, the
+resolver, the sentence splitter behind every card. It is offline and runs on
+every pull request.
+
+Everything else is a *check script* — `registry:check`, `native:check`,
+`names:check`, `selection:check` and the rest — which asks a real service a real
+question, because most of what can go wrong in a native-plant app is a fact
+going stale rather than a function going wrong. A plant's native status changes;
+a service renames a field. No unit test catches that, and mocking the service
+would only prove the mock still matches the code. Those need the open internet
+and are run deliberately.
 
 Camera + compass features need **HTTPS** and a **real device** (iOS gates the
 motion sensor behind `DeviceOrientationEvent.requestPermission()`). Everything

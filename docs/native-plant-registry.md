@@ -51,7 +51,8 @@ accepted name can be updated, not a string that pretends never to move.
 | `app/src/lib/registry-core.ts` | Pure logic (index, `resolveName`, `deepLinks`, `auditRegistry`) — data-free, runs in browser and Node. |
 | `app/src/lib/registry.ts` | The core bound to the bundled data (`resolve()`, `entryForPlant()`), plus a DEV audit. Import this in the app. |
 | `app/scripts/build-registry.mjs` | Generator: catalog → `registry.ts` + the JSON. |
-| `app/scripts/check-registry.mjs` | Runnable audit (no test runner, like `check-availability.mjs`). |
+| `app/scripts/check-registry.mjs` | Runnable audit over the real registry, like `check-availability.mjs`. |
+| `app/src/lib/registry-core.test.ts` | Unit tests for the pure half — the resolver's refusals and the deep links. |
 | `app/scripts/reconcile.mjs` | Resolve external ids (Wikidata + GBIF) → `registry.overrides.json`. Needs network. |
 | `.github/workflows/reconcile.yml` | Runs the reconcile in CI (open internet) and opens a PR with the result. |
 

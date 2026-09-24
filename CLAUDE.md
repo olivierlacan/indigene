@@ -303,6 +303,41 @@ Preview the page locally with `npm run release-notes` (writes
 `app/dist/release-notes/index.html`); the script fails loudly if the changelog
 doesn't parse, and the same check runs on every PR.
 
+## Two kinds of check, and knowing which one you need
+
+There is a test runner now (`npm test`, Vitest, offline, about a second) and
+there are the check scripts (`registry:check`, `native:check`, `names:check`,
+`selection:check`, `vascan:check`, …). They answer different questions and are
+not interchangeable.
+
+**A unit test is for logic that can be wrong on inputs nobody tried.** The
+ecoregion parsers, the region-selection rules, `lead()`, the resolver's
+refusals. These are pure, they are fast, and they run on every pull request
+(`.github/workflows/tests.yml`, deliberately with no `paths:` filter — a shared
+helper breaks a caller three directories away, and that is exactly the failure
+a filter hides).
+
+**A check script is for a fact that can go stale.** Whether a plant is still
+native in Ireland, whether Tela Botanica still backs a French name, whether the
+EPA still calls Portland ecoregion 3. These need the open internet, and that is
+the point: mocking the service would only prove the mock still matches the code.
+
+So when you add something, ask which failure you are guarding against:
+
+- *"This function could be wrong"* → a unit test, beside the module.
+- *"This claim could stop being true"* → a check script, and a committed
+  snapshot so the next run can say what changed.
+
+When both apply, write both. The cross-border region has `plants.test.ts`
+pinning the rule and `selection:check` standing in eighteen real places asking
+the live services — the rule was right and the *routing* was wrong, and only one
+of the two could have caught it.
+
+**Write the test that can fail.** A passing test proves nothing until you have
+seen it go red: break the line it guards, watch it fail, put the line back. A
+test that passes against broken code is worse than no test, because it spends a
+reviewer's trust.
+
 ## Keep the bundle-size figure honest
 
 Several docs quote the app's gzipped bundle size as a point of pride

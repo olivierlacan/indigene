@@ -2,13 +2,15 @@
   "name": "indigene",
   "version": "0.33.0",
   "private": true,
-  "description": "Native Indigene \u2014 a mobile-first PWA that recommends locally native plants for the exact spot you're standing in.",
+  "description": "Native Indigene — a mobile-first PWA that recommends locally native plants for the exact spot you're standing in.",
   "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build && node scripts/prerender.mjs",
     "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
     "prerender": "node scripts/prerender.mjs",
     "publish:cloudflare": "node scripts/publish.mjs cloudflare",
@@ -56,6 +58,7 @@
   "devDependencies": {
     "playwright": "^1.62.0",
     "typescript": "^5.6.3",
-    "vite": "^5.4.10"
+    "vite": "^5.4.10",
+    "vitest": "^3.2.7"
   }
 }

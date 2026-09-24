@@ -18,6 +18,7 @@ import {
   sightingsAsOf,
   wantedRowsFor,
   REMOVAL_ICONS,
+  MARK_ICONS,
   DISPOSE_ICON,
 } from "../lib/invasives";
 import { getOrnamentalByLatin, mappedOrnamentalIds } from "../lib/alternatives";
@@ -97,7 +98,9 @@ export function renderInvasive(main: HTMLElement, param?: string): void {
       el("div", { class: "wanted-profile-body" }, [
         el("h3", { style: "margin:1rem 0 0" }, t("wanted.howToSpot")),
         el("dl", { class: "wanted-marks" }, invasiveMarks(inv).flatMap((m) => [
-          el("dt", {}, m.feature),
+          // The part's icon, as each removal step wears its method's: the eye
+          // finds "the smell one" or "the berries" before reading a word.
+          el("dt", {}, [el("span", { class: "step-icon", "aria-hidden": "true" }, MARK_ICONS[m.part]), m.feature]),
           el("dd", {}, m.text),
         ])),
         removalSection(inv),

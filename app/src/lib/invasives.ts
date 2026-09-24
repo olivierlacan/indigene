@@ -14,7 +14,7 @@
 // Nothing here downloads a plant list: the region page that shows this already
 // has its own, and the swap and look-alike pages that link back only need the
 // tie table. `npm run chunks:check` keeps it that way.
-import type { Invasive, PressureLevel, RemovalMethod, WantedLink } from "../types";
+import type { Invasive, MarkPart, PressureLevel, RemovalMethod, WantedLink } from "../types";
 import { INVASIVES, MOST_WANTED } from "../data/invasives";
 import COUNTS from "../data/invasive-counts.json";
 import { PRESSURE_RANK, pressureOf } from "./lookalikes";
@@ -42,6 +42,23 @@ export const REMOVAL_ICONS: Record<RemovalMethod, string> = {
   pro: "👷",
   replant: "🌱",
   water: "💧",
+};
+
+/** One picture per part of the plant a recognition mark is about — the same
+ *  idea as `REMOVAL_ICONS`, for "How to spot it". Decorative: the heading's
+ *  own word says the same thing. */
+export const MARK_ICONS: Record<MarkPart, string> = {
+  leaf: "🍃",
+  flower: "🌸",
+  stem: "🎋",
+  thorn: "🌵",
+  fruit: "🫐",
+  root: "🥕",
+  smell: "👃",
+  shape: "📏",
+  where: "📍",
+  when: "📅",
+  wildlife: "🐛",
 };
 
 /** The disposal line's icon — every plant has one, so it isn't a method. */

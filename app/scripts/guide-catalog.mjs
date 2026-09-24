@@ -115,8 +115,8 @@ export const SECTIONS = [
       "On an animal’s page, see the plants that keep it going — and add one to your spot.",
     ],
     note:
-      "A “keystone” plant is one that feeds far more creatures than its " +
-      "neighbours — plant one and you’ve done the work of ten.",
+      "An essential plant (ecologists say “keystone”) feeds far more " +
+      "creatures than its neighbours — plant one and you’ve done the work of ten.",
     visit: [
       { label: "Meet the wildlife", href: `${APP}/wildlife` },
       { label: "Butterflies and moths", href: `${APP}/wildlife/butterflies` },

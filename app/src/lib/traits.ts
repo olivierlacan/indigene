@@ -12,7 +12,7 @@
 import type { Plant } from "../types";
 import type { TKey } from "../locales/en";
 
-export type TraitId = "keystone" | "no-water" | "water-first" | "toxic" | "thorny" | "spreads" | "deer";
+export type TraitId = "essential" | "no-water" | "water-first" | "toxic" | "thorny" | "spreads" | "deer";
 
 export interface Trait {
   id: TraitId;
@@ -33,7 +33,7 @@ export const TRAIT_GROUPS: { title: TKey; traits: Trait[] }[] = [
   {
     title: "traits.group.wildlife",
     traits: [
-      { id: "keystone", tone: "keystone", label: "badge.keystone", meaning: "traits.keystone" },
+      { id: "essential", tone: "keystone", label: "badge.keystone", meaning: "traits.keystone" },
       { id: "deer", tone: "neutral", label: "badge.deerResistant", meaning: "traits.deer" },
     ],
   },
@@ -56,7 +56,7 @@ export function traitById(id: string): Trait | undefined {
 /** The labels this plant wears, in the order they're shown under its name. */
 export function traitsFor(p: Plant): Trait[] {
   const ids: TraitId[] = [];
-  if (p.keystone) ids.push("keystone");
+  if (p.keystone) ids.push("essential");
   ids.push(p.noWaterEstablish ? "no-water" : "water-first");
   if (p.filters.petToxic) ids.push("toxic");
   if (p.filters.thorny) ids.push("thorny");

@@ -8,7 +8,7 @@ import { traitHref, traitsFor, type Trait } from "../lib/traits";
 import type { Plant } from "../types";
 
 export function traitBadge(tr: Trait, link: boolean): HTMLElement {
-  const body = tr.id === "keystone" ? [keystoneIcon(), " " + t(tr.label)] : [t(tr.label)];
+  const body = tr.id === "essential" ? [keystoneIcon(), " " + t(tr.label)] : [t(tr.label)];
   return link
     ? el("a", { class: `badge badge-link ${tr.tone}`, href: traitHref(tr.id) }, body)
     : el("span", { class: `badge ${tr.tone}`, title: t(tr.meaning) }, body);

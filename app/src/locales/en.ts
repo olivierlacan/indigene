@@ -420,12 +420,12 @@ export const en = {
   "explore.byWildlifeSub":
     "start from the monarch, hummingbird, or gopher tortoise you want, and find the plants that support it.",
   "explore.starring": "Starring",
-  "explore.keystoneTitle": "Keystone plant — supports far more wildlife than most",
-  "explore.keystoneLabel": "Keystone plant",
+  "explore.keystoneTitle": "Essential plant — supports far more wildlife than most",
+  "explore.keystoneLabel": "Essential plant",
   "explore.caterpillarSpecies": "{n} caterpillar species",
   "explore.statPlants": "{n} native plants on Indigene's list for {region}",
-  "explore.statKeystone.one": "{n} keystone plant — the ones local food webs lean on hardest",
-  "explore.statKeystone.other": "{n} keystone plants — the ones local food webs lean on hardest",
+  "explore.statKeystone.one": "{n} essential plant — the one local food webs lean on hardest",
+  "explore.statKeystone.other": "{n} essential plants — the ones local food webs lean on hardest",
   "explore.statWildlife": "{n} kinds of wildlife with a documented tie to these plants",
 
   // ---------------------------------------------------------------------
@@ -436,7 +436,7 @@ export const en = {
     "Get your location, then check the map — if the pin isn't where you're really standing, drag or tap to nudge it.",
   "location.whyTitle": "Why does the exact spot matter?",
   "location.why":
-    "“Native” always means native to somewhere. Your coordinates pick which regional plant list applies and pull the soil, climate, and ecoregion records for this exact place — the same species can be a keystone in one region and a stranger in the next.",
+    "“Native” always means native to somewhere. Your coordinates pick which regional plant list applies and pull the soil, climate, and ecoregion records for this exact place — the same species can be essential in one region and a stranger in the next.",
   "location.use": "📍 Use my location",
   "location.update": "📍 Update my location",
   "location.locating": "Locating…",
@@ -930,7 +930,7 @@ export const en = {
   // ---------------------------------------------------------------------
   // Plant card.
   // ---------------------------------------------------------------------
-  "badge.keystone": "Keystone",
+  "badge.keystone": "Essential",
   "badge.noWater": "No watering",
   "badge.needsWater": "Water at first",
   "badge.petToxic": "Toxic",
@@ -946,7 +946,7 @@ export const en = {
   "traits.group.figures": "📊 Figures",
   "traits.noWater": "Expected to settle in and survive on rain alone after planting, in an average year.",
   "traits.needsWater": "Needs watering after planting, until its roots take hold.",
-  "traits.keystone": "Supports far more wildlife than most plants — losing it would unravel the local food web.",
+  "traits.keystone": "Supports far more wildlife than most plants — losing it would unravel the local food web. Ecologists call these keystone plants, after the stone that holds an arch together.",
   "traits.deer": "Deer usually leave it alone. Not a promise: a hungry winter changes what they'll eat.",
   "traits.toxic": "Poisonous if eaten, by people or pets. Plant it where a curious dog or toddler won't graze.",
   "traits.thorny": "Carries thorns, spines or prickles. Keep it back from paths and play areas.",
@@ -1223,12 +1223,11 @@ export const en = {
   "pace.slow": "Slow grower",
   "stat.host.label": "Caterpillars",
   "stat.host.value": "{n} species",
-  "stat.host.subKeystone": "keystone plant",
+  "stat.host.subKeystone": "essential plant",
   "stat.host.subValue": "food-web value",
   "stat.host.explain":
     "How many butterfly and moth species can raise their caterpillars on this plant. Caterpillars are what nearly all baby songbirds are fed, so this is the best single measure of how much life a plant supports — and it's exactly where non-native plants score near zero.",
-  "stat.host.explainKeystone":
-    "This one is a keystone: it hosts far more species than most, and local food webs lean on it.",
+  "stat.host.explainKeystone": "This one is essential: it hosts far more species than most, and local food webs lean on it. Ecologists call it a keystone plant.",
   "stat.host.uncounted": "Not counted",
   "stat.host.uncountedSub": "no source yet",
   "stat.host.explainUncounted":
@@ -1648,10 +1647,9 @@ export const en = {
   "regionStat.wildlife.explain":
     "{n} kinds of butterflies, moths, bees, birds, and mammals with a documented, citable tie to at least one plant on this list — each counted once, whether it's a single species like the monarch or a familiar group like the acorn-caching jays. These are the notable, nameable relationships — the real total is far larger; a single oak feeds more species than anyone could list.",
   "regionStat.wildlife.more": "Browse plants by the wildlife they support →",
-  "regionStat.keystone.label": "Keystone plants",
+  "regionStat.keystone.label": "Essential plants",
   "regionStat.keystone.sub": "food webs lean on these",
-  "regionStat.keystone.explain":
-    "{n} of this region's plants are keystones — like the wedge at the crown of a stone arch, each supports far more wildlife than most, and losing one would unravel a food web far bigger than itself.",
+  "regionStat.keystone.explain": "{n} of this region's plants are essential — each supports far more wildlife than most, and losing one would unravel a food web far bigger than itself. Ecologists call them keystone plants, after the wedge at the crown of a stone arch.",
 
   // ---------------------------------------------------------------------
   // The plants index (#/plants) — every native we know, searchable.

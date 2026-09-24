@@ -431,7 +431,7 @@ async function collectPages(load) {
       fill(en["region.lede"], { reference: region.meta.reference }),
       {
         image: regionCard(region.meta.id),
-        imageAlt: `${region.meta.name} — its map with a few cities to place it, and how many native plants, keystones and animals it lists`,
+        imageAlt: `${region.meta.name} — its map with a few cities to place it, and how many native plants, essential plants and animals it lists`,
       }
     );
   }

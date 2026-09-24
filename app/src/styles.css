@@ -5560,12 +5560,32 @@ body[data-layout="profile"] .wip-banner-text {
 .wanted-profile-body {
   padding: 0 1rem;
 }
+/* Each removal step leads with its method's icon instead of a number, like a
+   propagation technique's card; the disposal line wears the bin to match. Kept
+   small and a touch faded so the words still lead. */
 .wanted-steps {
+  list-style: none;
   margin: 0;
-  padding-left: 1.3rem;
+  padding: 0;
+}
+.wanted-steps li,
+.wanted-dispose {
+  display: flex;
+  gap: 0.55rem;
+  align-items: baseline;
 }
 .wanted-steps li + li {
-  margin-top: 0.35rem;
+  margin-top: 0.4rem;
+}
+.wanted-dispose {
+  margin: 0.55rem 0 0;
+}
+.step-icon {
+  flex: none;
+  width: 1.3em;
+  text-align: center;
+  font-size: 0.95em;
+  opacity: 0.85;
 }
 .wanted-links {
   margin: 0 0 0.6rem;

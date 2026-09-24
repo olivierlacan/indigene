@@ -464,10 +464,36 @@ export interface InvasiveMark {
   text: string;
 }
 
+/**
+ * What a removal step *does*, from a closed vocabulary — so each step can wear
+ * a small icon the way a propagation technique does (`lib/invasives.ts`), and a
+ * page of them can be scanned for "dig" or "don't" without reading every line.
+ */
+export type RemovalMethod =
+  | "pull"
+  | "dig"
+  | "cut"
+  | "girdle"
+  | "cover"
+  | "bag"
+  | "repeat"
+  | "timing"
+  | "gear"
+  | "avoid"
+  | "pro"
+  | "replant"
+  | "water";
+
+/** One step: what kind of work it is, and what to do. */
+export interface RemovalStep {
+  method: RemovalMethod;
+  text: string;
+}
+
 /** How to get rid of it for good, without chemicals. */
 export interface InvasiveRemoval {
   /** What to do, in order — each aimed at what makes it come back. Three at most. */
-  steps: string[];
+  steps: RemovalStep[];
   /** What to do with what you pulled, so it doesn't start again elsewhere. */
   dispose: string;
   /** A dependable, citable source for the method. */

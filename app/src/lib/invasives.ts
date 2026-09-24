@@ -14,13 +14,38 @@
 // Nothing here downloads a plant list: the region page that shows this already
 // has its own, and the swap and look-alike pages that link back only need the
 // tie table. `npm run chunks:check` keeps it that way.
-import type { Invasive, PressureLevel, WantedLink } from "../types";
+import type { Invasive, PressureLevel, RemovalMethod, WantedLink } from "../types";
 import { INVASIVES, MOST_WANTED } from "../data/invasives";
 import COUNTS from "../data/invasive-counts.json";
 import { PRESSURE_RANK, pressureOf } from "./lookalikes";
 
 const invasiveById = new Map(INVASIVES.map((i) => [i.id, i]));
 const counts = COUNTS.counts as Record<string, Record<string, number>>;
+
+/**
+ * One small picture per kind of removal step, the way each propagation
+ * technique has one (`TECHNIQUES` in `lib/planting.ts`). Decorative: the step's
+ * words carry the meaning, and the method's name is the icon's tooltip. A
+ * `Record` over the union, so a new method can't ship without its icon.
+ */
+export const REMOVAL_ICONS: Record<RemovalMethod, string> = {
+  pull: "✋",
+  dig: "⛏️",
+  cut: "✂️",
+  girdle: "🪓",
+  cover: "📦",
+  bag: "🛍️",
+  repeat: "🔁",
+  timing: "📅",
+  gear: "🧤",
+  avoid: "🚫",
+  pro: "👷",
+  replant: "🌱",
+  water: "💧",
+};
+
+/** The disposal line's icon — every plant has one, so it isn't a method. */
+export const DISPOSE_ICON = "🗑️";
 
 /** The day the sighting counts were taken, `YYYY-MM-DD`. */
 export const sightingsAsOf: string = COUNTS.asOf;

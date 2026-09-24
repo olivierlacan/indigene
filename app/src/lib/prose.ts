@@ -93,7 +93,7 @@ export interface TaxonProse {
    *  One list per taxon, whatever region it's wanted in. */
   marks?: InvasiveMark[];
   /** Most-wanted invasives only: how to get rid of it (`Invasive.removal`). */
-  removal?: Pick<InvasiveRemoval, "steps" | "dispose">;
+  removal?: { steps: string[]; dispose: string };
 }
 
 export type ProseTable = Record<string, TaxonProse>;
@@ -299,8 +299,13 @@ export function invasiveMarks(inv: Invasive): InvasiveMark[] {
 /** How to get rid of it, in the reader's language — every step or none. */
 export function invasiveRemoval(inv: Invasive): Pick<InvasiveRemoval, "steps" | "dispose"> {
   const translated = entry(inv.latin)?.removal;
+  // The translation carries the words; which kind of step each is comes from
+  // the data, by position, so the icons can't drift between languages.
   return translated?.steps.length === inv.removal.steps.length && translated.dispose
-    ? translated
+    ? {
+        steps: inv.removal.steps.map((step, i) => ({ method: step.method, text: translated.steps[i] })),
+        dispose: translated.dispose,
+      }
     : inv.removal;
 }
 

@@ -65,9 +65,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull seedlings when the soil is moist, with the whole root: a root piece left behind resprouts.",
-        "Don't fell a big tree — it answers with a thicket of root suckers. Cut a ring through the bark all round, leaving a thin strip the first year, and close the ring the next.",
-        "Pull every sucker as it appears, for several years.",
+        { method: "pull", text: "Pull seedlings when the soil is moist, with the whole root: a root piece left behind resprouts." },
+        { method: "girdle", text: "Don't fell a big tree — it answers with a thicket of root suckers. Cut a ring through the bark all round, leaving a thin strip the first year, and close the ring the next." },
+        { method: "repeat", text: "Pull every sucker as it appears, for several years." },
       ],
       dispose: "Seed clusters and root pieces go in the bin, not the compost.",
       basis: "Penn State Extension; OFB Centre de ressources EEE.",
@@ -85,9 +85,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull seedlings and suckers young, with the root.",
-        "Don't fell a big tree — cutting it sets off suckers all around. Cut a ring through the bark, leaving a thin strip the first year, and close it the next.",
-        "Pull the suckers that still come, for several years.",
+        { method: "pull", text: "Pull seedlings and suckers young, with the root." },
+        { method: "girdle", text: "Don't fell a big tree — cutting it sets off suckers all around. Cut a ring through the bark, leaving a thin strip the first year, and close it the next." },
+        { method: "repeat", text: "Pull the suckers that still come, for several years." },
       ],
       dispose: "The wood makes good firewood; root pieces go in the bin.",
       basis: "OFB Centre de ressources EEE; CBN Méditerranéen.",
@@ -105,9 +105,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull seedlings, root and all, when the ground is wet.",
-        "Cut bigger trees at the base and dig out the stump, or cut every resprout until it gives up.",
-        "Check under nearby trees for bird-sown seedlings for a few years.",
+        { method: "pull", text: "Pull seedlings, root and all, when the ground is wet." },
+        { method: "dig", text: "Cut bigger trees at the base and dig out the stump, or cut every resprout until it gives up." },
+        { method: "repeat", text: "Check under nearby trees for bird-sown seedlings for a few years." },
       ],
       dispose: "Berried branches go in the bin, so birds can't carry the seeds on.",
       basis: "King County Noxious Weeds; WSU Extension.",
@@ -125,9 +125,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull seedlings by hand, root and all.",
-        "Cut bigger ones down and dig or grind out the stump: it resprouts from the base.",
-        "Wear gloves — the sap irritates skin, like its cousin poison ivy — and never burn it.",
+        { method: "pull", text: "Pull seedlings by hand, root and all." },
+        { method: "dig", text: "Cut bigger ones down and dig or grind out the stump: it resprouts from the base." },
+        { method: "gear", text: "Wear gloves — the sap irritates skin, like its cousin poison ivy — and never burn it." },
       ],
       dispose: "Bag the berries; don't compost them.",
       basis: "UF/IFAS Extension; Florida Invasive Species Council.",
@@ -146,9 +146,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull seedlings and small shrubs root and all, ideally with a weed lever.",
-        "Don't just cut a big one: it resprouts thicker. Dig out the root crown, or cut every new shoot until it gives up.",
-        "Do it before autumn, before birds take the berries.",
+        { method: "pull", text: "Pull seedlings and small shrubs root and all, ideally with a weed lever." },
+        { method: "dig", text: "Don't just cut a big one: it resprouts thicker. Dig out the root crown, or cut every new shoot until it gives up." },
+        { method: "timing", text: "Do it before autumn, before birds take the berries." },
       ],
       dispose: "Berried branches go in the bin.",
       basis: "Penn State Extension; Michigan Natural Features Inventory.",
@@ -166,9 +166,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Lever out whole shrubs: the roots are shallow and come up easily in moist soil.",
-        "Go in early spring — it leafs out before the natives, so it's easy to find.",
-        "Pull the seedlings that follow for a few years.",
+        { method: "pull", text: "Lever out whole shrubs: the roots are shallow and come up easily in moist soil." },
+        { method: "timing", text: "Go in early spring — it leafs out before the natives, so it's easy to find." },
+        { method: "repeat", text: "Pull the seedlings that follow for a few years." },
       ],
       dispose: "Berried branches go in the bin.",
       basis: "Michigan Natural Features Inventory; Penn State Extension.",
@@ -186,9 +186,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull small plants when the ground is wet.",
-        "Cut big ones at ground level in late summer, in dry weather: cut then, they seldom resprout.",
-        "Its seed lasts decades in the soil, so pull seedlings every year and cover bare ground with plants or mulch.",
+        { method: "pull", text: "Pull small plants when the ground is wet." },
+        { method: "cut", text: "Cut big ones at ground level in late summer, in dry weather: cut then, they seldom resprout." },
+        { method: "repeat", text: "Its seed lasts decades in the soil, so pull seedlings every year and cover bare ground with plants or mulch." },
       ],
       dispose: "Bag plants carrying pods; plants without seed can be left to rot.",
       basis: "King County Noxious Weeds; Washington State Noxious Weed Control Board.",
@@ -206,9 +206,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull small plants when the ground is wet.",
-        "Cut big ones at ground level in the dry season, and cut any resprouts.",
-        "Pull seedlings every year: the seed lives long in the soil.",
+        { method: "pull", text: "Pull small plants when the ground is wet." },
+        { method: "cut", text: "Cut big ones at ground level in the dry season, and cut any resprouts." },
+        { method: "repeat", text: "Pull seedlings every year: the seed lives long in the soil." },
       ],
       dispose: "Bag plants carrying pods.",
       basis: "California Invasive Plant Council.",
@@ -226,9 +226,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull small plants when the ground is wet, with a weed lever for bigger ones.",
-        "Cut the biggest at ground level in the dry season, and cut any resprouts.",
-        "Pull seedlings every year and cover bare ground: the seed lasts decades.",
+        { method: "pull", text: "Pull small plants when the ground is wet, with a weed lever for bigger ones." },
+        { method: "cut", text: "Cut the biggest at ground level in the dry season, and cut any resprouts." },
+        { method: "repeat", text: "Pull seedlings every year and cover bare ground: the seed lasts decades." },
       ],
       dispose: "Bag plants carrying pods.",
       basis: "California Invasive Plant Council.",
@@ -246,9 +246,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Cut the canes to the ground.",
-        "Dig out the root crowns — the knobbly base — or they send up new canes.",
-        "Cut new shoots as they come, and plant shade over the patch: it hates shade.",
+        { method: "cut", text: "Cut the canes to the ground." },
+        { method: "dig", text: "Dig out the root crowns — the knobbly base — or they send up new canes." },
+        { method: "replant", text: "Cut new shoots as they come, and plant shade over the patch: it hates shade." },
       ],
       dispose: "Canes root where they touch soil: pile them on a tarp to dry out.",
       basis: "King County Noxious Weeds; California Invasive Plant Council.",
@@ -266,9 +266,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull it before the burs ripen; the roots come up easily.",
-        "Wear long sleeves: the burs cling.",
-        "Pull the seedlings that follow for a season or two.",
+        { method: "pull", text: "Pull it before the burs ripen; the roots come up easily." },
+        { method: "gear", text: "Wear long sleeves: the burs cling." },
+        { method: "repeat", text: "Pull the seedlings that follow for a season or two." },
       ],
       dispose: "Bag the burs.",
       basis: "UF/IFAS Extension.",
@@ -286,9 +286,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull it by hand with the whole root: a broken root resprouts.",
-        "Strip and bag the berries first.",
-        "Check the spot every year: the seed keeps sprouting.",
+        { method: "pull", text: "Pull it by hand with the whole root: a broken root resprouts." },
+        { method: "bag", text: "Strip and bag the berries first." },
+        { method: "repeat", text: "Check the spot every year: the seed keeps sprouting." },
       ],
       dispose: "Bag the berries; don't compost them.",
       basis: "UF/IFAS Extension; Florida Invasive Species Council.",
@@ -306,9 +306,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull seedlings and small plants with the whole root.",
-        "Cut bigger ones and dig out the stump: it resprouts.",
-        "Strip and bag the berries first, and recheck every year.",
+        { method: "pull", text: "Pull seedlings and small plants with the whole root." },
+        { method: "dig", text: "Cut bigger ones and dig out the stump: it resprouts." },
+        { method: "bag", text: "Strip and bag the berries first, and recheck every year." },
       ],
       dispose: "Bag the berries; don't compost them.",
       basis: "UF/IFAS Extension; Florida Invasive Species Council.",
@@ -326,9 +326,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull young plants from the mud, roots and all.",
-        "Stands in public water need a permit — ask the state's invasive-plant office.",
-        "Come back for regrowth: every stem piece can root.",
+        { method: "pull", text: "Pull young plants from the mud, roots and all." },
+        { method: "pro", text: "Stands in public water need a permit — ask the state's invasive-plant office." },
+        { method: "repeat", text: "Come back for regrowth: every stem piece can root." },
       ],
       dispose: "Bag every fragment; don't leave any near water.",
       basis: "UF/IFAS Center for Aquatic and Invasive Plants.",
@@ -346,9 +346,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Dig out young offsets whole.",
-        "Cut big plants below the growing heart and dig out the base: roots left behind regrow.",
-        "Wear thick gloves and eye protection: the spines are sharp and the sap burns.",
+        { method: "dig", text: "Dig out young offsets whole." },
+        { method: "dig", text: "Cut big plants below the growing heart and dig out the base: roots left behind regrow." },
+        { method: "gear", text: "Wear thick gloves and eye protection: the spines are sharp and the sap burns." },
       ],
       dispose: "Let the pieces dry out off the soil, then bin them.",
       basis: "CBN Méditerranéen; INVMED.",
@@ -366,9 +366,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull seedlings: they come out easily.",
-        "Dig out the stump of a big one; a cut stump resprouts.",
-        "If you keep one, cut off every flower spike as it fades, before it seeds.",
+        { method: "pull", text: "Pull seedlings: they come out easily." },
+        { method: "dig", text: "Dig out the stump of a big one; a cut stump resprouts." },
+        { method: "cut", text: "If you keep one, cut off every flower spike as it fades, before it seeds." },
       ],
       dispose: "Seed heads go in the bin.",
       basis: "OFB Centre de ressources EEE; RHS.",
@@ -386,9 +386,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull seedlings, root and all.",
-        "Dig out the stump of bigger ones: a cut stump sprouts back.",
-        "Wear gloves, and don't shred it indoors — the crushed leaves give off cyanide.",
+        { method: "pull", text: "Pull seedlings, root and all." },
+        { method: "dig", text: "Dig out the stump of bigger ones: a cut stump sprouts back." },
+        { method: "gear", text: "Wear gloves, and don't shred it indoors — the crushed leaves give off cyanide." },
       ],
       dispose: "Berried branches go in the bin.",
       basis: "OFB Centre de ressources EEE; National Biodiversity Data Centre.",
@@ -406,9 +406,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull seedlings and small bushes, root and all.",
-        "Cut big bushes at the base and dig out the stump, or cut every resprout until it gives up.",
-        "Don't leave branches lying on soil: they take root.",
+        { method: "pull", text: "Pull seedlings and small bushes, root and all." },
+        { method: "dig", text: "Cut big bushes at the base and dig out the stump, or cut every resprout until it gives up." },
+        { method: "avoid", text: "Don't leave branches lying on soil: they take root." },
       ],
       dispose: "Pile cut branches off the ground to dry out.",
       basis: "National Biodiversity Data Centre; NatureScot.",
@@ -427,9 +427,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull it in spring, before the seed forms, when the soil is moist — with the top of the root.",
-        "Bag plants already in flower: pulled, they can still ripen seed.",
-        "Pull again every spring: the seed lasts about five years.",
+        { method: "pull", text: "Pull it in spring, before the seed forms, when the soil is moist — with the top of the root." },
+        { method: "bag", text: "Bag plants already in flower: pulled, they can still ripen seed." },
+        { method: "repeat", text: "Pull again every spring: the seed lasts about five years." },
       ],
       dispose: "Bag it; don't compost plants in flower or seed.",
       basis: "Penn State Extension; Michigan Natural Features Inventory.",
@@ -447,9 +447,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Don't dig, strim or mow it: a piece of root the size of a fingernail grows a new plant.",
-        "Cut or pull every stem to the ground every few weeks through the growing season, for years, to starve the roots.",
-        "A big stand is a job for a professional.",
+        { method: "avoid", text: "Don't dig, strim or mow it: a piece of root the size of a fingernail grows a new plant." },
+        { method: "cut", text: "Cut or pull every stem to the ground every few weeks through the growing season, for years, to starve the roots." },
+        { method: "pro", text: "A big stand is a job for a professional." },
       ],
       dispose: "Never compost or dump it: dry the stems on a tarp until dead, then bin them.",
       basis: "OFB Centre de ressources EEE; Penn State Extension; National Biodiversity Data Centre.",
@@ -467,9 +467,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Dig out young plants with the whole root crown.",
-        "Cut off the flower spikes before they seed: one plant makes millions of seeds.",
-        "A big wetland stand is a job for your local weed program.",
+        { method: "dig", text: "Dig out young plants with the whole root crown." },
+        { method: "cut", text: "Cut off the flower spikes before they seed: one plant makes millions of seeds." },
+        { method: "pro", text: "A big wetland stand is a job for your local weed program." },
       ],
       dispose: "Bag the flower spikes.",
       basis: "Penn State Extension; Michigan Natural Features Inventory.",
@@ -487,9 +487,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull it before it seeds, with the top of the taproot.",
-        "Wear gloves: the sap can irritate skin.",
-        "Pull again every year: the seed lasts several years.",
+        { method: "pull", text: "Pull it before it seeds, with the top of the taproot." },
+        { method: "gear", text: "Wear gloves: the sap can irritate skin." },
+        { method: "repeat", text: "Pull again every year: the seed lasts several years." },
       ],
       dispose: "Bag plants with flower heads.",
       basis: "Michigan Natural Features Inventory.",
@@ -507,9 +507,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull or hoe it in late spring, before the spines and seeds form.",
-        "Or mow it at first flower, if no green leaves are left below the blade.",
-        "Keep at it three years: most of the seed is spent by then.",
+        { method: "pull", text: "Pull or hoe it in late spring, before the spines and seeds form." },
+        { method: "cut", text: "Or mow it at first flower, if no green leaves are left below the blade." },
+        { method: "repeat", text: "Keep at it three years: most of the seed is spent by then." },
       ],
       dispose: "Bag plants with flower heads.",
       basis: "California Invasive Plant Council; UC IPM.",
@@ -527,9 +527,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull it: the shallow roots come up easily.",
-        "Pull before the pods fling their seed.",
-        "Repeat through the season, and each year after.",
+        { method: "pull", text: "Pull it: the shallow roots come up easily." },
+        { method: "timing", text: "Pull before the pods fling their seed." },
+        { method: "repeat", text: "Repeat through the season, and each year after." },
       ],
       dispose: "Bag plants carrying pods.",
       basis: "King County Noxious Weeds.",
@@ -547,9 +547,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull or dig it with gloves, getting the root crown, before it flowers.",
-        "Get every root piece: it resprouts from them.",
-        "Keep it out of hay and pasture: it poisons horses and cattle, even dried.",
+        { method: "pull", text: "Pull or dig it with gloves, getting the root crown, before it flowers." },
+        { method: "dig", text: "Get every root piece: it resprouts from them." },
+        { method: "avoid", text: "Keep it out of hay and pasture: it poisons horses and cattle, even dried." },
       ],
       dispose: "Bag it; never leave it where animals graze.",
       basis: "King County Noxious Weeds; Washington State Noxious Weed Control Board.",
@@ -567,9 +567,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull young plants before they flower, wearing gloves.",
-        "Bag them straight away: pulled plants still ripen seed.",
-        "Pull again the next winter and spring.",
+        { method: "pull", text: "Pull young plants before they flower, wearing gloves." },
+        { method: "bag", text: "Bag them straight away: pulled plants still ripen seed." },
+        { method: "repeat", text: "Pull again the next winter and spring." },
       ],
       dispose: "Bag it; don't compost it.",
       basis: "California Invasive Plant Council.",
@@ -587,9 +587,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull it before it flowers: it comes up with almost no effort.",
-        "Start upstream and work down: the seed travels with the water.",
-        "Pull again for two or three years, until the seed runs out.",
+        { method: "pull", text: "Pull it before it flowers: it comes up with almost no effort." },
+        { method: "water", text: "Start upstream and work down: the seed travels with the water." },
+        { method: "repeat", text: "Pull again for two or three years, until the seed runs out." },
       ],
       dispose: "Leave pulled plants in a heap off wet ground, or bag plants in flower.",
       basis: "OFB Centre de ressources EEE; National Biodiversity Data Centre.",
@@ -607,9 +607,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull it with gloves, getting the root crown, before it seeds.",
-        "Bag plants already in flower.",
-        "Check again through the year: it flowers from spring until the frosts.",
+        { method: "pull", text: "Pull it with gloves, getting the root crown, before it seeds." },
+        { method: "bag", text: "Bag plants already in flower." },
+        { method: "repeat", text: "Check again through the year: it flowers from spring until the frosts." },
       ],
       dispose: "Bag it; don't compost plants in flower.",
       basis: "OFB Centre de ressources EEE; CBN de Brest.",
@@ -627,9 +627,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Cut off the berry clusters first and bag them.",
-        "Dig out the whole thick taproot: a piece left behind regrows.",
-        "Wear gloves: every part is poisonous.",
+        { method: "bag", text: "Cut off the berry clusters first and bag them." },
+        { method: "dig", text: "Dig out the whole thick taproot: a piece left behind regrows." },
+        { method: "gear", text: "Wear gloves: every part is poisonous." },
       ],
       dispose: "Bag the berries; the rest can go in the bin.",
       basis: "OFB Centre de ressources EEE; CBN Alpin.",
@@ -647,9 +647,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Cut off the flower spikes before they seed.",
-        "Dig out small plants with the whole rhizome — the thick crown at the base.",
-        "A big clump is a job for a professional.",
+        { method: "cut", text: "Cut off the flower spikes before they seed." },
+        { method: "dig", text: "Dig out small plants with the whole rhizome — the thick crown at the base." },
+        { method: "pro", text: "A big clump is a job for a professional." },
       ],
       dispose: "Don't dump pieces: they root.",
       basis: "National Biodiversity Data Centre; Invasive Species Ireland.",
@@ -668,9 +668,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Dig out small clumps with every piece of rhizome.",
-        "A big stand is a job for a professional.",
-        "Never leave cut canes near a stream: pieces root in water.",
+        { method: "dig", text: "Dig out small clumps with every piece of rhizome." },
+        { method: "pro", text: "A big stand is a job for a professional." },
+        { method: "water", text: "Never leave cut canes near a stream: pieces root in water." },
       ],
       dispose: "Dry the canes out well away from water, then bin them.",
       basis: "California Invasive Plant Council.",
@@ -688,9 +688,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Cut the plumes and bag them before they open.",
-        "Dig out the whole clump with a mattock: a cut clump regrows.",
-        "Wear gloves and long sleeves: the leaves cut.",
+        { method: "cut", text: "Cut the plumes and bag them before they open." },
+        { method: "dig", text: "Dig out the whole clump with a mattock: a cut clump regrows." },
+        { method: "gear", text: "Wear gloves and long sleeves: the leaves cut." },
       ],
       dispose: "Bag the plumes; the leaves can go in the bin.",
       basis: "California Invasive Plant Council; OFB Centre de ressources EEE.",
@@ -709,9 +709,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Cut every vine at the base, then pull the orange roots: they resprout.",
-        "Don't pull vines down from a tree: cut them and let them die in place.",
-        "Pull the seedlings birds bring back, every year.",
+        { method: "cut", text: "Cut every vine at the base, then pull the orange roots: they resprout." },
+        { method: "avoid", text: "Don't pull vines down from a tree: cut them and let them die in place." },
+        { method: "repeat", text: "Pull the seedlings birds bring back, every year." },
       ],
       dispose: "Berried vines go in the bin.",
       basis: "Penn State Extension.",
@@ -729,9 +729,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Cut every vine climbing a tree, at the base and at shoulder height; leave the top to die in place.",
-        "Pull the carpet on the ground by hand, rolling it up like a rug.",
-        "Pull the regrowth for a year or two.",
+        { method: "cut", text: "Cut every vine climbing a tree, at the base and at shoulder height; leave the top to die in place." },
+        { method: "pull", text: "Pull the carpet on the ground by hand, rolling it up like a rug." },
+        { method: "repeat", text: "Pull the regrowth for a year or two." },
       ],
       dispose: "Let it dry out off the soil before binning: stems root where they lie.",
       basis: "King County Noxious Weeds; Penn State Extension.",
@@ -749,9 +749,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull the vines, following each one to its root.",
-        "Collect and bag every seed pod — keep them away from children and pets.",
-        "Wear gloves, and pull seedlings for a few years.",
+        { method: "pull", text: "Pull the vines, following each one to its root." },
+        { method: "bag", text: "Collect and bag every seed pod — keep them away from children and pets." },
+        { method: "gear", text: "Wear gloves, and pull seedlings for a few years." },
       ],
       dispose: "Bag the seeds; never compost them.",
       basis: "UF/IFAS Extension.",
@@ -769,9 +769,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Collect every potato-like bulbil: each one grows a new vine.",
-        "Pull the vines and dig out the tuber underground.",
-        "Repeat every year; Florida has also released beetles that eat it.",
+        { method: "bag", text: "Collect every potato-like bulbil: each one grows a new vine." },
+        { method: "dig", text: "Pull the vines and dig out the tuber underground." },
+        { method: "repeat", text: "Repeat every year; Florida has also released beetles that eat it." },
       ],
       dispose: "Bag the bulbils; never compost them.",
       basis: "UF/IFAS Extension; Florida Invasive Species Council.",
@@ -790,9 +790,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Pull it by hand, rolling the mat up like a carpet.",
-        "Get every fragment: pieces root.",
-        "Replant the bare ground with natives, or it comes back.",
+        { method: "pull", text: "Pull it by hand, rolling the mat up like a carpet." },
+        { method: "bag", text: "Get every fragment: pieces root." },
+        { method: "replant", text: "Replant the bare ground with natives, or it comes back." },
       ],
       dispose: "Bag it; don't leave pieces on sand or soil.",
       basis: "California Invasive Plant Council; Conservatoire du littoral.",
@@ -810,9 +810,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Dig out small patches, roots and all.",
-        "Cut or mow bigger patches before they flower, several times a year, for several years.",
-        "Or smother a patch under thick cardboard or a tarp for a season.",
+        { method: "dig", text: "Dig out small patches, roots and all." },
+        { method: "cut", text: "Cut or mow bigger patches before they flower, several times a year, for several years." },
+        { method: "cover", text: "Or smother a patch under thick cardboard or a tarp for a season." },
       ],
       dispose: "Bag plants carrying seed pods.",
       basis: "Michigan Natural Features Inventory.",
@@ -830,9 +830,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Dig out the little bulbs in winter, while it's green and easy to find.",
-        "Pulling the leaves leaves the bulbs: dig deep.",
-        "Cover dug patches with thick mulch.",
+        { method: "dig", text: "Dig out the little bulbs in winter, while it's green and easy to find." },
+        { method: "dig", text: "Pulling the leaves leaves the bulbs: dig deep." },
+        { method: "cover", text: "Cover dug patches with thick mulch." },
       ],
       dispose: "Bag the bulbs; don't compost them.",
       basis: "California Invasive Plant Council; CBN Méditerranéen.",
@@ -851,9 +851,9 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        "Dig out the whole plant, with the round tubers.",
-        "Sift the soil: any tuber left behind grows back.",
-        "Pull the regrowth for a season.",
+        { method: "dig", text: "Dig out the whole plant, with the round tubers." },
+        { method: "dig", text: "Sift the soil: any tuber left behind grows back." },
+        { method: "repeat", text: "Pull the regrowth for a season." },
       ],
       dispose: "Bag it; don't compost the tubers.",
       basis: "UF/IFAS Extension.",

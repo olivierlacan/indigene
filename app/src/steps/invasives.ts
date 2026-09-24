@@ -17,6 +17,8 @@ import {
   regionIsRated,
   sightingsAsOf,
   wantedRowsFor,
+  REMOVAL_ICONS,
+  DISPOSE_ICON,
 } from "../lib/invasives";
 import { getOrnamentalByLatin, mappedOrnamentalIds } from "../lib/alternatives";
 import { getLookalikeByLatin, mappedLookalikeIds, inatTaxonUrl } from "../lib/lookalikes";
@@ -153,10 +155,20 @@ function removalSection(inv: Invasive): HTMLElement {
   const { steps, dispose } = invasiveRemoval(inv);
   return el("div", {}, [
     el("h3", { style: "margin:1rem 0 0.3rem" }, t("wanted.howToRemove")),
-    el("ol", { class: "wanted-steps" }, steps.map((step) => el("li", {}, step))),
-    el("p", { class: "kv", style: "margin:0.5rem 0 0" }, [
-      el("span", { class: "k" }, t("wanted.afterwards")),
-      dispose,
+    // Each step leads with its method's icon, the way a propagation technique
+    // does: a scan down the list reads "pull, ring the bark, again" before a
+    // word of it. The icon is decorative; its name is only a tooltip.
+    el("ol", { class: "wanted-steps" }, steps.map((step) => el("li", {}, [
+      el("span", {
+        class: "step-icon",
+        "aria-hidden": "true",
+        title: t(`wanted.method.${step.method}` as const),
+      }, REMOVAL_ICONS[step.method]),
+      el("span", {}, step.text),
+    ]))),
+    el("p", { class: "wanted-dispose" }, [
+      el("span", { class: "step-icon", "aria-hidden": "true" }, DISPOSE_ICON),
+      el("span", {}, [el("strong", {}, t("wanted.afterwards")), dispose]),
     ]),
     el("p", { class: "confidence", style: "margin:0.4rem 0 0.6rem" },
       [t("alternatives.originSource"), ...citation(inv.removal.basis)]),

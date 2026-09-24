@@ -5555,6 +5555,11 @@ body[data-layout="profile"] .wip-banner-text {
 .wanted-marks dd {
   margin: 0.05rem 0 0;
 }
+/* The invasive profile's marks and removal steps, inside a card that pads
+   nothing itself — the same 1rem gutter its paragraphs get. */
+.wanted-profile-body {
+  padding: 0 1rem;
+}
 .wanted-steps {
   margin: 0;
   padding-left: 1.3rem;

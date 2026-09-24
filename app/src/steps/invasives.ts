@@ -90,12 +90,16 @@ export function renderInvasive(main: HTMLElement, param?: string): void {
           el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" }, names.sub),
         ]),
       ]),
-      el("h3", { style: "margin:1rem 0 0" }, t("wanted.howToSpot")),
-      el("dl", { class: "wanted-marks" }, invasiveMarks(inv).flatMap((m) => [
-        el("dt", {}, m.feature),
-        el("dd", {}, m.text),
-      ])),
-      removalSection(inv),
+      // The profile card has no padding of its own (`.plant`), so the blocks
+      // that aren't bare paragraphs sit in one body that carries the gutter.
+      el("div", { class: "wanted-profile-body" }, [
+        el("h3", { style: "margin:1rem 0 0" }, t("wanted.howToSpot")),
+        el("dl", { class: "wanted-marks" }, invasiveMarks(inv).flatMap((m) => [
+          el("dt", {}, m.feature),
+          el("dd", {}, m.text),
+        ])),
+        removalSection(inv),
+      ]),
       ...swapLinks(inv, places.map((p) => p.regionId)),
       el("p", { class: "confidence" }, [
         el("a", {

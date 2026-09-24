@@ -60,8 +60,16 @@ const browser = await chromium.launch({
 
 const refusals = [];
 const unfinished = [];
+const leaks = [];
 
-async function visit(label, { path, geo, then }) {
+/**
+ * A stand-in for Fathom's script, for when the real one can't be fetched (a
+ * sandbox whose proxy refuses it). It only has to take the call the app makes;
+ * what's being checked is what the app hands it, not what Fathom does next.
+ */
+const FATHOM_STUB = "window.fathom = { trackPageview() {} };";
+
+async function visit(label, { path, geo, then, counted }) {
   const context = await browser.newContext({
     // The worker would answer navigations from the real site, not this build.
     serviceWorkers: "block",
@@ -73,7 +81,36 @@ async function visit(label, { path, geo, then }) {
     const { file, status } = resolveFile(new URL(route.request().url()).pathname);
     route.fulfill({ status, body: readFileSync(file), contentType: TYPES[extname(file)] ?? "application/octet-stream" });
   });
+  // The real counting script when it can be had, so CI checks what actually
+  // goes over the wire; the stand-in otherwise.
+  await context.route("https://cdn.usefathom.com/script.js", async (route) => {
+    try {
+      const response = await route.fetch();
+      if (response.ok()) return route.fulfill({ response });
+    } catch {}
+    route.fulfill({ body: FATHOM_STUB, contentType: "text/javascript" });
+  });
   await context.addInitScript(() => {
+    // Every address the app hands the page count, read off the one call it
+    // makes (`fathom.trackPageview`) however the script defines itself.
+    window.__counted = [];
+    let fathom;
+    Object.defineProperty(window, "fathom", {
+      configurable: true,
+      set(v) { fathom = v; },
+      get() {
+        const track = fathom?.trackPageview;
+        if (typeof track === "function" && !track.__watched) {
+          const watched = function (opts) {
+            window.__counted.push(opts?.url ?? "(no url: the script would read the address bar)");
+            return track.apply(this, arguments);
+          };
+          watched.__watched = true;
+          fathom.trackPageview = watched;
+        }
+        return fathom;
+      },
+    });
     window.__refused = [];
     document.addEventListener("securitypolicyviolation", (e) => {
       // The origin, not the whole address: a lookup's address carries the
@@ -89,9 +126,11 @@ async function visit(label, { path, geo, then }) {
   // Which outside hosts the page actually reached — printed, so a pass that
   // never got as far as the lookups can't pass for one that did.
   const hosts = new Set();
+  const beacons = [];
   page.on("request", (req) => {
-    const host = new URL(req.url()).hostname;
-    if (host !== "indigene.app") hosts.add(host);
+    const url = new URL(req.url());
+    if (url.hostname !== "indigene.app") hosts.add(url.hostname);
+    if (url.hostname.endsWith("usefathom.com") && !url.pathname.endsWith(".js")) beacons.push(req.url());
   });
   page.on("console", (msg) => {
     if (/Content Security Policy/i.test(msg.text())) logged.push(msg.text());
@@ -110,6 +149,23 @@ async function visit(label, { path, geo, then }) {
   // reported, but it also hears the ones the event can't (inside a worker).
   const all = [...new Set(seen.length ? seen : logged)];
   for (const r of all) refusals.push(`${label}: ${r}`);
+
+  // What the page count was told. Never a query string (what somebody typed),
+  // and on a page that expects it, exactly the one address — which also proves
+  // counting ran at all, so a check that never reached it can't pass.
+  const told = await page.evaluate(() => window.__counted ?? []).catch(() => []);
+  for (const url of told) {
+    if (url.includes("?")) leaks.push(`${label}: the page count was told "${url}"`);
+  }
+  if (counted) {
+    if (!told.length) leaks.push(`${label}: the page count was never called, so this wasn't checked`);
+    for (const url of told) {
+      if (url !== counted.url) leaks.push(`${label}: the page count was told "${url}", not "${counted.url}"`);
+    }
+    for (const b of beacons) {
+      if (decodeURIComponent(b).includes(counted.secret)) leaks.push(`${label}: "${counted.secret}" went over the wire: ${b}`);
+    }
+  }
   console.log(`${all.length ? "✗" : "✓"} ${label}${hosts.size ? ` — ${[...hosts].sort().join(", ")}` : ""}`);
   await context.close();
 }
@@ -154,6 +210,13 @@ await visit("an invasive's sightings, from iNaturalist", {
   },
 });
 await visit("privacy", { path: "/privacy" });
+// A saved spot's address holds its id, minted on the device and kept for good.
+// The page count must hear only that a spot was opened, never which.
+const SPOT_ID = "3f2c9a1e-7b4d-4e2a-9c1f-0a8b6d5e4c3b";
+await visit("a saved spot, as the page count sees it", {
+  path: `/#/saved/${SPOT_ID}?add=cercis-canadensis`,
+  counted: { url: `${ORIGIN}/#/saved`, secret: SPOT_ID },
+});
 await visit("an address that isn't ours", { path: "/no-such-page" });
 await visit("a deep link through 404.html", { path: "/wildlife/in/pnw" });
 await visit("GPS in Pennsylvania, to ranked plants", {
@@ -185,5 +248,9 @@ if (refusals.length) {
   for (const r of refusals) console.error(`  ${r}`);
   console.error("\nIf the app needs it, add the host to src/lib/csp.ts and the Privacy page's list together.");
 }
-if (refusals.length || unfinished.length) process.exit(1);
+if (leaks.length) {
+  console.error(`\n${leaks.length} problem(s) with what the page count was told:`);
+  for (const l of leaks) console.error(`  ${l}`);
+}
+if (refusals.length || unfinished.length || leaks.length) process.exit(1);
 console.log("\nNothing refused.");

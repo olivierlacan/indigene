@@ -19,6 +19,7 @@ import { keystoneIcon } from "../components/keystone-icon";
 import { cardStats } from "../components/card-stats";
 import { t, tn, fmtNumber } from "../lib/i18n";
 import { nameLines, regionName, regionReference } from "../lib/names";
+import { flagRow } from "../components/flags";
 
 export function renderExplore(main: HTMLElement): void {
   clear(main);
@@ -71,7 +72,10 @@ function regionCard(region: RegionDef): HTMLElement {
 
   return el("article", { class: "region-card" }, [
     el("h3", { class: "region-card-name" }, [
-      el("span", { "aria-hidden": "true" }, "📍 "),
+      // The country's flag where the pin used to be: a grid of thirteen
+      // regions scans by country first, and the pin said nothing a heading
+      // doesn't.
+      flagRow(region.meta.countries),
       el("a", { href: `#/regions/${region.meta.id}` }, name),
     ]),
     // Just the place. The hardiness chip that used to sit here was a

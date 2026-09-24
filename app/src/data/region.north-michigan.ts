@@ -14,6 +14,7 @@ export const REGION: RegionMeta = {
   zones: "5b–6a",
   note: "Native here means native to the northern Lower Peninsula specifically — its cool, often lime-rich northern-hardwood and pine country, moderated by the Great Lakes. The boreal Upper Peninsula and the warmer southern Lower Peninsula each have their own flora, not yet listed.",
   extent: "The tip of the Lower Peninsula: from the Straits of Mackinac south through Traverse City and Petoskey to about Cadillac, between the Lake Michigan and Lake Huron shores.",
+  countries: ["US"],
   // Coarse box over the northern Lower Peninsula the seed list is tuned to:
   // roughly Cadillac/Manistee north to the Straits, shore to shore. Its east
   // edge (~-83.3) laps a sliver of the Mid-Atlantic box's far-northwest corner

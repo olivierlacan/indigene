@@ -14,6 +14,7 @@ export const REGION: RegionMeta = {
   zones: "6b–7a",
   note: "Native here means native to this region specifically. Outside it, treat these picks as untested.",
   extent: "North to southern New England, south to central Virginia, and from the Atlantic coast west to the Appalachian ridges.",
+  countries: ["US"],
   // Coarse box over the Piedmont/Northeast the seed list is tuned to: roughly
   // Virginia up through southern New England, west to the Appalachians.
   bounds: { minLat: 36.5, maxLat: 45.5, minLon: -83.5, maxLon: -71.0 },

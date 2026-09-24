@@ -24,6 +24,7 @@ import { regionBoundaryCard } from "../components/region-boundary";
 import type { Plant, PlantForm } from "../types";
 import { t, tn, fmtNumber, getLang } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionNote, regionReference, localNameCoverage } from "../lib/names";
+import { flagRow } from "../components/flags";
 import { prose } from "../lib/prose";
 import { reportRosterUntranslated } from "../components/wip-banner";
 import { mostWantedSection } from "../components/most-wanted";
@@ -86,7 +87,8 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
   }).filter((g): g is HTMLElement => g !== null);
 
   main.append(
-    el("h2", { class: "step-title" }, regionName(region.meta)),
+    // The flags lead the name, as on the Regions index cards.
+    el("h2", { class: "step-title" }, [flagRow(region.meta.countries), regionName(region.meta)]),
     // The place in the sentence, the hardiness range as its own badge beside
     // it. This is where the zone belongs: the reader has picked their region
     // and is now asking what grows in it. The Explore cards, where they were

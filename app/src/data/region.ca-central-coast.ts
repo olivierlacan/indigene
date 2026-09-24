@@ -14,6 +14,7 @@ export const REGION: RegionMeta = {
   zones: "9a–10a",
   note: "Native status is asserted for the central California coast ranges and the valleys between them — Sonoma and Marin south through the Bay Area to Big Sur, and inland to the Diablo and Gabilan crest. Over that crest the floor of the Central Valley is hotter and its own list is still to be written; north of the Russian River the redwood coast is wetter and belongs with a northern list. Treat these recommendations as untested in both.",
   extent: "From the Sonoma and Marin hills south past San Francisco Bay to Big Sur, and inland across the Santa Cruz Mountains, the Diablo Range and the Salinas Valley as far as the crest that ends at the Central Valley — the valley floor itself is on the other side of that line.",
+  countries: ["US"],
   // Coarse box over the central California coast ranges. The east edge (-120.4)
   // is the crest above the San Joaquin Valley; the north edge (38.9) stops below
   // Ukiah, and the south edge (35.0) below San Luis Obispo, where the southern

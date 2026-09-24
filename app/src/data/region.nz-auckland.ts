@@ -14,6 +14,7 @@ export const REGION: RegionMeta = {
   zones: "≈9b–10b",
   note: "Native status is from Kew's World Checklist of Vascular Plants, and every plant here grows wild north of the Waikato. Caterpillar counts are from Plant-SyNZ, Manaaki Whenua – Landcare Research's record of which insects breed on which native plants.",
   extent: "From Cape Reinga south through Northland to Auckland, the Hauraki Gulf islands and the Coromandel Peninsula, stopping short of Hamilton and the Waikato.",
+  countries: ["NZ"],
   // Coarse box over the northern North Island: Cape Reinga and the Three Kings
   // (~-34.1°) south to the Firth of Thames and the base of the Coromandel at
   // Waihi (~-37.45°), and from the Tasman coast (~172.0° E) east past the

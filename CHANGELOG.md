@@ -31,6 +31,15 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Added
+
+- Regions: each region now shows a small flag beside its name, two where a
+  region crosses a border, like the Pacific Northwest, so you can find your
+  country at a glance. https://indigene.app/regions
+- Internal: `RegionMeta.countries` (ISO codes) and `components/flags.ts`,
+  six flags drawn as inline SVG (~2 KB) because Windows has no flag emoji;
+  shown on the Regions cards, the region page title and the region picker.
+
 ## [0.35] - 2026-09-24
 
 **Auckland & Northland, south of the equator**

@@ -3,13 +3,13 @@
 //
 // Drawn as inline SVG rather than emoji: Windows ships no flag emoji and shows
 // the two code letters instead ("US", "FR"), which reads as a typo beside a
-// region name. Six simple drawings cost about 2 KB and look the same
+// region name. Five simple drawings cost about 2 KB and look the same
 // everywhere. They are simplified for their size (about 20 px wide): the US
 // flag keeps its stripes and canton but not its stars, New Zealand's Southern
 // Cross is four red dots. Enough to recognise, which is the whole job.
 //
 // A region lists every country it reaches (`RegionMeta.countries`), so the
-// Pacific Northwest shows two flags and Ireland's island-wide list shows two.
+// Pacific Northwest shows two flags.
 // The row is one image to assistive tech, named in the reader's language by
 // the browser's own `Intl.DisplayNames`: nothing here to translate.
 import { langTag } from "../lib/i18n";
@@ -24,7 +24,7 @@ const H = 20;
 const rect = (x: number, y: number, w: number, h: number, fill: string): Shape =>
   ["rect", { x, y, width: w, height: h, fill }];
 
-/** The Union Flag in a w × h box at (x, y), clipped to it. Its proportions
+/** The Union Flag, for New Zealand's canton: a w × h box at (x, y), clipped to it. Its proportions
  *  (white saltire 6/30 of the height, red 2/30, white cross 10/30, red 6/30)
  *  are the real ones; the red saltire's counterchange is dropped at this size. */
 function unionFlag(x: number, y: number, w: number, h: number, clipId: string): Shape[] {
@@ -65,7 +65,6 @@ const FLAGS: Record<string, (clip: string) => Shape[]> = {
     rect(22.5, 0, 7.5, H, "#D52B1E"),
     ["path", { d: MAPLE, fill: "#D52B1E" }],
   ],
-  GB: (clip) => unionFlag(0, 0, W, H, clip),
   NZ: (clip) => [
     rect(0, 0, W, H, "#012169"),
     ...unionFlag(0, 0, W / 2, H / 2, clip),

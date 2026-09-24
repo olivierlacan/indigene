@@ -87,6 +87,7 @@ export const en = {
   "steps.sources": "Sources",
   "steps.about": "About",
   "steps.crops": "Vegetables",
+  "steps.traits": "Traits",
   "steps.settings": "Settings",
   "steps.import": "Import from iNaturalist",
   "steps.film": "The film",
@@ -929,22 +930,30 @@ export const en = {
   // ---------------------------------------------------------------------
   // Plant card.
   // ---------------------------------------------------------------------
-  "badge.keystone": "Keystone plant",
-  "badge.keystoneTitle":
-    "A keystone plant supports far more wildlife than most — losing it would unravel the local food web.",
-  "badge.noWater": "Survives with no watering",
-  "badge.noWaterTitle":
-    "Expected to establish and survive with no watering after planting, in an average year.",
-  "badge.needsWater": "Needs water to establish",
-  "badge.petToxic": "Toxic if eaten",
+  "badge.keystone": "Keystone",
+  "badge.noWater": "No watering",
+  "badge.needsWater": "Water at first",
+  "badge.petToxic": "Toxic",
   "badge.thorny": "Thorny",
-  "badge.aggressive": "Spreads — give it room",
-  "badge.deerResistant": "Deer tend to leave it alone",
+  "badge.aggressive": "Spreads",
+  "badge.deerResistant": "Deer-resistant",
+  "traits.docTitle": "Plant traits — Indigene",
+  "traits.title": "Plant traits",
+  "traits.lede": "What each label and figure on a plant's page means.",
+  "traits.group.water": "💧 Watering",
+  "traits.group.wildlife": "🦋 Wildlife",
+  "traits.group.handling": "✋ Handling",
+  "traits.group.figures": "📊 Figures",
+  "traits.noWater": "Expected to settle in and survive on rain alone after planting, in an average year.",
+  "traits.needsWater": "Needs watering after planting, until its roots take hold.",
+  "traits.keystone": "Supports far more wildlife than most plants — losing it would unravel the local food web.",
+  "traits.deer": "Deer usually leave it alone. Not a promise: a hungry winter changes what they'll eat.",
+  "traits.toxic": "Poisonous if eaten, by people or pets. Plant it where a curious dog or toddler won't graze.",
+  "traits.thorny": "Carries thorns, spines or prickles. Keep it back from paths and play areas.",
+  "traits.spreads": "Spreads by roots or seed faster than most. Give it room, or an edge it can't cross.",
   "match.good": "Good match for this spot",
   "match.ok": "Workable here",
   "match.poor": "Poor match — here's why",
-  "card.sizeCaption":
-    "Drawn to scale beside a {human} person. Eventually reaches about {height} tall and {spread} wide.",
   "card.hostSpecies": "{n} species",
   "card.sizeShort": "Grows to about {height} tall and {spread} wide.",
   "card.ecoValue": "🦋 Wildlife value {score}/100.",
@@ -955,10 +964,6 @@ export const en = {
   "card.bloomRange": "Blooms {from}–{to} ({color}).",
   "card.bloomRangeVowel": "Blooms {from}–{to} ({color}).",
   "card.foliage": "Grown for foliage, not flowers.",
-  "card.gives": "What it does for you & wildlife: ",
-  "card.needs": "What it needs from you: ",
-  "card.bloomMoisture": "Bloom & moisture: ",
-  "card.prefersSoil": "Prefers soil that's {bands}.",
   "card.confidence": "Confidence: {level}. ",
   "card.source": "Source: ",
   "card.howSure": "How sure are we? →",
@@ -1193,7 +1198,7 @@ export const en = {
   "stat.moistureWord.dry": "Dry",
   "stat.moistureWord.mesic": "Moist",
   "stat.moistureWord.wet": "Wet",
-  "stat.zones.label": "Hardy zones",
+  "stat.zones.label": "Hardiness",
   "stat.zones.sub": "USDA winter cold",
   "stat.zones.explain":
     "USDA zones measure winter's coldest night in steps of {step}. If your zone falls inside this plant's range, normal winters won't kill it — and a plant native to your area is almost always comfortably inside its home zone. No blankets, no burlap.",
@@ -1206,7 +1211,7 @@ export const en = {
   "ph.word.acidicToAlkaline": "acidic to alkaline",
   "ph.word.neutral": "around neutral",
   "stat.size.label": "Full size",
-  "stat.size.sub": "height × spread, eventually",
+  "stat.size.sub": "height × width",
   "stat.size.explain":
     "The honest eventual size from our cited records — often far bigger than a nursery tag admits. Give a native room for its mature self from day one and it will never need shearing into submission; the drawing below shows the pace year by year.",
   "stat.year.label": "Year {n}",
@@ -1216,7 +1221,7 @@ export const en = {
   "pace.quick": "quick to full size",
   "pace.steady": "steady grower",
   "pace.slow": "slow and long-lived",
-  "stat.host.label": "Caterpillar hosts",
+  "stat.host.label": "Caterpillars",
   "stat.host.value": "{n} species",
   "stat.host.subKeystone": "keystone plant",
   "stat.host.subValue": "food-web value",
@@ -1232,7 +1237,7 @@ export const en = {
   "stat.bloom.explain":
     "When it flowers. Native bloom windows are timed to local pollinators — some bees emerge for exactly these weeks. Plant a few natives with staggered bloom times and something is serving nectar from early spring to frost.",
   "stat.foliage.value": "Foliage",
-  "stat.foliage.sub": "grown for leaves, not flowers",
+  "stat.foliage.sub": "grown for leaves",
   "stat.foliage.explain":
     "This one is grown for foliage and structure rather than flowers — and that's still wildlife value. Leaves feed caterpillars, stems shelter overwintering insects, and cover matters year-round in ways nectar alone can't.",
 
@@ -1243,7 +1248,6 @@ export const en = {
   "plant.more": "← More natives",
   "plant.backToList": "← Back to your plant list",
   "plant.backToListShort": "← Your plants",
-  "plant.sizeAria": "Size of {name} over time",
   "plant.figuresFor": "Figures for:",
   "plant.nativeTo": "📍 Native to: ",
   // The assessed-status line (`components/conservation-note.ts`). Eleven pages
@@ -1291,7 +1295,11 @@ export const en = {
   // following it does, because "#" on its own says nothing — and what it does
   // is hand you the address of that one card.
   "plant.sectionLink": "Copy a link to this section",
-  "plant.ecosystemTitle": "🦋 What it does for the ecosystem",
+  "plant.ecosystemTitle": "🦋 Ecosystem services",
+  "plant.needsTitle": "🪴 Growing needs",
+  "plant.growthTitle": "Height by year",
+  "plant.growthAria": "Height by year, beside a {human} person: {points}.",
+  "plant.growthPoint": "year {year}, {height}",
   "plant.wildlifeItBrings": "Wildlife it brings in: ",
   "plant.soleTie": "This plant is the only option {name} has — a make-or-break tie.",
   // The look-alike section. "Impostor" is deliberately about the mix-up and not

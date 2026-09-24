@@ -238,7 +238,7 @@ export const SECTIONS = [
     lede: "",
     visit: [{ label: "Browse the plants", href: `${APP}/plants` }],
     learn: [],
-    match: { segments: ["plants"] },
+    match: { segments: ["plants", "traits"] },
     published: false,
   },
   {

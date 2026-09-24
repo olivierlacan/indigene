@@ -1,7 +1,7 @@
 // The "player card" stat block: a plant's key characteristics as a grid of
-// icon + label + value tiles, for people who scan rather than read. Every
-// number here also exists in prose elsewhere on the card — this is a second
-// way to read the same facts, never the only one. Emoji are the icon set (the
+// icon + label + value tiles, for people who scan rather than read. The page
+// doesn't restate these figures in prose; each tile's accessible name carries
+// its label, value and gloss in full. Emoji are the icon set (the
 // app's existing idiom, and zero dependencies); each is aria-hidden so screen
 // readers get the text label alone.
 //

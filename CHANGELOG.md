@@ -64,6 +64,12 @@ subtitle on the What's new page.
   CSS (`.boot-*`: fade in at once, extra lines at 4 s and 12 s), so it paints
   before any script. A head script picks its language early; `route()`
   removes it after the first render.
+- Plants: the labels under a plant's name are a word or two now, like
+  "No watering" or "Thorny", and each one opens its full meaning on the new
+  plant traits page. https://indigene.app/traits
+- Internal: `lib/traits.ts` lists the labels once for the plant page, the
+  ranked list's cards and `#/traits`; `#/traits/<id>` opens the page at one
+  definition.
 
 ### Changed
 
@@ -87,6 +93,15 @@ subtitle on the What's new page.
   longer leaves one word alone on its last line. 24 cards regenerated; Beech's
   plant card was skipped because it already overflows its fact row on `main`.
   https://indigene.app/invasives
+- Plants: a plant's page puts its "Figures for" region switch right above the
+  figures, the photo link beside the photo, and a title on the growth drawing.
+  Care and wildlife writing moved into two cards: Growing needs and Ecosystem
+  services.
+- Plants: figure labels are shorter in English and French ("Caterpillars",
+  "Hardiness"), and a wrapped label no longer knocks its tile out of line.
+- Internal: dropped the size caption and the "Bloom & moisture" line, which
+  repeated the drawing and the tiles; `.stat-grid` rows now size to their own
+  tallest tile instead of all matching the tallest on the page.
 
 ## [0.35] - 2026-09-24
 

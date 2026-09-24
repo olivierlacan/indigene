@@ -22,7 +22,7 @@ import type { Ranked } from "../lib/ranking";
 import type { Plant, Weights } from "../types";
 import { el } from "../ui";
 import { SCORE_KEYS, scoreLabel, bloomSentence } from "../lib/plain";
-import { keystoneIcon } from "./keystone-icon";
+import { traitBadges } from "./trait-badges";
 import { plantThumb } from "./plant-thumb";
 import { t, fmtNumber, fmtList } from "../lib/i18n";
 import { length } from "../lib/units";
@@ -47,18 +47,7 @@ const STRENGTH_FLOOR = 45;
 export function plantCard(r: Ranked, weights: Weights, nq = "", regionId?: string): HTMLElement {
   const p = r.plant;
 
-  const badges = el("div", {}, [
-    p.keystone
-      ? el("span", { class: "badge keystone", title: t("badge.keystoneTitle") }, [keystoneIcon(), " " + t("badge.keystone")])
-      : null,
-    p.noWaterEstablish
-      ? el("span", { class: "badge nowater", title: t("badge.noWaterTitle") }, t("badge.noWater"))
-      : el("span", { class: "badge caution" }, t("badge.needsWater")),
-    p.filters.petToxic ? el("span", { class: "badge caution" }, t("badge.petToxic")) : null,
-    p.filters.thorny ? el("span", { class: "badge caution" }, t("badge.thorny")) : null,
-    p.filters.aggressive ? el("span", { class: "badge caution" }, t("badge.aggressive")) : null,
-    p.filters.deerResistant ? el("span", { class: "badge neutral" }, t("badge.deerResistant")) : null,
-  ]);
+  const badges = traitBadges(p, false);
 
   const names = nameLines(p);
   // The name is the link, and CSS stretches it over the whole card (see

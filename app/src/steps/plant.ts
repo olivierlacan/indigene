@@ -769,7 +769,9 @@ async function copyLink(url: string): Promise<void> {
  *   detail in it.
  */
 function ecosystemSection(p: Plant, entries: PlantEntry[], expanded: boolean): HTMLElement {
-  const scoreParts = SCORE_KEYS.map((key) => {
+  // An uncounted host figure has no bar to draw; the stat tile says why.
+  const keys = SCORE_KEYS.filter((key) => key !== "host" || p.hostLepCount !== null);
+  const scoreParts = keys.map((key) => {
     const val = (p.scores as unknown as Record<string, number>)[key];
     const label = scoreLabel(key);
     const whyId = `score-why-${key}`;
@@ -785,7 +787,7 @@ function ecosystemSection(p: Plant, entries: PlantEntry[], expanded: boolean): H
     }, [
       el("div", { class: "score-head" }, [
         el("span", { class: "score-name" }, [el("span", { "aria-hidden": "true" }, `${label.icon} `), label.name]),
-        el("span", { class: "score-value" }, `${fmtNumber(val)}${key === "host" ? ` · ${t("card.hostSpecies", { n: fmtNumber(p.hostLepCount) })}` : ""}`),
+        el("span", { class: "score-value" }, `${fmtNumber(val)}${key === "host" ? ` · ${t("card.hostSpecies", { n: fmtNumber(p.hostLepCount ?? 0) })}` : ""}`),
         el("span", { class: "score-chevron", "aria-hidden": "true" }, "›"),
       ]),
       el("div", { class: "score-bar" }, [el("span", { style: `width:${val}%` })]),

@@ -31,7 +31,29 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Added
+
+- Regions: Auckland & Northland is on the map — 47 native plants from Cape
+  Reinga to the Coromandel, from pōhutukawa to kawakawa, named the way New
+  Zealanders say them. Our first region south of the equator.
+  https://indigene.app/regions/nz-auckland
+- Eight New Zealand animals join the wildlife pages, from tūī and kererū to the
+  pūriri moth, each with the plants that feed it.
+  https://indigene.app/wildlife/in/nz-auckland
+- Internal: `region.nz-auckland.ts` and `plants.nz-auckland.ts` (47 rows, all
+  WCVP-native in `TDWG:NZN`; `native:check` now covers the region), eight
+  catalog animals and their ties, map, cards, iNaturalist photos and record
+  counts. Selection is box-only until `probe:resolve` yields ECO_IDs; the map
+  builder now draws a box-only southern region and keeps a box's corners sharp.
+
 ### Changed
+
+- Plants: where we have no caterpillar count we can cite yet — New Zealand, for
+  now — a plant says "Not counted" instead of showing a zero, and is ranked
+  on its other strengths.
+- Internal: `hostLepCount` and `featuredHostLepCount` accept `null` (not
+  counted); `ecoScore` drops the host term for such plants, and the region's
+  host tile and explore-card line are omitted rather than printing 0.
 
 - The "what to do this season" card now knows which side of the equator your
   garden is on, so a spot in Sydney or Cape Town sees spring now, not autumn.

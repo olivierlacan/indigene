@@ -425,6 +425,63 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:261668-1",
+    "scientificName": "Agathis australis",
+    "family": "Araucariaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "261668-1",
+      "wfo": "wfo-0000907999",
+      "gbif": "5284415",
+      "usda": "AGAU4",
+      "itis": "183487",
+      "inat": "121718",
+      "wikidata": "Q955413",
+      "indigene": "agathis-australis"
+    },
+    "commonNames": [
+      "Kauri"
+    ],
+    "aliases": [
+      "agathis australis",
+      "kauri"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:781648-1",
+    "scientificName": "Alectryon excelsus",
+    "family": "Sapindaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "781648-1",
+      "wfo": "wfo-0000525461",
+      "gbif": "7102475",
+      "itis": "837870",
+      "inat": "399464",
+      "wikidata": "Q1955888",
+      "indigene": "alectryon-excelsus"
+    },
+    "commonNames": [
+      "Tītoki"
+    ],
+    "aliases": [
+      "alectryon excelsus",
+      "tītoki"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:529088-1",
     "scientificName": "Allium ursinum",
     "family": "Amaryllidaceae",
@@ -839,6 +896,33 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:1005468-1",
+    "scientificName": "Apodasmia similis",
+    "family": "Restionaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "1005468-1",
+      "wfo": "wfo-0000340380",
+      "gbif": "5290422",
+      "inat": "380700",
+      "wikidata": "Q4780164",
+      "indigene": "apodasmia-similis"
+    },
+    "commonNames": [
+      "Oioi"
+    ],
+    "aliases": [
+      "apodasmia similis",
+      "oioi"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:30028287-2",
     "scientificName": "Aquilegia canadensis",
     "family": "Ranunculaceae",
@@ -1196,6 +1280,30 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Arthropodium cirratum",
+    "family": "Asphodelaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "gbif": "8401316",
+      "inat": "409520",
+      "indigene": "arthropodium-cirratum"
+    },
+    "commonNames": [
+      "Rengarenga"
+    ],
+    "aliases": [
+      "arthropodium cirratum",
+      "rengarenga"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:86047-1",
     "scientificName": "Arum italicum",
     "family": "Araceae",
@@ -1377,6 +1485,33 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:17040420-1",
+    "scientificName": "Asplenium bulbiferum",
+    "family": "Aspleniaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "17040420-1",
+      "wfo": "wfo-0001121375",
+      "gbif": "7310861",
+      "inat": "122909",
+      "wikidata": "Q1707361",
+      "indigene": "asplenium-bulbiferum"
+    },
+    "commonNames": [
+      "Mouku"
+    ],
+    "aliases": [
+      "asplenium bulbiferum",
+      "mouku"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:17040860-1",
     "scientificName": "Asplenium ceterach",
     "family": "Aspleniaceae",
@@ -1498,6 +1633,61 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:531608-1",
+    "scientificName": "Astelia banksii",
+    "family": "Asteliaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "531608-1",
+      "wfo": "wfo-0000638538",
+      "gbif": "2853128",
+      "inat": "399773",
+      "wikidata": "Q11084826",
+      "indigene": "astelia-banksii"
+    },
+    "commonNames": [
+      "Wharawhara"
+    ],
+    "aliases": [
+      "astelia banksii",
+      "wharawhara"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:77111678-1",
+    "scientificName": "Austroderia fulvida",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "77111678-1",
+      "wfo": "wfo-0000922825",
+      "gbif": "6067828",
+      "itis": "797153",
+      "inat": "468884",
+      "wikidata": "Q24700115",
+      "indigene": "austroderia-fulvida"
+    },
+    "commonNames": [
+      "Toetoe"
+    ],
+    "aliases": [
+      "austroderia fulvida",
+      "toetoe"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -1734,6 +1924,33 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:17570940-1",
+    "scientificName": "Blechnum novae-zelandiae",
+    "family": "Blechnaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "17570940-1",
+      "wfo": "wfo-0000163307",
+      "gbif": "4078876",
+      "inat": "335839",
+      "wikidata": "Q4925804",
+      "indigene": "blechnum-novae-zelandiae"
+    },
+    "commonNames": [
+      "Kiokio"
+    ],
+    "aliases": [
+      "blechnum novae-zelandiae",
+      "kiokio"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -2127,6 +2344,33 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:302178-1",
+    "scientificName": "Carex secta",
+    "family": "Cyperaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "302178-1",
+      "wfo": "wfo-0000351147",
+      "gbif": "2727777",
+      "inat": "400465",
+      "wikidata": "Q5039130",
+      "indigene": "carex-secta"
+    },
+    "commonNames": [
+      "Pūkio"
+    ],
+    "aliases": [
+      "carex secta",
+      "pūkio"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -2764,6 +3008,34 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:709949-1",
+    "scientificName": "Clematis paniculata",
+    "family": "Ranunculaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "709949-1",
+      "wfo": "wfo-0000610441",
+      "gbif": "7433570",
+      "itis": "511128",
+      "inat": "194530",
+      "wikidata": "Q5131218",
+      "indigene": "clematis-paniculata"
+    },
+    "commonNames": [
+      "Puawānanga"
+    ],
+    "aliases": [
+      "clematis paniculata",
+      "puawānanga"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:710194-1",
     "scientificName": "Clematis vitalba",
     "family": "Ranunculaceae",
@@ -2940,6 +3212,91 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:747491-1",
+    "scientificName": "Coprosma repens",
+    "family": "Rubiaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "747491-1",
+      "wfo": "wfo-0000923570",
+      "gbif": "2911525",
+      "usda": "CORE4",
+      "itis": "34962",
+      "inat": "76435",
+      "wikidata": "Q5168970",
+      "indigene": "coprosma-repens"
+    },
+    "commonNames": [
+      "Taupata"
+    ],
+    "aliases": [
+      "coprosma repens",
+      "taupata"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:747499-1",
+    "scientificName": "Coprosma robusta",
+    "family": "Rubiaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "747499-1",
+      "wfo": "wfo-0000923682",
+      "gbif": "2911561",
+      "inat": "366661",
+      "wikidata": "Q5168972",
+      "indigene": "coprosma-robusta"
+    },
+    "commonNames": [
+      "Karamū"
+    ],
+    "aliases": [
+      "coprosma robusta",
+      "karamū"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:533544-1",
+    "scientificName": "Cordyline australis",
+    "family": "Asparagaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "533544-1",
+      "wfo": "wfo-0000764205",
+      "gbif": "2766411",
+      "usda": "COAU12",
+      "itis": "810159",
+      "inat": "50191",
+      "wikidata": "Q2379130",
+      "indigene": "cordyline-australis"
+    },
+    "commonNames": [
+      "Tī Kōuka"
+    ],
+    "aliases": [
+      "cordyline australis",
+      "tī kōuka"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -3249,6 +3606,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:272100-1",
+    "scientificName": "Corynocarpus laevigatus",
+    "family": "Corynocarpaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "272100-1",
+      "wfo": "wfo-0000925786",
+      "gbif": "3169083",
+      "usda": "COLA6",
+      "itis": "18875",
+      "inat": "160928",
+      "wikidata": "Q5477982",
+      "indigene": "corynocarpus-laevigatus"
+    },
+    "commonNames": [
+      "Karaka"
+    ],
+    "aliases": [
+      "corynocarpus laevigatus",
+      "karaka"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:723298-1",
     "scientificName": "Crataegus douglasii",
     "family": "Rosaceae",
@@ -3344,6 +3730,62 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:17072400-1",
+    "scientificName": "Cyathea dealbata",
+    "family": "Cyatheaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "17072400-1",
+      "wfo": "wfo-0000139888",
+      "gbif": "3598702",
+      "itis": "914440",
+      "inat": "131669",
+      "wikidata": "Q1248008",
+      "indigene": "cyathea-dealbata"
+    },
+    "commonNames": [
+      "Ponga"
+    ],
+    "aliases": [
+      "cyathea dealbata",
+      "ponga"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:17073420-1",
+    "scientificName": "Cyathea medullaris",
+    "family": "Cyatheaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "17073420-1",
+      "wfo": "wfo-0001257250",
+      "gbif": "3600240",
+      "itis": "914950",
+      "inat": "333797",
+      "wikidata": "Q5197621",
+      "indigene": "cyathea-medullaris"
+    },
+    "commonNames": [
+      "Mamaku"
+    ],
+    "aliases": [
+      "cyathea medullaris",
+      "mamaku"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:489963-1",
     "scientificName": "Cytisus scoparius",
     "family": "Fabaceae",
@@ -3402,6 +3844,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": "ipni:687947-1",
+    "scientificName": "Dacrycarpus dacrydioides",
+    "family": "Podocarpaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "687947-1",
+      "wfo": "wfo-0000636634",
+      "gbif": "2687859",
+      "usda": "DADA2",
+      "itis": "505861",
+      "inat": "52390",
+      "wikidata": "Q1981615",
+      "indigene": "dacrycarpus-dacrydioides"
+    },
+    "commonNames": [
+      "Kahikatea"
+    ],
+    "aliases": [
+      "dacrycarpus dacrydioides",
+      "kahikatea"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -3530,6 +4001,63 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:267765-1",
+    "scientificName": "Dichondra repens",
+    "family": "Convolvulaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "267765-1",
+      "wfo": "wfo-0001297426",
+      "gbif": "2928667",
+      "itis": "30841",
+      "inat": "161824",
+      "wikidata": "Q859897",
+      "indigene": "dichondra-repens"
+    },
+    "commonNames": [
+      "Mercury Bay Weed"
+    ],
+    "aliases": [
+      "dichondra repens",
+      "mercury bay weed"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:17083940-1",
+    "scientificName": "Dicksonia squarrosa",
+    "family": "Dicksoniaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "17083940-1",
+      "wfo": "wfo-0000141579",
+      "gbif": "5687341",
+      "usda": "DISQ2",
+      "itis": "897823",
+      "inat": "125927",
+      "wikidata": "Q1231387",
+      "indigene": "dicksonia-squarrosa"
+    },
+    "commonNames": [
+      "Whekī"
+    ],
+    "aliases": [
+      "dicksonia squarrosa",
+      "whekī"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:148473-1",
     "scientificName": "Diervilla lonicera",
     "family": "Caprifoliaceae",
@@ -3643,6 +4171,33 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:361625-1",
+    "scientificName": "Disphyma australe",
+    "family": "Aizoaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "361625-1",
+      "wfo": "wfo-0000652284",
+      "gbif": "7552617",
+      "inat": "333757",
+      "wikidata": "Q15612386",
+      "indigene": "disphyma-australe"
+    },
+    "commonNames": [
+      "Horokaka"
+    ],
+    "aliases": [
+      "disphyma australe",
+      "horokaka"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -3800,6 +4355,33 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:578324-1",
+    "scientificName": "Dysoxylum spectabile",
+    "family": "Meliaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "578324-1",
+      "wfo": "wfo-0000658823",
+      "gbif": "3851686",
+      "inat": "210945",
+      "wikidata": "Q6425982",
+      "indigene": "dysoxylum-spectabile"
+    },
+    "commonNames": [
+      "Kohekohe"
+    ],
+    "aliases": [
+      "dysoxylum spectabile",
+      "kohekohe"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -4599,6 +5181,33 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:1015492-1",
+    "scientificName": "Ficinia nodosa",
+    "family": "Cyperaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "1015492-1",
+      "wfo": "wfo-0000418195",
+      "gbif": "2711622",
+      "inat": "323913",
+      "wikidata": "Q5446508",
+      "indigene": "ficinia-nodosa"
+    },
+    "commonNames": [
+      "Wīwī"
+    ],
+    "aliases": [
+      "ficinia nodosa",
+      "wīwī"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -5544,6 +6153,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:561009-1",
+    "scientificName": "Hoheria populnea",
+    "family": "Malvaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "561009-1",
+      "wfo": "wfo-0000724178",
+      "gbif": "3940089",
+      "usda": "HOPO5",
+      "itis": "845743",
+      "inat": "181603",
+      "wikidata": "Q1623958",
+      "indigene": "hoheria-populnea"
+    },
+    "commonNames": [
+      "Houhere"
+    ],
+    "aliases": [
+      "hoheria populnea",
+      "houhere"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:1027403-2",
     "scientificName": "Holodiscus discolor",
     "family": "Rosaceae",
@@ -6001,6 +6639,60 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:704692-1",
+    "scientificName": "Knightia excelsa",
+    "family": "Proteaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "704692-1",
+      "wfo": "wfo-0000356860",
+      "gbif": "5638587",
+      "inat": "366632",
+      "wikidata": "Q311623",
+      "indigene": "knightia-excelsa"
+    },
+    "commonNames": [
+      "Rewarewa"
+    ],
+    "aliases": [
+      "knightia excelsa",
+      "rewarewa"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:77141733-1",
+    "scientificName": "Kunzea robusta",
+    "family": "Myrtaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "77141733-1",
+      "wfo": "wfo-0001340309",
+      "gbif": "9055689",
+      "inat": "411247",
+      "wikidata": "Q21274385",
+      "indigene": "kunzea-robusta"
+    },
+    "commonNames": [
+      "Kānuka"
+    ],
+    "aliases": [
+      "kunzea robusta",
+      "kānuka"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:262420-1",
     "scientificName": "Larix decidua",
     "family": "Pinaceae",
@@ -6092,6 +6784,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:597505-1",
+    "scientificName": "Leptospermum scoparium",
+    "family": "Myrtaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "597505-1",
+      "wfo": "wfo-0000226751",
+      "gbif": "3181762",
+      "usda": "LESC2",
+      "itis": "503393",
+      "inat": "54699",
+      "wikidata": "Q1520028",
+      "indigene": "leptospermum-scoparium"
+    },
+    "commonNames": [
+      "Mānuka"
+    ],
+    "aliases": [
+      "leptospermum scoparium",
+      "mānuka"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:139353-2",
     "scientificName": "Leymus condensatus",
     "family": "Poaceae",
@@ -6147,6 +6868,33 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-central"
+    ]
+  },
+  {
+    "primaryId": "ipni:439850-1",
+    "scientificName": "Libertia grandiflora",
+    "family": "Iridaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "439850-1",
+      "wfo": "wfo-0000784650",
+      "gbif": "5296858",
+      "inat": "403460",
+      "wikidata": "Q677545",
+      "indigene": "libertia-grandiflora"
+    },
+    "commonNames": [
+      "Mikoikoi"
+    ],
+    "aliases": [
+      "libertia grandiflora",
+      "mikoikoi"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -6207,6 +6955,33 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:142946-1",
+    "scientificName": "Lobelia angulata",
+    "family": "Campanulaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "142946-1",
+      "wfo": "wfo-0000813949",
+      "gbif": "3160243",
+      "inat": "403517",
+      "wikidata": "Q15601783",
+      "indigene": "lobelia-angulata"
+    },
+    "commonNames": [
+      "Pānakenake"
+    ],
+    "aliases": [
+      "lobelia angulata",
+      "pānakenake"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -6805,6 +7580,89 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:866981-1",
+    "scientificName": "Melicytus ramiflorus",
+    "family": "Violaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "866981-1",
+      "wfo": "wfo-0000451842",
+      "gbif": "7296373",
+      "inat": "197063",
+      "wikidata": "Q311756",
+      "indigene": "melicytus-ramiflorus"
+    },
+    "commonNames": [
+      "Māhoe"
+    ],
+    "aliases": [
+      "melicytus ramiflorus",
+      "māhoe"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:598207-1",
+    "scientificName": "Metrosideros excelsa",
+    "family": "Myrtaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "598207-1",
+      "wfo": "wfo-0000242427",
+      "gbif": "3185393",
+      "inat": "122905",
+      "wikidata": "Q311747",
+      "indigene": "metrosideros-excelsa"
+    },
+    "commonNames": [
+      "Pōhutukawa"
+    ],
+    "aliases": [
+      "metrosideros excelsa",
+      "pōhutukawa"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:408485-1",
+    "scientificName": "Microlaena stipoides",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "408485-1",
+      "wfo": "wfo-0000879917",
+      "gbif": "2702867",
+      "usda": "MIST",
+      "itis": "42305",
+      "inat": "559367",
+      "wikidata": "Q50844105",
+      "indigene": "microlaena-stipoides"
+    },
+    "commonNames": [
+      "Pātītī"
+    ],
+    "aliases": [
+      "microlaena stipoides",
+      "pātītī"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:313006-2",
     "scientificName": "Mimosa strigillosa",
     "family": "Fabaceae",
@@ -6957,6 +7815,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:694744-1",
+    "scientificName": "Muehlenbeckia complexa",
+    "family": "Polygonaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "694744-1",
+      "wfo": "wfo-0000452366",
+      "gbif": "2888859",
+      "usda": "MUCO3",
+      "itis": "503881",
+      "inat": "78126",
+      "wikidata": "Q2039835",
+      "indigene": "muehlenbeckia-complexa"
+    },
+    "commonNames": [
+      "Pōhuehue"
+    ],
+    "aliases": [
+      "muehlenbeckia complexa",
+      "pōhuehue"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:408959-1",
     "scientificName": "Muhlenbergia capillaris",
     "family": "Poaceae",
@@ -7013,6 +7900,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:585291-1",
+    "scientificName": "Myoporum laetum",
+    "family": "Scrophulariaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "585291-1",
+      "wfo": "wfo-0001085082",
+      "gbif": "3172657",
+      "usda": "MYLA5",
+      "itis": "34078",
+      "inat": "63611",
+      "wikidata": "Q153042",
+      "indigene": "myoporum-laetum"
+    },
+    "commonNames": [
+      "Ngaio"
+    ],
+    "aliases": [
+      "myoporum laetum",
+      "ngaio"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -7284,6 +8200,33 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:183994-2",
+    "scientificName": "Parsonsia heterophylla",
+    "family": "Apocynaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "183994-2",
+      "wfo": "wfo-0000264784",
+      "gbif": "3619997",
+      "inat": "366734",
+      "wikidata": "Q7140064",
+      "indigene": "parsonsia-heterophylla"
+    },
+    "commonNames": [
+      "Kaihua"
+    ],
+    "aliases": [
+      "kaihua",
+      "parsonsia heterophylla"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:68399-1",
     "scientificName": "Parthenocissus quinquefolia",
     "family": "Vitaceae",
@@ -7371,6 +8314,33 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:675517-1",
+    "scientificName": "Passiflora tetrandra",
+    "family": "Passifloraceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "675517-1",
+      "wfo": "wfo-0001091198",
+      "gbif": "3587588",
+      "inat": "404665",
+      "wikidata": "Q7142637",
+      "indigene": "passiflora-tetrandra"
+    },
+    "commonNames": [
+      "Kōhia"
+    ],
+    "aliases": [
+      "kōhia",
+      "passiflora tetrandra"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -7545,6 +8515,62 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": "ipni:539915-1",
+    "scientificName": "Phormium cookianum",
+    "family": "Asphodelaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "539915-1",
+      "wfo": "wfo-0000716264",
+      "gbif": "2778519",
+      "inat": "129178",
+      "wikidata": "Q21396801",
+      "indigene": "phormium-cookianum"
+    },
+    "commonNames": [
+      "Wharariki"
+    ],
+    "aliases": [
+      "phormium cookianum",
+      "wharariki"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:539927-1",
+    "scientificName": "Phormium tenax",
+    "family": "Asphodelaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "539927-1",
+      "wfo": "wfo-0000717490",
+      "gbif": "2778511",
+      "usda": "PHTE8",
+      "itis": "504346",
+      "inat": "51754",
+      "wikidata": "Q607380",
+      "indigene": "phormium-tenax"
+    },
+    "commonNames": [
+      "Harakeke"
+    ],
+    "aliases": [
+      "harakeke",
+      "phormium tenax"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -7935,6 +8961,33 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:681346-1",
+    "scientificName": "Piper excelsum",
+    "family": "Piperaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "681346-1",
+      "wfo": "wfo-0000479181",
+      "gbif": "4183998",
+      "inat": "404899",
+      "wikidata": "Q21306444",
+      "indigene": "piper-excelsum"
+    },
+    "commonNames": [
+      "Kawakawa"
+    ],
+    "aliases": [
+      "kawakawa",
+      "piper excelsum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:70253-1",
     "scientificName": "Pistacia lentiscus",
     "family": "Anacardiaceae",
@@ -7963,6 +9016,64 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": "ipni:957688-1",
+    "scientificName": "Pittosporum crassifolium",
+    "family": "Pittosporaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "957688-1",
+      "wfo": "wfo-0000487387",
+      "gbif": "2986285",
+      "usda": "PICR",
+      "itis": "504426",
+      "inat": "78590",
+      "wikidata": "Q15589244",
+      "indigene": "pittosporum-crassifolium"
+    },
+    "commonNames": [
+      "Karo"
+    ],
+    "aliases": [
+      "karo",
+      "pittosporum crassifolium"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:684708-1",
+    "scientificName": "Pittosporum tenuifolium",
+    "family": "Pittosporaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "684708-1",
+      "wfo": "wfo-0001094611",
+      "gbif": "2986293",
+      "usda": "PITE11",
+      "itis": "507930",
+      "inat": "78591",
+      "wikidata": "Q160343",
+      "indigene": "pittosporum-tenuifolium"
+    },
+    "commonNames": [
+      "Kōhūhū"
+    ],
+    "aliases": [
+      "kōhūhū",
+      "pittosporum tenuifolium"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -8087,6 +9198,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:263597-1",
+    "scientificName": "Podocarpus totara",
+    "family": "Podocarpaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "263597-1",
+      "wfo": "wfo-0000484935",
+      "gbif": "5286079",
+      "usda": "POTO4",
+      "itis": "505863",
+      "inat": "85275",
+      "wikidata": "Q164276",
+      "indigene": "podocarpus-totara"
+    },
+    "commonNames": [
+      "Tōtara"
+    ],
+    "aliases": [
+      "podocarpus totara",
+      "tōtara"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -8265,6 +9405,32 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "wfo:wfo-0000472191",
+    "scientificName": "Pomaderris kumeraho",
+    "family": "Rhamnaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "wfo": "wfo-0000472191",
+      "gbif": "3876809",
+      "inat": "409566",
+      "wikidata": "Q17248302",
+      "indigene": "pomaderris-kumeraho"
+    },
+    "commonNames": [
+      "Kūmarahou"
+    ],
+    "aliases": [
+      "kūmarahou",
+      "pomaderris kumeraho"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -8693,6 +9859,33 @@ export const REGISTRY: RegistryEntry[] = [
       "france-atlantic",
       "france-mediterranean",
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:91865-1",
+    "scientificName": "Pseudopanax lessonii",
+    "family": "Araliaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "91865-1",
+      "wfo": "wfo-0000284122",
+      "gbif": "3037486",
+      "inat": "405342",
+      "wikidata": "Q3850927",
+      "indigene": "pseudopanax-lessonii"
+    },
+    "commonNames": [
+      "Houpara"
+    ],
+    "aliases": [
+      "houpara",
+      "pseudopanax lessonii"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -10504,6 +11697,33 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:384361-1",
+    "scientificName": "Selliera radicans",
+    "family": "Goodeniaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "384361-1",
+      "wfo": "wfo-0001065176",
+      "gbif": "3761291",
+      "inat": "323867",
+      "wikidata": "Q7448647",
+      "indigene": "selliera-radicans"
+    },
+    "commonNames": [
+      "Remuremu"
+    ],
+    "aliases": [
+      "remuremu",
+      "selliera radicans"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:263741-1",
     "scientificName": "Sequoia sempervirens",
     "family": "Cupressaceae",
@@ -10822,6 +12042,33 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "ca-south-coast",
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:518812-1",
+    "scientificName": "Sophora chathamica",
+    "family": "Fabaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "518812-1",
+      "wfo": "wfo-0000502470",
+      "gbif": "3974585",
+      "inat": "406092",
+      "wikidata": "Q17462902",
+      "indigene": "sophora-chathamica"
+    },
+    "commonNames": [
+      "Coastal Kōwhai"
+    ],
+    "aliases": [
+      "coastal kōwhai",
+      "sophora chathamica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -12183,6 +13430,32 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:812694-1",
+    "scientificName": "Veronica stricta",
+    "family": "Plantaginaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "812694-1",
+      "gbif": "7861306",
+      "inat": "738800",
+      "wikidata": "Q87627267",
+      "indigene": "veronica-stricta"
+    },
+    "commonNames": [
+      "Koromiko"
+    ],
+    "aliases": [
+      "koromiko",
+      "veronica stricta"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:326264-2",
     "scientificName": "Viburnum dentatum",
     "family": "Adoxaceae",
@@ -12448,6 +13721,33 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:865843-1",
+    "scientificName": "Vitex lucens",
+    "family": "Lamiaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "865843-1",
+      "wfo": "wfo-0000333234",
+      "gbif": "3904526",
+      "inat": "338187",
+      "wikidata": "Q1861046",
+      "indigene": "vitex-lucens"
+    },
+    "commonNames": [
+      "Pūriri"
+    ],
+    "aliases": [
+      "pūriri",
+      "vitex lucens"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {

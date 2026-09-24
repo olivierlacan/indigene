@@ -174,14 +174,23 @@ function statsFor(p: Plant): Stat[] {
       sub: paceWord(grown.heightFt, p.matureHeightFt),
       explain: `${growthPlain(p)} ${t("stat.year.explain")}`,
     },
-    {
-      icon: "🐛",
-      label: t("stat.host.label"),
-      value: t("stat.host.value", { n: fmtNumber(p.hostLepCount) }),
-      sub: p.keystone ? t("stat.host.subKeystone") : t("stat.host.subValue"),
-      explain: t("stat.host.explain") + (p.keystone ? ` ${t("stat.host.explainKeystone")}` : ""),
-      source: p.basis,
-    },
+    p.hostLepCount === null
+      ? {
+          icon: "🐛",
+          label: t("stat.host.label"),
+          value: t("stat.host.uncounted"),
+          sub: t("stat.host.uncountedSub"),
+          explain: `${t("stat.host.explain")} ${t("stat.host.explainUncounted")}`,
+          source: p.basis,
+        }
+      : {
+          icon: "🐛",
+          label: t("stat.host.label"),
+          value: t("stat.host.value", { n: fmtNumber(p.hostLepCount) }),
+          sub: p.keystone ? t("stat.host.subKeystone") : t("stat.host.subValue"),
+          explain: t("stat.host.explain") + (p.keystone ? ` ${t("stat.host.explainKeystone")}` : ""),
+          source: p.basis,
+        },
     p.bloom
       ? {
           icon: "🌸",

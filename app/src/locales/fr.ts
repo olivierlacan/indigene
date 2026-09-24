@@ -1172,6 +1172,10 @@ export const fr: Dict = {
     "Combien d'espèces de papillons peuvent élever leurs chenilles sur cette plante. Les chenilles sont ce dont presque tous les oisillons sont nourris : c'est donc la meilleure mesure, à elle seule, de la vie qu'une plante fait vivre — et c'est exactement là que les plantes exotiques frôlent le zéro.",
   "stat.host.explainKeystone":
     "Celle-ci est une clé de voûte : elle héberge bien plus d'espèces que la moyenne, et les réseaux alimentaires locaux s'appuient sur elle.",
+  "stat.host.uncounted": "Non compté",
+  "stat.host.uncountedSub": "pas encore de source",
+  "stat.host.explainUncounted":
+    "Pour cette région, nous n'avons pas encore de décompte publié à citer : cette plante est classée sur ses autres atouts en attendant.",
   "stat.bloom.label": "Floraison",
   "stat.bloom.explain":
     "Le moment où elle fleurit. Les périodes de floraison des indigènes sont calées sur les pollinisateurs du coin — certaines abeilles n'émergent que pour ces semaines-là. Plantez quelques indigènes aux floraisons décalées et il y a du nectar du début du printemps aux gelées.",

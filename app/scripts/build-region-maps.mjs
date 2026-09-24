@@ -89,6 +89,15 @@ const UA = "Mozilla/5.0 (indigene region maps; +https://github.com/olivierlacan/
  * which is a few hundred metres: far finer than a dot at this scale.
  */
 const LANDMARKS = {
+  // Hamilton sits just south of the box on purpose: it is the edge a reader in
+  // the Waikato is asking about.
+  "nz-auckland": [
+    { name: "Kaitaia", lat: -35.11, lon: 173.26 },
+    { name: "Whangārei", lat: -35.73, lon: 174.32 },
+    { name: "Auckland", lat: -36.85, lon: 174.76 },
+    { name: "Thames", lat: -37.14, lon: 175.54 },
+    { name: "Hamilton", lat: -37.79, lon: 175.28 },
+  ],
   ireland: [
     { name: "Derry", lat: 54.99, lon: -7.31 },
     { name: "Belfast", lat: 54.6, lon: -5.93 },
@@ -327,7 +336,9 @@ const COLLINEAR = 0.35; // user units of sag below which three points are "strai
  *  landform, and never gets curved. */
 const FRAME = 0.6;
 
-function pathData(rings, project, frame) {
+/** `sharp` draws straight edges only — for a coverage box, whose four corners
+ *  the smoothing would otherwise round into a blob that misses its own edges. */
+function pathData(rings, project, frame, sharp = false) {
   const parts = [];
   const r1 = (n) => Math.round(n * 10) / 10;
   for (const ring of rings) {
@@ -372,7 +383,7 @@ function pathData(rings, project, frame) {
         frame &&
         (cur[0] <= FRAME || cur[0] >= frame.w - FRAME ||
          cur[1] <= FRAME || cur[1] >= frame.h - FRAME);
-      d += onFrame || sag(prev, cur, next) < COLLINEAR
+      d += sharp || onFrame || sag(prev, cur, next) < COLLINEAR
         ? `L${cur.join(" ")}L${end.join(" ")}`
         : `Q${cur.join(" ")} ${end.join(" ")}`;
     }
@@ -502,7 +513,7 @@ function svgFor({ view, land, admin, cover, places, boxOnly, credit }) {
   const layers = [
     `<path class="land" fill-rule="evenodd" d="${pathData(land, project, frame)}"/>`,
     ...(admin?.length ? [`<path class="admin" d="${pathData(admin, project, frame)}"/>`] : []),
-    `<path class="${boxOnly ? "cover-box" : "cover"}" fill-rule="evenodd" d="${pathData(cover, project, frame)}"/>`,
+    `<path class="${boxOnly ? "cover-box" : "cover"}" fill-rule="evenodd" d="${pathData(cover, project, frame, boxOnly)}"/>`,
     ...landmarks(inView, project, h),
   ];
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${WIDTH} ${h}" width="${WIDTH}" height="${h}" role="img">
@@ -568,6 +579,9 @@ async function buildRegion(meta) {
   const minArea = (offset * offset) / 5;
   const eea = meta.ecoregion?.provider === "eea-biogeo";
   const resolve = meta.ecoregion?.provider === "resolve-2017";
+  // South of the equator with no ecoregion codes yet: the box is the claim, and
+  // there is no US state layer to borrow for lines.
+  const southBox = !meta.ecoregion && (meta.bounds.minLat + meta.bounds.maxLat) / 2 < 0;
 
   // Countries are the land everywhere: without them a US map stops dead at the
   // Canadian border, and the empty half of the picture reads as ocean.
@@ -590,6 +604,8 @@ async function buildRegion(meta) {
     });
     if (!mine.features.length) throw new Error(`${meta.id}: no RESOLVE polygon for ${ids}`);
     cover = ringsIn(mine.features, meta.bounds, minArea);
+  } else if (southBox) {
+    cover = rect(meta.bounds);
   } else {
     // State lines, from the ecoregion service's own layer — drawn as lines over
     // the land, since in the US "which state is that?" is how people place a
@@ -617,6 +633,8 @@ async function buildRegion(meta) {
     ? "EEA Biogeographical Regions of Europe (2016), CC BY 4.0 © European Environment Agency"
     : resolve
     ? "RESOLVE Ecoregions 2017 (Dinerstein et al. 2017), CC BY 4.0"
+    : southBox
+    ? "coverage box over Natural Earth country outlines (public domain)"
     : "US EPA Level III Ecoregions of the Conterminous United States (2011), public domain";
   // A map with no labelled places is a blob nobody can find themselves on, which
   // defeats the point of drawing it. Refuse to build one: every region must

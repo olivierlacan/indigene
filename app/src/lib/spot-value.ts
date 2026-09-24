@@ -86,6 +86,6 @@ export function spotValue(
   if (!kinds.size) return null;
   return {
     wildlife: bestTies(scopesFor(kinds.keys(), spotRegionId)),
-    hostKinds: [...kinds.values()].filter((p) => p.hostLepCount > 0).length,
+    hostKinds: [...kinds.values()].filter((p) => (p.hostLepCount ?? 0) > 0).length,
   };
 }

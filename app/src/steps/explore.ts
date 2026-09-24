@@ -99,10 +99,12 @@ function regionCard(region: RegionDef): HTMLElement {
                 : null,
             ]),
             el("span", { class: "plant-latin" }, star.sub),
-            el("span", { class: "region-card-host" }, [
-              el("span", { "aria-hidden": "true" }, "🐛 "),
-              t("explore.caterpillarSpecies", { n: fmtNumber(region.meta.featuredHostLepCount) }),
-            ]),
+            region.meta.featuredHostLepCount === null
+              ? null
+              : el("span", { class: "region-card-host" }, [
+                  el("span", { "aria-hidden": "true" }, "🐛 "),
+                  t("explore.caterpillarSpecies", { n: fmtNumber(region.meta.featuredHostLepCount) }),
+                ]),
           ]),
         ])
       : null,

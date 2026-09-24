@@ -32,6 +32,7 @@ import { REGION as FRANCE_CONTINENTAL } from "./region.france-continental";
 import { REGION as FRANCE_MEDITERRANEAN } from "./region.france-mediterranean";
 import { REGION as FRANCE_ALPINE } from "./region.france-alpine";
 import { REGION as IRELAND } from "./region.ireland";
+import { REGION as NZ_AUCKLAND } from "./region.nz-auckland";
 
 export const REGIONS: RegionDef[] = [
   { meta: MID_ATLANTIC, load: () => import("./plants.mid-atlantic").then((m) => m.SEED_RAW) },
@@ -67,6 +68,11 @@ export const REGIONS: RegionDef[] = [
   // It is the first region whose native claim rests on Kew's WCVP rather than a
   // national flora; see the head of `plants.ireland.ts`.
   { meta: IRELAND, load: () => import("./plants.ireland").then((m) => m.SEED_RAW) },
+
+  // The first region south of the equator. Seasons, sun hours and the sun
+  // picker flip on their own (`lib/hemisphere.ts`); the box decides alone until
+  // RESOLVE's ecoregion codes are confirmed — see `region.nz-auckland.ts`.
+  { meta: NZ_AUCKLAND, load: () => import("./plants.nz-auckland").then((m) => m.SEED_RAW) },
 ];
 
 /**

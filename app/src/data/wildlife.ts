@@ -1202,6 +1202,104 @@ export const WILDLIFE: Wildlife[] = [
     // hence the explicit Reptilia iconic taxon, which `kind` can't supply.
     inat: { name: "Gopherus polyphemus", iconic: "Reptilia" },
   },
+  // ---------------- New Zealand ----------------
+  // The first animals south of the equator. Each is native (most found nowhere
+  // else); the silvereye flew in from Australia on its own in the 1850s, which
+  // is why New Zealand counts it as native.
+  {
+    id: "tui",
+    common: "Tūī",
+    latin: "Prosthemadera novaeseelandiae",
+    kind: "bird",
+    icon: "🐦",
+    blurb:
+      "A glossy blue-black honeyeater with a white tuft at its throat, and the loudest voice in a New Zealand garden. Its brush-tipped tongue is built for nectar, so it follows the flowering — kōwhai in spring, flax and pōhutukawa in summer — pollinating as it goes.",
+    native: true,
+    nativeBasis: "Endemic to New Zealand. New Zealand Birds Online (Te Papa; Birds New Zealand).",
+    inat: { name: "Prosthemadera novaeseelandiae", iconic: "Aves" },
+  },
+  {
+    id: "kereru",
+    common: "Kererū",
+    latin: "Hemiphaga novaeseelandiae",
+    kind: "bird",
+    icon: "🐦",
+    blurb:
+      "New Zealand's big native pigeon, whose wingbeats you hear before you see it. It is the last bird left that can swallow the largest native fruits whole, so karaka, pūriri and tawa now depend on it to spread their seed.",
+    native: true,
+    nativeBasis: "Endemic to New Zealand. New Zealand Birds Online (Te Papa; Birds New Zealand).",
+    inat: { name: "Hemiphaga novaeseelandiae", iconic: "Aves" },
+  },
+  {
+    id: "tauhou",
+    common: "Tauhou (silvereye)",
+    latin: "Zosterops lateralis",
+    kind: "bird",
+    icon: "🐦",
+    blurb:
+      "A small olive bird with a white ring round each eye, which crossed the Tasman on its own in the 1850s. Flocks work through gardens for nectar, berries and insects, and it is New Zealand's commonest native bird.",
+    native: true,
+    nativeBasis: "Self-introduced from Australia around 1856, and classed as native. New Zealand Birds Online (Te Papa; Birds New Zealand).",
+    inat: { name: "Zosterops lateralis", iconic: "Aves" },
+  },
+  {
+    id: "puriri-moth",
+    common: "Pūriri moth",
+    latin: "Aenetus virescens",
+    kind: "moth",
+    icon: "🌙",
+    blurb:
+      "New Zealand's largest moth, bright green and as wide as a hand. It spends up to six years as a caterpillar tunnelling inside a living tree and a day or two as an adult; the sign is a neat hole in the trunk, hidden under a web of chewed bark.",
+    native: true,
+    nativeBasis: "Endemic to the North Island. Manaaki Whenua – Landcare Research; Te Ara – the Encyclopedia of New Zealand.",
+    inat: { name: "Aenetus virescens", iconic: "Insecta" },
+  },
+  {
+    id: "kawakawa-looper",
+    common: "Kawakawa looper",
+    latin: "Cleora scriptaria",
+    kind: "moth",
+    icon: "🌙",
+    blurb:
+      "The moth whose caterpillars make the round holes in almost every kawakawa leaf. The caterpillar loops along like an inchworm and hides so well on the stem that the holes are usually all you see.",
+    native: true,
+    nativeBasis: "Endemic to New Zealand. Manaaki Whenua – Landcare Research.",
+    inat: { name: "Cleora scriptaria", iconic: "Insecta" },
+  },
+  {
+    id: "kowhai-moth",
+    common: "Kōwhai moth",
+    latin: "Uresiphita maorialis",
+    kind: "moth",
+    icon: "🌙",
+    blurb:
+      "A brown moth whose green, black-spotted caterpillars feed in loose webs on kōwhai leaves. They can strip a young tree in late summer; it almost always leafs out again, and the caterpillars feed birds while they last.",
+    native: true,
+    nativeBasis: "Endemic to New Zealand. Manaaki Whenua – Landcare Research.",
+    inat: { name: "Uresiphita maorialis", iconic: "Insecta" },
+  },
+  {
+    id: "nz-coppers",
+    common: "New Zealand coppers",
+    latin: "Lycaena",
+    kind: "butterfly",
+    icon: "🦋",
+    blurb:
+      "Small, quick, fire-coloured butterflies found nowhere else, which raise their caterpillars on pōhuehue and its wiry relatives. Plant the vine on a sunny bank and the coppers find it.",
+    native: true,
+    nativeBasis: "New Zealand's Lycaena coppers are all endemic. Manaaki Whenua – Landcare Research; Gibbs, New Zealand Butterflies.",
+    inat: { name: "Lycaena", iconic: "Insecta" },
+  },
+  {
+    id: "nz-native-bees",
+    common: "New Zealand native bees",
+    kind: "bee",
+    icon: "🐝",
+    blurb:
+      "About two dozen kinds of small bees, almost all found nowhere else, that nest alone in bare, sunny soil. Mānuka, kānuka and hebe are their mainstays, and a patch of bare clay bank helps them as much as a flower.",
+    native: true,
+    nativeBasis: "Native bees of the genera Leioproctus, Lasioglossum, Hylaeus and relatives. Donovan, Fauna of New Zealand 57 (Apoidea); Manaaki Whenua – Landcare Research.",
+  },
 ];
 
 // ---- The ties: region → plant id → the animals that plant supports ----
@@ -3473,4 +3571,76 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
   },
 
+  "nz-auckland": {
+    "metrosideros-excelsa": [
+      { wildlifeId: "tui", support: "nectar", note: "A flowering pōhutukawa in December is the loudest tree in Auckland: tūī defend it from each other and from everything else, and carry its pollen tree to tree.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+      { wildlifeId: "tauhou", support: "nectar", note: "Silvereyes work the crimson brushes in flocks, taking what the tūī leave.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+      { wildlifeId: "nz-native-bees", support: "nectar", note: "Native bees gather pollen from the open brushes on warm summer days.", basis: "Manaaki Whenua – Landcare Research." },
+    ],
+    "sophora-chathamica": [
+      { wildlifeId: "tui", support: "nectar", note: "Kōwhai flowers in early spring, when tūī have little else, and the curved yellow bells fit the tūī's bill.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+      { wildlifeId: "kowhai-moth", support: "host", reliance: "narrow", note: "The kōwhai moth's caterpillars feed on kōwhai and a few related legumes. A webbed, chewed kōwhai in late summer is theirs.", basis: "Manaaki Whenua – Landcare Research." },
+    ],
+    "vitex-lucens": [
+      { wildlifeId: "puriri-moth", support: "host", reliance: "narrow", note: "Pūriri is the pūriri moth's namesake and main host: its caterpillar tunnels in the living trunk for years without harming the tree.", basis: "Manaaki Whenua – Landcare Research." },
+      { wildlifeId: "kereru", support: "berries", note: "Pūriri fruits through winter, when most trees are bare of it, and kererū depend on it then.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+      { wildlifeId: "tui", support: "nectar", note: "Its pink flowers open in every month, so a pūriri is a tūī's year-round stop.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+    ],
+    "corynocarpus-laevigatus": [
+      { wildlifeId: "kereru", support: "berries", reliance: "narrow", note: "The orange karaka fruit is too big for any other bird left in New Zealand to swallow; the kererū carries the seed away.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+    ],
+    "knightia-excelsa": [
+      { wildlifeId: "tui", support: "nectar", note: "Rewarewa's red flowers are brushes of nectar in late spring, and tūī work them from the treetop down.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+    ],
+    "dysoxylum-spectabile": [
+      { wildlifeId: "tui", support: "nectar", note: "Kohekohe flowers in midwinter, straight from the trunk — one of the few nectar sources tūī have in June.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+    ],
+    "alectryon-excelsus": [
+      { wildlifeId: "kereru", support: "berries", note: "Kererū and tūī take the scarlet, fleshy cups around tītoki seeds in summer.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+    ],
+    "podocarpus-totara": [
+      { wildlifeId: "kereru", support: "berries", note: "The sweet red seed stalks on female tōtara are autumn food for kererū.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+      { wildlifeId: "tauhou", support: "berries", note: "Silvereyes pick over the small red stalks in flocks.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+    ],
+    "dacrycarpus-dacrydioides": [
+      { wildlifeId: "kereru", support: "berries", note: "A fruiting kahikatea stand feeds kererū for weeks in autumn.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+    ],
+    "cordyline-australis": [
+      { wildlifeId: "tauhou", support: "berries", note: "Silvereyes strip the small pale berries of cabbage trees in late summer.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+      { wildlifeId: "nz-native-bees", support: "nectar", note: "The scented flower sprays in late spring hum with native bees.", basis: "Manaaki Whenua – Landcare Research." },
+    ],
+    "kunzea-robusta": [
+      { wildlifeId: "nz-native-bees", support: "nectar", note: "Kānuka in flower is a mainstay for New Zealand's native bees, which gather its pollen in early summer.", basis: "Manaaki Whenua – Landcare Research." },
+    ],
+    "leptospermum-scoparium": [
+      { wildlifeId: "nz-native-bees", support: "nectar", note: "Mānuka is one of the native bees' main pollen plants, from spring into summer.", basis: "Manaaki Whenua – Landcare Research." },
+    ],
+    "coprosma-repens": [
+      { wildlifeId: "tauhou", support: "berries", note: "Silvereyes take taupata's orange berries in autumn.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+    ],
+    "coprosma-robusta": [
+      { wildlifeId: "tauhou", support: "berries", note: "Karamū's heavy crops of orange berries are autumn food for silvereyes and other birds.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+      { wildlifeId: "kereru", support: "berries", note: "Kererū eat karamū berries too, and spread its seed.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+    ],
+    "veronica-stricta": [
+      { wildlifeId: "nz-native-bees", support: "nectar", note: "Koromiko flowers all summer, and native bees work its spikes.", basis: "Manaaki Whenua – Landcare Research." },
+    ],
+    "melicytus-ramiflorus": [
+      { wildlifeId: "puriri-moth", support: "host", note: "Māhoe is one of the trees pūriri moth caterpillars tunnel into besides pūriri.", basis: "Manaaki Whenua – Landcare Research." },
+      { wildlifeId: "tauhou", support: "berries", note: "Silvereyes eat the violet berries on the stems in autumn.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+    ],
+    "piper-excelsum": [
+      { wildlifeId: "kawakawa-looper", support: "host", reliance: "narrow", note: "The kawakawa looper's caterpillars feed almost only on kawakawa; the round holes in the leaves are theirs.", basis: "Manaaki Whenua – Landcare Research." },
+      { wildlifeId: "kereru", support: "berries", note: "Kererū eat the ripe orange fruit spikes in summer.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+    ],
+    "phormium-tenax": [
+      { wildlifeId: "tui", support: "nectar", note: "Harakeke flowers are dark red tubes full of nectar; a tūī comes away with a forehead dusted orange with its pollen.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+    ],
+    "phormium-cookianum": [
+      { wildlifeId: "tui", support: "nectar", note: "Tūī feed on the greenish flowers of mountain flax the way they do on harakeke.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
+    ],
+    "muehlenbeckia-complexa": [
+      { wildlifeId: "nz-coppers", support: "host", reliance: "narrow", note: "Pōhuehue and its relatives are the coppers' native caterpillar food plants, so a sunny bank of it is where they breed.", basis: "Manaaki Whenua – Landcare Research." },
+    ],
+  },
 };

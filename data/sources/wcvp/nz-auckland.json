@@ -1,0 +1,339 @@
+{
+  "source": "World Checklist of Vascular Plants (WCVP), Royal Botanic Gardens Kew",
+  "license": "CC BY 4.0",
+  "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
+  "area": "New Zealand North (TDWG:NZN — the North Island)",
+  "region": "nz-auckland",
+  "ranAt": "2026-09-24T07:17:27.247Z",
+  "rows": [
+    {
+      "id": "metrosideros-excelsa",
+      "latin": "Metrosideros excelsa",
+      "asked": "Metrosideros excelsa",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "agathis-australis",
+      "latin": "Agathis australis",
+      "asked": "Agathis australis",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "vitex-lucens",
+      "latin": "Vitex lucens",
+      "asked": "Vitex lucens",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "sophora-chathamica",
+      "latin": "Sophora chathamica",
+      "asked": "Sophora chathamica",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "corynocarpus-laevigatus",
+      "latin": "Corynocarpus laevigatus",
+      "asked": "Corynocarpus laevigatus",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "knightia-excelsa",
+      "latin": "Knightia excelsa",
+      "asked": "Knightia excelsa",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "dysoxylum-spectabile",
+      "latin": "Dysoxylum spectabile",
+      "asked": "Dysoxylum spectabile",
+      "verdict": "NATIVE",
+      "viaSynonym": "Didymocheton spectabilis (G.Forst.) Mabb. & Holzmeyer"
+    },
+    {
+      "id": "alectryon-excelsus",
+      "latin": "Alectryon excelsus",
+      "asked": "Alectryon excelsus",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "podocarpus-totara",
+      "latin": "Podocarpus totara",
+      "asked": "Podocarpus totara",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "dacrycarpus-dacrydioides",
+      "latin": "Dacrycarpus dacrydioides",
+      "asked": "Dacrycarpus dacrydioides",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "cordyline-australis",
+      "latin": "Cordyline australis",
+      "asked": "Cordyline australis",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "kunzea-robusta",
+      "latin": "Kunzea robusta",
+      "asked": "Kunzea robusta",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "hoheria-populnea",
+      "latin": "Hoheria populnea",
+      "asked": "Hoheria populnea",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "melicytus-ramiflorus",
+      "latin": "Melicytus ramiflorus",
+      "asked": "Melicytus ramiflorus",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "leptospermum-scoparium",
+      "latin": "Leptospermum scoparium",
+      "asked": "Leptospermum scoparium",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "pittosporum-tenuifolium",
+      "latin": "Pittosporum tenuifolium",
+      "asked": "Pittosporum tenuifolium",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "pittosporum-crassifolium",
+      "latin": "Pittosporum crassifolium",
+      "asked": "Pittosporum crassifolium",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "coprosma-repens",
+      "latin": "Coprosma repens",
+      "asked": "Coprosma repens",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "coprosma-robusta",
+      "latin": "Coprosma robusta",
+      "asked": "Coprosma robusta",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "veronica-stricta",
+      "latin": "Veronica stricta",
+      "asked": "Veronica stricta",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "piper-excelsum",
+      "latin": "Piper excelsum",
+      "asked": "Piper excelsum",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "pseudopanax-lessonii",
+      "latin": "Pseudopanax lessonii",
+      "asked": "Pseudopanax lessonii",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "myoporum-laetum",
+      "latin": "Myoporum laetum",
+      "asked": "Myoporum laetum",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "pomaderris-kumeraho",
+      "latin": "Pomaderris kumeraho",
+      "asked": "Pomaderris kumeraho",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "phormium-tenax",
+      "latin": "Phormium tenax",
+      "asked": "Phormium tenax",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "phormium-cookianum",
+      "latin": "Phormium cookianum",
+      "asked": "Phormium cookianum",
+      "verdict": "NATIVE",
+      "viaSynonym": "Phormium colensoi Hérincq"
+    },
+    {
+      "id": "astelia-banksii",
+      "latin": "Astelia banksii",
+      "asked": "Astelia banksii",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "arthropodium-cirratum",
+      "latin": "Arthropodium cirratum",
+      "asked": "Arthropodium cirratum",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "libertia-grandiflora",
+      "latin": "Libertia grandiflora",
+      "asked": "Libertia grandiflora",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "austroderia-fulvida",
+      "latin": "Austroderia fulvida",
+      "asked": "Austroderia fulvida",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "apodasmia-similis",
+      "latin": "Apodasmia similis",
+      "asked": "Apodasmia similis",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "ficinia-nodosa",
+      "latin": "Ficinia nodosa",
+      "asked": "Ficinia nodosa",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "carex-secta",
+      "latin": "Carex secta",
+      "asked": "Carex secta",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "microlaena-stipoides",
+      "latin": "Microlaena stipoides",
+      "asked": "Microlaena stipoides",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "dichondra-repens",
+      "latin": "Dichondra repens",
+      "asked": "Dichondra repens",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "lobelia-angulata",
+      "latin": "Lobelia angulata",
+      "asked": "Lobelia angulata",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "selliera-radicans",
+      "latin": "Selliera radicans",
+      "asked": "Selliera radicans",
+      "verdict": "NATIVE",
+      "viaSynonym": "Goodenia radicans (Cav.) Pers."
+    },
+    {
+      "id": "disphyma-australe",
+      "latin": "Disphyma australe",
+      "asked": "Disphyma australe",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "clematis-paniculata",
+      "latin": "Clematis paniculata",
+      "asked": "Clematis paniculata",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "passiflora-tetrandra",
+      "latin": "Passiflora tetrandra",
+      "asked": "Passiflora tetrandra",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "muehlenbeckia-complexa",
+      "latin": "Muehlenbeckia complexa",
+      "asked": "Muehlenbeckia complexa",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "parsonsia-heterophylla",
+      "latin": "Parsonsia heterophylla",
+      "asked": "Parsonsia heterophylla",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "cyathea-dealbata",
+      "latin": "Cyathea dealbata",
+      "asked": "Cyathea dealbata",
+      "verdict": "NATIVE",
+      "viaSynonym": "Alsophila dealbata (G.Forst.) Corda"
+    },
+    {
+      "id": "cyathea-medullaris",
+      "latin": "Cyathea medullaris",
+      "asked": "Cyathea medullaris",
+      "verdict": "NATIVE",
+      "viaSynonym": "Sphaeropteris medullaris (G.Forst.) Bernh."
+    },
+    {
+      "id": "dicksonia-squarrosa",
+      "latin": "Dicksonia squarrosa",
+      "asked": "Dicksonia squarrosa",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "asplenium-bulbiferum",
+      "latin": "Asplenium bulbiferum",
+      "asked": "Asplenium bulbiferum",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "blechnum-novae-zelandiae",
+      "latin": "Blechnum novae-zelandiae",
+      "asked": "Blechnum novae-zelandiae",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    }
+  ]
+}

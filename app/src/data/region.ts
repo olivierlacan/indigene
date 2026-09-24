@@ -100,7 +100,7 @@ export interface RegionMeta {
    * the way the plant and keystone counts are. `npm run registry:check` fails
    * if this and the plant list ever disagree.
    */
-  featuredHostLepCount: number;
+  featuredHostLepCount: number | null;
 
   /**
    * The real ecoregions this seed list represents, tagged with the provider that

@@ -123,7 +123,7 @@ const STYLE = `
   }
   .mid { position: relative; display: flex; align-items: center; gap: 48px; }
   .names { min-width: 0; }
-  h1 { font-weight: 800; letter-spacing: -0.025em; line-height: 1.04; }
+  h1 { text-wrap: balance; font-weight: 800; letter-spacing: -0.025em; line-height: 1.04; }
   .latin { margin-top: 12px; font-size: 34px; font-style: italic; color: ${AMBER}; letter-spacing: -0.005em; }
   .role { margin-top: 14px; font-size: 27px; color: #cdcdbd; }
   .drawing { margin-left: auto; flex: none; line-height: 0; opacity: 0.95; }

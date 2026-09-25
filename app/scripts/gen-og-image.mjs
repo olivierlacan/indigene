@@ -63,7 +63,7 @@ const html = `<!doctype html>
   }
   .row { display: flex; align-items: center; gap: 28px; }
   .wordmark { font-size: 58px; font-weight: 800; letter-spacing: -0.02em; }
-  h1 {
+  h1 { text-wrap: balance;
     font-size: 74px; line-height: 1.08; font-weight: 800;
     letter-spacing: -0.025em; max-width: 19ch;
   }

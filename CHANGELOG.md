@@ -53,6 +53,9 @@ subtitle on the What's new page.
 
 - The "Most-wanted invasives" lists are now called "Worst invasives", because
   nobody wants these plants.
+- Internal: share-card titles use `text-wrap: balance`, so a long name no
+  longer leaves one word alone on its last line. 24 cards regenerated; Beech's
+  plant card was skipped because it already overflows its fact row on `main`.
   https://indigene.app/invasives
 
 ## [0.35] - 2026-09-24

@@ -51,8 +51,8 @@ subtitle on the What's new page.
 
 ### Changed
 
-- The "Most-wanted invasives" lists are now called "Invasives to pull first".
-  Nobody wants these plants, and the new name says what to do about them.
+- The "Most-wanted invasives" lists are now called "Worst invasives", because
+  nobody wants these plants.
   https://indigene.app/invasives
 
 ## [0.35] - 2026-09-24

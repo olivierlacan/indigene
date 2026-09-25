@@ -1348,7 +1348,7 @@ export const fr: Dict = {
   "plants.lookalikesLinkText": "voyez les sosies que nous avons documentés",
   "plants.plantingLink": "Vous en avez déjà une et vous en voulez une autre ? Il existe quinze façons de multiplier une plante, chacune avec sa saison — {link}.",
   "plants.plantingLinkText": "voir quand et comment",
-  "steps.invasives": "Invasives à arracher",
+  "steps.invasives": "Les pires invasives",
   "steps.lookalikes": "Sosies",
   "lookalikes.indexTitle": "Les plantes qu'on prend pour des indigènes",
   "lookalikes.indexDocTitle": "Sosies — les plantes qu'on prend pour des indigènes — Indigene",
@@ -2114,11 +2114,11 @@ export const fr: Dict = {
   "nearby.nativeElsewhere":
     "Nos données donnent {name} comme {belongs}, et non de {region}. Elle peut apparaître sur iNaturalist là-bas comme sujet planté ou échappé de culture, mais nous ne la présenterons pas comme une indigène locale là où elle n'a pas sa place — ce serait le contraire de ce à quoi Indigene sert.",
   // ---------------------------------------------------------------------
-  // Les invasives à arracher en premier : la liste classée d'une région.
+  // Les pires invasives : la liste classée d'une région.
   // ---------------------------------------------------------------------
-  "wanted.title": "Invasives à arracher en premier",
+  "wanted.title": "Les pires invasives",
   "wanted.lede":
-    "Classées selon la pression qu'elles exercent, puis selon le nombre d'observations à l'état sauvage. Touchez-en une pour apprendre à la reconnaître.",
+    "Les plantes invasives à arracher en premier ici : classées selon la pression qu'elles exercent, puis selon le nombre d'observations à l'état sauvage. Touchez-en une pour apprendre à la reconnaître.",
   "wanted.ledeUnrated":
     "Les plantes invasives les plus observées ici. Personne n'a encore évalué la pression de chacune sur ce territoire : elles sont classées selon les observations seules. Touchez-en une pour apprendre à la reconnaître.",
   "wanted.rankAria": "Numéro {n}",
@@ -2126,11 +2126,11 @@ export const fr: Dict = {
   "wanted.countsNote":
     "Les observations sont les données sauvages d'iNaturalist dans le cadre de cette région, comptées le {date}. Elles mesurent où les gens ont regardé autant que là où la plante pousse.",
   "wanted.growInstead": "Que planter à la place",
-  "wanted.indexDocTitle": "Invasives à arracher en premier — Indigene",
-  "wanted.docTitle": "{name} — invasive à arracher — Indigene",
-  "wanted.indexLede": "Cinq par région. Ouvrez-en une pour apprendre à la reconnaître.",
+  "wanted.indexDocTitle": "Les pires invasives — Indigene",
+  "wanted.docTitle": "{name} — plante invasive — Indigene",
+  "wanted.indexLede": "Les cinq plantes invasives à arracher en premier dans chaque région. Ouvrez-en une pour apprendre à la reconnaître.",
   "wanted.unratedShort": "Personne ne les a évaluées ici : elles sont classées selon les observations seules.",
-  "wanted.backToIndex": "← Toutes les invasives à arracher",
+  "wanted.backToIndex": "← Toutes les pires invasives",
   "wanted.howToSpot": "Comment la reconnaître",
   "wanted.howToRemove": "Comment s'en débarrasser",
   "wanted.afterwards": "Ensuite : ",
@@ -2147,14 +2147,14 @@ export const fr: Dict = {
   "wanted.method.pro": "Se faire aider",
   "wanted.method.replant": "Replanter",
   "wanted.method.water": "Près de l'eau",
-  "wanted.regionDocTitle": "Invasives à arracher en premier — {region} — Indigene",
+  "wanted.regionDocTitle": "Les pires invasives — {region} — Indigene",
   "wanted.otherRegions": "Les listes des autres régions",
-  "wanted.whereWanted": "Où l'arracher en premier",
+  "wanted.whereWanted": "Où elle compte parmi les pires",
   "wanted.photosTitle": "La voir dans la nature",
   "wanted.photosLede": "Des photos vérifiées sur iNaturalist, prises dans une région où elle figure sur la liste.",
   "wanted.tellApart": "Avec quoi on la confond",
   "wanted.noPhotos": "Aucune photo vérifiée de cette région sur iNaturalist pour l'instant.",
-  "wanted.onLists": "À arracher en premier : {places}",
+  "wanted.onLists": "Parmi les pires : {places}",
   "wanted.placeLink": "{region} (n° {n})",
 
   "wlNearby.seeItNear": "Le voir près de chez vous",

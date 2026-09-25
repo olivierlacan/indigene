@@ -333,7 +333,7 @@ async function collectPages(load) {
   });
   add("invasives", en["wanted.indexDocTitle"], en["wanted.indexLede"], {
     image: invasiveCard("index"),
-    imageAlt: "Invasives to pull first — five for each region",
+    imageAlt: "Worst invasives — each region's five invasive plants to pull first",
   });
   add("planting", en["planting.docTitle"], en["planting.lede"], {
     image: plantingCard("index"),
@@ -470,7 +470,7 @@ async function collectPages(load) {
       inv.marks.map((m) => `${m.feature}: ${m.text}`).join(" "),
       {
         image: invasiveCard(inv.id),
-        imageAlt: `${inv.common} (${inv.latin}) — how many regions list it to pull first, and its highest place`,
+        imageAlt: `${inv.common} (${inv.latin}) — how many regions list it among their worst, and its highest place`,
       }
     );
   }
@@ -487,7 +487,7 @@ async function collectPages(load) {
       `The invasive plants to pull first here: ${names}.`,
       {
         image: invasiveCard(`in-${id}`),
-        imageAlt: `${region.meta.name} — its five invasive plants to pull first, ranked`,
+        imageAlt: `${region.meta.name} — its five worst invasive plants, ranked`,
       }
     );
   }

@@ -20,6 +20,7 @@ export type PrivacySection =
   | "inat"
   | "whatsnew"
   | "counting"
+  | "film"
   | "children";
 
 /** The route for one section of the page, or the page itself. */

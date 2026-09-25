@@ -2,6 +2,7 @@ import { el, clear } from "../ui";
 import { navigate, resetDraft } from "../state";
 import { listSpots } from "../db";
 import { t, tn, tx } from "../lib/i18n";
+import { filmEmbed } from "../components/film";
 
 export function renderWelcome(main: HTMLElement): void {
   clear(main);
@@ -39,6 +40,10 @@ export function renderWelcome(main: HTMLElement): void {
     // it interrupted the one thing this screen is for. The switch is now in
     // the header's menu, which is above the fold on every page including this
     // one, and still in the footer.
+
+    // The one-minute film: the whole pitch, drawn. Click to play, so the home
+    // page makes no request to the video host until someone asks for it.
+    filmEmbed(),
 
     // The pitch for anyone not yet convinced — in plain sight, not a drawer.
     el("h3", { style: "margin-top:1.8rem" }, t("welcome.whyTitle")),

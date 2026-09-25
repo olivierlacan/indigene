@@ -39,6 +39,7 @@ const SECTION_IDS: Record<string, string> = {
   inat: "privacy-inat",
   whatsnew: "privacy-whats-new",
   counting: "privacy-counting",
+  film: "privacy-film",
   children: "privacy-children",
 };
 
@@ -144,6 +145,13 @@ export function renderPrivacy(main: HTMLElement, param?: string): void {
       el("p", {}, tx("privacy.count7", {
         settings: el("a", { href: "#/settings/counting" }, t("privacy.countSettingsLink")),
       })),
+
+      // The home page's film is the one outside service the app loads that
+      // isn't a lookup or the page count, so it is said here in full. What's
+      // said is a description of `components/film.ts` (click to play).
+      el("h3", { id: "privacy-film" }, t("privacy.filmTitle")),
+      el("p", {}, t("privacy.film1")),
+      el("p", {}, t("privacy.film2")),
 
       el("h3", {}, t("privacy.noAccountTitle")),
       bullets(["privacy.noAccount1", "privacy.noAccount2", "privacy.noAccount3"]),

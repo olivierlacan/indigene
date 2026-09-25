@@ -54,6 +54,10 @@ export const IMG_HOSTS: readonly string[] = [
   "https://cdn.usefathom.com",
 ];
 
+/** The one outside frame: the home page's film player, and only after someone
+ *  presses play (`components/film.ts`). */
+export const FRAME_HOSTS: readonly string[] = ["https://player.mediadelivery.net"];
+
 /** The one outside script: the page count, and only when it's allowed to load
  *  at all (`startAnalytics`). */
 export const SCRIPT_HOSTS: readonly string[] = ["https://cdn.usefathom.com"];
@@ -72,6 +76,7 @@ export function contentSecurityPolicy(scriptHashes: readonly string[] = []): str
     "style-src": ["'self'", "'unsafe-inline'"],
     "img-src": ["'self'", "data:", "blob:", ...IMG_HOSTS],
     "connect-src": ["'self'", ...CONNECT_HOSTS],
+    "frame-src": ["'self'", ...FRAME_HOSTS],
     "font-src": ["'self'"],
     "worker-src": ["'self'"],
     "manifest-src": ["'self'"],

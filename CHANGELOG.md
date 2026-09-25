@@ -33,6 +33,15 @@ subtitle on the What's new page.
 
 ### Added
 
+- The home page has a one-minute, hand-drawn film about what Indigene does
+  and who it's for, in English or French to match your language. Nothing loads from the
+  video host until you press play. https://indigene.app/
+- Internal: `film/` holds the code that draws, voices and scores the film —
+  a pure-JavaScript canvas renderer in the app's palette, Gemini TTS
+  narration, a Lyria score, synthesized foley — with rebuild and translation
+  steps in `film/README.md`. Rendered cuts are gitignored and hosted on Bunny
+  Stream; `components/film.ts` is click-to-play, and `lib/csp.ts` gains
+  `frame-src player.mediadelivery.net` with a matching Privacy section.
 - Regions: each region now shows a small flag beside its name, two where a
   region crosses a border, like the Pacific Northwest, so you can find your
   country at a glance. https://indigene.app/regions

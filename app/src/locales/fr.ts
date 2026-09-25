@@ -83,6 +83,7 @@ export const fr: Dict = {
   "steps.crops": "Potager",
   "steps.settings": "Réglages",
   "steps.import": "Importer depuis iNaturalist",
+  "steps.film": "Le film",
 
   // ---------------------------------------------------------------------
   // Réglages.
@@ -229,6 +230,9 @@ export const fr: Dict = {
   "film.title": "Indigene, le film",
   "film.play": "Voir le film (1 min)",
   "film.note": "Rien ne se charge depuis l'hébergeur vidéo avant que vous lanciez la lecture.",
+  "film.lede": "Ce que fait Indigene, et pour qui, en une minute.",
+  "film.share": "Partager le film",
+  "film.shareText": "Des plantes indigènes pour l'endroit exact où vous êtes, en un film d'une minute :",
 
   // ---------------------------------------------------------------------
   // Parcourir.
@@ -1828,9 +1832,9 @@ export const fr: Dict = {
   "privacy.count7":
     "Si vous préférez ne pas être compté du tout, désactivez-le dans {settings} — et c'est un vrai interrupteur, pas une demande polie. Rien n'est chargé et aucune connexion n'est établie : ils n'apprennent même pas que votre navigateur existe. Si votre navigateur demande déjà aux sites de ne pas vous pister (Do Not Track, ou Global Privacy Control), Indigene le prend pour votre réponse sans que vous ayez à la donner deux fois.",
   "privacy.countSettingsLink": "Compter les visites, dans les Réglages",
-  "privacy.filmTitle": "Le film de la page d'accueil",
+  "privacy.filmTitle": "Le film",
   "privacy.film1":
-    "Le film d'une minute est hébergé par Bunny.net, un service vidéo. Tant que vous n'avez pas lancé la lecture, la page d'accueil affiche une image fixe servie par notre propre site, et rien n'est demandé à Bunny.",
+    "Le film d'une minute est hébergé par Bunny.net, un service vidéo. Tant que vous n'avez pas lancé la lecture, la page affiche une image fixe servie par notre propre site, et rien n'est demandé à Bunny.",
   "privacy.film2":
     "Quand vous lancez la lecture, votre navigateur charge le lecteur de Bunny. Il télécharge le film et envoie à Bunny des mesures sur la qualité de lecture et la rapidité de leurs serveurs. Comme tout site web, Bunny voit votre adresse internet ; il ne dépose aucun cookie, ne stocke rien sur votre appareil, et n'apprend jamais votre position, vos lieux enregistrés ni ce que vous tapez.",
   "privacy.noAccountTitle": "Pas de compte, pas de publicité, aucun profil de vous",

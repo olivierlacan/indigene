@@ -42,6 +42,14 @@ subtitle on the What's new page.
   steps in `film/README.md`. Rendered cuts are gitignored and hosted on Bunny
   Stream; `components/film.ts` is click-to-play, and `lib/csp.ts` gains
   `frame-src player.mediadelivery.net` with a matching Privacy section.
+- The film has a page of its own, made for sharing: send the link and the
+  film shows up in the preview, playing right there in many chat apps.
+  https://indigene.app/film
+- Internal: `/film` is prerendered with `og:video` (MP4 when
+  `FILM_MP4_HOST` is set, then the Bunny player as `text/html`) and a
+  `twitter:player` card; the ids moved to `lib/film.ts` so the prerenderer
+  can read them. `scripts/gen-film-card.mjs` crops the poster to the 1200×630
+  card.
 - Regions: each region now shows a small flag beside its name, two where a
   region crosses a border, like the Pacific Northwest, so you can find your
   country at a glance. https://indigene.app/regions

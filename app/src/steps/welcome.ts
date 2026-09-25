@@ -2,7 +2,8 @@ import { el, clear } from "../ui";
 import { navigate, resetDraft } from "../state";
 import { listSpots } from "../db";
 import { t, tn, tx } from "../lib/i18n";
-import { filmEmbed } from "../components/film";
+import { filmEmbed, filmLang } from "../components/film";
+import { filmRoute } from "../lib/film";
 
 export function renderWelcome(main: HTMLElement): void {
   clear(main);
@@ -46,7 +47,7 @@ export function renderWelcome(main: HTMLElement): void {
     filmEmbed(),
     // Its own page is the address worth sending: it previews as the film.
     el("p", { style: "margin-top:0.4rem;font-size:0.85rem;text-align:center" },
-      el("a", { href: "#/film" }, t("film.share"))
+      el("a", { href: `#/${filmRoute(filmLang())}` }, t("film.share"))
     ),
 
     // The pitch for anyone not yet convinced — in plain sight, not a drawer.

@@ -5,9 +5,11 @@
 // `/film`'s head, so a shared link previews as the film itself — and a Node
 // script can't import a module that touches the DOM.
 
+export type FilmLang = "en" | "fr";
+
 /** Bunny Stream library and video ids, per language cut. */
 export const FILM_LIBRARY = "761918";
-export const FILM_VIDEOS: Record<"en" | "fr", string> = {
+export const FILM_VIDEOS: Record<FilmLang, string> = {
   en: "7f131466-6a92-4fc5-9814-4acfdd392814",
   fr: "b7a57b9c-f08a-49c7-878a-d440093072a4",
 };
@@ -27,12 +29,18 @@ export const FILM_FRAME_ORIGIN = "https://player.mediadelivery.net";
  */
 export const FILM_MP4_HOST: string | null = null;
 
+/** The route of one cut's page: `film`, or `film/fr` for the French cut —
+ *  its own address, so a shared link previews in French too. */
+export function filmRoute(lang: FilmLang): string {
+  return lang === "fr" ? "film/fr" : "film";
+}
+
 /** The player page for one cut. */
-export function filmEmbedUrl(lang: "en" | "fr"): string {
+export function filmEmbedUrl(lang: FilmLang): string {
   return `${FILM_FRAME_ORIGIN}/embed/${FILM_LIBRARY}/${FILM_VIDEOS[lang]}`;
 }
 
 /** The plain MP4 of one cut, when the library serves one. */
-export function filmMp4Url(lang: "en" | "fr"): string | null {
+export function filmMp4Url(lang: FilmLang): string | null {
   return FILM_MP4_HOST ? `https://${FILM_MP4_HOST}/${FILM_VIDEOS[lang]}/play_720p.mp4` : null;
 }

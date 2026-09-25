@@ -127,6 +127,7 @@ const PARAM_RENDERERS: Record<string, StepFn> = {
   planting: renderPlanting,
   settings: renderSettings,
   privacy: renderPrivacy,
+  film: renderFilm,
 };
 
 const FLOW: AppStep[] = ["location", "sun", "confirm", "priorities", "results"];

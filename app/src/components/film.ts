@@ -11,10 +11,16 @@
 import { el } from "../ui";
 import { t, getLang } from "../lib/i18n";
 import { privacyRoute } from "./privacy-link";
-import { filmEmbedUrl } from "../lib/film";
+import { filmEmbedUrl, type FilmLang } from "../lib/film";
 
-export function filmEmbed(): HTMLElement {
-  const lang = getLang() === "fr" ? "fr" : "en";
+/** The cut for the reader's language. */
+export function filmLang(): FilmLang {
+  return getLang() === "fr" ? "fr" : "en";
+}
+
+/** The player, playing the reader's language's cut unless `cut` names one. */
+export function filmEmbed(cut?: FilmLang): HTMLElement {
+  const lang = cut ?? filmLang();
   const box = el("figure", { class: "film" });
 
   const start = (): void => {

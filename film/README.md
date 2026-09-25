@@ -169,8 +169,8 @@ ffmpeg -i film/out/still-fr-47.90.png -vf scale=1280:-1 -c:v libwebp -quality 78
 (cd app && node scripts/gen-film-card.mjs)   # the /film link-preview card
 ```
 
-`https://indigene.app/film` is the address to share: its head carries video
-tags, so a link preview shows the film and, in most chat apps, plays it. That
+`https://indigene.app/film` (and `/film/fr` for the French cut) is the
+address to share: its head carries video tags, so a link preview shows the film and, in most chat apps, plays it. That
 needs a plain MP4, which Bunny only writes with the library's **MP4 fallback**
 on (Stream → library → Encoding). Put the library's pull-zone host
 (`vz-….b-cdn.net`) in `FILM_MP4_HOST` in `app/src/lib/film.ts`; until then the

@@ -18,16 +18,15 @@ export const FILM_VIDEOS: Record<FilmLang, string> = {
 export const FILM_FRAME_ORIGIN = "https://player.mediadelivery.net";
 
 /**
- * The library's pull zone, for the plain MP4 copies Bunny writes when the
- * library's "MP4 fallback" is on (`https://<zone>/<id>/play_720p.mp4`).
+ * The library's pull zone, for the plain MP4 copies Bunny writes with the
+ * library's "MP4 fallback" on (`https://<zone>/<id>/play_720p.mp4`).
  *
  * A link preview can only play a file it can fetch whole — the player page
- * and its HLS stream are no use to Discord, Slack or iMessage. Null until the
- * fallback is switched on; `/film` then previews through the player alone
- * (`twitter:player`, and `og:video` as an embed), which the apps that honour
- * those tags still play.
+ * and its HLS stream are no use to Discord, Slack or iMessage. Set to null and
+ * `/film` previews through the player alone (`twitter:player`, and `og:video`
+ * as an embed), which the apps that honour those tags still play.
  */
-export const FILM_MP4_HOST: string | null = null;
+export const FILM_MP4_HOST: string | null = "indigene.b-cdn.net";
 
 /** The route of one cut's page: `film`, or `film/fr` for the French cut —
  *  its own address, so a shared link previews in French too. */

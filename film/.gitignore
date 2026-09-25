@@ -1,0 +1,6 @@
+# Everything here is rebuilt by build.sh — only the voice and music takes are sources.
+out/
+audio/sfx*.wav
+assets/soundtrack*.wav
+assets/soundtrack*.m4a
+*.pcm

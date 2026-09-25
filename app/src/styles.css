@@ -5647,3 +5647,79 @@ body[data-layout="profile"] .wip-banner-text {
 .wanted-links {
   margin: 0 0 0.6rem;
 }
+
+/* --- The home page's film (components/film.ts) ---------------------------
+   A still from the film with a play button; pressing it swaps in the player.
+   The poster is our own image, so the page contacts no video host until a
+   reader asks for the film. The box keeps 16:9 before and after, so nothing
+   below it jumps when the player arrives. */
+.film {
+  margin: 1.2rem 0 0;
+}
+.film-play,
+.film-frame {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface-2);
+}
+.film-play {
+  position: relative;
+  padding: 0;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px var(--line);
+}
+.film-poster {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.film-play:hover .film-poster {
+  transform: scale(1.02);
+}
+.film-play-label {
+  position: absolute;
+  left: 50%;
+  bottom: 0.9rem;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: var(--tap);
+  padding: 0 1.2rem;
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--on-brand);
+  font: inherit;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+/* A drawn triangle rather than a glyph: ▶ renders as an emoji on some phones. */
+.film-play-icon {
+  width: 0;
+  height: 0;
+  border-left: 0.75em solid currentColor;
+  border-top: 0.45em solid transparent;
+  border-bottom: 0.45em solid transparent;
+}
+.film-play:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+.film figcaption {
+  margin-top: 0.5rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  .film-poster {
+    transition: none;
+  }
+  .film-play:hover .film-poster {
+    transform: none;
+  }
+}

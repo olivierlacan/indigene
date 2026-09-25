@@ -211,6 +211,9 @@ export const en = {
   "welcome.savedTitle": "Your saved spots",
   "welcome.openSaved.one": "Open saved spot ({n})",
   "welcome.openSaved.other": "Open saved spots ({n})",
+  "film.title": "Indigene, the film",
+  "film.play": "Watch the 1-minute film",
+  "film.note": "Nothing loads from the video host until you press play.",
 
   // ---------------------------------------------------------------------
   // Browse (the no-location entrance).
@@ -1832,6 +1835,11 @@ export const en = {
   "privacy.count7":
     "If you would rather not be counted at all, turn it off under {settings} — and it's a real off switch, not a polite request. Nothing is fetched and no connection is made, so they are never told your browser exists. If your browser is already asking websites not to track you (Do Not Track, or Global Privacy Control), Indigene takes that as your answer without your having to give it twice.",
   "privacy.countSettingsLink": "Counting visits, in Settings",
+  "privacy.filmTitle": "The film on the home page",
+  "privacy.film1":
+    "The one-minute film is hosted by Bunny.net, a video service. Until you press play, the home page shows a still picture from our own site, and nothing is asked of Bunny.",
+  "privacy.film2":
+    "When you press play, your browser loads Bunny's player. It fetches the film and sends Bunny measurements of how well it plays and how fast their servers answer. Like any website, Bunny sees your internet address; it sets no cookies, stores nothing on your device, and is never told your location, your spots, or anything you type.",
   "privacy.noAccountTitle": "No account, no ads, no profile of you",
   "privacy.noAccount1": "No sign-up, email, or password — we never ask who you are.",
   "privacy.noAccount2": "No advertising, and nothing sold or shared. We hold no data about you to sell in the first place.",

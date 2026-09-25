@@ -26,7 +26,7 @@ export const FILM_FRAME_ORIGIN = "https://player.mediadelivery.net";
  * `/film` previews through the player alone (`twitter:player`, and `og:video`
  * as an embed), which the apps that honour those tags still play.
  */
-export const FILM_MP4_HOST: string | null = "indigene.b-cdn.net";
+export const FILM_MP4_HOST: string | null = "vz-37e35cfb-dc7.b-cdn.net";
 
 /** The route of one cut's page: `film`, or `film/fr` for the French cut —
  *  its own address, so a shared link previews in French too. */

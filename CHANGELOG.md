@@ -43,9 +43,8 @@ subtitle on the What's new page.
   Stream; `components/film.ts` is click-to-play, and `lib/csp.ts` gains
   `frame-src player.mediadelivery.net` with a matching Privacy section.
 - The film has a page of its own, made for sharing: send the link and the
-  film shows up in the preview, playing right there in many chat apps. The
-  French cut has its own: https://indigene.app/film/fr
-  https://indigene.app/film
+  film shows up in the preview, playing right there in many chat apps.
+  https://indigene.app/film, and in French https://indigene.app/film/fr
 - Internal: `/film` is prerendered with `og:video` (MP4 when
   `FILM_MP4_HOST` is set, then the Bunny player as `text/html`) and a
   `twitter:player` card; `/film/fr` is the same in French (its own

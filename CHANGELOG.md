@@ -49,6 +49,12 @@ subtitle on the What's new page.
   five flags drawn as inline SVG (~2 KB) because Windows has no flag emoji;
   shown on the Regions cards, the region page title and the region picker.
 
+### Changed
+
+- The "Most-wanted invasives" lists are now called "Invasives to pull first".
+  Nobody wants these plants, and the new name says what to do about them.
+  https://indigene.app/invasives
+
 ## [0.35] - 2026-09-24
 
 **Auckland & Northland, south of the equator**

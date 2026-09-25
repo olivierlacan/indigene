@@ -1350,7 +1350,7 @@ export const en = {
   "plants.lookalikesLinkText": "see the look-alikes we've written up",
   "plants.plantingLink": "Already have one, and want another? There are fifteen ways to make more of a plant, each with its own season — {link}.",
   "plants.plantingLinkText": "see when and how",
-  "steps.invasives": "Most-wanted invasives",
+  "steps.invasives": "Invasives to pull first",
   "steps.lookalikes": "Look-alikes",
   "lookalikes.indexTitle": "Plants that get mistaken for natives",
   "lookalikes.indexDocTitle": "Look-alikes — plants mistaken for natives — Indigene",
@@ -2125,11 +2125,11 @@ export const en = {
   "nearby.nativeElsewhere":
     "Our data lists {name} as {belongs}, not {region}. It may turn up on iNaturalist there as a planted or escaped specimen, but we won't showcase it as a local native where it doesn't belong — that's the opposite of what Indigene is for.",
   // ---------------------------------------------------------------------
-  // Most-wanted invasives: the ranked list on a region's page.
+  // Invasives to pull first: the ranked list on a region's page.
   // ---------------------------------------------------------------------
-  "wanted.title": "Most-wanted invasives",
+  "wanted.title": "Invasives to pull first",
   "wanted.lede":
-    "The invasive plants to pull first here: ranked by how hard each one pushes, then by how often it's been recorded wild. Tap one to learn to spot it.",
+    "Ranked by how hard each one pushes, then by how often it's been recorded wild. Tap one to learn to spot it.",
   "wanted.ledeUnrated":
     "The invasive plants recorded most often here. Nobody has rated how hard each one pushes on this ground, so they're ranked by sightings alone. Tap one to learn to spot it.",
   "wanted.rankAria": "Number {n}",
@@ -2137,11 +2137,11 @@ export const en = {
   "wanted.countsNote":
     "Sightings are wild records on iNaturalist inside this region's box, counted {date}. They measure where people have looked as well as where the plant grows.",
   "wanted.growInstead": "What to grow instead",
-  "wanted.indexDocTitle": "Most-wanted invasives — Indigene",
-  "wanted.docTitle": "{name} — most-wanted invasive — Indigene",
-  "wanted.indexLede": "Each region's five invasive plants to pull first. Open one to learn to spot it.",
+  "wanted.indexDocTitle": "Invasives to pull first — Indigene",
+  "wanted.docTitle": "{name} — invasive to pull — Indigene",
+  "wanted.indexLede": "Five for each region. Open one to learn to spot it.",
   "wanted.unratedShort": "Nobody has rated these here, so they're ranked by sightings alone.",
-  "wanted.backToIndex": "← All most-wanted invasives",
+  "wanted.backToIndex": "← All invasives to pull first",
   "wanted.howToSpot": "How to spot it",
   "wanted.howToRemove": "How to get rid of it",
   "wanted.afterwards": "Afterwards: ",
@@ -2158,14 +2158,14 @@ export const en = {
   "wanted.method.pro": "Get help",
   "wanted.method.replant": "Replant",
   "wanted.method.water": "Near water",
-  "wanted.regionDocTitle": "Most-wanted invasives — {region} — Indigene",
+  "wanted.regionDocTitle": "Invasives to pull first — {region} — Indigene",
   "wanted.otherRegions": "Other regions' lists",
-  "wanted.whereWanted": "Where it's most wanted",
+  "wanted.whereWanted": "Where to pull it first",
   "wanted.photosTitle": "See it in the wild",
-  "wanted.photosLede": "Verified iNaturalist photos from a region where it's wanted.",
+  "wanted.photosLede": "Verified iNaturalist photos from a region that lists it.",
   "wanted.tellApart": "What it's mistaken for",
   "wanted.noPhotos": "No verified photos from this region on iNaturalist yet.",
-  "wanted.onLists": "Most wanted: {places}",
+  "wanted.onLists": "Pull first in: {places}",
   "wanted.placeLink": "{region} (#{n})",
 
   "wlNearby.seeItNear": "See it near you",

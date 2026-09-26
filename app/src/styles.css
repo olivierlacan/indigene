@@ -840,6 +840,75 @@ a {
   outline: none;
 }
 
+/* The loading screen `index.html` puts in `main` until the app draws its first
+   page. All timing is here, so it runs before any script: the seedling fades in
+   at once (a fast load replaces it before it's more than a glimmer), and each
+   `.boot-line` below the first fades in only if the wait runs long — 4 s, well
+   past a normal load, then 12 s. Under reduced motion the global rule makes
+   each fade instant; the delays still hold, and the sway stops. */
+.boot-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 22vh 0 4rem;
+  text-align: center;
+  color: var(--ink-soft);
+  animation: boot-fade 0.6s ease-out 0.1s both;
+}
+.boot-sprout {
+  font-size: 2.75rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.boot-sprout span {
+  display: inline-block;
+  transform-origin: 50% 90%;
+  animation: boot-sway 2.4s ease-in-out infinite;
+}
+.boot-line {
+  margin: 0;
+}
+.boot-late,
+.boot-later {
+  color: var(--brand-ink);
+  animation: boot-fade 0.9s ease-out 4s both;
+}
+.boot-later {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  animation-delay: 12s;
+}
+/* One language showing: `<html lang>` is set in the head before this paints. */
+:root:lang(fr) .boot-loader [lang="en"],
+:root:not(:lang(fr)) .boot-loader [lang="fr"] {
+  display: none;
+}
+@keyframes boot-fade {
+  from {
+    opacity: 0;
+    transform: translateY(0.4rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes boot-sway {
+  0%,
+  100% {
+    transform: rotate(-6deg) scale(1);
+  }
+  50% {
+    transform: rotate(6deg) scale(1.06);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .boot-sprout span {
+    animation: none !important;
+  }
+}
+
 /* Site-wide footer: the fine print + "See what's new", on every page. The
    main column already reserves generous bottom padding, so pull the footer
    up into it rather than stacking more empty space. */

@@ -46,6 +46,28 @@
       })();
     </script>
 
+    <!-- boot-lang: which language the loading screen in `main` speaks, decided
+         before the app arrives. A trimmed copy of `detect()` in lib/i18n.ts —
+         a saved choice, then `?lang=`, then the browser's list — which stamps
+         the same `<html lang>` the app sets on boot. If the two ever disagree,
+         the cost is one "Loading…" in the other language. -->
+    <script>
+      (function () {
+        var lang;
+        try {
+          lang = localStorage.getItem("indigene:lang");
+        } catch (e) {}
+        var m = /[?&]lang=(en|fr)\b/i.exec(location.search + location.hash);
+        if (!lang && m) lang = m[1];
+        // The first tag we speak wins, as in `detect()`: "de, fr" means French.
+        var wanted = navigator.languages || [navigator.language];
+        for (var i = 0; !lang && i < wanted.length; i++) {
+          if (/^(en|fr)\b/i.test(wanted[i] || "")) lang = wanted[i];
+        }
+        if (/^fr\b/i.test(lang || "")) document.documentElement.lang = "fr-FR";
+      })();
+    </script>
+
     <meta
       name="description"
       content="Stand in a spot, and find native plants that will actually thrive there — ranked by what they do for the local ecosystem."
@@ -179,7 +201,31 @@
       <ol id="steps" class="steps-list"></ol>
     </nav>
 
-    <main id="main" class="app-main" tabindex="-1"></main>
+    <!-- The loader lives in the HTML, not the app, because the app is what we
+         are waiting for: on a slow cell connection the script takes seconds to
+         arrive, and until this existed `main` sat empty the whole time. It is
+         pure CSS — it fades in on its own and adds a line at 4 s and another
+         at 12 s (`.boot-*` in styles.css) — so it works before a byte of script
+         has run. The first page the app draws replaces it (`clear(main)`), and
+         `route()` removes it outright in case a page doesn't.
+         Both languages are here; the `boot-lang` script in the head sets
+         `<html lang>` early so the stylesheet can hide the other one. -->
+    <main id="main" class="app-main" tabindex="-1">
+      <div class="boot-loader" id="boot-loader" role="status">
+        <div class="boot-sprout" aria-hidden="true"><span>🌱</span></div>
+        <p class="boot-line">
+          <span lang="en">Loading…</span><span lang="fr">Chargement…</span>
+        </p>
+        <p class="boot-line boot-late">
+          <span lang="en">Good things take time to grow.</span
+          ><span lang="fr">Ce qui pousse bien prend son temps.</span>
+        </p>
+        <p class="boot-line boot-later">
+          <span lang="en">The connection seems slow. Still on its way.</span
+          ><span lang="fr">La connexion semble lente. Ça arrive.</span>
+        </p>
+      </div>
+    </main>
 
     <!-- Site-wide footer: static so it shows on every page, even if a render
          fails. %BASE_URL% is replaced by Vite at build time. -->

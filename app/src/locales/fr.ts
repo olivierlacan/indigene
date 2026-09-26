@@ -328,7 +328,7 @@ export const fr: Dict = {
   "spot.obsPlaceholder": "Lien, numéro ou UUID",
   "spot.obsAdd": "Relier",
   "spot.obsHelp":
-    "Collez le lien, ou l'UUID que la page de l'observation copie pour vous ; toutes ses photos apparaissent ici. Elles restent sur iNaturalist — nous ne gardons que cette référence, sur votre appareil. Une observation que vous avez rendue floue le reste pour tout le monde ; cette page se souvient seulement de laquelle de vos plantes il s'agissait.",
+    "Les photos restent sur iNaturalist ; seule la référence est gardée, sur cet appareil. Une observation rendue floue le reste pour tout le monde.",
   "spot.obsBad": "Ce n'est pas un lien, un numéro ni un UUID que nous reconnaissons.",
   "spot.obsAlready": "Déjà reliée à cette plante.",
   "spot.obsAdded": "Observation reliée.",

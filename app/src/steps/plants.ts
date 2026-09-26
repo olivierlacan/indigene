@@ -16,20 +16,22 @@ import { REGIONS } from "../lib/plants";
 // name matches — and *looks* matched — identically wherever you type it.
 import { highlight, norm } from "../components/filter-field";
 import { plantThumb } from "../components/plant-thumb";
-import { lookalikeIcon, alternativeIcon, cropsIcon, propagateIcon } from "../components/door-icons";
+import { lookalikeIcon, alternativeIcon, invasiveIcon, cropsIcon, propagateIcon } from "../components/door-icons";
 import type { PlantForm } from "../types";
-import { t, tx, fmtNumber, getLang } from "../lib/i18n";
+import { t, fmtNumber, getLang } from "../lib/i18n";
 import { regionName, regionShort, searchAliases, localName } from "../lib/names";
 
 const regionMetaOf = (id: string) => REGIONS.find((x) => x.meta.id === id)?.meta;
 
-// One "way in" callout: the whole card links to `href`, with a drawn icon in a
-// tinted slot, the sentence (its action phrase already picked out by the caller
-// as a `.plant-door-cta` span), and a chevron. `body` is the `tx(...)` node list.
-function door(href: string, icon: SVGElement, body: (string | Node)[]): HTMLElement {
+// One "way in" row: the whole row links to `href`, with a drawn icon in a
+// tinted slot, the section's name, what it answers, and a chevron.
+function door(href: string, icon: SVGElement, name: string, hint: string): HTMLElement {
   return el("a", { href, class: "card plant-door" }, [
     el("span", { class: "plant-door-icon", "aria-hidden": "true" }, [icon]),
-    el("span", { class: "plant-door-text" }, body),
+    el("span", { class: "plant-door-text" }, [
+      el("span", { class: "plant-door-name" }, name),
+      el("span", { class: "plant-door-hint" }, hint),
+    ]),
     el("span", { class: "plant-door-chevron", "aria-hidden": "true" }, "›"),
   ]);
 }
@@ -197,33 +199,17 @@ export function renderPlants(main: HTMLElement): void {
   main.append(
     el("h2", { class: "step-title" }, t("plants.title")),
     el("p", { class: "step-lede" }, t("plants.lede")),
-    // Four ways in, as callout cards rather than running prose — each is a
-    // distinct side-door, so it reads as one, set apart from the search that is
-    // the section's actual job. The whole card is the link (like the plant cards
-    // below), with a drawn icon, the sentence, and its action phrase picked out;
-    // they reflow on a laptop and stack on a phone.
-    //
-    // They run in the order the questions arise. Look-alikes: you look a plant up
-    // because you're not sure what you're holding — and the header has no room for
-    // a fifth nav item (see components/app-menu.ts on how tightly it's measured).
-    // Then swaps: the reader weighing a Bermuda-grass lawn or a barberry hedge
-    // against the native that does the same job. Then the hesitation that stops
-    // people between deciding and digging — will it cost me the vegetables? Then
-    // the how-tos: once you own one, the next question is how to make more of it,
-    // and when in the year.
+    // Five ways in, as compact rows rather than paragraphs: the search below is
+    // the page's job, so the side-doors name themselves and get out of the way.
+    // They run in the order the questions arise — what am I holding, what do I
+    // grow instead, what do I pull, will it cost me the vegetables, how do I
+    // make more. The header has no room for them (see components/app-menu.ts).
     el("div", { class: "plant-doors" }, [
-      door("#/lookalikes", lookalikeIcon(), tx("plants.lookalikesLink", {
-        link: el("span", { class: "plant-door-cta" }, t("plants.lookalikesLinkText")),
-      })),
-      door("#/alternatives", alternativeIcon(), tx("plants.alternativesLink", {
-        link: el("span", { class: "plant-door-cta" }, t("plants.alternativesLinkText")),
-      })),
-      door("#/crops", cropsIcon(), tx("plants.cropsLink", {
-        link: el("span", { class: "plant-door-cta" }, t("plants.cropsLinkText")),
-      })),
-      door("#/planting", propagateIcon(), tx("plants.plantingLink", {
-        link: el("span", { class: "plant-door-cta" }, t("plants.plantingLinkText")),
-      })),
+      door("#/lookalikes", lookalikeIcon(24), t("plants.door.lookalikes"), t("plants.door.lookalikesHint")),
+      door("#/alternatives", alternativeIcon(24), t("plants.door.alternatives"), t("plants.door.alternativesHint")),
+      door("#/invasives", invasiveIcon(24), t("plants.door.invasives"), t("plants.door.invasivesHint")),
+      door("#/crops", cropsIcon(24), t("plants.door.crops"), t("plants.door.cropsHint")),
+      door("#/planting", propagateIcon(24), t("plants.door.planting"), t("plants.door.plantingHint")),
     ]),
     el("div", { class: "field" }, [el("label", { for: "plant-q" }, t("plants.label")), input]),
     count,

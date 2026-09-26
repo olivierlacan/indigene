@@ -45,7 +45,7 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Heliconius charithonia": {
     blurb:
-      "Le papillon emblème de la Floride — de longues ailes noires rayées de jaune pâle, dérivant lentement dans les endroits ombragés. Ses chenilles ne mangent que des passiflores ; les adultes ont ceci d'inhabituel qu'ils mangent du pollen, ce qui leur permet de vivre des mois.",
+      "Le papillon emblème de la Floride — de longues ailes noires rayées de jaune pâle, flottant lentement dans les coins ombragés. Ses chenilles ne mangent que des passiflores ; les adultes ont ceci d'inhabituel qu'ils mangent du pollen, ce qui leur permet de vivre des mois.",
   },
   "Eumaeus atala": {
     blurb:
@@ -53,7 +53,7 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Anartia jatrophae": {
     blurb:
-      "Un papillon pâle au vol bas des ouvertures ensoleillées et humides de Floride. Ses chenilles se nourrissent de Stachytarpheta et de bacopa.",
+      "Un papillon pâle au vol bas des clairières ensoleillées et humides de Floride. Ses chenilles se nourrissent de Stachytarpheta et de bacopa.",
   },
   "Papilio rutulus": {
     blurb:
@@ -73,7 +73,7 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Vanessa atalanta": {
     blurb:
-      "Des ailes noires barrées d'une bande écarlate, et une hardiesse inhabituelle — il se pose volontiers sur un bras. Ses chenilles vivent repliées à l'intérieur d'une feuille d'ortie cousue de soie, ce qui fait qu'un carré d'orties laissé debout dans un coin vaut bien plus qu'il n'en a l'air.",
+      "Des ailes noires barrées d'une bande écarlate, et une hardiesse inhabituelle — il se pose volontiers sur un bras. Ses chenilles vivent repliées à l'intérieur d'une feuille d'ortie cousue de soie, ce qui fait qu'un coin d'orties laissé sur pied vaut bien plus qu'il n'en a l'air.",
   },
   "Epargyreus clarus": {
     blurb:
@@ -81,7 +81,7 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Papilio troilus": {
     blurb:
-      "Un papillon à queues sombre, poudré de bleu-vert, chez lui partout où poussent le benjoin et le sassafras. Sa chenille est l'une des choses les plus étranges d'un jardin de l'est : vert vif, avec deux énormes faux yeux, cachée le jour dans une feuille qu'elle a roulée en tube.",
+      "Un papillon à queues sombre, poudré de bleu-vert, chez lui partout où poussent le benjoin et le sassafras. Sa chenille est l'une des choses les plus étranges d'un jardin de l'est : vert vif, avec deux énormes faux yeux, cachée le jour dans une feuille qu'elle a roulée en tube.",
   },
   "Limenitis lorquini": {
     blurb:
@@ -89,11 +89,11 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Papilio zelicaon": {
     blurb:
-      "Le machaon jaune et noir des coteaux californiens, souvent vu à tourner tout en haut d'une colline — les mâles s'y rassemblent pour attendre les femelles. Ses chenilles mangent des plantes de la famille de la carotte et se dressent pour brandir une corne orange fourchue quand quelque chose les dérange.",
+      "Le machaon jaune et noir des coteaux californiens, qu'on voit souvent tournoyer au sommet d'une colline — les mâles s'y rassemblent pour attendre les femelles. Ses chenilles mangent des plantes de la famille de la carotte et se dressent pour brandir une corne orange fourchue quand quelque chose les dérange.",
   },
   "#grass-skippers": {
     blurb:
-      "Les petites hespéries orange qui filent à travers une prairie, et les satyres et tristans brun tendre qui y dérivent. Leurs chenilles ne mangent rien que de l'herbe, et elles passent l'hiver blotties au fond d'une graminée indigène en touffe — c'est pourquoi une pelouse tondue n'en a aucun.",
+      "Les petites hespéries orange qui filent à travers une prairie, et les satyres et tristans brun tendre qui y volent mollement. Leurs chenilles ne mangent rien que de l'herbe, et elles passent l'hiver blotties au fond d'une graminée indigène en touffe — c'est pourquoi une pelouse tondue n'en a aucun.",
   },
   "Argynnis spp.": {
     blurb:
@@ -101,15 +101,15 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Callophrys mossii": {
     blurb:
-      "Un petit papillon gris-brun, facile à dépasser sans le voir, qui vole aux premières semaines douces du printemps autour des affleurements rocheux, des talus de route et des falaises. Ses chenilles mangent les orpins indigènes et à peu près rien d'autre : il vit donc exactement là où vit l'orpin — une pellicule de terre sur du rocher — et nulle part entre les deux.",
+      "Un petit papillon gris-brun, facile à dépasser sans le voir, qui vole aux premières semaines douces du printemps autour des affleurements rocheux, des talus de route et des falaises. Ses chenilles mangent les orpins indigènes et à peu près rien d'autre : il vit donc exactement là où vit l'orpin — une pellicule de terre sur du rocher — et nulle part entre les deux.",
   },
   "Icaricia, Callophrys & others": {
     blurb:
-      "Les petits papillons des terrains chauds et secs — des azurés grands comme un ongle, et des théclas verts qu'on prend pour des papillons de nuit. Toute une série d'entre eux élèvent leurs chenilles sur les sarrasins sauvages indigènes, plusieurs sur rien d'autre : un carré sur un talus pauvre et ensoleillé vaut donc plus qu'un massif de fleurs à nectar.",
+      "Les petits papillons des terrains chauds et secs — des azurés grands comme un ongle, et des théclas verts qu'on prend pour des papillons de nuit. Toute une série d'entre eux élèvent leurs chenilles sur les sarrasins sauvages indigènes, plusieurs sur rien d'autre : quelques pieds sur un talus pauvre et ensoleillé valent donc plus qu'un massif de fleurs à nectar.",
   },
   "Nymphalis antiopa": {
     blurb:
-      "Un papillon chocolat foncé bordé d'un crème déchiqueté, avec une ligne de taches bleues à l'intérieur de la bordure. C'est souvent le premier papillon de l'année ici, parce qu'il n'est allé nulle part : il passe l'hiver adulte derrière une écorce décollée et sort avant qu'une seule fleur ne soit ouverte. Ses chenilles se nourrissent sur le saule, le peuplier et le bouleau.",
+      "Un papillon chocolat foncé bordé d'un crème déchiqueté, avec une ligne de taches bleues à l'intérieur de la bordure. C'est souvent le premier papillon de l'année ici, parce qu'il n'est allé nulle part : il passe l'hiver adulte derrière une écorce décollée et sort avant qu'une seule fleur ne soit ouverte. Ses chenilles se nourrissent de saule, de peuplier et de bouleau.",
   },
 
   // -------------------------------------------------------------------------
@@ -117,7 +117,7 @@ export const WILDLIFE_FR: ProseTable = {
   // -------------------------------------------------------------------------
   "Anthocharis cardamines": {
     blurb:
-      "Le mâle porte des bouts d'ailes orange vif et ne se confond avec rien ; la femelle n'en a pas et se fait prendre pour une piéride tout le printemps. Tous deux se posent ailes fermées, et le revers marbré de vert les efface contre un capitule — précisément là où la femelle est en train de pondre.",
+      "Le mâle porte des bouts d'ailes orange vif et ne se confond avec rien ; la femelle n'en a pas et se fait prendre pour une piéride tout le printemps. Tous deux se posent ailes fermées, et le revers marbré de vert les efface contre un capitule — précisément là où la femelle est en train de pondre.",
   },
   "Gonepteryx rhamni": {
     blurb:
@@ -125,7 +125,7 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Gonepteryx cleopatra": {
     blurb:
-      "La sœur méridionale du citron — le même jaune citron, avec un éclat orange brûlé en travers de l'aile antérieure. Souvent la première chose à voler dans un février du Midi, parce que les adultes dorment tout l'hiver. Comme le citron, ses chenilles ne mangent que des nerpruns.",
+      "La sœur méridionale du citron — le même jaune citron, avec un éclat orangé en travers de l'aile antérieure. Souvent la première chose à voler dans un février du Midi, parce que les adultes dorment tout l'hiver. Comme le citron, ses chenilles ne mangent que des nerpruns.",
   },
   "Favonius quercus": {
     blurb:
@@ -141,11 +141,11 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Hamearis lucina": {
     blurb:
-      "Un petit papillon damé d'orange et de brun qui ressemble à un nacré en miniature sans en être un — c'est le seul représentant européen d'une famille par ailleurs tropicale. Il a reculé à mesure que les prairies étaient nettoyées, et il est exigeant : les femelles ne pondent que sur les primevères.",
+      "Un petit papillon damé d'orange et de brun qui ressemble à un nacré en miniature sans en être un — c'est le seul représentant européen d'une famille par ailleurs tropicale. Il a reculé à mesure que les prairies étaient nettoyées, et il est exigeant : les femelles ne pondent que sur les primevères.",
   },
   "Charaxes jasius": {
     blurb:
-      "Le plus grand papillon d'Europe et celui qui a l'air le plus tropical — brun à bordure orange, avec deux queues à chaque aile postérieure. Il vit dans le maquis méridional, se nourrit de fruits tombés plutôt que de fleurs, et ses chenilles ne mangent qu'une seule plante : l'arbousier.",
+      "Le plus grand papillon d'Europe et celui qui a l'air le plus tropical — brun à bordure orange, avec deux queues à chaque aile postérieure. Il vit dans le maquis méridional, se nourrit de fruits tombés plutôt que de fleurs, et ses chenilles ne mangent qu'une seule plante : l'arbousier.",
   },
   "Libythea celtis": {
     blurb:
@@ -165,11 +165,11 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Cupido minimus": {
     blurb:
-      "Le plus petit papillon d'Europe — une chose brun suie de la taille d'un ongle, saupoudrée de bleu. Ses chenilles vivent à l'intérieur des capitules d'anthyllide vulnéraire, en mangeant les graines en formation, et elles ne peuvent utiliser aucune autre plante.",
+      "Le plus petit papillon d'Europe — brun suie, de la taille d'un ongle, saupoudré de bleu. Ses chenilles vivent à l'intérieur des capitules d'anthyllide vulnéraire, en mangeant les graines en formation, et elles ne peuvent utiliser aucune autre plante.",
   },
   "Lycaena phlaeas": {
     blurb:
-      "Un petit papillon de la couleur d'une pièce neuve — ailes antérieures orange bruni, bordées de brun sombre. Il choisit une pierre chaude et y revient tout l'après-midi, se lançant sur tout ce qui passe. Ses chenilles mangent les oseilles et les patiences : il appartient aux coins en friche plutôt qu'aux massifs nets.",
+      "Un petit papillon de la couleur d'une pièce neuve — ailes antérieures orange bruni, bordées de brun sombre. Il choisit une pierre chaude et y revient tout l'après-midi, se lançant sur tout ce qui passe. Ses chenilles mangent les oseilles et les patiences : il appartient aux coins en friche plutôt qu'aux massifs nets.",
   },
   "Satyrium w-album": {
     blurb:
@@ -181,11 +181,11 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Plebejus argus": {
     blurb:
-      "Un petit papillon bleu des landes ouvertes, nommé pour les minuscules paillettes métalliques de son revers d'aile. Toute sa vie passe par une fourmi : les fourmis noires boivent le liquide sucré que la chenille exsude et, en retour, la transportent et la gardent. Il lui faut donc la callune, les fourmis, et le sol nu et chaud où elles nichent.",
+      "Un petit papillon bleu des landes ouvertes, nommé pour les minuscules paillettes métalliques de son revers d'aile. Toute sa vie passe par une fourmi : les fourmis noires boivent le liquide sucré que la chenille exsude et, en retour, la transportent et la gardent. Il lui faut donc la callune, les fourmis, et le sol nu et chaud où elles nichent.",
   },
   "Melitaea cinxia": {
     blurb:
-      "Un papillon damé d'orange et de noir des herbages chauds et en friche, au mieux près de la côte atlantique. Ses chenilles vivent en famille : elles éclosent ensemble sur le plantain lancéolé, tissent une tente de soie commune et y passent l'hiver serrées les unes contre les autres.",
+      "Un papillon damé d'orange et de noir des herbages chauds et en friche, au mieux près de la côte atlantique. Ses chenilles vivent en famille : elles éclosent ensemble sur le plantain lancéolé, tissent une tente de soie commune et y passent l'hiver serrées les unes contre les autres.",
   },
 
   // -------------------------------------------------------------------------
@@ -201,31 +201,31 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Hemaris thysbe": {
     blurb:
-      "Un papillon de nuit trapu et diurne qui fait du surplace devant les fleurs exactement comme un minuscule colibri, si bien que presque personne ne devine que c'est un papillon de nuit. Ses chenilles se nourrissent de viornes et de chèvrefeuilles ; les adultes butinent le nectar des fleurs tubulaires.",
+      "Un papillon de nuit trapu et diurne qui fait du surplace devant les fleurs exactement comme un minuscule colibri, si bien que presque personne ne devine que c'est un papillon de nuit. Ses chenilles se nourrissent de viornes et de chèvrefeuilles ; les adultes butinent le nectar des fleurs tubulaires.",
   },
   "Sphinx ligustri": {
     blurb:
-      "Le plus grand papillon de nuit de France — barré de rose et de noir, grand comme une paume — qui vole au crépuscule et fait du surplace devant les fleurs parfumées. Sa chenille est tout aussi saisissante : une grosse chose vert vif, rayée de lilas, avec une corne au bout de la queue, engraissée sur le troène.",
+      "Le plus grand papillon de nuit de France — barré de rose et de noir, grand comme une paume — qui vole au crépuscule et fait du surplace devant les fleurs parfumées. Sa chenille est tout aussi saisissante : énorme, vert vif, rayée de lilas, avec une corne au bout de la queue, nourrie de troène.",
   },
   "Zygaena filipendulae": {
     blurb:
-      "Un papillon de nuit diurne, bleu-noir luisant à six taches écarlates, qui dérive lentement au-dessus des prairies d'été. Il n'a rien à craindre : il fabrique du cyanure à partir du lotier corniculé que mangent ses chenilles, et tout le monde le sait.",
+      "Un papillon de nuit diurne, bleu-noir luisant à six taches écarlates, qui vole mollement au-dessus des prairies d'été. Il n'a rien à craindre : il fabrique du cyanure à partir du lotier corniculé que mangent ses chenilles, et tout le monde le sait.",
   },
   "Laothoe populi": {
     blurb:
-      "Le grand sphinx le plus commun de France, et le plus étrange au repos : il tient ses ailes postérieures en avant des antérieures. Posé sur un mur, il se lit comme une feuille morte grise mal remontée. L'adulte ne mange jamais : tout ce qu'il lui faut, il l'a pris chenille, sur des feuilles de peuplier et de saule.",
+      "Le grand sphinx le plus commun de France, et le plus étrange au repos : il tient ses ailes postérieures en avant des antérieures. Posé sur un mur, il se lit comme une feuille morte grise mal remontée. L'adulte ne mange jamais : tout ce qu'il lui faut, il l'a pris chenille, sur des feuilles de peuplier et de saule.",
   },
   "Deilephila elpenor": {
     blurb:
-      "Rose et vert olive, comme une chose venue d'un pays bien plus chaud, faisant du surplace devant un chèvrefeuille à la nuit tombée. C'est la chenille qui donne son nom : une grosse chose gris-brun aussi longue qu'un doigt, avec un museau en trompe qu'elle rentre quand on la touche — ce qui gonfle quatre ocelles et en fait un petit serpent.",
+      "Rose et vert olive, comme venu d'un pays bien plus chaud, en surplace devant un chèvrefeuille à la nuit tombée. C'est la chenille qui lui donne son nom : grosse, gris-brun, aussi longue qu'un doigt, avec un museau en trompe qu'elle rentre quand on la touche — ce qui gonfle quatre ocelles et en fait un petit serpent.",
   },
   "Macroglossum stellatarum": {
     blurb:
-      "Le papillon que tout le monde a vu et que presque personne ne croit : il butine en plein jour, en surplace, et se fait signaler chaque été comme un bébé colibri. Sa trompe est plus longue que son corps, et il revient sur un bon carré de fleurs à la même heure le lendemain.",
+      "Le papillon que tout le monde a vu et que presque personne ne croit : il butine en plein jour, en surplace, et se fait signaler chaque été comme un bébé colibri. Sa trompe est plus longue que son corps, et il revient sur un beau massif de fleurs à la même heure le lendemain.",
   },
   "Saturnia pavonia": {
     blurb:
-      "Le bombyx de la lande — gris tendre et rose, avec un gros ocelle sur chacune de ses quatre ailes. Le mâle vole vite dans le soleil d'avril sur des antennes plumeuses qui captent l'odeur d'une femelle à un kilomètre ; elle ne vole que la nuit.",
+      "Le bombyx de la lande — gris tendre et rose, avec un gros ocelle sur chacune de ses quatre ailes. Le mâle vole vite dans le soleil d'avril sur des antennes plumeuses qui captent l'odeur d'une femelle à un kilomètre ; elle ne vole que la nuit.",
   },
 
   // -------------------------------------------------------------------------
@@ -257,7 +257,7 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Calypte anna, Selasphorus rufus": {
     blurb:
-      "Les colibris de jardin de l'Ouest. Le colibri roux cale sa migration sur l'entrée en fleur des groseilliers indigènes : une fleur rouge précoce est du carburant qui arrive quand il le faut.",
+      "Les colibris de jardin de l'Ouest. Le colibri roux cale sa migration sur l'entrée en fleur des groseilliers indigènes : une fleur rouge précoce est du carburant qui arrive quand il le faut.",
   },
   "Bombycilla cedrorum": {
     blurb:
@@ -265,7 +265,7 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Sitta pusilla": {
     blurb:
-      "Une toute petite sittelle grise et brune qui couine comme un canard en plastique et passe sa vie entière dans les pins du sud des États-Unis. C'est l'un des très rares oiseaux à se servir d'un outil : elle ramasse un éclat d'écorce et s'en sert de levier pour en décoller d'autres et atteindre les insectes en dessous.",
+      "Une toute petite sittelle grise et brune qui couine comme un canard en plastique et passe sa vie entière dans les pins du sud des États-Unis. C'est l'un des très rares oiseaux à se servir d'un outil : elle ramasse un éclat d'écorce et s'en sert de levier pour en décoller d'autres et atteindre les insectes en dessous.",
   },
   "Psaltriparus minimus": {
     blurb:
@@ -273,23 +273,23 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Spinus psaltria": {
     blurb:
-      "Un tout petit fringille au dos noir et au ventre citron, qui vit presque uniquement de graines — y compris celles des sauges et des tournesols dont déborde une bordure de jardin sec. Laissez les têtes de graines fanées debout et il les trouvera.",
+      "Un tout petit fringille au dos noir et au ventre citron, qui vit presque uniquement de graines — y compris celles des sauges et des tournesols dont déborde une bordure de jardin sec. Laissez les fleurs fanées sur pied et il trouvera leurs graines.",
   },
   "Spinus tristis": {
     blurb:
-      "Le « canari sauvage » jaune vif qui niche tard, en été, pour pouvoir nourrir ses jeunes des graines d'asters et d'échinacées indigènes. Laisser les têtes de graines debout tout l'automne et l'hiver, c'est son garde-manger d'hiver.",
+      "Le « canari sauvage » jaune vif qui niche tard, en été, pour pouvoir nourrir ses jeunes des graines d'asters et d'échinacées indigènes. Laisser les fleurs fanées sur pied tout l'automne et l'hiver, c'est remplir son garde-manger d'hiver.",
   },
   "Setophaga coronata": {
     blurb:
-      "La seule paruline capable de digérer les fruits cireux du myrte cirier, ce qui lui permet d'hiverner bien plus au nord — et dans tout le Sud-Est — que les autres parulines. Le Morella cerifera est la plante derrière ce tour de force (son ancien nom anglais était « myrtle warbler »).",
+      "La seule paruline capable de digérer les fruits cireux du myrte cirier, ce qui lui permet d'hiverner bien plus au nord — et dans tout le Sud-Est — que les autres parulines. Le Morella cerifera est la plante derrière ce tour de force (son ancien nom anglais était « myrtle warbler »).",
   },
   "#acorn-birds": {
     blurb:
-      "Les mangeurs de glands, les geais avant tout : geai bleu à l'est, geai buissonnier à l'ouest. Un geai enterre bien plus de glands qu'il n'en mangera jamais, et ceux qu'il oublie poussent — il ne vit donc pas seulement du chêne, il plante le suivant.",
+      "Les mangeurs de glands, les geais avant tout : geai bleu à l'est, geai buissonnier à l'ouest. Un geai enterre bien plus de glands qu'il n'en mangera jamais, et ceux qu'il oublie poussent — il ne vit donc pas seulement du chêne, il plante le suivant.",
   },
   "#berry-songbirds": {
     blurb:
-      "Les passereaux de tous les jours, qui élèvent leurs familles avec des insectes puis passent aux fruits — callicarpe, sureau, houx, photinie de Californie — pour s'engraisser et traverser les mois les plus maigres.",
+      "Les passereaux communs, qui élèvent leurs familles avec des insectes puis passent aux fruits — callicarpe, sureau, houx, photinie de Californie — pour s'engraisser et traverser les mois les plus maigres.",
   },
   "#winter-thrushes": {
     blurb:
@@ -297,19 +297,19 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "#blackcaps-warblers": {
     blurb:
-      "De petits oiseaux insectivores qui passent aux fruits pour le voyage d'automne vers le sud, puis en vivent tout l'hiver. C'est le lierre et le houx d'une haie atlantique, le lentisque et le myrte d'un coteau méditerranéen — et une fauvette à tête noire tiendra un buisson en fruits contre tous les autres oiseaux pendant des semaines.",
+      "De petits oiseaux insectivores qui passent aux fruits pour le voyage d'automne vers le sud, puis en vivent tout l'hiver. C'est le lierre et le houx d'une haie atlantique, le lentisque et le myrte d'un coteau méditerranéen — et une fauvette à tête noire défendra un buisson en fruits contre tous les autres oiseaux pendant des semaines.",
   },
   "#conifer-seed-finches": {
     blurb:
-      "Les fringilles qui vivent de graines d'arbres tout l'hiver — becs-croisés, tarins et sizerins. Le bec-croisé est le spécialiste : son bec se croise à la pointe, un outil pour ouvrir un cône fermé. Les autres prennent la graine plus fine de la pruche, de l'aulne et du bouleau.",
+      "Les fringilles qui vivent de graines d'arbres tout l'hiver — becs-croisés, tarins et sizerins. Le bec-croisé est le spécialiste : son bec se croise à la pointe, un outil pour ouvrir un cône fermé. Les autres prennent la graine plus fine de la pruche, de l'aulne et du bouleau.",
   },
   "Coccothraustes coccothraustes": {
     blurb:
-      "Un fringille lourd et farouche, au bec si gros qu'il a l'air d'une erreur. Ce n'en est pas une : la moitié de la tête de l'oiseau est le muscle qui l'actionne, et il fend net un noyau de cerise pour l'amande. Ce qu'on trouve d'ordinaire, c'est un semis de noyaux coupés en deux sous l'arbre.",
+      "Un fringille lourd et farouche, au bec si gros qu'il a l'air d'une erreur. Ce n'en est pas une : la moitié de la tête de l'oiseau est le muscle qui l'actionne, et il fend net un noyau de cerise pour l'amande. Ce qu'on trouve d'ordinaire, c'est un semis de noyaux coupés en deux sous l'arbre.",
   },
   "#goldfinches-linnets": {
     blurb:
-      "Les petits fringilles qui vivent de la graine des fleurs sauvages — chardonnerets pendus la tête en bas à une tête de centaurée, linottes et verdiers passant en bandes gazouillantes. Ce qu'il leur faut, c'est de la graine laissée debout tout l'hiver : coupez tout en septembre et ils vont ailleurs.",
+      "Les petits fringilles qui vivent de la graine des fleurs sauvages — chardonnerets pendus la tête en bas à une tête de centaurée, linottes et verdiers passant en bandes gazouillantes. Ce qu'il leur faut, c'est de la graine laissée sur pied tout l'hiver : coupez tout en septembre et ils vont ailleurs.",
   },
   "Garrulus glandarius": {
     blurb:
@@ -321,7 +321,7 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Lyrurus tetrix": {
     blurb:
-      "L'oiseau à queue en lyre de la limite des arbres alpine, dont les mâles se rassemblent à l'aube au printemps pour glousser et se provoquer sur le terrain qu'utilisaient leurs ancêtres. Il est en difficulté dans toutes les Alpes, et sa vie passe par une seule plante : la myrtille.",
+      "L'oiseau à queue en lyre de la limite des arbres alpine, dont les mâles se rassemblent à l'aube au printemps pour glousser et se provoquer sur le terrain qu'utilisaient leurs ancêtres. Il est en difficulté dans toutes les Alpes, et sa vie passe par une seule plante : la myrtille.",
   },
 
   // -------------------------------------------------------------------------
@@ -329,11 +329,11 @@ export const WILDLIFE_FR: ProseTable = {
   // -------------------------------------------------------------------------
   "#acorn-mammals": {
     blurb:
-      "Les glands et les fruits charnus sont les calories d'automne qui portent écureuils, tamias, cerfs, renards et jusqu'aux ours noirs jusqu'en hiver. Un seul chêne ou cerisier sauvage adulte est une banque alimentaire pour tout le voisinage des mammifères.",
+      "Les glands et les fruits charnus sont les calories d'automne qui portent écureuils, tamias, cerfs, renards et jusqu'aux ours noirs jusqu'en hiver. Un seul chêne ou cerisier sauvage adulte est un garde-manger pour tous les mammifères du voisinage.",
   },
   "Muscardinus avellanarius": {
     blurb:
-      "Un petit grimpeur doré à queue touffue et aux énormes yeux noirs, qui dort plus de l'année qu'il n'est éveillé. Il ne traverse presque jamais un terrain découvert : il lui faut des haies et des lisières reliées entre elles, et il s'engraisse sur les noisettes. Ce qu'on trouve, c'est la coquille qu'il a ouverte : un trou rond bien net.",
+      "Un petit grimpeur doré à queue touffue et aux énormes yeux noirs, qui dort plus de l'année qu'il n'est éveillé. Il ne traverse presque jamais un terrain découvert : il lui faut des haies et des lisières reliées entre elles, et il se gave de noisettes. Ce qu'on trouve, c'est la coquille qu'il a ouverte : un trou rond bien net.",
   },
   "Gopherus polyphemus": {
     blurb:

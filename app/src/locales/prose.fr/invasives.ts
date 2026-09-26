@@ -122,7 +122,7 @@ export const INVASIVES_FR: ProseTable = {
     removal: {
       steps: [
         "Arrachez les jeunes pieds dans la vase, racines comprises.",
-        "Dans les eaux publiques, il faut une autorisation — renseignez-vous auprès du service de l'État chargé des invasives.",
+        "Dans les eaux publiques, il faut une autorisation — renseignez-vous auprès du service de l'État chargé des espèces envahissantes.",
         "Revenez pour les repousses : chaque morceau de tige peut s'enraciner.",
       ],
       dispose: "Mettez chaque fragment en sac ; n'en laissez aucun près de l'eau.",

@@ -1350,10 +1350,6 @@ export const en = {
   // ---------------------------------------------------------------------
   // Browse-by-impostor: the look-alike index and each impostor's own page.
   // ---------------------------------------------------------------------
-  "plants.lookalikesLink": "Not sure what you're looking at? Some plants get bought and planted in place of a native — {link}.",
-  "plants.lookalikesLinkText": "see the look-alikes we've written up",
-  "plants.plantingLink": "Already have one, and want another? There are fifteen ways to make more of a plant, each with its own season — {link}.",
-  "plants.plantingLinkText": "see when and how",
   "steps.invasives": "Worst invasives",
   "steps.lookalikes": "Look-alikes",
   "lookalikes.indexTitle": "Plants that get mistaken for natives",
@@ -1395,14 +1391,6 @@ export const en = {
   // ---------------------------------------------------------------------
   // Native alternatives: "grow this instead of a common ornamental".
   // ---------------------------------------------------------------------
-  "plants.alternativesLink": "About to buy something for a spot? Some of the usual choices aren't from here — and a native does the job better, feeding the wildlife they can't. {link}.",
-  "plants.alternativesLinkText": "see what to grow instead",
-  "plants.invasivesLink": "Clearing a corner? {link}.",
-  "plants.invasivesLinkText": "See each region's worst invasives",
-  // The third door on the plants index, between the swap and the how-to: the
-  // hesitation that stops people between deciding and digging.
-  "plants.cropsLink": "Worried about pests? Farms measured what a native border does to the crop beside it — {link}.",
-  "plants.cropsLinkText": "see what they found",
   "plant.alternativesTitle": "Grow it instead of: ",
   // The third line of the same stack, and the only one that is the same on
   // every plant page: the way into `#/crops`. It states where the question
@@ -1661,9 +1649,20 @@ export const en = {
   // The plants index (#/plants) — every native we know, searchable.
   // ---------------------------------------------------------------------
   "plants.docTitle": "Native plants — Indigene",
+  // The plants index's ways in: a name and what it answers.
+  "plants.door.lookalikes": "Look-alikes",
+  "plants.door.lookalikesHint": "Native, or its stand-in?",
+  "plants.door.alternatives": "Native swaps",
+  "plants.door.alternativesHint": "What to grow instead",
+  "plants.door.invasives": "Worst invasives",
+  "plants.door.invasivesHint": "What to pull first",
+  "plants.door.crops": "Natives & crops",
+  "plants.door.cropsHint": "What farms measured",
+  "plants.door.planting": "Growing more",
+  "plants.door.plantingHint": "When and how",
   "plants.title": "Native plants",
   "plants.lede":
-    "Every plant Indigene knows, from every region. Type a name — common or scientific — to narrow the list, then open a plant for its full page.",
+    "Every plant Indigene knows. Type a common or scientific name to narrow the list.",
   "plants.label": "Plant name",
   "plants.placeholder": "e.g. milkweed, oak, or Asclepias",
   "plants.matchCount": "{n} of {total} native plants match “{q}”.",

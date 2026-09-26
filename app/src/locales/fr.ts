@@ -1348,10 +1348,6 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   // Les sosies : l'index et la page de chaque imposteur.
   // ---------------------------------------------------------------------
-  "plants.lookalikesLink": "Vous ne savez pas ce que vous avez sous les yeux ? Certaines plantes s'achètent et se plantent à la place d'une indigène — {link}.",
-  "plants.lookalikesLinkText": "voyez les sosies que nous avons documentés",
-  "plants.plantingLink": "Vous en avez déjà une et vous en voulez une autre ? Il existe quinze façons de multiplier une plante, chacune avec sa saison — {link}.",
-  "plants.plantingLinkText": "voir quand et comment",
   "steps.invasives": "Les pires plantes envahissantes",
   "steps.lookalikes": "Sosies",
   "lookalikes.indexTitle": "Les plantes qu'on prend pour des indigènes",
@@ -1393,12 +1389,6 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   // Alternatives natives : « planter ceci plutôt qu'un ornemental courant ».
   // ---------------------------------------------------------------------
-  "plants.alternativesLink": "Sur le point d'acheter pour un coin de jardin ? Certains choix habituels ne sont pas d'ici — et une indigène remplit mieux ce rôle, en nourrissant la faune qu'ils laissent de côté. {link}.",
-  "plants.alternativesLinkText": "voyez quoi planter à la place",
-  "plants.invasivesLink": "Vous désherbez un coin ? {link}.",
-  "plants.invasivesLinkText": "Voyez les pires plantes envahissantes de chaque région",
-  "plants.cropsLink": "Peur des ravageurs ? Des fermes ont mesuré ce qu'une bordure d'indigènes fait à la culture d'à côté — {link}.",
-  "plants.cropsLinkText": "voyez ce qu'elles ont trouvé",
   "plant.alternativesTitle": "À planter plutôt que : ",
   "plant.cropsTitle": "Près du potager : ",
   "plant.cropsLink": "ce que les fermes ont mesuré",
@@ -1649,9 +1639,20 @@ export const fr: Dict = {
   // L'index des plantes (#/plants) — toutes les indigènes, avec recherche.
   // ---------------------------------------------------------------------
   "plants.docTitle": "Plantes indigènes — Indigene",
+  // The plants index's ways in: a name and what it answers.
+  "plants.door.lookalikes": "Sosies",
+  "plants.door.lookalikesHint": "Indigène ou imitation ?",
+  "plants.door.alternatives": "Alternatives indigènes",
+  "plants.door.alternativesHint": "Quoi planter à la place",
+  "plants.door.invasives": "Plantes envahissantes",
+  "plants.door.invasivesHint": "Quoi arracher en premier",
+  "plants.door.crops": "Indigènes et potager",
+  "plants.door.cropsHint": "Ce que les fermes ont mesuré",
+  "plants.door.planting": "Multiplier ses plantes",
+  "plants.door.plantingHint": "Quand et comment",
   "plants.title": "Plantes indigènes",
   "plants.lede":
-    "Toutes les plantes qu'Indigene connaît, région par région. Tapez un nom — courant ou scientifique — pour resserrer la liste, puis ouvrez une plante pour voir sa fiche complète.",
+    "Toutes les plantes qu'Indigene connaît. Tapez un nom courant ou scientifique pour resserrer la liste.",
   "plants.label": "Nom de la plante",
   "plants.placeholder": "ex. chêne, asclépiade ou Quercus",
   "plants.matchCount": "{n} plantes indigènes sur {total} correspondent à « {q} ».",

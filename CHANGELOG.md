@@ -36,6 +36,8 @@ subtitle on the What's new page.
 - Matches: "Add sighting" on a plant in your saved spot now shows your own
   iNaturalist photos of that plant. Tap one to add it, no link to paste, so
   each season's photo lines up under the plant to show how it's growing.
+- Matches: got a planting date or count wrong? The ✏️ beside a plant in your
+  saved spot fixes it in place, and keeps the sightings linked to it.
 - Internal: the import's per-visit sightings cache moved to
   `ownSightings()` in `lib/inat-import.ts`, shared with the planting picker
   (`sightingsOfPlant()`, covered by `import:check`); unlinking the account now

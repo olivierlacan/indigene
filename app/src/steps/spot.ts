@@ -230,19 +230,50 @@ function logRow(
       el("div", { class: "coords" }, when),
       growth ? el("p", { class: "log-growth" }, growth) : null,
     ]),
-    el("button", {
-      class: "btn btn-ghost log-remove",
-      "aria-label": t("spot.removeLabel", { name }),
-      onClick: async () => {
-        if (!confirm(t("spot.confirmRemove", { name }))) return;
-        await deletePlanting(planting.id);
-        toast(t("spot.removed"));
-        redraw();
-      },
-    }, "🗑"),
+    el("div", { class: "log-actions" }, [
+      el("button", {
+        class: "btn btn-ghost log-remove",
+        "aria-label": t("spot.removeLabel", { name }),
+        onClick: async () => {
+          if (!confirm(t("spot.confirmRemove", { name }))) return;
+          await deletePlanting(planting.id);
+          toast(t("spot.removed"));
+          redraw();
+        },
+      }, "🗑"),
+      el("button", {
+        class: "btn btn-ghost log-remove",
+        "aria-label": t("spot.editLabel", { name }),
+        "aria-expanded": "false",
+        onClick: (e: Event) => {
+          edit.hidden = !edit.hidden;
+          (e.currentTarget as HTMLElement).setAttribute("aria-expanded", String(!edit.hidden));
+        },
+      }, "✏️"),
+    ]),
   ]);
 
-  const row = el("li", { class: "log-item" }, [head]);
+  // Fixing a wrong date or count in place, rather than deleting the row and
+  // losing the sightings linked to it.
+  const fields = plantingFields(`log-${planting.id}`, planting.planted, planting.count);
+  const edit = el("form", {
+    class: "log-edit",
+    hidden: true,
+    onSubmit: async (e: Event) => {
+      e.preventDefault();
+      await savePlanting({ ...planting, planted: fields.planted(), count: fields.count() });
+      toast(t("spot.edited"));
+      redraw();
+    },
+  }, [
+    ...fields.nodes,
+    el("div", { class: "btn-row" }, [
+      el("button", { class: "btn btn-primary", type: "submit" }, t("spot.editSave")),
+      el("button", { class: "btn btn-ghost", type: "button", onClick: () => { edit.hidden = true; } }, t("spot.editCancel")),
+    ]),
+  ]) as HTMLFormElement;
+
+  const row = el("li", { class: "log-item" }, [head, edit]);
   row.append(sightingsBlock(planting, name, redraw));
   return row;
 }
@@ -562,65 +593,9 @@ function addCard(spot: SavedSpot, roster: Plant[], redraw: () => void): HTMLElem
     form.hidden = false;
   }
 
-  // The date, given to whatever precision the person actually has. Month and day
-  // both offer "not sure" and the year stands alone, because most people know
-  // the season they planted something and not the date — and a date field that
-  // demands a day gets a made-up day (see `PlantedDate` in `types.ts`).
-  const now = today();
-  const year = el("input", {
-    type: "number",
-    id: "log-year",
-    class: "log-year",
-    inputmode: "numeric",
-    min: "1900",
-    max: String(now.year + 1),
-    value: String(now.year),
-  }) as HTMLInputElement;
-
-  const month = el("select", { id: "log-month", onChange: () => syncDays() }, [
-    el("option", { value: "" }, t("spot.notSure")),
-    ...Array.from({ length: 12 }, (_, i) =>
-      el("option", { value: String(i + 1), selected: i + 1 === now.month }, monthName(i + 1))
-    ),
-  ]) as HTMLSelectElement;
-
-  const day = el("select", { id: "log-day" }, [
-    el("option", { value: "" }, t("spot.notSure")),
-    ...Array.from({ length: 31 }, (_, i) =>
-      el("option", { value: String(i + 1), selected: i + 1 === now.day }, fmtNumber(i + 1))
-    ),
-  ]) as HTMLSelectElement;
-
-  /** A day with no month is a date nobody can read, so the day field follows
-   *  the month's lead rather than offering an answer that means nothing. */
-  function syncDays(): void {
-    day.disabled = !month.value;
-    if (!month.value) day.value = "";
-  }
-
-  const count = el("input", {
-    type: "number",
-    id: "log-count",
-    class: "log-count-input",
-    inputmode: "numeric",
-    min: "1",
-    max: "999",
-    value: "1",
-  }) as HTMLInputElement;
-
+  const fields = plantingFields("log", { year: today().year, month: today().month, day: today().day }, 1);
   form.append(
-    el("div", { class: "field" }, [
-      el("label", { for: "log-year" }, t("spot.whenLabel")),
-      el("div", { class: "log-date-row" }, [
-        el("span", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.year")), year]),
-        el("span", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.month")), month]),
-        el("span", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.day")), day]),
-      ]),
-    ]),
-    el("div", { class: "field field-inline" }, [
-      el("label", { for: "log-count" }, t("spot.howMany")),
-      count,
-    ]),
+    ...fields.nodes,
     el("button", { class: "btn btn-primary btn-block", type: "submit" }, t("spot.addButton"))
   );
 
@@ -628,20 +603,12 @@ function addCard(spot: SavedSpot, roster: Plant[], redraw: () => void): HTMLElem
     e.preventDefault();
     const pick = chosen;
     if (!pick) return;
-    const y = Number(year.value);
-    const planted: PlantedDate | null = Number.isFinite(y) && y > 1000
-      ? {
-          year: y,
-          ...(month.value ? { month: Number(month.value) } : {}),
-          ...(month.value && day.value ? { day: Number(day.value) } : {}),
-        }
-      : null;
     await savePlanting({
       id: plantingId(),
       spotId: spot.id,
       plantId: pick.id,
-      count: Math.max(1, Math.min(999, Number(count.value) || 1)),
-      planted,
+      count: fields.count(),
+      planted: fields.planted(),
       observations: [],
       createdAt: Date.now(),
     });
@@ -652,7 +619,6 @@ function addCard(spot: SavedSpot, roster: Plant[], redraw: () => void): HTMLElem
     else redraw();
   });
 
-  syncDays();
   if (chosen) choose(chosen);
 
   return el("section", { class: "card" }, [
@@ -665,6 +631,92 @@ function addCard(spot: SavedSpot, roster: Plant[], redraw: () => void): HTMLElem
     picked,
     form,
   ]);
+}
+
+/**
+ * The date and count fields, shared by the add form and a row's edit form.
+ * `prefix` keeps the ids unique when several are on the page.
+ *
+ * The date is given to whatever precision the person actually has. Month and
+ * day both offer "not sure" and the year stands alone, because most people know
+ * the season they planted something and not the date — and a date field that
+ * demands a day gets a made-up day (see `PlantedDate` in `types.ts`).
+ */
+function plantingFields(
+  prefix: string,
+  initial: PlantedDate | null,
+  initialCount: number
+): { nodes: HTMLElement[]; planted: () => PlantedDate | null; count: () => number } {
+  const now = today();
+  const year = el("input", {
+    type: "number",
+    id: `${prefix}-year`,
+    class: "log-year",
+    inputmode: "numeric",
+    min: "1900",
+    max: String(now.year + 1),
+    value: initial ? String(initial.year) : "",
+  }) as HTMLInputElement;
+
+  const month = el("select", { id: `${prefix}-month`, onChange: () => syncDays() }, [
+    el("option", { value: "" }, t("spot.notSure")),
+    ...Array.from({ length: 12 }, (_, i) =>
+      el("option", { value: String(i + 1), selected: i + 1 === initial?.month }, monthName(i + 1))
+    ),
+  ]) as HTMLSelectElement;
+
+  const day = el("select", { id: `${prefix}-day` }, [
+    el("option", { value: "" }, t("spot.notSure")),
+    ...Array.from({ length: 31 }, (_, i) =>
+      el("option", { value: String(i + 1), selected: i + 1 === initial?.day }, fmtNumber(i + 1))
+    ),
+  ]) as HTMLSelectElement;
+
+  /** A day with no month is a date nobody can read, so the day field follows
+   *  the month's lead rather than offering an answer that means nothing. */
+  function syncDays(): void {
+    day.disabled = !month.value;
+    if (!month.value) day.value = "";
+  }
+  syncDays();
+
+  const count = el("input", {
+    type: "number",
+    id: `${prefix}-count`,
+    class: "log-count-input",
+    inputmode: "numeric",
+    min: "1",
+    max: "999",
+    value: String(initialCount),
+  }) as HTMLInputElement;
+
+  return {
+    nodes: [
+      el("div", { class: "field" }, [
+        el("label", { for: `${prefix}-year` }, t("spot.whenLabel")),
+        el("div", { class: "log-date-row" }, [
+          el("span", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.year")), year]),
+          el("span", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.month")), month]),
+          el("span", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.day")), day]),
+        ]),
+      ]),
+      el("div", { class: "field field-inline" }, [
+        el("label", { for: `${prefix}-count` }, t("spot.howMany")),
+        count,
+      ]),
+    ],
+    planted: () => {
+      const y = Number(year.value);
+      return Number.isFinite(y) && y > 1000
+        ? {
+            year: y,
+            ...(month.value ? { month: Number(month.value) } : {}),
+            ...(month.value && day.value ? { day: Number(day.value) } : {}),
+          }
+        : null;
+    },
+    count: () => Math.max(1, Math.min(999, Number(count.value) || 1)),
+  };
 }
 
 // --- plumbing --------------------------------------------------------------

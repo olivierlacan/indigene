@@ -5006,6 +5006,15 @@ body[data-layout="profile"] .wip-banner-text {
   background: var(--bg);
 }
 /* The bin sits beside the name at a full tap size without stretching the row. */
+/* Remove above edit, stacked so the name keeps the row's width. */
+.log-actions {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+}
+.log-edit {
+  margin-top: 0.6rem;
+}
 .log-remove {
   flex: none;
   min-height: 2.4rem;

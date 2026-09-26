@@ -57,6 +57,13 @@ subtitle on the What's new page.
 - Internal: `RegionMeta.countries` (ISO codes) and `components/flags.ts`,
   five flags drawn as inline SVG (~2 KB) because Windows has no flag emoji;
   shown on the Regions cards, the region page title and the region picker.
+- On a slow connection, pages no longer sit blank while the app arrives. A
+  small seedling shows right away, and if the wait runs long, a word that
+  it's still coming.
+- Internal: the loader is static markup in `index.html`'s `<main>`, timed in
+  CSS (`.boot-*`: fade in at once, extra lines at 4 s and 12 s), so it paints
+  before any script. A head script picks its language early; `route()`
+  removes it after the first render.
 
 ### Changed
 

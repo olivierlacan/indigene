@@ -374,6 +374,9 @@ async function route(): Promise<void> {
     const r = await result;
     if (typeof r === "function") cleanup = r;
   }
+  // The loading screen from index.html. Every page clears `main` before it
+  // draws, which takes it with it; this is for one that someday doesn't.
+  document.getElementById("boot-loader")?.remove();
   // Mounted here rather than by the step: one banner per page, always the first
   // thing under the header, wherever in its own layout the step happened to
   // notice the gap (see components/wip-banner.ts).

@@ -21,9 +21,9 @@ import type { ProseTable } from "../../lib/prose";
 export const ALTERNATIVES_FR: ProseTable = {
   "Hosta": {
     altRole: "Touffe de feuillage pour l'ombre",
-    altOrigin: "Indigène d'Asie de l'Est ; le feuillage passe-partout des coins ombragés.",
+    altOrigin: "Indigène d'Asie de l'Est ; le feuillage passe-partout des coins ombragés.",
     altBlurb:
-      "La touffe de grandes feuilles qu'on met d'office à l'ombre — et le plat préféré des limaces, si bien qu'elle finit souvent l'été criblée de trous. Rien d'indigène n'y élève sa descendance : c'est de la verdure, et rien que de la verdure.",
+      "La touffe de grandes feuilles qu'on met d'office à l'ombre — et le plat préféré des limaces, si bien qu'elle finit souvent l'été criblée de trous. Rien d'indigène n'y élève sa descendance : c'est de la verdure, et rien que de la verdure.",
     alternativeNotes: {
       "dryopteris-filix-mas": {
         why: "Pour une grande touffe pleine d'allure à l'ombre, la fougère mâle déroule de hautes frondes arquées qui tiennent la moitié de l'hiver — bien plus de présence qu'un hosta, et pas un trou de limace.",
@@ -45,13 +45,13 @@ export const ALTERNATIVES_FR: ProseTable = {
     altRole: "Rosier de massif / à fleurs",
     altOrigin: "Des hybrides horticoles, sélectionnés depuis des siècles pour la fleur.",
     altBlurb:
-      "Le rosier de massif acheté pour la floraison, et la floraison est à peu près tout ce qu'il donne : gourmand en eau, sujet à la maladie des taches noires et au traitement qui va avec, et — quand la fleur est bien double — si serré qu'une abeille n'en atteint pas le cœur.",
+      "Le rosier de massif acheté pour la floraison, et la floraison est à peu près tout ce qu'il donne : gourmand en eau, sujet à la maladie des taches noires et au traitement qui va avec, et — quand la fleur est bien double — si serré qu'une abeille n'en atteint pas le cœur.",
     alternativeNotes: {
       "rosa-arvensis": {
         why: "Pour un rosier arbustif grimpant et parfumé, le rosier des champs offre des fleurs simples et blanches où les abeilles plongent, puis des cynorhodons rouges pour les oiseaux — un indigène des haies qui n'a jamais besoin des traitements dont vit un rosier hybride.",
         edges: [
-          { axis: "disease", native: "Un indigène robuste qui ignore les taches noires et l'oïdium des rosiers de jardin.", ornamental: "Sujet aux taches noires et à l'oïdium ; maintenu à coups de traitements." },
-          { axis: "wildlife", native: "Ses fleurs ouvertes nourrissent les abeilles ; ses cynorhodons, les oiseaux d'hiver ; hôte de bien des papillons de nuit.", ornamental: "Les fleurs doubles ferment la porte aux pollinisateurs ; peu d'intérêt pour la faune." },
+          { axis: "disease", native: "Un indigène robuste qui ignore les taches noires et l'oïdium des rosiers de jardin.", ornamental: "Sujet aux taches noires et à l'oïdium ; maintenu à coups de traitements." },
+          { axis: "wildlife", native: "Ses fleurs ouvertes nourrissent les abeilles ; ses cynorhodons, les oiseaux d'hiver ; hôte de bien des papillons de nuit.", ornamental: "Les fleurs doubles ferment la porte aux pollinisateurs ; peu d'intérêt pour la faune." },
         ],
       },
     },
@@ -67,27 +67,27 @@ export const ALTERNATIVES_FR: ProseTable = {
       steps: [
         "Arrachez les semis et les petits buissons, racine comprise.",
         "Coupez les grands au pied et dessouchez, ou coupez chaque rejet jusqu'à épuisement de la souche.",
-        "Ne laissez pas de branches sur le sol : elles s'enracinent.",
+        "Ne laissez pas de branches sur le sol : elles s'enracinent.",
       ],
       dispose: "Entassez les branches coupées hors du sol pour qu'elles sèchent.",
     },
     altRole: "Écran persistant à fleurs",
     altOrigin: "Indigène de la péninsule Ibérique et des rivages de la mer Noire.",
     altBlurb:
-      "Vendu pour son mur de fleurs pourpres au printemps, et l'un des grands envahisseurs de la façade atlantique : il fait une ombre si dense et une litière si toxique que rien ne pousse dessous, et son nectar est un poison pour l'abeille domestique.",
+      "Vendu pour son mur de fleurs pourpres au printemps, et l'un des grands envahisseurs de la façade atlantique : il fait une ombre si dense et une litière si toxique que rien ne pousse dessous, et son nectar est un poison pour l'abeille domestique.",
     alternativeNotes: {
       "ilex-aquifolium": {
         why: "Pour un écran persistant qui fleurit et nourrit, le houx indigène dresse un mur dense, lustré et accueillant pour la faune — là où le rhododendron pontique empoisonne le sol dessous et les abeilles dessus.",
         edges: [
-          { axis: "disease", native: "Laisse vivre un sous-étage à son pied.", ornamental: "Litière toxique et ombre : le sol reste nu, et son nectar empoisonne l'abeille domestique." },
-          { axis: "wildlife", native: "Ses baies nourrissent les grives d'hiver ; hôte de l'azuré des nerpruns.", ornamental: "L'un des pires envahisseurs de l'Ouest atlantique ; un désert pour la faune à son pied." },
+          { axis: "disease", native: "Laisse vivre un sous-étage à son pied.", ornamental: "Litière toxique et ombre : le sol reste nu, et son nectar empoisonne l'abeille domestique." },
+          { axis: "wildlife", native: "Ses baies nourrissent les grives d'hiver ; hôte de l'azuré des nerpruns.", ornamental: "L'un des pires envahisseurs de l'Ouest atlantique ; un désert pour la faune à son pied." },
         ],
       },
       "crataegus-monogyna": {
         why: "Pour un écran fleuri, l'aubépine se couvre de blanc en mai puis rougeoie de cenelles à l'automne — la haie nourricière par excellence, là où le rhododendron offre un seul spectacle et prend le bois.",
         edges: [
           { axis: "water", native: "Parfaitement autonome une fois installée.", ornamental: "Un envahisseur d'ombre qui laisse un sol empoisonné." },
-          { axis: "wildlife", native: "Nourrit des centaines d'espèces d'insectes ; ses cenelles nourrissent les oiseaux d'hiver.", ornamental: "Ne nourrit presque rien, et son nectar est toxique pour les abeilles." },
+          { axis: "wildlife", native: "Nourrit des centaines d'espèces d'insectes ; ses cenelles nourrissent les oiseaux d'hiver.", ornamental: "Ne nourrit presque rien, et son nectar est toxique pour les abeilles." },
         ],
       },
     },
@@ -99,31 +99,31 @@ export const ALTERNATIVES_FR: ProseTable = {
       "Le géant à l'écorce marbrée qui borde les avenues. Il encaisse le pavé et la pollution et donne une vraie ombre — mais il ne nourrit presque rien ici, lâche des poils urticants et un pollen lourd, allergène notoire, et attrape l'anthracnose année après année.",
     alternativeNotes: {
       "quercus-robur": {
-        why: "Pour un grand arbre de parc ou d'alignement, le chêne pédonculé est celui qu'on plante à la place du platane : l'arbre lent, immense et millénaire qui porte plus de vie que tout autre en Europe.",
+        why: "Pour un grand arbre de parc ou d'alignement, le chêne pédonculé est celui qu'on plante à la place du platane : l'arbre lent, immense et millénaire qui porte plus de vie que tout autre en Europe.",
         edges: [
-          { axis: "wildlife", native: "Hôte d'environ 400 espèces de chenilles — le réseau nourricier le plus riche de nos arbres ; ses glands nourrissent geais et mammifères.", ornamental: "Ne nourrit presque rien d'indigène." },
-          { axis: "disease", native: "Célèbre pour sa longévité et sa solidité.", ornamental: "Anthracnose à répétition ; un pollen lourd et allergène." },
+          { axis: "wildlife", native: "Hôte d'environ 400 espèces de chenilles — le réseau nourricier le plus riche de nos arbres ; ses glands nourrissent geais et mammifères.", ornamental: "Ne nourrit presque rien d'indigène." },
+          { axis: "disease", native: "Célèbre pour sa longévité et sa solidité.", ornamental: "Anthracnose à répétition ; un pollen lourd et allergène." },
         ],
       },
     },
   },
   "Salix babylonica": {
     altRole: "Arbre isolé de bord d'eau / de pelouse",
-    altOrigin: "Indigène du nord de la Chine ; planté au bord de l'eau partout dans le monde.",
+    altOrigin: "Indigène du nord de la Chine ; planté au bord de l'eau partout dans le monde.",
     altBlurb:
       "Le rideau vert pleureur au bord de la mare. Il pousse vite et fait romantique — puis ses racines avides trouvent chaque drain et chaque canalisation, ses branches cassantes tombent aux tempêtes, et il est le plus souvent creux et pourri avant quarante ans.",
     alternativeNotes: {
       "salix-caprea": {
         why: "Pour un indigène rapide au bord de l'eau, le saule marsault sort les chatons argentés de la fin de l'hiver qui nourrissent les premières abeilles — là où le saule pleureur ne trouve que les canalisations.",
         edges: [
-          { axis: "wildlife", native: "Hôte d'environ 370 espèces de chenilles ; ses chatons précoces sont une source de pollen vitale.", ornamental: "Nourrit peu d'espèces indigènes." },
-          { axis: "disease", native: "Un indigène robuste et adaptable.", ornamental: "Des racines avides qui ravagent les drains ; cassant et de courte vie." },
+          { axis: "wildlife", native: "Hôte d'environ 370 espèces de chenilles ; ses chatons précoces sont une source de pollen vitale.", ornamental: "Nourrit peu d'espèces indigènes." },
+          { axis: "disease", native: "Un indigène robuste et adaptable.", ornamental: "Des racines avides qui ravagent les drains ; cassant et de courte vie." },
         ],
       },
       "populus-tremula": {
         why: "Pour un grand arbre plein de lumière et de mouvement, le tremble frémit au moindre souffle et vire à l'or en automne — une espèce clé des bois d'Europe, non un fardeau au bord de la mare.",
         edges: [
-          { axis: "wildlife", native: "Hôte d'environ 260 espèces de chenilles ; un pilier de la vie des bois.", ornamental: "Nourrit peu d'espèces indigènes." },
+          { axis: "wildlife", native: "Hôte d'environ 260 espèces de chenilles ; un pilier de la vie des bois.", ornamental: "Nourrit peu d'espèces indigènes." },
           { axis: "disease", native: "Un pionnier indigène vigoureux.", ornamental: "Cherche les drains, cassant et creux en quelques décennies." },
         ],
       },
@@ -131,21 +131,21 @@ export const ALTERNATIVES_FR: ProseTable = {
   },
   "Prunus serrulata": {
     altRole: "Arbre d'ornement à floraison printanière",
-    altOrigin: "Indigène du Japon, de Corée et de Chine ; le cerisier des fêtes des fleurs.",
+    altOrigin: "Indigène du Japon, de Corée et de Chine ; le cerisier des fêtes des fleurs.",
     altBlurb:
       "Quinze jours d'écume rose au printemps, puis un arbre qui ne donne plus grand-chose — de courte vie, sujet au chancre et à la pourriture, et hôte de presque aucune des chenilles dont nos oiseaux nourrissent leurs petits.",
     alternativeNotes: {
       "prunus-avium": {
         why: "Pour une floraison printanière qui nourrit le bois, le merisier suspend des nuages de fleurs blanches puis des fruits sombres que les oiseaux emportent — et devient un vrai arbre là où le cerisier d'ornement est épuisé en vingt ans.",
         edges: [
-          { axis: "wildlife", native: "Hôte d'environ 300 espèces de chenilles ; ses fruits nourrissent oiseaux et mammifères.", ornamental: "N'élève presque aucune génération d'insectes." },
+          { axis: "wildlife", native: "Hôte d'environ 300 espèces de chenilles ; ses fruits nourrissent oiseaux et mammifères.", ornamental: "N'élève presque aucune génération d'insectes." },
           { axis: "disease", native: "Un indigène vigoureux et de longue vie.", ornamental: "De courte vie, sujet au chancre et à la pourriture." },
         ],
       },
       "prunus-spinosa": {
         why: "Pour une floraison à plus petite et plus rude échelle, le prunellier moutonne de blanc sur ses rameaux noirs et nus dès le premier printemps, puis garde ses prunelles jusqu'à l'hiver — l'arbre de haie que le cerisier d'ornement ne fait qu'imiter.",
         edges: [
-          { axis: "wildlife", native: "Hôte d'environ 300 espèces de chenilles ; fleurs pour les premières abeilles, prunelles pour les oiseaux d'hiver.", ornamental: "N'élève presque aucun insecte indigène." },
+          { axis: "wildlife", native: "Hôte d'environ 300 espèces de chenilles ; fleurs pour les premières abeilles, prunelles pour les oiseaux d'hiver.", ornamental: "N'élève presque aucun insecte indigène." },
           { axis: "water", native: "Parfaitement autonome une fois installé.", ornamental: "De courte vie et sujet aux maladies." },
         ],
       },
@@ -153,15 +153,15 @@ export const ALTERNATIVES_FR: ProseTable = {
   },
   "Hydrangea macrophylla": {
     altRole: "Arbuste à grosses fleurs pour la mi-ombre",
-    altOrigin: "Indigène des côtes du Japon ; l'arbuste qu'on achète quand un coin ombragé a besoin qu'il s'y passe quelque chose.",
+    altOrigin: "Indigène des côtes du Japon ; l'arbuste qu'on achète quand un coin ombragé a besoin qu'il s'y passe quelque chose.",
     altBlurb:
-      "Des têtes de fleurs grandes comme une assiette, dans une couleur qui dépend du sol — personne ne prétendra que ce n'est pas un beau tour. C'est aussi un arbuste qui s'affaisse au premier après-midi chaud et redemande l'arrosoir, et la partie spectaculaire est stérile : les gros fleurons n'ont ni nectar ni pollen, puisqu'on les a sélectionnés pour être gros.",
+      "Des têtes de fleurs grandes comme une assiette, dans une couleur qui dépend du sol — personne ne prétendra que ce n'est pas un beau tour. C'est aussi un arbuste qui s'affaisse au premier après-midi chaud et redemande l'arrosoir, et la partie spectaculaire est stérile : les gros fleurons n'ont ni nectar ni pollen, puisqu'on les a sélectionnés pour être gros.",
     alternativeNotes: {
       "sambucus-nigra": {
         why: "Pour de larges ombelles crème dans un coin mi-ombragé, le sureau noir fait la même masse de fleur à la même taille — et chacun de ses fleurons est fertile.",
         edges: [
-          { axis: "wildlife", native: "Nectar et pollen pour les syrphes et les abeilles, puis des fruits que prennent une vingtaine d'espèces d'oiseaux — et de quoi faire sirop et confiture.", ornamental: "Les fleurons spectaculaires sont stériles : ni nectar, ni pollen, ni chenilles." },
-          { axis: "water", native: "Enraciné profond ; traverse un été atlantique sec sans aide.", ornamental: "S'affaisse à la chaleur et redemande l'eau." },
+          { axis: "wildlife", native: "Nectar et pollen pour les syrphes et les abeilles, puis des fruits que prennent une vingtaine d'espèces d'oiseaux — et de quoi faire sirop et confiture.", ornamental: "Les fleurons spectaculaires sont stériles : ni nectar, ni pollen, ni chenilles." },
+          { axis: "water", native: "Enraciné profond ; traverse un été atlantique sec sans aide.", ornamental: "S'affaisse à la chaleur et redemande l'eau." },
         ],
       },
       "cornus-sanguinea": {
@@ -175,22 +175,22 @@ export const ALTERNATIVES_FR: ProseTable = {
   },
   "Wisteria sinensis": {
     altRole: "Grimpante de pergola",
-    altOrigin: "Indigène de Chine ; sur les pergolas d'Europe et d'Amérique depuis les années 1810.",
+    altOrigin: "Indigène de Chine ; sur les pergolas d'Europe et d'Amérique depuis les années 1810.",
     altBlurb:
-      "Trois semaines de bleu suspendu en mai, et le reste de l'année une tige qui s'épaissit comme un câble et soulève la pergola de ses poteaux. Là où l'hiver est doux, elle passe la clôture, gagne les arbres et les étrangle — la Virginie évalue son caractère envahissant à « moyen » et la Floride l'inscrit sur sa liste.",
+      "Trois semaines de bleu suspendu en mai, et le reste de l'année une tige qui s'épaissit comme un câble et soulève la pergola de ses poteaux. Là où l'hiver est doux, elle passe la clôture, gagne les arbres et les étrangle — la Virginie évalue son caractère envahissant à « moyen » et la Floride l'inscrit sur sa liste.",
     alternativeNotes: {
       "lonicera-periclymenum": {
         why: "Pour couvrir la même pergola d'un parfum du soir, le chèvrefeuille des bois fleurit de juin à septembre au lieu de trois semaines en mai — et ne soulève pas la structure.",
         edges: [
           { axis: "wildlife", native: "Un parfum nocturne qui attire les sphinx, puis des baies rouges pour les fauvettes et les grives.", ornamental: "Trois semaines de nectar, et des tiges qui épaississent jusqu'à soulever une pergola de ses poteaux." },
-          { axis: "care", native: "Volubile et léger ; un coup de sécateur par an suffit.", ornamental: "Passe la clôture et étrangle ce qu'elle atteint." },
+          { axis: "care", native: "Volubile et léger ; un coup de sécateur par an suffit.", ornamental: "Passe la clôture et étrangle ce qu'elle atteint." },
         ],
       },
       "humulus-lupulus": {
         why: "Pour couvrir vite une tonnelle entière en une saison, le houblon monte de cinq mètres chaque été et repart de la souche chaque printemps — rien à démonter, rien à contenir.",
         edges: [
           { axis: "wildlife", native: "Plante-hôte du Robert-le-diable, et des cônes qui nourrissent les petits oiseaux en automne.", ornamental: "Ne nourrit presque rien ici." },
-          { axis: "care", native: "Disparaît au ras du sol chaque hiver : elle ne peut jamais dépasser la structure.", ornamental: "Un câble ligneux permanent, à rabattre sévèrement chaque année." },
+          { axis: "care", native: "Disparaît au ras du sol chaque hiver : elle ne peut jamais dépasser la structure.", ornamental: "Un câble ligneux permanent, à rabattre sévèrement chaque année." },
         ],
       },
     },

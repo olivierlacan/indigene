@@ -34,12 +34,12 @@ export const LOOKALIKES_FR: ProseTable = {
         "N'abattez pas un grand arbre — la coupe déclenche des rejets tout autour. Entaillez l'écorce en anneau en laissant une fine bande la première année, et fermez-le l'année suivante.",
         "Arrachez les rejets qui viennent encore, plusieurs années durant.",
       ],
-      dispose: "Le bois fait un bon bois de chauffage ; les morceaux de racine vont à la poubelle.",
+      dispose: "Le bois fait un bon bois de chauffage ; les morceaux de racine vont à la poubelle.",
     },
     origin:
-      "Indigène des Appalaches, en Amérique du Nord ; planté en Europe depuis le XVIIe siècle.",
+      "Indigène des Appalaches, en Amérique du Nord ; planté en Europe depuis le XVIIe siècle.",
     blurb:
-      "En France on l'appelle « acacia », il donne le miel du même nom, et c'est l'un des arbres exotiques envahissants les plus répandus d'Europe. Chaque racine coupée renvoie des rejets, et l'azote que ses racines apportent aux sols pauvres change la terre elle-même : ce sont les orties et les ronces qui suivent, et non la prairie qui était là.",
+      "En France on l'appelle « acacia », il donne le miel du même nom, et c'est l'un des arbres exotiques envahissants les plus répandus d'Europe. Chaque racine coupée renvoie des rejets, et l'azote que ses racines apportent aux sols pauvres change la terre elle-même : ce sont les orties et les ronces qui suivent, et non la prairie qui était là.",
   },
   "Prunus laurocerasus": {
     // Les signes pour la reconnaître (data/invasives.ts).
@@ -51,7 +51,7 @@ export const LOOKALIKES_FR: ProseTable = {
     removal: {
       steps: [
         "Arrachez les semis, racine comprise.",
-        "Dessouchez les sujets plus grands : une souche coupée repart.",
+        "Dessouchez les sujets plus grands : une souche coupée repart.",
         "Portez des gants, et ne le broyez pas en lieu clos — les feuilles écrasées dégagent du cyanure.",
       ],
       dispose: "Les branches à baies vont à la poubelle.",
@@ -68,15 +68,15 @@ export const LOOKALIKES_FR: ProseTable = {
       "ilex-aquifolium": {
         why: "Pour une haie persistante et dense, le houx indigène dresse le même mur lustré toute l'année — taillable, accueillant pour la faune, et ici chez lui, là où le laurier-cerise est un échappé des jardins en route vers les bois.",
         edges: [
-          { axis: "disease", native: "Sain et de longue vie.", ornamental: "Criblé par le champignon de la criblure ; ses feuilles dégagent du cyanure." },
-          { axis: "wildlife", native: "Ses baies tardives nourrissent grives et merles ; l'azuré des nerpruns y pond.", ornamental: "Disséminé par les oiseaux dans les bois, où il étouffe la flore du sol." },
+          { axis: "disease", native: "Sain et de longue vie.", ornamental: "Criblé par le champignon de la criblure ; ses feuilles dégagent du cyanure." },
+          { axis: "wildlife", native: "Ses baies tardives nourrissent grives et merles ; l'azuré des nerpruns y pond.", ornamental: "Disséminé par les oiseaux dans les bois, où il étouffe la flore du sol." },
         ],
       },
       "corylus-avellana": {
         why: "Pour un écran rapide et libre qu'on peut plesser ou recéper, le noisetier fait un mur vert et souple en une saison, s'égoutte de chatons à la fin de l'hiver, et laisse tomber des noisettes pour tout le bois.",
         edges: [
           { axis: "water", native: "Peu exigeant et autonome une fois installé.", ornamental: "Gourmand en eau, et se ressème dans les bois au-delà du jardin." },
-          { axis: "wildlife", native: "Ses chatons nourrissent les premières abeilles ; ses noisettes, muscardins, écureuils et geais.", ornamental: "Nourrit peu d'espèces indigènes, et envahit." },
+          { axis: "wildlife", native: "Ses chatons nourrissent les premières abeilles ; ses noisettes, muscardins, écureuils et geais.", ornamental: "Nourrit peu d'espèces indigènes, et envahit." },
         ],
       },
     },
@@ -87,7 +87,7 @@ export const LOOKALIKES_FR: ProseTable = {
       "La liane au parfum sucré dont les enfants arrachent les fleurs pour en goûter la goutte de nectar. Elle garde ses feuilles l'hiver, s'enroule assez serré pour étrangler ce qu'elle escalade et recouvre des sous-bois entiers — l'une des lianes envahissantes les plus répandues de l'est des États-Unis, et en progression dans l'ouest de l'Europe.",
   },
   "Acer negundo": {
-    origin: "Indigène d'Amérique du Nord ; planté en Europe depuis le XVIIe siècle.",
+    origin: "Indigène d'Amérique du Nord ; planté en Europe depuis le XVIIe siècle.",
     blurb:
       "L'érable qui n'en a pas l'air — sa feuille est découpée en folioles séparées. Le long des rivières françaises, il forme maintenant des bois entiers de jeunes sujets, poussant vite, cassant facilement, et prenant le terrain que les saules et les peupliers de la berge devraient tenir.",
   },
@@ -100,14 +100,14 @@ export const LOOKALIKES_FR: ProseTable = {
     ],
     removal: {
       steps: [
-        "Arrachez les semis quand le sol est humide, avec toute la racine : un morceau oublié repart.",
+        "Arrachez les semis quand le sol est humide, avec toute la racine : un morceau oublié repart.",
         "N'abattez pas un grand arbre — il répond par une forêt de rejets. Entaillez l'écorce tout autour en laissant une fine bande la première année, et fermez l'anneau l'année suivante.",
         "Arrachez chaque rejet dès qu'il paraît, plusieurs années durant.",
       ],
       dispose: "Les grappes de graines et les morceaux de racine vont à la poubelle, pas au compost.",
     },
     origin:
-      "Indigène de Chine ; planté à travers l'Europe et l'Amérique du Nord depuis le XVIIIe siècle.",
+      "Indigène de Chine ; planté à travers l'Europe et l'Amérique du Nord depuis le XVIIIe siècle.",
     blurb:
       "L'arbre qui sort de chaque fissure de trottoir et de chaque ballast de voie ferrée. Il pousse à une vitesse folle, casse à la première tempête, libère une substance qui étouffe les plantes autour de lui, et renvoie une forêt de drageons depuis les racines quand on le coupe. En Amérique du Nord, c'est aussi l'hôte préféré du fulgore tacheté.",
   },
@@ -121,12 +121,12 @@ export const LOOKALIKES_FR: ProseTable = {
     marks: [
       { feature: "Fleurs", text: "De hauts épis de fleurs magenta aux pétales froissés." },
       { feature: "Tiges", text: "Carrées, et ligneuses à la base." },
-      { feature: "Où", text: "Les sols humides : fossés, bords de marais, rives des lacs." },
+      { feature: "Où", text: "Les sols humides : fossés, bords de marais, rives des lacs." },
     ],
     removal: {
       steps: [
         "Déterrez les jeunes pieds avec toute la souche.",
-        "Coupez les épis avant les graines : un seul pied en fait des millions.",
+        "Coupez les épis avant les graines : un seul pied en fait des millions.",
         "Un grand massif en zone humide est l'affaire du service local de lutte contre les espèces envahissantes.",
       ],
       dispose: "Mettez les épis en sac.",
@@ -139,7 +139,7 @@ export const LOOKALIKES_FR: ProseTable = {
     origin:
       "Un hybride de lavande vraie et de lavande aspic — une plante faite par les humains, multipliée par bouturage et plantée en rangs.",
     blurb:
-      "La lavande des photographies : de gros coussins ronds en longues lignes violettes sur les plateaux de Provence. Il rend plusieurs fois l'huile de la lavande vraie, ce qui explique qu'on le cultive — mais c'est un hybride stérile des champs, pas une plante sauvage du coteau.",
+      "La lavande des photographies : de gros coussins ronds en longues lignes violettes sur les plateaux de Provence. Il rend plusieurs fois l'huile de la lavande vraie, ce qui explique qu'on le cultive — mais c'est un hybride stérile des champs, pas une plante sauvage du coteau.",
   },
 
   // -------------------------------------------------------------------------
@@ -147,7 +147,7 @@ export const LOOKALIKES_FR: ProseTable = {
   // -------------------------------------------------------------------------
   "Pyrus calleryana": {
     origin:
-      "Indigène de Chine et du Viêt Nam ; planté dans toute l'Amérique du Nord à partir des années 1960 comme arbre d'alignement net et robuste.",
+      "Indigène de Chine et du Viêt Nam ; planté dans toute l'Amérique du Nord à partir des années 1960 comme arbre d'alignement net et robuste.",
     blurb:
       "L'arbre qui blanchit des rues américaines entières dans la première semaine douce du printemps. On l'a vendu comme une plante incapable de grener — puis les différentes variétés ont commencé à se croiser entre elles. Leurs semis sont épineux, rapides et denses, et ils remplissent aujourd'hui les friches agricoles, les bords de route et les lisières de tout l'Est. Plusieurs États en ont interdit la vente.",
   },
@@ -169,7 +169,7 @@ export const LOOKALIKES_FR: ProseTable = {
   "Lonicera maackii": {
     origin: "Indigène du nord-est de l'Asie.",
     blurb:
-      "L'arbuste qui feuille le premier au printemps et reste vert le plus longtemps à l'automne — ce qui est exactement la façon de prendre un sous-bois. Les oiseaux mangent bien ses baies rouges, mais c'est la malbouffe des bois : beaucoup moins de graisses qu'une baie indigène, à la saison où un oiseau en a le plus besoin.",
+      "L'arbuste qui feuille le premier au printemps et reste vert le plus longtemps à l'automne — ce qui est exactement la façon de prendre un sous-bois. Les oiseaux mangent bien ses baies rouges, mais c'est la malbouffe des bois : beaucoup moins de graisses qu'une baie indigène, à la saison où un oiseau en a le plus besoin.",
   },
   "Buddleja davidii": {
     // Les signes pour la reconnaître (data/invasives.ts).
@@ -180,33 +180,33 @@ export const LOOKALIKES_FR: ProseTable = {
     ],
     removal: {
       steps: [
-        "Arrachez les semis : ils viennent facilement.",
-        "Dessouchez les grands sujets ; une souche coupée repart.",
+        "Arrachez les semis : ils viennent facilement.",
+        "Dessouchez les grands sujets ; une souche coupée repart.",
         "Si vous en gardez un, coupez chaque épi fané avant qu'il fasse ses graines.",
       ],
       dispose: "Les épis en graines vont à la poubelle.",
     },
     origin: "Indigène du centre de la Chine.",
     blurb:
-      "Vendu comme *la* plante à papillons, et les papillons adultes y boivent réellement. Mais aucune chenille d'ici ne peut manger ses feuilles : il nourrit donc les visiteurs et n'en élève aucun. Le long des rivières du Nord-Ouest Pacifique, il se ressème dans les bancs de gravier assez densément pour être classé plante nuisible en Oregon comme dans l'État de Washington.",
+      "Vendu comme *la* plante à papillons, et les papillons adultes y boivent réellement. Mais aucune chenille d'ici ne peut manger ses feuilles : il nourrit donc les visiteurs et n'en élève aucun. Le long des rivières du Nord-Ouest Pacifique, il se ressème dans les bancs de gravier assez densément pour être classé plante nuisible en Oregon comme dans l'État de Washington.",
     // Aussi un ornemental (data/alternatives.ts) : ce qu'on plante à sa place.
     altRole: "Arbuste à nectar pour massif ensoleillé",
-    altOrigin: "Indigène de Chine ; vendu, par son nom, comme la plante qui attire les papillons.",
+    altOrigin: "Indigène de Chine ; vendu, par son nom, comme la plante qui attire les papillons.",
     altBlurb:
-      "Il attire bien les papillons — ses épis d'été sont un vrai bar à nectar. Mais le nectar est la moitié facile : pas une chenille indigène ne peut manger ses feuilles ; il nourrit les adultes et n'élève aucune génération suivante. C'est un buffet, pas une pouponnière — et il se ressème dans la moindre friche.",
+      "Il attire bien les papillons — ses épis d'été sont un vrai bar à nectar. Mais le nectar est la moitié facile : pas une chenille indigène ne peut manger ses feuilles ; il nourrit les adultes et n'élève aucune génération suivante. C'est un buffet, pas une pouponnière — et il se ressème dans la moindre friche.",
     alternativeNotes: {
       "crataegus-monogyna": {
         why: "Pour un grand arbuste bourdonnant de pollinisateurs, la floraison de mai de l'aubépine est un bar à nectar long comme une haie — et, contrairement au buddleia, elle élève aussi les chenilles, puis nourrit les oiseaux de ses cenelles.",
         edges: [
           { axis: "water", native: "Autonome une fois installée.", ornamental: "Se ressème sur les murs, les friches et le ballast des voies." },
-          { axis: "wildlife", native: "Nectar pour bien des insectes, plante-hôte de centaines de papillons de nuit, cenelles pour les oiseaux d'hiver.", ornamental: "Du nectar pour les adultes seulement ; n'élève aucune chenille indigène." },
+          { axis: "wildlife", native: "Nectar pour bien des insectes, plante-hôte de centaines de papillons de nuit, cenelles pour les oiseaux d'hiver.", ornamental: "Du nectar pour les adultes seulement ; n'élève aucune chenille indigène." },
         ],
       },
       "sambucus-nigra": {
         why: "Pour un arbuste rapide, léger, à fleurs et à baies, le sureau noir déploie ses plateaux de fleurs crème que couvrent les pollinisateurs, puis des baies noires que les oiseaux dévorent — et dont vous pouvez profiter aussi.",
         edges: [
           { axis: "water", native: "Rapide et peu exigeant une fois installé.", ornamental: "Un colonisateur des terrains ouverts, qui se ressème." },
-          { axis: "wildlife", native: "Nectar et pollen pour les insectes ; baies pour une vingtaine d'espèces d'oiseaux.", ornamental: "Nourrit les adultes ; n'héberge aucune chenille indigène." },
+          { axis: "wildlife", native: "Nectar et pollen pour les insectes ; baies pour une vingtaine d'espèces d'oiseaux.", ornamental: "Nourrit les adultes ; n'héberge aucune chenille indigène." },
         ],
       },
     },
@@ -222,14 +222,14 @@ export const LOOKALIKES_FR: ProseTable = {
       "La grande graminée ornementale en fontaine, à plumets argentés, en vente dans toutes les jardineries. Sa graine est portée par le vent dans les prés, les bords de route et les terrains brûlés, et ses touffes mortes restées sur pied propagent bien le feu.",
     // Aussi un ornemental (data/alternatives.ts) : ce qu'on plante à sa place.
     altRole: "Grande graminée ornementale",
-    altOrigin: "Indigène d'Asie de l'Est ; la haute graminée à plumets de mille massifs.",
+    altOrigin: "Indigène d'Asie de l'Est ; la haute graminée à plumets de mille massifs.",
     altBlurb:
       "La fontaine de lames arquées et de plumets argentés d'automne, vendue comme pièce maîtresse sans entretien. Elle se ressème dans les friches et les bords de route — plusieurs États la classent désormais — et porte le feu, contrairement aux graminées indigènes qui lui ressemblent.",
     alternativeNotes: {
       "deschampsia-cespitosa": {
         why: "Pour une fontaine de graminée fine et légère, la canche cespiteuse lève une brume dorée en été — le mouvement pour lequel on plante le miscanthus, sur un indigène qui reste à sa place dans la prairie au lieu de s'en échapper.",
         edges: [
-          { axis: "wildlife", native: "Abri et graines pour les oiseaux ; hôte de plusieurs papillons de prairie.", ornamental: "Nourrit peu d'espèces indigènes, et se ressème dans la nature." },
+          { axis: "wildlife", native: "Abri et graines pour les oiseaux ; hôte de plusieurs papillons de prairie.", ornamental: "Nourrit peu d'espèces indigènes, et se ressème dans la nature." },
           { axis: "care", native: "Robuste et adaptable au soleil ou à mi-ombre, en sol humide ou sec.", ornamental: "Une grosse touffe qui se ressème alentour." },
         ],
       },
@@ -246,20 +246,20 @@ export const LOOKALIKES_FR: ProseTable = {
       steps: [
         "Coupez les tiges au ras du sol.",
         "Déterrez les souches — la base noueuse — sinon elles relancent de nouvelles tiges.",
-        "Coupez les pousses qui reviennent, et plantez de quoi faire de l'ombre : elle déteste l'ombre.",
+        "Coupez les pousses qui reviennent, et plantez de quoi faire de l'ombre : elle déteste l'ombre.",
       ],
-      dispose: "Les tiges s'enracinent là où elles touchent le sol : entassez-les sur une bâche pour qu'elles sèchent.",
+      dispose: "Les tiges s'enracinent là où elles touchent le sol : entassez-les sur une bâche pour qu'elles sèchent.",
     },
     origin:
       "Indigène d'Arménie et du nord de l'Iran, malgré le nom qu'on lui a donné.",
     blurb:
-      "La ronce qui a mangé le Nord-Ouest Pacifique : des cannes grosses comme un pouce, s'arquant par-dessus tout et s'enracinant là où les pointes touchent terre. Le fruit est vraiment bon. Ce qu'il y a sous le fourré, c'est de la terre nue et de vieilles cannes.",
+      "La ronce qui a mangé le Nord-Ouest Pacifique : des cannes grosses comme un pouce, s'arquant par-dessus tout et s'enracinant là où les pointes touchent terre. Le fruit est vraiment bon. Ce qu'il y a sous le fourré, c'est de la terre nue et de vieilles cannes.",
   },
   "Toxicoscordion venenosum": {
     origin:
       "Indigène du Nord-Ouest Pacifique — il appartient à ces prés exactement autant que le camas.",
     blurb:
-      "Un lis des mêmes prés humides de printemps, avec les mêmes feuilles graminiformes et un bulbe qui ressemble à un bulbe de camas. Son nom dit ce qu'il veut dire : toutes ses parties sont toxiques, et il a tué du bétail comme des personnes. Hors floraison, il n'existe aucun moyen sûr de distinguer les bulbes.",
+      "Un lis des mêmes prés humides de printemps, avec les mêmes feuilles graminiformes et un bulbe qui ressemble à un bulbe de camas. Son nom dit ce qu'il veut dire : toutes ses parties sont toxiques, et il a tué du bétail comme des personnes. Hors floraison, il n'existe aucun moyen sûr de distinguer les bulbes.",
   },
 
   // -------------------------------------------------------------------------
@@ -279,11 +279,11 @@ export const LOOKALIKES_FR: ProseTable = {
     ],
     removal: {
       steps: [
-        "Arrachez-la à la main avec toute la racine : une racine cassée repart.",
+        "Arrachez-la à la main avec toute la racine : une racine cassée repart.",
         "Cueillez d'abord les baies et mettez-les en sac.",
-        "Revenez chaque année : les graines continuent de germer.",
+        "Revenez chaque année : les graines continuent de germer.",
       ],
-      dispose: "Mettez les baies en sac ; ne les compostez pas.",
+      dispose: "Mettez les baies en sac ; ne les compostez pas.",
     },
     origin: "Indigène d'Asie de l'Est.",
     blurb:
@@ -298,17 +298,17 @@ export const LOOKALIKES_FR: ProseTable = {
     origin:
       "Une variété d'Amérique centrale et du Sud de la même espèce que le firebush de Floride — venue d'une aire entière située sur un autre continent.",
     blurb:
-      "Vendue partout sous le nom de « firebush » ou de « dwarf firebush » parce qu'elle reste compacte et fleurit jeune. Ses fleurs sont plus courtes et plus pâles que celles de la plante floridienne, et ce n'est pas la plante sur laquelle ont été faites les observations de colibris, d'Heliconius charithonia et de sphinx.",
+      "Vendue partout sous le nom de « firebush » ou de « dwarf firebush » parce qu'elle reste compacte et fleurit jeune. Ses fleurs sont plus courtes et plus pâles que celles de la plante floridienne, et ce n'est pas la plante sur laquelle ont été faites les observations de colibris, d'Heliconius charithonia et de sphinx.",
   },
   "Cycas revoluta": {
     origin:
       "Indigène du sud du Japon. Pas un palmier du tout — une cycadée, comme la Zamia integrifolia.",
     blurb:
-      "Vendu par milliers dans toute la Floride comme plante robuste et architecturale au pied des maisons. Toutes ses parties sont toxiques et ses graines gravement : c'est l'une des causes les plus fréquentes d'empoisonnement végétal mortel chez le chien.",
+      "Vendu par milliers dans toute la Floride comme plante robuste et architecturale au pied des maisons. Toutes ses parties sont toxiques et ses graines gravement : c'est l'une des causes les plus fréquentes d'empoisonnement végétal mortel chez le chien.",
   },
   "Stachytarpheta cayennensis": {
     origin: "Indigène de l'Amérique tropicale, mais pas de Floride.",
     blurb:
-      "Ce que la plupart des pépinières veulent dire quand l'étiquette annonce « porterweed ». C'est une bonne plante à nectar en soi, mais elle se tient haute, se ressème alentour, et elle a largement chassé du commerce la porterweed bleue rampante propre à la Floride.",
+      "Ce que la plupart des pépinières veulent dire quand l'étiquette annonce « porterweed ». C'est une bonne plante à nectar en soi, mais elle se tient haute, se ressème alentour, et elle a largement chassé du commerce la porterweed bleue rampante propre à la Floride.",
   },
 };

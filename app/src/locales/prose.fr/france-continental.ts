@@ -23,9 +23,9 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "Le chêne dominant des forêts de l'est de la France — les grandes chênaies de Tronçais, le piémont vosgien et la Bourgogne, c'est largement cet arbre.",
     careNote:
-      "Lent, puis là pour des siècles — un chêne planté maintenant est pour un arrière-petit-enfant. Il préfère une pente un peu plus sèche et mieux drainée que le chêne pédonculé de l'ouest atlantique, et accepte volontiers un sol acide. Sa racine pivotante profonde le rend résistant à la sécheresse mais difficile à déplacer : plantez-en un petit et laissez-lui de la place.",
+      "Lent, puis là pour des siècles — un chêne planté maintenant est pour un arrière-petit-enfant. Il préfère une pente un peu plus sèche et mieux drainée que le chêne pédonculé de l'ouest atlantique, et accepte volontiers un sol acide. Sa racine pivotante profonde le rend résistant à la sécheresse mais difficile à déplacer : plantez-en un petit et laissez-lui de la place.",
     givesNote:
-      "L'arbre le plus précieux de l'est de la France, sans concurrent : plus de quatre cents espèces de chenilles, c'est-à-dire de quoi remplir chaque printemps un nid de mésanges et de sittelles. Puis des glands pour les geais, les pigeons ramiers, les pics, les écureuils et les sangliers, et l'ombre profonde et le bois mort où vivent les coléoptères et les chauves-souris de toute une forêt.",
+      "L'arbre le plus précieux de l'est de la France, sans concurrent : plus de quatre cents espèces de chenilles, c'est-à-dire de quoi remplir chaque printemps un nid de mésanges et de sittelles. Puis des glands pour les geais, les pigeons ramiers, les pics, les écureuils et les sangliers, et l'ombre profonde et le bois mort où vivent les coléoptères et les chauves-souris de toute une forêt.",
     propagationNote:
       "Ramassez les glands à leur chute en automne et faites-les flotter dans l'eau — jetez ceux qui remontent, semez aussitôt ceux qui coulent. Les glands de chêne germent dès l'automne, sans passage au froid, et ne doivent jamais sécher. À cause de la racine pivotante, élevez-le d'abord en pot profond, ou semez-le là où il vivra.",
   },
@@ -39,7 +39,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "L'érable des haies de l'est et du centre de la France, sur les terres agricoles calcaires et les lisières.",
     careNote:
-      "Le peu exigeant : craie, argile, sécheresse, vent, ombre et taille lui conviennent tous. Il reste de taille modérée, ce qui en fait l'érable d'un jardin ordinaire, et il entre dans une haie mixte aussi volontiers que le charme.",
+      "Le peu exigeant : craie, argile, sécheresse, vent, ombre et taille lui conviennent tous. Il reste de taille modérée, ce qui en fait l'érable d'un jardin ordinaire, et il entre dans une haie mixte aussi volontiers que le charme.",
     givesNote:
       "Ses fleurs verdâtres précoces sont une vraie source de nectar en avril, avant que la plupart des arbres ne fleurissent, et bon nombre de chenilles suivent sur les feuilles. Il passe au jaune beurre pur à l'automne, et ses samares ailées nourrissent les fringilles.",
     propagationNote:
@@ -48,7 +48,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
       "acer-negundo": {
         why: "Deux érables des haies et des berges — mais un seul des deux a une feuille en forme de feuille d'érable.",
         tells: [
-          { feature: "Feuille", native: "Une seule feuille à cinq lobes arrondis et émoussés ; cassez le pétiole, il pleure un lait blanc.", lookalike: "Une feuille divisée en trois à cinq folioles séparées, grossièrement dentées, celle du bout souvent à trois pointes." },
+          { feature: "Feuille", native: "Une seule feuille à cinq lobes arrondis et émoussés ; cassez le pétiole, il pleure un lait blanc.", lookalike: "Une feuille divisée en trois à cinq folioles séparées, grossièrement dentées, celle du bout souvent à trois pointes." },
           { feature: "Rameaux", native: "Souvent garnis de crêtes liégeuses sur les pousses plus âgées.", lookalike: "Lisses, verts à violets, sous une pruine cireuse qu'on efface au pouce." },
           { feature: "Graines", native: "Samares appariées écartées presque en ligne droite.", lookalike: "Samares appariées en V étroit, pendues en longues grappes." },
           { feature: "Où il pousse", native: "Dans les haies et les lisières, surtout sur terrain calcaire.", lookalike: "En fourrés jeunes et denses sur les graviers de rivière et les talus remaniés." },
@@ -66,11 +66,11 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "Un arbre dispersé dans les vieilles chênaies-charmaies sur calcaire du centre et de l'est de la France — un indicateur de forêt ancienne.",
     careNote:
-      "Lent, peu commun, et qui mérite qu'on l'attende : un bel arbre à feuilles d'érable qui encaisse la sécheresse et le calcaire une fois installé, et devient cramoisi profond à l'automne. Il drageonne doucement, ce qui est sa façon habituelle de s'étendre à l'état sauvage. Donnez-lui une lisière ensoleillée plutôt que l'ombre profonde.",
+      "Lent, peu commun, et qui mérite qu'on l'attende : un bel arbre à feuilles d'érable qui encaisse la sécheresse et le calcaire une fois installé, et devient cramoisi profond à l'automne. Il drageonne doucement, ce qui est sa façon habituelle de s'étendre à l'état sauvage. Donnez-lui une lisière ensoleillée plutôt que l'ombre profonde.",
     givesNote:
       "Un solide arbre à chenilles, avec de lourds corymbes blancs pour les abeilles en mai puis des fruits bruns mouchetés — les alises, dont on faisait autrefois une boisson à la campagne — que grives, merles et draines prélèvent en quantité tout l'automne.",
     propagationNote:
-      "Débarrassez les fruits de leur pulpe et semez aussitôt en pot dehors — il lui faut en général une période chaude puis une longue période froide, si bien qu'une bonne part attendra le second printemps. Bien plus facile : soulevez l'un des drageons enracinés qu'un arbre mûr envoie.",
+      "Débarrassez les fruits de leur pulpe et semez aussitôt en pot dehors — il lui faut en général une période chaude puis une longue période froide, si bien qu'une bonne part attendra le second printemps. Bien plus facile : soulevez l'un des drageons enracinés qu'un arbre mûr envoie.",
   },
   "Pinus sylvestris": {
     nativeNote:
@@ -94,11 +94,11 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "L'aubépine des bois de l'est de la France — plus à son aise à l'ombre des vieilles forêts et des haies que sa cousine des champs ouverts.",
     careNote:
-      "Aussi robuste et accommodante que le sont les aubépines — argile, calcaire, ombre, vent, taille sévère. Les épines sont tout l'intérêt : c'est ce qui fait d'une haie d'aubépine une forteresse pour les oiseaux nicheurs. Taillez-la en fin d'hiver, jamais pendant les mois de nidification.",
+      "Aussi robuste et accommodante que le sont les aubépines — argile, calcaire, ombre, vent, taille sévère. Les épines sont tout l'intérêt : c'est ce qui fait d'une haie d'aubépine une forteresse pour les oiseaux nicheurs. Taillez-la en fin d'hiver, jamais pendant les mois de nidification.",
     givesNote:
       "Après le chêne, et de très loin, l'arbuste à chenilles le plus productif de la région. Sa lourde floraison de mai nourrit une foule énorme d'abeilles, de syrphes et de coléoptères, et ses cenelles rouges tiennent jusqu'en hiver pour les grives litornes, mauvis, draines et merles. Et puis il y a la haie elle-même, assez épineuse pour qu'un chat ne puisse pas suivre un oiseau nicheur à l'intérieur.",
     propagationNote:
-      "La graine d'aubépine est lente exprès : débarrassez les cenelles de leur chair et semez-les dehors aussitôt, en vous attendant à voir lever l'essentiel au second printemps plutôt qu'au premier. Les boutures ligneuses prises en hiver sont le raccourci.",
+      "La graine d'aubépine est lente exprès : débarrassez les cenelles de leur chair et semez-les dehors aussitôt, en vous attendant à voir lever l'essentiel au second printemps plutôt qu'au premier. Les boutures ligneuses prises en hiver sont le raccourci.",
     supportNotes: {
       "winter-thrushes":
         "Les cenelles rouges tiennent jusque dans les grands froids pour les grives litornes, mauvis et les merles.",
@@ -110,11 +110,11 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "Un petit cerisier sauvage au parfum sucré des pentes calcaires sèches et des broussailles de Bourgogne, du piémont jurassien et de la vallée du Rhône.",
     careNote:
-      "Peut-être le feuillu le plus résistant à la sécheresse de cette liste — il pousse dans la caillasse calcaire nue et ne demande jamais d'eau. Il drageonne et se ressème abondamment : donnez-lui un talus ou une haie plutôt qu'un massif. Feuilles et noyaux contiennent des composés cyanurés ; c'est une plante à tenir hors d'un pré à chevaux.",
+      "Peut-être le feuillu le plus résistant à la sécheresse de cette liste — il pousse dans la caillasse calcaire nue et ne demande jamais d'eau. Il drageonne et se ressème abondamment : donnez-lui un talus ou une haie plutôt qu'un massif. Feuilles et noyaux contiennent des composés cyanurés ; c'est une plante à tenir hors d'un pré à chevaux.",
     givesNote:
       "Les cerisiers sont le deuxième grand genre à chenilles après les chênes, et celui-ci est celui qui poussera sur un calcaire sec. Sa floraison blanche parfumée nourrit les abeilles en avril, et les petits fruits noirs amers sont prélevés par les fauvettes à tête noire, les grives, les merles et les fauvettes qui s'engraissent pour la migration.",
     propagationNote:
-      "Débarrassez les noyaux mûrs de leur chair en fin d'été et donnez-leur environ trois mois de froid humide avant de semer au printemps. Plus facile encore : soulevez en fin d'hiver l'un des drageons enracinés qu'il pousse autour de lui.",
+      "Débarrassez les noyaux mûrs de leur chair en fin d'été et donnez-leur environ trois mois de froid humide avant de semer au printemps. Plus facile encore : soulevez en fin d'hiver l'un des drageons enracinés qu'il pousse autour de lui.",
     supportNotes: {
       "blackcaps-warblers":
         "De petites cerises noires amères en fin d'été, prélevées par les fauvettes à tête noire et les autres fauvettes qui s'engraissent pour le voyage vers le sud.",
@@ -128,7 +128,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "Un arbuste des lisières et des haies sur calcaire chaud de l'est et du sud-est de la France.",
     careNote:
-      "Lent mais vraiment facile : calcaire, sécheresse, ombre, taille. Il fait une excellente haie libre et ne demande aucune taille du tout si vous avez la place. Plantez-en deux si vous voulez une vraie récolte de fruits.",
+      "Lent mais vraiment facile : calcaire, sécheresse, ombre, taille. Il fait une excellente haie libre et ne demande aucune taille du tout si vous avez la place. Plantez-en deux si vous voulez une vraie récolte de fruits.",
     givesNote:
       "Il fleurit en février, sur le bois nu — une brume de petits bouquets jaunes au moment où sortent les premières reines de bourdons et où il n'y a rien d'autre pour elles. Puis des cornouilles rouges luisantes en fin d'été pour les merles, les grives et les fauvettes à tête noire (et pour la confiture, si vous arrivez le premier).",
     propagationNote:
@@ -142,9 +142,9 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "Un arbuste des haies, des broussailles et des lisières sur calcaire sec, dans tout l'est et le centre de la France.",
     careNote:
-      "Taillée pour le calcaire sec : des feuilles grises, molles et feutrées qui limitent la perte d'eau, et une indifférence complète à la sécheresse une fois installée. Facile en haie mixte, sans aucune taille nécessaire, et elle accepte pas mal d'ombre. Ses baies sont toxiques pour nous : celle-là est pour les oiseaux seulement.",
+      "Taillée pour le calcaire sec : des feuilles grises, molles et feutrées qui limitent la perte d'eau, et une indifférence complète à la sécheresse une fois installée. Facile en haie mixte, sans aucune taille nécessaire, et elle accepte pas mal d'ombre. Ses baies sont toxiques pour nous : celle-là est pour les oiseaux seulement.",
     givesNote:
-      "Ses corymbes crème plats nourrissent abeilles, syrphes et coléoptères en mai, puis le fruit fait quelque chose d'inhabituel et d'utile : il mûrit irrégulièrement, si bien qu'un seul bouquet porte à la fois des baies vertes, rouges et noires et continue de nourrir fauvettes, grives et fauvettes à tête noire plusieurs semaines de suite au lieu d'une.",
+      "Ses corymbes crème plats nourrissent abeilles, syrphes et coléoptères en mai, puis le fruit fait quelque chose d'inhabituel et d'utile : il mûrit irrégulièrement, si bien qu'un seul bouquet porte à la fois des baies vertes, rouges et noires et continue de nourrir fauvettes, grives et fauvettes à tête noire plusieurs semaines de suite au lieu d'une.",
     propagationNote:
       "La graine de viorne est réputée pour ses deux temps — elle fait une racine la première année et une pousse seulement après le second hiver — semez-la donc fraîche dehors et laissez-la tranquille deux ans. Les boutures d'été en voie d'aoûtement sont bien plus rapides.",
   },
@@ -174,21 +174,21 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "Un arbuste de haie et de lisière du pays calcaire, dans tout l'est et le centre de la France.",
     careNote:
-      "Facile dans toute terre correcte, calcaire ou argileuse, au soleil ou à mi-ombre, et il ne demande aucune taille. À savoir avant de le planter : toutes ses parties sont toxiques si on les avale — le fruit vif en particulier, et il est assez vif pour tenter un enfant — c'est donc un arbuste pour le fond d'une haie plutôt que le bord d'une aire de jeux.",
+      "Facile dans toute terre correcte, calcaire ou argileuse, au soleil ou à mi-ombre, et il ne demande aucune taille. À savoir avant de le planter : toutes ses parties sont toxiques si on les avale — le fruit vif en particulier, et il est assez vif pour tenter un enfant — c'est donc un arbuste pour le fond d'une haie plutôt que le bord d'une aire de jeux.",
     givesNote:
-      "Son spectacle d'automne n'a pas d'égal chez les arbustes indigènes : des capsules rose vif qui s'ouvrent pour laisser pendre des graines orange au bout d'un fil, prélevées par les rougegorges et les fauvettes à tête noire, au-dessus de feuilles devenues écarlates. Il porte aussi une grosse population de pucerons en début d'été, ce qui a l'air d'un problème et est en réalité ce qui nourrit les mésanges bleues, les coccinelles et les larves de syrphes.",
+      "Son spectacle d'automne n'a pas d'égal chez les arbustes indigènes : des capsules rose vif qui s'ouvrent pour laisser pendre des graines orange au bout d'un fil, prélevées par les rougegorges et les fauvettes à tête noire, au-dessus de feuilles devenues écarlates. Il porte aussi une grosse population de pucerons en début d'été, ce qui a l'air d'un problème et est en réalité ce qui nourrit les mésanges bleues, les coccinelles et les larves de syrphes.",
     propagationNote:
-      "Débarrassez la graine de sa chair orange — mettez des gants — et semez aussitôt dehors ; attendez-vous à ce qu'une bonne part attende le second printemps. Les boutures d'été en voie d'aoûtement s'enracinent volontiers et sont bien plus rapides.",
+      "Débarrassez la graine de sa chair orange — mettez des gants — et semez aussitôt dehors ; attendez-vous à ce qu'une bonne part attende le second printemps. Les boutures d'été en voie d'aoûtement s'enracinent volontiers et sont bien plus rapides.",
   },
   "Rosa canina": {
     nativeNote:
       "Le rosier sauvage des haies, des talus et des broussailles, partout dans l'est et le centre de la France.",
     careNote:
-      "Il poussera n'importe où et s'arque loin, s'accrochant à tout ce qui se trouve à côté — une haie ou un talus, pas un massif. Rabattez-le sévèrement en fin d'hiver s'il prend le dessus. Pas de traitement, pas d'engrais, pas de souci de maladie des taches noires : c'est le rosier à partir duquel tous les capricieux ont été obtenus.",
+      "Il poussera n'importe où et s'arque loin, s'accrochant à tout ce qui se trouve à côté — une haie ou un talus, pas un massif. Rabattez-le sévèrement en fin d'hiver s'il prend le dessus. Pas de traitement, pas d'engrais, pas de souci de maladie des taches noires : c'est le rosier à partir duquel tous les capricieux ont été obtenus.",
     givesNote:
       "Des fleurs simples ouvertes, c'est-à-dire qu'une abeille peut réellement atteindre le pollen — contrairement à un rosier de jardin double, qui pour un insecte n'est que du décor. Bon nombre de chenilles, et les cynorrhodons sont ce dont vivent grives mauvis, litornes, merles et mulots en décembre. Le fourré épineux est un couvert de nidification de premier choix.",
     propagationNote:
-      "Les cynorrhodons demandent de la patience : nettoyez la graine, semez-la dehors à l'automne, et attendez-vous à en voir l'essentiel au second printemps. Les boutures ligneuses prises en hiver sont la voie rapide et s'enracinent bien.",
+      "Les cynorrhodons demandent de la patience : nettoyez la graine, semez-la dehors à l'automne, et attendez-vous à en voir l'essentiel au second printemps. Les boutures ligneuses prises en hiver sont la voie rapide et s'enracinent bien.",
     supportNotes: {
       "winter-thrushes":
         "Les cynorrhodons sont la nourriture de décembre des grives litornes, mauvis et des merles, quand la haie n'a plus rien d'autre.",
@@ -202,11 +202,11 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "L'herbe à fleurs roses des talus calcaires secs, des bords de sentier et des pelouses sèches de tout l'est et le centre de la France.",
     careNote:
-      "Du soleil et du drainage, et il se débrouille seul ; il s'étend doucement à la racine et se ressème, ce qui sur un talus sec est exactement ce que vous voulez. Laissez les tiges florales sur pied tout l'hiver pour les insectes qui s'y abritent, et coupez-les en mars.",
+      "Du soleil et du drainage, et il se débrouille seul ; il s'étend doucement à la racine et se ressème, ce qui sur un talus sec est exactement ce que vous voulez. Laissez les tiges florales sur pied tout l'hiver pour les insectes qui s'y abritent, et coupez-les en mars.",
     givesNote:
-      "Si vous ne plantez qu'une seule plante à nectar pour les papillons dans l'est de la France, plantez celle-ci : en fin d'été, un massif d'origan porte plus de papillons à la fois que quoi que ce soit d'autre dans la prairie — nacrés, azurés, hespéries, citrons — plus les bourdons et les papillons de nuit diurnes, et une solide liste de chenilles bien à lui.",
+      "Si vous ne plantez qu'une seule plante à nectar pour les papillons dans l'est de la France, plantez celle-ci : en fin d'été, un massif d'origan porte plus de papillons à la fois que quoi que ce soit d'autre dans la prairie — nacrés, azurés, hespéries, citrons — plus les bourdons et les papillons de nuit diurnes, et une solide liste de chenilles bien à lui.",
     propagationNote:
-      "Divisez une touffe au printemps — la méthode la plus simple, et elle marche toujours. La graine est très fine : pressez-la à la surface d'un terreau graveleux et laissez-la découverte, à la lumière.",
+      "Divisez une touffe au printemps — la méthode la plus simple, et elle marche toujours. La graine est très fine : pressez-la à la surface d'un terreau graveleux et laissez-la découverte, à la lumière.",
     supportNotes: {
       "bumble-bees":
         "En fin d'été, un massif d'origan porte plus de papillons et d'abeilles à la fois que quoi que ce soit d'autre dans une pelouse calcaire.",
@@ -216,11 +216,11 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "Une vivace à racine profonde des pelouses calcaires, des bords de route et des talus de voie ferrée de tout l'est et le centre de la France.",
     careNote:
-      "Une racine pivotante d'un mètre de profondeur la rend résistante à la sécheresse et lui donne une longue vie — et signifie aussi qu'elle supporte mal d'être déplacée une fois installée : semez-la ou plantez-la petite, là où vous la voulez. Elle veut un terrain pauvre, ensoleillé, bien drainé ; une terre riche la fait s'affaler.",
+      "Une racine pivotante d'un mètre de profondeur la rend résistante à la sécheresse et lui donne une longue vie — et signifie aussi qu'elle supporte mal d'être déplacée une fois installée : semez-la ou plantez-la petite, là où vous la voulez. Elle veut un terrain pauvre, ensoleillé, bien drainé ; une terre riche la fait s'affaler.",
     givesNote:
-      "De gros capitules pourpres rayonnants, par intermittence de juin à septembre, avec un puits de nectar exceptionnellement profond — c'est pourquoi les insectes à longue langue y vont : bourdons, grands nacrés, demi-deuils, zygènes. Chardonnerets et linottes prennent ensuite la graine tout l'automne, et elle héberge une longue liste de chenilles.",
+      "De gros capitules pourpres rayonnants, par intermittence de juin à septembre, avec un puits de nectar exceptionnellement profond — c'est pourquoi les insectes à longue langue y vont : bourdons, grands nacrés, demi-deuils, zygènes. Chardonnerets et linottes prennent ensuite la graine tout l'automne, et elle héberge une longue liste de chenilles.",
     propagationNote:
-      "Récoltez les capitules secs à l'automne et frottez-en la graine. Elle lève sans peine d'un semis d'automne dehors ; un semis de printemps réussit mieux après un mois de froid humide au réfrigérateur.",
+      "Récoltez les capitules secs à l'automne et frottez-en la graine. Elle lève sans peine d'un semis d'automne dehors ; un semis de printemps réussit mieux après un mois de froid humide au réfrigérateur.",
     supportNotes: {
       "painted-lady":
         "Les grands papillons butinent les capitules de centaurée plusieurs minutes d'affilée — belles-dames, nacrés et demi-deuils d'une prairie sèche.",
@@ -242,9 +242,9 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "La haute sauge bleue des prairies et des bords de route sur calcaire, de la Bourgogne à la Lorraine et à la vallée du Rhône.",
     careNote:
-      "Plein soleil, drainage franc et sol pauvre ; une rosette de feuilles gaufrées passe l'hiver et lance ses épis en mai. Rabattez les tiges fanées et elle refleurit souvent en fin d'été. Elle se ressème sans excès dans le gravier et les gazons maigres.",
+      "Plein soleil, drainage franc et sol pauvre ; une rosette de feuilles gaufrées passe l'hiver et lance ses épis en mai. Rabattez les tiges fanées et elle refleurit souvent en fin d'été. Elle se ressème sans excès dans le gravier et les gazons maigres.",
     givesNote:
-      "Ses fleurs ont un levier à l'intérieur : une abeille qui s'y enfonce déclenche une étamine articulée qui lui tamponne le dos de pollen, un dispositif conçu pour les bourdons et l'une des choses les plus élégantes d'une prairie française. Abeilles à longue langue, papillons de jour et papillons de nuit diurnes la butinent des semaines durant, et elle porte une bonne liste de chenilles.",
+      "Ses fleurs ont un levier à l'intérieur : une abeille qui s'y enfonce déclenche une étamine articulée qui lui tamponne le dos de pollen, un dispositif conçu pour les bourdons et l'une des choses les plus élégantes d'une prairie française. Abeilles à longue langue, papillons de jour et papillons de nuit diurnes la butinent des semaines durant, et elle porte une bonne liste de chenilles.",
     propagationNote:
       "Semez la graine fraîche à l'automne en pot laissé dehors — elle germe facilement. Les touffes installées se divisent au début du printemps, mais la racine pivotante fait que les vieux pieds se déplacent mal.",
   },
@@ -260,7 +260,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "La pelote d'épingles lilas des prairies de fauche, des bords de route et des talus secs de tout l'est et le centre de la France.",
     careNote:
-      "Elle veut du soleil et du drainage, et rien d'autre ; une racine profonde la porte à travers le mois d'août le plus sec. C'est une plante de prairie de fauche : sa place est dans une herbe haute coupée une fois par an en fin d'été, et non dans une pelouse tondue ou un massif fertilisé.",
+      "Elle veut du soleil et du drainage, et rien d'autre ; une racine profonde la porte à travers le mois d'août le plus sec. C'est une plante de prairie de fauche : sa place est dans une herbe haute coupée une fois par an en fin d'été, et non dans une pelouse tondue ou un massif fertilisé.",
     givesNote:
       "Des pelotes d'épingles lilas plates de juin à septembre, sur lesquelles les papillons se posent sans arrêt — demi-deuils, nacrés, hespéries — et une plante dont une andrène spécialiste dépend pour son pollen et qu'elle ne trouve nulle part ailleurs. Sa liste de chenilles est courte, mais elle nourrit les proches parents du damier de la succise, et sa graine nourrit les fringilles.",
     propagationNote:
@@ -270,9 +270,9 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "La graminée en touffe vert pâle des pelouses calcaires et des lisières de tout l'est et le centre de la France.",
     careNote:
-      "Une mise en garde d'abord : sur une pelouse calcaire non pâturée, cette graminée prend le dessus et étouffe les fleurs, ce qui est l'un des vrais problèmes de conservation de l'est de la France. Au jardin, cela veut dire qu'elle a sa place sur un talus sec que vous voulez couvert, et non dans une prairie fleurie — et qu'elle demande à être fauchée ou pâturée pour rester tenue.",
+      "Une mise en garde d'abord : sur une pelouse calcaire non pâturée, cette graminée prend le dessus et étouffe les fleurs, ce qui est l'un des vrais problèmes de conservation de l'est de la France. Au jardin, cela veut dire qu'elle a sa place sur un talus sec que vous voulez couvert, et non dans une prairie fleurie — et qu'elle demande à être fauchée ou pâturée pour rester tenue.",
     givesNote:
-      "Elle est malgré tout l'une des graminées les plus utilisées du réseau trophique de la région : les satyres, les hespéries et les demi-deuils qui font bouger une prairie en juin mangent celle-ci et hivernent au fond de ses touffes. Là où un jardin a la place d'un coin d'herbe en friche, c'est elle qui l'habite.",
+      "Elle est malgré tout l'une des graminées les plus utilisées du réseau trophique de la région : les satyres, les hespéries et les demi-deuils qui font bouger une prairie en juin mangent celle-ci et hivernent au fond de ses touffes. Là où un jardin a la place d'un coin d'herbe en friche, c'est elle qui l'habite.",
     propagationNote:
       "Soulevez une touffe à l'automne ou au début du printemps et séparez-la en morceaux enracinés. Une graine semée directement sur une terre ratissée à l'automne prend aussi, mais c'est plus lent que la division.",
     supportNotes: {
@@ -290,7 +290,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "La clématite sauvage qui drape les haies et les lisières sur calcaire de tout l'est et le centre de la France, en têtes argentées tout l'hiver.",
     careNote:
-      "Vigoureuse jusqu'à la brutalité : elle étouffera un petit arbre en une décennie, plantez-la donc sur une grande haie, un mur ou un fil, et taillez-la sévèrement chaque hiver. C'est la mauvaise plante pour un petit jardin et la bonne pour une limite que vous voulez faire disparaître. Sa sève irrite la peau.",
+      "Vigoureuse jusqu'à la brutalité : elle étouffera un petit arbre en une décennie, plantez-la donc sur une grande haie, un mur ou un fil, et taillez-la sévèrement chaque hiver. C'est la mauvaise plante pour un petit jardin et la bonne pour une limite que vous voulez faire disparaître. Sa sève irrite la peau.",
     givesNote:
       "Des fleurs crème tardives quand la haie a fini de fleurir, butinées par les abeilles, les syrphes et les papillons de nuit, puis les plumets de graines — la barbe de vieillard — qui accrochent la lumière tout l'hiver et garnissent les nids d'oiseaux au printemps. Elle héberge un ensemble de papillons de nuit spécialistes, et son fouillis dense est là où troglodytes et accenteurs s'abritent d'un coup de froid.",
     propagationNote:
@@ -324,7 +324,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "L'autre moitié de la chênaie de l'est — la classique forêt de chêne-charme de Lorraine, de Bourgogne et d'Alsace.",
     careNote:
-      "Le grand arbre le plus accommodant de cette liste : argile lourde, humidité saisonnière, ombre, taille sévère — il prend tout. C'est pourquoi il fait la meilleure haie indigène de l'est de la France, gardant ses feuilles brunes tout l'hiver pour faire écran. Laissé libre, il devient un bel arbre au tronc cannelé.",
+      "Le grand arbre le plus accommodant de cette liste : argile lourde, humidité saisonnière, ombre, taille sévère — il prend tout. C'est pourquoi il fait la meilleure haie indigène de l'est de la France, gardant ses feuilles brunes tout l'hiver pour faire écran. Laissé libre, il devient un bel arbre au tronc cannelé.",
     givesNote:
       "Il héberge toute une gamme de chenilles, nourrit gros-becs et mésanges avec ses samares, et — taillé en haie — offre un couvert de nidification dense toute l'année ainsi qu'un brise-vent.",
     propagationNote:
@@ -340,11 +340,11 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "Un indigène des forêts de l'est de la France et l'arbre d'innombrables places de village — celui dont les fleurs donnent le tilleul.",
     careNote:
-      "De longue vie, tolérant à l'argile et à l'air des villes, il répond à la taille sévère mieux qu'aucun autre grand arbre indigène — c'est pourquoi les villages français les taillent en têtards depuis des siècles. Les pucerons du tilleul font pleuvoir du miellat au cœur de l'été : ce n'est pas l'arbre sous lequel garer une voiture.",
+      "De longue vie, tolérant à l'argile et à l'air des villes, il répond à la taille sévère mieux qu'aucun autre grand arbre indigène — c'est pourquoi les villages français les taillent en têtards depuis des siècles. Les pucerons du tilleul font pleuvoir du miellat au cœur de l'été : ce n'est pas l'arbre sous lequel garer une voiture.",
     givesNote:
-      "Fin juin, un tilleul en fleur s'entend de l'autre bout du jardin : c'est l'un des plus grands arbres à nectar d'Europe, qui nourrit abeilles, syrphes et papillons de nuit pendant quinze jours. Bon nombre de chenilles aussi, et les vieux tilleuls se creusent en quelques-uns des meilleurs gîtes à chauves-souris et à chouettes qui soient.",
+      "Fin juin, un tilleul en fleur s'entend de l'autre bout du jardin : c'est l'un des plus grands arbres à nectar d'Europe, qui nourrit abeilles, syrphes et papillons de nuit pendant quinze jours. Bon nombre de chenilles aussi, et les vieux tilleuls se creusent en quelques-uns des meilleurs gîtes à chauves-souris et à chouettes qui soient.",
     propagationNote:
-      "La graine de tilleul est réputée lente — le tégument et l'embryon la retiennent tous deux, si bien que les fruits récoltés attendent souvent deux hivers. Semez-les frais et encore un peu verts, en pot dehors. Beaucoup plus rapide : marcottez une pousse basse, ou déterrez l'un des rejets qu'un vieil arbre pousse à son pied.",
+      "La graine de tilleul est réputée lente — le tégument et l'embryon la retiennent tous deux, si bien que les fruits récoltés attendent souvent deux hivers. Semez-les frais et encore un peu verts, en pot dehors. Beaucoup plus rapide : marcottez une pousse basse, ou déterrez l'un des rejets qu'un vieil arbre pousse à son pied.",
     supportNotes: {
       "hummingbird-hawk-moth":
         "Le tilleul livre l'essentiel de son nectar vers le soir, l'heure où le moro-sphinx arrive et se tient en vol devant les fleurs.",
@@ -358,7 +358,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "Indigène dans les haies fraîches, les fourrés de bord de rivière et les lisières de tout l'est de la France — et la culture qui a fait le pays brassicole alsacien.",
     careNote:
-      "Il disparaît jusqu'au sol chaque hiver et regrimpe six mètres avant août, ce qui en fait l'écran indigène le plus rapide que vous puissiez planter — sur une clôture, une arche ou un mur laid. Il trace : contenez-le ou donnez-lui de la place. Le houblon est toxique pour les chiens ; c'est le pied femelle qui porte les cônes.",
+      "Il disparaît jusqu'au sol chaque hiver et regrimpe six mètres avant août, ce qui en fait l'écran indigène le plus rapide que vous puissiez planter — sur une clôture, une arche ou un mur laid. Il trace : contenez-le ou donnez-lui de la place. Le houblon est toxique pour les chiens ; c'est le pied femelle qui porte les cônes.",
     givesNote:
       "La plante nourricière du robert-le-diable — celui aux bords d'ailes déchiquetés, qui passe l'hiver à l'état adulte en ressemblant exactement à une feuille morte — et de plusieurs beaux papillons de nuit. Ses cônes de fin d'été nourrissent et abritent des insectes, et son rideau dense de feuilles est un couvert de nidification et de dortoir sur un mur nu.",
     propagationNote:
@@ -376,7 +376,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     givesNote:
       "À poids égal, la plante à papillons la plus importante de France. Les azurés, les hespéries, les zygènes et les soucis y élèvent leurs chenilles, plusieurs d'entre eux sur presque rien d'autre, et sa longue saison de petites fleurs jaunes nourrit les bourdons de mai à septembre. Quand une prairie a perdu ses papillons, c'est en général cela qu'elle a perdu.",
     propagationNote:
-      "Le tégument est dur, comme chez la plupart des légumineuses : entaillez-le au papier de verre ou faites-le tremper une nuit dans de l'eau tiède, puis semez directement sur une terre nue griffée à l'automne ou au début du printemps. Elle supporte mal d'être mise en pot puis déplacée : semez-la là où vous la voulez.",
+      "Le tégument est dur, comme chez la plupart des légumineuses : entaillez-le au papier de verre ou faites-le tremper une nuit dans de l'eau tiède, puis semez directement sur une terre nue griffée à l'automne ou au début du printemps. Elle supporte mal d'être mise en pot puis déplacée : semez-la là où vous la voulez.",
     supportNotes: {
       "common-blue":
         "Le lotier corniculé est la principale plante nourricière de l'azuré commun — et les fourmis montent souvent la garde au-dessus des chenilles pour les gouttes sucrées qu'elles exsudent.",
@@ -397,7 +397,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "La laîche souple et arquée des sous-bois frais et ombragés de l'est, qui sort en mai de minces épis verts pendants, comme une plante qui aurait renoncé à se faire remarquer.",
     careNote:
-      "La plante de l'ombre humide sous les arbres, là où le gazon ne se referme pas et où presque tout boude. Elle veut de l'ombre et un sol qui ne sèche pas ; dans un massif ensoleillé elle grille. Plantez-la en nappes espacées d'une trentaine de centimètres et elle fait un tapis vert de sous-bois en trois ans. Rabattez-la en fin d'hiver, avant que la nouvelle pousse ne monte.",
+      "La plante de l'ombre humide sous les arbres, là où le gazon ne se referme pas et où presque tout boude. Elle veut de l'ombre et un sol qui ne sèche pas ; dans un massif ensoleillé elle grille. Plantez-la en nappes espacées d'une trentaine de centimètres et elle fait un tapis vert de sous-bois en trois ans. Rabattez-la en fin d'hiver, avant que la nouvelle pousse ne monte.",
     givesNote:
       "Les laîches sont les plantes-hôtes d'un nombre surprenant de petits papillons bruns et de papillons de nuit, et une touffe de laîche à l'ombre est là où ils passent l'année. Les touradons et la litière en dessous sont un abri humide pour les coléoptères, les araignées et les amphibiens pendant les mois où tout le reste sèche.",
     propagationNote:
@@ -407,10 +407,10 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "Une fougère sombre, dure et luisante des talus ombragés et des bois calcaires de l'est — des frondes rétrécies aux deux bouts, vertes et rigides tout l'hiver.",
     careNote:
-      "La plus résistante des trois : une fois installée, elle accepte l'ombre réellement sèche — le sol sous un hêtre ou le pied d'un mur nord — et n'y demande aucun arrosage d'été. Plantez le collet dégagé pour qu'il ne pourrisse pas, sur une pente si vous en avez une. Persistante et lente. Ne coupez que les frondes affaissées, en fin d'hiver.",
+      "La plus résistante des trois : une fois installée, elle accepte l'ombre réellement sèche — le sol sous un hêtre ou le pied d'un mur nord — et n'y demande aucun arrosage d'été. Plantez le collet dégagé pour qu'il ne pourrisse pas, sur une pente si vous en avez une. Persistante et lente. Ne coupez que les frondes affaissées, en fin d'hiver.",
     givesNote:
-      "Une fougère dure et persistante à l'ombre sèche fait le travail que rien d'autre ne fera : elle tient un talus qui autrement se ravinerait, et garde un coin de sol frais et abrité à travers la sécheresse d'été comme à travers l'hiver. C'est dans cet abri que vivent réellement les coléoptères, les araignées et les amphibiens d'un jardin. Très peu d'insectes mangent les fougères.",
+      "Une fougère dure et persistante à l'ombre sèche fait le travail que rien d'autre ne fera : elle tient un talus qui autrement se ravinerait, et garde un coin de sol frais et abrité à travers la sécheresse d'été comme à travers l'hiver. C'est dans cet abri que vivent réellement les coléoptères, les araignées et les amphibiens d'un jardin. Très peu d'insectes mangent les fougères.",
     propagationNote:
-      "Semez les spores mûres à l'automne sur un terreau stérilisé, maintenu humide sous verre : c'est lent mais fiable. Une grosse touffe ancienne peut être divisée en fin d'hiver si elle a formé plusieurs collets.",
+      "Semez les spores mûres à l'automne sur un terreau stérilisé, maintenu humide sous verre : c'est lent mais fiable. Une grosse touffe ancienne peut être divisée en fin d'hiver si elle a formé plusieurs collets.",
   },
 };

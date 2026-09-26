@@ -73,8 +73,8 @@ subtitle on the What's new page.
 
 ### Changed
 
-- Matches: the buttons on a saved spot say what they do. "Open" is now "Find
-  natives to plant", and the link under it reads "Your plants · add more".
+- Matches: the buttons on a saved spot say what they do. "Open" is now "Plant
+  more", and the link to what's in the ground reads "Already planted".
   https://indigene.app/#/saved
 - Internal: re-saving an open saved spot from the plant list now keeps its
   name as the default, its invasives list and its first-saved date, instead of

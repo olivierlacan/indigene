@@ -262,7 +262,7 @@ export const fr: Dict = {
     "Rien d'enregistré pour l'instant. Trouvez un lieu et touchez « Enregistrer ce lieu » pour le garder ici, sur votre téléphone.",
   "saved.find": "Trouver un lieu",
   "saved.sunUnknown": "Soleil non mesuré",
-  "saved.open": "Trouver quoi planter",
+  "saved.open": "Planter plus",
   "saved.deleteLabel": "Supprimer {label}",
   "saved.confirmDelete": "Supprimer « {label} » ? C'est définitif.",
   "saved.deleted": "Supprimé.",
@@ -275,8 +275,8 @@ export const fr: Dict = {
   "saved.statKinds.other": "{count} espèces de plantes différentes",
   "saved.statWildlife.one": "{count} espèce animale que ces plantes peuvent nourrir",
   "saved.statWildlife.other": "{count} espèces animales que ces plantes peuvent nourrir",
-  "saved.openLog": "Vos plantes · en ajouter →",
-  "saved.startLog": "Ajouter ce que vous avez planté →",
+  "saved.openLog": "Déjà planté →",
+  "saved.startLog": "Commencer un journal →",
 
   // ---------------------------------------------------------------------
   // La page d'un lieu : le journal des plantations. Ce qui a été planté,
@@ -285,7 +285,7 @@ export const fr: Dict = {
   "spot.docTitle": "{label} — Indigene",
   "spot.notFound": "Ce lieu n'est pas sur cet appareil.",
   "spot.backToSaved": "Vos lieux enregistrés",
-  "spot.seePlants": "Trouver quoi planter",
+  "spot.seePlants": "Planter plus",
   "spot.rename": "Renommer",
   "spot.renamePrompt": "Nommer ce lieu",
   "spot.renamed": "Renommé.",

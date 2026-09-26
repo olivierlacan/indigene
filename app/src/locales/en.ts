@@ -243,7 +243,7 @@ export const en = {
   "saved.empty": "Nothing saved yet. Find a spot and tap “Save this spot” to keep it here on your phone.",
   "saved.find": "Find a spot",
   "saved.sunUnknown": "Sun not recorded",
-  "saved.open": "Find natives to plant",
+  "saved.open": "Plant more",
   "saved.deleteLabel": "Delete {label}",
   "saved.confirmDelete": "Delete “{label}”? This can't be undone.",
   "saved.deleted": "Deleted.",
@@ -255,8 +255,8 @@ export const en = {
   "saved.statKinds.other": "{count} different kinds of plant",
   "saved.statWildlife.one": "{count} kind of wildlife these plants can feed",
   "saved.statWildlife.other": "{count} kinds of wildlife these plants can feed",
-  "saved.openLog": "Your plants · add more →",
-  "saved.startLog": "Add what you've planted →",
+  "saved.openLog": "Already planted →",
+  "saved.startLog": "Start a plant log →",
 
   // ---------------------------------------------------------------------
   // One spot's page: the planting log. What went in, when, and what it
@@ -265,7 +265,7 @@ export const en = {
   "spot.docTitle": "{label} — Indigene",
   "spot.notFound": "That spot isn't on this device.",
   "spot.backToSaved": "Your saved spots",
-  "spot.seePlants": "Find natives to plant",
+  "spot.seePlants": "Plant more",
   "spot.rename": "Rename",
   "spot.renamePrompt": "Name this spot",
   "spot.renamed": "Renamed.",

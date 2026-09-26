@@ -960,8 +960,8 @@ export const fr: Dict = {
   "traits.group.figures": "📊 Chiffres",
   "traits.noWater": "Devrait s'installer et survivre à la seule pluie après la plantation, lors d'une année normale.",
   "traits.needsWater": "À arroser après la plantation, le temps que ses racines prennent.",
-  "traits.keystone": "Fait vivre bien plus d'animaux que la plupart des plantes — la perdre défait tout le réseau alimentaire local. Les écologues parlent de plante « clé de voûte », d'après la pierre qui tient une arche.",
-  "traits.deer": "Les chevreuils la broutent peu en général. Pas une promesse : un hiver de disette change leurs goûts.",
+  "traits.keystone": "Fait vivre bien plus d'animaux que la plupart des plantes — la perdre défait tout le réseau alimentaire local. Les écologues parlent de plante « clé de voûte », d'après la pierre qui tient une arche.",
+  "traits.deer": "Les chevreuils la broutent peu en général. Pas une promesse : un hiver de disette change leurs goûts.",
   "traits.toxic": "À ne pas manger, ni pour les humains ni pour les animaux — une partie de la plante peut rendre malade. Plantez-la là où un chien curieux ou un tout-petit ne la goûtera pas.",
   "traits.thorny": "Porte des épines ou des aiguillons. Tenez-la à l'écart des allées et des jeux.",
   "traits.spreads": "S'étend par ses racines ou ses graines plus vite que la moyenne. Laissez-lui de la place, ou une bordure qu'elle ne franchira pas.",
@@ -1639,7 +1639,7 @@ export const fr: Dict = {
   "regionStat.wildlife.more": "Parcourir les plantes par la faune qu'elles font vivre →",
   "regionStat.keystone.label": "Plantes essentielles",
   "regionStat.keystone.sub": "les réseaux alimentaires s'appuient dessus",
-  "regionStat.keystone.explain": "{n} des plantes de cette région sont essentielles — chacune fait vivre bien plus d'animaux que la moyenne, et en perdre une déferait un réseau alimentaire bien plus grand qu'elle. Les écologues parlent de plantes « clé de voûte », comme la pierre au sommet d'une arche.",
+  "regionStat.keystone.explain": "{n} des plantes de cette région sont essentielles — chacune fait vivre bien plus d'animaux que la moyenne, et en perdre une déferait un réseau alimentaire bien plus grand qu'elle. Les écologues parlent de plantes « clé de voûte », comme la pierre au sommet d'une arche.",
 
   // ---------------------------------------------------------------------
   // L'index des plantes (#/plants) — toutes les indigènes, avec recherche.

@@ -1,7 +1,8 @@
-// Four glyphs for the "ways in" callouts on the plants index (see steps/plants
+// Five glyphs for the "ways in" callouts on the plants index (see steps/plants
 // .ts): one for identifying a plant you're unsure about, one for the native to
 // grow in a common ornamental's place, one for whether that planting costs you
-// the harvest, and one for making more of a plant you have.
+// the harvest, one for making more of a plant you have, and one for the
+// invasives worth pulling first.
 // Same flat 48×48 idiom as the plant silhouettes and the sun glyphs, drawn in
 // `currentColor` so the tinted slot they sit in colours them (brand green on
 // `--brand-bg`). Decorative — the callout carries the words.
@@ -78,6 +79,35 @@ export function alternativeIcon(size = 30): SVGSVGElement {
   leaf.setAttribute("transform", "translate(24 35)");
   leaf.setAttribute("fill", "currentColor");
   s.append(top, bottom, topHead, bottomHead, leaf);
+  return s;
+}
+
+/** A sprout lifted clear of the ground, roots and all, under an upward arrow:
+ *  the "which ones do I pull?" way in to each region's worst invasives. The
+ *  roots are the point — a bare leaf said "plant", roots out of the soil say
+ *  "pulled". */
+export function invasiveIcon(size = 30): SVGSVGElement {
+  const s = svg(size);
+  const stroke = (d: string): SVGPathElement => {
+    const p = document.createElementNS(NS, "path");
+    p.setAttribute("d", d);
+    p.setAttribute("fill", "none");
+    p.setAttribute("stroke", "currentColor");
+    p.setAttribute("stroke-width", "3");
+    p.setAttribute("stroke-linecap", "round");
+    p.setAttribute("stroke-linejoin", "round");
+    return p;
+  };
+  const leaf = document.createElementNS(NS, "path");
+  leaf.setAttribute("d", "M0 0C-8-7-8-22 0-30 8-22 8-7 0 0Z");
+  leaf.setAttribute("transform", "translate(18 32)");
+  leaf.setAttribute("fill", "currentColor");
+  // Roots fanning down from the base, and the soil line left behind below.
+  const roots = stroke("M18 32v6M18 34l-5 5M18 34l5 5");
+  const soil = stroke("M5 44h26");
+  // The arrow beside it, pointing up and away from the soil.
+  const arrow = stroke("M39 40V6M32 13l7-7 7 7");
+  s.append(leaf, roots, soil, arrow);
   return s;
 }
 

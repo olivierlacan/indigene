@@ -68,6 +68,9 @@ subtitle on the What's new page.
 - The French text reads more like French: dozens of phrases translated too
   literally from English now say what a French gardener would, such as
   « laissez-la sur pied » instead of « laissez-la debout ».
+- Regions & Plants: each region's worst invasives are easier to find — a chip
+  beside the plant categories at the top of the region page, and a card on
+  the plants index. https://indigene.app/invasives
 - Internal: French strings now carry a narrow no-break space (U+202F) before
   : ; ! ? and inside « », as `fr.ts`'s header always promised, so a colon can
   no longer wrap onto its own line.

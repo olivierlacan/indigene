@@ -28,6 +28,7 @@ import { flagRow } from "../components/flags";
 import { prose } from "../lib/prose";
 import { reportRosterUntranslated } from "../components/wip-banner";
 import { mostWantedSection } from "../components/most-wanted";
+import { mostWanted, wantedRegionHref } from "../lib/invasives";
 
 const FORM_ORDER: PlantForm[] = ["tree", "shrub", "perennial", "grass", "vine", "groundcover", "fern"];
 /** The category headings. A function, not a record: a record built at import
@@ -259,6 +260,16 @@ function categoryChips(region: RegionDef, plants: Plant[], current: PlantForm | 
       href: categoryHref(region, f),
       "aria-current": f === current ? "page" : undefined,
     }, [formIcon(f), ` ${formLabel(f)} (${fmtNumber(count)})`]));
+  }
+  // The worst invasives sit below the whole roster, so they get a chip here
+  // too: the one place a reader scanning the categories will see them.
+  const wanted = mostWanted(region.meta.id).length;
+  if (wanted) {
+    chips.push(el("a", {
+      class: "btn btn-secondary",
+      style: chipStyle,
+      href: wantedRegionHref(region.meta.id),
+    }, t("region.invasivesChip", { n: fmtNumber(wanted) })));
   }
   return el("nav", { "aria-label": t("region.categoriesNav"), style: "display:flex;flex-wrap:wrap;gap:0.4rem;margin:0.6rem 0 0.8rem" }, chips);
 }

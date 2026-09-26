@@ -1397,6 +1397,8 @@ export const en = {
   // ---------------------------------------------------------------------
   "plants.alternativesLink": "About to buy something for a spot? Some of the usual choices aren't from here — and a native does the job better, feeding the wildlife they can't. {link}.",
   "plants.alternativesLinkText": "see what to grow instead",
+  "plants.invasivesLink": "Clearing a corner? {link}.",
+  "plants.invasivesLinkText": "See each region's worst invasives",
   // The third door on the plants index, between the swap and the how-to: the
   // hesitation that stops people between deciding and digging.
   "plants.cropsLink": "Worried about pests? Farms measured what a native border does to the crop beside it — {link}.",
@@ -1617,6 +1619,7 @@ export const en = {
   "region.allOfRegion": "← All natives of this region",
   "region.allChip": "All ({n})",
   "region.categoriesNav": "Plant categories",
+  "region.invasivesChip": "🚩 Worst invasives ({n})",
   "region.filterAria": "Filter this list by plant name",
   "region.filterPlaceholder": "Filter by name…",
   "region.filterCount.one": "{shown} of {total} plants match “{q}”.",

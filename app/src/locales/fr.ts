@@ -1395,6 +1395,8 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   "plants.alternativesLink": "Sur le point d'acheter pour un coin de jardin ? Certains choix habituels ne sont pas d'ici — et une indigène remplit mieux ce rôle, en nourrissant la faune qu'ils laissent de côté. {link}.",
   "plants.alternativesLinkText": "voyez quoi planter à la place",
+  "plants.invasivesLink": "Vous désherbez un coin ? {link}.",
+  "plants.invasivesLinkText": "Voyez les pires plantes envahissantes de chaque région",
   "plants.cropsLink": "Peur des ravageurs ? Des fermes ont mesuré ce qu'une bordure d'indigènes fait à la culture d'à côté — {link}.",
   "plants.cropsLinkText": "voyez ce qu'elles ont trouvé",
   "plant.alternativesTitle": "À planter plutôt que : ",
@@ -1607,6 +1609,7 @@ export const fr: Dict = {
   "region.allOfRegion": "← Toutes les indigènes de cette région",
   "region.allChip": "Tout ({n})",
   "region.categoriesNav": "Catégories de plantes",
+  "region.invasivesChip": "🚩 Envahissantes ({n})",
   "region.filterAria": "Filtrer cette liste par nom de plante",
   "region.filterPlaceholder": "Filtrer par nom…",
   "region.filterCount.one": "{shown} plante sur {total} correspond à « {q} ».",

@@ -38,11 +38,12 @@ subtitle on the What's new page.
   each season's photo lines up under the plant to show how it's growing.
 - Matches: got a planting date or count wrong? The ✏️ beside a plant in your
   saved spot fixes it in place, and keeps the sightings linked to it.
+- Matches: a saved spot's page can now rename the spot, or move its pin on the
+  map when it landed next door. https://indigene.app/#/saved
 - Internal: the import's per-visit sightings cache moved to
   `ownSightings()` in `lib/inat-import.ts`, shared with the planting picker
   (`sightingsOfPlant()`, covered by `import:check`); unlinking the account now
   clears it via `forgetImport()`, which the comments already promised.
-
 - The home page has a one-minute, hand-drawn film about what Indigene does
   and who it's for, in English or French to match your language. Nothing loads from the
   video host until you press play. https://indigene.app/
@@ -69,6 +70,13 @@ subtitle on the What's new page.
   shown on the Regions cards, the region page title and the region picker.
 
 ### Changed
+
+- Matches: the buttons on a saved spot say what they do. "Open" is now "Find
+  natives to plant", and the link under it reads "Your plants · add more".
+  https://indigene.app/#/saved
+- Internal: re-saving an open saved spot from the plant list now keeps its
+  name as the default, its invasives list and its first-saved date, instead of
+  overwriting them.
 
 - The "Most-wanted invasives" lists are now called "Worst invasives", because
   nobody wants these plants.

@@ -84,6 +84,21 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
       spot.sun ? sunPlain(spot.sun.hours) : t("saved.sunUnknown"),
       region ? ` · ${regionName(region.meta)}` : "",
     ]),
+    // Fixing the spot itself: a better name, or a pin that landed next door.
+    el("p", { class: "spot-edit" }, [
+      el("button", {
+        class: "linklike",
+        onClick: async () => {
+          const label = prompt(t("spot.renamePrompt"), spot.label)?.trim();
+          if (!label || label === spot.label) return;
+          await saveSpot({ ...spot, label });
+          toast(t("spot.renamed"));
+          redraw();
+        },
+      }, `✏️ ${t("spot.rename")}`),
+      " · ",
+      el("a", { href: `#/location?move=${encodeURIComponent(spot.id)}` }, `📍 ${t("spot.move")}`),
+    ]),
     countsCard(plantings, value),
     ...(value?.wildlife.length ? [feedsCard(value)] : []),
     logCard(plantings, plantOf, redraw, region?.meta.id),

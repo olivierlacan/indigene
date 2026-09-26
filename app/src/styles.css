@@ -5145,6 +5145,10 @@ body[data-layout="profile"] .wip-banner-text {
   flex: none;
   margin-left: auto;
 }
+.spot-edit {
+  margin: -0.4rem 0 1rem;
+  font-weight: 600;
+}
 .saved-log-link {
   flex: 1 0 100%;
   padding-top: 0.35rem;

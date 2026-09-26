@@ -243,7 +243,7 @@ export const en = {
   "saved.empty": "Nothing saved yet. Find a spot and tap “Save this spot” to keep it here on your phone.",
   "saved.find": "Find a spot",
   "saved.sunUnknown": "Sun not recorded",
-  "saved.open": "Open",
+  "saved.open": "Find natives to plant",
   "saved.deleteLabel": "Delete {label}",
   "saved.confirmDelete": "Delete “{label}”? This can't be undone.",
   "saved.deleted": "Deleted.",
@@ -255,8 +255,8 @@ export const en = {
   "saved.statKinds.other": "{count} different kinds of plant",
   "saved.statWildlife.one": "{count} kind of wildlife these plants can feed",
   "saved.statWildlife.other": "{count} kinds of wildlife these plants can feed",
-  "saved.openLog": "What you've planted →",
-  "saved.startLog": "Start a planting log →",
+  "saved.openLog": "Your plants · add more →",
+  "saved.startLog": "Add what you've planted →",
 
   // ---------------------------------------------------------------------
   // One spot's page: the planting log. What went in, when, and what it
@@ -265,7 +265,11 @@ export const en = {
   "spot.docTitle": "{label} — Indigene",
   "spot.notFound": "That spot isn't on this device.",
   "spot.backToSaved": "Your saved spots",
-  "spot.seePlants": "Plants for this spot",
+  "spot.seePlants": "Find natives to plant",
+  "spot.rename": "Rename",
+  "spot.renamePrompt": "Name this spot",
+  "spot.renamed": "Renamed.",
+  "spot.move": "Move",
   "spot.privacy": "Your log stays on this device — the plants, the dates, all of it",
   "spot.tilesLabel": "What's growing here",
   "spot.tilePlants": "Plants",
@@ -455,6 +459,7 @@ export const en = {
     "Map. The pin stays in the centre. Drag or tap to move the spot under it, or use the arrow keys to nudge it — hold Shift for bigger steps.",
   "location.osmAttribution": "© OpenStreetMap contributors",
   "location.gpsFix": "GPS fix",
+  "location.savedHere": "Saved here",
 
   // The small map that shows where a saved (or last) spot is — see
   // `components/spot-map.ts`. The short credit is the full one abbreviated to
@@ -521,6 +526,10 @@ export const en = {
   "location.usingList": "Using the {region} list — your pick.",
   "location.back": "Back",
   "location.next": "Next: measure the sun →",
+  "location.moveTitle": "Move {label}",
+  "location.moveLede": "Drag the map until the pin sits on the spot.",
+  "location.moveSave": "Save location",
+  "location.moved": "Location saved.",
 
   // ---------------------------------------------------------------------
   // Sun (step 2).

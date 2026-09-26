@@ -262,7 +262,7 @@ export const fr: Dict = {
     "Rien d'enregistré pour l'instant. Trouvez un lieu et touchez « Enregistrer ce lieu » pour le garder ici, sur votre téléphone.",
   "saved.find": "Trouver un lieu",
   "saved.sunUnknown": "Soleil non mesuré",
-  "saved.open": "Ouvrir",
+  "saved.open": "Trouver quoi planter",
   "saved.deleteLabel": "Supprimer {label}",
   "saved.confirmDelete": "Supprimer « {label} » ? C'est définitif.",
   "saved.deleted": "Supprimé.",
@@ -275,8 +275,8 @@ export const fr: Dict = {
   "saved.statKinds.other": "{count} espèces de plantes différentes",
   "saved.statWildlife.one": "{count} espèce animale que ces plantes peuvent nourrir",
   "saved.statWildlife.other": "{count} espèces animales que ces plantes peuvent nourrir",
-  "saved.openLog": "Ce que vous avez planté →",
-  "saved.startLog": "Commencer un journal →",
+  "saved.openLog": "Vos plantes · en ajouter →",
+  "saved.startLog": "Ajouter ce que vous avez planté →",
 
   // ---------------------------------------------------------------------
   // La page d'un lieu : le journal des plantations. Ce qui a été planté,
@@ -285,7 +285,11 @@ export const fr: Dict = {
   "spot.docTitle": "{label} — Indigene",
   "spot.notFound": "Ce lieu n'est pas sur cet appareil.",
   "spot.backToSaved": "Vos lieux enregistrés",
-  "spot.seePlants": "Les plantes de ce lieu",
+  "spot.seePlants": "Trouver quoi planter",
+  "spot.rename": "Renommer",
+  "spot.renamePrompt": "Nommer ce lieu",
+  "spot.renamed": "Renommé.",
+  "spot.move": "Déplacer",
   "spot.privacy": "Votre journal reste sur cet appareil — les plantes, les dates, tout",
   "spot.tilesLabel": "Ce qui pousse ici",
   "spot.tilePlants": "Plantes",
@@ -476,6 +480,7 @@ export const fr: Dict = {
     "Carte. Le repère reste au centre. Faites glisser ou touchez pour amener votre lieu dessous, ou utilisez les flèches du clavier pour l'ajuster — maintenez Maj pour de plus grands pas.",
   "location.osmAttribution": "© les contributeurs d'OpenStreetMap",
   "location.gpsFix": "point GPS",
+  "location.savedHere": "Enregistré ici",
 
   "map.spotLabel": "Carte des rues autour de ce lieu",
   "map.spotLabelNamed": "Carte des rues autour de {label}",
@@ -534,6 +539,10 @@ export const fr: Dict = {
   "location.usingList": "Liste {region} retenue — votre choix.",
   "location.back": "Retour",
   "location.next": "Suite : mesurer le soleil →",
+  "location.moveTitle": "Déplacer {label}",
+  "location.moveLede": "Faites glisser la carte jusqu'à ce que l'épingle soit sur le lieu.",
+  "location.moveSave": "Enregistrer",
+  "location.moved": "Emplacement enregistré.",
 
   // ---------------------------------------------------------------------
   // Soleil (étape 2).

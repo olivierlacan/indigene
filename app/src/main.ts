@@ -248,7 +248,10 @@ function renderStepRail(active: AppStep): void {
     li.append(dot, document.createTextNode(t(STEPS[key].labelKey)));
     stepsList.append(li);
   });
-  (document.querySelector(".steps") as HTMLElement).style.display = idx >= 0 ? "block" : "none";
+  // Moving a saved spot's pin (`#/location?move=<id>`) uses the map and stops
+  // there, so the walk's rail would promise four steps that never come.
+  const moving = active === "location" && /[?&]move=/.test(location.hash);
+  (document.querySelector(".steps") as HTMLElement).style.display = idx >= 0 && !moving ? "block" : "none";
 }
 
 /** Which header nav link, if any, a step belongs to. Flow steps map to none.

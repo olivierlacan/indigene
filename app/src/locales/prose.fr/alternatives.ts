@@ -21,9 +21,9 @@ import type { ProseTable } from "../../lib/prose";
 export const ALTERNATIVES_FR: ProseTable = {
   "Hosta": {
     altRole: "Touffe de feuillage pour l'ombre",
-    altOrigin: "Indigène d'Asie de l'Est ; le feuillage par défaut des coins ombragés.",
+    altOrigin: "Indigène d'Asie de l'Est ; le feuillage passe-partout des coins ombragés.",
     altBlurb:
-      "La touffe de grandes feuilles qu'on met à l'ombre par défaut — et le plat préféré des limaces, si bien qu'elle finit souvent l'été criblée de trous. Rien d'indigène n'y élève sa descendance : c'est de la verdure, et rien que de la verdure.",
+      "La touffe de grandes feuilles qu'on met d'office à l'ombre — et le plat préféré des limaces, si bien qu'elle finit souvent l'été criblée de trous. Rien d'indigène n'y élève sa descendance : c'est de la verdure, et rien que de la verdure.",
     alternativeNotes: {
       "dryopteris-filix-mas": {
         why: "Pour une grande touffe pleine d'allure à l'ombre, la fougère mâle déroule de hautes frondes arquées qui tiennent la moitié de l'hiver — bien plus de présence qu'un hosta, et pas un trou de limace.",
@@ -66,7 +66,7 @@ export const ALTERNATIVES_FR: ProseTable = {
     removal: {
       steps: [
         "Arrachez les semis et les petits buissons, racine comprise.",
-        "Coupez les grands au pied et dessouchez, ou coupez chaque rejet jusqu'à ce qu'il abandonne.",
+        "Coupez les grands au pied et dessouchez, ou coupez chaque rejet jusqu'à épuisement de la souche.",
         "Ne laissez pas de branches sur le sol : elles s'enracinent.",
       ],
       dispose: "Entassez les branches coupées hors du sol pour qu'elles sèchent.",
@@ -77,10 +77,10 @@ export const ALTERNATIVES_FR: ProseTable = {
       "Vendu pour son mur de fleurs pourpres au printemps, et l'un des grands envahisseurs de la façade atlantique : il fait une ombre si dense et une litière si toxique que rien ne pousse dessous, et son nectar est un poison pour l'abeille domestique.",
     alternativeNotes: {
       "ilex-aquifolium": {
-        why: "Pour un écran persistant qui fleurit et nourrit, le houx indigène dresse un mur dense, lustré et riche en vie — là où le rhododendron pontique empoisonne le sol dessous et les abeilles dessus.",
+        why: "Pour un écran persistant qui fleurit et nourrit, le houx indigène dresse un mur dense, lustré et accueillant pour la faune — là où le rhododendron pontique empoisonne le sol dessous et les abeilles dessus.",
         edges: [
           { axis: "disease", native: "Laisse vivre un sous-étage à son pied.", ornamental: "Litière toxique et ombre : le sol reste nu, et son nectar empoisonne l'abeille domestique." },
-          { axis: "wildlife", native: "Ses baies nourrissent les grives d'hiver ; hôte de l'azuré du houx.", ornamental: "L'un des pires envahisseurs de l'Ouest atlantique ; un désert pour la faune à son pied." },
+          { axis: "wildlife", native: "Ses baies nourrissent les grives d'hiver ; hôte de l'azuré des nerpruns.", ornamental: "L'un des pires envahisseurs de l'Ouest atlantique ; un désert pour la faune à son pied." },
         ],
       },
       "crataegus-monogyna": {
@@ -116,14 +116,14 @@ export const ALTERNATIVES_FR: ProseTable = {
       "salix-caprea": {
         why: "Pour un indigène rapide au bord de l'eau, le saule marsault sort les chatons argentés de la fin de l'hiver qui nourrissent les premières abeilles — là où le saule pleureur ne trouve que les canalisations.",
         edges: [
-          { axis: "wildlife", native: "Hôte d'environ 370 espèces de chenilles ; ses chatons précoces sont une source de pollen vitale.", ornamental: "Nourrit peu d'indigène." },
+          { axis: "wildlife", native: "Hôte d'environ 370 espèces de chenilles ; ses chatons précoces sont une source de pollen vitale.", ornamental: "Nourrit peu d'espèces indigènes." },
           { axis: "disease", native: "Un indigène robuste et adaptable.", ornamental: "Des racines avides qui ravagent les drains ; cassant et de courte vie." },
         ],
       },
       "populus-tremula": {
         why: "Pour un grand arbre plein de lumière et de mouvement, le tremble frémit au moindre souffle et vire à l'or en automne — une espèce clé des bois d'Europe, non un fardeau au bord de la mare.",
         edges: [
-          { axis: "wildlife", native: "Hôte d'environ 260 espèces de chenilles ; un pilier de la vie des bois.", ornamental: "Nourrit peu d'indigène." },
+          { axis: "wildlife", native: "Hôte d'environ 260 espèces de chenilles ; un pilier de la vie des bois.", ornamental: "Nourrit peu d'espèces indigènes." },
           { axis: "disease", native: "Un pionnier indigène vigoureux.", ornamental: "Cherche les drains, cassant et creux en quelques décennies." },
         ],
       },

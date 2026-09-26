@@ -18,7 +18,7 @@ export const INVASIVES_FR: ProseTable = {
       steps: [
         "Arrachez les semis à la main, racine comprise.",
         "Abattez les plus grands et dessouchez ou broyez la souche : elle repart de la base.",
-        "Portez des gants — la sève irrite la peau, comme celle de l'herbe à la puce, sa cousine — et ne la brûlez jamais.",
+        "Portez des gants — la sève irrite la peau, comme celle du sumac vénéneux, son cousin — et ne la brûlez jamais.",
       ],
       dispose: "Mettez les baies en sac ; ne les compostez pas.",
     },
@@ -32,7 +32,7 @@ export const INVASIVES_FR: ProseTable = {
     removal: {
       steps: [
         "Arrachez les semis et les petits arbustes avec leur racine, idéalement avec un levier.",
-        "Ne vous contentez pas de couper un grand sujet : il repart plus dense. Dessouchez le collet, ou coupez chaque nouvelle pousse jusqu'à ce qu'il abandonne.",
+        "Ne vous contentez pas de couper un grand sujet : il repart plus dense. Dessouchez le collet, ou coupez chaque nouvelle pousse jusqu'à épuisement de la souche.",
         "Agissez avant l'automne, avant que les oiseaux prennent les baies.",
       ],
       dispose: "Les branches à baies vont à la poubelle.",
@@ -57,7 +57,7 @@ export const INVASIVES_FR: ProseTable = {
     marks: [
       { feature: "Tiges", text: "Rondes, lisses, comme des joncs, presque sans feuilles." },
       { feature: "Fleurs", text: "De grandes fleurs jaunes en papillon, très parfumées, du printemps à l'été." },
-      { feature: "Taille", text: "Plus haut qu'une personne, et plus haut que le genêt à balais." },
+      { feature: "Taille", text: "Dépasse la hauteur d'homme, et le genêt à balais." },
     ],
     removal: {
       steps: [
@@ -167,10 +167,10 @@ export const INVASIVES_FR: ProseTable = {
     removal: {
       steps: [
         "Ne la bêchez pas, ne la débroussaillez pas, ne la tondez pas : un bout de racine gros comme un ongle fait une nouvelle plante.",
-        "Coupez ou arrachez chaque tige au ras du sol toutes les quelques semaines pendant la saison, des années durant, pour épuiser les racines.",
+        "Coupez ou arrachez chaque tige au ras du sol toutes les deux ou trois semaines pendant la saison, des années durant, pour épuiser les racines.",
         "Un grand massif est une affaire de professionnels.",
       ],
-      dispose: "Ne la compostez ni ne la déposez jamais : faites sécher les tiges sur une bâche jusqu'à ce qu'elles meurent, puis jetez-les.",
+      dispose: "Ne la compostez jamais, ne la jetez jamais dans la nature : faites sécher les tiges sur une bâche jusqu'à ce qu'elles meurent, puis jetez-les.",
     },
   },
   "Centaurea stoebe": {
@@ -222,7 +222,7 @@ export const INVASIVES_FR: ProseTable = {
     marks: [
       { feature: "Fleurs", text: "Des bouquets plats de petites marguerites jaunes." },
       { feature: "Feuilles", text: "Déchiquetées, profondément découpées." },
-      { feature: "Chenilles", text: "Souvent rayées de jaune et de noir : des écailles du séneçon, introduites pour la manger." },
+      { feature: "Chenilles", text: "Souvent rayées de jaune et de noir : des écailles du séneçon, introduites pour le manger." },
     ],
     removal: {
       steps: [
@@ -251,7 +251,7 @@ export const INVASIVES_FR: ProseTable = {
   "Impatiens glandulifera": {
     marks: [
       { feature: "Fleurs", text: "Roses, en forme de casque." },
-      { feature: "Tiges", text: "Épaisses, creuses, rougeâtres et cassantes, plus hautes qu'une personne." },
+      { feature: "Tiges", text: "Épaisses, creuses, rougeâtres et cassantes, dépassant la hauteur d'homme." },
       { feature: "Gousses", text: "Elles éclatent au toucher et projettent les graines." },
     ],
     removal: {
@@ -310,7 +310,7 @@ export const INVASIVES_FR: ProseTable = {
   },
   "Arundo donax": {
     marks: [
-      { feature: "Tiges", text: "Des cannes épaisses comme du bambou, bien plus hautes qu'une personne." },
+      { feature: "Tiges", text: "Des cannes épaisses comme du bambou, bien au-delà de la hauteur d'homme." },
       { feature: "Feuilles", text: "Larges, gris-vert, embrassant la canne jusqu'en haut." },
       { feature: "Plumets", text: "De grands plumets duveteux à la fin de l'été." },
     ],
@@ -406,9 +406,9 @@ export const INVASIVES_FR: ProseTable = {
     ],
     removal: {
       steps: [
-        "Déterrez les petites taches, racines comprises.",
+        "Déterrez les petites plaques, racines comprises.",
         "Coupez ou fauchez les grandes avant la floraison, plusieurs fois par an, plusieurs années durant.",
-        "Ou étouffez une tache sous un carton épais ou une bâche pendant une saison.",
+        "Ou étouffez une plaque sous un carton épais ou une bâche pendant une saison.",
       ],
       dispose: "Mettez en sac les pieds portant des gousses.",
     },

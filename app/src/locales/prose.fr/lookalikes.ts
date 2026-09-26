@@ -37,7 +37,7 @@ export const LOOKALIKES_FR: ProseTable = {
       dispose: "Le bois fait un bon bois de chauffage ; les morceaux de racine vont à la poubelle.",
     },
     origin:
-      "Indigène des Appalaches, en Amérique du Nord ; planté en Europe depuis les années 1600.",
+      "Indigène des Appalaches, en Amérique du Nord ; planté en Europe depuis le XVIIe siècle.",
     blurb:
       "En France on l'appelle « acacia », il donne le miel du même nom, et c'est l'un des arbres exotiques envahissants les plus répandus d'Europe. Chaque racine coupée renvoie des rejets, et l'azote que ses racines apportent aux sols pauvres change la terre elle-même : ce sont les orties et les ronces qui suivent, et non la prairie qui était là.",
   },
@@ -58,25 +58,25 @@ export const LOOKALIKES_FR: ProseTable = {
     },
     origin: "Indigène des Balkans, de Turquie et des rivages de la mer Noire.",
     blurb:
-      "La haie persistante par défaut de la moitié de l'Europe. Les oiseaux emportent ses fruits noirs jusque dans les bois, où il forme un sous-étage sombre et dense que rien ne traverse. Froissées ou broyées, ses feuilles dégagent du cyanure — raison pour laquelle ses déchets de taille ne doivent jamais approcher un animal.",
+      "La haie persistante passe-partout de la moitié de l'Europe. Les oiseaux emportent ses fruits noirs jusque dans les bois, où il forme un sous-étage sombre et dense que rien ne traverse. Froissées ou broyées, ses feuilles dégagent du cyanure — raison pour laquelle ses déchets de taille ne doivent jamais approcher un animal.",
     // Aussi un ornemental (data/alternatives.ts) : ce qu'on plante à sa place.
-    altRole: "Haie persistante d'intimité",
+    altRole: "Haie persistante brise-vue",
     altOrigin: "Indigène du sud-est de l'Europe et du sud-ouest de l'Asie.",
     altBlurb:
-      "Le mur persistant rapide par défaut — lustré, gourmand en eau, et qui se ressème dans les bois de l'Oregon à l'Europe de l'Ouest à mesure que les oiseaux en lâchent les noyaux. Froissées, ses feuilles sentent l'amande parce qu'elles dégagent du cyanure, et il est sujet à la criblure qui le perce de trous.",
+      "Le mur persistant rapide et passe-partout — lustré, gourmand en eau, et qui se ressème dans les bois de l'Oregon à l'Europe de l'Ouest à mesure que les oiseaux en lâchent les noyaux. Froissées, ses feuilles sentent l'amande parce qu'elles dégagent du cyanure, et il est sujet à la criblure qui le perce de trous.",
     alternativeNotes: {
       "ilex-aquifolium": {
-        why: "Pour une haie persistante et dense, le houx indigène dresse le même mur lustré toute l'année — taillable, riche en vie, et ici chez lui, là où le laurier-cerise est un évadé en route vers les bois.",
+        why: "Pour une haie persistante et dense, le houx indigène dresse le même mur lustré toute l'année — taillable, accueillant pour la faune, et ici chez lui, là où le laurier-cerise est un échappé des jardins en route vers les bois.",
         edges: [
           { axis: "disease", native: "Sain et de longue vie.", ornamental: "Criblé par le champignon de la criblure ; ses feuilles dégagent du cyanure." },
-          { axis: "wildlife", native: "Ses baies tardives nourrissent grives et merles ; l'azuré du houx y pond.", ornamental: "Disséminé par les oiseaux dans les bois, où il étouffe la flore du sol." },
+          { axis: "wildlife", native: "Ses baies tardives nourrissent grives et merles ; l'azuré des nerpruns y pond.", ornamental: "Disséminé par les oiseaux dans les bois, où il étouffe la flore du sol." },
         ],
       },
       "corylus-avellana": {
         why: "Pour un écran rapide et libre qu'on peut plesser ou recéper, le noisetier fait un mur vert et souple en une saison, s'égoutte de chatons à la fin de l'hiver, et laisse tomber des noisettes pour tout le bois.",
         edges: [
           { axis: "water", native: "Peu exigeant et autonome une fois installé.", ornamental: "Gourmand en eau, et se ressème dans les bois au-delà du jardin." },
-          { axis: "wildlife", native: "Ses chatons nourrissent les premières abeilles ; ses noisettes, muscardins, écureuils et geais.", ornamental: "Nourrit peu d'indigène, et envahit." },
+          { axis: "wildlife", native: "Ses chatons nourrissent les premières abeilles ; ses noisettes, muscardins, écureuils et geais.", ornamental: "Nourrit peu d'espèces indigènes, et envahit." },
         ],
       },
     },
@@ -87,7 +87,7 @@ export const LOOKALIKES_FR: ProseTable = {
       "La liane au parfum sucré dont les enfants arrachent les fleurs pour en goûter la goutte de nectar. Elle garde ses feuilles l'hiver, s'enroule assez serré pour étrangler ce qu'elle escalade et recouvre des sous-bois entiers — l'une des lianes envahissantes les plus répandues de l'est des États-Unis, et en progression dans l'ouest de l'Europe.",
   },
   "Acer negundo": {
-    origin: "Indigène d'Amérique du Nord ; planté en Europe depuis les années 1600.",
+    origin: "Indigène d'Amérique du Nord ; planté en Europe depuis le XVIIe siècle.",
     blurb:
       "L'érable qui n'en a pas l'air — sa feuille est découpée en folioles séparées. Le long des rivières françaises, il forme maintenant des bois entiers de jeunes sujets, poussant vite, cassant facilement, et prenant le terrain que les saules et les peupliers de la berge devraient tenir.",
   },
@@ -107,9 +107,9 @@ export const LOOKALIKES_FR: ProseTable = {
       dispose: "Les grappes de graines et les morceaux de racine vont à la poubelle, pas au compost.",
     },
     origin:
-      "Indigène de Chine ; planté à travers l'Europe et l'Amérique du Nord depuis les années 1700.",
+      "Indigène de Chine ; planté à travers l'Europe et l'Amérique du Nord depuis le XVIIIe siècle.",
     blurb:
-      "L'arbre qui sort de chaque fissure de trottoir et de chaque ballast de voie ferrée. Il pousse absurdement vite, casse à la première tempête, libère une substance qui étouffe les plantes autour de lui, et renvoie une forêt de drageons depuis les racines quand on le coupe. En Amérique du Nord, c'est aussi l'hôte préféré de la cicadelle tachetée.",
+      "L'arbre qui sort de chaque fissure de trottoir et de chaque ballast de voie ferrée. Il pousse à une vitesse folle, casse à la première tempête, libère une substance qui étouffe les plantes autour de lui, et renvoie une forêt de drageons depuis les racines quand on le coupe. En Amérique du Nord, c'est aussi l'hôte préféré du fulgore tacheté.",
   },
   "Ficaria verna": {
     origin: "Indigène d'Europe et d'Asie occidentale.",
@@ -133,7 +133,7 @@ export const LOOKALIKES_FR: ProseTable = {
     },
     origin: "Indigène d'Europe et d'Asie.",
     blurb:
-      "De hauts épis magenta le long des fossés et des bords de marais, et franchement beaux. Un seul pied peut produire plus d'un million de graines en une saison, et un peuplement transforme une zone humide variée en une seule culture que très peu d'insectes indigènes savent utiliser.",
+      "De hauts épis magenta le long des fossés et des bords de marais, et d'une vraie beauté. Un seul pied peut produire plus d'un million de graines en une saison, et un peuplement transforme une zone humide variée en une monoculture que très peu d'insectes indigènes savent utiliser.",
   },
   "Lavandula × intermedia": {
     origin:
@@ -149,12 +149,12 @@ export const LOOKALIKES_FR: ProseTable = {
     origin:
       "Indigène de Chine et du Viêt Nam ; planté dans toute l'Amérique du Nord à partir des années 1960 comme arbre d'alignement net et robuste.",
     blurb:
-      "L'arbre qui blanchit des rues américaines entières dans la première semaine douce du printemps. On l'a vendu comme une plante incapable de grener — puis les différentes variétés ont commencé à se croiser entre elles. Leurs semis sont épineux, rapides et denses, et ils remplissent aujourd'hui les vieux champs, les bords de route et les lisières de tout l'Est. Plusieurs États en ont interdit la vente.",
+      "L'arbre qui blanchit des rues américaines entières dans la première semaine douce du printemps. On l'a vendu comme une plante incapable de grener — puis les différentes variétés ont commencé à se croiser entre elles. Leurs semis sont épineux, rapides et denses, et ils remplissent aujourd'hui les friches agricoles, les bords de route et les lisières de tout l'Est. Plusieurs États en ont interdit la vente.",
   },
   "Cornus kousa": {
     origin: "Indigène du Japon, de Corée et de Chine.",
     blurb:
-      "Le cornouiller que la plupart des pépinières tiennent, parce qu'il se moque de la maladie fongique qui embarrasse l'indigène. C'est un bel arbre de jardin et personne n'y voit une menace — ce n'est simplement pas l'arbre avec lequel les chenilles locales, et les oiseaux qui en ont besoin, ont grandi.",
+      "Le cornouiller que proposent la plupart des pépinières, parce qu'il se moque de la maladie fongique qui frappe l'indigène. C'est un bel arbre de jardin et personne n'y voit une menace — ce n'est simplement pas l'arbre avec lequel ont évolué les chenilles locales, et les oiseaux qui en ont besoin.",
   },
   "Acer platanoides": {
     origin: "Indigène d'Europe continentale et d'Asie occidentale.",
@@ -164,7 +164,7 @@ export const LOOKALIKES_FR: ProseTable = {
   "Acer palmatum": {
     origin: "Indigène du Japon, de Corée et de Chine.",
     blurb:
-      "Le petit érable finement découpé de mille jardins de devant. Il n'est pas envahissant et ne fait rien de mal — ce n'est simplement pas l'érable qui pousse dans ces bois, et les deux se confondent dans les deux sens.",
+      "Le petit érable finement découpé de mille jardinets de façade. Il n'est pas envahissant et ne fait rien de mal — ce n'est simplement pas l'érable qui pousse dans ces bois, et les deux se confondent dans les deux sens.",
   },
   "Lonicera maackii": {
     origin: "Indigène du nord-est de l'Asie.",
@@ -214,12 +214,12 @@ export const LOOKALIKES_FR: ProseTable = {
   "Asclepias curassavica": {
     origin: "Indigène des régions tropicales d'Amérique centrale et du Sud.",
     blurb:
-      "L'asclépiade rouge et orange vendue comme plante à monarques. C'en est vraiment une — mais là où les hivers sont doux elle ne disparaît jamais, si bien que le parasite OE s'accumule sur des feuilles qui ne tombent jamais, et les monarques qui devraient voler vers le Mexique restent s'y reproduire à la place.",
+      "L'asclépiade rouge et orange vendue comme plante à monarques. C'en est vraiment une — mais là où les hivers sont doux elle ne disparaît jamais, si bien que le parasite Ophryocystis s'accumule sur des feuilles qui ne tombent jamais, et les monarques qui devraient voler vers le Mexique restent s'y reproduire à la place.",
   },
   "Miscanthus sinensis": {
     origin: "Indigène d'Asie de l'Est.",
     blurb:
-      "La grande graminée ornementale en fontaine, à plumets argentés, en vente dans toutes les jardineries. Sa graine est portée par le vent dans les prés, les bords de route et les terrains brûlés, et ses touffes mortes restées debout propagent bien le feu.",
+      "La grande graminée ornementale en fontaine, à plumets argentés, en vente dans toutes les jardineries. Sa graine est portée par le vent dans les prés, les bords de route et les terrains brûlés, et ses touffes mortes restées sur pied propagent bien le feu.",
     // Aussi un ornemental (data/alternatives.ts) : ce qu'on plante à sa place.
     altRole: "Grande graminée ornementale",
     altOrigin: "Indigène d'Asie de l'Est ; la haute graminée à plumets de mille massifs.",
@@ -229,7 +229,7 @@ export const LOOKALIKES_FR: ProseTable = {
       "deschampsia-cespitosa": {
         why: "Pour une fontaine de graminée fine et légère, la canche cespiteuse lève une brume dorée en été — le mouvement pour lequel on plante le miscanthus, sur un indigène qui reste à sa place dans la prairie au lieu de s'en échapper.",
         edges: [
-          { axis: "wildlife", native: "Abri et graines pour les oiseaux ; hôte de plusieurs papillons de prairie.", ornamental: "Nourrit peu d'indigène, et se ressème dans la nature." },
+          { axis: "wildlife", native: "Abri et graines pour les oiseaux ; hôte de plusieurs papillons de prairie.", ornamental: "Nourrit peu d'espèces indigènes, et se ressème dans la nature." },
           { axis: "care", native: "Robuste et adaptable au soleil ou à mi-ombre, en sol humide ou sec.", ornamental: "Une grosse touffe qui se ressème alentour." },
         ],
       },
@@ -253,7 +253,7 @@ export const LOOKALIKES_FR: ProseTable = {
     origin:
       "Indigène d'Arménie et du nord de l'Iran, malgré le nom qu'on lui a donné.",
     blurb:
-      "La ronce qui a mangé le Nord-Ouest Pacifique : des cannes grosses comme un pouce, s'arquant par-dessus tout et s'enracinant là où les pointes touchent terre. Le fruit est franchement bon. Ce qu'il y a sous le fourré, c'est de la terre nue et de vieilles cannes.",
+      "La ronce qui a mangé le Nord-Ouest Pacifique : des cannes grosses comme un pouce, s'arquant par-dessus tout et s'enracinant là où les pointes touchent terre. Le fruit est vraiment bon. Ce qu'il y a sous le fourré, c'est de la terre nue et de vieilles cannes.",
   },
   "Toxicoscordion venenosum": {
     origin:
@@ -268,7 +268,7 @@ export const LOOKALIKES_FR: ProseTable = {
   "Washingtonia robusta": {
     origin: "Indigène de Basse-Californie et du Sonora, dans le nord-ouest du Mexique.",
     blurb:
-      "Le palmier très haut et très mince des cartes postales de Miami et de Los Angeles. Dans le sud de la Floride, il se ressème dans les hammocks et le long des berges de canaux, et c'est le palmier le plus souvent acheté par quelqu'un qui voulait acheter un Sabal palmetto.",
+      "Le palmier très haut et très mince des cartes postales de Miami et de Los Angeles. Dans le sud de la Floride, il se ressème dans les îlots boisés (hammocks) et le long des berges de canaux, et c'est le palmier le plus souvent acheté par quelqu'un qui voulait acheter un Sabal palmetto.",
   },
   "Ardisia crenata": {
     // Les signes pour la reconnaître (data/invasives.ts).
@@ -287,7 +287,7 @@ export const LOOKALIKES_FR: ProseTable = {
     },
     origin: "Indigène d'Asie de l'Est.",
     blurb:
-      "Un vieil arbuste de devant-de-porte aux baies rouge laqué que les oiseaux emportent dans les hammocks et les bois de plaine inondable. Les semis lèvent dessous si densément qu'ils tapissent le sol — ce qui a transformé une plante de jardin bien élevée en l'une des envahissantes classées de Floride.",
+      "Un vieil arbuste de pied de façade aux baies rouge laqué que les oiseaux emportent dans les îlots boisés et les bois de plaine inondable. Les semis lèvent dessous si densément qu'ils tapissent le sol — ce qui a transformé une plante de jardin bien élevée en l'une des envahissantes classées de Floride.",
   },
   "Callicarpa dichotoma": {
     origin: "Indigène d'Asie de l'Est.",
@@ -304,7 +304,7 @@ export const LOOKALIKES_FR: ProseTable = {
     origin:
       "Indigène du sud du Japon. Pas un palmier du tout — une cycadée, comme la Zamia integrifolia.",
     blurb:
-      "Vendu par milliers dans toute la Floride comme plante de fondation robuste et architecturale. Toutes ses parties sont toxiques et ses graines gravement : c'est l'une des causes les plus fréquentes d'empoisonnement végétal mortel chez le chien.",
+      "Vendu par milliers dans toute la Floride comme plante robuste et architecturale au pied des maisons. Toutes ses parties sont toxiques et ses graines gravement : c'est l'une des causes les plus fréquentes d'empoisonnement végétal mortel chez le chien.",
   },
   "Stachytarpheta cayennensis": {
     origin: "Indigène de l'Amérique tropicale, mais pas de Floride.",

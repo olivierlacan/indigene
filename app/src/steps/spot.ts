@@ -28,14 +28,17 @@ import {
 import { spotValue, type SpotValue } from "../lib/spot-value";
 import { wildlifeGroups } from "../components/wildlife-chips";
 import { isUuid, linkedObservation, observationUrl, parseObservationRef } from "../lib/observation-link";
-import { observationList } from "../components/observation-ui";
+import { observationList, photoTile } from "../components/observation-ui";
+import { ownSightings, sightingsOfPlant, type OwnSighting } from "../lib/inat-import";
+import { isBusy } from "../lib/inaturalist";
 import { plantThumb, invasiveThumb } from "../components/plant-thumb";
+import { silhouetteFor } from "../components/plant-card";
 import { statTiles, type Stat } from "../components/stat-card";
 import { privacyNote } from "../components/privacy-link";
 import { sunPlain } from "../lib/plain";
 import { commonName, searchAliases, regionName } from "../lib/names";
 import { hashParam } from "../lib/plant-view";
-import { t, fmtNumber, monthName } from "../lib/i18n";
+import { t, fmtDate, fmtNumber, monthName } from "../lib/i18n";
 import { linkedLogin } from "../lib/inat-account";
 import { getInvasive } from "../lib/invasives";
 
@@ -81,6 +84,21 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
     el("p", { class: "step-lede" }, [
       spot.sun ? sunPlain(spot.sun.hours) : t("saved.sunUnknown"),
       region ? ` · ${regionName(region.meta)}` : "",
+    ]),
+    // Fixing the spot itself: a better name, or a pin that landed next door.
+    el("p", { class: "spot-edit" }, [
+      el("button", {
+        class: "linklike",
+        onClick: async () => {
+          const label = prompt(t("spot.renamePrompt"), spot.label)?.trim();
+          if (!label || label === spot.label) return;
+          await saveSpot({ ...spot, label });
+          toast(t("spot.renamed"));
+          redraw();
+        },
+      }, t("spot.rename")),
+      " · ",
+      el("a", { href: `#/location?move=${encodeURIComponent(spot.id)}` }, t("spot.move")),
     ]),
     countsCard(plantings, value),
     ...(value?.wildlife.length ? [feedsCard(value)] : []),
@@ -218,6 +236,18 @@ function logRow(
   // The size line joins the name beside it rather than starting a row of its
   // own under the picture: those three lines are one description of one plant.
   // The sightings below stay full width, because their thumbnails need it.
+  const setEditing = (on: boolean): void => {
+    edit.hidden = !on;
+    editToggle.setAttribute("aria-expanded", String(on));
+  };
+  const editToggle = el("button", {
+    type: "button",
+    class: "log-edit-toggle",
+    "aria-label": t("spot.editLabel", { name }),
+    "aria-expanded": "false",
+    onClick: () => setEditing(edit.hidden),
+  }, t("spot.editToggle"));
+
   const head = el("div", { class: "log-head" }, [
     plant ? plantThumb(plant.id, plant.form, { regionId }) : null,
     el("div", { class: "log-text" }, [
@@ -225,7 +255,8 @@ function logRow(
         ? el("a", { class: "log-name", href: `#/plants/${encodeURIComponent(plant.id)}` }, name)
         : el("span", { class: "log-name" }, name),
       planting.count > 1 ? el("span", { class: "log-count" }, `×${fmtNumber(planting.count)}`) : null,
-      el("div", { class: "coords" }, when),
+      // "Edit" rides the date line it edits: small, and lit while the form is open.
+      el("div", { class: "coords" }, [when, " · ", editToggle]),
       growth ? el("p", { class: "log-growth" }, growth) : null,
     ]),
     el("button", {
@@ -240,8 +271,28 @@ function logRow(
     }, "🗑"),
   ]);
 
-  const row = el("li", { class: "log-item" }, [head]);
-  row.append(sightingsBlock(planting, name, redraw));
+  // Fixing a wrong date or count in place, rather than deleting the row and
+  // losing the sightings linked to it.
+  const fields = plantingFields(`log-${planting.id}`, planting.planted, planting.count);
+  const edit = el("form", {
+    class: "log-edit",
+    hidden: true,
+    onSubmit: async (e: Event) => {
+      e.preventDefault();
+      await savePlanting({ ...planting, planted: fields.planted(), count: fields.count() });
+      toast(t("spot.edited"));
+      redraw();
+    },
+  }, [
+    ...fields.nodes,
+    el("div", { class: "btn-row" }, [
+      el("button", { class: "btn btn-primary", type: "submit" }, t("spot.editSave")),
+      el("button", { class: "btn btn-ghost", type: "button", onClick: () => setEditing(false) }, t("spot.editCancel")),
+    ]),
+  ]) as HTMLFormElement;
+
+  const row = el("li", { class: "log-item" }, [head, edit]);
+  row.append(sightingsBlock(planting, name, plant?.form, redraw));
   return row;
 }
 
@@ -298,7 +349,7 @@ function invasivesCard(spot: SavedSpot, redraw: () => void): HTMLElement {
  * and credit every other iNaturalist photo in the app gets — the gardener's own
  * sighting is somebody's licensed work too, even when that somebody is them.
  */
-function sightingsBlock(planting: Planting, name: string, redraw: () => void): HTMLElement {
+function sightingsBlock(planting: Planting, name: string, plantForm: string | undefined, redraw: () => void): HTMLElement {
   const block = el("div", { class: "log-sightings" });
   const gallery = el("div", { "aria-live": "polite" });
   block.append(gallery);
@@ -321,7 +372,7 @@ function sightingsBlock(planting: Planting, name: string, redraw: () => void): H
       const shown = rows.map((r) => r.observation).filter((o): o is NonNullable<typeof o> => Boolean(o));
       shown.forEach((o) => resolved.add(String(o.id)));
       clear(gallery);
-      if (shown.length) gallery.append(observationList(shown, name));
+      if (shown.length) gallery.append(observationList(shown, name, plantForm));
       // A reference that answered with nothing showable still keeps its link:
       // the observation may be photo-less, licensed all-rights-reserved, or
       // just unreachable right now, and dropping the gardener's own record of
@@ -368,6 +419,21 @@ function sightingsBlock(planting: Planting, name: string, redraw: () => void): H
     "aria-label": t("spot.obsLabel"),
   }) as HTMLInputElement;
 
+  const link = async (ref: string): Promise<void> => {
+    if (planting.observations.includes(ref) || resolved.has(ref)) {
+      toast(t("spot.obsAlready"));
+      return;
+    }
+    await savePlanting({ ...planting, observations: [...planting.observations, ref] });
+    toast(t("spot.obsAdded"));
+    redraw();
+  };
+
+  // The linked account's own sightings of this plant, to tap rather than
+  // paste — asked for once, the first time the form opens.
+  const picker = el("div", { class: "log-obs-picker", "aria-live": "polite" });
+  let asked = false;
+
   const form = el("form", {
     class: "log-obs-form",
     hidden: true,
@@ -378,15 +444,10 @@ function sightingsBlock(planting: Planting, name: string, redraw: () => void): H
         toast(t("spot.obsBad"));
         return;
       }
-      if (planting.observations.includes(ref) || resolved.has(ref)) {
-        toast(t("spot.obsAlready"));
-        return;
-      }
-      await savePlanting({ ...planting, observations: [...planting.observations, ref] });
-      toast(t("spot.obsAdded"));
-      redraw();
+      await link(ref);
     },
   }, [
+    picker,
     el("div", { class: "log-obs-row" }, [
       input,
       el("button", { class: "btn btn-secondary btn-compact", type: "submit" }, t("spot.obsAdd")),
@@ -401,12 +462,80 @@ function sightingsBlock(planting: Planting, name: string, redraw: () => void): H
     class: "btn btn-ghost btn-compact log-obs-toggle",
     onClick: () => {
       form.hidden = !form.hidden;
-      if (!form.hidden) input.focus();
+      if (form.hidden) return;
+      if (!asked) {
+        asked = true;
+        void fillPicker(picker, planting, name, plantForm, link);
+      }
+      // With a linked account the picker is the way in; the field is the
+      // fallback, and a keyboard popping up over the photos would hide them.
+      if (!linkedLogin()) input.focus();
     },
   }, t(planting.observations.length ? "spot.obsLinkMore" : "spot.obsLink"));
 
   block.append(toggle, form);
   return block;
+}
+
+/** Tiles offered before the picker stops: four rows on a phone. The newest
+ *  come first, and anything older can still be pasted. */
+const MAX_PICKS = 12;
+
+/** The linked account's sightings of this planting's plant, each a tile that
+ *  links it on tap — or, with no account linked, the way to link one. */
+async function fillPicker(
+  picker: HTMLElement,
+  planting: Planting,
+  name: string,
+  form: string | undefined,
+  link: (ref: string) => Promise<void>
+): Promise<void> {
+  const login = linkedLogin();
+  if (!login) {
+    picker.append(el("p", { class: "hint" }, [
+      el("a", { href: "#/settings/inat" }, t("spot.obsPickSetup")),
+    ]));
+    return;
+  }
+  const status = el("p", { class: "hint" }, t("import.asking", { login }));
+  picker.append(status);
+  let picks: OwnSighting[];
+  try {
+    const { sightings } = await ownSightings(login);
+    picks = sightingsOfPlant(sightings, planting.plantId, planting.observations);
+  } catch (err) {
+    status.textContent = t(isBusy(err) ? "nearby.busy" : "nearby.unreachable");
+    return;
+  }
+  clear(picker);
+  if (!picks.length) {
+    picker.append(el("p", { class: "hint" }, t("spot.obsPickNone")));
+    return;
+  }
+  picker.append(
+    el("p", { class: "log-obs-pick-title" }, t("spot.obsPickTitle")),
+    el("div", { class: "obs-gallery" }, picks.slice(0, MAX_PICKS).map((s) => {
+      const date = s.observedOn ? fmtDate(Date.parse(`${s.observedOn}T12:00:00`)) : t("import.seenUndated");
+      return el("button", {
+        type: "button",
+        class: "log-obs-pick",
+        "aria-label": t("spot.obsPickLabel", { date }),
+        onClick: (e: Event) => {
+          (e.currentTarget as HTMLButtonElement).disabled = true;
+          void link(String(s.id));
+        },
+      }, [
+        // The plant's drawing holds the square while the photo loads, and
+        // stays as the picture for a sighting with no licensed photo.
+        el("span", { class: "obs-tile obs-tile-drawn" }, [
+          silhouetteFor(form ?? "shrub"),
+          s.photo ? photoTile(s.photo.thumbUrl, t("obs.photoAlt", { name, observer: login })) : null,
+        ]),
+        el("span", { class: "log-obs-pick-date", "aria-hidden": "true" }, date),
+      ]);
+    })),
+    el("p", { class: "hint" }, t("spot.obsPickOr")),
+  );
 }
 
 // --- adding ----------------------------------------------------------------
@@ -484,65 +613,9 @@ function addCard(spot: SavedSpot, roster: Plant[], redraw: () => void): HTMLElem
     form.hidden = false;
   }
 
-  // The date, given to whatever precision the person actually has. Month and day
-  // both offer "not sure" and the year stands alone, because most people know
-  // the season they planted something and not the date — and a date field that
-  // demands a day gets a made-up day (see `PlantedDate` in `types.ts`).
-  const now = today();
-  const year = el("input", {
-    type: "number",
-    id: "log-year",
-    class: "log-year",
-    inputmode: "numeric",
-    min: "1900",
-    max: String(now.year + 1),
-    value: String(now.year),
-  }) as HTMLInputElement;
-
-  const month = el("select", { id: "log-month", onChange: () => syncDays() }, [
-    el("option", { value: "" }, t("spot.notSure")),
-    ...Array.from({ length: 12 }, (_, i) =>
-      el("option", { value: String(i + 1), selected: i + 1 === now.month }, monthName(i + 1))
-    ),
-  ]) as HTMLSelectElement;
-
-  const day = el("select", { id: "log-day" }, [
-    el("option", { value: "" }, t("spot.notSure")),
-    ...Array.from({ length: 31 }, (_, i) =>
-      el("option", { value: String(i + 1), selected: i + 1 === now.day }, fmtNumber(i + 1))
-    ),
-  ]) as HTMLSelectElement;
-
-  /** A day with no month is a date nobody can read, so the day field follows
-   *  the month's lead rather than offering an answer that means nothing. */
-  function syncDays(): void {
-    day.disabled = !month.value;
-    if (!month.value) day.value = "";
-  }
-
-  const count = el("input", {
-    type: "number",
-    id: "log-count",
-    class: "log-count-input",
-    inputmode: "numeric",
-    min: "1",
-    max: "999",
-    value: "1",
-  }) as HTMLInputElement;
-
+  const fields = plantingFields("log", { year: today().year, month: today().month, day: today().day }, 1);
   form.append(
-    el("div", { class: "field" }, [
-      el("label", { for: "log-year" }, t("spot.whenLabel")),
-      el("div", { class: "log-date-row" }, [
-        el("span", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.year")), year]),
-        el("span", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.month")), month]),
-        el("span", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.day")), day]),
-      ]),
-    ]),
-    el("div", { class: "field field-inline" }, [
-      el("label", { for: "log-count" }, t("spot.howMany")),
-      count,
-    ]),
+    ...fields.nodes,
     el("button", { class: "btn btn-primary btn-block", type: "submit" }, t("spot.addButton"))
   );
 
@@ -550,20 +623,12 @@ function addCard(spot: SavedSpot, roster: Plant[], redraw: () => void): HTMLElem
     e.preventDefault();
     const pick = chosen;
     if (!pick) return;
-    const y = Number(year.value);
-    const planted: PlantedDate | null = Number.isFinite(y) && y > 1000
-      ? {
-          year: y,
-          ...(month.value ? { month: Number(month.value) } : {}),
-          ...(month.value && day.value ? { day: Number(day.value) } : {}),
-        }
-      : null;
     await savePlanting({
       id: plantingId(),
       spotId: spot.id,
       plantId: pick.id,
-      count: Math.max(1, Math.min(999, Number(count.value) || 1)),
-      planted,
+      count: fields.count(),
+      planted: fields.planted(),
       observations: [],
       createdAt: Date.now(),
     });
@@ -574,7 +639,6 @@ function addCard(spot: SavedSpot, roster: Plant[], redraw: () => void): HTMLElem
     else redraw();
   });
 
-  syncDays();
   if (chosen) choose(chosen);
 
   return el("section", { class: "card" }, [
@@ -587,6 +651,92 @@ function addCard(spot: SavedSpot, roster: Plant[], redraw: () => void): HTMLElem
     picked,
     form,
   ]);
+}
+
+/**
+ * The date and count fields, shared by the add form and a row's edit form.
+ * `prefix` keeps the ids unique when several are on the page.
+ *
+ * The date is given to whatever precision the person actually has. Month and
+ * day both offer "not sure" and the year stands alone, because most people know
+ * the season they planted something and not the date — and a date field that
+ * demands a day gets a made-up day (see `PlantedDate` in `types.ts`).
+ */
+function plantingFields(
+  prefix: string,
+  initial: PlantedDate | null,
+  initialCount: number
+): { nodes: HTMLElement[]; planted: () => PlantedDate | null; count: () => number } {
+  const now = today();
+  const year = el("input", {
+    type: "number",
+    id: `${prefix}-year`,
+    class: "log-year",
+    inputmode: "numeric",
+    min: "1900",
+    max: String(now.year + 1),
+    value: initial ? String(initial.year) : "",
+  }) as HTMLInputElement;
+
+  const month = el("select", { id: `${prefix}-month`, onChange: () => syncDays() }, [
+    el("option", { value: "" }, t("spot.notSure")),
+    ...Array.from({ length: 12 }, (_, i) =>
+      el("option", { value: String(i + 1), selected: i + 1 === initial?.month }, monthName(i + 1))
+    ),
+  ]) as HTMLSelectElement;
+
+  const day = el("select", { id: `${prefix}-day` }, [
+    el("option", { value: "" }, t("spot.notSure")),
+    ...Array.from({ length: 31 }, (_, i) =>
+      el("option", { value: String(i + 1), selected: i + 1 === initial?.day }, fmtNumber(i + 1))
+    ),
+  ]) as HTMLSelectElement;
+
+  /** A day with no month is a date nobody can read, so the day field follows
+   *  the month's lead rather than offering an answer that means nothing. */
+  function syncDays(): void {
+    day.disabled = !month.value;
+    if (!month.value) day.value = "";
+  }
+  syncDays();
+
+  const count = el("input", {
+    type: "number",
+    id: `${prefix}-count`,
+    class: "log-count-input",
+    inputmode: "numeric",
+    min: "1",
+    max: "999",
+    value: String(initialCount),
+  }) as HTMLInputElement;
+
+  return {
+    nodes: [
+      el("div", { class: "field" }, [
+        el("label", { for: `${prefix}-year` }, t("spot.whenLabel")),
+        el("div", { class: "log-date-row" }, [
+          el("span", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.year")), year]),
+          el("span", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.month")), month]),
+          el("span", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.day")), day]),
+        ]),
+      ]),
+      el("div", { class: "field field-inline" }, [
+        el("label", { for: `${prefix}-count` }, t("spot.howMany")),
+        count,
+      ]),
+    ],
+    planted: () => {
+      const y = Number(year.value);
+      return Number.isFinite(y) && y > 1000
+        ? {
+            year: y,
+            ...(month.value ? { month: Number(month.value) } : {}),
+            ...(month.value && day.value ? { day: Number(day.value) } : {}),
+          }
+        : null;
+    },
+    count: () => Math.max(1, Math.min(999, Number(count.value) || 1)),
+  };
 }
 
 // --- plumbing --------------------------------------------------------------

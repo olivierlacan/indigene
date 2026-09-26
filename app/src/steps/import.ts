@@ -12,14 +12,14 @@
 //     (which drops queries — `lib/analytics.ts`) only ever hears `#/import`.
 //
 // The sightings themselves are held in memory for this visit and nowhere
-// else. Only what the gardener ticks is saved, as the observation's number on
+// else (`ownSightings`, shared with each planting's sighting picker). Only what the gardener ticks is saved, as the observation's number on
 // the row it made.
 import { el, clear, toast } from "../ui";
 import { navigate } from "../state";
 import { listSpots, plantingsForSpot, savePlanting, saveSpot } from "../db";
 import { linkedLogin } from "../lib/inat-account";
 import {
-  fetchOwnSightings,
+  ownSightings,
   plantedBy,
   sortSightings,
   type InvasiveMatch,
@@ -36,23 +36,6 @@ import { plantThumb, invasiveThumb } from "../components/plant-thumb";
 import { privacyNote } from "../components/privacy-link";
 import { t, tn, tx, fmtDate } from "../lib/i18n";
 import type { SavedSpot } from "../types";
-
-/** This visit's answer, per username, so choosing another spot doesn't ask
- *  iNaturalist again. Kept as the request itself, not its result, so two quick
- *  taps share one request instead of starting two. Gone on reload; never
- *  written anywhere. */
-const fetched = new Map<string, Promise<OwnSightings>>();
-
-function ownSightings(login: string): Promise<OwnSightings> {
-  let pending = fetched.get(login);
-  if (!pending) {
-    pending = fetchOwnSightings(login);
-    // A failure isn't an answer: forget it, so trying again really asks again.
-    pending.catch(() => fetched.delete(login));
-    fetched.set(login, pending);
-  }
-  return pending;
-}
 
 export async function renderImport(main: HTMLElement): Promise<void> {
   clear(main);

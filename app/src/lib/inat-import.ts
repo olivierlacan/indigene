@@ -135,6 +135,30 @@ export async function fetchOwnSightings(
   return { sightings, truncated: true };
 }
 
+/** This visit's answer, per username, so the import page and every planting's
+ *  sighting picker share one request instead of asking again. Kept as the
+ *  request itself, not its result, so two quick taps share one. Gone on
+ *  reload; never written anywhere. */
+const fetched = new Map<string, Promise<OwnSightings>>();
+
+/** `fetchOwnSightings`, at most once per username per visit. */
+export function ownSightings(login: string): Promise<OwnSightings> {
+  let pending = fetched.get(login);
+  if (!pending) {
+    pending = fetchOwnSightings(login);
+    // A failure isn't an answer: forget it, so trying again really asks again.
+    pending.catch(() => fetched.delete(login));
+    fetched.set(login, pending);
+  }
+  return pending;
+}
+
+/** Drop every sighting fetched this visit — called when the account is
+ *  unlinked, so nothing fetched with it outlives it. */
+export function forgetImport(): void {
+  fetched.clear();
+}
+
 /** Keep the rows with an identified species and an id; drop the rest. */
 export function trimOwnSightings(results: unknown[]): OwnSighting[] {
   const out: OwnSighting[] = [];
@@ -253,6 +277,30 @@ function nativePlantId(s: OwnSighting, nativeIds: Set<string>): string | null {
   // different plant in another country.
   const id = registryIndex.bySci.get(normalizeName(s.taxonName))?.identifiers.indigene;
   return id && nativeIds.has(id) ? id : null;
+}
+
+/**
+ * The gardener's sightings of one planted plant, newest first, for the
+ * planting's own picker (`steps/spot.ts`) — a later photo of the same plant is
+ * how its growth gets tracked.
+ *
+ * Matched the same way the import matches (taxon id, then scientific name),
+ * and minus the ones already linked to this planting under either of their
+ * two names. Any quality grade: the gardener is choosing, as on the import.
+ */
+export function sightingsOfPlant(
+  sightings: OwnSighting[],
+  plantId: string,
+  linked: readonly string[]
+): OwnSighting[] {
+  const only = new Set([plantId]);
+  const have = new Set(linked);
+  return sightings.filter(
+    (s) =>
+      nativePlantId(s, only) === plantId &&
+      !have.has(String(s.id)) &&
+      !(s.uuid !== null && have.has(s.uuid))
+  );
 }
 
 /** When the sighting was taken, as a planting date: the plant was in the

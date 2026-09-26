@@ -267,7 +267,7 @@ function photosSection(inv: Invasive, regionIds: string[]): HTMLElement {
       clear(out);
       out.append(
         result.observations.length
-          ? observationList(result.observations.slice(0, 8), commonName(inv))
+          ? observationList(result.observations.slice(0, 8), commonName(inv), inv.form)
           : el("p", { class: "note" }, t("wanted.noPhotos")),
         freshnessLine(result.fromCache),
       );

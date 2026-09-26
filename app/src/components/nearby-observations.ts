@@ -276,7 +276,7 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
              tn("nearby.foundRest", mine.length, { name, region: regionName(region.meta) })],
       ),
     );
-    out.append(observationList(shown, name));
+    out.append(observationList(shown, name, plant.form));
     out.append(freshnessLine(result.fromCache));
   }
 

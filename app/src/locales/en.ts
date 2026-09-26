@@ -243,7 +243,7 @@ export const en = {
   "saved.empty": "Nothing saved yet. Find a spot and tap “Save this spot” to keep it here on your phone.",
   "saved.find": "Find a spot",
   "saved.sunUnknown": "Sun not recorded",
-  "saved.open": "Open",
+  "saved.open": "Plant more",
   "saved.deleteLabel": "Delete {label}",
   "saved.confirmDelete": "Delete “{label}”? This can't be undone.",
   "saved.deleted": "Deleted.",
@@ -255,8 +255,8 @@ export const en = {
   "saved.statKinds.other": "{count} different kinds of plant",
   "saved.statWildlife.one": "{count} kind of wildlife these plants can feed",
   "saved.statWildlife.other": "{count} kinds of wildlife these plants can feed",
-  "saved.openLog": "What you've planted →",
-  "saved.startLog": "Start a planting log →",
+  "saved.openLog": "Already planted →",
+  "saved.startLog": "Start a plant log →",
 
   // ---------------------------------------------------------------------
   // One spot's page: the planting log. What went in, when, and what it
@@ -265,7 +265,11 @@ export const en = {
   "spot.docTitle": "{label} — Indigene",
   "spot.notFound": "That spot isn't on this device.",
   "spot.backToSaved": "Your saved spots",
-  "spot.seePlants": "Plants for this spot",
+  "spot.seePlants": "Plant more",
+  "spot.rename": "Rename",
+  "spot.renamePrompt": "Name this spot",
+  "spot.renamed": "Renamed.",
+  "spot.move": "Move",
   "spot.privacy": "Your log stays on this device — the plants, the dates, all of it",
   "spot.tilesLabel": "What's growing here",
   "spot.tilePlants": "Plants",
@@ -288,6 +292,11 @@ export const en = {
   "spot.removeLabel": "Remove {name} from this log",
   "spot.confirmRemove": "Remove {name} from this log?",
   "spot.removed": "Removed from your log.",
+  "spot.editLabel": "Edit {name}",
+  "spot.editToggle": "Edit",
+  "spot.editSave": "Save",
+  "spot.editCancel": "Cancel",
+  "spot.edited": "Saved.",
   "spot.addTitle": "Add a plant you've planted",
   "spot.searchLabel": "Which plant?",
   "spot.searchPlaceholder": "Search by name",
@@ -308,11 +317,16 @@ export const en = {
   "spot.obsPlaceholder": "Link, number or UUID",
   "spot.obsAdd": "Link",
   "spot.obsHelp":
-    "Paste the link, or the UUID the observation's own page copies for you; every photo on it appears here. They stay on iNaturalist — we keep only that reference, on your device. An observation you've obscured stays obscured to everyone else; this page just remembers which plant of yours it was.",
+    "Photos stay on iNaturalist; only the reference is kept, on this device. A sighting you've obscured stays obscured to everyone else.",
   "spot.obsBad": "That isn't a link, number or UUID we recognise.",
   "spot.obsAlready": "Already linked to this plant.",
   "spot.obsAdded": "Sighting linked.",
   "spot.obsSighting": "Sighting",
+  "spot.obsPickTitle": "Your sightings of this plant",
+  "spot.obsPickLabel": "Link your sighting from {date}",
+  "spot.obsPickNone": "None of your sightings from the past year are of this plant.",
+  "spot.obsPickSetup": "Connect your iNaturalist account to pick from your own photos",
+  "spot.obsPickOr": "Or paste any sighting:",
   "inat.cardTitle": "Your iNaturalist account",
   "inat.lede": "Link your username to bring your recent plant sightings into a spot's log.",
   "inat.label": "iNaturalist username",
@@ -446,6 +460,7 @@ export const en = {
     "Map. The pin stays in the centre. Drag or tap to move the spot under it, or use the arrow keys to nudge it — hold Shift for bigger steps.",
   "location.osmAttribution": "© OpenStreetMap contributors",
   "location.gpsFix": "GPS fix",
+  "location.savedHere": "Saved here",
 
   // The small map that shows where a saved (or last) spot is — see
   // `components/spot-map.ts`. The short credit is the full one abbreviated to
@@ -512,6 +527,10 @@ export const en = {
   "location.usingList": "Using the {region} list — your pick.",
   "location.back": "Back",
   "location.next": "Next: measure the sun →",
+  "location.moveTitle": "Move {label}",
+  "location.moveLede": "Drag the map until the pin sits on the spot.",
+  "location.moveSave": "Save location",
+  "location.moved": "Location saved.",
 
   // ---------------------------------------------------------------------
   // Sun (step 2).

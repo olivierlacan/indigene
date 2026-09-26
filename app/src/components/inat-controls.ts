@@ -4,7 +4,7 @@
 import { el, clear, toast } from "../ui";
 import { privacyNote } from "./privacy-link";
 import { linkedLogin, parseLogin, setLinkedLogin, unlinkLogin } from "../lib/inat-account";
-import { loginExists } from "../lib/inat-import";
+import { forgetImport, loginExists } from "../lib/inat-import";
 import { isBusy } from "../lib/inaturalist";
 import { t } from "../lib/i18n";
 
@@ -26,6 +26,7 @@ export function inatCard(): HTMLElement {
             class: "btn btn-ghost",
             onClick: () => {
               unlinkLogin();
+              forgetImport();
               toast(t("inat.removed"));
               fill();
             },

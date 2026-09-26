@@ -14,6 +14,9 @@ import { regionName, regionReference } from "../lib/names";
 import { flagRow } from "../components/flags";
 import { defaultRegion, rememberedSpotFor, sticky, stickyReady } from "../lib/sticky";
 import { learnTown, noteTown } from "../lib/places";
+import { getSpot, saveSpot } from "../db";
+import { hashParam } from "../lib/plant-view";
+import type { SavedSpot } from "../types";
 
 // The out-of-coverage message, shown the moment a person selects a location
 // (GPS fix or search pick) outside every covered region — not sprung on them
@@ -107,14 +110,25 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
 
   const remembered = sticky().spot;
   const startingRegion = defaultRegion();
+
+  // `?move=<id>`: putting a saved spot's pin right (from its own page). Same
+  // map, starting on the spot, and the confirm button saves the new point back
+  // to that spot instead of walking on to the sun. The id rides in the query,
+  // which the page count drops.
+  const moveId = hashParam("move");
+  const moving: SavedSpot | undefined = moveId ? await getSpot(moveId).catch(() => undefined) : undefined;
+  const movingPoint = moving && moving.lat != null && moving.lon != null ? moving : null;
+
   // Whether the pin below is standing where we left it last time, rather than
   // on a draft in progress or on the fallback point.
   const fromMemory =
-    store.draft.lat == null && remembered?.lat != null && remembered.lon != null;
+    !movingPoint && store.draft.lat == null && remembered?.lat != null && remembered.lon != null;
 
-  let lat = store.draft.lat ?? remembered?.lat ?? 40.4406; // Pittsburgh, PA as a regional default
-  let lon = store.draft.lon ?? remembered?.lon ?? -79.9959;
+  let lat = movingPoint?.lat ?? store.draft.lat ?? remembered?.lat ?? 40.4406; // Pittsburgh, PA as a regional default
+  let lon = movingPoint?.lon ?? store.draft.lon ?? remembered?.lon ?? -79.9959;
   let accuracy: number | null = null;
+  // The marker stands on a saved spot's old point until a fix or a search moves it.
+  let markerIsSaved = Boolean(movingPoint);
   // Offset (metres) applied by nudging the pin, relative to the fix.
   let offN = 0;
   let offE = 0;
@@ -222,6 +236,8 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
     // Fix marker (where GPS put you) vs the nudged pin (screen centre), placed
     // at the scale of whichever layer is showing.
     const px = drewTiles ? metersPerPixel(effLat(), MAP_ZOOM) : 5 / cell;
+    // Moving a saved spot, the marker is where it was saved until a real fix.
+    const fixLabel = markerIsSaved ? t("location.savedHere") : t("location.gpsFix");
     const fx = w / 2 - offE / px;
     const fy = h / 2 + offN / px;
     ctx.font = "13px system-ui";
@@ -229,7 +245,7 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
       // A halo keeps the marker readable over map imagery.
       ctx.strokeStyle = "rgba(255,255,255,0.9)";
       ctx.lineWidth = 3;
-      ctx.strokeText(t("location.gpsFix"), fx + 9, fy + 4);
+      ctx.strokeText(fixLabel, fx + 9, fy + 4);
     }
     ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue("--focus").trim() || "#1a53c4";
     ctx.globalAlpha = drewTiles ? 0.9 : 0.6;
@@ -237,7 +253,7 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
     ctx.arc(fx, fy, 6, 0, Math.PI * 2);
     ctx.fill();
     ctx.globalAlpha = 1;
-    ctx.fillText(t("location.gpsFix"), fx + 9, fy + 4);
+    ctx.fillText(fixLabel, fx + 9, fy + 4);
   }
 
   // Metres per CSS pixel at the scale of whichever map layer is showing.
@@ -318,6 +334,7 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
         lat = pos.coords.latitude;
         lon = pos.coords.longitude;
         accuracy = pos.coords.accuracy;
+        markerIsSaved = false;
         offN = 0; offE = 0;
         locateBtn.textContent = t("location.update");
         (locateBtn as HTMLButtonElement).disabled = false;
@@ -368,7 +385,7 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
             class: "choice",
             onClick: () => {
               lat = p.lat; lon = p.lon;
-              offN = 0; offE = 0; accuracy = null;
+              offN = 0; offE = 0; accuracy = null; markerIsSaved = false;
               // Somebody who searched for their town has just told us its name.
               // Keeping it here is the one path to a named spot that costs
               // nothing at all — no second lookup, ever.
@@ -489,7 +506,8 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
   // told us they work by region is asking a question they've answered.
   type Mode = "gps" | "zip" | "region";
   let mode: Mode =
-    store.draft.regionOverride ? "region"
+    moving ? "gps"
+    : store.draft.regionOverride ? "region"
     : store.draft.lat != null ? "gps"
     : startingRegion || remembered?.regionId ? "region"
     : "gps";
@@ -535,6 +553,53 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
     mapBlock.hidden = m === "region";
     regionCard.hidden = m !== "region";
     renderSwitcher();
+    // A saved spot is a point; the region list would turn it into something else.
+    switcher.hidden = Boolean(moving);
+  }
+
+  /** Save the pin back to the spot being moved, then return to its page. The
+   *  soil and climate belonged to the old point, so they're cleared and
+   *  fetched again for the new one. */
+  async function saveMove(spot: SavedSpot): Promise<void> {
+    const fLat = effLat(), fLon = effLon();
+    await saveSpot({ ...spot, lat: fLat, lon: fLon, regionOverride: null, site: null });
+    // The spot open in the walk right now moves with it.
+    if (store.draft.editingId === spot.id) {
+      Object.assign(store.draft, { lat: fLat, lon: fLon, regionOverride: null, site: null });
+      setSitePromise(null);
+      rememberDraftSpot();
+    }
+    learnTown(fLat, fLon);
+    void fetchSite(fLat, fLon)
+      .then(async (site) => {
+        const now = await getSpot(spot.id);
+        if (now && now.lat === fLat && now.lon === fLon) await saveSpot({ ...now, site });
+      })
+      .catch(() => {});
+    toast(t("location.moved"));
+    location.hash = `#/saved/${encodeURIComponent(spot.id)}`;
+  }
+
+  if (moving) {
+    main.append(
+      el("h2", { class: "step-title" }, t("location.moveTitle", { label: moving.label })),
+      el("p", { class: "step-lede" }, t("location.moveLede")),
+      locateBtn,
+      searchCard,
+      mapBlock,
+      switcher,
+      el("div", { class: "btn-row" }, [
+        el("a", { class: "btn btn-secondary", href: `#/saved/${encodeURIComponent(moving.id)}` }, t("location.back")),
+        el("button", { class: "btn btn-primary", onClick: () => void saveMove(moving) }, t("location.moveSave")),
+      ]),
+    );
+    setMode(mode);
+    updateStatus();
+    window.addEventListener("online", scheduleRedraw);
+    return () => {
+      window.removeEventListener("online", scheduleRedraw);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }
 
   main.append(

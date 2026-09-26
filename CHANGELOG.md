@@ -81,6 +81,16 @@ subtitle on the What's new page.
   plant card was skipped because it already overflows its fact row on `main`.
   https://indigene.app/invasives
 
+### Fixed
+
+- Plant photos show up on the full plants list again, and while scrolling
+  they now load where you've stopped first, instead of for rows you've
+  already passed. https://indigene.app/plants
+- Internal: `lib/photo.ts` swept every not-yet-attached thumbnail once a page
+  observed over 300 (the plants index has ~460), so none loaded; the sweep
+  now waits a task. The queue also starts the job nearest the viewport and
+  drops jobs that scroll out of range before their turn.
+
 ## [0.35] - 2026-09-24
 
 **Auckland & Northland, south of the equator**

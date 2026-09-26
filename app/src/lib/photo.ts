@@ -37,8 +37,9 @@
 // ## Keeping it snappy: three budgets
 //
 //   1. **Viewport.** A thumbnail is not requested until it is within
-//      `NEAR_VIEWPORT` of the screen. The plants index lists ~190 plants; only
-//      the handful you can nearly see ever costs anything.
+//      `NEAR_VIEWPORT` of the screen. The plants index lists ~460 plants; only
+//      the handful you can nearly see ever costs anything — and the one nearest
+//      the screen goes first, so pictures arrive where you've stopped.
 //   2. **Concurrency.** At most `MAX_IN_FLIGHT` photo requests are open at
 //      once, so a fast scroll can't queue a hundred JPEGs ahead of the soil and
 //      climate lookups the app actually needs to answer with.
@@ -141,7 +142,39 @@ let inFlight = 0;
 const queued: Job[] = [];
 
 /**
- * Start whatever the budget allows, urgent jobs first.
+ * How far a slot's box is from the screen, in CSS pixels — 0 when any of it is
+ * showing. The queue starts the smallest first, so what the reader is looking
+ * at loads before what they scrolled past or haven't reached. Ties (everything
+ * on screen scores 0) go top to bottom, the order a person reads a list in.
+ */
+export function distanceFromView(top: number, bottom: number, viewHeight: number): number {
+  if (bottom < 0) return -bottom;
+  if (top > viewHeight) return top - viewHeight;
+  return 0;
+}
+
+/** The index of the job to start next: an urgent one if any, otherwise the one
+ *  nearest the screen, measured now rather than when it was queued — after a
+ *  fast scroll the oldest job is the one furthest behind. */
+function nextJob(): number {
+  const urgent = queued.findIndex((j) => j.urgent);
+  if (urgent >= 0) return urgent;
+  const viewHeight = window.innerHeight;
+  let best = 0;
+  let bestKey = [Infinity, Infinity];
+  queued.forEach((job, i) => {
+    const r = job.img.getBoundingClientRect();
+    const key = [distanceFromView(r.top, r.bottom, viewHeight), r.top];
+    if (key[0] < bestKey[0] || (key[0] === bestKey[0] && key[1] < bestKey[1])) {
+      best = i;
+      bestKey = key;
+    }
+  });
+  return best;
+}
+
+/**
+ * Start whatever the budget allows, urgent jobs first, then nearest the screen.
  *
  * A gated job whose image has since left the document — the reader scrolled
  * past and then routed away — is dropped without a request, the cheapest
@@ -152,10 +185,10 @@ const queued: Job[] = [];
  */
 function pump(): void {
   while (inFlight < MAX_IN_FLIGHT && queued.length) {
-    let at = queued.findIndex((j) => j.urgent);
-    if (at < 0) at = 0;
-    const job = queued.splice(at, 1)[0];
+    const job = queued.splice(nextJob(), 1)[0];
     if (job.wasVisible && !job.img.isConnected) continue;
+    // Committed: from here the observer has nothing left to decide about it.
+    if (job.wasVisible) release(job.img);
     void run(job);
   }
 }
@@ -198,19 +231,27 @@ function reveal(img: HTMLImageElement): void {
 const after = (ms: number): Promise<void> => new Promise((go) => setTimeout(go, ms));
 
 /** One observer for the whole app: a thumbnail's job is held here until the
- *  thumbnail is nearly on screen, then handed to the queue. */
+ *  thumbnail is nearly on screen, then handed to the queue — and handed back if
+ *  it scrolls away again before its turn comes, so a fast flick down the list
+ *  doesn't leave a backlog of rows the reader has already passed. The watch
+ *  ends when the request starts (`pump`). */
 const waiting = new WeakMap<Element, Job>();
 const nearby =
   typeof IntersectionObserver === "function"
     ? new IntersectionObserver(
         (entries) => {
           for (const entry of entries) {
-            if (!entry.isIntersecting) continue;
-            release(entry.target);
             const job = waiting.get(entry.target);
+            if (!job) continue;
+            const at = queued.indexOf(job);
+            if (!entry.isIntersecting) {
+              if (at >= 0) queued.splice(at, 1);
+              continue;
+            }
             // It is on screen right now, so from here on "not in the document"
             // means the reader has moved on and the work can be dropped.
-            if (job) queued.push(Object.assign(job, { wasVisible: true }));
+            job.wasVisible = true;
+            if (at < 0) queued.push(job);
           }
           pump();
         },
@@ -223,7 +264,7 @@ const nearby =
  *
  * This set exists because an `IntersectionObserver` holds its targets *by
  * strong reference*, and a target that is removed from the document is not
- * automatically dropped. The plants index rebuilds all ~190 of its cards on
+ * automatically dropped. The plants index rebuilds all ~460 of its cards on
  * every keystroke, so without a sweep, typing "milkweed" would leave a couple of
  * thousand detached images pinned in memory with the observer re-measuring them
  * on every frame.
@@ -235,17 +276,32 @@ const observed = new Set<Element>();
 const SWEEP_AT = 300;
 
 function release(target: Element): void {
+  // Forget the job too, so an observer entry already in flight for this image
+  // can't queue it a second time.
+  waiting.delete(target);
   nearby?.unobserve(target);
   observed.delete(target);
 }
 
 /** Drop everything that has left the document since the last sweep. Checking
  *  `isConnected` on a few hundred nodes is microseconds; doing it never is a
- *  leak. */
-function sweep(): void {
-  for (const target of observed) {
-    if (!target.isConnected) release(target);
-  }
+ *  leak.
+ *
+ *  **Never mid-build.** `loadPhoto` is called on a thumbnail before its page
+ *  is attached, so a sweep run synchronously counts the page being built as
+ *  "gone". On the plants index, whose ~460 rows pass `SWEEP_AT` on their own,
+ *  that unwatched every row and no photo loaded at all. The sweep waits for the
+ *  current task to finish, by which time the new page is in the document. */
+let sweepPending = false;
+function sweepSoon(): void {
+  if (sweepPending) return;
+  sweepPending = true;
+  setTimeout(() => {
+    sweepPending = false;
+    for (const target of observed) {
+      if (!target.isConnected) release(target);
+    }
+  }, 0);
 }
 
 /**
@@ -277,5 +333,5 @@ export function loadPhoto(
   waiting.set(img, job);
   observed.add(img);
   nearby.observe(img);
-  if (observed.size > SWEEP_AT) sweep();
+  if (observed.size > SWEEP_AT) sweepSoon();
 }

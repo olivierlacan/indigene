@@ -128,7 +128,7 @@ export function renderPlants(main: HTMLElement): void {
   // is the link; there is nothing else on it to aim at.
   //
   // The picture is the form drawing until the plant's chosen photograph arrives
-  // over it — and this list is ~190 plants long, so the photographs are fetched
+  // over it — and this list is ~460 plants long, so the photographs are fetched
   // a screenful at a time as you scroll rather than all at once. See
   // `components/plant-thumb.ts`.
   function card(r: Row, nq: string): HTMLElement {

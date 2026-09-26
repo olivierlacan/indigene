@@ -37,7 +37,7 @@ const TILE_PX = 112;
  *  not requested until it is nearly on screen, never more than a few at once,
  *  and faded in only once it has decoded — so a gallery fills in tile by
  *  finished tile instead of a dozen JPEGs painting themselves at once. */
-function photoTile(url: string, alt: string): HTMLImageElement {
+export function photoTile(url: string, alt: string): HTMLImageElement {
   const img = el("img", { class: "photo-fade", alt, width: 112, height: 112 });
   loadPhoto(img, url, TILE_PX);
   return img;

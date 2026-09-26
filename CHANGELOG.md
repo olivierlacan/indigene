@@ -33,6 +33,14 @@ subtitle on the What's new page.
 
 ### Added
 
+- Matches: "Add sighting" on a plant in your saved spot now shows your own
+  iNaturalist photos of that plant. Tap one to add it, no link to paste, so
+  each season's photo lines up under the plant to show how it's growing.
+- Internal: the import's per-visit sightings cache moved to
+  `ownSightings()` in `lib/inat-import.ts`, shared with the planting picker
+  (`sightingsOfPlant()`, covered by `import:check`); unlinking the account now
+  clears it via `forgetImport()`, which the comments already promised.
+
 - The home page has a one-minute, hand-drawn film about what Indigene does
   and who it's for, in English or French to match your language. Nothing loads from the
   video host until you press play. https://indigene.app/

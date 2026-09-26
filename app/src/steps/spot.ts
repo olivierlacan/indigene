@@ -28,14 +28,16 @@ import {
 import { spotValue, type SpotValue } from "../lib/spot-value";
 import { wildlifeGroups } from "../components/wildlife-chips";
 import { isUuid, linkedObservation, observationUrl, parseObservationRef } from "../lib/observation-link";
-import { observationList } from "../components/observation-ui";
+import { observationList, photoTile } from "../components/observation-ui";
+import { ownSightings, sightingsOfPlant, type OwnSighting } from "../lib/inat-import";
+import { isBusy } from "../lib/inaturalist";
 import { plantThumb, invasiveThumb } from "../components/plant-thumb";
 import { statTiles, type Stat } from "../components/stat-card";
 import { privacyNote } from "../components/privacy-link";
 import { sunPlain } from "../lib/plain";
 import { commonName, searchAliases, regionName } from "../lib/names";
 import { hashParam } from "../lib/plant-view";
-import { t, fmtNumber, monthName } from "../lib/i18n";
+import { t, fmtDate, fmtNumber, monthName } from "../lib/i18n";
 import { linkedLogin } from "../lib/inat-account";
 import { getInvasive } from "../lib/invasives";
 
@@ -368,6 +370,21 @@ function sightingsBlock(planting: Planting, name: string, redraw: () => void): H
     "aria-label": t("spot.obsLabel"),
   }) as HTMLInputElement;
 
+  const link = async (ref: string): Promise<void> => {
+    if (planting.observations.includes(ref) || resolved.has(ref)) {
+      toast(t("spot.obsAlready"));
+      return;
+    }
+    await savePlanting({ ...planting, observations: [...planting.observations, ref] });
+    toast(t("spot.obsAdded"));
+    redraw();
+  };
+
+  // The linked account's own sightings of this plant, to tap rather than
+  // paste — asked for once, the first time the form opens.
+  const picker = el("div", { class: "log-obs-picker", "aria-live": "polite" });
+  let asked = false;
+
   const form = el("form", {
     class: "log-obs-form",
     hidden: true,
@@ -378,15 +395,10 @@ function sightingsBlock(planting: Planting, name: string, redraw: () => void): H
         toast(t("spot.obsBad"));
         return;
       }
-      if (planting.observations.includes(ref) || resolved.has(ref)) {
-        toast(t("spot.obsAlready"));
-        return;
-      }
-      await savePlanting({ ...planting, observations: [...planting.observations, ref] });
-      toast(t("spot.obsAdded"));
-      redraw();
+      await link(ref);
     },
   }, [
+    picker,
     el("div", { class: "log-obs-row" }, [
       input,
       el("button", { class: "btn btn-secondary btn-compact", type: "submit" }, t("spot.obsAdd")),
@@ -401,12 +413,78 @@ function sightingsBlock(planting: Planting, name: string, redraw: () => void): H
     class: "btn btn-ghost btn-compact log-obs-toggle",
     onClick: () => {
       form.hidden = !form.hidden;
-      if (!form.hidden) input.focus();
+      if (form.hidden) return;
+      if (!asked) {
+        asked = true;
+        void fillPicker(picker, planting, name, link);
+      }
+      // With a linked account the picker is the way in; the field is the
+      // fallback, and a keyboard popping up over the photos would hide them.
+      if (!linkedLogin()) input.focus();
     },
   }, t(planting.observations.length ? "spot.obsLinkMore" : "spot.obsLink"));
 
   block.append(toggle, form);
   return block;
+}
+
+/** Tiles offered before the picker stops: four rows on a phone. The newest
+ *  come first, and anything older can still be pasted. */
+const MAX_PICKS = 12;
+
+/** The linked account's sightings of this planting's plant, each a tile that
+ *  links it on tap — or, with no account linked, the way to link one. */
+async function fillPicker(
+  picker: HTMLElement,
+  planting: Planting,
+  name: string,
+  link: (ref: string) => Promise<void>
+): Promise<void> {
+  const login = linkedLogin();
+  if (!login) {
+    picker.append(el("p", { class: "hint" }, [
+      el("a", { href: "#/settings/inat" }, t("spot.obsPickSetup")),
+    ]));
+    return;
+  }
+  const status = el("p", { class: "hint" }, t("import.asking", { login }));
+  picker.append(status);
+  let picks: OwnSighting[];
+  try {
+    const { sightings } = await ownSightings(login);
+    picks = sightingsOfPlant(sightings, planting.plantId, planting.observations);
+  } catch (err) {
+    status.textContent = t(isBusy(err) ? "nearby.busy" : "nearby.unreachable");
+    return;
+  }
+  clear(picker);
+  if (!picks.length) {
+    picker.append(el("p", { class: "hint" }, t("spot.obsPickNone")));
+    return;
+  }
+  picker.append(
+    el("p", { class: "log-obs-pick-title" }, t("spot.obsPickTitle")),
+    el("div", { class: "obs-gallery" }, picks.slice(0, MAX_PICKS).map((s) => {
+      const date = s.observedOn ? fmtDate(Date.parse(`${s.observedOn}T12:00:00`)) : t("import.seenUndated");
+      return el("button", {
+        type: "button",
+        class: "log-obs-pick",
+        "aria-label": t("spot.obsPickLabel", { date }),
+        onClick: (e: Event) => {
+          (e.currentTarget as HTMLButtonElement).disabled = true;
+          void link(String(s.id));
+        },
+      }, [
+        el("span", { class: "obs-tile" }, [
+          s.photo
+            ? photoTile(s.photo.thumbUrl, t("obs.photoAlt", { name, observer: login }))
+            : el("span", { class: "log-obs-pick-blank", "aria-hidden": "true" }, "🖼️"),
+        ]),
+        el("span", { class: "log-obs-pick-date", "aria-hidden": "true" }, date),
+      ]);
+    })),
+    el("p", { class: "hint" }, t("spot.obsPickOr")),
+  );
 }
 
 // --- adding ----------------------------------------------------------------

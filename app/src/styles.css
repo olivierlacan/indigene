@@ -5036,6 +5036,45 @@ body[data-layout="profile"] .wip-banner-text {
 .log-obs-form .hint {
   margin-top: 0.35rem;
 }
+/* The linked account's own sightings of this plant: the gallery's tiles, each
+   with its date under it — the date is what tells this June from last June. */
+.log-obs-pick-title {
+  margin: 0.2rem 0 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.log-obs-pick {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.log-obs-pick .obs-tile {
+  width: 100%;
+}
+.log-obs-pick:disabled {
+  opacity: 0.5;
+}
+.log-obs-pick-blank {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.log-obs-pick-date {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 /* The add form's three date fields, side by side on a phone: a year wide
    enough for four digits, and the two pickers sharing what's left. */
 .log-date-row {

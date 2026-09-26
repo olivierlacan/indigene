@@ -18,14 +18,14 @@ import { lookalikesForPlant } from "../lib/lookalikes";
 import { ornamentalsForPlant } from "../lib/alternatives";
 import { latPlain, lonPlain } from "../lib/plain";
 import { wildlifeChips } from "../components/wildlife-chips";
-import { SCORE_KEYS, scoreLabel, bloomSentence, confidencePlain, growthPlain, moistureWord, propagationMethod, sunLabel, PROPAGATION_SOURCE_URL, SOURCES_ROUTE } from "../lib/plain";
+import { SCORE_KEYS, scoreLabel, confidencePlain, propagationMethod, sunLabel, PROPAGATION_SOURCE_URL, SOURCES_ROUTE } from "../lib/plain";
 import { techniqueFor, techniqueHref } from "../lib/planting";
 import { citation } from "../components/citation";
 import { silhouetteFor } from "../components/plant-card";
 import { heroPhotoFor } from "../lib/hero-photo";
 import { conservationNote } from "../components/conservation-note";
 import { heroFigure } from "../components/hero-figure";
-import { keystoneIcon } from "../components/keystone-icon";
+import { traitBadges } from "../components/trait-badges";
 import { statGrid } from "../components/stat-card";
 import { drawSizeViz } from "../components/size-viz";
 import { entryForPlant, deepLinks } from "../lib/registry";
@@ -35,7 +35,7 @@ import { anchoredHeading } from "../components/anchor-head";
 import { plantSectionHref, isHashRoute } from "../lib/routes";
 import { privacyNote } from "../components/privacy-link";
 import type { Plant, SiteData, SunEstimate } from "../types";
-import { t, tn, fmtNumber, fmtList } from "../lib/i18n";
+import { t, tn, fmtNumber } from "../lib/i18n";
 import { length, humanHeightLabel } from "../lib/units";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
 import { prose, propagationNote, isUntranslated, lookalikesUntranslated, alternativesUntranslated } from "../lib/prose";
@@ -48,7 +48,7 @@ import { reportUntranslated } from "../components/wip-banner";
 // route. Every heading shows the mark that hands it over
 // (`components/anchor-head.ts`). Listed in the order they appear in the phone
 // stack.
-const SECTIONS = ["ecosystem", "nearby", "propagation", "spot", "references"] as const;
+const SECTIONS = ["needs", "ecosystem", "nearby", "propagation", "spot", "references"] as const;
 
 type Section = (typeof SECTIONS)[number];
 const sectionDomId = (s: Section): string => `sec-${s}`;
@@ -138,7 +138,8 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
         // A link straight to the ecosystem card is a request for the detail in
         // it, so it arrives with every "what does this mean?" already open —
         // see `ecosystemSection`.
-        ecosystemSection(plant, entries, section === "ecosystem"),
+        needsSection(plant, region.meta.id),
+        ecosystemSection(plant, entries, region.meta.id, section === "ecosystem"),
         nearbyObservationsSection(plant),
         propagationSection(plant, region.meta.id),
       ]),
@@ -296,23 +297,6 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
 
   function profile(p: Plant, all: PlantEntry[]): HTMLElement {
     const hero = heroImage(p, active.region.meta.id);
-    const badges = el("div", {}, [
-      p.keystone
-        ? el("span", { class: "badge keystone", title: t("badge.keystoneTitle") }, [keystoneIcon(), " " + t("badge.keystone")])
-        : null,
-      p.noWaterEstablish
-        ? el("span", { class: "badge nowater" }, t("badge.noWater"))
-        : el("span", { class: "badge caution" }, t("badge.needsWater")),
-      p.filters.petToxic ? el("span", { class: "badge caution" }, t("badge.petToxic")) : null,
-      p.filters.thorny ? el("span", { class: "badge caution" }, t("badge.thorny")) : null,
-      p.filters.aggressive ? el("span", { class: "badge caution" }, t("badge.aggressive")) : null,
-      p.filters.deerResistant ? el("span", { class: "badge neutral" }, t("badge.deerResistant")) : null,
-    ]);
-
-    const canvas = el("canvas", { class: "size-viz", role: "img", "aria-label": t("plant.sizeAria", { name: commonName(p) }) });
-    queueMicrotask(() => drawSizeViz(canvas, p));
-
-    const bloom = bloomSentence(p.bloom);
 
     const names = nameLines(p);
 
@@ -333,27 +317,27 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
         ]),
         shareButton(p),
       ]),
-      // Which region's figures these are stays above the columns, spanning the
-      // card: it governs everything below it, in both columns.
-      regionSwitch(p, all, active),
       // Two columns on a laptop, one stack on a phone — and the same order
       // either way, read down the left column and then the right: who this
-      // plant is and its numbers, then how big it gets and what it asks of you.
-      // The wrappers are `display: contents` below the breakpoint, so on a
-      // phone the pieces sit in the card exactly as they always have.
+      // plant is, then its numbers. The wrappers are `display: contents` below
+      // the breakpoint, so on a phone the pieces sit in the card as one stack.
       el("div", { class: "plant-cols" }, [
         el("div", { class: "plant-col" }, [
           // Two layouts, one row of content. The drawing is a flex column beside
           // the text, as it always was. The photograph is a *float*, so the text
           // runs beside it and then under it — a photo is taller than a name and
           // a latin binomial, and a flex column would leave that difference blank.
+          //
+          // The photos link comes straight after the names, so it lands in the
+          // space beside the picture it's about rather than under a row of
+          // labels that had wrapped below it.
           el("div", { class: hero ? "plant-head plant-head-photo" : "plant-head" }, [
             hero ?? el("div", { class: "plant-photo", "aria-hidden": "true" }, [silhouetteFor(p.form)]),
             el("div", {}, [
               el("h2", { class: "plant-name", style: "margin:0" }, names.title),
               el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" }, names.sub),
-              badges,
               photosLink(p),
+              traitBadges(p, true),
             ]),
           ]),
           el("p", { class: "kv plant-why" }, [el("span", { class: "k" }, t("plant.whyBelongs")), prose(p, "nativeNote", region.meta.id)]),
@@ -371,24 +355,16 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
           // Third of the same stack, and the one line on this page that is the
           // same for every plant: the way into `#/crops`.
           cropsLine(),
-          statGrid(p),
         ]),
         el("div", { class: "plant-col" }, [
-          canvas,
-          el("div", { class: "size-caption" }, [
-            `${t("card.sizeCaption", {
-              human: humanHeightLabel(),
-              height: length(p.matureHeightFt),
-              spread: length(p.matureSpreadFt),
-            })} ${growthPlain(p)}`,
-          ]),
+          // Which region's figures these are sits directly on top of them. It
+          // used to head the whole card, a line under "Native to" — the same
+          // regions twice, for two different jobs, with the one it governs a
+          // screen further down.
+          regionSwitch(p, all, active),
+          statGrid(p),
+          growthChart(p),
           el("div", { class: "plant-body" }, [
-            el("p", { class: "kv" }, [el("span", { class: "k" }, t("card.gives")), prose(p, "givesNote", region.meta.id)]),
-            el("p", { class: "kv" }, [el("span", { class: "k" }, t("card.needs")), prose(p, "careNote", region.meta.id)]),
-            el("p", { class: "kv" }, [
-              el("span", { class: "k" }, t("card.bloomMoisture")),
-              `${bloom} ${t("card.prefersSoil", { bands: fmtList(p.moisture.map(moistureWord)) })}`,
-            ]),
             el("p", { class: "confidence" }, [
               el("strong", {}, t("card.confidence", { level: t(`confidence.word.${p.confidence}` as const) })),
               confidencePlain(p.confidence),
@@ -743,6 +719,42 @@ async function copyLink(url: string): Promise<void> {
 }
 
 /**
+ * What the plant asks of the gardener, in its own card beside the ecosystem
+ * services one. The two used to be a pair of paragraphs in the profile ("What
+ * it does for you & wildlife", "What it needs from you"), one of them repeating
+ * the card below it. The figures a need is measured in — sun, moisture, pH —
+ * stay in the tiles; this is the part only words can say.
+ */
+function needsSection(p: Plant, regionId: string): HTMLElement {
+  return sectionCard("needs", t("plant.needsTitle"), [
+    el("p", { class: "section-prose" }, prose(p, "careNote", regionId)),
+  ]);
+}
+
+/**
+ * The size drawing, under a title that says what it plots.
+ *
+ * It had no title, and a caption beneath that restated what the drawing
+ * already shows ("Drawn to scale beside a 1.68 m person…"). The drawing labels
+ * its own years, heights and the person; the eventual size is the "Full size"
+ * tile just above. A screen reader gets the same points the eye does, in one
+ * line.
+ */
+function growthChart(p: Plant): HTMLElement {
+  const points = p.size.map((s) => t("plant.growthPoint", { year: s.year, height: length(s.heightFt) }));
+  const canvas = el("canvas", {
+    class: "size-viz",
+    role: "img",
+    "aria-label": t("plant.growthAria", { human: humanHeightLabel(), points: points.join(", ") }),
+  }) as HTMLCanvasElement;
+  queueMicrotask(() => drawSizeViz(canvas, p));
+  return el("figure", { class: "size-figure" }, [
+    el("figcaption", { class: "size-title" }, t("plant.growthTitle")),
+    canvas,
+  ]);
+}
+
+/**
  * The seven ecosystem-benefit scores, each with its fixed icon, its bar, and a
  * plain-words gloss that is now folded away until asked for.
  *
@@ -768,7 +780,7 @@ async function copyLink(url: string): Promise<void> {
  *   card means, since asking for the ecosystem section is asking for the
  *   detail in it.
  */
-function ecosystemSection(p: Plant, entries: PlantEntry[], expanded: boolean): HTMLElement {
+function ecosystemSection(p: Plant, entries: PlantEntry[], regionId: string, expanded: boolean): HTMLElement {
   // An uncounted host figure has no bar to draw; the stat tile says why.
   const keys = SCORE_KEYS.filter((key) => key !== "host" || p.hostLepCount !== null);
   const scoreParts = keys.map((key) => {
@@ -799,6 +811,10 @@ function ecosystemSection(p: Plant, entries: PlantEntry[], expanded: boolean): H
   });
   const feeds = whoItFeeds(entries);
   return sectionCard("ecosystem", t("plant.ecosystemTitle"), [
+    // What it gives, in words, then who it gives it to, then the scores: the
+    // prose that used to sit in the profile as "What it does for you &
+    // wildlife", a screen above the card that measures exactly that.
+    el("p", { class: "section-prose" }, prose(p, "givesNote", regionId)),
     ...(feeds ? [feeds] : []),
     el("ul", { class: "score-list score-list-folding" }, scoreParts),
   ]);

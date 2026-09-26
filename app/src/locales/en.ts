@@ -87,6 +87,7 @@ export const en = {
   "steps.sources": "Sources",
   "steps.about": "About",
   "steps.crops": "Vegetables",
+  "steps.traits": "Traits",
   "steps.settings": "Settings",
   "steps.import": "Import from iNaturalist",
   "steps.film": "The film",
@@ -419,12 +420,12 @@ export const en = {
   "explore.byWildlifeSub":
     "start from the monarch, hummingbird, or gopher tortoise you want, and find the plants that support it.",
   "explore.starring": "Starring",
-  "explore.keystoneTitle": "Keystone plant — supports far more wildlife than most",
-  "explore.keystoneLabel": "Keystone plant",
+  "explore.keystoneTitle": "Essential plant — supports far more wildlife than most",
+  "explore.keystoneLabel": "Essential plant",
   "explore.caterpillarSpecies": "{n} caterpillar species",
   "explore.statPlants": "{n} native plants on Indigene's list for {region}",
-  "explore.statKeystone.one": "{n} keystone plant — the ones local food webs lean on hardest",
-  "explore.statKeystone.other": "{n} keystone plants — the ones local food webs lean on hardest",
+  "explore.statKeystone.one": "{n} essential plant — the one local food webs lean on hardest",
+  "explore.statKeystone.other": "{n} essential plants — the ones local food webs lean on hardest",
   "explore.statWildlife": "{n} kinds of wildlife with a documented tie to these plants",
 
   // ---------------------------------------------------------------------
@@ -435,7 +436,7 @@ export const en = {
     "Get your location, then check the map — if the pin isn't where you're really standing, drag or tap to nudge it.",
   "location.whyTitle": "Why does the exact spot matter?",
   "location.why":
-    "“Native” always means native to somewhere. Your coordinates pick which regional plant list applies and pull the soil, climate, and ecoregion records for this exact place — the same species can be a keystone in one region and a stranger in the next.",
+    "“Native” always means native to somewhere. Your coordinates pick which regional plant list applies and pull the soil, climate, and ecoregion records for this exact place — the same species can be essential in one region and a stranger in the next.",
   "location.use": "📍 Use my location",
   "location.update": "📍 Update my location",
   "location.locating": "Locating…",
@@ -929,22 +930,30 @@ export const en = {
   // ---------------------------------------------------------------------
   // Plant card.
   // ---------------------------------------------------------------------
-  "badge.keystone": "Keystone plant",
-  "badge.keystoneTitle":
-    "A keystone plant supports far more wildlife than most — losing it would unravel the local food web.",
-  "badge.noWater": "Survives with no watering",
-  "badge.noWaterTitle":
-    "Expected to establish and survive with no watering after planting, in an average year.",
-  "badge.needsWater": "Needs water to establish",
-  "badge.petToxic": "Toxic if eaten",
+  "badge.keystone": "Essential",
+  "badge.noWater": "No watering",
+  "badge.needsWater": "Water at first",
+  "badge.petToxic": "Inedible",
   "badge.thorny": "Thorny",
-  "badge.aggressive": "Spreads — give it room",
-  "badge.deerResistant": "Deer tend to leave it alone",
+  "badge.aggressive": "Spreads",
+  "badge.deerResistant": "Deer-resistant",
+  "traits.docTitle": "Plant traits — Indigene",
+  "traits.title": "Plant traits",
+  "traits.lede": "What each label and figure on a plant's page means.",
+  "traits.group.water": "💧 Watering",
+  "traits.group.wildlife": "🦋 Wildlife",
+  "traits.group.handling": "✋ Handling",
+  "traits.group.figures": "📊 Figures",
+  "traits.noWater": "Expected to settle in and survive on rain alone after planting, in an average year.",
+  "traits.needsWater": "Needs watering after planting, until its roots take hold.",
+  "traits.keystone": "Supports far more wildlife than most plants — losing it would unravel the local food web. Ecologists call these keystone plants, after the stone that holds an arch together.",
+  "traits.deer": "Deer usually leave it alone. Not a promise: a hungry winter changes what they'll eat.",
+  "traits.toxic": "Not for eating, by people or pets — some part of it can upset a stomach or worse. Plant it where a curious dog or toddler won't graze.",
+  "traits.thorny": "Carries thorns, spines or prickles. Keep it back from paths and play areas.",
+  "traits.spreads": "Spreads by roots or seed faster than most. Give it room, or an edge it can't cross.",
   "match.good": "Good match for this spot",
   "match.ok": "Workable here",
   "match.poor": "Poor match — here's why",
-  "card.sizeCaption":
-    "Drawn to scale beside a {human} person. Eventually reaches about {height} tall and {spread} wide.",
   "card.hostSpecies": "{n} species",
   "card.sizeShort": "Grows to about {height} tall and {spread} wide.",
   "card.ecoValue": "🦋 Wildlife value {score}/100.",
@@ -955,10 +964,6 @@ export const en = {
   "card.bloomRange": "Blooms {from}–{to} ({color}).",
   "card.bloomRangeVowel": "Blooms {from}–{to} ({color}).",
   "card.foliage": "Grown for foliage, not flowers.",
-  "card.gives": "What it does for you & wildlife: ",
-  "card.needs": "What it needs from you: ",
-  "card.bloomMoisture": "Bloom & moisture: ",
-  "card.prefersSoil": "Prefers soil that's {bands}.",
   "card.confidence": "Confidence: {level}. ",
   "card.source": "Source: ",
   "card.howSure": "How sure are we? →",
@@ -1193,7 +1198,7 @@ export const en = {
   "stat.moistureWord.dry": "Dry",
   "stat.moistureWord.mesic": "Moist",
   "stat.moistureWord.wet": "Wet",
-  "stat.zones.label": "Hardy zones",
+  "stat.zones.label": "Hardiness",
   "stat.zones.sub": "USDA winter cold",
   "stat.zones.explain":
     "USDA zones measure winter's coldest night in steps of {step}. If your zone falls inside this plant's range, normal winters won't kill it — and a plant native to your area is almost always comfortably inside its home zone. No blankets, no burlap.",
@@ -1206,24 +1211,23 @@ export const en = {
   "ph.word.acidicToAlkaline": "acidic to alkaline",
   "ph.word.neutral": "around neutral",
   "stat.size.label": "Full size",
-  "stat.size.sub": "height × spread, eventually",
+  "stat.size.sub": "height × width",
   "stat.size.explain":
     "The honest eventual size from our cited records — often far bigger than a nursery tag admits. Give a native room for its mature self from day one and it will never need shearing into submission; the drawing below shows the pace year by year.",
-  "stat.year.label": "Year {n}",
-  "stat.year.value": "{height} tall",
-  "stat.year.explain":
+  "stat.growth.label": "Growth",
+  "stat.growth.sub": "{height} by year {n}",
+  "stat.growth.explain":
     "The pace comes from typical field growth at years 1, 3, 5, and 10 in this plant's cited records — not nursery-tag optimism. Site, water, and luck all shift it.",
-  "pace.quick": "quick to full size",
-  "pace.steady": "steady grower",
-  "pace.slow": "slow and long-lived",
-  "stat.host.label": "Caterpillar hosts",
+  "pace.quick": "Fast grower",
+  "pace.steady": "Steady grower",
+  "pace.slow": "Slow grower",
+  "stat.host.label": "Caterpillars",
   "stat.host.value": "{n} species",
-  "stat.host.subKeystone": "keystone plant",
+  "stat.host.subKeystone": "essential plant",
   "stat.host.subValue": "food-web value",
   "stat.host.explain":
     "How many butterfly and moth species can raise their caterpillars on this plant. Caterpillars are what nearly all baby songbirds are fed, so this is the best single measure of how much life a plant supports — and it's exactly where non-native plants score near zero.",
-  "stat.host.explainKeystone":
-    "This one is a keystone: it hosts far more species than most, and local food webs lean on it.",
+  "stat.host.explainKeystone": "This one is essential: it hosts far more species than most, and local food webs lean on it. Ecologists call it a keystone plant.",
   "stat.host.uncounted": "Not counted",
   "stat.host.uncountedSub": "no source yet",
   "stat.host.explainUncounted":
@@ -1232,7 +1236,7 @@ export const en = {
   "stat.bloom.explain":
     "When it flowers. Native bloom windows are timed to local pollinators — some bees emerge for exactly these weeks. Plant a few natives with staggered bloom times and something is serving nectar from early spring to frost.",
   "stat.foliage.value": "Foliage",
-  "stat.foliage.sub": "grown for leaves, not flowers",
+  "stat.foliage.sub": "grown for leaves",
   "stat.foliage.explain":
     "This one is grown for foliage and structure rather than flowers — and that's still wildlife value. Leaves feed caterpillars, stems shelter overwintering insects, and cover matters year-round in ways nectar alone can't.",
 
@@ -1243,7 +1247,6 @@ export const en = {
   "plant.more": "← More natives",
   "plant.backToList": "← Back to your plant list",
   "plant.backToListShort": "← Your plants",
-  "plant.sizeAria": "Size of {name} over time",
   "plant.figuresFor": "Figures for:",
   "plant.nativeTo": "📍 Native to: ",
   // The assessed-status line (`components/conservation-note.ts`). Eleven pages
@@ -1291,7 +1294,11 @@ export const en = {
   // following it does, because "#" on its own says nothing — and what it does
   // is hand you the address of that one card.
   "plant.sectionLink": "Copy a link to this section",
-  "plant.ecosystemTitle": "🦋 What it does for the ecosystem",
+  "plant.ecosystemTitle": "🦋 Ecosystem services",
+  "plant.needsTitle": "🪴 Growing needs",
+  "plant.growthTitle": "Height by year",
+  "plant.growthAria": "Height by year, beside a {human} person: {points}.",
+  "plant.growthPoint": "year {year}, {height}",
   "plant.wildlifeItBrings": "Wildlife it brings in: ",
   "plant.soleTie": "This plant is the only option {name} has — a make-or-break tie.",
   // The look-alike section. "Impostor" is deliberately about the mix-up and not
@@ -1640,10 +1647,9 @@ export const en = {
   "regionStat.wildlife.explain":
     "{n} kinds of butterflies, moths, bees, birds, and mammals with a documented, citable tie to at least one plant on this list — each counted once, whether it's a single species like the monarch or a familiar group like the acorn-caching jays. These are the notable, nameable relationships — the real total is far larger; a single oak feeds more species than anyone could list.",
   "regionStat.wildlife.more": "Browse plants by the wildlife they support →",
-  "regionStat.keystone.label": "Keystone plants",
+  "regionStat.keystone.label": "Essential plants",
   "regionStat.keystone.sub": "food webs lean on these",
-  "regionStat.keystone.explain":
-    "{n} of this region's plants are keystones — like the wedge at the crown of a stone arch, each supports far more wildlife than most, and losing one would unravel a food web far bigger than itself.",
+  "regionStat.keystone.explain": "{n} of this region's plants are essential — each supports far more wildlife than most, and losing one would unravel a food web far bigger than itself. Ecologists call them keystone plants, after the wedge at the crown of a stone arch.",
 
   // ---------------------------------------------------------------------
   // The plants index (#/plants) — every native we know, searchable.

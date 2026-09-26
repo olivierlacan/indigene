@@ -1,7 +1,7 @@
 // The "player card" stat block: a plant's key characteristics as a grid of
-// icon + label + value tiles, for people who scan rather than read. Every
-// number here also exists in prose elsewhere on the card — this is a second
-// way to read the same facts, never the only one. Emoji are the icon set (the
+// icon + label + value tiles, for people who scan rather than read. The page
+// doesn't restate these figures in prose; each tile's accessible name carries
+// its label, value and gloss in full. Emoji are the icon set (the
 // app's existing idiom, and zero dependencies); each is aria-hidden so screen
 // readers get the text label alone.
 //
@@ -169,10 +169,12 @@ function statsFor(p: Plant): Stat[] {
     },
     {
       icon: "🌱",
-      label: t("stat.year.label", { n: grown.year }),
-      value: t("stat.year.value", { height: lengthTick(grown.heightFt) }),
-      sub: paceWord(grown.heightFt, p.matureHeightFt),
-      explain: `${growthPlain(p)} ${t("stat.year.explain")}`,
+      // The pace is the figure; the height it reaches by the last snapshot
+      // qualifies it. Led by the height, this tile read as a second "Full size".
+      label: t("stat.growth.label"),
+      value: paceWord(grown.heightFt, p.matureHeightFt),
+      sub: t("stat.growth.sub", { height: lengthTick(grown.heightFt), n: grown.year }),
+      explain: `${growthPlain(p)} ${t("stat.growth.explain")}`,
     },
     p.hostLepCount === null
       ? {

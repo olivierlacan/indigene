@@ -366,7 +366,7 @@ function cardHtml({ name, latin, glyph, keystone, facts }) {
 <div class="wash"></div>
 <header>
   ${mark}<span class="wordmark">Indigene</span>
-  ${keystone ? `<span class="keystone">${keystoneSvg}Keystone</span>` : ""}
+  ${keystone ? `<span class="keystone">${keystoneSvg}Essential</span>` : ""}
 </header>
 <div class="mid">
   <div class="names">

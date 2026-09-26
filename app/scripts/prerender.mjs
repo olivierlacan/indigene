@@ -400,6 +400,10 @@ async function collectPages(load) {
     image: pageCard("crops"),
     imageAlt: "Will native plants bring pests to my yard? — the question, and what farms measured when they answered it",
   });
+  add("traits", en["traits.docTitle"], en["traits.lede"], {
+    image: pageCard("traits"),
+    imageAlt: "Plant traits — what each label and figure on a plant's page means",
+  });
 
   // The film, on a page of its own so a link to it previews as the video —
   // one address per cut, so the French one previews in French: the one place
@@ -427,7 +431,7 @@ async function collectPages(load) {
       fill(en["region.lede"], { reference: region.meta.reference }),
       {
         image: regionCard(region.meta.id),
-        imageAlt: `${region.meta.name} — its map with a few cities to place it, and how many native plants, keystones and animals it lists`,
+        imageAlt: `${region.meta.name} — its map with a few cities to place it, and how many native plants, essential plants and animals it lists`,
       }
     );
   }

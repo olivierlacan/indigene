@@ -81,6 +81,7 @@ export const fr: Dict = {
   "steps.sources": "Sources",
   "steps.about": "À propos",
   "steps.crops": "Potager",
+  "steps.traits": "Caractéristiques",
   "steps.settings": "Réglages",
   "steps.import": "Importer depuis iNaturalist",
   "steps.film": "Le film",
@@ -440,12 +441,12 @@ export const fr: Dict = {
   "explore.byWildlifeSub":
     "partez du monarque, du colibri ou de la tortue que vous espérez voir, et trouvez les plantes qui le font vivre.",
   "explore.starring": "En vedette",
-  "explore.keystoneTitle": "Plante clé de voûte — elle fait vivre bien plus d'animaux que la moyenne",
-  "explore.keystoneLabel": "Plante clé de voûte",
+  "explore.keystoneTitle": "Plante essentielle — elle fait vivre bien plus d'animaux que la moyenne",
+  "explore.keystoneLabel": "Plante essentielle",
   "explore.caterpillarSpecies": "{n} espèces de chenilles",
   "explore.statPlants": "{n} plantes indigènes sur la liste d'Indigene pour {region}",
-  "explore.statKeystone.one": "{n} plante clé de voûte — celles sur lesquelles tout le réseau alimentaire s'appuie",
-  "explore.statKeystone.other": "{n} plantes clés de voûte — celles sur lesquelles tout le réseau alimentaire s'appuie",
+  "explore.statKeystone.one": "{n} plante essentielle — celle sur laquelle tout le réseau alimentaire s'appuie",
+  "explore.statKeystone.other": "{n} plantes essentielles — celles sur lesquelles tout le réseau alimentaire s'appuie",
   "explore.statWildlife": "{n} espèces animales dont le lien avec ces plantes est documenté",
 
   // ---------------------------------------------------------------------
@@ -456,7 +457,7 @@ export const fr: Dict = {
     "Localisez-vous, puis vérifiez la carte : si le repère n'est pas là où vous êtes vraiment, faites-le glisser ou touchez le bon endroit.",
   "location.whyTitle": "Pourquoi l'endroit exact compte-t-il ?",
   "location.why":
-    "« Indigène » veut toujours dire indigène de quelque part. Vos coordonnées déterminent la liste régionale qui s'applique et vont chercher le sol, le climat et l'écorégion de cet endroit précis — la même espèce peut être une clé de voûte dans une région et une étrangère dans la suivante.",
+    "« Indigène » veut toujours dire indigène de quelque part. Vos coordonnées déterminent la liste régionale qui s'applique et vont chercher le sol, le climat et l'écorégion de cet endroit précis — la même espèce peut être essentielle dans une région et une étrangère dans la suivante.",
   "location.use": "📍 Utiliser ma position",
   "location.update": "📍 Actualiser ma position",
   "location.locating": "Localisation…",
@@ -943,22 +944,30 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   // Fiche de plante.
   // ---------------------------------------------------------------------
-  "badge.keystone": "Plante clé de voûte",
-  "badge.keystoneTitle":
-    "Une plante clé de voûte fait vivre bien plus d'animaux que la moyenne — la perdre défait tout le réseau alimentaire local.",
-  "badge.noWater": "Survit sans arrosage",
-  "badge.noWaterTitle":
-    "Devrait s'installer et survivre sans aucun arrosage après la plantation, lors d'une année normale.",
-  "badge.needsWater": "A besoin d'eau pour s'installer",
-  "badge.petToxic": "Toxique si on l'avale",
+  "badge.keystone": "Essentielle",
+  "badge.noWater": "Sans arrosage",
+  "badge.needsWater": "Arroser au début",
+  "badge.petToxic": "Non comestible",
   "badge.thorny": "Épineuse",
-  "badge.aggressive": "S'étale — laissez-lui de la place",
-  "badge.deerResistant": "Les chevreuils l'évitent en général",
+  "badge.aggressive": "S'étale",
+  "badge.deerResistant": "Peu broutée",
+  "traits.docTitle": "Caractéristiques des plantes — Indigene",
+  "traits.title": "Caractéristiques des plantes",
+  "traits.lede": "Ce que veut dire chaque étiquette et chaque chiffre de la page d'une plante.",
+  "traits.group.water": "💧 Arrosage",
+  "traits.group.wildlife": "🦋 Faune",
+  "traits.group.handling": "✋ Précautions",
+  "traits.group.figures": "📊 Chiffres",
+  "traits.noWater": "Devrait s'installer et survivre à la seule pluie après la plantation, lors d'une année normale.",
+  "traits.needsWater": "À arroser après la plantation, le temps que ses racines prennent.",
+  "traits.keystone": "Fait vivre bien plus d'animaux que la plupart des plantes — la perdre défait tout le réseau alimentaire local. Les écologues parlent de plante « clé de voûte », d'après la pierre qui tient une arche.",
+  "traits.deer": "Les chevreuils la broutent peu en général. Pas une promesse : un hiver de disette change leurs goûts.",
+  "traits.toxic": "À ne pas manger, ni pour les humains ni pour les animaux — une partie de la plante peut rendre malade. Plantez-la là où un chien curieux ou un tout-petit ne la goûtera pas.",
+  "traits.thorny": "Porte des épines ou des aiguillons. Tenez-la à l'écart des allées et des jeux.",
+  "traits.spreads": "S'étend par ses racines ou ses graines plus vite que la moyenne. Laissez-lui de la place, ou une bordure qu'elle ne franchira pas.",
   "match.good": "Bon choix pour ce lieu",
   "match.ok": "Envisageable ici",
   "match.poor": "Mauvais choix — voici pourquoi",
-  "card.sizeCaption":
-    "Dessinée à l'échelle, à côté d'une personne de {human}. Atteint à terme environ {height} de haut et {spread} de large.",
   "card.hostSpecies": "{n} espèces",
   "card.sizeShort": "Atteint à terme environ {height} de haut et {spread} de large.",
   "card.ecoValue": "🦋 Valeur écologique {score}/100.",
@@ -966,10 +975,6 @@ export const fr: Dict = {
   "card.bloomRange": "Fleurit de {from} à {to} ({color}).",
   "card.bloomRangeVowel": "Fleurit d'{from} à {to} ({color}).",
   "card.foliage": "Cultivée pour son feuillage, pas pour ses fleurs.",
-  "card.gives": "Ce qu'elle apporte, à vous et à la faune : ",
-  "card.needs": "Ce qu'elle attend de vous : ",
-  "card.bloomMoisture": "Floraison et humidité : ",
-  "card.prefersSoil": "Préfère un sol {bands}.",
   "card.confidence": "Fiabilité : {level}. ",
   "card.source": "Source : ",
   "card.howSure": "À quel point en sommes-nous sûrs ? →",
@@ -1206,7 +1211,7 @@ export const fr: Dict = {
   "stat.moistureWord.dry": "Sec",
   "stat.moistureWord.mesic": "Frais",
   "stat.moistureWord.wet": "Humide",
-  "stat.zones.label": "Zones de rusticité",
+  "stat.zones.label": "Rusticité",
   "stat.zones.sub": "froid hivernal USDA",
   "stat.zones.explain":
     "Les zones USDA découpent la nuit la plus froide de l'hiver par pas de {step}. Si votre zone tombe dans la plage de cette plante, un hiver normal ne la tuera pas — et une plante indigène de chez vous se situe presque toujours confortablement dans sa zone d'origine. Ni voile, ni paillage d'urgence.",
@@ -1218,25 +1223,24 @@ export const fr: Dict = {
   "ph.word.alkaline": "calcaire",
   "ph.word.acidicToAlkaline": "d'acide à calcaire",
   "ph.word.neutral": "proche du neutre",
-  "stat.size.label": "Taille adulte",
-  "stat.size.sub": "hauteur × largeur, à terme",
+  "stat.size.label": "Taille",
+  "stat.size.sub": "hauteur × largeur",
   "stat.size.explain":
     "La taille adulte réelle, d'après nos sources citées — souvent bien plus grande que ne l'avoue une étiquette de pépinière. Donnez à une indigène la place de son gabarit adulte dès le premier jour et vous n'aurez jamais à la tailler pour la mater ; le dessin ci-dessous montre le rythme, année par année.",
-  "stat.year.label": "An {n}",
-  "stat.year.value": "{height} de haut",
-  "stat.year.explain":
+  "stat.growth.label": "Croissance",
+  "stat.growth.sub": "{height} à {n} ans",
+  "stat.growth.explain":
     "Le rythme vient de la croissance observée sur le terrain aux années 1, 3, 5 et 10 dans les sources citées pour cette plante — pas de l'optimisme des étiquettes. Le lieu, l'eau et la chance le font varier.",
-  "pace.quick": "atteint vite sa taille",
-  "pace.steady": "croissance régulière",
-  "pace.slow": "lente et de longue vie",
-  "stat.host.label": "Chenilles hébergées",
+  "pace.quick": "Rapide",
+  "pace.steady": "Régulière",
+  "pace.slow": "Lente",
+  "stat.host.label": "Chenilles",
   "stat.host.value": "{n} espèces",
-  "stat.host.subKeystone": "plante clé de voûte",
-  "stat.host.subValue": "valeur pour le réseau alimentaire",
+  "stat.host.subKeystone": "plante essentielle",
+  "stat.host.subValue": "valeur nourricière",
   "stat.host.explain":
     "Combien d'espèces de papillons peuvent élever leurs chenilles sur cette plante. Les chenilles sont ce dont presque tous les oisillons sont nourris : c'est donc la meilleure mesure, à elle seule, de la vie qu'une plante fait vivre — et c'est exactement là que les plantes exotiques frôlent le zéro.",
-  "stat.host.explainKeystone":
-    "Celle-ci est une clé de voûte : elle héberge bien plus d'espèces que la moyenne, et les réseaux alimentaires locaux s'appuient sur elle.",
+  "stat.host.explainKeystone": "Celle-ci est essentielle : elle héberge bien plus d'espèces que la moyenne, et les réseaux alimentaires locaux s'appuient sur elle. Les écologues parlent de plante « clé de voûte ».",
   "stat.host.uncounted": "Non compté",
   "stat.host.uncountedSub": "pas encore de source",
   "stat.host.explainUncounted":
@@ -1245,7 +1249,7 @@ export const fr: Dict = {
   "stat.bloom.explain":
     "Le moment où elle fleurit. Les périodes de floraison des indigènes sont calées sur les pollinisateurs du coin — certaines abeilles n'émergent que pour ces semaines-là. Plantez quelques indigènes aux floraisons décalées et il y a du nectar du début du printemps aux gelées.",
   "stat.foliage.value": "Feuillage",
-  "stat.foliage.sub": "cultivée pour ses feuilles, pas ses fleurs",
+  "stat.foliage.sub": "pour ses feuilles",
   "stat.foliage.explain":
     "Celle-ci se cultive pour son feuillage et sa silhouette plutôt que pour ses fleurs — et cela vaut tout autant pour la faune. Les feuilles nourrissent les chenilles, les tiges abritent les insectes qui passent l'hiver, et le couvert compte toute l'année d'une façon que le nectar seul ne peut pas offrir.",
 
@@ -1256,7 +1260,6 @@ export const fr: Dict = {
   "plant.more": "← D'autres indigènes",
   "plant.backToList": "← Retour à votre liste de plantes",
   "plant.backToListShort": "← Vos plantes",
-  "plant.sizeAria": "Taille de {name} au fil du temps",
   "plant.figuresFor": "Données pour :",
   "plant.nativeTo": "📍 Indigène de : ",
   // Court, le statut en tête : « Vulnérable (G3) dans le monde. » Les termes de
@@ -1292,7 +1295,11 @@ export const fr: Dict = {
     "{name} ({latin}) — une plante indigène qui mérite d'être connue. Voyez si votre coin lui convient :",
   "plant.linkCopied": "Lien copié — collez-le où vous voulez.",
   "plant.sectionLink": "Copier un lien vers cette rubrique",
-  "plant.ecosystemTitle": "🦋 Ce qu'elle fait pour l'écosystème",
+  "plant.ecosystemTitle": "🦋 Services écosystémiques",
+  "plant.needsTitle": "🪴 Besoins de culture",
+  "plant.growthTitle": "Hauteur par année",
+  "plant.growthAria": "Hauteur par année, à côté d'une personne de {human} : {points}.",
+  "plant.growthPoint": "an {year}, {height}",
   "plant.wildlifeItBrings": "La faune qu'elle attire : ",
   "plant.soleTie": "Cette plante est le seul recours de {name} — un lien vital.",
   // Les sosies. Le mot d'ordre est le même qu'en anglais : on décrit la
@@ -1630,10 +1637,9 @@ export const fr: Dict = {
   "regionStat.wildlife.explain":
     "{n} sortes de papillons, d'abeilles, d'oiseaux et de mammifères dont le lien avec au moins une plante de cette liste est documenté et citable — chacune comptée une fois, qu'il s'agisse d'une seule espèce comme le monarque ou d'un groupe familier comme les geais amateurs de glands. Ce sont les relations remarquables et nommables : le total réel est bien plus grand, un seul chêne nourrit plus d'espèces que personne ne saurait énumérer.",
   "regionStat.wildlife.more": "Parcourir les plantes par la faune qu'elles font vivre →",
-  "regionStat.keystone.label": "Plantes clés de voûte",
+  "regionStat.keystone.label": "Plantes essentielles",
   "regionStat.keystone.sub": "les réseaux alimentaires s'appuient dessus",
-  "regionStat.keystone.explain":
-    "{n} des plantes de cette région sont des clés de voûte — comme la pierre au sommet d'une arche, chacune fait vivre bien plus d'animaux que la moyenne, et en perdre une déferait un réseau alimentaire bien plus grand qu'elle.",
+  "regionStat.keystone.explain": "{n} des plantes de cette région sont essentielles — chacune fait vivre bien plus d'animaux que la moyenne, et en perdre une déferait un réseau alimentaire bien plus grand qu'elle. Les écologues parlent de plantes « clé de voûte », comme la pierre au sommet d'une arche.",
 
   // ---------------------------------------------------------------------
   // L'index des plantes (#/plants) — toutes les indigènes, avec recherche.

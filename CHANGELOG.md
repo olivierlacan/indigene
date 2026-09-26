@@ -36,8 +36,10 @@ subtitle on the What's new page.
 - Matches: "Add sighting" on a plant in your saved spot now shows your own
   iNaturalist photos of that plant. Tap one to add it, no link to paste, so
   each season's photo lines up under the plant to show how it's growing.
-- Matches: got a planting date or count wrong? The ✏️ beside a plant in your
-  saved spot fixes it in place, and keeps the sightings linked to it.
+- Matches: got a planting date or count wrong? Tap "Edit" beside the date of a
+  plant in your saved spot to fix it, and keep the sightings linked to it.
+- Sightings of a plant show its drawing while their photos load, the way plant
+  pictures already do, instead of an empty grey square.
 - Matches: a saved spot's page can now rename the spot, or move its pin on the
   map when it landed next door. https://indigene.app/#/saved
 - Internal: the import's per-visit sightings cache moved to

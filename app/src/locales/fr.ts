@@ -314,6 +314,7 @@ export const fr: Dict = {
   "spot.confirmRemove": "Retirer {name} de ce journal ?",
   "spot.removed": "Retiré de votre journal.",
   "spot.editLabel": "Modifier {name}",
+  "spot.editToggle": "Modifier",
   "spot.editSave": "Enregistrer",
   "spot.editCancel": "Annuler",
   "spot.edited": "Enregistré.",

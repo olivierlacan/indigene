@@ -32,6 +32,7 @@ import { observationList, photoTile } from "../components/observation-ui";
 import { ownSightings, sightingsOfPlant, type OwnSighting } from "../lib/inat-import";
 import { isBusy } from "../lib/inaturalist";
 import { plantThumb, invasiveThumb } from "../components/plant-thumb";
+import { silhouetteFor } from "../components/plant-card";
 import { statTiles, type Stat } from "../components/stat-card";
 import { privacyNote } from "../components/privacy-link";
 import { sunPlain } from "../lib/plain";
@@ -95,9 +96,9 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
           toast(t("spot.renamed"));
           redraw();
         },
-      }, `✏️ ${t("spot.rename")}`),
+      }, t("spot.rename")),
       " · ",
-      el("a", { href: `#/location?move=${encodeURIComponent(spot.id)}` }, `📍 ${t("spot.move")}`),
+      el("a", { href: `#/location?move=${encodeURIComponent(spot.id)}` }, t("spot.move")),
     ]),
     countsCard(plantings, value),
     ...(value?.wildlife.length ? [feedsCard(value)] : []),
@@ -235,6 +236,18 @@ function logRow(
   // The size line joins the name beside it rather than starting a row of its
   // own under the picture: those three lines are one description of one plant.
   // The sightings below stay full width, because their thumbnails need it.
+  const setEditing = (on: boolean): void => {
+    edit.hidden = !on;
+    editToggle.setAttribute("aria-expanded", String(on));
+  };
+  const editToggle = el("button", {
+    type: "button",
+    class: "log-edit-toggle",
+    "aria-label": t("spot.editLabel", { name }),
+    "aria-expanded": "false",
+    onClick: () => setEditing(edit.hidden),
+  }, t("spot.editToggle"));
+
   const head = el("div", { class: "log-head" }, [
     plant ? plantThumb(plant.id, plant.form, { regionId }) : null,
     el("div", { class: "log-text" }, [
@@ -242,30 +255,20 @@ function logRow(
         ? el("a", { class: "log-name", href: `#/plants/${encodeURIComponent(plant.id)}` }, name)
         : el("span", { class: "log-name" }, name),
       planting.count > 1 ? el("span", { class: "log-count" }, `×${fmtNumber(planting.count)}`) : null,
-      el("div", { class: "coords" }, when),
+      // "Edit" rides the date line it edits: small, and lit while the form is open.
+      el("div", { class: "coords" }, [when, " · ", editToggle]),
       growth ? el("p", { class: "log-growth" }, growth) : null,
     ]),
-    el("div", { class: "log-actions" }, [
-      el("button", {
-        class: "btn btn-ghost log-remove",
-        "aria-label": t("spot.removeLabel", { name }),
-        onClick: async () => {
-          if (!confirm(t("spot.confirmRemove", { name }))) return;
-          await deletePlanting(planting.id);
-          toast(t("spot.removed"));
-          redraw();
-        },
-      }, "🗑"),
-      el("button", {
-        class: "btn btn-ghost log-remove",
-        "aria-label": t("spot.editLabel", { name }),
-        "aria-expanded": "false",
-        onClick: (e: Event) => {
-          edit.hidden = !edit.hidden;
-          (e.currentTarget as HTMLElement).setAttribute("aria-expanded", String(!edit.hidden));
-        },
-      }, "✏️"),
-    ]),
+    el("button", {
+      class: "btn btn-ghost log-remove",
+      "aria-label": t("spot.removeLabel", { name }),
+      onClick: async () => {
+        if (!confirm(t("spot.confirmRemove", { name }))) return;
+        await deletePlanting(planting.id);
+        toast(t("spot.removed"));
+        redraw();
+      },
+    }, "🗑"),
   ]);
 
   // Fixing a wrong date or count in place, rather than deleting the row and
@@ -284,12 +287,12 @@ function logRow(
     ...fields.nodes,
     el("div", { class: "btn-row" }, [
       el("button", { class: "btn btn-primary", type: "submit" }, t("spot.editSave")),
-      el("button", { class: "btn btn-ghost", type: "button", onClick: () => { edit.hidden = true; } }, t("spot.editCancel")),
+      el("button", { class: "btn btn-ghost", type: "button", onClick: () => setEditing(false) }, t("spot.editCancel")),
     ]),
   ]) as HTMLFormElement;
 
   const row = el("li", { class: "log-item" }, [head, edit]);
-  row.append(sightingsBlock(planting, name, redraw));
+  row.append(sightingsBlock(planting, name, plant?.form, redraw));
   return row;
 }
 
@@ -346,7 +349,7 @@ function invasivesCard(spot: SavedSpot, redraw: () => void): HTMLElement {
  * and credit every other iNaturalist photo in the app gets — the gardener's own
  * sighting is somebody's licensed work too, even when that somebody is them.
  */
-function sightingsBlock(planting: Planting, name: string, redraw: () => void): HTMLElement {
+function sightingsBlock(planting: Planting, name: string, plantForm: string | undefined, redraw: () => void): HTMLElement {
   const block = el("div", { class: "log-sightings" });
   const gallery = el("div", { "aria-live": "polite" });
   block.append(gallery);
@@ -369,7 +372,7 @@ function sightingsBlock(planting: Planting, name: string, redraw: () => void): H
       const shown = rows.map((r) => r.observation).filter((o): o is NonNullable<typeof o> => Boolean(o));
       shown.forEach((o) => resolved.add(String(o.id)));
       clear(gallery);
-      if (shown.length) gallery.append(observationList(shown, name));
+      if (shown.length) gallery.append(observationList(shown, name, plantForm));
       // A reference that answered with nothing showable still keeps its link:
       // the observation may be photo-less, licensed all-rights-reserved, or
       // just unreachable right now, and dropping the gardener's own record of
@@ -462,7 +465,7 @@ function sightingsBlock(planting: Planting, name: string, redraw: () => void): H
       if (form.hidden) return;
       if (!asked) {
         asked = true;
-        void fillPicker(picker, planting, name, link);
+        void fillPicker(picker, planting, name, plantForm, link);
       }
       // With a linked account the picker is the way in; the field is the
       // fallback, and a keyboard popping up over the photos would hide them.
@@ -484,6 +487,7 @@ async function fillPicker(
   picker: HTMLElement,
   planting: Planting,
   name: string,
+  form: string | undefined,
   link: (ref: string) => Promise<void>
 ): Promise<void> {
   const login = linkedLogin();
@@ -521,10 +525,11 @@ async function fillPicker(
           void link(String(s.id));
         },
       }, [
-        el("span", { class: "obs-tile" }, [
-          s.photo
-            ? photoTile(s.photo.thumbUrl, t("obs.photoAlt", { name, observer: login }))
-            : el("span", { class: "log-obs-pick-blank", "aria-hidden": "true" }, "🖼️"),
+        // The plant's drawing holds the square while the photo loads, and
+        // stays as the picture for a sighting with no licensed photo.
+        el("span", { class: "obs-tile obs-tile-drawn" }, [
+          silhouetteFor(form ?? "shrub"),
+          s.photo ? photoTile(s.photo.thumbUrl, t("obs.photoAlt", { name, observer: login })) : null,
         ]),
         el("span", { class: "log-obs-pick-date", "aria-hidden": "true" }, date),
       ]);

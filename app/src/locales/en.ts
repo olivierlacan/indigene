@@ -293,6 +293,7 @@ export const en = {
   "spot.confirmRemove": "Remove {name} from this log?",
   "spot.removed": "Removed from your log.",
   "spot.editLabel": "Edit {name}",
+  "spot.editToggle": "Edit",
   "spot.editSave": "Save",
   "spot.editCancel": "Cancel",
   "spot.edited": "Saved.",

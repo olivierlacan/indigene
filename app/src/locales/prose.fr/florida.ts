@@ -23,29 +23,29 @@ export const FLORIDA: ProseTable = {
     nativeNote:
       "Le chêne persistant à large couronne emblématique des hammocks de Floride — ces îlots de forêt dense et humide — et des vieilles avenues.",
     careNote:
-      "Donnez-lui de la vraie place — sa couronne s'étale bien plus large que haute, et un chêne de Virginie adulte est un voisin pour la vie. Ferme au vent et à l'épreuve de la sécheresse une fois installé ; l'un des arbres d'ombre les plus résistants aux ouragans.",
+      "Donnez-lui de la vraie place — sa couronne s'étale bien plus large que haute, et un chêne de Virginie adulte est un voisin pour la vie. Résistant au vent et à la sécheresse une fois installé ; l'un des arbres d'ombre les plus résistants aux ouragans.",
     givesNote:
       "Le meilleur arbre pour la faune de Floride : des centaines d'espèces de chenilles, des glands pour les geais, les pics, les dindons sauvages et les écureuils, un abri persistant, et des branches qui deviennent des jardins de fougère de résurrection, de broméliacées et de mousse espagnole.",
     propagationNote:
-      "Ramassez les glands frais à l'automne et semez-les aussitôt — un gland de chêne de Virginie veut germer immédiatement et n'a aucun besoin de passer par le froid. Mettez-les dans l'eau et jetez ceux qui flottent, gardez ceux qui coulent, et ne les laissez jamais sécher. Il descend tôt une racine pivotante profonde : démarrez-le là où il restera.",
+      "Ramassez les glands frais à l'automne et semez-les aussitôt — un gland de chêne de Virginie germe aussitôt et n'a aucun besoin de passer par le froid. Mettez-les dans l'eau et jetez ceux qui flottent, gardez ceux qui coulent, et ne les laissez jamais sécher. Il descend tôt une racine pivotante profonde : démarrez-le là où il restera.",
     supportNotes: {
       "acorn-birds":
         "Les glands du chêne de Virginie nourrissent geais, dindons sauvages, pics et canards hivernants.",
       "acorn-mammals":
-        "Un arbre à glands de première importance pour les écureuils, les chevreuils et d'autres mammifères.",
+        "Un arbre à glands de première importance pour les écureuils, les cerfs de Virginie et d'autres mammifères.",
     },
   },
   "Pinus palustris": {
     supportNotes: {
       "brown-headed-nuthatch":
-        "La sittelle à tête brune vit dans le pin des marais et presque nulle part ailleurs — elle fouille l'écorce à la recherche d'insectes et creuse son nid dans un chicot mort. Laissez le bois mort debout et vous gardez l'oiseau.",
+        "La sittelle à tête brune vit dans le pin des marais et presque nulle part ailleurs — elle fouille l'écorce à la recherche d'insectes et creuse son nid dans un chicot mort. Laissez le bois mort sur pied et vous gardez l'oiseau.",
       "acorn-birds":
         "Les dindons sauvages travaillent le sol sous les pins pour la graine tombée, et les pics travaillent les troncs au-dessus.",
     },
     nativeNote:
       "Le pin clé de voûte des collines sableuses et des flatwoods à pin des marais — ces pinèdes plates du bas pays — un milieu menacé qui couvrait autrefois une grande partie de la Floride.",
     careNote:
-      "Il passe ses premières années au ras du sol, en « stade herbe », avant de partir en flèche — c'est normal, ce n'est pas un plant rabougri. Il veut un sol sableux, bien drainé, et le plein soleil ; il est adapté au feu. Très résistant à la sécheresse et au vent une fois installé.",
+      "Il passe ses premières années au ras du sol, en « stade herbe », avant de partir en flèche — c'est normal, ce n'est pas un plant rabougri. Il demande un sol sableux, bien drainé, et le plein soleil ; il est adapté au feu. Très résistant à la sécheresse et au vent une fois installé.",
     givesNote:
       "La fondation de l'écosystème à pin des marais : des graines et un couvert pour les oiseaux et les tortues gaufrées, des centaines de chenilles sur les pins, et un houppier ouvert et ensoleillé qui laisse prospérer un couvre-sol d'une grande diversité en dessous.",
     propagationNote:
@@ -68,14 +68,14 @@ export const FLORIDA: ProseTable = {
   "Magnolia grandiflora": {
     supportNotes: {
       "eastern-carpenter-bee":
-        "Une fleur de magnolia est un dessin très ancien — pas de guides de nectar, pas de piste d'atterrissage, juste une coupe de pollen. Les gros coléoptères pataud et les xylocopes sont exactement ce pour quoi elle a évolué.",
+        "Une fleur de magnolia est une conception très ancienne — pas de guides de nectar, pas de piste d'atterrissage, juste une coupe de pollen. Les gros coléoptères patauds et les xylocopes sont exactement ce pour quoi elle a évolué.",
       "acorn-mammals":
         "Le cône s'ouvre à l'automne pour suspendre ses graines écarlates au bout de fils, et les écureuils gris et fauves viennent les chercher.",
     },
     nativeNote:
       "Le feuillu persistant des hammocks et des coteaux du nord et du centre de la Floride.",
     careNote:
-      "Persistant et résistant à la sécheresse une fois installé. Il perd des feuilles toute l'année : il est donc plus heureux avec la place de garder sa jupe de branches basses que remonté au-dessus d'une pelouse.",
+      "Persistant et résistant à la sécheresse une fois installé. Il perd des feuilles toute l'année : il se plaît donc davantage avec sa jupe de branches basses qu'avec la couronne relevée au-dessus d'une pelouse.",
     givesNote:
       "D'énormes fleurs au parfum de citron pollinisées par les coléoptères et les abeilles, des graines rouges que mangent oiseaux et écureuils, et un couvert persistant dense avec des sites de nidification.",
     propagationNote:
@@ -84,7 +84,7 @@ export const FLORIDA: ProseTable = {
   "Sabal palmetto": {
     supportNotes: {
       "berry-songbirds":
-        "Un palmier de Floride en fruit est une mangeoire de la taille d'un arbre — merles américains, moqueurs-chats, moqueurs polyglottes et viréos prennent les drupes noires pendant des semaines.",
+        "Un palmier de Floride en fruit est une mangeoire de la taille d'un arbre — merles d'Amérique, moqueurs chats, moqueurs polyglottes et viréos prennent les drupes noires pendant des semaines.",
       "cedar-waxwing":
         "Les bandes de jaseurs se posent dans un palmier en fruit et vident l'équivalent d'une palme de drupes en quelques minutes.",
       "acorn-mammals":
@@ -118,7 +118,7 @@ export const FLORIDA: ProseTable = {
     nativeNote:
       "Petit arbre indigène à floraison des lisières boisées du nord et du centre de la Floride.",
     careNote:
-      "Un petit arbre facile pour une exposition mi-ombragée et une humidité moyenne — une bonne alternative indigène aux ornementaux exotiques. Un peu d'eau pendant les périodes sèches le temps qu'il s'installe.",
+      "Un petit arbre facile pour une exposition mi-ombragée et une humidité moyenne — une bonne alternative indigène aux plantes ornementales exotiques. Un peu d'eau pendant les périodes sèches le temps qu'il s'installe.",
     givesNote:
       "Des nuages de fleurs blanches parfumées, en fines franges, au printemps pour les abeilles ; les pieds femelles portent des fruits bleus que les oiseaux dépouillent rapidement.",
     propagationNote:
@@ -132,7 +132,7 @@ export const FLORIDA: ProseTable = {
     nativeNote:
       "Le palmier de sous-bois qui définit le scrub — cette broussaille sableuse basse — les flatwoods et les lisières de hammock de Floride : l'une des plantes les plus importantes de l'État pour la faune.",
     careNote:
-      "À peu près aussi robuste qu'une plante de Floride peut l'être — à l'épreuve de la sécheresse, du feu, du sel et des ouragans, extrêmement longévif, et heureux au soleil comme à l'ombre. Très lent, et difficile à transplanter une fois installé : partez d'un petit plant et choisissez sa place pour de bon. Les pétioles portent de fines dents (d'où le « saw » de son nom anglais).",
+      "À peu près aussi robuste qu'une plante de Floride peut l'être — résistant à la sécheresse, au feu, au sel et aux ouragans, extrêmement longévif, et à l'aise au soleil comme à l'ombre. Très lent, et difficile à transplanter une fois installé : partez d'un petit plant et choisissez sa place pour de bon. Les pétioles portent de fines dents (d'où le « saw » de son nom anglais).",
     givesNote:
       "L'une des meilleures plantes de Floride pour la faune : ses fleurs précoces sont une source de nectar de premier ordre (le fameux miel de palmetto), ses fruits nourrissent ours, tortues gaufrées, oiseaux et bien d'autres, et ses touffes denses abritent d'innombrables petits animaux.",
     propagationNote:
@@ -175,7 +175,7 @@ export const FLORIDA: ProseTable = {
     careNote:
       "Elle aime la chaleur, le soleil et un sol sec à moyen, et fleurit presque toute l'année dans les zones sans gel. Au nord de la zone 9b environ, elle disparaît au gel et repart des racines — traitez-la là comme une grande vivace. Exigez la vraie espèce indigène.",
     givesNote:
-      "Une usine à nectar sans arrêt : ses fleurs tubulaires rouge-orangé nourrissent les colibris, les Heliconius charithonia, les Agraulis vanillae et les coliades du printemps à l'automne, et ses baies sombres nourrissent les oiseaux.",
+      "Une source de nectar intarissable : ses fleurs tubulaires rouge-orangé nourrissent les colibris, les Heliconius charithonia, les Agraulis vanillae et les coliades du printemps à l'automne, et ses baies sombres nourrissent les oiseaux.",
     propagationNote:
       "La voie la plus simple est la bouture — coupez pendant les mois chauds une pousse tendre ou tout juste aoûtée et elle s'enracine volontiers. Vous pouvez aussi presser la graine des baies sombres mûres et la semer au chaud. Prenez vos boutures sur un pied dont vous savez qu'il est la vraie indigène, pas un « dwarf firebush » de pépinière.",
     supportNotes: {
@@ -190,7 +190,7 @@ export const FLORIDA: ProseTable = {
         tells: [
           { feature: "Fleurs", native: "De longs tubes étroits, rouge-orangé sur toute leur longueur, en bouquets unilatéraux.", lookalike: "Des tubes plus courts et plus larges, jaune-orangé à rouge pâle." },
           { feature: "Feuilles et tiges", native: "Doucement velues, en général par verticilles de trois, à pétioles rouges et pousses neuves rouges.", lookalike: "Lisses et luisantes, en général par paires, à pétioles verts." },
-          { feature: "Port", native: "Grande et lâche — elle veut devenir un petit arbre.", lookalike: "Basse, dense et nette ; souvent étiquetée « dwarf firebush »." },
+          { feature: "Port", native: "Grande et lâche — elle tend à devenir un petit arbre.", lookalike: "Basse, dense et nette ; souvent étiquetée « dwarf firebush »." },
           { feature: "Ce qu'elle apporte", native: "La plante sur laquelle sont recensés les Heliconius charithonia, le sphinx Xylophanes pluto et les colibris de Floride.", lookalike: "Du nectar — mais pas ces observations." },
         ],
       },
@@ -248,19 +248,19 @@ export const FLORIDA: ProseTable = {
     nativeNote:
       "Fleur sauvage indigène des lisières de hammock et des sols remaniés de Floride ; elle fleurit presque toute l'année.",
     careNote:
-      "Facile, résistante à la sécheresse et se ressemant seule — une vivace de courte vie qui s'entretient par la graine : laissez-en donc quelques-unes monter. Rabattez les pieds dégingandés pour les rafraîchir. Du soleil à l'ombre légère.",
+      "Facile, résistante à la sécheresse et se ressemant seule — une vivace de courte vie qui s'entretient par la graine : laissez-en donc quelques-unes monter. Rabattez les pieds dégarnis pour les faire repartir. Du soleil à l'ombre légère.",
     givesNote:
-      "Ses fleurs rouges, presque toute l'année, nourrissent les colibris et les papillons et sont une préférée des bourdons ; une valeur sûre en nectar, sans souci.",
+      "Ses fleurs rouges, presque toute l'année, nourrissent les colibris et les papillons et comptent parmi les préférées des bourdons ; une valeur sûre en nectar, sans souci.",
     propagationNote:
-      "L'une des fleurs sauvages les plus simples à cultiver — répandez la graine sur une terre chaude et elle lève sans peine, puis se ressème dans tout le jardin dès qu'elle est heureuse. Une pousse tendre coupée et plantée en terre s'enracine aussi en un rien de temps.",
+      "L'une des fleurs sauvages les plus simples à cultiver — répandez la graine sur une terre chaude et elle lève sans peine, puis se ressème dans tout le jardin dès qu'elle se plaît. Une pousse tendre coupée et plantée en terre s'enracine aussi en un rien de temps.",
     supportNotes: {
       "ruby-throated-hummingbird":
-        "Ses fleurs tubulaires écarlates fleurissent presque toute l'année en Floride — un carburant à colibris fiable.",
+        "Ses fleurs tubulaires écarlates fleurissent presque toute l'année en Floride — une ressource sûre pour les colibris.",
     },
   },
   "Coreopsis leavenworthii": {
     nativeNote:
-      "Un coréopsis à tendance endémique de Floride, des flatwoods frais, des fossés et des bords de route ; les Coreopsis sont la fleur emblème de l'État.",
+      "Un coréopsis quasi endémique de Floride, des flatwoods frais, des fossés et des bords de route ; les Coreopsis sont la fleur emblème de l'État.",
     careNote:
       "Une vivace de courte vie qu'il vaut mieux traiter comme une fleur sauvage qui se ressème — laissez-la grener et elle continuera dans un emplacement ensoleillé, frais à moyen. Idéale pour une prairie ou une plantation de fossé.",
     givesNote:
@@ -296,7 +296,7 @@ export const FLORIDA: ProseTable = {
     careNote:
       "Elle prospère sur un terrain chaud, sec et sableux en plein soleil. Vivace de courte vie qui se ressème pour persister ; donnez-lui une bonne circulation d'air. Ce sont ses bractées roses étagées qui font le spectacle, pas les petites fleurs.",
     givesNote:
-      "Une plante à pollinisateurs exceptionnelle — ses fleurs mouchetées inhabituelles et ses bractées roses attirent une gamme énorme d'abeilles indigènes, de guêpes et de papillons sur un sol pauvre et sec où presque rien d'autre ne fleurit.",
+      "Une plante à pollinisateurs exceptionnelle — ses fleurs mouchetées inhabituelles et ses bractées roses attirent une grande diversité d'abeilles indigènes, de guêpes et de papillons sur un sol pauvre et sec où presque rien d'autre ne fleurit.",
     propagationNote:
       "Facile de semis — pressez la graine minuscule sur une terre chaude sans la couvrir, puisqu'il lui faut de la lumière, et elle se ressèmera pour revenir. Vous pouvez aussi diviser une touffe installée au printemps pour en faire plus.",
     supportNotes: {
@@ -308,7 +308,7 @@ export const FLORIDA: ProseTable = {
     nativeNote:
       "Graminée indigène en touffe des flatwoods, des prairies et des stations littorales de Floride, célèbre pour sa brume rose d'automne.",
     careNote:
-      "Robuste, à l'épreuve du sel et de la sécheresse, et la plus heureuse en plein soleil sur un sol bien drainé — elle ne demande ni eau, ni tonte, ni engrais une fois installée. Rabattez-la une fois en fin d'hiver.",
+      "Robuste, résistante au sel et à la sécheresse, et au mieux en plein soleil sur un sol bien drainé — elle ne demande ni eau, ni tonte, ni engrais une fois installée. Rabattez-la une fois en fin d'hiver.",
     givesNote:
       "Des nuages aériens de panicules roses à l'automne, des graines et un couvert pour les petits oiseaux, et des racines denses qui tiennent un sol sableux ou en train de s'éroder ; elle abrite les abeilles nichant au sol et héberge des hespéries.",
     propagationNote:
@@ -356,9 +356,9 @@ export const FLORIDA: ProseTable = {
     nativeNote:
       "Couvre-sol indigène bas des bords de route, des champs et des terrains ouverts de Floride — une alternative indigène au gazon.",
     careNote:
-      "Un tapis vivant robuste, rapide et à l'épreuve de la sécheresse pour le plein soleil, qui supporte un piétinement léger et ne demande presque aucune tonte — un excellent remplacement de pelouse. Il s'étend vigoureusement par stolons : donnez-lui de la place ou une bordure. Ses feuilles se replient quand on les touche.",
+      "Un tapis vivant robuste, rapide et résistant à la sécheresse pour le plein soleil, qui supporte un piétinement léger et ne demande presque aucune tonte — un excellent remplacement de pelouse. Il s'étend vigoureusement par stolons : donnez-lui de la place ou une bordure. Ses feuilles se replient quand on les touche.",
     givesNote:
-      "Il fixe son propre azote, retient le sol contre l'érosion, et se couvre de fleurs roses en pompons qui nourrissent les abeilles et hébergent les petites coliades et les hespéries — une pelouse qui travaille vraiment pour la faune.",
+      "Il fixe son propre azote, retient le sol contre l'érosion, et se couvre de fleurs roses en pompons qui nourrissent les abeilles et hébergent les petites coliades et les hespéries — une pelouse vraiment utile à la faune.",
     propagationNote:
       "Étant une légumineuse, sa graine a un tégument dur — entaillez-la ou grattez-la et faites-la tremper une nuit avant de semer au chaud, elle lèvera bien mieux. Plus simple encore : ce tapis s'étend par des stolons qui s'enracinent en chemin, vous pouvez donc soulever et mettre en pot les morceaux enracinés.",
   },
@@ -366,11 +366,11 @@ export const FLORIDA: ProseTable = {
     nativeNote:
       "Tournesol indigène rampant des dunes, des plages et des ouvertures sableuses de Floride.",
     careNote:
-      "Fait pour les emplacements les plus rudes — ensoleillés, sableux, salés, secs : il lui faut le plein soleil et un drainage franc, et il pourrit dans une terre riche ou humide. Un couvre-sol de courte vie qui se ressème librement et se renouvelle par la graine ; taillez-le pour le rafraîchir.",
+      "Fait pour les emplacements les plus rudes — ensoleillés, sableux, salés, secs : il lui faut le plein soleil et un sol parfaitement drainé, et il pourrit dans une terre riche ou humide. Un couvre-sol de courte vie qui se ressème librement et se renouvelle par la graine ; taillez-le pour le faire repartir.",
     givesNote:
       "Ses marguerites jaunes, presque toute l'année, nourrissent les abeilles indigènes et les papillons, ses graines nourrissent les fringilles, et son tapis rampant tient la dune et les sols sableux contre l'érosion ; il héberge la belle-dame et d'autres chenilles.",
     propagationNote:
-      "Enfantin de semis — pressez la graine sur une terre chaude et sableuse sans l'enterrer, puisqu'elle veut de la lumière, et elle se ressèmera librement ensuite. Les boutures de pousses tendres s'enracinent aussi vite si vous voulez un carré immédiat.",
+      "Enfantin de semis — pressez la graine sur une terre chaude et sableuse sans l'enterrer, puisqu'il lui faut de la lumière, et elle se ressèmera librement ensuite. Les boutures de pousses tendres s'enracinent aussi vite si vous voulez un tapis tout de suite.",
     supportNotes: {
       "sunflower-specialist-bees":
         "Un vrai tournesol — une source de pollen clé de voûte pour les abeilles spécialistes des astéracées.",
@@ -387,19 +387,19 @@ export const FLORIDA: ProseTable = {
     nativeNote:
       "Indigène dans toute la Floride, dans les marécages, les plaines inondables et les bois frais — l'érable le plus répandu de l'État.",
     careNote:
-      "Rapide et adaptable ; il adore les terrains frais et tolère les pieds mouillés, ce qui en fait l'arbre idéal d'un point bas et humide. Arrosez-le le temps qu'il s'installe sur un site plus sec.",
+      "Rapide et adaptable ; il adore les terrains frais et tolère les sols gorgés d'eau, ce qui en fait l'arbre idéal d'un point bas et humide. Arrosez-le le temps qu'il s'installe sur un site plus sec.",
     givesNote:
       "Ses fleurs rouges s'ouvrent au cœur de l'hiver floridien — le premier nectar et le premier pollen de l'année — ses graines nourrissent les oiseaux, et il héberge des centaines de chenilles.",
     propagationNote:
-      "Ses petites graines ailées en « hélicoptère » mûrissent au printemps — attrapez-les quand elles brunissent et semez-les aussitôt. L'érable rouge est le facile : sa graine de printemps lève en quelques jours dans une terre chaude, sans aucun froid nécessaire.",
+      "Ses petites graines ailées en « hélicoptère » mûrissent au printemps — attrapez-les quand elles brunissent et semez-les aussitôt. L'érable rouge est le plus facile : sa graine de printemps lève en quelques jours dans une terre chaude, sans aucun froid nécessaire.",
   },
   "Asclepias tuberosa@florida-central": {
     nativeNote:
-      "Asclépiade indigène des collines sableuses bien drainées et des bords de route de Floride — une alternative indigène à l'asclépiade tropicale exotique vendue en magasin.",
+      "Asclépiade indigène des collines sableuses bien drainées et des bords de route de Floride — une alternative indigène à l'asclépiade tropicale exotique vendue en jardinerie.",
     careNote:
-      "Elle veut le plein soleil et un drainage franc (une terre sableuse) et supporte mal les pieds mouillés comme d'être déplacée — une racine pivotante profonde la met à l'épreuve de la sécheresse mais la rend définitive : plantez-la pour qu'elle reste. Lente à sortir au printemps. Sa sève est toxique si on l'avale. Préférez-la à l'asclépiade tropicale exotique, qui perturbe la migration des monarques en Floride.",
+      "Elle demande le plein soleil et un sol parfaitement drainé (une terre sableuse), et craint l'excès d'eau comme d'être déplacée — une racine pivotante profonde la rend résistante à la sécheresse mais impossible à déplacer : plantez-la pour qu'elle reste. Lente à sortir au printemps. Sa sève est toxique si on l'avale. Préférez-la à l'asclépiade tropicale exotique, qui perturbe la migration des monarques en Floride.",
     givesNote:
-      "Une plante nourricière des chenilles du monarque et du Danaus gilippus, et un aimant pour tous les papillons et toutes les abeilles indigènes, sur un pied net et bien élevé.",
+      "Une plante nourricière des chenilles du monarque et du Danaus gilippus, et un aimant pour tous les papillons et toutes les abeilles indigènes, sur un pied net et peu envahissant.",
     propagationNote:
       "Partez de la graine — sa racine pivotante profonde supporte mal d'être déterrée ou divisée, n'essayez donc pas de la diviser. Semez à l'automne, ou donnez à la graine quelques semaines de froid humide au réfrigérateur avant un semis de printemps, et plantez les jeunes plants là où ils resteront pour de bon.",
     supportNotes: {
@@ -434,7 +434,7 @@ export const FLORIDA: ProseTable = {
     nativeNote:
       "L'arbre emblématique des hammocks du sud de la Floride, à l'écorce rouge qui pèle (l'« arbre du touriste »).",
     careNote:
-      "Rapide, tolérant à la sécheresse et au sel, et réputé ferme au vent — il perd des branches plutôt que de basculer dans les tempêtes, et même de grosses branches coupées s'enracinent en poteaux de clôture vivants. Strictement hors gel (zone 10+) ; une forte gelée le tue en partie.",
+      "Rapide, tolérant à la sécheresse et au sel, et réputé résistant au vent — il perd des branches plutôt que de basculer dans les tempêtes, et même de grosses branches coupées s'enracinent en poteaux de clôture vivants. Strictement hors gel (zone 10+) ; une forte gelée le tue en partie.",
     givesNote:
       "Des fruits rouges que les oiseaux migrateurs et sédentaires dépouillent rapidement, l'ombre du hammock et une résistance aux ouragans, et le rôle de plante nourricière de l'Eunica monima.",
     propagationNote:
@@ -444,7 +444,7 @@ export const FLORIDA: ProseTable = {
     nativeNote:
       "Arbre-arbuste littoral emblématique des plages et des dunes du sud de la Floride.",
     careNote:
-      "Fait pour le littoral le plus rude — battu de sel, sableux, ensoleillé — et suprêmement tolérant au sel et à la sécheresse. Sensible au gel (zone 10+). Taillez-le en arbre ou gardez-le en écran ; notez qu'il est protégé par la réglementation sur les dunes littorales dans beaucoup d'endroits.",
+      "Fait pour le littoral le plus rude — battu de sel, sableux, ensoleillé — et extrêmement tolérant au sel et à la sécheresse. Sensible au gel (zone 10+). Taillez-le en arbre ou gardez-le en écran ; notez qu'il est protégé par la réglementation sur les dunes littorales dans beaucoup d'endroits.",
     givesNote:
       "De grandes feuilles rondes et coriaces qui cuirassent une dune contre l'érosion, des fruits pourpres en grappes de raisin pour les oiseaux (et pour la gelée), et du nectar pour les abeilles.",
     propagationNote:
@@ -473,12 +473,12 @@ export const FLORIDA: ProseTable = {
       "grass-skippers":
         "Les petites fleurs en cône du palétuvier gris sont travaillées par les hespéries de la mangrove et des hammocks et par les grands papillons-dagues — les papillons de la frange côtière.",
       "berry-songbirds":
-        "Les passerins nonpareils prennent les têtes de graines, et le houppier dense et tolérant au sel est un couvert de nidification là où presque rien ne pousse.",
+        "Les passerins nonpareils prennent les capitules en graines, et le houppier dense et tolérant au sel est un couvert de nidification là où presque rien ne pousse.",
     },
     nativeNote:
       "Arbre littoral des rivages du sud de la Floride, compagnon des palétuviers.",
     careNote:
-      "Exceptionnellement tolérant au sel, à la sécheresse et au vent — un choix de premier ordre pour un emplacement littoral difficile, en arbre, en haie ou en écran. Hors gel (zone 10+). (Le « buttonwood argenté » exotique est une variété de cette espèce ; c'est la forme sauvage verte qui a la plus grande valeur pour la faune.)",
+      "Exceptionnellement tolérant au sel, à la sécheresse et au vent — un choix de premier ordre pour un emplacement littoral difficile, en arbre, en haie ou en écran. Hors gel (zone 10+). (La forme argentée exotique est une variété de cette espèce ; c'est la forme sauvage verte qui a la plus grande valeur pour la faune.)",
     givesNote:
       "Des capitules en boutons et un couvert dense pour les oiseaux et les pollinisateurs du littoral, avec des racines qui cuirassent un rivage contre l'érosion.",
     propagationNote:
@@ -522,7 +522,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Des fleurs blanches pour les papillons et les abeilles indigènes, puis des baies rouges dont se nourrissent les moqueurs, les cardinaux et les parulines, tout cela à l'ombre sèche où presque rien d'autre ne prospère.",
     propagationNote:
-      "Pressez la graine des fruits rouges mûrs, lavez-en la pulpe, et semez-la fraîche et au chaud — elle perd vite sa vie si on la laisse sécher. Le Psychotria nervosa s'enracine aussi volontiers de boutures de pousses tendres ou tout juste aoûtées prises pendant les mois chauds.",
+      "Pressez la graine des fruits rouges mûrs, lavez-en la pulpe, et semez-la fraîche et au chaud — elle perd vite sa faculté germinative si on la laisse sécher. Le Psychotria nervosa s'enracine aussi volontiers de boutures de pousses tendres ou tout juste aoûtées prises pendant les mois chauds.",
     supportNotes: {
       "berry-songbirds":
         "Les baies rouges du Psychotria nervosa sont prélevées par les moqueurs, les cardinaux et les moqueurs chats ; ses fleurs nourrissent les papillons.",
@@ -547,7 +547,7 @@ export const FLORIDA: ProseTable = {
     nativeNote:
       "Arbuste littoral du sud de la Floride — plantez la variété indigène de Floride, truncata, et non la forme exotique duveteuse.",
     careNote:
-      "Un arbuste littoral à l'épreuve du sel et de la sécheresse, pour le plein soleil, qui fleurit une grande partie de l'année ; il fixe son propre azote. Hors gel (zone 10+). Choisissez la var. truncata indigène, à feuilles lisses ; les graines sont toxiques si on les avale.",
+      "Un arbuste littoral résistant au sel et à la sécheresse, pour le plein soleil, qui fleurit une grande partie de l'année ; il fixe son propre azote. Hors gel (zone 10+). Choisissez la var. truncata indigène, à feuilles lisses ; les graines sont toxiques si on les avale.",
     givesNote:
       "Des chaînes pendantes de fleurs jaunes en pois nourrissent les colibris et les abeilles presque toute l'année, et il héberge le Leptotes cassius et d'autres papillons.",
     propagationNote:
@@ -559,7 +559,7 @@ export const FLORIDA: ProseTable = {
     careNote:
       "Extrêmement robuste, lente et longévive — elle prend le soleil ou l'ombre, la sécheresse, le sel et les sols calcaires pauvres une fois installée. D'aspect de fougère mais c'est une cycadée ; toutes ses parties sont toxiques si on les avale. Elle est au mieux dans le sud de la Floride, son aire d'origine.",
     givesNote:
-      "La seule plante nourricière des chenilles du rare Eumaeus atala — planter cette Zamia a ramené ce papillon du bord de l'extinction locale — plus un arbuste-couvre-sol persistant, architectural et à l'épreuve de la sécheresse.",
+      "La seule plante nourricière des chenilles du rare Eumaeus atala — planter cette Zamia a ramené ce papillon du bord de l'extinction locale — plus un arbuste-couvre-sol persistant, architectural et résistant à la sécheresse.",
     propagationNote:
       "La Zamia est une cycadée qui ne se cultive que par semis — pas de bouture, pas de division. Elle a des pieds mâles et femelles séparés, et seules les femelles pollinisées font les gros cônes de graines orange. Avec des gants (la graine est toxique), retirez l'enveloppe charnue, faites tremper ou grattez légèrement la graine, et semez-la fraîche et au chaud. C'est très lent : ne perdez pas courage.",
     supportNotes: {
@@ -568,7 +568,7 @@ export const FLORIDA: ProseTable = {
     },
     lookalikeNotes: {
       "cycas-revoluta": {
-        why: "Deux cycadées à la même rosette raide, d'allure de palmier — et le cycas du Japon est dans un jardin de devant sur deux en Floride.",
+        why: "Deux cycadées à la même rosette raide, d'allure de palmier — et le cycas du Japon pousse devant une maison sur deux en Floride.",
         tells: [
           { feature: "Folioles", native: "Plates et à bord souple, arrondies ou légèrement échancrées au bout ; on peut y passer la main.", lookalike: "Raides, enroulées sur les bords et acérées comme des aiguilles au bout — elles font saigner." },
           { feature: "Où est la tige", native: "Sous terre : les feuilles sortent directement du sol.", lookalike: "Au-dessus du sol : un tronc brun hirsute qui s'épaissit avec les années." },
@@ -582,11 +582,11 @@ export const FLORIDA: ProseTable = {
     nativeNote:
       "Indigène basse et rampante des terrains littoraux et remaniés du sud de la Floride — plantez l'indigène, pas les sosies dressés envahissants.",
     careNote:
-      "Un couvre-sol rampant robuste, tolérant à la sécheresse et au sel, pour le plein soleil, qui fleurit toute l'année. Exigez l'indigène rampante Stachytarpheta jamaicensis — les porterweeds plus hauts, à tiges raides, vendus en magasin sont exotiques et peuvent devenir envahissants.",
+      "Un couvre-sol rampant robuste, tolérant à la sécheresse et au sel, pour le plein soleil, qui fleurit toute l'année. Exigez l'indigène rampante Stachytarpheta jamaicensis — les Stachytarpheta plus hauts, à tiges raides, vendus en jardinerie sont exotiques et peuvent devenir envahissants.",
     givesNote:
       "L'une des meilleures plantes à nectar pour papillons du sud de la Floride — ses épis de fleurs bleues attirent une foule constante de papillons, d'hespéries et d'abeilles — et une plante hôte du Junonia zonalis.",
     propagationNote:
-      "Les boutures de tiges tendres s'enracinent vite dans un mélange humide, ce qui est le moyen le plus sûr d'obtenir la vraie indigène rampante plutôt qu'un sosie de magasin. Elle pousse aussi facilement de semis au chaud et se ressème dans le jardin dès qu'elle est heureuse.",
+      "Les boutures de tiges tendres s'enracinent vite dans un mélange humide, ce qui est le moyen le plus sûr d'obtenir la vraie indigène rampante plutôt qu'un sosie de jardinerie. Elle pousse aussi facilement de semis au chaud et se ressème dans le jardin dès qu'elle se plaît.",
     supportNotes: {
       "white-peacock":
         "La Stachytarpheta jamaicensis est une plante nourricière des chenilles de l'Anartia jatrophae.",
@@ -646,7 +646,7 @@ export const FLORIDA: ProseTable = {
     nativeNote:
       "Le grand chêne persistant à large couronne, indigène sur toute la longueur de la Floride jusque dans le sud subtropical.",
     careNote:
-      "Donnez-lui de la vraie place — sa couronne s'étale bien plus large que haute. Ferme au sel et au vent, et l'un des arbres d'ombre les plus résistants aux ouragans que vous puissiez planter dans le Sud.",
+      "Donnez-lui de la vraie place — sa couronne s'étale bien plus large que haute. Résistant au sel et au vent, et l'un des arbres d'ombre les plus résistants aux ouragans que vous puissiez planter dans le Sud.",
     givesNote:
       "Le meilleur arbre pour la faune, même ici : des centaines d'espèces de chenilles, des glands pour les geais et les écureuils, un abri persistant, et des branches qui hébergent broméliacées, orchidées et fougère de résurrection.",
     propagationNote:
@@ -661,7 +661,7 @@ export const FLORIDA: ProseTable = {
   "Sabal palmetto@florida-south": {
     supportNotes: {
       "berry-songbirds":
-        "Un sabal en fruit nourrit d'un coup moqueurs-chats, moqueurs polyglottes, merles américains et viréos, et cela dure des semaines.",
+        "Un sabal en fruit nourrit d'un coup moqueurs chats, moqueurs polyglottes, merles d'Amérique et viréos, et cela dure des semaines.",
       "acorn-mammals":
         "Les ratons laveurs grimpent pour le fruit et les cerfs prennent ce qui tombe — un seul palmier voit passer beaucoup de monde.",
     },
@@ -692,16 +692,16 @@ export const FLORIDA: ProseTable = {
       "mason-bees":
         "Un palmier nain en fleur est l'une des plantes les plus visitées de Floride — des dizaines d'espèces d'abeilles solitaires indigènes y ont été relevées, dont plusieurs ne se trouvent guère ailleurs.",
       "berry-songbirds":
-        "Le fruit noir de l'automne nourrit tour à tour merles américains, moqueurs, ratons laveurs, renards et ours.",
+        "Le fruit noir de l'automne nourrit tour à tour merles d'Amérique, moqueurs, ratons laveurs, renards et ours.",
     },
     nativeNote:
       "Le palmier de sous-bois qui définit les pinèdes et le scrub de Floride, vers le sud jusque dans les Keys — l'une des plantes les plus importantes de l'État pour la faune.",
     careNote:
-      "À peu près aussi robuste qu'une plante de Floride peut l'être — à l'épreuve de la sécheresse, du feu, du sel et des ouragans, extrêmement longévif, au soleil comme à l'ombre. Très lent et difficile à transplanter : partez petit et choisissez sa place pour de bon. Les pétioles portent de fines dents.",
+      "À peu près aussi robuste qu'une plante de Floride peut l'être — résistant à la sécheresse, au feu, au sel et aux ouragans, extrêmement longévif, au soleil comme à l'ombre. Très lent et difficile à transplanter : commencez par un petit plant et choisissez sa place pour de bon. Les pétioles portent de fines dents.",
     givesNote:
       "L'une des meilleures plantes de Floride pour la faune : ses fleurs sont une source de nectar de premier ordre (le miel de palmetto), ses fruits nourrissent de nombreux animaux, et ses touffes abritent d'innombrables petites créatures et pollinisateurs.",
     propagationNote:
-      "Le Serenoa repens ne se cultive que par semis — il ne se divise pas et ne se bouture pas. Débarrassez les fruits mûrs de leur pulpe et semez la graine fraîche et au chaud. Attendez-vous à une longue attente : la levée est irrégulière et les jeunes plants poussent extrêmement lentement, alors partez petit et soyez patient.",
+      "Le Serenoa repens ne se cultive que par semis — il ne se divise pas et ne se bouture pas. Débarrassez les fruits mûrs de leur pulpe et semez la graine fraîche et au chaud. Attendez-vous à une longue attente : la levée est irrégulière et les jeunes plants poussent extrêmement lentement, alors commencez par un petit plant et soyez patient.",
   },
   "Hamelia patens@florida-south": {
     nativeNote:
@@ -709,7 +709,7 @@ export const FLORIDA: ProseTable = {
     careNote:
       "Elle adore la chaleur et le soleil et fleurit toute l'année dans le sud de la Floride sans gel — aucun rabattage ici. Résistante à la sécheresse une fois installée. Exigez la vraie espèce indigène (Hamelia patens var. patens).",
     givesNote:
-      "Une usine à nectar sans arrêt : ses tubes rouge-orangé nourrissent les colibris, les Heliconius charithonia, les Agraulis vanillae et les coliades toute l'année, et ses baies sombres nourrissent les moqueurs et les moqueurs chats.",
+      "Une source de nectar intarissable : ses tubes rouge-orangé nourrissent les colibris, les Heliconius charithonia, les Agraulis vanillae et les coliades toute l'année, et ses baies sombres nourrissent les moqueurs et les moqueurs chats.",
     propagationNote:
       "La Hamelia patens est l'une des indigènes les plus faciles à enraciner — coupez une pousse tendre ou à peine aoûtée, effeuillez-en la base, et plantez-la dans un terreau humide. Vous pouvez aussi presser la graine des baies sombres mûres et la semer au chaud.",
     supportNotes: {
@@ -724,7 +724,7 @@ export const FLORIDA: ProseTable = {
         tells: [
           { feature: "Fleurs", native: "De longs tubes étroits, rouge-orangé sur toute leur longueur, en bouquets unilatéraux.", lookalike: "Des tubes plus courts et plus larges, jaune-orangé à rouge pâle." },
           { feature: "Feuilles et tiges", native: "Doucement velues, en général par verticilles de trois, à pétioles rouges et pousses neuves rouges.", lookalike: "Lisses et luisantes, en général par paires, à pétioles verts." },
-          { feature: "Port", native: "Grande et lâche — elle veut devenir un petit arbre.", lookalike: "Basse, dense et nette ; souvent étiquetée « dwarf firebush »." },
+          { feature: "Port", native: "Grande et lâche — elle tend à devenir un petit arbre.", lookalike: "Basse, dense et nette ; souvent étiquetée « dwarf firebush »." },
           { feature: "Ce qu'elle apporte", native: "La plante sur laquelle sont recensés les Heliconius charithonia, le sphinx Xylophanes pluto et les colibris de Floride.", lookalike: "Du nectar — mais pas ces observations." },
         ],
       },
@@ -748,21 +748,21 @@ export const FLORIDA: ProseTable = {
     nativeNote:
       "Fleur sauvage indigène de toute la Floride, qui fleurit presque toute l'année dans le Sud sans gel.",
     careNote:
-      "Facile, résistante à la sécheresse et se ressemant seule — une vivace de courte vie qui s'entretient par la graine : laissez-en donc quelques-unes monter. Rabattez les pieds dégingandés. Du soleil à l'ombre légère.",
+      "Facile, résistante à la sécheresse et se ressemant seule — une vivace de courte vie qui s'entretient par la graine : laissez-en donc quelques-unes monter. Rabattez les pieds dégarnis. Du soleil à l'ombre légère.",
     givesNote:
-      "Ses fleurs rouges, presque toute l'année, nourrissent les colibris et les papillons et sont une préférée des bourdons ; une valeur sûre en nectar, sans souci.",
+      "Ses fleurs rouges, presque toute l'année, nourrissent les colibris et les papillons et comptent parmi les préférées des bourdons ; une valeur sûre en nectar, sans souci.",
     propagationNote:
       "La plus facile de toutes — semez la petite graine au chaud et elle lève vite, et les pieds installés se ressèment : laissez simplement quelques épis grener et vous en aurez toujours. Vous pouvez aussi enraciner des boutures de tiges tendres si vous voulez la copie d'un pied particulier.",
     supportNotes: {
       "ruby-throated-hummingbird":
-        "La sauge écarlate fleurit presque toute l'année dans le sud de la Floride — un carburant à colibris constant.",
+        "La sauge écarlate fleurit presque toute l'année dans le sud de la Floride — une ressource constante pour les colibris.",
     },
   },
   "Muhlenbergia capillaris@florida-south": {
     nativeNote:
       "Graminée indigène en touffe de toute la Floride, célèbre pour sa brume rose d'automne.",
     careNote:
-      "Robuste, à l'épreuve du sel et de la sécheresse, en plein soleil sur un sol bien drainé — ni eau, ni tonte, ni engrais une fois installée. Rabattez-la une fois en fin d'hiver.",
+      "Robuste, résistante au sel et à la sécheresse, en plein soleil sur un sol bien drainé — ni eau, ni tonte, ni engrais une fois installée. Rabattez-la une fois en fin d'hiver.",
     givesNote:
       "Des nuages de panicules roses à l'automne, des graines et un couvert pour les petits oiseaux, des racines denses qui tiennent un sol sableux ou en train de s'éroder, et un abri pour les abeilles nichant au sol ; elle héberge des hespéries.",
     propagationNote:
@@ -786,7 +786,7 @@ export const FLORIDA: ProseTable = {
     nativeNote:
       "Tournesol indigène rampant des dunes, des plages et des ouvertures sableuses du sud de la Floride.",
     careNote:
-      "Fait pour les emplacements les plus rudes — ensoleillés, sableux, salés : il lui faut le plein soleil et un drainage franc, et il pourrit dans une terre riche ou humide. Un couvre-sol de courte vie qui se ressème librement et se renouvelle par la graine ; taillez-le pour le rafraîchir.",
+      "Fait pour les emplacements les plus rudes — ensoleillés, sableux, salés : il lui faut le plein soleil et un sol parfaitement drainé, et il pourrit dans une terre riche ou humide. Un couvre-sol de courte vie qui se ressème librement et se renouvelle par la graine ; taillez-le pour le faire repartir.",
     givesNote:
       "Ses marguerites jaunes, presque toute l'année, nourrissent les abeilles indigènes et les papillons, ses graines nourrissent les oiseaux, et son tapis rampant tient la dune et les sols sableux contre l'érosion.",
     propagationNote:

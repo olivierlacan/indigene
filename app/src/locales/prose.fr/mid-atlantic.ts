@@ -27,7 +27,7 @@ export const MID_ATLANTIC: ProseTable = {
       "acorn-birds":
         "Les glands doux du chêne blanc sont une nourriture de premier ordre pour les dindons sauvages, les canards branchus et les geais bleus, qui en font des réserves.",
       "acorn-mammals":
-        "L'un des meilleurs arbres à glands qui soient — écureuils, chevreuils et ours s'engraissent sur la chute d'automne.",
+        "L'un des meilleurs arbres à glands qui soient — écureuils, cerfs de Virginie et ours s'engraissent sur la chute d'automne.",
       "luna-moth":
         "Parmi les centaines d'espèces de chenilles des chênes figurent les grands bombyx de la soie ; le chêne est un hôte fiable du papillon lune.",
     },
@@ -37,14 +37,14 @@ export const MID_ATLANTIC: ProseTable = {
     careNote:
       "Il pousse nettement plus vite que le chêne blanc ; donnez-lui la place d'atteindre une grande taille adulte.",
     givesNote:
-      "Des centaines d'espèces de chenilles et de lourdes récoltes de glands ; la voie rapide vers les bienfaits d'un chêne pour le réseau alimentaire.",
+      "Des centaines d'espèces de chenilles et de lourdes récoltes de glands ; le moyen le plus rapide d'offrir au réseau trophique les bienfaits d'un chêne.",
     propagationNote:
       "Récoltez les glands tombés à l'automne et faites le test de flottaison, en jetant ceux qui flottent. Contrairement au chêne blanc, les glands de chêne rouge ont besoin d'un hiver froid et humide avant de germer — mélangez-les à du sable humide dans un sachet au réfrigérateur pour l'hiver, ou semez-les simplement dehors à l'automne et laissez la nature les refroidir. Empêchez-les de sécher, et plantez là où la racine pivotante pourra rester.",
     supportNotes: {
       "acorn-birds":
         "Ses lourdes récoltes de glands nourrissent geais, dindons sauvages et pics tout l'automne et l'hiver.",
       "acorn-mammals":
-        "Des glands fiables pour les écureuils, les chevreuils et d'autres mammifères.",
+        "Des glands fiables pour les écureuils, les cerfs de Virginie et d'autres mammifères.",
       "cecropia-moth":
         "Les chênes sont parmi les nombreux arbres dont les feuilles nourrissent les chenilles de l'Hyalophora cecropia et des autres grands bombyx de la soie.",
     },
@@ -52,7 +52,7 @@ export const MID_ATLANTIC: ProseTable = {
   "Acer rubrum": {
     nativeNote: "L'un des arbres indigènes les plus communs de l'est des États-Unis.",
     careNote:
-      "Adaptable et rapide ; il tolère les pieds mouillés. Ses feuilles flétries sont toxiques pour les chevaux — ce qui ne concerne pas la plupart des jardins.",
+      "Adaptable et rapide ; il tolère les sols gorgés d'eau. Ses feuilles flétries sont toxiques pour les chevaux — ce qui ne concerne pas la plupart des jardins.",
     givesNote:
       "Ses fleurs rouges précoces nourrissent les premières abeilles du printemps, ses graines nourrissent les oiseaux, et il héberge des centaines de chenilles.",
     propagationNote:
@@ -79,7 +79,7 @@ export const MID_ATLANTIC: ProseTable = {
     careNote:
       "Il adore les terrains frais — parfait pour un point bas détrempé, mais il demande de l'eau le temps de s'installer sur un site sec.",
     givesNote:
-      "Une écorce couleur cannelle qui s'exfolie, des centaines d'espèces de chenilles, et des racines qui tiennent une berge ensemble.",
+      "Une écorce couleur cannelle qui s'exfolie, des centaines d'espèces de chenilles, et des racines qui maintiennent une berge.",
     propagationNote:
       "Le bouleau noir est l'un des rares arbres dont la minuscule graine mûrit à la fin du printemps plutôt qu'à l'automne — ramassez les petits cônes quand ils brunissent et émiettez-en la graine. Répandez-la à la surface d'un terreau humide et ne l'enterrez pas, puisqu'il lui faut de la lumière pour lever ; semée fraîche, elle lève rapidement sans aucun froid.",
     supportNotes: {
@@ -94,9 +94,9 @@ export const MID_ATLANTIC: ProseTable = {
     careNote:
       "Il se ressème librement alentour : arrachez les semis indésirables. Ses feuilles flétries et ses noyaux sont toxiques pour le bétail et les animaux domestiques.",
     givesNote:
-      "Deuxième seulement après les chênes pour les chenilles ; des nuages de fleurs printanières et des fruits d'été pour des dizaines d'espèces d'oiseaux.",
+      "Juste après les chênes pour les chenilles ; des nuages de fleurs printanières et des fruits d'été pour des dizaines d'espèces d'oiseaux.",
     propagationNote:
-      "Écrasez les fruits mûrs d'été et rincez la pulpe des noyaux — la chair contient des inhibiteurs de germination. Donnez aux noyaux nettoyés un long hiver froid et humide (dehors en pot, ou plusieurs mois dans du sable humide au réfrigérateur) avant qu'ils ne lèvent. Honnêtement, cet arbre se ressème si librement à partir des noyaux laissés par les oiseaux que vous trouverez souvent des semis gratuits.",
+      "Écrasez les fruits mûrs d'été et rincez la pulpe des noyaux — la chair contient des inhibiteurs de germination. Donnez aux noyaux nettoyés un long hiver froid et humide (dehors en pot, ou plusieurs mois dans du sable humide au réfrigérateur) avant qu'ils ne lèvent. À vrai dire, cet arbre se ressème si librement à partir des noyaux laissés par les oiseaux que vous trouverez souvent des semis gratuits.",
     supportNotes: {
       "eastern-tiger-swallowtail":
         "Le cerisier tardif est l'un des principaux arbres nourriciers du Papilio glaucus.",
@@ -117,7 +117,7 @@ export const MID_ATLANTIC: ProseTable = {
     },
     nativeNote: "Arbre de sous-bois indigène de l'est des États-Unis.",
     careNote:
-      "Petit et robuste ; heureux à mi-ombre en lisière boisée ou en arbre de terrasse.",
+      "Petit et robuste ; il se plaît à mi-ombre en lisière boisée ou en arbre de terrasse.",
     givesNote:
       "Ses fleurs rose vif s'ouvrent à même les branches au début du printemps, nourrissant les reines de bourdons quand peu de choses sont ouvertes.",
     propagationNote:
@@ -127,7 +127,7 @@ export const MID_ATLANTIC: ProseTable = {
     nativeNote:
       "Petit arbre ou grand arbuste indigène de tout le Nord-Est.",
     careNote:
-      "Quatre saisons d'intérêt et une taille commode. Un peu d'eau l'été de la première année est payant.",
+      "Décoratif en toute saison, et d'une taille commode. Un peu d'eau l'été de la première année est payant.",
     givesNote:
       "Des fleurs blanches précoces pour les abeilles, des baies de juin adorées des oiseaux (et des gens), et un feuillage d'automne flamboyant.",
     propagationNote:
@@ -156,7 +156,7 @@ export const MID_ATLANTIC: ProseTable = {
     nativeNote:
       "Arbre de sous-bois indigène emblématique des forêts de l'Est.",
     careNote:
-      "Il veut une ombre tamisée et une humidité régulière ; il souffre sur les sites chauds, secs et exposés. Arrosez en période sèche.",
+      "Il demande une ombre tamisée et une humidité régulière ; il souffre sur les sites chauds, secs et exposés. Arrosez en période sèche.",
     givesNote:
       "Des baies très riches en graisses que les oiseaux migrateurs recherchent, plus les fleurs printanières classiques.",
     propagationNote:
@@ -246,7 +246,7 @@ export const MID_ATLANTIC: ProseTable = {
     careNote:
       "La réponse à un emplacement qui reste humide ou même s'inonde. Pas pour un terrain sec.",
     givesNote:
-      "Ses fleurs en pelotes d'épingles grouillent de papillons et d'abeilles ; les canards mangent ses graines. Un cheval de trait du jardin de pluie.",
+      "Ses fleurs en pelotes d'épingles grouillent de papillons et d'abeilles ; les canards mangent ses graines. Une valeur sûre du jardin de pluie.",
     propagationNote:
       "Le céphalanthe s'enracine très volontiers. En hiver, coupez des rameaux nus gros comme un crayon en morceaux longs d'une main et enfoncez-les en terre humide ; ou au début de l'été, faites raciner des extrémités de pousses vertes tendres dans un mélange humide. Dans les deux cas il aime rester mouillé pendant l'enracinement, ce qui convient parfaitement à cet amateur d'eau.",
   },
@@ -309,7 +309,7 @@ export const MID_ATLANTIC: ProseTable = {
   "Ceanothus americanus": {
     supportNotes: {
       "bumble-bees":
-        "Le thé de New Jersey fleurit dans la chaleur du début juillet, en écumes blanches que les abeilles repèrent de loin.",
+        "Le céanothe d'Amérique fleurit dans la chaleur du début juillet, en écumes blanches que les abeilles repèrent de loin.",
       "mason-bees":
         "Son nectar est à découvert dans une minuscule coupe, et c'est pour cela qu'autant de petites abeilles et de guêpes solitaires peuvent s'en servir.",
     },
@@ -330,7 +330,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Des noix comestibles pour vous et la faune, des chatons précoces pour le premier pollen du printemps, et beaucoup de chenilles.",
     propagationNote:
-      "La voie la plus simple est de déterrer les rejets enracinés que ce formeur de fourré pousse autour de sa base et de les replanter. Par semis, ramassez les noix à l'automne avant les écureuils, protégez-les des rongeurs, et donnez-leur un hiver froid et humide — il leur faut ce froid pour lever au printemps.",
+      "La voie la plus simple est de déterrer les rejets enracinés que ce noisetier drageonnant pousse autour de sa base et de les replanter. Par semis, ramassez les noix à l'automne avant les écureuils, protégez-les des rongeurs, et donnez-leur un hiver froid et humide — il leur faut ce froid pour lever au printemps.",
     supportNotes: {
       "acorn-mammals":
         "Les noisettes sont recherchées par les écureuils, les tamias et les geais à l'automne.",
@@ -344,9 +344,9 @@ export const MID_ATLANTIC: ProseTable = {
     nativeNote:
       "Asclépiade indigène des prés secs de tout l'Est.",
     careNote:
-      "Elle adore une terre pauvre, sèche et sableuse, et supporte mal les pieds mouillés. Lente à apparaître au printemps — ne la déterrez pas en croyant qu'elle est morte. Sa sève est toxique si on l'avale.",
+      "Elle adore une terre pauvre, sèche et sableuse, et craint l'excès d'eau. Lente à apparaître au printemps — ne la déterrez pas en croyant qu'elle est morte. Sa sève est toxique si on l'avale.",
     givesNote:
-      "Une plante nourricière des chenilles du monarque et un aimant pour tous les papillons des alentours, sur un pied net et bien élevé.",
+      "Une plante nourricière des chenilles du monarque et un aimant pour tous les papillons des alentours, sur un pied net et peu envahissant.",
     propagationNote:
       "Récoltez les graines brunes et plates à l'automne, à l'ouverture des gousses, avant que la soie ne les emporte. Il leur faut environ un mois de froid humide — semez dehors à l'automne, ou gardez-les trente jours au réfrigérateur dans un essuie-tout humide avant un semis de printemps. N'essayez pas de la déterrer et de la diviser : sa racine pivotante profonde et cassante supporte mal d'être dérangée, le semis est donc la seule bonne voie.",
     supportNotes: {
@@ -369,7 +369,7 @@ export const MID_ATLANTIC: ProseTable = {
         why: "Un mot d'écart sur l'étiquette — « butterfly weed » et « butterfly bush » — et toutes deux vendues avec un papillon sur la fiche.",
         tells: [
           { feature: "Ce que c'est", native: "Une asclépiade : hauteur de genou, disparaissant au ras du sol chaque hiver.", lookalike: "Un grand arbuste arqué, hauteur de tête en une seule saison." },
-          { feature: "Ce qu'elle nourrit", native: "Du nectar pour les adultes, et des feuilles que les chenilles de monarque peuvent réellement manger.", lookalike: "Du nectar pour les adultes seulement — aucune chenille d'ici ne peut manger ses feuilles." },
+          { feature: "Ce qu'elle nourrit", native: "Du nectar pour les adultes, et des feuilles que les chenilles de monarque peuvent vraiment manger.", lookalike: "Du nectar pour les adultes seulement — aucune chenille d'ici ne peut manger ses feuilles." },
           { feature: "Fleurs", native: "Des bouquets plats de petites étoiles orange.", lookalike: "De longs cônes de minuscules fleurs violettes, blanches ou roses." },
           { feature: "Où elle finit", native: "Dans sa touffe, là où vous l'avez plantée.", lookalike: "Dans les graviers de rivière — une plante nuisible classée en Oregon et dans l'État de Washington." },
         ],
@@ -380,7 +380,7 @@ export const MID_ATLANTIC: ProseTable = {
     nativeNote:
       "Asclépiade indigène des prés humides et des bords d'étang.",
     careNote:
-      "Contrairement à la plupart des asclépiades, elle veut une humidité régulière — parfaite pour un jardin de pluie ou un point bas frais. Sa sève est toxique si on l'avale.",
+      "Contrairement à la plupart des asclépiades, elle demande une humidité régulière — parfaite pour un jardin de pluie ou un point bas frais. Sa sève est toxique si on l'avale.",
     givesNote:
       "Une plante hôte du monarque qui attire aussi des nuées d'abeilles et de papillons à ses fleurs roses parfumées.",
     propagationNote:
@@ -396,7 +396,7 @@ export const MID_ATLANTIC: ProseTable = {
         why: "Toutes deux sont des asclépiades vendues pour les monarques, et en pot à la pépinière elles se ressemblent beaucoup.",
         tells: [
           { feature: "Couleur de la fleur", native: "Rose tendre à mauve, en corymbes bombés.", lookalike: "Rouge et jaune, deux tons." },
-          { feature: "Port", native: "Hauteur de poitrine et droite, debout dans un terrain humide.", lookalike: "Hauteur de hanche et lâche, heureuse partout où il fait chaud." },
+          { feature: "Port", native: "Hauteur de poitrine et droite, debout dans un terrain humide.", lookalike: "Hauteur de hanche et lâche, à l'aise partout où il fait chaud." },
           { feature: "En hiver", native: "Elle disparaît au ras du sol aux premières gelées.", lookalike: "Elle reste verte partout où l'hiver est doux, et le parasite OE s'accumule sur les vieilles feuilles." },
           { feature: "Feuilles", native: "Longues et étroites, à nervure médiane pâle, par paires opposées.", lookalike: "Plus larges et plus minces, effilées aux deux bouts." },
         ],
@@ -407,16 +407,16 @@ export const MID_ATLANTIC: ProseTable = {
     nativeNote:
       "Indigène des prairies et des bois clairs ; largement indigène dans l'Est et le Midwest.",
     careNote:
-      "Facile, de longue vie et résistante à la sécheresse. Laissez les têtes de graines debout tout l'hiver.",
+      "Facile, de longue vie et résistante à la sécheresse. Laissez les capitules fanés sur pied tout l'hiver.",
     givesNote:
-      "Des mois de floraison couverte de papillons, puis des têtes de graines qui nourrissent les chardonnerets jusqu'en hiver.",
+      "Des mois de floraison couverte de papillons, puis des capitules en graines qui nourrissent les chardonnerets jusqu'en hiver.",
     propagationNote:
-      "Tordez les têtes de graines sèches et piquantes à l'automne pour libérer la graine, qui germe le mieux après un mois environ de froid humide — le plus simple étant de semer dehors avant l'hiver. Les touffes installées se divisent aussi volontiers au début du printemps. Laissez quelques têtes debout et elle se ressèmera discrètement.",
+      "Tordez les capitules secs et piquants à l'automne pour libérer la graine, qui germe le mieux après un mois environ de froid humide — le plus simple étant de semer dehors avant l'hiver. Les touffes installées se divisent aussi volontiers au début du printemps. Laissez quelques capitules sur pied et elle se ressèmera discrètement.",
     supportNotes: {
       "sunflower-specialist-bees":
         "Une floraison d'astéracée dont le pollen nourrit les abeilles spécialistes qui ne peuvent en utiliser aucun autre.",
       "american-goldfinch":
-        "Laissés debout, ses cônes fanés sont l'une des têtes de graines préférées des chardonnerets en hiver.",
+        "Laissés sur pied, ses cônes fanés comptent parmi les garde-manger d'hiver préférés des chardonnerets.",
       "bumble-bees":
         "Une source de nectar d'été à longue floraison pour les bourdons et les papillons.",
     },
@@ -425,23 +425,23 @@ export const MID_ATLANTIC: ProseTable = {
     nativeNote:
       "Indigène des prés et des bois clairs de tout l'Est.",
     careNote:
-      "Elle s'étend poliment pour garnir un massif. À peu près aussi facile qu'une vivace indigène puisse l'être.",
+      "Elle s'étend sans excès pour garnir un massif. À peu près aussi facile qu'une vivace indigène puisse l'être.",
     givesNote:
-      "Un long spectacle doré de fin d'été pour les pollinisateurs et les fringilles, sur une plante qui prospère dans l'abandon.",
+      "Un long spectacle doré de fin d'été pour les pollinisateurs et les fringilles, sur une plante qui se passe de tout soin.",
     propagationNote:
-      "Secouez les petites graines des cônes secs à l'automne ; elles lèvent mieux après un mois environ de froid humide, semez-les donc à l'automne ou refroidissez-les dans du sable humide avant le printemps. Les touffes se divisent facilement au début du printemps, et si vous laissez les têtes debout vous obtiendrez des semis spontanés autour du pied mère.",
+      "Secouez les petites graines des cônes secs à l'automne ; elles lèvent mieux après un mois environ de froid humide, semez-les donc à l'automne ou refroidissez-les dans du sable humide avant le printemps. Les touffes se divisent facilement au début du printemps, et si vous laissez les capitules sur pied vous obtiendrez des semis spontanés autour du pied mère.",
     supportNotes: {
       "sunflower-specialist-bees":
         "Une composée dont le pollen fait vivre les abeilles spécialistes des astéracées.",
       "american-goldfinch":
-        "Les chardonnerets travaillent ses têtes de graines sombres tout l'automne et l'hiver.",
+        "Les chardonnerets travaillent ses capitules sombres tout l'automne et l'hiver.",
     },
   },
   "Monarda fistulosa": {
     nativeNote:
       "Monarde indigène des prés secs et des bords de route.",
     careNote:
-      "Elle s'étend à la racine pour former un carré. Donnez-lui une bonne circulation d'air pour limiter l'oïdium sur les feuilles.",
+      "Elle s'étend à la racine pour former une colonie. Donnez-lui une bonne circulation d'air pour limiter l'oïdium sur les feuilles.",
     givesNote:
       "Des couronnes lavande animées d'abeilles, de papillons et de sphinx ; ses feuilles font une infusion parfumée.",
     propagationNote:
@@ -463,37 +463,37 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Une clé de voûte : il héberge plus de cent chenilles et ses fleurs pourpres tardives sont une dernière halte de ravitaillement essentielle pour les monarques en migration et les abeilles.",
     propagationNote:
-      "La méthode la plus simple est de diviser une touffe installée au printemps, en fendant la souche en morceaux enracinés. Récoltez la graine des têtes cotonneuses en fin d'automne et donnez-lui un mois environ de froid humide (un semis d'automne s'en charge) pour une bonne levée. Laissé debout, il se ressème aussi dans le jardin.",
+      "La méthode la plus simple est de diviser une touffe installée au printemps, en fendant la souche en morceaux enracinés. Récoltez la graine des têtes cotonneuses en fin d'automne et donnez-lui un mois environ de froid humide (un semis d'automne s'en charge) pour une bonne levée. Laissé sur pied, il se ressème aussi dans le jardin.",
     supportNotes: {
       "sunflower-specialist-bees":
         "Les asters font vivre tout un cortège d'abeilles spécialistes des asters ; celui-ci est l'un des meilleurs.",
       monarch:
         "Sa floraison pourpre tardive est un carburant d'automne essentiel pour les monarques qui descendent vers le sud.",
       "american-goldfinch":
-        "Ses têtes de graines fines nourrissent les chardonnerets jusqu'en hiver.",
+        "Ses capitules en graines nourrissent les chardonnerets jusqu'en hiver.",
     },
   },
   "Solidago rugosa": {
     nativeNote:
-      "Verge d'or indigène des prés de l'Est ; du type en touffe, bien élevé.",
+      "Verge d'or indigène des prés de l'Est ; du type en touffe, peu envahissant.",
     careNote:
       "Cette verge d'or en touffe reste en place, contrairement à celle des bords de route qui court. Et non — la verge d'or ne provoque pas le rhume des foins (c'est l'ambroisie).",
     givesNote:
       "Une clé de voûte qui héberge plus de cent chenilles et couvre l'automne de pollen et de nectar au moment où les pollinisateurs en ont le plus besoin.",
     propagationNote:
-      "Le plus facile est la division : soulevez la touffe au début du printemps et détachez des morceaux enracinés sur les bords. Par semis, récoltez les têtes cotonneuses en fin d'automne et donnez à la graine un mois environ de froid humide — un semis d'automne dehors s'en charge naturellement. Elle se ressèmera aussi doucement si l'on laisse quelques têtes debout.",
+      "Le plus facile est la division : soulevez la touffe au début du printemps et détachez des morceaux enracinés sur les bords. Par semis, récoltez les têtes cotonneuses en fin d'automne et donnez à la graine un mois environ de froid humide — un semis d'automne dehors s'en charge naturellement. Elle se ressèmera aussi doucement si l'on laisse quelques capitules sur pied.",
     supportNotes: {
       "sunflower-specialist-bees":
         "Les verges d'or portent plus d'abeilles spécialistes du pollen que presque toute autre plante.",
       monarch:
-        "Une centrale de nectar de fin de saison pour les monarques en migration.",
+        "Une source de nectar majeure en fin de saison pour les monarques en migration.",
     },
   },
   "Eutrochium purpureum": {
     nativeNote:
       "Indigène des prés frais et des bords de cours d'eau de l'Est.",
     careNote:
-      "Haute et spectaculaire ; elle veut un sol fiablement frais. Placez-la au fond d'un massif humide.",
+      "Haute et spectaculaire ; il lui faut un sol qui reste frais. Placez-la au fond d'un massif humide.",
     givesNote:
       "De gros dômes de fleurs mauves que les papillons couvrent en fin d'été, sur une plante d'une belle allure architecturale.",
     propagationNote:
@@ -566,7 +566,7 @@ export const MID_ATLANTIC: ProseTable = {
     nativeNote:
       "Indigène des berges et des bois clairs ; largement indigène dans l'Est.",
     careNote:
-      "Lente les deux premières années, puis une racine pivotante profonde en fait pendant des décennies un point d'ancrage de la taille d'un arbuste, à l'épreuve de la sécheresse. Plantez-la là où elle restera.",
+      "Lente les deux premières années, puis une racine pivotante profonde en fait pendant des décennies un point d'ancrage de la taille d'un arbuste, résistant à la sécheresse. Plantez-la là où elle restera.",
     givesNote:
       "Des épis de fleurs bleues en pois pour les bourdons, elle fixe son propre azote, et elle héberge plusieurs hespéries.",
     propagationNote:
@@ -663,14 +663,14 @@ export const MID_ATLANTIC: ProseTable = {
   "Andropogon gerardii": {
     supportNotes: {
       "grass-skippers":
-        "Le grand barbon est la graminée à chenilles de l'hespérie byssus — un papillon qui a suivi la prairie haute dans ce qu'il en reste.",
+        "Le grand barbon est la graminée nourricière de l'hespérie byssus — un papillon qui a suivi la prairie haute dans ce qu'il en reste.",
     },
     nativeNote:
       "La graminée emblématique de la prairie à hautes herbes, indigène jusqu'à l'Atlantique.",
     careNote:
       "Grande et affirmée, avec des racines atteignant plus de deux mètres cinquante. Au mieux là où une haute graminée a la place de faire de l'effet.",
     givesNote:
-      "Des épis en patte de dindon et une couleur d'automne cuivrée ; des racines de premier ordre pour construire le sol, stocker le carbone et arrêter l'érosion.",
+      "Des épis en patte de dindon et une couleur d'automne cuivrée ; des racines de premier ordre pour structurer le sol, stocker le carbone et arrêter l'érosion.",
     propagationNote:
       "Encore une graminée de saison chaude : semez la graine à la fin du printemps une fois le sol réchauffé et elle lève promptement sans froid. Les grosses touffes installées se divisent aussi bien au printemps — déterrez-en une et déchirez-la en morceaux enracinés pour la répartir.",
   },
@@ -678,7 +678,7 @@ export const MID_ATLANTIC: ProseTable = {
     nativeNote:
       "Laîche indigène des bois secs ; une alternative indigène au gazon.",
     careNote:
-      "Elle s'étend lentement en un tapis souple sans tonte, pour l'ombre sèche sous les arbres où l'herbe échoue.",
+      "Elle s'étend lentement en un tapis souple sans tonte, pour l'ombre sèche sous les arbres où le gazon ne pousse pas.",
     givesNote:
       "Un couvre-sol vert à texture fine qui héberge de nombreuses petites hespéries et ne demande ni tonte, ni arrosage, ni engrais.",
     propagationNote:
@@ -689,7 +689,7 @@ export const MID_ATLANTIC: ProseTable = {
       "cedar-waxwing":
         "Les baies bleu-noir de la vigne vierge restent accrochées à leurs pédoncules écarlates longtemps après la chute des feuilles, et une bande de jaseurs nettoie tout un mur en une après-midi.",
       "berry-songbirds":
-        "Grives, moqueurs-chats et pics les prennent aussi, tout l'automne et jusque dans l'hiver.",
+        "Grives, moqueurs chats et pics les prennent aussi, tout l'automne et jusque dans l'hiver.",
     },
     nativeNote:
       "Liane grimpante indigène de tout l'est des États-Unis.",
@@ -713,13 +713,13 @@ export const MID_ATLANTIC: ProseTable = {
   },
   "Lonicera sempervirens": {
     nativeNote:
-      "Chèvrefeuille grimpant indigène de l'Est — pas la sorte envahissante.",
+      "Chèvrefeuille grimpant indigène de l'Est — pas l'espèce envahissante.",
     careNote:
-      "Une grimpante bien élevée pour un treillage ou une boîte aux lettres — rien à voir avec le chèvrefeuille du Japon envahissant. Donnez-lui quelque chose où s'enrouler.",
+      "Une grimpante sage pour un treillage ou une boîte aux lettres — rien à voir avec le chèvrefeuille du Japon envahissant. Donnez-lui quelque chose où s'enrouler.",
     givesNote:
       "Ses trompettes corail fleurissent des mois durant en nourrissant les colibris ; ses baies rouges nourrissent ensuite les passereaux.",
     propagationNote:
-      "Ce chèvrefeuille s'enracine facilement de bouture — prélevez des morceaux des pousses de l'année en été, à mesure qu'elles s'aoûtent, ou des longueurs nues et dormantes en hiver, et faites-les raciner dans un mélange humide. Vous obtenez ainsi une copie exacte d'une indigène bien élevée, sans aucune des manies du chèvrefeuille du Japon envahissant.",
+      "Ce chèvrefeuille s'enracine facilement de bouture — prélevez des morceaux des pousses de l'année en été, à mesure qu'elles s'aoûtent, ou des longueurs nues et dormantes en hiver, et faites-les raciner dans un mélange humide. Vous obtenez ainsi une copie exacte d'une indigène sage, sans aucune des manies du chèvrefeuille du Japon envahissant.",
     supportNotes: {
       "ruby-throated-hummingbird":
         "Ses fleurs tubulaires corail, sur une longue saison, en font l'une des meilleures lianes à colibris qui soient.",
@@ -739,7 +739,7 @@ export const MID_ATLANTIC: ProseTable = {
   "Fragaria virginiana": {
     supportNotes: {
       "berry-songbirds":
-        "Les fraises sauvages sont minuscules et intensément sucrées, et merles américains et grives arrivent à presque toutes avant qui que ce soit d'autre.",
+        "Les fraises sauvages sont minuscules et intensément sucrées, et merles d'Amérique et grives arrivent à presque toutes avant qui que ce soit d'autre.",
       "bumble-bees":
         "De petites fleurs blanches à cinq pétales, au ras du sol dès avril, parmi les premières qu'une reine de bourdon puisse atteindre.",
     },

@@ -59,6 +59,7 @@ export const APP_STEPS = [
   "about",
   "crops",
   "import",
+  "film",
 ] as const;
 
 export type AppStep = (typeof APP_STEPS)[number];
@@ -89,6 +90,8 @@ export const PARAM_STEPS = new Set<string>([
   "planting",
   "settings",
   "privacy",
+  // `film/fr` is the French cut: its own file, so its preview is French too.
+  "film",
 ]);
 
 /** The index pages that are shareable in their own right. `settings` is absent
@@ -106,6 +109,7 @@ export const SHAREABLE_INDEXES: readonly string[] = [
   "sources",
   "about",
   "crops",
+  "film",
 ];
 
 const STEP_SET = new Set<string>(APP_STEPS);
@@ -192,6 +196,8 @@ export function canonicalPath(step: string, param?: string): string | null {
     // One propagation technique's how-to and its window in the year.
     case "planting":
       return techniqueBySlug(param) ? at(param) : null;
+    case "film":
+      return param === "fr" ? at(param) : null;
     default:
       return null;
   }
@@ -285,5 +291,6 @@ export function shareablePaths(): string[] {
   for (const id of mappedInvasiveIds()) paths.push(`invasives/${id}`);
   for (const id of wantedRegionIds()) paths.push(`invasives/${WANTED_REGION_PREFIX}${id}`);
   for (const tech of TECHNIQUES) paths.push(`planting/${tech.slug}`);
+  paths.push("film/fr");
   return paths;
 }

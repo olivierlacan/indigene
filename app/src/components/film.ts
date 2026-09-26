@@ -11,25 +11,22 @@
 import { el } from "../ui";
 import { t, getLang } from "../lib/i18n";
 import { privacyRoute } from "./privacy-link";
+import { filmEmbedUrl, type FilmLang } from "../lib/film";
 
-/** Bunny Stream library and video ids, per language cut. */
-const LIBRARY = "761918";
-const VIDEOS: Record<"en" | "fr", string> = {
-  en: "7f131466-6a92-4fc5-9814-4acfdd392814",
-  fr: "b7a57b9c-f08a-49c7-878a-d440093072a4",
-};
+/** The cut for the reader's language. */
+export function filmLang(): FilmLang {
+  return getLang() === "fr" ? "fr" : "en";
+}
 
-/** The only origin the page may frame (mirrored in `lib/csp.ts`). */
-export const FILM_FRAME_ORIGIN = "https://player.mediadelivery.net";
-
-export function filmEmbed(): HTMLElement {
-  const lang = getLang() === "fr" ? "fr" : "en";
+/** The player, playing the reader's language's cut unless `cut` names one. */
+export function filmEmbed(cut?: FilmLang): HTMLElement {
+  const lang = cut ?? filmLang();
   const box = el("figure", { class: "film" });
 
   const start = (): void => {
     // Sound on: the viewer asked for the film, so they get the narration.
     const src =
-      `${FILM_FRAME_ORIGIN}/embed/${LIBRARY}/${VIDEOS[lang]}` +
+      filmEmbedUrl(lang) +
       "?autoplay=true&loop=false&muted=false&preload=true&responsive=true";
     const frame = el("iframe", {
       src,

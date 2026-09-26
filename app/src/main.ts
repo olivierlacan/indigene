@@ -30,6 +30,7 @@ import { techniqueBySlug } from "./lib/planting";
 import { canonicalPath, parseRoute, isHashRoute } from "./lib/routes";
 import type { AppStep } from "./lib/routes";
 import { renderPrivacy } from "./steps/privacy";
+import { renderFilm } from "./steps/film";
 import { renderSources } from "./steps/sources";
 import { renderSettings } from "./steps/settings";
 import { renderAbout } from "./steps/about";
@@ -103,6 +104,8 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
   // warning and the native swap.
   crops: { fn: renderCrops, labelKey: "steps.crops", inFlow: false },
   import: { fn: renderImport, labelKey: "steps.import", inFlow: false },
+  // The film on a page of its own, so a shared link previews as the video.
+  film: { fn: renderFilm, labelKey: "steps.film", inFlow: false },
 };
 
 /**
@@ -124,6 +127,7 @@ const PARAM_RENDERERS: Record<string, StepFn> = {
   planting: renderPlanting,
   settings: renderSettings,
   privacy: renderPrivacy,
+  film: renderFilm,
 };
 
 const FLOW: AppStep[] = ["location", "sun", "confirm", "priorities", "results"];

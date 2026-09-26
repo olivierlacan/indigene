@@ -158,15 +158,23 @@ on left to right, and a sampled frame of a word mid-stroke looks clipped.
 ## Publish a new cut
 
 The site plays the Bunny Stream copies. Upload `out/indigene-film*.mp4` to the
-Bunny library, then put the new video ids in `VIDEOS` in
-`app/src/components/film.ts`, and refresh the posters the home page shows
+Bunny library, then put the new video ids in `FILM_VIDEOS` in
+`app/src/lib/film.ts`, and refresh the posters the home page shows
 before anyone presses play:
 
 ```sh
 node film/render.mjs stills 48.6 && FILM_LANG=fr node film/render.mjs stills 47.9
 ffmpeg -i film/out/still-48.60.png -vf scale=1280:-1 -c:v libwebp -quality 78 app/public/film/poster-en.webp
 ffmpeg -i film/out/still-fr-47.90.png -vf scale=1280:-1 -c:v libwebp -quality 78 app/public/film/poster-fr.webp
+(cd app && node scripts/gen-film-card.mjs)   # the /film link-preview card
 ```
+
+`https://indigene.app/film` (and `/film/fr` for the French cut) is the
+address to share: its head carries video tags, so a link preview shows the film and, in most chat apps, plays it. That
+needs a plain MP4, which Bunny only writes with the library's **MP4 fallback**
+on (Stream → library → Encoding). Put the library's pull-zone host
+(`vz-….b-cdn.net`) in `FILM_MP4_HOST` in `app/src/lib/film.ts`; until then the
+preview offers Bunny's player page alone.
 
 ## Credits
 

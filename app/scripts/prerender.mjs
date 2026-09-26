@@ -231,8 +231,13 @@ function stripHeadMeta(html) {
 const MARKER = "<!-- Head metadata written by scripts/prerender.mjs. -->";
 
 /** The per-page replacement for what `stripHeadMeta` took out. */
-function headMeta({ title, description, path, image, imageAlt }) {
+function headMeta({ title, description, path, image, imageAlt, video, locale = "en", languages }) {
   const url = `${ORIGIN}${BASE}${path}`;
+  // A page is one document in both languages (`?lang=`), unless it names a
+  // separate address per language — which only the film does, so its preview
+  // can be French.
+  const alternate = (lang) => (languages ? `${ORIGIN}${BASE}${languages[lang]}` : `${url}?lang=${lang}`);
+  const xDefault = languages ? `${ORIGIN}${BASE}${languages.en}` : url;
   const card = image ?? CARD;
   const alt = imageAlt ?? CARD_ALT;
   const tag = (s) => `    ${s}\n`;
@@ -244,10 +249,10 @@ function headMeta({ title, description, path, image, imageAlt }) {
     // Now that each page is its own file, its alternates can name *it* rather
     // than the site root — which is all the site-wide tags in index.html could
     // honestly claim before this script existed.
-    tag(`<link rel="alternate" hreflang="en" href="${esc(`${url}?lang=en`)}" />`) +
-    tag(`<link rel="alternate" hreflang="fr" href="${esc(`${url}?lang=fr`)}" />`) +
-    tag(`<link rel="alternate" hreflang="x-default" href="${esc(url)}" />`) +
-    tag(`<meta property="og:type" content="website" />`) +
+    tag(`<link rel="alternate" hreflang="en" href="${esc(alternate("en"))}" />`) +
+    tag(`<link rel="alternate" hreflang="fr" href="${esc(alternate("fr"))}" />`) +
+    tag(`<link rel="alternate" hreflang="x-default" href="${esc(xDefault)}" />`) +
+    tag(`<meta property="og:type" content="${video ? "video.other" : "website"}" />`) +
     tag(`<meta property="og:site_name" content="Indigene" />`) +
     tag(`<meta property="og:url" content="${esc(url)}" />`) +
     tag(`<meta property="og:title" content="${esc(title)}" />`) +
@@ -256,12 +261,44 @@ function headMeta({ title, description, path, image, imageAlt }) {
     tag(`<meta property="og:image:width" content="1200" />`) +
     tag(`<meta property="og:image:height" content="630" />`) +
     tag(`<meta property="og:image:alt" content="${esc(alt)}" />`) +
-    tag(`<meta property="og:locale" content="en" />`) +
-    tag(`<meta property="og:locale:alternate" content="fr" />`) +
-    tag(`<meta name="twitter:card" content="summary_large_image" />`) +
+    tag(`<meta property="og:locale" content="${locale}" />`) +
+    tag(`<meta property="og:locale:alternate" content="${locale === "fr" ? "en" : "fr"}" />`) +
+    (video ? videoMeta(video, tag) : "") +
+    tag(`<meta name="twitter:card" content="${video ? "player" : "summary_large_image"}" />`) +
     tag(`<meta name="twitter:title" content="${esc(title)}" />`) +
     tag(`<meta name="twitter:description" content="${esc(description)}" />`) +
-    tag(`<meta name="twitter:image" content="${card}" />`)
+    tag(`<meta name="twitter:image" content="${card}" />`) +
+    (video ? playerMeta(video, tag) : "")
+  );
+}
+
+/**
+ * The tags that make a link preview *play*, for the one page that is a video.
+ *
+ * `og:video` is listed twice when it can be: the plain MP4 first, which
+ * Discord, Slack, Telegram and iMessage play inside the preview, then the
+ * player page as `text/html`, which is what Facebook and LinkedIn look for.
+ * A reader of these tags takes the first one it understands. `twitter:player`
+ * is the same player page, for X and the apps that read Twitter's tags.
+ *
+ * None of these are in index.html, so they sit outside `EMITTED`: that list is
+ * what the shell carries and every page re-emits, and these belong to one page.
+ */
+function videoMeta({ mp4, embed }, tag) {
+  const one = (url, type) =>
+    tag(`<meta property="og:video" content="${esc(url)}" />`) +
+    tag(`<meta property="og:video:secure_url" content="${esc(url)}" />`) +
+    tag(`<meta property="og:video:type" content="${type}" />`) +
+    tag(`<meta property="og:video:width" content="1280" />`) +
+    tag(`<meta property="og:video:height" content="720" />`);
+  return (mp4 ? one(mp4, "video/mp4") : "") + one(embed, "text/html");
+}
+
+function playerMeta({ embed }, tag) {
+  return (
+    tag(`<meta name="twitter:player" content="${esc(embed)}" />`) +
+    tag(`<meta name="twitter:player:width" content="1280" />`) +
+    tag(`<meta name="twitter:player:height" content="720" />`)
   );
 }
 
@@ -287,6 +324,10 @@ async function collectPages(load) {
       load("/src/lib/planting.ts"),
       load("/src/lib/routes.ts"),
     ]);
+  const [{ filmEmbedUrl, filmMp4Url, filmRoute }, { fr }] = await Promise.all([
+    load("/src/lib/film.ts"),
+    load("/src/locales/fr.ts"),
+  ]);
   const [{ INVASIVES }, { mappedInvasiveIds, wantedRegionIds, mostWanted }] = await Promise.all([
     load("/src/data/invasives.ts"),
     load("/src/lib/invasives.ts"),
@@ -358,6 +399,24 @@ async function collectPages(load) {
   add("crops", en["crops.docTitle"], en["crops.lede"], {
     image: pageCard("crops"),
     imageAlt: "Will native plants bring pests to my yard? — the question, and what farms measured when they answered it",
+  });
+
+  // The film, on a page of its own so a link to it previews as the video —
+  // one address per cut, so the French one previews in French: the one place
+  // the "a query string can't pick a file" rule above is answered with a path.
+  const languages = { en: filmRoute("en"), fr: filmRoute("fr") };
+  add(filmRoute("en"), en["film.title"], en["film.lede"], {
+    image: `${ORIGIN}${BASE}og/film.jpg`,
+    imageAlt: "A still from Indigene's one-minute hand-drawn film",
+    video: { mp4: filmMp4Url("en"), embed: filmEmbedUrl("en") },
+    languages,
+  });
+  add(filmRoute("fr"), fr["film.title"], fr["film.lede"], {
+    image: `${ORIGIN}${BASE}og/film-fr.jpg`,
+    imageAlt: "Une image du film dessiné d'Indigene, d'une minute",
+    video: { mp4: filmMp4Url("fr"), embed: filmEmbedUrl("fr") },
+    locale: "fr",
+    languages,
   });
 
   // --- one page per region ---

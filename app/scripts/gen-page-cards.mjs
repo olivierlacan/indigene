@@ -76,7 +76,7 @@ function cardHtml({ title, subtitle, stat }) {
   .wordmark { font-size: 30px; font-weight: 800; letter-spacing: -0.01em; }
   .mid { position: relative; display: flex; align-items: center; gap: 48px; }
   .words { min-width: 0; }
-  h1 { font-weight: 800; letter-spacing: -0.025em; line-height: 1.05; font-size: ${titleSize(title)}px; }
+  h1 { text-wrap: balance; font-weight: 800; letter-spacing: -0.025em; line-height: 1.05; font-size: ${titleSize(title)}px; }
   .sub { margin-top: 20px; font-size: 31px; line-height: 1.35; color: ${BRAND}; max-width: 22ch; }
   .emblem { margin-left: auto; flex: none; line-height: 0; opacity: 0.9; }
   .foot { position: relative; display: flex; align-items: baseline; }

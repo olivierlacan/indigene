@@ -339,7 +339,7 @@ function cardHtml({ name, latin, glyph, keystone, facts }) {
 
   .mid { position: relative; display: flex; align-items: center; gap: 56px; }
   .names { min-width: 0; }
-  h1 {
+  h1 { text-wrap: balance;
     font-weight: 800; letter-spacing: -0.025em; line-height: 1.04;
     font-size: ${nameSize(name)}px;
   }

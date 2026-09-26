@@ -135,7 +135,7 @@ function frame({ pill, body, foot }) {
     background: ${BRAND}; border-radius: 999px; padding: 9px 22px;
   }
   .mid { position: relative; }
-  h1 { font-weight: 800; letter-spacing: -0.025em; line-height: 1.05; }
+  h1 { text-wrap: balance; font-weight: 800; letter-spacing: -0.025em; line-height: 1.05; }
   .term {
     margin-top: 16px; font-size: 34px; color: ${BRAND};
     letter-spacing: -0.005em; font-weight: 650;

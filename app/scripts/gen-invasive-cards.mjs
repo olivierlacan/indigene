@@ -123,7 +123,7 @@ const STYLE = `
   }
   .mid { position: relative; display: flex; align-items: center; gap: 48px; }
   .names { min-width: 0; }
-  h1 { font-weight: 800; letter-spacing: -0.025em; line-height: 1.04; }
+  h1 { text-wrap: balance; font-weight: 800; letter-spacing: -0.025em; line-height: 1.04; }
   .latin { margin-top: 12px; font-size: 34px; font-style: italic; color: ${AMBER}; letter-spacing: -0.005em; }
   .role { margin-top: 14px; font-size: 27px; color: #cdcdbd; }
   .drawing { margin-left: auto; flex: none; line-height: 0; opacity: 0.95; }
@@ -140,7 +140,7 @@ function invasiveHtml({ name, latin, role, glyph, facts }) {
   return `<!doctype html><meta charset="utf-8"><style>${STYLE}
   h1 { font-size: ${nameSize(name)}px; }</style>
 <div class="wash"></div>
-<header>${mark}<span class="wordmark">Indigene</span><span class="badge">Most wanted</span></header>
+<header>${mark}<span class="wordmark">Indigene</span><span class="badge">Worst invasives</span></header>
 <div class="mid">
   <div class="names">
     <h1>${esc(name)}</h1>
@@ -159,10 +159,10 @@ function indexHtml({ fakeGlyph, facts }) {
   .pair { margin-left: auto; flex: none; display: flex; align-items: center; gap: 6px; line-height: 0; }
   </style>
 <div class="wash"></div>
-<header>${mark}<span class="wordmark">Indigene</span><span class="badge">Most wanted</span></header>
+<header>${mark}<span class="wordmark">Indigene</span><span class="badge">Worst invasives</span></header>
 <div class="mid">
   <div class="names">
-    <h1>Most-wanted invasives</h1>
+    <h1>Worst invasives</h1>
     <div class="role">Each region’s five to pull first, and how to spot them.</div>
   </div>
   <div class="pair" aria-hidden="true">${fakeGlyph}</div>
@@ -180,7 +180,7 @@ function regionHtml({ name, ranked, facts }) {
     background: #3d1f1a; color: ${AMBER}; font-size: 26px; font-weight: 800; flex: none; }
   </style>
 <div class="wash"></div>
-<header>${mark}<span class="wordmark">Indigene</span><span class="badge">Most wanted</span></header>
+<header>${mark}<span class="wordmark">Indigene</span><span class="badge">Worst invasives</span></header>
 <div class="mid">
   <div class="names">
     <h1>${esc(name)}</h1>
@@ -214,7 +214,7 @@ try {
       glyph: glyphMarkup(inv.form, 240, AMBER),
       facts: [
         { icon: "region", value: String(places.length), label: places.length === 1 ? "region wants it gone" : "regions want it gone" },
-        { icon: "flag", value: `#${best}`, label: "on a most-wanted list" },
+        { icon: "flag", value: `#${best}`, label: "highest place on a list" },
       ],
     };
   });

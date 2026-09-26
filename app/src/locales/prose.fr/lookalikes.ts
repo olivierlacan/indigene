@@ -127,7 +127,7 @@ export const LOOKALIKES_FR: ProseTable = {
       steps: [
         "Déterrez les jeunes pieds avec toute la souche.",
         "Coupez les épis avant les graines : un seul pied en fait des millions.",
-        "Un grand massif en zone humide est l'affaire du service local de lutte contre les invasives.",
+        "Un grand massif en zone humide est l'affaire du service local de lutte contre les espèces envahissantes.",
       ],
       dispose: "Mettez les épis en sac.",
     },

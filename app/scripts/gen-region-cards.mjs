@@ -112,7 +112,7 @@ function cardHtml({ name, reference, stat, map }) {
   }
   .mid { position: relative; display: flex; align-items: center; gap: 40px; flex: 1; min-height: 0; }
   .words { min-width: 0; flex: 1; }
-  h1 { font-weight: 800; letter-spacing: -0.025em; line-height: 1.06; font-size: ${nameSize(name)}px; }
+  h1 { text-wrap: balance; font-weight: 800; letter-spacing: -0.025em; line-height: 1.06; font-size: ${nameSize(name)}px; }
   .ref { margin-top: 16px; font-size: 28px; line-height: 1.3; color: ${BRAND}; max-width: 18ch; }
   .map { flex: none; display: grid; place-items: center; }
   .map svg { display: block; }

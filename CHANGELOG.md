@@ -58,6 +58,18 @@ subtitle on the What's new page.
   five flags drawn as inline SVG (~2 KB) because Windows has no flag emoji;
   shown on the Regions cards, the region page title and the region picker.
 
+### Changed
+
+- The "Most-wanted invasives" lists are now called "Worst invasives", because
+  nobody wants these plants.
+- In French, invasive plants are now called "plantes envahissantes", the
+  term French naturalists and the sources we cite use, instead of the
+  anglicism "invasives".
+- Internal: share-card titles use `text-wrap: balance`, so a long name no
+  longer leaves one word alone on its last line. 24 cards regenerated; Beech's
+  plant card was skipped because it already overflows its fact row on `main`.
+  https://indigene.app/invasives
+
 ## [0.35] - 2026-09-24
 
 **Auckland & Northland, south of the equator**

@@ -16,7 +16,7 @@ import {
   MOISTURE_INFO_URL,
   moistureWord,
 } from "../lib/plain";
-import { saveSpot } from "../db";
+import { getSpot, saveSpot } from "../db";
 import { townFor } from "../lib/places";
 import { t, tn, tx, fmtNumber } from "../lib/i18n";
 import { maxHeightChoices, maxSpreadChoices, temperature } from "../lib/units";
@@ -321,12 +321,16 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
   }
 
   async function doSave(): Promise<void> {
-    const label = prompt(t("results.savePrompt"), defaultLabel());
+    // Re-saving an open saved spot keeps what this page doesn't own — its
+    // name as the default, its invasives list, when it was first saved.
+    const prev = store.draft.editingId ? await getSpot(store.draft.editingId).catch(() => undefined) : undefined;
+    const label = prompt(t("results.savePrompt"), prev?.label ?? defaultLabel());
     if (label == null) return;
     const id = store.draft.editingId ?? cryptoId();
     await saveSpot({
+      ...prev,
       id,
-      createdAt: Date.now(),
+      createdAt: prev?.createdAt ?? Date.now(),
       label: label.trim() || defaultLabel(),
       lat: store.draft.lat!,
       lon: store.draft.lon!,

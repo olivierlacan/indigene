@@ -101,6 +101,20 @@ try {
   const everything = [...sorted.natives, ...sorted.invasives, ...sorted.unconfirmed].map((m) => m.sighting.id);
   expect(!everything.includes(8), "a plant on no list is left out");
 
+  // --- the picker on one planting ------------------------------------------------
+  // Every sighting of the plant, newest first — not just the newest, since a
+  // later photo is the point — minus what's linked, under either name.
+  const redbuds = imp.trimOwnSightings([
+    raw(20, 48502, "Cercis canadensis", "casual", true, "2026-08-01"),
+    { ...raw(21, 48502, "Cercis canadensis", "casual", true, "2026-07-01"), uuid: "776ee855-bf3d-4030-8c45-4c8424b03a56" },
+    raw(22, 0, "Cercis canadensis", "needs_id", true, "2026-06-01"), // matched by name alone
+    raw(23, 47912, "Asclepias tuberosa", "research", false),
+  ]);
+  const picks = imp.sightingsOfPlant(redbuds, "cercis-canadensis", ["20"]);
+  expect(picks.map((s) => s.id).join() === "21,22", `offers every unlinked sighting of the plant (${picks.map((s) => s.id)})`);
+  const byUuid = imp.sightingsOfPlant(redbuds, "cercis-canadensis", ["776ee855-bf3d-4030-8c45-4c8424b03a56"]);
+  expect(!byUuid.some((s) => s.id === 21), "a sighting linked by its UUID isn't offered again");
+
   // --- a native is never an invasive where it's native ---------------------------
   // English ivy is on the Pacific Northwest's list and native in Atlantic France.
   const france = REGIONS.find((r) => r.meta.id === "france-atlantic");

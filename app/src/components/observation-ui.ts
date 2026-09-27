@@ -25,6 +25,7 @@ import { el } from "../ui";
 import { fmtNumber, t } from "../lib/i18n";
 import { openObservationLightbox } from "./lightbox";
 import { loadPhoto } from "../lib/photo";
+import { silhouetteFor } from "./plant-card";
 import type { ObservationPhoto, ObservationSummary } from "../lib/inaturalist";
 
 const INAT = "https://www.inaturalist.org";
@@ -37,7 +38,7 @@ const TILE_PX = 112;
  *  not requested until it is nearly on screen, never more than a few at once,
  *  and faded in only once it has decoded — so a gallery fills in tile by
  *  finished tile instead of a dozen JPEGs painting themselves at once. */
-function photoTile(url: string, alt: string): HTMLImageElement {
+export function photoTile(url: string, alt: string): HTMLImageElement {
   const img = el("img", { class: "photo-fade", alt, width: 112, height: 112 });
   loadPhoto(img, url, TILE_PX);
   return img;
@@ -76,7 +77,12 @@ function flatten(observations: ObservationSummary[]): Tile[] {
  * titled with. Tapping a tile opens the in-app lightbox rather than redirecting
  * away — on that photo, and able to page on through the whole set.
  */
-export function observationList(observations: ObservationSummary[], label: string): HTMLElement {
+/**
+ * `form`, when the sightings are all of one plant, puts that plant's drawing in
+ * each tile while its photo loads — the same placeholder a plant's thumbnail
+ * and hero use, instead of a flat square.
+ */
+export function observationList(observations: ObservationSummary[], label: string, form?: string): HTMLElement {
   const tiles = flatten(observations);
   const shown = tiles.slice(0, MAX_TILES);
   const hidden = tiles.length - shown.length;
@@ -88,7 +94,7 @@ export function observationList(observations: ObservationSummary[], label: strin
       const more = hidden > 0 && i === shown.length - 1 ? hidden : 0;
       const btn = el("button", {
         type: "button",
-        class: "obs-tile",
+        class: form ? "obs-tile obs-tile-drawn" : "obs-tile",
         // The native tooltip carries the full credit for a mouse user who
         // hovers without clicking. It's the browser's own, so it's legible and
         // positioned to fit — which a caption painted inside a 90 px tile
@@ -108,6 +114,7 @@ export function observationList(observations: ObservationSummary[], label: strin
             btn,
           ),
       }, [
+        form ? silhouetteFor(form) : null,
         photoTile(photo.thumbUrl, t("obs.photoAlt", { name: o.taxonName ?? label, observer: o.observer })),
         more ? el("span", { class: "obs-tile-more", "aria-hidden": "true" }, `+${more}`) : null,
       ]);

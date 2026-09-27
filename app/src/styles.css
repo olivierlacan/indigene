@@ -3925,6 +3925,20 @@ details.weights {
   outline: 2px solid var(--brand);
   outline-offset: 2px;
 }
+/* A tile with the plant's drawing under its photo, the way `.plant-photo`
+   stacks them: one grid cell, drawing centred, photo fading in on top. */
+.obs-tile-drawn {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  background: var(--brand-bg);
+}
+.obs-tile-drawn > * {
+  grid-area: 1 / 1;
+}
+.obs-tile-drawn img {
+  height: 100%;
+}
 .obs-tile img {
   width: 100%;
   height: auto;
@@ -5075,6 +5089,31 @@ body[data-layout="profile"] .wip-banner-text {
   background: var(--bg);
 }
 /* The bin sits beside the name at a full tap size without stretching the row. */
+/* "Edit" on a planting's date line: quiet until it's in use, then lit like a
+   pressed chip for as long as the form under it is open. */
+.log-edit-toggle {
+  padding: 0.05rem 0.4rem;
+  margin: -0.05rem 0 -0.05rem -0.4rem;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 0.15em;
+  cursor: pointer;
+}
+.log-edit-toggle[aria-expanded="true"] {
+  margin-left: 0;
+  background: var(--brand-bg);
+  color: var(--brand-ink);
+  text-decoration: none;
+  font-weight: 650;
+}
+.log-edit {
+  margin-top: 0.6rem;
+}
 .log-remove {
   flex: none;
   min-height: 2.4rem;
@@ -5104,6 +5143,38 @@ body[data-layout="profile"] .wip-banner-text {
 }
 .log-obs-form .hint {
   margin-top: 0.35rem;
+}
+/* The linked account's own sightings of this plant: the gallery's tiles, each
+   with its date under it — the date is what tells this June from last June. */
+.log-obs-pick-title {
+  margin: 0.2rem 0 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.log-obs-pick {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.log-obs-pick .obs-tile {
+  width: 100%;
+}
+.log-obs-pick:disabled {
+  opacity: 0.5;
+}
+.log-obs-pick-date {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 /* The add form's three date fields, side by side on a phone: a year wide
    enough for four digits, and the two pickers sharing what's left. */
@@ -5165,6 +5236,17 @@ body[data-layout="profile"] .wip-banner-text {
   gap: 0.4rem;
   flex: none;
   margin-left: auto;
+}
+/* Rename · Move: housekeeping, so it reads quieter than the page's actions. */
+.spot-edit {
+  margin: -0.4rem 0 1rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+.spot-edit .linklike,
+.spot-edit a {
+  color: inherit;
+  text-decoration-color: var(--line-strong);
 }
 .saved-log-link {
   flex: 1 0 100%;

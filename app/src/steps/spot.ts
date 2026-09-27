@@ -452,7 +452,9 @@ function sightingsBlock(planting: Planting, name: string, plantForm: string | un
       input,
       el("button", { class: "btn btn-secondary btn-compact", type: "submit" }, t("spot.obsAdd")),
     ]),
-    el("p", { class: "hint" }, t("spot.obsHelp")),
+    // Only without a linked account: with one, the picker above already shows
+    // what a sighting is, and a paragraph under the field would just repeat it.
+    linkedLogin() ? null : el("p", { class: "hint" }, t("spot.obsHelp")),
   ]) as HTMLFormElement;
 
   // "Add sighting" once there is one, because the long form is an explanation

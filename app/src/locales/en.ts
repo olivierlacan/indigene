@@ -317,7 +317,7 @@ export const en = {
   "spot.obsPlaceholder": "Link, number or UUID",
   "spot.obsAdd": "Link",
   "spot.obsHelp":
-    "Photos stay on iNaturalist; only the reference is kept, on this device. A sighting you've obscured stays obscured to everyone else.",
+    "The photos stay on iNaturalist; only the link is kept, on this device.",
   "spot.obsBad": "That isn't a link, number or UUID we recognise.",
   "spot.obsAlready": "Already linked to this plant.",
   "spot.obsAdded": "Sighting linked.",

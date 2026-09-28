@@ -25,7 +25,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     careNote:
       "Lent, puis là pour des siècles — un chêne planté maintenant est pour un arrière-petit-enfant. Il préfère une pente un peu plus sèche et mieux drainée que le chêne pédonculé de l'ouest atlantique, et accepte volontiers un sol acide. Sa racine pivotante profonde le rend résistant à la sécheresse mais difficile à déplacer : plantez-en un petit et laissez-lui de la place.",
     givesNote:
-      "L'arbre le plus précieux de l'est de la France, sans concurrent : plus de quatre cents espèces de chenilles, c'est-à-dire de quoi remplir chaque printemps un nid de mésanges et de sittelles. Puis des glands pour les geais, les pigeons ramiers, les pics, les écureuils et les sangliers, et l'ombre profonde et le bois mort où vivent les coléoptères et les chauves-souris de toute une forêt.",
+      "L'un des arbres les plus précieux de l'est de la France : plus de quatre cents espèces de chenilles, c'est-à-dire de quoi remplir chaque printemps un nid de mésanges et de sittelles. Puis des glands pour les geais, les pigeons ramiers, les pics, les écureuils et les sangliers, et l'ombre profonde et le bois mort où vivent les coléoptères et les chauves-souris de toute une forêt.",
     propagationNote:
       "Ramassez les glands à leur chute en automne et faites-les flotter dans l'eau — jetez ceux qui remontent, semez aussitôt ceux qui coulent. Les glands de chêne germent dès l'automne, sans passage au froid, et ne doivent jamais sécher. À cause de la racine pivotante, élevez-le d'abord en pot profond, ou semez-le là où il vivra.",
   },
@@ -110,9 +110,9 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "Un petit cerisier sauvage au parfum sucré des pentes calcaires sèches et des broussailles de Bourgogne, du piémont jurassien et de la vallée du Rhône.",
     careNote:
-      "Peut-être le feuillu le plus résistant à la sécheresse de cette liste — il pousse dans la caillasse calcaire nue et ne demande jamais d'eau. Il drageonne et se ressème abondamment : donnez-lui un talus ou une haie plutôt qu'un massif. Feuilles et noyaux contiennent des composés cyanurés ; c'est une plante à tenir hors d'un pré à chevaux.",
+      "Peut-être le feuillu le plus résistant à la sécheresse d'ici — il pousse dans la caillasse calcaire nue et ne demande jamais d'eau. Il drageonne et se ressème abondamment : donnez-lui un talus ou une haie plutôt qu'un massif. Feuilles et noyaux contiennent des composés cyanurés ; c'est une plante à tenir hors d'un pré à chevaux.",
     givesNote:
-      "Les cerisiers sont le deuxième grand genre à chenilles après les chênes, et celui-ci est celui qui poussera sur un calcaire sec. Sa floraison blanche parfumée nourrit les abeilles en avril, et les petits fruits noirs amers sont prélevés par les fauvettes à tête noire, les grives, les merles et les fauvettes qui s'engraissent pour la migration.",
+      "Les cerisiers sont un grand genre à chenilles, et celui-ci est celui qui poussera sur un calcaire sec. Sa floraison blanche parfumée nourrit les abeilles en avril, et les petits fruits noirs amers sont prélevés par les fauvettes à tête noire, les grives, les merles et les fauvettes qui s'engraissent pour la migration.",
     propagationNote:
       "Débarrassez les noyaux mûrs de leur chair en fin d'été et donnez-leur environ trois mois de froid humide avant de semer au printemps. Plus facile encore : soulevez en fin d'hiver l'un des drageons enracinés qu'il pousse autour de lui.",
     supportNotes: {
@@ -154,12 +154,12 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     careNote:
       "L'indigène à planter au lieu du troène du Japon ou du laurier-cerise des haies de lotissement — même métier, même tolérance à l'ombre, à la sécheresse, au calcaire et à la taille, mais celui-là est d'ici. Laissez-le fleurir plutôt que de le tondre à plat deux fois par an, sinon vous perdez tout ce pour quoi il est bon. Les baies noires sont toxiques pour les personnes et les animaux domestiques.",
     givesNote:
-      "La plante nourricière du sphinx du troène, le plus grand papillon de nuit de France — un insecte grand comme une paume, rayé de rose et de noir, dont l'énorme chenille verte grandit sur ces feuilles. Ses lourds corymbes parfumés de juin nourrissent abeilles, papillons de nuit et papillons de jour, et ses baies noires font passer l'hiver aux grives et aux fauvettes à tête noire.",
+      "La plante nourricière du sphinx du troène, l'un des plus grands sphinx de France — un insecte grand comme une paume, rayé de rose et de noir, dont l'énorme chenille verte grandit sur ces feuilles. Ses lourds corymbes parfumés de juin nourrissent abeilles, papillons de nuit et papillons de jour, et ses baies noires font passer l'hiver aux grives et aux fauvettes à tête noire.",
     propagationNote:
       "Des boutures nues prises en hiver et enfoncées dans une terre humide s'enracinent presque à coup sûr — c'est l'un des ligneux les plus faciles qui soient. Par semis, débarrassez la graine de sa pulpe et donnez-lui trois mois de froid humide.",
     supportNotes: {
       "privet-hawk-moth":
-        "Le troène sauvage est la plante nourricière classique du plus grand papillon de nuit de France — l'énorme chenille verte, rayée de lilas, grandit sur ces feuilles.",
+        "Le troène sauvage est la plante nourricière classique de l'un des plus grands sphinx de France — l'énorme chenille verte, rayée de lilas, grandit sur ces feuilles.",
       "winter-thrushes":
         "Les baies noires font passer l'hiver aux grives et aux fauvettes à tête noire.",
     },
@@ -174,7 +174,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "Un arbuste de haie et de lisière du pays calcaire, dans tout l'est et le centre de la France.",
     careNote:
-      "Facile dans toute terre correcte, calcaire ou argileuse, au soleil ou à mi-ombre, et il ne demande aucune taille. À savoir avant de le planter : toutes ses parties sont toxiques si on les avale — le fruit vif en particulier, et il est assez vif pour tenter un enfant — c'est donc un arbuste pour le fond d'une haie plutôt que le bord d'une aire de jeux.",
+      "Facile dans toute terre correcte, calcaire ou argileuse, au soleil ou à mi-ombre, et il ne demande aucune taille. Toutes ses parties sont toxiques si on les avale — le fruit vif en particulier, et il est assez vif pour tenter un enfant — c'est donc un arbuste pour le fond d'une haie plutôt que le bord d'une aire de jeux.",
     givesNote:
       "Son spectacle d'automne n'a pas d'égal chez les arbustes indigènes : des capsules rose vif qui s'ouvrent pour laisser pendre des graines orange au bout d'un fil, prélevées par les rougegorges et les fauvettes à tête noire, au-dessus de feuilles devenues écarlates. Il porte aussi une grosse population de pucerons en début d'été, ce qui a l'air d'un problème et est en réalité ce qui nourrit les mésanges bleues, les coccinelles et les larves de syrphes.",
     propagationNote:
@@ -324,7 +324,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     nativeNote:
       "L'autre moitié de la chênaie de l'est — la classique forêt de chêne-charme de Lorraine, de Bourgogne et d'Alsace.",
     careNote:
-      "Le grand arbre le plus accommodant de cette liste : argile lourde, humidité saisonnière, ombre, taille sévère — il prend tout. C'est pourquoi il fait la meilleure haie indigène de l'est de la France, gardant ses feuilles brunes tout l'hiver pour faire écran. Laissé libre, il devient un bel arbre au tronc cannelé.",
+      "Le grand arbre le plus accommodant d'ici : argile lourde, humidité saisonnière, ombre, taille sévère — il prend tout. C'est pourquoi il fait la meilleure haie indigène de l'est de la France, gardant ses feuilles brunes tout l'hiver pour faire écran. Laissé libre, il devient un bel arbre au tronc cannelé.",
     givesNote:
       "Il héberge toute une gamme de chenilles, nourrit gros-becs et mésanges avec ses samares, et — taillé en haie — offre un couvert de nidification dense toute l'année ainsi qu'un brise-vent.",
     propagationNote:

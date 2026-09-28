@@ -111,7 +111,7 @@ export const FRANCE_ALPINE: ProseTable = {
     nativeNote:
       "La rose des Alpes — le persistant bas qui rougit des pentes subalpines entières en juillet, sur les sols acides au-dessus de 1 500 m environ.",
     careNote:
-      "La plante la plus difficile à contenter de cette liste en dessous de son altitude d'origine : il lui faut un sol acide, un air frais et humide, et une longue couverture de neige qui la protège l'hiver — exactement ce qu'un jardin de vallée chaude ne peut pas lui donner. Extrêmement lente, extrêmement longévive. Toutes ses parties sont toxiques, et le miel qui en est fait peut l'être aussi.",
+      "La plante d'ici la plus difficile à contenter en dessous de son altitude d'origine : il lui faut un sol acide, un air frais et humide, et une longue couverture de neige qui la protège l'hiver — exactement ce qu'un jardin de vallée chaude ne peut pas lui donner. Extrêmement lente, extrêmement longévive. Toutes ses parties sont toxiques, et le miel qui en est fait peut l'être aussi.",
     givesNote:
       "En juillet, une pente de rhododendron ferrugineux est l'un des grands spectacles à bourdons d'Europe — les fleurs sont façonnées pour les bourdons à longue langue et ils les butinent par centaines. Ses fourrés bas et denses sont l'abri où tétras lyre et lièvres variables passent l'hiver, et elle tient le sol sur des pentes trop raides pour tout le reste.",
     propagationNote:
@@ -160,7 +160,7 @@ export const FRANCE_ALPINE: ProseTable = {
       "À tégument dur comme les autres légumineuses : entaillez ou faites tremper la graine, puis semez-la en terre graveleuse à l'automne. Elle a une racine pivotante et se déplace mal : semez-la sur place plutôt que de la transplanter.",
     supportNotes: {
       "small-blue":
-        "Le plus petit papillon d'Europe vit à l'état de chenille à l'intérieur des capitules d'anthyllide, en mangeant les graines en formation, et ne peut utiliser aucune autre plante.",
+        "L'un des plus petits papillons d'Europe vit à l'état de chenille à l'intérieur des capitules d'anthyllide, en mangeant les graines en formation ; en Grande-Bretagne et en Irlande, il n'utilise aucune autre plante.",
     },
   },
   "Helianthemum nummularium": {
@@ -194,7 +194,7 @@ export const FRANCE_ALPINE: ProseTable = {
   "Trollius europaeus": {
     supportNotes: {
       "bumble-bees":
-        "Un trolle ne s'ouvre jamais vraiment — les pétales se referment par-dessus en lanterne, et un insecte doit se glisser par l'interstice. Les bourdons sont parmi les rares assez gros pour s'en donner la peine.",
+        "Un trolle ne s'ouvre jamais vraiment — les pétales se referment par-dessus en lanterne, et un insecte doit se glisser par l'interstice. Ses vrais partenaires sont de minuscules mouches qui se reproduisent dans la fleur ; les bourdons s'y glissent aussi.",
     },
     nativeNote:
       "Le globe jaune citron des prairies de fauche humides de montagne et des bords de ruisseau des Alpes.",
@@ -215,7 +215,7 @@ export const FRANCE_ALPINE: ProseTable = {
     careNote:
       "Une vraie alpine, c'est-à-dire qu'elle veut du soleil, du calcaire, du gravier, du froid et un drainage franc — et qu'elle déteste un air chaud, humide et immobile plus qu'elle ne déteste le gel. Un lit de gravier surélevé ou le dessus d'un mur sec lui convient ; une terre lourde la tue. Lente, puis un large tapis plat.",
     givesNote:
-      "Des fleurs blanches à huit pétales qui suivent le soleil et font office de petits réflecteurs paraboliques, si bien que mouches et abeilles alpines s'y installent autant pour la chaleur que pour le pollen — une élégante réponse au froid des sommets. Puis des plumets de graines argentés et vrillés, et un tapis persistant qui épingle un éboulis mouvant. Parente des rosacées fixatrices d'azote, elle en apporte aussi au gravier brut de la montagne.",
+      "Des fleurs blanches à huit pétales qui suivent le soleil et font office de petits réflecteurs paraboliques, si bien que mouches et abeilles alpines s'y installent autant pour la chaleur que pour le pollen — une élégante réponse au froid des sommets. Puis des plumets de graines argentés et vrillés, et un tapis persistant qui épingle un éboulis mouvant. Chose rare chez les rosacées, elle fixe elle-même l'azote, comme l'aulne.",
     propagationNote:
       "Les pousses en voie d'aoûtement prises en fin d'été s'enracinent sous abri dans un mélange graveleux et calcaire. La graine se sème fraîche en surface à l'automne dans un pot graveleux laissé dehors — il lui faut de la lumière et un hiver rude.",
   },
@@ -241,7 +241,7 @@ export const FRANCE_ALPINE: ProseTable = {
     careNote:
       "Le gazon indigène de l'altitude : fine, dense, résistante à la sécheresse et heureuse sur terrain pauvre, elle ne demande jamais ni engrais ni arrosage. Fauchez-la une ou deux fois par an, et tard — une prairie coupée en septembre, pas une pelouse tondue chaque semaine — et les fleurs du pâturage montent à travers elle.",
     givesNote:
-      "Le groupe de plantes le plus utilisé de toute cette liste après les arbres. L'extraordinaire cortège de papillons bruns des Alpes — les moirés, les agrestes, les demi-deuils, les hespéries de montagne — ne mange rien d'autre que des graminées comme celle-ci à l'état de chenille, et hiverne au fond des touffes. Sa graine nourrit fringilles et bruants, et ses racines tiennent la terre maigre de montagne contre la fonte.",
+      "Le groupe de plantes le plus utilisé ici après les arbres. L'extraordinaire cortège de papillons bruns des Alpes — les moirés, les agrestes, les demi-deuils, les hespéries de montagne — ne mange rien d'autre que des graminées comme celle-ci à l'état de chenille, et hiverne au fond des touffes. Sa graine nourrit fringilles et bruants, et ses racines tiennent la terre maigre de montagne contre la fonte.",
     propagationNote:
       "Égrenez les épis mûrs en fin d'été et semez-les directement sur une terre ratissée — aucun froid nécessaire, et elle lève sans peine. Les touffes installées se déterrent aussi et se séparent au printemps.",
     supportNotes: {
@@ -261,7 +261,7 @@ export const FRANCE_ALPINE: ProseTable = {
     careNote:
       "Rapide, bon marché, peu exigeant et de courte vie pour un arbre — soixante à quatre-vingts ans — ce qui en fait le bon premier arbre sur un terrain nu ou pauvre, avec une ombre légère à travers laquelle d'autres choses peuvent pousser. Il se ressème largement. Son pollen de printemps est un déclencheur fréquent de rhume des foins.",
     givesNote:
-      "Après les chênes et les saules, le bouleau est le plus grand arbre à chenilles d'Europe, et à cette altitude c'est le plus grand, un point c'est tout — plus de trois cents espèces de papillons de jour et de nuit, ce qui explique qu'une boulaie soit si bruyante de fauvettes et de mésanges en mai. Sa graine nourrit sizerins et tarins tout l'hiver.",
+      "Après les chênes et les saules, le bouleau est le plus grand arbre à chenilles d'Europe — plus de trois cents espèces de papillons de jour et de nuit, ce qui explique qu'une boulaie soit si bruyante de fauvettes et de mésanges en mai. Sa graine nourrit sizerins et tarins tout l'hiver.",
     propagationNote:
       "Récoltez les chatons en forme de petits cônes en fin d'été, juste au moment où ils commencent à s'effriter, et émiettez-les à la surface d'un terreau humide — la graine de bouleau est fine comme de la poussière et a besoin de lumière, ne la couvrez donc pas. Elle lève en quelques semaines.",
     supportNotes: {
@@ -323,7 +323,7 @@ export const FRANCE_ALPINE: ProseTable = {
     careNote:
       "Elle est exigeante et cela vaut la peine : une terre acide avec du vrai terreau de feuilles ou de l'écorce dedans, des racines fraîches, la mi-ombre, et jamais de chaux ni de fumier. Elle s'étend lentement par des coulants souterrains en un tapis bas, et met des années à le faire — mais une fois installée, elle est là pour des décennies et ne demande rien.",
     givesNote:
-      "La plus grande source de nourriture parmi les arbustes de montagne : plus de deux cents espèces de chenilles, des clochettes roses que les bourdons butinent en mai, et une récolte de baies en août qui nourrit tétras lyre, grands tétras, grives, renards, martres et ours — tout le premier été d'un poussin de tétras lyre, ce sont des insectes prélevés sur la myrtille. Et il en reste pour vous.",
+      "La plus grande source de nourriture parmi les arbustes de montagne : plus de deux cents espèces de chenilles, des clochettes roses que les bourdons butinent en mai, et une récolte de baies en août qui nourrit tétras lyre, grands tétras, grives, renards et martres — tout le premier été d'un poussin de tétras lyre, ce sont des insectes prélevés sur la myrtille. Et il en reste pour vous.",
     propagationNote:
       "Soulevez au début du printemps un morceau enraciné de coulant et mettez-le en pot dans un mélange acide et tourbeux — la voie sûre. Par semis : écrasez des baies mûres, rincez la graine et pressez-la à la surface d'un terreau humide sans calcaire sans la recouvrir ; il lui faut de la lumière et du froid, laissez donc le pot dehors pour l'hiver.",
     supportNotes: {
@@ -332,7 +332,7 @@ export const FRANCE_ALPINE: ProseTable = {
       "bumble-bees":
         "Des clochettes roses en mai, à une altitude où le nectar précoce est rare.",
       "winter-thrushes":
-        "La récolte de baies d'août nourrit merles à plastron, grives et merles — et renards, martres et ours.",
+        "La récolte de baies d'août nourrit merles à plastron, grives et merles — et renards et martres.",
     },
   },
   "Lotus corniculatus@france-alpine": {
@@ -379,7 +379,7 @@ export const FRANCE_ALPINE: ProseTable = {
       "bumble-bees":
         "Un massif de framboisiers en juin a des bourdons dessus dès le lever du jour — l'une des meilleures plantes à nectar de tout l'été montagnard.",
       "green-hairstreak":
-        "Le seul papillon vert d'Europe pond sur le framboisier parmi les autres arbustes des clairières, et se pose sur un talus ensoleillé ailes fermées, impossible à distinguer d'une feuille.",
+        "Le papillon vert le plus commun d'Europe pond sur le framboisier parmi les autres arbustes des clairières, et se pose sur un talus ensoleillé ailes fermées, impossible à distinguer d'une feuille.",
       "blackcaps-warblers":
         "Fauvettes et grives visitent un fourré de framboisiers en août, et les cannes sont assez denses pour qu'elles y nichent aussi.",
       "hazel-dormouse":
@@ -526,7 +526,7 @@ export const FRANCE_ALPINE: ProseTable = {
     nativeNote:
       "Une fougère raide, sombre et à bord épineux des éboulis calcaires d'altitude et des vires rocheuses — l'une des rares fougères qui vivent en pleine pelouse alpine, bien au-dessus des arbres.",
     careNote:
-      "Une plante de rocaille plutôt que de massif : placez-la dans une fissure calcaire graveleuse ou du côté ombragé d'un rocher, le collet bien dégagé pour que l'eau n'y stagne pas. Elle est lente, persistante et de longue vie, et elle veut des hivers froids — c'est l'une des rares choses de cette liste plus heureuse en altitude qu'en vallée. Ne la nourrissez pas et ne la déplacez pas.",
+      "Une plante de rocaille plutôt que de massif : placez-la dans une fissure calcaire graveleuse ou du côté ombragé d'un rocher, le collet bien dégagé pour que l'eau n'y stagne pas. Elle est lente, persistante et de longue vie, et elle veut des hivers froids — c'est l'une des rares plantes d'ici plus heureuses en altitude qu'en vallée. Ne la nourrissez pas et ne la déplacez pas.",
     givesNote:
       "Elle garnit le côté ombragé de la roche, qui est en montagne l'endroit où beaucoup de petite vie s'abrite à la fois du soleil et du gel — coléoptères, araignées, et les insectes que chassent lézards et pipits. Très peu d'insectes mangent les fougères : la valeur est ici l'anfractuosité, pas le repas.",
     propagationNote:

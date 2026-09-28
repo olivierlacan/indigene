@@ -128,7 +128,7 @@ export const ORNAMENTALS: Ornamental[] = [
   },
   {
     id: "carpobrotus-edulis",
-    common: "Ice plant (Hottentot fig)",
+    common: "Highway ice plant",
     latin: "Carpobrotus edulis",
     form: "groundcover",
     role: "Coastal bank / groundcover",
@@ -267,7 +267,7 @@ export const ORNAMENTALS: Ornamental[] = [
     role: "Architectural evergreen",
     origin: "Native to southern Japan; not a palm at all, but an ancient cycad.",
     blurb:
-      "The stiff, glossy rosette in a thousand Florida front yards. It looks the part and asks for nothing — but it feeds nothing native, and every part of it is poisonous enough to kill a dog that chews a seed.",
+      "The stiff, glossy rosette in a thousand Florida front yards. It looks the part and asks for nothing — atala caterpillars will eat it, but little else native does, and every part of it is poisonous enough to kill a dog that chews a seed.",
     originBasis: "UF/IFAS; ASPCA.",
   },
   {
@@ -665,7 +665,7 @@ export const ORNAMENTALS: Ornamental[] = [
     role: "Fast flowering climber",
     origin: "Native to Argentina, Brazil and Paraguay.",
     blurb:
-      "The most extraordinary flower anyone can grow on a fence, and it covers one in a season. In South America it raises whole broods of longwing butterflies. Here it raises nobody — and the local climber that does have a butterfly depending on it is usually the one nobody stocks.",
+      "The most extraordinary flower anyone can grow on a fence, and it covers one in a season. In South America it raises whole broods of longwing butterflies; in coastal California the Gulf fritillary breeds on it heavily, and in Europe nothing does. Meanwhile the local climber that has a butterfly depending on it is usually the one nobody stocks.",
     originBasis: "Missouri Botanical Garden; Tela Botanica; UC Master Gardeners.",
   },
   {
@@ -699,7 +699,7 @@ export const ORNAMENTALS: Ornamental[] = [
     role: "Big ornamental grass",
     origin: "Native to eastern Asia; the tall feather-plumed grass of a thousand borders.",
     blurb:
-      "The fountain of arching blades and silver autumn plumes sold as a easy-care centrepiece. It seeds itself into old fields and roadsides — several states now list it — and carries fire the way its native-grass look-alikes don't.",
+      "The fountain of arching blades and silver autumn plumes sold as an easy-care centrepiece. It seeds itself into old fields and roadsides — several states now list it — and carries fire the way its native-grass look-alikes don't.",
     originBasis: "Missouri Botanical Garden; USDA.",
   },
   {
@@ -1790,7 +1790,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "dicentra-formosa",
         why: "For soft ferny foliage and a long bloom in shade, Pacific bleeding heart spreads a blue-green carpet hung with pink lockets from spring into summer — far more than a hosta gives, and none of the slug holes.",
         edges: [
-          { axis: "wildlife", native: "Nectar for early bumblebees; the sole host of Clodius parnassian butterflies.", ornamental: "Nothing native eats it." },
+          { axis: "wildlife", native: "Nectar for early bumblebees; a main host of Clodius parnassian butterflies.", ornamental: "Nothing native eats it." },
           { axis: "care", native: "Spreads into a lush shade colony on its own.", ornamental: "Chewed ragged by slugs by midsummer." },
         ],
         basis: "Oregon State University; Xerces Society.",
@@ -2416,9 +2416,9 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "passiflora-caerulea": [
       {
         plantId: "aristolochia-californica",
-        why: "If a passionflower appealed because of the butterflies, California pipevine is the local version of that bargain — it is the only plant the pipevine swallowtail's caterpillars can eat, anywhere.",
+        why: "If a passionflower appealed because of the butterflies, California pipevine is the local version of that bargain — it is the only native one the pipevine swallowtail's caterpillars can eat here.",
         edges: [
-          { axis: "wildlife", native: "The sole larval host of the pipevine swallowtail; plant it and the butterfly turns up.", ornamental: "Raises longwing butterflies in Brazil, and nobody here." },
+          { axis: "wildlife", native: "The sole larval host of the pipevine swallowtail; plant it and the butterfly turns up.", ornamental: "Gulf fritillaries breed on it; nothing else here does." },
           { axis: "care", native: "Dies back and returns; never gets away from you.", ornamental: "Covers a fence in a season and keeps going." },
         ],
         basis: "California Native Plant Society; Xerces Society; Las Pilitas.",
@@ -2427,7 +2427,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "vitis-californica",
         why: "For fast cover over a fence or an arbour with something to show in autumn, California wild grape puts on six metres in a season and turns crimson and gold.",
         edges: [
-          { axis: "wildlife", native: "Fruit that carries a dozen bird species through autumn, and a host for the western grapeleaf skeletonizer.", ornamental: "An extraordinary flower, and a wildlife blank." },
+          { axis: "wildlife", native: "Fruit that carries a dozen bird species through autumn, and a host for the western grapeleaf skeletonizer.", ornamental: "An extraordinary flower; only the Gulf fritillary uses it." },
           { axis: "water", native: "Finds its own water once rooted.", ornamental: "Wants watering to keep flowering." },
         ],
         basis: "California Native Plant Society; Las Pilitas.",
@@ -2561,7 +2561,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "hemerocallis-fulva": [
       {
         plantId: "coreopsis-leavenworthii",
-        why: "For easy, tireless yellow in a sunny bed, Leavenworth's tickseed — Florida's state wildflower — blooms nearly year-round and reseeds itself, feeding bees and butterflies the daylily can't.",
+        why: "For easy, tireless yellow in a sunny bed, Leavenworth's tickseed — its genus is Florida's state wildflower — blooms nearly year-round and reseeds itself, feeding bees and butterflies the daylily can't.",
         edges: [
           { axis: "wildlife", native: "Nectar for bees and butterflies; seed for small birds.", ornamental: "Little a native can use; no caterpillars." },
           { axis: "care", native: "A self-sowing native that thrives on neglect.", ornamental: "Runs into sterile clumps and gives nothing back." },
@@ -2898,9 +2898,9 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "cycas-revoluta": [
       {
         plantId: "zamia-integrifolia",
-        why: "For the same stiff, glossy, prehistoric rosette, coontie is the real thing — Florida's own native cycad, and the one and only plant the rare atala butterfly can raise its young on.",
+        why: "For the same stiff, glossy, prehistoric rosette, coontie is the real thing — Florida's own native cycad, and the only native plant the rare atala butterfly can raise its young on.",
         edges: [
-          { axis: "wildlife", native: "The sole host of the atala butterfly, brought back from the brink of extinction with it.", ornamental: "Feeds nothing native." },
+          { axis: "wildlife", native: "The atala butterfly's only native host, brought back from the brink of extinction with it.", ornamental: "Atala caterpillars will eat it, but it can't stand in for coontie." },
           { axis: "disease", native: "A tough, trouble-free native.", ornamental: "Poisonous enough to kill a dog, and a magnet for cycad scale." },
         ],
         basis: "UF/IFAS; Florida Native Plant Society.",
@@ -3475,7 +3475,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "lupinus-polyphyllus": [
       {
         plantId: "anthyllis-vulneraria",
-        why: "For the cottage-lupin look in a mountain border — spikes of pea-flower over ferny leaves — kidney vetch gives it in gold, and unlike the garden lupine it belongs in the meadow instead of taking it over.",
+        why: "For the cottage-lupin look in a mountain border, kidney vetch gives rounded, clover-like heads of pea-flower in gold, and unlike the garden lupine it belongs in the meadow instead of taking it over.",
         edges: [
           { axis: "wildlife", native: "The sole larval host of the small blue butterfly, and a favourite of mountain bees.", ornamental: "Nectar only, and it crowds out the very meadow flowers those insects need." },
           { axis: "care", native: "A meadow native that keeps its place.", ornamental: "Enriches the thin soil and spreads until the wildflowers are gone." },

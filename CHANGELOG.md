@@ -96,6 +96,9 @@ subtitle on the What's new page.
 - Internal: the plant page moves its growth drawing and its "See it growing
   near you" card between columns only past the laptop breakpoint (`onLaptop`
   in `steps/plant.ts`), so the phone stack is untouched.
+- Plants & Wildlife: notes no longer crown "the most valuable" or "the
+  biggest" plant where two notes disagreed, and no longer talk about "this
+  list" — they describe your garden, not our spreadsheet.
 - The welcome page says what's true, more plainly: plants didn't evolve *to*
   feed birds, but local insects evolved alongside native plants, and many can
   eat nothing else. https://indigene.app/
@@ -145,6 +148,16 @@ subtitle on the What's new page.
 
 ### Fixed
 
+- Plants & Wildlife: dozens of notes were corrected. A monarch needs a
+  milkweed, not one particular milkweed; yerba buena means "good herb"; Europe
+  has more than one green butterfly; a bushtit weighs about five paperclips.
+- Plants: wild garlic now warns that every part is toxic to dogs and cats, and
+  that its leaves look like two poisonous plants.
+- Plants: the "deer tend to leave it alone" tag is off plants deer happily
+  browse, like hemlock, Douglas-fir, wild roses and bramble.
+- Internal: cow parsnip's swallowtail tie moved to the anise swallowtail, the
+  aspen–jay tie was deleted (jays don't nest in holes), "Hottentot fig" is
+  "highway ice plant", and wrinkleleaf goldenrod is flagged as spreading.
 - About: the page said Indigene runs no analytics, but a visit counter does. It
   now says so, and that you can switch it off in Settings.
   https://indigene.app/about

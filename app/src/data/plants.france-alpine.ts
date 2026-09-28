@@ -400,7 +400,7 @@ export const SEED_RAW: RawPlant[] = [
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
     noWaterEstablish: false,
     careNote: "It is particular and worth the trouble: acid soil with real leaf mould or bark in it, cool roots, part shade, and never lime or manure. It spreads slowly by underground runners into a low carpet, and it takes years to do so — but once established it is there for decades and needs nothing.",
-    givesNote: "The biggest single food source among mountain shrubs: over two hundred caterpillar species, pink bell flowers that bumble bees work in May, and a berry crop in August that feeds black grouse, capercaillie, thrushes, foxes, martens and bears — the black grouse chick's whole first summer is insects taken off bilberry. And you get the rest.",
+    givesNote: "The biggest single food source among mountain shrubs: over two hundred caterpillar species, pink bell flowers that bumble bees work in May, and a berry crop in August that feeds black grouse, capercaillie, thrushes, foxes and martens — the black grouse chick's whole first summer is insects taken off bilberry. And you get the rest.",
     confidence: "high",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Black grouse dependence on bilberry: Parc national de la Vanoise / Observatoire des galliformes de montagne. Host count: 227 Lepidoptera recorded on native Vaccinium in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {

@@ -62,7 +62,7 @@ export const SEED_RAW: RawPlant[] = [
     filters: { deerResistant: false, thorny: false, allergenic: true, petToxic: false, aggressive: false },
     noWaterEstablish: true,
     careNote: "Slow but extraordinarily long-lived and drought-proof once set — a taproot makes it self-sufficient but hard to transplant, so plant small and leave it. The West's imperiled oak-prairie habitat depends on it.",
-    givesNote: "Oaks host more caterpillar species than any other tree genus here — hundreds — plus acorns for jays, woodpeckers and mammals, and the backbone of Garry oak savanna.",
+    givesNote: "Oaks are among the top caterpillar trees anywhere — hundreds of species — plus acorns for jays, woodpeckers and mammals, and the backbone of Garry oak savanna.",
     confidence: "high",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: oak genus, western estimate (Tallamy/NWF).",
     propagation: {

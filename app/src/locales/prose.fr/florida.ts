@@ -25,7 +25,7 @@ export const FLORIDA: ProseTable = {
     careNote:
       "Donnez-lui de la vraie place — sa couronne s'étale bien plus large que haute, et un chêne de Virginie adulte est un voisin pour la vie. Résistant au vent et à la sécheresse une fois installé ; l'un des arbres d'ombre les plus résistants aux ouragans.",
     givesNote:
-      "Le meilleur arbre pour la faune de Floride : des centaines d'espèces de chenilles, des glands pour les geais, les pics, les dindons sauvages et les écureuils, un abri persistant, et des branches qui deviennent des jardins de fougère de résurrection, de broméliacées et de mousse espagnole.",
+      "Les chênes hébergent plus d'espèces de chenilles qu'aucun autre genre d'arbre ici — des centaines — plus des glands pour les geais, les pics, les dindons sauvages et les écureuils, un abri persistant, et des branches qui deviennent des jardins de fougère de résurrection, de broméliacées et de mousse espagnole.",
     propagationNote:
       "Ramassez les glands frais à l'automne et semez-les aussitôt — un gland de chêne de Virginie germe aussitôt et n'a aucun besoin de passer par le froid. Mettez-les dans l'eau et jetez ceux qui flottent, gardez ceux qui coulent, et ne les laissez jamais sécher. Il descend tôt une racine pivotante profonde : démarrez-le là où il restera.",
     supportNotes: {
@@ -68,7 +68,7 @@ export const FLORIDA: ProseTable = {
   "Magnolia grandiflora": {
     supportNotes: {
       "eastern-carpenter-bee":
-        "Une fleur de magnolia est une conception très ancienne — pas de guides de nectar, pas de piste d'atterrissage, juste une coupe de pollen. Les gros coléoptères patauds et les xylocopes sont exactement ce pour quoi elle a évolué.",
+        "Une fleur de magnolia est une conception très ancienne — pas de guides de nectar, pas de piste d'atterrissage, juste une coupe de pollen. Une fleur ancienne faite pour les coléoptères ; les xylocopes viennent aussi pour le pollen.",
       "acorn-mammals":
         "Le cône s'ouvre à l'automne pour suspendre ses graines écarlates au bout de fils, et les écureuils gris et fauves viennent les chercher.",
     },
@@ -150,7 +150,7 @@ export const FLORIDA: ProseTable = {
     careNote:
       "Rapide, facile et résistant à la sécheresse, au soleil ou à mi-ombre ; il se ressème souvent alentour. Rabattez-le sévèrement en fin d'hiver pour une silhouette plus pleine.",
     givesNote:
-      "Des fleurs d'été pour les pollinisateurs, puis les spectaculaires grappes de baies magenta que moqueurs, cardinaux et des dizaines d'oiseaux (et les ratons laveurs) dévorent à l'automne.",
+      "Des fleurs d'été pour les pollinisateurs, puis les grappes de baies magenta que moqueurs, cardinaux et des dizaines d'oiseaux (et les ratons laveurs) dévorent à l'automne.",
     propagationNote:
       "À peu près aussi facile qu'une indigène puisse l'être. Écrasez les baies magenta mûres, rincez-en les graines, et semez-les au chaud — elles ne demandent presque rien. Ou coupez au printemps ou en été quelques pousses vertes tendres : elles s'enracinent vite.",
     supportNotes: {
@@ -175,7 +175,7 @@ export const FLORIDA: ProseTable = {
     careNote:
       "Elle aime la chaleur, le soleil et un sol sec à moyen, et fleurit presque toute l'année dans les zones sans gel. Au nord de la zone 9b environ, elle disparaît au gel et repart des racines — traitez-la là comme une grande vivace. Exigez la vraie espèce indigène.",
     givesNote:
-      "Une source de nectar intarissable : ses fleurs tubulaires rouge-orangé nourrissent les colibris, les Heliconius charithonia, les Agraulis vanillae et les coliades du printemps à l'automne, et ses baies sombres nourrissent les oiseaux.",
+      "Ses fleurs tubulaires rouge-orangé nourrissent les colibris, les Heliconius charithonia, les Agraulis vanillae et les coliades du printemps à l'automne, et ses baies sombres nourrissent les oiseaux.",
     propagationNote:
       "La voie la plus simple est la bouture — coupez pendant les mois chauds une pousse tendre ou tout juste aoûtée et elle s'enracine volontiers. Vous pouvez aussi presser la graine des baies sombres mûres et la semer au chaud. Prenez vos boutures sur un pied dont vous savez qu'il est la vraie indigène, pas un « dwarf firebush » de pépinière.",
     supportNotes: {
@@ -399,7 +399,7 @@ export const FLORIDA: ProseTable = {
     careNote:
       "Elle demande le plein soleil et un sol parfaitement drainé (une terre sableuse), et craint l'excès d'eau comme d'être déplacée — une racine pivotante profonde la rend résistante à la sécheresse mais impossible à déplacer : plantez-la pour qu'elle reste. Lente à sortir au printemps. Sa sève est toxique si on l'avale. Préférez-la à l'asclépiade tropicale exotique, qui perturbe la migration des monarques en Floride.",
     givesNote:
-      "Une plante nourricière des chenilles du monarque et du Danaus gilippus, et un aimant pour tous les papillons et toutes les abeilles indigènes, sur un pied net et peu envahissant.",
+      "Une plante nourricière des chenilles du monarque et du Danaus gilippus, visitée par de nombreux papillons et abeilles indigènes, sur un pied net et peu envahissant.",
     propagationNote:
       "Partez de la graine — sa racine pivotante profonde supporte mal d'être déterrée ou divisée, n'essayez donc pas de la diviser. Semez à l'automne, ou donnez à la graine quelques semaines de froid humide au réfrigérateur avant un semis de printemps, et plantez les jeunes plants là où ils resteront pour de bon.",
     supportNotes: {
@@ -478,7 +478,7 @@ export const FLORIDA: ProseTable = {
     nativeNote:
       "Arbre littoral des rivages du sud de la Floride, compagnon des palétuviers.",
     careNote:
-      "Exceptionnellement tolérant au sel, à la sécheresse et au vent — un choix de premier ordre pour un emplacement littoral difficile, en arbre, en haie ou en écran. Hors gel (zone 10+). (La forme argentée exotique est une variété de cette espèce ; c'est la forme sauvage verte qui a la plus grande valeur pour la faune.)",
+      "Exceptionnellement tolérant au sel, à la sécheresse et au vent — un choix de premier ordre pour un emplacement littoral difficile, en arbre, en haie ou en écran. Hors gel (zone 10+). (La forme argentée, var. sericeus, est indigène ici aussi ; la forme verte est la plus commune à l'état sauvage.)",
     givesNote:
       "Des capitules en boutons et un couvert dense pour les oiseaux et les pollinisateurs du littoral, avec des racines qui cuirassent un rivage contre l'érosion.",
     propagationNote:
@@ -555,16 +555,16 @@ export const FLORIDA: ProseTable = {
   },
   "Zamia integrifolia": {
     nativeNote:
-      "La seule cycadée indigène de Floride, des pinèdes et des hammocks — et la seule plante hôte de l'Eumaeus atala.",
+      "La seule cycadée indigène de Floride, des pinèdes et des hammocks — et la seule plante hôte indigène de l'Eumaeus atala.",
     careNote:
       "Extrêmement robuste, lente et longévive — elle prend le soleil ou l'ombre, la sécheresse, le sel et les sols calcaires pauvres une fois installée. D'aspect de fougère mais c'est une cycadée ; toutes ses parties sont toxiques si on les avale. Elle est au mieux dans le sud de la Floride, son aire d'origine.",
     givesNote:
-      "La seule plante nourricière des chenilles du rare Eumaeus atala — planter cette Zamia a ramené ce papillon du bord de l'extinction locale — plus un arbuste-couvre-sol persistant, architectural et résistant à la sécheresse.",
+      "La seule plante nourricière indigène des chenilles du rare Eumaeus atala (qui mangent aussi des cycadées importées comme le cycas du Japon) — planter cette Zamia a ramené ce papillon du bord de l'extinction locale — plus un arbuste-couvre-sol persistant, architectural et résistant à la sécheresse.",
     propagationNote:
       "La Zamia est une cycadée qui ne se cultive que par semis — pas de bouture, pas de division. Elle a des pieds mâles et femelles séparés, et seules les femelles pollinisées font les gros cônes de graines orange. Avec des gants (la graine est toxique), retirez l'enveloppe charnue, faites tremper ou grattez légèrement la graine, et semez-la fraîche et au chaud. C'est très lent : ne perdez pas courage.",
     supportNotes: {
       atala:
-        "Cette Zamia est la seule plante nourricière des chenilles de l'Eumaeus atala — la planter est ce qui a ramené ce papillon du bord de l'extinction dans le sud de la Floride.",
+        "Cette Zamia est la seule plante nourricière indigène des chenilles de l'Eumaeus atala — la planter est ce qui a ramené ce papillon du bord de l'extinction dans le sud de la Floride.",
     },
     lookalikeNotes: {
       "cycas-revoluta": {
@@ -573,7 +573,7 @@ export const FLORIDA: ProseTable = {
           { feature: "Folioles", native: "Plates et à bord souple, arrondies ou légèrement échancrées au bout ; on peut y passer la main.", lookalike: "Raides, enroulées sur les bords et acérées comme des aiguilles au bout — elles font saigner." },
           { feature: "Où est la tige", native: "Sous terre : les feuilles sortent directement du sol.", lookalike: "Au-dessus du sol : un tronc brun hirsute qui s'épaissit avec les années." },
           { feature: "Cônes", native: "Un petit cône brun velouté, bas parmi les feuilles.", lookalike: "Un gros cône, ou un grand dôme laineux, posé au centre." },
-          { feature: "Pourquoi cela compte", native: "La seule nourriture des chenilles de l'Eumaeus atala.", lookalike: "Toxique pour les personnes et les animaux ; ses graines sont une cause fréquente d'empoisonnement mortel chez le chien." },
+          { feature: "Pourquoi cela compte", native: "La seule nourriture indigène des chenilles de l'Eumaeus atala.", lookalike: "Toxique pour les personnes et les animaux ; ses graines sont une cause fréquente d'empoisonnement mortel chez le chien." },
         ],
       },
     },
@@ -648,7 +648,7 @@ export const FLORIDA: ProseTable = {
     careNote:
       "Donnez-lui de la vraie place — sa couronne s'étale bien plus large que haute. Résistant au sel et au vent, et l'un des arbres d'ombre les plus résistants aux ouragans que vous puissiez planter dans le Sud.",
     givesNote:
-      "Le meilleur arbre pour la faune, même ici : des centaines d'espèces de chenilles, des glands pour les geais et les écureuils, un abri persistant, et des branches qui hébergent broméliacées, orchidées et fougère de résurrection.",
+      "L'un des meilleurs arbres pour la faune, même ici : des centaines d'espèces de chenilles, des glands pour les geais et les écureuils, un abri persistant, et des branches qui hébergent broméliacées, orchidées et fougère de résurrection.",
     propagationNote:
       "Ramassez les glands à leur chute en automne et semez-les aussitôt — le chêne de Virginie est un chêne blanc : ils germent tout de suite et n'ont jamais besoin de passer par le froid. Mettez-les dans un seau d'eau et jetez ceux qui flottent, gardez humides ceux qui coulent (ne les laissez jamais sécher), et plantez là où l'arbre restera, car la racine pivotante profonde supporte mal d'être déplacée.",
     supportNotes: {
@@ -709,7 +709,7 @@ export const FLORIDA: ProseTable = {
     careNote:
       "Elle adore la chaleur et le soleil et fleurit toute l'année dans le sud de la Floride sans gel — aucun rabattage ici. Résistante à la sécheresse une fois installée. Exigez la vraie espèce indigène (Hamelia patens var. patens).",
     givesNote:
-      "Une source de nectar intarissable : ses tubes rouge-orangé nourrissent les colibris, les Heliconius charithonia, les Agraulis vanillae et les coliades toute l'année, et ses baies sombres nourrissent les moqueurs et les moqueurs chats.",
+      "Ses tubes rouge-orangé nourrissent les colibris, les Heliconius charithonia, les Agraulis vanillae et les coliades toute l'année, et ses baies sombres nourrissent les moqueurs et les moqueurs chats.",
     propagationNote:
       "La Hamelia patens est l'une des indigènes les plus faciles à enraciner — coupez une pousse tendre ou à peine aoûtée, effeuillez-en la base, et plantez-la dans un terreau humide. Vous pouvez aussi presser la graine des baies sombres mûres et la semer au chaud.",
     supportNotes: {

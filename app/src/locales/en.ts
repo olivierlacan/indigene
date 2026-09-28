@@ -42,7 +42,7 @@ export const en = {
   "nav.plants": "Plants",
   "nav.wildlife": "Wildlife",
   "nav.menu": "Menu",
-  "nav.savedLocations": "Saved locations",
+  "nav.savedLocations": "Saved spots",
   "nav.settings": "Settings",
   "nav.languageAndUnits": "Language & units",
   // Only ever shown when the app was opened from a Home Screen icon, which has
@@ -98,7 +98,7 @@ export const en = {
   // ---------------------------------------------------------------------
   "settings.title": "Settings",
   "settings.lede": "How the app reads, and what it remembers about you — all of it kept on this device.",
-  "settings.readingTitle": "How it reads",
+  "settings.readingTitle": "Language & units",
   "settings.memoryTitle": "What this device remembers",
   "settings.memoryLede": "Everything below is stored in this browser and nowhere else. Forget any of it whenever you like.",
   "settings.language": "Language",
@@ -196,11 +196,11 @@ export const en = {
   // ---------------------------------------------------------------------
   // Welcome.
   // ---------------------------------------------------------------------
-  "welcome.title": "Bring back birds & butterflies, here & now.",
+  "welcome.title": "Plants that feed the wildlife right here.",
   "welcome.lede1":
-    "Most yards are green but lifeless: lawns, shrubs, and flowers that local wildlife can't survive on yet require constant watering, pesticides, and fertilizers.",
+    "Most yards are lawn and imported shrubs: green, but with little that local caterpillars can eat.",
   "welcome.lede2":
-    "Native plants evolved to feed and nurture birds, bees, and butterflies. Indigene helps you bring back the ecosystem they desperately need to survive & thrive.",
+    "Local insects evolved alongside native plants, and many can eat nothing else. Indigene tells you which natives fit your spot.",
   "welcome.noAccount": "No account, no tracking. ",
   "welcome.noAccountRest": "Everything stays in your browser and works offline.",
   "welcome.start": "Start where you're standing",
@@ -209,7 +209,7 @@ export const en = {
   "welcome.whyTitle": "Why native plants?",
   "welcome.why1":
     "Most caterpillars can only eat the plants they evolved with, and nearly every backyard bird raises its chicks on caterpillars. No natives, no caterpillars, no baby birds.",
-  "welcome.why2": "Plant a native, and the food web is back in business that same season.",
+  "welcome.why2": "Plant a native, and the insects that need it can find it that same season.",
   "welcome.savedTitle": "Your saved spots",
   "welcome.openSaved.one": "Open saved spot ({n})",
   "welcome.openSaved.other": "Open saved spots ({n})",
@@ -278,10 +278,10 @@ export const en = {
   "spot.tileKinds": "Species",
   "spot.tileKindsExplain":
     "How many different plants you've got in. A mix carries a garden through the year — something in flower in spring, something with berries in autumn.",
-  "spot.tileHosts": "Nurtured",
+  "spot.tileHosts": "Caterpillars",
   "spot.tileHostsExplain":
     "How many of your species raise caterpillars. Caterpillars are what songbirds feed their chicks, so this is the number that turns a garden into food.",
-  "spot.tileWildlife": "Sustained",
+  "spot.tileWildlife": "Wildlife",
   "spot.tileWildlifeExplain":
     "Insects and animals your plants are documented to support here. It says they can use what you've planted — not that they've found it yet.",
   "spot.feedsTitle": "What it can feed",
@@ -450,7 +450,7 @@ export const en = {
     "Get your location, then check the map — if the pin isn't where you're really standing, drag or tap to nudge it.",
   "location.whyTitle": "Why does the exact spot matter?",
   "location.why":
-    "“Native” always means native to somewhere. Your coordinates pick which regional plant list applies and pull the soil, climate, and ecoregion records for this exact place — the same species can be essential in one region and a stranger in the next.",
+    "“Native” always means native to somewhere. Your coordinates pick which regional plant list applies and pull the soil, climate and ecoregion (an area with its own climate, soil and wild plants) for this exact place — the same species can be essential in one region and a stranger in the next.",
   "location.use": "📍 Use my location",
   "location.update": "📍 Update my location",
   "location.locating": "Locating…",
@@ -506,7 +506,7 @@ export const en = {
   "location.coverageBrowseRest": " to see the kind of recommendations Indigene gives.",
   "location.coverageAsk": "Ask for your area on GitHub",
   "location.coverageAskRest":
-    " — open an issue with your postal code or town. Or add the region yourself: it's one plant-data file plus two registry lines.",
+    " — open an issue with your postal code or town. Or add the region yourself; contributions are welcome.",
   "location.regionTitle": "🗺️ Pick your region",
   "location.regionLede":
     "If you already know which of our regions — or which ecoregion — you're in, you can skip the map. Fair warning: without a map point we can't look up your soil, rainfall, or winter cold, so you'll answer the sun and moisture questions yourself and the plant list leans on what you tell us.",
@@ -623,7 +623,7 @@ export const en = {
   "confirm.elevationSlope": ", on {slope}",
   "confirm.region": "Region",
   "confirm.localArea": "Local area",
-  "confirm.localAreaValue": "{name} (finer EPA Level IV).",
+  "confirm.localAreaValue": "{name}, a smaller natural area within it.",
   "confirm.soilTitle": "Soil (from the map — worth checking)",
   "confirm.soilSays": "The soil map says",
   "confirm.soilNone": "We don't have a soil reading here — the 60-second check below tells you what you've got.",
@@ -742,7 +742,7 @@ export const en = {
 
   "reliance.sole.term": "Vital",
   "reliance.sole.plain":
-    "This plant is the animal's only option — an obligate tie with no substitute. Lose it here and you lose the animal. These are the make-or-break relationships (a monarch needs milkweed; an atala needs coontie).",
+    "The animal can't live without this plant or its close kin (a monarch needs a milkweed; an atala needs coontie). Lose them here and you lose the animal.",
   "reliance.narrow.term": "Specialist",
   "reliance.narrow.plain":
     "A specialist relationship: the animal can use only a small group of plants, and this is one of them. Important, with just a few alternatives.",
@@ -1171,7 +1171,7 @@ export const en = {
   "weight.word.4": "counts a lot",
   "weight.word.5": "counts most of all",
   "filter.summary": "🔍 Filters",
-  "filter.noWater": "🌾 Survives with zero watering (guerrilla mode)",
+  "filter.noWater": "🌾 Survives with no watering",
   "filter.deer": "🦌 Deer tend to leave it alone",
   "filter.thorns": "🚫 No thorns",
   "filter.petSafe": "🐕 Safe around pets",
@@ -1190,7 +1190,7 @@ export const en = {
     " from the covered regions — as examples of the recommendations Indigene gives, not as plants for this spot.",
   "noRegion.ask": "Ask for your area on GitHub",
   "noRegion.askRest":
-    " — open an issue with your postal code or town so we know where to grow next. Or add the region yourself: it's one plant-data file plus two registry lines, and contributions are welcome.",
+    " — open an issue with your postal code or town so we know where to grow next. Or add the region yourself; contributions are welcome.",
   "noRegion.regionsTitle": "Regions covered so far",
   "noRegion.regionsLede":
     "If you know your area actually matches one of these — say, you're just over a boundary — you can use its list. We'll mark it as your pick, and its plants should be treated as untested for your exact area.",
@@ -1212,7 +1212,7 @@ export const en = {
   "stat.moisture.label": "Moisture",
   "stat.moisture.sub": "soil it accepts",
   "stat.moisture.explain":
-    "How wet the soil stays after rain — not how often you water. Natives specialize: a dry-slope plant rots in a wet hollow, and a swamp-edge plant crisps on sand. Match the moisture your spot already has and you replace a watering schedule with nothing. (Plant guides call evenly moist soil “mesic”.)",
+    "How wet the soil stays after rain — not how often you water. Natives specialize: a dry-slope plant rots in a wet hollow, and a swamp-edge plant crisps on sand. Match the moisture your spot already has, and after the first year you'll rarely need to water. (Plant guides call evenly moist soil “mesic”.)",
   "stat.moisture.more": "More about moisture types →",
   "stat.moistureWord.dry": "Dry",
   "stat.moistureWord.mesic": "Moist",
@@ -1360,7 +1360,7 @@ export const en = {
   "lookalike.means.waClassC":
     "That class isn't a verdict on how bad it is — it means the plant is already everywhere, so the state leaves control to each county instead of requiring it.",
   "lookalike.unassessed":
-    "Nobody has scored how hard it pushes here yet.",
+    "Nobody has rated how invasive it is here yet.",
   "lookalike.where.invasive": "Invasive in",
   "lookalike.where.introduced": "Not native in",
   "lookalike.where.native": "Native to",
@@ -1668,7 +1668,7 @@ export const en = {
   "regionStat.wildlife.more": "Browse plants by the wildlife they support →",
   "regionStat.keystone.label": "Essential plants",
   "regionStat.keystone.sub": "food webs lean on these",
-  "regionStat.keystone.explain": "{n} of this region's plants are essential — each supports far more wildlife than most, and losing one would unravel a food web far bigger than itself. Ecologists call them keystone plants, after the wedge at the crown of a stone arch.",
+  "regionStat.keystone.explain": "{n} of this region's plants are essential: each feeds far more kinds of caterpillar than most plants do. Ecologists call them keystone plants, after the wedge at the crown of a stone arch.",
 
   // ---------------------------------------------------------------------
   // The plants index (#/plants) — every native we know, searchable.
@@ -1827,10 +1827,10 @@ export const en = {
   "privacy.whereFooter":
     "These are reputable public institutions — universities, government agencies, and a nonprofit naturalist community — not advertisers. On purpose, none of these lookups need your street address: a town, postal code, or a coarse grid is all the science uses. The full technical list, with links and licences, is in {link}.",
   "privacy.dataSourcesLink": "our public data-sources document",
-  "privacy.savedTitle": "Saved locations stay on your device",
+  "privacy.savedTitle": "Saved spots stay on your device",
   "privacy.saveButton": "Save this spot",
   "privacy.saved":
-    "When you tap {save}, it's kept in your browser's own storage, on that device only. It never leaves your device, never reaches a server (there is none), and we can never see it. It's yours: open or delete a saved spot anytime from the Saved menu, and clearing your browser's data for this site erases them for good.",
+    "When you tap {save}, it's kept in your browser's own storage, on that device only. It never leaves your device, never reaches a server (there is none), and we can never see it. It's yours: open or delete a saved spot anytime from the ⚙️ menu, and clearing your browser's data for this site erases them for good.",
   "privacy.savedPortable":
     "Yours also means yours to take. {settings} writes every spot and its planting log to a plain file you keep — readable in any text editor, no account and no permission needed — and reads one back in another browser. That's how you get the same spots on your phone and your laptop: you carry them, not us.",
   "privacy.savedPortableLink": "Settings",
@@ -1884,7 +1884,7 @@ export const en = {
     "No chat, comments, messaging, or social features — so there's no way for a stranger to contact anyone through Indigene.",
   "privacy.children4": "We collect no personal information from anyone, of any age.",
   "privacy.children5":
-    "The photos are research-grade community records from iNaturalist — verified pictures of plants and wildlife — always shown with credit to the person who took them. Links out go to trusted science and nature organizations.",
+    "The photos come from iNaturalist, where the community checks what each one shows, and are always credited to the person who took them. Links out go to trusted science and nature organizations.",
   "privacy.openTitle": "You don't have to take our word for it",
   "privacy.open":
     "Indigene is open source under the MIT licence. The entire app — every line, and every network request it can make — is public. If you want to verify anything on this page, you can read the code yourself: {link}.",
@@ -1993,7 +1993,7 @@ export const en = {
     "A region here can cover a third of a country. It's the right size for choosing a plant list, and far too coarse to describe your particular slope, shade and drainage — which is why the app asks you about those directly.",
   "sources.assume5": "Our plant lists are starter lists. ",
   "sources.assume5Rest":
-    "Twenty to forty plants chosen to be reliable, available and genuinely useful to wildlife — never every native plant of a region. A plant missing from a list is not a plant we're advising against.",
+    "A few dozen plants per region, chosen to be reliable, available and genuinely useful to wildlife — never every native plant of a region. A plant missing from a list is not a plant we're advising against.",
   "sources.challengeTitle": "What we'd challenge first",
   "sources.challengeLede":
     "If you wanted to find a mistake here, this is where we'd tell you to look — roughly in order of how likely we are to be wrong:",
@@ -2071,6 +2071,8 @@ export const en = {
   "obs.tapToEnlarge": "{attribution} — tap to enlarge",
   "hero.enlarge": "See this photo of {name} full size",
   "obs.photoAlt": "{name} photographed by {observer}",
+  // Stands in for {observer} when a photo carries no username.
+  "obs.someObserver": "an iNaturalist observer",
 
   // ---------------------------------------------------------------------
   // A plant's photographs (#/plants/<slug>/photos). One picture answers
@@ -2134,19 +2136,19 @@ export const en = {
   "nearby.outsidePlace":
     "{place} is outside the regions Indigene has native-plant data for, so we can't vouch for what's truly native there — and we won't dress up nearby sightings as local natives. The sun, soil and climate readings still work everywhere.",
   "nearby.noTaxonId":
-    "We don't have an iNaturalist taxon id for {name} yet, so we can't match it to verified sightings.",
+    "We can't match {name} to iNaturalist yet, so there are no sightings to show.",
   "nearby.noneNear":
-    "{name} is native to {region}, but no one has photographed and verified one {where} on iNaturalist yet. It's still worth planting — the local showcase just isn't there to point you to.",
+    "{name} is native to {region}, but nobody has posted a confirmed photo of one {where} on iNaturalist yet. It's still worth planting.",
   "nearby.noneInRegion":
-    "No research-grade sightings of {name} with photos have been logged in {region} on iNaturalist yet. It's native there — the community just hasn't captured one.",
+    "Nobody has posted a confirmed photo of {name} in {region} on iNaturalist yet. It's native there all the same.",
   "nearby.foundNearRest.one":
-    "research-grade sighting — a real {name}, native to {region}, that someone verified and photographed {where}:",
+    "confirmed sighting of {name} {where} — photographed, and identified by at least two people on iNaturalist:",
   "nearby.foundNearRest.other":
-    "research-grade sightings — real {name}, native to {region}, that someone verified and photographed {where}:",
+    "confirmed sightings of {name} {where} — each photographed, and identified by at least two people on iNaturalist:",
   "nearby.foundRest.one":
-    "research-grade sighting of {name} in {region} — verified and photographed by the iNaturalist community (you don't have to be there):",
+    "confirmed sighting of {name} in {region}, identified by at least two people on iNaturalist (you don't have to be there):",
   "nearby.foundRest.other":
-    "research-grade sightings of {name} in {region} — verified and photographed by the iNaturalist community (you don't have to be there):",
+    "confirmed sightings of {name} in {region}, each identified by at least two people on iNaturalist (you don't have to be there):",
   // Between the ZIP field and the region chips: one more place to look.
   "nearby.orIn": "or",
   "nearby.busy":
@@ -2160,9 +2162,9 @@ export const en = {
   // ---------------------------------------------------------------------
   "wanted.title": "Worst invasives",
   "wanted.lede":
-    "The invasive plants to pull first here: ranked by how hard each one pushes, then by how often it's been recorded wild. Tap one to learn to spot it.",
+    "The invasive plants to pull first here: ranked by how invasive each one is, then by how often it's been recorded wild. Tap one to learn to spot it.",
   "wanted.ledeUnrated":
-    "The invasive plants recorded most often here. Nobody has rated how hard each one pushes on this ground, so they're ranked by sightings alone. Tap one to learn to spot it.",
+    "The invasive plants recorded most often here. Nobody has rated how invasive each one is on this ground, so they're ranked by sightings alone. Tap one to learn to spot it.",
   "wanted.rankAria": "Number {n}",
   "wanted.sightings": "{n} wild sightings on iNaturalist in this region's box",
   "wanted.countsNote":
@@ -2206,25 +2208,25 @@ export const en = {
   "wlNearby.outsidePlace":
     "{place} is outside the regions Indigene covers, so we can't do a nearby lookup there. You can still pick a region where it's found.",
   "wlNearby.noneNear":
-    "No one has photographed and verified a {name} {where} on iNaturalist yet — that just means the community hasn't logged one here, not that it's absent.",
+    "Nobody has posted a confirmed photo of a {name} {where} on iNaturalist yet. That means nobody has logged one, not that it's absent.",
   "wlNearby.noneInRegion":
-    "No research-grade sightings of {name} with photos have been logged in {region} on iNaturalist yet — the community just hasn't captured one.",
-  "wlNearby.foundNearRest.one": "research-grade sighting — a real {name} someone verified and photographed {where}:",
-  "wlNearby.foundNearRest.other": "research-grade sightings — a real {name} someone verified and photographed {where}:",
+    "Nobody has posted a confirmed photo of {name} in {region} on iNaturalist yet.",
+  "wlNearby.foundNearRest.one": "confirmed sighting of {name} {where} — photographed, and identified by at least two people on iNaturalist:",
+  "wlNearby.foundNearRest.other": "confirmed sightings of {name} {where} — each photographed, and identified by at least two people on iNaturalist:",
   "wlNearby.foundRest.one":
-    "research-grade sighting of {name} in {region} — verified and photographed by the iNaturalist community (you don't have to be there):",
+    "confirmed sighting of {name} in {region}, identified by at least two people on iNaturalist (you don't have to be there):",
   "wlNearby.foundRest.other":
-    "research-grade sightings of {name} in {region} — verified and photographed by the iNaturalist community (you don't have to be there):",
+    "confirmed sightings of {name} in {region}, each identified by at least two people on iNaturalist (you don't have to be there):",
 
   // ---------------------------------------------------------------------
   // Ecoregion labels. The EEA's eleven regions have a settled name in each
   // language; EPA Level III names are American place names and stay as they
   // are. The suffix, and the coarse offline guesses, are our own words.
   // ---------------------------------------------------------------------
-  "ecoregion.suffixEea": "EEA biogeographical region",
-  "ecoregion.suffixEpa": "EPA Level III ecoregion",
-  "ecoregion.suffixResolve": "RESOLVE ecoregion",
-  "ecoregion.suffixCec": "CEC Level III ecoregion, North America",
+  "ecoregion.suffixEea": "natural region, European Environment Agency map",
+  "ecoregion.suffixEpa": "natural region, US EPA map",
+  "ecoregion.suffixResolve": "natural region, RESOLVE world map",
+  "ecoregion.suffixCec": "natural region, North America map (CEC)",
   "ecoregion.eea.alpine": "Alpine",
   "ecoregion.eea.atlantic": "Atlantic",
   "ecoregion.eea.black-sea": "Black Sea",
@@ -2255,9 +2257,9 @@ export const en = {
   "about.hereEm": "here",
   "about.whyTitle": "Why this exists",
   "about.why1":
-    "Most gardens are green and nearly lifeless. Lawns, and shrubs and flowers from other continents, look fine and feed almost nothing: the caterpillars that nearly every baby songbird is raised on can only eat the plants they evolved alongside. No native plants, no caterpillars, no baby birds — and that quiet subtraction is happening across whole countries at once, one tidy garden at a time.",
+    "Most gardens are lawn, plus shrubs and flowers from other continents. They look fine but feed far fewer caterpillars, and most songbirds raise their chicks on caterpillars — which mostly eat only the plants they evolved alongside. Fewer natives, fewer caterpillars, fewer baby birds.",
   "about.why2":
-    "The remedy is unusually cheap and unusually fast. Plant one native and the food web restarts the same season. What was missing wasn't the will — it was a straight answer to “what should I plant {here}, in this actual corner of my actual garden?” that didn't require you to already speak the language of plant catalogues. That answer is what Indigene tries to be.",
+    "The fix is cheap: plant natives. What was missing was a straight answer to “what should I plant {here}, in this corner of my garden?” that didn't require speaking the language of plant catalogues. Indigene tries to give one.",
   "about.forTitle": "Who it's for",
   "about.forLede": "It's built, deliberately, for people who are not experts:",
   "about.for1":
@@ -2282,7 +2284,7 @@ export const en = {
     "Each plant carries its sources and a plain confidence note, and where a figure is our judgment rather than a count, the Sources page says so and names the ones we'd challenge first. Nothing is invented to fill a gap — a plant with no French name shows its scientific name rather than a plausible-sounding guess.",
   "about.stance.yours": "It doesn't want anything from you.",
   "about.stance.yoursBody":
-    "No account, no sign-up, no advertising, no analytics, nothing sold. Saved spots stay in your browser on your device, because there is no server for them to go to. There is nothing to buy, and no way for a stranger to contact you through it.",
+    "No account, no sign-up, no advertising, nothing sold. A visit counter notes which page was opened and nothing about who opened it; you can switch it off in Settings. Saved spots stay in your browser on your device, because there is no server for them to go to. No stranger can contact you through it.",
   "about.stance.portable": "It won't hold your data in.",
   "about.stance.portableBody":
     "Settings writes every saved spot and its planting log to a plain file you keep, and reads one back in another browser. Moving from a phone to a laptop takes a file, not an account — and the file is yours to open, keep or hand to something else entirely.",
@@ -2315,7 +2317,7 @@ export const en = {
   "crops.lede":
     "Farms have measured this on commercial acreage: no. Some natives quietly take pests away, and a few are genuinely the wrong neighbour for one particular crop. All of it is on this page.",
   "crops.short1":
-    "A bee cannot eat a tomato. Bees, butterflies and hoverflies live on nectar and pollen — no mouthparts for fruit, or even for a leaf.",
+    "A bee cannot eat a tomato. Bees and hoverflies live on nectar and pollen, and butterflies add the odd sip of rotting fruit. None of them eats leaves.",
   "crops.short2":
     "A caterpillar raised on oak cannot eat lettuce. Most plant-eating insects can only digest the few plants they evolved alongside.",
   "crops.short3":
@@ -2357,7 +2359,7 @@ export const en = {
     "The worry treats wildlife as one animal. A native planting brings three quite different crowds, and only one of them eats plants at all — and that one is tied to the plants it evolved with, which are not the ones in your vegetable bed.",
   "crops.fig.feeds.pollWho": "Pollinators",
   "crops.fig.feeds.pollEats":
-    "Bees, butterflies, hoverflies. Nectar and pollen — their mouthparts can't manage a leaf.",
+    "Bees, butterflies, hoverflies. Nectar and pollen — none of them eats leaves.",
   "crops.fig.feeds.pollOut": "More fruit set",
   "crops.fig.feeds.enemyWho": "Pest-eaters",
   "crops.fig.feeds.enemyEats":
@@ -2366,7 +2368,7 @@ export const en = {
   "crops.fig.feeds.leafWho": "Leaf-eaters",
   "crops.fig.feeds.leafEats":
     "Caterpillars and their kin. Most can digest only the one or two plants they grew up on.",
-  "crops.fig.feeds.leafOut": "Never reaches the veg bed",
+  "crops.fig.feeds.leafOut": "Rarely touches the vegetables",
   "crops.fig.feeds.caption":
     "What a border of native flowers and shrubs actually feeds, and what each crowd does when it reaches your vegetables.",
 
@@ -2374,7 +2376,7 @@ export const en = {
   "crops.fussy1":
     "Plant-eating insects are far pickier than people expect. A survey of 7,500 of them against 2,000 plants found that most can only digest the handful of plants they evolved alongside. A caterpillar raised on oak or willow isn't choosing oak over your lettuce — it would starve on lettuce.",
   "crops.fussy2":
-    "It runs the other way too. Tomatoes, peppers and potatoes come from the Andes, cabbage and kale from the Mediterranean, squash from Mexico. The insects here have no history with any of them. The pests that do eat them mostly arrived with them: about 40% of the insect and mite pests of American crops are introduced species, and no hedge you plant summons those.",
+    "It runs the other way too. Potatoes and tomatoes trace back to the Andes, peppers and squash to Mexico, cabbage and kale to the Mediterranean. Most insects here have no history with them. Many of the pests that do eat them arrived with them: about 40% of the insect and mite pests of American crops are introduced species, and no hedge you plant summons those.",
 
   // --- what the farm trials found ----------------------------------------
   "crops.farmsTitle": "What happened when farms tried it",
@@ -2397,7 +2399,7 @@ export const en = {
   "crops.birds1":
     "Two large reviews asked what birds actually do to a crop. Across 104 studies the overall effect was positive: about half the measurements showed birds cutting pest numbers, most of the rest showed no difference, and 5% went the other way. Where birds were fenced out, damage and pest numbers rose and the yield fell.",
   "crops.birds2":
-    "The worst fruit thief in North America is the European starling, a bird brought over from Europe that thrives on mown grass and open ground. A lawn makes starlings. A hedge doesn't. And what a hedge does make — caterpillars on native leaves — is what a chickadee needs to raise a brood at all: one study found a yard can't sustain them once non-native plants pass about 70% of its greenery.",
+    "One of the worst fruit thieves in North America is the European starling, a bird brought over from Europe that thrives on mown grass and open ground. A lawn makes starlings. A hedge doesn't. And what a hedge does make — caterpillars on native leaves — is what a chickadee needs to raise a brood at all: one study found chickadees couldn't keep up their numbers in yards where natives made up less than about 70% of the plants.",
 
   // --- the part that goes further than "no harm" -------------------------
   "crops.takeAwayTitle": "Some natives take pests away",
@@ -2423,7 +2425,7 @@ export const en = {
   // --- the claim most likely to be over-quoted ---------------------------
   "crops.redirectTitle": "Will they eat the hedge instead of my cherries?",
   "crops.redirect1":
-    "Partly, and it isn't about taste — it's fat. The fruit of a native shrub runs 6 to 48% fat by weight. The invasive shrubs planted for the same look come in under 1%. Offered both, migrating songbirds emptied the native shrubs faster.",
+    "Partly, and it isn't about taste — it's fat. In one study, native shrub fruit ran 6 to 48% fat by weight; the invasive shrubs planted for the same look came in under 1%. Offered both, migrating songbirds emptied the native shrubs faster.",
   "crops.fig.fat.native": "Native shrub fruit",
   "crops.fig.fat.nativeValue": "6–48%",
   "crops.fig.fat.invasive": "Invasive shrub fruit",
@@ -2501,7 +2503,7 @@ export const en = {
   "crops.src.frank": "exotic city trees: the same natural enemies, fewer pests",
   "crops.src.davis": "the case for judging a species on what it does, not where it's from",
   "crops.src.margins": "crop margins that held more predators — and more pests",
-  "crops.src.rust": "cedar-apple rust, and why it needs two hosts a mile apart",
+  "crops.src.rust": "cedar-apple rust, and why it needs both hosts",
   "crops.src.lygus": "the plant bug that leaves a drying margin for the strawberries",
 } as const;
 

@@ -52,6 +52,7 @@ import LOOKALIKE_PHOTOS from "../data/inat-lookalikes.json";
 import ALTERNATIVE_PHOTOS from "../data/inat-alternatives.json";
 import INVASIVE_PHOTOS from "../data/inat-invasives.json";
 import type { ObservationSummary } from "./inaturalist";
+import { t } from "./i18n";
 
 /** One chosen photograph, as `hero-photos.json` stores it — the shape the
  *  review page downloads (see `scripts/build-hero-review.mjs`). */
@@ -232,7 +233,7 @@ export function asObservation(hero: HeroPhoto, fallbackName: string): Observatio
     taxonPhoto: hero.observationId ? undefined : true,
     taxonId: 0, // unused: nothing joins on it, every lookup here is by plant
     taxonName: hero.taxonName ?? fallbackName,
-    observer: hero.observer ?? "an iNaturalist observer",
+    observer: hero.observer ?? t("obs.someObserver"),
     place: hero.place ?? null,
     lat: null,
     lon: null,

@@ -92,7 +92,7 @@ export const fr: Dict = {
   "settings.title": "Réglages",
   "settings.lede":
     "La façon dont l'application se lit, et ce qu'elle retient de vous — le tout gardé sur cet appareil.",
-  "settings.readingTitle": "La lecture",
+  "settings.readingTitle": "Langue et unités",
   "settings.memoryTitle": "Ce que cet appareil retient",
   "settings.memoryLede":
     "Tout ce qui suit est enregistré dans ce navigateur et nulle part ailleurs. Vous pouvez en effacer n'importe quelle partie quand vous voulez.",
@@ -211,11 +211,11 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   // Accueil.
   // ---------------------------------------------------------------------
-  "welcome.title": "Faites revenir les oiseaux et les papillons, ici et maintenant.",
+  "welcome.title": "Des plantes qui nourrissent la faune d'ici.",
   "welcome.lede1":
-    "La plupart des jardins sont verts mais sans vie : des pelouses, des arbustes et des fleurs dont la faune d'ici ne peut pas se nourrir, et qui réclament pourtant arrosage, pesticides et engrais sans arrêt.",
+    "La plupart des jardins, ce sont des pelouses et des arbustes importés : du vert, mais peu de choses que les chenilles d'ici puissent manger.",
   "welcome.lede2":
-    "Les plantes indigènes, elles, ont évolué pour nourrir et abriter les oiseaux, les abeilles et les papillons. Indigene vous aide à leur rendre l'écosystème dont ils ont désespérément besoin.",
+    "Les insectes d'ici ont évolué avec les plantes indigènes, et beaucoup ne mangent rien d'autre. Indigene vous dit lesquelles conviennent à votre coin.",
   "welcome.noAccount": "Pas de compte, aucun pistage. ",
   "welcome.noAccountRest": "Tout reste dans votre navigateur, et tout fonctionne hors ligne.",
   "welcome.start": "Commencer là où je suis",
@@ -224,7 +224,7 @@ export const fr: Dict = {
   "welcome.whyTitle": "Pourquoi des plantes indigènes ?",
   "welcome.why1":
     "La plupart des chenilles ne peuvent manger que les plantes avec lesquelles elles ont évolué, et presque tous les oiseaux du jardin élèvent leurs petits avec des chenilles. Pas de plantes indigènes, pas de chenilles, pas d'oisillons.",
-  "welcome.why2": "Plantez une indigène, et la chaîne alimentaire repart dès la même saison.",
+  "welcome.why2": "Plantez une indigène, et les insectes qui en ont besoin peuvent la trouver dès la même saison.",
   "welcome.savedTitle": "Vos lieux enregistrés",
   "welcome.openSaved.one": "Ouvrir le lieu enregistré ({n})",
   "welcome.openSaved.other": "Ouvrir les lieux enregistrés ({n})",
@@ -471,7 +471,7 @@ export const fr: Dict = {
     "Localisez-vous, puis vérifiez la carte : si le repère n'est pas là où vous êtes vraiment, faites-le glisser ou touchez le bon endroit.",
   "location.whyTitle": "Pourquoi l'endroit exact compte-t-il ?",
   "location.why":
-    "« Indigène » veut toujours dire indigène de quelque part. Vos coordonnées déterminent la liste régionale qui s'applique et vont chercher le sol, le climat et l'écorégion de cet endroit précis — la même espèce peut être essentielle dans une région et une étrangère dans la suivante.",
+    "« Indigène » veut toujours dire indigène de quelque part. Vos coordonnées déterminent la liste régionale qui s'applique et vont chercher le sol, le climat et l'écorégion (une zone qui a son propre climat, son sol et ses plantes sauvages) de cet endroit précis — la même espèce peut être essentielle dans une région et une étrangère dans la suivante.",
   "location.use": "📍 Utiliser ma position",
   "location.update": "📍 Actualiser ma position",
   "location.locating": "Localisation…",
@@ -522,7 +522,7 @@ export const fr: Dict = {
   "location.coverageBrowseRest": " pour voir le genre de recommandations qu'Indigene donne.",
   "location.coverageAsk": "Demander votre région sur GitHub",
   "location.coverageAskRest":
-    " — ouvrez un ticket avec votre code postal ou votre commune. Ou ajoutez la région vous-même : c'est un fichier de données plus deux lignes de registre.",
+    " — ouvrez un ticket avec votre code postal ou votre commune. Ou ajoutez la région vous-même ; les contributions sont les bienvenues.",
   "location.regionTitle": "🗺️ Choisissez votre région",
   "location.regionLede":
     "Si vous savez déjà dans laquelle de nos régions — ou dans quelle écorégion — vous vous trouvez, vous pouvez sauter la carte. À savoir : sans point sur la carte, nous ne pouvons pas consulter votre sol, votre pluviométrie ni le froid de vos hivers. Vous répondrez donc vous-même aux questions de soleil et d'humidité, et la liste s'appuiera sur ce que vous nous direz.",
@@ -640,7 +640,7 @@ export const fr: Dict = {
   "confirm.elevationSlope": ", sur {slope}",
   "confirm.region": "Région",
   "confirm.localArea": "Secteur local",
-  "confirm.localAreaValue": "{name} (niveau IV de l'EPA, plus fin).",
+  "confirm.localAreaValue": "{name}, une zone naturelle plus fine à l'intérieur.",
   "confirm.soilTitle": "Le sol (d'après la carte — à vérifier)",
   "confirm.soilSays": "La carte des sols indique",
   "confirm.soilNone":
@@ -770,7 +770,7 @@ export const fr: Dict = {
 
   "reliance.sole.term": "Vitale",
   "reliance.sole.plain":
-    "Cette plante est le seul recours de l'animal — un lien obligatoire, sans remplaçante. Elle disparaît d'ici, l'animal disparaît avec elle. Ce sont les relations vitales (le monarque a besoin d'asclépiade ; l'atala a besoin de zamia).",
+    "L'animal ne peut pas vivre sans cette plante ou ses proches parentes (le monarque a besoin d'une asclépiade ; l'atala, de zamia). Qu'elles disparaissent d'ici, et l'animal disparaît avec elles.",
   "reliance.narrow.term": "Spécialiste",
   "reliance.narrow.plain":
     "Une relation de spécialiste : l'animal ne peut utiliser qu'un petit groupe de plantes, et celle-ci en fait partie. Important, avec seulement quelques solutions de repli.",
@@ -1184,7 +1184,7 @@ export const fr: Dict = {
   "weight.word.4": "compte beaucoup",
   "weight.word.5": "compte avant tout",
   "filter.summary": "🔍 Filtres",
-  "filter.noWater": "🌾 Survit sans aucun arrosage (mode guérilla)",
+  "filter.noWater": "🌾 Survit sans arrosage",
   "filter.deer": "🦌 Les chevreuils l'évitent en général",
   "filter.thorns": "🚫 Sans épines",
   "filter.petSafe": "🐕 Sans danger pour les animaux",
@@ -1203,7 +1203,7 @@ export const fr: Dict = {
     " des régions couvertes — comme exemples du genre de recommandations qu'Indigene donne, et non comme des plantes pour ce lieu.",
   "noRegion.ask": "Demander votre région sur GitHub",
   "noRegion.askRest":
-    " — ouvrez un ticket avec votre code postal ou votre commune, pour que nous sachions où nous étendre ensuite. Ou ajoutez la région vous-même : c'est un fichier de données plus deux lignes de registre, et les contributions sont les bienvenues.",
+    " — ouvrez un ticket avec votre code postal ou votre commune, pour que nous sachions où nous étendre ensuite. Ou ajoutez la région vous-même ; les contributions sont les bienvenues.",
   "noRegion.regionsTitle": "Les régions couvertes jusqu'ici",
   "noRegion.regionsLede":
     "Si vous savez que votre zone correspond en réalité à l'une d'elles — vous êtes juste de l'autre côté d'une limite, par exemple — vous pouvez utiliser sa liste. Nous la marquerons comme votre choix, et ses plantes seront à considérer comme non vérifiées pour votre zone exacte.",
@@ -1225,7 +1225,7 @@ export const fr: Dict = {
   "stat.moisture.label": "Humidité",
   "stat.moisture.sub": "sols acceptés",
   "stat.moisture.explain":
-    "À quel point le sol reste humide après la pluie — pas la fréquence de vos arrosages. Les indigènes se spécialisent : une plante de talus sec pourrit dans un creux humide, et une plante de bord de marais grille sur du sable. Collez à l'humidité que votre lieu a déjà et vous remplacez tout un calendrier d'arrosage par rien du tout. (Les guides appellent « mésique » un sol frais et jamais détrempé.)",
+    "À quel point le sol reste humide après la pluie — pas la fréquence de vos arrosages. Les indigènes se spécialisent : une plante de talus sec pourrit dans un creux humide, et une plante de bord de marais grille sur du sable. Collez à l'humidité que votre lieu a déjà et, passé la première année, vous n'aurez presque plus à arroser. (Les guides appellent « mésique » un sol frais et jamais détrempé.)",
   "stat.moisture.more": "En savoir plus sur les types d'humidité →",
   "stat.moistureWord.dry": "Sec",
   "stat.moistureWord.mesic": "Frais",
@@ -1361,7 +1361,7 @@ export const fr: Dict = {
   "lookalike.means.waClassC":
     "Cette classe ne dit rien de sa nocivité : elle signifie que la plante est déjà partout, et que l'État laisse la lutte à chaque comté au lieu de l'imposer.",
   "lookalike.unassessed":
-    "Personne n'a encore évalué la pression qu'il exerce ici.",
+    "Personne n'a encore évalué son caractère envahissant ici.",
   "lookalike.where.invasive": "Envahissante :",
   "lookalike.where.introduced": "Pas indigène :",
   "lookalike.where.native": "Indigène :",
@@ -1658,7 +1658,7 @@ export const fr: Dict = {
   "regionStat.wildlife.more": "Parcourir les plantes par la faune qu'elles font vivre →",
   "regionStat.keystone.label": "Plantes essentielles",
   "regionStat.keystone.sub": "les réseaux alimentaires s'appuient dessus",
-  "regionStat.keystone.explain": "{n} des plantes de cette région sont essentielles — chacune fait vivre bien plus d'animaux que la moyenne, et en perdre une déferait un réseau alimentaire bien plus grand qu'elle. Les écologues parlent de plantes « clé de voûte », comme la pierre au sommet d'une arche.",
+  "regionStat.keystone.explain": "{n} des plantes de cette région sont essentielles : chacune nourrit bien plus d'espèces de chenilles que la plupart des plantes. Les écologues parlent de plantes « clé de voûte », comme la pierre au sommet d'une arche.",
 
   // ---------------------------------------------------------------------
   // L'index des plantes (#/plants) — toutes les indigènes, avec recherche.
@@ -1824,7 +1824,7 @@ export const fr: Dict = {
   "privacy.savedTitle": "Les lieux enregistrés restent sur votre appareil",
   "privacy.saveButton": "Enregistrer ce lieu",
   "privacy.saved":
-    "Quand vous touchez {save}, il est conservé dans le stockage propre à votre navigateur, sur cet appareil uniquement. Il ne quitte jamais votre appareil, n'atteint aucun serveur (il n'y en a pas), et nous ne pouvons jamais le voir. Il est à vous : ouvrez ou supprimez un lieu enregistré quand vous voulez depuis le menu « Lieux », et effacer les données de ce site dans votre navigateur les efface définitivement.",
+    "Quand vous touchez {save}, il est conservé dans le stockage propre à votre navigateur, sur cet appareil uniquement. Il ne quitte jamais votre appareil, n'atteint aucun serveur (il n'y en a pas), et nous ne pouvons jamais le voir. Il est à vous : ouvrez ou supprimez un lieu enregistré quand vous voulez depuis le menu ⚙️, et effacer les données de ce site dans votre navigateur les efface définitivement.",
   "privacy.savedPortable":
     "Et ce qui est à vous s'emporte. {settings} écrit chaque lieu et son journal de plantation dans un fichier simple qui vous appartient — lisible dans n'importe quel éditeur de texte, sans compte ni autorisation — et en relit un dans un autre navigateur. C'est ainsi que vous avez les mêmes lieux sur votre téléphone et sur votre ordinateur : c'est vous qui les portez, pas nous.",
   "privacy.savedPortableLink": "Les réglages",
@@ -1880,7 +1880,7 @@ export const fr: Dict = {
     "Pas de messagerie, de commentaires ni de fonctions sociales — personne ne peut donc contacter qui que ce soit via Indigene.",
   "privacy.children4": "Nous ne recueillons aucune information personnelle, de personne, à aucun âge.",
   "privacy.children5":
-    "Les photos sont des observations communautaires de niveau recherche issues d'iNaturalist — des images vérifiées de plantes et d'animaux — toujours affichées avec le crédit de la personne qui les a prises. Les liens sortants mènent à des organismes scientifiques et naturalistes de confiance.",
+    "Les photos viennent d'iNaturalist, où la communauté vérifie ce que chacune montre, et sont toujours créditées à la personne qui les a prises. Les liens sortants mènent à des organismes scientifiques et naturalistes de confiance.",
   "privacy.openTitle": "Vous n'êtes pas obligé de nous croire sur parole",
   "privacy.open":
     "Indigene est un logiciel libre sous licence MIT. Toute l'application — chaque ligne, et chaque requête réseau qu'elle peut faire — est publique. Si vous voulez vérifier quoi que ce soit sur cette page, vous pouvez lire le code vous-même : {link}.",
@@ -1993,7 +1993,7 @@ export const fr: Dict = {
     "Une région peut ici couvrir un tiers d'un pays. C'est la bonne échelle pour choisir une liste de plantes, et beaucoup trop grossière pour décrire votre pente, votre ombre et votre drainage — c'est pourquoi l'application vous les demande directement.",
   "sources.assume5": "Nos listes de plantes sont des listes de départ. ",
   "sources.assume5Rest":
-    "Vingt à quarante plantes choisies pour être fiables, faciles à trouver et réellement utiles à la faune — jamais toutes les plantes indigènes d'une région. Une plante absente d'une liste n'est pas une plante que nous déconseillons.",
+    "Quelques dizaines de plantes par région, choisies pour être fiables, faciles à trouver et réellement utiles à la faune — jamais toutes les plantes indigènes d'une région. Une plante absente d'une liste n'est pas une plante que nous déconseillons.",
   "sources.challengeTitle": "Ce que nous contesterions en premier",
   "sources.challengeLede":
     "Si vous vouliez trouver une erreur ici, voici où nous vous dirions de regarder — à peu près par ordre de probabilité que nous ayons tort :",
@@ -2069,6 +2069,7 @@ export const fr: Dict = {
   "obs.tapToEnlarge": "{attribution} — touchez pour agrandir",
   "hero.enlarge": "Voir cette photo de {name} en grand",
   "obs.photoAlt": "{name} photographié par {observer}",
+  "obs.someObserver": "un contributeur d'iNaturalist",
 
   // ---------------------------------------------------------------------
   // Les photos d'une plante (#/plants/<slug>/photos).
@@ -2125,19 +2126,19 @@ export const fr: Dict = {
   "nearby.outsidePlace":
     "{place} est en dehors des régions pour lesquelles Indigene a des données sur les plantes indigènes : nous ne pouvons donc pas garantir ce qui y est vraiment indigène — et nous ne ferons pas passer des observations voisines pour des indigènes locales. Les mesures de soleil, de sol et de climat fonctionnent partout.",
   "nearby.noTaxonId":
-    "Nous n'avons pas encore d'identifiant iNaturalist pour {name} : impossible donc de la relier à des observations vérifiées.",
+    "Nous ne savons pas encore relier {name} à iNaturalist : aucune observation à montrer.",
   "nearby.noneNear":
-    "{name} est indigène de {region}, mais personne n'en a encore photographié ni fait valider une {where} sur iNaturalist. Elle vaut quand même la peine d'être plantée — c'est seulement la vitrine locale qui manque.",
+    "{name} est indigène de {region}, mais personne n'en a encore publié de photo confirmée {where} sur iNaturalist. Elle vaut quand même la peine d'être plantée.",
   "nearby.noneInRegion":
-    "Aucune observation de niveau recherche de {name} avec photos n'a encore été enregistrée en {region} sur iNaturalist. Elle y est bien indigène — la communauté n'en a simplement pas encore saisi.",
+    "Personne n'a encore publié de photo confirmée de {name} en {region} sur iNaturalist. Elle y est bien indigène.",
   "nearby.foundNearRest.one":
-    "observation de niveau recherche — un vrai {name}, indigène de {region}, que quelqu'un a vérifié et photographié {where} :",
+    "observation confirmée de {name} {where} — photographiée, et identifiée par au moins deux personnes sur iNaturalist :",
   "nearby.foundNearRest.other":
-    "observations de niveau recherche — de vrais {name}, indigènes de {region}, que des gens ont vérifiés et photographiés {where} :",
+    "observations confirmées de {name} {where} — chacune photographiée, et identifiée par au moins deux personnes sur iNaturalist :",
   "nearby.foundRest.one":
-    "observation de niveau recherche de {name} en {region} — vérifiée et photographiée par la communauté iNaturalist (vous n'avez pas besoin d'y être) :",
+    "observation confirmée de {name} en {region}, identifiée par au moins deux personnes sur iNaturalist (vous n'avez pas besoin d'y être) :",
   "nearby.foundRest.other":
-    "observations de niveau recherche de {name} en {region} — vérifiées et photographiées par la communauté iNaturalist (vous n'avez pas besoin d'y être) :",
+    "observations confirmées de {name} en {region}, chacune identifiée par au moins deux personnes sur iNaturalist (vous n'avez pas besoin d'y être) :",
   "nearby.orIn": "ou",
   "nearby.busy":
     "iNaturalist nous demande de ralentir : le service est très sollicité. Patientez une minute et réessayez.",
@@ -2150,9 +2151,9 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   "wanted.title": "Les pires plantes envahissantes",
   "wanted.lede":
-    "Les plantes envahissantes à arracher en premier ici : classées selon la pression qu'elles exercent, puis selon le nombre d'observations à l'état sauvage. Touchez-en une pour apprendre à la reconnaître.",
+    "Les plantes envahissantes à arracher en premier ici : classées selon leur caractère envahissant, puis selon le nombre d'observations à l'état sauvage. Touchez-en une pour apprendre à la reconnaître.",
   "wanted.ledeUnrated":
-    "Les plantes envahissantes les plus observées ici. Personne n'a encore évalué la pression de chacune sur ce territoire : elles sont classées selon les observations seules. Touchez-en une pour apprendre à la reconnaître.",
+    "Les plantes envahissantes les plus observées ici. Personne n'a encore évalué le caractère envahissant de chacune sur ce territoire : elles sont classées selon les observations seules. Touchez-en une pour apprendre à la reconnaître.",
   "wanted.rankAria": "Numéro {n}",
   "wanted.sightings": "{n} observations à l'état sauvage sur iNaturalist dans le périmètre de cette région",
   "wanted.countsNote":
@@ -2196,25 +2197,25 @@ export const fr: Dict = {
   "wlNearby.outsidePlace":
     "{place} est en dehors des régions couvertes par Indigene : nous ne pouvons donc pas y faire de recherche à proximité. Vous pouvez tout de même choisir une région où il est présent.",
   "wlNearby.noneNear":
-    "Personne n'a encore photographié ni fait valider un {name} {where} sur iNaturalist — cela veut seulement dire que la communauté n'en a pas saisi ici, pas qu'il est absent.",
+    "Personne n'a encore publié de photo confirmée d'un {name} {where} sur iNaturalist. Cela veut dire que personne n'en a saisi, pas qu'il est absent.",
   "wlNearby.noneInRegion":
-    "Aucune observation de niveau recherche de {name} avec photos n'a encore été enregistrée en {region} sur iNaturalist — la communauté n'en a simplement pas encore saisi.",
+    "Personne n'a encore publié de photo confirmée de {name} en {region} sur iNaturalist.",
   "wlNearby.foundNearRest.one":
-    "observation de niveau recherche — un vrai {name} que quelqu'un a vérifié et photographié {where} :",
+    "observation confirmée de {name} {where} — photographiée, et identifiée par au moins deux personnes sur iNaturalist :",
   "wlNearby.foundNearRest.other":
-    "observations de niveau recherche — de vrais {name} que des gens ont vérifiés et photographiés {where} :",
+    "observations confirmées de {name} {where} — chacune photographiée, et identifiée par au moins deux personnes sur iNaturalist :",
   "wlNearby.foundRest.one":
-    "observation de niveau recherche de {name} en {region} — vérifiée et photographiée par la communauté iNaturalist (vous n'avez pas besoin d'y être) :",
+    "observation confirmée de {name} en {region}, identifiée par au moins deux personnes sur iNaturalist (vous n'avez pas besoin d'y être) :",
   "wlNearby.foundRest.other":
-    "observations de niveau recherche de {name} en {region} — vérifiées et photographiées par la communauté iNaturalist (vous n'avez pas besoin d'y être) :",
+    "observations confirmées de {name} en {region}, chacune identifiée par au moins deux personnes sur iNaturalist (vous n'avez pas besoin d'y être) :",
 
   // ---------------------------------------------------------------------
   // Écorégions.
   // ---------------------------------------------------------------------
-  "ecoregion.suffixEea": "région biogéographique, AEE",
-  "ecoregion.suffixEpa": "écorégion EPA de niveau III",
-  "ecoregion.suffixResolve": "écorégion RESOLVE",
-  "ecoregion.suffixCec": "écorégion CCE de niveau III, Amérique du Nord",
+  "ecoregion.suffixEea": "région naturelle, carte de l'Agence européenne pour l'environnement",
+  "ecoregion.suffixEpa": "région naturelle, carte de l'EPA américaine",
+  "ecoregion.suffixResolve": "région naturelle, carte mondiale RESOLVE",
+  "ecoregion.suffixCec": "région naturelle, carte nord-américaine (CEC)",
   "ecoregion.eea.alpine": "Alpine",
   "ecoregion.eea.atlantic": "Atlantique",
   "ecoregion.eea.black-sea": "Mer Noire",
@@ -2243,9 +2244,9 @@ export const fr: Dict = {
   "about.hereEm": "ici",
   "about.whyTitle": "Pourquoi cela existe",
   "about.why1":
-    "La plupart des jardins sont verts et presque sans vie. Les pelouses, les arbustes et les fleurs venus d'autres continents ont belle allure et ne nourrissent presque rien : les chenilles dont sont nourris presque tous les oisillons ne peuvent manger que les plantes avec lesquelles elles ont évolué. Pas de plantes indigènes, pas de chenilles, pas d'oisillons — et cette soustraction silencieuse se produit à l'échelle de pays entiers, jardin impeccable après jardin impeccable.",
+    "La plupart des jardins, ce sont des pelouses, plus des arbustes et des fleurs venus d'autres continents. Ils ont belle allure mais nourrissent bien moins de chenilles, et la plupart des passereaux élèvent leurs petits avec des chenilles — qui, pour la plupart, ne mangent que les plantes avec lesquelles elles ont évolué. Moins d'indigènes, moins de chenilles, moins d'oisillons.",
   "about.why2":
-    "Le remède est étonnamment peu coûteux et étonnamment rapide. Plantez une seule indigène et la chaîne alimentaire redémarre dès la même saison. Ce qui manquait, ce n'était pas la bonne volonté : c'était une réponse claire à « qu'est-ce que je plante {here}, dans ce coin précis de mon jardin ? », qui n'exige pas de parler déjà la langue des catalogues de pépinière. C'est cette réponse qu'Indigene essaie d'être.",
+    "Le remède ne coûte pas cher : planter des indigènes. Ce qui manquait, c'était une réponse claire à « qu'est-ce que je plante {here}, dans ce coin de mon jardin ? », sans devoir parler la langue des catalogues de pépinière. Indigene essaie de la donner.",
   "about.forTitle": "Pour qui c'est fait",
   "about.forLede": "L'application est faite, délibérément, pour des gens qui ne sont pas des spécialistes :",
   "about.for1":
@@ -2270,7 +2271,7 @@ export const fr: Dict = {
     "Chaque plante porte ses sources et une note de confiance en mots simples, et quand un chiffre relève de notre jugement plutôt que d'un comptage, la page des sources le dit et nomme ceux que nous contesterions en premier. Rien n'est inventé pour combler un trou — une plante sans nom français affiche son nom scientifique plutôt qu'une invention plausible.",
   "about.stance.yours": "Elle n'attend rien de vous.",
   "about.stance.yoursBody":
-    "Pas de compte, pas d'inscription, pas de publicité, pas de statistiques, rien de vendu. Les lieux enregistrés restent dans votre navigateur, sur votre appareil, parce qu'il n'existe aucun serveur où les envoyer. Il n'y a rien à acheter, et aucun moyen pour un inconnu de vous contacter par ce biais.",
+    "Pas de compte, pas d'inscription, pas de publicité, rien de vendu. Un compteur de visites note quelle page a été ouverte, et rien sur qui l'a ouverte ; vous pouvez le couper dans les Réglages. Les lieux enregistrés restent dans votre navigateur, sur votre appareil, parce qu'il n'existe aucun serveur où les envoyer. Aucun inconnu ne peut vous contacter par ce biais.",
   "about.stance.portable": "Elle ne retient pas vos données.",
   "about.stance.portableBody":
     "Les réglages écrivent chaque lieu enregistré et son journal de plantation dans un fichier simple qui vous appartient, et en relisent un dans un autre navigateur. Passer d'un téléphone à un ordinateur demande un fichier, pas un compte — et ce fichier est à vous : à ouvrir, à garder, ou à confier à tout autre outil.",
@@ -2301,7 +2302,7 @@ export const fr: Dict = {
   "crops.lede":
     "Des exploitations agricoles l'ont mesuré en vraie grandeur : non. Certaines indigènes éloignent même discrètement des ravageurs, et quelques-unes font un mauvais voisin pour telle ou telle culture. Tout est sur cette page.",
   "crops.short1":
-    "Une abeille ne peut pas manger une tomate. Abeilles, papillons et syrphes vivent de nectar et de pollen — aucune pièce buccale pour un fruit, ni même pour une feuille.",
+    "Une abeille ne peut pas manger une tomate. Abeilles et syrphes vivent de nectar et de pollen, et les papillons y ajoutent parfois un fruit tombé qui fermente. Aucun ne mange de feuilles.",
   "crops.short2":
     "Une chenille élevée sur un chêne ne peut pas manger de la laitue. La plupart des insectes qui mangent des plantes ne digèrent que les quelques espèces avec lesquelles ils ont évolué.",
   "crops.short3":
@@ -2340,7 +2341,7 @@ export const fr: Dict = {
     "L'inquiétude traite « la faune » comme un seul animal. Une plantation indigène en fait venir trois bien différentes, et une seule mange des plantes — celle-là est liée aux plantes avec lesquelles elle a évolué, qui ne sont pas celles de votre potager.",
   "crops.fig.feeds.pollWho": "Pollinisateurs",
   "crops.fig.feeds.pollEats":
-    "Abeilles, papillons, syrphes. Nectar et pollen — leurs pièces buccales ne viennent pas à bout d'une feuille.",
+    "Abeilles, papillons, syrphes. Nectar et pollen — aucun ne mange de feuilles.",
   "crops.fig.feeds.pollOut": "Plus de fruits noués",
   "crops.fig.feeds.enemyWho": "Mangeurs de ravageurs",
   "crops.fig.feeds.enemyEats":
@@ -2349,7 +2350,7 @@ export const fr: Dict = {
   "crops.fig.feeds.leafWho": "Mangeurs de feuilles",
   "crops.fig.feeds.leafEats":
     "Chenilles et apparentés. La plupart ne digèrent qu'une ou deux plantes, celles sur lesquelles ils ont grandi.",
-  "crops.fig.feeds.leafOut": "N'atteint jamais le potager",
+  "crops.fig.feeds.leafOut": "Touche rarement au potager",
   "crops.fig.feeds.caption":
     "Ce qu'une bordure de fleurs et d'arbustes indigènes nourrit réellement, et ce que chaque population fait quand elle arrive à votre potager.",
 
@@ -2357,7 +2358,7 @@ export const fr: Dict = {
   "crops.fussy1":
     "Les insectes qui mangent des plantes sont bien plus difficiles qu'on ne le croit. Un relevé portant sur 7 500 d'entre eux et 2 000 plantes montre que la plupart ne digèrent que la poignée d'espèces avec lesquelles ils ont évolué. Une chenille élevée sur un chêne ou un saule ne préfère pas le chêne à votre laitue — elle mourrait de faim sur la laitue.",
   "crops.fussy2":
-    "L'inverse est vrai aussi. La tomate, le poivron et la pomme de terre viennent des Andes, le chou et le chou kale de Méditerranée, la courge du Mexique. Les insectes d'ici n'ont aucune histoire commune avec eux. Les ravageurs qui les mangent sont surtout arrivés avec eux : environ 40 % des insectes et acariens ravageurs des cultures américaines sont des espèces introduites, et aucune haie que vous plantez ne les fait apparaître.",
+    "L'inverse est vrai aussi. La pomme de terre et la tomate viennent des Andes, le poivron et la courge du Mexique, le chou et le chou kale de Méditerranée. La plupart des insectes d'ici n'ont aucune histoire commune avec eux. Beaucoup des ravageurs qui les mangent sont arrivés avec eux : environ 40 % des insectes et acariens ravageurs des cultures américaines sont des espèces introduites, et aucune haie que vous plantez ne les fait apparaître.",
 
   // --- ce que les essais agricoles ont trouvé ----------------------------
   "crops.farmsTitle": "Ce qui s'est passé quand des fermes ont essayé",
@@ -2380,7 +2381,7 @@ export const fr: Dict = {
   "crops.birds1":
     "Deux grandes synthèses ont cherché ce que les oiseaux font réellement à une culture. Sur 104 études, l'effet d'ensemble est positif : environ la moitié des mesures montrent les oiseaux faisant baisser le nombre de ravageurs, la plupart des autres ne montrent aucune différence, et 5 % vont dans l'autre sens. Là où les oiseaux étaient tenus à l'écart, les dégâts et les ravageurs ont augmenté et le rendement a baissé.",
   "crops.birds2":
-    "Le pire voleur de fruits d'Amérique du Nord est l'étourneau sansonnet, un oiseau venu d'Europe qui prospère sur la pelouse tondue et les terrains dégagés. Une pelouse fabrique des étourneaux. Une haie, non. Et ce qu'une haie fabrique — des chenilles sur des feuilles indigènes — est précisément ce qu'il faut à une mésange pour élever une nichée : une étude a montré qu'un jardin n'y suffit plus dès que les plantes non indigènes dépassent environ 70 % de sa végétation.",
+    "L'un des pires voleurs de fruits d'Amérique du Nord est l'étourneau sansonnet, un oiseau venu d'Europe qui prospère sur la pelouse tondue et les terrains dégagés. Une pelouse fabrique des étourneaux. Une haie, non. Et ce qu'une haie fabrique — des chenilles sur des feuilles indigènes — est précisément ce qu'il faut à une mésange pour élever une nichée : une étude a montré que les mésanges ne se maintiennent plus dans les jardins où les indigènes font moins d'environ 70 % des plantes.",
 
   // --- la moitié de l'argument que personne ne fait ----------------------
   "crops.takeAwayTitle": "Certaines indigènes éloignent les ravageurs",
@@ -2406,7 +2407,7 @@ export const fr: Dict = {
   // --- l'affirmation la plus facile à surinterpréter --------------------------
   "crops.redirectTitle": "Iront-ils manger la haie plutôt que mes cerises ?",
   "crops.redirect1":
-    "En partie, et ce n'est pas une affaire de goût : c'est une affaire de gras. Le fruit d'un arbuste indigène titre de 6 à 48 % de matière grasse. Les arbustes envahissants plantés pour le même effet restent sous 1 %. Mis en présence des deux, des passereaux en migration ont vidé les indigènes plus vite.",
+    "En partie, et ce n'est pas une affaire de goût : c'est une affaire de gras. Dans une étude, les fruits d'arbustes indigènes titraient de 6 à 48 % de matière grasse ; les arbustes envahissants plantés pour le même effet restaient sous 1 %. Mis en présence des deux, des passereaux en migration ont vidé les indigènes plus vite.",
   "crops.fig.fat.native": "Fruits d'arbustes indigènes",
   "crops.fig.fat.nativeValue": "6 à 48 %",
   "crops.fig.fat.invasive": "Fruits d'arbustes envahissants",

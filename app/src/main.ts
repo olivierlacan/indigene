@@ -41,6 +41,7 @@ import { initAppMenu, closeAppMenu } from "./components/app-menu";
 import { initPullToReload } from "./components/pull-to-reload";
 import { watchRestore } from "./lib/restore";
 import { closeTermDialog } from "./components/term-dialog";
+import { closeLightbox } from "./components/lightbox";
 import { applyDocumentLang, consumeLangParam, onLangChange, t } from "./lib/i18n";
 import type { TKey } from "./locales/en";
 import { onUnitsChange } from "./lib/units";
@@ -371,6 +372,7 @@ async function route(): Promise<void> {
   syncAddressBar(step, param);
   closeAppMenu(); // a navigation always dismisses an open header menu
   closeTermDialog(); // …and any explain-this dialog, which would float above the new page
+  closeLightbox(); // …and the photo viewer, which Back would otherwise leave open
   resetUntranslated(); // whatever the last page admitted to isn't this page's
   document.title = t("app.title"); // plant pages set their own; everything else resets
   renderStepRail(step);

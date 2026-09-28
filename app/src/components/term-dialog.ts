@@ -35,7 +35,7 @@ let shared: HTMLDialogElement | null = null;
 
 function dialog(): HTMLDialogElement {
   if (shared && document.body.contains(shared)) return shared;
-  shared = el("dialog", { class: "stat-dialog term-dialog" }) as HTMLDialogElement;
+  shared = el("dialog", { class: "stat-dialog term-dialog", "aria-labelledby": "term-dialog-title" }) as HTMLDialogElement;
   shared.addEventListener("click", (e) => {
     if (e.target === shared) shared!.close(); // tap the backdrop to dismiss
   });
@@ -54,7 +54,7 @@ export function closeTermDialog(): void {
 export function openTermDialog(info: TermInfo): void {
   const d = dialog();
   d.replaceChildren(
-    el("h3", { class: "term-dialog-title", style: "margin:0 0 0.5rem" }, [
+    el("h3", { id: "term-dialog-title", class: "term-dialog-title", style: "margin:0 0 0.5rem" }, [
       iconNode(info, true) &&
         el("span", { class: "term-dialog-glyph", "aria-hidden": "true" }, [iconNode(info, true)!]),
       info.term,

@@ -715,11 +715,15 @@ function plantingFields(
   return {
     nodes: [
       el("div", { class: "field" }, [
-        el("label", { for: `${prefix}-year` }, t("spot.whenLabel")),
-        el("div", { class: "log-date-row" }, [
-          el("span", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.year")), year]),
-          el("span", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.month")), month]),
-          el("span", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.day")), day]),
+        // Three controls under one question: the question names the group,
+        // and each small word above a control is that control's own label —
+        // "Month" was only a hint once, and a screen reader announced the
+        // select with no name at all.
+        el("label", { id: `${prefix}-when` }, t("spot.whenLabel")),
+        el("div", { class: "log-date-row", role: "group", "aria-labelledby": `${prefix}-when` }, [
+          el("label", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.year")), year]),
+          el("label", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.month")), month]),
+          el("label", { class: "log-date-field" }, [el("span", { class: "hint" }, t("spot.day")), day]),
         ]),
       ]),
       el("div", { class: "field field-inline" }, [

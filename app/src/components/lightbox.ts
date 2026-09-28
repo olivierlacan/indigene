@@ -123,8 +123,17 @@ function close(): void {
   document.removeEventListener("keydown", onKey);
   document.body.style.overflow = "";
   overlay.remove();
-  state?.returnFocus?.focus?.();
+  // The thumbnail that opened it may have been redrawn away meanwhile; focusing
+  // a detached node sends focus nowhere.
+  if (state?.returnFocus?.isConnected) state.returnFocus.focus?.();
   state = null;
+}
+
+/** Dismiss the viewer if it's open. The router calls this on every navigation:
+ *  Android's Back button is a navigation, and it used to change the page
+ *  underneath while the viewer stayed up with the page's scrolling locked. */
+export function closeLightbox(): void {
+  if (state) close();
 }
 
 function step(delta: number): void {

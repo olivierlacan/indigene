@@ -366,7 +366,7 @@ export function summarizeObservations(
       id: num(r?.id) ?? 0,
       taxonId,
       taxonName: str(r?.taxon?.name),
-      observer: str(r?.user?.login) ?? "an iNaturalist observer",
+      observer: str(r?.user?.login) ?? t("obs.someObserver"),
       place: str(r?.place_guess),
       lat: pt?.lat ?? null,
       lon: pt?.lon ?? null,

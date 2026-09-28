@@ -218,6 +218,15 @@ a {
   border-radius: 6px;
 }
 
+/* The header is brand green, and so is --focus: a ring there measured 1.04:1.
+   The header's own ink is the colour that reads against it. */
+.app-header :focus-visible {
+  outline-color: var(--on-brand);
+}
+.app-header .nav-menu-panel :focus-visible {
+  outline-color: var(--focus);
+}
+
 .skip-link {
   position: absolute;
   left: -999px;
@@ -3738,9 +3747,13 @@ details.weights {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
@@ -5242,6 +5255,9 @@ body[data-layout="profile"] .wip-banner-text {
   flex-direction: column;
   gap: 0.15rem;
   min-width: 0;
+  /* A <label> now, so it would pick up the bold form-label look. */
+  font-weight: inherit;
+  margin-bottom: 0;
 }
 /* Year and day are fixed to what they hold — four digits and two — so the
    month keeps everything left over. Sharing the width equally clipped the year

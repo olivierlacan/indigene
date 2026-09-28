@@ -114,8 +114,11 @@ export function renderPlants(main: HTMLElement): void {
     placeholder: t("plants.placeholder"),
     style: "width:100%",
   }) as HTMLInputElement;
-  const count = el("p", { id: "search-count", class: "coords", style: "margin:0.5rem 0 0.8rem" }, "");
-  const results = el("div", { "aria-live": "polite" });
+  // The count is what a screen reader hears as you type ("12 plants"); the
+  // cards themselves are not live — rebuilt on every keystroke, up to ~460 of
+  // them, they would read the whole catalogue aloud.
+  const count = el("p", { id: "search-count", class: "coords", role: "status", style: "margin:0.5rem 0 0.8rem" }, "");
+  const results = el("div");
 
   function rank(r: Row, nq: string): number {
     if (!nq) return 0;

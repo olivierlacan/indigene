@@ -96,6 +96,12 @@ subtitle on the What's new page.
 - Internal: the plant page moves its growth drawing and its "See it growing
   near you" card between columns only past the laptop breakpoint (`onLaptop`
   in `steps/plant.ts`), so the phone stack is untouched.
+- The welcome page says what's true, more plainly: plants didn't evolve *to*
+  feed birds, but local insects evolved alongside native plants, and many can
+  eat nothing else. https://indigene.app/
+- Sightings from iNaturalist now say what makes them trustworthy: at least two
+  people agreed on what the photo shows. "Research-grade" and "verified" are
+  gone.
 - Matches: the buttons on a saved spot say what they do. "Open" is now "Plant
   more", and the link to what's in the ground reads "Already planted".
   https://indigene.app/#/saved
@@ -139,6 +145,21 @@ subtitle on the What's new page.
 
 ### Fixed
 
+- About: the page said Indigene runs no analytics, but a visit counter does. It
+  now says so, and that you can switch it off in Settings.
+  https://indigene.app/about
+- A few facts were wrong: chickadees need yards that are at least about 70%
+  native plants (we had it backwards), butterflies do sip rotting fruit, and
+  peppers come from Mexico, not the Andes. https://indigene.app/crops
+- Keyboard focus now shows on the green header, the plant search no longer
+  reads the whole list aloud as you type, and the date boxes on a saved spot
+  have names a screen reader can say.
+- The Guide and What's new links in the ⚙️ menu open the right page again from
+  any plant or animal page, and Back now closes the photo viewer.
+- Internal: accessibility pass — `role="group"` and `aria-labelledby` on stat
+  grids and dialogs, silhouettes `aria-hidden`, reduced motion covers
+  pseudo-elements, the fake ARIA menu roles are gone, and the anonymous
+  observer name is a locale key.
 - Plant photos show up on the full plants list again, and while scrolling
   they now load where you've stopped first, instead of for rows you've
   already passed. https://indigene.app/plants

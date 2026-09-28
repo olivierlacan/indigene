@@ -155,9 +155,11 @@ subtitle on the What's new page.
   that its leaves look like two poisonous plants.
 - Plants: the "deer tend to leave it alone" tag is off plants deer happily
   browse, like hemlock, Douglas-fir, wild roses and bramble.
+- Invasives: two plants went by names that insult people. They're now
+  "highway ice plant" and "Asian bittersweet".
 - Internal: cow parsnip's swallowtail tie moved to the anise swallowtail, the
-  aspen–jay tie was deleted (jays don't nest in holes), "Hottentot fig" is
-  "highway ice plant", and wrinkleleaf goldenrod is flagged as spreading.
+  aspen–jay tie was deleted (jays don't nest in holes), and wrinkleleaf
+  goldenrod is flagged as spreading.
 - About: the page said Indigene runs no analytics, but a visit counter does. It
   now says so, and that you can switch it off in Settings.
   https://indigene.app/about

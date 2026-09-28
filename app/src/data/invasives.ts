@@ -699,7 +699,7 @@ export const INVASIVES: Invasive[] = [
   // ---------------- Vines ----------------
   {
     id: "celastrus-orbiculatus",
-    common: "Oriental bittersweet",
+    common: "Asian bittersweet",
     latin: "Celastrus orbiculatus",
     form: "vine",
     marks: [

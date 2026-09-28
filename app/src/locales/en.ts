@@ -1300,7 +1300,7 @@ export const en = {
   // published rather than guessed at.
   "conservation.place.florida-us": "Florida",
   "conservation.place.pennsylvania-us": "Pennsylvania",
-  "plant.whyBelongs": "Why it belongs here: ",
+  "plant.whyBelongs": "Where it's native: ",
   // The accessible name of the share control; the icon carries the 🔗 itself.
   "plant.share": "Share this plant",
   // What the icon widens to show. Must stay a word or two — it opens inside
@@ -1391,7 +1391,7 @@ export const en = {
     "The words are ours; the judgement isn\u2019t. Each one reads off the scale published by the people who survey that region \u2014 California\u2019s invasive-plant council, Virginia\u2019s natural heritage program, Florida\u2019s invasive species council, the French botanical conservatories.",
   "lookalikes.scaleGaps":
     "A card with no such badge isn\u2019t a mild plant. It means nobody has scored that ground yet, or that all anyone has published there is a weed law \u2014 which says what you must do about a plant, not how much of the place it takes.",
-  "lookalikes.notAllVillains": "Not all of these are villains. ",
+  "lookalikes.notAllVillains": "Not all of these are invasive. ",
   "lookalikes.notAllVillainsRest":
     "Some spread into wild places and cost us something. Some are ordinary garden plants that simply aren't from here. One or two grow here wild, like the plant they're confused with — and the mix-up still matters, because one of them can kill you. The label on each says which.",
   "lookalikes.mistakenFor": "Mistaken for: ",
@@ -2156,7 +2156,7 @@ export const en = {
   "nearby.nativeToList": "native to {list}",
   "nearby.nativeToOther": "native to another region",
   "nearby.nativeElsewhere":
-    "Our data lists {name} as {belongs}, not {region}. It may turn up on iNaturalist there as a planted or escaped specimen, but we won't show it as a local native where it doesn't belong.",
+    "Our data lists {name} as {belongs}, not {region}. It may turn up on iNaturalist there as a planted or escaped specimen, but we won't show it as native where it isn't.",
   // ---------------------------------------------------------------------
   // Worst invasives: the ranked list on a region's page.
   // ---------------------------------------------------------------------
@@ -2253,7 +2253,7 @@ export const en = {
   "about.docTitle": "About Indigene",
   "about.title": "About Indigene",
   "about.lede":
-    "An indigene is a native of a place. This app measures the sun where you're standing, looks up the soil and climate for those exact coordinates, and gives you back the plants that belong there — with plain words the whole way.",
+    "An indigene is a native of a place. This app measures the sun where you're standing, looks up the soil and climate for those exact coordinates, and gives you back the plants native there — with plain words the whole way.",
   "about.hereEm": "here",
   "about.whyTitle": "Why this exists",
   "about.why1":
@@ -2594,6 +2594,13 @@ export const en = {
   "emoji.close": "close",
   "emoji.external": "opens another site",
   "emoji.done": "done",
+
+  // ---------------------------------------------------------------------
+  // Why a plant goes by the name it does here, when we chose it over a
+  // better-known one that insults people. See data/name-choices.ts.
+  // ---------------------------------------------------------------------
+  "names.choice.slur": "Also called {also}. We don't use its best-known English name, a colonial slur.",
+  "names.choice.oriental": "Often sold as {also}. We say “Asian”: “Oriental” is an old label for Asian people, not one they chose.",
 } as const;
 
 /** Every valid string key. Derived, so it can never drift from the strings. */

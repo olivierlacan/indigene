@@ -166,7 +166,13 @@ subtitle on the What's new page.
 - Plants: the "deer tend to leave it alone" tag is off plants deer happily
   browse, like hemlock, Douglas-fir, wild roses and bramble.
 - Invasives: two plants went by names that insult people. They're now
-  "highway ice plant" and "Asian bittersweet".
+  "highway ice plant" and "Asian bittersweet", and each page says why in a
+  line. Searching "sour fig" or "Oriental bittersweet" still finds them.
+- Plant notes describe what an invasive does rather than where it's from:
+  "invasive" instead of "invader", and "native here" instead of "belongs here".
+- Internal: CLAUDE.md gains "Native plants, not nativism" — the project's
+  anti-racist, anti-colonial stance as writing rules — and name choices live in
+  `data/name-choices.ts`.
 - Internal: cow parsnip's swallowtail tie moved to the anise swallowtail, the
   aspen–jay tie was deleted (jays don't nest in holes), and wrinkleleaf
   goldenrod is flagged as spreading.

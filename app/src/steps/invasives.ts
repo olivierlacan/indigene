@@ -33,6 +33,7 @@ import { fetchRegionObservations, isBusy, resolveTaxon, boundsCenter, type Bound
 import { loadSightings, regionCacheKey } from "../lib/nearby";
 import { invasiveMarks, invasiveRemoval, invasivesUntranslated } from "../lib/prose";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
+import { nameChoiceNote } from "../lib/name-choice";
 import { t, fmtNumber, fmtDate } from "../lib/i18n";
 import { wantedList } from "../components/most-wanted";
 import { heroFigure } from "../components/hero-figure";
@@ -141,6 +142,7 @@ export function renderInvasive(main: HTMLElement, param?: string): void {
       // The profile card has no padding of its own (`.plant`), so the blocks
       // that aren't bare paragraphs sit in one body that carries the gutter.
       el("div", { class: "wanted-profile-body" }, [
+        nameChoiceNote(inv.latin),
         el("h3", { style: "margin:1rem 0 0" }, t("wanted.howToSpot")),
         el("dl", { class: "wanted-marks" }, invasiveMarks(inv).flatMap((m) => [
           // The part's icon, as each removal step wears its method's: the eye

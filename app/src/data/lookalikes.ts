@@ -375,7 +375,7 @@ export const LOOKALIKES: Lookalike[] = [
     common: "Meadow death camas",
     latin: "Toxicoscordion venenosum",
     form: "perennial",
-    origin: "Native to the Pacific Northwest — it belongs in these meadows exactly as much as the camas does.",
+    origin: "Native to the Pacific Northwest, as much a part of these meadows as the camas.",
     blurb:
       "A lily of the same wet spring meadows, with the same grassy leaves and a bulb that looks like a camas bulb. Its name means what it says: every part is poisonous, and it has killed both livestock and people. Out of flower, there is no safe way to tell the bulbs apart.",
     originBasis: "Burke Herbarium (University of Washington); Oregon State University; Washington Poison Center.",

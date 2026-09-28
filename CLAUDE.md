@@ -52,6 +52,33 @@ be expected to know still gets explained in place, and a number still gets its
 source. Warmth isn't padding either — "plants nobody has chosen a picture for
 yet keep the drawing" is worth its words. Trim the essay, keep the voice.
 
+## Native plants, not nativism
+
+Indigene is anti-racist, anti-colonial and anti-chauvinist by design. "Native"
+here is an ecological fact — where a plant evolved and what evolved with it —
+and it says nothing about people. The word sits close to *nativism*, an
+ideology we reject, so the writing keeps the two far apart. Promoting native
+plants is no excuse to carry systemic white supremacy along with them.
+
+- **Names that insult people give way to equally common ones.** When a plant's
+  best-known name is a slur or an old label for an ethnic group, use an
+  alternative that's just as common, and let the page say why in one line
+  (`data/name-choices.ts`). Where the offensive name is the only one people
+  know, keep it — a plant nobody can find helps no one — but don't repeat it
+  anywhere it isn't needed. Scientific names are fixed by the naming codes and
+  stay.
+- **Describe what a plant does, not where it's from, as the problem.** An
+  invasive is a problem of ecology: it smothers, shades out, seeds into woods.
+  Its origin is a fact, never an accusation — most plants from elsewhere are
+  harmless, and the crops page says so. Keep invasion talk out of it: no
+  "aliens", "foreigners", "invaders", "villains", and no "belongs here /
+  doesn't belong" set against newcomers. "Native to", "grows wild in" and
+  "invasive" say it plainly. ("Belongs in long grass cut once a year" is about
+  conditions, and fine.)
+- **The people of a place name its plants too.** Where they have their own
+  name for a plant — Māori in Auckland, Irish in Ireland — it is shown as a
+  name, not a curiosity.
+
 ## No folding boxes: link to a detail page
 
 **Never hide content in a collapse/expand control** — no `<details>`

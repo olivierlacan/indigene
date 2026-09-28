@@ -1306,7 +1306,7 @@ export const fr: Dict = {
   // de nos régions peuvent apparaître ici, d'où la brièveté de la liste.
   "conservation.place.florida-us": "Floride",
   "conservation.place.pennsylvania-us": "Pennsylvanie",
-  "plant.whyBelongs": "Pourquoi elle est chez elle ici : ",
+  "plant.whyBelongs": "Où elle est indigène : ",
   "plant.share": "Partager cette plante",
   "plant.shareShort": "Partager",
   "plant.shareTitle": "{name} — Indigene",
@@ -1389,7 +1389,7 @@ export const fr: Dict = {
     "Les mots sont de nous ; le jugement, non. Chacun traduit l\u2019\u00e9chelle publi\u00e9e par ceux qui \u00e9tudient la r\u00e9gion \u2014 le conseil des plantes envahissantes de Californie, le patrimoine naturel de Virginie, celui de Floride, les conservatoires botaniques nationaux.",
   "lookalikes.scaleGaps":
     "Une fiche sans ce badge ne d\u00e9signe pas une plante inoffensive. Personne n\u2019a encore \u00e9valu\u00e9 ce terrain-l\u00e0, ou bien tout ce qui y est publi\u00e9 est une loi sur les mauvaises herbes \u2014 qui dit ce qu\u2019il faut faire d\u2019une plante, pas la place qu\u2019elle prend.",
-  "lookalikes.notAllVillains": "Toutes ne sont pas des coupables. ",
+  "lookalikes.notAllVillains": "Toutes ne sont pas envahissantes. ",
   "lookalikes.notAllVillainsRest":
     "Certaines gagnent les milieux naturels et nous coûtent quelque chose. D'autres sont de simples plantes de jardin qui ne sont pas d'ici. Une ou deux poussent ici à l'état sauvage, comme la plante avec laquelle on les confond — et la confusion compte quand même, car l'une d'elles peut vous tuer. L'étiquette de chacune le dit.",
   "lookalikes.mistakenFor": "On la confond avec : ",
@@ -2145,7 +2145,7 @@ export const fr: Dict = {
   "nearby.nativeToList": "indigène de {list}",
   "nearby.nativeToOther": "indigène d'une autre région",
   "nearby.nativeElsewhere":
-    "Nos données donnent {name} comme {belongs}, et non de {region}. Elle peut apparaître sur iNaturalist là-bas comme sujet planté ou échappé de culture, mais nous ne la présenterons pas comme une indigène locale là où elle n'a pas sa place.",
+    "Nos données donnent {name} comme {belongs}, et non de {region}. Elle peut apparaître sur iNaturalist là-bas comme sujet planté ou échappé de culture, mais nous ne la présenterons pas comme indigène là où elle ne l'est pas.",
   // ---------------------------------------------------------------------
   // Les pires plantes envahissantes : la liste classée d'une région.
   // ---------------------------------------------------------------------
@@ -2240,7 +2240,7 @@ export const fr: Dict = {
   "about.docTitle": "À propos d'Indigene",
   "about.title": "À propos d'Indigene",
   "about.lede":
-    "Un indigène est natif d'un lieu. Cette application mesure le soleil là où vous vous tenez, consulte le sol et le climat de ces coordonnées précises, et vous rend les plantes qui sont chez elles à cet endroit — avec des mots simples d'un bout à l'autre.",
+    "Un indigène est natif d'un lieu. Cette application mesure le soleil là où vous vous tenez, consulte le sol et le climat de ces coordonnées précises, et vous rend les plantes indigènes à cet endroit — avec des mots simples d'un bout à l'autre.",
   "about.hereEm": "ici",
   "about.whyTitle": "Pourquoi cela existe",
   "about.why1":
@@ -2572,4 +2572,9 @@ export const fr: Dict = {
   "emoji.close": "fermer",
   "emoji.external": "ouvre un autre site",
   "emoji.done": "fait",
+
+  // Vides exprès : les noms français de ces plantes n'insultent personne
+  // (griffe de sorcière, célastre orbiculaire), donc la note ne s'affiche pas.
+  "names.choice.slur": "",
+  "names.choice.oriental": "",
 };

@@ -81,7 +81,7 @@ export const LOOKALIKES: Lookalike[] = [
     form: "tree",
     origin: "Native to China and Vietnam; planted across North America from the 1960s as a tidy, tough street tree.",
     blurb:
-      "The tree that turns whole American streets white in the first warm week of spring. It was sold as a plant that couldn't set seed — and then the different varieties started crossing with each other. Their seedlings are thorny, fast and dense, and they now fill old fields, verges and woodland edges across the East. Several states have banned its sale.",
+      "The tree that turns whole American streets white in the first warm week of spring. It was sold as a plant that couldn't set seed — and then the different varieties started crossing with each other. Their seedlings are thorny, fast and dense, and they now fill old fields, roadsides and woodland edges across the East. Several states have banned its sale.",
     originBasis: "Penn State Extension; Missouri Botanical Garden; Invasive Plant Atlas.",
   },
   {
@@ -111,7 +111,7 @@ export const LOOKALIKES: Lookalike[] = [
     form: "tree",
     origin: "Native to China; planted across Europe and North America from the 1700s.",
     blurb:
-      "The tree that comes up in every pavement crack and railway ballast. It grows absurdly fast, breaks in the first storm, releases a chemical that suppresses the plants around it, and sends up a forest of suckers from the roots when cut. In North America it is also the spotted lanternfly's favourite host.",
+      "The tree that comes up in every sidewalk crack and railroad ballast. It grows absurdly fast, breaks in the first storm, releases a chemical that suppresses the plants around it, and sends up a forest of suckers from the roots when cut. In North America it is also the spotted lanternfly's favorite host.",
     originBasis: "Penn State Extension; OFB Centre de ressources EEE; EPPO.",
   },
   {
@@ -163,7 +163,7 @@ export const LOOKALIKES: Lookalike[] = [
     form: "shrub",
     origin: "Native to northeast Asia.",
     blurb:
-      "The shrub that leafs out first in spring and stays green longest in autumn — which is exactly how it takes a woodland understorey. Birds do eat its red berries, but they are the junk food of the woods: far less fat than a native berry, at the season a bird most needs it.",
+      "The shrub that leafs out first in spring and stays green longest in autumn — which is exactly how it takes a woodland understory. Birds do eat its red berries, but they are the junk food of the woods: far less fat than a native berry, at the season a bird most needs it.",
     originBasis: "Ohio State Extension; Missouri Botanical Garden; Invasive Plant Atlas.",
   },
   {
@@ -173,7 +173,7 @@ export const LOOKALIKES: Lookalike[] = [
     form: "shrub",
     origin: "Native to the Balkans, Turkey and the Black Sea coasts.",
     blurb:
-      "The default evergreen hedge of half of Europe. Birds carry its black fruit into woodland, where it grows into a dark, dense understorey that nothing comes up through. Crushed or shredded, its leaves give off cyanide — which is why hedge clippings of it shouldn't go anywhere near an animal.",
+      "The default evergreen hedge of half of Europe. Birds carry its black fruit into woodland, where it grows into a dark, dense understory that nothing comes up through. Crushed or shredded, its leaves give off cyanide — which is why hedge clippings of it shouldn't go anywhere near an animal.",
     originBasis: "OFB Centre de ressources EEE; INPN; Tela Botanica.",
   },
   {
@@ -297,7 +297,7 @@ export const LOOKALIKES: Lookalike[] = [
     form: "perennial",
     origin: "Native to Europe and western Asia.",
     blurb:
-      "A glossy yellow buttercup that carpets damp ground in early spring and is gone by June — leaving bare, easily washed soil where the spring wildflowers used to be. It travels as tiny bulbils that ride on boots, tyres and floodwater.",
+      "A glossy yellow buttercup that carpets damp ground in early spring and is gone by June — leaving bare, easily washed soil where the spring wildflowers used to be. It travels as tiny bulbils that ride on boots, tires and floodwater.",
     originBasis: "Penn State Extension; Maryland DNR; Invasive Plant Atlas.",
   },
   {
@@ -317,7 +317,7 @@ export const LOOKALIKES: Lookalike[] = [
     form: "grass",
     origin: "Native to East Asia.",
     blurb:
-      "The big fountain-shaped ornamental grass with silver plumes, on sale in every garden centre. Its seed carries on the wind into meadows, verges and burnt ground, and the standing dead clumps carry fire well.",
+      "The big fountain-shaped ornamental grass with silver plumes, on sale in every garden center. Its seed carries on the wind into meadows, roadsides and burnt ground, and the standing dead clumps carry fire well.",
     originBasis: "Missouri Botanical Garden; Penn State Extension; Invasive Plant Atlas.",
   },
   {
@@ -419,7 +419,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
           { feature: "Bract tips", native: "Notched, as though a bite were taken out, often with a rusty-red stain at the notch.", lookalike: "Drawn out to a clean point." },
           { feature: "When it blooms", native: "April, on bare branches, before the leaves.", lookalike: "Late May or June, well after the leaves are out." },
           { feature: "Fruit", native: "A tight cluster of glossy red berries that birds strip in autumn.", lookalike: "A single pink-red ball like a small raspberry, dangling on its own stalk." },
-          { feature: "Bark", native: "Broken into small square blocks, like alligator hide.", lookalike: "Smooth, flaking into a patchwork of grey, tan and brown." },
+          { feature: "Bark", native: "Broken into small square blocks, like alligator hide.", lookalike: "Smooth, flaking into a patchwork of gray, tan and brown." },
         ],
         basis: "Missouri Botanical Garden; Morton Arboretum; Penn State Extension.",
       },
@@ -544,8 +544,8 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         tells: [
           { feature: "Leaf", native: "Five leaflets fanned out from one point, like fingers.", lookalike: "A single dark glossy leaf, lobed when young, plain oval on the old flowering growth." },
           { feature: "In winter", native: "Bare — it drops everything.", lookalike: "Evergreen; a tree trunk that's green in February is ivy." },
-          { feature: "How it holds on", native: "Sticky pads at the tips of curling tendrils — it sits on the bark.", lookalike: "Short roots gripping along the whole stem, prising into bark and mortar." },
-          { feature: "Autumn", native: "Turns scarlet before almost anything else, with dark blue berries on bright red stalks.", lookalike: "No autumn colour at all; black berries, and only high up on old growth." },
+          { feature: "How it holds on", native: "Sticky pads at the tips of curling tendrils — it sits on the bark.", lookalike: "Short roots gripping along the whole stem, prying into bark and mortar." },
+          { feature: "Autumn", native: "Turns scarlet before almost anything else, with dark blue berries on bright red stalks.", lookalike: "No autumn color at all; black berries, and only high up on old growth." },
         ],
         basis: "Penn State Extension; Missouri Botanical Garden; LBJ Wildflower Center.",
       },
@@ -566,7 +566,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
           { feature: "Size", native: "Knee to waist high, in a clump about the size of a dinner plate.", lookalike: "Head high, in a clump you'd need both arms around." },
           { feature: "The blade", native: "Blue-green and plain, turning copper-orange in autumn.", lookalike: "Green with a silver-white stripe down the middle of every blade." },
           { feature: "Seed heads", native: "Small white tufts scattered up the stems, lit from behind by low sun.", lookalike: "One big fan-shaped silver plume held above the clump." },
-          { feature: "In winter", native: "Stands copper-red until spring, full of small birds.", lookalike: "Fades to straw, and its seed blows out into meadows and verges." },
+          { feature: "In winter", native: "Stands copper-red until spring, full of small birds.", lookalike: "Fades to straw, and its seed blows out into meadows and roadsides." },
         ],
         basis: "LBJ Wildflower Center; Missouri Botanical Garden; Penn State Extension.",
       },
@@ -587,7 +587,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
           { feature: "The blade", native: "Plain green or blue-green, with no stripe.", lookalike: "A silver-white stripe down the middle of every blade." },
           { feature: "Seed head", native: "An airy pink-tan cloud you can see the sky through.", lookalike: "A dense fan-shaped silver plume." },
           { feature: "The clump", native: "Upright and loose, opening out in the middle as it ages.", lookalike: "Tight and heavy, staying shut." },
-          { feature: "Where the seed goes", native: "Into sparrows and juncos, all winter.", lookalike: "Into meadows, verges and burnt ground, where it comes up." },
+          { feature: "Where the seed goes", native: "Into sparrows and juncos, all winter.", lookalike: "Into meadows, roadsides and burnt ground, where it comes up." },
         ],
         basis: "LBJ Wildflower Center; Missouri Botanical Garden; Penn State Extension.",
       },
@@ -596,9 +596,9 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
       {
         lookalikeId: "asclepias-curassavica",
         status: "introduced",
-        why: "Two orange milkweeds sold side by side on the same bench, both labelled for monarchs — but only one of them dies back in winter.",
+        why: "Two orange milkweeds sold side by side on the same bench, both labeled for monarchs — but only one of them dies back in winter.",
         tells: [
-          { feature: "Flower colour", native: "One solid orange, sometimes leaning yellow.", lookalike: "Two-tone: red outer petals around a yellow-orange crown." },
+          { feature: "Flower color", native: "One solid orange, sometimes leaning yellow.", lookalike: "Two-tone: red outer petals around a yellow-orange crown." },
           { feature: "Break a stem", native: "Clear watery sap — the one milkweed that doesn't bleed white.", lookalike: "Thick white latex." },
           { feature: "Leaves", native: "Narrow and hairy, set alternately up a stiff hairy stem.", lookalike: "Smooth and pointed, in opposite pairs." },
           { feature: "In winter", native: "Dies to the ground, and comes back later in spring than almost anything — don't dig it up.", lookalike: "Stays green wherever winter is mild, which is exactly the problem." },
@@ -624,7 +624,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         status: "introduced",
         why: "Both are milkweeds sold for monarchs, and in a pot at the nursery they look much the same.",
         tells: [
-          { feature: "Flower colour", native: "Soft pink to mauve, in domed clusters.", lookalike: "Red and yellow, two-tone." },
+          { feature: "Flower color", native: "Soft pink to mauve, in domed clusters.", lookalike: "Red and yellow, two-tone." },
           { feature: "Stance", native: "Chest high and straight, standing in wet ground.", lookalike: "Waist high and lax, happy anywhere warm." },
           { feature: "In winter", native: "Dies to the ground with the first frosts.", lookalike: "Stays green wherever winter is mild, and the OE parasite builds up on the old leaves." },
           { feature: "Leaves", native: "Long and narrow with a pale midrib, in opposite pairs.", lookalike: "Broader and thinner, tapering at both ends." },
@@ -671,7 +671,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         tells: [
           { feature: "The leaf", native: "A compound leaf: five to nine spiny leaflets ranged along one stalk.", lookalike: "One spiny leaf at a time, thick and wavy." },
           { feature: "Berries", native: "Dusty blue-purple, in bunches like tiny grapes.", lookalike: "Bright red — and only on female plants." },
-          { feature: "Flowers", native: "Loud yellow clusters in early spring, on the greyest day of the year.", lookalike: "Small, white and easy to miss." },
+          { feature: "Flowers", native: "Loud yellow clusters in early spring, on the grayest day of the year.", lookalike: "Small, white and easy to miss." },
           { feature: "Under the bark", native: "Scratch a stem: the wood is vivid yellow.", lookalike: "Pale." },
         ],
         basis: "Burke Herbarium (University of Washington); King County Noxious Weeds; WSU Extension.",
@@ -704,7 +704,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         status: "native",
         why: "They grow in the same wet spring meadows, from bulbs that look alike, with the same grassy leaves — and one of them is deadly.",
         tells: [
-          { feature: "Flower colour", native: "Deep blue-violet stars.", lookalike: "Creamy white to greenish, with a green gland at the base of each petal." },
+          { feature: "Flower color", native: "Deep blue-violet stars.", lookalike: "Creamy white to greenish, with a green gland at the base of each petal." },
           { feature: "The spike", native: "Tall and open, opening from the bottom upward.", lookalike: "Shorter, narrower and crowded, near the top of the stem." },
           { feature: "Out of bloom", native: "Not safely tellable from death camas. Mark where the blue flowers were and trust nothing else.", lookalike: "Not safely tellable either — and every part of it is poisonous, the bulb most of all." },
           { feature: "Why it matters", native: "A staple food plant of Northwest peoples for thousands of years, and a meadow keystone.", lookalike: "Has poisoned livestock and people. It's native here too — it just isn't the one." },
@@ -718,7 +718,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         status: "introduced",
         why: "Two small many-lobed maples that glow in autumn — the Japanese one in most gardens, the native one in most woods.",
         tells: [
-          { feature: "Leaf shape", native: "Almost a circle, with seven to nine shallow lobes and a heart-shaped base.", lookalike: "A star, with five to nine lobes cut deep, often nearly to the centre." },
+          { feature: "Leaf shape", native: "Almost a circle, with seven to nine shallow lobes and a heart-shaped base.", lookalike: "A star, with five to nine lobes cut deep, often nearly to the center." },
           { feature: "Flowers", native: "Small hanging flowers with white petals and dark red-purple sepals, in April.", lookalike: "Tiny reddish flowers, easily missed." },
           { feature: "Habit", native: "Sprawls and leans, several stems from the ground, layering where a branch meets soil.", lookalike: "One neat vase-shaped frame, usually kept that way by pruning." },
           { feature: "Where it is", native: "Wild, in the shade beneath conifers.", lookalike: "Planted, in a garden." },
@@ -735,7 +735,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         status: "introduced",
         why: "Both are milkweeds, both are sold for monarchs, and in southern California only one of them ever stops growing.",
         tells: [
-          { feature: "Flower colour", native: "Dull white to pale pink, in domed clusters.", lookalike: "Bright red outer petals around a yellow-orange crown." },
+          { feature: "Flower color", native: "Dull white to pale pink, in domed clusters.", lookalike: "Bright red outer petals around a yellow-orange crown." },
           { feature: "Leaves", native: "Very narrow, almost grassy, in whorls up the stem.", lookalike: "Broad and pointed, in opposite pairs." },
           { feature: "In winter", native: "Dies to the ground and rests until spring.", lookalike: "Never stops in this climate. The OE parasite builds up on leaves that are never shed, and monarchs stay to breed instead of flying to the coast for winter." },
           { feature: "If you already have it", native: "Nothing to do.", lookalike: "Cut it to the ground every autumn, or replace it — the western monarch is down more than ninety percent and this is one of the few things a garden can get wrong." },
@@ -757,7 +757,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         why: "Both are big fountain-shaped bunchgrasses sold as an architectural clump for a dry garden.",
         tells: [
           { feature: "Size", native: "Waist high, four or five feet across.", lookalike: "Head high or more, and twice as wide." },
-          { feature: "The plume", native: "Narrow, upright, grey-green spikes held just above the leaves.", lookalike: "A huge cream feather duster on a stalk well clear of the clump." },
+          { feature: "The plume", native: "Narrow, upright, gray-green spikes held just above the leaves.", lookalike: "A huge cream feather duster on a stalk well clear of the clump." },
           { feature: "The leaf edge", native: "Rough, but safe to run a hand along.", lookalike: "Sharp enough to cut you — this is the quickest test of all." },
           { feature: "What happens next", native: "Stays where it was planted.", lookalike: "Millions of seeds on the wind; it is already the plant taking over coastal bluffs and burnt slopes." },
         ],
@@ -787,7 +787,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         status: "introduced",
         why: "Both are orange milkweeds sold for monarchs — but in a Florida winter only one of them dies back.",
         tells: [
-          { feature: "Flower colour", native: "One solid orange, sometimes leaning yellow.", lookalike: "Two-tone: red outer petals around a yellow-orange crown." },
+          { feature: "Flower color", native: "One solid orange, sometimes leaning yellow.", lookalike: "Two-tone: red outer petals around a yellow-orange crown." },
           { feature: "Break a stem", native: "Clear watery sap — the one milkweed that doesn't bleed white.", lookalike: "Thick white latex." },
           { feature: "In winter", native: "Dies to the ground and rests.", lookalike: "Never stops. OE spores build up on leaves that are never shed, and monarchs stay to breed instead of migrating." },
           { feature: "If you already have it", native: "Nothing to do.", lookalike: "Cut it to the ground each autumn, or replace it with a native milkweed." },
@@ -802,7 +802,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         why: "Two beautyberries sold under the same name, both carrying bright purple fruit in autumn.",
         tells: [
           { feature: "Where the fruit sits", native: "Packed into fat rings hugging the stem at each pair of leaves.", lookalike: "In small loose bunches held out from the stem on short stalks." },
-          { feature: "Fruit colour", native: "Deep magenta.", lookalike: "Lilac to violet." },
+          { feature: "Fruit color", native: "Deep magenta.", lookalike: "Lilac to violet." },
           { feature: "Size", native: "Head high and arching wide.", lookalike: "Waist high and neat." },
           { feature: "Leaves", native: "Big, soft, felty underneath, coarsely toothed.", lookalike: "Smaller, thinner, smooth, toothed only above the middle." },
         ],
@@ -818,7 +818,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
           { feature: "The fan", native: "The leaf stalk runs on into the fan and curves it, so the leaf folds like a taco.", lookalike: "The stalk stops where the fan begins; the leaf is flat." },
           { feature: "Threads", native: "Fine threads hang between the leaf segments.", lookalike: "No threads." },
           { feature: "Leaf stalk edge", native: "Smooth — no teeth.", lookalike: "Lined with hooked orange spines." },
-          { feature: "Trunk", native: "Stout and grey, often still wearing crossed old leaf bases.", lookalike: "Slim, very tall and straight, usually with a skirt of dead brown fronds." },
+          { feature: "Trunk", native: "Stout and gray, often still wearing crossed old leaf bases.", lookalike: "Slim, very tall and straight, usually with a skirt of dead brown fronds." },
         ],
         basis: "UF/IFAS; Florida Native Plant Society.",
       },
@@ -831,7 +831,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         tells: [
           { feature: "Flowers", native: "Long narrow tubes, red-orange throughout, in one-sided clusters.", lookalike: "Shorter, wider tubes, yellow-orange to pale red." },
           { feature: "Leaves and stems", native: "Softly hairy, usually in whorls of three, with red stalks and red new growth.", lookalike: "Smooth and glossy, usually in pairs, with green stalks." },
-          { feature: "Habit", native: "Big and loose — it wants to be a small tree.", lookalike: "Low, dense and tidy; often labelled \"dwarf firebush\"." },
+          { feature: "Habit", native: "Big and loose — it wants to be a small tree.", lookalike: "Low, dense and tidy; often labeled \"dwarf firebush\"." },
           { feature: "What it brings", native: "The plant the zebra longwing, the pluto sphinx moth and Florida's hummingbirds are recorded on.", lookalike: "Nectar — but not those records." },
         ],
         basis: "Florida Native Plant Society; UF/IFAS.",
@@ -848,7 +848,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         tells: [
           { feature: "Leaflets", native: "Flat and soft-edged, rounded or slightly notched at the tip; you can run a hand along them.", lookalike: "Stiff, rolled at the edges and needle-sharp at the tip — they will draw blood." },
           { feature: "Where the stem is", native: "Underground: the leaves come straight out of the ground.", lookalike: "Above ground: a shaggy brown trunk that thickens over the years." },
-          { feature: "Cones", native: "A small brown velvet cone low among the leaves.", lookalike: "A large cone, or a great woolly dome, sitting in the centre." },
+          { feature: "Cones", native: "A small brown velvet cone low among the leaves.", lookalike: "A large cone, or a great woolly dome, sitting in the center." },
           { feature: "Why it matters", native: "The atala butterfly's only native food plant.", lookalike: "Poisonous to people and pets; its seeds are a common cause of fatal poisoning in dogs." },
         ],
         basis: "UF/IFAS; Florida Museum of Natural History; ASPCA Animal Poison Control.",
@@ -882,7 +882,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         why: "Both are \"porterweed\" on the label, and both carry the same little blue flowers walking up a spike.",
         tells: [
           { feature: "Habit", native: "Sprawls along the ground, knee high at most.", lookalike: "Stands upright, chest high or taller." },
-          { feature: "Flower colour", native: "Pale sky-blue to lavender.", lookalike: "Deep blue-purple." },
+          { feature: "Flower color", native: "Pale sky-blue to lavender.", lookalike: "Deep blue-purple." },
           { feature: "Stems", native: "Softly hairy, often reddish, rooting where they touch the ground.", lookalike: "Smooth, and woody at the base." },
           { feature: "Leaves", native: "Rounded, thick, bluntly toothed.", lookalike: "Narrow, thin and sharply toothed — the \"nettleleaf\" of its name." },
         ],
@@ -897,7 +897,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         tells: [
           { feature: "Flowers", native: "Long narrow tubes, red-orange throughout, in one-sided clusters.", lookalike: "Shorter, wider tubes, yellow-orange to pale red." },
           { feature: "Leaves and stems", native: "Softly hairy, usually in whorls of three, with red stalks and red new growth.", lookalike: "Smooth and glossy, usually in pairs, with green stalks." },
-          { feature: "Habit", native: "Big and loose — it wants to be a small tree.", lookalike: "Low, dense and tidy; often labelled \"dwarf firebush\"." },
+          { feature: "Habit", native: "Big and loose — it wants to be a small tree.", lookalike: "Low, dense and tidy; often labeled \"dwarf firebush\"." },
           { feature: "What it brings", native: "The plant the zebra longwing, the pluto sphinx moth and Florida's hummingbirds are recorded on.", lookalike: "Nectar — but not those records." },
         ],
         basis: "Florida Native Plant Society; UF/IFAS.",
@@ -919,7 +919,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
           { feature: "The fan", native: "The leaf stalk runs on into the fan and curves it, so the leaf folds like a taco.", lookalike: "The stalk stops where the fan begins; the leaf is flat." },
           { feature: "Threads", native: "Fine threads hang between the leaf segments.", lookalike: "No threads." },
           { feature: "Leaf stalk edge", native: "Smooth — no teeth.", lookalike: "Lined with hooked orange spines." },
-          { feature: "Trunk", native: "Stout and grey, often still wearing crossed old leaf bases.", lookalike: "Slim, very tall and straight, usually with a skirt of dead brown fronds." },
+          { feature: "Trunk", native: "Stout and gray, often still wearing crossed old leaf bases.", lookalike: "Slim, very tall and straight, usually with a skirt of dead brown fronds." },
         ],
         basis: "UF/IFAS; Florida Invasive Species Council; Florida Native Plant Society.",
       },
@@ -962,7 +962,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
         why: "Two twining honeysuckles with cream flowers turning yellow and the same sweet evening scent.",
         tells: [
           { feature: "Where the flowers sit", native: "All together in one head at the tip of the shoot.", lookalike: "In pairs in the angle between leaf and stem, all the way along it." },
-          { feature: "Flower colour", native: "Cream inside, flushed red-purple outside.", lookalike: "White turning butter-yellow, with no red." },
+          { feature: "Flower color", native: "Cream inside, flushed red-purple outside.", lookalike: "White turning butter-yellow, with no red." },
           { feature: "Fruit", native: "A tight cluster of red berries.", lookalike: "Black berries, in pairs." },
           { feature: "In winter", native: "Bare, or nearly so.", lookalike: "Still in leaf." },
         ],
@@ -1007,7 +1007,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
           as: "Majeure",
           url: "https://invmed.fr/src/listes/index.php?idma=20",
         },
-        why: "Two trees with long leaves split into many leaflets, both quick, both everywhere along Mediterranean roads and railways.",
+        why: "Two trees with long leaves split into many leaflets, both quick, both everywhere along Mediterranean roads and railroads.",
         tells: [
           { feature: "How the leaves sit", native: "In opposite pairs on the twig.", lookalike: "Alternately, one after another." },
           { feature: "Leaflet edge", native: "Evenly toothed all round.", lookalike: "Smooth-edged, except for one or two blunt teeth near the base, each with a small gland underneath." },

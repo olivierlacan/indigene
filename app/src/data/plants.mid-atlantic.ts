@@ -307,7 +307,7 @@ export const SEED_RAW: RawPlant[] = [
     latin: "Fagus grandifolia",
     family: "Fagaceae",
     form: "tree",
-    nativeNote: "The smooth grey trunk of every old Piedmont wood, holding coppery leaves all winter.",
+    nativeNote: "The smooth gray trunk of every old Piedmont wood, holding coppery leaves all winter.",
     sun: { minHours: 2, maxHours: 9 },
     moisture: ["mesic"],
     ph: { min: 5.0, max: 7.0 },
@@ -327,7 +327,7 @@ export const SEED_RAW: RawPlant[] = [
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
     noWaterEstablish: true,
     careNote: "Slow, long-lived and shade-tolerant; wants rich, moist, well-drained ground. Give a young one part shade and leave its shallow roots alone. Two diseases are moving through the region — beech bark disease, and beech leaf disease since 2019 — so plant from healthy local stock and expect to watch it.",
-    givesNote: "Smooth grey bark, deep shade, and oily beechnuts that turkeys, jays, bears and squirrels fatten on in autumn.",
+    givesNote: "Smooth gray bark, deep shade, and oily beechnuts that turkeys, jays, bears and squirrels fatten on in autumn.",
     confidence: "medium",
     basis: "Host count: Fagus genus, NWF/Tallamy. Native status: USDA PLANTS. Occurrence records in this region's box: 57,143 (GBIF). Beech leaf disease: USDA Forest Service.",
     propagation: {

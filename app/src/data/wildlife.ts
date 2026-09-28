@@ -196,7 +196,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "A small powder-blue butterfly, one of the first on the wing in spring. Its caterpillars aren't fussy — they eat the flower buds of many native shrubs, oceanspray and ceanothus among the favourites.",
+      "A small powder-blue butterfly, one of the first on the wing in spring. Its caterpillars aren't fussy — they eat the flower buds of many native shrubs, oceanspray and ceanothus among the favorites.",
     native: true,
     nativeBasis: "Native to western North America. Washington Butterfly Association; Butterflies and Moths of North America (BAMONA).",
     inat: { name: "Celastrina echo", iconic: "Insecta" },
@@ -331,7 +331,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "A small grey-brown butterfly, easy to walk straight past, that flies in the first warm weeks of spring around rock outcrops, road cuts and bluffs. Its caterpillars eat native stonecrop and essentially nothing else, so it lives exactly where the stonecrop lives — a skin of soil over rock — and nowhere in between.",
+      "A small gray-brown butterfly, easy to walk straight past, that flies in the first warm weeks of spring around rock outcrops, road cuts and bluffs. Its caterpillars eat native stonecrop and essentially nothing else, so it lives exactly where the stonecrop lives — a skin of soil over rock — and nowhere in between.",
     native: true,
     nativeBasis: "Native to western North America. Xerces Society; BAMONA.",
     inat: { name: "Callophrys mossii", iconic: "Insecta" },
@@ -492,7 +492,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "A big woodland butterfly whose males burn electric purple from one angle and plain brown from the next. It spends its days in the crowns of the tallest trees and ignores flowers completely, coming down for damp ground and oozing sap. Its caterpillar winters flat against a sallow twig, the exact colour of the bark.",
+      "A big woodland butterfly whose males burn electric purple from one angle and plain brown from the next. It spends its days in the crowns of the tallest trees and ignores flowers completely, coming down for damp ground and oozing sap. Its caterpillar winters flat against a sallow twig, the exact color of the bark.",
     native: true,
     nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN); European butterfly foodplant checklist (Dryad).",
     inat: { name: "Apatura iris", iconic: "Insecta" },
@@ -578,7 +578,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "\u{1F98B}",
     blurb:
-      "A small, weak-flying white butterfly that drifts along hedge banks and verges rather than flying across them. It was only recognised as its own species in 2011, and in Britain and Ireland it lives only in Ireland \u2014 which makes it the closest thing the island has to a butterfly of its own.",
+      "A small, weak-flying white butterfly that drifts along hedge banks and roadsides rather than flying across them. It was only recognized as its own species in 2011, and in Britain and Ireland it lives only in Ireland \u2014 which makes it the closest thing the island has to a butterfly of its own.",
     native: true,
     nativeBasis:
       "Native to Ireland and eastern Europe; in these islands found only in Ireland. National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad); Butterfly Conservation.",
@@ -616,7 +616,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "The small violet-blue butterfly of every French meadow and verge — the male bright blue, the female brown with orange spots. Its caterpillars eat bird's-foot trefoil and its relatives, and ants often guard them for the sweet drops they give off.",
+      "The small violet-blue butterfly of every French meadow and roadside — the male bright blue, the female brown with orange spots. Its caterpillars eat bird's-foot trefoil and its relatives, and ants often guard them for the sweet drops they give off.",
     native: true,
     nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN); European butterfly foodplant checklist (Dryad).",
     inat: { name: "Polyommatus icarus", iconic: "Insecta" },
@@ -652,7 +652,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "A little butterfly the colour of a new coin — forewings burnished orange, edged in dark brown. It picks one warm stone and comes back to it all afternoon, launching at anything that flies over. Its caterpillars eat sorrels and docks, so it belongs to rough corners rather than tidy beds.",
+      "A little butterfly the color of a new coin — forewings burnished orange, edged in dark brown. It picks one warm stone and comes back to it all afternoon, launching at anything that flies over. Its caterpillars eat sorrels and docks, so it belongs to rough corners rather than tidy beds.",
     native: true,
     nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN); European butterfly foodplant checklist (Dryad).",
     inat: { name: "Lycaena phlaeas", iconic: "Insecta" },
@@ -801,7 +801,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "moth",
     icon: "🌙",
     blurb:
-      "The commonest big hawk-moth in France, and the strangest at rest: it holds its hindwings out in front of the forewings. A moth on a wall reads as a grey dead leaf put together wrong. The adult never eats: everything it needs it took in as a caterpillar, off poplar and willow leaves.",
+      "The commonest big hawk-moth in France, and the strangest at rest: it holds its hindwings out in front of the forewings. A moth on a wall reads as a gray dead leaf put together wrong. The adult never eats: everything it needs it took in as a caterpillar, off poplar and willow leaves.",
     native: true,
     nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN).",
     inat: { name: "Laothoe populi", iconic: "Insecta" },
@@ -813,7 +813,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "moth",
     icon: "🌙",
     blurb:
-      "Pink and olive-green, like something from a much warmer country, hovering at honeysuckle after dark. The caterpillar is where the name comes from: a fat grey-brown thing as long as a finger, with a trunk-like snout it pulls in when touched — which swells four eyespots and makes it a small snake.",
+      "Pink and olive-green, like something from a much warmer country, hovering at honeysuckle after dark. The caterpillar is where the name comes from: a fat gray-brown thing as long as a finger, with a trunk-like snout it pulls in when touched — which swells four eyespots and makes it a small snake.",
     native: true,
     nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN).",
     inat: { name: "Deilephila elpenor", iconic: "Insecta" },
@@ -837,7 +837,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "moth",
     icon: "🌙",
     blurb:
-      "The heathland's silk moth — soft grey and pink, with a big eyespot on each of its four wings. The male flies fast in the April sunshine on feathered antennae that pick up a female's scent a kilometre away; she flies only at night.",
+      "The heathland's silk moth — soft gray and pink, with a big eyespot on each of its four wings. The male flies fast in the April sunshine on feathered antennae that pick up a female's scent a kilometer away; she flies only at night.",
     native: true,
     nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN).",
     inat: { name: "Saturnia pavonia", iconic: "Insecta" },
@@ -998,7 +998,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "bird",
     icon: "🐦",
     blurb:
-      "A grey scrap of a bird, about as heavy as five paperclips, that travels in chattering flocks of twenty and works a shrub over from the inside. Its nest is a soft hanging sock of lichen and spider silk, a foot long, that takes the pair a month to build.",
+      "A gray scrap of a bird, about as heavy as five paperclips, that travels in chattering flocks of twenty and works a shrub over from the inside. Its nest is a soft hanging sock of lichen and spider silk, a foot long, that takes the pair a month to build.",
     native: true,
     nativeBasis: "Native to the western US and Mexico, resident year-round. Cornell Lab of Ornithology.",
     inat: { name: "Psaltriparus minimus", iconic: "Aves" },
@@ -1022,7 +1022,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "bird",
     icon: "🐦",
     blurb:
-      "A tiny grey-and-brown nuthatch that squeaks like a rubber duck and lives its whole life in southern pines. It is one of the very few birds that uses a tool — it will pick up a flake of bark and lever other bark off with it to get at the insects underneath.",
+      "A tiny gray-and-brown nuthatch that squeaks like a rubber duck and lives its whole life in southern pines. It is one of the very few birds that uses a tool — it will pick up a flake of bark and lever other bark off with it to get at the insects underneath.",
     native: true,
     nativeBasis:
       "Native to the pine woods of the southeastern US, and almost never found away from them. Cornell Lab of Ornithology; USFWS.",
@@ -1055,7 +1055,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "bird",
     icon: "🐦",
     blurb:
-      "The plump grey bird with a teardrop plume nodding off its forehead, running along the ground in a family party rather than flying. It lives in the bottom three feet of the world: low dense cover to hide in, bare ground to dust-bathe in, seeds within walking distance.",
+      "The plump gray bird with a teardrop plume nodding off its forehead, running along the ground in a family party rather than flying. It lives in the bottom three feet of the world: low dense cover to hide in, bare ground to dust-bathe in, seeds within walking distance.",
     native: true,
     nativeBasis: "Native to California and the west coast. Cornell Lab of Ornithology; Audubon California.",
     inat: { name: "Callipepla californica", iconic: "Aves" },
@@ -1067,7 +1067,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "bird",
     icon: "🐦",
     blurb:
-      "A tiny grey bird with a long black tail and a call like a kitten mewing, which lives in coastal sage scrub and nowhere else. It doesn't migrate, so it needs that habitat every day of its life — and most of the scrub is now houses.",
+      "A tiny gray bird with a long black tail and a call like a kitten mewing, which lives in coastal sage scrub and nowhere else. It doesn't migrate, so it needs that habitat every day of its life — and most of the scrub is now houses.",
     native: true,
     nativeBasis: "Native to coastal southern California and Baja California; federally listed as threatened. US Fish & Wildlife Service; Cornell Lab of Ornithology.",
     inat: { name: "Polioptila californica", iconic: "Aves" },
@@ -1102,7 +1102,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "bird",
     icon: "🐦",
     blurb:
-      "The finches that live on tree seed right through the winter — crossbills, siskins and redpolls. The crossbill is the specialist: its beak crosses at the tip, a tool for prising a closed cone apart. The others take the smaller seed of hemlock, alder and birch.",
+      "The finches that live on tree seed right through the winter — crossbills, siskins and redpolls. The crossbill is the specialist: its beak crosses at the tip, a tool for prying a closed cone apart. The others take the smaller seed of hemlock, alder and birch.",
     native: true,
     nativeBasis: "Native seed-eating finches of the conifer forests of both Europe and North America (common/red crossbill, Eurasian and pine siskins, redpolls). INPN (MNHN); Ligue pour la Protection des Oiseaux (LPO); Cornell Lab of Ornithology.",
   },
@@ -1136,7 +1136,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "bird",
     icon: "🐦",
     blurb:
-      "The pink-and-grey crow with a patch of barred sky-blue on its wing, heard screeching far more often than it is seen. Every autumn one jay buries a few thousand acorns, often hundreds of metres from the tree, and never comes back for them all — which is how oak woods climb hills.",
+      "The pink-and-gray crow with a patch of barred sky-blue on its wing, heard screeching far more often than it is seen. Every autumn one jay buries a few thousand acorns, often hundreds of meters from the tree, and never comes back for them all — which is how oak woods climb hills.",
     native: true,
     nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN); Ligue pour la Protection des Oiseaux (LPO).",
     inat: { name: "Garrulus glandarius", iconic: "Aves" },
@@ -1249,7 +1249,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "moth",
     icon: "🌙",
     blurb:
-      "New Zealand's largest moth, bright green and as wide as a hand. It spends up to six years as a caterpillar tunnelling inside a living tree and a day or two as an adult; the sign is a neat hole in the trunk, hidden under a web of chewed bark.",
+      "New Zealand's largest moth, bright green and as wide as a hand. It spends up to six years as a caterpillar tunneling inside a living tree and a day or two as an adult; the sign is a neat hole in the trunk, hidden under a web of chewed bark.",
     native: true,
     nativeBasis: "Endemic to the North Island. Manaaki Whenua – Landcare Research; Te Ara – the Encyclopedia of New Zealand.",
     inat: { name: "Aenetus virescens", iconic: "Insecta" },
@@ -1285,7 +1285,7 @@ export const WILDLIFE: Wildlife[] = [
     kind: "butterfly",
     icon: "🦋",
     blurb:
-      "Small, quick, fire-coloured butterflies found nowhere else, which raise their caterpillars on pōhuehue and its wiry relatives. Plant the vine on a sunny bank and the coppers find it.",
+      "Small, quick, fire-colored butterflies found nowhere else, which raise their caterpillars on pōhuehue and its wiry relatives. Plant the vine on a sunny bank and the coppers find it.",
     native: true,
     nativeBasis: "New Zealand's Lycaena coppers are all endemic. Manaaki Whenua – Landcare Research; Gibbs, New Zealand Butterflies.",
     inat: { name: "Lycaena", iconic: "Insecta" },
@@ -1353,7 +1353,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "fragaria-virginiana": [
       { wildlifeId: "berry-songbirds", support: "berries", note: "Wild strawberries are tiny and intensely sweet, and robins and thrushes get to almost all of them before anyone else does.", basis: "GloBI — Hurlbert et al. 2021 Avian Diet Database, Hale et al. 2024 (Phil. Trans. R. Soc. B); Cornell Lab." },
-      { wildlifeId: "bumble-bees", support: "nectar", note: "White five-petalled flowers low to the ground, open from April, and among the first things a bumble bee queen can reach.", basis: "GloBI — Robertson 1929 flower visitors of Carlinville (via Miller); Xerces Society." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "White five-petaled flowers low to the ground, open from April, and among the first things a bumble bee queen can reach.", basis: "GloBI — Robertson 1929 flower visitors of Carlinville (via Miller); Xerces Society." },
     ],
     "quercus-alba": [
       { wildlifeId: "acorn-birds", support: "seeds", note: "Sweet white-oak acorns are prime food for wild turkeys, wood ducks, and acorn-caching blue jays.", basis: "USDA Silvics of North America; Cornell Lab." },
@@ -1536,7 +1536,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "corylus-cornuta": [
       { wildlifeId: "acorn-mammals", support: "seeds", note: "Squirrels and chipmunks hunt out the hazelnuts in late summer, often before they are fully ripe.", basis: "USDA PLANTS; Cornell Lab." },
-      { wildlifeId: "acorn-birds", support: "seeds", note: "Blue jays and woodpeckers take the nuts too, prising them from the beaked husks.", basis: "Cornell Lab." },
+      { wildlifeId: "acorn-birds", support: "seeds", note: "Blue jays and woodpeckers take the nuts too, prying them from the beaked husks.", basis: "Cornell Lab." },
     ],
     "hamamelis-virginiana": [
       { wildlifeId: "cecropia-moth", support: "host", note: "Witch hazel leaves feed cecropia caterpillars, thumb-thick green giants by the time they spin up.", basis: "NWF Native Plant Finder / Tallamy." },
@@ -1634,7 +1634,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "fragaria-virginiana": [
       { wildlifeId: "berry-songbirds", support: "berries", note: "Wild strawberries are tiny and intensely sweet, and robins and thrushes reach almost all of them first.", basis: "Cornell Lab." },
-      { wildlifeId: "bumble-bees", support: "nectar", note: "White five-petalled flowers low to the ground open in spring, among the first a bumble bee queen can reach.", basis: "Xerces Society." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "White five-petaled flowers low to the ground open in spring, among the first a bumble bee queen can reach.", basis: "Xerces Society." },
     ],
     "arctostaphylos-uva-ursi": [
       { wildlifeId: "mason-bees", support: "nectar", note: "The little pink spring bells feed early solitary and bumble bees on bare, sandy ground.", basis: "Xerces Society." },
@@ -1649,8 +1649,8 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
   pnw: {
     "rubus-parviflorus": [
       { wildlifeId: "echo-azure", support: "host", note: "Thimbleberry is one of the many native shrubs the echo azure lays on — its caterpillars chew the flower buds and young fruit.", basis: "Washington Butterfly Association; BAMONA." },
-      { wildlifeId: "band-tailed-pigeon", support: "berries", note: "The soft scarlet raspberries ripen through summer and are a favourite of band-tailed pigeons, which travel the canopy after exactly this kind of fruit.", basis: "WDFW; Cornell Lab." },
-      { wildlifeId: "berry-songbirds", support: "berries", note: "Robins, thrushes and tanagers strip the berries as fast as they colour.", basis: "Cornell Lab; USDA PLANTS." },
+      { wildlifeId: "band-tailed-pigeon", support: "berries", note: "The soft scarlet raspberries ripen through summer and are a favorite of band-tailed pigeons, which travel the canopy after exactly this kind of fruit.", basis: "WDFW; Cornell Lab." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Robins, thrushes and tanagers strip the berries as fast as they color.", basis: "Cornell Lab; USDA PLANTS." },
       { wildlifeId: "bumble-bees", support: "nectar", note: "Big open white flowers through late spring, an easy landing pad heavy with pollen for bumble and mason bees.", basis: "Xerces Society." },
     ],
     "berberis-nervosa": [
@@ -1694,7 +1694,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "holodiscus-discolor": [
       { wildlifeId: "echo-azure", support: "host", note: "Oceanspray is a documented echo azure host — eggs turn up on the flower buds in early spring, and the caterpillars feed on the buds and developing seed.", basis: "Washington Butterfly Association; Xerces Society." },
-      { wildlifeId: "variable-checkerspot", support: "nectar", note: "Ocean spray's cream plumes are a checkerspot's refuelling stop through the dry part of summer.", basis: "GloBI — iNaturalist observation records; Xerces Society." },
+      { wildlifeId: "variable-checkerspot", support: "nectar", note: "Ocean spray's cream plumes are a checkerspot's refueling stop through the dry part of summer.", basis: "GloBI — iNaturalist observation records; Xerces Society." },
       { wildlifeId: "pale-swallowtail", support: "host", reliance: "narrow", note: "Oceanspray is a classic larval host for the pale swallowtail (and the Lorquin's admiral).", basis: "Xerces Society; NWF Native Plant Finder." },
       { wildlifeId: "bumble-bees", support: "nectar", note: "Foaming cream flower plumes are covered in bees in early summer.", basis: "Xerces Society." },
     ],
@@ -1831,7 +1831,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "berry-songbirds", support: "berries", note: "Red berries hang on into winter for grouse, robins, and towhees when little else is left.", basis: "Cornell Lab; USDA PLANTS." },
     ],
     "viola-adunca": [
-      { wildlifeId: "greater-fritillaries", support: "host", reliance: "sole", note: "Violets are the only thing a greater fritillary caterpillar can eat — the hydaspe, the zerene, the great spangled, and the threatened Oregon silverspot on the coast. And the way they use the plant is unusual enough to change how you garden for them: the female lays in late summer on dry ground beside violets that have already withered, so she is not choosing a plant in leaf, she is choosing a place she has found violets before. The caterpillar hatches, eats nothing, and spends the whole winter in the litter — then goes looking for violet leaves the following spring. So it is not enough for the patch to flower once. It has to still be there in April, in the same square metre.", basis: "Xerces Society; BAMONA; US Fish & Wildlife Service Oregon silverspot recovery plan." },
+      { wildlifeId: "greater-fritillaries", support: "host", reliance: "sole", note: "Violets are the only thing a greater fritillary caterpillar can eat — the hydaspe, the zerene, the great spangled, and the threatened Oregon silverspot on the coast. And the way they use the plant is unusual enough to change how you garden for them: the female lays in late summer on dry ground beside violets that have already withered, so she is not choosing a plant in leaf, she is choosing a place she has found violets before. The caterpillar hatches, eats nothing, and spends the whole winter in the litter — then goes looking for violet leaves the following spring. So it is not enough for the patch to flower once. It has to still be there in April, in the same square meter.", basis: "Xerces Society; BAMONA; US Fish & Wildlife Service Oregon silverspot recovery plan." },
       { wildlifeId: "mason-bees", support: "nectar", note: "The little purple spring flowers are shallow and open early, which suits the small solitary bees out before most shrubs bloom.", basis: "Xerces Society." },
     ],
     "crataegus-douglasii": [
@@ -1886,7 +1886,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "berry-songbirds", support: "berries", note: "The fat hips hold on through the winter for robins, towhees, and grouse, and the thorny thicket is deep nesting cover.", basis: "Cornell Lab; USDA PLANTS." },
     ],
     "ceanothus-sanguineus": [
-      { wildlifeId: "echo-azure", support: "host", note: "Ceanothus is a favourite of the echo azure too; its little caterpillars feed among the frothy flower clusters.", basis: "Washington Butterfly Association; BAMONA." },
+      { wildlifeId: "echo-azure", support: "host", note: "Ceanothus is a favorite of the echo azure too; its little caterpillars feed among the frothy flower clusters.", basis: "Washington Butterfly Association; BAMONA." },
       { wildlifeId: "pale-swallowtail", support: "host", reliance: "narrow", note: "Ceanothus is the pale swallowtail's classic caterpillar plant, and this is the west side's own species of it.", basis: "BAMONA; Xerces Society." },
       { wildlifeId: "ceanothus-silkmoth", support: "host", reliance: "narrow", note: "The West's giant silkmoth is named after this shrub: the fat green caterpillars grow up on ceanothus and spin their cocoons in it.", basis: "BAMONA; Xerces Society." },
       { wildlifeId: "mason-bees", support: "nectar", note: "Foaming white flower clusters in late spring, worked steadily by mason and mining bees.", basis: "Xerces Society." },
@@ -1966,7 +1966,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "quercus-lobata": [
       { wildlifeId: "propertius-duskywing", support: "host", reliance: "sole", note: "Oak leaves and nothing else, on the valley oak just as on the live oak — and the caterpillars spend the winter in the leaf litter underneath.", basis: "Xerces Society; BAMONA." },
-      { wildlifeId: "acorn-birds", support: "seeds", note: "The long pointed acorns are the ones the jays and acorn woodpeckers want most; a single old valley oak can feed a neighbourhood of them.", basis: "Cornell Lab; UC Oak Woodland Management." },
+      { wildlifeId: "acorn-birds", support: "seeds", note: "The long pointed acorns are the ones the jays and acorn woodpeckers want most; a single old valley oak can feed a neighborhood of them.", basis: "Cornell Lab; UC Oak Woodland Management." },
       { wildlifeId: "acorn-mammals", support: "seeds", note: "Woodrats, ground squirrels and deer take the crop, and an old hollow trunk becomes a woodrat house in its own right.", basis: "UC ANR; USFS FEIS." },
       { wildlifeId: "chestnut-backed-chickadee", support: "shelter", note: "Chickadees and titmice hunt caterpillars through the new leaves in spring and nest in the cavities an old valley oak accumulates.", basis: "Cornell Lab." },
     ],
@@ -1993,7 +1993,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     "umbellularia-californica": [
       { wildlifeId: "pale-swallowtail", support: "host", note: "California bay is one of the handful of trees the pale swallowtail's caterpillars grow up on — the big pale-and-black butterfly patrolling a canyon in early summer came off one of these.", basis: "BAMONA; Xerces Society." },
       { wildlifeId: "band-tailed-pigeon", support: "berries", note: "The olive-like fruits are a staple: band-tailed pigeons will cross a valley for a bay tree in fruit and strip it.", basis: "Cornell Lab; USFS FEIS." },
-      { wildlifeId: "berry-songbirds", support: "berries", note: "Thrushes, robins and jays take the fruits through autumn, and the dense evergreen canopy is a favourite winter roost.", basis: "Cornell Lab." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Thrushes, robins and jays take the fruits through autumn, and the dense evergreen canopy is a favorite winter roost.", basis: "Cornell Lab." },
     ],
     "aesculus-californica": [
       { wildlifeId: "bumble-bees", support: "nectar", note: "Foot-long candles of flower in May and June, at the exact moment the spring shrubs have finished and the summer ones have not started — the native bees that evolved with it work it hard.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
@@ -2231,7 +2231,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "bumble-bees", support: "nectar", note: "Spring blossom that bumble bees, mining bees and butterflies work hard — and unlike the introduced Himalayan bramble beside it, this one belongs here.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
       { wildlifeId: "berry-songbirds", support: "berries", note: "Thrushes, jays and towhees take the berries through summer, and foxes and coyotes finish what is left.", basis: "Cornell Lab; USFS FEIS." },
       { wildlifeId: "california-quail", support: "shelter", note: "A blackberry thicket is the safest nesting cover in the garden — towhees, wrentits and sparrows all use it, and a quail covey lives under it.", basis: "Cornell Lab; Audubon California." },
-      { wildlifeId: "mason-bees", support: "nectar", note: "Small solitary bees work the open flowers, and some of them nest in the pithy centre of a cut cane afterwards.", basis: "Xerces Society." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Small solitary bees work the open flowers, and some of them nest in the pithy center of a cut cane afterwards.", basis: "Xerces Society." },
     ],
     "fragaria-chiloensis": [
       { wildlifeId: "mason-bees", support: "nectar", note: "Open white flowers over a long spring, shallow enough for the smallest solitary bees and the hoverflies to use.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
@@ -2285,7 +2285,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "mason-bees", support: "nectar", note: "Willow catkins in February are the richest early pollen in the region, opening exactly when the solitary bees emerge.", basis: "Xerces Society." },
     ],
     "populus-fremontii": [
-      { wildlifeId: "western-tiger-swallowtail", support: "host", note: "Cottonwood is a favoured caterpillar tree for the western tiger swallowtail.", basis: "BAMONA." },
+      { wildlifeId: "western-tiger-swallowtail", support: "host", note: "Cottonwood is a favored caterpillar tree for the western tiger swallowtail.", basis: "BAMONA." },
       { wildlifeId: "mourning-cloak", support: "host", note: "Cottonwood and willow are what mourning cloak caterpillars grow up on along a southwestern creek.", basis: "BAMONA." },
     ],
     "platanus-racemosa": [
@@ -2490,7 +2490,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "malacothamnus-fasciculatus": [
       { wildlifeId: "painted-lady", support: "host", reliance: "narrow", note: "Mallows are one of the painted lady's main caterpillar plants — the butterfly that arrives in millions across southern California in the spring after a wet winter.", basis: "BAMONA; Xerces Society." },
-      { wildlifeId: "bumble-bees", support: "nectar", note: "Open pink mallow flowers over months, worked by bumble bees and by the native bees that specialise on the mallow family.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Open pink mallow flowers over months, worked by bumble bees and by the native bees that specialize on the mallow family.", basis: "Xerces Society; UC Berkeley Urban Bee Lab." },
     ],
     "acmispon-glaber": [
       { wildlifeId: "bumble-bees", support: "nectar", note: "Small yellow pea flowers from March into August — one of the longest bloom seasons in the list, at the season bees most need it.", basis: "Xerces Society." },
@@ -2524,10 +2524,10 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "magnolia-grandiflora": [
       { wildlifeId: "eastern-carpenter-bee", support: "nectar", note: "A magnolia flower is an ancient design — no nectar guides, no landing platform, just a bowl of pollen. An old flower built for beetles; carpenter bees come for the pollen too.", basis: "GloBI — National Database of Plant Pollinators (Center for Plant Conservation), iNaturalist observation records; UF/IFAS." },
-      { wildlifeId: "acorn-mammals", support: "seeds", note: "The cone breaks open in autumn to hang its scarlet seeds out on threads, and grey and fox squirrels come for them.", basis: "GloBI — iNaturalist observation records; UF/IFAS." },
+      { wildlifeId: "acorn-mammals", support: "seeds", note: "The cone breaks open in autumn to hang its scarlet seeds out on threads, and gray and fox squirrels come for them.", basis: "GloBI — iNaturalist observation records; UF/IFAS." },
     ],
     "chionanthus-virginicus": [
-      { wildlifeId: "cecropia-moth", support: "host", note: "Fringetree feeds the caterpillars of the big native sphinx and silk moths — the waved sphinx among them, whose larva is the colour of the leaf it sits under.", basis: "GloBI — HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM); NWF Native Plant Finder." },
+      { wildlifeId: "cecropia-moth", support: "host", note: "Fringetree feeds the caterpillars of the big native sphinx and silk moths — the waved sphinx among them, whose larva is the color of the leaf it sits under.", basis: "GloBI — HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM); NWF Native Plant Finder." },
     ],
     "mimosa-strigillosa": [
       { wildlifeId: "bumble-bees", support: "nectar", note: "Sunshine mimosa's pink powder-puffs sit flat on a lawn you can walk on, and the bumble bees work them all summer between mowings.", basis: "GloBI — iNaturalist observation records; UF/IFAS." },
@@ -2681,7 +2681,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "salix-caprea": [
       { wildlifeId: "mourning-cloak", support: "host", note: "Willow is the mourning cloak's other caterpillar tree — and the adult, which overwinters, is often the first butterfly anyone sees in February.", basis: "GloBI — trophiCH food web for Switzerland (Reji Chacko et al. 2024), records carrying a larval life stage; INPN." },
-      { wildlifeId: "purple-emperor", support: "host", reliance: "narrow", note: "The purple emperor lays on sallows, and goat willow is the one it picks most often. Its caterpillar spends the winter pressed flat against a twig, coloured exactly like the bark, and turns green again with the leaves.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad); Butterfly Conservation." },
+      { wildlifeId: "purple-emperor", support: "host", reliance: "narrow", note: "The purple emperor lays on sallows, and goat willow is the one it picks most often. Its caterpillar spends the winter pressed flat against a twig, colored exactly like the bark, and turns green again with the leaves.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad); Butterfly Conservation." },
       { wildlifeId: "bumble-bees", support: "nectar", note: "A bumble bee queen comes out of hibernation in February with nothing in reserve and has to found a whole colony alone, and for that she needs pollen — protein for the first grubs — not just sugar. Goat willow catkins are the first real supply of it in the year, which is why a sallow in flower in late winter is audible from across the garden.", basis: "INPN; French pollinator surveys; RHS Plants for Pollinators." },
     ],
     "sorbus-aucuparia": [
@@ -2758,11 +2758,11 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "hawfinch", support: "seeds", reliance: "narrow", note: "Hornbeam seed is what carries hawfinches through a European winter more than any other tree. The little ribbed nuts sit in papery three-pointed wings and stay on the twigs long after the leaves have gone brown and hung on, and the birds work through them right into March.", basis: "LPO; INPN (MNHN)." },
     ],
     "pyrus-pyraster": [
-      { wildlifeId: "mason-bees", support: "nectar", note: "Wild pear blossoms in early April, a good fortnight ahead of the hawthorn, filling the gap after the blackthorn is over — which is precisely when solitary bees are provisioning their nests.", basis: "INPN; French pollinator surveys; RHS Plants for Pollinators." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Wild pear blossoms in early April, a good two weeks ahead of the hawthorn, filling the gap after the blackthorn is over — which is precisely when solitary bees are provisioning their nests.", basis: "INPN; French pollinator surveys; RHS Plants for Pollinators." },
       { wildlifeId: "winter-thrushes", support: "berries", note: "The little pears are rock-hard and inedible until frost softens them, and that is the point: they come good in December, when the hedge has nothing left, and the thrushes and blackbirds come to the ground for them.", basis: "LPO; INPN." },
     ],
     "tilia-cordata": [
-      { wildlifeId: "bumble-bees", support: "nectar", note: "A lime in flower at the end of June is audible from the other side of the garden. It comes at the flattest moment of the year — the hedgerow blossom finished, the late flowers not started — and for a fortnight it is the biggest single meal available to bumble bees for miles.", basis: "INPN; French pollinator surveys; RHS Plants for Pollinators." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A lime in flower at the end of June is audible from the other side of the garden. It comes at the flattest moment of the year — the hedgerow blossom finished, the late flowers not started — and for two weeks it is the biggest single meal available to bumble bees for miles.", basis: "INPN; French pollinator surveys; RHS Plants for Pollinators." },
     ],
     "rubus-fruticosus": [
       { wildlifeId: "bumble-bees", support: "nectar", note: "Bramble flowers right through August and September, when the meadows have dried off and the hedgerow blossom is a memory. A bank of it in flower is the busiest thing in a French garden at that point in the year.", basis: "INPN; French pollinator surveys; RHS Plants for Pollinators." },
@@ -2778,7 +2778,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     "cytisus-scoparius": [
       { wildlifeId: "green-hairstreak", support: "host", note: "Broom is one of the green hairstreak's main caterpillar plants, along with gorse, dyer's greenweed and bilberry — Europe's commonest green butterfly, and one you find by watching a sunny scrubby bank rather than a flower bed.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
       { wildlifeId: "bumble-bees", support: "nectar", note: "Broom flowers are spring-loaded and stay shut until something heavy enough lands on them: a bumble bee trips the catch, the stamens fly up and slap pollen onto her back, and the flower is done. Worth crouching down to watch once.", basis: "INPN; French pollinator surveys." },
-      { wildlifeId: "goldfinches-linnets", support: "seeds", note: "The black pods crack open with an audible snap on a hot July afternoon and fling the seed a couple of metres — and linnets, which love a broomy bank, work the ground and the bushes for it.", basis: "LPO; INPN." },
+      { wildlifeId: "goldfinches-linnets", support: "seeds", note: "The black pods crack open with an audible snap on a hot July afternoon and fling the seed a couple of meters — and linnets, which love a broomy bank, work the ground and the bushes for it.", basis: "LPO; INPN." },
     ],
     "genista-tinctoria": [
       { wildlifeId: "green-hairstreak", support: "host", note: "Dyer's greenweed is one of the pea-family shrubs the green hairstreak lays on, in the same rough sunny scrub as the broom and the gorse.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
@@ -2806,29 +2806,29 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "plantago-lanceolata": [
       { wildlifeId: "glanville-fritillary", support: "host", reliance: "narrow", note: "Ribwort plantain is what the Glanville fritillary lays on, and it lays the whole batch in one place: the caterpillars hatch together, spin a silk tent over the plant, and spend the winter inside it as a huddle. On the first warm days of spring they come out and bask on top of the web in a black knot — the easiest way anyone ever finds them.", basis: "INPN (MNHN); Butterfly Conservation; European butterfly foodplant checklist (Dryad)." },
-      { wildlifeId: "goldfinches-linnets", support: "seeds", note: "The little brown drumstick heads fill with seed from midsummer on, and goldfinches and linnets strip them — provided they are still standing, which in a fortnightly-mown lawn they never are.", basis: "LPO; INPN." },
+      { wildlifeId: "goldfinches-linnets", support: "seeds", note: "The little brown drumstick heads fill with seed from midsummer on, and goldfinches and linnets strip them — provided they are still standing, which in a lawn mown every two weeks they never are.", basis: "LPO; INPN." },
     ],
     "rumex-acetosa": [
       { wildlifeId: "small-copper", support: "host", reliance: "sole", note: "The small copper lays on sorrels and docks and its caterpillars eat nothing else. They feed on the underside of a leaf and graze it down to a translucent window rather than chewing through, so the damage looks like a pale patch, not a hole — that is what to look for on a plant in a rough corner in June.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad); Butterfly Conservation." },
       { wildlifeId: "goldfinches-linnets", support: "seeds", note: "The rusty seed spikes hold together well into winter and finches take them apart standing on the stem.", basis: "LPO; INPN." },
     ],
     "galium-verum": [
-      { wildlifeId: "elephant-hawk-moth", support: "host", reliance: "narrow", note: "Bedstraws are the elephant hawk-moth's main caterpillar plant, along with willowherb. What you find is the caterpillar, not the moth: a grey-brown thing the length of a finger that pulls its snout in when touched and swells up four eyespots, and does a convincing enough snake to make a grown adult step back.", basis: "INPN (MNHN)." },
+      { wildlifeId: "elephant-hawk-moth", support: "host", reliance: "narrow", note: "Bedstraws are the elephant hawk-moth's main caterpillar plant, along with willowherb. What you find is the caterpillar, not the moth: a gray-brown thing the length of a finger that pulls its snout in when touched and swells up four eyespots, and does a convincing enough snake to make a grown adult step back.", basis: "INPN (MNHN)." },
       { wildlifeId: "hummingbird-hawk-moth", support: "host", reliance: "narrow", note: "The hummingbird hawk-moth — the day-flying one people report as a baby hummingbird — also raises its caterpillars on bedstraws. Growing lady's bedstraw is how you get the whole animal, not just an adult passing through on its way north.", basis: "INPN (MNHN)." },
     ],
     "centaurea-nigra": [
       { wildlifeId: "bumble-bees", support: "nectar", note: "One of the deepest nectar wells of any French wildflower, and it keeps going long after the meadow has been cut and the brambles are over — bumble bees, the meadow browns and the big fritillaries all work it into the autumn.", basis: "INPN; French pollinator surveys; RHS Plants for Pollinators." },
-      { wildlifeId: "goldfinches-linnets", support: "seeds", note: "A knapweed head gone over is a goldfinch's favourite thing in the garden — they hang off it upside down and take it apart all autumn. Cut the stems down in September and you have thrown the winter food away.", basis: "LPO; INPN." },
+      { wildlifeId: "goldfinches-linnets", support: "seeds", note: "A knapweed head gone over is a goldfinch's favorite thing in the garden — they hang off it upside down and take it apart all autumn. Cut the stems down in September and you have thrown the winter food away.", basis: "LPO; INPN." },
     ],
     "artemisia-vulgaris": [
-      { wildlifeId: "mason-bees", support: "shelter", note: "Mugwort's flowers feed nobody — they are wind-pollinated. What it gives is the dead stems: hollow, standing, and full of small solitary bees, ladybirds and lacewings spending the winter inside them. Which is the whole argument for leaving them up until spring instead of tidying in October.", basis: "INPN; Buglife; French pollinator surveys." },
+      { wildlifeId: "mason-bees", support: "shelter", note: "Mugwort's flowers feed nobody — they are wind-pollinated. What it gives is the dead stems: hollow, standing, and full of small solitary bees, ladybugs and lacewings spending the winter inside them. Which is the whole argument for leaving them up until spring instead of tidying in October.", basis: "INPN; Buglife; French pollinator surveys." },
       { wildlifeId: "goldfinches-linnets", support: "seeds", note: "Goldfinches and linnets take the fine seed off the standing stems through the winter.", basis: "LPO; INPN." },
     ],
     "fragaria-vesca": [
       { wildlifeId: "mason-bees", support: "nectar", note: "Open white flowers held just above the ground from April onwards — shallow enough that the smallest mining bees can work them, which most spring flowers are not.", basis: "INPN; French pollinator surveys; RHS Plants for Pollinators." },
     ],
     "festuca-rubra": [
-      { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "The meadow brown, the gatekeeper, the ringlet, the marbled white and the skippers have all eaten nothing but grass their whole caterpillar lives, and fine grasses like this one are what they choose. They also spend the winter down inside the tussock — so a lawn mown every fortnight feeds none of them, and a lawn left to flower feeds all of them.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "The meadow brown, the gatekeeper, the ringlet, the marbled white and the skippers have all eaten nothing but grass their whole caterpillar lives, and fine grasses like this one are what they choose. They also spend the winter down inside the tussock — so a lawn mown every two weeks feeds none of them, and a lawn left to flower feeds all of them.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
       { wildlifeId: "goldfinches-linnets", support: "seeds", note: "Left to flower and seed, a fescue lawn feeds finches and buntings in late summer — the same patch of ground, doing two jobs, for the price of not cutting it.", basis: "LPO; INPN." },
     ],
     "poa-nemoralis": [
@@ -2886,7 +2886,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "galium-verum": [
       { wildlifeId: "hummingbird-hawk-moth", support: "host", reliance: "narrow", note: "The day-flying moth that everyone takes for a tiny hummingbird lays on bedstraw — so a patch in rough grass turns a visitor into a resident.", basis: "INPN (MNHN); European foodplant checklists." },
-      { wildlifeId: "elephant-hawk-moth", support: "host", reliance: "narrow", note: "The elephant hawk-moth's grey caterpillar, with the false eyes it puffs up when alarmed, feeds on bedstraw and willowherb in late summer.", basis: "INPN (MNHN); European foodplant checklists." },
+      { wildlifeId: "elephant-hawk-moth", support: "host", reliance: "narrow", note: "The elephant hawk-moth's gray caterpillar, with the false eyes it puffs up when alarmed, feeds on bedstraw and willowherb in late summer.", basis: "INPN (MNHN); European foodplant checklists." },
     ],
     "fragaria-vesca": [
       { wildlifeId: "mason-bees", support: "nectar", note: "Open white flowers over a long spring, shallow enough for the smallest solitary bees and hoverflies to use — which the deep garden flowers are not.", basis: "INPN; European pollinator literature." },
@@ -2914,7 +2914,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "eurasian-jay", support: "seeds", note: "Another of the nuts a jay stores for winter and half-forgets.", basis: "GloBI — trophiCH food web for Switzerland (Reji Chacko et al. 2024); LPO." },
     ],
     "tilia-cordata": [
-      { wildlifeId: "bumble-bees", support: "nectar", note: "A lime in flower in July is audible from across the garden — the whole crown hums, and it goes on for a fortnight.", basis: "GloBI — EuPPollNet (Lanuza et al. 2025), DoPI (Balfour et al. 2022); INPN." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A lime in flower in July is audible from across the garden — the whole crown hums, and it goes on for two weeks.", basis: "GloBI — EuPPollNet (Lanuza et al. 2025), DoPI (Balfour et al. 2022); INPN." },
       { wildlifeId: "hummingbird-hawk-moth", support: "nectar", note: "Lime gives up most of its nectar towards evening, which is when the hovering hawk-moths arrive at it.", basis: "GloBI — trophiCH food web for Switzerland (Reji Chacko et al. 2024)." },
       { wildlifeId: "eurasian-jay", support: "shelter", note: "Nothing eats a lime's seed much, but the dense summer crown is a standard jay nest site.", basis: "GloBI — trophiCH food web for Switzerland (Reji Chacko et al. 2024); LPO." },
     ],
@@ -2941,12 +2941,12 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "hummingbird-hawk-moth", support: "nectar", note: "A hovering hawk-moth drinks from the front of the flower without ever tripping the lever — all of the nectar, none of the work.", basis: "GloBI — iNaturalist observation records; trophiCH (Reji Chacko et al. 2024)." },
     ],
     "knautia-arvensis": [
-      { wildlifeId: "mason-bees", support: "nectar", reliance: "narrow", note: "The large scabious mining bee gathers pollen from field scabious and hardly anything else — you can tell one in flight by the lilac-grey load on its legs.", basis: "GloBI — trophiCH food web for Switzerland (Reji Chacko et al. 2024); INPN." },
+      { wildlifeId: "mason-bees", support: "nectar", reliance: "narrow", note: "The large scabious mining bee gathers pollen from field scabious and hardly anything else — you can tell one in flight by the lilac-gray load on its legs.", basis: "GloBI — trophiCH food web for Switzerland (Reji Chacko et al. 2024); INPN." },
       { wildlifeId: "bumble-bees", support: "nectar", note: "A pincushion of florets means a bee can feed a long time without flying, which is why scabious is worked so hard in August.", basis: "GloBI — EuPPollNet (Lanuza et al. 2025), trophiCH (Reji Chacko et al. 2024); INPN." },
-      { wildlifeId: "glanville-fritillary", support: "nectar", note: "One of the fritillaries' favourite refuelling flowers in a dry meadow.", basis: "GloBI — trophiCH food web for Switzerland (Reji Chacko et al. 2024)." },
+      { wildlifeId: "glanville-fritillary", support: "nectar", note: "One of the fritillaries' favorite refueling flowers in a dry meadow.", basis: "GloBI — trophiCH food web for Switzerland (Reji Chacko et al. 2024)." },
     ],
     "clematis-vitalba": [
-      { wildlifeId: "mason-bees", support: "nectar", note: "Traveller's joy flowers late and holds its nectar in the open, so the small solitary bees still flying in September can all reach it.", basis: "GloBI — EuPPollNet (Lanuza et al. 2025), Redhead et al. 2018 plant–pollinator interactions (CEH); INPN." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Traveler's joy flowers late and holds its nectar in the open, so the small solitary bees still flying in September can all reach it.", basis: "GloBI — EuPPollNet (Lanuza et al. 2025), Redhead et al. 2018 plant–pollinator interactions (CEH); INPN." },
       { wildlifeId: "bumble-bees", support: "nectar", note: "Whole hedges of it come into flower at once, which is worth a great deal in the thin weeks before the ivy opens.", basis: "GloBI — EuPPollNet (Lanuza et al. 2025); INPN." },
     ],
     "crataegus-laevigata": [
@@ -3023,7 +3023,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "galium-verum": [
       { wildlifeId: "hummingbird-hawk-moth", support: "host", reliance: "narrow", note: "The moth everybody mistakes for a tiny hummingbird lays on bedstraw — so a patch in the rough grass is the difference between watching one at the lavender and having them breed with you.", basis: "INPN (MNHN); European foodplant checklists." },
-      { wildlifeId: "elephant-hawk-moth", support: "host", reliance: "narrow", note: "The elephant hawk-moth's caterpillar — enormous, grey, with false eyes it inflates when alarmed — turns up on bedstraw in late summer and is the most startling thing in a French garden.", basis: "INPN (MNHN); European foodplant checklists." },
+      { wildlifeId: "elephant-hawk-moth", support: "host", reliance: "narrow", note: "The elephant hawk-moth's caterpillar — enormous, gray, with false eyes it inflates when alarmed — turns up on bedstraw in late summer and is the most startling thing in a French garden.", basis: "INPN (MNHN); European foodplant checklists." },
       { wildlifeId: "mason-bees", support: "nectar", note: "Hundreds of tiny flowers with no depth to them, which is exactly what the smallest solitary bees and hoverflies can use.", basis: "INPN; European pollinator literature." },
     ],
     "centaurea-scabiosa": [
@@ -3133,7 +3133,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "crataegus-monogyna": [
       { wildlifeId: "winter-thrushes", support: "berries", note: "A hedge of haws is what carries the thrushes and blackcaps through a southern winter — they arrive off the mountains in flocks and strip one hedge at a time.", basis: "LPO; INPN." },
-      { wildlifeId: "bumble-bees", support: "nectar", note: "The April froth of hawthorn is the biggest single nectar event of the garrigue year, and it is over in a fortnight.", basis: "INPN; French pollinator surveys; RHS Plants for Pollinators." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The April froth of hawthorn is the biggest single nectar event of the garrigue year, and it is over in two weeks.", basis: "INPN; French pollinator surveys; RHS Plants for Pollinators." },
       { wildlifeId: "green-hairstreak", support: "host", note: "Hawthorn is one of the green hairstreak's many caterpillar plants, and the butterfly — the commonest green one here — is easiest to find on a sunny hedge edge in April.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
     ],
     "pyrus-spinosa": [
@@ -3172,7 +3172,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "bumble-bees", support: "nectar", note: "A tube deep enough that only a long-tongued bumble bee reaches the bottom, open from April to September — five months of nectar in a region whose flowers mostly finish in June.", basis: "INPN; French pollinator surveys; RHS Plants for Pollinators." },
     ],
     "lotus-corniculatus": [
-      { wildlifeId: "common-blue", support: "host", reliance: "narrow", note: "Bird's-foot trefoil is the common blue's caterpillar plant, and the butterfly is common only where the plant is — which means short, hungry, unfertilised turf rather than a watered lawn.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "common-blue", support: "host", reliance: "narrow", note: "Bird's-foot trefoil is the common blue's caterpillar plant, and the butterfly is common only where the plant is — which means short, hungry, unfertilized turf rather than a watered lawn.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
       { wildlifeId: "six-spot-burnet", support: "host", reliance: "sole", note: "The burnet moths eat bird's-foot trefoil and little else. They take cyanide compounds out of the plant and keep them — which is what the scarlet spots are advertising, and why they fly slowly in broad daylight without being eaten.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
     ],
     "rosa-sempervirens": [
@@ -3204,7 +3204,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "corylus-avellana": [
       { wildlifeId: "hazel-dormouse", support: "seeds", reliance: "narrow", note: "The dormouse is named after this plant in English, German and Latin, and hazelnuts are what it fattens on before it hibernates. A nut opened by a dormouse has a smooth round hole with tooth marks angled round the rim, which is how surveyors find out it is there at all.", basis: "INPN (MNHN); European dormouse survey methods (nut-hunt protocol)." },
-      { wildlifeId: "spotted-nutcracker", support: "seeds", note: "The nutcracker caches tens of thousands of nuts and seeds each autumn and remembers most of them under a metre of snow; the ones it forgets are how hazel and pine both get uphill.", basis: "INPN; LPO; alpine seed-caching studies." },
+      { wildlifeId: "spotted-nutcracker", support: "seeds", note: "The nutcracker caches tens of thousands of nuts and seeds each autumn and remembers most of them under a meter of snow; the ones it forgets are how hazel and pine both get uphill.", basis: "INPN; LPO; alpine seed-caching studies." },
       { wildlifeId: "mason-bees", support: "nectar", note: "Catkins in February, weeks before anything else in the valley opens, for the first solitary bees out on a warm afternoon.", basis: "INPN; European pollinator literature." },
     ],
     "rubus-idaeus": [
@@ -3230,7 +3230,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "trifolium-pratense": [
       { wildlifeId: "bumble-bees", support: "nectar", reliance: "narrow", note: "A red clover head is deep, so only the long-tongued bumble bees can reach the nectar — the garden bumble bee and the great yellow among them. Short-tongued bees are locked out, which is why clover-rich meadows and long-tongued bumble bees have declined together.", basis: "INPN; Xerces Society; European pollinator literature." },
-      { wildlifeId: "common-blue", support: "host", note: "The common blue's caterpillars eat clovers and trefoils, and a hay meadow that has not been fertilised is where the butterfly still is.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "common-blue", support: "host", note: "The common blue's caterpillars eat clovers and trefoils, and a hay meadow that has not been fertilized is where the butterfly still is.", basis: "INPN (MNHN); European butterfly foodplant checklist (Dryad)." },
       { wildlifeId: "six-spot-burnet", support: "nectar", note: "The red-spotted day-flying burnets gather on clover heads in the afternoon, several to a flower.", basis: "INPN (MNHN)." },
     ],
     "colchicum-autumnale": [
@@ -3259,7 +3259,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "galium-verum": [
       { wildlifeId: "hummingbird-hawk-moth", support: "host", reliance: "narrow", note: "The moth people mistake for a tiny hummingbird lays on bedstraw, so a patch in the rough grass is what turns a visitor into a resident.", basis: "INPN (MNHN); European foodplant checklists." },
-      { wildlifeId: "elephant-hawk-moth", support: "host", reliance: "narrow", note: "The elephant hawk-moth's huge grey caterpillar, with the false eyes it inflates when startled, feeds on bedstraw in late summer.", basis: "INPN (MNHN); European foodplant checklists." },
+      { wildlifeId: "elephant-hawk-moth", support: "host", reliance: "narrow", note: "The elephant hawk-moth's huge gray caterpillar, with the false eyes it inflates when startled, feeds on bedstraw in late summer.", basis: "INPN (MNHN); European foodplant checklists." },
     ],
     "acer-pseudoplatanus": [
       { wildlifeId: "bumble-bees", support: "nectar", reliance: "narrow", note: "Sycamore flowers in May at an altitude where there is almost nothing else out, and a single old tree can carry a whole valley's bumble bee queens through the week they most need it.", basis: "GloBI — EuPPollNet (Lanuza et al. 2025), trophiCH (Reji Chacko et al. 2024), Redhead et al. 2018 (CEH); INPN." },
@@ -3271,7 +3271,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     "salix-caprea": [
       { wildlifeId: "purple-emperor", support: "host", reliance: "narrow", note: "Goat willow is what a purple emperor caterpillar eats, and it is the reason a butterfly that spends its life in the tops of oaks needs a scruffy willow in the clearing below.", basis: "GloBI — HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM), trophiCH (Reji Chacko et al. 2024); INPN." },
       { wildlifeId: "mourning-cloak", support: "host", note: "Willow leaves feed the mourning cloak's spiny black caterpillars, which live in a group on one branch until they are nearly full-grown.", basis: "GloBI — HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM), trophiCH (Reji Chacko et al. 2024); INPN." },
-      { wildlifeId: "bumble-bees", support: "nectar", note: "The grey catkins open before the snow has finished going, and they are the first pollen a bumble bee queen finds all year.", basis: "GloBI — trophiCH (Reji Chacko et al. 2024), Redhead et al. 2018 plant–pollinator interactions (CEH); INPN." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The gray catkins open before the snow has finished going, and they are the first pollen a bumble bee queen finds all year.", basis: "GloBI — trophiCH (Reji Chacko et al. 2024), Redhead et al. 2018 plant–pollinator interactions (CEH); INPN." },
     ],
     "vaccinium-vitis-idaea": [
       { wildlifeId: "black-grouse", support: "berries", note: "Cowberry keeps its leaves and its red fruit through the winter under the snow, which is why a black grouse can find something to eat in February.", basis: "GloBI — trophiCH food web for Switzerland (Reji Chacko et al. 2024); INPN; Observatoire des Galliformes de Montagne." },
@@ -3299,7 +3299,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "spotted-nutcracker", support: "seeds", reliance: "sole", note: "The arolla pine's seeds have no wings and cannot travel on their own; the nutcracker buries tens of thousands each autumn, and the forgotten ones become the next forest. Neither species manages without the other.", basis: "INPN; Alpine forest ecology literature." },
     ],
     "picea-abies": [
-      { wildlifeId: "conifer-seed-finches", support: "seeds", reliance: "narrow", note: "The crossbill's crossed beak is a tool for one job — prising a spruce cone apart — and siskins and coal tits take what it drops.", basis: "LPO; INPN." },
+      { wildlifeId: "conifer-seed-finches", support: "seeds", reliance: "narrow", note: "The crossbill's crossed beak is a tool for one job — prying a spruce cone apart — and siskins and coal tits take what it drops.", basis: "LPO; INPN." },
       { wildlifeId: "black-grouse", support: "shelter", note: "The low, snow-laden branches of old spruce are where black grouse and capercaillie sit out the mountain winter.", basis: "INPN; Observatoire des Galliformes de Montagne." },
     ],
     "larix-decidua": [
@@ -3363,13 +3363,13 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "salix-caprea": [
       { wildlifeId: "bumble-bees", support: "nectar", note: "A bumble bee queen comes out of hibernation in March with nothing in reserve and has to found a whole colony alone — for that she needs pollen, protein for the first grubs, not just sugar. Sallow catkins are the first real supply of it in an Irish year, which is why a sally in flower is audible from across the garden.", basis: "All-Ireland Pollinator Plan; National Biodiversity Data Centre (Ireland)." },
-      { wildlifeId: "poplar-hawk-moth", support: "host", note: "The poplar hawk-moth lays on willows as often as poplars. Its caterpillar is thumb-thick, apple-green, with a blue-grey horn at the tail, and it rests holding its head up in a sphinx pose — which is where the whole family's name comes from.", basis: "National Biodiversity Data Centre (Ireland); Butterfly Conservation." },
+      { wildlifeId: "poplar-hawk-moth", support: "host", note: "The poplar hawk-moth lays on willows as often as poplars. Its caterpillar is thumb-thick, apple-green, with a blue-gray horn at the tail, and it rests holding its head up in a sphinx pose — which is where the whole family's name comes from.", basis: "National Biodiversity Data Centre (Ireland); Butterfly Conservation." },
     ],
     "rosa-spinosissima": [
       { wildlifeId: "winter-thrushes", support: "berries", note: "Burnet rose is the only rose here with black hips rather than red, and the thrushes take them late — after the dog-rose hips on the same dune have gone.", basis: "BirdWatch Ireland." },
     ],
     "salix-cinerea": [
-      { wildlifeId: "bumble-bees", support: "nectar", note: "Grey willow is the commonest sallow in the country, so in most of Ireland it is *this* plant doing the March pollen job rather than its taller cousin.", basis: "All-Ireland Pollinator Plan." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Gray willow is the commonest sallow in the country, so in most of Ireland it is *this* plant doing the March pollen job rather than its taller cousin.", basis: "All-Ireland Pollinator Plan." },
     ],
     "populus-tremula": [
       { wildlifeId: "poplar-hawk-moth", support: "host", note: "Aspen is the moth's namesake tree. The adult rests with its hindwings pushed forward past the forewings, which no other moth here does, and looks exactly like a clump of dead leaves for it.", basis: "National Biodiversity Data Centre (Ireland); Butterfly Conservation." },
@@ -3402,7 +3402,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "crataegus-monogyna": [
       { wildlifeId: "winter-thrushes", support: "berries", note: "A hedge of haws is what carries fieldfares and redwings through an Irish winter — they arrive in flocks and strip one hedge at a time.", basis: "BirdWatch Ireland." },
-      { wildlifeId: "bumble-bees", support: "nectar", note: "The May froth of whitethorn is the single biggest nectar event of the hedgerow year here, and it is over in a fortnight.", basis: "All-Ireland Pollinator Plan." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The May froth of whitethorn is the single biggest nectar event of the hedgerow year here, and it is over in two weeks.", basis: "All-Ireland Pollinator Plan." },
     ],
     "prunus-spinosa": [
       { wildlifeId: "mason-bees", support: "nectar", note: "Blackthorn flowers on bare black wood in March, before its own leaves and before almost anything else — an early meal for solitary bees just out of the ground.", basis: "All-Ireland Pollinator Plan." },
@@ -3451,7 +3451,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "bumble-bees", support: "nectar", note: "The flower is a trap set for a heavy bee: her weight trips the keel, the stamens spring up and slap pollen onto her back. Too light an insect gets nothing and gives nothing.", basis: "All-Ireland Pollinator Plan." },
     ],
     "sambucus-nigra": [
-      { wildlifeId: "blackcaps-warblers", support: "berries", note: "The August elderberry crop is what blackcaps and garden warblers put on weight with before flying south — a fruiting elder holds them for a fortnight.", basis: "BirdWatch Ireland." },
+      { wildlifeId: "blackcaps-warblers", support: "berries", note: "The August elderberry crop is what blackcaps and garden warblers put on weight with before flying south — a fruiting elder holds them for two weeks.", basis: "BirdWatch Ireland." },
     ],
     "juniperus-communis": [
       { wildlifeId: "winter-thrushes", support: "berries", note: "Juniper cones take three years to ripen and then feed ring ouzels, mistle thrushes and fieldfares, and the spines make one of very few safe nest sites on an open Irish hillside.", basis: "BirdWatch Ireland." },
@@ -3460,7 +3460,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "emperor-moth", support: "host", note: "Bog myrtle is one of the emperor moth's bog plants, alongside the heather it shares the ground with.", basis: "National Biodiversity Data Centre (Ireland)." },
     ],
     "succisa-pratensis": [
-      { wildlifeId: "marsh-fritillary", support: "host", reliance: "sole", note: "This is the whole story of Ireland's only protected insect. A female marsh fritillary lays her entire batch of eggs under one devil's-bit scabious leaf; the caterpillars hatch together, spin a silk tent over the plant, and spend the winter inside it in a black huddle. On the first warm days of spring they come out and bask on top of the web in a knot, which is how anyone ever finds them. No devil's-bit, no marsh fritillary — and the plant only persists on damp ground that is neither fertilised nor cut in summer, which is why the butterfly went when the meadows did.", basis: "National Parks & Wildlife Service (Ireland) species action plan; National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "marsh-fritillary", support: "host", reliance: "sole", note: "This is the whole story of Ireland's only protected insect. A female marsh fritillary lays her entire batch of eggs under one devil's-bit scabious leaf; the caterpillars hatch together, spin a silk tent over the plant, and spend the winter inside it in a black huddle. On the first warm days of spring they come out and bask on top of the web in a knot, which is how anyone ever finds them. No devil's-bit, no marsh fritillary — and the plant only persists on damp ground that is neither fertilized nor cut in summer, which is why the butterfly went when the meadows did.", basis: "National Parks & Wildlife Service (Ireland) species action plan; National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
       { wildlifeId: "bumble-bees", support: "nectar", note: "It flowers from July into October, after nearly everything else has finished, which is exactly when a bumblebee colony is producing next year's queens and needs the most food it will need all year.", basis: "All-Ireland Pollinator Plan." },
     ],
     "digitalis-purpurea": [
@@ -3494,11 +3494,11 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "painted-lady", support: "nectar", note: "In a painted lady year — when millions arrive from North Africa in one summer — knapweed and thistles are what they feed on across Irish grassland.", basis: "National Biodiversity Data Centre (Ireland)." },
     ],
     "lotus-corniculatus": [
-      { wildlifeId: "common-blue", support: "host", reliance: "narrow", note: "Bird's-foot trefoil is the common blue's caterpillar plant, and the butterfly is common only where the plant is. It needs the trefoil in short, hungry, unfertilised turf — which is to say a lawn nobody has fed, and a verge nobody has sprayed.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "common-blue", support: "host", reliance: "narrow", note: "Bird's-foot trefoil is the common blue's caterpillar plant, and the butterfly is common only where the plant is. It needs the trefoil in short, hungry, unfertilized turf — which is to say a lawn nobody has fed, and a verge nobody has sprayed.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
       { wildlifeId: "six-spot-burnet", support: "host", reliance: "sole", note: "The six-spot burnet is the scarlet-spotted, metallic-green day-flying moth of Irish dunes in July, and its caterpillars eat bird's-foot trefoil and nothing else. It takes cyanide compounds out of the plant and keeps them — which is what the red spots are advertising.", basis: "National Biodiversity Data Centre (Ireland); Butterfly Conservation." },
     ],
     "rumex-acetosa": [
-      { wildlifeId: "small-copper", support: "host", reliance: "narrow", note: "The small copper lays on sorrels and docks. It is the little flashing orange butterfly of Irish verges, dunes and bare sunny ground, and it is fiercely territorial for something the size of a thumbnail — a male will chase off anything that crosses his patch, including birds.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "small-copper", support: "host", reliance: "narrow", note: "The small copper lays on sorrels and docks. It is the little flashing orange butterfly of Irish roadsides, dunes and bare sunny ground, and it is fiercely territorial for something the size of a thumbnail — a male will chase off anything that crosses his patch, including birds.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
       { wildlifeId: "goldfinches-linnets", support: "seeds", note: "The rusty seed heads feed linnets and goldfinches through the autumn if they are left standing.", basis: "BirdWatch Ireland." },
     ],
     "urtica-dioica": [
@@ -3547,7 +3547,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "cryptic-wood-white", support: "host", note: "Vetches are among the handful of plants the cryptic wood white lays on. It flies weakly along a hedge bank rather than across a field, so a strip of vetch in rough grass is a corridor as much as a meal.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad)." },
     ],
     "lathyrus-pratensis": [
-      { wildlifeId: "cryptic-wood-white", support: "host", reliance: "narrow", note: "Meadow vetchling is the main caterpillar plant of a butterfly that exists, in Britain and Ireland, only here — and that was not even recognised as its own species until 2011. It lives on verges, railway banks and rough damp grassland, which are exactly the places that get tidied. Leaving a strip uncut until September is the whole intervention.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad); Butterfly Conservation." },
+      { wildlifeId: "cryptic-wood-white", support: "host", reliance: "narrow", note: "Meadow vetchling is the main caterpillar plant of a butterfly that exists, in Britain and Ireland, only here — and that was not even recognized as its own species until 2011. It lives on roadsides, railroad banks and rough damp grassland, which are exactly the places that get tidied. Leaving a strip uncut until September is the whole intervention.", basis: "National Biodiversity Data Centre (Ireland); European butterfly foodplant checklist (Dryad); Butterfly Conservation." },
       { wildlifeId: "bumble-bees", support: "nectar", note: "A yellow pea flower needs a bee heavy enough to trip it, so this is bumblebee food rather than something a hoverfly can use.", basis: "All-Ireland Pollinator Plan." },
     ],
     "fragaria-vesca": [
@@ -3555,14 +3555,14 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "blackcaps-warblers", support: "berries", note: "Tiny, intense berries that robins and blackcaps find long before anyone with a bowl does.", basis: "BirdWatch Ireland." },
     ],
     "galium-verum": [
-      { wildlifeId: "elephant-hawk-moth", support: "host", reliance: "narrow", note: "Elephant hawk-moth caterpillars feed on bedstraws and willowherbs. The caterpillar is the size of a finger, grey-brown, with four eyespots it inflates when alarmed until the front end looks like a small snake — the single most startling thing an Irish garden produces. The adult is pink and olive and feeds at honeysuckle after dark.", basis: "National Biodiversity Data Centre (Ireland); Butterfly Conservation." },
+      { wildlifeId: "elephant-hawk-moth", support: "host", reliance: "narrow", note: "Elephant hawk-moth caterpillars feed on bedstraws and willowherbs. The caterpillar is the size of a finger, gray-brown, with four eyespots it inflates when alarmed until the front end looks like a small snake — the single most startling thing an Irish garden produces. The adult is pink and olive and feeds at honeysuckle after dark.", basis: "National Biodiversity Data Centre (Ireland); Butterfly Conservation." },
       { wildlifeId: "hummingbird-hawk-moth", support: "host", reliance: "narrow", note: "The hummingbird hawk-moth lays on bedstraws too. It arrives in Ireland as a migrant from the south, hovers at flowers in full daylight with an audible hum, and is reported to BirdWatch Ireland every summer by people certain they have seen a hummingbird.", basis: "National Biodiversity Data Centre (Ireland)." },
     ],
     "plantago-lanceolata": [
       { wildlifeId: "goldfinches-linnets", support: "seeds", note: "Linnets and goldfinches strip the seed spikes through late summer. Leave a strip of lawn unmown from April and this is one of the plants that pays for it.", basis: "BirdWatch Ireland; All-Ireland Pollinator Plan." },
     ],
     "trifolium-repens": [
-      { wildlifeId: "bumble-bees", support: "nectar", note: "Among the highest-ranked nectar plants in Irish surveys, and it is already in the lawn. Raise the mower blade and cut every six weeks instead of every fortnight and it flowers — the cheapest, least effortful thing you can do for bees.", basis: "All-Ireland Pollinator Plan." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Among the highest-ranked nectar plants in Irish surveys, and it is already in the lawn. Raise the mower blade and cut every six weeks instead of every two weeks and it flowers — the cheapest, least effortful thing you can do for bees.", basis: "All-Ireland Pollinator Plan." },
     ],
     "thymus-praecox": [
       { wildlifeId: "bumble-bees", support: "nectar", note: "A thyme mat in July is audible from a few feet away. Per square foot it is one of the densest nectar sources you can plant.", basis: "All-Ireland Pollinator Plan." },

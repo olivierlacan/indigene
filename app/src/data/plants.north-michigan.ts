@@ -195,7 +195,7 @@ export const SEED_RAW: RawPlant[] = [
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
     noWaterEstablish: true,
     careNote: "Slow, long-lived, and shade-tolerant; wants rich, moist, well-drained soil. Give a young one part shade and don't disturb its shallow roots. Beech bark disease is a real regional threat — plant from healthy local stock.",
-    givesNote: "Smooth grey bark, deep shade, and oily beechnuts that turkeys, jays, bears and squirrels depend on in fall.",
+    givesNote: "Smooth gray bark, deep shade, and oily beechnuts that turkeys, jays, bears and squirrels depend on in fall.",
     confidence: "medium",
     basis: "Host count: Fagus genus, NWF/Tallamy. Native status: Michigan Flora.",
     propagation: {

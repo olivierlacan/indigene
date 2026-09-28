@@ -109,7 +109,7 @@ export const en = {
   "settings.units.metric": "Metric",
   "settings.units.imperial": "Imperial",
   "settings.units.autoSub": "Whatever your phone's region uses — {resolved} right now.",
-  "settings.units.metricSub": "Metres, centimetres, millimetres of rain, °C.",
+  "settings.units.metricSub": "Meters, centimeters, millimeters of rain, °C.",
   "settings.units.imperialSub": "Feet, inches, inches of rain, °F.",
   "settings.namesNote": "Plant and animal names come from each country's own national list, not from machine translation — {link}.",
   "settings.namesNoteLink": "see where each name comes from",
@@ -319,7 +319,7 @@ export const en = {
   "spot.obsAdd": "Link",
   "spot.obsHelp":
     "The photos stay on iNaturalist; only the link is kept, on this device.",
-  "spot.obsBad": "That isn't an iNaturalist link or number we recognise.",
+  "spot.obsBad": "That isn't an iNaturalist link or number we recognize.",
   "spot.obsAlready": "Already linked to this plant.",
   "spot.obsAdded": "Sighting linked.",
   "spot.obsSighting": "Sighting",
@@ -458,7 +458,7 @@ export const en = {
   "location.privacy":
     "Your location is used only to find what grows here, only when you tap, and never leaves your device except as anonymous lookups",
   "location.mapLabel":
-    "Map. The pin stays in the centre. Drag or tap to move the spot under it, or use the arrow keys to nudge it — hold Shift for bigger steps.",
+    "Map. The pin stays in the center. Drag or tap to move the spot under it, or use the arrow keys to nudge it — hold Shift for bigger steps.",
   "location.osmAttribution": "© OpenStreetMap contributors",
   "location.gpsFix": "GPS fix",
   "location.savedHere": "Saved here",
@@ -825,7 +825,7 @@ export const en = {
   "prop.seed-warm.when": "The week it ripens — usually mid-summer into autumn.",
   "prop.seed-warm.wait": "A few weeks, often less.",
   "prop.seed-warm.timing":
-    "This is the one technique whose timing isn't yours to choose: the plant sets it and your job is to be ready. Watch the fruit rather than the calendar — a maple's keys turning tan, a magnolia's cone splitting to show red seed — and sow within days of collecting. These seeds are alive and thin-skinned, and drying out is what kills them, so “I'll do it at the weekend” is the whole risk. If you truly can't sow at once, hold them barely damp and cool in a bag of moist sand, never dry on a windowsill.",
+    "This is the one technique whose timing isn't yours to choose: the plant sets it and your job is to be ready. Watch the fruit rather than the calendar — a maple's keys turning tan, a magnolia's cone splitting to show red seed — and sow within days of collecting. These seeds are alive and thin-skinned, and drying out is what kills them, so “I'll do it on the weekend” is the whole risk. If you truly can't sow at once, hold them barely damp and cool in a bag of moist sand, never dry on a windowsill.",
   "prop.seed-warm.mistake":
     "Treating them like a shop-bought packet. Fresh seed doesn't store — the ones that dry hardest are usually the ones that never come back.",
   "prop.seed-cold-moist.when": "Sow outdoors in autumn, or start the fridge in midwinter.",
@@ -837,7 +837,7 @@ export const en = {
   "prop.seed-scarify.when": "Right before you sow, whenever that is.",
   "prop.seed-scarify.wait": "Days rather than weeks, once it's in the ground.",
   "prop.seed-scarify.timing":
-    "Scarifying isn't a season, it's the last step before sowing — so the real question is when you're sowing, and this follows it. Do it the evening before: scuff or nick the coat, soak overnight, sow in the morning. What you must not do is scarify a batch in winter to sow in spring. Breaching the coat takes away the seed's raincoat; from then on it can take up water, and a damp scarified seed in a jar will either rot or sprout in the dark. The soak doubles as a check — seed that has drunk swells visibly and looks fatter than its neighbours, and the ones still small and hard want another pass on the sandpaper.",
+    "Scarifying isn't a season, it's the last step before sowing — so the real question is when you're sowing, and this follows it. Do it the evening before: scuff or nick the coat, soak overnight, sow in the morning. What you must not do is scarify a batch in winter to sow in spring. Breaching the coat takes away the seed's raincoat; from then on it can take up water, and a damp scarified seed in a jar will either rot or sprout in the dark. The soak doubles as a check — seed that has drunk swells visibly and looks fatter than its neighbors, and the ones still small and hard want another pass on the sandpaper.",
   "prop.seed-scarify.mistake":
     "Going too deep. Stop the moment the paler inside shows: you want the coat breached, not the seed wounded.",
   "prop.seed-surface-light.when": "Late winter to spring under cover; autumn outdoors.",
@@ -887,7 +887,7 @@ export const en = {
   "prop.suckers.timing":
     "Take suckers while the plant is dormant, so it isn't trying to keep a shoot alive that you've just cut half the water supply from. Choose one a hand's span or more out from the trunk: close in, a shoot is often just a stem rising off a thick root with no roots of its own. Slice straight down between it and the parent with a spade, then lift the sucker with its own root ball. In mild-winter places autumn does just as well. The parent won't miss it — a thicket-former makes more every year.",
   "prop.suckers.mistake":
-    "Pulling instead of digging. A sucker without roots of its own is a stick, and it will look perfectly fine for a fortnight before it dies.",
+    "Pulling instead of digging. A sucker without roots of its own is a stick, and it will look perfectly fine for two weeks before it dies.",
   "prop.runners.when": "Late summer into autumn, once the plantlet has roots.",
   "prop.runners.wait": "Ready to move a few weeks after it roots.",
   "prop.runners.timing":
@@ -905,7 +905,7 @@ export const en = {
   "prop.spores.timing":
     "Ferns make no flowers and no seed, so there is nothing to watch but the undersides of the fronds: the little patches there start green, ripen to a rich brown, and then shed. Ripe brown is the moment. Cut a frond, lay it face-down on white paper somewhere still overnight, and by morning you'll have a fine dust — those are the spores, and the paler chaff beside them is the packaging. Sow at once on damp sterile compost, cover with clear plastic, and settle in: nothing looks remotely like a fern for the first half-year.",
   "prop.spores.mistake":
-    "Collecting a week late. Once the patches have gone dusty grey and crumble at a touch, the frond has already let them go.",
+    "Collecting a week late. Once the patches have gone dusty gray and crumble at a touch, the frond has already let them go.",
 
   "growth.quick": "Quick to settle in: expect close to this full size within about three years.",
   "growth.steady": "A steady grower: close to full size by year {year}.",
@@ -1388,7 +1388,7 @@ export const en = {
     "{n} of them turn up in {region}. Open one to see, side by side, what tells it apart from the native it stands in for.",
   "lookalikes.scaleTitle": "What \u201ctakes over\u201d and \u201cgaining ground\u201d mean",
   "lookalikes.scaleSource":
-    "The words are ours; the judgement isn\u2019t. Each one reads off the scale published by the people who survey that region \u2014 California\u2019s invasive-plant council, Virginia\u2019s natural heritage programme, Florida\u2019s invasive species council, the French botanical conservatories.",
+    "The words are ours; the judgement isn\u2019t. Each one reads off the scale published by the people who survey that region \u2014 California\u2019s invasive-plant council, Virginia\u2019s natural heritage program, Florida\u2019s invasive species council, the French botanical conservatories.",
   "lookalikes.scaleGaps":
     "A card with no such badge isn\u2019t a mild plant. It means nobody has scored that ground yet, or that all anyone has published there is a weed law \u2014 which says what you must do about a plant, not how much of the place it takes.",
   "lookalikes.notAllVillains": "Not all of these are villains. ",
@@ -1566,9 +1566,9 @@ export const en = {
     "Plants {animal} nests in, hides in, or sits out the winter in. Somewhere safe to be is the half of a garden that isn't food.",
   "wlStat.sole.label": "Vital",
   "wlStat.sole.explain.one":
-    "{animal} can't do without this kind of plant. Take every one out of a neighbourhood and the animal goes with it.",
+    "{animal} can't do without this kind of plant. Take every one out of a neighborhood and the animal goes with it.",
   "wlStat.sole.explain.other":
-    "{animal} can't do without these kinds of plant. Take every one out of a neighbourhood and the animal goes with them.",
+    "{animal} can't do without these kinds of plant. Take every one out of a neighborhood and the animal goes with them.",
   "wildlife.speciesRecord": "See the species record: ",
   "wildlife.fullProfile": "{name} — full profile",
   "wildlife.allSources": "All sources & licensing →",
@@ -1825,7 +1825,7 @@ export const en = {
   "privacy.whereEnforced":
     "This list isn't just a promise: Indigene tells your browser to refuse lookups to any address not on it.",
   "privacy.whereFooter":
-    "These are reputable public institutions — universities, government agencies, and a nonprofit naturalist community — not advertisers. On purpose, none of these lookups need your street address: a town, postal code, or a coarse grid is all the science uses. The full technical list, with links and licences, is in {link}.",
+    "These are reputable public institutions — universities, government agencies, and a nonprofit naturalist community — not advertisers. On purpose, none of these lookups need your street address: a town, postal code, or a coarse grid is all the science uses. The full technical list, with links and licenses, is in {link}.",
   "privacy.dataSourcesLink": "our public data-sources document",
   "privacy.savedTitle": "Saved spots stay on your device",
   "privacy.saveButton": "Save this spot",
@@ -1854,7 +1854,7 @@ export const en = {
   "privacy.count1":
     "We would like to know whether anyone is actually out there using this — whether the work is reaching a garden. So when you open a page, one outside service is told that a page was opened, and which one. That is the entire message, and here is everything it doesn't contain:",
   "privacy.count2":
-    "No cookie, and nothing kept to recognise you. Coming back tomorrow looks exactly like somebody else arriving — to them, and to us.",
+    "No cookie, and nothing kept to recognize you. Coming back tomorrow looks exactly like somebody else arriving — to them, and to us.",
   "privacy.count3":
     "Never your location, never a spot you've saved, and never anything you type. If you search the plant list, the words you typed are taken off the address before it's sent.",
   "privacy.count4":
@@ -1887,7 +1887,7 @@ export const en = {
     "The photos come from iNaturalist, where the community checks what each one shows, and are always credited to the person who took them. Links out go to trusted science and nature organizations.",
   "privacy.openTitle": "You don't have to take our word for it",
   "privacy.open":
-    "Indigene is open source under the MIT licence. The entire app — every line, and every network request it can make — is public. If you want to verify anything on this page, you can read the code yourself: {link}.",
+    "Indigene is open source under the MIT license. The entire app — every line, and every network request it can make — is public. If you want to verify anything on this page, you can read the code yourself: {link}.",
   "privacy.repoLink": "Indigene on GitHub",
   "privacy.questionsTitle": "Questions or concerns",
   "privacy.questions":
@@ -1931,7 +1931,7 @@ export const en = {
     "— whichever ecoregion map covers where you are, asked about your exact point: the US EPA's, the European Environment Agency's, the CEC's across North America, or RESOLVE's south of the equator.",
   "sources.fig.soil": "Your soil and its acidity",
   "sources.fig.soilFrom":
-    "— from SoilGrids, a global soil map. Coarse: it describes a 250-metre square, not your flower bed.",
+    "— from SoilGrids, a global soil map. Coarse: it describes a 250-meter square, not your flower bed.",
   "sources.fig.climate": "Rain and winter cold",
   "sources.fig.climateFrom": "— from Open-Meteo's weather records for your area.",
   "sources.fig.elevation": "Elevation and slope",
@@ -2008,16 +2008,16 @@ export const en = {
     "Some plant lists rest on decades of regional botanical work; the newest ones are thinner. The confidence note on each plant is our honest read of that, plant by plant.",
   "sources.chal4": "The US caterpillar counts sit on shakier ground than the European ones. ",
   "sources.chal4Rest":
-    "The European figures come from an openly licensed dataset we can point you at and recompute from scratch. The US figures come from published research whose database has no open licence — so they're harder for you to check than we'd like.",
+    "The European figures come from an openly licensed dataset we can point you at and recompute from scratch. The US figures come from published research whose database has no open license — so they're harder for you to check than we'd like.",
   "sources.chal5": "Site data is coarser than it looks. ",
   "sources.chal5Rest":
-    "Soil from a 250-metre grid square, and a hardiness zone we calculate rather than look up, both read as precise on screen. Trust your own eyes and hands over either.",
+    "Soil from a 250-meter grid square, and a hardiness zone we calculate rather than look up, both read as precise on screen. Trust your own eyes and hands over either.",
   "sources.tellUsTitle": "How to tell us we're wrong",
   "sources.tellUs":
     "Please do. The whole app is open source, so nothing here has to be taken on trust — you can read the data files, the counting script, and every line that turns a number into a recommendation: {repo}. If something looks wrong, {issue} — a correction with a source behind it is the most useful thing anyone can send us.",
   "sources.openIssue": "open an issue",
   "sources.fullList":
-    "For the full technical list of every dataset, who publishes it, and what its licence allows, see {doc}. The European caterpillar counts come from {matrix}, published open-access under CC-BY 4.0 — you can download the same data we did and check our arithmetic.",
+    "For the full technical list of every dataset, who publishes it, and what its license allows, see {doc}. The European caterpillar counts come from {matrix}, published open-access under CC-BY 4.0 — you can download the same data we did and check our arithmetic.",
   "sources.dataDoc": "our data-sources document",
 
   // Where the plant and animal *names* come from — the same accounting the
@@ -2056,7 +2056,7 @@ export const en = {
   "prompt.label": "Enter a postal code or town",
   "prompt.privacyLink": "How your location is used",
   "obs.creditLead": "Sightings & photos from ",
-  "obs.creditMid": ", each © its observer — open a photo for their name, its licence and a link to the original sighting. ",
+  "obs.creditMid": ", each © its observer — open a photo for their name, its license and a link to the original sighting. ",
   "obs.fromCache": "Loaded from this device's cache — ",
   "obs.fetchedNow": "Fetched just now by your browser — ",
   "obs.creditEnd": "your browser calls iNaturalist directly, so they see your request, not ours.",
@@ -2259,7 +2259,7 @@ export const en = {
   "about.why1":
     "Most gardens are lawn, plus shrubs and flowers from other continents. They look fine but feed far fewer caterpillars, and most songbirds raise their chicks on caterpillars — which mostly eat only the plants they evolved alongside. Fewer natives, fewer caterpillars, fewer baby birds.",
   "about.why2":
-    "The fix is cheap: plant natives. What was missing was a straight answer to “what should I plant {here}, in this corner of my garden?” that didn't require speaking the language of plant catalogues. Indigene tries to give one.",
+    "The fix is cheap: plant natives. What was missing was a straight answer to “what should I plant {here}, in this corner of my garden?” that didn't require speaking the language of plant catalogs. Indigene tries to give one.",
   "about.forTitle": "Who it's for",
   "about.forLede": "It's built, deliberately, for people who are not experts:",
   "about.for1":
@@ -2293,10 +2293,10 @@ export const en = {
     "Offline-first and installable, because the far end of a garden is exactly where a signal disappears. Everything but the live lookups keeps working with no connection at all.",
   "about.freeTitle": "Free, and free to reuse",
   "about.free":
-    "Indigene is open source under the {licence}. That's a deliberate choice over a more restrictive licence: this is a civic tool built on public science, and a land trust, an extension office, a council or another app should be able to take it, adapt it, and run it without asking anyone's permission.",
-  "about.mit": "MIT licence",
+    "Indigene is open source under the {licence}. That's a deliberate choice over a more restrictive license: this is a civic tool built on public science, and a land trust, an extension office, a council or another app should be able to take it, adapt it, and run it without asking anyone's permission.",
+  "about.mit": "MIT license",
   "about.freeMoney":
-    "There is no company here and nothing is monetised. That is also why the app is a single small download that runs in your browser rather than a service someone has to keep paying for.",
+    "There is no company here and nothing is monetized. That is also why the app is a single small download that runs in your browser rather than a service someone has to keep paying for.",
   "about.helpTitle": "Help make it better",
   "about.help":
     "The most useful thing you can send is a correction with a source behind it. All of it — the plant data, the scripts, every line that turns a number into a recommendation — is public at {repo}, and if something looks wrong you can {issue}. Asking for your own region to be covered is welcome too; that's how the map grows.",
@@ -2315,7 +2315,7 @@ export const en = {
   "crops.docTitle": "Will native plants bring pests to my yard? — Indigene",
   "crops.title": "Will native plants bring pests to my yard?",
   "crops.lede":
-    "Farms have measured this on commercial acreage: no. Some natives quietly take pests away, and a few are genuinely the wrong neighbour for one particular crop. All of it is on this page.",
+    "Farms have measured this on commercial acreage: no. Some natives quietly take pests away, and a few are genuinely the wrong neighbor for one particular crop. All of it is on this page.",
   "crops.short1":
     "A bee cannot eat a tomato. Bees and hoverflies live on nectar and pollen, and butterflies add the odd sip of rotting fruit. None of them eats leaves.",
   "crops.short2":
@@ -2363,7 +2363,7 @@ export const en = {
   "crops.fig.feeds.pollOut": "More fruit set",
   "crops.fig.feeds.enemyWho": "Pest-eaters",
   "crops.fig.feeds.enemyEats":
-    "Ladybirds, lacewings, the tiny wasps that lay eggs in aphids. Hunters as larvae, nectar-drinkers as adults.",
+    "Ladybugs, lacewings, the tiny wasps that lay eggs in aphids. Hunters as larvae, nectar-drinkers as adults.",
   "crops.fig.feeds.enemyOut": "Fewer pests",
   "crops.fig.feeds.leafWho": "Leaf-eaters",
   "crops.fig.feeds.leafEats":
@@ -2387,7 +2387,7 @@ export const en = {
   "crops.farms2":
     "Californian farms did the same with hedgerows and needed fewer insecticide sprays; the benefit reached {near} to {far} into the field, not just along its edge. Across 529 sites on three continents, pest control next to a flower border came out 16% better on average.",
   "crops.farms3":
-    "The reason is plain enough. Ladybirds, lacewings, hoverflies and the tiny wasps that lay their eggs in aphids all hunt as larvae, and all need nectar and pollen as adults. Take the flowers away and you keep the aphids and lose what eats them.",
+    "The reason is plain enough. Ladybugs, lacewings, hoverflies and the tiny wasps that lay their eggs in aphids all hunt as larvae, and all need nectar and pollen as adults. Take the flowers away and you keep the aphids and lose what eats them.",
 
   "crops.moreFruitTitle": "More fruit, not less",
   "crops.moreFruit1":
@@ -2416,7 +2416,7 @@ export const en = {
   "crops.fig.chain.ticks": "Deer ticks",
   "crops.fig.chain.you": "You",
   "crops.fig.chain.caption":
-    "Three chains that begin with a plant sold in garden centres. The soybean aphid spends the winter as an egg on buckthorn and nowhere else; the lanternfly's favourite host is tree-of-heaven. The first link is the one you can cut.",
+    "Three chains that begin with a plant sold in garden centers. The soybean aphid spends the winter as an egg on buckthorn and nowhere else; the lanternfly's favorite host is tree-of-heaven. The first link is the one you can cut.",
   "crops.takeAway2":
     "The barberry case has been counted. Connecticut woodland under intact Japanese barberry held about 280 Lyme-infected ticks per hectare; where the barberry had been cut back, 121; where there had never been any, 30. One clearing held that down for six years before the shrub came back.",
   "crops.takeAway3":
@@ -2431,7 +2431,7 @@ export const en = {
   "crops.fig.fat.invasive": "Invasive shrub fruit",
   "crops.fig.fat.invasiveValue": "under 1%",
   "crops.fig.fat.caption":
-    "Fat by weight, in the fruit. A bird fuelling a migration is after the fat, which is why — offered both — it empties the native shrub first.",
+    "Fat by weight, in the fruit. A bird fueling a migration is after the fat, which is why — offered both — it empties the native shrub first.",
   "crops.redirect2":
     "And damage is worst where fruit is scarce. Across three states and three seasons, the share of a cherry crop lost to birds was highest in the low-yield year, and highest in blocks with the least fruit around them. Birds eat roughly what they eat; when there is less to go round, your fruit is a bigger slice of it.",
   "crops.fig.ledger.yesHead": "What the evidence shows",
@@ -2455,14 +2455,14 @@ export const en = {
   // --- and the other side ------------------------------------------------
   "crops.counterTitle": "The counter-evidence, and what we make of it",
   "crops.counterLede":
-    "Everything above is an average, and one of these is a real cost. Somebody who reads only the good half gets caught out by the first neighbour who knows one of these — so here they are, at full strength.",
+    "Everything above is an average, and one of these is a real cost. Somebody who reads only the good half gets caught out by the first neighbor who knows one of these — so here they are, at full strength.",
   "crops.counter1": "It isn't a law of nature. ",
   "crops.counter1Rest":
     "The largest survey of this — 132 studies, nearly 7,000 sites — found that pests and their predators respond to nearby wild ground very differently from one place to the next. Borders help on average. They don't help everywhere, and nobody can tell you in advance which you'll get.",
   "crops.counter2": "A margin shelters pests as well as predators. ",
   "crops.counter2Rest":
     "Flower strips raised pest control by 16%; hedgerows, in the same synthesis, showed no significant gain at all. And a 2024 study of melon field margins found hedges and flower strips holding more predators than a plain edge — and more pests along with them.",
-  "crops.counter3": "A few natives are the wrong neighbour for one particular crop. ",
+  "crops.counter3": "A few natives are the wrong neighbor for one particular crop. ",
   "crops.counter3Rest":
     "Cedar-apple rust needs both an apple and a native juniper, usually within {distance} or so of each other, so an orchard and an eastern red cedar are a bad pair. Tarnished plant bugs overwinter in weedy and brushy margins and move into strawberries and cotton as the margin dries out. These are specific plant-and-crop pairs, not an argument against natives — but if you grow apples, they are your pair.",
   "crops.counter4": "Exotic isn't automatically worse. ",

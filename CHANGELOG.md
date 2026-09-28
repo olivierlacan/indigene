@@ -39,7 +39,7 @@ subtitle on the What's new page.
 - Matches: got a planting date or count wrong? Tap "Edit" beside the date of a
   plant in your saved spot to fix it, and keep the sightings linked to it.
 - Sightings of a plant show its drawing while their photos load, the way plant
-  pictures already do, instead of an empty grey square.
+  pictures already do, instead of an empty gray square.
 - Matches: a saved spot's page can now rename the spot, or move its pin on the
   map when it landed next door. https://indigene.app/#/saved
 - Internal: the import's per-visit sightings cache moved to
@@ -96,6 +96,9 @@ subtitle on the What's new page.
 - Internal: the plant page moves its growth drawing and its "See it growing
   near you" card between columns only past the laptop breakpoint (`onLaptop`
   in `steps/plant.ts`), so the phone stack is untouched.
+- The English now spells one way, the American one: color, gray, neighbor.
+  Words most Americans don't use went too — "fortnight" is "two weeks", a
+  "verge" is a roadside, a ladybird is a ladybug.
 - Plants & Wildlife: notes no longer crown "the most valuable" or "the
   biggest" plant where two notes disagreed, and no longer talk about "this
   list" — they describe your garden, not our spreadsheet.

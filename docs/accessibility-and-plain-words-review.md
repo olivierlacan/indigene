@@ -25,9 +25,6 @@ not yet done, roughly in the order it's worth doing.
   won't return focus to a detached node, but Tab still leaves it and the page
   behind stays readable. Rebuild it on `<dialog>` + `showModal()`, as the term
   dialog already is.
-- **Emoji baked into 38 strings are read aloud** ("🚫 No thorns" is "prohibited,
-  No thorns"). Move icons out of the strings into `aria-hidden` spans, as
-  `plant.ts` and `film.ts` already do.
 - **English fallback prose isn't marked `lang="en"`** on French pages, so a
   French voice reads it.
 - **Live regions toggled with `hidden`** (toast, offline badge) often go
@@ -65,11 +62,6 @@ rushed here.
 
 ## Words
 
-- **Spelling.** The `en` locale and the prose mix US and British spelling
-  (neighbors/neighbour, colour, favourite, centre, licence, programme,
-  ladybirds), "fall" (8) against "autumn" (27), "bumble bee" (84) against
-  "bumblebee" (58). Pick one spelling for `en` and sweep it; that's a
-  mechanical PR of its own.
 - **Caterpillar-plant vocabulary**: "caterpillar host", "larval host", "host
   plant", "caterpillar plant". Settle on "caterpillar host" in reader text.
 - **Unexplained terms still in prose**: keystone (≈20 notes), specialist bees,

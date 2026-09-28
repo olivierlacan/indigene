@@ -73,7 +73,7 @@ export const SEED_RAW: RawPlant[] = [
     filters: { deerResistant: false, thorny: false, allergenic: true, petToxic: false, aggressive: false },
     noWaterEstablish: true,
     careNote: "Slow, and then there for centuries — an oak planted now is for a great-grandchild. It prefers a slightly drier, better-drained slope than the pedunculate oak of the Atlantic west, and takes acid soil happily. The deep taproot makes it drought-proof but hard to move, so plant a small one and give it room.",
-    givesNote: "The single most valuable tree in eastern France: over four hundred caterpillar species, which is what fills a nestful of tits and nuthatches every spring. Then acorns for jays, wood pigeons, woodpeckers, squirrels and wild boar, and the deep shade and dead wood that a whole forest's beetles and bats live in.",
+    givesNote: "Among the most valuable trees in eastern France: over four hundred caterpillar species, which is what fills a nestful of tits and nuthatches every spring. Then acorns for jays, wood pigeons, woodpeckers, squirrels and wild boar, and the deep shade and dead wood that a whole forest's beetles and bats live in.",
     confidence: "high",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 401 Lepidoptera recorded on native oaks in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (405 if introduced oaks are counted too).",
     propagation: {
@@ -142,7 +142,7 @@ export const SEED_RAW: RawPlant[] = [
     bloom: { startMonth: 4, endMonth: 5, color: "green" },
     filters: { deerResistant: false, thorny: false, allergenic: true, petToxic: false, aggressive: false },
     noWaterEstablish: true,
-    careNote: "The most forgiving big tree on this list: heavy clay, seasonal wet, shade, hard clipping — it takes all of it. That is why it makes the best native hedge in eastern France, holding its brown leaves right through winter for screening. Left alone it becomes a beautiful fluted-trunked tree.",
+    careNote: "The most forgiving big tree here: heavy clay, seasonal wet, shade, hard clipping — it takes all of it. That is why it makes the best native hedge in eastern France, holding its brown leaves right through winter for screening. Left alone it becomes a beautiful fluted-trunked tree.",
     givesNote: "A strong caterpillar tree, and its hanging clusters of winged nutlets are what hawfinches, greenfinches and tits live on from autumn into winter. As a hedge it is one of the best nesting structures a garden can offer.",
     confidence: "high",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 92 Lepidoptera recorded on Carpinus in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
@@ -319,7 +319,7 @@ export const SEED_RAW: RawPlant[] = [
     filters: { deerResistant: false, thorny: false, allergenic: true, petToxic: false, aggressive: false },
     noWaterEstablish: true,
     careNote: "Unlike most willows it does not insist on wet ground — ordinary garden soil suits it, which is why it colonises so freely. It is short-lived and fast, and it takes hard cutting: coppice it to a stump every five or six years and you keep a shrub-sized plant with all the same value. Male and female trees are separate; the males carry the yellow catkins everyone wants.",
-    givesNote: "The single biggest caterpillar plant in this region — more moth and butterfly species raise their young on willow than on anything else in Europe — so it feeds nesting birds better than any ornamental could. And the March catkins are the first serious pollen of the year, which is what queen bumble bees come out of hibernation to find.",
+    givesNote: "One of the biggest caterpillar plants in this region — some 385 moth and butterfly species — so it feeds nesting birds better than any ornamental could. And the March catkins are the first serious pollen of the year, which is what queen bumble bees come out of hibernation to find.",
     confidence: "high",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 385 Lepidoptera recorded on native willows in continental temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
@@ -354,7 +354,7 @@ export const SEED_RAW: RawPlant[] = [
     filters: { deerResistant: false, thorny: false, allergenic: true, petToxic: false, aggressive: false },
     noWaterEstablish: true,
     careNote: "Easy, fast and comparatively short-lived — sixty or eighty years rather than centuries. It likes poor acid ground and full sun and dislikes heavy chalk. The roots are shallow and greedy, so do not plant a border under it and expect the border to thrive; plant birch in a group on rough grass instead, which is also how it looks best. It is a serious hay-fever tree in April.",
-    givesNote: "Third only to willow and oak for caterpillars in this zone, and the caterpillar count is the number that matters: a blue tit brood eats thousands. Seed in the little catkins carries siskins and redpolls through the winter, and the peeling bark holds insects that treecreepers work all year.",
+    givesNote: "Over three hundred caterpillar species in this zone, and the caterpillar count is the number that matters: a blue tit brood eats thousands. Seed in the little catkins carries siskins and redpolls through the winter, and the peeling bark holds insects that treecreepers work all year.",
     confidence: "high",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 326 Lepidoptera recorded on native birches in continental temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
@@ -389,7 +389,7 @@ export const SEED_RAW: RawPlant[] = [
     filters: { deerResistant: false, thorny: false, allergenic: true, petToxic: false, aggressive: true },
     noWaterEstablish: true,
     careNote: "One thing to plan for: it suckers, hard, and a single aspen becomes a grove of clones over twenty years. On rough ground or a boundary that is the point; in a small garden it is a mistake, and mowing the suckers is the only practical control. Fast, tough, and happy on ground too damp or too poor for most trees.",
-    givesNote: "A top-three caterpillar tree here, which is bird food in the season it matters. The catkins are early pollen, the suckering thicket is cover, and old aspens rot from the inside in a way woodpeckers and then owls and bats put to use — which is why an aspen grove holds more life than its size suggests.",
+    givesNote: "258 caterpillar species, which is bird food in the season it matters. The catkins are early pollen, the suckering thicket is cover, and old aspens rot from the inside in a way woodpeckers and then owls and bats put to use — which is why an aspen grove holds more life than its size suggests.",
     confidence: "high",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 258 Lepidoptera recorded on native poplars in continental temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
@@ -494,8 +494,8 @@ export const SEED_RAW: RawPlant[] = [
     bloom: { startMonth: 4, endMonth: 5, color: "white" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: true, aggressive: true },
     noWaterEstablish: true,
-    careNote: "Perhaps the most drought-proof broadleaf on this list — it grows out of bare limestone rubble and never asks for water. It suckers and seeds itself freely, so give it a bank or a hedge rather than a border. Leaves and stones contain cyanide compounds; it is a plant to keep out of a paddock.",
-    givesNote: "Cherries are the second great caterpillar genus after the oaks, and this is the one that will grow on dry chalk. Its scented white blossom feeds bees in April, and the small bitter black fruits are taken by blackcaps, thrushes, blackbirds and warblers as they fatten for migration.",
+    careNote: "Perhaps the most drought-proof broadleaf here — it grows out of bare limestone rubble and never asks for water. It suckers and seeds itself freely, so give it a bank or a hedge rather than a border. Leaves and stones contain cyanide compounds; it is a plant to keep out of a paddock.",
+    givesNote: "Cherries are a great caterpillar genus, and this is the one that will grow on dry chalk. Its scented white blossom feeds bees in April, and the small bitter black fruits are taken by blackcaps, thrushes, blackbirds and warblers as they fatten for migration.",
     confidence: "high",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 319 Lepidoptera recorded on native cherries and plums in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (323 if introduced relatives are counted too).",
     propagation: {
@@ -600,7 +600,7 @@ export const SEED_RAW: RawPlant[] = [
     filters: { deerResistant: true, thorny: false, allergenic: false, petToxic: true, aggressive: false },
     noWaterEstablish: true,
     careNote: "The native to plant instead of the Japanese privet or the cherry laurel of suburban hedges — same job, same tolerance of shade, drought, chalk and shearing, but it belongs here. Let it flower rather than clipping it flat twice a year, or you lose everything it is good for. The black berries are poisonous to people and pets.",
-    givesNote: "The larval plant of the privet hawk-moth, the largest moth in France — a palm-sized, pink-and-black-barred insect whose enormous green caterpillar grows up on these leaves. Heavy scented flower heads in June feed bees, moths and butterflies, and the black berries carry thrushes and blackcaps through winter.",
+    givesNote: "The larval plant of the privet hawk-moth, one of France's biggest hawk-moths — a palm-sized, pink-and-black-barred insect whose enormous green caterpillar grows up on these leaves. Heavy scented flower heads in June feed bees, moths and butterflies, and the black berries carry thrushes and blackcaps through winter.",
     confidence: "high",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Privet hawk-moth (Sphinx ligustri) host relationship: INPN. Host count: 38 Lepidoptera recorded on native privet in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (62 including introduced ornamental privets).",
     propagation: {
@@ -634,7 +634,7 @@ export const SEED_RAW: RawPlant[] = [
     bloom: { startMonth: 5, endMonth: 6, color: "green" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: true, aggressive: false },
     noWaterEstablish: true,
-    careNote: "Easy in any decent soil on chalk or clay, in sun or half shade, and it needs no pruning. Worth knowing before you plant it: every part is toxic if eaten — the bright fruit especially, and it is bright enough to tempt a child — so it is a shrub for the back of a hedge rather than beside a play area.",
+    careNote: "Easy in any decent soil on chalk or clay, in sun or half shade, and it needs no pruning. Every part is toxic if eaten — the bright fruit especially, and it is bright enough to tempt a child — so it is a shrub for the back of a hedge rather than beside a play area.",
     givesNote: "The autumn show is unmatched among native shrubs: shocking pink capsules that split to hang orange seeds out on threads, taken by robins and blackcaps, over leaves that turn scarlet. It also carries a large early-summer aphid population, which sounds like a problem and is in fact what feeds blue tits, ladybirds and hoverfly larvae.",
     confidence: "high",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 15 Lepidoptera recorded on native spindles in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (19 including introduced relatives).",

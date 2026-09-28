@@ -32,7 +32,7 @@ export const REGIONS_FR: Record<string, RegionText> = {
     name: "Mid-Atlantic / piémont du Nord-Est",
     short: "Mid-Atlantic",
     reference: "Pennsylvanie",
-    note: "« Indigène » veut dire indigène de cette région précisément. Ailleurs, considérez ces choix comme non vérifiés.",
+    note: "Le statut d'indigène est établi pour le Piémont et les forêts du Nord-Est américain. Ailleurs, considérez ces choix comme non vérifiés.",
     extent: "Au nord jusqu'au sud de la Nouvelle-Angleterre, au sud jusqu'au centre de la Virginie, et de la côte atlantique vers l'ouest jusqu'aux crêtes des Appalaches.",
   },
   pnw: {
@@ -46,7 +46,7 @@ export const REGIONS_FR: Record<string, RegionText> = {
     name: "Californie du Sud",
     short: "Californie du Sud",
     reference: "Côte, vallées et contreforts de Los Angeles à San Diego",
-    note: "Le statut d'indigène est établi pour la Californie du Sud cismontane — la côte, les vallées intérieures et les contreforts à l'ouest de la crête des montagnes, en gros de Santa Barbara à la frontière mexicaine. De l'autre côté de la crête, les déserts Mojave et du Colorado forment une flore différente, et la haute montagne est plus froide que ce que cette liste suppose ; considérez ces recommandations comme non vérifiées dans les deux cas.",
+    note: "Le statut d'indigène est établi pour la Californie du Sud cismontane — la côte, les vallées intérieures et les contreforts à l'ouest de la crête des montagnes, en gros de Santa Barbara à la frontière mexicaine. De l'autre côté de la crête, les déserts Mojave et du Colorado forment une flore différente, et la haute montagne est plus froide que ce que ces choix supposent ; considérez ces recommandations comme non vérifiées dans les deux cas.",
     extent: "De Santa Barbara au sud jusqu'à la frontière mexicaine, et du Pacifique vers l'intérieur jusqu'à la crête des montagnes — les chaînes Transverses et Péninsulaires — et pas au-delà. Palm Springs et le désert qui suit sont de l'autre côté de cette ligne.",
   },
   "florida-central": {
@@ -88,7 +88,7 @@ export const REGIONS_FR: Record<string, RegionText> = {
     name: "Les Alpes françaises",
     short: "Les Alpes françaises",
     reference: "Grenoble, Annecy et Briançon",
-    note: "Le statut d'indigène est établi pour la région biogéographique alpine de France métropolitaine, et cette liste est réglée sur les Alpes en particulier : étages montagnard et subalpin, entre 600 et 2 000 m environ. Les Pyrénées relèvent de la même désignation européenne mais forment une flore distincte, avec ses propres endémiques ; elles sont délibérément hors de cette liste plutôt que devinées. Plus bas, ce sont les listes continentale, atlantique et méditerranéenne qui s'appliquent. Les chiffres d'insectes hôtes sont comptés à partir de la matrice européenne ouverte des associations lépidoptères–plantes (Gaytán et al. 2026), pour les espèces proches, indigènes et de l'étage montagnard.",
+    note: "Le statut d'indigène est établi pour la région biogéographique alpine de France métropolitaine, et les plantes proposées ici sont choisies pour les Alpes en particulier : étages montagnard et subalpin, entre 600 et 2 000 m environ. Les Pyrénées relèvent de la même désignation européenne mais forment une flore distincte, avec ses propres endémiques ; elles sont délibérément laissées de côté plutôt que devinées. Plus bas, ce sont les régions continentale, atlantique et méditerranéenne qui s'appliquent. Les chiffres d'insectes hôtes sont comptés à partir de la matrice européenne ouverte des associations lépidoptères–plantes (Gaytán et al. 2026), pour les espèces proches, indigènes et de l'étage montagnard.",
     extent: "Les Alpes françaises uniquement — du Vercors et des Écrins au nord jusqu'au Chablais, et à l'est jusqu'à la frontière italienne. Terrain de montagne, entre 600 et 2 000 m environ. Les Pyrénées n'en font pas partie.",
   },
 };

@@ -12,7 +12,7 @@ export const REGION: RegionMeta = {
   short: "Mid-Atlantic",
   reference: "Pennsylvania",
   zones: "6b–7a",
-  note: "Native here means native to this region specifically. Outside it, treat these picks as untested.",
+  note: "Native status is asserted for the Piedmont and the forests of the Northeast. Elsewhere, treat these picks as untested.",
   extent: "North to southern New England, south to central Virginia, and from the Atlantic coast west to the Appalachian ridges.",
   countries: ["US"],
   // Coarse box over the Piedmont/Northeast the seed list is tuned to: roughly

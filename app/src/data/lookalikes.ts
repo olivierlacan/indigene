@@ -327,7 +327,7 @@ export const LOOKALIKES: Lookalike[] = [
     form: "perennial",
     origin: "Native to the western Caucasus; brought to Britain and North America in the 1800s as a spectacle for large gardens.",
     blurb:
-      "A carrot-family plant the size of a small tree — fifteen feet up, with flower heads two feet across — and the most dangerous plant on this list. Its sap stops skin from protecting itself against sunlight, so a smear and a sunny afternoon give a burn that blisters, then a brown stain that can last years, and a splash in an eye can blind. It is a listed noxious weed across the Pacific Northwest, and in most places you are required to report it rather than tackle it yourself.",
+      "A carrot-family plant the size of a small tree — fifteen feet up, with flower heads two feet across — and the most dangerous plant on this list. Its sap stops skin from protecting itself against sunlight, so a smear and a sunny afternoon give a burn that blisters, then a brown stain that can last years, and a splash in an eye can blind. It is a listed noxious weed across the Pacific Northwest, and in many places you're asked to report it rather than tackle it yourself.",
     originBasis: "WA State Noxious Weed Control Board; OSU Extension; King County Noxious Weeds.",
   },
   {
@@ -651,7 +651,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
           { feature: "Height", native: "Head high at most — six to eight feet.", lookalike: "Ten to fifteen feet, taller than a room." },
           { feature: "The flower head", native: "Up to about a foot across.", lookalike: "Two to two and a half feet across — the width of a bin lid." },
           { feature: "The stem", native: "Green, ridged, softly hairy all over, an inch or two thick.", lookalike: "Two to four inches thick, blotched dark purple, with stiff bristles at the leaf joints." },
-          { feature: "Both sting", native: "The sap burns in sunlight too. Cover your arms and cut it on a dull day.", lookalike: "Worse, and it can blind. Don't cut it — in Washington and Oregon it is a noxious weed you are asked to report." },
+          { feature: "Both burn skin", native: "The sap burns in sunlight too. Cover your arms and cut it on a dull day.", lookalike: "Worse, and it can blind. Don't cut it — in Washington and Oregon it is a noxious weed you are asked to report." },
         ],
         basis: "WA State Noxious Weed Control Board; King County Noxious Weeds; OSU Extension; Burke Herbarium (WTU).",
       },
@@ -849,7 +849,7 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
           { feature: "Leaflets", native: "Flat and soft-edged, rounded or slightly notched at the tip; you can run a hand along them.", lookalike: "Stiff, rolled at the edges and needle-sharp at the tip — they will draw blood." },
           { feature: "Where the stem is", native: "Underground: the leaves come straight out of the ground.", lookalike: "Above ground: a shaggy brown trunk that thickens over the years." },
           { feature: "Cones", native: "A small brown velvet cone low among the leaves.", lookalike: "A large cone, or a great woolly dome, sitting in the centre." },
-          { feature: "Why it matters", native: "The only food the atala butterfly's caterpillars have.", lookalike: "Poisonous to people and pets; its seeds are a common cause of fatal poisoning in dogs." },
+          { feature: "Why it matters", native: "The atala butterfly's only native food plant.", lookalike: "Poisonous to people and pets; its seeds are a common cause of fatal poisoning in dogs." },
         ],
         basis: "UF/IFAS; Florida Museum of Natural History; ASPCA Animal Poison Control.",
       },

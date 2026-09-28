@@ -284,7 +284,7 @@ export const en = {
   "spot.tileWildlife": "Wildlife",
   "spot.tileWildlifeExplain":
     "Insects and animals your plants are documented to support here. It says they can use what you've planted — not that they've found it yet.",
-  "spot.feedsTitle": "What it can feed",
+  "spot.feedsTitle": "Wildlife your plants can feed",
   "spot.feedsNote":
     "Documented to use these plants, not spotted in yours. ⭐ = no other plant will do.",
   "spot.logTitle": "What you've planted",
@@ -314,19 +314,19 @@ export const en = {
   // Linking an iNaturalist sighting instead of storing photos here.
   "spot.obsLink": "📷 Link an iNaturalist sighting",
   "spot.obsLinkMore": "📷 Add sighting",
-  "spot.obsLabel": "iNaturalist observation link, number or UUID",
-  "spot.obsPlaceholder": "Link, number or UUID",
+  "spot.obsLabel": "iNaturalist sighting link or number",
+  "spot.obsPlaceholder": "Link or number",
   "spot.obsAdd": "Link",
   "spot.obsHelp":
     "The photos stay on iNaturalist; only the link is kept, on this device.",
-  "spot.obsBad": "That isn't a link, number or UUID we recognise.",
+  "spot.obsBad": "That isn't an iNaturalist link or number we recognise.",
   "spot.obsAlready": "Already linked to this plant.",
   "spot.obsAdded": "Sighting linked.",
   "spot.obsSighting": "Sighting",
   "spot.obsPickTitle": "Your sightings of this plant",
   "spot.obsPickLabel": "Link your sighting from {date}",
   "spot.obsPickNone": "None of your sightings from the past year are of this plant.",
-  "spot.obsPickSetup": "Connect your iNaturalist account to pick from your own photos",
+  "spot.obsPickSetup": "Pick from your iNaturalist photos",
   "spot.obsPickOr": "Or paste any sighting:",
   "inat.cardTitle": "Your iNaturalist account",
   "inat.lede": "Link your username to bring your recent plant sightings into a spot's log.",
@@ -410,7 +410,7 @@ export const en = {
   "rarity.region.none":
     "Nobody has recorded this plant anywhere in {region} yet. If it belongs in your ground, yours may be the only one for a while.",
   "rarity.region.scarce":
-    "Seldom recorded across {region} — {count} records. Planting one puts back something the area is short of.",
+    "Seldom recorded across {region} — {count} records. Few people here have seen one.",
   "rarity.region.occasional": "Recorded here and there across {region} — {count} records.",
   "rarity.region.common":
     "One of the plants people record most across {region} — {count} records.",
@@ -418,7 +418,7 @@ export const en = {
   "rarity.none":
     "Nobody has recorded this plant within {radius} of here. If it belongs in your ground, yours may be the only one for a while.",
   "rarity.scarce":
-    "Seldom recorded around here — {count} records within {radius}. Planting one puts back something the area is short of.",
+    "Seldom recorded around here — {count} records within {radius}. Few people nearby have seen one.",
   "rarity.occasional": "Recorded here and there — {count} records within {radius}.",
   "rarity.common": "One of the plants people record most around here — {count} records within {radius}.",
   "rarity.caveat": "Records count people noticing a plant, not how much of it grows here.",
@@ -692,9 +692,9 @@ export const en = {
   "slope.noticeable": "a noticeable slope — erosion can be a concern here",
   "slope.steep": "a steep slope — holding the soil in place matters a lot here",
 
-  "score.host.name": "Feeds baby butterflies & moths",
+  "score.host.name": "Feeds caterpillars",
   "score.host.plain":
-    "How many kinds of caterpillars can eat this plant. Caterpillars are the food that baby birds are raised on, so this is the single biggest measure of how much life a plant supports.",
+    "How many kinds of caterpillars can eat this plant. Most songbirds raise their chicks on caterpillars, so this is a good measure of how much life a plant supports.",
   "score.pollinator.name": "Feeds bees & butterflies",
   "score.pollinator.plain": "Nectar and pollen for adult bees and butterflies, and how long it blooms.",
   "score.bird.name": "Feeds & shelters birds",
@@ -728,7 +728,7 @@ export const en = {
 
   "support.host.term": "Host",
   "support.host.plain":
-    "A host plant: caterpillars eat its leaves and grow up on it. This is the strongest kind of support — it's where the next generation of butterflies and moths comes from, and caterpillars are what nearly all baby songbirds are fed.",
+    "A host plant: caterpillars eat its leaves and grow up on it. This is the strongest kind of support — it's where the next generation of butterflies and moths comes from, and most songbirds raise their chicks on caterpillars.",
   "support.nectar.term": "Nectar",
   "support.nectar.plain":
     "Nectar and pollen for the grown insects — food for the adults, not a nursery for their young.",
@@ -1021,7 +1021,7 @@ export const en = {
   "verdict.notCovered":
     "This spot is outside the regions Indigene covers so far (this plant's data is for {where}), so we can't honestly vouch for it here.",
   "verdict.notNativeWhy":
-    "Planting it anyway wouldn't feed local wildlife the way a true local native would — that's the whole point of choosing natives.",
+    "Planting it anyway wouldn't feed local wildlife the way a true local native would.",
   "verdict.tooCold": "Winters here are too cold for it",
   "verdict.tooColdWhy":
     "{name} can't survive {winter} — it's only hardy down to zone {zone}. A normal winter would kill it.",
@@ -1245,7 +1245,7 @@ export const en = {
   "stat.host.subKeystone": "essential plant",
   "stat.host.subValue": "food-web value",
   "stat.host.explain":
-    "How many butterfly and moth species can raise their caterpillars on this plant. Caterpillars are what nearly all baby songbirds are fed, so this is the best single measure of how much life a plant supports — and it's exactly where non-native plants score near zero.",
+    "How many butterfly and moth species can raise their caterpillars on this plant. Most songbirds raise their chicks on caterpillars, so this is a good measure of how much life a plant supports — and most non-native plants score far lower.",
   "stat.host.explainKeystone": "This one is essential: it hosts far more species than most, and local food webs lean on it. Ecologists call it a keystone plant.",
   "stat.host.uncounted": "Not counted",
   "stat.host.uncountedSub": "no source yet",
@@ -1497,7 +1497,7 @@ export const en = {
   "plant.noFix": "Couldn't get a fix — try again or search for your town below.",
   "plant.searchOffline":
     "The place search needs a signal and we couldn't reach it. If GPS works, use the location button above.",
-  "plant.seeEverything": "See everything that thrives at this spot →",
+  "plant.seeEverything": "See all plants for this spot →",
   "plant.notFoundTitle": "We don't know that plant yet",
   "plant.notFoundLede":
     "Nothing in Indigene's regional lists matches “{slug}”. The lists are deliberately curated — every entry is checked for native status and honest numbers — so they grow carefully.",
@@ -1506,15 +1506,15 @@ export const en = {
   "ref.lede":
     "Find {name} in the botanical and observation databases — the same plant, keyed by a shared identifier so you land on the right record.",
   "ref.powo": "accepted name & native range",
-  "ref.ipni": "the nomenclatural record",
-  "ref.wfo": "global taxon record",
+  "ref.ipni": "who named it, and when",
+  "ref.wfo": "its accepted name worldwide",
   "ref.gbif": "where it's been recorded growing",
   "ref.usda": "U.S. native status & distribution",
   "ref.itis": "North American taxonomy",
   "ref.inaturalist": "photos & nearby sightings",
   "ref.wikidata": "cross-references & Wikipedia",
   "ref.identity": "Identity: ",
-  "ref.identityRest": " — a persistent, global id (resolvable at identifiers.org).",
+  "ref.identityRest": " — a code that stays with this plant even when its name changes.",
 
   // ---------------------------------------------------------------------
   // Wildlife.
@@ -1527,7 +1527,7 @@ export const en = {
     "Pick the insect or animal you want in your yard, and see which native plants support it — and how. {n} creatures mapped so far, from monarchs to the gopher tortoise.",
   "wildlife.allNative": "🌿 Every animal here is itself native. ",
   "wildlife.allNativeRest":
-    "That's the whole point — native plants feeding native wildlife — so the introduced honey bee is left out. The 📍 figure counts the regions we've mapped a creature in; open it for their names.",
+    "That's the whole point — native plants feeding native wildlife — so the managed honey bee is left out. The 📍 figure counts the regions we've mapped a creature in; open it for their names.",
   "wildlife.browsePlants": "← Browse plants instead",
   "wildlife.browsePlantsShort": "Browse plants",
   "wildlife.startFromSpot": "Start from a spot",
@@ -1545,13 +1545,13 @@ export const en = {
   "wildlife.allWildlife": "← All wildlife",
   // The header of the plant list itself, carrying the count. On an animal's
   // page "it" is the animal, named an inch above.
-  "wildlife.plantsHeading": "Plants for it",
+  "wildlife.plantsHeading": "Plants that support this animal",
   "wildlife.ofThemHosts.one": ", {n} of them as a caterpillar host — the strongest tie.",
   "wildlife.ofThemHosts.other": ", {n} of them as caterpillar hosts — the strongest tie.",
   "wildlife.cantLiveWithout.one": "⭐ It can't live without this plant. ",
   "wildlife.cantLiveWithout.other": "⭐ It can't live without these plants. ",
-  "wildlife.onlyOption.one": "This is its only option — remove it and {animal} has nowhere to go.",
-  "wildlife.onlyOption.other": "{n} of these are its only option — remove them and {animal} has nowhere to go.",
+  "wildlife.onlyOption.one": "{animal} can't do without this kind of plant, and this is one of them.",
+  "wildlife.onlyOption.other": "{animal} can't do without these kinds of plant; {n} of them are here.",
   // The animal's reach, as tiles. What used to be a sentence under the plants
   // that counted the plants beside it.
   "wlStat.glance": "{animal} at a glance",
@@ -1566,9 +1566,9 @@ export const en = {
     "Plants {animal} nests in, hides in, or sits out the winter in. Somewhere safe to be is the half of a garden that isn't food.",
   "wlStat.sole.label": "Vital",
   "wlStat.sole.explain.one":
-    "One of these plants is {animal}'s only option. Take it out of a neighbourhood and the animal goes with it.",
+    "{animal} can't do without this kind of plant. Take every one out of a neighbourhood and the animal goes with it.",
   "wlStat.sole.explain.other":
-    "These plants are {animal}'s only option. Take them out of a neighbourhood and the animal goes with them.",
+    "{animal} can't do without these kinds of plant. Take every one out of a neighbourhood and the animal goes with them.",
   "wildlife.speciesRecord": "See the species record: ",
   "wildlife.fullProfile": "{name} — full profile",
   "wildlife.allSources": "All sources & licensing →",
@@ -1660,12 +1660,12 @@ export const en = {
   "regionStat.hosts.value": "up to {n}",
   "regionStat.hosts.sub": "species on {plant} alone",
   "regionStat.hosts.explain":
-    "How many butterfly and moth species can raise their caterpillars on a single plant — {plant} tops this list at {n}. Caterpillars are what nearly all baby songbirds are fed, so this is the best single measure of how much life a planting supports. (Counts overlap between plants, so we don't add them up.)",
+    "How many butterfly and moth species can raise their caterpillars on a single plant — {plant} tops this list at {n}. Most songbirds raise their chicks on caterpillars, so this is a good measure of how much life a planting supports. (Counts overlap between plants, so we don't add them up.)",
   "regionStat.wildlife.label": "Wildlife ties",
   "regionStat.wildlife.sub": "kinds of wildlife, documented",
   "regionStat.wildlife.explain":
     "{n} kinds of butterflies, moths, bees, birds, and mammals with a documented, citable tie to at least one plant on this list — each counted once, whether it's a single species like the monarch or a familiar group like the acorn-caching jays. These are the notable, nameable relationships — the real total is far larger; a single oak feeds more species than anyone could list.",
-  "regionStat.wildlife.more": "Browse plants by the wildlife they support →",
+  "regionStat.wildlife.more": "Browse by wildlife →",
   "regionStat.keystone.label": "Essential plants",
   "regionStat.keystone.sub": "food webs lean on these",
   "regionStat.keystone.explain": "{n} of this region's plants are essential: each feeds far more kinds of caterpillar than most plants do. Ecologists call them keystone plants, after the wedge at the crown of a stone arch.",
@@ -1922,7 +1922,7 @@ export const en = {
     "A person on our side weighed the evidence and picked a number. Useful, and the softest kind here — these are the ones to doubt first.",
   "sources.fig.host": "Caterpillar host count",
   "sources.fig.hostFrom":
-    "— in Europe, from the Gaytán 2026 Lepidoptera–plant matrix; in the US, from the Tallamy / National Wildlife Federation figures.",
+    "— in Europe, from a 2026 study pairing European butterflies and moths with the plants they eat (Gaytán and others); in the US, from the Tallamy / National Wildlife Federation figures.",
   "sources.fig.native": "Native or not",
   "sources.fig.nativeFrom":
     "— from the national botanical records: USDA PLANTS in the US, Tela Botanica and the INPN in France, plus regional floras.",
@@ -1971,7 +1971,7 @@ export const en = {
     "Whether a plant is native is answered by that country's own botanical reference, never a world average. It's also why an excellent Canadian list of French plant names is the wrong source for the French of France, and we left it out.",
   "sources.trust4": "What happens when it goes quiet? ",
   "sources.trust4Rest":
-    "A source that stops answering must not read as an answer. The check that re-asks the national name lists fails when they disagree with us — and equally when one of them says nothing at all.",
+    "A source that stops answering must not read as an answer. We re-check every name against the national lists, and a list that says nothing counts as a failure, not a yes.",
   "sources.trustCall":
     "Then a person decides. No dataset writes a plant's page. A search turns up the animals recorded on a shrub; someone reads the study behind each record, drops what doesn't hold, and writes the line you read. So every fact names its source, and every plant says how solid we think its evidence is.",
   "sources.trustRefused":
@@ -2048,7 +2048,7 @@ export const en = {
   "prompt.getting": "Getting your location…",
   "prompt.denied": "Location denied — that's fine; enter a postal code or town below instead.",
   "prompt.noFix": "Couldn't get your location. Try again, or enter a postal code or town below.",
-  "prompt.placeholder": "ZIP or town",
+  "prompt.placeholder": "Postal code or town",
   "prompt.notFound":
     "Couldn't find that postal code or place. Try a nearby town with its region — like “State College Pennsylvania” — or a full postal code.",
   "prompt.offline":
@@ -2156,7 +2156,7 @@ export const en = {
   "nearby.nativeToList": "native to {list}",
   "nearby.nativeToOther": "native to another region",
   "nearby.nativeElsewhere":
-    "Our data lists {name} as {belongs}, not {region}. It may turn up on iNaturalist there as a planted or escaped specimen, but we won't showcase it as a local native where it doesn't belong — that's the opposite of what Indigene is for.",
+    "Our data lists {name} as {belongs}, not {region}. It may turn up on iNaturalist there as a planted or escaped specimen, but we won't show it as a local native where it doesn't belong.",
   // ---------------------------------------------------------------------
   // Worst invasives: the ranked list on a region's page.
   // ---------------------------------------------------------------------
@@ -2166,17 +2166,17 @@ export const en = {
   "wanted.ledeUnrated":
     "The invasive plants recorded most often here. Nobody has rated how invasive each one is on this ground, so they're ranked by sightings alone. Tap one to learn to spot it.",
   "wanted.rankAria": "Number {n}",
-  "wanted.sightings": "{n} wild sightings on iNaturalist in this region's box",
+  "wanted.sightings": "{n} wild sightings on iNaturalist in this region",
   "wanted.countsNote":
-    "Sightings are wild records on iNaturalist inside this region's box, counted {date}. They measure where people have looked as well as where the plant grows.",
+    "Sightings are wild records on iNaturalist inside the area this region covers, counted {date}. They measure where people have looked as well as where the plant grows.",
   "wanted.growInstead": "What to grow instead",
   "wanted.indexDocTitle": "Worst invasives — Indigene",
   "wanted.docTitle": "{name} — invasive plant — Indigene",
   "wanted.indexLede": "Each region's five invasive plants to pull first. Open one to learn to spot it.",
   "wanted.unratedShort": "Nobody has rated these here, so they're ranked by sightings alone.",
   "wanted.backToIndex": "← All the worst invasives",
-  "wanted.howToSpot": "How to spot it",
-  "wanted.howToRemove": "How to get rid of it",
+  "wanted.howToSpot": "Identification",
+  "wanted.howToRemove": "Removal",
   "wanted.afterwards": "Afterwards: ",
   "wanted.method.pull": "Pull",
   "wanted.method.dig": "Dig",
@@ -2194,10 +2194,10 @@ export const en = {
   "wanted.regionDocTitle": "Worst invasives — {region} — Indigene",
   "wanted.otherRegions": "Other regions' lists",
   "wanted.whereWanted": "Where it's among the worst",
-  "wanted.photosTitle": "See it in the wild",
-  "wanted.photosLede": "Verified iNaturalist photos from a region that lists it.",
-  "wanted.tellApart": "What it's mistaken for",
-  "wanted.noPhotos": "No verified photos from this region on iNaturalist yet.",
+  "wanted.photosTitle": "Photos from the wild",
+  "wanted.photosLede": "Confirmed iNaturalist photos from a region that lists it.",
+  "wanted.tellApart": "Often mistaken for",
+  "wanted.noPhotos": "No confirmed photos from this region on iNaturalist yet.",
   "wanted.onLists": "Among the worst in: {places}",
   "wanted.placeLink": "{region} (#{n})",
 
@@ -2273,22 +2273,22 @@ export const en = {
   "about.stancesTitle": "What it refuses to do",
   "about.stancesLede":
     "These aren't values on a wall; each one is a decision you can see the app making, and the reason it behaves the way it does.",
-  "about.stance.plain": "It never uses a term it hasn't explained.",
+  "about.stance.plain": "Indigene never uses a term it hasn't explained.",
   "about.stance.plainBody":
     "Common words lead and the technical term follows in brackets — \"winters down to about −12 °C (USDA zone 8a)\", never the other way round. If a word would send you to a search engine, it has failed.",
-  "about.stance.uncertain": "It shows you its error bars.",
+  "about.stance.uncertain": "Indigene shows its error bars.",
   "about.stance.uncertainBody":
     "The sun estimate is a range, not a decimal, because sensors lie and the honest answer is a band. The soil reading is always framed as “the map says X — here's a 60-second check to see whether that's true where you're standing”, because a soil map square is bigger than your whole garden. Standing there, you know more than the map does, and the app is built to let you overrule it.",
   "about.stance.sourced": "Every number has to be traceable to somebody else.",
   "about.stance.sourcedBody":
     "Each plant carries its sources and a plain confidence note, and where a figure is our judgment rather than a count, the Sources page says so and names the ones we'd challenge first. Nothing is invented to fill a gap — a plant with no French name shows its scientific name rather than a plausible-sounding guess.",
-  "about.stance.yours": "It doesn't want anything from you.",
+  "about.stance.yours": "Indigene wants nothing from you.",
   "about.stance.yoursBody":
     "No account, no sign-up, no advertising, nothing sold. A visit counter notes which page was opened and nothing about who opened it; you can switch it off in Settings. Saved spots stay in your browser on your device, because there is no server for them to go to. No stranger can contact you through it.",
-  "about.stance.portable": "It won't hold your data in.",
+  "about.stance.portable": "Your data leaves with you.",
   "about.stance.portableBody":
     "Settings writes every saved spot and its planting log to a plain file you keep, and reads one back in another browser. Moving from a phone to a laptop takes a file, not an account — and the file is yours to open, keep or hand to something else entirely.",
-  "about.stance.offline": "It works where gardens are.",
+  "about.stance.offline": "Indigene works where gardens are.",
   "about.stance.offlineBody":
     "Offline-first and installable, because the far end of a garden is exactly where a signal disappears. Everything but the live lookups keeps working with no connection at all.",
   "about.freeTitle": "Free, and free to reuse",

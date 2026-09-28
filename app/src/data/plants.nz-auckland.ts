@@ -1161,7 +1161,7 @@ export const SEED_RAW: RawPlant[] = [
     bloom: { startMonth: 10, endMonth: 1, color: "brown" },
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
     noWaterEstablish: true,
-    careNote: "Dry sand or wet clay, salt spray or rain garden — one of the most adaptable plants on this list. Leave it alone.",
+    careNote: "Dry sand or wet clay, salt spray or rain garden — one of the most adaptable plants here. Leave it alone.",
     givesNote: "Holds dunes and swales, and its dense tussocks shelter skinks and insects.",
     confidence: "high",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 3 native Lepidoptera recorded breeding on New Zealand Ficinia (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",

@@ -304,7 +304,7 @@ export const fr: Dict = {
   "spot.tileWildlife": "Faune",
   "spot.tileWildlifeExplain":
     "Les insectes et animaux que vos plantes peuvent nourrir ici, d'après les sources. Cela dit qu'ils peuvent profiter de ce que vous avez planté — pas qu'ils l'ont déjà trouvé.",
-  "spot.feedsTitle": "Ce que ça peut nourrir",
+  "spot.feedsTitle": "La faune que vos plantes peuvent nourrir",
   "spot.feedsNote":
     "Connu pour profiter de ces plantes, pas observé chez vous. ⭐ = aucune autre plante ne convient.",
   "spot.logTitle": "Ce que vous avez planté",
@@ -334,19 +334,19 @@ export const fr: Dict = {
   "spot.added": "{name} ajoutée à votre journal.",
   "spot.obsLink": "📷 Relier une observation iNaturalist",
   "spot.obsLinkMore": "📷 Ajouter une observation",
-  "spot.obsLabel": "Lien, numéro ou UUID d'une observation iNaturalist",
-  "spot.obsPlaceholder": "Lien, numéro ou UUID",
+  "spot.obsLabel": "Lien ou numéro d'une observation iNaturalist",
+  "spot.obsPlaceholder": "Lien ou numéro",
   "spot.obsAdd": "Relier",
   "spot.obsHelp":
     "Les photos restent sur iNaturalist ; seul le lien est gardé, sur cet appareil.",
-  "spot.obsBad": "Ce n'est pas un lien, un numéro ni un UUID que nous reconnaissons.",
+  "spot.obsBad": "Ce n'est pas un lien ni un numéro iNaturalist que nous reconnaissons.",
   "spot.obsAlready": "Déjà reliée à cette plante.",
   "spot.obsAdded": "Observation reliée.",
   "spot.obsSighting": "Observation",
   "spot.obsPickTitle": "Vos observations de cette plante",
   "spot.obsPickLabel": "Relier votre observation du {date}",
   "spot.obsPickNone": "Aucune de vos observations de l'année écoulée ne montre cette plante.",
-  "spot.obsPickSetup": "Connectez votre compte iNaturalist pour choisir parmi vos photos",
+  "spot.obsPickSetup": "Choisir parmi vos photos iNaturalist",
   "spot.obsPickOr": "Ou collez n'importe quelle observation :",
   "inat.cardTitle": "Votre compte iNaturalist",
   "inat.lede": "Reliez votre nom d'utilisateur pour ajouter vos observations récentes de plantes au journal d'un lieu.",
@@ -429,7 +429,7 @@ export const fr: Dict = {
   "rarity.region.none":
     "Personne n'a encore relevé cette plante nulle part en {region}. Si votre terrain lui convient, la vôtre sera peut-être la seule pendant un moment.",
   "rarity.region.scarce":
-    "Rarement relevée en {region} — {count} relevés. En planter une remet en place ce qui manque à la région.",
+    "Rarement relevée en {region} — {count} relevés. Peu de gens ici en ont vu une.",
   "rarity.region.occasional": "Relevée de temps en temps en {region} — {count} relevés.",
   "rarity.region.common":
     "L'une des plantes les plus relevées en {region} — {count} relevés.",
@@ -437,7 +437,7 @@ export const fr: Dict = {
   "rarity.none":
     "Personne n'a relevé cette plante à moins de {radius} d'ici. Si votre terrain lui convient, la vôtre sera peut-être la seule pendant un moment.",
   "rarity.scarce":
-    "Rarement relevée par ici — {count} relevés à moins de {radius}. En planter une remet en place ce qui manque au coin.",
+    "Rarement relevée par ici — {count} relevés à moins de {radius}. Peu de gens alentour en ont vu une.",
   "rarity.occasional": "Relevée de temps en temps — {count} relevés à moins de {radius}.",
   "rarity.common":
     "L'une des plantes les plus relevées par ici — {count} relevés à moins de {radius}.",
@@ -715,9 +715,9 @@ export const fr: Dict = {
   "slope.noticeable": "une pente marquée — l'érosion peut poser problème ici",
   "slope.steep": "une forte pente — retenir la terre compte énormément ici",
 
-  "score.host.name": "Nourrit les futurs papillons",
+  "score.host.name": "Nourrit les chenilles",
   "score.host.plain":
-    "Combien de sortes de chenilles peuvent manger cette plante. Les chenilles sont la nourriture avec laquelle grandissent les oisillons : c'est donc la meilleure mesure, à elle seule, de la vie qu'une plante fait vivre.",
+    "Combien de sortes de chenilles peuvent manger cette plante. La plupart des passereaux nourrissent leurs petits de chenilles : c'est donc une bonne mesure de la vie qu'une plante fait vivre.",
   "score.pollinator.name": "Nourrit abeilles et papillons",
   "score.pollinator.plain":
     "Le nectar et le pollen pour les abeilles et les papillons adultes, et la durée de la floraison.",
@@ -755,7 +755,7 @@ export const fr: Dict = {
 
   "support.host.term": "Nourricière",
   "support.host.plain":
-    "Une plante nourricière (dite aussi « plante-hôte ») : les chenilles mangent ses feuilles et y grandissent. C'est le lien le plus fort — c'est de là que vient la génération suivante de papillons, et les chenilles sont ce dont presque tous les oisillons sont nourris.",
+    "Une plante nourricière (dite aussi « plante-hôte ») : les chenilles mangent ses feuilles et y grandissent. C'est le lien le plus fort — c'est de là que vient la génération suivante de papillons, et la plupart des passereaux nourrissent leurs petits de chenilles.",
   "support.nectar.term": "Nectar",
   "support.nectar.plain":
     "Du nectar et du pollen pour les insectes adultes — de la nourriture pour les grands, pas une nurserie pour leurs petits.",
@@ -1024,7 +1024,7 @@ export const fr: Dict = {
   "verdict.notCovered":
     "Cet endroit est en dehors des régions qu'Indigene couvre pour l'instant (les données de cette plante portent sur {where}), nous ne pouvons donc pas honnêtement nous porter garants d'elle ici.",
   "verdict.notNativeWhy":
-    "La planter quand même ne nourrirait pas la faune locale comme le ferait une vraie indigène d'ici — et c'est tout l'intérêt de choisir des indigènes.",
+    "La planter quand même ne nourrirait pas la faune locale comme le ferait une vraie indigène d'ici.",
   "verdict.tooCold": "Les hivers sont trop froids ici pour elle",
   "verdict.tooColdWhy":
     "{name} ne survivrait pas à {winter} — elle ne tient que jusqu'à la zone {zone}. Un hiver normal la tuerait.",
@@ -1258,7 +1258,7 @@ export const fr: Dict = {
   "stat.host.subKeystone": "plante essentielle",
   "stat.host.subValue": "valeur nourricière",
   "stat.host.explain":
-    "Combien d'espèces de papillons peuvent élever leurs chenilles sur cette plante. Les chenilles sont ce dont presque tous les oisillons sont nourris : c'est donc la meilleure mesure, à elle seule, de la vie qu'une plante fait vivre — et c'est exactement là que les plantes exotiques frôlent le zéro.",
+    "Combien d'espèces de papillons peuvent élever leurs chenilles sur cette plante. La plupart des passereaux nourrissent leurs petits de chenilles : c'est donc une bonne mesure de la vie qu'une plante fait vivre — et la plupart des plantes exotiques obtiennent bien moins.",
   "stat.host.explainKeystone": "Celle-ci est essentielle : elle héberge bien plus d'espèces que la moyenne, et les réseaux alimentaires locaux s'appuient sur elle. Les écologues parlent de plante « clé de voûte ».",
   "stat.host.uncounted": "Non compté",
   "stat.host.uncountedSub": "pas encore de source",
@@ -1489,7 +1489,7 @@ export const fr: Dict = {
   "plant.noFix": "Impossible de vous localiser — réessayez, ou cherchez votre commune ci-dessous.",
   "plant.searchOffline":
     "La recherche de lieux a besoin d'une connexion et nous n'avons pas pu l'atteindre. Si le GPS fonctionne, utilisez le bouton de position ci-dessus.",
-  "plant.seeEverything": "Voir tout ce qui prospère à cet endroit →",
+  "plant.seeEverything": "Voir toutes les plantes de ce lieu →",
   "plant.notFoundTitle": "Nous ne connaissons pas encore cette plante",
   "plant.notFoundLede":
     "Rien dans les listes régionales d'Indigene ne correspond à « {slug} ». Ces listes sont délibérément constituées à la main — chaque entrée est vérifiée pour son statut d'indigène et pour l'honnêteté de ses chiffres — elles grandissent donc avec prudence.",
@@ -1498,15 +1498,15 @@ export const fr: Dict = {
   "ref.lede":
     "Retrouvez {name} dans les bases botaniques et naturalistes — la même plante, reliée par un identifiant commun pour tomber sur la bonne fiche.",
   "ref.powo": "nom accepté et aire d'indigénat",
-  "ref.ipni": "la référence nomenclaturale",
-  "ref.wfo": "fiche taxonomique mondiale",
+  "ref.ipni": "qui l'a nommée, et quand",
+  "ref.wfo": "son nom accepté dans le monde",
   "ref.gbif": "où sa présence a été enregistrée",
   "ref.usda": "statut d'indigène et répartition aux États-Unis",
   "ref.itis": "taxonomie nord-américaine",
   "ref.inaturalist": "photos et observations à proximité",
   "ref.wikidata": "renvois croisés et Wikipédia",
   "ref.identity": "Identité : ",
-  "ref.identityRest": " — un identifiant mondial et pérenne (résoluble sur identifiers.org).",
+  "ref.identityRest": " — un code qui reste attaché à cette plante même quand son nom change.",
 
   // ---------------------------------------------------------------------
   // Faune.
@@ -1519,7 +1519,7 @@ export const fr: Dict = {
     "Choisissez l'insecte ou l'animal que vous aimeriez voir chez vous, et découvrez quelles plantes indigènes le font vivre — et comment. {n} espèces cartographiées jusqu'ici.",
   "wildlife.allNative": "🌿 Chaque animal listé ici est lui-même indigène. ",
   "wildlife.allNativeRest":
-    "C'est tout l'intérêt — des plantes indigènes qui nourrissent une faune indigène — et l'abeille domestique, introduite, est donc écartée. Le chiffre 📍 compte les régions où nous avons cartographié l'espèce ; ouvrez-le pour les voir.",
+    "C'est tout l'intérêt — des plantes indigènes qui nourrissent une faune indigène — et l'abeille domestique, élevée en ruche, est donc écartée. Le chiffre 📍 compte les régions où nous avons cartographié l'espèce ; ouvrez-le pour les voir.",
   "wildlife.browsePlants": "← Parcourir plutôt les plantes",
   "wildlife.browsePlantsShort": "Parcourir les plantes",
   "wildlife.startFromSpot": "Partir d'un lieu",
@@ -1535,14 +1535,14 @@ export const fr: Dict = {
   "wildlife.regionPillTitle": "{region} — toute la faune que ses plantes indigènes font vivre",
   "wildlife.docTitle": "Les plantes indigènes qui font vivre {animal} — Indigene",
   "wildlife.allWildlife": "← Toute la faune",
-  "wildlife.plantsHeading": "Plantes pour lui",
+  "wildlife.plantsHeading": "Les plantes qui font vivre cet animal",
   "wildlife.ofThemHosts.one": ", dont {n} comme plante nourricière de ses chenilles — le lien le plus fort.",
   "wildlife.ofThemHosts.other": ", dont {n} comme plantes nourricières de ses chenilles — le lien le plus fort.",
   "wildlife.cantLiveWithout.one": "⭐ Il ne peut pas vivre sans cette plante. ",
   "wildlife.cantLiveWithout.other": "⭐ Il ne peut pas vivre sans ces plantes. ",
-  "wildlife.onlyOption.one": "C'est son seul recours — retirez-la et {animal} n'a plus nulle part où aller.",
+  "wildlife.onlyOption.one": "{animal} ne peut pas se passer de ce genre de plante, et celle-ci en fait partie.",
   "wildlife.onlyOption.other":
-    "{n} d'entre elles sont ses seuls recours — retirez-les et {animal} n'a plus nulle part où aller.",
+    "{animal} ne peut pas se passer de ces genres de plantes ; {n} d'entre elles sont ici.",
   // La portée de l'animal, en tuiles.
   "wlStat.glance": "{animal} en un coup d'œil",
   // Un mot chacun, au-dessus d'un nombre (voir `TileOptions.figures`).
@@ -1554,9 +1554,9 @@ export const fr: Dict = {
     "Les plantes où {animal} niche, se cache ou passe l'hiver. Un endroit où être tranquille, c'est la moitié du jardin qui n'est pas de la nourriture.",
   "wlStat.sole.label": "Vitale",
   "wlStat.sole.explain.one":
-    "L'une de ces plantes est le seul recours d'{animal}. Retirez-la d'un quartier et l'animal s'en va avec elle.",
+    "{animal} ne peut pas se passer de ce genre de plante. Retirez-les toutes d'un quartier et l'animal s'en va avec elles.",
   "wlStat.sole.explain.other":
-    "Ces plantes sont le seul recours d'{animal}. Retirez-les d'un quartier et l'animal s'en va avec elles.",
+    "{animal} ne peut pas se passer de ces genres de plantes. Retirez-les toutes d'un quartier et l'animal s'en va avec elles.",
   "wildlife.speciesRecord": "Voir la fiche de l'espèce : ",
   "wildlife.fullProfile": "{name} — fiche complète",
   "wildlife.allSources": "Toutes les sources et licences →",
@@ -1650,12 +1650,12 @@ export const fr: Dict = {
   "regionStat.hosts.value": "jusqu'à {n}",
   "regionStat.hosts.sub": "espèces sur {plant} à elle seule",
   "regionStat.hosts.explain":
-    "Combien d'espèces de papillons peuvent élever leurs chenilles sur une seule plante — {plant} arrive en tête de cette liste avec {n}. Les chenilles sont ce dont presque tous les oisillons sont nourris : c'est donc la meilleure mesure, à elle seule, de la vie qu'une plantation fait vivre. (Les comptes se recoupent d'une plante à l'autre : nous ne les additionnons pas.)",
+    "Combien d'espèces de papillons peuvent élever leurs chenilles sur une seule plante — {plant} arrive en tête de cette liste avec {n}. La plupart des passereaux nourrissent leurs petits de chenilles : c'est donc une bonne mesure de la vie qu'une plantation fait vivre. (Les comptes se recoupent d'une plante à l'autre : nous ne les additionnons pas.)",
   "regionStat.wildlife.label": "Liens avec la faune",
   "regionStat.wildlife.sub": "espèces documentées",
   "regionStat.wildlife.explain":
     "{n} sortes de papillons, d'abeilles, d'oiseaux et de mammifères dont le lien avec au moins une plante de cette liste est documenté et citable — chacune comptée une fois, qu'il s'agisse d'une seule espèce comme le monarque ou d'un groupe familier comme les geais amateurs de glands. Ce sont les relations remarquables et nommables : le total réel est bien plus grand, un seul chêne nourrit plus d'espèces que personne ne saurait énumérer.",
-  "regionStat.wildlife.more": "Parcourir les plantes par la faune qu'elles font vivre →",
+  "regionStat.wildlife.more": "Parcourir par la faune →",
   "regionStat.keystone.label": "Plantes essentielles",
   "regionStat.keystone.sub": "les réseaux alimentaires s'appuient dessus",
   "regionStat.keystone.explain": "{n} des plantes de cette région sont essentielles : chacune nourrit bien plus d'espèces de chenilles que la plupart des plantes. Les écologues parlent de plantes « clé de voûte », comme la pierre au sommet d'une arche.",
@@ -1922,7 +1922,7 @@ export const fr: Dict = {
     "Quelqu'un chez nous a pesé les indices et choisi un chiffre. Utile, et le plus fragile de tous — ce sont ceux à mettre en doute en premier.",
   "sources.fig.host": "Nombre de chenilles hébergées",
   "sources.fig.hostFrom":
-    "— en Europe, d'après la matrice lépidoptères–plantes de Gaytán 2026 ; aux États-Unis, d'après les chiffres Tallamy / National Wildlife Federation.",
+    "— en Europe, d'après une étude de 2026 qui associe les papillons européens aux plantes qu'ils mangent (Gaytán et coll.) ; aux États-Unis, d'après les chiffres Tallamy / National Wildlife Federation.",
   "sources.fig.native": "Indigène ou non",
   "sources.fig.nativeFrom":
     "— d'après les référentiels botaniques nationaux : USDA PLANTS aux États-Unis, Tela Botanica et l'INPN en France, plus les flores régionales.",
@@ -1971,7 +1971,7 @@ export const fr: Dict = {
     "Qu'une plante soit indigène, c'est le référentiel botanique du pays qui le dit, jamais une moyenne mondiale. C'est aussi pourquoi un excellent référentiel canadien de noms français est la mauvaise source pour le français de France, et que nous l'avons écarté.",
   "sources.trust4": "Que se passe-t-il quand elle se tait ? ",
   "sources.trust4Rest":
-    "Une source qui cesse de répondre ne doit pas passer pour une réponse. Le contrôle qui réinterroge les référentiels nationaux de noms échoue quand ils nous contredisent — et tout autant quand l'un d'eux ne répond rien du tout.",
+    "Une source qui cesse de répondre ne doit pas passer pour une réponse. Nous revérifions chaque nom auprès des référentiels nationaux, et un référentiel muet compte comme un échec, pas comme un oui.",
   "sources.trustCall":
     "Ensuite, c'est une personne qui tranche. Aucun jeu de données n'écrit la fiche d'une plante. Une recherche fait remonter les animaux observés sur un arbuste ; quelqu'un lit l'étude derrière chaque observation, écarte ce qui ne tient pas, et écrit la ligne que vous lisez. Chaque fait cite donc sa source, et chaque plante dit à quel point nous jugeons ses indices solides.",
   "sources.trustRefused":
@@ -2048,7 +2048,7 @@ export const fr: Dict = {
   "prompt.getting": "Récupération de votre position…",
   "prompt.denied": "Position refusée — ce n'est pas grave ; saisissez un code postal ou une commune ci-dessous.",
   "prompt.noFix": "Impossible d'obtenir votre position. Réessayez, ou saisissez un code postal ou une commune ci-dessous.",
-  "prompt.placeholder": "Code postal",
+  "prompt.placeholder": "Code postal ou commune",
   "prompt.notFound":
     "Ce code postal ou ce lieu est introuvable. Essayez une commune proche avec sa région — « Saint-Denis Réunion » par exemple — ou un code postal complet.",
   "prompt.offline":
@@ -2145,7 +2145,7 @@ export const fr: Dict = {
   "nearby.nativeToList": "indigène de {list}",
   "nearby.nativeToOther": "indigène d'une autre région",
   "nearby.nativeElsewhere":
-    "Nos données donnent {name} comme {belongs}, et non de {region}. Elle peut apparaître sur iNaturalist là-bas comme sujet planté ou échappé de culture, mais nous ne la présenterons pas comme une indigène locale là où elle n'a pas sa place — ce serait le contraire de ce à quoi Indigene sert.",
+    "Nos données donnent {name} comme {belongs}, et non de {region}. Elle peut apparaître sur iNaturalist là-bas comme sujet planté ou échappé de culture, mais nous ne la présenterons pas comme une indigène locale là où elle n'a pas sa place.",
   // ---------------------------------------------------------------------
   // Les pires plantes envahissantes : la liste classée d'une région.
   // ---------------------------------------------------------------------
@@ -2155,17 +2155,17 @@ export const fr: Dict = {
   "wanted.ledeUnrated":
     "Les plantes envahissantes les plus observées ici. Personne n'a encore évalué le caractère envahissant de chacune sur ce territoire : elles sont classées selon les observations seules. Touchez-en une pour apprendre à la reconnaître.",
   "wanted.rankAria": "Numéro {n}",
-  "wanted.sightings": "{n} observations à l'état sauvage sur iNaturalist dans le périmètre de cette région",
+  "wanted.sightings": "{n} observations à l'état sauvage sur iNaturalist dans cette région",
   "wanted.countsNote":
-    "Les observations sont celles d'iNaturalist à l'état sauvage, dans le périmètre de cette région, comptées le {date}. Elles mesurent où les gens ont regardé autant que là où la plante pousse.",
+    "Les observations sont celles d'iNaturalist à l'état sauvage, dans la zone que couvre cette région, comptées le {date}. Elles mesurent où les gens ont regardé autant que là où la plante pousse.",
   "wanted.growInstead": "Que planter à la place",
   "wanted.indexDocTitle": "Les pires plantes envahissantes — Indigene",
   "wanted.docTitle": "{name} — plante envahissante — Indigene",
   "wanted.indexLede": "Les cinq plantes envahissantes à arracher en premier dans chaque région. Ouvrez-en une pour apprendre à la reconnaître.",
   "wanted.unratedShort": "Personne ne les a évaluées ici : elles sont classées selon les observations seules.",
   "wanted.backToIndex": "← Toutes les plantes envahissantes",
-  "wanted.howToSpot": "Comment la reconnaître",
-  "wanted.howToRemove": "Comment s'en débarrasser",
+  "wanted.howToSpot": "Identification",
+  "wanted.howToRemove": "Élimination",
   "wanted.afterwards": "Ensuite : ",
   "wanted.method.pull": "Arracher",
   "wanted.method.dig": "Déterrer",
@@ -2183,10 +2183,10 @@ export const fr: Dict = {
   "wanted.regionDocTitle": "Les pires plantes envahissantes — {region} — Indigene",
   "wanted.otherRegions": "Les listes des autres régions",
   "wanted.whereWanted": "Où elle compte parmi les pires",
-  "wanted.photosTitle": "La voir dans la nature",
-  "wanted.photosLede": "Des photos vérifiées sur iNaturalist, prises dans une région où elle figure sur la liste.",
-  "wanted.tellApart": "Avec quoi on la confond",
-  "wanted.noPhotos": "Aucune photo vérifiée de cette région sur iNaturalist pour l'instant.",
+  "wanted.photosTitle": "Photos dans la nature",
+  "wanted.photosLede": "Des photos confirmées sur iNaturalist, prises dans une région où elle figure sur la liste.",
+  "wanted.tellApart": "Souvent confondue avec",
+  "wanted.noPhotos": "Aucune photo confirmée de cette région sur iNaturalist pour l'instant.",
   "wanted.onLists": "Parmi les pires : {places}",
   "wanted.placeLink": "{region} (n° {n})",
 
@@ -2260,22 +2260,22 @@ export const fr: Dict = {
   "about.stancesTitle": "Ce qu'elle refuse de faire",
   "about.stancesLede":
     "Ce ne sont pas des valeurs affichées au mur : chacune est une décision que vous pouvez voir l'application appliquer, et la raison pour laquelle elle se comporte ainsi.",
-  "about.stance.plain": "Elle n'emploie jamais un terme qu'elle n'a pas expliqué.",
+  "about.stance.plain": "Indigene n'emploie jamais un terme sans l'expliquer.",
   "about.stance.plainBody":
     "Les mots courants passent devant, le terme technique suit entre parenthèses — « des hivers descendant jusqu'à −12 °C environ (zone USDA 8a) », jamais l'inverse. Si un mot vous envoie chercher ailleurs, c'est un échec.",
-  "about.stance.uncertain": "Elle vous montre ses marges d'erreur.",
+  "about.stance.uncertain": "Indigene montre ses marges d'erreur.",
   "about.stance.uncertainBody":
     "L'estimation du soleil est une fourchette, pas une décimale, parce que les capteurs mentent et que la réponse honnête est une plage. Le relevé de sol est toujours présenté comme « la carte dit ceci — voici un test de soixante secondes pour vérifier si c'est vrai là où vous êtes », parce qu'un carré de carte des sols est plus grand que votre jardin entier. Sur place, vous en savez plus que la carte, et l'application est faite pour vous laisser la contredire.",
   "about.stance.sourced": "Chaque chiffre doit pouvoir être rattaché à quelqu'un d'autre.",
   "about.stance.sourcedBody":
     "Chaque plante porte ses sources et une note de confiance en mots simples, et quand un chiffre relève de notre jugement plutôt que d'un comptage, la page des sources le dit et nomme ceux que nous contesterions en premier. Rien n'est inventé pour combler un trou — une plante sans nom français affiche son nom scientifique plutôt qu'une invention plausible.",
-  "about.stance.yours": "Elle n'attend rien de vous.",
+  "about.stance.yours": "Indigene n'attend rien de vous.",
   "about.stance.yoursBody":
     "Pas de compte, pas d'inscription, pas de publicité, rien de vendu. Un compteur de visites note quelle page a été ouverte, et rien sur qui l'a ouverte ; vous pouvez le couper dans les Réglages. Les lieux enregistrés restent dans votre navigateur, sur votre appareil, parce qu'il n'existe aucun serveur où les envoyer. Aucun inconnu ne peut vous contacter par ce biais.",
-  "about.stance.portable": "Elle ne retient pas vos données.",
+  "about.stance.portable": "Vos données partent avec vous.",
   "about.stance.portableBody":
     "Les réglages écrivent chaque lieu enregistré et son journal de plantation dans un fichier simple qui vous appartient, et en relisent un dans un autre navigateur. Passer d'un téléphone à un ordinateur demande un fichier, pas un compte — et ce fichier est à vous : à ouvrir, à garder, ou à confier à tout autre outil.",
-  "about.stance.offline": "Elle fonctionne là où sont les jardins.",
+  "about.stance.offline": "Indigene fonctionne là où sont les jardins.",
   "about.stance.offlineBody":
     "Conçue pour marcher hors ligne et pour s'installer sur l'écran d'accueil, parce que le fond d'un jardin est précisément l'endroit où le réseau disparaît. Tout sauf les consultations en direct continue de fonctionner sans aucune connexion.",
   "about.freeTitle": "Libre, et libre de réemploi",

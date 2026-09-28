@@ -396,7 +396,7 @@ export const INVASIVES: Invasive[] = [
   },
   {
     id: "rhododendron-ponticum",
-    common: "Rhododendron",
+    common: "Pontic rhododendron",
     latin: "Rhododendron ponticum",
     form: "shrub",
     marks: [
@@ -447,7 +447,7 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        { method: "avoid", text: "Don't dig, strim or mow it: a piece of root the size of a fingernail grows a new plant." },
+        { method: "avoid", text: "Don't dig, strim or mow it: a small piece of root grows a new plant." },
         { method: "cut", text: "Cut or pull every stem to the ground every few weeks through the growing season, for years, to starve the roots." },
         { method: "pro", text: "A big stand is a job for a professional." },
       ],
@@ -780,7 +780,7 @@ export const INVASIVES: Invasive[] = [
   // ---------------- Groundcovers ----------------
   {
     id: "carpobrotus-edulis",
-    common: "Ice plant (Hottentot fig)",
+    common: "Highway ice plant",
     latin: "Carpobrotus edulis",
     form: "groundcover",
     marks: [

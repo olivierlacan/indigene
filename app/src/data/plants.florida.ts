@@ -53,7 +53,7 @@ export const SEED_RAW: RawPlant[] = [
     filters: { deerResistant: false, thorny: false, allergenic: true, petToxic: false, aggressive: false },
     noWaterEstablish: true,
     careNote: "Give it serious room — the crown spreads far wider than it is tall, and a mature live oak is a lifelong neighbor. Wind-firm and drought-proof once established; among the most hurricane-resistant shade trees.",
-    givesNote: "The top wildlife tree in Florida: hundreds of caterpillar species, acorns for jays, woodpeckers, turkeys and squirrels, evergreen shelter, and limbs that become gardens of resurrection fern, bromeliads and Spanish moss.",
+    givesNote: "Oaks host more caterpillar species than any other tree genus here — hundreds — plus acorns for jays, woodpeckers, turkeys and squirrels, evergreen shelter, and limbs that become gardens of resurrection fern, bromeliads and Spanish moss.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: oak genus (Tallamy/NWF).",
     propagation: {
@@ -335,7 +335,7 @@ export const SEED_RAW: RawPlant[] = [
     filters: { deerResistant: false, thorny: false, allergenic: false, petToxic: false, aggressive: false },
     noWaterEstablish: true,
     careNote: "Fast, easy and drought-tolerant in sun or part shade; often reseeds around. Cut it back hard in late winter for a fuller shape.",
-    givesNote: "Summer flowers for pollinators, then the show-stopping clusters of magenta berries that mockingbirds, cardinals and dozens of birds (and raccoons) devour in fall.",
+    givesNote: "Summer flowers for pollinators, then the clusters of magenta berries that mockingbirds, cardinals and dozens of birds (and raccoons) devour in fall.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Callicarpa, moderate estimate.",
     propagation: {
@@ -370,7 +370,7 @@ export const SEED_RAW: RawPlant[] = [
     filters: { deerResistant: true, thorny: false, allergenic: false, petToxic: false, aggressive: false },
     noWaterEstablish: true,
     careNote: "Loves heat, sun and dry-to-average soil and blooms nearly year-round in frost-free areas. North of about zone 9b it dies back in a freeze and returns from the roots — treat it as a big perennial there. Insist on the true native species.",
-    givesNote: "A nonstop nectar factory: tubular red-orange flowers feed hummingbirds, zebra longwings, Gulf fritillaries and sulphurs spring to fall, and the dark berries feed birds.",
+    givesNote: "Tubular red-orange flowers feed hummingbirds, zebra longwings, Gulf fritillaries and sulphurs spring to fall, and the dark berries feed birds.",
     confidence: "high",
     basis: "Native status/range (var. patens): Atlas of Florida Plants (USF), FNPS. Host count: Hamelia, low; nectar value high.",
     propagation: {
@@ -512,7 +512,7 @@ export const SEED_RAW: RawPlant[] = [
     filters: { deerResistant: true, thorny: false, allergenic: false, petToxic: true, aggressive: false },
     noWaterEstablish: true,
     careNote: "Extremely tough, slow and long-lived — takes sun or shade, drought, salt and poor sandy soil once established. Fern-like but a cycad, and every part of it is toxic if eaten. Hardy through this region's frosts, unlike most things that look like it.",
-    givesNote: "The only larval host of the Atala butterfly, whose range is creeping back north as coontie is replanted — plus an evergreen, architectural, drought-proof low shrub.",
+    givesNote: "The Atala butterfly's only native larval host (it will also eat imported cycads like sago palm), and the Atala's range is creeping back north as coontie is replanted — plus an evergreen, architectural, drought-proof low shrub.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF). Occurrence records in this region's box: 2,194 (GBIF). Atala host: FNPS.",
     propagation: {
@@ -617,7 +617,7 @@ export const SEED_RAW: RawPlant[] = [
     filters: { deerResistant: true, thorny: false, allergenic: false, petToxic: true, aggressive: false },
     noWaterEstablish: true,
     careNote: "Wants full sun and sharp drainage (sandy soil) and resents wet feet and being moved — a deep taproot makes it drought-proof but permanent, so plant it to stay. Slow to emerge in spring. Sap is toxic if eaten. Choose it over non-native tropical milkweed, which disrupts monarch migration in Florida.",
-    givesNote: "A monarch and queen caterpillar host and a magnet for every butterfly and native bee, on a tidy, well-behaved plant.",
+    givesNote: "A monarch and queen caterpillar host, visited by many butterflies and native bees, on a tidy, well-behaved plant.",
     confidence: "high",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Asclepias hosts monarchs (specialist); tropical-milkweed caution per UF-IFAS / Xerces.",
     propagation: {

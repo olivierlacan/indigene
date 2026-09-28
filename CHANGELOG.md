@@ -151,6 +151,13 @@ subtitle on the What's new page.
 
 ### Fixed
 
+- Screen readers now say what each emoji means here instead of its official
+  name: 🚫 in "No thorns" is "no", not "prohibited", and ↗ says the link
+  opens another site. French readers hear it in French.
+- Internal: `lib/emoji.ts` holds each emoji's meaning (`emoji.*` keys) and
+  wraps exposed emoji in `role="img"` spans via a MutationObserver;
+  `emojiSpan()` overrides a meaning at the call site (plant verdicts, the
+  step rail's ✓). `emoji.test.ts` fails when an emoji ships without one.
 - Plants & Wildlife: dozens of notes were corrected. A monarch needs a
   milkweed, not one particular milkweed; yerba buena means "good herb"; Europe
   has more than one green butterfly; a bushtit weighs about five paperclips.

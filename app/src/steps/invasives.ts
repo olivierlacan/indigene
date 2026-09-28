@@ -205,11 +205,13 @@ function removalSection(inv: Invasive): HTMLElement {
     el("h3", { style: "margin:1rem 0 0.3rem" }, t("wanted.howToRemove")),
     // Each step leads with its method's icon, the way a propagation technique
     // does: a scan down the list reads "pull, ring the bark, again" before a
-    // word of it. The icon is decorative; its name is only a tooltip.
+    // word of it. The icon is the method's name ("Ring the bark"), which the
+    // step's own words don't always say, so a screen reader hears it too.
     el("ol", { class: "wanted-steps" }, steps.map((step) => el("li", {}, [
       el("span", {
         class: "step-icon",
-        "aria-hidden": "true",
+        role: "img",
+        "aria-label": t(`wanted.method.${step.method}` as const),
         title: t(`wanted.method.${step.method}` as const),
       }, REMOVAL_ICONS[step.method]),
       el("span", {}, step.text),

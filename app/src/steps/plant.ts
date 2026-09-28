@@ -3,6 +3,7 @@
 // the question is whether a spot deserves it. The verdict has exactly three
 // honest levels — ideal, decent, unsuitable — and is computed with the same
 // fit math and hard gates as the ranked list.
+import { emojiSpan } from "../lib/emoji";
 import { el, clear, toast } from "../ui";
 import { navigate, store, resetDraft, resultsTrail, keepTrail, openSavedSpot } from "../state";
 import { fetchSite } from "../lib/site";
@@ -524,8 +525,10 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
           }, [
             el("span", { class: "choice-title" }, spot.label),
             el("span", { class: "choice-sub" }, [
-              el("span", { class: "saved-fit-level" },
-                `${verdict.level === "ideal" ? "🌱" : "🌤"} ${verdict.headline}`),
+              el("span", { class: "saved-fit-level" }, [
+                verdict.level === "ideal" ? emojiSpan("🌱", "emoji.goodFit") : emojiSpan("🌤", "emoji.fairFit"),
+                ` ${verdict.headline}`,
+              ]),
               // What that spot is *like*, not the first line of the verdict's
               // reasoning. The reasons are ordered for reading in full, so the
               // first is the hardiness line — which on a spot whose site lookup
@@ -648,11 +651,14 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
       const v = assessSpot(all, site, lat, lon, sun);
       lastVerdict = v;
       const cls = v.level === "ideal" ? "info" : v.level === "decent" ? "warn" : "danger";
-      const emoji = v.level === "ideal" ? "🌱" : v.level === "decent" ? "🌤" : "🛑";
+      // 🌱 means "plant" everywhere else; here it's the verdict, so say that.
+      const emoji = v.level === "ideal" ? emojiSpan("🌱", "emoji.goodFit")
+        : v.level === "decent" ? emojiSpan("🌤", "emoji.fairFit")
+        : emojiSpan("🛑", "emoji.poorFit");
       clear(verdictEl);
       verdictEl.append(
         el("div", { class: `note ${cls}`, style: "margin-top:0.75rem" }, [
-          el("strong", {}, `${emoji} ${v.headline}`),
+          el("strong", {}, [emoji, ` ${v.headline}`]),
           el("ul", { style: "margin:0.4rem 0 0;padding-left:1.1rem" }, v.reasons.map((r) => el("li", {}, r))),
         ])
       );

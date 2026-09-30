@@ -136,6 +136,11 @@ subtitle on the What's new page.
   observed over 300 (the plants index has ~460), so none loaded; the sweep
   now waits a task. The queue also starts the job nearest the viewport and
   drops jobs that scroll out of range before their turn.
+- Plants: on a plant native to several regions, tapping another region above
+  its figures switches to that region's numbers again, instead of staying put.
+- Internal: the page moved `?region=` from the hash to the search string
+  before drawing, and `hashParam()` only read the hash. `addressParam()` in
+  `lib/routes.ts` reads whichever the page is on.
 
 ## [0.35] - 2026-09-24
 

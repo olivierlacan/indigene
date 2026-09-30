@@ -224,6 +224,24 @@ export function isHashRoute(hash: string): boolean {
 }
 
 /**
+ * One value of a page's own query state, wherever the address is carrying it.
+ *
+ * A link writes it into the hash (`#/plants/x?region=pnw`), but `main.ts`
+ * moves a shareable page onto its path before the page draws, and the query
+ * moves with it into the search string (`/plants/x?region=pnw`). Reading only
+ * the hash made the plant page's region chips do nothing: by the time the page
+ * asked, the `?region=` had already left the hash.
+ *
+ * While the hash is a route, it alone speaks: a hash-only page (`#/saved/…`)
+ * can keep a search string left over from before its hash dropped the query.
+ */
+export function addressParam(name: string, hash: string, search: string): string | null {
+  if (!isHashRoute(hash)) return new URLSearchParams(search).get(name);
+  const at = hash.indexOf("?");
+  return at < 0 ? null : new URLSearchParams(hash.slice(at + 1)).get(name);
+}
+
+/**
  * The address of one section of a plant's page: a fragment on the plant's own
  * canonical path — `/plants/lupinus-polyphyllus#nearby`.
  *

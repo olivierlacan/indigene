@@ -8,6 +8,7 @@
 // the Atlantic coast would be two answers to one question.
 import { store } from "../state";
 import { regionForSite } from "./plants";
+import { addressParam } from "./routes";
 import type { PlantEntry } from "./explore";
 
 /**
@@ -48,11 +49,10 @@ export function activeEntry(entries: PlantEntry[]): PlantEntry {
   return entries[0];
 }
 
-/** One value out of the hash's query string (`#/plants/x?region=pnw`). The hash
+/** One value out of the page's query string (`#/plants/x?region=pnw`, or
+ *  `/plants/x?region=pnw` once the address bar is on the canonical path). The
  *  query is a page's *state*, not its identity — the router strips it before
  *  matching a route, so a page that wants it reads it here. */
 export function hashParam(name: string): string | null {
-  const at = location.hash.indexOf("?");
-  if (at < 0) return null;
-  return new URLSearchParams(location.hash.slice(at + 1)).get(name);
+  return addressParam(name, location.hash, location.search);
 }

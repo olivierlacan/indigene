@@ -148,7 +148,7 @@ try {
     const keystone = plants.filter((p) => p.keystone).length;
     const wildlife = wildlifeCountForRegion(r.meta.id);
     const parts = [`<b>${plants.length}</b> native plants`];
-    if (keystone) parts.push(plural(`<b>${keystone}</b>`, "keystone", "keystones"));
+    if (keystone) parts.push(plural(`<b>${keystone}</b>`, "essential", "essential"));
     if (wildlife) parts.push(`<b>${wildlife}</b> wildlife`);
     regions.push({
       slug: r.meta.id,

@@ -35,6 +35,7 @@ import { renderSources } from "./steps/sources";
 import { renderSettings } from "./steps/settings";
 import { renderAbout } from "./steps/about";
 import { renderCrops } from "./steps/crops";
+import { renderTraits } from "./steps/traits";
 import { renderImport } from "./steps/import";
 import { initAppMenu, closeAppMenu } from "./components/app-menu";
 import { initPullToReload } from "./components/pull-to-reload";
@@ -103,6 +104,9 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
   // page. Reached from every plant page's top block, beside the look-alike
   // warning and the native swap.
   crops: { fn: renderCrops, labelKey: "steps.crops", inFlow: false },
+  // What a plant's labels and figures mean. `#/traits/<id>` is the same page
+  // opened at one definition — what each label on a plant page links to.
+  traits: { fn: renderTraits, labelKey: "steps.traits", inFlow: false },
   import: { fn: renderImport, labelKey: "steps.import", inFlow: false },
   // The film on a page of its own, so a shared link previews as the video.
   film: { fn: renderFilm, labelKey: "steps.film", inFlow: false },
@@ -112,7 +116,7 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
  * Who renders `<step>/<param>`, when a step has one. Separate from `STEPS`
  * because these are different screens, not the same screen with an argument:
  * `#/plants` is the catalog and `#/plants/<slug>` is one plant's profile.
- * `settings` and `privacy` are the exceptions that prove it — same screen either
+ * `settings`, `privacy` and `traits` are the exceptions that prove it — same screen either
  * way, so each appears in both maps and simply reads the param to open itself at
  * the card (steps/settings.ts) or section (steps/privacy.ts) that was asked for.
  */
@@ -128,6 +132,7 @@ const PARAM_RENDERERS: Record<string, StepFn> = {
   settings: renderSettings,
   privacy: renderPrivacy,
   film: renderFilm,
+  traits: renderTraits,
 };
 
 const FLOW: AppStep[] = ["location", "sun", "confirm", "priorities", "results"];

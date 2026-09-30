@@ -58,6 +58,7 @@ export const APP_STEPS = [
   "settings",
   "about",
   "crops",
+  "traits",
   "import",
   "film",
 ] as const;
@@ -92,6 +93,7 @@ export const PARAM_STEPS = new Set<string>([
   "privacy",
   // `film/fr` is the French cut: its own file, so its preview is French too.
   "film",
+  "traits",
 ]);
 
 /** The index pages that are shareable in their own right. `settings` is absent
@@ -110,6 +112,7 @@ export const SHAREABLE_INDEXES: readonly string[] = [
   "about",
   "crops",
   "film",
+  "traits",
 ];
 
 const STEP_SET = new Set<string>(APP_STEPS);

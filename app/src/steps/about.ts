@@ -40,6 +40,7 @@ const STANCES: { title: TKey; body: TKey }[] = [
   { title: "about.stance.yours", body: "about.stance.yoursBody" },
   { title: "about.stance.portable", body: "about.stance.portableBody" },
   { title: "about.stance.offline", body: "about.stance.offlineBody" },
+  { title: "about.stance.native", body: "about.stance.nativeBody" },
 ];
 
 export function renderAbout(main: HTMLElement): void {
@@ -72,7 +73,10 @@ export function renderAbout(main: HTMLElement): void {
         STANCES.map(({ title, body }) =>
           el("div", { style: "margin-bottom:0.9rem" }, [
             el("p", { style: "margin:0 0 0.15rem;font-weight:700" }, t(title)),
-            el("p", { style: "margin:0" }, t(body)),
+            // The one stance with a page of its own behind it.
+            el("p", { style: "margin:0" }, body === "about.stance.nativeBody"
+              ? tx(body, { link: el("a", { href: "#/native" }, t("about.stance.nativeLink")) })
+              : t(body)),
           ])
         )
       ),

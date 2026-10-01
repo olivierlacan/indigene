@@ -6,6 +6,7 @@
 import type { EcoScores, Plant, SavedSpot, SiteData } from "../types";
 import type { RawPlant, RegionDef } from "../data/region";
 import { REGIONS, regionsForCoords } from "../data/regions";
+import { confidenceFor } from "./confidence";
 
 // A single, shared anchor for the top of the host scale (oaks/willows/poplars,
 // ~500 Lepidoptera species) so host scores are comparable across regions.
@@ -20,7 +21,7 @@ function build(raw: RawPlant): Plant {
   // Not counted yet scores 0 here, and `ecoScore` leaves it out of the average
   // rather than let a missing number read as a poor plant.
   const scores: EcoScores = { ...raw.scores, host: raw.hostLepCount === null ? 0 : hostScore(raw.hostLepCount) };
-  return { ...raw, scores };
+  return { ...raw, scores, confidence: confidenceFor(raw) };
 }
 
 // Built plant lists are cached per region id so we only derive scores once —

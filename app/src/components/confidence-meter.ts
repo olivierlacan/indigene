@@ -6,9 +6,7 @@
 // links to `#/confidence`, where each level is explained once.
 import { el } from "../ui";
 import { t } from "../lib/i18n";
-import type { Plant } from "../types";
-
-export type Confidence = Plant["confidence"];
+import type { Confidence } from "../types";
 
 /** Where the levels are explained. */
 export const CONFIDENCE_ROUTE = "#/confidence";

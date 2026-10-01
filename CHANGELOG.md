@@ -36,9 +36,16 @@ subtitle on the What's new page.
 - Plants: how sure we are of a plant's figures is now a three-bar meter
   instead of a paragraph. Tap it for
   [what each level means](https://indigene.app/confidence).
+- Plants: confidence now follows one rule for every plant, set by where its
+  caterpillar count comes from. Many American plants drop to medium or low —
+  a sign of where we need better sources, not worse plants.
 - Internal: `components/confidence-meter.ts` replaces `confidencePlain()`; the
   new `confidence` step is wired through routes, 404.html, prerender, its page
   card and the guide's Sources section.
+- Internal: `confidence` is derived on load by `lib/confidence.ts` from each
+  row's new `hostCountFrom` (and optional `confidenceLowered`), generated once
+  from the `basis` wording; `confidence.test.ts` pins the rule and checks every
+  shipped row. Result: 286 high, 261 medium, 92 low (was 548/91/0).
 - Matches: "Add sighting" on a plant in your saved spot now shows your own
   iNaturalist photos of that plant. Tap one to add it, no link to paste, so
   each season's photo lines up under the plant to show how it's growing.

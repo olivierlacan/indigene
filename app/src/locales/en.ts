@@ -916,18 +916,21 @@ export const en = {
   "frac.threeQuarters": "three-quarters",
   "frac.twoThirds": "two-thirds",
   "frac.half": "half",
-  "confidence.high": "The figures come from well-established data.",
-  "confidence.medium": "Most figures are sourced, but some are estimated from close relatives — usually the caterpillar count.",
-  "confidence.low": "A rough estimate. Treat it as a starting point, not gospel.",
+  "confidence.high": "Its caterpillar count was counted from a dataset for its region, and a cited source says where it grows wild.",
+  "confidence.medium": "Its caterpillar count is a published figure for its genus, or our estimate from a relative or another region.",
+  "confidence.low": "Its caterpillar count is rough or has no source, or nothing is cited for where it grows wild.",
   "confidence.docTitle": "How sure we are — Indigene",
   "confidence.title": "How sure we are",
-  "confidence.lede": "Every plant page rates how well its figures are sourced. Here is what each level means.",
+  "confidence.lede": "Every plant page rates how well its figures are sourced. One rule sets the rating, the same for every plant.",
+  "confidence.lowered": "A plant can rate lower than that, when its sources line says why. Never higher.",
+  "confidence.whyHostTitle": "Why the caterpillar count decides",
+  "confidence.whyHost":
+    "It's the figure that varies most from plant to plant, and the one the ranking leans on hardest. The 0–100 scores are our judgment on every plant alike, so they can't tell one plant from another.",
   "confidence.whyTitle": "Why each plant is rated on its own",
   "confidence.why":
-    "Regions aren't equally well studied. Some lists rest on decades of regional botany; the newest are thinner. Rating plant by plant keeps a well-studied oak from vouching for a little-known shrub.",
+    "Regions aren't equally well studied. No American list has caterpillars counted region by region yet, so none of its plants rate high. Rating plant by plant shows where we need better sources.",
   "confidence.notTitle": "What the rating leaves out",
-  "confidence.not": "The rating is about our figures, not the plant. A plant rated medium is just as good a choice.",
-  "confidence.scores": "The 0–100 scores are our judgment on every plant, whatever its rating.",
+  "confidence.not": "The rating is about our figures, not the plant. A plant rated low can be just as good a choice.",
   "confidence.sourcesLink": "Where our numbers come from →",
 
   // ---------------------------------------------------------------------
@@ -2017,7 +2020,7 @@ export const en = {
     "Defensible, and we'd defend it — but it is a real approximation, and it flatters the weaker members of a strong group.",
   "sources.chal3": "The regions aren't equally well sourced. ",
   "sources.chal3Rest":
-    "Some plant lists rest on decades of regional botanical work; the newest ones are thinner. The confidence note on each plant is our honest read of that, plant by plant.",
+    "Some plant lists rest on decades of regional botanical work; the newest ones are thinner. Each plant's confidence meter shows it, plant by plant, by one rule.",
   "sources.chal4": "The US caterpillar counts sit on shakier ground than the European ones. ",
   "sources.chal4Rest":
     "The European figures come from an openly licensed dataset we can point you at and recompute from scratch. The US figures come from published research whose database has no open license — so they're harder for you to check than we'd like.",

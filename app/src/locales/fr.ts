@@ -934,18 +934,21 @@ export const fr: Dict = {
   "frac.threeQuarters": "les trois quarts",
   "frac.twoThirds": "les deux tiers",
   "frac.half": "la moitié",
-  "confidence.high": "Les chiffres viennent de données bien établies.",
-  "confidence.medium": "La plupart des chiffres sont sourcés, mais certains sont estimés d'après des espèces proches — le plus souvent le nombre de chenilles.",
-  "confidence.low": "Estimation grossière. À prendre comme un point de départ, pas comme une vérité.",
+  "confidence.high": "Son nombre de chenilles a été compté à partir d'une base de données pour sa région, et une source citée dit où elle pousse à l'état sauvage.",
+  "confidence.medium": "Son nombre de chenilles est un chiffre publié pour son genre, ou notre estimation d'après une espèce proche ou une autre région.",
+  "confidence.low": "Son nombre de chenilles est approximatif ou sans source, ou rien n'est cité pour l'endroit où elle pousse à l'état sauvage.",
   "confidence.docTitle": "Fiabilité des chiffres — Indigene",
   "confidence.title": "Fiabilité des chiffres",
-  "confidence.lede": "Chaque fiche de plante indique à quel point ses chiffres sont sourcés. Voici ce que veut dire chaque niveau.",
+  "confidence.lede": "Chaque fiche de plante indique à quel point ses chiffres sont sourcés. Une seule règle fixe ce niveau, la même pour toutes les plantes.",
+  "confidence.lowered": "Une plante peut être notée plus bas, quand sa ligne de sources dit pourquoi. Jamais plus haut.",
+  "confidence.whyHostTitle": "Pourquoi le nombre de chenilles décide",
+  "confidence.whyHost":
+    "C'est le chiffre qui varie le plus d'une plante à l'autre, et celui sur lequel le classement s'appuie le plus. Les notes de 0 à 100 sont notre jugement pour toutes les plantes à la fois : elles ne distinguent pas une plante d'une autre.",
   "confidence.whyTitle": "Pourquoi chaque plante est notée à part",
   "confidence.why":
-    "Les régions ne sont pas toutes aussi bien étudiées. Certaines listes reposent sur des décennies de botanique régionale ; les plus récentes sont plus minces. Noter plante par plante empêche un chêne bien étudié de se porter garant d'un arbuste peu connu.",
+    "Les régions ne sont pas toutes aussi bien étudiées. Aucune liste américaine n'a encore de chenilles comptées région par région : aucune de ses plantes n'atteint le niveau élevé. Noter plante par plante montre où il nous faut de meilleures sources.",
   "confidence.notTitle": "Ce que la note ne mesure pas",
-  "confidence.not": "La note porte sur nos chiffres, pas sur la plante. Une plante à fiabilité moyenne est un aussi bon choix.",
-  "confidence.scores": "Les notes de 0 à 100 sont notre jugement, pour toutes les plantes, quelle que soit leur fiabilité.",
+  "confidence.not": "La note porte sur nos chiffres, pas sur la plante. Une plante à fiabilité faible peut être un aussi bon choix.",
   "confidence.sourcesLink": "D'où viennent nos chiffres →",
   // ---------------------------------------------------------------------
   // Noms des espèces.
@@ -2016,7 +2019,7 @@ export const fr: Dict = {
     "C'est défendable, et nous le défendrions — mais c'est bel et bien une approximation, et elle flatte les membres les plus faibles d'un groupe fort.",
   "sources.chal3": "Les régions ne sont pas également bien sourcées. ",
   "sources.chal3Rest":
-    "Certaines listes reposent sur des décennies de travail botanique régional ; les plus récentes sont plus minces. La note de confiance de chaque plante est notre lecture honnête de cela, plante par plante.",
+    "Certaines listes reposent sur des décennies de travail botanique régional ; les plus récentes sont plus minces. L'indicateur de fiabilité de chaque plante le montre, plante par plante, selon une seule règle.",
   "sources.chal4": "Les comptes de chenilles américains reposent sur un terrain moins sûr que les européens. ",
   "sources.chal4Rest":
     "Les chiffres européens viennent d'un jeu de données sous licence ouverte que nous pouvons vous indiquer et recalculer entièrement. Les chiffres américains viennent de travaux publiés dont la base n'a pas de licence ouverte — ils sont donc plus difficiles à vérifier que nous ne le voudrions.",

@@ -54,7 +54,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Give it serious room — the crown spreads far wider than it is tall, and a mature live oak is a lifelong neighbor. Wind-firm and drought-proof once established; among the most hurricane-resistant shade trees.",
     givesNote: "Oaks host more caterpillar species than any other tree genus here — hundreds — plus acorns for jays, woodpeckers, turkeys and squirrels, evergreen shelter, and limbs that become gardens of resurrection fern, bromeliads and Spanish moss.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: oak genus (Tallamy/NWF).",
     propagation: {
       methods: ["seed-warm", "seed-direct"],
@@ -89,7 +89,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Spends its first few years as a ground-level 'grass stage' before it shoots up — that's normal, not a stunted plant. Wants sandy, well-drained soil and full sun; fire-adapted. Very drought- and wind-tolerant once established.",
     givesNote: "The foundation of the longleaf ecosystem: seeds and cover for birds and gopher tortoises, hundreds of caterpillars on the pines, and the open, sunny canopy that lets a diverse groundcover thrive beneath it.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: pine genus (Tallamy/NWF).",
     propagation: {
       methods: ["seed-warm"],
@@ -124,7 +124,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "The answer for a wet, flooding, or pondside spot — it thrives standing in water and grows 'knees' there — but it also does fine in an ordinary yard once established. Wants a bit of water while getting started in a dry site.",
     givesNote: "A superb stormwater and streambank tree: it soaks up flooding, holds wet soil, shelters wading birds and anhingas, and lives for centuries.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: conifer, low.",
     propagation: {
       methods: ["seed-warm", "seed-direct"],
@@ -159,7 +159,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Evergreen and drought-tolerant once established. It drops leaves year-round, so it's happiest with room to keep its skirt of low branches rather than being limbed up over a lawn.",
     givesNote: "Huge, lemon-scented flowers pollinated by beetles and bees, red seeds that birds and squirrels eat, and dense evergreen cover and nesting sites.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Magnolia genus (NWF).",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -194,7 +194,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Fast and adaptable; loves damp ground and tolerates wet feet, so it's ideal for a low, moist spot. Water it while establishing in a drier site.",
     givesNote: "Red flowers open in the depths of Florida winter — the first nectar and pollen of the year — its seeds feed birds, and it hosts hundreds of caterpillars.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: maple genus (Tallamy/NWF).",
     propagation: {
       methods: ["seed-warm"],
@@ -229,7 +229,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Nearly indestructible — takes salt, drought, flooding, sandy or heavy soil, and full sun to part shade, and is one of the most hurricane-proof trees anywhere. Slow to gain trunk height. Leave the old leaf 'boots' for wildlife.",
     givesNote: "Summer flower plumes swarm with bees; the black fruit feeds robins, mockingbirds, raccoons and more; and the crown and boot-covered trunk shelter bats, frogs and nesting birds.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: palm, low; wildlife value: FNPS / UF-IFAS.",
     propagation: {
       methods: ["seed-warm"],
@@ -264,7 +264,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "An easy small tree for part sun with average moisture — a good native alternative to non-native ornamentals. A little water in dry spells while it establishes.",
     givesNote: "Clouds of fragrant, fringe-like white flowers in spring for bees; female trees carry blue fruit that birds strip quickly.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Chionanthus/Oleaceae, low.",
     propagation: {
       methods: ["seed-double-dormant"],
@@ -301,7 +301,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "About as tough as a Florida plant gets — drought-, fire-, salt- and hurricane-proof, extremely long-lived, and happy in sun or shade. Very slow, and hard to transplant once established, so start with a small plant and site it for keeps. Leaf stalks have fine teeth (hence 'saw').",
     givesNote: "One of Florida's best wildlife plants: its early flowers are a premier nectar source (the famous palmetto honey), the fruit feeds bears, gopher tortoises, birds and more, and the dense clumps shelter countless small animals.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Wildlife/pollinator value: FNPS / UF-IFAS / Xerces.",
     propagation: {
       methods: ["seed-warm"],
@@ -336,7 +336,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Fast, easy and drought-tolerant in sun or part shade; often reseeds around. Cut it back hard in late winter for a fuller shape.",
     givesNote: "Summer flowers for pollinators, then the clusters of magenta berries that mockingbirds, cardinals and dozens of birds (and raccoons) devour in fall.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Callicarpa, moderate estimate.",
     propagation: {
       methods: ["seed-warm", "cuttings-softwood"],
@@ -371,7 +371,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Loves heat, sun and dry-to-average soil and blooms nearly year-round in frost-free areas. North of about zone 9b it dies back in a freeze and returns from the roots — treat it as a big perennial there. Insist on the true native species.",
     givesNote: "Tubular red-orange flowers feed hummingbirds, zebra longwings, Gulf fritillaries and sulphurs spring to fall, and the dark berries feed birds.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range (var. patens): Atlas of Florida Plants (USF), FNPS. Host count: Hamelia, low; nectar value high.",
     propagation: {
       methods: ["cuttings-softwood", "cuttings-semi-hardwood", "seed-warm"],
@@ -406,7 +406,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Extremely tough — takes sun or shade, wet or dry, salt and poor soil — and shears well as a native hedge. Only female plants fruit, so include one. (Its leaves are the only native source of caffeine, brewed as the tea 'yaupon'.)",
     givesNote: "Spring flowers for bees, then heavy crops of translucent red berries that cedar waxwings, robins, mockingbirds and bluebirds feed on through winter; dense cover for nesting.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Ilex genus (NWF).",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-warm"],
@@ -441,7 +441,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Adaptable and easy in sun to part shade; near-evergreen in Florida and shears well as a hedge or small tree. Tolerates damp ground.",
     givesNote: "A flush of tiny white flowers very early in the year feeds emerging bees and butterflies, the fruit feeds birds, and it hosts many caterpillars.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Viburnum genus (NWF).",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-warm"],
@@ -476,7 +476,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Tough, salt- and drought-tolerant evergreen for sun or part shade — excellent as a specimen, hedge or small multi-trunk tree. Frost-tender, so it's a central/south Florida plant. Peeling cinnamon bark and fragrant foliage.",
     givesNote: "Fragrant white flowers for pollinators and red-orange berries that mockingbirds, catbirds and other songbirds love, on a handsome evergreen with year-round structure.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Atlas of Florida Plants (USF), FNPS. Host count: Myrtaceae, low; bird value high.",
     propagation: {
       methods: ["seed-warm", "cuttings-semi-hardwood"],
@@ -513,7 +513,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Extremely tough, slow and long-lived — takes sun or shade, drought, salt and poor sandy soil once established. Fern-like but a cycad, and every part of it is toxic if eaten. Hardy through this region's frosts, unlike most things that look like it.",
     givesNote: "The Atala butterfly's only native larval host (it will also eat imported cycads like sago palm), and the Atala's range is creeping back north as coontie is replanted — plus an evergreen, architectural, drought-proof low shrub.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF). Occurrence records in this region's box: 2,194 (GBIF). Atala host: FNPS.",
     propagation: {
       methods: ["seed-warm", "seed-scarify"],
@@ -548,7 +548,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Easy, drought-tolerant and self-sowing — a short-lived perennial that keeps itself going from seed, so let a few go. Cut back leggy plants to refresh them. Sun to light shade.",
     givesNote: "Near year-round red flowers feed hummingbirds and butterflies and are a favorite of bumblebees; a reliable, carefree nectar staple.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), FNPS. Pollinator value: UF-IFAS / Xerces.",
     propagation: {
       methods: ["seed-warm", "cuttings-softwood"],
@@ -583,7 +583,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A short-lived perennial best treated as a self-sowing wildflower — let it drop seed and it will carry on in a sunny, moist-to-average spot. Great for a meadow or ditch planting.",
     givesNote: "Cheerful yellow daisies over a long season feed small native bees, hoverflies and butterflies, then finches take the seed. The quintessential Florida wildflower.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Atlas of Florida Plants (USF), FNPS. Host count: Coreopsis, low-moderate.",
     propagation: {
       methods: ["seed-surface-light"],
@@ -618,7 +618,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Wants full sun and sharp drainage (sandy soil) and resents wet feet and being moved — a deep taproot makes it drought-proof but permanent, so plant it to stay. Slow to emerge in spring. Sap is toxic if eaten. Choose it over non-native tropical milkweed, which disrupts monarch migration in Florida.",
     givesNote: "A monarch and queen caterpillar host, visited by many butterflies and native bees, on a tidy, well-behaved plant.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Asclepias hosts monarchs (specialist); tropical-milkweed caution per UF-IFAS / Xerces.",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -653,7 +653,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Loves full sun and dry, sandy soil and needs no water once established — perfect for a hot, poor spot. Wands of purple open top-down in fall.",
     givesNote: "One of the best fall nectar plants in Florida: its purple spikes are covered with butterflies (including migrating monarchs) and native bees, and finches take the seed.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), FNPS. Pollinator value: Xerces / UF-IFAS.",
     propagation: {
       methods: ["seed-cold-moist", "division"],
@@ -688,7 +688,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Thrives on hot, dry, sandy ground in full sun. A short-lived perennial that self-sows to persist; give it good airflow. Its tiered pink bracts are the showy part, not the small flowers.",
     givesNote: "An exceptional pollinator plant — its unusual spotted flowers and pink bracts draw a huge range of native bees, wasps and butterflies to poor, dry soil where little else blooms.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Monarda, moderate estimate. Pollinator value: Xerces.",
     propagation: {
       methods: ["seed-surface-light", "division"],
@@ -725,7 +725,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Tough, salt- and drought-proof, and happiest in full sun on well-drained soil — needs no water, mowing or feeding once established. Cut back once in late winter.",
     givesNote: "Airy clouds of pink flower plumes in fall, seeds and cover for small birds, and dense roots that hold sandy or eroding soil; shelters ground-nesting bees and hosts skippers.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: native grass, skipper host, low-moderate.",
     propagation: {
       methods: ["seed-warm", "division"],
@@ -760,7 +760,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A big, arching, near-evergreen clump that takes sun or part shade and wet or average soil — excellent along a pond, ditch or rain garden. Give it room; cut back in late winter.",
     givesNote: "A robust cover and erosion plant: it armors wet, eroding edges, shelters and feeds birds and small wildlife, and hosts skipper butterflies.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: native grass, skipper host, low-moderate.",
     propagation: {
       methods: ["seed-warm", "division"],
@@ -797,7 +797,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Vigorous and fast — give it a fence, trellis or space to scramble, and expect it to run and sucker up from the roots (edit the sprouts). Dies back in winter in the north of the state and returns. Tough and drought-tolerant.",
     givesNote: "The larval host for Gulf fritillary and the zebra longwing — Florida's state butterfly — plus the julia; its extraordinary purple flowers feed carpenter and bumblebees, and the 'maypop' fruit feeds wildlife.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host of heliconian butterflies (specialist); FNPS / UF-IFAS.",
     propagation: {
       methods: ["seed-scarify", "suckers", "cuttings-softwood"],
@@ -834,7 +834,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A tough, fast, drought-proof living carpet for full sun that takes light foot traffic and needs little to no mowing — an excellent lawn replacement. It spreads vigorously by runners, so give it room or edge it. Leaves fold when touched.",
     givesNote: "Fixes its own nitrogen, holds soil against erosion, and covers itself in pink powderpuff flowers that feed bees and host little sulphur and skipper butterflies — a lawn that actually works for wildlife.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. N-fixer; pollinator/host value: FNPS / UF-IFAS.",
     propagation: {
       methods: ["seed-scarify", "runners"],
@@ -869,7 +869,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Made for the harshest sunny, sandy, salty, dry spots — it needs full sun and sharp drainage and rots in rich or wet soil. A short-lived, freely self-sowing groundcover that renews itself from seed; shear it to refresh.",
     givesNote: "Near year-round yellow daisies feed native bees and butterflies, seeds feed finches, and the sprawling mat holds dune and sandy soil against erosion; hosts painted lady and other caterpillars.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Helianthus genus (NWF).",
     propagation: {
       methods: ["seed-surface-light", "cuttings-softwood"],

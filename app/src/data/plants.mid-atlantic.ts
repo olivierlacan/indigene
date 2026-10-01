@@ -11,7 +11,7 @@
 //    honest eventual ceiling, which is often far larger than nursery tags admit.
 //  - other scores (0–100): informed estimates from published horticultural and
 //    conservation sources (Wildflower Center, Xerces regional lists, USDA
-//    PLANTS). Where a number is a rougher guess, `confidence` reflects it.
+//    PLANTS).
 //
 // This file is deliberately data-only and heavily commented so a non-programmer
 // can audit a row. See DATA_SOURCES.md for licensing of each upstream source.
@@ -48,7 +48,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Plant small and leave it alone — a taproot makes it hard to transplant but very self-sufficient once set.",
     givesNote: "Oaks host more caterpillar species than any other tree genus here — hundreds — plus acorns for dozens of birds and mammals, and generations of shade.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Host count: oak genus, NWF/Tallamy. Size: USDA PLANTS / Silvics of North America.",
     propagation: {
       methods: ["seed-warm", "seed-direct"],
@@ -83,7 +83,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Grows noticeably faster than white oak; give it room to reach a big mature size.",
     givesNote: "Hundreds of caterpillar species and heavy acorn crops; a fast route to an oak's food-web benefits.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Host count: oak genus, NWF/Tallamy. Size: Silvics of North America.",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -118,7 +118,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Adaptable and fast; tolerates wet feet. Wilted leaves are toxic to horses — a non-issue for most yards.",
     givesNote: "Early red flowers feed the first bees of spring, seeds feed birds, and it hosts hundreds of caterpillars.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Host count: maple genus, NWF/Tallamy.",
     propagation: {
       methods: ["seed-warm"],
@@ -153,7 +153,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Loves damp ground — perfect for a soggy low spot, but wants water while establishing in a dry one.",
     givesNote: "Peeling cinnamon bark, hundreds of caterpillar species, and roots that hold a stream bank together.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Host count: birch genus, NWF/Tallamy.",
     propagation: {
       methods: ["seed-warm", "seed-surface-light"],
@@ -188,7 +188,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Seeds itself around freely, so pull unwanted seedlings. Wilted leaves and pits are toxic to livestock and pets.",
     givesNote: "Second only to oaks for caterpillars; clouds of spring flowers and summer fruit for dozens of bird species.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Host count: cherry/plum genus, NWF/Tallamy.",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -223,7 +223,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Small and tough; happy in part shade at a woodland edge or as a patio tree.",
     givesNote: "Rosy-pink flowers bloom right on the branches in early spring, feeding queen bumblebees when little else is open.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Wildflower Center; host count Fabaceae/Cercis, NWF.",
     propagation: {
       methods: ["seed-scarify", "seed-cold-moist"],
@@ -258,7 +258,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Four seasons of interest and an easy size. A little summer water the first year pays off.",
     givesNote: "Early white flowers for bees, June berries loved by birds (and people), and fiery fall color.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Wildflower Center; host count Amelanchier, NWF.",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -293,7 +293,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Wants dappled shade and steady moisture; struggles in hot, dry, exposed sites. Water in dry spells.",
     givesNote: "High-fat berries that migrating birds prize, plus the classic spring flowers.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Wildflower Center; host count Cornus, NWF.",
     propagation: {
       methods: ["seed-cold-moist", "cuttings-semi-hardwood"],
@@ -328,7 +328,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Slow, long-lived and shade-tolerant; wants rich, moist, well-drained ground. Give a young one part shade and leave its shallow roots alone. Two diseases are moving through the region — beech bark disease, and beech leaf disease since 2019 — so plant from healthy local stock and expect to watch it.",
     givesNote: "Smooth gray bark, deep shade, and oily beechnuts that turkeys, jays, bears and squirrels fatten on in autumn.",
-    confidence: "medium",
+    hostCountFrom: "published",
     basis: "Host count: Fagus genus, NWF/Tallamy. Native status: USDA PLANTS. Occurrence records in this region's box: 57,143 (GBIF). Beech leaf disease: USDA Forest Service.",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -363,7 +363,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Wants deep, moist, rich soil and casts dense shade. Big and long-lived, and it sprouts from the stump, so it is hard to kill once established.",
     givesNote: "Clouds of scented midsummer flower that hum from twenty paces, heart-shaped leaves that raise well over a hundred kinds of caterpillar, and deep cooling shade.",
-    confidence: "medium",
+    hostCountFrom: "published",
     basis: "Host count: Tilia genus, NWF/Tallamy. Native status: USDA PLANTS. Occurrence records in this region's box: 36,104 (GBIF).",
     propagation: {
       methods: ["seed-double-dormant", "cuttings-softwood"],
@@ -398,7 +398,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Wants cool, moist, shaded ground and steady water — the one conifer here that thrives in shade. Plant it knowing about the hemlock woolly adelgid, an aphid-like insect that has killed hemlocks through much of this region since the 1980s: a garden tree can be treated and watched, which a forest one cannot.",
     givesNote: "Dense evergreen shelter and nesting cover, cool shade over a stream, and tiny seeds for chickadees, siskins and juncos.",
-    confidence: "medium",
+    hostCountFrom: "published",
     basis: "Host count: Tsuga genus, NWF/Tallamy (a conifer, so lower than the hardwoods). Native status: USDA PLANTS. Occurrence records in this region's box: 40,962 (GBIF). Adelgid: USDA Forest Service; Penn State Extension.",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -433,7 +433,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Fast for a conifer and long-lived; give it room to become a big tree. Salt-sensitive, so keep it well back from a winter-salted road.",
     givesNote: "The great evergreen of the East: a couple of hundred caterpillar species, seed for finches and chickadees, and dense shelter and nesting cover the year round.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Host count: pine genus, NWF/Tallamy. Native status: USDA PLANTS. Occurrence records in this region's box: 7,140 cultivated observations (iNaturalist) and a continuous wild range across the region.",
     propagation: {
       methods: ["seed-cold-moist", "seed-direct"],
@@ -468,7 +468,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "An easygoing woodland-edge shrub for part shade.",
     givesNote: "Ribbon-like yellow flowers open in late fall when nothing else does, feeding late-season moths.",
-    confidence: "medium",
+    hostCountFrom: "published",
     basis: "Wildflower Center; host count Hamamelis, NWF.",
     propagation: {
       methods: ["seed-double-dormant", "layering"],
@@ -505,7 +505,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Needs genuinely acidic soil — check pH first. Won't thrive in limey ground no matter what you do.",
     givesNote: "A keystone shrub: hundreds of caterpillars, spring flowers for specialist bees, and berries for you and the birds.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Host count: Vaccinium genus, NWF/Tallamy.",
     propagation: {
       methods: ["cuttings-softwood", "cuttings-semi-hardwood", "seed-cold-moist"],
@@ -540,7 +540,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Needs a male plant nearby for the female to fruit — buy them as a pair. Tolerates standing water. Berries mildly toxic if eaten by pets.",
     givesNote: "Bare red-berried branches light up the winter garden and feed robins and waxwings in late winter.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Wildflower Center; host count Ilex, NWF.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-double-dormant"],
@@ -575,7 +575,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "The answer for a spot that stays wet or even floods. Not for dry ground.",
     givesNote: "Pincushion flowers swarm with butterflies and bees; ducks eat the seeds. A rain-garden workhorse.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Wildflower Center / Xerces.",
     propagation: {
       methods: ["cuttings-hardwood", "cuttings-softwood"],
@@ -610,7 +610,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Nearly indestructible — takes sun or part shade, wet or dry, and poor soil. Great for a tough bank.",
     givesNote: "Peeling bark for winter interest, white flowers for bees, and roots that lock down a slope.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Wildflower Center; host count Physocarpus, NWF.",
     propagation: {
       methods: ["cuttings-softwood", "cuttings-hardwood"],
@@ -645,7 +645,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "An adaptable, reliable hedge or screen. Plant two different arrowwoods for better berry set.",
     givesNote: "Flat white flower clusters for pollinators and blue-black fruit that fuels fall bird migration.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Wildflower Center; host count Viburnum, NWF.",
     propagation: {
       methods: ["cuttings-softwood", "seed-double-dormant"],
@@ -680,7 +680,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Spreads by underground runners to form a thicket — excellent for holding a bank, but give it room.",
     givesNote: "Brilliant red winter stems, berries for birds, and one of the best plants for stabilizing wet, eroding ground.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Wildflower Center; host count Cornus, NWF.",
     propagation: {
       methods: ["cuttings-hardwood", "layering", "cuttings-softwood"],
@@ -715,7 +715,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A deep taproot makes it extremely drought-proof once set, but also hard to move — plant it where it'll stay.",
     givesNote: "Fixes its own nitrogen, thrives on the poorest dry soil, and covers itself in bee-covered white puffs.",
-    confidence: "medium",
+    hostCountFrom: "published",
     basis: "Wildflower Center / Xerces; host count Ceanothus, NWF.",
     propagation: {
       methods: ["seed-scarify", "seed-cold-moist"],
@@ -750,7 +750,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Suckers into a thicket over time — ideal for a wildlife hedge, more than a tidy specimen.",
     givesNote: "Edible nuts for you and wildlife, early catkins for the first pollen of spring, and lots of caterpillars.",
-    confidence: "medium",
+    hostCountFrom: "published",
     basis: "Wildflower Center; host count Corylus, NWF.",
     propagation: {
       methods: ["suckers", "seed-cold-moist"],
@@ -787,7 +787,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Loves poor, dry, sandy soil and hates wet feet. Slow to appear in spring — don't dig it up thinking it died. Sap is toxic if eaten.",
     givesNote: "A monarch caterpillar host, visited by many butterflies, on a tidy, well-behaved plant.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Wildflower Center / Xerces; Asclepias hosts monarchs (specialist).",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -822,7 +822,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Unlike most milkweeds it wants steady moisture — perfect for a rain garden or damp low spot. Sap toxic if eaten.",
     givesNote: "A monarch host that also draws swarms of bees and butterflies to its fragrant pink flowers.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Wildflower Center / Xerces.",
     propagation: {
       methods: ["seed-cold-moist", "division"],
@@ -857,7 +857,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Easy, long-lived, and drought-tough. Leave the seed heads standing over winter.",
     givesNote: "Months of butterfly-covered blooms, then seed heads that feed goldfinches into the winter.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Wildflower Center.",
     propagation: {
       methods: ["seed-cold-moist", "division"],
@@ -892,7 +892,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Spreads politely to fill a bed. About as easy as a native perennial gets.",
     givesNote: "A long, golden late-summer show for pollinators and finches, on a plant that thrives on neglect.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Wildflower Center.",
     propagation: {
       methods: ["seed-cold-moist", "division"],
@@ -927,7 +927,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Spreads at the root to form a patch. Give it good airflow to limit powdery mildew on the leaves.",
     givesNote: "Lavender crowns alive with bees, butterflies, and hummingbird moths; the leaves make a fragrant tea.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Wildflower Center / Xerces.",
     propagation: {
       methods: ["division", "seed-cold-moist"],
@@ -962,7 +962,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Pinch it back in early summer for a bushier, less floppy plant. Otherwise carefree.",
     givesNote: "A keystone: it hosts 100+ caterpillars and its late purple flowers are a critical last fuel stop for migrating monarchs and bees.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Host count: Symphyotrichum genus, NWF/Tallamy.",
     propagation: {
       methods: ["division", "seed-cold-moist"],
@@ -997,7 +997,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The wild plant spreads by its roots into a patch; the cultivar 'Fireworks' is tamer. And no — goldenrod doesn't cause hay fever (that's ragweed).",
     givesNote: "A keystone that hosts 100+ caterpillars and blankets fall with pollen and nectar when pollinators need it most.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Host count: Solidago genus, NWF/Tallamy.",
     propagation: {
       methods: ["division", "seed-cold-moist"],
@@ -1032,7 +1032,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Tall and dramatic; wants reliably moist soil. Put it at the back of a damp bed.",
     givesNote: "Big mauve flower domes that butterflies cover in late summer, on a bold architectural plant.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Wildflower Center.",
     propagation: {
       methods: ["seed-cold-moist", "division"],
@@ -1067,7 +1067,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Happy in dry shade where little else blooms. Short-lived individually but self-sows to stick around.",
     givesNote: "Nodding red-and-yellow lanterns that arrive just as ruby-throated hummingbirds return in spring.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Wildflower Center.",
     propagation: {
       methods: ["seed-surface-light", "seed-cold-moist"],
@@ -1102,7 +1102,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Adaptable to almost any soil, wet or dry. Evergreen rosettes hold the ground over winter.",
     givesNote: "White bell flowers for spring bees, then rusty seed stalks for winter structure. Very low fuss.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Wildflower Center / Xerces.",
     propagation: {
       methods: ["seed-cold-moist", "division"],
@@ -1137,7 +1137,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "An easygoing early bloomer for part shade to sun. Self-sows gently.",
     givesNote: "Early yellow flowers feed small native bees, and it's a host plant for black swallowtail caterpillars.",
-    confidence: "medium",
+    hostCountFrom: "none",
     basis: "Wildflower Center; black swallowtail host.",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -1172,7 +1172,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Slow the first year or two, then a deep taproot makes it a drought-proof, shrub-sized anchor for decades. Plant where it'll stay.",
     givesNote: "Spikes of blue pea-flowers for bumblebees, it fixes its own nitrogen, and hosts the wild indigo duskywing, sulphurs and the frosted elfin.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Wildflower Center / Xerces.",
     propagation: {
       methods: ["seed-scarify", "seed-cold-moist"],
@@ -1207,7 +1207,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Must have consistent moisture — it will collapse in a dry spot. Short-lived but self-sows in damp ground.",
     givesNote: "Vivid red spires that hummingbirds feed at; a strong choice for a wet, part-shady spot.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Wildflower Center.",
     propagation: {
       methods: ["seed-surface-light", "division"],
@@ -1242,7 +1242,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A reliable filler for shade under trees. Slowly forms a soft mound.",
     givesNote: "Pink spring flowers for early native bees, followed by a tidy groundcover of maple-shaped leaves.",
-    confidence: "medium",
+    hostCountFrom: "none",
     basis: "Wildflower Center.",
     propagation: {
       methods: ["division", "seed-cold-moist"],
@@ -1279,7 +1279,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Thrives on hot, dry, poor soil where nothing else will. Roots plunge 5+ feet down.",
     givesNote: "Blue-green summer blades turn mahogany-orange in fall; hosts skipper butterflies, shelters birds, and locks down dry slopes.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Wildflower Center / Xerces; skipper host.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -1314,7 +1314,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Takes almost any soil from dry to wet. Deep roots make it a top choice for a rain garden or eroding slope.",
     givesNote: "An upright screen of airy seed heads that birds mob in winter, with roots that soak up runoff and hold soil.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Wildflower Center / Xerces.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -1349,7 +1349,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Big and bold, with roots reaching 8+ feet. Best where a tall grass has room to make a statement.",
     givesNote: "Turkey-foot seed heads and copper fall color; premier soil-building, carbon-storing, erosion-stopping roots.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Wildflower Center / Xerces.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -1384,7 +1384,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Spreads slowly into a soft, no-mow carpet for dry shade under trees where grass fails.",
     givesNote: "A fine-textured green groundcover that hosts many little skippers and needs no mowing, watering, or feeding.",
-    confidence: "medium",
+    hostCountFrom: "none",
     basis: "Wildflower Center; Carex hosts numerous skippers.",
     propagation: {
       methods: ["division"],
@@ -1421,7 +1421,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Vigorous — great to cover a fence or bank, but keep it off wood siding and give it room. Berries are toxic to people and pets.",
     givesNote: "Scarlet fall color, high-fat berries dozens of birds depend on, and a larval host for showy sphinx moths.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Wildflower Center; sphinx moth host.",
     propagation: {
       methods: ["cuttings-softwood", "cuttings-hardwood", "layering"],
@@ -1456,7 +1456,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A well-mannered climber for a trellis or mailbox — nothing like invasive Japanese honeysuckle. Give it something to twine on.",
     givesNote: "Coral trumpets bloom for months, feeding hummingbirds; the red berries then feed songbirds.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Wildflower Center.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "cuttings-hardwood"],
@@ -1493,7 +1493,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Runs by runners to knit a living carpet quickly — perfect as a lawn alternative or path edge.",
     givesNote: "White spring flowers for bees, tiny sweet berries for birds and people, and a low groundcover that hosts many caterpillars.",
-    confidence: "high",
+    hostCountFrom: "published",
     basis: "Wildflower Center; host count Fragaria/Rosaceae, NWF.",
     propagation: {
       methods: ["runners", "division"],
@@ -1528,7 +1528,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Spreads quickly to blanket damp shade — use it to fill difficult wet, shady ground, and edit it where it overreaches.",
     givesNote: "Cheerful yellow spring flowers held above an evergreen carpet that smothers weeds in shade.",
-    confidence: "medium",
+    hostCountFrom: "none",
     basis: "Wildflower Center.",
     propagation: {
       methods: ["division", "seed-surface-light"],
@@ -1563,7 +1563,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Evergreen and unfussy in dry to average shade. One of the easiest natives for a shady, sloping spot.",
     givesNote: "Stays green all winter, its fronds catching leaves and slowing erosion on a wooded bank; shelter for small wildlife.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Wildflower Center. Ferns support very few caterpillars — included for erosion and shade cover, not food-web value.",
     propagation: {
       methods: ["division", "spores"],

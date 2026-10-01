@@ -66,6 +66,18 @@ export interface EcoScores {
   establishment: number;
 }
 
+/** How sure we are of a plant's figures — see `lib/confidence.ts`. */
+export type Confidence = "high" | "medium" | "low";
+
+/**
+ * Where a plant's caterpillar count came from, firmest first:
+ * `counted` from a dataset for this region (Gaytán, Plant-SyNZ); `published`,
+ * a published genus count used as is (Tallamy/NWF in the eastern US);
+ * `estimated`, our own figure, usually carried over from another region or a
+ * relative; `rough`, which the row itself calls rough; `none`, no source.
+ */
+export type HostCountFrom = "counted" | "published" | "estimated" | "rough" | "none";
+
 export interface Plant {
   id: string;
   common: string;
@@ -114,7 +126,14 @@ export interface Plant {
   careNote: string; // "what it needs from you"
   givesNote: string; // "what it does for you"
 
-  confidence: "high" | "medium" | "low";
+  /** Where `hostLepCount` came from — the evidence the confidence level is
+   *  worked out from (`lib/confidence.ts`). */
+  hostCountFrom: HostCountFrom;
+  /** Rate this plant lower than its evidence alone would, for a reason `basis`
+   *  gives in a "Confidence medium: …" sentence. Never higher. */
+  confidenceLowered?: "medium" | "low";
+  /** How sure we are of this row's figures. Derived on load, never typed. */
+  confidence: Confidence;
   basis: string; // where the numbers come from
 
   /** How to reproduce it — save seed, or take from the plant you've got. */

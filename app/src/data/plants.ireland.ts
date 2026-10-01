@@ -45,8 +45,8 @@
 //  - **other scores (0–100)**: informed estimates from Irish and British sources
 //    — the National Biodiversity Data Centre's pollinator lists, the All-Ireland
 //    Pollinator Plan, Teagasc and Woodland Trust/Woodlands of Ireland guidance,
-//    and the RHS "Plants for Pollinators" list. Labelled as estimates by each
-//    row's `confidence`, the way they are everywhere else.
+//    and the RHS "Plants for Pollinators" list. Estimates, the way they are
+//    everywhere else.
 //
 // **Ash and wych elm are deliberately absent.** *Fraxinus excelsior* and
 // *Ulmus glabra* are both native, both common once, and both excellent wildlife
@@ -91,7 +91,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Slow, and then there for centuries. A deep taproot makes it self-sufficient once it takes but very hard to move, so plant a small one — a two-year seedling beats a staked tree — and give it room well away from the house.",
     givesNote: "Among the richest trees on the island for wildlife: hundreds of caterpillar species, and so the tits, warblers and treecreepers that raise their broods on them, acorns for jays and mice, and a trunk that ends up carrying its own garden of moss and fern.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 391 Lepidoptera recorded on native oaks in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (395 if introduced oaks count too).",
     propagation: {
       methods: ["seed-warm", "seed-direct"],
@@ -126,7 +126,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Takes wetter, heavier ground than sessile oak and will sit in winter waterlogging that would kill most trees. Same rules otherwise: plant small, plant once, and leave it alone.",
     givesNote: "Everything the sessile oak gives, on ground too wet for it — and the acorns on long stalks that give the tree its name are the ones jays carry off and bury, which is how oak woods move.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 391 Lepidoptera on native oaks in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["seed-warm", "seed-direct"],
@@ -161,7 +161,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Fast, light and short-lived by tree standards — sixty or eighty years, not six hundred. It will take sour, peaty, waterlogged ground nothing else wants. The thin canopy means you can garden underneath it, which is not true of most trees this size.",
     givesNote: "Second only to oak and willow for caterpillars here, and the seed keeps redpolls and siskins going through winter. Its roots feed a whole community of fungi, so an old birch is usually the best mushroom spot in a garden.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 306 Lepidoptera on native birches in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["seed-surface-light", "seed-direct"],
@@ -196,7 +196,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Plant it in the wettest corner you have — it will stand in standing water, which almost nothing else will. It fixes its own nitrogen, so it wants no feeding and will improve poor ground for whatever you plant near it.",
     givesNote: "Holds a stream bank better than anything else here, takes up the water a soggy garden can't shed, and the little woody cones feed siskins and redpolls all winter. Catkins in February, when nothing else is offering pollen.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 163 Lepidoptera on native alders in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["seed-cold-moist", "cuttings-hardwood"],
@@ -231,7 +231,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Grows almost anywhere damp and grows fast. Cut it hard every few years if you want it to stay a big shrub rather than a small tree — it takes that treatment happily and comes back thicker.",
     givesNote: "The single most important plant in an Irish spring: the catkins are the first big pollen and nectar source of the year, and queen bumblebees emerging from hibernation depend on them. After that it feeds more caterpillars than anything but oak.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 377 Lepidoptera on native willows in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["cuttings-hardwood", "seed-direct"],
@@ -266,7 +266,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "It suckers — that is how aspen lives, as a spreading clone rather than single trees — so give it space away from paths and beds, or be ready to mow the suckers off. Wants light; it will not come on in shade.",
     givesNote: "Among the very top trees for caterpillars here, and rare enough in Ireland that planting one is a genuine contribution. The sound of it in wind is the reason people plant it anyway.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 258 Lepidoptera on native poplars in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level (259 with introduced poplars).",
     propagation: {
       methods: ["suckers", "root-cuttings"],
@@ -301,7 +301,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Suckers from the roots, so keep it out of a small lawn. Prune only in summer if you must — cherries bleed and pick up disease from winter cuts. Wants drainage; it dislikes a waterlogged winter.",
     givesNote: "A week of white blossom that every bee in the townland finds, then fruit the blackbirds, thrushes and mistle thrushes strip before you get a look in. One of the top three genera here for caterpillars.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 318 Lepidoptera on native cherries/blackthorn in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level (321 counting introduced relatives).",
     propagation: {
       methods: ["seed-cold-moist", "suckers"],
@@ -336,7 +336,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Happier in shade and damp than wild cherry, which makes it the cherry for a north-facing or soggy corner. It is the usual host of bird-cherry ermine moth, whose caterpillars can web a whole tree in webbing in May — it looks alarming, the tree re-leafs by July, and it is worth leaving alone.",
     givesNote: "Long hanging spikes of almond-scented white flowers in May, then small black cherries that blackbirds and thrushes take. Carries the same enormous caterpillar list as the other cherries, on ground too wet and shaded for them.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 318 Lepidoptera on native Prunus in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["seed-cold-moist", "suckers"],
@@ -371,7 +371,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "About the most forgiving native tree there is: thin acid soil, wind, exposure, altitude, a small garden — it takes all of it and stays a manageable size. Needs sun on the crown to fruit well; it will survive in shade but sulk.",
     givesNote: "Flat heads of cream flowers for hoverflies and bees in May, then scarlet berries in August that mistle thrushes guard and redwings and fieldfares strip when they arrive from Scandinavia in October. The best small tree here for a town garden.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 109 Lepidoptera on native rowans and whitebeams in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -406,7 +406,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The one native tree that thrives in deep dry shade, including under other trees and against a north wall. Slow — a foot a year at best — and effectively immortal. **Every part except the red flesh of the berry is seriously poisonous to people, dogs, horses and cattle**, so think hard before planting it where children or animals graze.",
     givesNote: "Evergreen cover and nest sites in a country short of both, and berries blackbirds and mistle thrushes eat all winter. Clips to a hedge better than anything else and will regrow from bare old wood, which almost no other conifer does.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 7 Lepidoptera on native yew in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Toxicity: Royal Horticultural Society; Teagasc poisonous-plant guidance.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-double-dormant"],
@@ -441,7 +441,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Grows in dry shade where little else will, and takes clipping. Male and female flowers are on separate plants, so you need a female for berries and a male somewhere in the neighborhood — often there already is one. Slow to start, then steady.",
     givesNote: "Winter berries for thrushes, blackbirds and redwings when nothing else is left, dense evergreen cover for nesting and roosting, and the food plant of the holly blue — whose spring brood lays on holly and whose summer brood moves to ivy.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 7 Lepidoptera on native holly in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level; the holly blue tie is from the Irish butterfly recording scheme.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-double-dormant"],
@@ -476,7 +476,8 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Wants full sun and reasonable drainage. Buy from a source that can say it is the true wild species rather than a garden crab — almost every hedgerow 'crab' in Ireland is a seedling of an orchard apple, and it is worth asking.",
     givesNote: "One of the best pollinator trees on the island — an open, shallow flower that short-tongued solitary bees can actually use — and fruit that hangs into winter for blackbirds, fieldfares and, on the ground, badgers and foxes.",
-    confidence: "medium",
+    hostCountFrom: "counted",
+    confidenceLowered: "medium",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 43 Lepidoptera on native apples in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. The figure rises to 171 if orchard apples are counted, which this row deliberately does not. Confidence is medium because wild-type stock is genuinely hard to source true.",
     propagation: {
       methods: ["seed-cold-moist", "layering"],
@@ -513,7 +514,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Takes real shade, takes limestone, takes a hard cut to the ground every seven or eight years and comes back with a fistful of straight poles — that is coppicing, and hazel has been managed that way here for thousands of years. Nuts need some sun and a second hazel nearby.",
     givesNote: "Lambs'-tail catkins in January, the first pollen of the year for early bumblebees, and nuts in autumn that red squirrels, jays and wood mice take. Multi-stemmed and dense, so it is the best nesting shrub here.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 124 Lepidoptera on native hazel in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["layering", "seed-cold-moist"],
@@ -548,7 +549,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Grows on anything and stands any amount of wind, salt and cutting — which is why it is the hedging plant here. Trim in late winter, after the birds have had the haws and before they nest. Plant a bare-root whip in winter; it is a fraction of the price and establishes better.",
     givesNote: "A froth of May blossom that every bee, hoverfly and beetle in the parish works, two hundred caterpillar species, dense thorny cover that keeps a nest safe from cats and crows, and red haws that carry redwings and fieldfares through winter.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 200 Lepidoptera on native hawthorns in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["seed-double-dormant", "cuttings-hardwood"],
@@ -583,7 +584,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "It suckers, and it means it — a blackthorn left alone will walk out into a lawn or a meadow and make a thicket. That is exactly what you want in a boundary hedge and exactly what you don't want in a border, so put it at the edge and cut the suckers you don't want.",
     givesNote: "White blossom in March on black twigs, weeks before anything else, when the first bees are desperate. The same three-hundred-odd caterpillar list as the cherries, the thorniest nesting cover on the island, and sloes for the birds — or for gin.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 318 Lepidoptera on native Prunus in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["suckers", "seed-double-dormant"],
@@ -618,7 +619,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Needs acid soil and full sun and will not compromise on either — on limestone it yellows and dies, and no amount of feeding fixes that. Clip lightly after flowering to keep it dense; never cut into old bare wood, which does not regrow.",
     givesNote: "The great late-summer nectar source here, when the meadow flowers are finished — honeybees, bumblebees and dozens of solitary bees work it, and heather honey is the result. Over a hundred caterpillar species, and winter cover for ground-nesting birds.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 118 Lepidoptera on native heather in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
@@ -653,7 +654,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The dry one — it wants a sharp-draining acid bank in full sun and will rot in the wet ground its cousin cross-leaved heath enjoys. Shear after flowering, never into bare wood.",
     givesNote: "Opens in June, a month before ling, and closes the gap between the spring blossom and the August heather — a genuinely important few weeks for bumblebees. The bell-shaped flower suits long-tongued bees particularly.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 56 Lepidoptera on native heaths in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
@@ -688,7 +689,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The answer to a permanently wet, acid, sunny patch — a boggy corner, the low end of a garden, the edge of a pond. It needs that wet; on a dry bank it is bell heather you want instead. Lime kills it.",
     givesNote: "Long-lasting nectar right through the late summer on ground too wet for almost any other flowering shrub, and a favorite of the large heath and other bog butterflies. The soft gray foliage is worth having on its own.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 56 Lepidoptera on native heaths in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "division"],
@@ -723,7 +724,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Acid soil, no exceptions, and it is happier in the dappled shade under birch or oak than in the open. Slow to settle and then spreads quietly underground. Do not feed it and do not lime it.",
     givesNote: "By a distance the biggest food source among the low shrubs here — 227 caterpillar species — plus early bell-shaped flowers for bumblebees and berries that everything from blackbirds to pine martens eats. And you can eat them too.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 227 Lepidoptera on native Vaccinium in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["division", "cuttings-semi-hardwood"],
@@ -758,7 +759,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Do not plant this in a small garden expecting to control it — bramble roots wherever a cane tip touches soil and will cross a border in one season. Plant it where you want an impenetrable boundary, cut a third of the canes out each winter, and let it be.",
     givesNote: "Possibly the most valuable single plant in an Irish hedge: months of flowers that hoverflies, bumblebees and butterflies work continuously, 186 caterpillar species, blackberries for birds, foxes and badgers, and thorny cover where wrens and robins nest.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 186 Lepidoptera on native brambles and raspberries in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["layering", "cuttings-hardwood"],
@@ -793,7 +794,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Wants sun and something to lean on — a hedge, a fence, a wall. Prune in winter if it gets out of hand, though it is far better left to arch. Asks for nothing else.",
     givesNote: "An open, single flower full of pollen that solitary bees and hoverflies can actually reach — which the double garden roses cannot offer — then hips that hold on the bush into January for thrushes, redwings and fieldfares.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 113 Lepidoptera on native roses in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level (116 with introduced roses).",
     propagation: {
       methods: ["cuttings-hardwood", "seed-double-dormant"],
@@ -828,7 +829,8 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The rose for sand, gravel, limestone and salt wind — it is a dune and pavement plant and will not thank you for rich soil or shelter. It suckers steadily into a low thicket, which is the point on a bank and a nuisance in a border.",
     givesNote: "Earliest of the native roses, and one of very few plants that will hold a sandy bank or a dry stone-strewn slope together. The black hips are unusual and the birds take them late.",
-    confidence: "medium",
+    hostCountFrom: "counted",
+    confidenceLowered: "medium",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 113 Lepidoptera on native roses in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level; the figure is for the genus, and this species' own share is likely smaller. Confidence medium for that reason.",
     propagation: {
       methods: ["suckers", "cuttings-hardwood"],
@@ -863,7 +865,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Give it the wettest ground you have and keep it away from drains and foundations — willow roots find water and are not polite about it. Coppice it every few years to keep it shrubby and productive.",
     givesNote: "The same huge caterpillar list as goat willow, on ground that is under water half the year, plus March catkins for emerging queen bumblebees. It will dry out a waterlogged corner faster than any engineering.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 377 Lepidoptera on native willows in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["cuttings-hardwood"],
@@ -898,7 +900,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Wants damp, acid to neutral ground and some shelter — a pond edge or the damp side of a hedge. The berries are purgative and are worth keeping away from small children. Otherwise it needs nothing.",
     givesNote: "**The brimstone butterfly lays on this and almost nothing else.** Ireland's brimstone is expanding westward and alder buckthorn is what it is following, so one of these in a garden is a real, specific contribution rather than a general good deed. Berries for blackcaps and thrushes on top.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 53 Lepidoptera on native buckthorns in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Brimstone larval dependence: Dryad European butterfly foodplant checklist; National Biodiversity Data Centre (Ireland).",
     propagation: {
       methods: ["seed-cold-moist", "cuttings-semi-hardwood"],
@@ -933,7 +935,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Easy on limy soils, happy in part shade, and it needs nothing. The fruit is poisonous to people and pets, so it is a shrub for the back of a hedge rather than beside a sandpit.",
     givesNote: "Small green flowers that hoverflies and solitary bees work hard in May — they are far more attractive to insects than they look — then shocking pink capsules in October that split to show orange seed. Robins and blackbirds eat them; so does the spindle ermine moth, whose caterpillars web the shrub and which it recovers from.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 15 Lepidoptera on native spindles in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level (19 with introduced spindles).",
     propagation: {
       methods: ["seed-cold-moist", "cuttings-semi-hardwood"],
@@ -968,7 +970,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Takes damp, even briefly waterlogged, ground and part shade — which makes it one of the more useful natives for a difficult corner. Buy the wild species, not the 'Roseum' snowball form, which is sterile and feeds nothing.",
     givesNote: "A ring of big showy sterile flowers around a center of tiny fertile ones — the showy ones are advertising and the small ones are the meal, which hoverflies and beetles find in numbers. Then translucent red berries that bullfinches and waxwings take, and good red autumn leaves.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 27 Lepidoptera on native viburnums in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-double-dormant"],
@@ -1003,7 +1005,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Grows on the poorest, driest, most exposed ground you have and fixes its own nitrogen, so never feed it. Two real warnings: it seeds itself about vigorously, and dry old gorse burns fiercely — keep it away from buildings and cut it back hard every few years to keep young growth on it.",
     givesNote: "In flower when nothing else is. A bumblebee out on a mild January day in Ireland is almost certainly on gorse, and that coconut-scented pollen is what gets early queens through. Dense spiny cover that stonechats, linnets and whitethroats nest in, and a bank held together for good.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 39 Lepidoptera on native gorses in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Winter flowering and bumblebee use: All-Ireland Pollinator Plan.",
     propagation: {
       methods: ["seed-scarify", "cuttings-semi-hardwood"],
@@ -1038,7 +1040,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Needs wet, acid, peaty ground in sun — a pond margin, a bog garden, the low wet end of a field. It fixes its own nitrogen, so poor ground is a feature. It will not grow on lime and will not grow dry.",
     givesNote: "The resinous leaves scent a whole garden after rain and have been used against midges here for centuries. A real bog-specialist food plant, and it holds and filters water on ground that is otherwise bare peat.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 42 Lepidoptera on native bog myrtle in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["layering", "cuttings-semi-hardwood"],
@@ -1073,7 +1075,8 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Wants sharp drainage, full sun and exposure — it is a plant of rock and thin soil, and it drowns in a rich damp border. Slow. Male and female plants are separate, so berries need both. Irish juniper is in real decline, so a planted one counts.",
     givesNote: "Evergreen shelter on ground too thin and exposed for anything else, and berries — three years in the ripening — that ring ouzels, thrushes and mistle thrushes take. Fifty-odd caterpillar species, which is a lot for a conifer.",
-    confidence: "medium",
+    hostCountFrom: "counted",
+    confidenceLowered: "medium",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 52 Lepidoptera on native junipers in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level (53 with introduced junipers). Confidence medium: Irish plants are a prostrate form and good wild-origin stock is hard to find.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
@@ -1108,7 +1111,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Grows anywhere, fast, especially on rich or disturbed ground, and will seed itself into every gutter and wall you own. Cut it hard in winter whenever you like — it comes back from a stump. Raw berries and all green parts are toxic; cooked berries are not.",
     givesNote: "Plates of cream flowers in June that hoverflies cover, then black berries in August that blackcaps, warblers and starlings fuel up on before migrating. Very few caterpillars by comparison, but for birds it is one of the best shrubs in the hedge.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 31 Lepidoptera on native elders in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["cuttings-hardwood", "seed-direct"],
@@ -1143,7 +1146,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Poor, dry, acid, sunny ground — feeding or watering it shortens its life, which is short anyway at fifteen years or so. It seeds about freely, so cut the pods off if you have neighbors with sandy soil. Hates being moved: plant it small.",
     givesNote: "Over a hundred caterpillar species, which is remarkable for a shrub this size, and an explosive flower that springs open under a visiting bumblebee and dusts it with pollen — worth standing and watching. Fixes its own nitrogen on ground with none.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 107 Lepidoptera on native brooms in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["seed-scarify", "cuttings-semi-hardwood"],
@@ -1180,7 +1183,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Wants damp, unimproved, low-fertility ground and full sun to light shade. It will be smothered in a rich border, so give it a rough damp corner or a meadow patch you cut once a year in September, after it has seeded.",
     givesNote: "**The marsh fritillary lays on this and nothing else.** That butterfly is Ireland's only legally protected insect and it is in trouble across Europe. On top of that it flowers from July into October, when almost nothing else does, and carries bumblebees and hoverflies through the autumn.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 9 Lepidoptera on devil's-bit scabious in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Marsh fritillary larval dependence: National Parks & Wildlife Service (Ireland) species action plan; Dryad European butterfly foodplant checklist.",
     propagation: {
       methods: ["seed-cold-moist", "division"],
@@ -1215,7 +1218,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "It is a biennial — leaves the first year, a spire the second, then it dies — so let it seed or you will have none. Happiest in part shade on acid ground, which is most of Ireland. **Every part is seriously poisonous**; keep it away from where children and pets graze.",
     givesNote: "Purpose-built for bumblebees: a long tube a queen can crawl right inside, spotted to guide her in, opening from the bottom up over weeks. Watch one plant for ten minutes in June and you will see most of the island's bumblebee species.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 12 Lepidoptera on native foxgloves in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Toxicity: Royal Horticultural Society.",
     propagation: {
       methods: ["seed-surface-light"],
@@ -1250,7 +1253,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Wants shade in summer and light in winter, which is exactly what a deciduous hedge bank gives it. Keep it off hot dry ground. Divide a clump after flowering every few years and it will thicken rather than fade.",
     givesNote: "Flowering from February, it is one of very few nectar sources when the first bumblebee queens and the brimstone butterfly come out of hibernation. It comes in two flower types — pin and thrum — which is Darwin's own example of a plant forcing insects to cross-pollinate it.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 35 Lepidoptera on native primulas in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["division", "seed-cold-moist"],
@@ -1285,7 +1288,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Plant bulbs in autumn under deciduous shade and then leave them completely alone — it takes years to build a drift and one careless dig to lose it. **Buy only from a nursery that can say the bulbs are cultivated Irish or British native stock**: wild-dug bulbs are illegal, and Spanish bluebell hybridizes the native out of existence.",
     givesNote: "Early nectar in the woodland shade when the canopy is still open, for bumblebees, hoverflies and brimstones. And an Irish bluebell wood in late April is one of the things people plant gardens for.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 2 Lepidoptera on native bluebells in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Hybridization with Spanish bluebell: National Biodiversity Data Centre (Ireland).",
     propagation: {
       methods: ["division", "seed-cold-moist"],
@@ -1320,7 +1323,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Give it damp ground and it needs nothing at all; on a dry border it will scorch by July. It spreads steadily at the root in ideal conditions, which is what you want on a stream bank and not what you want in a small bed.",
     givesNote: "Froths of cream flowers that hoverflies, soldier beetles and short-tongued bees cover — it offers pollen rather than nectar, which suits exactly those insects. The salicylic acid in it is where the word 'aspirin' comes from, by way of its old name Spiraea.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 44 Lepidoptera on native meadowsweets in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["division", "seed-cold-moist"],
@@ -1355,7 +1358,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Wants a permanently damp or wet, sunny spot — a pond edge, a ditch, a rain garden. Native and well-behaved here; it is worth knowing it is a serious invasive in North America, which is a lesson about moving plants rather than a reason to avoid it at home.",
     givesNote: "One of the best long-season nectar plants Ireland has — three months of flowers worked by bumblebees, honeybees, hoverflies and butterflies alike. It has three different flower forms that can only pollinate each other, so a patch does better than a single plant.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 15 Lepidoptera on native loosestrifes in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["division", "seed-surface-light"],
@@ -1390,7 +1393,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "It wants its feet wet — pond shallows, a boggy hollow, a ditch — and will not survive a dry summer border. Utterly undemanding otherwise. The sap irritates skin and all parts are toxic if eaten.",
     givesNote: "Big open gold cups in late March, exactly when queen bumblebees, early solitary bees and hoverflies emerge and have almost nothing to work with. In a wet garden it is the earliest useful flower there is.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 7 Lepidoptera on native marsh marigolds in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Toxicity: Royal Horticultural Society.",
     propagation: {
       methods: ["division", "seed-direct"],
@@ -1425,7 +1428,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Full sun and poor ground. In a fertile border it flops; on a thin verge or a meadow patch cut once in September it is superb. Leave the seed heads standing over winter.",
     givesNote: "Near the top of every Irish pollinator survey for nectar — bumblebees, honeybees, butterflies and day-flying moths all work it, and it keeps going into September. Then goldfinches take the seed heads apart through the autumn.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 88 Lepidoptera on native knapweeds in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Nectar ranking: All-Ireland Pollinator Plan.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -1460,7 +1463,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Sun and poor, well-drained ground. It fixes its own nitrogen, so never feed it, and it hates competition from lush grass — a thin, hungry lawn left uncut is where it thrives.",
     givesNote: "**The food plant of the common blue butterfly**, and of the six-spot burnet moth — the scarlet-spotted day-flier on Irish dunes in July. Over a hundred caterpillar species in all, months of nectar, and it will grow in a crack in a path.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 106 Lepidoptera on native trefoils in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Common blue and burnet moth dependence: Dryad European butterfly foodplant checklist; National Biodiversity Data Centre (Ireland).",
     propagation: {
       methods: ["seed-scarify", "division"],
@@ -1495,7 +1498,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Grows in any ordinary ground in sun and asks for nothing. Wind-pollinated, so the flowers are for the caterpillars rather than the bees, and the pollen is an allergen. Cut it down after seeding if you don't want it everywhere.",
     givesNote: "One of the biggest caterpillar hosts here — 192 species — and **the food plant of the small copper**, the little flashing orange butterfly of Irish roadsides and dunes. Seed for finches in autumn.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 192 Lepidoptera on native docks and sorrels in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Small copper dependence: Dryad European butterfly foodplant checklist.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -1530,7 +1533,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Yes, really. Put it somewhere it can be contained — behind a shed, inside a sunk bucket, at the back of a hedge — because it spreads hard at the root. It wants rich damp ground in **sun**: a shaded nettle patch is no use to butterflies. Cut half of it in June so there is fresh growth for the second brood.",
     givesNote: "**Peacock, small tortoiseshell, red admiral and comma caterpillars all eat nettle and very little else.** Four of the butterflies most likely to visit an Irish garden are produced by the plant most gardeners pull out. Nothing else here buys that much butterfly for that little effort.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 85 Lepidoptera on native nettles in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Nymphalid larval dependence: Dryad European butterfly foodplant checklist; National Biodiversity Data Centre (Ireland).",
     propagation: {
       methods: ["division", "seed-direct"],
@@ -1565,7 +1568,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Plant the little brown rhizomes in autumn under deciduous shade and be patient — it creeps about six feet in a century, which is why it tells you a wood is old. It vanishes entirely by midsummer, so mark where it is.",
     givesNote: "Open white flowers in the few weeks when the canopy is still bare and the first hoverflies and solitary bees are out. It offers pollen rather than nectar, which is exactly what those early bees are collecting.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 16 Lepidoptera on native anemones in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["division"],
@@ -1600,7 +1603,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The answer to damp, deep, hopeless shade — under a hedge, beside a north wall, along a shaded stream. It will take that ground over completely, which is a virtue there and a problem in a border. The leaves are edible for people, but every part is toxic to dogs and cats. If you pick it, check each leaf smells of garlic: lily-of-the-valley and lords-and-ladies look similar and are poisonous.",
     givesNote: "Solid white for weeks in a place where nothing much else grows, and one of the best early nectar sources for hoverflies, solitary bees and bumblebees in woodland shade. Ground cover thick enough to keep bare soil off a bank.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 16 Lepidoptera on native alliums in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level (21 with introduced alliums). Toxicity to pets: Royal Horticultural Society.",
     propagation: {
       methods: ["seed-cold-moist", "division"],
@@ -1635,7 +1638,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "One of very few good answers to **dry shade** — the north side of a wall, under a hedge on a bank, the dry lip of a ditch. It wants acid, sharp-draining ground and resents being watered or fed.",
     givesNote: "Flowers in late summer when the spring sources are finished, on ground almost nothing else will flower on, and long-tongued bumblebees work it hard. The wrinkled gray-green foliage looks good with heather and gorse.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 35 Lepidoptera on native germanders in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["division", "seed-direct", "cuttings-softwood"],
@@ -1670,7 +1673,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Easy in part shade on ordinary ground — a hedge bottom, a north-facing bank, the shaded edge of a lawn. Male and female plants are separate, so grow a few if you want seed. Cut it back in July and it flowers again into October.",
     givesNote: "Seven months of flowering, which is unusual for anything native, and 74 caterpillar species behind it. Long-tongued bumblebees and day-flying moths work the flowers.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 74 Lepidoptera on native campions in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -1705,7 +1708,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Wants sun and sharp drainage on limy or neutral ground — a gravel bed, a wall top, a dry sunny bank. It is a limestone plant and will sulk on heavy wet clay. Otherwise the least demanding perennial here.",
     givesNote: "Three months of large open flowers that bumblebees and solitary bees work constantly, on ground too dry and stony for most things. Good red autumn color in the leaves, which is rare in a perennial.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 41 Lepidoptera on native cranesbills in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["division", "seed-cold-moist"],
@@ -1741,7 +1744,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Nobody plants this and nobody needs to. The only decision is whether to leave it, and the case for leaving it is strong: stop mowing in April and let the lawn flower. It does spread hard and it does come back from a snapped taproot, so if you want it out of a bed, dig the whole root.",
     givesNote: "In late March and April an Irish garden has almost nothing else open, and queen bumblebees, solitary bees and hoverflies coming out of winter have to eat. A lawn full of dandelions at that moment is doing more for pollinators than most planted borders do all year. 142 caterpillar species after that, and goldfinches on the seed heads.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native, as the Taraxacum officinale aggregate). Host count: 142 Lepidoptera on native dandelions in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Early-season pollinator importance: All-Ireland Pollinator Plan.",
     propagation: {
       methods: ["seed-direct", "root-cuttings"],
@@ -1778,7 +1781,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Takes salt, sand, drought, poor soil and hard wear, which is why it is in every lawn seed mix sold here. Left uncut from April to September it flowers and feeds; cut short it is simply a tough lawn. Either is useful.",
     givesNote: "186 caterpillar species — the grasses carry the meadow browns, ringlets, speckled woods and wall browns that most people never realize are grass-fed. It also binds a sandy bank better than almost anything.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 186 Lepidoptera on native fescues in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -1813,7 +1816,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Wants wet, acid, open ground and full sun. It dies back completely in winter — the whole plant, flower stems and all, goes and blows away — so it is a summer-and-autumn structure plant, not an evergreen one.",
     givesNote: "The tussocks are where bog insects overwinter and where meadow pipits and skylarks nest, and it holds water on ground that would otherwise run straight off. The autumn color is the best of any grass here.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 21 Lepidoptera on native purple moor-grass in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["division", "seed-cold-moist"],
@@ -1848,7 +1851,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "One of the very few good grasses for **damp shade** — a wet corner under trees, the north side of a wet garden. Evergreen tussock, so cut last year's growth out with a rake in early spring rather than shearing it.",
     givesNote: "Sixty-odd caterpillar species and the best cover here for small mammals and overwintering insects — an old tussock is a whole habitat. The July flower haze catches low light and is the reason it is planted in gardens everywhere.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 62 Lepidoptera on native hair-grasses in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["division", "seed-direct"],
@@ -1883,7 +1886,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A meadow grass rather than a border one: sow it into thin, unfertilized ground and cut once in late summer. It is short and unaggressive, which is exactly why it suits a wildflower patch where rye-grass would swamp everything.",
     givesNote: "Flowers in April, weeks before the other grasses, so the pollen-feeding insects and grass-feeding caterpillars get an early start. The coumarin that makes hay smell of hay comes from this one plant.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 10 Lepidoptera on native sweet vernal-grasses in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -1919,7 +1922,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A damp-ground and part-shade grass, which is unusual — most meadow grasses want sun and drainage. It runs at the surface by stolons, so it knits a damp bank together quickly. In a lawn it is simply there already.",
     givesNote: "173 caterpillar species, second only to the fescues among the grasses here — the meadow browns, ringlets and speckled woods that drift around an Irish garden in July all grew up on grass like this. Left uncut it also shelters the insects that overwinter at the base of a tussock.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 173 Lepidoptera on native meadow-grasses in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -1956,7 +1959,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The best plant here for **deep dry shade**, and it will grow up anything. It does not parasitize a healthy tree, but its weight can bring down a sick one, and it will find the gaps in old mortar — so keep it off crumbling walls and thin it out of small trees. Berries are toxic to people and pets.",
     givesNote: "Two gifts nothing else gives, both at the wrong end of the year: **nectar in October**, when red admirals, commas and late queen wasps and hoverflies are desperate, and **berries in February**, when the blackbirds and wood pigeons have stripped everything else. Plus evergreen nesting cover and the food plant of the holly blue's summer brood.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 18 Lepidoptera on native ivy in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Autumn nectar and winter fruit value: All-Ireland Pollinator Plan.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
@@ -1991,7 +1994,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Feet in the shade, head in the light — the classic advice, and it is right. Give it a hedge, trellis or old tree to climb and keep the root cool. Its twining stems can strangle a thin sapling, so keep it off young trees.",
     givesNote: "Built for moths: the flowers are pale so they show at dusk, they open in the evening, and the scent carries — elephant hawk-moths and the big hawk-moths are what it is advertising to. Then red berries for warblers and thrushes.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 57 Lepidoptera on native honeysuckles in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level — 111 if introduced ornamental honeysuckles are counted, which this row does not.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
@@ -2026,7 +2029,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "It climbs by tendrils, so give it a hedge bottom, a fence or a rough grassy bank to haul itself up. Fixes its own nitrogen: never feed it. It does not need a trellis and will look wrong on one.",
     givesNote: "One of the top nectar plants in Irish pollinator surveys — long-tongued bumblebees work it all summer — and 78 caterpillar species. In Ireland the vetches are also what the cryptic wood white, our own recently-recognized butterfly, lays on.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 78 Lepidoptera on native vetches in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Cryptic wood white foodplants: National Biodiversity Data Centre (Ireland).",
     propagation: {
       methods: ["seed-scarify", "division"],
@@ -2061,7 +2064,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A meadow and roadside plant, not a border one — sow it into rough grass where it can scramble, and cut once in late summer after it has seeded. Nitrogen-fixing, so poor ground suits it.",
     givesNote: "**The main food plant of the cryptic wood white**, a butterfly only recognized as its own species in 2011 and, in these islands, found only in Ireland. Long-tongued bumblebees take the nectar all summer.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 48 Lepidoptera on native vetchlings in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level (49 with introduced relatives). Cryptic wood white dependence: National Biodiversity Data Centre (Ireland); Dryad European butterfly foodplant checklist.",
     propagation: {
       methods: ["seed-scarify", "division"],
@@ -2098,7 +2101,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Takes part shade and spreads by runners into a dense low mat — good under a hedge, along a path edge, or at the front of a shady border. Pull the runners you don't want; it is easy to keep in bounds.",
     givesNote: "Open white flowers for solitary bees and hoverflies through spring, then tiny intense berries that blackbirds, robins and, honestly, whoever gets there first will take. Good weed-suppressing cover in a difficult half-shaded strip.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 50 Lepidoptera on native strawberries in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level (53 with introduced strawberries).",
     propagation: {
       methods: ["runners", "seed-surface-light"],
@@ -2133,7 +2136,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Dry, sunny, poor, preferably limy ground — a bank, a gravel garden, a thin lawn. It creeps at the root into a low mat and will not tolerate being wet in winter. Cut it back in autumn once it has seeded.",
     givesNote: "127 caterpillar species, and the ones that matter here are the **hawk-moths**: elephant and small elephant hawk-moth caterpillars feed on bedstraws, and they are among the largest and most startling insects an Irish garden produces. The honey scent on a warm evening is the other reason to grow it.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 127 Lepidoptera on native bedstraws in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Hawk-moth associations: Dryad European butterfly and moth foodplant data; National Biodiversity Data Centre (Ireland).",
     propagation: {
       methods: ["division", "seed-cold-moist"],
@@ -2168,7 +2171,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "You almost certainly already have it. The only 'care' worth mentioning is not spraying it and letting a strip of lawn go unmown from April — the All-Ireland Pollinator Plan's single easiest recommendation, and this is one of the plants it is for.",
     givesNote: "170 caterpillar species, mostly moths, and seed spikes that goldfinches and linnets strip in autumn.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 170 Lepidoptera on native plantains in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -2203,7 +2206,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "It is already in your lawn. Raise the mower and cut every six weeks instead of every two weeks and it will flower — that single change is the most effective pollinator action available to an Irish garden, and it costs less work, not more. It fixes nitrogen, so the grass around it greens up too.",
     givesNote: "Among the very top nectar plants recorded in Irish pollinator surveys, and it is right there under the mower. 105 caterpillar species, and the clovers are what the clouded yellow lays on when it arrives from the south in a good summer.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 105 Lepidoptera on native clovers in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Mowing guidance and nectar ranking: All-Ireland Pollinator Plan.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -2238,7 +2241,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Wants full sun and the sharpest drainage you can give it — gravel, a wall top, between paving stones, a south-facing bank. It will not survive a wet winter in heavy soil, and that is the only way most people kill it.",
     givesNote: "One of the densest nectar sources per square foot you can plant — a thyme mat in July is audible. Across Europe wild thyme is the plant the large blue butterfly's whole extraordinary life cycle depends on, and here it carries 85 caterpillar species and every short-tongued bee in the area.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native, as Thymus praecox subsp. polytrichus). Host count: 85 Lepidoptera on native thymes in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["division", "cuttings-softwood", "layering"],
@@ -2275,7 +2278,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The one fern that genuinely tolerates **dry shade** — under a hedge, against a north wall, in the rain shadow of a building. Cut last year's fronds off in late winter before the new ones uncurl. It asks for nothing else, ever.",
     givesNote: "Cover and damp shelter at ground level for frogs, newts, beetles and overwintering insects, in the awkward dry shade where almost nothing else will grow. Ferns feed few caterpillars — that is honest and true of all of them — but the habitat they make is worth the space.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 5 Lepidoptera on native buckler ferns in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Toxicity: Royal Horticultural Society.",
     propagation: {
       methods: ["division", "spores"],
@@ -2310,7 +2313,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "It wants permanently wet, acid ground and light shade — a pond margin, a bog garden, a wet ditch. In dry soil it stays small and eventually gives up. Slow to establish and then enormous and very long-lived, so give it the space now.",
     givesNote: "The best cover here for frogs, newts and damp-ground invertebrates, and a real structure plant at a pond edge. The \"royal\" is for its size: an old clump stands taller than a person.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: **0 — this genus has no entry at all in the Gaytán 2026 matrix**, so the honest number is none recorded rather than a borrowed one. Ferns support very few Lepidoptera generally; the value of this row is habitat, not host plant.",
     propagation: {
       methods: ["spores", "division"],
@@ -2345,7 +2348,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Acid, damp, shaded ground — it will not grow on lime and it will not grow dry. Evergreen, so it holds the shady corner through winter when the male fern has gone over. Leave the old fronds until spring.",
     givesNote: "Year-round ground cover and shelter in damp shade, and one of very few evergreen natives for an acid woodland-edge planting. The narrow upright fertile fronds standing out of the flat rosette are worth a look.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 1 Lepidoptera on hard fern in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["spores", "division"],
@@ -2380,7 +2383,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A limestone plant: it wants shade, moisture and lime, which makes it the right fern for a shaded wall, a north-facing basement area or the base of an old mortared wall. Evergreen. Trim the tatty fronds in spring.",
     givesNote: "Evergreen shade cover and shelter for ground-level invertebrates in places with essentially no soil — wall crevices, paving gaps, the dark side of a step. It will grow where nothing else here can get a root in.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 2 Lepidoptera on native spleenworts in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["spores", "division"],
@@ -2415,7 +2418,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Shade and moisture, and it is remarkably tolerant of everything else — it will take drier ground than most ferns once settled. Evergreen, so leave the fronds on for winter and cut them out in March.",
     givesNote: "Winter-long ground cover and shelter in shade, in the months when a garden has least to offer. Ireland's mild damp climate suits it better than almost anywhere, which is why it grows to twice the size here that it does inland in Europe.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 1 Lepidoptera on native shield ferns in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["division", "spores"],

@@ -19,8 +19,8 @@
 //    as a larval host. Eastern counts come from Tallamy / NWF; for the West the
 //    same genera generally host fewer species, so these are rounded, honest
 //    genus-level *estimates* (willow, poplar and oak still lead here as they do
-//    in the East). Each row says so in `basis`; where a figure is a rougher
-//    guess, `confidence` reflects it.
+//    in the East). Each row says so in `basis` and records it in
+//    `hostCountFrom`.
 //  - size arrays: typical field growth on an average west-side site; mature*Ft
 //    is the honest eventual ceiling, often far larger than nursery tags admit.
 //  - other scores (0–100): informed estimates from regional floras and
@@ -63,7 +63,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Slow but extraordinarily long-lived and drought-proof once set — a taproot makes it self-sufficient but hard to transplant, so plant small and leave it. The West's imperiled oak-prairie habitat depends on it.",
     givesNote: "Oaks are among the top caterpillar trees anywhere — hundreds of species — plus acorns for jays, woodpeckers and mammals, and the backbone of Garry oak savanna.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: oak genus, western estimate (Tallamy/NWF).",
     propagation: {
       methods: ["seed-warm", "seed-direct"],
@@ -98,7 +98,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Gets genuinely huge — give it real room away from buildings and lines. Fast, tough, and drought-tolerant once established.",
     givesNote: "Seeds feed crossbills, siskins and chickadees; the dense canopy shelters owls and songbirds; and few trees store more carbon.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS. Size: USFS Silvics / FEIS. Host count: Pseudotsuga, conservative western estimate.",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -133,7 +133,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Wants steady moisture and tolerates shade and wet ground — perfect for a damp, part-shaded spot, but it will struggle and 'flag' in a hot, dry one. Deer browse young plants.",
     givesNote: "Evergreen year-round shelter for birds, dense screening, huge carbon storage, and roots that hold wet ground together.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS. Size: USFS FEIS. Host count: conifer, low (few Lepidoptera use it).",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -168,7 +168,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Big and fast; give it room. Its mossy limbs become their own hanging gardens over time.",
     givesNote: "Early flowers feed the first bees of spring, samaras feed birds and rodents, and it hosts many caterpillars while draping itself in moss and licorice fern.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: maple genus, western estimate.",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -203,7 +203,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Very fast and very large, with thirsty, seeking roots — keep it well away from drains, foundations and paving, and only where a big riparian tree belongs. Wants damp ground.",
     givesNote: "One of the top caterpillar hosts in the West — food for warblers and vireos — plus balsam-scented spring buds and roots that armor a riverbank.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS. Host count: poplar/aspen genus, high western estimate (Tallamy/NWF).",
     propagation: {
       methods: ["cuttings-hardwood", "seed-surface-light"],
@@ -238,7 +238,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Notoriously fussy to establish: plant a small one in fast-draining soil, in sun, and never summer-water it — irrigation and disturbance are what kill madrones. Leave the roots undisturbed.",
     givesNote: "Peeling cinnamon bark, urn-shaped flowers for bees, and red-orange berries that band-tailed pigeons, robins and waxwings depend on.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Culture: notoriously sensitive to summer water. Host count: Arbutus, low-moderate estimate.",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -273,7 +273,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Adaptable and drought-tolerant once set, taking sun or part shade. Deer and birds both love it, so protect young plants.",
     givesNote: "Early white blossoms for emerging bees, sweet blue 'saskatoon' berries loved by birds and people, and fiery fall color.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Amelanchier genus (NWF).",
     propagation: {
       methods: ["seed-cold-moist", "suckers"],
@@ -308,7 +308,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Fast and thicket-forming — great to hold a slope or damp edge, but give it room. Its very early catkins are a critical first food; more tolerant of dry ground than other willows.",
     givesNote: "A keystone: willows host more caterpillars than almost anything else here, feeding nesting birds, and the earliest catkins fuel queen bumblebees and mason bees when nothing else blooms.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, E-Flora BC. Host count: willow genus, top western host (Tallamy/NWF).",
     propagation: {
       methods: ["cuttings-hardwood", "seed-surface-light"],
@@ -344,7 +344,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The fastest native shade you can get on a damp site, and one of the few local trees that make their own nitrogen — it feeds the soil for everything planted after it. Two honest catches: it seeds itself everywhere, and it's short-lived for a tree (60–80 years), so plant it as the nurse crop rather than the heirloom.",
     givesNote: "One of the region's top caterpillar trees, and its little cone-like catkins hold seed that pine siskins and goldfinches strip through winter. Roots knit a streambank together fast and pull nitrogen out of the air into the soil.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Nitrogen fixation & growth rate: USFS Silvics / FEIS. Host count: Alnus genus, western estimate discounted from the eastern Tallamy/NWF figure (156).",
     propagation: {
       methods: ["seed-direct", "seed-cold-moist"],
@@ -379,7 +379,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Undemanding and quick on almost any well-drained ground, and it suckers into a thicket if you let it — which is a virtue at the back of a lot and a nuisance in a small bed. The leaves and pits contain cyanide compounds, so it's one to keep away from a paddock (dogs and cats in a garden are not at real risk, but it's flagged to be safe).",
     givesNote: "After the oaks and willows, cherries are the most productive caterpillar trees the West has — hundreds of moth and butterfly species, which is what feeds a chickadee's brood. White spring blossom for early bees, then bitter red fruit that band-tailed pigeons, robins and waxwings eat even though we can't.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Prunus genus, western estimate discounted from the eastern Tallamy/NWF figure (340).",
     propagation: {
       methods: ["seed-cold-moist", "suckers"],
@@ -414,7 +414,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "The one native tree that genuinely wants a shady spot — under conifers or on the north side of a house it grows into a sculptural, multi-stemmed thing. In full afternoon sun it scorches unless the soil stays damp. Water it for the first two summers; after that it looks after itself.",
     givesNote: "All the caterpillar value of a maple in a tree that fits a small garden, plus the region's best native autumn color — scarlet and orange in shade, and seed keys that grosbeaks and finches work over.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Acer genus, western estimate on the same footing as bigleaf maple in this list.",
     propagation: {
       methods: ["seed-cold-moist", "layering"],
@@ -449,7 +449,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "The one big conifer that will grow up *in* shade, so it's how you put a forest back under existing trees. It has shallow roots and no drought tolerance at all — on a dry, exposed lot it will struggle where Douglas-fir shrugs. Give it a damp, sheltered spot and water it through its first few summers.",
     givesNote: "Tiny cones feed crossbills, siskins and chickadees all winter; the drooping, feathery crown is nesting cover for small songbirds; and few things on the west side store more carbon or hold a slope's soil in a downpour.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Size & shade tolerance: USFS Silvics / FEIS. Host count: Tsuga, conservative western estimate.",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -484,7 +484,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "It handles what almost nothing else will — ground that sits under water all winter and bakes hard in August. Plant it in the wet corner of the garden, not the good bed. One thing to know before you commit: emerald ash borer reached Oregon in 2022, and it kills ash. Oregon ash is still worth planting on wet ground where it belongs, and there is a real chance it will need help; the state's forestry service publishes current guidance.",
     givesNote: "A major caterpillar tree, and its seed keys feed finches, grosbeaks and wood ducks. On a floodplain it does the work no shrub can: soaking up winter water and holding the bank while it does.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Fraxinus genus, western estimate discounted from the eastern Tallamy/NWF figure (150). Emerald ash borer status: Oregon Dept. of Forestry / Oregon Dept. of Agriculture (first US West Coast detection, Forest Grove, 2022).",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -519,7 +519,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Beautiful, and fussy: it wants dappled light, cool roots under a leaf-litter mulch, good drainage and no summer watering *at the trunk*, and it resents being moved. Dogwood anthracnose, a fungal disease, hits stressed trees in damp shade — an airy spot with morning sun is the best defense. Plant a small one and be patient.",
     givesNote: "Big white spring bracts that light up a woodland edge (and often a second flush in autumn), a solid caterpillar host, and clusters of scarlet fruit that band-tailed pigeons, robins, waxwings and grosbeaks empty within days.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Cornus genus, on the same footing as the eastern flowering dogwood figure (118) discounted for the West. Anthracnose: WSU / OSU Extension.",
     propagation: {
       methods: ["seed-cold-moist", "cuttings-softwood"],
@@ -555,7 +555,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A small, stiff, wide tree with inch-long thorns — plant it where nobody has to squeeze past, and it asks nothing else of you. It is happiest on ground that stays damp into summer, including a corner that floods in winter, and it is untroubled by clay. Slow, so buy it small and let it take its time; if you want the thicket it makes in the wild, leave the suckers.",
     givesNote: "Hawthorns are one of the biggest caterpillar trees the West has — a nesting chickadee working a hawthorn is collecting hundreds of species' young. The white blossom in May is heavy with small native bees and flies, the dark haws hang on into winter for waxwings, robins and grouse, and the thorny crown is one of the safest places a songbird can build a nest.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Crataegus genus, rounded western estimate anchored on the Tallamy/NWF keystone lists and discounted from the eastern figure (168); no openly-licensed US host table exists, so this is judgment, not a computed number.",
     propagation: {
       methods: ["seed-double-dormant", "suckers"],
@@ -590,7 +590,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Birch wants a cool, damp root run and it will tell you when it hasn't got one: a tree baked on a south-facing lawn gets weak, and the bronze birch borer finishes off weak birches. So give it the north or east side, mulch it wide, water it through its first summers, and never plant it in the hot, dry spot you were hoping it would decorate. It is genuinely happier around Puget Sound than in a Willamette Valley August, and it is not long-lived here — sixty good years, not two hundred. The spring catkins are wind-blown pollen, worth knowing if birch sets you sneezing.",
     givesNote: "Birch is a top-five caterpillar tree across the continent, feeding a whole tier of moths and the warblers and chickadees that eat them. Its little cone-like catkins shatter into seed that pine siskins and redpolls work over all winter, dead limbs become woodpecker and chickadee nest holes, and the white bark lights up a gray February.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, Burke Herbarium (WTU), E-Flora BC — the west-side populations sit in the Puget Trough and north, so this is the honest garden birch here; Betula occidentalis (water birch) was the alternative and is essentially an east-of-the-Cascades streamside shrub-tree, barely west-side and not in the maritime trade. Host count: Betula genus, rounded western estimate anchored on Tallamy/NWF and discounted from the eastern figure (413). Bronze birch borer and site stress: WSU / OSU Extension.",
     propagation: {
       methods: ["seed-surface-light", "seed-cold-moist"],
@@ -625,7 +625,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "This is the tree for the wet corner: it takes ground that stands under water all winter, and it even shrugs off the salt spray of a tidal edge, which almost nothing else here will do. Short side twigs sharpen into thorns, so keep it off a path. In a wet spring the leaves get scabby and drop early — that is apple scab, it looks worse than it is, and raking up the fallen leaves is the whole treatment. It leans and forks into a crooked, multi-stemmed shape; that is the plant, not a fault.",
     givesNote: "Apples and crabapples are among the most productive caterpillar trees in the country, and this one does that job standing in water. Clouds of white-pink blossom feed mason bees and bumble bee queens in April; then small tart yellow-to-red apples that hang on well past the leaves, feeding waxwings, grosbeaks, robins, foxes and bears through the first hard weather. They are edible for people too, once frost has softened them.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU), E-Flora BC. Wetland and tidal-edge tolerance: USDA NRCS Plant Guide. Host count: Malus genus, rounded western estimate anchored on the Tallamy/NWF keystone lists and discounted from the eastern figure (308).",
     propagation: {
       methods: ["seed-cold-moist", "layering"],
@@ -661,7 +661,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Give it full sun and room — it gets very large and lives for centuries, and the low branches self-prune away as it goes, leaving that cinnamon-jigsaw bark. Ask for Willamette Valley stock if you are planting on the west side; seed from east of the mountains is adapted to a drier winter and sulks in valley clay. Thick bark makes it the most fire-tolerant tree here.",
     givesNote: "Pines carry one of the heaviest caterpillar loads of any conifer genus, which is what feeds chickadees, nuthatches and kinglets working the needles. The big seeds feed crossbills, jays, nuthatches and squirrels; the furrowed bark is where brown creepers nest; and an old snag is woodpecker country for decades.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range incl. the Willamette Valley population: OregonFlora, USDA PLANTS, USFS Silvics. Host count: Pinus genus, rounded western estimate anchored on Tallamy/NWF keystone lists. The region's highest-scoring absent genus by occurrence (GBIF).",
     propagation: {
       methods: ["seed-cold-moist", "seed-direct"],
@@ -696,7 +696,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "One of the easiest natives to place: it takes shade or sun, wet ground or ordinary, and stays small enough for a garden. Birds plant it for you, so expect seedlings. The bark and fresh berries are a violent purgative — that is what it was harvested for — so it is a poor choice where a small child or a dog grazes.",
     givesNote: "The berries go red then black in late summer and are stripped by band-tailed pigeons, robins, thrushes and waxwings, and its small green flowers are worked hard by native bees and hoverflies. Cascara is also a larval host of the pale swallowtail, alongside oceanspray and ceanothus.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Bark harvest history: USFS FEIS. Toxicity: ASPCA; OSU Extension. Host count: Frangula/Rhamnus genus, rounded western estimate.",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -732,7 +732,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "A coastal tree, and the honest version of that is: within sight of the ocean or the lower Columbia it is unkillable, and in a hot Willamette Valley summer it sulks and often dies. It takes salt wind better than anything else here. The needles are genuinely sharp — not a tree to plant beside a path where children run. And it gets very large.",
     givesNote: "Seeds that crossbills, siskins and chickadees work all winter, and the bark furrows that brown creepers nest behind. Old coastal spruces are where bald eagles and marbled murrelets put their nests.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU). Size and coastal limits: USFS Silvics / FEIS. Host count: Picea, genus-level western estimate. Occurrence records in this region's box: 5,400 (GBIF).",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -767,7 +767,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The range of ground it will take is the whole reason to plant it: beach sand, salt wind, hardpan, and soil that stands wet all winter. It stays a manageable size for a garden where Douglas-fir does not, and it grows into a picturesque leaning thing rather than a straight pole. Don't prune it into a shape; the shape is the point.",
     givesNote: "Pine is one of the biggest caterpillar hosts in the West, which means the small birds that hunt them work it all summer. Then seeds for chickadees, nuthatches and crossbills, and dense evergreen cover in the months when almost nothing else offers any.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; USDA PICO. Tolerances: USFS Silvics / FEIS. Host count: Pinus genus, the same rounded western estimate this list uses for ponderosa pine, anchored on Tallamy/NWF keystone lists. Occurrence records in this region's box: 6,265 (GBIF).",
     propagation: {
       methods: ["seed-cold-moist", "seed-direct"],
@@ -803,7 +803,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Tough, evergreen and drought-proof once established, in sun or shade. Holly-like leaves are prickly — site it away from paths. Sometimes listed as Mahonia aquifolium.",
     givesNote: "Fragrant yellow late-winter flowers are one of the first nectar sources for bees; blue berries feed robins and waxwings; glossy evergreen leaves give year-round structure.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Berberis, low. Pollinator/bird value: Xerces Maritime NW.",
     propagation: {
       methods: ["seed-cold-moist", "suckers", "cuttings-semi-hardwood"],
@@ -838,7 +838,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Thornless and soft, with big maple-shaped leaves — nothing like a blackberry to handle. It runs by underground rhizomes into a broad patch: ideal for a shady bank or woodland edge, too vigorous for a small bed. Cut spent canes out after fruiting.",
     givesNote: "Large white flowers through late spring for bumble bees and mason bees, then soft scarlet raspberries that band-tailed pigeons, thrushes and tanagers strip fast; one of the West's better caterpillar shrubs, and the thicket is nesting cover.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Rubus genus, western estimate discounted from the eastern Tallamy/NWF figure (163). Bird value: WDFW (band-tailed pigeon); Cornell Lab.",
     propagation: {
       methods: ["suckers", "cuttings-hardwood", "seed-cold-moist"],
@@ -873,7 +873,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "One of the best natives for dry shade under conifers, where little else will grow — low and slowly spreading by rhizome into an evergreen carpet. The holly-like leaflets are spiny, so keep it back from paths. Sometimes listed as Mahonia nervosa.",
     givesNote: "Upright yellow flower spikes in spring feed early bumble bees, then dusty-blue berries for robins, waxwings and band-tailed pigeons. A rare ground-covering evergreen for deep, dry shade.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Berberis, low. Pollinator/bird value: Xerces Maritime NW.",
     propagation: {
       methods: ["seed-cold-moist", "division", "cuttings-semi-hardwood"],
@@ -908,7 +908,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Easy, fast and drought-tolerant once established, in sun to part shade. Goes summer-dormant in dry sites — that's normal, not death.",
     givesNote: "Its pink flower clusters open exactly when rufous hummingbirds return in spring, feeding them and early bees; the berries then feed songbirds.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Ribes, moderate estimate. Hummingbird timing: Xerces / Burke Herbarium.",
     propagation: {
       methods: ["cuttings-hardwood", "seed-cold-moist"],
@@ -943,7 +943,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Extremely tough and drought-proof once set — a top pick for a hot, dry bank in sun or part shade. The dried flower plumes persist through winter.",
     givesNote: "Foaming cream flower sprays swarm with native bees and butterflies in midsummer; dense twigs shelter and feed birds; deep roots hold a slope.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Holodiscus/Rosaceae, moderate estimate. Pollinator value: Xerces Maritime NW.",
     propagation: {
       methods: ["seed-surface-light", "cuttings-semi-hardwood"],
@@ -978,7 +978,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Nearly indestructible — takes sun or deep shade, wet or dry, and suckers into a thicket, so use it to fill or hold ground rather than as a tidy specimen. The white berries are mildly toxic to people and pets if eaten.",
     givesNote: "Summer flowers feed hummingbirds and bees; the white winter berries feed quail, grouse and robins; and its roots knit up a difficult bank.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Symphoricarpos, moderate estimate.",
     propagation: {
       methods: ["suckers", "cuttings-hardwood", "seed-double-dormant"],
@@ -1013,7 +1013,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Spreads by underground runners into a thicket — excellent for a soggy low spot or eroding streambank, but give it room. Cut a third of the oldest stems each year for the brightest winter color.",
     givesNote: "Brilliant red winter stems, white flowers for pollinators, white berries for migrating birds, and one of the best plants for stabilizing wet, eroding ground.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS (native coast to coast). Host count: Cornus genus (NWF).",
     propagation: {
       methods: ["cuttings-hardwood", "layering"],
@@ -1048,7 +1048,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Tough, adaptable and drought-tolerant once set; suckers to form a thicket. Thorny — ideal as a wildlife hedge or barrier, less so beside a path.",
     givesNote: "Large single pink roses feed bumblebees and other native bees; the hips feed birds and small mammals into winter; and the thicket gives nesting cover.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Rosa genus, moderate estimate.",
     propagation: {
       methods: ["suckers", "cuttings-hardwood", "seed-cold-moist"],
@@ -1083,7 +1083,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Wants acidic soil and shade to part shade — ideal for dry shade under conifers, where it slowly spreads into an evergreen thicket. A little patience and summer water get it going; then it's self-sufficient.",
     givesNote: "Urn-shaped flowers feed hummingbirds and bees, edible blue-black berries feed birds and people, and the evergreen thicket gives year-round cover on difficult shady ground.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Ericaceae/Gaultheria, moderate estimate.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering", "seed-surface-light"],
@@ -1119,7 +1119,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "It spreads by underground runners into a thicket, which is exactly what you want along a stream or at the back of a big garden and exactly what you don't want in a small bed. The prickles are soft — more bristle than thorn. Cut a third of the old canes out at the base each winter to keep it fruiting.",
     givesNote: "Magenta flowers open in March, before almost anything else, and rufous hummingbirds time their arrival to them. Then a heavy crop of orange-to-red berries for thrushes, tanagers and robins, and a caterpillar host among the best of the West's shrubs. The tangle itself is nesting cover.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Hummingbird timing: Audubon; WSU Extension. Host count: Rubus genus, western estimate discounted from the eastern Tallamy/NWF figure (163).",
     propagation: {
       methods: ["suckers", "cuttings-hardwood"],
@@ -1154,7 +1154,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Grows like a weed on damp ground and looks it by August, so put it where lushness matters more than tidiness. Cut it hard — even to the ground — every few winters and it comes back better. The raw berries, and the leaves, stems and roots, make people and pets sick; this is a bird plant, not a jam plant (unlike its blue-berried cousin).",
     givesNote: "One of the single best bird shrubs in the Northwest: a June avalanche of scarlet berries that band-tailed pigeons, tanagers, grosbeaks, thrushes and waxwings strip in days. Creamy flower heads feed a wide crowd of small native bees and flies first.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Toxicity of raw fruit/foliage: USDA PLANTS; OSU Extension. Host count: Sambucus, conservative western estimate.",
     propagation: {
       methods: ["cuttings-hardwood", "seed-cold-moist"],
@@ -1189,7 +1189,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "It insists on acid soil with plenty of leaf mold or bark in it and drainage that never sits wet — a mulched bed under conifers is its idea of heaven. Slow for the first few years, and it wants water through those summers; after that it is tough, takes shade, and never needs pruning. Full sun works on the coast, half-shade inland.",
     givesNote: "Huckleberries and blueberries are among the most productive caterpillar shrubs anywhere, and this one stays green all winter as cover. Pink urn flowers feed bumble bees and mason bees in spring; the late, sweet black berries feed thrushes, towhees and grouse (and you) into autumn.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Vaccinium genus, western estimate discounted from the eastern Tallamy/NWF figure (217).",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-surface-light"],
@@ -1224,7 +1224,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "About as easy as a native shrub gets: it takes winter flooding, summer drought once established, clay, and hard pruning without complaint. Give it room — it arches wide — and cut old stems out at the base rather than shearing the top.",
     givesNote: "Dense white flower domes in early summer are worked hard by native bees, wasps and hoverflies; the seed heads dry to red-brown and hold on through winter. Where it really earns its place is a raingarden or a bank — the root system is a net that holds soil through a storm.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Physocarpus, western estimate on the same footing as the eastern figure (41).",
     propagation: {
       methods: ["cuttings-hardwood", "seed-direct"],
@@ -1259,7 +1259,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Cheerfully easy on any damp ground, including the soggy end of a raingarden, and it copes with salt wind on the coast. It can look leggy — cut a few of the oldest stems right out in late winter and it fills back in.",
     givesNote: "Paired yellow tube flowers from April into July are a long-running hummingbird bar, held in bracts that turn scarlet as the twin black berries ripen — a signal that pulls in thrushes, tanagers and waxwings. Not a plant for a human to eat; the birds get these.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Hummingbird use: Audubon; WSU Extension. Host count: Lonicera genus, on the same footing as the orange honeysuckle figure in this list.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-cold-moist"],
@@ -1294,7 +1294,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "An undemanding multi-stemmed shrub for a woodland edge or an informal hedge, happy in part shade and dry summers once it's in. It suckers gently into a clump; take the oldest stems out at ground level every few winters. Its January catkins are wind-borne pollen, so it's one to note if hazel sets you sneezing.",
     givesNote: "A strong caterpillar host, and the nuts — in their long beaked husks — are the autumn prize for Steller's jays, band-tailed pigeons, squirrels and chipmunks, who almost always get there before you do. The dangling catkins are the first sign of spring on the west side, often in January.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Corylus genus, western estimate discounted from the eastern Tallamy/NWF figure (131).",
     propagation: {
       methods: ["seed-cold-moist", "layering"],
@@ -1330,7 +1330,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Undemanding in part shade on ordinary ground, and it takes the dry summer once it is in. Two things worth knowing before you buy. It is a suckering, upright, rather loose thing — plant it at a woodland edge or in a hedge, not as a lawn specimen. And male and female flowers are on separate plants, so if you want fruit you need at least one of each; nurseries rarely label them, so buy three and let the odds work. By July it looks tired and some leaves drop — that is normal for a shrub that started in February.",
     givesNote: "This is the plant that ends winter here. Its dangling greenish-white bells, faintly of cucumber, open in February — weeks before almost anything else — and that timing is the whole point. A bumble bee queen coming out of the ground on the first warm day has burned through her winter fat and has days, not weeks, to find sugar before she can start a nest; osoberry, with hazel, is what she finds. Mason bees and early hoverflies work it too. The small plum-like fruit ripens blue-black in June for robins, waxwings, foxes and coyotes, usually before a person gets to taste one.",
-    confidence: "high",
+    hostCountFrom: "rough",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). February bloom timing and early-bumble-bee use: Xerces Society Maritime Northwest lists; WSU Extension. Host count: Oemleria, a one-species genus in the rose family — low, rough western estimate with no Tallamy/NWF figure behind it.",
     propagation: {
       methods: ["cuttings-hardwood", "suckers", "seed-cold-moist"],
@@ -1365,7 +1365,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "If you have built a rain garden and don't know what to put in the wet bottom, this is the answer — it takes weeks of standing water in winter and then the dry August that follows. The catch is in its other name: it runs at the root into a thicket too dense to hack through — hence 'hardhack' — which is exactly what you want along a ditch or a pond edge and exactly what you don't want in a four-foot bed. Give it room, or run a spade around it each spring. Cut a third of the oldest stems to the ground in late winter and it flowers harder.",
     givesNote: "Fuzzy rose-pink spires stand up through July and August — the hottest, thinnest stretch of the year for nectar — and they are worked over all day by bumble bees, small native bees, hoverflies and butterflies. The seed heads dry to rust and hold their shape all winter, and beneath the soil its mat of roots is one of the best things you can plant to slow a downpour and hold a wet bank in place.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Rain-garden and wetland-buffer use: USDA NRCS Plant Guide; WSU Extension raingarden handbook. Host count: Spiraea genus, moderate rounded western estimate anchored on Tallamy/NWF; no computed US table exists.",
     propagation: {
       methods: ["division", "cuttings-softwood", "seed-surface-light"],
@@ -1401,7 +1401,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Full sun and sharp drainage, and then the rule every ceanothus lives by: no summer water once it is established, and no rich soil. Its red-brown stems carry foaming white flower clusters in late spring. It is naturally short-lived — fifteen or twenty years — and resents being cut into old wood, so prune lightly and plan on a replacement rather than a rescue.",
     givesNote: "Ceanothus is a keystone shrub for caterpillars here — the pale swallowtail and the big ceanothus silkmoth both grow up on it — and it fixes its own nitrogen, feeding the poor ground it colonizes. Deer browse it hard, quail take the seed, and the flowers are covered in native bees.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Fire ecology, lifespan and nitrogen fixation: USFS FEIS. Keystone status: NWF/Tallamy keystone plant lists. Host count: Ceanothus genus, rounded western estimate. This region's one absent keystone genus.",
     propagation: {
       methods: ["seed-scarify", "seed-cold-moist", "cuttings-semi-hardwood"],
@@ -1436,7 +1436,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "The one native here that genuinely wants rotten wood: acid soil, dappled shade, and a buried log or a bed of coarse bark to root into. Plant it in ordinary garden loam in full sun and it sulks and dies. Given the right spot it needs nothing at all. Bright green twigs carry it through winter after the leaves drop.",
     givesNote: "Blueberries and huckleberries are one of the West\'s keystone caterpillar genera, and the small red berries are taken by thrushes, towhees, grouse and — enthusiastically — by people. Its early nodding flowers are worked by bumble bee queens and by the mason bees out before the shrubs bloom.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Nurse-log habit: USFS FEIS. Keystone status: NWF/Tallamy keystone plant lists. Host count: Vaccinium genus, rounded western estimate. Occurrence records in this region's box: 11,980 (GBIF).",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-cold-moist"],
@@ -1472,7 +1472,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Easy to admire and easy to kill. It wants coarse, acid, sharply drained ground — old conifer duff, not a watered clay bed — and it must be planted high, with the root ball proud of the soil. Buy a small nursery-grown plant: wild ones almost never survive being moved, and digging them is illegal on public land anyway. Slow for its first five years.",
     givesNote: "Trusses of pink bells in May that bumblebee queens force their way into. Evergreen leaves make winter cover on a shaded slope. Worth knowing: the nectar carries the same toxin as the leaves, so honey from a big wild stand can be dangerous — a fact about wild bee colonies, not about your garden.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA RHMA3. Establishment difficulty and soil requirements: OSU Extension; American Rhododendron Society. Grayanotoxin in nectar and leaves: USDA PLANTS; Oregon Poison Center. Host count: Rhododendron, genus-level western estimate. Occurrence records in this region's box: 3,366 (GBIF).",
     propagation: {
       methods: ["layering", "cuttings-semi-hardwood", "seed-surface-light"],
@@ -1508,7 +1508,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Loves ground that's wet in winter and spring and dry in summer — exactly the west-side pattern. It goes fully dormant by midsummer, so don't dig where it disappears. Naturalizes into drifts over years.",
     givesNote: "Sheets of blue spring flowers feed queen bumblebees and mason bees, and it re-creates the vanishing wet-prairie habitat that once fed both people and pollinators.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Pollinator value: Xerces Maritime NW.",
     propagation: {
       methods: ["seed-cold-moist", "division"],
@@ -1543,7 +1543,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "About as tough as a plant gets — thrives on hot, dry, poor soil and spreads to fill space. Seek the wild white form, not the fancy colored cultivars, for the most wildlife value.",
     givesNote: "Flat flower heads are a landing pad for a huge range of small native bees, hoverflies, wasps and butterflies all summer, on a plant that survives total neglect.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Achillea, moderate estimate. Pollinator value: Xerces.",
     propagation: {
       methods: ["seed-surface-light", "division"],
@@ -1578,7 +1578,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Easy in dappled shade to part sun with average moisture. Short-lived individually but self-sows to persist. Give it a little summer water in a sunny spot.",
     givesNote: "Nodding red-and-yellow lanterns bloom just as rufous hummingbirds are nesting, and also draw long-tongued bumblebees.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Aquilegia genus (NWF).",
     propagation: {
       methods: ["seed-surface-light", "seed-cold-moist"],
@@ -1613,7 +1613,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "One of the easier native penstemons on the wetter west side — unlike its dry-country cousins it accepts ordinary garden moisture. Cut back after bloom for a possible second flush.",
     givesNote: "Clusters of blue-purple tubes are a magnet for bumblebees, which are its main pollinators, plus other native bees.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Penstemon, low estimate. Pollinator value: Xerces.",
     propagation: {
       methods: ["seed-cold-moist", "cuttings-softwood", "division"],
@@ -1648,7 +1648,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Wants full sun and sharp drainage and hates rich, wet soil — a perfect low, drought-proof filler for a hot bank or rock garden. No water once established.",
     givesNote: "Woolly silver foliage topped with golden daisies feeds native bees and butterflies through early summer on the poorest, driest ground.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Eriophyllum/Asteraceae, low-moderate estimate. Pollinator value: Xerces.",
     propagation: {
       methods: ["seed-surface-light", "cuttings-softwood"],
@@ -1684,7 +1684,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Give it full sun and poor, well-drained ground and then leave it alone — it spreads by underground runners and will come up several feet from where you planted it, so a meadow strip or a hell strip suits it better than a tidy border. The milky sap is an irritant and the plant is toxic if eaten.",
     givesNote: "Monarch caterpillars eat only milkweeds, and this is the west side's common one. The West Coast monarch population has fallen far enough that every patch counts. The heavy pink flower domes are also one of the richest nectar sources of high summer for bumble bees, and its seed floss lines goldfinch and hummingbird nests.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Monarch host relationship and western-population decline: Xerces Society Western Monarch Count. Host count: Asclepias genus, on the same footing as the eastern figure (12).",
     propagation: {
       methods: ["seed-cold-moist", "root-cuttings"],
@@ -1719,7 +1719,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Tough enough for a roadside and it behaves like it — running at the root into a broad patch. Plant it where it can do that, or cut a spade around it each spring. Leave the stems standing over winter: bees nest in the hollow ones. And the hay-fever charge is a case of mistaken identity — goldenrod pollen is heavy and insect-carried; ragweed, blooming at the same moment, is the culprit.",
     givesNote: "Goldenrods host more caterpillar species than any other native perennial group, and the late-summer bloom is the single biggest nectar and pollen event of the year for bumble bees, solitary bees and migrating butterflies stocking up. Seed carries goldfinches into winter.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS; treated as S. canadensis var. salebrosa in some floras. Host count: Solidago genus, western estimate discounted from the eastern Tallamy/NWF figure (115). Pollen ecology: Xerces Society.",
     propagation: {
       methods: ["division", "seed-surface-light"],
@@ -1754,7 +1754,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Undemanding to the point of pushy: it runs at the root and self-sows, so give it a meadow, a ditch edge or a big informal bed rather than a border you want to stay put. Cutting it back by half in early June makes it bushier and stops it flopping. Leave the stems up over winter for the insects in them.",
     givesNote: "Asters are the other half of the late-season pair with goldenrod, and between them they carry the food web from August to frost — one of the best caterpillar hosts among perennials, and the last big nectar meal before winter for bumble bee queens and migrating butterflies.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Host count: Symphyotrichum genus, western estimate discounted from the eastern Tallamy/NWF figure (109). Pollinator value: Xerces Society Maritime Northwest lists.",
     propagation: {
       methods: ["division", "seed-surface-light"],
@@ -1789,7 +1789,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Wants sun and soil that stays damp into early summer — it sulks in a hot, dry border. Like other legumes it makes its own nitrogen, so don't feed it. Individual plants are not long-lived; let some pods ripen and it replaces itself. The seeds are toxic if eaten in quantity.",
     givesNote: "Blue spires that bumble bees work all day, and the larval host for a group of small blue butterflies — the silvery blue among them — whose caterpillars eat lupine and are tended by ants for the sweet drops they give off. Its roots leave the soil richer than they found it.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Blue-butterfly host relationship: Xerces Society. Host count: Lupinus genus, western estimate on the same footing as the eastern figure.",
     propagation: {
       methods: ["seed-scarify", "seed-direct"],
@@ -1824,7 +1824,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "One of the few good plants for the worst spot you have — gravel, a hot bank, a hell strip — where it needs no water at all. In good garden soil it flops and runs. It spreads at the root; a spade around it in spring is the whole of the maintenance.",
     givesNote: "The caterpillar host for the American lady butterfly, whose young wrap themselves in the silvery leaves and silk. Its papery white flower clusters feed small native bees late in the season and then dry on the stem — the 'everlasting' of the name — holding their shape all winter.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). American lady host relationship: BAMONA; Xerces Society. Host count: Anaphalis/Gnaphalium group, conservative western estimate.",
     propagation: {
       methods: ["division", "seed-surface-light"],
@@ -1860,7 +1860,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A tiny plant that needs one thing: open, low, unfertilized ground where taller neighbors can't close over it — the thin edge of a path, a gravelly meadow strip, a patch of lawn you stop feeding. It comes through winter and spring damp and goes quiet in the summer dry, which is the west-side pattern, so don't water it and don't mulch it deeply. If you keep it in grass, hold the mower until July so the seed can ripen. It plants itself: ripe pods fling seed several feet, and it also makes closed self-pollinating buds at ground level that never open, so a patch thickens even in a bad spring.",
     givesNote: "Every greater fritillary here — the hydaspe, the zerene, the great spangled, and the coastal Oregon silverspot that is on the federal threatened list — can raise its caterpillars on violets and on nothing else at all. The females lay in late summer on dry ground beside violets that have already withered; the caterpillars hatch, eat nothing, sit out the whole winter, and go looking for violet leaves the following spring. So it is not enough for a violet to flower once: the patch has to still be there next April. Plant a drift and you are doing the one thing those butterflies cannot do without. The flowers themselves feed small solitary bees early, and ants carry the seed off and plant it for you.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Sole larval-host relationship for Speyeria/Argynnis fritillaries, and the Oregon silverspot recovery work built on Viola adunca: Xerces Society; US Fish & Wildlife Service Oregon silverspot recovery plan; BAMONA. Host count: Viola genus, rounded western estimate anchored on Tallamy/NWF and discounted from the eastern figure (29); the number understates the plant, because what matters here is that for one whole guild of butterflies there is no substitute.",
     propagation: {
       methods: ["seed-cold-moist", "division"],
@@ -1896,7 +1896,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Salt wind, poor soil, summer drought, a parking strip — it shrugs at all of them, which is what a bluff plant is for. The flower buds are covered in a white milky gum you can feel on a fingertip; that is the name. Cut the old stems down in late winter. Short-lived, and it reseeds itself where the ground is bare.",
     givesNote: "Its value is the calendar. It flowers from July straight through October, weeks after the region\'s other natives have finished, so it is the last full meal for the sunflower-family specialist bees and for the butterflies still flying. Goldfinches then work the seed heads through winter.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Late-season bee value: Xerces Society; Fowler & Droege, Pollen Specialist Bees (West). Host count: Grindelia, rounded estimate. Chosen for the October gap in this region's bloom calendar.",
     propagation: {
       methods: ["seed-surface-light", "division"],
@@ -1931,7 +1931,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "It runs at the root and seeds on the wind, so this is a plant for a bank, a hedgerow or a wild corner rather than a border — put it somewhere it can colonize and it will do exactly that. Cut it to the ground in late winter. In a small garden it is genuinely too much.",
     givesNote: "One of the great honey plants of the north, and it flowers from the bottom of the spike upward through July and August, when the spring shrubs are long finished. Bumble bees work it constantly, hummingbirds visit, and the elephant hawk-moth\'s American relatives raise caterpillars on it.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Colonizing behavior: USFS FEIS. Host count: Chamaenerion/Epilobium genus, rounded western estimate.",
     propagation: {
       methods: ["division", "root-cuttings", "seed-surface-light"],
@@ -1966,7 +1966,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Shade, leaf litter and patience. A trillium takes something like seven years to get from seed to its first flower, which is why picking one matters: the flower sits directly on the plant\'s only three leaves, so picking it takes the whole year\'s food supply and can kill a plant older than the person picking it. Buy nursery-propagated stock, never a dug one. The white flower ages to pink and then purple; that is normal, not fading.",
     givesNote: "Ants plant it. Each seed carries a little oil-rich parcel that ants carry home, eat, and discard underground — which is how a trillium colony moves a few feet in a generation. Early bumble bee queens and beetles work the flowers in March, when almost nothing else is open on a forest floor.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Seven-year seed-to-flower and picking damage: USFS FEIS; Burke Herbarium. Ant dispersal (myrmecochory): USFS FEIS. Host count: Trillium, very low. The most-recorded native the list did not carry: 21,010 occurrence records (GBIF).",
     propagation: {
       methods: ["seed-double-dormant", "division"],
@@ -2001,7 +2001,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "A big, astilbe-like plant for moist shade — striking at the back of a woodland bed or beside water. Male and female plants are separate: the males carry showier plumes, the females set seed. Wants steady moisture; cut it to the ground in late fall.",
     givesNote: "Great creamy plumes in early summer hum with small native bees, hoverflies and beetles — a rare big-structure nectar source for shade — and the dried seed heads stand through winter.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: low (Aruncus). Pollinator value: Xerces Maritime NW.",
     propagation: {
       methods: ["division", "seed-surface-light"],
@@ -2036,7 +2036,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A prairie plant for heavy clay that bakes hard in summer — give it full sun and don't pamper it. Spikes of soft-pink, hollyhock-like flowers rise from a low leaf rosette. Deer and rabbits browse it, so protect young plants.",
     givesNote: "A pollinator magnet whose flowers feed bumble bees and — crucially — Diadasia, a native bee that specializes on Willamette Valley checkermallows and forages on almost nothing else. Also a caterpillar host for the painted lady.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Specialist bee (Diadasia nigrifrons) and butterfly hosts: USDA Plant Guide (Sidalcea campestris); Xerces Society. Host count: mallow-family Lepidoptera, moderate.",
     propagation: {
       methods: ["seed-cold-moist", "division"],
@@ -2071,7 +2071,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "A soft, ground-covering perennial for moist shade, with blue-green ferny foliage and dangling pink hearts from spring into summer. Spreads gently by rhizome to fill a woodland floor; it may go dormant if summer turns dry. The foliage is mildly toxic if eaten.",
     givesNote: "Early nectar for bumble bee queens, and a main caterpillar host of the Clodius parnassian — a ghostly white butterfly of Northwest woods whose young eat nothing else. Ants carry its seeds off and sow them.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Clodius parnassian host: BAMONA; PSU Garden Ecology. Host count: low (Dicentra).",
     propagation: {
       methods: ["division", "seed-cold-moist"],
@@ -2106,7 +2106,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "One of the easiest shade perennials here: give it damp ground under trees and it spreads gently into a soft groundcover without ever becoming a nuisance. It stays green in a mild winter. A little summer water keeps it looking fresh; without any it goes limp but comes back.",
     givesNote: "A long, quiet bloom from May into August — unusual for a shade plant — worked by small solitary bees, hoverflies and beetles that have very little else to visit under a closed canopy. The mat of leaves keeps bare woodland soil covered and cool.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Host count: Tiarella, low. Occurrence records in this region's box: 6,819 (GBIF).",
     propagation: {
       methods: ["division", "seed-surface-light"],
@@ -2141,7 +2141,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A bulb, so it does its whole year in spring: leaves in February, nodding white flowers in March, and gone underground by June. Plant it among camas and bunchgrasses where the gap it leaves is not a hole, and never water it in summer — a wet dormant bulb rots. Slow to establish, and worth it.",
     givesNote: "One of the earliest real nectar sources on the west side, timed for the queen bumble bees just out of hibernation and for the mining bees that emerge with the oaks. Like the trillium, ants carry its seed. Its bulbs were a food plant for Coast Salish peoples.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Phenology and ant dispersal: Burke Herbarium; USFS FEIS. Host count: Erythronium, very low. Occurrence records in this region's box: 9,290 (GBIF).",
     propagation: {
       methods: ["seed-cold-moist", "division"],
@@ -2176,7 +2176,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "The sap contains compounds that react with sunlight, so getting it on skin on a bright day can raise a burn and a stain that lasts months. Wear sleeves and gloves to cut it, and site it away from paths and children. That is the same chemistry as its enormous invasive cousin, giant hogweed — cow parsnip is the native one, at half the height. It wants damp ground and seeds itself about.",
     givesNote: "A landing platform the size of a plate, held at chest height and covered from May to July in short-tongued insects that cannot use a deep flower: hoverflies, soldier beetles, small solitary bees and the parasitic wasps that keep aphids down. Swallowtail caterpillars feed on the leaves.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Phototoxic sap (furanocoumarins): OSU Extension; WA State Noxious Weed Control Board (giant hogweed comparison). Host count: Heracleum/Apiaceae, rounded estimate.",
     propagation: {
       methods: ["seed-cold-moist", "seed-direct"],
@@ -2212,7 +2212,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The answer to dry shade under a big conifer, which is the hardest spot most west-side gardens have. The rosette of scalloped leaves stays green through winter, and it self-sows politely into gaps — pull what you don't want, it comes out easily.",
     givesNote: "Wands of small fringed bells that open greenish and age to pink, worked by hoverflies and small solitary bees by day and by moths at dusk. The winter rosettes are cover for the ground beetles and spiders that a garden's pest control actually runs on.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA TEGR2. Dry-shade performance: WSU Extension; Xerces Society Maritime Northwest planting guide. Occurrence records in this region's box: 11,374 (GBIF).",
     propagation: {
       methods: ["seed-surface-light", "division"],
@@ -2247,7 +2247,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "It flowers in February on bare stalks, before it has a single leaf, and then throws up leaves the size of a dinner plate. It runs hard at the root — give it a ditch, a pond edge or a wet corner it is allowed to have, and never a mixed border. It needs ground that stays wet; in an ordinary bed it fails.",
     givesNote: "February nectar, in the month a bumblebee queen coming out of hibernation has almost nothing to work — she has to feed before she can found a colony at all. Later the leaves shade a wet edge and hold the bank together.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA PEFR5. Bloom timing and early-season bumblebee value: Xerces Society Maritime Northwest planting guide. Pyrrolizidine alkaloids: USDA PLANTS. Occurrence records in this region's box: 6,341 (GBIF).",
     propagation: {
       methods: ["division", "seed-surface-light"],
@@ -2282,7 +2282,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Only for ground that is wet all year — a seep, a ditch, a pond margin, the low corner that never dries. In an ordinary bed it dies. It sends a root down several feet and does not forgive being moved once it is big, so plant it small and then leave it. The smell is real but it is a March smell, and it is not strong away from the flower.",
     givesNote: "The yellow hood warms itself above the air temperature and traps the rove beetles that pollinate it — one of them breeds almost nowhere else. Bears come to the shoots in spring, and the huge leaves shade a stream edge all summer.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA LYAM3. Beetle pollination and thermogenesis: USFS FEIS; published pollination studies of Lysichiton. Calcium oxalate toxicity: USDA PLANTS. Occurrence records in this region's box: 13,264 (GBIF).",
     propagation: {
       methods: ["seed-cold-moist", "division"],
@@ -2318,7 +2318,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A tidy, drought-proof native bunchgrass for sun — the matrix to plant wildflowers into for a real west-side meadow. Needs no mowing, watering or feeding once set.",
     givesNote: "Evergreen-ish blue-green tufts host skipper butterflies, shelter ground-nesting bees and birds, and hold dry prairie soil together — the living framework of restored oak savanna.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU). Host count: native fescue, skipper host, low-moderate estimate.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -2354,7 +2354,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The easiest native grass to establish here — it germinates fast and holds bare ground in its first season, which is why restoration crews reach for it. It's short-lived for a bunchgrass but self-sows to stay put. Cut it back in late winter, before the new blades come.",
     givesNote: "Caterpillar food for the skippers and satyr butterflies that eat only grasses, and its tussocks are where they overwinter — a mown lawn gives them nowhere. Seed heads feed sparrows and juncos, and the deep fibrous roots are what actually stops a slope washing away.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Restoration use: USDA NRCS Plant Guide. Host count: native grass-feeding Lepidoptera (skippers/satyrs), conservative western estimate.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -2390,7 +2390,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "The signature bunchgrass of Willamette wet prairie: a fountain of fine leaves topped in summer by a shimmering cloud of golden flower heads. Wants reliably moist ground and takes part shade. Leave it standing over winter.",
     givesNote: "A larval host for wood nymphs and several skippers, whose caterpillars shelter deep in the tussock over winter; the seed heads feed juncos and sparrows, and the clump is cover for ground-nesting wildlife.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: cool-season grass, skipper/satyr hosts (Xerces Society).",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -2425,7 +2425,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The plant every rain garden and soggy low spot on the west side is waiting for. It stands in winter water for months, then hangs on through a rainless August, and it stays green the whole year. It creeps at the root into a broad colony, so give it the whole wet area rather than a tidy clump, and put it where its long arching leaves — sharp-edged enough to nick a finger if you run a hand up one — aren't across a path. Comb the dead blades out with your fingers or a rake in late winter; that is all the care there is.",
     givesNote: "Sedges are what the little brown butterflies eat — several skippers and satyrs grow up on nothing but sedges and grasses, and they overwinter down in the tussock, which a mown edge never gives them. Song sparrows, wrens and yellowthroats nest and hide in the standing clumps, waterfowl and sparrows take the seed, and beneath all that its root mat is the best filter here: water leaves a stand of slough sedge cleaner and slower than it arrived.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Raingarden, bioswale and wetland-buffer use: WSU Extension raingarden handbook; USDA NRCS Plant Guide. Host count: Carex genus, rounded western estimate anchored on the Tallamy/NWF figure for eastern sedges (36) and discounted; no computed US host table exists.",
     propagation: {
       methods: ["division", "seed-cold-moist"],
@@ -2460,7 +2460,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A neat, upright fountain of stiff blue-gray quills that stays put instead of running — which makes it the one wet-ground plant here you can use in a small, tidy raingarden or beside a downspout without regretting it. It wants winter wet and will take a dry summer once established, though it looks better with an occasional soak. Evergreen: don't cut it to the ground. Just pull the brown stems out with your fingers in late winter, the way you'd comb a dog.",
     givesNote: "Rushes are cover more than food, and cover is what a small wet garden has none of: frogs, ground beetles and overwintering insects sit out the cold inside the clump, juncos and sparrows pick the tiny seed off the stems, and the dense root plug holds the edge of a swale while water runs past it. A handful of moths do feed on rushes, so it is not nothing on that front either.",
-    confidence: "medium",
+    hostCountFrom: "rough",
     basis: "Native status/range: USDA PLANTS (OR, WA, CA), OregonFlora. Chosen over Juncus effusus, which is treated as partly introduced in the region and is a coarser, floppier plant in a garden. Raingarden use: WSU Extension raingarden handbook. Host count: Juncus genus, low rounded western estimate anchored on Tallamy/NWF; rushes carry far fewer species than the sedges and grasses beside them, and this is a rough figure.",
     propagation: {
       methods: ["division", "seed-surface-light"],
@@ -2497,7 +2497,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A well-behaved native climber — nothing like invasive Himalayan or Japanese honeysuckle. Give it a trellis, fence or shrub to twine through, with roots in shade and top in sun.",
     givesNote: "Whorls of orange trumpets feed hummingbirds and the following red berries feed songbirds; a native replacement for aggressive ornamental vines.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Lonicera genus (NWF).",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering", "seed-cold-moist"],
@@ -2533,7 +2533,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Almost every bramble people curse here is the other blackberry. Trailing blackberry has wiry, round-in-section canes no thicker than a bootlace, slender straight prickles, and three leaflets; Himalayan blackberry has thumb-thick arching canes with ridges, hooked thorns like a cat's claw, and five leaflets on the main canes. The native one runs flat along the ground rather than mounding into a wall. It still wanders — give it a bank, a fence line or the scruffy edge of a thicket rather than a border, cut the canes that have fruited out at the base each winter, and pull the tips up before they root where you don't want them.",
     givesNote: "Brambles are among the top handful of caterpillar plants in the West, and this is the native one, so it pays that in full while the Himalayan one pays almost none of it. Its white flowers are covered in bumble bees and small solitary bees in spring. Then the berries — small, dark, seedy, and better than anything you can buy — for towhees, thrushes, jays, foxes and coyotes, with the low prickly tangle giving ground-nesting birds and rabbits somewhere to hide.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Distinction from invasive Rubus armeniacus/bifrons: OSU Extension; WA State Noxious Weed Control Board. Host count: Rubus genus, western estimate on the same footing as salmonberry in this list, discounted from the eastern Tallamy/NWF figure (163).",
     propagation: {
       methods: ["layering", "cuttings-hardwood"],
@@ -2568,7 +2568,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A big, strong, fast climber — it will bury a small shrub, so give it a fence, an arbor, a dead tree or a bank it can't kill, and cut it hard in late winter. It climbs by twisting its leaf stalks around things rather than sticking to walls. Male and female flowers are on separate plants, so only some of them make the silky seed heads. The sap irritates skin and mouths, and the plant is toxic to eat, so it is one to keep away from a grazing animal. One more thing to check when buying: the introduced old man's beard (Clematis vitalba) is seriously invasive here and looks similar — the native's leaflets are coarsely toothed or three-lobed, the introduced one's mostly smooth-edged or only shallowly toothed, and the invasive's old stems get ropey and as thick as a wrist.",
     givesNote: "Its value is timing. Foaming cream flowers open in July and keep going through September, in the long hot stretch after the shrubs have finished and before the asters start — and small native bees, wasps, hoverflies and beetles pile into them. Afterwards it goes silvery with feathery seed plumes, which hummingbirds, bushtits and warblers pull apart to line their nests, and the tangle itself becomes thick nesting cover in a hedgerow.",
-    confidence: "medium",
+    hostCountFrom: "rough",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Distinction from invasive Clematis vitalba: OSU Extension; WA State Noxious Weed Control Board. Toxicity (protoanemonin in Ranunculaceae): USDA PLANTS; OSU Extension. Host count: Clematis genus, low rounded western estimate anchored on Tallamy/NWF — a rough figure.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering", "seed-cold-moist"],
@@ -2605,7 +2605,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Runs by runners to knit a tough, glossy, drought- and salt-tolerant carpet in sun — an excellent lawn alternative or bank cover. Takes some foot traffic.",
     givesNote: "White spring flowers for bees, small sweet berries for birds and people, and an evergreen-ish groundcover that hosts many caterpillars and holds sandy soil.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Fragaria genus (NWF).",
     propagation: {
       methods: ["runners"],
@@ -2640,7 +2640,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The reliable evergreen backbone for west-side shade, from moist to surprisingly dry once established. Cut old fronds off in late winter before the new ones unfurl.",
     givesNote: "Stays green all winter, its big fronds catching leaf litter and slowing erosion on a shaded slope, and giving cover to salamanders and small wildlife. Ferns feed very few caterpillars — included for shade cover and erosion, not food-web value.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Ferns support very few Lepidoptera (honest low host value).",
     propagation: {
       methods: ["spores", "division"],
@@ -2675,7 +2675,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The native answer to a hot, dry bank where nothing wants to grow — but only if the drainage is sharp and the soil acid and lean. It hates rich soil, summer irrigation and shade, and it is slow to knit together, so plant closely and mulch with bark or gravel while it fills in. Once it's in, it wants nothing from you for decades.",
     givesNote: "Evergreen cover that holds a slope through the wettest winter, pink bell flowers in earliest spring for emerging bumble bee queens and mason bees, and red berries that stay on the plant into winter for grouse, robins and towhees when little else is left.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Arctostaphylos genus, conservative western estimate. Erosion use: USDA NRCS Plant Guide.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
@@ -2710,7 +2710,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Fussier than sword fern about damp: it wants real shade, acid soil with plenty of rotted wood or leaf mold in it, and soil that never dries right out in August. Get that right and it is a beautiful thing — a flat rosette of ground fronds with narrow, upright fertile ones standing out of the middle.",
     givesNote: "Winter-green cover and shelter on a shaded forest floor, holding soil on a damp bank and giving amphibians and small wildlife somewhere to be. Like all ferns it feeds almost no caterpillars — it earns its place as habitat and erosion control, not as food.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU); accepted name Struthiopteris spicant, formerly Blechnum spicant. Ferns support very few Lepidoptera (honest low host value).",
     propagation: {
       methods: ["spores", "division"],
@@ -2745,7 +2745,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Made for the place nothing else will take: a gravel path edge, the top of a wall, a strip of hot rubble beside the drive, a green roof, a hollow in a rock. It stores its own water in those swollen jellybean leaves, so the way to kill it is kindness — rich soil, mulch, shade or a sprinkler. Give it grit, sun, and nothing else. It knits together slowly into a mat that turns bronze-red where the sun hits hardest, and any rosette that snaps off and lands on soil simply roots.",
     givesNote: "Small, and carrying a story out of proportion to it: the caterpillars of Moss's elfin, a little gray-brown butterfly that flies in earliest spring, eat native stonecrop and essentially nothing else, and the parnassian butterflies of the higher slopes use it too. In midsummer its starry yellow flowers are a nectar bar for small solitary bees on ground so poor that nothing else is offering anything. It also does real work holding thin soil on a bare rock face where any deeper-rooted plant would simply slide off.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Moss's elfin (Callophrys mossii) and parnassian host relationship with native Sedum: Xerces Society; BAMONA. Host count: Sedum genus, low rounded western estimate anchored on Tallamy/NWF — very few species use it, but one of them depends on it completely.",
     propagation: {
       methods: ["division", "cuttings-softwood", "seed-surface-light"],
@@ -2780,7 +2780,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Full sun and sharp drainage, and then leave it entirely alone — no feeding, no summer water, no mulch over the crown. It is a low woody mat of small leaves, green above and felted white beneath, that pushes up short stalks of little yellow umbrellas. The flowers age through cream to a rusty copper and stay on the plant for weeks after, which is half the reason to grow it. It sulks and rots in heavy wet clay; on a gravelly bank or a rockery it lasts for years.",
     givesNote: "The native buckwheats are the workhorse nectar plants of dry western ground — few things on poor soil are busier with small native bees, wasps and beetles through the height of summer. They are also larval food for a run of small butterflies, the blues and hairstreaks that most people never notice, and for several of them buckwheat is the only plant they will lay on. Juncos and other small birds pick the seed off in autumn.",
-    confidence: "medium",
+    hostCountFrom: "rough",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU) — west-side occurrences are in the Columbia Gorge, the Cascades and the Klamath Mountains rather than the valley floor. Blue and hairstreak host relationships with Eriogonum: Xerces Society; BAMONA. Host count: Eriogonum genus, rounded western estimate anchored on Tallamy/NWF, and one where an eastern figure is no help at all — buckwheats barely occur there — so this is a rough number.",
     propagation: {
       methods: ["seed-cold-moist", "cuttings-semi-hardwood"],
@@ -2815,7 +2815,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "The loveliest fern here and the least forgiving: wiry black stems holding a flat fan of pale green leaflets that quiver in any breath of air. It wants what a waterfall ledge gives it — deep shade, soil that never dries right out in August, and air that isn't baking. A north wall with a downspout beside it, or the shaded edge of a pond, is close enough. Half a day of afternoon sun or one forgotten August and it crisps. It dies down completely in winter, so mark where it is, and mulch it with leaf mold rather than bark.",
     givesNote: "Ferns feed almost no caterpillars, and it is here for what it does rather than what it feeds. It holds damp shaded soil on a bank that would otherwise wash, keeps the ground beneath it cool and moist for salamanders, beetles and the small life that birds hunt, and it makes a dark, difficult corner into somewhere you want to stand.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU), E-Flora BC. Culture: Hardy Fern Foundation. Ferns support very few Lepidoptera (honest low host value).",
     propagation: {
       methods: ["division", "spores"],
@@ -2850,7 +2850,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Not a small-bed plant: single fronds reach six to nine feet on a wet site, arching out of a heavy crown, so give it the space you'd give a shrub. What it insists on is water at the root all year — a seep, a pond edge, the wet foot of a north-facing bank, the overflow end of a raingarden — with shade or part shade above it. It holds its fronds through mild winters and looks battered after a hard freeze; cut the wrecked ones off at the base in late winter and it comes back bigger. Slow for the first three years, then suddenly architectural.",
     givesNote: "Same honest caveat as the other ferns: nearly nothing eats it. What it gives is structure and shelter at a scale no other shade plant here offers — a cool, damp, permanently shaded space underneath where salamanders, frogs, ground beetles and overwintering insects live, wrens hunt, and the soil on a wet bank stays put through a winter of rain. In a shaded raingarden it is the plant that makes the wet end look deliberate.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU) — common in the Coast and Klamath ranges and local north of there, so the honest range note is 'wet ravines', not 'everywhere'. Culture and hardiness: Hardy Fern Foundation. Ferns support very few Lepidoptera (honest low host value).",
     propagation: {
       methods: ["spores", "division"],
@@ -2885,7 +2885,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "The answer to deep, damp shade where grass will not grow and bark mulch just sits there. It runs at the root and makes a continuous carpet, which is the point — give it a woodland corner rather than a border edge. It dies down completely in winter, so pair it with a fern for something to look at.",
     givesNote: "A spike of small white flowers for the little solitary bees and hoverflies that work a forest floor, then speckled red berries that thrushes and towhees take in late summer. The carpet itself is cover for beetles, salamanders and the small things a wood is made of.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Host count: Maianthemum, low. Occurrence records in this region's box: 8,607 (GBIF).",
     propagation: {
       methods: ["division", "seed-cold-moist"],
@@ -2920,7 +2920,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Fussier than the other plants here and worth the trouble: it wants cool, acid, humus-rich shade — a north side, a mossy bank, the foot of a conifer — and never dries out entirely. It trails rather than clumps, rooting as it goes. Slow for two years, then it knits.",
     givesNote: "Paired, faintly vanilla-scented bells through midsummer, held at a height that suits the very small bees and hoverflies of a shaded forest floor. Evergreen, so it holds thin woodland soil on a slope through the wet season when everything else has died back.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Habitat requirements: USFS FEIS. Host count: Linnaea, low. Occurrence records in this region's box: 6,158 (GBIF).",
     propagation: {
       methods: ["layering", "cuttings-softwood", "division"],
@@ -2955,7 +2955,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "It keeps the opposite calendar to every other fern here: green and growing right through the wet winter, then shriveling away in summer and coming back with the autumn rain. That August disappearance is not death. Grow it on a mossy log, a north-facing wall or a shaded bank rather than in a bed, and leave it alone.",
     givesNote: "Winter cover, when a west-side garden has very little that is green and alive at ground level, and a mossy limb or a wall face is habitat that otherwise holds nothing. Ferns feed very few caterpillars — this is here for cover and for growing where nothing else does.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Epiphytic habit and summer dormancy: USFS FEIS; Hardy Fern Foundation. Ferns support very few Lepidoptera (honest low host value). Occurrence records in this region's box: 15,663 (GBIF).",
     propagation: {
       methods: ["division", "spores"],
@@ -2990,7 +2990,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "A slow, even carpet for deep shade that stays damp — it will not take a dry summer or an afternoon of sun. Dries away completely in winter, so put it where bare ground in January doesn't matter. The dried leaves smell strongly of vanilla, which is why people used to hang them indoors.",
     givesNote: "A white spike with no petals at all, worked by the small flies, beetles and solitary bees that make a living on a forest floor. The carpet itself holds a shaded slope against winter rain and shelters ground beetles and salamanders.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA ACTR. Habit and vanilla scent on drying: USFS FEIS. Occurrence records in this region's box: 6,019 (GBIF).",
     propagation: {
       methods: ["division", "seed-cold-moist"],
@@ -3025,7 +3025,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Damp shade along a path, a north wall or a stream edge, where it knits in among ferns without smothering them. It wants the ground to stay moist into summer; in a dry bed it goes over early. Self-sows freely and is easy to pull where it isn't wanted.",
     givesNote: "Violets are the only food of fritillary caterpillars — no violets on the ground, no fritillaries in the garden, however much nectar you plant for the adults. This is the shade violet to that list's dry-meadow one, so the two together cover far more of a garden.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA VIGL. Fritillary host relationship: Xerces Society; BAMONA. Host count: Viola genus, the same estimate this list uses for early blue violet. Occurrence records in this region's box: 5,652 (GBIF).",
     propagation: {
       methods: ["division", "seed-cold-moist"],

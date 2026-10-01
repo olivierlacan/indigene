@@ -542,8 +542,9 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
         "  ·  ",
         el("a", { href: `#/wildlife/${KIND_SLUGS[w.kind]}` }, [wildlifeIcon(w.kind), ` ${label.title}`]),
       ]),
-      // Who it is on the left, what we know about it on the right — but only on
-      // a laptop. Both wrappers are `display: contents` below that breakpoint,
+      // Its picture and name on the left, everything written about it on the
+      // right — but only on a laptop. (The blurb used to sit under the photo,
+      // leaving the right column two short lines tall beside it.) Both wrappers are `display: contents` below that breakpoint,
       // so on a phone this is the single stack it has always been. (The same
       // pair a plant's page uses; see "Profile pages on a laptop".)
       el("div", { class: "plant-cols" }, [
@@ -565,20 +566,19 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
               regionPills(byRegion.map((g) => g.region)),
             ]),
           ]),
+        ]),
+        el("div", { class: "plant-col" }, [
           // The .plant card has no padding of its own (media can run full-bleed),
           // so all the loose text lives in a .plant-body to get the usual
-          // gutters. It's in two halves here: what this animal *is* stays with
-          // its name, and everything we can vouch for goes in the column
-          // opposite. `-lead` and `-rest` between them add up to exactly one
-          // .plant-body's padding, so the phone stack is unchanged.
+          // gutters. It's in two halves: what this animal *is*, then what we
+          // can vouch for. `-lead` and `-rest` between them add up to exactly
+          // one .plant-body's padding, so the phone stack is unchanged.
           el("div", { class: "plant-body plant-body-lead" }, [
             el("p", { style: "margin:0" }, wildlifeBlurb(w)),
             // Where somebody has assessed it. The region shown is the first one
             // it lives in, matching the photograph above it.
             conservationNote(w.id, byRegion[0]?.region.meta.id, "animal"),
           ]),
-        ]),
-        el("div", { class: "plant-col" }, [
           el("div", { class: "plant-body plant-body-rest" }, [
             // Where it's native, and who says so (authority names linked). It
             // used to open "A native animal." — which the 📍 pills opposite
@@ -646,7 +646,11 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
   }
   // The roster's filter, on the pages that need one — same rule as the tiles.
   if (filterRows.length > LONG_LIST) main.append(plantFilterField(filterRows, sections));
-  main.append(...groups);
+  // The regions as one flow of columns on a laptop — down the left, then the
+  // right, the way a newspaper fills a page — so a region with one plant no
+  // longer leaves a half-empty row, and six short lists don't stack into a
+  // tower. One column on a phone (see `.wildlife-regions`).
+  main.append(el("div", { class: "wildlife-regions" }, groups));
 
   main.append(
     coverageLine(),

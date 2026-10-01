@@ -3751,13 +3751,12 @@ details.weights {
    The button shrinks to its text and the field takes what's left; on a phone too
    narrow for both, the field wraps under rather than squeezing to nothing.
 
-   Everything here is capped, because "take what's left" was written for a phone
-   and the profile pages are no longer phone-width. On an animal's page the row
-   spans the whole card, and an uncapped field became a 900px box waiting for
-   five characters — which reads as a mistake, not as generosity. The block gets
-   a cap too: the place picks that appear under the row are one-line choices,
-   and they sprawled the same way. */
-.spot-prompt {
+   The field is capped, because "take what's left" was written for a phone and
+   an animal's card spans a laptop window: uncapped, it became a 900px box
+   waiting for five characters. The place picks under the row are capped for
+   the same reason (`.spot-picks`). What's left of the row goes to the regions
+   it's found in, below. */
+.spot-picks {
   max-width: 32rem;
 }
 .spot-row {
@@ -3792,6 +3791,56 @@ details.weights {
 .spot-search input {
   font-size: 0.9rem;
   padding: 0.5rem 0.6rem;
+}
+
+/* "or" and the regions it's found in: the row's last answer to "where?". One
+   group that wraps as a unit — beside the field when there's room for it and a
+   chip or two, on its own line under the field on a phone. Its chips scroll
+   sideways inside it (`.obs-elsewhere-row`) rather than stack. */
+.spot-places {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 1 1 14rem;
+  min-width: 0;
+}
+.spot-or {
+  flex: none;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+.spot-places > .obs-elsewhere-row {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* The heading and its lede share a line where there's room for both — on an
+   animal's card on a laptop — and stack where there isn't, with no breakpoint
+   to keep in step. */
+.nearby-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.75rem;
+}
+.nearby-head > h3 {
+  margin: 0;
+}
+.nearby-head > .obs-section-lede {
+  margin: 0.15rem 0 0;
+}
+/* The privacy link rides on the lede's line, kept whole so the lock never ends
+   a line without its words. */
+.lede-privacy {
+  color: inherit;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+}
+.lede-privacy:hover,
+.lede-privacy:focus-visible {
+  color: var(--focus);
 }
 
 /* The section's one-line lede: subordinate to the controls under it, because
@@ -3982,17 +4031,7 @@ details.weights {
   color: var(--ink-soft);
 }
 
-/* --- "Look it up where it's native" --- */
-/* One compact row of region buttons under a short lead. The lead carries the
-   sentence, so the buttons carry only what tells them apart. */
-.obs-elsewhere {
-  margin-top: 0.7rem;
-}
-.obs-elsewhere-lede {
-  margin: 0 0 0.35rem;
-  font-size: 0.9rem;
-  color: var(--ink-soft);
-}
+/* --- The regions it's found in, in the "where?" row --- */
 /* One line of places, whatever the count. Wrapped, an animal found in five
    regions was five full-width buttons stacked down the card — more of the
    phone screen than the lookup they're an alternative to. It scrolls sideways
@@ -4767,6 +4806,33 @@ body[data-layout="profile"] .wip-banner-text {
   opacity: 0.85;
 }
 
+/* An animal's plants, region by region. One stack on a phone; on a laptop the
+   regions flow down two columns and then across, so a page of six short lists
+   fills both halves of the window instead of leaving an orphan card per region.
+   Breaks fall between cards, never inside one, and never straight after a
+   region's heading. */
+@media (min-width: 64rem) {
+  .wildlife-regions {
+    columns: 2;
+    column-gap: 1rem;
+  }
+  .wildlife-regions .wildlife-supports {
+    display: block;
+  }
+  .wildlife-regions .support-row {
+    height: auto;
+    margin-bottom: 0.5rem;
+    break-inside: avoid;
+  }
+  .wildlife-regions .section-head {
+    break-after: avoid;
+  }
+  /* Both columns start on the same line. */
+  .wildlife-regions > section:first-child > .section-head {
+    margin-top: 0;
+  }
+}
+
 /* --- Profile pages on a laptop -------------------------------------------
    A plant's page is the longest in the app: an identity block, a stat grid, a
    to-scale drawing, four paragraphs and five card sections. An animal's is the
@@ -4797,39 +4863,6 @@ body[data-layout="profile"] .wip-banner-text {
 @media (min-width: 64rem) {
   body[data-layout="profile"] {
     --maxw: 62rem;
-  }
-
-  /* ---- "See it near you", on a laptop ----
-     Four stacked pieces — a line of explanation, the two ways to give a spot,
-     and the "not there right now?" fallback — made a card two thirds of a
-     screen tall to hold two controls. Side by side they read as what they are:
-     one question with two answers. The results, when they arrive, still get
-     the full width; a grid of photographs wants it. */
-  .wl-nearby {
-    display: grid;
-    /* The ask keeps enough width to hold its button and box on one line; the
-       fallback takes what's left and wraps its region buttons inside it. An
-       `auto` second column let a monarch's four regions squeeze the ask into a
-       stack. */
-    grid-template-columns: minmax(21rem, 1fr) minmax(0, 1fr);
-    column-gap: 1.5rem;
-    align-items: start;
-  }
-  .wl-nearby > h3,
-  .wl-nearby > .obs-section-lede,
-  .wl-nearby > .wl-nearby-out {
-    grid-column: 1 / -1;
-  }
-  .wl-nearby > .obs-elsewhere {
-    margin-top: 0.5rem;
-    text-align: right;
-  }
-  /* `safe`, because the row is a scroller now: plain `flex-end` pushes an
-     overflowing row off its own left edge, where no amount of scrolling can
-     reach the first chip. Safe alignment gives up and starts from the left the
-     moment the chips don't fit. */
-  .wl-nearby > .obs-elsewhere .obs-elsewhere-row {
-    justify-content: safe flex-end;
   }
 
   /* ---- The profile card, on either page ---- */
@@ -4866,17 +4899,10 @@ body[data-layout="profile"] .wip-banner-text {
     padding-top: 0;
     padding-bottom: 0;
   }
-  /* …except the half that follows the name in the same column: it keeps the
-     breathing room it has on a phone. */
-  .plant-cols .plant-body-lead {
-    padding-top: 0.6rem;
-  }
-  /* Heading its own column, the guarantee has nothing above it to be separated
-     from — so it loses the dashed rule and starts level with the name opposite. */
-  .plant-cols .plant-body-rest > .wildlife-vouch:first-child {
+  /* An animal's blurb heads the right column, level with its name opposite;
+     the sourced guarantee under it keeps its dashed rule. */
+  .plant-cols .plant-body-lead > p:first-child {
     margin-top: 0;
-    padding-top: 0;
-    border-top: 0;
   }
   /* Half the width, so two roomy tiles per row rather than four cramped ones —
      "Caterpillar hosts" stops wrapping to three lines. */
@@ -4898,9 +4924,18 @@ body[data-layout="profile"] .wip-banner-text {
     margin-top: 0;
   }
 
+  /* The drawing closes the identity column on a laptop (`onLaptop` in the
+     plant page): under a paragraph rather than a tile grid, it keeps the gap
+     the tiles had above it. */
+  .plant-cols .plant-col:first-child > .size-figure {
+    margin-top: 1.25rem;
+  }
+
   /* ---- A plant's sections below it ---- */
-  /* The left column is given the wider track: it carries three cards to the
-     right column's two, and the extra width shortens all three. */
+  /* Three cards a side once "See it growing near you" moves under the spot
+     check. The left track is the wider one: its cards are the prose — growing
+     needs, the seven ecosystem scores, propagation — and the width shortens
+     all three. */
   .plant-sections {
     display: grid;
     grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);

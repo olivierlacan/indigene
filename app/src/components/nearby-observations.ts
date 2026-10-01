@@ -36,7 +36,7 @@ import { stickyReady } from "../lib/sticky";
 import { getSpot } from "../db";
 import { rarityLine, regionRarityLine } from "./rarity-line";
 import { observationList, freshnessLine } from "./observation-ui";
-import { locationPrompt } from "./location-prompt";
+import { locationPrompt, promptLede } from "./location-prompt";
 import { anchoredHeading } from "./anchor-head";
 import { plantSectionHref } from "../lib/routes";
 import { t, tn, fmtNumber } from "../lib/i18n";
@@ -72,6 +72,14 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
     idBase: `plant-${plant.id}`,
     gpsLabel: t("nearby.useMyLocation"),
     onResolve: (lat, lon, label) => void load(lat, lon, label),
+    // The plant's native regions. None when it has no iNaturalist id (nothing
+    // to match) — the spot path reports that case on lookup.
+    places: inatId
+      ? nativeRegionIds
+          .map((id) => REGIONS.find((r) => r.meta.id === id))
+          .filter((r): r is RegionDef => Boolean(r))
+          .map((r) => ({ label: regionShort(r.meta), onPick: (btn: HTMLButtonElement) => void loadRegion(r, btn) }))
+      : [],
   });
 
   function showNote(msg: string): void {
@@ -280,35 +288,6 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
     out.append(freshnessLine(result.fromCache));
   }
 
-  // The plant's native regions, as tappable "look it up there" buttons. Empty
-  // when the plant has no iNaturalist id (nothing to match) — the spot path
-  // reports that case on lookup.
-  function regionButtons(): HTMLElement | null {
-    if (!inatId) return null;
-    const regions = nativeRegionIds
-      .map((id) => REGIONS.find((r) => r.meta.id === id))
-      .filter((r): r is RegionDef => Boolean(r));
-    if (!regions.length) return null;
-    // A chip is a place and nothing else — the question above it supplies the
-    // verb, so neither the map emoji nor "Where it's native" has to be repeated
-    // per button. The short form keeps the parenthetical qualifier out of it
-    // ("Pacific Northwest", not "Pacific Northwest (west of the Cascades)");
-    // the row itself scrolls rather than stacks (see `.obs-elsewhere-row`).
-    return el("div", { class: "obs-elsewhere" }, [
-      el("p", { class: "obs-elsewhere-lede" }, t("nearby.notThereNative")),
-      el("div", { class: "obs-elsewhere-row" },
-        regions.map((r) => {
-          const btn = el("button", {
-            type: "button",
-            class: "btn btn-secondary btn-compact",
-            onClick: () => void loadRegion(r, btn),
-          }, regionShort(r.meta)) as HTMLButtonElement;
-          return btn;
-        }),
-      ),
-    ]);
-  }
-
   // "Our data lists this as native to Florida, not the Pacific Northwest…"
   function nativeElsewhereNote(region: RegionDef): string {
     const names = nativeRegionIds
@@ -343,10 +322,9 @@ export function nearbyObservationsSection(plant: Plant): HTMLElement {
       plantSectionHref("nearby"),
       t("plant.sectionLink")
     ),
-    el("p", { class: "obs-section-lede" }, t("nearby.seeItGrowingLede", { name: commonName(plant) })),
+    promptLede(t("nearby.seeItGrowingLede", { name: commonName(plant) })),
     prominence,
     prompt,
-    regionButtons(),
     out,
   ]);
 }

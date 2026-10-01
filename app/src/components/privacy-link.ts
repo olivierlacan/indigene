@@ -47,17 +47,3 @@ export function privacyNote(
     ".",
   ]);
 }
-
-/**
- * The same reassurance with the promise itself left to the page: just the lock
- * and a link, landing on the section that covers this control. For the places
- * where the paragraph would be the tallest thing on screen and the answer is one
- * tap away — the point of having a privacy page is not having to restate it
- * everywhere.
- */
-export function privacyLink(text: string, section?: PrivacySection): HTMLElement {
-  return el("p", { class: "privacy-note privacy-note-slim" }, [
-    el("span", { "aria-hidden": "true" }, "🔒 "),
-    el("a", { href: privacyRoute(section) }, text),
-  ]);
-}

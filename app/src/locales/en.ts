@@ -965,7 +965,7 @@ export const en = {
   "traits.group.figures": "📊 Figures",
   "traits.noWater": "Expected to settle in and survive on rain alone after planting, in an average year.",
   "traits.needsWater": "Needs watering after planting, until its roots take hold.",
-  "traits.keystone": "Supports far more wildlife than most plants — losing it would unravel the local food web. Ecologists call these keystone plants, after the stone that holds an arch together.",
+  "traits.keystone": "Feeds far more kinds of caterpillar than most plants. Ecologists call these keystone plants, after the stone that holds an arch together.",
   "traits.deer": "Deer usually leave it alone. Not a promise: a hungry winter changes what they'll eat.",
   "traits.toxic": "Not for eating, by people or pets — some part of it can upset a stomach or worse. Plant it where a curious dog or toddler won't graze.",
   "traits.thorny": "Carries thorns, spines or prickles. Keep it back from paths and play areas.",
@@ -2130,7 +2130,7 @@ export const en = {
   "nearby.foundNear": "Found {n} nearby ",
   "nearby.seeItGrowing": "See it growing near you",
   // Shares a line with the privacy link; the controls under it say "near where".
-  "nearby.seeItGrowingLede": "Community-verified iNaturalist photos.",
+  "nearby.seeItGrowingLede": "Confirmed iNaturalist photos.",
   "nearby.outsideYou":
     "You're outside the regions Indigene has native-plant data for, so we can't vouch for what's truly native there — and we won't dress up nearby sightings as local natives. The sun, soil and climate readings still work everywhere.",
   "nearby.outsidePlace":
@@ -2202,7 +2202,7 @@ export const en = {
   "wanted.placeLink": "{region} (#{n})",
 
   "wlNearby.seeItNear": "See it near you",
-  "wlNearby.seeItNearLede": "Community-verified iNaturalist photos.",
+  "wlNearby.seeItNearLede": "Confirmed iNaturalist photos.",
   "wlNearby.outsideYou":
     "You're outside the regions Indigene covers, so we can't do a nearby lookup there. You can still pick a region where it's found.",
   "wlNearby.outsidePlace":
@@ -2556,6 +2556,7 @@ export const en = {
   "emoji.soil": "soil test",
   "emoji.byHand": "by hand",
   "emoji.size": "size",
+  "emoji.figures": "figures",
   "emoji.spread": "spread",
   "emoji.colors": "colors",
   "emoji.photo": "photo",

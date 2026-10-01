@@ -979,7 +979,7 @@ export const fr: Dict = {
   "traits.group.figures": "📊 Chiffres",
   "traits.noWater": "Devrait s'installer et survivre à la seule pluie après la plantation, lors d'une année normale.",
   "traits.needsWater": "À arroser après la plantation, le temps que ses racines prennent.",
-  "traits.keystone": "Fait vivre bien plus d'animaux que la plupart des plantes — la perdre défait tout le réseau alimentaire local. Les écologues parlent de plante « clé de voûte », d'après la pierre qui tient une arche.",
+  "traits.keystone": "Nourrit bien plus d'espèces de chenilles que la plupart des plantes. Les écologues parlent de plante « clé de voûte », d'après la pierre qui tient une arche.",
   "traits.deer": "Les chevreuils la broutent peu en général. Pas une promesse : un hiver de disette change leurs goûts.",
   "traits.toxic": "À ne pas manger, ni pour les humains ni pour les animaux — une partie de la plante peut rendre malade. Plantez-la là où un chien curieux ou un tout-petit ne la goûtera pas.",
   "traits.thorny": "Porte des épines ou des aiguillons. Tenez-la à l'écart des allées et des jeux.",
@@ -2120,7 +2120,7 @@ export const fr: Dict = {
   "nearby.found": "Nous en avons trouvé {n} : ",
   "nearby.foundNear": "Nous en avons trouvé {n} à proximité : ",
   "nearby.seeItGrowing": "La voir pousser près de chez vous",
-  "nearby.seeItGrowingLede": "Photos iNaturalist vérifiées.",
+  "nearby.seeItGrowingLede": "Photos iNaturalist confirmées.",
   "nearby.outsideYou":
     "Vous êtes en dehors des régions pour lesquelles Indigene a des données sur les plantes indigènes : nous ne pouvons donc pas garantir ce qui y est vraiment indigène — et nous ne ferons pas passer des observations voisines pour des indigènes locales. Les mesures de soleil, de sol et de climat fonctionnent partout.",
   "nearby.outsidePlace":
@@ -2191,7 +2191,7 @@ export const fr: Dict = {
   "wanted.placeLink": "{region} (n° {n})",
 
   "wlNearby.seeItNear": "Le voir près de chez vous",
-  "wlNearby.seeItNearLede": "Photos iNaturalist vérifiées.",
+  "wlNearby.seeItNearLede": "Photos iNaturalist confirmées.",
   "wlNearby.outsideYou":
     "Vous êtes en dehors des régions couvertes par Indigene : nous ne pouvons donc pas faire de recherche à proximité. Vous pouvez tout de même choisir une région où il est présent.",
   "wlNearby.outsidePlace":
@@ -2534,6 +2534,7 @@ export const fr: Dict = {
   "emoji.soil": "analyse du sol",
   "emoji.byHand": "à la main",
   "emoji.size": "taille",
+  "emoji.figures": "chiffres",
   "emoji.spread": "étalement",
   "emoji.colors": "couleurs",
   "emoji.photo": "photo",

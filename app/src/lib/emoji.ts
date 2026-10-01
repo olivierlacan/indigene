@@ -81,6 +81,7 @@ const MEANING: Record<string, TKey> = {
   "🧪": "emoji.soil",
   "🤲": "emoji.byHand",
   "📏": "emoji.size",
+  "📊": "emoji.figures",
   "↔": "emoji.spread",
   "🎨": "emoji.colors",
   "📷": "emoji.photo",

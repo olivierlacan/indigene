@@ -192,6 +192,16 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
    */
   function onAnchorClick(e: MouseEvent): void {
     if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    // A region chip switches which figures this page shows. It replaces the
+    // history entry rather than adding one, so Back leaves the plant instead
+    // of stepping back through every region tapped; the router keeps the chip
+    // where it was on screen while the page redraws around it.
+    const chip = (e.target as Element | null)?.closest("a.region-chip");
+    if (chip instanceof HTMLAnchorElement && main.contains(chip)) {
+      e.preventDefault();
+      if (!chip.classList.contains("region-chip-on")) location.replace(chip.href);
+      return;
+    }
     const link = (e.target as Element | null)?.closest("a.anchor-link");
     if (!link || !main.contains(link)) return;
     const wantedSection = (link.getAttribute("href") ?? "").slice(1);

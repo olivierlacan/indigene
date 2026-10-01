@@ -364,6 +364,7 @@ async function route(): Promise<void> {
   // language is loaded, and for English there is nothing to load at all.
   await loadProse();
   const { step, param } = currentRoute();
+  const kept = keptPlace(param ? `${step}/${param}` : step);
   // Before `syncAddressBar` — the trail helpers read `location.hash` to see
   // where the reader is heading, and canonicalizing takes the hash away.
   if (cleanup) { cleanup(); cleanup = null; }
@@ -376,6 +377,9 @@ async function route(): Promise<void> {
   updateSiteNav(step);
   updateLayout(step, param);
   const fn = param ? PARAM_RENDERERS[step] ?? STEPS[step].fn : STEPS[step].fn;
+  // Hold the page's height while it redraws, so the document can't shrink
+  // under the reader and clamp their scroll before the new content lands.
+  if (kept) main.style.minHeight = `${main.offsetHeight}px`;
   const result = fn(main, param);
   if (typeof result === "function") cleanup = result;
   else if (result instanceof Promise) {
@@ -389,12 +393,49 @@ async function route(): Promise<void> {
   // thing under the header, wherever in its own layout the step happened to
   // notice the gap (see components/wip-banner.ts).
   mountUntranslatedBanner(main);
-  landAtTop();
+  if (kept) {
+    main.style.minHeight = "";
+    restorePlace(kept);
+  } else landAtTop();
   // Last, and only now: the address bar has been put on the page's canonical
   // form (`syncAddressBar`), so the one thing reported is the address a reader
   // would have copied — not the hash form the app was momentarily on. Every
   // reason this might send nothing at all lives in `lib/analytics.ts`.
   trackPageview();
+}
+
+/**
+ * The last link tapped on the page, and where it sat on screen.
+ *
+ * A link back to the page you're on with different state — a plant's region
+ * chips, `?region=` — is a switch, not a trip. It still goes through the router,
+ * so the address stays honest, but the reader should stay where they are: the
+ * control they tapped holds its place under their finger while the figures
+ * around it change. Landing at the top for it read as a full reload.
+ */
+let tapped: { href: string; top: number; at: number } | null = null;
+document.addEventListener("click", (e) => {
+  const link = (e.target as Element | null)?.closest("a[href]");
+  if (!link || !main.contains(link)) return;
+  tapped = { href: link.getAttribute("href") ?? "", top: link.getBoundingClientRect().top, at: Date.now() };
+}, true);
+
+/** The place to keep, when this route is a tap that redraws the page already
+ *  on screen; null when it is a page of its own and should start at the top. */
+function keptPlace(key: string): { href: string; top: number } | null {
+  const tap = tapped;
+  tapped = null;
+  if (!tap || syncedRoute !== key || Date.now() - tap.at > 1000) return null;
+  return tap;
+}
+
+/** Put the tapped control back where it was on screen, and focus it, so a
+ *  keyboard reader carries on from the same spot. */
+function restorePlace(kept: { href: string; top: number }): void {
+  const again = [...main.querySelectorAll("a[href]")].find((a) => a.getAttribute("href") === kept.href);
+  if (!(again instanceof HTMLElement)) return;
+  window.scrollBy(0, again.getBoundingClientRect().top - kept.top);
+  again.focus({ preventScroll: true });
 }
 
 /**

@@ -137,10 +137,13 @@ subtitle on the What's new page.
   now waits a task. The queue also starts the job nearest the viewport and
   drops jobs that scroll out of range before their turn.
 - Plants: on a plant native to several regions, tapping another region above
-  its figures switches to that region's numbers again, instead of staying put.
+  its figures switches to that region's numbers again, and the page stays
+  where you were instead of jumping to the top.
 - Internal: the page moved `?region=` from the hash to the search string
   before drawing, and `hashParam()` only read the hash. `addressParam()` in
-  `lib/routes.ts` reads whichever the page is on.
+  `lib/routes.ts` reads whichever the page is on. A link tap that reroutes to
+  the page already shown now keeps the tapped link's screen position instead of
+  `landAtTop()`; region chips use `location.replace`, so Back leaves the plant.
 
 ## [0.35] - 2026-09-24
 

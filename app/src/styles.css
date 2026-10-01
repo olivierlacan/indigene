@@ -4767,6 +4767,33 @@ body[data-layout="profile"] .wip-banner-text {
   opacity: 0.85;
 }
 
+/* An animal's plants, region by region. One stack on a phone; on a laptop the
+   regions flow down two columns and then across, so a page of six short lists
+   fills both halves of the window instead of leaving an orphan card per region.
+   Breaks fall between cards, never inside one, and never straight after a
+   region's heading. */
+@media (min-width: 64rem) {
+  .wildlife-regions {
+    columns: 2;
+    column-gap: 1rem;
+  }
+  .wildlife-regions .wildlife-supports {
+    display: block;
+  }
+  .wildlife-regions .support-row {
+    height: auto;
+    margin-bottom: 0.5rem;
+    break-inside: avoid;
+  }
+  .wildlife-regions .section-head {
+    break-after: avoid;
+  }
+  /* Both columns start on the same line. */
+  .wildlife-regions > section:first-child > .section-head {
+    margin-top: 0;
+  }
+}
+
 /* --- Profile pages on a laptop -------------------------------------------
    A plant's page is the longest in the app: an identity block, a stat grid, a
    to-scale drawing, four paragraphs and five card sections. An animal's is the
@@ -4866,17 +4893,10 @@ body[data-layout="profile"] .wip-banner-text {
     padding-top: 0;
     padding-bottom: 0;
   }
-  /* …except the half that follows the name in the same column: it keeps the
-     breathing room it has on a phone. */
-  .plant-cols .plant-body-lead {
-    padding-top: 0.6rem;
-  }
-  /* Heading its own column, the guarantee has nothing above it to be separated
-     from — so it loses the dashed rule and starts level with the name opposite. */
-  .plant-cols .plant-body-rest > .wildlife-vouch:first-child {
+  /* An animal's blurb heads the right column, level with its name opposite;
+     the sourced guarantee under it keeps its dashed rule. */
+  .plant-cols .plant-body-lead > p:first-child {
     margin-top: 0;
-    padding-top: 0;
-    border-top: 0;
   }
   /* Half the width, so two roomy tiles per row rather than four cramped ones —
      "Caterpillar hosts" stops wrapping to three lines. */
@@ -4898,9 +4918,18 @@ body[data-layout="profile"] .wip-banner-text {
     margin-top: 0;
   }
 
+  /* The drawing closes the identity column on a laptop (`onLaptop` in the
+     plant page): under a paragraph rather than a tile grid, it keeps the gap
+     the tiles had above it. */
+  .plant-cols .plant-col:first-child > .size-figure {
+    margin-top: 1.25rem;
+  }
+
   /* ---- A plant's sections below it ---- */
-  /* The left column is given the wider track: it carries three cards to the
-     right column's two, and the extra width shortens all three. */
+  /* Three cards a side once "See it growing near you" moves under the spot
+     check. The left track is the wider one: its cards are the prose — growing
+     needs, the seven ecosystem scores, propagation — and the width shortens
+     all three. */
   .plant-sections {
     display: grid;
     grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);

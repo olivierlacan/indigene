@@ -86,6 +86,13 @@ subtitle on the What's new page.
 
 ### Changed
 
+- Plants & Wildlife: on a laptop, plant and animal pages fill both columns
+  instead of leaving half the screen empty. An animal's plants now flow down
+  two columns, region after region, and a plant's growth drawing sits under
+  its photo.
+- Internal: the plant page moves its growth drawing and its "See it growing
+  near you" card between columns only past the laptop breakpoint (`onLaptop`
+  in `steps/plant.ts`), so the phone stack is untouched.
 - Matches: the buttons on a saved spot say what they do. "Open" is now "Plant
   more", and the link to what's in the ground reads "Already planted".
   https://indigene.app/#/saved

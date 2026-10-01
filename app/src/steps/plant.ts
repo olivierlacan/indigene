@@ -117,16 +117,28 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
   // has a list of their own waiting.
   const fromList = resultsTrail.open;
 
+  // Pieces that sit in a different column on a laptop than in the phone's
+  // stack (see `onLaptop`); each move's listener is dropped with the page.
+  const unplace: Array<() => void> = [];
+  // "See it growing near you" follows the ecosystem card on a phone. On a
+  // laptop it goes under the spot check — both ask where you are — because the
+  // left column otherwise ran a screenful longer than the right.
+  const nearby = nearbyObservationsSection(plant);
+  const references = referencesSection(plant);
+  const sectionsRight = el("div", { class: "plant-sections-col" }, [
+    suitabilityChecker(entries),
+    references,
+  ]);
+
   main.append(
     ...(fromList ? [el("p", { class: "back-trail" }, [
       el("a", { href: "#/results" }, t("plant.backToList")),
     ])] : []),
     profile(plant, entries),
     // The sections below the profile, in two columns on a laptop and one on a
-    // phone. The split is by position, not by shuffling: reading down the left
-    // column and then the right gives exactly the order a phone stacks them in,
-    // so nothing has a different place in the page depending on the screen.
-    // (`.plant-sections` and its columns are `display: contents` until the
+    // phone. The split is by position: reading down the left column and then
+    // the right gives the order a phone stacks them in, bar the one card
+    // `onLaptop` moves to balance the columns. (`.plant-sections` and its columns are `display: contents` until the
     // laptop breakpoint, so on a phone these wrappers don't exist at all.)
     //
     // "Check your spot" heads the second column and the databases close the
@@ -140,13 +152,10 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
         // see `ecosystemSection`.
         needsSection(plant, region.meta.id),
         ecosystemSection(plant, entries, region.meta.id, section === "ecosystem"),
-        nearbyObservationsSection(plant),
+        nearby,
         propagationSection(plant, region.meta.id),
       ]),
-      el("div", { class: "plant-sections-col" }, [
-        suitabilityChecker(entries),
-        referencesSection(plant),
-      ]),
+      sectionsRight,
     ]),
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
       fromList
@@ -155,6 +164,8 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
       el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("browse.home")),
     ])
   );
+
+  if (nearby) unplace.push(onLaptop(nearby, () => sectionsRight.insertBefore(nearby, references)));
 
   if (section) revealSection(section);
   // Arrived on the old route form: put the shareable one in the address bar,
@@ -169,6 +180,7 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
   // pages later as a guess about what "back" means.
   const cleanup = (): void => {
     main.removeEventListener("click", onAnchorClick);
+    unplace.forEach((f) => f());
     keepTrail(location.hash);
   };
 
@@ -309,8 +321,9 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
     const hero = heroImage(p, active.region.meta.id);
 
     const names = nameLines(p);
+    const chart = growthChart(p);
 
-    return el("article", { class: "plant" }, [
+    const card = el("article", { class: "plant" }, [
       // The "native to" line and the share control share the top row. The
       // button used to be a full-width secondary at the very bottom of the
       // page, which made sharing look like the last step of reading the plant
@@ -327,9 +340,9 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
         ]),
         shareButton(p),
       ]),
-      // Two columns on a laptop, one stack on a phone — and the same order
-      // either way, read down the left column and then the right: who this
-      // plant is, then its numbers. The wrappers are `display: contents` below
+      // Two columns on a laptop, one stack on a phone: who this plant is, then
+      // its numbers. The one piece that changes column is the drawing — see
+      // `onLaptop`. The wrappers are `display: contents` below
       // the breakpoint, so on a phone the pieces sit in the card as one stack.
       el("div", { class: "plant-cols" }, [
         el("div", { class: "plant-col" }, [
@@ -373,7 +386,7 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
           // screen further down.
           regionSwitch(p, all, active),
           statGrid(p),
-          growthChart(p),
+          chart,
           el("div", { class: "plant-body" }, [
             el("p", { class: "confidence" }, [
               el("strong", {}, t("card.confidence", { level: t(`confidence.word.${p.confidence}` as const) })),
@@ -390,6 +403,9 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
         ]),
       ]),
     ]);
+    const identityCol = card.querySelector(".plant-col");
+    if (identityCol) unplace.push(onLaptop(chart, () => identityCol.append(chart)));
+    return card;
   }
 
   /**
@@ -750,6 +766,29 @@ function needsSection(p: Plant, regionId: string): HTMLElement {
  * tile just above. A screen reader gets the same points the eye does, in one
  * line.
  */
+/**
+ * Moves `node` with `toLaptop` past the laptop breakpoint, and back to exactly
+ * where it was in the phone's stack below it — so a phone never sees the move.
+ *
+ * For the plant page's two columns: the figures column (a region switch, eight
+ * tiles, the height drawing, the source note) is twice as tall as a photo and a
+ * paragraph, so on a laptop the drawing closes the identity column instead —
+ * "how big does it get?" beside the plant itself — and the left half of the
+ * card stops being empty. Returns the listener's removal, for the cleanup.
+ */
+function onLaptop(node: Element, toLaptop: () => void): () => void {
+  const mq = window.matchMedia("(min-width: 64rem)");
+  const home = node.parentNode;
+  const next = node.nextSibling;
+  const place = (): void => {
+    if (mq.matches) toLaptop();
+    else if (home) home.insertBefore(node, next);
+  };
+  place();
+  mq.addEventListener("change", place);
+  return () => mq.removeEventListener("change", place);
+}
+
 function growthChart(p: Plant): HTMLElement {
   const points = p.size.map((s) => t("plant.growthPoint", { year: s.year, height: length(s.heightFt) }));
   const canvas = el("canvas", {

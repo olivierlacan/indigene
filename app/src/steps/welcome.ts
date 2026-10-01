@@ -28,7 +28,9 @@ export function renderWelcome(main: HTMLElement): void {
       },
     }, t("welcome.start")),
     // The escape hatch for people who'd rather not use their location: the
-    // regions and featured-plants cards live on the browse page instead.
+    // regions and featured-plants cards live on the browse page instead. One
+    // line at 360 px — the link says what it does, and the page it opens says
+    // the rest.
     el("p", { style: "margin-top:0.6rem;font-size:0.85rem;color:var(--ink-soft);text-align:center" },
       tx("welcome.ratherNot", {
         link: el("a", { href: "#/browse" }, t("welcome.ratherNotLink")),

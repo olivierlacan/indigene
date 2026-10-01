@@ -96,6 +96,8 @@ subtitle on the What's new page.
 - Internal: the plant page moves its growth drawing and its "See it growing
   near you" card between columns only past the laptop breakpoint (`onLaptop`
   in `steps/plant.ts`), so the phone stack is untouched.
+- The welcome page's other way in fits on one line on a phone: "Or browse
+  without sharing your location." https://indigene.app/
 - The English now spells one way, the American one: color, gray, neighbor.
   Words most Americans don't use went too — "fortnight" is "two weeks", a
   "verge" is a roadside, a ladybird is a ladybug.

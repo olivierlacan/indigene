@@ -219,8 +219,8 @@ export const fr: Dict = {
   "welcome.noAccount": "Pas de compte, aucun pistage. ",
   "welcome.noAccountRest": "Tout reste dans votre navigateur, et tout fonctionne hors ligne.",
   "welcome.start": "Commencer là où je suis",
-  "welcome.ratherNot": "Vous préférez ne pas partager votre position ? {link}.",
-  "welcome.ratherNotLink": "Parcourez plutôt les régions et les plantes",
+  "welcome.ratherNot": "Ou {link}.",
+  "welcome.ratherNotLink": "parcourez sans partager votre position",
   "welcome.whyTitle": "Pourquoi des plantes indigènes ?",
   "welcome.why1":
     "La plupart des chenilles ne peuvent manger que les plantes avec lesquelles elles ont évolué, et presque tous les oiseaux du jardin élèvent leurs petits avec des chenilles. Pas de plantes indigènes, pas de chenilles, pas d'oisillons.",

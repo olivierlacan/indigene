@@ -204,8 +204,8 @@ export const en = {
   "welcome.noAccount": "No account, no tracking. ",
   "welcome.noAccountRest": "Everything stays in your browser and works offline.",
   "welcome.start": "Start where you're standing",
-  "welcome.ratherNot": "Rather not use your location? {link} instead.",
-  "welcome.ratherNotLink": "Browse regions & native plants",
+  "welcome.ratherNot": "Or {link}.",
+  "welcome.ratherNotLink": "browse without sharing your location",
   "welcome.whyTitle": "Why native plants?",
   "welcome.why1":
     "Most caterpillars can only eat the plants they evolved with, and nearly every backyard bird raises its chicks on caterpillars. No natives, no caterpillars, no baby birds.",

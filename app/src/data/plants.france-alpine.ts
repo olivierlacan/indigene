@@ -84,7 +84,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "It wants cool, damp ground and altitude: planted low and dry it is stressed, and a stressed spruce is what bark beetle outbreaks feed on — the reason so much of the Alps' spruce has gone brown in recent hot summers. Plant it above its comfort line, not below, and give it real room; the shallow roots mean an isolated one can blow over.",
     givesNote: "Spruce seed is the whole winter economy of the crossbill — a bird with a beak crossed at the tip specifically to pry these cones apart — and of siskins, coal tits and nutcrackers. The dense low branches are where black grouse and capercaillie shelter through the snow, and the canopy is the nesting place of the mountain's owls.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Bark-beetle vulnerability of low-altitude spruce: ONF / Département de la santé des forêts. Host count: 68 Lepidoptera recorded on Picea in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -119,7 +119,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Needs full sun — it will not tolerate shade at all — and in return it takes cold, wind, avalanche and thin stony ground that would defeat a spruce. It is fast for a mountain tree. The great virtue for a garden is that its open canopy lets light through, so grass and flowers grow beneath a larch as they never will beneath a spruce.",
     givesNote: "A well-used caterpillar tree — including the larch budmoth, whose population famously peaks across the Alps every eight or nine years and turns whole valleys orange, feeding an explosion of birds each time. Its seed feeds crossbills and siskins, and the airy larchwood floor is the richest ground flora in the mountain forest.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Larch budmoth cycles: long-running Alpine forest-entomology record (WSL/ONF). Host count: 45 Lepidoptera recorded on Larix in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -154,7 +154,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Very slow — this is a tree measured in centuries, and one planted now will be a shrub for a decade — but it is the toughest tree in the Alps, standing through wind, ice and avalanche where nothing else will. It needs altitude and cold; in a warm lowland garden it does badly.",
     givesNote: "Its wingless seeds are too heavy to blow anywhere, so the tree has one partner: the spotted nutcracker, which buries tens of thousands of them each autumn and forgets enough to plant the next generation of forest. That relationship — a bird and a tree that cannot do without each other — is the story of the Alpine treeline.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Nutcracker seed-dispersal mutualism: Alpine forest ecology literature; Parc national des Écrins. Host count: 64 Lepidoptera recorded on native pines in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-cold-moist", "seed-double-dormant"],
@@ -189,7 +189,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The easiest good tree for a mountain garden: small enough for a normal plot, indifferent to cold, wind and acid soil, and quick to establish. It is short-lived by tree standards — eighty years or so — and it hates hot dry ground, so it is a mountain plant rather than a valley-floor one.",
     givesNote: "Its French name means 'the fowler's sorb', because the berries were used to bait bird traps, and that tells you everything: no other mountain tree feeds birds like it. Fieldfares, redwings, ring ouzels, blackbirds, mistle thrushes and waxwings strip a rowan in days. Add heavy cream blossom for bees and a strong caterpillar count.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 109 Lepidoptera recorded on native Sorbus in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -224,7 +224,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The toughest big broadleaf in the mountains — it takes wind, salt, cold, exposure and poor soil, which is why it was planted for shelter around alpine farms for centuries. It seeds itself prolifically, so expect to pull seedlings, and it gets very large; this is a field or boundary tree rather than a small-garden one.",
     givesNote: "Hanging green flower tassels in April are a serious early nectar source at altitude, when little else is out and bumble bee queens are founding colonies. A good caterpillar count, and old sycamores in mountain pasture become the hollow, mossy, lichen-covered trees that owls, redstarts and bats live in.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 80 Lepidoptera recorded on native maples in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (118 if introduced ornamental maples are counted too).",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -259,7 +259,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Fast, cheap, undemanding and short-lived for a tree — sixty to eighty years — which makes it the right first tree on bare or poor ground, casting light shade that other things can grow up through. It seeds itself widely. Its spring pollen is a common hay-fever trigger.",
     givesNote: "After the oaks and willows, birch is the biggest caterpillar tree in Europe — over three hundred moth and butterfly species, which is why a birch stand is so loud with warblers and tits in May. Its seed feeds redpolls and siskins all winter.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 327 Lepidoptera recorded on native birches in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-surface-light", "seed-direct"],
@@ -294,7 +294,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Grows almost anywhere and fast, which is its virtue on a raw bank and its vice in a small garden — it seeds itself everywhere and is short-lived. Cut it hard every few winters and it comes back thicker. Male plants carry the fat golden catkins; female ones the silver ones.",
     givesNote: "The two things a mountain spring needs most. Its catkins open in March, before anything else, and are the meal that bumble bee queens, the first bees and the overwintering butterflies come out to — a willow in flower on a warm March day is the loudest plant in the valley. And with over three hundred caterpillar species it is, with birch, the backbone of the whole food web here.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 350 Lepidoptera recorded on native willows in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["cuttings-hardwood", "seed-direct"],
@@ -330,7 +330,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "It wants a valley bottom rather than a slope: soil that stays damp, and sun for at least half the day. It suckers gently, which makes it good on a stream bank and untidy in a small border. Expect it to be webbed over by the bird-cherry ermine moth some springs — the tree is stripped bare, looks finished, and puts out a fresh set of leaves in July. Do not spray it; that outbreak is a bird larder. The stones are toxic if chewed.",
     givesNote: "One of the very biggest caterpillar plants in the mountains, and a full third of that value shows up in a single spring when the ermine moths hatch and every tit and warbler in the valley works the tree. Then racemes of black cherries in August for thrushes, blackcaps and pine martens, and heavy scented flower in May for bumble bees and hoverflies.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Bird-cherry ermine (Yponomeuta evonymella) defoliation and recovery: INPN; European forest-entomology literature. Host count: 304 Lepidoptera recorded on native Prunus in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-cold-moist", "suckers"],
@@ -365,7 +365,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Plan for the suckering: one aspen becomes a grove of clones, which on a rough slope is exactly what you want and in a small garden is a mistake. It is fast, tough, and content on the poor stony ground left by a slide. Mowing is the only practical way to hold the suckers back.",
     givesNote: "A heavy caterpillar tree of the mountain zone, so an aspen stand is where the warblers and tits feed their young. Early catkins are pollen when there is none, the suckering thicket is cover for hares and grouse, and aspens rot from the inside in the particular way that makes woodpecker holes and then owl and bat roosts.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 143 Lepidoptera recorded on native poplars in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["suckers", "root-cuttings"],
@@ -401,7 +401,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "It is particular and worth the trouble: acid soil with real leaf mold or bark in it, cool roots, part shade, and never lime or manure. It spreads slowly by underground runners into a low carpet, and it takes years to do so — but once established it is there for decades and needs nothing.",
     givesNote: "The biggest single food source among mountain shrubs: over two hundred caterpillar species, pink bell flowers that bumble bees work in May, and a berry crop in August that feeds black grouse, capercaillie, thrushes, foxes and martens — the black grouse chick's whole first summer is insects taken off bilberry. And you get the rest.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Black grouse dependence on bilberry: Parc national de la Vanoise / Observatoire des galliformes de montagne. Host count: 227 Lepidoptera recorded on native Vaccinium in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["division", "seed-surface-light"],
@@ -436,7 +436,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Same demands as the bilberry — acid, humus-rich, cool, no lime — but it keeps its small glossy leaves through winter, which makes it the better evergreen ground cover of the two. Very slow to spread. Plant several close together and mulch with bark while they knit.",
     givesNote: "It often flowers twice, in early summer and again in high summer, feeding bumble bees at altitude both times, and the tart red berries hang on into winter for thrushes, ring ouzels, grouse and martens when the bilberries are long gone. Evergreen cover on acid ground where little else will grow.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 227 Lepidoptera recorded on native Vaccinium in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level; the figure is the genus's, and the bilberry carries the larger share of it.",
     propagation: {
       methods: ["division", "cuttings-semi-hardwood"],
@@ -471,7 +471,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "The hardest plant here to please below its home altitude: it wants acid soil, cool damp air, and a long snow cover that protects it through winter — which is exactly what a warm valley garden cannot give it. Extremely slow, extremely long-lived. All parts are toxic, and honey made from it can be too.",
     givesNote: "In July an alpenrose slope is one of the great bumble bee sights in Europe — the flowers are shaped for long-tongued bumble bees and they work them in hundreds. Its dense low thickets are the shelter that black grouse and mountain hares winter in, and it holds soil on slopes too steep for anything else.",
-    confidence: "medium",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Toxicity (grayanotoxins, including in honey): INPN; French poison-center guidance. Host count: 22 Lepidoptera recorded on native Rhododendron in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (40 if introduced garden rhododendrons are counted too).",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
@@ -506,7 +506,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "It is built to be flattened: avalanches bend its springy stems downhill under the snow and it stands back up in June, which is why it owns the avalanche corridors. In a garden that means a fast, dense, unkillable screen for a damp bank — and something that spreads, so give it room away from a border.",
     givesNote: "A major caterpillar shrub, and like all alders it makes its own nitrogen, so it quietly enriches thin mountain soil for everything planted after it. Its little woody catkins hold seed that redpolls and siskins take through winter, and the impenetrable thicket is nesting cover on open slopes.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin; accepted name Alnus alnobetula, formerly Alnus viridis. Host count: 163 Lepidoptera recorded on native alders in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-direct", "layering"],
@@ -541,7 +541,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Slow, spiny and near-indestructible once in — cold, wind, drought, chalk or acid, it takes all of it and lives for centuries. It resents transplanting, so plant it small. Male and female bushes are separate, so you need both for berries.",
     givesNote: "A well-used caterpillar plant for a conifer, and its blue-black berry-cones — three years in the ripening — are winter food for ring ouzels, mistle thrushes, fieldfares and black grouse. The prickly interior is one of the few places a small bird can nest safely on an open mountain slope, and a juniper often shelters a tree seedling long enough for it to get away.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 58 Lepidoptera recorded on native junipers in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-double-dormant", "cuttings-semi-hardwood"],
@@ -576,7 +576,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Acid soil, full sun, poor ground and no feeding — it is a plant of hungry places and rich soil ruins it. Shear it lightly each spring, cutting only into the previous year's growth, to stop it going bare and woody in the middle. It lives about twenty-five years and seeds itself.",
     givesNote: "The great late-summer nectar plant of the mountains: when the meadows have been cut and the flowers are gone, a heather slope in August is purple and roaring with bumble bees, honey bees and butterflies. It carries a long caterpillar list too, and its dense mat shelters lizards, grouse chicks and countless insects through winter.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 118 Lepidoptera recorded on Calluna in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
@@ -612,7 +612,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A valley plant rather than a high one — below about 1,300 m it is easy, above that it thins out. Sun or half shade and any decent soil. Give it the traditional treatment: cut a few of the oldest stems to the ground each winter, or the whole stool every seven years or so, and the plant stays young indefinitely. Squirrels and dormice will have the nuts before you do.",
     givesNote: "The first pollen of the mountain year, weeks before anything else opens — which is what a queen bumble bee coming out of a mild February needs. A heavy caterpillar plant through spring, nuts in autumn for jays, nutcrackers, squirrels and dormice, and a coppiced stool that is dense nesting cover for as long as you keep cutting it.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range and altitude limit: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 124 Lepidoptera recorded on hazel in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["layering", "seed-cold-moist"],
@@ -647,7 +647,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "It runs at the root and comes up several feet away, so give it a rough corner or a boundary rather than a bed. Cut the canes that have fruited right out at the base each winter, leaving the new green ones — that is all the pruning it ever needs. Prickly but not vicious. Fruit in the wild is smaller and far better than anything in a punnet.",
     givesNote: "One of the biggest caterpillar plants in the mountains and one of the best nectar plants of the whole summer — a raspberry patch in June has bumble bees on it from first light. Then fruit in August for thrushes, blackcaps, martens and bears where there are any, and a thicket that is safe nesting cover on an otherwise open slope.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 195 Lepidoptera recorded on native brambles and raspberries in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["suckers", "division"],
@@ -682,7 +682,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Easy on any mountain soil that drains, in sun or half shade, and it is one of the few roses you can plant beside a path without regretting it — the stems are nearly thornless. It suckers slowly into a low thicket. Take out the oldest stems in late winter and leave the hips alone; they are the winter half of the plant's value.",
     givesNote: "An open single flower, which is what a rose has to be if bees are to reach the pollen — a packed garden rose gives them nothing. Rose is one of the heaviest caterpillar genera here, and the long red hips hold on the bush into the winter for thrushes, fieldfares and finches when the snow has covered everything at ground level.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 113 Lepidoptera recorded on native roses in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["suckers", "seed-double-dormant"],
@@ -717,7 +717,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Half shade, leaf-mold soil that stays cool and moist, and then leave it entirely alone — it hates being moved, hates dry roots, and resents any pruning at all. Slow, and never long-lived. **Every part is seriously poisonous**, and the red berries are the most tempting-looking thing in the wood, so think hard before planting it where small children play.",
     givesNote: "It flowers in February, which in a mountain garden means it is very nearly the only thing offering nectar to a bumble bee queen or an early brimstone on the first warm afternoon of the year. The berries in July go to blackcaps and thrushes, which are unaffected by what would poison us.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Toxicity: INPN; European toxic-plant references. Host count: 7 Lepidoptera recorded on Daphne in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-cold-moist", "cuttings-semi-hardwood"],
@@ -752,7 +752,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The useful exception among heathers: it takes limestone, so it will grow in the alkaline alpine soils that kill the others. Sun or light shade, sharp drainage, no feeding. Shear it over lightly once the flowers have gone brown in late spring, and it stays a dense mat for many years instead of opening out in the middle.",
     givesNote: "It flowers from January into April, often up through the snow, and that is the whole point of it: on the first mild day of the mountain year the bumble bee queens and honey bees are on winter heath because there is nothing else at all. It carries a real caterpillar load for its size too, and the mat is winter cover at ground level.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range and lime tolerance (unusual in Erica): Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 68 Lepidoptera recorded on native heaths in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
@@ -788,7 +788,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Sow it into thin, poor, sunny ground and cut it once, late, in September. It makes its own nitrogen, so never feed it, and it vanishes from anything rich, shaded or mown short. In the mountains it will grow in gravel and on a track edge.",
     givesNote: "The single most important butterfly plant in the Alps. The blues — and the Alps have more kinds of blue butterfly than anywhere else in Europe — along with the skippers, the burnet moths and the clouded yellows, raise their caterpillars on this, several of them on almost nothing else. Bumble bees work the flowers from May to September.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Blue-butterfly and burnet-moth host relationships: INPN; European butterfly foodplant checklist (Dryad). Host count: 106 Lepidoptera recorded on native Lotus in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (115 including introduced relatives).",
     propagation: {
       methods: ["seed-scarify", "seed-direct"],
@@ -823,7 +823,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "It wants exactly what a mountain gives it: sun, gravel, lime and no competition. In garden soil it is short-lived and floppy; in a gravel bed or a stony bank it thrives and seeds itself. Never feed it.",
     givesNote: "The only caterpillar plant of the small blue, one of Europe's tiniest butterflies, whose young eat the seeds inside a single flower head and can live nowhere else. Its woolly yellow clover heads also feed bumble bees and a set of solitary bees, and being a pea it puts nitrogen back into the thinnest soil.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Small blue (Cupido minimus) host relationship: INPN; European butterfly foodplant checklist (Dryad). Host count: 35 Lepidoptera recorded on native Anthyllis in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-scarify", "seed-direct"],
@@ -858,7 +858,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Full sun, sharp drainage, lime and poverty — a gravel bank, a dry wall top or the front of a stony bed. Shear it lightly after flowering to keep it dense, but never cut into the bare old wood. It will not tolerate wet feet in winter.",
     givesNote: "Bright yellow flowers with a boss of loose stamens that bees roll about in, opening in relays for weeks. It is also the caterpillar plant of several of the mountain's blues and the green hairstreak — this is one of those plants whose importance is entirely invisible until you know which butterflies vanish without it.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Blue and hairstreak host relationships: INPN; European butterfly foodplant checklist (Dryad). Host count: 70 Lepidoptera recorded on native Helianthemum in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["cuttings-softwood", "seed-direct"],
@@ -893,7 +893,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "A plant to plant once and never move: it takes about ten years to flower from seed, lives fifty or more, and sends a root a meter down that cannot be transplanted. It wants a deep, cool, damp mountain soil in sun. Digging wild roots is restricted in several French départements — buy nursery-grown, and never lift one from a pasture.",
     givesNote: "Whorls of starry yellow flowers on a five-foot stem, worked by bumble bees at an altitude where big flowers are rare, and a plant so long-lived that a single one outlasts most gardeners. Its caterpillar list is small but includes a moth that feeds inside the seed capsules and nowhere else.",
-    confidence: "medium",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Harvesting restrictions: French departmental protection orders (arrêtés préfectoraux) covering wild gentian root. Host count: 21 Lepidoptera recorded on native gentians in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-cold-moist", "seed-surface-light"],
@@ -928,7 +928,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "It wants damp: a soil that stays moist all summer, in sun or light shade, which in a garden usually means a pond edge or a low, wet corner. It resents drying out and it resents being divided often. Like other buttercup-family plants, it is toxic if eaten.",
     givesNote: "The flower never opens — it stays a closed yellow globe — and that is the point: a group of small flies live their entire adult lives inside it, mating and laying eggs there, and pollinate it in exchange while their larvae eat some of the seed. That one plant and one insect depend on each other completely is the kind of thing a damp mountain meadow is full of.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Globeflower–Chiastocheta fly mutualism: European pollination-ecology literature; INPN. Host count: 5 Lepidoptera recorded on Trollius in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level; included for the mutualism and the meadow, not as caterpillar food.",
     propagation: {
       methods: ["seed-cold-moist", "division"],
@@ -963,7 +963,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A true alpine, which means it wants sun, lime, gravel, cold and sharp drainage — and it dislikes warm, humid, still air more than it dislikes frost. A raised gravel bed or the top of a dry wall suits it; heavy soil kills it. Slow, then a wide flat carpet.",
     givesNote: "White eight-petaled flowers that track the sun and act as small parabolic warmers, so alpine flies and bees sit in them for the heat as much as the pollen — one of the neat solutions to being an insect at altitude. Then silvery twisted seed plumes, and an evergreen mat that pins loose scree in place. Unusually for the rose family, it fixes its own nitrogen, as alder does.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Nitrogen fixation (actinorhizal symbiosis) and solar-tracking flowers: alpine ecology literature. Host count: 17 Lepidoptera recorded on Dryas in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-surface-light"],
@@ -998,7 +998,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Sun, grit and poverty; it will grow in the cracks of a path and be walked on. Nothing kills it faster than rich, damp soil. Shear it after flowering if it gets straggly, and it will re-root wherever a stem touches the ground.",
     givesNote: "A pink mat that hums. It is one of the best nectar plants at altitude and a strong caterpillar plant, but its most extraordinary tie is with the large blue butterfly: the caterpillar feeds on thyme flowers for a few weeks, then drops to the ground, is carried into a red ants' nest because it smells and sounds like an ant grub, and spends the winter eating the ants' young. No thyme, and no ants, means no large blue.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Large blue (Phengaris arion) thyme-and-Myrmica life cycle: INPN; European butterfly foodplant checklist (Dryad). Host count: 94 Lepidoptera recorded on native thymes in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["division", "cuttings-softwood", "layering"],
@@ -1034,7 +1034,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Sow it into grass rather than into a bed — it is a meadow plant and it behaves like one, and it fixes its own nitrogen so it never wants feeding. The one rule that matters: **do not feed the meadow.** Fertilizer is exactly what pushed clover and every other flower out of European hay fields and left the grass. Cut once in late summer and take the cuttings away.",
     givesNote: "The flower head is deep, so this is a long-tongued bee's plant above all — the garden bumble bee and the great yellow bumble bee reach the nectar and the short-tongued ones cannot. Clover also feeds the caterpillars of the blues, the clouded yellows and a long list of moths, and it is one of the reasons an unfertilized alpine meadow holds more butterflies than anything a garden can build.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Bumble bee tongue-length and clover: Xerces Society; European pollinator literature. Host count: 97 Lepidoptera recorded on native clovers in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-direct", "seed-scarify"],
@@ -1069,7 +1069,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Plant the corms in damp meadow grass in summer and then work around its odd calendar: flowers alone in September, then broad leaves from spring to midsummer, then nothing. Do not mow between March and July or you will starve it. **Seriously poisonous in every part** — this is the plant behind most livestock poisonings in alpine hay, so keep it out of a paddock and away from anything that grazes.",
     givesNote: "It flowers in September and October, when the mountain meadow has finished and the last bumble bees and hoverflies are still flying and finding nothing. That timing is the whole gift: two or three weeks of open nectar at the end of the season, on ground that already looks finished for the year.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Toxicity (colchicine) and livestock risk: INPN; European veterinary references. Host count: 1 Lepidoptera recorded on Colchicum in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["division", "seed-cold-moist"],
@@ -1104,7 +1104,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "It needs ground that stays wet in spring — a seep, a ditch edge, the low corner of a damp meadow — and it will take real shade there. Do not mow it before midsummer, because it has to set seed and, more importantly, the caterpillars are still on it. It seeds itself about and also drops leaves that root where they land, so a patch fills in on its own.",
     givesNote: "This is the orange-tip's plant: the butterfly with the bright orange wingtips lays a single orange egg on a flower stem, and its caterpillar eats the developing seed pods and nothing else — which is why cutting a damp meadow in June wipes out the year's brood. It also feeds the green-veined white, and the early nectar goes to bumble bee queens and hoverflies.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Orange-tip (Anthocharis cardamines) host relationship and mowing sensitivity: INPN (MNHN); European butterfly foodplant checklist (Dryad). Host count: 23 Lepidoptera recorded on native bittercresses in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["division", "seed-direct"],
@@ -1140,8 +1140,9 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The native alternative to a lawn at altitude: fine, dense, drought-tolerant and happy on poor ground, and it never needs feeding or watering. Cut it once or twice a year and late — a meadow cut in September, not a lawn mown weekly — and the flowers of the pasture come up through it.",
     givesNote: "The most-used plant group here after the trees. The Alps' extraordinary cast of brown butterflies — the ringlets, the graylings, the marbled whites, the mountain skippers — eat nothing but grasses like this as caterpillars, and overwinter down inside the tussocks. Its seed feeds finches and buntings, and its roots hold thin mountain soil against the melt.",
-    confidence: "medium",
-    basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin; treated by some floras within the Festuca rubra aggregate. Host count: 190 Lepidoptera recorded on native fescues in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level, so the figure is the fescue genus's rather than this species' alone.",
+    hostCountFrom: "counted",
+    confidenceLowered: "medium",
+    basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin; treated by some floras within the Festuca rubra aggregate. Host count: 190 Lepidoptera recorded on native fescues in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level, so the figure is the fescue genus's rather than this species' alone. Confidence medium: some floras fold this fescue into the red fescue group, so the genus figure may not be its own.",
     propagation: {
       methods: ["seed-direct", "division"],
       note: "Strip the ripe seed heads in late summer and sow them straight onto raked soil — no chilling needed, and it comes up readily. Established tufts can also be dug and pulled apart in spring.",
@@ -1175,7 +1176,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Sharp drainage and lime — it is a limestone plant and it will not thank you for rich damp soil. Evergreen, low, and slowly clumping rather than running, so it suits a gravel garden, a wall top or the front of a dry bed. Comb the dead leaves out with your fingers in early spring; do not cut it back hard.",
     givesNote: "It flowers in April, which for a grass in the mountains is remarkably early, and the tussocks stay green all winter — cover at ground level on thin stony soil that has almost none. Skippers and the mountain browns raise their caterpillars on grasses like this, and the seed feeds finches and buntings.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 10 Lepidoptera recorded on Sesleria in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["division", "seed-direct"],
@@ -1210,7 +1211,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Full sun to light shade on stony, well-drained ground, and no water once away. It is evergreen and it forms a dense mat of fibrous root that is genuinely good at holding a steep bank — that is its job in the wild and it is the reason to plant it in a garden cut into a slope. It needs no cutting at all; comb it through in spring if it looks tired.",
     givesNote: "Sedges carry a surprising caterpillar load, and the small mountain browns and skippers grow up on turf like this. Above that, the mat is the habitat: it holds soil on ground that would otherwise slide, keeps a thin skin of shade and moisture over stone, and shelters the beetles, spiders and grasshoppers of an alpine slope.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 86 Lepidoptera recorded on native sedges in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["division", "seed-direct"],
@@ -1250,7 +1251,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "The old rule holds: cool shaded roots, head in the light. Plant it on the north or east side of a shrub, a wall or a low tree and let it scramble up. It wants soil that does not dry out and it dislikes hot sun on the root run, so mulch it or set a flat stone over the base. It flowers on last year's wood, so prune it — if at all — straight after flowering, never in winter.",
     givesNote: "Nodding bells in early summer that a bumble bee has to climb right inside, which is what they are shaped for. Clematis carries a real caterpillar load for a climber, and the silver seed heads that follow hold on into winter and are pulled apart by small birds for nest material in spring.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Toxicity of fresh Clematis foliage: INPN. Host count: 47 Lepidoptera recorded on native clematis in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["layering", "seed-cold-moist"],
@@ -1285,7 +1286,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Below about a thousand meters it is easy; higher than that the winters cut it back. Give it a wall, a stump or a tree you are not precious about, and cut it off anything whose shape matters to you. Worth correcting the usual charge: **ivy is not a parasite and does not strangle a healthy tree.** It only flowers once the growth turns adult and bushy at the top, so do not shear it every year or you never get the part that matters.",
     givesNote: "The most valuable autumn plant in Europe. It flowers in October and November, when the mountain year is over and everything else has finished, and it carries hoverflies, wasps and the last butterflies through — plus the ivy bee, a solitary bee whose whole year is timed to this one plant. Black berries follow in late winter for blackcaps and thrushes, and it is evergreen roosting cover the year round.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range and altitude limit: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Autumn nectar importance and the ivy bee (Colletes hederae): INPN; European pollinator literature. Toxicity: ASPCA. Host count: 18 Lepidoptera recorded on ivy in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
@@ -1320,7 +1321,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Damp soil in a valley, something strong to climb, and room — it dies back to nothing each winter and then covers a fence or an arch again in a single season, which makes it the fastest screen here. Cut the dead growth away in late winter. It suckers, and it is rough enough to scratch, so give it a boundary rather than a doorway. The female plants carry the cones.",
     givesNote: "Hop is the caterpillar plant of the comma butterfly, whose ragged-edged adults overwinter behind bark and are among the first things flying in a valley in March. The dense summer curtain is nesting cover, and the cones and dead stems shelter overwintering insects if you leave them until spring.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Comma (Polygonia c-album) host relationship: INPN (MNHN); European butterfly foodplant checklist (Dryad). Host count: 27 Lepidoptera recorded on hop in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["division", "cuttings-softwood"],
@@ -1357,7 +1358,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Part shade or sun at altitude, in soil that does not bake — a path edge, the foot of a wall, under a shrub. It runs into a dense low mat that keeps weeds out, and it will go further than you planned, which is a virtue in the places you would use it. Shear it over in early spring to freshen it. The fruit is tiny and worth every bit of the stooping.",
     givesNote: "Open white flowers through a long mountain summer, sized for the small solitary bees and hoverflies that deeper flowers exclude. Fruit for birds, mice and dormice, and a mat that keeps a shaded bank from washing — but the real value is that a groundcover layer is where the beetles, spiders and overwintering insects of a garden actually live.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 50 Lepidoptera recorded on wild strawberry in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["runners", "division"],
@@ -1392,7 +1393,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Poor, dry, sunny ground — a bank, a meadow, the gravel edge of a track. It creeps at the root through grass, which is what a meadow plant should do and what a border plant should not. Cut it back after flowering, and do not feed the ground it is in; on rich soil the grass simply swamps it.",
     givesNote: "The hummingbird hawk-moth — the day-flying moth people mistake for a tiny hummingbird — grows up on bedstraw, and so does the elephant hawk-moth, whose enormous gray caterpillar with false eyes appears on it in late summer. So a patch in the rough grass turns visiting moths into resident ones. The flowers themselves feed small bees, hoverflies and beetles for months.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Hawk-moth host relationships (Macroglossum stellatarum, Deilephila elpenor): INPN (MNHN); European foodplant checklists. Host count: 127 Lepidoptera recorded on native bedstraws in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["division", "seed-direct"],
@@ -1433,7 +1434,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Shade and soil that holds some moisture, and after that it is about as tough as a fern gets — it will take dry shade at the foot of a north wall once it is established. Cut last year's fronds off at the base in late winter, just before the new ones unroll. Toxic if eaten, which is worth knowing in a garden with a dog that chews.",
     givesNote: "Ferns feed almost no caterpillars and there is no point pretending otherwise. What this one gives is the shaded, damp, sheltered layer that a rocky mountain garden has none of: the fronds keep the ground beneath cool through summer, the crown holds a bank against a downpour, and that is where the beetles, spiders, toads and salamanders get through the year.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Toxicity: ASPCA. Host count: 5 Lepidoptera recorded on Dryopteris in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0). Ferns genuinely feed very few caterpillars.",
     propagation: {
       methods: ["division", "spores"],
@@ -1468,7 +1469,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A rock plant rather than a bed plant: put it in a gritty limestone crevice or the shaded side of a rock garden, with its crown proud of the soil so water cannot sit in it. It is slow, evergreen and long-lived, and it wants cold winters — this is one of the few things here that is happier at altitude than in a valley. Do not feed it and do not move it.",
     givesNote: "It furnishes the shaded side of rock, which in the mountains is where a great deal of small life shelters from both sun and frost — beetles, spiders, and the insects that lizards and pipits hunt. Very few insects eat ferns; the value here is the crevice, not the meal.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range and altitude: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 1 Lepidoptera recorded on Polystichum in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0). Ferns genuinely feed very few caterpillars.",
     propagation: {
       methods: ["spores", "division"],
@@ -1503,7 +1504,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Not a bed plant — push a young one into a shaded crack in limestone or a dry-stone wall, with grit and nothing else at its roots, and leave it entirely alone. It wants a cool north or east aspect and dislikes both drying wind and standing wet. Slow, tiny, and long-lived where it is happy.",
     givesNote: "What a crevice fern gives is the crevice: a green, humid, sheltered pocket on a rock face that would otherwise offer nothing, and with it the spiders, springtails and small beetles that live there and the mosses that follow. As with every fern, it feeds very few caterpillars, and saying so is more useful than pretending.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 2 Lepidoptera recorded on native spleenworts in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0). Ferns genuinely feed very few caterpillars.",
     propagation: {
       methods: ["spores", "division"],

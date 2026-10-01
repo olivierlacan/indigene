@@ -388,6 +388,10 @@ async function collectPages(load) {
     image: pageCard("sources"),
     imageAlt: "Where our numbers come from — what's counted, what's judgment, and where we'd bet we're wrong",
   });
+  add("confidence", en["confidence.docTitle"], en["confidence.lede"], {
+    image: pageCard("confidence"),
+    imageAlt: "How sure we are — what each confidence level on a plant's page means",
+  });
   add("about", en["about.docTitle"], en["about.lede"], {
     image: pageCard("about"),
     imageAlt: "About Indigene — a native of a place, and what this app measures for yours",

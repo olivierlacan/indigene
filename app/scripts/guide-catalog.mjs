@@ -400,7 +400,7 @@ export const SECTIONS = [
     lede: "",
     visit: [{ label: "Our sources", href: `${APP}/sources` }],
     learn: [],
-    match: { segments: ["sources"] },
+    match: { segments: ["sources", "confidence"] },
     published: false,
   },
 ];

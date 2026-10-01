@@ -108,9 +108,14 @@ Two things make that judgment auditable rather than a matter of trusting us:
   without one — `auditSupport` for wildlife ties, `auditLookalikes` for
   look-alikes (which also refuses a tell that describes only one of the two
   plants).
-- **Every plant carries a `confidence`**, our read of how well *that row* is
-  sourced — because regions are not equally well served and averaging over that
-  would be the dishonest move.
+- **Every plant's `confidence` is worked out, not typed** (`lib/confidence.ts`).
+  A row records where its caterpillar count came from (`hostCountFrom`:
+  counted, published, estimated, rough, none); a count from a dataset for the
+  region is high, a published or estimated one medium, a rough or unsourced
+  one low, and a row citing nobody for native status is low whatever its count.
+  A row may sit lower with a "Confidence medium: …" reason in its `basis`,
+  never higher. `confidence.test.ts` holds every shipped row to the rule.
+  Regions are not equally well served, and the rating says so per plant.
 
 The one place we invented a scale outright is the six 0–100 eco-scores, and the
 in-app page says so and puts them first on the list of things to doubt.

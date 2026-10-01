@@ -19,7 +19,8 @@ import { lookalikesForPlant } from "../lib/lookalikes";
 import { ornamentalsForPlant } from "../lib/alternatives";
 import { latPlain, lonPlain } from "../lib/plain";
 import { wildlifeChips } from "../components/wildlife-chips";
-import { SCORE_KEYS, scoreLabel, confidencePlain, propagationMethod, sunLabel, PROPAGATION_SOURCE_URL, SOURCES_ROUTE } from "../lib/plain";
+import { SCORE_KEYS, scoreLabel, propagationMethod, sunLabel, PROPAGATION_SOURCE_URL } from "../lib/plain";
+import { confidenceMeter, CONFIDENCE_ROUTE } from "../components/confidence-meter";
 import { techniqueFor, techniqueHref } from "../lib/planting";
 import { citation } from "../components/citation";
 import { silhouetteFor } from "../components/plant-card";
@@ -389,16 +390,15 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
           statGrid(p),
           chart,
           el("div", { class: "plant-body" }, [
-            el("p", { class: "confidence" }, [
-              el("strong", {}, t("card.confidence", { level: t(`confidence.word.${p.confidence}` as const) })),
-              confidencePlain(p.confidence),
-              " ",
-              el("span", {}, [
-                t("card.source"),
-                ...citation(p.basis),
-                " ",
-                el("a", { href: SOURCES_ROUTE }, t("card.howSure")),
+            // The level as a meter, linked to the page that says what each
+            // level means — the explanation lives there once, not here 600 times.
+            el("div", { class: "confidence" }, [
+              el("a", { class: "confidence-row", href: CONFIDENCE_ROUTE }, [
+                el("span", { class: "confidence-label" }, t("card.confidence")),
+                confidenceMeter(p.confidence),
+                el("span", { class: "confidence-arrow", "aria-hidden": "true" }, "→"),
               ]),
+              el("p", {}, [t("card.source"), ...citation(p.basis)]),
             ]),
           ]),
         ]),

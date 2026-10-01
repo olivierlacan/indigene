@@ -72,7 +72,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Slow but extraordinarily long-lived — an oak planted now is for the next century. A deep taproot makes it self-sufficient and drought-proof once set, but hard to move, so plant a small one and leave it room away from buildings.",
     givesNote: "Among the most valuable trees for French wildlife: hundreds of caterpillar species (and so the songbirds that raise their chicks on them), acorns for jays, woodpeckers and mammals, and centuries of shade and carbon.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 391 Lepidoptera recorded on native oaks in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (395 if introduced oaks are counted too).",
     propagation: {
       methods: ["seed-warm", "seed-direct"],
@@ -107,7 +107,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Quick, airy and undemanding — thrives on the poorest sandy ground and casts only light shade, so plants live happily beneath it. Its roots are shallow; keep it a little away from drains.",
     givesNote: "One of the very top caterpillar hosts in Europe — food for tits, warblers and redpolls — plus seeds for siskins and finches and gleaming white bark all winter.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 306 Lepidoptera recorded on native birches in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-surface-light", "seed-cold-moist"],
@@ -142,7 +142,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Fast and thicket-forming — perfect to hold a damp edge or bank, but give it room. Its silver-then-gold late-winter catkins are a critical first food; more tolerant of ordinary ground than other willows.",
     givesNote: "A keystone: willows host more caterpillars than almost anything else here, feeding nesting birds, and the earliest catkins are a lifeline for queen bumblebees and the first honeybees when little else is in flower.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 377 Lepidoptera recorded on native willows in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["cuttings-hardwood", "seed-surface-light"],
@@ -177,7 +177,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Fast and bright — clouds of white blossom in April and fiery autumn leaves. It suckers a little and gets large, so give it space; happy on any decent, not-waterlogged soil.",
     givesNote: "Early blossom feeds emerging bees, the summer cherries feed blackbirds, thrushes and mammals, and — as a Prunus — it raises a large share of native moths and their caterpillars.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 318 Lepidoptera recorded on native cherries, plums and blackthorn (Prunus) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (321 if introduced relatives are counted too).",
     propagation: {
       methods: ["seed-cold-moist", "suckers"],
@@ -212,7 +212,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Small, tidy and tough — takes cold, wind and poor acid soil, casts light shade, and fits a modest garden. Undemanding once established.",
     givesNote: "Flat cream flower heads for bees and hoverflies in spring, then heavy bunches of orange-red berries that redwings, fieldfares, blackbirds and waxwings strip through autumn.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 109 Lepidoptera recorded on native rowans and whitebeams (Sorbus) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -247,7 +247,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Tolerant of shade, clay and hard clipping — as a free tree it makes a big domed crown, but it's most useful as a hedge that holds its coppery dead leaves through winter for screening and shelter. Deer browse it less than most.",
     givesNote: "Hosts a range of caterpillars, feeds hawfinches and tits on its winged seed, and — clipped as a hedge — gives dense year-round nesting cover and a windbreak.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 92 Lepidoptera recorded on native hornbeam in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -282,7 +282,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "The answer to a wet, difficult spot: it thrives in waterlogged ground and even fixes its own nitrogen, so it enriches poor wet soil. Fast; give a big riverside tree room away from drains.",
     givesNote: "Roots armor a riverbank against erosion, late-winter catkins feed the first bees, the little cone-like fruits feed siskins and redpolls, and it hosts many moths — a whole wetland in one tree.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 163 Lepidoptera recorded on native alders in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-surface-light", "cuttings-hardwood"],
@@ -318,7 +318,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Fast, cheap and generous — and it suckers. New shoots come up yards from the trunk, through a lawn or a border, which is how one aspen becomes a grove. Plant it where that is welcome (a boundary, a rough corner, a bank you want held) and mow the suckers off elsewhere; it is not a tree for a small paved garden.",
     givesNote: "A big caterpillar tree — well over two hundred moth species, the poplar hawk-moth among them, which is to say food for every tit and warbler brood within reach. Early catkins give pollen at the hungriest time of year, and the flattened leaf stalks make the whole crown rustle in a breeze nothing else notices.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 258 Lepidoptera recorded on native poplars and aspen in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (259 if introduced poplars are counted too).",
     propagation: {
       methods: ["suckers", "root-cuttings", "seed-surface-light"],
@@ -353,7 +353,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "The damp, mild north and west is beech country, and on soil that stays evenly moist and drains well it becomes the biggest tree here. But it is the least drought-tolerant of them, with shallow roots and no reserve — the hot summers of the last decade have killed beeches outright further south, so on dry sand, a shallow chalk cap or a baking south-facing site plant an oak instead. Almost nothing grows in its shade. Clipped as a hedge it holds its copper leaves all winter.",
     givesNote: "Beechmast is a major autumn food for bramblings, chaffinches, nuthatches, wood mice, badgers and wild boar, and an old beech hollows into an apartment block of holes and crevices for woodpeckers, tits and bats. Its caterpillar list is respectable rather than enormous.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Drought sensitivity and recent dieback: ONF / Département de la santé des forêts. Host count: 113 Lepidoptera recorded on Fagus in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level. Row adapted from the Continental France entry for the same tree; only the zone-specific count and the regional notes differ.",
     propagation: {
       methods: ["seed-cold-moist"],
@@ -388,7 +388,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Long-lived, tolerant of clay and city air, and it takes hard pruning better than any other big native — which is why French villages have pollarded them for centuries, and why it can be kept to size. Aphids on limes drip honeydew in high summer, so it is not the tree to park a car under.",
     givesNote: "In late June a lime in flower is audible from across the garden: it is one of the greatest nectar trees in Europe, feeding bees, hoverflies and moths for two weeks in the flat month between the hedgerow blossom and the late-summer flowers. A solid caterpillar count too, and old limes hollow into some of the best bat and owl roosts there are.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN — indigenous across metropolitan France, though in the Atlantic west it is far commoner as a planted village tree than as a wild woodland one. Host count: 100 Lepidoptera recorded on native limes in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-double-dormant", "layering"],
@@ -423,7 +423,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A fungus carried by a small bark beetle — Dutch elm disease — has killed most of Europe's big elms since the 1970s, and it is still here — the beetle can only breed in bark above about a hand's width thick, so an elm is usually safe while young and usually dies somewhere between fifteen and twenty-five years old, once it is big enough to be worth its while. That is not a reason to leave it out, but it decides how you plant it: as a hedge or a coppiced shrub cut back every few years it stays thin-barked and can live indefinitely, and even a tree that dies at twenty will have fed caterpillars and butterflies for two decades. Don't make it the one tree you are counting on for shade in 2060.",
     givesNote: "Elm is the only food of the white-letter hairstreak, a small butterfly that has fallen with its tree and lives high in the crown, plus a further hundred-odd moth species. Its papery seed discs ripen in April, weeks before anything else sets seed, and bullfinches and greenfinches strip them; the flowers open in February, one of the very first pollen sources of the year.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Dutch elm disease (Ophiostoma novo-ulmi) and its bark-beetle vector, including the thin-bark refuge that lets hedgerow elm persist: INRAE; ONF / Département de la santé des forêts. White-letter hairstreak (Satyrium w-album) host relationship: INPN; European butterfly foodplant checklist (Dryad). Host count: 126 Lepidoptera recorded on native elms in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (127 if introduced elms are counted too).",
     propagation: {
       methods: ["seed-warm", "layering"],
@@ -458,8 +458,9 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Slow, narrow and very tough — once its deep roots are down it shrugs off drought and poor ground, and it fits a hedge line where a cherry or a lime would not. Its short side-shoots end in real spines, so keep it off a path. The little hard pears are gritty and sour and not worth eating; buy a true wild pear from a hedging supplier rather than a fruiting cultivar, and check it hasn't been grafted onto a rootstock.",
     givesNote: "White April blossom, two weeks before the hawthorn, feeding bees at the point in spring when the early trees are over. Over a hundred caterpillar species use the wild pears, the hard little fruits soften after the first frosts and feed thrushes, badgers, wild boar and mice, and an old pear goes hollow early, which makes it a nest-hole tree long before an oak would be.",
-    confidence: "medium",
-    basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 116 Lepidoptera recorded on native pears in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level. Written in place of the Atlantic endemic Pyrus cordata, which is genuinely native to the west of France but rare, locally protected and effectively absent from the nursery trade — the host count is the same genus figure, and this is the pear someone can actually buy and plant. Confidence is medium because wild pear hybridizes freely with orchard pears, so material sold as Pyrus pyraster varies in how wild it really is.",
+    hostCountFrom: "counted",
+    confidenceLowered: "medium",
+    basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 116 Lepidoptera recorded on native pears in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level. Written in place of the Atlantic endemic Pyrus cordata, which is genuinely native to the west of France but rare, locally protected and effectively absent from the nursery trade — the host count is the same genus figure, and this is the pear someone can actually buy and plant. Confidence is medium because wild pear hybridizes freely with orchard pears, so material sold as Pyrus pyraster varies in how wild it really is. Confidence medium: this row stands in for the Atlantic endemic Pyrus cordata.",
     propagation: {
       methods: ["seed-cold-moist"],
       note: "Take the pips from fruit gathered after the first frosts, clean off every scrap of flesh, and sow them outdoors in autumn for the cold, damp winter they need. Nurseries normally graft pears; from seed you get a true wild tree, but expect it to be slow and to sit for a year before it moves.",
@@ -495,7 +496,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Almost indestructible — takes wind, clay, drought and hard clipping, and makes an impenetrable thorny hedge that is the single best wildlife structure you can plant. Site the thorns away from paths.",
     givesNote: "A froth of May blossom feeds a huge range of bees, hoverflies and beetles; the autumn haws feed thrushes, blackbirds and winter migrants; and its dense thorny thicket hosts many caterpillars and shelters nesting birds.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 200 Lepidoptera recorded on native hawthorns in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-double-dormant", "cuttings-hardwood"],
@@ -530,7 +531,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Blooms on bare black twigs before the leaves, in March — the earliest hedgerow blossom. It suckers freely into a thorny thicket, so give it room or a hedge line to run along; tough and drought-proof.",
     givesNote: "Its very early flowers feed the first bees when nothing else is open; as a Prunus it is a top caterpillar host (the brown hairstreak butterfly depends on it); and the sloes feed birds and people alike.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 318 Lepidoptera recorded on native cherries, plums and blackthorn (Prunus) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (321 if introduced relatives are counted too).",
     propagation: {
       methods: ["suckers", "seed-double-dormant"],
@@ -565,7 +566,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Easy, shade-tolerant and long-lived — takes ordinary soil and hard coppicing, regrowing from the base for centuries. Cut a few oldest stems to the ground every winter to keep it young and productive.",
     givesNote: "Its dangling yellow 'lamb's-tail' catkins are one of the first pollen sources of the year, its leaves host many moths, and the autumn hazelnuts feed dormice, squirrels, jays and nuthatches.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 124 Lepidoptera recorded on native hazels in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-cold-moist", "layering", "suckers"],
@@ -600,7 +601,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Slow but very shade-tolerant and long-lived — a superb dense evergreen for a shady corner or a clipped hedge. You need a female plant (and a male nearby) for berries; the berries are toxic to people and pets if eaten.",
     givesNote: "Small spring flowers feed bees, the winter berries are a key late food for thrushes and blackbirds, the dense prickly cover shelters roosting and nesting birds year-round, and it is the main host of the holly blue butterfly.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 7 Lepidoptera recorded on native holly in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level; the holly blue is the notable one (Butterfly Conservation).",
     propagation: {
       methods: ["seed-double-dormant", "cuttings-semi-hardwood"],
@@ -635,7 +636,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Tough and adaptable, especially on chalky or damp ground; it suckers into a thicket, so use it to fill a hedge or bank. Cut a third of the oldest stems each winter for the brightest red twigs.",
     givesNote: "Flat cream flower heads feed bees and hoverflies, the black berries feed autumn birds, red winter stems give color, and the thicket shelters wildlife and holds a bank.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 42 Lepidoptera recorded on native dogwoods in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["cuttings-hardwood", "layering"],
@@ -670,7 +671,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Very fast and forgiving, thriving on rich, disturbed or damp ground — cut it hard when it gets leggy and it bounces back. Raw leaves, bark and unripe berries are toxic; the cooked ripe berries and the flowers are the edible parts.",
     givesNote: "Great plates of early-summer flowers feed hoverflies and bees, the purple-black berries are a major autumn food for warblers, blackcaps and thrushes fattening for migration, and it grows dense cover fast.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 31 Lepidoptera recorded on native elders in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["cuttings-hardwood", "cuttings-softwood"],
@@ -705,7 +706,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Wants damp, acid to neutral ground and takes part shade — ideal for a moist woodland edge or pond margin. Unshowy but well-behaved; the berries are toxic to people.",
     givesNote: "The main larval host of the brimstone butterfly — plant it and you may bring the big lemon-yellow spring butterfly to your garden — plus small flowers for bees and berries that ripen red-to-black for birds.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 53 Lepidoptera recorded on native alder buckthorn in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level; key brimstone host (Buglife).",
     propagation: {
       methods: ["seed-cold-moist", "cuttings-semi-hardwood"],
@@ -741,7 +742,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Acid, sandy, sunny and hungry ground — that is the whole recipe, and rich soil or a dose of lime kills it. If your ground is chalky it will never settle, so grow it in a raised bed or a wide pot of lime-free compost instead of fighting the soil. Shear it lightly every spring, cutting only into last year's soft growth, or it goes bare and woody in the middle; it lives about twenty-five years and seeds itself gently.",
     givesNote: "The great August nectar bar. When the meadows have been cut and the hedgerow flowers are long over, a patch of heather is loud with bumblebees, honeybees, solitary bees and butterflies — this is the plant heather honey comes from. It raises well over a hundred caterpillar species, including the emperor moth and the silver-studded blue, and the dense mat shelters lizards, spiders and overwintering insects.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Pollinator value: RHS Plants for Pollinators; Buglife. Host count: 118 Lepidoptera recorded on native heathers (Calluna) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
@@ -776,7 +777,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Particular, and worth the trouble: acid soil with real leaf mold or composted bark in it, cool shaded roots, dappled light, and never lime or manure. It creeps outwards by underground runners into a low carpet and takes years to do it — but once settled it is there for decades and asks for nothing. Water it through its first two summers; after that leave it alone.",
     givesNote: "Pound for pound the biggest food plant here after the trees: more than two hundred caterpillar species, the green hairstreak butterfly among the ones you might actually see. Pink bell flowers feed bumblebees in April, and the July berries feed blackbirds, thrushes, dormice and foxes — and you, if you get there first.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 227 Lepidoptera recorded on native Vaccinium in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level, so the figure is the genus's and bilberry carries the larger share of it.",
     propagation: {
       methods: ["division", "seed-surface-light"],
@@ -811,7 +812,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Plant this with your eyes open. A bramble arches six feet of new stem a year, roots itself wherever a tip touches soil, and birds sow the seed everywhere — in a small garden it can have a border in three summers, and digging it out afterwards is a genuinely miserable job. So give it a boundary you are willing to cut hard every winter: the back of a hedge, a bank, the far corner. Keep it off paths, wear gloves, and cut the fruited stems out each year. If that sounds like more than you want to take on, a cultivated thornless blackberry is far tamer — it feeds less, but it feeds, and it stays where you put it.",
     givesNote: "It does four jobs at once and none of them small: months of flowers, right through the August and September gap when the meadows have dried out, feeding bumblebees, honeybees, hoverflies and butterflies; blackberries for blackbirds, blackcaps, foxes, dormice and you; nearly two hundred caterpillar species; and a thorny tangle that is one of the safest places a bird can nest or a hedgehog can spend the winter. In most French gardens it is already the single most-used wildlife plant on the plot.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 186 Lepidoptera recorded on native brambles and raspberries (Rubus) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level; neither the matrix nor this list separates the aggregate's microspecies. Spread and management: French and British hedgerow-management practice.",
     propagation: {
       methods: ["layering", "suckers", "cuttings-hardwood"],
@@ -846,7 +847,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Poor, sandy, acid, sunny and dry is exactly right — it makes its own nitrogen, and good soil only shortens its life. It is short-lived by nature, ten to fifteen years, and it will not resprout from old bare wood, so trim only this year's green shoots after flowering and plan on replacing it in time; it seeds itself, so a replacement is usually already standing nearby. The seeds are toxic if eaten.",
     givesNote: "Bumblebees trip the flowers: land on one and the stamens spring up and slap pollen onto the bee's back — worth crouching down to watch. It raises over a hundred caterpillar species, its black pods crack open audibly on hot July afternoons and fling seed for finches, and the dense green mass is nesting cover for whitethroats, linnets and stonechats.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 107 Lepidoptera recorded on native brooms (Cytisus) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-scarify", "seed-direct"],
@@ -881,7 +882,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "It wants what an old hay meadow gave it: full sun, poor unfed ground, and no vigorous neighbors. Slow to start and easily smothered by coarse grass, so plant it into thin turf or a sunny bank, keep the grass cut back around it for its first few years, and never feed it. Once in, it is long-lived and needs nothing at all.",
     givesNote: "Its name is the plain truth — this is the plant that dyed cloth yellow across Europe, and over woad it made green. For wildlife it is a pea flower heavy enough that only a bumblebee can spring it open, a host to well over a hundred caterpillar species, and a nitrogen-fixer that quietly feeds the thin soil it stands in.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 127 Lepidoptera recorded on native greenweeds (Genista) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-scarify", "cuttings-semi-hardwood"],
@@ -916,7 +917,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "It scrambles rather than stands: long arching stems that lean into a hedge, a fence or a big shrub and root where they touch the ground. Give it something to lie into and shorten it hard in late winter if it reaches further than you want. It is the one native rose that flowers properly in half shade, which makes it the rose for a north-facing hedge or a woodland edge.",
     givesNote: "Wide-open single flowers with the pollen in plain reach — a bee can actually use them, unlike a double garden rose, which for an insect is only scenery. Over a hundred caterpillar species use the wild roses, the hips feed redwings, fieldfares, blackbirds and mice into December, and the thorny tangle is where blackbirds and dunnocks build deep inside.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 113 Lepidoptera recorded on native roses in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (116 if introduced roses are counted too).",
     propagation: {
       methods: ["cuttings-hardwood", "layering", "seed-double-dormant"],
@@ -953,7 +954,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Wants cool, humus-rich shade under deciduous trees, where it flowers before the canopy closes then dies back for summer — don't dig where it vanishes. Plant the true native, not the coarser Spanish bluebell that hybridizes it away; the bulbs are toxic if eaten.",
     givesNote: "Nodding blue spring bells feed long-tongued bumblebees, hairy-footed flower bees and early butterflies just as they emerge, and re-create the vanishing Atlantic bluebell-wood that is one of Europe's signature spring sights.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN (Atlantic endemic, protected in France — buy cultivated stock, never wild-dug). Pollinator value: RHS Plants for Pollinators; Plantlife. Host count: 2 Lepidoptera recorded on native bluebells in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["division", "seed-cold-moist"],
@@ -988,7 +989,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Easy in sun or part shade on most soils, especially acid ones. It flowers in its second year then usually dies, but self-sows freely, so leave a spike to seed and it never really leaves. All parts are toxic if eaten — the source of the heart drug digitalis.",
     givesNote: "The tall tube-flowers are a bumblebee magnet — you can watch big bumblebees climb right inside each thimble — and it self-sows to fill new clearings and disturbed ground with almost no effort.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Pollinator value: RHS Plants for Pollinators; Buglife. Host count: 12 Lepidoptera recorded on native foxgloves in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-surface-light"],
@@ -1023,7 +1024,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Wants an open, sunny to lightly-shaded spot on ordinary or limy grassland that isn't cut until midsummer — perfect for a mini-meadow or a bank you mow late. Long-lived once settled, and it seeds gently about.",
     givesNote: "Clusters of scented yellow spring flowers feed long-tongued bumblebees, the hairy-footed flower bee and early butterflies, and it is a food plant of the scarce Duke of Burgundy butterfly where that survives.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Pollinator value: RHS Plants for Pollinators; Plantlife. Host count: 35 Lepidoptera recorded on native primroses and cowslips (Primula) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-cold-moist", "division"],
@@ -1058,7 +1059,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Wants ground that stays damp, in sun or light shade — a natural for a moist meadow, pond edge or rain garden. Slow to bulk up but long-lived and reliable once established.",
     givesNote: "Powder-blue pincushion flowers are a top late-summer nectar source for bees and butterflies when meadows are drying out, and the plant is the essential larval host of the rare marsh fritillary butterfly.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Pollinator value: RHS Plants for Pollinators. Host count: 9 Lepidoptera recorded on native devil's-bit scabious in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level; it is the key marsh fritillary host (Butterfly Conservation).",
     propagation: {
       methods: ["seed-cold-moist", "division"],
@@ -1094,7 +1095,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Poor, sunny, unfed ground — it is happy on a bank of subsoil and flops about in a rich border. The one thing that really matters is when you cut. Leave it standing and it keeps opening new heads into October; cut the patch in late autumn or, better, in February, so the seed heads feed birds all winter. Cutting in August takes away exactly the flowers the year is short of.",
     givesNote: "The last big nectar plant standing. Long after the meadow has been cut and the brambles are over, knapweed keeps going — one of the deepest nectar wells of any French wildflower, worked by bumblebees, honeybees, hoverflies, the meadow browns and the big fritillaries from midsummer until the first real frosts. Goldfinches and linnets then take the seed heads apart all autumn.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Pollinator value: RHS Plants for Pollinators; Plantlife. Bloom window authored for the mild oceanic west, where uncut plants keep opening heads into October; French floras give June–September for the country as a whole. Host count: 88 Lepidoptera recorded on native knapweeds (Centaurea) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-direct", "seed-cold-moist"],
@@ -1129,7 +1130,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Sow it into thin, poor, sunny ground — it is one of the few genuinely good things you can do with a compacted roadside or a bank of builder's subsoil — and then mow it once, late, in September. It makes its own nitrogen, so never feed it, and it vanishes from anything rich, shaded or mown short.",
     givesNote: "Pound for pound the most important butterfly plant in France. The common blue, the skippers, the six-spot burnet moth and the clouded yellows raise their caterpillars on it, several of them on almost nothing else, and its long season of little yellow-and-orange flowers feeds bumblebees from May to September. If a meadow has lost its butterflies, this is usually what it has lost.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Blue-butterfly and burnet-moth host relationships: INPN; European butterfly foodplant checklist (Dryad). Host count: 106 Lepidoptera recorded on native Lotus in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (115 if introduced relatives are counted too).",
     propagation: {
       methods: ["seed-scarify", "seed-direct"],
@@ -1164,7 +1165,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The easiest way in is to stop working against it: mow the lawn higher and less often, stop feeding and weedkilling, and clover comes back on its own. Starting from bare ground, scatter seed in spring or autumn. It fixes its own nitrogen, which greens the grass around it for free, and each plant is fairly short-lived, so let some heads set seed every year.",
     givesNote: "A long-tongued bumblebee's staple: the flower tube is too deep for a honeybee to empty, so red clover and the big bumblebees have kept each other going for a very long time. Its leaves feed the caterpillars of the clouded yellow and a hundred other species, and as a pea it puts nitrogen back into tired ground instead of taking it out.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Pollinator value: RHS Plants for Pollinators. Host count: 105 Lepidoptera recorded on native clovers (Trifolium) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-direct", "seed-scarify"],
@@ -1199,7 +1200,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Ordinary damp meadow ground and a late cut is the whole of it — sorrel is one of the first things to come back when a lawn stops being mown every week. Its flowers are wind-pollinated, so they set clouds of pollen in June; if there is hay fever in the house, keep the patch away from open windows. The young leaves are sharply lemony and good in a salad or a soup, but like spinach they are high in oxalic acid, so eat them in small amounts.",
     givesNote: "This is the small copper's plant — the little bright orange butterfly that patrols paths and rough corners lays on sorrel and its caterpillars eat nothing else here. Between them the sorrels and docks feed nearly two hundred caterpillar species, more than most trees, and finches take the rusty seed spikes well into winter.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Small copper (Lycaena phlaeas) host relationship: INPN; European butterfly foodplant checklist (Dryad). Host count: 192 Lepidoptera recorded on native sorrels and docks (Rumex) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level, so the figure covers the docks as well as this species.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -1234,7 +1235,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "This is a plant of rough ground. It creeps at the root, seeds itself hard, and its late-summer pollen is a serious hay-fever trigger — mugwort is one of the main causes of August hay fever in France. Put it in a boundary strip, a bank or the rough corner you don't really garden, cut the flowering stems off in early August if anyone in the house suffers, and keep it out of a small border, where it will win.",
     givesNote: "Nobody plants mugwort for the flowers: they are dull, wind-pollinated and feed no bees at all. What it feeds is caterpillars — over a hundred and thirty species, including several small moths that live on almost nothing else — and its hollow dead stems are where solitary bees, ladybugs and lacewings spend the winter, which is the reason to leave them standing until spring. Goldfinches and linnets take the seed.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Wind pollination and allergenic pollen: RNSA (Réseau national de surveillance aérobiologique). Host count: 132 Lepidoptera recorded on native wormwoods and mugworts (Artemisia) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level; counting introduced relatives too would give 205, and this row is credited only with the native figure.",
     propagation: {
       methods: ["division", "seed-surface-light"],
@@ -1271,7 +1272,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "This is the easiest change anyone can make, because the plant is probably already in your lawn: all it needs is to be allowed to grow. Cut a patch once in July and again in September instead of every two weeks, stop feeding and watering it, and it will flower, seed and hold a dry bank or a sandy slope with no help at all. It creeps gently, so a bare patch closes itself.",
     givesNote: "Grass is what most of France's brown butterflies actually eat. The meadow brown, the gatekeeper, the ringlet, the marbled white and the skippers all raise their caterpillars on fine grasses like this and spend the winter down inside the tussocks — a lawn mown every two weeks feeds none of them, and a lawn left to flower feeds all of them. The seed then feeds finches and buntings, and the roots knit sand and thin soil together.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 186 Lepidoptera recorded on native fescues in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level, so the figure is the fescue genus's rather than this species' alone; red fescue is itself an aggregate of closely related subspecies.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -1306,7 +1307,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Sow it exactly where grass is supposed to fail — under a hedge, beneath old trees, along a north-facing bank — and then leave it long. It is short-lived but seeds itself steadily, needs no feeding, and will cover the bare, dusty ground under a tree that an ordinary lawn mix has given up on. One cut in late summer is plenty.",
     givesNote: "It carries the shady half of the grass food web: the ringlet and the speckled wood — the brown butterfly that patrols the sun-flecks along a woodland path — lay on shade grasses like this, and their caterpillars feed at night down among the blades. Where a garden's shade is currently bare soil, this turns it into winter cover for beetles, spiders and hibernating caterpillars.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 173 Lepidoptera recorded on native meadow-grasses (Poa) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level, so the figure is the genus's rather than this species' alone.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -1341,7 +1342,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "An evergreen tussock that takes damp, heavy, even shaded ground where many grasses fail — a fine structural 'matrix' grass to plant meadow flowers through. Comb out the dead blades in late winter; needs no feeding.",
     givesNote: "Airy silver flower clouds catch the light from midsummer into winter, the tussocks host the caterpillars of several native browns and skippers, shelter ground beetles and small wildlife, and hold damp soil together.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 62 Lepidoptera recorded on native hair-grasses (Deschampsia) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level; browns and skippers among them.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -1378,7 +1379,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A well-behaved native climber — nothing like invasive garden honeysuckles. Give it a hedge, trellis or tree to twine up, with its roots in cool shade and its head in the sun; the berries are toxic to people.",
     givesNote: "Its scented evening tubes are made for long-tongued moths (and feed bumblebees and the day-flying hummingbird hawk-moth), it is the larval host of the white admiral butterfly, and the red autumn berries feed warblers and thrushes.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 57 Lepidoptera recorded on native honeysuckles in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level. Counting introduced ornamental honeysuckles too would give 111; this plant is credited only with the native figure. White admiral host (Butterfly Conservation).",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering", "seed-cold-moist"],
@@ -1413,7 +1414,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Almost unkillable, in sun or deep shade — it climbs walls and trees (clinging, not parasitic) and blankets bare ground. Vigorous, so keep it off gutters and slates and out of small beds; the berries are toxic to people.",
     givesNote: "Its unique autumn flowers are the last great nectar bar of the year — feeding late bees, hoverflies, wasps and the ivy bee when nothing else blooms — the black winter berries then feed blackbirds, thrushes and wood pigeons, and the evergreen cover shelters roosting birds, insects and the holly blue butterfly.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Pollinator/bird value: RHS Plants for Pollinators; Buglife (ivy bee). Host count: 18 Lepidoptera recorded on native ivy in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level; the holly blue's second brood is the notable one.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
@@ -1449,7 +1450,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "It dies back to the ground every winter and climbs twenty feet again by August, which makes it the fastest native screen you can plant — on a fence, an arch, or wires up an ugly wall. It runs at the root, so give it room or a boundary. Hops are toxic to dogs; the female plant is the one that carries the papery cones.",
     givesNote: "The caterpillar plant of the comma butterfly — the one with the ragged wing edges that spends the winter as an adult looking exactly like a dead leaf — along with several handsome moths. Its late-summer cones shelter insects, and the dense curtain of leaves turns a bare wall into nesting and roosting cover in a single season.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Comma (Polygonia c-album) host relationship: INPN; European butterfly foodplant checklist (Dryad). Host count: 27 Lepidoptera recorded on native hops in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (28 if introduced relatives are counted too).",
     propagation: {
       methods: ["division", "cuttings-softwood"],
@@ -1486,7 +1487,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Poor, sharply drained, sunny ground and no feeding — a sandy bank, a gravel edge, the top of a wall. It creeps below ground into a low mat, which is what you want on a bank and not what you want in a small flower bed, so give it an edge it can run to and pull it back where it oversteps. Dried, the whole plant smells of new-mown hay, which is why people once stuffed mattresses with it.",
     givesNote: "The hawk-moths' plant: the elephant hawk-moth and the day-flying hummingbird hawk-moth both raise their caterpillars on the bedstraws, along with a hundred-odd other moths. Its tiny yellow flowers come in the thick of summer and hold on into September, feeding the small solitary bees, hoverflies and beetles whose mouthparts are too short for anything deep, and the mat holds a dry bank together in a downpour.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Hawk-moth host relationships: INPN; Butterfly Conservation. Host count: 127 Lepidoptera recorded on native bedstraws (Galium) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["division", "seed-cold-moist"],
@@ -1521,7 +1522,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "You almost certainly have it already, so the work is not planting it but leaving it: stop weedkilling the lawn, mow high and rarely, and it returns on its own — it takes trampling, drought and poor ground far better than the grass around it, and its flat rosettes hold ground where nothing else will. Starting from bare soil, scatter seed in autumn and it is up within weeks. Its pollen is wind-borne and can bother hay-fever sufferers in early summer.",
     givesNote: "The fritillaries' plant. The Glanville and heath fritillaries lay their eggs on ribwort plantain, and a great many moths eat it too — a hundred and seventy caterpillar species use the plantains between them, which is more than most trees manage. Bees collect the dry pollen from its little brown drumsticks from April right through to October, and goldfinches strip the seed heads.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Fritillary host relationships: INPN; European butterfly foodplant checklist (Dryad). Host count: 170 Lepidoptera recorded on native plantains (Plantago) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level. Filed as a groundcover because that is how it is used and how it behaves — a flat evergreen rosette in turf — rather than as a border perennial.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -1556,7 +1557,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Runs by runners to knit a low, tough carpet in sun or part shade — an easy groundcover under shrubs or along a path edge. Takes ordinary soil and a little foot traffic; spreads, so give it room to travel.",
     givesNote: "White spring flowers feed early bees and hoverflies, the little red berries feed birds, small mammals and passing people, and the spreading mat hosts caterpillars and holds a bank.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 50 Lepidoptera recorded on native strawberries (Fragaria) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (53 if introduced relatives are counted too).",
     propagation: {
       methods: ["runners", "division"],
@@ -1591,7 +1592,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The reliable green backbone for a shady, damp corner where little else grows — takes deep shade and ordinary to wet soil, and is nearly evergreen in mild Atlantic winters. Cut old fronds off in late winter before the new ones unfurl.",
     givesNote: "Big arching fronds give year-round cover and catch leaf litter on a shaded slope, sheltering frogs, beetles and other small wildlife. Ferns feed very few caterpillars — included for shade structure and erosion control, not food-web value.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 5 Lepidoptera recorded on native male fern and its relatives (Dryopteris) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level. Ferns really do support very few caterpillars; now measured rather than assumed.",
     propagation: {
       methods: ["spores", "division"],
@@ -1626,7 +1627,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Deep shade, steady damp, and lime rather than acid — which makes it one of the very few good plants for the cold north side of a house, a shaded stone wall or the dark strip beside a drain, and it will grow straight out of old mortar. Keep it out of sun and drying wind. The undivided fronds stay green all winter; cut the tired ones off in March as the new ones unroll like croziers.",
     givesNote: "Its job here is shelter, not food. Evergreen fronds hold cover and damp air in a dark corner right through the winter, where frogs, toads, ground beetles and overwintering insects can get out of the frost. Ferns feed very few caterpillars and this one is honest about it — two species, and no flowers at all — so it earns its place on structure and on filling a corner nothing else will take.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 2 Lepidoptera recorded on native spleenworts (Asplenium) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level. Ferns really do support very few caterpillars; the figure is measured, not assumed.",
     propagation: {
       methods: ["division", "spores"],
@@ -1661,7 +1662,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "The most forgiving fern for shade that dries out in summer — under a hedge, at the foot of a north wall, among shrubs — provided it starts life in soil with leaf mold dug into it and is watered through its first two summers. Plant the crown level with the surface, never buried. Comb or cut the old fronds out in late winter before the new ones uncurl.",
     givesNote: "Year-round green structure in the difficult corner, and fronds that trap fallen leaves into exactly the damp litter frogs, beetles and spiders spend the winter in. Its own trick is worth knowing: little plantlets grow along the midrib of an older frond, so one plant becomes a dozen for nothing. As food it is nearly a blank — one caterpillar species — and it is here for cover, not for the food web.",
-    confidence: "high",
+    hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 1 Lepidoptera species recorded on native shield ferns (Polystichum) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level. As with the other ferns here, the near-zero food-web value is measured rather than assumed.",
     propagation: {
       methods: ["layering", "division", "spores"],

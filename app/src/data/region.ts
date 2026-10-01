@@ -8,7 +8,7 @@ import type { EcoScores, EcoregionProvider, Plant } from "../types";
 // A seed row omits the one score we compute rather than author by hand — the
 // caterpillar/moth host value, derived in `lib/plants.ts` from a raw, citable
 // Lepidoptera host-species count.
-export type RawPlant = Omit<Plant, "scores"> & {
+export type RawPlant = Omit<Plant, "scores" | "confidence"> & {
   scores: Omit<EcoScores, "host">;
 };
 

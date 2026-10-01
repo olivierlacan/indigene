@@ -30,6 +30,7 @@ import { techniqueBySlug } from "./lib/planting";
 import { canonicalPath, parseRoute, isHashRoute } from "./lib/routes";
 import type { AppStep } from "./lib/routes";
 import { renderPrivacy } from "./steps/privacy";
+import { renderConfidence } from "./steps/confidence";
 import { renderFilm } from "./steps/film";
 import { renderSources } from "./steps/sources";
 import { renderSettings } from "./steps/settings";
@@ -100,6 +101,8 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
   planting: { fn: renderPlantingIndex, labelKey: "steps.planting", inFlow: false },
   privacy: { fn: renderPrivacy, labelKey: "steps.privacy", inFlow: false },
   sources: { fn: renderSources, labelKey: "steps.sources", inFlow: false },
+  // What the confidence meter on a plant page means, one level at a time.
+  confidence: { fn: renderConfidence, labelKey: "steps.confidence", inFlow: false },
   settings: { fn: renderSettings, labelKey: "steps.settings", inFlow: false },
   about: { fn: renderAbout, labelKey: "steps.about", inFlow: false },
   // "Will the wildlife I invite eat my fruit and vegetables?" — the objection
@@ -297,7 +300,7 @@ function sectionOf(step: string): string | undefined {
  */
 const WIDE_STEPS = new Set(["plants", "regions", "wildlife", "lookalikes", "alternatives", "invasives", "planting"]);
 
-const DOC_STEPS = new Set(["about", "privacy", "sources", "settings"]);
+const DOC_STEPS = new Set(["about", "privacy", "sources", "confidence", "settings"]);
 
 function updateLayout(step: AppStep, param?: string): void {
   // Two of the documents — a plant's page and an animal's — get a mode of their

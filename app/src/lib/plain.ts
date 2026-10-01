@@ -370,9 +370,6 @@ function fracWord(f: number): string {
   return t("frac.half");
 }
 
-export function confidencePlain(c: "high" | "medium" | "low"): string {
-  return t(`confidence.${c}` as const);
-}
 
 /**
  * A latitude and a longitude, each said as what it is.

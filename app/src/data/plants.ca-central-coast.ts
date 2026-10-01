@@ -27,7 +27,7 @@
 //    Northwest and southern California files — these are rounded, honest
 //    genus-level *estimates*, anchored on the eastern figures and discounted for
 //    the West's smaller moth fauna. Oak, willow, cherry and Ceanothus lead. Each
-//    row says so in `basis`, and `confidence` reflects how rough a figure is.
+//    row says so in `basis` and records it in `hostCountFrom`.
 //  - size arrays: typical growth on an average site with no summer irrigation
 //    unless the care note says otherwise; mature* is the honest eventual
 //    ceiling, which for a coast redwood or a valley oak is far beyond what any
@@ -72,7 +72,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Plant it small — a one-gallon tree overtakes a fifteen-gallon one within a few years, because the taproot goes down before the top goes up. Then the rule that matters more than all the rest: **keep summer water away from the trunk.** A lawn, a drip line or a new patio drain under a mature coast live oak is what kills them, by keeping the root crown wet in the heat when the tree expects it bone dry. Water a young one deeply once a month for its first two summers, well away from the trunk, and then nothing.",
     givesNote: "About 200 caterpillar species, which is what feeds nesting birds through spring; acorns for scrub-jays, acorn woodpeckers, band-tailed pigeons and woodrats; and the shade, leaf litter and structure a whole woodland's worth of smaller life lives in. A jay burying acorns under it is planting the next one.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Care: UC Oak Woodland Management, UC ANR. Host count: Quercus genus, rounded central-California estimate anchored on Tallamy/NWF.",
     propagation: {
       methods: ["seed-warm", "seed-direct"],
@@ -107,7 +107,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The widest tree here — a hundred feet across in an old field — so the honest first question is whether the space exists. It wants deep soil and a water table it can reach, which is why the old ones stand on valley floors and not on ridges. Same rule as the live oak once it is up: no summer water near the trunk. It drops its leaves in autumn, so the winter sun comes through, which is exactly why farmhouses were built under them.",
     givesNote: "The keystone tree of the inland valleys: hundreds of caterpillar species, and an acorn crop that carried the people who lived here for thousands of years and still feeds jays, woodpeckers, deer and woodrats. Old ones hollow out and become owl and bat roosts, which is a reason to leave a dying limb standing where it is safe to.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range (endemic to California): Jepson eFlora, Calflora, USDA PLANTS. Size and longevity: USFS Silvics of North America. Host count: Quercus genus, rounded central-California estimate anchored on Tallamy/NWF.",
     propagation: {
       methods: ["seed-warm", "seed-direct"],
@@ -142,7 +142,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Read the fog line before you read anything else. **Inside it** a redwood lives on what condenses out of the summer air and needs almost nothing from you. **Outside it** — one ridge inland, in Walnut Creek or Gilroy — it needs summer water for the rest of its life, and the ones you see browning from the top down are the ones whose owners stopped. Then the space: this is a two-hundred-foot tree with shallow roots, so keep it well away from the house, the drains and the sidewalk. Plant three in a group if you have room. They graft their roots together and hold each other up, which is why a lone garden redwood is the one that goes over in a storm.",
     givesNote: "Shade deep enough to grow sorrel and sword fern under, a duff layer that soaks up winter rain instead of shedding it, and — inside the fog belt — a crown that drips its own rain onto everything below all summer. Few caterpillars, but old bark and dead limbs house bats, and the crown is where the band-tailed pigeons sit.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range and fog dependence: Jepson eFlora, USFS Silvics of North America, USFS FEIS. Size: USFS Silvics. Host count: Sequoia, a genuinely low figure and not a typo — the honest count for a tree whose value here is structure, not food.",
     propagation: {
       methods: ["suckers", "cuttings-semi-hardwood"],
@@ -177,7 +177,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A north slope or a canyon side, not a hot south-facing lot — inland and in full afternoon sun it grows thin and gets bark beetles. Give it room; it is a forest tree and it behaves like one. In this region it is also the tree that walks into an unburned grassland and turns it into forest within a lifetime, so if you are keeping an open oak-and-grass hillside, that is what you are pulling seedlings out of.",
     givesNote: "The cones are what red crossbills, chickadees and nuthatches work all winter, and the furrowed bark is where brown creepers wedge their nests. Owls and hawks use the crown; the caterpillar load is modest but steady, and it feeds the small birds picking through the needles.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USFS Silvics of North America. Encroachment into coastal grassland: USFS FEIS; California grassland restoration literature. Host count: Pseudotsuga, conservative western estimate.",
     propagation: {
       methods: ["seed-cold-moist", "seed-direct"],
@@ -212,7 +212,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Full sun, poor ground and sharp drainage, and then leave it alone — this is a plant of starved rocky soil and it sulks in a rich watered bed. Its usefulness in a garden is exactly that: it will hold a hot poor bank where nothing else will, slowly, and stay a manageable size doing it. The cones stay shut on the branch for years waiting for a fire; that is normal, not a dead tree.",
     givesNote: "Dense evergreen cover in a landscape that mostly offers open grass and scrub — nest sites and winter roosts for small birds — and fine seed the goldfinches pick out of the cones. It also feeds the juniper hairstreak, a green butterfly whose caterpillars eat cypress and juniper foliage and nothing else.",
-    confidence: "high",
+    hostCountFrom: "rough",
     basis: "Native status/range and serpentine affinity: Jepson eFlora, Calflora, USFS FEIS. Butterfly: Xerces Society; BAMONA. Host count: Hesperocyparis genus, rough central-California estimate.",
     propagation: {
       methods: ["seed-warm", "seed-direct"],
@@ -247,7 +247,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The hardest tree here to establish, and the reason is always the same: **madrone hates being watered.** Plant a small one in autumn on a slope with fast drainage, water it through its first winter only, and then stop for good — summer irrigation invites the root rot that kills far more garden madrones than drought ever has. Don't dig around it, don't pile mulch on the crown, and don't move it. Buy the smallest plant on the bench.",
     givesNote: "Urn-shaped spring flowers that bumble bees and hummingbirds work over, then orange-red berries in autumn that band-tailed pigeons, robins, waxwings and thrushes strip in a week. Peeling bark hides insects for creepers and nuthatches all winter.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USFS Silvics of North America. Transplant and root-rot sensitivity: USFS FEIS; Oregon State Extension. Host count: Arbutus genus, conservative western estimate.",
     propagation: {
       methods: ["seed-cold-moist", "seed-surface-light"],
@@ -282,7 +282,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Easy, evergreen, takes shade and takes drought, and it will be much bigger than you planned — usually as a multi-trunked clump rather than one stem. Two honest warnings. The leaves are strong enough to give some people a headache in a closed room, so it is a tree for the garden and not for a cut arrangement indoors. And it is the main carrier of sudden oak death: it barely suffers itself, but it showers spores onto anything below, so **don't plant one upslope of a tanoak or a live oak** in a county where the disease is about.",
     givesNote: "Flowers in the dead of winter — December to March — which makes it one of the very few nectar sources in the leanest weeks of the year. The olive-like fruits feed band-tailed pigeons, jays and woodrats, and the dense evergreen canopy is a favorite roost.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Sudden oak death (Phytophthora ramorum) foliar host role: UC Cooperative Extension; California Oak Mortality Task Force. Host count: Umbellularia, low western estimate.",
     propagation: {
       methods: ["seed-cold-moist", "seed-direct"],
@@ -317,7 +317,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The one thing to know is that **it drops its leaves in midsummer and that is not a problem** — it is a drought-deciduous tree finishing its year in July, and the smooth silver trunks it leaves behind are half the point of growing it. Water it in summer and you get a longer green season and a weaker tree; leave it alone and it lives for centuries. Every part of it is poisonous to people, dogs and horses, and the nectar is toxic to honey bees but not to the native bees that evolved with it — worth knowing, not a reason to avoid it.",
     givesNote: "Foot-long candles of cream flowers in May and June, at the exact moment the spring flowers are finishing and the summer ones have not started — native bees, the pale swallowtail and every passing butterfly are on it. The big glossy seeds feed squirrels and woodrats.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range (endemic to California): Jepson eFlora, Calflora. Summer dormancy and toxicity, including to honey bees: UC ANR; USFS FEIS; ASPCA. Host count: Aesculus, low western estimate.",
     propagation: {
       methods: ["seed-direct", "seed-warm"],
@@ -352,7 +352,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "This is a creek tree and it wants a creek's conditions: shade for at least part of the day, deep soil and water within reach through the summer. On a dry inland lot it scorches at the leaf edges by July and stays small. Give it a north side, a downspout, or a low spot where winter run-off collects, and it will be the best shade tree in the garden. Expect a lot of leaf litter — that is the gift, not the mess.",
     givesNote: "One of the West's heaviest caterpillar loads, which is why warblers and chickadees work a maple in spring. Hanging chains of yellow-green flowers in March feed the first bumble bee queens and the mason bees, and the winged seeds carry grosbeaks and finches into autumn.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USFS Silvics of North America. Host count: Acer genus, western estimate anchored on Tallamy/NWF keystone lists.",
     propagation: {
       methods: ["seed-cold-moist", "seed-direct"],
@@ -387,7 +387,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Only worth planting where there is real water — a creek bank, a pond edge, a swale that stays damp into July. Given that, it is the fastest tree here and it will hold a bank together while it grows, because it fixes its own nitrogen and starts feeding the soil around it in its first years. Away from water it is short-lived and disappointing. It sheds twigs and catkins constantly, so not over a pool.",
     givesNote: "A heavy caterpillar tree, and the seed in the little woody cones is what pine siskins and goldfinches work through the winter, hanging upside-down off the twigs. The nitrogen it fixes feeds the whole streamside planting, and its shade is what keeps a creek cool enough for the things living in it.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USFS FEIS. Nitrogen fixation (Frankia): USFS Silvics of North America. Host count: Alnus genus, western estimate anchored on Tallamy/NWF keystone lists.",
     propagation: {
       methods: ["seed-direct", "seed-surface-light"],
@@ -422,7 +422,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Give it the wettest corner you have and stand back — it grows fast, suckers, and will find a leaking pipe or an old clay drain from a surprising distance, so keep it away from both. Cut a third of the oldest stems to the ground each winter and it stays a dense thicket instead of a few leggy trunks. Nothing else here holds a raw creek bank like it.",
     givesNote: "Over 200 caterpillar species — the western tiger swallowtail, the mourning cloak and Lorquin's admiral all grow up on it — and the February catkins are the first serious pollen of the year, which is what the queen bumble bees and the mason bees come out to. Dense stems are nesting cover for yellow warblers and song sparrows.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Host count: Salix genus, rounded central-California estimate anchored on Tallamy/NWF keystone lists.",
     propagation: {
       methods: ["cuttings-hardwood", "seed-direct"],
@@ -457,7 +457,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Grows faster than almost anything else here and looks scruffy doing it — plan on cutting a third of the oldest stems out at the base each winter to keep it furnished. It takes some summer water happily but does not need it. The blue berries are edible cooked; the leaves, bark and raw unripe fruit are not, for people or pets.",
     givesNote: "One of the best bird plants in the state — the berry crop feeds waxwings, orioles, grosbeaks, mockingbirds and forty other species — and the huge flat flower heads feed an equally long list of native bees, beetles and hoverflies through early summer. The pithy stems are where small carpenter bees nest, so leave a few cut stubs standing.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Bird use: Cornell Lab; USFS FEIS. Toxicity: ASPCA; UC ANR. Host count: Sambucus genus, rounded western estimate.",
     propagation: {
       methods: ["cuttings-hardwood", "seed-cold-moist"],
@@ -494,7 +494,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Fast, spectacular and short-lived — ten to fifteen years is a normal life, so plant it knowing that and take the decade. Full sun, a slope if you have one, and **no summer water once it is established**: the commonest way to kill a ceanothus is kindness in August. Don't cut into bare old wood, because it will not come back from it; shape it lightly right after flowering or not at all. It fixes its own nitrogen, so no feeding either.",
     givesNote: "The best pollinator plant in the region for the three weeks it is out — the whole shrub hums, with bumble bees, mining bees, hoverflies, beetles and butterflies on it at once — and it carries more caterpillars than anything else its size, including the ceanothus silkmoth. Dense growth is nesting cover, and the seed feeds quail and towhees.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USFS FEIS. Nitrogen fixation and short lifespan: USFS FEIS; UC ANR. Host count: Ceanothus genus, rounded central-California estimate anchored on Tallamy/NWF keystone lists.",
     propagation: {
       methods: ["seed-scarify", "cuttings-semi-hardwood"],
@@ -529,7 +529,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Slow, long-lived and worth the wait. Plant it small, in autumn, on a mound or a slope where water cannot sit, and water it just enough to get through its first two summers — after that, none. The one habit to break: don't mulch up against the trunk and don't plant anything thirsty under it, because a manzanita dies of a wet crown far more often than of drought. Prune only to open the trunks up to view, which is the whole reason to grow one.",
     givesNote: "It flowers from Christmas into March, which makes it one of the two or three things standing between a hummingbird and a hungry winter here — Anna's hummingbird holds a big manzanita as a territory. The little apple-like fruits feed thrashers, robins and foxes, and the branch structure is where bushtits and wrentits nest.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Crown-rot sensitivity and establishment: UC ANR; Calscape (CNPS). Host count: Arctostaphylos genus, rounded western estimate.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-scarify"],
@@ -564,7 +564,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "As close to unkillable as a plant gets — sun or half shade, clay or gravel, coast or inland, no summer water needed once it is going. It makes a hedge, a screen or a small multi-trunked tree depending on how you cut it, and it takes hard pruning in a way most chaparral shrubs do not. If the berry crop matters to you, don't shear it: the flowers come on the tips of last year's growth.",
     givesNote: "White flower heads in the hottest weeks of summer, when a butterfly has few other options, and then the thing it is famous for — red berries that hold on the bush until midwinter and then get stripped in a day by a waxwing flock, or worked over more slowly by robins, mockingbirds and band-tailed pigeons.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Bird use: Cornell Lab; USFS FEIS. Host count: Heteromeles, western estimate.",
     propagation: {
       methods: ["seed-cold-moist", "cuttings-semi-hardwood"],
@@ -599,7 +599,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The plant to reach for when a spot is difficult: it takes full coastal sun or dry shade under an oak, clay or sand, and once established it wants nothing. Shear it into a hedge or leave it alone as a loose mound — either works, and it stays furnished to the ground. The berries are not coffee and are not for eating, whatever the name promises.",
     givesNote: "The flowers look like nothing and are covered from May onward in native bees, hoverflies and the tiny parasitic wasps that keep garden pests in check — it is one of the best generalist nectar plants here. Berries turn red then black through autumn for robins, thrashers, jays and mockingbirds, and the dense growth is year-round cover.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Pollinator use: Xerces Society; UC Berkeley Urban Bee Lab. Host count: Frangula/Rhamnus genus, western estimate.",
     propagation: {
       methods: ["seed-cold-moist", "cuttings-semi-hardwood"],
@@ -634,7 +634,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Part shade and decent drainage; it takes the dry shade under a big oak better than most flowering shrubs. It drops its leaves in late summer and looks like a bundle of sticks until the rains — that is the plant working, not dying, and it is why you plant something evergreen beside it. Cut a couple of the oldest stems out at the base every few winters to keep the flowering wood coming.",
     givesNote: "Hanging pink tassels from January, which on this coast is exactly when Anna's hummingbird is already nesting and the rufous hummingbirds are arriving from the south — for a few weeks this shrub is most of what they have. Later the blue-black berries go to thrushes, robins and towhees.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range incl. var. glutinosum: Jepson eFlora, Calflora, USDA PLANTS. Hummingbird timing: Audubon California; Cornell Lab. Host count: Ribes genus, western estimate.",
     propagation: {
       methods: ["cuttings-hardwood", "seed-cold-moist"],
@@ -669,7 +669,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Give it shade for part of the day and let it go dry in summer — it drops its leaves in the heat and leans on the winter rain, like the currant. It is genuinely spiny, which makes it a good barrier under a window and a bad choice beside a path children use. No summer water; that is what rots it.",
     givesNote: "Bright red tubular flowers hanging in a row along the underside of every arching branch, in January and February — built for a hummingbird and used by nothing else much. Anna's hummingbirds will defend a big one. The spiny thicket is safe nesting cover for wrentits and towhees.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Hummingbird pollination: Audubon California; Xerces Society. Host count: Ribes genus, western estimate.",
     propagation: {
       methods: ["cuttings-hardwood", "seed-cold-moist"],
@@ -704,7 +704,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The plant that will grow where you have given up. Sand, clay, salt wind, a raw cut bank — it takes all of it with no water at all. Buy a low coastal form if you want a groundcover and an upright one if you want a screen, because they do not become each other. Cut it back hard every few years or it gets woody and open in the middle. Male and female plants are separate; the females make the white seed fluff that some people find untidy and every goldfinch finds useful.",
     givesNote: "The most important thing here is *when* it flowers: September to December, after everything else has finished. A big coyote brush in October is louder than any spring shrub — butterflies, dozens of native bee species, wasps, beetles and hoverflies all crowd onto it because there is nothing else left. It is also year-round cover for quail, wrentits and towhees.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Late-season pollinator importance: Xerces Society; UC Berkeley Urban Bee Lab. Host count: Baccharis genus, western estimate.",
     propagation: {
       methods: ["seed-surface-light", "cuttings-semi-hardwood"],
@@ -739,7 +739,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Six months of flower for no water at all, which is about as good a bargain as this climate offers. Full sun on the coast, afternoon shade inland. It gets tired and woody after four or five years — cut it back by half after flowering to buy another season, and let a few seedlings come up to replace it. Short-lived is the deal, not a failure.",
     givesNote: "A flower shaped for a bumble bee to force its way into, in bloom from March to August when almost nothing else here manages both ends of that. Hummingbirds take it too, and the caterpillars of the variable checkerspot eat the leaves — one of the handful of butterflies whose young depend on a short list of plants that includes this one.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Checkerspot host relationship: Xerces Society; BAMONA. Host count: Diplacus/Mimulus genus, western estimate.",
     propagation: {
       methods: ["seed-surface-light", "cuttings-softwood"],
@@ -774,7 +774,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "This one is honestly for the fog belt and the shady side of the house. It wants acid soil, shade or morning sun only, and steady moisture — inland and in full sun it scorches and sits. Mulch it with leaf litter or bark and never let it dry out completely in its first few years. Slow, but it is evergreen, it is beautiful in every month, and the berries are the best-tasting thing here.",
     givesNote: "One of the heaviest caterpillar loads of any shrub in the West, which is what the chestnut-backed chickadees are working over in your hedge. Bell flowers in spring for bumble bees, then small black berries into autumn for robins, thrushes, band-tailed pigeons and, if you get there first, you.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USFS FEIS. Host count: Vaccinium genus, western estimate anchored on Tallamy/NWF keystone lists.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-surface-light"],
@@ -809,7 +809,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "A fog-belt shade plant, like the huckleberry: acid soil, shade, and moisture through its first summers. Once it is running it spreads by underground stems into a thicket that shades out weeds and needs nothing — that is the point of it, and it is also the warning if you wanted a tidy edge. Cut it to the ground to renew it; it comes back from the roots.",
     givesNote: "Rows of little pink urns in spring that bumble bees work upside-down, then dark berries into autumn for thrushes, towhees, band-tailed pigeons and foxes. The thicket underneath is where the ground-nesting birds and the salamanders actually live.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range and southern limit: Jepson eFlora, Calflora, USFS FEIS. Host count: Gaultheria genus, western estimate.",
     propagation: {
       methods: ["division", "cuttings-semi-hardwood"],
@@ -844,7 +844,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "A woodland-edge shrub: part shade, soil that holds some moisture, and a little summer water inland while it settles. It suckers gently into a clump, which is what you want — cut the oldest stems out at the base every few winters. The soft round leaves are the first thing deer go for, so protect a young one.",
     givesNote: "A heavy caterpillar plant, which makes it real bird food in spring. It flowers in the depth of winter — long yellow catkins in January, with tiny magenta female flowers you have to go looking for — and the nuts in autumn are taken by jays, woodpeckers, squirrels and woodrats, usually before you get to them.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range incl. subsp. californica: Jepson eFlora, Calflora, USFS FEIS. Host count: Corylus genus, western estimate anchored on Tallamy/NWF.",
     propagation: {
       methods: ["layering", "seed-cold-moist"],
@@ -879,7 +879,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Undemanding: sun or part shade, any soil that drains, and no water once it is up. It flowers on new wood, so if you want to shorten it, do it in late winter. The dead flower plumes go the color of milky tea and stay on the bush until spring — leave them, they are half the winter garden and they are full of overwintering insects.",
     givesNote: "In late June the plumes are solid with small native bees, hoverflies and beetles, at the point in summer when the spring shrubs have finished. The wood was used for arrow shafts and digging sticks because it hardens like iron; the dense twiggy structure is nesting cover, and the seed heads carry insects through the winter for the birds that hunt them.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USFS FEIS. Pollinator use: Xerces Society. Host count: Holodiscus, western estimate.",
     propagation: {
       methods: ["seed-surface-light", "cuttings-semi-hardwood"],
@@ -914,7 +914,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The plant for dry shade under an oak, a fence line or a north wall — one of the very few that genuinely thrives there. It runs at the roots and makes a thicket, which is the job it is for; keep it out of a small tidy border. Cut it to the ground when it gets scruffy and it comes straight back. The white berries are mildly poisonous to people and pets, so worth knowing where children play.",
     givesNote: "Small pink bells in summer that bumble bees work hard, and berries that hang on through the winter as the emergency ration — robins, waxwings, quail and grouse take them in late winter when everything better has gone. The thicket is prime nesting cover for towhees and sparrows.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USFS FEIS. Toxicity: ASPCA; USFS FEIS. Host count: Symphoricarpos genus, western estimate.",
     propagation: {
       methods: ["suckers", "cuttings-hardwood"],
@@ -949,7 +949,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Coastal wind and salt do not trouble it; wet feet and summer water do. Sun or light shade, sharp drainage, nothing from the hose once established. Buy a named male plant if the tassels are the reason you want it — the female is a good screen but the show belongs to the males. It resents being pruned hard, so give it its full width from the start.",
     givesNote: "It does its work in January, which is the point: the tassels are wind-pollinated so they feed no bees, but the dense evergreen structure is winter shelter and nesting cover when little else is thick enough, and the purple fruits on the females go to thrushes and band-tailed pigeons.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Culture and wind tolerance: Calscape (CNPS); UC ANR. Host count: Garrya, low western estimate.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-cold-moist"],
@@ -984,7 +984,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "It suckers, and it means it — give it a bank, a creek edge or a boundary, not a border. That habit is exactly what makes it good at holding a raw slope together. A little summer water gives you months of flower; none at all gives you a shorter season and a tougher plant. Cut it to the ground every few winters. Thorny enough to be a real barrier, which is either the point or the problem.",
     givesNote: "A keystone genus: rose carries one of the heaviest caterpillar loads of any shrub here, which is nesting-season bird food. Open single flowers all summer are worked for pollen by bumble bees and dozens of smaller native bees, and the hips hold into midwinter for waxwings, robins and quail. The thicket is where the small birds nest and the woodrats live.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Host count: Rosa genus, rounded western estimate anchored on Tallamy/NWF keystone lists.",
     propagation: {
       methods: ["suckers", "cuttings-hardwood"],
@@ -1019,7 +1019,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Full sun, poor gritty soil, sharp drainage, and then absolutely no summer water — this is the plant people kill fastest by being generous. It fixes its own nitrogen so it never wants feeding, and it lives perhaps five years, which is normal: let a few seedlings come up around it. The seeds and leaves are poisonous to livestock and pets if eaten in quantity.",
     givesNote: "Spikes of blue pea flowers that a bumble bee has to lever open, worked from March to June. It is also a host plant for the blues — the small silvery butterflies of dry ground — and on the hills around San Francisco Bay that includes the mission blue, a butterfly that lays on a short list of lupines and lives nowhere else on earth.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Mission blue (Icaricia icarioides missionensis) host lupines: US Fish & Wildlife Service recovery documents; Xerces Society. Toxicity: ASPCA. Host count: Lupinus genus, western estimate.",
     propagation: {
       methods: ["seed-scarify", "seed-direct"],
@@ -1054,7 +1054,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Built for the hardest coastal spot there is: sand, salt spray, constant wind, no water. Inland it is less happy and wants perfect drainage and full sun to make up for the missing fog. Cut it back by a third after flowering to keep it dense, because left alone it opens out in the middle after a few years. Short-lived and easy to replace from its own seedlings.",
     givesNote: "Flat yellow flower heads from May to September, which on an exposed headland is most of the nectar there is — native bees, hoverflies, small butterflies and beetles all use it. The tough gray foliage binds loose sand and gives the ground-dwelling insects somewhere to shelter out of the wind.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Coastal-dune and bluff use: California Native Plant Society; Xerces Society. Host count: Eriophyllum genus, western estimate.",
     propagation: {
       methods: ["seed-surface-light", "cuttings-softwood"],
@@ -1091,7 +1091,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "This is the answer to the hardest question in a California garden — *what grows in dry shade under an oak?* It spreads by runners into a low weed-smothering carpet and asks for nothing once it is going; a drink or two in its first summer helps it knit together. Cut the spent flower stalks and any tired leaves down in late summer and it comes back fresh with the rains. It will run further than you planned, which under an oak is a feature.",
     givesNote: "Whorls of magenta flowers stacked up a stem, from March to June, held at exactly hummingbird height — Anna's and Allen's hummingbirds both work it, and Allen's arrives on this coast in February to breed just as it starts. Bumble bees take it too, and the aromatic leaf carpet shelters ground beetles and spiders through the dry months.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range (endemic to California): Jepson eFlora, Calflora. Hummingbird use and Allen's hummingbird timing: Audubon California; Cornell Lab. Host count: Salvia genus, low western estimate.",
     propagation: {
       methods: ["division", "seed-direct"],
@@ -1126,7 +1126,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Evergreen, tough, and one of the few things deer walk past. Sun on the coast, part shade inland, and no summer water once it is settled — it goes semi-dormant in the heat and picks up again with the rain. Divide it in autumn, never in spring, and cut the old leaves back then too. The rhizomes are poisonous if eaten, and the sap irritates some skin.",
     givesNote: "Big flowers in spring built for a long-tongued bee to crawl into, and the evergreen fans hold a patch of ground against weeds and erosion all year. A clump left uncut is winter shelter for the small ground-level insects that the towhees and juncos hunt through.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Toxicity: ASPCA. Culture and division timing: Calscape (CNPS); UC ANR. Host count: Iris genus, low western estimate.",
     propagation: {
       methods: ["division", "seed-cold-moist"],
@@ -1161,7 +1161,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Sow it, don't plant it — poppies resent a pot and a transplanted one sulks. Scatter seed on bare ground in autumn, rake it in lightly, and let the rain do the rest. On the coast the clumps live several years; inland treat it as an annual that reseeds. Cutting off the spent flowers keeps it going into summer, but letting some set seed is how you get next year's.",
     givesNote: "Open bowls of orange that native bees crawl into and roll around in for pollen — it offers no nectar at all, so everything on it is a pollen specialist or a generalist bee collecting for its young. It flowers from February, well before most things start, and the fine seed feeds finches and sparrows.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range and perennial coastal form: Jepson eFlora, Calflora. Pollen-only reward: UC Berkeley Urban Bee Lab; Xerces Society. Toxicity: ASPCA. Host count: Eschscholzia, low western estimate.",
     propagation: {
       methods: ["seed-direct", "seed-surface-light"],
@@ -1196,7 +1196,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A coastal plant that means it: salt wind, sand and fog suit it exactly, and inland it needs afternoon shade and a little summer water to fake them. Sharp drainage either way — it rots in heavy wet clay. Shear the spent flowers off in midsummer and it flowers again into autumn. Easy to keep going from its own rooted pieces.",
     givesNote: "Five months of open daisies on an exposed bluff, which makes it one of the steadiest nectar sources on the immediate coast — small native bees, hoverflies, butterflies and beetles all use it, and it is one of the plants the coastal blues and hairstreaks feed at. The fleshy mat holds loose sand in place.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Coastal-bluff use and pollinator value: California Native Plant Society; Xerces Society. Host count: Erigeron genus, western estimate.",
     propagation: {
       methods: ["division", "cuttings-softwood"],
@@ -1231,7 +1231,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Plant it inland rather than in the fog belt, and plant the local species rather than the tropical one sold in most garden centers — the evergreen tropical milkweed keeps monarchs breeding when they should be moving on and builds up disease. It spreads by underground runners and comes up several feet from where you put it, so give it a rough corner. It dies to the ground in autumn; leave the stems until spring. Toxic sap: not for grazing animals, and wash your hands.",
     givesNote: "The monarch's caterpillars eat milkweed and nothing else, and this is the one that grows here. The flowers are heavy with nectar and pull in bumble bees, wasps, beetles and swallowtails all summer — a milkweed in flower is the busiest square foot in the garden. The seed floss lines hummingbird and goldfinch nests.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Monarch host relationship and the tropical-milkweed caution: Xerces Society (Western Monarch Call to Action); US Fish & Wildlife Service. Host count: Asclepias genus, western estimate.",
     propagation: {
       methods: ["seed-cold-moist", "seed-direct"],
@@ -1266,7 +1266,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The better milkweed for a coastal garden and a small one — it stays where you put it instead of running, and it takes a dry sunny bed with no summer water at all. It disappears completely in winter, so mark it or you will dig it up. Same rule as its cousin: plant this and not the evergreen tropical milkweed. Toxic sap.",
     givesNote: "Monarch caterpillars eat milkweed and nothing else, and this is the one that grows on the coast side of the hills — a real contribution, because the western monarchs that winter in the groves along this coast are down to a fraction of their old numbers. The flower heads also feed native bees, wasps and hoverflies through the driest months.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Monarch host relationship and western population decline: Xerces Society (Western Monarch Count); US Fish & Wildlife Service. Host count: Asclepias genus, western estimate.",
     propagation: {
       methods: ["seed-cold-moist", "seed-direct"],
@@ -1301,7 +1301,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "A grassland plant, so it does best planted *into* a meadow or a loose planting rather than a bare bed — the grass around it is what it grew up with. It wants moisture through spring and then takes the dry summer by dying back to a low rosette. Deer and rabbits like it, so protect a young plant. Divide the clump in autumn every few years.",
     givesNote: "It is a mallow, and mallows are what the mallow bees want — a small group of native bees collect pollen from this family and almost nothing else, so a patch of checkerbloom is the difference between them nesting in your garden or not. The west coast lady's caterpillars eat mallow leaves, and the flowers feed bumble bees and skippers.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Mallow pollen specialists: Fowler & Droege, Pollen Specialist Bees (West); Xerces Society. Host count: Sidalcea genus, western estimate.",
     propagation: {
       methods: ["division", "seed-cold-moist"],
@@ -1336,7 +1336,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Plant it where it can be tall and slightly untidy — the back of a damp shady bed, a creek edge, the north side of a fence. It wants some summer moisture and dies back hard in autumn; cut the stems down in late winter, not before, because the hollow stalks are where small bees overwinter. It seeds itself about gently, which is usually welcome.",
     givesNote: "The name is earned: those dull little jug-shaped flowers are among the richest nectar in the whole California flora, and they run from February to July. Bumble bees, hummingbirds and wasps work them constantly. It is also a caterpillar plant for the variable checkerspot, one of the region's most recognizable butterflies.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Nectar value and bee use: Xerces Society; UC Berkeley Urban Bee Lab. Checkerspot host: BAMONA; Xerces Society. Host count: Scrophularia genus, western estimate.",
     propagation: {
       methods: ["seed-surface-light", "division"],
@@ -1372,7 +1372,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Grows in almost anything, spreads at the root, and takes being walked on and mown — which makes it a good low meadow or lawn substitute and a poor neighbor in a small tidy bed. Buy plants grown from local seed rather than a garden variety in a color, because the colored cultivars are less useful to insects and less tough. Shear it after the first flush and it flowers again. Mildly toxic to dogs and cats.",
     givesNote: "A flat landing pad packed with hundreds of tiny flowers is exactly what the short-tongued insects need — small native bees, hoverflies, soldier beetles, and the parasitic wasps that hunt garden caterpillars. It flowers from April into autumn, and the dry seed heads left standing feed finches and shelter insects over winter.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Beneficial-insect value: Xerces Society; UC ANR. Toxicity: ASPCA. Host count: Achillea genus, rounded western estimate.",
     propagation: {
       methods: ["division", "seed-surface-light"],
@@ -1407,7 +1407,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "It runs at the root, so give it room or a boundary it cannot cross — a strip along a fence, a bank, the back of a big bed. Full sun to light shade, no summer water needed. Cut it down in late winter rather than autumn, because the stems and seed heads are where a lot of small life spends the cold months. And the old slander is worth correcting: goldenrod does not cause hay fever, ragweed does — goldenrod pollen is heavy and insect-carried.",
     givesNote: "A keystone genus, and the one that matters most at the end of the year: it flowers from July to October when the region is at its driest and almost nothing else is out. Hundreds of native bee species, wasps, beetles and butterflies use it, several bees collect from goldenrod and nothing else, and it carries one of the heaviest caterpillar loads of any perennial here.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Specialist bee use: Fowler & Droege, Pollen Specialist Bees (West); Xerces Society. Host count: Solidago genus, rounded western estimate anchored on Tallamy/NWF keystone lists.",
     propagation: {
       methods: ["division", "seed-surface-light"],
@@ -1442,7 +1442,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Another runner — it makes a spreading colony rather than a clump, which is what you want on a bank and not what you want in a border. It takes coastal wind and salt and a fair amount of shade. A drink in high summer stretches the flowering; without it, it starts later and stops sooner. Cut it back in late winter, leaving the stems standing over the cold months.",
     givesNote: "The other half of the autumn pair with goldenrod: it flowers from June right through November, so it is feeding butterflies and bees at the very end of the season and again after the first rains. Asters are a keystone genus for caterpillars, and several native bees collect aster pollen and nothing else.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Aster pollen specialists: Fowler & Droege, Pollen Specialist Bees (West); Xerces Society. Host count: Symphyotrichum genus, rounded western estimate anchored on Tallamy/NWF keystone lists.",
     propagation: {
       methods: ["division", "seed-surface-light"],
@@ -1477,7 +1477,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Full sun, poor soil, no summer water — treat it well and it flops and rots. It runs underground and pops up a foot away, so it is a bank or a gravel garden plant rather than a border one. Cut the whole thing to the ground in winter; it comes back stronger. Choose a form bred for compactness if the running worries you.",
     givesNote: "Scarlet tubes from August to November, precisely when the hummingbirds need to put on weight and everything else has finished — for Anna's hummingbird, which stays here all year, this is one of the few plants standing between summer and the winter currants. Bumble bees rob the tubes from the side, and the fine seed feeds goldfinches.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Hummingbird use and late-season timing: Audubon California; Xerces Society. Host count: Epilobium genus, western estimate.",
     propagation: {
       methods: ["division", "cuttings-softwood"],
@@ -1512,7 +1512,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "A shade plant that wants what a rock crevice gives it: cool roots, good drainage and no standing water. Plant it on the north side, between stones, at the top of a wall or along a shaded path edge, and give it occasional summer water inland. The crown must stay above the soil or it rots. Divide it every few years when the middle gets woody.",
     givesNote: "Airy sprays of tiny white flowers from spring into summer, worked by small native bees, hoverflies and — at dusk — by moths. The evergreen rosettes hold a shaded bank against erosion and give ground beetles, spiders and salamanders somewhere damp to be all summer.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Culture: Calscape (CNPS); UC ANR. Host count: Heuchera genus, low western estimate.",
     propagation: {
       methods: ["division", "seed-surface-light"],
@@ -1547,7 +1547,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Part shade and moisture through the summer — a downspout, a north-facing bed, the damp end of a border. It is short-lived, three or four years, and the way to keep it is to let it seed itself around, which it does readily and pleasantly. Cut the spent stems back for a second flush; leave the last ones to ripen seed.",
     givesNote: "Nodding red flowers with long nectar spurs — a hummingbird shape, and hummingbirds are what mainly work them, hovering underneath to reach up into the spurs. Long-tongued bumble bees get in too, and the short-tongued ones bite through the spur from outside, which you can watch happening.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Hummingbird pollination and nectar robbing: Xerces Society; Cornell Lab. Host count: Aquilegia genus, low western estimate.",
     propagation: {
       methods: ["seed-cold-moist", "seed-surface-light"],
@@ -1582,7 +1582,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Give it winter and spring moisture and then let it go dry — it browns off and vanishes in high summer, which is the plant finishing its year, not dying. That habit makes it perfect scattered through a meadow or between rocks and awkward in a bed you want green all August. It seeds itself gently and divides easily.",
     givesNote: "Small blue-purple flowers from February — early, when there is little else — with a yellow eye that native bees home in on for pollen. It is exactly the sort of small grassland plant that a meadow needs several of, and it feeds the very small solitary bees that bigger flowers are no use to.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Culture: Calscape (CNPS). Host count: Sisyrinchium, low western estimate.",
     propagation: {
       methods: ["division", "seed-direct"],
@@ -1617,7 +1617,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "It runs hard at the root and it will take a damp corner over completely, so plant it where that is the job — a creek edge, a swale, the rough side of a fence — and not in a mixed border. In exchange it holds wet ground together as well as anything here and needs nothing. Cut it down in late winter. Wind-pollinated, so the pollen is a hay-fever source for some people.",
     givesNote: "A serious caterpillar plant despite its plain looks, which is why the small birds work through a mugwort patch in spring. The dense growth is cover for ground-nesting birds and lizards, and the roots hold a raw creek bank while the willows get going.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Host count: Artemisia genus, rounded western estimate.",
     propagation: {
       methods: ["division", "suckers"],
@@ -1653,7 +1653,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Plant it in a meadow or a light-shaded bed with a little summer moisture, not in a hot dry border. It is small and it disappears among grass, which is where it belongs — scatter a dozen rather than placing one. Slugs like the young leaves. It seeds itself about, and it also makes closed self-pollinating flowers down at ground level later in the season, so a patch thickens on its own.",
     givesNote: "The fritillaries — the big orange butterflies of the coastal grasslands — lay on violets and their caterpillars eat violet leaves and nothing else. On this coast that includes Myrtle's silverspot, which survives on a handful of sites around Point Reyes and needs exactly this plant. Bumble bees and small bees take the early flowers.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Silverspot fritillary (Speyeria zerene myrtleae) host relationship: US Fish & Wildlife Service recovery documents; Xerces Society. Host count: Viola genus, western estimate anchored on Tallamy/NWF keystone lists.",
     propagation: {
       methods: ["seed-cold-moist", "division"],
@@ -1690,7 +1690,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Full sun and no summer water — watering it in the heat is what lets the annual weeds that replaced it beat it again. It goes straw-gold in summer, which is what a California grassland actually looks like and not a sign of neglect. Mow or cut it to a hand's height in late autumn before the rains. The seeds have a sharp barbed awn that works into a dog's coat, worth knowing if you have one.",
     givesNote: "The deep root is the point: it holds a slope through winter storms, opens the soil for water to get in, and stores carbon far below where a lawn reaches. Skipper butterflies raise their caterpillars on native bunchgrasses, the seed feeds sparrows and finches, and the tussock is where the ground-nesting bees and the lizards shelter.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range and root depth: Jepson eFlora, Calflora, USFS FEIS; California grassland restoration literature. Host count: native bunchgrass skippers, western estimate.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -1725,7 +1725,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The grass to plant under an oak, where almost nothing else with movement in it will grow. Part shade to full shade, no summer water once established, and it lives for years rather than the usual few. The flowering stems arch out to four feet in May and catch the light, which is the reason to grow it — so cut it back in autumn, after they have gone over, and not before.",
     givesNote: "Skipper caterpillars grow up on native bunchgrasses, each one rolled inside a leaf it has sewn shut. The seed heads carry sparrows and juncos into autumn, and a big evergreen tussock is winter shelter for the insects, spiders and lizards that live at ground level under a tree.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range (endemic to California): Jepson eFlora, Calflora. Shade tolerance and longevity: Calscape (CNPS); UC ANR. Host count: native bunchgrass skippers, western estimate.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -1760,7 +1760,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "A coastal-prairie grass: it wants the cool damp part of the year and some moisture into early summer, then rests. It is slower to establish than the needlegrass and worth the patience, because it stays green longer and mixes well with wildflowers. Mow or graze it low in autumn. It does not spread by runners, so plant in drifts.",
     givesNote: "One of the grasses the coastal prairie is actually made of, which matters because the wildflowers and the ground-nesting bees of that habitat are adapted to growing among bunches with bare soil between them — not to a solid mat. Skipper caterpillars eat it, and the seed carries sparrows through the summer.",
-    confidence: "medium",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Coastal prairie ecology: USFS FEIS; California grassland restoration literature. Host count: native bunchgrass skippers, western estimate.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -1795,7 +1795,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The easiest native grass here and the one to use when you need cover fast on a raw slope or under trees — it takes real shade, which most bunchgrasses will not. It is short-lived, five years or so, and reseeds itself to carry on. Cut it back in autumn. It is big, so keep it out of the front of a bed.",
     givesNote: "Cover and structure quickly, which is what a bare bank needs before anything slower can get going. Skipper caterpillars feed on it, the seed heads carry sparrows, juncos and finches into autumn, and the standing tufts are winter shelter for insects and the birds that hunt them.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USFS FEIS. Host count: Elymus genus, western estimate.",
     propagation: {
       methods: ["seed-direct", "division"],
@@ -1830,7 +1830,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The plant to use in dry shade under an oak where a lawn will not go — evergreen, sun or deep shade, clay or gravel, and no summer water once it is settled. Planted a foot apart it knits into a meadow you can walk on occasionally; mow or comb it once in late winter. It takes more foot traffic than anything else here except the yarrow.",
     givesNote: "An evergreen ground layer under trees, which is where a great deal of small life actually lives — ground beetles, spiders, and the leaf litter the towhees kick through. Sedges are caterpillar plants for several skippers, and the seed feeds juncos and sparrows.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Culture and traffic tolerance: Calscape (CNPS); UC ANR. Host count: Carex genus, western estimate.",
     propagation: {
       methods: ["division", "seed-direct"],
@@ -1865,7 +1865,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "The plant for the wet spot: the bottom of a rain garden, a pond edge, the place the downspout empties. It will also take an ordinary bed with summer water, and it holds its blue-gray color and its upright shape all year, which is rare. Comb the old stems out with your fingers in late winter rather than cutting it. It stays where you put it.",
     givesNote: "What it mainly does is clean water — a stand of rush in the low point of a garden slows run-off and filters what soaks through, which is the whole idea of a rain garden. The stems are winter shelter for insects, small birds pick seed from the heads, and frogs and dragonflies use a damp rush stand as cover.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Stormwater and rain-garden use: UC ANR; Xerces Society. Host count: Juncus genus, low western estimate.",
     propagation: {
       methods: ["division", "seed-surface-light"],
@@ -1902,7 +1902,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Give it shade at the root and something to climb — a fence, a big shrub, the shaded side of an arbor — and water it through its first few summers; in the wild it grows where a creek keeps the ground cool. It is slow for two years and then goes. The leaves and stems are toxic, which is exactly the point (see below), so not a plant to grow where a dog chews things.",
     givesNote: "This is the whole world of the pipevine swallowtail — a big iridescent blue-black butterfly whose caterpillars eat pipevine and nothing else on earth. They take up the vine's poison and keep it, which is why nothing eats them and why the caterpillars are bright red and in no hurry. Plant one and the butterflies find it, sometimes within a season. The odd little flowers, meanwhile, are pollinated by fungus gnats they trap overnight and let go in the morning.",
-    confidence: "high",
+    hostCountFrom: "none",
     basis: "Native status/range (endemic to California): Jepson eFlora, Calflora. Pipevine swallowtail (Battus philenor hirsuta) sole host relationship and sequestered aristolochic acid: Xerces Society; BAMONA; UC ANR. Host count: Aristolochia, a genuinely tiny figure that undersells the plant — one of those species is the reason to grow it.",
     propagation: {
       methods: ["seed-cold-moist", "layering"],
@@ -1937,7 +1937,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Vigorous — it will cover a shed, an ugly fence or a dead tree in three years, and it will smother a small shrub you were fond of, so give it something it cannot kill. Prune it hard every winter; it fruits on new wood and takes any amount of cutting. It wants water within reach, which usually means a creek, a downspout or a low corner. The autumn color is the best here.",
     givesNote: "Small purple grapes in autumn that just about everything eats — robins, waxwings, jays, band-tailed pigeons, foxes, coyotes and raccoons — and the tangled growth is some of the safest nesting cover a garden can offer. It is a caterpillar plant for the big sphinx moths, and the peeling bark gets pulled off for nest material.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Wildlife use: Cornell Lab; USFS FEIS. Host count: Vitis genus, western estimate.",
     propagation: {
       methods: ["cuttings-hardwood", "layering"],
@@ -1972,7 +1972,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Easy and well-mannered — it is not the sort of honeysuckle that pulls a fence down. Plant it at the foot of a shrub or a light trellis in part shade and let it lean. It takes dry shade under an oak once established and needs no summer water there. Cut it back after flowering if it gets thin at the base.",
     givesNote: "Pink tubular flowers in early summer, which means hummingbirds by day and hawk moths at dusk — a honeysuckle at twilight is the best place here to see one hovering. The translucent red berries in autumn go to thrushes, towhees and robins, and the loose tangle is nesting cover.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Pollinator and bird use: Xerces Society; Cornell Lab. Host count: Lonicera genus, western estimate.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
@@ -2007,7 +2007,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Know what you are doing before you plant it: it trails, it roots where the tips touch the ground, and it makes a thicket. That is perfect on a bank or at the back of a rough garden and wrong in a border. It is far less brutal than the introduced Himalayan blackberry, and much the better fruit. If you already have Himalayan bramble, this is what you replace it with rather than bare ground.",
     givesNote: "A keystone genus — one of the heaviest caterpillar loads of anything here — and a spring nectar plant that bumble bees, mining bees and butterflies work hard. Then the berries, which feed thrushes, jays, quail, foxes and coyotes through the summer. The thicket is the safest nesting cover in the garden for towhees, wrentits and sparrows.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USFS FEIS. Distinction from introduced Rubus armeniacus: Calflora; California Invasive Plant Council. Host count: Rubus genus, western estimate anchored on Tallamy/NWF keystone lists.",
     propagation: {
       methods: ["layering", "cuttings-hardwood"],
@@ -2044,7 +2044,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "A lawn alternative for the coast: it runs by surface stolons into a dense evergreen mat, takes light foot traffic and holds sand or a bank against wind and rain. Full sun on the coast, part shade inland, and moderate summer water — this is not one of the bone-dry plants. Mow or shear it once in late winter to renew it. The fruit is small, seedy and worth eating.",
     givesNote: "White flowers over a long spring for small native bees and hoverflies, and a strawberry genus that carries a surprisingly heavy caterpillar load. The mat is where ground beetles and spiders live, birds take the fruit, and it does the job a lawn does without the water or the mowing.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Role as a parent of the cultivated strawberry: USDA ARS. Host count: Fragaria genus, western estimate.",
     propagation: {
       methods: ["runners", "division"],
@@ -2079,7 +2079,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Shade or morning sun, leaf litter to run through, and a little summer water inland — on the coast it manages without. It trails rather than clumps, rooting as it goes, and it is thin rather than dense, so use it as a fragrant carpet between other things and not as a weed barrier. Brushing past it is the point; the leaves make a good tea. The name is Spanish for \"good herb.\"",
     givesNote: "Small white flowers scattered through the shade from spring to autumn, worked by small native bees and hoverflies that the bigger flowers are no use to. The mat of aromatic leaves shelters ground beetles, spiders and salamanders through the dry months.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Naming history (Yerba Buena, the original name of San Francisco): California Historical Society. Host count: Clinopodium genus, low western estimate.",
     propagation: {
       methods: ["layering", "cuttings-softwood"],
@@ -2114,7 +2114,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Deep shade and steady moisture — this is a fog-belt plant and inland it needs a genuinely shaded, watered bed to survive at all. Given that, it spreads into a dense carpet by underground stems and needs nothing else. Watch the leaves on a hot afternoon: they fold down flat against the light within minutes and open again in the shade, which is worth going outside to see. Contains oxalic acid, so not for grazing pets.",
     givesNote: "The layer that makes a redwood planting feel finished — it holds soil on a shaded slope, keeps the ground cool and damp, and shelters the salamanders, ground beetles and springtails that live in the litter. Small pink-veined flowers for months feed the tiny bees and hoverflies of the forest floor.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USFS FEIS. Leaf movement in response to light: USFS FEIS; Oregon State Extension. Toxicity: ASPCA. Host count: Oxalis genus, low western estimate.",
     propagation: {
       methods: ["division", "seed-direct"],
@@ -2149,7 +2149,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "One of the very few plants that will cover dry shade under a coast live oak without any summer water — which is the exact spot most gardens here give up on. It spreads slowly by runners into a low thicket. Cut it hard in late winter when it gets woody. The white berries are mildly poisonous to people and pets.",
     givesNote: "Little pink bells in early summer that bumble bees work, and white berries that hang on into winter as late food for quail, robins and towhees. The low tangle is exactly the kind of cover ground-feeding birds need to move around a garden safely.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Dry-shade tolerance: Calscape (CNPS); UC ANR. Toxicity: ASPCA. Host count: Symphoricarpos genus, western estimate.",
     propagation: {
       methods: ["suckers", "cuttings-hardwood"],
@@ -2186,7 +2186,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "Shade and a soil that holds moisture; in the fog belt it manages the summer on its own, and inland it needs occasional water to stay green. Cut last year's fronds off at the base in late winter, just before the new ones unroll, and you get a clean plant for the rest of the year. It is long-lived, gets big, and almost nothing eats it.",
     givesNote: "Structure and permanence in shade — the crown holds a slope, the fronds shelter salamanders, ground beetles and spiders through the dry months, and towhees and juncos work the litter beneath it. Few insects eat ferns, which is honest: the value here is the shelter, not the food.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USFS FEIS. Host count: ferns carry very few Lepidoptera — a real figure, not a gap in the data.",
     propagation: {
       methods: ["spores", "division"],
@@ -2221,7 +2221,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "The one fern here that genuinely takes dry shade — under an oak, at the foot of a north wall — with no summer water once established. It may go semi-dormant and look tired in a hot September; that is the drought strategy, and the rains bring it straight back. Cut the old fronds off in late winter.",
     givesNote: "Cover and shelter in the dry shade where little else grows: damp refuge under the fronds for salamanders and beetles through the summer, and litter for the ground-feeding birds to turn over. Like all ferns it feeds few insects directly, and that is the honest account of it.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Drought tolerance in shade: Calscape (CNPS); UC ANR. Host count: ferns carry very few Lepidoptera — a real figure.",
     propagation: {
       methods: ["spores", "division"],
@@ -2256,7 +2256,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: false,
     careNote: "It needs real moisture — a seep, a pond edge, a shaded bed you are willing to water — and shade for most of the day. Given both it becomes the biggest, most architectural thing in a shaded garden. Give it its full eight feet from the start; it does not take being crowded or moved. Cut the old fronds out in late winter.",
     givesNote: "The scale is the gift: a stand of chain fern makes the cool, humid, sheltered layer that a damp shaded garden needs, and salamanders, frogs, beetles and spiders all use it. It holds a wet bank together where the soil would otherwise slide.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range and size: Jepson eFlora, Calflora, USFS FEIS. Host count: ferns carry very few Lepidoptera — a real figure.",
     propagation: {
       methods: ["spores", "division"],
@@ -2291,7 +2291,7 @@ export const SEED_RAW: RawPlant[] = [
     noWaterEstablish: true,
     careNote: "Shade, sharp drainage and a cool root run — a north-facing bank, between rocks, the shaded side of a wall. Here is the thing to expect: **it dies down completely in summer.** The fronds brown off and disappear in July and it comes back with the rains, which is the plant's plan and not a failure. So plant it where a bare patch in August does not matter, and do not water it to try to keep it going.",
     givesNote: "A seasonal skin of green on a bare shaded bank through the wet half of the year, holding the surface soil in place through the storms that would otherwise wash it off. Damp shelter underneath for small ground life; like all ferns, it feeds few insects directly.",
-    confidence: "high",
+    hostCountFrom: "estimated",
     basis: "Native status/range and summer dormancy: Jepson eFlora, Calflora; Calscape (CNPS). Host count: ferns carry very few Lepidoptera — a real figure.",
     propagation: {
       methods: ["spores", "division"],

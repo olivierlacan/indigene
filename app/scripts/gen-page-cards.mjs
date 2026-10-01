@@ -123,6 +123,7 @@ try {
     { slug: "release-notes", title: "What’s new", subtitle: "every change to Indigene, in plain words" },
     { slug: "about", title: "About Indigene", subtitle: "a native of a place — and what this measures for yours" },
     { slug: "sources", title: "Where our numbers come from", subtitle: "what’s counted, what’s our judgment, and where we’d bet we’re wrong" },
+    { slug: "confidence", title: "How sure we are", subtitle: "what each confidence level on a plant\u2019s page means" },
     { slug: "privacy", title: "Privacy & safety", subtitle: "what we ask for, what we never do — made safe for everyone" },
     { slug: "plants", title: "Native plants", subtitle: "every plant Indigene knows, from every region", stat: `<b>${totalPlants}</b> native plants · <b>${nRegions}</b> regions` },
     { slug: "regions", title: "Meet the natives", subtitle: "the regions Indigene covers, and their rosters", stat: `<b>${nRegions}</b> regions · <b>${totalPlants}</b> native plants` },

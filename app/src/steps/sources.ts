@@ -23,6 +23,7 @@
 // grandparents — so: plain words, no jargon left unexplained, and the honest
 // caveat stated rather than buried.
 import { el, clear } from "../ui";
+import { withContents } from "../components/doc-contents";
 import { navigate } from "../state";
 import { DATA_SOURCES_URL, ISSUES_URL } from "../lib/plain";
 import { t, tx } from "../lib/i18n";
@@ -83,7 +84,7 @@ export function renderSources(main: HTMLElement): void {
   document.title = t("sources.docTitle");
 
   main.append(
-    el("article", { class: "privacy-page sources-page" }, [
+    withContents(el("article", { class: "privacy-page sources-page" }, [
       el("h2", { class: "step-title" }, t("sources.title")),
       el("p", { class: "step-lede" }, t("sources.lede")),
 
@@ -185,6 +186,6 @@ export function renderSources(main: HTMLElement): void {
         el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("privacy.home")),
         el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("privacy.findPlants")),
       ]),
-    ]),
+    ]), "sources"),
   );
 }

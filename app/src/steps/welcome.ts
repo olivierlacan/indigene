@@ -12,7 +12,9 @@ export function renderWelcome(main: HTMLElement): void {
   // (a stalled database used to leave the whole home screen blank).
   const savedSection = el("div", { style: "display:none" });
 
-  main.append(
+  // The pitch and the film are one hero: stacked on a phone, side by side on a
+  // laptop, where a single 34rem column left most of the window empty.
+  const pitch = el("div", { class: "welcome-pitch" }, [
     el("h2", { class: "step-title" }, t("welcome.title")),
     el("p", { class: "step-lede" }, t("welcome.lede1")),
     el("p", { class: "step-lede" }, t("welcome.lede2")),
@@ -36,6 +38,21 @@ export function renderWelcome(main: HTMLElement): void {
         link: el("a", { href: "#/browse" }, t("welcome.ratherNotLink")),
       })
     ),
+  ]);
+
+  main.append(
+    el("div", { class: "welcome-hero" }, [
+      pitch,
+      el("div", { class: "welcome-film" }, [
+        // The one-minute film: the whole pitch, drawn. Click to play, so the
+        // home page makes no request to the video host until someone asks.
+        filmEmbed(),
+        // Its own page is the address worth sending: it previews as the film.
+        el("p", { style: "margin-top:0.4rem;font-size:0.85rem;text-align:center" },
+          el("a", { href: `#/${filmRoute(filmLang())}` }, t("film.share"))
+        ),
+      ]),
+    ]),
     // No language & units line here. It used to sit between the start button
     // and the pitch, on the reasoning that a French speaker shouldn't have to
     // read an English page to the bottom to find the switch — but a settings
@@ -44,18 +61,12 @@ export function renderWelcome(main: HTMLElement): void {
     // the header's menu, which is above the fold on every page including this
     // one, and still in the footer.
 
-    // The one-minute film: the whole pitch, drawn. Click to play, so the home
-    // page makes no request to the video host until someone asks for it.
-    filmEmbed(),
-    // Its own page is the address worth sending: it previews as the film.
-    el("p", { style: "margin-top:0.4rem;font-size:0.85rem;text-align:center" },
-      el("a", { href: `#/${filmRoute(filmLang())}` }, t("film.share"))
-    ),
-
     // The pitch for anyone not yet convinced — in plain sight, not a drawer.
-    el("h3", { style: "margin-top:1.8rem" }, t("welcome.whyTitle")),
-    el("p", {}, t("welcome.why1")),
-    el("p", {}, t("welcome.why2")),
+    el("section", { class: "welcome-why" }, [
+      el("h3", { style: "margin-top:1.8rem" }, t("welcome.whyTitle")),
+      el("p", {}, t("welcome.why1")),
+      el("p", {}, t("welcome.why2")),
+    ]),
 
     savedSection
   );

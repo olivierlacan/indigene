@@ -328,6 +328,20 @@ code {
   padding: 0.05rem 0.3rem; border-radius: 6px; font-size: 0.9em;
 }
 footer { color: var(--ink-soft); margin-top: 2rem; font-size: 0.9rem; }
+
+/* On a laptop the page widens to the app's 62rem and fills it side by side:
+   the index's cards two abreast, and a section's "how you use it" beside
+   its history. Sentences keep their measure. */
+@media (min-width: 64rem) {
+  main { max-width: 62rem; }
+  .lede, footer p { max-width: 36rem; }
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .section-cols {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 2rem; align-items: start;
+  }
+  .section-cols > .history { margin-top: 1.25rem; }
+}
 .privacy-line { margin-top: 0.6rem; }
 </style>
 </head>
@@ -417,8 +431,10 @@ function renderSectionPage(section, items) {
 <h1>${escapeHtml(section.title)}</h1>
 <p class="lede">${escapeHtml(section.tagline)}</p>
 ${items.length ? `<p class="updated">Last updated ${escapeHtml(monthYear(items[0].date))}</p>` : ""}
+<div class="section-cols">
 ${doc.join("\n")}
-${renderHistory(items)}`,
+${renderHistory(items)}
+</div>`,
   });
 }
 

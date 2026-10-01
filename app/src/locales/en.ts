@@ -1787,6 +1787,8 @@ export const en = {
   "privacy.lede":
     "Indigene is built to be safe and respectful for everyone who uses it — including children. Here's the whole story in plain words: what we ask for, what we never do, and where anything you share actually goes.",
   "privacy.shortVersion": "The short version. ",
+  // The heading of a long page's contents list, beside its prose on a laptop.
+  "doc.contents": "On this page",
   "privacy.short1": "No account, no sign-up, no password — nothing that identifies you.",
   "privacy.short2":
     "No ads, and nothing about you is sold or shared. We count how many times each page is opened — that's all, and it can't tell you apart from anyone else.",

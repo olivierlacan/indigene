@@ -616,6 +616,9 @@ function renderRelease(r, { standalone = false, assets = "" } = {}) {
   parts.push(
     `<article class="release" id="${anchor(r.version)}" data-version="${escapeHtml(r.version)}">`,
   );
+  // Two halves: what the release is (its name, date and picture) and what
+  // changed. One stack on a phone; side by side on a laptop.
+  parts.push(`<div class="release-aside">`);
   parts.push(`<header>`);
   const title = `Version ${escapeHtml(r.version)}`;
   parts.push(
@@ -661,6 +664,7 @@ function renderRelease(r, { standalone = false, assets = "" } = {}) {
     );
     if (shots) parts.push(`<p class="shots">${shots}</p>`);
   }
+  parts.push(`</div>`, `<div class="release-body">`);
   for (const s of r.sections) {
     if (s.items.length === 0) continue;
     parts.push(`<h3>${escapeHtml(s.title)}</h3>`);
@@ -668,7 +672,7 @@ function renderRelease(r, { standalone = false, assets = "" } = {}) {
     for (const item of s.items) parts.push(`<li>${inline(item)}</li>`);
     parts.push(`</ul>`);
   }
-  parts.push(`</article>`);
+  parts.push(`</div>`, `</article>`);
   return parts.join("\n");
 }
 
@@ -871,6 +875,21 @@ footer { color: var(--ink-soft); margin-top: 2rem; font-size: 0.9rem; }
 }
 .new-flag::before { content: "● "; color: var(--brand); }
 .privacy-line { margin-top: 0.6rem; }
+/* On a laptop the page widens to the app's 62rem, and each release splits in
+   two: its name, date and picture down a narrow left column, what changed
+   beside them at a reading measure. A phone keeps the one stack. */
+@media (min-width: 64rem) {
+  main { max-width: 62rem; }
+  main > .lede, footer p { max-width: 36rem; }
+  .release {
+    display: grid; grid-template-columns: 16rem minmax(0, 1fr);
+    column-gap: 2rem; padding: 1.25rem 1.5rem;
+  }
+  .release-body { max-width: 38rem; }
+  .release-body > h3:first-child { margin-top: 0; }
+  .thumb { margin: 0.85rem 0 0; }
+  .shots { text-align: left; }
+}
 </style>
 </head>
 <body>

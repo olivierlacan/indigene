@@ -2617,6 +2617,40 @@ export const en = {
   // ---------------------------------------------------------------------
   "names.choice.slur": "Also called {also}. We don't use its best-known English name, a colonial slur.",
   "names.choice.oriental": "Often sold as {also}. We say “Asian”: “Oriental” is an old label for Asian people, not one they chose.",
+
+  // ---------------------------------------------------------------------
+  // "Native plants, not nativism" (steps/native.ts).
+  // ---------------------------------------------------------------------
+  "steps.native": "Native",
+  "native.docTitle": "Native plants, not nativism — Indigene",
+  "native.title": "Native plants, not nativism",
+  "native.lede": "“Native” on Indigene means where a plant evolved, and what evolved with it. It says nothing about people, and nothing about borders.",
+  "native.short1": "A plant is native where it evolved alongside the local insects, fungi and birds. That shared history is why they can use it.",
+  "native.short2": "Borders don't come into it. An oak's range follows climate and soil, not a map of countries.",
+  "native.short3": "It says nothing about people. Humans are one species, and everyone's ancestors came from somewhere.",
+  "native.short4": "An invasive plant is a problem because of what it does, not where it's from. Most plants moved to a new place never spread.",
+  "native.speciesTitle": "Co-evolution happens between species, not nations",
+  "native.species1": "A caterpillar that eats only oak didn't choose oak out of loyalty. Over thousands of generations its body learned to handle oak's defenses, and most plant-eating insects are specialists like it. That's why the plant list for your spot matters.",
+  "native.species2": "That history played out on a landscape of climate, soil and sea, not of countries. So Indigene's lists follow natural regions, not borders. The Irish list covers the whole island, the Republic and Northern Ireland alike, and a spot on Scotland's Kintyre peninsula gets it too: the same Atlantic ground grows the same plants.",
+  "native.historyTitle": "Native ranges are history, not identity",
+  "native.history1": "Where a plant is native is partly an accident of the last ice age. Beech is native to southern England but not to Ireland: the sea rose between them before beech got there. Ranges have always moved, and they're moving now as the climate warms.",
+  "native.history2": "Many “wild” native landscapes were tended by people, too. Coast Salish burning kept the Garry oak meadows of the Pacific Northwest open for centuries, and Māori planted groves of karaka for its fruit. Planting natives carries that care on.",
+  "native.behaviorTitle": "“Invasive” describes behavior, not origin",
+  "native.behavior1": "Most plants moved to a new place never spread on their own. A rough rule from invasion biology: about one in ten imported species turns up in the wild, one in ten of those establishes, and one in ten of those becomes a pest. The few that do are a problem because they smother woods or choke rivers, not because of where they came from.",
+  "native.behavior2": "Some ecologists warn against judging a species by its origin at all (Davis and others, 2011). Others answer that removing a plant for measured harm isn't xenophobia (Simberloff, 2003). Indigene agrees with both: every invasive in the app is there for what it does. Your tomatoes trace back to the Andes, and that's fine.",
+  "native.whyTitle": "Why we say this out loud",
+  "native.why1": "The language has been abused before. In Nazi Germany, garden planners tied “native” plants to racial purity, and in 1942 a group of botanists called for wiping out small balsam, a little Asian woodland flower, as a “Mongolian invader”. Words like “alien”, “invader” and “belonging” still carry that echo.",
+  "native.why2": "So Indigene doesn't use them for plants. When a plant's common name insults people, we use another one and say why. When we write about an invasive, we say what it does. And when we say native, we mean the oak and its caterpillars, never a person.",
+  "native.sourcesTitle": "Where this comes from",
+  "native.src.forister": "most plant-eating insects eat a narrow range of plants",
+  "native.src.garryOak": "the Garry oak meadows, and the Indigenous burning that kept them open",
+  "native.src.tens": "the “tens rule”: how few imported species become pests",
+  "native.src.davis": "the case for judging a species on what it does, not where it's from",
+  "native.src.simberloff": "the reply: managing invasive species isn't xenophobia",
+  "native.src.groening": "the “native garden” campaigns of 1930s and 1940s Germany",
+  "about.stance.native": "Native means the plant, never the person.",
+  "about.stance.nativeBody": "It's about where a plant evolved, not borders or people. {link}",
+  "about.stance.nativeLink": "Native plants, not nativism",
 } as const;
 
 /** Every valid string key. Derived, so it can never drift from the strings. */

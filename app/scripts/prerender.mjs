@@ -404,6 +404,13 @@ async function collectPages(load) {
     image: pageCard("crops"),
     imageAlt: "Will native plants bring pests to my yard? — the question, and what farms measured when they answered it",
   });
+  // What "native" means here, and what it never means. The lede is the
+  // description, for the same reason as the crops page: it is the claim with
+  // its limits attached.
+  add("native", en["native.docTitle"], en["native.lede"], {
+    image: pageCard("native"),
+    imageAlt: "Native plants, not nativism — native is about where a plant evolved, never about borders or people",
+  });
   add("traits", en["traits.docTitle"], en["traits.lede"], {
     image: pageCard("traits"),
     imageAlt: "Plant traits — what each label and figure on a plant's page means",

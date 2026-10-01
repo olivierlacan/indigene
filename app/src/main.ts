@@ -36,6 +36,7 @@ import { renderSources } from "./steps/sources";
 import { renderSettings } from "./steps/settings";
 import { renderAbout } from "./steps/about";
 import { renderCrops } from "./steps/crops";
+import { renderNative } from "./steps/native";
 import { renderTraits } from "./steps/traits";
 import { renderImport } from "./steps/import";
 import { initAppMenu, closeAppMenu } from "./components/app-menu";
@@ -109,6 +110,7 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
   // page. Reached from every plant page's top block, beside the look-alike
   // warning and the native swap.
   crops: { fn: renderCrops, labelKey: "steps.crops", inFlow: false },
+  native: { fn: renderNative, labelKey: "steps.native", inFlow: false },
   // What a plant's labels and figures mean. `#/traits/<id>` is the same page
   // opened at one definition — what each label on a plant page links to.
   traits: { fn: renderTraits, labelKey: "steps.traits", inFlow: false },

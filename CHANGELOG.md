@@ -46,6 +46,11 @@ subtitle on the What's new page.
   row's new `hostCountFrom` (and optional `confidenceLowered`), generated once
   from the `basis` wording; `confidence.test.ts` pins the rule and checks every
   shipped row. Result: 286 high, 261 medium, 92 low (was 548/91/0).
+- A new page explains what "native" means here, and what it never means:
+  where a plant evolved, not borders or people, with the evidence and the
+  history of the word's abuse. https://indigene.app/native
+- Internal: `steps/native.ts` (route `native`, prerendered with its own share
+  card), linked from a new stance on the About page; `CLAUDE.md` points to it.
 - Matches: "Add sighting" on a plant in your saved spot now shows your own
   iNaturalist photos of that plant. Tap one to add it, no link to paste, so
   each season's photo lines up under the plant to show how it's growing.

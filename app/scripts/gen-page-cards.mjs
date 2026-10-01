@@ -133,6 +133,7 @@ try {
     // the sentence people actually say out loud, and a card that argued back at
     // them in 30 characters would be the advert the page refuses to be.
     { slug: "traits", title: "Plant traits", subtitle: "what each label and figure on a plant\u2019s page means" },
+    { slug: "native", title: "Native plants, not nativism", subtitle: "where a plant evolved \u2014 never borders, never people" },
     { slug: "crops", title: "Will native plants bring pests to my yard?", subtitle: "no \u2014 and some of them take pests away", stat: `<b>25</b> studies \u00b7 the ones that disagree too` },
   ];
 } finally {

@@ -58,7 +58,9 @@ Indigene is anti-racist, anti-colonial and anti-chauvinist by design. "Native"
 here is an ecological fact — where a plant evolved and what evolved with it —
 and it says nothing about people. The word sits close to *nativism*, an
 ideology we reject, so the writing keeps the two far apart. Promoting native
-plants is no excuse to carry systemic white supremacy along with them.
+plants is no excuse to carry systemic white supremacy along with them. The
+reader-facing version of this section is its own page, `#/native`
+(`steps/native.ts`); keep the two saying the same thing.
 
 - **Names that insult people give way to equally common ones.** When a plant's
   best-known name is a slur or an old label for an ethnic group, use an

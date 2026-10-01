@@ -41,6 +41,8 @@ import { initAppMenu, closeAppMenu } from "./components/app-menu";
 import { initPullToReload } from "./components/pull-to-reload";
 import { watchRestore } from "./lib/restore";
 import { closeTermDialog } from "./components/term-dialog";
+import { closeLightbox } from "./components/lightbox";
+import { emojiSpan, watchEmoji } from "./lib/emoji";
 import { applyDocumentLang, consumeLangParam, onLangChange, t } from "./lib/i18n";
 import type { TKey } from "./locales/en";
 import { onUnitsChange } from "./lib/units";
@@ -247,9 +249,11 @@ function renderStepRail(active: AppStep): void {
     const state = i < idx ? "done" : i === idx ? "current" : "todo";
     const li = document.createElement("li");
     li.dataset.state = state;
+    if (state === "current") li.setAttribute("aria-current", "step");
     const dot = document.createElement("span");
     dot.className = "dot";
-    dot.textContent = state === "done" ? "✓" : String(i + 1);
+    if (state === "done") dot.append(emojiSpan("✓", "emoji.done"));
+    else dot.textContent = String(i + 1);
     li.append(dot, document.createTextNode(t(STEPS[key].labelKey)));
     stepsList.append(li);
   });
@@ -371,6 +375,7 @@ async function route(): Promise<void> {
   syncAddressBar(step, param);
   closeAppMenu(); // a navigation always dismisses an open header menu
   closeTermDialog(); // …and any explain-this dialog, which would float above the new page
+  closeLightbox(); // …and the photo viewer, which Back would otherwise leave open
   resetUntranslated(); // whatever the last page admitted to isn't this page's
   document.title = t("app.title"); // plant pages set their own; everything else resets
   renderStepRail(step);
@@ -543,6 +548,7 @@ async function boot(): Promise<void> {
   // or for a browser asking not to be tracked, it does nothing whatsoever.
   startAnalytics();
   renderChrome();
+  watchEmoji(onLangChange);
   onLangChange(rerenderAll);
   onUnitsChange(rerenderAll);
   // Prefs only tune ranking weights and filters, so the first paint never

@@ -40,6 +40,8 @@ import { alternativePhotoFor, inatTaxonIdFor } from "../lib/hero-photo";
 import type { Ornamental, AlternativeLink, SwapAxis } from "../types";
 import { t, tn, tx, fmtNumber } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
+import { nameChoiceNote } from "../lib/name-choice";
+import { NAME_CHOICES } from "../data/name-choices";
 import { wantedLine } from "../components/wanted-line";
 import { alternativeBlurb, alternativeOrigin, alternativeRole, alternativeWhy, alternativeEdges, alternativesUntranslated } from "../lib/prose";
 import { reportUntranslated } from "../components/wip-banner";
@@ -200,6 +202,7 @@ function indexCard(row: AlternativeIndexRow, region: RegionDef | null): FilterRo
     // Findable by the ornamental's names *and* by the natives it's swapped for:
     // "little bluestem" is what a person remembers, not "Cynodon dactylon".
     hay: norm([names.title, row.ornamental.common, row.ornamental.latin, row.ornamental.role,
+      NAME_CHOICES[row.ornamental.latin]?.also ?? "",
       ...natives, ...row.natives.map((n) => n.plant.latin)].join(" ")),
     node,
     mark,
@@ -250,6 +253,7 @@ export async function renderAlternative(main: HTMLElement, param?: string): Prom
           el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" }, names.sub),
         ]),
       ]),
+      nameChoiceNote(ornamental.latin),
       el("p", { class: "kv", style: "margin-top:0.75rem" }, [
         el("span", { class: "k" }, t("alternatives.role")),
         alternativeRole(ornamental),

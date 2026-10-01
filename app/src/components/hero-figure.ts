@@ -47,7 +47,7 @@ export function heroFigure(pick: HeroPhoto, name: string, latin: string): HTMLEl
       // bytes for a picture nobody could tell apart. The large rendition is
       // for the lightbox, and `original` is for nowhere.
       class: "photo-fade",
-      alt: t("obs.photoAlt", { name: latin, observer: pick.observer ?? "an iNaturalist observer" }),
+      alt: t("obs.photoAlt", { name: latin, observer: pick.observer ?? t("obs.someObserver") }),
       // Square, and said up front, so the head row doesn't reflow when it lands.
       width: 180,
       height: 180,

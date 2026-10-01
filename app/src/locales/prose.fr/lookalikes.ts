@@ -66,7 +66,7 @@ export const LOOKALIKES_FR: ProseTable = {
       "Le mur persistant rapide et passe-partout — lustré, gourmand en eau, et qui se ressème dans les bois de l'Oregon à l'Europe de l'Ouest à mesure que les oiseaux en lâchent les noyaux. Froissées, ses feuilles sentent l'amande parce qu'elles dégagent du cyanure, et il est sujet à la criblure qui le perce de trous.",
     alternativeNotes: {
       "ilex-aquifolium": {
-        why: "Pour une haie persistante et dense, le houx indigène dresse le même mur lustré toute l'année — taillable, accueillant pour la faune, et ici chez lui, là où le laurier-cerise est un échappé des jardins en route vers les bois.",
+        why: "Pour une haie persistante et dense, le houx indigène dresse le même mur lustré toute l'année — taillable, accueillant pour la faune, et indigène ici, là où le laurier-cerise est un échappé des jardins en route vers les bois.",
         edges: [
           { axis: "disease", native: "Sain et de longue vie.", ornamental: "Criblé par le champignon de la criblure ; ses feuilles dégagent du cyanure." },
           { axis: "wildlife", native: "Ses baies tardives nourrissent grives et merles ; l'azuré des nerpruns y pond.", ornamental: "Disséminé par les oiseaux dans les bois, où il étouffe la flore du sol." },
@@ -227,7 +227,7 @@ export const LOOKALIKES_FR: ProseTable = {
       "La fontaine de lames arquées et de plumets argentés d'automne, vendue comme pièce maîtresse sans entretien. Elle se ressème dans les friches et les bords de route — plusieurs États la classent désormais — et porte le feu, contrairement aux graminées indigènes qui lui ressemblent.",
     alternativeNotes: {
       "deschampsia-cespitosa": {
-        why: "Pour une fontaine de graminée fine et légère, la canche cespiteuse lève une brume dorée en été — le mouvement pour lequel on plante le miscanthus, sur un indigène qui reste à sa place dans la prairie au lieu de s'en échapper.",
+        why: "Pour une fontaine de graminée fine et légère, la canche cespiteuse lève une brume dorée en été — le mouvement pour lequel on plante le miscanthus, sur un indigène de la prairie plutôt qu'une échappée de jardin.",
         edges: [
           { axis: "wildlife", native: "Abri et graines pour les oiseaux ; hôte de plusieurs papillons de prairie.", ornamental: "Nourrit peu d'espèces indigènes, et se ressème dans la nature." },
           { axis: "care", native: "Robuste et adaptable au soleil ou à mi-ombre, en sol humide ou sec.", ornamental: "Une grosse touffe qui se ressème alentour." },
@@ -257,7 +257,7 @@ export const LOOKALIKES_FR: ProseTable = {
   },
   "Toxicoscordion venenosum": {
     origin:
-      "Indigène du Nord-Ouest Pacifique — il appartient à ces prés exactement autant que le camas.",
+      "Indigène du Nord-Ouest Pacifique, il fait partie de ces prés autant que le camas.",
     blurb:
       "Un lis des mêmes prés humides de printemps, avec les mêmes feuilles graminiformes et un bulbe qui ressemble à un bulbe de camas. Son nom dit ce qu'il veut dire : toutes ses parties sont toxiques, et il a tué du bétail comme des personnes. Hors floraison, il n'existe aucun moyen sûr de distinguer les bulbes.",
   },

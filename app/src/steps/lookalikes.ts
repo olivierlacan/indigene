@@ -293,7 +293,7 @@ function tellPhotos(lookalike: Lookalike, n: NativeForLookalike): HTMLElement | 
     }, [
       el("img", {
         class: "photo-fade",
-        alt: t("obs.photoAlt", { name: s.latin, observer: s.pick.observer ?? "an iNaturalist observer" }),
+        alt: t("obs.photoAlt", { name: s.latin, observer: s.pick.observer ?? t("obs.someObserver") }),
         width: 300,
         height: 300,
       }),

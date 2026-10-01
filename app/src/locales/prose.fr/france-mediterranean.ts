@@ -28,7 +28,7 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     careNote:
       "Lent à démarrer, puis rien ne l'arrête — une racine profonde le rend totalement résistant à la sécheresse et plutôt résistant au feu une fois installé, mais difficile à déplacer : plantez-en un petit et laissez-le. Donnez-lui de la vraie place : c'est un arbre d'ombrage pour un jardin, pas pour une courette. Il poussera sur un calcaire maigre où presque rien d'autre ne pousse.",
     givesNote:
-      "De très loin la plus grande source de nourriture du Midi : des centaines d'espèces de chenilles — c'est-à-dire de quoi nourrir une nichée de mésanges bleues — plus des glands pour les geais, les pigeons ramiers et les sangliers, et une ombre persistante dense dans un pays où l'ombre est ce qui compte le plus.",
+      "Une énorme source de nourriture : des centaines d'espèces de chenilles — c'est-à-dire de quoi nourrir une nichée de mésanges bleues — plus des glands pour les geais, les pigeons ramiers et les sangliers, et une ombre persistante dense dans un pays où l'ombre est ce qui compte le plus.",
     propagationNote:
       "Ramassez les glands à leur chute en automne et faites-les flotter dans l'eau — jetez ceux qui remontent, semez aussitôt ceux qui coulent. Ils germent dès l'automne sans passage au froid et ne doivent jamais sécher. À cause de la racine pivotante, démarrez-le en pot haut, ou semez-le là où il vivra.",
   },
@@ -388,7 +388,7 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     careNote:
       "À ne planter que là où il y a vraiment de l'eau : une berge, un fossé, un bas-fond qui reste humide. Il est rapide, il est grand, et ses racines trouvent une canalisation qui fuit ou un vieux drain de très loin — tenez-le à l'écart des deux. On le taille traditionnellement en têtard à quelques années d'intervalle, ce qui le garde à taille raisonnable et donne l'osier ; si c'est ce que vous voulez, commencez tant que l'arbre est jeune.",
     givesNote:
-      "La plante la plus riche en chenilles de cette liste — rien d'autre dans le Midi n'en approche — et c'est elle qui nourrit les fauvettes, les mésanges et les rossignols qui nichent le long d'une rivière. Les chatons de mars sont le premier pollen sérieux de l'année pour les abeilles qui sortent dans un printemps méditerranéen, et un vieux têtard se creuse en gîte pour les chauves-souris et les chevêches.",
+      "Quelque 370 espèces de chenilles, et c'est elle qui nourrit les fauvettes, les mésanges et les rossignols qui nichent le long d'une rivière. Les chatons de mars sont le premier pollen sérieux de l'année pour les abeilles qui sortent dans un printemps méditerranéen, et un vieux têtard se creuse en gîte pour les chauves-souris et les chevêches.",
     propagationNote:
       "Le saule s'enracine plus facilement que presque tout : coupez en hiver une baguette d'un an de la longueur d'un avant-bras, enfoncez-en les deux tiers dans un sol humide, et laissez-la faire. Rien d'autre à ajouter.",
   },
@@ -415,7 +415,7 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
       "bumble-bees":
         "Des mois de fleurs ouvertes à partir de mai : une ronce au soleil est la plante la plus bruyante d'un jardin du Midi — bourdons, abeilles solitaires, syrphes et coléoptères en même temps.",
       "green-hairstreak":
-        "L'argus vert — le seul papillon vert d'Europe, et qu'on trouve en surveillant un talus broussailleux ensoleillé plutôt qu'un massif — pond sur la ronce parmi quelques autres arbustes de terrain vague.",
+        "L'argus vert — le papillon vert le plus commun d'Europe, et qu'on trouve en surveillant un talus broussailleux ensoleillé plutôt qu'un massif — pond sur la ronce parmi quelques autres arbustes de terrain vague.",
       "painted-lady":
         "Les belles-dames qui remontent la côte au printemps se gavent sur la ronce, parfois à une douzaine sur un même buisson.",
       "blackcaps-warblers":
@@ -424,7 +424,7 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     nativeNote:
       "La ronce du Midi — talus de haies, bords de ruisseaux et pied ombragé de tous les vieux murs, avec un revers de feuille feutré de blanc et des cannes arquées qui s'enracinent là où elles touchent.",
     careNote:
-      "Sachez ce que vous acceptez : elle s'enracine par la pointe de ses cannes et fait un fourré, et c'est la plante de cette liste la plus susceptible de prendre plus de place que vous ne lui en offriez. C'est précisément pourquoi elle a sa place sur une limite rustique ou un talus à couvrir, et nulle part près d'un massif. Coupez chaque hiver à la base les cannes qui ont fructifié et elle reste productive et praticable.",
+      "Sachez ce que vous acceptez : elle s'enracine par la pointe de ses cannes et fait un fourré, et c'est la plante d'ici la plus susceptible de prendre plus de place que vous ne lui en offriez. C'est précisément pourquoi elle a sa place sur une limite rustique ou un talus à couvrir, et nulle part près d'un massif. Coupez chaque hiver à la base les cannes qui ont fructifié et elle reste productive et praticable.",
     givesNote:
       "Sans doute la meilleure plante à faune d'un jardin du sud de la France. Des mois de fleurs que tout le monde visite — bourdons, abeilles solitaires, syrphes, et plus d'espèces de papillons que sur toute autre plante d'ici ; puis des mûres dès août pour les fauvettes, les fauvettes à tête noire, les renards et les blaireaux ; et un enchevêtrement épineux qui est le couvert de nidification le plus sûr du paysage.",
     propagationNote:
@@ -506,7 +506,7 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     careNote:
       "L'ombre au pied et le soleil à la tête : la vieille règle est la bonne — plantez-le au pied d'un arbuste ou sur le côté ombragé d'une pergola. Il est persistant, ce que les chèvrefeuilles du Nord ne sont pas, et il veut un drainage vif et pas d'eau en été. Rabattez-le après la floraison s'il se dégarnit du bas. Les baies sont toxiques si on les mange.",
     givesNote:
-      "De longs tubes crème qui s'ouvrent au crépuscule et sentent le plus fort à cette heure-là, parce qu'ils sont bâtis pour les sphinx — un chèvrefeuille méditerranéen au soir de juin est le meilleur endroit pour voir butiner le moro-sphinx et le grand sphinx du liseron. Baies rouges à l'automne pour les fauvettes, et fouillis persistant pour la nidification.",
+      "De longs tubes crème qui s'ouvrent au crépuscule et sentent le plus fort à cette heure-là, parce qu'ils sont bâtis pour les sphinx — un chèvrefeuille méditerranéen au soir de juin est le meilleur endroit pour voir butiner le grand sphinx du liseron. Baies rouges à l'automne pour les fauvettes, et fouillis persistant pour la nidification.",
     propagationNote:
       "Bouturez en fin d'été des pousses en voie d'aoûtement de la longueur d'une main, dans un mélange graveleux, à l'ombre. Le marcottage marche aussi : couchez une tige, fixez-la, et détachez-la l'année suivante.",
   },
@@ -534,7 +534,7 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     nativeNote:
       "La fougère des suintements calcaires, des tufs ruisselants et des vieilles fontaines du littoral méditerranéen — des folioles en éventail sur un fil noir, toujours là où l'eau glisse sur la roche.",
     careNote:
-      "La seule plante de cette liste qui ne peut vraiment pas sécher. Elle veut un calcaire ombragé et humide en permanence — un trop-plein de fontaine, un robinet qui goutte sur un mur nord, la margelle mouillée d'un bassin — et elle ne survivra pas à un massif méditerranéen ordinaire, même bien arrosée. Dans la bonne fissure, elle n'a besoin de rien d'autre et vit des années. Une forte gelée la rabat ; elle repart du rhizome.",
+      "La seule plante d'ici qui ne peut vraiment pas sécher. Elle veut un calcaire ombragé et humide en permanence — un trop-plein de fontaine, un robinet qui goutte sur un mur nord, la margelle mouillée d'un bassin — et elle ne survivra pas à un massif méditerranéen ordinaire, même bien arrosée. Dans la bonne fissure, elle n'a besoin de rien d'autre et vit des années. Une forte gelée la rabat ; elle repart du rhizome.",
     givesNote:
       "Un coin ombragé et mouillé est l'habitat le plus rare d'un jardin du Midi, et c'est la plante qui fait qu'il en a l'air et la fraîcheur. Ce qui y vit est l'essentiel : grenouilles, salamandres, coléoptères des lieux humides et toute la vie minuscule dont le reste se nourrit. Les fougères nourrissent très peu de chenilles, et celle-ci ne fait pas exception.",
     propagationNote:
@@ -587,7 +587,7 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     careNote:
       "Le coin le plus sec, le plus pierreux et le plus brûlé de soleil que vous ayez, et rien d'autre. L'eau d'été la fait pourrir. Taillez-la légèrement au printemps pour la garder dense ; jamais dans le vieux bois nu, qui ne repart pas.",
     givesNote:
-      "143 espèces de chenilles — un chiffre énorme pour une plante de cette taille, et le deuxième de cette liste après les chênes et l'aubépine. Elle fleurit en août et septembre, quand la garrigue n'a presque plus rien en fleur, et son feuillage argenté garde sa couleur toute la sécheresse.",
+      "143 espèces de chenilles — un chiffre énorme pour une plante de cette taille. Elle fleurit en août et septembre, quand la garrigue n'a presque plus rien en fleur, et son feuillage argenté garde sa couleur toute la sécheresse.",
     propagationNote:
       "Des pousses latérales à talon en fin d'été s'enracinent vite dans un mélange graveleux et calcaire. La graine est fine comme de la poussière et a besoin de lumière : pressez-la à la surface et ne la couvrez pas.",
   },
@@ -635,7 +635,7 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     careNote:
       "Sol acide, pauvre et sec au soleil — c'est une plante des terrains que personne n'a amendés. Elle voyage par les racines et colonisera un lit de gravier, ce qui est utile sur un talus et gênant dans une plate-bande : donnez-lui une bordure à tenir plutôt qu'un massif à partager.",
     givesNote:
-      "199 espèces de chenilles, en troisième position de toute cette liste après les chênes et l'aubépine — et la plante hôte du cuivré commun. Anémophile, donc les fleurs sont pour les chenilles ; les graines, elles, nourrissent les fringilles.",
+      "199 espèces de chenilles, et la plante hôte du cuivré commun. Anémophile, donc les fleurs sont pour les chenilles ; les graines, elles, nourrissent les fringilles.",
     propagationNote:
       "Semez à la volée sur un sol acide nu en automne — elle n'a besoin de rien d'autre. Les fragments enracinés se déplacent à tout moment, ce qui est aussi la façon dont elle s'échappe.",
   },
@@ -651,7 +651,7 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     givesNote:
       "190 espèces de chenilles — les satyrinés et les hespéries qui dérivent au-dessus d'un coteau en juin ont tous grandi sur une herbe comme celle-ci, et ils hivernent au cœur de la touffe. Elle tient un sol maigre sur un talus mieux que presque tout.",
     propagationNote:
-      "Divisez une touffe en automne ou au début du printemps — la division la plus simple de cette liste. La graine semée sur un sol nu griffé en automne lève avec les pluies d'hiver.",
+      "Divisez une touffe en automne ou au début du printemps — la division la plus simple qui soit. La graine semée sur un sol nu griffé en automne lève avec les pluies d'hiver.",
   },
   "Rosa sempervirens": {
     supportNotes: {

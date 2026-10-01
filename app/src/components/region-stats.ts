@@ -14,6 +14,8 @@ import { DATA_SOURCES_URL } from "../lib/plain";
 import { t, fmtNumber } from "../lib/i18n";
 import { commonName, regionName } from "../lib/names";
 
+let dialogSeq = 0;
+
 interface RegionStat {
   /** Emoji icon, or a factory for an inline SVG (the keystone arch). */
   icon: string | (() => Node);
@@ -29,7 +31,10 @@ interface RegionStat {
 
 export function regionStatGrid(region: RegionDef, plants: Plant[]): HTMLElement {
   const stats = statsFor(region, plants);
-  const dialog = el("dialog", { class: "stat-dialog" }) as HTMLDialogElement;
+  // A page can hold several grids, each with its own dialog, so the heading
+  // that names the dialog needs an id of its own.
+  const titleId = `region-stat-dialog-${++dialogSeq}`;
+  const dialog = el("dialog", { class: "stat-dialog", "aria-labelledby": titleId }) as HTMLDialogElement;
   dialog.addEventListener("click", (e) => {
     if (e.target === dialog) dialog.close(); // tap the backdrop to dismiss
   });
@@ -39,7 +44,7 @@ export function regionStatGrid(region: RegionDef, plants: Plant[]): HTMLElement 
 
   const open = (s: RegionStat): void => {
     dialog.replaceChildren(
-      el("h3", { style: "margin:0 0 0.2rem" }, [
+      el("h3", { id: titleId, style: "margin:0 0 0.2rem" }, [
         el("span", { "aria-hidden": "true", style: "margin-right:0.35rem" }, [iconNode(s)]),
         s.label,
       ]),
@@ -58,7 +63,7 @@ export function regionStatGrid(region: RegionDef, plants: Plant[]): HTMLElement 
     dialog.showModal();
   };
 
-  return el("div", { class: "stat-grid", "aria-label": t("stat.glance", { name: regionName(region.meta) }) }, [
+  return el("div", { class: "stat-grid", role: "group", "aria-label": t("stat.glance", { name: regionName(region.meta) }) }, [
     ...stats.map((s) =>
       el("button", {
         class: "stat-tile",

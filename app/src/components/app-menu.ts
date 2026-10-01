@@ -104,7 +104,6 @@ function row(
     "a",
     {
       href,
-      role: "menuitem",
       class: divide ? "nav-menu-pref nav-menu-divide" : "nav-menu-pref",
       ...(label ? { "aria-label": label } : {}),
     },
@@ -128,11 +127,11 @@ function row(
 function fill(target: HTMLElement): void {
   const notesHref =
     document
-      .querySelector<HTMLAnchorElement>('#footer-text a[href$="release-notes/"]')
+      .querySelector<HTMLAnchorElement>('#footer-nav a[href$="release-notes/"]')
       ?.getAttribute("href") ?? "release-notes/";
   const guideHref =
     document
-      .querySelector<HTMLAnchorElement>('#footer-text a[href$="guide/"]')
+      .querySelector<HTMLAnchorElement>('#footer-nav a[href$="guide/"]')
       ?.getAttribute("href") ?? "guide/";
   target.replaceChildren(
     row(guideHref, "📖", t("footer.guide")),
@@ -158,7 +157,6 @@ function reloadRow(): HTMLElement {
     "button",
     {
       type: "button",
-      role: "menuitem",
       class: "nav-menu-pref nav-menu-divide",
       onClick: () => location.reload(),
     },

@@ -128,7 +128,7 @@ export const ORNAMENTALS: Ornamental[] = [
   },
   {
     id: "carpobrotus-edulis",
-    common: "Ice plant (Hottentot fig)",
+    common: "Highway ice plant",
     latin: "Carpobrotus edulis",
     form: "groundcover",
     role: "Coastal bank / groundcover",
@@ -154,7 +154,7 @@ export const ORNAMENTALS: Ornamental[] = [
     common: "Japanese barberry",
     latin: "Berberis thunbergii",
     form: "shrub",
-    role: "Thorny hedge / colour shrub",
+    role: "Thorny hedge / color shrub",
     origin: "Native to Japan; sold for its red or gold leaves and its animal-proof thorns.",
     blurb:
       "A neat, thorny, deer-proof shrub in every foundation planting — and a seed factory for the woods behind it. Its low, dense, humid canopy is the microclimate black-legged (deer) ticks thrive in, and barberry thickets carry markedly more Lyme-infected ticks than woods without it.",
@@ -176,7 +176,7 @@ export const ORNAMENTALS: Ornamental[] = [
     common: "Burning bush",
     latin: "Euonymus alatus",
     form: "shrub",
-    role: "Autumn-colour hedge shrub",
+    role: "Autumn-color hedge shrub",
     origin: "Native to northeast Asia.",
     blurb:
       "Planted for one week of fluorescent red in autumn. Birds carry its seed into the woods, where it grows into dense shade-casting thickets that crowd the wildflowers out. Several states have banned its sale.",
@@ -245,7 +245,7 @@ export const ORNAMENTALS: Ornamental[] = [
     role: "Evergreen flowering screen",
     origin: "Native to the Iberian Peninsula and the Black Sea region.",
     blurb:
-      "Sold for its wall of purple spring flower, and one of the great invaders of the Atlantic west: it forms shade so dense and leaf litter so toxic that nothing grows beneath it, and its nectar is poisonous to honeybees.",
+      "Sold for its wall of purple spring flower, and one of the worst invasive plants of the Atlantic west: it forms shade so dense and leaf litter so toxic that nothing grows beneath it, and its nectar is poisonous to honeybees.",
     originBasis: "RHS; INPN.",
   },
   {
@@ -256,7 +256,7 @@ export const ORNAMENTALS: Ornamental[] = [
     role: "Berrying rockery / wall shrub",
     origin: "Native to China.",
     blurb:
-      "The neat herringbone shrub for a low wall, hung with red berries. Birds carry those berries into limestone hills and screes, where it is now a listed invader of exactly the thin, open ground its rarest wildflowers need.",
+      "The neat herringbone shrub for a low wall, hung with red berries. Birds carry those berries into limestone hills and screes, where it is now listed as invasive on exactly the thin, open ground its rarest wildflowers need.",
     originBasis: "RHS; INPN.",
   },
   {
@@ -267,7 +267,7 @@ export const ORNAMENTALS: Ornamental[] = [
     role: "Architectural evergreen",
     origin: "Native to southern Japan; not a palm at all, but an ancient cycad.",
     blurb:
-      "The stiff, glossy rosette in a thousand Florida front yards. It looks the part and asks for nothing — but it feeds nothing native, and every part of it is poisonous enough to kill a dog that chews a seed.",
+      "The stiff, glossy rosette in a thousand Florida front yards. It looks the part and asks for nothing — atala caterpillars will eat it, but little else native does, and every part of it is poisonous enough to kill a dog that chews a seed.",
     originBasis: "UF/IFAS; ASPCA.",
   },
   {
@@ -278,7 +278,7 @@ export const ORNAMENTALS: Ornamental[] = [
     role: "Big-flowered shade shrub",
     origin: "Native to coastal Japan; the shrub people buy when a shady corner needs something to happen in it.",
     blurb:
-      "Flower heads the size of a dinner plate, in a colour that depends on the soil — nobody is going to pretend that isn't a good trick. It is also a shrub that wilts flat on the first hot afternoon and wants the hose to come back, and the showy part is sterile: the big florets have no nectar and no pollen, because they were bred to be big.",
+      "Flower heads the size of a dinner plate, in a color that depends on the soil — nobody is going to pretend that isn't a good trick. It is also a shrub that wilts flat on the first hot afternoon and wants the hose to come back, and the showy part is sterile: the big florets have no nectar and no pollen, because they were bred to be big.",
     originBasis: "Missouri Botanical Garden; RHS.",
   },
   {
@@ -298,9 +298,9 @@ export const ORNAMENTALS: Ornamental[] = [
     latin: "Spiraea japonica",
     form: "shrub",
     role: "Low pink flowering shrub",
-    origin: "Native to Japan, Korea and China; sold by the trolley-load as a tidy front-of-border filler.",
+    origin: "Native to Japan, Korea and China; sold by the cartload as a tidy front-of-border filler.",
     blurb:
-      "Knee-high, flat pink flower heads all summer, and cheap — which is why it is in every car park in the eastern states. It also seeds into stream banks and old fields and forms a low thicket there, and Virginia's own assessment ranks its invasiveness Medium.",
+      "Knee-high, flat pink flower heads all summer, and cheap — which is why it is in every parking lot in the eastern states. It also seeds into stream banks and old fields and forms a low thicket there, and Virginia's own assessment ranks its invasiveness Medium.",
     originBasis: "Missouri Botanical Garden; Virginia Natural Heritage invasive plant list (2024).",
   },
   {
@@ -342,10 +342,10 @@ export const ORNAMENTALS: Ornamental[] = [
     common: "Garden mum",
     latin: "Chrysanthemum × morifolium",
     form: "perennial",
-    role: "Autumn colour perennial",
+    role: "Autumn color perennial",
     origin: "A long-cultivated East Asian plant, known only in gardens.",
     blurb:
-      "The tray of instant autumn colour outside every supermarket in September. Most are bred so tightly for bloom that they offer little nectar and set no seed — a mound of colour the bees and birds pass straight over, planted and binned in a season.",
+      "The tray of instant autumn color outside every supermarket in September. Most are bred so tightly for bloom that they offer little nectar and set no seed — a mound of color the bees and birds pass straight over, planted and binned in a season.",
     originBasis: "Missouri Botanical Garden; Mt. Cuba Center.",
   },
   {
@@ -390,7 +390,7 @@ export const ORNAMENTALS: Ornamental[] = [
     role: "Spring-flowering ornamental tree",
     origin: "Native to China and Vietnam; sold from the 1960s as a tidy, quick street tree.",
     blurb:
-      "The tree that turns whole streets white for one week in spring — and splits apart in the first real storm, its branches too crowded to hold. The varieties cross and their thorny seedlings fill old fields and verges; several states have now banned its sale.",
+      "The tree that turns whole streets white for one week in spring — and splits apart in the first real storm, its branches too crowded to hold. The varieties cross and their thorny seedlings fill old fields and roadsides; several states have now banned its sale.",
     originBasis: "Penn State Extension; Missouri Botanical Garden.",
   },
   {
@@ -401,7 +401,7 @@ export const ORNAMENTALS: Ornamental[] = [
     role: "Fast shade / street tree",
     origin: "Native to eastern Australia.",
     blurb:
-      "A neat, quick, salt-tough shade tree sold up and down Florida — and a bird-spread invader of hammocks, dunes and mangrove edges. It's now illegal to sell in the state.",
+      "A neat, quick, salt-tough shade tree sold up and down Florida — and a bird-spread invasive of hammocks, dunes and mangrove edges. It's now illegal to sell in the state.",
     originBasis: "UF/IFAS; FLEPPC.",
   },
   {
@@ -434,7 +434,7 @@ export const ORNAMENTALS: Ornamental[] = [
     role: "Spring-blossom ornamental tree",
     origin: "Native to Japan, Korea and China; the cherry of the blossom festivals.",
     blurb:
-      "A fortnight of pink froth in spring, and then a tree that gives very little else — short-lived, prone to canker and rot, and host to almost none of the caterpillars our songbirds raise their young on.",
+      "Two weeks of pink froth in spring, and then a tree that gives very little else — short-lived, prone to canker and rot, and host to almost none of the caterpillars our songbirds raise their young on.",
     originBasis: "Missouri Botanical Garden; Morton Arboretum.",
   },
   {
@@ -454,7 +454,7 @@ export const ORNAMENTALS: Ornamental[] = [
     latin: "Betula pendula",
     form: "tree",
     role: "White-barked specimen tree",
-    origin: "Native across Europe and northern Asia; a favourite white-stemmed lawn tree.",
+    origin: "Native across Europe and northern Asia; a favorite white-stemmed lawn tree.",
     blurb:
       "The graceful white-barked birch sold for a lawn centrepiece across North America. Away from its cool European home it's a magnet for the bronze birch borer, which kills these trees young from the top down.",
     originBasis: "Morton Arboretum; U.S. Forest Service.",
@@ -465,7 +465,7 @@ export const ORNAMENTALS: Ornamental[] = [
     latin: "Picea pungens",
     form: "tree",
     role: "Specimen evergreen",
-    origin: "Native to the central Rocky Mountains; planted far outside it for its blue colour.",
+    origin: "Native to the central Rocky Mountains; planted far outside it for its blue color.",
     blurb:
       "The steel-blue specimen conifer on a thousand lawns. In the humid East and Midwest it's living in the wrong climate, and it's increasingly failing there to needlecast and canker — a striking tree that browns out and dies back from the bottom.",
     originBasis: "Morton Arboretum; Missouri Botanical Garden.",
@@ -478,7 +478,7 @@ export const ORNAMENTALS: Ornamental[] = [
     role: "Big avenue shade tree",
     origin: "Native to a handful of mountain valleys in the Balkans; planted down European avenues since the 1600s.",
     blurb:
-      "Candles of white flower in May, conkers in September, and a crown wide enough to park a village under. Since the 1980s a leaf-mining moth has spread across the whole continent with it, and the leaves now go brown and shrivelled by high summer — so the second half of its season is spent looking half dead.",
+      "Candles of white flower in May, conkers in September, and a crown wide enough to park a village under. Since the 1980s a leaf-mining moth has spread across the whole continent with it, and the leaves now go brown and shriveled by high summer — so the second half of its season is spent looking half dead.",
     originBasis: "Tela Botanica; INPN; Forest Research (Cameraria ohridella).",
   },
   {
@@ -508,10 +508,10 @@ export const ORNAMENTALS: Ornamental[] = [
     common: "Sweetgum",
     latin: "Liquidambar styraciflua",
     form: "tree",
-    role: "Autumn-colour street tree",
-    origin: "Native to the eastern United States; planted for its autumn colour on the west coast and across Europe.",
+    role: "Autumn-color street tree",
+    origin: "Native to the eastern United States; planted for its autumn color on the west coast and across Europe.",
     blurb:
-      "Star-shaped leaves that turn every colour from butter to wine on the same branch, and a straight fast trunk. At home in Virginia it feeds a long list of insects. Out here it feeds nothing, roots shallow enough to lift a pavement, and drops spiked seed balls that roll underfoot all winter.",
+      "Star-shaped leaves that turn every color from butter to wine on the same branch, and a straight fast trunk. At home in Virginia it feeds a long list of insects. Out here it feeds nothing, roots shallow enough to lift a sidewalk, and drops spiked seed balls that roll underfoot all winter.",
     originBasis: "Missouri Botanical Garden; USDA PLANTS; Oregon State University.",
   },
   {
@@ -522,7 +522,7 @@ export const ORNAMENTALS: Ornamental[] = [
     role: "Big evergreen flowering tree",
     origin: "Native to the south-eastern United States — it is on our own North & Central Florida list.",
     blurb:
-      "Glossy evergreen the year round and dinner-plate flowers that scent a whole garden in June. A magnificent tree where it belongs. Elsewhere it is a wide, dense, shallow-rooted evergreen that nothing local can eat, dropping leathery leaves that take two years to rot.",
+      "Glossy evergreen the year round and dinner-plate flowers that scent a whole garden in June. A magnificent tree in its native range. Elsewhere it is a wide, dense, shallow-rooted evergreen that nothing local can eat, dropping leathery leaves that take two years to rot.",
     originBasis: "Missouri Botanical Garden; USDA PLANTS; Tela Botanica.",
   },
   {
@@ -599,7 +599,7 @@ export const ORNAMENTALS: Ornamental[] = [
     role: "Aromatic drought shrub",
     origin: "Native to the Mediterranean — it is on our own Mediterranean France list.",
     blurb:
-      "Keep the one by the kitchen door; this is not about the herb. It is about the other use rosemary gets — banks and verges and car parks planted with it by the hundred, a hundred miles from anywhere it grew up. At that scale the question stops being what you cook with and starts being what lives there.",
+      "Keep the one by the kitchen door; this is not about the herb. It is about the other use rosemary gets — banks and roadsides and parking lots planted with it by the hundred, a hundred miles from anywhere it grew up. At that scale the question stops being what you cook with and starts being what lives there.",
     originBasis: "Tela Botanica; Missouri Botanical Garden.",
   },
   {
@@ -621,7 +621,7 @@ export const ORNAMENTALS: Ornamental[] = [
     role: "Specimen evergreen",
     origin: "Native to about seventy groves on the western slope of the Sierra Nevada.",
     blurb:
-      "The largest living thing there is, planted in gardens and parks across two continents by people who loved it — and who is going to argue with that. Away from the Sierra it is a tree with no company: the insects, the fungi and the fire it evolved with are all three thousand kilometres away, and in a small garden it is a fifty-year mistake.",
+      "The largest living thing there is, planted in gardens and parks across two continents by people who loved it — and who is going to argue with that. Away from the Sierra it is a tree with no company: the insects, the fungi and the fire it evolved with are all three thousand kilometers away, and in a small garden it is a fifty-year mistake.",
     originBasis: "Missouri Botanical Garden; Oregon State University; Tela Botanica.",
   },
   {
@@ -632,7 +632,7 @@ export const ORNAMENTALS: Ornamental[] = [
     role: "Grand shade tree",
     origin: "Native to western and central Europe — it is on our own Atlantic and Continental France lists.",
     blurb:
-      "Smooth grey trunks, a cathedral canopy and copper leaves held half the winter. A great tree of Europe, and in an American park a great tree from somewhere else: the caterpillars that should be in that canopy are on the beech two valleys over, the one nobody planted.",
+      "Smooth gray trunks, a cathedral canopy and copper leaves held half the winter. A great tree of Europe, and in an American park a great tree from somewhere else: the caterpillars that should be in that canopy are on the beech two valleys over, the one nobody planted.",
     originBasis: "Tela Botanica; Missouri Botanical Garden; Morton Arboretum.",
   },
   {
@@ -665,7 +665,7 @@ export const ORNAMENTALS: Ornamental[] = [
     role: "Fast flowering climber",
     origin: "Native to Argentina, Brazil and Paraguay.",
     blurb:
-      "The most extraordinary flower anyone can grow on a fence, and it covers one in a season. In South America it raises whole broods of longwing butterflies. Here it raises nobody — and the local climber that does have a butterfly depending on it is usually the one nobody stocks.",
+      "The most extraordinary flower anyone can grow on a fence, and it covers one in a season. In South America it raises whole broods of longwing butterflies; in coastal California the Gulf fritillary breeds on it heavily, and in Europe nothing does. Meanwhile the local climber that has a butterfly depending on it is usually the one nobody stocks.",
     originBasis: "Missouri Botanical Garden; Tela Botanica; UC Master Gardeners.",
   },
   {
@@ -687,7 +687,7 @@ export const ORNAMENTALS: Ornamental[] = [
     role: "Spring bedding bulb",
     origin: "A garden plant of hybrid origin, from wild tulips of Turkey and central Asia.",
     blurb:
-      "Three weeks of the loudest colour in the year, then a gap, then usually a poorer showing the year after and a bag of new bulbs each autumn. Modern doubles and parrots have had the nectar bred out of them, so a bed of them in April is a shop window with nothing on the shelves.",
+      "Three weeks of the loudest color in the year, then a gap, then usually a poorer showing the year after and a bag of new bulbs each autumn. Modern doubles and parrots have had the nectar bred out of them, so a bed of them in April is a shop window with nothing on the shelves.",
     originBasis: "Missouri Botanical Garden; RHS; Tela Botanica.",
   },
   // ---------------- More grasses, groundcovers, perennials, shrubs & trees ----------------
@@ -699,7 +699,7 @@ export const ORNAMENTALS: Ornamental[] = [
     role: "Big ornamental grass",
     origin: "Native to eastern Asia; the tall feather-plumed grass of a thousand borders.",
     blurb:
-      "The fountain of arching blades and silver autumn plumes sold as a easy-care centrepiece. It seeds itself into old fields and roadsides — several states now list it — and carries fire the way its native-grass look-alikes don't.",
+      "The fountain of arching blades and silver autumn plumes sold as an easy-care centrepiece. It seeds itself into old fields and roadsides — several states now list it — and carries fire the way its native-grass look-alikes don't.",
     originBasis: "Missouri Botanical Garden; USDA.",
   },
   {
@@ -743,7 +743,7 @@ export const ORNAMENTALS: Ornamental[] = [
     role: "Fast evergreen hedge",
     origin: "Native to China; the cheap fast hedge of the American South.",
     blurb:
-      "A quick, dense, semi-evergreen hedge — and one of the Southeast's worst invaders, its berries carried by birds into every fencerow and floodplain until it crowds the understorey out. Its heavy bloom is a common allergen besides.",
+      "A quick, dense, semi-evergreen hedge — and one of the Southeast's worst invasives, its berries carried by birds into every fencerow and floodplain until it crowds the understory out. Its heavy bloom is a common allergen besides.",
     originBasis: "UF/IFAS; USDA.",
   },
   {
@@ -752,7 +752,7 @@ export const ORNAMENTALS: Ornamental[] = [
     latin: "Hemerocallis fulva",
     form: "perennial",
     role: "Sunny border perennial",
-    origin: "Native to Asia; the orange 'ditch lily' naturalised along roadsides everywhere.",
+    origin: "Native to Asia; the orange 'ditch lily' naturalized along roadsides everywhere.",
     blurb:
       "Tough, cheap, and everywhere — each flower lasts a day and the plant asks nothing of you. It asks nothing and gives about as much back: little nectar a native bee can use, no caterpillars, and the common orange one runs into dense sterile clumps that shoulder everything else aside.",
     originBasis: "Missouri Botanical Garden; Mt. Cuba Center.",
@@ -765,7 +765,7 @@ export const ORNAMENTALS: Ornamental[] = [
     role: "Shade foliage clump",
     origin: "Native to East Asia; the shade garden's default leafy mound.",
     blurb:
-      "The go-to clump of bold leaves for a shady spot — and the slugs' favourite dinner, so it often ends the summer in holes. Nothing native raises its young on it; it's greenery, and greenery only.",
+      "The go-to clump of bold leaves for a shady spot — and the slugs' favorite dinner, so it often ends the summer in holes. Nothing native raises its young on it; it's greenery, and greenery only.",
     originBasis: "Missouri Botanical Garden.",
   },
   {
@@ -813,7 +813,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "hamamelis-virginiana",
         why: "If it was autumn you were buying it for, witch hazel turns the same clear gold and then does something no other shrub does — opens yellow ribbons of flower in November, after the leaves have gone.",
         edges: [
-          { axis: "wildlife", native: "The last nectar of the year, for the winter moths that pollinate it; a host for several others.", ornamental: "Autumn colour and nothing else." },
+          { axis: "wildlife", native: "The last nectar of the year, for the winter moths that pollinate it; a host for several others.", ornamental: "Autumn color and nothing else." },
           { axis: "care", native: "Fully hardy here, in shade or sun.", ornamental: "Buds can be cut by a cold winter." },
         ],
         basis: "Mt. Cuba Center; Missouri Botanical Garden; Penn State Extension.",
@@ -831,7 +831,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
       },
       {
         plantId: "amelanchier-canadensis",
-        why: "If you wanted white flower on bare wood in early spring, serviceberry gives it a fortnight later — and then berries in June, which is the part a star magnolia has no answer to.",
+        why: "If you wanted white flower on bare wood in early spring, serviceberry gives it two weeks later — and then berries in June, which is the part a star magnolia has no answer to.",
         edges: [
           { axis: "wildlife", native: "Well over a hundred caterpillar species, and fruit a dozen birds strip.", ornamental: "Feeds almost nothing here." },
           { axis: "care", native: "Flowers late enough to miss most frosts.", ornamental: "Flowers early enough to catch them." },
@@ -842,7 +842,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "fagus-sylvatica": [
       {
         plantId: "fagus-grandifolia",
-        why: "It is the same tree in every way that shows — smooth grey trunk, cathedral canopy, copper leaves held all winter — except that this one is from here.",
+        why: "It is the same tree in every way that shows — smooth gray trunk, cathedral canopy, copper leaves held all winter — except that this one is from here.",
         edges: [
           { axis: "wildlife", native: "Beech nuts that turkeys, jays and bears fatten on, and a canopy raising well over a hundred caterpillar species.", ornamental: "The same architecture, feeding almost nothing local." },
           { axis: "care", native: "Built for this ground.", ornamental: "Shallow-rooted, and its dense shade leaves bare earth beneath." },
@@ -882,7 +882,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "ginkgo-biloba": [
       {
         plantId: "acer-rubrum",
-        why: "For a street tree that takes the same abuse and turns the same colour, red maple is the one the East already runs on — and it goes scarlet a fortnight before the ginkgo goes yellow.",
+        why: "For a street tree that takes the same abuse and turns the same color, red maple is the one the East already runs on — and it goes scarlet two weeks before the ginkgo goes yellow.",
         edges: [
           { axis: "wildlife", native: "Host to close to 300 kinds of caterpillar, and the first pollen of the year for early bees.", ornamental: "No insect on this continent has ever met it — a ginkgo avenue is a place birds hunt and find nothing." },
           { axis: "care", native: "Takes wet ground, compacted soil and city air.", ornamental: "Bulletproof too — that part is not in dispute." },
@@ -924,17 +924,17 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "ceanothus-americanus",
         why: "For scented white froth on a low rounded shrub in early summer, New Jersey tea does what lilac does at half the size, and holds its shape without pruning.",
         edges: [
-          { axis: "wildlife", native: "A host plant for spring azure and summer azure butterflies, and covered in small bees while it flowers.", ornamental: "Nectar for a fortnight and nothing else all year." },
+          { axis: "wildlife", native: "A host plant for spring azure and summer azure butterflies, and covered in small bees while it flowers.", ornamental: "Nectar for two weeks and nothing else all year." },
           { axis: "water", native: "A deep taproot; drought-proof once established, and fixes its own nitrogen.", ornamental: "Wants feeding, and mildews in a close corner." },
         ],
         basis: "Mt. Cuba Center; Xerces Society; Missouri Botanical Garden.",
       },
       {
         plantId: "viburnum-dentatum",
-        why: "If it was the size and the spring flush you wanted rather than the scent, arrowwood makes the same big rounded screen and carries flower, berry and burgundy autumn instead of one good fortnight.",
+        why: "If it was the size and the spring flush you wanted rather than the scent, arrowwood makes the same big rounded screen and carries flower, berry and burgundy autumn instead of one good two weeks.",
         edges: [
           { axis: "wildlife", native: "Berries a dozen bird species take, and leaves that feed native moths.", ornamental: "Feeds almost nothing here." },
-          { axis: "care", native: "Shrugs off the mildew that greys a lilac by August.", ornamental: "Powdery mildew most summers." },
+          { axis: "care", native: "Shrugs off the mildew that grays a lilac by August.", ornamental: "Powdery mildew most summers." },
         ],
         basis: "Mt. Cuba Center; Penn State Extension.",
       },
@@ -953,7 +953,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "lagerstroemia-indica": [
       {
         plantId: "amelanchier-canadensis",
-        why: "For a small tree that carries a garden all year, serviceberry gives white spring flowers, sweet June berries and orange autumn on the same smooth grey trunk — the four-season job crape myrtle is bought to do, on a tree the birds can actually live off.",
+        why: "For a small tree that carries a garden all year, serviceberry gives white spring flowers, sweet June berries and orange autumn on the same smooth gray trunk — the four-season job crape myrtle is bought to do, on a tree the birds can actually live off.",
         edges: [
           { axis: "wildlife", native: "Host to well over a hundred kinds of caterpillar, and berries a dozen bird species strip in June.", ornamental: "About three caterpillar species; the berries are dry capsules nothing eats." },
           { axis: "care", native: "No annual butchering — its shape is the point.", ornamental: "Usually topped every winter, and now host to crape myrtle bark scale." },
@@ -962,7 +962,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
       },
       {
         plantId: "cercis-canadensis",
-        why: "For the same size and a harder colour hit, eastern redbud throws magenta straight out of its bare branches in April, before anything else is awake.",
+        why: "For the same size and a harder color hit, eastern redbud throws magenta straight out of its bare branches in April, before anything else is awake.",
         edges: [
           { axis: "wildlife", native: "Early nectar when almost nothing else is open, and a host for several butterflies and moths.", ornamental: "Blooms in high summer, when nectar is least scarce." },
           { axis: "care", native: "Happy in the part shade a small garden actually has.", ornamental: "Wants full sun, and sulks and mildews without it." },
@@ -973,7 +973,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "hemerocallis-fulva": [
       {
         plantId: "rudbeckia-fulgida",
-        why: "For a mound of easy, cheerful summer colour, black-eyed Susan gives it for weeks on end — and unlike the daylily it's mobbed by bees and finches and raises native caterpillars besides.",
+        why: "For a mound of easy, cheerful summer color, black-eyed Susan gives it for weeks on end — and unlike the daylily it's mobbed by bees and finches and raises native caterpillars besides.",
         edges: [
           { axis: "wildlife", native: "Nectar and pollen for a crowd of bees and butterflies; seed for finches; a host for several moths.", ornamental: "Little a native bee can use, and no caterpillars." },
           { axis: "care", native: "A tough perennial that seeds itself around gently.", ornamental: "Fine, but it feeds the garden nothing while it does it." },
@@ -996,7 +996,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         why: "For a leafy mound in the shade, wild geranium spreads a soft green clump lit by pink spring flowers — the foliage hostas are grown for, plus a bloom the bees actually want.",
         edges: [
           { axis: "wildlife", native: "Early nectar for native bees; a host for several moths.", ornamental: "Nothing native eats it." },
-          { axis: "care", native: "Quietly fills its space and asks for nothing.", ornamental: "The slugs' favourite — often in holes by August." },
+          { axis: "care", native: "Quietly fills its space and asks for nothing.", ornamental: "The slugs' favorite — often in holes by August." },
         ],
         basis: "Mt. Cuba Center; Xerces Society.",
       },
@@ -1064,7 +1064,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "andropogon-gerardii",
         why: "For real stature, big bluestem stands head-high with bronze 'turkey-foot' seed heads — the tallgrass-prairie giant, in place of an Asian grass that jumps the garden fence.",
         edges: [
-          { axis: "wildlife", native: "Seed and cover for birds; a host for several skippers.", ornamental: "Little native value; a listed invader in several states." },
+          { axis: "wildlife", native: "Seed and cover for birds; a host for several skippers.", ornamental: "Little native value; a listed invasive in several states." },
           { axis: "water", native: "Thoroughly drought-proof once its deep roots are down.", ornamental: "Drought-tough, and fire-carrying where it escapes." },
         ],
         basis: "Lady Bird Johnson Wildflower Center; Xerces Society.",
@@ -1073,10 +1073,10 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "iris-pseudacorus": [
       {
         plantId: "lobelia-cardinalis",
-        why: "For a jolt of colour at the water's edge, cardinal flower sends up spikes of pure scarlet the hummingbirds cross the garden for — where the yellow flag only chokes the margin into a single-species mat.",
+        why: "For a jolt of color at the water's edge, cardinal flower sends up spikes of pure scarlet the hummingbirds cross the garden for — where the yellow flag only chokes the margin into a single-species mat.",
         edges: [
           { axis: "wildlife", native: "A hummingbird magnet, and nectar for swallowtails.", ornamental: "Feeds little, and its rhizome mat crowds every other marsh plant out." },
-          { axis: "care", native: "A well-behaved clump for a pond edge or rain garden.", ornamental: "A banned invader of wetlands across a growing list of states." },
+          { axis: "care", native: "A well-behaved clump for a pond edge or rain garden.", ornamental: "A banned invasive of wetlands across a growing list of states." },
         ],
         basis: "Lady Bird Johnson Wildflower Center; Xerces Society.",
       },
@@ -1134,7 +1134,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "berberis-thunbergii": [
       {
         plantId: "physocarpus-opulifolius",
-        why: "For a tough, deer-tolerant hedge with coloured leaves, ninebark gives you the gold and burgundy the barberry cultivars sell — as a full-size native shrub, thorns and tick-thickets not included.",
+        why: "For a tough, deer-tolerant hedge with colored leaves, ninebark gives you the gold and burgundy the barberry cultivars sell — as a full-size native shrub, thorns and tick-thickets not included.",
         edges: [
           { axis: "water", native: "Drought-proof once set; takes poor soil and neglect.", ornamental: "Undemanding too — but that toughness is the problem, not the point." },
           { axis: "disease", native: "An open, airy shrub with no association with tick-borne disease.", ornamental: "Its dense low canopy shelters more Lyme-infected ticks than woods without it." },
@@ -1184,7 +1184,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "acer-platanoides": [
       {
         plantId: "acer-rubrum",
-        why: "Red maple is the native the Norway maple was standing in for all along: the same quick shade and clean shape, with scarlet autumn colour and a food web underneath instead of bare ground.",
+        why: "Red maple is the native the Norway maple was standing in for all along: the same quick shade and clean shape, with scarlet autumn color and a food web underneath instead of bare ground.",
         edges: [
           { axis: "water", native: "Establishes and holds with no supplemental water once rooted.", ornamental: "Tough too — but its greed and shade are the cost." },
           { axis: "disease", native: "Broadly trouble-free; no milky sap, no bare circle of dead ground beneath it.", ornamental: "Prone to girdling roots and verticillium wilt with age." },
@@ -1228,7 +1228,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         why: "For faster shade than a white oak, red oak grows quickly to a broad street-tree crown, turns russet-red in fall, and carries the same vast community of life.",
         edges: [
           { axis: "wildlife", native: "Over 500 caterpillar species; acorns for jays, woodpeckers and mammals.", ornamental: "Feeds almost nothing native." },
-          { axis: "disease", native: "Long-lived and sound in the ground it belongs in.", ornamental: "Recurring anthracnose; itchy bristles and heavy pollen." },
+          { axis: "disease", native: "Long-lived and sound in its native ground.", ornamental: "Recurring anthracnose; itchy bristles and heavy pollen." },
         ],
         basis: "Penn State Extension; Morton Arboretum.",
       },
@@ -1267,7 +1267,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
       },
       {
         plantId: "ilex-verticillata",
-        why: "For winter fire, winterberry holds a blaze of scarlet berries on bare stems long after the burning bush has dropped its one week of leaf colour.",
+        why: "For winter fire, winterberry holds a blaze of scarlet berries on bare stems long after the burning bush has dropped its one week of leaf color.",
         edges: [
           { axis: "wildlife", native: "Berries feed robins, waxwings and more deep into winter.", ornamental: "Seeds into the woods; feeds little of value." },
         ],
@@ -1277,7 +1277,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "chrysanthemum-morifolium": [
       {
         plantId: "symphyotrichum-novae-angliae",
-        why: "For the same mound of autumn colour that actually feeds something, New England aster covers itself in purple daisies right when the pollinators need a last meal before winter.",
+        why: "For the same mound of autumn color that actually feeds something, New England aster covers itself in purple daisies right when the pollinators need a last meal before winter.",
         edges: [
           { axis: "wildlife", native: "A top late-season nectar source; a larval host for the pearl crescent and over 100 moths.", ornamental: "Bred so tightly for bloom it offers little nectar and sets no seed." },
           { axis: "care", native: "A perennial that returns and spreads on its own.", ornamental: "Planted and binned in a single season." },
@@ -1299,7 +1299,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "fagus-sylvatica": [
       {
         plantId: "fagus-grandifolia",
-        why: "It is the same tree in every way that shows — smooth grey trunk, cathedral canopy, copper leaves held all winter — except that this one is from here.",
+        why: "It is the same tree in every way that shows — smooth gray trunk, cathedral canopy, copper leaves held all winter — except that this one is from here.",
         edges: [
           { axis: "wildlife", native: "Beech nuts that bears, turkeys and jays depend on, and a canopy that raises well over a hundred caterpillar species.", ornamental: "The same architecture, feeding almost nothing local." },
           { axis: "care", native: "Built for these winters.", ornamental: "Shallow-rooted, and its shade leaves bare earth." },
@@ -1313,7 +1313,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         why: "For a big scented white spring shrub you can let grow into a small tree, nannyberry does both — cream flower plates in May, blue-black fruit in autumn, and no mildew.",
         edges: [
           { axis: "wildlife", native: "Fruit that carries cedar waxwings and thrushes through autumn, and leaves several moths use.", ornamental: "Two weeks of nectar; nothing lives on it." },
-          { axis: "care", native: "Hardy well past anything this region throws at it, in sun or part shade.", ornamental: "Greys over with mildew by August most years." },
+          { axis: "care", native: "Hardy well past anything this region throws at it, in sun or part shade.", ornamental: "Grays over with mildew by August most years." },
         ],
         basis: "Missouri Botanical Garden; Michigan State University Extension; Lady Bird Johnson Wildflower Center.",
       },
@@ -1341,7 +1341,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "hemerocallis-fulva": [
       {
         plantId: "rudbeckia-hirta",
-        why: "For easy summer gold in a border, black-eyed Susan blooms for weeks and pulls in bees and finches — where the daylily gives a day of colour and the pollinators nothing.",
+        why: "For easy summer gold in a border, black-eyed Susan blooms for weeks and pulls in bees and finches — where the daylily gives a day of color and the pollinators nothing.",
         edges: [
           { axis: "wildlife", native: "Nectar for bees and butterflies; seed for goldfinches; a host for several moths.", ornamental: "Little a native bee can use, and no caterpillars." },
           { axis: "water", native: "Drought-tough once established.", ornamental: "Thirstier, and feeds the garden nothing." },
@@ -1421,7 +1421,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "miscanthus-sinensis": [
       {
         plantId: "schizachyrium-scoparium",
-        why: "For a fine-textured clumping grass that colours in fall, little bluestem turns copper and stands all winter — a prairie native that won't seed itself down the roadside the way maiden grass does.",
+        why: "For a fine-textured clumping grass that colors in fall, little bluestem turns copper and stands all winter — a prairie native that won't seed itself down the roadside the way maiden grass does.",
         edges: [
           { axis: "water", native: "None once established; roots plunge five feet.", ornamental: "Tough too — which is how it escapes into wild grassland." },
           { axis: "wildlife", native: "Hosts skipper butterflies; shelters ground-nesting birds through winter.", ornamental: "Feeds little native, and carries fire where it invades." },
@@ -1430,7 +1430,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
       },
       {
         plantId: "carex-pensylvanica",
-        why: "For a soft, fine, low fountain in shade, Pennsylvania sedge makes a flowing carpet — the movement people want from an ornamental grass, on a native that belongs in the North Woods.",
+        why: "For a soft, fine, low fountain in shade, Pennsylvania sedge makes a flowing carpet — the movement people want from an ornamental grass, on a native of the North Woods.",
         edges: [
           { axis: "wildlife", native: "A larval host for several skippers; cover for small ground life.", ornamental: "Feeds nothing native." },
           { axis: "care", native: "Drought-tough once knit together; mow it once a year or never.", ornamental: "A big clump that seeds itself around." },
@@ -1444,7 +1444,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         why: "For scarlet at the water's edge, cardinal flower sends up spikes of pure red the hummingbirds cross the garden for — where the yellow flag only chokes the margin into a single-species mat.",
         edges: [
           { axis: "wildlife", native: "A hummingbird magnet and swallowtail nectar.", ornamental: "Feeds little, and its rhizomes crowd every other marsh plant out." },
-          { axis: "care", native: "A well-behaved clump for a pond edge or rain garden.", ornamental: "A banned wetland invader in a growing list of states." },
+          { axis: "care", native: "A well-behaved clump for a pond edge or rain garden.", ornamental: "A banned wetland invasive in a growing list of states." },
         ],
         basis: "Lady Bird Johnson Wildflower Center; Xerces Society.",
       },
@@ -1482,7 +1482,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "pyrus-calleryana": [
       {
         plantId: "amelanchier-laevis",
-        why: "For the week of white spring blossom, Allegheny serviceberry gives it early, then sweet June berries the birds strip and glowing autumn colour — on a tree whose branches don't shear off in a storm.",
+        why: "For the week of white spring blossom, Allegheny serviceberry gives it early, then sweet June berries the birds strip and glowing autumn color — on a tree whose branches don't shear off in a storm.",
         edges: [
           { axis: "disease", native: "Sound branching; no habit of splitting apart.", ornamental: "Weak crowded branches that break in wind; fire-blight prone." },
           { axis: "wildlife", native: "Berries feed dozens of bird species; a host for many moths and butterflies.", ornamental: "Hard low-value fruit, and thorny invasive seedlings." },
@@ -1502,7 +1502,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
       },
       {
         plantId: "physocarpus-opulifolius",
-        why: "For dry ground and full sun, ninebark carries burgundy and gold leaves right through the season — the colour the burning bush only manages for a week.",
+        why: "For dry ground and full sun, ninebark carries burgundy and gold leaves right through the season — the color the burning bush only manages for a week.",
         edges: [
           { axis: "water", native: "Drought-proof once set; takes poor soil and neglect.", ornamental: "Undemanding, and spreads from where it's planted." },
           { axis: "wildlife", native: "Feeds specialist bees and native moths; seed heads feed birds.", ornamental: "Little native wildlife value." },
@@ -1521,7 +1521,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "berberis-thunbergii": [
       {
         plantId: "physocarpus-opulifolius",
-        why: "For a tough coloured-leaf hedge, ninebark gives the gold and burgundy of the barberry cultivars as a full native shrub — thorns and tick-thickets not included.",
+        why: "For a tough colored-leaf hedge, ninebark gives the gold and burgundy of the barberry cultivars as a full native shrub — thorns and tick-thickets not included.",
         edges: [
           { axis: "disease", native: "An open, airy shrub with no association with tick-borne disease.", ornamental: "Its dense low canopy shelters more Lyme-infected ticks than woods without it." },
           { axis: "wildlife", native: "Feeds specialist bees and native moths.", ornamental: "Little native wildlife value; seeds into the woods." },
@@ -1574,7 +1574,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "betula-pendula-ornamental": [
       {
         plantId: "betula-papyrifera",
-        why: "For a white-barked birch on a Northern lawn, paper birch is the real thing — chalk-white peeling bark and gold fall colour, on a native that stands up to the borer far better than the European tree.",
+        why: "For a white-barked birch on a Northern lawn, paper birch is the real thing — chalk-white peeling bark and gold fall color, on a native that stands up to the borer far better than the European tree.",
         edges: [
           { axis: "disease", native: "Northern-hardy and far more borer-resistant in its own climate.", ornamental: "Killed young, top-down, by the bronze birch borer here." },
           { axis: "wildlife", native: "Hosts hundreds of caterpillar species; its seed feeds redpolls and siskins.", ornamental: "Feeds little native." },
@@ -1596,7 +1596,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "chrysanthemum-morifolium": [
       {
         plantId: "symphyotrichum-novae-angliae",
-        why: "For the same mound of autumn colour that actually feeds something, New England aster covers itself in purple daisies just when the pollinators need a last meal.",
+        why: "For the same mound of autumn color that actually feeds something, New England aster covers itself in purple daisies just when the pollinators need a last meal.",
         edges: [
           { axis: "wildlife", native: "A top late nectar source; a larval host for the pearl crescent and many moths.", ornamental: "Little nectar, no seed, no host value." },
           { axis: "care", native: "A perennial that returns and spreads on its own.", ornamental: "Planted and binned in a single season." },
@@ -1648,7 +1648,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "pseudotsuga-menziesii",
         why: "If you want the tallest thing you can honestly plant, Douglas-fir gets there — and it is the tree this whole forest is built around.",
         edges: [
-          { axis: "wildlife", native: "Seed that feeds crossbills, squirrels and the spotted owl's prey; bark that shelters a whole community.", ornamental: "Magnificent, and three thousand kilometres from everything that evolved with it." },
+          { axis: "wildlife", native: "Seed that feeds crossbills, squirrels and the spotted owl's prey; bark that shelters a whole community.", ornamental: "Magnificent, and three thousand kilometers from everything that evolved with it." },
           { axis: "care", native: "At home in this rainfall and these soils.", ornamental: "In a small garden it is a fifty-year mistake." },
         ],
         basis: "Oregon State University; Burke Herbarium.",
@@ -1666,7 +1666,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
       },
       {
         plantId: "ribes-sanguineum",
-        why: "If it was a shrub covered in colour before the leaves that you wanted, red-flowering currant hangs pink tassels in March — and the hummingbirds time their arrival to it.",
+        why: "If it was a shrub covered in color before the leaves that you wanted, red-flowering currant hangs pink tassels in March — and the hummingbirds time their arrival to it.",
         edges: [
           { axis: "wildlife", native: "The rufous hummingbird's migration is built around this shrub flowering.", ornamental: "Feeds almost nothing here." },
           { axis: "water", native: "No summer water once established.", ornamental: "Wants it." },
@@ -1717,10 +1717,10 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "liquidambar-styraciflua": [
       {
         plantId: "acer-macrophyllum",
-        why: "For the same big autumn colour without the spiked seed balls underfoot all winter, bigleaf maple turns gold on a tree that belongs to this coast.",
+        why: "For the same big autumn color without the spiked seed balls underfoot all winter, bigleaf maple turns gold on a tree native to this coast.",
         edges: [
           { axis: "wildlife", native: "Feeds local caterpillars and the birds that hunt them.", ornamental: "At home in Virginia it feeds a long list; out here, nothing." },
-          { axis: "care", native: "Deep-rooted.", ornamental: "Roots shallow enough to lift a pavement, and drops spiked balls that roll underfoot." },
+          { axis: "care", native: "Deep-rooted.", ornamental: "Roots shallow enough to lift a sidewalk, and drops spiked balls that roll underfoot." },
         ],
         basis: "Oregon State University; Burke Herbarium.",
       },
@@ -1757,7 +1757,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
       },
       {
         plantId: "berberis-nervosa",
-        why: "For the low glossy evergreen layer under trees, dwarf Oregon grape holds the same architecture and lights up with yellow flowers on the greyest week of the year.",
+        why: "For the low glossy evergreen layer under trees, dwarf Oregon grape holds the same architecture and lights up with yellow flowers on the grayest week of the year.",
         edges: [
           { axis: "wildlife", native: "The earliest nectar many native bees get, then blue fruit for birds.", ornamental: "Poisonous to the deer it is sold to defeat, and to everything else." },
           { axis: "water", native: "Dry shade under conifers is exactly its place — no summer water once rooted.", ornamental: "Needs watering through a Northwest summer." },
@@ -1768,7 +1768,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "hemerocallis-fulva": [
       {
         plantId: "aquilegia-formosa",
-        why: "For easy summer colour in sun or part shade, western columbine dangles scarlet-and-gold lanterns the returning hummingbirds head straight for — where the daylily gives a day of bloom and the pollinators nothing.",
+        why: "For easy summer color in sun or part shade, western columbine dangles scarlet-and-gold lanterns the returning hummingbirds head straight for — where the daylily gives a day of bloom and the pollinators nothing.",
         edges: [
           { axis: "wildlife", native: "Nectar for hummingbirds and long-tongued bees; a host for the columbine duskywing.", ornamental: "Little a native can use." },
           { axis: "care", native: "Self-sows gently and asks for nothing.", ornamental: "Runs into sterile clumps that give the garden no life." },
@@ -1780,7 +1780,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         why: "For a mound of gold in a hot dry border, Oregon sunshine covers itself in daisies through the summer and hums with native bees — on a fraction of the daylily's water.",
         edges: [
           { axis: "water", native: "Thoroughly drought-proof; wants poor, dry, sunny ground.", ornamental: "Thirstier, and feeds nothing back." },
-          { axis: "wildlife", native: "A favourite of native bees and butterflies; a host for painted ladies.", ornamental: "Feeds almost nothing native." },
+          { axis: "wildlife", native: "A favorite of native bees and butterflies; a host for painted ladies.", ornamental: "Feeds almost nothing native." },
         ],
         basis: "Oregon State University; Xerces Society.",
       },
@@ -1790,7 +1790,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "dicentra-formosa",
         why: "For soft ferny foliage and a long bloom in shade, Pacific bleeding heart spreads a blue-green carpet hung with pink lockets from spring into summer — far more than a hosta gives, and none of the slug holes.",
         edges: [
-          { axis: "wildlife", native: "Nectar for early bumblebees; the sole host of Clodius parnassian butterflies.", ornamental: "Nothing native eats it." },
+          { axis: "wildlife", native: "Nectar for early bumblebees; a main host of Clodius parnassian butterflies.", ornamental: "Nothing native eats it." },
           { axis: "care", native: "Spreads into a lush shade colony on its own.", ornamental: "Chewed ragged by slugs by midsummer." },
         ],
         basis: "Oregon State University; Xerces Society.",
@@ -1808,7 +1808,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "vinca-minor": [
       {
         plantId: "linnaea-borealis",
-        why: "For a fine evergreen carpet in cool shade, twinflower threads a delicate mat hung with paired pink bells — a woodland native that belongs under the firs where periwinkle only invades.",
+        why: "For a fine evergreen carpet in cool shade, twinflower threads a delicate mat hung with paired pink bells — a woodland native that grows wild under the firs, where periwinkle only spreads.",
         edges: [
           { axis: "wildlife", native: "Its fragrant twin flowers feed small native bees.", ornamental: "Feeds next to nothing, and smothers the ground flora it escapes into." },
           { axis: "care", native: "A slow, well-behaved native of the forest floor.", ornamental: "An escapee that's hard to remove from the woods." },
@@ -1819,8 +1819,8 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "maianthemum-dilatatum",
         why: "For a lush groundcover in moist shade, false lily-of-the-valley lays down glossy heart-shaped leaves and white spring spikes — a fast native carpet in place of an escaping one.",
         edges: [
-          { axis: "wildlife", native: "Flowers feed small pollinators; berries feed birds.", ornamental: "Little native value; invades the woodland understorey." },
-          { axis: "care", native: "Spreads readily into shade cover and stays in the woods where it belongs.", ornamental: "Creeps out of the bed and into the forest." },
+          { axis: "wildlife", native: "Flowers feed small pollinators; berries feed birds.", ornamental: "Little native value; invades the woodland understory." },
+          { axis: "care", native: "Spreads readily into shade cover and stays in the woods where it grows wild.", ornamental: "Creeps out of the bed and into the forest." },
         ],
         basis: "Oregon State University; Washington Native Plant Society.",
       },
@@ -1888,7 +1888,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
       },
       {
         plantId: "gaultheria-shallon",
-        why: "For evergreen cover under trees, salal makes a lush, leathery, knee-high thicket with pink bells and edible berries — the Northwest's own understorey, not an escapee from it.",
+        why: "For evergreen cover under trees, salal makes a lush, leathery, knee-high thicket with pink bells and edible berries — the Northwest's own understory, not an escapee from it.",
         edges: [
           { axis: "wildlife", native: "Flowers feed hummingbirds and bees; berries feed birds, mammals and people.", ornamental: "Bird-spread into native forest, where it shades out the ground flora." },
           { axis: "care", native: "Left alone, it simply fills its space.", ornamental: "Needs pulling from the woods it escapes into." },
@@ -1902,7 +1902,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         why: "For the evergreen carpet ivy is bought for, salal covers shade with leathery green — and stays where you put it instead of climbing and killing the trees.",
         edges: [
           { axis: "wildlife", native: "Nectar for hummingbirds and bees; berries for birds and people.", ornamental: "Smothers the ground and hauls down trees; feeds little here." },
-          { axis: "disease", native: "A trouble-free native understorey shrub.", ornamental: "A reservoir for bacterial leaf scorch that infects native trees." },
+          { axis: "disease", native: "A trouble-free native understory shrub.", ornamental: "A reservoir for bacterial leaf scorch that infects native trees." },
         ],
         basis: "Oregon State University; Washington Native Plant Society.",
       },
@@ -1930,7 +1930,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "holodiscus-discolor",
         why: "For the same froth of summer nectar on a big sunny shrub, oceanspray drips cream plumes the bees and butterflies swarm — a Northwest native that stays put.",
         edges: [
-          { axis: "water", native: "Thoroughly drought-proof once established.", ornamental: "Thirsty, and a listed invader of Northwest river bars." },
+          { axis: "water", native: "Thoroughly drought-proof once established.", ornamental: "Thirsty, and a listed invasive of Northwest river bars." },
           { axis: "wildlife", native: "A larval host for many moths and butterflies as well as a nectar source.", ornamental: "Feeds the adults; hosts no native caterpillars." },
         ],
         basis: "Oregon State University; Xerces Society.",
@@ -1992,7 +1992,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "picea-pungens": [
       {
         plantId: "pinus-ponderosa",
-        why: "For a big specimen conifer that belongs here, ponderosa pine gives real stature, warm bark that smells of vanilla in the sun, and drought-hardiness the blue spruce can't match east of the mountains.",
+        why: "For a big specimen conifer native here, ponderosa pine gives real stature, warm bark that smells of vanilla in the sun, and drought-hardiness the blue spruce can't match east of the mountains.",
         edges: [
           { axis: "water", native: "Thoroughly drought-proof; a dry-country native.", ornamental: "Struggles and fails to canker and needlecast outside its range." },
           { axis: "wildlife", native: "Hosts around 200 caterpillar species; its seed feeds birds and squirrels.", ornamental: "Feeds little native." },
@@ -2003,7 +2003,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "chrysanthemum-morifolium": [
       {
         plantId: "symphyotrichum-subspicatum",
-        why: "For a mound of autumn colour that feeds the last pollinators, Douglas aster covers itself in violet daisies right when little else is flowering.",
+        why: "For a mound of autumn color that feeds the last pollinators, Douglas aster covers itself in violet daisies right when little else is flowering.",
         edges: [
           { axis: "wildlife", native: "A key late nectar source; a larval host for several butterflies.", ornamental: "Bred for bloom; little nectar and no seed." },
           { axis: "care", native: "A perennial that returns each year.", ornamental: "Planted and binned in a single season." },
@@ -2025,7 +2025,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "salvia-rosmarinus": [
       {
         plantId: "artemisia-californica",
-        why: "For the grey aromatic mound that rosemary is planted by the hundred to make, California sagebrush makes it softer, smells stronger on a hot afternoon, and belongs to the hill it is on.",
+        why: "For the gray aromatic mound that rosemary is planted by the hundred to make, California sagebrush makes it softer, smells stronger on a hot afternoon, and is native to the hill it is on.",
         edges: [
           { axis: "wildlife", native: "A host for several moths, cover for the California gnatcatcher, and seed for sparrows.", ornamental: "Nectar for bees; nothing raised on it." },
           { axis: "water", native: "Wants no summer water at all.", ornamental: "Also drought-proof — the difference is what lives in it." },
@@ -2065,7 +2065,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
       },
       {
         plantId: "salvia-mellifera",
-        why: "If you wanted the same soft grey mound at the front of a dry border, black sage makes it, flowers pale lilac in spring, and is one of the heaviest nectar plants in the chaparral.",
+        why: "If you wanted the same soft gray mound at the front of a dry border, black sage makes it, flowers pale lilac in spring, and is one of the heaviest nectar plants in the chaparral.",
         edges: [
           { axis: "wildlife", native: "The source of the coast's best honey, and a host for several moths.", ornamental: "Nectar only." },
           { axis: "water", native: "Thrives on no irrigation whatever.", ornamental: "Needs some." },
@@ -2098,10 +2098,10 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "liquidambar-styraciflua": [
       {
         plantId: "platanus-racemosa",
-        why: "For a big fast street tree with real autumn colour, western sycamore turns russet and gold and carries the white-and-grey trunk that is half the point of it.",
+        why: "For a big fast street tree with real autumn color, western sycamore turns russet and gold and carries the white-and-gray trunk that is half the point of it.",
         edges: [
           { axis: "wildlife", native: "The larval host of the western tiger swallowtail, and a nest tree for orioles and hawks.", ornamental: "Feeds nothing here; its insects are all in Virginia." },
-          { axis: "water", native: "Deep-rooted into groundwater once it finds it.", ornamental: "Shallow roots that lift pavements, and spiked seed balls underfoot." },
+          { axis: "water", native: "Deep-rooted into groundwater once it finds it.", ornamental: "Shallow roots that lift sidewalks, and spiked seed balls underfoot." },
         ],
         basis: "California Native Plant Society; Xerces Society; UC Master Gardeners.",
       },
@@ -2109,7 +2109,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "lantana-montevidensis": [
       {
         plantId: "eriogonum-parvifolium",
-        why: "For a low mat that holds a dry bank and flowers for months, coast buckwheat does it with cream-to-rust heads that keep their colour into winter.",
+        why: "For a low mat that holds a dry bank and flowers for months, coast buckwheat does it with cream-to-rust heads that keep their color into winter.",
         edges: [
           { axis: "wildlife", native: "A larval host for several rare blue butterflies, and covered in native bees in flower.", ornamental: "Nectar, and berries poisonous to livestock and to children." },
           { axis: "care", native: "Stays where it is put.", ornamental: "Roots wherever a stem touches down." },
@@ -2158,7 +2158,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
       },
       {
         plantId: "diplacus-aurantiacus",
-        why: "For the same low mound of hot colour all summer, sticky monkeyflower flowers apricot to orange for months and takes the same dry sunny spot.",
+        why: "For the same low mound of hot color all summer, sticky monkeyflower flowers apricot to orange for months and takes the same dry sunny spot.",
         edges: [
           { axis: "wildlife", native: "The larval host for the common buckeye and the variable checkerspot — caterpillars, not just nectar.", ornamental: "Nectar only, and it spreads from gardens into wild ground." },
           { axis: "water", native: "Wants the dry summer it evolved in.", ornamental: "Needs water to keep flowering." },
@@ -2169,7 +2169,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "hemerocallis-fulva": [
       {
         plantId: "epilobium-canum",
-        why: "For a blaze of late colour in a hot dry border, California fuchsia throws scarlet trumpets just as the hummingbirds fuel up for migration — and asks for none of the water a daylily wants.",
+        why: "For a blaze of late color in a hot dry border, California fuchsia throws scarlet trumpets just as the hummingbirds fuel up for migration — and asks for none of the water a daylily wants.",
         edges: [
           { axis: "water", native: "Thoroughly drought-proof; wants poor, dry ground and full sun.", ornamental: "Thirsty in a dry climate, and gives nothing back." },
           { axis: "wildlife", native: "A crucial late-season nectar plant for hummingbirds and bees.", ornamental: "Feeds almost nothing native." },
@@ -2209,7 +2209,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "vinca-minor": [
       {
         plantId: "symphoricarpos-mollis",
-        why: "For a spreading groundcover in dry shade, creeping snowberry knits a low native mat with pink summer bells and white winter berries — cover that belongs in these hills, where periwinkle escapes into them.",
+        why: "For a spreading groundcover in dry shade, creeping snowberry knits a low native mat with pink summer bells and white winter berries — cover native to these hills, where periwinkle escapes into them.",
         edges: [
           { axis: "water", native: "Drought-tolerant in shade once established.", ornamental: "Wants moisture, and invades the woodland it escapes into." },
           { axis: "wildlife", native: "Flowers feed native bees; berries feed birds.", ornamental: "Feeds next to nothing native." },
@@ -2302,14 +2302,14 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "muhlenbergia-rigens",
         why: "For a big single specimen grass, deergrass gives the same green fountain at head height — without the saw-edged leaves, the millions of seeds, or the coastline it has swallowed.",
         edges: [
-          { axis: "water", native: "Thoroughly drought-proof once established.", ornamental: "Drought-tough, and one of the coast's worst invaders." },
+          { axis: "water", native: "Thoroughly drought-proof once established.", ornamental: "Drought-tough, and one of the coast's worst invasives." },
           { axis: "wildlife", native: "A larval host for skippers; cover and seed for birds.", ornamental: "Feeds little native, and its leaves cut." },
         ],
         basis: "California Native Plant Society; Cal-IPC.",
       },
       {
         plantId: "leymus-condensatus",
-        why: "For real height and a blue-grey screen, giant wild rye stands as tall as pampas grass — a bold clumping native that holds a slope instead of taking a hillside.",
+        why: "For real height and a blue-gray screen, giant wild rye stands as tall as pampas grass — a bold clumping native that holds a slope instead of taking a hillside.",
         edges: [
           { axis: "water", native: "Deep-rooted and drought-proof; takes sun or part shade.", ornamental: "Invasive and seed-heavy on the same dry ground." },
           { axis: "wildlife", native: "Cover for birds and small animals; larval host for skippers.", ornamental: "Little native value." },
@@ -2416,18 +2416,18 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "passiflora-caerulea": [
       {
         plantId: "aristolochia-californica",
-        why: "If a passionflower appealed because of the butterflies, California pipevine is the local version of that bargain — it is the only plant the pipevine swallowtail's caterpillars can eat, anywhere.",
+        why: "If a passionflower appealed because of the butterflies, California pipevine is the local version of that bargain — it is the only native one the pipevine swallowtail's caterpillars can eat here.",
         edges: [
-          { axis: "wildlife", native: "The sole larval host of the pipevine swallowtail; plant it and the butterfly turns up.", ornamental: "Raises longwing butterflies in Brazil, and nobody here." },
+          { axis: "wildlife", native: "The sole larval host of the pipevine swallowtail; plant it and the butterfly turns up.", ornamental: "Gulf fritillaries breed on it; nothing else here does." },
           { axis: "care", native: "Dies back and returns; never gets away from you.", ornamental: "Covers a fence in a season and keeps going." },
         ],
         basis: "California Native Plant Society; Xerces Society; Las Pilitas.",
       },
       {
         plantId: "vitis-californica",
-        why: "For fast cover over a fence or an arbour with something to show in autumn, California wild grape puts on six metres in a season and turns crimson and gold.",
+        why: "For fast cover over a fence or an arbor with something to show in autumn, California wild grape puts on six meters in a season and turns crimson and gold.",
         edges: [
-          { axis: "wildlife", native: "Fruit that carries a dozen bird species through autumn, and a host for the western grapeleaf skeletonizer.", ornamental: "An extraordinary flower, and a wildlife blank." },
+          { axis: "wildlife", native: "Fruit that carries a dozen bird species through autumn, and a host for the western grapeleaf skeletonizer.", ornamental: "An extraordinary flower; only the Gulf fritillary uses it." },
           { axis: "water", native: "Finds its own water once rooted.", ornamental: "Wants watering to keep flowering." },
         ],
         basis: "California Native Plant Society; Las Pilitas.",
@@ -2456,7 +2456,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "salvia-leucantha": [
       {
         plantId: "salvia-spathacea",
-        why: "For long spikes of colour in the dry shade under oaks — where almost nothing flowers — hummingbird sage sends up magenta whorls and smells of fruit when you brush it.",
+        why: "For long spikes of color in the dry shade under oaks — where almost nothing flowers — hummingbird sage sends up magenta whorls and smells of fruit when you brush it.",
         edges: [
           { axis: "wildlife", native: "A hummingbird plant first and last, and worked by native bees.", ornamental: "Nectar, and no caterpillar can eat it." },
           { axis: "care", native: "Spreads gently in dry shade, which the Mexican sage will not take.", ornamental: "Needs full sun." },
@@ -2476,7 +2476,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
       },
       {
         plantId: "epilobium-canum",
-        why: "If it was late colour you were after, California fuchsia opens scarlet trumpets in September when the garden has given up and the hummingbirds are still here.",
+        why: "If it was late color you were after, California fuchsia opens scarlet trumpets in September when the garden has given up and the hummingbirds are still here.",
         edges: [
           { axis: "wildlife", native: "The main late nectar source for Anna's hummingbird on this coast.", ornamental: "Flowers earlier, and feeds no caterpillar." },
           { axis: "water", native: "Flowers hardest with no water at all.", ornamental: "Wants some." },
@@ -2496,7 +2496,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
       },
       {
         plantId: "eriophyllum-staechadifolium",
-        why: "If it was months of colour on a bank you never water, seaside woolly sunflower mounds grey-green and covers itself in yellow daisies from spring to autumn.",
+        why: "If it was months of color on a bank you never water, seaside woolly sunflower mounds gray-green and covers itself in yellow daisies from spring to autumn.",
         edges: [
           { axis: "wildlife", native: "Nectar and pollen for coastal native bees and butterflies.", ornamental: "Nectar for generalists, and nothing else." },
           { axis: "water", native: "Coastal bluff conditions — wind, salt, no water.", ornamental: "Needs some to keep flowering." },
@@ -2539,7 +2539,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
       },
       {
         plantId: "myrcianthes-fragrans",
-        why: "If it was the bark you wanted, Simpson's stopper peels to the same cinnamon and mottled grey, and keeps its leaves — with white flowers in spring and orange fruit the birds finish in a week.",
+        why: "If it was the bark you wanted, Simpson's stopper peels to the same cinnamon and mottled gray, and keeps its leaves — with white flowers in spring and orange fruit the birds finish in a week.",
         edges: [
           { axis: "wildlife", native: "Nectar for bees, fruit for birds, and leaves that feed native caterpillars.", ornamental: "A bare stem and three caterpillars." },
           { axis: "water", native: "Drought-proof once rooted, and salt-tolerant on the coast.", ornamental: "Wants watering to flower well." },
@@ -2561,7 +2561,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "hemerocallis-fulva": [
       {
         plantId: "coreopsis-leavenworthii",
-        why: "For easy, tireless yellow in a sunny bed, Leavenworth's tickseed — Florida's state wildflower — blooms nearly year-round and reseeds itself, feeding bees and butterflies the daylily can't.",
+        why: "For easy, tireless yellow in a sunny bed, Leavenworth's tickseed — its genus is Florida's state wildflower — blooms nearly year-round and reseeds itself, feeding bees and butterflies the daylily can't.",
         edges: [
           { axis: "wildlife", native: "Nectar for bees and butterflies; seed for small birds.", ornamental: "Little a native can use; no caterpillars." },
           { axis: "care", native: "A self-sowing native that thrives on neglect.", ornamental: "Runs into sterile clumps and gives nothing back." },
@@ -2581,7 +2581,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "miscanthus-sinensis": [
       {
         plantId: "muhlenbergia-capillaris",
-        why: "For a fine grass that turns to a cloud of colour, pink muhly grass fogs rose-pink each autumn — the drama people buy maiden grass for, on a Florida native that won't seed into the scrub.",
+        why: "For a fine grass that turns to a cloud of color, pink muhly grass fogs rose-pink each autumn — the drama people buy maiden grass for, on a Florida native that won't seed into the scrub.",
         edges: [
           { axis: "wildlife", native: "Cover and seed for birds; a host for several skippers.", ornamental: "Feeds little native, and escapes into wild ground." },
           { axis: "water", native: "Thoroughly drought- and salt-proof once established.", ornamental: "Tough too — which is how it invades." },
@@ -2592,7 +2592,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "tripsacum-dactyloides",
         why: "For a big architectural clump, Fakahatchee grass throws up arching four-foot fountains of green — a bold native of the same wet-to-dry ground, in place of an Asian grass gone wild.",
         edges: [
-          { axis: "wildlife", native: "A larval host for skippers and the tiny 'grass-eating' satyrs; cover for birds.", ornamental: "Little native value; a listed invader." },
+          { axis: "wildlife", native: "A larval host for skippers and the tiny 'grass-eating' satyrs; cover for birds.", ornamental: "Little native value; a listed invasive." },
           { axis: "care", native: "Tough and adaptable from wet to dry, sun to part shade.", ornamental: "Seeds itself around the garden and beyond." },
         ],
         basis: "UF/IFAS; Xerces Society.",
@@ -2614,8 +2614,8 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "ilex-vomitoria",
         why: "For a fast evergreen hedge you clip, yaupon holly gives the same dense wall — glossy small leaves, red winter berries the birds eat — as a Florida native that won't seed into every fencerow.",
         edges: [
-          { axis: "wildlife", native: "Flowers feed bees; berries feed many birds through winter.", ornamental: "A bird-spread invader that crowds the understorey out; little on offer." },
-          { axis: "care", native: "Drought- and salt-proof; takes hard clipping.", ornamental: "One of the Southeast's worst invaders, and a heavy allergen in bloom." },
+          { axis: "wildlife", native: "Flowers feed bees; berries feed many birds through winter.", ornamental: "A bird-spread invasive that crowds the understory out; little on offer." },
+          { axis: "care", native: "Drought- and salt-proof; takes hard clipping.", ornamental: "One of the Southeast's worst invasives, and a heavy allergen in bloom." },
         ],
         basis: "UF/IFAS; Florida Native Plant Society.",
       },
@@ -2685,7 +2685,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         why: "For a shrub with a knockout autumn berry, American beautyberry rings its stems with electric-magenta fruit the birds strip — a wildlife feast where nandina's berries are a hazard.",
         edges: [
           { axis: "disease", native: "Fruit safe and heavily eaten.", ornamental: "Cyanide berries lethal to some birds." },
-          { axis: "wildlife", native: "Flowers feed pollinators; berries feed dozens of bird species and mammals.", ornamental: "Poisons birds; a Southeastern invader." },
+          { axis: "wildlife", native: "Flowers feed pollinators; berries feed dozens of bird species and mammals.", ornamental: "Poisons birds; a Southeastern invasive." },
         ],
         basis: "UF/IFAS; U.S. Fish & Wildlife Service.",
       },
@@ -2693,10 +2693,10 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "ruellia-simplex": [
       {
         plantId: "salvia-coccinea",
-        why: "For tireless colour that actually feeds something, tropical sage throws up scarlet spikes all year that hummingbirds and butterflies work — and it's an easy self-sower you can pull, not a runner you can't.",
+        why: "For tireless color that actually feeds something, tropical sage throws up scarlet spikes all year that hummingbirds and butterflies work — and it's an easy self-sower you can pull, not a runner you can't.",
         edges: [
           { axis: "water", native: "Drought-tough once established.", ornamental: "Runs and seeds into every damp margin, impossible to remove." },
-          { axis: "wildlife", native: "A hummingbird and butterfly favourite; a larval host besides.", ornamental: "Little native value." },
+          { axis: "wildlife", native: "A hummingbird and butterfly favorite; a larval host besides.", ornamental: "Little native value." },
         ],
         basis: "UF/IFAS; Florida Native Plant Society.",
       },
@@ -2715,14 +2715,14 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "quercus-virginiana",
         why: "For a great, spreading shade tree, Southern live oak is the tree the fast carrotwood was standing in for — a broad, evergreen, storm-firm canopy that outlives the house and feeds a whole community.",
         edges: [
-          { axis: "wildlife", native: "Hosts over 400 caterpillar species; its acorns feed jays, turkeys and mammals.", ornamental: "A bird-spread invader, now banned in Florida; feeds little native." },
+          { axis: "wildlife", native: "Hosts over 400 caterpillar species; its acorns feed jays, turkeys and mammals.", ornamental: "A bird-spread invasive, now banned in Florida; feeds little native." },
           { axis: "water", native: "Thoroughly drought- and salt-proof; famously wind-firm.", ornamental: "Tough too — which is exactly how it invades." },
         ],
         basis: "UF/IFAS; Morton Arboretum.",
       },
       {
         plantId: "acer-rubrum",
-        why: "For quicker shade with autumn colour, red maple grows fast in the damp ground carrotwood likes, turns red in the Florida winter, and feeds the food web the carrotwood starves.",
+        why: "For quicker shade with autumn color, red maple grows fast in the damp ground carrotwood likes, turns red in the Florida winter, and feeds the food web the carrotwood starves.",
         edges: [
           { axis: "wildlife", native: "Hosts hundreds of caterpillar species — the songbirds' larder.", ornamental: "An invasive of hammocks and mangrove edges." },
           { axis: "disease", native: "A trouble-free native of wet and dry ground alike.", ornamental: "Banned for sale in the state." },
@@ -2769,7 +2769,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "tripsacum-dactyloides",
         why: "For a big architectural clump of grass, Fakahatchee grass arches into four-foot green fountains — a bold South Florida native for the same job, in place of an Asian grass that seeds into wild ground.",
         edges: [
-          { axis: "wildlife", native: "A larval host for skippers and satyrs; cover and seed for birds.", ornamental: "Feeds little native; a listed invader." },
+          { axis: "wildlife", native: "A larval host for skippers and satyrs; cover and seed for birds.", ornamental: "Feeds little native; a listed invasive." },
           { axis: "care", native: "Tough from wet to dry, sun to part shade.", ornamental: "Seeds itself around and beyond the garden." },
         ],
         basis: "UF/IFAS; Xerces Society.",
@@ -2791,8 +2791,8 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "morella-cerifera",
         why: "For a fast evergreen privacy hedge, wax myrtle shoots up into a soft aromatic screen in a season — the native that does Chinese privet's job, feeds the winter birds its waxy berries, and doesn't invade the woods.",
         edges: [
-          { axis: "wildlife", native: "Its berries are winter fuel for yellow-rumped warblers and more; dense cover for nesting.", ornamental: "A bird-spread invader that shades the understorey out." },
-          { axis: "care", native: "Fast, salt- and drought-proof, and clips to a hedge.", ornamental: "One of the Southeast's worst invaders; a heavy allergen." },
+          { axis: "wildlife", native: "Its berries are winter fuel for yellow-rumped warblers and more; dense cover for nesting.", ornamental: "A bird-spread invasive that shades the understory out." },
+          { axis: "care", native: "Fast, salt- and drought-proof, and clips to a hedge.", ornamental: "One of the Southeast's worst invasives; a heavy allergen." },
         ],
         basis: "UF/IFAS; Florida Native Plant Society.",
       },
@@ -2861,7 +2861,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         why: "For a berrying evergreen in more sun, Simpson's stopper carries the winter red fruit nandina is grown for — as a fragrant native the birds can safely eat.",
         edges: [
           { axis: "disease", native: "Berries safe and heavily eaten.", ornamental: "Cyanide berries dangerous to birds." },
-          { axis: "wildlife", native: "Flowers feed pollinators; berries feed mockingbirds and more.", ornamental: "A Southeastern invader that feeds nothing safely." },
+          { axis: "wildlife", native: "Flowers feed pollinators; berries feed mockingbirds and more.", ornamental: "A Southeastern invasive that feeds nothing safely." },
         ],
         basis: "UF/IFAS; U.S. Fish & Wildlife Service.",
       },
@@ -2871,7 +2871,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "bursera-simaruba",
         why: "For a fast, salt-tough shade tree, gumbo limbo grows quickly into a broad canopy with beautiful peeling copper bark — the native that does carrotwood's job and is one of the toughest trees in a hurricane.",
         edges: [
-          { axis: "water", native: "Drought- and salt-proof; famously wind-firm.", ornamental: "Tough too — and a bird-spread invader now banned in Florida." },
+          { axis: "water", native: "Drought- and salt-proof; famously wind-firm.", ornamental: "Tough too — and a bird-spread invasive now banned in Florida." },
           { axis: "wildlife", native: "Flowers feed pollinators; fruit feeds migrating birds.", ornamental: "Invades hammocks and mangrove edges; low native value." },
         ],
         basis: "UF/IFAS; FLEPPC.",
@@ -2889,7 +2889,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "quercus-virginiana",
         why: "For the biggest shade of all, Southern live oak spreads a broad evergreen canopy that outlasts the house — the great native tree the fast carrotwood only stands in for.",
         edges: [
-          { axis: "wildlife", native: "Hosts over 400 caterpillar species; its acorns feed a whole community.", ornamental: "A banned, bird-spread invader of hammocks and mangroves." },
+          { axis: "wildlife", native: "Hosts over 400 caterpillar species; its acorns feed a whole community.", ornamental: "A banned, bird-spread invasive of hammocks and mangroves." },
           { axis: "water", native: "Drought- and salt-proof, and famously wind-firm.", ornamental: "Tough — which is how it invades." },
         ],
         basis: "UF/IFAS; Morton Arboretum.",
@@ -2898,9 +2898,9 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "cycas-revoluta": [
       {
         plantId: "zamia-integrifolia",
-        why: "For the same stiff, glossy, prehistoric rosette, coontie is the real thing — Florida's own native cycad, and the one and only plant the rare atala butterfly can raise its young on.",
+        why: "For the same stiff, glossy, prehistoric rosette, coontie is the real thing — Florida's own native cycad, and the only native plant the rare atala butterfly can raise its young on.",
         edges: [
-          { axis: "wildlife", native: "The sole host of the atala butterfly, brought back from the brink of extinction with it.", ornamental: "Feeds nothing native." },
+          { axis: "wildlife", native: "The atala butterfly's only native host, brought back from the brink of extinction with it.", ornamental: "Atala caterpillars will eat it, but it can't stand in for coontie." },
           { axis: "disease", native: "A tough, trouble-free native.", ornamental: "Poisonous enough to kill a dog, and a magnet for cycad scale." },
         ],
         basis: "UF/IFAS; Florida Native Plant Society.",
@@ -2923,7 +2923,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "tulipa-gesneriana": [
       {
         plantId: "hyacinthoides-non-scripta",
-        why: "For a sheet of colour under bare trees in April, bluebells do it at a scale no bed of tulips reaches — and they come back thicker every year instead of thinner.",
+        why: "For a sheet of color under bare trees in April, bluebells do it at a scale no bed of tulips reaches — and they come back thicker every year instead of thinner.",
         edges: [
           { axis: "wildlife", native: "Early nectar for queen bumblebees and the first hoverflies, when almost nothing else is open.", ornamental: "The doubles and parrots have had the nectar bred out of them — a shop window with nothing on the shelves." },
           { axis: "care", native: "Planted once; spreads by itself for decades.", ornamental: "A poorer showing each year, and a bag of new bulbs every autumn." },
@@ -2934,7 +2934,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "magnolia-grandiflora": [
       {
         plantId: "ilex-aquifolium",
-        why: "For a big glossy evergreen that holds the garden through a grey winter, holly does it at the same scale — and carries red berries when nothing else has anything.",
+        why: "For a big glossy evergreen that holds the garden through a gray winter, holly does it at the same scale — and carries red berries when nothing else has anything.",
         edges: [
           { axis: "wildlife", native: "Berries that carry thrushes and blackbirds through the hungry gap, and the larval host of the holly blue butterfly.", ornamental: "Leathery leaves nothing local can eat, taking two years to rot." },
           { axis: "care", native: "Takes shade, wind and clipping.", ornamental: "Wide, dense and shallow-rooted." },
@@ -2968,13 +2968,13 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         why: "For the same pergola and an evening scent to sit under, honeysuckle flowers from June to September instead of three weeks in May — and never lifts the structure.",
         edges: [
           { axis: "wildlife", native: "Night scent that brings in hawk-moths, then red berries for warblers and thrushes.", ornamental: "Three weeks of nectar, and stems that thicken until they lift a pergola off its posts." },
-          { axis: "care", native: "Twines lightly; a pair of secateurs once a year is the whole job.", ornamental: "Goes over the fence and strangles what it reaches." },
+          { axis: "care", native: "Twines lightly; a pair of pruners once a year is the whole job.", ornamental: "Goes over the fence and strangles what it reaches." },
         ],
         basis: "Tela Botanica; OFB Centre de ressources EEE; Noé.",
       },
       {
         plantId: "humulus-lupulus",
-        why: "To cover a whole arbour fast, hop climbs five metres every summer and starts again from the root each spring — nothing to dismantle, nothing to keep in check.",
+        why: "To cover a whole arbor fast, hop climbs five meters every summer and starts again from the root each spring — nothing to dismantle, nothing to keep in check.",
         edges: [
           { axis: "wildlife", native: "The larval host of the comma butterfly, and cones that feed small birds through autumn.", ornamental: "Feeds almost nothing here." },
           { axis: "care", native: "Dies back to the ground each winter, so it can never outgrow the structure.", ornamental: "A permanent woody cable that has to be cut back hard every year." },
@@ -3005,7 +3005,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "miscanthus-sinensis": [
       {
         plantId: "deschampsia-cespitosa",
-        why: "For a fine airy fountain of a grass, tufted hair-grass throws up a golden summer haze — the movement people plant maiden grass for, on a native that belongs in the meadow rather than escaping into it.",
+        why: "For a fine airy fountain of a grass, tufted hair-grass throws up a golden summer haze — the movement people plant maiden grass for, on a native of the meadow rather than an escapee into it.",
         edges: [
           { axis: "wildlife", native: "Cover and seed for birds; a host for several meadow butterflies.", ornamental: "Feeds little native, and self-seeds into wild ground." },
           { axis: "care", native: "Tough and adaptable in sun or part shade, wet or dry.", ornamental: "A big clump that seeds itself around." },
@@ -3027,7 +3027,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "prunus-laurocerasus": [
       {
         plantId: "ilex-aquifolium",
-        why: "For a dense evergreen hedge, native holly gives the same glossy year-round wall — clip-able, wildlife-rich, and here it belongs, where the cherry laurel is an escapee heading for the woods.",
+        why: "For a dense evergreen hedge, native holly gives the same glossy year-round wall — clip-able, wildlife-rich, and native here, where the cherry laurel is an escapee heading for the woods.",
         edges: [
           { axis: "disease", native: "Clean and long-lived.", ornamental: "Riddled by shot-hole fungus; its leaves give off cyanide." },
           { axis: "wildlife", native: "Late berries feed thrushes and blackbirds; the holly blue butterfly lays on it.", ornamental: "Bird-spread into woodland, where it shades out the ground flora." },
@@ -3049,8 +3049,8 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "ilex-aquifolium",
         why: "For an evergreen screen that flowers and feeds, native holly gives a dense, glossy, wildlife-rich wall — where pontic rhododendron poisons the ground beneath it and the bees above it.",
         edges: [
-          { axis: "disease", native: "Leaves a living understorey beneath it.", ornamental: "Toxic leaf-litter and shade leave bare ground; its nectar poisons honeybees." },
-          { axis: "wildlife", native: "Berries feed winter thrushes; host to the holly blue butterfly.", ornamental: "One of the Atlantic west's worst invaders; a wildlife desert beneath." },
+          { axis: "disease", native: "Leaves a living understory beneath it.", ornamental: "Toxic leaf-litter and shade leave bare ground; its nectar poisons honeybees." },
+          { axis: "wildlife", native: "Berries feed winter thrushes; host to the holly blue butterfly.", ornamental: "One of the Atlantic west's worst invasives; a wildlife desert beneath." },
         ],
         basis: "RHS; INPN.",
       },
@@ -3058,7 +3058,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "crataegus-monogyna",
         why: "For a flowering screen, hawthorn foams white in May and glows with red haws in autumn — the classic wildlife hedge, where rhododendron gives one show and takes the wood.",
         edges: [
-          { axis: "water", native: "Thoroughly self-reliant once established.", ornamental: "A shade-casting invader that leaves poisoned ground." },
+          { axis: "water", native: "Thoroughly self-reliant once established.", ornamental: "A shade-casting invasive that leaves poisoned ground." },
           { axis: "wildlife", native: "Feeds hundreds of insect species; its haws feed winter birds.", ornamental: "Feeds almost nothing, and its nectar is toxic to bees." },
         ],
         basis: "RHS; INPN.",
@@ -3069,7 +3069,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "crataegus-monogyna",
         why: "For a big shrub humming with pollinators, hawthorn's May blossom is a nectar bar the length of a hedge — and unlike butterfly bush it raises the caterpillars too, then feeds the birds its haws.",
         edges: [
-          { axis: "water", native: "Self-reliant once established.", ornamental: "Seeds itself onto walls, waste ground and railway ballast." },
+          { axis: "water", native: "Self-reliant once established.", ornamental: "Seeds itself onto walls, waste ground and railroad ballast." },
           { axis: "wildlife", native: "Nectar for many insects, a larval host for hundreds of moths, haws for winter birds.", ornamental: "Nectar for adults only; raises no native caterpillars." },
         ],
         basis: "RHS; Xerces Society.",
@@ -3078,7 +3078,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "sambucus-nigra",
         why: "For a fast, frothy, flower-and-berry shrub, elder throws plates of cream summer bloom the pollinators cover, then black berries the birds strip — and you can use both.",
         edges: [
-          { axis: "water", native: "Fast and undemanding once established.", ornamental: "A self-seeding coloniser of open ground." },
+          { axis: "water", native: "Fast and undemanding once established.", ornamental: "A self-seeding colonizer of open ground." },
           { axis: "wildlife", native: "Nectar and pollen for insects; berries for two dozen bird species.", ornamental: "Feeds the adults; hosts no native caterpillars." },
         ],
         basis: "RHS; INPN.",
@@ -3163,10 +3163,10 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "aesculus-hippocastanum": [
       {
         plantId: "tilia-cordata",
-        why: "For the shade of a long avenue, small-leaved lime gives the same wide crown — and, in early July, a whole tree humming, that you can smell twenty metres away.",
+        why: "For the shade of a long avenue, small-leaved lime gives the same wide crown — and, in early July, a whole tree humming, that you can smell twenty meters away.",
         edges: [
-          { axis: "wildlife", native: "One of the heaviest nectar trees in Europe; bees work a flowering lime from dawn to dusk, and it hosts dozens of moths.", ornamental: "Flowers for a fortnight, and feeds little." },
-          { axis: "disease", native: "Holds clean green leaves until the autumn turn.", ornamental: "The leaf-mining moth has spread across the continent since the 1980s; leaves go brown and shrivelled by high summer." },
+          { axis: "wildlife", native: "One of the heaviest nectar trees in Europe; bees work a flowering lime from dawn to dusk, and it hosts dozens of moths.", ornamental: "Flowers for two weeks, and feeds little." },
+          { axis: "disease", native: "Holds clean green leaves until the autumn turn.", ornamental: "The leaf-mining moth has spread across the continent since the 1980s; leaves go brown and shriveled by high summer." },
         ],
         basis: "Tela Botanica; INPN; Forest Research (Cameraria ohridella).",
       },
@@ -3183,7 +3183,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "wisteria-sinensis": [
       {
         plantId: "clematis-vitalba",
-        why: "To cover an arbour and give it something to show in winter, traveller's joy climbs by itself and covers itself in November with silver plumes that hold until February.",
+        why: "To cover an arbor and give it something to show in winter, traveler's joy climbs by itself and covers itself in November with silver plumes that hold until February.",
         edges: [
           { axis: "wildlife", native: "Late nectar when little else is open, and seed heads small birds pull apart for nest lining.", ornamental: "Three weeks in May, then a woody cable." },
           { axis: "care", native: "Cut back hard whenever it gets ahead of you.", ornamental: "Lifts a pergola off its posts, and strangles trees it reaches." },
@@ -3267,7 +3267,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "viburnum-lantana",
         why: "For a big shrub of flower and berry, wayfaring tree carries flat cream flower-heads the pollinators cover, then berries that ripen red to black for the birds.",
         edges: [
-          { axis: "water", native: "Drought-tolerant once established; a shrub of dry limestone country.", ornamental: "A self-seeding coloniser of open ground." },
+          { axis: "water", native: "Drought-tolerant once established; a shrub of dry limestone country.", ornamental: "A self-seeding colonizer of open ground." },
           { axis: "wildlife", native: "Nectar for insects; a larval host for several moths; berries for birds.", ornamental: "Hosts no native caterpillars." },
         ],
         basis: "INPN; RHS.",
@@ -3392,7 +3392,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "carpobrotus-edulis": [
       {
         plantId: "dorycnium-pentaphyllum",
-        why: "For a low, tough, sun-baked groundcover, badassi spreads into a soft grey-green cushion dotted with cream pea-flowers — a garrigue native that binds dry ground where ice plant only smothers it.",
+        why: "For a low, tough, sun-baked groundcover, badassi spreads into a soft gray-green cushion dotted with cream pea-flowers — a garrigue native that binds dry ground where ice plant only smothers it.",
         edges: [
           { axis: "water", native: "Thoroughly drought-proof; wants poor, stony, dry ground.", ornamental: "Unwatered too — but a soil-loosening mat that slides off the slope." },
           { axis: "wildlife", native: "A legume: its flowers feed bees, and it hosts blue butterflies.", ornamental: "Smothers the coastal flora those insects need." },
@@ -3401,7 +3401,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
       },
       {
         plantId: "helichrysum-stoechas",
-        why: "For a silver, sun-loving mat on a dry bank, everlasting lays down aromatic grey foliage and curry-scented yellow flower — a coastal native that holds the sand ice plant sheds.",
+        why: "For a silver, sun-loving mat on a dry bank, everlasting lays down aromatic gray foliage and curry-scented yellow flower — a coastal native that holds the sand ice plant sheds.",
         edges: [
           { axis: "water", native: "Thoroughly drought- and salt-proof.", ornamental: "A heavy shallow mat that loosens the dune it sits on." },
           { axis: "wildlife", native: "Its flowers feed bees and butterflies through the dry season.", ornamental: "A monoculture that feeds almost nothing native." },
@@ -3432,7 +3432,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "platanus-x-hispanica": [
       {
         plantId: "quercus-ilex",
-        why: "For a great evergreen shade tree, holm oak is the dark, broad, drought-proof canopy of the Mediterranean itself — the tree that belongs where the plane is only watered into place.",
+        why: "For a great evergreen shade tree, holm oak is the dark, broad, drought-proof canopy of the Mediterranean itself — the tree native where the plane is only watered into place.",
         edges: [
           { axis: "water", native: "Thoroughly drought-proof once established.", ornamental: "A thirsty tree in a dry land." },
           { axis: "wildlife", native: "Hosts around 400 caterpillar species; its acorns feed a whole community.", ornamental: "Feeds almost nothing native." },
@@ -3458,7 +3458,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         why: "For the shade over a mountain village square, sycamore maple makes the same wide crown and takes wind and snow far higher up than horse-chestnut will.",
         edges: [
           { axis: "wildlife", native: "Early pollen for queen bumblebees, and a host for a long list of moths.", ornamental: "Feeds little, and the leaf miner arrived with it." },
-          { axis: "disease", native: "Green to the autumn turn.", ornamental: "Brown and shrivelled by August across the continent since the 1980s." },
+          { axis: "disease", native: "Green to the autumn turn.", ornamental: "Brown and shriveled by August across the continent since the 1980s." },
         ],
         basis: "Tela Botanica; INPN; Forest Research (Cameraria ohridella).",
       },
@@ -3475,16 +3475,16 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
     "lupinus-polyphyllus": [
       {
         plantId: "anthyllis-vulneraria",
-        why: "For the cottage-lupin look in a mountain border — spikes of pea-flower over ferny leaves — kidney vetch gives it in gold, and unlike the garden lupine it belongs in the meadow instead of taking it over.",
+        why: "For the cottage-lupin look in a mountain border, kidney vetch gives rounded, clover-like heads of pea-flower in gold, and unlike the garden lupine it is native to the meadow instead of taking it over.",
         edges: [
-          { axis: "wildlife", native: "The sole larval host of the small blue butterfly, and a favourite of mountain bees.", ornamental: "Nectar only, and it crowds out the very meadow flowers those insects need." },
+          { axis: "wildlife", native: "The sole larval host of the small blue butterfly, and a favorite of mountain bees.", ornamental: "Nectar only, and it crowds out the very meadow flowers those insects need." },
           { axis: "care", native: "A meadow native that keeps its place.", ornamental: "Enriches the thin soil and spreads until the wildflowers are gone." },
         ],
         basis: "INPN; Xerces Society.",
       },
       {
         plantId: "lotus-corniculatus",
-        why: "For low colour through a mountain meadow, bird's-foot trefoil scatters egg-yolk flowers all summer — a native legume that feeds the meadow rather than fertilising it into ruin.",
+        why: "For low color through a mountain meadow, bird's-foot trefoil scatters egg-yolk flowers all summer — a native legume that feeds the meadow rather than fertilizing it into ruin.",
         edges: [
           { axis: "water", native: "Drought-tough and self-reliant on thin, poor ground.", ornamental: "Its nitrogen-fixing roots enrich soil the meadow needs poor." },
           { axis: "wildlife", native: "A larval host for the common blue and many other butterflies; heavy with bees.", ornamental: "Feeds adults, but replaces the flora the caterpillars depend on." },
@@ -3497,7 +3497,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "vaccinium-vitis-idaea",
         why: "For a low evergreen with red berries, cowberry makes a neat glossy mat with white bells and tart red fruit — a mountain native that stays put where cotoneaster jumps the wall into the hills.",
         edges: [
-          { axis: "wildlife", native: "Flowers feed bees; berries feed birds and people.", ornamental: "Bird-spread into limestone screes, where it's a listed invader." },
+          { axis: "wildlife", native: "Flowers feed bees; berries feed birds and people.", ornamental: "Bird-spread into limestone screes, where it's a listed invasive." },
           { axis: "care", native: "A slow, well-behaved evergreen groundcover.", ornamental: "Needs pulling from the wild ground it escapes into." },
         ],
         basis: "INPN.",
@@ -3506,7 +3506,7 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
         plantId: "juniperus-communis",
         why: "For an evergreen with berries and structure, common juniper gives blue-black cones and a tough spiny frame that takes the hardest ground — the native that does cotoneaster's job without invading the mountain.",
         edges: [
-          { axis: "water", native: "Thoroughly drought-proof; takes the poorest, most exposed ground.", ornamental: "A bird-spread invader of exactly that open habitat." },
+          { axis: "water", native: "Thoroughly drought-proof; takes the poorest, most exposed ground.", ornamental: "A bird-spread invasive of exactly that open habitat." },
           { axis: "wildlife", native: "Its cones feed birds; it hosts several specialist moths.", ornamental: "Feeds birds — which is how it spreads — and little else." },
         ],
         basis: "INPN.",

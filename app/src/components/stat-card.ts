@@ -15,6 +15,8 @@ import { t, fmtNumber, monthName } from "../lib/i18n";
 import { lengthTick, temperatureSpan } from "../lib/units";
 import { commonName } from "../lib/names";
 
+let dialogSeq = 0;
+
 export interface Stat {
   icon: string;
   label: string;
@@ -56,14 +58,17 @@ export interface TileOptions {
  * against the plant pages that had tiles all along.
  */
 export function statTiles(stats: Stat[], ariaLabel: string, opts: TileOptions = {}): HTMLElement {
-  const dialog = el("dialog", { class: "stat-dialog" }) as HTMLDialogElement;
+  // A page can hold several grids, each with its own dialog, so the heading
+  // that names the dialog needs an id of its own.
+  const titleId = `stat-dialog-${++dialogSeq}`;
+  const dialog = el("dialog", { class: "stat-dialog", "aria-labelledby": titleId }) as HTMLDialogElement;
   dialog.addEventListener("click", (e) => {
     if (e.target === dialog) dialog.close(); // tap the backdrop to dismiss
   });
 
   const open = (s: Stat): void => {
     const parts: HTMLElement[] = [
-      el("h3", { style: "margin:0 0 0.2rem" }, [el("span", { "aria-hidden": "true" }, `${s.icon} `), s.label]),
+      el("h3", { id: titleId, style: "margin:0 0 0.2rem" }, [el("span", { "aria-hidden": "true" }, `${s.icon} `), s.label]),
       el("p", { class: "stat-dialog-value" }, `${s.value}${s.sub ? ` — ${s.sub}` : ""}`),
       el("p", { style: "margin:0.5rem 0 0.9rem" }, s.explain),
     ];
@@ -87,6 +92,7 @@ export function statTiles(stats: Stat[], ariaLabel: string, opts: TileOptions = 
 
   return el("div", {
     class: `stat-grid${opts.figures ? " stat-grid-figures" : ""}`,
+    role: "group",
     "aria-label": ariaLabel,
   }, [
     ...stats.map((s) =>

@@ -74,19 +74,19 @@ export const ALTERNATIVES_FR: ProseTable = {
     altRole: "Écran persistant à fleurs",
     altOrigin: "Indigène de la péninsule Ibérique et des rivages de la mer Noire.",
     altBlurb:
-      "Vendu pour son mur de fleurs pourpres au printemps, et l'un des grands envahisseurs de la façade atlantique : il fait une ombre si dense et une litière si toxique que rien ne pousse dessous, et son nectar est un poison pour l'abeille domestique.",
+      "Vendu pour son mur de fleurs pourpres au printemps, et l'une des pires plantes envahissantes de la façade atlantique : il fait une ombre si dense et une litière si toxique que rien ne pousse dessous, et son nectar est un poison pour l'abeille domestique.",
     alternativeNotes: {
       "ilex-aquifolium": {
         why: "Pour un écran persistant qui fleurit et nourrit, le houx indigène dresse un mur dense, lustré et accueillant pour la faune — là où le rhododendron pontique empoisonne le sol dessous et les abeilles dessus.",
         edges: [
           { axis: "disease", native: "Laisse vivre un sous-étage à son pied.", ornamental: "Litière toxique et ombre : le sol reste nu, et son nectar empoisonne l'abeille domestique." },
-          { axis: "wildlife", native: "Ses baies nourrissent les grives d'hiver ; hôte de l'azuré des nerpruns.", ornamental: "L'un des pires envahisseurs de l'Ouest atlantique ; un désert pour la faune à son pied." },
+          { axis: "wildlife", native: "Ses baies nourrissent les grives d'hiver ; hôte de l'azuré des nerpruns.", ornamental: "L'une des pires envahissantes de l'Ouest atlantique ; un désert pour la faune à son pied." },
         ],
       },
       "crataegus-monogyna": {
         why: "Pour un écran fleuri, l'aubépine se couvre de blanc en mai puis rougeoie de cenelles à l'automne — la haie nourricière par excellence, là où le rhododendron offre un seul spectacle et prend le bois.",
         edges: [
-          { axis: "water", native: "Parfaitement autonome une fois installée.", ornamental: "Un envahisseur d'ombre qui laisse un sol empoisonné." },
+          { axis: "water", native: "Parfaitement autonome une fois installée.", ornamental: "Une envahissante qui fait de l'ombre et laisse un sol empoisonné." },
           { axis: "wildlife", native: "Nourrit des centaines d'espèces d'insectes ; ses cenelles nourrissent les oiseaux d'hiver.", ornamental: "Ne nourrit presque rien, et son nectar est toxique pour les abeilles." },
         ],
       },

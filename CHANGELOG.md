@@ -39,7 +39,7 @@ subtitle on the What's new page.
 - Matches: got a planting date or count wrong? Tap "Edit" beside the date of a
   plant in your saved spot to fix it, and keep the sightings linked to it.
 - Sightings of a plant show its drawing while their photos load, the way plant
-  pictures already do, instead of an empty grey square.
+  pictures already do, instead of an empty gray square.
 - Matches: a saved spot's page can now rename the spot, or move its pin on the
   map when it landed next door. https://indigene.app/#/saved
 - Internal: the import's per-visit sightings cache moved to
@@ -96,6 +96,20 @@ subtitle on the What's new page.
 - Internal: the plant page moves its growth drawing and its "See it growing
   near you" card between columns only past the laptop breakpoint (`onLaptop`
   in `steps/plant.ts`), so the phone stack is untouched.
+- The welcome page's other way in fits on one line on a phone: "Or browse
+  without sharing your location." https://indigene.app/
+- The English now spells one way, the American one: color, gray, neighbor.
+  Words most Americans don't use went too — "fortnight" is "two weeks", a
+  "verge" is a roadside, a ladybird is a ladybug.
+- Plants & Wildlife: notes no longer crown "the most valuable" or "the
+  biggest" plant where two notes disagreed, and no longer talk about "this
+  list" — they describe your garden, not our spreadsheet.
+- The welcome page says what's true, more plainly: plants didn't evolve *to*
+  feed birds, but local insects evolved alongside native plants, and many can
+  eat nothing else. https://indigene.app/
+- Sightings from iNaturalist now say what makes them trustworthy: at least two
+  people agreed on what the photo shows. "Research-grade" and "verified" are
+  gone.
 - Matches: the buttons on a saved spot say what they do. "Open" is now "Plant
   more", and the link to what's in the ground reads "Already planted".
   https://indigene.app/#/saved
@@ -139,6 +153,46 @@ subtitle on the What's new page.
 
 ### Fixed
 
+- Screen readers now say what each emoji means here instead of its official
+  name: 🚫 in "No thorns" is "no", not "prohibited", and ↗ says the link
+  opens another site. French readers hear it in French.
+- Internal: `lib/emoji.ts` holds each emoji's meaning (`emoji.*` keys) and
+  wraps exposed emoji in `role="img"` spans via a MutationObserver;
+  `emojiSpan()` overrides a meaning at the call site (plant verdicts, the
+  step rail's ✓). `emoji.test.ts` fails when an emoji ships without one.
+- Plants & Wildlife: dozens of notes were corrected. A monarch needs a
+  milkweed, not one particular milkweed; yerba buena means "good herb"; Europe
+  has more than one green butterfly; a bushtit weighs about five paperclips.
+- Plants: wild garlic now warns that every part is toxic to dogs and cats, and
+  that its leaves look like two poisonous plants.
+- Plants: the "deer tend to leave it alone" tag is off plants deer happily
+  browse, like hemlock, Douglas-fir, wild roses and bramble.
+- Invasives: two plants went by names that insult people. They're now
+  "highway ice plant" and "Asian bittersweet", and each page says why in a
+  line. Searching "sour fig" or "Oriental bittersweet" still finds them.
+- Plant notes describe what an invasive does rather than where it's from:
+  "invasive" instead of "invader", and "native here" instead of "belongs here".
+- Internal: CLAUDE.md gains "Native plants, not nativism" — the project's
+  anti-racist, anti-colonial stance as writing rules — and name choices live in
+  `data/name-choices.ts`.
+- Internal: cow parsnip's swallowtail tie moved to the anise swallowtail, the
+  aspen–jay tie was deleted (jays don't nest in holes), and wrinkleleaf
+  goldenrod is flagged as spreading.
+- About: the page said Indigene runs no analytics, but a visit counter does. It
+  now says so, and that you can switch it off in Settings.
+  https://indigene.app/about
+- A few facts were wrong: chickadees need yards that are at least about 70%
+  native plants (we had it backwards), butterflies do sip rotting fruit, and
+  peppers come from Mexico, not the Andes. https://indigene.app/crops
+- Keyboard focus now shows on the green header, the plant search no longer
+  reads the whole list aloud as you type, and the date boxes on a saved spot
+  have names a screen reader can say.
+- The Guide and What's new links in the ⚙️ menu open the right page again from
+  any plant or animal page, and Back now closes the photo viewer.
+- Internal: accessibility pass — `role="group"` and `aria-labelledby` on stat
+  grids and dialogs, silhouettes `aria-hidden`, reduced motion covers
+  pseudo-elements, the fake ARIA menu roles are gone, and the anonymous
+  observer name is a locale key.
 - Plant photos show up on the full plants list again, and while scrolling
   they now load where you've stopped first, instead of for rows you've
   already passed. https://indigene.app/plants

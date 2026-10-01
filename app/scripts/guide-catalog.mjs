@@ -116,7 +116,7 @@ export const SECTIONS = [
     ],
     note:
       "An essential plant (ecologists say “keystone”) feeds far more " +
-      "creatures than its neighbours — plant one and you’ve done the work of ten.",
+      "creatures than its neighbors — plant one and you’ve done the work of ten.",
     visit: [
       { label: "Meet the wildlife", href: `${APP}/wildlife` },
       { label: "Butterflies and moths", href: `${APP}/wildlife/butterflies` },
@@ -264,7 +264,7 @@ export const SECTIONS = [
     lede:
       "You look a plant up because you're not sure what you're holding — and " +
       "half the time the plant on the nursery bench isn't quite the one on the " +
-      "label. A garden centre sells the invasive Callery pear beside the native " +
+      "label. A garden center sells the invasive Callery pear beside the native " +
       "serviceberry; a hedge of cherry laurel reads as holly at a glance. So for " +
       "each native we recommend, we've written up the plants it gets mistaken " +
       "for, and — standing right in front of it — how to tell them apart: a " +

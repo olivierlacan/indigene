@@ -21,7 +21,7 @@ export const PNW: ProseTable = {
     careNote:
       "Lent mais extraordinairement longévif et résistant à la sécheresse une fois installé — sa racine pivotante le rend autonome mais difficile à transplanter : plantez-en un petit et laissez-le. L'habitat menacé de chênaie-prairie de l'Ouest dépend de lui.",
     givesNote:
-      "L'arbre le plus précieux qui soit pour la faune du versant ouest : des centaines d'espèces de chenilles, des glands pour les geais, les pics et les mammifères, et l'ossature de la savane à chêne de Garry.",
+      "Les chênes comptent parmi les arbres qui nourrissent le plus d'espèces de chenilles — des centaines — plus des glands pour les geais, les pics et les mammifères, et l'ossature de la savane à chêne de Garry.",
     propagationNote:
       "Ramassez les glands à leur chute en automne et faites-les flotter dans l'eau — jetez ceux qui remontent, semez aussitôt ceux qui coulent. Les glands de chênes blancs germent dès l'automne, sans aucun froid, et ne doivent jamais sécher. À cause de la racine pivotante, démarrez-le en pot haut ou semez-le directement là où il vivra.",
     supportNotes: {
@@ -163,7 +163,7 @@ export const PNW: ProseTable = {
     nativeNote:
       "Le feuillu pionnier des berges, des clairières et des coupes du versant ouest, du sud-est de l'Alaska au nord de la Californie.",
     careNote:
-      "L'ombre indigène la plus rapide qu'on puisse obtenir sur un site frais, et le seul arbre local qui fabrique son propre azote — il nourrit le sol pour tout ce qu'on plantera après lui. Deux réserves : il se ressème partout, et il est de courte vie pour un arbre (60 à 80 ans) — plantez-le donc comme essence d'accompagnement plutôt que comme pièce maîtresse.",
+      "L'ombre indigène la plus rapide qu'on puisse obtenir sur un site frais, et l'un des rares arbres locaux qui fabriquent leur propre azote — il nourrit le sol pour tout ce qu'on plantera après lui. Deux réserves : il se ressème partout, et il est de courte vie pour un arbre (60 à 80 ans) — plantez-le donc comme essence d'accompagnement plutôt que comme pièce maîtresse.",
     givesNote:
       "L'un des principaux arbres nourriciers de chenilles de la région, et ses petits chatons ligneux gardent une graine que les tarins des pins et les chardonnerets dépouillent tout l'hiver. Ses racines tricotent vite une berge et tirent l'azote de l'air vers le sol.",
     propagationNote:
@@ -254,7 +254,7 @@ export const PNW: ProseTable = {
     nativeNote:
       "Le cornouiller à fleurs de l'Ouest — un arbre de lisière de la Colombie-Britannique à la Californie, et l'emblème floral de la Colombie-Britannique.",
     careNote:
-      "Le plus bel arbre indigène de cette liste et le plus difficile : il demande une lumière tamisée, des racines fraîches sous un paillis de feuilles mortes, un bon drainage et aucun arrosage d'été *au pied du tronc*, et il supporte mal d'être déplacé. L'anthracnose du cornouiller, une maladie fongique, frappe les arbres en souffrance à l'ombre humide — un emplacement aéré avec du soleil du matin est la meilleure défense. Plantez-en un petit et soyez patient.",
+      "Beau, et exigeant : il demande une lumière tamisée, des racines fraîches sous un paillis de feuilles mortes, un bon drainage et aucun arrosage d'été *au pied du tronc*, et il supporte mal d'être déplacé. L'anthracnose du cornouiller, une maladie fongique, frappe les arbres en souffrance à l'ombre humide — un emplacement aéré avec du soleil du matin est la meilleure défense. Plantez-en un petit et soyez patient.",
     givesNote:
       "De grandes bractées blanches printanières qui éclairent une lisière boisée (et souvent une seconde floraison à l'automne), une solide plante hôte de chenilles, et des grappes de fruits écarlates que pigeons à queue barrée, merles d'Amérique, jaseurs et gros-becs vident en quelques jours.",
     propagationNote:
@@ -272,7 +272,7 @@ export const PNW: ProseTable = {
     careNote:
       "Un petit arbre raide et large, aux épines de deux centimètres et demi — plantez-le là où personne n'a à se faufiler, et il ne vous demandera rien d'autre. Il se plaît surtout sur un terrain qui reste frais jusqu'en été, y compris un coin qui s'inonde en hiver, et l'argile ne le dérange pas. Lent : achetez-le petit et laissez-lui son temps ; si vous voulez le fourré qu'il fait à l'état sauvage, laissez les drageons.",
     givesNote:
-      "Les aubépines comptent parmi les principaux arbres nourriciers de chenilles de l'Ouest et nous n'en avions aucune sur cette liste — une mésange qui travaille une aubépine récolte les jeunes de centaines d'espèces. Sa floraison blanche de mai est lourde de petites abeilles et de mouches indigènes, ses cenelles sombres tiennent jusqu'en hiver pour les jaseurs, les merles d'Amérique et les gélinottes, et son houppier épineux est l'un des endroits les plus sûrs où un passereau puisse bâtir un nid.",
+      "Les aubépines comptent parmi les principaux arbres nourriciers de chenilles de l'Ouest — une mésange qui travaille une aubépine récolte les jeunes de centaines d'espèces. Sa floraison blanche de mai est lourde de petites abeilles et de mouches indigènes, ses cenelles sombres tiennent jusqu'en hiver pour les jaseurs, les merles d'Amérique et les gélinottes, et son houppier épineux est l'un des endroits les plus sûrs où un passereau puisse bâtir un nid.",
     propagationNote:
       "La graine d'aubépine est réputée têtue : dégagez les noyaux des cenelles mûres d'automne et semez-les en pot laissé dehors, puis préparez-vous à attendre deux hivers avant que quoi que ce soit ne paraisse — une période chaude suivie d'une période froide est ce qui les débloque, et une seule saison n'y suffit presque jamais. Beaucoup plus rapide : soulevez un drageon enraciné au bord d'un pied installé en fin d'hiver.",
     supportNotes: {
@@ -290,7 +290,7 @@ export const PNW: ProseTable = {
     careNote:
       "Le bouleau demande un enracinement frais et humide, et il vous dira quand il ne l'a pas : un arbre cuit sur une pelouse exposée au sud s'affaiblit, et l'agrile du bouleau achève les bouleaux affaiblis. Donnez-lui donc le côté nord ou est, paillez large, arrosez-le ses premiers étés, et ne le plantez jamais dans l'emplacement chaud et sec que vous espériez lui voir décorer. Il se plaît franchement mieux autour du Puget Sound que dans un mois d'août de la Willamette, et il n'est pas longévif ici — soixante bonnes années, pas deux cents. Ses chatons printaniers lâchent un pollen porté par le vent, bon à savoir si le bouleau vous fait éternuer.",
     givesNote:
-      "Le bouleau est l'un des cinq premiers arbres nourriciers de chenilles du continent et cette liste n'en comptait aucun — c'est-à-dire que tout un étage de papillons de nuit, et les parulines et les mésanges qui les mangent, n'avait rien ici pour grandir. Ses petits chatons en forme de cônes s'effritent en une graine que les tarins des pins et les sizerins travaillent tout l'hiver, ses branches mortes deviennent des loges de pics et de mésanges, et son écorce blanche éclaire un mois de février gris.",
+      "Le bouleau est l'un des cinq premiers arbres nourriciers de chenilles du continent : il nourrit tout un étage de papillons de nuit, et les parulines et les mésanges qui les mangent. Ses petits chatons en forme de cônes s'effritent en une graine que les tarins des pins et les sizerins travaillent tout l'hiver, ses branches mortes deviennent des loges de pics et de mésanges, et son écorce blanche éclaire un mois de février gris.",
     propagationNote:
       "Cueillez les chatons mûrs en fin d'été, avant qu'ils ne s'effritent, et émiettez-les sur un pot de terreau humide — la graine est fine comme de la poussière et a besoin de lumière : pressez-la et laissez-la découverte. Quelques semaines de froid humide (ou un pot laissé dehors tout l'hiver) la font lever plus régulièrement. Semez bien plus que nécessaire ; une bonne part de la graine de bouleau est vide.",
     supportNotes: {
@@ -304,7 +304,7 @@ export const PNW: ProseTable = {
     nativeNote:
       "Le seul pommier indigène de l'Ouest — un petit arbre des marécages, des bords de marée, des bois humides et des marges d'estuaire du versant ouest, de l'Alaska au nord de la Californie.",
     careNote:
-      "C'est l'arbre du coin humide : il accepte un terrain sous l'eau tout l'hiver, et il se moque même des embruns salés d'un bord de marée, ce que presque rien d'autre sur cette liste ne fait. Ses courts rameaux latéraux s'affûtent en épines : gardez-le à l'écart d'un passage. Dans un printemps humide, les feuilles se tavellent et tombent tôt — c'est la tavelure du pommier, cela paraît plus grave que ce n'est, et ramasser les feuilles tombées est tout le traitement. Il penche et se fourche en une silhouette tordue à plusieurs troncs ; c'est la plante, pas un défaut.",
+      "C'est l'arbre du coin humide : il accepte un terrain sous l'eau tout l'hiver, et il se moque même des embruns salés d'un bord de marée, ce que presque rien d'autre ici ne fait. Ses courts rameaux latéraux s'affûtent en épines : gardez-le à l'écart d'un passage. Dans un printemps humide, les feuilles se tavellent et tombent tôt — c'est la tavelure du pommier, cela paraît plus grave que ce n'est, et ramasser les feuilles tombées est tout le traitement. Il penche et se fourche en une silhouette tordue à plusieurs troncs ; c'est la plante, pas un défaut.",
     givesNote:
       "Pommiers et pommiers sauvages sont parmi les arbres nourriciers de chenilles les plus productifs du pays, et celui-ci fait ce travail les pieds dans l'eau. Des nuages de fleurs blanc-rosé nourrissent osmies et reines de bourdons en avril ; puis de petites pommes acides, du jaune au rouge, qui tiennent bien après les feuilles et nourrissent jaseurs, gros-becs, merles d'Amérique, renards et ours à travers les premiers grands froids. Elles sont comestibles pour les gens aussi, une fois que le gel les a bletties.",
     propagationNote:
@@ -485,7 +485,7 @@ export const PNW: ProseTable = {
       "Prélevez les pousses de l'année en fin d'été, une fois aoûtées mais avant qu'elles ne durcissent, et faites-les raciner sous abri dans un mélange de sable et de tourbe — c'est lent mais fiable. Par semis, écrasez des baies mûres, rincez la graine, et pressez-la à la surface d'un terreau acide humide sans la recouvrir ; il lui faut de la lumière pour lever.",
     supportNotes: {
       "mason-bees":
-        "Les fleurs d'airelle se pollinisent par vibration — ce sont les osmies, les andrènes et les bourdons qui font vraiment le fruit.",
+        "Les fleurs d'airelle se pollinisent par vibration — ce sont les bourdons qui font vraiment le fruit, aidés des osmies et des andrènes.",
       "berry-songbirds":
         "Ses baies noires tardives nourrissent grives, tohis et gélinottes bien avant dans l'automne.",
     },
@@ -544,7 +544,7 @@ export const PNW: ProseTable = {
     careNote:
       "Peu exigeant à mi-ombre sur un terrain ordinaire, et il accepte l'été sec une fois en place. Deux choses à savoir avant d'acheter. C'est un arbuste drageonnant, dressée et plutôt lâche — plantez-le en lisière boisée ou dans une haie, pas en sujet de pelouse. Et les fleurs mâles et femelles sont sur des pieds séparés : si vous voulez des fruits, il vous en faut au moins un de chaque ; les pépinières les étiquettent rarement, achetez-en donc trois et laissez faire les probabilités. Dès juillet il a l'air fatigué et perd quelques feuilles — c'est normal pour un arbuste qui a démarré en février.",
     givesNote:
-      "C'est la plante qui met fin à l'hiver ici. Ses clochettes pendantes vert-blanc, à la légère odeur de concombre, s'ouvrent en février — des semaines avant tout le reste de cette liste — et cette date est tout l'intérêt. Une reine de bourdon qui sort de terre au premier jour doux a brûlé sa graisse d'hiver et a des jours, pas des semaines, pour trouver du sucre avant de pouvoir fonder un nid ; l'Oemleria, avec le noisetier, est ce qu'elle trouve. Osmies et premiers syrphes le travaillent aussi. Son petit fruit en forme de prune mûrit bleu-noir en juin pour les merles d'Amérique, les jaseurs, les renards et les coyotes, en général avant qu'une personne ait pu en goûter un.",
+      "C'est la plante qui met fin à l'hiver ici. Ses clochettes pendantes vert-blanc, à la légère odeur de concombre, s'ouvrent en février — des semaines avant presque tout le reste — et cette date est tout l'intérêt. Une reine de bourdon qui sort de terre au premier jour doux a brûlé sa graisse d'hiver et a des jours, pas des semaines, pour trouver du sucre avant de pouvoir fonder un nid ; l'Oemleria, avec le noisetier, est ce qu'elle trouve. Osmies et premiers syrphes le travaillent aussi. Son petit fruit en forme de prune mûrit bleu-noir en juin pour les merles d'Amérique, les jaseurs, les renards et les coyotes, en général avant qu'une personne ait pu en goûter un.",
     propagationNote:
       "Le plus facile est de soulever en fin d'hiver l'un des drageons enracinés autour de la base d'une touffe installée. Les boutures nues d'hiver enfoncées en terre humide prennent aussi. Par semis, débarrassez le fruit mûr de juin de sa pulpe aussitôt — il ne doit pas sécher — et donnez aux noyaux environ trois mois de froid humide avant un semis de printemps.",
     supportNotes: {
@@ -669,14 +669,14 @@ export const PNW: ProseTable = {
     nativeNote:
       "L'asclépiade commune de l'Ouest — indigène des terrains ouverts et ensoleillés de la vallée de la Willamette, du corridor du Columbia et vers l'est jusque dans l'intérieur.",
     careNote:
-      "Donnez-lui le plein soleil et un terrain pauvre et bien drainé, puis laissez-la tranquille — elle s'étend par coulants souterrains et sortira à un mètre de là où vous l'avez plantée : une bande de prairie ou une bande de trottoir lui convient mieux qu'un massif net. Sa sève laiteuse est irritante et la plante est toxique si on l'avale, ce qui est précisément pourquoi les chenilles de monarque peuvent la manger et presque rien d'autre ne peut.",
+      "Donnez-lui le plein soleil et un terrain pauvre et bien drainé, puis laissez-la tranquille — elle s'étend par coulants souterrains et sortira à un mètre de là où vous l'avez plantée : une bande de prairie ou une bande de trottoir lui convient mieux qu'un massif net. Sa sève laiteuse est irritante et la plante est toxique si on l'avale.",
     givesNote:
-      "La seule chose qu'une chenille de monarque puisse manger, et la population de monarques de la côte Ouest a suffisamment chuté pour que chaque pied compte. Ses lourds dômes de fleurs roses sont aussi l'une des sources de nectar les plus riches du plein été pour les bourdons, et sa bourre de graines garnit les nids de chardonnerets et de colibris.",
+      "Les chenilles de monarque ne mangent que des asclépiades, et celle-ci est la plus commune du versant ouest. La population de monarques de la côte Ouest a suffisamment chuté pour que chaque pied compte. Ses lourds dômes de fleurs roses sont aussi l'une des sources de nectar les plus riches du plein été pour les bourdons, et sa bourre de graines garnit les nids de chardonnerets et de colibris.",
     propagationNote:
       "Ouvrez les gousses sèches à l'automne avant qu'elles n'éclatent et détachez la graine de la bourre. Il lui faut environ un mois de froid humide au réfrigérateur — ou un semis d'automne dehors — avant de lever au printemps. De courts morceaux de la racine coureuse, prélevés au début du printemps, deviennent aussi de nouveaux pieds.",
     supportNotes: {
       monarch:
-        "L'asclépiade commune de l'Ouest, et la seule chose qu'une chenille de monarque puisse manger — la population de monarques de l'Ouest a suffisamment chuté pour que chaque pied compte.",
+        "L'asclépiade commune de l'Ouest, et les asclépiades sont tout ce qu'une chenille de monarque peut manger — la population de monarques de l'Ouest a suffisamment chuté pour que chaque pied compte.",
       "bumble-bees":
         "Ses lourds dômes de fleurs roses sont l'une des sources de nectar les plus riches du plein été pour les bourdons.",
     },
@@ -687,7 +687,7 @@ export const PNW: ProseTable = {
     careNote:
       "Assez robuste pour un bord de route, et elle se comporte comme telle — courant à la racine en une large plaque. Plantez-la là où elle peut le faire, ou passez la bêche autour chaque printemps. Laissez les tiges sur pied tout l'hiver : les abeilles nichent dans les creuses. Et l'accusation de rhume des foins est une erreur d'identité — le pollen de verge d'or est lourd et porté par les insectes ; l'ambroisie, qui fleurit au même moment, est la coupable.",
     givesNote:
-      "Parmi les plantes les plus précieuses de toute cette liste. Les verges d'or hébergent plus d'espèces de chenilles qu'aucun autre groupe de vivaces indigènes, et la floraison de fin d'été est la plus grande manne de nectar et de pollen de l'année pour les bourdons, les abeilles solitaires et les papillons migrateurs qui font leurs réserves. Sa graine porte les chardonnerets jusqu'en hiver.",
+      "Les verges d'or hébergent plus d'espèces de chenilles qu'aucun autre groupe de vivaces indigènes, et la floraison de fin d'été est la plus grande manne de nectar et de pollen de l'année pour les bourdons, les abeilles solitaires et les papillons migrateurs qui font leurs réserves. Sa graine porte les chardonnerets jusqu'en hiver.",
     propagationNote:
       "La voie facile est de déterrer une touffe au début du printemps et de la séparer en morceaux enracinés — elle se défait dans les mains. Par semis, semez les têtes cotonneuses à la surface d'un terreau humide à l'automne et laissez le pot dehors ; la graine est fine et a besoin de lumière, ne l'enterrez pas.",
     supportNotes: {
@@ -749,7 +749,7 @@ export const PNW: ProseTable = {
     careNote:
       "Une toute petite plante qui n'a besoin que d'une chose : un terrain ouvert, bas et non fertilisé où des voisins plus hauts ne peuvent pas se refermer sur elle — le bord maigre d'un sentier, une bande de prairie graveleuse, un coin de pelouse que vous cessez de nourrir. Elle traverse l'hiver et le printemps humides et se tait dans la sécheresse d'été, ce qui est le régime du versant ouest : ne l'arrosez donc pas et ne la paillez pas épais. Si vous la gardez dans l'herbe, retenez la tondeuse jusqu'en juillet pour que la graine puisse mûrir. Elle se plante toute seule : les capsules mûres projettent la graine à plus d'un mètre, et elle fait aussi, au ras du sol, des boutons autogames qui ne s'ouvrent jamais, si bien qu'une colonie s'épaissit même après un mauvais printemps.",
     givesNote:
-      "C'est l'atout maître de la région, et la liste ne l'avait pas. Chaque grand nacré d'ici — l'Argynnis hydaspe, l'A. zerene, l'A. cybele, et l'A. zerene hippolyta du littoral, inscrit sur la liste fédérale des espèces menacées — peut élever ses chenilles sur les violettes et sur absolument rien d'autre. Les femelles pondent en fin d'été, sur un sol sec, à côté de violettes déjà flétries ; les chenilles éclosent, ne mangent rien, passent tout l'hiver ainsi, et vont chercher des feuilles de violette au printemps suivant. Il ne suffit donc pas qu'une violette fleurisse une fois : il faut que la colonie soit encore là en avril. Plantez-en une nappe et vous faites la seule chose dont ces papillons ne peuvent pas se passer. Les fleurs elles-mêmes nourrissent tôt les petites abeilles solitaires, et les fourmis emportent la graine et la plantent pour vous.",
+      "Chaque grand nacré d'ici — l'Argynnis hydaspe, l'A. zerene, l'A. cybele, et l'A. zerene hippolyta du littoral, inscrit sur la liste fédérale des espèces menacées — peut élever ses chenilles sur les violettes et sur absolument rien d'autre. Les femelles pondent en fin d'été, sur un sol sec, à côté de violettes déjà flétries ; les chenilles éclosent, ne mangent rien, passent tout l'hiver ainsi, et vont chercher des feuilles de violette au printemps suivant. Il ne suffit donc pas qu'une violette fleurisse une fois : il faut que la colonie soit encore là en avril. Plantez-en une nappe et vous faites la seule chose dont ces papillons ne peuvent pas se passer. Les fleurs elles-mêmes nourrissent tôt les petites abeilles solitaires, et les fourmis emportent la graine et la plantent pour vous.",
     propagationNote:
       "Attrapez la graine avant que les capsules ne se vrillent et ne la projettent — elles mûrissent vite au début de l'été — puis semez-la en pot laissé dehors pour l'hiver, ou directement sur une terre nue ratissée à l'automne ; il lui faut un passage froid et humide avant de lever. Une touffe installée peut aussi être démêlée au début du printemps, chaque souche enracinée continuant comme un pied à part.",
     supportNotes: {
@@ -785,7 +785,7 @@ export const PNW: ProseTable = {
     givesNote:
       "De quoi nourrir les chenilles des hespéries et les satyres qui ne mangent que des graminées, et ses touffes sont là où ils passent l'hiver — une pelouse tondue ne leur laisse nulle part. Ses épis nourrissent bruants et juncos, et ses racines fibreuses profondes sont ce qui empêche vraiment une pente de s'en aller.",
     propagationNote:
-      "À peu près la graine la moins capricieuse de cette liste : égrenez les épis mûrs en été et semez-les directement sur une terre ratissée à l'automne — aucun froid, aucun nettoyage nécessaire. Les touffes installées se déterrent aussi et se séparent au début du printemps.",
+      "À peu près la graine la moins capricieuse de toutes : égrenez les épis mûrs en été et semez-les directement sur une terre ratissée à l'automne — aucun froid, aucun nettoyage nécessaire. Les touffes installées se déterrent aussi et se séparent au début du printemps.",
     supportNotes: {
       "grass-skippers":
         "Une graminée en touffe indigène est à la fois la nourriture des chenilles et l'abri d'hiver des hespéries et des satyres — une pelouse ne leur donne ni l'un ni l'autre.",
@@ -797,7 +797,7 @@ export const PNW: ProseTable = {
     careNote:
       "La plante que tout jardin de pluie et tout point bas détrempé du versant ouest attend. Elle se tient dans l'eau d'hiver des mois durant, puis tient bon à travers un août sans pluie, et elle reste verte toute l'année. Elle court à la racine en une large colonie : donnez-lui donc toute la zone humide plutôt qu'une touffe nette, et placez-la là où ses longues feuilles arquées — assez coupantes pour entailler un doigt qu'on ferait glisser dessus — ne barrent pas un passage. Peignez les feuilles mortes aux doigts ou au râteau en fin d'hiver ; c'est là tout l'entretien.",
     givesNote:
-      "Les laîches sont ce que mangent les petits papillons bruns — plusieurs hespéries et satyres ne grandissent que sur des laîches et des graminées, et ils hivernent au fond de la touffe, ce qu'un bord tondu ne leur donne jamais. Bruants chanteurs, troglodytes et parulines masquées nichent et se cachent dans les touffes sur pied, la sauvagine et les bruants prennent la graine, et sous tout cela son matelas racinaire est le meilleur filtre de cette liste : l'eau sort d'un peuplement de cette laîche plus propre et plus lente qu'elle n'y est entrée.",
+      "Les laîches sont ce que mangent les petits papillons bruns — plusieurs hespéries et satyres ne grandissent que sur des laîches et des graminées, et ils hivernent au fond de la touffe, ce qu'un bord tondu ne leur donne jamais. Bruants chanteurs, troglodytes et parulines masquées nichent et se cachent dans les touffes sur pied, la sauvagine et les bruants prennent la graine, et sous tout cela son matelas racinaire est le meilleur filtre de toutes les plantes d'ici : l'eau sort d'un peuplement de cette laîche plus propre et plus lente qu'elle n'y est entrée.",
     propagationNote:
       "La division est la voie fiable : soulevez une touffe au début du printemps, coupez-la en morceaux enracinés de la taille d'un poing à la bêche ou à un vieux couteau à pain, et replantez-les aussitôt dans la vase — ils ne doivent pas sécher entre l'arrachage et la plantation. Le semis marche aussi si vous égrenez les épis bruns mûrs en été et les semez en pot posé dans une soucoupe d'eau tout l'hiver.",
     supportNotes: {
@@ -833,7 +833,7 @@ export const PNW: ProseTable = {
     nativeNote:
       "La seule mûre véritablement indigène du versant ouest — rampant à travers les clairières, les lisières, les brûlis et les bords de route, de la Colombie-Britannique à la Californie.",
     careNote:
-      "Mieux vaut savoir de quelle ronce il s'agit, car presque toutes celles qu'on maudit ici sont l'autre. Celle-ci a des cannes grêles, rondes en section, pas plus épaisses qu'un lacet, des aiguillons droits et fins, et trois folioles ; la ronce d'Arménie a des cannes arquées grosses comme un pouce, à côtes, des épines crochues comme une griffe de chat, et cinq folioles sur les cannes principales. L'indigène court à plat sur le sol au lieu de s'entasser en muraille. Elle vagabonde tout de même — donnez-lui un talus, une ligne de clôture ou la lisière broussailleuse d'un fourré plutôt qu'un massif, coupez chaque hiver à la base les cannes qui ont fructifié, et relevez les pointes avant qu'elles ne s'enracinent là où vous n'en voulez pas.",
+      "Presque toutes les ronces qu'on maudit ici sont l'autre espèce. Celle-ci a des cannes grêles, rondes en section, pas plus épaisses qu'un lacet, des aiguillons droits et fins, et trois folioles ; la ronce d'Arménie a des cannes arquées grosses comme un pouce, à côtes, des épines crochues comme une griffe de chat, et cinq folioles sur les cannes principales. L'indigène court à plat sur le sol au lieu de s'entasser en muraille. Elle vagabonde tout de même — donnez-lui un talus, une ligne de clôture ou la lisière broussailleuse d'un fourré plutôt qu'un massif, coupez chaque hiver à la base les cannes qui ont fructifié, et relevez les pointes avant qu'elles ne s'enracinent là où vous n'en voulez pas.",
     givesNote:
       "Les ronces sont parmi les toutes premières plantes nourricières de chenilles de l'Ouest, et celle-ci est l'indigène : elle joue donc pleinement ce rôle, là où la ronce d'Arménie n'apporte presque rien. Ses fleurs blanches sont couvertes de bourdons et de petites abeilles solitaires au printemps. Puis les mûres — petites, sombres, pleines de pépins, et meilleures que tout ce qu'on peut acheter — pour les tohis, les grives, les geais, les renards et les coyotes, avec le fouillis bas et épineux qui donne aux oiseaux nichant au sol et aux lapins un endroit où se cacher.",
     propagationNote:
@@ -849,7 +849,7 @@ export const PNW: ProseTable = {
     nativeNote:
       "Grimpante indigène des bancs de rivière, des fourrés riverains et des vieilles lignes de clôture du versant ouest, et la seule clématite indigène de la région.",
     careNote:
-      "Une grande grimpante forte et rapide — elle ensevelira un petit arbuste : donnez-lui une clôture, une tonnelle, un arbre mort ou un talus qu'elle ne peut pas tuer, et taillez-la sévèrement en fin d'hiver. Elle grimpe en vrillant ses pétioles autour des choses plutôt qu'en collant aux murs. Les fleurs mâles et femelles sont sur des pieds séparés : seuls certains font les plumets de graines soyeux. Sa sève irrite la peau et la bouche, et la plante est toxique à l'ingestion : à tenir à l'écart d'un animal au pâturage. Une chose de plus à vérifier à l'achat : la clématite des haies (Clematis vitalba), introduite, est un envahisseur sérieux ici et se ressemble — les folioles de l'indigène sont grossièrement dentées ou trilobées, celles de l'envahisseur surtout à bord lisse ou à peine dentées, et les vieilles tiges de l'envahisseur deviennent cordées et grosses comme un poignet.",
+      "Une grande grimpante forte et rapide — elle ensevelira un petit arbuste : donnez-lui une clôture, une tonnelle, un arbre mort ou un talus qu'elle ne peut pas tuer, et taillez-la sévèrement en fin d'hiver. Elle grimpe en vrillant ses pétioles autour des choses plutôt qu'en collant aux murs. Les fleurs mâles et femelles sont sur des pieds séparés : seuls certains font les plumets de graines soyeux. Sa sève irrite la peau et la bouche, et la plante est toxique à l'ingestion : à tenir à l'écart d'un animal au pâturage. Une chose de plus à vérifier à l'achat : la clématite des haies (Clematis vitalba), introduite, est très envahissante ici et lui ressemble — les folioles de l'indigène sont grossièrement dentées ou trilobées, celles de l'introduite surtout à bord lisse ou à peine dentées, et les vieilles tiges de l'introduite deviennent cordées et grosses comme un poignet.",
     givesNote:
       "Sa valeur, c'est la date. Ses fleurs crème écumeuses s'ouvrent en juillet et continuent jusqu'en septembre, dans la longue période chaude qui suit la fin des arbustes et précède le départ des asters — et les petites abeilles indigènes, les guêpes, les syrphes et les coléoptères s'y jettent. Ensuite elle s'argente de plumets de graines plumeux, que colibris, mésanges buissonnières et parulines démontent pour garnir leurs nids, et le fouillis lui-même devient un couvert de nidification épais dans une haie.",
     propagationNote:
@@ -867,7 +867,7 @@ export const PNW: ProseTable = {
     givesNote:
       "Des fleurs blanches printanières pour les abeilles, de petites fraises sucrées pour les oiseaux et les gens, et un couvre-sol quasi persistant qui héberge de nombreuses chenilles et tient un sol sableux.",
     propagationNote:
-      "La plante la plus facile de toute cette liste : il émet des stolons qui enracinent de petits plants en voyageant. Coupez simplement un plant enraciné et mettez-le en pot, ou plantez-le là où vous en voulez plus.",
+      "La multiplication la plus facile qui soit : il émet des stolons qui enracinent de petits plants en voyageant. Coupez simplement un plant enraciné et mettez-le en pot, ou plantez-le là où vous en voulez plus.",
     supportNotes: {
       "mason-bees":
         "Des fleurs blanches printanières au ras du sol, s'ouvrant avec les premières abeilles solitaires et faciles à travailler pour une petite.",
@@ -919,7 +919,7 @@ export const PNW: ProseTable = {
     givesNote:
       "Petit, et porteur d'une histoire hors de proportion avec lui : les chenilles du Callophrys mossii, un petit papillon gris-brun qui vole au tout début du printemps, mangent des orpins indigènes et à peu près rien d'autre, et les apollons des pentes plus hautes l'utilisent aussi. Au cœur de l'été, ses fleurs jaunes étoilées sont un bar à nectar pour les petites abeilles solitaires, sur un terrain si pauvre que rien d'autre n'offre quoi que ce soit. Il fait aussi un vrai travail en tenant une terre maigre sur une paroi rocheuse nue où toute plante à racines plus profondes glisserait simplement.",
     propagationNote:
-      "La plante la plus facile à copier de toute cette liste : cassez une rosette ou un court morceau de tige, posez-le sur du gravier humide, et il s'enracine en quelques semaines — sans recouvrement, sans hormone, sans façon. Diviser un tapis au printemps marche pareil. La graine est fine comme de la poussière et a besoin de lumière : pressez-la à la surface d'un mélange graveleux et ne l'enterrez jamais.",
+      "L'une des plantes les plus faciles à multiplier : cassez une rosette ou un court morceau de tige, posez-le sur du gravier humide, et il s'enracine en quelques semaines — sans recouvrement, sans hormone, sans façon. Diviser un tapis au printemps marche pareil. La graine est fine comme de la poussière et a besoin de lumière : pressez-la à la surface d'un mélange graveleux et ne l'enterrez jamais.",
     supportNotes: {
       "mosses-elfin":
         "Les chenilles du Callophrys mossii mangent des orpins indigènes et rien d'autre, et elles mangent les fleurs et les graines en formation plutôt que les feuilles charnues. C'est un papillon de rocher — un mur, un affleurement, un toit de gravier — et c'est donc l'une des rares plantes qui transforment un terrain franchement hostile en habitat.",

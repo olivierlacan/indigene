@@ -49,7 +49,7 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Eumaeus atala": {
     blurb:
-      "Un petit bijou — noir de velours moucheté de bleu irisé, avec un ventre écarlate — qu'on a cru éteint en Floride. Il est revenu avec sa seule plante hôte, la Zamia integrifolia. Planter cette Zamia, c'est reconstruire ce papillon au sens le plus littéral.",
+      "Un petit bijou — noir de velours moucheté de bleu irisé, avec un ventre écarlate — qu'on a cru éteint en Floride. Il est revenu avec sa seule plante hôte indigène, la Zamia integrifolia. Planter cette Zamia, c'est reconstruire ce papillon au sens le plus littéral.",
   },
   "Anartia jatrophae": {
     blurb:
@@ -93,7 +93,7 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "#grass-skippers": {
     blurb:
-      "Les petites hespéries orange qui filent à travers une prairie, et les satyres et tristans brun tendre qui y volent mollement. Leurs chenilles ne mangent rien que de l'herbe, et elles passent l'hiver blotties au fond d'une graminée indigène en touffe — c'est pourquoi une pelouse tondue n'en a aucun.",
+      "Les petites hespéries orange qui filent à travers une prairie, et les satyres et tristans brun tendre qui y volent mollement. Leurs chenilles mangent des graminées et des laîches, et elles passent l'hiver blotties au fond d'une graminée indigène en touffe.",
   },
   "Argynnis spp.": {
     blurb:
@@ -165,7 +165,7 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Cupido minimus": {
     blurb:
-      "Le plus petit papillon d'Europe — brun suie, de la taille d'un ongle, saupoudré de bleu. Ses chenilles vivent à l'intérieur des capitules d'anthyllide vulnéraire, en mangeant les graines en formation, et elles ne peuvent utiliser aucune autre plante.",
+      "L'un des plus petits papillons d'Europe — brun suie, de la taille d'un ongle, saupoudré de bleu. Ses chenilles vivent à l'intérieur des capitules d'anthyllide vulnéraire, en mangeant les graines en formation, et en Grande-Bretagne et en Irlande elles n'utilisent aucune autre plante.",
   },
   "Lycaena phlaeas": {
     blurb:
@@ -177,7 +177,7 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Callophrys rubi": {
     blurb:
-      "Le seul papillon vert d'Europe — et il ne vous montre jamais le dessus de ses ailes. Il se repose ailes fermées, et le revers vert feuille vif le fait disparaître contre un arbuste à l'instant où il se pose. Cherchez sur une lande ensoleillée en avril.",
+      "Le papillon vert le plus commun d'Europe — et il ne vous montre jamais le dessus de ses ailes. Il se repose ailes fermées, et le revers vert feuille vif le fait disparaître contre un arbuste à l'instant où il se pose. Cherchez sur une lande ensoleillée en avril.",
   },
   "Plebejus argus": {
     blurb:
@@ -205,7 +205,7 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Sphinx ligustri": {
     blurb:
-      "Le plus grand papillon de nuit de France — barré de rose et de noir, grand comme une paume — qui vole au crépuscule et fait du surplace devant les fleurs parfumées. Sa chenille est tout aussi saisissante : énorme, vert vif, rayée de lilas, avec une corne au bout de la queue, nourrie de troène.",
+      "L'un des plus grands sphinx de France — barré de rose et de noir, grand comme une paume — qui vole au crépuscule et fait du surplace devant les fleurs parfumées. Sa chenille est tout aussi saisissante : énorme, vert vif, rayée de lilas, avec une corne au bout de la queue, nourrie de troène.",
   },
   "Zygaena filipendulae": {
     blurb:
@@ -269,7 +269,7 @@ export const WILDLIFE_FR: ProseTable = {
   },
   "Psaltriparus minimus": {
     blurb:
-      "Un bout d'oiseau gris, à peine plus lourd que deux trombones, qui circule en bandes bavardes d'une vingtaine et retourne un arbuste de l'intérieur. Son nid est une chaussette suspendue de lichen et de soie d'araignée, longue de trente centimètres, que le couple met un mois à construire.",
+      "Un bout d'oiseau gris, à peu près aussi lourd que cinq trombones, qui circule en bandes bavardes d'une vingtaine et retourne un arbuste de l'intérieur. Son nid est une chaussette suspendue de lichen et de soie d'araignée, longue de trente centimètres, que le couple met un mois à construire.",
   },
   "Spinus psaltria": {
     blurb:

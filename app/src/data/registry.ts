@@ -2873,13 +2873,13 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "cistus-albidus"
     },
     "commonNames": [
-      "Grey-leaved Cistus",
+      "Gray-leaved Cistus",
       "Ciste cotonneux"
     ],
     "aliases": [
       "ciste cotonneux",
       "cistus albidus",
-      "grey-leaved cistus"
+      "gray-leaved cistus"
     ],
     "cultivarOf": null,
     "regions": [
@@ -3053,13 +3053,13 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "clematis-vitalba"
     },
     "commonNames": [
-      "Traveller's Joy",
+      "Traveler's Joy",
       "Clématite des haies"
     ],
     "aliases": [
       "clematis vitalba",
       "clématite des haies",
-      "traveller's joy"
+      "traveler's joy"
     ],
     "cultivarOf": null,
     "regions": [
@@ -6469,10 +6469,10 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Spreading Rush",
-      "Grey Rush"
+      "Gray Rush"
     ],
     "aliases": [
-      "grey rush",
+      "gray rush",
       "juncus patens",
       "spreading rush"
     ],
@@ -11179,11 +11179,11 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "salix-cinerea"
     },
     "commonNames": [
-      "Grey Willow",
+      "Gray Willow",
       "Sally"
     ],
     "aliases": [
-      "grey willow",
+      "gray willow",
       "salix cinerea",
       "sally"
     ],

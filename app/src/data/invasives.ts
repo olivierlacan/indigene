@@ -340,7 +340,7 @@ export const INVASIVES: Invasive[] = [
     latin: "Agave americana",
     form: "shrub",
     marks: [
-      { part: "leaf", feature: "Leaves", text: "Huge, fleshy and blue-grey, tipped with a spine and edged with hooks." },
+      { part: "leaf", feature: "Leaves", text: "Huge, fleshy and blue-gray, tipped with a spine and edged with hooks." },
       { part: "flower", feature: "Flower", text: "One mast taller than a house, after many years — then the plant dies." },
       { part: "shape", feature: "Offsets", text: "Ringed by young rosettes rising from its roots." },
     ],
@@ -362,7 +362,7 @@ export const INVASIVES: Invasive[] = [
     marks: [
       { part: "flower", feature: "Flowers", text: "Long cones of purple or white, honey-scented flowers." },
       { part: "leaf", feature: "Leaves", text: "Long and pointed, felted white underneath." },
-      { part: "where", feature: "Where", text: "Old walls, railway ballast, gravel and riverbanks." },
+      { part: "where", feature: "Where", text: "Old walls, railroad ballast, gravel and riverbanks." },
     ],
     removal: {
       steps: [
@@ -396,7 +396,7 @@ export const INVASIVES: Invasive[] = [
   },
   {
     id: "rhododendron-ponticum",
-    common: "Rhododendron",
+    common: "Pontic rhododendron",
     latin: "Rhododendron ponticum",
     form: "shrub",
     marks: [
@@ -447,7 +447,7 @@ export const INVASIVES: Invasive[] = [
     ],
     removal: {
       steps: [
-        { method: "avoid", text: "Don't dig, strim or mow it: a piece of root the size of a fingernail grows a new plant." },
+        { method: "avoid", text: "Don't dig, strim or mow it: a small piece of root grows a new plant." },
         { method: "cut", text: "Cut or pull every stem to the ground every few weeks through the growing season, for years, to starve the roots." },
         { method: "pro", text: "A big stand is a job for a professional." },
       ],
@@ -483,7 +483,7 @@ export const INVASIVES: Invasive[] = [
     marks: [
       { part: "flower", feature: "Flower heads", text: "Pink-purple, like a thistle's, but with no prickles." },
       { part: "flower", feature: "Bracts", text: "The scales under each flower are black-tipped — the “spots”." },
-      { part: "leaf", feature: "Leaves", text: "Grey-green, cut into narrow lobes." },
+      { part: "leaf", feature: "Leaves", text: "Gray-green, cut into narrow lobes." },
     ],
     removal: {
       steps: [
@@ -502,7 +502,7 @@ export const INVASIVES: Invasive[] = [
     form: "perennial",
     marks: [
       { part: "flower", feature: "Flower heads", text: "Yellow, ringed by long stiff spines like a star." },
-      { part: "stem", feature: "Stems", text: "Grey-green, cottony, with thin wings along them." },
+      { part: "stem", feature: "Stems", text: "Gray-green, cottony, with thin wings along them." },
       { part: "when", feature: "When", text: "Flowering in dry grassland in high summer, when little else does." },
     ],
     removal: {
@@ -603,7 +603,7 @@ export const INVASIVES: Invasive[] = [
     marks: [
       { part: "flower", feature: "Flowers", text: "Yellow daisies from summer until the frosts." },
       { part: "leaf", feature: "Leaves", text: "Narrow, almost like grass blades." },
-      { part: "where", feature: "Where", text: "Roadsides, railways, vineyards and sunny waste ground." },
+      { part: "where", feature: "Where", text: "Roadsides, railroads, vineyards and sunny waste ground." },
     ],
     removal: {
       steps: [
@@ -663,7 +663,7 @@ export const INVASIVES: Invasive[] = [
     form: "grass",
     marks: [
       { part: "stem", feature: "Stems", text: "Thick canes like bamboo, far taller than a person." },
-      { part: "leaf", feature: "Leaves", text: "Broad, grey-green blades hugging the cane all the way up." },
+      { part: "leaf", feature: "Leaves", text: "Broad, gray-green blades hugging the cane all the way up." },
       { part: "flower", feature: "Plumes", text: "Big feathery plumes in late summer." },
     ],
     removal: {
@@ -699,7 +699,7 @@ export const INVASIVES: Invasive[] = [
   // ---------------- Vines ----------------
   {
     id: "celastrus-orbiculatus",
-    common: "Oriental bittersweet",
+    common: "Asian bittersweet",
     latin: "Celastrus orbiculatus",
     form: "vine",
     marks: [
@@ -780,7 +780,7 @@ export const INVASIVES: Invasive[] = [
   // ---------------- Groundcovers ----------------
   {
     id: "carpobrotus-edulis",
-    common: "Ice plant (Hottentot fig)",
+    common: "Highway ice plant",
     latin: "Carpobrotus edulis",
     form: "groundcover",
     marks: [

@@ -20,7 +20,7 @@ export const MID_ATLANTIC: ProseTable = {
     careNote:
       "Plantez-le petit et laissez-le tranquille — sa racine pivotante le rend difficile à transplanter mais très autonome une fois installé.",
     givesNote:
-      "L'arbre le plus précieux qui soit ici pour la faune : des centaines d'espèces de chenilles, des glands pour des dizaines d'oiseaux et de mammifères, et des générations d'ombre.",
+      "Les chênes hébergent plus d'espèces de chenilles qu'aucun autre genre d'arbre ici — des centaines — plus des glands pour des dizaines d'oiseaux et de mammifères, et des générations d'ombre.",
     propagationNote:
       "Ramassez les glands bien pleins à leur chute en automne et faites-les flotter dans l'eau — jetez ceux qui remontent, ils sont vides ou véreux. Les glands de chêne blanc germent dès l'automne : ne les laissez donc pas sécher, et plantez chacun à deux ou trois centimètres de profondeur là où vous voulez l'arbre, car la racine pivotante supporte mal d'être déplacée.",
     supportNotes: {
@@ -103,7 +103,7 @@ export const MID_ATLANTIC: ProseTable = {
       "cecropia-moth":
         "Un hôte classique des chenilles de l'Hyalophora cecropia et des autres grands bombyx de la soie.",
       viceroy:
-        "Les cerisiers font partie du même ensemble que les saules et les peupliers que le vice-roi utilise aussi comme plante nourricière.",
+        "Outre les saules et les peupliers, les chenilles du vice-roi utilisent parfois les cerisiers.",
       "berry-songbirds":
         "Ses cerises d'été sont dévorées par des dizaines de passereaux, des grives aux moqueurs chats.",
     },
@@ -209,7 +209,7 @@ export const MID_ATLANTIC: ProseTable = {
       "La voie fiable est la bouture : coupez au début de l'été des extrémités de pousses vertes tendres, ou un peu plus tard des pousses légèrement plus fermes, et faites-les raciner dans un mélange tourbeux et acide tenu humide. Le semis marche aussi — écrasez des baies mûres, rincez la pulpe, et donnez à la graine un hiver froid et humide — mais les semis exigent un sol acide et sont lents à atteindre la taille de récolte.",
     supportNotes: {
       "mason-bees":
-        "Les fleurs de myrtillier se pollinisent par vibration ; les osmies et les andrènes indigènes (et les bourdons) en sont les meilleurs pollinisateurs.",
+        "Les fleurs de myrtillier se pollinisent par vibration, si bien que les bourdons en sont les meilleurs pollinisateurs ; les osmies et les andrènes indigènes les butinent aussi.",
       "berry-songbirds":
         "Ses baies d'été nourrissent moqueurs chats, grives et bien d'autres oiseaux — si vous leur en laissez.",
     },
@@ -346,7 +346,7 @@ export const MID_ATLANTIC: ProseTable = {
     careNote:
       "Elle adore une terre pauvre, sèche et sableuse, et craint l'excès d'eau. Lente à apparaître au printemps — ne la déterrez pas en croyant qu'elle est morte. Sa sève est toxique si on l'avale.",
     givesNote:
-      "Une plante nourricière des chenilles du monarque et un aimant pour tous les papillons des alentours, sur un pied net et peu envahissant.",
+      "Une plante nourricière des chenilles du monarque, visitée par de nombreux papillons, sur un pied net et peu envahissant.",
     propagationNote:
       "Récoltez les graines brunes et plates à l'automne, à l'ouverture des gousses, avant que la soie ne les emporte. Il leur faut environ un mois de froid humide — semez dehors à l'automne, ou gardez-les trente jours au réfrigérateur dans un essuie-tout humide avant un semis de printemps. N'essayez pas de la déterrer et de la diviser : sa racine pivotante profonde et cassante supporte mal d'être dérangée, le semis est donc la seule bonne voie.",
     supportNotes: {
@@ -448,7 +448,7 @@ export const MID_ATLANTIC: ProseTable = {
       "La plus facile de toutes est la division : cette monarde s'étend par des racines superficielles, vous pouvez donc soulever une touffe au printemps et la séparer en plusieurs morceaux enracinés. Par semis, secouez la graine des têtes sèches et donnez-lui un mois environ de froid humide, ou semez simplement dehors à l'automne.",
     supportNotes: {
       "ruby-throated-hummingbird":
-        "Ses fleurs tubulaires lavande sont l'une des préférées des colibris.",
+        "Ses fleurs tubulaires lavande sont l'une des préférées des abeilles et des papillons ; les colibris y passent de temps en temps.",
       "hummingbird-clearwing":
         "Une fleur à nectar de premier ordre pour le sphinx Hemaris thysbe.",
       "bumble-bees":
@@ -475,9 +475,9 @@ export const MID_ATLANTIC: ProseTable = {
   },
   "Solidago rugosa": {
     nativeNote:
-      "Verge d'or indigène des prés de l'Est ; du type en touffe, peu envahissant.",
+      "Verge d'or indigène des prés de l'Est ; elle s'étend par ses racines en une plaque.",
     careNote:
-      "Cette verge d'or en touffe reste en place, contrairement à celle des bords de route qui court. Et non — la verge d'or ne provoque pas le rhume des foins (c'est l'ambroisie).",
+      "La plante sauvage s'étend par ses racines en une plaque ; le cultivar 'Fireworks' est plus sage. Et non — la verge d'or ne provoque pas le rhume des foins (c'est l'ambroisie).",
     givesNote:
       "Une clé de voûte qui héberge plus de cent chenilles et couvre l'automne de pollen et de nectar au moment où les pollinisateurs en ont le plus besoin.",
     propagationNote:
@@ -568,7 +568,7 @@ export const MID_ATLANTIC: ProseTable = {
     careNote:
       "Lente les deux premières années, puis une racine pivotante profonde en fait pendant des décennies un point d'ancrage de la taille d'un arbuste, résistant à la sécheresse. Plantez-la là où elle restera.",
     givesNote:
-      "Des épis de fleurs bleues en pois pour les bourdons, elle fixe son propre azote, et elle héberge plusieurs hespéries.",
+      "Des épis de fleurs bleues en pois pour les bourdons, elle fixe son propre azote, et elle héberge l'hespérie Erynnis baptisiae, des coliades et le Callophrys irus.",
     propagationNote:
       "Les graines dures et rondes lèvent bien mieux si vous entaillez ou sablez d'abord le tégument, ou si vous les faites tremper une nuit dans de l'eau à peine bouillie, puis leur donnez un hiver froid et humide. Comme elle fait une racine pivotante profonde, elle n'aime pas être déterrée ni divisée : élevez-la de semis et plantez-la là où elle restera des années.",
     supportNotes: {
@@ -582,7 +582,7 @@ export const MID_ATLANTIC: ProseTable = {
     careNote:
       "Il lui faut une humidité constante — elle s'effondrera dans un emplacement sec. De courte vie mais elle se ressème en terrain frais.",
     givesNote:
-      "Des épis rouges éclatants auxquels les colibris ne résistent pas ; la plante par excellence d'un coin humide et mi-ombragé.",
+      "Des épis rouges éclatants où viennent se nourrir les colibris ; un bon choix pour un coin humide et mi-ombragé.",
     propagationNote:
       "La graine est presque fine comme de la poussière : répandez-la à la surface d'une terre humide et ne la couvrez pas, puisqu'il lui faut de la lumière pour germer. Elle se ressème volontiers partout où le sol reste frais, et les tiges qui s'affalent et touchent une terre humide s'enracinent : vous pouvez donc aussi soulever et déplacer ces morceaux enracinés.",
     supportNotes: {
@@ -638,7 +638,7 @@ export const MID_ATLANTIC: ProseTable = {
   "Panicum virgatum": {
     supportNotes: {
       "grass-skippers":
-        "Le panic érigé élève les hespéries du Delaware et à ailes larges — de petits papillons orange dont la chenille vit dans un tube de limbe cousu de soie.",
+        "Le panic érigé élève l'hespérie du Delaware — un petit papillon orange dont la chenille vit dans un tube de limbe cousu de soie.",
     },
     nativeNote:
       "Graminée de prairie indigène de l'est et du centre des États-Unis.",

@@ -136,6 +136,7 @@ export function silhouetteFor(form: string, size = 40): SVGSVGElement {
   svg.setAttribute("viewBox", "0 0 48 48");
   svg.setAttribute("width", String(size));
   svg.setAttribute("height", String(size));
+  svg.setAttribute("aria-hidden", "true"); // a stand-in drawing; the name beside it says what it is
   const green = getComputedStyle(document.documentElement).getPropertyValue("--brand").trim() || "#175e33";
   for (const mark of FORM_GLYPHS[form] ?? FORM_GLYPHS.perennial) {
     const path = document.createElementNS(ns, "path");

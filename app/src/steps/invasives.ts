@@ -33,6 +33,7 @@ import { fetchRegionObservations, isBusy, resolveTaxon, boundsCenter, type Bound
 import { loadSightings, regionCacheKey } from "../lib/nearby";
 import { invasiveMarks, invasiveRemoval, invasivesUntranslated } from "../lib/prose";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
+import { nameChoiceNote } from "../lib/name-choice";
 import { t, fmtNumber, fmtDate } from "../lib/i18n";
 import { wantedList } from "../components/most-wanted";
 import { heroFigure } from "../components/hero-figure";
@@ -141,6 +142,7 @@ export function renderInvasive(main: HTMLElement, param?: string): void {
       // The profile card has no padding of its own (`.plant`), so the blocks
       // that aren't bare paragraphs sit in one body that carries the gutter.
       el("div", { class: "wanted-profile-body" }, [
+        nameChoiceNote(inv.latin),
         el("h3", { style: "margin:1rem 0 0" }, t("wanted.howToSpot")),
         el("dl", { class: "wanted-marks" }, invasiveMarks(inv).flatMap((m) => [
           // The part's icon, as each removal step wears its method's: the eye
@@ -205,11 +207,13 @@ function removalSection(inv: Invasive): HTMLElement {
     el("h3", { style: "margin:1rem 0 0.3rem" }, t("wanted.howToRemove")),
     // Each step leads with its method's icon, the way a propagation technique
     // does: a scan down the list reads "pull, ring the bark, again" before a
-    // word of it. The icon is decorative; its name is only a tooltip.
+    // word of it. The icon is the method's name ("Ring the bark"), which the
+    // step's own words don't always say, so a screen reader hears it too.
     el("ol", { class: "wanted-steps" }, steps.map((step) => el("li", {}, [
       el("span", {
         class: "step-icon",
-        "aria-hidden": "true",
+        role: "img",
+        "aria-label": t(`wanted.method.${step.method}` as const),
         title: t(`wanted.method.${step.method}` as const),
       }, REMOVAL_ICONS[step.method]),
       el("span", {}, step.text),

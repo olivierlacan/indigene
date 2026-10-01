@@ -33,6 +33,13 @@ subtitle on the What's new page.
 
 ### Added
 
+- Wildlife: share a group page, like all the butterflies, and the link now
+  previews with its own picture and counts instead of the plain Indigene
+  card. https://indigene.app/wildlife/butterflies
+- Internal: `gen-wildlife-cards.mjs` draws one card per group page (kind glyph,
+  mapped count, regions, distinct native and host plants) and `prerender.mjs`
+  points the five group pages at them; the `/native` page card gains a source
+  count, read from `steps/native.ts`.
 - Plants: how sure we are of a plant's figures is now a three-bar meter
   instead of a paragraph. Tap it for
   [what each level means](https://indigene.app/confidence).

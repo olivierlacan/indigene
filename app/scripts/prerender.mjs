@@ -493,8 +493,9 @@ async function collectPages(load) {
   // Each animal carries its own card now (`scripts/gen-wildlife-cards.mjs`): its
   // emoji, its name, and its reach. The alt text says what the picture shows
   // rather than repeating the title, which reaches a screen reader through
-  // `og:title` either way. A group ("all the butterflies") still shows the
-  // site-wide card — a drawing of one animal would be a lie about the rest.
+  // `og:title` either way. A group ("all the butterflies") has a card too, drawn
+  // by the same script: the kind glyph (which never was one particular animal)
+  // and the group's own counts.
   for (const w of WILDLIFE) {
     add(`wildlife/${w.id}`, fill(en["wildlife.docTitle"], { animal: w.common }), w.blurb, {
       image: wildlifeCard(w.id),
@@ -590,7 +591,11 @@ async function collectPages(load) {
     add(
       `wildlife/${KIND_SLUGS[kind]}`,
       fill(en["wildlife.groupDocTitle"], { group: en[`wildlifeKind.${kind}.title`] }),
-      en[`wildlifeKind.${kind}.blurb`]
+      en[`wildlifeKind.${kind}.blurb`],
+      {
+        image: wildlifeCard(KIND_SLUGS[kind]),
+        imageAlt: `${en[`wildlifeKind.${kind}.title`]} — how many are mapped, the regions they live in, and the native plants that support them`,
+      }
     );
   }
 

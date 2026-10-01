@@ -263,7 +263,7 @@ function cardHtml({ name, latin, glyph, kind, facts }) {
   const chips = facts
     .map(
       (f) => `<li>
-        ${iconMarkup(f.icon, 62)}
+        ${f.svg ?? iconMarkup(f.icon, 62)}
         <span class="ftext"><b>${esc(f.value)}</b><i>${esc(f.label)}</i></span>
       </li>`
     )
@@ -343,10 +343,16 @@ function cardHtml({ name, latin, glyph, kind, facts }) {
 const loader = await openLoader();
 let animals;
 try {
-  const [{ WILDLIFE }, { plantsForWildlife, regionsForWildlife }, { wildlifeGlyphMarkup, glyphKeyFor }] = await Promise.all([
+  const [
+    { WILDLIFE },
+    { plantsForWildlife, regionsForWildlife, wildlifeIndex, KIND_ORDER, KIND_SLUGS },
+    { wildlifeGlyphMarkup, glyphKeyFor },
+    { en },
+  ] = await Promise.all([
     loader.load("/src/data/wildlife.ts"),
     loader.load("/src/lib/wildlife.ts"),
     loader.load("/src/components/wildlife-glyphs.ts"),
+    loader.load("/src/locales/en.ts"),
   ]);
   // The same counts the animal's own page shows: ties across regions, so a plant
   // native to two lists is counted on each — exactly what the page's region
@@ -370,6 +376,48 @@ try {
         seeds: count("seeds"),
         shelter: count("shelter"),
       }),
+    });
+  }
+
+  // One card per group page ("…/wildlife/butterflies"). These used to share the
+  // site-wide card, on the grounds that a drawing of one animal would be a lie
+  // about the rest — but the drawing on these cards was never one animal: it is
+  // the *kind* glyph, the same silhouette the app shows for every butterfly. On
+  // a group card that glyph is exactly what the page is about.
+  //
+  // The facts are the group's, counted the way its page counts them: how many
+  // animals are mapped (the number the page's lede prints, from the same
+  // `wildlifeIndex()`), how many regions they live in, and how many *distinct*
+  // native plants support them — distinct, because one oak feeding forty moths
+  // is one plant, and a summed tie count would read as forty. The first fact
+  // wears the group's own glyph rather than a stock icon.
+  for (const kind of KIND_ORDER) {
+    const slug = KIND_SLUGS[kind];
+    if (animals.some((a) => a.slug === slug)) {
+      throw new Error(`gen-wildlife-cards: group slug "${slug}" collides with an animal's card`);
+    }
+    const rows = wildlifeIndex().filter((r) => r.wildlife.kind === kind);
+    const regions = new Set(rows.flatMap((r) => r.regionIds));
+    const plants = new Set();
+    const hosts = new Set();
+    for (const r of rows) {
+      for (const s of await plantsForWildlife(r.wildlife.id)) {
+        plants.add(s.plant.latin);
+        if (s.link.support === "host") hosts.add(s.plant.latin);
+      }
+    }
+    const glyphKey = glyphKeyFor(kind);
+    const facts = [
+      { svg: wildlifeGlyphMarkup(glyphKey, 62, BRAND), value: String(rows.length), label: "mapped" },
+      ...factsFor({ regions: regions.size, plants: plants.size, host: hosts.size }),
+    ].slice(0, 4);
+    animals.push({
+      slug,
+      name: en[`wildlifeKind.${kind}.title`],
+      latin: "",
+      glyph: wildlifeGlyphMarkup(glyphKey, 240, BRAND),
+      kind: "",
+      facts,
     });
   }
 } finally {

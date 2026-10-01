@@ -1777,6 +1777,7 @@ export const fr: Dict = {
   "privacy.lede":
     "Indigene est conçu pour être sûr et respectueux envers toutes les personnes qui l'utilisent — les enfants compris. Voici tout, en mots simples : ce que nous demandons, ce que nous ne faisons jamais, et où va vraiment ce que vous partagez.",
   "privacy.shortVersion": "En bref. ",
+  "doc.contents": "Sur cette page",
   "privacy.short1": "Pas de compte, pas d'inscription, pas de mot de passe — rien qui vous identifie.",
   "privacy.short2":
     "Pas de publicité, et rien vous concernant n'est vendu ni partagé. Nous comptons combien de fois chaque page est ouverte — c'est tout, et cela ne permet pas de vous distinguer de quelqu'un d'autre.",

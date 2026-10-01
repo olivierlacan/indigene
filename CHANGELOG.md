@@ -110,6 +110,18 @@ subtitle on the What's new page.
 - Sightings from iNaturalist now say what makes them trustworthy: at least two
   people agreed on what the photo shows. "Research-grade" and "verified" are
   gone.
+- Regions: on a wider screen, a region's map sits beside its name and
+  figures instead of alone under them, so its plants start a screenful
+  sooner. https://indigene.app/regions/mid-atlantic
+- On a laptop, the home page puts the film beside the pitch, and Settings shows
+  its cards two abreast. About, Privacy & safety and Where our numbers come
+  from list their sections beside the text. https://indigene.app/privacy
+- The guide and What's new use a laptop's width too: guide topics two abreast,
+  and each release's notes beside its name and picture.
+  https://indigene.app/release-notes/
+- Internal: `main.ts` adds `home` and `doc` layouts (62rem past 64rem);
+  `components/doc-contents.ts` builds the contents list. Phone captures at
+  390px are pixel-identical before and after on all nine pages.
 - Matches: the buttons on a saved spot say what they do. "Open" is now "Plant
   more", and the link to what's in the ground reads "Already planted".
   https://indigene.app/#/saved

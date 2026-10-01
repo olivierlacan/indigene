@@ -22,6 +22,7 @@
 // production is worse than a page that doesn't raise the subject yet.
 // ─────────────────────────────────────────────────────────────────────────────
 import { el, clear } from "../ui";
+import { withContents } from "../components/doc-contents";
 import { navigate } from "../state";
 import { ISSUES_URL } from "../lib/plain";
 import { t, tx } from "../lib/i18n";
@@ -46,7 +47,7 @@ export function renderAbout(main: HTMLElement): void {
   document.title = t("about.docTitle");
 
   main.append(
-    el("article", { class: "privacy-page" }, [
+    withContents(el("article", { class: "privacy-page" }, [
       el("h2", { class: "step-title" }, t("about.title")),
       el("p", { class: "step-lede" }, t("about.lede")),
 
@@ -96,6 +97,6 @@ export function renderAbout(main: HTMLElement): void {
         el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("privacy.home")),
         el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("privacy.findPlants")),
       ]),
-    ]),
+    ]), "about"),
   );
 }

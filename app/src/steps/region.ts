@@ -88,36 +88,34 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
   }).filter((g): g is HTMLElement => g !== null);
 
   main.append(
-    // The flags lead the name, as on the Regions index cards.
-    el("h2", { class: "step-title" }, [flagRow(region.meta.countries), regionName(region.meta)]),
-    // The place in the sentence, the hardiness range as its own badge beside
-    // it. This is where the zone belongs: the reader has picked their region
-    // and is now asking what grows in it. The Explore cards, where they were
-    // still choosing a place, name the place only.
-    regionRefLine(region.meta, "region-ref"),
-    el("p", { class: "step-lede" },
-      t("region.lede", { reference: regionReference(region.meta) })),
-    // The stats, the caveat and the map are one block: three answers to "what
-    // is this region and does it include me?", asked before the roster. They
-    // stack on a phone in that order. On a wide screen they'd otherwise run
-    // down the page one full-width row at a time, with the map — a small
-    // diagram — stretched across a laptop and pushing the plants out of sight,
-    // so past 52rem this becomes two columns and the map sits beside the stats
-    // rather than under them.
-    el("div", { class: "region-head" }, [
-      el("div", { class: "region-head-main" }, [
-        regionStatGrid(region, plants),
-        el("p", { class: "region-head-note" }, regionNote(region.meta)),
-      ]),
+    // Everything above the roster is one block — the name, the stats, the map
+    // and the controls that sort the list. It stacks on a phone; on a wider
+    // screen the map takes a column of its own down the right and the rest
+    // runs beside it, so the map no longer sits alone with the window empty
+    // beside it (see `.region-top` in styles.css).
+    el("div", { class: "region-top" }, [
+      // The flags lead the name, as on the Regions index cards.
+      el("h2", { class: "step-title" }, [flagRow(region.meta.countries), regionName(region.meta)]),
+      // The place in the sentence, the hardiness range as its own badge beside
+      // it. This is where the zone belongs: the reader has picked their region
+      // and is now asking what grows in it. The Explore cards, where they were
+      // still choosing a place, name the place only.
+      regionRefLine(region.meta, "region-ref"),
+      el("p", { class: "step-lede" },
+        t("region.lede", { reference: regionReference(region.meta) })),
+      // The stats, the caveat and the map: three answers to "what is this
+      // region and does it include me?", asked before the roster.
+      regionStatGrid(region, plants),
+      el("p", { class: "region-head-note" }, regionNote(region.meta)),
       regionBoundaryCard(region.meta),
+      // Which of these plants we can't name in the reader's language. (The
+      // *writing* we haven't translated is the page-top banner's job, reported
+      // below.) `main.append` is the DOM's, so an absent note has to vanish from
+      // the argument list rather than pass through as null.
+      ...[namingNote(plants)].filter((n): n is HTMLElement => n !== null),
+      plantFilterField(allRows, sections),
+      categoryChips(region, plants, null),
     ]),
-    // Which of these plants we can't name in the reader's language. (The
-    // *writing* we haven't translated is the page-top banner's job, reported
-    // below.) `main.append` is the DOM's, so an absent note has to vanish from
-    // the argument list rather than pass through as null.
-    ...[namingNote(plants)].filter((n): n is HTMLElement => n !== null),
-    plantFilterField(allRows, sections),
-    categoryChips(region, plants, null),
     ...groups,
     // And what to pull. The roster answers "what belongs here"; this answers
     // the question a person clearing a corner asks next — which of the plants

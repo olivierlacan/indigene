@@ -5978,3 +5978,151 @@ body[data-layout="profile"] .wip-banner-text {
 .section-prose {
   margin: 0.4rem 0 0.8rem;
 }
+
+/* --- A region's head on a wide screen ----------------------------------- */
+/* Everything above the roster — name, stats, caveat, map, filter, chips — is
+   one `.region-top` block. On a phone it stacks. Past 52rem the map takes a
+   column of its own down the right and the rest runs beside it, so the map no
+   longer sits alone with half the window empty beside it, and the roster starts
+   a map's height sooner.
+
+   The map spans every row. Its rows are the left column's items (at most eight)
+   and a last `1fr` row: a spanning item's extra height goes to the flexible
+   track, so a map taller than the text beside it opens no gaps between the
+   lines on the left. */
+@media (min-width: 52rem) {
+  .region-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 22rem;
+    grid-template-rows: repeat(8, auto) 1fr;
+    column-gap: 1.5rem;
+  }
+  .region-top > * {
+    grid-column: 1;
+  }
+  .region-top > .region-where {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    align-self: start;
+    max-width: none;
+    margin: 0.25rem 0 1rem;
+  }
+  .region-top > .step-lede,
+  .region-top > .region-head-note {
+    max-width: none;
+  }
+  /* Grid items' margins don't collapse; the tiles' own margin is the gap. */
+  .region-top > .region-head-note {
+    margin-top: 0;
+  }
+}
+
+/* --- Home and reference pages on a laptop -------------------------------- */
+/* Home, About, Privacy & safety, Where our numbers come from and Settings were
+   each a 34rem ribbon down the middle of a laptop. They widen to the 62rem the
+   browse indexes use — so header, page and footer stay aligned across the app —
+   and fill it by putting pieces side by side, never by setting a sentence
+   wider. `main.ts` marks the routes (`home`, `doc`). */
+.doc-contents {
+  display: none;
+}
+.doc-body > h3 {
+  scroll-margin-top: 4.5rem;
+}
+@media (min-width: 64rem) {
+  body[data-layout="home"],
+  body[data-layout="doc"] {
+    --maxw: 62rem;
+  }
+  body[data-layout="home"] .app-footer p,
+  body[data-layout="doc"] .app-footer p,
+  body[data-layout="doc"] .step-lede,
+  body[data-layout="doc"] .note {
+    max-width: 36rem;
+  }
+
+  /* Home: the pitch beside the film, the "why" under both. */
+  .welcome-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+    column-gap: 2.5rem;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .welcome-hero .step-title {
+    font-size: 2rem;
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
+  }
+  .welcome-film .film {
+    margin-top: 0;
+  }
+  .welcome-why {
+    max-width: 36rem;
+    margin-top: 1.5rem;
+  }
+
+  /* About, Privacy & safety, Sources: the page's contents beside its prose.
+     The prose keeps a reading measure; the list stays in view as it scrolls. */
+  .privacy-page.has-contents {
+    display: grid;
+    grid-template-columns: 15rem minmax(0, 40rem);
+    column-gap: 3rem;
+    align-items: start;
+  }
+  .doc-contents {
+    display: block;
+    position: sticky;
+    top: 4.5rem;
+    max-height: calc(100vh - 6rem);
+    overflow-y: auto;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+  .doc-contents-title {
+    margin: 0 0 0.5rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .doc-contents ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-left: 2px solid var(--line);
+  }
+  .doc-contents li {
+    margin: 0;
+  }
+  .doc-contents a {
+    display: block;
+    margin-left: -2px;
+    padding: 0.3rem 0 0.3rem 0.8rem;
+    border-left: 2px solid transparent;
+    color: var(--ink-soft);
+    text-decoration: none;
+    line-height: 1.3;
+  }
+  .doc-contents a:hover {
+    color: var(--ink);
+  }
+  .doc-contents a[aria-current] {
+    border-left-color: var(--brand);
+    color: var(--brand-ink);
+    font-weight: 650;
+  }
+
+  /* Settings: each group's cards two abreast. */
+  .settings-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: start;
+  }
+  .settings-cards > .card {
+    margin: 0;
+  }
+  /* "Done" stays a button, not a bar across the page. */
+  body[data-layout="doc"] .settings-cards + .btn-row {
+    max-width: 24rem;
+  }
+}

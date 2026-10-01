@@ -297,6 +297,8 @@ function sectionOf(step: string): string | undefined {
  */
 const WIDE_STEPS = new Set(["plants", "regions", "wildlife", "lookalikes", "alternatives", "invasives", "planting"]);
 
+const DOC_STEPS = new Set(["about", "privacy", "sources", "settings"]);
+
 function updateLayout(step: AppStep, param?: string): void {
   // Two of the documents — a plant's page and an animal's — get a mode of their
   // own. Neither is a card list, but they're *long*, and on a laptop they ran to
@@ -330,6 +332,19 @@ function updateLayout(step: AppStep, param?: string): void {
   const invasiveProfile = step === "invasives" && !!param && wantedRegionParam(param) === null;
   if (plantProfile || animalProfile || techniqueProfile || lookalikeProfile || ornamentalProfile || invasiveProfile) {
     document.body.dataset.layout = "profile";
+    return;
+  }
+  // The home page and the four reference pages widen past the laptop
+  // breakpoint too, each by laying its pieces side by side rather than by
+  // setting a sentence any wider: the pitch beside the film, a page's contents
+  // beside its prose, settings cards two abreast (see "Home and reference
+  // pages on a laptop" in styles.css).
+  if (step === "") {
+    document.body.dataset.layout = "home";
+    return;
+  }
+  if (DOC_STEPS.has(step)) {
+    document.body.dataset.layout = "doc";
     return;
   }
   // Of what's left, only the parameter-less index of each widens, plus the card

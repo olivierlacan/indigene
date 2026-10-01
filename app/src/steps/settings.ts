@@ -76,25 +76,22 @@ export async function renderSettings(main: HTMLElement, param?: string): Promise
   };
   for (const [key, card] of Object.entries(cards)) card.id = CARD_IDS[key];
 
+  // Each group's cards sit in a `.settings-cards` box: one column on a phone,
+  // two abreast on a laptop, where a single column left the window empty.
   main.append(
     el("h2", { class: "step-title" }, t("settings.title")),
     el("p", { class: "step-lede" }, t("settings.lede")),
     el("h3", { class: "settings-group" }, t("settings.readingTitle")),
-    cards.language,
-    cards.units,
+    el("div", { class: "settings-cards" }, [cards.language, cards.units]),
     el("h3", { class: "settings-group" }, t("settings.memoryTitle")),
     el("p", { class: "step-lede" }, t("settings.memoryLede")),
-    cards.spot,
-    cards.region,
-    cards.goal,
-    cards.whatsnew,
+    el("div", { class: "settings-cards" }, [cards.spot, cards.region, cards.goal, cards.whatsnew]),
     el("h3", { class: "settings-group" }, t("settings.spotsTitle")),
     el("p", { class: "step-lede" }, t("settings.spotsLede")),
-    cards.spots,
-    cards.inat,
+    el("div", { class: "settings-cards" }, [cards.spots, cards.inat]),
     el("h3", { class: "settings-group" }, t("settings.countingTitle")),
     el("p", { class: "step-lede" }, t("settings.countingLede")),
-    cards.counting,
+    el("div", { class: "settings-cards" }, [cards.counting]),
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
       el(
         "button",

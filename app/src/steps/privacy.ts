@@ -18,6 +18,7 @@
 // it raises, instead of restating the answer beside itself. Same idea, and the
 // same reveal, as `#/settings/<card>`.
 import { el, clear } from "../ui";
+import { withContents } from "../components/doc-contents";
 import { navigate } from "../state";
 import { DATA_SOURCES_URL, ISSUES_URL } from "../lib/plain";
 import { t, tx } from "../lib/i18n";
@@ -73,7 +74,7 @@ export function renderPrivacy(main: HTMLElement, param?: string): void {
   document.title = t("privacy.docTitle");
 
   main.append(
-    el("article", { class: "privacy-page" }, [
+    withContents(el("article", { class: "privacy-page" }, [
       el("h2", { class: "step-title" }, t("privacy.title")),
       el("p", { class: "step-lede" }, t("privacy.lede")),
 
@@ -179,7 +180,7 @@ export function renderPrivacy(main: HTMLElement, param?: string): void {
         el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("privacy.home")),
         el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("privacy.findPlants")),
       ]),
-    ]),
+    ]), "privacy"),
   );
 
   revealSection(param);

@@ -31,8 +31,33 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+## [0.36] - 2026-10-01
+
+**The Indigene film, laptop layouts & a confidence meter**
+
+[![The home page with Indigene's one-minute hand-drawn film](docs/screenshots/pr-171/thumb.png)](docs/screenshots/pr-171/home-after-dark.png)
+[Before](docs/screenshots/pr-171/home-before-dark.png) · [After](docs/screenshots/pr-171/home-after-dark.png)
+
 ### Added
 
+- The home page has a one-minute, hand-drawn film about what Indigene does
+  and who it's for, in English or French to match your language. Nothing loads from the
+  video host until you press play. https://indigene.app/
+- Internal: `film/` holds the code that draws, voices and scores the film —
+  a pure-JavaScript canvas renderer in the app's palette, Gemini TTS
+  narration, a Lyria score, synthesized foley — with rebuild and translation
+  steps in `film/README.md`. Rendered cuts are gitignored and hosted on Bunny
+  Stream; `components/film.ts` is click-to-play, and `lib/csp.ts` gains
+  `frame-src player.mediadelivery.net` with a matching Privacy section.
+- The film has a page of its own, made for sharing: send the link and the
+  film shows up in the preview, playing right there in many chat apps.
+  https://indigene.app/film, and in French https://indigene.app/film/fr
+- Internal: `/film` is prerendered with `og:video` (MP4 when
+  `FILM_MP4_HOST` is set, then the Bunny player as `text/html`) and a
+  `twitter:player` card; `/film/fr` is the same in French (its own
+  hreflang pair and `og:locale`). The ids moved to `lib/film.ts` so the
+  prerenderer can read them. `scripts/gen-film-card.mjs` crops each poster to
+  a 1200×630 card.
 - Plants: how sure we are of a plant's figures is now a three-bar meter
   instead of a paragraph. Tap it for
   [what each level means](https://indigene.app/confidence).
@@ -59,24 +84,6 @@ subtitle on the What's new page.
   `ownSightings()` in `lib/inat-import.ts`, shared with the planting picker
   (`sightingsOfPlant()`, covered by `import:check`); unlinking the account now
   clears it via `forgetImport()`, which the comments already promised.
-- The home page has a one-minute, hand-drawn film about what Indigene does
-  and who it's for, in English or French to match your language. Nothing loads from the
-  video host until you press play. https://indigene.app/
-- Internal: `film/` holds the code that draws, voices and scores the film —
-  a pure-JavaScript canvas renderer in the app's palette, Gemini TTS
-  narration, a Lyria score, synthesized foley — with rebuild and translation
-  steps in `film/README.md`. Rendered cuts are gitignored and hosted on Bunny
-  Stream; `components/film.ts` is click-to-play, and `lib/csp.ts` gains
-  `frame-src player.mediadelivery.net` with a matching Privacy section.
-- The film has a page of its own, made for sharing: send the link and the
-  film shows up in the preview, playing right there in many chat apps.
-  https://indigene.app/film, and in French https://indigene.app/film/fr
-- Internal: `/film` is prerendered with `og:video` (MP4 when
-  `FILM_MP4_HOST` is set, then the Bunny player as `text/html`) and a
-  `twitter:player` card; `/film/fr` is the same in French (its own
-  hreflang pair and `og:locale`). The ids moved to `lib/film.ts` so the
-  prerenderer can read them. `scripts/gen-film-card.mjs` crops each poster to
-  a 1200×630 card.
 - Regions: each region now shows a small flag beside its name, two where a
   region crosses a border, like the Pacific Northwest, so you can find your
   country at a glance. https://indigene.app/regions
@@ -141,7 +148,6 @@ subtitle on the What's new page.
 - Internal: re-saving an open saved spot from the plant list now keeps its
   name as the default, its invasives list and its first-saved date, instead of
   overwriting them.
-
 - The "Most-wanted invasives" lists are now called "Worst invasives", because
   nobody wants these plants.
 - In French, invasive plants are now called "plantes envahissantes", the
@@ -2903,7 +2909,8 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/a50be1c...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/f6a8ed7...HEAD
+[0.36]: https://github.com/olivierlacan/indigene/compare/a50be1c...f6a8ed7
 [0.35]: https://github.com/olivierlacan/indigene/compare/39c9b05...a50be1c
 [0.34]: https://github.com/olivierlacan/indigene/compare/c4e7c44...39c9b05
 [0.33]: https://github.com/olivierlacan/indigene/compare/e0f70ef...c4e7c44

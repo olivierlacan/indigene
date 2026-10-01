@@ -28,7 +28,7 @@ import type { SightingResult } from "../lib/wildlife-sightings";
 import { isBusy } from "../lib/inaturalist";
 import type { Bounds } from "../lib/inaturalist";
 import { observationList, freshnessLine } from "./observation-ui";
-import { locationPrompt } from "./location-prompt";
+import { locationPrompt, promptLede } from "./location-prompt";
 import type { InatScope, Wildlife } from "../types";
 import { t, tn, fmtNumber } from "../lib/i18n";
 import { commonName, regionName, regionShort } from "../lib/names";
@@ -56,6 +56,10 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
     idBase: `wl-${w.id}`,
     gpsLabel: t("nearby.useMyLocation"),
     onResolve: (lat, lon, label) => void loadNear(lat, lon, label),
+    places: regionsForWildlife(w.id).map((r) => ({
+      label: regionShort(r.meta),
+      onPick: (btn: HTMLButtonElement) => void loadRegion(r, btn),
+    })),
   });
 
   function showNote(msg: string): void {
@@ -133,41 +137,14 @@ export function wildlifeNearbySection(w: Wildlife): HTMLElement | null {
     out.append(freshnessLine(result.fromCache));
   }
 
-  // The regions our data ties this animal to, as tappable "look it up there"
-  // buttons. Null when there are none (the spot path still works).
-  function regionButtons(): HTMLElement | null {
-    const regions = regionsForWildlife(w.id);
-    if (!regions.length) return null;
-    // One line of chips, however many regions there are — an animal found in
-    // five of them used to be five full-width buttons stacked down the card,
-    // which is most of a phone screen spent on an alternative to the thing
-    // above it. The row scrolls sideways instead (see `.obs-elsewhere-row`),
-    // and the question above it names what the chips are, so a chip is only a
-    // place — no map emoji four times over, no "Where it's found" on each.
-    return el("div", { class: "obs-elsewhere" }, [
-      el("p", { class: "obs-elsewhere-lede" }, t("wlNearby.notThereFound")),
-      el("div", { class: "obs-elsewhere-row" },
-        regions.map((r) => {
-          const btn = el("button", {
-            type: "button",
-            class: "btn btn-secondary btn-compact",
-            onClick: () => void loadRegion(r, btn),
-          }, regionShort(r.meta)) as HTMLButtonElement;
-          return btn;
-        }),
-      ),
-    ]);
-  }
-
-  // On a laptop the four pieces below stack into a card two thirds of a screen
-  // tall for two controls. `.wl-nearby` puts the ask and the fallback side by
-  // side there (styles.css, "Profile pages on a laptop"); on a phone it is the
-  // stack it has always been.
+  // A heading, a one-line lede and one row of places: on a laptop the heading
+  // and lede share a line (`.nearby-head`), so the whole ask is two lines tall.
   return el("section", { class: "card wl-nearby", style: "margin-top:1rem" }, [
-    el("h3", { style: "margin-top:0" }, t("wlNearby.seeItNear")),
-    el("p", { class: "obs-section-lede" }, t("wlNearby.seeItNearLede", { name: commonName(w) })),
+    el("div", { class: "nearby-head" }, [
+      el("h3", {}, t("wlNearby.seeItNear")),
+      promptLede(t("wlNearby.seeItNearLede", { name: commonName(w) })),
+    ]),
     prompt,
-    regionButtons(),
     out,
   ]);
 }

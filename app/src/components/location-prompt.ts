@@ -14,9 +14,9 @@
 // **Both routes share one row.** They used to stack: a full-width primary button,
 // an "or" rule, a field label, and the input with its own Search button — five
 // controls' worth of chrome to ask one short question, above the fold of a
-// section whose actual content is photographs. Now the button sits beside the
-// field, and the privacy promise is a one-line link into the page that spells it
-// out rather than a paragraph restated in place.
+// section whose actual content is photographs. Now the button, the field and
+// the regions it's found in are one row of answers to "where?", and the privacy
+// promise is a link on the lede's line into the page that spells it out.
 //
 // The Search button went with it. The field is a `type="search"` inside a
 // `<form>`, so Enter submits it and every mobile keyboard offers a Search key —
@@ -25,7 +25,7 @@
 // appear, which is where someone is looking anyway.
 import { el, clear } from "../ui";
 import { searchPlaces, placeLabel } from "../lib/geocode";
-import { privacyLink } from "./privacy-link";
+import { privacyRoute } from "./privacy-link";
 import { t } from "../lib/i18n";
 
 export interface LocationPromptConfig {
@@ -33,6 +33,11 @@ export interface LocationPromptConfig {
   idBase: string;
   /** Verb-first label for the GPS button (kept short — it must stay one line). */
   gpsLabel: string;
+  /** More places to look, as `[label, onPick]` — the regions the plant or
+   *  animal is found in. They join the same row after an "or", so "where?" is
+   *  one row of answers rather than a question, a field and then a second
+   *  question with its own row of buttons. */
+  places?: Array<{ label: string; onPick: (btn: HTMLButtonElement) => void }>;
   /** Called once a spot is chosen — by GPS (no `label`) or a resolved place pick
    *  (`label` is the place's display name, e.g. "State College, Pennsylvania"). */
   onResolve: (lat: number, lon: number, label?: string) => void;
@@ -44,7 +49,7 @@ export interface LocationPromptConfig {
  * `onResolve`. Safe to reuse — nothing here is singleton.
  */
 export function locationPrompt(config: LocationPromptConfig): HTMLElement {
-  const { idBase, gpsLabel, onResolve } = config;
+  const { idBase, gpsLabel, onResolve, places = [] } = config;
 
   // A shared spot for GPS/search errors, so a failure on either route explains
   // itself and points at the other route as the way forward.
@@ -140,13 +145,17 @@ export function locationPrompt(config: LocationPromptConfig): HTMLElement {
     }
   }
 
-  // One row: the GPS button, then the place field. The label is visually hidden
-  // rather than dropped — the placeholder is an example, not a name for the
-  // field, and a screen reader still needs the name.
+  // One row: the GPS button, the place field, then "or" and the regions it's
+  // found in. The label is visually hidden rather than dropped — the
+  // placeholder is an example, not a name for the field, and a screen reader
+  // still needs the name.
   //
-  // The whole block is width-capped (`.spot-prompt`), not just the row: the
-  // place picks that land under it are a list of one-line choices, and they
-  // sprawl on a wide page for the same reason the field did.
+  // The regions are one group that wraps as a unit: beside the field on a
+  // laptop, on a line of their own under it on a phone, where the chips scroll
+  // sideways rather than stack (see `.spot-places`).
+  //
+  // The privacy link isn't here: it shares the section's lede line
+  // (`promptLede`), which costs no line of its own.
   return el("div", { class: "spot-prompt" }, [
     el("div", { class: "spot-row" }, [
       gpsBtn,
@@ -157,9 +166,39 @@ export function locationPrompt(config: LocationPromptConfig): HTMLElement {
         el("label", { for: `${idBase}-place`, class: "sr-only" }, t("prompt.label")),
         input,
       ]),
+      places.length
+        ? el("div", { class: "spot-places" }, [
+            el("span", { class: "spot-or" }, t("nearby.orIn")),
+            el("div", { class: "obs-elsewhere-row" },
+              places.map(({ label, onPick }) => {
+                const btn = el("button", {
+                  type: "button",
+                  class: "btn btn-secondary btn-compact",
+                  onClick: () => onPick(btn),
+                }, label) as HTMLButtonElement;
+                return btn;
+              }),
+            ),
+          ])
+        : null,
     ]),
-    results,
-    msg,
-    privacyLink(t("prompt.privacyLink"), "lookups"),
+    // Place picks are one-line choices; capped so they don't sprawl on a wide
+    // page (`.spot-picks`).
+    el("div", { class: "spot-picks" }, [results, msg]),
+  ]);
+}
+
+/**
+ * The section's lede with the privacy link on the same line: "Community-
+ * verified iNaturalist photos. 🔒 How your location is used". Two quiet
+ * sentences that used to cost two lines — one above the controls, one under.
+ */
+export function promptLede(lede: string): HTMLElement {
+  return el("p", { class: "obs-section-lede" }, [
+    `${lede} `,
+    el("a", { class: "lede-privacy", href: privacyRoute("lookups") }, [
+      el("span", { "aria-hidden": "true" }, "🔒 "),
+      t("prompt.privacyLink"),
+    ]),
   ]);
 }

@@ -2119,8 +2119,7 @@ export const fr: Dict = {
   "nearby.found": "Nous en avons trouvé {n} : ",
   "nearby.foundNear": "Nous en avons trouvé {n} à proximité : ",
   "nearby.seeItGrowing": "La voir pousser près de chez vous",
-  "nearby.seeItGrowingLede":
-    "Des photos iNaturalist vérifiées, près d'un lieu que vous choisissez.",
+  "nearby.seeItGrowingLede": "Photos iNaturalist vérifiées.",
   "nearby.outsideYou":
     "Vous êtes en dehors des régions pour lesquelles Indigene a des données sur les plantes indigènes : nous ne pouvons donc pas garantir ce qui y est vraiment indigène — et nous ne ferons pas passer des observations voisines pour des indigènes locales. Les mesures de soleil, de sol et de climat fonctionnent partout.",
   "nearby.outsidePlace":
@@ -2139,7 +2138,7 @@ export const fr: Dict = {
     "observation de niveau recherche de {name} en {region} — vérifiée et photographiée par la communauté iNaturalist (vous n'avez pas besoin d'y être) :",
   "nearby.foundRest.other":
     "observations de niveau recherche de {name} en {region} — vérifiées et photographiées par la communauté iNaturalist (vous n'avez pas besoin d'y être) :",
-  "nearby.notThereNative": "Pas sur place ? Là où elle est indigène :",
+  "nearby.orIn": "ou",
   "nearby.busy":
     "iNaturalist nous demande de ralentir : le service est très sollicité. Patientez une minute et réessayez.",
   "nearby.nativeToList": "indigène de {list}",
@@ -2191,12 +2190,11 @@ export const fr: Dict = {
   "wanted.placeLink": "{region} (n° {n})",
 
   "wlNearby.seeItNear": "Le voir près de chez vous",
-  "wlNearby.seeItNearLede":
-    "Des photos iNaturalist vérifiées, près d'un lieu que vous choisissez.",
+  "wlNearby.seeItNearLede": "Photos iNaturalist vérifiées.",
   "wlNearby.outsideYou":
-    "Vous êtes en dehors des régions couvertes par Indigene : nous ne pouvons donc pas faire de recherche à proximité. Vous pouvez tout de même le chercher dans une région où il est présent, ci-dessous.",
+    "Vous êtes en dehors des régions couvertes par Indigene : nous ne pouvons donc pas faire de recherche à proximité. Vous pouvez tout de même choisir une région où il est présent.",
   "wlNearby.outsidePlace":
-    "{place} est en dehors des régions couvertes par Indigene : nous ne pouvons donc pas y faire de recherche à proximité. Vous pouvez tout de même le chercher dans une région où il est présent, ci-dessous.",
+    "{place} est en dehors des régions couvertes par Indigene : nous ne pouvons donc pas y faire de recherche à proximité. Vous pouvez tout de même choisir une région où il est présent.",
   "wlNearby.noneNear":
     "Personne n'a encore photographié ni fait valider un {name} {where} sur iNaturalist — cela veut seulement dire que la communauté n'en a pas saisi ici, pas qu'il est absent.",
   "wlNearby.noneInRegion":
@@ -2209,7 +2207,6 @@ export const fr: Dict = {
     "observation de niveau recherche de {name} en {region} — vérifiée et photographiée par la communauté iNaturalist (vous n'avez pas besoin d'y être) :",
   "wlNearby.foundRest.other":
     "observations de niveau recherche de {name} en {region} — vérifiées et photographiées par la communauté iNaturalist (vous n'avez pas besoin d'y être) :",
-  "wlNearby.notThereFound": "Pas sur place ? Là où il est présent :",
 
   // ---------------------------------------------------------------------
   // Écorégions.

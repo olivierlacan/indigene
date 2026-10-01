@@ -86,6 +86,9 @@ subtitle on the What's new page.
 
 ### Changed
 
+- Plants & Wildlife: "See it near you" takes much less room. Your
+  location, a ZIP code or a region where it lives now share one row, and the
+  privacy link sits beside the intro instead of under the buttons.
 - Plants & Wildlife: on a laptop, plant and animal pages fill both columns
   instead of leaving half the screen empty. An animal's plants now flow down
   two columns, region after region, and a plant's growth drawing sits under

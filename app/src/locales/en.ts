@@ -2652,7 +2652,7 @@ export const en = {
   "native.word4": "“Oriental bittersweet” became “Asian bittersweet”.",
   "native.word4Rest": "“Oriental” is an old label for Asian people, not one they chose; US federal law dropped it in 2016.",
   "native.nameTitle": "Even our name has a past",
-  "native.name1": "In French this app's name is “indigène”, and in French that word was the legal status of colonized people under the Code de l'indigénat, which from 1881 to 1946 denied them the rights of citizens. French botany still uses it as its everyday technical term, as does France's national species list, so the French edition uses it too, in that sense only.",
+  "native.name1": "In French this app's name is “indigène”, a word that was the legal status of colonized people under the Code de l'indigénat, which from 1881 to 1946 denied them the rights of citizens. French botany still uses it as its everyday technical term, as does France's national species list, so the French edition uses it too, in that sense only.",
   "native.name2": "The obvious substitute is no better. “Autochtone” is the respectful French word for Indigenous peoples, and lately the far right has borrowed it to claim some residents have more right to a place than others. French gardeners mostly sidestep both: the national label for wild-origin plants is simply Végétal local, “local plants”.",
   "native.src.tassin": "how talk of invasive species borrows the vocabulary of xenophobia",
   "native.src.politix": "how the words for an animal's origin slide into how we see each other",

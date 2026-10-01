@@ -5744,12 +5744,17 @@ body[data-layout="profile"] .wip-banner-text {
    A ranked list of rows, each a link to the plant's own page — no folding (see
    "No folding boxes" in CLAUDE.md). The name's link is stretched over the whole
    row, the look-alike cards' trick, so the pressure badge can stay a button of
-   its own above it. */
+   its own above it.
+
+   The rows reflow into columns the way the roster's cards above them do — one
+   on a phone, three across a laptop — reading left to right in rank order. A
+   full-width row was a name and two badges at one end of an empty bar. */
 .wanted-list {
   list-style: none;
   margin: 0.6rem 0 0;
   padding: 0;
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(19rem, 100%), 1fr));
   gap: 0.6rem;
 }
 .wanted-row {

@@ -111,8 +111,8 @@ subtitle on the What's new page.
   people agreed on what the photo shows. "Research-grade" and "verified" are
   gone.
 - Regions: on a wider screen, a region's map sits beside its name and
-  figures instead of alone under them, so its plants start a screenful
-  sooner. https://indigene.app/regions/mid-atlantic
+  figures instead of alone under them, and the worst invasives sit three
+  abreast. https://indigene.app/regions/mid-atlantic
 - On a laptop, the home page puts the film beside the pitch, and Settings shows
   its cards two abreast. About, Privacy & safety and Where our numbers come
   from list their sections beside the text. https://indigene.app/privacy

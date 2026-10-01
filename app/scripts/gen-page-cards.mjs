@@ -117,6 +117,10 @@ try {
   const totalPlants = perRegion.reduce((n, list) => n + list.length, 0);
   const nRegions = REGIONS.length;
   const nCreatures = WILDLIFE.length;
+  // Read as text, not imported: the page module builds DOM. One `{ name: "…" }`
+  // row per source in its SOURCES table.
+  const nativeSources = (readFileSync(join(root, "src", "steps", "native.ts"), "utf8")
+    .match(/^\s*\{ name: "/gm) ?? []).length;
 
   pages = [
     { slug: "guide", title: "The guide", subtitle: "every part of Indigene, in plain words" },
@@ -133,7 +137,9 @@ try {
     // the sentence people actually say out loud, and a card that argued back at
     // them in 30 characters would be the advert the page refuses to be.
     { slug: "traits", title: "Plant traits", subtitle: "what each label and figure on a plant\u2019s page means" },
-    { slug: "native", title: "Native plants, not nativism", subtitle: "where a plant evolved \u2014 never borders, never people" },
+    // Counted from SOURCES in steps/native.ts — like the crops card, the figure
+    // says the page brings its evidence, including the side that disagrees.
+    { slug: "native", title: "Native plants, not nativism", subtitle: "where a plant evolved \u2014 never borders, never people", stat: `<b>${nativeSources}</b> sources \u00b7 both sides of the argument` },
     { slug: "crops", title: "Will native plants bring pests to my yard?", subtitle: "no \u2014 and some of them take pests away", stat: `<b>25</b> studies \u00b7 the ones that disagree too` },
   ];
 } finally {

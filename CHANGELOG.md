@@ -33,6 +33,12 @@ subtitle on the What's new page.
 
 ### Added
 
+- Plants: how sure we are of a plant's figures is now a three-bar meter
+  instead of a paragraph. Tap it for
+  [what each level means](https://indigene.app/confidence).
+- Internal: `components/confidence-meter.ts` replaces `confidencePlain()`; the
+  new `confidence` step is wired through routes, 404.html, prerender, its page
+  card and the guide's Sources section.
 - Matches: "Add sighting" on a plant in your saved spot now shows your own
   iNaturalist photos of that plant. Tap one to add it, no link to paste, so
   each season's photo lines up under the plant to show how it's growing.

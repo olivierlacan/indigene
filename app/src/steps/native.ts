@@ -28,9 +28,17 @@ const SOURCES: { name: string; url: string; what: TKey }[] = [
   { name: "Davis et al. 2011 — Nature", url: "https://doi.org/10.1038/474153a", what: "native.src.davis" },
   { name: "Simberloff 2003 — Biological Invasions", url: "https://doi.org/10.1023/A:1026164419010", what: "native.src.simberloff" },
   { name: "Gröning & Wolschke-Bulmahn 1992 — Landscape Journal", url: "https://doi.org/10.3368/lj.11.2.116", what: "native.src.groening" },
+  { name: "Tassin 2014 — La grande invasion (reviewed in Biological Invasions)", url: "https://doi.org/10.1007/s10530-015-0994-0", what: "native.src.tassin" },
+  { name: "Allochtone, autochtone, invasif — Politix, 2008", url: "https://www.cairn.info/revue-politix-2008-2-page-193.htm", what: "native.src.politix" },
+  { name: "Code de l'indigénat — Wikipédia", url: "https://fr.wikipedia.org/wiki/Code_de_l%27indig%C3%A9nat", what: "native.src.indigenat" },
+  { name: "Végétal local — Office français de la biodiversité", url: "https://ofb.gouv.fr/vegetal-local", what: "native.src.vegetalLocal" },
 ];
 
 const p = (key: TKey): HTMLElement => el("p", {}, t(key));
+
+/** A `<li>` whose first words are bold: the word we dropped, then why. */
+const boldLead = (lead: TKey, rest: TKey): HTMLElement =>
+  el("li", {}, [el("strong", {}, t(lead)), " ", t(rest)]);
 
 export function renderNative(main: HTMLElement): void {
   clear(main);
@@ -61,6 +69,22 @@ export function renderNative(main: HTMLElement): void {
 
       el("h3", {}, t("native.whyTitle")),
       p("native.why1"),
+
+      // What going through our own copy turned up — the words we changed, and
+      // why. This is the reader-facing record of that review; the rules it
+      // produced live in CLAUDE.md.
+      el("h3", {}, t("native.wordsTitle")),
+      p("native.wordsLede"),
+      el("ul", {}, [
+        boldLead("native.word1", "native.word1Rest"),
+        boldLead("native.word2", "native.word2Rest"),
+        boldLead("native.word3", "native.word3Rest"),
+        boldLead("native.word4", "native.word4Rest"),
+      ]),
+
+      el("h3", {}, t("native.nameTitle")),
+      p("native.name1"),
+      p("native.name2"),
       p("native.why2"),
 
       el("h3", {}, t("native.sourcesTitle")),

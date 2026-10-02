@@ -33,6 +33,26 @@ subtitle on the What's new page.
 
 ### Added
 
+- The Kantō Plain is on the map — 59 native plants for Tokyo, Yokohama,
+  Saitama, Chiba and the country out to Utsunomiya and Chōshi.
+  https://indigene.app/regions/kanto
+- Regions: Indigene reaches Asia. Konara oak, the tree the plain's old coppiced
+  woods were built on, feeds 531 kinds of caterpillar here — more than any other
+  plant in the app. https://indigene.app/regions/kanto
+- Planting: the satoyama flora joins the catalogue — wild cherry, keyaki, bush
+  clover, susuki grass. Enoki hackberry is the one tree Japan's national
+  butterfly can raise its young on. https://indigene.app/regions/kanto
+- Internal: the region is the plain, not the country. RESOLVE's ecoregion 682
+  runs the whole Pacific side of Japan to Kagoshima, so the code says what kind
+  of ground and the box says how far — Nagoya and Osaka share the code and are
+  refused.
+- Internal: `inResolveCoverage` stopped at the equator, by a comment that said
+  it would widen when a northern region declared RESOLVE codes. This is that
+  region, so the gate now covers both hemispheres and a test pins it.
+- Internal: all 59 rows checked against Kew's WCVP for Japan, every one native.
+  The claim is national — the coarsest any region here stands on — so each row's
+  note says where on the plain the plant actually grows.
+
 - The St Lawrence Lowlands are on the map — 55 native plants for Montréal,
   Québec City, Ottawa and the Champlain valley down to Burlington.
   https://indigene.app/regions/st-lawrence

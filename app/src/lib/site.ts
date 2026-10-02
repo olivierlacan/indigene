@@ -261,12 +261,21 @@ export function inEurope(lat: number, lon: number): boolean {
 export function inNorthAmerica(lat: number, lon: number): boolean {
   return lat >= 14 && lat <= 84 && lon >= -172 && lon <= -52;
 }
-/** RESOLVE is global, but we only ask it south of the equator — where the
- *  southern regions are, and where no national service of ours answers. A
- *  reader in Canada or Japan gains nothing from the extra request until a
- *  region there declares RESOLVE codes. */
+/** RESOLVE is global, and it is the service of last resort: asked wherever
+ *  neither the EPA, the EEA nor the CEC answers.
+ *
+ *  **This used to stop at the equator**, on the stated grounds that a reader in
+ *  Japan gained nothing from the extra request until a region there declared
+ *  RESOLVE codes. The Kantō Plain declares 682, so that condition is met and
+ *  the gate now covers both hemispheres. It is still not "always": the three
+ *  regional services are tried first and answer better where they answer, and
+ *  RESOLVE is one level at 1:10,000,000 — coarse enough that a region leaning
+ *  on it needs a tight coverage box (see `region.kanto.ts`).
+ *
+ *  The latitude bound is the dataset's: RESOLVE has no polygons over the ice
+ *  caps, so a point past about 84° gets nothing and the coverage box decides. */
 export function inResolveCoverage(lat: number): boolean {
-  return lat < 0;
+  return lat >= -60 && lat <= 84;
 }
 
 // EPA Omernik: one point-in-polygon query on the Level IV layer returns the full

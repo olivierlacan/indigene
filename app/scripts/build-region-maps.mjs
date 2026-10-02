@@ -105,6 +105,22 @@ const LANDMARKS = {
     { name: "Thames", lat: -37.14, lon: 175.54 },
     { name: "Hamilton", lat: -37.79, lon: 175.28 },
   ],
+  // The Kantō Plain. Tokyo and Yokohama fix the bay, Chōshi the eastern cape,
+  // Utsunomiya and Maebashi the inland rim, Tateyama the southern tip of Bōsō —
+  // enough to answer "is my part of the plain in this?" without a prefecture
+  // boundary. Maebashi is deliberately a touch outside the claim: the ecoregion
+  // layer calls it montane, and it is the edge a Gunma reader is asking about.
+  kanto: [
+    { name: "Utsunomiya", lat: 36.56, lon: 139.88 },
+    { name: "Maebashi", lat: 36.39, lon: 139.06 },
+    { name: "Mito", lat: 36.34, lon: 140.45 },
+    { name: "Saitama", lat: 35.86, lon: 139.65 },
+    { name: "Tokyo", lat: 35.68, lon: 139.65 },
+    { name: "Chiba", lat: 35.61, lon: 140.11 },
+    { name: "Chōshi", lat: 35.73, lon: 140.83 },
+    { name: "Yokohama", lat: 35.44, lon: 139.64 },
+    { name: "Tateyama", lat: 35.0, lon: 139.87 },
+  ],
   ireland: [
     { name: "Derry", lat: 54.99, lon: -7.31 },
     { name: "Belfast", lat: 54.6, lon: -5.93 },

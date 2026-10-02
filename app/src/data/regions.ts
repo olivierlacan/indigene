@@ -34,6 +34,7 @@ import { REGION as FRANCE_MEDITERRANEAN } from "./region.france-mediterranean";
 import { REGION as FRANCE_ALPINE } from "./region.france-alpine";
 import { REGION as IRELAND } from "./region.ireland";
 import { REGION as NZ_AUCKLAND } from "./region.nz-auckland";
+import { REGION as KANTO } from "./region.kanto";
 
 export const REGIONS: RegionDef[] = [
   { meta: MID_ATLANTIC, load: () => import("./plants.mid-atlantic").then((m) => m.SEED_RAW) },
@@ -75,6 +76,12 @@ export const REGIONS: RegionDef[] = [
   // picker flip on their own (`lib/hemisphere.ts`), and the RESOLVE ecoregion
   // code refines the box the way EPA and EEA codes do up north.
   { meta: NZ_AUCKLAND, load: () => import("./plants.nz-auckland").then((m) => m.SEED_RAW) },
+
+  // The first region in Asia, and the first *north* of the equator to select on
+  // a RESOLVE code — which is why `inResolveCoverage` no longer stops at the
+  // equator. Its ecoregion, 682, runs the whole Pacific side of Japan, so the
+  // box is doing more work here than in any other region.
+  { meta: KANTO, load: () => import("./plants.kanto").then((m) => m.SEED_RAW) },
 ];
 
 /**

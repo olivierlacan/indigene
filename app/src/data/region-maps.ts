@@ -4,11 +4,12 @@
 // The drawn size of each region's map (public/maps/<id>.svg), so the page can
 // reserve exactly the right box for it and nothing shifts when the file lands.
 export const REGION_MAP_SIZES: Record<string, { w: number; h: number }> = {
-  "mid-atlantic": { w: 640, h: 615 },
+  "mid-atlantic": { w: 640, h: 520 },
   "north-michigan": { w: 640, h: 671 },
+  "st-lawrence": { w: 640, h: 455 },
   "pnw": { w: 640, h: 768 },
-  "ca-central-coast": { w: 640, h: 768 },
   "ca-south-coast": { w: 640, h: 551 },
+  "ca-central-coast": { w: 640, h: 768 },
   "florida-central": { w: 640, h: 353 },
   "florida-south": { w: 640, h: 740 },
   "france-atlantic": { w: 640, h: 745 },
@@ -17,4 +18,5 @@ export const REGION_MAP_SIZES: Record<string, { w: number; h: number }> = {
   "france-alpine": { w: 640, h: 768 },
   "ireland": { w: 640, h: 768 },
   "nz-auckland": { w: 640, h: 668 },
+  "kanto": { w: 640, h: 762 },
 };

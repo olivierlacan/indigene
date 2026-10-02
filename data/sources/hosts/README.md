@@ -16,7 +16,7 @@ database.
 | File | Committed? | What |
 |---|---|---|
 | `hosts-raw.json` | no (48 MB) | All 140,485 records: moth, host plant, location |
-| `records/<area>.csv` | **four of eight** (~500 KB) | **The archive:** every HOSTS record for an area, all of HOSTS' columns, sorted by host plant then moth |
+| `records/<area>.csv` | **five of eight** (~930 KB) | **The archive:** every HOSTS record for an area, all of HOSTS' columns, sorted by host plant then moth |
 | `genus-counts.json` | yes (76 KB) | For each area, distinct moth and butterfly species per host genus |
 
 ### The archive
@@ -29,7 +29,7 @@ database.
 | `records/new-zealand.csv` | New Zealand | 357 | a cross-check on Plant-SyNZ |
 | *not committed* | India | 10,023 | a Deccan or Himalayan foothill region |
 | *not committed* | East Africa, Kenya, Tanzania, Uganda | 6,737 | Nairobi |
-| *not committed* | Japan | 4,986 | Tokyo |
+| `records/japan.csv` | Japan | 4,986 | the Kantō Plain — **shipped** |
 | *not committed* | Brazil | 3,994 | São Paulo / Rio |
 
 It's kept so the evidence behind a count survives upstream edits and can be
@@ -37,14 +37,15 @@ read without the 48 MB download. HOSTS is CC0, so keeping it is fine. The counts
 use fewer rows than the archive (2,635 for Australia): they skip rows with no
 named host genus, like HOSTS' "Polyphagous" and "Detritophagous" categories.
 
-**Why four and not eight.** Those last four areas are 2.2 MB of rows between
+**Why five and not eight.** The four survey areas below are 2.2 MB of rows between
 them — 4.5 times the size the `!hosts/records/*.csv` exception in
 `data/sources/.gitignore` was written for, and nine tenths of the diff that added
 them. They were measured to answer one question, *does a usable source exist on
 this continent?*, and `genus-counts.json` answers it: every genus, its count, and
 the date retrieved. So an area **surveyed** keeps its counts; an area a region is
 **built on** earns its rows, which `npm run hosts:fetch` writes in a couple of
-minutes. The four above predate the rule and stay.
+minutes. The first four predate the rule and stay; Japan joined them when the
+Kantō Plain shipped on its counts, which is the rule working as intended.
 
 The cost, plainly: if the NHM edits HOSTS, a survey count can no longer be shown
 row by row — only the count and its date. Same trade the gitignore makes for the

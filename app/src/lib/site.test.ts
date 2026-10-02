@@ -157,10 +157,29 @@ describe("which service gets asked", () => {
     expect(inEurope(45.5152, -122.6784)).toBe(false); // Portland
   });
 
-  it("asks RESOLVE only south of the equator", () => {
+  it("asks RESOLVE in both hemispheres, now that a northern region needs it", () => {
+    // This assertion was the opposite until the Kantō Plain shipped: the gate
+    // returned `lat < 0` and its comment said so, because no northern region
+    // declared a RESOLVE code. One does now, so Tokyo has to reach the service.
     expect(inResolveCoverage(-33.87)).toBe(true); // Sydney
-    expect(inResolveCoverage(49.267)).toBe(false); // Vancouver
-    expect(inResolveCoverage(0.5)).toBe(false);
+    expect(inResolveCoverage(35.6762)).toBe(true); // Tokyo
+    expect(inResolveCoverage(0.5)).toBe(true); // and the equator itself
+  });
+
+  it("still prefers a regional service where one answers", () => {
+    // Widening the RESOLVE gate must not change where the EPA, EEA and CEC are
+    // asked — `fetchEcoregion` tries them first and only falls through. If this
+    // ever flips, a Portland or a Paris reader would be answered by a
+    // 1:10,000,000 global layer instead of their own national one.
+    expect(inEurope(48.8566, 2.3522)).toBe(true); // Paris → EEA, not RESOLVE
+    expect(inNorthAmerica(45.5152, -122.6784)).toBe(true); // Portland → EPA/CEC
+    expect(inNorthAmerica(35.6762, 139.6503)).toBe(false); // Tokyo is neither
+    expect(inEurope(35.6762, 139.6503)).toBe(false);
+  });
+
+  it("stops where the dataset stops", () => {
+    expect(inResolveCoverage(89)).toBe(false); // past the polar ice
+    expect(inResolveCoverage(-80)).toBe(false);
   });
 });
 

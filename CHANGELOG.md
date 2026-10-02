@@ -133,6 +133,9 @@ subtitle on the What's new page.
 
 ### Changed
 
+- The welcome page's "Why native plants?" now ends by saying what native
+  never means — borders or people — and links to the page that explains it.
+  https://indigene.app/native
 - Plants & Wildlife: "See it near you" takes much less room. Your
   location, a ZIP code or a region where it lives now share one row, and the
   privacy link sits beside the intro instead of under the buttons.

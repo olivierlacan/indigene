@@ -34,6 +34,25 @@ const DATA_DIR = join(dirname(fileURLToPath(import.meta.url)), "..", "src", "dat
 // actually is, and the check *verifies that taxon is native there*. If VASCAN
 // ever revises one, the entry stops matching and this fails again.
 const REVIEWED = {
+  "Matteuccia struthiopteris": {
+    province: "QC",
+    as: "Matteuccia pensylvanica",
+    why:
+      "The ostrich fern — têtes de violon, the fiddleheads sold by the bagful " +
+      "every spring here. VASCAN splits the North American plant from the " +
+      "circumboreal one and keeps `M. pensylvanica` for ours; the eastern US " +
+      "floras we took the row from call both `M. struthiopteris`. Native in six " +
+      "provinces under the name VASCAN uses.",
+  },
+  "Andropogon gerardii": {
+    province: "QC",
+    as: "Andropogon gerardi",
+    why:
+      "One letter. VASCAN keeps Vitman's original spelling, `gerardi`; almost " +
+      "every American source doubles the i. Nothing else differs, and a " +
+      "rollup that matches on spelling alone reported big bluestem absent from " +
+      "a province it is native in.",
+  },
   "Achillea millefolium": {
     province: "BC",
     as: "Achillea borealis",
@@ -57,6 +76,11 @@ const REVIEWED = {
 /** Which shipped lists make a claim about Canadian ground, and where. */
 const CROSS_BORDER = [
   { region: "pnw", province: "BC", why: "reaches Vancouver, the Fraser Valley and east Vancouver Island" },
+  {
+    region: "st-lawrence",
+    province: "QC",
+    why: "is the St Lawrence plain — Montréal, Québec City and Ottawa — before it is anything else",
+  },
 ];
 
 const rows = (region) => {

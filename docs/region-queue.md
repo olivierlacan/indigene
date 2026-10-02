@@ -197,7 +197,11 @@ to be the work.
 The narrower worry survives and was answered separately: the Klamath and
 Willamette species really don't reach BC, and the two that don't now say so.
 
-### 4. Québec — the only place our French and our plants meet
+### 4. Québec — ~~the only place our French and our plants meet~~
+
+**Shipped, and not as Québec.** See the note at the end of this section: asking
+the ecoregions where the region was produced a different shape, and a different
+name, from the one this section assumed.
 
 The St Lawrence lowlands and the southern Appalachians: Montréal, Québec City,
 Sherbrooke, the Eastern Townships.
@@ -229,7 +233,32 @@ Two things to size honestly before starting: VASCAN is **vascular plants only**,
 so the animals on a Québec wildlife page need their own fr-CA authority; and the
 prose overlay (`prose.fr/`) is written for a French reader, not a Québécois one.
 
-### 5. Northern New England & the Acadian forest — Québec's US sibling
+**What happened instead: the St Lawrence Lowlands.** This section planned a
+province. The CEC draws one ecoregion — 8.1.1, *Eastern Great Lakes and Hudson
+Lowlands* — over Montréal, Québec City, Trois-Rivières, Granby **and** Ottawa,
+Kingston, Plattsburgh and Burlington. The river runs down the middle of it, and
+so does the border. Sherbrooke and the Townships behind it are 5.3.1, claimed
+too; Gatineau, six kilometres from a claimed Ottawa, is Shield country (5.2.3)
+and is refused.
+
+So the region is named for the ground rather than the province, and it fixed a
+wrong answer on the way: the Mid-Atlantic box reached 45.5° N, which put
+Sherbrooke, Granby and Ottawa on a Philadelphia list — redbud and flowering
+dogwood — because no live code can contradict a box north of the border. Its
+north edge now stops at 44.2°, where this region starts.
+
+55 rows, every one checked against VASCAN for Québec: 53 native outright and two
+under names VASCAN draws differently. **The fr-CA table is still to do** — this
+region ships with the English prose, the way Ireland did.
+
+### 5. Northern New England & the Acadian forest — ~~Québec's US sibling~~
+
+**Half of it is no longer a sibling: it is the same region.** Burlington,
+Plattsburgh and Montpelier are the Champlain valley, 8.1.1 and 5.3.1, and ship
+with the St Lawrence list above. What is left here is the genuinely different
+half — ecoregion **82 / CEC 8.1.8, *Maine/New Brunswick Plains and Hills***
+(Bangor, Presque Isle, Fredericton), which still nothing claims, and the
+northern end of 59 around Portland.
 
 Maine, New Hampshire and Vermont above the Mid-Atlantic list's honest reach:
 ecoregion **82 (Acadian Plains and Hills)**, which nothing claims, with 58

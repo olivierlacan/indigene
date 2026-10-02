@@ -183,6 +183,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "st-lawrence",
       "florida-central"
     ]
   },
@@ -212,7 +213,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -691,7 +693,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "st-lawrence"
     ]
   },
   {
@@ -720,7 +723,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -779,6 +783,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "north-michigan",
+      "st-lawrence",
       "pnw"
     ]
   },
@@ -803,7 +808,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "st-lawrence"
     ]
   },
   {
@@ -949,7 +955,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -1130,6 +1137,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "north-michigan",
+      "st-lawrence",
       "pnw"
     ]
   },
@@ -1420,7 +1428,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -1481,6 +1490,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "st-lawrence",
       "florida-central"
     ]
   },
@@ -1861,6 +1871,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "north-michigan",
+      "st-lawrence",
       "pnw"
     ]
   },
@@ -2193,7 +2204,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -2314,7 +2326,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -2523,7 +2536,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -2615,6 +2629,28 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Celastrus scandens",
+    "family": "Celastraceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "celastrus-scandens"
+    },
+    "commonNames": [
+      "American Bittersweet"
+    ],
+    "aliases": [
+      "american bittersweet",
+      "celastrus scandens"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "st-lawrence"
     ]
   },
   {
@@ -2738,7 +2774,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "st-lawrence"
     ]
   },
   {
@@ -3033,6 +3070,28 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Clematis virginiana",
+    "family": "Ranunculaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "clematis-virginiana"
+    },
+    "commonNames": [
+      "Virgin's Bower"
+    ],
+    "aliases": [
+      "clematis virginiana",
+      "virgin's bower"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "st-lawrence"
     ]
   },
   {
@@ -3354,7 +3413,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -3503,6 +3563,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "st-lawrence",
       "pnw"
     ]
   },
@@ -3532,7 +3593,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "st-lawrence"
     ]
   },
   {
@@ -3601,6 +3663,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "north-michigan",
+      "st-lawrence",
       "pnw",
       "ca-central-coast"
     ]
@@ -4083,7 +4146,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -4941,7 +5005,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -5000,7 +5065,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -5335,7 +5401,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -5696,7 +5763,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "st-lawrence"
     ]
   },
   {
@@ -5784,7 +5852,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -6331,7 +6400,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -7011,7 +7081,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -7576,7 +7647,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -7749,7 +7821,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -8053,6 +8126,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Onoclea sensibilis",
+    "family": "Onocleaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "onoclea-sensibilis"
+    },
+    "commonNames": [
+      "Sensitive Fern"
+    ],
+    "aliases": [
+      "onoclea sensibilis",
+      "sensitive fern"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "st-lawrence"
+    ]
+  },
+  {
     "primaryId": "ipni:453395-1",
     "scientificName": "Origanum vulgare",
     "family": "Lamiaceae",
@@ -8167,7 +8262,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "st-lawrence"
     ]
   },
   {
@@ -8196,7 +8292,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "st-lawrence"
     ]
   },
   {
@@ -8629,7 +8726,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -8897,7 +8995,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -9285,7 +9384,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -9555,7 +9655,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -9823,7 +9924,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -10060,7 +10162,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "st-lawrence"
     ]
   },
   {
@@ -10274,7 +10377,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -11218,7 +11322,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -11574,6 +11679,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "north-michigan",
+      "st-lawrence",
       "pnw"
     ]
   },
@@ -11635,7 +11741,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -11984,7 +12091,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "st-lawrence"
     ]
   },
   {
@@ -12493,7 +12601,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -12696,7 +12805,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -12874,7 +12984,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -13093,7 +13204,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -13272,7 +13384,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -13301,7 +13414,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "st-lawrence"
     ]
   },
   {
@@ -13481,7 +13595,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "st-lawrence"
     ]
   },
   {
@@ -13541,7 +13656,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -13834,7 +13950,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -13924,7 +14041,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   }
 ];

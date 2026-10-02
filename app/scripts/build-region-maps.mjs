@@ -117,6 +117,19 @@ const LANDMARKS = {
   // Campbell River and Medford are the north and south ends of the claim, and
   // Victoria earns its label twice over: it is the far side of the border this
   // region crosses, and it is on an island, which nothing else here fixes.
+  // Québec City and Kingston are the two ends of the plain, Burlington is the
+  // Champlain valley's American half, and Sherbrooke is the Townships behind it.
+  // Ottawa and Gatineau are six kilometres apart and in different ecoregions —
+  // only Ottawa is shaded — so Ottawa alone is labelled and the seam shows.
+  "st-lawrence": [
+    { name: "Québec City", lat: 46.81, lon: -71.21 },
+    { name: "Trois-Rivières", lat: 46.34, lon: -72.54 },
+    { name: "Montréal", lat: 45.5, lon: -73.57 },
+    { name: "Ottawa", lat: 45.42, lon: -75.7 },
+    { name: "Sherbrooke", lat: 45.4, lon: -71.89 },
+    { name: "Kingston", lat: 44.23, lon: -76.49 },
+    { name: "Burlington", lat: 44.48, lon: -73.21 },
+  ],
   pnw: [
     { name: "Campbell River", lat: 50.02, lon: -125.24 },
     { name: "Vancouver", lat: 49.28, lon: -123.12 },

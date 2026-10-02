@@ -1,16 +1,19 @@
-// Two ways a page names several regions, one for each job.
+// Several regions in one line, whatever the count.
 //
-// `regionLinks` is information: "📍 Native to: A · B". Two names read in a
-// glance; four wrap a phone's top row into three lines of underlines before
-// the plant's own name. So past two the list becomes a count — "4 regions ▾" —
-// and the names open in a small popover beside it: on hover with a mouse, on
-// tap with a finger. Every name is still a link, one tap further away.
+// Up to two names fit a phone's line, so they show as they always did. Past
+// two, the line keeps its one button and the names open in a small menu under
+// it — the same menu for every job:
 //
-// `scrollFade` is for actions: the region switches stay one tap each, on one
-// line that scrolls sideways, and the edge that hides a chip fades so the row
-// says there's more of it.
+// - `regionLinks`, information: "📍 Native to: 4 regions ▾", each name a link.
+//   A mouse opens it on hover; a finger on tap.
+// - `regionSwitch`, which region's figures you're reading: the current one is
+//   the button ("Atlantic France ▾"), the others are one tap inside it.
+// - `regionPicker`, where to look for photos: "or a region ▾".
+//
+// Never a row that wraps into a second line, never one that scrolls sideways
+// and hides what's past its edge.
 import { el } from "../ui";
-import { tn } from "../lib/i18n";
+import { t, tn } from "../lib/i18n";
 
 export interface RegionLink {
   name: string;
@@ -18,54 +21,42 @@ export interface RegionLink {
   title?: string;
 }
 
-/** How many names a line holds before it turns into a count. */
-const INLINE_MAX = 2;
+/** How many names a line holds before it turns into a menu. */
+export const INLINE_MAX = 2;
 
 const hoverable = (): boolean =>
   typeof matchMedia === "function" && matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-const canPopover = (): boolean =>
+/** Without the popover API (older browsers) every caller falls back to its
+ *  inline form: longer, but nothing is out of reach. */
+export const canPopover = (): boolean =>
   typeof HTMLElement !== "undefined" && "showPopover" in HTMLElement.prototype;
 
 let seq = 0;
 
+const caret = (): HTMLElement => el("span", { class: "region-caret", "aria-hidden": "true" }, "▾");
+
 /**
- * "Native to: A · B", or "Native to: 4 regions ▾" with the names a tap away.
- * `linkClass` lets a caller keep its own look for the inline names (the
- * wildlife page's pills).
+ * A button and the menu it opens, as one node. The menu sits in the top layer
+ * (light-dismiss and Escape come with `popover="auto"`), pinned under the
+ * button and kept inside the page's 16px gutter.
  */
-export function regionLinks(label: Node | string, links: RegionLink[], linkClass?: string): HTMLElement {
-  const link = (l: RegionLink, cls?: string): HTMLElement =>
-    el("a", { class: cls, href: l.href, title: l.title }, l.name);
-
-  if (links.length <= INLINE_MAX || !canPopover()) {
-    return el("span", { class: "region-links" }, [
-      label,
-      ...links.flatMap((l, i) => [i > 0 && !linkClass ? " · " : null, link(l, linkClass)]),
-    ]);
-  }
-
+function menu(trigger: HTMLButtonElement, items: HTMLElement[], opts: { hover?: boolean } = {}): HTMLElement {
   const id = `region-pop-${++seq}`;
   const pop = el("div", { id, class: "region-pop", popover: "auto", role: "menu" }, [
-    el("ul", {}, links.map((l) => el("li", { role: "none" }, [
-      Object.assign(link(l), { role: "menuitem" }),
-    ]))),
+    el("ul", {}, items.map((item) => {
+      item.setAttribute("role", "menuitem");
+      return el("li", { role: "none" }, [item]);
+    })),
   ]);
-  const trigger = el("button", {
-    type: "button",
-    class: "region-more",
-    popovertarget: id,
-    "aria-haspopup": "menu",
-    "aria-expanded": "false",
-  }, [tn("region.count", links.length), el("span", { "aria-hidden": "true" }, " ▾")]) as HTMLButtonElement;
+  trigger.setAttribute("popovertarget", id);
+  trigger.setAttribute("aria-haspopup", "menu");
+  trigger.setAttribute("aria-expanded", "false");
 
-  // Pinned under the trigger, inside the page's 16px gutter. The popover sits
-  // in the top layer, so it's placed against the viewport, not the card.
   const place = (): void => {
     const r = trigger.getBoundingClientRect();
     const gutter = 16;
-    const w = pop.offsetWidth;
-    const left = Math.max(gutter, Math.min(r.left, innerWidth - w - gutter));
+    const left = Math.max(gutter, Math.min(r.left, innerWidth - pop.offsetWidth - gutter));
     pop.style.left = `${left}px`;
     pop.style.top = `${r.bottom + 6}px`;
   };
@@ -83,47 +74,126 @@ export function regionLinks(label: Node | string, links: RegionLink[], linkClass
   });
 
   // With a mouse, hovering opens it and leaving closes it — after a beat, so
-  // the pointer can cross the gap from the trigger to the list.
-  if (hoverable()) {
+  // the pointer can cross the gap from the button to the list.
+  if (opts.hover && hoverable()) {
     let timer = 0;
-    const open = (): void => {
+    const show = (): void => {
       clearTimeout(timer);
       if (!pop.matches(":popover-open")) pop.showPopover();
     };
-    const close = (): void => {
+    const hide = (): void => {
       clearTimeout(timer);
       timer = window.setTimeout(() => {
         if (pop.matches(":popover-open")) pop.hidePopover();
       }, 200);
     };
     for (const node of [trigger, pop]) {
-      node.addEventListener("mouseenter", open);
-      node.addEventListener("mouseleave", close);
+      node.addEventListener("mouseenter", show);
+      node.addEventListener("mouseleave", hide);
     }
   }
 
-  return el("span", { class: "region-links" }, [label, trigger, pop]);
+  return el("span", { class: "region-menu" }, [trigger, pop]);
 }
 
 /**
- * Fades whichever edge of a sideways-scrolling row has chips hidden past it,
- * and brings the current chip (`[aria-current]`) into view.
+ * "Native to: A · B", or "Native to: 4 regions ▾" with the names a tap away.
+ * `linkClass` lets a caller keep its own look for the inline names (the
+ * wildlife page's pills).
  */
-export function scrollFade(row: HTMLElement): HTMLElement {
-  row.classList.add("scroll-fade");
-  const update = (): void => {
-    const max = row.scrollWidth - row.clientWidth;
-    row.classList.toggle("fade-start", row.scrollLeft > 2);
-    row.classList.toggle("fade-end", row.scrollLeft < max - 2);
-  };
-  row.addEventListener("scroll", update, { passive: true });
-  if (typeof ResizeObserver === "function") new ResizeObserver(update).observe(row);
-  requestAnimationFrame(() => {
-    const current = row.querySelector<HTMLElement>("[aria-current]");
-    if (current && current.offsetLeft + current.offsetWidth > row.clientWidth) {
-      row.scrollLeft = current.offsetLeft - 8; // the row is `position: relative`
-    }
-    update();
-  });
-  return row;
+export function regionLinks(label: Node | string, links: RegionLink[], linkClass?: string): HTMLElement {
+  const link = (l: RegionLink, cls?: string): HTMLElement =>
+    el("a", { class: cls, href: l.href, title: l.title }, l.name);
+
+  if (links.length <= INLINE_MAX || !canPopover()) {
+    return el("span", { class: "region-links" }, [
+      label,
+      ...links.flatMap((l, i) => [i > 0 && !linkClass ? " · " : null, link(l, linkClass)]),
+    ]);
+  }
+
+  const trigger = el("button", { type: "button", class: "region-more" }, [
+    tn("region.count", links.length),
+    " ",
+    caret(),
+  ]) as HTMLButtonElement;
+  return el("span", { class: "region-links" }, [label, menu(trigger, links.map((l) => link(l)), { hover: true })]);
+}
+
+export interface RegionOption {
+  name: string;
+  href: string;
+  current: boolean;
+}
+
+/**
+ * Which region's figures you're reading. Two regions are two chips, side by
+ * side, one tap to switch. Three or more: the current region is the button,
+ * and the menu under it lists every region with the current one ticked.
+ */
+export function regionSwitch(lede: string, options: RegionOption[]): HTMLElement {
+  const chip = (o: RegionOption): HTMLElement =>
+    el("a", {
+      class: o.current ? "region-chip region-chip-on" : "region-chip",
+      href: o.href,
+      ...(o.current ? { "aria-current": "true" } : {}),
+    }, o.name);
+
+  if (options.length <= INLINE_MAX || !canPopover()) {
+    return el("div", { class: "region-switch" }, [
+      el("span", { class: "region-switch-lede" }, lede),
+      ...options.map(chip),
+    ]);
+  }
+
+  const current = options.find((o) => o.current) ?? options[0];
+  const trigger = el("button", { type: "button", class: "region-chip region-chip-on region-chip-menu" }, [
+    current.name,
+    " ",
+    caret(),
+  ]) as HTMLButtonElement;
+  const items = options.map((o) =>
+    el("a", { href: o.href, ...(o.current ? { "aria-current": "true", class: "region-pop-current" } : {}) }, o.name)
+  );
+  return el("div", { class: "region-switch region-switch-inline" }, [
+    el("span", { class: "region-switch-lede" }, lede),
+    menu(trigger, items),
+  ]);
+}
+
+export interface RegionPlace {
+  label: string;
+  onPick: (btn: HTMLButtonElement) => void;
+}
+
+/**
+ * "or <region>" beside the location controls. One region is its own button.
+ * Two or more: "a region ▾", whose menu runs the lookup — and the button
+ * itself carries the "Asking iNaturalist…" while it does.
+ */
+export function regionPicker(places: RegionPlace[], btnClass: string): HTMLElement[] {
+  if (places.length < 2 || !canPopover()) {
+    return places.map(({ label, onPick }) => {
+      const btn = el("button", { type: "button", class: btnClass, onClick: () => onPick(btn) }, label) as HTMLButtonElement;
+      return btn;
+    });
+  }
+  const trigger = el("button", { type: "button", class: btnClass }, [
+    t("nearby.aRegion"),
+    " ",
+    caret(),
+  ]) as HTMLButtonElement;
+  let pop: HTMLElement | null = null;
+  const items = places.map(({ label, onPick }) =>
+    el("button", {
+      type: "button",
+      onClick: () => {
+        pop?.hidePopover();
+        onPick(trigger);
+      },
+    }, label)
+  );
+  const node = menu(trigger, items);
+  pop = node.querySelector(".region-pop");
+  return [node];
 }

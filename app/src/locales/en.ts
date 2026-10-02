@@ -2167,6 +2167,7 @@ export const en = {
   "nearby.foundRest.other":
     "confirmed sightings of {name} in {region}, each identified by at least two people on iNaturalist (you don't have to be there):",
   // Between the ZIP field and the region chips: one more place to look.
+  "nearby.aRegion": "a region",
   "nearby.orIn": "or",
   "nearby.busy":
     "iNaturalist asked us to slow down — it's busy right now. Give it a minute and try again.",

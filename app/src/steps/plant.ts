@@ -28,7 +28,7 @@ import { heroPhotoFor } from "../lib/hero-photo";
 import { conservationNote } from "../components/conservation-note";
 import { heroFigure } from "../components/hero-figure";
 import { traitBadges } from "../components/trait-badges";
-import { regionLinks, scrollFade } from "../components/region-list";
+import { regionLinks, regionSwitch as switchRow } from "../components/region-list";
 import { statGrid } from "../components/stat-card";
 import { drawSizeViz } from "../components/size-viz";
 import { entryForPlant, deepLinks } from "../lib/registry";
@@ -257,21 +257,15 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
    */
   function regionSwitch(p: Plant, all: PlantEntry[], current: PlantEntry): HTMLElement | null {
     if (all.length < 2) return null;
-    // One line, one tap per region: the chips scroll sideways rather than wrap
-    // (`scrollFade`), so four regions cost no more height than two.
-    return el("div", { class: "region-switch" }, [
-      el("span", { class: "region-switch-lede" }, t("plant.figuresFor")),
-      scrollFade(el("div", { class: "region-switch-row" }, all.map((e) => {
-        const here = e.region.meta.id === current.region.meta.id;
-        return el("a", {
-          class: here ? "region-chip region-chip-on" : "region-chip",
-          // A hash query, so the plant keeps one address and one share link:
-          // which region you are reading is the page's state, not its identity.
-          href: `#/plants/${encodeURIComponent(p.id)}?region=${encodeURIComponent(e.region.meta.id)}`,
-          ...(here ? { "aria-current": "true" } : {}),
-        }, regionShort(e.region.meta));
-      }))),
-    ]);
+    // Two regions are two chips; three or more, the current one opens a menu
+    // of the rest (`switchRow`), so the switch never takes a second line.
+    return switchRow(t("plant.figuresFor"), all.map((e) => ({
+      name: regionShort(e.region.meta),
+      // A hash query, so the plant keeps one address and one share link:
+      // which region you are reading is the page's state, not its identity.
+      href: `#/plants/${encodeURIComponent(p.id)}?region=${encodeURIComponent(e.region.meta.id)}`,
+      current: e.region.meta.id === current.region.meta.id,
+    })));
   }
 
   /**

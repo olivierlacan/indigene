@@ -2155,6 +2155,7 @@ export const fr: Dict = {
     "observation confirmée de {name} en {region}, identifiée par au moins deux personnes sur iNaturalist (vous n'avez pas besoin d'y être) :",
   "nearby.foundRest.other":
     "observations confirmées de {name} en {region}, chacune identifiée par au moins deux personnes sur iNaturalist (vous n'avez pas besoin d'y être) :",
+  "nearby.aRegion": "une région",
   "nearby.orIn": "ou",
   "nearby.busy":
     "iNaturalist nous demande de ralentir : le service est très sollicité. Patientez une minute et réessayez.",

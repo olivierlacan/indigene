@@ -6247,30 +6247,43 @@ body[data-layout="profile"] .wip-banner-text {
   color: var(--brand-ink);
 }
 
-/* Actions: one line of chips that scrolls sideways; the edge hiding more
-   chips fades out. */
-.region-switch-row {
-  display: flex;
-  flex: 1 0 100%;
-  gap: 0.35rem;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scrollbar-width: none;
-  padding: 2px;
+.region-caret {
+  font-size: 0.8em;
 }
-.region-switch-row::-webkit-scrollbar {
-  display: none;
+/* Actions: three or more regions, and the current one is the button that opens
+   the rest. Lede and button share a line — it's one control now, not a row. */
+.region-switch-inline .region-switch-lede {
+  flex: 0 0 auto;
+  margin: 0;
 }
-.scroll-fade {
-  position: relative;
-  --fade: 3rem;
+.region-chip-menu {
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
 }
-.scroll-fade.fade-end {
-  mask-image: linear-gradient(to right, #000 calc(100% - var(--fade)), transparent);
+.region-pop button {
+  display: block;
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
 }
-.scroll-fade.fade-start {
-  mask-image: linear-gradient(to left, #000 calc(100% - var(--fade)), transparent);
+.region-pop button:hover,
+.region-pop button:focus-visible {
+  background: var(--surface-2);
+  color: var(--brand-ink);
 }
-.scroll-fade.fade-start.fade-end {
-  mask-image: linear-gradient(to right, transparent, #000 var(--fade), #000 calc(100% - var(--fade)), transparent);
+/* The region you're reading, ticked. */
+.region-pop .region-pop-current {
+  font-weight: 650;
+}
+.region-pop .region-pop-current::after {
+  content: " ✓";
+  color: var(--brand-ink);
 }

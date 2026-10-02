@@ -90,3 +90,45 @@ If a second authority becomes reachable (BSBI, or the National Biodiversity Data
 Centre), this is the first thing to re-open. Until then the absence is
 deliberate and is recorded here rather than left as a gap somebody fills by
 accident.
+
+## Who else could answer, outside Europe and North America (2026-10-02)
+
+Before a region is planned for Africa, South America or Asia, something has to
+assert native status there. The candidates were asked directly, through the same
+GBIF checklist API this file already uses.
+
+| Continent | Candidate | Grain | Native vs introduced? | Verdict |
+|---|---|---|---|---|
+| South America | Flora e Funga do Brasil (JBRJ), CC BY 4.0 | **Brazilian state** (`BR-PR`, `BR-MG`, …) | yes, `NATIVE` per state | **Better than WCVP here.** The grain VASCAN gives Canada |
+| Africa | South African National Plant Checklist (SANBI), CC BY 4.0 | province, as one comma-joined string | **no — nothing** | **Unusable alone** |
+| Asia | GreenList 2.02rc (Japan), CC BY 4.0 | national | yes, by inclusion | A second opinion, not a finer one |
+| anywhere | WCVP | TDWG level 3 | yes | The backbone, as before |
+
+**Why SANBI's checklist cannot carry a native claim, in one example.** Asked for
+*Acacia mearnsii* — Australian black wattle, among the worst invasive trees in
+South Africa — it answers with six provinces and no establishment status, in a
+record shaped exactly like the one it gives *Protea cynaroides*, a Cape endemic.
+*Lantana camara* reads the same way. GBIF flags the distribution
+`DISTRIBUTION_INVALID`, and there is no status on the taxon record or in its
+species profile either. A region standing on it would have no way to keep black
+wattle off a Cape Town list, which is the one thing `native: true` exists to
+prevent.
+
+WCVP, asked the same question, calls black wattle `INTRODUCED` in Cape Provinces,
+Free State, KwaZulu-Natal and Northern Provinces, and native in its Australian
+home states. **So Africa's native-status gate passes — on WCVP, not on the
+national checklist.** Those four TDWG units are a real regional grain, not a
+country-level lump.
+
+**Asia's limit is grain, not status.** WCVP treats Japan as a single unit, and
+mainland India as another, so a Tokyo list and a Sapporo list would be identical
+however differently they grow. Japan's own GreenList — a checklist of *wild*
+flowering plants, which simply omits black locust — confirms native status but
+carries no sub-national locality either, so it cross-checks WCVP rather than
+refining it. China is the exception: WCVP splits it into North-Central,
+South-Central, Southeast, Manchuria and more.
+
+That coarseness is not a blocker, because it is already the shipped norm:
+`check-native.mjs` asserts Ireland at `TDWG:IRE`, the whole island, and Auckland
+at `TDWG:NZN`, the whole North Island. A region's **box** does the fine work, as
+it does for every region built on a code.

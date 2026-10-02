@@ -298,8 +298,9 @@ Today a London reader gets nothing: the Atlantic France box tops out at 51.2° N
 about 30 km south of the city.
 
 The one piece to confirm is a native-status authority — BSBI's *Online Atlas*,
-or WCVP native ranges at TDWG level 3, which `DATA_SOURCES.md` already names as
-the global backbone and which nothing here has yet verified.
+or WCVP native ranges at TDWG level 3. WCVP is no longer unverified: Ireland
+ships on it at `TDWG:IRE`, and `data/sources/wcvp/README.md` records both what it
+is admitted for and the one place it disagrees with Irish botanical opinion.
 
 After that, in descending order of how much is already true:
 
@@ -310,14 +311,53 @@ After that, in descending order of how much is already true:
 | Germany, Poland, Benelux | EEA ✅ (`continental`) | Gaytán Continental ✅ | national floras — to confirm | full |
 | Nordics | EEA ✅ (`boreal`) | Gaytán Boreal ✅ | national floras — to confirm | full |
 | Rest of the US | EPA ✅ | genus estimates, as now | USDA PLANTS ✅ | none |
-| Everywhere else | **RESOLVE/WWF only — a shapefile, not a service** | **nothing** | WCVP | varies |
+| Japan | RESOLVE ✅ (682, Taiheiyo evergreen forests) | HOSTS ✅ (oak 531 field, 561 recorded) | WCVP — national grain | full |
+| India | RESOLVE ✅ (298, South Deccan Plateau) | HOSTS ✅ (sal 140, teak 66) | WCVP — national grain | full |
+| East Africa | RESOLVE ✅ (57, Acacia-Commiphora) | HOSTS ✅ (Acacia 186) | WCVP ✅ | full |
+| Brazil | RESOLVE ✅ (500, Serra do Mar) | HOSTS — a floor, crop-led | **Flora e Funga do Brasil ✅ (by state)** | full |
+| Everywhere else | RESOLVE ✅ globally | HOSTS, where the records are | WCVP | varies |
 
-The cliff at the bottom row is the real answer to "around the world". Outside
-Europe and North America there is no openly-licensed Lepidoptera host table and
-no ecoregion service we can point-query — the ecological claim that is the whole
-argument of this app would be an estimate with nothing behind it. That is a
-research project, not a region, and it should be named as one before anybody
-plans an Australian list.
+That bottom row used to read "RESOLVE/WWF only — a shapefile, not a service" and
+"nothing" for host counts, and concluded this was "a research project, not a
+region". **Both halves were wrong by the time anybody acted on them** — and in
+each case the evidence was already sitting in this repo, a few directories from
+the claim.
+
+- **The ecoregion service exists and is already integrated.** RESOLVE became a
+  live point-query when Auckland shipped. Fifteen cities across Africa, South
+  America and Asia were asked in 2026-10: fifteen answered, with an ecoregion, a
+  biome and a realm. `data/sources/resolve-ecoregions/README.md` has the table.
+  The only limit is `inResolveCoverage`, which asks south of the equator on
+  purpose — one line to widen when a northern region declares codes.
+- **An openly-licensed host table exists, and this repo already downloaded it.**
+  HOSTS (NHM, **CC0**) is 140,485 records of Lepidoptera larval host plants
+  worldwide. It was fetched in 2026-09 and measured against four candidate areas
+  — two of which happened to be the thinnest areas it has. Measured against four
+  better ones, Japan, India, East Africa and Brazil each hold more records than
+  the Australia set the same file already calls usable.
+
+What *is* true, and survives the correction:
+
+- **A HOSTS count is a country figure, not an ecoregion one** — "species recorded
+  in Japan", close to the Gaytán rule Europe already ships on, looser than
+  Plant-SyNZ's.
+- **The count can be crop-led.** Nine of Brazil's top fourteen host genera are
+  crops; Japan's top fourteen have three. Japan and India carry a wild-plant
+  literature, Brazil and East Africa lean on agricultural entomology.
+- **Native status at a fine grain is the remaining gap in Asia.** WCVP treats
+  Japan as one unit and mainland India as one, so Tokyo and Sapporo would get the
+  same list. Brazil is the opposite case: its national flora gives native status
+  per state, finer than WCVP. South Africa's national checklist cannot be used at
+  all — it does not distinguish an endemic protea from invasive black wattle.
+  `data/sources/wcvp/README.md` records all three.
+
+**The best-supported region outside Europe and North America is Tokyo.** Oak at
+531 Lepidoptera found in the field independently brackets the 511 four shipped
+regions quote for American oaks; the food web has the shape a temperate one
+should, oak then
+chestnut then cherry then beech; and thirty-two genera reach twenty species, where
+Australia manages twelve. Its one weakness is the national native grain — the same
+grain Ireland and Auckland ship on today.
 
 ---
 

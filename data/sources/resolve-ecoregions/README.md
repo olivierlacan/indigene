@@ -54,3 +54,36 @@ It is coarser than the national schemes. Sydney's ecoregion runs far up and
 down the coast, and Hamilton shares Auckland's. As with the EEA, the region's
 **box** does the fine work, and the code keeps a list from spilling into the
 next ecoregion over.
+
+## North of the equator too (2026-10-02)
+
+`docs/region-queue.md` long said that outside Europe and North America there was
+"no ecoregion service we can point-query". That stopped being true when this
+layer was integrated, and it is worth writing down, because the sentence was
+read as a reason not to look at Africa, South America or Asia at all.
+
+Fifteen cities on three continents, asked of the live layer, all fifteen
+answered with an ecoregion, a biome and a realm:
+
+| City | ECO_ID | Ecoregion |
+|---|---|---|
+| Cape Town | 90 | Renosterveld shrubland |
+| Johannesburg | 81 | Highveld grasslands |
+| Nairobi | 57 | Southern Acacia-Commiphora bushlands and thickets |
+| Lagos | 23 | Nigerian lowland forests |
+| Addis Ababa | 79 | Ethiopian montane grasslands and woodlands |
+| São Paulo, Rio de Janeiro | 500 | Serra do Mar coastal forests |
+| Santiago | 596 | Chilean Matorral |
+| Buenos Aires | 576 | Humid Pampas |
+| Bogotá | 477 | Magdalena Valley montane forests |
+| Tokyo | 682 | Taiheiyo evergreen forests |
+| Bengaluru | 298 | South Deccan Plateau dry deciduous forests |
+| Beijing | 667 | Huang He Plain mixed forests |
+| Seoul | 655 | Central Korean deciduous forests |
+| Singapore | 265 | Peninsular Malaysian rain forests |
+
+**The limit is ours, not the service's.** `inResolveCoverage` in `lib/site.ts`
+asks only south of the equator, deliberately — a reader in Tokyo gains nothing
+from the extra request while no region there declares RESOLVE codes. The first
+northern region that does is a one-line change to that gate, and the lookup
+behind it is already proven.

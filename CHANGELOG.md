@@ -31,6 +31,14 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Fixed
+
+- Regions: the Kantō Plain now shows the Japanese flag beside its name, like
+  every other region. https://indigene.app/regions/kanto
+- Internal: `flags.ts` had no JP drawing, and an unknown country code draws
+  nothing and says nothing — so the region shipped a row plainer than its
+  neighbours. A test now holds every region's countries to the flags.
+
 ## [0.36] - 2026-10-02
 
 **The St Lawrence Lowlands & the Kantō Plain**

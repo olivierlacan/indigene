@@ -6220,6 +6220,8 @@ body[data-layout="profile"] .wip-banner-text {
   inset: auto;
   margin: 0;
   max-width: min(22rem, calc(100vw - 32px));
+  max-height: calc(100dvh - 16px);
+  overflow-y: auto;
   padding: 0.35rem;
   border: 1px solid var(--line-strong);
   border-radius: 12px;

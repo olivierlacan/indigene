@@ -41,3 +41,6 @@ hosts/hosts-raw.json
 !hosts/records/southern-africa.csv
 !hosts/records/rio-de-la-plata.csv
 !hosts/records/new-zealand.csv
+# japan earned its rows the way the rule says: the Kantō Plain ships on these
+# counts, so the records behind them are now auditable without a re-fetch.
+!hosts/records/japan.csv

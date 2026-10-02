@@ -76,6 +76,29 @@ const PLACES = [
   { name: "Marseille", lat: 43.2965, lon: 5.3698, region: "france-mediterranean", via: "eea-biogeo" },
   { name: "Paris", lat: 48.8566, lon: 2.3522, region: "france-atlantic", via: "eea-biogeo" },
   { name: "Dublin", lat: 53.3498, lon: -6.2603, region: "ireland", via: "eea-biogeo" },
+  { name: "Auckland", lat: -36.8485, lon: 174.7633, region: "nz-auckland", via: "resolve-2017" },
+
+  // --- the Kantō Plain: the first region north of the equator on RESOLVE ---
+  // Until this region shipped, `inResolveCoverage` stopped at the equator and
+  // every one of these would have come back null.
+  { name: "Tokyo", lat: 35.6762, lon: 139.6503, region: "kanto", via: "resolve-2017" },
+  { name: "Yokohama", lat: 35.4437, lon: 139.638, region: "kanto", via: "resolve-2017" },
+  { name: "Utsunomiya", lat: 36.5551, lon: 139.8828, region: "kanto", via: "resolve-2017" },
+  { name: "Chiba", lat: 35.6073, lon: 140.1063, region: "kanto", via: "resolve-2017" },
+  { name: "Chōshi (the eastern cape)", lat: 35.7347, lon: 140.8267, region: "kanto", via: "resolve-2017" },
+
+  // The Kantō refusals. Ecoregion 682 runs the whole Pacific side of Japan, so
+  // every one of these is the *same code* as Tokyo and is kept out by the box
+  // alone — the opposite of Gatineau above, and the reason this region's box is
+  // tighter than any other's.
+  { name: "Nagoya (same code, 250 km west)", lat: 35.1815, lon: 136.9066, region: null },
+  { name: "Osaka (same code, 400 km west)", lat: 34.6937, lon: 135.5023, region: null },
+  { name: "Sendai (same code, to the north)", lat: 38.2682, lon: 140.8694, region: null },
+  // And one kept out by the code instead: Nikkō is in the box's latitude band
+  // but the layer calls it 683, montane deciduous — genuinely different ground.
+  { name: "Nikkō (up in the mountains)", lat: 36.7199, lon: 139.6982, region: null },
+  // Sapporo and Niigata are neither: different codes and far outside the box.
+  { name: "Sapporo (Hokkaidō)", lat: 43.0618, lon: 141.3545, region: null },
 ];
 
 const loader = await openLoader();

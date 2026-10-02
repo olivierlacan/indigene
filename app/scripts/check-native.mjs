@@ -51,6 +51,12 @@ const OUT_DIR = join(REPO_ROOT, "data", "sources", "wcvp");
 const TDWG_AREA = {
   ireland: { code: "IRE", label: "Ireland (TDWG:IRE — the whole island)" },
   "nz-auckland": { code: "NZN", label: "New Zealand North (TDWG:NZN — the North Island)" },
+  // Japan is a single TDWG level-3 area, Hokkaidō to Kyūshū — far coarser than
+  // the Kantō Plain, and the coarsest claim any region here stands on. There is
+  // no finer open authority: Japan's own GreenList gives native status without a
+  // sub-national locality (see data/sources/wcvp/README.md), so the box does the
+  // narrowing and each row's note says where on the plain the plant grows.
+  kanto: { code: "JAP", label: "Japan (TDWG:JAP — the whole country)" },
 };
 
 const args = process.argv.slice(2);

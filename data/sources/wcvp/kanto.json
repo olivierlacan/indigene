@@ -1,0 +1,423 @@
+{
+  "source": "World Checklist of Vascular Plants (WCVP), Royal Botanic Gardens Kew",
+  "license": "CC BY 4.0",
+  "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
+  "area": "Japan (TDWG:JAP — the whole country)",
+  "region": "kanto",
+  "ranAt": "2026-10-02T06:13:12.901Z",
+  "rows": [
+    {
+      "id": "quercus-serrata",
+      "latin": "Quercus serrata",
+      "asked": "Quercus serrata",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "quercus-acutissima",
+      "latin": "Quercus acutissima",
+      "asked": "Quercus acutissima",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "quercus-myrsinifolia",
+      "latin": "Quercus myrsinifolia",
+      "asked": "Quercus myrsinifolia",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "quercus-glauca",
+      "latin": "Quercus glauca",
+      "asked": "Quercus glauca",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "castanea-crenata",
+      "latin": "Castanea crenata",
+      "asked": "Castanea crenata",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "castanopsis-sieboldii",
+      "latin": "Castanopsis sieboldii",
+      "asked": "Castanopsis sieboldii",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "zelkova-serrata",
+      "latin": "Zelkova serrata",
+      "asked": "Zelkova serrata",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "celtis-sinensis",
+      "latin": "Celtis sinensis",
+      "asked": "Celtis sinensis",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "prunus-jamasakura",
+      "latin": "Prunus jamasakura",
+      "asked": "Prunus jamasakura",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "acer-palmatum",
+      "latin": "Acer palmatum",
+      "asked": "Acer palmatum",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "carpinus-laxiflora",
+      "latin": "Carpinus laxiflora",
+      "asked": "Carpinus laxiflora",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "machilus-thunbergii",
+      "latin": "Machilus thunbergii",
+      "asked": "Machilus thunbergii",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "alnus-japonica",
+      "latin": "Alnus japonica",
+      "asked": "Alnus japonica",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "styrax-japonicus",
+      "latin": "Styrax japonicus",
+      "asked": "Styrax japonicus",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "magnolia-kobus",
+      "latin": "Magnolia kobus",
+      "asked": "Magnolia kobus",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "camellia-japonica",
+      "latin": "Camellia japonica",
+      "asked": "Camellia japonica",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "hydrangea-macrophylla",
+      "latin": "Hydrangea macrophylla",
+      "asked": "Hydrangea macrophylla",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "lespedeza-bicolor",
+      "latin": "Lespedeza bicolor",
+      "asked": "Lespedeza bicolor",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "viburnum-dilatatum",
+      "latin": "Viburnum dilatatum",
+      "asked": "Viburnum dilatatum",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "callicarpa-japonica",
+      "latin": "Callicarpa japonica",
+      "asked": "Callicarpa japonica",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "rhododendron-indicum",
+      "latin": "Rhododendron indicum",
+      "asked": "Rhododendron indicum",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "euonymus-alatus",
+      "latin": "Euonymus alatus",
+      "asked": "Euonymus alatus",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "salix-gracilistyla",
+      "latin": "Salix gracilistyla",
+      "asked": "Salix gracilistyla",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "lindera-umbellata",
+      "latin": "Lindera umbellata",
+      "asked": "Lindera umbellata",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "eurya-japonica",
+      "latin": "Eurya japonica",
+      "asked": "Eurya japonica",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "aucuba-japonica",
+      "latin": "Aucuba japonica",
+      "asked": "Aucuba japonica",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "pieris-japonica",
+      "latin": "Pieris japonica",
+      "asked": "Pieris japonica",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "rosa-multiflora",
+      "latin": "Rosa multiflora",
+      "asked": "Rosa multiflora",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "ardisia-japonica",
+      "latin": "Ardisia japonica",
+      "asked": "Ardisia japonica",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "wisteria-floribunda",
+      "latin": "Wisteria floribunda",
+      "asked": "Wisteria floribunda",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "akebia-quinata",
+      "latin": "Akebia quinata",
+      "asked": "Akebia quinata",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "trachelospermum-asiaticum",
+      "latin": "Trachelospermum asiaticum",
+      "asked": "Trachelospermum asiaticum",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "lonicera-japonica",
+      "latin": "Lonicera japonica",
+      "asked": "Lonicera japonica",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "vitis-coignetiae",
+      "latin": "Vitis coignetiae",
+      "asked": "Vitis coignetiae",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "parthenocissus-tricuspidata",
+      "latin": "Parthenocissus tricuspidata",
+      "asked": "Parthenocissus tricuspidata",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "cornus-kousa",
+      "latin": "Cornus kousa",
+      "asked": "Cornus kousa",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "artemisia-princeps",
+      "latin": "Artemisia princeps",
+      "asked": "Artemisia princeps",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "viola-grypoceras",
+      "latin": "Viola grypoceras",
+      "asked": "Viola grypoceras",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "cirsium-japonicum",
+      "latin": "Cirsium japonicum",
+      "asked": "Cirsium japonicum",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "sanguisorba-officinalis",
+      "latin": "Sanguisorba officinalis",
+      "asked": "Sanguisorba officinalis",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "aristolochia-debilis",
+      "latin": "Aristolochia debilis",
+      "asked": "Aristolochia debilis",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "aster-microcephalus",
+      "latin": "Aster microcephalus",
+      "asked": "Aster microcephalus",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "patrinia-scabiosifolia",
+      "latin": "Patrinia scabiosifolia",
+      "asked": "Patrinia scabiosifolia",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "platycodon-grandiflorus",
+      "latin": "Platycodon grandiflorus",
+      "asked": "Platycodon grandiflorus",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "iris-ensata",
+      "latin": "Iris ensata",
+      "asked": "Iris ensata",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "dianthus-superbus",
+      "latin": "Dianthus superbus",
+      "asked": "Dianthus superbus",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "lilium-speciosum",
+      "latin": "Lilium speciosum",
+      "asked": "Lilium speciosum",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "hosta-sieboldii",
+      "latin": "Hosta sieboldii",
+      "asked": "Hosta sieboldii",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "farfugium-japonicum",
+      "latin": "Farfugium japonicum",
+      "asked": "Farfugium japonicum",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "miscanthus-sinensis",
+      "latin": "Miscanthus sinensis",
+      "asked": "Miscanthus sinensis",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "carex-morrowii",
+      "latin": "Carex morrowii",
+      "asked": "Carex morrowii",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "carex-dispalata",
+      "latin": "Carex dispalata",
+      "asked": "Carex dispalata",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "sasa-veitchii",
+      "latin": "Sasa veitchii",
+      "asked": "Sasa veitchii",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "ophiopogon-japonicus",
+      "latin": "Ophiopogon japonicus",
+      "asked": "Ophiopogon japonicus",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "pachysandra-terminalis",
+      "latin": "Pachysandra terminalis",
+      "asked": "Pachysandra terminalis",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "saxifraga-stolonifera",
+      "latin": "Saxifraga stolonifera",
+      "asked": "Saxifraga stolonifera",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "osmunda-japonica",
+      "latin": "Osmunda japonica",
+      "asked": "Osmunda japonica",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "dryopteris-erythrosora",
+      "latin": "Dryopteris erythrosora",
+      "asked": "Dryopteris erythrosora",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "athyrium-niponicum",
+      "latin": "Athyrium niponicum",
+      "asked": "Athyrium niponicum",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    }
+  ]
+}

@@ -71,8 +71,16 @@ describe("every shipped plant", async () => {
     });
 
     it(`${id}: only a count from a dataset is recorded as counted`, () => {
+      // `counted` is the strongest thing a row can say about its host figure:
+      // somebody counted rows in a named, citable table. The guard is a list of
+      // the tables that exist, so a row cannot reach `counted` on a tally
+      // nobody can check — adding a dataset here is a deliberate act.
+      //   Gaytán      the European Lepidoptera–plant matrix (four French regions, Ireland)
+      //   Plant-SyNZ  Landcare Research's New Zealand host records (Auckland)
+      //   HOSTS       the NHM's world Lepidoptera hostplant database (the Kantō Plain)
+      const DATASETS = /Gaytán|Plant-SyNZ|HOSTS/;
       const unbacked = rows
-        .filter((p) => p.hostCountFrom === "counted" && !/Gaytán|Plant-SyNZ/.test(p.basis))
+        .filter((p) => p.hostCountFrom === "counted" && !DATASETS.test(p.basis))
         .map((p) => p.id);
       expect(unbacked).toEqual([]);
     });

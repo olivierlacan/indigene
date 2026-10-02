@@ -32,6 +32,9 @@ const cec = (code: string, name: string): EcoregionInfo => ({
 const eea = (code: string, name: string): EcoregionInfo => ({
   provider: "eea-biogeo", code, name, hierarchy: [], detail: null,
 });
+const resolve = (code: string, name: string): EcoregionInfo => ({
+  provider: "resolve-2017", code, name, hierarchy: [], detail: null,
+});
 
 // Real coordinates, so a failure names a place rather than a number.
 const VANCOUVER = [49.267, -123.165] as const;
@@ -41,6 +44,12 @@ const PORTLAND = [45.5152, -122.6784] as const;
 const BEND = [44.0582, -121.3153] as const;
 const MERRITT = [50.1113, -120.7862] as const;
 const DUBLIN = [53.3498, -6.2603] as const;
+const TOKYO = [35.6762, 139.6503] as const;
+const CHOSHI = [35.7347, 140.8267] as const;
+const NAGOYA = [35.1815, 136.9066] as const;
+const OSAKA = [34.6937, 135.5023] as const;
+const SENDAI = [38.2682, 140.8694] as const;
+const NIKKO = [36.7199, 139.6982] as const;
 
 describe("regionForSite — a live code refines the box", () => {
   it("matches a US point on the region's EPA codes", () => {
@@ -115,5 +124,36 @@ describe("regionForSite — Europe, where the codes are coarse", () => {
     // Marseille's own code is `mediterranean`; handed `alpine`, the
     // Mediterranean region must decline rather than answer anyway.
     expect(regionForSite(43.2965, 5.3698, siteWith(eea("alpine", "Alpine")))).toBeNull();
+  });
+});
+
+describe("regionForSite — Japan, where one code covers most of a country", () => {
+  // RESOLVE's 682 (Taiheiyo evergreen forests) is the whole Pacific-facing
+  // lowland of Japan: Sendai to Kagoshima, seven degrees of latitude. The Kantō
+  // Plain claims that code, so the **box** is the only thing standing between a
+  // Tokyo list and an Osaka gardener. This is the inverse of the Gatineau case
+  // above, where the code does the refusing and the box cannot.
+  const TAIHEIYO = () => siteWith(resolve("682", "Taiheiyo evergreen forests"));
+
+  it("hands the Kantō list to a point on the plain", () => {
+    expect(regionForSite(...TOKYO, TAIHEIYO())?.meta.id).toBe("kanto");
+    expect(regionForSite(...CHOSHI, TAIHEIYO())?.meta.id).toBe("kanto");
+  });
+
+  it("refuses the same code far outside the box", () => {
+    // Each of these really does return 682 from the live layer. If the box ever
+    // widens, a Nagoya or Osaka reader silently gets a list written for a plain
+    // 250–400 km away, with no code mismatch to catch it.
+    expect(regionForSite(...NAGOYA, TAIHEIYO())).toBeNull();
+    expect(regionForSite(...OSAKA, TAIHEIYO())).toBeNull();
+    expect(regionForSite(...SENDAI, TAIHEIYO())).toBeNull();
+  });
+
+  it("refuses the mountains inside the box on their code", () => {
+    // Nikkō is within the box's latitude band but the layer calls it 683,
+    // montane deciduous — colder, different flora. Both gates are load-bearing
+    // here, each catching what the other cannot.
+    expect(regionForSite(...NIKKO, siteWith(resolve("683", "Taiheiyo montane deciduous forests"))))
+      .toBeNull();
   });
 });

@@ -50,6 +50,19 @@ The cost, plainly: if the NHM edits HOSTS, a survey count can no longer be shown
 row by row — only the count and its date. Same trade the gitignore makes for the
 48 MB raw file, and `resolve-ecoregions` for its 27 MB of shapes.
 
+**How real is that risk? Low, and measurably so.** The Data Portal reports the
+resource's `last_modified` as **2023-03-23** and its metadata as last touched five
+days later; it has a **DOI** (`10.5519/havt50xw`) with `doi_status: true`. HOSTS is
+Gaden Robinson's finished work, archived and citable, not a database still being
+edited — so a re-fetch is very likely to return the same 140,485 rows it returned
+in 2026-10. That is the argument for committing fewer of them, and the reason the
+four areas above are enough: they cover the two-minute gap for the areas somebody
+is actually working in.
+
+What a re-fetch cannot give back is the *noticing*. The `labOnly` correction below
+exists because the rows were on disk when somebody looked. A count in a JSON file
+raises no questions about itself.
+
 Broad locations are left out on purpose: "Australasia", "Indo-Australian" and
 "Neotropical" mix in records from New Guinea or the Amazon. `AREAS` in
 `app/scripts/fetch-hosts.mjs` is where to add one.
@@ -73,7 +86,7 @@ likely headline plants:
 |---|---|---|---|
 | India | 9,402 | Shorea 140 · Terminalia 124 · Acacia 93 · Ficus 89 · Dalbergia 68 · Tectona 66 | **Usable, and the broadest area in HOSTS**: 176 genera reach 10 species, 83 reach 20 |
 | East Africa | 6,357 | Acacia 186 · Albizia 63 · Ficus 61 · Hibiscus 54 · Capparis 43 · Combretum 41 | **Usable** for a savanna region: 124 genera reach 10, three times southern Africa |
-| Japan | 4,873 | Quercus 561 · Castanea 174 · Prunus 105 · Fagus 99 · Acer 69 · Salix 62 | **Usable, and the best-shaped**: a temperate food web with oak on top, like the Nearctic |
+| Japan | 4,873 | Quercus 561 · Castanea 174 · Prunus 105 · Fagus 99 · Acer 69 · Salix 62 (minus `labOnly`: 531 · 156 · 105 · 91) | **Usable, and the best-shaped**: a temperate food web with oak on top, like the Nearctic |
 | Brazil | 3,607 | Erythroxylum 38 · Cassia 32 · Inga 32 · Qualea 28 · Senna 28 · Schinus 27 | **Usable but crop-led** — see below |
 | Australia | 2,635 | Eucalyptus 257 · Acacia 118 · Melaleuca 87 · Banksia 34 · Leptospermum 29 · Grevillea 18 | **Usable** for Sydney, as a national figure |
 | South Africa + Southern Africa | 2,165 | Acacia 74 · Protea 33 · Rhus 33 · Diospyros 25 … Erica 1 · Pelargonium 1 | **Too thin alone** for the Cape: the fynbos genera are barely recorded |
@@ -104,10 +117,32 @@ is a floor, not an estimate.
 
 ### One calibration worth keeping
 
-Japanese *Quercus* comes to **561** distinct Lepidoptera. Tallamy's figure for
-American oaks, which four shipped regions already quote, is **511**. Two
-independent sources, two continents, the same order of magnitude for the same
-genus — which is the closest thing to a check on either number that exists.
+Japanese *Quercus* comes to **531** distinct Lepidoptera found in the field (561
+recorded, less the 30 known only from lab rearing). Tallamy's figure for American
+oaks, which four shipped regions already quote, is **511**. Two independent
+sources, two continents, twenty species apart on the same genus — which is the
+closest thing to a check on either number that exists.
+
+### The lab-rearing flag, and what reading it as a boolean cost
+
+HOSTS has a `Lab Rearing` column whose values are `Y`, `?` or empty. A first pass
+tested it for `true`/`1`/`yes`, got nothing, and concluded the column was
+unpopulated. It is not: 279 records across these eight areas carry `Y`.
+
+It matters because a moth known only from a lab rearing was *offered* the leaf,
+not found on it — weaker than "raises its caterpillars here". `genus-counts.json`
+therefore carries a sparse `labOnly` map per area: the genera where the two
+tallies differ, 39 entries in all. Subtract it when making the stronger claim.
+
+| Area | Count inflation from lab-only records |
+|---|---|
+| Japan | **2.1%** — and 5.3% on oak alone (561 → 531), 10% on chestnut (174 → 156) |
+| Río de la Plata | 1.4% |
+| every other area | under 0.5% |
+
+Japan is the outlier because Japanese lepidopterists reared a great deal. Nobody
+would have thought to look: the discrepancy surfaced only because the row-level
+CSVs happened to be sitting on disk.
 
 HOSTS doesn't say whether a moth is native where it was recorded, so a count
 from it is "species recorded in this country". That's close to the Gaytán rule

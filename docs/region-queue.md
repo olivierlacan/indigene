@@ -311,7 +311,7 @@ After that, in descending order of how much is already true:
 | Germany, Poland, Benelux | EEA ✅ (`continental`) | Gaytán Continental ✅ | national floras — to confirm | full |
 | Nordics | EEA ✅ (`boreal`) | Gaytán Boreal ✅ | national floras — to confirm | full |
 | Rest of the US | EPA ✅ | genus estimates, as now | USDA PLANTS ✅ | none |
-| Japan | RESOLVE ✅ (682, Taiheiyo evergreen forests) | HOSTS ✅ (oak 561) | WCVP — national grain | full |
+| Japan | RESOLVE ✅ (682, Taiheiyo evergreen forests) | HOSTS ✅ (oak 531 field, 561 recorded) | WCVP — national grain | full |
 | India | RESOLVE ✅ (298, South Deccan Plateau) | HOSTS ✅ (sal 140, teak 66) | WCVP — national grain | full |
 | East Africa | RESOLVE ✅ (57, Acacia-Commiphora) | HOSTS ✅ (Acacia 186) | WCVP ✅ | full |
 | Brazil | RESOLVE ✅ (500, Serra do Mar) | HOSTS — a floor, crop-led | **Flora e Funga do Brasil ✅ (by state)** | full |
@@ -352,8 +352,9 @@ What *is* true, and survives the correction:
   `data/sources/wcvp/README.md` records all three.
 
 **The best-supported region outside Europe and North America is Tokyo.** Oak at
-561 Lepidoptera independently brackets the 511 four shipped regions already quote
-for American oaks; the food web has the shape a temperate one should, oak then
+531 Lepidoptera found in the field independently brackets the 511 four shipped
+regions quote for American oaks; the food web has the shape a temperate one
+should, oak then
 chestnut then cherry then beech; and thirty-two genera reach twenty species, where
 Australia manages twelve. Its one weakness is the national native grain — the same
 grain Ireland and Auckland ship on today.

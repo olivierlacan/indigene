@@ -126,19 +126,46 @@ for (const [area, locations] of Object.entries(AREAS)) {
     join(RECORDS_DIR, `${area}.csv`),
     [COLUMNS.join(","), ...mine.map((r) => COLUMNS.map((c) => csvCell(r[c])).join(","))].join("\n") + "\n",
   );
+  // Two tallies per genus: every moth recorded on it, and the subset with at
+  // least one record that is NOT flagged `Lab Rearing`.
+  //
+  // **Why the second one.** `genera` answers "recorded on this plant", which is
+  // what a HOSTS count can honestly claim. But a moth known only from a lab
+  // rearing was offered the leaf, not found on it, and that is weaker evidence
+  // than a plant page's "raises its caterpillars here" implies. The flag is
+  // `Y`, `?` or empty — not a boolean, which is how a first pass reading it as
+  // one concluded the column was unpopulated.
+  //
+  // It barely moves most areas (under half a percent) and matters in Japan,
+  // where lepidopterists reared a great deal: oak is 561 recorded and 531 found
+  // in the field, chestnut 174 and 156. So `labOnly` is written **sparsely** —
+  // only the genera where the two tallies differ, 39 entries across all eight
+  // areas — and a reader subtracts it when the stronger claim is the one being
+  // made.
   const byGenus = new Map();
+  const byGenusField = new Map();
   let records = 0;
   for (const r of rows) {
     if (!want.has(r.Location) || !r["Hostplant Genus"] || !r["Insect Species"]) continue;
     records++;
     const g = r["Hostplant Genus"];
+    const moth = `${r["Insect Genus"]} ${r["Insect Species"]}`;
     if (!byGenus.has(g)) byGenus.set(g, new Set());
-    byGenus.get(g).add(`${r["Insect Genus"]} ${r["Insect Species"]}`);
+    byGenus.get(g).add(moth);
+    if (!String(r["Lab Rearing"] ?? "").trim()) {
+      if (!byGenusField.has(g)) byGenusField.set(g, new Set());
+      byGenusField.get(g).add(moth);
+    }
   }
+  const labOnly = [...byGenus]
+    .map(([g, s]) => [g, s.size - (byGenusField.get(g)?.size ?? 0)])
+    .filter(([, n]) => n > 0)
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
   out[area] = {
     locations,
     records,
     genera: Object.fromEntries([...byGenus].sort((a, b) => b[1].size - a[1].size || a[0].localeCompare(b[0])).map(([g, s]) => [g, s.size])),
+    labOnly: Object.fromEntries(labOnly),
   };
   console.log(`${area.padEnd(16)} ${records.toLocaleString().padStart(6)} records, ${byGenus.size} host genera`);
 }
@@ -148,6 +175,7 @@ writeFileSync(
   JSON.stringify({
     source: "HOSTS — a Database of the World's Lepidopteran Hostplants, Natural History Museum (doi:10.5519/havt50xw), CC0",
     rule: "distinct Lepidoptera species (insect genus + species) recorded on each host-plant genus, in the listed HOSTS locations",
+    labOnly: "per genus, how many of those moths are known ONLY from records flagged `Lab Rearing` — subtract for a field-only figure. Written sparsely: a genus absent here has none.",
     retrieved: new Date().toISOString().slice(0, 10),
     areas: out,
   }, null, 1) + "\n",

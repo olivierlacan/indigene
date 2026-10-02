@@ -1,6 +1,7 @@
 {
  "source": "HOSTS — a Database of the World's Lepidopteran Hostplants, Natural History Museum (doi:10.5519/havt50xw), CC0",
  "rule": "distinct Lepidoptera species (insect genus + species) recorded on each host-plant genus, in the listed HOSTS locations",
+ "labOnly": "per genus, how many of those moths are known ONLY from records flagged `Lab Rearing` — subtract for a field-only figure. Written sparsely: a genus absent here has none.",
  "retrieved": "2026-10-02",
  "areas": {
   "australia": {
@@ -574,6 +575,12 @@
     "Zinnia": 1,
     "Zostera": 1,
     "Zygophyllum": 1
+   },
+   "labOnly": {
+    "Digitaria": 1,
+    "Imperata": 1,
+    "Ligustrum": 1,
+    "Themeda": 1
    }
   },
   "southern-africa": {
@@ -1089,6 +1096,15 @@
     "Xanthosoma": 1,
     "Xeroderris": 1,
     "Zanthoxylum": 1
+   },
+   "labOnly": {
+    "Acacia": 1,
+    "Loranthus": 1,
+    "Malosma": 1,
+    "Malus": 1,
+    "Melianthus": 1,
+    "Persea": 1,
+    "Vitis": 1
    }
   },
   "rio-de-la-plata": {
@@ -1225,6 +1241,9 @@
     "Viola": 1,
     "Vitis": 1,
     "Zea": 1
+   },
+   "labOnly": {
+    "Ligustrum": 3
    }
   },
   "new-zealand": {
@@ -1345,7 +1364,8 @@
     "Vitis": 1,
     "Waterhousea": 1,
     "Zea": 1
-   }
+   },
+   "labOnly": {}
   },
   "india": {
    "locations": [
@@ -2237,6 +2257,18 @@
     "Xanthophyllum": 1,
     "Yucca": 1,
     "Zygophyllum": 1
+   },
+   "labOnly": {
+    "Aristolochia": 1,
+    "Brassica": 1,
+    "Cleome": 1,
+    "Ligustrum": 1,
+    "Liquidambar": 1,
+    "Quercus": 1,
+    "Rhododendron": 1,
+    "Rorippa": 1,
+    "Schinus": 1,
+    "Viscum": 1
    }
   },
   "japan": {
@@ -2613,6 +2645,15 @@
     "Vernicia": 1,
     "Zanthoxylum": 1,
     "Zingiber": 1
+   },
+   "labOnly": {
+    "Quercus": 30,
+    "Castanea": 18,
+    "Fagus": 8,
+    "Lithocarpus": 2,
+    "Aristolochia": 1,
+    "Castanopsis": 1,
+    "Schinus": 1
    }
   },
   "brazil": {
@@ -3195,6 +3236,11 @@
     "Zephyranthes": 1,
     "Zinnia": 1,
     "Zornia": 1
+   },
+   "labOnly": {
+    "Robinia": 2,
+    "Acacia": 1,
+    "Schinus": 1
    }
   },
   "east-africa": {
@@ -3971,6 +4017,15 @@
     "Xeroderris": 1,
     "Xymalos": 1,
     "Zephyranthes": 1
+   },
+   "labOnly": {
+    "Asystasia": 1,
+    "Boerhavia": 1,
+    "Bougainvillea": 1,
+    "Caesalpinia": 1,
+    "Calendula": 1,
+    "Lagerstroemia": 1,
+    "Quisqualis": 1
    }
   }
  }

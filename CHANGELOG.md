@@ -136,8 +136,12 @@ subtitle on the What's new page.
   row and the conclusion drawn from it are rewritten.
 - Internal: HOSTS measured against four more areas. India (9,402 records), East
   Africa (6,357), Japan (4,873) and Brazil (3,607) each beat the Australia set
-  already called usable; Japanese oak reaches 561 Lepidoptera against Tallamy's
-  511 for American oaks.
+  already called usable; Japanese oak reaches 531 field-recorded Lepidoptera
+  against Tallamy's 511 for American oaks.
+- Internal: HOSTS' `Lab Rearing` column is `Y`/`?`/empty, not a boolean, so a
+  first pass read it as unpopulated. The counts now carry a sparse `labOnly` map
+  — a moth offered a leaf in a jar is weaker evidence than one found on it, worth
+  5.3% on Japanese oak.
 - Internal: native-status authorities surveyed for three continents. Brazil's
   national flora gives status per state, finer than WCVP; South Africa's gives
   none at all, listing invasive black wattle exactly like a Cape endemic, so

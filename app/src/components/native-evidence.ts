@@ -31,25 +31,25 @@ export function nativeEvidenceLine(plantId: string, regionId?: string): HTMLElem
   const kew = el(
     "a",
     { href: NATIVE_EVIDENCE_URL, target: "_blank", rel: "noopener", class: "src-link" },
-    t("native.checklist"),
+    t("evidence.checklist"),
   );
 
   if (!ev.unconfirmed) {
     return el("p", { class: "note native-evidence" }, [
       // "Native in Michigan — Kew's World Checklist agrees, checked September 2026."
-      t("native.confirmedBefore", { area: ev.area }),
+      t("evidence.confirmedBefore", { area: ev.area }),
       kew,
-      t("native.confirmedAfter", { when: monthYear(ev.checked) }),
+      t("evidence.confirmedAfter", { when: monthYear(ev.checked) }),
       // Said only where the area checked is wider than the region, because then
       // the check is a floor and not a verdict about this ground.
-      ...(ev.coarse ? [" ", t("native.coarse", { area: ev.area })] : []),
+      ...(ev.coarse ? [" ", t("evidence.coarse", { area: ev.area })] : []),
     ]);
   }
 
   return el("p", { class: "note native-evidence native-evidence-open" }, [
     kew,
-    t(`native.unconfirmed.${ev.unconfirmed}` as const, { area: ev.area }),
+    t(`evidence.unconfirmed.${ev.unconfirmed}` as const, { area: ev.area }),
     " ",
-    t("native.stands"),
+    t("evidence.stands"),
   ]);
 }

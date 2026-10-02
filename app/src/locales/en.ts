@@ -1304,17 +1304,17 @@ export const en = {
   "society.what.woodland": "native woodland planting",
   "society.what.provenance": "nurseries selling local stock",
   "society.what.pollinators": "pollinator planting guides",
-  "native.checklist": "Kew's World Checklist",
-  "native.confirmedBefore": "Native in {area} — ",
-  "native.confirmedAfter": " agrees, checked {when}.",
+  "evidence.checklist": "Kew's World Checklist",
+  "evidence.confirmedBefore": "Native in {area} — ",
+  "evidence.confirmedAfter": " agrees, checked {when}.",
   // Only where the place checked is wider than the region, so the check is a
   // floor rather than a verdict about this ground.
-  "native.coarse": "That checklist records range by {area} as a whole, no finer.",
-  "native.unconfirmed.introduced": " calls it introduced in {area}, not native.",
-  "native.unconfirmed.absent": " doesn't record it in {area} at all.",
-  "native.unconfirmed.unmatched": " has no entry under this name.",
-  "native.unconfirmed.inconclusive": " has no entry for this subspecies, so it couldn't be checked.",
-  "native.stands": "We've kept it on the regional flora named below.",
+  "evidence.coarse": "That checklist records range by {area} as a whole, no finer.",
+  "evidence.unconfirmed.introduced": " calls it introduced in {area}, not native.",
+  "evidence.unconfirmed.absent": " doesn't record it in {area} at all.",
+  "evidence.unconfirmed.unmatched": " has no entry under this name.",
+  "evidence.unconfirmed.inconclusive": " has no entry for this subspecies, so it couldn't be checked.",
+  "evidence.stands": "We've kept it on the regional flora named below.",
   "conservation.rank": "{words} ({rank})",
   "conservation.globally": "{status} worldwide.",
   "conservation.here": "In {place}, {status}.",
@@ -2553,6 +2553,7 @@ export const en = {
   // What each emoji means *here*, said to a screen reader in place of its
   // Unicode name ("prohibited", "raised hand"). See lib/emoji.ts.
   // ---------------------------------------------------------------------
+  "emoji.groups": "native plant groups",
   "emoji.wildlife": "wildlife",
   "emoji.birds": "birds",
   "emoji.moths": "moths",

@@ -6204,7 +6204,12 @@ body[data-layout="profile"] .wip-banner-text {
   font-size: 0.88rem;
   line-height: 1.45;
 }
-.native-evidence-open {
+/* Doubled class, not for emphasis but for weight: the card's gutter rule above
+   is `.plant .native-evidence`, which outranks a single class and was flattening
+   this box's padding to the gutter's `0 1rem` — a bordered box with no vertical
+   padding reads as a paragraph, which is the one thing this variant must not
+   read as. Matching its specificity gives the box its own padding back. */
+.native-evidence.native-evidence-open {
   color: var(--warn-ink);
   background: var(--warn-bg);
   /* The box is inset by the gutter instead of padded by it, so its *text*
@@ -6212,6 +6217,14 @@ body[data-layout="profile"] .wip-banner-text {
   padding: 0.5rem 0.7rem;
   margin: 0.25rem 1rem 0.6rem;
   border-radius: var(--radius);
+  /* The bar is what actually carries the difference, and it is a *shape*.
+     This row used to be told apart by its amber fill alone; the accessibility
+     pass retuned `--warn-bg` far darker, and against the card the two variants
+     became the same paragraph. A reader weighing a plant has to see that the
+     sources disagree, so the signal can't be one token's saturation — the
+     conservation note beside it makes the same bet on an accent bar, and a bar
+     also works for a reader who can't tell the two colours apart. */
+  border-left: 4px solid var(--warn-ink);
 }
 
 /* --- Native plant groups, last on a region page -------------------------- */

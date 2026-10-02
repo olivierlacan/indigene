@@ -109,6 +109,20 @@ subtitle on the What's new page.
 - Internal: `lib/traits.ts` lists the labels once for the plant page, the
   ranked list's cards and `#/traits`; `#/traits/<id>` opens the page at one
   definition.
+- Regions: every region page now ends with the native plant groups whose ground
+  it is — plant sales, walks and advice from people who garden it. Three to five
+  per region, chosen for the region rather than the country.
+  https://indigene.app/regions/mid-atlantic
+
+- Plants: each plant page now says who checked that it is native where you are,
+  and when — and says so plainly on the twelve plants where a world checklist
+  disagrees with the regional flora we list them on.
+  https://indigene.app/plants/quercus-alba
+- Internal: the disagreement row on a plant page gained an accent bar. The card
+  gutter rule outranked it and flattened its padding, so a bordered box with no
+  vertical padding read as an ordinary paragraph — the one thing that row must
+  not read as. Bundle re-measured at ~467 KB gzipped (2.5 KB of the drift is
+  this branch's).
 
 ### Changed
 
@@ -280,16 +294,6 @@ subtitle on the What's new page.
   southern area (`data/sources/hosts/`). It's usable for Sydney, thin for the
   Cape and near-empty for Argentina. Every record for each candidate area is
   archived as CSV in `data/sources/hosts/records/`.
-- Regions: every region page now ends with the native plant groups whose ground
-  it is — plant sales, walks and advice from people who garden it. Three to five
-  per region, chosen for the region rather than the country.
-  https://indigene.app/regions/mid-atlantic
-
-- Plants: each plant page now says who checked that it is native where you are,
-  and when — and says so plainly on the twelve plants where a world checklist
-  disagrees with the regional flora we list them on.
-  https://indigene.app/plants/quercus-alba
-
 ### Changed
 
 - Internal: `hostLepCount` and `featuredHostLepCount` accept `null` (not

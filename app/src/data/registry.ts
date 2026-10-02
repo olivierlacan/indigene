@@ -125,6 +125,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Acer palmatum",
+    "family": "Sapindaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "acer-palmatum"
+    },
+    "commonNames": [
+      "Japanese Maple"
+    ],
+    "aliases": [
+      "acer palmatum",
+      "japanese maple"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:781462-1",
     "scientificName": "Acer pseudoplatanus",
     "family": "Sapindaceae",
@@ -456,6 +478,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Akebia quinata",
+    "family": "Lardizabalaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "akebia-quinata"
+    },
+    "commonNames": [
+      "Akebi Chocolate Vine"
+    ],
+    "aliases": [
+      "akebi chocolate vine",
+      "akebia quinata"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:781648-1",
     "scientificName": "Alectryon excelsus",
     "family": "Sapindaceae",
@@ -578,6 +622,28 @@ export const REGISTRY: RegistryEntry[] = [
       "france-continental",
       "france-mediterranean",
       "ireland"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Alnus japonica",
+    "family": "Betulaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "alnus-japonica"
+    },
+    "commonNames": [
+      "Japanese Alder"
+    ],
+    "aliases": [
+      "alnus japonica",
+      "japanese alder"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -1142,6 +1208,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Ardisia japonica",
+    "family": "Primulaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "ardisia-japonica"
+    },
+    "commonNames": [
+      "Yabukōji"
+    ],
+    "aliases": [
+      "ardisia japonica",
+      "yabukōji"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:92803-1",
     "scientificName": "Aristolochia californica",
     "family": "Aristolochiaceae",
@@ -1168,6 +1256,28 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Aristolochia debilis",
+    "family": "Aristolochiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "indigene": "aristolochia-debilis"
+    },
+    "commonNames": [
+      "Umanosuzukusa Birthwort"
+    ],
+    "aliases": [
+      "aristolochia debilis",
+      "umanosuzukusa birthwort"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -1256,6 +1366,28 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "ca-south-coast",
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Artemisia princeps",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "artemisia-princeps"
+    },
+    "commonNames": [
+      "Yomogi Mugwort"
+    ],
+    "aliases": [
+      "artemisia princeps",
+      "yomogi mugwort"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -1673,6 +1805,72 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Aster microcephalus",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "aster-microcephalus"
+    },
+    "commonNames": [
+      "Nokongiku Aster"
+    ],
+    "aliases": [
+      "aster microcephalus",
+      "nokongiku aster"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Athyrium niponicum",
+    "family": "Athyriaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "athyrium-niponicum"
+    },
+    "commonNames": [
+      "Nishikishida Painted Fern"
+    ],
+    "aliases": [
+      "athyrium niponicum",
+      "nishikishida painted fern"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Aucuba japonica",
+    "family": "Garryaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "aucuba-japonica"
+    },
+    "commonNames": [
+      "Aoki Spotted Laurel"
+    ],
+    "aliases": [
+      "aoki spotted laurel",
+      "aucuba japonica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:77111678-1",
     "scientificName": "Austroderia fulvida",
     "family": "Poaceae",
@@ -2084,6 +2282,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Callicarpa japonica",
+    "family": "Lamiaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "callicarpa-japonica"
+    },
+    "commonNames": [
+      "Yabu-murasaki Beautyberry"
+    ],
+    "aliases": [
+      "callicarpa japonica",
+      "yabu-murasaki beautyberry"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:327304-1",
     "scientificName": "Calluna vulgaris",
     "family": "Ericaceae",
@@ -2179,6 +2399,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Camellia japonica",
+    "family": "Theaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "camellia-japonica"
+    },
+    "commonNames": [
+      "Yabu-tsubaki Camellia"
+    ],
+    "aliases": [
+      "camellia japonica",
+      "yabu-tsubaki camellia"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:30036649-2",
     "scientificName": "Campanula rotundifolia",
     "family": "Campanulaceae",
@@ -2240,6 +2482,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Carex dispalata",
+    "family": "Cyperaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "carex-dispalata"
+    },
+    "commonNames": [
+      "Kasasuge Sedge"
+    ],
+    "aliases": [
+      "carex dispalata",
+      "kasasuge sedge"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:299756-1",
     "scientificName": "Carex flacca",
     "family": "Cyperaceae",
@@ -2268,6 +2532,28 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Carex morrowii",
+    "family": "Cyperaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "carex-morrowii"
+    },
+    "commonNames": [
+      "Kan-suge Sedge"
+    ],
+    "aliases": [
+      "carex morrowii",
+      "kan-suge sedge"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -2510,6 +2796,72 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Carpinus laxiflora",
+    "family": "Betulaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "carpinus-laxiflora"
+    },
+    "commonNames": [
+      "Akashide Hornbeam"
+    ],
+    "aliases": [
+      "akashide hornbeam",
+      "carpinus laxiflora"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Castanea crenata",
+    "family": "Fagaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "indigene": "castanea-crenata"
+    },
+    "commonNames": [
+      "Japanese Chestnut"
+    ],
+    "aliases": [
+      "castanea crenata",
+      "japanese chestnut"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Castanopsis sieboldii",
+    "family": "Fagaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "castanopsis-sieboldii"
+    },
+    "commonNames": [
+      "Sudajii"
+    ],
+    "aliases": [
+      "castanopsis sieboldii",
+      "sudajii"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:319138-2",
     "scientificName": "Ceanothus americanus",
     "family": "Rhamnaceae",
@@ -2682,6 +3034,28 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Celtis sinensis",
+    "family": "Cannabaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "indigene": "celtis-sinensis"
+    },
+    "commonNames": [
+      "Enoki Hackberry"
+    ],
+    "aliases": [
+      "celtis sinensis",
+      "enoki hackberry"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -2892,6 +3266,28 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Cirsium japonicum",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "cirsium-japonicum"
+    },
+    "commonNames": [
+      "Noazami Thistle"
+    ],
+    "aliases": [
+      "cirsium japonicum",
+      "noazami thistle"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -3444,6 +3840,28 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Cornus kousa",
+    "family": "Cornaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "cornus-kousa"
+    },
+    "commonNames": [
+      "Yamaboshi Dogwood"
+    ],
+    "aliases": [
+      "cornus kousa",
+      "yamaboshi dogwood"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -4035,6 +4453,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Dianthus superbus",
+    "family": "Caryophyllaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "dianthus-superbus"
+    },
+    "commonNames": [
+      "Kawaranadeshiko Pink"
+    ],
+    "aliases": [
+      "dianthus superbus",
+      "kawaranadeshiko pink"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:672641-1",
     "scientificName": "Dicentra formosa",
     "family": "Papaveraceae",
@@ -4354,6 +4794,28 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "ca-south-coast",
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Dryopteris erythrosora",
+    "family": "Dryopteridaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "dryopteris-erythrosora"
+    },
+    "commonNames": [
+      "Benishida Autumn Fern"
+    ],
+    "aliases": [
+      "benishida autumn fern",
+      "dryopteris erythrosora"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -4917,6 +5379,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Euonymus alatus",
+    "family": "Celastraceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "euonymus-alatus"
+    },
+    "commonNames": [
+      "Nishikigi Spindle"
+    ],
+    "aliases": [
+      "euonymus alatus",
+      "nishikigi spindle"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:160876-1",
     "scientificName": "Euonymus europaeus",
     "family": "Celastraceae",
@@ -4977,6 +5461,28 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Eurya japonica",
+    "family": "Pentaphylacaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "eurya-japonica"
+    },
+    "commonNames": [
+      "Hisakaki"
+    ],
+    "aliases": [
+      "eurya japonica",
+      "hisakaki"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -5099,6 +5605,28 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "france-continental"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Farfugium japonicum",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "farfugium-japonicum"
+    },
+    "commonNames": [
+      "Tsuwabuki"
+    ],
+    "aliases": [
+      "farfugium japonicum",
+      "tsuwabuki"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -6281,6 +6809,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Hosta sieboldii",
+    "family": "Asparagaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "hosta-sieboldii"
+    },
+    "commonNames": [
+      "Giboshi Plantain Lily"
+    ],
+    "aliases": [
+      "giboshi plantain lily",
+      "hosta sieboldii"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:303502-2",
     "scientificName": "Humulus lupulus",
     "family": "Cannabaceae",
@@ -6341,6 +6891,28 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "ireland"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Hydrangea macrophylla",
+    "family": "Hydrangeaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "hydrangea-macrophylla"
+    },
+    "commonNames": [
+      "Ajisai Hydrangea"
+    ],
+    "aliases": [
+      "ajisai hydrangea",
+      "hydrangea macrophylla"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -6460,6 +7032,28 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Iris ensata",
+    "family": "Iridaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "iris-ensata"
+    },
+    "commonNames": [
+      "Hanashōbu Iris"
+    ],
+    "aliases": [
+      "hanashōbu iris",
+      "iris ensata"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -6883,6 +7477,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Lespedeza bicolor",
+    "family": "Fabaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "lespedeza-bicolor"
+    },
+    "commonNames": [
+      "Yama-hagi"
+    ],
+    "aliases": [
+      "lespedeza bicolor",
+      "yama-hagi"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:139353-2",
     "scientificName": "Leymus condensatus",
     "family": "Poaceae",
@@ -6996,6 +7612,50 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-continental"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Lilium speciosum",
+    "family": "Liliaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "lilium-speciosum"
+    },
+    "commonNames": [
+      "Kanokoyuri Lily"
+    ],
+    "aliases": [
+      "kanokoyuri lily",
+      "lilium speciosum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Lindera umbellata",
+    "family": "Lauraceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "lindera-umbellata"
+    },
+    "commonNames": [
+      "Kuromoji Spicebush"
+    ],
+    "aliases": [
+      "kuromoji spicebush",
+      "lindera umbellata"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -7199,6 +7859,28 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Lonicera japonica",
+    "family": "Caprifoliaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "lonicera-japonica"
+    },
+    "commonNames": [
+      "Suikazura Honeysuckle"
+    ],
+    "aliases": [
+      "lonicera japonica",
+      "suikazura honeysuckle"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -7448,6 +8130,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Machilus thunbergii",
+    "family": "Lauraceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "machilus-thunbergii"
+    },
+    "commonNames": [
+      "Tabunoki"
+    ],
+    "aliases": [
+      "machilus thunbergii",
+      "tabunoki"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:554723-1",
     "scientificName": "Magnolia grandiflora",
     "family": "Magnoliaceae",
@@ -7474,6 +8178,28 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-central"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Magnolia kobus",
+    "family": "Magnoliaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "magnolia-kobus"
+    },
+    "commonNames": [
+      "Kobushi Magnolia"
+    ],
+    "aliases": [
+      "kobushi magnolia",
+      "magnolia kobus"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -7763,6 +8489,28 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-central"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Miscanthus sinensis",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "miscanthus-sinensis"
+    },
+    "commonNames": [
+      "Susuki Silver Grass"
+    ],
+    "aliases": [
+      "miscanthus sinensis",
+      "susuki silver grass"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -8148,6 +8896,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Ophiopogon japonicus",
+    "family": "Asparagaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "ophiopogon-japonicus"
+    },
+    "commonNames": [
+      "Ryū-no-hige Mondo Grass"
+    ],
+    "aliases": [
+      "ophiopogon japonicus",
+      "ryū-no-hige mondo grass"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:453395-1",
     "scientificName": "Origanum vulgare",
     "family": "Lamiaceae",
@@ -8176,6 +8946,28 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-continental"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Osmunda japonica",
+    "family": "Osmundaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "osmunda-japonica"
+    },
+    "commonNames": [
+      "Zenmai Flowering Fern"
+    ],
+    "aliases": [
+      "osmunda japonica",
+      "zenmai flowering fern"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -8234,6 +9026,28 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Pachysandra terminalis",
+    "family": "Buxaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "pachysandra-terminalis"
+    },
+    "commonNames": [
+      "Fukkisō Japanese Spurge"
+    ],
+    "aliases": [
+      "fukkisō japanese spurge",
+      "pachysandra terminalis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -8354,6 +9168,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Parthenocissus tricuspidata",
+    "family": "Vitaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "parthenocissus-tricuspidata"
+    },
+    "commonNames": [
+      "Tsuta Boston Ivy"
+    ],
+    "aliases": [
+      "parthenocissus tricuspidata",
+      "tsuta boston ivy"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:675096-1",
     "scientificName": "Passiflora incarnata",
     "family": "Passifloraceae",
@@ -8438,6 +9274,28 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Patrinia scabiosifolia",
+    "family": "Caprifoliaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "patrinia-scabiosifolia"
+    },
+    "commonNames": [
+      "Ominaeshi Golden Lace"
+    ],
+    "aliases": [
+      "ominaeshi golden lace",
+      "patrinia scabiosifolia"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -8788,6 +9646,28 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Pieris japonica",
+    "family": "Ericaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "pieris-japonica"
+    },
+    "commonNames": [
+      "Asebi"
+    ],
+    "aliases": [
+      "asebi",
+      "pieris japonica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -9236,6 +10116,28 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Platycodon grandiflorus",
+    "family": "Campanulaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "platycodon-grandiflorus"
+    },
+    "commonNames": [
+      "Kikyō Balloon Flower"
+    ],
+    "aliases": [
+      "kikyō balloon flower",
+      "platycodon grandiflorus"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -9835,6 +10737,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Prunus jamasakura",
+    "family": "Rosaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "indigene": "prunus-jamasakura"
+    },
+    "commonNames": [
+      "Yamazakura Cherry"
+    ],
+    "aliases": [
+      "prunus jamasakura",
+      "yamazakura cherry"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:729931-1",
     "scientificName": "Prunus mahaleb",
     "family": "Rosaceae",
@@ -10107,6 +11031,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Quercus acutissima",
+    "family": "Fagaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "indigene": "quercus-acutissima"
+    },
+    "commonNames": [
+      "Kunugi Oak"
+    ],
+    "aliases": [
+      "kunugi oak",
+      "quercus acutissima"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:295759-1",
     "scientificName": "Quercus agrifolia",
     "family": "Fagaceae",
@@ -10198,6 +11144,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Quercus glauca",
+    "family": "Fagaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "indigene": "quercus-glauca"
+    },
+    "commonNames": [
+      "Arakashi Oak"
+    ],
+    "aliases": [
+      "arakashi oak",
+      "quercus glauca"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:296290-1",
     "scientificName": "Quercus ilex",
     "family": "Fagaceae",
@@ -10255,6 +11223,28 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Quercus myrsinifolia",
+    "family": "Fagaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "indigene": "quercus-myrsinifolia"
+    },
+    "commonNames": [
+      "Shirakashi Oak"
+    ],
+    "aliases": [
+      "quercus myrsinifolia",
+      "shirakashi oak"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -10382,6 +11372,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Quercus serrata",
+    "family": "Fagaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "indigene": "quercus-serrata"
+    },
+    "commonNames": [
+      "Konara Oak"
+    ],
+    "aliases": [
+      "konara oak",
+      "quercus serrata"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:324846-2",
     "scientificName": "Quercus virginiana",
     "family": "Fagaceae",
@@ -10470,6 +11482,28 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-alpine"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Rhododendron indicum",
+    "family": "Ericaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "rhododendron-indicum"
+    },
+    "commonNames": [
+      "Satsuki Azalea"
+    ],
+    "aliases": [
+      "rhododendron indicum",
+      "satsuki azalea"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -10743,6 +11777,28 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-continental",
       "ireland"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Rosa multiflora",
+    "family": "Rosaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "rosa-multiflora"
+    },
+    "commonNames": [
+      "Noibara Rose"
+    ],
+    "aliases": [
+      "noibara rose",
+      "rosa multiflora"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -11327,6 +12383,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Salix gracilistyla",
+    "family": "Salicaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "indigene": "salix-gracilistyla"
+    },
+    "commonNames": [
+      "Nekoyanagi Willow"
+    ],
+    "aliases": [
+      "nekoyanagi willow",
+      "salix gracilistyla"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:301954-2",
     "scientificName": "Salix lasiolepis",
     "family": "Salicaceae",
@@ -11681,6 +12759,72 @@ export const REGISTRY: RegistryEntry[] = [
       "north-michigan",
       "st-lawrence",
       "pnw"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Sanguisorba officinalis",
+    "family": "Rosaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "sanguisorba-officinalis"
+    },
+    "commonNames": [
+      "Waremokō Burnet"
+    ],
+    "aliases": [
+      "sanguisorba officinalis",
+      "waremokō burnet"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Sasa veitchii",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "sasa-veitchii"
+    },
+    "commonNames": [
+      "Kumazasa Dwarf Bamboo"
+    ],
+    "aliases": [
+      "kumazasa dwarf bamboo",
+      "sasa veitchii"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Saxifraga stolonifera",
+    "family": "Saxifragaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "saxifraga-stolonifera"
+    },
+    "commonNames": [
+      "Yukinoshita Strawberry Saxifrage"
+    ],
+    "aliases": [
+      "saxifraga stolonifera",
+      "yukinoshita strawberry saxifrage"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -12426,6 +13570,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Styrax japonicus",
+    "family": "Styracaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "styrax-japonicus"
+    },
+    "commonNames": [
+      "Egonoki Snowbell"
+    ],
+    "aliases": [
+      "egonoki snowbell",
+      "styrax japonicus"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:320331-1",
     "scientificName": "Succisa pratensis",
     "family": "Caprifoliaceae",
@@ -13021,6 +14187,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Trachelospermum asiaticum",
+    "family": "Apocynaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "trachelospermum-asiaticum"
+    },
+    "commonNames": [
+      "Teikakazura"
+    ],
+    "aliases": [
+      "teikakazura",
+      "trachelospermum asiaticum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:523575-1",
     "scientificName": "Trifolium pratense",
     "family": "Fabaceae",
@@ -13600,6 +14788,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Viburnum dilatatum",
+    "family": "Viburnaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "viburnum-dilatatum"
+    },
+    "commonNames": [
+      "Gamazumi Viburnum"
+    ],
+    "aliases": [
+      "gamazumi viburnum",
+      "viburnum dilatatum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:326265-2",
     "scientificName": "Viburnum lantana",
     "family": "Adoxaceae",
@@ -13840,6 +15050,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Viola grypoceras",
+    "family": "Violaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "indigene": "viola-grypoceras"
+    },
+    "commonNames": [
+      "Tachitsubo-sumire Violet"
+    ],
+    "aliases": [
+      "tachitsubo-sumire violet",
+      "viola grypoceras"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:865843-1",
     "scientificName": "Vitex lucens",
     "family": "Lamiaceae",
@@ -13893,6 +15125,28 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Vitis coignetiae",
+    "family": "Vitaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "vitis-coignetiae"
+    },
+    "commonNames": [
+      "Yamabudō Crimson Glory Vine"
+    ],
+    "aliases": [
+      "vitis coignetiae",
+      "yamabudō crimson glory vine"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {
@@ -13955,6 +15209,28 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Wisteria floribunda",
+    "family": "Fabaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "wisteria-floribunda"
+    },
+    "commonNames": [
+      "Noda-fuji Wisteria"
+    ],
+    "aliases": [
+      "noda-fuji wisteria",
+      "wisteria floribunda"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
+    ]
+  },
+  {
     "primaryId": "ipni:17365470-1",
     "scientificName": "Woodwardia fimbriata",
     "family": "Blechnaceae",
@@ -14012,6 +15288,28 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "florida-central",
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": null,
+    "scientificName": "Zelkova serrata",
+    "family": "Ulmaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "indigene": "zelkova-serrata"
+    },
+    "commonNames": [
+      "Keyaki"
+    ],
+    "aliases": [
+      "keyaki",
+      "zelkova serrata"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "kanto"
     ]
   },
   {

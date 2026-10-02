@@ -17,7 +17,7 @@ export const REGION: RegionMeta = {
   // the local convention is a prefectural climate division, not a USDA number —
   // so the range carries the "≈" the European regions use.
   zones: "≈8b–9b",
-  note: "Native status is asserted for Japan as a whole, from Kew's World Checklist of Vascular Plants — the same grain Ireland and Auckland ship on. It is coarser than this region: a plant native *in Japan* may belong to Kyushu or the mountains rather than to this plain, so each row's note says where on the Kantō it actually grows. The plain is the ground this list is written for; up in the Chichibu and Hakone hills, or over the rim into Gunma, the winters are colder and the flora changes.",
+  note: "Native status is asserted for Japan as a whole, from Kew's World Checklist of Vascular Plants — the same grain Ireland and Auckland ship on, and coarser than this region. A plant native in Japan may belong to Kyushu or the mountains rather than to this plain, so each row says where on the Kantō it actually grows. Up in the Chichibu and Hakone hills, or over the rim into Gunma, the winters are colder and the flora changes.",
   extent: "The Kantō Plain, Japan's largest: Tokyo and Yokohama on the bay, east across Chiba and the Bōsō peninsula to Chōshi, north over Saitama and Tsukuba to Utsunomiya and Mito, and inland to the foot of the Chichibu hills.",
   // The plain, and not the mountains that ring it. North of 36.65 is Nikkō and
   // the Ashio range; west of 139.0 is the Chichibu massif and the Kōfu basin;

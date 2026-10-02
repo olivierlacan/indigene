@@ -1111,6 +1111,54 @@ a {
   color: inherit;
 }
 
+/* --- "Native means the plant, never the person" (steps/welcome.ts) --------
+   The one stance the home page states outright, so it is built to be seen: a
+   surface card with a thick brand rule, a title of its own and a full-size
+   button into #/native — distinct from the tinted `.note` above it on the same
+   page. Colours are theme tokens, so dark and light both follow. */
+.native-callout {
+  margin: 1.25rem 0 0;
+  padding: 1.1rem 1rem 1.15rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--brand);
+  border-radius: var(--radius);
+}
+.native-callout-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--ink);
+}
+.native-callout-body {
+  margin: 0 0 0.9rem;
+  color: var(--ink-soft);
+}
+/* Full width, like the app's block buttons: the French label ("Plantes
+   indigènes, pas nativisme") needs the card's whole width to stay on one line
+   at 360 px. Below that floor it may wrap rather than push the page sideways. */
+.native-callout-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: var(--tap);
+  padding: 0.35rem 0.5rem;
+  border: 2px solid var(--brand);
+  border-radius: 999px;
+  color: var(--brand);
+  /* The weight of every other button (.btn), a step smaller than its type so
+     the French label holds one line at 360 px (measured: 257 px available for
+     a label that needs 266 at the body size). */
+  font-size: 0.95rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+.native-callout-link:hover {
+  background: var(--brand-bg);
+}
+
 /* --- The "still being translated" banner -------------------------------- */
 /* Roadworks hazard tape, because that is honestly what this is: a page still
    being built, safe to use, worth reading carefully. It sits at the very top of

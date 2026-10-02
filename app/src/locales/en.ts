@@ -209,7 +209,7 @@ export const en = {
   "welcome.ratherNotLink": "browse without sharing your location",
   "welcome.whyTitle": "Why native plants?",
   "welcome.why1":
-    "Most caterpillars can only eat the plants they evolved with, and nearly every backyard bird raises its chicks on caterpillars. No natives, no caterpillars, no baby birds.",
+    "Most caterpillars can only eat the plants they evolved with, and most songbirds raise their chicks on caterpillars. Fewer natives, fewer caterpillars, fewer baby birds.",
   "welcome.why2": "Plant a native, and the insects that need it can find it that same season.",
   "welcome.savedTitle": "Your saved spots",
   "welcome.openSaved.one": "Open saved spot ({n})",

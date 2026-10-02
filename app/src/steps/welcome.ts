@@ -66,6 +66,23 @@ export function renderWelcome(main: HTMLElement): void {
       el("h3", { style: "margin-top:1.8rem" }, t("welcome.whyTitle")),
       el("p", {}, t("welcome.why1")),
       el("p", {}, t("welcome.why2")),
+      // The word this whole app leans on sits next door to nativism, so the
+      // pitch for native plants ends by saying what "native" never means — the
+      // same stance the About page carries, in the same words, linking to the
+      // page that makes the case (#/native).
+      // Its own look rather than a `.note`: the welcome page already has one
+      // tinted note (no account, no tracking), and this is a stance, not a
+      // footnote — so it gets a card with a brand rule, a title of its own and
+      // a real button into the page.
+      el("aside", { class: "native-callout", "aria-labelledby": "native-callout-title" }, [
+        el("p", { class: "native-callout-title", id: "native-callout-title" }, t("about.stance.native")),
+        // The stance's body sentence, minus its inline link: here the link is
+        // the button below, not a word in the sentence.
+        el("p", { class: "native-callout-body" }, tx("about.stance.nativeBody", { link: "" })),
+        // No arrow: the outline already says "button", and the French label
+        // ("Plantes indigènes, pas nativisme") needs the room at 360 px.
+        el("a", { class: "native-callout-link", href: "#/native" }, t("about.stance.nativeLink")),
+      ]),
     ]),
 
     savedSection

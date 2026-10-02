@@ -28,6 +28,7 @@ import { heroPhotoFor } from "../lib/hero-photo";
 import { conservationNote } from "../components/conservation-note";
 import { heroFigure } from "../components/hero-figure";
 import { traitBadges } from "../components/trait-badges";
+import { regionLinks, scrollFade } from "../components/region-list";
 import { statGrid } from "../components/stat-card";
 import { drawSizeViz } from "../components/size-viz";
 import { entryForPlant, deepLinks } from "../lib/registry";
@@ -256,9 +257,11 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
    */
   function regionSwitch(p: Plant, all: PlantEntry[], current: PlantEntry): HTMLElement | null {
     if (all.length < 2) return null;
+    // One line, one tap per region: the chips scroll sideways rather than wrap
+    // (`scrollFade`), so four regions cost no more height than two.
     return el("div", { class: "region-switch" }, [
       el("span", { class: "region-switch-lede" }, t("plant.figuresFor")),
-      ...all.map((e) => {
+      scrollFade(el("div", { class: "region-switch-row" }, all.map((e) => {
         const here = e.region.meta.id === current.region.meta.id;
         return el("a", {
           class: here ? "region-chip region-chip-on" : "region-chip",
@@ -267,7 +270,7 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
           href: `#/plants/${encodeURIComponent(p.id)}?region=${encodeURIComponent(e.region.meta.id)}`,
           ...(here ? { "aria-current": "true" } : {}),
         }, regionShort(e.region.meta));
-      }),
+      }))),
     ]);
   }
 
@@ -334,11 +337,10 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
       // the right of a short region name, and none of the reading is displaced.
       el("div", { class: "plant-top" }, [
         el("p", { class: "region-tag", style: "margin:0;font-size:0.9rem;color:var(--ink-soft)" }, [
-          t("plant.nativeTo"),
-          ...all.flatMap((e, i) => [
-            i > 0 ? " · " : null,
-            el("a", { href: `#/regions/${e.region.meta.id}` }, regionName(e.region.meta)),
-          ]),
+          regionLinks(t("plant.nativeTo"), all.map((e) => ({
+            name: regionName(e.region.meta),
+            href: `#/regions/${e.region.meta.id}`,
+          }))),
         ]),
         shareButton(p),
       ]),

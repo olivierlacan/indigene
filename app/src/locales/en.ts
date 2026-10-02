@@ -1279,6 +1279,8 @@ export const en = {
   "plant.more": "← More natives",
   "plant.backToList": "← Back to your plant list",
   "plant.backToListShort": "← Your plants",
+  "region.count.one": "{n} region",
+  "region.count.other": "{n} regions",
   "plant.figuresFor": "Figures for:",
   "plant.nativeTo": "📍 Native to: ",
   // The assessed-status line (`components/conservation-note.ts`). Eleven pages

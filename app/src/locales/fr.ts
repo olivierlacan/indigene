@@ -1292,6 +1292,8 @@ export const fr: Dict = {
   "plant.more": "← D'autres indigènes",
   "plant.backToList": "← Retour à votre liste de plantes",
   "plant.backToListShort": "← Vos plantes",
+  "region.count.one": "{n} région",
+  "region.count.other": "{n} régions",
   "plant.figuresFor": "Données pour :",
   "plant.nativeTo": "📍 Indigène de : ",
   // Court, le statut en tête : « Vulnérable (G3) dans le monde. » Les termes de

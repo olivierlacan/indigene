@@ -27,6 +27,7 @@ import { el, clear } from "../ui";
 import { searchPlaces, placeLabel } from "../lib/geocode";
 import { privacyRoute } from "./privacy-link";
 import { t } from "../lib/i18n";
+import { scrollFade } from "./region-list";
 
 export interface LocationPromptConfig {
   /** Unique base for the input's id/label pair, so two prompts can coexist. */
@@ -169,7 +170,7 @@ export function locationPrompt(config: LocationPromptConfig): HTMLElement {
       places.length
         ? el("div", { class: "spot-places" }, [
             el("span", { class: "spot-or" }, t("nearby.orIn")),
-            el("div", { class: "obs-elsewhere-row" },
+            scrollFade(el("div", { class: "obs-elsewhere-row" },
               places.map(({ label, onPick }) => {
                 const btn = el("button", {
                   type: "button",
@@ -178,7 +179,7 @@ export function locationPrompt(config: LocationPromptConfig): HTMLElement {
                 }, label) as HTMLButtonElement;
                 return btn;
               }),
-            ),
+            )),
           ])
         : null,
     ]),

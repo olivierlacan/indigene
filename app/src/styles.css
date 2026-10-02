@@ -6187,3 +6187,90 @@ body[data-layout="profile"] .wip-banner-text {
     max-width: 24rem;
   }
 }
+
+/* --- Several regions, two ways (components/region-list.ts) --- */
+/* Information: past two names, a count that opens the list. Styled as the
+   links it stands in for, with a caret saying it opens. */
+.region-more {
+  font: inherit;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--focus);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.region-pills .region-more {
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.region-more:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.region-pop {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  max-width: min(22rem, calc(100vw - 32px));
+  padding: 0.35rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.3);
+  font-size: 0.95rem;
+}
+.region-pop ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* Rows a thumb can hit: the 48px floor, near enough. */
+.region-pop a {
+  display: block;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--ink);
+}
+.region-pop a:hover,
+.region-pop a:focus-visible {
+  background: var(--surface-2);
+  color: var(--brand-ink);
+}
+
+/* Actions: one line of chips that scrolls sideways; the edge hiding more
+   chips fades out. */
+.region-switch-row {
+  display: flex;
+  flex: 1 0 100%;
+  gap: 0.35rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  padding: 2px;
+}
+.region-switch-row::-webkit-scrollbar {
+  display: none;
+}
+.scroll-fade {
+  position: relative;
+  --fade: 3rem;
+}
+.scroll-fade.fade-end {
+  mask-image: linear-gradient(to right, #000 calc(100% - var(--fade)), transparent);
+}
+.scroll-fade.fade-start {
+  mask-image: linear-gradient(to left, #000 calc(100% - var(--fade)), transparent);
+}
+.scroll-fade.fade-start.fade-end {
+  mask-image: linear-gradient(to right, transparent, #000 var(--fade), #000 calc(100% - var(--fade)), transparent);
+}

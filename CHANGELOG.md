@@ -31,6 +31,21 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Fixed
+
+- Regions: the Kantō Plain now shows the Japanese flag beside its name, like
+  every other region. https://indigene.app/regions/kanto
+- Internal: `flags.ts` had no JP drawing, and an unknown country code draws
+  nothing and says nothing — so the region shipped a row plainer than its
+  neighbours. A test now holds every region's countries to the flags.
+
+## [0.36] - 2026-10-02
+
+**The St Lawrence Lowlands & the Kantō Plain**
+
+[![The Kantō Plain region page](docs/screenshots/pr-kanto/thumb.png)](docs/screenshots/pr-kanto/kanto-region-dark.png)
+[The region page](docs/screenshots/pr-kanto/kanto-region-dark.png) · [Konara oak](docs/screenshots/pr-kanto/konara-dark.png)
+
 ### Added
 
 - The Kantō Plain is on the map — 59 native plants for Tokyo, Yokohama,
@@ -2989,7 +3004,8 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/a50be1c...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/18daaf2...HEAD
+[0.36]: https://github.com/olivierlacan/indigene/compare/a50be1c...18daaf2
 [0.35]: https://github.com/olivierlacan/indigene/compare/39c9b05...a50be1c
 [0.34]: https://github.com/olivierlacan/indigene/compare/c4e7c44...39c9b05
 [0.33]: https://github.com/olivierlacan/indigene/compare/e0f70ef...c4e7c44

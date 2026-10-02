@@ -65,6 +65,10 @@ const FLAGS: Record<string, (clip: string) => Shape[]> = {
     rect(22.5, 0, 7.5, H, "#D52B1E"),
     ["path", { d: MAPLE, fill: "#D52B1E" }],
   ],
+  // Japan needs no simplifying: the real flag is 3:2 with a red disc three
+  // fifths of the height, and the 30 × 20 box is already 3:2, so this is the
+  // flag at actual proportions rather than a drawing of it.
+  JP: () => [rect(0, 0, W, H, "#fff"), ["circle", { cx: W / 2, cy: H / 2, r: (3 / 5 * H) / 2, fill: "#BC002D" }]],
   NZ: (clip) => [
     rect(0, 0, W, H, "#012169"),
     ...unionFlag(0, 0, W / 2, H / 2, clip),
@@ -73,6 +77,17 @@ const FLAGS: Record<string, (clip: string) => Shape[]> = {
       ["circle", { cx, cy, r, fill: "#C8102E", stroke: "#fff", "stroke-width": 0.6 }]),
   ],
 };
+
+/**
+ * The country codes a flag is actually drawn for.
+ *
+ * Exported so a test can hold the region catalog to it. `flagSvg` returns null
+ * for a code it does not know and `flagRow` returns null when nothing drew, so
+ * **a region declaring a country with no flag here shows no flag at all and
+ * says nothing about it** — which is what happened when the Kantō Plain
+ * shipped with `countries: ["JP"]` and no JP drawing.
+ */
+export const FLAG_CODES: readonly string[] = Object.keys(FLAGS);
 
 let clipSeq = 0;
 

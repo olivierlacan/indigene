@@ -66,6 +66,17 @@ export function renderWelcome(main: HTMLElement): void {
       el("h3", { style: "margin-top:1.8rem" }, t("welcome.whyTitle")),
       el("p", {}, t("welcome.why1")),
       el("p", {}, t("welcome.why2")),
+      // The word this whole app leans on sits next door to nativism, so the
+      // pitch for native plants ends by saying what "native" never means — the
+      // same stance the About page carries, in the same words, linking to the
+      // page that makes the case (#/native).
+      el("div", { class: "note info", style: "margin-top:1rem" }, [
+        el("strong", {}, t("about.stance.native")),
+        " ",
+        ...tx("about.stance.nativeBody", {
+          link: el("a", { href: "#/native" }, t("about.stance.nativeLink")),
+        }),
+      ]),
     ]),
 
     savedSection

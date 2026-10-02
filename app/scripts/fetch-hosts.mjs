@@ -13,11 +13,14 @@
 //
 // Writes:
 //   data/sources/hosts/hosts-raw.json          every record, 48 MB — git-ignored
-//   data/sources/hosts/records/<area>.csv      committed — the full HOSTS records
-//                                              for each candidate area, so the
-//                                              evidence behind a count survives
-//                                              upstream changes and can be read
-//                                              without re-downloading 48 MB
+//   data/sources/hosts/records/<area>.csv      the full HOSTS records for an
+//                                              area. Committed only for an area a
+//                                              region is built on — see the
+//                                              named exceptions in
+//                                              data/sources/.gitignore; a merely
+//                                              surveyed area is written here and
+//                                              ignored, because its counts are
+//                                              the part anybody reads
 //   data/sources/hosts/genus-counts.json       committed — for each area,
 //                                              distinct Lepidoptera species per
 //                                              host genus
@@ -61,6 +64,19 @@ const AREAS = {
   "southern-africa": ["South Africa", "Southern Africa", "South Africa (prov)"],
   "rio-de-la-plata": ["Argentina", "Argentina (prov)", "Uruguay"],
   "new-zealand": ["New Zealand"],
+  // The four best-recorded areas in HOSTS outside Europe and North America,
+  // added after the first pass measured only the thin ones. Each holds more
+  // records than Australia, which this file already treats as usable.
+  india: ["India", "India (prov)"],
+  japan: ["Japan", "Japan (prov)"],
+  brazil: ["Brazil", "Brazil (prov)"],
+  // "East Africa" is one of the broad locations the README says to leave out,
+  // and it is kept here for one reason: the candidate region is the
+  // Acacia-Commiphora bushland, which spans Kenya, Tanzania and Uganda. The
+  // broad label sits at the region's own grain rather than above it, and the
+  // three countries are listed beside it because HOSTS files some records
+  // under each.
+  "east-africa": ["East Africa", "Kenya", "Tanzania", "Uganda"],
 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

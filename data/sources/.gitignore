@@ -29,5 +29,15 @@ plant-synz/cache/
 # genus-counts.json is committed.
 hosts/hosts-raw.json
 
-# …but the per-area HOSTS records are an archive we keep (CC0, ~0.6 MB).
-!hosts/records/*.csv
+# …but the per-area HOSTS records for the areas we are actively working are an
+# archive we keep (CC0, ~0.5 MB). The exception is named area by area on
+# purpose: a blanket `!hosts/records/*.csv` quietly committed 2.2 MB of rows the
+# first time four survey areas were added, which is 4.5x the size this carve-out
+# was written for. An area measured to answer "does a source exist here?" keeps
+# its counts in genus-counts.json and nothing else; it earns a row-level archive
+# when a region is actually built on it, and `npm run hosts:fetch` writes one in
+# a couple of minutes.
+!hosts/records/australia.csv
+!hosts/records/southern-africa.csv
+!hosts/records/rio-de-la-plata.csv
+!hosts/records/new-zealand.csv

@@ -6272,7 +6272,40 @@ body[data-layout="profile"] .wip-banner-text {
 }
 
 .region-caret {
+  display: inline-block;
   font-size: 0.8em;
+  transition: transform 0.15s ease;
+}
+/* Open: the caret flips and the button looks pressed, so the menu below is
+   plainly *its* menu. Each trigger keeps its own shape; the open state is a
+   brand-coloured edge on all three. */
+[aria-expanded="true"] > .region-caret {
+  transform: rotate(180deg);
+}
+.region-more[aria-expanded="true"] {
+  text-decoration-style: solid;
+  background: var(--surface-2);
+  border-radius: 6px;
+  box-shadow: 0 0 0 0.2rem var(--surface-2);
+}
+.region-pills .region-more[aria-expanded="true"],
+.region-pills .region-more:hover {
+  border-color: var(--brand);
+  color: var(--brand-ink);
+  box-shadow: none;
+}
+.region-chip-menu[aria-expanded="true"] {
+  box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--brand);
+}
+.spot-places .region-menu > button[aria-expanded="true"] {
+  border-color: var(--brand);
+  background: var(--surface-2);
+  color: var(--brand-ink);
+}
+@media (prefers-reduced-motion: reduce) {
+  .region-caret {
+    transition: none;
+  }
 }
 /* Actions: three or more regions, and the current one is the button that opens
    the rest. Lede and button share a line — it's one control now, not a row. */

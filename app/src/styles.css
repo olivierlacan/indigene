@@ -6235,9 +6235,31 @@ body[data-layout="profile"] .wip-banner-text {
   margin: 0;
   padding: 0;
 }
+/* Each region its own row: a rule between rows, a pin in front and an arrow
+   at the end, so two short names never read as one long one wrapping. */
+.region-pop li + li {
+  border-top: 1px solid var(--line);
+}
+.region-pop a,
+.region-pop button {
+  align-items: center;
+  gap: 0.6rem;
+}
+.region-pop a::before,
+.region-pop button::before {
+  content: "📍";
+  font-size: 0.85em;
+}
+.region-pop a::after,
+.region-pop button::after {
+  content: "→";
+  margin-left: auto;
+  padding-left: 1rem;
+  color: var(--ink-soft);
+}
 /* Rows a thumb can hit: the 48px floor, near enough. */
 .region-pop a {
-  display: block;
+  display: flex;
   padding: 0.65rem 0.75rem;
   border-radius: 8px;
   text-decoration: none;
@@ -6265,7 +6287,7 @@ body[data-layout="profile"] .wip-banner-text {
   cursor: pointer;
 }
 .region-pop button {
-  display: block;
+  display: flex;
   width: 100%;
   padding: 0.65rem 0.75rem;
   border: 0;
@@ -6286,6 +6308,6 @@ body[data-layout="profile"] .wip-banner-text {
   font-weight: 650;
 }
 .region-pop .region-pop-current::after {
-  content: " ✓";
+  content: "✓";
   color: var(--brand-ink);
 }

@@ -58,12 +58,21 @@ function menu(trigger: HTMLButtonElement, items: HTMLElement[], opts: { hover?: 
     const gutter = 16;
     const left = Math.max(gutter, Math.min(r.left, innerWidth - pop.offsetWidth - gutter));
     pop.style.left = `${left}px`;
-    // Under the button when it fits, above it when the button is near the
-    // bottom of the screen; never off either edge.
+    // Under the button when it fits, else above it; when neither side holds
+    // the whole list, the roomier side does and the list scrolls inside
+    // itself. Never over the button it came from.
+    pop.style.maxHeight = "";
     const h = pop.offsetHeight;
-    const below = r.bottom + 6;
-    const top = below + h <= innerHeight - 8 ? below : Math.max(8, r.top - 6 - h);
-    pop.style.top = `${top}px`;
+    const roomBelow = innerHeight - 8 - (r.bottom + 6);
+    const roomAbove = r.top - 6 - 8;
+    if (h <= roomBelow || roomBelow >= roomAbove) {
+      pop.style.top = `${r.bottom + 6}px`;
+      if (h > roomBelow) pop.style.maxHeight = `${roomBelow}px`;
+    } else {
+      const shown = Math.min(h, roomAbove);
+      pop.style.top = `${r.top - 6 - shown}px`;
+      if (h > roomAbove) pop.style.maxHeight = `${roomAbove}px`;
+    }
   };
   pop.addEventListener("toggle", (e) => {
     const open = (e as ToggleEvent).newState === "open";

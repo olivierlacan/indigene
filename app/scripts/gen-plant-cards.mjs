@@ -160,6 +160,27 @@ function factsFor(plant, wildlifeCount) {
 const BRAND = "#7ec894";
 
 /**
+ * The fact row's gap, widest first.
+ *
+ * **The row is deliberately near-full**: four facts and an address in 1040 px,
+ * and across the catalog the median card has about 22 px to spare, with a third
+ * of them inside 30. That is fine until a number grows — a plant gains a
+ * wildlife tie, or a host count crosses from two digits to three — and a card
+ * that fit yesterday is two pixels over today. It happened: the European beech
+ * (113 caterpillars, 100 ft, four facts) tipped over and took the whole
+ * generator with it, so nobody could regenerate any card at all.
+ *
+ * A build that breaks when the data grows is the wrong answer to that. The row
+ * now tightens by a notch instead, and only fails past the last of these —
+ * where a card really is too full to draw. Four pixels of gap is not something
+ * a reader can see at thumbnail size; a missing card is.
+ *
+ * Cards that fit at the first value are rendered exactly as before, so this
+ * costs no churn: the 24 MB of committed cards stay byte-identical but one.
+ */
+const FACT_GAPS = [30, 26, 22];
+
+/**
  * The four fact icons, drawn rather than typed.
  *
  * The app writes these facts with emoji — 🐛, 🐝 — because that's its icon
@@ -294,7 +315,7 @@ function nameSize(name) {
   return 66;
 }
 
-function cardHtml({ name, latin, glyph, keystone, facts }) {
+function cardHtml({ name, latin, glyph, keystone, facts }, gap = FACT_GAPS[0]) {
   const chips = facts
     .map(
       (f) => `<li>
@@ -354,8 +375,9 @@ function cardHtml({ name, latin, glyph, keystone, facts }) {
 
   /* Four facts and an address share 1040 px, so nothing here may wrap: a label
      that breaks over two lines lifts its own number out of line with the rest
-     and the row stops reading as a row. */
-  ul { position: relative; display: flex; gap: 30px; list-style: none; align-items: center; }
+     and the row stops reading as a row. The gap is passed in rather than fixed
+     — see FACT_GAPS. */
+  ul { position: relative; display: flex; gap: ${gap}px; list-style: none; align-items: center; }
   li { display: flex; align-items: center; gap: 11px; white-space: nowrap; }
   li > svg { flex: none; display: block; }
   .ftext { display: flex; flex-direction: column; }
@@ -481,9 +503,21 @@ async function overflows() {
   });
 }
 
+let tightened = 0;
 for (const card of wanted) {
-  await page.setContent(cardHtml(card), { waitUntil: "load" });
-  const bad = await overflows();
+  let bad = [];
+  for (const [i, gap] of FACT_GAPS.entries()) {
+    await page.setContent(cardHtml(card, gap), { waitUntil: "load" });
+    bad = await overflows();
+    if (!bad.length) {
+      if (i > 0) tightened++;
+      break;
+    }
+    // Only a too-wide fact row is worth another go at a tighter gap. A wrapped
+    // name, or a drawing crowding the name, is a different problem that a gap
+    // cannot solve — fail on it at once rather than three times over.
+    if (!bad.every((b) => b.startsWith("the fact row"))) break;
+  }
   if (bad.length) {
     await browser.close();
     throw new Error(`gen-plant-cards: ${card.name} doesn't fit its card — ${bad.join("; ")}`);
@@ -504,3 +538,6 @@ if (!only.size) {
   }
 }
 console.log(`wrote ${wanted.length} plant cards into public/og/plants/ at ${W}×${H}`);
+if (tightened) {
+  console.log(`  ${tightened} needed a tighter fact row — if this climbs, the row wants a redesign, not another notch.`);
+}

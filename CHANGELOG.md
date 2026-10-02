@@ -212,6 +212,16 @@ subtitle on the What's new page.
 
 ### Fixed
 
+- Sharing a plant shows its picture-card again, and 133 of those cards were
+  quietly out of date — a maple that feeds two creatures said nothing about
+  them. Every card now matches what the plant's page says.
+- Internal: `gen-plant-cards.mjs` aborted on the European beech, whose fact row
+  was 2px too wide, so no card could be regenerated at all and the committed
+  ones drifted. The row now tightens by a notch rather than failing the build.
+- Internal: the fact row was near-full across the board — median 22px spare, a
+  third of cards inside 30px. One new wildlife tie or a host count crossing 100
+  was enough to break the build. It now has three notches of give, and says so
+  when it uses one.
 - Screen readers now say what each emoji means here instead of its official
   name: 🚫 in "No thorns" is "no", not "prohibited", and ↗ says the link
   opens another site. French readers hear it in French.

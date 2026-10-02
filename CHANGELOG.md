@@ -33,6 +33,27 @@ subtitle on the What's new page.
 
 ### Added
 
+- The St Lawrence Lowlands are on the map — 55 native plants for Montréal,
+  Québec City, Ottawa and the Champlain valley down to Burlington.
+  https://indigene.app/regions/st-lawrence
+- Regions: a gardener in Sherbrooke, Granby or Ottawa used to be handed the
+  Mid-Atlantic list, full of redbud and flowering dogwood that don't grow there.
+  They now get the list for the valley they live in.
+- Planting: American bittersweet, virgin's bower and sensitive fern join the
+  catalogue. Bittersweet's orange capsules split to scarlet seed in October and
+  feed waxwings through February, when nothing else is left.
+  https://indigene.app/regions/st-lawrence
+- Internal: the region is drawn from the ecoregion, not the province. The CEC
+  puts Montréal, Ottawa, Plattsburgh and Burlington in one unit (8.1.1) with the
+  river down its middle, so the region crosses two borders and is named for the
+  ground rather than for Québec.
+- Internal: all 55 rows checked against VASCAN for Québec — 53 native outright,
+  two under names VASCAN draws differently. Ostrich fern is its `Matteuccia
+  pensylvanica`, and big bluestem its `Andropogon gerardi`, one letter from ours.
+- Internal: `selection:check` grew to 26 places. Gatineau is six kilometres from
+  a claimed Ottawa, on the Shield rather than the plain, and is correctly
+  refused — the ecoregion gate at its sharpest.
+
 - Wildlife: share a group page, like all the butterflies, and the link now
   previews with its own picture and counts instead of the plain Indigene
   card. https://indigene.app/wildlife/butterflies
@@ -191,6 +212,16 @@ subtitle on the What's new page.
 
 ### Fixed
 
+- Sharing a plant shows its picture-card again, and 133 of those cards were
+  quietly out of date — a maple that feeds two creatures said nothing about
+  them. Every card now matches what the plant's page says.
+- Internal: `gen-plant-cards.mjs` aborted on the European beech, whose fact row
+  was 2px too wide, so no card could be regenerated at all and the committed
+  ones drifted. The row now tightens by a notch rather than failing the build.
+- Internal: the fact row was near-full across the board — median 22px spare, a
+  third of cards inside 30px. One new wildlife tie or a host count crossing 100
+  was enough to break the build. It now has three notches of give, and says so
+  when it uses one.
 - Screen readers now say what each emoji means here instead of its official
   name: 🚫 in "No thorns" is "no", not "prohibited", and ↗ says the link
   opens another site. French readers hear it in French.

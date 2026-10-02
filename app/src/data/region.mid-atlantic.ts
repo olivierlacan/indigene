@@ -17,7 +17,13 @@ export const REGION: RegionMeta = {
   countries: ["US"],
   // Coarse box over the Piedmont/Northeast the seed list is tuned to: roughly
   // Virginia up through southern New England, west to the Appalachians.
-  bounds: { minLat: 36.5, maxLat: 45.5, minLon: -83.5, maxLon: -71.0 },
+  // **The north edge stops at 44.2, where the St Lawrence Lowlands begin.** It
+  // used to reach 45.5, which put Burlington, Plattsburgh and Montpelier on a
+  // Philadelphia list — and, because no live code can contradict a box north of
+  // the border, carried it to Sherbrooke, Granby and Ottawa as well. Those are
+  // the St Lawrence plain and the Champlain valley, which now have their own
+  // list; this one keeps the ground it was written for.
+  bounds: { minLat: 36.5, maxLat: 44.2, minLon: -83.5, maxLon: -71.0 },
   // The eastern-forest EPA Level III ecoregions this list is actually tuned to,
   // ranked by how much of the box each one covers: Northeastern Highlands (58),
   // Ridge and Valley (67), Western Allegheny Plateau (70), Central Appalachians

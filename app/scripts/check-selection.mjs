@@ -48,10 +48,25 @@ const PLACES = [
   { name: "Campbell River, BC", lat: 50.02, lon: -125.24, region: "pnw", via: "cec-na" },
   { name: "Squamish, BC", lat: 49.7016, lon: -123.1558, region: "pnw", via: "cec-na" },
 
+  // --- the St Lawrence Lowlands, which cross two borders ---
+  // The CEC answers for the Canadian half, the EPA for the American one, and
+  // both have to land on the same list for this region to mean anything.
+  { name: "Montréal", lat: 45.5019, lon: -73.5674, region: "st-lawrence", via: "cec-na" },
+  { name: "Québec City", lat: 46.8139, lon: -71.208, region: "st-lawrence", via: "cec-na" },
+  { name: "Sherbrooke", lat: 45.4042, lon: -71.8929, region: "st-lawrence", via: "cec-na" },
+  { name: "Ottawa", lat: 45.4215, lon: -75.6972, region: "st-lawrence", via: "cec-na" },
+  { name: "Burlington, VT", lat: 44.4759, lon: -73.2121, region: "st-lawrence", via: "epa-omernik" },
+  { name: "Plattsburgh, NY", lat: 44.6995, lon: -73.4529, region: "st-lawrence", via: "epa-omernik" },
+
   // --- the refusals, which matter as much as the matches ---
   { name: "Bend, OR (east of the crest)", lat: 44.0582, lon: -121.3153, region: null },
   { name: "Merritt, BC (dry interior)", lat: 50.1113, lon: -120.7862, region: null },
   { name: "Prince Rupert, BC (north coast)", lat: 54.3150, lon: -130.3208, region: null },
+  // Gatineau is six kilometres from an Ottawa this region does claim, and on the
+  // Shield rather than the plain — the CEC calls it 5.2.3, which is not claimed.
+  // Inside the box, refused by the code: the gate doing its one job.
+  { name: "Gatineau, QC (across the river)", lat: 45.4765, lon: -75.7013, region: null },
+  { name: "Saguenay, QC (up on the Shield)", lat: 48.428, lon: -71.0683, region: null },
 
   // --- the other regions, so this doesn't only guard the PNW ---
   { name: "Philadelphia, PA", lat: 39.9526, lon: -75.1652, region: "mid-atlantic", via: "epa-omernik" },

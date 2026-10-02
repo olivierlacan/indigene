@@ -1279,6 +1279,8 @@ export const en = {
   "plant.more": "← More natives",
   "plant.backToList": "← Back to your plant list",
   "plant.backToListShort": "← Your plants",
+  "region.count.one": "{n} region",
+  "region.count.other": "{n} regions",
   "plant.figuresFor": "Figures for:",
   "plant.nativeTo": "📍 Native to: ",
   // The assessed-status line (`components/conservation-note.ts`). Eleven pages
@@ -2165,6 +2167,7 @@ export const en = {
   "nearby.foundRest.other":
     "confirmed sightings of {name} in {region}, each identified by at least two people on iNaturalist (you don't have to be there):",
   // Between the ZIP field and the region chips: one more place to look.
+  "nearby.aRegion": "a region",
   "nearby.orIn": "or",
   "nearby.busy":
     "iNaturalist asked us to slow down — it's busy right now. Give it a minute and try again.",

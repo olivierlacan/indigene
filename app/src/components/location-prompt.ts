@@ -27,6 +27,7 @@ import { el, clear } from "../ui";
 import { searchPlaces, placeLabel } from "../lib/geocode";
 import { privacyRoute } from "./privacy-link";
 import { t } from "../lib/i18n";
+import { regionPicker } from "./region-list";
 
 export interface LocationPromptConfig {
   /** Unique base for the input's id/label pair, so two prompts can coexist. */
@@ -151,8 +152,9 @@ export function locationPrompt(config: LocationPromptConfig): HTMLElement {
   // still needs the name.
   //
   // The regions are one group that wraps as a unit: beside the field on a
-  // laptop, on a line of their own under it on a phone, where the chips scroll
-  // sideways rather than stack (see `.spot-places`).
+  // laptop, on a line of their own under it on a phone. One region is its own
+  // button; two or more share one, "a region ▾", that opens their menu
+  // (`regionPicker`).
   //
   // The privacy link isn't here: it shares the section's lede line
   // (`promptLede`), which costs no line of its own.
@@ -169,16 +171,7 @@ export function locationPrompt(config: LocationPromptConfig): HTMLElement {
       places.length
         ? el("div", { class: "spot-places" }, [
             el("span", { class: "spot-or" }, t("nearby.orIn")),
-            el("div", { class: "obs-elsewhere-row" },
-              places.map(({ label, onPick }) => {
-                const btn = el("button", {
-                  type: "button",
-                  class: "btn btn-secondary btn-compact",
-                  onClick: () => onPick(btn),
-                }, label) as HTMLButtonElement;
-                return btn;
-              }),
-            ),
+            el("div", { class: "obs-elsewhere-row" }, regionPicker(places, "btn btn-secondary btn-compact")),
           ])
         : null,
     ]),

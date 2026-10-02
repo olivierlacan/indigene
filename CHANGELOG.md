@@ -133,6 +133,12 @@ subtitle on the What's new page.
 
 ### Changed
 
+- Plants & Wildlife: a plant or animal native to three regions or more now
+  says "Native to: 4 regions" — tap it (or point at it) for the list. Choosing
+  another region's figures, or photos, works the same way, on one line.
+- Internal: `components/region-list.ts` — up to two regions inline, past two
+  one button opening a `popover` menu: `regionLinks` (Native to),
+  `regionSwitch` (Figures for), `regionPicker` (or a region).
 - Plants & Wildlife: "See it near you" takes much less room. Your
   location, a ZIP code or a region where it lives now share one row, and the
   privacy link sits beside the intro instead of under the buttons.

@@ -6187,3 +6187,160 @@ body[data-layout="profile"] .wip-banner-text {
     max-width: 24rem;
   }
 }
+
+/* --- Several regions, two ways (components/region-list.ts) --- */
+/* Information: past two names, a count that opens the list. Styled as the
+   links it stands in for, with a caret saying it opens. */
+.region-more {
+  font: inherit;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--focus);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.region-pills .region-more {
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.region-more:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.region-pop {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  max-width: min(22rem, calc(100vw - 32px));
+  max-height: calc(100dvh - 16px);
+  overflow-y: auto;
+  padding: 0.35rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.3);
+  font-size: 0.95rem;
+}
+.region-pop ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* Each region its own row: a rule between rows, a pin in front and an arrow
+   at the end, so two short names never read as one long one wrapping. */
+.region-pop li + li {
+  border-top: 1px solid var(--line);
+}
+.region-pop a,
+.region-pop button {
+  align-items: center;
+  gap: 0.6rem;
+}
+.region-pop a::before,
+.region-pop button::before {
+  content: "📍";
+  font-size: 0.85em;
+}
+.region-pop a::after,
+.region-pop button::after {
+  content: "→";
+  margin-left: auto;
+  padding-left: 1rem;
+  color: var(--ink-soft);
+}
+/* Rows a thumb can hit: the 48px floor, near enough. */
+.region-pop a {
+  display: flex;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--ink);
+}
+.region-pop a:hover,
+.region-pop a:focus-visible {
+  background: var(--surface-2);
+  color: var(--brand-ink);
+}
+
+.region-caret {
+  display: inline-block;
+  font-size: 0.8em;
+  transition: transform 0.15s ease;
+}
+/* Open: the caret flips and the button looks pressed, so the menu below is
+   plainly *its* menu. Each trigger keeps its own shape; the open state is a
+   brand-coloured edge on all three. */
+[aria-expanded="true"] > .region-caret {
+  transform: rotate(180deg);
+}
+.region-more[aria-expanded="true"] {
+  text-decoration-style: solid;
+  background: var(--surface-2);
+  border-radius: 6px;
+  box-shadow: 0 0 0 0.2rem var(--surface-2);
+}
+.region-pills .region-more[aria-expanded="true"],
+.region-pills .region-more:hover {
+  border-color: var(--brand);
+  color: var(--brand-ink);
+  box-shadow: none;
+}
+.region-chip-menu[aria-expanded="true"] {
+  box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--brand);
+}
+.spot-places .region-menu > button[aria-expanded="true"] {
+  border-color: var(--brand);
+  background: var(--surface-2);
+  color: var(--brand-ink);
+}
+@media (prefers-reduced-motion: reduce) {
+  .region-caret {
+    transition: none;
+  }
+}
+/* Actions: three or more regions, and the current one is the button that opens
+   the rest. Lede and button share a line — it's one control now, not a row. */
+.region-switch-inline .region-switch-lede {
+  flex: 0 0 auto;
+  margin: 0;
+}
+.region-chip-menu {
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.region-pop button {
+  display: flex;
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.region-pop button:hover,
+.region-pop button:focus-visible {
+  background: var(--surface-2);
+  color: var(--brand-ink);
+}
+/* The region you're reading, ticked. */
+.region-pop .region-pop-current {
+  font-weight: 650;
+}
+.region-pop .region-pop-current::after {
+  content: "✓";
+  color: var(--brand-ink);
+}

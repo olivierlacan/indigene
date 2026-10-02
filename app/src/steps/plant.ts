@@ -28,6 +28,7 @@ import { heroPhotoFor } from "../lib/hero-photo";
 import { conservationNote } from "../components/conservation-note";
 import { heroFigure } from "../components/hero-figure";
 import { traitBadges } from "../components/trait-badges";
+import { regionLinks, regionSwitch as switchRow } from "../components/region-list";
 import { statGrid } from "../components/stat-card";
 import { drawSizeViz } from "../components/size-viz";
 import { entryForPlant, deepLinks } from "../lib/registry";
@@ -256,19 +257,15 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
    */
   function regionSwitch(p: Plant, all: PlantEntry[], current: PlantEntry): HTMLElement | null {
     if (all.length < 2) return null;
-    return el("div", { class: "region-switch" }, [
-      el("span", { class: "region-switch-lede" }, t("plant.figuresFor")),
-      ...all.map((e) => {
-        const here = e.region.meta.id === current.region.meta.id;
-        return el("a", {
-          class: here ? "region-chip region-chip-on" : "region-chip",
-          // A hash query, so the plant keeps one address and one share link:
-          // which region you are reading is the page's state, not its identity.
-          href: `#/plants/${encodeURIComponent(p.id)}?region=${encodeURIComponent(e.region.meta.id)}`,
-          ...(here ? { "aria-current": "true" } : {}),
-        }, regionShort(e.region.meta));
-      }),
-    ]);
+    // Two regions are two chips; three or more, the current one opens a menu
+    // of the rest (`switchRow`), so the switch never takes a second line.
+    return switchRow(t("plant.figuresFor"), all.map((e) => ({
+      name: regionShort(e.region.meta),
+      // A hash query, so the plant keeps one address and one share link:
+      // which region you are reading is the page's state, not its identity.
+      href: `#/plants/${encodeURIComponent(p.id)}?region=${encodeURIComponent(e.region.meta.id)}`,
+      current: e.region.meta.id === current.region.meta.id,
+    })));
   }
 
   /**
@@ -334,11 +331,10 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
       // the right of a short region name, and none of the reading is displaced.
       el("div", { class: "plant-top" }, [
         el("p", { class: "region-tag", style: "margin:0;font-size:0.9rem;color:var(--ink-soft)" }, [
-          t("plant.nativeTo"),
-          ...all.flatMap((e, i) => [
-            i > 0 ? " · " : null,
-            el("a", { href: `#/regions/${e.region.meta.id}` }, regionName(e.region.meta)),
-          ]),
+          regionLinks(t("plant.nativeTo"), all.map((e) => ({
+            name: regionName(e.region.meta),
+            href: `#/regions/${e.region.meta.id}`,
+          }))),
         ]),
         shareButton(p),
       ]),

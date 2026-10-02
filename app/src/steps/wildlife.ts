@@ -50,6 +50,7 @@ import { wildlifeThumb, wildlifeHero, wildlifeIcon, wildlifeSilhouette } from ".
 import { conservationNote } from "../components/conservation-note";
 import { glyphKeyFor } from "../components/wildlife-glyphs";
 import { cardStats } from "../components/card-stats";
+import { regionLinks } from "../components/region-list";
 import { statTiles } from "../components/stat-card";
 import type { Stat } from "../components/stat-card";
 import type { Wildlife } from "../types";
@@ -454,16 +455,19 @@ function openRegionsDialog(animal: string, regions: RegionDef[]): void {
  *  link to that region's wildlife. The animal's own page has the room to name
  *  them; the index cards carry the count instead (see `wildlifeCard`). */
 function regionPills(regions: RegionDef[]): HTMLElement {
-  return el("span", { class: "region-pills" }, [
+  // Past two, the pills become a count that opens the full names
+  // (`regionLinks`), so a widespread animal's head stays two lines tall.
+  const node = regionLinks(
     el("span", { class: "region-pills-k" }, t("wildlife.nativeTo")),
-    ...regions.map((r) =>
-      el("a", {
-        class: "region-pill",
-        href: indexHref(r.meta.id, null),
-        title: t("wildlife.regionPillTitle", { region: regionName(r.meta) }),
-      }, regionShort(r.meta))
-    ),
-  ]);
+    regions.map((r) => ({
+      name: regions.length > 2 ? regionName(r.meta) : regionShort(r.meta),
+      href: indexHref(r.meta.id, null),
+      title: t("wildlife.regionPillTitle", { region: regionName(r.meta) }),
+    })),
+    "region-pill",
+  );
+  node.classList.add("region-pills");
+  return node;
 }
 
 // ---- #/wildlife/<id> — one animal ----

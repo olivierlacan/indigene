@@ -1292,6 +1292,8 @@ export const fr: Dict = {
   "plant.more": "← D'autres indigènes",
   "plant.backToList": "← Retour à votre liste de plantes",
   "plant.backToListShort": "← Vos plantes",
+  "region.count.one": "{n} région",
+  "region.count.other": "{n} régions",
   "plant.figuresFor": "Données pour :",
   "plant.nativeTo": "📍 Indigène de : ",
   // Court, le statut en tête : « Vulnérable (G3) dans le monde. » Les termes de
@@ -2153,6 +2155,7 @@ export const fr: Dict = {
     "observation confirmée de {name} en {region}, identifiée par au moins deux personnes sur iNaturalist (vous n'avez pas besoin d'y être) :",
   "nearby.foundRest.other":
     "observations confirmées de {name} en {region}, chacune identifiée par au moins deux personnes sur iNaturalist (vous n'avez pas besoin d'y être) :",
+  "nearby.aRegion": "une région",
   "nearby.orIn": "ou",
   "nearby.busy":
     "iNaturalist nous demande de ralentir : le service est très sollicité. Patientez une minute et réessayez.",

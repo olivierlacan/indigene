@@ -2528,6 +2528,21 @@ export const en = {
   // What each emoji means *here*, said to a screen reader in place of its
   // Unicode name ("prohibited", "raised hand"). See lib/emoji.ts.
   // ---------------------------------------------------------------------
+  "emoji.groups": "native plant groups",
+  // The last section on a region page: who else already knows this flora.
+  // The "what they do" phrases are shared — four societies running chapters
+  // share one string to write and one to translate.
+  "society.title": "Native plant groups",
+  "society.lede": "Plant sales, walks, and advice from people who garden this ground.",
+  "society.what.chapters": "local chapters and meetings",
+  "society.what.walks": "field walks and talks",
+  "society.what.sales": "native plant sales",
+  "society.what.advice": "growing advice",
+  "society.what.certify": "certifies wildlife gardens",
+  "society.what.records": "the flora, recorded",
+  "society.what.woodland": "native woodland planting",
+  "society.what.provenance": "nurseries selling local stock",
+  "society.what.pollinators": "pollinator planting guides",
   "emoji.wildlife": "wildlife",
   "emoji.birds": "birds",
   "emoji.moths": "moths",

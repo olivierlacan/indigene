@@ -181,6 +181,10 @@ subtitle on the What's new page.
   national flora gives status per state, finer than WCVP; South Africa's gives
   none at all, listing invasive black wattle exactly like a Cape endemic, so
   Africa stands on WCVP instead.
+- Regions: every region page now ends with the native plant groups whose ground
+  it is — plant sales, walks and advice from people who garden it. Three to five
+  per region, chosen for the region rather than the country.
+  https://indigene.app/regions/mid-atlantic
 
 ### Changed
 

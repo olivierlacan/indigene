@@ -4,13 +4,16 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Ireland (TDWG:IRE — the whole island)",
   "region": "ireland",
-  "ranAt": "2026-09-20T16:02:06.465Z",
+  "ranAt": "2026-09-21T07:01:50.381Z",
   "rows": [
     {
       "id": "quercus-petraea",
       "latin": "Quercus petraea",
       "asked": "Quercus petraea",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -18,6 +21,9 @@
       "latin": "Quercus robur",
       "asked": "Quercus robur",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -25,6 +31,9 @@
       "latin": "Betula pubescens",
       "asked": "Betula pubescens",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -32,6 +41,9 @@
       "latin": "Alnus glutinosa",
       "asked": "Alnus glutinosa",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -39,6 +51,9 @@
       "latin": "Salix caprea",
       "asked": "Salix caprea",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -46,6 +61,9 @@
       "latin": "Populus tremula",
       "asked": "Populus tremula",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -53,6 +71,9 @@
       "latin": "Prunus avium",
       "asked": "Prunus avium",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -60,6 +81,9 @@
       "latin": "Prunus padus",
       "asked": "Prunus padus",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -67,6 +91,9 @@
       "latin": "Sorbus aucuparia",
       "asked": "Sorbus aucuparia",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -74,6 +101,9 @@
       "latin": "Taxus baccata",
       "asked": "Taxus baccata",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -81,6 +111,9 @@
       "latin": "Ilex aquifolium",
       "asked": "Ilex aquifolium",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -88,6 +121,9 @@
       "latin": "Malus sylvestris",
       "asked": "Malus sylvestris",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -95,6 +131,9 @@
       "latin": "Corylus avellana",
       "asked": "Corylus avellana",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -102,6 +141,9 @@
       "latin": "Crataegus monogyna",
       "asked": "Crataegus monogyna",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -109,6 +151,9 @@
       "latin": "Prunus spinosa",
       "asked": "Prunus spinosa",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -116,6 +161,9 @@
       "latin": "Calluna vulgaris",
       "asked": "Calluna vulgaris",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -123,6 +171,9 @@
       "latin": "Erica cinerea",
       "asked": "Erica cinerea",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -130,6 +181,9 @@
       "latin": "Erica tetralix",
       "asked": "Erica tetralix",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -137,6 +191,9 @@
       "latin": "Vaccinium myrtillus",
       "asked": "Vaccinium myrtillus",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -144,6 +201,9 @@
       "latin": "Rubus fruticosus agg.",
       "asked": "Rubus fruticosus",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -151,6 +211,9 @@
       "latin": "Rosa canina",
       "asked": "Rosa canina",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -158,6 +221,9 @@
       "latin": "Rosa spinosissima",
       "asked": "Rosa spinosissima",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -165,6 +231,9 @@
       "latin": "Salix cinerea",
       "asked": "Salix cinerea",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -172,6 +241,9 @@
       "latin": "Frangula alnus",
       "asked": "Frangula alnus",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -179,6 +251,9 @@
       "latin": "Euonymus europaeus",
       "asked": "Euonymus europaeus",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -186,6 +261,9 @@
       "latin": "Viburnum opulus",
       "asked": "Viburnum opulus",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -193,6 +271,9 @@
       "latin": "Ulex europaeus",
       "asked": "Ulex europaeus",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -200,6 +281,9 @@
       "latin": "Myrica gale",
       "asked": "Myrica gale",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -207,6 +291,9 @@
       "latin": "Juniperus communis",
       "asked": "Juniperus communis",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -214,6 +301,9 @@
       "latin": "Sambucus nigra",
       "asked": "Sambucus nigra",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -221,6 +311,9 @@
       "latin": "Cytisus scoparius",
       "asked": "Cytisus scoparius",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -228,6 +321,9 @@
       "latin": "Succisa pratensis",
       "asked": "Succisa pratensis",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -235,6 +331,9 @@
       "latin": "Digitalis purpurea",
       "asked": "Digitalis purpurea",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -242,6 +341,9 @@
       "latin": "Primula vulgaris",
       "asked": "Primula vulgaris",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -249,6 +351,9 @@
       "latin": "Hyacinthoides non-scripta",
       "asked": "Hyacinthoides non-scripta",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -256,6 +361,9 @@
       "latin": "Filipendula ulmaria",
       "asked": "Filipendula ulmaria",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -263,6 +371,9 @@
       "latin": "Lythrum salicaria",
       "asked": "Lythrum salicaria",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -270,6 +381,9 @@
       "latin": "Caltha palustris",
       "asked": "Caltha palustris",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -277,6 +391,9 @@
       "latin": "Centaurea nigra",
       "asked": "Centaurea nigra",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -284,6 +401,9 @@
       "latin": "Lotus corniculatus",
       "asked": "Lotus corniculatus",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -291,6 +411,9 @@
       "latin": "Rumex acetosa",
       "asked": "Rumex acetosa",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -298,6 +421,9 @@
       "latin": "Urtica dioica",
       "asked": "Urtica dioica",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -305,6 +431,9 @@
       "latin": "Anemone nemorosa",
       "asked": "Anemone nemorosa",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -312,6 +441,9 @@
       "latin": "Allium ursinum",
       "asked": "Allium ursinum",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -319,6 +451,9 @@
       "latin": "Teucrium scorodonia",
       "asked": "Teucrium scorodonia",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -326,6 +461,9 @@
       "latin": "Silene dioica",
       "asked": "Silene dioica",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -333,6 +471,9 @@
       "latin": "Geranium sanguineum",
       "asked": "Geranium sanguineum",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -340,6 +481,9 @@
       "latin": "Taraxacum officinale",
       "asked": "Taraxacum officinale",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": "Taraxacum spec. F.H.Wigg."
     },
     {
@@ -347,6 +491,9 @@
       "latin": "Festuca rubra",
       "asked": "Festuca rubra",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -354,6 +501,9 @@
       "latin": "Molinia caerulea",
       "asked": "Molinia caerulea",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -361,6 +511,9 @@
       "latin": "Deschampsia cespitosa",
       "asked": "Deschampsia cespitosa",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -368,6 +521,9 @@
       "latin": "Anthoxanthum odoratum",
       "asked": "Anthoxanthum odoratum",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -375,6 +531,9 @@
       "latin": "Poa trivialis",
       "asked": "Poa trivialis",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -382,6 +541,9 @@
       "latin": "Hedera helix",
       "asked": "Hedera helix",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -389,6 +551,9 @@
       "latin": "Lonicera periclymenum",
       "asked": "Lonicera periclymenum",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -396,6 +561,9 @@
       "latin": "Vicia cracca",
       "asked": "Vicia cracca",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -403,6 +571,9 @@
       "latin": "Lathyrus pratensis",
       "asked": "Lathyrus pratensis",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -410,6 +581,9 @@
       "latin": "Fragaria vesca",
       "asked": "Fragaria vesca",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -417,6 +591,9 @@
       "latin": "Galium verum",
       "asked": "Galium verum",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -424,6 +601,9 @@
       "latin": "Plantago lanceolata",
       "asked": "Plantago lanceolata",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -431,6 +611,9 @@
       "latin": "Trifolium repens",
       "asked": "Trifolium repens",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -438,6 +621,9 @@
       "latin": "Thymus praecox",
       "asked": "Thymus praecox",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -445,6 +631,9 @@
       "latin": "Dryopteris filix-mas",
       "asked": "Dryopteris filix-mas",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -452,6 +641,9 @@
       "latin": "Osmunda regalis",
       "asked": "Osmunda regalis",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -459,6 +651,9 @@
       "latin": "Struthiopteris spicant",
       "asked": "Struthiopteris spicant",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": "Blechnum spicant (L.) Roth"
     },
     {
@@ -466,6 +661,9 @@
       "latin": "Asplenium scolopendrium",
       "asked": "Asplenium scolopendrium",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -473,6 +671,9 @@
       "latin": "Polystichum setiferum",
       "asked": "Polystichum setiferum",
       "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
       "viaSynonym": null
     }
   ]

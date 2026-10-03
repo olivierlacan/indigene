@@ -1,0 +1,30 @@
+{
+  "source": "National Audubon Society — Plants for Birds",
+  "url": "https://www.audubon.org/native-plants",
+  "note": "curated = Audubon's own picks for the ZIP; full = every species BONAP records as native to that ZIP's county. The two are different kinds of list and must not be pooled.",
+  "hasFloraTier": true,
+  "region": "ca-central-coast",
+  "scope": [
+    "94608",
+    "93940"
+  ],
+  "harvested": "2026-09-20",
+  "counts": {
+    "ours": 64,
+    "theirPicks": 23,
+    "theirFlora": 198,
+    "oursAmongTheirPicks": 11,
+    "theirPicksWeLack": 12,
+    "generaNewToUs": 8
+  },
+  "generaNewToUs": [
+    "cirsium",
+    "delphinium",
+    "eriogonum",
+    "malacothamnus",
+    "monardella",
+    "peritoma",
+    "prosopis",
+    "trifolium"
+  ]
+}

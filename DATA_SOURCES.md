@@ -149,6 +149,82 @@ that looks like a fact about the data: its first run concluded GloBI carried no
 citations, which was true of the default response shape and false of the data,
 and it cost this repo a shipped feature until it was re-measured.
 
+## What "native here" means, exactly
+
+Every plant we list makes one claim before it makes any other: **this plant is
+native to this region.** Everything else on a plant page — the caterpillar
+count, the care note, the swap suggestion — is worthless if that claim is
+loose. So here is the whole rule, in one place.
+
+### 1. "Here" is an ecoregion, not a state or a country
+
+A region is defined by the ecoregion codes it claims — EPA Level III over the
+US, EEA biogeographical regions over Europe — plus a coarse box that decides
+things offline. A plant native *to the state* but not *to this ecoregion* does
+not qualify. That is why the Southern California list stops at the mountain
+crest and a Palm Springs spot gets no list rather than a chaparral one, and why
+the Mid-Atlantic list declines the Corn Belt ecoregions its box happens to
+overlap. `src/data/region.*.ts` records the claimed codes and the deliberate
+exclusions, one comment per region.
+
+### 2. A named authority must assert it, for that ground
+
+Not occurrence data, not "it grows there". Occurrence records say a plant was
+*seen* somewhere, which is equally true of an escaped ornamental. The claim
+comes from a flora or checklist, and the ladder is:
+
+1. **The national or regional flora for that place**, where one exists — USDA
+   PLANTS in the US, with OregonFlora, the Burke Herbarium, the Atlas of Florida
+   Plants and the IRC for regional detail; TAXREF/INPN and Tela Botanica's BDTFX
+   in France.
+2. **Kew's World Checklist of Vascular Plants** where no national flora is
+   machine-readable — Ireland's list rests on it outright.
+
+Each row names what it stands on in its own `basis` string, which the plant page
+prints. A row with an empty `basis` is a bug, and the audits fail on it.
+
+### 3. Introduced does not become native with time
+
+Naturalised, long-established, "it's been here for centuries", planted by the
+Romans — none of these make a plant native. Ireland is the worked example: beech
+and sycamore look like they belong and are introductions, and the region's own
+note says so. The catalog carries the species as floras circumscribe them —
+species and subspecies binomials, no cultivars and no nativars.
+
+### 4. Where the claim can be re-asked, it is — and the answer is dated
+
+A citation is a sentence somebody typed; it cannot go stale visibly.
+`npm run native:check -- --region <id>` re-asks Kew's checklist about every row
+in a region and commits the verdict with a date to `data/sources/wcvp/`. All
+twelve regions are covered. `npm run native-evidence` reduces those to
+`src/data/native-evidence.json`, and **the plant page shows the result** — the
+authority, the place, and the month it was last checked.
+
+### 5. The grain of the check is stated, never hidden
+
+The checklist answers by TDWG level-3 area, which is a **state** in the US and a
+**country** in Europe. So "native in Michigan" is a statement about the region;
+"native in California" is not — one area covers the coast and the Mojave alike.
+Where the area checked is wider than the region, the plant page says so in
+words. A weak check is admitted; a weak check dressed as a strong one is not.
+
+### 6. A disagreement is recorded, not smoothed
+
+A world checklist and a regional flora will differ, and neither is automatically
+right. Twelve of 592 rows are in that position today — Kew calls *Penstemon
+digitalis* introduced across the Mid-Atlantic, and does not record *Achillea
+millefolium* in the west at all. Those rows still ship, and **their pages say
+the checklist does not confirm them** rather than showing a clean bill. The
+decision about what to do with a disagreement is editorial and belongs in the
+region file; see [`data/sources/wcvp/README.md`](data/sources/wcvp/README.md).
+
+### 7. Three kinds of source, not three of the same kind
+
+A region ships on at least three sources spanning at least three of the five
+jobs below, one of which must be an authority a script can re-ask. Two
+recommendation lists that agree may simply share a blind spot, which is exactly
+what happened when this rule was written.
+
 ## The sources
 
 | Source | Used for | Access | Licence / terms | Verdict |
@@ -189,6 +265,7 @@ and it cost this repo a shipped feature until it was re-measured.
 | **DBIF v2** (CEH/BRC *Database of Insects and their Food Plants*) | GB cross-check for the European host counts — ships a per-plant "insect species richness" file | *Identified, not yet run* — the intended independent check on the Gaytán counts | **Open Government Licence** ("Contains data supplied by NERC") | ⏳ Safe with attribution, and still the open follow-up. Great Britain only, but the Atlantic-France flora overlaps almost entirely, so it can corroborate our genus counts without sharing the Gaytán dataset's assumptions. Deliberately deferred (`docs/host-counts-plan.md` §8): no shipped number depends on it. |
 | **BRC DBIF / Southwood foliage-insect rankings** | Formerly the basis for the *interim* France host-count estimates | *No longer used for any shipped number* | Facts referenced, not prose | ✅ **Retired.** The France rows now carry counts computed from the Gaytán matrix above, so these rankings no longer stand behind any figure in the app. DBIF v2 (row above) remains the intended independent cross-check of those counts; it has not been run yet. |
 | **RHS "Plants for Pollinators", Buglife, Plantlife, Woodland Trust, Butterfly Conservation** | Pollinator value, propagation, notable wildlife ties for the France seed data | Referenced for all four France lists | Publications © ; we use the factual associations, not the prose | ✅ Facts referenced. |
+| **Kew WCVP, widened to every region** | The native-status check all twelve regions can be re-asked against — `npm run native:check -- --region <id>`, previously Ireland only | GBIF checklist dataset, one call per taxon, committed per region to `data/sources/wcvp/` | CC BY 4.0 (RBG Kew) | ✅ **The third kind of source the society lists could not be.** They are recommendation lists and cannot settle range; the one with a flora tier has no Douglas-fir in Portland. WCVP answers everywhere at the same grain. Scope follows TDWG level 3, so it is state-fine in the Mid-Atlantic and country-coarse in France — recorded per region in the folder README, and a coarse area is still admitted because it catches the plant that is not native to the country at all. Eleven flags over 578 rows; none acted on, because a disagreement between Kew and a regional flora is editorial. |
 | **BONAP county distribution** | County-level native status | *Not yet integrated* | ⚠️ BONAP maps have restrictive reuse terms | ⛔ **Do not scrape or embed.** Phase 2 should use USDA PLANTS county data (public domain) for county resolution instead. Noted so we don't build on it by accident. |
 | **Basemap tiles** (for the location map) | — | *Not used* | OSM/other tile terms + offline concerns | ⏳ Phase 1 uses a schematic metric grid instead of external tiles, to stay offline-first and avoid tile-usage terms. |
 

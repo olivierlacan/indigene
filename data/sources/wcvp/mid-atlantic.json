@@ -1,0 +1,835 @@
+{
+  "source": "World Checklist of Vascular Plants (WCVP), Royal Botanic Gardens Kew",
+  "license": "CC BY 4.0",
+  "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
+  "area": "Mid-Atlantic & Northeast (PA NJ DE MD VA NY CT RI MA WV)",
+  "region": "mid-atlantic",
+  "ranAt": "2026-09-21T06:58:11.437Z",
+  "rows": [
+    {
+      "id": "quercus-alba",
+      "latin": "Quercus alba",
+      "asked": "Quercus alba",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "quercus-rubra",
+      "latin": "Quercus rubra",
+      "asked": "Quercus rubra",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "acer-rubrum",
+      "latin": "Acer rubrum",
+      "asked": "Acer rubrum",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "betula-nigra",
+      "latin": "Betula nigra",
+      "asked": "Betula nigra",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "ABSENT",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "prunus-serotina",
+      "latin": "Prunus serotina",
+      "asked": "Prunus serotina",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "cercis-canadensis",
+      "latin": "Cercis canadensis",
+      "asked": "Cercis canadensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "ABSENT",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "amelanchier-canadensis",
+      "latin": "Amelanchier canadensis",
+      "asked": "Amelanchier canadensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "ABSENT"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "cornus-florida",
+      "latin": "Cornus florida",
+      "asked": "Cornus florida",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "fagus-grandifolia",
+      "latin": "Fagus grandifolia",
+      "asked": "Fagus grandifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "tilia-americana",
+      "latin": "Tilia americana",
+      "asked": "Tilia americana",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "tsuga-canadensis",
+      "latin": "Tsuga canadensis",
+      "asked": "Tsuga canadensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "ABSENT",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "pinus-strobus",
+      "latin": "Pinus strobus",
+      "asked": "Pinus strobus",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "hamamelis-virginiana",
+      "latin": "Hamamelis virginiana",
+      "asked": "Hamamelis virginiana",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "vaccinium-corymbosum",
+      "latin": "Vaccinium corymbosum",
+      "asked": "Vaccinium corymbosum",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "ilex-verticillata",
+      "latin": "Ilex verticillata",
+      "asked": "Ilex verticillata",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "cephalanthus-occidentalis",
+      "latin": "Cephalanthus occidentalis",
+      "asked": "Cephalanthus occidentalis",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "ABSENT",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "ABSENT"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "physocarpus-opulifolius",
+      "latin": "Physocarpus opulifolius",
+      "asked": "Physocarpus opulifolius",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "viburnum-dentatum",
+      "latin": "Viburnum dentatum",
+      "asked": "Viburnum dentatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "ABSENT",
+        "CNT": "ABSENT",
+        "RHO": "ABSENT",
+        "MAS": "ABSENT",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "cornus-sericea",
+      "latin": "Cornus sericea",
+      "asked": "Cornus sericea",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "ceanothus-americanus",
+      "latin": "Ceanothus americanus",
+      "asked": "Ceanothus americanus",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "corylus-americana",
+      "latin": "Corylus americana",
+      "asked": "Corylus americana",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "asclepias-tuberosa",
+      "latin": "Asclepias tuberosa",
+      "asked": "Asclepias tuberosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "asclepias-incarnata",
+      "latin": "Asclepias incarnata",
+      "asked": "Asclepias incarnata",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "echinacea-purpurea",
+      "latin": "Echinacea purpurea",
+      "asked": "Echinacea purpurea",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "ABSENT",
+        "DEL": "INTRODUCED",
+        "MRY": "INTRODUCED",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "ABSENT",
+        "RHO": "ABSENT",
+        "MAS": "ABSENT",
+        "WVA": "ABSENT"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rudbeckia-fulgida",
+      "latin": "Rudbeckia fulgida",
+      "asked": "Rudbeckia fulgida",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "ABSENT",
+        "RHO": "ABSENT",
+        "MAS": "ABSENT",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "monarda-fistulosa",
+      "latin": "Monarda fistulosa",
+      "asked": "Monarda fistulosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "ABSENT",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "symphyotrichum-novae-angliae",
+      "latin": "Symphyotrichum novae-angliae",
+      "asked": "Symphyotrichum novae-angliae",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "solidago-rugosa",
+      "latin": "Solidago rugosa",
+      "asked": "Solidago rugosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "eutrochium-purpureum",
+      "latin": "Eutrochium purpureum",
+      "asked": "Eutrochium purpureum",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "aquilegia-canadensis",
+      "latin": "Aquilegia canadensis",
+      "asked": "Aquilegia canadensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "penstemon-digitalis",
+      "latin": "Penstemon digitalis",
+      "asked": "Penstemon digitalis",
+      "verdict": "INTRODUCED",
+      "areas": {
+        "PEN": "INTRODUCED",
+        "NWJ": "INTRODUCED",
+        "DEL": "INTRODUCED",
+        "MRY": "INTRODUCED",
+        "VRG": "INTRODUCED",
+        "NWY": "INTRODUCED",
+        "CNT": "INTRODUCED",
+        "RHO": "INTRODUCED",
+        "MAS": "INTRODUCED",
+        "WVA": "INTRODUCED"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "zizia-aurea",
+      "latin": "Zizia aurea",
+      "asked": "Zizia aurea",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "baptisia-australis",
+      "latin": "Baptisia australis",
+      "asked": "Baptisia australis",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "ABSENT",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lobelia-cardinalis",
+      "latin": "Lobelia cardinalis",
+      "asked": "Lobelia cardinalis",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "geranium-maculatum",
+      "latin": "Geranium maculatum",
+      "asked": "Geranium maculatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "schizachyrium-scoparium",
+      "latin": "Schizachyrium scoparium",
+      "asked": "Schizachyrium scoparium",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "panicum-virgatum",
+      "latin": "Panicum virgatum",
+      "asked": "Panicum virgatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "andropogon-gerardii",
+      "latin": "Andropogon gerardii",
+      "asked": "Andropogon gerardii",
+      "verdict": "no-match",
+      "areas": {},
+      "viaSynonym": null
+    },
+    {
+      "id": "carex-pensylvanica",
+      "latin": "Carex pensylvanica",
+      "asked": "Carex pensylvanica",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "parthenocissus-quinquefolia",
+      "latin": "Parthenocissus quinquefolia",
+      "asked": "Parthenocissus quinquefolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lonicera-sempervirens",
+      "latin": "Lonicera sempervirens",
+      "asked": "Lonicera sempervirens",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "fragaria-virginiana",
+      "latin": "Fragaria virginiana",
+      "asked": "Fragaria virginiana",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "packera-aurea",
+      "latin": "Packera aurea",
+      "asked": "Packera aurea",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "ABSENT",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "polystichum-acrostichoides",
+      "latin": "Polystichum acrostichoides",
+      "asked": "Polystichum acrostichoides",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    }
+  ]
+}

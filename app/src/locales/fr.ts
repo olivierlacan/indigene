@@ -2505,6 +2505,18 @@ export const fr: Dict = {
 
   // Ce que chaque émoji veut dire *ici*, lu par un lecteur d'écran à la place
   // de son nom Unicode. Voir lib/emoji.ts.
+  "emoji.groups": "associations de plantes indigènes",
+  "society.title": "Associations de plantes indigènes",
+  "society.lede": "Ventes de plantes, sorties et conseils de gens qui jardinent ce sol.",
+  "society.what.chapters": "sections locales et rencontres",
+  "society.what.walks": "sorties et conférences",
+  "society.what.sales": "ventes de plantes indigènes",
+  "society.what.advice": "conseils de culture",
+  "society.what.certify": "labellise les jardins de nature",
+  "society.what.records": "la flore, recensée",
+  "society.what.woodland": "plantation de forêts indigènes",
+  "society.what.provenance": "pépinières d'origine locale",
+  "society.what.pollinators": "guides de plantation pour pollinisateurs",
   "emoji.wildlife": "faune",
   "emoji.birds": "oiseaux",
   "emoji.moths": "papillons de nuit",

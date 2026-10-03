@@ -55,3 +55,11 @@ audubon-plants-for-birds/raw/
 # The Wildflower Center harvest. Same split: the raw per-state recommendation
 # lists stay out, the counts are committed.
 wildflower-center/raw/
+
+# The Washington and Oregon state floras, pulled from the bulk downloads their
+# own sites publish. No work here consumes them yet — the rule is in place
+# because 15 MB of checklist sitting untracked beside a `git add -A` is how it
+# ends up in a commit, and `oregonflora/` is only safe today by accident, via
+# the blanket `*.csv` above.
+waflora/raw/
+oregonflora/raw/

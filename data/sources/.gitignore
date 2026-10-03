@@ -44,3 +44,14 @@ hosts/hosts-raw.json
 # japan earned its rows the way the rule says: the Kantō Plain ships on these
 # counts, so the records behind them are now auditable without a re-fetch.
 !hosts/records/japan.csv
+
+# Audubon's Plants for Birds harvest. Their plant data comes from BONAP's North
+# American Plant Atlas, and DATA_SOURCES.md carries a standing ⛔ on BONAP
+# ("do not scrape or embed" — restrictive reuse terms). So the raw per-ZIP
+# lists stay out of the repo; only the counts `npm run societies` reduces them
+# to are committed.
+audubon-plants-for-birds/raw/
+
+# The Wildflower Center harvest. Same split: the raw per-state recommendation
+# lists stay out, the counts are committed.
+wildflower-center/raw/

@@ -2528,6 +2528,20 @@ export const en = {
   // What each emoji means *here*, said to a screen reader in place of its
   // Unicode name ("prohibited", "raised hand"). See lib/emoji.ts.
   // ---------------------------------------------------------------------
+  // The line under "where it's native": who re-checked the claim, and when.
+  // Split around the linked checklist name, which is why it is three fragments
+  // rather than one sentence with a placeholder.
+  "evidence.checklist": "Kew's World Checklist",
+  "evidence.confirmedBefore": "Native in {area} — ",
+  "evidence.confirmedAfter": " agrees, checked {when}.",
+  // Only where the place checked is wider than the region, so the check is a
+  // floor rather than a verdict about this ground.
+  "evidence.coarse": "That checklist records range by {area} as a whole, no finer.",
+  "evidence.unconfirmed.introduced": " calls it introduced in {area}, not native.",
+  "evidence.unconfirmed.absent": " doesn't record it in {area} at all.",
+  "evidence.unconfirmed.unmatched": " has no entry under this name.",
+  "evidence.unconfirmed.inconclusive": " has no entry for this subspecies, so it couldn't be checked.",
+  "evidence.stands": "We've kept it on the regional flora named below.",
   "emoji.wildlife": "wildlife",
   "emoji.birds": "birds",
   "emoji.moths": "moths",

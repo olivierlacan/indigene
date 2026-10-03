@@ -181,6 +181,15 @@ subtitle on the What's new page.
   national flora gives status per state, finer than WCVP; South Africa's gives
   none at all, listing invasive black wattle exactly like a Cape endemic, so
   Africa stands on WCVP instead.
+- Plants: each plant page now says who checked that it is native where you are,
+  and when — and says so plainly on the twelve plants where a world checklist
+  disagrees with the regional flora we list them on.
+  https://indigene.app/plants/quercus-alba
+- Internal: `npm run native:check` covers every region WCVP can answer for, not
+  just Ireland — a region takes several TDWG areas and one native area wins.
+  `npm run native-evidence` reduces those snapshots to the 2.8 KB the page
+  reads, storing only the rows that were *not* confirmed. DATA_SOURCES.md now
+  states the native rule in one place.
 
 ### Changed
 

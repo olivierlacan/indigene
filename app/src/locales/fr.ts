@@ -2505,6 +2505,15 @@ export const fr: Dict = {
 
   // Ce que chaque émoji veut dire *ici*, lu par un lecteur d'écran à la place
   // de son nom Unicode. Voir lib/emoji.ts.
+  "evidence.checklist": "la Liste mondiale de Kew",
+  "evidence.confirmedBefore": "Indigène en {area} — ",
+  "evidence.confirmedAfter": " le confirme, vérifié en {when}.",
+  "evidence.coarse": "Cette liste décrit l'aire à l'échelle de {area}, pas plus finement.",
+  "evidence.unconfirmed.introduced": " la dit introduite en {area}, et non indigène.",
+  "evidence.unconfirmed.absent": " ne la recense pas en {area}.",
+  "evidence.unconfirmed.unmatched": " n'a aucune entrée sous ce nom.",
+  "evidence.unconfirmed.inconclusive": " n'a pas d'entrée pour cette sous-espèce : la vérification n'a pas pu aboutir.",
+  "evidence.stands": "Nous la maintenons sur la flore régionale citée plus bas.",
   "emoji.wildlife": "faune",
   "emoji.birds": "oiseaux",
   "emoji.moths": "papillons de nuit",

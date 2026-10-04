@@ -143,6 +143,7 @@ try {
     { slug: "native", title: "Native plants, not nativism", subtitle: "where a plant evolved \u2014 never borders, never people", stat: `<b>${nativeSources}</b> sources \u00b7 both sides of the argument` },
     // The LLM bill's two headline figures, from the same module the page reads.
     { slug: "llm", title: "What building Indigene with an LLM cost", subtitle: "measured, estimated \u2014 and how the design pays it back", stat: `<b>${SNAPSHOT.sessions}</b> sessions \u00b7 <b>\u2248${round2(bill().kWh.mid)} kWh</b>` },
+    { slug: "homegrown", title: "Homegrown National Park", subtitle: "half the lawn back to native plants \u2014 a park made of yards" },
     { slug: "crops", title: "Will native plants bring pests to my yard?", subtitle: "no \u2014 and some of them take pests away", stat: `<b>25</b> studies \u00b7 the ones that disagree too` },
   ];
 } finally {

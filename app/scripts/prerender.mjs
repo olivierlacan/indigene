@@ -417,6 +417,11 @@ async function collectPages(load) {
     image: pageCard("llm"),
     imageAlt: "What building Indigene with an LLM cost — the sessions, electricity and carbon, and how the design pays it back",
   });
+  // The idea the app is built on, and who built it.
+  add("homegrown", en["homegrown.docTitle"], en["homegrown.lede"], {
+    image: pageCard("homegrown"),
+    imageAlt: "Homegrown National Park — half the lawn given back to native plants, a park made of yards",
+  });
   add("traits", en["traits.docTitle"], en["traits.lede"], {
     image: pageCard("traits"),
     imageAlt: "Plant traits — what each label and figure on a plant's page means",

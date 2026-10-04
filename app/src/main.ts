@@ -38,6 +38,7 @@ import { renderAbout } from "./steps/about";
 import { renderCrops } from "./steps/crops";
 import { renderNative } from "./steps/native";
 import { renderLlm } from "./steps/llm";
+import { renderHomegrown } from "./steps/homegrown";
 import { renderTraits } from "./steps/traits";
 import { renderImport } from "./steps/import";
 import { initAppMenu, closeAppMenu } from "./components/app-menu";
@@ -114,6 +115,8 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
   native: { fn: renderNative, labelKey: "steps.native", inFlow: false },
   // What building the app with an LLM used, and how its design pays that back.
   llm: { fn: renderLlm, labelKey: "steps.llm", inFlow: false },
+  // Doug Tallamy's Homegrown National Park, the idea the app is built on.
+  homegrown: { fn: renderHomegrown, labelKey: "steps.homegrown", inFlow: false },
   // What a plant's labels and figures mean. `#/traits/<id>` is the same page
   // opened at one definition — what each label on a plant page links to.
   traits: { fn: renderTraits, labelKey: "steps.traits", inFlow: false },

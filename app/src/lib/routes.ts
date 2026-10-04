@@ -61,6 +61,7 @@ export const APP_STEPS = [
   "crops",
   "native",
   "llm",
+  "homegrown",
   "traits",
   "import",
   "film",
@@ -117,6 +118,7 @@ export const SHAREABLE_INDEXES: readonly string[] = [
   "crops",
   "native",
   "llm",
+  "homegrown",
   "film",
   "traits",
 ];

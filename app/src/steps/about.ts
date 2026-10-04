@@ -64,6 +64,7 @@ export function renderAbout(main: HTMLElement): void {
       // The emphasised word is a real <em>, not markdown asterisks in a string:
       // nothing renders those, and they'd show up literally on the page.
       el("p", {}, tx("about.why2", { here: el("em", {}, t("about.hereEm")) })),
+      el("p", {}, tx("about.whyHomegrown", { link: el("a", { href: "#/homegrown" }, t("about.homegrownLink")) })),
 
       el("h3", {}, t("about.forTitle")),
       el("p", {}, t("about.forLede")),

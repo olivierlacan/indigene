@@ -2809,6 +2809,36 @@ export const en = {
   "about.stance.llm": "Indigene shows its own bill.",
   "about.stance.llmBody": "It was built with an LLM, and LLMs run on electricity. {link} says how much, and how the design pays it back.",
   "about.stance.llmLink": "What building Indigene with an LLM cost",
+  // ---------------------------------------------------------------------
+  // "Homegrown National Park" (steps/homegrown.ts) — the idea Indigene is built on.
+  // ---------------------------------------------------------------------
+  "steps.homegrown": "Homegrown",
+  "homegrown.docTitle": "Homegrown National Park — Indigene",
+  "homegrown.title": "Homegrown National Park",
+  "homegrown.lede": "The ecologist Doug Tallamy's idea: give half of America's lawns back to native plants, and the yards together become a national park. Indigene is built to help you plant your piece of it.",
+  "homegrown.ideaTitle": "A park made of yards",
+  "homegrown.idea1": "The United States grows about 40 million acres (16 million hectares) of lawn, more ground than any irrigated crop, and lawn feeds almost nothing. Tallamy, an entomologist at the University of Delaware, did the sum: half of it in native plants would be 20 million acres of habitat, more than most of the country's national parks put together.",
+  "homegrown.idea2": "Nobody needs permission or a big yard: a strip by the driveway or a pot on a balcony counts. Gardeners add their patch to the project's {map}, and the park grows a yard at a time.",
+  "homegrown.mapLink": "public map",
+  "homegrown.birdsTitle": "Caterpillars feed the birds",
+  "homegrown.birds1": "Most songbirds raise their chicks on caterpillars, and most caterpillars eat only the plants they evolved with. One pair of chickadees needs 6,000 to 9,000 of them to raise a single brood. In a study of yards around Washington, DC, chickadees couldn't keep their numbers up where less than 70% of the greenery was native.",
+  "homegrown.appTitle": "Where Indigene follows the idea",
+  "homegrown.app1": "The ranking puts caterpillars first. Of everything a plant offers, the number of caterpillar kinds it feeds counts the most.",
+  "homegrown.app2": "An “Essential” plant is what Tallamy calls a keystone plant. Across the US, 14% of native plant genera (groups of close relatives, like the oaks) feed 90% of caterpillar species. Indigene shows you those first.",
+  "homegrown.app3": "In the US, the caterpillar counts come from Tallamy's own data, published with the National Wildlife Federation.",
+  "homegrown.app4": "The idea travels: Indigene's lists for Ireland, New Zealand or Japan lean on each place's own studies of what feeds what.",
+  "homegrown.authorTitle": "Why I built Indigene",
+  "homegrown.author1": "I spent years turning the yard of a newly built house in central Florida into native plants. When I moved to Seattle, I started over, with far less ground to work with.",
+  "homegrown.author2": "Both times, the hard part was knowing what would grow in each corner, and what it would feed. Indigene is the answer I wanted then, and those two yards are my piece of the park.",
+  "homegrown.authorSign": "— Olivier Lacan, who makes Indigene",
+  "homegrown.sourcesTitle": "Where this comes from",
+  "homegrown.src.hnp": "the project, and the map of yards in it",
+  "homegrown.src.book": "the book that first set out Homegrown National Park",
+  "homegrown.src.lawn": "how much of the United States is lawn",
+  "homegrown.src.chickadee": "chickadees, caterpillars and the 70% line",
+  "homegrown.src.keystone": "the few plant genera that feed most caterpillars",
+  "about.whyHomegrown": "The idea underneath it is Doug Tallamy's {link}.",
+  "about.homegrownLink": "Homegrown National Park",
 } as const;
 
 /** Every valid string key. Derived, so it can never drift from the strings. */

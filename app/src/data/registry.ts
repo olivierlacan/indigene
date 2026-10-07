@@ -12757,6 +12757,65 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:302621-2",
+    "scientificName": "Salix hookeriana",
+    "family": "Salicaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "302621-2",
+      "wfo": "wfo-0000928813",
+      "gbif": "7476447",
+      "usda": "SAHO",
+      "itis": "504966",
+      "inat": "78941",
+      "wikidata": "Q2091516",
+      "indigene": "salix-hookeriana"
+    },
+    "commonNames": [
+      "Coastal Willow",
+      "Hooker's Willow"
+    ],
+    "aliases": [
+      "coastal willow",
+      "hooker's willow",
+      "salix hookeriana"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:284532-2",
+    "scientificName": "Salix lasiandra",
+    "family": "Salicaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "284532-2",
+      "wfo": "wfo-0000928739",
+      "gbif": "6362957",
+      "itis": "22550",
+      "inat": "78943",
+      "wikidata": "Q19847492",
+      "indigene": "salix-lasiandra"
+    },
+    "commonNames": [
+      "Pacific Willow"
+    ],
+    "aliases": [
+      "pacific willow",
+      "salix lasiandra"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:301954-2",
     "scientificName": "Salix lasiolepis",
     "family": "Salicaceae",
@@ -12809,6 +12868,35 @@ export const REGISTRY: RegistryEntry[] = [
     "aliases": [
       "salix scouleriana",
       "scouler's willow"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:778867-1",
+    "scientificName": "Salix sitchensis",
+    "family": "Salicaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "778867-1",
+      "wfo": "wfo-0000930233",
+      "gbif": "5372832",
+      "usda": "SASI2",
+      "itis": "22584",
+      "inat": "61100",
+      "wikidata": "Q4195491",
+      "indigene": "salix-sitchensis"
+    },
+    "commonNames": [
+      "Sitka Willow"
+    ],
+    "aliases": [
+      "salix sitchensis",
+      "sitka willow"
     ],
     "cultivarOf": null,
     "regions": [

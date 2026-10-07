@@ -5178,5 +5178,37 @@
       "gbif": "6414539",
       "wikidata": "Q40034281"
     }
+  },
+  "Salix hookeriana": {
+    "identifiers": {
+      "ipni": "302621-2",
+      "wfo": "wfo-0000928813",
+      "usda": "SAHO",
+      "itis": "504966",
+      "inat": "78941",
+      "gbif": "7476447",
+      "wikidata": "Q2091516"
+    }
+  },
+  "Salix lasiandra": {
+    "identifiers": {
+      "ipni": "284532-2",
+      "wfo": "wfo-0000928739",
+      "itis": "22550",
+      "inat": "78943",
+      "gbif": "6362957",
+      "wikidata": "Q19847492"
+    }
+  },
+  "Salix sitchensis": {
+    "identifiers": {
+      "ipni": "778867-1",
+      "wfo": "wfo-0000930233",
+      "usda": "SASI2",
+      "itis": "22584",
+      "inat": "61100",
+      "gbif": "5372832",
+      "wikidata": "Q4195491"
+    }
   }
 }

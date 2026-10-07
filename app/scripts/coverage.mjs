@@ -47,7 +47,10 @@ const ZONE_FOR_EEA_REGION = {
   mediterranean: "Mediterranean",
 };
 
-const FORMS = ["tree", "shrub", "perennial", "grass", "vine", "groundcover", "fern"];
+const FORMS = ["tree", "shrub", "perennial", "annual", "grass", "vine", "groundcover", "fern"];
+// Forms a region may go without. Annuals are a garden choice, not a gap: a
+// list of perennials fails nobody, so they are counted but never floored.
+const OPTIONAL_FORMS = new Set(["annual"]);
 const MOISTURE = ["dry", "mesic", "wet"];
 // Sun bands as the app files them: a plant belongs to a band if its accepted
 // range overlaps it. Deliberately generous — we are looking for holes, and an
@@ -112,8 +115,9 @@ for (const { meta, seed } of regions) {
   console.log("  forms");
   for (const form of FORMS) {
     const n = seed.filter((p) => p.form === form).length;
-    short += Math.max(0, FORM_FLOOR - n);
-    console.log(`    ${pad(form, 13)}${num(n, 3)}${flag(n, FORM_FLOOR)}`);
+    const floor = OPTIONAL_FORMS.has(form) ? 0 : FORM_FLOOR;
+    short += Math.max(0, floor - n);
+    console.log(`    ${pad(form, 13)}${num(n, 3)}${flag(n, floor)}`);
   }
 
   // ---- 2. Site types ----

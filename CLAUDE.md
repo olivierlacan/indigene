@@ -344,6 +344,10 @@ it.
   model, input, output, cache written, cache read, price, and working time.
   Then a `**Total: $…**` line, which is what the check reads. A session shared
   with other PRs shows its total so far and names them.
+- **Call it a floor.** After a restart the usage record keeps only one run's
+  total, and its turn records (`list_events`, `result`) can miss work entirely.
+  Of the first 110 sessions, 70 were recorded low. Report the higher of the
+  two and write "at least".
 - **Update it before you finish**, not just when the PR opens. Editing the
   description re-runs the check.
 - **Over $30, the check warns; over $100, louder.** The median session is $11,

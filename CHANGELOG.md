@@ -39,6 +39,14 @@ subtitle on the What's new page.
 - Internal: all three checked native in British Columbia against VASCAN and in
   Oregon against WCVP. WCVP misses western wahoo in Washington, so its row
   cites the GBIF herbarium and iNaturalist records there instead.
+- Regions: fifteen more Pacific Northwest natives, chosen to fill gaps — late
+  flowers like western goldentop and Pacific aster, Pacific yew and wild ginger
+  for dry shade, and stinging nettle for red admirals.
+  https://indigene.app/regions/pnw
+- Internal: picked from the GBIF-ranked candidate shortlist and the coverage
+  report's thin cells (September–December bloom, dry shade). Four rows reuse
+  their California figures with notes rewritten for here. VASCAN files blue
+  elderberry as `Sambucus cerulea`, now a reviewed entry in `check-vascan.mjs`.
 
 ### Fixed
 

@@ -71,6 +71,14 @@ const REVIEWED = {
       "and `G. integrifolia` to the Pacific Northwest floras. Same plant, same " +
       "beaches, both sides of the border.",
   },
+  "Sambucus nigra subsp. caerulea": {
+    province: "BC",
+    as: "Sambucus cerulea",
+    why:
+      "Blue elderberry. VASCAN keeps it as a species, `S. cerulea`, and lists " +
+      "the subspecies name as a synonym spelled `cerulea`; the registry follows " +
+      "the subspecies spelled `caerulea`. Same plant either way.",
+  },
 };
 
 /** Which shipped lists make a claim about Canadian ground, and where. */

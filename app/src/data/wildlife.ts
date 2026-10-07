@@ -1965,6 +1965,46 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     "euonymus-occidentalis": [
       { wildlifeId: "berry-songbirds", support: "berries", note: "Scarlet-coated seeds hang from the split capsules in fall for thrushes and other songbirds.", basis: "OregonFlora; USDA PLANTS." },
     ],
+    "taxus-brevifolia": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Thrushes swallow the red flesh around each seed in fall; the seed inside passes through.", basis: "USFS FEIS; Cornell Lab." },
+    ],
+    "sambucus-nigra-caerulea": [
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "Waxwing flocks strip a fruiting blue elderberry in late summer.", basis: "Cornell Lab; USFS FEIS." },
+      { wildlifeId: "band-tailed-pigeon", support: "berries", note: "Band-tailed pigeons travel to elderberry crops in late summer.", basis: "WDFW; USFS FEIS." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Grosbeaks, tanagers and thrushes crowd into it when the berries ripen.", basis: "Cornell Lab." },
+    ],
+    "arctostaphylos-columbiana": [
+      { wildlifeId: "annas-rufous-hummingbird", support: "nectar", note: "Anna's hummingbirds work the white bells in early spring, when few other flowers are open.", basis: "Audubon; Xerces Society." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bee queens just out of winter feed on the early flowers.", basis: "Xerces Society." },
+    ],
+    "garrya-elliptica": [
+      { wildlifeId: "band-tailed-pigeon", support: "berries", note: "Female plants carry purple fruit that band-tailed pigeons and thrushes take.", basis: "USFS FEIS; Calscape (CNPS)." },
+    ],
+    "philadelphus-lewisii": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The scented white flowers in June are worked all day by bumble bees.", basis: "Xerces Society." },
+    ],
+    "rosa-gymnocarpa": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Thrushes and grouse eat the small red hips into winter.", basis: "USFS FEIS; Cornell Lab." },
+    ],
+    "euthamia-occidentalis": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Late yellow flowers feed bumble bees into October, when little else is blooming.", basis: "Xerces Society." },
+    ],
+    "symphyotrichum-chilense": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "One of the last big nectar sources of the year for bumble bees.", basis: "Xerces Society." },
+    ],
+    "iris-tenax": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees push into the flowers in spring and come out dusted with pollen.", basis: "Xerces Society." },
+    ],
+    "lilium-columbianum": [
+      { wildlifeId: "annas-rufous-hummingbird", support: "nectar", note: "Rufous hummingbirds feed at the nodding orange flowers in early summer.", basis: "USFS Celebrating Wildflowers." },
+      { wildlifeId: "western-tiger-swallowtail", support: "nectar", note: "Swallowtails are among its main pollinators, carrying pollen on their wings.", basis: "USFS Celebrating Wildflowers." },
+    ],
+    "plectritis-congesta": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A spring meadow of sea blush is busy with bumble bees and small native bees.", basis: "Xerces Society." },
+    ],
+    "urtica-gracilis": [
+      { wildlifeId: "red-admiral", support: "host", note: "Red admiral caterpillars live folded inside nettle leaves, sewn shut with silk.", basis: "BAMONA; Washington Butterfly Association." },
+    ],
     "berberis-aquifolium": [
       { wildlifeId: "mason-bees", support: "nectar", note: "Bright yellow late-winter flowers are among the very first bee food of the year.", basis: "Xerces Society." },
       { wildlifeId: "cedar-waxwing", support: "berries", note: "The blue \"grape\" berries feed waxwings, robins, and towhees.", basis: "USDA PLANTS; Cornell Lab." },

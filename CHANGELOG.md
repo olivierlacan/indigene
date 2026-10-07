@@ -31,6 +31,15 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+### Added
+
+- Regions: three more native shrubs for the Pacific Northwest — Pacific wax
+  myrtle for a coastal hedge, Oregon boxleaf as a native stand-in for boxwood,
+  and western wahoo for a shady corner. https://indigene.app/regions/pnw
+- Internal: all three checked native in British Columbia against VASCAN and in
+  Oregon against WCVP. WCVP misses western wahoo in Washington, so its row
+  cites the GBIF herbarium and iNaturalist records there instead.
+
 ### Fixed
 
 - Regions: the Kantō Plain now shows the Japanese flag beside its name, like

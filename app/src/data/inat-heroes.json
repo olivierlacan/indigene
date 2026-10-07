@@ -1169,6 +1169,15 @@
     "attribution": "(c) pronghornranch67, some rights reserved (CC BY-NC)",
     "color": "#8b6519"
   },
+  "euonymus-occidentalis": {
+    "taxonId": 64542,
+    "photoId": 32460,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/32460/square.jpg",
+    "observer": "randomtruth",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) randomtruth, some rights reserved (CC BY-NC-SA)",
+    "color": "#5d5831"
+  },
   "eurasian-jay": {
     "taxonId": 8088,
     "photoId": 168146456,
@@ -1862,6 +1871,15 @@
     "attribution": "(c) Alejandro Lopez, some rights reserved (CC BY-NC-SA), uploaded by Alejandro Lopez",
     "color": "#786327"
   },
+  "morella-californica": {
+    "taxonId": 61039,
+    "photoId": 101267933,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/101267933/square.jpg",
+    "observer": "nanoose",
+    "license": "cc-by-nc",
+    "attribution": "(c) nanoose, some rights reserved (CC BY-NC), uploaded by nanoose",
+    "color": "#6a916a"
+  },
   "mosses-elfin": {
     "taxonId": 122371,
     "photoId": 369500385,
@@ -2014,6 +2032,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Leon Perrie, some rights reserved (CC BY-NC), uploaded by Leon Perrie",
     "color": "#5b5918"
+  },
+  "paxistima-myrsinites": {
+    "taxonId": 63893,
+    "photoId": 72644572,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/72644572/square.jpg",
+    "observer": "Troy Watson",
+    "license": "cc-by-nc",
+    "attribution": "(c) Troy Watson, some rights reserved (CC BY-NC), uploaded by Troy Watson",
+    "color": "#829874"
   },
   "peacock-butterfly": {
     "taxonId": 207977,

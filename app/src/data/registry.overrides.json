@@ -5025,5 +5025,38 @@
       "gbif": "3904526",
       "wikidata": "Q1861046"
     }
+  },
+  "Euonymus occidentalis": {
+    "identifiers": {
+      "ipni": "30051051-2",
+      "wfo": "wfo-0000681962",
+      "usda": "EUOC8",
+      "itis": "27952",
+      "inat": "64542",
+      "gbif": "3169132",
+      "wikidata": "Q4117747"
+    }
+  },
+  "Morella californica": {
+    "identifiers": {
+      "ipni": "1113865-2",
+      "wfo": "wfo-0001085144",
+      "usda": "MOCA6",
+      "itis": "507897",
+      "inat": "61039",
+      "gbif": "3168990",
+      "wikidata": "Q17252791"
+    }
+  },
+  "Paxistima myrsinites": {
+    "identifiers": {
+      "ipni": "1053872-2",
+      "wfo": "wfo-0001292667",
+      "usda": "PAMY",
+      "itis": "504149",
+      "inat": "63893",
+      "gbif": "3169107",
+      "wikidata": "Q7156489"
+    }
   }
 }

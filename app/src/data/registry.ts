@@ -5433,6 +5433,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:30051051-2",
+    "scientificName": "Euonymus occidentalis",
+    "family": "Celastraceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "30051051-2",
+      "wfo": "wfo-0000681962",
+      "gbif": "3169132",
+      "usda": "EUOC8",
+      "itis": "27952",
+      "inat": "64542",
+      "wikidata": "Q4117747",
+      "indigene": "euonymus-occidentalis"
+    },
+    "commonNames": [
+      "Western Wahoo"
+    ],
+    "aliases": [
+      "euonymus occidentalis",
+      "western wahoo"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:346016-1",
     "scientificName": "Euphorbia characias",
     "family": "Euphorbiaceae",
@@ -8605,6 +8634,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:1113865-2",
+    "scientificName": "Morella californica",
+    "family": "Myricaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "1113865-2",
+      "wfo": "wfo-0001085144",
+      "gbif": "3168990",
+      "usda": "MOCA6",
+      "itis": "507897",
+      "inat": "61039",
+      "wikidata": "Q17252791",
+      "indigene": "morella-californica"
+    },
+    "commonNames": [
+      "Pacific Wax Myrtle"
+    ],
+    "aliases": [
+      "morella californica",
+      "pacific wax myrtle"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:164286-2",
     "scientificName": "Morella cerifera",
     "family": "Myricaceae",
@@ -9296,6 +9354,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:1053872-2",
+    "scientificName": "Paxistima myrsinites",
+    "family": "Celastraceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "1053872-2",
+      "wfo": "wfo-0001292667",
+      "gbif": "3169107",
+      "usda": "PAMY",
+      "itis": "504149",
+      "inat": "63893",
+      "wikidata": "Q7156489",
+      "indigene": "paxistima-myrsinites"
+    },
+    "commonNames": [
+      "Oregon Boxleaf"
+    ],
+    "aliases": [
+      "oregon boxleaf",
+      "paxistima myrsinites"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {

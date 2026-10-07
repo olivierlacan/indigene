@@ -1959,6 +1959,12 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     "gaultheria-shallon": [
       { wildlifeId: "berry-songbirds", support: "berries", note: "Salal's dark berries are eaten by robins, thrushes, and grouse — and its flowers feed bees.", basis: "USDA PLANTS; Cornell Lab." },
     ],
+    "morella-californica": [
+      { wildlifeId: "yellow-rumped-warbler", support: "berries", note: "The waxy berries are a winter staple for yellow-rumped warblers on the coast — few other birds can digest the wax.", basis: "Cornell Lab; USDA NRCS Plant Guide." },
+    ],
+    "euonymus-occidentalis": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Scarlet-coated seeds hang from the split capsules in fall for thrushes and other songbirds.", basis: "OregonFlora; USDA PLANTS." },
+    ],
     "berberis-aquifolium": [
       { wildlifeId: "mason-bees", support: "nectar", note: "Bright yellow late-winter flowers are among the very first bee food of the year.", basis: "Xerces Society." },
       { wildlifeId: "cedar-waxwing", support: "berries", note: "The blue \"grape\" berries feed waxwings, robins, and towhees.", basis: "USDA PLANTS; Cornell Lab." },

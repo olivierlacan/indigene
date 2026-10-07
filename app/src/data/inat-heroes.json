@@ -188,6 +188,15 @@
     "attribution": "(c) Dee Warenycia, some rights reserved (CC BY-NC)",
     "color": "#4c4d2e"
   },
+  "arctostaphylos-columbiana": {
+    "taxonId": 75505,
+    "photoId": 988544,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/988544/square.jpg",
+    "observer": "66dodge",
+    "license": "cc-by",
+    "attribution": "(c) 66dodge, some rights reserved (CC BY), uploaded by 66dodge",
+    "color": "#627049"
+  },
   "arctostaphylos-glauca": {
     "taxonId": 55133,
     "photoId": 5822902,
@@ -277,6 +286,15 @@
     "license": "cc-by-nc-sa",
     "attribution": "(c) BlueRidgeKitties, some rights reserved (CC BY-NC-SA)",
     "color": "#3f4b42"
+  },
+  "asarum-caudatum": {
+    "taxonId": 52858,
+    "photoId": 181125509,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/181125509/square.jpg",
+    "observer": "Ken Harris EntSocVic",
+    "license": "cc-by-nc",
+    "attribution": "(c) Ken Harris EntSocVic, some rights reserved (CC BY-NC), uploaded by Ken Harris EntSocVic",
+    "color": "#6c8a5e"
   },
   "asclepias-fascicularis": {
     "taxonId": 56851,
@@ -1187,6 +1205,15 @@
     "attribution": "(c) Luc Viatour, some rights reserved (CC BY-SA)",
     "color": "#6b744e"
   },
+  "euthamia-occidentalis": {
+    "taxonId": 58826,
+    "photoId": 23392855,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/23392855/square.jpg",
+    "observer": "John D Reynolds",
+    "license": "cc-by-nc",
+    "attribution": "(c) John D Reynolds, some rights reserved (CC BY-NC), uploaded by John D Reynolds",
+    "color": "#828823"
+  },
   "eutrochium-maculatum": {
     "taxonId": 117440,
     "photoId": 608430488,
@@ -1321,6 +1348,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) josefwirth, some rights reserved (CC BY-NC), uploaded by josefwirth",
     "color": "#6d6174"
+  },
+  "geum-macrophyllum": {
+    "taxonId": 77266,
+    "photoId": 153877477,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/153877477/square.jpg",
+    "observer": "Гончарова Ольга",
+    "license": "cc-by-nc",
+    "attribution": "(c) Гончарова Ольга, some rights reserved (CC BY-NC), uploaded by Гончарова Ольга",
+    "color": "#758f35"
   },
   "glanville-fritillary": {
     "taxonId": 57495,
@@ -1502,6 +1538,15 @@
     "attribution": "(c) diskus, some rights reserved (CC BY-NC)",
     "color": "#434832"
   },
+  "iris-tenax": {
+    "taxonId": 57727,
+    "photoId": 73222851,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/73222851/square.jpg",
+    "observer": "Courtney Kelly Jett",
+    "license": "cc-by-nc",
+    "attribution": "(c) Courtney Kelly Jett, some rights reserved (CC BY-NC), uploaded by Courtney Kelly Jett",
+    "color": "#707b49"
+  },
   "isocoma-menziesii": {
     "taxonId": 77511,
     "photoId": 40945706,
@@ -1654,6 +1699,15 @@
     "license": "cc-by",
     "attribution": "(c) Charlie Inyo, some rights reserved (CC BY), uploaded by Charlie Inyo",
     "color": "#9a845c"
+  },
+  "lilium-columbianum": {
+    "taxonId": 77744,
+    "photoId": 581412294,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/581412294/square.jpg",
+    "observer": "Abby Hyde",
+    "license": "cc-by",
+    "attribution": "(c) Abby Hyde, some rights reserved (CC BY), uploaded by Abby Hyde",
+    "color": "#535228"
   },
   "linnaea-borealis": {
     "taxonId": 77780,
@@ -2078,6 +2132,15 @@
     "attribution": "(c) August, some rights reserved (CC BY-NC), uploaded by August",
     "color": "#739242"
   },
+  "philadelphus-lewisii": {
+    "taxonId": 62223,
+    "photoId": 49357153,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/49357153/square.jpeg",
+    "observer": "Mart Hughes",
+    "license": "cc-by-nc",
+    "attribution": "(c) Mart Hughes, some rights reserved (CC BY-NC), uploaded by Mart Hughes",
+    "color": "#5b6e3d"
+  },
   "phormium-cookianum": {
     "taxonId": 129178,
     "photoId": 110370499,
@@ -2203,6 +2266,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Chris Cameron, some rights reserved (CC BY-NC), uploaded by Chris Cameron",
     "color": "#7b8348"
+  },
+  "plectritis-congesta": {
+    "taxonId": 57786,
+    "photoId": 19627382,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/19627382/square.jpg",
+    "observer": "Mike Patterson",
+    "license": "cc-by-nc",
+    "attribution": "(c) Mike Patterson, some rights reserved (CC BY-NC), uploaded by Mike Patterson",
+    "color": "#767055"
   },
   "poa-nemoralis": {
     "taxonId": 78649,
@@ -2509,6 +2581,15 @@
     "license": "cc-by-sa",
     "attribution": "(c) Wintertanager, some rights reserved (CC BY-SA)",
     "color": "#676852"
+  },
+  "rosa-gymnocarpa": {
+    "taxonId": 53441,
+    "photoId": 26171161,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/26171161/square.jpeg",
+    "observer": "Walter Siegmund",
+    "license": "cc-by-sa",
+    "attribution": "(c) Walter Siegmund, some rights reserved (CC BY-SA)",
+    "color": "#203419"
   },
   "rosa-pendulina": {
     "taxonId": 198887,
@@ -2987,6 +3068,15 @@
     "attribution": "(c) Jonathan Tyler, some rights reserved (CC BY-NC-SA)",
     "color": "#5d6b33"
   },
+  "taxus-brevifolia": {
+    "taxonId": 55209,
+    "photoId": 99338130,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/99338130/square.jpeg",
+    "observer": "Kelly Dix",
+    "license": "cc-by-nc",
+    "attribution": "(c) Kelly Dix, some rights reserved (CC BY-NC), uploaded by Kelly Dix",
+    "color": "#47664a"
+  },
   "tellima-grandiflora": {
     "taxonId": 51655,
     "photoId": 143999155,
@@ -3139,6 +3229,15 @@
     "license": "cc0",
     "attribution": "no rights reserved, uploaded by Kathy Daniel",
     "color": "#6a923e"
+  },
+  "urtica-gracilis": {
+    "taxonId": 141854,
+    "photoId": 25063001,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/25063001/square.jpeg",
+    "observer": "Heather Pickard",
+    "license": "cc-by-nc",
+    "attribution": "(c) Heather Pickard, some rights reserved (CC BY-NC), uploaded by Heather Pickard",
+    "color": "#647b59"
   },
   "vaccinium-angustifolium": {
     "taxonId": 84542,

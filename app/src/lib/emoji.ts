@@ -125,6 +125,11 @@ const MEANING: Record<string, TKey> = {
   "✗": "emoji.no",
   "✕": "emoji.close",
   "↗": "emoji.external",
+  "🗂": "emoji.sessions",
+  "⚡": "emoji.electricity",
+  "🔤": "emoji.text",
+  "🌫": "emoji.carbon",
+  "💵": "emoji.price",
 };
 
 /** Glyphs that only repeat what the words beside them say. */

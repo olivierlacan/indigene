@@ -109,9 +109,10 @@ function cardHtml({ title, subtitle, stat }) {
 const loader = await openLoader();
 let pages;
 try {
-  const [{ REGIONS, loadPlants }, { WILDLIFE }] = await Promise.all([
+  const [{ REGIONS, loadPlants }, { WILDLIFE }, { SNAPSHOT, bill, round2 }] = await Promise.all([
     loader.load("/src/lib/plants.ts"),
     loader.load("/src/data/wildlife.ts"),
+    loader.load("/src/lib/ai-bill.ts"),
   ]);
   const perRegion = await Promise.all(REGIONS.map((r) => loadPlants(r)));
   const totalPlants = perRegion.reduce((n, list) => n + list.length, 0);
@@ -140,6 +141,8 @@ try {
     // Counted from SOURCES in steps/native.ts — like the crops card, the figure
     // says the page brings its evidence, including the side that disagrees.
     { slug: "native", title: "Native plants, not nativism", subtitle: "where a plant evolved \u2014 never borders, never people", stat: `<b>${nativeSources}</b> sources \u00b7 both sides of the argument` },
+    // The AI bill's two headline figures, from the same module the page reads.
+    { slug: "ai", title: "What AI cost to build Indigene", subtitle: "measured, estimated \u2014 and how the design pays it back", stat: `<b>${SNAPSHOT.sessions}</b> sessions \u00b7 <b>\u2248${round2(bill().kWh.mid)} kWh</b>` },
     { slug: "crops", title: "Will native plants bring pests to my yard?", subtitle: "no \u2014 and some of them take pests away", stat: `<b>25</b> studies \u00b7 the ones that disagree too` },
   ];
 } finally {

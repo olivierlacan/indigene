@@ -37,6 +37,7 @@ import { renderSettings } from "./steps/settings";
 import { renderAbout } from "./steps/about";
 import { renderCrops } from "./steps/crops";
 import { renderNative } from "./steps/native";
+import { renderAi } from "./steps/ai";
 import { renderTraits } from "./steps/traits";
 import { renderImport } from "./steps/import";
 import { initAppMenu, closeAppMenu } from "./components/app-menu";
@@ -111,6 +112,8 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
   // warning and the native swap.
   crops: { fn: renderCrops, labelKey: "steps.crops", inFlow: false },
   native: { fn: renderNative, labelKey: "steps.native", inFlow: false },
+  // What building the app with AI used, and how its design pays that back.
+  ai: { fn: renderAi, labelKey: "steps.ai", inFlow: false },
   // What a plant's labels and figures mean. `#/traits/<id>` is the same page
   // opened at one definition — what each label on a plant page links to.
   traits: { fn: renderTraits, labelKey: "steps.traits", inFlow: false },

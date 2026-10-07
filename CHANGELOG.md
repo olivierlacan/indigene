@@ -33,6 +33,14 @@ subtitle on the What's new page.
 
 ### Added
 
+- Indigene was built with AI, and a new page shows the bill: 110 working
+  sessions, about 360 kWh of electricity, and how the app's design pays it
+  back. https://indigene.app/ai
+- Internal: `steps/ai.ts` (route `ai`, prerendered with its own share card),
+  linked from a new About stance. Tokens and price are each session's own
+  record (`docs/ai-bill/sessions.csv`); `lib/ai-bill.ts` turns them into
+  electricity with Couch's per-token rates, and `ai-bill.test.ts` re-sums the
+  CSV so the page can't drift from it.
 - A saved spot now shows the wildlife in its neighborhood: each animal your
   plants can feed, with its picture and the plant of yours it eats. Tap one to
   meet it.

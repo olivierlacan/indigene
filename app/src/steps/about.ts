@@ -41,7 +41,14 @@ const STANCES: { title: TKey; body: TKey }[] = [
   { title: "about.stance.portable", body: "about.stance.portableBody" },
   { title: "about.stance.offline", body: "about.stance.offlineBody" },
   { title: "about.stance.native", body: "about.stance.nativeBody" },
+  { title: "about.stance.ai", body: "about.stance.aiBody" },
 ];
+
+/** The stances with a page of their own behind them: body key → route and link text. */
+const STANCE_LINKS: Partial<Record<TKey, { href: string; text: TKey }>> = {
+  "about.stance.nativeBody": { href: "#/native", text: "about.stance.nativeLink" },
+  "about.stance.aiBody": { href: "#/ai", text: "about.stance.aiLink" },
+};
 
 export function renderAbout(main: HTMLElement): void {
   clear(main);
@@ -73,9 +80,8 @@ export function renderAbout(main: HTMLElement): void {
         STANCES.map(({ title, body }) =>
           el("div", { style: "margin-bottom:0.9rem" }, [
             el("p", { style: "margin:0 0 0.15rem;font-weight:700" }, t(title)),
-            // The one stance with a page of its own behind it.
-            el("p", { style: "margin:0" }, body === "about.stance.nativeBody"
-              ? tx(body, { link: el("a", { href: "#/native" }, t("about.stance.nativeLink")) })
+            el("p", { style: "margin:0" }, STANCE_LINKS[body]
+              ? tx(body, { link: el("a", { href: STANCE_LINKS[body]!.href }, t(STANCE_LINKS[body]!.text)) })
               : t(body)),
           ])
         )

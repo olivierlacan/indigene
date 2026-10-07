@@ -411,6 +411,12 @@ async function collectPages(load) {
     image: pageCard("native"),
     imageAlt: "Native plants, not nativism — native is about where a plant evolved, never about borders or people",
   });
+  // The AI bill: measured tokens, estimated electricity, and the design that
+  // pays it back. The lede is the description, as on the native page.
+  add("ai", en["ai.docTitle"], en["ai.lede"], {
+    image: pageCard("ai"),
+    imageAlt: "What AI cost to build Indigene — the sessions, electricity and carbon, and how the design pays it back",
+  });
   add("traits", en["traits.docTitle"], en["traits.lede"], {
     image: pageCard("traits"),
     imageAlt: "Plant traits — what each label and figure on a plant's page means",

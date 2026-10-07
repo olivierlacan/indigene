@@ -90,6 +90,10 @@ subtitle on the What's new page.
 - Internal: `filters.stinging` is optional (missing means no), so only the two
   nettle rows set it. The `annual` form carries a single year-1 size snapshot,
   and `coverage.mjs` counts annuals without flooring them.
+- Internal: every PR now shows what its Claude sessions cost, under
+  `## Session cost`. The new `Session cost` check fails without it and warns
+  above $30 (about three typical sessions) or $100. Rules in CLAUDE.md;
+  thresholds in `lib/session-cost.ts`.
 
 ### Fixed
 

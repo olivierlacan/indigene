@@ -1,0 +1,47 @@
+# Every PR shows what its Claude sessions cost (CLAUDE.md, "Every PR shows what
+# its sessions cost"), and this check reads that section of the description.
+#
+# - No `## Session cost` section, or one with no `Total: $…` line: fails.
+# - Total above $30, about three typical sessions: passes with a warning.
+# - Total above $100: passes with a louder warning.
+# - "No Claude session" under the heading: passes.
+#
+# A warning doesn't block the merge: it puts the number in front of the reviewer
+# and asks the description to say why. The thresholds and their reasoning live
+# in `app/src/lib/session-cost.ts`.
+#
+# Runs on `edited` too, because the section is filled in or updated after the PR
+# opens. PRs opened by a bot (the scheduled data refreshes) have no session
+# behind them and are skipped.
+name: Session cost
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+permissions:
+  contents: read
+
+jobs:
+  cost:
+    name: Cost shown and within baseline
+    if: github.event.pull_request.user.type != 'Bot'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            app/src/lib/session-cost.ts
+            app/scripts/check-session-cost.mjs
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      # The body goes through an environment variable, never into the script
+      # text, so nothing in a description can run as shell.
+      - name: Read the session cost
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: node app/scripts/check-session-cost.mjs

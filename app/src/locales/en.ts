@@ -2830,7 +2830,7 @@ export const en = {
   "homegrown.authorTitle": "Why I built Indigene",
   "homegrown.author1": "I spent years turning the yard of a newly built house in central Florida into native plants. When I moved to Seattle, I started over, with far less ground to work with.",
   "homegrown.author2": "Both times, the hard part was knowing what would grow in each corner, and what it would feed. Indigene is the answer I wanted then, and those two yards are my piece of the park.",
-  "homegrown.authorSign": "— Olivier Lacan, who makes Indigene",
+  "homegrown.authorSign": "— Olivier Lacan",
   "homegrown.sourcesTitle": "Where this comes from",
   "homegrown.src.hnp": "the project, and the map of yards in it",
   "homegrown.src.book": "the book that first set out Homegrown National Park",

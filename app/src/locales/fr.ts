@@ -2799,7 +2799,7 @@ export const fr: Dict = {
   "homegrown.authorTitle": "Pourquoi j'ai créé Indigene",
   "homegrown.author1": "J'ai passé des années à transformer en plantes indigènes le jardin d'une maison neuve du centre de la Floride. En m'installant à Seattle, j'ai tout recommencé, avec bien moins de terrain.",
   "homegrown.author2": "Les deux fois, le plus dur était de savoir ce qui pousserait dans chaque coin, et ce que cela nourrirait. Indigene est la réponse que j'aurais voulu avoir, et ces deux jardins sont ma parcelle du parc.",
-  "homegrown.authorSign": "— Olivier Lacan, qui fait Indigene",
+  "homegrown.authorSign": "— Olivier Lacan",
   "homegrown.sourcesTitle": "D'où cela vient",
   "homegrown.src.hnp": "le projet, et la carte des jardins qui le composent",
   "homegrown.src.book": "le livre qui a lancé Homegrown National Park",

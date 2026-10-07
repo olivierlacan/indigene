@@ -188,7 +188,8 @@ export function rankPlants(
       continue; // not winter-hardy (or needs more cold) here
     }
     if (ctx.filters.requireDeerResistant && !plant.filters.deerResistant) continue;
-    if (ctx.filters.excludeThorny && plant.filters.thorny) continue;
+    // "No thorns" is a question about touching the plant, so a nettle fails it too.
+    if (ctx.filters.excludeThorny && (plant.filters.thorny || plant.filters.stinging)) continue;
     if (ctx.filters.excludePetToxic && plant.filters.petToxic) continue;
     if (ctx.filters.excludeAggressive && plant.filters.aggressive) continue;
     if (ctx.filters.requireNoWater && !plant.noWaterEstablish) continue;

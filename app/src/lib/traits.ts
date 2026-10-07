@@ -12,7 +12,7 @@
 import type { Plant } from "../types";
 import type { TKey } from "../locales/en";
 
-export type TraitId = "essential" | "no-water" | "water-first" | "inedible" | "thorny" | "spreads" | "deer";
+export type TraitId = "essential" | "no-water" | "water-first" | "inedible" | "thorny" | "stinging" | "spreads" | "deer";
 
 export interface Trait {
   id: TraitId;
@@ -42,6 +42,7 @@ export const TRAIT_GROUPS: { title: TKey; traits: Trait[] }[] = [
     traits: [
       { id: "inedible", tone: "neutral", label: "badge.petToxic", meaning: "traits.toxic" },
       { id: "thorny", tone: "caution", label: "badge.thorny", meaning: "traits.thorny" },
+      { id: "stinging", tone: "caution", label: "badge.stinging", meaning: "traits.stinging" },
       { id: "spreads", tone: "caution", label: "badge.aggressive", meaning: "traits.spreads" },
     ],
   },
@@ -60,6 +61,7 @@ export function traitsFor(p: Plant): Trait[] {
   ids.push(p.noWaterEstablish ? "no-water" : "water-first");
   if (p.filters.petToxic) ids.push("inedible");
   if (p.filters.thorny) ids.push("thorny");
+  if (p.filters.stinging) ids.push("stinging");
   if (p.filters.aggressive) ids.push("spreads");
   if (p.filters.deerResistant) ids.push("deer");
   return ids.map((id) => BY_ID.get(id)!);

@@ -5,6 +5,9 @@ export type PlantForm =
   | "tree"
   | "shrub"
   | "perennial"
+  /** Lives one year: grows, flowers, seeds and dies, and returns only from its
+   *  own seed. Its row carries a single year-1 size snapshot. */
+  | "annual"
   | "grass"
   | "vine"
   | "groundcover"
@@ -94,7 +97,7 @@ export interface Plant {
   ph: { min: number; max: number };
   zones: { min: number; max: number }; // USDA hardiness (whole numbers)
 
-  size: SizeSnapshot[]; // ordered by year: 1, 3, 5, 10
+  size: SizeSnapshot[]; // ordered by year: 1, 3, 5, 10 (an annual has only year 1)
   matureHeightFt: number; // honest eventual ceiling
   matureSpreadFt: number;
 
@@ -116,6 +119,9 @@ export interface Plant {
   filters: {
     deerResistant: boolean;
     thorny: boolean;
+    /** Stinging hairs (nettles). Optional because almost nothing stings: a
+     *  missing flag is `false`, so only the rows that sting have to say so. */
+    stinging?: boolean;
     allergenic: boolean;
     petToxic: boolean;
     aggressive: boolean;

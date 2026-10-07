@@ -173,15 +173,24 @@ function statsFor(p: Plant): Stat[] {
       sub: t("stat.size.sub"),
       explain: t("stat.size.explain"),
     },
-    {
-      icon: "🌱",
-      // The pace is the figure; the height it reaches by the last snapshot
-      // qualifies it. Led by the height, this tile read as a second "Full size".
-      label: t("stat.growth.label"),
-      value: paceWord(grown.heightFt, p.matureHeightFt),
-      sub: t("stat.growth.sub", { height: lengthTick(grown.heightFt), n: grown.year }),
-      explain: `${growthPlain(p)} ${t("stat.growth.explain")}`,
-    },
+    // An annual has no pace to report: it is full size in its only year.
+    p.form === "annual"
+      ? {
+          icon: "🌱",
+          label: t("stat.growth.label"),
+          value: t("pace.annual"),
+          sub: t("stat.growth.annualSub"),
+          explain: t("stat.growth.annualExplain"),
+        }
+      : {
+          icon: "🌱",
+          // The pace is the figure; the height it reaches by the last snapshot
+          // qualifies it. Led by the height, this tile read as a second "Full size".
+          label: t("stat.growth.label"),
+          value: paceWord(grown.heightFt, p.matureHeightFt),
+          sub: t("stat.growth.sub", { height: lengthTick(grown.heightFt), n: grown.year }),
+          explain: `${growthPlain(p)} ${t("stat.growth.explain")}`,
+        },
     p.hostLepCount === null
       ? {
           icon: "🐛",

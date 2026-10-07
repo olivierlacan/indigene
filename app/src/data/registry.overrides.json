@@ -5025,5 +5025,158 @@
       "gbif": "3904526",
       "wikidata": "Q1861046"
     }
+  },
+  "Euonymus occidentalis": {
+    "identifiers": {
+      "ipni": "30051051-2",
+      "wfo": "wfo-0000681962",
+      "usda": "EUOC8",
+      "itis": "27952",
+      "inat": "64542",
+      "gbif": "3169132",
+      "wikidata": "Q4117747"
+    }
+  },
+  "Morella californica": {
+    "identifiers": {
+      "ipni": "1113865-2",
+      "wfo": "wfo-0001085144",
+      "usda": "MOCA6",
+      "itis": "507897",
+      "inat": "61039",
+      "gbif": "3168990",
+      "wikidata": "Q17252791"
+    }
+  },
+  "Paxistima myrsinites": {
+    "identifiers": {
+      "ipni": "1053872-2",
+      "wfo": "wfo-0001292667",
+      "usda": "PAMY",
+      "itis": "504149",
+      "inat": "63893",
+      "gbif": "3169107",
+      "wikidata": "Q7156489"
+    }
+  },
+  "Arctostaphylos columbiana": {
+    "identifiers": {
+      "ipni": "17764-2",
+      "wfo": "wfo-0000543480",
+      "usda": "ARCO3",
+      "itis": "23477",
+      "inat": "75505",
+      "gbif": "2882619",
+      "wikidata": "Q4787654"
+    }
+  },
+  "Asarum caudatum": {
+    "identifiers": {
+      "ipni": "93471-1",
+      "wfo": "wfo-0000550790",
+      "usda": "ASCA2",
+      "itis": "18354",
+      "inat": "52858",
+      "gbif": "2873956",
+      "wikidata": "Q4803629"
+    }
+  },
+  "Euthamia occidentalis": {
+    "identifiers": {
+      "ipni": "317250-2",
+      "wfo": "wfo-0000061844",
+      "usda": "EUOC4",
+      "itis": "37356",
+      "inat": "58826",
+      "gbif": "3092774",
+      "wikidata": "Q5414442"
+    }
+  },
+  "Geum macrophyllum": {
+    "identifiers": {
+      "ipni": "725292-1",
+      "wfo": "wfo-0001002865",
+      "usda": "GEMA4",
+      "itis": "24654",
+      "inat": "77266",
+      "gbif": "5369784",
+      "wikidata": "Q2917893"
+    }
+  },
+  "Iris tenax": {
+    "identifiers": {
+      "ipni": "439169-1",
+      "wfo": "wfo-0000783941",
+      "usda": "IRTE",
+      "itis": "43226",
+      "inat": "57727",
+      "gbif": "5298736",
+      "wikidata": "Q13638423"
+    }
+  },
+  "Lilium columbianum": {
+    "identifiers": {
+      "ipni": "325013-2",
+      "wfo": "wfo-0000678175",
+      "usda": "LICO",
+      "itis": "503452",
+      "inat": "77744",
+      "gbif": "2753524",
+      "wikidata": "Q141828"
+    }
+  },
+  "Philadelphus lewisii": {
+    "identifiers": {
+      "ipni": "317401-2",
+      "wfo": "wfo-0001135569",
+      "usda": "PHLE4",
+      "itis": "24430",
+      "inat": "62223",
+      "gbif": "2986027",
+      "wikidata": "Q7182890"
+    }
+  },
+  "Plectritis congesta": {
+    "identifiers": {
+      "ipni": "30030760-2",
+      "wfo": "wfo-0001143750",
+      "usda": "PLCO4",
+      "itis": "35379",
+      "inat": "57786",
+      "gbif": "2888738",
+      "wikidata": "Q7204397"
+    }
+  },
+  "Rosa gymnocarpa": {
+    "identifiers": {
+      "ipni": "30022809-2",
+      "wfo": "wfo-0001014400",
+      "usda": "ROGY",
+      "itis": "24828",
+      "inat": "53441",
+      "gbif": "3003240",
+      "wikidata": "Q3062178"
+    }
+  },
+  "Taxus brevifolia": {
+    "identifiers": {
+      "ipni": "249736-2",
+      "wfo": "wfo-0000408633",
+      "usda": "TABR2",
+      "itis": "194884",
+      "inat": "55209",
+      "gbif": "5284555",
+      "wikidata": "Q2065540"
+    }
+  },
+  "Urtica gracilis": {
+    "identifiers": {
+      "ipni": "262034-2",
+      "wfo": "wfo-0001143258",
+      "itis": "523059",
+      "inat": "141854",
+      "gbif": "6414539",
+      "wikidata": "Q40034281"
+    }
   }
 }

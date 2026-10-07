@@ -1117,6 +1117,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:17764-2",
+    "scientificName": "Arctostaphylos columbiana",
+    "family": "Ericaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "17764-2",
+      "wfo": "wfo-0000543480",
+      "gbif": "2882619",
+      "usda": "ARCO3",
+      "itis": "23477",
+      "inat": "75505",
+      "wikidata": "Q4787654",
+      "indigene": "arctostaphylos-columbiana"
+    },
+    "commonNames": [
+      "Hairy Manzanita"
+    ],
+    "aliases": [
+      "arctostaphylos columbiana",
+      "hairy manzanita"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:17800-2",
     "scientificName": "Arctostaphylos glauca",
     "family": "Ericaceae",
@@ -1497,6 +1526,35 @@ export const REGISTRY: RegistryEntry[] = [
     "aliases": [
       "aruncus dioicus",
       "goat's beard"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:93471-1",
+    "scientificName": "Asarum caudatum",
+    "family": "Aristolochiaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "93471-1",
+      "wfo": "wfo-0000550790",
+      "gbif": "2873956",
+      "usda": "ASCA2",
+      "itis": "18354",
+      "inat": "52858",
+      "wikidata": "Q4803629",
+      "indigene": "asarum-caudatum"
+    },
+    "commonNames": [
+      "Western Wild Ginger"
+    ],
+    "aliases": [
+      "asarum caudatum",
+      "western wild ginger"
     ],
     "cultivarOf": null,
     "regions": [
@@ -5433,6 +5491,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:30051051-2",
+    "scientificName": "Euonymus occidentalis",
+    "family": "Celastraceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "30051051-2",
+      "wfo": "wfo-0000681962",
+      "gbif": "3169132",
+      "usda": "EUOC8",
+      "itis": "27952",
+      "inat": "64542",
+      "wikidata": "Q4117747",
+      "indigene": "euonymus-occidentalis"
+    },
+    "commonNames": [
+      "Western Wahoo"
+    ],
+    "aliases": [
+      "euonymus occidentalis",
+      "western wahoo"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:346016-1",
     "scientificName": "Euphorbia characias",
     "family": "Euphorbiaceae",
@@ -5483,6 +5570,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:317250-2",
+    "scientificName": "Euthamia occidentalis",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "317250-2",
+      "wfo": "wfo-0000061844",
+      "gbif": "3092774",
+      "usda": "EUOC4",
+      "itis": "37356",
+      "inat": "58826",
+      "wikidata": "Q5414442",
+      "indigene": "euthamia-occidentalis"
+    },
+    "commonNames": [
+      "Western Goldentop"
+    ],
+    "aliases": [
+      "euthamia occidentalis",
+      "western goldentop"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {
@@ -6143,6 +6259,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "pnw",
       "ca-central-coast"
     ]
   },
@@ -6322,6 +6439,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:725292-1",
+    "scientificName": "Geum macrophyllum",
+    "family": "Rosaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "725292-1",
+      "wfo": "wfo-0001002865",
+      "gbif": "5369784",
+      "usda": "GEMA4",
+      "itis": "24654",
+      "inat": "77266",
+      "wikidata": "Q2917893",
+      "indigene": "geum-macrophyllum"
+    },
+    "commonNames": [
+      "Large-leaved Avens"
+    ],
+    "aliases": [
+      "geum macrophyllum",
+      "large-leaved avens"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {
@@ -7057,6 +7203,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:439169-1",
+    "scientificName": "Iris tenax",
+    "family": "Iridaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "439169-1",
+      "wfo": "wfo-0000783941",
+      "gbif": "5298736",
+      "usda": "IRTE",
+      "itis": "43226",
+      "inat": "57727",
+      "wikidata": "Q13638423",
+      "indigene": "iris-tenax"
+    },
+    "commonNames": [
+      "Oregon Iris"
+    ],
+    "aliases": [
+      "iris tenax",
+      "oregon iris"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:962494-1",
     "scientificName": "Isocoma menziesii",
     "family": "Asteraceae",
@@ -7612,6 +7787,37 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-continental"
+    ]
+  },
+  {
+    "primaryId": "ipni:325013-2",
+    "scientificName": "Lilium columbianum",
+    "family": "Liliaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "325013-2",
+      "wfo": "wfo-0000678175",
+      "gbif": "2753524",
+      "usda": "LICO",
+      "itis": "503452",
+      "inat": "77744",
+      "wikidata": "Q141828",
+      "indigene": "lilium-columbianum"
+    },
+    "commonNames": [
+      "Columbia Lily",
+      "Tiger Lily"
+    ],
+    "aliases": [
+      "columbia lily",
+      "lilium columbianum",
+      "tiger lily"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {
@@ -8605,6 +8811,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:1113865-2",
+    "scientificName": "Morella californica",
+    "family": "Myricaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "1113865-2",
+      "wfo": "wfo-0001085144",
+      "gbif": "3168990",
+      "usda": "MOCA6",
+      "itis": "507897",
+      "inat": "61039",
+      "wikidata": "Q17252791",
+      "indigene": "morella-californica"
+    },
+    "commonNames": [
+      "Pacific Wax Myrtle"
+    ],
+    "aliases": [
+      "morella californica",
+      "pacific wax myrtle"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:164286-2",
     "scientificName": "Morella cerifera",
     "family": "Myricaceae",
@@ -9025,6 +9260,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "pnw",
       "ca-central-coast"
     ]
   },
@@ -9299,6 +9535,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:1053872-2",
+    "scientificName": "Paxistima myrsinites",
+    "family": "Celastraceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "1053872-2",
+      "wfo": "wfo-0001292667",
+      "gbif": "3169107",
+      "usda": "PAMY",
+      "itis": "504149",
+      "inat": "63893",
+      "wikidata": "Q7156489",
+      "indigene": "paxistima-myrsinites"
+    },
+    "commonNames": [
+      "Oregon Boxleaf"
+    ],
+    "aliases": [
+      "oregon boxleaf",
+      "paxistima myrsinites"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:187353-2",
     "scientificName": "Penstemon digitalis",
     "family": "Plantaginaceae",
@@ -9437,6 +9702,35 @@ export const REGISTRY: RegistryEntry[] = [
     "aliases": [
       "petasites frigidus",
       "sweet coltsfoot"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:317401-2",
+    "scientificName": "Philadelphus lewisii",
+    "family": "Hydrangeaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "317401-2",
+      "wfo": "wfo-0001135569",
+      "gbif": "2986027",
+      "usda": "PHLE4",
+      "itis": "24430",
+      "inat": "62223",
+      "wikidata": "Q7182890",
+      "indigene": "philadelphus-lewisii"
+    },
+    "commonNames": [
+      "Lewis's Mock Orange"
+    ],
+    "aliases": [
+      "lewis's mock orange",
+      "philadelphus lewisii"
     ],
     "cultivarOf": null,
     "regions": [
@@ -10138,6 +10432,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:30030760-2",
+    "scientificName": "Plectritis congesta",
+    "family": "Caprifoliaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "30030760-2",
+      "wfo": "wfo-0001143750",
+      "gbif": "2888738",
+      "usda": "PLCO4",
+      "itis": "35379",
+      "inat": "57786",
+      "wikidata": "Q7204397",
+      "indigene": "plectritis-congesta"
+    },
+    "commonNames": [
+      "Sea Blush"
+    ],
+    "aliases": [
+      "plectritis congesta",
+      "sea blush"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {
@@ -11780,6 +12103,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:30022809-2",
+    "scientificName": "Rosa gymnocarpa",
+    "family": "Rosaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "30022809-2",
+      "wfo": "wfo-0001014400",
+      "gbif": "3003240",
+      "usda": "ROGY",
+      "itis": "24828",
+      "inat": "53441",
+      "wikidata": "Q3062178",
+      "indigene": "rosa-gymnocarpa"
+    },
+    "commonNames": [
+      "Baldhip Rose"
+    ],
+    "aliases": [
+      "baldhip rose",
+      "rosa gymnocarpa"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": null,
     "scientificName": "Rosa multiflora",
     "family": "Rosaceae",
@@ -12726,6 +13078,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "pnw",
       "ca-south-coast",
       "ca-central-coast"
     ]
@@ -13707,6 +14060,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "pnw",
       "ca-south-coast",
       "ca-central-coast"
     ]
@@ -13885,6 +14239,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:249736-2",
+    "scientificName": "Taxus brevifolia",
+    "family": "Taxaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "249736-2",
+      "wfo": "wfo-0000408633",
+      "gbif": "5284555",
+      "usda": "TABR2",
+      "itis": "194884",
+      "inat": "55209",
+      "wikidata": "Q2065540",
+      "indigene": "taxus-brevifolia"
+    },
+    "commonNames": [
+      "Pacific Yew"
+    ],
+    "aliases": [
+      "pacific yew",
+      "taxus brevifolia"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {
@@ -14544,6 +14927,34 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:262034-2",
+    "scientificName": "Urtica gracilis",
+    "family": "Urticaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "262034-2",
+      "wfo": "wfo-0001143258",
+      "gbif": "6414539",
+      "itis": "523059",
+      "inat": "141854",
+      "wikidata": "Q40034281",
+      "indigene": "urtica-gracilis"
+    },
+    "commonNames": [
+      "American Stinging Nettle"
+    ],
+    "aliases": [
+      "american stinging nettle",
+      "urtica gracilis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {

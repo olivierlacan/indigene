@@ -1,0 +1,97 @@
+// The LLM bill's two promises: the snapshot is the session records summed, and
+// the electricity is those tokens times the stated rates — nothing else.
+import { describe, it, expect } from "vitest";
+import { SNAPSHOT, RATES, BY_LENGTH, LONG_AFTER_REQUESTS, energyWh, billKWh, bill, round2, totalTokens } from "./llm-bill";
+
+// The session records, as text — the same `?raw` glob emoji.test.ts reads the
+// app's sources with.
+const CSVS = import.meta.glob("../../../docs/llm-bill/*.csv", {
+  query: "?raw", import: "default", eager: true,
+}) as Record<string, string>;
+const CSV = CSVS["../../../docs/llm-bill/sessions.csv"];
+const FLOOR = CSVS["../../../docs/llm-bill/floor.csv"];
+
+/** Minimal CSV: the titles are the only quoted field, and none holds a quote. */
+function rows(csv = CSV): Record<string, string>[] {
+  const [head, ...lines] = csv.trim().split("\n");
+  const cols = head.split(",");
+  return lines.map((line: string) => {
+    const cells = line.match(/("[^"]*"|[^,]*)(,|$)/g)!.map((c: string) => c.replace(/,$/, "").replace(/^"|"$/g, ""));
+    return Object.fromEntries(cols.map((c: string, i: number) => [c, cells[i]]));
+  });
+}
+
+describe("SNAPSHOT", () => {
+  const data = rows();
+  const sum = (col: string): number => data.reduce((n, r) => n + (r[col] ? Number(r[col]) : 0), 0);
+
+  it("is the session records summed", () => {
+    expect(data.length).toBe(SNAPSHOT.sessions);
+    expect(sum("input")).toBe(SNAPSHOT.tokens.input);
+    expect(sum("output")).toBe(SNAPSHOT.tokens.output);
+    expect(sum("cache_read")).toBe(SNAPSHOT.tokens.cacheRead);
+    expect(sum("cache_write")).toBe(SNAPSHOT.tokens.cacheWrite);
+    expect(sum("cost_usd")).toBeCloseTo(SNAPSHOT.costUsd, 2);
+  });
+
+  it("knows which sessions carry tokens and which only a price", () => {
+    expect(data.filter((r) => r.output !== "").length).toBe(SNAPSHOT.sessionsWithTokens);
+    const priceOnly = data.filter((r) => r.output === "" && r.cost_usd !== "");
+    expect(priceOnly.reduce((n, r) => n + Number(r.cost_usd), 0)).toBeCloseTo(SNAPSHOT.costWithoutTokensUsd, 2);
+  });
+});
+
+describe("BY_LENGTH", () => {
+  it("is the session records split at more than ten requests", () => {
+    const requests = new Map(rows(FLOOR).map((r) => [r.session, Number(r.human_prompts)]));
+    const counted = rows().filter((r) => r.output !== "");
+    const group = (long: boolean) => {
+      const these = counted.filter((r) => (requests.get(r.session)! > LONG_AFTER_REQUESTS) === long);
+      return {
+        sessions: these.length,
+        tokens: these.reduce((n, r) => n + totalTokens({
+          input: Number(r.input), output: Number(r.output),
+          cacheRead: Number(r.cache_read), cacheWrite: Number(r.cache_write),
+        }), 0),
+        requests: these.reduce((n, r) => n + requests.get(r.session)!, 0),
+      };
+    };
+    expect(group(true)).toEqual(BY_LENGTH.long);
+    expect(group(false)).toEqual(BY_LENGTH.short);
+    expect(BY_LENGTH.long.tokens + BY_LENGTH.short.tokens).toBe(totalTokens(SNAPSHOT.tokens));
+  });
+});
+
+describe("energy", () => {
+  it("is tokens times rates, per million", () => {
+    expect(energyWh({ input: 1e6, output: 0, cacheRead: 0, cacheWrite: 0 }, RATES.mid)).toBe(390);
+    expect(energyWh({ input: 0, output: 2e6, cacheRead: 0, cacheWrite: 0 }, RATES.mid)).toBe(3900);
+    expect(energyWh({ input: 0, output: 0, cacheRead: 1e6, cacheWrite: 1e6 }, RATES.mid)).toBeCloseTo(39 + 487.5);
+  });
+
+  it("scales up for the sessions that recorded only a price", () => {
+    const s = { ...SNAPSHOT, costUsd: 200, costWithoutTokensUsd: 100 };
+    expect(billKWh(RATES.mid, s)).toBeCloseTo((energyWh(s.tokens, RATES.mid) / 1000) * 2);
+  });
+
+  it("keeps low below mid below high", () => {
+    const b = bill();
+    expect(b.kWh.low).toBeLessThan(b.kWh.mid);
+    expect(b.kWh.mid).toBeLessThan(b.kWh.high);
+  });
+
+  it("matches the hand sum the page was written from", () => {
+    // 4.50M × 390 + 17.40M × 1,950 + 6,539M × 39 + 121.4M × 487.5 ≈ 349.9 kWh,
+    // × 4516.70 / 4431.99 for the price-only sessions ≈ 356.6 kWh.
+    expect(bill().kWh.mid).toBeCloseTo(356.6, 0);
+  });
+});
+
+describe("round2", () => {
+  it("keeps two significant figures", () => {
+    expect(round2(356.6)).toBe(360);
+    expect(round2(74.3)).toBe(74);
+    expect(round2(1_486_000)).toBe(1_500_000);
+    expect(round2(0)).toBe(0);
+  });
+});

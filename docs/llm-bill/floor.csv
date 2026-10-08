@@ -1,0 +1,111 @@
+session,date,title,turns,human_prompts,work_hours,recorded_usd,turn_records_usd,floor_usd,models
+gp1cr7x1,2026-07-12,Indigene,7,7,0.79,6.23,14.11,14.11,fable-5;haiku-4-5;opus-4-8
+2zpMCs32,2026-07-16,Navigation and region linking,11,11,0.86,14.42,36.43,36.43,fable-5;haiku-4-5
+hdXhztCC,2026-07-16,Indigene cheap deployment,8,7,0.58,13.84,30.19,30.19,fable-5
+S5GKzLrx,2026-07-17,Definition of done review,11,11,0.78,13.12,59.6,59.6,fable-5
+wNq6nb8P,2026-07-17,GPS map zoom level,2,2,0.09,2.46,2.46,2.46,fable-5
+R9e6VvcC,2026-07-18,Native plant propagation tips,4,1,0.22,12.35,12.35,12.35,fable-5;haiku-4-5;opus-4-8
+L9XvGXTU,2026-07-18,Visual ordinance and consistency,2,2,0.13,6.17,9.15,9.15,fable-5
+A6Jcmcp9,2026-07-19,Landing page native plants copy,6,6,0.35,11.58,14.79,14.79,fable-5
+avi4M1rb,2026-07-19,Propagation changes from PR 13,7,7,0.28,4.54,8.13,8.13,fable-5;opus-4-8
+cJRnuYgq,2026-07-21,Nursery native plant protocol,28,27,1.54,25.62,138.37,138.37,fable-5;haiku-4-5;opus-4-8
+mJbCo4CU,2026-07-21,Plant height and spread filters,2,2,0.24,10.68,10.68,10.68,fable-5
+j7GPXAyV,2026-07-21,Wildlife detail page padding,2,2,0.08,3.71,4.55,4.55,fable-5
+q8YWAovE,2026-07-21,Plants by supported insects/animals,12,12,1.63,25.91,63.14,63.14,fable-5;opus-4-8
+bDVRweVU,2026-07-23,Homepage copy review,14,13,0.39,9.87,13.24,13.24,fable-5
+bKvW2H9k,2026-07-26,iNaturalist plant recommendations protot,10,9,1.0,18.98,41.44,41.44,fable-5;opus-4-8
+PMs9VntP,2026-07-27,Indigene changelog and release notes,9,8,0.84,10.98,47.43,47.43,fable-5
+MuyyvBFG,2026-07-28,Photo cluster cycling and thumbnail sizi,1,1,0.22,6.52,6.52,6.52,opus-5
+2c8yqViD,2026-07-28,Releases page PR activity,3,3,0.3,8.38,8.28,8.38,opus-5
+7zpr8EPj,2026-07-28,iNaturalist record image loading,3,1,0.16,7.41,7.41,7.41,fable-5
+4YQgui1h,2026-07-28,Localiser indigene en français,12,11,0.88,8.01,35.12,35.12,haiku-4-5;opus-4-8
+SQjBhsEk,2026-07-28,Region browse page compactness,3,3,0.33,21.47,21.47,21.47,fable-5
+zuz5J6Cw,2026-07-28,Location search UI reorganization,2,2,0.34,11.76,11.76,11.76,fable-5
+DsAE4ZKy,2026-07-28,Search result highlighting,1,1,0.1,5.22,5.22,5.22,fable-5
+wo5ftdsj,2026-07-28,Growth charts layout and legibility,1,1,0.2,9.29,9.29,9.29,fable-5
+66hPLwby,2026-07-28,iNaturalist wildlife sighting lookups,6,5,0.87,19.6,38.29,38.29,fable-5;opus-4-8
+dT5zSVy5,2026-07-28,Indigene blank load and missing footer,3,3,0.4,10.16,18.46,18.46,fable-5
+aaPjF95G,2026-07-29,Remove USDA tags from explore page,7,6,0.41,8.0,14.82,14.82,opus-5
+SSv24uPJ,2026-07-29,HTTPS asset loading on indigene.app,1,1,0.11,3.04,3.04,3.04,opus-5
+e6qED5A8,2026-07-29,Wildlife region filtering and display,7,5,0.98,28.78,47.96,47.96,opus-5
+in8dB58i,2026-07-29,iNaturalist taxon IDs for PNW natives,1,1,0.24,6.47,6.47,6.47,opus-5
+5x6LPEYn,2026-07-29,Native plant coverage and Explore UI red,5,5,0.53,28.63,42.14,42.14,opus-5
+T8dzoTjs,2026-07-29,UI readability with heading levels,1,1,0.11,3.02,3.02,3.02,opus-5
+TFzoFBgc,2026-07-30,French UI permalink and browser detectio,5,4,0.52,8.14,13.35,13.35,opus-5
+QY4PNEZ4,2026-07-30,Filter search consistency across pages,8,6,0.97,19.94,28.13,28.13,opus-5
+r3AXxTGC,2026-07-30,"Site localization: units, language, cont",2,0,1.18,44.77,60.73,60.73,opus-5
+n5eiUP6e,2026-07-31,Plant OG card display issue,10,9,0.9,15.89,30.52,30.52,opus-5
+ptnccGvP,2026-07-31,Plant page desktop redesign,7,6,1.26,28.89,55.87,55.87,opus-5
+jnkW1yG6,2026-07-31,Release notes update,1,0,0.23,6.56,6.56,6.56,opus-5
+RbMYQcQn,2026-07-31,Plant category icons consistency,2,2,0.42,10.46,11.88,11.88,opus-5
+JbLXWCky,2026-07-31,Spot settings persistence,4,2,0.48,6.76,13.85,13.85,haiku-4-5;opus-5
+Y23eGgyJ,2026-07-31,Native plant lookalikes guide,3,1,0.12,9.37,13.69,13.69,opus-5
+aMYC1mHd,2026-07-31,iNaturalist image lookup failures,9,9,1.74,31.22,64.93,64.93,opus-5
+i7JZproS,2026-07-31,Open graph previews on plant pages,3,3,0.35,12.53,12.53,12.53,opus-5
+uXSJHD58,2026-07-31,Section underlines styling,1,1,0.37,14.61,14.61,14.61,opus-5
+VHKba9Td,2026-07-31,Plant list navigation and weighting UX,2,1,0.16,7.67,7.67,7.67,opus-5
+6emx76UC,2026-07-31,Logo hover bee animation,1,1,0.23,5.01,5.01,5.01,opus-5
+cp6kgN2e,2026-07-31,Seedling logo design,2,2,0.34,7.44,11.04,11.04,opus-5
+9ccA11nH,2026-07-31,Menu item localization,2,2,0.17,2.87,2.87,2.87,opus-5
+9uDJtnJz,2026-07-31,Localization bugs and release notes,2,2,0.8,21.29,21.29,21.29,opus-5
+MHcLenpW,2026-08-01,Lightning swipe navigation,3,3,0.36,5.43,5.43,5.43,opus-5
+mZawnFga,2026-08-01,Release note job not triggering,8,7,0.99,30.35,42.91,42.91,opus-5
+HVTLHUu3,2026-08-01,VASCAN French locale specification,3,3,0.42,10.37,16.99,16.99,opus-5
+hkdPVxWw,2026-08-02,Native plants and wildlife gaps in PNW/F,7,3,0.58,31.64,36.35,36.35,haiku-4-5;opus-5
+NPc7xje9,2026-08-04,Release MR for latest changes,2,1,0.22,7.17,7.17,7.17,opus-5
+9Cg6ZZ3K,2026-08-04,Hero image preloading and caching,1,1,0.67,20.11,20.11,20.11,opus-5
+Drq6Vcp1,2026-08-05,Desktop layout for /planting page,1,1,0.23,7.86,7.86,7.86,opus-5
+c4NkwwKB,2026-08-05,Hero thumbnail system for wildlife,6,2,0.28,9.25,14.58,14.58,opus-5
+qFghvxWU,2026-08-05,Planting timing guidance and resources,3,3,0.71,19.52,27.62,27.62,opus-5
+aLE8E3BJ,2026-08-05,Ecosystem services card spacing and prog,4,1,0.26,8.2,8.33,8.33,opus-5
+Y1R2AMpt,2026-08-05,Missing French translations,3,3,1.37,47.94,47.94,47.94,opus-5
+2XVrofqb,2026-08-06,Region boundary map visibility,4,4,1.14,23.71,33.45,33.45,opus-5
+kzLpHqM1,2026-08-06,West coast U.S. support,25,20,2.18,86.13,132.21,132.21,opus-5
+4hBE27dL,2026-08-06,Plant list thumbnail aspect ratio,2,2,0.56,9.84,13.61,13.61,opus-5
+VSjhrynn,2026-08-06,Fathom Analytics privacy compatibility,7,7,0.57,7.1,17.06,17.06,opus-5
+HvYstzEk,2026-08-07,Wildlife species data sources,1,1,2.31,56.04,56.04,56.04,opus-5
+35Dgn1z4,2026-08-07,Release notes verbosity,4,4,0.97,21.55,27.53,27.53,opus-5
+ArxDLHAj,2026-08-08,Plant tracking by location,4,4,0.84,21.4,37.57,37.57,opus-5
+DFdQr2ns,2026-08-08,Release notes generation,4,4,0.46,7.52,9.4,9.4,opus-5
+j8bCs1vb,2026-08-09,Indigene 1.0 release announcement,3,3,0.15,3.05,5.31,5.31,haiku-4-5;opus-5
+t6VRxbZL,2026-08-09,Map preview for saved spots,4,4,0.81,13.96,33.9,33.9,opus-5
+nEvTSJNG,2026-08-09,iOS shortcut swipe-to-reload,6,2,0.3,11.24,11.24,11.24,opus-5
+jsekLLfG,2026-08-09,Saved spots import/export,2,2,0.32,11.21,11.21,11.21,opus-5
+bjNdv4E9,2026-08-09,iNaturalist observation caching,5,3,1.37,43.91,43.63,43.91,opus-5
+WS1HaZkq,2026-08-12,Pull to refresh on iOS home screen app,5,5,0.26,6.09,6.09,6.09,opus-5
+MDPbAHzh,2026-08-12,iNaturalist hero photos,35,26,4.08,86.24,199.47,199.47,opus-4-8;opus-5
+GLuyJoBq,2026-08-12,Site styles disappearing on tab return,5,4,0.58,10.58,22.35,22.35,haiku-4-5;opus-5
+7riv9XDP,2026-08-12,No image message full width,10,10,1.41,28.37,61.97,61.97,opus-5
+jEiTNdFr,2026-08-12,Ecosystem values and wildlife for saved ,6,6,1.33,24.89,54.86,54.86,opus-5
+kWRSoyKE,2026-08-14,Michigan ecoregions,20,17,1.77,47.55,88.78,88.78,haiku-4-5;opus-4-8
+n7KNE1nQ,2026-08-14,Data source evaluation documentation,1,1,0.18,7.04,7.04,7.04,opus-5
+1CJV1f2y,2026-08-29,Feature documentation extraction system,12,11,1.44,75.31,67.91,75.31,haiku-4-5;opus-4-8
+jH5Zz7Yx,2026-08-30,Wildlife open graph card,12,11,1.96,107.95,76.29,107.95,opus-4-8
+dUe1EDR7,2026-08-30,Native ornamental alternatives feature,12,12,2.45,145.83,118.93,145.83,opus-4-8
+qs9LRUyy,2026-08-30,Plants page desktop layout,10,10,0.76,28.68,18.33,28.68,opus-4-8
+knzwzYTL,2026-09-07,Southern California cypress trees covera,78,3,3.11,419.89,132.13,419.89,haiku-4-5;opus-5
+WKm6oVEn,2026-09-18,Guerrilla natives by region,0,0,0.0,0.0,0,0.0,
+KRSPdan6,2026-09-18,PR #35 merge status,9,7,0.33,12.93,11.88,12.93,opus-5
+urzDv3MF,2026-09-18,Native lookalikes browsing and invasiven,14,14,2.61,149.86,122.94,149.86,haiku-4-5;opus-5
+B6bZneuL,2026-09-19,Ecoregion prioritization strategy,48,24,5.56,1008.91,374.46,1008.91,haiku-4-5;opus-5
+rmsJapbo,2026-09-19,Pollinators and native plants evidence,15,6,1.21,106.96,60.05,106.96,haiku-4-5;opus-5
+yUWQTjXg,2026-09-19,Native fruits in supported ecoregions,4,4,0.05,2.02,2.02,2.02,haiku-4-5;opus-5
+Eoom8CfL,2026-09-20,Native plant society outreach,18,17,2.47,379.02,168.82,379.02,haiku-4-5;opus-5
+vvsEh1HU,2026-09-24,Pacific wax myrtle regional coverage,2,2,0.02,1.1,1.13,1.13,haiku-4-5;opus-5-5
+MsBfcE17,2026-09-24,Plant page layout and labeling,4,4,0.33,7.43,7.43,7.43,haiku-4-5;opus-5-5
+dJggKfyw,2026-09-24,Southern hemisphere indigene support,27,15,1.51,408.14,66.91,408.14,haiku-4-5;opus-5-5
+LqZhijZc,2026-09-24,iNaturalist profile import with privacy,17,11,1.06,38.72,21.82,38.72,haiku-4-5;opus-5-5
+FpLCoqrv,2026-09-24,Invasive species priority list by ecoreg,7,7,1.01,105.35,27.87,105.35,haiku-4-5;opus-5-5
+Ww6EKHZC,2026-09-25,Homepage video OG preview sharing,17,17,0.31,6.83,6.96,6.96,haiku-4-5;opus-5-5
+xZEixsGs,2026-09-25,"Invasives ""most wanted"" phrasing",24,10,1.09,24.01,24.18,24.18,haiku-4-5;opus-5-5
+nMs4VJWW,2026-09-26,Claude usage and token tracking,1,1,0.01,0.44,0.44,0.44,haiku-4-5;opus-5-5
+LCJnJRDv,2026-09-26,Plants page hero image loading priority,2,1,0.25,3.68,3.68,3.68,haiku-4-5;opus-5-5
+TjG91ayo,2026-09-26,Test coverage and slow network loading,4,4,0.28,4.03,4.03,4.03,haiku-4-5;opus-5-5
+DvDW2S5X,2026-09-26,Imported iNaturalist sightings picker,7,7,0.49,10.34,10.4,10.4,haiku-4-5;opus-5-5
+gqV3xTcT,2026-09-28,Indigene accessibility and consistency r,16,12,1.37,84.58,85.32,85.32,haiku-4-5;opus-5-5
+RJN4P4fH,2026-09-30,Plant page region switcher bug,3,3,0.16,2.92,2.98,2.98,haiku-4-5;opus-5-5
+JZ6zwuc5,2026-10-01,Plant pages confidence meter,7,7,0.36,8.47,8.55,8.55,haiku-4-5;opus-5-5
+M5QAR3YJ,2026-10-01,Desktop layout redesigns,3,3,0.25,5.19,5.19,5.19,opus-5-5
+WUHYKHZT,2026-10-01,Wildlife/plant desktop layout,2,2,0.29,5.47,5.51,5.51,opus-5-5
+XnFRXBZY,2026-10-02,Regional UI language design,5,5,0.23,4.22,4.25,4.25,haiku-4-5;opus-5-5
+g82xeyYG,2026-10-04,Homegrown National Park page,3,3,0.5,3.52,8.15,8.15,haiku-4-5;opus-5-5

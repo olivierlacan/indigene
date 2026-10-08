@@ -1,0 +1,111 @@
+session,date,model,title,input,output,cache_read,cache_write,cost_usd
+gp1cr7x1,2026-07-12,fable-5,Indigene,,,,,6.23
+2zpMCs32,2026-07-16,fable-5,Navigation and region linking,,,,,14.42
+hdXhztCC,2026-07-16,fable-5,Indigene cheap deployment,,,,,13.84
+S5GKzLrx,2026-07-17,fable-5,Definition of done review,,,,,13.12
+wNq6nb8P,2026-07-17,fable-5,GPS map zoom level,,,,,2.46
+R9e6VvcC,2026-07-18,fable-5,Native plant propagation tips,,,,,12.35
+L9XvGXTU,2026-07-18,fable-5,Visual ordinance and consistency,,,,,6.17
+A6Jcmcp9,2026-07-19,fable-5,Landing page native plants copy,,,,,11.58
+avi4M1rb,2026-07-19,fable-5,Propagation changes from PR 13,,,,,4.54
+cJRnuYgq,2026-07-21,fable-5,Nursery native plant protocol,499420,171370,41139510,513152,25.62
+mJbCo4CU,2026-07-21,fable-5,Plant height and spread filters,624,41971,5454898,156195,10.68
+j7GPXAyV,2026-07-21,fable-5,Wildlife detail page padding,349,9346,1085250,107829,3.71
+q8YWAovE,2026-07-21,fable-5,Plants by supported insects/animals,734,116980,44557408,398951,25.91
+bDVRweVU,2026-07-23,fable-5,Homepage copy review,2599,30426,5071485,163899,9.87
+bKvW2H9k,2026-07-26,fable-5,iNaturalist plant recommendations protot,2309,97458,26631254,409873,18.98
+PMs9VntP,2026-07-27,fable-5,Indigene changelog and release notes,535,32440,5526846,272076,10.98
+MuyyvBFG,2026-07-28,opus-5,Photo cluster cycling and thumbnail sizi,140,40496,7795248,161143,6.52
+2c8yqViD,2026-07-28,opus-5,Releases page PR activity,2938,62316,10230743,168732,8.38
+7zpr8EPj,2026-07-28,fable-5,iNaturalist record image loading,45,17537,2260159,227930,7.41
+4YQgui1h,2026-07-28,fable-5,Localiser indigene en français,59257,48893,13306729,450329,8.01
+SQjBhsEk,2026-07-28,fable-5,Region browse page compactness,1200,65026,14184668,201351,21.47
+zuz5J6Cw,2026-07-28,fable-5,Location search UI reorganization,81,42028,6680260,148701,11.76
+DsAE4ZKy,2026-07-28,fable-5,Search result highlighting,68,19321,2453040,89860,5.22
+wo5ftdsj,2026-07-28,fable-5,Growth charts layout and legibility,102,37585,4855498,127503,9.29
+66hPLwby,2026-07-28,fable-5,iNaturalist wildlife sighting lookups,168,84229,27766923,414435,19.60
+dT5zSVy5,2026-07-28,fable-5,Indigene blank load and missing footer,587,29602,6128630,153803,10.16
+aaPjF95G,2026-07-29,opus-5,Remove USDA tags from explore page,1528,52067,11830961,171159,8.00
+SSv24uPJ,2026-07-29,opus-5,HTTPS asset loading on indigene.app,72,20790,2977612,103311,3.04
+e6qED5A8,2026-07-29,opus-5,Wildlife region filtering and display,1220,83184,43960076,471409,28.78
+in8dB58i,2026-07-29,opus-5,iNaturalist taxon IDs for PNW natives,134,45016,7242843,172042,6.47
+5x6LPEYn,2026-07-29,opus-5,Native plant coverage and Explore UI red,678,55662,43483824,549603,28.63
+T8dzoTjs,2026-07-29,opus-5,UI readability with heading levels,85,20496,3225510,89830,3.02
+TFzoFBgc,2026-07-30,opus-5,French UI permalink and browser detectio,771,52690,9924667,245782,8.14
+QY4PNEZ4,2026-07-30,opus-5,Filter search consistency across pages,1820,78238,28661251,364028,19.94
+r3AXxTGC,2026-07-30,opus-5,"Site localization: units, language, cont",333,283961,63659958,599452,44.77
+n5eiUP6e,2026-07-31,opus-5,Plant OG card display issue,131,55110,21808730,435665,15.89
+ptnccGvP,2026-07-31,opus-5,Plant page desktop redesign,1343,143827,43516535,443930,28.89
+jnkW1yG6,2026-07-31,opus-5,Release notes update,121,45922,8741953,103591,6.56
+RbMYQcQn,2026-07-31,opus-5,Plant category icons consistency,191,72176,13274551,202051,10.46
+JbLXWCky,2026-07-31,opus-5,Spot settings persistence,35675,31559,7089770,246243,6.76
+Y23eGgyJ,2026-07-31,opus-5,Native plant lookalikes guide,51,14540,10486059,384894,9.37
+aMYC1mHd,2026-07-31,opus-5,iNaturalist image lookup failures,1887,188461,45546246,541621,31.22
+i7JZproS,2026-07-31,opus-5,Open graph previews on plant pages,1226,74458,17130242,209400,12.53
+uXSJHD58,2026-07-31,opus-5,Section underlines styling,275,70508,21507548,208786,14.61
+VHKba9Td,2026-07-31,opus-5,Plant list navigation and weighting UX,76,18790,13516261,281415,7.67
+6emx76UC,2026-07-31,opus-5,Logo hover bee animation,159,44935,5304568,123459,5.01
+cp6kgN2e,2026-07-31,opus-5,Seedling logo design,157,53015,9225535,150478,7.44
+9ccA11nH,2026-07-31,opus-5,Menu item localization,735,19277,2768830,128200,2.87
+9uDJtnJz,2026-07-31,opus-5,Localization bugs and release notes,285,79930,32676215,362129,21.29
+MHcLenpW,2026-08-01,opus-5,Lightning swipe navigation,138,34463,6240183,174566,5.43
+mZawnFga,2026-08-01,opus-5,Release note job not triggering,1695,145326,48106869,382269,30.35
+HVTLHUu3,2026-08-01,opus-5,VASCAN French locale specification,561,74960,12970339,262321,10.37
+hkdPVxWw,2026-08-02,opus-5,Native plants and wildlife gaps in PNW/F,48842,284114,36303317,846464,31.64
+NPc7xje9,2026-08-04,opus-5,Release MR for latest changes,3794,42532,9034897,156821,7.17
+9Cg6ZZ3K,2026-08-04,opus-5,Hero image preloading and caching,7670,110690,29162615,272049,20.11
+Drq6Vcp1,2026-08-05,opus-5,Desktop layout for /planting page,161,40207,10152515,177402,7.86
+c4NkwwKB,2026-08-05,opus-5,Hero thumbnail system for wildlife,1050,24489,16254317,50677,9.25
+qFghvxWU,2026-08-05,opus-5,Planting timing guidance and resources,777,110869,27668208,325615,19.52
+aLE8E3BJ,2026-08-05,opus-5,Ecosystem services card spacing and prog,589,33770,10337953,218519,8.20
+Y1R2AMpt,2026-08-05,opus-5,Missing French translations,3450,321283,67172627,630074,47.94
+2XVrofqb,2026-08-06,opus-5,Region boundary map visibility,2593,97764,35073193,410252,23.71
+kzLpHqM1,2026-08-06,opus-5,West coast U.S. support,3476,159423,139001657,1262986,86.13
+4hBE27dL,2026-08-06,opus-5,Plant list thumbnail aspect ratio,191,78464,11942013,211007,9.84
+VSjhrynn,2026-08-06,opus-5,Fathom Analytics privacy compatibility,4800,43045,8650619,235333,7.10
+HvYstzEk,2026-08-07,opus-5,Wildlife species data sources,634,218419,91504858,482867,56.04
+35Dgn1z4,2026-08-07,opus-5,Release notes verbosity,3054,93755,31397659,391019,21.55
+ArxDLHAj,2026-08-08,opus-5,Plant tracking by location,295,111700,31042561,354082,21.40
+DFdQr2ns,2026-08-08,opus-5,Release notes generation,2383,26755,8974057,260679,7.52
+j8bCs1vb,2026-08-09,opus-5,Indigene 1.0 release announcement,45058,19876,2602783,118405,3.05
+t6VRxbZL,2026-08-09,opus-5,Map preview for saved spots,261,68423,20163514,324053,13.96
+nEvTSJNG,2026-08-09,opus-5,iOS shortcut swipe-to-reload,2137,44853,15079667,256807,11.24
+jsekLLfG,2026-08-09,opus-5,Saved spots import/export,8033,65677,14839113,210619,11.21
+bjNdv4E9,2026-08-09,opus-5,iNaturalist observation caching,1290,93943,70211420,682742,43.91
+WS1HaZkq,2026-08-12,opus-5,Pull to refresh on iOS home screen app,611,57949,6363753,145540,6.09
+MDPbAHzh,2026-08-12,opus-5,iNaturalist hero photos,12938,229124,134346827,1327583,86.24
+GLuyJoBq,2026-08-12,opus-5,Site styles disappearing on tab return,95133,74487,14220620,279326,10.58
+7riv9XDP,2026-08-12,opus-5,No image message full width,780,101776,43799637,474826,28.37
+jEiTNdFr,2026-08-12,opus-5,Ecosystem values and wildlife for saved ,10932,106986,38266714,403106,24.89
+kWRSoyKE,2026-08-14,opus-4-8,Michigan ecoregions,57626,107363,23302573,591828,47.55
+n7KNE1nQ,2026-08-14,opus-5,Data source evaluation documentation,1591,35782,9022726,162764,7.04
+1CJV1f2y,2026-08-29,opus-4-8,Feature documentation extraction system,30597,217794,64541690,761885,75.31
+jH5Zz7Yx,2026-08-30,opus-4-8,Wildlife open graph card,1050,211404,94395073,2116250,107.95
+dUe1EDR7,2026-08-30,opus-4-8,Native ornamental alternatives feature,3181,267510,122552405,846433,145.83
+qs9LRUyy,2026-08-30,opus-4-8,Plants page desktop layout,618,56501,17461668,293977,28.68
+knzwzYTL,2026-09-07,opus-5,Southern California cypress trees covera,76558,491578,242041549,28653143,419.89
+WKm6oVEn,2026-09-18,opus-5,Guerrilla natives by region,,,,,
+KRSPdan6,2026-09-18,opus-5,PR #35 merge status,2760,62571,18835907,193357,12.93
+urzDv3MF,2026-09-18,opus-5,Native lookalikes browsing and invasiven,402669,461150,231639070,2199033,149.86
+B6bZneuL,2026-09-19,opus-5,Ecoregion prioritization strategy,57631,3405293,1388643057,22920544,1008.91
+rmsJapbo,2026-09-19,opus-5,Pollinators and native plants evidence,835162,440927,169214851,1032250,106.96
+yUWQTjXg,2026-09-19,opus-5,Native fruits in supported ecoregions,2458,12858,1859793,76426,2.02
+Eoom8CfL,2026-09-20,opus-5,Native plant society outreach,1712392,1202737,496214115,9887269,379.02
+vvsEh1HU,2026-09-24,opus-5-5,Pacific wax myrtle regional coverage,934,5539,815179,102929,1.10
+MsBfcE17,2026-09-24,opus-5-5,Plant page layout and labeling,2021,63490,22033302,218397,7.43
+dJggKfyw,2026-09-24,opus-5-5,Southern hemisphere indigene support,225440,2264435,1207483213,15116172,408.14
+LqZhijZc,2026-09-24,opus-5-5,iNaturalist profile import with privacy,11120,332458,124717723,987180,38.72
+FpLCoqrv,2026-09-24,opus-5-5,Invasive species priority list by ecoreg,16764,930158,266078096,4185491,105.35
+Ww6EKHZC,2026-09-25,opus-5-5,Homepage video OG preview sharing,5671,59314,14441245,342371,6.83
+xZEixsGs,2026-09-25,opus-5-5,"Invasives ""most wanted"" phrasing",18824,263567,53417304,1301344,24.01
+nMs4VJWW,2026-09-26,opus-5-5,Claude usage and token tracking,939,3717,395584,35318,0.44
+LCJnJRDv,2026-09-26,opus-5-5,Plants page hero image loading priority,1579,28101,7043669,213005,3.68
+TjG91ayo,2026-09-26,opus-5-5,Test coverage and slow network loading,2172,42098,10295620,140182,4.03
+DvDW2S5X,2026-09-26,opus-5-5,Imported iNaturalist sightings picker,1233,84158,24020123,481404,10.34
+gqV3xTcT,2026-09-28,opus-5-5,Indigene accessibility and consistency r,72779,607145,179437559,5035583,84.58
+RJN4P4fH,2026-09-30,opus-5-5,Plant page region switcher bug,1022,27726,5322802,161922,2.92
+JZ6zwuc5,2026-10-01,opus-5-5,Plant pages confidence meter,2152,64993,17218935,465170,8.47
+M5QAR3YJ,2026-10-01,opus-5-5,Desktop layout redesigns,670,45254,13979178,185794,5.19
+WUHYKHZT,2026-10-01,opus-5-5,Wildlife/plant desktop layout,166,58283,13765060,193830,5.47
+XnFRXBZY,2026-10-02,opus-5-5,Regional UI language design,2133,46898,10087950,156798,4.22
+g82xeyYG,2026-10-04,opus-5-5,Homegrown National Park page,62987,30955,5226489,221250,3.52

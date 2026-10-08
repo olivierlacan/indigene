@@ -1,12 +1,12 @@
-// What building Indigene with AI used, and the sums that turn it into
-// electricity — the figures behind `#/ai`.
+// What building Indigene with an LLM used, and the sums that turn it into
+// electricity — the figures behind `#/llm`.
 //
 // Two kinds of number live here, and the page keeps them apart:
 //
 //   - **Measured.** Sessions, tokens and list price come from each Claude Code
 //     session's own usage record, one row per session in
-//     `docs/ai-bill/sessions.csv`. `SNAPSHOT` is those rows summed;
-//     `ai-bill.test.ts` re-sums the file so the two can't drift.
+//     `docs/llm-bill/sessions.csv`. `SNAPSHOT` is those rows summed;
+//     `llm-bill.test.ts` re-sums the file so the two can't drift.
 //   - **Estimated.** Anthropic publishes no energy figures, so electricity is
 //     tokens × an independent per-token estimate (Couch, 2026: Epoch AI's
 //     per-token energy, split across token kinds by Anthropic's price ratios).
@@ -35,7 +35,7 @@ export interface Snapshot {
   costWithoutTokensUsd: number;
 }
 
-/** The sum of `docs/ai-bill/sessions.csv`, as of `date`. */
+/** The sum of `docs/llm-bill/sessions.csv`, as of `date`. */
 export const SNAPSHOT: Snapshot = {
   date: "2026-10-07",
   sessions: 110,
@@ -47,6 +47,26 @@ export const SNAPSHOT: Snapshot = {
   /** The part of `costUsd` from sessions with no token counts. */
   costWithoutTokensUsd: 84.71,
 };
+
+/** Sessions with token counts, split at more than ten requests (the
+ *  `human_prompts` column of `docs/llm-bill/floor.csv`). Every request re-reads
+ *  the session so far, so tokens per request is what a long session costs. */
+export interface SessionGroup {
+  sessions: number;
+  tokens: number;
+  requests: number;
+}
+
+export const LONG_AFTER_REQUESTS = 10;
+
+export const BY_LENGTH: { long: SessionGroup; short: SessionGroup } = {
+  long: { sessions: 17, tokens: 4_402_764_186, requests: 270 },
+  short: { sessions: 83, tokens: 2_279_568_518, requests: 294 },
+};
+
+/** How many times the tokens a request costs in a long session. */
+export const perRequestRatio = (g = BY_LENGTH): number =>
+  (g.long.tokens / g.long.requests) / (g.short.tokens / g.short.requests);
 
 /** Watt-hours per million tokens, by kind. */
 export type Rates = Tokens;

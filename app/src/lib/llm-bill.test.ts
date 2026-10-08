@@ -1,17 +1,19 @@
-// The AI bill's two promises: the snapshot is the session records summed, and
+// The LLM bill's two promises: the snapshot is the session records summed, and
 // the electricity is those tokens times the stated rates — nothing else.
 import { describe, it, expect } from "vitest";
-import { SNAPSHOT, RATES, energyWh, billKWh, bill, round2 } from "./ai-bill";
+import { SNAPSHOT, RATES, BY_LENGTH, LONG_AFTER_REQUESTS, energyWh, billKWh, bill, round2, totalTokens } from "./llm-bill";
 
 // The session records, as text — the same `?raw` glob emoji.test.ts reads the
 // app's sources with.
-const CSV = Object.values(import.meta.glob("../../../docs/ai-bill/sessions.csv", {
+const CSVS = import.meta.glob("../../../docs/llm-bill/*.csv", {
   query: "?raw", import: "default", eager: true,
-}) as Record<string, string>)[0];
+}) as Record<string, string>;
+const CSV = CSVS["../../../docs/llm-bill/sessions.csv"];
+const FLOOR = CSVS["../../../docs/llm-bill/floor.csv"];
 
 /** Minimal CSV: the titles are the only quoted field, and none holds a quote. */
-function rows(): Record<string, string>[] {
-  const [head, ...lines] = CSV.trim().split("\n");
+function rows(csv = CSV): Record<string, string>[] {
+  const [head, ...lines] = csv.trim().split("\n");
   const cols = head.split(",");
   return lines.map((line: string) => {
     const cells = line.match(/("[^"]*"|[^,]*)(,|$)/g)!.map((c: string) => c.replace(/,$/, "").replace(/^"|"$/g, ""));
@@ -36,6 +38,27 @@ describe("SNAPSHOT", () => {
     expect(data.filter((r) => r.output !== "").length).toBe(SNAPSHOT.sessionsWithTokens);
     const priceOnly = data.filter((r) => r.output === "" && r.cost_usd !== "");
     expect(priceOnly.reduce((n, r) => n + Number(r.cost_usd), 0)).toBeCloseTo(SNAPSHOT.costWithoutTokensUsd, 2);
+  });
+});
+
+describe("BY_LENGTH", () => {
+  it("is the session records split at more than ten requests", () => {
+    const requests = new Map(rows(FLOOR).map((r) => [r.session, Number(r.human_prompts)]));
+    const counted = rows().filter((r) => r.output !== "");
+    const group = (long: boolean) => {
+      const these = counted.filter((r) => (requests.get(r.session)! > LONG_AFTER_REQUESTS) === long);
+      return {
+        sessions: these.length,
+        tokens: these.reduce((n, r) => n + totalTokens({
+          input: Number(r.input), output: Number(r.output),
+          cacheRead: Number(r.cache_read), cacheWrite: Number(r.cache_write),
+        }), 0),
+        requests: these.reduce((n, r) => n + requests.get(r.session)!, 0),
+      };
+    };
+    expect(group(true)).toEqual(BY_LENGTH.long);
+    expect(group(false)).toEqual(BY_LENGTH.short);
+    expect(BY_LENGTH.long.tokens + BY_LENGTH.short.tokens).toBe(totalTokens(SNAPSHOT.tokens));
   });
 });
 

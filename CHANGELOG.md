@@ -33,14 +33,16 @@ subtitle on the What's new page.
 
 ### Added
 
-- Indigene was built with AI, and a new page shows the bill: 110 working
-  sessions, about 360 kWh of electricity, and how the app's design pays it
-  back. https://indigene.app/ai
-- Internal: `steps/ai.ts` (route `ai`, prerendered with its own share card),
+- Indigene was built with an LLM (a large language model, what most people
+  call AI), and a new page shows the bill: 110 working sessions, about 360 kWh
+  of electricity, and how to use fewer tokens next time.
+  https://indigene.app/llm
+- Internal: `steps/llm.ts` (route `llm`, prerendered with its own share card),
   linked from a new About stance. Tokens and price are each session's own
-  record (`docs/ai-bill/sessions.csv`); `lib/ai-bill.ts` turns them into
-  electricity with Couch's per-token rates, and `ai-bill.test.ts` re-sums the
-  CSV so the page can't drift from it.
+  record (`docs/llm-bill/sessions.csv`); `lib/llm-bill.ts` turns them into
+  electricity with Couch's per-token rates, and `llm-bill.test.ts` re-sums the
+  CSVs so the page can't drift from them. `docs/llm-bill/fewer-tokens.md` maps
+  the findings to the repo rules that already save tokens.
 - A saved spot now shows the wildlife in its neighborhood: each animal your
   plants can feed, with its picture and the plant of yours it eats. Tap one to
   meet it.

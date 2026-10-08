@@ -41,13 +41,13 @@ const STANCES: { title: TKey; body: TKey }[] = [
   { title: "about.stance.portable", body: "about.stance.portableBody" },
   { title: "about.stance.offline", body: "about.stance.offlineBody" },
   { title: "about.stance.native", body: "about.stance.nativeBody" },
-  { title: "about.stance.ai", body: "about.stance.aiBody" },
+  { title: "about.stance.llm", body: "about.stance.llmBody" },
 ];
 
 /** The stances with a page of their own behind them: body key → route and link text. */
 const STANCE_LINKS: Partial<Record<TKey, { href: string; text: TKey }>> = {
   "about.stance.nativeBody": { href: "#/native", text: "about.stance.nativeLink" },
-  "about.stance.aiBody": { href: "#/ai", text: "about.stance.aiLink" },
+  "about.stance.llmBody": { href: "#/llm", text: "about.stance.llmLink" },
 };
 
 export function renderAbout(main: HTMLElement): void {

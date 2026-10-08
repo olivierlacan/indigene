@@ -16,7 +16,7 @@
 // the row it made.
 import { el, clear, toast } from "../ui";
 import { navigate } from "../state";
-import { listSpots, plantingsForSpot, savePlanting, saveSpot } from "../db";
+import { listPlantings, listSpots, savePlanting, saveSpot } from "../db";
 import { linkedLogin } from "../lib/inat-account";
 import {
   ownSightings,
@@ -35,7 +35,7 @@ import { commonName, regionName } from "../lib/names";
 import { plantThumb, invasiveThumb } from "../components/plant-thumb";
 import { privacyNote } from "../components/privacy-link";
 import { t, tn, tx, fmtDate } from "../lib/i18n";
-import type { SavedSpot } from "../types";
+import type { Planting, SavedSpot } from "../types";
 
 export async function renderImport(main: HTMLElement): Promise<void> {
   clear(main);
@@ -120,12 +120,21 @@ export async function renderImport(main: HTMLElement): Promise<void> {
       status.textContent = t(isBusy(err) ? "nearby.busy" : "nearby.unreachable");
       return;
     }
-    const [roster, plantings] = await Promise.all([
+    const [roster, everyPlanting] = await Promise.all([
       loadPlants(region),
-      plantingsForSpot(spot.id).catch(() => []),
+      listPlantings().catch(() => [] as Planting[]),
     ]);
     if (mine !== showing) return;
-    const sorted = sortSightings(result.sightings, region, roster, spot, plantings);
+    const plantings = everyPlanting.filter((p) => p.spotId === spot.id);
+    // A sighting already linked to another spot is that spot's photo; say
+    // which, so ticking it here can't make a second copy of it.
+    const labels = new Map(spots.map((s) => [s.id, s.label]));
+    const elsewhere = new Map<string, string>();
+    for (const p of everyPlanting) {
+      if (p.spotId === spot.id) continue;
+      for (const ref of p.observations) elsewhere.set(ref, labels.get(p.spotId) ?? "");
+    }
+    const sorted = sortSightings(result.sightings, region, roster, spot, plantings, elsewhere);
     status.remove();
 
     const picks = { natives: new Set<NativeMatch>(), invasives: new Set<InvasiveMatch>() };
@@ -161,6 +170,13 @@ export async function renderImport(main: HTMLElement): Promise<void> {
       save.disabled = true;
       const now = Date.now();
       for (const m of picks.natives) {
+        // A plant already in the log gets this photo on its row, not a twin.
+        if (m.planting) {
+          const row = m.planting;
+          row.observations = [...row.observations, String(m.sighting.id)];
+          await savePlanting(row);
+          continue;
+        }
         await savePlanting({
           id: plantingId(),
           spotId: spot.id,
@@ -233,6 +249,9 @@ function tickRow<T>(
 
 function nativeRow(m: NativeMatch, regionId: string, picks: Set<NativeMatch>, refresh: () => void): HTMLElement {
   const lines = [seenLine(m)];
+  if (m.planting && !m.inLog && m.linkedElsewhere === null) {
+    lines.push(el("div", { class: "coords" }, t("import.inLogPlant")));
+  }
   for (const { lookalike } of m.lookalikes) {
     lines.push(el("p", { class: "note warn import-lookalike" }, tx("import.lookalike", {
       name: el("a", { href: `#/lookalikes/${encodeURIComponent(lookalike.id)}` }, commonName(lookalike)),
@@ -244,7 +263,11 @@ function nativeRow(m: NativeMatch, regionId: string, picks: Set<NativeMatch>, re
     lines,
     m,
     picks,
-    m.inLog ? t("import.inLog") : null,
+    m.inLog
+      ? t("import.inLog")
+      : m.linkedElsewhere !== null
+        ? t("import.linkedElsewhere", { spot: m.linkedElsewhere })
+        : null,
     refresh,
   );
 }

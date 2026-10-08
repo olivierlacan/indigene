@@ -33,6 +33,18 @@ subtitle on the What's new page.
 
 ### Added
 
+- Matches: when you log a plant in a saved spot, you can pick one of your
+  iNaturalist sightings of it. The sighting gets linked, and its date fills
+  in the planting date. You can still type the details yourself.
+- Matches: you can also start from a sighting before choosing a plant. Tap one
+  of your photos on a saved spot's page and Indigene works out which plant it
+  shows. Check the date, then add it.
+- Matches: importing from iNaturalist now marks sightings already linked to
+  another spot. A photo of a plant already in the log is added to that entry
+  instead of starting a duplicate.
+- Internal: `nativeSightings()` and `sortSightings()`'s new `linkedElsewhere` /
+  `planting` fields carry this, with `inat-import.test.ts` against the real
+  Pacific Northwest list.
 - Regions: three more native shrubs for the Pacific Northwest — Pacific wax
   myrtle for a coastal hedge, Oregon boxleaf as a native stand-in for boxwood,
   and western wahoo for a shady corner. https://indigene.app/regions/pnw
@@ -57,6 +69,12 @@ subtitle on the What's new page.
 
 ### Fixed
 
+- Matches: "I planted one" on a plant's page now always arrives with that
+  plant picked, even when it's from another region's list. The search box
+  steps aside once it's picked, so the form no longer looks empty.
+- Internal: `renderSpot` falls back to `findPlant` for an `?add=` slug not on
+  the spot's roster, and the date row's year input and selects share one height
+  so their labels line up on iOS.
 - Regions: the Kantō Plain now shows the Japanese flag beside its name, like
   every other region. https://indigene.app/regions/kanto
 - Internal: `flags.ts` had no JP drawing, and an unknown country code draws

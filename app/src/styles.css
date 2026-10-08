@@ -5289,8 +5289,23 @@ body[data-layout="profile"] .wip-banner-text {
 .log-obs-pick .obs-tile {
   width: 100%;
 }
+/* The tile picked in the add form: an outline, so the photo stays visible. */
+.log-obs-pick[aria-pressed="true"] .obs-tile {
+  outline: 3px solid var(--brand);
+  outline-offset: 2px;
+}
+.log-add-sighting .log-obs-input {
+  width: 100%;
+}
 .log-obs-pick:disabled {
   opacity: 0.5;
+}
+.log-obs-pick-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .log-obs-pick-date {
   font-size: 0.75rem;
@@ -5330,6 +5345,12 @@ body[data-layout="profile"] .wip-banner-text {
 }
 .log-date-field .hint {
   margin: 0;
+}
+/* One height for the year box and the two pickers, so their labels line up:
+   iOS draws a number input taller than a select, and the row aligns bottoms. */
+.log-date-field input,
+.log-date-field select {
+  height: var(--tap);
 }
 .log-year {
   width: 100%;

@@ -26,7 +26,7 @@ import { getWildlife } from "../lib/wildlife";
 import { t, tn, fmtNumber } from "../lib/i18n";
 import { distance } from "../lib/units";
 import { isBusy } from "../lib/inaturalist";
-import { allowLookup, lookupAllowed, SPOT_RADIUS_KM } from "../lib/spot-sightings";
+import { SPOT_RADIUS_KM } from "../lib/spot-sightings";
 import { plantsToAdd, regionAnimals, seasonMonths, seasonSightings } from "../lib/season-sightings";
 import { freshnessLine } from "./observation-ui";
 
@@ -160,7 +160,8 @@ export function renderSeasonPlan(
 
 /**
  * Natives to add for the animals photographed near the spot in this season's
- * months. Asks before it looks, with the same yes the sightings card asks for.
+ * months. Nothing goes to iNaturalist until the person taps the button, on
+ * every visit: a yes given elsewhere, or last time, doesn't count as one here.
  */
 function addCard(spot: SavedSpot, plantings: Planting[], region: RegionDef | null, roster: Plant[], season: Season): HTMLElement {
   const card = el("section", { class: "card" }, [el("h3", { style: "margin:0 0 0.3rem" }, t("grow.addTitle"))]);
@@ -177,10 +178,7 @@ function addCard(spot: SavedSpot, plantings: Planting[], region: RegionDef | nul
     el("button", {
       type: "button",
       class: "btn btn-primary btn-block",
-      onClick: () => {
-        void allowLookup(spot.id);
-        void load();
-      },
+      onClick: () => void load(),
     }, t("spot.spottedAsk")),
     el("p", { class: "hint", style: "margin:0.5rem 0 0" }, t("spot.spottedPrivacy")),
   ]);
@@ -233,9 +231,6 @@ function addCard(spot: SavedSpot, plantings: Planting[], region: RegionDef | nul
   }
 
   card.append(el("p", { class: "note", style: "margin:0 0 0.5rem;padding:0" }, t("grow.addLede", { distance: within })), intro, out);
-  void lookupAllowed(spot.id).then((ok) => {
-    if (ok) void load();
-  });
   return card;
 }
 

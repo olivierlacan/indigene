@@ -8,9 +8,9 @@
 // still hears that monarchs come through here in September.
 //
 // Same request shape, same privacy: one species-counts call for every animal
-// at once, from a point rounded to about a kilometre, and only after the person
-// has said yes to looking for this spot (the same yes the sightings card asks
-// for). The months travel as `month=9,10,11`, which says nothing about the spot.
+// at once, from a point rounded to about a kilometre, and only when the person
+// taps to look — never on its own, and never on a yes remembered from the
+// sightings card or an earlier visit. The months travel as `month=9,10,11`, which says nothing about the spot.
 //
 // **Can, not will.** A plant that feeds an animal seen nearby is a good bet,
 // not a promise. The page says "seen near here", never "will come".

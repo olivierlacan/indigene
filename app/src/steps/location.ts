@@ -7,6 +7,7 @@ import { regionForCoords } from "../data/regions";
 import { zoneChip } from "../components/zone-chip";
 import { ISSUES_URL, latPlain, lonPlain } from "../lib/plain";
 import { TILE_SIZE, getTile, metersPerPixel, tileCoords } from "../lib/tiles";
+import { compassPoint } from "../lib/compass";
 import { whyThis } from "../components/learn";
 import { privacyNote } from "../components/privacy-link";
 import { t, tx, fmtNumber } from "../lib/i18n";
@@ -40,6 +41,12 @@ function coverageWarning(lead: string): HTMLElement {
 // than a house lot, so house-level zoom would promise precision the data
 // doesn't have.
 const MAP_ZOOM = 14;
+
+// The loupe a long press opens: how many times it enlarges the map, and how
+// much slower a drag moves the pin while it's open. The same number, so the
+// streets in the loupe keep pace with the finger.
+const LOUPE_ZOOM = 4;
+const LONG_PRESS_MS = 450;
 
 /**
  * A one-line "this came from your device" note.
@@ -160,6 +167,11 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
     role: "application",
     "aria-label": t("location.mapLabel"),
   }, [canvas, el("div", { class: "pin", "aria-hidden": "true" }, "📍"), attrib]);
+  // The loupe: the few metres round the pin, enlarged, while a long press
+  // fine-tunes it. It enlarges the tiles already drawn rather than fetching a
+  // closer zoom (see MAP_ZOOM for why the map stays this far out).
+  const loupe = el("canvas", { class: "map-loupe", width: 240, height: 240, "aria-hidden": "true", hidden: true }) as HTMLCanvasElement;
+  mapWrap.append(loupe);
   // Whether the last draw managed to show tiles; the drag scale follows the
   // layer the user is actually looking at (map tiles vs. the 5 m grid).
   let tilesShown = false;
@@ -174,7 +186,9 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
   function updateStatus(): void {
     const off = Math.hypot(offN, offE);
     const acc = accuracy != null ? t("location.accuracy", { m: fmtNumber(Math.round(accuracy)) }) : "";
-    const moved = off > 1 ? t("location.nudged", { m: fmtNumber(Math.round(off)) }) : "";
+    const moved = off > 1
+      ? t("location.nudged", { m: fmtNumber(Math.round(off)), dir: t(`location.dir.${compassPoint(offN, offE)}`) })
+      : "";
     // Each number said as what it is: a reader who has never met a coordinate
     // can't tell which figure is which, and the minus sign in front of one of
     // them is the least readable part of the pair.
@@ -254,6 +268,33 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
     ctx.fill();
     ctx.globalAlpha = 1;
     ctx.fillText(fixLabel, fx + 9, fy + 4);
+    if (!loupe.hidden) drawLoupe();
+  }
+
+  // Copy the middle of the map into the loupe, enlarged, with a crosshair on
+  // the exact point the pin's tip stands on.
+  function drawLoupe(): void {
+    const lc = loupe.getContext("2d")!;
+    const size = loupe.width;
+    const src = size / LOUPE_ZOOM;
+    lc.imageSmoothingEnabled = true;
+    lc.drawImage(canvas, canvas.width / 2 - src / 2, canvas.height / 2 - src / 2, src, src, 0, 0, size, size);
+    const c = size / 2;
+    const arm = size * 0.12;
+    const cross = () => {
+      lc.beginPath();
+      lc.moveTo(c - arm, c); lc.lineTo(c - 6, c);
+      lc.moveTo(c + 6, c); lc.lineTo(c + arm, c);
+      lc.moveTo(c, c - arm); lc.lineTo(c, c - 6);
+      lc.moveTo(c, c + 6); lc.lineTo(c, c + arm);
+      lc.stroke();
+    };
+    lc.strokeStyle = "rgba(255,255,255,0.9)";
+    lc.lineWidth = 6;
+    cross();
+    lc.strokeStyle = "#c62828";
+    lc.lineWidth = 3;
+    cross();
   }
 
   // Metres per CSS pixel at the scale of whichever map layer is showing.
@@ -266,10 +307,26 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
   // Drag to nudge the pin (the pin stays centred; the world moves under it).
   // A press that never really moves is a tap instead: the tapped point slides
   // under the pin. Tapping is the single-pointer, no-drag way to the same nudge.
+  // Holding still opens the loupe, and the drag that follows moves the pin at a
+  // quarter of the pace — fine-tuning without a closer map.
   let dragging = false;
   let lastX = 0, lastY = 0;
   let downX = 0, downY = 0;
   let movedPx = 0;
+  let holdTimer = 0;
+  const closeLoupe = () => {
+    clearTimeout(holdTimer);
+    holdTimer = 0;
+    loupe.hidden = true;
+  };
+  const openLoupe = () => {
+    holdTimer = 0;
+    // On the side away from the finger, so the finger doesn't cover it.
+    const rect = mapWrap.getBoundingClientRect();
+    loupe.classList.toggle("map-loupe-right", lastX < rect.left + rect.width / 2);
+    loupe.hidden = false;
+    drawLoupe();
+  };
   const onDown = (e: PointerEvent) => {
     if ((e.target as Element).closest?.("a")) return; // attribution link stays clickable
     dragging = true;
@@ -277,20 +334,24 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
     lastY = downY = e.clientY;
     movedPx = 0;
     (e.target as Element).setPointerCapture?.(e.pointerId);
+    clearTimeout(holdTimer);
+    holdTimer = window.setTimeout(openLoupe, LONG_PRESS_MS);
   };
   const onMove = (e: PointerEvent) => {
     if (!dragging) return;
-    const scale = metersPerCssPx();
+    const scale = metersPerCssPx() / (loupe.hidden ? 1 : LOUPE_ZOOM);
     // Dragging moves the world under the pin: drag right → pin lands further
     // west, drag down → further north.
     offE -= (e.clientX - lastX) * scale;
     offN += (e.clientY - lastY) * scale;
     lastX = e.clientX; lastY = e.clientY;
     movedPx = Math.max(movedPx, Math.hypot(e.clientX - downX, e.clientY - downY));
+    // A real drag before the hold completes is an ordinary drag.
+    if (movedPx >= 8 && holdTimer) { clearTimeout(holdTimer); holdTimer = 0; }
     updateStatus();
   };
   const onUp = (e: PointerEvent) => {
-    if (dragging && movedPx < 8) {
+    if (dragging && movedPx < 8 && loupe.hidden) {
       // A tap: bring the tapped point to the centre pin.
       const rect = canvas.getBoundingClientRect();
       const scale = metersPerCssPx();
@@ -299,11 +360,20 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
       updateStatus();
     }
     dragging = false;
+    closeLoupe();
   };
   mapWrap.addEventListener("pointerdown", onDown);
   mapWrap.addEventListener("pointermove", onMove);
   mapWrap.addEventListener("pointerup", onUp);
-  mapWrap.addEventListener("pointercancel", () => { dragging = false; });
+  mapWrap.addEventListener("pointercancel", () => { dragging = false; closeLoupe(); });
+  // iOS reads a held finger as "select this text" and starts highlighting the
+  // paragraphs round the map, which steals the drag. Cancelling the touch's
+  // default stops that (and the callout menu) while pointer events still flow;
+  // the attribution link keeps its default so it can still be followed.
+  mapWrap.addEventListener("touchstart", (e: TouchEvent) => {
+    if (!(e.target as Element).closest?.("a")) e.preventDefault();
+  }, { passive: false });
+  mapWrap.addEventListener("contextmenu", (e) => e.preventDefault());
 
   // Arrow keys nudge the pin — the keyboard path to what dragging does.
   mapWrap.addEventListener("keydown", (e: KeyboardEvent) => {

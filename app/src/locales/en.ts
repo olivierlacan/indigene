@@ -420,7 +420,8 @@ export const en = {
   "privacy.inat1": "Your username is kept in this browser and nowhere else. It isn't in the file Settings saves your spots to, either.",
   "privacy.inat2": "It's sent to iNaturalist only when you link it, import, or look for wildlife around a saved spot, to ask for your sightings, which iNaturalist already shows publicly. We never send a place with it.",
   "privacy.inat3": "It never appears in a page's address, so the visit counter never sees it. There's no password or sign-in: Indigene can't post or change anything on iNaturalist.",
-  "privacy.inat4": "Only what you tick is kept: the sighting's number, on the row it made. Remove your username in Settings and it's gone.",
+  "privacy.inat4": "Only what you tick is kept: the sighting's number, on the row it made. {link} and it's gone.",
+  "privacy.inat4Link": "Remove your username in Settings",
 
   // The button on a plant's page that starts a log entry for it.
   "planted.button": "🌱 I planted one",
@@ -466,6 +467,7 @@ export const en = {
   "explore.title": "Meet the natives",
   "explore.lede":
     "{plants} native plants across the {regions} regions Indigene covers so far. Open the one you live in to see its whole roster — or tap the plant on the front of a card to meet it.",
+  "explore.missing": "Don't see your region? {link}.",
   "explore.byWildlife": "Or browse by wildlife → ",
   "explore.byWildlifeSub":
     "start from the monarch, hummingbird, or gopher tortoise you want, and find the plants that support it.",
@@ -1018,6 +1020,7 @@ export const en = {
   "traits.docTitle": "Plant traits — Indigene",
   "traits.title": "Plant traits",
   "traits.lede": "What each label and figure on a plant's page means.",
+  "traits.confidenceLink": "How sure we are of each plant's figures",
   "traits.group.water": "💧 Watering",
   "traits.group.wildlife": "🦋 Wildlife",
   "traits.group.handling": "✋ Handling",
@@ -1175,6 +1178,9 @@ export const en = {
   "results.title": "Plants for this spot",
   "results.regionTag": "📍 {region}",
   "results.regionTagPick": "📍 {region} — your pick, not measured from a location",
+  "results.filtersMeaning": "What these labels mean",
+  "results.alsoHere": "Also in this region: {wildlife} · {invasives}",
+  "results.alsoHereWildlife": "Also in this region: {wildlife}",
   "results.count": "{n} native plants {fit} — {good} are a good or workable match. Best matches first.",
   "results.fitClimate": "fit this spot's climate",
   "results.fitList": "are in this region's list",
@@ -1763,6 +1769,7 @@ export const en = {
     "No plant in Indigene's lists matches “{q}”. The lists are curated per region, so they grow carefully — ",
   "plants.noneLink": "browse the natives we know",
   "plants.noneEnd": ".",
+  "plants.otherPages": "Not a native we list, but it has a page:",
   "plants.browseRegions": "Browse by region",
 
   // ---------------------------------------------------------------------
@@ -2072,7 +2079,8 @@ export const en = {
     "Defensible, and we'd defend it — but it is a real approximation, and it flatters the weaker members of a strong group.",
   "sources.chal3": "The regions aren't equally well sourced. ",
   "sources.chal3Rest":
-    "Some plant lists rest on decades of regional botanical work; the newest ones are thinner. Each plant's confidence meter shows it, plant by plant, by one rule.",
+    "Some plant lists rest on decades of regional botanical work; the newest ones are thinner. Each plant's {link} shows it, plant by plant, by one rule.",
+  "sources.chal3Link": "confidence meter",
   "sources.chal4": "The US caterpillar counts sit on shakier ground than the European ones. ",
   "sources.chal4Rest":
     "The European figures come from an openly licensed dataset we can point you at and recompute from scratch. The US figures come from published research whose database has no open license — so they're harder for you to check than we'd like.",
@@ -2266,7 +2274,8 @@ export const en = {
   "wanted.photosLede": "Confirmed iNaturalist photos from a region that lists it.",
   "wanted.tellApart": "Often mistaken for",
   "wanted.noPhotos": "No confirmed photos from this region on iNaturalist yet.",
-  "wanted.onLists": "Among the worst in: {places}",
+  "wanted.onLists": "Among the worst in: {places} — {remove}.",
+  "wanted.removeLink": "how to remove it",
   "wanted.placeLink": "{region} (#{n})",
 
   "wlNearby.seeItNear": "See it near you",
@@ -2349,13 +2358,16 @@ export const en = {
     "The sun estimate is a range, not a decimal, because sensors lie and the honest answer is a band. The soil reading is always framed as “the map says X — here's a 60-second check to see whether that's true where you're standing”, because a soil map square is bigger than your whole garden. Standing there, you know more than the map does, and the app is built to let you overrule it.",
   "about.stance.sourced": "Every number has to be traceable to somebody else.",
   "about.stance.sourcedBody":
-    "Each plant carries its sources and a plain confidence note, and where a figure is our judgment rather than a count, the Sources page says so and names the ones we'd challenge first. Nothing is invented to fill a gap — a plant with no French name shows its scientific name rather than a plausible-sounding guess.",
+    "Each plant carries its sources and a plain confidence note, and where a figure is our judgment rather than a count, {link} says so and names the ones we'd challenge first. Nothing is invented to fill a gap — a plant with no French name shows its scientific name rather than a plausible-sounding guess.",
+  "about.stance.sourcedLink": "the Sources page",
   "about.stance.yours": "Indigene wants nothing from you.",
   "about.stance.yoursBody":
-    "No account, no sign-up, no advertising, nothing sold. A visit counter notes which page was opened and nothing about who opened it; you can switch it off in Settings. Saved spots stay in your browser on your device, because there is no server for them to go to. No stranger can contact you through it.",
+    "No account, no sign-up, no advertising, nothing sold. A visit counter notes which page was opened and nothing about who opened it; you can {link}. Saved spots stay in your browser on your device, because there is no server for them to go to. No stranger can contact you through it.",
+  "about.stance.yoursLink": "switch it off in Settings",
   "about.stance.portable": "Your data leaves with you.",
   "about.stance.portableBody":
-    "Settings writes every saved spot and its planting log to a plain file you keep, and reads one back in another browser. Moving from a phone to a laptop takes a file, not an account — and the file is yours to open, keep or hand to something else entirely.",
+    "{link} writes every saved spot and its planting log to a plain file you keep, and reads one back in another browser. Moving from a phone to a laptop takes a file, not an account — and the file is yours to open, keep or hand to something else entirely.",
+  "about.stance.portableLink": "Settings",
   "about.stance.offline": "Indigene works where gardens are.",
   "about.stance.offlineBody":
     "Offline-first and installable, because the far end of a garden is exactly where a signal disappears. Everything but the live lookups keeps working with no connection at all.",
@@ -2472,7 +2484,8 @@ export const en = {
   // --- the part that goes further than "no harm" -------------------------
   "crops.takeAwayTitle": "Some natives take pests away",
   "crops.takeAway1":
-    "This is the half of the argument nobody makes. The pest reservoir in a yard is usually a plant somebody bought, and several of the worst pests in North America depend on one. Swap that plant for a native and you cut the chain underneath them.",
+    "This is the half of the argument nobody makes. The pest reservoir in a yard is usually a plant somebody bought, and several of the worst pests in North America depend on one. {link} and you cut the chain underneath them.",
+  "crops.takeAway1Link": "Swap that plant for a native",
   "crops.fig.chain.cut": "Swap the plant, break the chain",
   "crops.fig.chain.ailanthus": "Tree-of-heaven",
   "crops.fig.chain.lanternfly": "Spotted lanternfly",
@@ -2488,7 +2501,8 @@ export const en = {
   "crops.takeAway2":
     "The barberry case has been counted. Connecticut woodland under intact Japanese barberry held about 280 Lyme-infected ticks per hectare; where the barberry had been cut back, 121; where there had never been any, 30. One clearing held that down for six years before the shrub came back.",
   "crops.takeAway3":
-    "Don't oversell it, though. Pulling out a tree-of-heaven won't end the spotted lanternfly — it feeds on seventy-odd other trees and vines. Cutting the chain thins a pest. It doesn't erase one.",
+    "Don't oversell it, though. Pulling out {link} won't end the spotted lanternfly — it feeds on seventy-odd other trees and vines. Cutting the chain thins a pest. It doesn't erase one.",
+  "crops.takeAway3Link": "a tree-of-heaven",
 
   // --- the claim most likely to be over-quoted ---------------------------
   "crops.redirectTitle": "Will they eat the hedge instead of my cherries?",
@@ -2705,13 +2719,15 @@ export const en = {
   "native.short4": "An invasive plant is a problem because of what it does, not where it's from. Most plants moved to a new place never spread.",
   "native.speciesTitle": "Co-evolution happens between species, not nations",
   "native.species1": "A caterpillar that eats only oak didn't choose oak out of loyalty. Over thousands of generations its body learned to handle oak's defenses, and most plant-eating insects are specialists like it. That's why the plant list for your spot matters.",
-  "native.species2": "That history played out on a landscape of climate, soil and sea, not of countries. So Indigene's lists follow natural regions, not borders. The Irish list covers the whole island, the Republic and Northern Ireland alike, and a spot on Scotland's Kintyre peninsula gets it too: the same Atlantic ground grows the same plants.",
+  "native.species2": "That history played out on a landscape of climate, soil and sea, not of countries. So Indigene's lists follow natural regions, not borders. {ireland} covers the whole island, the Republic and Northern Ireland alike, and a spot on Scotland's Kintyre peninsula gets it too: the same Atlantic ground grows the same plants.",
+  "native.species2Link": "The Irish list",
   "native.historyTitle": "Native ranges are history, not identity",
   "native.history1": "Where a plant is native is partly an accident of the last ice age. Beech is native to southern England but not to Ireland: the sea rose between them before beech got there. Ranges have always moved, and they're moving now as the climate warms.",
   "native.history2": "Many “wild” native landscapes were tended by people, too. Coast Salish burning kept the Garry oak meadows of the Pacific Northwest open for centuries, and Māori planted groves of karaka for its fruit. Planting natives carries that care on.",
   "native.behaviorTitle": "“Invasive” describes behavior, not origin",
   "native.behavior1": "Most plants moved to a new place never spread on their own. A rough rule from invasion biology: about one in ten imported species turns up in the wild, one in ten of those establishes, and one in ten of those becomes a pest. The few that do are a problem because they smother woods or choke rivers, not because of where they came from.",
-  "native.behavior2": "Some ecologists warn against judging a species by its origin at all (Davis and others, 2011). Others answer that removing a plant for measured harm isn't xenophobia (Simberloff, 2003). Indigene agrees with both: every invasive in the app is there for what it does. Your tomatoes trace back to the Andes, and that's fine.",
+  "native.behavior2": "Some ecologists warn against judging a species by its origin at all (Davis and others, 2011). Others answer that removing a plant for measured harm isn't xenophobia (Simberloff, 2003). Indigene agrees with both: {invasives} is there for what it does. Your tomatoes trace back to the Andes, and that's fine.",
+  "native.behavior2Link": "every invasive in the app",
   "native.whyTitle": "Why we say this out loud",
   "native.why1": "The language has been abused before. In Nazi Germany, garden planners tied “native” plants to racial purity, and in 1942 a group of botanists called for wiping out small balsam, a little Asian woodland flower, as a “Mongolian invader”. The French ecologist Jacques Tassin has shown how talk of invasive species still borrows the vocabulary of xenophobia.",
   "native.why2": "So when we say native, we mean the oak and its caterpillars, never a person.",
@@ -2784,7 +2800,8 @@ export const en = {
   "llm.even2": "We don't count the gardens Indigene helps plant against the bill. That good is real, but it isn't a number we can stand behind.",
   "llm.notTitle": "What isn't counted",
   "llm.not1": "Nine early sessions recorded a price but no tokens. Their electricity is worked out from that price.",
-  "llm.not2": "The short film about Indigene used Google's Gemini models for its narration and music. That use wasn't metered.",
+  "llm.not2": "{link} used Google's Gemini models for its narration and music. That use wasn't metered.",
+  "llm.not2Link": "The short film about Indigene",
   "llm.not3": "The people's time, and the computers they worked on.",
   "llm.sourcesTitle": "Where this comes from",
   "llm.src.sessions": "every session's tokens and price, one row each",
@@ -2833,9 +2850,14 @@ export const en = {
   "homegrown.birds1": "Most songbirds raise their chicks on caterpillars, and most caterpillars eat only the plants they evolved with. One pair of chickadees needs 6,000 to 9,000 of them to raise a single brood. In a study of yards around Washington, DC, chickadees couldn't keep their numbers up where less than 70% of the greenery was native.",
   "homegrown.appTitle": "Where Indigene follows the idea",
   "homegrown.app1": "The ranking puts caterpillars first. Of everything a plant offers, the number of caterpillar kinds it feeds counts the most.",
-  "homegrown.app2": "An “Essential” plant is what Tallamy calls a keystone plant. Across the US, 14% of native plant genera (groups of close relatives, like the oaks) feed 90% of caterpillar species. Indigene shows you those first.",
-  "homegrown.app3": "In the US, the caterpillar counts come from Tallamy's own data, published with the National Wildlife Federation.",
-  "homegrown.app4": "The idea travels: Indigene's lists for Ireland, New Zealand or Japan lean on each place's own studies of what feeds what.",
+  "homegrown.app2": "{link} is what Tallamy calls a keystone plant. Across the US, 14% of native plant genera (groups of close relatives, like the oaks) feed 90% of caterpillar species. Indigene shows you those first.",
+  "homegrown.app2Link": "An “Essential” plant",
+  "homegrown.app3": "In the US, the caterpillar counts come from {link}, published with the National Wildlife Federation.",
+  "homegrown.app3Link": "Tallamy's own data",
+  "homegrown.app4": "The idea travels: Indigene's lists for {ireland}, {nz} or {japan} lean on each place's own studies of what feeds what.",
+  "homegrown.app4Japan": "Japan",
+  "homegrown.app4Nz": "New Zealand",
+  "homegrown.app4Ireland": "Ireland",
   "homegrown.authorTitle": "Why I built Indigene",
   "homegrown.author1": "I spent years turning the yard of a newly built house in central Florida into native plants. When I moved to Seattle, I started over, with far less ground to work with.",
   "homegrown.author2": "Both times, the hard part was knowing what would grow in each corner, and what it would feed. Indigene is the answer I wanted then, and those two yards are my piece of the park.",

@@ -659,7 +659,7 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
   main.append(
     coverageLine(),
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("wildlife") }, t("wildlife.allWildlife")),
+      // "All wildlife" is the back-trail at the top; this row goes on.
       el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("wildlife.rankForSpot")),
     ]),
   );

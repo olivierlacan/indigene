@@ -48,8 +48,16 @@ export function renderHomegrown(main: HTMLElement): void {
       p("homegrown.birds1"),
 
       el("h3", {}, t("homegrown.appTitle")),
-      el("ul", {}, (["homegrown.app1", "homegrown.app2", "homegrown.app3", "homegrown.app4"] as TKey[])
-        .map((k) => el("li", {}, t(k)))),
+      el("ul", {}, [
+        el("li", {}, t("homegrown.app1")),
+        el("li", {}, tx("homegrown.app2", { link: el("a", { href: "#/traits/essential" }, t("homegrown.app2Link")) })),
+        el("li", {}, tx("homegrown.app3", { link: el("a", { href: "#/sources" }, t("homegrown.app3Link")) })),
+        el("li", {}, tx("homegrown.app4", {
+          ireland: el("a", { href: "#/regions/ireland" }, t("homegrown.app4Ireland")),
+          nz: el("a", { href: "#/regions/nz-auckland" }, t("homegrown.app4Nz")),
+          japan: el("a", { href: "#/regions/kanto" }, t("homegrown.app4Japan")),
+        })),
+      ]),
 
       el("h3", {}, t("homegrown.authorTitle")),
       p("homegrown.author1"),

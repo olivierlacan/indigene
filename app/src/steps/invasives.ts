@@ -26,7 +26,7 @@ import {
   MARK_ICONS,
   DISPOSE_ICON,
 } from "../lib/invasives";
-import { getOrnamentalByLatin, mappedOrnamentalIds } from "../lib/alternatives";
+import { alternativeCountForRegion, getOrnamentalByLatin, mappedOrnamentalIds } from "../lib/alternatives";
 import { getLookalikeByLatin, mappedLookalikeIds, inatTaxonUrl } from "../lib/lookalikes";
 import { invasivePhotoFor, inatTaxonIdFor } from "../lib/hero-photo";
 import { fetchRegionObservations, isBusy, resolveTaxon, boundsCenter, type Bounds } from "../lib/inaturalist";
@@ -67,7 +67,21 @@ export function renderInvasiveIndex(main: HTMLElement): void {
     ...sections,
     el("p", { class: "confidence", style: "margin-top:1rem" },
       t("wanted.countsNote", { date: fmtDate(Date.parse(sightingsAsOf)) })),
+    nextSteps(null),
   );
+}
+
+/** Where a reader goes after a list of plants to pull: what to grow in their
+ *  place, and the natives they're mistaken for — narrowed to the region when
+ *  the page is about one. */
+function nextSteps(regionId: string | null): HTMLElement {
+  const where = regionId ? `/in/${regionId}` : "";
+  return el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
+    el("a", { class: "btn btn-secondary", href: `#/alternatives${regionId && alternativeCountForRegion(regionId) ? where : ""}` },
+      `🌿 ${t("plants.door.alternatives")}`),
+    el("a", { class: "btn btn-secondary", href: `#/lookalikes${regionId && mappedLookalikeIds(regionId).size ? where : ""}` },
+      `👀 ${t("plants.door.lookalikes")}`),
+  ]);
 }
 
 /** One invasive's page. */
@@ -102,6 +116,7 @@ function renderInvasiveRegion(main: HTMLElement, region: RegionDef): void {
           href: wantedRegionHref(r.meta.id),
         }, regionShort(r.meta)))),
     ]),
+    nextSteps(region.meta.id),
   );
 }
 

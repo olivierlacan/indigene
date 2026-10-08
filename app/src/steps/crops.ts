@@ -31,7 +31,7 @@ import { el, clear } from "../ui";
 import { navigate } from "../state";
 import { statTiles, type Stat } from "../components/stat-card";
 import { feedsFigure, chainFigure, fatFigure, ledgerFigure } from "../components/crops-figures";
-import { t } from "../lib/i18n";
+import { t, tx } from "../lib/i18n";
 import { length, distanceFloor } from "../lib/units";
 import type { TKey } from "../locales/en";
 
@@ -175,10 +175,10 @@ export function renderCrops(main: HTMLElement): void {
 
       // --- the part that goes further than "no harm" ----------------------
       el("h3", {}, t("crops.takeAwayTitle")),
-      p("crops.takeAway1"),
+      el("p", {}, tx("crops.takeAway1", { link: el("a", { href: "#/alternatives" }, t("crops.takeAway1Link")) })),
       chainFigure(),
       p("crops.takeAway2"),
-      p("crops.takeAway3"),
+      el("p", {}, tx("crops.takeAway3", { link: el("a", { href: "#/invasives/ailanthus-altissima" }, t("crops.takeAway3Link")) })),
 
       // --- the claim most likely to be over-quoted ------------------------
       el("h3", {}, t("crops.redirectTitle")),

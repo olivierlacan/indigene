@@ -32,6 +32,8 @@
 //   lede      2–4 short sentences: what it is, and who it's for.
 //   steps     How you actually use it, as a short numbered list. Optional.
 //   note      One extra thing worth knowing. Optional.
+//   home      Where a changelog prefix naming this section links. Optional;
+//             defaults to the first `visit` link.
 //   visit     [{label, href}] deep links into the live app, so the guide is a
 //             way *in*, not only a way to read about it.
 //   learn     [{label, source, href}] trusted places to learn more, for the
@@ -66,7 +68,7 @@ export const SECTIONS = [
       "This is the heart of the app. You say where a spot is and how much sun " +
       "it gets, and Indigene shows the plants that grew there long before the " +
       "town did — the ones the local insects, birds and soil already know. " +
-      "“Native” just means that: from here, not brought in from somewhere else.",
+      `[“Native”](${APP}/native) just means that: from here, not brought in from somewhere else.`,
     steps: [
       "Share your location, or drop a pin on the map. Nothing about where you are leaves your phone.",
       "Say how much sun the spot gets — full sun, part shade, or full shade.",
@@ -115,7 +117,7 @@ export const SECTIONS = [
       "On an animal’s page, see the plants that keep it going — and add one to your spot.",
     ],
     note:
-      "An essential plant (ecologists say “keystone”) feeds far more " +
+      `An [essential plant](${APP}/#/traits/essential) (ecologists say “keystone”) feeds far more ` +
       "creatures than its neighbors — plant one and you’ve done the work of ten.",
     visit: [
       { label: "Meet the wildlife", href: `${APP}/wildlife` },
@@ -204,6 +206,9 @@ export const SECTIONS = [
       "Most of what you'll plant is doing fine — the note shows only on the few " +
       "pages where it isn't. Where it does: buy from a nursery, never dig one " +
       "from the wild; for an animal, planting what it needs is the help it can use.",
+    // No page of its own in the app: a rank shows on the plant or animal it's
+    // about, so the name links to the explanation instead.
+    home: `${APP}/guide/conservation/`,
     visit: [{ label: "Browse the plants", href: `${APP}/plants` }],
     learn: [
       {
@@ -269,13 +274,13 @@ export const SECTIONS = [
       "each native we recommend, we've written up the plants it gets mistaken " +
       "for, and — standing right in front of it — how to tell them apart: a " +
       "smell, a thorn, a leaf stalk that bleeds white, not a botanical key you'd " +
-      "need a lens for. Not every look-alike is a villain, and the label on each " +
+      "need a lens for. Not every look-alike is a problem, and the label on each " +
       "says which: invasive here, merely not from here, or a wild native the " +
       "mix-up still matters for. When you're truly unsure, photograph it and ask " +
       "iNaturalist — real people identify what you've found.",
     visit: [
       { label: "See the look-alikes", href: `${APP}/lookalikes` },
-      { label: "Browse the plants", href: `${APP}/plants` },
+      { label: "The worst invasives", href: `${APP}/invasives` },
     ],
     learn: [
       {
@@ -290,6 +295,47 @@ export const SECTIONS = [
       },
     ],
     match: { segments: ["lookalikes"] },
+    published: true,
+  },
+  {
+    id: "invasives",
+    label: "Invasives",
+    aliases: ["invasive", "worst invasives"],
+    emoji: "🚩",
+    title: "The worst invasives",
+    tagline: "The few plants doing the most harm where you live, and how to remove them.",
+    lede:
+      "A few garden plants escape and do real damage: they smother woods, shade " +
+      "out wildflowers and seed into wild places. Each region lists its worst " +
+      "five, ranked by local experts' rating, then by how often each is seen " +
+      "growing wild. Every plant on a list has a page: how to recognize it, and " +
+      "how to remove it for good by hand.",
+    steps: [
+      "Open your region's list from its page, or from Worst invasives.",
+      "Tap a plant for the three surest ways to recognize it.",
+      "Follow the removal steps — the root piece that resprouts, the stump that suckers.",
+      "Plant a native in the gap, so the bare ground doesn't invite the next seedling.",
+    ],
+    note:
+      `“Invasive” is about what a plant does, not where it's from: most plants ` +
+      `moved to a new place never spread. [Why we say it that way](${APP}/native).`,
+    visit: [
+      { label: "See the worst invasives", href: `${APP}/invasives` },
+      { label: "What to grow instead", href: `${APP}/alternatives` },
+    ],
+    learn: [
+      {
+        label: "Why invasive plants are a problem",
+        source: "National Invasive Species Information Center",
+        href: "https://www.invasivespeciesinfo.gov/subject/plants",
+      },
+      {
+        label: "Report an invasive plant you've found",
+        source: "EDDMapS (University of Georgia)",
+        href: "https://www.eddmaps.org/",
+      },
+    ],
+    match: { segments: ["invasives"] },
     published: true,
   },
   {
@@ -346,7 +392,7 @@ export const SECTIONS = [
       "weighed the crop: more pollinators, more of the insects that eat pests, " +
       "and no more pests. Some natives go further and take a pest away, because " +
       "the worst ones lean on a plant that isn’t from here either — the " +
-      "spotted lanternfly on tree-of-heaven, the soybean aphid wintering on " +
+      `spotted lanternfly on [tree-of-heaven](${APP}/invasives/ailanthus-altissima), the soybean aphid wintering on ` +
       "buckthorn. The page carries the study behind every figure, and the ones " +
       "that argue the other way as well.",
     note:
@@ -468,6 +514,38 @@ export function matchLabels(head) {
     if (!ids.includes(id)) ids.push(id);
   }
   return ids;
+}
+
+// The entry's leading prose prefix: the words before its first colon, as long
+// as they're a plain label and not the start of a sentence with a link or
+// emphasis in it. Kept short and bracket-free so a mid-sentence colon can never
+// be read as a prefix. Tolerates a bold wrapper so `**Regions:**` works too.
+export const PREFIX = /^(?:\*\*)?\s*([A-Za-z][A-Za-z ,&/-]{0,46}?)\s*:(?:\*\*)?\s+/;
+
+/** Where a section's name links: its `home`, else its first way in. */
+export const sectionHome = (s) => s.home ?? s.visit?.[0]?.href;
+
+/**
+ * Link an entry's section prefix to that part of the app — `Regions:` becomes
+ * `[Regions](…/regions):` — so a reader who didn't know the part existed can
+ * go there. Only for an entry that links nowhere else: one link per entry is
+ * plenty, and the entry's own link is always the more specific one. A
+ * multi-section prefix links each name (`Plants & Wildlife:`).
+ */
+export function linkPrefix(md) {
+  if (/\]\(/.test(md)) return md;
+  const m = md.match(PREFIX);
+  if (!m || !matchLabels(m[1])) return md;
+  const linked = m[1]
+    .split(/(\s*[,&]\s*|\s+and\s+)/i)
+    .map((part, i) => {
+      if (i % 2 === 1) return part;
+      const href = sectionHome(SECTION_BY_ID.get(LABEL_TO_ID.get(normalize(part))));
+      return href ? `[${part}](${href})` : part;
+    })
+    .join("");
+  const at = m[0].indexOf(m[1]);
+  return md.slice(0, at) + linked + md.slice(at + m[1].length);
 }
 
 /** The canonical prefix labels, for humans writing entries and for docs. */

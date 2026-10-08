@@ -142,6 +142,33 @@ a {
   color: var(--focus);
 }
 
+/* Links in running text: there to follow, not to read past. They keep the
+   text's color with a quiet underline and take the link color under a pointer
+   or focus, so a paragraph with three links doesn't read as a paragraph of
+   blue. Buttons, chips, heading links and the contents list keep their own
+   looks; a paragraph that is only a way on (`.more-link`) stays bright. */
+.privacy-page > p a,
+.privacy-page > :is(ul, ol) > li a,
+.note a:not(.btn),
+.kv a,
+.step-lede a,
+.region-tag a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: color-mix(in srgb, var(--focus) 55%, transparent);
+}
+:is(.privacy-page > p, .privacy-page > :is(ul, ol) > li, .note, .kv, .step-lede, .region-tag) a:is(:hover, :focus-visible) {
+  color: var(--focus);
+  text-decoration-color: currentColor;
+}
+.privacy-page > p.more-link a,
+p.more-link a {
+  color: var(--focus);
+  text-decoration-color: currentColor;
+}
+
 /* --- Section headings that lead somewhere -------------------------------
    A roster's category heading, a wildlife group's heading, a region on an
    animal's page: each labels the cards under it *and* is the way into that

@@ -311,7 +311,8 @@ async function renderTechnique(main: HTMLElement, tech: Technique): Promise<void
       ]),
     ]),
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("planting") }, t("planting.allTechniques")),
+      // "All techniques" is the back-trail at the top; this row goes on.
+      el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("privacy.findPlants")),
     ])
   );
 }

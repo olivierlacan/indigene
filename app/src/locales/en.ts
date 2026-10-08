@@ -329,6 +329,10 @@ export const en = {
   "spot.obsPickNone": "None of your sightings from the past year are of this plant.",
   "spot.obsPickSetup": "Pick from your iNaturalist photos",
   "spot.obsPickOr": "Or paste any sighting:",
+  // The add form's own sighting picker: one tap links it and uses its date.
+  "spot.addSightingTitle": "From an iNaturalist sighting (optional)",
+  "spot.addSightingLabel": "Use your sighting from {date}",
+  "spot.addSightingHint": "Tap one to link it and use its date.",
   "inat.cardTitle": "Your iNaturalist account",
   "inat.lede": "Link your username to bring your recent plant sightings into a spot's log.",
   "inat.label": "iNaturalist username",

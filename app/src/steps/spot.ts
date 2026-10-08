@@ -29,7 +29,7 @@ import { spotValue, type SpotValue } from "../lib/spot-value";
 import { wildlifeGroups } from "../components/wildlife-chips";
 import { isUuid, linkedObservation, observationUrl, parseObservationRef } from "../lib/observation-link";
 import { observationList, photoTile } from "../components/observation-ui";
-import { ownSightings, sightingsOfPlant, type OwnSighting } from "../lib/inat-import";
+import { ownSightings, plantedBy, sightingsOfPlant, type OwnSighting } from "../lib/inat-import";
 import { isBusy } from "../lib/inaturalist";
 import { plantThumb, invasiveThumb } from "../components/plant-thumb";
 import { silhouetteFor } from "../components/plant-card";
@@ -79,6 +79,14 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
 
   const redraw = (): void => void renderSpot(main, param);
 
+  // The plant handed over by "I planted one" (`?add=<slug>`). Usually on this
+  // spot's own list; when it isn't — a plant page from the next region over —
+  // it is looked up the same way a stray planting is, rather than dropped.
+  const addId = hashParam("add");
+  const preset = addId
+    ? byId.get(addId) ?? (await findPlant(addId).catch(() => []))[0]?.plant
+    : undefined;
+
   main.append(
     el("h2", { class: "step-title" }, spot.label),
     el("p", { class: "step-lede" }, [
@@ -104,7 +112,7 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
     ...(value?.wildlife.length ? [feedsCard(value)] : []),
     logCard(plantings, plantOf, redraw, region?.meta.id),
     ...(spot.invasives?.length ? [invasivesCard(spot, redraw)] : []),
-    addCard(spot, roster, redraw),
+    addCard(spot, roster, plantings, preset, redraw),
     // Only once an account is linked: without one the page it opens can only
     // send you to Settings, and Settings is where linking is offered.
     ...(linkedLogin()
@@ -516,47 +524,71 @@ async function fillPicker(
   }
   picker.append(
     el("p", { class: "log-obs-pick-title" }, t("spot.obsPickTitle")),
-    el("div", { class: "obs-gallery" }, picks.slice(0, MAX_PICKS).map((s) => {
-      const date = s.observedOn ? fmtDate(Date.parse(`${s.observedOn}T12:00:00`)) : t("import.seenUndated");
-      return el("button", {
-        type: "button",
-        class: "log-obs-pick",
-        "aria-label": t("spot.obsPickLabel", { date }),
-        onClick: (e: Event) => {
-          (e.currentTarget as HTMLButtonElement).disabled = true;
-          void link(String(s.id));
-        },
-      }, [
-        // The plant's drawing holds the square while the photo loads, and
-        // stays as the picture for a sighting with no licensed photo.
-        el("span", { class: "obs-tile obs-tile-drawn" }, [
-          silhouetteFor(form ?? "shrub"),
-          s.photo ? photoTile(s.photo.thumbUrl, t("obs.photoAlt", { name, observer: login })) : null,
-        ]),
-        el("span", { class: "log-obs-pick-date", "aria-hidden": "true" }, date),
-      ]);
-    })),
+    el("div", { class: "obs-gallery" }, picks.slice(0, MAX_PICKS).map((s) =>
+      sightingTile(s, name, form, login, "spot.obsPickLabel", (btn) => {
+        btn.disabled = true;
+        void link(String(s.id));
+      })
+    )),
     el("p", { class: "hint" }, t("spot.obsPickOr")),
   );
+}
+
+/** One of the linked account's sightings as a tappable tile, its date under it. */
+function sightingTile(
+  s: OwnSighting,
+  name: string,
+  form: string | undefined,
+  login: string,
+  labelKey: "spot.obsPickLabel" | "spot.addSightingLabel",
+  onPick: (btn: HTMLButtonElement) => void
+): HTMLButtonElement {
+  const date = s.observedOn ? fmtDate(Date.parse(`${s.observedOn}T12:00:00`)) : t("import.seenUndated");
+  return el("button", {
+    type: "button",
+    class: "log-obs-pick",
+    "aria-label": t(labelKey, { date }),
+    onClick: (e: Event) => onPick(e.currentTarget as HTMLButtonElement),
+  }, [
+    // The plant's drawing holds the square while the photo loads, and
+    // stays as the picture for a sighting with no licensed photo.
+    el("span", { class: "obs-tile obs-tile-drawn" }, [
+      silhouetteFor(form ?? "shrub"),
+      s.photo ? photoTile(s.photo.thumbUrl, t("obs.photoAlt", { name, observer: login })) : null,
+    ]),
+    el("span", { class: "log-obs-pick-date", "aria-hidden": "true" }, date),
+  ]) as HTMLButtonElement;
 }
 
 // --- adding ----------------------------------------------------------------
 
 /**
  * "I planted one of these." A plant, a date to whatever precision is honest,
- * and how many.
+ * and how many — typed in, or taken from one of the gardener's iNaturalist
+ * sightings, which also links that sighting to the new row.
  *
  * The picker searches the spot's own region roster, because that is the list
  * this spot's plants come from — and `?add=<slug>` opens it with the plant
  * already chosen, which is how the button on a plant's page hands over (see
- * `components/planted-control.ts`).
+ * `components/planted-control.ts`). Once a plant is chosen the search steps
+ * aside: an empty "Search by name" box above a chosen plant reads as if nothing
+ * had been chosen at all.
  */
-function addCard(spot: SavedSpot, roster: Plant[], redraw: () => void): HTMLElement {
-  let chosen: Plant | undefined = roster.find((p) => p.id === hashParam("add"));
+function addCard(
+  spot: SavedSpot,
+  roster: Plant[],
+  plantings: Planting[],
+  preset: Plant | undefined,
+  redraw: () => void
+): HTMLElement {
+  let chosen: Plant | undefined;
+  // The sighting this entry is being made from, if one was picked or pasted.
+  let sighting: string | null = null;
 
   const picked = el("div", { class: "log-picked" });
   const results = el("div", { "aria-live": "polite" });
   const form = el("form", { hidden: true });
+  const sightingBox = el("div", { class: "field log-add-sighting" });
 
   const search = el("input", {
     type: "search",
@@ -565,6 +597,10 @@ function addCard(spot: SavedSpot, roster: Plant[], redraw: () => void): HTMLElem
     placeholder: t("spot.searchPlaceholder"),
     onInput: () => showMatches(),
   }) as HTMLInputElement;
+  const searchField = el("div", { class: "field" }, [
+    el("label", { for: "log-plant-q" }, t("spot.searchLabel")),
+    search,
+  ]);
 
   function showMatches(): void {
     clear(results);
@@ -593,9 +629,11 @@ function addCard(spot: SavedSpot, roster: Plant[], redraw: () => void): HTMLElem
 
   function choose(p: Plant): void {
     chosen = p;
+    sighting = null;
     search.value = "";
     clear(results);
     clear(picked);
+    searchField.hidden = true;
     picked.append(
       el("p", { class: "log-picked-name" }, [
         el("strong", {}, commonName(p)),
@@ -605,18 +643,85 @@ function addCard(spot: SavedSpot, roster: Plant[], redraw: () => void): HTMLElem
           class: "btn btn-ghost btn-compact",
           onClick: () => {
             chosen = undefined;
+            sighting = null;
             clear(picked);
             form.hidden = true;
+            searchField.hidden = false;
             search.focus();
           },
         }, t("spot.changePlant")),
       ])
     );
+    fillSightings(p);
     form.hidden = false;
+  }
+
+  // Sightings already linked to a row on this spot aren't offered again.
+  const linked = plantings.flatMap((pl) => pl.observations);
+
+  const paste = el("input", {
+    type: "text",
+    class: "log-obs-input",
+    inputmode: "url",
+    autocomplete: "off",
+    autocapitalize: "off",
+    spellcheck: "false",
+    placeholder: t("spot.obsPlaceholder"),
+    "aria-label": t("spot.obsLabel"),
+  }) as HTMLInputElement;
+
+  /** The linked account's sightings of this plant, each a tile that picks it
+   *  and fills in its date; or, with no account, the way to link one. A pasted
+   *  link works either way. */
+  function fillSightings(p: Plant): void {
+    clear(sightingBox);
+    paste.value = "";
+    sightingBox.append(el("p", { class: "log-obs-pick-title" }, t("spot.addSightingTitle")));
+    const login = linkedLogin();
+    const tiles = el("div", { "aria-live": "polite" });
+    sightingBox.append(tiles);
+    if (!login) {
+      tiles.append(el("p", { class: "hint" }, [
+        el("a", { href: "#/settings/inat" }, t("spot.obsPickSetup")),
+      ]));
+    } else {
+      const status = el("p", { class: "hint" }, t("import.asking", { login }));
+      tiles.append(status);
+      void ownSightings(login).then(({ sightings }) => {
+        if (chosen !== p) return; // the plant changed while we were asking
+        const picks = sightingsOfPlant(sightings, p.id, linked).slice(0, MAX_PICKS);
+        clear(tiles);
+        if (!picks.length) {
+          tiles.append(el("p", { class: "hint" }, t("spot.obsPickNone")));
+          return;
+        }
+        const buttons = picks.map((sg) =>
+          sightingTile(sg, commonName(p), p.form, login, "spot.addSightingLabel", (btn) => {
+            const on = sighting !== String(sg.id);
+            sighting = on ? String(sg.id) : null;
+            buttons.forEach((b) => b.setAttribute("aria-pressed", String(b === btn && on)));
+            const date = on ? plantedBy(sg) : null;
+            if (date) fields.setPlanted(date);
+          })
+        );
+        buttons.forEach((b) => b.setAttribute("aria-pressed", "false"));
+        tiles.append(
+          el("div", { class: "obs-gallery" }, buttons),
+          el("p", { class: "hint" }, t("spot.addSightingHint")),
+        );
+      }).catch((err) => {
+        status.textContent = t(isBusy(err) ? "nearby.busy" : "nearby.unreachable");
+      });
+    }
+    sightingBox.append(
+      el("p", { class: "hint", style: "margin:0.5rem 0 0.2rem" }, t("spot.obsPickOr")),
+      paste,
+    );
   }
 
   const fields = plantingFields("log", { year: today().year, month: today().month, day: today().day }, 1);
   form.append(
+    sightingBox,
     ...fields.nodes,
     el("button", { class: "btn btn-primary btn-block", type: "submit" }, t("spot.addButton"))
   );
@@ -625,13 +730,22 @@ function addCard(spot: SavedSpot, roster: Plant[], redraw: () => void): HTMLElem
     e.preventDefault();
     const pick = chosen;
     if (!pick) return;
+    // A pasted link wins over a tapped tile: it's the last thing typed.
+    let ref = sighting;
+    if (paste.value.trim()) {
+      ref = parseObservationRef(paste.value);
+      if (!ref) {
+        toast(t("spot.obsBad"));
+        return;
+      }
+    }
     await savePlanting({
       id: plantingId(),
       spotId: spot.id,
       plantId: pick.id,
       count: fields.count(),
       planted: fields.planted(),
-      observations: [],
+      observations: ref ? [ref] : [],
       createdAt: Date.now(),
     });
     toast(t("spot.added", { name: commonName(pick) }));
@@ -641,14 +755,11 @@ function addCard(spot: SavedSpot, roster: Plant[], redraw: () => void): HTMLElem
     else redraw();
   });
 
-  if (chosen) choose(chosen);
+  if (preset) choose(preset);
 
-  return el("section", { class: "card" }, [
+  return el("section", { class: "card", id: "log-add" }, [
     el("h3", { style: "margin:0 0 0.5rem" }, t("spot.addTitle")),
-    el("div", { class: "field" }, [
-      el("label", { for: "log-plant-q" }, t("spot.searchLabel")),
-      search,
-    ]),
+    searchField,
     results,
     picked,
     form,
@@ -668,7 +779,12 @@ function plantingFields(
   prefix: string,
   initial: PlantedDate | null,
   initialCount: number
-): { nodes: HTMLElement[]; planted: () => PlantedDate | null; count: () => number } {
+): {
+  nodes: HTMLElement[];
+  planted: () => PlantedDate | null;
+  setPlanted: (d: PlantedDate) => void;
+  count: () => number;
+} {
   const now = today();
   const year = el("input", {
     type: "number",
@@ -740,6 +856,12 @@ function plantingFields(
             ...(month.value && day.value ? { day: Number(day.value) } : {}),
           }
         : null;
+    },
+    setPlanted: (d) => {
+      year.value = String(d.year);
+      month.value = d.month ? String(d.month) : "";
+      syncDays();
+      day.value = d.month && d.day ? String(d.day) : "";
     },
     count: () => Math.max(1, Math.min(999, Number(count.value) || 1)),
   };

@@ -19,6 +19,7 @@ import { copyFileSync, existsSync, readFileSync, writeFileSync, mkdirSync } from
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { autolink, foldFragments, readFragments, reportFragmentError } from "./_changelog.mjs";
+import { linkPrefix } from "./guide-catalog.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO = resolve(HERE, "../..");
@@ -670,7 +671,7 @@ function renderRelease(r, { standalone = false, assets = "" } = {}) {
     if (s.items.length === 0) continue;
     parts.push(`<h3>${escapeHtml(s.title)}</h3>`);
     parts.push(`<ul>`);
-    for (const item of s.items) parts.push(`<li>${inline(item)}</li>`);
+    for (const item of s.items) parts.push(`<li>${inline(linkPrefix(item))}</li>`);
     parts.push(`</ul>`);
   }
   parts.push(`</div>`, `</article>`);

@@ -32,6 +32,8 @@
 //   lede      2–4 short sentences: what it is, and who it's for.
 //   steps     How you actually use it, as a short numbered list. Optional.
 //   note      One extra thing worth knowing. Optional.
+//   home      Where a changelog prefix naming this section links. Optional;
+//             defaults to the first `visit` link.
 //   visit     [{label, href}] deep links into the live app, so the guide is a
 //             way *in*, not only a way to read about it.
 //   learn     [{label, source, href}] trusted places to learn more, for the
@@ -204,6 +206,9 @@ export const SECTIONS = [
       "Most of what you'll plant is doing fine — the note shows only on the few " +
       "pages where it isn't. Where it does: buy from a nursery, never dig one " +
       "from the wild; for an animal, planting what it needs is the help it can use.",
+    // No page of its own in the app: a rank shows on the plant or animal it's
+    // about, so the name links to the explanation instead.
+    home: `${APP}/guide/conservation/`,
     visit: [{ label: "Browse the plants", href: `${APP}/plants` }],
     learn: [
       {
@@ -468,6 +473,38 @@ export function matchLabels(head) {
     if (!ids.includes(id)) ids.push(id);
   }
   return ids;
+}
+
+// The entry's leading prose prefix: the words before its first colon, as long
+// as they're a plain label and not the start of a sentence with a link or
+// emphasis in it. Kept short and bracket-free so a mid-sentence colon can never
+// be read as a prefix. Tolerates a bold wrapper so `**Regions:**` works too.
+export const PREFIX = /^(?:\*\*)?\s*([A-Za-z][A-Za-z ,&/-]{0,46}?)\s*:(?:\*\*)?\s+/;
+
+/** Where a section's name links: its `home`, else its first way in. */
+export const sectionHome = (s) => s.home ?? s.visit?.[0]?.href;
+
+/**
+ * Link an entry's section prefix to that part of the app — `Regions:` becomes
+ * `[Regions](…/regions):` — so a reader who didn't know the part existed can
+ * go there. Only for an entry that links nowhere else: one link per entry is
+ * plenty, and the entry's own link is always the more specific one. A
+ * multi-section prefix links each name (`Plants & Wildlife:`).
+ */
+export function linkPrefix(md) {
+  if (/\]\(/.test(md)) return md;
+  const m = md.match(PREFIX);
+  if (!m || !matchLabels(m[1])) return md;
+  const linked = m[1]
+    .split(/(\s*[,&]\s*|\s+and\s+)/i)
+    .map((part, i) => {
+      if (i % 2 === 1) return part;
+      const href = sectionHome(SECTION_BY_ID.get(LABEL_TO_ID.get(normalize(part))));
+      return href ? `[${part}](${href})` : part;
+    })
+    .join("");
+  const at = m[0].indexOf(m[1]);
+  return md.slice(0, at) + linked + md.slice(at + m[1].length);
 }
 
 /** The canonical prefix labels, for humans writing entries and for docs. */

@@ -30,7 +30,7 @@
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { SECTIONS, SEGMENT_TO_ID, matchLabels, SECTION_LABELS, APP } from "./guide-catalog.mjs";
+import { SECTIONS, SEGMENT_TO_ID, matchLabels, SECTION_LABELS, APP, PREFIX } from "./guide-catalog.mjs";
 import { autolink } from "./_changelog.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -140,11 +140,6 @@ function parseChangelog(text) {
 
 // ---------- file each bullet under its sections ----------
 
-// The entry's leading prose prefix: the words before its first colon, as long
-// as they're a plain label and not the start of a sentence with a link or
-// emphasis in it. Kept short and bracket-free so a mid-sentence colon can never
-// be read as a prefix. Tolerates a bold wrapper so `**Regions:**` works too.
-const PREFIX = /^(?:\*\*)?\s*([A-Za-z][A-Za-z ,&/-]{0,46}?)\s*:(?:\*\*)?\s+/;
 // Any indigene.app or in-app link, reduced to its first path part. Matches
 // both the shareable path form (indigene.app/wildlife) and the hash form
 // (#/saved) the changelog uses for pages with no file of their own.

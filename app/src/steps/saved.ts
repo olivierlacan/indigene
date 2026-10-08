@@ -2,9 +2,16 @@ import { el, clear, toast } from "../ui";
 import { navigate, openSavedSpot } from "../state";
 import { listSpots, deleteSpot, listPlantings } from "../db";
 import type { Planting } from "../types";
-import { latPlain, lonPlain, sunPlain } from "../lib/plain";
+import { latPlain, lonPlain, sunLabel } from "../lib/plain";
 import { tally } from "../lib/garden";
-import { spotWildlifeCount } from "../lib/spot-value";
+import { spotWildlife } from "../lib/spot-value";
+import type { TieSummary } from "../lib/wildlife";
+import { wildlifeThumb } from "../components/wildlife-thumb";
+import { glyphKeyFor } from "../components/wildlife-glyphs";
+import { commonName } from "../lib/names";
+import { linkedLogin } from "../lib/inat-account";
+import { cachedOwnCount } from "../lib/spot-sightings";
+import { lookupArgs } from "../components/spot-wildlife";
 import { regionForSpot } from "../lib/plants";
 import { privacyNote } from "../components/privacy-link";
 import { cardStats } from "../components/card-stats";
@@ -34,17 +41,27 @@ export async function renderSaved(main: HTMLElement): Promise<void> {
   // a person's own garden, tens of rows at most.
   const plantings = await listPlantings().catch(() => [] as Planting[]);
 
+  // Read from the device only: what each spot's page last found of the linked
+  // account's own wildlife photos. A list never asks iNaturalist anything.
+  const login = linkedLogin();
+  const ownSeen = await Promise.all(spots.map((s) => {
+    if (!login) return undefined;
+    const mine = plantings.filter((p) => p.spotId === s.id);
+    const animals = spotWildlife(mine.map((p) => p.plantId), regionForSpot(s)?.meta.id ?? null);
+    const { ids, since } = lookupArgs(mine, { wildlife: animals });
+    return cachedOwnCount(s.id, ids, since, login).catch(() => undefined);
+  }));
+
   const list = el("ul", { class: "saved-list" });
-  for (const s of spots) {
+  for (const [i, s] of spots.entries()) {
     const mine = plantings.filter((p) => p.spotId === s.id);
     const counts = tally(mine);
     // Counted off the tie table and the registry, both already here — so a row
     // can say what a garden feeds without downloading a single plant list, and
     // says the same number the spot's own page does.
-    const wildlife = spotWildlifeCount(
-      mine.map((p) => p.plantId),
-      regionForSpot(s)?.meta.id ?? null
-    );
+    const regionId = regionForSpot(s)?.meta.id;
+    const animals = spotWildlife(mine.map((p) => p.plantId), regionId ?? null);
+    const wildlife = animals.length;
     const item = el("li", { class: "saved-item" }, [
       // Beside the name, because the name is the only other thing telling one
       // saved spot from another — and one you gave a corner of a garden last
@@ -93,11 +110,25 @@ export async function renderSaved(main: HTMLElement): Promise<void> {
                     label: tn("saved.statWildlife", wildlife, { count: fmtNumber(wildlife) }),
                   }
                 : null,
+              // Your own wildlife photos here, when the spot's page has found
+              // some: the spots with something to show for themselves stand out.
+              ownSeen[i]
+                ? {
+                    icon: "📷",
+                    value: fmtNumber(ownSeen[i]!),
+                    label: tn("saved.statOwn", ownSeen[i]!, { count: fmtNumber(ownSeen[i]!) }),
+                  }
+                : null,
             ])
           : null,
       ]),
+      // The animals themselves, a row of faces: the friendliest thing a list
+      // of gardens can show, and the way into this spot's whole menu.
+      wildlife ? faces(s.id, animals, regionId) : null,
       el("div", { class: "saved-item-sun" },
-        s.sun ? sunPlain(s.sun.hours) : t("saved.sunUnknown")),
+        s.sun
+          ? `☀️ ${t("results.sunSummary", { label: sunLabel(s.sun.hours), hours: fmtNumber(s.sun.hours) })}`
+          : t("saved.sunUnknown")),
       el("div", { class: "saved-item-actions" }, [
         el("button", {
           class: "btn btn-secondary", style: "min-height:2.6rem;padding:0.4rem 0.7rem",
@@ -132,4 +163,23 @@ export async function renderSaved(main: HTMLElement): Promise<void> {
     privacyNote(t("saved.privacy")),
     el("button", { class: "btn btn-primary btn-block", style: "margin-top:1rem", onClick: () => navigate("location") }, t("saved.findAnother"))
   );
+}
+
+/** Faces shown before the row says "+N". Five fit beside each other at 360 px. */
+const FACES = 5;
+
+/** A spot's animals as a row of overlapping circles, linking to its menu. */
+function faces(spotId: string, animals: TieSummary[], regionId?: string): HTMLElement {
+  const shown = animals.slice(0, FACES);
+  const rest = animals.length - shown.length;
+  return el("a", {
+    class: "saved-faces",
+    href: `#/saved/${encodeURIComponent(spotId)}/wildlife`,
+    "aria-label": t("saved.facesLabel", { names: shown.map((a) => commonName(a.wildlife)).join(", ") }),
+  }, [
+    ...shown.map((a) =>
+      wildlifeThumb(a.wildlife.id, glyphKeyFor(a.wildlife.kind, a.wildlife.inat?.iconic), { px: 40, regionId })
+    ),
+    rest > 0 ? el("span", { class: "saved-faces-more", "aria-hidden": "true" }, `+${fmtNumber(rest)}`) : null,
+  ]);
 }

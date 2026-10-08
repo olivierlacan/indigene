@@ -2,10 +2,9 @@
 // there are enough of them to be a wall) folded into the browse index's own
 // groups.
 //
-// Shared by the plant profile ("wildlife it brings in") and a saved spot's page
-// ("what it can feed"), because both are answering the same question — *who
-// actually turns up?* — and an answer that looks different in two places reads
-// as two different claims.
+// The chips are the plant profile's ("wildlife it brings in"); the pills are a
+// region's. A saved spot draws its own grid (`spot-wildlife.ts`), with the
+// plant of yours each animal eats.
 //
 // A star marks a plant the animal can't live without. The small glyph after the
 // name says how the plant helps: raising its young, feeding an adult, berries,
@@ -42,26 +41,6 @@ export function wildlifeChips(ties: TieSummary[]): HTMLElement {
 }
 
 /**
- * The same animals, folded into the five groups the wildlife index browses by
- * — butterflies, moths, bees, birds, mammals.
- *
- * A garden of a dozen kinds can document forty animals, and forty chips one
- * under another is a wall to scroll past rather than a picture of anything.
- * Five short pills fit two or three to a line, say how many of each at a
- * glance, and hold the names behind a tap for whoever wants them.
- *
- * One group open at a time, on purpose: opening a second is nearly always
- * "…and what's in that one", not "show me both", and an accordion keeps the
- * card the same height whichever pill you press.
- *
- * @param idBase Prefix for each panel's id, so two of these on one page can't
- *   claim the same `aria-controls` target.
- */
-export function wildlifeGroups(ties: TieSummary[], idBase: string): HTMLElement {
-  return kindGroups(ties.map((tie) => ({ wildlife: tie.wildlife, chip: wildlifeChip(tie) })), idBase);
-}
-
-/**
  * The same five pills for a whole *region* rather than for a set of plants: the
  * animals a region's roster feeds, on the region's own page.
  *
@@ -91,7 +70,7 @@ export function wildlifeRegionGroups(rows: WildlifeIndexRow[], idBase: string): 
   );
 }
 
-/** The accordion both of the above are: five pills, one open at a time, the
+/** The accordion the region pills are: five pills, one open at a time, the
  *  chips behind them. Written once so a group of animals reads the same
  *  wherever it's counted from. */
 function kindGroups(items: Array<{ wildlife: Wildlife; chip: HTMLElement }>, idBase: string): HTMLElement {

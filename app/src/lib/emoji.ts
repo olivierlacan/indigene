@@ -37,6 +37,7 @@ import type { TKey } from "../locales/en";
  *  selector (U+FE0F), which pages carry inconsistently. */
 const MEANING: Record<string, TKey> = {
   "🦋": "emoji.wildlife",
+  "👀": "emoji.seen",
   "🤝": "emoji.groups",
   "🐦": "emoji.birds",
   "🕊": "emoji.birds",

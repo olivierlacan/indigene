@@ -23,7 +23,7 @@ export function relianceOf(link: SupportLink): SupportReliance {
 /** How strong a promise each support kind is, strongest first. Raising the next
  *  generation beats feeding a passing adult, so a plant that does both is
  *  labelled by the host tie. */
-const SUPPORT_RANK: Record<SupportKind, number> = {
+export const SUPPORT_RANK: Record<SupportKind, number> = {
   host: 0,
   nectar: 1,
   berries: 2,

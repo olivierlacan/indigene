@@ -33,6 +33,17 @@ subtitle on the What's new page.
 
 ### Added
 
+- A saved spot now shows the wildlife on its menu: each animal your plants can
+  feed, with its picture and the plant of yours it eats. Tap one to meet it.
+- A saved spot can look for those animals on iNaturalist: a 👀 badge marks the
+  ones seen within 5 km, and photos show who turned up since you planted.
+- Saved spots show a row of the animals each garden can feed.
+- Internal: `lib/spot-sightings.ts` asks iNaturalist twice per spot (species
+  counts, newest sightings) using taxon ids pinned by `npm run wildlife:taxa`
+  (`data/wildlife-taxa.json`). Coordinates are rounded to 0.01°; a username is
+  never sent with a place. The spot's accordion of wildlife groups is gone
+  (`wildlifeGroups`), replaced by a tile grid that links to
+  `#/saved/<id>/wildlife` past nine.
 - Matches: when you log a plant in a saved spot, you can pick one of your
   iNaturalist sightings of it. The sighting gets linked, and its date fills
   in the planting date. You can still type the details yourself.

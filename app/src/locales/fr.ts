@@ -277,6 +277,7 @@ export const fr: Dict = {
   "saved.statKinds.other": "{count} espèces de plantes différentes",
   "saved.statWildlife.one": "{count} espèce animale que ces plantes peuvent nourrir",
   "saved.statWildlife.other": "{count} espèces animales que ces plantes peuvent nourrir",
+  "saved.facesLabel": "Au menu de la faune ici : {names}",
   "saved.openLog": "Déjà planté →",
   "saved.startLog": "Commencer un journal →",
 
@@ -305,9 +306,22 @@ export const fr: Dict = {
   "spot.tileWildlife": "Faune",
   "spot.tileWildlifeExplain":
     "Les insectes et animaux que vos plantes peuvent nourrir ici, d'après les sources. Cela dit qu'ils peuvent profiter de ce que vous avez planté — pas qu'ils l'ont déjà trouvé.",
-  "spot.feedsTitle": "La faune que vos plantes peuvent nourrir",
-  "spot.feedsNote":
-    "Connu pour profiter de ces plantes, pas observé chez vous. ⭐ = aucune autre plante ne convient.",
+  "spot.menuTitle": "Au menu de la faune",
+  "spot.menuNote": "Ces animaux mangent ce que vous avez planté, même s'ils ne l'ont peut-être pas encore trouvé. ⭐ = aucune autre plante ne convient.",
+  "spot.menuMore": "Tout voir",
+  "spot.menuEmpty": "Inscrivez une plante ici et les animaux qu'elle peut nourrir apparaîtront sur cette page.",
+  "spot.seenBadge.one": "Vu une fois à moins de {distance}",
+  "spot.seenBadge.other": "Vu {n} fois à moins de {distance}",
+  "spot.spottedTitle": "Vus dans le coin",
+  "spot.spottedLede": "Voyez lesquels ont été photographiés à moins de {distance} de cet endroit.",
+  "spot.spottedAsk": "Chercher sur iNaturalist",
+  "spot.spottedPrivacy": "iNaturalist reçoit un point arrondi à 1 km environ, jamais l'endroit lui-même.",
+  "spot.spottedYours": "Vos propres observations",
+  "spot.sincePlanted": "Depuis vos plantations, {date}",
+  "spot.pastYear": "Cette dernière année",
+  "spot.spottedHonest": "Vos plantes ne sont peut-être pas la raison de leur venue. Mais s'ils passent, le repas est servi.",
+  "spot.spottedNone": "Aucune photo d'eux à moins de {distance} sur cette période. Prenez-en une : ce serait une première.",
+  "spot.spottedAdd": "Publier une observation sur iNaturalist ↗",
   "spot.logTitle": "Ce que vous avez planté",
   "spot.logEmpty":
     "Rien d'inscrit ici pour l'instant. Ajoutez la première plante mise en terre — la date peut rester vague, « 2024 » suffit.",
@@ -410,7 +424,7 @@ export const fr: Dict = {
   "spot.invasiveRemoved": "Retirée de la liste.",
   "privacy.inatTitle": "Si vous reliez votre compte iNaturalist",
   "privacy.inat1": "Votre nom d'utilisateur est gardé dans ce navigateur et nulle part ailleurs. Il ne figure pas non plus dans le fichier où les Réglages enregistrent vos lieux.",
-  "privacy.inat2": "Il n'est envoyé à iNaturalist que lorsque vous le reliez ou importez, pour demander vos observations de plantes, déjà publiques sur iNaturalist. Nous ne demandons pas où elles ont été faites.",
+  "privacy.inat2": "Il n'est envoyé à iNaturalist que lorsque vous le reliez, importez, ou cherchez la faune autour d'un endroit enregistré, pour demander vos observations, déjà publiques sur iNaturalist. Nous n'envoyons jamais de lieu avec.",
   "privacy.inat3": "Il n'apparaît jamais dans l'adresse d'une page : le compteur de visites ne le voit donc jamais. Ni mot de passe ni connexion : Indigene ne peut rien publier ni modifier sur iNaturalist.",
   "privacy.inat4": "Seul ce que vous cochez est gardé : le numéro de l'observation, sur la ligne qu'elle a créée. Retirez votre nom d'utilisateur dans les Réglages et il disparaît.",
 
@@ -1827,7 +1841,7 @@ export const fr: Dict = {
     "Pour que vous voyiez exactement ce qui se passe : quand une recherche a besoin de votre lieu, votre navigateur s'adresse directement à ces services publics. Chacun ne voit que cette recherche-là, n'obtient ni nom ni compte (il n'y en a pas), et applique sa propre politique de confidentialité à cette requête.",
   "privacy.svc.sentWrap": "(on lui envoie {sent}).",
   "privacy.svc.inat.for":
-    "des photos de plantes et d'animaux observés à proximité, la fréquence à laquelle une espèce y a été relevée, toute observation que vous reliez à votre journal de plantation, et vos propres observations de plantes si vous les importez",
+    "des photos de plantes et d'animaux observés à proximité, la fréquence à laquelle une espèce y a été relevée, quels animaux d'un endroit enregistré ont été vus autour, toute observation que vous reliez à votre journal de plantation, et vos propres observations si vous les importez",
   "privacy.svc.inat.sent":
     "des coordonnées ou une zone de carte, plus l'espèce recherchée — ou, pour une observation reliée, seulement la référence d'observation que vous avez collée, et pour un import, seulement votre nom d'utilisateur",
   "privacy.svc.meteo.for":
@@ -2531,6 +2545,7 @@ export const fr: Dict = {
   "society.what.provenance": "pépinières d'origine locale",
   "society.what.pollinators": "guides de plantation pour pollinisateurs",
   "emoji.wildlife": "faune",
+  "emoji.seen": "vu à proximité",
   "emoji.birds": "oiseaux",
   "emoji.moths": "papillons de nuit",
   "emoji.bees": "abeilles",

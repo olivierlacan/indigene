@@ -26,7 +26,7 @@ import {
   today,
 } from "../lib/garden";
 import { spotValue, type SpotValue } from "../lib/spot-value";
-import { wildlifeGroups } from "../components/wildlife-chips";
+import { menuCard, sightingsCard, fullMenu } from "../components/spot-wildlife";
 import { isUuid, linkedObservation, observationUrl, parseObservationRef } from "../lib/observation-link";
 import { observationList, photoTile } from "../components/observation-ui";
 import { nativeSightings, ownSightings, plantedBy, sightingsOfPlant, type OwnSighting } from "../lib/inat-import";
@@ -49,7 +49,9 @@ const MAX_MATCHES = 8;
 
 export async function renderSpot(main: HTMLElement, param?: string): Promise<void> {
   clear(main);
-  const id = param ?? "";
+  // `<id>/wildlife` is the spot's whole menu, for a garden that feeds more
+  // animals than the card has room for.
+  const [id = "", sub] = (param ?? "").split("/");
   const spot = await getSpot(id).catch(() => undefined);
   if (!spot) {
     main.append(
@@ -76,8 +78,21 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
   }
   const plantOf = (plantId: string): Plant | undefined => byId.get(plantId);
   const value = spotValue(plantings, plantOf, region?.meta.id ?? null);
+  const plantName = (plantId: string): string | undefined => {
+    const p = plantOf(plantId);
+    return p ? commonName(p) : undefined;
+  };
+
+  if (sub === "wildlife") {
+    fullMenu(main, spot, plantings, value, plantName, region?.meta.id);
+    return;
+  }
 
   const redraw = (): void => void renderSpot(main, param);
+
+  // Who the plants can feed, and who has been seen around here.
+  const menu = value?.wildlife.length ? menuCard(spot, value, plantName, region?.meta.id) : null;
+  const spotted = menu && value ? sightingsCard(spot, plantings, value, menu.showSeen) : null;
 
   // The plant handed over by "I planted one" (`?add=<slug>`). Usually on this
   // spot's own list; when it isn't — a plant page from the next region over —
@@ -111,7 +126,8 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
       el("a", { href: `#/location?move=${encodeURIComponent(spot.id)}` }, t("spot.move")),
     ]),
     countsCard(plantings, value),
-    ...(value?.wildlife.length ? [feedsCard(value)] : []),
+    ...(menu ? [menu.card] : []),
+    ...(spotted ? [spotted] : []),
     logCard(plantings, plantOf, redraw, region?.meta.id),
     ...(spot.invasives?.length ? [invasivesCard(spot, redraw)] : []),
     addCard(spot, roster, linked, preset, redraw),
@@ -178,33 +194,6 @@ function countsCard(plantings: Planting[], value: SpotValue | null): HTMLElement
   // carry the tile (see `TileOptions`).
   return el("section", { class: "card" }, [
     statTiles(stats, t("spot.tilesLabel"), { figures: true }),
-  ]);
-}
-
-// --- who it can feed -------------------------------------------------------
-
-/**
- * The named animals this planting can feed — the one thing a garden's plants
- * add up to that we can say without inventing a figure.
- *
- * Deliberately not a score. Each plant carries seven eco-values, and averaging
- * them across a log would produce a confident-looking number built out of
- * estimates that were never meant to be added together — a garden's "77 for
- * pollinators" reads as a measurement of the garden, which is not something we
- * have. A list of ties is what the data actually holds: this plant, this
- * animal, one cited source each.
- *
- * Shown by group rather than as one long column of names, because a dozen
- * plants can document forty animals and forty names is a wall (see
- * `wildlifeGroups`). The line under the heading keeps the whole thing honest:
- * a documented tie means the animal *can* use the plant, not that it has found
- * yours.
- */
-function feedsCard(value: SpotValue): HTMLElement {
-  return el("section", { class: "card" }, [
-    el("h3", { style: "margin:0 0 0.3rem" }, t("spot.feedsTitle")),
-    el("p", { class: "note" }, t("spot.feedsNote")),
-    wildlifeGroups(value.wildlife, "spot-feeds"),
   ]);
 }
 

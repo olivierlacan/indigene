@@ -55,7 +55,12 @@ function scopesFor(plantIds: Iterable<string>, spotRegionId: string | null): Tie
 /** How many named animals a log's plants can feed — the figure a saved-spot row
  *  shows, and the same one that spot's page shows in its tiles. */
 export function spotWildlifeCount(plantIds: Iterable<string>, spotRegionId: string | null): number {
-  return bestTies(scopesFor(new Set(plantIds), spotRegionId)).length;
+  return spotWildlife(plantIds, spotRegionId).length;
+}
+
+/** The animals themselves, by the same rule — for the faces on a saved-spot row. */
+export function spotWildlife(plantIds: Iterable<string>, spotRegionId: string | null): TieSummary[] {
+  return bestTies(scopesFor(new Set(plantIds), spotRegionId));
 }
 
 export interface SpotValue {

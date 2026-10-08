@@ -740,6 +740,14 @@ a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .release h2 .permalink:hover, .release h2 .permalink:focus-visible {
   text-decoration: underline;
 }
+/* Links inside a note's words are there to follow, not to read past: they
+   keep the text's color with a quiet underline, and take the link color only
+   under a pointer or focus. The page's real ways on stay bright. */
+.release-body li a {
+  color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.18em;
+  text-decoration-color: color-mix(in srgb, var(--focus) 50%, transparent);
+}
+.release-body li a:hover, .release-body li a:focus-visible { color: var(--focus); text-decoration-color: currentColor; }
 /* Older/newer release links at the foot of a single release's page. */
 .pager {
   display: flex; flex-wrap: wrap; gap: 0.5rem 1rem;

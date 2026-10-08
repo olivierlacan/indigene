@@ -318,6 +318,14 @@ a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .rel ul { margin: 0.25rem 0 0.5rem; padding-left: 1.2rem; }
 .rel li { margin: 0.45rem 0; color: var(--ink-soft); }
 .rel li strong, .rel li em { color: var(--ink); }
+/* Links inside a note's words are there to follow, not to read past: they
+   keep the text's color with a quiet underline, and take the link color only
+   under a pointer or focus. The page's real ways on stay bright. */
+.rel li a {
+  color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.18em;
+  text-decoration-color: color-mix(in srgb, var(--focus) 50%, transparent);
+}
+.rel li a:hover, .rel li a:focus-visible { color: var(--focus); text-decoration-color: currentColor; }
 .empty { color: var(--ink-soft); font-style: italic; }
 code {
   background: var(--brand-bg); color: var(--brand-ink);

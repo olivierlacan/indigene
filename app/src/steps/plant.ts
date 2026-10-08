@@ -361,7 +361,10 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
               traitBadges(p, true),
             ]),
           ]),
-          el("p", { class: "kv plant-why" }, [el("span", { class: "k" }, t("plant.whyBelongs")), prose(p, "nativeNote", region.meta.id)]),
+          el("p", { class: "kv plant-why" }, [el("span", { class: "k" }, [
+            // "Native" is the app's one load-bearing word; its page says what it means.
+            el("a", { href: "#/native" }, t("plant.whyBelongs").trimEnd()), " ",
+          ]), prose(p, "nativeNote", region.meta.id)]),
           // What the assessors say, where they say anything — under the name,
           // because it changes how the plant should be treated rather than
           // whether it suits the spot.

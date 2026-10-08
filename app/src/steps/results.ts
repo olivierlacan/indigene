@@ -255,7 +255,9 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
   main.append(
     el("h2", { class: "step-title" }, t("results.title")),
     el("p", { class: "region-tag", style: "margin:0 0 0.5rem;font-size:0.9rem;color:var(--ink-soft)" },
-      chosen ? t("results.regionTagPick", { region: name }) : t("results.regionTag", { region: name })),
+      // The region links its whole roster: the list below is only its best fits.
+      tx(chosen ? "results.regionTagPick" : "results.regionTag",
+        { region: el("a", { href: `#/regions/${region.meta.id}` }, name) })),
     el("p", { class: "step-lede" }, conditions),
     el("div", { class: "result-controls" }, [rankedFor, filters]),
     summaryEl,

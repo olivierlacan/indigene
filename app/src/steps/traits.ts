@@ -10,6 +10,7 @@
 // carry, so there is one explanation per figure to write and translate, not two.
 import { el, clear } from "../ui";
 import { t } from "../lib/i18n";
+import { CONFIDENCE_ROUTE } from "../components/confidence-meter";
 import { temperatureSpan } from "../lib/units";
 import { TRAIT_GROUPS, traitById } from "../lib/traits";
 import { traitBadge } from "../components/trait-badges";
@@ -55,6 +56,8 @@ export function renderTraits(main: HTMLElement, param?: string): void {
           el("dd", {}, f.explain()),
         ])),
       ]),
+      // The page's way on: the figures above are only as good as their evidence.
+      el("p", { class: "more-link" }, el("a", { href: CONFIDENCE_ROUTE }, t("traits.confidenceLink"))),
     ])
   );
 

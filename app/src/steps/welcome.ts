@@ -19,7 +19,8 @@ export function renderWelcome(main: HTMLElement): void {
     el("p", { class: "step-lede" }, t("welcome.lede1")),
     el("p", { class: "step-lede" }, t("welcome.lede2")),
     el("div", { class: "note info" }, [
-      el("strong", {}, t("welcome.noAccount")),
+      // The claim links the page that backs it up.
+      el("a", { href: "#/privacy" }, el("strong", {}, t("welcome.noAccount").trimEnd())), " ",
       t("welcome.noAccountRest"),
     ]),
     el("button", {

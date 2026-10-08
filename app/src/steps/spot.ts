@@ -110,7 +110,7 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
     el("h2", { class: "step-title" }, spot.label),
     el("p", { class: "step-lede" }, [
       spot.sun ? sunPlain(spot.sun.hours) : t("saved.sunUnknown"),
-      region ? ` · ${regionName(region.meta)}` : "",
+      ...(region ? [" · ", el("a", { href: `#/regions/${region.meta.id}` }, regionName(region.meta))] : []),
     ]),
     // Fixing the spot itself: a better name, or a pin that landed next door.
     el("p", { class: "spot-edit" }, [

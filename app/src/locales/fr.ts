@@ -439,7 +439,8 @@ export const fr: Dict = {
   "privacy.inat1": "Votre nom d'utilisateur est gardé dans ce navigateur et nulle part ailleurs. Il ne figure pas non plus dans le fichier où les Réglages enregistrent vos lieux.",
   "privacy.inat2": "Il n'est envoyé à iNaturalist que lorsque vous le reliez, importez, ou cherchez la faune autour d'un endroit enregistré, pour demander vos observations, déjà publiques sur iNaturalist. Nous n'envoyons jamais de lieu avec.",
   "privacy.inat3": "Il n'apparaît jamais dans l'adresse d'une page : le compteur de visites ne le voit donc jamais. Ni mot de passe ni connexion : Indigene ne peut rien publier ni modifier sur iNaturalist.",
-  "privacy.inat4": "Seul ce que vous cochez est gardé : le numéro de l'observation, sur la ligne qu'elle a créée. Retirez votre nom d'utilisateur dans les Réglages et il disparaît.",
+  "privacy.inat4": "Seul ce que vous cochez est gardé : le numéro de l'observation, sur la ligne qu'elle a créée. {link} et il disparaît.",
+  "privacy.inat4Link": "Retirez votre nom d'utilisateur dans les Réglages",
 
   "planted.button": "🌱 J'en ai planté une",
   "planted.whichSpot": "Dans quel lieu l'avez-vous plantée ?",
@@ -1031,6 +1032,7 @@ export const fr: Dict = {
   "traits.docTitle": "Caractéristiques des plantes — Indigene",
   "traits.title": "Caractéristiques des plantes",
   "traits.lede": "Ce que veut dire chaque étiquette et chaque chiffre de la page d'une plante.",
+  "traits.confidenceLink": "À quel point nous sommes sûrs des chiffres de chaque plante",
   "traits.group.water": "💧 Arrosage",
   "traits.group.wildlife": "🦋 Faune",
   "traits.group.handling": "✋ Précautions",
@@ -2070,7 +2072,8 @@ export const fr: Dict = {
     "C'est défendable, et nous le défendrions — mais c'est bel et bien une approximation, et elle flatte les membres les plus faibles d'un groupe fort.",
   "sources.chal3": "Les régions ne sont pas également bien sourcées. ",
   "sources.chal3Rest":
-    "Certaines listes reposent sur des décennies de travail botanique régional ; les plus récentes sont plus minces. L'indicateur de fiabilité de chaque plante le montre, plante par plante, selon une seule règle.",
+    "Certaines listes reposent sur des décennies de travail botanique régional ; les plus récentes sont plus minces. L'{link} de chaque plante le montre, plante par plante, selon une seule règle.",
+  "sources.chal3Link": "indicateur de fiabilité",
   "sources.chal4": "Les comptes de chenilles américains reposent sur un terrain moins sûr que les européens. ",
   "sources.chal4Rest":
     "Les chiffres européens viennent d'un jeu de données sous licence ouverte que nous pouvons vous indiquer et recalculer entièrement. Les chiffres américains viennent de travaux publiés dont la base n'a pas de licence ouverte — ils sont donc plus difficiles à vérifier que nous ne le voudrions.",
@@ -2253,7 +2256,8 @@ export const fr: Dict = {
   "wanted.photosLede": "Des photos confirmées sur iNaturalist, prises dans une région où elle figure sur la liste.",
   "wanted.tellApart": "Souvent confondue avec",
   "wanted.noPhotos": "Aucune photo confirmée de cette région sur iNaturalist pour l'instant.",
-  "wanted.onLists": "Parmi les pires : {places}",
+  "wanted.onLists": "Parmi les pires : {places} — {remove}.",
+  "wanted.removeLink": "comment l'arracher",
   "wanted.placeLink": "{region} (n° {n})",
 
   "wlNearby.seeItNear": "Le voir près de chez vous",
@@ -2334,13 +2338,16 @@ export const fr: Dict = {
     "L'estimation du soleil est une fourchette, pas une décimale, parce que les capteurs mentent et que la réponse honnête est une plage. Le relevé de sol est toujours présenté comme « la carte dit ceci — voici un test de soixante secondes pour vérifier si c'est vrai là où vous êtes », parce qu'un carré de carte des sols est plus grand que votre jardin entier. Sur place, vous en savez plus que la carte, et l'application est faite pour vous laisser la contredire.",
   "about.stance.sourced": "Chaque chiffre doit pouvoir être rattaché à quelqu'un d'autre.",
   "about.stance.sourcedBody":
-    "Chaque plante porte ses sources et une note de confiance en mots simples, et quand un chiffre relève de notre jugement plutôt que d'un comptage, la page des sources le dit et nomme ceux que nous contesterions en premier. Rien n'est inventé pour combler un trou — une plante sans nom français affiche son nom scientifique plutôt qu'une invention plausible.",
+    "Chaque plante porte ses sources et une note de confiance en mots simples, et quand un chiffre relève de notre jugement plutôt que d'un comptage, {link} le dit et nomme ceux que nous contesterions en premier. Rien n'est inventé pour combler un trou — une plante sans nom français affiche son nom scientifique plutôt qu'une invention plausible.",
+  "about.stance.sourcedLink": "la page des sources",
   "about.stance.yours": "Indigene n'attend rien de vous.",
   "about.stance.yoursBody":
-    "Pas de compte, pas d'inscription, pas de publicité, rien de vendu. Un compteur de visites note quelle page a été ouverte, et rien sur qui l'a ouverte ; vous pouvez le couper dans les Réglages. Les lieux enregistrés restent dans votre navigateur, sur votre appareil, parce qu'il n'existe aucun serveur où les envoyer. Aucun inconnu ne peut vous contacter par ce biais.",
+    "Pas de compte, pas d'inscription, pas de publicité, rien de vendu. Un compteur de visites note quelle page a été ouverte, et rien sur qui l'a ouverte ; vous pouvez {link}. Les lieux enregistrés restent dans votre navigateur, sur votre appareil, parce qu'il n'existe aucun serveur où les envoyer. Aucun inconnu ne peut vous contacter par ce biais.",
+  "about.stance.yoursLink": "le couper dans les Réglages",
   "about.stance.portable": "Vos données partent avec vous.",
   "about.stance.portableBody":
-    "Les réglages écrivent chaque lieu enregistré et son journal de plantation dans un fichier simple qui vous appartient, et en relisent un dans un autre navigateur. Passer d'un téléphone à un ordinateur demande un fichier, pas un compte — et ce fichier est à vous : à ouvrir, à garder, ou à confier à tout autre outil.",
+    "{link} écrivent chaque lieu enregistré et son journal de plantation dans un fichier simple qui vous appartient, et en relisent un dans un autre navigateur. Passer d'un téléphone à un ordinateur demande un fichier, pas un compte — et ce fichier est à vous : à ouvrir, à garder, ou à confier à tout autre outil.",
+  "about.stance.portableLink": "Les réglages",
   "about.stance.offline": "Indigene fonctionne là où sont les jardins.",
   "about.stance.offlineBody":
     "Conçue pour marcher hors ligne et pour s'installer sur l'écran d'accueil, parce que le fond d'un jardin est précisément l'endroit où le réseau disparaît. Tout sauf les consultations en direct continue de fonctionner sans aucune connexion.",
@@ -2452,7 +2459,8 @@ export const fr: Dict = {
   // --- la moitié de l'argument que personne ne fait ----------------------
   "crops.takeAwayTitle": "Certaines indigènes éloignent les ravageurs",
   "crops.takeAway1":
-    "Voilà la moitié de l'argument que personne n'avance. Dans un jardin, le réservoir à ravageurs est le plus souvent une plante que quelqu'un a achetée, et plusieurs des pires ravageurs d'Amérique du Nord en dépendent. Remplacez cette plante par une indigène et vous coupez la chaîne sous leurs pieds.",
+    "Voilà la moitié de l'argument que personne n'avance. Dans un jardin, le réservoir à ravageurs est le plus souvent une plante que quelqu'un a achetée, et plusieurs des pires ravageurs d'Amérique du Nord en dépendent. {link} et vous coupez la chaîne sous leurs pieds.",
+  "crops.takeAway1Link": "Remplacez cette plante par une indigène",
   "crops.fig.chain.cut": "Changez la plante, coupez la chaîne",
   "crops.fig.chain.ailanthus": "Ailante",
   "crops.fig.chain.lanternfly": "Fulgore tachetée",
@@ -2468,7 +2476,8 @@ export const fr: Dict = {
   "crops.takeAway2":
     "Le cas de l'épine-vinette a été compté. Dans des bois du Connecticut, sous une épine-vinette du Japon intacte, on trouvait environ 280 tiques porteuses de la maladie de Lyme par hectare ; là où l'arbuste avait été coupé, 121 ; là où il n'y en avait jamais eu, 30. Un seul dégagement a tenu six ans avant que l'arbuste ne revienne.",
   "crops.takeAway3":
-    "N'exagérons rien, cependant. Arracher un ailante ne fera pas disparaître la fulgore tachetée — elle se nourrit sur une soixantaine d'autres arbres et lianes. Couper la chaîne réduit un ravageur. Cela ne l'efface pas.",
+    "N'exagérons rien, cependant. Arracher {link} ne fera pas disparaître la fulgore tachetée — elle se nourrit sur une soixantaine d'autres arbres et lianes. Couper la chaîne réduit un ravageur. Cela ne l'efface pas.",
+  "crops.takeAway3Link": "un ailante",
 
   // --- l'affirmation la plus facile à surinterpréter --------------------------
   "crops.redirectTitle": "Iront-ils manger la haie plutôt que mes cerises ?",
@@ -2674,13 +2683,15 @@ export const fr: Dict = {
   "native.short4": "Une plante envahissante pose problème par ce qu'elle fait, pas par son origine. La plupart des plantes transportées ailleurs ne se répandent jamais.",
   "native.speciesTitle": "La coévolution se fait entre espèces, pas entre nations",
   "native.species1": "Une chenille qui ne mange que du chêne ne l'a pas choisi par fidélité. Au fil de milliers de générations, son corps a appris à déjouer les défenses du chêne, et la plupart des insectes herbivores sont spécialisés comme elle. C'est pour cela que la liste de plantes de votre coin compte.",
-  "native.species2": "Cette histoire s'est jouée sur un paysage de climat, de sol et de mer, pas de pays. Les listes d'Indigene suivent donc des régions naturelles, pas des frontières. La liste irlandaise couvre toute l'île, République et Irlande du Nord confondues, et un lieu de la péninsule de Kintyre, en Écosse, la reçoit aussi : la même terre atlantique porte les mêmes plantes.",
+  "native.species2": "Cette histoire s'est jouée sur un paysage de climat, de sol et de mer, pas de pays. Les listes d'Indigene suivent donc des régions naturelles, pas des frontières. {ireland} couvre toute l'île, République et Irlande du Nord confondues, et un lieu de la péninsule de Kintyre, en Écosse, la reçoit aussi : la même terre atlantique porte les mêmes plantes.",
+  "native.species2Link": "La liste irlandaise",
   "native.historyTitle": "L'aire d'origine est une histoire, pas une identité",
   "native.history1": "L'endroit où une plante est indigène tient en partie au hasard de la dernière glaciation. Le hêtre est indigène dans le sud de l'Angleterre mais pas en Irlande : la mer est montée entre les deux avant qu'il n'arrive. Les aires ont toujours bougé, et elles bougent maintenant que le climat se réchauffe.",
   "native.history2": "Beaucoup de paysages indigènes « sauvages » étaient aussi entretenus par des gens. Les brûlis des peuples salish de la côte ont gardé ouvertes pendant des siècles les prairies à chêne de Garry du Nord-Ouest Pacifique, et les Māori plantaient des bosquets de karaka pour leurs fruits. Planter des indigènes prolonge ce soin.",
   "native.behaviorTitle": "« Envahissante » décrit un comportement, pas une origine",
   "native.behavior1": "La plupart des plantes transportées dans un nouveau lieu ne s'y répandent jamais seules. Une règle approximative de l'écologie des invasions : environ une espèce importée sur dix apparaît dans la nature, une sur dix de celles-ci s'y installe, et une sur dix de ces dernières devient nuisible. Les rares qui le deviennent posent problème parce qu'elles étouffent les bois ou engorgent les rivières, pas à cause de leur origine.",
-  "native.behavior2": "Certains écologues mettent en garde contre le fait de juger une espèce sur son origine (Davis et coll., 2011). D'autres répondent qu'arracher une plante pour un dommage mesuré n'a rien de xénophobe (Simberloff, 2003). Indigene donne raison aux deux : chaque envahissante de l'application y figure pour ce qu'elle fait. Vos tomates viennent des Andes, et c'est très bien.",
+  "native.behavior2": "Certains écologues mettent en garde contre le fait de juger une espèce sur son origine (Davis et coll., 2011). D'autres répondent qu'arracher une plante pour un dommage mesuré n'a rien de xénophobe (Simberloff, 2003). Indigene donne raison aux deux : {invasives} y figure pour ce qu'elle fait. Vos tomates viennent des Andes, et c'est très bien.",
+  "native.behavior2Link": "chaque envahissante de l'application",
   "native.whyTitle": "Pourquoi nous le disons tout haut",
   "native.why1": "Ce vocabulaire a déjà été détourné. Dans l'Allemagne nazie, des paysagistes ont lié les plantes « indigènes » à la pureté raciale, et en 1942 un groupe de botanistes a appelé à éradiquer la petite balsamine, une modeste fleur des bois venue d'Asie, en la traitant d'« envahisseur mongol ». L'écologue Jacques Tassin a montré combien le discours sur les espèces envahissantes emprunte encore son vocabulaire à la xénophobie.",
   "native.why2": "Alors quand nous disons indigène, nous parlons du chêne et de ses chenilles, jamais d'une personne.",
@@ -2753,7 +2764,8 @@ export const fr: Dict = {
   "llm.even2": "Nous ne déduisons pas de la facture les jardins qu'Indigene aide à planter. Ce bienfait est réel, mais ce n'est pas un chiffre que nous pouvons garantir.",
   "llm.notTitle": "Ce qui n'est pas compté",
   "llm.not1": "Neuf premières sessions ont enregistré un prix mais pas de tokens. Leur électricité est déduite de ce prix.",
-  "llm.not2": "Le court film sur Indigene a utilisé les modèles Gemini de Google pour sa narration et sa musique. Cet usage n'a pas été mesuré.",
+  "llm.not2": "{link} a utilisé les modèles Gemini de Google pour sa narration et sa musique. Cet usage n'a pas été mesuré.",
+  "llm.not2Link": "Le court film sur Indigene",
   "llm.not3": "Le temps des personnes, et les ordinateurs sur lesquels elles ont travaillé.",
   "llm.sourcesTitle": "D'où cela vient",
   "llm.src.sessions": "les tokens et le prix de chaque session, une ligne chacune",

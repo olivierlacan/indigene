@@ -68,7 +68,7 @@ export const SECTIONS = [
       "This is the heart of the app. You say where a spot is and how much sun " +
       "it gets, and Indigene shows the plants that grew there long before the " +
       "town did — the ones the local insects, birds and soil already know. " +
-      "“Native” just means that: from here, not brought in from somewhere else.",
+      `[“Native”](${APP}/native) just means that: from here, not brought in from somewhere else.`,
     steps: [
       "Share your location, or drop a pin on the map. Nothing about where you are leaves your phone.",
       "Say how much sun the spot gets — full sun, part shade, or full shade.",
@@ -117,7 +117,7 @@ export const SECTIONS = [
       "On an animal’s page, see the plants that keep it going — and add one to your spot.",
     ],
     note:
-      "An essential plant (ecologists say “keystone”) feeds far more " +
+      `An [essential plant](${APP}/#/traits/essential) (ecologists say “keystone”) feeds far more ` +
       "creatures than its neighbors — plant one and you’ve done the work of ten.",
     visit: [
       { label: "Meet the wildlife", href: `${APP}/wildlife` },
@@ -280,7 +280,7 @@ export const SECTIONS = [
       "iNaturalist — real people identify what you've found.",
     visit: [
       { label: "See the look-alikes", href: `${APP}/lookalikes` },
-      { label: "Browse the plants", href: `${APP}/plants` },
+      { label: "The worst invasives", href: `${APP}/invasives` },
     ],
     learn: [
       {
@@ -351,7 +351,7 @@ export const SECTIONS = [
       "weighed the crop: more pollinators, more of the insects that eat pests, " +
       "and no more pests. Some natives go further and take a pest away, because " +
       "the worst ones lean on a plant that isn’t from here either — the " +
-      "spotted lanternfly on tree-of-heaven, the soybean aphid wintering on " +
+      `spotted lanternfly on [tree-of-heaven](${APP}/invasives/ailanthus-altissima), the soybean aphid wintering on ` +
       "buckthorn. The page carries the study behind every figure, and the ones " +
       "that argue the other way as well.",
     note:

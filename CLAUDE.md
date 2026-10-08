@@ -96,6 +96,18 @@ or two figures), link the rest. If something has no page yet and deserves more
 than its row, give it one. This is a baseline expectation for every new piece
 of UI, not a preference to weigh.
 
+## Cross-link what a page names
+
+When a page names another part of the app — a region, a plant, the invasives,
+Settings, the Native page — link the name. A reader who didn't know the part
+existed finds it, and no page is a dead end: each ends with a way on. Two
+limits keep it from turning into a page of blue:
+
+- **One link per target per page.** The first mention links; later ones don't.
+- **Links in running text stay quiet.** They keep the text's color with a soft
+  underline (`styles.css`, "Links in running text"). Buttons and chips are the
+  calls to action; a paragraph that is only a way on gets `.more-link`.
+
 ## Mobile-first UI: buttons stay on one line
 
 This is a mobile-first PWA — assume a narrow phone (≈360 px wide) is the common

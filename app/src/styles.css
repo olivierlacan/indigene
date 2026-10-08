@@ -5341,6 +5341,20 @@ body[data-layout="profile"] .wip-banner-text {
   min-height: 2.4rem;
   padding: 0.3rem 0.5rem;
 }
+/* A season-plan row (components/season-plan.ts): what to do with the plant,
+   and when — the technique is a link, ripe seed is lit because it won't wait. */
+.grow-do {
+  margin: 0.2rem 0 0.15rem;
+  font-size: 0.95rem;
+}
+.grow-ripe {
+  color: var(--brand-ink);
+  font-weight: 700;
+}
+.badge.grow-first {
+  display: table;
+  margin: 0 0 0.25rem;
+}
 /* What it should be by now. Given the brand tint because it's the one line on
    the row that is the app talking rather than the gardener's own record. */
 .log-growth {

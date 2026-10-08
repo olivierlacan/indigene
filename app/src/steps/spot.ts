@@ -27,6 +27,7 @@ import {
 } from "../lib/garden";
 import { spotValue, type SpotValue } from "../lib/spot-value";
 import { menuCard, sightingsCard, ownCard, fullMenu } from "../components/spot-wildlife";
+import { planFor, renderSeasonPlan, seasonCard } from "../components/season-plan";
 import { isUuid, linkedObservation, observationUrl, parseObservationRef } from "../lib/observation-link";
 import { observationList, photoTile } from "../components/observation-ui";
 import { nativeSightings, ownSightings, plantedBy, sightingsOfPlant, type OwnSighting } from "../lib/inat-import";
@@ -87,6 +88,12 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
     fullMenu(main, spot, plantings, value, plantName, region?.meta.id);
     return;
   }
+  // `<id>/season` is the whole season plan: what to propagate now, and what
+  // to add for the wildlife seen nearby.
+  if (sub === "season") {
+    renderSeasonPlan(main, spot, plantings, plantOf, region, roster);
+    return;
+  }
 
   const redraw = (): void => void renderSpot(main, param);
 
@@ -95,6 +102,7 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
   const spotted = menu && value ? sightingsCard(spot, plantings, value, menu.showSeen) : null;
   // The gardener's own sightings come first: they're the ones that are theirs.
   const own = value?.wildlife.length ? ownCard(spot, plantings, value, plantName, region?.meta.id) : null;
+  const season = seasonCard(spot, planFor(spot, plantings, plantOf, region), plantOf, plantings, region?.meta.id);
 
   // The plant handed over by "I planted one" (`?add=<slug>`). Usually on this
   // spot's own list; when it isn't — a plant page from the next region over —
@@ -128,6 +136,8 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
       el("a", { href: `#/location?move=${encodeURIComponent(spot.id)}` }, t("spot.move")),
     ]),
     countsCard(plantings, value),
+    // What this season is for, from the plants already here.
+    ...(season ? [season] : []),
     ...(own ? [own] : []),
     ...(menu ? [menu.card] : []),
     ...(spotted ? [spotted] : []),

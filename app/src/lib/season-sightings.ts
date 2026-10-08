@@ -9,8 +9,9 @@
 //
 // Same request shape, same privacy: one species-counts call for every animal
 // at once, from a point rounded to about a kilometre, and only when the person
-// taps to look — never on its own, and never on a yes remembered from the
-// sightings card or an earlier visit. The months travel as `month=9,10,11`, which says nothing about the spot.
+// taps to look. An answer already on the device is shown without asking, and
+// kept a month (`SEASON_TTL_MS`), so a spot costs iNaturalist at most one call
+// per season-month window, not one per visit. The months travel as `month=9,10,11`, which says nothing about the spot.
 //
 // **Can, not will.** A plant that feeds an animal seen nearby is a good bet,
 // not a promise. The page says "seen near here", never "will come".
@@ -18,7 +19,6 @@ import { kvGet, kvSet } from "../db";
 import type { Plant } from "../types";
 import { SUPPORT } from "../data/wildlife";
 import { InatError } from "./inaturalist";
-import { CACHE_TTL_MS } from "./nearby";
 import { mirrorMonth, type Hemisphere } from "./hemisphere";
 import type { Season } from "./planting";
 import { relianceOf, wildlifeForPlant } from "./wildlife";
@@ -57,22 +57,48 @@ export interface SeasonSightings {
   capturedAt: number;
 }
 
-/** One spot's answer, from a week-long cache when there is one. Rejects only on
- *  a real fetch failure. */
+/**
+ * How long a season's answer is kept. A month, not the week the sightings card
+ * uses: these are counts over every past year, so a few weeks of new photos
+ * barely move them, and each refresh is a call to iNaturalist we don't need.
+ */
+export const SEASON_TTL_MS = 30 * 24 * 60 * 60 * 1000;
+
+function cacheKey(spot: { lat: number; lon: number }, taxonIds: number[], months: number[]): string {
+  const p = roundedPoint(spot.lat, spot.lon);
+  return `season-sightings:${p.lat},${p.lon}:${months.join(",")}:${taxonIds.join(",")}`;
+}
+
+function taxonIdsFor(wildlifeIds: readonly string[]): { taxa: Map<number, string>; taxonIds: number[] } {
+  const taxa = taxaFor(wildlifeIds);
+  return { taxa, taxonIds: [...taxa.keys()].sort((a, b) => a - b) };
+}
+
+/** The answer already on the device, when it's fresh — never a request. */
+export async function cachedSeasonSightings(
+  spot: { lat: number; lon: number },
+  wildlifeIds: readonly string[],
+  months: number[],
+  now: number = Date.now()
+): Promise<SeasonSightings | undefined> {
+  const { taxonIds } = taxonIdsFor(wildlifeIds);
+  if (!taxonIds.length) return undefined;
+  const hit = await kvGet<SeasonSightings>(cacheKey(spot, taxonIds, months)).catch(() => undefined);
+  return hit && now - hit.capturedAt < SEASON_TTL_MS ? hit : undefined;
+}
+
+/** One spot's answer: the device's copy when it's fresh, otherwise one request.
+ *  Rejects only on a real fetch failure. */
 export async function seasonSightings(
   spot: { lat: number; lon: number },
   wildlifeIds: readonly string[],
   months: number[],
   now: number = Date.now()
 ): Promise<SeasonSightings> {
-  const taxa = taxaFor(wildlifeIds);
-  const taxonIds = [...taxa.keys()].sort((a, b) => a - b);
+  const { taxa, taxonIds } = taxonIdsFor(wildlifeIds);
   if (!taxonIds.length) return { counts: {}, capturedAt: now };
-
-  const p = roundedPoint(spot.lat, spot.lon);
-  const key = `season-sightings:${p.lat},${p.lon}:${months.join(",")}:${taxonIds.join(",")}`;
-  const hit = await kvGet<SeasonSightings>(key).catch(() => undefined);
-  if (hit && now - hit.capturedAt < CACHE_TTL_MS) return hit;
+  const hit = await cachedSeasonSightings(spot, wildlifeIds, months, now);
+  if (hit) return hit;
 
   const res = await fetch(buildSeasonUrl({ lat: spot.lat, lon: spot.lon, taxonIds, months }));
   if (!res.ok) throw new InatError(res.status, "observations");
@@ -81,7 +107,7 @@ export async function seasonSightings(
     counts: foldCounts(Array.isArray(data?.results) ? data.results : [], taxa),
     capturedAt: now,
   };
-  await kvSet(key, result).catch(() => {});
+  await kvSet(cacheKey(spot, taxonIds, months), result).catch(() => {});
   return result;
 }
 

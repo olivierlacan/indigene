@@ -27,7 +27,14 @@ import { t, tn, fmtNumber } from "../lib/i18n";
 import { distance } from "../lib/units";
 import { isBusy } from "../lib/inaturalist";
 import { SPOT_RADIUS_KM } from "../lib/spot-sightings";
-import { plantsToAdd, regionAnimals, seasonMonths, seasonSightings } from "../lib/season-sightings";
+import {
+  cachedSeasonSightings,
+  plantsToAdd,
+  regionAnimals,
+  seasonMonths,
+  seasonSightings,
+  type SeasonSightings,
+} from "../lib/season-sightings";
 import { freshnessLine } from "./observation-ui";
 
 /** Rows on a card before it hands over to the plan's own page. */
@@ -160,8 +167,8 @@ export function renderSeasonPlan(
 
 /**
  * Natives to add for the animals photographed near the spot in this season's
- * months. Nothing goes to iNaturalist until the person taps the button, on
- * every visit: a yes given elsewhere, or last time, doesn't count as one here.
+ * months. An answer already on the device shows straight away; otherwise
+ * nothing goes to iNaturalist until the person taps the button.
  */
 function addCard(spot: SavedSpot, plantings: Planting[], region: RegionDef | null, roster: Plant[], season: Season): HTMLElement {
   const card = el("section", { class: "card" }, [el("h3", { style: "margin:0 0 0.3rem" }, t("grow.addTitle"))]);
@@ -188,16 +195,20 @@ function addCard(spot: SavedSpot, plantings: Planting[], region: RegionDef | nul
     intro.hidden = true;
     clear(out);
     out.append(el("p", { class: "note" }, t("nearby.asking")));
-    let counts: Record<string, number>;
-    let capturedAt: number;
+    let answer: SeasonSightings;
     try {
-      ({ counts, capturedAt } = await seasonSightings(spot, regionAnimals(regionId), months));
+      answer = await seasonSightings(spot, regionAnimals(regionId), months);
     } catch (err) {
       clear(out);
       out.append(el("p", { class: "note warn" }, t(isBusy(err) ? "nearby.busy" : "nearby.unreachable")));
       intro.hidden = false;
       return;
     }
+    show(answer, answer.capturedAt < started);
+  }
+
+  function show({ counts }: SeasonSightings, fromDevice: boolean): void {
+    intro.hidden = true;
     clear(out);
     const picks = plantsToAdd(roster, regionId, planted, counts, spot.sun?.hours ?? null).slice(0, ADD_ROWS);
     if (!picks.length) {
@@ -227,10 +238,14 @@ function addCard(spot: SavedSpot, plantings: Planting[], region: RegionDef | nul
         el("p", { class: "hint" }, t("grow.addHonest")),
       );
     }
-    out.append(freshnessLine(capturedAt < started));
+    out.append(freshnessLine(fromDevice));
   }
 
   card.append(el("p", { class: "note", style: "margin:0 0 0.5rem;padding:0" }, t("grow.addLede", { distance: within })), intro, out);
+  // Already looked this month: show it, read from the device alone.
+  void cachedSeasonSightings(spot, regionAnimals(regionId), months).then((hit) => {
+    if (hit) show(hit, true);
+  });
   return card;
 }
 

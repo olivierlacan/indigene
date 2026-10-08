@@ -3,15 +3,21 @@
 //
 // Two cards on the spot's page (`steps/spot.ts`):
 //
-//   - **The menu.** Every animal the logged plants are documented to feed, as a
+//   - **Wildlife in the neighborhood.** Every animal the logged plants are documented to feed, as a
 //     grid of tiles — the animal, and the plant of yours it eats. A tile is a
 //     link to the animal's page, where the depth lives. A big garden's grid
 //     stops at nine and the last tile opens the whole list on a page of its own
-//     (`#/saved/<id>/wildlife`) rather than folding the rest away.
+//     (`#/saved/<id>/wildlife`) rather than folding the rest away. (It was "on
+//     the menu" for a day, which read as if we meant to eat them.)
 //   - **Spotted around here.** Real iNaturalist sightings of those same animals
 //     near the spot (`lib/spot-sightings.ts`): a "seen nearby" badge lights up
 //     on each tile that has any, and the newest photos since the first planting
 //     fill a gallery. It asks first, and remembers the yes for this spot.
+//   - **Your wildlife sightings here**, with a linked iNaturalist account: the
+//     gardener's own photos of those animals within a kilometre, each beside
+//     the plant of theirs that hosts, feeds or shelters it — the one place the
+//     page lets itself say a plant *might* be why something came. Featured
+//     first, because it's theirs.
 //
 // The sightings card never says the plants brought anything in. It says what it
 // knows — these were seen near here — and lets the reader enjoy it.
@@ -29,14 +35,19 @@ import { openObservationLightbox } from "./lightbox";
 import { plantedLabel, plantedRange } from "../lib/garden";
 import { distance } from "../lib/units";
 import { t, tn, fmtNumber, monthName } from "../lib/i18n";
-import { isBusy } from "../lib/inaturalist";
+import { isBusy, whereWhen } from "../lib/inaturalist";
+import { plantsHelping, type PlantHelp } from "../lib/spot-value";
 import { linkedLogin } from "../lib/inat-account";
 import {
   allowLookup,
   lookupAllowed,
   spotSightings,
+  ownSpotSightings,
+  ownLookupAllowed,
+  allowOwnLookup,
   taxonFor,
   SPOT_RADIUS_KM,
+  OWN_RADIUS_KM,
   type SpotSighting,
   type SpotSightings,
 } from "../lib/spot-sightings";
@@ -131,7 +142,7 @@ export function menuGrid(
   };
 }
 
-/** "Wildlife on the menu" — the card on a spot's page. */
+/** "Wildlife in the neighborhood" — the card on a spot's page. */
 export function menuCard(
   spot: SavedSpot,
   value: SpotValue,
@@ -140,7 +151,7 @@ export function menuCard(
 ): Menu {
   const { grid, showSeen } = menuGrid(spot, value, plantName, regionId);
   const card = el("section", { class: "card menu-card" }, [
-    el("h3", { style: "margin:0 0 0.3rem" }, t("spot.menuTitle")),
+    el("h3", { style: "margin:0 0 0.3rem" }, t("spot.neighborsTitle")),
     el("p", { class: "note" }, t("spot.menuNote")),
     grid,
   ]);
@@ -163,15 +174,17 @@ export function firstPlanted(plantings: Planting[], now: number = Date.now()): {
   return { since: `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`, label: plantedLabel(first.date) };
 }
 
-/** A year ago, the window when nothing logged carries a date. */
-function lastYear(): string {
-  const d = new Date(Date.now() - 365 * 86_400_000);
-  return d.toISOString().slice(0, 10);
+/** About a year ago, the window when nothing logged carries a date — the first
+ *  of the month a year back, so the answer's cache key holds for a month
+ *  rather than changing every day. */
+function lastYear(now: number = Date.now()): string {
+  const d = new Date(now);
+  return `${d.getFullYear() - 1}-${String(d.getMonth() + 1).padStart(2, "0")}-01`;
 }
 
 /** What the lookup asks about, worked out the same way wherever it's asked, so
  *  the full-list page reads the spot page's cached answer instead of asking again. */
-function lookupArgs(plantings: Planting[], value: SpotValue): {
+export function lookupArgs(plantings: Planting[], value: Pick<SpotValue, "wildlife">): {
   ids: string[];
   since: string;
   first: { since: string; label: string } | undefined;
@@ -252,7 +265,7 @@ export function sightingsCard(
     out.append(el("p", { class: "note" }, t("nearby.asking")));
     let result: SpotSightings;
     try {
-      result = await spotSightings(spot, ids, since, linkedLogin());
+      result = await spotSightings(spot, ids, since);
     } catch (err) {
       clear(out);
       out.append(el("p", { class: "note warn" }, t(isBusy(err) ? "nearby.busy" : "nearby.unreachable")));
@@ -265,12 +278,6 @@ export function sightingsCard(
       ? t("spot.sincePlanted", { date: first.label })
       : t("spot.pastYear");
 
-    if (result.mine.length) {
-      out.append(
-        el("h4", { class: "spotted-sub" }, t("spot.spottedYours")),
-        sightingGallery(result.mine, value),
-      );
-    }
     out.append(el("h4", { class: "spotted-sub" }, when));
     if (result.recent.length) {
       out.append(
@@ -288,6 +295,13 @@ export function sightingsCard(
     );
   }
 
+  // Without a linked account, the one way to see your own here.
+  const linkHint = linkedLogin()
+    ? null
+    : el("p", { class: "hint", style: "margin:0.6rem 0 0" }, [
+        el("a", { href: "#/settings/inat" }, t("spot.ownLinkHint")),
+      ]);
+
   // Said yes before: fill in straight away (from the week's cache, usually).
   void lookupAllowed(spot.id).then((ok) => {
     if (ok) void load();
@@ -295,6 +309,115 @@ export function sightingsCard(
 
   return el("section", { class: "card" }, [
     el("h3", { style: "margin:0 0 0.3rem" }, t("spot.spottedTitle")),
+    intro,
+    out,
+    linkHint,
+  ]);
+}
+
+/** "Caterpillars can grow up on your butterfly weed" — how one plant helps. */
+function helpLine(help: PlantHelp, plant: string): HTMLElement {
+  return el("p", { class: "own-help" }, [
+    el("span", { class: "menu-how", "aria-hidden": "true" }, [supportIcon(help.support, 13)]),
+    help.sole ? "⭐ " : "",
+    t(`spot.ownHelp.${help.support}` as const, { plant }),
+  ]);
+}
+
+/**
+ * "Your wildlife sightings here" — only with a linked iNaturalist account. The
+ * gardener's own sightings of the animals their plants can feed, within a
+ * kilometre of the spot, each with the plants that might have drawn it in.
+ * Asks once (by username only — no place leaves the device) and remembers.
+ */
+export function ownCard(
+  spot: SavedSpot,
+  plantings: Planting[],
+  value: SpotValue,
+  plantName: PlantName,
+  regionId?: string
+): HTMLElement | null {
+  const login = linkedLogin();
+  if (!login) return null;
+  const { ids, since, first } = lookupArgs(plantings, value);
+  if (!ids.length) return null;
+  const animals = new Map(value.wildlife.map((tie) => [tie.wildlife.id, tie.wildlife]));
+  const plantIds = plantings.map((p) => p.plantId);
+  const within = distance(OWN_RADIUS_KM);
+  const when = first ? t("spot.sincePlanted", { date: first.label }) : t("spot.pastYear");
+
+  const out = el("div", { "aria-live": "polite" });
+  const intro = el("div", {}, [
+    el("p", { class: "note" }, t("spot.ownLede", { distance: within })),
+    el("button", {
+      type: "button",
+      class: "btn btn-primary btn-block",
+      onClick: () => {
+        void allowOwnLookup(spot.id);
+        void load();
+      },
+    }, t("spot.ownAsk")),
+    el("p", { class: "hint", style: "margin:0.5rem 0 0" }, t("spot.ownPrivacy")),
+  ]);
+
+  async function load(): Promise<void> {
+    intro.hidden = true;
+    clear(out);
+    out.append(el("p", { class: "note" }, t("import.asking", { login: login! })));
+    let sightings: SpotSighting[];
+    try {
+      ({ sightings } = await ownSpotSightings(spot, ids, since, login!));
+    } catch (err) {
+      clear(out);
+      out.append(el("p", { class: "note warn" }, t(isBusy(err) ? "nearby.busy" : "nearby.unreachable")));
+      intro.hidden = false;
+      return;
+    }
+    clear(out);
+    out.append(el("h4", { class: "spotted-sub" }, when));
+    if (!sightings.length) {
+      out.append(el("p", { class: "note" }, t("spot.ownNone", { distance: within })));
+      return;
+    }
+    // One photo per sighting, so the lightbox pages in step with the rows.
+    const list = sightings.map((o) => ({ ...o, photos: o.photos.slice(0, 1) }));
+    out.append(
+      el("ul", { class: "own-list" }, list.map((o, i) => {
+        const animal = animals.get(o.wildlifeId);
+        const name = animal ? commonName(animal) : o.taxonName ?? "";
+        const helps = plantsHelping(o.wildlifeId, plantIds, regionId ?? null).slice(0, 2);
+        const tile = el("button", {
+          type: "button",
+          class: "obs-tile obs-tile-drawn own-photo",
+          "aria-label": t("obs.enlarge", { i: fmtNumber(i + 1), name, observer: o.observer }),
+          title: t("obs.tapToEnlarge", { attribution: o.photos[0].attribution }),
+          onClick: () => openObservationLightbox(list, { observation: i, photo: 0 }, name, tile),
+        }, [
+          wildlifeSilhouette(animal ? glyphKeyFor(animal.kind, animal.inat?.iconic) : "butterfly", 30),
+          photoTile(o.photos[0].thumbUrl, t("obs.photoAlt", { name, observer: o.observer })),
+        ]) as HTMLButtonElement;
+        return el("li", { class: "own-item" }, [
+          tile,
+          el("div", { class: "own-text" }, [
+            el("a", { class: "own-name", href: `#/wildlife/${encodeURIComponent(o.wildlifeId)}` }, name),
+            el("div", { class: "coords" }, whereWhen(o)),
+            ...helps.flatMap((h) => {
+              const plant = plantName(h.plantId);
+              return plant ? [helpLine(h, plant)] : [];
+            }),
+          ]),
+        ]);
+      })),
+      el("p", { class: "note" }, t("spot.ownHonest")),
+    );
+  }
+
+  void ownLookupAllowed(spot.id).then((ok) => {
+    if (ok) void load();
+  });
+
+  return el("section", { class: "card own-card" }, [
+    el("h3", { style: "margin:0 0 0.3rem" }, t("spot.ownTitle")),
     intro,
     out,
   ]);
@@ -313,7 +436,7 @@ export function fullMenu(
     el("p", { class: "spot-edit", style: "margin:0 0 0.4rem" }, [
       el("a", { href: `#/saved/${encodeURIComponent(spot.id)}` }, `← ${spot.label}`),
     ]),
-    el("h2", { class: "step-title" }, t("spot.menuTitle")),
+    el("h2", { class: "step-title" }, t("spot.neighborsTitle")),
   );
   if (!value?.wildlife.length) {
     main.append(el("p", { class: "step-lede" }, t("spot.menuEmpty")));
@@ -328,7 +451,7 @@ export function fullMenu(
     const { ids, since } = lookupArgs(plantings, value);
     if (!ids.length) return;
     try {
-      const r = await spotSightings(spot, ids, since, linkedLogin());
+      const r = await spotSightings(spot, ids, since);
       showSeen(r.counts);
     } catch {
       /* the grid stands on its own */

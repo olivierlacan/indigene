@@ -9,6 +9,9 @@ import type { TieSummary } from "../lib/wildlife";
 import { wildlifeThumb } from "../components/wildlife-thumb";
 import { glyphKeyFor } from "../components/wildlife-glyphs";
 import { commonName } from "../lib/names";
+import { linkedLogin } from "../lib/inat-account";
+import { cachedOwnCount } from "../lib/spot-sightings";
+import { lookupArgs } from "../components/spot-wildlife";
 import { regionForSpot } from "../lib/plants";
 import { privacyNote } from "../components/privacy-link";
 import { cardStats } from "../components/card-stats";
@@ -38,8 +41,19 @@ export async function renderSaved(main: HTMLElement): Promise<void> {
   // a person's own garden, tens of rows at most.
   const plantings = await listPlantings().catch(() => [] as Planting[]);
 
+  // Read from the device only: what each spot's page last found of the linked
+  // account's own wildlife photos. A list never asks iNaturalist anything.
+  const login = linkedLogin();
+  const ownSeen = await Promise.all(spots.map((s) => {
+    if (!login) return undefined;
+    const mine = plantings.filter((p) => p.spotId === s.id);
+    const animals = spotWildlife(mine.map((p) => p.plantId), regionForSpot(s)?.meta.id ?? null);
+    const { ids, since } = lookupArgs(mine, { wildlife: animals });
+    return cachedOwnCount(s.id, ids, since, login).catch(() => undefined);
+  }));
+
   const list = el("ul", { class: "saved-list" });
-  for (const s of spots) {
+  for (const [i, s] of spots.entries()) {
     const mine = plantings.filter((p) => p.spotId === s.id);
     const counts = tally(mine);
     // Counted off the tie table and the registry, both already here — so a row
@@ -94,6 +108,15 @@ export async function renderSaved(main: HTMLElement): Promise<void> {
                     icon: "🦋",
                     value: fmtNumber(wildlife),
                     label: tn("saved.statWildlife", wildlife, { count: fmtNumber(wildlife) }),
+                  }
+                : null,
+              // Your own wildlife photos here, when the spot's page has found
+              // some: the spots with something to show for themselves stand out.
+              ownSeen[i]
+                ? {
+                    icon: "📷",
+                    value: fmtNumber(ownSeen[i]!),
+                    label: tn("saved.statOwn", ownSeen[i]!, { count: fmtNumber(ownSeen[i]!) }),
                   }
                 : null,
             ])

@@ -5,6 +5,7 @@ import {
   buildRecentUrl,
   foldCounts,
   foldSightings,
+  nearSpot,
   roundedPoint,
   taxaFor,
   taxonFor,
@@ -103,5 +104,12 @@ describe("the pinned taxa", () => {
   it("cover the catalog's best-known animals", () => {
     expect(taxonFor("monarch")).toBe(48662);
     expect(taxaFor(["monarch", "not-an-animal"]).size).toBe(1);
+  });
+});
+
+describe("nearSpot", () => {
+  it("keeps the garden and the street outside it, not the neighborhood", () => {
+    const at = (km: number | null) => ({ distanceKm: km } as Parameters<typeof nearSpot>[0][number]);
+    expect(nearSpot([at(0.2), at(0.99), at(1.4), at(null)]).map((o) => o.distanceKm)).toEqual([0.2, 0.99]);
   });
 });

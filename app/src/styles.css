@@ -6540,3 +6540,39 @@ body[data-layout="profile"] .wip-banner-text {
   font-weight: 700;
   color: var(--ink-soft);
 }
+
+/* The gardener's own wildlife sightings at a spot: a photo, then what it was,
+   when and how close, and the plants of theirs that might have drawn it in. */
+.own-card {
+  border-color: var(--brand);
+}
+.own-list {
+  list-style: none;
+  margin: 0.4rem 0 0;
+  padding: 0;
+}
+.own-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--line);
+}
+.own-item:first-child {
+  border-top: 0;
+}
+.own-photo {
+  flex: 0 0 5rem;
+  width: 5rem;
+}
+.own-text {
+  min-width: 0;
+}
+.own-name {
+  font-weight: 700;
+}
+.own-help {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--brand-ink);
+}

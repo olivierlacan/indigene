@@ -11,9 +11,9 @@
 //     first thing in this spot went in (or the past year, when no date was
 //     logged) — so the page can say "since you planted" and show them.
 //
-// Plus, with a linked account, the gardener's own sightings of the same animals
-// in that window — asked for by username alone, with no place attached, and
-// kept only when they fall within the radius of the spot.
+// And, with a linked account, the gardener's own sightings of the same animals
+// (`ownSpotSightings`) — asked for by username alone, with no place attached,
+// and kept only when they fall within a kilometre of the spot.
 //
 // **It never claims the plants brought them.** A sighting nearby is a sighting
 // nearby; the page says so in as many words.
@@ -140,8 +140,6 @@ export interface SpotSightings {
   counts: Record<string, number>;
   /** Newest first, at most `PER_ANIMAL` of any one animal. */
   recent: SpotSighting[];
-  /** The linked account's own, newest first. Empty without one. */
-  mine: SpotSighting[];
   capturedAt: number;
 }
 
@@ -192,34 +190,94 @@ export async function spotSightings(
   spot: { lat: number; lon: number },
   wildlifeIds: readonly string[],
   since: string | undefined,
-  login: string | null,
   now: number = Date.now()
 ): Promise<SpotSightings> {
   const taxa = taxaFor(wildlifeIds);
   const taxonIds = [...taxa.keys()].sort((a, b) => a - b);
-  if (!taxonIds.length) return { counts: {}, recent: [], mine: [], capturedAt: now };
+  if (!taxonIds.length) return { counts: {}, recent: [], capturedAt: now };
 
   const p = roundedPoint(spot.lat, spot.lon);
-  const key = `spot-sightings:${p.lat},${p.lon}:${since ?? ""}:${login ?? ""}:${taxonIds.join(",")}`;
+  const key = `spot-sightings:${p.lat},${p.lon}:${since ?? ""}:${taxonIds.join(",")}`;
   const hit = await kvGet<SpotSightings>(key).catch(() => undefined);
   if (hit && now - hit.capturedAt < CACHE_TTL_MS) return hit;
 
   const base = { lat: spot.lat, lon: spot.lon, taxonIds };
-  const [countRows, recentRows, mineRows] = await Promise.all([
+  const [countRows, recentRows] = await Promise.all([
     ask(buildCountsUrl(base)),
     ask(buildRecentUrl({ ...base, since })),
-    login ? ask(buildRecentUrl({ ...base, since, login })).catch(() => []) : Promise.resolve([]),
   ]);
   const result: SpotSightings = {
     counts: foldCounts(countRows, taxa),
     recent: foldSightings(recentRows, taxa, spot),
-    mine: foldSightings(mineRows, taxa, spot, Infinity).filter(
-      (o) => o.distanceKm != null && o.distanceKm <= SPOT_RADIUS_KM
-    ),
     capturedAt: now,
   };
   await kvSet(key, result).catch(() => {});
   return result;
+}
+
+// --- the gardener's own -----------------------------------------------------
+
+/** "At this spot", for the gardener's own sightings: their own photos have
+ *  exact points, and these are the ones their plants might have drawn in —
+ *  the garden and the street outside it, not the whole neighborhood. */
+export const OWN_RADIUS_KM = 1;
+
+/** Own sightings move faster than a neighborhood's: someone who just posted a
+ *  bee wants to see it today, not next week. */
+const OWN_TTL_MS = 24 * 60 * 60 * 1000;
+
+export interface OwnSpotSightings {
+  sightings: SpotSighting[];
+  capturedAt: number;
+}
+
+/**
+ * The linked account's sightings of a spot's animals since `since`, kept only
+ * within `OWN_RADIUS_KM` of the spot. Asked for by username and taxa alone —
+ * no place leaves the device; the distance is measured here.
+ */
+export async function ownSpotSightings(
+  spot: { id: string; lat: number; lon: number },
+  wildlifeIds: readonly string[],
+  since: string | undefined,
+  login: string,
+  now: number = Date.now()
+): Promise<OwnSpotSightings> {
+  const taxa = taxaFor(wildlifeIds);
+  const taxonIds = [...taxa.keys()].sort((a, b) => a - b);
+  if (!taxonIds.length) return { sightings: [], capturedAt: now };
+
+  const key = `spot-own:${spot.id}:${login}:${since ?? ""}:${taxonIds.join(",")}`;
+  const hit = await kvGet<OwnSpotSightings>(key).catch(() => undefined);
+  if (hit && now - hit.capturedAt < OWN_TTL_MS) return hit;
+
+  const rows = await ask(buildRecentUrl({ lat: spot.lat, lon: spot.lon, taxonIds, since, login }));
+  const result: OwnSpotSightings = {
+    sightings: nearSpot(foldSightings(rows, taxa, spot, Infinity)),
+    capturedAt: now,
+  };
+  await kvSet(key, result).catch(() => {});
+  return result;
+}
+
+/** How many of the gardener's own sightings a spot's page last found, from the
+ *  device alone — never a request. Undefined when it hasn't looked yet. */
+export async function cachedOwnCount(
+  spotId: string,
+  wildlifeIds: readonly string[],
+  since: string | undefined,
+  login: string
+): Promise<number | undefined> {
+  const taxonIds = [...taxaFor(wildlifeIds).keys()].sort((a, b) => a - b);
+  if (!taxonIds.length) return undefined;
+  const key = `spot-own:${spotId}:${login}:${since ?? ""}:${taxonIds.join(",")}`;
+  return (await kvGet<OwnSpotSightings>(key).catch(() => undefined))?.sightings.length;
+}
+
+/** Only the ones close enough to be the garden. An obscured point can't be
+ *  placed, so it isn't claimed. */
+export function nearSpot(sightings: SpotSighting[], radiusKm = OWN_RADIUS_KM): SpotSighting[] {
+  return sightings.filter((o) => o.distanceKm != null && o.distanceKm <= radiusKm);
 }
 
 /** Whether the person has said yes to looking, for this spot. Remembered so the
@@ -230,4 +288,13 @@ export async function lookupAllowed(spotId: string): Promise<boolean> {
 
 export async function allowLookup(spotId: string): Promise<void> {
   await kvSet(`spot-sightings-on:${spotId}`, true).catch(() => {});
+}
+
+/** The same yes, for the gardener's own sightings at this spot. */
+export async function ownLookupAllowed(spotId: string): Promise<boolean> {
+  return (await kvGet<boolean>(`spot-own-on:${spotId}`).catch(() => undefined)) === true;
+}
+
+export async function allowOwnLookup(spotId: string): Promise<void> {
+  await kvSet(`spot-own-on:${spotId}`, true).catch(() => {});
 }

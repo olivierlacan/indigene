@@ -25,7 +25,8 @@
 // has found this particular garden is not ours to claim, and the page says so.
 import type { Plant, Planting } from "../types";
 import { entryForPlant } from "./registry";
-import { bestTies, type TieScope, type TieSummary } from "./wildlife";
+import { bestTies, wildlifeForPlant, SUPPORT_RANK, type TieScope, type TieSummary } from "./wildlife";
+import type { SupportKind } from "../types";
 
 /**
  * Whose ties belong to a plant logged at a spot in `spotRegionId` — the spot's
@@ -93,4 +94,35 @@ export function spotValue(
     wildlife: bestTies(scopesFor(kinds.keys(), spotRegionId)),
     hostKinds: [...kinds.values()].filter((p) => (p.hostLepCount ?? 0) > 0).length,
   };
+}
+
+/** One planted native and how it helps one animal. */
+export interface PlantHelp {
+  plantId: string;
+  support: SupportKind;
+  /** The animal can't do without it. */
+  sole: boolean;
+}
+
+/**
+ * Which of the plants in a log help one animal, and how — the line under a
+ * gardener's own sighting that says why it *might* have turned up here.
+ * Strongest first: a caterpillar host before a nectar stop before shelter.
+ */
+export function plantsHelping(
+  wildlifeId: string,
+  plantIds: Iterable<string>,
+  spotRegionId: string | null
+): PlantHelp[] {
+  const out: PlantHelp[] = [];
+  for (const plantId of new Set(plantIds)) {
+    const links = tieRegions(plantId, spotRegionId)
+      .flatMap((regionId) => wildlifeForPlant(regionId, plantId))
+      .filter(({ wildlife }) => wildlife.id === wildlifeId)
+      .map(({ link }) => link);
+    if (!links.length) continue;
+    const support = links.reduce((a, l) => (SUPPORT_RANK[l.support] < SUPPORT_RANK[a] ? l.support : a), links[0].support);
+    out.push({ plantId, support, sole: links.some((l) => l.reliance === "sole") });
+  }
+  return out.sort((a, b) => Number(b.sole) - Number(a.sole) || SUPPORT_RANK[a.support] - SUPPORT_RANK[b.support]);
 }

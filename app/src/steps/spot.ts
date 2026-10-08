@@ -26,7 +26,7 @@ import {
   today,
 } from "../lib/garden";
 import { spotValue, type SpotValue } from "../lib/spot-value";
-import { menuCard, sightingsCard, fullMenu } from "../components/spot-wildlife";
+import { menuCard, sightingsCard, ownCard, fullMenu } from "../components/spot-wildlife";
 import { isUuid, linkedObservation, observationUrl, parseObservationRef } from "../lib/observation-link";
 import { observationList, photoTile } from "../components/observation-ui";
 import { nativeSightings, ownSightings, plantedBy, sightingsOfPlant, type OwnSighting } from "../lib/inat-import";
@@ -93,6 +93,8 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
   // Who the plants can feed, and who has been seen around here.
   const menu = value?.wildlife.length ? menuCard(spot, value, plantName, region?.meta.id) : null;
   const spotted = menu && value ? sightingsCard(spot, plantings, value, menu.showSeen) : null;
+  // The gardener's own sightings come first: they're the ones that are theirs.
+  const own = value?.wildlife.length ? ownCard(spot, plantings, value, plantName, region?.meta.id) : null;
 
   // The plant handed over by "I planted one" (`?add=<slug>`). Usually on this
   // spot's own list; when it isn't — a plant page from the next region over —
@@ -126,6 +128,7 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
       el("a", { href: `#/location?move=${encodeURIComponent(spot.id)}` }, t("spot.move")),
     ]),
     countsCard(plantings, value),
+    ...(own ? [own] : []),
     ...(menu ? [menu.card] : []),
     ...(spotted ? [spotted] : []),
     logCard(plantings, plantOf, redraw, region?.meta.id),

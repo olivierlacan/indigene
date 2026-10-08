@@ -1898,6 +1898,19 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "western-tiger-swallowtail", support: "host", note: "Willows are a primary larval host for the western tiger swallowtail.", basis: "NWF Native Plant Finder; Xerces." },
       { wildlifeId: "mason-bees", support: "nectar", note: "Willow catkins are one of the earliest, richest pollen sources for spring mason and mining bees.", basis: "Xerces Society." },
     ],
+    "salix-lasiandra": [
+      { wildlifeId: "lorquins-admiral", support: "host", note: "Streamside willows are one of Lorquin's admiral's caterpillar plants, alongside cottonwood.", basis: "BAMONA; Washington Butterfly Association." },
+      { wildlifeId: "mourning-cloak", support: "host", note: "Mourning cloak caterpillars feed in groups on willow leaves, and the adults overwinter nearby.", basis: "BAMONA." },
+      { wildlifeId: "western-tiger-swallowtail", support: "host", note: "Willows are a main caterpillar plant for the western tiger swallowtail.", basis: "NWF Native Plant Finder; Xerces." },
+    ],
+    "salix-hookeriana": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The furry catkins open in March, among the first pollen a bumble bee queen can find.", basis: "Xerces Society." },
+      { wildlifeId: "mourning-cloak", support: "host", note: "Mourning cloak caterpillars feed in groups on willow leaves.", basis: "BAMONA." },
+    ],
+    "salix-sitchensis": [
+      { wildlifeId: "lorquins-admiral", support: "host", note: "Sitka willow is one of the willows Lorquin's admiral raises its caterpillars on.", basis: "BAMONA; Washington Butterfly Association." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Early catkins feed mason and mining bees in spring.", basis: "Xerces Society." },
+    ],
     "populus-trichocarpa": [
       { wildlifeId: "lorquins-admiral", support: "host", reliance: "narrow", note: "Cottonwood is Lorquin's admiral's caterpillar tree. The young larva looks like a bird dropping and overwinters rolled in a leaf it has fastened to the twig so it can't fall.", basis: "GloBI — iNaturalist observation records carrying a larval life stage; BAMONA." },
       { wildlifeId: "western-tiger-swallowtail", support: "host", note: "Cottonwood is a favored caterpillar tree for the western tiger swallowtail.", basis: "NWF Native Plant Finder." },

@@ -2726,6 +2726,24 @@
     "attribution": "(c) Jackson Nesbit, some rights reserved (CC BY-NC), uploaded by Jackson Nesbit",
     "color": "#6d6863"
   },
+  "salix-hookeriana": {
+    "taxonId": 78941,
+    "photoId": 131374502,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/131374502/square.jpg",
+    "observer": "Dee Warenycia",
+    "license": "cc-by-nc",
+    "attribution": "(c) Dee Warenycia, some rights reserved (CC BY-NC), uploaded by Dee Warenycia",
+    "color": "#749061"
+  },
+  "salix-lasiandra": {
+    "taxonId": 78943,
+    "photoId": 3469320,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/3469320/square.jpg",
+    "observer": "Mike Patterson",
+    "license": "cc-by-nc",
+    "attribution": "(c) Mike Patterson, some rights reserved (CC BY-NC), uploaded by Mike Patterson",
+    "color": "#5a6630"
+  },
   "salix-lasiolepis": {
     "taxonId": 53452,
     "photoId": 16056750,
@@ -2734,6 +2752,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Tom Turner, some rights reserved (CC BY-NC), uploaded by Tom Turner",
     "color": "#6e754a"
+  },
+  "salix-sitchensis": {
+    "taxonId": 61100,
+    "photoId": 204164445,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/204164445/square.jpg",
+    "observer": "Remington Tengs Jackson",
+    "license": "cc-by-nc",
+    "attribution": "(c) Remington Tengs Jackson, some rights reserved (CC BY-NC), uploaded by Remington Tengs Jackson",
+    "color": "#929f8a"
   },
   "salvia-apiana": {
     "taxonId": 64134,

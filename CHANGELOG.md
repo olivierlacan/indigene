@@ -47,6 +47,13 @@ subtitle on the What's new page.
   report's thin cells (September–December bloom, dry shade). Four rows reuse
   their California figures with notes rewritten for here. VASCAN files blue
   elderberry as `Sambucus cerulea`, now a reviewed entry in `check-vascan.mjs`.
+- Regions: three more Pacific Northwest willows — Pacific willow for a stream
+  bank, coastal willow for dunes and salt wind, and Sitka willow for wet shade.
+  Willows feed more caterpillars than almost anything else here.
+  https://indigene.app/regions/pnw
+- Internal: all three are native in BC, Oregon and Washington per WCVP and
+  VASCAN. Pacific willow is filed as `Salix lasiandra`: WCVP keeps
+  `Salix lucida` for the eastern shining willow.
 
 ### Fixed
 

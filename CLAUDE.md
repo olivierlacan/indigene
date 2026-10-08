@@ -332,6 +332,34 @@ Preview the page locally with `npm run release-notes` (writes
 `app/dist/release-notes/index.html`); the script fails loudly if the changelog
 doesn't parse, and the same check runs on every PR.
 
+## Every PR shows what its sessions cost
+
+Building Indigene with Claude has a cost in money, electricity and carbon, and
+the one we can see is the one we can keep down. So every PR description ends
+with a `## Session cost` section, and the `Session cost` check fails without
+it.
+
+- **One row per Claude session that worked on the PR**, from that session's
+  own usage record (`get_session`, no `session_id`, reads the current one):
+  model, input, output, cache written, cache read, price, and working time.
+  Then a `**Total: $…**` line, which is what the check reads. A session shared
+  with other PRs shows its total so far and names them.
+- **Call it a floor.** After a restart the usage record keeps only one run's
+  total, and its turn records (`list_events`, `result`) can miss work entirely.
+  Of the first 110 sessions, 70 were recorded low. Report the higher of the
+  two and write "at least".
+- **Update it before you finish**, not just when the PR opens. Editing the
+  description re-runs the check.
+- **Over $30, the check warns; over $100, louder.** The median session is $11,
+  and the 9 sessions over $100 were half the whole bill. Neither blocks a
+  merge. Say in the description why the session ran long.
+- **A PR no session touched** says `No Claude session` under the heading.
+
+Long sessions cost the most because every step re-reads the whole
+conversation: 98% of the tokens so far were re-reads. So start a fresh session
+for each new task, give routine edits a cheaper model or lower effort, and look
+at as few screenshots as the check needs.
+
 ## Two kinds of check, and knowing which one you need
 
 There is a test runner now (`npm test`, Vitest, offline, about a second) and

@@ -193,6 +193,12 @@ export interface NativeMatch {
   plant: Plant;
   /** Already linked to a row in this spot's log — shown, but not offered. */
   inLog: boolean;
+  /** The spot this sighting is already linked to, when it's another one — a
+   *  photo is of one place, so it's shown but not offered. */
+  linkedElsewhere: string | null;
+  /** A row for this plant already in this spot's log, which ticking the
+   *  sighting adds it to instead of starting a second row. */
+  planting: Planting | null;
   /** Invasive look-alikes in this region: the one case where a wrong name
    *  matters, because the gardener may be growing the impostor. */
   lookalikes: LookalikeForPlant[];
@@ -225,7 +231,9 @@ export function sortSightings(
   region: RegionDef,
   roster: Plant[],
   spot: SavedSpot,
-  plantings: Planting[]
+  plantings: Planting[],
+  /** Sightings linked to other spots: observation ref → that spot's label. */
+  elsewhere: ReadonlyMap<string, string> = new Map()
 ): Sorted {
   const nativeIds = new Set(roster.map((p) => p.id));
   const byId = new Map(roster.map((p) => [p.id, p]));
@@ -254,6 +262,8 @@ export function sortSightings(
         sighting: s,
         plant: byId.get(plantId)!,
         inLog: linked.has(String(s.id)) || (s.uuid !== null && linked.has(s.uuid)),
+        linkedElsewhere: elsewhere.get(String(s.id)) ?? (s.uuid !== null ? elsewhere.get(s.uuid) : undefined) ?? null,
+        planting: plantings.find((p) => p.plantId === plantId) ?? null,
         lookalikes: lookalikesForPlant(region.meta.id, plantId).filter((l) => l.link.status === "invasive"),
       });
       continue;
@@ -301,6 +311,29 @@ export function sightingsOfPlant(
       !have.has(String(s.id)) &&
       !(s.uuid !== null && have.has(s.uuid))
   );
+}
+
+/**
+ * Every sighting of a native on this roster that isn't linked anywhere yet,
+ * newest first, paired with its plant — for starting a log entry from the
+ * photo rather than the name (`steps/spot.ts`). Unlike the import, a species
+ * can appear more than once: each photo may be a different plant in the ground.
+ */
+export function nativeSightings(
+  sightings: OwnSighting[],
+  roster: Plant[],
+  linked: readonly string[]
+): { sighting: OwnSighting; plant: Plant }[] {
+  const byId = new Map(roster.map((p) => [p.id, p]));
+  const ids = new Set(byId.keys());
+  const have = new Set(linked);
+  const out: { sighting: OwnSighting; plant: Plant }[] = [];
+  for (const s of sightings) {
+    if (have.has(String(s.id)) || (s.uuid !== null && have.has(s.uuid))) continue;
+    const id = nativePlantId(s, ids);
+    if (id) out.push({ sighting: s, plant: byId.get(id)! });
+  }
+  return out;
 }
 
 /** When the sighting was taken, as a planting date: the plant was in the

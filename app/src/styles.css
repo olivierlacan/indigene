@@ -5300,6 +5300,13 @@ body[data-layout="profile"] .wip-banner-text {
 .log-obs-pick:disabled {
   opacity: 0.5;
 }
+.log-obs-pick-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .log-obs-pick-date {
   font-size: 0.75rem;
   color: var(--ink-soft);

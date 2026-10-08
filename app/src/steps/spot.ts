@@ -11,7 +11,7 @@
 // it belongs to.
 import { el, clear, toast } from "../ui";
 import { navigate, openSavedSpot } from "../state";
-import { getSpot, plantingsForSpot, savePlanting, saveSpot, deletePlanting } from "../db";
+import { getSpot, listPlantings, plantingsForSpot, savePlanting, saveSpot, deletePlanting } from "../db";
 import type { Planting, PlantedDate, SavedSpot } from "../types";
 import type { Plant } from "../types";
 import { REGIONS, loadPlants, regionForSpot } from "../lib/plants";
@@ -29,7 +29,7 @@ import { spotValue, type SpotValue } from "../lib/spot-value";
 import { wildlifeGroups } from "../components/wildlife-chips";
 import { isUuid, linkedObservation, observationUrl, parseObservationRef } from "../lib/observation-link";
 import { observationList, photoTile } from "../components/observation-ui";
-import { ownSightings, plantedBy, sightingsOfPlant, type OwnSighting } from "../lib/inat-import";
+import { nativeSightings, ownSightings, plantedBy, sightingsOfPlant, type OwnSighting } from "../lib/inat-import";
 import { isBusy } from "../lib/inaturalist";
 import { plantThumb, invasiveThumb } from "../components/plant-thumb";
 import { silhouetteFor } from "../components/plant-card";
@@ -86,6 +86,8 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
   const preset = addId
     ? byId.get(addId) ?? (await findPlant(addId).catch(() => []))[0]?.plant
     : undefined;
+  // Every sighting linked anywhere on this device: one photo, one row.
+  const linked = (await listPlantings().catch(() => [] as Planting[])).flatMap((pl) => pl.observations);
 
   main.append(
     el("h2", { class: "step-title" }, spot.label),
@@ -112,7 +114,7 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
     ...(value?.wildlife.length ? [feedsCard(value)] : []),
     logCard(plantings, plantOf, redraw, region?.meta.id),
     ...(spot.invasives?.length ? [invasivesCard(spot, redraw)] : []),
-    addCard(spot, roster, plantings, preset, redraw),
+    addCard(spot, roster, linked, preset, redraw),
     // Only once an account is linked: without one the page it opens can only
     // send you to Settings, and Settings is where linking is offered.
     ...(linkedLogin()
@@ -525,7 +527,7 @@ async function fillPicker(
   picker.append(
     el("p", { class: "log-obs-pick-title" }, t("spot.obsPickTitle")),
     el("div", { class: "obs-gallery" }, picks.slice(0, MAX_PICKS).map((s) =>
-      sightingTile(s, name, form, login, "spot.obsPickLabel", (btn) => {
+      sightingTile(s, name, form, login, (date) => t("spot.obsPickLabel", { date }), (btn) => {
         btn.disabled = true;
         void link(String(s.id));
       })
@@ -540,14 +542,16 @@ function sightingTile(
   name: string,
   form: string | undefined,
   login: string,
-  labelKey: "spot.obsPickLabel" | "spot.addSightingLabel",
-  onPick: (btn: HTMLButtonElement) => void
+  label: (date: string) => string,
+  onPick: (btn: HTMLButtonElement) => void,
+  /** The plant's name under the photo, where the tiles are of different plants. */
+  caption?: string
 ): HTMLButtonElement {
   const date = s.observedOn ? fmtDate(Date.parse(`${s.observedOn}T12:00:00`)) : t("import.seenUndated");
   return el("button", {
     type: "button",
     class: "log-obs-pick",
-    "aria-label": t(labelKey, { date }),
+    "aria-label": label(date),
     onClick: (e: Event) => onPick(e.currentTarget as HTMLButtonElement),
   }, [
     // The plant's drawing holds the square while the photo loads, and
@@ -556,6 +560,7 @@ function sightingTile(
       silhouetteFor(form ?? "shrub"),
       s.photo ? photoTile(s.photo.thumbUrl, t("obs.photoAlt", { name, observer: login })) : null,
     ]),
+    caption ? el("span", { class: "log-obs-pick-name", "aria-hidden": "true" }, caption) : null,
     el("span", { class: "log-obs-pick-date", "aria-hidden": "true" }, date),
   ]) as HTMLButtonElement;
 }
@@ -577,7 +582,7 @@ function sightingTile(
 function addCard(
   spot: SavedSpot,
   roster: Plant[],
-  plantings: Planting[],
+  linked: readonly string[],
   preset: Plant | undefined,
   redraw: () => void
 ): HTMLElement {
@@ -627,13 +632,14 @@ function addCard(
     );
   }
 
-  function choose(p: Plant): void {
+  function choose(p: Plant, from?: OwnSighting): void {
     chosen = p;
     sighting = null;
     search.value = "";
     clear(results);
     clear(picked);
     searchField.hidden = true;
+    starters.hidden = true;
     picked.append(
       el("p", { class: "log-picked-name" }, [
         el("strong", {}, commonName(p)),
@@ -647,17 +653,42 @@ function addCard(
             clear(picked);
             form.hidden = true;
             searchField.hidden = false;
+            starters.hidden = !starters.childElementCount;
             search.focus();
           },
         }, t("spot.changePlant")),
       ])
     );
     fillSightings(p);
+    if (from) {
+      sighting = String(from.id);
+      const date = plantedBy(from);
+      if (date) fields.setPlanted(date);
+    }
     form.hidden = false;
   }
 
-  // Sightings already linked to a row on this spot aren't offered again.
-  const linked = plantings.flatMap((pl) => pl.observations);
+  // With a linked account, the plant can come from a photo instead of a name:
+  // the sighting says which plant it is, and its date starts the date fields.
+  const starters = el("div", { class: "field log-add-sighting", hidden: true });
+  const login = linkedLogin();
+  if (login && !preset) {
+    void ownSightings(login).then(({ sightings }) => {
+      const picks = nativeSightings(sightings, roster, linked).slice(0, MAX_PICKS);
+      if (!picks.length) return; // an offer, not a message: nothing to offer, nothing said
+      starters.append(
+        el("p", { class: "log-obs-pick-title" }, t("spot.addFromSightingTitle")),
+        el("div", { class: "obs-gallery" }, picks.map(({ sighting: sg, plant }) =>
+          sightingTile(sg, commonName(plant), plant.form, login,
+            (date) => t("spot.addFromSightingLabel", { name: commonName(plant), date }),
+            () => choose(plant, sg),
+            commonName(plant))
+        )),
+      );
+      starters.hidden = Boolean(chosen);
+    }).catch(() => {}); // the search above still works; nothing to apologise for
+  }
+
 
   const paste = el("input", {
     type: "text",
@@ -696,7 +727,7 @@ function addCard(
           return;
         }
         const buttons = picks.map((sg) =>
-          sightingTile(sg, commonName(p), p.form, login, "spot.addSightingLabel", (btn) => {
+          sightingTile(sg, commonName(p), p.form, login, (date) => t("spot.addSightingLabel", { date }), (btn) => {
             const on = sighting !== String(sg.id);
             sighting = on ? String(sg.id) : null;
             buttons.forEach((b) => b.setAttribute("aria-pressed", String(b === btn && on)));
@@ -704,7 +735,7 @@ function addCard(
             if (date) fields.setPlanted(date);
           })
         );
-        buttons.forEach((b) => b.setAttribute("aria-pressed", "false"));
+        buttons.forEach((b, i) => b.setAttribute("aria-pressed", String(String(picks[i].id) === sighting)));
         tiles.append(
           el("div", { class: "obs-gallery" }, buttons),
           el("p", { class: "hint" }, t("spot.addSightingHint")),
@@ -761,6 +792,7 @@ function addCard(
     el("h3", { style: "margin:0 0 0.5rem" }, t("spot.addTitle")),
     searchField,
     results,
+    starters,
     picked,
     form,
   ]);

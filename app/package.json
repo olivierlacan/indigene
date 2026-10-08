@@ -22,6 +22,7 @@
     "csp:check": "node scripts/check-csp.mjs",
     "import:check": "node scripts/check-import.mjs",
     "release-notes": "node scripts/build-release-notes.mjs",
+    "changelog:fold": "node scripts/fold-changelog.mjs",
     "notes:check": "node scripts/check-notes-lightbox.mjs",
     "guide": "node scripts/build-guide.mjs",
     "guide:check": "node scripts/build-guide.mjs --check",

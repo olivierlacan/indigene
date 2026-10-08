@@ -1,7 +1,11 @@
-# Reminds every PR to carry its CHANGELOG.md entry, since the public
-# "What's new" page is compiled from the changelog (see CHANGELOG.md's header
-# for the writing rules). Reviewing the entry in the PR is how release notes
-# get reviewed before they're published.
+# Reminds every PR to carry its changelog entry, since the public "What's new"
+# page is compiled from the changelog (see CHANGELOG.md's header for the writing
+# rules). Reviewing the entry in the PR is how release notes get reviewed before
+# they're published.
+#
+# The entry is a file of its own under `changelog.d/` — one entry, one file, so
+# two branches never write the same lines (changelog.d/README.md says why).
+# Editing CHANGELOG.md directly still counts: that's how a version is cut.
 #
 # Not every change is notable: apply the `skip-changelog` label (screenshots,
 # CI plumbing, typo fixes) and this check passes without an entry.
@@ -31,13 +35,16 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Check that the PR updates CHANGELOG.md
+      - name: Check that the PR carries an entry
         if: ${{ !contains(github.event.pull_request.labels.*.name, 'skip-changelog') }}
         run: |
-          if git diff --name-only HEAD^1 HEAD | grep -qx 'CHANGELOG.md'; then
+          changed=$(git diff --name-only HEAD^1 HEAD)
+          if echo "$changed" | grep -E '^changelog\.d/.+\.md$' | grep -qvx 'changelog.d/README.md'; then
+            echo "Entry added under changelog.d/ — thank you."
+          elif echo "$changed" | grep -qx 'CHANGELOG.md'; then
             echo "CHANGELOG.md updated — thank you."
           else
-            echo "::error::This PR doesn't update CHANGELOG.md. Add a plain-words entry under Unreleased (it becomes the public What's-new page), or apply the 'skip-changelog' label if nothing notable changed."
+            echo "::error::This PR carries no changelog entry. Add one as changelog.d/<your-branch>.md — plain words, published as-is on the What's-new page (see changelog.d/README.md) — or apply the 'skip-changelog' label if nothing notable changed."
             exit 1
           fi
 

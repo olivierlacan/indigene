@@ -483,7 +483,7 @@ export const en = {
   // ---------------------------------------------------------------------
   "location.title": "Where are you standing?",
   "location.lede":
-    "Get your location, then check the map — if the pin isn't where you're really standing, drag or tap to nudge it.",
+    "Get your location, then check the map — if the pin isn't where you're really standing, drag or tap to nudge it. Press and hold to fine-tune.",
   "location.whyTitle": "Why does the exact spot matter?",
   "location.why":
     "“Native” always means native to somewhere. Your coordinates pick which regional plant list applies and pull the soil, climate and ecoregion (an area with its own climate, soil and wild plants) for this exact place — the same species can be essential in one region and a stranger in the next.",
@@ -518,7 +518,16 @@ export const en = {
   // "near", because the name is true of an area, not of the pin.
   "coord.near": "near {place}",
   "location.accuracy": " · GPS accuracy ±{m} m",
-  "location.nudged": " · nudged {m} m",
+  "location.nudged": " · nudged {m} m {dir}",
+  // Which way the pin was nudged from the GPS fix (`lib/compass.ts`).
+  "location.dir.n": "north",
+  "location.dir.ne": "northeast",
+  "location.dir.e": "east",
+  "location.dir.se": "southeast",
+  "location.dir.s": "south",
+  "location.dir.sw": "southwest",
+  "location.dir.w": "west",
+  "location.dir.nw": "northwest",
   "location.noGeolocation": "This device can't share location — try the town search instead.",
   "location.denied": "Location denied — try the town search instead.",
   "location.noFix": "Couldn't get a fix — try again, or switch to the town search.",

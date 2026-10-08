@@ -503,7 +503,7 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   "location.title": "Où êtes-vous ?",
   "location.lede":
-    "Localisez-vous, puis vérifiez la carte : si le repère n'est pas là où vous êtes vraiment, faites-le glisser ou touchez le bon endroit.",
+    "Localisez-vous, puis vérifiez la carte : si le repère n'est pas là où vous êtes vraiment, faites-le glisser ou touchez le bon endroit. Restez appuyé pour l'ajuster finement.",
   "location.whyTitle": "Pourquoi l'endroit exact compte-t-il ?",
   "location.why":
     "« Indigène » veut toujours dire indigène de quelque part. Vos coordonnées déterminent la liste régionale qui s'applique et vont chercher le sol, le climat et l'écorégion (une zone qui a son propre climat, son sol et ses plantes sauvages) de cet endroit précis — la même espèce peut être essentielle dans une région et une étrangère dans la suivante.",
@@ -532,7 +532,16 @@ export const fr: Dict = {
   "coord.west": "O",
   "coord.near": "près de {place}",
   "location.accuracy": " · précision GPS ±{m} m",
-  "location.nudged": " · déplacé de {m} m",
+  "location.nudged": " · déplacé de {m} m {dir}",
+  // Which way the pin was nudged from the GPS fix (`lib/compass.ts`).
+  "location.dir.n": "vers le nord",
+  "location.dir.ne": "vers le nord-est",
+  "location.dir.e": "vers l'est",
+  "location.dir.se": "vers le sud-est",
+  "location.dir.s": "vers le sud",
+  "location.dir.sw": "vers le sud-ouest",
+  "location.dir.w": "vers l'ouest",
+  "location.dir.nw": "vers le nord-ouest",
   "location.noGeolocation": "Cet appareil ne peut pas partager sa position — essayez la recherche par commune.",
   "location.denied": "Position refusée — essayez la recherche par commune.",
   "location.noFix": "Impossible d'obtenir un point — réessayez, ou passez à la recherche par commune.",

@@ -1729,6 +1729,10 @@ input[type="range"] {
   border: 1px solid var(--line);
   background: var(--surface-2);
   touch-action: none;
+  /* A held finger on iOS otherwise starts selecting the text round the map. */
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 .map canvas {
   display: block;
@@ -1743,6 +1747,26 @@ input[type="range"] {
   font-size: 2rem;
   pointer-events: none;
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.4));
+}
+/* The loupe a long press opens over the map (steps/location.ts): a round,
+   enlarged view of the pin's few metres, in the corner away from the finger. */
+.map canvas.map-loupe {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+.map canvas.map-loupe-right {
+  left: auto;
+  right: 10px;
+}
+.map canvas.map-loupe[hidden] {
+  display: none;
 }
 .coords {
   font-variant-numeric: tabular-nums;

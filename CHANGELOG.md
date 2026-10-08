@@ -35,18 +35,15 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+## [0.37] - 2026-10-08
+
+**Wildlife at your saved spots & 21 more Pacific Northwest natives**
+
+[![A saved spot and the wildlife it can feed](docs/screenshots/pr-207/thumb.png)](docs/screenshots/pr-207/spot-after-dark.png)
+[Before](docs/screenshots/pr-207/spot-before-dark.png) · [After](docs/screenshots/pr-207/spot-after-dark.png)
+
 ### Added
 
-- Indigene was built with an LLM (a large language model, what most people
-  call AI), and a new page shows the bill: 110 working sessions, about 360 kWh
-  of electricity, and how to use fewer tokens next time.
-  https://indigene.app/llm
-- Internal: `steps/llm.ts` (route `llm`, prerendered with its own share card),
-  linked from a new About stance. Tokens and price are each session's own
-  record (`docs/llm-bill/sessions.csv`); `lib/llm-bill.ts` turns them into
-  electricity with Couch's per-token rates, and `llm-bill.test.ts` re-sums the
-  CSVs so the page can't drift from them. `docs/llm-bill/fewer-tokens.md` maps
-  the findings to the repo rules that already save tokens.
 - A saved spot now shows the wildlife in its neighborhood: each animal your
   plants can feed, with its picture and the plant of yours it eats. Tap one to
   meet it.
@@ -75,6 +72,9 @@ subtitle on the What's new page.
 - Internal: `nativeSightings()` and `sortSightings()`'s new `linkedElsewhere` /
   `planting` fields carry this, with `inat-import.test.ts` against the real
   Pacific Northwest list.
+- Matches: on the location map, press and hold to open a magnifier and nudge
+  the pin a few metres at a time. The line under the map now says which way it
+  moved, like "nudged 40 m northeast".
 - Regions: three more native shrubs for the Pacific Northwest — Pacific wax
   myrtle for a coastal hedge, Oregon boxleaf as a native stand-in for boxwood,
   and western wahoo for a shady corner. https://indigene.app/regions/pnw
@@ -104,10 +104,38 @@ subtitle on the What's new page.
 - Internal: `filters.stinging` is optional (missing means no), so only the two
   nettle rows set it. The `annual` form carries a single year-1 size snapshot,
   and `coverage.mjs` counts annuals without flooring them.
+- A new page on Homegrown National Park, Doug Tallamy's idea that half of
+  America's lawns, given back to native plants, would make a park. It shows
+  where Indigene follows that idea, and why its maker built it.
+  https://indigene.app/homegrown
+- Internal: `steps/homegrown.ts` (route `homegrown`, prerendered with its own
+  share card), linked from About's "Why this exists"; English and French.
+- Indigene was built with an LLM (a large language model, what most people
+  call AI), and a new page shows the bill: 110 working sessions, about 360 kWh
+  of electricity, and how to use fewer tokens next time.
+  https://indigene.app/llm
+- Internal: `steps/llm.ts` (route `llm`, prerendered with its own share card),
+  linked from a new About stance. Tokens and price are each session's own
+  record (`docs/llm-bill/sessions.csv`); `lib/llm-bill.ts` turns them into
+  electricity with Couch's per-token rates, and `llm-bill.test.ts` re-sums the
+  CSVs so the page can't drift from them. `docs/llm-bill/fewer-tokens.md` maps
+  the findings to the repo rules that already save tokens.
 - Internal: every PR now shows what its Claude sessions cost, under
   `## Session cost`. The new `Session cost` check fails without it and warns
   above $30 (about three typical sessions) or $100. Rules in CLAUDE.md;
   thresholds in `lib/session-cost.ts`.
+
+### Changed
+
+- The welcome page's "Why native plants?" now ends by saying what native
+  never means — borders or people — and links to the page that explains it.
+  https://indigene.app/native
+- Internal: a pull request's changelog entry is now its own file in
+  `changelog.d/`, so two branches never append to the same lines — merging one
+  used to leave every other pull request conflicting on CHANGELOG.md, which was
+  in all of the last twenty merges. `npm run changelog:fold` folds them in when
+  a version is cut; the compiler reads them on every build, so the rules still
+  bite in review.
 
 ### Fixed
 
@@ -122,6 +150,11 @@ subtitle on the What's new page.
 - Internal: `flags.ts` had no JP drawing, and an unknown country code draws
   nothing and says nothing — so the region shipped a row plainer than its
   neighbours. A test now holds every region's countries to the flags.
+- Matches: on iPhone, holding a finger on the location map no longer starts
+  selecting the text around it, so the map moves the way you'd expect.
+- Internal: the map cancels `touchstart` (all but the attribution link) and
+  sets `user-select: none`; the direction comes from `lib/compass.ts`, which
+  has its own test.
 
 ## [0.36] - 2026-10-02
 
@@ -3092,7 +3125,8 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/18daaf2...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/5f735fd...HEAD
+[0.37]: https://github.com/olivierlacan/indigene/compare/18daaf2...5f735fd
 [0.36]: https://github.com/olivierlacan/indigene/compare/a50be1c...18daaf2
 [0.35]: https://github.com/olivierlacan/indigene/compare/39c9b05...a50be1c
 [0.34]: https://github.com/olivierlacan/indigene/compare/c4e7c44...39c9b05

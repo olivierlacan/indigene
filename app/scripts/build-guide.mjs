@@ -31,6 +31,7 @@ import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { SECTIONS, SEGMENT_TO_ID, matchLabels, SECTION_LABELS, APP } from "./guide-catalog.mjs";
+import { autolink } from "./_changelog.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO = resolve(HERE, "../..");
@@ -203,10 +204,10 @@ const escapeHtml = (s) =>
 
 const resolveUrl = (url) => (url.startsWith("/") ? APP + url : url);
 
-/** Minimal inline markdown: links, bold, italic, code. Applied post-escape. */
+/** Minimal inline markdown: links (typed-out URLs too), bold, italic, code. Applied post-escape. */
 function inline(md) {
-  return escapeHtml(md)
-    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, text, url) => `<a href="${resolveUrl(url)}">${text}</a>`)
+  return autolink(escapeHtml(md)
+    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, text, url) => `<a href="${resolveUrl(url)}">${text}</a>`))
     .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
     .replace(/\*([^*]+)\*/g, "<em>$1</em>")
     .replace(/`([^`]+)`/g, "<code>$1</code>");

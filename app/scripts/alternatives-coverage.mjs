@@ -49,7 +49,7 @@ if (!regions.length) {
   process.exit(1);
 }
 
-const FORMS = ["tree", "shrub", "perennial", "grass", "vine", "groundcover", "fern"];
+const FORMS = ["tree", "shrub", "perennial", "annual", "grass", "vine", "groundcover", "fern"];
 const pad = (s, n) => String(s).padEnd(n);
 const num = (s, n) => String(s).padStart(n);
 

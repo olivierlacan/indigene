@@ -66,6 +66,14 @@ subtitle on the What's new page.
 - Internal: all three are native in BC, Oregon and Washington per WCVP and
   VASCAN. Pacific willow is filed as `Salix lasiandra`: WCVP keeps
   `Salix lucida` for the eastern shining willow.
+- Plants: nettles now carry a "Stings" label, and the "No thorns or stings"
+  filter leaves them out. https://indigene.app/traits
+- Regions: annuals have their own category, starting with sea blush. Instead
+  of a growth rate, their pages say they last one season and come back from
+  seed. https://indigene.app/plants/plectritis-congesta
+- Internal: `filters.stinging` is optional (missing means no), so only the two
+  nettle rows set it. The `annual` form carries a single year-1 size snapshot,
+  and `coverage.mjs` counts annuals without flooring them.
 
 ### Fixed
 

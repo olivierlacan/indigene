@@ -1529,7 +1529,7 @@ export const SEED_RAW: RawPlant[] = [
     hostLepCount: 85,
     keystone: true,
     bloom: { startMonth: 6, endMonth: 9, color: "green" },
-    filters: { deerResistant: true, thorny: false, allergenic: true, petToxic: false, aggressive: true },
+    filters: { deerResistant: true, thorny: false, stinging: true, allergenic: true, petToxic: false, aggressive: true },
     noWaterEstablish: true,
     careNote: "Yes, really. Put it somewhere it can be contained — behind a shed, inside a sunk bucket, at the back of a hedge — because it spreads hard at the root. It wants rich damp ground in **sun**: a shaded nettle patch is no use to butterflies. Cut half of it in June so there is fresh growth for the second brood.",
     givesNote: "**Peacock, small tortoiseshell, red admiral and comma caterpillars all eat nettle and very little else.** Four of the butterflies most likely to visit an Irish garden are produced by the plant most gardeners pull out. Nothing else here buys that much butterfly for that little effort.",

@@ -31,7 +31,7 @@ import { reportRosterUntranslated } from "../components/wip-banner";
 import { mostWantedSection } from "../components/most-wanted";
 import { mostWanted, wantedRegionHref } from "../lib/invasives";
 
-const FORM_ORDER: PlantForm[] = ["tree", "shrub", "perennial", "grass", "vine", "groundcover", "fern"];
+const FORM_ORDER: PlantForm[] = ["tree", "shrub", "perennial", "annual", "grass", "vine", "groundcover", "fern"];
 /** The category headings. A function, not a record: a record built at import
  *  time would be stuck in whichever language loaded first. */
 const formLabel = (f: PlantForm): string => t(`form.${f}` as const);
@@ -40,6 +40,7 @@ const FORM_SLUGS: Record<PlantForm, string> = {
   tree: "trees",
   shrub: "shrubs",
   perennial: "perennials",
+  annual: "annuals",
   grass: "grasses",
   vine: "vines",
   groundcover: "groundcovers",

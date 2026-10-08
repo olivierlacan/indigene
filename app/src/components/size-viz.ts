@@ -75,7 +75,9 @@ function render(canvas: HTMLCanvasElement, plant: Plant): void {
   const padTop = 10;
   const padBottom = 38; // two full label rows below the ground line
 
-  const cols = 5; // "You" + 4 ages
+  // "You" + one column per age: four for most plants, one for an annual,
+  // which never has a year 3.
+  const cols = 1 + plant.size.length;
   const colW = (cssW - padL - padR) / cols;
 
   const last = plant.size[plant.size.length - 1];
@@ -151,7 +153,7 @@ function render(canvas: HTMLCanvasElement, plant: Plant): void {
   ctx.font = "12px system-ui, sans-serif";
   ctx.fillText(`(${humanHeightLabel()})`, col0x, groundY + 20);
 
-  // Columns 1..4: the plant at each age.
+  // Columns 1..n: the plant at each age.
   const tint = plant.bloom ? bloomColors[plant.bloom.color] ?? brand : brand;
   plant.size.forEach((snap, i) => {
     const cx = padL + colW * (1.5 + i);

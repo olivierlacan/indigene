@@ -10438,7 +10438,7 @@ export const REGISTRY: RegistryEntry[] = [
     "primaryId": "ipni:30030760-2",
     "scientificName": "Plectritis congesta",
     "family": "Caprifoliaceae",
-    "form": "perennial",
+    "form": "annual",
     "rank": "species",
     "keystone": false,
     "identifiers": {

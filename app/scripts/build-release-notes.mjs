@@ -559,6 +559,20 @@ function parseChangelog(text) {
     );
   }
 
+  // A typed-out address still works — `autolink()` makes it a link — but it
+  // spends a line on a URL nobody reads. Link the words it's about instead:
+  // "[Ireland](https://indigene.app/regions/ireland) is on the map". A nudge,
+  // not a wall: the page is right either way.
+  for (const r of [unreleased, ...releases]) {
+    for (const s of r.sections) {
+      for (const item of s.items) {
+        if (INTERNAL.test(item) || !/(?<!\]\()https?:\/\//.test(item)) continue;
+        const opening = item.replace(/\s+/g, " ").slice(0, 72);
+        console.warn(`release notes: ${r.version} types out a URL — link a word instead: "${opening}…"`);
+      }
+    }
+  }
+
   for (const r of releases) {
     // Clean developer housekeeping out of the public page. Filtering happens
     // after parsing so a marked bullet's wrapped continuation lines stay

@@ -310,10 +310,13 @@ Three more conventions the compiler understands:
   Wildlife, Regions, Plants, Planting, Look-alikes, Privacy, Sources); most
   entries need no prefix at all. Don't force one — a change that isn't really
   about a section stays plain.
-- **Link what you describe.** When an entry mentions something with an
-  address — a page, a section — link it with the full live URL
-  (`https://indigene.app/wildlife`), so a reader who
-  didn't know the feature existed can go straight to it. Use the **path** form,
+- **Link what you describe, on the words that describe it.** When an entry
+  mentions something with an address — a page, a section, a plant — put the
+  link on its name: `[Ireland](https://indigene.app/regions/ireland) is on the
+  map`, not `Ireland is on the map. https://indigene.app/regions/ireland`. A
+  typed-out URL is a line nobody reads; the compiler still links one, but warns.
+  An entry with no link of its own gets its section prefix linked instead, so
+  one link per entry is plenty. Use the full live URL and the **path** form,
   not the `#/` one: every shareable page has a real file behind it
   (`scripts/prerender.mjs`), and only that address previews as the page when
   someone passes the link on. Keep `#/` only for a sub-route that has no file

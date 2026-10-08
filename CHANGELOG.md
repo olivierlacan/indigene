@@ -3,7 +3,7 @@
 All notable changes to Indigene are recorded here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-with four house rules:
+with these house rules:
 
 - **Versions are feature releases, not schedules.** A version is cut when a
   coherent piece of the product lands, and gets a number, a name and a date
@@ -29,6 +29,10 @@ with four house rules:
   Wildlife: …` for one that touches two. It reads as a sentence and needs no
   prefix when the entry already links to that part. A leading word that isn't a
   section name is just ordinary prose.
+- **Link the words, not the address.** Put a link on the name it's about —
+  `[Ireland](https://indigene.app/regions/ireland) is on the map` — rather than
+  typing out the URL after the sentence. An entry that links nowhere gets its
+  section name linked on the page.
 
 The bold line under each version heading is the release's name; it becomes the
 subtitle on the What's new page.

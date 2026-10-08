@@ -224,7 +224,7 @@ export const fr: Dict = {
   "welcome.ratherNotLink": "parcourez sans partager votre position",
   "welcome.whyTitle": "Pourquoi des plantes indigènes ?",
   "welcome.why1":
-    "La plupart des chenilles ne peuvent manger que les plantes avec lesquelles elles ont évolué, et presque tous les oiseaux du jardin élèvent leurs petits avec des chenilles. Pas de plantes indigènes, pas de chenilles, pas d'oisillons.",
+    "La plupart des chenilles ne peuvent manger que les plantes avec lesquelles elles ont évolué, et la plupart des passereaux élèvent leurs petits avec des chenilles. Moins d'indigènes, moins de chenilles, moins d'oisillons.",
   "welcome.why2": "Plantez une indigène, et les insectes qui en ont besoin peuvent la trouver dès la même saison.",
   "welcome.savedTitle": "Vos lieux enregistrés",
   "welcome.openSaved.one": "Ouvrir le lieu enregistré ({n})",

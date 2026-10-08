@@ -572,7 +572,7 @@ export async function renderLookalike(main: HTMLElement, param?: string): Promis
       .map((n) => comparisonCard(lookalike, n)),
     el("p", { class: "confidence", style: "margin-top:1rem" }, t("lookalike.coverageNote")),
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
-      el("a", { class: "btn btn-secondary", href: "#/lookalikes" }, t("lookalikes.more")),
+      // "All look-alikes" is the back-trail at the top; this row goes on.
       el("a", { class: "btn btn-secondary", href: "#/plants" }, t("lookalikes.browseNatives")),
     ]),
   );

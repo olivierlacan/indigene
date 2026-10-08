@@ -467,6 +467,7 @@ export const en = {
   "explore.title": "Meet the natives",
   "explore.lede":
     "{plants} native plants across the {regions} regions Indigene covers so far. Open the one you live in to see its whole roster — or tap the plant on the front of a card to meet it.",
+  "explore.missing": "Don't see your region? {link}.",
   "explore.byWildlife": "Or browse by wildlife → ",
   "explore.byWildlifeSub":
     "start from the monarch, hummingbird, or gopher tortoise you want, and find the plants that support it.",
@@ -1177,6 +1178,9 @@ export const en = {
   "results.title": "Plants for this spot",
   "results.regionTag": "📍 {region}",
   "results.regionTagPick": "📍 {region} — your pick, not measured from a location",
+  "results.filtersMeaning": "What these labels mean",
+  "results.alsoHere": "Also in this region: {wildlife} · {invasives}",
+  "results.alsoHereWildlife": "Also in this region: {wildlife}",
   "results.count": "{n} native plants {fit} — {good} are a good or workable match. Best matches first.",
   "results.fitClimate": "fit this spot's climate",
   "results.fitList": "are in this region's list",
@@ -1765,6 +1769,7 @@ export const en = {
     "No plant in Indigene's lists matches “{q}”. The lists are curated per region, so they grow carefully — ",
   "plants.noneLink": "browse the natives we know",
   "plants.noneEnd": ".",
+  "plants.otherPages": "Not a native we list, but it has a page:",
   "plants.browseRegions": "Browse by region",
 
   // ---------------------------------------------------------------------
@@ -2845,9 +2850,14 @@ export const en = {
   "homegrown.birds1": "Most songbirds raise their chicks on caterpillars, and most caterpillars eat only the plants they evolved with. One pair of chickadees needs 6,000 to 9,000 of them to raise a single brood. In a study of yards around Washington, DC, chickadees couldn't keep their numbers up where less than 70% of the greenery was native.",
   "homegrown.appTitle": "Where Indigene follows the idea",
   "homegrown.app1": "The ranking puts caterpillars first. Of everything a plant offers, the number of caterpillar kinds it feeds counts the most.",
-  "homegrown.app2": "An “Essential” plant is what Tallamy calls a keystone plant. Across the US, 14% of native plant genera (groups of close relatives, like the oaks) feed 90% of caterpillar species. Indigene shows you those first.",
-  "homegrown.app3": "In the US, the caterpillar counts come from Tallamy's own data, published with the National Wildlife Federation.",
-  "homegrown.app4": "The idea travels: Indigene's lists for Ireland, New Zealand or Japan lean on each place's own studies of what feeds what.",
+  "homegrown.app2": "{link} is what Tallamy calls a keystone plant. Across the US, 14% of native plant genera (groups of close relatives, like the oaks) feed 90% of caterpillar species. Indigene shows you those first.",
+  "homegrown.app2Link": "An “Essential” plant",
+  "homegrown.app3": "In the US, the caterpillar counts come from {link}, published with the National Wildlife Federation.",
+  "homegrown.app3Link": "Tallamy's own data",
+  "homegrown.app4": "The idea travels: Indigene's lists for {ireland}, {nz} or {japan} lean on each place's own studies of what feeds what.",
+  "homegrown.app4Japan": "Japan",
+  "homegrown.app4Nz": "New Zealand",
+  "homegrown.app4Ireland": "Ireland",
   "homegrown.authorTitle": "Why I built Indigene",
   "homegrown.author1": "I spent years turning the yard of a newly built house in central Florida into native plants. When I moved to Seattle, I started over, with far less ground to work with.",
   "homegrown.author2": "Both times, the hard part was knowing what would grow in each corner, and what it would feed. Indigene is the answer I wanted then, and those two yards are my piece of the park.",

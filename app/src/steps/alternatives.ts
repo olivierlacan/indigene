@@ -298,7 +298,7 @@ export async function renderAlternative(main: HTMLElement, param?: string): Prom
     ...natives.map((n) => swapCard(ornamental, n)),
     el("p", { class: "confidence", style: "margin-top:1rem" }, t("alternatives.coverageNote")),
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
-      el("a", { class: "btn btn-secondary", href: "#/alternatives" }, t("alternatives.more")),
+      // "All swaps" is the back-trail at the top; this row goes on.
       el("a", { class: "btn btn-secondary", href: "#/plants" }, t("alternatives.browseNatives")),
     ]),
   );

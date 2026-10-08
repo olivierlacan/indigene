@@ -487,6 +487,7 @@ export const fr: Dict = {
   "explore.title": "À la rencontre des indigènes",
   "explore.lede":
     "{plants} plantes indigènes réparties sur les {regions} régions couvertes jusqu'ici. Ouvrez celle où vous vivez pour voir toute sa liste — ou touchez la plante en couverture d'une carte pour faire sa connaissance.",
+  "explore.missing": "Votre région n'y est pas ? {link}.",
   "explore.byWildlife": "Ou parcourir par animal → ",
   "explore.byWildlifeSub":
     "partez du monarque, du colibri ou de la tortue que vous espérez voir, et trouvez les plantes qui le font vivre.",
@@ -1180,6 +1181,9 @@ export const fr: Dict = {
   "results.title": "Les plantes pour ce lieu",
   "results.regionTag": "📍 {region}",
   "results.regionTagPick": "📍 {region} — votre choix, pas une mesure faite depuis une position",
+  "results.filtersMeaning": "Ce que veulent dire ces étiquettes",
+  "results.alsoHere": "Aussi dans cette région : {wildlife} · {invasives}",
+  "results.alsoHereWildlife": "Aussi dans cette région : {wildlife}",
   "results.count":
     "{n} plantes indigènes {fit} — dont {good} conviennent bien ou passablement. Les meilleures d'abord.",
   "results.fitClimate": "s'accommodent du climat de ce lieu",
@@ -1754,6 +1758,7 @@ export const fr: Dict = {
     "Aucune plante des listes d'Indigene ne correspond à « {q} ». Les listes sont constituées région par région, elles grandissent donc prudemment — ",
   "plants.noneLink": "parcourez les indigènes que nous connaissons",
   "plants.noneEnd": ".",
+  "plants.otherPages": "Pas une indigène de nos listes, mais elle a sa page :",
   "plants.browseRegions": "Parcourir par région",
 
   // ---------------------------------------------------------------------
@@ -2814,9 +2819,14 @@ export const fr: Dict = {
   "homegrown.birds1": "La plupart des passereaux élèvent leurs petits avec des chenilles, et la plupart des chenilles ne mangent que les plantes avec lesquelles elles ont évolué. Un couple de mésanges de Caroline en a besoin de 6 000 à 9 000 pour élever une seule couvée. Dans une étude menée dans des jardins autour de Washington, les mésanges ne maintenaient pas leurs effectifs là où moins de 70 % de la végétation était indigène.",
   "homegrown.appTitle": "Là où Indigene suit cette idée",
   "homegrown.app1": "Le classement met les chenilles en premier. De tout ce qu'une plante offre, le nombre d'espèces de chenilles qu'elle nourrit compte le plus.",
-  "homegrown.app2": "Une plante « Essentielle » est ce que Tallamy appelle une plante clé de voûte. Aux États-Unis, 14 % des genres de plantes indigènes (des groupes de proches parents, comme les chênes) nourrissent 90 % des espèces de chenilles. Indigene vous les montre en premier.",
-  "homegrown.app3": "Aux États-Unis, le nombre de chenilles vient des données de Tallamy lui-même, publiées avec la National Wildlife Federation.",
-  "homegrown.app4": "L'idée voyage : pour l'Irlande, la Nouvelle-Zélande ou le Japon, les listes d'Indigene s'appuient sur les études propres à chaque lieu sur qui nourrit qui.",
+  "homegrown.app2": "{link} est ce que Tallamy appelle une plante clé de voûte. Aux États-Unis, 14 % des genres de plantes indigènes (des groupes de proches parents, comme les chênes) nourrissent 90 % des espèces de chenilles. Indigene vous les montre en premier.",
+  "homegrown.app2Link": "Une plante « Essentielle »",
+  "homegrown.app3": "Aux États-Unis, le nombre de chenilles vient des {link}, publiées avec la National Wildlife Federation.",
+  "homegrown.app3Link": "données de Tallamy lui-même",
+  "homegrown.app4": "L'idée voyage : pour {ireland}, {nz} ou {japan}, les listes d'Indigene s'appuient sur les études propres à chaque lieu sur qui nourrit qui.",
+  "homegrown.app4Japan": "le Japon",
+  "homegrown.app4Nz": "la Nouvelle-Zélande",
+  "homegrown.app4Ireland": "l'Irlande",
   "homegrown.authorTitle": "Pourquoi j'ai créé Indigene",
   "homegrown.author1": "J'ai passé des années à transformer en plantes indigènes le jardin d'une maison neuve du centre de la Floride. En m'installant à Seattle, j'ai tout recommencé, avec bien moins de terrain.",
   "homegrown.author2": "Les deux fois, le plus dur était de savoir ce qui pousserait dans chaque coin, et ce que cela nourrirait. Indigene est la réponse que j'aurais voulu avoir, et ces deux jardins sont ma parcelle du parc.",

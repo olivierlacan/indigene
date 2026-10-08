@@ -274,7 +274,7 @@ export const SECTIONS = [
       "each native we recommend, we've written up the plants it gets mistaken " +
       "for, and — standing right in front of it — how to tell them apart: a " +
       "smell, a thorn, a leaf stalk that bleeds white, not a botanical key you'd " +
-      "need a lens for. Not every look-alike is a villain, and the label on each " +
+      "need a lens for. Not every look-alike is a problem, and the label on each " +
       "says which: invasive here, merely not from here, or a wild native the " +
       "mix-up still matters for. When you're truly unsure, photograph it and ask " +
       "iNaturalist — real people identify what you've found.",
@@ -295,6 +295,47 @@ export const SECTIONS = [
       },
     ],
     match: { segments: ["lookalikes"] },
+    published: true,
+  },
+  {
+    id: "invasives",
+    label: "Invasives",
+    aliases: ["invasive", "worst invasives"],
+    emoji: "🚩",
+    title: "The worst invasives",
+    tagline: "The few plants doing the most harm where you live, and how to remove them.",
+    lede:
+      "A few garden plants escape and do real damage: they smother woods, shade " +
+      "out wildflowers and seed into wild places. Each region lists its worst " +
+      "five, ranked by local experts' rating, then by how often each is seen " +
+      "growing wild. Every plant on a list has a page: how to recognize it, and " +
+      "how to remove it for good by hand.",
+    steps: [
+      "Open your region's list from its page, or from Worst invasives.",
+      "Tap a plant for the three surest ways to recognize it.",
+      "Follow the removal steps — the root piece that resprouts, the stump that suckers.",
+      "Plant a native in the gap, so the bare ground doesn't invite the next seedling.",
+    ],
+    note:
+      `“Invasive” is about what a plant does, not where it's from: most plants ` +
+      `moved to a new place never spread. [Why we say it that way](${APP}/native).`,
+    visit: [
+      { label: "See the worst invasives", href: `${APP}/invasives` },
+      { label: "What to grow instead", href: `${APP}/alternatives` },
+    ],
+    learn: [
+      {
+        label: "Why invasive plants are a problem",
+        source: "National Invasive Species Information Center",
+        href: "https://www.invasivespeciesinfo.gov/subject/plants",
+      },
+      {
+        label: "Report an invasive plant you've found",
+        source: "EDDMapS (University of Georgia)",
+        href: "https://www.eddmaps.org/",
+      },
+    ],
+    match: { segments: ["invasives"] },
     published: true,
   },
   {

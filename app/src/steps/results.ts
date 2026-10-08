@@ -1,4 +1,5 @@
 import { el, clear, toast } from "../ui";
+import { mostWanted, wantedRegionHref } from "../lib/invasives";
 import { navigate, store, persistPrefs, resultsTrail, leaveResults } from "../state";
 import { REGIONS } from "../lib/plants";
 import { zoneChip } from "../components/zone-chip";
@@ -247,6 +248,8 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
         ])
       ),
       ...sizeRows,
+      el("p", { class: "more-link", style: "margin:0.5rem 0 0" },
+        el("a", { href: "#/traits" }, t("results.filtersMeaning"))),
     ]),
   ]);
 
@@ -275,7 +278,16 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
       // spot to save, so the button honestly isn't there.
       ...(hasCoords ? [el("button", { class: "btn btn-primary", onClick: doSave }, t("results.save"))] : []),
     ]),
-    ...(hasCoords ? [privacyNote(t("results.privacy"))] : [])
+    ...(hasCoords ? [privacyNote(t("results.privacy"))] : []),
+    // The rest of the region, for a reader who has their list: what it feeds,
+    // and what to pull.
+    el("p", { class: "more-link", style: "margin-top:1rem" }, tx(
+      mostWanted(region.meta.id).length ? "results.alsoHere" : "results.alsoHereWildlife",
+      {
+        wildlife: el("a", { href: `#/wildlife/in/${region.meta.id}` }, t("nav.wildlife")),
+        invasives: el("a", { href: wantedRegionHref(region.meta.id) }, t("plants.door.invasives")),
+      },
+    )),
   );
 
   rerender();

@@ -318,8 +318,9 @@ Three more conventions the compiler understands:
   section name — the same shape as this file's `Internal:` and Keep a
   Changelog 2.0's `**Breaking:**`. A leading word that *isn't* a section name
   is just prose ("Note: …"), so a prefix can never break the build. The names
-  are the `label`s in `app/scripts/guide-catalog.mjs` (currently Finder,
-  Wildlife, Regions, Plants, Planting, Look-alikes, Privacy, Sources); most
+  are the `label`s in `app/scripts/guide-catalog.mjs` (currently Matches,
+  Wildlife, Regions, Conservation, Plants, Planting, Look-alikes, Invasives,
+  Native swaps, Vegetables, Privacy, Sources); most
   entries need no prefix at all. Don't force one — a change that isn't really
   about a section stays plain.
 - **Link what you describe, on the words that describe it.** When an entry

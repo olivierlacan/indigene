@@ -928,7 +928,7 @@ export const en = {
   //   .mistake  the one slip that wastes the whole attempt, said plainly.
   // -------------------------------------------------------------------------
   "prop.seed-direct.when": "Autumn or spring.",
-  "prop.seed-direct.wait": "Up with the first warm spell after its winter.",
+  "prop.seed-direct.wait": "Comes up in spring, after its winter outdoors.",
   "prop.seed-direct.timing":
     "Autumn is what the plant itself does: seed ripens, falls, lies under leaves and rain all winter, and comes up when the ground warms. Sowing then asks nothing of you — no fridge, no counting weeks. Spring works just as well, and is the usual time for seed that arrived late or was stored dry.",
   "prop.seed-direct.mistake":
@@ -946,13 +946,13 @@ export const en = {
   "prop.seed-cold-moist.mistake":
     "Not looking. Some seed sprouts inside the bag before its weeks are up, and the little white root snaps off if you find it late — open it every few days from halfway on.",
   "prop.seed-scarify.when": "Right before you sow, whenever that is.",
-  "prop.seed-scarify.wait": "Days rather than weeks, once it's in the ground.",
+  "prop.seed-scarify.wait": "Soon after sowing, once water gets in.",
   "prop.seed-scarify.timing":
     "Scarifying isn't a season, it's the last step before sowing — so the real question is when you're sowing, and this follows it. Do it the evening before: scuff or nick the coat, soak overnight, sow in the morning. What you must not do is scarify a batch in winter to sow in spring. Breaching the coat takes away the seed's raincoat; from then on it can take up water, and a damp scarified seed in a jar will either rot or sprout in the dark. The soak doubles as a check — seed that has drunk swells visibly and looks fatter than its neighbors, and the ones still small and hard want another pass on the sandpaper.",
   "prop.seed-scarify.mistake":
     "Going too deep. Stop the moment the paler inside shows: you want the coat breached, not the seed wounded.",
   "prop.seed-surface-light.when": "Late winter to spring under cover; autumn outdoors.",
-  "prop.seed-surface-light.wait": "Two to four weeks, if the surface never dries.",
+  "prop.seed-surface-light.wait": "Weeks, as long as the surface never dries.",
   "prop.seed-surface-light.timing":
     "Dust-fine seed sits on top of the soil, which makes it the most fragile thing you'll sow: the surface it's lying on can dry out in one sunny afternoon, and a seed that small has no reserve to survive that. So sow it where you can watch it — a tray indoors or in a cold frame from late winter, ready to go out when it's warm. Outdoors, autumn suits the ones that want a cold spell as well as light: scatter on a cleared patch and leave them to it. Cover the tray with clear plastic or a sheet of glass and keep it bright but out of the midday sun.",
   "prop.seed-surface-light.mistake":
@@ -964,11 +964,10 @@ export const en = {
   "prop.seed-double-dormant.mistake":
     "Tipping the pot out after the first blank spring. That's the year it was always going to look like nothing.",
   "prop.division.when": "Early spring or autumn — never while it's flowering.",
-  "prop.division.wait": "Back in growth within a few weeks.",
+  "prop.division.wait": "Keep it watered while it settles in.",
   "prop.division.timing":
     "Divide when the plant can spend everything on new roots instead of on flowers: as the shoots are just breaking in early spring, or in autumn once the heat has gone but with weeks of warm soil left to root into. Summer-flowering plants go in spring or autumn; spring-flowering ones are best split in summer, after they flower — so you're never cutting up a plant in the middle of its big year. Work when the soil is dry enough to dig, and in a wet autumn wait for spring.",
-  "prop.division.mistake":
-    "Letting the pieces sit about while you make tea. Fine roots dry in minutes — have the new holes dug first, and water everything in straight away.",
+  "prop.division.mistake": "Leaving the pieces out while you dig. Have the new holes ready, replant at once and water in.",
   "prop.cuttings-softwood.when": "Spring into early summer, on this year's shoots.",
   "prop.cuttings-softwood.wait": "Roots in two to four weeks.",
   "prop.cuttings-softwood.timing":
@@ -991,8 +990,7 @@ export const en = {
   "prop.layering.wait": "One to two years.",
   "prop.layering.timing":
     "Spring is the moment to pin: the branch is supple, the plant is about to put on growth, and it has the whole warm season to make roots at the buried point. Then you wait. The following autumn, scrape the soil back and look — a good handful of roots means you can sever it from the parent and lift it; not much means you leave it another year, which costs you nothing at all, because the parent is still feeding it the whole time. Slower than a cutting and very hard to fail at, since the new plant is never once on its own.",
-  "prop.layering.mistake":
-    "Cutting it free as soon as you see a root or two. The moment you sever it, everything it needs has to come from what's grown there.",
+  "prop.layering.mistake": "Cutting it free at the first root or two. Wait until a good root system has formed.",
   "prop.suckers.when": "Spring, as growth starts.",
   "prop.suckers.wait": "Needs careful watering through its first season.",
   "prop.suckers.timing":
@@ -1000,7 +998,7 @@ export const en = {
   "prop.suckers.mistake":
     "Pulling instead of digging. A sucker without fibrous roots of its own won't take.",
   "prop.runners.when": "Late summer into autumn, once the plantlet has roots.",
-  "prop.runners.wait": "Ready to move a few weeks after it roots.",
+  "prop.runners.wait": "Cut it free once it has rooted.",
   "prop.runners.timing":
     "Wait for the baby to root itself, which it does wherever it touches soil over the summer; tug it very gently and a rooted one holds on. Late summer and autumn is when most are ready, and it is also the kindest time to move them — warm soil, cooling air, and months before they're asked to do anything. The tidy version: in midsummer, pin each plantlet into a small pot of compost sunk beside the parent; come early autumn, cut the runner and lift a pot already full of roots.",
   "prop.runners.mistake":
@@ -1015,8 +1013,7 @@ export const en = {
   "prop.spores.wait": "Months — a green film within weeks, small ferns a few months later.",
   "prop.spores.timing":
     "Ferns make no flowers and no seed, so there is nothing to watch but the undersides of the fronds: the little patches there start green, ripen to a rich brown, and then shed. Ripe brown is the moment. Cut a frond, lay it face-down on white paper somewhere still for a few days, and you'll have a fine dust — those are the spores, and the paler chaff beside them is the packaging. Sow at once on damp sterile compost, cover with clear plastic, and settle in: nothing looks remotely like a fern for the first few months.",
-  "prop.spores.mistake":
-    "Collecting a week late. Once the patches have gone dusty gray and crumble at a touch, the frond has already let them go.",
+  "prop.spores.mistake": "Waiting too long. Pick the frond as the flaps over the spore patches start to lift and the spores turn dark; later, they're already shed.",
 
   "growth.quick": "Quick to settle in: expect close to this full size within about three years.",
   "growth.steady": "A steady grower: close to full size by year {year}.",

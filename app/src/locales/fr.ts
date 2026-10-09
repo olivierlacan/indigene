@@ -943,7 +943,7 @@ export const fr: Dict = {
   // Pennsylvanie, alors qu'« quand les gousses brunissent » est vrai partout.
   // -------------------------------------------------------------------------
   "prop.seed-direct.when": "L'automne ou le printemps.",
-  "prop.seed-direct.wait": "Levée aux premiers redoux, après son hiver.",
+  "prop.seed-direct.wait": "Lève au printemps, après son hiver dehors.",
   "prop.seed-direct.timing":
     "L'automne, c'est ce que fait la plante elle-même : la graine mûrit, tombe, passe l'hiver sous les feuilles et la pluie, et lève quand le sol se réchauffe. Semer à ce moment-là ne vous demande rien — ni réfrigérateur, ni semaines à compter. Le printemps marche tout aussi bien, et c'est le moment habituel pour une graine arrivée tard ou conservée au sec.",
   "prop.seed-direct.mistake":
@@ -961,13 +961,13 @@ export const fr: Dict = {
   "prop.seed-cold-moist.mistake":
     "Ne pas regarder. Certaines graines germent dans le sachet avant la fin des semaines prévues, et la petite racine blanche casse si vous les découvrez trop tard — ouvrez le sachet tous les deux ou trois jours à partir de la moitié.",
   "prop.seed-scarify.when": "Juste avant de semer, quel que soit le moment.",
-  "prop.seed-scarify.wait": "Des jours plutôt que des semaines, une fois en terre.",
+  "prop.seed-scarify.wait": "Peu après le semis, dès que l'eau entre.",
   "prop.seed-scarify.timing":
     "La scarification n'est pas une saison, c'est la dernière étape avant le semis — la vraie question est donc : quand semez-vous ? Faites-le la veille au soir : entaillez ou râpez le tégument, laissez tremper la nuit, semez au matin. Ce qu'il ne faut surtout pas faire, c'est scarifier un lot en hiver pour semer au printemps. Ouvrir le tégument, c'est retirer son imperméable à la graine : elle peut désormais absorber l'eau, et une graine scarifiée humide au fond d'un bocal va soit pourrir, soit germer dans le noir. Le trempage sert aussi de contrôle — une graine qui a bu gonfle visiblement et paraît plus grosse que ses voisines ; celles qui restent petites et dures méritent un nouveau passage sur le papier de verre.",
   "prop.seed-scarify.mistake":
     "Aller trop loin. Arrêtez dès que la couche plus claire apparaît : on veut le tégument ouvert, pas la graine blessée.",
   "prop.seed-surface-light.when": "De la fin de l'hiver au printemps à l'abri ; à l'automne dehors.",
-  "prop.seed-surface-light.wait": "De deux à quatre semaines, si la surface ne sèche jamais.",
+  "prop.seed-surface-light.wait": "Quelques semaines, tant que la surface ne sèche jamais.",
   "prop.seed-surface-light.timing":
     "Une graine fine comme de la poussière reste posée sur la terre, ce qui en fait la chose la plus fragile que vous sèmerez : la surface qui la porte peut sécher en un après-midi de soleil, et une graine aussi petite n'a aucune réserve pour y survivre. Semez-la donc là où vous pouvez la surveiller — une terrine à l'intérieur ou sous châssis dès la fin de l'hiver, prête à sortir aux beaux jours. Dehors, l'automne convient à celles qui veulent aussi un passage au froid : à la volée sur une planche nette, et on les laisse faire. Couvrez la terrine d'un plastique transparent ou d'une vitre, à la lumière mais hors du soleil de midi.",
   "prop.seed-surface-light.mistake":
@@ -979,11 +979,10 @@ export const fr: Dict = {
   "prop.seed-double-dormant.mistake":
     "Vider le pot après le premier printemps sans rien. C'est justement l'année où il ne devait rien se passer.",
   "prop.division.when": "Début de printemps ou automne — jamais en pleine floraison.",
-  "prop.division.wait": "Repartie en quelques semaines.",
+  "prop.division.wait": "Arrosez-la le temps qu'elle s'installe.",
   "prop.division.timing":
     "Divisez quand la plante peut tout mettre dans de nouvelles racines plutôt que dans ses fleurs : au tout début du printemps, quand les pousses percent à peine, ou à l'automne une fois la chaleur passée mais avec encore des semaines de sol tiède pour s'enraciner. Les plantes qui fleurissent l'été se divisent au printemps ou à l'automne ; celles qui fleurissent au printemps, plutôt en été, après la floraison — de sorte que vous ne découpez jamais une plante au milieu de sa grande année. Travaillez quand le sol est assez sec pour être bêché, et si l'automne est pluvieux, attendez le printemps.",
-  "prop.division.mistake":
-    "Laisser traîner les éclats le temps d'un café. Les racines fines sèchent en quelques minutes — creusez les trous d'abord, et arrosez tout de suite après.",
+  "prop.division.mistake": "Laisser les éclats à l'air pendant qu'on creuse. Préparez les trous d'abord, replantez aussitôt et arrosez.",
   "prop.cuttings-softwood.when": "Du printemps au début de l'été, sur les pousses de l'année.",
   "prop.cuttings-softwood.wait": "Racines en deux à quatre semaines.",
   "prop.cuttings-softwood.timing":
@@ -1006,8 +1005,7 @@ export const fr: Dict = {
   "prop.layering.wait": "Un à deux ans.",
   "prop.layering.timing":
     "Le printemps est le moment de coucher la branche : elle est souple, la plante s'apprête à pousser, et elle a toute la belle saison pour faire des racines au point enterré. Ensuite, on attend. À l'automne suivant, dégagez la terre et regardez — une belle poignée de racines et vous pouvez la séparer du pied mère et la lever ; pas grand-chose et vous la laissez une année de plus, ce qui ne vous coûte rien du tout, puisque la mère continue de la nourrir. Plus lent qu'une bouture, et très difficile à rater, car la nouvelle plante n'est jamais seule un seul instant.",
-  "prop.layering.mistake":
-    "La sevrer dès qu'on aperçoit une racine ou deux. Une fois coupée, tout ce dont elle a besoin doit venir de ce qui a poussé là.",
+  "prop.layering.mistake": "Le détacher dès la première racine. Attendez qu'un bon système racinaire se soit formé.",
   "prop.suckers.when": "Au printemps, à la reprise.",
   "prop.suckers.wait": "Demande un arrosage attentif toute sa première saison.",
   "prop.suckers.timing":
@@ -1015,7 +1013,7 @@ export const fr: Dict = {
   "prop.suckers.mistake":
     "Tirer au lieu de creuser. Un rejet sans radicelles à lui ne reprendra pas.",
   "prop.runners.when": "De la fin de l'été à l'automne, quand la plantule est enracinée.",
-  "prop.runners.wait": "Déplaçable quelques semaines après l'enracinement.",
+  "prop.runners.wait": "Détachez-le une fois enraciné.",
   "prop.runners.timing":
     "Attendez que le jeune plant s'enracine tout seul, ce qu'il fait partout où il touche la terre pendant l'été ; tirez très doucement dessus, une plantule enracinée résiste. La fin de l'été et l'automne, c'est le moment où la plupart sont prêts, et c'est aussi le plus doux pour les déplacer : sol tiède, air qui fraîchit, et des mois avant qu'on leur demande quoi que ce soit. La version soignée : en plein été, épinglez chaque plantule dans un petit pot de terreau enterré près du pied mère ; au début de l'automne, coupez le stolon et levez un pot déjà plein de racines.",
   "prop.runners.mistake":
@@ -1030,8 +1028,7 @@ export const fr: Dict = {
   "prop.spores.wait": "Des mois — un voile vert en quelques semaines, de petites fougères quelques mois plus tard.",
   "prop.spores.timing":
     "Les fougères n'ont ni fleur ni graine : il n'y a donc rien à guetter que le dessous des frondes. Les petits amas y sont d'abord verts, mûrissent vers un brun profond, puis se libèrent. Le brun mûr, c'est le moment. Coupez une fronde, posez-la face contre une feuille de papier blanc dans un endroit sans courant d'air pendant quelques jours, et vous aurez une poussière fine : ce sont les spores, et la balle plus claire à côté n'est que l'emballage. Semez aussitôt sur un terreau stérile humide, couvrez d'un plastique transparent, et installez-vous dans la patience : rien ne ressemble à une fougère pendant les premiers mois.",
-  "prop.spores.mistake":
-    "Récolter une semaine trop tard. Une fois les amas gris et poudreux, qui s'effritent au toucher, la fronde les a déjà lâchés.",
+  "prop.spores.mistake": "Attendre trop longtemps. Cueillez la fronde quand les replis qui couvrent les amas de spores commencent à se soulever et que les spores foncent ; plus tard, elles sont déjà parties.",
 
   "growth.quick": "Vite installée : comptez à peu près sa taille définitive en trois ans.",
   "growth.steady": "Une croissance régulière : proche de sa taille adulte à {year} ans.",

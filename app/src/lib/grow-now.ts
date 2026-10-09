@@ -34,6 +34,7 @@
 // one at the same value, because it's the one you can miss.
 import type { Plant, PlantForm, Planting, PropagationMethod } from "../types";
 import { stillToCome, yearsInGround } from "./garden";
+import { SEED_BEARING } from "../data/seed-bearing";
 import { seasonOfMonth, techniqueFor, type Season } from "./planting";
 import type { Hemisphere } from "./hemisphere";
 import { relianceOf, wildlifeForPlant } from "./wildlife";
@@ -70,17 +71,30 @@ const READY_YEARS: Record<ReadyGroup, Partial<Record<PlantForm, number>>> = {
   spores: { fern: 2 },
 };
 
-export function readyAt(form: PlantForm, m: PropagationMethod): number | undefined {
-  return READY_YEARS[groupOf(m)][form];
+/** Trees, shrubs and vines: their seed waits on a per-species figure. */
+const WOODY: ReadonlySet<PlantForm> = new Set(["tree", "shrub", "vine"]);
+
+/**
+ * Years in the ground before this method is offered for this plant. Woody seed
+ * comes only from `SEED_BEARING` — the Woody Plant Seed Manual's minimum
+ * seed-bearing age for that species — and is never offered without one.
+ */
+export function readyAt(plant: Pick<Plant, "form" | "latin">, m: PropagationMethod): number | undefined {
+  const group = groupOf(m);
+  if (group === "seed" && WOODY.has(plant.form)) return SEED_BEARING[plant.latin]?.years;
+  return READY_YEARS[group][plant.form];
 }
 
 /** Soft-stemmed plants, whose seed ripens soon after the flowers fade. */
 const HERBACEOUS: ReadonlySet<PlantForm> = new Set(["annual", "perennial", "grass", "groundcover", "fern"]);
 
-/** Months (1–12) a soft-stemmed plant's seed is ripe: the last month of
+/** Months (1–12) a plant's seed is ripe. A tree's or shrub's are the Woody
+ *  Plant Seed Manual's printed ripening months. A soft-stemmed plant's are the last month of
  *  flowering and the two after it. Null when its ripening can't be read off
  *  the bloom — a woody plant, or no bloom on record. */
-export function ripeMonths(plant: Pick<Plant, "form" | "bloom">): number[] | null {
+export function ripeMonths(plant: Pick<Plant, "form" | "bloom" | "latin">): number[] | null {
+  // A tree's or shrub's own printed ripening months, where the manual has them.
+  if (WOODY.has(plant.form)) return SEED_BEARING[plant.latin]?.ripens ?? null;
   if (!plant.bloom || !HERBACEOUS.has(plant.form)) return null;
   const end = plant.bloom.endMonth;
   return [0, 1, 2].map((k) => ((end - 1 + k) % 12) + 1);
@@ -212,7 +226,7 @@ function taskAt(
   const season = seasonOfMonth(month - 1, hemisphere);
   let fallback: Pick<GrowTask, "method" | "window"> | null = null;
   for (const method of plant.propagation.methods) {
-    const need = readyAt(plant.form, method);
+    const need = readyAt(plant, method);
     if (need == null || years < need) continue;
     if (method.startsWith("seed-")) {
       const ripe = ripeMonths(plant);
@@ -257,12 +271,12 @@ export function growPlan(
     }
     const years = Math.floor(age);
     // Nothing offered at any age: a woody plant whose only way is seed.
-    if (plant.propagation.methods.every((m) => readyAt(plant.form, m) == null)) {
+    if (plant.propagation.methods.every((m) => readyAt(plant, m) == null)) {
       plan.seedOnlyWoody.push(plantId);
       continue;
     }
     const ready = plant.propagation.methods.some((m) => {
-      const need = readyAt(plant.form, m);
+      const need = readyAt(plant, m);
       return need != null && age >= need;
     });
     if (!ready) {

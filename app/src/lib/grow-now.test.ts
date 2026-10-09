@@ -38,17 +38,29 @@ describe("growPlan", () => {
     expect(plan.now[0].why).toEqual({ kind: "sole", wildlifeId: "monarch" });
   });
 
-  it("never guesses when an oak bears acorns, however old, and leaves an undated plant out", () => {
-    // The USDA Woody Plant Seed Manual puts white oak's first acorns at 20
-    // years; a rule by growth form would have prompted this one at five.
+  it("waits 20 years on a white oak, as the Woody Plant Seed Manual does, and leaves an undated plant out", () => {
+    // A rule by growth form had prompted this one at five.
     const plan = growPlan(
       [row("quercus-alba", { year: 2015 }), row("monarda-fistulosa", null)],
       plantOf, "mid-atlantic", "north", OCTOBER
     );
     expect(plan.now).toEqual([]);
-    expect(plan.young).toEqual([]);
-    expect(plan.seedOnlyWoody).toEqual(["quercus-alba"]);
+    expect(plan.young).toEqual(["quercus-alba"]);
     expect(plan.undated).toEqual(["monarda-fistulosa"]);
+    const old = growPlan([row("quercus-alba", { year: 2000 })], plantOf, "mid-atlantic", "north", OCTOBER);
+    expect(old.now.map((t) => [t.method, t.window])).toEqual([["seed-warm", "season"]]);
+  });
+
+  it("collects red maple seed in its printed ripening months, not in autumn", () => {
+    const maple = [row("acer-rubrum", { year: 2015 })];
+    const may = growPlan(maple, plantOf, "mid-atlantic", "north", new Date(2026, 4, 8).getTime());
+    expect(may.now.map((t) => [t.method, t.window])).toEqual([["seed-warm", "month"]]);
+    expect(growPlan(maple, plantOf, "mid-atlantic", "north", OCTOBER).now).toEqual([]);
+  });
+
+  it("sets aside a seed-only tree the manual gives no age for", () => {
+    const plan = growPlan([row("betula-nigra", { year: 2000 })], plantOf, "mid-atlantic", "north", OCTOBER);
+    expect(plan.seedOnlyWoody).toEqual(["betula-nigra"]);
   });
 
   it("asks to leave black-eyed Susan seed for the birds, not butterfly weed's", () => {
@@ -86,12 +98,12 @@ describe("growPlan", () => {
 
 describe("readyAt and ripeMonths", () => {
   it("never offers to divide an annual", () => {
-    expect(readyAt("annual", "division")).toBeUndefined();
+    expect(readyAt({ form: "annual", latin: "" }, "division")).toBeUndefined();
   });
   it("reads a soft plant's ripe seed off its last flowering month, across new year", () => {
-    expect(ripeMonths({ form: "perennial", bloom: { startMonth: 10, endMonth: 11, color: "" } })).toEqual([11, 12, 1]);
+    expect(ripeMonths({ form: "perennial", latin: "", bloom: { startMonth: 10, endMonth: 11, color: "" } })).toEqual([11, 12, 1]);
   });
-  it("doesn't guess a tree's ripening from its flowers", () => {
+  it("doesn't guess a tree's ripening from its flowers when the manual prints none", () => {
     expect(ripeMonths(byId.get("quercus-alba")!)).toBeNull();
   });
 });

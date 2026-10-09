@@ -383,7 +383,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["cuttings-hardwood", "seed-surface-light"],
       note: "Like most willows, it roots readily from dormant winter cuttings pushed into wet soil. The fluffy seed loses its life within days to weeks, so sow it on the surface of wet ground the day you collect it.",
-      basis: "Woody Plant Seed Manual.",
+      basis: "Woody Plant Seed Manual; UW Native Plant Production.",
     },
   },
   {
@@ -594,7 +594,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-cold-moist"],
       note: "Pick the hanging bunches of winged seed in late summer or fall once they are dry and papery. Like most ashes it needs a winter's chill before it sprouts, so the simplest route is to sow it outside in a pot in autumn and let the weather do the work.",
-      basis: "Woody Plant Seed Manual; USDA NRCS Plant Guide.",
+      basis: "Woody Plant Seed Manual; USDA NRCS Plant Guide; UW Native Plant Production.",
     },
   },
   {
@@ -629,7 +629,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-cold-moist"],
       note: "Clean the pulp off the scarlet fruit as soon as it ripens — nurseries report the pulp can hold the seed back — then give the seed about three months of cold, damp storage in the fridge before sowing in spring.",
-      basis: "Woody Plant Seed Manual; Seed Information Database.",
+      basis: "Woody Plant Seed Manual; Seed Information Database; UW Native Plant Production.",
     },
   },
 
@@ -1652,7 +1652,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-surface-light", "layering", "cuttings-semi-hardwood"],
       note: "Seed is dust-fine and needs light to sprout: press it onto damp milled sphagnum moss, leave it uncovered and don't let it dry out. Layering works too — peg a low branch to the ground and cut it free once it has rooted. Cuttings root well from some plants and poorly from others.",
-      basis: "Woody Plant Seed Manual; Seed Information Database.",
+      basis: "Woody Plant Seed Manual; Seed Information Database; UW Native Plant Production.",
     },
   },
   {
@@ -1687,7 +1687,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-cold-moist", "cuttings-semi-hardwood"],
       note: "Rub the wax off ripe fall berries in warm water — the chill doesn't work while the wax is on — then give the seed about three months cold and damp before sowing in spring, or sow fresh seed outside in autumn. Half-firm cuttings also root.",
-      basis: "Woody Plant Seed Manual; USDA NRCS Plant Guide; USFS Native Plant Network.",
+      basis: "Woody Plant Seed Manual; USDA NRCS Plant Guide; USFS Native Plant Network; UW Native Plant Production.",
     },
   },
   {
@@ -1756,8 +1756,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia and Oregon; VASCAN; OregonFlora; southwest Washington from herbarium and iNaturalist records (GBIF). Toxicity: ASPCA (Euonymus). Host count: Euonymus, rough western estimate with no Tallamy/NWF figure behind it. Occurrence records in this region's box: 392 (GBIF).",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Collect the seed as the capsules split in fall and sow it in a pot left outside over winter.",
-      basis: "No published source checked yet.",
+      note: "Collect the seed as the capsules split in fall and sow it straight away, before it dries out, in a pot left outside over winter.",
+      basis: "Woody Plant Seed Manual.",
     },
   },
   {
@@ -2671,8 +2671,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA PEFR5. Bloom timing and early-season bumblebee value: Xerces Society Maritime Northwest planting guide. Pyrrolizidine alkaloids: USDA PLANTS. Occurrence records in this region's box: 6,341 (GBIF).",
     propagation: {
       methods: ["division"],
-      note: "A length of the running rhizome with a bud on it can be lifted and replanted into wet ground.",
-      basis: "No published source checked yet.",
+      note: "Divide the running rhizome in spring, or any time of year, and replant the pieces straight away in wet ground.",
+      basis: "UW Native Plant Production.",
     },
   },
   {
@@ -2706,8 +2706,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA LYAM3. Beetle pollination and thermogenesis: USFS FEIS; published pollination studies of Lysichiton. Calcium oxalate toxicity: USDA PLANTS. Occurrence records in this region's box: 13,264 (GBIF).",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Grow it from fresh seed pressed into wet mud in autumn; it is slow to reach flowering size.",
-      basis: "No published source checked yet.",
+      note: "Sow the seed as soon as it is ripe, in a pot of wet, rich soil left outside over winter — it needs the cold. Plants take several years to flower.",
+      basis: "UW Native Plant Production.",
     },
   },
   {
@@ -2846,8 +2846,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; VASCAN; OregonFlora. Pollinators: USFS Celebrating Wildflowers. Toxicity: ASPCA (Lilium). Host count: Lilium, low, rough estimate. Occurrence records in this region's box: 6,756 (GBIF).",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Grow it from seed sown outdoors in fall, or buy nursery-grown bulbs; never dig wild ones.",
-      basis: "No published source checked yet.",
+      note: "Sow seed outdoors in fall. It may not come up until the second spring, and takes three to five years to flower. Never dig wild bulbs: they rarely survive the move.",
+      basis: "UW Native Plant Production.",
     },
   },
   {
@@ -2882,7 +2882,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-cold-moist"],
       note: "Strip the seed when it turns brown and dry in summer or early fall. Sow it outside in autumn, or give it about two months cold and damp first — in one trial that raised germination from almost none to nearly all.",
-      basis: "USFS Native Plant Network; Seed Information Database.",
+      basis: "USFS Native Plant Network; UW Native Plant Production.",
     },
   },
   {
@@ -3305,7 +3305,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["spores"],
       note: "Grow it from the spores that ripen on the backs of the fronds in summer: sow them on sterile, damp compost and keep them sealed and shaded. It's slow — about two years to a potted plant.",
-      basis: "USFS Native Plant Network; USFS Fire Effects Information System.",
+      basis: "USFS Native Plant Network; USFS Fire Effects Information System; UW Native Plant Production; Hardy Fern Foundation.",
     },
   },
   {
@@ -3374,8 +3374,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU); accepted name Struthiopteris spicant, formerly Blechnum spicant. Ferns support very few Lepidoptera (honest low host value).",
     propagation: {
       methods: ["spores", "division"],
-      note: "The upright fronds in the middle carry the spores: in mid to late summer, lay a ripe one on paper to catch the dust, then sow it on damp, sterile compost in a sealed pot and wait — months, not weeks. An established clump can also be split in spring.",
-      basis: "RHS; USFS Fire Effects Information System.",
+      note: "The upright fronds in the middle carry the spores: in summer, lay a ripe one on paper to catch the dust, then sow it on damp, sterile compost in a sealed pot and wait — months, not weeks. An established clump can also be split in spring or autumn.",
+      basis: "RHS; USFS Fire Effects Information System; UW Native Plant Production; Hardy Fern Foundation.",
     },
   },
   {
@@ -3480,7 +3480,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["spores"],
       note: "Grow it from spores: collect fronds in late summer as the spore covers lift, let the spores drop onto paper, and sow them on damp, sterile milled peat in a sealed tray. They sprout in about two weeks, but it takes months before anything looks like a fern.",
-      basis: "USFS Native Plant Network; RHS.",
+      basis: "USFS Native Plant Network; RHS; UW Native Plant Production; Hardy Fern Foundation.",
     },
   },
   {
@@ -3515,7 +3515,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["spores", "division"],
       note: "The chain-like rows of spore cases along the veins on the frond backs give it its name. Lay a ripe frond on paper overnight to collect the dust, then sow it on damp, sterile compost in a sealed pot and expect to wait many months. Big old crowns can also be divided.",
-      basis: "RHS.",
+      basis: "RHS; UW Native Plant Production; Hardy Fern Foundation.",
     },
   },
   {
@@ -3549,8 +3549,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Host count: Maianthemum, low. Occurrence records in this region's box: 8,607 (GBIF).",
     propagation: {
       methods: ["division"],
-      note: "It spreads by creeping rhizomes; a rooted piece with a shoot on it can be lifted and replanted.",
-      basis: "No published source checked yet.",
+      note: "Dig the creeping rhizomes in fall or early spring, cut them into pieces that each have roots or a bud, and replant straight away.",
+      basis: "UW Native Plant Production.",
     },
   },
   {
@@ -3618,9 +3618,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Epiphytic habit and summer dormancy: USFS FEIS; Hardy Fern Foundation. Ferns support very few Lepidoptera (honest low host value). Occurrence records in this region's box: 15,663 (GBIF).",
     propagation: {
-      methods: ["division"],
-      note: "It can be grown from a piece of its creeping rhizome with a frond attached.",
-      basis: "No published source checked yet.",
+      methods: ["division", "spores"],
+      note: "Dividing the creeping rhizome in spring is the simplest way. Spores sown fresh on damp, sterile compost under cover also work, but take about two years to make a plant.",
+      basis: "UW Native Plant Production; Hardy Fern Foundation.",
     },
   },
   {
@@ -3654,8 +3654,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA ACTR. Habit and vanilla scent on drying: USFS FEIS. Occurrence records in this region's box: 6,019 (GBIF).",
     propagation: {
       methods: ["division"],
-      note: "Lift a rooted piece of the spreading rhizome and replant it just under the leaf litter.",
-      basis: "No published source checked yet.",
+      note: "Dig a rooted clump with its soil while it's dormant, from late fall to early spring, and replant it. Seed is very slow: in one trial, fall-sown plants still hadn't flowered after seven years.",
+      basis: "UW Native Plant Production.",
     },
   },
   {
@@ -3688,9 +3688,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA VIGL. Fritillary host relationship: Xerces Society; BAMONA. Host count: Viola genus, the same estimate this list uses for early blue violet. Occurrence records in this region's box: 5,652 (GBIF).",
     propagation: {
-      methods: ["seed-cold-moist"],
-      note: "Sow fresh seed in a pot left outside over winter.",
-      basis: "No published source checked yet.",
+      methods: ["division", "seed-direct"],
+      note: "Easiest from a rooted piece of stem, lifted in autumn or just after flowering. Seed needs no treatment: sow it in fall in a pot left outside.",
+      basis: "UW Native Plant Production.",
     },
   },
   {

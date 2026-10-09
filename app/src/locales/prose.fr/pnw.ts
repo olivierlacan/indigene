@@ -909,7 +909,7 @@ export const PNW: ProseTable = {
     givesNote:
       "Un couvert et un abri verts tout l'hiver sur un sol forestier ombragé, tenant la terre d'un talus frais et donnant aux amphibiens et à la petite faune un refuge. Comme toutes les fougères elle ne nourrit presque aucune chenille — elle gagne sa place comme habitat et contre l'érosion, pas comme nourriture.",
     propagationNote:
-      "Les frondes dressées du milieu portent les spores : entre le milieu et la fin de l'été, posez-en une mûre sur du papier pour recueillir la poussière, puis semez-la sur un terreau stérile et humide dans un pot fermé, et attendez — des mois, pas des semaines. On peut aussi diviser une touffe établie au printemps.",
+      "Les frondes dressées du milieu portent les spores : en été, posez-en une mûre sur du papier pour recueillir la poussière, puis semez-la sur un terreau stérile et humide dans un pot fermé, et attendez — des mois, pas des semaines. On peut aussi diviser une touffe établie au printemps ou à l'automne.",
   },
   "Sedum oreganum": {
     nativeNote:

@@ -21,6 +21,14 @@ describe("French plant paragraphs", () => {
     expect(shared).toEqual([]);
   });
 
+  it("leave a taxon's look-alike and invasive text on the key that answers everywhere", () => {
+    // Region files carry these too (ivy's removal steps, Douglas-fir's
+    // look-alike blurb); filing whole entries under a region once hid them.
+    expect(PROSE_FR["Hedera helix"]?.blurb).toBeDefined();
+    expect(PROSE_FR["Pseudotsuga menziesii"]?.blurb).toBeDefined();
+    expect(PROSE_FR["Hedera helix"]?.nativeNote).toBeUndefined();
+  });
+
   it("are filed under a region that lists the plant", async () => {
     const listed = new Set<string>();
     for (const region of REGIONS) {

@@ -460,8 +460,8 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Bird use: Cornell Lab; USFS FEIS. Toxicity: ASPCA; UC ANR. Host count: Sambucus genus, rounded western estimate.",
     propagation: {
-      methods: ["seed-double-dormant"],
-      note: "Mash the ripe berries, wash the seed clean and give it a warm spell, then a cold damp one — or sow it outdoors in autumn and wait. Untreated, the seed can take two to five years to come up.",
+      methods: ["seed-double-dormant", "cuttings-hardwood"],
+      note: "Mash the ripe berries, wash the seed clean and give it a warm spell, then a cold damp one — or sow it outdoors in autumn and wait. Untreated, the seed can take two to five years to come up. Leafless cuttings of last year's wood also root, though less reliably than seed.",
       basis: "USFS Native Plant Network; USDA NRCS Plant Guide; USFS FEIS.",
     },
   },
@@ -707,9 +707,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Late-season pollinator importance: Xerces Society; UC Berkeley Urban Bee Lab. Host count: Baccharis genus, western estimate.",
     propagation: {
-      methods: ["seed-direct"],
-      note: "Collect the fluffy seed from a female plant between late autumn and early spring and scatter it on bare soil. It needs no treatment and comes up with the winter rains, often within a month.",
-      basis: "USFS Native Plant Network; USDA NRCS Plant Guide; USFS FEIS.",
+      methods: ["seed-direct", "cuttings-softwood", "cuttings-semi-hardwood"],
+      note: "Collect the fluffy seed from a female plant between late autumn and early spring and scatter it on bare soil. It needs no treatment and comes up with the winter rains, often within a month. Shoot cuttings taken in spring or summer also root well.",
+      basis: "USFS Native Plant Network; USDA NRCS Plant Guide; USFS FEIS; LBJ Wildflower Center.",
     },
   },
   {
@@ -742,9 +742,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Checkerspot host relationship: Xerces Society; BAMONA. Host count: Diplacus/Mimulus genus, western estimate.",
     propagation: {
-      methods: ["seed-surface-light"],
-      note: "Collect the capsules in mid to late summer, just before they split. The seed needs no treatment but sprouts in light, so sow it on the surface and don't cover it.",
-      basis: "USFS Native Plant Network; USFS Southern California Plant Profiles.",
+      methods: ["seed-surface-light", "cuttings-softwood", "cuttings-semi-hardwood"],
+      note: "Collect the capsules in mid to late summer, just before they split. The seed needs no treatment but sprouts in light, so sow it on the surface and don't cover it. Shoot-tip cuttings also root.",
+      basis: "USFS Native Plant Network; USFS Southern California Plant Profiles; RHS.",
     },
   },
   {
@@ -1905,9 +1905,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range (endemic to California): Jepson eFlora, Calflora. Pipevine swallowtail (Battus philenor hirsuta) sole host relationship and sequestered aristolochic acid: Xerces Society; BAMONA; UC ANR. Host count: Aristolochia, a genuinely tiny figure that undersells the plant — one of those species is the reason to grow it.",
     propagation: {
-      methods: ["seed-direct"],
-      note: "Grows from the seed in its ripe pods.",
-      basis: "No published source checked yet.",
+      methods: ["seed-cold-moist", "layering"],
+      note: "Sow the seed from the ripe pods outdoors in autumn, or chill it damp for about three months before a spring sowing. Low stems can also be layered.",
+      basis: "LBJ Wildflower Center.",
     },
   },
   {

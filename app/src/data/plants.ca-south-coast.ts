@@ -313,8 +313,8 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Bird use: Cornell Lab; USFS FEIS. Toxicity: ASPCA; UC ANR. Host count: Sambucus genus, rounded western estimate.",
     propagation: {
-      methods: ["seed-double-dormant"],
-      note: "Mash the ripe berries, wash the seed clean and give it a warm spell, then a cold damp one — or sow it outdoors in autumn and wait. Untreated, the seed can take two to five years to come up.",
+      methods: ["seed-double-dormant", "cuttings-hardwood"],
+      note: "Mash the ripe berries, wash the seed clean and give it a warm spell, then a cold damp one — or sow it outdoors in autumn and wait. Untreated, the seed can take two to five years to come up. Leafless cuttings of last year's wood also root, though less reliably than seed.",
       basis: "USFS Native Plant Network; USDA NRCS Plant Guide; USFS FEIS.",
     },
   },
@@ -462,7 +462,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-double-dormant"],
       note: "Slow and awkward: juniper seed is deeply dormant and comes up very slowly. Rub off the pulp, sow in a pot left outdoors, and keep the pot through a second year before giving up.",
-      basis: "Woody Plant Seed Manual; USFS FEIS.",
+      basis: "Woody Plant Seed Manual; USFS FEIS; LBJ Wildflower Center.",
     },
   },
 
@@ -498,8 +498,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Culture: UC ANR; Theodore Payne Foundation. Host count: Salvia genus, low rounded western estimate.",
     propagation: {
       methods: ["seed-direct"],
-      note: "Seed of the shrubby California sages is generally easy to germinate, and much of it needs no treatment.",
-      basis: "Woody Plant Seed Manual.",
+      note: "The seed needs no treatment: sow it outdoors in early autumn.",
+      basis: "Seed Information Database; LBJ Wildflower Center; Woody Plant Seed Manual.",
     },
   },
   {
@@ -707,9 +707,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Fire response and culture: USFS FEIS. Host count: Arctostaphylos genus, rounded western estimate.",
     propagation: {
-      methods: ["seed-scarify"],
-      note: "The stone is built to wait for a fire: file or sand through the hard coat of each seed, then sow in autumn. Seedlings come up in spring. It also grows from stem cuttings.",
-      basis: "USFS FEIS.",
+      methods: ["seed-scarify", "cuttings-semi-hardwood"],
+      note: "The stone is built to wait for a fire: file or sand through the hard coat of each seed, then sow in autumn. Seedlings come up in spring. Cuttings of firming shoots root in summer.",
+      basis: "USFS FEIS; RHS.",
     },
   },
   {
@@ -814,7 +814,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-scarify", "seed-cold-moist"],
       note: "The seed coat is hard and must be worn through first — file or sand each seed — then sow outdoors in autumn, or chill it damp for about two months before a spring sowing.",
-      basis: "Woody Plant Seed Manual.",
+      basis: "Woody Plant Seed Manual; USFS Native Plant Network; LBJ Wildflower Center.",
     },
   },
   {
@@ -849,7 +849,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct"],
       note: "The seed needs no treatment: crumble the dry heads over bare soil in autumn and leave the seed near the surface — buried an inch and a half deep, it does not come up.",
-      basis: "Woody Plant Seed Manual.",
+      basis: "Woody Plant Seed Manual; Seed Information Database; LBJ Wildflower Center.",
     },
   },
   {
@@ -882,9 +882,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Late-season insectary value: Xerces Society; UC ANR. Host count: Baccharis genus, rounded western estimate.",
     propagation: {
-      methods: ["seed-direct"],
-      note: "Collect the fluffy seed from a female plant between late autumn and early spring and scatter it on bare soil. It needs no treatment and comes up with the winter rains, often within a month.",
-      basis: "USFS Native Plant Network; USDA NRCS Plant Guide; USFS FEIS.",
+      methods: ["seed-direct", "cuttings-softwood", "cuttings-semi-hardwood"],
+      note: "Collect the fluffy seed from a female plant between late autumn and early spring and scatter it on bare soil. It needs no treatment and comes up with the winter rains, often within a month. Shoot cuttings taken in spring or summer also root well.",
+      basis: "USFS Native Plant Network; USDA NRCS Plant Guide; USFS FEIS; LBJ Wildflower Center.",
     },
   },
   {
@@ -917,9 +917,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Host records (Euphydryas chalcedona, Junonia coenia): Xerces Society; BAMONA. Host count: Diplacus/Mimulus, rounded estimate.",
     propagation: {
-      methods: ["seed-surface-light"],
-      note: "Collect the capsules in mid to late summer, just before they split. The seed needs no treatment but sprouts in light, so sow it on the surface and don't cover it.",
-      basis: "USFS Native Plant Network; USFS Southern California Plant Profiles.",
+      methods: ["seed-surface-light", "cuttings-softwood", "cuttings-semi-hardwood"],
+      note: "Collect the capsules in mid to late summer, just before they split. The seed needs no treatment but sprouts in light, so sow it on the surface and don't cover it. Shoot-tip cuttings also root.",
+      basis: "USFS Native Plant Network; USFS Southern California Plant Profiles; RHS.",
     },
   },
   {
@@ -1622,7 +1622,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct"],
       note: "The seed needs no treatment, but it is slow: in a lab test most of it sprouted over about three months.",
-      basis: "Seed Information Database.",
+      basis: "Seed Information Database; LBJ Wildflower Center.",
     },
   },
   {
@@ -1693,7 +1693,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct"],
       note: "Collect the papery pods as they dry in late summer and sow the flat black seed. It needs no treatment: in lab tests untreated seed germinated almost completely.",
-      basis: "Seed Information Database.",
+      basis: "Seed Information Database; LBJ Wildflower Center.",
     },
   },
   {
@@ -1942,7 +1942,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["cuttings-hardwood", "seed-cold-moist"],
       note: "Grapes are usually grown from leafless winter cuttings, because seedlings rarely come true. Seed needs a few months cold and damp before it sprouts.",
-      basis: "Woody Plant Seed Manual.",
+      basis: "Woody Plant Seed Manual; LBJ Wildflower Center.",
     },
   },
   {

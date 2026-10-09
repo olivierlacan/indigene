@@ -415,7 +415,9 @@ So when you add something, ask which failure you are guarding against:
 **Before writing that a session "can't reach" a service, run
 `npm run network:check`.** It asks every host our scripts use and says whether
 the allowlist, the host's bot wall or the host itself is in the way
-(`docs/network.md`). The allowlist changes; a comment saying "the sandbox blocks
+(`docs/network.md`). The allowlist lives in `.claude/network/allowed-domains.txt`:
+add a host there, run `npm run allowlist`, and the cloud environment needs
+`paste.txt` pasted again. The allowlist changes; a comment saying "the sandbox blocks
 iNaturalist" outlived the block by months.
 
 When both apply, write both. The cross-border region has `plants.test.ts`

@@ -1,0 +1,231 @@
+# Hosts a Claude session working on Indigene needs to reach.
+#
+# This file is the source. Edit it here, then run `npm run allowlist` (in app/)
+# to regenerate the two copies the tools read:
+#   .claude/network/paste.txt   paste into a cloud environment's Allowed domains
+#   .claude/settings.json       sandbox.network.allowedDomains, for local sessions
+# How to apply it: .claude/network/README.md.
+#
+# One host per line, under the heading that says why we need it. `*.example.org`
+# matches every subdomain of example.org, but not example.org itself. A `#`
+# starts a comment, on its own line or after a host.
+
+## Data our scripts download
+# The check and build scripts in app/scripts. `npm run network:check` asks each
+# one a real question and writes the result to docs/network.md.
+*.inaturalist.org                  # taxa, observations, counts, photos (api., www., static.)
+inaturalist-open-data.s3.amazonaws.com  # iNaturalist photographs
+api.gbif.org                       # WCVP nativity, occurrence counts
+query.wikidata.org                 # identifiers, common names
+api.tela-botanica.org              # French names (eFlore)
+*.mnhn.fr                          # TAXREF and INPN (taxref., inpn., inpn2.)
+data.canadensys.net                # VASCAN, Canada's flora
+*.usda.gov                         # PLANTS, hardiness zones, Forest Service (plants., planthardiness.ars., *.fs., plantsservices.sc.egov.)
+data.nhm.ac.uk                     # HOSTS, caterpillar host plants
+api.globalbioticinteractions.org   # GloBI interactions
+plant-synz.landcareresearch.co.nz  # New Zealand plant–insect records
+storage.googleapis.com             # RESOLVE ecoregions download
+raw.githubusercontent.com          # committed files and screenshots
+
+## Maps and ecoregions
+*.arcgis.com                       # RESOLVE, region outlines, CEC layers (services*., www.)
+gispub.epa.gov                     # EPA ecoregions
+bio.discomap.eea.europa.eu         # EU biogeographical regions
+gis.cec.org                        # CEC North American ecoregions
+maps-cartes.services.geo.ca        # Canadian ecozones
+ecoregions.appspot.com             # RESOLVE's ecoregion viewer, linked in the app
+www.cec.org                        # CEC ecoregion pages, linked in the app
+www.eea.europa.eu                  # EEA pages, linked in the app
+
+## Lookups the app makes in the browser
+# Screenshots of a spot page make these too.
+*.open-meteo.com                   # frost dates, climate, place search (api., archive-api., geocoding-api.)
+nominatim.openstreetmap.org        # place names
+tile.openstreetmap.org             # map tiles
+www.openstreetmap.org              # map attribution link
+rest.isric.org                     # soil pH
+epqs.nationalmap.gov               # elevation
+player.mediadelivery.net           # video player (Bunny Stream)
+
+## Indigene itself
+indigene.app                       # the live site
+*.b-cdn.net                        # Bunny CDN (indigene.b-cdn.net)
+fyxheguykvewpdeysvoh.supabase.co   # Supabase project; not referenced in the repo yet
+
+## Names and taxonomy
+powo.science.kew.org               # Plants of the World Online
+wcvp.science.kew.org               # World Checklist of Vascular Plants
+www.kew.org
+www.ipni.org                       # plant names index
+www.worldfloraonline.org
+www.itis.gov
+www.gbif.org                       # GBIF species pages
+www.wikidata.org
+www.tela-botanica.org
+en.wikipedia.org
+www.ncbi.nlm.nih.gov
+
+## Invasive species lists
+www.cal-ipc.org                    # California
+www.dcr.virginia.gov               # Virginia
+floridainvasives.org               # Florida
+www.floridainvasives.org
+www.nwcb.wa.gov                    # Washington
+invmed.fr                          # Mediterranean France
+especes-exotiques-envahissantes.fr # Grand Est
+centrederessources-loirenature.com # Loire basin
+doctech.cbnpmp.fr                  # Pyrenees and Midi-Pyrénées
+www.biodiversite-auvergne-rhone-alpes.fr
+gd.eppo.int                        # EPPO Global Database
+www.eddmaps.org                    # EDDMapS
+www.invasive.org
+www.invasiveplantatlas.org
+bugwoodcloud.org                   # Bugwood images and documents
+
+## Sources cited on plant and animal pages
+# app/src/data/sources.ts and the guide's reading list.
+burkeherbarium.org
+butterfly-conservation.org
+dnr.maryland.gov
+doi.org
+extension.oregonstate.edu
+extension.osu.edu
+extension.psu.edu
+extension.wsu.edu
+*.ifas.ufl.edu                     # University of Florida extension (edis., gardeningsolutions., hort., ask., assessment., irrecenvhort.)
+jarrodfowler.com                   # bee host-plant lists
+kingcounty.gov
+landscapeplants.oregonstate.edu
+monarchjointventure.org
+mortonarb.org
+naturalhistory.si.edu
+ser-sid.org                        # Kew Seed Information Database
+www.allaboutbirds.org
+www.aspca.org                      # toxicity to pets
+www.buglife.org.uk
+www.butterfliesandmoths.org
+www.cabidigitallibrary.org
+www.cbnmed.fr
+www.floridamuseum.ufl.edu
+www.fws.gov
+ecos.fws.gov
+www.globalbioticinteractions.org
+www.missouribotanicalgarden.org
+www.nhm.ac.uk
+www.onf.fr
+www.oregon.gov
+www.oregonmetro.gov
+www.plantlife.org.uk
+www.rhs.org.uk
+www.usgs.gov
+www.wapc.org
+www.woodlandtrust.org.uk
+oregonflora.org
+ipm.ucanr.edu
+ucanr.edu
+saveplants.org
+catalogue.ceh.ac.uk
+datadryad.org
+epa.gov
+www.epa.gov
+homegrownnationalpark.org
+wildflower.org
+www.wildflower.org
+www.audubon.org
+www.iucnredlist.org
+www.nwf.org
+xerces.org
+www.xerces.org
+rngr.net                           # Reforestation, Nurseries and Genetic Resources
+npn.rngr.net                       # its native plant propagation protocols
+
+## Native plant societies
+# app/src/data/societies.ts and docs/outreach/native-plant-societies.md.
+*.cnps.org                         # California Native Plant Society (www., chapters., rareplants.)
+cnps-scv.org
+cnps-yerbabuena.org
+cnpsmarin.org
+cnpsslo.org
+ebcnps.org
+calscape.org
+theodorepayne.org
+www.fnps.org
+fnpschapters.org
+flawildflowers.org
+regionalconservation.org
+plantrealflorida.org
+wnps.org
+npsoregon.org
+vnps.org
+mdflora.org
+npsnj.org
+panativeplantsociety.org
+delawarenativeplants.org
+wvnps.org
+nyflora.org
+linpi.org
+riwps.org
+ct-botanical-society.org
+nativeplanttrust.org
+plantfinder.nativeplanttrust.org
+michiganbotanicalsociety.org
+wildflowersmich.org
+wildones.org
+www.wildones.org
+backyardhabitats.org
+pollinator-pathway.org
+pollinator.org
+nanps.org
+nativeplants.audubon.org
+bsbi.org
+pollinators.ie
+www.pollinators.ie
+biodiversityireland.ie
+iwt.ie
+nativewoodlandtrust.ie
+hometree.ie
+tidytowns.ie
+fcbn.fr
+www.fcbn.fr
+www.cbn-alpin.fr
+ofb.gouv.fr
+lpo.fr
+plante-et-cite.fr
+www.vegetal-local.fr
+www.nzpcn.org.nz
+www.tanestrees.org.nz
+
+## Research reading
+# Floras, herbaria and references a session reads while checking a claim. The
+# app doesn't link to these (yet).
+ucjeps.berkeley.edu                # Jepson eFlora
+www.calflora.org
+wildlife.ca.gov
+www.blm.gov
+explorer.natureserve.org
+apiv3.iucnredlist.org
+feis-crs.org                       # Fire Effects Information System
+edit.jornada.nmsu.edu              # ecological site descriptions
+florida.plantatlas.usf.edu
+plants.ces.ncsu.edu
+courses.washington.edu
+depts.washington.edu
+nativeplantspnw.com
+hardyferns.org
+pacificbulbsociety.org
+www.laspilitas.com
+helpabee.org
+euforgen.org                       # European forest genetic resources
+www.ffpri.affrc.go.jp              # Japan's Forestry and Forest Products Research Institute
+biodiversity.org.au
+plantnet.rbgsyd.nsw.gov.au
+biocache-ws.ala.org.au             # Atlas of Living Australia
+posa.sanbi.org                     # South Africa
+www.floraargentina.edu.ar
+
+## Journals
+link.springer.com
+peerj.com
+www.mdpi.com
+journals.flvc.org
+jfs.agriculturejournals.cz

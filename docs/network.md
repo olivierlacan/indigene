@@ -1,14 +1,14 @@
 # Network access
 
 Claude sessions on the web reach the internet through the environment's
-**allowlist** (the cloud environment's settings → Network access → Allowed
-domains). This page lists every host our scripts and screenshots request and
-whether a session can reach it, so nobody has to guess, and nobody writes
-"the sandbox blocks it" into a comment after the allowlist changed.
+**allowlist**. The list itself, and how to apply it, is in
+[`.claude/network/`](../.claude/network/README.md). This page answers the other
+question: of the hosts our scripts and screenshots request, which can a session
+actually reach right now?
 
 `npm run network:check` sends one real request per host. Add `-- --write` to
-rewrite the table below. When you add a script that calls a new host, add the
-host to `HOSTS` in `app/scripts/check-network.mjs`.
+rewrite the table below. The hosts it asks are in
+`app/scripts/network-hosts.mjs`.
 
 ## Reading the table
 

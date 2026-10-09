@@ -12,3 +12,6 @@
 - Internal: `npm run network:check` asks every host our scripts call and says
   whether a Claude session can reach it; `docs/network.md` holds the annotated
   table.
+- Internal: the network allowlist lives in `.claude/network/`. One annotated
+  source generates a paste-ready list for cloud environments and the local
+  sandbox's `allowedDomains`; `npm test` fails if they drift.

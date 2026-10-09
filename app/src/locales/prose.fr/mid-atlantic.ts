@@ -22,7 +22,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Les chênes hébergent plus d'espèces de chenilles qu'aucun autre genre d'arbre ici — des centaines — plus des glands pour des dizaines d'oiseaux et de mammifères, et des générations d'ombre.",
     propagationNote:
-      "Ramassez les glands bien pleins à leur chute en automne et faites-les flotter dans l'eau — jetez ceux qui remontent, ils sont vides ou véreux. Les glands de chêne blanc germent dès l'automne : ne les laissez donc pas sécher, et plantez chacun à deux ou trois centimètres de profondeur là où vous voulez l'arbre, car la racine pivotante supporte mal d'être déplacée.",
+      "Ramassez les glands bien pleins à leur chute en automne et faites-les flotter dans l'eau — jetez ceux qui remontent. Les glands de chêne blanc n'ont pas de dormance et meurent s'ils sèchent : semez-les donc tout de suite, à 3 à 5 cm de profondeur. La racine pousse dès l'automne, la tige sort au printemps.",
     supportNotes: {
       "acorn-birds":
         "Les glands doux du chêne blanc sont une nourriture de premier ordre pour les dindons sauvages, les canards branchus et les geais bleus, qui en font des réserves.",
@@ -39,7 +39,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Des centaines d'espèces de chenilles et de lourdes récoltes de glands ; le moyen le plus rapide d'offrir au réseau trophique les bienfaits d'un chêne.",
     propagationNote:
-      "Récoltez les glands tombés à l'automne et faites le test de flottaison, en jetant ceux qui flottent. Contrairement au chêne blanc, les glands de chêne rouge ont besoin d'un hiver froid et humide avant de germer — mélangez-les à du sable humide dans un sachet au réfrigérateur pour l'hiver, ou semez-les simplement dehors à l'automne et laissez la nature les refroidir. Empêchez-les de sécher, et plantez là où la racine pivotante pourra rester.",
+      "Récoltez les glands tombés à l'automne et faites le test de flottaison, en jetant ceux qui flottent. Contrairement au chêne blanc, les glands de chêne rouge ont besoin d'un hiver froid et humide pour germer : semez-les dehors à l'automne, ou gardez-les un à trois mois dans un sachet humide au réfrigérateur avant un semis de printemps. Ne les laissez pas sécher.",
     supportNotes: {
       "acorn-birds":
         "Ses lourdes récoltes de glands nourrissent geais, dindons sauvages et pics tout l'automne et l'hiver.",
@@ -56,7 +56,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Ses fleurs rouges précoces nourrissent les premières abeilles du printemps, ses graines nourrissent les oiseaux, et il héberge des centaines de chenilles.",
     propagationNote:
-      "Les graines ailées de l'érable rouge mûrissent à la fin du printemps, bien plus tôt que chez la plupart des arbres. Attrapez-les quand elles brunissent et semez-les aussitôt en pot ou en pleine terre — elles lèvent en une quinzaine de jours et n'ont besoin d'aucun froid, mais elles ne doivent pas sécher avant.",
+      "Les graines ailées de l'érable rouge mûrissent à la fin du printemps, bien plus tôt que chez la plupart des arbres. Attrapez-les quand elles brunissent et semez-les fraîches : la plupart lèvent en quelques jours, sans aucun froid. Les graines de certains arbres ont besoin d'un passage au froid et attendent le printemps suivant.",
     supportNotes: {
       "cecropia-moth":
         "Les érables sont un hôte de base des chenilles de l'Hyalophora cecropia.",
@@ -81,7 +81,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Une écorce couleur cannelle qui s'exfolie, des centaines d'espèces de chenilles, et des racines qui maintiennent une berge.",
     propagationNote:
-      "Le bouleau noir est l'un des rares arbres dont la minuscule graine mûrit à la fin du printemps plutôt qu'à l'automne — ramassez les petits cônes quand ils brunissent et émiettez-en la graine. Répandez-la à la surface d'un terreau humide et ne l'enterrez pas, puisqu'il lui faut de la lumière pour lever ; semée fraîche, elle lève rapidement sans aucun froid.",
+      "La graine du bouleau noir mûrit à la fin du printemps, contrairement à la plupart des arbres — ramassez les petits cônes quand ils brunissent et laissez-les s'émietter dans un sac en papier. Semez la graine fraîche à la surface d'un terreau humide, sans la couvrir : à la lumière, elle n'a besoin d'aucun froid et lève en une quinzaine de jours.",
     supportNotes: {
       "luna-moth":
         "Le bouleau est un arbre de prédilection pour les chenilles du papillon lune.",
@@ -96,7 +96,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Juste après les chênes pour les chenilles ; des nuages de fleurs printanières et des fruits d'été pour des dizaines d'espèces d'oiseaux.",
     propagationNote:
-      "Écrasez les fruits mûrs d'été et rincez la pulpe des noyaux — la chair contient des inhibiteurs de germination. Donnez aux noyaux nettoyés un long hiver froid et humide (dehors en pot, ou plusieurs mois dans du sable humide au réfrigérateur) avant qu'ils ne lèvent. À vrai dire, cet arbre se ressème si librement à partir des noyaux laissés par les oiseaux que vous trouverez souvent des semis gratuits.",
+      "Écrasez les fruits mûrs d'été et rincez la pulpe des noyaux. Les noyaux ont besoin d'un hiver froid et humide pour lever : semez-les dehors à l'automne, ou gardez-les environ quatre mois dans de la perlite humide au réfrigérateur avant un semis de printemps.",
     supportNotes: {
       "eastern-tiger-swallowtail":
         "Le cerisier tardif est l'un des principaux arbres nourriciers du Papilio glaucus.",
@@ -121,7 +121,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Ses fleurs rose vif s'ouvrent à même les branches au début du printemps, nourrissant les reines de bourdons quand peu de choses sont ouvertes.",
     propagationNote:
-      "La graine du gainier a à la fois un tégument dur et imperméable et un embryon dormant : il lui faut donc deux traitements. Entaillez ou frottez d'abord chaque graine au papier de verre (ou plongez-la brièvement dans de l'eau chaude) pour que l'humidité puisse entrer, puis donnez-lui un hiver froid et humide au réfrigérateur avant de semer. Il fait une racine pivotante : semez donc là où l'arbre vivra, plutôt que d'essayer de le diviser ou de le déplacer.",
+      "La graine du gainier a à la fois un tégument dur et imperméable et un embryon dormant : il lui faut donc deux traitements. Entaillez chaque graine à la lime ou au papier de verre (ou laissez-la tremper une nuit dans de l'eau chaude qui refroidit), puis gardez-la au froid et humide au réfrigérateur un à trois mois avant de semer.",
   },
   "Amelanchier canadensis": {
     nativeNote:
@@ -131,7 +131,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Des fleurs blanches précoces pour les abeilles, des baies de juin adorées des oiseaux (et des gens), et un feuillage d'automne flamboyant.",
     propagationNote:
-      "Cueillez les baies de juin quand elles sont pourpre foncé, écrasez-les, et rincez les minuscules graines de toute pulpe. Il leur faut un hiver froid et humide pour lever la dormance : semez-les dehors à l'automne, ou refroidissez-les quelques mois dans du sable humide au réfrigérateur avant un semis de printemps. Soyez patient — la levée est souvent lente et irrégulière.",
+      "Cueillez les baies de juin quand elles sont pourpre foncé, écrasez-les, et rincez les minuscules graines de toute pulpe. Il leur faut un hiver froid et humide : semez-les dehors aussitôt, ou gardez-les humides trois à quatre mois au réfrigérateur avant un semis de printemps. Soyez patient — beaucoup attendent le deuxième printemps.",
     supportNotes: {
       "cedar-waxwing":
         "Les amélanches du début de l'été sont une nourriture de premier ordre pour les jaseurs — une bande peut vider un arbre en une journée.",
@@ -160,7 +160,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Des baies très riches en graisses que les oiseaux migrateurs recherchent, plus les fleurs printanières classiques.",
     propagationNote:
-      "Débarrassez les baies rouge vif d'automne de leur pulpe et donnez à la graine un long hiver froid et humide avant qu'elle ne lève. Si vous préférez éviter l'attente, prélevez au début de l'été des boutures des pousses de l'année, une fois qu'elles ont commencé à s'aoûter, et faites-les raciner sous abri avec une humidité constante.",
+      "Débarrassez les baies rouge vif d'automne de leur pulpe et semez les noyaux dehors au début de l'automne ; les semis lèvent au printemps suivant. Pour un semis de printemps, gardez-les d'abord environ quatre mois au froid et humide. Les boutures de bois tendre s'enracinent aussi en été.",
     supportNotes: {
       "cedar-waxwing":
         "Ses drupes rouges d'automne, très riches en graisses, sont recherchées par les jaseurs et les passereaux migrateurs.",
@@ -196,7 +196,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Ses fleurs jaunes en rubans s'ouvrent en fin d'automne, quand rien d'autre ne fleurit, et nourrissent les papillons de nuit de fin de saison.",
     propagationNote:
-      "La graine d'hamamélis est réputée lente : il lui faut d'ordinaire deux hivers, avec une période chaude entre les deux, avant de lever — semez-la dehors et soyez patient sur deux ans. Une voie plus simple est de fixer une branche basse au sol au printemps et de la laisser s'enraciner sur place avant de la détacher l'année suivante.",
+      "La graine d'hamamélis est lente. Cueillez les capsules au début de l'automne, avant qu'elles s'ouvrent et la projettent, et semez dehors aussitôt : une partie lève au printemps suivant, beaucoup seulement le printemps d'après. Une voie plus simple est le marcottage — fixez une branche basse au sol à l'automne et détachez-la une fois enracinée.",
   },
   "Vaccinium corymbosum": {
     nativeNote:
@@ -206,7 +206,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Un arbuste clé de voûte : des centaines de chenilles, des fleurs printanières pour les abeilles spécialistes, et des baies pour vous et les oiseaux.",
     propagationNote:
-      "La voie fiable est la bouture : coupez au début de l'été des extrémités de pousses vertes tendres, ou un peu plus tard des pousses légèrement plus fermes, et faites-les raciner dans un mélange tourbeux et acide tenu humide. Le semis marche aussi — écrasez des baies mûres, rincez la pulpe, et donnez à la graine un hiver froid et humide — mais les semis exigent un sol acide et sont lents à atteindre la taille de récolte.",
+      "La voie fiable est la bouture : faites raciner des extrémités de pousses tendres au début de l'été, ou des rameaux nus et dormants en hiver. La graine n'a besoin d'aucun traitement — écrasez des baies mûres, rincez la pulpe et semez en surface, où la lumière l'aide à lever — mais les semis varient et exigent un sol acide.",
     supportNotes: {
       "mason-bees":
         "Les fleurs de myrtillier se pollinisent par vibration, si bien que les bourdons en sont les meilleurs pollinisateurs ; les osmies et les andrènes indigènes les butinent aussi.",
@@ -222,7 +222,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Ses branches nues chargées de baies rouges éclairent le jardin d'hiver et nourrissent merles d'Amérique et jaseurs en fin d'hiver.",
     propagationNote:
-      "Rappelez-vous que ce houx est soit mâle soit femelle : la graine ne se forme donc que sur une femelle ayant un mâle à proximité. La voie facile est la bouture — prélevez les pousses de l'année en été, à mesure qu'elles s'aoûtent, et faites-les raciner sous abri. Le semis est une longue affaire : il faut souvent deux hivers pour lever, et la plupart des jardiniers s'en passent.",
+      "Ce houx est soit mâle soit femelle : la graine ne se forme donc que sur une femelle ayant un mâle à proximité. La voie facile est la bouture : prélevez les pousses de l'année en fin d'été, à mesure qu'elles s'aoûtent. Le semis est une longue affaire — il lui faut du chaud puis du froid, et il ne lève d'ordinaire qu'au deuxième printemps.",
     supportNotes: {
       "cedar-waxwing":
         "Ses baies écarlates s'accrochent jusqu'au cœur de l'hiver, nourrissant jaseurs et merles d'Amérique quand il ne reste presque rien.",
@@ -248,7 +248,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Ses fleurs en pelotes d'épingles grouillent de papillons et d'abeilles ; les canards mangent ses graines. Une valeur sûre du jardin de pluie.",
     propagationNote:
-      "Le céphalanthe s'enracine très volontiers. En hiver, coupez des rameaux nus gros comme un crayon en morceaux longs d'une main et enfoncez-les en terre humide ; ou au début de l'été, faites raciner des extrémités de pousses vertes tendres dans un mélange humide. Dans les deux cas il aime rester mouillé pendant l'enracinement, ce qui convient parfaitement à cet amateur d'eau.",
+      "Le céphalanthe se multiplie de bouture : rameaux nus et dormants en hiver, ou pousses de l'année en été, à mesure qu'elles s'aoûtent. La graine fraîche n'a besoin d'aucun traitement et lève volontiers sur un mélange humide.",
   },
   "Physocarpus opulifolius": {
     supportNotes: {
@@ -274,7 +274,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Des corymbes blancs plats pour les pollinisateurs et des fruits bleu-noir qui alimentent la migration d'automne des oiseaux.",
     propagationNote:
-      "La voie rapide est la bouture, au début de l'été, de pousses vertes tendres, enracinées sous abri dans un mélange humide. La graine est têtue — il lui faut d'ordinaire une période chaude suivie d'un hiver froid (deux saisons) avant de lever. Rappelez-vous qu'une viorne dentée seule fructifie peu : plantez-en une seconde, non apparentée, à côté, pour de bonnes baies.",
+      "La voie rapide est la bouture, au début de l'été, de pousses vertes tendres, enracinées sous brumisation ou sous abri. La graine est lente : il lui faut d'ordinaire une période chaude puis un hiver, et elle ne lève souvent qu'au deuxième printemps.",
     supportNotes: {
       "hummingbird-clearwing":
         "Les viornes sont une plante nourricière documentée du sphinx Hemaris thysbe.",
@@ -300,7 +300,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Des tiges d'hiver rouge éclatant, des baies pour les oiseaux, et l'une des meilleures plantes pour stabiliser un terrain humide en train de s'éroder.",
     propagationNote:
-      "C'est l'un des arbustes les plus faciles à multiplier. Enfoncez en fin d'automne des rameaux nus et dormants en terre humide et la plupart s'enracineront, ou prélevez au début de l'été des extrémités de pousses tendres. Il se marcotte aussi tout seul — partout où une tige basse touche une terre humide, elle s'enracine : vous pouvez simplement déterrer et déplacer ces morceaux enracinés.",
+      "C'est l'un des arbustes les plus faciles à multiplier : des rameaux nus et dormants coupés en fin d'hiver s'enracinent même sans hormone, et des extrémités de pousses tendres s'enracinent au début de l'été. Vous pouvez aussi le marcotter — fixez une tige basse sur une terre humide et déterrez-la une fois enracinée.",
     supportNotes: {
       "cedar-waxwing":
         "Ses baies blanches d'automne sont avidement mangées par les jaseurs et les autres oiseaux frugivores.",
@@ -320,7 +320,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Il fixe son propre azote, prospère sur les sols secs les plus pauvres, et se couvre de pompons blancs couverts d'abeilles.",
     propagationNote:
-      "La graine a un tégument dur comme la pierre : entaillez-la au papier de verre ou versez dessus de l'eau à peine bouillie et laissez tremper une nuit, puis donnez-lui un hiver froid et humide avant de semer. Comme il fait une racine pivotante profonde et supporte mal d'être déplacé, élevez-le de semis et mettez-le tôt à sa place définitive plutôt que d'essayer de diviser un pied installé.",
+      "La graine a un tégument dur : versez dessus de l'eau très chaude et laissez-la tremper une nuit pendant qu'elle refroidit, puis donnez-lui deux à trois mois de froid humide avant de semer. Les pousses vertes tendres s'enracinent aussi au début de l'été sous brumisation.",
   },
   "Corylus americana": {
     nativeNote:
@@ -330,7 +330,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Des noix comestibles pour vous et la faune, des chatons précoces pour le premier pollen du printemps, et beaucoup de chenilles.",
     propagationNote:
-      "La voie la plus simple est de déterrer les rejets enracinés que ce noisetier drageonnant pousse autour de sa base et de les replanter. Par semis, ramassez les noix à l'automne avant les écureuils, protégez-les des rongeurs, et donnez-leur un hiver froid et humide — il leur faut ce froid pour lever au printemps.",
+      "Cueillez les noisettes quand le bord de l'involucre brunit, avant que les écureuils et les souris ne les prennent, et ne les laissez pas sécher. Il leur faut deux à six mois de froid humide : semez-les donc dehors à l'automne. Vous pouvez aussi déterrer une pousse enracinée du fourré qui s'étend et la replanter.",
     supportNotes: {
       "acorn-mammals":
         "Les noisettes sont recherchées par les écureuils, les tamias et les geais à l'automne.",
@@ -348,7 +348,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Une plante nourricière des chenilles du monarque, visitée par de nombreux papillons, sur un pied net et peu envahissant.",
     propagationNote:
-      "Récoltez les graines brunes et plates à l'automne, à l'ouverture des gousses, avant que la soie ne les emporte. Il leur faut environ un mois de froid humide — semez dehors à l'automne, ou gardez-les trente jours au réfrigérateur dans un essuie-tout humide avant un semis de printemps. N'essayez pas de la déterrer et de la diviser : sa racine pivotante profonde et cassante supporte mal d'être dérangée, le semis est donc la seule bonne voie.",
+      "Le plus simple est la bouture de racine : à l'automne, coupez la racine pivotante profonde en morceaux de 5 cm et plantez-les debout dans une terre humide. Par semis, récoltez les graines brunes et plates à l'ouverture des gousses, avant que la soie ne les emporte, et donnez-leur un à deux mois de froid humide — un semis d'automne s'en charge.",
     supportNotes: {
       monarch:
         "Une asclépiade — l'une des seules plantes que les chenilles de monarque puissent manger, et un choix de ponte privilégié.",
@@ -384,7 +384,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Une plante hôte du monarque qui attire aussi des nuées d'abeilles et de papillons à ses fleurs roses parfumées.",
     propagationNote:
-      "Récoltez la graine dans les gousses ouvertes à l'automne et donnez-lui environ un mois de froid humide (un semis d'automne s'en charge pour vous) pour une bonne levée. Contrairement à sa cousine à racine pivotante, celle-ci accepte aussi la division — soulevez et séparez une touffe au début du printemps, au démarrage de la végétation.",
+      "Récoltez la graine dans les gousses ouvertes à l'automne et donnez-lui quelques semaines de froid humide (un semis d'automne s'en charge pour vous). Contrairement à sa cousine à racine pivotante, celle-ci accepte aussi la division — soulevez et séparez une touffe au printemps.",
     supportNotes: {
       monarch:
         "Une asclépiade des terrains frais, et une plante hôte et à nectar clé du monarque.",
@@ -411,7 +411,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Des mois de floraison couverte de papillons, puis des capitules en graines qui nourrissent les chardonnerets jusqu'en hiver.",
     propagationNote:
-      "Tordez les capitules secs et piquants à l'automne pour libérer la graine, qui germe le mieux après un mois environ de froid humide — le plus simple étant de semer dehors avant l'hiver. Les touffes installées se divisent aussi volontiers au début du printemps. Laissez quelques capitules sur pied et elle se ressèmera discrètement.",
+      "Tordez les capitules secs et piquants à l'automne pour libérer la graine, qui germe mieux après deux mois de froid humide — le plus simple étant de semer dehors avant l'hiver. Les touffes se divisent aussi au printemps.",
     supportNotes: {
       "sunflower-specialist-bees":
         "Une floraison d'astéracée dont le pollen nourrit les abeilles spécialistes qui ne peuvent en utiliser aucun autre.",
@@ -429,7 +429,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Un long spectacle doré de fin d'été pour les pollinisateurs et les fringilles, sur une plante qui se passe de tout soin.",
     propagationNote:
-      "Secouez les petites graines des cônes secs à l'automne ; elles lèvent mieux après un mois environ de froid humide, semez-les donc à l'automne ou refroidissez-les dans du sable humide avant le printemps. Les touffes se divisent facilement au début du printemps, et si vous laissez les capitules sur pied vous obtiendrez des semis spontanés autour du pied mère.",
+      "Secouez les petites graines des cônes secs à l'automne ; elles lèvent mieux après trois mois environ de froid humide : semez-les donc dehors à l'automne ou refroidissez-les au réfrigérateur avant le printemps. Les touffes se divisent facilement au printemps.",
     supportNotes: {
       "sunflower-specialist-bees":
         "Une composée dont le pollen fait vivre les abeilles spécialistes des astéracées.",
@@ -445,7 +445,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Des couronnes lavande animées d'abeilles, de papillons et de sphinx ; ses feuilles font une infusion parfumée.",
     propagationNote:
-      "La plus facile de toutes est la division : cette monarde s'étend par des racines superficielles, vous pouvez donc soulever une touffe au printemps et la séparer en plusieurs morceaux enracinés. Par semis, secouez la graine des têtes sèches et donnez-lui un mois environ de froid humide, ou semez simplement dehors à l'automne.",
+      "La plus facile de toutes est la division : cette monarde s'étend par des rhizomes, vous pouvez donc soulever une touffe au début du printemps et la séparer en morceaux enracinés. La graine lève volontiers sans froid — semez-la au printemps, ou dehors à l'automne.",
     supportNotes: {
       "ruby-throated-hummingbird":
         "Ses fleurs tubulaires lavande sont l'une des préférées des abeilles et des papillons ; les colibris y passent de temps en temps.",
@@ -463,7 +463,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Une clé de voûte : il héberge plus de cent chenilles et ses fleurs pourpres tardives sont une dernière halte de ravitaillement essentielle pour les monarques en migration et les abeilles.",
     propagationNote:
-      "La méthode la plus simple est de diviser une touffe installée au printemps, en fendant la souche en morceaux enracinés. Récoltez la graine des têtes cotonneuses en fin d'automne et donnez-lui un mois environ de froid humide (un semis d'automne s'en charge) pour une bonne levée. Laissé sur pied, il se ressème aussi dans le jardin.",
+      "La méthode la plus simple est de diviser une touffe installée au printemps, en détachant des tiges avec leurs racines. Récoltez la graine des têtes cotonneuses en fin d'automne ; un à trois mois de froid humide l'aident à lever, et un semis d'automne s'en charge.",
     supportNotes: {
       "sunflower-specialist-bees":
         "Les asters font vivre tout un cortège d'abeilles spécialistes des asters ; celui-ci est l'un des meilleurs.",
@@ -481,7 +481,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Une clé de voûte qui héberge plus de cent chenilles et couvre l'automne de pollen et de nectar au moment où les pollinisateurs en ont le plus besoin.",
     propagationNote:
-      "Le plus facile est la division : soulevez la touffe au début du printemps et détachez des morceaux enracinés sur les bords. Par semis, récoltez les têtes cotonneuses en fin d'automne et donnez à la graine un mois environ de froid humide — un semis d'automne dehors s'en charge naturellement. Elle se ressèmera aussi doucement si l'on laisse quelques capitules sur pied.",
+      "Le plus facile est la division : en fin d'hiver, soulevez la touffe et séparez ses rosettes en morceaux enracinés — un pied adulte peut en donner des dizaines. La graine est souvent de faible qualité : semez-la serré, fraîche et en pleine terre.",
     supportNotes: {
       "sunflower-specialist-bees":
         "Les verges d'or portent plus d'abeilles spécialistes du pollen que presque toute autre plante.",
@@ -497,7 +497,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "De gros dômes de fleurs mauves que les papillons couvrent en fin d'été, sur une plante d'une belle allure architecturale.",
     propagationNote:
-      "Récoltez la graine minuscule à mesure que les têtes sèches mûrissent en fin d'été. Elle lève mieux après un mois environ de froid humide : semez-la dehors à l'automne ou gardez-la au réfrigérateur dans du sable humide tout l'hiver. Une touffe mûre peut aussi être soulevée et divisée au début du printemps pour quelques pieds de plus.",
+      "Le plus facile est la division : soulevez la touffe quand elle entre en repos à l'automne ou quand les pousses apparaissent au printemps, et détachez des morceaux enracinés. La graine profite de trois mois de froid humide — un semis d'automne dehors s'en charge — mais la levée est d'ordinaire faible : semez serré.",
     supportNotes: {
       "hummingbird-clearwing":
         "Ses hautes inflorescences mauves sont un aimant pour les sphinx du genre Hemaris et les papillons.",
@@ -524,7 +524,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Des lanternes penchées rouge et jaune qui arrivent juste au retour des colibris à gorge rubis au printemps.",
     propagationNote:
-      "Récoltez les petites graines noires dans les capsules papyracées au début de l'été. Pressez-les à la surface de la terre sans les enterrer — il leur faut de la lumière pour lever — et donnez-leur d'abord un passage froid et humide (un semis d'automne fait les deux). L'ancolie vit peu mais se ressème fidèlement : une fois que vous l'avez, elle a tendance à rester.",
+      "Récoltez les petites graines noires quand les capsules mûrissent au début de l'été. Répandez-les à la surface et tassez légèrement, tout de suite ou après trois à quatre semaines de froid humide. Les pieds adultes se divisent mal : le semis est la voie.",
     supportNotes: {
       "ruby-throated-hummingbird":
         "Ses éperons rouges penchés fleurissent au printemps exactement à l'arrivée des colibris à gorge rubis ; une fleur à colibris classique.",
@@ -538,7 +538,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Des fleurs blanches en clochettes pour les abeilles de printemps, puis des tiges de graines rouillées pour la structure hivernale. Très peu d'entretien.",
     propagationNote:
-      "La graine fine mûrit dans les capsules sèches à l'automne ; donnez-lui un mois environ de froid humide — le plus simple en semant dehors avant l'hiver — pour une bonne germination. Les rosettes persistantes peuvent aussi être soulevées et séparées au début du printemps pour faire quelques pieds de plus.",
+      "La division est le plus facile : soulevez et séparez les souches à l'automne ou au début du printemps. La graine mûrit à l'automne et germe mieux après un passage au froid humide et à la lumière — semez-la en surface, dehors, avant l'hiver.",
     supportNotes: {
       "bumble-bees":
         "Ses fleurs blanches tubulaires sont une forte source de nectar et de pollen de fin de printemps pour les bourdons.",
@@ -554,7 +554,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Ses fleurs jaunes précoces nourrissent les petites abeilles indigènes, et c'est une plante hôte des chenilles du Papilio polyxenes.",
     propagationNote:
-      "Semez la graine fraîche — récoltez-la au début de l'été, à mesure que les fruits plats sèchent, et mettez-la en terre tant qu'elle est neuve, car elle germe mal une fois séchée et vieillie. Il lui faut un hiver froid et humide pour lever : semée à l'automne ou semée fraîche, elle lève au printemps suivant. Elle se ressème doucement une fois installée.",
+      "Récoltez la graine au début de l'été, à mesure que les fruits plats sèchent, et semez-la dehors à l'automne : il lui faut un hiver froid et humide, et elle lève mieux en sol frais. Les touffes peuvent aussi se diviser.",
     supportNotes: {
       "eastern-black-swallowtail":
         "Une apiacée indigène et une véritable plante nourricière des chenilles du Papilio polyxenes — pas seulement une halte à nectar.",
@@ -570,7 +570,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Des épis de fleurs bleues en pois pour les bourdons, elle fixe son propre azote, et elle héberge l'hespérie Erynnis baptisiae, des coliades et le Callophrys irus.",
     propagationNote:
-      "Les graines dures et rondes lèvent bien mieux si vous entaillez ou sablez d'abord le tégument, ou si vous les faites tremper une nuit dans de l'eau à peine bouillie, puis leur donnez un hiver froid et humide. Comme elle fait une racine pivotante profonde, elle n'aime pas être déterrée ni divisée : élevez-la de semis et plantez-la là où elle restera des années.",
+      "Entaillez d'abord chaque graine dure et ronde à la lime ou au papier de verre ; aucun froid n'est nécessaire. Semez à un centimètre de profondeur, dehors, à l'automne ou au printemps — les semis lèvent vite mais mettent jusqu'à trois ans à fleurir. La souche coriace peut aussi se diviser pendant le repos.",
     supportNotes: {
       "bumble-bees":
         "Ses grandes fleurs bleues en pois sont travaillées surtout par les bourdons assez forts pour en déclencher le ressort ; elle héberge aussi les chenilles de plusieurs coliades et hespéries.",
@@ -584,7 +584,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Des épis rouges éclatants où viennent se nourrir les colibris ; un bon choix pour un coin humide et mi-ombragé.",
     propagationNote:
-      "La graine est presque fine comme de la poussière : répandez-la à la surface d'une terre humide et ne la couvrez pas, puisqu'il lui faut de la lumière pour germer. Elle se ressème volontiers partout où le sol reste frais, et les tiges qui s'affalent et touchent une terre humide s'enracinent : vous pouvez donc aussi soulever et déplacer ces morceaux enracinés.",
+      "La graine est presque fine comme de la poussière : pressez-la à la surface d'un terreau humide sans la couvrir. Semez-la fraîche au chaud, ou passez-la d'abord un à trois mois au froid humide : les pépiniéristes font l'un ou l'autre.",
     supportNotes: {
       "ruby-throated-hummingbird":
         "Ses tubes rouges éclatants sont faits pour le bec d'un colibri et sont l'une de ses plantes à nectar indigènes les plus importantes.",
@@ -604,7 +604,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Des fleurs roses printanières pour les premières abeilles indigènes, suivies d'un couvre-sol net de feuilles en forme de feuille d'érable.",
     propagationNote:
-      "Le plus facile est de soulever et séparer la touffe qui s'étale, au printemps — elle forme un coussin lent de souches enracinées. Par semis, récoltez la graine au moment où les capsules d'été la projettent, et donnez-lui un hiver froid et humide (un semis d'automne convient) avant qu'elle ne lève.",
+      "Le plus facile est de diviser les rhizomes à l'automne ou au début du printemps — ils se ramifient souvent à angle droit, ce qui rend la séparation simple. La graine n'a besoin d'aucun traitement : récoltez les capsules quand elles foncent, laissez-les s'ouvrir dans un sac en papier, et semez dehors en fin d'automne ou au printemps.",
   },
 
   // -------------------------------------------------------------------------
@@ -622,7 +622,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Des feuilles vert-bleu en été qui passent à l'orange acajou en automne ; elle héberge des hespéries, abrite les oiseaux et verrouille les pentes sèches.",
     propagationNote:
-      "C'est une graminée de saison chaude : semez la graine cotonneuse à la fin du printemps, une fois la terre réchauffée, et elle lèvera sans aucun froid — veillez simplement à ce que la surface ne sèche pas avant la levée. Les touffes installées se déterrent aussi et se séparent au printemps, au démarrage de la végétation.",
+      "Semez la graine cotonneuse dehors, de la fin de l'automne au début du printemps. En pot, quelques semaines de froid humide l'aident d'abord à lever. Les touffes installées se déterrent aussi et se séparent au printemps.",
     lookalikeNotes: {
       "miscanthus-sinensis": {
         why: "Deux graminées ornementales en touffe vendues pour le même massif, et toutes deux fauves et plumeuses à l'automne.",
@@ -647,7 +647,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Un écran dressé de panicules aériennes que les oiseaux assaillent en hiver, avec des racines qui absorbent le ruissellement et tiennent le sol.",
     propagationNote:
-      "Une graminée de saison chaude — semez la graine à la fin du printemps dans une terre réchauffée et elle germe rapidement, avec peu ou pas de froid nécessaire. Une touffe mûre se déterre aussi et se sépare en éclats enracinés au printemps, quand elle repart.",
+      "Semez la graine sans traitement dehors à l'automne, ou gardez-la au froid humide deux semaines à un mois avant un semis de printemps, à un demi-centimètre de profondeur. Une touffe mûre se déterre aussi et se sépare en éclats enracinés au printemps.",
     lookalikeNotes: {
       "miscanthus-sinensis": {
         why: "Deux grandes graminées en touffe vendues sur le même étal pour le même office — la hauteur, le mouvement et la structure hivernale.",
@@ -672,7 +672,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Des épis en patte de dindon et une couleur d'automne cuivrée ; des racines de premier ordre pour structurer le sol, stocker le carbone et arrêter l'érosion.",
     propagationNote:
-      "Encore une graminée de saison chaude : semez la graine à la fin du printemps une fois le sol réchauffé et elle lève promptement sans froid. Les grosses touffes installées se divisent aussi bien au printemps — déterrez-en une et déchirez-la en morceaux enracinés pour la répartir.",
+      "Semez la graine dehors en fin d'hiver ou au début du printemps ; en pot, deux à quatre semaines de froid humide la mettent en route. Les grosses touffes se divisent aussi bien au printemps — déterrez-en une et séparez-la en morceaux enracinés.",
   },
   "Carex pensylvanica": {
     nativeNote:
@@ -682,7 +682,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Un couvre-sol vert à texture fine qui héberge de nombreuses petites hespéries et ne demande ni tonte, ni arrosage, ni engrais.",
     propagationNote:
-      "De loin le plus facile est la division : cette laîche court par coulants souterrains, vous pouvez donc soulever une plaque au printemps et la séparer en de nombreux petits morceaux enracinés à planter pour qu'ils se rejoignent. Le semis est lent et capricieux ; la plupart des jardiniers s'en passent et divisent.",
+      "De loin le plus facile est la division : au printemps, soulevez une touffe adulte et séparez-la en petits morceaux ayant chacun des racines et des feuilles.",
   },
   "Parthenocissus quinquefolia": {
     supportNotes: {
@@ -698,7 +698,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Une couleur d'automne écarlate, des baies très riches en graisses dont des dizaines d'oiseaux dépendent, et un rôle de plante nourricière pour de superbes sphinx.",
     propagationNote:
-      "Presque trop facile : faites raciner des pousses vertes tendres en été ou des longueurs de liane nues et dormantes en hiver, et la plupart prendront en terre humide. Elle se marcotte aussi toute seule — partout où une tige rampante touche le sol, elle s'enracine : vous pouvez simplement sectionner et soulever ces sections enracinées.",
+      "Les boutures s'enracinent volontiers : prélevez des longueurs de liane en été, ou des morceaux nus et dormants en hiver, et gardez-les humides. Le marcottage marche aussi — fixez une tige rampante au sol à l'automne et détachez-la une fois enracinée.",
     lookalikeNotes: {
       "hedera-helix": {
         why: "Toutes deux grimpent aux troncs et aux murs, et toutes deux se font appeler « le lierre de la maison ».",
@@ -719,7 +719,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Ses trompettes corail fleurissent des mois durant en nourrissant les colibris ; ses baies rouges nourrissent ensuite les passereaux.",
     propagationNote:
-      "Ce chèvrefeuille s'enracine facilement de bouture — prélevez des morceaux des pousses de l'année en été, à mesure qu'elles s'aoûtent, ou des longueurs nues et dormantes en hiver, et faites-les raciner dans un mélange humide. Vous obtenez ainsi une copie exacte d'une indigène sage, sans aucune des manies du chèvrefeuille du Japon envahissant.",
+      "Ce chèvrefeuille s'enracine facilement de bouture — prélevez des pousses de l'année de l'été à l'automne, ou des longueurs nues en hiver. Le marcottage d'une tige rampante marche aussi.",
     supportNotes: {
       "ruby-throated-hummingbird":
         "Ses fleurs tubulaires corail, sur une longue saison, en font l'une des meilleures lianes à colibris qui soient.",
@@ -766,7 +766,7 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "De gaies fleurs jaunes printanières portées au-dessus d'un tapis persistant qui étouffe les adventices à l'ombre.",
     propagationNote:
-      "Le plus facile est la division — ce couvre-sol s'étend en tapis : soulevez au printemps une portion et séparez-la en morceaux enracinés à replanter. Il se ressème aussi librement ; vous pouvez répandre la graine cotonneuse à la surface d'une terre humide à l'automne et laisser les spontanés combler.",
+      "Le plus facile est la division — ce couvre-sol s'étend en tapis : soulevez au printemps une portion et séparez-la en morceaux enracinés à replanter. Par semis, donnez-lui environ six semaines de froid humide, puis de la chaleur.",
     lookalikeNotes: {
       "ficaria-verna": {
         why: "Tous deux tapissent un terrain frais de fleurs jaunes en avril, et tous deux s'étendent latéralement en une seule plaque compacte.",
@@ -787,6 +787,6 @@ export const MID_ATLANTIC: ProseTable = {
     givesNote:
       "Elle reste verte tout l'hiver, ses frondes retenant les feuilles mortes et ralentissant l'érosion sur un talus boisé ; un abri pour la petite faune.",
     propagationNote:
-      "De loin le plus facile est de déterrer une touffe installée au début du printemps et de fendre la souche en morceaux enracinés. Les fougères ne font pas de graines — elles poussent à partir de spores fines comme de la poussière au revers des frondes, que vous pouvez semer sur un terreau stérile humide, mais c'est un projet lent et minutieux, à laisser aux patients.",
+      "De loin le plus facile est de déterrer une touffe installée et de fendre la souche en morceaux enracinés. Les fougères ne font pas de graines — elles poussent à partir de spores fines comme de la poussière au revers des frondes, qu'on peut semer sur un terreau stérile humide, mais cela prend deux ans environ.",
   },
 };

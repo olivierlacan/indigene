@@ -85,6 +85,9 @@ export const SOURCE_LINKS: SourceSite[] = [
   { name: "Royal Horticultural Society", url: "https://www.rhs.org.uk/" },
   { name: "New Zealand Plant Conservation Network", url: "https://www.nzpcn.org.nz/flora/species/" },
   { name: "California Native Plant Society", url: "https://www.cnps.org/" },
+  // The Forest Service's species reviews: how a plant spreads and resprouts.
+  { name: "Fire Effects Information System", url: "https://www.fs.usda.gov/database/feis/" },
+  { name: "FEIS", url: "https://www.fs.usda.gov/database/feis/" },
   { name: "INPN", url: "https://inpn.mnhn.fr/" },
   { name: "RHS Plants for Pollinators", url: "https://www.rhs.org.uk/wildlife/plants-for-pollinators" },
   { name: "Butterfly Conservation", url: "https://butterfly-conservation.org/" },

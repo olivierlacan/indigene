@@ -79,8 +79,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 531 Lepidoptera recorded on Quercus in Japan — HOSTS, Natural History Museum (CC0), field records only, laboratory rearings excluded (561 if they count). HOSTS names 272 on this species alone.",
     propagation: {
       methods: ["seed-warm", "seed-direct"],
-      note: "Gather acorns as they drop in October, float off the ones that rise, and sow the rest straight away — konara acorns germinate the same autumn and must never dry out. Sow where the tree will stand, or into a deep pot: the taproot resents moving.",
-      basis: "Forestry and Forest Products Research Institute (Japan) nursery practice; Kew Seed Information Database.",
+      note: "Gather acorns as they drop in autumn, float off the ones that rise, and sow the rest straight away — konara acorns sprout the same autumn and die if they dry out. Sow where the tree will stand, or into a deep pot.",
+      basis: "Seed Information Database; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -114,8 +114,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 531 Lepidoptera recorded on Quercus in Japan — HOSTS, Natural History Museum (CC0), field records only. HOSTS names 319 on this species alone, the highest of any single plant in its Japanese records.",
     propagation: {
       methods: ["seed-warm", "seed-direct"],
-      note: "As konara: collect in October, float-test, sow at once into deep ground or a deep pot. Kunugi acorns are big and sprout vigorously, often before you have finished sowing them.",
-      basis: "Forestry and Forest Products Research Institute (Japan) nursery practice.",
+      note: "As konara: collect in autumn, float-test, and sow at once into deep ground or a deep pot. The acorns die if they dry, so don't keep them in a warm room.",
+      basis: "Seed Information Database; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -150,8 +150,8 @@ export const SEED_RAW: RawPlant[] = [
     confidenceLowered: "medium",
     propagation: {
       methods: ["seed-warm"],
-      note: "Acorns ripen October to November and are sown at once, as with konara. Evergreen oak seedlings want shade for their first two summers — nothing like the full sun kunugi will take.",
-      basis: "Kew Seed Information Database; Japanese nursery practice.",
+      note: "Acorns ripen in autumn and are sown at once, as with konara, before they can dry.",
+      basis: "Seed Information Database.",
     },
   },
   {
@@ -186,8 +186,8 @@ export const SEED_RAW: RawPlant[] = [
     confidenceLowered: "medium",
     propagation: {
       methods: ["seed-warm"],
-      note: "Sow fresh acorns in autumn under light shade. Arakashi self-sows freely around a mature tree on the plain, so seedlings are usually easier found than raised.",
-      basis: "Kew Seed Information Database; Japanese nursery practice.",
+      note: "Sow the acorns as soon as they ripen in autumn, in a seedbed or a pot outdoors. Don't let them dry first.",
+      basis: "Seed Information Database; Royal Horticultural Society.",
     },
   },
   {
@@ -256,8 +256,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 15 Lepidoptera recorded on Castanopsis in Japan — HOSTS, Natural History Museum (CC0), field records only; 13 of them on this species. A real figure, and a small one: the evergreen canopy carries far less than the coppice oaks.",
     propagation: {
       methods: ["seed-warm"],
-      note: "Acorns ripen in the second autumn and must be sown fresh, in shade, never dried. Seedlings are slow for three years and then move.",
-      basis: "Kew Seed Information Database; Japanese shrine-forest restoration practice.",
+      note: "Sow the acorns fresh in autumn.",
+      basis: "No published source checked yet.",
     },
   },
   {
@@ -291,8 +291,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 26 Lepidoptera recorded on Zelkova in Japan — HOSTS, Natural History Museum (CC0), field records only; 23 of them on this species.",
     propagation: {
       methods: ["seed-cold-moist", "cuttings-softwood"],
-      note: "Collect the small hard nutlets in late autumn, chill them damp over winter and sow in spring. Softwood cuttings in June root readily under cover, which is how street stock is raised.",
-      basis: "Kew Seed Information Database; Japanese street-tree nursery practice.",
+      note: "Sow the small hard nutlets outdoors in autumn, as soon as they're collected; they lose life if they dry. Softwood cuttings from young plants also root in summer.",
+      basis: "Seed Information Database; Royal Horticultural Society.",
     },
   },
   {
@@ -326,8 +326,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 22 Lepidoptera recorded on Celtis in Japan — HOSTS, Natural History Museum (CC0), field records only; 12 on this species. The number is small and the identity of its users is the point: Sasakia charonda has no other host.",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Clean the pulp off ripe fruit in October, chill the stones damp through winter and sow in spring. Volunteer seedlings under a mature tree transplant well while small.",
-      basis: "Kew Seed Information Database; Japanese nursery practice.",
+      note: "Clean the pulp off ripe fruit in autumn and sow the stones outdoors straight away.",
+      basis: "Royal Horticultural Society.",
     },
   },
   {
@@ -362,8 +362,8 @@ export const SEED_RAW: RawPlant[] = [
     confidenceLowered: "medium",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Clean the flesh off ripe fruit in June, chill the stones damp for three months and sow. Seedlings vary — that variation is the point of a wild cherry, and why a grafted clone is not a substitute.",
-      basis: "Kew Seed Information Database; Japanese forestry nursery practice.",
+      note: "Clean the flesh off ripe fruit and sow the stones in pots outdoors in autumn. Seedlings vary — that variation is the point of a wild cherry, and why a grafted clone is not a substitute.",
+      basis: "Royal Horticultural Society.",
     },
   },
   {
@@ -466,9 +466,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: **not counted** — HOSTS holds no Japanese record against Machilus at all. That is a gap in the source, not a claim that nothing feeds on it: this is a dominant coastal tree and the laurel family carries swallowtails elsewhere in Japan. Shown as uncounted rather than as a zero.",
     propagation: {
-      methods: ["seed-warm"],
-      note: "Sow the cleaned black fruit as soon as it ripens in July — tabunoki seed dies if it dries. Keep seedlings shaded and sheltered for their first winter.",
-      basis: "Kew Seed Information Database; Japanese coastal shelter-belt practice.",
+      methods: ["seed-warm", "cuttings-semi-hardwood"],
+      note: "Sow the cleaned black fruit as soon as it ripens in summer — tabunoki seed dies if it dries. Semi-ripe cuttings also root in summer. Shelter young plants from cold wind and late frost.",
+      basis: "Seed Information Database; Royal Horticultural Society.",
     },
   },
   {
@@ -608,8 +608,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 28 Lepidoptera recorded on Camellia in Japan — HOSTS, Natural History Museum (CC0), field records only; 13 against this species, the rest largely on cultivated tea.",
     propagation: {
       methods: ["seed-warm", "cuttings-semi-hardwood"],
-      note: "Sow the big seed fresh in autumn, before it dries. Semi-hardwood cuttings in July root under cover and come true, which matters if you want the single wild form rather than a seedling's variation.",
-      basis: "Kew Seed Information Database; Japanese nursery practice.",
+      note: "Sow the big seed fresh in autumn: fresh seed sprouts readily, dried seed doesn't. Semi-ripe cuttings from July to September come true, which matters if you want the single wild form rather than a seedling's variation.",
+      basis: "Seed Information Database; Royal Horticultural Society.",
     },
   },
   {
@@ -642,9 +642,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 4 Lepidoptera recorded on Hydrangea in Japan — HOSTS, Natural History Museum (CC0), field records only. Low and real; the plant earns its place on nectar, not on caterpillars.",
     propagation: {
-      methods: ["cuttings-softwood"],
-      note: "Softwood cuttings in June root in two or three weeks in damp shade — the easiest thing on this list to make more of. Take them from a lacecap if you want a lacecap.",
-      basis: "Royal Horticultural Society; Japanese nursery practice.",
+      methods: ["cuttings-softwood", "cuttings-hardwood"],
+      note: "Take softwood cuttings in early summer or hardwood cuttings in winter. A cutting copies its parent: take it from a lacecap if you want a lacecap.",
+      basis: "Royal Horticultural Society.",
     },
   },
   {
@@ -854,9 +854,9 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 62 Lepidoptera recorded on Salix in Japan — HOSTS, Natural History Museum (CC0), field records only. HOSTS files most Japanese willow records at genus level, so this is the genus figure. Confidence medium: HOSTS files most Japanese willow records at genus level, so the count is not this species' own.",
     confidenceLowered: "medium",
     propagation: {
-      methods: ["cuttings-hardwood"],
-      note: "The easiest plant here: cut a pencil-thick leafless shoot in winter, push two thirds of it into wet ground, and it will root. No hormone, no cover, nothing.",
-      basis: "Kew Seed Information Database; standard willow practice.",
+      methods: ["cuttings-hardwood", "cuttings-softwood"],
+      note: "In winter, cut a leafless shoot and push two thirds of it into moist ground; roots form along the buried stem. Softwood cuttings in early summer work too.",
+      basis: "Royal Horticultural Society.",
     },
   },
   {
@@ -924,9 +924,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 12 Lepidoptera recorded on Eurya in Japan — HOSTS, Natural History Museum (CC0), field records only, all 12 against this species.",
     propagation: {
-      methods: ["seed-warm", "cuttings-semi-hardwood"],
-      note: "Sow the cleaned fruit fresh in autumn. Semi-hardwood cuttings in July root easily; separate sexes, so take from a fruiting plant if you want fruit.",
-      basis: "Kew Seed Information Database; Japanese nursery practice.",
+      methods: ["seed-warm"],
+      note: "Sow the cleaned fruit in autumn.",
+      basis: "No published source checked yet.",
     },
   },
   {
@@ -960,8 +960,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: **not counted** — HOSTS holds no Japanese record against Aucuba. A gap in the source rather than a zero; shown as uncounted because 0 would claim nothing eats it.",
     propagation: {
       methods: ["cuttings-semi-hardwood"],
-      note: "Semi-hardwood cuttings any time from July to September root readily in shade — much the simplest route, and it lets you pick a female for fruit.",
-      basis: "Royal Horticultural Society; Japanese nursery practice.",
+      note: "Take semi-ripe cuttings from late summer to autumn. A cutting copies its parent, so take one from a female if you want berries — and she'll need a male nearby.",
+      basis: "Royal Horticultural Society.",
     },
   },
   {
@@ -1065,9 +1065,9 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 2 Lepidoptera recorded on Ardisia in Japan — HOSTS, Natural History Museum (CC0), field records only, and both against a different Ardisia. Carried as the genus figure, which is weak. Confidence low: both records are against a different Ardisia, so nothing here is measured on this plant.",
     confidenceLowered: "low",
     propagation: {
-      methods: ["division", "cuttings-semi-hardwood"],
-      note: "Lift and split a spreading patch in spring, keeping a piece of runner on each division. Semi-hardwood cuttings in July also work.",
-      basis: "Japanese nursery practice.",
+      methods: ["division"],
+      note: "Lift and split a spreading patch in spring, keeping a piece of runner on each division.",
+      basis: "No published source checked yet.",
     },
   },
   // --- Vines: the plain's climbers, and what they need to climb on ----------
@@ -1173,8 +1173,8 @@ export const SEED_RAW: RawPlant[] = [
     confidenceLowered: "low",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
-      note: "Semi-hardwood cuttings in July under cover, or simply peg a trailing stem down where it touches soil — it roots at the nodes on its own.",
-      basis: "Royal Horticultural Society; Japanese nursery practice.",
+      note: "Take semi-ripe cuttings from July to September, or in autumn or spring peg a trailing stem down into the soil and leave it to root.",
+      basis: "Royal Horticultural Society.",
     },
   },
   {
@@ -1632,8 +1632,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: **not counted** — HOSTS holds no Japanese record against Iris. A gap in the source, not a zero.",
     propagation: {
       methods: ["division"],
-      note: "Lift and split the rhizomes just after flowering, keeping a fan of leaves on each piece, and replant at once into wet ground. Seed is slow and variable.",
-      basis: "Royal Horticultural Society; Japanese nursery practice.",
+      note: "Lift and split the rhizomes between midsummer and early autumn, keeping a fan of leaves on each piece, and replant at once into wet ground.",
+      basis: "Royal Horticultural Society.",
     },
   },
   {
@@ -1773,8 +1773,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 2 Lepidoptera recorded on Farfugium in Japan — HOSTS, Natural History Museum (CC0), field records only, both against this species.",
     propagation: {
       methods: ["division", "seed-direct"],
-      note: "Split an established clump in spring. Seed sown fresh in autumn germinates well and self-sown seedlings often appear around a parent in shade.",
-      basis: "Japanese nursery practice.",
+      note: "Split an established clump in spring, or sow seed in pots in winter or spring.",
+      basis: "Royal Horticultural Society.",
     },
   },
   // --- Grasses and sedges: the old grassland, and the wet margin ------------
@@ -1882,8 +1882,8 @@ export const SEED_RAW: RawPlant[] = [
     confidenceLowered: "medium",
     propagation: {
       methods: ["division"],
-      note: "Lift a piece of rooted runner at any time in the growing season and push it into wet mud. It takes almost without fail.",
-      basis: "Japanese wetland restoration practice.",
+      note: "Lift a rooted piece of the spreading clump as growth starts in early spring and replant it in wet ground.",
+      basis: "Royal Horticultural Society.",
     },
   },
   {
@@ -2057,9 +2057,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 1 Lepidoptera recorded on Osmunda in Japan — HOSTS, Natural History Museum (CC0), field records only. Ferns feed very few caterpillars, so a low figure here is believable rather than a gap.",
     propagation: {
-      methods: ["division"],
-      note: "Split an established crown in early spring before the croziers unroll. Spores work but want sterile technique and patience; division is the practical route.",
-      basis: "Royal Horticultural Society; Japanese nursery practice.",
+      methods: ["division", "spores"],
+      note: "Split an established crown, or sow the spores.",
+      basis: "Royal Horticultural Society.",
     },
   },
   {

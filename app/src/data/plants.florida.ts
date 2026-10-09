@@ -59,7 +59,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-warm", "seed-direct"],
       note: "Gather the fresh acorns in fall and sow them right away — a live oak acorn wants to sprout immediately and has no need for a winter chill. Drop them in water and toss the floaters, keep the sinkers, and never let them dry out. It sends down a deep taproot early, so start it where it will stay.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual; LBJ Wildflower Center; Seed Information Database.",
     },
   },
   {
@@ -93,8 +93,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: pine genus (Tallamy/NWF).",
     propagation: {
       methods: ["seed-warm"],
-      note: "Collect the seed from ripe cones in fall and sow it fresh the same season — it comes up quickly and needs no chilling. The seed is short-lived, so don't let it sit and dry out in a drawer over winter.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Collect the seed from ripe cones in fall. Fresh seed needs no chilling and sprouts readily. Expect a slow start: a young longleaf spends years as a grassy tuft before it shoots up.",
+      basis: "Woody Plant Seed Manual; Florida Native Plant Society.",
     },
   },
   {
@@ -127,9 +127,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: conifer, low.",
     propagation: {
-      methods: ["seed-warm", "seed-direct"],
-      note: "Gather the round cones in fall and crumble them apart to free the seed. Sow it fresh on wet ground or in mud — a good soak first helps — and keep it constantly moist. No winter chilling is needed.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-cold-moist"],
+      note: "Gather the round cones in fall, let them dry, and break them apart to free the seed. It sprouts best after a cold spell, which Florida's mild winters may not give: soak it in water in the fridge for up to three months, then sow in spring and keep the bed wet.",
+      basis: "Woody Plant Seed Manual.",
     },
   },
   {
@@ -162,9 +162,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "published",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Magnolia genus (NWF).",
     propagation: {
-      methods: ["seed-cold-moist"],
-      note: "When the cones split open in fall, pick out the seeds and rub off the fleshy red coat (soaking softens it) — that coat stops them sprouting. Sow fresh and never let them dry; a short spell of cool, damp weather over winter helps them wake up in spring.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-cold-moist", "cuttings-semi-hardwood"],
+      note: "When the cones split in late summer or fall, pick out the seeds and rub off the red coat. Keep them damp — they die if they dry. They need at least two months cold and moist, so in Florida chill them in damp moss in the fridge, then sow in spring. Semi-hardwood cuttings taken in summer also root.",
+      basis: "Woody Plant Seed Manual; Florida Native Plant Society; Seed Information Database.",
     },
   },
   {
@@ -198,8 +198,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: maple genus (Tallamy/NWF).",
     propagation: {
       methods: ["seed-warm"],
-      note: "The little winged 'helicopter' seeds ripen in spring — catch them as they turn brown and sow them right away. Red maple is the easy one: its spring seed sprouts within days in warm soil, with no chilling needed.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "The little winged 'helicopter' seeds ripen in spring — catch them as they turn brown and sow them right away. Much of the seed sprouts that summer with no chilling, though seed from some trees waits until the next year.",
+      basis: "Woody Plant Seed Manual; Florida Native Plant Society.",
     },
   },
   {
@@ -233,8 +233,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: palm, low; wildlife value: FNPS / UF-IFAS.",
     propagation: {
       methods: ["seed-warm"],
-      note: "Cabbage palm comes from seed only — a palm cannot be divided or grown from a cutting. Gather the black fruit when ripe, squeeze and wash the pulp off the seed, and sow it fresh, warm and moist. Be patient: it is slow to sprout and slow to grow.",
-      basis: "USFS Native Plant Network; UF/IFAS.",
+      note: "Gather the ripe black fruit, wash the pulp off the seed, and sow it soon, before it dries out. It needs no chilling but is slow: untreated seed can take three or four months to sprout.",
+      basis: "Woody Plant Seed Manual; Florida Native Plant Society.",
     },
   },
   {
@@ -269,7 +269,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-double-dormant"],
       note: "This one tests your patience. Clean the pulp off the blue fruit and sow the seed, but expect it to sit for two seasons — it needs a warm spell and then a cool one before the root and shoot come, so it can take a year and a half or more. Sow it and forget it, and don't give up too soon.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      basis: "Woody Plant Seed Manual; Florida Native Plant Society.",
     },
   },
 
@@ -304,9 +304,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Wildlife/pollinator value: FNPS / UF-IFAS / Xerces.",
     propagation: {
-      methods: ["seed-warm"],
-      note: "Saw palmetto grows from seed only — it will not divide or root from a cutting. Wash the pulp off the ripe fruit and sow the seed fresh and warm. Be warned that it is famously slow, taking months to sprout and years to make a plant, so buy a small one if you can't wait.",
-      basis: "USFS Native Plant Network; UF/IFAS.",
+      methods: ["seed-warm", "division"],
+      note: "Clean the seed out of the ripe blue-black fruit — seed left inside won't sprout — and sow it fresh once the nights stay warm. It is slow: months to sprout and years to make a garden-sized plant. Nurseries mostly grow it from pieces of its creeping stems instead.",
+      basis: "Woody Plant Seed Manual; Florida Native Plant Society.",
     },
   },
   {
@@ -339,9 +339,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Callicarpa, moderate estimate.",
     propagation: {
-      methods: ["seed-warm", "cuttings-softwood"],
-      note: "About as easy as natives get. Mash the ripe magenta berries, rinse the seeds out, and sow them warm — they barely need any coaxing. Or snip a few soft green shoots in spring or summer and they root quickly.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-direct", "cuttings-softwood"],
+      note: "Mash the ripe purple berries in water in fall: good seed sinks and the pulp floats off. Sow the seed in fall, barely covered, and it comes up in spring. Soft green cuttings taken in summer root well.",
+      basis: "Woody Plant Seed Manual.",
     },
   },
   {
@@ -374,9 +374,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range (var. patens): Atlas of Florida Plants (USF), FNPS. Host count: Hamelia, low; nectar value high.",
     propagation: {
-      methods: ["cuttings-softwood", "cuttings-semi-hardwood", "seed-warm"],
-      note: "The simplest route is a cutting — snip a soft or just-firming shoot in the warm months and it roots readily. You can also squeeze the seed from the ripe dark berries and sow it warm. Take cuttings from a plant you know is the true native, not a nursery 'dwarf' firebush.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-warm", "suckers"],
+      note: "Squeeze the seed from the ripe dark berries and sow it warm; it sprouts readily. Plants often sucker, and the rooted suckers can be dug and moved. Start from the true native, not the nursery 'dwarf' firebush, which is not native.",
+      basis: "Florida Native Plant Society; Seed Information Database; UF/IFAS.",
     },
   },
   {
@@ -409,9 +409,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "published",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Ilex genus (NWF).",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "seed-warm"],
-      note: "Cuttings are much the easier way — take firming shoots in late summer and root them, and you'll know whether you have a berry-bearing female. Seed works too but is very slow, often sitting a year or more before it comes up. Remember you need a male nearby for a female to fruit.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["cuttings-semi-hardwood", "seed-double-dormant"],
+      note: "Cuttings are the easier way: root firming shoots taken in fall, and you'll know whether you have a berry-bearing female. Seed is very slow, often taking two or three years to come up. A female needs a male nearby to fruit.",
+      basis: "Woody Plant Seed Manual; LBJ Wildflower Center; Florida Native Plant Society.",
     },
   },
   {
@@ -444,9 +444,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "published",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Viburnum genus (NWF).",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "seed-warm"],
-      note: "Easiest from a cutting — take a just-firming shoot in early summer and root it. Seed is possible from the cleaned black fruit but is slow and fussy, so most gardeners stick with cuttings.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["cuttings-softwood", "seed-scarify"],
+      note: "Grow it from cuttings of soft green shoots. Seed is slow: the hard coat needs scuffing, and it can still take several years to sprout.",
+      basis: "Florida Native Plant Society; Woody Plant Seed Manual.",
     },
   },
   {
@@ -479,9 +479,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Atlas of Florida Plants (USF), FNPS. Host count: Myrtaceae, low; bird value high.",
     propagation: {
-      methods: ["seed-warm", "cuttings-semi-hardwood"],
-      note: "Pick the ripe red-orange fruit, clean the pulp off the seed, and sow it fresh and warm — it doesn't keep, so don't let it dry out. Firming cuttings taken in the warm season will also root.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-direct", "suckers"],
+      note: "Easy from seed: clean the pulp off the ripe red-orange fruit and sow it. Plants also sucker, so rooted suckers can be dug up and moved.",
+      basis: "Florida Native Plant Society.",
     },
   },
 
@@ -516,9 +516,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF). Occurrence records in this region's box: 2,194 (GBIF). Atala host: FNPS.",
     propagation: {
-      methods: ["seed-warm", "seed-scarify"],
-      note: "Coontie is a cycad grown from seed only — no cuttings or division. It has separate male and female plants, and only pollinated females make the fat orange seed cones. Wearing gloves (the seed is toxic), clean the fleshy coat off, soak or lightly scuff the seed, and sow it fresh and warm. It's very slow, so don't lose heart.",
-      basis: "USFS Native Plant Network; Institute for Regional Conservation.",
+      methods: ["seed-scarify", "division"],
+      note: "Coontie grows from seed or by dividing the roots. Male and female cones grow on separate plants, and only pollinated females make the orange seed, ripe in winter. Wearing gloves (seeds, leaves and roots are toxic), clean off the fleshy coat, which holds back sprouting, then nick or crack the hard shell and sow. Untreated seed can take 6 to 12 months.",
+      basis: "Woody Plant Seed Manual; Florida Native Plant Society.",
     },
   },
   {
@@ -551,9 +551,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), FNPS. Pollinator value: UF-IFAS / Xerces.",
     propagation: {
-      methods: ["seed-warm", "cuttings-softwood"],
-      note: "One of the simplest wildflowers to grow — scatter the seed on warm soil and it sprouts readily, then reseeds itself all over the yard once it's happy. A soft shoot snipped and stuck in soil also roots in no time.",
-      basis: "USFS Native Plant Network; Florida Native Plant Society.",
+      methods: ["seed-direct"],
+      note: "Easy from seed, and it self-sows freely. To collect seed, slip a small bag over the flower spikes as they fade.",
+      basis: "Florida Native Plant Society; LBJ Wildflower Center.",
     },
   },
   {
@@ -586,9 +586,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Atlas of Florida Plants (USF), FNPS. Host count: Coreopsis, low-moderate.",
     propagation: {
-      methods: ["seed-surface-light"],
-      note: "Grow it from seed — it's short-lived, so let it self-sow to keep it going year after year. Press the fine seed onto the soil surface and don't bury it, since it needs light to sprout, and keep it warm and moist.",
-      basis: "USFS Native Plant Network; Florida Native Plant Society.",
+      methods: ["seed-direct", "division"],
+      note: "Grow it from seed, or divide the leafy rosettes at its base. It self-sows readily.",
+      basis: "Florida Native Plant Society.",
     },
   },
   {
@@ -621,9 +621,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Asclepias hosts monarchs (specialist); tropical-milkweed caution per UF-IFAS / Xerces.",
     propagation: {
-      methods: ["seed-cold-moist"],
-      note: "Start it from seed — its deep taproot hates being dug or split, so don't try to divide it. Sow in fall, or give the seed a few weeks of cool, damp chilling in the fridge before spring sowing, and plant the seedlings young where they'll stay for good.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-cold-moist", "root-cuttings"],
+      note: "Collect the seed as the pods ripen, before they split. Chill it damp in the fridge for about three months before a spring sowing, or sow it outdoors in fall. Pieces of the thick root also grow: cut them in fall while the plant is dormant, each with a bud.",
+      basis: "USDA PLANTS; LBJ Wildflower Center.",
     },
   },
   {
@@ -656,9 +656,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), FNPS. Pollinator value: Xerces / UF-IFAS.",
     propagation: {
-      methods: ["seed-cold-moist", "division"],
-      note: "Grow it from seed sown in fall, or give the seed a few weeks of cool, damp chilling in the fridge before sowing — that head start improves germination. Established plants make little underground corms that can be lifted and split in late winter.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-direct"],
+      note: "Grow it from seed sown in fall. Untreated seed has sprouted fully in cool, damp tests, so it needs no special treatment.",
+      basis: "Seed Information Database.",
     },
   },
   {
@@ -691,9 +691,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Monarda, moderate estimate. Pollinator value: Xerces.",
     propagation: {
-      methods: ["seed-surface-light", "division"],
-      note: "Easy from seed — press the tiny seed onto warm soil without covering it, since it needs light, and it will self-sow to keep coming back. You can also split an established clump in spring to make more.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-cold-moist", "cuttings-softwood"],
+      note: "Sow untreated seed in fall, or chill it damp in the fridge for about three months and sow it in spring, barely covered. Stem-tip cuttings taken from May to August root in about a month.",
+      basis: "LBJ Wildflower Center; USDA PLANTS; Florida Native Plant Society.",
     },
   },
 
@@ -728,9 +728,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: native grass, skipper host, low-moderate.",
     propagation: {
-      methods: ["seed-warm", "division"],
-      note: "A warm-season grass — sow the seed on warm soil in spring or summer and it comes up without any chilling. The quickest way to more plants is to dig an established clump in spring and pull it apart into rooted divisions.",
-      basis: "USFS Native Plant Network; UF/IFAS.",
+      methods: ["seed-warm"],
+      note: "Comb the seed from the pink heads as they fade in late fall. It sprouts well in warm conditions with no chilling, and the plant self-sows.",
+      basis: "LBJ Wildflower Center; Florida Native Plant Society; Seed Information Database.",
     },
   },
   {
@@ -763,9 +763,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: native grass, skipper host, low-moderate.",
     propagation: {
-      methods: ["seed-warm", "division"],
-      note: "Another warm-season grass — sow the big seed on warm soil in spring and it germinates without chilling. Because it makes such large clumps, dividing an established plant in spring is the fast and reliable way to get more.",
-      basis: "USFS Native Plant Network; UF/IFAS.",
+      methods: ["seed-cold-moist"],
+      note: "The seed sits dormant inside a hard case. Sow it outdoors in late fall or winter, or keep it cold and wet in the fridge for 6 to 10 weeks and sow in spring without letting it dry. Even then it sprouts slowly and unevenly.",
+      basis: "USDA PLANTS; Seed Information Database.",
     },
   },
 
@@ -800,9 +800,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host of heliconian butterflies (specialist); FNPS / UF-IFAS.",
     propagation: {
-      methods: ["seed-scarify", "suckers", "cuttings-softwood"],
-      note: "The hard seed sprouts far better if you nick or scuff the coat and soak it overnight before sowing it warm. Easier still, this vine runs underground and pops up new rooted sprouts nearby — dig one and move it. Soft cuttings root in the warm months too.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-direct", "cuttings-softwood", "suckers"],
+      note: "Collect the fruit in fall once it shrivels, wash the jelly off the brown seed, and sow it straight into the garden. Stem cuttings taken in early spring root too, and the suckers that come up around a plant can be dug and moved.",
+      basis: "USDA PLANTS; LBJ Wildflower Center; Florida Native Plant Society.",
     },
   },
 
@@ -838,8 +838,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. N-fixer; pollinator/host value: FNPS / UF-IFAS.",
     propagation: {
       methods: ["seed-scarify", "runners"],
-      note: "Being a legume, its seed has a hard coat — nick or scuff it and give it an overnight soak before sowing warm and it comes up much better. Even simpler, this carpet spreads by runners that root as they go, so you can lift and pot up the rooted pieces.",
-      basis: "USFS Native Plant Network; UF/IFAS.",
+      note: "Nick or sand the hard seed coat before sowing — unscuffed seed sprouts poorly. Easier still, this carpet spreads by runners that root as they go, so you can lift and pot up the rooted pieces.",
+      basis: "USDA PLANTS; Seed Information Database.",
     },
   },
   {
@@ -872,9 +872,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "published",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Helianthus genus (NWF).",
     propagation: {
-      methods: ["seed-surface-light", "cuttings-softwood"],
-      note: "Dead easy from seed — press it onto warm, sandy soil without burying it, since it wants light, and it will self-sow freely from then on. Soft shoot cuttings also root quickly if you want an instant patch.",
-      basis: "USFS Native Plant Network; Florida Native Plant Society.",
+      methods: ["seed-direct", "cuttings-softwood"],
+      note: "Collect seed from the spent flower heads and sow it; untreated seed sprouts well, and the plant self-sows freely. Cuttings also root.",
+      basis: "Florida Native Plant Society; Seed Information Database.",
     },
   },
 ];

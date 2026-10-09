@@ -1207,8 +1207,8 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 9 Lepidoptera recorded on Lonicera in Japan — HOSTS, Natural History Museum (CC0), field records only; 7 against this species. Marked aggressive: it smothers here, and outside its range it is among the worst invasive vines on record.",
     propagation: {
-      methods: ["cuttings-softwood", "layering"],
-      note: "Softwood cuttings root in a fortnight in June; a stem lying on soil will have rooted by itself already. Keeping it in bounds is the work, not propagating it.",
+      methods: ["layering", "cuttings-softwood", "cuttings-semi-hardwood"],
+      note: "Layer a low stem, or take softwood or semi-ripe cuttings in summer. Keeping it in bounds is the work, not propagating it.",
       basis: "Royal Horticultural Society.",
     },
   },
@@ -1243,8 +1243,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 7 Lepidoptera recorded on Vitis in Japan — HOSTS, Natural History Museum (CC0), field records only, and only 1 against this species — most are on cultivated grape. Genus figure, weakly supported. Confidence medium: most Japanese Vitis records are on cultivated grape, with one against this species.",
     confidenceLowered: "medium",
     propagation: {
-      methods: ["cuttings-hardwood"],
-      note: "Leafless pencil-thick cuttings taken in midwinter and set in a sheltered trench root well by spring — the standard way with any grape.",
+      methods: ["cuttings-hardwood", "layering"],
+      note: "Take leafless hardwood cuttings in late winter, or layer a low stem in autumn.",
       basis: "Royal Horticultural Society.",
     },
   },
@@ -1278,8 +1278,8 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 3 Lepidoptera recorded on Parthenocissus in Japan — HOSTS, Natural History Museum (CC0), field records only, all 3 against this species.",
     propagation: {
-      methods: ["cuttings-softwood", "layering"],
-      note: "Softwood cuttings in June root fast. Easier still, a shoot that has touched soil will have rooted — cut it off and move it.",
+      methods: ["layering", "cuttings-hardwood"],
+      note: "Layer a low shoot into the soil, or take leafless hardwood cuttings in winter.",
       basis: "Royal Horticultural Society.",
     },
   },
@@ -1526,7 +1526,7 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 5 Lepidoptera recorded on Aster in Japan — HOSTS, Natural History Museum (CC0), field records only.",
     propagation: {
       methods: ["division", "cuttings-softwood"],
-      note: "Split the clump in spring, which is also how you keep it vigorous. Softwood cuttings in early summer root in a fortnight.",
+      note: "Split the clump in spring, which also keeps it vigorous. Cuttings of the new spring shoots root too.",
       basis: "Royal Horticultural Society.",
     },
   },
@@ -1738,7 +1738,7 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: **not counted** — HOSTS holds no Japanese record against Hosta. A gap in the source rather than a zero.",
     propagation: {
       methods: ["division"],
-      note: "Split the crown in early spring as the shoots appear, with a spade straight through it. Nearly impossible to kill this way.",
+      note: "Split the crown in early spring as the shoots appear, or in late summer.",
       basis: "Royal Horticultural Society.",
     },
   },
@@ -1810,7 +1810,7 @@ export const SEED_RAW: RawPlant[] = [
     confidenceLowered: "medium",
     propagation: {
       methods: ["division"],
-      note: "Split the crown in early spring with a spade or a saw — an old clump is tough. Seed works but garden plants cross readily, so division keeps the wild form.",
+      note: "Split the clump in spring.",
       basis: "Royal Horticultural Society.",
     },
   },
@@ -1846,7 +1846,7 @@ export const SEED_RAW: RawPlant[] = [
     confidenceLowered: "medium",
     propagation: {
       methods: ["division"],
-      note: "Split the tussock in spring, keeping roots on each piece. The simplest way to cover a shaded area cheaply.",
+      note: "Split the tussock between mid-spring and early summer, keeping roots on each piece.",
       basis: "Royal Horticultural Society.",
     },
   },
@@ -1917,7 +1917,7 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 5 Lepidoptera recorded on Sasa in Japan — HOSTS, Natural History Museum (CC0), field records only. Marked aggressive: it spreads by rhizome and does not stop on its own.",
     propagation: {
       methods: ["division"],
-      note: "Chop out a rooted piece of rhizome in spring and replant it. Containing it is the work; propagating it is not.",
+      note: "Dig out young rhizome from the edge of the patch in mid-spring and replant it. Containing it is the work; propagating it is not.",
       basis: "Royal Horticultural Society.",
     },
   },
@@ -1953,7 +1953,7 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: **not counted** — HOSTS holds no Japanese record against Ophiopogon. A gap in a woody-biased source, not a zero.",
     propagation: {
       methods: ["division"],
-      note: "Pull a clump apart into single rooted tufts in spring and space them a hand's width apart; they will close over in two seasons.",
+      note: "Pull a clump apart into rooted tufts in spring, as growth starts.",
       basis: "Royal Horticultural Society.",
     },
   },
@@ -1988,7 +1988,7 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: **not counted** — HOSTS holds no Japanese record against Pachysandra. Shown as uncounted rather than as 0.",
     propagation: {
       methods: ["division", "cuttings-softwood"],
-      note: "Lift rooted runners in spring and replant them. Softwood cuttings in June root in damp shade just as easily.",
+      note: "Lift rooted runners in spring and replant them, or take softwood cuttings in early summer.",
       basis: "Royal Horticultural Society.",
     },
   },
@@ -2022,8 +2022,8 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: **not counted** — HOSTS holds no Japanese record against Saxifraga. A gap in the source.",
     propagation: {
-      methods: ["division"],
-      note: "Snip off a plantlet at the end of a runner once it has made roots and press it onto damp soil. The plant does the work for you.",
+      methods: ["runners"],
+      note: "Snip off a plantlet at the end of a runner and press it onto damp soil. The plant does the work for you.",
       basis: "Royal Horticultural Society.",
     },
   },
@@ -2092,8 +2092,8 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: **not counted** — HOSTS holds no Japanese record against Dryopteris. Ferns genuinely support few caterpillars, but the source says nothing either way, so this is uncounted rather than low.",
     propagation: {
-      methods: ["division"],
-      note: "Divide a mature crown in early spring. It also self-sows from spores onto damp shaded walls and pots, which is usually how a second plant arrives.",
+      methods: ["division", "spores"],
+      note: "Divide a mature crown in spring, or sow spores as soon as they ripen.",
       basis: "Royal Horticultural Society.",
     },
   },
@@ -2127,8 +2127,8 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: **not counted** — HOSTS holds no Japanese record against Athyrium. Uncounted rather than zero.",
     propagation: {
-      methods: ["division"],
-      note: "Split the creeping rhizome in early spring, keeping a growing point on each piece.",
+      methods: ["division", "spores"],
+      note: "Split the creeping rhizome in spring, or sow spores as soon as they ripen.",
       basis: "Royal Horticultural Society.",
     },
   },

@@ -125,11 +125,16 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   "backup.title": "Vos lieux, dans un fichier",
   "backup.lede":
-    "Chaque lieu enregistré, et ce que vous avez planté dans chacun, écrits dans un seul fichier qui vous appartient. Ouvrez ce fichier dans un autre navigateur et les mêmes lieux y sont.",
+    "Chaque lieu enregistré, ce que vous avez planté dans chacun et les observations que vous y avez liées, écrits dans un seul fichier qui vous appartient. Ouvrez ce fichier dans un autre navigateur et les mêmes lieux y sont.",
   "backup.statSpots.one": "{count} lieu enregistré",
   "backup.statSpots.other": "{count} lieux enregistrés",
   "backup.statPlantings.one": "{count} plantation notée",
   "backup.statPlantings.other": "{count} plantations notées",
+  "backup.lastCopy": "Dernière copie enregistrée le {date}.",
+  "backup.noCopy": "Aucune copie enregistrée depuis ce navigateur pour l'instant.",
+  "backup.kept": "Ce navigateur a promis de garder vos lieux.",
+  "backup.notKept":
+    "Ce navigateur peut effacer vos lieux pour libérer de la place. Une copie les met à l'abri.",
   "backup.empty":
     "Rien d'enregistré pour l'instant — il n'y a donc rien à copier. Un fichier venu d'un autre navigateur peut tout de même entrer.",
   "backup.save": "Enregistrer une copie",
@@ -140,6 +145,8 @@ export const fr: Dict = {
   "backup.readTitle": "Copie lue.",
   "backup.rowSpots": "Lieux ajoutés",
   "backup.rowPlantings": "Plantations ajoutées",
+  "backup.rowSpotsUpdated": "Lieux mis à jour",
+  "backup.rowPlantingsUpdated": "Plantations mises à jour",
   "backup.rowSpotsKnown": "Lieux déjà présents",
   "backup.rowSkipped": "Entrées illisibles",
   "backup.nothingNew": "Tout ce que contenait cette copie était déjà là. Rien n'a changé.",

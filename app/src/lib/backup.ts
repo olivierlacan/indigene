@@ -12,9 +12,10 @@
 //  1. **Plain, readable JSON.** Someone who opens the file in a text editor
 //     should recognise their own garden in it. No compression, no wrapping,
 //     nothing that needs this app to make sense of.
-//  2. **Reading never destroys.** An import adds what's missing and leaves what
-//     is already here exactly as it is — a spot whose id we already have is
-//     kept, not overwritten. The worst a wrong file can do is nothing.
+//  2. **Reading never destroys.** An import adds what's missing and never
+//     removes or overwrites what's here — a spot both copies have only gains
+//     the sightings linked elsewhere (`planImport`). The worst a wrong file
+//     can do is nothing.
 //  3. **A spot's log travels with it.** Deleting a spot deletes its plantings
 //     (`db.ts`), so the two belong to each other; a file of spots with no
 //     plantings would be a garden with its history quietly dropped.
@@ -23,7 +24,7 @@
 // as-is. A file that has been hand-edited, half-saved, or written by something
 // else entirely is an ordinary thing to meet, and the answer to it is a row
 // left out and counted — never a broken screen.
-import { listPlantings, listSpots, savePlanting, saveSpot } from "../db";
+import { kvGet, kvSet, listPlantings, listSpots, savePlanting, saveSpot } from "../db";
 import { ECOREGION_PROVIDERS } from "../types";
 import type {
   EcoregionInfo,
@@ -94,6 +95,19 @@ export function downloadSpotsFile(file: SpotsFile, now: number = Date.now()): vo
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
+/** Where the date of the last copy written from this browser is kept. */
+const LAST_COPY_KEY = "backup-saved-at";
+
+/** When this browser last wrote a copy out, or undefined if it never has. */
+export async function lastCopyAt(): Promise<number | undefined> {
+  const v = await kvGet<number>(LAST_COPY_KEY).catch(() => undefined);
+  return typeof v === "number" ? v : undefined;
+}
+
+export async function rememberCopy(now: number = Date.now()): Promise<void> {
+  await kvSet(LAST_COPY_KEY, now).catch(() => {});
+}
+
 // --- Reading one back ------------------------------------------------------
 
 /** Why a file couldn't be read, in the four ways it actually happens. */
@@ -146,66 +160,161 @@ export function parseSpotsFile(text: string): ReadResult {
 /** What one import did, in the numbers the card reports back. */
 export interface ImportTally {
   spotsAdded: number;
-  /** Spots in the file this device already had — kept as they were. */
+  /** Spots in the file this device already had, with nothing new to add. */
   spotsKnown: number;
+  /** Spots already here that the file added to — an invasive found, or a
+   *  sighting linked to one, on the other device. */
+  spotsUpdated: number;
   plantingsAdded: number;
   plantingsKnown: number;
+  /** Plantings already here that gained a linked sighting or a note. */
+  plantingsUpdated: number;
   /** Rows left out: unreadable ones, plus any planting whose spot is neither
    *  in the file nor already here — a log entry with no garden to belong to. */
   skipped: number;
 }
 
+/** The rows an import would write, and what they add up to. */
+export interface ImportPlan {
+  spots: SavedSpot[];
+  plantings: Planting[];
+  tally: ImportTally;
+}
+
 /**
- * Add everything in the file that this device is missing.
+ * Work out what a file adds to what's here — without touching the database, so
+ * the rules can be tested on plain arrays.
  *
- * Nothing is replaced and nothing is deleted, so importing the same file twice
- * is a no-op and importing an older copy can't undo newer work. The cost is
- * that an edit made elsewhere — a spot renamed on the laptop — doesn't travel;
- * that's a trade this first step accepts, because the alternative is a file
- * silently overwriting the copy you were actually using.
+ * **Nothing is removed and nothing is overwritten.** A row only this device
+ * has stays. A row only the file has comes in. A row both have keeps this
+ * device's version of every field, and gains only what is plainly additive:
+ * linked sightings and invasives it doesn't have yet, and a note where this
+ * copy has none. So importing the same file twice is a no-op, an older copy
+ * can't undo newer work, and the sightings linked on a phone survive being
+ * brought to a laptop that already had the spot. A rename made elsewhere still
+ * doesn't travel — two labels can't be merged, and the one here is the one
+ * the gardener was looking at.
  */
+export function planImport(
+  hereSpots: readonly SavedSpot[],
+  herePlantings: readonly Planting[],
+  file: SpotsFile,
+  skippedOnRead = 0
+): ImportPlan {
+  const spotsById = new Map(hereSpots.map((s) => [s.id, s]));
+  const plantingsById = new Map(herePlantings.map((p) => [p.id, p]));
+  const plan: ImportPlan = {
+    spots: [],
+    plantings: [],
+    tally: {
+      spotsAdded: 0,
+      spotsKnown: 0,
+      spotsUpdated: 0,
+      plantingsAdded: 0,
+      plantingsKnown: 0,
+      plantingsUpdated: 0,
+      skipped: skippedOnRead,
+    },
+  };
+  const { tally } = plan;
+
+  for (const spot of file.spots) {
+    const here = spotsById.get(spot.id);
+    if (!here) {
+      plan.spots.push(spot);
+      spotsById.set(spot.id, spot);
+      tally.spotsAdded++;
+      continue;
+    }
+    const merged = mergeInvasives(here.invasives, spot.invasives);
+    if (!merged) {
+      tally.spotsKnown++;
+      continue;
+    }
+    const next = { ...here, invasives: merged };
+    plan.spots.push(next);
+    spotsById.set(spot.id, next);
+    tally.spotsUpdated++;
+  }
+
+  for (const planting of file.plantings) {
+    const here = plantingsById.get(planting.id);
+    if (here) {
+      const observations = union(here.observations, planting.observations);
+      const note = here.note ?? planting.note;
+      if (!observations && note === here.note) {
+        tally.plantingsKnown++;
+        continue;
+      }
+      const next: Planting = { ...here, observations: observations ?? here.observations };
+      if (note) next.note = note;
+      plan.plantings.push(next);
+      plantingsById.set(next.id, next);
+      tally.plantingsUpdated++;
+      continue;
+    }
+    // Its spot has to exist, here or in this same file — the store is keyed by
+    // the planting's own id, so an orphan would be invisible and undeletable.
+    if (!spotsById.has(planting.spotId)) {
+      tally.skipped++;
+      continue;
+    }
+    plan.plantings.push(planting);
+    plantingsById.set(planting.id, planting);
+    tally.plantingsAdded++;
+  }
+
+  return plan;
+}
+
+/** `here` plus whatever `there` has that it doesn't, in order — or null when
+ *  `there` adds nothing, so the caller can tell "unchanged" without comparing. */
+function union(here: readonly string[], there: readonly string[]): string[] | null {
+  const seen = new Set(here);
+  const added = there.filter((x) => !seen.has(x) && (seen.add(x), true));
+  return added.length ? [...here, ...added] : null;
+}
+
+/** A spot's invasives with the file's folded in: new invasives appended, and
+ *  new sightings added to the ones both copies have. Null when nothing changes. */
+function mergeInvasives(
+  here: readonly SpotInvasive[] | undefined,
+  there: readonly SpotInvasive[] | undefined
+): SpotInvasive[] | null {
+  if (!there?.length) return null;
+  const out = (here ?? []).map((i) => ({ ...i }));
+  const byId = new Map(out.map((i) => [i.invasiveId, i]));
+  let changed = false;
+  for (const inv of there) {
+    const mine = byId.get(inv.invasiveId);
+    if (!mine) {
+      const copy = { ...inv, observations: [...inv.observations] };
+      out.push(copy);
+      byId.set(inv.invasiveId, copy);
+      changed = true;
+      continue;
+    }
+    const observations = union(mine.observations, inv.observations);
+    if (observations) {
+      mine.observations = observations;
+      changed = true;
+    }
+  }
+  return changed ? out : null;
+}
+
+/** Add what the file brings (see `planImport`) to this device's database. */
 export async function applySpotsFile(
   file: SpotsFile,
   skippedOnRead = 0
 ): Promise<ImportTally> {
   const [here, hereLog] = await Promise.all([listSpots(), listPlantings()]);
-  const knownSpots = new Set(here.map((s) => s.id));
-  const knownPlantings = new Set(hereLog.map((p) => p.id));
-  const tally: ImportTally = {
-    spotsAdded: 0,
-    spotsKnown: 0,
-    plantingsAdded: 0,
-    plantingsKnown: 0,
-    skipped: skippedOnRead,
-  };
-
-  for (const spot of file.spots) {
-    if (knownSpots.has(spot.id)) {
-      tally.spotsKnown++;
-      continue;
-    }
-    await saveSpot(spot);
-    knownSpots.add(spot.id);
-    tally.spotsAdded++;
-  }
-
-  for (const planting of file.plantings) {
-    if (knownPlantings.has(planting.id)) {
-      tally.plantingsKnown++;
-      continue;
-    }
-    // Its spot has to exist, here or in this same file — the store is keyed by
-    // the planting's own id, so an orphan would be invisible and undeletable.
-    if (!knownSpots.has(planting.spotId)) {
-      tally.skipped++;
-      continue;
-    }
-    await savePlanting(planting);
-    knownPlantings.add(planting.id);
-    tally.plantingsAdded++;
-  }
-
-  return tally;
+  const plan = planImport(here, hereLog, file, skippedOnRead);
+  // Spots first: a planting written before its spot would, for a moment, be
+  // exactly the orphan `planImport` refuses to create.
+  for (const spot of plan.spots) await saveSpot(spot);
+  for (const planting of plan.plantings) await savePlanting(planting);
+  return plan.tally;
 }
 
 // --- Rebuilding a row from whatever the file actually held -----------------

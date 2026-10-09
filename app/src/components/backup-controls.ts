@@ -21,10 +21,17 @@
 import { el, toast } from "../ui";
 import { cardStats } from "./card-stats";
 import { privacyNote } from "./privacy-link";
-import { applySpotsFile, collectSpots, downloadSpotsFile, parseSpotsFile } from "../lib/backup";
+import {
+  applySpotsFile,
+  collectSpots,
+  downloadSpotsFile,
+  lastCopyAt,
+  parseSpotsFile,
+  rememberCopy,
+} from "../lib/backup";
 import type { ImportTally, ReadFailure } from "../lib/backup";
-import { listPlantings, listSpots } from "../db";
-import { t, tn, fmtNumber } from "../lib/i18n";
+import { listPlantings, listSpots, storageKept } from "../db";
+import { t, tn, fmtDate, fmtNumber } from "../lib/i18n";
 
 /** Which message a failed read gets. The union lives with the parser. */
 const FAILURE_TEXT: Record<ReadFailure, "backup.errUnreadable" | "backup.errNotOurs" | "backup.errTooNew"> = {
@@ -75,11 +82,19 @@ export async function spotsFileCard(): Promise<HTMLElement> {
    *  to write out at all. Nothing saved leaves the Save button in place but
    *  greyed, so the card still shows both halves of what it's for. */
   async function refreshHead(): Promise<void> {
-    const [spots, plantings] = await Promise.all([
+    const [spots, plantings, lastCopy, kept] = await Promise.all([
       listSpots().catch(() => []),
       listPlantings().catch(() => []),
+      lastCopyAt(),
+      storageKept(),
     ]);
     saveBtn.disabled = spots.length === 0;
+    // How safe the spots are right now: when a copy last left this browser,
+    // and whether the browser has agreed not to clear them (`db.ts`).
+    const safety = [
+      lastCopy ? t("backup.lastCopy", { date: fmtDate(lastCopy) }) : t("backup.noCopy"),
+      kept === true ? t("backup.kept") : kept === false ? t("backup.notKept") : "",
+    ].filter(Boolean).join(" ");
     head.replaceChildren(
       spots.length
         ? cardStats([
@@ -98,7 +113,8 @@ export async function spotsFileCard(): Promise<HTMLElement> {
                 }
               : null,
           ])
-        : el("p", { class: "note info", style: "margin-bottom:0" }, t("backup.empty"))
+        : el("p", { class: "note info", style: "margin-bottom:0" }, t("backup.empty")),
+      ...(spots.length ? [el("p", { class: "hint", style: "margin:0.6rem 0 0" }, safety)] : [])
     );
   }
 
@@ -106,6 +122,8 @@ export async function spotsFileCard(): Promise<HTMLElement> {
     try {
       downloadSpotsFile(await collectSpots());
       toast(t("backup.saved"));
+      await rememberCopy();
+      await refreshHead();
     } catch {
       say("warn", t("backup.errStore"));
     }
@@ -148,7 +166,13 @@ export async function spotsFileCard(): Promise<HTMLElement> {
 
   /** What the import did, as figures. */
   function report(tally: ImportTally): void {
-    if (!tally.spotsAdded && !tally.plantingsAdded && !tally.skipped) {
+    if (
+      !tally.spotsAdded &&
+      !tally.spotsUpdated &&
+      !tally.plantingsAdded &&
+      !tally.plantingsUpdated &&
+      !tally.skipped
+    ) {
       return say("info", t("backup.nothingNew"));
     }
     result.replaceChildren(
@@ -157,12 +181,16 @@ export async function spotsFileCard(): Promise<HTMLElement> {
         el("dl", { class: "memory-list" }, [
           ...row(t("backup.rowSpots"), tally.spotsAdded),
           ...(tally.plantingsAdded ? row(t("backup.rowPlantings"), tally.plantingsAdded) : []),
+          ...(tally.spotsUpdated ? row(t("backup.rowSpotsUpdated"), tally.spotsUpdated) : []),
+          ...(tally.plantingsUpdated
+            ? row(t("backup.rowPlantingsUpdated"), tally.plantingsUpdated)
+            : []),
           ...(tally.spotsKnown ? row(t("backup.rowSpotsKnown"), tally.spotsKnown) : []),
           ...(tally.skipped ? row(t("backup.rowSkipped"), tally.skipped) : []),
         ]),
       ])
     );
-    if (tally.spotsAdded) {
+    if (tally.spotsAdded || tally.spotsUpdated || tally.plantingsUpdated) {
       result.append(
         el("p", { style: "margin:0.6rem 0 0" }, [
           el("a", { href: "#/saved" }, t("backup.seeSaved")),

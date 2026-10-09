@@ -233,7 +233,7 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Coastal value: FNPS / UF-IFAS.",
     propagation: {
-      methods: ["seed-direct", "cuttings-semi-hardwood"],
+      methods: ["seed-direct"],
       note: "Crumble the ripe buttonlike seed heads and sow the seed; it sprouts without any treatment. Cuttings also root.",
       basis: "Florida Native Plant Society; Seed Information Database.",
     },
@@ -657,7 +657,7 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "published",
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Host count: Helianthus genus (NWF).",
     propagation: {
-      methods: ["seed-direct", "cuttings-softwood"],
+      methods: ["seed-direct"],
       note: "Collect seed from the spent flower heads and sow it; untreated seed sprouts well, and the plant self-sows freely. Cuttings also root.",
       basis: "Florida Native Plant Society; Seed Information Database.",
     },

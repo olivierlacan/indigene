@@ -872,7 +872,7 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "published",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Helianthus genus (NWF).",
     propagation: {
-      methods: ["seed-direct", "cuttings-softwood"],
+      methods: ["seed-direct"],
       note: "Collect seed from the spent flower heads and sow it; untreated seed sprouts well, and the plant self-sows freely. Cuttings also root.",
       basis: "Florida Native Plant Society; Seed Information Database.",
     },

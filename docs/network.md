@@ -52,8 +52,8 @@ Checked 2026-10-09 from a Claude session.
 | `maps-cartes.services.geo.ca` | Canadian ecozones | `probe-cec` | ✅ reachable |
 | `www.arcgis.com` | Layer search | `probe-cec` | ✅ reachable |
 | `tile.openstreetmap.org` | Map tiles | screenshots | ✅ reachable |
-| `api.open-meteo.com` | Frost dates | the app | ❓ unreachable (curl exit 35) |
-| `archive-api.open-meteo.com` | Climate history | the app | ❓ unreachable (curl exit 35) |
+| `api.open-meteo.com` | Frost dates | the app | ✅ reachable |
+| `archive-api.open-meteo.com` | Climate history | the app | ✅ reachable |
 | `geocoding-api.open-meteo.com` | Place search | the app | ✅ reachable |
 | `nominatim.openstreetmap.org` | Place names | the app | ✅ reachable |
 | `rest.isric.org` | Soil pH | the app | ✅ reachable |
@@ -61,6 +61,8 @@ Checked 2026-10-09 from a Claude session.
 | `invmed.fr` | French invasive list | `listings:check` | ✅ reachable |
 | `www.cal-ipc.org` | California invasive list | `listings:check` | ✅ reachable |
 | `www.dcr.virginia.gov` | Virginia invasive list | `listings:check` | ✅ reachable |
+| `www.nwcb.wa.gov` | Washington noxious weed list | `listings:check` | ✅ reachable |
+| `especes-exotiques-envahissantes.fr` | Grand Est invasive list (PDF) | `listings:check` | ✅ reachable |
 | `www.floridainvasives.org` | Florida invasive list | `listings:check` | ✅ reachable |
 | `raw.githubusercontent.com` | Committed files, screenshots | `release-notes`, `build-region-maps` | ✅ reachable |
 <!-- /network:check -->

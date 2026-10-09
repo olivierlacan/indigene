@@ -2,11 +2,10 @@
 # Europe: a citable, machine-readable count of the Lepidoptera that raise their
 # caterpillars on a plant.
 #
-# **Why this is a job and not a build step.** The probe needs open internet —
-# api.globalbioticinteractions.org answers 403 to the local build sandbox's
-# egress — which is the same situation `reconcile.yml` and `vernacular.yml` are
-# in, so it gets the same treatment: a separate job on a runner, producing a
-# reviewable data change rather than a build artifact.
+# **Why this is a job and not a build step.** The probe needs GloBI, and the
+# deploy build stays offline. It's a separate job on a runner, producing a
+# reviewable data change rather than a build artifact. (Claude sessions reach
+# GloBI too: `docs/network.md`.)
 #
 # **What it does not do.** It builds nothing and changes no shipped number. It
 # answers the five questions in `app/scripts/probe-globi.mjs` and commits the

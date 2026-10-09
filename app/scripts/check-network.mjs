@@ -91,6 +91,10 @@ export const HOSTS = [
   { host: "www.cal-ipc.org", what: "California invasive list", by: "`listings:check`", url: "https://www.cal-ipc.org/" },
   { host: "www.dcr.virginia.gov", what: "Virginia invasive list", by: "`listings:check`",
     url: "https://www.dcr.virginia.gov/natural-heritage/document/nh-invasive-plant-list-2024.pdf", method: "HEAD" },
+  { host: "www.nwcb.wa.gov", what: "Washington noxious weed list", by: "`listings:check`",
+    url: "https://www.nwcb.wa.gov/weeds/english-holly" },
+  { host: "especes-exotiques-envahissantes.fr", what: "Grand Est invasive list (PDF)", by: "`listings:check`",
+    url: "https://especes-exotiques-envahissantes.fr/", method: "HEAD" },
   { host: "www.floridainvasives.org", what: "Florida invasive list", by: "`listings:check`",
     url: "https://www.floridainvasives.org/plant-list/2023-invasive-plant-species/" },
   // Repo

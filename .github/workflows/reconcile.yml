@@ -1,8 +1,8 @@
 # Reconcile the registry's external identifiers (IPNI / WFO / GBIF / USDA / ITIS
 # / iNaturalist / Wikidata) and open a PR with the result.
 #
-# The reconcile needs open internet (Wikidata + GBIF + iNaturalist), which the
-# local build sandbox blocks — GitHub runners don't, so this is the natural home.
+# The reconcile needs Wikidata, GBIF and iNaturalist. Claude sessions reach all
+# three (`docs/network.md`); this job is how it runs on schedule.
 # It's a SEPARATE job from the Pages deploy, so the deploy build stays hermetic:
 # this only produces a data change (registry.overrides.json + the regenerated
 # registry), which a human reviews and merges; the normal build then ships it.

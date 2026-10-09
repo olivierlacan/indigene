@@ -24,9 +24,9 @@
 // the Québécois ones. It is the right authority for an fr-CA edition and the
 // wrong one for this edition, and half-trusting it was worse than either.
 //
-// **It needs open internet, which the build sandbox does not have** — TAXREF,
-// Tela Botanica and Wikidata all refuse the agent egress. Same situation as
-// `reconcile.mjs`: run it locally, or let `.github/workflows/vernacular.yml`
+// **It needs TAXREF, Tela Botanica and Wikidata.** A Claude session reaches the
+// last two, but TAXREF's Cloudflare wall turns it away (`docs/network.md`): run
+// it locally, or let `.github/workflows/vernacular.yml`
 // run it on a GitHub runner and open a PR with the result. The snapshot it
 // writes to `data/sources/vernacular-names/` is committed, so upstream drift
 // shows up in a diff instead of going unnoticed.

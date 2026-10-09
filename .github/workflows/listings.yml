@@ -8,11 +8,10 @@
 # holly in 2025), and a transcription error nobody spots because the claim looks
 # plausible.
 #
-# The check needs open internet — cal-ipc.org, nwcb.wa.gov, gd.eppo.int,
-# dcr.virginia.gov, floridainvasives.org and the conservatory PDFs are all
-# refused by the local build sandbox's egress — so it gets the same treatment as
-# `vernacular.yml` and `reconcile.yml`: a job on a GitHub runner, reporting a
-# reviewable change rather than gating a build.
+# The check needs the listing bodies' own sites. Claude sessions reach them now
+# (`npm run network:check`, `docs/network.md`); the job runs on a GitHub runner
+# anyway so it keeps running on schedule, reporting a reviewable change rather
+# than gating a build.
 #
 # What it catches:
 #   1. **A disagreement** — the body's category is not the one we print. Fails

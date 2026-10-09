@@ -82,8 +82,8 @@ accepted name can be updated, not a string that pretends never to move.
 
 Until reconciliation runs, entries carry only `identifiers.indigene` + the
 accepted name, and `primaryId` is `null` — never a local slug masquerading as the
-identity. The audit reports the unreconciled count; the build sandbox can't reach
-Wikidata/GBIF/POWO, so the ids are filled in CI or locally (below).
+identity. The audit reports the unreconciled count; the ids are filled in by the
+reconcile (below).
 
 ## Working with it
 
@@ -104,8 +104,8 @@ npm run reconcile -- --name "Quercus garryana"   # one taxon, to sanity-check
 npm run registry:build && npm run registry:check # bake in + verify
 ```
 
-It needs open internet, which the build sandbox blocks — so run it locally, or
-just trigger **`.github/workflows/reconcile.yml`** from the Actions tab (GitHub
+It needs Wikidata, GBIF and iNaturalist, which Claude sessions reach
+([`network.md`](network.md)) — so run it in a session or locally, or just trigger **`.github/workflows/reconcile.yml`** from the Actions tab (GitHub
 runners have network) and it opens a PR with the reconciled ids for you to review
 and merge. Nothing here runs at app runtime or per-user; the ids are baked into
 the committed registry and shipped static.

@@ -431,8 +431,8 @@ and the type system now keeps it out of the French one.
 
 **How the claim stays honest.** The tables are hand-seeded from those lists, and
 [`app/scripts/check-vernacular.mjs`](app/scripts/check-vernacular.mjs) re-asks
-each authority and reports every row its own source doesn't back. It needs open
-internet (all three hosts refuse the build sandbox's egress), so it runs
+each authority and reports every row its own source doesn't back. TAXREF's bot
+wall turns Claude sessions away ([`docs/network.md`](docs/network.md)), so it runs
 quarterly in CI — [`.github/workflows/vernacular.yml`](.github/workflows/vernacular.yml)
 — and commits its snapshot to
 [`data/sources/vernacular-names/`](data/sources/vernacular-names/). A

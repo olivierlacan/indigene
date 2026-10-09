@@ -4,9 +4,9 @@
 # A name in another language is *looked up*, not translated — see
 # `app/src/lib/names.ts` — and it is looked up in the reference lists of a
 # *country*: the French edition is fr-FR, so the lists are France's. The lookup
-# needs open internet (TAXREF, Tela Botanica and Wikidata all refuse the local
-# build sandbox's egress), which is exactly the situation `reconcile.yml` is in,
-# so it gets the same treatment: a separate job, on a GitHub runner, producing a
+# needs TAXREF, Tela Botanica and Wikidata. A Claude session reaches the last
+# two, but TAXREF's Cloudflare wall challenges it (`docs/network.md`), so the
+# full check runs here: a separate job, on a GitHub runner, producing a
 # reviewable data change rather than a build artifact.
 #
 # What it catches, in order of how much it matters:

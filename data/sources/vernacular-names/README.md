@@ -38,10 +38,9 @@ node app/scripts/check-vernacular.mjs            # verify + write fr.json
 node app/scripts/check-vernacular.mjs --missing  # only "upstream has a name we don't"
 ```
 
-**It needs open internet, which the build sandbox does not have** — TAXREF,
-Tela Botanica and Wikidata all refuse the agent egress (the same situation
-`reconcile.mjs` and the EEA probe are in; see [`../README.md`](../README.md)).
-Run it locally, or let
+**It needs TAXREF, Tela Botanica and Wikidata.** Claude sessions reach the last
+two, but TAXREF's Cloudflare wall turns them away (see
+[`docs/network.md`](../../../docs/network.md)). Run it locally, or let
 [`.github/workflows/vernacular.yml`](../../../.github/workflows/vernacular.yml)
 run it on a GitHub runner — it opens a PR when the snapshot changes.
 

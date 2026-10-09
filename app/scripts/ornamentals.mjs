@@ -49,8 +49,8 @@
 // which an observation count knows anything about. See DATA_SOURCES.md,
 // "The five jobs" — this is a finder, and a finder decides nothing.
 //
-// **It needs open internet**, which the local build sandbox does not have.
-// Same arrangement as `lookalikes:check`: run it on a laptop or a runner. The
+// **It needs iNaturalist**, which Claude sessions reach (`docs/network.md`):
+// run it in a session, on a laptop or on a runner. The
 // snapshot it writes is committed, so the queue can be read without running it.
 import { writeFileSync, readFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";

@@ -35,9 +35,8 @@
 //                   the community finds the mix-ups an extension bulletin
 //                   never got round to writing up.
 //
-// **It needs open internet, which the build sandbox does not have** —
-// api.inaturalist.org refuses the agent egress. Same arrangement as
-// `check-vernacular.mjs` and `reconcile.mjs`: run it locally, or on a runner.
+// **It needs iNaturalist**, which Claude sessions reach (`docs/network.md`):
+// run it in a session, locally, or on a runner.
 // The snapshot it writes is committed, so a tie that quietly stops being
 // corroborated shows up in a diff.
 //

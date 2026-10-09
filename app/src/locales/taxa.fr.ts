@@ -30,9 +30,9 @@
 //
 // Verification: `npm run names:check` re-queries the fr-FR authorities (TAXREF,
 // Tela Botanica, Wikidata) and reports any row whose name the source doesn't
-// confirm, plus a source to promote each `pending` row to. It needs open
-// internet (the build sandbox blocks these hosts), so it runs in CI —
-// `.github/workflows/vernacular.yml` — the same arrangement `reconcile.mjs` uses.
+// confirm, plus a source to promote each `pending` row to. TAXREF's bot wall
+// turns Claude sessions away (`docs/network.md`), so the full run is in CI —
+// `.github/workflows/vernacular.yml`.
 import type { FrenchSource, NameTable } from "../lib/names";
 
 export const TAXA_FR: NameTable<FrenchSource> = {

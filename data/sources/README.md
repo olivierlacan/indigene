@@ -33,9 +33,9 @@ in the app consumes it.
 
 ## Why this exists / CI
 
-Retrieval is currently manual because the build/agent sandbox's egress is
-firewalled (several upstream hosts `403` automated fetchers). The retrieval
-scripts are written to run from any unblocked machine, and the same scripts are
+Retrieval is manual, and a few upstream hosts turn automated fetchers away
+([`docs/network.md`](../../docs/network.md) says which, from a Claude session).
+The retrieval scripts are written to run from any unblocked machine, and the same scripts are
 what a scheduled **CI job** would run to refresh these files — committing the
 small snapshots makes any change in upstream data reviewable, and the git-ignored
 raw datasets are re-fetched into the same paths the build steps already expect.

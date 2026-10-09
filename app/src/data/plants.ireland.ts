@@ -95,8 +95,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 391 Lepidoptera recorded on native oaks in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (395 if introduced oaks count too).",
     propagation: {
       methods: ["seed-warm", "seed-direct"],
-      note: "Gather acorns as they fall in October and drop them in water — throw out the floaters and sow the rest at once. Oak acorns sprout the same autumn with no chilling and must never be let dry. Because of the taproot, sow into a deep pot or straight where the tree will stand.",
-      basis: "Woodland Trust; Woodlands of Ireland native woodland guidance.",
+      note: "Gather acorns as they fall in autumn and drop them in water — throw out the floaters and sow the rest at once. They need no chilling: the root starts that autumn and the shoot follows in spring. Never let acorns dry out; drying kills them.",
+      basis: "RHS; USDA Woody Plant Seed Manual; Seed Information Database.",
     },
   },
   {
@@ -131,7 +131,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-warm", "seed-direct"],
       note: "As for sessile oak — float the acorns, sow the sinkers fresh in autumn, never let them dry. Its acorns sit on long stalks, which is the easiest way to tell which oak you gathered from.",
-      basis: "Woodland Trust; Woodlands of Ireland native woodland guidance.",
+      basis: "RHS; USDA Woody Plant Seed Manual; Seed Information Database.",
     },
   },
   {
@@ -165,8 +165,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 306 Lepidoptera on native birches in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["seed-surface-light", "seed-direct"],
-      note: "Catkins break up in autumn into winged seed like fine chaff. Scatter it on bare, damp ground or on the surface of a tray and don't cover it — it needs light to germinate. Fresh seed is far better than stored.",
-      basis: "Woodland Trust; Royal Horticultural Society.",
+      note: "Catkins break up in autumn into winged seed like fine chaff. Scatter it on damp bare ground or a tray and cover it barely, if at all — light helps it germinate. Sow in autumn.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -200,8 +200,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 163 Lepidoptera on native alders in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["seed-cold-moist", "cuttings-hardwood"],
-      note: "Collect the small cones in autumn, dry them indoors until they open, and shake the seed out. A winter outdoors in a pot of damp compost is all the chilling it needs. Dormant twigs stuck in wet ground in winter root readily too.",
-      basis: "Woodland Trust; Woodlands of Ireland.",
+      note: "Collect the small cones in autumn and dry them indoors until they open and drop their seed. Seed that has dried out sprouts better after a winter outdoors in a pot of damp compost. Dormant twigs taken as hardwood cuttings in winter root too.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -234,9 +234,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 377 Lepidoptera on native willows in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["cuttings-hardwood", "seed-direct"],
-      note: "Cut pencil-thick dormant shoots in winter, push two-thirds of their length into damp ground, and walk away — willows root from bare wood as reliably as anything in gardening. Seed is viable for only days, so cuttings are the sane route.",
-      basis: "Royal Horticultural Society; Woodland Trust.",
+      methods: ["cuttings-hardwood", "cuttings-softwood"],
+      note: "Cut pencil-thick dormant shoots in winter and push two-thirds of their length into damp ground — willow roots from bare wood with ease. Soft shoot tips also root in early summer. The fluffy seed lives only a few weeks, so cuttings are the sane route.",
+      basis: "RHS; USDA Woody Plant Seed Manual; Seed Information Database.",
     },
   },
   {
@@ -269,9 +269,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 258 Lepidoptera on native poplars in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level (259 with introduced poplars).",
     propagation: {
-      methods: ["suckers", "root-cuttings"],
-      note: "Much the easiest way is to lift a rooted sucker in winter from a tree you have permission to take from. Root cuttings — finger-length pieces laid in a tray of gritty compost in late winter — work too. Seed is short-lived and rarely sets well in Ireland.",
-      basis: "Royal Horticultural Society; Woodland Trust.",
+      methods: ["suckers", "cuttings-hardwood"],
+      note: "Much the easiest way is to lift a rooted sucker in autumn or late winter, from a tree you have permission to take from. Dormant hardwood cuttings taken in winter also work. The seed stays alive only a few weeks, so it is a poor bet.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -304,9 +304,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 318 Lepidoptera on native cherries/blackthorn in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level (321 counting introduced relatives).",
     propagation: {
-      methods: ["seed-cold-moist", "suckers"],
-      note: "Clean the flesh off ripe stones in July and sow them straight into a pot left outside — they need a full cold winter, sometimes two, before they come up. Rooted suckers lifted in winter are quicker if you have access to a tree.",
-      basis: "Woodland Trust; Royal Horticultural Society.",
+      methods: ["seed-cold-moist", "cuttings-softwood"],
+      note: "Clean the flesh off ripe stones in summer and sow them straight into a pot left outside — they need a long, cold, damp winter before they come up. Softwood cuttings in early summer can root, given bottom heat.",
+      basis: "RHS; USDA Woody Plant Seed Manual; Seed Information Database.",
     },
   },
   {
@@ -339,9 +339,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 318 Lepidoptera on native Prunus in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["seed-cold-moist", "suckers"],
-      note: "Clean the stones from ripe fruit in late summer and sow at once into a pot left outdoors for the winter. It suckers freely, so a rooted piece lifted in winter is the fast way.",
-      basis: "Woodland Trust; Royal Horticultural Society.",
+      methods: ["seed-cold-moist", "cuttings-softwood"],
+      note: "Clean the stones from ripe fruit in late summer and sow at once into a pot left outdoors for the winter; they need the cold to sprout. Softwood cuttings in early summer can root, given bottom heat.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -375,8 +375,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 109 Lepidoptera on native rowans and whitebeams in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Mash ripe berries in water in autumn, wash the pulp away — the flesh itself stops the seed sprouting — and sow the cleaned seed into a pot left outside all winter. Most come up the first spring; a few wait a second.",
-      basis: "Woodland Trust; Woodlands of Ireland.",
+      note: "Mash ripe berries in water in autumn, wash the pulp away, and sow the cleaned seed into a pot left outside all winter. It needs a long cold, damp spell before it will sprout.",
+      basis: "RHS; USDA Woody Plant Seed Manual; Seed Information Database.",
     },
   },
   {
@@ -410,8 +410,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 7 Lepidoptera on native yew in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Toxicity: Royal Horticultural Society; Teagasc poisonous-plant guidance.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-double-dormant"],
-      note: "Cuttings are the practical route: pull side shoots with a heel in late summer and root them in a cold frame — they take a year but take well. Seed needs two winters outdoors before it moves, so few people bother.",
-      basis: "Royal Horticultural Society.",
+      note: "Cuttings are the practical route: take semi-ripe side shoots in late summer and root them in a cold frame — they may not root fully until the next spring. Seed usually waits until the second spring before it moves.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -445,8 +445,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 7 Lepidoptera on native holly in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level; the holly blue tie is from the Irish butterfly recording scheme.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-double-dormant"],
-      note: "Take this year's firmed shoots with a heel in late summer and root them in a shaded frame. Seed works but is a test of patience — it sits for two or three winters before germinating, and only from fully ripe berries.",
-      basis: "Royal Horticultural Society; Woodland Trust.",
+      note: "Take semi-ripe cuttings of this year's shoots in late summer or early autumn and root them under cover. Seed sown in a cold frame in autumn is a test of patience — it can sit for two or three winters before it germinates.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -480,9 +480,9 @@ export const SEED_RAW: RawPlant[] = [
     confidenceLowered: "medium",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 43 Lepidoptera on native apples in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. The figure rises to 171 if orchard apples are counted, which this row deliberately does not. Confidence is medium because wild-type stock is genuinely hard to source true.",
     propagation: {
-      methods: ["seed-cold-moist", "layering"],
-      note: "Sow cleaned pips from ripe fruit into a pot left outdoors over winter. Be warned that seedlings from a tree near orchards are usually hybrids — for the true species, layering a low branch of a known wild tree is the honest route.",
-      basis: "Woodland Trust; Royal Horticultural Society.",
+      methods: ["seed-cold-moist"],
+      note: "Sow cleaned pips from ripe fruit in autumn, into a pot or seedbed left outdoors over winter — they need the cold to break dormancy.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
 
@@ -518,8 +518,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 124 Lepidoptera on native hazel in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["layering", "seed-cold-moist"],
-      note: "Peg a low shoot into the ground in autumn, nick the underside, and lift it rooted a year later — hazel layers almost by itself. For seed, sow fresh nuts in autumn in a pot protected from mice, which will otherwise find every one.",
-      basis: "Woodland Trust; Woodlands of Ireland.",
+      note: "Peg a low shoot into the ground in autumn or spring, nicking the stem where it is buried, and lift it once rooted, within a year. For seed, sow fresh nuts in autumn and let them have the winter outdoors; protect them from mice and squirrels, which take nuts readily.",
+      basis: "RHS; USDA Woody Plant Seed Manual; Seed Information Database.",
     },
   },
   {
@@ -552,9 +552,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 200 Lepidoptera on native hawthorns in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["seed-double-dormant", "cuttings-hardwood"],
-      note: "Haws are slow: clean the flesh off, sow in autumn into a pot left outside, and expect nothing until the second spring. Most people plant bare-root whips in winter instead, which is cheap and sensible.",
-      basis: "Woodland Trust; Teagasc hedgerow guidance.",
+      methods: ["seed-double-dormant"],
+      note: "Haws are slow: clean the flesh off, sow in autumn into a pot left outside, and expect nothing until the second spring at least.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -587,9 +587,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 318 Lepidoptera on native Prunus in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["suckers", "seed-double-dormant"],
-      note: "Lift a rooted sucker in winter — the plant makes them constantly and will not miss one. Seed needs its flesh cleaned off and two winters outdoors, so almost nobody starts from sloes.",
-      basis: "Woodland Trust; Teagasc hedgerow guidance.",
+      methods: ["suckers", "seed-cold-moist"],
+      note: "Lift a rooted sucker in winter — it throws up plenty and will not miss one. Seed needs its flesh cleaned off and a long cold, damp winter outdoors before it sprouts.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -623,8 +623,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 118 Lepidoptera on native heather in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
-      note: "Pull short side shoots with a heel in late summer and root them in a gritty, lime-free mix — heather roots easily but rots in rich compost. Low branches pegged down layer themselves in a season.",
-      basis: "Royal Horticultural Society.",
+      note: "Take short non-flowering side shoots in August or September, strip the lower leaves and root them in free-draining, peat-free compost under a clear bag. Or peg the lower stems into the soil in spring to layer them.",
+      basis: "RHS.",
     },
   },
   {
@@ -657,9 +657,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 56 Lepidoptera on native heaths in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "layering"],
-      note: "Short heeled side shoots in late summer, into gritty lime-free compost in a shaded frame. Keep them just damp — heather cuttings drown more often than they dry out.",
-      basis: "Royal Horticultural Society.",
+      methods: ["cuttings-semi-hardwood"],
+      note: "Take short non-flowering side shoots in July or August, strip the lower leaves and root them in free-draining, peat-free compost under a clear bag, in the shade.",
+      basis: "RHS.",
     },
   },
   {
@@ -692,9 +692,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 56 Lepidoptera on native heaths in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "division"],
-      note: "Heeled side shoots in late summer into a wet, lime-free, peat-free mix. Established plants layer as they sprawl, so rooted pieces can often just be cut away and moved.",
-      basis: "Royal Horticultural Society.",
+      methods: ["cuttings-semi-hardwood", "layering"],
+      note: "Take semi-ripe side shoots in mid or late summer and root them in free-draining, peat-free compost in the shade. Or peg the lower stems into the soil in spring to layer them.",
+      basis: "RHS.",
     },
   },
   {
@@ -727,9 +727,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 227 Lepidoptera on native Vaccinium in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["division", "cuttings-semi-hardwood"],
-      note: "Lift and split a spreading clump in early spring — it travels by underground stems, so rooted pieces come away easily. Cuttings work in a lime-free, gritty mix but are slow.",
-      basis: "Royal Horticultural Society.",
+      methods: ["suckers", "cuttings-semi-hardwood"],
+      note: "It spreads by suckers, so a rooted piece lifted from the edge of a clump is the easy way. Semi-ripe cuttings in a lime-free mix also root.",
+      basis: "RHS.",
     },
   },
   {
@@ -762,9 +762,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 186 Lepidoptera on native brambles and raspberries in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["layering", "cuttings-hardwood"],
-      note: "Bury an arching cane tip in soil in late summer and it will be a rooted plant by spring — that is how bramble spreads on its own. Nobody needs to try very hard at this.",
-      basis: "Royal Horticultural Society.",
+      methods: ["layering"],
+      note: "Bury an arching stem tip 7.5cm deep in mid to late spring and it will be a rooted plant by autumn or the next spring — that is how bramble spreads on its own. Nobody needs to try very hard at this.",
+      basis: "RHS.",
     },
   },
   {
@@ -798,8 +798,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 113 Lepidoptera on native roses in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level (116 with introduced roses).",
     propagation: {
       methods: ["cuttings-hardwood", "seed-double-dormant"],
-      note: "Pencil-thick dormant cuttings in autumn, pushed into a sheltered trench, root well. Hips are slow — clean the seed and give it two winters outdoors before losing hope.",
-      basis: "Royal Horticultural Society; Woodland Trust.",
+      note: "Pencil-thick hardwood cuttings in autumn, pushed into a sheltered trench, root well. Hips are slow — clean the seed and give it two winters outdoors before losing hope.",
+      basis: "RHS.",
     },
   },
   {
@@ -834,8 +834,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 113 Lepidoptera on native roses in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level; the figure is for the genus, and this species' own share is likely smaller. Confidence medium for that reason.",
     propagation: {
       methods: ["suckers", "cuttings-hardwood"],
-      note: "Lift a rooted sucker in winter — it makes plenty. Dormant cuttings root well in sandy ground.",
-      basis: "Royal Horticultural Society.",
+      note: "It suckers freely, so lift a rooted sucker and replant it. Hardwood cuttings taken in autumn root too.",
+      basis: "RHS.",
     },
   },
   {
@@ -870,7 +870,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["cuttings-hardwood"],
       note: "Cut dormant shoots in winter and push them into wet ground. That is the whole method; willow does the rest.",
-      basis: "Royal Horticultural Society; Woodlands of Ireland.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -904,8 +904,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 53 Lepidoptera on native buckthorns in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Brimstone larval dependence: Dryad European butterfly foodplant checklist; National Biodiversity Data Centre (Ireland).",
     propagation: {
       methods: ["seed-cold-moist", "cuttings-semi-hardwood"],
-      note: "Clean the flesh off ripe black berries in autumn and sow into a pot left outdoors for the winter. Semi-ripe cuttings in late summer root reasonably in a shaded frame.",
-      basis: "Royal Horticultural Society; Butterfly Conservation.",
+      note: "Clean the flesh off ripe black berries in autumn and sow into a pot left outdoors for the winter, which breaks the seed's dormancy. Semi-ripe cuttings in early summer also root.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -938,9 +938,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 15 Lepidoptera on native spindles in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level (19 with introduced spindles).",
     propagation: {
-      methods: ["seed-cold-moist", "cuttings-semi-hardwood"],
-      note: "Clean the orange flesh from the seed in autumn and sow into a pot left outside — it wants a cold winter and often a second. Semi-ripe cuttings in summer are faster.",
-      basis: "Royal Horticultural Society; Woodland Trust.",
+      methods: ["seed-double-dormant", "cuttings-semi-hardwood"],
+      note: "Clean the orange flesh from the seed in autumn and sow it before it dries, into a pot left outside — it needs a warm spell then a cold one, and most come up in the second year. Semi-ripe cuttings are faster.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -973,9 +973,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 27 Lepidoptera on native viburnums in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "seed-double-dormant"],
-      note: "Semi-ripe cuttings in late summer root well in a shaded frame. Seed is a two-winter job — a warm spell then a cold one — so cuttings are the sensible route.",
-      basis: "Royal Horticultural Society; Woodland Trust.",
+      methods: ["cuttings-softwood", "seed-double-dormant"],
+      note: "Softwood cuttings in summer root well. Seed is a two-season job — a warm spell, then a cold one — so cuttings are the sensible route.",
+      basis: "RHS; USDA Woody Plant Seed Manual; Seed Information Database.",
     },
   },
   {
@@ -1009,8 +1009,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 39 Lepidoptera on native gorses in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Winter flowering and bumblebee use: All-Ireland Pollinator Plan.",
     propagation: {
       methods: ["seed-scarify", "cuttings-semi-hardwood"],
-      note: "The pods snap open in summer and fling the hard seed. Nick each seed with a blade or rub it on sandpaper, soak overnight, and sow — untreated it can sit for decades. Honestly, gorse usually arrives without being asked.",
-      basis: "Royal Horticultural Society.",
+      note: "The pods snap open in summer and fling the hard seed. Rub it on sandpaper before sowing — untreated, it can lie in the soil for decades. Semi-ripe cuttings also root.",
+      basis: "RHS; USDA Woody Plant Seed Manual; Seed Information Database.",
     },
   },
   {
@@ -1043,9 +1043,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 42 Lepidoptera on native bog myrtle in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["layering", "cuttings-semi-hardwood"],
-      note: "It layers itself where branches touch wet ground, so rooted pieces can often be cut away in spring. Semi-ripe cuttings root in a wet, lime-free, peat-free mix.",
-      basis: "Royal Horticultural Society.",
+      methods: ["layering", "cuttings-softwood", "seed-cold-moist"],
+      note: "Peg a low branch down in spring to layer it, or root softwood cuttings. Seed sown in a pot outdoors as soon as it ripens comes up after the winter cold.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -1079,9 +1079,9 @@ export const SEED_RAW: RawPlant[] = [
     confidenceLowered: "medium",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 52 Lepidoptera on native junipers in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level (53 with introduced junipers). Confidence medium: Irish plants are a prostrate form and good wild-origin stock is hard to find.",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "layering"],
-      note: "Heeled cuttings of this year's growth in autumn, into a gritty mix in a cold frame — slow but reliable. Prostrate plants layer where they touch, which is the easiest source of a rooted piece.",
-      basis: "Royal Horticultural Society.",
+      methods: ["cuttings-semi-hardwood"],
+      note: "Take semi-ripe cuttings of this year's growth in early autumn. How well they root varies a lot from plant to plant, so take plenty. Seed is deeply dormant and very slow.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -1114,9 +1114,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 31 Lepidoptera on native elders in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["cuttings-hardwood", "seed-direct"],
-      note: "Dormant hardwood cuttings in winter root almost as freely as willow. Or do nothing: birds will plant one for you within a year or two.",
-      basis: "Royal Horticultural Society.",
+      methods: ["cuttings-hardwood", "cuttings-softwood"],
+      note: "Push dormant hardwood cuttings into the ground in winter; cut through the heel, as elder stems are pithy. Soft shoot tips also root in early summer.",
+      basis: "RHS.",
     },
   },
   {
@@ -1150,8 +1150,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 107 Lepidoptera on native brooms in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["seed-scarify", "cuttings-semi-hardwood"],
-      note: "Collect pods before they burst in summer, nick or sand the hard seed, soak overnight and sow. Sow into the pot it will be planted from — broom resents root disturbance at every stage.",
-      basis: "Royal Horticultural Society.",
+      note: "Collect pods in late summer before they spring open, then nick or sand the hard seed and sow it. Sow into the pot it will be planted from — broom resents root disturbance. Semi-ripe cuttings in late summer root too.",
+      basis: "RHS; USDA Woody Plant Seed Manual; Seed Information Database.",
     },
   },
 
@@ -1186,9 +1186,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 9 Lepidoptera on devil's-bit scabious in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Marsh fritillary larval dependence: National Parks & Wildlife Service (Ireland) species action plan; Dryad European butterfly foodplant checklist.",
     propagation: {
-      methods: ["seed-cold-moist", "division"],
-      note: "Collect the round seed heads in autumn and sow fresh into trays left outdoors — a cold winter improves germination markedly. Established clumps split in spring.",
-      basis: "National Biodiversity Data Centre (Ireland); Butterfly Conservation.",
+      methods: ["seed-direct", "cuttings-softwood"],
+      note: "Sow the seed in autumn in trays left outdoors; it germinates well in cool conditions. Soft shoots cut from the base of the plant also root.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1221,9 +1221,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 12 Lepidoptera on native foxgloves in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Toxicity: Royal Horticultural Society.",
     propagation: {
-      methods: ["seed-surface-light"],
-      note: "Shake the ripe spires over bare ground in autumn — the seed is dust-fine and needs light, so do not cover it. Once you have foxgloves you have them permanently.",
-      basis: "Royal Horticultural Society.",
+      methods: ["seed-direct"],
+      note: "Sow the seed where it is to grow in late spring, or in trays to plant out in late summer. Once you have foxgloves, they sow themselves freely.",
+      basis: "RHS.",
     },
   },
   {
@@ -1256,9 +1256,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 35 Lepidoptera on native primulas in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["division", "seed-cold-moist"],
-      note: "Lift and pull a clump apart just after it flowers, replanting the pieces straight away. Seed must be sown fresh in summer and left outdoors for a cold winter; stored seed germinates badly.",
-      basis: "Royal Horticultural Society.",
+      methods: ["division"],
+      note: "Lift and pull a clump apart just after it flowers, or in autumn, and replant the pieces straight away.",
+      basis: "RHS.",
     },
   },
   {
@@ -1291,9 +1291,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 2 Lepidoptera on native bluebells in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Hybridization with Spanish bluebell: National Biodiversity Data Centre (Ireland).",
     propagation: {
-      methods: ["division", "seed-cold-moist"],
-      note: "Lift and split congested clumps just as the leaves die back in June. Seed works and takes four or five years to flower, which is the honest answer to why bluebell drifts are slow.",
-      basis: "Royal Horticultural Society; Woodland Trust.",
+      methods: ["division", "seed-direct"],
+      note: "Lift congested clumps in summer, once the leaves have died back, and replant the offset bulbs. Or sow seed in pots in a cold frame as soon as it ripens, kept shaded and never allowed to dry out.",
+      basis: "RHS.",
     },
   },
   {
@@ -1326,9 +1326,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 44 Lepidoptera on native meadowsweets in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["division", "seed-cold-moist"],
-      note: "Split a clump in autumn or early spring — it divides as easily as any perennial here. Seed sown fresh in autumn and left outdoors germinates well in spring.",
-      basis: "Royal Horticultural Society.",
+      methods: ["division", "seed-direct"],
+      note: "Split a clump in spring — it divides as easily as any perennial here. Seed sown in pots in spring also comes up well.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1361,9 +1361,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 15 Lepidoptera on native loosestrifes in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["division", "seed-surface-light"],
-      note: "Split established clumps in spring. Seed is tiny — press it onto the surface of wet compost and do not cover it — and germinates readily in warmth.",
-      basis: "Royal Horticultural Society.",
+      methods: ["division", "seed-direct"],
+      note: "Split established clumps in spring. Seed also sprouts readily, quickest in warmth.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1397,8 +1397,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 7 Lepidoptera on native marsh marigolds in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Toxicity: Royal Horticultural Society.",
     propagation: {
       methods: ["division", "seed-direct"],
-      note: "Split clumps right after flowering and replant into mud at once. Fresh seed sown onto wet mud in summer germinates quickly; dried seed mostly does not.",
-      basis: "Royal Horticultural Society.",
+      note: "Split clumps in late summer or early spring and replant into mud at once. Sow seed as soon as it ripens.",
+      basis: "RHS.",
     },
   },
   {
@@ -1431,9 +1431,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 88 Lepidoptera on native knapweeds in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Nectar ranking: All-Ireland Pollinator Plan.",
     propagation: {
-      methods: ["seed-direct", "division"],
-      note: "Sow the seed on bare ground in autumn — it needs no special treatment. Clumps divide easily in spring.",
-      basis: "All-Ireland Pollinator Plan; Royal Horticultural Society.",
+      methods: ["seed-direct"],
+      note: "Sow the seed on bare ground — it needs no special treatment.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1466,9 +1466,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 106 Lepidoptera on native trefoils in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Common blue and burnet moth dependence: Dryad European butterfly foodplant checklist; National Biodiversity Data Centre (Ireland).",
     propagation: {
-      methods: ["seed-scarify", "division"],
-      note: "The seed is hard-coated: rub it between sandpaper or soak it overnight before sowing in spring. Sow into thin, weedy-free ground, not a rich seedbed.",
-      basis: "All-Ireland Pollinator Plan.",
+      methods: ["seed-scarify"],
+      note: "The seed is hard-coated: rub it between sheets of sandpaper first, then sow at almost any time of year.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1501,9 +1501,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 192 Lepidoptera on native docks and sorrels in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Small copper dependence: Dryad European butterfly foodplant checklist.",
     propagation: {
-      methods: ["seed-direct", "division"],
-      note: "Scatter the seed on bare ground in autumn or spring — nothing else is required. Clumps split easily.",
-      basis: "Royal Horticultural Society.",
+      methods: ["seed-direct"],
+      note: "Scatter the seed on bare ground — nothing else is required. It self-seeds, and its deep taproots are hard to dig out.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1536,9 +1536,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 85 Lepidoptera on native nettles in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Nymphalid larval dependence: Dryad European butterfly foodplant checklist; National Biodiversity Data Centre (Ireland).",
     propagation: {
-      methods: ["division", "seed-direct"],
-      note: "Lift a rooted piece with gloves on in spring and plant it where you can keep an eye on it. Do not sow seed into an open garden unless you have thought about it properly.",
-      basis: "Butterfly Conservation; All-Ireland Pollinator Plan.",
+      methods: ["division"],
+      note: "It spreads by creeping roots and stems, so a rooted piece lifted with gloves on moves easily. It also self-seeds freely and is hard to get rid of, so plant it where it can stay.",
+      basis: "RHS.",
     },
   },
   {
@@ -1571,9 +1571,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 16 Lepidoptera on native anemones in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["division"],
-      note: "Lift and break the thin rhizomes just as the leaves yellow in early summer, and replant immediately — they must not dry out. Seed is rarely viable and slower still.",
-      basis: "Royal Horticultural Society; Woodland Trust.",
+      methods: ["division", "seed-direct"],
+      note: "Lift and separate the thin rhizomes in spring, once the leaves have died back, and replant them. Seed can be sown in pots in a cold frame as soon as it ripens.",
+      basis: "RHS.",
     },
   },
   {
@@ -1606,9 +1606,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 16 Lepidoptera on native alliums in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level (21 with introduced alliums). Toxicity to pets: Royal Horticultural Society.",
     propagation: {
-      methods: ["seed-cold-moist", "division"],
-      note: "Sow fresh green seed in summer where you want it, or lift clumps 'in the green' just after flowering. Dried seed is much less reliable.",
-      basis: "Royal Horticultural Society; Woodland Trust.",
+      methods: ["seed-direct", "division"],
+      note: "Sow the seed where you want it, or lift and divide a clump. Choose the spot with care — it spreads fast by seed and bulbils.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1641,9 +1641,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 35 Lepidoptera on native germanders in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["division", "seed-direct", "cuttings-softwood"],
-      note: "It creeps at the root, so rooted pieces lift easily in spring. Seed sown on gritty compost in autumn germinates well.",
-      basis: "Royal Horticultural Society.",
+      methods: ["seed-direct", "cuttings-softwood", "cuttings-semi-hardwood"],
+      note: "Sow the seed; it needs no special treatment. Softwood or semi-ripe cuttings root too.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1676,9 +1676,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 74 Lepidoptera on native campions in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["seed-direct", "division"],
-      note: "Sow the seed on bare ground in autumn; it needs no treatment and self-sows freely afterwards. Clumps divide easily in spring.",
-      basis: "Royal Horticultural Society.",
+      methods: ["seed-direct"],
+      note: "Sow the seed on bare ground; it needs no special treatment and comes up readily.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1711,9 +1711,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 41 Lepidoptera on native cranesbills in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["division", "seed-cold-moist"],
-      note: "Split the woody rootstock in early spring — the easiest division here. Seed needs a cold winter outdoors and germinates unevenly.",
-      basis: "Royal Horticultural Society.",
+      methods: ["division", "cuttings-softwood", "seed-scarify"],
+      note: "Divide an established clump, or root basal cuttings. Seed germinates well once its coat is nicked.",
+      basis: "RHS; Seed Information Database.",
     },
   },
 
@@ -1748,8 +1748,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native, as the Taraxacum officinale aggregate). Host count: 142 Lepidoptera on native dandelions in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Early-season pollinator importance: All-Ireland Pollinator Plan.",
     propagation: {
       methods: ["seed-direct", "root-cuttings"],
-      note: "It will find you. If you genuinely want more, a short piece of taproot laid in compost makes a new plant, which is also why digging one out badly makes two.",
-      basis: "All-Ireland Pollinator Plan.",
+      note: "It will find you. If you genuinely want more, a piece of taproot makes a new plant, which is also why digging one out badly makes two.",
+      basis: "RHS.",
     },
   },
 
@@ -1785,8 +1785,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 186 Lepidoptera on native fescues in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["seed-direct", "division"],
-      note: "Sow onto raked bare ground in spring or autumn. Established tussocks split readily.",
-      basis: "All-Ireland Pollinator Plan; Royal Horticultural Society.",
+      note: "Sow onto raked bare ground between autumn and spring. Established clumps split readily in spring.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1819,9 +1819,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 21 Lepidoptera on native purple moor-grass in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["division", "seed-cold-moist"],
-      note: "Split tussocks in late spring, once growth has started — an autumn division often rots over winter. Seed sown fresh outdoors germinates after the cold.",
-      basis: "Royal Horticultural Society.",
+      methods: ["division", "seed-direct"],
+      note: "Split tussocks in spring. Seed sown in pots in a cold frame in spring also comes up.",
+      basis: "RHS.",
     },
   },
   {
@@ -1855,8 +1855,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 62 Lepidoptera on native hair-grasses in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["division", "seed-direct"],
-      note: "Split the tussock in spring with a spade — it is tough, wiry and forgiving. Seed sown on damp bare ground germinates readily and it self-sows.",
-      basis: "Royal Horticultural Society.",
+      note: "Split the tussock in early summer with a spade — it is tough, wiry and forgiving. Seed sown where it is to grow, in spring or autumn, comes up readily.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1889,9 +1889,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 10 Lepidoptera on native sweet vernal-grasses in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["seed-direct", "division"],
-      note: "Sow onto raked bare ground in autumn — it is in most native meadow mixes sold here. Small tussocks divide in spring.",
-      basis: "All-Ireland Pollinator Plan.",
+      methods: ["seed-direct"],
+      note: "Sow onto raked bare ground in autumn or spring. Each plant is short-lived, so let it self-seed.",
+      basis: "RHS; Seed Information Database.",
     },
   },
 
@@ -1925,9 +1925,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 173 Lepidoptera on native meadow-grasses in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["seed-direct", "division"],
-      note: "Sow onto damp raked ground in spring or autumn. It roots at every node where a stolon touches soil, so a rooted piece moves at any time.",
-      basis: "All-Ireland Pollinator Plan; Royal Horticultural Society.",
+      methods: ["seed-direct"],
+      note: "Sow onto damp, raked ground; the seed needs no special treatment.",
+      basis: "Seed Information Database.",
     },
   },
 
@@ -1963,8 +1963,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 18 Lepidoptera on native ivy in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Autumn nectar and winter fruit value: All-Ireland Pollinator Plan.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
-      note: "Any trailing stem laid on soil roots itself within a season. Cuttings of this year's firmed growth root in a shaded frame without fuss. Take cuttings from the adult, bushy, flowering growth if you want a plant that will flower.",
-      basis: "Royal Horticultural Society.",
+      note: "Stems lying on soil root where they touch, so a rooted piece can be cut away. Semi-ripe cuttings root in summer. Cuttings from the bushy, flowering growth make shrubby plants that don't climb.",
+      basis: "RHS.",
     },
   },
   {
@@ -1997,9 +1997,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 57 Lepidoptera on native honeysuckles in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level — 111 if introduced ornamental honeysuckles are counted, which this row does not.",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "layering"],
-      note: "Semi-ripe cuttings in late summer root easily in a shaded frame. Or peg a low stem into the ground and lift it rooted the following autumn.",
-      basis: "Royal Horticultural Society; Woodland Trust.",
+      methods: ["cuttings-semi-hardwood", "layering", "seed-cold-moist"],
+      note: "Semi-ripe cuttings in late summer root. Or peg a low stem into the ground and lift it once rooted, within a year. Seed needs a long cold, damp spell before it sprouts.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -2032,9 +2032,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 78 Lepidoptera on native vetches in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Cryptic wood white foodplants: National Biodiversity Data Centre (Ireland).",
     propagation: {
-      methods: ["seed-scarify", "division"],
-      note: "Hard-coated seed: rub it on sandpaper or soak overnight, then sow in spring. It also creeps at the root, so pieces lift easily.",
-      basis: "All-Ireland Pollinator Plan.",
+      methods: ["seed-scarify"],
+      note: "Sow outdoors where it is to grow. The seed coat is hard, so nick it or rub it on sandpaper first.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -2068,8 +2068,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 48 Lepidoptera on native vetchlings in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level (49 with introduced relatives). Cryptic wood white dependence: National Biodiversity Data Centre (Ireland); Dryad European butterfly foodplant checklist.",
     propagation: {
       methods: ["seed-scarify", "division"],
-      note: "Nick or soak the hard seed before sowing in spring. It creeps at the root once settled, so rooted pieces move easily.",
-      basis: "All-Ireland Pollinator Plan; Butterfly Conservation.",
+      note: "Nick the hard seed and sow in autumn for the best results. Once settled it spreads by underground stems, so rooted pieces can be moved.",
+      basis: "RHS; Seed Information Database.",
     },
   },
 
@@ -2104,9 +2104,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 50 Lepidoptera on native strawberries in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level (53 with introduced strawberries).",
     propagation: {
-      methods: ["runners", "seed-surface-light"],
-      note: "Pot up the plantlets on the runners any time in summer — they are already rooted and it takes a minute. Seed is tiny and needs light, so press it on the surface and do not cover.",
-      basis: "Royal Horticultural Society.",
+      methods: ["runners", "seed-warm"],
+      note: "Pot up the rooted plantlets on its runners. Seed can be sown in spring in gentle warmth.",
+      basis: "RHS.",
     },
   },
   {
@@ -2139,9 +2139,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 127 Lepidoptera on native bedstraws in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Hawk-moth associations: Dryad European butterfly and moth foodplant data; National Biodiversity Data Centre (Ireland).",
     propagation: {
-      methods: ["division", "seed-cold-moist"],
-      note: "Lift rooted pieces of the creeping stems in spring. Seed sown fresh outdoors in autumn germinates after the winter cold.",
-      basis: "All-Ireland Pollinator Plan.",
+      methods: ["division", "seed-direct"],
+      note: "Its stems root where they touch the ground, so lift rooted pieces and replant them. Or sow seed as soon as it ripens.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -2174,9 +2174,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 170 Lepidoptera on native plantains in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["seed-direct", "division"],
-      note: "Scatter seed on bare or thin ground at any time of year; it needs nothing. Rosettes lift and move easily.",
-      basis: "All-Ireland Pollinator Plan.",
+      methods: ["seed-direct"],
+      note: "Scatter seed on bare or thin ground; it needs no treatment and comes up fast.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -2210,8 +2210,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 105 Lepidoptera on native clovers in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Mowing guidance and nectar ranking: All-Ireland Pollinator Plan.",
     propagation: {
       methods: ["seed-direct", "division"],
-      note: "Scatter seed into a thin lawn in spring or autumn, or simply stop mowing so hard. Rooted runners lift and move at any time.",
-      basis: "All-Ireland Pollinator Plan.",
+      note: "Scatter seed into a thin lawn. It roots at the nodes as it creeps, so rooted pieces lift and move at any time.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -2244,9 +2244,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native, as Thymus praecox subsp. polytrichus). Host count: 85 Lepidoptera on native thymes in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["division", "cuttings-softwood", "layering"],
-      note: "The mat roots as it creeps, so a rooted piece lifted in spring is the whole job. Soft cuttings in early summer root in gritty compost in a week or two.",
-      basis: "Royal Horticultural Society.",
+      methods: ["division", "cuttings-softwood", "seed-direct"],
+      note: "Lift and divide the mat, or take rooted basal stem cuttings in spring. Seed works too.",
+      basis: "RHS.",
     },
   },
 
@@ -2282,8 +2282,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 5 Lepidoptera on native buckler ferns in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level. Toxicity: Royal Horticultural Society.",
     propagation: {
       methods: ["division", "spores"],
-      note: "Split an established crown in early spring with a spade. For spores, hold a ripe frond over paper until the dust falls, then sow it onto sterile damp compost under glass and wait months — rewarding, and not quick.",
-      basis: "Royal Horticultural Society; British Pteridological Society.",
+      note: "Split an established crown in spring. For spores, put a ripe frond in a paper envelope until the dust falls, then sow it onto sterilised damp compost under a cover and wait months — rewarding, and not quick.",
+      basis: "RHS.",
     },
   },
   {
@@ -2317,8 +2317,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: **0 — this genus has no entry at all in the Gaytán 2026 matrix**, so the honest number is none recorded rather than a borrowed one. Ferns support very few Lepidoptera generally; the value of this row is habitat, not host plant.",
     propagation: {
       methods: ["spores", "division"],
-      note: "Spores are green and stay viable only days, so sow them the moment they drop onto damp sterile compost under glass. An established crown can be split in early spring, though it resents it.",
-      basis: "Royal Horticultural Society; British Pteridological Society.",
+      note: "Sow spores onto sterilised damp compost under a cover as soon as they ripen. An established crown can also be split in early spring or autumn.",
+      basis: "RHS.",
     },
   },
   {
@@ -2352,8 +2352,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 1 Lepidoptera on hard fern in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
       methods: ["spores", "division"],
-      note: "Sow ripe spores onto damp sterile compost under glass. Mature plants form offsets that can be teased away in spring.",
-      basis: "Royal Horticultural Society; British Pteridological Society.",
+      note: "Sow ripe spores onto sterilised damp compost under a cover in mid to late summer. Mature plants can also be divided in spring.",
+      basis: "RHS.",
     },
   },
   {
@@ -2386,9 +2386,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 2 Lepidoptera on native spleenworts in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["spores", "division"],
-      note: "The spores sit in neat brown lines under the frond; sow them fresh onto damp sterile compost under glass. It self-sows into damp mortar without any help at all.",
-      basis: "Royal Horticultural Society; British Pteridological Society.",
+      methods: ["division", "spores"],
+      note: "Divide an established clump. The spores sit in neat brown lines under the frond; sow them fresh onto sterilised damp compost under a cover.",
+      basis: "RHS.",
     },
   },
   {
@@ -2421,9 +2421,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:IRE, native). Host count: 1 Lepidoptera on native shield ferns in oceanic-temperate Europe — Gaytán et al. 2026 (CC-BY 4.0), genus level.",
     propagation: {
-      methods: ["division", "spores"],
-      note: "This fern makes tiny plantlets along the frond midribs — peg a mature frond onto damp compost and they root themselves, which is the easiest fern propagation there is. Crowns also divide in spring.",
-      basis: "Royal Horticultural Society; British Pteridological Society.",
+      methods: ["layering", "division"],
+      note: "This fern makes tiny bulbils along the frond midribs — peg a mature frond onto damp compost in autumn and they root themselves. Crowns also divide in spring.",
+      basis: "RHS.",
     },
   },
 ];

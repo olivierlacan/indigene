@@ -412,6 +412,12 @@ So when you add something, ask which failure you are guarding against:
 - *"This claim could stop being true"* → a check script, and a committed
   snapshot so the next run can say what changed.
 
+**Before writing that a session "can't reach" a service, run
+`npm run network:check`.** It asks every host our scripts use and says whether
+the allowlist, the host's bot wall or the host itself is in the way
+(`docs/network.md`). The allowlist changes; a comment saying "the sandbox blocks
+iNaturalist" outlived the block by months.
+
 When both apply, write both. The cross-border region has `plants.test.ts`
 pinning the rule and `selection:check` standing in eighteen real places asking
 the live services — the rule was right and the *routing* was wrong, and only one

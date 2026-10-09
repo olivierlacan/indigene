@@ -9,3 +9,6 @@
   on any PR that changes the plant, wildlife, look-alike, ornamental or
   invasive lists, and commits the photos to that PR. Weekly, it opens a PR for
   any gaps left on `main`.
+- Internal: `npm run network:check` asks every host our scripts call and says
+  whether a Claude session can reach it; `docs/network.md` holds the annotated
+  table.

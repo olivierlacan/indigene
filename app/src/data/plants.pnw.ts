@@ -67,8 +67,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: oak genus, western estimate (Tallamy/NWF).",
     propagation: {
       methods: ["seed-warm", "seed-direct"],
-      note: "Gather acorns as they drop in fall and float them in water — toss any that bob to the top, and sow the sinkers right away. White-oak acorns sprout that same autumn without any chilling, and they must never be allowed to dry out. Because of the deep taproot, start it in a tall pot or sow it straight where it will live.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Gather acorns as they drop in fall and float them in water — toss any that bob to the top, and sow the sinkers right away. White-oak acorns sprout that same autumn without any chilling, and they must never be allowed to dry out.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual; Seed Information Database.",
     },
   },
   {
@@ -137,7 +137,7 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: USDA PLANTS. Size: USFS FEIS. Host count: conifer, low (few Lepidoptera use it).",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Pick the small cones as they ripen and brown in fall and dry them until they release their seed. A few weeks of cold, damp storage before sowing helps it come up more evenly, though this one germinates fairly willingly.",
+      note: "Pick the small cones as they ripen and brown in late summer and dry them until they release their seed. A few weeks of cold, damp storage before sowing helps it come up more evenly, though this one germinates fairly willingly.",
       basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
     },
   },
@@ -173,7 +173,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-cold-moist"],
       note: "Collect the winged samaras once they ripen in fall. Either sow them outdoors right away and let the weather do the work, or give them a couple of months of cold, damp chilling in the fridge so they sprout in spring.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual; Seed Information Database.",
     },
   },
   {
@@ -207,8 +207,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: USDA PLANTS. Host count: poplar/aspen genus, high western estimate (Tallamy/NWF).",
     propagation: {
       methods: ["cuttings-hardwood", "seed-surface-light"],
-      note: "The easiest tree here to start: cut pencil-thick dormant twigs in late winter and push them into damp ground, and they root on their own. The cottony seed is only alive for a few days, so if you go that route scatter it onto wet mud the moment it sheds.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "The easiest tree here to start: cut pencil-thick dormant twigs in winter and push them into damp ground, and they root readily. The cottony seed stays alive only briefly, so if you go that route scatter it onto wet mud as soon as it sheds.",
+      basis: "USFS Native Plant Network; USDA NRCS Plant Guide; Woody Plant Seed Manual.",
     },
   },
   {
@@ -242,8 +242,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: USDA PLANTS, OregonFlora. Culture: notoriously sensitive to summer water. Host count: Arbutus, low-moderate estimate.",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Scoop the seed from ripe fall berries, rinse off all the pulp, and give it about two months of cold, damp chilling. It hates having its roots disturbed, so start it in a deep pot or sow it right where it will grow and move it as little as possible.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Scoop the seed from ripe fall berries, rinse off all the pulp, and give it five or six weeks of cold, damp storage in the fridge — without that chill almost none of it sprouts.",
+      basis: "Woody Plant Seed Manual; USFS Native Plant Network.",
     },
   },
   {
@@ -278,7 +278,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-cold-moist", "suckers"],
       note: "Clean the seed out of the ripe summer berries and give it a long cold, damp winter — it can be slow and may not all come up the first spring, so don't give up on the pot. Simpler still, dig the rooted suckers it throws up around the base and replant them.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual; USDA NRCS Plant Guide.",
     },
   },
   {
@@ -311,9 +311,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, E-Flora BC. Host count: willow genus, top western host (Tallamy/NWF).",
     propagation: {
-      methods: ["cuttings-hardwood", "seed-surface-light"],
-      note: "Like other willows it roots almost effortlessly from dormant winter cuttings pushed into moist soil. Its fluffy seed lives only a few days, so if you collect it sow it onto wet ground immediately.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["cuttings-hardwood", "cuttings-softwood", "seed-surface-light"],
+      note: "Like other willows it roots readily from dormant winter cuttings pushed into moist soil, and soft spring tips root even faster. Its fluffy seed loses its life within days to weeks, so sow it on the surface of wet ground as soon as you collect it.",
+      basis: "USFS Native Plant Network; USFS Fire Effects Information System; Woody Plant Seed Manual.",
     },
   },
   {
@@ -347,8 +347,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; VASCAN; OregonFlora. Host count: willow genus, top western host, the same rounded estimate this list uses for Scouler's willow (Tallamy/NWF). Occurrence records in this region's box: 1,639 (GBIF).",
     propagation: {
       methods: ["cuttings-hardwood", "seed-surface-light"],
-      note: "Push dormant winter cuttings into wet soil and nearly all of them root. The fluffy seed lives only a few days, so sow it onto wet ground the day you collect it.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Push dormant winter cuttings into wet soil and they root readily. The fluffy seed loses its life within days to weeks, so sow it on the surface of wet ground the day you collect it.",
+      basis: "USDA NRCS Plant Guide; Woody Plant Seed Manual.",
     },
   },
   {
@@ -382,8 +382,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; VASCAN; OregonFlora. Host count: willow genus, top western host, the same rounded estimate this list uses for Scouler's willow (Tallamy/NWF). Occurrence records in this region's box: 1,243 (GBIF).",
     propagation: {
       methods: ["cuttings-hardwood", "seed-surface-light"],
-      note: "Push dormant winter cuttings into wet soil and nearly all of them root. The fluffy seed lives only a few days, so sow it onto wet ground the day you collect it.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Like most willows, it roots readily from dormant winter cuttings pushed into wet soil. The fluffy seed loses its life within days to weeks, so sow it on the surface of wet ground the day you collect it.",
+      basis: "Woody Plant Seed Manual; UW Native Plant Production.",
     },
   },
   {
@@ -417,8 +417,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; VASCAN; OregonFlora. Host count: willow genus, top western host, the same rounded estimate this list uses for Scouler's willow (Tallamy/NWF). Occurrence records in this region's box: 2,272 (GBIF).",
     propagation: {
       methods: ["cuttings-hardwood", "seed-surface-light"],
-      note: "Push dormant winter cuttings into wet soil and nearly all of them root. The fluffy seed lives only a few days, so sow it onto wet ground the day you collect it.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Push dormant winter cuttings into wet soil and nearly all of them root. The fluffy seed loses its life within days to weeks, so sow it on the surface of wet ground the day you collect it.",
+      basis: "USDA NRCS Plant Guide; Woody Plant Seed Manual.",
     },
   },
 
@@ -452,9 +452,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Nitrogen fixation & growth rate: USFS Silvics / FEIS. Host count: Alnus genus, western estimate discounted from the eastern Tallamy/NWF figure (156).",
     propagation: {
-      methods: ["seed-direct", "seed-cold-moist"],
-      note: "Pick the small woody cones in autumn once they start to open, dry them indoors in a paper bag and shake the winged seed out. It will come up from a spring sowing with no treatment at all, though a month of cold, damp storage in the fridge makes the stand more even. Sow thickly — a lot of the seed is empty.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-direct"],
+      note: "Pick the small woody cones in autumn, when they twist easily and the scales start to part, dry them indoors in a paper bag and shake the winged seed out. It needs no chilling: sow it in spring. Sow thickly — a lot of the seed is empty.",
+      basis: "Woody Plant Seed Manual; Seed Information Database.",
     },
   },
   {
@@ -488,8 +488,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Prunus genus, western estimate discounted from the eastern Tallamy/NWF figure (340).",
     propagation: {
       methods: ["seed-cold-moist", "suckers"],
-      note: "Squash the ripe fruit in autumn, wash the pulp off the stones, and give them about three months of cold, damp storage in the fridge before sowing in spring — the pulp itself holds sprouting back, so it has to come off. Easier still: lift one of the rooted suckers it throws up around itself in late winter.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Squash the ripe fruit in late summer, wash the pulp off the stones, and give them three to four months of cold, damp storage in the fridge before sowing in spring. Easier still: lift one of the rooted suckers it throws up around itself in late winter.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual; USFS Fire Effects Information System.",
     },
   },
   {
@@ -522,9 +522,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Acer genus, western estimate on the same footing as bigleaf maple in this list.",
     propagation: {
-      methods: ["seed-cold-moist", "layering"],
-      note: "Collect the paired winged keys in autumn as they turn brown, and give them about three months in a bag of damp sand in the fridge before sowing — maple seed needs that cold, damp spell to wake up. Its low branches also root where they touch the ground, so you can peg one down and cut it free a year later.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-double-dormant", "layering"],
+      note: "Collect the paired winged keys in late summer as they turn color, before they dry out on the tree. Sow them in a pot left outside, or give them about five months in damp peat in the fridge — the seed does best with warm and cold spells, and many wait until the second spring. Its low branches also root where they touch the ground, so you can peg one down and cut it free a year later.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual; LBJ Wildflower Center.",
     },
   },
   {
@@ -593,8 +593,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Fraxinus genus, western estimate discounted from the eastern Tallamy/NWF figure (150). Emerald ash borer status: Oregon Dept. of Forestry / Oregon Dept. of Agriculture (first US West Coast detection, Forest Grove, 2022).",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Pick the hanging bunches of winged seed in autumn once they are dry and papery. Ash seed is stubborn: it wants a warm spell followed by three months of cold, damp storage, so the simplest route is to sow it outside in a pot in autumn and let a whole winter do the work — some will still wait until the second spring.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Pick the hanging bunches of winged seed in late summer or fall once they are dry and papery. Like most ashes it needs a winter's chill before it sprouts, so the simplest route is to sow it outside in a pot in autumn and let the weather do the work.",
+      basis: "Woody Plant Seed Manual; USDA NRCS Plant Guide; UW Native Plant Production.",
     },
   },
   {
@@ -627,9 +627,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Cornus genus, on the same footing as the eastern flowering dogwood figure (118) discounted for the West. Anthracnose: WSU / OSU Extension.",
     propagation: {
-      methods: ["seed-cold-moist", "cuttings-softwood"],
-      note: "Clean the pulp off the scarlet fruit as soon as it ripens — it holds the seed back — then give the seed about three months of cold, damp storage in the fridge before sowing in spring. Soft shoot tips taken in early summer will also root under cover, which is the surer route if you want a copy of a tree you like.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-cold-moist"],
+      note: "Clean the pulp off the scarlet fruit as soon as it ripens — nurseries report the pulp can hold the seed back — then give the seed about three months of cold, damp storage in the fridge before sowing in spring.",
+      basis: "Woody Plant Seed Manual; Seed Information Database; UW Native Plant Production.",
     },
   },
 
@@ -663,9 +663,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Crataegus genus, rounded western estimate anchored on the Tallamy/NWF keystone lists and discounted from the eastern figure (168); no openly-licensed US host table exists, so this is judgment, not a computed number.",
     propagation: {
-      methods: ["seed-double-dormant", "suckers"],
-      note: "Hawthorn seed is famously stubborn: clean the stones out of the ripe autumn haws and sow them in a pot left outside, then be prepared to wait through two winters before anything shows — a warm spell followed by a cold one is what unlocks them, and one season rarely does it. Much quicker is to lift a rooted sucker from the edge of an established plant in late winter.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-cold-moist", "suckers"],
+      note: "Hawthorn seed is stubborn: the stony coat holds it back as well as the seed inside. Nurseries soften the cleaned stones in acid, then give them three to four months cold and damp; at home, sow them in a pot left outside in autumn and be patient. Much quicker is to lift a rooted sucker from the edge of an established plant in late winter.",
+      basis: "Woody Plant Seed Manual; USDA NRCS Plant Guide; USFS Fire Effects Information System.",
     },
   },
   {
@@ -699,7 +699,7 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: USDA PLANTS, Burke Herbarium (WTU), E-Flora BC — the west-side populations sit in the Puget Trough and north, so this is the honest garden birch here; Betula occidentalis (water birch) was the alternative and is essentially an east-of-the-Cascades streamside shrub-tree, barely west-side and not in the maritime trade. Host count: Betula genus, rounded western estimate anchored on Tallamy/NWF and discounted from the eastern figure (413). Bronze birch borer and site stress: WSU / OSU Extension.",
     propagation: {
       methods: ["seed-surface-light", "seed-cold-moist"],
-      note: "Pick the ripe catkins in late summer, before they fall apart, and crumble them over a pot of damp compost — the seed is dust-fine and needs light, so press it down and leave it uncovered. A few weeks in the cold and damp (or a pot left outside over winter) makes it come up more evenly. Sow far more than you need; a lot of birch seed is empty.",
+      note: "Pick the ripe catkins in late summer or early fall, while they still hold together, and crumble them over a pot of damp compost. Leave the dust-fine seed on the surface: light helps it sprout, and a month or two of cold, damp storage (or a pot left outside over winter) evens it up.",
       basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
     },
   },
@@ -733,9 +733,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU), E-Flora BC. Wetland and tidal-edge tolerance: USDA NRCS Plant Guide. Host count: Malus genus, rounded western estimate anchored on the Tallamy/NWF keystone lists and discounted from the eastern figure (308).",
     propagation: {
-      methods: ["seed-cold-moist", "layering"],
-      note: "Squash the little apples once they have softened in autumn, wash the pips out, and give them about three months of cold, damp storage in the fridge before sowing in spring — or sow them outside in a mouse-proof pot in autumn and let winter do it. Low branches that rest on wet ground root where they touch, so you can peg one down and cut it free a year later.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-cold-moist"],
+      note: "Squash the little apples once they have softened in autumn, wash the pips out, and give them about three months of cold, damp storage in the fridge before sowing in spring — or sow them outside in a mouse-proof pot in autumn and let winter do it.",
+      basis: "Woody Plant Seed Manual.",
     },
   },
 
@@ -770,8 +770,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range incl. the Willamette Valley population: OregonFlora, USDA PLANTS, USFS Silvics. Host count: Pinus genus, rounded western estimate anchored on Tallamy/NWF keystone lists. The region's highest-scoring absent genus by occurrence (GBIF).",
     propagation: {
       methods: ["seed-cold-moist", "seed-direct"],
-      note: "Collect cones as they ripen brown in late summer, dry them until they open and shake out the winged seed. A month of cold, damp storage in the fridge evens up germination; sow in a deep pot, because the root goes down fast and hates being cut.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Collect cones as they ripen brown in early fall, dry them until they open and shake out the winged seed. Fresh seed may need no chilling, but about six weeks of cold, damp storage in the fridge evens it up. Sow in a deep pot: it grows a deep taproot.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual; USDA NRCS Fact Sheet.",
     },
   },
   {
@@ -805,8 +805,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Bark harvest history: USFS FEIS. Toxicity: ASPCA; OSU Extension. Host count: Frangula/Rhamnus genus, rounded western estimate.",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Squeeze the pulp off ripe berries in autumn, wash the seed and give it two or three months of cold, damp storage before sowing in spring. Fresh autumn sowing in a pot left outdoors does the same job without the fridge.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Squeeze the pulp off ripe berries in autumn, wash the seed and give it three to four months of cold, damp storage before sowing it shallowly in spring. Autumn sowing in a pot left outdoors does the same job without the fridge.",
+      basis: "Woody Plant Seed Manual.",
     },
   },
 
@@ -842,7 +842,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-cold-moist"],
       note: "Pick cones in early autumn as they turn brown but before they open, dry them in a paper bag until the seed shakes free, then give it about a month cold and damp in the fridge before sowing in spring. Seedlings want shade and constant moisture their first summer.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      basis: "Woody Plant Seed Manual; USDA NRCS Plant Guide; Seed Information Database.",
     },
   },
   {
@@ -875,8 +875,8 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; USDA PICO. Tolerances: USFS Silvics / FEIS. Host count: Pinus genus, the same rounded western estimate this list uses for ponderosa pine, anchored on Tallamy/NWF keystone lists. Occurrence records in this region's box: 6,265 (GBIF).",
     propagation: {
-      methods: ["seed-cold-moist", "seed-direct"],
-      note: "Collect closed cones in autumn and warm them indoors until they open. A month of cold damp storage before spring sowing evens out germination, though coastal seed often comes up without it. Sow into a deep pot — the taproot goes down fast and resents being cut.",
+      methods: ["seed-cold-moist"],
+      note: "Collect the cones in early autumn and warm them indoors until they open and drop their seed. About six weeks of cold, damp storage before spring sowing helps; sow it shallowly, never deep.",
       basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
     },
   },
@@ -911,8 +911,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; VASCAN; OregonFlora. Shade tolerance and growth rate: USFS Silvics. Toxicity: ASPCA (Taxus). Host count: Taxus, low, rough estimate with no Tallamy/NWF figure behind it. Occurrence records in this region's box: 5,780 (GBIF).",
     propagation: {
       methods: ["cuttings-hardwood", "seed-double-dormant"],
-      note: "Cuttings taken in late fall or winter root slowly but surely, and pick the sex for you. Seed needs a warm spell and then a cold one, and often takes two years to come up.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Cuttings taken from fall into winter root slowly — up to three months — and do better with rooting hormone, kept humid with gentle bottom heat. Seed needs a warm spell and then a cold one, and in the wild usually waits until the second spring to come up.",
+      basis: "Woody Plant Seed Manual; LBJ Wildflower Center.",
     },
   },
   {
@@ -945,9 +945,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY), which files it as Sambucus cerulea, for British Columbia, Oregon and Washington; VASCAN; OregonFlora. Bird use: Cornell Lab; USFS FEIS. Toxicity: ASPCA. Host count: Sambucus genus, rounded western estimate. Occurrence records in this region's box: 1,622 (GBIF).",
     propagation: {
-      methods: ["cuttings-hardwood", "seed-cold-moist"],
-      note: "Push pencil-thick leafless cuttings into damp soil in winter; most will take. Seed, washed from ripe berries, needs a cold damp winter outside and is slower.",
-      basis: "USFS Native Plant Network.",
+      methods: ["cuttings-hardwood", "seed-double-dormant"],
+      note: "Push pencil-thick leafless cuttings into damp soil in winter. Seed, washed from ripe berries, is slower: like other elders it wants a warm spell and then a long cold one, which a late-summer sowing in a pot left outdoors provides.",
+      basis: "USDA NRCS Plant Guide; Woody Plant Seed Manual.",
     },
   },
   // ---------------- SHRUBS ----------------
@@ -981,9 +981,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Berberis, low. Pollinator/bird value: Xerces Maritime NW.",
     propagation: {
-      methods: ["seed-cold-moist", "suckers", "cuttings-semi-hardwood"],
-      note: "Mash the ripe blue berries, rinse the seed clean, and give it a cold, damp winter. It also spreads by underground suckers you can dig and move, and cuttings of firming-up shoots in late summer will root.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-double-dormant", "cuttings-semi-hardwood"],
+      note: "Mash the ripe blue berries and rinse the seed clean. It is slow: one cold winter is often not enough, and it sprouts best after a warm spell between two cold ones, so sow it in a pot left outdoors and give it time. Cuttings of firming-up shoots in late summer will also root.",
+      basis: "Woody Plant Seed Manual; RHS.",
     },
   },
   {
@@ -1016,9 +1016,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Rubus genus, western estimate discounted from the eastern Tallamy/NWF figure (163). Bird value: WDFW (band-tailed pigeon); Cornell Lab.",
     propagation: {
-      methods: ["suckers", "cuttings-hardwood", "seed-cold-moist"],
-      note: "Easiest is to dig one of the rooted shoots it sends up around the clump in late winter and move it. Leafless pieces of last year's cane root in damp soil too. From seed, clean the pulp off the ripe berries and give it a cold, damp winter.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["suckers", "layering", "seed-cold-moist"],
+      note: "Easiest is to dig one of the rooted shoots it sends up around the clump in late winter and move it; tip layering works too. Seed is the slow route: clean it from the berries and give it about three months of cold, damp storage — nurseries sometimes scarify the hard coat as well.",
+      basis: "LBJ Wildflower Center; USFS Native Plant Network; USFS Fire Effects Information System.",
     },
   },
   {
@@ -1051,9 +1051,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Berberis, low. Pollinator/bird value: Xerces Maritime NW.",
     propagation: {
-      methods: ["seed-cold-moist", "division", "cuttings-semi-hardwood"],
-      note: "Mash the ripe berries, rinse the seed clean, and give it a cold, damp winter. It also spreads by rhizome, so rooted pieces can be lifted and moved in spring, and firming-up shoots taken in late summer will root.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["division", "cuttings-hardwood", "seed-cold-moist"],
+      note: "It spreads by rhizome, so rooted pieces can be lifted and moved in spring, and cuttings taken in autumn or winter will root. From seed, mash the ripe berries, rinse the seed clean and sow it at once in a pot left outdoors; it is slow, and in one test three months in the cold failed to wake it.",
+      basis: "USFS Fire Effects Information System; Woody Plant Seed Manual.",
     },
   },
   {
@@ -1087,8 +1087,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Ribes, moderate estimate. Hummingbird timing: Xerces / Burke Herbarium.",
     propagation: {
       methods: ["cuttings-hardwood", "seed-cold-moist"],
-      note: "By far the easiest way is dormant hardwood cuttings taken in late fall or winter, which root readily in damp soil. Seed works too, but you'll need to clean it from the berries and give it a cold, damp winter first.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "By far the easiest way is dormant hardwood cuttings taken in late fall or winter, which root readily in damp soil. Seed works too: clean it from the berries and sow it outdoors in autumn, or give it a cold, damp spell first.",
+      basis: "USDA NRCS Fact Sheet; USFS Native Plant Network; Woody Plant Seed Manual.",
     },
   },
   {
@@ -1121,9 +1121,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Holodiscus/Rosaceae, moderate estimate. Pollinator value: Xerces Maritime NW.",
     propagation: {
-      methods: ["seed-surface-light", "cuttings-semi-hardwood"],
-      note: "The seed is dust-fine, so scatter it on the surface and don't bury it, and give it a cold, damp winter — germination can be stubborn and patchy. Cuttings of firming-up summer shoots are the other common route.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-cold-moist", "cuttings-hardwood"],
+      note: "Seed needs 15 to 18 weeks of cold and damp before it will sprout, so sow it in a pot left outside over winter. Cuttings work too: hardwood ones taken in fall or winter, dipped in rooting hormone, do better than soft spring ones.",
+      basis: "USDA NRCS Fact Sheet; USFS Native Plant Network; USFS Fire Effects Information System.",
     },
   },
   {
@@ -1157,8 +1157,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Symphoricarpos, moderate estimate.",
     propagation: {
       methods: ["suckers", "cuttings-hardwood", "seed-double-dormant"],
-      note: "Easiest by far is to dig the rooted suckers it spreads by, or take dormant hardwood cuttings in winter. Seed is slow and stubborn, often needing two winters before it comes up, so most people skip it.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Easiest by far is to dig the rooted suckers it spreads by, or root dormant cuttings in late winter or early spring. Seed is slow and stubborn — it wants a long warm spell and then a long cold one, often two winters outdoors — so most people skip it.",
+      basis: "USFS Fire Effects Information System; USFS Native Plant Network; USDA NRCS Plant Guide; Woody Plant Seed Manual.",
     },
   },
   {
@@ -1193,7 +1193,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["cuttings-hardwood", "layering"],
       note: "About as easy as planting gets — push dormant hardwood cuttings into moist ground in winter and they root. Low branches that touch the soil also root on their own, and you can cut those free and move them.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      basis: "USDA NRCS Plant Guide; USFS Native Plant Network.",
     },
   },
   {
@@ -1226,9 +1226,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Rosa genus, moderate estimate.",
     propagation: {
-      methods: ["suckers", "cuttings-hardwood", "seed-cold-moist"],
-      note: "Simplest is to dig the rooted suckers it sends up around itself, or take dormant hardwood cuttings in winter. Growing from the hips is slow: clean the seed out, give it a long cold, damp winter, and be patient with uneven germination.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["suckers", "seed-cold-moist"],
+      note: "Simplest is to dig the rooted suckers it sends up around itself. Growing from the hips is slow: clean the seed out, give it a long cold, damp winter, and be patient with uneven germination.",
+      basis: "USDA NRCS Plant Guide; Woody Plant Seed Manual; USFS Fire Effects Information System.",
     },
   },
   {
@@ -1263,7 +1263,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering", "seed-surface-light"],
       note: "Take cuttings of firming-up shoots in summer, or dig the rooted layers and spreading shoots it forms along the ground. The seed is tiny — press it onto the surface of an acidic mix, keep it moist, and expect slow, uneven results.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      basis: "USFS Fire Effects Information System; Seed Information Database.",
     },
   },
 
@@ -1299,7 +1299,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["suckers", "cuttings-hardwood"],
       note: "Easiest of all: in late winter, dig one of the rooted shoots it sends up around the edge of the clump, cut it free with a spade, and move it. Leafless pieces of last year's cane, pushed into damp soil in winter, root readily too.",
-      basis: "USFS Native Plant Network.",
+      basis: "USDA NRCS Plant Guide; USFS Native Plant Network; USFS Fire Effects Information System.",
     },
   },
   {
@@ -1332,9 +1332,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Toxicity of raw fruit/foliage: USDA PLANTS; OSU Extension. Host count: Sambucus, conservative western estimate.",
     propagation: {
-      methods: ["cuttings-hardwood", "seed-cold-moist"],
-      note: "Take pencil-thick pieces of dormant, leafless stem in winter and push them two-thirds deep into damp soil — most take. From seed it is slower: clean the pulp off, then give it a warm spell followed by three months cold and damp, which an autumn sowing outdoors does for you.",
-      basis: "USFS Native Plant Network.",
+      methods: ["cuttings-hardwood", "seed-double-dormant"],
+      note: "Take pencil-thick pieces of dormant, leafless stem in late fall or winter and push them into damp soil. From seed it is slower: clean the pulp off, then give it a warm spell followed by three months cold and damp, which a late-summer sowing outdoors does for you.",
+      basis: "USDA NRCS Fact Sheet; Woody Plant Seed Manual.",
     },
   },
   {
@@ -1367,9 +1367,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Vaccinium genus, western estimate discounted from the eastern Tallamy/NWF figure (217).",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "seed-surface-light"],
-      note: "Take this year's shoots in late summer, once they have firmed up but before they go woody, and root them in a sand-and-peat mix under cover — it is slow but reliable. From seed, squash ripe berries, rinse the seed out, and press it onto the surface of damp acid compost without covering it; it needs light to sprout.",
-      basis: "USFS Native Plant Network.",
+      methods: ["cuttings-hardwood", "seed-cold-moist"],
+      note: "Take cuttings of fully ripened shoots while the plant is dormant, from late fall to early spring, and root them in a sand-and-peat mix under cover. From seed, squash ripe berries, rinse the seed out, and sow it lightly covered in autumn — or give it one to two months of cold, damp storage first. The seedlings grow very slowly.",
+      basis: "USDA NRCS Plant Guide; USFS Native Plant Network; USFS Fire Effects Information System.",
     },
   },
   {
@@ -1402,9 +1402,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Physocarpus, western estimate on the same footing as the eastern figure (41).",
     propagation: {
-      methods: ["cuttings-hardwood", "seed-direct"],
-      note: "Dormant, leafless cuttings taken in winter and pushed into damp soil root easily. Seed is just as simple: collect the dry, papery pods in autumn, crumble them, and sow the seed on the surface in a pot left outside over winter.",
-      basis: "USFS Native Plant Network.",
+      methods: ["cuttings-hardwood", "seed-cold-moist"],
+      note: "Dormant, leafless cuttings taken in winter and pushed into damp soil root easily. Seed needs two to four months of cold, damp chilling: collect the dry, papery pods in autumn, crumble them, and sow the seed in a pot left outside over winter.",
+      basis: "USDA NRCS Fact Sheet.",
     },
   },
   {
@@ -1438,8 +1438,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Hummingbird use: Audubon; WSU Extension. Host count: Lonicera genus, on the same footing as the orange honeysuckle figure in this list.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-cold-moist"],
-      note: "This year's shoots, taken in late summer as they firm up, root well under cover. From seed, clean the pulp off the black berries and give the seed about three months of cold, damp storage before sowing in spring.",
-      basis: "USFS Native Plant Network.",
+      note: "This year's shoots, taken in late summer as they firm up, root well under cover. From seed, clean the pulp off the black berries and give the seed one to three months of cold, damp storage before sowing in spring.",
+      basis: "USDA NRCS Fact Sheet; USFS Native Plant Network.",
     },
   },
   {
@@ -1472,9 +1472,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Corylus genus, western estimate discounted from the eastern Tallamy/NWF figure (131).",
     propagation: {
-      methods: ["seed-cold-moist", "layering"],
-      note: "Gather the nuts in early autumn before the jays do, and give them about four months of cold, damp storage before spring sowing — or simply sow them outside in a rodent-proof pot and let winter do it. Low branches pegged to the ground will also root and can be cut free the following year.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-cold-moist", "suckers"],
+      note: "Gather the nuts in early autumn before the jays do and don't let them dry out. Give them three to six months of cold, damp storage before spring sowing — or simply sow them outside in a rodent-proof pot and let winter do it. It also spreads by shallow rhizomes, so a rooted sucker from the edge of a clump can be dug and moved.",
+      basis: "USFS Native Plant Network; USFS Fire Effects Information System; USDA NRCS Plant Guide.",
     },
   },
 
@@ -1508,9 +1508,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "rough",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). February bloom timing and early-bumble-bee use: Xerces Society Maritime Northwest lists; WSU Extension. Host count: Oemleria, a one-species genus in the rose family — low, rough western estimate with no Tallamy/NWF figure behind it.",
     propagation: {
-      methods: ["cuttings-hardwood", "suckers", "seed-cold-moist"],
-      note: "Easiest is to lift one of the rooted suckers around the base of an established clump in late winter. Leafless winter cuttings pushed into damp soil also take. From seed, clean the pulp off the ripe June fruit at once — it must not dry out — and give the stones about three months cold and damp before spring sowing.",
-      basis: "USFS Native Plant Network.",
+      methods: ["suckers", "cuttings-hardwood", "seed-cold-moist"],
+      note: "Easiest is to lift one of the rooted suckers around the base of an established clump in winter. Leafless cuttings taken early in winter also take. From seed, clean the pulp off the ripe early-summer fruit and give the stones two to four months cold and damp before spring sowing.",
+      basis: "USDA NRCS Fact Sheet; USFS Native Plant Network; Woody Plant Seed Manual.",
     },
   },
   {
@@ -1543,9 +1543,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Rain-garden and wetland-buffer use: USDA NRCS Plant Guide; WSU Extension raingarden handbook. Host count: Spiraea genus, moderate rounded western estimate anchored on Tallamy/NWF; no computed US table exists.",
     propagation: {
-      methods: ["division", "cuttings-softwood", "seed-surface-light"],
-      note: "The simplest route by far is to slice off a rooted piece of the running edge of a clump in early spring and replant it. Soft green shoot tips taken in early summer root readily in damp mix. The seed is dust-fine — press it onto the surface of wet compost in autumn, don't cover it, and leave the pot outside.",
-      basis: "USFS Native Plant Network.",
+      methods: ["division", "cuttings-softwood", "seed-cold-moist"],
+      note: "The simplest route by far is to slice off a rooted piece of the running edge of a clump in early spring and replant it. Soft green shoot tips taken in spring or early summer root readily. Fresh seed sprouts quickly with no treatment; seed that has dried needs one to three months of cold, or an autumn sowing in a pot left outside.",
+      basis: "USDA NRCS Fact Sheet; USFS Fire Effects Information System.",
     },
   },
 
@@ -1579,9 +1579,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Fire ecology, lifespan and nitrogen fixation: USFS FEIS. Keystone status: NWF/Tallamy keystone plant lists. Host count: Ceanothus genus, rounded western estimate. This region's one absent keystone genus.",
     propagation: {
-      methods: ["seed-scarify", "seed-cold-moist", "cuttings-semi-hardwood"],
-      note: "Ceanothus seed is built to wait in the soil for a fire: pour just-boiled water over it, leave it overnight, then give it a month of cold damp in the fridge before sowing. Half-firm summer cuttings are the surer route for a garden.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-scarify", "seed-cold-moist"],
+      note: "Ceanothus seed is built to wait in the soil for a fire: pour just-boiled water over it, leave it overnight, then give it about four months of cold, damp storage in the fridge before sowing. In tests, hot-water seed that skipped the chill didn't sprout at all.",
+      basis: "Woody Plant Seed Manual; USFS Fire Effects Information System.",
     },
   },
   {
@@ -1614,9 +1614,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Nurse-log habit: USFS FEIS. Keystone status: NWF/Tallamy keystone plant lists. Host count: Vaccinium genus, rounded western estimate. Occurrence records in this region's box: 11,980 (GBIF).",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "seed-cold-moist"],
-      note: "Take half-firm summer cuttings and root them in pure milled bark or peat — never garden soil. From seed, mash ripe berries, wash the pulp off, and sow the seed on the surface of an acid mix; it is slow but reliable.",
-      basis: "USFS Native Plant Network; Hardy Fern Foundation propagation notes for ericaceous shrubs.",
+      methods: ["seed-cold-moist", "layering", "cuttings-hardwood"],
+      note: "From seed, mash ripe berries, wash off the pulp and sow the seed in autumn, or chill stored seed for one to three months first; it is slow but needs nothing more. Low branches can be layered, and cuttings taken in winter, while it's dormant, will root.",
+      basis: "USDA NRCS Plant Guide; USFS Fire Effects Information System; Seed Information Database.",
     },
   },
 
@@ -1650,9 +1650,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA RHMA3. Establishment difficulty and soil requirements: OSU Extension; American Rhododendron Society. Grayanotoxin in nectar and leaves: USDA PLANTS; Oregon Poison Center. Host count: Rhododendron, genus-level western estimate. Occurrence records in this region's box: 3,366 (GBIF).",
     propagation: {
-      methods: ["layering", "cuttings-semi-hardwood", "seed-surface-light"],
-      note: "The reliable way is layering: bend a low branch to the ground in spring, wound the underside, peg it down under an inch of grit, and cut it free a year or two later once it has rooted. Seed is dust-fine — press it onto damp milled moss, give it light, and don't let it dry out. Cuttings root slowly and need bottom heat.",
-      basis: "USFS Native Plant Network; American Rhododendron Society propagation guidance.",
+      methods: ["seed-surface-light", "layering", "cuttings-semi-hardwood"],
+      note: "Seed is dust-fine and needs light to sprout: press it onto damp milled sphagnum moss, leave it uncovered and don't let it dry out. Layering works too — peg a low branch to the ground and cut it free once it has rooted. Cuttings root well from some plants and poorly from others.",
+      basis: "Woody Plant Seed Manual; Seed Information Database; UW Native Plant Production.",
     },
   },
   {
@@ -1686,8 +1686,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY), which files it as Myrica californica, for British Columbia, Oregon and Washington; VASCAN; OregonFlora. Salt tolerance and nitrogen fixing: USDA NRCS Plant Guide. Host count: Myrica/Morella genus, rounded western estimate anchored on Tallamy/NWF. Occurrence records in this region's box: 1,565 (GBIF).",
     propagation: {
       methods: ["seed-cold-moist", "cuttings-semi-hardwood"],
-      note: "Rub the wax off ripe fall berries in warm water, then give the seed about three months cold and damp before sowing in spring. Half-firm summer cuttings also root, slowly.",
-      basis: "USFS Native Plant Network.",
+      note: "Rub the wax off ripe fall berries in warm water — the chill doesn't work while the wax is on — then give the seed about three months cold and damp before sowing in spring, or sow fresh seed outside in autumn. Half-firm cuttings also root.",
+      basis: "Woody Plant Seed Manual; USDA NRCS Plant Guide; USFS Native Plant Network; UW Native Plant Production.",
     },
   },
   {
@@ -1720,9 +1720,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "rough",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; VASCAN; OregonFlora; Burke Herbarium (WTU). Winter browse value: USFS FEIS. Host count: Paxistima, a two-species genus — low, rough estimate with no Tallamy/NWF figure behind it. Occurrence records in this region's box: 5,769 (GBIF).",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "layering", "seed-cold-moist"],
-      note: "Half-firm cuttings taken in late summer root well. Low stems often root where they touch the ground — cut one free and replant it. Seed needs a few months cold and damp before spring sowing.",
-      basis: "USFS Native Plant Network.",
+      methods: ["cuttings-softwood", "layering", "seed-cold-moist"],
+      note: "Soft cuttings taken in late spring, dipped in rooting hormone and kept under mist, root in six or seven weeks. Low stems also root where they touch the ground — cut one free and replant it. For seed, rinse off its thin white coat, then give it a cold, damp spell before sowing.",
+      basis: "USFS Native Plant Network; USFS Fire Effects Information System.",
     },
   },
   {
@@ -1755,9 +1755,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "rough",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia and Oregon; VASCAN; OregonFlora; southwest Washington from herbarium and iNaturalist records (GBIF). Toxicity: ASPCA (Euonymus). Host count: Euonymus, rough western estimate with no Tallamy/NWF figure behind it. Occurrence records in this region's box: 392 (GBIF).",
     propagation: {
-      methods: ["seed-cold-moist", "cuttings-softwood"],
-      note: "Pick the capsules as they split in fall, strip the red coat off each seed, and give them three months cold and damp before spring sowing. Soft summer cuttings root readily.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-cold-moist"],
+      note: "Collect the seed as the capsules split in fall and sow it straight away, before it dries out, in a pot left outside over winter.",
+      basis: "Woody Plant Seed Manual.",
     },
   },
   {
@@ -1790,9 +1790,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; VASCAN; OregonFlora; Burke Herbarium (WTU). Culture: OSU Extension. Host count: Arctostaphylos genus, rounded western estimate. Occurrence records in this region's box: 3,691 (GBIF).",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "layering"],
-      note: "Half-firm cuttings in late summer root slowly in a gritty mix. Easier still: peg a low branch to the ground and cut it free once it has rooted. Seed is very hard to sprout.",
-      basis: "USFS Native Plant Network.",
+      methods: ["cuttings-hardwood", "seed-scarify"],
+      note: "Cuttings are the preferred route: take shoot tips with a foot of last year's wood between January and March, dip them in rooting hormone and keep them moist in a sand-and-peat mix until they root. Seed is very hard to sprout — its bony coat must be cracked, by fire or boiling water, before months of cold, damp storage.",
+      basis: "USDA NRCS Plant Guide; USFS Fire Effects Information System.",
     },
   },
   {
@@ -1826,8 +1826,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY), which records it in Oregon but not Washington or British Columbia; OregonFlora. Culture: OSU Extension; Calscape (CNPS). Host count: Garrya, low western estimate. Occurrence records in this region's box: 393 (GBIF).",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-cold-moist"],
-      note: "Half-firm cuttings in late summer, kept humid, root slowly — and they're the only way to be sure of a male. Seed needs a cold damp spell, and the sex is a coin toss.",
-      basis: "USFS Native Plant Network.",
+      note: "Half-firm cuttings taken from late summer into November, dipped in rooting hormone and given gentle bottom heat, root in six to eight weeks — and since males and females are separate plants, a cutting is the only way to be sure of a male. Seed needs one to four months cold and damp, and the sex is a coin toss.",
+      basis: "Woody Plant Seed Manual; USFS Native Plant Network.",
     },
   },
   {
@@ -1861,8 +1861,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; VASCAN; OregonFlora. Pollinator use: Xerces Society. Host count: Philadelphus, rough estimate with no Tallamy/NWF figure behind it. Occurrence records in this region's box: 2,202 (GBIF).",
     propagation: {
       methods: ["cuttings-softwood", "cuttings-hardwood", "seed-cold-moist"],
-      note: "Soft cuttings in early summer or leafless ones in winter both root easily. The fine seed needs a month or two cold and damp, then light on the surface.",
-      basis: "USFS Native Plant Network.",
+      note: "Soft cuttings in late spring or early summer, or leafless ones in winter or early spring, both root well. The fine seed needs two months or more cold and damp; sow it lightly covered, not on the bare surface.",
+      basis: "USDA NRCS Plant Guide; USDA NRCS Fact Sheet; USFS Native Plant Network; USFS Fire Effects Information System.",
     },
   },
   {
@@ -1895,9 +1895,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; VASCAN; OregonFlora. Host count: Rosa genus, the same rounded western estimate this list uses for Nootka rose. Occurrence records in this region's box: 3,471 (GBIF).",
     propagation: {
-      methods: ["seed-double-dormant", "cuttings-hardwood", "suckers"],
-      note: "Leafless winter cuttings root fairly well, and rooted suckers can be lifted from an older plant. Seed needs a warm spell and then a cold one, and can take two springs to come up.",
-      basis: "USFS Native Plant Network.",
+      methods: ["suckers", "cuttings-semi-hardwood", "seed-cold-moist"],
+      note: "Rooted suckers can be lifted from an older plant, and half-ripe summer cuttings root under mist with rooting hormone. From seed, give the cleaned seed about three months of cold, damp storage, or sow it in a pot outdoors in autumn.",
+      basis: "USDA NRCS Plant Guide; USFS Native Plant Network; Woody Plant Seed Manual.",
     },
   },
   // ---------------- PERENNIALS ----------------
@@ -1932,8 +1932,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: USDA PLANTS, OregonFlora. Pollinator value: Xerces Maritime NW.",
     propagation: {
       methods: ["seed-cold-moist", "division"],
-      note: "Sow cleaned seed in fall and let it take the winter chill, but be patient — the bulbs take several years to reach blooming size. Quicker is to lift dormant clumps in summer and gently separate the little bulb offsets.",
-      basis: "USFS Native Plant Network; OregonFlora.",
+      note: "Sow the seed in pots outside as soon as it ripens and let winter chill it. Quicker is to lift dormant clumps and gently separate the little offset bulbs.",
+      basis: "RHS; USFS Native Plant Network; Seed Information Database.",
     },
   },
   {
@@ -1968,7 +1968,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-surface-light", "division"],
       note: "The seed is tiny and needs light, so scatter it on the surface and barely cover it. Even easier, lift and pull apart the clumps in spring or fall — it divides without complaint and re-roots fast.",
-      basis: "USFS Native Plant Network.",
+      basis: "USDA NRCS Plant Guide; USFS Native Plant Network; Seed Information Database.",
     },
   },
   {
@@ -2001,9 +2001,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Aquilegia genus (NWF).",
     propagation: {
-      methods: ["seed-surface-light", "seed-cold-moist"],
-      note: "Surface-sow the fine seed where it gets light, and a cold, damp winter — or simply sowing outdoors in fall — helps it wake up. Once you have a plant it quietly self-sows, so leave a few seed heads to ripen and scatter.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-direct", "division"],
+      note: "Sow the seed outdoors in fall or spring. Once you have a plant it self-sows freely, so leave a few seed heads to ripen and scatter. Clumps can also be divided.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -2036,9 +2036,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Penstemon, low estimate. Pollinator value: Xerces.",
     propagation: {
-      methods: ["seed-cold-moist", "cuttings-softwood", "division"],
-      note: "Give the small seed a cold, damp winter before it will sprout. You can also take soft cuttings from fresh new growth in early summer, or lift and split established clumps in spring.",
-      basis: "USFS Native Plant Network.",
+      methods: ["cuttings-softwood", "division", "seed-direct"],
+      note: "Take soft cuttings in early summer or half-ripe ones in midsummer, or lift and split established clumps in spring. Seed can be sown in late winter or spring.",
+      basis: "RHS.",
     },
   },
   {
@@ -2071,9 +2071,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Eriophyllum/Asteraceae, low-moderate estimate. Pollinator value: Xerces.",
     propagation: {
-      methods: ["seed-surface-light", "cuttings-softwood"],
-      note: "Scatter the seed on the surface so it gets light, and a cold, damp spell helps prompt it. Soft early-summer cuttings root well too. It's short-lived but self-sows, so let some seed drop to keep it going.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-cold-moist"],
+      note: "Sow the seed in a pot left outside in autumn, or give it about three months of cold, damp storage first — without that chill almost none of it sprouts.",
+      basis: "USDA NRCS Plant Guide; Seed Information Database.",
     },
   },
 
@@ -2108,8 +2108,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Monarch host relationship and western-population decline: Xerces Society Western Monarch Count. Host count: Asclepias genus, on the same footing as the eastern figure (12).",
     propagation: {
       methods: ["seed-cold-moist", "root-cuttings"],
-      note: "Split the dry pods open in autumn before they burst and pull the seed off the floss. It needs about a month of cold, damp storage in the fridge — or an autumn sowing outdoors — before it will come up in spring. Short pieces of the running root, lifted in early spring, also grow into new plants.",
-      basis: "Xerces Society milkweed propagation guidance; USFS Native Plant Network.",
+      note: "Split the dry pods open in autumn before they burst and pull the seed off the floss. Fresh seed often sprouts without help, but a few months of cold, damp storage — or an autumn sowing outdoors — makes it more reliable. Pieces of the running root with a bud, lifted while the plant is dormant, also grow into new plants.",
+      basis: "USDA NRCS Plant Guide; LBJ Wildflower Center; Seed Information Database.",
     },
   },
   {
@@ -2142,9 +2142,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS; treated as S. canadensis var. salebrosa in some floras. Host count: Solidago genus, western estimate discounted from the eastern Tallamy/NWF figure (115). Pollen ecology: Xerces Society.",
     propagation: {
-      methods: ["division", "seed-surface-light"],
-      note: "The easy way is to dig a clump in early spring and pull it into rooted pieces — it comes apart in your hands. From seed, sow the fluffy heads on the surface of damp compost in autumn and leave the pot outside; the seed is fine and needs light, so don't bury it.",
-      basis: "USFS Native Plant Network; Xerces Society.",
+      methods: ["seed-warm"],
+      note: "Seed is the easy route: sow it on the surface of damp compost and keep it warm. Goldenrod seed needs no winter chill and comes up within about a week.",
+      basis: "USFS Native Plant Network.",
     },
   },
   {
@@ -2177,9 +2177,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Host count: Symphyotrichum genus, western estimate discounted from the eastern Tallamy/NWF figure (109). Pollinator value: Xerces Society Maritime Northwest lists.",
     propagation: {
-      methods: ["division", "seed-surface-light"],
-      note: "Dig and split the clump in early spring — every piece with roots on it will grow. Seed can be sown on the surface of damp compost in autumn and left outside for the winter; press it down but don't cover it.",
-      basis: "USFS Native Plant Network; Xerces Society.",
+      methods: ["seed-direct", "division"],
+      note: "Seed needs no treatment: sow it in late fall or early spring and cover it only lightly. Clumps can also be split in early spring.",
+      basis: "USFS Native Plant Network; USDA NRCS Fact Sheet.",
     },
   },
   {
@@ -2212,9 +2212,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Blue-butterfly host relationship: Xerces Society. Host count: Lupinus genus, western estimate on the same footing as the eastern figure.",
     propagation: {
-      methods: ["seed-scarify", "seed-direct"],
-      note: "Collect the pods just as they turn dark and before they twist open and fling the seed. The coat is hard, so nick each seed with a file or rub it on sandpaper — or soak overnight in warm water — then sow. It resents being dug up and moved, so sow where you want it.",
-      basis: "USFS Native Plant Network; Xerces Society.",
+      methods: ["seed-scarify"],
+      note: "Collect the pods just as they turn dark, before they twist open and fling the seed. The coat is hard, so nick each seed with a file or rub it on sandpaper before sowing — otherwise it comes up unevenly.",
+      basis: "USDA NRCS Plant Guide; Seed Information Database.",
     },
   },
   {
@@ -2247,9 +2247,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). American lady host relationship: BAMONA; Xerces Society. Host count: Anaphalis/Gnaphalium group, conservative western estimate.",
     propagation: {
-      methods: ["division", "seed-surface-light"],
-      note: "Split a clump in spring — it comes apart easily and each rooted piece takes. The seed is dust-fine: press it onto the surface of damp compost without covering it, and keep it in the light.",
-      basis: "USFS Native Plant Network.",
+      methods: ["division", "seed-direct"],
+      note: "Divide a clump, or sow the tiny seed thinly on the surface — it needs no treatment.",
+      basis: "RHS; USFS Native Plant Network; Seed Information Database.",
     },
   },
 
@@ -2285,7 +2285,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-cold-moist", "division"],
       note: "Catch the seed before the pods twist open and throw it — they ripen fast in early summer — then sow it in a pot left outside for the winter, or straight onto raked bare ground in autumn; it wants a cold, damp spell before it will come up. An established clump can also be teased apart in early spring, each rooted crown going on as its own plant.",
-      basis: "USFS Native Plant Network; Xerces Society.",
+      basis: "USDA NRCS Plant Guide.",
     },
   },
 
@@ -2319,9 +2319,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Late-season bee value: Xerces Society; Fowler & Droege, Pollen Specialist Bees (West). Host count: Grindelia, rounded estimate. Chosen for the October gap in this region's bloom calendar.",
     propagation: {
-      methods: ["seed-surface-light", "division"],
-      note: "Collect seed from the dried heads in autumn and scatter it on bare, gritty ground — press it in and leave it uncovered, because it wants light. Established clumps can also be split in early spring.",
-      basis: "USFS Native Plant Network; USDA NRCS coastal plant guides.",
+      methods: ["seed-direct"],
+      note: "Collect seed from the dried heads in autumn and sow it in fall or spring, in pots or straight onto bare ground; it comes up readily within a few weeks.",
+      basis: "USDA NRCS Fact Sheet.",
     },
   },
   {
@@ -2356,7 +2356,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["division", "root-cuttings", "seed-surface-light"],
       note: "Easiest from a piece of the running root lifted in winter with a bud on it. The plumed seed needs only to be pressed onto damp bare ground in autumn — and it will arrive on its own from a surprising distance.",
-      basis: "USFS Native Plant Network.",
+      basis: "USDA NRCS Plant Guide; USFS Native Plant Network; USFS Fire Effects Information System.",
     },
   },
   {
@@ -2389,9 +2389,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Seven-year seed-to-flower and picking damage: USFS FEIS; Burke Herbarium. Ant dispersal (myrmecochory): USFS FEIS. Host count: Trillium, very low. The most-recorded native the list did not carry: 21,010 occurrence records (GBIF).",
     propagation: {
-      methods: ["seed-double-dormant", "division"],
-      note: "From seed this is a project measured in years: sow fresh in autumn, and expect two winters before a leaf appears and several more before a flower. Established clumps can be lifted and split as the leaves die back, which is far quicker.",
-      basis: "USFS Native Plant Network; Hardy Plant Society propagation notes.",
+      methods: ["seed-cold-moist", "division"],
+      note: "From seed this is a project measured in years: sow it fresh in pots in a shady spot outdoors, and expect several years before a flower. Established clumps can be lifted and the rhizomes split after flowering, which is far quicker.",
+      basis: "RHS.",
     },
   },
   {
@@ -2424,9 +2424,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: low (Aruncus). Pollinator value: Xerces Maritime NW.",
     propagation: {
-      methods: ["division", "seed-surface-light"],
-      note: "Divide the tough crowns in early spring with a spade — the reliable route. The dust-fine seed can be surface-sown on moist mix (it needs light and doesn't like to be buried), but it's slow, and a female plant nearby is needed for viable seed.",
-      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+      methods: ["division", "seed-direct"],
+      note: "Divide the tough crowns with a spade in spring or autumn — the reliable route. Seed forms only on female plants; sow it in spring or autumn.",
+      basis: "RHS; LBJ Wildflower Center.",
     },
   },
   {
@@ -2459,9 +2459,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Specialist bee (Diadasia nigrifrons) and butterfly hosts: USDA Plant Guide (Sidalcea campestris); Xerces Society. Host count: mallow-family Lepidoptera, moderate.",
     propagation: {
-      methods: ["seed-cold-moist", "division"],
-      note: "Collect the seed from the dry spikes in late summer and give it a cold, damp winter (fall sowing does this). Established crowns can also be lifted and divided in early spring. It self-sows gently in open ground.",
-      basis: "USDA Plant Guide (Sidalcea campestris); Lady Bird Johnson Wildflower Center.",
+      methods: ["seed-scarify", "division"],
+      note: "Collect the seed from the dry spikes in late summer and rub it lightly with sandpaper before sowing — the coat holds it back, and scarified seed comes up in about two weeks. Established crowns can also be lifted and divided in early spring.",
+      basis: "USDA NRCS Fact Sheet; Seed Information Database.",
     },
   },
   {
@@ -2494,9 +2494,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Clodius parnassian host: BAMONA; PSU Garden Ecology. Host count: low (Dicentra).",
     propagation: {
-      methods: ["division", "seed-cold-moist"],
-      note: "Easiest is to lift and split the brittle rhizomes in early spring or just after bloom, keeping each piece damp. Fresh seed sown in fall and left to a cold, damp winter also comes up; it self-sows where ants spread it.",
-      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+      methods: ["division", "seed-direct"],
+      note: "Easiest is to lift and split the brittle rhizomes in early spring, or once the leaves die down, keeping each piece damp. Seed sown as soon as it ripens, or in spring, also comes up.",
+      basis: "RHS.",
     },
   },
   {
@@ -2530,7 +2530,7 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Host count: Tiarella, low. Occurrence records in this region's box: 6,819 (GBIF).",
     propagation: {
       methods: ["division", "seed-surface-light"],
-      note: "Split a clump in spring or autumn — it comes apart easily and re-establishes fast. The dust-fine seed is pressed onto the surface of damp compost and left uncovered.",
+      note: "Split a clump in spring or autumn. For seed, collect it as the capsules split in late summer, press it onto the surface of damp compost — it needs light — and leave the pot outside over winter.",
       basis: "USFS Native Plant Network.",
     },
   },
@@ -2565,8 +2565,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Phenology and ant dispersal: Burke Herbarium; USFS FEIS. Host count: Erythronium, very low. Occurrence records in this region's box: 9,290 (GBIF).",
     propagation: {
       methods: ["seed-cold-moist", "division"],
-      note: "Sow fresh seed in autumn in a deep pot left outside; it wants a cold damp winter and takes four or five years to reach flowering size. Established clumps can be lifted and separated as the leaves die back.",
-      basis: "USFS Native Plant Network; Pacific Bulb Society.",
+      note: "Sow fresh seed in autumn in a pot left outside over winter; it sprouts only after a long cool, damp spell. Established clumps can be lifted and separated after flowering.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -2599,8 +2599,8 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Phototoxic sap (furanocoumarins): OSU Extension; WA State Noxious Weed Control Board (giant hogweed comparison). Host count: Heracleum/Apiaceae, rounded estimate.",
     propagation: {
-      methods: ["seed-cold-moist", "seed-direct"],
-      note: "Sow the flat seed fresh in autumn where the plant is to stand — it wants a cold damp winter and resents being moved once the taproot is down. Wear gloves collecting it.",
+      methods: ["seed-cold-moist"],
+      note: "Collect the flat seeds when they turn tan in late summer and soak them for three days, changing the water daily, to wash out what holds them back. Then give them about three months cold and damp, or sow them outside in autumn and let winter do it; some wait until the second spring.",
       basis: "USFS Native Plant Network.",
     },
   },
@@ -2635,9 +2635,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA TEGR2. Dry-shade performance: WSU Extension; Xerces Society Maritime Northwest planting guide. Occurrence records in this region's box: 11,374 (GBIF).",
     propagation: {
-      methods: ["seed-surface-light", "division"],
-      note: "Shake the ripe stalks over bare damp ground in late summer — the seed is tiny, wants light, and needs only to be pressed on, not covered. Clumps divide easily in autumn or early spring.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-cold-moist", "division"],
+      note: "Sow the seed as soon as it ripens in late summer, on the surface of a pot left outside over winter — it can take months to come up, and also self-sows freely. Clumps divide easily in spring.",
+      basis: "RHS; USFS Native Plant Network; Seed Information Database.",
     },
   },
   {
@@ -2670,9 +2670,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA PEFR5. Bloom timing and early-season bumblebee value: Xerces Society Maritime Northwest planting guide. Pyrrolizidine alkaloids: USDA PLANTS. Occurrence records in this region's box: 6,341 (GBIF).",
     propagation: {
-      methods: ["division", "seed-surface-light"],
-      note: "Lift a length of the running rhizome with a bud on it in autumn and push it into wet ground — almost always takes. The seed is a dandelion-like parachute, blows off fast, and is worth catching only if you want it somewhere the rhizome can't reach.",
-      basis: "USFS Native Plant Network.",
+      methods: ["division"],
+      note: "Divide the running rhizome in spring, or any time of year, and replant the pieces straight away in wet ground.",
+      basis: "UW Native Plant Production.",
     },
   },
   {
@@ -2705,9 +2705,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA LYAM3. Beetle pollination and thermogenesis: USFS FEIS; published pollination studies of Lysichiton. Calcium oxalate toxicity: USDA PLANTS. Occurrence records in this region's box: 13,264 (GBIF).",
     propagation: {
-      methods: ["seed-cold-moist", "division"],
-      note: "Press the fresh seed into wet mud in autumn and let winter do the rest — it must never dry out, and it takes several years to reach flowering size. Established clumps can sometimes be split in early spring, but a big one usually resents it.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-cold-moist"],
+      note: "Sow the seed as soon as it is ripe, in a pot of wet, rich soil left outside over winter — it needs the cold. Plants take several years to flower.",
+      basis: "UW Native Plant Production.",
     },
   },
   {
@@ -2740,9 +2740,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "rough",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; VASCAN; OregonFlora. Late-season nectar: Xerces Society. Host count: Euthamia, rough estimate with no Tallamy/NWF figure behind it. Occurrence records in this region's box: 206 (GBIF).",
     propagation: {
-      methods: ["division", "seed-surface-light"],
-      note: "Slice a rooted piece off the edge of a clump in early spring. Seed sprouts best pressed onto the surface of damp soil in fall.",
-      basis: "USFS Native Plant Network.",
+      methods: ["division", "seed-direct"],
+      note: "Slice a rooted piece off the edge of a clump in early spring — it spreads by rhizomes. Seed needs no chilling: press it onto the surface of damp soil and cover it only lightly.",
+      basis: "USFS Native Plant Network; USDA NRCS Plant Guide.",
     },
   },
   {
@@ -2775,9 +2775,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; VASCAN; OregonFlora. Aster pollen specialists: Fowler & Droege, Pollen Specialist Bees (West); Xerces Society. Host count: Symphyotrichum genus, rounded western estimate anchored on Tallamy/NWF keystone lists. Occurrence records in this region's box: 455 (GBIF).",
     propagation: {
-      methods: ["division", "seed-surface-light"],
-      note: "A spade through the edge of a colony in fall or late winter gives you as many plants as you want. Seed wants light, on the surface of damp soil.",
-      basis: "USFS Native Plant Network; Xerces Society.",
+      methods: ["seed-direct", "division"],
+      note: "Seed needs no treatment and can be sown at any time of year; it comes up in spring as the soil warms. Clumps can also be divided in early spring, though seed is the easier route.",
+      basis: "USDA NRCS Fact Sheet; USFS Native Plant Network.",
     },
   },
   {
@@ -2811,8 +2811,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY), which records it in Oregon and Washington but not British Columbia; OregonFlora. Toxicity: ASPCA (Iris). Host count: Iris, low, rough western estimate. Occurrence records in this region's box: 3,943 (GBIF).",
     propagation: {
       methods: ["seed-cold-moist", "division"],
-      note: "Sow fresh seed in fall and leave the pot outside for winter. Divide only in fall, after the rains start, and keep the pieces damp — dry-season divisions die.",
-      basis: "USFS Native Plant Network.",
+      note: "Sow fresh seed in fall and leave the pot outside for winter — even then, few seeds come up. Divide the rhizomes from midsummer to early autumn and keep the pieces damp; it resents being disturbed while it's growing.",
+      basis: "USFS Native Plant Network; RHS.",
     },
   },
   {
@@ -2845,9 +2845,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "rough",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; VASCAN; OregonFlora. Pollinators: USFS Celebrating Wildflowers. Toxicity: ASPCA (Lilium). Host count: Lilium, low, rough estimate. Occurrence records in this region's box: 6,756 (GBIF).",
     propagation: {
-      methods: ["seed-double-dormant"],
-      note: "Sow fresh seed outside in fall and wait: the bulb forms underground first, and a seedling takes three to five years to flower. Buy nursery bulbs; never dig wild ones.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-cold-moist"],
+      note: "Sow seed outdoors in fall. It may not come up until the second spring, and takes three to five years to flower. Never dig wild bulbs: they rarely survive the move.",
+      basis: "UW Native Plant Production.",
     },
   },
   {
@@ -2880,9 +2880,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "rough",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; VASCAN; OregonFlora. Host count: Geum, rough estimate with no Tallamy/NWF figure behind it. Occurrence records in this region's box: 8,696 (GBIF).",
     propagation: {
-      methods: ["seed-direct", "division"],
-      note: "Sow the seed in fall where you want it, or divide a clump in spring.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-cold-moist"],
+      note: "Strip the seed when it turns brown and dry in summer or early fall. Sow it outside in autumn, or give it about two months cold and damp first — in one trial that raised germination from almost none to nearly all.",
+      basis: "USFS Native Plant Network; UW Native Plant Production.",
     },
   },
   {
@@ -2912,7 +2912,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct"],
       note: "Scatter seed on bare soil in fall and rake it in lightly. Let some plants set seed each year.",
-      basis: "USFS Native Plant Network; Xerces Society.",
+      basis: "USDA NRCS Fact Sheet; Seed Information Database.",
     },
   },
   {
@@ -2945,9 +2945,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "rough",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; VASCAN; OregonFlora. Butterfly hosts: BAMONA; Washington Butterfly Association. Host count: Urtica, rough North American estimate. Occurrence records in this region's box: 3,994 (GBIF).",
     propagation: {
-      methods: ["division", "seed-surface-light"],
-      note: "Dig a piece of root in spring — gloves on. Seed sprouts on the surface of damp soil.",
-      basis: "USFS Native Plant Network.",
+      methods: ["division"],
+      note: "Dig a piece of rhizome in spring — gloves on — and replant it; it spreads fast from there.",
+      basis: "USFS Fire Effects Information System.",
     },
   },
   // ---------------- GRASSES, SEDGES & RUSHES ----------------
@@ -2981,9 +2981,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU). Host count: native fescue, skipper host, low-moderate estimate.",
     propagation: {
-      methods: ["seed-direct", "division"],
-      note: "Sow the seed in fall or spring — this cool-season bunchgrass needs little or no chilling and comes up readily on bare soil. Established tufts can also be dug and pulled apart into smaller divisions.",
-      basis: "USFS Native Plant Network; OregonFlora.",
+      methods: ["seed-direct"],
+      note: "Sow the seed in fall or spring; this cool-season bunchgrass needs no more than a short chill.",
+      basis: "USFS Native Plant Network.",
     },
   },
 
@@ -3017,9 +3017,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Restoration use: USDA NRCS Plant Guide. Host count: native grass-feeding Lepidoptera (skippers/satyrs), conservative western estimate.",
     propagation: {
-      methods: ["seed-direct", "division"],
-      note: "About the least fussy seed here: strip the ripe heads in summer and sow them straight onto raked soil in autumn — no chilling, no cleaning needed. Established clumps can also be dug and split in early spring.",
-      basis: "USDA NRCS Plant Guide; USFS Native Plant Network.",
+      methods: ["seed-direct"],
+      note: "About the least fussy seed here: strip the ripe heads in late summer, once the florets turn papery, and sow them onto raked soil in autumn — lowland seed needs no chilling.",
+      basis: "USFS Native Plant Network; USFS Fire Effects Information System; USDA NRCS Plant Guide; Seed Information Database.",
     },
   },
 
@@ -3053,9 +3053,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: cool-season grass, skipper/satyr hosts (Xerces Society).",
     propagation: {
-      methods: ["seed-direct", "division"],
-      note: "A cool-season grass, so sow the seed in fall or early spring into cool, moist soil — it doesn't need summer heat to sprout. Established clumps also divide well in spring; pull the tussock apart into rooted chunks.",
-      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+      methods: ["seed-direct"],
+      note: "Lowland seed has little dormancy, so sow it in fall or early spring into cool, moist soil. Cover it only lightly — light helps it sprout.",
+      basis: "USDA NRCS Fact Sheet; USFS Fire Effects Information System; Seed Information Database.",
     },
   },
   {
@@ -3090,7 +3090,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["division", "seed-cold-moist"],
       note: "Division is the reliable way: lift a clump in early spring, cut it into fist-sized rooted pieces with a spade or an old bread knife, and replant them into mud straight away — they must not dry out between digging and planting. Seed works too if you strip the ripe brown spikes in summer and sow them in a pot stood in a saucer of water over winter.",
-      basis: "USFS Native Plant Network; USDA NRCS Plant Guide.",
+      basis: "USDA NRCS Plant Guide; Seed Information Database.",
     },
   },
   {
@@ -3123,9 +3123,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "rough",
     basis: "Native status/range: USDA PLANTS (OR, WA, CA), OregonFlora. Chosen over Juncus effusus, which is treated as partly introduced in the region and is a coarser, floppier plant in a garden. Raingarden use: WSU Extension raingarden handbook. Host count: Juncus genus, low rounded western estimate anchored on Tallamy/NWF; rushes carry far fewer species than the sedges and grasses beside them, and this is a rough figure.",
     propagation: {
-      methods: ["division", "seed-surface-light"],
-      note: "Lift a clump in spring and pull or cut it into rooted pieces, then replant into wet ground at once. From seed, shake the ripe brown heads over a pot of soggy compost in autumn and leave it uncovered outside — the seed is tiny, needs light, and germinates best on mud that never dries.",
-      basis: "USFS Native Plant Network; USDA NRCS Plant Guide.",
+      methods: ["seed-direct"],
+      note: "Collect the brown seed heads in summer and sow the tiny seed barely covered on damp compost; it needs no other treatment and sprouts in about a month.",
+      basis: "USFS Native Plant Network; Seed Information Database.",
     },
   },
 
@@ -3160,9 +3160,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Host count: Lonicera genus (NWF).",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "layering", "seed-cold-moist"],
-      note: "Take cuttings of firming-up shoots in summer, or pin a low stem down to the soil to root where it touches. Seed from the berries needs cleaning and a cold, damp winter before it will sprout.",
-      basis: "USFS Native Plant Network.",
+      methods: ["cuttings-semi-hardwood", "layering"],
+      note: "Take cuttings of firming-up shoots in summer, or pin a low stem down to the soil to root where it touches.",
+      basis: "RHS.",
     },
   },
 
@@ -3196,9 +3196,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Distinction from invasive Rubus armeniacus/bifrons: OSU Extension; WA State Noxious Weed Control Board. Host count: Rubus genus, western estimate on the same footing as salmonberry in this list, discounted from the eastern Tallamy/NWF figure (163).",
     propagation: {
-      methods: ["layering", "cuttings-hardwood"],
-      note: "It does this for you: wherever a cane tip touches bare soil it roots and makes a new plant, so in late summer peg a tip down, and in spring cut it free with its own roots and move it. Leafless winter pieces of cane pushed into damp ground also take.",
-      basis: "USFS Native Plant Network.",
+      methods: ["layering"],
+      note: "It does this for you: like most blackberries, a cane tip that touches bare soil roots and makes a new plant. In late summer peg a tip down, and in spring cut it free with its own roots and move it.",
+      basis: "USFS Fire Effects Information System; Woody Plant Seed Manual.",
     },
   },
   {
@@ -3231,9 +3231,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "rough",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Distinction from invasive Clematis vitalba: OSU Extension; WA State Noxious Weed Control Board. Toxicity (protoanemonin in Ranunculaceae): USDA PLANTS; OSU Extension. Host count: Clematis genus, low rounded western estimate anchored on Tallamy/NWF — a rough figure.",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "layering", "seed-cold-moist"],
-      note: "Take this year's shoots in midsummer once they have firmed up and root them under cover, or simply pin a low stem onto the soil and cut it free once it has rooted. From seed, pull the plumed seeds off in autumn and sow them in a pot left outside — they want a cold, damp winter and can be slow and uneven.",
-      basis: "USFS Native Plant Network.",
+      methods: ["cuttings-softwood", "layering", "seed-direct"],
+      note: "Softwood cuttings with a leaf bud are the preferred route and root in two to three weeks under cover. Low stems also layer where they touch mulched soil. Seed needs no long chill: soak it in water for two days, then sow.",
+      basis: "USDA NRCS Plant Guide; USFS Native Plant Network.",
     },
   },
 
@@ -3270,7 +3270,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["runners"],
       note: "The easiest propagation there is: it throws out runners that root little plantlets as they travel. Just snip off a rooted plantlet and pot it up or plant it where you want more.",
-      basis: "USFS Native Plant Network.",
+      basis: "USDA NRCS Plant Guide.",
     },
   },
   {
@@ -3303,9 +3303,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora. Ferns support very few Lepidoptera (honest low host value).",
     propagation: {
-      methods: ["spores", "division"],
-      note: "It can be grown from the spores that ripen on the backs of the fronds, but that's slow and fiddly. Far easier is to dig an established clump in spring and split the crown into pieces, each with some roots and fronds.",
-      basis: "USFS Native Plant Network.",
+      methods: ["spores"],
+      note: "Grow it from the spores that ripen on the backs of the fronds in summer: sow them on sterile, damp compost and keep them sealed and shaded. It's slow — about two years to a potted plant.",
+      basis: "USFS Native Plant Network; USFS Fire Effects Information System; UW Native Plant Production; Hardy Fern Foundation.",
     },
   },
   {
@@ -3339,8 +3339,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Host count: Arctostaphylos genus, conservative western estimate. Erosion use: USDA NRCS Plant Guide.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
-      note: "Take this year's shoots in late summer once they have firmed up, and root them in a gritty, peaty mix under cover — patience required, they take months. Simpler still: the trailing stems root where they touch the ground, so peg one down and cut it free the next year.",
-      basis: "USFS Native Plant Network.",
+      note: "Take this year's shoots in late summer or fall once they have firmed up, and root them in a gritty, peaty mix under cover — patience required. Simpler still: the trailing stems root where they touch the ground, so peg one down and cut it free the next year.",
+      basis: "USFS Fire Effects Information System; LBJ Wildflower Center.",
     },
   },
   {
@@ -3374,8 +3374,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU); accepted name Struthiopteris spicant, formerly Blechnum spicant. Ferns support very few Lepidoptera (honest low host value).",
     propagation: {
       methods: ["spores", "division"],
-      note: "The upright fronds in the middle carry the spores; catch them by standing a ripe frond on paper overnight, then sow the dust onto damp, sterile compost in a covered pot and wait — months, not weeks. An established clump can also be split in spring, though it sulks for a season afterwards.",
-      basis: "USFS Native Plant Network; Hardy Fern Foundation.",
+      note: "The upright fronds in the middle carry the spores: in summer, lay a ripe one on paper to catch the dust, then sow it on damp, sterile compost in a sealed pot and wait — months, not weeks. An established clump can also be split in spring or autumn.",
+      basis: "RHS; USFS Fire Effects Information System; UW Native Plant Production; Hardy Fern Foundation.",
     },
   },
   {
@@ -3408,9 +3408,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU). Moss's elfin (Callophrys mossii) and parnassian host relationship with native Sedum: Xerces Society; BAMONA. Host count: Sedum genus, low rounded western estimate anchored on Tallamy/NWF — very few species use it, but one of them depends on it completely.",
     propagation: {
-      methods: ["division", "cuttings-softwood", "seed-surface-light"],
-      note: "One of the easiest plants to copy: break a rosette or a short piece of stem off, lay it on damp grit, and it roots within weeks — no covering, no rooting hormone, no fuss. Dividing a mat in spring works the same way. Seed is dust-fine and needs light, so press it onto the surface of a gritty mix and never bury it.",
-      basis: "USFS Native Plant Network.",
+      methods: ["cuttings-softwood", "division"],
+      note: "One of the easiest plants to copy: in early summer, take a short shoot that isn't flowering and lay it on damp grit, where it soon roots. Dividing a mat works too.",
+      basis: "RHS.",
     },
   },
   {
@@ -3443,9 +3443,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "rough",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU) — west-side occurrences are in the Columbia Gorge, the Cascades and the Klamath Mountains rather than the valley floor. Blue and hairstreak host relationships with Eriogonum: Xerces Society; BAMONA. Host count: Eriogonum genus, rounded western estimate anchored on Tallamy/NWF, and one where an eastern figure is no help at all — buckwheats barely occur there — so this is a rough number.",
     propagation: {
-      methods: ["seed-cold-moist", "cuttings-semi-hardwood"],
-      note: "Strip the dry seed heads in late summer and sow them in a pot of gritty compost left outside for the winter; a cold, damp spell is what wakes them. Cuttings of this year's shoots, taken in late summer once they have firmed up and rooted in pure grit, are the other route. It has a deep taproot and hates being moved, so plant it small and put it where it will stay.",
-      basis: "USFS Native Plant Network; Xerces Society.",
+      methods: ["seed-cold-moist", "seed-direct"],
+      note: "Strip the dry seed heads in late summer and sow them in a pot of gritty compost. It can sprout without help, but a winter outdoors (or two to three months in the fridge) improves it. The seed loses its life within a few years, so sow it fresh.",
+      basis: "USDA NRCS Plant Guide; USFS Native Plant Network; Seed Information Database.",
     },
   },
   {
@@ -3478,9 +3478,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU), E-Flora BC. Culture: Hardy Fern Foundation. Ferns support very few Lepidoptera (honest low host value).",
     propagation: {
-      methods: ["division", "spores"],
-      note: "Simplest is to lift a clump in early spring, just as the new fronds are curled and knuckled at the surface, and cut the creeping rootstock into pieces each with a growing point. Replant them shallowly into leafy, damp soil. Spores from the rolled-under frond edges will grow too, sown on damp sterile compost in a covered pot, but it takes the better part of a year before anything looks like a fern.",
-      basis: "USFS Native Plant Network; Hardy Fern Foundation.",
+      methods: ["spores"],
+      note: "Grow it from spores: collect fronds in late summer as the spore covers lift, let the spores drop onto paper, and sow them on damp, sterile milled peat in a sealed tray. They sprout in about two weeks, but it takes months before anything looks like a fern.",
+      basis: "USFS Native Plant Network; RHS; UW Native Plant Production; Hardy Fern Foundation.",
     },
   },
   {
@@ -3514,8 +3514,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: USDA PLANTS, OregonFlora, Burke Herbarium (WTU) — common in the Coast and Klamath ranges and local north of there, so the honest range note is 'wet ravines', not 'everywhere'. Culture and hardiness: Hardy Fern Foundation. Ferns support very few Lepidoptera (honest low host value).",
     propagation: {
       methods: ["spores", "division"],
-      note: "The chain-like rows of spore cases along the veins on the frond backs give it its name; stand a ripe frond on paper overnight to collect the dust, then sow it onto damp sterile compost in a covered pot and expect to wait many months. Big old crowns can be split in early spring with a saw, each piece keeping roots and a growing point, but they sulk for a season afterwards.",
-      basis: "USFS Native Plant Network; Hardy Fern Foundation.",
+      note: "The chain-like rows of spore cases along the veins on the frond backs give it its name. Lay a ripe frond on paper overnight to collect the dust, then sow it on damp, sterile compost in a sealed pot and expect to wait many months. Big old crowns can also be divided.",
+      basis: "RHS; UW Native Plant Production; Hardy Fern Foundation.",
     },
   },
   {
@@ -3548,9 +3548,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Host count: Maianthemum, low. Occurrence records in this region's box: 8,607 (GBIF).",
     propagation: {
-      methods: ["division", "seed-cold-moist"],
-      note: "Lift a piece of the running rhizome in autumn or early spring with a shoot on it and replant it — quick and almost always successful. Seed wants cleaning and a cold damp winter, and is much slower.",
-      basis: "USFS Native Plant Network.",
+      methods: ["division"],
+      note: "Dig the creeping rhizomes in fall or early spring, cut them into pieces that each have roots or a bud, and replant straight away.",
+      basis: "UW Native Plant Production.",
     },
   },
   {
@@ -3583,9 +3583,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Habitat requirements: USFS FEIS. Host count: Linnaea, low. Occurrence records in this region's box: 6,158 (GBIF).",
     propagation: {
-      methods: ["layering", "cuttings-softwood", "division"],
-      note: "It layers itself — lift a trailing stem and you will usually find roots along it, so cut a rooted length off and replant it into leaf mold. Soft summer cuttings root in a shaded frame kept damp.",
-      basis: "USFS Native Plant Network.",
+      methods: ["runners", "cuttings-softwood"],
+      note: "It roots along its own trailing stems — lift a rooted length between autumn and spring and replant it into leaf mold. Soft cuttings taken in early summer also root.",
+      basis: "RHS; USFS Native Plant Network.",
     },
   },
   {
@@ -3619,8 +3619,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: OregonFlora, Burke Herbarium (WTU), USDA PLANTS. Epiphytic habit and summer dormancy: USFS FEIS; Hardy Fern Foundation. Ferns support very few Lepidoptera (honest low host value). Occurrence records in this region's box: 15,663 (GBIF).",
     propagation: {
       methods: ["division", "spores"],
-      note: "Cut a length of the creeping rhizome in autumn with a frond or two attached and press it onto damp moss or rough bark, holding it down until it grips. Spores from the frond backs work, slowly.",
-      basis: "USFS Native Plant Network; Hardy Fern Foundation.",
+      note: "Dividing the creeping rhizome in spring is the simplest way. Spores sown fresh on damp, sterile compost under cover also work, but take about two years to make a plant.",
+      basis: "UW Native Plant Production; Hardy Fern Foundation.",
     },
   },
   {
@@ -3653,9 +3653,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA ACTR. Habit and vanilla scent on drying: USFS FEIS. Occurrence records in this region's box: 6,019 (GBIF).",
     propagation: {
-      methods: ["division", "seed-cold-moist"],
-      note: "Lift a length of the shallow running rhizome in autumn with a bud on it and lay it just under the leaf litter. Seed wants sowing fresh and a cold damp winter outdoors, and is slow enough that division is what everyone actually does.",
-      basis: "USFS Native Plant Network.",
+      methods: ["division"],
+      note: "Dig a rooted clump with its soil while it's dormant, from late fall to early spring, and replant it. Seed is very slow: in one trial, fall-sown plants still hadn't flowered after seven years.",
+      basis: "UW Native Plant Production.",
     },
   },
   {
@@ -3688,9 +3688,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; OregonFlora; Burke Herbarium (WTU); USDA VIGL. Fritillary host relationship: Xerces Society; BAMONA. Host count: Viola genus, the same estimate this list uses for early blue violet. Occurrence records in this region's box: 5,652 (GBIF).",
     propagation: {
-      methods: ["division", "seed-cold-moist"],
-      note: "Split a clump in autumn or early spring — it comes apart in the hand. Seed ripens in capsules that fling it, so bag a few heads before they open, then sow fresh and leave the pot outside for the winter.",
-      basis: "USFS Native Plant Network.",
+      methods: ["division", "seed-direct"],
+      note: "Easiest from a rooted piece of stem, lifted in autumn or just after flowering. Seed needs no treatment: sow it in fall in a pot left outside.",
+      basis: "UW Native Plant Production.",
     },
   },
   {
@@ -3725,7 +3725,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["division"],
       note: "Lift and replant rooted pieces of the creeping stems in fall or early spring, and keep them damp.",
-      basis: "USFS Native Plant Network.",
+      basis: "RHS; LBJ Wildflower Center.",
     },
   },
   {
@@ -3759,8 +3759,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: World Checklist of Vascular Plants (WCVP, CC BY) for British Columbia, Oregon and Washington; VASCAN; OregonFlora. Toxicity: ASPCA. Host count: Oxalis genus, low western estimate. Occurrence records in this region's box: 3,356 (GBIF).",
     propagation: {
       methods: ["division", "seed-direct"],
-      note: "Lift a piece of the running rootstock in the cool months and keep it damp and shaded; it takes readily.",
-      basis: "USFS Native Plant Network.",
+      note: "Lift a piece of the running rootstock in spring or early autumn and keep it damp and shaded; it takes readily. Seed can also be sown fresh.",
+      basis: "RHS; USFS Native Plant Network; LBJ Wildflower Center.",
     },
   },
 ];

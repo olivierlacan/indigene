@@ -285,9 +285,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 163 Lepidoptera recorded on native alders in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["seed-surface-light", "cuttings-hardwood"],
-      note: "Collect the little woody cones in autumn, dry them until they shed their seed, and surface-sow onto damp ground — it needs light and moisture, not chilling. Dormant hardwood cuttings pushed into wet soil also take.",
-      basis: "RHS; Woodland Trust.",
+      methods: ["seed-direct", "seed-cold-moist", "cuttings-hardwood"],
+      note: "Collect the little woody cones in autumn as they open and sow the seed fresh, barely covered: it needs no chilling then. Dried, stored seed needs a few months cold and damp first. Dormant hardwood cuttings pushed into wet soil also take.",
+      basis: "RHS; Woodland Trust; USDA Woody Plant Seed Manual.",
     },
   },
 
@@ -322,8 +322,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 258 Lepidoptera recorded on native poplars and aspen in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (259 if introduced poplars are counted too).",
     propagation: {
       methods: ["suckers", "cuttings-hardwood", "seed-surface-light"],
-      note: "Much the easiest way is to dig one of the rooted suckers in autumn or late winter and replant it. Dormant hardwood cuttings taken in winter also root. The fluffy seed is a poor bet — it stays alive only a few days, so it must be caught in early summer and sown onto wet mud at once.",
-      basis: "RHS; Woodland Trust; Seed Information Database.",
+      note: "Much the easiest way is to dig one of the rooted suckers in autumn or late winter and replant it. Dormant hardwood cuttings taken in winter also root. The fluffy seed is a poor bet — it stays alive only a few weeks, so it must be caught in early summer and sown onto wet mud at once.",
+      basis: "RHS; Woodland Trust; Seed Information Database; USDA Woody Plant Seed Manual.",
     },
   },
   {

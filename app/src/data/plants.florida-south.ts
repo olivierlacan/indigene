@@ -59,8 +59,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Host count: oak genus (Tallamy/NWF).",
     propagation: {
       methods: ["seed-warm", "seed-direct"],
-      note: "Gather the acorns as they drop in fall and sow them right away — live oak is a white oak, so they sprout at once and never need a winter chill. Drop them in a bucket of water and toss any that float, keep the sinkers moist (never let them dry out), and plant where the tree will stay, since the deep taproot resents moving.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Gather the acorns as they drop in fall and sow them right away — live oak is a white oak, so they sprout at once and never need a winter chill. Drop them in a bucket of water and toss any that float, keep the sinkers moist (never let them dry out), and plant where the tree will stay or in a deep pot, since it sends down a long taproot.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual; LBJ Wildflower Center; Seed Information Database; Institute for Regional Conservation.",
     },
   },
   {
@@ -93,9 +93,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Host (dingy purplewing): FNPS / UF-IFAS.",
     propagation: {
-      methods: ["cuttings-hardwood", "cuttings-semi-hardwood", "seed-warm"],
-      note: "This is the famous 'living fence' tree: cut a good-sized branch, even an arm-thick limb, stand it in the ground in the warm season, and it roots into a whole new tree — the easiest way to get one. You can also clean the pulp off the ripe fruit and sow the seed fresh and warm.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["cuttings-hardwood", "seed-direct"],
+      note: "A branch cut and stuck in the ground can root into a new tree. Trees grown from seed take a better shape, though: clean the pulp off the ripe fruit and sow the seed.",
+      basis: "Florida Native Plant Society; UF/IFAS; Institute for Regional Conservation.",
     },
   },
   {
@@ -128,9 +128,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Coastal/wildlife value: FNPS / UF-IFAS.",
     propagation: {
-      methods: ["seed-warm"],
-      note: "Pick the ripe purple 'grapes', squeeze and wash the pulp off the single seed inside, and sow it fresh and warm without letting it dry out. Seagrape is dioecious — separate male and female plants — so if you want fruit you'll need a female (and a male nearby to pollinate it).",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-direct", "layering"],
+      note: "Squeeze and wash the pulp off the single seed in each ripe purple 'grape' and sow it. Seagrape has separate male and female plants, so for fruit you need a female with a male nearby. Low branches can also be layered.",
+      basis: "Florida Native Plant Society; UF/IFAS; Institute for Regional Conservation.",
     },
   },
   {
@@ -163,9 +163,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Bird value: FNPS.",
     propagation: {
-      methods: ["seed-warm"],
-      note: "Collect the dark red-purple fruit from a female tree, wash the pulp off the seed, and sow it fresh and warm — don't let it dry out first. Like its cousin seagrape it has separate male and female plants, so only the females fruit.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-direct"],
+      note: "Wash the pulp off the seed of the ripe dark red-purple fruit and sow it. Like its cousin seagrape it has separate male and female plants, so only females make seed, and only with a male nearby.",
+      basis: "Florida Native Plant Society; UF/IFAS; Institute for Regional Conservation.",
     },
   },
   {
@@ -199,8 +199,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Wildlife value: FNPS / UF-IFAS.",
     propagation: {
       methods: ["seed-warm"],
-      note: "Cabbage palm is grown from seed only — you can't divide it or take cuttings. Gather the ripe black fruit, clean the pulp off the round seeds, and sow them fresh in warm, moist soil. Be patient: they germinate and grow slowly, and it takes years to form a trunk.",
-      basis: "USFS Native Plant Network; Institute for Regional Conservation.",
+      note: "Gather the ripe black fruit, wash the pulp off the seed, and sow it soon, before it dries out. It needs no chilling but is slow: untreated seed can take three or four months to sprout.",
+      basis: "Woody Plant Seed Manual; Florida Native Plant Society.",
     },
   },
   {
@@ -233,9 +233,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Coastal value: FNPS / UF-IFAS.",
     propagation: {
-      methods: ["seed-warm", "cuttings-semi-hardwood"],
-      note: "Collect the small buttonlike seed heads when ripe, crumble them apart, and sow the seed fresh and warm. You can also root semi-hardwood cuttings — pieces of stem that have just started to firm up — taken during the warm growing season.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-direct"],
+      note: "Crumble the ripe buttonlike seed heads and sow the seed; it sprouts without any treatment. Cuttings also root.",
+      basis: "Florida Native Plant Society; Institute for Regional Conservation; Seed Information Database.",
     },
   },
   {
@@ -268,9 +268,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Host/bird value: FNPS / UF-IFAS.",
     propagation: {
-      methods: ["seed-warm", "cuttings-semi-hardwood", "suckers"],
-      note: "Wax myrtle has separate male and female plants, and only the females carry the waxy blue berries. Rub the waxy coating off the seed and sow it warm. It also roots from semi-hardwood cuttings, and you can dig up the rooted suckers it throws around the base and replant them.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-cold-moist", "cuttings-semi-hardwood", "suckers"],
+      note: "Wax myrtle has separate male and female plants, and only the females carry the waxy berries. Rub or soak the wax off the seed, then chill it damp in the fridge for two or three months before sowing — waxy or unchilled seed sprouts poorly. Cuttings root only with difficulty; rooted suckers can be dug and moved.",
+      basis: "Woody Plant Seed Manual; LBJ Wildflower Center; USFS Native Plant Network; Florida Native Plant Society; Institute for Regional Conservation.",
     },
   },
 
@@ -305,9 +305,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range (var. patens): Atlas of Florida Plants (USF), IRC, FNPS. Host low; nectar value high.",
     propagation: {
-      methods: ["cuttings-softwood", "cuttings-semi-hardwood", "seed-warm"],
-      note: "Firebush is one of the easiest natives to root — snip a soft or barely-firmed shoot, strip the lower leaves, and stick it in moist potting mix. You can also squeeze the seed out of the ripe dark berries and sow it warm.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-warm", "suckers"],
+      note: "Squeeze the seed from the ripe dark berries and sow it warm; it sprouts readily. Plants often sucker, and the rooted suckers can be dug and moved. Start from the true native, not the nursery 'dwarf' firebush, which is not native.",
+      basis: "Florida Native Plant Society; Seed Information Database; UF/IFAS; Institute for Regional Conservation.",
     },
   },
   {
@@ -340,9 +340,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Wildlife/hedge value: FNPS.",
     propagation: {
-      methods: ["seed-warm", "cuttings-semi-hardwood", "layering"],
-      note: "Scoop the seed out of the ripe plum-like fruit, rinse it clean, and sow it fresh and warm before it dries. It also roots from semi-hardwood cuttings in the warm season, and low branches will layer — pin one to the ground and it roots on its own.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-direct", "cuttings-hardwood"],
+      note: "Scoop the seed out of the ripe plum-like fruit, rinse it, and sow it. Hardwood cuttings also root.",
+      basis: "Florida Native Plant Society; UF/IFAS; Institute for Regional Conservation.",
     },
   },
   {
@@ -375,9 +375,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Pollinator/bird value: FNPS / UF-IFAS.",
     propagation: {
-      methods: ["seed-warm", "cuttings-softwood", "cuttings-semi-hardwood"],
-      note: "Squeeze the seed out of the ripe red fruit, wash off the pulp, and sow it fresh and warm — it loses its life quickly if allowed to dry. Wild coffee also roots readily from soft or just-firming shoot cuttings taken in the warm months.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-warm"],
+      note: "Squeeze the seed out of the ripe red fruit, wash off the pulp, and sow it warm. Be patient: it can take a few months to sprout. Once established it self-sows.",
+      basis: "Florida Native Plant Society; Seed Information Database; Institute for Regional Conservation.",
     },
   },
   {
@@ -410,9 +410,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Host low; bird value high.",
     propagation: {
-      methods: ["seed-warm", "cuttings-semi-hardwood"],
-      note: "Clean the seed out of the ripe red-orange berries and sow it fresh and warm without letting it dry out. It's a little slow but reliable from seed; semi-hardwood cuttings taken in the warm season are another route.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-direct", "suckers"],
+      note: "Easy from seed: clean the pulp off the ripe red-orange fruit and sow it. Plants also sucker, so rooted suckers can be dug up and moved.",
+      basis: "Florida Native Plant Society; Institute for Regional Conservation.",
     },
   },
   {
@@ -445,9 +445,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Wildlife/pollinator value: FNPS / UF-IFAS / Xerces.",
     propagation: {
-      methods: ["seed-warm"],
-      note: "Saw palmetto is grown from seed only — it can't be divided or rooted from cuttings. Clean the pulp off the ripe fruit and sow the seed fresh and warm. Expect a long wait: germination is erratic and the seedlings grow extremely slowly, so start small and be patient.",
-      basis: "USFS Native Plant Network; Institute for Regional Conservation.",
+      methods: ["seed-warm", "division"],
+      note: "Clean the seed out of the ripe blue-black fruit — seed left inside won't sprout — and sow it fresh once the nights stay warm. It is slow: months to sprout and years to make a garden-sized plant. Nurseries mostly grow it from pieces of its creeping stems instead.",
+      basis: "Woody Plant Seed Manual; Florida Native Plant Society; Institute for Regional Conservation.",
     },
   },
   {
@@ -480,9 +480,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status (var. truncata): Atlas of Florida Plants (USF), IRC, FNPS. Host/nectar value: UF-IFAS.",
     propagation: {
-      methods: ["seed-scarify", "seed-warm"],
-      note: "Like most peas, the seed has a hard coat, so nick or scuff it and soak it overnight before sowing warm — that lets water in and gets it going. Collect the ripe seed from the beaded pods; remember the seeds are toxic, so keep them away from children and pets.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-scarify"],
+      note: "Collect the ripe seed from the beaded pods. Nicking the hard coat speeds sprouting; untreated seed can take months.",
+      basis: "Florida Native Plant Society; Seed Information Database; Woody Plant Seed Manual.",
     },
   },
   {
@@ -515,9 +515,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Atala host: FNPS, Conservancy of SW Florida.",
     propagation: {
-      methods: ["seed-warm", "seed-scarify"],
-      note: "Coontie is a cycad grown from seed only — no cuttings or division. It has separate male and female plants, and only pollinated females make the fat orange seed cones. Wearing gloves (the seed is toxic), clean the fleshy coat off, soak or lightly scuff the seed, and sow it fresh and warm. It's very slow, so don't lose heart.",
-      basis: "USFS Native Plant Network; Institute for Regional Conservation.",
+      methods: ["seed-scarify", "division"],
+      note: "Coontie grows from seed or by dividing the roots. Male and female cones grow on separate plants, and only pollinated females make the orange seed, ripe in winter. Wearing gloves (seeds, leaves and roots are toxic), clean off the fleshy coat, which holds back sprouting, then nick or crack the hard shell and sow warm. Untreated seed can take 6 to 12 months.",
+      basis: "Woody Plant Seed Manual; USFS Native Plant Network; Florida Native Plant Society; Institute for Regional Conservation.",
     },
   },
 
@@ -552,9 +552,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Pollinator value: UF-IFAS.",
     propagation: {
-      methods: ["seed-warm", "cuttings-softwood"],
-      note: "The easiest of all — sow the small seed warm and it comes up fast, and established plants self-sow, so just let a few flower spikes go to seed and you'll always have more. You can also root soft stem cuttings if you want a copy of a particular plant.",
-      basis: "USFS Native Plant Network; Florida Native Plant Society.",
+      methods: ["seed-direct"],
+      note: "Easy from seed, and it self-sows freely. To collect seed, slip a small bag over the flower spikes as they fade.",
+      basis: "Florida Native Plant Society; LBJ Wildflower Center.",
     },
   },
   {
@@ -587,9 +587,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status (native sprawling form): Atlas of Florida Plants (USF), IRC, FNPS. Nectar value: UF-IFAS.",
     propagation: {
-      methods: ["cuttings-softwood", "seed-warm"],
-      note: "Soft stem cuttings root fast in moist mix, which is the surest way to get the true sprawling native rather than a store lookalike. It also grows easily from seed sown warm and self-sows around the garden once it's happy.",
-      basis: "USFS Native Plant Network; Florida Native Plant Society.",
+      methods: ["seed-direct", "cuttings-softwood"],
+      note: "Grow it from seed, which sprouts readily without treatment, or from cuttings. Start from the true native, which trails along the ground; the upright Stachytarpheta urticifolia that many nurseries sell is from tropical Asia.",
+      basis: "Florida Native Plant Society; Seed Information Database.",
     },
   },
   {
@@ -622,9 +622,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Bird value: FNPS.",
     propagation: {
-      methods: ["seed-warm"],
-      note: "Mash the seed out of the ripe red berries, rinse, and sow warm — it comes up easily. In fact it self-sows so freely in shady ground that you'll more often be pulling extra seedlings than raising them. Remember the berries are toxic to people.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-direct", "cuttings-softwood"],
+      note: "Pick the berries when plump and red and sow the seed; it sprouts well, though the seedlings grow slowly. Cuttings root too, and the plant self-sows.",
+      basis: "LBJ Wildflower Center; Florida Native Plant Society; Seed Information Database.",
     },
   },
   {
@@ -657,9 +657,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "published",
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Host count: Helianthus genus (NWF).",
     propagation: {
-      methods: ["seed-surface-light", "cuttings-softwood"],
-      note: "Collect the dry seed from spent flower heads and scatter it on the surface of warm, sandy soil, pressing it in but barely covering it, since it germinates best with a little light. It self-sows generously once established, and soft cuttings root easily too.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-direct"],
+      note: "Collect seed from the spent flower heads and sow it; untreated seed sprouts well, and the plant self-sows freely. Cuttings also root.",
+      basis: "Florida Native Plant Society; Seed Information Database; UF/IFAS.",
     },
   },
 
@@ -694,9 +694,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Host count: native grass, skipper host, low-moderate.",
     propagation: {
-      methods: ["seed-warm", "division"],
-      note: "This is a warm-season grass, so sow the fluffy seed on the surface of warm soil in spring or summer rather than in cold ground. The simplest way to make more is to dig up an established clump in spring and split it into chunks, each with roots, and replant.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-warm"],
+      note: "Comb the seed from the pink heads as they fade in late fall. It sprouts well in warm conditions with no chilling, and the plant self-sows.",
+      basis: "LBJ Wildflower Center; Florida Native Plant Society; Seed Information Database.",
     },
   },
   {
@@ -729,9 +729,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Host count: native grass, skipper host, low-moderate.",
     propagation: {
-      methods: ["seed-warm", "division"],
-      note: "Sow the large, hard seed in warm soil in spring — it germinates unevenly, so don't expect every one to sprout. Far easier is to divide a mature clump in spring: chop it into rooted pieces with a spade and replant. Give the divisions room, as they bulk up into big clumps.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-cold-moist"],
+      note: "The seed sits dormant inside a hard case. Sow it outdoors in late fall or winter, or keep it cold and wet in the fridge for 6 to 10 weeks and sow in spring without letting it dry. Even then it sprouts slowly and unevenly.",
+      basis: "USDA PLANTS; USFS Native Plant Network; Seed Information Database.",
     },
   },
 
@@ -766,9 +766,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Host of heliconian butterflies: FNPS / UF-IFAS.",
     propagation: {
-      methods: ["seed-warm", "cuttings-softwood", "suckers"],
-      note: "Squeeze the seed from the ripe dark berries and sow it warm; it sprouts readily and self-sows around the garden. Soft stem cuttings root easily, and the vine also sends up suckers you can dig and move — so it's rarely hard to get more.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-direct", "division"],
+      note: "Squeeze the seed from the ripe dark berries and sow it, but expect it to be slow to sprout. Dividing the roots of an established plant is the quicker way.",
+      basis: "Florida Native Plant Society; Institute for Regional Conservation.",
     },
   },
 ];

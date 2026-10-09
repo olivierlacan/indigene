@@ -393,9 +393,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 258 Lepidoptera recorded on native poplars in continental temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["suckers", "root-cuttings"],
-      note: "Lift a rooted sucker in winter — the tree hands them to you. Short pieces of root laid in a tray of compost in late winter also shoot readily. Seed is viable for days and almost never used.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["suckers", "cuttings-hardwood"],
+      note: "Dig a rooted sucker in autumn or late winter and replant it. Dormant hardwood cuttings taken in winter also root. Seed stays alive only a few weeks, so it is seldom used.",
+      basis: "RHS; USDA Woody Plant Seed Manual; Seed Information Database.",
     },
   },
   {
@@ -428,9 +428,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Nitrogen fixation (Frankia) and Phytophthora alni risk: INRAE; European riparian literature. Host count: 163 Lepidoptera recorded on native alders in continental temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["seed-direct", "seed-surface-light"],
-      note: "Collect the cones in autumn, dry them until they open, and press the winged seed onto wet soil — it needs light, so do not cover it, and never let the pot dry out.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["seed-direct", "cuttings-hardwood"],
+      note: "Collect the cones in autumn and dry them until they shed their seed. Sow it thinly in spring, barely covered, and keep it damp. Dormant hardwood cuttings taken in winter also root.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   // ---------------- SHRUBS ----------------
@@ -745,9 +745,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 189 Lepidoptera recorded on native brambles in continental temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["layering", "cuttings-hardwood"],
-      note: "It does the work: find a rooted cane tip in winter, cut it free and move it. Leafless winter cuttings root as well. Seed is a waste of a season.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["layering"],
+      note: "It does the work itself: arching cane tips root where they touch the ground. Cut a rooted tip free and move it.",
+      basis: "RHS.",
     },
   },
   {
@@ -780,9 +780,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Late-season nectar value: INPN; European beekeeping literature. Host count: 118 Lepidoptera recorded on heather in continental temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "layering"],
-      note: "Take half-ripe shoot tips in late summer and root them in a peaty, gritty, lime-free mix. Low branches also layer where they touch acid ground — pin one down and separate it a year later.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["cuttings-softwood", "layering"],
+      note: "Take soft shoot tips in summer and root them under cover in a lime-free, sandy mix. Or, in summer, peg a low stem into acid soil and cut it free once it has rooted.",
+      basis: "RHS.",
     },
   },
   // ---------------- PERENNIALS ----------------
@@ -1029,9 +1029,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 62 Lepidoptera recorded on Deschampsia in continental temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["division", "seed-surface-light"],
-      note: "Split a tussock in early spring with a spade. Seed is fine and needs light — scatter it on damp bare soil and press it in without covering.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["seed-direct", "division"],
+      note: "Sow the seed where it is to grow, in spring or autumn. Tussocks can also be dug and split.",
+      basis: "RHS.",
     },
   },
   {
@@ -1064,9 +1064,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 86 Lepidoptera recorded on native sedges in continental temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["division", "seed-direct"],
-      note: "Divide a clump in autumn or early spring and keep the pieces damp until they take. Seed sown fresh in autumn in a shaded pot outdoors germinates with the spring.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["division"],
+      note: "Divide a clump in spring, as it comes into growth.",
+      basis: "RHS.",
     },
   },
   // ---------------- VINES ----------------
@@ -1171,8 +1171,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Autumn nectar importance and the ivy bee (Colletes hederae): INPN; European pollinator literature. Toxicity: ASPCA. Host count: 18 Lepidoptera recorded on ivy in continental temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
-      note: "Half-ripe shoots root readily in late summer in a shaded gritty mix. A cutting from the adult bushy growth makes a free-flowering shrub rather than a climber — worth choosing on purpose.",
-      basis: "Conservatoire botanique national alpin.",
+      note: "Take semi-ripe cuttings in summer. A cutting from the adult, bushy growth makes a shrub that doesn't climb. Stems along the ground root on their own, so a rooted piece can be cut free.",
+      basis: "RHS.",
     },
   },
 
@@ -1212,9 +1212,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Fritillary host relationships: INPN (MNHN); European butterfly foodplant checklist (Dryad). Host count: 176 Lepidoptera recorded on native plantains in continental temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["seed-direct", "division"],
-      note: "Scatter seed on bare ground in autumn and tread it in. Clumps split at any time in the cool months.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["seed-direct"],
+      note: "Scatter the ripe seed onto bare, scratched soil; it needs no chilling.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1248,8 +1248,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Hawk-moth host relationships (Macroglossum stellatarum, Deilephila elpenor): INPN (MNHN); European foodplant checklists. Host count: 127 Lepidoptera recorded on native bedstraws in continental temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["division", "seed-direct"],
-      note: "Lift a rooted piece of the creeping stem in the cool months. Seed sown fresh in autumn on gritty ground comes up over the winter.",
-      basis: "Conservatoire botanique national alpin.",
+      note: "Lift a rooted piece from the edge of a clump and replant it. Or sow the seed as soon as it ripens.",
+      basis: "RHS.",
     },
   },
   {
@@ -1282,9 +1282,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 50 Lepidoptera recorded on wild strawberry in continental temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["runners", "division"],
-      note: "The plant does it for you: lift the rooted plantlets off the runners at any point in the cool months and cut the cord. Seed works and is slower.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["runners", "seed-direct"],
+      note: "The plant does it for you: lift a rooted plantlet off a runner, cut the cord and replant it. Seed sown in spring also works.",
+      basis: "RHS.",
     },
   },
 

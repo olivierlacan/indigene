@@ -59,9 +59,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "published",
     basis: "Host count: pine genus, NWF/Tallamy. Native status/range: Michigan Flora.",
     propagation: {
-      methods: ["seed-cold-moist", "seed-direct"],
-      note: "Collect the long cones in fall as they ripen and dry them to shake out the winged seeds. A short cold, damp spell improves germination — fall-sow outdoors, or chill the seed a month in moist sand before spring. Sow where the tree will stay, since pines resent having their roots disturbed.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-cold-moist"],
+      note: "Collect the long cones in late summer as they ripen and dry them to shake out the winged seeds. The seed sprouts best after about two months of cold, damp chilling — sow it outdoors in fall, or chill it in moist sand before spring sowing.",
+      basis: "USFS Native Plant Network; USDA Woody Plant Seed Manual; LBJ Wildflower Center.",
     },
   },
   {
@@ -95,8 +95,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Host count: maple genus, NWF/Tallamy.",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Gather the paired winged seeds as they fall in autumn. Unlike red maple, sugar maple needs a long cold, damp winter before it sprouts, so sow it outdoors in fall or chill it in moist sand for two to three months. Don't let the seed dry out before sowing.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Gather the paired winged seeds as they fall in autumn. Unlike red maple, sugar maple needs two to three months of cold, damp chilling before it sprouts, so sow it outdoors in fall or chill it in moist sand.",
+      basis: "USDA Woody Plant Seed Manual; LBJ Wildflower Center.",
     },
   },
   {
@@ -129,9 +129,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "published",
     basis: "Host count: maple genus, NWF/Tallamy.",
     propagation: {
-      methods: ["seed-warm"],
-      note: "Red maple's winged seeds ripen in late spring, far earlier than most trees. Catch them as they turn tan and sow them right away — they sprout within a couple of weeks and need no winter chilling, but they must not dry out first.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-warm", "seed-cold-moist"],
+      note: "Red maple's winged seeds ripen in late spring, far earlier than most trees. Pick them from the tree as they turn tan and sow them right away — many sprout within days, but seed from some trees needs a winter's chill first.",
+      basis: "USFS Native Plant Network; USDA Woody Plant Seed Manual; LBJ Wildflower Center.",
     },
   },
   {
@@ -165,8 +165,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Host count: birch genus, NWF/Tallamy.",
     propagation: {
       methods: ["seed-surface-light", "seed-cold-moist"],
-      note: "The tiny seed ripens in hanging catkins that shatter in fall — gather them as they brown and crumble the seed free. Scatter it on the surface of moist mix and don't bury it, since it needs light to sprout; a short cold, damp spell (fall sowing) helps.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "The tiny seed ripens in hanging catkins that shatter easily — pick them in fall while they still hold together and crumble the seed free. Scatter it on the surface of moist mix and don't bury it, since it needs light to sprout; about two months of cold, damp chilling (or fall sowing) helps.",
+      basis: "USFS Native Plant Network; USDA Woody Plant Seed Manual; LBJ Wildflower Center.",
     },
   },
   {
@@ -200,8 +200,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Host count: Fagus genus, NWF/Tallamy. Native status: Michigan Flora.",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Collect the three-sided nuts from split husks in fall, floating off the empty ones. They need a cold, damp winter to sprout, so sow them outdoors in fall or chill them in moist sand — and protect them from squirrels, which hunt them out. Plant where the tree will stay.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Collect the three-sided nuts from split husks in fall and don't let them dry out. They need about three months of cold, damp chilling, so sow them outdoors in fall or chill them in moist sand — and protect them from rodents and birds, which hunt them out.",
+      basis: "USDA Woody Plant Seed Manual; LBJ Wildflower Center.",
     },
   },
   {
@@ -235,8 +235,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Host count: oak genus, NWF/Tallamy.",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Collect fallen acorns in autumn and float-test them, discarding floaters. Red oak acorns need a cold, damp winter before they'll sprout — mix them with moist sand in the fridge over winter, or sow outdoors in fall and let nature chill them. Keep them from drying out, and plant where the taproot can stay put.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Collect fallen acorns in autumn and float-test them, discarding floaters. Red oak acorns need a cold, damp winter before they'll sprout — mix them with moist sand in the fridge, or sow outdoors in fall and let nature chill them. Keep them from drying out, and screen fall-sown beds against rodents.",
+      basis: "USFS Native Plant Network; USDA Woody Plant Seed Manual; LBJ Wildflower Center; Seed Information Database.",
     },
   },
   {
@@ -270,8 +270,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Host count: Tsuga genus, NWF/Tallamy (a conifer, so lower than the hardwoods). Native status: Michigan Flora.",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Gather the small cones in fall and dry them to release the winged seed. A cold, damp spell over winter improves the often-low germination, so fall-sow outdoors or chill in moist sand. Seedlings want shade and constant moisture — never let them dry out.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Gather the small cones in fall as they begin to open and dry them to release the winged seed. Two to four months of cold, damp chilling speeds germination, so fall-sow outdoors or chill the seed in moist sand for spring. Seedlings scorch in hot sun — give them shade and keep them moist.",
+      basis: "USFS Native Plant Network; USDA Woody Plant Seed Manual; LBJ Wildflower Center.",
     },
   },
   {
@@ -304,9 +304,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "published",
     basis: "Host count: Thuja genus, NWF/Tallamy (low, as a conifer). Native status/soils: Michigan Flora.",
     propagation: {
-      methods: ["seed-cold-moist", "cuttings-semi-hardwood"],
-      note: "Collect the small upright cones in fall as they turn tan and shake out the seed; a short cold, damp spell helps it sprout. White cedar also roots readily from cuttings of this year's shoots taken in late summer or fall — an easy way to copy a good plant.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-cold-moist"],
+      note: "Collect the small upright cones in late summer as they ripen and shake out the seed; about a month of cold, damp chilling helps it sprout. White cedar can also be grown from cuttings — the usual way to copy a good plant.",
+      basis: "USFS Native Plant Network; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -339,9 +339,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "published",
     basis: "Host count: poplar/aspen genus, NWF/Tallamy.",
     propagation: {
-      methods: ["suckers", "cuttings-hardwood"],
-      note: "Simplest by far is to dig the rooted suckers a grove throws up around itself and replant them. Dormant hardwood cuttings pushed into damp ground in spring also root readily. The cottony seed is short-lived and fussy, so vegetative routes are the practical ones.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["suckers", "root-cuttings", "seed-direct"],
+      note: "Simplest by far is to dig the rooted suckers a grove throws up around itself and replant them. Pieces of root dug in late winter and laid in damp mix also sprout. Fresh seed sprouts readily on wet, uncovered ground, but it stays alive only a few days.",
+      basis: "USFS Native Plant Network; USDA Woody Plant Seed Manual; LBJ Wildflower Center.",
     },
   },
   {
@@ -375,8 +375,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Host count: cherry/plum genus, NWF/Tallamy.",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Squish the ripe summer fruit and rinse the pulp off the pits, which contain sprouting inhibitors. Give the cleaned pits a long, cold, damp winter (outdoors, or several months in moist sand in the fridge) before they come up. It self-sows so freely you'll often find free seedlings.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Squish the ripe summer fruit and rinse the pulp off the pits. Give the cleaned pits a long, cold, damp winter before they come up — sow them outdoors in early fall, or chill them for three to four months in moist sand in the fridge.",
+      basis: "USDA Woody Plant Seed Manual; LBJ Wildflower Center.",
     },
   },
   {
@@ -409,9 +409,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "published",
     basis: "Host count: Tilia genus, NWF/Tallamy. Native status: Michigan Flora.",
     propagation: {
-      methods: ["seed-double-dormant", "cuttings-softwood"],
-      note: "Basswood seed is notoriously stubborn — the hard-coated nutlets often need two winters with a warm spell between before sprouting, so sow outdoors and wait. Quicker is to root soft green shoots in early summer, or dig and move the sprouts that ring an old stump.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-scarify", "seed-cold-moist", "cuttings-softwood"],
+      note: "Basswood seed is stubborn: left untreated, it can take two or three years to come up. Sow nutlets picked as they first turn brown right away, or nick the hard coat and chill the seed three months in moist sand. Leafy softwood cuttings can also root.",
+      basis: "USFS Native Plant Network; USDA Woody Plant Seed Manual; LBJ Wildflower Center.",
     },
   },
   {
@@ -446,7 +446,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-cold-moist"],
       note: "Pick the June berries when deep purple, mash them, and rinse the tiny seeds free of pulp. They need a cold, damp winter to break dormancy, so sow outdoors in fall or chill in moist sand for a few months. Be patient — germination is often slow and uneven.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      basis: "USDA Woody Plant Seed Manual; LBJ Wildflower Center.",
     },
   },
 
@@ -482,8 +482,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Host count: willow genus, NWF/Tallamy.",
     propagation: {
       methods: ["cuttings-hardwood", "cuttings-softwood"],
-      note: "About the easiest woody plant to root: cut pencil-thick dormant twigs in late winter, stand them in a jar of water or push them straight into damp ground, and they root within weeks. Soft summer shoots root too. Seed stays viable only a few days, so cuttings are the way.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "About the easiest woody plant to root: cut pencil-thick dormant twigs in winter and push them straight into damp ground, or root soft shoots in early summer. The seed stays alive only briefly, so cuttings are the way.",
+      basis: "USDA Woody Plant Seed Manual; LBJ Wildflower Center; RHS.",
     },
   },
   {
@@ -517,8 +517,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Host count: Vaccinium genus, NWF/Tallamy.",
     propagation: {
       methods: ["division", "cuttings-softwood", "seed-cold-moist"],
-      note: "Easiest is to lift and split rooted pieces of the spreading mat in early spring. Soft shoot-tip cuttings in early summer root in a peaty, acidic mix. Seed works too — mash ripe berries, rinse, and cold-chill the seed — but seedlings are slow and demand acid soil.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Easiest is to lift and split rooted pieces of the spreading mat in early spring. Soft shoot-tip cuttings in late spring root in a peaty, acidic mix. Seed works too — mash ripe berries, rinse, and chill the seed for about three months — but seedlings are slow and demand acid soil.",
+      basis: "USFS Native Plant Network; USDA Woody Plant Seed Manual; LBJ Wildflower Center; RHS.",
     },
   },
   {
@@ -551,9 +551,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "published",
     basis: "Wildflower Center; host count Cornus, NWF.",
     propagation: {
-      methods: ["cuttings-hardwood", "layering", "cuttings-softwood"],
-      note: "One of the easiest shrubs to multiply. Push leafless dormant twigs into damp ground in late fall and most root, or take soft shoot tips in early summer. It also layers on its own — wherever a low stem touches moist soil it roots, so dig and move those pieces.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["cuttings-hardwood", "cuttings-semi-hardwood", "layering"],
+      note: "One of the easiest shrubs to multiply. Push leafless dormant twigs into damp ground in late fall — they need no rooting hormone — or root firmer shoots in summer. Low stems can also be layered: pin one to moist soil until it roots, then dig and move it.",
+      basis: "LBJ Wildflower Center; RHS.",
     },
   },
   {
@@ -587,8 +587,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Wildflower Center; host count Physocarpus, NWF.",
     propagation: {
       methods: ["cuttings-softwood", "cuttings-hardwood"],
-      note: "Easy from cuttings: root soft green shoot tips in early summer in moist mix, or push leafless dormant twigs into the ground in late fall. Both take readily, giving you copies of the exact plant you have.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Easy from cuttings: root soft green shoot tips in summer in moist mix, or push leafless dormant twigs into the ground in late fall. Both take readily, giving you copies of the exact plant you have.",
+      basis: "USFS Native Plant Network; USDA Woody Plant Seed Manual; RHS.",
     },
   },
   {
@@ -623,7 +623,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["suckers", "seed-cold-moist"],
       note: "Simplest is to dig the rooted suckers this thicket-former throws up and replant them. From seed, gather the nuts in fall before squirrels do, protect them from rodents, and give them a cold, damp winter — they need that chill to sprout.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      basis: "USFS Native Plant Network; USDA Woody Plant Seed Manual; LBJ Wildflower Center.",
     },
   },
   {
@@ -657,8 +657,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Wildflower Center; host count Hamamelis, NWF.",
     propagation: {
       methods: ["seed-double-dormant", "layering"],
-      note: "Witch hazel seed is famously slow: it usually needs two winters, with a warm spell between, before it sprouts, so sow outdoors and be patient. Easier is to pin a low branch down to the soil in spring and let it root in place before cutting it free the next year.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Witch hazel seed is famously slow: it needs a warm spell and then a cold one, so sow it outdoors as soon as it's collected and expect some to wait until the second spring. Easier is to pin a low branch down to the soil in autumn and let it root in place, then cut it free once roots form, within a year.",
+      basis: "USFS Native Plant Network; USDA Woody Plant Seed Manual; LBJ Wildflower Center; RHS.",
     },
   },
   {
@@ -692,8 +692,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Wildflower Center; host count Ilex, NWF.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "seed-double-dormant"],
-      note: "This holly is male or female, so seed only forms on a female with a male nearby. Easiest is cuttings — take this year's shoots in summer as they firm up and root them under cover. Seed often needs two winters to sprout, so most gardeners skip it.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "This holly is male or female, so berries only form on a female with a male nearby. Easiest is cuttings — take this year's shoots in late summer as they firm up and root them under cover. Seed needs a warm spell, then a cold one, and often waits until the second spring, so most gardeners skip it.",
+      basis: "USFS Native Plant Network; USDA Woody Plant Seed Manual; LBJ Wildflower Center; RHS.",
     },
   },
   {
@@ -726,9 +726,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "published",
     basis: "Wildflower Center; host count Viburnum, NWF. Native status/soils: Michigan Flora.",
     propagation: {
-      methods: ["cuttings-softwood", "seed-double-dormant"],
-      note: "The quick way is early-summer cuttings of soft green shoots, rooted in moist mix under cover. Seed is stubborn — it typically needs a warm spell then a cold winter (two seasons) before sprouting. It also suckers, so rooted offshoots can be dug and moved.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["cuttings-softwood", "seed-double-dormant", "suckers"],
+      note: "The quick way is summer cuttings of soft green shoots, rooted in moist mix under cover. Seed is stubborn — it needs months of warmth, then a cold winter, before the shoot comes up. It also suckers, so rooted offshoots can be dug and moved.",
+      basis: "USDA Woody Plant Seed Manual; USDA PLANTS; RHS.",
     },
   },
   {
@@ -761,9 +761,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "published",
     basis: "Wildflower Center; host count Diervilla, NWF (low). Native status: Michigan Flora.",
     propagation: {
-      methods: ["division", "cuttings-softwood"],
-      note: "Easiest is to lift and split the suckering clump in spring — it spreads by shallow runners into rooted pieces. Soft green shoot-tip cuttings taken in early summer also root readily in moist mix.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["suckers", "cuttings-softwood"],
+      note: "Easiest is to dig up the suckers it throws up around itself in late winter and replant them. Soft green shoot-tip cuttings also root readily in moist mix.",
+      basis: "LBJ Wildflower Center; RHS.",
     },
   },
   {
@@ -797,8 +797,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Wildflower Center; host count Sambucus, NWF. Native status: Michigan Flora.",
     propagation: {
       methods: ["cuttings-hardwood", "cuttings-softwood", "seed-double-dormant"],
-      note: "Roots easily from cuttings — push dormant leafless twigs into damp ground in late winter, or root soft green shoots in early summer. Seed is slow, often needing a warm-then-cold sequence over two seasons, so cuttings are the practical route.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Grows from cuttings — push dormant leafless twigs into damp ground in winter, or root soft green shoots in early summer. Seed is slow: it needs a warm spell, then a cold one, and often doesn't come up until the second spring, so cuttings are the practical route.",
+      basis: "USDA Woody Plant Seed Manual; RHS.",
     },
   },
   {
@@ -832,8 +832,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Wildflower Center / Xerces; host count Ceanothus, NWF.",
     propagation: {
       methods: ["seed-scarify", "seed-cold-moist"],
-      note: "The seed has a rock-hard coat — nick it with sandpaper or pour just-boiled water over it and soak overnight, then give it a cold, damp winter before sowing. Because it grows a deep taproot and resents moving, raise it from seed and set it in its final spot early.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "The seed has a hard coat — pour very hot water over it and let it soak overnight as it cools, then give it two to three months of cold, damp chilling before sowing.",
+      basis: "USDA Woody Plant Seed Manual; LBJ Wildflower Center.",
     },
   },
 
@@ -869,8 +869,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Wildflower Center; Michigan Flora.",
     propagation: {
       methods: ["seed-surface-light", "seed-cold-moist"],
-      note: "Gather the small black seeds from the papery pods in early summer. Press them onto the soil surface without burying them — they need light — and give them a cold, damp spell first (fall sowing does both jobs). It's short-lived but self-sows dependably.",
-      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+      note: "Gather the small black seeds as the papery pods dry. Scatter them on the soil surface and press them in lightly; sow them fresh, or give stored seed three to four weeks of cold, damp chilling. Mature clumps divide poorly, so stick to seed.",
+      basis: "LBJ Wildflower Center.",
     },
   },
   {
@@ -904,8 +904,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Wildflower Center / Xerces; Karner blue is a lupine specialist (USFWS). Native status: Michigan Flora.",
     propagation: {
       methods: ["seed-scarify", "seed-cold-moist"],
-      note: "The hard seed sprouts far better if you nick or sand the coat, or soak it in warm water overnight, then give it a cold, damp spell (fall sowing works). Sow it straight into its final dry, sandy spot — the taproot makes transplanting an established plant nearly hopeless.",
-      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+      note: "Fresh seed needs no treatment. Stored seed sprouts better if you nick or sand the coat and give it about ten days of cold, damp chilling. Sow it straight into its final dry, sandy spot, no deeper than three-quarters of an inch — the deep taproot makes it a poor transplant.",
+      basis: "LBJ Wildflower Center.",
     },
   },
   {
@@ -938,9 +938,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Wildflower Center / Xerces; Asclepias hosts monarchs (specialist).",
     propagation: {
-      methods: ["seed-cold-moist"],
-      note: "Collect the flat brown seeds in fall as the pods split, before the silk floats them away. They need about a month of cold, damp chilling — fall-sow outdoors, or refrigerate in a moist paper towel for 30 days. Don't try to divide it: the deep, brittle taproot resents disturbance.",
-      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+      methods: ["seed-cold-moist", "root-cuttings"],
+      note: "Collect the flat brown seeds in fall as the pods split, before the silk floats them away. Sow them outdoors in fall, or chill them for about three months in moist sand. Pieces of the thick root, cut in fall while the plant is dormant, also grow into new plants.",
+      basis: "USDA PLANTS; LBJ Wildflower Center.",
     },
   },
   {
@@ -974,8 +974,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Wildflower Center / Xerces.",
     propagation: {
       methods: ["seed-cold-moist", "division"],
-      note: "Gather seed from split pods in fall and give it about a month of cold, damp chilling (fall sowing does this) for good germination. Unlike its taprooted cousins, swamp milkweed also takes division — lift and split a clump in early spring as it starts into growth.",
-      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+      note: "Gather seed from split pods in fall and sow it outdoors then, or chill it four to six weeks in moist sand before spring sowing, just below the surface. Unlike its taprooted cousins, swamp milkweed also takes division — lift and split a clump in spring.",
+      basis: "USDA PLANTS; LBJ Wildflower Center; RHS.",
     },
   },
   {
@@ -1008,9 +1008,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Wildflower Center / Xerces.",
     propagation: {
-      methods: ["division", "seed-cold-moist"],
-      note: "Easiest is division: it spreads by shallow roots, so in spring lift a clump and pull it into several rooted pieces. From seed, shake it from the dry heads and give it about a month of cold, damp chilling, or simply sow outdoors in fall.",
-      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+      methods: ["division", "seed-direct", "cuttings-softwood"],
+      note: "Easiest is division: it spreads by shallow rhizomes, so in early spring lift a clump and pull it into several rooted pieces. Seed needs no chilling and sprouts within a couple of weeks. Stem-tip cuttings root from late spring through summer.",
+      basis: "USDA PLANTS; LBJ Wildflower Center; RHS; Seed Information Database.",
     },
   },
   {
@@ -1044,8 +1044,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Host count: Symphyotrichum genus, NWF/Tallamy.",
     propagation: {
       methods: ["division", "seed-cold-moist"],
-      note: "Simplest is to divide an established clump in spring, splitting the crown into rooted chunks. From the fluffy heads, collect seed in late fall and give it about a month of cold, damp chilling (fall sowing does this). Left standing, it also self-sows.",
-      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+      note: "Simplest is to divide an established clump in spring, splitting it into rooted pieces. From the fluffy heads, collect seed in late fall and sow it outdoors then, or give it one to three months of cold, damp chilling before spring sowing.",
+      basis: "LBJ Wildflower Center.",
     },
   },
   {
@@ -1078,9 +1078,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "published",
     basis: "Host count: Symphyotrichum genus, NWF/Tallamy. Native status/soils: Michigan Flora.",
     propagation: {
-      methods: ["division", "seed-cold-moist"],
-      note: "Divide the clump in spring into rooted pieces — the reliable route. From seed, collect the fluffy heads in late fall and give the seed about a month of cold, damp chilling, which fall sowing handles. It self-sows gently if a few heads are left standing.",
-      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+      methods: ["seed-direct"],
+      note: "Collect the seed from the fluffy heads in late fall. In seed-bank tests, most of it sprouted in a warm, bright spot without any chilling.",
+      basis: "Seed Information Database.",
     },
   },
   {
@@ -1114,8 +1114,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Host count: Solidago genus, NWF/Tallamy.",
     propagation: {
       methods: ["division", "seed-cold-moist"],
-      note: "Easiest is division: lift the clump in early spring and split off rooted pieces from the edges. From seed, collect the fluffy heads in late fall and give it about a month of cold, damp chilling — fall sowing outdoors handles that.",
-      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+      note: "Easiest is division: lift the clump in early spring and split off rooted pieces from the edges. From seed, collect the fluffy heads in October; a cold spell helps it sprout but isn't essential if the seed is sown fresh.",
+      basis: "LBJ Wildflower Center.",
     },
   },
   {
@@ -1149,8 +1149,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Wildflower Center.",
     propagation: {
       methods: ["seed-direct", "seed-cold-moist"],
-      note: "Among the easiest to raise: scatter the seed from the dry cones onto bare soil in fall or spring — it's a short-lived, freely self-sowing plant, so once you have it, volunteers keep it around. A light cold spell (fall sowing) improves germination but isn't essential.",
-      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+      note: "Among the easiest to raise: sow the seed outdoors in fall, or in spring after a few months of cold, damp chilling, and barely cover it. Left to seed, it comes back as volunteers.",
+      basis: "LBJ Wildflower Center; RHS.",
     },
   },
   {
@@ -1184,8 +1184,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Wildflower Center; Michigan Flora (native on dunes and limey shores).",
     propagation: {
       methods: ["seed-surface-light", "division"],
-      note: "The dust-fine seed needs light: press it onto the surface of gritty, damp mix and don't cover it. It self-sows into crevices once established. Small clumps can also be teased apart and replanted in spring.",
-      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+      note: "The dust-fine seed needs light: press it onto the surface of gritty, damp mix, don't cover it, and water from below. Small clumps can also be teased apart and replanted.",
+      basis: "LBJ Wildflower Center; RHS; Seed Information Database.",
     },
   },
   {
@@ -1219,8 +1219,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Wildflower Center.",
     propagation: {
       methods: ["seed-surface-light", "division"],
-      note: "The seed is nearly dust-fine: scatter it on the surface of moist soil and don't cover it, since it needs light. It self-sows wherever the ground stays damp, and stems that flop over and touch wet soil root, so those pieces can be lifted and moved.",
-      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+      note: "The seed is nearly dust-fine: scatter it on the surface of moist mix and don't cover it, since it needs light. It self-sows where the ground stays damp, and the leafy offshoots at the base can be split off in spring or fall and replanted.",
+      basis: "USDA PLANTS; LBJ Wildflower Center; RHS; Seed Information Database.",
     },
   },
   {
@@ -1253,9 +1253,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Wildflower Center; black swallowtail host.",
     propagation: {
-      methods: ["seed-cold-moist"],
-      note: "Sow the seed fresh — collect it in early summer as the flat pods dry and get it into the ground while new, since it germinates poorly once aged. It needs a cold, damp winter to sprout, so fall-sown or fresh-sown seed comes up the following spring. It self-sows gently once settled.",
-      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+      methods: ["seed-cold-moist", "division"],
+      note: "Collect the seed as the flat pods dry and sow it outdoors in fall: it needs a cold, damp winter and sprouts best in cool soil the next spring. Established plants can also be divided.",
+      basis: "LBJ Wildflower Center; RHS.",
     },
   },
   {
@@ -1288,9 +1288,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Wildflower Center; Michigan Flora.",
     propagation: {
-      methods: ["seed-cold-moist", "division"],
-      note: "Collect the tiny seed as the dry heads ripen in fall; it sprouts best after about a month of cold, damp chilling, so sow outdoors in fall or refrigerate in moist sand. A mature clump can also be lifted and divided in early spring.",
-      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+      methods: ["division"],
+      note: "A mature clump can be lifted and divided in spring. It also grows from seed.",
+      basis: "RHS.",
     },
   },
   {
@@ -1323,9 +1323,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "none",
     basis: "Wildflower Center; American lady / painted lady host. Native status: Michigan Flora.",
     propagation: {
-      methods: ["division", "seed-surface-light"],
-      note: "Easiest is division — lift and split the spreading clump in spring into rooted pieces. From seed, press the tiny seed onto the surface of damp mix without burying it (it needs light) and keep it moist until it sprouts.",
-      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+      methods: ["division", "seed-direct"],
+      note: "Easiest is division — lift and split the spreading clump in spring into rooted pieces. Seed needs no treatment: sow it fresh in fall.",
+      basis: "LBJ Wildflower Center; RHS.",
     },
   },
 
@@ -1361,8 +1361,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Wildflower Center / Xerces; skipper host.",
     propagation: {
       methods: ["seed-direct", "division"],
-      note: "A warm-season grass: sow the fluffy seed in late spring once the soil has warmed and it sprouts without chilling — just keep the surface from drying until it's up. Established bunches can also be dug and split in spring as new growth begins.",
-      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+      note: "A warm-season grass: sow the fluffy seed in spring, ideally after a winter of cool, dry storage, and cover it only an eighth to a quarter inch. Established bunches can also be dug and split in spring.",
+      basis: "USDA PLANTS; LBJ Wildflower Center; RHS.",
     },
   },
   {
@@ -1396,8 +1396,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Wildflower Center; Carex hosts numerous skippers.",
     propagation: {
       methods: ["division"],
-      note: "By far the easiest way is division: this sedge creeps by underground runners, so in spring lift a patch and pull it into many small rooted pieces to plant out and knit together. Seed is slow and finicky, so most gardeners just divide.",
-      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+      note: "By far the easiest way is division: this sedge creeps by underground runners, so in spring lift a patch and pull it into small pieces, each with roots and leaves, to plant out and knit together.",
+      basis: "LBJ Wildflower Center.",
     },
   },
 
@@ -1433,8 +1433,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Wildflower Center; sphinx moth host.",
     propagation: {
       methods: ["cuttings-softwood", "cuttings-hardwood", "layering"],
-      note: "Almost too easy: root soft green shoots in summer or leafless dormant lengths of vine in winter, and most take in moist soil. It also layers on its own — anywhere a trailing stem touches the ground it roots, so sever and lift those rooted sections.",
-      basis: "USFS Native Plant Network.",
+      note: "Almost too easy: soft green shoots taken in summer root readily without hormone, and leafless lengths of vine cut in winter root too. Trailing stems can also be layered in fall — pin one to the soil and lift it once rooted.",
+      basis: "USDA Woody Plant Seed Manual; LBJ Wildflower Center; RHS.",
     },
   },
   {
@@ -1468,8 +1468,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Wildflower Center; Vitis hosts sphinx moths, NWF. Native status: Michigan Flora.",
     propagation: {
       methods: ["cuttings-hardwood", "layering", "seed-cold-moist"],
-      note: "Easiest from dormant hardwood cuttings: cut pencil-thick leafless lengths in late winter and root them in damp ground. It also layers where stems touch soil. Seed works after cleaning the pulp and a cold, damp winter, but is slower and less predictable.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Easiest from dormant hardwood cuttings: cut pencil-thick leafless lengths in late winter and root them in damp ground. It also layers in autumn. Seed works after cleaning off the pulp and about three months of cold, damp chilling, but seedlings don't match the parent.",
+      basis: "USDA Woody Plant Seed Manual; LBJ Wildflower Center; RHS.",
     },
   },
 
@@ -1504,9 +1504,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "published",
     basis: "Wildflower Center; host count Fragaria/Rosaceae, NWF.",
     propagation: {
-      methods: ["runners", "division"],
-      note: "The simplest plant here to multiply: it sends out runners that sprout plantlets along their length. Pin one down onto soil (or a small pot) until it roots, then snip it free and move it. You can also just lift and split an established patch.",
-      basis: "USFS Native Plant Network; Lady Bird Johnson Wildflower Center.",
+      methods: ["runners"],
+      note: "The simplest plant here to multiply: it sends out runners that root plantlets along their length. Pin one down onto soil (or a small pot) until it roots, then snip it free and move it in spring or early summer. Seed sprouts poorly.",
+      basis: "LBJ Wildflower Center.",
     },
   },
   {
@@ -1540,8 +1540,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Wildflower Center; Michigan Flora; hoary/brown elfin host.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
-      note: "Slow but doable from cuttings: root firm shoots of this year's growth in late summer in a gritty, lean mix, with patience. Trailing stems also layer where they touch sandy soil, so you can lift and move those rooted sections. Seed is very slow and rarely bothered with.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Easiest from cuttings: root firm shoots of this year's growth in summer in sand or a gritty, lean mix. Trailing stems can also be layered in autumn — pin one to the soil and lift it once rooted. Seed is slow, usually not sprouting until its second year.",
+      basis: "USDA Woody Plant Seed Manual; LBJ Wildflower Center; RHS.",
     },
   },
   {
@@ -1575,8 +1575,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Wildflower Center; Michigan Flora. Host count: Cornus genus, NWF (modest as a groundcover).",
     propagation: {
       methods: ["division", "seed-cold-moist"],
-      note: "Easiest is to lift and move rooted pieces of the creeping mat in spring, keeping a plug of its own acid soil around them. Seed is slow and often needs a warm-then-cold sequence over more than one winter, so division is the practical route.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Easiest is to lift and move rooted pieces of the creeping mat. Seed is slow: it needs about three months of cold, damp chilling, sometimes after a warm spell, and comes up unevenly.",
+      basis: "USFS Native Plant Network; USDA Woody Plant Seed Manual; RHS.",
     },
   },
   {
@@ -1610,8 +1610,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Wildflower Center; Michigan Flora. Ferns support very few caterpillars — included for shade cover, erosion and edibility, not food-web value.",
     propagation: {
       methods: ["division", "spores"],
-      note: "By far the easiest way is to lift and move the rooted runners it throws out around itself in spring — it spreads readily. Ferns make no seed; they grow from dust-like spores on separate brown fertile fronds, which is a slow, fiddly project best left to the patient.",
-      basis: "USFS Native Plant Network.",
+      note: "By far the easiest way is to dig rooted pieces from the spreading patch in spring and replant them. Ferns make no seed; spores sown fresh also work, but that's a slow project for the patient.",
+      basis: "RHS.",
     },
   },
   {
@@ -1645,8 +1645,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Wildflower Center. Ferns support very few caterpillars — included for erosion and evergreen shade cover, not food-web value.",
     propagation: {
       methods: ["division", "spores"],
-      note: "By far the easiest way is to dig an established clump in early spring and split the crown into rooted pieces. Ferns make no seed — they grow from dust-like spores on the backs of the fronds, which you can sow onto damp, sterile soil, but that's a slow project for the patient.",
-      basis: "USFS Native Plant Network.",
+      note: "By far the easiest way is to dig an established clump and split the crown into rooted pieces. Ferns make no seed — they grow from dust-like spores on the narrower fertile fronds, but that's a slow project for the patient.",
+      basis: "LBJ Wildflower Center; RHS.",
     },
   },
 ];

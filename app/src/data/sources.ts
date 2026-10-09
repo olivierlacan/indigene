@@ -85,6 +85,22 @@ export const SOURCE_LINKS: SourceSite[] = [
   { name: "Royal Horticultural Society", url: "https://www.rhs.org.uk/" },
   { name: "New Zealand Plant Conservation Network", url: "https://www.nzpcn.org.nz/flora/species/" },
   { name: "California Native Plant Society", url: "https://www.cnps.org/" },
+  // The Forest Service's species reviews: how a plant spreads and resprouts.
+  { name: "Fire Effects Information System", url: "https://www.fs.usda.gov/database/feis/" },
+  { name: "FEIS", url: "https://www.fs.usda.gov/database/feis/" },
+  // The NRCS's species write-ups, published through USDA PLANTS.
+  { name: "NRCS Plant Guide", url: "https://plants.usda.gov/" },
+  { name: "NRCS Fact Sheet", url: "https://plants.usda.gov/" },
+  { name: "USDA NRCS", url: "https://plants.usda.gov/" },
+  { name: "UC Master Gardeners", url: "https://ucanr.edu/" },
+  { name: "Tāne's Tree Trust", url: "https://www.tanestrees.org.nz/species-profiles/" },
+  { name: "NC State Extension", url: "https://plants.ces.ncsu.edu/" },
+  { name: "Journal of Forest Science", url: "https://jfs.agriculturejournals.cz/" },
+  { name: "Institute for Regional Conservation", url: "https://regionalconservation.org/beta/nfyn/" },
+  // Course-compiled propagation protocols (UW ESRM 412), each citing its own
+  // sources; and the fern society's guide to raising ferns from spore.
+  { name: "UW Native Plant Production", url: "https://courses.washington.edu/esrm412/protocols/" },
+  { name: "Hardy Fern Foundation", url: "https://hardyferns.org/propagation/" },
   { name: "INPN", url: "https://inpn.mnhn.fr/" },
   { name: "RHS Plants for Pollinators", url: "https://www.rhs.org.uk/wildlife/plants-for-pollinators" },
   { name: "Butterfly Conservation", url: "https://butterfly-conservation.org/" },

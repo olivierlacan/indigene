@@ -49,7 +49,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "La fondation de l'écosystème à pin des marais : des graines et un couvert pour les oiseaux et les tortues gaufrées, des centaines de chenilles sur les pins, et un houppier ouvert et ensoleillé qui laisse prospérer un couvre-sol d'une grande diversité en dessous.",
     propagationNote:
-      "Récoltez la graine des cônes mûrs à l'automne et semez-la fraîche la même saison — elle lève rapidement et n'a besoin d'aucun froid. La graine ne se conserve pas : ne la laissez pas sécher au fond d'un tiroir tout l'hiver.",
+      "Récoltez la graine des cônes mûrs à l'automne. La graine fraîche n'a besoin d'aucun froid et lève sans peine. Attendez-vous à un début lent : un jeune pin des marais reste des années en touffe d'herbe avant de s'élancer.",
   },
   "Taxodium distichum": {
     supportNotes: {
@@ -63,7 +63,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Un superbe arbre pour les eaux de pluie et les berges : il absorbe les crues, tient un sol détrempé, abrite les échassiers et les anhingas, et vit des siècles.",
     propagationNote:
-      "Ramassez les cônes ronds à l'automne et émiettez-les pour libérer la graine. Semez-la fraîche sur une terre mouillée ou dans la vase — un bon trempage préalable aide — et maintenez-la constamment humide. Aucun passage au froid n'est nécessaire.",
+      "Ramassez les cônes ronds à l'automne, laissez-les sécher et cassez-les pour libérer la graine. Elle lève mieux après une période froide, que les hivers doux de Floride ne donnent pas toujours : faites-la tremper dans l'eau au réfrigérateur jusqu'à trois mois, puis semez au printemps et gardez le semis mouillé.",
   },
   "Magnolia grandiflora": {
     supportNotes: {
@@ -79,7 +79,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "D'énormes fleurs au parfum de citron pollinisées par les coléoptères et les abeilles, des graines rouges que mangent oiseaux et écureuils, et un couvert persistant dense avec des sites de nidification.",
     propagationNote:
-      "Quand les cônes s'ouvrent à l'automne, prélevez les graines et frottez-en l'enveloppe rouge charnue (un trempage la ramollit) — cette enveloppe empêche la germination. Semez frais et ne laissez jamais sécher ; un court passage frais et humide pendant l'hiver les aide à se réveiller au printemps.",
+      "Quand les cônes s'ouvrent, en fin d'été ou à l'automne, prélevez les graines et frottez-en l'enveloppe rouge. Gardez-les humides — elles meurent si elles sèchent. Il leur faut au moins deux mois de froid humide : en Floride, mettez-les au réfrigérateur dans de la mousse humide, puis semez au printemps. Les boutures semi-ligneuses prises en été s'enracinent aussi.",
   },
   "Sabal palmetto": {
     supportNotes: {
@@ -97,7 +97,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Ses panicules de fleurs d'été grouillent d'abeilles ; ses fruits noirs nourrissent merles d'Amérique, moqueurs, ratons laveurs et bien d'autres ; et sa couronne et son tronc couvert de bottes abritent chauves-souris, grenouilles et oiseaux nicheurs.",
     propagationNote:
-      "Le Sabal palmetto ne se multiplie que par semis — un palmier ne se divise pas et ne se bouture pas. Récoltez les fruits noirs à maturité, pressez et lavez la pulpe pour dégager la graine, et semez-la fraîche, au chaud et à l'humide. Soyez patient : il est lent à lever et lent à pousser.",
+      "Récoltez les fruits noirs mûrs, lavez la pulpe autour de la graine et semez-la vite, avant qu'elle ne sèche. Elle n'a besoin d'aucun froid mais elle est lente : une graine non traitée peut mettre trois ou quatre mois à lever.",
     lookalikeNotes: {
       "washingtonia-robusta": {
         why: "Deux palmiers en éventail dans la même rue — et le grand mince de la carte postale n'est pas l'arbre emblème de la Floride.",
@@ -136,7 +136,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "L'une des meilleures plantes de Floride pour la faune : ses fleurs précoces sont une source de nectar de premier ordre (le fameux miel de palmetto), ses fruits nourrissent ours, tortues gaufrées, oiseaux et bien d'autres, et ses touffes denses abritent d'innombrables petits animaux.",
     propagationNote:
-      "Le Serenoa repens ne se multiplie que par semis — il ne se divise pas et ne se bouture pas. Lavez la pulpe des fruits mûrs et semez la graine fraîche et au chaud. Sachez qu'il est réputé lent : des mois pour lever et des années pour faire une plante, alors achetez-en un petit si vous ne pouvez pas attendre.",
+      "Dégagez la graine des fruits mûrs bleu-noir — laissée dans le fruit, elle ne lève pas — et semez-la fraîche dès que les nuits restent chaudes. C'est lent : des mois pour lever et des années pour faire un pied de jardin. Les pépinières le multiplient surtout à partir de morceaux de ses tiges rampantes.",
     supportNotes: {
       "berry-songbirds":
         "Les fruits d'automne du Serenoa repens sont mangés par de nombreux oiseaux ; ses fleurs de printemps sont une source de nectar et de miel légendaire.",
@@ -152,7 +152,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Des fleurs d'été pour les pollinisateurs, puis les grappes de baies magenta que moqueurs, cardinaux et des dizaines d'oiseaux (et les ratons laveurs) dévorent à l'automne.",
     propagationNote:
-      "À peu près aussi facile qu'une indigène puisse l'être. Écrasez les baies magenta mûres, rincez-en les graines, et semez-les au chaud — elles ne demandent presque rien. Ou coupez au printemps ou en été quelques pousses vertes tendres : elles s'enracinent vite.",
+      "Écrasez les baies violettes mûres dans l'eau à l'automne : la bonne graine coule et la pulpe flotte. Semez-la à l'automne, à peine couverte, pour une levée au printemps, ou mettez-la d'abord deux mois au froid humide au réfrigérateur. Les boutures de pousses vertes tendres prises en été s'enracinent bien.",
     supportNotes: {
       "berry-songbirds":
         "Les grappes magenta du callicarpe sont dévorées par les moqueurs, les cardinaux et les grives à l'automne.",
@@ -177,7 +177,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Ses fleurs tubulaires rouge-orangé nourrissent les colibris, les Heliconius charithonia, les Agraulis vanillae et les coliades du printemps à l'automne, et ses baies sombres nourrissent les oiseaux.",
     propagationNote:
-      "La voie la plus simple est la bouture — coupez pendant les mois chauds une pousse tendre ou tout juste aoûtée et elle s'enracine volontiers. Vous pouvez aussi presser la graine des baies sombres mûres et la semer au chaud. Prenez vos boutures sur un pied dont vous savez qu'il est la vraie indigène, pas un « dwarf firebush » de pépinière.",
+      "Pressez la graine des baies sombres mûres et semez-la au chaud ; elle lève volontiers. Les pieds drageonnent souvent, et l'on peut déterrer et déplacer les drageons enracinés. Partez de la vraie indigène, pas de la Hamelia « naine » des jardineries, qui n'est pas indigène.",
     supportNotes: {
       "ruby-throated-hummingbird":
         "Les tubes rouge-orangé de la Hamelia patens sont un aimant à colibris et à papillons toute la saison.",
@@ -204,7 +204,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Des fleurs printanières pour les abeilles, puis de lourdes récoltes de baies rouges translucides dont jaseurs d'Amérique, merles d'Amérique, moqueurs et merlebleus se nourrissent tout l'hiver ; un couvert dense pour nicher.",
     propagationNote:
-      "Les boutures sont de loin la voie la plus facile — prélevez des pousses en voie d'aoûtement en fin d'été et faites-les raciner : vous saurez ainsi si vous avez une femelle porteuse de baies. Le semis marche aussi mais il est très lent, restant souvent un an ou plus avant de lever. N'oubliez pas qu'il faut un mâle à proximité pour qu'une femelle fructifie.",
+      "Les boutures sont la voie la plus facile : faites raciner des pousses en voie d'aoûtement prises à l'automne, et vous saurez si vous avez une femelle porteuse de baies. Le semis est très lent et met souvent deux ou trois ans à lever. Une femelle a besoin d'un mâle à proximité pour fructifier.",
     supportNotes: {
       "berry-songbirds":
         "Les baies rouges translucides de l'Ilex vomitoria persistent jusqu'en hiver pour les moqueurs, les merles d'Amérique et les jaseurs.",
@@ -220,7 +220,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Une poussée de minuscules fleurs blanches très tôt dans l'année nourrit les abeilles et les papillons qui émergent, ses fruits nourrissent les oiseaux, et elle héberge de nombreuses chenilles.",
     propagationNote:
-      "Le plus facile par bouture — prélevez au début de l'été une pousse tout juste aoûtée et faites-la raciner. Le semis est possible à partir des fruits noirs nettoyés mais il est lent et capricieux : la plupart des jardiniers s'en tiennent aux boutures.",
+      "Multipliez-le par boutures de pousses vertes tendres. Le semis est lent : le tégument dur doit être gratté, et la graine peut encore mettre plusieurs années à lever.",
     supportNotes: {
       "berry-songbirds":
         "Ses petites drupes sombres nourrissent les passereaux ; ses fleurs précoces nourrissent les pollinisateurs.",
@@ -234,7 +234,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Des fleurs blanches parfumées pour les pollinisateurs et des baies rouge-orangé qu'adorent les moqueurs, les moqueurs chats et d'autres passereaux, sur un beau persistant qui donne de la structure toute l'année.",
     propagationNote:
-      "Cueillez les fruits rouge-orangé mûrs, débarrassez la graine de sa pulpe, et semez-la fraîche et au chaud — elle ne se conserve pas, ne la laissez donc pas sécher. Les boutures aoûtées prises pendant la saison chaude s'enracinent aussi.",
+      "Facile de semis : débarrassez de leur pulpe les fruits rouge-orangé mûrs et semez la graine. Les pieds drageonnent aussi, et l'on peut déterrer et déplacer les drageons enracinés.",
     supportNotes: {
       "berry-songbirds":
         "Les baies orange-rouge de la Myrcianthes fragrans sont l'une des préférées des moqueurs et des autres frugivores.",
@@ -252,7 +252,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Ses fleurs rouges, presque toute l'année, nourrissent les colibris et les papillons et comptent parmi les préférées des bourdons ; une valeur sûre en nectar, sans souci.",
     propagationNote:
-      "L'une des fleurs sauvages les plus simples à cultiver — répandez la graine sur une terre chaude et elle lève sans peine, puis se ressème dans tout le jardin dès qu'elle se plaît. Une pousse tendre coupée et plantée en terre s'enracine aussi en un rien de temps.",
+      "Facile de semis, et elle se ressème librement. Pour récolter la graine, enfilez un petit sachet sur les épis quand ils fanent.",
     supportNotes: {
       "ruby-throated-hummingbird":
         "Ses fleurs tubulaires écarlates fleurissent presque toute l'année en Floride — une ressource sûre pour les colibris.",
@@ -266,7 +266,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "De gaies marguerites jaunes sur une longue saison nourrissent les petites abeilles indigènes, les syrphes et les papillons, puis les fringilles prennent la graine. La fleur sauvage floridienne par excellence.",
     propagationNote:
-      "Cultivez-la de semis — elle vit peu, laissez-la donc se ressemer pour la garder d'année en année. Pressez la graine fine à la surface du sol sans l'enterrer, puisqu'il lui faut de la lumière pour lever, et tenez-la au chaud et à l'humide.",
+      "Cultivez-la de semis, ou divisez les rosettes de feuilles à sa base. Elle se ressème volontiers.",
     supportNotes: {
       "sunflower-specialist-bees":
         "Le groupe de la fleur emblème de la Floride — son pollen nourrit les abeilles spécialistes des astéracées.",
@@ -282,7 +282,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "L'une des meilleures plantes à nectar d'automne de Floride : ses épis pourpres sont couverts de papillons (dont les monarques en migration) et d'abeilles indigènes, et les fringilles prennent la graine.",
     propagationNote:
-      "Cultivez-le de semis à l'automne, ou donnez à la graine quelques semaines de froid humide au réfrigérateur avant de semer — cette avance améliore la levée. Les pieds installés font de petits cormes souterrains qu'on peut soulever et séparer en fin d'hiver.",
+      "Cultivez-le de semis à l'automne. La graine non traitée a levé entièrement lors d'essais au frais et à l'humide : elle n'a besoin d'aucun traitement particulier.",
     supportNotes: {
       monarch:
         "Les épis pourpres de liatris sont un nectar d'automne de premier ordre pour les monarques en migration.",
@@ -298,7 +298,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Une plante à pollinisateurs exceptionnelle — ses fleurs mouchetées inhabituelles et ses bractées roses attirent une grande diversité d'abeilles indigènes, de guêpes et de papillons sur un sol pauvre et sec où presque rien d'autre ne fleurit.",
     propagationNote:
-      "Facile de semis — pressez la graine minuscule sur une terre chaude sans la couvrir, puisqu'il lui faut de la lumière, et elle se ressèmera pour revenir. Vous pouvez aussi diviser une touffe installée au printemps pour en faire plus.",
+      "Semez la graine non traitée à l'automne, ou mettez-la au froid humide au réfrigérateur environ trois mois et semez-la au printemps, à peine couverte. Les boutures de têtes de tiges prises de mai à août s'enracinent en un mois environ.",
     supportNotes: {
       "bumble-bees":
         "La monarde ponctuée est l'une des toutes meilleures plantes à nectar pour les abeilles et les guêpes du Sud-Est américain.",
@@ -312,7 +312,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Des nuages aériens de panicules roses à l'automne, des graines et un couvert pour les petits oiseaux, et des racines denses qui tiennent un sol sableux ou en train de s'éroder ; elle abrite les abeilles nichant au sol et héberge des hespéries.",
     propagationNote:
-      "Une graminée de saison chaude — semez la graine sur une terre chaude au printemps ou en été et elle lève sans aucun froid. Le moyen le plus rapide d'en avoir plus est de déterrer une touffe installée au printemps et de la séparer en éclats enracinés.",
+      "Peignez la graine des épis roses quand ils fanent, en fin d'automne. Elle lève bien au chaud sans aucun froid, et la plante se ressème.",
   },
   "Tripsacum dactyloides": {
     supportNotes: {
@@ -328,7 +328,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Une robuste plante de couverture et d'anti-érosion : elle cuirasse les bords humides qui s'érodent, abrite et nourrit les oiseaux et la petite faune, et héberge des hespéries.",
     propagationNote:
-      "Encore une graminée de saison chaude — semez la grosse graine sur une terre chaude au printemps et elle germe sans froid. Comme elle fait de très grosses touffes, diviser un pied installé au printemps est la voie rapide et fiable pour en avoir plus.",
+      "La graine dort dans une enveloppe dure. Semez-la en pleine terre en fin d'automne ou en hiver, ou gardez-la au froid et mouillée au réfrigérateur 6 à 10 semaines avant de semer au printemps, sans la laisser sécher. Même ainsi, elle lève lentement et inégalement.",
   },
   "Passiflora incarnata": {
     nativeNote:
@@ -338,7 +338,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "La plante nourricière de l'Agraulis vanillae et de l'Heliconius charithonia — le papillon emblème de la Floride — ainsi que du Dryas iulia ; ses fleurs pourpres extraordinaires nourrissent les xylocopes et les bourdons, et son fruit, le « maypop », nourrit la faune.",
     propagationNote:
-      "La graine dure lève bien mieux si vous entaillez ou grattez le tégument et la faites tremper une nuit avant de semer au chaud. Plus simple encore : cette liane court sous terre et fait surgir de nouveaux rejets enracinés à côté — déterrez-en un et déplacez-le. Les boutures tendres prennent aussi pendant les mois chauds.",
+      "Récoltez les fruits à l'automne quand ils se rident, lavez la gelée autour de la graine brune et semez-la directement au jardin. Les boutures de tiges prises au début du printemps s'enracinent aussi, et l'on peut déterrer et déplacer les drageons qui sortent autour d'un pied.",
     supportNotes: {
       "gulf-fritillary":
         "La passiflore est la plante nourricière de l'Agraulis vanillae.",
@@ -360,7 +360,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Il fixe son propre azote, retient le sol contre l'érosion, et se couvre de fleurs roses en pompons qui nourrissent les abeilles et hébergent les petites coliades et les hespéries — une pelouse vraiment utile à la faune.",
     propagationNote:
-      "Étant une légumineuse, sa graine a un tégument dur — entaillez-la ou grattez-la et faites-la tremper une nuit avant de semer au chaud, elle lèvera bien mieux. Plus simple encore : ce tapis s'étend par des stolons qui s'enracinent en chemin, vous pouvez donc soulever et mettre en pot les morceaux enracinés.",
+      "Entaillez ou poncez le tégument dur de la graine avant de semer — sans cela, elle lève mal. Plus simple encore : ce tapis s'étend par des stolons qui s'enracinent en chemin, et vous pouvez soulever les morceaux enracinés et les rempoter.",
   },
   "Helianthus debilis": {
     nativeNote:
@@ -370,7 +370,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Ses marguerites jaunes, presque toute l'année, nourrissent les abeilles indigènes et les papillons, ses graines nourrissent les fringilles, et son tapis rampant tient la dune et les sols sableux contre l'érosion ; il héberge la belle-dame et d'autres chenilles.",
     propagationNote:
-      "Enfantin de semis — pressez la graine sur une terre chaude et sableuse sans l'enterrer, puisqu'il lui faut de la lumière, et elle se ressèmera librement ensuite. Les boutures de pousses tendres s'enracinent aussi vite si vous voulez un tapis tout de suite.",
+      "Récoltez la graine sur les capitules fanés et semez-la ; la graine non traitée lève bien, et la plante se ressème librement. Les boutures s'enracinent aussi.",
     supportNotes: {
       "sunflower-specialist-bees":
         "Un vrai tournesol — une source de pollen clé de voûte pour les abeilles spécialistes des astéracées.",
@@ -391,7 +391,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Ses fleurs rouges s'ouvrent au cœur de l'hiver floridien — le premier nectar et le premier pollen de l'année — ses graines nourrissent les oiseaux, et il héberge des centaines de chenilles.",
     propagationNote:
-      "Ses petites graines ailées en « hélicoptère » mûrissent au printemps — attrapez-les quand elles brunissent et semez-les aussitôt. L'érable rouge est le plus facile : sa graine de printemps lève en quelques jours dans une terre chaude, sans aucun froid nécessaire.",
+      "Ses petites graines ailées en « hélicoptère » mûrissent au printemps — attrapez-les quand elles brunissent et semez-les aussitôt. Une bonne part lève dès l'été sans aucun froid, mais la graine de certains arbres attend l'année suivante.",
   },
   "Asclepias tuberosa@florida-central": {
     nativeNote:
@@ -401,7 +401,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Une plante nourricière des chenilles du monarque et du Danaus gilippus, visitée par de nombreux papillons et abeilles indigènes, sur un pied net et peu envahissant.",
     propagationNote:
-      "Partez de la graine — sa racine pivotante profonde supporte mal d'être déterrée ou divisée, n'essayez donc pas de la diviser. Semez à l'automne, ou donnez à la graine quelques semaines de froid humide au réfrigérateur avant un semis de printemps, et plantez les jeunes plants là où ils resteront pour de bon.",
+      "Récoltez la graine quand les gousses mûrissent, avant qu'elles ne s'ouvrent. Mettez-la au froid humide au réfrigérateur environ trois mois avant un semis de printemps, ou semez-la en pleine terre à l'automne. Des tronçons de la grosse racine repartent aussi : coupez-les à l'automne, quand la plante est en repos, chacun avec un bourgeon.",
     supportNotes: {
       monarch:
         "Une asclépiade et une plante hôte du monarque ; la Floride se trouve sur la voie de migration et d'hivernage du monarque.",
@@ -438,7 +438,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Des fruits rouges que les oiseaux migrateurs et sédentaires dépouillent rapidement, l'ombre du hammock et une résistance aux ouragans, et le rôle de plante nourricière de l'Eunica monima.",
     propagationNote:
-      "C'est le fameux arbre à « clôture vivante » : coupez une branche de bonne taille, même grosse comme un bras, plantez-la debout en terre pendant la saison chaude, et elle s'enracine en un arbre entier — la façon la plus facile d'en avoir un. Vous pouvez aussi débarrasser les fruits mûrs de leur pulpe et semer la graine fraîche et au chaud.",
+      "Une branche coupée et plantée en terre peut s'enraciner en un nouvel arbre. Les arbres issus de semis prennent pourtant une meilleure forme : débarrassez de leur pulpe les fruits mûrs et semez la graine.",
   },
   "Coccoloba uvifera@florida-south": {
     nativeNote:
@@ -448,7 +448,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "De grandes feuilles rondes et coriaces qui cuirassent une dune contre l'érosion, des fruits pourpres en grappes de raisin pour les oiseaux (et pour la gelée), et du nectar pour les abeilles.",
     propagationNote:
-      "Cueillez les « raisins » pourpres mûrs, pressez et lavez la pulpe autour de l'unique graine intérieure, et semez-la fraîche et au chaud sans la laisser sécher. Le raisinier est dioïque — pieds mâles et femelles séparés — si vous voulez des fruits il vous faudra donc une femelle (et un mâle à proximité pour la polliniser).",
+      "Pressez et lavez la pulpe autour de l'unique graine de chaque « raisin » pourpre mûr, et semez-la. Le raisinier a des pieds mâles et femelles séparés : pour avoir des fruits, il faut une femelle avec un mâle à proximité. Les branches basses se marcottent aussi.",
     supportNotes: {
       "berry-songbirds":
         "Les fruits pourpres mûrs du raisinier sont mangés par les moqueurs et d'autres oiseaux du littoral (et par les gens).",
@@ -462,7 +462,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Des fruits rouge-pourpre sombre dont se nourrissent les pigeons, les moqueurs et d'autres oiseaux, plus un couvert de hammock persistant et dense et une écorce lisse et marbrée.",
     propagationNote:
-      "Récoltez les fruits rouge-pourpre sombre sur un pied femelle, lavez la pulpe autour de la graine, et semez-la fraîche et au chaud — ne la laissez pas sécher d'abord. Comme son cousin le raisinier, il a des pieds mâles et femelles séparés : seules les femelles fructifient.",
+      "Lavez la pulpe autour de la graine des fruits rouge-pourpre sombre mûrs et semez-la. Comme son cousin le raisinier, il a des pieds mâles et femelles séparés : seules les femelles font des graines, et seulement avec un mâle à proximité.",
     supportNotes: {
       "berry-songbirds":
         "Les fruits sombres du Coccoloba diversifolia sont l'un des favoris du pigeon à couronne blanche et des autres oiseaux frugivores.",
@@ -482,7 +482,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Des capitules en boutons et un couvert dense pour les oiseaux et les pollinisateurs du littoral, avec des racines qui cuirassent un rivage contre l'érosion.",
     propagationNote:
-      "Récoltez les petits capitules en bouton à maturité, émiettez-les, et semez la graine fraîche et au chaud. Vous pouvez aussi faire raciner des boutures semi-ligneuses — des morceaux de tige qui commencent tout juste à s'aoûter — prises pendant la saison chaude de croissance.",
+      "Émiettez les capitules en bouton mûrs et semez la graine ; elle lève sans aucun traitement. Les boutures s'enracinent aussi.",
   },
   "Morella cerifera@florida-south": {
     nativeNote:
@@ -492,7 +492,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Des baies bleues cireuses dont dépendent en hiver les parulines à croupion jaune et bien d'autres oiseaux, un couvert de nidification dense, et le rôle de plante hôte du Calycopis cecrops.",
     propagationNote:
-      "Le Morella cerifera a des pieds mâles et femelles séparés, et seules les femelles portent les baies bleues cireuses. Frottez l'enduit cireux de la graine et semez au chaud. Il s'enracine aussi de boutures semi-ligneuses, et vous pouvez déterrer les rejets enracinés qu'il fait autour de sa base pour les replanter.",
+      "Le Morella cerifera a des pieds mâles et femelles séparés, et seules les femelles portent les baies cireuses. Frottez ou faites tremper la graine pour ôter la cire, puis mettez-la au froid humide au réfrigérateur deux ou trois mois avant de semer — cireuse ou non refroidie, elle lève mal. Les boutures ne s'enracinent qu'avec peine ; on peut en revanche déterrer et déplacer les drageons enracinés.",
     supportNotes: {
       "yellow-rumped-warbler":
         "Les baies cireuses du Morella cerifera sont la nourriture qui permet aux parulines à croupion jaune d'hiverner dans tout le Sud.",
@@ -508,7 +508,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Un couvert persistant luisant et un habitat de nidification, de petites fleurs blanches pour les pollinisateurs, et des fruits comestibles en forme de prunes que les oiseaux et les gens apprécient.",
     propagationNote:
-      "Prélevez la graine des fruits mûrs en forme de prune, rincez-la, et semez-la fraîche et au chaud avant qu'elle ne sèche. Il s'enracine aussi de boutures semi-ligneuses en saison chaude, et les branches basses se marcottent — fixez-en une au sol et elle s'enracine toute seule.",
+      "Prélevez la graine des fruits mûrs en forme de prune, rincez-la et semez-la. Les boutures ligneuses s'enracinent aussi.",
     supportNotes: {
       "berry-songbirds":
         "Les fruits de l'icaquier nourrissent oiseaux et mammifères tout le long du littoral subtropical.",
@@ -522,7 +522,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Des fleurs blanches pour les papillons et les abeilles indigènes, puis des baies rouges dont se nourrissent les moqueurs, les cardinaux et les parulines, tout cela à l'ombre sèche où presque rien d'autre ne prospère.",
     propagationNote:
-      "Pressez la graine des fruits rouges mûrs, lavez-en la pulpe, et semez-la fraîche et au chaud — elle perd vite sa faculté germinative si on la laisse sécher. Le Psychotria nervosa s'enracine aussi volontiers de boutures de pousses tendres ou tout juste aoûtées prises pendant les mois chauds.",
+      "Pressez la graine des fruits rouges mûrs, lavez-en la pulpe et semez-la au chaud. Soyez patient : elle peut mettre quelques mois à lever. Une fois installé, il se ressème.",
     supportNotes: {
       "berry-songbirds":
         "Les baies rouges du Psychotria nervosa sont prélevées par les moqueurs, les cardinaux et les moqueurs chats ; ses fleurs nourrissent les papillons.",
@@ -551,7 +551,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Des chaînes pendantes de fleurs jaunes en pois nourrissent les colibris et les abeilles presque toute l'année, et il héberge le Leptotes cassius et d'autres papillons.",
     propagationNote:
-      "Comme chez la plupart des légumineuses, la graine a un tégument dur : entaillez-la ou grattez-la et faites-la tremper une nuit avant de semer au chaud — cela laisse entrer l'eau et la met en route. Récoltez la graine mûre dans les gousses en chapelet ; rappelez-vous qu'elle est toxique, tenez-la donc à l'écart des enfants et des animaux.",
+      "Récoltez la graine mûre dans les gousses en chapelet. Entailler le tégument dur accélère la levée ; non traitée, la graine peut mettre des mois.",
   },
   "Zamia integrifolia": {
     nativeNote:
@@ -561,7 +561,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "La seule plante nourricière indigène des chenilles du rare Eumaeus atala (qui mangent aussi des cycadées importées comme le cycas du Japon) — planter cette Zamia a ramené ce papillon du bord de l'extinction locale — plus un arbuste-couvre-sol persistant, architectural et résistant à la sécheresse.",
     propagationNote:
-      "La Zamia est une cycadée qui ne se cultive que par semis — pas de bouture, pas de division. Elle a des pieds mâles et femelles séparés, et seules les femelles pollinisées font les gros cônes de graines orange. Avec des gants (la graine est toxique), retirez l'enveloppe charnue, faites tremper ou grattez légèrement la graine, et semez-la fraîche et au chaud. C'est très lent : ne perdez pas courage.",
+      "La Zamia se multiplie par semis ou par division des racines. Cônes mâles et femelles naissent sur des pieds séparés, et seules les femelles pollinisées font la graine orange, mûre en hiver. Avec des gants (graines, feuilles et racines sont toxiques), ôtez l'enveloppe charnue, qui freine la germination, puis entaillez ou fêlez la coque dure et semez au chaud. Une graine non traitée peut mettre 6 à 12 mois à lever.",
     supportNotes: {
       atala:
         "Cette Zamia est la seule plante nourricière indigène des chenilles de l'Eumaeus atala — la planter est ce qui a ramené ce papillon du bord de l'extinction dans le sud de la Floride.",
@@ -590,7 +590,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "L'une des meilleures plantes à nectar pour papillons du sud de la Floride — ses épis de fleurs bleues attirent une foule constante de papillons, d'hespéries et d'abeilles — et une plante hôte du Junonia zonalis.",
     propagationNote:
-      "Les boutures de tiges tendres s'enracinent vite dans un mélange humide, ce qui est le moyen le plus sûr d'obtenir la vraie indigène rampante plutôt qu'un sosie de jardinerie. Elle pousse aussi facilement de semis au chaud et se ressème dans le jardin dès qu'elle se plaît.",
+      "Multipliez-la par semis — la graine lève volontiers sans traitement — ou par boutures. Partez de la vraie indigène, qui court au ras du sol ; la Stachytarpheta urticifolia dressée que vendent bien des jardineries vient d'Asie tropicale.",
     supportNotes: {
       "white-peacock":
         "La Stachytarpheta jamaicensis est une plante nourricière des chenilles de l'Anartia jatrophae.",
@@ -623,7 +623,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Des grappes de baies rouges que moqueurs, moqueurs chats et autres passereaux travaillent toute l'année, sur un couvre-sol bas d'ombre aux petites fleurs rose-blanc pour les pollinisateurs.",
     propagationNote:
-      "Écrasez les baies rouges mûres pour en tirer la graine, rincez, et semez au chaud — elle lève facilement. En réalité elle se ressème si librement à l'ombre que vous arracherez plus souvent des semis en trop que vous n'en élèverez. N'oubliez pas que les baies sont toxiques pour les personnes.",
+      "Cueillez les baies quand elles sont rouges et dodues et semez la graine ; elle lève bien, même si les semis poussent lentement. Les boutures s'enracinent aussi, et la plante se ressème.",
   },
   "Passiflora suberosa@florida-south": {
     nativeNote:
@@ -633,7 +633,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "La plante nourricière des chenilles de l'Heliconius charithonia — le papillon emblème de la Floride — ainsi que du Dryas iulia et de l'Agraulis vanillae ; ses petites baies sombres nourrissent aussi les oiseaux.",
     propagationNote:
-      "Pressez la graine des baies sombres mûres et semez-la au chaud ; elle lève volontiers et se ressème dans le jardin. Les boutures de tiges tendres s'enracinent facilement, et la liane émet aussi des rejets qu'on peut déterrer et déplacer — il est donc rarement difficile d'en avoir plus.",
+      "Pressez la graine des baies sombres mûres et semez-la, mais attendez-vous à une levée lente. Diviser les racines d'un pied installé est la voie la plus rapide.",
     supportNotes: {
       "zebra-longwing":
         "La Passiflora suberosa est une plante hôte de prédilection pour l'Heliconius charithonia.",
@@ -654,7 +654,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "L'un des meilleurs arbres pour la faune, même ici : des centaines d'espèces de chenilles, des glands pour les geais et les écureuils, un abri persistant, et des branches qui hébergent broméliacées, orchidées et fougère de résurrection.",
     propagationNote:
-      "Ramassez les glands à leur chute en automne et semez-les aussitôt — le chêne de Virginie est un chêne blanc : ils germent tout de suite et n'ont jamais besoin de passer par le froid. Mettez-les dans un seau d'eau et jetez ceux qui flottent, gardez humides ceux qui coulent (ne les laissez jamais sécher), et plantez là où l'arbre restera, car la racine pivotante profonde supporte mal d'être déplacée.",
+      "Ramassez les glands à leur chute en automne et semez-les aussitôt — le chêne de Virginie est un chêne blanc : ils germent tout de suite et n'ont jamais besoin de passer par le froid. Mettez-les dans un seau d'eau et jetez ceux qui flottent, gardez humides ceux qui coulent (ne les laissez jamais sécher), et plantez là où l'arbre restera ou dans un pot profond, car il descend une longue racine pivotante.",
     supportNotes: {
       "acorn-birds":
         "Les glands du chêne de Virginie nourrissent geais, pics et canards dans le sud de la Floride aussi.",
@@ -676,7 +676,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Ses panicules de fleurs d'été grouillent d'abeilles ; ses fruits nourrissent de nombreux oiseaux et mammifères ; et sa couronne et ses bottes abritent chauves-souris, rainettes et oiseaux nicheurs.",
     propagationNote:
-      "Le Sabal palmetto ne se cultive que par semis — on ne peut ni le diviser ni le bouturer. Récoltez les fruits noirs mûrs, débarrassez les graines rondes de leur pulpe, et semez-les fraîches dans une terre chaude et humide. Soyez patient : la levée et la croissance sont lentes, et il faut des années pour former un tronc.",
+      "Récoltez les fruits noirs mûrs, lavez la pulpe autour de la graine et semez-la vite, avant qu'elle ne sèche. Elle n'a besoin d'aucun froid mais elle est lente : une graine non traitée peut mettre trois ou quatre mois à lever.",
     lookalikeNotes: {
       "washingtonia-robusta": {
         why: "Deux palmiers en éventail dans la même rue — et le grand mince de la carte postale n'est pas l'arbre emblème de la Floride.",
@@ -705,7 +705,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "L'une des meilleures plantes de Floride pour la faune : ses fleurs sont une source de nectar de premier ordre (le miel de palmetto), ses fruits nourrissent de nombreux animaux, et ses touffes abritent d'innombrables petites créatures et pollinisateurs.",
     propagationNote:
-      "Le Serenoa repens ne se cultive que par semis — il ne se divise pas et ne se bouture pas. Débarrassez les fruits mûrs de leur pulpe et semez la graine fraîche et au chaud. Attendez-vous à une longue attente : la levée est irrégulière et les jeunes plants poussent extrêmement lentement, alors commencez par un petit plant et soyez patient.",
+      "Dégagez la graine des fruits mûrs bleu-noir — laissée dans le fruit, elle ne lève pas — et semez-la fraîche dès que les nuits restent chaudes. C'est lent : des mois pour lever et des années pour faire un pied de jardin. Les pépinières le multiplient surtout à partir de morceaux de ses tiges rampantes.",
   },
   "Hamelia patens@florida-south": {
     nativeNote:
@@ -715,7 +715,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Ses tubes rouge-orangé nourrissent les colibris, les Heliconius charithonia, les Agraulis vanillae et les coliades toute l'année, et ses baies sombres nourrissent les moqueurs et les moqueurs chats.",
     propagationNote:
-      "La Hamelia patens est l'une des indigènes les plus faciles à enraciner — coupez une pousse tendre ou à peine aoûtée, effeuillez-en la base, et plantez-la dans un terreau humide. Vous pouvez aussi presser la graine des baies sombres mûres et la semer au chaud.",
+      "Pressez la graine des baies sombres mûres et semez-la au chaud ; elle lève volontiers. Les pieds drageonnent souvent, et l'on peut déterrer et déplacer les drageons enracinés. Partez de la vraie indigène, pas de la Hamelia « naine » des jardineries, qui n'est pas indigène.",
     supportNotes: {
       "ruby-throated-hummingbird":
         "La Hamelia patens est un arbuste à nectar de premier ordre pour les colibris et les papillons sous les tropiques.",
@@ -742,7 +742,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Des fleurs blanches parfumées pour les pollinisateurs et des baies rouge-orangé qu'adorent les moqueurs, les moqueurs chats et d'autres passereaux, sur un beau persistant en toute saison.",
     propagationNote:
-      "Dégagez la graine des baies rouge-orangé mûres et semez-la fraîche et au chaud sans la laisser sécher. C'est un peu lent mais fiable par semis ; les boutures semi-ligneuses prises en saison chaude sont une autre voie.",
+      "Facile de semis : débarrassez de leur pulpe les fruits rouge-orangé mûrs et semez la graine. Les pieds drageonnent aussi, et l'on peut déterrer et déplacer les drageons enracinés.",
     supportNotes: {
       "berry-songbirds":
         "Les baies de la Myrcianthes fragrans sont l'une des préférées des moqueurs et des autres passereaux.",
@@ -756,7 +756,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Ses fleurs rouges, presque toute l'année, nourrissent les colibris et les papillons et comptent parmi les préférées des bourdons ; une valeur sûre en nectar, sans souci.",
     propagationNote:
-      "La plus facile de toutes — semez la petite graine au chaud et elle lève vite, et les pieds installés se ressèment : laissez simplement quelques épis grener et vous en aurez toujours. Vous pouvez aussi enraciner des boutures de tiges tendres si vous voulez la copie d'un pied particulier.",
+      "Facile de semis, et elle se ressème librement. Pour récolter la graine, enfilez un petit sachet sur les épis quand ils fanent.",
     supportNotes: {
       "ruby-throated-hummingbird":
         "La sauge écarlate fleurit presque toute l'année dans le sud de la Floride — une ressource constante pour les colibris.",
@@ -770,7 +770,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Des nuages de panicules roses à l'automne, des graines et un couvert pour les petits oiseaux, des racines denses qui tiennent un sol sableux ou en train de s'éroder, et un abri pour les abeilles nichant au sol ; elle héberge des hespéries.",
     propagationNote:
-      "C'est une graminée de saison chaude : semez la graine cotonneuse à la surface d'une terre chaude au printemps ou en été plutôt qu'en terre froide. Le plus simple pour en avoir plus est de déterrer une touffe installée au printemps et de la fendre en morceaux, chacun avec des racines, puis de les replanter.",
+      "Peignez la graine des épis roses quand ils fanent, en fin d'automne. Elle lève bien au chaud sans aucun froid, et la plante se ressème.",
   },
   "Tripsacum dactyloides@florida-south": {
     supportNotes: {
@@ -784,7 +784,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Une robuste plante de couverture et d'anti-érosion qui cuirasse les bords humides qui s'érodent, abrite et nourrit les oiseaux et la petite faune, et héberge des hespéries.",
     propagationNote:
-      "Semez la grosse graine dure dans une terre chaude au printemps — elle germe inégalement, ne comptez donc pas voir lever chacune. Bien plus facile : divisez une touffe mûre au printemps, fendez-la à la bêche en morceaux enracinés et replantez. Laissez de la place aux éclats, car ils s'étoffent en grosses touffes.",
+      "La graine dort dans une enveloppe dure. Semez-la en pleine terre en fin d'automne ou en hiver, ou gardez-la au froid et mouillée au réfrigérateur 6 à 10 semaines avant de semer au printemps, sans la laisser sécher. Même ainsi, elle lève lentement et inégalement.",
   },
   "Helianthus debilis@florida-south": {
     nativeNote:
@@ -794,7 +794,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Ses marguerites jaunes, presque toute l'année, nourrissent les abeilles indigènes et les papillons, ses graines nourrissent les oiseaux, et son tapis rampant tient la dune et les sols sableux contre l'érosion.",
     propagationNote:
-      "Récoltez la graine sèche sur les capitules fanés et répandez-la à la surface d'une terre chaude et sableuse, en la pressant mais en la couvrant à peine, car elle germe mieux avec un peu de lumière. Elle se ressème généreusement une fois installée, et les boutures tendres s'enracinent facilement aussi.",
+      "Récoltez la graine sur les capitules fanés et semez-la ; la graine non traitée lève bien, et la plante se ressème librement. Les boutures s'enracinent aussi.",
     supportNotes: {
       "sunflower-specialist-bees":
         "Le pollen de l'Helianthus debilis fait vivre les abeilles spécialistes des astéracées le long du littoral.",

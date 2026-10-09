@@ -78,9 +78,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 17 native Lepidoptera recorded breeding on New Zealand Metrosideros (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["seed-surface-light", "cuttings-semi-hardwood"],
-      note: "Pick the capsules in February–March as they brown, dry them in a paper bag, and sow the dust-fine seed on the surface of damp mix. Collect from wild coastal trees: street trees often cross with the Kermadec pōhutukawa.",
-      basis: "New Zealand Plant Conservation Network; Project Crimson.",
+      methods: ["seed-direct"],
+      note: "Collect the capsules as they ripen, mostly March–April, and sow the seed fresh: it loses viability within weeks, faster if it dries out. Cuttings rarely strike. Take seed from wild trees, since planted Kermadec pōhutukawa crosses with it.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -113,9 +113,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 3 native Lepidoptera recorded breeding on New Zealand Agathis (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants. Kauri dieback: Tiakina Kauri (Kauri Protection Agency).",
     propagation: {
-      methods: ["seed-warm"],
-      note: "Cones shatter in March–April; catch the winged seed and sow it at once, since it dies within weeks. Keep seedlings in part shade for their first years.",
-      basis: "New Zealand Plant Conservation Network; Tāne's Tree Trust.",
+      methods: ["seed-direct"],
+      note: "Collect seed from the cones as they ripen, between December and May, and sow it fresh. Cuttings very rarely strike.",
+      basis: "New Zealand Plant Conservation Network; Seed Information Database.",
     },
   },
   {
@@ -148,9 +148,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 2 native Lepidoptera recorded breeding on New Zealand Vitex (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["seed-warm"],
-      note: "Gather ripe red fruit whenever the tree has it, clean off the flesh and sow fresh. Germination is uneven, spread over weeks to months.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["seed-direct",  "seed-scarify"],
+      note: "Clean the flesh off ripe fruit and sow the seed fresh. It can be slow to come up; nicking the seed coat speeds it. Shelter seedlings from frost.",
+      basis: "New Zealand Plant Conservation Network; Tāne's Tree Trust.",
     },
   },
   {
@@ -184,8 +184,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 8 native Lepidoptera recorded breeding on New Zealand Sophora (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants. Toxicity: National Poisons Centre (New Zealand).",
     propagation: {
       methods: ["seed-scarify"],
-      note: "Pods ripen in late summer and autumn. Nick or sand the hard yellow seed, soak it overnight, and sow in spring — quick and easy once scarified.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      note: "Pods ripen in October–November. Nick the hard seed coat with a knife or rub it on sandpaper, soak it overnight, and sow; it comes up easily once treated.",
+      basis: "New Zealand Plant Conservation Network; Tāne's Tree Trust.",
     },
   },
   {
@@ -218,9 +218,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 4 native Lepidoptera recorded breeding on New Zealand Corynocarpus (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants. Toxicity: National Poisons Centre (New Zealand).",
     propagation: {
-      methods: ["seed-warm"],
-      note: "Clean the flesh off ripe orange fruit in late summer (wear gloves) and sow the seed fresh; it comes up readily.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["seed-direct"],
+      note: "Clean the flesh off ripe orange fruit (January–April) and sow the seed fresh; it comes up easily. Cuttings very rarely strike. The kernels are poisonous.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -254,8 +254,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 3 native Lepidoptera recorded breeding on New Zealand Knightia (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-direct"],
-      note: "The woody pods ripen a year after flowering; collect them in summer as they split and sow the seed fresh, barely covered.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      note: "The pods take a year to ripen, splitting between October and January. Sow the seed fresh. Cuttings very rarely strike.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -288,9 +288,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 1 native Lepidoptera recorded breeding on New Zealand Dysoxylum (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["seed-warm"],
-      note: "The capsules take over a year to ripen. Collect them when they split in late summer to show red-coated seed, and sow at once.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["seed-direct"],
+      note: "Collect the capsules as they split, April–August, and sow the seed at once: it does not survive drying out.",
+      basis: "New Zealand Plant Conservation Network; Seed Information Database; Tāne's Tree Trust.",
     },
   },
   {
@@ -323,9 +323,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 11 native Lepidoptera recorded breeding on New Zealand Alectryon (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["seed-warm"],
-      note: "Collect split capsules in summer, rub off the red flesh and sow fresh. Up within weeks.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["seed-direct"],
+      note: "Collect the seed when the capsules split, rub off the red flesh and sow it fresh: it does not survive drying out.",
+      basis: "New Zealand Plant Conservation Network; Seed Information Database.",
     },
   },
   {
@@ -358,9 +358,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 11 native Lepidoptera recorded breeding on New Zealand Podocarpus (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["seed-warm", "cuttings-semi-hardwood"],
-      note: "Collect the seeds with their swollen red stalks from a female tree in March–May, and sow fresh. Semi-hardwood cuttings root too.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["seed-direct",  "cuttings-hardwood"],
+      note: "Collect the seeds with their swollen red stalks from a female tree, mostly in April–May, and sow fresh. Hardwood cuttings root too.",
+      basis: "New Zealand Plant Conservation Network; Tāne's Tree Trust.",
     },
   },
   {
@@ -393,9 +393,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 7 native Lepidoptera recorded breeding on New Zealand Dacrycarpus (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["seed-warm"],
-      note: "Collect the fleshy seed stalks from a female tree in autumn and sow the seed fresh.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["seed-direct",  "cuttings-hardwood"],
+      note: "Collect the fleshy seed stalks from a female tree in February–April and sow the seed fresh. Hardwood cuttings root, but slowly.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -428,9 +428,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 6 native Lepidoptera recorded breeding on New Zealand Cordyline (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["seed-direct", "cuttings-hardwood"],
-      note: "Sow the small black seed fresh in autumn. Or cut a length of trunk or branch and set it in the ground; it sprouts.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["seed-direct",  "cuttings-hardwood"],
+      note: "Sow fresh seed from the ripe berries (January–March). Stem and even trunk cuttings root.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -463,9 +463,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 15 native Lepidoptera recorded breeding on New Zealand Kunzea (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["seed-surface-light"],
-      note: "Pick the woody capsules in late summer, dry them in a paper bag and sprinkle the fine seed on damp mix. Up in a few weeks.",
-      basis: "New Zealand Plant Conservation Network; Tāne's Tree Trust.",
+      methods: ["seed-direct"],
+      note: "Sow the fine seed fresh from ripe capsules; it grows easily. Cuttings strike only with great difficulty.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -498,9 +498,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 18 native Lepidoptera recorded breeding on New Zealand Hoheria (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["seed-direct", "cuttings-semi-hardwood"],
-      note: "Sow seed fresh in autumn, or take semi-hardwood cuttings in late summer.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["seed-direct",  "cuttings-semi-hardwood"],
+      note: "Sow seed fresh in autumn, or take semi-hardwood cuttings in late summer or autumn.",
+      basis: "New Zealand Plant Conservation Network; RHS.",
     },
   },
   {
@@ -534,8 +534,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 22 native Lepidoptera recorded breeding on New Zealand Melicytus (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-direct"],
-      note: "Squash the violet berries in autumn, rinse out the seed and sow fresh.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      note: "Squash ripe violet berries (November–March), rinse out the seed and sow fresh.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   // ---------------- SHRUBS ----------------
@@ -569,9 +569,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 29 native Lepidoptera recorded breeding on New Zealand Leptospermum (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["seed-surface-light", "cuttings-semi-hardwood"],
-      note: "Dry the capsules in a paper bag in late summer and sow the fine seed on the surface of damp mix. Semi-hardwood cuttings root in autumn.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["seed-direct",  "cuttings-semi-hardwood"],
+      note: "The capsules stay on the bush all year. Sow the seed fresh, before it dries out. Cuttings are difficult; semi-hardwood ones need bottom heat in summer.",
+      basis: "New Zealand Plant Conservation Network; RHS; Tāne's Tree Trust.",
     },
   },
   {
@@ -604,9 +604,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 10 native Lepidoptera recorded breeding on New Zealand Pittosporum (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["seed-direct", "cuttings-semi-hardwood"],
-      note: "The seed is sticky: wash it with a drop of detergent, rinse, and sow in autumn.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["seed-direct",  "cuttings-semi-hardwood"],
+      note: "Sow the seed fresh from split capsules (January–March). Semi-hardwood cuttings root too.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -640,8 +640,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 10 native Lepidoptera recorded breeding on New Zealand Pittosporum (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-direct"],
-      note: "Collect the split capsules in autumn, wash the sticky seed and sow at once.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      note: "Sow the seed fresh from split capsules; it grows easily.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -674,9 +674,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 27 native Lepidoptera recorded breeding on New Zealand Coprosma (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["seed-direct", "cuttings-semi-hardwood"],
-      note: "Squash ripe berries in autumn, rinse out the seed and sow. Cuttings root easily almost any time.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["seed-direct",  "cuttings-semi-hardwood",  "layering"],
+      note: "Sow fresh seed from ripe berries. Semi-hardwood cuttings and layered stems root easily.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -709,9 +709,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 27 native Lepidoptera recorded breeding on New Zealand Coprosma (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["seed-direct", "cuttings-hardwood"],
-      note: "Sow cleaned seed in autumn, or push leafless cuttings into damp ground in winter.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["seed-direct",  "cuttings-semi-hardwood"],
+      note: "Sow fresh seed from ripe berries (April–May). Semi-hardwood cuttings root easily.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -744,9 +744,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 18 native Lepidoptera recorded breeding on New Zealand Veronica (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["cuttings-softwood", "cuttings-semi-hardwood"],
-      note: "Take tip cuttings any time from spring to autumn; they root within weeks.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["cuttings-semi-hardwood",  "seed-direct"],
+      note: "Semi-hardwood cuttings root easily, and fresh seed comes up easily too.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -779,9 +779,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 5 native Lepidoptera recorded breeding on New Zealand Piper (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "seed-direct"],
-      note: "Semi-hardwood cuttings root readily in late summer. Or squash ripe orange fruit onto damp mix and keep it warm.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["cuttings-semi-hardwood",  "seed-direct"],
+      note: "Semi-hardwood cuttings root easily, and so does fresh seed from ripe fruit. Keep young plants from frost.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -814,9 +814,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 16 native Lepidoptera recorded breeding on New Zealand Pseudopanax (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "seed-direct"],
-      note: "Semi-hardwood cuttings root in late summer and autumn; seed is slower.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["cuttings-semi-hardwood",  "layering"],
+      note: "Take semi-hardwood cuttings or air-layer a branch in summer.",
+      basis: "RHS.",
     },
   },
   {
@@ -849,9 +849,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 4 native Lepidoptera recorded breeding on New Zealand Myoporum (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants. Toxicity: National Poisons Centre (New Zealand).",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "seed-direct"],
-      note: "Cuttings root easily in late summer; seed sown fresh in autumn is slower.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["cuttings-semi-hardwood",  "seed-direct"],
+      note: "Semi-hardwood cuttings and fresh seed both grow easily. Some nursery ngaio is Tasmanian boobialla or a hybrid, so take material from wild plants.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -884,9 +884,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 3 native Lepidoptera recorded breeding on New Zealand Pomaderris (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["seed-scarify"],
-      note: "The seed is hard: pour just-boiled water over it, soak overnight, and sow in spring.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["seed-direct",  "cuttings-semi-hardwood"],
+      note: "Sow fresh seed; it is slow to come up. Semi-hardwood cuttings strike slowly and unreliably.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   // ---------------- PERENNIALS ----------------
@@ -920,9 +920,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 8 native Lepidoptera recorded breeding on New Zealand Phormium (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["division", "seed-direct"],
-      note: "Split off a fan with roots in autumn or spring and trim its leaves by half. Seed sown in spring is slower, and wild clumps cross freely.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["division",  "seed-direct"],
+      note: "Split off rooted fans in spring, or sow fresh seed; both are easy.",
+      basis: "New Zealand Plant Conservation Network; RHS.",
     },
   },
   {
@@ -955,9 +955,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 8 native Lepidoptera recorded breeding on New Zealand Phormium (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["division", "seed-direct"],
-      note: "Divide in autumn or spring, as for harakeke.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["division",  "seed-direct"],
+      note: "Split off rooted fans, or sow fresh seed; both are easy.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -990,9 +990,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 4 native Lepidoptera recorded breeding on New Zealand Astelia (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["division", "seed-direct"],
-      note: "Divide clumps in autumn, or sow the cleaned seed of ripe berries.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["division"],
+      note: "Divide clumps in spring. The divisions are slow to establish.",
+      basis: "RHS.",
     },
   },
   {
@@ -1025,9 +1025,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 3 native Lepidoptera recorded breeding on New Zealand Arthropodium (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["division", "seed-direct"],
-      note: "Divide in autumn, or sow the black seed fresh in summer.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["division",  "seed-direct"],
+      note: "Divide in spring, or sow seed in autumn or early spring.",
+      basis: "RHS.",
     },
   },
   {
@@ -1060,9 +1060,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 0 — Plant-SyNZ (Manaaki Whenua – Landcare Research) records no native moth or butterfly breeding on New Zealand Libertia at reliability ≥ 7. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["division", "seed-direct"],
-      note: "Divide in autumn, or sow seed fresh from the ripe heads.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["division",  "seed-direct"],
+      note: "Sow fresh seed from the ripe heads (December–April), or divide established clumps.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   // ---------------- GRASSES & SEDGES ----------------
@@ -1096,9 +1096,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 3 native Lepidoptera recorded breeding on New Zealand Austroderia (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["division", "seed-direct"],
-      note: "Divide with a spade in spring. Seed sown on the surface in spring comes up readily.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["division",  "seed-direct"],
+      note: "Divide established plants, or sow fresh seed. Ripe seed heads pinned to damp soil soon come up.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -1131,9 +1131,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 2 native Lepidoptera recorded breeding on New Zealand Apodasmia (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["division"],
-      note: "Divide clumps in spring, keeping a good wedge of rhizome with each piece.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["division",  "seed-direct"],
+      note: "Plant rooted pieces, or sow fresh seed; both grow easily.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -1166,9 +1166,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 3 native Lepidoptera recorded breeding on New Zealand Ficinia (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["division"],
-      note: "Divide in autumn or spring.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["division",  "seed-direct"],
+      note: "Divide whole plants, or sow fresh seed; both grow easily.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -1201,9 +1201,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 8 native Lepidoptera recorded breeding on New Zealand Carex (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["division", "seed-direct"],
-      note: "Divide in spring, or sow seed on wet mix.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["division",  "seed-direct"],
+      note: "Divide established plants, or sow fresh seed; both grow easily.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -1236,9 +1236,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 1 native Lepidoptera recorded breeding on New Zealand Microlaena (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["division", "seed-direct"],
-      note: "Divide in autumn, or scatter fresh seed onto bare soil.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["division"],
+      note: "Divide established clumps.",
+      basis: "No published source checked yet.",
     },
   },
   // ---------------- GROUNDCOVERS ----------------
@@ -1272,9 +1272,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 3 native Lepidoptera recorded breeding on New Zealand Dichondra (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["division", "runners"],
-      note: "Lift rooted pieces of runner in spring and press them into damp soil.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["runners",  "seed-direct"],
+      note: "Replant rooted pieces of runner, or sow fresh seed.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -1307,9 +1307,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 3 native Lepidoptera recorded breeding on New Zealand Lobelia (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["division", "runners"],
-      note: "Lift rooted runners in spring or autumn and replant.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["runners"],
+      note: "Replant rooted pieces of runner.",
+      basis: "No published source checked yet.",
     },
   },
   {
@@ -1342,9 +1342,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 2 native Lepidoptera recorded breeding on New Zealand Selliera (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["division", "runners"],
-      note: "Lift rooted runners in spring and replant them in wet ground.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["division",  "seed-direct"],
+      note: "Divide established plants, or sow fresh seed. Plant it in ground that stays damp.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -1377,9 +1377,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 0 — Plant-SyNZ (Manaaki Whenua – Landcare Research) records no native moth or butterfly breeding on New Zealand Disphyma at reliability ≥ 7. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["cuttings-softwood", "division"],
-      note: "Snap off a piece of stem in spring or summer, let it dry a day, and push it into sandy mix.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["division",  "seed-direct"],
+      note: "Replant rooted pieces, or sow fresh seed; both grow easily.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   // ---------------- VINES ----------------
@@ -1413,9 +1413,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 2 native Lepidoptera recorded breeding on New Zealand Clematis (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "layering", "seed-direct"],
-      note: "Take cuttings between two leaf pairs in late summer, or peg a stem to the ground and wait for roots.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["seed-direct"],
+      note: "Grows easily from seed. Cuttings are fickle and slow to root.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -1448,9 +1448,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 0 — Plant-SyNZ (Manaaki Whenua – Landcare Research) records no native moth or butterfly breeding on New Zealand Passiflora at reliability ≥ 7. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["seed-warm", "cuttings-semi-hardwood"],
-      note: "Sow seed from ripe orange fruit fresh in autumn and keep it warm.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["seed-direct"],
+      note: "Only female plants bear fruit. Collect it ripe in autumn and sow the seed.",
+      basis: "Tāne's Tree Trust.",
     },
   },
   {
@@ -1483,9 +1483,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 32 native Lepidoptera recorded breeding on New Zealand Muehlenbeckia (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "layering", "seed-direct"],
-      note: "Any stem touching soil roots; cut it off and move it. Cuttings take easily in late summer.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["cuttings-semi-hardwood"],
+      note: "Semi-hardwood cuttings root in summer with bottom heat.",
+      basis: "RHS.",
     },
   },
   {
@@ -1518,9 +1518,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 5 native Lepidoptera recorded breeding on New Zealand Parsonsia (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["seed-direct", "cuttings-semi-hardwood"],
-      note: "Sow the silky-tufted seed fresh in autumn, or take cuttings in late summer.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["seed-direct"],
+      note: "Seed sprouts well with no pretreatment.",
+      basis: "Seed Information Database.",
     },
   },
   // ---------------- FERNS ----------------
@@ -1555,8 +1555,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 15 native Lepidoptera recorded breeding on New Zealand Cyathea (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["spores"],
-      note: "Sow spores from the silvery undersides of ripe fronds onto sterile damp mix under glass, and wait months.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      note: "Sow fresh spores; they are slow. A freshly felled trunk usually resprouts if planted and kept watered.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -1590,8 +1590,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 15 native Lepidoptera recorded breeding on New Zealand Cyathea (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["spores"],
-      note: "Sow spores on sterile damp mix under glass; the black tree fern is among the quickest from spore.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      note: "Sow fresh spores; they are slow, and young plants often die when moved. A freshly felled trunk usually resprouts if planted and kept watered.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -1624,9 +1624,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 5 native Lepidoptera recorded breeding on New Zealand Dicksonia (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["spores", "division"],
-      note: "Dig up a young offshoot from its runner in spring, or sow spores.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["division",  "spores"],
+      note: "Dig up and replant the young plants around it, or sow fresh spores. Mature trunks transplant too.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
   {
@@ -1659,9 +1659,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 3 native Lepidoptera recorded breeding on New Zealand Asplenium (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["division", "spores"],
-      note: "Pin a frond carrying bulbils onto damp mix, and the chickens root where they sit.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["division",  "spores"],
+      note: "Pot up the plantlets on the fronds once they have three or four leaves, or sow spores. Most plants sold under this name are a sterile hybrid.",
+      basis: "New Zealand Plant Conservation Network; RHS.",
     },
   },
   {
@@ -1694,9 +1694,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 5 native Lepidoptera recorded breeding on New Zealand Blechnum (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
-      methods: ["division", "spores"],
-      note: "Divide a clump in spring with a spade.",
-      basis: "New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
+      methods: ["division",  "spores"],
+      note: "Dig up and replant rooted pieces, or sow fresh spores. It transplants well.",
+      basis: "New Zealand Plant Conservation Network.",
     },
   },
 ];

@@ -40,15 +40,18 @@
 //     "Carpinus betulus"                    → the Atlantic paragraphs
 //     "Carpinus betulus@france-continental" → the Continental ones
 //
-// The qualified key wins when the caller says which region it is showing;
-// everything else falls through to the plain key, which is why 207 of the 229
-// taxa need only one entry. A qualified entry is **complete for its region** —
-// its own four paragraphs and its own wildlife and look-alike ties — rather than
-// a patch over the plain one, so there is never a half-and-half row to reason
-// about.
+// Every plant paragraph is qualified with its region in the end: a locale file
+// is written from one region's English, and `locales/prose.fr/index.ts` files
+// its plain keys under that region. A plain key used to answer for every
+// region's row of the taxon, which handed a French reader in Ireland or
+// Michigan another list's paragraphs — about 145 rows per field. Now a row
+// with no paragraph for its own region shows its English, and the page says
+// so. A qualified entry is **complete for its region** — its own four
+// paragraphs and its own wildlife and look-alike ties — so there is never a
+// half-and-half row to reason about.
 //
-// Callers that don't know their region (there are none today) simply get the
-// plain key, which is a real translation of a real row — not a blank.
+// Look-alikes, invasives, wildlife and swaps aren't region rows: their keys
+// stay plain and answer everywhere.
 import type { AlternativeLink, Invasive, InvasiveMark, InvasiveRemoval, Lookalike, LookalikeLink, Ornamental, Plant, SupportLink, SwapEdge, TellApart, Wildlife } from "../types";
 import { getLang } from "./i18n";
 

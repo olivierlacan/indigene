@@ -45,14 +45,30 @@ import { MID_ATLANTIC } from "./mid-atlantic";
 import { PNW } from "./pnw";
 import { WILDLIFE_FR } from "./wildlife";
 
+/**
+ * A region's plant paragraphs, filed under that region alone.
+ *
+ * Each file is written from one region's English. A plain `"Salix caprea"` key
+ * used to answer for every region's row of that taxon, so a French reader in
+ * Ireland or Michigan was handed paragraphs written for another list — about
+ * 145 rows per field, "native here" notes included. Qualifying every key with
+ * its file's region means a paragraph only ever shows on the row it was
+ * translated from; any other row shows its own English, and the page says so.
+ */
+function inRegion(regionId: string, table: ProseTable): ProseTable {
+  return Object.fromEntries(
+    Object.entries(table).map(([key, prose]) => [key.includes("@") ? key : `${key}@${regionId}`, prose])
+  );
+}
+
 export const PROSE_FR: ProseTable = {
-  ...FRANCE_ATLANTIC,
-  ...FRANCE_CONTINENTAL,
-  ...FRANCE_MEDITERRANEAN,
-  ...FRANCE_ALPINE,
-  ...MID_ATLANTIC,
-  ...PNW,
-  ...FLORIDA,
+  ...inRegion("france-atlantic", FRANCE_ATLANTIC),
+  ...inRegion("france-continental", FRANCE_CONTINENTAL),
+  ...inRegion("france-mediterranean", FRANCE_MEDITERRANEAN),
+  ...inRegion("france-alpine", FRANCE_ALPINE),
+  ...inRegion("mid-atlantic", MID_ATLANTIC),
+  ...inRegion("pnw", PNW),
+  ...inRegion("florida-central", FLORIDA),
   ...WILDLIFE_FR,
   ...LOOKALIKES_FR,
   ...ALTERNATIVES_FR,

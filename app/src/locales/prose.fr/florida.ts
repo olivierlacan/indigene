@@ -424,7 +424,7 @@ export const FLORIDA: ProseTable = {
   // -------------------------------------------------------------------------
   // Floride du Sud et les Keys — les espèces qui n'appartiennent qu'ici.
   // -------------------------------------------------------------------------
-  "Bursera simaruba": {
+  "Bursera simaruba@florida-south": {
     supportNotes: {
       "berry-songbirds":
         "Le gommier rouge fructifie en fin d'hiver, exactement quand les tyrans et les viréos migrateurs passent et qu'il n'y a presque rien d'autre de mûr.",
@@ -440,7 +440,7 @@ export const FLORIDA: ProseTable = {
     propagationNote:
       "C'est le fameux arbre à « clôture vivante » : coupez une branche de bonne taille, même grosse comme un bras, plantez-la debout en terre pendant la saison chaude, et elle s'enracine en un arbre entier — la façon la plus facile d'en avoir un. Vous pouvez aussi débarrasser les fruits mûrs de leur pulpe et semer la graine fraîche et au chaud.",
   },
-  "Coccoloba uvifera": {
+  "Coccoloba uvifera@florida-south": {
     nativeNote:
       "Arbre-arbuste littoral emblématique des plages et des dunes du sud de la Floride.",
     careNote:
@@ -454,7 +454,7 @@ export const FLORIDA: ProseTable = {
         "Les fruits pourpres mûrs du raisinier sont mangés par les moqueurs et d'autres oiseaux du littoral (et par les gens).",
     },
   },
-  "Coccoloba diversifolia": {
+  "Coccoloba diversifolia@florida-south": {
     nativeNote:
       "Arbre dressé des hammocks du sud de la Floride et des Keys — le cousin de l'intérieur du raisinier bord de mer.",
     careNote:
@@ -468,7 +468,7 @@ export const FLORIDA: ProseTable = {
         "Les fruits sombres du Coccoloba diversifolia sont l'un des favoris du pigeon à couronne blanche et des autres oiseaux frugivores.",
     },
   },
-  "Conocarpus erectus": {
+  "Conocarpus erectus@florida-south": {
     supportNotes: {
       "grass-skippers":
         "Les petites fleurs en cône du palétuvier gris sont travaillées par les hespéries de la mangrove et des hammocks et par les grands papillons-dagues — les papillons de la frange côtière.",
@@ -484,7 +484,7 @@ export const FLORIDA: ProseTable = {
     propagationNote:
       "Récoltez les petits capitules en bouton à maturité, émiettez-les, et semez la graine fraîche et au chaud. Vous pouvez aussi faire raciner des boutures semi-ligneuses — des morceaux de tige qui commencent tout juste à s'aoûter — prises pendant la saison chaude de croissance.",
   },
-  "Morella cerifera": {
+  "Morella cerifera@florida-south": {
     nativeNote:
       "Petit arbre ou grand arbuste rapide et adaptable, indigène dans toute la Floride, sud compris.",
     careNote:
@@ -500,7 +500,7 @@ export const FLORIDA: ProseTable = {
         "Ses fruits nourrissent aussi les hirondelles bicolores, les moqueurs chats et d'autres oiseaux hivernants.",
     },
   },
-  "Chrysobalanus icaco": {
+  "Chrysobalanus icaco@florida-south": {
     nativeNote:
       "Arbuste persistant des côtes, des pinèdes sur roche calcaire et des bords humides du sud de la Floride.",
     careNote:
@@ -514,7 +514,7 @@ export const FLORIDA: ProseTable = {
         "Les fruits de l'icaquier nourrissent oiseaux et mammifères tout le long du littoral subtropical.",
     },
   },
-  "Psychotria nervosa": {
+  "Psychotria nervosa@florida-south": {
     nativeNote:
       "Arbuste de sous-bois aux feuilles luisantes des hammocks du sud de la Floride.",
     careNote:
@@ -539,7 +539,7 @@ export const FLORIDA: ProseTable = {
       },
     },
   },
-  "Sophora tomentosa var. truncata": {
+  "Sophora tomentosa var. truncata@florida-south": {
     supportNotes: {
       "bumble-bees":
         "Les fleurs jaunes en papilionacée du sophora doivent être forcées, et sur une dune littorale les insectes assez lourds pour le faire sont surtout les bourdons.",
@@ -578,7 +578,7 @@ export const FLORIDA: ProseTable = {
       },
     },
   },
-  "Stachytarpheta jamaicensis": {
+  "Stachytarpheta jamaicensis@florida-south": {
     nativeNote:
       "Indigène basse et rampante des terrains littoraux et remaniés du sud de la Floride — plantez l'indigène, pas les sosies dressés envahissants.",
     careNote:
@@ -605,7 +605,7 @@ export const FLORIDA: ProseTable = {
       },
     },
   },
-  "Rivina humilis": {
+  "Rivina humilis@florida-south": {
     supportNotes: {
       "berry-songbirds":
         "Les baies rouges translucides de la rivine restent sur la tige des mois durant, et les cardinaux rouges remontent une grappe entière à l'ombre d'un hammock.",
@@ -621,7 +621,7 @@ export const FLORIDA: ProseTable = {
     propagationNote:
       "Écrasez les baies rouges mûres pour en tirer la graine, rincez, et semez au chaud — elle lève facilement. En réalité elle se ressème si librement à l'ombre que vous arracherez plus souvent des semis en trop que vous n'en élèverez. N'oubliez pas que les baies sont toxiques pour les personnes.",
   },
-  "Passiflora suberosa": {
+  "Passiflora suberosa@florida-south": {
     nativeNote:
       "Une petite passiflore indigène délicate des hammocks et des lisières du sud de la Floride — meilleure plante hôte ici que la grande Passiflora incarnata.",
     careNote:

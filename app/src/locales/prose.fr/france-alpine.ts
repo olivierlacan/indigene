@@ -20,7 +20,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "La graine d'épicéa est toute l'économie hivernale du bec-croisé — un oiseau dont le bec est croisé à la pointe précisément pour ouvrir ces cônes — ainsi que des tarins, des mésanges noires et des cassenoix. Ses branches basses et denses sont là où tétras lyre et grands tétras s'abritent sous la neige, et son houppier est le lieu de nidification des chouettes de la montagne.",
     propagationNote:
-      "Récoltez les cônes à l'automne, à maturité, et séchez-les au chaud jusqu'à ce qu'ils s'ouvrent, puis secouez-en la graine ailée. Quelques semaines de froid humide au réfrigérateur égalisent la germination. Semez peu profond et gardez les jeunes plants à l'ombre leur premier été.",
+      "Récoltez les cônes à l'automne, à maturité, et séchez-les au chaud jusqu'à ce qu'ils s'ouvrent, puis secouez-en la graine ailée. Elle germe sans traitement, mais trois semaines de froid humide au réfrigérateur l'accélèrent.",
     supportNotes: {
       "conifer-seed-finches":
         "Le bec croisé du bec-croisé est un outil pour un seul travail — ouvrir un cône d'épicéa — et tarins et mésanges noires prennent ce qu'il laisse tomber.",
@@ -47,7 +47,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Un arbre à chenilles bien utilisé — dont la tordeuse du mélèze, dont la population culmine dans toutes les Alpes tous les huit ou neuf ans, célèbre pour faire orangir des vallées entières et nourrir chaque fois une explosion d'oiseaux. Sa graine nourrit becs-croisés et tarins, et le sol aéré d'une mélézaie porte la flore la plus riche de la forêt de montagne.",
     propagationNote:
-      "Ramassez les petits cônes à l'automne, séchez-les jusqu'à ce qu'ils s'ouvrent et secouez-en la graine. Un mois environ de froid humide avant un semis de printemps donne un peuplement régulier. Une bonne part de la graine est vide chaque année : semez dru.",
+      "Ramassez les petits cônes à l'automne, séchez-les jusqu'à ce qu'ils s'ouvrent et secouez-en la graine. Pas besoin de froid : semez-la à l'automne ou au printemps, à peine recouverte. Une bonne part de la graine est vide chaque année : semez dru.",
     supportNotes: {
       "conifer-seed-finches":
         "La graine de mélèze nourrit becs-croisés et tarins, et ses poussées de chenilles nourrissent une explosion d'oiseaux tous les huit ou neuf ans.",
@@ -79,7 +79,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Ses grappes de fleurs vertes pendantes en avril sont une source de nectar précoce de premier ordre en altitude, quand peu de choses sont ouvertes et que les reines de bourdons fondent leurs colonies. Bon nombre de chenilles, et les vieux sycomores des pâturages de montagne deviennent ces arbres creux, moussus et couverts de lichens où vivent chouettes, rougequeues et chauves-souris.",
     propagationNote:
-      "Récoltez les samares appariées à l'automne, quand elles brunissent, et donnez-leur environ trois mois dans du sable humide au réfrigérateur avant de semer — ou laissez un pot dehors tout l'hiver. Honnêtement, la source la plus facile reste les centaines de semis qui apparaissent sous n'importe quel arbre mûr.",
+      "Récoltez les samares appariées à l'automne, quand elles brunissent, et ne les laissez jamais sécher. Donnez-leur de six semaines à trois mois dans du sable humide au réfrigérateur avant de semer — ou laissez un pot dehors tout l'hiver.",
   },
 
   // -------------------------------------------------------------------------
@@ -101,7 +101,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Elle fleurit souvent deux fois, au début de l'été puis à nouveau au cœur de l'été, nourrissant les bourdons d'altitude les deux fois, et ses baies rouges acidulées tiennent jusqu'en hiver pour les grives, les merles à plastron, les tétras et les martres, quand les myrtilles sont passées depuis longtemps. Un couvert persistant sur terrain acide où peu d'autres choses poussent.",
     propagationNote:
-      "Soulevez au printemps un morceau enraciné de tige rampante et mettez-le en pot dans un mélange acide de type terre de bruyère. Les pousses en voie d'aoûtement prises en fin d'été s'enracinent aussi sous abri, lentement, dans un mélange de sable et de tourbe.",
+      "Fixez une tige rampante dans la terre au milieu de l'été, ou soulevez un morceau enraciné et mettez-le en pot dans un mélange acide de type terre de bruyère. Les pousses en voie d'aoûtement prises en été s'enracinent aussi sous abri.",
   },
   "Rhododendron ferrugineum": {
     supportNotes: {
@@ -125,7 +125,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Un arbuste à chenilles majeur, et comme tous les aulnes il fabrique son propre azote : il enrichit donc discrètement la terre maigre de montagne pour tout ce qu'on plantera après lui. Ses petits chatons ligneux gardent une graine que sizerins et tarins prennent tout l'hiver, et le fourré impénétrable est un couvert de nidification sur des pentes découvertes.",
     propagationNote:
-      "Récoltez les petits cônes ligneux à l'automne dès qu'ils commencent à s'ouvrir, séchez-les dans un sac et secouez-en la graine ; elle lève au printemps sans aucun traitement. Ses tiges basses et couchées s'enracinent aussi là où elles reposent sous la neige : une marcotte enracinée se détache simplement.",
+      "Récoltez les petits cônes ligneux à l'automne dès qu'ils commencent à s'ouvrir, séchez-les dans un sac et secouez-en la graine. Semez-la fraîche ; une graine qui a séché lève mieux après un ou deux mois de froid humide.",
     supportNotes: {
       "conifer-seed-finches":
         "Les petits chatons ligneux de l'aulne vert gardent une graine que sizerins et tarins picorent tout l'hiver.",
@@ -157,7 +157,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "La seule plante nourricière de l'azuré minime, l'un des plus petits papillons d'Europe, dont les jeunes mangent les graines à l'intérieur d'un unique capitule et ne peuvent vivre nulle part ailleurs. Ses capitules jaunes et laineux nourrissent aussi les bourdons et un ensemble d'abeilles solitaires, et, étant une légumineuse, elle remet de l'azote dans la terre la plus maigre.",
     propagationNote:
-      "À tégument dur comme les autres légumineuses : entaillez ou faites tremper la graine, puis semez-la en terre graveleuse à l'automne. Elle a une racine pivotante et se déplace mal : semez-la sur place plutôt que de la transplanter.",
+      "À tégument dur comme les autres légumineuses : entaillez ou faites tremper la graine, puis semez-la à l'automne, en pot sous châssis froid ou directement en terre graveleuse.",
     supportNotes: {
       "small-blue":
         "L'un des plus petits papillons d'Europe vit à l'état de chenille à l'intérieur des capitules d'anthyllide, en mangeant les graines en formation ; en Grande-Bretagne et en Irlande, il n'utilise aucune autre plante.",
@@ -263,7 +263,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Après les chênes et les saules, le bouleau est le plus grand arbre à chenilles d'Europe — plus de trois cents espèces de papillons de jour et de nuit, ce qui explique qu'une boulaie soit si bruyante de fauvettes et de mésanges en mai. Sa graine nourrit sizerins et tarins tout l'hiver.",
     propagationNote:
-      "Récoltez les chatons en forme de petits cônes en fin d'été, juste au moment où ils commencent à s'effriter, et émiettez-les à la surface d'un terreau humide — la graine de bouleau est fine comme de la poussière et a besoin de lumière, ne la couvrez donc pas. Elle lève en quelques semaines.",
+      "Cueillez les chatons en forme de petits cônes en fin d'été, tant qu'ils tiennent encore, et séchez-les jusqu'à ce qu'ils s'effritent. Éparpillez la graine, fine comme de la poussière, sur un terreau humide et couvrez-la à peine, voire pas du tout — la lumière aide à la germination. Elle lève en quelques semaines.",
     supportNotes: {
       "emperor-moth":
         "Le bouleau est l'un des arbres à chenilles du petit paon de nuit — la grosse larve verte à points roses et noirs mange à découvert sur les feuilles tout l'été.",
@@ -279,7 +279,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Les deux choses dont un printemps de montagne a le plus besoin. Ses chatons s'ouvrent en mars, avant tout le reste, et sont le repas pour lequel sortent les reines de bourdons, les premières abeilles et les papillons hivernants — un saule en fleur par une journée douce de mars est la plante la plus bruyante de la vallée. Et avec plus de trois cents espèces de chenilles, il est, avec le bouleau, l'ossature de tout le réseau trophique d'ici.",
     propagationNote:
-      "Les saules sont les ligneux les plus faciles qui soient : coupez en hiver une tige nue grosse comme un crayon, enfoncez-en les deux tiers en terre humide, et elle s'enracine. Fait inhabituel chez un saule, le marsault s'enracine moins volontiers que la plupart : prenez-en plusieurs. Sa graine n'est viable que quelques jours, les boutures sont donc la voie raisonnable.",
+      "Coupez en hiver une tige nue grosse comme un crayon et enfoncez-en les deux tiers en terre humide, ou prélevez des pousses tendres au début de l'été. Sa graine ne vit que quelques semaines : les boutures sont la voie raisonnable.",
     supportNotes: {
       "mourning-cloak":
         "Les feuilles de saule nourrissent les chenilles noires épineuses du morio, qui vivent en groupe sur une même branche jusqu'à être presque adultes.",
@@ -297,7 +297,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Son nom français veut dire « le sorbier des oiseleurs », parce qu'on se servait de ses baies pour appâter les pièges à oiseaux, et cela vous dit tout : aucun autre arbre de montagne ne nourrit les oiseaux comme lui. Grives litornes, mauvis, merles à plastron, merles, draines et jaseurs dépouillent un sorbier en quelques jours. Ajoutez-y une lourde floraison crème pour les abeilles et bon nombre de chenilles.",
     propagationNote:
-      "Écrasez les baies mûres à l'automne, rincez la graine de toute pulpe — la pulpe la retient — et donnez-lui environ trois mois de froid humide avant de semer au printemps, ou semez-la simplement en pot dehors pour l'hiver.",
+      "Écrasez les baies mûres à l'automne, rincez la graine de toute pulpe et donnez-lui environ trois mois de froid humide avant de semer au printemps, ou semez-la simplement en pot dehors pour l'hiver.",
     supportNotes: {
       "winter-thrushes":
         "Son nom français dit « le sorbier des oiseleurs » — aucun arbre de montagne n'attire les grives litornes, les mauvis et les merles à plastron comme un sorbier en fruits.",
@@ -325,7 +325,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "La plus grande source de nourriture parmi les arbustes de montagne : plus de deux cents espèces de chenilles, des clochettes roses que les bourdons butinent en mai, et une récolte de baies en août qui nourrit tétras lyre, grands tétras, grives, renards et martres — tout le premier été d'un poussin de tétras lyre, ce sont des insectes prélevés sur la myrtille. Et il en reste pour vous.",
     propagationNote:
-      "Soulevez au début du printemps un morceau enraciné de coulant et mettez-le en pot dans un mélange acide et tourbeux — la voie sûre. Par semis : écrasez des baies mûres, rincez la graine et pressez-la à la surface d'un terreau humide sans calcaire sans la recouvrir ; il lui faut de la lumière et du froid, laissez donc le pot dehors pour l'hiver.",
+      "Soulevez au début du printemps un morceau enraciné de coulant et mettez-le en pot dans un mélange acide et tourbeux — la voie sûre. Par semis : écrasez des baies mûres, rincez la graine et pressez-la à la surface d'un terreau humide sans calcaire sans la recouvrir — il lui faut de la lumière pour germer.",
     supportNotes: {
       "black-grouse":
         "La myrtille est tout le monde du tétras lyre : les insectes qu'on y prélève nourrissent les poussins, les baies et les feuilles nourrissent les adultes, et ses fourrés bas sont là où ils s'abritent sous la neige.",
@@ -343,7 +343,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "La plante à papillons la plus importante des Alpes, sans concurrente. Les azurés — et les Alpes comptent plus d'espèces d'azurés que partout ailleurs en Europe — avec les hespéries, les zygènes et les soucis, y élèvent leurs chenilles, plusieurs d'entre eux sur presque rien d'autre. Les bourdons butinent les fleurs de mai à septembre.",
     propagationNote:
-      "Le tégument est dur : entaillez-le au papier de verre ou faites-le tremper une nuit dans de l'eau tiède, puis semez directement sur une terre nue griffée à l'automne ou au printemps. Elle supporte mal d'être mise en pot puis déplacée : semez-la là où vous la voulez.",
+      "Le tégument est dur : entaillez-le au papier de verre ou faites-le tremper une nuit dans de l'eau tiède, puis semez directement sur une terre nue griffée à l'automne ou au printemps.",
     supportNotes: {
       "common-blue":
         "Les Alpes comptent plus d'espèces d'azurés que partout ailleurs en Europe, et le lotier est ce sur quoi la plupart d'entre eux grandissent.",
@@ -530,7 +530,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Elle garnit le côté ombragé de la roche, qui est en montagne l'endroit où beaucoup de petite vie s'abrite à la fois du soleil et du gel — coléoptères, araignées, et les insectes que chassent lézards et pipits. Très peu d'insectes mangent les fougères : la valeur est ici l'anfractuosité, pas le repas.",
     propagationNote:
-      "Les spores mûres, semées à l'automne sur un terreau stérilisé maintenu humide sous verre, lèvent lentement mais sûrement. Ne prélevez pas dans la nature et ne divisez pas un pied établi : il n'aime pas être dérangé.",
+      "Semez les spores sur un terreau stérilisé humide, sous couvercle, au frais et à mi-ombre ; les fougères suivent des mois plus tard. Une vieille touffe peut aussi se diviser au printemps.",
   },
   "Asplenium viride": {
     nativeNote:
@@ -540,6 +540,6 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Ce que donne une fougère de fissure, c'est la fissure : une poche verte, humide et abritée sur une paroi qui n'offrirait rien sans elle, et avec elle les araignées, les collemboles et les petits coléoptères qui y vivent, puis les mousses qui suivent. Comme toute fougère, elle nourrit très peu de chenilles, et le dire est plus utile que de faire semblant.",
     propagationNote:
-      "Frottez une fronde mûre au-dessus d'un joint ombragé humide en fin d'été et laissez faire, ou semez les spores sous verre sur un terreau stérilisé. Dans les deux cas, il faut de la patience et une exposition fraîche.",
+      "Semez les spores dès leur maturité sur un terreau stérilisé humide, sous couvercle, et gardez-le au frais et à mi-ombre pendant des mois. Les touffes établies se divisent au printemps.",
   },
 };

@@ -30,7 +30,7 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     givesNote:
       "Une énorme source de nourriture : des centaines d'espèces de chenilles — c'est-à-dire de quoi nourrir une nichée de mésanges bleues — plus des glands pour les geais, les pigeons ramiers et les sangliers, et une ombre persistante dense dans un pays où l'ombre est ce qui compte le plus.",
     propagationNote:
-      "Ramassez les glands à leur chute en automne et faites-les flotter dans l'eau — jetez ceux qui remontent, semez aussitôt ceux qui coulent. Ils germent dès l'automne sans passage au froid et ne doivent jamais sécher. À cause de la racine pivotante, démarrez-le en pot haut, ou semez-le là où il vivra.",
+      "Ramassez les glands à leur chute en automne et faites-les flotter dans l'eau — jetez ceux qui remontent, semez aussitôt ceux qui coulent, en pot ou directement en terre. Ils meurent s'ils sèchent.",
   },
   "Quercus pubescens": {
     supportNotes: {
@@ -44,7 +44,7 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     givesNote:
       "Le même nombre énorme de chenilles que le chêne vert, mais sur des feuilles caduques tendres que beaucoup d'espèces préfèrent — et des glands pour les geais, les pigeons ramiers et les mammifères. Ses racines sont aussi ce sur quoi poussent les truffes, ce qui n'est pas rien.",
     propagationNote:
-      "Comme pour le chêne vert : faites flotter les glands d'automne, jetez ceux qui remontent, semez frais ceux qui coulent en pot profond ou directement en terre, et ne les laissez jamais sécher.",
+      "Comme pour le chêne vert : faites flotter les glands d'automne, jetez ceux qui remontent, semez frais ceux qui coulent en pot ou directement en terre, et ne les laissez jamais sécher.",
   },
   "Pinus halepensis": {
     supportNotes: {
@@ -390,7 +390,7 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     givesNote:
       "Quelque 370 espèces de chenilles, et c'est elle qui nourrit les fauvettes, les mésanges et les rossignols qui nichent le long d'une rivière. Les chatons de mars sont le premier pollen sérieux de l'année pour les abeilles qui sortent dans un printemps méditerranéen, et un vieux têtard se creuse en gîte pour les chauves-souris et les chevêches.",
     propagationNote:
-      "Le saule s'enracine plus facilement que presque tout : coupez en hiver une baguette d'un an de la longueur d'un avant-bras, enfoncez-en les deux tiers dans un sol humide, et laissez-la faire. Rien d'autre à ajouter.",
+      "Le ligneux le plus facile à multiplier ici : coupez en hiver une tige nue et enfoncez-en les deux tiers dans une terre mouillée, dans le bon sens, et elle s'enracine. Même une perche de trois mètres reprend.",
   },
   "Populus nigra": {
     supportNotes: {
@@ -518,7 +518,7 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     givesNote:
       "Ce que donne une fougère de mur, c'est la fissure fraîche et humide elle-même — l'endroit où araignées, cloportes, petits coléoptères et geckos traversent un été méditerranéen. Très peu d'insectes mangent les fougères, et prétendre le contraire serait malhonnête : la valeur est ici l'abri, sur une surface qui n'en offre aucun.",
     propagationNote:
-      "Elle arrive seule si le mur lui convient : les spores voyagent, et la meilleure « multiplication » est de ne pas rejointoyer. Pour l'aider, frottez une fronde mûre au-dessus d'un joint ombragé humide en fin d'été.",
+      "Laissez un morceau de fronde mûre une journée dans une enveloppe de papier, éparpillez les spores tombées sur un terreau stérilisé humide, sous couvercle, et gardez-le au frais et à mi-ombre — des mois, pas des semaines. Une touffe établie peut aussi se diviser au printemps.",
   },
   "Asplenium trichomanes": {
     nativeNote:
@@ -528,7 +528,7 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     givesNote:
       "Une surface vivante sur un mur qui serait nu sans elle — et avec elle l'anfractuosité humide dont dépendent araignées, cloportes et petits coléoptères pendant les mois secs, puis les mousses et les lichens qui suivent. Comme toutes les fougères d'ici, elle ne nourrit presque aucune chenille : son travail est l'abri.",
     propagationNote:
-      "Comme le cétérach : laissez les spores faire, et n'y touchez pas. Un vieux mur non rejointoyé, à l'ombre d'un côté, se garnit tout seul en quelques années.",
+      "Semez la poussière de spores sur un terreau stérilisé humide, sous couvercle, au frais et à mi-ombre, et attendez — d'abord une pellicule verte, puis de vraies fougères des mois plus tard. Une vieille touffe peut aussi se diviser au printemps.",
   },
   "Adiantum capillus-veneris": {
     nativeNote:
@@ -538,7 +538,7 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     givesNote:
       "Un coin ombragé et mouillé est l'habitat le plus rare d'un jardin du Midi, et c'est la plante qui fait qu'il en a l'air et la fraîcheur. Ce qui y vit est l'essentiel : grenouilles, salamandres, coléoptères des lieux humides et toute la vie minuscule dont le reste se nourrit. Les fougères nourrissent très peu de chenilles, et celle-ci ne fait pas exception.",
     propagationNote:
-      "Divisez le rhizome au printemps et calez les éclats dans une fissure humide ombragée, ou laissez les spores coloniser une paroi qui ruisselle. Dans les deux cas, l'eau permanente est la condition, pas un détail.",
+      "Divisez le rhizome rampant au printemps. Les spores semées sur un terreau stérilisé humide, sous couvercle, au frais et à mi-ombre, réussissent aussi.",
   },
   // -------------------------------------------------------------------------
   // Ajouts de la passe « genres hôtes » — les genres du haut du classement

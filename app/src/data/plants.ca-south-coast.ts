@@ -69,8 +69,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Care: UC Oak Woodland Management, UC ANR. Host count: Quercus genus, rounded southern-California estimate anchored on Tallamy/NWF.",
     propagation: {
       methods: ["seed-warm", "seed-direct"],
-      note: "Collect acorns as they fall in autumn and drop them in a bucket of water — throw away any that float, sow the sinkers straight away, and never let them dry out. They sprout within weeks without any chilling. Because of the taproot, use a tall pot or sow where the tree is to live, and protect the acorn from squirrels with a bit of hardware cloth.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Collect acorns as they fall in autumn and drop them in water — throw away the floaters and sow the sinkers straight away; never let them dry out. They need no chilling and sprout within weeks. Sow in a tall pot or where the tree is to live, and cage the acorns against squirrels and birds.",
+      basis: "USFS Native Plant Network; USDA NRCS Plant Guide; USFS FEIS; Seed Information Database.",
     },
   },
   {
@@ -104,8 +104,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Size and habit: USFS FEIS. Host count: Platanus genus, rounded western estimate anchored on Tallamy/NWF.",
     propagation: {
       methods: ["seed-cold-moist", "cuttings-hardwood"],
-      note: "Pick the hanging seed balls in late winter, break them apart dry, and sow the fluffy seed on damp soil — a few weeks of cold, damp storage first makes them come up more evenly. Leafless winter cuttings of pencil-thick wood also root if kept wet.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Break the dry seed balls apart and give the seed two to three months cold and damp, then sow it barely covered — no deeper than an eighth of an inch — and keep it moist. Sycamores also root easily from leafless winter cuttings.",
+      basis: "Woody Plant Seed Manual.",
     },
   },
   {
@@ -139,8 +139,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Size and riparian ecology: USFS FEIS. Host count: Populus genus, rounded western estimate anchored on Tallamy/NWF.",
     propagation: {
       methods: ["cuttings-hardwood"],
-      note: "Almost absurdly easy, and the way riparian restoration does it: cut a leafless finger-thick branch in winter, push two thirds of it into wet ground, and leave it. It roots where willows root and at the same time of year.",
-      basis: "USFS Native Plant Network; USDA NRCS riparian planting guides.",
+      note: "Cut leafless poles in November to February and plant them deep, into soil that stays moist down to a steady water table; in trials more than eight in ten survived. Seed is difficult and seldom used.",
+      basis: "USDA NRCS Plant Guide; USFS FEIS.",
     },
   },
   {
@@ -174,8 +174,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Riparian value: USFS FEIS; Xerces Society. Host count: Salix genus, rounded western estimate anchored on Tallamy/NWF.",
     propagation: {
       methods: ["cuttings-hardwood"],
-      note: "Cut a leafless winter stem, stick it in wet mud, walk away. Willow wood carries its own rooting hormone, which is why gardeners soak other cuttings in willow water.",
-      basis: "USFS Native Plant Network; USDA NRCS.",
+      note: "The easy one. Take leafless cuttings about half an inch thick in midwinter and stick them a few inches deep in damp, sandy mix; in one nursery nine in ten rooted.",
+      basis: "USFS Native Plant Network.",
     },
   },
   {
@@ -208,9 +208,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range and endemism: Jepson eFlora, Calflora, CNPS (walnut woodland is a CDFW sensitive natural community). Toxicity: ASPCA; UC ANR. Host count: Juglans genus, rounded western estimate anchored on Tallamy/NWF.",
     propagation: {
-      methods: ["seed-cold-moist", "seed-direct"],
-      note: "Gather the nuts in autumn, husk and all, and either sow them straight into the ground where the tree is to live or keep them in damp sand in the fridge over winter and sow in spring. Cage them: every squirrel in the neighborhood is looking for exactly this.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-warm", "seed-direct"],
+      note: "Gather the nuts in autumn and sow them straight away where the tree is to grow — they need no chilling and usually sprout within four weeks. Cage them, or squirrels carry them off.",
+      basis: "USFS FEIS.",
     },
   },
   {
@@ -244,8 +244,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Sudden oak death (Phytophthora ramorum) host role: UC ANR; California Oak Mortality Task Force. Host count: Umbellularia, low rounded estimate.",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Collect the purple fruits when they fall in autumn, rub off the flesh at once, and sow the big seed fresh in a deep pot — it does not survive drying. A cold damp winter outdoors breaks its rest; germination is uneven and can take a whole season.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      note: "Collect the fruits when they turn dark purple in autumn, strip the flesh and sow the seed fresh — it loses viability fast in storage. Two to three months cold and damp improves germination, which can take three months. Use a tall pot.",
+      basis: "USFS Native Plant Network; USDA NRCS Plant Guide; USFS FEIS; Seed Information Database.",
     },
   },
   {
@@ -279,8 +279,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Jepson eFlora, Calflora. Summer dormancy and toxicity: USFS FEIS; UC ANR; ASPCA. Honey-bee toxicity: UC Berkeley Urban Bee Lab. Host count: Aesculus, low rounded estimate.",
     propagation: {
       methods: ["seed-direct"],
-      note: "The easiest big native to grow: pick up a fallen seed in autumn, lay it on damp ground where you want the tree, and press it in half its depth. It sends a root down immediately and does not want to be dug up afterwards. It cannot be dried or stored.",
-      basis: "USFS Native Plant Network.",
+      note: "Almost too easy. Gather the big seeds as they fall in autumn and sow a few where the tree is to grow, thinning to one in spring. They cannot be dried or stored, so sow them fresh; in mild soil they sprout within weeks.",
+      basis: "USFS Native Plant Network; USFS FEIS; Seed Information Database.",
     },
   },
   {
@@ -313,9 +313,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Bird use: Cornell Lab; USFS FEIS. Toxicity: ASPCA; UC ANR. Host count: Sambucus genus, rounded western estimate.",
     propagation: {
-      methods: ["cuttings-hardwood", "seed-cold-moist"],
-      note: "Take pencil-thick leafless cuttings in winter, push them into damp soil, and most will take. From seed, mash the ripe berries, wash the pulp away, and give the seed a cold damp winter outside — it is slower and less certain than the cuttings.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-double-dormant"],
+      note: "Mash the ripe berries, wash the seed clean and give it a warm spell, then a cold damp one — or sow it outdoors in autumn and wait. Untreated, the seed can take two to five years to come up.",
+      basis: "USFS Native Plant Network; USDA NRCS Plant Guide; USFS FEIS.",
     },
   },
 
@@ -355,9 +355,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "rough",
     basis: "Native status/range, groves and size: Jepson eFlora, Calflora, USFS FEIS. Rarity: CNPS Rare Plant Inventory, rank 1B.1. Butterfly: US Fish & Wildlife Service (Thorne's hairstreak 12-month finding); Xerces Society. Occurrence records in this region's box: 703 (GBIF). Host count: Hesperocyparis genus, rough southern-California estimate.",
     propagation: {
-      methods: ["seed-warm", "seed-direct"],
-      note: "The cones stay shut on the branch for years and are built to open in a fire, so you have to supply the heat: pick a few gray-brown ones, leave them in a paper bag somewhere baking — a car in the sun does it — and they crack open in a day or two. The seed needs no chilling. Sow it fresh in a deep pot of gritty mix and keep it barely damp; seedlings damp off in wet shade faster than they dry out in sun.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual; USFS FEIS (serotiny).",
+      methods: ["seed-cold-moist"],
+      note: "The cones stay shut on the tree for years. To open them, dry them in hot sun, boil them for 30 to 60 seconds, or cut them in half, then shake out the seed. A month cold and damp helps it germinate. Sow on gritty mix and keep it on the dry side — seedlings damp off in wet shade.",
+      basis: "Woody Plant Seed Manual; USFS FEIS.",
     },
   },
   {
@@ -390,9 +390,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range, population size and size at maturity: USFS FEIS; Jepson eFlora. Rarity: CNPS Rare Plant Inventory, rank 1B.2. Occurrence records in this region's box: 2,972 (GBIF). Host count: Pinus genus, rounded southern-California estimate anchored on Tallamy/NWF keystone lists.",
     propagation: {
-      methods: ["seed-warm", "seed-direct"],
-      note: "Cones hold their seed for years and let it go slowly. Take a cone that has begun to gape, shake the seed out, and sow it fresh — no chilling needed. The taproot goes down before the top goes up, so use a tall pot or sow where the tree is to stand, and cover the seed with wire until it sprouts or the woodrats will find it first.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-cold-moist"],
+      note: "Shake the big, nearly wingless seed from a cone and give it one to three months cold and damp before sowing — it then comes up quickly and evenly.",
+      basis: "USFS FEIS.",
     },
   },
   {
@@ -425,9 +425,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range, elevation, size and cone dimensions: USFS FEIS; Jepson eFlora. Seed use by squirrels and white-headed woodpeckers: USFS FEIS. Occurrence records in this region's box: 1,535 (GBIF). Host count: Pinus genus, rounded southern-California estimate anchored on Tallamy/NWF keystone lists.",
     propagation: {
-      methods: ["seed-cold-moist", "seed-direct"],
-      note: "The cones open slowly on the tree over a couple of years. Gather seed as it drops, or pry a gaping cone apart — carefully, every scale ends in a hooked spine. A month cold and damp in the fridge evens up germination. Deep pot again, or sow it straight where it is to grow.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-cold-moist"],
+      note: "The heavy cones open slowly and shed their seed over several months. Give the seed a month or so cold and damp before sowing.",
+      basis: "Woody Plant Seed Manual; USFS Native Plant Network.",
     },
   },
   {
@@ -460,9 +460,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "rough",
     basis: "Native status/range incl. interior cismontane southern California, growth rate, and bird use (mourning dove, Scott's oriole, lesser goldfinch, ladder-backed woodpecker): USFS FEIS. Range and identity: Jepson eFlora, Calflora. Butterfly: Xerces Society; BAMONA. Occurrence records in this region's box: 1,883 (GBIF). Host count: Juniperus genus, rough southern-California estimate.",
     propagation: {
-      methods: ["seed-cold-moist", "seed-double-dormant"],
-      note: "Slow and awkward, which is why almost everyone buys a plant. The berries take two years to ripen, and the seed inside will often sit through a second winter before it comes up. If you try: rub the pulp off, sow into a pot left outside, and don't throw it away at the end of the first spring.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-double-dormant"],
+      note: "Slow and awkward: juniper seed is deeply dormant and comes up very slowly. Rub off the pulp, sow in a pot left outdoors, and keep the pot through a second year before giving up.",
+      basis: "Woody Plant Seed Manual; USFS FEIS.",
     },
   },
 
@@ -497,9 +497,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Culture: UC ANR; Theodore Payne Foundation. Host count: Salvia genus, low rounded western estimate.",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "seed-direct"],
-      note: "Take this year's shoots in early summer once they have firmed up a little, strip the lower leaves and root them in gritty mix out of direct sun. Seed is easy too — sow it on the surface in autumn and let the winter rain bring it up.",
-      basis: "Theodore Payne Foundation; USFS Native Plant Network.",
+      methods: ["seed-direct"],
+      note: "Seed of the shrubby California sages is generally easy to germinate, and much of it needs no treatment.",
+      basis: "Woody Plant Seed Manual.",
     },
   },
   {
@@ -532,9 +532,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Wild-harvest pressure: CNPS; United Plant Savers. Host count: Salvia genus, low rounded western estimate.",
     propagation: {
-      methods: ["seed-surface-light", "cuttings-semi-hardwood"],
-      note: "Sow the small seed on the surface of a pot in autumn, press it down, and leave it outside in the rain — it germinates readily and hates being buried. Cuttings of half-firm summer shoots root, but less willingly than Cleveland sage.",
-      basis: "Theodore Payne Foundation; USFS Native Plant Network.",
+      methods: ["seed-direct", "cuttings-softwood"],
+      note: "Easier from seed than from cuttings. Sow on the surface or barely covered, no deeper than a quarter inch, in a well-drained mix; it comes up in two to three weeks in warm conditions. Soft young shoots cut in spring, before it flowers, can root, but timing them takes practice.",
+      basis: "USFS Native Plant Network; USDA NRCS Plant Guide.",
     },
   },
   {
@@ -567,9 +567,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Sage-scrub habitat value: USFS FEIS; USFWS coastal sage scrub recovery documents. Host count: Salvia genus, low rounded western estimate.",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "seed-direct"],
-      note: "Half-firm summer cuttings root easily in a gritty mix. Seed sown on the surface in autumn comes up with the first rains and needs no special treatment.",
-      basis: "Theodore Payne Foundation; USFS Native Plant Network.",
+      methods: ["seed-surface-light"],
+      note: "Sow the seed on the surface and leave it uncovered — darkness holds it back, and buried seed waits for a fire. In mild, damp conditions most of it sprouts within a week.",
+      basis: "USFS Native Plant Network; USFS FEIS.",
     },
   },
   {
@@ -602,9 +602,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Sage-scrub bird associations: USFWS; Cornell Lab. Host count: Artemisia genus, rounded western estimate anchored on Tallamy/NWF.",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "seed-surface-light"],
-      note: "Cuttings taken from firm autumn shoots root quickly. The dust-fine seed is sown on the surface and barely covered; it wants light and winter damp.",
-      basis: "Theodore Payne Foundation; USFS Native Plant Network.",
+      methods: ["seed-surface-light", "cuttings-semi-hardwood"],
+      note: "Sow the fine seed on the surface in autumn or winter: it needs light but no other treatment, and comes up in three to four weeks in cool, damp weather. Cuttings of firming new shoots in spring root with hormone, mist and bottom heat.",
+      basis: "USFS Native Plant Network; USDA NRCS Plant Guide; USFS FEIS.",
     },
   },
   {
@@ -637,9 +637,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Insect associations: Xerces Society; UC Berkeley Urban Bee Lab. Host count: Eriogonum genus, rounded western estimate; buckwheats are the West's headline lycaenid hosts.",
     propagation: {
-      methods: ["seed-direct", "cuttings-semi-hardwood"],
-      note: "Rub the dry flower heads between your hands in autumn and scatter the chaff and seed together where you want it — the winter rain does the rest. Half-firm cuttings root readily if you'd rather have a known plant.",
-      basis: "Theodore Payne Foundation; USFS Native Plant Network.",
+      methods: ["seed-direct"],
+      note: "Rub the dry flower heads and sow the seed, chaff and all — only about a quarter of it germinates, so sow thickly. Seedlings damp off easily and dislike cold.",
+      basis: "USDA NRCS Plant Guide.",
     },
   },
   {
@@ -672,9 +672,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Culture and lifespan: USFS FEIS; Theodore Payne Foundation. Host count: Ceanothus genus, rounded western estimate anchored on Tallamy/NWF keystone lists.",
     propagation: {
-      methods: ["seed-scarify", "seed-cold-moist", "cuttings-semi-hardwood"],
-      note: "Ceanothus seed is built to wait for a fire: pour just-boiled water over it, let it stand overnight, then give it a month of cold damp in the fridge before sowing. Half-firm summer cuttings are the more reliable route for a garden.",
-      basis: "USFS Native Plant Network; Theodore Payne Foundation.",
+      methods: ["seed-scarify", "seed-cold-moist"],
+      note: "Ceanothus seed is built to wait for a fire: pour just-boiled water over it and let it soak, or heat the dry seed at 212°F (100°C) for an hour. One to three months cold and damp afterwards raises germination further.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
     },
   },
   {
@@ -707,9 +707,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Fire response and culture: USFS FEIS. Host count: Arctostaphylos genus, rounded western estimate.",
     propagation: {
-      methods: ["seed-scarify", "seed-double-dormant", "cuttings-semi-hardwood"],
-      note: "Manzanita seed is famously stubborn — it wants its hard coat worn away and often takes two winters outdoors to come up, so sow a potful and be patient. Half-firm cuttings taken in autumn are slow but more dependable.",
-      basis: "USFS Native Plant Network; Theodore Payne Foundation.",
+      methods: ["seed-scarify"],
+      note: "The stone is built to wait for a fire: file or sand through the hard coat of each seed, then sow in autumn. Seedlings come up in spring. It also grows from stem cuttings.",
+      basis: "USFS FEIS.",
     },
   },
   {
@@ -743,8 +743,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Bird use: Cornell Lab; USFS FEIS. Host count: Heteromeles, rounded estimate.",
     propagation: {
       methods: ["seed-warm", "cuttings-semi-hardwood"],
-      note: "Squeeze the pulp off ripe berries in midwinter and sow the seed fresh — it needs no chilling and comes up in a few weeks. Cuttings of half-firm wood also root, slowly.",
-      basis: "USFS Native Plant Network; Theodore Payne Foundation.",
+      note: "Clean the seed from ripe berries in autumn or early winter and sow it fresh — it needs no chilling and comes up in 10 to 40 days. Seed that was dried and stored needs three months cold and damp first. Semi-ripe tip cuttings in early summer root in two to three months.",
+      basis: "USFS Native Plant Network; USDA NRCS Plant Guide; USFS FEIS.",
     },
   },
   {
@@ -777,9 +777,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Pollinator and bird use: Xerces Society; Cornell Lab. Host count: Frangula/Rhamnus genus, rounded western estimate.",
     propagation: {
-      methods: ["seed-cold-moist", "cuttings-semi-hardwood"],
-      note: "Clean the pulp off ripe berries in autumn and give the seed a couple of months of cold damp before sowing. Half-firm summer cuttings root reasonably well.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-warm", "seed-cold-moist", "cuttings-hardwood"],
+      note: "Clean the pulp off ripe berries in autumn and sow the seed fresh, no deeper than half an inch. Seed that has been stored needs two to three months cold and damp first. Leafless winter cuttings with rooting hormone root only about half the time.",
+      basis: "USFS Native Plant Network; USDA NRCS Plant Guide; USFS FEIS.",
     },
   },
   {
@@ -812,9 +812,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Frost sensitivity and erosion use: USFS FEIS; UC ANR. Host count: Rhus genus, rounded western estimate.",
     propagation: {
-      methods: ["seed-scarify", "cuttings-semi-hardwood"],
-      note: "The seed has a hard coat: rub it on sandpaper or pour hot water over it before sowing in autumn. Half-firm cuttings taken in late summer root well under cover.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-scarify", "seed-cold-moist"],
+      note: "The seed coat is hard and must be worn through first — file or sand each seed — then sow outdoors in autumn, or chill it damp for about two months before a spring sowing.",
+      basis: "Woody Plant Seed Manual.",
     },
   },
   {
@@ -847,9 +847,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Bee use: Fowler & Droege, Pollen Specialist Bees (West); UC Berkeley Urban Bee Lab. Host count: Encelia, low rounded estimate.",
     propagation: {
-      methods: ["seed-direct", "cuttings-softwood"],
-      note: "Collect the dry heads in early summer, crumble them over bare soil in autumn, and the rain brings them up thickly. Soft spring cuttings root in a week or two.",
-      basis: "Theodore Payne Foundation; USFS Native Plant Network.",
+      methods: ["seed-direct"],
+      note: "The seed needs no treatment: crumble the dry heads over bare soil in autumn and leave the seed near the surface — buried an inch and a half deep, it does not come up.",
+      basis: "Woody Plant Seed Manual.",
     },
   },
   {
@@ -882,9 +882,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Late-season insectary value: Xerces Society; UC ANR. Host count: Baccharis genus, rounded western estimate.",
     propagation: {
-      methods: ["seed-surface-light", "cuttings-semi-hardwood"],
-      note: "Almost unnecessary — it arrives on its own. If you want it somewhere, scatter the fluffy seed on bare damp ground in autumn and press it down without covering. Cuttings root at any season.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-direct"],
+      note: "Collect the fluffy seed from a female plant between late autumn and early spring and scatter it on bare soil. It needs no treatment and comes up with the winter rains, often within a month.",
+      basis: "USFS Native Plant Network; USDA NRCS Plant Guide; USFS FEIS.",
     },
   },
   {
@@ -917,9 +917,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Host records (Euphydryas chalcedona, Junonia coenia): Xerces Society; BAMONA. Host count: Diplacus/Mimulus, rounded estimate.",
     propagation: {
-      methods: ["cuttings-softwood", "seed-surface-light"],
-      note: "Soft spring cuttings root in a couple of weeks — the easiest shrub here to make more of. The seed is dust-fine: press it onto the surface of damp soil in autumn and never cover it.",
-      basis: "Theodore Payne Foundation; USFS Native Plant Network.",
+      methods: ["seed-surface-light"],
+      note: "Collect the capsules in mid to late summer, just before they split. The seed needs no treatment but sprouts in light, so sow it on the surface and don't cover it.",
+      basis: "USFS Native Plant Network; USFS Southern California Plant Profiles.",
     },
   },
   {
@@ -952,9 +952,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Sole-host relationship with Zerene eurydice: Xerces Society; BAMONA; CNPS. Host count: Amorpha genus, rounded western estimate.",
     propagation: {
-      methods: ["seed-scarify", "cuttings-semi-hardwood"],
-      note: "Pea-family seed with a hard coat: nick it or pour hot water over it and soak overnight before sowing in autumn. Half-firm summer cuttings also root.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-direct", "seed-scarify"],
+      note: "Sow the seed fresh: drying can give it a hard coat, so nick stored seed before sowing. Autumn sowing without treatment brings up some seedlings, but not all.",
+      basis: "Woody Plant Seed Manual.",
     },
   },
   {
@@ -987,9 +987,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Hummingbird association: Cornell Lab; Audubon California. Host count: Ribes genus, rounded western estimate.",
     propagation: {
-      methods: ["cuttings-hardwood", "seed-cold-moist"],
-      note: "Take leafless cuttings in autumn as it goes summer-dormant, or in winter, and root them in a cold frame. From seed, clean the pulp off and give it three months of cold damp before sowing.",
-      basis: "USFS Native Plant Network; Theodore Payne Foundation.",
+      methods: ["seed-cold-moist"],
+      note: "Clean the seed from the ripe fruit. In a lab test most of it sprouted untreated, but currant seed generally comes up more evenly after a few months cold and damp, and a second chilling brings up stragglers.",
+      basis: "Seed Information Database; Woody Plant Seed Manual.",
     },
   },
   {
@@ -1022,9 +1022,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Toxicity: ASPCA; UC ANR. Host count: Prunus genus, rounded western estimate anchored on Tallamy/NWF.",
     propagation: {
-      methods: ["seed-cold-moist", "seed-direct"],
-      note: "Clean the flesh off ripe cherries in autumn and sow the stones straight away, or give them two or three months of cold damp in the fridge first. Keep them from drying out, and expect the birds to want them.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual.",
+      methods: ["seed-warm", "seed-direct"],
+      note: "Clean the flesh off ripe fruit in autumn and sow the pits fresh — they keep less than nine months. Sow several in the ground or a deep pot; they sprout in 20 to 40 days. Protect seed sown in the ground from rodents.",
+      basis: "USDA NRCS Plant Guide; USFS FEIS.",
     },
   },
   {
@@ -1057,9 +1057,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "rough",
     basis: "Native status/range: Jepson eFlora, Calflora. Late-season pollinator value: Xerces Society; UC Berkeley Urban Bee Lab. Host count: Isocoma, rough rounded estimate for a sunflower-family shrub.",
     propagation: {
-      methods: ["seed-surface-light", "cuttings-semi-hardwood"],
-      note: "Scatter the fluffy seed on bare damp soil in autumn and press it in without covering. Half-firm cuttings root readily in late summer.",
-      basis: "Theodore Payne Foundation; USFS Native Plant Network.",
+      methods: ["seed-direct"],
+      note: "Collect the fluffy seed from mid-October to mid-December and sow it on the surface, no deeper than an eighth of an inch. It needs no treatment and comes up with the early winter rains, but germination is often low, so sow thickly.",
+      basis: "USFS Native Plant Network; USFS Southern California Plant Profiles.",
     },
   },
 
@@ -1093,9 +1093,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Frost limit and fire response: USFS FEIS; UC ANR. Host count: Malosma/Rhus, rounded western estimate. The most-recorded plant in this region's box that the list did not carry (GBIF).",
     propagation: {
-      methods: ["seed-scarify", "cuttings-semi-hardwood"],
-      note: "The seed has a hard coat — pour just-boiled water over it and let it soak overnight before sowing in autumn. Half-firm cuttings taken in late summer root under cover, more slowly than the sages.",
-      basis: "USFS Native Plant Network; Theodore Payne Foundation.",
+      methods: ["seed-scarify"],
+      note: "Best grown from seed: collect the dry fruits from August to October. Some seed sprouts untreated, but heat helps — about five minutes of dry heat at 220°F (105°C). Sow an eighth to a quarter inch deep in autumn or winter; seedlings come slowly. Cuttings can take a year to root.",
+      basis: "USFS FEIS; USFS Southern California Plant Profiles.",
     },
   },
   {
@@ -1128,9 +1128,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Host count: Rosa genus, rounded western estimate anchored on Tallamy/NWF. Bird use: Cornell Lab; USFS FEIS. The region's highest-scoring absent genus by occurrence (GBIF).",
     propagation: {
-      methods: ["suckers", "cuttings-hardwood", "seed-cold-moist"],
-      note: "The easiest route is to dig a rooted sucker in winter and move it. Leafless winter cuttings root well too. From seed, clean the hips and give the seed a long cold damp spell — it is slow and uneven.",
-      basis: "USFS Native Plant Network; USDA NRCS.",
+      methods: ["seed-cold-moist", "suckers"],
+      note: "Sow fresh seed from ripe red hips in pots outdoors in October or November; seed that has been stored needs up to three months cold and damp. It also grows from pieces of its spreading underground stems.",
+      basis: "USFS Native Plant Network; USDA NRCS Plant Guide.",
     },
   },
   {
@@ -1163,9 +1163,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Post-fire role and nitrogen fixation: USFS FEIS. Larval host records for the region's blues: Xerces Society; BAMONA. Host count: Acmispon/Lotus, rounded western estimate.",
     propagation: {
-      methods: ["seed-scarify", "seed-direct"],
-      note: "Pea-family seed with a hard coat: nick it or pour hot water over it and soak overnight, then sow with the autumn rains. It comes up fast and flowers in its first year.",
-      basis: "USFS Native Plant Network; Theodore Payne Foundation.",
+      methods: ["seed-scarify"],
+      note: "Most of the seed is hard: nick it, or heat it in the pod at about 250°F (120°C) for five minutes, then sow with the autumn rains. Seedlings come up in one to two weeks.",
+      basis: "USFS Southern California Plant Profiles.",
     },
   },
   {
@@ -1198,9 +1198,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Toxicity: ASPCA; UC ANR. Host count: Lupinus genus, rounded western estimate. Four annual lupines rank in this region's top eight by occurrence (GBIF); the perennial species is the garden-durable member of the genus.",
     propagation: {
-      methods: ["seed-scarify", "seed-direct"],
-      note: "Nick the hard seed coat or pour hot water over the seed and soak it overnight, then sow in autumn where the plant is to stay — lupines make a deep root and resent being moved.",
-      basis: "USFS Native Plant Network; Theodore Payne Foundation.",
+      methods: ["seed-scarify"],
+      note: "The seed coat is hard. Some seed sprouts untreated, but nicking or scuffing each seed first raises germination — nicked seed sprouted almost completely in a lab test.",
+      basis: "USFS Native Plant Network; Seed Information Database.",
     },
   },
   {
@@ -1233,9 +1233,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Larval host records (Vanessa cardui, V. annabella): BAMONA; Xerces Society. Host count: Malacothamnus, rounded estimate for a native mallow.",
     propagation: {
-      methods: ["cuttings-softwood", "seed-scarify", "suckers"],
-      note: "Soft spring cuttings root easily. The seed wants its coat nicked or a hot-water soak first. Easiest of all: dig one of the suckers it throws up around itself in winter.",
-      basis: "Theodore Payne Foundation; USFS Native Plant Network.",
+      methods: ["seed-scarify"],
+      note: "Collect the capsules from late May to November. In one nursery a one-hour soak in warm water gave the best germination, about 40 percent; longer hot soaks did worse. Sow in winter.",
+      basis: "USFS Native Plant Network.",
     },
   },
 
@@ -1270,9 +1270,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Hummingbird association: Audubon California; Cornell Lab. Host count: Epilobium genus, rounded western estimate.",
     propagation: {
-      methods: ["division", "cuttings-softwood"],
-      note: "The easiest kind of increase: lift a clump in autumn or winter and pull the rooted runners apart, each piece a new plant. Soft spring shoots also root in a couple of weeks.",
-      basis: "Theodore Payne Foundation; USFS Native Plant Network.",
+      methods: ["division", "cuttings-softwood", "seed-cold-moist"],
+      note: "Divide a large plant in autumn or winter into stems with their own roots and runners. Tip cuttings with a few leaves root easily. Seed sown in flats left outdoors over winter comes up in spring.",
+      basis: "USFS Native Plant Network; USDA NRCS Plant Guide.",
     },
   },
   {
@@ -1306,8 +1306,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Pollen-only floral reward and bee use: UC Berkeley Urban Bee Lab; Xerces Society. Host count: Eschscholzia, low rounded estimate.",
     propagation: {
       methods: ["seed-direct"],
-      note: "Broadcast the seed on roughed-up bare soil in autumn and press it in with your foot. It needs no treatment and no watering beyond the rain, and it will reseed itself every year after.",
-      basis: "Theodore Payne Foundation; USDA NRCS.",
+      note: "Sow it on bare ground in autumn: the shortening days and winter rains break any dormancy, and seedlings come up through the winter. It needs no treatment, and it fails where the soil stays soggy.",
+      basis: "USFS Native Plant Network; USDA NRCS Plant Guide.",
     },
   },
   {
@@ -1340,9 +1340,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Monarch dependence, western decline and the tropical-milkweed problem: Xerces Society Western Monarch Count; Monarch Joint Venture. Host count: Asclepias genus.",
     propagation: {
-      methods: ["seed-cold-moist", "root-cuttings"],
-      note: "Collect pods just as they split in autumn, separate the seed from the floss, and give it a month of cold damp in the fridge before sowing in spring — or simply sow in autumn and let winter do it. Pieces of root lifted in winter also grow.",
-      basis: "Xerces Society milkweed seed guides; USFS Native Plant Network.",
+      methods: ["seed-direct", "root-cuttings"],
+      note: "Pick the pods when ripe but before they split, and sow the seed straight into the ground in autumn — plants raised in pots often die. Pieces of the underground stem, each with a bud, cut while the plant is dormant, root easily too.",
+      basis: "USFS Native Plant Network; USDA NRCS Plant Guide.",
     },
   },
   {
@@ -1375,9 +1375,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Beneficial-insect value: Xerces Society; UC ANR IPM. Toxicity to pets: ASPCA. Host count: Achillea genus.",
     propagation: {
-      methods: ["division", "seed-surface-light"],
-      note: "Lift a clump in autumn or winter and pull it into rooted pieces — the fastest way, and it barely notices. The fine seed is pressed onto the surface of damp soil and left uncovered.",
-      basis: "USFS Native Plant Network; USDA NRCS.",
+      methods: ["division", "seed-direct"],
+      note: "Pull a clump apart and replant the rooted pieces — it spreads by underground stems and regrows from small fragments. Seed sprouts within a week or two; sow it barely covered, no deeper than a quarter inch.",
+      basis: "USFS Native Plant Network; USDA NRCS Plant Guide; USFS FEIS.",
     },
   },
   {
@@ -1410,9 +1410,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Keystone status and specialist bees: NWF/Tallamy keystone plant lists; Fowler & Droege. Host count: Solidago genus, rounded western estimate.",
     propagation: {
-      methods: ["division", "seed-surface-light"],
-      note: "Split a clump in winter into rooted pieces. Or sow the fluffy seed on the surface in autumn — it is not fussy, but the divisions flower a year sooner.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-direct"],
+      note: "Strip the seed from the ripe heads between July and October and sow it untreated. It came up in three weeks in one nursery, but results vary widely, so sow plenty.",
+      basis: "USFS Native Plant Network; Seed Information Database.",
     },
   },
   {
@@ -1445,9 +1445,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Keystone status and specialist bees: NWF/Tallamy keystone plant lists; Fowler & Droege. Host count: Symphyotrichum genus, rounded western estimate.",
     propagation: {
-      methods: ["division", "seed-surface-light"],
-      note: "Divide the running clumps in autumn or winter — the simplest method by far. Seed sown fresh on the surface germinates well but the seedlings are variable.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-direct", "division"],
+      note: "The seed needs no treatment and can be sown any time; it comes up when the soil is moist and warming in spring. Pieces of the spreading underground stem can be divided in early spring, but seed is easier.",
+      basis: "USFS Native Plant Network; USDA NRCS.",
     },
   },
   {
@@ -1480,9 +1480,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Host count: Sisyrinchium, very low — included for early bloom and meadow structure rather than food-web value.",
     propagation: {
-      methods: ["division", "seed-cold-moist"],
-      note: "Lift and split the small clumps in autumn just as the rains start. Seed sown fresh in autumn in a pot left outside comes up over the winter.",
-      basis: "Theodore Payne Foundation; USFS Native Plant Network.",
+      methods: ["seed-cold-moist"],
+      note: "Collect the seed in May or June, when it turns brown, and sow it in autumn in a pot left outdoors: the winter chill brings it up in spring.",
+      basis: "USFS Native Plant Network.",
     },
   },
   {
@@ -1515,9 +1515,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Bee use: UC Berkeley Urban Bee Lab; Xerces Society. Host count: Penstemon genus, low rounded estimate.",
     propagation: {
-      methods: ["seed-cold-moist", "cuttings-softwood"],
-      note: "Collect the dry capsules in summer and sow the seed in autumn in a pot left outdoors — a cold damp winter brings it up. Soft basal shoots taken in spring will also root.",
-      basis: "Theodore Payne Foundation; USFS Native Plant Network.",
+      methods: ["seed-direct"],
+      note: "Much of the seed sprouts with no treatment, and water steeped in charred wood brings up more.",
+      basis: "USFS Native Plant Network; Seed Information Database.",
     },
   },
   {
@@ -1551,8 +1551,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range (Channel Islands endemic): Jepson eFlora, Calflora, Calscape (CNPS). Garden use on the mainland: Theodore Payne Foundation. Host count: Heuchera genus, low rounded estimate.",
     propagation: {
       methods: ["division", "seed-surface-light"],
-      note: "Split the woody crowns in autumn, keeping roots on each piece. The dust-fine seed is scattered on the surface of damp soil and never covered.",
-      basis: "USFS Native Plant Network; Theodore Payne Foundation.",
+      note: "Divide in late summer or early autumn: pull small pieces with roots and shoots off the edge, discard the woody centre, and replant with only the crown above ground. The tiny seed needs light, so sow it on the surface uncovered.",
+      basis: "RHS.",
     },
   },
   {
@@ -1585,9 +1585,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Riparian restoration use: USDA NRCS; USFS FEIS. Host count: Artemisia genus, rounded western estimate.",
     propagation: {
-      methods: ["division", "cuttings-softwood"],
-      note: "Dig a piece of the running root in winter with a shoot attached and replant it — that is all it takes. Soft summer shoots root in wet soil.",
-      basis: "USDA NRCS; USFS Native Plant Network.",
+      methods: ["division", "seed-direct"],
+      note: "It spreads by underground stems: dig a rooted piece from the edge of a patch, or even a short length of the stem, and replant it. Seed sown in late autumn or winter, about a quarter inch deep, sprouts in the cool, wet months.",
+      basis: "USFS Native Plant Network; USDA NRCS; Seed Information Database.",
     },
   },
   {
@@ -1620,9 +1620,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Poaching and enforcement: California Department of Fish and Wildlife; CNPS. Sonoran blue (Philotes sonorensis) host relationship: Xerces Society; BAMONA. Host count: Dudleya, very low rounded estimate.",
     propagation: {
-      methods: ["seed-surface-light", "division"],
-      note: "Sow the dust-fine seed on the surface of a gritty mix in autumn, keep it barely damp and uncovered, and expect slow, tiny seedlings. Established plants sometimes make offsets that can be pulled away with roots.",
-      basis: "Theodore Payne Foundation; CNPS.",
+      methods: ["seed-direct"],
+      note: "The seed needs no treatment, but it is slow: in a lab test most of it sprouted over about three months.",
+      basis: "Seed Information Database.",
     },
   },
   {
@@ -1655,9 +1655,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Spread and establishment: USFS FEIS; Theodore Payne Foundation. Host count: Romneya, very low rounded estimate.",
     propagation: {
-      methods: ["root-cuttings", "suckers"],
-      note: "Seed is difficult (it wants smoke or fire cues), so almost everyone uses the roots: in winter, dig a finger-thick piece of root, lay it in a pot of gritty mix, and wait. Rooted suckers dug from an established clump work too, though the plant hates being disturbed.",
-      basis: "Theodore Payne Foundation; USFS Native Plant Network.",
+      methods: ["root-cuttings", "cuttings-softwood", "seed-direct"],
+      note: "Take root cuttings in winter or soft cuttings from the base in spring. Seed sown in spring with gentle warmth, around 55 to 60°F, comes up better after a soak in water steeped in charred wood. It dislikes being moved, so plant it where it is to stay.",
+      basis: "RHS; USFS Native Plant Network.",
     },
   },
 
@@ -1691,9 +1691,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "rough",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Monocarpic habit: USFS FEIS. Obligate mutualism with Tegeticula maculata: Xerces Society; Pellmyr, yucca-moth literature. Host count: deliberately low — the moth is the relationship that matters, not a tally.",
     propagation: {
-      methods: ["seed-direct", "suckers"],
-      note: "Collect the big papery pods when they dry in late summer and sow the flat black seed in autumn — it germinates readily and needs no treatment, then takes years to build a rosette. If a plant leaves an offset after flowering, that can be separated too.",
-      basis: "USFS Native Plant Network; Theodore Payne Foundation.",
+      methods: ["seed-direct"],
+      note: "Collect the papery pods as they dry in late summer and sow the flat black seed. It needs no treatment: in lab tests untreated seed germinated almost completely.",
+      basis: "Seed Information Database.",
     },
   },
   {
@@ -1726,9 +1726,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Specialist-bee value: Fowler & Droege, Pollen Specialist Bees (West). Host count: Eriophyllum, rounded estimate. Occurrence records in this region's box: 12,174 (GBIF).",
     propagation: {
-      methods: ["seed-surface-light", "cuttings-softwood"],
-      note: "Scatter the small seed on bare ground in autumn and press it in without covering — it wants light. Soft spring cuttings root readily if you want a plant of known shape.",
-      basis: "Theodore Payne Foundation; USFS Native Plant Network.",
+      methods: ["seed-surface-light"],
+      note: "Sow the tiny seed on the surface or barely covered — light helps. Only about a quarter of it sprouts untreated; water steeped in charred wood brings up most of the rest.",
+      basis: "USFS Southern California Plant Profiles.",
     },
   },
   {
@@ -1761,9 +1761,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Cultural use and tending: UC ANR; M. Kat Anderson, Tending the Wild. Host count: very low — included for early bloom and for the geophyte layer the list had none of.",
     propagation: {
-      methods: ["seed-direct", "division"],
-      note: "Sow the black seed fresh in autumn in a deep pot left outside; it comes up with the rains and takes two or three years to reach flowering size. Established clumps make small offset corms that can be separated once the leaves have died back.",
-      basis: "Theodore Payne Foundation; USFS Native Plant Network.",
+      methods: ["division", "seed-direct"],
+      note: "Mature corms make small cormlets around themselves; separate and replant them. It also grows from seed.",
+      basis: "USDA NRCS Plant Guide.",
     },
   },
 
@@ -1798,9 +1798,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Grassland ecology and root depth: USFS FEIS; UC ANR. Host count: native bunchgrasses, rounded estimate for the skipper/satyr group.",
     propagation: {
-      methods: ["seed-direct", "division"],
-      note: "Strip the ripe seed in early summer and sow it on cleared ground with the first autumn rains — it comes up readily and needs no treatment. Established clumps can be dug and split in winter.",
-      basis: "USDA NRCS; Theodore Payne Foundation.",
+      methods: ["seed-direct"],
+      note: "Collect the seed in early summer and sow it in autumn, a quarter to half an inch deep in firm, weeded ground. Seedlings struggle against weedy annual grasses, so clear those first.",
+      basis: "USDA NRCS Plant Guide; USFS FEIS.",
     },
   },
   {
@@ -1833,9 +1833,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Garden use and basketry: UC ANR; Theodore Payne Foundation. Host count: native bunchgrasses, rounded estimate for the skipper group.",
     propagation: {
-      methods: ["seed-direct", "division"],
-      note: "Sow the seed on cleared damp ground in autumn — it germinates easily and grows fast. A big clump can be dug in winter and chopped into several rooted pieces with a spade.",
-      basis: "USDA NRCS; Theodore Payne Foundation.",
+      methods: ["seed-surface-light", "division"],
+      note: "Press the tiny seed onto the soil surface — it needs no treatment but can take two weeks to two months to come up. Sow in pots in May and plant out with the first autumn rains. Big clumps can be divided in winter or early spring.",
+      basis: "USDA NRCS Plant Guide.",
     },
   },
   {
@@ -1868,9 +1868,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Habit and habitat value: USFS FEIS; Theodore Payne Foundation. Host count: native bunchgrasses, rounded estimate for the skipper group.",
     propagation: {
-      methods: ["division", "seed-direct"],
-      note: "Split a clump in winter with a spade — the fastest and most reliable route. Seed sown on cleared ground in autumn also works, though germination is patchy.",
-      basis: "USDA NRCS; USFS Native Plant Network.",
+      methods: ["division"],
+      note: "Large clumps can be split into rooted pieces.",
+      basis: "No published source checked yet.",
     },
   },
   {
@@ -1903,9 +1903,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Lawn alternative performance: UC ANR turf trials; UC Davis Arboretum. Host count: Carex genus, rounded estimate for the satyr group.",
     propagation: {
-      methods: ["division", "seed-cold-moist"],
-      note: "Peel rooted pieces off the running edge of an established patch at any cool time of year and plant them a foot apart; they knit together within a season. Seed wants a cold damp spell before sowing and is slower.",
-      basis: "USDA NRCS; UC Davis Arboretum.",
+      methods: ["division"],
+      note: "It spreads by creeping underground stems, so rooted pieces can be dug from the edge of a patch.",
+      basis: "No published source checked yet.",
     },
   },
 
@@ -1940,9 +1940,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora. Bird use: Cornell Lab; USFS FEIS. Host count: Vitis genus, rounded western estimate anchored on Tallamy/NWF.",
     propagation: {
-      methods: ["cuttings-hardwood", "layering"],
-      note: "Take leafless pencil-thick cuttings in winter with two or three buds and push them into damp soil — grapes root very willingly. A low cane pegged onto the ground roots where it touches.",
-      basis: "USFS Native Plant Network.",
+      methods: ["cuttings-hardwood", "seed-cold-moist"],
+      note: "Grapes are usually grown from leafless winter cuttings, because seedlings rarely come true. Seed needs a few months cold and damp before it sprouts.",
+      basis: "Woody Plant Seed Manual.",
     },
   },
   {
@@ -1975,9 +1975,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). Hummingbird association: Audubon California; Theodore Payne Foundation. Host count: Keckiella, low rounded estimate.",
     propagation: {
-      methods: ["cuttings-softwood", "seed-direct"],
-      note: "Soft spring shoots root easily in a shaded frame. Seed collected from the dry capsules in autumn and sown fresh comes up with the winter rains.",
-      basis: "Theodore Payne Foundation; USFS Native Plant Network.",
+      methods: ["seed-direct"],
+      note: "Collect the capsules as they ripen, any time from June to January. The seed needs no treatment: sown in winter in a shaded spot, it comes up in two to four weeks, with about half germinating.",
+      basis: "USFS Native Plant Network.",
     },
   },
   {
@@ -2010,9 +2010,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "rough",
     basis: "Native status/range: Jepson eFlora, Calflora. Toxicity (protoanemonin in Ranunculaceae): UC ANR; ASPCA. Host count: Clematis genus, low rounded western estimate — a rough figure.",
     propagation: {
-      methods: ["seed-cold-moist", "layering"],
-      note: "Pull the plumed seeds off in autumn and sow them in a pot left outdoors for the winter; germination is slow and uneven. A low stem pinned onto damp soil will root and can be cut free the following year.",
-      basis: "USFS Native Plant Network.",
+      methods: ["seed-double-dormant"],
+      note: "Sow the plumed seed in autumn, soon after collecting, in a pot left outdoors. Germination is slow — some may not come up until the following autumn — and water steeped in charred wood raises it by nearly half.",
+      basis: "Woody Plant Seed Manual; USFS Native Plant Network.",
     },
   },
 
@@ -2047,9 +2047,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, Calscape (CNPS). El Segundo blue (Euphilotes battoides allyni) dependence: US Fish & Wildlife Service recovery documents; Xerces Society. Host count: Eriogonum genus, rounded western estimate.",
     propagation: {
-      methods: ["seed-direct", "cuttings-semi-hardwood"],
-      note: "Crumble the dry heads over sandy ground in autumn and let the rain take them in. Half-firm cuttings root in a gritty mix if you need a plant of known form.",
-      basis: "Theodore Payne Foundation; USFWS restoration guidance.",
+      methods: ["seed-direct"],
+      note: "The seed needs no treatment: in a lab test it all sprouted.",
+      basis: "Seed Information Database.",
     },
   },
   {
@@ -2083,8 +2083,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Host count: Fragaria genus (NWF), rounded.",
     propagation: {
       methods: ["runners", "division"],
-      note: "The simplest increase there is: it pushes out runners that root little plants as they go, so snip a rooted one off and move it wherever you want more.",
-      basis: "USFS Native Plant Network.",
+      note: "It sends out runners that root little plants where they touch moist soil: cut a rooted one off and move it. Divide the patch every three or four years to keep it vigorous.",
+      basis: "USDA NRCS Plant Guide; USFS FEIS.",
     },
   },
   {
@@ -2117,9 +2117,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Host count: Clinopodium, low rounded estimate.",
     propagation: {
-      methods: ["layering", "cuttings-softwood", "division"],
-      note: "It layers itself — lift a trailing stem and you will usually find roots along it, so cut a rooted length off and replant it. Soft cuttings root easily in damp shade.",
-      basis: "USFS Native Plant Network; Theodore Payne Foundation.",
+      methods: ["cuttings-softwood", "seed-cold-moist"],
+      note: "Take soft stem cuttings about 4 inches long in late spring and lay them flat in damp perlite and vermiculite with every joint covered — eight in ten rooted in one nursery. Seed needs a cold, damp spell in the fridge until it starts to sprout.",
+      basis: "USFS Native Plant Network.",
     },
   },
   {
@@ -2152,9 +2152,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Toxicity: ASPCA; UC ANR. Host count: Symphoricarpos genus, rounded western estimate.",
     propagation: {
-      methods: ["division", "cuttings-hardwood", "layering"],
-      note: "Dig a rooted piece of the running stem in winter and replant it — quick and nearly always successful. Leafless winter cuttings root too.",
-      basis: "USFS Native Plant Network.",
+      methods: ["suckers"],
+      note: "It spreads by underground runners, so dig a rooted piece from the edge of a patch in the cool months. Seed is the poor route: it needs harsh treatment and six months cold, and still comes up sparingly.",
+      basis: "USFS FEIS.",
     },
   },
   {
@@ -2188,8 +2188,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Summer dormancy: USFS FEIS. Ferns support very few Lepidoptera (honest low host value).",
     propagation: {
       methods: ["division", "spores"],
-      note: "Split an established crown in autumn as the rains begin, keeping roots on each piece. Growing it from the dust-fine spores on the frond backs works but is slow and fiddly.",
-      basis: "USFS Native Plant Network.",
+      note: "Split a clump with several crowns apart in spring and replant each piece at the same depth — deeper invites rot. Spores are slower: sow them thinly on sterilised mix, cover, and keep cool in light shade. A green film comes first, then tiny fronds after about a month.",
+      basis: "RHS.",
     },
   },
   {
@@ -2222,9 +2222,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS (southern limit is local and canyon-restricted). Ferns support very few Lepidoptera (honest low host value).",
     propagation: {
-      methods: ["division", "spores"],
-      note: "Dig an established clump in winter and split the crown into pieces, each with roots and a few fronds. Spores from the frond backs work but are slow.",
-      basis: "USFS Native Plant Network.",
+      methods: ["spores", "division"],
+      note: "An old plant may form extra crowns that can be split apart in spring, but it rarely spreads. Spores are slower: sow them thinly on sterilised mix, cover, and keep cool in light shade. A green film comes first, then tiny fronds after about a month.",
+      basis: "RHS; USFS Native Plant Network; USFS FEIS.",
     },
   },
   {
@@ -2258,8 +2258,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Habitat: USFS FEIS. Ferns support very few Lepidoptera (honest low host value).",
     propagation: {
       methods: ["division", "spores"],
-      note: "Divide a big crown in winter, keeping plenty of root on each piece and replanting into wet soil immediately. Spores sown on damp sterile mix work for the patient.",
-      basis: "USFS Native Plant Network.",
+      note: "Split a big clump with several crowns apart in spring and replant each piece at the same depth — deeper invites rot. Spores are slower: sow them thinly on sterilised mix, cover, and keep cool in light shade. A green film comes first, then tiny fronds after about a month.",
+      basis: "RHS.",
     },
   },
   {
@@ -2293,8 +2293,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Jepson eFlora, Calflora, USDA PLANTS. Summer dormancy (a resurrection fern strategy): USFS FEIS; Jepson eFlora. Ferns support very few Lepidoptera (honest low host value).",
     propagation: {
       methods: ["spores", "division"],
-      note: "Shake the gold dust from the frond backs onto damp sterile mix in a covered pot and wait — slow, but this is the usual way. Established clumps can occasionally be teased apart in winter.",
-      basis: "USFS Native Plant Network; American Fern Society.",
+      note: "Spores are the usual route: sow them thinly on sterilised mix, cover, and keep cool in light shade. A green film comes first, then tiny fronds after about a month. A clump with several crowns can also be split apart.",
+      basis: "RHS.",
     },
   },
 ];

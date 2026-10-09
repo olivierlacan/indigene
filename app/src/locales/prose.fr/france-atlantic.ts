@@ -19,7 +19,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "L'un des arbres les plus précieux pour la faune française : des centaines d'espèces de chenilles (et donc les oiseaux qui en nourrissent leurs petits), des glands pour les geais, les pics et les mammifères, et des siècles d'ombre et de carbone.",
     propagationNote:
-      "Ramassez les glands à leur chute en automne et faites-les flotter dans l'eau — jetez ceux qui remontent, semez aussitôt ceux qui coulent. Les glands de chêne germent dès l'automne, sans passage au froid, et ne doivent jamais sécher. À cause de la racine pivotante, démarrez-le en pot haut, ou semez-le là où il vivra.",
+      "Ramassez les glands à leur chute en automne et faites-les flotter dans l'eau — jetez ceux qui remontent, semez aussitôt ceux qui coulent, en pot dehors. Les glands ne se conservent pas : ils s'enracinent vite, n'ont besoin d'aucun froid et ne doivent jamais sécher. La tige suit au printemps.",
     supportNotes: {
       "purple-hairstreak":
         "Les chenilles de la thécla du chêne ne mangent que du chêne, rien d'autre. Tout le papillon se joue là-haut dans la canopée — les œufs sur les bourgeons, les chenilles sur les feuilles neuves, les adultes tournant autour du houppier — si bien qu'un vieux chêne dans une haie abrite une colonie que personne, en bas, ne remarque jamais.",
@@ -35,7 +35,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "L'une des plantes les plus riches en chenilles d'Europe — de quoi nourrir mésanges, fauvettes et sizerins — plus des graines pour les tarins et les pinsons, et une écorce blanche éclatante tout l'hiver.",
     propagationNote:
-      "Récoltez les chatons mûrs à la fin de l'été, quand ils s'effritent, et répandez la graine, fine comme de la poussière, à la surface d'une terre humide — il lui faut la lumière, ne l'enterrez pas. Semée à l'automne et laissée dehors pour l'hiver, elle lève sans difficulté au printemps.",
+      "Récoltez les chatons mûrs à l'automne, quand ils s'effritent, et répandez la graine, fine comme de la poussière, à la surface d'une terre humide — il lui faut la lumière, ne l'enterrez pas. Semée à l'automne et laissée dehors pour l'hiver, elle lève au printemps.",
     supportNotes: {
       "emperor-moth":
         "Les chenilles du petit paon de nuit mangent le bouleau parmi une courte liste d'arbustes et d'arbres ; le mâle porte de faux yeux sur ses quatre ailes et vole de jour en avril, guidé par la seule odeur des femelles.",
@@ -53,7 +53,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Une clé de voûte : les saules hébergent plus de chenilles que presque tout le reste ici, de quoi nourrir les oiseaux au nid, et leurs chatons précoces sont une bouée de sauvetage pour les reines de bourdons et les premières abeilles, quand presque rien d'autre n'est en fleur.",
     propagationNote:
-      "Le plus facile qui soit : coupez en fin d'hiver des rameaux nus gros comme un crayon et enfoncez-les en terre humide, ils s'enracinent tout seuls. (Le saule marsault s'enracine un peu moins volontiers que ses cousins : prenez-en quelques-uns de plus.) Sa graine cotonneuse ne vit que quelques jours ; si vous passez par elle, semez-la aussitôt sur de la vase.",
+      "Le plus facile qui soit : coupez en hiver des rameaux nus gros comme un crayon et enfoncez-les en terre humide, ils s'enracinent tout seuls. Sa graine cotonneuse ne vit que quelques jours ; si vous passez par elle, semez-la aussitôt sur de la vase.",
     supportNotes: {
       "poplar-hawk-moth":
         "La grosse chenille verte à corne émoussée mange les saules et les peupliers ; l'adulte passe le jour posé, ailes postérieures poussées en avant, avec l'air d'un tas de feuilles mortes.",
@@ -75,7 +75,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Sa floraison précoce nourrit les abeilles qui émergent, ses cerises d'été nourrissent merles, grives et mammifères, et — comme tous les Prunus — il nourrit une grande part des papillons de nuit indigènes et de leurs chenilles.",
     propagationNote:
-      "Débarrassez les cerises mûres de leur chair et faites passer aux noyaux un long hiver froid et humide avant qu'ils ne lèvent — un semis dehors à l'automne s'en charge pour vous. Plus simple encore : déterrez et replantez les rejets enracinés qu'il pousse autour du tronc.",
+      "Le plus simple : déterrez et replantez l'un des rejets enracinés qu'il pousse autour du tronc. Par semis, débarrassez les cerises mûres de leur chair et semez les noyaux dehors à l'automne : il leur faut un long hiver froid et humide avant de lever.",
     supportNotes: {
       hawfinch:
         "Tout le monde mange la chair d'une merise et laisse tomber le noyau. Le gros-bec fait l'inverse : il laisse tomber la chair et fend le noyau d'un bec capable d'exercer cinquante kilos sur la soudure, puis mange l'amande. Un merisier en juillet est l'endroit classique pour en trouver un — ou plutôt pour trouver, sous l'arbre, les noyaux coupés en deux qu'il a laissés en partant.",
@@ -116,7 +116,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Il héberge toute une gamme de chenilles, nourrit gros-becs et mésanges avec ses samares, et — taillé en haie — offre un couvert de nidification dense toute l'année ainsi qu'un brise-vent.",
     propagationNote:
-      "Récoltez les graines ailées à l'automne et semez-les aussitôt dehors — prises bien mûres il leur faut un hiver, mais si elles ont séché elles peuvent bouder deux ans. De la patience et un pot dehors sont tout ce qu'elles demandent.",
+      "Récoltez les graines ailées à l'automne et semez-les aussitôt en pot dehors — fraîches, il leur faut un hiver, mais si elles ont séché elles peuvent en attendre deux.",
     supportNotes: {
       hawfinch:
         "La graine de charme est ce qui fait passer l'hiver européen aux gros-becs, plus que celle d'aucun autre arbre. Les petites noix côtelées tiennent dans une aile papyracée à trois pointes et restent sur les rameaux longtemps après que les feuilles ont bruni et se sont accrochées, et les oiseaux les décortiquent jusqu'en mars.",
@@ -146,7 +146,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Un grand arbre à chenilles — bien plus de deux cents espèces de papillons de nuit, dont le sphinx du peuplier, autrement dit de quoi nourrir toutes les nichées de mésanges et de fauvettes à la ronde. Ses chatons précoces donnent du pollen au moment le plus maigre de l'année, et ses pétioles aplatis font frissonner tout le houppier au moindre souffle que rien d'autre ne remarque.",
     propagationNote:
-      "De loin le plus facile : déterrez un drageon enraciné en hiver et replantez-le. De courts morceaux de racine, gros comme un doigt, couchés au début du printemps dans un pot de terreau sableux, poussent aussi. La graine cotonneuse est un mauvais pari — elle ne vit que quelques jours, il faut donc l'attraper à la fin du printemps et la semer aussitôt sur de la vase.",
+      "De loin le plus facile : déterrez un drageon enraciné en automne ou à la fin de l'hiver et replantez-le. Des boutures ligneuses prélevées en hiver s'enracinent aussi. La graine cotonneuse est un mauvais pari — elle ne vit que quelques jours, il faut donc l'attraper au début de l'été et la semer aussitôt sur de la vase.",
     supportNotes: {
       "purple-emperor":
         "Le tremble est le deuxième arbre du grand mars changeant après le saule marsault, et c'est dans un bouquet de trembles que se tient toute la colonie.",
@@ -168,7 +168,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "La faîne est une nourriture d'automne majeure pour les pinsons du Nord, les pinsons des arbres, les sittelles, les mulots, les blaireaux et les sangliers, et un vieux hêtre se creuse en immeuble de trous et de fentes pour les pics, les mésanges et les chauves-souris. Sa liste de chenilles est honorable plutôt qu'énorme.",
     propagationNote:
-      "Récoltez les faînes triangulaires dans leur cupule hérissée à l'automne — la plupart des années beaucoup sont vides, ramassez donc largement et faites le test de flottaison. Il leur faut environ trois mois de froid humide, qu'un semis d'automne en pot laissé dehors fournit gratuitement.",
+      "Récoltez les faînes triangulaires dans leur cupule hérissée à la fin de l'été ou à l'automne. Il leur faut une période de froid humide : semez-les aussitôt, une par pot profond laissé dehors, ou gardez-les au réfrigérateur et semez en février, à l'abri des mulots de l'hiver.",
     supportNotes: {
       hawfinch:
         "La faîne est la nourriture d'hiver de base du gros-bec, et lors d'une bonne année à faînes les oiseaux se rassemblent à la cime des hêtres en nombres qu'on ne leur voit jamais autrement — puis disparaissent au printemps.",
@@ -182,7 +182,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Fin juin, un tilleul en fleur s'entend de l'autre bout du jardin : c'est l'un des plus grands arbres à nectar d'Europe, qui nourrit abeilles, syrphes et papillons de nuit pendant quinze jours, dans le mois creux entre la floraison des haies et les fleurs de fin d'été. Bon nombre de chenilles aussi, et les vieux tilleuls se creusent en quelques-uns des meilleurs gîtes à chauves-souris et à chouettes qui soient.",
     propagationNote:
-      "La graine de tilleul est réputée lente — le tégument et l'embryon la retiennent tous deux, si bien que les fruits récoltés attendent souvent deux hivers. Semez-les frais et encore un peu verts, en pot laissé dehors. Beaucoup plus rapide : marcottez une pousse basse, ou déterrez l'un des rejets qu'un vieil arbre pousse à son pied.",
+      "La graine de tilleul est lente et attend souvent deux hivers. Semez-la fraîche et encore un peu verte, en pot laissé dehors. Bien plus rapide : déterrez l'un des rejets qu'un vieil arbre pousse à son pied.",
     supportNotes: {
       "bumble-bees":
         "Un tilleul en fleur à la fin juin s'entend de l'autre côté du jardin. Il arrive au moment le plus creux de l'année — la floraison des haies terminée, les fleurs tardives pas commencées — et pendant quinze jours c'est le plus gros repas disponible pour les bourdons à des kilomètres.",
@@ -196,7 +196,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "L'orme est la seule nourriture de la thécla de l'Orme, un petit papillon qui a décliné avec son arbre et vit haut dans le houppier, plus une bonne centaine d'espèces de papillons de nuit. Ses samares papyracées mûrissent en avril, des semaines avant que quoi que ce soit d'autre ne grène, et bouvreuils et verdiers les dépouillent ; ses fleurs s'ouvrent en février, l'une des toutes premières sources de pollen de l'année.",
     propagationNote:
-      "Fait rare chez nos arbres, la graine d'orme mûrit au printemps et non à l'automne, et elle n'attend pas : cueillez les samares en avril ou mai, encore un peu vertes, semez-les aussitôt à peine recouvertes, tenez-les au chaud et à l'humide, et elles lèvent en quinze jours sans aucun passage au froid. Une branche basse couchée en terre s'enracine également.",
+      "Fait rare chez nos arbres, la graine d'orme mûrit au printemps et non à l'automne, et elle n'attend pas : cueillez les samares à maturité, semez-les aussitôt à peine recouvertes, tenez-les au chaud et à l'humide, et elles lèvent en quinze jours sans aucun passage au froid. Des boutures de pousses tendres prises en été s'enracinent aussi.",
     supportNotes: {
       "white-letter-hairstreak":
         "L'orme est la seule chose que mangent les chenilles de ce papillon, et il pond sur les boutons floraux, haut dans le houppier : une colonie peut donc tenir au-dessus d'une haie pendant des années sans que personne, en dessous, s'en aperçoive. Elle a décliné avec les ormes et revient avec eux — c'est la vraie raison d'en planter un tout en sachant que la maladie court toujours.",
@@ -212,7 +212,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Une floraison blanche en avril, quinze jours avant l'aubépine, qui nourrit les abeilles au moment du printemps où les premiers arbres sont passés. Plus d'une centaine d'espèces de chenilles utilisent les poiriers sauvages, les petits fruits durs blettissent après les premières gelées et nourrissent grives, blaireaux, sangliers et mulots, et un vieux poirier se creuse tôt, ce qui en fait un arbre à cavités bien avant qu'un chêne ne le devienne.",
     propagationNote:
-      "Prélevez les pépins de fruits ramassés après les premières gelées, débarrassez-les de la moindre parcelle de chair, et semez-les dehors à l'automne pour l'hiver froid et humide qu'il leur faut. Les pépinières greffent normalement les poiriers ; par semis vous obtenez un vrai arbre sauvage, mais attendez-vous à ce qu'il soit lent et reste un an sans bouger.",
+      "Débarrassez les pépins de fruits mûrs de la moindre parcelle de chair et semez-les dehors à l'automne pour l'hiver froid et humide qu'il leur faut. Les pépinières greffent normalement les poiriers ; par semis vous obtenez un vrai arbre sauvage.",
     supportNotes: {
       "mason-bees":
         "Le poirier sauvage fleurit début avril, une bonne quinzaine avant l'aubépine, et comble le creux qui suit la fin du prunellier — précisément le moment où les abeilles solitaires approvisionnent leurs nids.",
@@ -232,7 +232,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Son écume de fleurs de mai nourrit une foule d'abeilles, de syrphes et de coléoptères ; ses cenelles d'automne nourrissent grives, merles et migrateurs hivernants ; et son fourré épineux dense héberge de nombreuses chenilles et abrite les oiseaux nicheurs.",
     propagationNote:
-      "Les cenelles sont têtues : nettoyez la graine et comptez deux hivers dehors avant la levée — semez en pot et prenez patience. Bien plus rapide pour une haie : achetez ou prélevez des plants à racines nues en hiver.",
+      "Les cenelles sont têtues : nettoyez la graine et comptez deux hivers dehors avant la levée — semez en pot et prenez patience. Bien plus rapide pour une haie : achetez des plants à racines nues en hiver.",
     supportNotes: {
       "green-hairstreak":
         "Dans le Midi, l'aubépine fait aussi partie des plantes hôtes de l'argus vert — le papillon vert le plus commun d'ici, qu'on repère sur une lisière de haie ensoleillée en avril.",
@@ -315,7 +315,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Ses petites fleurs printanières nourrissent les abeilles, ses baies d'hiver sont une nourriture tardive essentielle pour grives et merles, son couvert dense et piquant abrite les oiseaux au dortoir et au nid toute l'année, et c'est la principale plante nourricière de l'azuré des nerpruns.",
     propagationNote:
-      "Par les baies c'est très lent — la graine nettoyée peut demander deux ou trois hivers dehors avant de lever. La plupart des gens prélèvent plutôt des boutures semi-aoûtées à la fin de l'été, qui s'enracinent lentement mais sûrement sous châssis ombragé.",
+      "Par les baies c'est très lent — la graine nettoyée, semée à l'automne sous châssis froid, peut demander deux ou trois hivers avant de lever. La plupart des gens prélèvent plutôt des boutures semi-aoûtées à la fin de l'été ou au début de l'automne.",
     supportNotes: {
       "holly-blue":
         "La génération de printemps de l'azuré des nerpruns pond sur les boutons floraux du houx, et les chenilles mangent les baies en formation. La génération d'été passe ensuite au lierre : un jardin qui a les deux plantes garde le papillon toute la saison.",
@@ -356,7 +356,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Ses grands plateaux de fleurs de début d'été nourrissent syrphes et abeilles, ses baies noir pourpre sont une nourriture d'automne majeure pour fauvettes, fauvettes à tête noire et grives qui font leurs réserves avant la migration, et il fabrique vite un couvert dense.",
     propagationNote:
-      "À peu près aussi simple qu'une plantation puisse l'être — enfoncez en hiver des boutures ligneuses en terre, ou faites raciner des pousses tendres d'été en pot. Les deux prennent vite.",
+      "À peu près aussi simple qu'une plantation puisse l'être — enfoncez en hiver des boutures ligneuses en terre, ou faites raciner au début de l'été des pousses tendres en pot couvert.",
     supportNotes: {
       "blackcaps-warblers":
         "La récolte de baies de sureau à la fin de l'été est du carburant de migration : fauvettes à tête noire, fauvettes des jardins et fauvettes grisettes se jettent sur un sureau en fruits et ne mangent presque rien d'autre tant qu'il dure.",
@@ -370,7 +370,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "La principale plante nourricière du citron — plantez-la et vous verrez peut-être arriver au jardin ce grand papillon jaune du printemps — avec en prime de petites fleurs pour les abeilles et des baies qui virent du rouge au noir pour les oiseaux.",
     propagationNote:
-      "Nettoyez la graine des baies mûres et faites-lui passer un hiver froid et humide dehors. Les boutures semi-aoûtées d'été sont l'autre voie ; les deux sont régulières plutôt que rapides.",
+      "Nettoyez la graine des baies une fois devenues noires, au début de l'automne, et faites-lui passer un hiver froid et humide dehors. Les boutures semi-aoûtées du début de l'été sont l'autre voie.",
     supportNotes: {
       brimstone:
         "Les nerpruns sont la seule chose qu'une chenille de citron puisse manger, et la bourdaine est le nerprun des terres atlantiques fraîches et acides. Une femelle en quête trouvera un seul petit buisson dans toute une haie — un unique arbuste met donc vraiment le premier papillon du printemps dans un jardin.",
@@ -384,7 +384,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Le grand comptoir à nectar du mois d'août. Quand les prés sont fauchés et que les fleurs des haies sont passées depuis longtemps, un tapis de callune bourdonne de bourdons, d'abeilles domestiques, d'abeilles solitaires et de papillons — c'est de cette plante que vient le miel de bruyère. Elle nourrit bien plus d'une centaine d'espèces de chenilles, dont le petit paon de nuit et l'azuré de l'Ajonc, et son tapis dense abrite lézards, araignées et insectes en hivernage.",
     propagationNote:
-      "Prélevez des extrémités de pousses en voie d'aoûtement à la fin de l'été et faites-les raciner sous abri dans un mélange sableux sans calcaire. Plus simple encore : butez du terreau acide sur la base d'un vieux pied au printemps ; les tiges enterrées s'enracinent et se détachent en nouveaux plants un an plus tard.",
+      "Prélevez en été des extrémités de pousses tendres et faites-les raciner sous abri dans un mélange sableux sans calcaire. Plus simple encore : en été, fixez une tige basse dans une terre acide, et une fois enracinée, détachez-la : c'est un nouveau plant.",
     supportNotes: {
       "green-hairstreak":
         "Sur le maquis acide du Midi, la callune rejoint les genêts sur la liste de l'argus vert : deux d'entre elles suffisent à faire une lande que le papillon peut utiliser.",
@@ -424,7 +424,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Elle fait quatre métiers à la fois, et aucun n'est petit : des mois de fleurs, en plein dans le creux d'août et septembre quand les prés ont séché, pour les bourdons, les abeilles domestiques, les syrphes et les papillons ; des mûres pour les merles, les fauvettes à tête noire, les renards, les muscardins et vous ; près de deux cents espèces de chenilles ; et un fourré épineux qui est l'un des endroits les plus sûrs où un oiseau puisse nicher ou un hérisson passer l'hiver. Dans la plupart des jardins français, c'est déjà la plante la plus utilisée par la faune sur la parcelle.",
     propagationNote:
-      "Vous n'aurez presque jamais besoin d'essayer, mais sa propre méthode est le marcottage par la pointe : couchez en fin d'été une tige arquée, enterrez ses derniers centimètres, et au printemps cette pointe est un plant enraciné que vous pouvez détacher et déplacer. Les drageons enracinés et les boutures ligneuses d'hiver prennent tout aussi facilement.",
+      "Vous n'aurez presque jamais besoin d'essayer, mais sa propre méthode est le marcottage par la pointe : au printemps, couchez une tige arquée et enterrez sa pointe de quelques centimètres ; à l'automne ou au printemps suivant, cette pointe est un plant enraciné que vous pouvez détacher et déplacer.",
     supportNotes: {
       "green-hairstreak":
         "Le papillon vert le plus commun d'Europe pond sur la ronce parmi les autres arbustes des terrains vagues, et se pose ailes fermées sur un talus ensoleillé, exactement semblable à une feuille.",
@@ -460,7 +460,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Les bourdons déclenchent les fleurs : qu'un bourdon se pose sur l'une d'elles, et les étamines jaillissent en giflant le dos de l'abeille de pollen — cela vaut de s'accroupir pour regarder. Il nourrit plus d'une centaine d'espèces de chenilles, ses gousses noires éclatent audiblement par les après-midi chauds de juillet et projettent de la graine pour les fringilles, et sa masse verte dense sert de couvert de nidification aux fauvettes grisettes, aux linottes et aux tariers pâtres.",
     propagationNote:
-      "Le tégument est dur comme celui d'un pois : entaillez-le au papier de verre ou versez dessus de l'eau à peine bouillie et laissez tremper une nuit, puis semez en terre graveleuse à l'automne ou au printemps. Il fait une racine pivotante et supporte mal d'être déplacé : semez-le là où il doit vivre plutôt que de le rempoter.",
+      "Le tégument est dur comme celui d'un pois : frottez-le au papier de verre, entaillez-le ou faites-le tremper une nuit dans de l'eau tiède, puis semez en terre graveleuse à l'automne ou au printemps. Il supporte mal d'être déplacé : semez-le là où il doit vivre, ou plantez-le jeune.",
     supportNotes: {
       "green-hairstreak":
         "Le genêt à balais est l'une des principales plantes nourricières de la thécla de la ronce, avec l'ajonc, le genêt des teinturiers et la myrtille — le papillon vert le plus commun d'Europe, et un papillon qu'on trouve en observant un talus broussailleux ensoleillé plutôt qu'un massif de fleurs.",
@@ -478,7 +478,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Son nom dit la vérité toute simple : c'est la plante qui a teint les tissus en jaune dans toute l'Europe, et par-dessus le pastel elle donnait le vert. Pour la faune, c'est une fleur de légumineuse assez raide pour que seul un bourdon puisse l'ouvrir, l'hôte de bien plus d'une centaine d'espèces de chenilles, et un fixateur d'azote qui nourrit discrètement la terre maigre où il se tient.",
     propagationNote:
-      "Graine à tégument dur, comme toutes les légumineuses : entaillez-la ou faites-la tremper une nuit, puis semez en terreau graveleux à l'automne. Les pousses en voie d'aoûtement prélevées en fin d'été s'enracinent sous abri, lentement. Il a une racine pivotante et supporte mal d'être déplacé : plantez-le jeune et laissez-le.",
+      "Graine à tégument dur, comme toutes les légumineuses : entaillez-la ou faites-la tremper une nuit dans de l'eau tiède, puis semez en terreau graveleux à l'automne. Les pousses semi-aoûtées prélevées en été s'enracinent sous abri.",
     supportNotes: {
       "green-hairstreak":
         "Le genêt des teinturiers est l'une des légumineuses arbustives sur lesquelles pond la thécla de la ronce, dans la même broussaille ensoleillée que le genêt à balais et l'ajonc.",
@@ -494,7 +494,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Des fleurs simples grandes ouvertes, pollen à portée de tous — une abeille peut vraiment s'en servir, contrairement à un rosier de jardin double, qui pour un insecte n'est que du décor. Plus d'une centaine d'espèces de chenilles utilisent les rosiers sauvages, les cynorrhodons nourrissent grives mauvis, litornes, merles et mulots jusqu'en décembre, et c'est bien au fond du fourré épineux que merles et accenteurs bâtissent.",
     propagationNote:
-      "Des boutures ligneuses enfoncées en terre humide en hiver s'enracinent bien et sont de loin la voie la plus rapide. Les tiges rampantes se marcottent d'elles-mêmes au contact du sol : détachez un morceau enraciné et déplacez-le. Par les cynorrhodons c'est lent — nettoyez la graine, semez dehors à l'automne, et attendez-vous à en voir l'essentiel au second printemps.",
+      "Des boutures ligneuses enfoncées en terre humide à l'automne s'enracinent bien et sont de loin la voie la plus rapide. Les drageons enracinés se soulèvent et se déplacent aussi. Par les cynorrhodons c'est lent : nettoyez la graine, semez dehors à l'automne, et attendez-vous à en voir l'essentiel au second printemps.",
     supportNotes: {
       "bumble-bees":
         "Un rosier sauvage simple est une coupe ouverte avec le pollen posé à portée de main, si bien qu'une abeille peut réellement s'en servir. Un rosier de jardin double a perdu cela par sélection — pour un insecte, ce n'est que du décor.",
@@ -514,7 +514,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Ses clochettes bleues penchées nourrissent bourdons à longue langue, anthophores et premiers papillons juste à leur émergence, et recréent les sous-bois atlantiques tapissés de jacinthes, en voie de disparition, l'un des spectacles printaniers emblématiques de l'Europe.",
     propagationNote:
-      "Le plus facile est de soulever et diviser les touffes trop denses au moment où les feuilles jaunissent, au début de l'été, en replantant les bulbes aussitôt. Par semis c'est lent — semez la graine mûre dehors à l'automne et comptez plusieurs années avant la floraison. N'utilisez jamais que des bulbes de culture : arracher des jacinthes sauvages est illégal.",
+      "Le plus facile est de soulever une touffe trop dense en été, une fois les feuilles fanées, et de replanter aussitôt les caïeux. Par semis c'est lent — semez la graine dès qu'elle est mûre, en pot dehors, à l'ombre et sans jamais la laisser sécher, et comptez des années avant la floraison. N'utilisez que des bulbes achetés : ne déterrez jamais de jacinthes sauvages.",
     supportNotes: {
       "mason-bees":
         "Les jacinthes des bois fleurissent dans les quelques semaines qui séparent le réchauffement du sol de la fermeture de la canopée — exactement quand les abeilles solitaires de printemps garnissent leurs nids. Les andrènes les butinent toute la matinée, et l'anthophore plumeuse, brune et velue, fait du surplace devant chaque clochette pour en atteindre le fond.",
@@ -528,7 +528,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Ses hautes fleurs en tube attirent les bourdons — on peut regarder les gros bourdons grimper carrément à l'intérieur de chaque doigtier — et elle se ressème pour garnir sans le moindre effort les clairières et les sols remaniés.",
     propagationNote:
-      "La graine est fine comme de la poussière et a besoin de lumière : répandez-la à la surface d'une terre nue et humide en été ou en automne, sans la couvrir. Semée là où elle doit pousser, elle ne demande rien d'autre — laissez simplement une hampe monter en graine chaque année pour entretenir la colonie.",
+      "La graine est fine comme de la poussière et a besoin de lumière : répandez-la à la surface d'une terre nue et humide à la fin du printemps, sans la couvrir. Semée là où elle doit pousser, elle ne demande rien d'autre — laissez simplement une hampe monter en graine chaque année pour entretenir la colonie.",
     supportNotes: {
       "bumble-bees":
         "Une digitale est construite pour un seul animal : la gorge tachetée est une piste d'atterrissage et un mode d'emploi, et le tube est assez profond pour que seul un bourdon à longue langue en atteigne le fond. Regardez-en un grimper tout à l'intérieur et ressortir en marche arrière, saupoudré de pollen.",
@@ -542,7 +542,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Ses bouquets de fleurs jaunes parfumées nourrissent au printemps les bourdons à longue langue, l'anthophore plumeuse et les premiers papillons, et c'est une plante nourricière de la rare Lucine, là où elle subsiste.",
     propagationNote:
-      "Semez de la graine fraîche à l'automne et laissez-la dehors pour le froid dont elle a besoin ; une graine vieille et sèche germe mal. Les touffes installées peuvent aussi être soulevées et divisées juste après la floraison.",
+      "Semez de la graine fraîche à l'automne et laissez-la dehors pour le froid dont elle a besoin ; une graine vieille et sèche germe mal. Les touffes installées peuvent aussi être soulevées et divisées.",
     supportNotes: {
       "duke-of-burgundy":
         "La Lucine ne pond que sur les primevères officinales et les primevères communes — et seulement sur des pieds installés dans le bon degré d'abri, blottis dans une herbe plus haute ou en lisière de broussaille, plutôt qu'en plein gazon ras. Avoir la plante compte ; le moment où vous fauchez autour compte tout autant.",
@@ -556,7 +556,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Ses capitules bleu poudré sont une source de nectar de premier ordre en fin d'été, quand les prairies sèchent, et la plante est la plante nourricière indispensable du rare damier de la succise.",
     propagationNote:
-      "Semez de la graine fraîche à l'automne et laissez-lui sentir le froid dehors. Les plants installés se divisent avec précaution au printemps, mais ils supportent mal d'être dérangés : faites des éclats généreux.",
+      "Semez de la graine fraîche à l'automne et laissez-lui sentir le froid dehors. Des pousses tendres coupées à la base du pied s'enracinent aussi.",
     supportNotes: {
       "bumble-bees":
         "La succise fleurit en fin d'été, quand la prairie a fini de fleurir — un dernier gros repas pour les bourdons et les papillons.",
@@ -586,7 +586,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Toutes proportions gardées, la plante à papillons la plus importante de France. L'azuré commun, les hespéries, la zygène de la filipendule et les soucis y élèvent leurs chenilles, plusieurs d'entre eux sur presque rien d'autre, et sa longue saison de petites fleurs jaune et orange nourrit les bourdons de mai à septembre. Quand une prairie a perdu ses papillons, c'est en général cela qu'elle a perdu.",
     propagationNote:
-      "Le tégument est dur, comme chez la plupart des légumineuses : entaillez-le au papier de verre ou faites-le tremper une nuit dans de l'eau tiède, puis semez directement sur une terre nue griffée à l'automne ou au début du printemps. Elle supporte mal d'être mise en pot puis déplacée : semez-la là où vous la voulez.",
+      "Le tégument est dur, comme chez la plupart des légumineuses : entaillez-le au papier de verre ou faites-le tremper une nuit dans de l'eau tiède, puis semez directement sur une terre nue griffée, à presque n'importe quelle saison.",
     supportNotes: {
       "common-blue":
         "Le lotier corniculé est la principale plante nourricière de l'azuré commun — et les fourmis montent souvent la garde au-dessus des chenilles, les protégeant pour les gouttes sucrées qu'elles exsudent. Quand une prairie a perdu ses azurés, c'est en général cela qu'elle a perdu.",
@@ -604,7 +604,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "L'aliment de base d'un bourdon à longue langue : le tube de la fleur est trop profond pour qu'une abeille domestique le vide, si bien que le trèfle des prés et les gros bourdons dépendent l'un de l'autre depuis très longtemps. Ses feuilles nourrissent les chenilles du souci et d'une centaine d'autres espèces, et, comme toute légumineuse, il remet de l'azote dans une terre fatiguée au lieu d'en prendre.",
     propagationNote:
-      "Une graine fraîche semée sur une terre griffée au printemps ou au début de l'automne germe vite et n'a besoin d'aucun froid. Une graine plus vieille et plus dure lève mieux si vous la frottez d'abord entre deux feuilles de papier de verre. Il se divise mal — semez-le plutôt que de le déplacer.",
+      "Une graine fraîche semée sur une terre griffée entre le printemps et la fin de l'été germe vite et n'a besoin d'aucun froid. Une graine plus vieille et plus dure lève mieux si vous la frottez d'abord entre deux feuilles de papier de verre.",
     supportNotes: {
       "common-blue":
         "Les chenilles de l'azuré commun mangent les trèfles et les lotiers, et c'est dans une prairie de fauche non fertilisée que le papillon subsiste.",
@@ -622,7 +622,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "C'est la plante du cuivré commun — le petit papillon orange vif qui patrouille le long des allées et les coins en friche pond sur l'oseille et ses chenilles ne mangent rien d'autre ici. À elles deux, les oseilles et les patiences nourrissent près de deux cents espèces de chenilles, plus que la plupart des arbres, et les fringilles prélèvent les épis de graines rouillés jusqu'au cœur de l'hiver.",
     propagationNote:
-      "Semez la graine mûre sur une terre nue griffée à l'automne ou au printemps — elle ne demande aucun traitement particulier et lève rapidement. Les touffes installées peuvent aussi être déterrées au début du printemps et séparées en morceaux enracinés.",
+      "Semez la graine mûre sur une terre nue du milieu du printemps au début de l'été — elle ne demande aucun traitement particulier et lève en une à deux semaines. Les touffes installées peuvent aussi être déterrées et divisées.",
     supportNotes: {
       "small-copper":
         "Le cuivré commun pond sur les oseilles et les patiences, et ses chenilles ne mangent rien d'autre. Elles se nourrissent au revers d'une feuille et la broutent jusqu'à une fenêtre translucide au lieu de la percer : le dégât ressemble à une tache pâle, pas à un trou — c'est ce qu'il faut chercher sur un pied dans un coin en friche en juin.",
@@ -638,7 +638,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Personne ne plante l'armoise pour les fleurs : elles sont ternes, pollinisées par le vent, et ne nourrissent aucune abeille. Ce qu'elle nourrit, ce sont les chenilles — plus de cent trente espèces, dont plusieurs petits papillons de nuit qui ne vivent presque que d'elle — et ses tiges mortes creuses sont là où abeilles solitaires, coccinelles et chrysopes passent l'hiver, ce qui est la raison de les laisser sur pied jusqu'au printemps. Chardonnerets et linottes prennent la graine.",
     propagationNote:
-      "De loin le plus simple : tranchez un morceau enraciné au bord d'une touffe au début du printemps et replantez-le — il prendra sans se plaindre. La graine est fine comme de la poussière et a besoin de lumière : si vous semez, répandez-la à la surface d'une terre nue humide à l'automne et laissez-la découverte.",
+      "De loin le plus simple : tranchez un morceau enraciné au bord d'une touffe au printemps ou à l'automne et replantez-le — il prendra sans se plaindre. La graine est fine comme de la poussière, a besoin de lumière et veut le froid d'un hiver : si vous semez, répandez-la sur une terre nue humide à l'automne et laissez-la découverte.",
     supportNotes: {
       "mason-bees":
         "Les fleurs de l'armoise ne nourrissent personne — elles sont pollinisées par le vent. Ce qu'elle donne, ce sont les tiges mortes : creuses, debout, et pleines de petites abeilles solitaires, de coccinelles et de chrysopes qui y passent l'hiver. C'est la meilleure raison de les laisser jusqu'au printemps au lieu de faire le ménage en octobre.",
@@ -654,7 +654,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "L'herbe est ce que mangent réellement la plupart des papillons bruns de France. Le myrtil, l'amaryllis, le tristan, le demi-deuil et les hespéries élèvent tous leurs chenilles sur des graminées fines comme celle-ci et passent l'hiver au fond des touffes — une pelouse tondue tous les quinze jours n'en nourrit aucun, une pelouse laissée fleurir les nourrit tous. La graine nourrit ensuite fringilles et bruants, et les racines tricotent ensemble le sable et la terre maigre.",
     propagationNote:
-      "Égrenez les épis mûrs au milieu de l'été et semez-les directement sur une terre ratissée — aucun froid nécessaire, et elle lève sans peine, à l'automne comme au printemps. Les touffes installées peuvent aussi être déterrées et séparées en morceaux enracinés.",
+      "Égrenez les épis mûrs en été et semez-les directement sur une terre ratissée, de l'automne au printemps — aucun froid nécessaire. Les touffes installées peuvent aussi être déterrées et séparées au printemps.",
     supportNotes: {
       "grass-skippers":
         "Le myrtil, l'amaryllis, le tristan, le demi-deuil et les hespéries n'ont mangé que de l'herbe toute leur vie de chenille, et ce sont des graminées fines comme celle-ci qu'ils choisissent. Ils passent aussi l'hiver au fond de la touffe — une pelouse tondue tous les quinze jours n'en nourrit aucun, une pelouse laissée fleurir les nourrit tous.",
@@ -670,7 +670,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Elle nourrit la moitié ombragée du réseau alimentaire des graminées : le tristan et le tircis — le papillon brun qui patrouille parmi les taches de soleil le long d'un chemin forestier — pondent sur des graminées d'ombre comme celle-ci, et leurs chenilles se nourrissent la nuit, au ras des brins. Là où l'ombre d'un jardin n'est aujourd'hui que de la terre nue, elle en fait un couvert d'hiver pour les coléoptères, les araignées et les chenilles en hivernage.",
     propagationNote:
-      "Répandez la graine mûre sur une terre nue ratissée à l'automne, là où vous la voulez ; elle n'a besoin d'aucun froid et germe à l'ombre, ce qui est tout son intérêt. Les touffes peuvent aussi être soulevées et divisées au printemps.",
+      "Répandez la graine mûre sur une terre nue ratissée à l'automne, là où vous la voulez ; elle n'a besoin d'aucun froid. Les touffes peuvent aussi être soulevées et divisées au printemps.",
     supportNotes: {
       "grass-skippers":
         "C'est la moitié ombragée du réseau alimentaire des graminées. Le tristan et le tircis — le papillon brun qui patrouille parmi les taches de soleil le long d'un chemin forestier — pondent sur des graminées comme celle-ci, et leurs chenilles se nourrissent la nuit au ras des brins. Une ombre qui n'est aujourd'hui que de la terre nue ne leur offre rien du tout.",
@@ -684,7 +684,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Ses nuages de fleurs argentées accrochent la lumière du plein été jusqu'en hiver, ses touffes hébergent les chenilles de plusieurs satyres et hespéries indigènes, abritent carabes et petite faune, et retiennent les sols frais.",
     propagationNote:
-      "Semez la graine à la surface d'une terre nue au printemps ou à l'automne — elle lève sans peine, avec peu ou pas de froid préalable. Les touffes installées se déterrent aussi et se séparent en éclats.",
+      "Semez la graine là où elle doit pousser, sur une terre nue au printemps ou à l'automne — elle lève sans peine, avec peu ou pas de froid préalable. Les touffes installées se déterrent aussi et se divisent au début de l'été.",
     supportNotes: {
       "grass-skippers":
         "Les satyres et les hespéries qui s'envolent de l'herbe quand vous traversez une prairie humide française n'ont mangé que de l'herbe toute leur vie, et ils passent l'hiver à l'état de chenille au fond d'une touffe comme celle-ci. Une pelouse tondue ne leur offre ni la nourriture ni l'abri.",
@@ -743,7 +743,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Ses fleurs d'automne, uniques en leur genre, sont le dernier grand comptoir à nectar de l'année — elles nourrissent les abeilles tardives, les syrphes, les guêpes et la collète du lierre quand plus rien ne fleurit — puis ses baies noires d'hiver nourrissent merles, grives et pigeons ramiers, et son couvert persistant abrite oiseaux au dortoir, insectes et azuré des nerpruns.",
     propagationNote:
-      "Le plus facile qui soit : coupez en fin d'été un morceau de pousse juvénile non grimpante et enfoncez-le dans une terre humide ou un pot, il s'enracine sans façon. Les tiges qui rampent au sol s'enracinent en chemin : vous pouvez soulever et déplacer les morceaux enracinés à tout moment.",
+      "Le plus facile qui soit : en fin d'été, coupez un morceau de tige grimpante, enfoncez-le dans un pot de terreau humide sous un sac plastique, il s'enracine sans façon. Les tiges qui rampent au sol s'enracinent en chemin : vous pouvez soulever et déplacer les morceaux enracinés à tout moment.",
     supportNotes: {
       "mason-bees":
         "La collète du lierre est une abeille des sables dont l'année entière est réglée sur cette seule plante : elle sort en septembre quand le lierre s'ouvre et a fini quand les fleurs ont fini. Rien d'autre qui lui convienne n'est ouvert à ce moment-là.",
@@ -769,7 +769,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "La plante nourricière du robert-le-diable — celui aux bords d'ailes déchiquetés, qui passe l'hiver à l'état adulte en ressemblant exactement à une feuille morte — ainsi que de plusieurs beaux papillons de nuit. Ses cônes de fin d'été abritent des insectes, et son rideau dense de feuilles transforme un mur nu en couvert de nidification et de dortoir en une seule saison.",
     propagationNote:
-      "Au début du printemps, creusez au bord d'une touffe et coupez un morceau de la racine charnue coureuse portant un bourgeon — c'est ainsi que les houblonniers ont toujours fait, et c'est quasi certain. Les boutures de pousses tendres prises au début de l'été s'enracinent aussi.",
+      "Les boutures de pousses tendres prises au début de l'été s'enracinent sans peine. Ou couchez une longue tige au sol en l'enterrant à quelques endroits : chaque partie enterrée s'enracine en un plant que vous pouvez détacher.",
     supportNotes: {
       comma:
         "Le houblon est la plante nourricière classique du robert-le-diable, avec l'ortie et l'orme. La chenille est éclaboussée de blanc sur le dos, si bien que sur une feuille elle passe pour une fiente d'oiseau — bien plus utile pour elle que d'être verte.",
@@ -801,7 +801,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "La plante des mélitées. La mélitée du Plantain et la mélitée du mélampyre pondent sur le plantain lancéolé, et de très nombreux papillons de nuit le mangent aussi — à elles toutes, les espèces de plantain nourrissent cent soixante-dix espèces de chenilles, plus que la plupart des arbres n'y parviennent. Les abeilles récoltent le pollen sec de ses petites baguettes de tambour brunes d'avril jusqu'en octobre, et les chardonnerets dépouillent les épis de graines.",
     propagationNote:
-      "Frottez la graine mûre des épis en fin d'été et répandez-la sur une terre nue griffée ou dans un gazon clairsemé ; aucun froid, aucun recouvrement, et elle lève en quinze jours. Les grosses rosettes peuvent aussi être déterrées et divisées.",
+      "Frottez la graine mûre des épis en fin d'été et répandez-la sur une terre nue griffée ou dans un gazon clairsemé ; aucun froid, aucun recouvrement, et elle lève en quinze jours.",
     supportNotes: {
       "glanville-fritillary":
         "Le plantain lancéolé est ce sur quoi pond la mélitée du Plantain, et elle pond toute la ponte au même endroit : les chenilles éclosent ensemble, tissent une tente de soie par-dessus la plante et y passent l'hiver serrées les unes contre les autres. Aux premiers jours doux du printemps, elles sortent et se chauffent au soleil sur le dessus de la toile, en un nœud noir — c'est alors qu'on les repère le plus facilement.",
@@ -817,7 +817,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Ses fleurs blanches printanières nourrissent les premières abeilles et les syrphes, ses petites fraises rouges nourrissent oiseaux, petits mammifères et promeneurs, et son tapis héberge des chenilles et retient un talus.",
     propagationNote:
-      "Le plus simple de tous : elle émet des stolons qui enracinent de petits plants en chemin — coupez un plant enraciné et déplacez-le là où vous en voulez d'autres. Les touffes trop denses se soulèvent et se divisent aussi.",
+      "Le plus simple de tous : elle émet des stolons qui enracinent de petits plants en chemin — coupez un plant enraciné et déplacez-le là où vous en voulez d'autres.",
     supportNotes: {
       "hazel-dormouse":
         "Le muscardin prend les fraises des bois là où les stolons atteignent le pied d'une haie, avec tout ce qui est tendre et sucré dans un été de bocage.",
@@ -855,6 +855,6 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "De la structure verte toute l'année dans le coin difficile, et des frondes qui piègent les feuilles mortes en exactement la litière humide où grenouilles, coléoptères et araignées passent l'hiver. Son tour de main mérite d'être connu : de petites plantules poussent le long de la nervure d'une fronde âgée, si bien qu'un pied en devient une douzaine pour rien. Comme nourriture, elle ne vaut presque rien — une seule espèce de chenille — et elle est ici pour le couvert, pas pour le réseau alimentaire.",
     propagationNote:
-      "La voie facile, et légèrement magique : en fin d'été, choisissez une vieille fronde portant de petites plantules le long de sa nervure, couchez-la à plat sur un plateau de terreau humide et fixez-la ; chaque plantule s'enracine en une nouvelle fougère avant le printemps. Sinon, divisez une grosse souche au début du printemps, ou élevez-la de spores avec patience.",
+      "La voie facile, et légèrement magique : à l'automne, choisissez une vieille fronde portant de petites bulbilles le long de sa nervure, couchez-la à plat sur un plateau de terreau humide et fixez-la ; chaque bulbille s'enracine en une nouvelle fougère. Sinon, divisez une grosse souche au printemps, ou élevez-la de spores avec patience.",
   },
 };

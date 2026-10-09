@@ -1593,7 +1593,6 @@ export const fr: Dict = {
   "plant.propagationTitle": "🪴 Comment la multiplier",
   "plant.forThisPlant": "Pour cette plante : ",
   "plant.howToSource": "Source du mode d'emploi : ",
-  "plant.usfsLink": "Native Plant Network (USFS) →",
   "plant.savedFit.one":
     "Vous avez enregistré un coin qui lui conviendrait. Ouvrez-le pour voir tout ce qui y prospère.",
   "plant.savedFit.other":
@@ -1898,13 +1897,13 @@ export const fr: Dict = {
   "planting.src.xerces":
     "Des spécialistes de la conservation des invertébrés, et la raison pour laquelle tant de ces notes précisent qui la plante nourrit. Leurs guides régionaux de semences et d'habitats sont gratuits, et remarquablement honnêtes sur ce qui ne s'installe pas.",
   "planting.src.tela":
-    "Le réseau botanique francophone : une flore collaborative avec observations, clés et notes de culture, nourrie par des botanistes comme par des amateurs. La référence derrière la plupart des fiches françaises d'ici.",
+    "Le réseau botanique francophone : une flore collaborative avec observations, clés et notes de culture, nourrie par des botanistes comme par des amateurs. Les fiches françaises s'y appuient pour les noms et l'aire où la plante pousse à l'état sauvage, pas pour sa multiplication.",
   "planting.src.inpn":
     "L'inventaire national, porté par le Muséum national d'Histoire naturelle. Moins un mode d'emploi que l'autorité sur ce qui est réellement indigène et où — le garde-fou qui empêche de prendre pour « indigène » une plante qui pousse simplement bien.",
   "planting.src.nzpcn":
     "Le réseau néo-zélandais des botanistes et des pépiniéristes. Chaque fiche d'espèce a une courte note de multiplication ; c'est la source de toutes les plantes d'Auckland ici.",
   "planting.src.sid":
-    "Les relevés de graines de la banque de graines de Kew et d'études publiées : comment faire germer une espèce, et comment ses graines se conservent. Mondiale, et la source de nombreuses fiches japonaises ici.",
+    "Les relevés de graines de la banque de graines de Kew et d'études publiées : comment faire germer une espèce, et comment ses graines se conservent. Mondiale, et citée ici par des fiches de la France au Japon.",
   "planting.src.rhs":
     "Des guides clairs et bien illustrés pour chaque technique, publiés par une société d'horticulture bicentenaire. Écrits pour un jardin européen et une année européenne.",
 

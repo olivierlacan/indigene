@@ -1603,7 +1603,6 @@ export const en = {
   "plant.propagationTitle": "🪴 How to grow more",
   "plant.forThisPlant": "For this plant: ",
   "plant.howToSource": "How-to source: ",
-  "plant.usfsLink": "USFS Native Plant Network →",
   "plant.savedFit.one":
     "You've saved a spot this would suit. Open it to see everything else that thrives there.",
   "plant.savedFit.other":
@@ -1910,13 +1909,13 @@ export const en = {
   "planting.src.xerces":
     "Invertebrate conservationists, and the reason so many of these notes mention who the plant feeds. Their regional seed and habitat guides are free, and unusually honest about what doesn't establish.",
   "planting.src.tela":
-    "The French botanical network: a collaborative flora with observations, keys and cultivation notes contributed by botanists and amateurs alike. The reference behind most of the French rows here.",
+    "The French botanical network: a collaborative flora with observations, keys and cultivation notes from botanists and amateurs alike. The French rows here lean on it for names and where a plant grows wild, not for how to propagate it.",
   "planting.src.inpn":
     "France's national inventory, run by the natural history museum. Less a how-to than the authority on what is genuinely native where — the check that stops a “native” plant from being one that merely grows well.",
   "planting.src.nzpcn":
     "New Zealand's network of botanists and growers. Each species page has a short propagation note, and it's the source behind every Auckland plant here.",
   "planting.src.sid":
-    "Seed records from Kew's Millennium Seed Bank and published studies: how to germinate a species, and how its seed keeps. Global, and the source for many Japanese rows here.",
+    "Seed records from Kew's Millennium Seed Bank and published studies: how to germinate a species, and how its seed keeps. Global, and cited by rows from France to Japan here.",
   "planting.src.rhs":
     "Clear, well-illustrated guides to each technique, from a horticultural society two centuries old. Written for a European garden and a European year.",
 

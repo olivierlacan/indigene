@@ -154,6 +154,18 @@ function detect(): Lang {
 }
 
 let current: Lang = detect();
+
+/** Whether this reader has ever chosen a language on this device — in
+ *  Settings, or by following a `?lang=` link, which `detect()` stores as
+ *  theirs. The French offer (`components/lang-offer.ts`) stays away from a
+ *  reader who has said what they want. */
+export function langChosen(): boolean {
+  try {
+    return isLang(localStorage.getItem(STORAGE_KEY));
+  } catch {
+    return false;
+  }
+}
 const listeners = new Set<() => void>();
 
 export function getLang(): Lang {
@@ -168,9 +180,11 @@ export function langTag(): string {
 }
 
 export function setLang(next: Lang): void {
+  // Remembered even when nothing changes: tapping English while the browser's
+  // guess already showed English is still a choice, and `langChosen()` counts it.
+  remember(next);
   if (next === current) return;
   current = next;
-  remember(next);
   applyDocumentLang();
   listeners.forEach((fn) => fn());
 }

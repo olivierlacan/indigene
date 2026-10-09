@@ -1,12 +1,14 @@
 // A one-line offer to read the app in French, for a browser that lists French
-// but landed on English — French second in the browser's list, say, or an
-// English link someone was sent.
+// but landed on English — French second in the browser's list, say.
+//
+// Only for a reader who has never chosen a language. Someone who picked English
+// in Settings said what they want; someone who picked French doesn't need it.
 //
 // It speaks French because that's who it's for. Dismissed once, it stays gone
 // for good on this device; taken, the language switch removes it, and the
 // stored pick (`setLang`) means it never has a reason to come back.
 import { el } from "../ui";
-import { getLang, onLangChange, setLang } from "../lib/i18n";
+import { getLang, langChosen, onLangChange, setLang } from "../lib/i18n";
 import { flagRow } from "./flags";
 
 const STORAGE_KEY = "indigene:lang-offer";
@@ -28,7 +30,7 @@ function browserSpeaksFrench(): boolean {
 
 /** Puts the offer just above `main`, once, if this reader is one it's for. */
 export function mountLangOffer(main: HTMLElement): void {
-  if (getLang() !== "en" || !browserSpeaksFrench() || dismissed()) return;
+  if (getLang() !== "en" || langChosen() || !browserSpeaksFrench() || dismissed()) return;
 
   const flag = flagRow(["FR"]);
   flag?.setAttribute("aria-hidden", "true");

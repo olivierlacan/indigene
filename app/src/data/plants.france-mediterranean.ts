@@ -325,8 +325,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Occurrence records in this region's box: 10,889 (GBIF). Host count: 109 Lepidoptera recorded on native Sorbus in Mediterranean Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level. Some recent treatments move this species to Cormus; the name here follows the French reference flora.",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Clean the seed from soft, ripe fruit and sow it in autumn in a pot left outside. The seed needs a long cold, damp spell before it sprouts.",
-      basis: "USDA Woody Plant Seed Manual; RHS.",
+      note: "Clean the seed from the ripe fruit and keep it in damp sand, not peat, somewhere cold (about 5 °C) for three months; then it sprouts readily.",
+      basis: "Journal of Forest Science; RHS.",
     },
   },
   // ---------------- RIPARIAN TREES ----------------

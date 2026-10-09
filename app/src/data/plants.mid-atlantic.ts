@@ -1389,7 +1389,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["division"],
       note: "By far the easiest way is division: in spring, lift a mature clump and pull it into small pieces, each with roots and leaves.",
-      basis: "LBJ Wildflower Center.",
+      basis: "LBJ Wildflower Center; NC State Extension Plant Toolbox.",
     },
   },
 

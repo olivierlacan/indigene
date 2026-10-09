@@ -577,7 +577,7 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     givesNote:
       "Des fleurs crème pour les syrphes et les abeilles solitaires, 109 espèces de chenilles, et de petits fruits que grives, merles et martres prennent en automne — blets, les gens les mangent aussi, et c'est pour cela que l'arbre est là où il est.",
     propagationNote:
-      "Nettoyez les graines des fruits blettes et semez-les en automne dans un pot laissé dehors. Elles ont besoin d'une longue période froide et humide pour germer.",
+      "Nettoyez les graines du fruit mûr et gardez-les dans du sable humide, pas de la tourbe, au froid (vers 5 °C) pendant trois mois ; elles germent ensuite facilement.",
   },
   "Artemisia alba": {
     supportNotes: {

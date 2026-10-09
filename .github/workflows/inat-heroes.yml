@@ -1,5 +1,5 @@
 # Give every plant and animal nobody has reviewed yet iNaturalist's own
-# photograph, and open a PR with the result.
+# photograph.
 #
 # `hero-photos.yml` is the *reviewed* tier: a shortlist a human picks from, so
 # nothing it writes reaches the app on its own. This is the floor under it —
@@ -8,19 +8,25 @@
 # It used to be run by hand, and a whole region (Kantō) once shipped without
 # it: 59 plants with the drawing where a photograph should be.
 #
-# So it runs whenever the lists it reads from change on main, and weekly as a
-# backstop. It only fills gaps, so a run with nothing new asks iNaturalist
-# about the few subjects with no republishable photo and opens no PR. One
-# request per 30 subjects, no image downloads — about a minute.
+# **On a pull request** that changes a list it reads from, it commits the
+# photos to that PR's own branch, so they arrive with the plants they belong
+# to and nobody has a second PR to merge. A PR from a fork can't be pushed to;
+# its run says so in the summary and the weekly run picks the gap up later.
 #
-# Requires "Allow GitHub Actions to create and approve pull requests" in the
-# repo's Actions settings.
+# **Weekly, or by hand,** it fills whatever is still missing on main (a taxon
+# whose first republishable photo appeared since) and opens a PR for that.
+#
+# It only fills gaps: one request per 30 subjects, no image downloads, about a
+# minute. A run with nothing new changes nothing and pushes nothing.
+#
+# A commit pushed with the default token doesn't start other workflows, so the
+# PR's checks don't re-run on it — which is why this one typechecks and tests
+# before it pushes. Add a `HERO_BOT_TOKEN` secret (a fine-grained PAT with
+# contents: write) and its pushes re-run CI like anyone's.
 name: Fill iNaturalist hero photos
 
 on:
-  workflow_dispatch:
-  push:
-    branches: [main]
+  pull_request:
     paths:
       - app/src/data/registry.ts
       - app/src/data/plants.*.ts
@@ -31,6 +37,7 @@ on:
       # A reviewed pick removed leaves a gap this tier should fill.
       - app/src/data/hero-photos.json
       - app/src/data/wildlife-photos.json
+  workflow_dispatch:
   schedule:
     - cron: "0 7 * * 1" # 07:00 UTC Mondays
 
@@ -39,50 +46,107 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: inat-heroes
-  cancel-in-progress: false
+  # One run per PR; a newer push to the PR supersedes an older run.
+  group: inat-heroes-${{ github.event.pull_request.number || 'main' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  # Every file `hero:inat` and `hero:colors` can write.
+  OUTPUTS: >-
+    app/src/data/inat-heroes.json
+    app/src/data/inat-lookalikes.json
+    app/src/data/inat-alternatives.json
+    app/src/data/inat-invasives.json
+    app/src/data/hero-photos.json
+    app/src/data/wildlife-photos.json
+    app/src/data/plant-photos.json
 
 jobs:
   fill:
-    name: Fill gaps & open a PR
+    name: Fill gaps
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      ON_PR: ${{ github.event_name == 'pull_request' }}
+      FORK: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository }}
     steps:
+      - name: Note a fork PR
+        if: env.FORK == 'true'
+        run: echo "PR from a fork — can't push photos to it; the weekly run will fill them after merge." >> "$GITHUB_STEP_SUMMARY"
+
       - uses: actions/checkout@v4
+        if: env.FORK != 'true'
+        with:
+          # On a PR, the branch itself (not the merge commit), so we can push.
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
+          token: ${{ secrets.HERO_BOT_TOKEN || github.token }}
 
       - uses: actions/setup-node@v4
+        if: env.FORK != 'true'
         with:
           node-version: lts/*
           cache: npm
           cache-dependency-path: app/package-lock.json
 
       - name: Install dependencies
+        if: env.FORK != 'true'
         working-directory: app
         run: npm ci
 
       - name: Ask iNaturalist for the missing photographs
+        if: env.FORK != 'true'
         working-directory: app
         shell: bash # explicit, so pipefail is on and tee can't hide a failure
         run: npm run hero:inat | tee "$RUNNER_TEMP/heroes.log"
 
+      - name: Anything new?
+        id: diff
+        if: env.FORK != 'true'
+        run: |
+          if git diff --quiet -- $OUTPUTS; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
       # hero:colors averages each new photo in Chromium for the placeholder
       # tint; it skips every photo that already has one.
       - name: Install Chromium
+        if: steps.diff.outputs.changed == 'true'
         working-directory: app
         run: npx playwright install --with-deps chromium
 
       - name: Colour the new photographs
+        if: steps.diff.outputs.changed == 'true'
         working-directory: app
         run: npm run hero:colors
 
       - name: Typecheck and test with the new data
+        if: steps.diff.outputs.changed == 'true'
         working-directory: app
         run: |
           npm run typecheck
           npm test
 
+      - name: Commit to the PR
+        if: steps.diff.outputs.changed == 'true' && env.ON_PR == 'true'
+        env:
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- $OUTPUTS
+          git commit -m "Fill iNaturalist hero photos for this PR's new subjects"
+          # The author may have pushed while this ran: replay our one commit on
+          # top of theirs rather than lose either.
+          git push origin "HEAD:$BRANCH" || {
+            git pull --rebase origin "$BRANCH"
+            git push origin "HEAD:$BRANCH"
+          }
+          echo "Pushed the new photographs to \`$BRANCH\`." >> "$GITHUB_STEP_SUMMARY"
+
       - name: Summarize
-        if: always()
+        if: always() && env.FORK != 'true'
         run: |
           # `cat`, never an interpolated expression: the log carries names that
           # came back from an external API.
@@ -94,10 +158,12 @@ jobs:
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
+      # Off a PR there's no branch to join, so the gap gets one of its own.
       # continue-on-error so a blocked PR-creation doesn't red-fail a run whose
-      # branch was pushed. No diff, no PR.
+      # branch was pushed.
       - name: Open a PR with the new photographs
         id: cpr
+        if: steps.diff.outputs.changed == 'true' && env.ON_PR != 'true'
         continue-on-error: true
         uses: peter-evans/create-pull-request@v6
         with:
@@ -114,8 +180,6 @@ jobs:
             Worth a glance: the run summary lists any subject with no
             republishable photo. Those keep their drawing.
 
-            Merging ships the photos with the next deploy.
-
             ---
             _Generated by [Claude Code](https://claude.ai/code)_
           # The change a reader notices (a new region, a new animal) carries
@@ -126,12 +190,11 @@ jobs:
             app/src/data/inat-lookalikes.json
             app/src/data/inat-alternatives.json
             app/src/data/inat-invasives.json
-            # hero:colors also tints a reviewed pick that lacks a colour.
             app/src/data/hero-photos.json
             app/src/data/wildlife-photos.json
             app/src/data/plant-photos.json
 
       - name: Say where the PR is
-        if: always()
+        if: steps.cpr.outcome != 'skipped' && env.ON_PR != 'true'
         run: |
           echo "PR: ${{ steps.cpr.outputs.pull-request-url || 'none opened' }}" >> "$GITHUB_STEP_SUMMARY"

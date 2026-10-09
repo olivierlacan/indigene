@@ -6,6 +6,6 @@
   `inat-heroes.json` held none of its 59 plants. Re-ran it (plus
   `hero:colors`); three non-Kantō gaps filled on the way.
 - Internal: new `inat-heroes.yml` workflow runs `hero:inat` and `hero:colors`
-  when the plant, wildlife, look-alike, ornamental or invasive lists change on
-  `main` (and weekly), then opens a PR, so the next region can't ship without
-  photos.
+  on any PR that changes the plant, wildlife, look-alike, ornamental or
+  invasive lists, and commits the photos to that PR. Weekly, it opens a PR for
+  any gaps left on `main`.

@@ -1,12 +1,16 @@
 ### Changed
 
-- Bringing a copy of your spots into a browser that already has them now adds
-  the sightings and invasives you linked on the other device, instead of
-  skipping the spot. Nothing already here is removed or overwritten.
+- Your spots file is now a full backup: spots, plantings, linked sightings with
+  their photos, your iNaturalist username and your settings. Open it in a new
+  browser and everything comes back.
+- Bringing a copy into a browser that already has your spots adds what's new,
+  like sightings linked on another device. Nothing already here is removed or
+  overwritten.
 - Your saved spots now ask the browser to keep them through a clean-up, and
   the spots file card says when you last saved a copy.
-- Internal: `planImport` in `lib/backup.ts` is the pure merge (union of
-  `observations` and `invasives`, note filled only when missing), with
-  `backup.test.ts` pinning the round trip via `Required<SavedSpot>`. `saveSpot`
-  calls `navigator.storage.persist()` once per load; the last copy's date is
-  kept in kv as `backup-saved-at`.
+- Internal: spots file format v2 adds `lookups`, `sightings` (the `obs:<ref>`
+  cache records) and `preferences`; v1 files still read. `planImport` in
+  `lib/backup.ts` is the pure merge, pinned by `backup.test.ts` with
+  `Required<>` fixtures. Settings that redraw the page apply via
+  `Restore.finish()` so the import report survives. `saveSpot` calls
+  `navigator.storage.persist()` once per load.

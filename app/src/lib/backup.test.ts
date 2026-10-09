@@ -3,7 +3,7 @@
 // the round trip, and an import that drops or overwrites what's already here.
 import { describe, expect, it } from "vitest";
 import { SPOTS_FORMAT, SPOTS_VERSION, parseSpotsFile, planImport } from "./backup";
-import type { SpotsFile } from "./backup";
+import type { Preferences, SavedSighting, SpotsFile } from "./backup";
 import type { Planting, SavedSpot } from "../types";
 
 // `Required<>` on purpose: a field added to `SavedSpot` or `Planting` stops
@@ -54,8 +54,75 @@ const planting: Required<Planting> = {
   createdAt: 1_700_000_200_000,
 };
 
+// Same `Required<>` trick for everything else a backup carries.
+const sighting: Required<SavedSighting> = {
+  ref: "222",
+  capturedAt: 1_700_000_300_000,
+  observation: {
+    id: 222,
+    taxonId: 54813,
+    taxonName: "Ribes sanguineum",
+    observer: "a-gardener",
+    place: "Portland, OR",
+    lat: 45.52,
+    lon: -122.68,
+    distanceKm: null,
+    observedOn: "2025-04-12",
+    photos: [
+      {
+        id: 9,
+        thumbUrl: "https://static.inaturalist.org/photos/9/square.jpg",
+        mediumUrl: "https://static.inaturalist.org/photos/9/medium.jpg",
+        largeUrl: "https://static.inaturalist.org/photos/9/large.jpg",
+        license: "cc-by",
+        attribution: "(c) a-gardener, some rights reserved (CC BY)",
+      },
+    ],
+    taxonPhoto: true,
+  },
+};
+
+const preferences: Required<Preferences> = {
+  inatLogin: "a-gardener",
+  weights: spot.weights,
+  filters: {
+    requireDeerResistant: true,
+    excludeThorny: false,
+    excludePetToxic: true,
+    excludeAggressive: false,
+    requireNoWater: false,
+    maxHeightFt: 6,
+    maxSpreadFt: null,
+  },
+  sticky: {
+    spot: {
+      lat: 45.52,
+      lon: -122.68,
+      regionId: null,
+      sun: spot.sun,
+      horizon: spot.horizon,
+      deciduousOverhead: true,
+      moisture: "mesic",
+      savedAt: 1_700_000_400_000,
+    },
+    defaultRegion: "pnw",
+  },
+  units: "imperial",
+  lang: "fr",
+  counting: false,
+};
+
 function file(spots: SavedSpot[], plantings: Planting[]): SpotsFile {
-  return { format: SPOTS_FORMAT, version: SPOTS_VERSION, exportedAt: "", spots, plantings };
+  return {
+    format: SPOTS_FORMAT,
+    version: SPOTS_VERSION,
+    exportedAt: "",
+    spots,
+    plantings,
+    lookups: [],
+    sightings: [],
+    preferences: {},
+  };
 }
 
 describe("parseSpotsFile", () => {
@@ -67,6 +134,31 @@ describe("parseSpotsFile", () => {
     expect(read.skipped).toBe(0);
     expect(read.file.spots).toEqual([spot]);
     expect(read.file.plantings).toEqual([planting]);
+  });
+
+  it("reads back lookups, sightings and settings", () => {
+    const lookups = [{ spotId: "s1", nearby: true, own: false }];
+    const text = JSON.stringify({ ...file([spot], [planting]), lookups, sightings: [sighting], preferences });
+    const read = parseSpotsFile(text);
+    expect(read.ok).toBe(true);
+    if (!read.ok) return;
+    expect(read.skipped).toBe(0);
+    expect(read.file.lookups).toEqual(lookups);
+    expect(read.file.sightings).toEqual([sighting]);
+    expect(read.file.preferences).toEqual(preferences);
+  });
+
+  it("still reads a version-1 file, with nothing extra", () => {
+    const { lookups: _l, sightings: _s, preferences: _p, ...v1 } = { ...file([spot], [planting]), version: 1 };
+    const read = parseSpotsFile(JSON.stringify(v1));
+    expect(read.ok && read.file).toMatchObject({ spots: [spot], lookups: [], sightings: [], preferences: {} });
+  });
+
+  it("drops a photo that isn't served over https", () => {
+    const obs = sighting.observation!;
+    const bad = { ...sighting, observation: { ...obs, photos: [{ ...obs.photos[0], thumbUrl: "http://x.test/a.gif" }] } };
+    const read = parseSpotsFile(JSON.stringify({ ...file([], []), sightings: [bad] }));
+    expect(read.ok && read.file.sightings[0].observation?.photos).toEqual([]);
   });
 
   it("refuses what isn't ours, and what's too new, without throwing", () => {

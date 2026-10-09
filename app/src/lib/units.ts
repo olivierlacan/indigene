@@ -29,7 +29,7 @@ export type UnitSystem = "imperial" | "metric";
  *  anyone who'd rather the app read it from their device. */
 export type UnitPref = UnitSystem | "auto";
 
-const STORAGE_KEY = "indigene:units";
+export const STORAGE_KEY = "indigene:units";
 
 const FT_PER_M = 3.280839895;
 const MM_PER_IN = 25.4;

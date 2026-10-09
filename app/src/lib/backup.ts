@@ -16,7 +16,13 @@
 //     removes or overwrites what's here — a spot both copies have only gains
 //     the sightings linked elsewhere (`planImport`). The worst a wrong file
 //     can do is nothing.
-//  3. **A spot's log travels with it.** Deleting a spot deletes its plantings
+//  3. **Everything the person made travels.** Spots, plantings, invasives, the
+//     per-spot "yes, look up sightings", what each linked sighting looked like
+//     (so its photo shows offline), the linked iNaturalist account, and the
+//     settings they chose. A backup that left any of it behind couldn't put a
+//     garden back. Only things fetched again for free — nearby sightings,
+//     town names — stay out.
+//  4. **A spot's log travels with it.** Deleting a spot deletes its plantings
 //     (`db.ts`), so the two belong to each other; a file of spots with no
 //     plantings would be a garden with its history quietly dropped.
 //
@@ -24,11 +30,21 @@
 // as-is. A file that has been hand-edited, half-saved, or written by something
 // else entirely is an ordinary thing to meet, and the answer to it is a row
 // left out and counted — never a broken screen.
-import { kvGet, kvSet, listPlantings, listSpots, savePlanting, saveSpot } from "../db";
+import {
+  getCachedObservations,
+  kvGet,
+  kvSet,
+  listPlantings,
+  listSpots,
+  putCachedObservations,
+  savePlanting,
+  saveSpot,
+} from "../db";
 import { ECOREGION_PROVIDERS } from "../types";
 import type {
   EcoregionInfo,
   HorizonMask,
+  MoistureBand,
   PlantedDate,
   Planting,
   SavedSpot,
@@ -37,7 +53,19 @@ import type {
   SunEstimate,
   Weights,
 } from "../types";
-import { DEFAULT_WEIGHTS } from "./ranking";
+import { DEFAULT_WEIGHTS, NO_FILTERS } from "./ranking";
+import type { ActiveFilters } from "./ranking";
+import type { ObservationPhoto, ObservationSummary } from "./inaturalist";
+import { isValidLogin, linkedLogin, setLinkedLogin } from "./inat-account";
+import { allowLookup, allowOwnLookup, lookupAllowed, ownLookupAllowed } from "./spot-sightings";
+import { loadSticky } from "./sticky";
+import type { Sticky, StickySpot } from "./sticky";
+import { loadPrefs } from "../state";
+import { STORAGE_KEY as UNITS_KEY, setUnitPref } from "./units";
+import type { UnitPref } from "./units";
+import { isLang, langChosen, setLang } from "./i18n";
+import type { Lang } from "./i18n";
+import { STORAGE_KEY as COUNTING_KEY, setAnalyticsEnabled } from "./analytics";
 
 /** What the file says it is. Checked on read so an unrelated JSON file gets a
  *  plain "that isn't one of ours" rather than a puzzling empty import. */
@@ -45,7 +73,41 @@ export const SPOTS_FORMAT = "indigene.spots";
 
 /** The shape's version. Bumped only if a future field can't be read by the
  *  rules below; a file from the future is refused rather than half-read. */
-export const SPOTS_VERSION = 1;
+//  Version 2 added `lookups`, `sightings` and `preferences`. A version-1 file
+//  still reads (those come back empty); a version-1 app refuses a version-2
+//  file rather than restoring half of it.
+export const SPOTS_VERSION = 2;
+
+/** The yeses a spot's page asked for before looking anything up. */
+export interface SpotLookups {
+  spotId: string;
+  /** Neighbourhood sightings of the spot's wildlife. */
+  nearby: boolean;
+  /** The linked account's own sightings at the spot. */
+  own: boolean;
+}
+
+/** What a linked sighting looked like when last fetched — so a restored log
+ *  shows its photos before (or without) asking iNaturalist again. */
+export interface SavedSighting {
+  /** The reference as kept on the planting or invasive. */
+  ref: string;
+  capturedAt: number;
+  /** Null when iNaturalist had nothing to show for it. */
+  observation: ObservationSummary | null;
+}
+
+/** The person's own choices. Each is absent when it was never made. */
+export interface Preferences {
+  inatLogin?: string;
+  weights?: Weights;
+  filters?: ActiveFilters;
+  sticky?: Sticky;
+  units?: UnitPref;
+  lang?: Lang;
+  /** Present only as `false`: they asked not to be counted. */
+  counting?: false;
+}
 
 export interface SpotsFile {
   format: string;
@@ -54,18 +116,73 @@ export interface SpotsFile {
   exportedAt: string;
   spots: SavedSpot[];
   plantings: Planting[];
+  lookups: SpotLookups[];
+  sightings: SavedSighting[];
+  preferences: Preferences;
+}
+
+/** Every sighting reference a spot or planting holds, once each. */
+function linkedRefs(spots: readonly SavedSpot[], plantings: readonly Planting[]): Set<string> {
+  const refs = new Set<string>();
+  for (const p of plantings) for (const r of p.observations) refs.add(r);
+  for (const s of spots) for (const i of s.invasives ?? []) for (const r of i.observations) refs.add(r);
+  return refs;
+}
+
+function readLocal(key: string): string | null {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
 }
 
 /** Everything on this device, ready to be written out. */
 export async function collectSpots(now: number = Date.now()): Promise<SpotsFile> {
   const [spots, plantings] = await Promise.all([listSpots(), listPlantings()]);
+
+  const lookups: SpotLookups[] = [];
+  for (const s of spots) {
+    const [nearby, own] = await Promise.all([lookupAllowed(s.id), ownLookupAllowed(s.id)]);
+    if (nearby || own) lookups.push({ spotId: s.id, nearby, own });
+  }
+
+  const sightings: SavedSighting[] = [];
+  for (const ref of linkedRefs(spots, plantings)) {
+    const hit = await getCachedObservations(`obs:${ref}`).catch(() => undefined);
+    if (hit) sightings.push({ ref, capturedAt: hit.capturedAt, observation: hit.observations[0] ?? null });
+  }
+
   return {
     format: SPOTS_FORMAT,
     version: SPOTS_VERSION,
     exportedAt: new Date(now).toISOString(),
     spots,
     plantings,
+    lookups,
+    sightings,
+    preferences: await collectPreferences(),
   };
+}
+
+async function collectPreferences(): Promise<Preferences> {
+  const [weights, filters, sticky] = await Promise.all([
+    kvGet<Weights>("weights").catch(() => undefined),
+    kvGet<ActiveFilters>("filters").catch(() => undefined),
+    kvGet<Sticky>("sticky").catch(() => undefined),
+  ]);
+  const prefs: Preferences = {};
+  const login = linkedLogin();
+  if (login) prefs.inatLogin = login;
+  if (weights) prefs.weights = weights;
+  if (filters) prefs.filters = filters;
+  if (sticky && (sticky.spot || sticky.defaultRegion)) prefs.sticky = sticky;
+  const units = toUnitPref(readLocal(UNITS_KEY));
+  if (units) prefs.units = units;
+  const lang = readLocal("indigene:lang");
+  if (isLang(lang)) prefs.lang = lang;
+  if (readLocal(COUNTING_KEY) === "off") prefs.counting = false;
+  return prefs;
 }
 
 /** `indigene-spots-2026-08-09.json` — dated, so a folder of them sorts itself,
@@ -144,6 +261,19 @@ export function parseSpotsFile(text: string): ReadResult {
     else skipped++;
   }
 
+  const lookups: SpotLookups[] = [];
+  for (const row of asArray(r.lookups)) {
+    const l = toLookups(row);
+    if (l) lookups.push(l);
+    else skipped++;
+  }
+  const sightings: SavedSighting[] = [];
+  for (const row of asArray(r.sightings)) {
+    const sg = toSavedSighting(row);
+    if (sg) sightings.push(sg);
+    else skipped++;
+  }
+
   return {
     ok: true,
     skipped,
@@ -153,6 +283,9 @@ export function parseSpotsFile(text: string): ReadResult {
       exportedAt: typeof r.exportedAt === "string" ? r.exportedAt : "",
       spots,
       plantings,
+      lookups,
+      sightings,
+      preferences: toPreferences(r.preferences),
     },
   };
 }
@@ -169,6 +302,12 @@ export interface ImportTally {
   plantingsKnown: number;
   /** Plantings already here that gained a linked sighting or a note. */
   plantingsUpdated: number;
+  /** Per-spot "look up sightings" yeses brought back. */
+  lookupsAdded: number;
+  /** Linked sightings whose saved details came in. */
+  sightingsAdded: number;
+  /** Settings brought back — each one only where this browser had none. */
+  settingsRestored: number;
   /** Rows left out: unreadable ones, plus any planting whose spot is neither
    *  in the file nor already here — a log entry with no garden to belong to. */
   skipped: number;
@@ -213,6 +352,9 @@ export function planImport(
       plantingsAdded: 0,
       plantingsKnown: 0,
       plantingsUpdated: 0,
+      lookupsAdded: 0,
+      sightingsAdded: 0,
+      settingsRestored: 0,
       skipped: skippedOnRead,
     },
   };
@@ -303,18 +445,115 @@ function mergeInvasives(
   return changed ? out : null;
 }
 
+/** What an import did, and the settings it left for last. */
+export interface Restore {
+  tally: ImportTally;
+  /**
+   * Apply the restored units, language and counting choice. Each of these
+   * redraws the page, so the caller runs it once it has kept the figures
+   * somewhere a redraw won't wipe. True when anything changed.
+   */
+  finish: () => boolean;
+}
+
 /** Add what the file brings (see `planImport`) to this device's database. */
-export async function applySpotsFile(
-  file: SpotsFile,
-  skippedOnRead = 0
-): Promise<ImportTally> {
+export async function applySpotsFile(file: SpotsFile, skippedOnRead = 0): Promise<Restore> {
   const [here, hereLog] = await Promise.all([listSpots(), listPlantings()]);
   const plan = planImport(here, hereLog, file, skippedOnRead);
   // Spots first: a planting written before its spot would, for a moment, be
   // exactly the orphan `planImport` refuses to create.
   for (const spot of plan.spots) await saveSpot(spot);
   for (const planting of plan.plantings) await savePlanting(planting);
-  return plan.tally;
+  const { tally } = plan;
+
+  const spotIds = new Set([...here, ...file.spots].map((s) => s.id));
+  for (const l of file.lookups) {
+    if (!spotIds.has(l.spotId)) continue;
+    if (l.nearby && !(await lookupAllowed(l.spotId))) {
+      await allowLookup(l.spotId);
+      tally.lookupsAdded++;
+    }
+    if (l.own && !(await ownLookupAllowed(l.spotId))) {
+      await allowOwnLookup(l.spotId);
+      tally.lookupsAdded++;
+    }
+  }
+
+  // Only sightings something in the file points at; a newer copy here stays.
+  const refs = linkedRefs(file.spots, file.plantings);
+  for (const sg of file.sightings) {
+    if (!refs.has(sg.ref)) continue;
+    const key = `obs:${sg.ref}`;
+    const mine = await getCachedObservations(key).catch(() => undefined);
+    if (mine && mine.capturedAt >= sg.capturedAt) continue;
+    await putCachedObservations({
+      key,
+      capturedAt: sg.capturedAt,
+      observations: sg.observation ? [sg.observation] : [],
+    });
+    tally.sightingsAdded++;
+  }
+
+  const later = displayPreferences(file.preferences);
+  tally.settingsRestored = (await restorePreferences(file.preferences)) + later.length;
+  return {
+    tally,
+    finish: () => {
+      later.forEach((apply) => apply());
+      return later.length > 0;
+    },
+  };
+}
+
+/** The restored settings that redraw the page, each only where this browser
+ *  hasn't chosen yet — returned unapplied (see `Restore.finish`). */
+function displayPreferences(p: Preferences): (() => void)[] {
+  const out: (() => void)[] = [];
+  const units = p.units;
+  if (units && readLocal(UNITS_KEY) == null) out.push(() => setUnitPref(units));
+  if (p.counting === false && readLocal(COUNTING_KEY) == null) {
+    out.push(() => setAnalyticsEnabled(false));
+  }
+  const lang = p.lang;
+  if (lang && !langChosen()) out.push(() => setLang(lang));
+  return out;
+}
+
+/**
+ * Bring back each stored setting this browser hasn't been given yet. One
+ * already chosen here stays: it's the one the person was just using.
+ */
+async function restorePreferences(p: Preferences): Promise<number> {
+  let n = 0;
+  if (p.inatLogin && !linkedLogin()) {
+    setLinkedLogin(p.inatLogin);
+    n++;
+  }
+  let prefs = false;
+  if (p.weights && (await kvGet("weights").catch(() => undefined)) === undefined) {
+    await kvSet("weights", p.weights);
+    prefs = true;
+    n++;
+  }
+  if (p.filters && (await kvGet("filters").catch(() => undefined)) === undefined) {
+    await kvSet("filters", p.filters);
+    prefs = true;
+    n++;
+  }
+  if (prefs) await loadPrefs();
+  if (p.sticky) {
+    const mine = (await kvGet<Sticky>("sticky").catch(() => undefined)) ?? {};
+    const next: Sticky = { ...mine };
+    if (p.sticky.spot && !mine.spot) next.spot = p.sticky.spot;
+    if (p.sticky.defaultRegion && !mine.defaultRegion) next.defaultRegion = p.sticky.defaultRegion;
+    const added = Number(next.spot !== mine.spot) + Number(next.defaultRegion !== mine.defaultRegion);
+    if (added) {
+      await kvSet("sticky", next);
+      await loadSticky();
+      n += added;
+    }
+  }
+  return n;
 }
 
 // --- Rebuilding a row from whatever the file actually held -----------------
@@ -543,4 +782,131 @@ function toPlantedDate(v: unknown): PlantedDate | null {
   const date: PlantedDate = { year: Math.round(year), month: Math.round(month) };
   if (day != null && day >= 1 && day <= 31) date.day = Math.round(day);
   return date;
+}
+
+// --- The rest of what a backup carries -------------------------------------
+
+function toLookups(row: unknown): SpotLookups | null {
+  const r = asRecord(row);
+  const spotId = r && str(r.spotId);
+  if (!r || !spotId) return null;
+  return { spotId, nearby: r.nearby === true, own: r.own === true };
+}
+
+function toSavedSighting(row: unknown): SavedSighting | null {
+  const r = asRecord(row);
+  const ref = r && str(r.ref);
+  const capturedAt = r && num(r.capturedAt);
+  if (!r || !ref || capturedAt == null) return null;
+  if (r.observation === null) return { ref, capturedAt, observation: null };
+  const observation = toObservation(r.observation);
+  return observation ? { ref, capturedAt, observation } : null;
+}
+
+function toObservation(v: unknown): ObservationSummary | null {
+  const r = asRecord(v);
+  if (!r) return null;
+  const id = num(r.id);
+  const taxonId = num(r.taxonId);
+  const observer = str(r.observer);
+  if (id == null || taxonId == null || observer == null) return null;
+  const out: ObservationSummary = {
+    id,
+    taxonId,
+    taxonName: str(r.taxonName),
+    observer,
+    place: str(r.place),
+    lat: num(r.lat),
+    lon: num(r.lon),
+    distanceKm: num(r.distanceKm),
+    observedOn: str(r.observedOn),
+    photos: asArray(r.photos).map(toPhoto).filter((p): p is ObservationPhoto => p != null),
+  };
+  if (r.taxonPhoto === true) out.taxonPhoto = true;
+  return out;
+}
+
+/** Only https addresses: a picture from a hand-edited file is still loaded by
+ *  the page, and the page's own rules decide which hosts may answer. */
+function toPhoto(v: unknown): ObservationPhoto | null {
+  const r = asRecord(v);
+  if (!r) return null;
+  const id = num(r.id);
+  const urls = [r.thumbUrl, r.mediumUrl, r.largeUrl].map(str);
+  if (id == null || urls.some((u) => !u || !u.startsWith("https://"))) return null;
+  const [thumbUrl, mediumUrl, largeUrl] = urls as string[];
+  return {
+    id,
+    thumbUrl,
+    mediumUrl,
+    largeUrl,
+    license: str(r.license) ?? "",
+    attribution: str(r.attribution) ?? "",
+  };
+}
+
+function toUnitPref(v: unknown): UnitPref | null {
+  return v === "imperial" || v === "metric" || v === "auto" ? v : null;
+}
+
+function toMoisture(v: unknown): MoistureBand | null {
+  return v === "dry" || v === "mesic" || v === "wet" ? v : null;
+}
+
+function toFilters(v: unknown): ActiveFilters | undefined {
+  const r = asRecord(v);
+  if (!r) return undefined;
+  const out = { ...NO_FILTERS };
+  for (const k of Object.keys(NO_FILTERS) as (keyof ActiveFilters)[]) {
+    const val = r[k];
+    if (k === "maxHeightFt" || k === "maxSpreadFt") out[k] = num(val);
+    else if (typeof val === "boolean") out[k] = val;
+  }
+  return out;
+}
+
+function toStickySpot(v: unknown): StickySpot | undefined {
+  const r = asRecord(v);
+  if (!r) return undefined;
+  const lat = num(r.lat);
+  const lon = num(r.lon);
+  const regionId = str(r.regionId);
+  if ((lat == null || lon == null) && !regionId) return undefined;
+  return {
+    lat,
+    lon,
+    regionId,
+    sun: toSun(r.sun),
+    horizon: toHorizon(r.horizon),
+    deciduousOverhead: r.deciduousOverhead === true,
+    moisture: toMoisture(r.moisture),
+    savedAt: num(r.savedAt) ?? Date.now(),
+  };
+}
+
+function toPreferences(v: unknown): Preferences {
+  const r = asRecord(v);
+  const out: Preferences = {};
+  if (!r) return out;
+  const login = str(r.inatLogin);
+  if (login && isValidLogin(login)) out.inatLogin = login;
+  if (asRecord(r.weights)) out.weights = toWeights(r.weights);
+  const filters = toFilters(r.filters);
+  if (filters) out.filters = filters;
+  const sticky = asRecord(r.sticky);
+  if (sticky) {
+    const spot = toStickySpot(sticky.spot);
+    const defaultRegion = str(sticky.defaultRegion);
+    if (spot || defaultRegion) {
+      out.sticky = {};
+      if (spot) out.sticky.spot = spot;
+      if (defaultRegion) out.sticky.defaultRegion = defaultRegion;
+    }
+  }
+  const units = toUnitPref(r.units);
+  if (units) out.units = units;
+  const lang = str(r.lang);
+  if (isLang(lang)) out.lang = lang;
+  if (r.counting === false) out.counting = false;
+  return out;
 }

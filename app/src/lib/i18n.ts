@@ -59,7 +59,7 @@ const STORAGE_KEY = "indigene:lang";
 /** The query parameter that pins a link to one language: `?lang=fr`. */
 const URL_PARAM = "lang";
 
-function isLang(v: string | null | undefined): v is Lang {
+export function isLang(v: string | null | undefined): v is Lang {
   return v === "en" || v === "fr";
 }
 

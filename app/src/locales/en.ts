@@ -125,7 +125,7 @@ export const en = {
   // write a copy out, read a copy in — and an honest account of what each did.
   // ---------------------------------------------------------------------
   "backup.title": "Your spots, as a file",
-  "backup.lede": "Every spot you've saved, what you've planted in each and the sightings you've linked, written to one file you keep. Open that file in another browser and the same spots are there.",
+  "backup.lede": "Your spots, what you've planted, the sightings you've linked and your settings, in one file you keep. Open it in another browser and everything comes back.",
   "backup.statSpots.one": "{count} saved spot",
   "backup.statSpots.other": "{count} saved spots",
   "backup.statPlantings.one": "{count} planting logged",
@@ -144,6 +144,8 @@ export const en = {
   "backup.rowPlantings": "Plantings added",
   "backup.rowSpotsUpdated": "Spots brought up to date",
   "backup.rowPlantingsUpdated": "Plantings brought up to date",
+  "backup.rowSightings": "Sightings restored",
+  "backup.rowSettings": "Settings restored",
   "backup.rowSpotsKnown": "Spots already here",
   "backup.rowSkipped": "Entries we couldn't read",
   "backup.nothingNew": "Everything in that copy was already here. Nothing changed.",
@@ -487,7 +489,7 @@ export const en = {
   "grow.addHonest": "Seen near here, so a good bet — not a promise.",
   "grow.addNoRegion": "This spot is outside the regions Indigene covers, so there's no list to pick from.",
   "privacy.inatTitle": "If you link your iNaturalist account",
-  "privacy.inat1": "Your username is kept in this browser and nowhere else. It isn't in the file Settings saves your spots to, either.",
+  "privacy.inat1": "Your username is kept in this browser and nowhere else — except the file Settings saves your spots to, so a restore brings it back. Mind who you give that file to.",
   "privacy.inat2": "It's sent to iNaturalist only when you link it, import, or look for wildlife around a saved spot, to ask for your sightings, which iNaturalist already shows publicly. Importing sends it with the spot, rounded to about 1 km, so only your sightings within 35 km come back. Nothing else sends a place with it.",
   "privacy.inat3": "It never appears in a page's address, so the visit counter never sees it. There's no password or sign-in: Indigene can't post or change anything on iNaturalist.",
   "privacy.inat4": "Only what you tick is kept: the sighting's number, on the row it made. {link} and it's gone.",

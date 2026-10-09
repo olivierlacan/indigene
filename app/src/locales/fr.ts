@@ -125,7 +125,7 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   "backup.title": "Vos lieux, dans un fichier",
   "backup.lede":
-    "Chaque lieu enregistré, ce que vous avez planté dans chacun et les observations que vous y avez liées, écrits dans un seul fichier qui vous appartient. Ouvrez ce fichier dans un autre navigateur et les mêmes lieux y sont.",
+    "Vos lieux, ce que vous avez planté, les observations liées et vos réglages, dans un seul fichier qui vous appartient. Ouvrez-le dans un autre navigateur et tout revient.",
   "backup.statSpots.one": "{count} lieu enregistré",
   "backup.statSpots.other": "{count} lieux enregistrés",
   "backup.statPlantings.one": "{count} plantation notée",
@@ -147,6 +147,8 @@ export const fr: Dict = {
   "backup.rowPlantings": "Plantations ajoutées",
   "backup.rowSpotsUpdated": "Lieux mis à jour",
   "backup.rowPlantingsUpdated": "Plantations mises à jour",
+  "backup.rowSightings": "Observations restaurées",
+  "backup.rowSettings": "Réglages restaurés",
   "backup.rowSpotsKnown": "Lieux déjà présents",
   "backup.rowSkipped": "Entrées illisibles",
   "backup.nothingNew": "Tout ce que contenait cette copie était déjà là. Rien n'a changé.",
@@ -506,7 +508,7 @@ export const fr: Dict = {
   "grow.addHonest": "Vus près d'ici : un bon pari, pas une promesse.",
   "grow.addNoRegion": "Cet endroit est hors des régions couvertes par Indigene ; il n'y a pas de liste où choisir.",
   "privacy.inatTitle": "Si vous reliez votre compte iNaturalist",
-  "privacy.inat1": "Votre nom d'utilisateur est gardé dans ce navigateur et nulle part ailleurs. Il ne figure pas non plus dans le fichier où les Réglages enregistrent vos lieux.",
+  "privacy.inat1": "Votre nom d'utilisateur est gardé dans ce navigateur et nulle part ailleurs — sauf dans le fichier où les Réglages enregistrent vos lieux, pour qu'une restauration le ramène. Choisissez à qui vous donnez ce fichier.",
   "privacy.inat2": "Il n'est envoyé à iNaturalist que lorsque vous le reliez, importez, ou cherchez la faune autour d'un endroit enregistré, pour demander vos observations, déjà publiques sur iNaturalist. L'import l'envoie avec le lieu, arrondi à environ 1 km, pour ne recevoir que vos observations à moins de 35 km. Rien d'autre n'envoie de lieu avec.",
   "privacy.inat3": "Il n'apparaît jamais dans l'adresse d'une page : le compteur de visites ne le voit donc jamais. Ni mot de passe ni connexion : Indigene ne peut rien publier ni modifier sur iNaturalist.",
   "privacy.inat4": "Seul ce que vous cochez est gardé : le numéro de l'observation, sur la ligne qu'elle a créée. {link} et il disparaît.",

@@ -29,7 +29,7 @@ import {
   parseSpotsFile,
   rememberCopy,
 } from "../lib/backup";
-import type { ImportTally, ReadFailure } from "../lib/backup";
+import type { ImportTally, ReadFailure, Restore } from "../lib/backup";
 import { listPlantings, listSpots, storageKept } from "../db";
 import { t, tn, fmtDate, fmtNumber } from "../lib/i18n";
 
@@ -39,6 +39,13 @@ const FAILURE_TEXT: Record<ReadFailure, "backup.errUnreadable" | "backup.errNotO
   notOurs: "backup.errNotOurs",
   tooNew: "backup.errTooNew",
 };
+
+/**
+ * The last import's figures, kept outside the card. Restoring units or a
+ * language redraws the whole Settings page, so the card that ran the import is
+ * gone by the time it would report; the new one picks the figures up here.
+ */
+let pendingReport: ImportTally | null = null;
 
 /**
  * The card. Async because it opens with a count of what's actually here, and a
@@ -61,6 +68,10 @@ export async function spotsFileCard(): Promise<HTMLElement> {
 
   await refreshHead();
   picker.addEventListener("change", () => void read());
+  if (pendingReport) {
+    report(pendingReport);
+    pendingReport = null;
+  }
 
   return el("div", { class: "card" }, [
     el("h3", {}, t("backup.title")),
@@ -147,13 +158,18 @@ export async function spotsFileCard(): Promise<HTMLElement> {
     if (!parsed.ok) return say("warn", t(FAILURE_TEXT[parsed.why]));
     if (!parsed.file.spots.length) return say("warn", t("backup.errEmpty"));
 
-    let tally: ImportTally;
+    let restore: Restore;
     try {
-      tally = await applySpotsFile(parsed.file, parsed.skipped);
+      restore = await applySpotsFile(parsed.file, parsed.skipped);
     } catch {
       return say("warn", t("backup.errStore"));
     }
-    report(tally);
+    // Kept first, then the settings that redraw the page; the redrawn card
+    // reports it. With nothing redrawn, this card reports it itself.
+    pendingReport = restore.tally;
+    if (restore.finish()) return;
+    pendingReport = null;
+    report(restore.tally);
     await refreshHead();
   }
 
@@ -171,6 +187,9 @@ export async function spotsFileCard(): Promise<HTMLElement> {
       !tally.spotsUpdated &&
       !tally.plantingsAdded &&
       !tally.plantingsUpdated &&
+      !tally.lookupsAdded &&
+      !tally.sightingsAdded &&
+      !tally.settingsRestored &&
       !tally.skipped
     ) {
       return say("info", t("backup.nothingNew"));
@@ -185,6 +204,8 @@ export async function spotsFileCard(): Promise<HTMLElement> {
           ...(tally.plantingsUpdated
             ? row(t("backup.rowPlantingsUpdated"), tally.plantingsUpdated)
             : []),
+          ...(tally.sightingsAdded ? row(t("backup.rowSightings"), tally.sightingsAdded) : []),
+          ...(tally.settingsRestored ? row(t("backup.rowSettings"), tally.settingsRestored) : []),
           ...(tally.spotsKnown ? row(t("backup.rowSpotsKnown"), tally.spotsKnown) : []),
           ...(tally.skipped ? row(t("backup.rowSkipped"), tally.skipped) : []),
         ]),

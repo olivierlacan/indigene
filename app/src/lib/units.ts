@@ -91,13 +91,16 @@ export function getUnits(): UnitSystem {
 }
 
 export function setUnitPref(next: UnitPref): void {
-  if (next === pref) return;
-  pref = next;
+  // Remembered even when nothing changes, like the language pick: tapping
+  // metric while metric is the default is still a choice — and a restore
+  // (`lib/backup.ts`) only fills in units nobody has chosen here.
   try {
     localStorage.setItem(STORAGE_KEY, next);
   } catch {
     // Best-effort, same as the language pick.
   }
+  if (next === pref) return;
+  pref = next;
   listeners.forEach((fn) => fn());
 }
 

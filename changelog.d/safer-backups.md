@@ -6,6 +6,11 @@
 - [Keeping your spots safe](https://indigene.app/guide/backup/) explains where
   your spots live, what can erase them, and how to save and restore a copy.
 
+### Fixed
+
+- Choosing metric units in Settings is now remembered even when metric was
+  already showing, so restoring a copy from an imperial device won't switch it.
+
 ### Changed
 
 - Backups: your spots file now holds everything — spots, plantings, linked
@@ -23,3 +28,8 @@
   suggests combine for same name ≤ 250 m); combined ids persist in kv
   `spot-aliases`. Settings that redraw the page apply via `Restore.finish()`.
   New guide section `backup` (prefix `Backups`).
+- Internal: `lib/backup.roundtrip.test.ts` runs save → file text → restore on
+  simulated devices (fake-indexeddb, a fresh module copy each), covering full
+  restore, idempotence, copies of copies, diverged devices merging both ways,
+  stale copies, deleted spots, combine/keep-both across repeat imports, damaged
+  and v1 files. `setUnitPref` now stores an unchanged pick.

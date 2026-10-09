@@ -222,7 +222,9 @@ export type PlantingSourceKey =
   | "xerces"
   | "tela"
   | "inpn"
-  | "rhs";
+  | "rhs"
+  | "nzpcn"
+  | "sid";
 
 export interface PlantingSource {
   key: PlantingSourceKey;
@@ -230,7 +232,7 @@ export interface PlantingSource {
   url: string;
   /** Where its coverage is honest — the app spans two continents and no single
    *  one of these speaks for both. Also a locale key. */
-  scope: "us" | "eu" | "both";
+  scope: "us" | "eu" | "nz" | "both" | "world";
 }
 
 export const PLANTING_SOURCES: readonly PlantingSource[] = [
@@ -242,6 +244,15 @@ export const PLANTING_SOURCES: readonly PlantingSource[] = [
   { key: "tela", name: "Tela Botanica", url: "https://www.tela-botanica.org/", scope: "eu" },
   { key: "inpn", name: "INPN — Inventaire national du patrimoine naturel", url: "https://inpn.mnhn.fr/", scope: "eu" },
   { key: "rhs", name: "Royal Horticultural Society — propagation guides", url: "https://www.rhs.org.uk/propagation", scope: "eu" },
+  // Species pages carry "Propagation technique" and "Cultivation" sections —
+  // the source behind every Auckland row.
+  { key: "nzpcn", name: "New Zealand Plant Conservation Network — flora", url: "https://www.nzpcn.org.nz/flora/species/", scope: "nz" },
+  // "SID is a compilation of seed biological trait data, with records derived
+  // from measurements and observations on seed collections held in Royal
+  // Botanic Garden Kew's Millennium Seed Bank and from other unpublished and
+  // published sources" — the site's own description. Run by the Society for
+  // Ecological Restoration since 2023.
+  { key: "sid", name: "Seed Information Database (SER & Kew)", url: "https://ser-sid.org/", scope: "world" },
 ] as const;
 
 /**

@@ -1892,13 +1892,15 @@ export const en = {
 
   "planting.sourcesTitle": "Where the how-to comes from",
   "planting.sourcesLede":
-    "None of this is our own invention. Every propagation note in the app is written in our own plain words from these, and each of them is free to read and worth an afternoon of anyone's time — they are the places to go when you want more than one page.",
+    "Every propagation note in the app is written in our own plain words from published sources, and each plant's page names its own. These are the ones we lean on most: all free to read, and the places to go when one page isn't enough.",
   "planting.sourcesAfter":
     "The facts are used, never the prose: a protocol saying a seed needs ten weeks of cold is a fact about the seed, and we say it our own way. The full accounting of every source in the app, and what we'd challenge first, is on the {sources} page.",
   "planting.sourcesLink": "Where our numbers come from",
   "planting.scope.us": "North America",
   "planting.scope.eu": "Europe",
   "planting.scope.both": "Both sides",
+  "planting.scope.nz": "New Zealand",
+  "planting.scope.world": "Worldwide",
   "planting.src.npn":
     "The one to open first. Growers at restoration nurseries write up exactly how they raised a species — seed treatment, weeks of chilling, what failed — and file it, species by species, in public. Thousands of protocols for North American natives.",
   "planting.src.wpsm":
@@ -1913,6 +1915,10 @@ export const en = {
     "The French botanical network: a collaborative flora with observations, keys and cultivation notes contributed by botanists and amateurs alike. The reference behind most of the French rows here.",
   "planting.src.inpn":
     "France's national inventory, run by the natural history museum. Less a how-to than the authority on what is genuinely native where — the check that stops a “native” plant from being one that merely grows well.",
+  "planting.src.nzpcn":
+    "New Zealand's network of botanists and growers. Each species page has a short propagation note, and it's the source behind every Auckland plant here.",
+  "planting.src.sid":
+    "Seed records from Kew's Millennium Seed Bank and published studies: how to germinate a species, and how its seed keeps. Global, and the source for many Japanese rows here.",
   "planting.src.rhs":
     "Clear, well-illustrated guides to each technique, from a horticultural society two centuries old. Written for a European garden and a European year.",
 

@@ -1880,13 +1880,15 @@ export const fr: Dict = {
 
   "planting.sourcesTitle": "D'où vient le mode d'emploi",
   "planting.sourcesLede":
-    "Rien de tout cela n'est de notre invention. Chaque conseil de multiplication de l'application est écrit avec nos propres mots simples à partir de ces sources, et chacune d'elles est en accès libre et vaut bien un après-midi — ce sont les endroits où aller quand une page ne vous suffit plus.",
+    "Chaque conseil de multiplication de l'application est écrit avec nos propres mots simples à partir de sources publiées, et la page de chaque plante nomme les siennes. Voici celles sur lesquelles nous nous appuyons le plus : toutes en accès libre, et les endroits où aller quand une page ne vous suffit plus.",
   "planting.sourcesAfter":
     "Ce sont les faits qui servent, jamais la prose : un protocole disant qu'une graine réclame dix semaines de froid énonce un fait sur la graine, et nous le disons à notre façon. Le décompte complet de toutes les sources de l'application, et de ce que nous contesterions en premier, est sur la page {sources}.",
   "planting.sourcesLink": "D'où viennent nos chiffres",
   "planting.scope.us": "Amérique du Nord",
   "planting.scope.eu": "Europe",
   "planting.scope.both": "Les deux",
+  "planting.scope.nz": "Nouvelle-Zélande",
+  "planting.scope.world": "Monde entier",
   "planting.src.npn":
     "Celle à ouvrir en premier. Les pépiniéristes de la restauration écologique y consignent exactement comment ils ont élevé une espèce — traitement des graines, semaines de froid, ce qui a échoué — espèce par espèce, en public. Des milliers de protocoles pour les indigènes d'Amérique du Nord.",
   "planting.src.wpsm":
@@ -1901,6 +1903,10 @@ export const fr: Dict = {
     "Le réseau botanique francophone : une flore collaborative avec observations, clés et notes de culture, nourrie par des botanistes comme par des amateurs. La référence derrière la plupart des fiches françaises d'ici.",
   "planting.src.inpn":
     "L'inventaire national, porté par le Muséum national d'Histoire naturelle. Moins un mode d'emploi que l'autorité sur ce qui est réellement indigène et où — le garde-fou qui empêche de prendre pour « indigène » une plante qui pousse simplement bien.",
+  "planting.src.nzpcn":
+    "Le réseau néo-zélandais des botanistes et des pépiniéristes. Chaque fiche d'espèce a une courte note de multiplication ; c'est la source de toutes les plantes d'Auckland ici.",
+  "planting.src.sid":
+    "Les relevés de graines de la banque de graines de Kew et d'études publiées : comment faire germer une espèce, et comment ses graines se conservent. Mondiale, et la source de nombreuses fiches japonaises ici.",
   "planting.src.rhs":
     "Des guides clairs et bien illustrés pour chaque technique, publiés par une société d'horticulture bicentenaire. Écrits pour un jardin européen et une année européenne.",
 

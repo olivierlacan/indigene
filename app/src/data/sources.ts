@@ -93,6 +93,7 @@ export const SOURCE_LINKS: SourceSite[] = [
   { name: "NRCS Fact Sheet", url: "https://plants.usda.gov/" },
   { name: "USDA NRCS", url: "https://plants.usda.gov/" },
   { name: "UC Master Gardeners", url: "https://ucanr.edu/" },
+  { name: "Tāne's Tree Trust", url: "https://www.tanestrees.org.nz/species-profiles/" },
   { name: "INPN", url: "https://inpn.mnhn.fr/" },
   { name: "RHS Plants for Pollinators", url: "https://www.rhs.org.uk/wildlife/plants-for-pollinators" },
   { name: "Butterfly Conservation", url: "https://butterfly-conservation.org/" },

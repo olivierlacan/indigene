@@ -150,7 +150,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct",  "seed-scarify"],
       note: "Clean the flesh off ripe fruit and sow the seed fresh. It can be slow to come up; nicking the seed coat speeds it. Shelter seedlings from frost.",
-      basis: "New Zealand Plant Conservation Network.",
+      basis: "New Zealand Plant Conservation Network; Tāne's Tree Trust.",
     },
   },
   {
@@ -185,7 +185,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-scarify"],
       note: "Pods ripen in October–November. Nick the hard seed coat with a knife or rub it on sandpaper, soak it overnight, and sow; it comes up easily once treated.",
-      basis: "New Zealand Plant Conservation Network.",
+      basis: "New Zealand Plant Conservation Network; Tāne's Tree Trust.",
     },
   },
   {
@@ -290,7 +290,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct"],
       note: "Collect the capsules as they split, April–August, and sow the seed at once: it does not survive drying out.",
-      basis: "New Zealand Plant Conservation Network; Seed Information Database.",
+      basis: "New Zealand Plant Conservation Network; Seed Information Database; Tāne's Tree Trust.",
     },
   },
   {
@@ -360,7 +360,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct",  "cuttings-hardwood"],
       note: "Collect the seeds with their swollen red stalks from a female tree, mostly in April–May, and sow fresh. Hardwood cuttings root too.",
-      basis: "New Zealand Plant Conservation Network.",
+      basis: "New Zealand Plant Conservation Network; Tāne's Tree Trust.",
     },
   },
   {
@@ -571,7 +571,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct",  "cuttings-semi-hardwood"],
       note: "The capsules stay on the bush all year. Sow the seed fresh, before it dries out. Cuttings are difficult; semi-hardwood ones need bottom heat in summer.",
-      basis: "New Zealand Plant Conservation Network; RHS.",
+      basis: "New Zealand Plant Conservation Network; RHS; Tāne's Tree Trust.",
     },
   },
   {
@@ -991,8 +991,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 4 native Lepidoptera recorded breeding on New Zealand Astelia (reliability ≥ 7) — Plant-SyNZ, Manaaki Whenua – Landcare Research, genus level. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["division"],
-      note: "Divide established clumps.",
-      basis: "No published source checked yet.",
+      note: "Divide clumps in spring. The divisions are slow to establish.",
+      basis: "RHS.",
     },
   },
   {
@@ -1449,8 +1449,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:NZN, native). Host count: 0 — Plant-SyNZ (Manaaki Whenua – Landcare Research) records no native moth or butterfly breeding on New Zealand Passiflora at reliability ≥ 7. Growth, care and uses: New Zealand Plant Conservation Network; Metcalf, The Cultivation of New Zealand Native Plants.",
     propagation: {
       methods: ["seed-direct"],
-      note: "Sow seed from ripe fruit.",
-      basis: "No published source checked yet.",
+      note: "Only female plants bear fruit. Collect it ripe in autumn and sow the seed.",
+      basis: "Tāne's Tree Trust.",
     },
   },
   {

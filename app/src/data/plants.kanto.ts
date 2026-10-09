@@ -221,8 +221,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 156 Lepidoptera recorded on Castanea in Japan — HOSTS, Natural History Museum (CC0), field records only (174 if laboratory rearings count). All 156 are against this species.",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Nuts must not dry. Keep them in damp sand in a cold shed over winter and sow in spring, or sow in autumn where mice cannot reach — chestnut seed is the sweetest thing in a Kantō wood in October.",
-      basis: "Forestry and Forest Products Research Institute (Japan); Kew Seed Information Database.",
+      note: "Nuts die if they dry. Keep them cold and damp over winter and sow in spring, or sow in autumn where mice can't reach them.",
+      basis: "Seed Information Database; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -397,8 +397,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 69 Lepidoptera recorded on Acer in Japan — HOSTS, Natural History Museum (CC0), field records only; 20 against this species by name.",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Gather the winged seed in October while still slightly green, soak a day, chill damp over winter and sow in spring. Expect variation in leaf shape and autumn colour; that is a wild maple working properly.",
-      basis: "Kew Seed Information Database.",
+      note: "Pick the seed in autumn, when the wing has browned but the seed case is still green. Chill it damp over winter and sow in spring. Seed that has dried needs a day or two in warm water first.",
+      basis: "USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -432,8 +432,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 28 Lepidoptera recorded on Carpinus in Japan — HOSTS, Natural History Museum (CC0), field records only; 10 against this species by name.",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Collect catkins as they brown in October, rub out the nutlets and chill them damp over winter. Germination is uneven — sow thickly and be patient into a second spring.",
-      basis: "Kew Seed Information Database.",
+      note: "Pick the seed while its wings are still green and soft, and sow it outdoors in autumn before it dries. Seed left to dry grows a hard coat and often waits until the second spring.",
+      basis: "USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -502,8 +502,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 46 Lepidoptera recorded on Alnus in Japan — HOSTS, Natural History Museum (CC0), field records only; 14 against this species by name.",
     propagation: {
       methods: ["seed-direct"],
-      note: "Shake the small cones over paper in late autumn and sow the winged seed on wet ground with no treatment at all. Alder germinates on bare mud, which is where it does it in the wild.",
-      basis: "Kew Seed Information Database.",
+      note: "Sow the seed from ripe cones in autumn.",
+      basis: "No published source checked yet.",
     },
   },
   {
@@ -536,9 +536,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 13 Lepidoptera recorded on Styrax in Japan — HOSTS, Natural History Museum (CC0), field records only; 10 against this species by name.",
     propagation: {
-      methods: ["seed-double-dormant"],
-      note: "Slow and worth knowing about: clean the seed in autumn, give it a warm spell and then a cold one, and expect nothing until the second spring. Sow and forget rather than sow and worry.",
-      basis: "Kew Seed Information Database.",
+      methods: ["seed-double-dormant", "cuttings-softwood"],
+      note: "The seed needs a warm, damp spell and then a cold one. Sown fresh in autumn, it often comes up only in the second spring. Softwood cuttings root in summer.",
+      basis: "USDA Woody Plant Seed Manual; Royal Horticultural Society.",
     },
   },
   {
@@ -572,8 +572,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 6 Lepidoptera recorded on Magnolia in Japan — HOSTS, Natural History Museum (CC0), field records only, 2 against this species. Genuinely low: magnolias are an ancient lineage few local caterpillars have taken up.",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Strip the red flesh off the seed as soon as the fruit splits in September — the flesh inhibits germination — then chill damp over winter and sow in spring. Never let the seed dry.",
-      basis: "Kew Seed Information Database.",
+      note: "Collect the seed as the cones split in early autumn and wash off its red coat. Keep it damp, since it dies if it dries; chill it over winter and sow in spring.",
+      basis: "Royal Horticultural Society; USDA Woody Plant Seed Manual.",
     },
   },
   // --- The shrub layer: the coppice understorey and the hedge ---------------
@@ -677,9 +677,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 25 Lepidoptera recorded on Lespedeza in Japan — HOSTS, Natural History Museum (CC0), field records only; 15 against this species by name, the most of any hagi in its Japanese records.",
     propagation: {
-      methods: ["seed-scarify"],
-      note: "Hard pea seed: nick the coat or rub it on sandpaper, soak overnight and sow in spring. Collect the pods in October before they shed. Germination is quick and generous once the coat is breached.",
-      basis: "Kew Seed Information Database.",
+      methods: ["seed-scarify", "cuttings-semi-hardwood", "division"],
+      note: "Collect the pods as they ripen in autumn. The seed coat is hard: nick it or rub it on sandpaper, then sow in spring. Semi-ripe cuttings and division work too.",
+      basis: "Seed Information Database; USDA Woody Plant Seed Manual; Royal Horticultural Society.",
     },
   },
   {
@@ -712,9 +712,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 21 Lepidoptera recorded on Viburnum in Japan — HOSTS, Natural History Museum (CC0), field records only; 10 against this species by name.",
     propagation: {
-      methods: ["seed-double-dormant", "cuttings-softwood"],
-      note: "Seed is slow — warm then cold, often nothing until the second spring. Softwood cuttings in June are far quicker, but raise two different seedlings if you want fruit.",
-      basis: "Kew Seed Information Database.",
+      methods: ["cuttings-softwood"],
+      note: "Take softwood cuttings between late spring and midsummer. For berries, grow two or more plants: they need a partner to cross-pollinate.",
+      basis: "Royal Horticultural Society.",
     },
   },
   {
@@ -748,9 +748,9 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 1 Lepidoptera recorded on Callicarpa in Japan — HOSTS, Natural History Museum (CC0), field records only. Almost certainly under-recorded rather than truly that low, but one is what the source holds and the row says so. Confidence low: a single record is almost certainly under-recording rather than a real figure.",
     confidenceLowered: "low",
     propagation: {
-      methods: ["seed-cold-moist", "cuttings-softwood"],
-      note: "Squash the fruit, wash the small seed free, chill it damp over winter and sow in spring. Softwood cuttings in June are easier and quicker.",
-      basis: "Kew Seed Information Database.",
+      methods: ["cuttings-softwood", "cuttings-semi-hardwood", "seed-direct"],
+      note: "Take softwood cuttings in spring, or semi-ripe cuttings in summer with gentle heat under the pot. It grows from seed too. Plant at least two for berries.",
+      basis: "Royal Horticultural Society.",
     },
   },
   {
@@ -783,9 +783,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 34 Lepidoptera recorded on Rhododendron in Japan — HOSTS, Natural History Museum (CC0), field records only; 15 against this species by name. Leaves and nectar are toxic to pets and people.",
     propagation: {
-      methods: ["seed-surface-light", "cuttings-semi-hardwood"],
-      note: "Dust-fine seed: press it onto damp acid compost, do not bury it, and keep it in the light. Semi-hardwood cuttings in July are the reliable route and keep the flower colour.",
-      basis: "Kew Seed Information Database; Royal Horticultural Society.",
+      methods: ["cuttings-semi-hardwood", "seed-surface-light"],
+      note: "Take semi-ripe cuttings in mid to late summer; they copy the parent. Or sow the dust-fine seed on damp acid compost and don't cover it.",
+      basis: "Royal Horticultural Society; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -818,9 +818,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 29 Lepidoptera recorded on Euonymus in Japan — HOSTS, Natural History Museum (CC0), field records only; 14 against this species (spelled Euonymus alata in HOSTS).",
     propagation: {
-      methods: ["seed-cold-moist"],
-      note: "Collect capsules as they split in October, wash the orange flesh off the seed, chill damp over winter and sow in spring. Volunteers around a mature plant move easily when small.",
-      basis: "Kew Seed Information Database.",
+      methods: ["seed-cold-moist", "cuttings-semi-hardwood"],
+      note: "Collect the seed as the capsules split in autumn and rub off its orange coat. Chill it damp over winter and sow in spring. Semi-ripe cuttings work too.",
+      basis: "USDA Woody Plant Seed Manual; Royal Horticultural Society.",
     },
   },
   {
@@ -890,8 +890,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 20 Lepidoptera recorded on Lindera in Japan — HOSTS, Natural History Museum (CC0), field records only; 8 against this species by name.",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Clean the black fruit in autumn and chill the seed damp over winter; sow in spring. The seed must not dry out at any point, which is true of the whole laurel family.",
-      basis: "Kew Seed Information Database.",
+      note: "Clean the black fruit in autumn and sow the seed outdoors.",
+      basis: "No published source checked yet.",
     },
   },
   {
@@ -994,9 +994,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 9 Lepidoptera recorded on Pieris in Japan — HOSTS, Natural History Museum (CC0), field records only, all 9 against this species. Low, and consistent with a plant whose leaves are toxic.",
     propagation: {
-      methods: ["seed-surface-light"],
-      note: "Very fine seed: sprinkle on damp acid compost, press it down, leave it uncovered in the light and keep it humid. Slow, but it comes.",
-      basis: "Kew Seed Information Database.",
+      methods: ["cuttings-softwood", "cuttings-semi-hardwood"],
+      note: "Take softwood cuttings in early summer or semi-ripe cuttings in late summer. Gentle heat under the pot may help.",
+      basis: "Royal Horticultural Society.",
     },
   },
   {
@@ -1030,8 +1030,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 24 Lepidoptera recorded on Rosa in Japan — HOSTS, Natural History Museum (CC0), field records only; 12 against this species by name. Marked aggressive: it suckers, layers and self-sows freely here, and it is a serious invasive where it has been taken outside its range.",
     propagation: {
       methods: ["seed-cold-moist", "cuttings-hardwood"],
-      note: "Hips cleaned in autumn, seed chilled damp over winter, sown in spring. Hardwood cuttings in winter root almost as easily as willow. Honestly, the difficulty is stopping it rather than starting it.",
-      basis: "Kew Seed Information Database.",
+      note: "Clean the seed out of the hips soon after they ripen, chill it damp over winter and sow in spring. Hardwood cuttings taken in winter root too.",
+      basis: "USDA Woody Plant Seed Manual; Royal Horticultural Society.",
     },
   },
   {
@@ -1101,9 +1101,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 19 Lepidoptera recorded on Wisteria in Japan — HOSTS, Natural History Museum (CC0), field records only; 17 against this species by name. Marked aggressive for its sheer structural force, not for spreading.",
     propagation: {
-      methods: ["seed-scarify", "layering"],
-      note: "Nick and soak the hard seed and it germinates easily — but a seedling can take ten years to flower. Layer a low shoot from a plant you have seen flower if you want blooms this decade.",
-      basis: "Kew Seed Information Database; Royal Horticultural Society.",
+      methods: ["layering", "cuttings-softwood", "cuttings-hardwood"],
+      note: "Layer a low shoot in summer, the easiest way. Softwood cuttings in spring or hardwood ones in winter also work. Seed-raised plants can take up to 20 years to flower.",
+      basis: "Royal Horticultural Society.",
     },
   },
   {
@@ -1136,9 +1136,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 3 Lepidoptera recorded on Akebia in Japan — HOSTS, Natural History Museum (CC0), field records only, all 3 against this species.",
     propagation: {
-      methods: ["seed-cold-moist", "cuttings-semi-hardwood"],
-      note: "Wash the black seed out of ripe pulp in autumn, chill damp over winter, sow in spring. Semi-hardwood cuttings in July root well and let you guarantee two different clones for fruit.",
-      basis: "Kew Seed Information Database.",
+      methods: ["cuttings-softwood", "layering", "seed-direct"],
+      note: "Take softwood cuttings, layer a low stem, or sow the seed. For fruit, grow two different plants so they can cross-pollinate.",
+      basis: "Royal Horticultural Society.",
     },
   },
   {
@@ -1315,8 +1315,8 @@ export const SEED_RAW: RawPlant[] = [
     confidenceLowered: "medium",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Mash the ripe fruit in October, wash the seed clean of pulp, chill it damp over winter and sow in spring. Germination is uneven; sow more than you need.",
-      basis: "Kew Seed Information Database.",
+      note: "Mash the ripe fruit in autumn, wash the seed clean of pulp, chill it damp over winter and sow in spring.",
+      basis: "USDA Woody Plant Seed Manual.",
     },
   },
   // --- The herbaceous layer: the swept floor and the sunny bank -------------
@@ -1350,9 +1350,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 16 Lepidoptera recorded on Artemisia in Japan — HOSTS, Natural History Museum (CC0), field records only. Marked aggressive: it spreads by rhizome and seed and will outrun a border.",
     propagation: {
-      methods: ["division", "seed-direct"],
-      note: "Lift a piece of running root at any point in the growing season and it will take. Seed needs no treatment. The honest advice is that you will not have to propagate it.",
-      basis: "Kew Seed Information Database.",
+      methods: ["division"],
+      note: "Lift a rooted piece of the spreading root in spring and replant it.",
+      basis: "No published source checked yet.",
     },
   },
   {
@@ -1385,9 +1385,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 10 Lepidoptera recorded on Viola in Japan — HOSTS, Natural History Museum (CC0), field records only. Small number, outsized importance: the fritillaries are violet specialists.",
     propagation: {
-      methods: ["seed-cold-moist", "division"],
-      note: "Catch the capsules before they fire the seed, chill it damp over winter, sow in spring. Easier: lift a self-sown seedling in autumn — there are usually many.",
-      basis: "Kew Seed Information Database.",
+      methods: ["seed-direct"],
+      note: "Collect the seed before the capsules split open, and sow it.",
+      basis: "No published source checked yet.",
     },
   },
   {
@@ -1421,8 +1421,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 6 Lepidoptera recorded on Cirsium in Japan — HOSTS, Natural History Museum (CC0), field records only. The plant earns its place on nectar more than on caterpillars.",
     propagation: {
       methods: ["seed-direct"],
-      note: "Collect the down-borne seed in late summer and sow fresh, or in spring. No treatment needed. It transplants badly once it has made its taproot, so sow where it will stay.",
-      basis: "Kew Seed Information Database.",
+      note: "Collect the seed as the heads turn fluffy, and sow it.",
+      basis: "Royal Horticultural Society.",
     },
   },
   {
@@ -1455,9 +1455,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 5 Lepidoptera recorded on Sanguisorba in Japan — HOSTS, Natural History Museum (CC0), field records only. Few, and including specialists with nowhere else to go.",
     propagation: {
-      methods: ["division", "seed-cold-moist"],
-      note: "Split an established clump in spring — the simplest route. Seed wants a damp chilling over winter and germinates patchily.",
-      basis: "Kew Seed Information Database.",
+      methods: ["division", "seed-direct"],
+      note: "Split a clump in spring or autumn, or sow seed in pots outdoors then. The seed needs no special treatment.",
+      basis: "Royal Horticultural Society; Seed Information Database.",
     },
   },
   {
@@ -1490,9 +1490,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 4 Lepidoptera recorded on Aristolochia in Japan — HOSTS, Natural History Museum (CC0), field records only. A low number that is the whole point: Byasa alcinous has no alternative host.",
     propagation: {
-      methods: ["seed-cold-moist", "division"],
-      note: "Collect seed from the dry hanging capsules in autumn, chill damp over winter, sow in spring. Established plants creep at the root and can be divided in early spring instead.",
-      basis: "Kew Seed Information Database.",
+      methods: ["seed-direct"],
+      note: "Sow the seed from ripe capsules in autumn.",
+      basis: "No published source checked yet.",
     },
   },
   {
@@ -1561,9 +1561,9 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 1 Lepidoptera recorded on Patrinia in Japan — HOSTS, Natural History Museum (CC0), field records only. Under-recorded rather than truly that low; the row carries what the source holds. Confidence low: one record for a widespread grassland plant is under-recording.",
     confidenceLowered: "low",
     propagation: {
-      methods: ["seed-direct", "division"],
-      note: "Sow fresh seed in autumn where it is to grow. Clumps can be split in early spring, though they resent it more than most.",
-      basis: "Kew Seed Information Database.",
+      methods: ["division", "seed-direct"],
+      note: "Split the clump in spring, or grow it from seed.",
+      basis: "Royal Horticultural Society.",
     },
   },
   {
@@ -1597,8 +1597,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: **not counted** — HOSTS holds no Japanese record against Platycodon. Shown as uncounted, not as 0: the source has a strong woody-plant bias and herbs are thinly covered.",
     propagation: {
       methods: ["seed-direct"],
-      note: "Sow fresh seed in autumn or spring with no treatment; it germinates readily and flowers in its second year. Division is possible but usually kills it.",
-      basis: "Kew Seed Information Database.",
+      note: "Sow seed in spring, in pots or where it is to grow. It resents disturbance, so don't split it.",
+      basis: "Royal Horticultural Society.",
     },
   },
   {
@@ -1667,8 +1667,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: **not counted** — HOSTS holds no Japanese record against Dianthus. Shown as uncounted rather than as a zero.",
     propagation: {
       methods: ["seed-direct", "cuttings-softwood"],
-      note: "Sow fresh seed in autumn or spring, no treatment. Softwood cuttings of non-flowering shoots in early summer root easily and keep a good form going.",
-      basis: "Kew Seed Information Database.",
+      note: "Sow seed in spring; it needs no treatment. Softwood cuttings of non-flowering shoots root in summer.",
+      basis: "Seed Information Database; Royal Horticultural Society.",
     },
   },
   {
@@ -1702,9 +1702,9 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 2 Lepidoptera recorded on Lilium in Japan — HOSTS, Natural History Museum (CC0), field records only, neither against this species. A genus figure and a weak one. Confidence low: neither Lilium record is against this species.",
     confidenceLowered: "low",
     propagation: {
-      methods: ["seed-double-dormant", "division"],
-      note: "Seed is slow — warm then cold, often two years to a bulb worth planting. Pulling scales off a dormant bulb and potting them is faster and keeps the plant exactly.",
-      basis: "Royal Horticultural Society; Kew Seed Information Database.",
+      methods: ["division", "seed-double-dormant"],
+      note: "Snap a few scales off a lifted bulb in early autumn and keep them warm and dark in a bag of damp compost and grit for six weeks. Pot up the small bulbs that form. Seed is slower: roots first, leaves only after a winter.",
+      basis: "Royal Horticultural Society.",
     },
   },
   {

@@ -5351,6 +5351,19 @@ body[data-layout="profile"] .wip-banner-text {
   color: var(--brand-ink);
   font-weight: 700;
 }
+.grow-leave {
+  margin: 0 0 0.15rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+/* A claim and the page that makes it, one per line. */
+.grow-sources {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+.grow-sources li {
+  margin: 0.3rem 0;
+}
 .badge.grow-first {
   display: table;
   margin: 0 0 0.25rem;

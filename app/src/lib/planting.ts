@@ -243,3 +243,39 @@ export const PLANTING_SOURCES: readonly PlantingSource[] = [
   { key: "inpn", name: "INPN — Inventaire national du patrimoine naturel", url: "https://inpn.mnhn.fr/", scope: "eu" },
   { key: "rhs", name: "Royal Horticultural Society — propagation guides", url: "https://www.rhs.org.uk/propagation", scope: "eu" },
 ] as const;
+
+/**
+ * The specific pages the season plan's rules and the technique pages' "Learn
+ * more" lean on. Each was opened and checked to say what it's cited for — the
+ * quote is kept beside it, so the next person can check it again rather than
+ * take our word. Names are the pages' own titles, not translated.
+ */
+export interface GuideRef {
+  name: string;
+  url: string;
+}
+
+export const GUIDE_REFS = {
+  // "As a rough guide, seed is set about two months after flowering."
+  seedCollect: { name: "RHS — Seed: collecting and storing", url: "https://www.rhs.org.uk/propagation/seed-collecting-storing" },
+  // "Divide summer-flowering plants in spring (Mar-May) or autumn (Sep-Nov)";
+  // "Many spring-flowering plants, such as irises, are best divided in summer
+  // (Jun-Aug) after flowering"; "Most perennials benefit from division every
+  // two to three years".
+  divide: { name: "RHS — Perennials: dividing", url: "https://www.rhs.org.uk/plants/types/perennials/dividing" },
+  // Each genus chapter's table gives "Minimum seed-bearing age (yrs)": white
+  // oak 20, shagbark hickory 40, silky dogwood 3, blackhaw 8–10.
+  woodySeed: { name: "USDA Woody Plant Seed Manual", url: "https://rngr.net/publications/wpsm" },
+  // "the seed heads of coneflowers, black-eyed Susans, and other native
+  // wildflowers provide a helpful food cache for birds."
+  birds: { name: "Audubon — To Help Birds This Winter, Go Easy on Fall Yard Work", url: "https://www.audubon.org/magazine/help-birds-winter-go-easy-fall-yard-work" },
+} as const satisfies Record<string, GuideRef>;
+
+/** The checked pages worth reading for one technique — specific ones only,
+ *  never a page that doesn't cover it. Empty where we have none yet; the
+ *  technique page then points at the reading list alone. */
+export function techniqueRefs(method: PropagationMethod): GuideRef[] {
+  if (method.startsWith("seed-")) return [GUIDE_REFS.seedCollect, GUIDE_REFS.woodySeed];
+  if (method === "division") return [GUIDE_REFS.divide];
+  return [];
+}

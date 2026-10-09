@@ -38,14 +38,26 @@ describe("growPlan", () => {
     expect(plan.now[0].why).toEqual({ kind: "sole", wildlifeId: "monarch" });
   });
 
-  it("waits on a young oak and leaves an undated plant out", () => {
+  it("never guesses when an oak bears acorns, however old, and leaves an undated plant out", () => {
+    // The USDA Woody Plant Seed Manual puts white oak's first acorns at 20
+    // years; a rule by growth form would have prompted this one at five.
     const plan = growPlan(
-      [row("quercus-alba", { year: 2024 }), row("monarda-fistulosa", null)],
+      [row("quercus-alba", { year: 2015 }), row("monarda-fistulosa", null)],
       plantOf, "mid-atlantic", "north", OCTOBER
     );
     expect(plan.now).toEqual([]);
-    expect(plan.young).toEqual(["quercus-alba"]);
+    expect(plan.young).toEqual([]);
+    expect(plan.seedOnlyWoody).toEqual(["quercus-alba"]);
     expect(plan.undated).toEqual(["monarda-fistulosa"]);
+  });
+
+  it("asks to leave black-eyed Susan seed for the birds, not butterfly weed's", () => {
+    const plan = growPlan(
+      [row("rudbeckia-fulgida", { year: 2022 }), row("asclepias-tuberosa", { year: 2022 })],
+      plantOf, "mid-atlantic", "north", OCTOBER
+    );
+    const leave = Object.fromEntries(plan.now.map((t) => [t.plantId, t.leaveSome]));
+    expect(leave).toEqual({ "rudbeckia-fulgida": true, "asclepias-tuberosa": false });
   });
 
   it("divides black-eyed Susan in spring, when its seed isn't ripe", () => {

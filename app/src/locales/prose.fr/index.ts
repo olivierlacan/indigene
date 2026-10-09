@@ -32,7 +32,7 @@
 //    English paragraphs were authored separately for each. One key can only
 //    hold one translation, so theirs name both habitats instead of one — see
 //    the note beside each.
-import type { ProseTable } from "../../lib/prose";
+import type { ProseTable, TaxonProse } from "../../lib/prose";
 import { FLORIDA } from "./florida";
 import { FRANCE_ALPINE } from "./france-alpine";
 import { FRANCE_ATLANTIC } from "./france-atlantic";
@@ -56,10 +56,28 @@ import { WILDLIFE_FR } from "./wildlife";
  * translated from; any other row shows its own English, and the page says so.
  */
 function inRegion(regionId: string, table: ProseTable): ProseTable {
-  return Object.fromEntries(
-    Object.entries(table).map(([key, prose]) => [key.includes("@") ? key : `${key}@${regionId}`, prose])
-  );
+  const out: ProseTable = {};
+  for (const [key, prose] of Object.entries(table)) {
+    if (key.includes("@")) {
+      out[key] = prose;
+      continue;
+    }
+    // Only the row's own paragraphs move. A region file also carries a
+    // taxon's look-alike or invasive text (ivy's removal steps), which isn't
+    // a region row and stays on the plain key that answers everywhere.
+    const row: TaxonProse = {};
+    const rest: TaxonProse = {};
+    for (const [field, value] of Object.entries(prose)) {
+      ((ROW_FIELDS as readonly string[]).includes(field) ? row : rest)[field as keyof TaxonProse] = value;
+    }
+    if (Object.keys(row).length) out[`${key}@${regionId}`] = row;
+    if (Object.keys(rest).length) out[key] = rest;
+  }
+  return out;
 }
+
+/** The paragraphs that describe one region's row of a plant. */
+const ROW_FIELDS = ["nativeNote", "careNote", "givesNote", "propagationNote", "supportNotes", "lookalikeNotes"] as const;
 
 export const PROSE_FR: ProseTable = {
   ...inRegion("france-atlantic", FRANCE_ATLANTIC),

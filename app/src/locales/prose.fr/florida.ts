@@ -566,6 +566,10 @@ export const FLORIDA: ProseTable = {
       atala:
         "Cette Zamia est la seule plante nourricière indigène des chenilles de l'Eumaeus atala — la planter est ce qui a ramené ce papillon du bord de l'extinction dans le sud de la Floride.",
     },
+  },
+  // The look-alike tie is South Florida's alone; the paragraphs above are
+  // central Florida's, so the southern row shows its own English for those.
+  "Zamia integrifolia@florida-south": {
     lookalikeNotes: {
       "cycas-revoluta": {
         why: "Deux cycadées à la même rosette raide, d'allure de palmier — et le cycas du Japon pousse devant une maison sur deux en Floride.",

@@ -413,4 +413,245 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     propagationNote:
       "Semez les spores mûres sur un terreau stérilisé humide, sous couvercle, au frais et à mi-ombre, et soyez patient. Les rhizomes se divisent au printemps.",
   },
+
+  // -------------------------------------------------------------------------
+  // Les autres taxa que cette région partage avec d'autres listes, écrits
+  // d'après la fiche continentale — chacune est complète pour cette région.
+  // -------------------------------------------------------------------------
+  "Salix caprea@france-continental": {
+    nativeNote:
+      "Le saule qui s'installe tout seul dans chaque trouée humide, chaque lisière et chaque coin abandonné de l'est de la France — celui dont les bourgeons argentés s'ouvrent en chatons jaunes en mars.",
+    careNote:
+      "Contrairement à la plupart des saules, il n'exige pas un sol mouillé — une terre de jardin ordinaire lui convient, d'où sa facilité à coloniser. Il vit peu, pousse vite et supporte la coupe sévère : recépez-le jusqu'à la souche tous les cinq ou six ans et vous gardez une plante de la taille d'un arbuste, avec la même valeur. Les pieds mâles et femelles sont distincts ; ce sont les mâles qui portent les chatons jaunes que tout le monde veut.",
+    givesNote:
+      "L'une des plus grandes plantes à chenilles de la région — quelque 385 espèces de papillons de jour et de nuit —, il nourrit donc les oiseaux au nid mieux que n'importe quelle plante d'ornement. Et ses chatons de mars sont le premier vrai pollen de l'année, celui que les reines de bourdons cherchent en sortant d'hibernation.",
+    propagationNote:
+      "En hiver, enfoncez aux deux tiers dans une terre humide des boutures nues grosses comme un crayon, ou prélevez des pointes tendres au début de l'été. La graine ne reste vivante que quelques semaines.",
+    supportNotes: {
+      "purple-emperor":
+        "Le grand mars changeant pond sur le saule marsault et rien d'autre. Les mâles passent leur vie au sommet des grands arbres et ne descendent que pour le sol humide — le papillon a donc besoin du saule dans le bois, pas du chêne que tout le monde plante pour lui.",
+      "poplar-hawk-moth":
+        "La grosse chenille verte à corne émoussée mange les saules et les peupliers ; le jour, l'adulte se pose ailes postérieures poussées en avant, avec l'air d'un tas de feuilles mortes.",
+      "mourning-cloak":
+        "Les chenilles du morio mangent en groupe sur le saule, en une masse noire et épineuse, et le papillon passe l'hiver à l'état adulte : c'est le premier grand papillon du printemps dans l'est.",
+      "mason-bees":
+        "Les chatons de mars sont le premier vrai pollen de l'année, ouverts exactement quand les abeilles solitaires sortent de leurs tubes.",
+      "bumble-bees":
+        "Un saule marsault en fleur en mars, c'est là que vont les reines de bourdons tout juste réveillées, et si tôt elles n'y ont guère de concurrence.",
+    },
+  },
+  "Betula pendula@france-continental": {
+    nativeNote:
+      "Le pionnier à écorce blanche des sols sableux, acides et pauvres de tout l'est — le premier arbre dans une clairière, et celui qui héberge le plus de chenilles après le saule et le chêne.",
+    careNote:
+      "Facile, rapide et de vie plutôt courte — soixante à quatre-vingts ans, pas des siècles. Il aime les sols acides et pauvres et le plein soleil, et n'aime pas la craie lourde. Ses racines sont superficielles et gourmandes : ne comptez pas sur un massif planté dessous ; plantez plutôt les bouleaux en groupe dans une herbe haute, c'est aussi là qu'ils sont le plus beaux. Son pollen d'avril est une cause sérieuse de rhume des foins.",
+    givesNote:
+      "Plus de trois cents espèces de chenilles dans cette région, et c'est ce chiffre-là qui compte : une nichée de mésanges bleues en mange des milliers. La graine des petits chatons nourrit tarins et sizerins tout l'hiver, et l'écorce qui pèle abrite des insectes que les grimpereaux fouillent toute l'année.",
+    propagationNote:
+      "Cueillez les chatons en fin d'été, tant qu'ils tiennent encore, et séchez-les jusqu'à ce qu'ils s'effritent. Éparpillez la graine, fine comme de la poussière, sur une terre nue et humide, et appuyez sans l'enterrer — la lumière aide la germination. Il se ressème si bien qu'il est souvent plus simple de déplacer un semis.",
+    supportNotes: {
+      "emperor-moth":
+        "Les chenilles du petit paon de nuit mangent le bouleau, parmi une courte liste d'arbustes et d'arbres ; le mâle porte de faux yeux sur les quatre ailes et vole de jour en avril, cherchant les femelles à l'odeur.",
+      "mourning-cloak":
+        "Le bouleau est l'autre arbre du morio, et un groupe de bouleaux sur un terrain en friche est l'endroit où vous avez le plus de chances d'en croiser un.",
+      "conifer-seed-finches":
+        "Tarins et sizerins se pendent en bandes aux chatons tout l'hiver pour en extraire une graine à peine plus lourde que le vent.",
+    },
+  },
+  "Populus tremula@france-continental": {
+    nativeNote:
+      "L'arbre qu'on entend avant de le voir — ses pétioles aplatis font cliqueter tout le houppier au moindre vent, sur les lisières et dans les clairières humides de tout l'est.",
+    careNote:
+      "Une chose à prévoir : il drageonne, et fort, si bien qu'un seul tremble devient en vingt ans un bosquet de clones. Sur un terrain en friche ou une limite, c'est le but ; dans un petit jardin, c'est une erreur, et tondre les rejets est le seul moyen pratique de les contenir. Rapide, robuste, et content sur un sol trop humide ou trop pauvre pour la plupart des arbres.",
+    givesNote:
+      "258 espèces de chenilles, c'est-à-dire de la nourriture pour les oiseaux à la saison où elle compte. Ses chatons sont un pollen précoce, son fourré de drageons un abri, et les vieux trembles pourrissent de l'intérieur d'une façon dont profitent les pics, puis les chouettes et les chauves-souris — c'est pourquoi un bosquet de trembles abrite plus de vie que sa taille ne le laisse penser.",
+    propagationNote:
+      "Déterrez un drageon enraciné en hiver — l'arbre vous les offre. De courts morceaux de racine couchés dans une caissette de terreau à la fin de l'hiver bourgeonnent aussi sans peine. La graine ne vit que quelques jours et ne sert presque jamais.",
+    supportNotes: {
+      "poplar-hawk-moth":
+        "Le tremble est l'un des principaux arbres du sphinx du peuplier ; les chenilles y vivent tout l'été et se nymphosent dans le sol au pied de l'arbre.",
+      "purple-emperor":
+        "Le tremble est le deuxième arbre du grand mars changeant après le saule marsault, et c'est dans un bouquet de trembles que se tient toute la colonie.",
+    },
+  },
+  "Alnus glutinosa@france-continental": {
+    nativeNote:
+      "L'arbre des berges, des bois humides et des sources de tout l'est — sombre, droit, les pieds dans l'eau là où aucun autre ligneux ne tient.",
+    careNote:
+      "Un sol mouillé, ou rien. Avec cela, l'aulne est rapide, robuste et discrètement généreux : il fixe son propre azote grâce à des bactéries logées dans ses racines et nourrit ce qu'on plante avec lui. Il perd des rameaux et de petits cônes toute l'année : tenez-le loin d'une terrasse. Achetez-le à une source de confiance — une maladie des racines, propagée par les plants de pépinière, a tué des aulnes le long des rivières de toute l'Europe.",
+    givesNote:
+      "Ses chatons de février sont parmi les tout premiers pollens de l'année, et la graine de ses petits cônes ligneux est ce pour quoi tarins et sizerins se suspendent tête en bas tout l'hiver. Ses racines tiennent une berge et ombragent assez l'eau pour garder un ruisseau frais — l'essentiel de ce dont un petit ruisseau a besoin.",
+    propagationNote:
+      "Récoltez les cônes à l'automne, séchez-les jusqu'à ce qu'ils s'ouvrent et pressez la graine ailée sur une terre mouillée — elle a besoin de lumière, ne la couvrez donc pas, et ne laissez jamais le pot sécher.",
+    supportNotes: {
+      "conifer-seed-finches":
+        "Un bois d'aulnes humide en janvier, c'est un bois de tarins : des bandes qui décortiquent les petits cônes tête en bas, en criant sans arrêt.",
+      "goldfinches-linnets":
+        "Les chardonnerets prennent la même graine aux côtés des tarins, et les deux reviennent aux mêmes arbres jour après jour.",
+    },
+  },
+  "Corylus avellana@france-continental": {
+    nativeNote:
+      "L'arbuste de sous-bois de chaque bois et de chaque vieille haie de l'est, et la plante qui ouvre l'année — des chatons jaunes pendants en janvier, quand le bois est encore nu.",
+    careNote:
+      "Soleil ou mi-ombre, tout sol correct, et le traitement traditionnel est le meilleur : coupez au ras du sol quelques-unes des plus vieilles tiges chaque hiver, ou toute la cépée tous les sept ans environ. C'est le recépage, ce qu'on fait au noisetier depuis plusieurs milliers d'années, et il le garde jeune indéfiniment. Les écureuils prendront les noisettes encore vertes, bien avant vous.",
+    givesNote:
+      "Des chatons en janvier, ce qui sous ce climat est la première nourriture de l'année pour tout ce qui vole par un après-midi doux, et sur les mêmes rameaux de minuscules fleurs femelles pourpres qu'il faut chercher. Une grande plante à chenilles au printemps, des noisettes à l'automne pour les geais, les pics, les mulots et les muscardins, et une cépée recépée qui reste un couvert de nidification épais tant que vous continuez à la couper.",
+    propagationNote:
+      "À l'automne, fixez une tige basse sous deux ou trois centimètres de terre et détachez-la un an plus tard — c'est ainsi qu'une cépée de noisetier s'étend d'elle-même. Par graines, semez les noisettes à l'automne dans un pot enterré dehors sous un grillage, sinon les mulots le videront.",
+    supportNotes: {
+      "hazel-dormouse":
+        "Le muscardin tire son nom de cette plante en anglais, en allemand et en latin, et c'est sur les noisettes qu'il engraisse avant d'hiberner. Une noisette ouverte par un muscardin porte un trou rond et lisse, avec des marques de dents inclinées autour du bord — le moyen de savoir qu'il est là.",
+      "eurasian-jay":
+        "Le geai emporte les noisettes et les enterre une à une, et celles qu'il oublie sont la façon dont un noisetier se plante ailleurs.",
+      "mason-bees":
+        "Les chatons de janvier sont le tout premier pollen de l'année dans l'est, par un après-midi doux où presque rien ne vole.",
+    },
+  },
+  "Rubus fruticosus agg.@france-continental": {
+    nativeNote:
+      "Non pas une espèce mais un essaim de centaines, que les botanistes traitent comme un groupe — la ronce de chaque talus de haie, de chaque lisière et de chaque coin laissé à l'abandon dans l'est de la France.",
+    careNote:
+      "La plante la plus utile à la faune que la plupart des jardins possèdent déjà et ne cessent d'arracher. Elle s'enracine partout où la pointe d'une tige touche le sol : donnez-lui une limite que vous acceptez de lui céder — un talus, le pied d'une haie, le fond d'un coin en friche. Coupez à la base chaque hiver les tiges qui ont fructifié, et elle reste productive et praticable au lieu de devenir un buisson impénétrable.",
+    givesNote:
+      "Presque rien ici ne fait plus. Des mois de fleurs butinées par les bourdons, les abeilles solitaires, les syrphes et plus d'espèces de papillons qu'aucune autre plante de la région ; des mûres dès août pour les fauvettes, les grives, les renards et les blaireaux ; un fourré épineux qui est le couvert de nidification le plus sûr qu'un petit oiseau puisse trouver ; et des tiges mortes où nichent les abeilles solitaires.",
+    propagationNote:
+      "Elle fait le travail : trouvez en hiver une pointe de tige enracinée, coupez-la et déplacez-la. Les boutures nues d'hiver s'enracinent aussi. La graine, c'est une saison perdue.",
+    supportNotes: {
+      "bumble-bees":
+        "Des mois de fleurs ouvertes, et une ronce en juillet porte à la fois plus d'insectes que n'importe quoi d'autre au jardin — bourdons, abeilles solitaires, syrphes et coléoptères.",
+      "green-hairstreak":
+        "Le papillon vert le plus commun d'Europe pond sur la ronce parmi les autres arbustes des terrains vagues, et se pose ailes fermées sur un talus ensoleillé, exactement semblable à une feuille.",
+      "hazel-dormouse":
+        "Les muscardins parcourent les ronces pour les fruits en fin d'été et se déplacent le long des tiges : une haie avec des ronces est un couloir, une haie taillée est un mur.",
+      "blackcaps-warblers":
+        "Les mûres sont ce qui fait prendre du poids à une fauvette avant son départ vers le sud, et le fourré épineux est l'endroit où elle a niché en juin.",
+      "winter-thrushes":
+        "Litornes et mauvis nettoient ce qui reste de fruits à leur arrivée du nord en octobre.",
+    },
+  },
+  "Calluna vulgaris@france-continental": {
+    nativeNote:
+      "La lande basse et pourpre des sables acides et des pinèdes claires de tout l'est — les landes des Vosges, la Sologne, les terres pauvres que personne n'a jamais labourées.",
+    careNote:
+      "Le sol acide n'est pas négociable — sur la craie ou dans un jardin chaulé elle jaunit et meurt, et aucun engrais n'y change rien. Plein soleil, sol sableux et pauvre, aucun engrais du tout. Tondez-la légèrement juste après la floraison pour la garder dense ; laissée à elle-même, elle s'ouvre et se dégarnit au centre au bout de cinq ou six ans. C'est ce que le feu et le pâturage empêchaient sur une vraie lande.",
+    givesNote:
+      "Elle fleurit de juillet jusqu'en octobre, et c'est tout l'intérêt : la fin de l'été et le début de l'automne sont un creux, au moment où les abeilles cherchent à faire leurs réserves pour l'hiver, et c'est la callune qui leur fait passer ce cap. Abeilles domestiques, bourdons et toute une série d'abeilles solitaires la butinent, et elle nourrit en plus une longue liste de chenilles de papillons de nuit — les papillons de nuit des landes sont ceux de la callune.",
+    propagationNote:
+      "Prélevez en fin d'été des pointes de pousses semi-aoûtées et enracinez-les dans un mélange tourbeux, graveleux et sans calcaire. Les branches basses se marcottent aussi là où elles touchent un sol acide — fixez-en une au sol et séparez-la un an plus tard.",
+    supportNotes: {
+      "silver-studded-blue":
+        "L'azuré de l'Ajonc vit dans les landes et nulle part ailleurs, pond sur la callune, et ses chenilles sont soignées sous terre par des fourmis qui les traient pour leur sucre — perdez la lande et vous perdez tout l'arrangement.",
+      "emperor-moth":
+        "Le petit paon de nuit est avant tout un insecte des landes, et c'est d'ordinaire sur la callune qu'on trouve ses chenilles vertes cerclées de noir.",
+      "bumble-bees":
+        "La callune fleurit de juillet à octobre, précisément le creux où une colonie de bourdons tente d'élever les reines de l'année suivante, quand tout le reste a fini.",
+    },
+  },
+  "Deschampsia cespitosa@france-continental": {
+    nativeNote:
+      "La grosse touffe sombre des prairies humides, des layons forestiers mouillés et des terres lourdes de tout l'est, qui lance en juin une brume de tiges fleuries où s'accroche chaque soleil bas.",
+    careNote:
+      "Il lui faut un sol qui reste frais — argile lourde, coin bas, bord de mare — et elle accepte la mi-ombre, ce que la plupart des graminées de cette taille refusent. Ses touffes sont persistantes : il reste quelque chose l'hiver. En fin d'hiver, peignez les feuilles mortes d'une main gantée plutôt que de la couper ; les tiges fleuries peuvent rester debout jusque-là.",
+    givesNote:
+      "Les graminées portent bien plus de chenilles que les jardiniers ne le pensent, et les myrtils, les tristans et les hespéries d'un pré humide grandissent sur des touffes comme celle-ci. Une grosse touffe est aussi un petit monde à elle seule — là où carabes, araignées et insectes en hivernage attendent la fin du froid, et où un troglodyte ou un campagnol circule à couvert.",
+    propagationNote:
+      "Divisez une touffe à la bêche au début du printemps. La graine est fine et a besoin de lumière — répandez-la sur une terre nue et humide et appuyez sans la couvrir.",
+    supportNotes: {
+      "grass-skippers":
+        "Myrtils, tristans et hespéries élèvent tous leurs chenilles sur des touffes de graminées comme celle-ci, chaque chenille cachée dans une feuille qu'elle a cousue derrière elle.",
+    },
+  },
+  "Hedera helix@france-continental": {
+    nativeNote:
+      "Indigène ici et partout dans l'est — sur le tronc des vieux chênes, par-dessus les murs de jardin, le long du pied ombragé de chaque haie — et la dernière plante de toute la région encore en fleur en novembre.",
+    careNote:
+      "Donnez-lui un mur, une clôture ou une souche, et coupez-le de tout ce dont vous voulez garder la forme. Il s'accroche par des crampons semblables à des racines qui marquent l'enduit : mettez-le sur de la pierre ou sur un support qui ne craint rien. Et une correction utile, car elle fait arracher du lierre des arbres chaque année : **le lierre n'est pas un parasite et n'étrangle pas un arbre en bonne santé** — il grimpe et s'accroche, rien de plus. Il ne fleurit qu'une fois devenu adulte et buissonnant en hauteur : ne le tondez donc pas tous les ans, ou vous perdez la partie qui compte.",
+    givesNote:
+      "La plante d'automne la plus précieuse d'Europe. Ses fleurs s'ouvrent en octobre et novembre, quand tout le reste a fini, et nourrissent syrphes, guêpes, vulcains et citrons tardifs, et la collète du lierre — une abeille solitaire dont toute l'année est bâtie autour de cette seule plante. Puis des baies noires en fin d'hiver pour les fauvettes à tête noire, les grives et les pigeons ramiers, et un couvert persistant où les oiseaux nichent et dorment toute l'année.",
+    propagationNote:
+      "Les pousses semi-aoûtées s'enracinent sans peine en fin d'été dans un mélange graveleux, à l'ombre. Une bouture prise sur la partie adulte et buissonnante donne un arbuste qui fleurit bien plutôt qu'une grimpante — un choix à faire exprès.",
+    supportNotes: {
+      "mason-bees":
+        "La collète du lierre est une abeille des sables dont toute l'année est réglée sur cette plante : elle sort en septembre quand le lierre s'ouvre et a fini quand les fleurs ont fini. Rien d'autre qui lui convienne n'est ouvert à ce moment-là.",
+      "holly-blue":
+        "L'azuré des nerpruns alterne entre deux plantes au fil de ses deux générations annuelles — le houx au printemps, les boutons du lierre en fin d'été. Un jardin qui veut garder le papillon a besoin des deux.",
+      "red-admiral":
+        "Les vulcains se pressent sur les fleurs de lierre en octobre, et ce sont souvent les derniers papillons que l'on voit avant l'hiver.",
+      "winter-thrushes":
+        "Les baies de lierre mûrissent en fin d'hiver, longtemps après que tout le reste a disparu, et c'est ce qui permet aux grives et aux pigeons ramiers de passer février.",
+      "blackcaps-warblers":
+        "Les fauvettes à tête noire qui restent désormais l'hiver au lieu de partir vers le sud dépendent beaucoup de cette récolte tardive.",
+    },
+  },
+  "Plantago lanceolata@france-continental": {
+    nativeNote:
+      "La rosette nervurée de chaque chemin, chaque pelouse et chaque prairie de l'est — si ordinaire que personne ne la plante exprès, et l'une des plantes les plus mangées par les chenilles en Europe.",
+    careNote:
+      "Il pousse dans n'importe quoi, supporte la tonte et le piétinement, et se ressème un peu partout : sa place est dans l'herbe haute et en bord d'allée, pas dans un massif. La façon honnête de l'avoir est de cesser de l'arracher et de laisser une tache s'installer dans la pelouse. Son pollen est porté par le vent : il donne le rhume des foins à certaines personnes.",
+    givesNote:
+      "Ce sont les chenilles qui comptent : le plantain en nourrit une longue liste, et dans cette région cela inclut la mélitée du Plantain et la mélitée du mélampyre, dont les jeunes passent l'hiver serrés ensemble dans une toile de soie sur ces feuilles. Chardonnerets et linottes dépouillent les épis de graines à partir de la fin de l'été.",
+    propagationNote:
+      "Répandez la graine sur une terre nue à l'automne et tassez-la du pied. Les touffes se divisent à tout moment de la saison fraîche.",
+    supportNotes: {
+      "glanville-fritillary":
+        "La mélitée du Plantain pond ses œufs en un seul lot sur le plantain lancéolé, et les chenilles passent tout l'hiver ensemble dans une toile de soie tissée sur la plante — c'est pourquoi une fauche d'automne emporte toute la nichée.",
+      "goldfinches-linnets":
+        "Chardonnerets et linottes dépouillent les épis de graines à partir de la fin de l'été, une tête après l'autre le long d'un bord de chemin.",
+    },
+  },
+  "Galium verum@france-continental": {
+    nativeNote:
+      "L'écume jaune et basse des pelouses sèches, des talus de route et des vieilles emprises de voie ferrée de tout l'est — au parfum de miel au soleil, et sentant le foin frais une fois coupée.",
+    careNote:
+      "Terrain pauvre et sec, plein soleil ; il court par la racine à travers l'herbe, exactement ce qu'il doit faire dans une prairie ou sur un talus sec, et exactement ce qu'il ne doit pas faire dans un massif bien tenu. Rabattez-le après la floraison. On en bourrait vraiment les matelas, et il sent vraiment le foin en séchant.",
+    givesNote:
+      "C'est là que grandit le moro-sphinx : ce papillon de nuit qui vole de jour et qu'on prend pour un minuscule colibri devant les fleurs pond sur le gaillet, tout comme le grand sphinx de la vigne, dont l'énorme chenille grise à faux yeux s'y montre en fin d'été. Les fleurs nourrissent pendant des mois les petites abeilles, les syrphes et les coléoptères.",
+    propagationNote:
+      "Déterrez un morceau enraciné de la tige rampante pendant la saison fraîche. La graine semée fraîche à l'automne sur un sol graveleux lève au cours de l'hiver.",
+    supportNotes: {
+      "hummingbird-hawk-moth":
+        "Le papillon de nuit qui vole de jour et que tout le monde prend pour un minuscule colibri pond sur le gaillet — une tache dans l'herbe haute fait donc d'un visiteur un résident.",
+      "elephant-hawk-moth":
+        "La chenille grise du grand sphinx de la vigne, avec les faux yeux qu'elle gonfle quand on l'inquiète, mange le gaillet et l'épilobe en fin d'été.",
+    },
+  },
+  "Fragaria vesca@france-continental": {
+    nativeNote:
+      "La petite fraise des bois des lisières, des talus et des vieux murs de tout l'est — elle court partout sur des fils rouges, et vaut qu'on s'arrête en juin.",
+    careNote:
+      "Mi-ombre et un sol qui ne cuit pas — le pied d'une haie, sous un arbuste, le côté ombragé d'une allée. Elle s'étend par stolons en un tapis bas et dense qui tient les mauvaises herbes à distance, et elle ira plus loin que prévu, ce qui sous une haie est une qualité. Tondez-la en fin d'hiver pour la rajeunir. Le fruit est petit, intense, et à lui seul vaut qu'on la cultive.",
+    givesNote:
+      "Des fleurs blanches et ouvertes tout au long d'un long printemps pour les petites abeilles solitaires et les syrphes, à qui les fleurs plus profondes ne servent à rien, puis des fruits que prennent oiseaux, mulots et muscardins. Au jardin, c'est le tapis lui-même qui compte : un couvert au ras du sol, là où vivent coléoptères, araignées et insectes en hivernage.",
+    propagationNote:
+      "La plante le fait pour vous : pendant la saison fraîche, détachez les petits plants enracinés au bout des stolons et coupez le fil. La graine marche aussi, plus lentement.",
+    supportNotes: {
+      "mason-bees":
+        "Des fleurs blanches ouvertes tout au long d'un long printemps, assez peu profondes pour les plus petites abeilles solitaires et les syrphes — ce que ne sont pas les fleurs profondes des jardins.",
+      "hazel-dormouse":
+        "Le muscardin prend les fraises des bois là où les stolons atteignent le pied d'une haie, avec tout ce qui est tendre et sucré dans un été de haie.",
+      "blackcaps-warblers":
+        "Fauvettes, rougegorges et merles prennent tous ce fruit à même la strate basse, l'une des rares récoltes à leur niveau.",
+    },
+  },
+  "Dryopteris filix-mas@france-continental": {
+    nativeNote:
+      "La grande fougère la plus commune des bois, des talus de haie et des murs ombragés de l'est — un volant net de frondes, et l'une des plantes sauvages de France les plus faciles à cultiver exprès.",
+    careNote:
+      "De l'ombre et un sol qui garde un peu d'humidité, et ensuite elle est à peu près aussi increvable qu'une fougère peut l'être — une fois installée, elle supporte même l'ombre sèche sous un hêtre, ce que très peu de plantes acceptent. Coupez à la base les frondes de l'an passé en fin d'hiver, juste avant que les nouvelles se déroulent. Toxique si on la mange, ce qui compte dans un jardin avec un chien qui mâchonne.",
+    givesNote:
+      "Les fougères ne nourrissent presque aucune chenille, et il serait malhonnête de prétendre le contraire. Ce que celle-ci apporte, c'est de la structure et de l'abri là où un jardin n'a d'habitude ni l'un ni l'autre : la souche tient un talus ombragé, les frondes gardent le sol humide tout l'été, et c'est là que coléoptères, araignées, crapauds et tritons passent les mois secs.",
+    propagationNote:
+      "Divisez une vieille souche au printemps, en gardant sur chaque morceau plusieurs frondes et une poignée de racines. Par les spores, laissez un jour un morceau de fronde mûre dans une enveloppe de papier, répandez la poussière tombée sur un terreau stérilisé humide, sous couvercle, et gardez-le au frais et à mi-ombre pendant des mois.",
+  },
+  "Asplenium scolopendrium@france-continental": {
+    nativeNote:
+      "La fougère qui ne ressemble à aucune fougère — des frondes entières, luisantes, en forme de lanière, sur le calcaire ombragé, les parois de puits et le pied humide des haies de tout l'est.",
+    careNote:
+      "Ombre profonde, du calcaire dans le sol, et de l'humidité — le côté nord d'un mur, un coin ombragé près d'un drain, le fond d'un puits. Elle est persistante et garde donc un coin sombre vert tout l'hiver, et elle ne veut rien des conditions acides que la fougère mâle tolère. Ne la laissez pas sécher pendant ses deux premiers étés. Ne coupez que les frondes vraiment brunies.",
+    givesNote:
+      "Un couvert persistant dans le coin le plus sombre et le plus humide d'un jardin — le seul endroit où rien d'autre ne pousse et où s'abrite pourtant une vie étonnante. Coléoptères, cloportes, araignées, crapauds et tritons profitent tous du dessous humide d'une touffe de fougère, et elle tient le sol d'un talus ombragé sous les pluies d'hiver. Comme toute fougère, elle nourrit directement très peu d'insectes.",
+    propagationNote:
+      "Les spores se sèment sur un terreau stérilisé humide, sous couvercle, au frais et à mi-ombre — d'abord une pellicule verte, des fougères des mois plus tard. Les vieilles souches se divisent au printemps.",
+  },
 };

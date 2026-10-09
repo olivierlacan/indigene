@@ -7,9 +7,11 @@
 //
 // It is no longer true that every taxon here is unique to this region. The
 // host-genus pass added five plants the Atlantic list already carried —
-// hawthorn, heather, hazel, red clover and bird's-foot trefoil — and a taxon
-// lives in exactly one file, so theirs stay in `france-atlantic.ts`, widened to
-// name the Midi as well as the west. See `./index.ts`.
+// hawthorn, heather, hazel, red clover and bird's-foot trefoil — and a few more
+// are shared with other lists. A plain key here answers for this region only,
+// so each shared taxon is written again at the bottom under a region-qualified
+// key (`"Latin@france-mediterranean"`), from this region's English. See
+// `./index.ts`.
 import type { ProseTable } from "../../lib/prose";
 
 export const FRANCE_MEDITERRANEAN: ProseTable = {
@@ -668,5 +670,221 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
       "111 espèces de chenilles, une fleur simple dont une abeille solitaire atteint vraiment le pollen — ce qu'une rose double ne permet pas — et de petits cynorhodons rouges qui tiennent l'hiver pour les fauvettes et les grives. Persistant, donc du couvert dans les mois où le maquis est nu.",
     propagationNote:
       "Des boutures de bois dormant grosses comme un crayon, en automne, dans une tranchée abritée, s'enracinent bien. Une tige basse couchée en terre se marcotte en un an, et c'est ainsi qu'il progresse le long d'une haie.",
+  },
+
+  // -------------------------------------------------------------------------
+  // Les taxa partagés avec la France atlantique. La clé simple (dans
+  // `france-atlantic.ts`) porte la version atlantique ; celles-ci, qualifiées
+  // par la région, portent la version méditerranéenne.
+  // -------------------------------------------------------------------------
+  "Alnus glutinosa@france-mediterranean": {
+    nativeNote:
+      "L'arbre de l'eau permanente dans le Midi — une ligne d'aulnes dans un paysage calcaire et sec signale une source ou un ruisseau qui ne s'arrête pas en août.",
+    careNote:
+      "Un sol mouillé, ou rien — sur une pente méditerranéenne sèche, il ne tiendra pas. Avec de l'eau, il est rapide et améliore le sol au passage, car il fixe son propre azote grâce à des bactéries logées dans ses racines et nourrit tout ce qu'on plante autour. Il perd sans cesse des rameaux et de petits cônes : pas au-dessus d'une terrasse. Méfiez-vous d'un aulne de provenance inconnue : la maladie des racines qui a tué des aulnes le long de nombreuses rivières d'Europe voyage avec les plants de pépinière.",
+    givesNote:
+      "Des chatons en février, ce qui sous ce climat est le tout début de l'année des abeilles, et de petits cônes ligneux dont la graine nourrit tarins et chardonnerets tout l'hiver. Ses racines tiennent une berge et ombragent assez l'eau pour la garder fraîche — l'essentiel de ce dont un petit ruisseau méditerranéen a besoin.",
+    propagationNote:
+      "Récoltez les petits cônes à l'automne, séchez-les jusqu'à ce qu'ils s'ouvrent et secouez-en la graine ailée. Elle a besoin de lumière : pressez-la sur une terre mouillée sans l'enterrer, et ne laissez jamais le pot sécher.",
+    supportNotes: {
+      "goldfinches-linnets":
+        "Un aulne en fruits l'hiver porte chardonnerets et tarins suspendus tête en bas à ses petits cônes, dont ils extraient les graines une à une.",
+      "conifer-seed-finches":
+        "Tarins et sizerins envahissent les aulnes à partir de novembre, et un bouquet au bord de l'eau retient une bande tout l'hiver.",
+    },
+  },
+  "Prunus spinosa@france-mediterranean": {
+    nativeNote:
+      "L'arbuste épineux des haies, des bords de champ et des terrasses abandonnées de tout le Midi — des fleurs blanches sur le bois noir et nu en février, avant que quoi que ce soit ait une feuille.",
+    careNote:
+      "Il drageonne, et en bonne terre il envahira un massif : donnez-lui une limite — une ligne de haie, un talus en friche, le bord d'un verger —, là où on l'a toujours employé. Vraiment épineux : excellent pour une haie qui arrête le bétail ou les intrus, mauvais au bord d'une allée. Rabattez-le sévèrement en hiver tous les quelques ans. Les prunelles ne valent d'être mangées qu'après une gelée, ou dans une liqueur.",
+    givesNote:
+      "L'une des deux ou trois plus importantes plantes à chenilles d'Europe, et ici la première grande source de nectar de l'année — un prunellier en février bourdonne quand rien d'autre n'est ouvert. Puis des prunelles jusque dans l'hiver pour les grives et les fauvettes à tête noire, et un fourré qui est le couvert de nidification le plus sûr qu'une haie de jardin puisse offrir.",
+    propagationNote:
+      "Déterrez un drageon enraciné au printemps — la plante en produit beaucoup. Par graines, débarrassez les noyaux de leur chair et semez-les dehors à l'automne ; il leur faut environ six mois de froid avant de lever.",
+    supportNotes: {
+      "brimstone":
+        "Le citron sort d'hibernation en février en cherchant la première fleur venue, et dans une haie du Midi c'est le prunellier — le papillon jaune sur la fleur blanche est le début de l'année.",
+      "emperor-moth":
+        "Les chenilles du petit paon de nuit — vertes, cerclées de noir et ponctuées de verrues orange — mangent le prunellier parmi une courte liste d'arbustes, et le mâle vole de jour, guidé par la seule odeur des femelles.",
+      "bumble-bees":
+        "Une floraison de février sur bois nu est ce dont a besoin une reine de bourdon qui sort de terre, et il n'y a presque rien d'autre en fleur aussi tôt.",
+      "winter-thrushes":
+        "Les prunelles restent sur l'arbuste longtemps après que les fruits plus tendres ont disparu, et c'est pourquoi les grives d'hiver fouillent une haie de prunelliers en janvier.",
+      "blackcaps-warblers":
+        "Les fauvettes à tête noire prennent aussi les prunelles, et le fouillis épineux du dessous est l'un des couverts de nidification les plus sûrs d'une haie méridionale.",
+    },
+  },
+  "Crataegus monogyna@france-mediterranean": {
+    nativeNote:
+      "Dans chaque haie, chaque fourré et chaque terrasse abandonnée du Midi — la plante ligneuse la plus souvent recensée de la région, et celle dont la plupart des jardins ont déjà un pied.",
+    careNote:
+      "Il pousse sur n'importe quoi, supporte le mistral, le calcaire et la taille sévère, et n'a besoin d'aucun arrosage d'été une fois installé. Taillez-le en fin d'hiver, quand les oiseaux ont mangé les cenelles et avant qu'ils commencent à y nicher.",
+    givesNote:
+      "De la nourriture pour **203 espèces de chenilles**. Une semaine de fleurs que butinent toutes les abeilles et tous les coléoptères de la garrigue, un couvert épineux qui met un nid à l'abri des chats et des geais, et des cenelles rouges qui font passer l'hiver aux grives et aux fauvettes à tête noire.",
+    propagationNote:
+      "Les cenelles sont lentes : retirez la chair, semez à l'automne dans un pot laissé dehors, et n'attendez rien avant le deuxième printemps. Ce que tout le monde fait en réalité, c'est planter en hiver de jeunes plants à racines nues, qui s'installent mieux qu'une plante en pot.",
+    supportNotes: {
+      "winter-thrushes":
+        "Une haie chargée de cenelles est ce qui fait passer l'hiver méridional aux grives et aux fauvettes à tête noire — elles descendent des montagnes en bandes et dépouillent une haie après l'autre.",
+      "bumble-bees":
+        "L'écume d'avril de l'aubépine est la plus grosse miellée de l'année dans la garrigue, et elle est finie en deux semaines.",
+      "green-hairstreak":
+        "L'aubépine est l'une des nombreuses plantes à chenilles de la thécla de la ronce, et le papillon — le plus commun des papillons verts d'ici — se trouve le plus facilement sur une lisière de haie ensoleillée en avril.",
+    },
+  },
+  "Calluna vulgaris@france-mediterranean": {
+    nativeNote:
+      "Sur les terrains acides des Maures, de l'Esterel, de la bordure des Cévennes et de la Corse — la même plante que sur les landes du nord, qui vit ici sur le grès et le granite là où s'arrête le calcaire.",
+    careNote:
+      "Sol acide et plein soleil, et elle ne transige sur aucun des deux — sur la craie elle jaunit et meurt, quoi que vous lui donniez. Tondez-la légèrement après la floraison pour la garder dense, et jamais jusque dans le vieux bois nu.",
+    givesNote:
+      "**Elle fleurit de juillet à octobre**, la période la plus vide de nectar de l'année méditerranéenne — tout le reste s'est arrêté pour la sécheresse. 118 espèces de chenilles, et une colline de callune en septembre est le dernier grand repas avant l'hiver.",
+    propagationNote:
+      "En fin d'été, arrachez de courtes pousses latérales avec un talon et enracinez-les dans un mélange graveleux sans calcaire — la callune s'enracine facilement, puis se noie dans un terreau riche. Les branches basses fixées au sol se marcottent en une saison.",
+    supportNotes: {
+      "emperor-moth":
+        "Sur le maquis acide, la callune est la plante du petit paon de nuit. Le mâle vole de jour au printemps, vite et bas au-dessus de la callune, suivant l'odeur de la femelle à plus d'un kilomètre — le seul grand papillon de nuit volant de jour que la plupart des gens verront ici.",
+      "bumble-bees":
+        "Elle fleurit de juillet à octobre, quand la garrigue s'est arrêtée pour la sécheresse et que presque rien d'autre n'est ouvert. Une colline de callune en septembre est le dernier grand repas de l'année.",
+      "green-hairstreak":
+        "La callune rejoint les genêts sur la liste de la thécla de la ronce — plantez-en deux et vous avez fait une lande dont le papillon peut se servir.",
+    },
+  },
+  "Corylus avellana@france-mediterranean": {
+    nativeNote:
+      "Sur les sols ombragés et plus profonds de l'arrière-pays — versants nord, bois de bord de ruisseau et vallées plus fraîches derrière la côte, là où la garrigue cède la place à une vraie ombre.",
+    careNote:
+      "Le seul arbuste d'ici qui demande vraiment de l'ombre et un sol qui garde un peu d'humidité — un mur au nord, sous de plus grands arbres, le bas d'une pente ombragée. Il ne supporte pas le plein été côtier sur un calcaire maigre et, contrairement à la plupart, il apprécie un bon arrosage en profondeur lors d'un mois d'août difficile.",
+    givesNote:
+      "124 espèces de chenilles et le premier pollen de l'année méditerranéenne — les chatons s'ouvrent en janvier, quand les toutes premières abeilles solitaires sortent et que presque rien d'autre n'offre quoi que ce soit. Des noisettes pour les geais, les écureuils et les muscardins, et il supporte le recépage indéfiniment.",
+    propagationNote:
+      "À l'automne, fixez une pousse basse dans le sol, entaillez-en le dessous, et soulevez-la enracinée un an plus tard — le noisetier se marcotte presque tout seul. Des noisettes fraîches semées à l'automne marchent aussi, dans un pot hors de portée des mulots.",
+    supportNotes: {
+      "mason-bees":
+        "Le noisetier est pollinisé par le vent et n'a besoin d'aucun insecte, mais ses chatons lâchent leur pollen en janvier et les toutes premières abeilles solitaires le récoltent quand même — le premier pollen de l'année méditerranéenne.",
+      "eurasian-jay":
+        "Le geai prend les noisettes aussi volontiers que les glands et les enterre le long de la lisière : c'est ainsi qu'un fourré de noisetiers remonte une pente ombragée.",
+    },
+  },
+  "Centaurea scabiosa@france-mediterranean": {
+    nativeNote:
+      "La grande centaurée pourpre des pelouses calcaires sèches et des bords de route de tout le Midi — à racine profonde, de longue vie, et en fleur au plus fort de la chaleur.",
+    careNote:
+      "Un sol calcaire pauvre et sec, le plein soleil, et ensuite plus rien — elle descend une racine pivotante et se débrouille seule pendant des années. Cette racine fait aussi qu'elle supporte mal d'être déplacée : plantez-la petite et laissez-la. Laissez les capitules secs debout l'hiver plutôt que de les couper ; c'est là que vont les chardonnerets.",
+    givesNote:
+      "L'une des meilleures plantes à nectar d'un jardin sec du Midi, et elle fleurit au pire de l'été, quand la garrigue s'est arrêtée : bourdons, abeilles solitaires et papillons de toutes tailles — demi-deuils, nacrés, azurés et les grands machaons. Les chardonnerets prennent la graine tout l'automne.",
+    propagationNote:
+      "Semez la graine fraîche à l'automne là où la plante doit rester, ou dans un pot profond laissé dehors — la racine pivotante déteste être contrariée. Elle fleurit la deuxième ou la troisième année, puis vit longtemps.",
+    supportNotes: {
+      "bumble-bees":
+        "La centaurée fleurit au pire de l'été, quand la garrigue s'est arrêtée et qu'une colonie de bourdons a encore des bouches à nourrir.",
+      "painted-lady":
+        "Les grands papillons butinent les capitules de centaurée plusieurs minutes d'affilée — belles-dames, nacrés et demi-deuils d'une prairie sèche.",
+      "six-spot-burnet":
+        "Les zygènes diurnes à points rouges s'y rassemblent en nombre, plusieurs par capitule, en pleine chaleur de l'après-midi.",
+      "goldfinches-linnets":
+        "Laissez les capitules secs sur pied et les chardonnerets les démontent tout l'automne.",
+    },
+  },
+  "Trifolium pratense@france-mediterranean": {
+    nativeNote:
+      "Dans les prairies plus fraîches, les bords de route et les vieux pâturages de l'intérieur du Midi, partout où le sol garde un peu d'humidité jusqu'au début de l'été.",
+    careNote:
+      "Il lui faut un sol qui reste un peu frais — le coin bas, le côté nord, le bout de prairie qui reverdit le dernier. Il fixe son propre azote : ne lui donnez jamais d'engrais, et fauchez-le une fois en fin d'été, après la montée en graine, plutôt que de le tondre ras.",
+    givesNote:
+      "Un tube profond dont seul un bourdon à longue langue atteint le fond, ouvert d'avril à septembre — cinq mois de nectar dans une région où la plupart des fleurs ont fini en juin. 107 espèces de chenilles, et il nourrit le sol autour de lui au passage.",
+    propagationNote:
+      "Semez sur une terre nue ratissée à l'automne ou au début du printemps ; aucun traitement n'est nécessaire. Les touffes installées se divisent sans peine.",
+    supportNotes: {
+      "bumble-bees":
+        "Un tube assez profond pour que seul un bourdon à longue langue en atteigne le fond, ouvert d'avril à septembre — cinq mois de nectar dans une région où la plupart des fleurs ont fini en juin.",
+    },
+  },
+  "Poa nemoralis@france-mediterranean": {
+    nativeNote:
+      "La graminée fine et souple des sols ombragés sous le chêne vert et le long du côté nord des murs — l'une des très rares graminées du Midi qui préfère l'ombre au soleil.",
+    careNote:
+      "La graminée de l'ombre sèche sous un chêne vert, là où un gazon ne vient pas et où la plupart des graminées méditerranéennes veulent plus de soleil. Fine, elle est discrètement belle dans le mouvement ; ne la tondez pas, ou fauchez-la une fois à l'automne. Elle se ressème doucement dans l'ombre, ce qui est d'ordinaire bienvenu.",
+    givesNote:
+      "Les graminées portent bien plus de chenilles qu'on ne le croit, et les myrtils, les demi-deuils et les hespéries du Midi grandissent dessus — celle-ci dans l'ombre où ces papillons viennent se reposer. Ses épis nourrissent moineaux et fringilles, et ses touffes abritent des insectes au ras du sol tout l'été.",
+    propagationNote:
+      "Répandez de la graine fraîche sur un sol ombragé et humide à l'automne et appuyez-la. Les touffes installées se divisent facilement pendant la saison fraîche.",
+    supportNotes: {
+      "grass-skippers":
+        "Myrtils, demi-deuils et hespéries élèvent tous leurs chenilles sur des graminées, et celle-ci est celle qui pousse à l'ombre où ces papillons viennent se reposer, à l'abri de la chaleur de l'après-midi.",
+    },
+  },
+  "Hedera helix@france-mediterranean": {
+    nativeNote:
+      "Le lierre des murs ombragés, des vieilles terrasses d'oliviers et du côté nord de chaque chêne vert du Midi — indigène ici, et la dernière plante en fleur avant l'hiver.",
+    careNote:
+      "Il est vigoureux : donnez-lui un mur, une clôture ou un arbre mort, et coupez-le de tout ce dont vous voulez garder la forme. Il s'accroche par des crampons semblables à des racines qui marquent l'enduit : sa place est sur la pierre ou sur un support qui ne craint rien. Le lierre n'étrangle pas un arbre en bonne santé et ne s'en nourrit pas — il grimpe et s'accroche. Il ne fleurit qu'une fois devenu adulte et buissonnant en hauteur : **ne le tondez pas tous les ans**, ou vous n'aurez jamais la partie qui compte.",
+    givesNote:
+      "La plante d'automne la plus précieuse d'Europe, et de loin. En octobre et novembre, quand rien d'autre n'est ouvert, ses fleurs nourrissent syrphes, guêpes, papillons tardifs — vulcains, citrons — et la collète du lierre, une abeille solitaire dont toute l'année est réglée sur cette seule plante. Puis des baies noires en fin d'hiver pour les fauvettes à tête noire, les grives et les pigeons ramiers, et un couvert persistant où les oiseaux nichent et dorment toute l'année.",
+    propagationNote:
+      "Prélevez des pousses semi-aoûtées en fin d'été et enracinez-les dans un mélange graveleux, à l'ombre. Une bouture prise sur la partie adulte et buissonnante donne une plante arbustive qui fleurit bien plutôt qu'une grimpante — bon à savoir avant de choisir la pousse.",
+    supportNotes: {
+      "mason-bees":
+        "La collète du lierre est une abeille des sables dont toute l'année est bâtie autour de cette seule plante : elle sort en septembre quand le lierre s'ouvre, et a disparu quand les fleurs sont passées. Rien d'autre qui lui serve n'est en fleur à ce moment-là.",
+      "holly-blue":
+        "L'azuré des nerpruns a deux générations par an et change de plante entre les deux — celle du printemps pond sur le houx, celle de l'été sur les boutons du lierre. Un jardin a besoin des deux pour le garder.",
+      "red-admiral":
+        "Les vulcains se pressent sur le lierre en octobre — souvent les derniers papillons de l'année, sur les dernières fleurs de l'année.",
+      "blackcaps-warblers":
+        "Les baies de lierre mûrissent en fin d'hiver, des mois après tout le reste : c'est la nourriture qui fait passer février aux fauvettes à tête noire.",
+      "winter-thrushes":
+        "Grives et pigeons ramiers prennent la même récolte tardive, et le couvert persistant est l'endroit où dort la moitié des oiseaux du jardin par une nuit froide.",
+    },
+  },
+  "Plantago lanceolata@france-mediterranean": {
+    nativeNote:
+      "La rosette nervurée de chaque bord de chemin, de chaque prairie sèche et de chaque pente pâturée du Midi — si ordinaire que presque personne ne la plante exprès, et l'une des plantes les plus utilisées par les chenilles en Europe.",
+    careNote:
+      "Il pousse dans n'importe quoi, supporte la tonte et le piétinement, et se ressème un peu partout : c'est une plante de prairie et de bord d'allée, pas de massif. La façon honnête de s'en servir est de cesser de l'arracher de l'herbe haute et de laisser une tache s'installer. Son pollen est porté par le vent : il donne le rhume des foins à certaines personnes.",
+    givesNote:
+      "La raison de le garder, ce sont les chenilles : le plantain en nourrit une longue liste, et dans le Midi cela inclut la mélitée du Plantain, dont les jeunes passent l'hiver ensemble dans une toile de soie tissée sur ces feuilles mêmes. Chardonnerets et linottes dépouillent les épis de graines en fin d'été.",
+    propagationNote:
+      "Répandez la graine sur une terre nue à l'automne et tassez-la du pied — il ne lui faut rien de plus. Les touffes se divisent aussi à tout moment de la saison fraîche.",
+    supportNotes: {
+      "glanville-fritillary":
+        "La mélitée du Plantain pond ses œufs en un seul lot sur le plantain lancéolé, et les chenilles passent tout l'hiver ensemble dans une toile de soie tissée sur la plante — un bord de route fauché à l'automne emporte donc toute la nichée.",
+      "goldfinches-linnets":
+        "Chardonnerets et linottes dépouillent les épis de graines à partir de la fin de l'été, une tête après l'autre le long d'un bord de chemin.",
+    },
+  },
+  "Galium verum@france-mediterranean": {
+    nativeNote:
+      "L'écume basse de minuscules fleurs jaunes des pelouses sèches et des talus de route de tout le Midi, qui sent le miel au soleil et le foin fraîchement coupé une fois fauchée.",
+    careNote:
+      "Terrain pauvre et sec, plein soleil. Il court par la racine à travers l'herbe, c'est sa raison d'être — un talus sec, une prairie, le bord gravillonné d'une allée — et il s'invitera dans un massif bien tenu si vous le laissez faire. Rabattez-le après la floraison. On en bourrait vraiment les matelas, et il sent vraiment le foin en séchant.",
+    givesNote:
+      "C'est la plante sur laquelle grandit le moro-sphinx — ce papillon de nuit qui vole de jour et qu'on prend pour un minuscule colibri devant la lavande. Ses chenilles mangent le gaillet et ses proches parents : une tache de gaillet dans l'herbe haute, c'est ce qui fait d'un papillon de passage un résident. Les fleurs elles-mêmes nourrissent pendant des mois les petites abeilles, les syrphes et les coléoptères.",
+    propagationNote:
+      "Déterrez un morceau enraciné de la tige rampante à tout moment de la saison fraîche. La graine semée fraîche à l'automne sur un sol graveleux lève avec l'humidité de l'hiver.",
+    supportNotes: {
+      "hummingbird-hawk-moth":
+        "Le papillon que tout le monde prend pour un minuscule colibri pond sur le gaillet — une tache dans l'herbe haute fait toute la différence entre en regarder un devant la lavande et le voir se reproduire chez vous.",
+      "elephant-hawk-moth":
+        "La chenille du grand sphinx de la vigne — énorme, grise, avec de faux yeux qu'elle gonfle quand on l'inquiète — se montre sur le gaillet en fin d'été, et c'est la chose la plus saisissante d'un jardin français.",
+      "mason-bees":
+        "Des centaines de fleurs minuscules et sans profondeur, ce qui est exactement ce que les plus petites abeilles solitaires et les syrphes savent utiliser.",
+    },
+  },
+  "Lotus corniculatus@france-mediterranean": {
+    nativeNote:
+      "De petites fleurs de pois jaunes et orange dans les pelouses sèches, les bords de route et les clairières de garrigue du Midi, de la côte jusqu'au pied des montagnes.",
+    careNote:
+      "Soleil et sol pauvre, très drainant. Il fixe son propre azote : ne lui donnez jamais d'engrais. Il déteste la concurrence d'une herbe grasse — un gazon maigre, affamé, jamais arrosé est exactement là où il prospère, et il poussera dans une fente d'allée.",
+    givesNote:
+      "**La plante nourricière de l'azuré commun**, et des zygènes — ces papillons à points écarlates, actifs de jour, suspendus aux épis d'herbe par un après-midi chaud du Midi. 115 espèces de chenilles en tout, et cinq mois de floraison dans une région où presque tout a fini en juin.",
+    propagationNote:
+      "La graine a une enveloppe dure : frottez-la au papier de verre ou faites-la tremper une nuit, puis semez à l'automne sur un sol maigre et désherbé plutôt que sur un lit de semis riche.",
+    supportNotes: {
+      "common-blue":
+        "Le lotier corniculé est la plante à chenilles de l'azuré commun, et le papillon n'est commun que là où la plante l'est — c'est-à-dire sur un gazon ras, maigre et non fertilisé plutôt que sur une pelouse arrosée.",
+      "six-spot-burnet":
+        "Les zygènes mangent le lotier corniculé et presque rien d'autre. Elles tirent de la plante des composés cyanurés et les gardent — c'est ce qu'annoncent leurs points écarlates, et c'est pourquoi elles volent lentement en plein jour sans être mangées.",
+    },
   },
 };

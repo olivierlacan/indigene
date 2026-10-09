@@ -196,7 +196,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "L'orme est la seule nourriture de la thécla de l'Orme, un petit papillon qui a décliné avec son arbre et vit haut dans le houppier, plus une bonne centaine d'espèces de papillons de nuit. Ses samares papyracées mûrissent en avril, des semaines avant que quoi que ce soit d'autre ne grène, et bouvreuils et verdiers les dépouillent ; ses fleurs s'ouvrent en février, l'une des toutes premières sources de pollen de l'année.",
     propagationNote:
-      "Fait rare chez nos arbres, la graine d'orme mûrit au printemps et non à l'automne, et elle n'attend pas : cueillez les samares à maturité, semez-les aussitôt à peine recouvertes, tenez-les au chaud et à l'humide, et elles lèvent en quinze jours sans aucun passage au froid. Des boutures de pousses tendres prises en été s'enracinent aussi.",
+      "Fait rare chez nos arbres, la graine d'orme mûrit au printemps et non à l'automne, et elle n'attend pas : cueillez les samares à maturité, semez-les aussitôt à peine recouvertes, tenez-les au chaud et à l'humide, et elles lèvent sans aucun passage au froid. Des boutures de pousses tendres prises en été s'enracinent aussi.",
     supportNotes: {
       "white-letter-hairstreak":
         "L'orme est la seule chose que mangent les chenilles de ce papillon, et il pond sur les boutons floraux, haut dans le houppier : une colonie peut donc tenir au-dessus d'une haie pendant des années sans que personne, en dessous, s'en aperçoive. Elle a décliné avec les ormes et revient avec eux — c'est la vraie raison d'en planter un tout en sachant que la maladie court toujours.",
@@ -406,7 +406,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Toutes proportions gardées, la plus grande plante nourricière ici après les arbres : plus de deux cents espèces de chenilles, dont la thécla de la ronce parmi celles que vous pourriez réellement voir. Ses clochettes roses nourrissent les bourdons en avril, et ses baies de juillet nourrissent merles, grives, muscardins et renards — et vous, si vous arrivez le premier.",
     propagationNote:
-      "Soulevez au début du printemps un morceau enraciné de rhizome et mettez-le en pot dans un mélange acide de type terre de bruyère sans tourbe — c'est la voie sûre. Par semis : écrasez des baies mûres, rincez la graine et pressez-la à la surface d'un terreau humide sans calcaire sans la recouvrir ; il lui faut de la lumière et un hiver froid, laissez donc le pot dehors.",
+      "Soulevez au début du printemps un morceau enraciné de rhizome et mettez-le en pot dans un mélange acide de type terre de bruyère sans tourbe — c'est la voie sûre. Par semis : écrasez des baies mûres, rincez la graine et pressez-la à la surface d'un terreau humide sans calcaire sans la recouvrir, et gardez-la humide.",
     supportNotes: {
       "green-hairstreak":
         "La myrtille est l'une des plantes nourricières de la thécla de la ronce, et sur les landes et les bois clairs atlantiques c'est souvent la principale.",
@@ -542,7 +542,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Ses bouquets de fleurs jaunes parfumées nourrissent au printemps les bourdons à longue langue, l'anthophore plumeuse et les premiers papillons, et c'est une plante nourricière de la rare Lucine, là où elle subsiste.",
     propagationNote:
-      "Semez de la graine fraîche à l'automne et laissez-la dehors pour le froid dont elle a besoin ; une graine vieille et sèche germe mal. Les touffes installées peuvent aussi être soulevées et divisées.",
+      "Semez en pot dehors à l'automne ou au printemps. Les touffes installées peuvent aussi être soulevées et divisées.",
     supportNotes: {
       "duke-of-burgundy":
         "La Lucine ne pond que sur les primevères officinales et les primevères communes — et seulement sur des pieds installés dans le bon degré d'abri, blottis dans une herbe plus haute ou en lisière de broussaille, plutôt qu'en plein gazon ras. Avoir la plante compte ; le moment où vous fauchez autour compte tout autant.",
@@ -570,7 +570,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "La dernière grande plante à nectar encore en fleur. Longtemps après la fauche de la prairie et la fin des ronces, la centaurée continue — l'une des plantes les plus nectarifères de toute la flore française, butinée par les bourdons, les abeilles domestiques, les syrphes, les myrtils et les grands nacrés du milieu de l'été jusqu'aux premières vraies gelées. Chardonnerets et linottes démontent ensuite les capitules tout l'automne.",
     propagationNote:
-      "Récoltez les capitules secs à l'automne et frottez la graine entre vos mains pour la libérer. Semée directement sur une terre nue griffée à l'automne, elle lève sans peine ; pour un semis de printemps, donnez-lui d'abord un mois dans un sachet de sable humide au réfrigérateur.",
+      "Récoltez les têtes sèches à l'automne et frottez les graines entre vos mains. Semées directement sur un sol nu gratté, elles lèvent facilement, à l'automne ou au printemps.",
     supportNotes: {
       "bumble-bees":
         "L'une des plantes les plus nectarifères de toute la flore française, et elle continue longtemps après la fauche de la prairie et la fin des ronces — bourdons, myrtils et grands nacrés la butinent tous jusqu'à l'automne.",
@@ -783,7 +783,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "La plante des sphinx : le grand sphinx de la vigne et le moro-sphinx, actif de jour, élèvent tous deux leurs chenilles sur les gaillets, avec une centaine d'autres papillons de nuit. Ses minuscules fleurs jaunes viennent au cœur de l'été et tiennent jusqu'en septembre, nourrissant les petites abeilles solitaires, les syrphes et les coléoptères dont les pièces buccales sont trop courtes pour quoi que ce soit de profond, et son tapis tient un talus sec sous une averse.",
     propagationNote:
-      "De loin le plus facile : tranchez un morceau enraciné au bord d'un tapis à l'automne ou au début du printemps et replantez-le — il le remarque à peine. Par semis, semez à l'automne et laissez le pot dehors pour le froid qu'il demande.",
+      "Le plus simple de loin : détachez un morceau enraciné au bord du tapis à l'automne ou au début du printemps et replantez-le — il s'en aperçoit à peine. En graines, semez à l'automne ou au printemps.",
     supportNotes: {
       "mason-bees":
         "Des centaines de fleurs minuscules et sans profondeur, ce qui est exactement ce que les plus petites abeilles solitaires et les syrphes savent utiliser.",

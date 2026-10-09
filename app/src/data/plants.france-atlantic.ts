@@ -77,7 +77,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-warm", "seed-direct"],
       note: "Gather acorns as they drop in autumn and float them in water — throw out any that bob up, and sow the sinkers straight away in a pot outdoors. Acorns don't keep: they soon start to root, need no chilling and must never dry out. The shoot follows in spring.",
-      basis: "RHS; Woodland Trust; ONF.",
+      basis: "RHS; Woodland Trust; ONF; Seed Information Database.",
     },
   },
   {
@@ -147,7 +147,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["cuttings-hardwood", "seed-surface-light"],
       note: "Easiest of all: cut pencil-thick dormant twigs in winter and push them into damp ground, and they root on their own. Its fluffy seed lives only days, so if you go that route sow it onto wet mud at once.",
-      basis: "RHS.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -182,7 +182,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["suckers", "seed-cold-moist"],
       note: "Simplest is to dig and replant one of the rooted suckers it throws up around the trunk. From seed, clean the flesh off ripe cherries and sow the stones outdoors in autumn: they need a long cold, damp winter before they sprout.",
-      basis: "RHS; Woodland Trust.",
+      basis: "RHS; Woodland Trust; Seed Information Database.",
     },
   },
   {
@@ -217,7 +217,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-cold-moist"],
       note: "Mash the ripe berries, rinse the seed clean, and give it a cold, damp winter (autumn sowing outdoors works well). Germination can be uneven, so keep the pot a second spring before giving up.",
-      basis: "RHS.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -252,7 +252,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-cold-moist"],
       note: "Collect the winged seed in autumn and sow it straight away in a pot outdoors — fresh seed needs one winter, but seed that has dried out may wait for two.",
-      basis: "RHS.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -323,7 +323,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["suckers", "cuttings-hardwood", "seed-surface-light"],
       note: "Much the easiest way is to dig one of the rooted suckers in autumn or late winter and replant it. Dormant hardwood cuttings taken in winter also root. The fluffy seed is a poor bet — it stays alive only a few days, so it must be caught in early summer and sown onto wet mud at once.",
-      basis: "RHS; Woodland Trust.",
+      basis: "RHS; Woodland Trust; Seed Information Database.",
     },
   },
   {
@@ -358,7 +358,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-cold-moist"],
       note: "Collect the triangular nuts from their prickly husks in late summer or autumn. They need a spell of cold, damp storage: sow them straight away, one to a deep pot left outside, or keep them in the fridge and sow in February, out of reach of winter mice.",
-      basis: "RHS; ONF.",
+      basis: "RHS; ONF; Seed Information Database.",
     },
   },
   {
@@ -427,8 +427,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Dutch elm disease (Ophiostoma novo-ulmi) and its bark-beetle vector, including the thin-bark refuge that lets hedgerow elm persist: INRAE; ONF / Département de la santé des forêts. White-letter hairstreak (Satyrium w-album) host relationship: INPN; European butterfly foodplant checklist (Dryad). Host count: 126 Lepidoptera recorded on native elms in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (127 if introduced elms are counted too).",
     propagation: {
       methods: ["seed-warm", "cuttings-softwood"],
-      note: "Unusually among our trees, elm seed ripens in spring, not autumn, and it will not wait: gather the papery discs as they ripen, sow them straight away barely covered, keep them warm and damp, and they come up in two weeks with no chilling at all. Soft shoot tips taken in summer also root.",
-      basis: "RHS.",
+      note: "Unusually among our trees, elm seed ripens in spring, not autumn, and it will not wait: gather the papery discs as they ripen, sow them straight away barely covered, keep them warm and damp, and they come up with no chilling at all. Soft shoot tips taken in summer also root.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -781,8 +781,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 227 Lepidoptera recorded on native Vaccinium in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level, so the figure is the genus's and bilberry carries the larger share of it.",
     propagation: {
       methods: ["division", "seed-surface-light"],
-      note: "Lift a rooted piece of the running stem in early spring and pot it into an acid, peat-free ericaceous mix — the reliable route. From seed, squash ripe berries, rinse the seed out and press it onto the surface of damp lime-free compost without covering it: it needs light and a cold winter, so leave the pot outside.",
-      basis: "RHS.",
+      note: "Lift a rooted piece of the running stem in early spring and pot it into an acid, peat-free ericaceous mix — the reliable route. From seed, squash ripe berries, rinse the seed out and press it onto the surface of damp lime-free compost without covering it, and keep it damp.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1027,9 +1027,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Pollinator value: RHS Plants for Pollinators; Plantlife. Host count: 35 Lepidoptera recorded on native primroses and cowslips (Primula) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["seed-cold-moist", "division"],
-      note: "Sow fresh seed in autumn and leave it outdoors for the winter chill it needs; old dry seed germinates poorly. Established clumps can also be lifted and split.",
-      basis: "RHS.",
+      methods: ["seed-direct", "division"],
+      note: "Sow seed in a pot outdoors in autumn or spring. Established clumps can also be lifted and split.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1064,7 +1064,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-cold-moist", "cuttings-softwood"],
       note: "Sow fresh seed in autumn and let it feel the winter cold outdoors. Soft shoots cut from the base of the plant also root.",
-      basis: "RHS.",
+      basis: "RHS; Seed Information Database.",
     },
   },
 
@@ -1098,9 +1098,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Pollinator value: RHS Plants for Pollinators; Plantlife. Bloom window authored for the mild oceanic west, where uncut plants keep opening heads into October; French floras give June–September for the country as a whole. Host count: 88 Lepidoptera recorded on native knapweeds (Centaurea) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["seed-direct", "seed-cold-moist"],
-      note: "Collect the dry heads in autumn and rub the seed out between your hands. Sown straight onto scratched bare soil in autumn it comes up readily; for a spring sowing, give it a month in a bag of damp sand in the fridge first.",
-      basis: "RHS.",
+      methods: ["seed-direct"],
+      note: "Collect the dry heads in autumn and rub the seed out between your hands. Sown straight onto scratched bare soil it comes up readily, in autumn or spring.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1170,7 +1170,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct", "seed-scarify"],
       note: "Fresh seed sown onto scratched soil between spring and late summer germinates fast and needs no chilling. Older, harder seed does better if you rub it between two sheets of sandpaper first.",
-      basis: "RHS.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1277,7 +1277,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct", "division"],
       note: "Strip the ripe seed heads in summer and sow them straight onto raked soil any time from autumn to spring — no chilling needed. Established tufts can also be dug and pulled apart in spring.",
-      basis: "RHS.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1312,7 +1312,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct", "division"],
       note: "Scatter the ripe seed onto raked bare soil in autumn where you want it; it needs no chilling. Tufts can also be lifted and split in spring.",
-      basis: "RHS.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1347,7 +1347,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct", "division"],
       note: "Sow the seed where it is to grow, on bare ground in spring or autumn — it comes up readily with little or no chilling. Established tussocks can also be dug and split in early summer.",
-      basis: "RHS.",
+      basis: "RHS; Seed Information Database.",
     },
   },
 
@@ -1384,7 +1384,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering", "seed-cold-moist"],
       note: "Take cuttings of firming-up shoots in summer, or pin a low stem to the soil to root where it touches. Seed from the berries needs cleaning and a cold, damp winter before it will sprout.",
-      basis: "RHS.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1490,9 +1490,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Hawk-moth host relationships: INPN; Butterfly Conservation. Host count: 127 Lepidoptera recorded on native bedstraws (Galium) in oceanic-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["division", "seed-cold-moist"],
-      note: "Easiest by far: slice a rooted piece off the edge of a mat in autumn or early spring and replant it — it barely notices. From seed, sow in autumn and leave the pot outside for the winter chill it wants.",
-      basis: "RHS.",
+      methods: ["division", "seed-direct"],
+      note: "Easiest by far: slice a rooted piece off the edge of a mat in autumn or early spring and replant it — it barely notices. From seed, sow in autumn or spring.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1527,7 +1527,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct"],
       note: "Rub the ripe seed off the flower spikes in late summer and scatter it onto scratched bare soil or a thin lawn; no chilling, no covering, and it comes up in two weeks.",
-      basis: "RHS.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {

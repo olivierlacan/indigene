@@ -64,8 +64,10 @@ export function planFor(spot: SavedSpot, plantings: Planting[], plantOf: PlantOf
   return growPlan(plantings, plantOf, region?.meta.id ?? null, hemisphereOf(spot.lat));
 }
 
-function actionKey(m: PropagationMethod): Parameters<typeof t>[0] {
-  if (m.startsWith("seed-")) return "grow.do.seed";
+function actionKey(m: PropagationMethod, plant: Plant): Parameters<typeof t>[0] {
+  // A tree's published age is when it *can* first bear; many crop only some
+  // years (white oak every 4 to 10), so the woody line says so.
+  if (m.startsWith("seed-")) return ["tree", "shrub", "vine"].includes(plant.form) ? "grow.do.seedWoody" : "grow.do.seed";
   return `grow.do.${m as Exclude<PropagationMethod, `seed-${string}`>}` as const;
 }
 
@@ -86,7 +88,7 @@ function growRow(task: GrowTask, plant: Plant, opts: { regionId?: string; first?
         opts.first ? el("span", { class: "badge keystone grow-first" }, t("grow.first")) : null,
         el("a", { class: "log-name", href: `#/plants/${encodeURIComponent(plant.id)}` }, commonName(plant)),
         el("div", { class: "grow-do" }, [
-          el("a", { href: techniqueHref(techniqueFor(task.method)) }, t(actionKey(task.method))),
+          el("a", { href: techniqueHref(techniqueFor(task.method)) }, t(actionKey(task.method, plant))),
           " · ",
           el("span", { class: task.window === "month" ? "grow-ripe" : "" }, t(`grow.window.${task.window}` as const)),
         ]),

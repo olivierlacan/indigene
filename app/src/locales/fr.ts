@@ -449,6 +449,7 @@ export const fr: Dict = {
   "grow.window.month": "Graines mûres",
   "grow.window.season": "Cette saison",
   "grow.do.seed": "Récolter les graines",
+  "grow.do.seedWoody": "Récolter les graines, s'il y en a",
   "grow.do.cuttings-softwood": "Faire des boutures herbacées",
   "grow.do.cuttings-semi-hardwood": "Faire des boutures semi-aoûtées",
   "grow.do.cuttings-hardwood": "Faire des boutures ligneuses",
@@ -472,12 +473,12 @@ export const fr: Dict = {
   "grow.undated.other": "{count} plantes n'ont pas de date de plantation ; elles sont laissées de côté.",
   "grow.agesNote": "Les âges sont approximatifs : une plante qui n'a pas fleuri n'a pas encore de graines à donner.",
   "grow.leaveSome": "Laissez-en pour les oiseaux",
-  "grow.woody.one": "1 arbre ou arbuste ici ne se multiplie que par graines. Le plan ne devine pas quand il en portera.",
-  "grow.woody.other": "{count} arbres ou arbustes ici ne se multiplient que par graines. Le plan ne devine pas quand ils en porteront.",
+  "grow.woody.one": "1 arbre ou arbuste ici ne se multiplie que par graines, et aucun âge publié ne dit quand il en porte.",
+  "grow.woody.other": "{count} arbres ou arbustes ici ne se multiplient que par graines, et aucun âge publié ne dit quand ils en portent.",
   "grow.sourcesTitle": "D'où viennent ces conseils",
   "grow.src.ripe": "Les graines mûrissent environ deux mois après la floraison.",
   "grow.src.divide": "Divisez au printemps ou à l'automne, après la floraison ; la plupart des touffes tous les deux ou trois ans.",
-  "grow.src.woody": "Selon l'espèce, arbres et arbustes portent leurs premières graines entre 3 et 40 ans.",
+  "grow.src.woody": "Selon l'espèce, arbres et arbustes portent leurs premières graines entre 3 et 40 ans : le plan attend l'âge publié pour chacun, aux mois où ses fruits mûrissent.",
   "grow.src.birds": "Les têtes de graines laissées sur pied nourrissent les oiseaux tout l'hiver.",
   "grow.src.rank": "L'ordre est le nôtre : d'abord les plantes dont un animal ne peut se passer, puis les plantes essentielles et les plantes hôtes des chenilles.",
   "grow.src.plant": "Les méthodes propres à chaque plante, et leur source, sont sur sa page.",
@@ -888,13 +889,13 @@ export const fr: Dict = {
 
   "prop.seed-direct.name": "Semer la graine telle quelle (semis direct)",
   "prop.seed-direct.plain":
-    "Le cas facile : nettoyez la graine, puis semez-la à une profondeur d'environ sa propre largeur, en pot ou sur une planche de terre nette, et gardez humide. Aucune astuce nécessaire.",
+    "Le cas facile : nettoyez la graine, puis semez-la à une profondeur de deux à trois fois sa largeur, en pot ou sur une planche de terre nette, et gardez humide. Aucune astuce nécessaire.",
   "prop.seed-cold-moist.name": "Faire passer un hiver froid et humide à la graine (stratification à froid)",
   "prop.seed-cold-moist.plain":
     "Beaucoup de graines indigènes ne se réveillent qu'après avoir senti un vrai hiver : on leur en fabrique donc un. Mélangez la graine à une poignée de sable humide ou à un essuie-tout mouillé, fermez le tout dans un sachet étiqueté et laissez au réfrigérateur le nombre de semaines indiqué — puis semez. Ou oubliez le réfrigérateur : semez en pot dehors à l'automne et laissez le vrai hiver faire le travail.",
   "prop.seed-double-dormant.name": "Prévoir deux hivers d'attente (double dormance)",
   "prop.seed-double-dormant.plain":
-    "Les têtues : la racine sort après un hiver, mais la tige feuillée en attend un second. Semez en pot dehors, gardez-le à l'ombre et à l'abri, ne renoncez pas si rien ne sort le premier printemps, et prenez patience — le vert apparaît en général la deuxième année.",
+    "Les têtues : la racine pousse pendant une période chaude, et la tige feuillée attend l'hiver suivant. Semez en pot dehors à l'automne, gardez-le à l'ombre et à l'abri, ne renoncez pas si rien ne sort le premier printemps, et prenez patience — le vert apparaît en général au deuxième printemps.",
   "prop.seed-scarify.name": "Entailler ou râper le tégument dur (scarification)",
   "prop.seed-scarify.plain":
     "Certaines graines (celles de la famille des pois surtout) sont enfermées dans une coque imperméable qu'il faut entamer avant que l'eau puisse entrer. Frottez chaque graine quelques coups sur du papier de verre fin, ou entaillez la coque au couteau, jusqu'à apercevoir la couleur plus claire de l'intérieur — puis trempez une nuit et semez. On râpe avec soin, on n'écrase pas.",
@@ -903,25 +904,25 @@ export const fr: Dict = {
     "Des graines fines comme de la poussière, qui doivent voir le jour pour germer : ne les enterrez pas. Répandez-les sur une terre humide, tassez-les pour qu'elles adhèrent, et ne les recouvrez pas. Empêchez la surface de sécher en brumisant ou en couvrant d'un plastique transparent jusqu'à la levée.",
   "prop.seed-warm.name": "Semer frais et tenir au chaud (aucun froid nécessaire)",
   "prop.seed-warm.plain":
-    "Le cas des climats doux : pas besoin de froid hivernal. Semez la graine fraîche et nettoyée, tenez-la au chaud et à l'humide — elle lève en général en quelques semaines. La fraîcheur compte : beaucoup de ces graines perdent leur pouvoir germinatif si elles sèchent et attendent.",
+    "Pas besoin de froid hivernal. Semez la graine fraîche et nettoyée, tenez-la au chaud et à l'humide — elle lève en général en quelques semaines. La fraîcheur compte : beaucoup de ces graines perdent leur pouvoir germinatif si elles sèchent et attendent.",
   "prop.cuttings-softwood.name": "Bouturer une pousse tendre (bouture herbacée)",
   "prop.cuttings-softwood.plain":
-    "À la fin du printemps ou au début de l'été, coupez un morceau long comme la main de pousse tendre et souple, ôtez les feuilles du bas et enfoncez l'extrémité coupée dans un terreau humide ou de la perlite. Gardez humide et à l'abri du soleil dur (un sac ou une bouteille transparente sur le pot aide bien) jusqu'à l'enracinement, en quelques semaines.",
+    "Au printemps ou au début de l'été, coupez un morceau long comme un doigt de pousse tendre et souple, ôtez les feuilles du bas et enfoncez l'extrémité coupée dans un terreau humide ou de la perlite. Gardez humide et à l'abri du soleil dur (un sac ou une bouteille transparente sur le pot aide bien) jusqu'à l'enracinement, en quelques semaines.",
   "prop.cuttings-semi-hardwood.name": "Bouturer une pousse qui durcit (bouture semi-aoûtée)",
   "prop.cuttings-semi-hardwood.plain":
     "Au milieu ou à la fin de l'été, prélevez un morceau long comme la main sur une pousse de l'année qui commence à raidir et à devenir ligneuse à la base. Ôtez les feuilles du bas, plantez l'extrémité coupée dans un mélange humide et gardez une ambiance humide. Plus lente à raciner que la bouture tendre, mais plus solide — parfaite pour beaucoup d'arbustes et de persistants à grandes feuilles.",
   "prop.cuttings-hardwood.name": "Bouturer un rameau nu d'hiver (bouture ligneuse)",
   "prop.cuttings-hardwood.plain":
-    "La bouture la plus simple qui soit pour les saules, les cornouillers et leurs semblables : pendant que la plante est nue et au repos, coupez des morceaux gros comme un crayon et longs comme l'avant-bras, enfoncez-en la moitié inférieure en pleine terre humide ou en pot, et attendez. Beaucoup s'enracinent d'ici au printemps sans le moindre soin.",
+    "La bouture la plus simple qui soit pour les saules, les peupliers et leurs semblables : pendant que la plante est nue et au repos, coupez des morceaux gros comme un crayon et longs comme l'avant-bras, enfoncez-en les deux tiers inférieurs en pleine terre humide ou en pot, et attendez. Beaucoup s'enracinent d'ici au printemps sans le moindre soin.",
   "prop.division.name": "Diviser la touffe (division)",
   "prop.division.plain":
     "Pour les vivaces et les graminées en touffe : au début du printemps ou à l'automne, déterrez la plante entière, puis séparez ou coupez la souche en plusieurs éclats, chacun avec ses propres racines et quelques pousses. Replantez aussitôt à la même profondeur et arrosez. Cela rajeunit au passage une touffe fatiguée et creuse au centre.",
   "prop.layering.name": "Enraciner une branche encore attachée (marcottage)",
   "prop.layering.plain":
-    "Une astuce presque infaillible : courbez une branche basse et souple jusqu'au sol, griffez l'écorce à l'endroit du contact, maintenez-la avec une pierre ou un crochet, et buttez de terre par-dessus. Elle s'enracine là pendant que la plante mère la maintient en vie ; une saison ou deux plus tard, coupez et déterrez votre nouvelle plante.",
+    "Une astuce presque infaillible : courbez une branche basse et souple jusqu'au sol, griffez l'écorce à l'endroit du contact, maintenez-la avec une pierre ou un crochet, et buttez de terre par-dessus. Elle s'enracine là pendant que la plante mère la maintient en vie ; un an environ plus tard, coupez et déterrez votre nouvelle plante.",
   "prop.root-cuttings.name": "Multiplier par morceaux de racine (bouture de racine)",
   "prop.root-cuttings.plain":
-    "Pour les plantes qui repartent volontiers de leurs racines : à la fin de l'automne ou en hiver, déterrez et coupez des morceaux de racine gros comme un crayon et longs comme un doigt, couchez-les à plat dans une caissette de mélange humide sous une fine couche de terre, et tenez au chaud. De nouvelles pousses sortent des morceaux enterrés.",
+    "Pour les plantes qui repartent volontiers de leurs racines : à la fin de l'automne ou au début de l'hiver, déterrez et coupez des morceaux de racine gros comme un crayon et longs comme un doigt, couchez-les à plat dans une caissette de mélange humide sous une fine couche de terre, et placez-les sous châssis froid sans trop arroser. De nouvelles pousses sortent des morceaux enterrés.",
   "prop.suckers.name": "Prélever les rejets qu'elle pousse autour d'elle (drageons)",
   "prop.suckers.plain":
     "Les plantes qui forment des fourrés émettent de nouvelles pousses enracinées à quelque distance du tronc. Au début du printemps, tranchez à la bêche entre le rejet et la plante mère, soulevez le rejet avec ses racines et replantez-le. Des plantes gratuites, et la touffe s'en trouve nettoyée.",
@@ -930,7 +931,7 @@ export const fr: Dict = {
     "Les fraisiers et autres rampantes émettent des tiges horizontales qui enracinent de petits plants le long du chemin. Dès qu'un plant a ses propres racines, coupez le stolon qui le relie à la mère, déterrez-le et déplacez-le — ou fixez-le d'abord dans un petit pot, puis coupez.",
   "prop.spores.name": "Semer la poussière du dos des frondes (spores)",
   "prop.spores.plain":
-    "Les fougères ne font pas de graines — elles répandent des spores fines comme de la poussière depuis les taches brunes sous les frondes mûres. Plus lent et plus délicat, mais faisable : posez une fronde mûre sur du papier une journée pour recueillir la poussière brune, répandez-la à la surface d'un mélange stérile humide, couvrez d'un plastique transparent et gardez clair et humide. Un film vert apparaît d'abord, puis de minuscules fougères au fil des mois. La plupart des jardiniers trouvent bien plus facile de diviser une touffe existante.",
+    "Les fougères ne font pas de graines — elles répandent des spores fines comme de la poussière depuis les taches brunes sous les frondes mûres. Plus lent et plus délicat, mais faisable : posez une fronde mûre sur du papier quelques jours pour recueillir la poussière brune, répandez-la à la surface d'un mélange stérile humide, couvrez d'un plastique transparent et gardez clair et humide. Un film vert apparaît d'abord, puis de minuscules fougères au fil des mois. La plupart des jardiniers trouvent bien plus facile de diviser une touffe existante.",
 
   // -------------------------------------------------------------------------
   // Quand le faire — la couche « calendrier » derrière la page de chaque
@@ -941,24 +942,24 @@ export const fr: Dict = {
   // (.mistake). Jamais de dates : février aux Keys, c'est avril en
   // Pennsylvanie, alors qu'« quand les gousses brunissent » est vrai partout.
   // -------------------------------------------------------------------------
-  "prop.seed-direct.when": "L'automne pour la plupart des graines ; le printemps pour le reste.",
+  "prop.seed-direct.when": "L'automne ou le printemps.",
   "prop.seed-direct.wait": "Levée aux premiers redoux, après son hiver.",
   "prop.seed-direct.timing":
-    "L'automne est le choix naturel parce que c'est ce que fait la plante elle-même : la graine mûrit, tombe, passe l'hiver sous les feuilles et la pluie, et lève quand le sol se réchauffe. Semer à ce moment-là ne vous demande rien — ni réfrigérateur, ni semaines à compter. Le semis de printemps est la solution de repli pour une graine arrivée tard ou conservée au sec : ça marche, vous y gagnez simplement un premier été plus court. La saison à éviter, c'est le plein été, où les premiers centimètres de terre sèchent entre deux arrosages plus vite qu'une jeune racine ne descend.",
+    "L'automne, c'est ce que fait la plante elle-même : la graine mûrit, tombe, passe l'hiver sous les feuilles et la pluie, et lève quand le sol se réchauffe. Semer à ce moment-là ne vous demande rien — ni réfrigérateur, ni semaines à compter. Le printemps marche tout aussi bien, et c'est le moment habituel pour une graine arrivée tard ou conservée au sec.",
   "prop.seed-direct.mistake":
-    "L'enterrer. La règle est : à peu près sa propre largeur de profondeur — une graine fine à peine recouverte, un gland à un doigt sous la surface. La plupart des graines qui ne lèvent jamais étaient simplement trop profondes pour remonter.",
+    "L'enterrer. La règle : deux à trois fois sa propre largeur de profondeur — une graine fine à peine recouverte, un gland à la longueur d'un pouce sous la surface. Plus profond, elle risque de ne jamais lever.",
   "prop.seed-warm.when": "La semaine où elle mûrit — souvent de l'été au début de l'automne.",
   "prop.seed-warm.wait": "Quelques semaines, souvent moins.",
   "prop.seed-warm.timing":
-    "C'est la seule technique dont vous ne choisissez pas le moment : la plante le fixe, et votre rôle est d'être prêt. Surveillez le fruit plutôt que le calendrier — les samares d'un érable qui virent au fauve, le cône d'un magnolia qui s'ouvre sur des graines rouges — et semez dans les jours qui suivent la récolte. Ces graines sont vivantes et à peau fine : c'est le dessèchement qui les tue, et tout le danger est dans « je le ferai ce week-end ». Si vous ne pouvez vraiment pas semer tout de suite, gardez-les à peine humides et au frais dans un sachet de sable, jamais au sec sur un rebord de fenêtre.",
+    "C'est la seule technique dont vous ne choisissez pas le moment : la plante le fixe, et votre rôle est d'être prêt. Surveillez le fruit plutôt que le calendrier — les glands d'un chêne blanc qui tombent — et semez dans les jours qui suivent la récolte. Ces graines ne supportent pas de sécher : tout le danger est dans « je le ferai ce week-end ». Si vous ne pouvez vraiment pas semer tout de suite, gardez-les à peine humides et au frais dans un sac plastique fermé sans serrer, jamais au sec sur un rebord de fenêtre.",
   "prop.seed-warm.mistake":
     "Les traiter comme un sachet du commerce. Une graine fraîche ne se conserve pas — celles qui sèchent le plus dur sont souvent celles qui ne repartent jamais.",
   "prop.seed-cold-moist.when": "Semer dehors à l'automne, ou passer au réfrigérateur en plein hiver.",
-  "prop.seed-cold-moist.wait": "De quatre à douze semaines de froid, puis la levée.",
+  "prop.seed-cold-moist.wait": "D'un à six mois de froid, selon la plante.",
   "prop.seed-cold-moist.timing":
     "Il y a deux chemins, et la question du calendrier est surtout de savoir lequel vous prenez. Dehors : semez le pot en plein automne, posez-le là où il recevra la pluie et la neige, et le vrai hiver compte les semaines à votre place. Au réfrigérateur : comptez à rebours depuis la date où vous voulez des plantules — dix semaines de froid avant un semis de printemps, c'est un sachet mis au frais vers le cœur de l'hiver. Dans les deux cas, la graine doit rester *humide* tout du long. Un froid sec ne fait strictement rien, et c'est pourquoi un sachet glissé au réfrigérateur à l'automne est encore là, inchangé, au printemps.",
   "prop.seed-cold-moist.mistake":
-    "Ne pas regarder. Certaines graines germent dans le sachet avant la fin des semaines prévues, et la petite racine blanche casse si vous les découvrez trop tard — ouvrez le sachet toutes les deux semaines à partir de la moitié.",
+    "Ne pas regarder. Certaines graines germent dans le sachet avant la fin des semaines prévues, et la petite racine blanche casse si vous les découvrez trop tard — ouvrez le sachet tous les deux ou trois jours à partir de la moitié.",
   "prop.seed-scarify.when": "Juste avant de semer, quel que soit le moment.",
   "prop.seed-scarify.wait": "Des jours plutôt que des semaines, une fois en terre.",
   "prop.seed-scarify.timing":
@@ -974,31 +975,31 @@ export const fr: Dict = {
   "prop.seed-double-dormant.when": "Semer à l'automne, et n'attendre rien avant le deuxième printemps.",
   "prop.seed-double-dormant.wait": "Dix-huit mois, à peu de chose près.",
   "prop.seed-double-dormant.timing":
-    "Semez le pot à l'automne, posez-le à l'ombre, à l'abri et franchement hors du passage — derrière la cabane, pas sur la table de la terrasse — et laissez-le un an et demi. Ce qui se passe entre-temps est invisible : après le premier hiver, la racine sort sous la terre, et la tige feuillée attend un second hiver avant de se montrer. Un pot qui semble vide à son premier printemps est presque certainement en train de travailler. Étiquetez-le sérieusement et arrosez-le en cas de sécheresse : ces semis-là se perdent bien plus souvent parce que quelqu'un a fait du rangement que parce que la technique a échoué.",
+    "Semez le pot à l'automne, posez-le à l'ombre, à l'abri et franchement hors du passage — derrière la cabane, pas sur la table de la terrasse — et laissez-le un an et demi. Ce qui se passe entre-temps est invisible : pendant le premier été, la racine pousse sous la terre, et la tige feuillée attend le second hiver avant de se montrer. Un pot qui semble vide à son premier printemps est presque certainement en train de travailler. Étiquetez-le sérieusement et arrosez-le en cas de sécheresse : ces semis-là se perdent bien plus souvent parce que quelqu'un a fait du rangement que parce que la technique a échoué.",
   "prop.seed-double-dormant.mistake":
     "Vider le pot après le premier printemps sans rien. C'est justement l'année où il ne devait rien se passer.",
   "prop.division.when": "Début de printemps ou automne — jamais en pleine floraison.",
   "prop.division.wait": "Repartie en quelques semaines.",
   "prop.division.timing":
-    "Divisez quand la plante peut tout mettre dans de nouvelles racines plutôt que dans ses fleurs : au tout début du printemps, quand les pousses percent à peine, ou à l'automne une fois la chaleur passée mais avec encore des semaines de sol tiède pour s'enraciner. La vieille règle est bonne — les plantes à floraison printanière se divisent à l'automne, celles d'automne au printemps — de sorte que vous ne découpez jamais une plante au milieu de sa grande année. Choisissez un jour gris et humide si vous le pouvez : les racines ne sont à l'air que quelques minutes, et ce sont le soleil et le vent qui leur font du mal.",
+    "Divisez quand la plante peut tout mettre dans de nouvelles racines plutôt que dans ses fleurs : au tout début du printemps, quand les pousses percent à peine, ou à l'automne une fois la chaleur passée mais avec encore des semaines de sol tiède pour s'enraciner. Les plantes qui fleurissent l'été se divisent au printemps ou à l'automne ; celles qui fleurissent au printemps, plutôt en été, après la floraison — de sorte que vous ne découpez jamais une plante au milieu de sa grande année. Travaillez quand le sol est assez sec pour être bêché, et si l'automne est pluvieux, attendez le printemps.",
   "prop.division.mistake":
     "Laisser traîner les éclats le temps d'un café. Les racines fines sèchent en quelques minutes — creusez les trous d'abord, et arrosez tout de suite après.",
-  "prop.cuttings-softwood.when": "De la fin du printemps au début de l'été, sur les pousses de l'année.",
-  "prop.cuttings-softwood.wait": "Racines en trois à six semaines.",
+  "prop.cuttings-softwood.when": "Du printemps au début de l'été, sur les pousses de l'année.",
+  "prop.cuttings-softwood.wait": "Racines en deux à quatre semaines.",
   "prop.cuttings-softwood.timing":
-    "La fenêtre est courte — quelques semaines, tant que la pousse est tendre — et vos doigts la trouvent bien mieux que le calendrier. Pliez une extrémité de pousse : si elle retombe mollement, elle est encore trop jeune pour se tenir dans un pot ; si elle casse net, c'est exactement le moment ; si elle plie sans casser, elle s'est déjà lignifiée et il vous faut plutôt la bouture semi-aoûtée. Prélevez tôt le matin, quand les pousses sont gorgées d'eau, et mettez-les en terreau humide dans l'heure : une bouture qui a fané en chemin a déjà dépensé ce qu'il lui fallait pour faire des racines.",
+    "Prélevez-les tant que la pousse est tendre et souple de la base à la pointe ; une fois la base raffermie et la pointe seule encore tendre, il vous faut plutôt la bouture semi-aoûtée. Coupez tôt le matin, quand les pousses sont gorgées d'eau, et mettez-les en sac au fur et à mesure : une pousse tendre perd vite son eau et ne doit pas faner. Si vous ne pouvez pas les mettre en pot tout de suite, le sac attend au réfrigérateur.",
   "prop.cuttings-softwood.mistake":
-    "Couper à midi en plein soleil et les promener dans une poche tiède. Un sac avec un linge humide ne coûte rien et en sauve la plupart.",
+    "Couper à midi en plein soleil et les promener dans une poche tiède. Un sac plastique propre, gardé au frais, ne coûte rien.",
   "prop.cuttings-semi-hardwood.when": "Du milieu de l'été au début de l'automne, quand la pousse durcit.",
-  "prop.cuttings-semi-hardwood.wait": "De six à douze semaines.",
+  "prop.cuttings-semi-hardwood.wait": "Jusqu'au printemps suivant sous châssis froid.",
   "prop.cuttings-semi-hardwood.timing":
-    "Plus tard dans la même pousse de l'année, quand la base a raidi et bruni tandis que la pointe est encore verte — pour la plupart des arbustes, du plein été au début de l'automne. Plus lente à s'enraciner qu'une bouture tendre, et bien plus indulgente : celle-ci tient une semaine sans s'effondrer, ce qui en fait le bon choix pour qui ne peut pas surveiller un pot tous les jours. Enracinez-les sous châssis ombré ou dans un coin abrité, laissez-les y passer l'hiver, et rempotez au printemps suivant.",
+    "Plus tard dans la même pousse de l'année, quand la base s'est raffermie tandis que la pointe est encore tendre — pour la plupart des arbustes, du plein été au début de l'automne. Plus lente à s'enraciner qu'une bouture tendre, mais plus robuste. Mettez-les en sac au fur et à mesure et en pot dans la demi-journée. Enracinez-les sous châssis ou dans un coin abrité et laissez-les y passer l'hiver : sous châssis, elles peuvent ne bien s'enraciner qu'à la fin du printemps suivant.",
   "prop.cuttings-semi-hardwood.mistake":
     "Laisser toutes les feuilles. Une bouture encore sans racines ne peut pas alimenter un feuillage entier — ôtez les feuilles du bas et coupez en deux les grandes qui restent.",
-  "prop.cuttings-hardwood.when": "En plein hiver, quand la plante est nue.",
+  "prop.cuttings-hardwood.when": "Du milieu de l'automne à la fin de l'hiver, plante nue.",
   "prop.cuttings-hardwood.wait": "Enracinée au printemps, plantée l'automne d'après.",
   "prop.cuttings-hardwood.timing":
-    "Après la chute des feuilles et avant que les bourgeons ne gonflent — au cœur de l'hiver, quels que soient ces mois-là chez vous. La plante dort, donc la bouture n'a pas à maintenir un feuillage en vie pendant qu'elle s'enracine : c'est ce qui en fait la bouture la moins exigeante qui soit. Des morceaux gros comme un crayon, longs comme un avant-bras, enfoncés de moitié en terre humide, et on n'y touche plus jusqu'au printemps. Saules et cornouillers reprennent si volontiers qu'on les plante souvent directement à l'endroit voulu.",
+    "Après la chute des feuilles et avant que les bourgeons ne gonflent — du milieu de l'automne à la fin de l'hiver, quels que soient ces mois-là chez vous. Le mieux : juste après la chute des feuilles, ou juste avant le débourrement. La plante dort, donc la bouture n'a pas à maintenir un feuillage en vie pendant qu'elle s'enracine : c'est ce qui en fait la bouture la moins exigeante qui soit. Des morceaux gros comme un crayon, longs comme un avant-bras, enfoncés aux deux tiers en terre humide, et on n'y touche plus jusqu'au printemps.",
   "prop.cuttings-hardwood.mistake":
     "Les planter à l'envers. Un rameau nu se ressemble des deux bouts : marquez le haut en coupant, car les bourgeons pointent vers le haut et c'est ce bout-là qui doit rester en l'air.",
   "prop.layering.when": "Coucher la branche au printemps ; la sevrer un an plus tard.",
@@ -1007,28 +1008,28 @@ export const fr: Dict = {
     "Le printemps est le moment de coucher la branche : elle est souple, la plante s'apprête à pousser, et elle a toute la belle saison pour faire des racines au point enterré. Ensuite, on attend. À l'automne suivant, dégagez la terre et regardez — une belle poignée de racines et vous pouvez la séparer du pied mère et la lever ; pas grand-chose et vous la laissez une année de plus, ce qui ne vous coûte rien du tout, puisque la mère continue de la nourrir. Plus lent qu'une bouture, et très difficile à rater, car la nouvelle plante n'est jamais seule un seul instant.",
   "prop.layering.mistake":
     "La sevrer dès qu'on aperçoit une racine ou deux. Une fois coupée, tout ce dont elle a besoin doit venir de ce qui a poussé là.",
-  "prop.suckers.when": "De la fin de l'hiver au début du printemps, avant les feuilles.",
-  "prop.suckers.wait": "Reprend et pousse dès sa première saison.",
+  "prop.suckers.when": "Au printemps, à la reprise.",
+  "prop.suckers.wait": "Demande un arrosage attentif toute sa première saison.",
   "prop.suckers.timing":
-    "Prélevez les rejets pendant que la plante dort, pour qu'elle n'ait pas à maintenir en vie une pousse dont vous venez de couper la moitié de l'alimentation en eau. Choisissez-en un à une paume ou plus du tronc : tout près, un rejet n'est souvent qu'une tige partant d'une grosse racine, sans racines à lui. Tranchez droit entre le rejet et le pied mère d'un coup de bêche, puis levez-le avec sa motte. Là où les hivers sont doux, l'automne fait tout aussi bien. Le pied mère ne le regrettera pas : une plante drageonnante en refait chaque année.",
+    "Prélevez les rejets au printemps, quand la plante repart : c'est là qu'un rejet détaché s'installe le plus vite. Dégagez d'abord la terre et vérifiez qu'il a ses propres radicelles — une tige qui part d'une grosse racine sans radicelles ne reprendra pas. Tranchez à la bêche entre lui et le pied mère, levez le rejet avec ses racines, et raccourcissez de moitié environ les longues pousses feuillées pour qu'il ne se dessèche pas. Le pied mère ne le regrettera pas : une plante drageonnante en refait chaque année.",
   "prop.suckers.mistake":
-    "Tirer au lieu de creuser. Un rejet sans racines à lui est un bâton, et il aura fière allure une quinzaine de jours avant de mourir.",
+    "Tirer au lieu de creuser. Un rejet sans radicelles à lui ne reprendra pas.",
   "prop.runners.when": "De la fin de l'été à l'automne, quand la plantule est enracinée.",
   "prop.runners.wait": "Déplaçable quelques semaines après l'enracinement.",
   "prop.runners.timing":
     "Attendez que le jeune plant s'enracine tout seul, ce qu'il fait partout où il touche la terre pendant l'été ; tirez très doucement dessus, une plantule enracinée résiste. La fin de l'été et l'automne, c'est le moment où la plupart sont prêts, et c'est aussi le plus doux pour les déplacer : sol tiède, air qui fraîchit, et des mois avant qu'on leur demande quoi que ce soit. La version soignée : en plein été, épinglez chaque plantule dans un petit pot de terreau enterré près du pied mère ; au début de l'automne, coupez le stolon et levez un pot déjà plein de racines.",
   "prop.runners.mistake":
     "Couper le stolon d'abord, en espérant. Tant que la plantule n'a pas ses propres racines, c'est le pied mère qui le maintient en vie.",
-  "prop.root-cuttings.when": "De la fin de l'automne au cœur de l'hiver, en pleine dormance.",
+  "prop.root-cuttings.when": "Du milieu de l'automne au début de l'hiver, en dormance.",
   "prop.root-cuttings.wait": "Pousses au printemps.",
   "prop.root-cuttings.timing":
-    "C'est la technique du plein hiver, quand il n'y a plus rien à travailler au-dessus du sol : levez un pied (ou creusez en bordure d'une touffe), prélevez des tronçons de racine longs comme un doigt et gros comme un crayon, et couchez-les dans une caissette de terreau humide, sous abri ou en châssis. Ce sont les réserves de la racine qui poussent les nouvelles tiges dehors, et une racine en contient le plus en hiver — la saison compte donc ici pour de vraies raisons, pas par commodité. Les pousses sortent au printemps, et le tronçon a alors fabriqué ses propres racines.",
+    "C'est la technique de la saison de repos, quand il n'y a plus rien à travailler au-dessus du sol : levez un pied (ou creusez en bordure d'une touffe), prélevez des tronçons de racine longs comme un doigt et gros comme un crayon, et couchez-les dans une caissette de terreau humide, sous châssis froid. Ce sont les réserves de la racine qui poussent les nouvelles tiges dehors : c'est pourquoi les racines fines demandent des tronçons plus longs. Les pousses sortent au printemps, et le tronçon a alors fabriqué ses propres racines.",
   "prop.root-cuttings.mistake":
     "Ne plus savoir quel bout était le plus proche du collet. Couchez les tronçons à plat plutôt qu'à la verticale et la question ne se pose plus.",
   "prop.spores.when": "De l'été à l'automne, quand le dos des frondes brunit.",
-  "prop.spores.wait": "Des mois — un voile vert d'abord, de petites fougères l'année suivante.",
+  "prop.spores.wait": "Des mois — un voile vert en quelques semaines, de petites fougères quelques mois plus tard.",
   "prop.spores.timing":
-    "Les fougères n'ont ni fleur ni graine : il n'y a donc rien à guetter que le dessous des frondes. Les petits amas y sont d'abord verts, mûrissent vers un brun profond, puis se libèrent. Le brun mûr, c'est le moment. Coupez une fronde, posez-la face contre une feuille de papier blanc dans un endroit sans courant d'air, et au matin vous aurez une poussière fine : ce sont les spores, et la balle plus claire à côté n'est que l'emballage. Semez aussitôt sur un terreau stérile humide, couvrez d'un plastique transparent, et installez-vous dans la patience : rien ne ressemble à une fougère pendant le premier semestre.",
+    "Les fougères n'ont ni fleur ni graine : il n'y a donc rien à guetter que le dessous des frondes. Les petits amas y sont d'abord verts, mûrissent vers un brun profond, puis se libèrent. Le brun mûr, c'est le moment. Coupez une fronde, posez-la face contre une feuille de papier blanc dans un endroit sans courant d'air pendant quelques jours, et vous aurez une poussière fine : ce sont les spores, et la balle plus claire à côté n'est que l'emballage. Semez aussitôt sur un terreau stérile humide, couvrez d'un plastique transparent, et installez-vous dans la patience : rien ne ressemble à une fougère pendant les premiers mois.",
   "prop.spores.mistake":
     "Récolter une semaine trop tard. Une fois les amas gris et poudreux, qui s'effritent au toucher, la fronde les a déjà lâchés.",
 

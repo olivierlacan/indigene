@@ -60,7 +60,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-warm", "seed-direct"],
       note: "Gather the acorns as they drop in fall and sow them right away — live oak is a white oak, so they sprout at once and never need a winter chill. Drop them in a bucket of water and toss any that float, keep the sinkers moist (never let them dry out), and plant where the tree will stay or in a deep pot, since it sends down a long taproot.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual; LBJ Wildflower Center; Seed Information Database.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual; LBJ Wildflower Center; Seed Information Database; Institute for Regional Conservation.",
     },
   },
   {
@@ -95,7 +95,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["cuttings-hardwood", "seed-direct"],
       note: "A branch cut and stuck in the ground can root into a new tree. Trees grown from seed take a better shape, though: clean the pulp off the ripe fruit and sow the seed.",
-      basis: "Florida Native Plant Society.",
+      basis: "Florida Native Plant Society; UF/IFAS; Institute for Regional Conservation.",
     },
   },
   {
@@ -130,7 +130,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct", "layering"],
       note: "Squeeze and wash the pulp off the single seed in each ripe purple 'grape' and sow it. Seagrape has separate male and female plants, so for fruit you need a female with a male nearby. Low branches can also be layered.",
-      basis: "Florida Native Plant Society.",
+      basis: "Florida Native Plant Society; UF/IFAS; Institute for Regional Conservation.",
     },
   },
   {
@@ -164,8 +164,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Bird value: FNPS.",
     propagation: {
       methods: ["seed-direct"],
-      note: "Wash the pulp off the seed of the ripe dark red-purple fruit and sow it. Like its cousin seagrape it has separate male and female plants, so only females fruit, and only with a male nearby.",
-      basis: "Florida Native Plant Society.",
+      note: "Wash the pulp off the seed of the ripe dark red-purple fruit and sow it. Like its cousin seagrape it has separate male and female plants, so only females make seed, and only with a male nearby.",
+      basis: "Florida Native Plant Society; UF/IFAS; Institute for Regional Conservation.",
     },
   },
   {
@@ -235,7 +235,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct"],
       note: "Crumble the ripe buttonlike seed heads and sow the seed; it sprouts without any treatment. Cuttings also root.",
-      basis: "Florida Native Plant Society; Seed Information Database.",
+      basis: "Florida Native Plant Society; Institute for Regional Conservation; Seed Information Database.",
     },
   },
   {
@@ -269,8 +269,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Host/bird value: FNPS / UF-IFAS.",
     propagation: {
       methods: ["seed-cold-moist", "cuttings-semi-hardwood", "suckers"],
-      note: "Wax myrtle has separate male and female plants, and only the females carry the waxy berries. Rub or soak the wax off the seed, then chill it damp in the fridge for two or three months before sowing — waxy or unchilled seed sprouts poorly. Summer cuttings root well, and rooted suckers can be dug and moved.",
-      basis: "Woody Plant Seed Manual; LBJ Wildflower Center; USFS Native Plant Network; Florida Native Plant Society.",
+      note: "Wax myrtle has separate male and female plants, and only the females carry the waxy berries. Rub or soak the wax off the seed, then chill it damp in the fridge for two or three months before sowing — waxy or unchilled seed sprouts poorly. Cuttings root only with difficulty; rooted suckers can be dug and moved.",
+      basis: "Woody Plant Seed Manual; LBJ Wildflower Center; USFS Native Plant Network; Florida Native Plant Society; Institute for Regional Conservation.",
     },
   },
 
@@ -307,7 +307,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-warm", "suckers"],
       note: "Squeeze the seed from the ripe dark berries and sow it warm; it sprouts readily. Plants often sucker, and the rooted suckers can be dug and moved. Start from the true native, not the nursery 'dwarf' firebush, which is not native.",
-      basis: "Florida Native Plant Society; Seed Information Database; UF/IFAS.",
+      basis: "Florida Native Plant Society; Seed Information Database; UF/IFAS; Institute for Regional Conservation.",
     },
   },
   {
@@ -342,7 +342,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct", "cuttings-hardwood"],
       note: "Scoop the seed out of the ripe plum-like fruit, rinse it, and sow it. Hardwood cuttings also root.",
-      basis: "Florida Native Plant Society.",
+      basis: "Florida Native Plant Society; UF/IFAS; Institute for Regional Conservation.",
     },
   },
   {
@@ -377,7 +377,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-warm"],
       note: "Squeeze the seed out of the ripe red fruit, wash off the pulp, and sow it warm. Be patient: it can take a few months to sprout. Once established it self-sows.",
-      basis: "Florida Native Plant Society; Seed Information Database.",
+      basis: "Florida Native Plant Society; Seed Information Database; Institute for Regional Conservation.",
     },
   },
   {
@@ -412,7 +412,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct", "suckers"],
       note: "Easy from seed: clean the pulp off the ripe red-orange fruit and sow it. Plants also sucker, so rooted suckers can be dug up and moved.",
-      basis: "Florida Native Plant Society.",
+      basis: "Florida Native Plant Society; Institute for Regional Conservation.",
     },
   },
   {
@@ -447,7 +447,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-warm", "division"],
       note: "Clean the seed out of the ripe blue-black fruit — seed left inside won't sprout — and sow it fresh once the nights stay warm. It is slow: months to sprout and years to make a garden-sized plant. Nurseries mostly grow it from pieces of its creeping stems instead.",
-      basis: "Woody Plant Seed Manual; Florida Native Plant Society.",
+      basis: "Woody Plant Seed Manual; Florida Native Plant Society; Institute for Regional Conservation.",
     },
   },
   {
@@ -517,7 +517,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-scarify", "division"],
       note: "Coontie grows from seed or by dividing the roots. Male and female cones grow on separate plants, and only pollinated females make the orange seed, ripe in winter. Wearing gloves (seeds, leaves and roots are toxic), clean off the fleshy coat, which holds back sprouting, then nick or crack the hard shell and sow warm. Untreated seed can take 6 to 12 months.",
-      basis: "Woody Plant Seed Manual; USFS Native Plant Network; Florida Native Plant Society.",
+      basis: "Woody Plant Seed Manual; USFS Native Plant Network; Florida Native Plant Society; Institute for Regional Conservation.",
     },
   },
 
@@ -659,7 +659,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct"],
       note: "Collect seed from the spent flower heads and sow it; untreated seed sprouts well, and the plant self-sows freely. Cuttings also root.",
-      basis: "Florida Native Plant Society; Seed Information Database.",
+      basis: "Florida Native Plant Society; Seed Information Database; UF/IFAS.",
     },
   },
 
@@ -768,7 +768,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct", "division"],
       note: "Squeeze the seed from the ripe dark berries and sow it, but expect it to be slow to sprout. Dividing the roots of an established plant is the quicker way.",
-      basis: "Florida Native Plant Society.",
+      basis: "Florida Native Plant Society; Institute for Regional Conservation.",
     },
   },
 ];

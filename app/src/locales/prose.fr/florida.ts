@@ -462,7 +462,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Des fruits rouge-pourpre sombre dont se nourrissent les pigeons, les moqueurs et d'autres oiseaux, plus un couvert de hammock persistant et dense et une écorce lisse et marbrée.",
     propagationNote:
-      "Lavez la pulpe autour de la graine des fruits rouge-pourpre sombre mûrs et semez-la. Comme son cousin le raisinier, il a des pieds mâles et femelles séparés : seules les femelles fructifient, et seulement avec un mâle à proximité.",
+      "Lavez la pulpe autour de la graine des fruits rouge-pourpre sombre mûrs et semez-la. Comme son cousin le raisinier, il a des pieds mâles et femelles séparés : seules les femelles font des graines, et seulement avec un mâle à proximité.",
     supportNotes: {
       "berry-songbirds":
         "Les fruits sombres du Coccoloba diversifolia sont l'un des favoris du pigeon à couronne blanche et des autres oiseaux frugivores.",
@@ -492,7 +492,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Des baies bleues cireuses dont dépendent en hiver les parulines à croupion jaune et bien d'autres oiseaux, un couvert de nidification dense, et le rôle de plante hôte du Calycopis cecrops.",
     propagationNote:
-      "Le Morella cerifera a des pieds mâles et femelles séparés, et seules les femelles portent les baies cireuses. Frottez ou faites tremper la graine pour ôter la cire, puis mettez-la au froid humide au réfrigérateur deux ou trois mois avant de semer — cireuse ou non refroidie, elle lève mal. Les boutures d'été s'enracinent bien, et l'on peut déterrer et déplacer les drageons enracinés.",
+      "Le Morella cerifera a des pieds mâles et femelles séparés, et seules les femelles portent les baies cireuses. Frottez ou faites tremper la graine pour ôter la cire, puis mettez-la au froid humide au réfrigérateur deux ou trois mois avant de semer — cireuse ou non refroidie, elle lève mal. Les boutures ne s'enracinent qu'avec peine ; on peut en revanche déterrer et déplacer les drageons enracinés.",
     supportNotes: {
       "yellow-rumped-warbler":
         "Les baies cireuses du Morella cerifera sont la nourriture qui permet aux parulines à croupion jaune d'hiverner dans tout le Sud.",

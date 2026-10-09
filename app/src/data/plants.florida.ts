@@ -59,7 +59,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-warm", "seed-direct"],
       note: "Gather the fresh acorns in fall and sow them right away — a live oak acorn wants to sprout immediately and has no need for a winter chill. Drop them in water and toss the floaters, keep the sinkers, and never let them dry out. It sends down a deep taproot early, so start it where it will stay.",
-      basis: "USFS Native Plant Network; Woody Plant Seed Manual; LBJ Wildflower Center; Seed Information Database.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual; LBJ Wildflower Center; Seed Information Database; Institute for Regional Conservation.",
     },
   },
   {
@@ -199,7 +199,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-warm"],
       note: "The little winged 'helicopter' seeds ripen in spring — catch them as they turn brown and sow them right away. Much of the seed sprouts that summer with no chilling, though seed from some trees waits until the next year.",
-      basis: "Woody Plant Seed Manual; USFS Native Plant Network; Florida Native Plant Society.",
+      basis: "Woody Plant Seed Manual; USFS Native Plant Network; Florida Native Plant Society; Institute for Regional Conservation.",
     },
   },
   {
@@ -306,7 +306,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-warm", "division"],
       note: "Clean the seed out of the ripe blue-black fruit — seed left inside won't sprout — and sow it fresh once the nights stay warm. It is slow: months to sprout and years to make a garden-sized plant. Nurseries mostly grow it from pieces of its creeping stems instead.",
-      basis: "Woody Plant Seed Manual; Florida Native Plant Society.",
+      basis: "Woody Plant Seed Manual; Florida Native Plant Society; Institute for Regional Conservation.",
     },
   },
   {
@@ -341,7 +341,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-cold-moist", "cuttings-softwood"],
       note: "Mash the ripe purple berries in water in fall: good seed sinks and the pulp floats off. Sow it in fall, barely covered, to come up in spring, or chill it damp in the fridge for two months first. Soft green cuttings taken in summer root well.",
-      basis: "Woody Plant Seed Manual; USFS Native Plant Network.",
+      basis: "Woody Plant Seed Manual; USFS Native Plant Network; Institute for Regional Conservation.",
     },
   },
   {
@@ -376,7 +376,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-warm", "suckers"],
       note: "Squeeze the seed from the ripe dark berries and sow it warm; it sprouts readily. Plants often sucker, and the rooted suckers can be dug and moved. Start from the true native, not the nursery 'dwarf' firebush, which is not native.",
-      basis: "Florida Native Plant Society; Seed Information Database; UF/IFAS.",
+      basis: "Florida Native Plant Society; Seed Information Database; UF/IFAS; Institute for Regional Conservation.",
     },
   },
   {
@@ -481,7 +481,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct", "suckers"],
       note: "Easy from seed: clean the pulp off the ripe red-orange fruit and sow it. Plants also sucker, so rooted suckers can be dug up and moved.",
-      basis: "Florida Native Plant Society.",
+      basis: "Florida Native Plant Society; Institute for Regional Conservation.",
     },
   },
 
@@ -518,7 +518,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-scarify", "division"],
       note: "Coontie grows from seed or by dividing the roots. Male and female cones grow on separate plants, and only pollinated females make the orange seed, ripe in winter. Wearing gloves (seeds, leaves and roots are toxic), clean off the fleshy coat, which holds back sprouting, then nick or crack the hard shell and sow warm. Untreated seed can take 6 to 12 months.",
-      basis: "Woody Plant Seed Manual; USFS Native Plant Network; Florida Native Plant Society.",
+      basis: "Woody Plant Seed Manual; USFS Native Plant Network; Florida Native Plant Society; Institute for Regional Conservation.",
     },
   },
   {
@@ -588,7 +588,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct", "division"],
       note: "Grow it from seed, or divide the leafy rosettes at its base. It self-sows readily.",
-      basis: "Florida Native Plant Society.",
+      basis: "Florida Native Plant Society; Institute for Regional Conservation.",
     },
   },
   {
@@ -874,7 +874,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-direct"],
       note: "Collect seed from the spent flower heads and sow it; untreated seed sprouts well, and the plant self-sows freely. Cuttings also root.",
-      basis: "Florida Native Plant Society; Seed Information Database.",
+      basis: "Florida Native Plant Society; Seed Information Database; UF/IFAS.",
     },
   },
 ];

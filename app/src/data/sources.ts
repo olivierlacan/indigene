@@ -96,6 +96,7 @@ export const SOURCE_LINKS: SourceSite[] = [
   { name: "Tāne's Tree Trust", url: "https://www.tanestrees.org.nz/species-profiles/" },
   { name: "NC State Extension", url: "https://plants.ces.ncsu.edu/" },
   { name: "Journal of Forest Science", url: "https://jfs.agriculturejournals.cz/" },
+  { name: "Institute for Regional Conservation", url: "https://regionalconservation.org/beta/nfyn/" },
   { name: "INPN", url: "https://inpn.mnhn.fr/" },
   { name: "RHS Plants for Pollinators", url: "https://www.rhs.org.uk/wildlife/plants-for-pollinators" },
   { name: "Butterfly Conservation", url: "https://butterfly-conservation.org/" },

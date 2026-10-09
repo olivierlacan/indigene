@@ -924,9 +924,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 12 Lepidoptera recorded on Eurya in Japan — HOSTS, Natural History Museum (CC0), field records only, all 12 against this species.",
     propagation: {
-      methods: ["seed-warm"],
-      note: "Sow the cleaned fruit in autumn.",
-      basis: "No published source checked yet.",
+      methods: ["cuttings-semi-hardwood"],
+      note: "Usually grown from cuttings set in sandy soil.",
+      basis: "NC State Extension Gardener Plant Toolbox.",
     },
   },
   {
@@ -1065,9 +1065,9 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 2 Lepidoptera recorded on Ardisia in Japan — HOSTS, Natural History Museum (CC0), field records only, and both against a different Ardisia. Carried as the genus figure, which is weak. Confidence low: both records are against a different Ardisia, so nothing here is measured on this plant.",
     confidenceLowered: "low",
     propagation: {
-      methods: ["division"],
-      note: "Lift and split a spreading patch in spring, keeping a piece of runner on each division.",
-      basis: "No published source checked yet.",
+      methods: ["division", "cuttings-semi-hardwood"],
+      note: "Split a spreading patch into rooted pieces, or take cuttings between June and September.",
+      basis: "NC State Extension Gardener Plant Toolbox.",
     },
   },
   // --- Vines: the plain's climbers, and what they need to climb on ----------

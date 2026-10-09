@@ -130,7 +130,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Ses racines cuirassent une berge contre l'érosion, ses chatons de fin d'hiver nourrissent les premières abeilles, ses petits fruits en forme de cônes nourrissent tarins et sizerins, et il héberge de nombreux papillons de nuit — une zone humide entière dans un seul arbre.",
     propagationNote:
-      "Récoltez les petits cônes ligneux à l'automne, séchez-les jusqu'à ce qu'ils libèrent leurs graines, et semez en surface sur une terre humide — il lui faut lumière et humidité, pas de froid. Des boutures ligneuses enfoncées en sol mouillé prennent aussi.",
+      "Récoltez les petits cônes ligneux à l'automne quand ils s'ouvrent et semez la graine fraîche, à peine couverte : elle n'a alors besoin d'aucun froid. La graine séchée et conservée demande d'abord quelques mois au froid humide. Des boutures ligneuses enfoncées en sol mouillé prennent aussi.",
     supportNotes: {
       "goldfinches-linnets":
         "Un aulne en fruits l'hiver porte chardonnerets et tarins suspendus tête en bas à ses petits cônes, dont ils extraient les graines une à une.",
@@ -146,7 +146,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
     givesNote:
       "Un grand arbre à chenilles — bien plus de deux cents espèces de papillons de nuit, dont le sphinx du peuplier, autrement dit de quoi nourrir toutes les nichées de mésanges et de fauvettes à la ronde. Ses chatons précoces donnent du pollen au moment le plus maigre de l'année, et ses pétioles aplatis font frissonner tout le houppier au moindre souffle que rien d'autre ne remarque.",
     propagationNote:
-      "De loin le plus facile : déterrez un drageon enraciné en automne ou à la fin de l'hiver et replantez-le. Des boutures ligneuses prélevées en hiver s'enracinent aussi. La graine cotonneuse est un mauvais pari — elle ne vit que quelques jours, il faut donc l'attraper au début de l'été et la semer aussitôt sur de la vase.",
+      "De loin le plus facile : déterrez un drageon enraciné en automne ou à la fin de l'hiver et replantez-le. Des boutures ligneuses prélevées en hiver s'enracinent aussi. La graine cotonneuse est un mauvais pari — elle ne vit que quelques semaines, il faut donc l'attraper au début de l'été et la semer aussitôt sur de la vase.",
     supportNotes: {
       "purple-emperor":
         "Le tremble est le deuxième arbre du grand mars changeant après le saule marsault, et c'est dans un bouquet de trembles que se tient toute la colonie.",

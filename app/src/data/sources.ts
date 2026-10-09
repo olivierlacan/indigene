@@ -97,6 +97,10 @@ export const SOURCE_LINKS: SourceSite[] = [
   { name: "NC State Extension", url: "https://plants.ces.ncsu.edu/" },
   { name: "Journal of Forest Science", url: "https://jfs.agriculturejournals.cz/" },
   { name: "Institute for Regional Conservation", url: "https://regionalconservation.org/beta/nfyn/" },
+  // Course-compiled propagation protocols (UW ESRM 412), each citing its own
+  // sources; and the fern society's guide to raising ferns from spore.
+  { name: "UW Native Plant Production", url: "https://courses.washington.edu/esrm412/protocols/" },
+  { name: "Hardy Fern Foundation", url: "https://hardyferns.org/propagation/" },
   { name: "INPN", url: "https://inpn.mnhn.fr/" },
   { name: "RHS Plants for Pollinators", url: "https://www.rhs.org.uk/wildlife/plants-for-pollinators" },
   { name: "Butterfly Conservation", url: "https://butterfly-conservation.org/" },

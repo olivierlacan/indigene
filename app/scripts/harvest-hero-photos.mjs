@@ -12,9 +12,9 @@
 //   npm run hero:harvest -- --no-angles       # skip the phenology queries
 //   npm run hero:harvest -- --dry-run         # print the plan, ask nothing
 //
-// Needs open internet (iNaturalist), which the build sandbox blocks — run it
-// locally or via .github/workflows/hero-photos.yml, which opens a PR with the
-// refreshed shortlist. Same arrangement as `reconcile.mjs`, for the same reason.
+// Needs iNaturalist. A full run is hours, so it normally runs in
+// .github/workflows/hero-photos.yml, which opens a PR with the refreshed
+// shortlist; a `--region` run works locally or in a Claude session.
 //
 // **What it asks for.** One request per subject per region it belongs to,
 // bounded by that region's coverage box, research grade, photographed, and — the
@@ -207,8 +207,7 @@ function asksFor(job) {
 const sized = (url, size) => url.replace(/\/(square|small|medium|large|original)\.(\w+)/, `/${size}.$2`);
 
 // A dry run is how you check the plan — and the exact query — without spending
-// a single request. It's also the only part of this script the build sandbox
-// can run, since everything past here needs the network.
+// a single request. Everything past here needs the network.
 if (dryRun) {
   const byRegion = new Map();
   for (const j of todo) byRegion.set(j.regionId, (byRegion.get(j.regionId) ?? 0) + 1);

@@ -352,16 +352,16 @@ than a prerequisite, and it never has to be undone: the moment a pick lands in
 
 ## Running it
 
-The harvest needs open internet, which the build sandbox blocks. Two ways:
+The harvest needs iNaturalist, and a full one takes hours. Two ways:
 
 - **CI** — `.github/workflows/hero-photos.yml`, from the Actions tab or on its
   quarterly schedule. It harvests, scores, and opens a PR with the refreshed
   `docs/hero-photos/candidates.json`. This is the normal path.
-- **Locally** — `npm run hero:harvest`, with `--region` / `--plant` / `--limit`
-  to keep a trial small.
+- **Locally or in a Claude session** — `npm run hero:harvest`, with `--region`
+  / `--plant` / `--limit` to keep a trial small. Sessions reach iNaturalist and
+  its photo bucket.
 
-`npm run hero:colors` needs network too, for the same reason and on the same
-terms — but it only fetches the 75 px renditions of picks already committed, so
+`npm run hero:colors` needs network too — but it only fetches the 75 px renditions of picks already committed, so
 it is a much smaller errand than a harvest.
 
 `npm run hero:inat` is smaller still: 180 subjects is 76 requests and no images

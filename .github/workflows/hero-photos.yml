@@ -1,9 +1,10 @@
 # Harvest and rank candidate photographs — for the plants and for the animals —
 # then open a PR with the shortlist.
 #
-# Why here and not in the build: the harvest needs open internet (iNaturalist),
-# which the local build sandbox blocks — GitHub runners don't. Same arrangement
-# as reconcile.yml, and for the same reason. This produces review data only
+# Why a workflow: a full harvest is hours of requests and ~11,500 image
+# downloads — a runner's job, not a session's. (Claude sessions reach
+# iNaturalist fine now; run a small `--region` harvest there.) This produces
+# review data only
 # (docs/hero-photos/candidates.json); a human picks from it and commits the
 # picks separately. See docs/hero-photos.md.
 #

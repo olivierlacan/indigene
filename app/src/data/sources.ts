@@ -73,6 +73,10 @@ export const SOURCE_LINKS: SourceSite[] = [
   // source of every European host count, so it links to the paper itself.
   { name: "Gaytán et al. 2026 European matrix", url: "https://doi.org/10.1002/ece3.73004" },
   { name: "Tela Botanica", url: "https://www.tela-botanica.org/" },
+  // Kew's seed database, run since 2023 by the Society for Ecological
+  // Restoration with Kew at its own address. Older rows use the old name.
+  { name: "Kew Seed Information Database", url: "https://ser-sid.org/" },
+  { name: "Seed Information Database", url: "https://ser-sid.org/" },
   { name: "INPN", url: "https://inpn.mnhn.fr/" },
   { name: "RHS Plants for Pollinators", url: "https://www.rhs.org.uk/wildlife/plants-for-pollinators" },
   { name: "Butterfly Conservation", url: "https://butterfly-conservation.org/" },

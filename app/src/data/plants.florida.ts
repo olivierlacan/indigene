@@ -94,7 +94,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-warm"],
       note: "Collect the seed from ripe cones in fall. Fresh seed needs no chilling and sprouts readily. Expect a slow start: a young longleaf spends years as a grassy tuft before it shoots up.",
-      basis: "Woody Plant Seed Manual; Florida Native Plant Society.",
+      basis: "USFS Native Plant Network; Woody Plant Seed Manual; Florida Native Plant Society.",
     },
   },
   {
@@ -129,7 +129,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-cold-moist"],
       note: "Gather the round cones in fall, let them dry, and break them apart to free the seed. It sprouts best after a cold spell, which Florida's mild winters may not give: soak it in water in the fridge for up to three months, then sow in spring and keep the bed wet.",
-      basis: "Woody Plant Seed Manual.",
+      basis: "Woody Plant Seed Manual; USFS Native Plant Network.",
     },
   },
   {
@@ -199,7 +199,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-warm"],
       note: "The little winged 'helicopter' seeds ripen in spring — catch them as they turn brown and sow them right away. Much of the seed sprouts that summer with no chilling, though seed from some trees waits until the next year.",
-      basis: "Woody Plant Seed Manual; Florida Native Plant Society.",
+      basis: "Woody Plant Seed Manual; USFS Native Plant Network; Florida Native Plant Society.",
     },
   },
   {
@@ -269,7 +269,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-double-dormant"],
       note: "This one tests your patience. Clean the pulp off the blue fruit and sow the seed, but expect it to sit for two seasons — it needs a warm spell and then a cool one before the root and shoot come, so it can take a year and a half or more. Sow it and forget it, and don't give up too soon.",
-      basis: "Woody Plant Seed Manual; Florida Native Plant Society.",
+      basis: "Woody Plant Seed Manual; USFS Native Plant Network; Florida Native Plant Society.",
     },
   },
 
@@ -339,9 +339,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "estimated",
     basis: "Native status/range: Atlas of Florida Plants (USF), USDA PLANTS. Host count: Callicarpa, moderate estimate.",
     propagation: {
-      methods: ["seed-direct", "cuttings-softwood"],
-      note: "Mash the ripe purple berries in water in fall: good seed sinks and the pulp floats off. Sow the seed in fall, barely covered, and it comes up in spring. Soft green cuttings taken in summer root well.",
-      basis: "Woody Plant Seed Manual.",
+      methods: ["seed-cold-moist", "cuttings-softwood"],
+      note: "Mash the ripe purple berries in water in fall: good seed sinks and the pulp floats off. Sow it in fall, barely covered, to come up in spring, or chill it damp in the fridge for two months first. Soft green cuttings taken in summer root well.",
+      basis: "Woody Plant Seed Manual; USFS Native Plant Network.",
     },
   },
   {
@@ -517,8 +517,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Atlas of Florida Plants (USF). Occurrence records in this region's box: 2,194 (GBIF). Atala host: FNPS.",
     propagation: {
       methods: ["seed-scarify", "division"],
-      note: "Coontie grows from seed or by dividing the roots. Male and female cones grow on separate plants, and only pollinated females make the orange seed, ripe in winter. Wearing gloves (seeds, leaves and roots are toxic), clean off the fleshy coat, which holds back sprouting, then nick or crack the hard shell and sow. Untreated seed can take 6 to 12 months.",
-      basis: "Woody Plant Seed Manual; Florida Native Plant Society.",
+      note: "Coontie grows from seed or by dividing the roots. Male and female cones grow on separate plants, and only pollinated females make the orange seed, ripe in winter. Wearing gloves (seeds, leaves and roots are toxic), clean off the fleshy coat, which holds back sprouting, then nick or crack the hard shell and sow warm. Untreated seed can take 6 to 12 months.",
+      basis: "Woody Plant Seed Manual; USFS Native Plant Network; Florida Native Plant Society.",
     },
   },
   {
@@ -623,7 +623,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-cold-moist", "root-cuttings"],
       note: "Collect the seed as the pods ripen, before they split. Chill it damp in the fridge for about three months before a spring sowing, or sow it outdoors in fall. Pieces of the thick root also grow: cut them in fall while the plant is dormant, each with a bud.",
-      basis: "USDA PLANTS; LBJ Wildflower Center.",
+      basis: "USDA PLANTS; LBJ Wildflower Center; USFS Native Plant Network.",
     },
   },
   {
@@ -765,7 +765,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-cold-moist"],
       note: "The seed sits dormant inside a hard case. Sow it outdoors in late fall or winter, or keep it cold and wet in the fridge for 6 to 10 weeks and sow in spring without letting it dry. Even then it sprouts slowly and unevenly.",
-      basis: "USDA PLANTS; Seed Information Database.",
+      basis: "USDA PLANTS; USFS Native Plant Network; Seed Information Database.",
     },
   },
 
@@ -839,7 +839,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-scarify", "runners"],
       note: "Nick or sand the hard seed coat before sowing — unscuffed seed sprouts poorly. Easier still, this carpet spreads by runners that root as they go, so you can lift and pot up the rooted pieces.",
-      basis: "USDA PLANTS; Seed Information Database.",
+      basis: "USDA PLANTS; USFS Native Plant Network; Seed Information Database.",
     },
   },
   {

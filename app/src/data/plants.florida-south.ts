@@ -270,7 +270,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-cold-moist", "cuttings-semi-hardwood", "suckers"],
       note: "Wax myrtle has separate male and female plants, and only the females carry the waxy berries. Rub or soak the wax off the seed, then chill it damp in the fridge for two or three months before sowing — waxy or unchilled seed sprouts poorly. Summer cuttings root well, and rooted suckers can be dug and moved.",
-      basis: "Woody Plant Seed Manual; LBJ Wildflower Center; Florida Native Plant Society.",
+      basis: "Woody Plant Seed Manual; LBJ Wildflower Center; USFS Native Plant Network; Florida Native Plant Society.",
     },
   },
 
@@ -516,8 +516,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Atlas of Florida Plants (USF), IRC. Atala host: FNPS, Conservancy of SW Florida.",
     propagation: {
       methods: ["seed-scarify", "division"],
-      note: "Coontie grows from seed or by dividing the roots. Male and female cones grow on separate plants, and only pollinated females make the orange seed, ripe in winter. Wearing gloves (seeds, leaves and roots are toxic), clean off the fleshy coat, which holds back sprouting, then nick or crack the hard shell and sow. Untreated seed can take 6 to 12 months.",
-      basis: "Woody Plant Seed Manual; Florida Native Plant Society.",
+      note: "Coontie grows from seed or by dividing the roots. Male and female cones grow on separate plants, and only pollinated females make the orange seed, ripe in winter. Wearing gloves (seeds, leaves and roots are toxic), clean off the fleshy coat, which holds back sprouting, then nick or crack the hard shell and sow warm. Untreated seed can take 6 to 12 months.",
+      basis: "Woody Plant Seed Manual; USFS Native Plant Network; Florida Native Plant Society.",
     },
   },
 
@@ -731,7 +731,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-cold-moist"],
       note: "The seed sits dormant inside a hard case. Sow it outdoors in late fall or winter, or keep it cold and wet in the fridge for 6 to 10 weeks and sow in spring without letting it dry. Even then it sprouts slowly and unevenly.",
-      basis: "USDA PLANTS; Seed Information Database.",
+      basis: "USDA PLANTS; USFS Native Plant Network; Seed Information Database.",
     },
   },
 

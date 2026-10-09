@@ -152,7 +152,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "Des fleurs d'été pour les pollinisateurs, puis les grappes de baies magenta que moqueurs, cardinaux et des dizaines d'oiseaux (et les ratons laveurs) dévorent à l'automne.",
     propagationNote:
-      "Écrasez les baies violettes mûres dans l'eau à l'automne : la bonne graine coule et la pulpe flotte. Semez la graine à l'automne, à peine couverte, et elle lève au printemps. Les boutures de pousses vertes tendres prises en été s'enracinent bien.",
+      "Écrasez les baies violettes mûres dans l'eau à l'automne : la bonne graine coule et la pulpe flotte. Semez-la à l'automne, à peine couverte, pour une levée au printemps, ou mettez-la d'abord deux mois au froid humide au réfrigérateur. Les boutures de pousses vertes tendres prises en été s'enracinent bien.",
     supportNotes: {
       "berry-songbirds":
         "Les grappes magenta du callicarpe sont dévorées par les moqueurs, les cardinaux et les grives à l'automne.",
@@ -561,7 +561,7 @@ export const FLORIDA: ProseTable = {
     givesNote:
       "La seule plante nourricière indigène des chenilles du rare Eumaeus atala (qui mangent aussi des cycadées importées comme le cycas du Japon) — planter cette Zamia a ramené ce papillon du bord de l'extinction locale — plus un arbuste-couvre-sol persistant, architectural et résistant à la sécheresse.",
     propagationNote:
-      "La Zamia se multiplie par semis ou par division des racines. Cônes mâles et femelles naissent sur des pieds séparés, et seules les femelles pollinisées font la graine orange, mûre en hiver. Avec des gants (graines, feuilles et racines sont toxiques), ôtez l'enveloppe charnue, qui freine la germination, puis entaillez ou fêlez la coque dure et semez. Une graine non traitée peut mettre 6 à 12 mois à lever.",
+      "La Zamia se multiplie par semis ou par division des racines. Cônes mâles et femelles naissent sur des pieds séparés, et seules les femelles pollinisées font la graine orange, mûre en hiver. Avec des gants (graines, feuilles et racines sont toxiques), ôtez l'enveloppe charnue, qui freine la germination, puis entaillez ou fêlez la coque dure et semez au chaud. Une graine non traitée peut mettre 6 à 12 mois à lever.",
     supportNotes: {
       atala:
         "Cette Zamia est la seule plante nourricière indigène des chenilles de l'Eumaeus atala — la planter est ce qui a ramené ce papillon du bord de l'extinction dans le sud de la Floride.",

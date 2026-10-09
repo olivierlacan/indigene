@@ -52,6 +52,7 @@ import type { TKey } from "./locales/en";
 import { onUnitsChange } from "./lib/units";
 import { renderChrome } from "./components/chrome";
 import { mountUntranslatedBanner, resetUntranslated } from "./components/wip-banner";
+import { mountLangOffer } from "./components/lang-offer";
 import { loadProse } from "./lib/prose";
 
 // A step may render synchronously, hand back a cleanup function, or do both
@@ -574,6 +575,7 @@ async function boot(): Promise<void> {
   // or for a browser asking not to be tracked, it does nothing whatsoever.
   startAnalytics();
   renderChrome();
+  mountLangOffer(main);
   watchEmoji(onLangChange);
   onLangChange(rerenderAll);
   onUnitsChange(rerenderAll);

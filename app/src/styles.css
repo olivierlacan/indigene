@@ -867,6 +867,39 @@ p.more-link a {
 }
 
 /* --- Layout --- */
+/* The one-line "read this in French?" offer (components/lang-offer.ts): a
+   full-width strip under the header, its row held to the page's width. */
+.lang-offer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 0.5rem 0 1rem;
+  border-bottom: 1px solid var(--line);
+}
+.lang-offer-take,
+.lang-offer-close {
+  min-height: var(--tap);
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.lang-offer-take {
+  padding: 0;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.lang-offer-close {
+  min-width: var(--tap);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
 .app-main {
   max-width: var(--maxw);
   margin: 0 auto;

@@ -1,16 +1,25 @@
+### Added
+
+- Backups: when a spot you bring in looks like one you already have (same
+  name nearby, or the same patch of ground), you choose whether to combine
+  them or keep both. Nothing comes in until you've chosen.
+- [Keeping your spots safe](https://indigene.app/guide/backup/) explains where
+  your spots live, what can erase them, and how to save and restore a copy.
+
 ### Changed
 
-- Your spots file is now a full backup: spots, plantings, linked sightings with
-  their photos, your iNaturalist username and your settings. Open it in a new
-  browser and everything comes back.
-- Bringing a copy into a browser that already has your spots adds what's new,
-  like sightings linked on another device. Nothing already here is removed or
-  overwritten.
-- Your saved spots now ask the browser to keep them through a clean-up, and
-  the spots file card says when you last saved a copy.
+- Backups: your spots file now holds everything — spots, plantings, linked
+  sightings with their photos, your iNaturalist username and your settings.
+  Open it in a new browser and it all comes back.
+- Backups: bringing a copy into a browser that already has your spots adds
+  what's new, like sightings linked on another device. Nothing already there
+  is removed or overwritten.
+- Backups: saved spots now ask the browser not to clear them when space runs
+  low, and Settings shows when you last saved a copy. On iPhone, it explains
+  Safari's one-week limit.
 - Internal: spots file format v2 adds `lookups`, `sightings` (the `obs:<ref>`
-  cache records) and `preferences`; v1 files still read. `planImport` in
-  `lib/backup.ts` is the pure merge, pinned by `backup.test.ts` with
-  `Required<>` fixtures. Settings that redraw the page apply via
-  `Restore.finish()` so the import report survives. `saveSpot` calls
-  `navigator.storage.persist()` once per load.
+  cache records) and `preferences`; v1 files still read. `planImport` is the
+  pure merge and `likelySameSpots` the matcher (same name ≤ 1 km, or ≤ 30 m;
+  suggests combine for same name ≤ 250 m); combined ids persist in kv
+  `spot-aliases`. Settings that redraw the page apply via `Restore.finish()`.
+  New guide section `backup` (prefix `Backups`).

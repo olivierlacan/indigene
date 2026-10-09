@@ -55,6 +55,7 @@ import type {
 } from "../types";
 import { DEFAULT_WEIGHTS, NO_FILTERS } from "./ranking";
 import type { ActiveFilters } from "./ranking";
+import { haversineKm } from "./inaturalist";
 import type { ObservationPhoto, ObservationSummary } from "./inaturalist";
 import { isValidLogin, linkedLogin, setLinkedLogin } from "./inat-account";
 import { allowLookup, allowOwnLookup, lookupAllowed, ownLookupAllowed } from "./spot-sightings";
@@ -298,6 +299,8 @@ export interface ImportTally {
   /** Spots already here that the file added to — an invasive found, or a
    *  sighting linked to one, on the other device. */
   spotsUpdated: number;
+  /** Spots in the file folded into a spot here, as the person chose. */
+  spotsCombined: number;
   plantingsAdded: number;
   plantingsKnown: number;
   /** Plantings already here that gained a linked sighting or a note. */
@@ -321,6 +324,71 @@ export interface ImportPlan {
 }
 
 /**
+ * A spot in the file that looks like one already here under a different id —
+ * the same garden saved separately on two devices.
+ */
+export interface LikelySame {
+  there: SavedSpot;
+  here: SavedSpot;
+  /** How far apart the two pins are, in metres. */
+  metres: number;
+  sameName: boolean;
+  /** What the choice starts on: combine only when the name agrees and the pins
+   *  are close enough to be the same garden. */
+  suggest: "combine" | "keep";
+}
+
+/** Close enough to be one garden: two phones' fixes from the same yard. */
+const SAME_GARDEN_M = 250;
+/** So close that a different name is probably a rename. */
+const SAME_PLACE_M = 30;
+/** Past this, a shared name is a coincidence ("Front yard" at two houses). */
+const NAME_REACH_M = 1000;
+
+function sameLabel(a: string, b: string): boolean {
+  const norm = (x: string): string => x.normalize("NFKC").trim().replace(/\s+/g, " ").toLocaleLowerCase();
+  return norm(a) === norm(b);
+}
+
+/**
+ * Pair each new spot in the file with the closest one here that's probably the
+ * same garden: a shared name within a kilometre, or any name within 30 m.
+ * Spots already matched by id, or combined on an earlier import (`aliases`),
+ * aren't asked about again.
+ */
+export function likelySameSpots(
+  hereSpots: readonly SavedSpot[],
+  file: SpotsFile,
+  aliases: Readonly<Record<string, string>> = {}
+): LikelySame[] {
+  const known = new Set(hereSpots.map((s) => s.id));
+  const out: LikelySame[] = [];
+  for (const there of file.spots) {
+    if (known.has(there.id) || known.has(aliases[there.id] ?? "")) continue;
+    let best: LikelySame | null = null;
+    for (const here of hereSpots) {
+      const metres = haversineKm(there.lat, there.lon, here.lat, here.lon) * 1000;
+      const sameName = sameLabel(there.label, here.label);
+      if (!(metres <= SAME_PLACE_M || (sameName && metres <= NAME_REACH_M))) continue;
+      if (best && best.metres <= metres) continue;
+      best = { there, here, metres, sameName, suggest: sameName && metres <= SAME_GARDEN_M ? "combine" : "keep" };
+    }
+    if (best) out.push(best);
+  }
+  return out;
+}
+
+/** Same plant, same planting date (to the precision given): one row twice. */
+function samePlanting(a: Planting, b: Planting): boolean {
+  return (
+    a.plantId === b.plantId &&
+    a.planted?.year === b.planted?.year &&
+    a.planted?.month === b.planted?.month &&
+    a.planted?.day === b.planted?.day
+  );
+}
+
+/**
  * Work out what a file adds to what's here — without touching the database, so
  * the rules can be tested on plain arrays.
  *
@@ -333,12 +401,18 @@ export interface ImportPlan {
  * brought to a laptop that already had the spot. A rename made elsewhere still
  * doesn't travel — two labels can't be merged, and the one here is the one
  * the gardener was looking at.
+ *
+ * `combine` maps a file spot's id to a spot here that the person said is the
+ * same garden (`likelySameSpots`). That spot is folded in by the same rules:
+ * its plantings move across, and one that matches a planting already there —
+ * same plant, same date — joins it instead of doubling it.
  */
 export function planImport(
   hereSpots: readonly SavedSpot[],
   herePlantings: readonly Planting[],
   file: SpotsFile,
-  skippedOnRead = 0
+  skippedOnRead = 0,
+  combine: Readonly<Record<string, string>> = {}
 ): ImportPlan {
   const spotsById = new Map(hereSpots.map((s) => [s.id, s]));
   const plantingsById = new Map(herePlantings.map((p) => [p.id, p]));
@@ -349,6 +423,7 @@ export function planImport(
       spotsAdded: 0,
       spotsKnown: 0,
       spotsUpdated: 0,
+      spotsCombined: 0,
       plantingsAdded: 0,
       plantingsKnown: 0,
       plantingsUpdated: 0,
@@ -359,9 +434,17 @@ export function planImport(
     },
   };
   const { tally } = plan;
+  /** Where a file spot's rows land: itself, or the spot it was combined into. */
+  const target = (id: string): string => (spotsById.has(combine[id] ?? "") ? combine[id] : id);
+  const write = <T extends { id: string }>(list: T[], row: T): void => {
+    const i = list.findIndex((r) => r.id === row.id);
+    if (i >= 0) list[i] = row;
+    else list.push(row);
+  };
 
   for (const spot of file.spots) {
-    const here = spotsById.get(spot.id);
+    const into = target(spot.id);
+    const here = spotsById.get(into);
     if (!here) {
       plan.spots.push(spot);
       spotsById.set(spot.id, spot);
@@ -369,18 +452,24 @@ export function planImport(
       continue;
     }
     const merged = mergeInvasives(here.invasives, spot.invasives);
-    if (!merged) {
-      tally.spotsKnown++;
-      continue;
-    }
+    if (into !== spot.id) tally.spotsCombined++;
+    else if (merged) tally.spotsUpdated++;
+    else tally.spotsKnown++;
+    if (!merged) continue;
     const next = { ...here, invasives: merged };
-    plan.spots.push(next);
-    spotsById.set(spot.id, next);
-    tally.spotsUpdated++;
+    write(plan.spots, next);
+    spotsById.set(into, next);
   }
 
-  for (const planting of file.plantings) {
-    const here = plantingsById.get(planting.id);
+  for (const incoming of file.plantings) {
+    const spotId = target(incoming.spotId);
+    const combined = spotId !== incoming.spotId;
+    const planting = combined ? { ...incoming, spotId } : incoming;
+    const here =
+      plantingsById.get(planting.id) ??
+      (combined
+        ? [...plantingsById.values()].find((p) => p.spotId === spotId && samePlanting(p, planting))
+        : undefined);
     if (here) {
       const observations = union(here.observations, planting.observations);
       const note = here.note ?? planting.note;
@@ -390,7 +479,7 @@ export function planImport(
       }
       const next: Planting = { ...here, observations: observations ?? here.observations };
       if (note) next.note = note;
-      plan.plantings.push(next);
+      write(plan.plantings, next);
       plantingsById.set(next.id, next);
       tally.plantingsUpdated++;
       continue;
@@ -445,6 +534,13 @@ function mergeInvasives(
   return changed ? out : null;
 }
 
+/** File spot id → the spot here it was combined into, across imports. */
+const ALIASES_KEY = "spot-aliases";
+
+export async function spotAliases(): Promise<Record<string, string>> {
+  return (await kvGet<Record<string, string>>(ALIASES_KEY).catch(() => undefined)) ?? {};
+}
+
 /** What an import did, and the settings it left for last. */
 export interface Restore {
   tally: ImportTally;
@@ -457,9 +553,17 @@ export interface Restore {
 }
 
 /** Add what the file brings (see `planImport`) to this device's database. */
-export async function applySpotsFile(file: SpotsFile, skippedOnRead = 0): Promise<Restore> {
-  const [here, hereLog] = await Promise.all([listSpots(), listPlantings()]);
-  const plan = planImport(here, hereLog, file, skippedOnRead);
+export async function applySpotsFile(
+  file: SpotsFile,
+  skippedOnRead = 0,
+  combine: Readonly<Record<string, string>> = {}
+): Promise<Restore> {
+  const [here, hereLog, aliases] = await Promise.all([listSpots(), listPlantings(), spotAliases()]);
+  // Combined once, combined every time: the same file brought in again folds
+  // into the same spot without asking twice.
+  const into = { ...aliases, ...combine };
+  const plan = planImport(here, hereLog, file, skippedOnRead, into);
+  if (Object.keys(combine).length) await kvSet(ALIASES_KEY, into).catch(() => {});
   // Spots first: a planting written before its spot would, for a moment, be
   // exactly the orphan `planImport` refuses to create.
   for (const spot of plan.spots) await saveSpot(spot);
@@ -467,7 +571,8 @@ export async function applySpotsFile(file: SpotsFile, skippedOnRead = 0): Promis
   const { tally } = plan;
 
   const spotIds = new Set([...here, ...file.spots].map((s) => s.id));
-  for (const l of file.lookups) {
+  for (const row of file.lookups) {
+    const l = { ...row, spotId: spotIds.has(into[row.spotId] ?? "") ? into[row.spotId] : row.spotId };
     if (!spotIds.has(l.spotId)) continue;
     if (l.nearby && !(await lookupAllowed(l.spotId))) {
       await allowLookup(l.spotId);

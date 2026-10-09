@@ -99,6 +99,44 @@ export const SECTIONS = [
   },
 
   {
+    id: "backup",
+    label: "Backups",
+    aliases: ["backup", "spots file", "export", "import", "restore"],
+    emoji: "💾",
+    title: "Keeping your spots safe",
+    tagline: "Your spots live on your device, not with us. Keep a copy.",
+    lede:
+      "Indigene has no accounts and no server. Your saved spots, plantings, " +
+      "linked sightings and settings live in one place: the browser you saved " +
+      "them in. Nobody else can see them — so nobody else can bring them back " +
+      "if that browser forgets them.",
+    steps: [
+      "In Settings, tap “Save a copy”. You get one small file holding all of it.",
+      "Keep that file somewhere besides this phone: your email, a cloud drive, a computer.",
+      "On a new phone, in another browser, or after clearing your data, tap “Bring a copy in” and pick the file. Everything comes back.",
+      "Already have spots there? Nothing is overwritten. If a spot looks like one you have, you choose: combine them, or keep both.",
+    ],
+    note:
+      "A browser forgets when you clear its data. On iPhone and iPad, Safari " +
+      "also clears a site you haven’t opened in about a week of using Safari. " +
+      "Added to your Home Screen, Indigene doesn’t have that limit — but it " +
+      "starts empty there, so bring your copy in once.",
+    visit: [
+      { label: "Save or bring in a copy", href: `${APP}/#/settings/spots` },
+      { label: "Privacy & safety", href: `${APP}/privacy` },
+    ],
+    learn: [
+      {
+        label: "How Safari stores and clears website data",
+        source: "WebKit, the team behind Safari",
+        href: "https://webkit.org/blog/14403/updates-to-storage-policy/",
+      },
+    ],
+    match: { segments: [] },
+    published: true,
+  },
+
+  {
     id: "wildlife",
     label: "Wildlife",
     aliases: ["creatures"],

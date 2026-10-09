@@ -2,7 +2,7 @@
 // two things that can lose work are pinned here: a field that doesn't survive
 // the round trip, and an import that drops or overwrites what's already here.
 import { describe, expect, it } from "vitest";
-import { SPOTS_FORMAT, SPOTS_VERSION, parseSpotsFile, planImport } from "./backup";
+import { SPOTS_FORMAT, SPOTS_VERSION, likelySameSpots, parseSpotsFile, planImport } from "./backup";
 import type { Preferences, SavedSighting, SpotsFile } from "./backup";
 import type { Planting, SavedSpot } from "../types";
 
@@ -241,5 +241,66 @@ describe("planImport", () => {
     const first = planImport([spot], [planting], file([spot], [there]));
     const second = planImport([spot], first.plantings, file([spot], [there]));
     expect(second.plantings).toEqual([]);
+  });
+});
+
+describe("likelySameSpots", () => {
+  // About 40 m north, and about 3 km north, of the fixture spot.
+  const near = { lat: spot.lat + 0.00036, lon: spot.lon };
+  const far = { lat: spot.lat + 0.027, lon: spot.lon };
+
+  it("suggests combining the same name in the same garden", () => {
+    const there: SavedSpot = { ...spot, id: "laptop-1", label: "  back FENCE ", ...near };
+    const [pair] = likelySameSpots([spot], file([there], []));
+    expect(pair).toMatchObject({ sameName: true, suggest: "combine" });
+    expect(pair.metres).toBeGreaterThan(30);
+    expect(pair.metres).toBeLessThan(50);
+  });
+
+  it("asks, but starts on keep, for another name on the same spot of ground", () => {
+    const there: SavedSpot = { ...spot, id: "laptop-1", label: "Rain garden", lat: spot.lat + 0.0001 };
+    expect(likelySameSpots([spot], file([there], []))).toMatchObject([{ sameName: false, suggest: "keep" }]);
+  });
+
+  it("leaves alone a shared name far away, and a different spot nearby", () => {
+    const sameNameFar: SavedSpot = { ...spot, id: "a", ...far };
+    const otherNameNear: SavedSpot = { ...spot, id: "b", label: "Front bed", ...near };
+    expect(likelySameSpots([spot], file([sameNameFar, otherNameNear], []))).toEqual([]);
+  });
+
+  it("doesn't ask about a spot matched by id, or combined before", () => {
+    const there: SavedSpot = { ...spot, id: "laptop-1", ...near };
+    expect(likelySameSpots([spot], file([spot], []))).toEqual([]);
+    expect(likelySameSpots([spot], file([there], []), { "laptop-1": "s1" })).toEqual([]);
+  });
+});
+
+describe("planImport, combining", () => {
+  const there: SavedSpot = {
+    ...spot,
+    id: "laptop-1",
+    invasives: [{ invasiveId: "himalayan-blackberry", observations: ["555"], addedAt: 2 }],
+  };
+
+  it("folds the spot in: no second spot, plantings moved across", () => {
+    const fern: Planting = { ...planting, id: "laptop-p1", spotId: "laptop-1", plantId: "sword-fern" };
+    const plan = planImport([spot], [planting], file([there], [fern]), 0, { "laptop-1": "s1" });
+    expect(plan.tally).toMatchObject({ spotsAdded: 0, spotsCombined: 1, plantingsAdded: 1 });
+    expect(plan.spots.map((s) => s.id)).toEqual(["s1"]);
+    expect(plan.spots[0].invasives?.map((i) => i.invasiveId)).toEqual(["english-ivy", "himalayan-blackberry"]);
+    expect(plan.plantings).toEqual([{ ...fern, spotId: "s1" }]);
+  });
+
+  it("joins a planting of the same plant on the same date instead of doubling it", () => {
+    const twin: Planting = { ...planting, id: "laptop-p1", spotId: "laptop-1", observations: ["777"], count: 9 };
+    const plan = planImport([spot], [planting], file([there], [twin]), 0, { "laptop-1": "s1" });
+    expect(plan.tally).toMatchObject({ plantingsAdded: 0, plantingsUpdated: 1 });
+    expect(plan.plantings).toEqual([{ ...planting, observations: [...planting.observations, "777"] }]);
+  });
+
+  it("keeps a same-plant planting from another year as its own row", () => {
+    const later: Planting = { ...planting, id: "laptop-p1", spotId: "laptop-1", planted: { year: 2026 } };
+    const plan = planImport([spot], [planting], file([there], [later]), 0, { "laptop-1": "s1" });
+    expect(plan.tally.plantingsAdded).toBe(1);
   });
 });

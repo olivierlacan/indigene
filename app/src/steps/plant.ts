@@ -19,7 +19,7 @@ import { lookalikesForPlant } from "../lib/lookalikes";
 import { ornamentalsForPlant } from "../lib/alternatives";
 import { latPlain, lonPlain } from "../lib/plain";
 import { wildlifeChips } from "../components/wildlife-chips";
-import { SCORE_KEYS, scoreLabel, propagationMethod, sunLabel, PROPAGATION_SOURCE_URL } from "../lib/plain";
+import { SCORE_KEYS, scoreLabel, propagationMethod, sunLabel } from "../lib/plain";
 import { confidenceMeter, CONFIDENCE_ROUTE } from "../components/confidence-meter";
 import { techniqueFor, techniqueHref } from "../lib/planting";
 import { citation } from "../components/citation";
@@ -1018,9 +1018,11 @@ function propagationSection(p: Plant, regionId: string): HTMLElement {
     el("p", { class: "confidence", style: "margin-top:0.4rem" }, [
       el("span", {}, [
         t("plant.howToSource"),
+        // Only the row's own sources. A fixed "USFS Native Plant Network" link
+        // used to follow every row, so a French ivy or a New Zealand flax
+        // seemed to cite a North American database it never came from; the
+        // rows that do use it name it, and `citation` links the name.
         ...citation(basis),
-        " ",
-        el("a", { href: PROPAGATION_SOURCE_URL, target: "_blank", rel: "noopener" }, t("plant.usfsLink")),
       ]),
     ]),
   ]);

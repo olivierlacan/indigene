@@ -431,7 +431,7 @@ export const en = {
   "grow.window.month": "Seed ripe now",
   "grow.window.season": "This season",
   "grow.do.seed": "Collect the seed",
-  "grow.do.seedTree": "Collect seed, if it set any",
+  "grow.do.seedWoody": "Collect seed, if it set any",
   "grow.do.cuttings-softwood": "Take softwood cuttings",
   "grow.do.cuttings-semi-hardwood": "Take semi-hardwood cuttings",
   "grow.do.cuttings-hardwood": "Take hardwood cuttings",
@@ -454,6 +454,16 @@ export const en = {
   "grow.undated.one": "1 plant has no planting date, so it's left out.",
   "grow.undated.other": "{count} plants have no planting date, so they're left out.",
   "grow.agesNote": "Ages are a rule of thumb: a plant that hasn't flowered has no seed to give yet.",
+  "grow.leaveSome": "Leave some for the birds",
+  "grow.woody.one": "1 tree or shrub here grows only from seed, and no published age says when it bears any.",
+  "grow.woody.other": "{count} trees or shrubs here grow only from seed, and no published age says when they bear any.",
+  "grow.sourcesTitle": "Where this comes from",
+  "grow.src.ripe": "Seed ripens about two months after flowering.",
+  "grow.src.divide": "Divide in spring or autumn, after flowering; most clumps every two to three years.",
+  "grow.src.woody": "Trees and shrubs first bear seed at 3 to 40 years old, by species: the plan waits for each one's published age, in the months its fruit ripens.",
+  "grow.src.birds": "Seed heads left standing feed birds through winter.",
+  "grow.src.rank": "The order is ours: plants an animal can't do without, then essential plants and caterpillar hosts.",
+  "grow.src.plant": "Each plant's own methods, and their source, are on its page.",
   "grow.more": "See the whole season plan",
   "grow.docTitle": "{label} — season plan",
   "grow.page.spring": "Spring plan",
@@ -853,13 +863,13 @@ export const en = {
 
   "prop.seed-direct.name": "Sow the seed as-is (direct sowing)",
   "prop.seed-direct.plain":
-    "The easy case: clean the seed, then sow it about as deep as it is wide in a pot or a cleared patch of ground and keep it damp. No tricks needed.",
+    "The easy case: clean the seed, then sow it two or three times as deep as it is wide, in a pot or a cleared patch of ground, and keep it damp. No tricks needed.",
   "prop.seed-cold-moist.name": "Give the seed a cold, damp winter first (cold-moist stratification)",
   "prop.seed-cold-moist.plain":
     "Many native seeds won't wake up until they've felt a real winter, so you fake one. Mix the seed with a handful of damp sand or a moist paper towel, seal it in a labeled zip bag, and leave it in the fridge for the number of weeks noted — then sow. Or skip the fridge entirely: sow it outdoors in a pot in fall and let actual winter do the job.",
   "prop.seed-double-dormant.name": "Expect a two-winter wait (double dormancy)",
   "prop.seed-double-dormant.plain":
-    "The stubborn ones: the root comes out after one winter but the leaf shoot waits for a second. Sow in a pot outdoors, keep it in a shady, protected spot, don't give up when nothing shows the first spring, and stay patient — green usually appears in the second year.",
+    "The stubborn ones: the root grows in a warm spell, and the leaf shoot waits for a winter after that. Sow in a pot outdoors in autumn, keep it in a shady, protected spot, don't give up when nothing shows the first spring, and stay patient — green usually appears in the second spring.",
   "prop.seed-scarify.name": "Nick or scuff the hard seed coat first (scarification)",
   "prop.seed-scarify.plain":
     "Some seeds (beans and their relatives especially) are sealed in a waterproof shell that has to be breached before water can get in. Rub each seed a few strokes on fine sandpaper, or nick the coat with a knife, until you just see the paler inside — then soak overnight and sow. Careful scuffing, not crushing.",
@@ -868,25 +878,25 @@ export const en = {
     "Dust-fine seed that must see daylight to sprout, so don't bury it. Scatter it on top of damp soil, press it down so it makes contact, and don't cover it. Keep the surface from drying out by misting or covering with clear plastic until it germinates.",
   "prop.seed-warm.name": "Sow fresh and keep it warm (no chilling needed)",
   "prop.seed-warm.plain":
-    "The warm-climate case: no winter chill required. Sow the fresh, cleaned seed and keep it warm and damp — it usually sprouts within a few weeks. Fresh matters; many of these lose the ability to sprout if the seed dries out and sits.",
+    "No winter chill required. Sow the fresh, cleaned seed and keep it warm and damp — it usually sprouts within a few weeks. Fresh matters; many of these lose the ability to sprout if the seed dries out and sits.",
   "prop.cuttings-softwood.name": "Root a soft green shoot (softwood cutting)",
   "prop.cuttings-softwood.plain":
-    "In late spring or early summer, snip a hand-length piece of soft, bendy new growth, strip the lower leaves, and push the cut end into damp potting mix or perlite. Keep it humid and out of harsh sun (a clear bag or bottle over the pot helps) until roots form in a few weeks.",
+    "In spring or early summer, snip a finger-length piece of soft, bendy new growth, strip the lower leaves, and push the cut end into damp potting mix or perlite. Keep it humid and out of harsh sun (a clear bag or bottle over the pot helps) until roots form in a few weeks.",
   "prop.cuttings-semi-hardwood.name": "Root a firming-up shoot (semi-hardwood cutting)",
   "prop.cuttings-semi-hardwood.plain":
     "Mid-to-late summer, take a hand-length piece of this year's growth that has started to stiffen and turn woody at the base. Strip the lower leaves, set the cut end in damp mix, and keep it humid. Slower to root than soft cuttings but sturdier — good for many shrubs and broadleaf evergreens.",
   "prop.cuttings-hardwood.name": "Root a bare winter twig (hardwood cutting)",
   "prop.cuttings-hardwood.plain":
-    "The simplest cutting of all for willows, dogwoods and their kind: while the plant is leafless and dormant, cut pencil-thick pieces about a forearm long, push the lower half into damp ground or a pot, and wait. Many root by spring with no fuss at all.",
+    "The simplest cutting of all for willows, poplars and their kind: while the plant is leafless and dormant, cut pencil-thick pieces about a forearm long, push the lower two-thirds into damp ground or a pot, and wait. Many root by spring with no fuss at all.",
   "prop.division.name": "Dig and split the clump (division)",
   "prop.division.plain":
     "For clump-forming perennials and grasses: in early spring or fall, dig up the whole plant, then pull or cut the crown into several pieces, each with its own roots and a few shoots. Replant the pieces right away at the same depth and water them in. Also rejuvenates a tired, hollow-centered clump.",
   "prop.layering.name": "Root a branch while it's still attached (layering)",
   "prop.layering.plain":
-    "A near-foolproof trick: bend a low, flexible branch down to the ground, scratch the bark where it touches, pin it down with a rock or wire, and mound soil over that spot. It grows roots there while the parent keeps it alive; a season or two later, cut it free and dig up your new plant.",
+    "A near-foolproof trick: bend a low, flexible branch down to the ground, scratch the bark where it touches, pin it down with a rock or wire, and mound soil over that spot. It grows roots there while the parent keeps it alive; a year or so later, cut it free and dig up your new plant.",
   "prop.root-cuttings.name": "Grow new plants from root pieces (root cuttings)",
   "prop.root-cuttings.plain":
-    "For plants that sprout readily from their roots: in late fall or winter, dig and cut finger-length pieces of pencil-thick root, lay them horizontally in a tray of damp mix under a shallow layer of soil, and keep them warm. New shoots rise from the buried pieces.",
+    "For plants that sprout readily from their roots: in late fall or early winter, dig and cut finger-length pieces of pencil-thick root, lay them horizontally in a tray of damp mix under a shallow layer of soil, and keep them in a cold frame without overwatering. New shoots rise from the buried pieces.",
   "prop.suckers.name": "Dig up the shoots it sends up around itself (suckers)",
   "prop.suckers.plain":
     "Thicket-formers throw up new rooted shoots a short way from the trunk. In early spring, slice down between a sucker and the parent with a spade, lift the sucker with its own roots attached, and replant it. Free plants, and it tidies the clump.",
@@ -895,7 +905,7 @@ export const en = {
     "Strawberries and other creepers send out horizontal stems that root little plantlets along the way. Once a plantlet has its own roots, snip the runner connecting it to the parent, dig it up, and move it — or pin it into a small pot first, then cut it loose.",
   "prop.spores.name": "Sow the dust from the frond backs (spores)",
   "prop.spores.plain":
-    "Ferns make no seed — they scatter dust-fine spores from brown patches under mature fronds. Slower and fussier, but doable: lay a ripe frond on paper for a day to collect the brown dust, scatter it on the surface of damp sterile mix, cover with clear plastic, and keep it bright and moist. A green film appears first, then tiny ferns over months. Most gardeners find dividing an existing clump far easier.",
+    "Ferns make no seed — they scatter dust-fine spores from brown patches under mature fronds. Slower and fussier, but doable: lay a ripe frond on paper for a few days to collect the brown dust, scatter it on the surface of damp sterile mix, cover with clear plastic, and keep it bright and moist. A green film appears first, then tiny ferns over months. Most gardeners find dividing an existing clump far easier.",
 
   // -------------------------------------------------------------------------
   // When to do it — the timing layer behind each technique's own page
@@ -917,32 +927,32 @@ export const en = {
   //             "when the shoot snaps cleanly" are true everywhere.
   //   .mistake  the one slip that wastes the whole attempt, said plainly.
   // -------------------------------------------------------------------------
-  "prop.seed-direct.when": "Autumn for most seed; spring for what you didn't get to.",
-  "prop.seed-direct.wait": "Up with the first warm spell after its winter.",
+  "prop.seed-direct.when": "Autumn or spring.",
+  "prop.seed-direct.wait": "Comes up in spring, after its winter outdoors.",
   "prop.seed-direct.timing":
-    "Autumn is the default because it is what the plant itself does: seed ripens, falls, lies under leaves and rain all winter, and comes up when the ground warms. Sowing then asks nothing of you — no fridge, no counting weeks. Spring sowing is the fallback for seed that arrived late or was stored dry; it works, you just get a shorter first summer out of it. The season to avoid is high summer, when the top inch of soil dries out between waterings faster than a new root can follow it down.",
+    "Autumn is what the plant itself does: seed ripens, falls, lies under leaves and rain all winter, and comes up when the ground warms. Sowing then asks nothing of you — no fridge, no counting weeks. Spring works just as well, and is the usual time for seed that arrived late or was stored dry.",
   "prop.seed-direct.mistake":
-    "Burying it. The rule is about as deep as the seed is wide — a dust-fine seed barely covered, an acorn a knuckle down — and most seed that never appears was simply too deep to climb out of.",
+    "Burying it. The rule is two or three times as deep as the seed is wide — a dust-fine seed barely covered, an acorn a thumb's length down. Sown deeper, it may never come up.",
   "prop.seed-warm.when": "The week it ripens — usually mid-summer into autumn.",
   "prop.seed-warm.wait": "A few weeks, often less.",
   "prop.seed-warm.timing":
-    "This is the one technique whose timing isn't yours to choose: the plant sets it and your job is to be ready. Watch the fruit rather than the calendar — a maple's keys turning tan, a magnolia's cone splitting to show red seed — and sow within days of collecting. These seeds are alive and thin-skinned, and drying out is what kills them, so “I'll do it on the weekend” is the whole risk. If you truly can't sow at once, hold them barely damp and cool in a bag of moist sand, never dry on a windowsill.",
+    "This is the one technique whose timing isn't yours to choose: the plant sets it and your job is to be ready. Watch the fruit rather than the calendar — a white oak's acorns dropping — and sow within days of collecting. These seeds can't survive drying out, so “I'll do it on the weekend” is the whole risk. If you truly can't sow at once, hold them barely damp and cool in a loosely closed plastic bag, never dry on a windowsill.",
   "prop.seed-warm.mistake":
     "Treating them like a shop-bought packet. Fresh seed doesn't store — the ones that dry hardest are usually the ones that never come back.",
   "prop.seed-cold-moist.when": "Sow outdoors in autumn, or start the fridge in midwinter.",
-  "prop.seed-cold-moist.wait": "Four to twelve weeks of cold, then it sprouts.",
+  "prop.seed-cold-moist.wait": "One to six months of cold, depending on the plant.",
   "prop.seed-cold-moist.timing":
     "There are two routes, and the calendar question is really which one you're on. Outdoors: sow the pot in mid-autumn, stand it somewhere it will be rained and snowed on, and real winter does the counting for you. In the fridge: count backwards from when you want seedlings — ten weeks of cold before a spring sowing means the bag goes in around midwinter. Either way the seed has to stay *damp* the whole time. Dry cold does nothing at all, which is why a packet posted into the fridge in autumn is still sitting there unchanged in spring.",
   "prop.seed-cold-moist.mistake":
-    "Not looking. Some seed sprouts inside the bag before its weeks are up, and the little white root snaps off if you find it late — open it every couple of weeks from halfway on.",
+    "Not looking. Some seed sprouts inside the bag before its weeks are up, and the little white root snaps off if you find it late — open it every few days from halfway on.",
   "prop.seed-scarify.when": "Right before you sow, whenever that is.",
-  "prop.seed-scarify.wait": "Days rather than weeks, once it's in the ground.",
+  "prop.seed-scarify.wait": "Soon after sowing, once water gets in.",
   "prop.seed-scarify.timing":
     "Scarifying isn't a season, it's the last step before sowing — so the real question is when you're sowing, and this follows it. Do it the evening before: scuff or nick the coat, soak overnight, sow in the morning. What you must not do is scarify a batch in winter to sow in spring. Breaching the coat takes away the seed's raincoat; from then on it can take up water, and a damp scarified seed in a jar will either rot or sprout in the dark. The soak doubles as a check — seed that has drunk swells visibly and looks fatter than its neighbors, and the ones still small and hard want another pass on the sandpaper.",
   "prop.seed-scarify.mistake":
     "Going too deep. Stop the moment the paler inside shows: you want the coat breached, not the seed wounded.",
   "prop.seed-surface-light.when": "Late winter to spring under cover; autumn outdoors.",
-  "prop.seed-surface-light.wait": "Two to four weeks, if the surface never dries.",
+  "prop.seed-surface-light.wait": "Weeks, as long as the surface never dries.",
   "prop.seed-surface-light.timing":
     "Dust-fine seed sits on top of the soil, which makes it the most fragile thing you'll sow: the surface it's lying on can dry out in one sunny afternoon, and a seed that small has no reserve to survive that. So sow it where you can watch it — a tray indoors or in a cold frame from late winter, ready to go out when it's warm. Outdoors, autumn suits the ones that want a cold spell as well as light: scatter on a cleared patch and leave them to it. Cover the tray with clear plastic or a sheet of glass and keep it bright but out of the midday sun.",
   "prop.seed-surface-light.mistake":
@@ -950,63 +960,60 @@ export const en = {
   "prop.seed-double-dormant.when": "Sow in autumn, and expect nothing until the second spring.",
   "prop.seed-double-dormant.wait": "Eighteen months, give or take.",
   "prop.seed-double-dormant.timing":
-    "Sow the pot in autumn, stand it somewhere shaded, protected and genuinely out of the way — behind the shed, not on the patio table — and leave it for a year and a half. What happens in between is invisible: after the first winter the root comes out underground, and the leaf shoot waits for a second one before it shows. A pot that looks empty in its first spring is almost certainly working. Label it properly and water it in a drought; these are lost far more often to somebody tidying up than to anything going wrong.",
+    "Sow the pot in autumn, stand it somewhere shaded, protected and genuinely out of the way — behind the shed, not on the patio table — and leave it for a year and a half. What happens in between is invisible: through the first summer the root grows underground, and the leaf shoot waits for the second winter before it shows. A pot that looks empty in its first spring is almost certainly working. Label it properly and water it in a drought; these are lost far more often to somebody tidying up than to anything going wrong.",
   "prop.seed-double-dormant.mistake":
     "Tipping the pot out after the first blank spring. That's the year it was always going to look like nothing.",
   "prop.division.when": "Early spring or autumn — never while it's flowering.",
-  "prop.division.wait": "Back in growth within a few weeks.",
+  "prop.division.wait": "Keep it watered while it settles in.",
   "prop.division.timing":
-    "Divide when the plant can spend everything on new roots instead of on flowers: as the shoots are just breaking in early spring, or in autumn once the heat has gone but with weeks of warm soil left to root into. The old rule is a good one — spring-flowering plants get divided in autumn, autumn-flowering ones in spring — so you're never cutting up a plant in the middle of its big year. Choose a dull, damp day if you can. The roots are only exposed for a few minutes, and sun and wind are what harm them.",
-  "prop.division.mistake":
-    "Letting the pieces sit about while you make tea. Fine roots dry in minutes — have the new holes dug first, and water everything in straight away.",
-  "prop.cuttings-softwood.when": "Late spring into early summer, on this year's shoots.",
-  "prop.cuttings-softwood.wait": "Roots in three to six weeks.",
+    "Divide when the plant can spend everything on new roots instead of on flowers: as the shoots are just breaking in early spring, or in autumn once the heat has gone but with weeks of warm soil left to root into. Summer-flowering plants go in spring or autumn; spring-flowering ones are best split in summer, after they flower — so you're never cutting up a plant in the middle of its big year. Work when the soil is dry enough to dig, and in a wet autumn wait for spring.",
+  "prop.division.mistake": "Leaving the pieces out while you dig. Have the new holes ready, replant at once and water in.",
+  "prop.cuttings-softwood.when": "Spring into early summer, on this year's shoots.",
+  "prop.cuttings-softwood.wait": "Roots in two to four weeks.",
   "prop.cuttings-softwood.timing":
-    "The window is short — a few weeks while the new growth is soft — and your fingers find it far better than the calendar does. Bend a shoot tip: if it flops limply it is still too young to hold itself up in a pot; if it snaps cleanly, that is exactly the moment; if it only bends, it has gone woody and you want semi-hardwood cuttings instead. Take them early in the morning while the shoots are full of water, and get them into damp mix within the hour — a cutting that wilts on the way has already spent what it needed to make roots.",
+    "Take them while the new growth is soft and flexible from base to tip; once the base has firmed up and only the tip is still soft, you want semi-hardwood cuttings instead. Cut early in the morning while the shoots are full of water, and bag them as you go: soft shoots lose water fast and must not wilt. If you can't pot them straight away, the bag can wait in the fridge.",
   "prop.cuttings-softwood.mistake":
-    "Cutting at midday in full sun and carrying them round in a warm pocket. A bag with a damp cloth in it costs nothing and saves most of them.",
+    "Cutting at midday in full sun and carrying them round in a warm pocket. A clean plastic bag, kept cool, costs nothing.",
   "prop.cuttings-semi-hardwood.when": "Mid-summer to early autumn, as the shoots firm up.",
-  "prop.cuttings-semi-hardwood.wait": "Six to twelve weeks.",
+  "prop.cuttings-semi-hardwood.wait": "Up to the following spring in a cold frame.",
   "prop.cuttings-semi-hardwood.timing":
-    "Later in the same year's growth, once the base of a shoot has stiffened and turned woody while the tip is still green — for most shrubs that's midsummer to early autumn. Slower to root than a soft cutting and far more forgiving: this one can sit for a week without collapsing, which makes it the right choice for anyone who can't look at a pot every day. Root them in a shaded frame or a sheltered corner, leave them there over the winter, and move them on the following spring.",
+    "Later in the same year's growth, once the base of a shoot has firmed up while the tip is still soft — for most shrubs that's midsummer to early autumn. Slower to root than a soft cutting, but tougher. Bag them as you cut and pot them up within half a day. Root them in a cold frame or a sheltered corner and leave them there over winter: in a frame they may not root fully until late the following spring.",
   "prop.cuttings-semi-hardwood.mistake":
     "Leaving every leaf on. A cutting with no roots yet can't supply a full head of foliage — strip the lower leaves and cut the remaining big ones in half.",
-  "prop.cuttings-hardwood.when": "Deep winter, while the plant is bare.",
+  "prop.cuttings-hardwood.when": "Mid-autumn to late winter, while it's bare.",
   "prop.cuttings-hardwood.wait": "Rooted by spring; planted out the autumn after.",
   "prop.cuttings-hardwood.timing":
-    "After the leaves are down and before the buds swell — the depth of winter, whichever months that is where you are. The plant is asleep, so the cutting doesn't have to keep a head of leaves alive while it grows roots, and that is what makes this the least demanding cutting there is: pencil-thick pieces about a forearm long, pushed half their length into damp ground, and left alone until spring. Willows and dogwoods root so readily that they're often stuck straight into the spot where the new plant is wanted.",
+    "After the leaves are down and before the buds swell — mid-autumn to late winter, whichever months that is where you are. Just after leaf fall or just before bud burst is best. The plant is asleep, so the cutting doesn't have to keep a head of leaves alive while it grows roots, and that is what makes this the least demanding cutting there is: pencil-thick pieces about a forearm long, pushed two-thirds of their length into damp ground, and left alone until spring.",
   "prop.cuttings-hardwood.mistake":
     "Planting them upside down. A bare twig looks the same both ways, so mark the top as you cut — the buds point up the stem, and that's the end that must stay up.",
   "prop.layering.when": "Pin the branch down in spring; cut it free a year later.",
   "prop.layering.wait": "One to two years.",
   "prop.layering.timing":
     "Spring is the moment to pin: the branch is supple, the plant is about to put on growth, and it has the whole warm season to make roots at the buried point. Then you wait. The following autumn, scrape the soil back and look — a good handful of roots means you can sever it from the parent and lift it; not much means you leave it another year, which costs you nothing at all, because the parent is still feeding it the whole time. Slower than a cutting and very hard to fail at, since the new plant is never once on its own.",
-  "prop.layering.mistake":
-    "Cutting it free as soon as you see a root or two. The moment you sever it, everything it needs has to come from what's grown there.",
-  "prop.suckers.when": "Late winter to early spring, before the leaves come out.",
-  "prop.suckers.wait": "Away and growing in its first season.",
+  "prop.layering.mistake": "Cutting it free at the first root or two. Wait until a good root system has formed.",
+  "prop.suckers.when": "Spring, as growth starts.",
+  "prop.suckers.wait": "Needs careful watering through its first season.",
   "prop.suckers.timing":
-    "Take suckers while the plant is dormant, so it isn't trying to keep a shoot alive that you've just cut half the water supply from. Choose one a hand's span or more out from the trunk: close in, a shoot is often just a stem rising off a thick root with no roots of its own. Slice straight down between it and the parent with a spade, then lift the sucker with its own root ball. In mild-winter places autumn does just as well. The parent won't miss it — a thicket-former makes more every year.",
+    "Take suckers in spring, as the plant comes into growth: that's when a severed sucker settles in fastest. Scrape the soil back first and check it has fibrous roots of its own — a shoot rising straight off a thick root with none won't take. Slice down between it and the parent with a spade, lift the sucker with its roots, and cut long leafy shoots back by about half so it doesn't dry out. The parent won't miss it — a thicket-former makes more every year.",
   "prop.suckers.mistake":
-    "Pulling instead of digging. A sucker without roots of its own is a stick, and it will look perfectly fine for two weeks before it dies.",
+    "Pulling instead of digging. A sucker without fibrous roots of its own won't take.",
   "prop.runners.when": "Late summer into autumn, once the plantlet has roots.",
-  "prop.runners.wait": "Ready to move a few weeks after it roots.",
+  "prop.runners.wait": "Cut it free once it has rooted.",
   "prop.runners.timing":
     "Wait for the baby to root itself, which it does wherever it touches soil over the summer; tug it very gently and a rooted one holds on. Late summer and autumn is when most are ready, and it is also the kindest time to move them — warm soil, cooling air, and months before they're asked to do anything. The tidy version: in midsummer, pin each plantlet into a small pot of compost sunk beside the parent; come early autumn, cut the runner and lift a pot already full of roots.",
   "prop.runners.mistake":
     "Snipping the runner first and hoping. Until the plantlet has roots of its own, the parent is what's keeping it alive.",
-  "prop.root-cuttings.when": "Late autumn to midwinter, while everything is dormant.",
+  "prop.root-cuttings.when": "Mid-autumn to early winter, while it's dormant.",
   "prop.root-cuttings.wait": "Shoots up in spring.",
   "prop.root-cuttings.timing":
-    "This is the technique for the dead of winter, when there's nothing above ground to work with: lift a plant, or dig in at the edge of a clump, take finger-length pieces of root about as thick as a pencil, and lay them in a tray of damp mix in a shed or cold frame. The food stored in the root is what pushes the new shoots out, and a root holds the most of it in winter — which is exactly why the season matters here rather than being a convenience. Shoots appear in spring, by which time the piece has grown roots of its own.",
+    "This is the technique for the dormant season, when there's nothing above ground to work with: lift a plant, or dig in at the edge of a clump, take finger-length pieces of root about as thick as a pencil, and lay them in a tray of damp mix in a cold frame. The food stored in the root is what pushes the new shoots out, which is why thin roots need longer pieces. Shoots appear in spring, by which time the piece has grown roots of its own.",
   "prop.root-cuttings.mistake":
     "Losing track of which end was nearer the crown. Lay the pieces flat instead of upright and the question stops mattering.",
   "prop.spores.when": "Summer into autumn, when the frond backs turn brown.",
-  "prop.spores.wait": "Months — a green film first, small ferns the year after.",
+  "prop.spores.wait": "Months — a green film within weeks, small ferns a few months later.",
   "prop.spores.timing":
-    "Ferns make no flowers and no seed, so there is nothing to watch but the undersides of the fronds: the little patches there start green, ripen to a rich brown, and then shed. Ripe brown is the moment. Cut a frond, lay it face-down on white paper somewhere still overnight, and by morning you'll have a fine dust — those are the spores, and the paler chaff beside them is the packaging. Sow at once on damp sterile compost, cover with clear plastic, and settle in: nothing looks remotely like a fern for the first half-year.",
-  "prop.spores.mistake":
-    "Collecting a week late. Once the patches have gone dusty gray and crumble at a touch, the frond has already let them go.",
+    "Ferns make no flowers and no seed, so there is nothing to watch but the undersides of the fronds: the little patches there start green, ripen to a rich brown, and then shed. Ripe brown is the moment. Cut a frond, lay it face-down on white paper somewhere still for a few days, and you'll have a fine dust — those are the spores, and the paler chaff beside them is the packaging. Sow at once on damp sterile compost, cover with clear plastic, and settle in: nothing looks remotely like a fern for the first few months.",
+  "prop.spores.mistake": "Waiting too long. Pick the frond as the flaps over the spore patches start to lift and the spores turn dark; later, they're already shed.",
 
   "growth.quick": "Quick to settle in: expect close to this full size within about three years.",
   "growth.steady": "A steady grower: close to full size by year {year}.",
@@ -1596,7 +1603,6 @@ export const en = {
   "plant.propagationTitle": "🪴 How to grow more",
   "plant.forThisPlant": "For this plant: ",
   "plant.howToSource": "How-to source: ",
-  "plant.usfsLink": "USFS Native Plant Network →",
   "plant.savedFit.one":
     "You've saved a spot this would suit. Open it to see everything else that thrives there.",
   "plant.savedFit.other":
@@ -1863,6 +1869,8 @@ export const en = {
   "planting.timingTitle": "Knowing the moment",
   "planting.howTitle": "What you actually do",
   "planting.mistakeTitle": "Where it usually goes wrong",
+  "planting.learnTitle": "Learn more",
+  "planting.learnAll": "The full reading list",
   "planting.allTechniques": "All the ways to grow more",
   "planting.browsePlants": "Browse the plants",
   "planting.backToIndex": "← Every technique",
@@ -1881,13 +1889,15 @@ export const en = {
 
   "planting.sourcesTitle": "Where the how-to comes from",
   "planting.sourcesLede":
-    "None of this is our own invention. Every propagation note in the app is written in our own plain words from these, and each of them is free to read and worth an afternoon of anyone's time — they are the places to go when you want more than one page.",
+    "Every propagation note in the app is written in our own plain words from published sources, and each plant's page names its own. These are the ones we lean on most: all free to read, and the places to go when one page isn't enough.",
   "planting.sourcesAfter":
     "The facts are used, never the prose: a protocol saying a seed needs ten weeks of cold is a fact about the seed, and we say it our own way. The full accounting of every source in the app, and what we'd challenge first, is on the {sources} page.",
   "planting.sourcesLink": "Where our numbers come from",
   "planting.scope.us": "North America",
   "planting.scope.eu": "Europe",
   "planting.scope.both": "Both sides",
+  "planting.scope.nz": "New Zealand",
+  "planting.scope.world": "Worldwide",
   "planting.src.npn":
     "The one to open first. Growers at restoration nurseries write up exactly how they raised a species — seed treatment, weeks of chilling, what failed — and file it, species by species, in public. Thousands of protocols for North American natives.",
   "planting.src.wpsm":
@@ -1899,9 +1909,13 @@ export const en = {
   "planting.src.xerces":
     "Invertebrate conservationists, and the reason so many of these notes mention who the plant feeds. Their regional seed and habitat guides are free, and unusually honest about what doesn't establish.",
   "planting.src.tela":
-    "The French botanical network: a collaborative flora with observations, keys and cultivation notes contributed by botanists and amateurs alike. The reference behind most of the French rows here.",
+    "The French botanical network: a collaborative flora with observations, keys and cultivation notes from botanists and amateurs alike. The French rows here lean on it for names and where a plant grows wild, not for how to propagate it.",
   "planting.src.inpn":
     "France's national inventory, run by the natural history museum. Less a how-to than the authority on what is genuinely native where — the check that stops a “native” plant from being one that merely grows well.",
+  "planting.src.nzpcn":
+    "New Zealand's network of botanists and growers. Each species page has a short propagation note, and it's the source behind every Auckland plant here.",
+  "planting.src.sid":
+    "Seed records from Kew's Millennium Seed Bank and published studies: how to germinate a species, and how its seed keeps. Global, and cited by rows from France to Japan here.",
   "planting.src.rhs":
     "Clear, well-illustrated guides to each technique, from a horticultural society two centuries old. Written for a European garden and a European year.",
 

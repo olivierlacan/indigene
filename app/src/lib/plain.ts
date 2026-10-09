@@ -65,13 +65,6 @@ export const CEC_ECOREGION_MAP_URL =
  * Same rule: say "evenly moist" first; "mesic" only ever in parentheses. */
 export const MOISTURE_INFO_URL = "https://en.wikipedia.org/wiki/Mesic_habitat";
 
-/** The dependable, species-by-species propagation source we lean on: the USDA
- * Forest Service's Native Plant Network Propagation Protocol Database. It's a
- * government resource written by the people who grow these plants for
- * restoration, so "how to make more of it" stays a checkable fact, not folklore.
- * Linked wherever propagation tips are shown, alongside each row's own `basis`. */
-export const PROPAGATION_SOURCE_URL = "https://npn.rngr.net/propagation/protocols";
-
 /** The common-parlance word for a moisture band. Use this — never the raw
  * band value — anywhere a person reads it; "mesic" means nothing at a garden
  * center. */

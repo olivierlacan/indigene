@@ -43,6 +43,7 @@ import {
   plantsUsing,
   techniqueBySlug,
   techniqueHref,
+  techniqueRefs,
   techniquesInSeason,
 } from "../lib/planting";
 import type { PlantingSource, Season, Technique, TechniqueFrom } from "../lib/planting";
@@ -151,6 +152,19 @@ function thisSeasonCard(): HTMLElement {
           ]);
         }))
       : el("p", {}, t("planting.nowEmpty")),
+  ]);
+}
+
+/** Pages worth reading next for this technique — only ones checked to cover
+ *  it (`techniqueRefs`) — and the reading list every note is written from. */
+function learnMore(tech: Technique): HTMLElement {
+  return el("section", { class: "card" }, [
+    el("h3", {}, t("planting.learnTitle")),
+    el("ul", { class: "grow-sources" }, [
+      ...techniqueRefs(tech.method).map((ref) =>
+        el("li", {}, el("a", { href: ref.url, target: "_blank", rel: "noopener" }, `${ref.name} ↗`))),
+      el("li", {}, el("a", { href: INDEX_HREF }, t("planting.learnAll"))),
+    ]),
   ]);
 }
 
@@ -304,6 +318,7 @@ async function renderTechnique(main: HTMLElement, tech: Technique): Promise<void
           el("h3", {}, t("planting.mistakeTitle")),
           el("p", { class: "note warn", style: "margin-bottom:0" }, g.mistake),
         ]),
+        learnMore(tech),
       ]),
       el("div", { class: "planting-col" }, [
         await usedBySection(tech),

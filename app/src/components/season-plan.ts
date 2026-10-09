@@ -18,7 +18,16 @@ import { el, clear } from "../ui";
 import type { Plant, Planting, PropagationMethod, SavedSpot } from "../types";
 import type { RegionDef } from "../lib/plants";
 import { compareTasks, growPlan, type GrowPlan, type GrowTask, type GrowWhy } from "../lib/grow-now";
-import { currentSeason, seasonOfMonth, techniqueFor, techniqueHref, type Season } from "../lib/planting";
+import {
+  GUIDE_REFS,
+  currentSeason,
+  seasonOfMonth,
+  techniqueFor,
+  techniqueHref,
+  type GuideRef,
+  type Season,
+} from "../lib/planting";
+import { societiesSection } from "./societies-section";
 import { hemisphereOf } from "../lib/hemisphere";
 import { plantThumb } from "./plant-thumb";
 import { commonName } from "../lib/names";
@@ -56,7 +65,9 @@ export function planFor(spot: SavedSpot, plantings: Planting[], plantOf: PlantOf
 }
 
 function actionKey(m: PropagationMethod, plant: Plant): Parameters<typeof t>[0] {
-  if (m.startsWith("seed-")) return plant.form === "tree" ? "grow.do.seedTree" : "grow.do.seed";
+  // A tree's published age is when it *can* first bear; many crop only some
+  // years (white oak every 4 to 10), so the woody line says so.
+  if (m.startsWith("seed-")) return ["tree", "shrub", "vine"].includes(plant.form) ? "grow.do.seedWoody" : "grow.do.seed";
   return `grow.do.${m as Exclude<PropagationMethod, `seed-${string}`>}` as const;
 }
 
@@ -81,6 +92,7 @@ function growRow(task: GrowTask, plant: Plant, opts: { regionId?: string; first?
           " · ",
           el("span", { class: task.window === "month" ? "grow-ripe" : "" }, t(`grow.window.${task.window}` as const)),
         ]),
+        task.leaveSome ? el("div", { class: "grow-leave" }, `🐦 ${t("grow.leaveSome")}`) : null,
         el("span", { class: "badge neutral" }, whyLabel(task.why)),
         opts.spot
           ? el("div", { class: "coords" }, el("a", { href: seasonHref(opts.spot.id) }, t("grow.atSpot", { spot: opts.spot.label })))
@@ -105,6 +117,10 @@ function leftOut(plan: GrowPlan): HTMLElement[] {
   }
   if (plan.undated.length) {
     out.push(el("p", { class: "hint" }, tn("grow.undated", plan.undated.length, { count: fmtNumber(plan.undated.length) })));
+  }
+  if (plan.seedOnlyWoody.length) {
+    const n = plan.seedOnlyWoody.length;
+    out.push(el("p", { class: "hint" }, tn("grow.woody", n, { count: fmtNumber(n) })));
   }
   return out;
 }
@@ -152,7 +168,6 @@ export function renderSeasonPlan(
         : el("p", { class: "note", style: "margin:0;padding:0" }, t("grow.none")),
       plan.now.length ? growList(plan.now, plantOf, regionId) : null,
       ...leftOut(plan),
-      el("p", { class: "hint" }, t("grow.agesNote")),
     ]),
     plan.next.length
       ? el("section", { class: "card" }, [
@@ -161,8 +176,35 @@ export function renderSeasonPlan(
         ])
       : "",
     addCard(spot, plantings, region, roster, season),
+    sourcesCard(),
+    // Who to ask about the hard ones: the people who know this region's flora.
+    ...(regionId ? societiesSection(regionId) : []),
     el("p", { class: "more-link" }, el("a", { href: "#/planting" }, t("planting.title"))),
   );
+}
+
+/**
+ * Where the plan's rules come from: each one a claim and the page that makes
+ * it, checked (`GUIDE_REFS`). The ranking is said to be ours, because it is.
+ */
+function sourcesCard(): HTMLElement {
+  const cited = (key: Parameters<typeof t>[0], ref: GuideRef): HTMLElement =>
+    el("li", {}, [
+      t(key), " ",
+      el("a", { href: ref.url, target: "_blank", rel: "noopener", class: "src-link" }, ref.name),
+    ]);
+  return el("section", { class: "card" }, [
+    el("h3", { style: "margin:0 0 0.4rem" }, t("grow.sourcesTitle")),
+    el("ul", { class: "grow-sources" }, [
+      cited("grow.src.ripe", GUIDE_REFS.seedCollect),
+      cited("grow.src.divide", GUIDE_REFS.divide),
+      cited("grow.src.woody", GUIDE_REFS.woodySeed),
+      cited("grow.src.birds", GUIDE_REFS.birds),
+      el("li", {}, t("grow.src.plant")),
+      el("li", {}, t("grow.src.rank")),
+    ]),
+    el("p", { class: "hint", style: "margin:0.4rem 0 0" }, t("grow.agesNote")),
+  ]);
 }
 
 /**

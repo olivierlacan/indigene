@@ -9,11 +9,14 @@
 // Three rules, in the order they're applied.
 //
 // **Old enough, at least.** A plant gives seed once it flowers and gives
-// divisions once the clump has filled out. We have no "years to first flower"
-// figure per plant, so `READY_YEARS` holds a conservative rule of thumb by
+// divisions once the clump has filled out. `READY_YEARS` holds those ages by
 // growth form, read against the *floor* of its age from `lib/garden.ts`. A
 // plant with no planting date is left out rather than assumed old: the log
-// never claims growing time it can't prove.
+// never claims growing time it can't prove. Trees, shrubs and vines are never
+// prompted for seed: the USDA Woody Plant Seed Manual's tables put their first
+// seed anywhere from 3 years (silky dogwood) to 40 (shagbark hickory), and
+// 20 for white oak, so no age by form would be honest. See `GUIDE_REFS` in
+// `lib/planting.ts` for every source this file leans on.
 //
 // **In its window.** Seed is ripe a little after the flowers finish. For a
 // wildflower, grass or other soft-stemmed plant that's close enough to read
@@ -31,6 +34,7 @@
 // one at the same value, because it's the one you can miss.
 import type { Plant, PlantForm, Planting, PropagationMethod } from "../types";
 import { stillToCome, yearsInGround } from "./garden";
+import { SEED_BEARING } from "../data/seed-bearing";
 import { seasonOfMonth, techniqueFor, type Season } from "./planting";
 import type { Hemisphere } from "./hemisphere";
 import { relianceOf, wildlifeForPlant } from "./wildlife";
@@ -48,33 +52,49 @@ function groupOf(m: PropagationMethod): ReadyGroup {
 
 /**
  * Years in the ground before each family is worth trying, by growth form.
- * Rule of thumb, deliberately on the late side: an annual seeds in its first
- * summer; a perennial usually flowers and bulks up by its second or third; a
- * shrub by its third; a tree is the slowest and the least predictable (a
- * serviceberry fruits young, an oak can take decades), so its seed waits five
- * years and the page says "if it set any". Cuttings only need spare shoots,
- * which an established plant has from its second season. `undefined` means
- * the pairing doesn't happen (nobody divides an annual).
+ *
+ *  - Seed: an annual seeds in its first summer; a soft-stemmed perennial or
+ *    grass is given two, and the page says a plant that hasn't flowered has no
+ *    seed yet. Woody forms have no entry (see the top of this file).
+ *  - Clumps: two years, the low end of the RHS's "most perennials benefit from
+ *    division every two to three years".
+ *  - Cuttings, runners: an established plant's spare shoots, from its second
+ *    season. Our rule of thumb, and the page calls it one.
+ *
+ * `undefined` means the pairing isn't offered.
  */
 const READY_YEARS: Record<ReadyGroup, Partial<Record<PlantForm, number>>> = {
-  seed: { annual: 0, perennial: 2, grass: 2, groundcover: 2, vine: 2, shrub: 3, tree: 5 },
+  seed: { annual: 0, perennial: 2, grass: 2, groundcover: 2 },
   cutting: { perennial: 1, grass: 1, groundcover: 1, vine: 1, shrub: 1, tree: 1, fern: 1 },
   clump: { perennial: 2, grass: 2, groundcover: 2, fern: 2, vine: 2, shrub: 3, tree: 3 },
   runners: { perennial: 1, groundcover: 1, grass: 1, vine: 1, fern: 1, shrub: 2 },
   spores: { fern: 2 },
 };
 
-export function readyAt(form: PlantForm, m: PropagationMethod): number | undefined {
-  return READY_YEARS[groupOf(m)][form];
+/** Trees, shrubs and vines: their seed waits on a per-species figure. */
+const WOODY: ReadonlySet<PlantForm> = new Set(["tree", "shrub", "vine"]);
+
+/**
+ * Years in the ground before this method is offered for this plant. Woody seed
+ * comes only from `SEED_BEARING` — the Woody Plant Seed Manual's minimum
+ * seed-bearing age for that species — and is never offered without one.
+ */
+export function readyAt(plant: Pick<Plant, "form" | "latin">, m: PropagationMethod): number | undefined {
+  const group = groupOf(m);
+  if (group === "seed" && WOODY.has(plant.form)) return SEED_BEARING[plant.latin]?.years;
+  return READY_YEARS[group][plant.form];
 }
 
 /** Soft-stemmed plants, whose seed ripens soon after the flowers fade. */
 const HERBACEOUS: ReadonlySet<PlantForm> = new Set(["annual", "perennial", "grass", "groundcover", "fern"]);
 
-/** Months (1–12) a soft-stemmed plant's seed is ripe: the last month of
+/** Months (1–12) a plant's seed is ripe. A tree's or shrub's are the Woody
+ *  Plant Seed Manual's printed ripening months. A soft-stemmed plant's are the last month of
  *  flowering and the two after it. Null when its ripening can't be read off
  *  the bloom — a woody plant, or no bloom on record. */
-export function ripeMonths(plant: Pick<Plant, "form" | "bloom">): number[] | null {
+export function ripeMonths(plant: Pick<Plant, "form" | "bloom" | "latin">): number[] | null {
+  // A tree's or shrub's own printed ripening months, where the manual has them.
+  if (WOODY.has(plant.form)) return SEED_BEARING[plant.latin]?.ripens ?? null;
   if (!plant.bloom || !HERBACEOUS.has(plant.form)) return null;
   const end = plant.bloom.endMonth;
   return [0, 1, 2].map((k) => ((end - 1 + k) % 12) + 1);
@@ -126,6 +146,15 @@ export function growValue(plant: Plant, regionId: string | null): { score: numbe
   return { score, why };
 }
 
+/** Does something here eat this plant's seed or fruit? Then a seed task says
+ *  to leave some standing: Audubon's "the seed heads of coneflowers,
+ *  black-eyed Susans, and other native wildflowers provide a helpful food
+ *  cache for birds". Collecting is a share, not a harvest. */
+function birdFood(plant: Plant, regionId: string | null): boolean {
+  if (!regionId) return false;
+  return wildlifeForPlant(regionId, plant.id).some(({ link }) => link.support === "seeds" || link.support === "berries");
+}
+
 /** One thing to do with one plant. */
 export interface GrowTask {
   plantId: string;
@@ -137,6 +166,8 @@ export interface GrowTask {
   years: number;
   score: number;
   why: GrowWhy;
+  /** Seed that birds eat here: take some, leave the rest standing. */
+  leaveSome: boolean;
 }
 
 export interface GrowPlan {
@@ -148,6 +179,8 @@ export interface GrowPlan {
   young: string[];
   /** Kinds with no planting date, left out rather than guessed. */
   undated: string[];
+  /** Woody kinds that only grow from seed, which we don't guess the age of. */
+  seedOnlyWoody: string[];
 }
 
 /** The oldest planting of each kind — a second batch doesn't make the first
@@ -193,7 +226,7 @@ function taskAt(
   const season = seasonOfMonth(month - 1, hemisphere);
   let fallback: Pick<GrowTask, "method" | "window"> | null = null;
   for (const method of plant.propagation.methods) {
-    const need = readyAt(plant.form, method);
+    const need = readyAt(plant, method);
     if (need == null || years < need) continue;
     if (method.startsWith("seed-")) {
       const ripe = ripeMonths(plant);
@@ -225,7 +258,7 @@ export function growPlan(
   hemisphere: Hemisphere,
   now: number = Date.now()
 ): GrowPlan {
-  const plan: GrowPlan = { now: [], next: [], young: [], undated: [] };
+  const plan: GrowPlan = { now: [], next: [], young: [], undated: [], seedOnlyWoody: [] };
   const month = new Date(now).getMonth() + 1;
   // Three months on lands in the next season, whatever this one is.
   const later = ((month + 2) % 12) + 1;
@@ -237,8 +270,13 @@ export function growPlan(
       continue;
     }
     const years = Math.floor(age);
+    // Nothing offered at any age: a woody plant whose only way is seed.
+    if (plant.propagation.methods.every((m) => readyAt(plant, m) == null)) {
+      plan.seedOnlyWoody.push(plantId);
+      continue;
+    }
     const ready = plant.propagation.methods.some((m) => {
-      const need = readyAt(plant.form, m);
+      const need = readyAt(plant, m);
       return need != null && age >= need;
     });
     if (!ready) {
@@ -246,15 +284,20 @@ export function growPlan(
       continue;
     }
     const { score, why } = growValue(plant, regionId);
+    const fedOn = birdFood(plant, regionId);
+    const task = (t: Pick<GrowTask, "method" | "window">): GrowTask => ({
+      plantId, years, score, why, ...t,
+      leaveSome: fedOn && t.method.startsWith("seed-"),
+    });
     const current = taskAt(plant, age, month, hemisphere);
     if (current) {
-      plan.now.push({ plantId, years, score, why, ...current });
+      plan.now.push(task(current));
       continue;
     }
     // A plant that will be old enough by then counts too: it's the same
     // planting, three months on.
     const upcoming = taskAt(plant, age + 0.25, later, hemisphere);
-    if (upcoming) plan.next.push({ plantId, years, score, why, ...upcoming });
+    if (upcoming) plan.next.push(task(upcoming));
   }
   plan.now.sort(compareTasks);
   plan.next.sort(compareTasks);

@@ -79,8 +79,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 399 Lepidoptera recorded on native oaks in Mediterranean Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-warm", "seed-direct"],
-      note: "Gather acorns as they drop in autumn and float them in water — throw out any that bob up, and sow the sinkers straight away. They sprout the same autumn without chilling and must never be allowed to dry out. Because of the deep taproot, start it in a tall pot or sow it where it will live.",
-      basis: "Conservatoire botanique national méditerranéen; European propagation practice.",
+      note: "Gather acorns as they drop in autumn and float them in water — throw out any that bob up, and sow the sinkers straight away, in a pot or straight into the ground. They die if they dry out.",
+      basis: "USDA Woody Plant Seed Manual; Seed Information Database; RHS.",
     },
   },
   {
@@ -114,8 +114,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 399 Lepidoptera recorded on native oaks in Mediterranean Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-warm", "seed-direct"],
-      note: "Same as the holm oak: float the autumn acorns, discard the floaters, sow the sinkers fresh in a deep pot or straight into the ground, and never let them dry out.",
-      basis: "Conservatoire botanique national méditerranéen; European propagation practice.",
+      note: "Same as the holm oak: float the autumn acorns, discard the floaters, sow the sinkers fresh in a pot or straight into the ground, and never let them dry out.",
+      basis: "USDA Woody Plant Seed Manual; Seed Information Database.",
     },
   },
   {
@@ -366,9 +366,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 370 Lepidoptera recorded on native willows in Mediterranean Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["cuttings-hardwood", "seed-direct"],
-      note: "The easiest woody plant here to make more of: cut a leafless finger-thick stem in winter, push it a hand's depth into wet ground the right way up, and it roots. Seed is alive for about a week after it ripens, so nobody uses it.",
-      basis: "Conservatoire botanique national méditerranéen; European riparian restoration practice.",
+      methods: ["cuttings-hardwood"],
+      note: "The easiest woody plant here to make more of: cut a leafless stem in winter and push two-thirds of it into wet ground, the right way up, and it roots. Even a pole three metres long will take.",
+      basis: "RHS.",
     },
   },
   {
@@ -754,8 +754,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 312 Lepidoptera recorded on native Prunus in Mediterranean Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["suckers", "seed-cold-moist"],
-      note: "Lift a rooted sucker in winter — the plant produces them constantly and they move without complaint. From seed, clean the flesh off the sloes and give the stones a warm spell then a long cold damp one; two winters outdoors is the simplest way.",
-      basis: "Conservatoire botanique national méditerranéen; European hedgerow practice.",
+      note: "Lift a rooted sucker in spring — the plant produces plenty. From seed, clean the flesh off the sloes and sow the stones outdoors in autumn; they need about six months of cold before they come up.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -1818,8 +1818,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Desiccation tolerance: European fern literature. Host count: 2 Lepidoptera recorded on native spleenworts in Mediterranean Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0). Ferns genuinely feed very few caterpillars.",
     propagation: {
       methods: ["spores", "division"],
-      note: "Scrape the ripe brown scales and spores off the underside of a frond onto paper, scatter the dust on damp limestone grit under a lid and keep it cool and shaded — months, not weeks. An established clump can also be teased apart in autumn.",
-      basis: "Conservatoire botanique national méditerranéen; European fern propagation practice.",
+      note: "Leave a piece of ripe frond in a paper envelope for a day, scatter the spores that fall on damp sterile compost under a lid and keep it cool and lightly shaded — months, not weeks. An established clump can also be divided in spring.",
+      basis: "RHS.",
     },
   },
   {
@@ -1853,8 +1853,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 2 Lepidoptera recorded on native spleenworts in Mediterranean Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0). Ferns genuinely feed very few caterpillars.",
     propagation: {
       methods: ["spores", "division"],
-      note: "Sow the spore dust on damp sterile grit under a lid, cool and shaded, and wait — a green film first, recognizable ferns months later. Divisions from an old clump work in autumn if you keep plenty of root.",
-      basis: "Conservatoire botanique national méditerranéen; European fern propagation practice.",
+      note: "Sow the spore dust on damp sterile compost under a lid, cool and lightly shaded, and wait — a green film first, recognizable ferns months later. An old clump can also be divided in spring.",
+      basis: "RHS.",
     },
   },
   {
@@ -1888,8 +1888,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range and habitat (calcareous seeps and tufa): Tela Botanica (BDTFX), INPN. Host count: 2 Lepidoptera recorded on Adiantum in Mediterranean Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0). Ferns genuinely feed very few caterpillars.",
     propagation: {
       methods: ["division", "spores"],
-      note: "Divide the creeping rhizome in spring, keeping it wet every moment it is out of the ground. Spores germinate readily on damp limestone grit under a lid, which is more than can be said for most ferns.",
-      basis: "Conservatoire botanique national méditerranéen; European fern propagation practice.",
+      note: "Divide the creeping rhizome in spring. Spores sown on damp sterile compost under a lid, kept cool and lightly shaded, also work.",
+      basis: "RHS.",
     },
   },
 ];

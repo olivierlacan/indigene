@@ -115,7 +115,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "En juillet, une pente de rhododendron ferrugineux est l'un des grands spectacles à bourdons d'Europe — les fleurs sont façonnées pour les bourdons à longue langue et ils les butinent par centaines. Ses fourrés bas et denses sont l'abri où tétras lyre et lièvres variables passent l'hiver, et elle tient le sol sur des pentes trop raides pour tout le reste.",
     propagationNote:
-      "Très lent par les deux voies. Prélevez des pousses en voie d'aoûtement en fin d'été et faites-les raciner sous abri dans un mélange de sable et de tourbe sans calcaire, en comptant attendre près d'un an. Les branches basses couchées au sol s'enracinent d'elles-mêmes et se détachent ensuite.",
+      "Prélevez des boutures semi-aoûtées en fin d'été. Ou bien, au printemps, fixez une branche basse dans la terre et détachez-la une fois enracinée, en général dans l'année.",
   },
   "Alnus alnobetula": {
     nativeNote:
@@ -139,7 +139,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Une plante à chenilles bien utilisée pour un conifère, et ses galbules bleu-noir — trois ans à mûrir — sont une nourriture d'hiver pour les merles à plastron, les grives draines, les grives litornes et les tétras lyre. Son intérieur piquant est l'un des rares endroits où un petit oiseau puisse nicher en sécurité sur une pente de montagne découverte, et un genévrier abrite souvent un semis d'arbre assez longtemps pour qu'il s'en sorte.",
     propagationNote:
-      "La graine de genévrier est l'une des plus lentes qui soient — une période chaude puis une longue période froide, et souvent deux ou trois hivers avant que quoi que ce soit n'apparaisse — semez-la donc en pot dehors et oubliez-la. Les boutures de pousses en voie d'aoûtement prises à l'automne sont plus fiables, quoique lentes elles aussi.",
+      "La graine de genévrier est en dormance profonde : il lui faut une période chaude, puis une longue période froide ; semez-la donc en pot dehors et attendez-vous à une levée lente. L'autre voie : des boutures semi-aoûtées prises au début de l'automne.",
     supportNotes: {
       "winter-thrushes":
         "Les galbules bleu-noir du genévrier — trois ans à mûrir — nourrissent merles à plastron, grives draines et grives litornes, et ses épines en font l'un des rares sites de nidification sûrs d'une pente découverte.",
@@ -171,7 +171,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Des fleurs jaune vif à bouquet d'étamines libres dans lesquelles les abeilles se roulent, s'ouvrant en relais pendant des semaines. C'est aussi la plante nourricière de plusieurs azurés de la montagne et de la thécla de la ronce — l'une de ces plantes dont l'importance est entièrement invisible jusqu'au moment où l'on sait quels papillons disparaissent sans elle.",
     propagationNote:
-      "Les extrémités de pousses tendres non fleuries prélevées au début de l'été s'enracinent vite dans un terreau graveleux. La graine récoltée dans les capsules sèches se sème fraîche à l'automne dans un mélange graveleux laissé dehors pour l'hiver.",
+      "Prélevez des extrémités de pousses tendres à la fin du printemps ou au début de l'été et faites-les raciner. Ou semez la graine à l'automne.",
     supportNotes: {
       "common-blue":
         "L'hélianthème est l'une des plantes sur lesquelles les azurés de montagne et la thécla de la ronce élèvent leurs chenilles.",
@@ -189,7 +189,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Des couronnes de fleurs jaunes étoilées sur une hampe d'un mètre cinquante, butinées par les bourdons à une altitude où les grandes fleurs sont rares, et une plante si longévive qu'un seul pied survit à la plupart des jardiniers. Sa liste de chenilles est courte mais comprend un papillon de nuit qui se nourrit à l'intérieur des capsules et nulle part ailleurs.",
     propagationNote:
-      "Semez la graine fine à la surface d'un terreau graveleux humide à l'automne et laissez le pot dehors tout l'hiver — il lui faut une période franchement froide et humide et de la lumière pour germer, et elle prendra son temps. Puis soyez patient : plusieurs années pour un pied de quelque taille, et une décennie pour une fleur.",
+      "Divisez une touffe installée au printemps.",
   },
   "Trollius europaeus": {
     supportNotes: {
@@ -203,7 +203,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "La fleur ne s'ouvre jamais — elle reste un globe jaune fermé — et c'est tout l'intérêt : un groupe de petites mouches y passe toute sa vie adulte, s'y accouple et y pond, et la pollinise en échange tandis que leurs larves mangent une partie des graines. Qu'une plante et un insecte dépendent complètement l'un de l'autre est le genre de chose dont une prairie humide de montagne est pleine.",
     propagationNote:
-      "Semez la graine fraîche à l'automne en pot laissé dehors — il lui faut un vrai hiver, et une graine conservée germe mal. Les touffes installées se divisent au début du printemps, mais elles boudent un an après.",
+      "Divisez une touffe au printemps.",
   },
   "Dryas octopetala": {
     supportNotes: {
@@ -217,7 +217,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Des fleurs blanches à huit pétales qui suivent le soleil et font office de petits réflecteurs paraboliques, si bien que mouches et abeilles alpines s'y installent autant pour la chaleur que pour le pollen — une élégante réponse au froid des sommets. Puis des plumets de graines argentés et vrillés, et un tapis persistant qui épingle un éboulis mouvant. Chose rare chez les rosacées, elle fixe elle-même l'azote, comme l'aulne.",
     propagationNote:
-      "Les pousses en voie d'aoûtement prises en fin d'été s'enracinent sous abri dans un mélange graveleux et calcaire. La graine se sème fraîche en surface à l'automne dans un pot graveleux laissé dehors — il lui faut de la lumière et un hiver rude.",
+      "Prélevez des extrémités de pousses tendres et faites-les raciner sous abri. La graine marche aussi : en essai, elle a bien germé sans aucune période de froid.",
   },
   "Thymus serpyllum": {
     nativeNote:
@@ -227,7 +227,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Un tapis rose qui bourdonne. C'est l'une des meilleures plantes à nectar en altitude et une solide plante à chenilles, mais son lien le plus extraordinaire est avec l'azuré du serpolet : la chenille se nourrit de fleurs de thym quelques semaines, puis tombe au sol, est emportée dans une fourmilière de fourmis rouges parce qu'elle sent et sonne comme une larve de fourmi, et passe l'hiver à manger le couvain de ses hôtes. Pas de serpolet, et pas de fourmis, veut dire pas d'azuré du serpolet.",
     propagationNote:
-      "Le plus facile de tous : arrachez un morceau enraciné au bord d'un tapis au printemps et plantez-le. Les extrémités de pousses tendres s'enracinent en quinze jours dans un terreau graveleux, et toute tige couchée au sol s'est déjà enracinée.",
+      "Le plus facile : arrachez au printemps un morceau enraciné au bord d'un tapis et plantez-le. Les extrémités de pousses s'enracinent aussi en boutures, tendres ou semi-aoûtées en été.",
     supportNotes: {
       "large-blue":
         "La chenille de l'azuré du serpolet mange des fleurs de thym quelques semaines, puis doit être adoptée par une colonie de fourmis rouges pour survivre à l'hiver — le papillon a donc besoin du serpolet *et* de la bonne fourmi, et il a disparu partout où l'un des deux a disparu.",
@@ -243,7 +243,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Le groupe de plantes le plus utilisé ici après les arbres. L'extraordinaire cortège de papillons bruns des Alpes — les moirés, les agrestes, les demi-deuils, les hespéries de montagne — ne mange rien d'autre que des graminées comme celle-ci à l'état de chenille, et hiverne au fond des touffes. Sa graine nourrit fringilles et bruants, et ses racines tiennent la terre maigre de montagne contre la fonte.",
     propagationNote:
-      "Égrenez les épis mûrs en fin d'été et semez-les directement sur une terre ratissée — aucun froid nécessaire, et elle lève sans peine. Les touffes installées se déterrent aussi et se séparent au printemps.",
+      "Semez la graine mûre directement sur une terre ratissée — aucun froid nécessaire. Les touffes se déterrent et se divisent à la reprise de la végétation, en fin d'hiver ou au début du printemps.",
     supportNotes: {
       "grass-skippers":
         "Le cortège de papillons bruns des Alpes — moirés, agrestes, demi-deuils — ne mange rien d'autre que des graminées comme celle-ci, et hiverne à l'intérieur des touffes.",
@@ -311,7 +311,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "La grande plante à nectar de fin d'été de la montagne : quand les prés ont été fauchés et que les fleurs ont disparu, une pente de callune en août est violette et vrombit de bourdons, d'abeilles domestiques et de papillons. Elle porte aussi une longue liste de chenilles, et son tapis dense abrite lézards, poussins de tétras et d'innombrables insectes tout l'hiver.",
     propagationNote:
-      "Prélevez des extrémités de pousses en voie d'aoûtement en fin d'été et faites-les raciner sous abri dans un mélange sableux sans calcaire. Plus simple encore : butez du terreau acide sur la base d'un vieux pied au printemps ; les tiges enterrées s'enracinent et se détachent en nouveaux plants un an plus tard.",
+      "Prélevez en été des extrémités de pousses tendres et faites-les raciner sous abri dans un mélange sableux sans calcaire. Ou bien, en été, fixez une tige basse dans un sol acide et détachez-la une fois enracinée.",
     supportNotes: {
       "bumble-bees":
         "Quand les prés ont été fauchés et que les fleurs ont disparu, une pente de callune en août est la dernière grande source de nectar de l'année de montagne.",
@@ -372,7 +372,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "L'une des toutes premières plantes à chenilles de montagne, et un bon tiers de cette valeur se voit en un seul printemps, quand les hyponomeutes éclosent et que toutes les mésanges et fauvettes de la vallée fouillent l'arbre. Puis des grappes de cerises noires en août pour les grives, les fauvettes à tête noire et les martres, et une floraison lourde et parfumée en mai pour les bourdons et les syrphes.",
     propagationNote:
-      "Semez les noyaux dehors dès la chute des fruits, en terrine protégée des rongeurs : il leur faut l'hiver entier au froid pour lever au printemps. Les drageons prélevés avec leurs racines en fin d'hiver reprennent aussi et vont plus vite.",
+      "Débarrassez les noyaux de leur chair et semez-les dehors à l'automne : il leur faut un long hiver froid et humide avant de germer. Les extrémités de pousses tendres prélevées au début de l'été peuvent aussi s'enraciner, sur une douce chaleur de fond.",
   },
   "Rubus idaeus": {
     supportNotes: {
@@ -392,7 +392,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "L'une des plus grosses plantes à chenilles de montagne et l'une des meilleures plantes à nectar de tout l'été — un massif de framboisiers en juin a des bourdons dessus dès le lever du jour. Puis des fruits en août pour les grives, les fauvettes, les martres et les ours là où il y en a, et un fourré qui est un couvert de nidification sûr sur un versant autrement ouvert.",
     propagationNote:
-      "Déterrez un drageon avec ses racines en fin d'hiver et replantez-le aussitôt : c'est immédiat et c'est ainsi que la plante se propage seule. Rien d'autre à tenter.",
+      "C'est facile : pendant le repos de la plante, déterrez un drageon sain et replantez-le.",
   },
   "Rosa pendulina": {
     supportNotes: {
@@ -410,7 +410,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Une fleur simple et ouverte, ce qu'une rose doit être pour que les abeilles atteignent le pollen — une rose de jardin double ne leur donne rien. Le genre rosier est l'un des plus riches en chenilles ici, et les longs cynorhodons rouges tiennent sur l'arbuste jusqu'en hiver pour les grives, les litornes et les fringilles, quand la neige a tout couvert au ras du sol.",
     propagationNote:
-      "Le drageon est le plus simple : détachez-en un enraciné en fin d'hiver. Par semis, ouvrez les cynorhodons mûrs, nettoyez les akènes et semez-les dehors à l'automne — il leur faut souvent deux hivers pour lever.",
+      "Le plus simple : déterrez un drageon enraciné au printemps. Les boutures de bois sec prises à l'automne s'enracinent aussi. Par semis, nettoyez les cynorhodons et semez dehors ; la levée demande souvent deux saisons.",
   },
   "Daphne mezereum": {
     supportNotes: {
@@ -428,7 +428,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Il fleurit en février, ce qui dans un jardin de montagne veut dire qu'il est à peu près le seul à offrir du nectar à une reine de bourdon ou à un citron précoce, le premier après-midi tiède de l'année. Les baies de juillet vont aux fauvettes à tête noire et aux grives, que ne gêne pas ce qui nous empoisonnerait.",
     propagationNote:
-      "Semez les baies nettoyées dès la récolte, dehors, et attendez : la levée demande souvent deux hivers. Portez des gants. Ne tentez pas de le transplanter une fois installé — il n'y survit pas.",
+      "Avec des gants, semez la graine nettoyée dès sa maturité, en pot sous châssis froid ; la levée peut être lente. Les boutures tendres du début de l'été, puis semi-aoûtées plus tard dans l'été, s'enracinent aussi.",
   },
   "Erica carnea": {
     supportNotes: {
@@ -446,7 +446,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Elle fleurit de janvier à avril, souvent en perçant la neige, et c'est tout son intérêt : au premier jour doux de l'année montagnarde, les reines de bourdons et les abeilles domestiques sont sur la bruyère des neiges parce qu'il n'y a rien d'autre. Elle nourrit aussi bon nombre de chenilles pour sa taille, et le tapis est un couvert d'hiver au ras du sol.",
     propagationNote:
-      "Le marcottage se fait tout seul : buttez un peu de terre sableuse sur les tiges basses au printemps, et elles s'enracinent d'ici l'automne — détachez alors les éclats. Les boutures de pousses semi-aoûtées prises en été marchent aussi, à l'étouffée.",
+      "Prélevez des boutures semi-aoûtées au milieu ou en fin d'été et faites-les raciner sous abri. Ou, au printemps, buttez de la terre sur la base du pied : les tiges enterrées s'enracinent et se détachent en nouveaux plants.",
   },
   "Colchicum autumnale": {
     supportNotes: {
@@ -460,7 +460,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Il fleurit en septembre et octobre, quand la prairie de montagne a fini de fleurir et que les derniers bourdons et syrphes volent encore sans rien trouver. Ce calendrier est tout le cadeau : deux ou trois semaines de nectar ouvert en fin de saison, sur un sol qui a déjà l'air d'en avoir terminé pour l'année.",
     propagationNote:
-      "Divisez les bulbes en été, pendant la dormance, et replantez-les aussitôt à la profondeur d'une main — ils se multiplient vite d'eux-mêmes. Portez des gants : le bulbe est aussi toxique que le reste.",
+      "Déterrez et séparez les bulbes en été, pendant la dormance, avec des gants. La graine peut aussi se semer en pot dehors dès sa maturité.",
   },
   "Cardamine pratensis": {
     supportNotes: {
@@ -476,7 +476,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "C'est la plante de l'aurore : le papillon aux bouts d'ailes orange vif pond un œuf orange unique sur une tige florale, et sa chenille mange les siliques en formation et rien d'autre — ce pour quoi faucher une prairie humide en juin efface la génération de l'année. Elle nourrit aussi la piéride du navet, et son nectar précoce va aux reines de bourdons et aux syrphes.",
     propagationNote:
-      "Le plus sûr est de coucher une feuille mûre sur de la terre humide : elle s'enracine à la base des folioles et fait un nouveau pied. Sinon, semez frais en fin de printemps sans laisser sécher la graine.",
+      "Divisez une touffe, ou semez la graine : en essai, elle a bien germé sans traitement particulier.",
   },
   "Sesleria caerulea": {
     supportNotes: {
@@ -490,7 +490,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Elle fleurit en avril, ce qui pour une graminée de montagne est remarquablement tôt, et les touffes restent vertes tout l'hiver — un couvert au ras du sol sur des terres maigres et pierreuses qui n'en ont presque aucun. Les hespéries et les moirés de montagne élèvent leurs chenilles sur des graminées comme celle-ci, et la graine nourrit fringilles et bruants.",
     propagationNote:
-      "Divisez une touffe établie au début du printemps et replantez les éclats aussitôt dans un mélange graveleux. La graine, semée fraîche dehors à l'automne, lève après l'hiver.",
+      "Semez la graine en pots sous châssis froid, au printemps ou à l'automne.",
   },
   "Carex sempervirens": {
     supportNotes: {
@@ -506,7 +506,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Les laîches nourrissent un nombre surprenant de chenilles, et les petits moirés et hespéries de montagne grandissent sur une pelouse comme celle-là. Au-delà, le tapis est l'habitat : il retient la terre sur un sol qui glisserait sans lui, garde une mince peau d'ombre et d'humidité sur la pierre, et abrite les coléoptères, araignées et sauterelles d'un versant alpin.",
     propagationNote:
-      "Divisez au printemps et replantez aussitôt en gardant les éclats humides le premier été. Le semis d'automne dehors marche, mais la division installe un tapis bien plus vite.",
+      "Divisez une touffe à la reprise de la végétation, en fin d'hiver ou au début du printemps.",
   },
   "Clematis alpina": {
     supportNotes: {
@@ -520,7 +520,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Des clochettes pendantes en début d'été dans lesquelles un bourdon doit entrer tout entier, ce pour quoi elles sont faites. La clématite nourrit bon nombre de chenilles pour une grimpante, et les houppes de graines argentées qui suivent tiennent jusqu'en hiver et sont défaites par les petits oiseaux au printemps pour garnir leurs nids.",
     propagationNote:
-      "Le marcottage est la méthode sûre : couchez une longue pousse dans la terre au printemps, laissez-la un an, détachez-la enracinée. Par semis, semez les têtes plumeuses en pot dehors à l'automne et laissez l'hiver faire le froid ; c'est lent.",
+      "Au printemps, couchez une longue pousse dans la terre et détachez-la une fois enracinée, en général dans l'année. Les boutures semi-aoûtées s'enracinent aussi. La graine a besoin d'une longue période froide et humide avant de germer.",
   },
   "Polystichum lonchitis": {
     nativeNote:
@@ -555,7 +555,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Un grand arbre à chenilles de la montagne : c'est dans un bouquet de trembles que fauvettes et mésanges nourrissent leurs petits. Ses chatons précoces sont du pollen quand il n'y en a pas d'autre, son fourré de drageons abrite lièvres et tétras, et les trembles pourrissent de l'intérieur d'une manière qui fait les loges de pics, puis les gîtes de chouettes et de chauves-souris.",
     propagationNote:
-      "Déterrez un drageon enraciné en hiver. De courts morceaux de racine couchés dans une caissette de terreau à la fin de l'hiver bourgeonnent aussi sans peine. La graine ne vit que quelques jours et ne vaut pas qu'on la poursuive.",
+      "Déterrez un drageon enraciné à l'automne ou en fin d'hiver et replantez-le. Les boutures de bois sec prises en hiver s'enracinent aussi. La graine ne vit que quelques semaines, aussi s'en sert-on rarement.",
     supportNotes: {
       "poplar-hawk-moth":
         "Le tremble est l'un des principaux arbres du sphinx du peuplier ; la chenille est grosse, verte, à corne émoussée, et se nymphose dans le sol au pied de l'arbre.",
@@ -573,7 +573,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Le premier pollen de l'année en montagne, des semaines avant que rien d'autre ne s'ouvre — ce dont a besoin une reine de bourdon qui sort par un février doux. Une grande plante à chenilles au printemps, des noisettes à l'automne pour les geais, les cassenoix, les écureuils et les muscardins, et une cépée recépée qui reste un couvert de nidification dense tant que vous continuez à la couper.",
     propagationNote:
-      "À l'automne, fixez une tige basse sous deux ou trois centimètres de terre et détachez-la un an plus tard. Par graines, semez les noisettes à l'automne dans un pot enterré dehors sous un grillage, sinon les mulots le videront avant le printemps.",
+      "À l'automne ou au printemps, fixez une tige basse dans une tranchée de 10 à 15 cm et détachez-la une fois enracinée, en général dans l'année. Ou semez les noisettes dehors à l'automne : il leur faut un hiver froid et humide pour germer.",
     supportNotes: {
       "hazel-dormouse":
         "Le muscardin tire son nom de cette plante en anglais, en allemand et en latin, et c'est sur les noisettes qu'il engraisse avant d'hiberner. Une noisette ouverte par un muscardin porte un trou rond et lisse, avec des marques de dents inclinées autour du bord : c'est ainsi que les naturalistes apprennent qu'il est là.",
@@ -609,7 +609,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "La plante d'automne la plus précieuse d'Europe. Il fleurit en octobre et novembre, quand l'année de montagne est finie et que tout le reste est passé, et il nourrit syrphes, guêpes et derniers papillons — plus la collète du lierre, une abeille solitaire dont toute l'année est réglée sur cette seule plante. Suivent des baies noires en fin d'hiver pour les fauvettes à tête noire et les grives, et c'est un dortoir persistant toute l'année.",
     propagationNote:
-      "Les pousses semi-aoûtées s'enracinent sans peine en fin d'été dans un mélange graveleux, à l'ombre. Une bouture prise sur la partie adulte et buissonnante donne un arbuste qui fleurit bien au lieu d'une grimpante.",
+      "Prélevez des boutures semi-aoûtées en été. Une bouture prise sur la partie adulte et buissonnante donne un arbuste qui ne grimpe pas. Les tiges qui courent au sol s'enracinent seules : détachez-en un morceau enraciné.",
     supportNotes: {
       "mason-bees":
         "Toute l'année de la collète du lierre est réglée sur cette plante : elle sort en septembre quand les fleurs s'ouvrent sur un mur de vallée bien exposé, et a fini quand elles ont fini. Rien d'autre qui lui serve n'est ouvert si tard.",
@@ -629,7 +629,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Le houblon est la plante à chenilles du robert-le-diable, dont les adultes aux ailes déchiquetées hivernent derrière l'écorce et sont parmi les premiers à voler dans une vallée en mars. Son rideau dense d'été est un couvert de nidification, et les cônes et les tiges mortes abritent des insectes en hivernage si vous les laissez jusqu'au printemps.",
     propagationNote:
-      "Divisez la souche en fin d'hiver — chaque morceau portant un bourgeon repart vite. Les pousses tendres du début de l'été s'enracinent sous un sac. Achetez un pied femelle nommé si vous voulez des cônes.",
+      "Les pousses tendres ou semi-aoûtées s'enracinent en boutures. Ou couchez une longue tige au sol en l'enterrant par endroits : chaque partie enterrée s'enracine et se détache en nouveau pied.",
     supportNotes: {
       "comma":
         "Le robert-le-diable — le papillon aux bords d'ailes déchiquetés, qui passe l'hiver en ressemblant exactement à une feuille morte — pond sur le houblon et l'ortie, et sa chenille se déguise en fiente d'oiseau.",
@@ -643,7 +643,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Des fleurs blanches et ouvertes tout au long d'un long été de montagne, à la taille des petites abeilles solitaires et des syrphes que les fleurs plus profondes excluent. Des fruits pour les oiseaux, les mulots et les muscardins, et un tapis qui empêche un talus ombragé de partir à la pluie — mais sa vraie valeur, c'est qu'une strate couvre-sol est là où vivent vraiment les coléoptères, les araignées et les insectes en hivernage d'un jardin.",
     propagationNote:
-      "Pendant la saison de pousse, détachez les petits plants enracinés au bout des stolons et coupez le fil — la plante a fait le travail.",
+      "Détachez un petit plant enraciné au bout d'un stolon, coupez le fil et replantez-le — la plante a fait le travail.",
     supportNotes: {
       "mason-bees":
         "Des fleurs ouvertes et peu profondes tout l'été de montagne, pour les petites abeilles solitaires et les syrphes que les fleurs plus profondes excluent.",
@@ -659,7 +659,7 @@ export const FRANCE_ALPINE: ProseTable = {
     givesNote:
       "Le moro-sphinx — ce papillon de nuit qui vole de jour et qu'on prend pour un minuscule colibri — grandit sur le gaillet, tout comme le grand sphinx de la vigne, dont l'énorme chenille grise à faux yeux s'y montre en fin d'été. Une tache dans l'herbe haute fait donc des papillons de passage des résidents. Les fleurs elles-mêmes nourrissent pendant des mois les petites abeilles, les syrphes et les coléoptères.",
     propagationNote:
-      "Déterrez un morceau enraciné de la tige rampante pendant la saison fraîche. La graine semée fraîche à l'automne sur un sol graveleux lève après l'hiver.",
+      "Déterrez un morceau enraciné au bord d'une touffe et replantez-le. Ou semez la graine dès sa maturité.",
     supportNotes: {
       "hummingbird-hawk-moth":
         "Le papillon qu'on prend pour un minuscule colibri pond sur le gaillet : une tache dans l'herbe haute est ce qui fait d'un visiteur un résident.",

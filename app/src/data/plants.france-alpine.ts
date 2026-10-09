@@ -333,9 +333,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Bird-cherry ermine (Yponomeuta evonymella) defoliation and recovery: INPN; European forest-entomology literature. Host count: 304 Lepidoptera recorded on native Prunus in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["seed-cold-moist", "suckers"],
-      note: "Clean the flesh off the fruit in autumn and give the stones a long cold damp winter outdoors; germination is good in the first or second spring. Rooted suckers can be lifted in winter instead.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["seed-cold-moist", "cuttings-softwood"],
+      note: "Clean the flesh off the ripe fruit and sow the stones outdoors in autumn: they need a long cold, damp winter before they sprout. Soft shoot tips taken in early summer can also root, given gentle bottom heat.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -368,9 +368,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 143 Lepidoptera recorded on native poplars in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["suckers", "root-cuttings"],
-      note: "Lift a rooted sucker in winter. Short lengths of root laid in a tray of compost in late winter shoot readily too. Seed lives for days and is not worth chasing.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["suckers", "cuttings-hardwood"],
+      note: "Dig a rooted sucker in autumn or late winter and replant it. Dormant hardwood cuttings taken in winter also root. Seed stays alive only a few weeks, so it is seldom used.",
+      basis: "RHS; USDA Woody Plant Seed Manual; Seed Information Database.",
     },
   },
   // ---------------- SHRUBS ----------------
@@ -475,8 +475,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Toxicity (grayanotoxins, including in honey): INPN; French poison-center guidance. Host count: 22 Lepidoptera recorded on native Rhododendron in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (40 if introduced garden rhododendrons are counted too).",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
-      note: "Very slow from either route. Take firmed-up shoots in late summer and root them in a lime-free sand-and-peat mix under cover, expecting to wait most of a year. Low branches lying on the ground root of their own accord and can be cut free once they have.",
-      basis: "Conservatoire botanique national alpin.",
+      note: "Take semi-ripe cuttings in late summer. Or, in spring, peg a low branch into the soil and cut it free once it has rooted, usually within a year.",
+      basis: "RHS.",
     },
   },
   {
@@ -545,8 +545,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 58 Lepidoptera recorded on native junipers in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-double-dormant", "cuttings-semi-hardwood"],
-      note: "Juniper seed is one of the slowest there is — a warm spell then a long cold one, and often two or three winters before anything appears — so sow it in a pot outdoors and forget it. Cuttings of firmed-up shoots taken in autumn are more reliable, if still slow.",
-      basis: "Conservatoire botanique national alpin.",
+      note: "Juniper seed is deeply dormant: it needs a warm spell, then a long cold one, so sow it in a pot outdoors and expect a slow start. Semi-ripe cuttings taken in early autumn are the other route.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -579,9 +579,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 118 Lepidoptera recorded on Calluna in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "layering"],
-      note: "Take firmed-up shoot tips in late summer and root them in a lime-free sandy mix under cover. Simpler still: mound acid compost over the base of an old plant in spring, and the buried stems root and can be cut off as new plants a year later.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["cuttings-softwood", "layering"],
+      note: "Take soft shoot tips in summer and root them under cover in a lime-free, sandy mix. Or, in summer, peg a low stem into acid soil and cut it free once it has rooted.",
+      basis: "RHS.",
     },
   },
 
@@ -616,8 +616,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range and altitude limit: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 124 Lepidoptera recorded on hazel in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["layering", "seed-cold-moist"],
-      note: "Peg a low stem under an inch of soil in autumn and cut it free a year later. From seed, sow the nuts in autumn in a pot buried outdoors under wire mesh, or the mice will empty it before spring.",
-      basis: "Conservatoire botanique national alpin.",
+      note: "In autumn or spring, peg a low stem into a trench 10–15 cm deep and cut it free once it has rooted, usually within a year. Or sow the nuts outdoors in autumn: they need a cold, damp winter before they sprout.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -650,9 +650,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 195 Lepidoptera recorded on native brambles and raspberries in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["suckers", "division"],
-      note: "Lift a rooted sucker in the dormant season and replant it — the simplest propagation there is. Seed needs a long cold damp spell and is far slower.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["suckers"],
+      note: "It's easy: while the plant is dormant, dig up a healthy sucker and replant it.",
+      basis: "RHS.",
     },
   },
   {
@@ -685,9 +685,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 113 Lepidoptera recorded on native roses in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["suckers", "seed-double-dormant"],
-      note: "Lift a rooted sucker in winter — much the easiest route. From seed, clean the hips and expect two winters outdoors before anything appears; rose seed needs a warm spell followed by a long cold one.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["suckers", "cuttings-hardwood", "seed-double-dormant"],
+      note: "Easiest is to dig up a rooted sucker in spring. Hardwood cuttings taken in autumn also root. From seed, clean the hips and sow outdoors; it often takes two seasons to come up.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -720,9 +720,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Toxicity: INPN; European toxic-plant references. Host count: 7 Lepidoptera recorded on Daphne in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["seed-cold-moist", "cuttings-semi-hardwood"],
-      note: "Sow the cleaned seed fresh in autumn — wear gloves — in a pot left outdoors; it wants a full cold winter and often a second. Half-ripe cuttings in summer root slowly under cover. Do not attempt to move an established plant.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["seed-direct", "cuttings-softwood", "cuttings-semi-hardwood"],
+      note: "Wearing gloves, sow the cleaned seed as soon as it ripens, in a pot in a cold frame; it can be slow to come up. Soft cuttings in early summer and semi-ripe ones later in summer also root.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -756,8 +756,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range and lime tolerance (unusual in Erica): Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 68 Lepidoptera recorded on native heaths in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
-      note: "Half-ripe shoot tips in late summer root in a gritty mix under cover. It also layers itself where the stems touch the ground — lift a rooted piece in autumn.",
-      basis: "Conservatoire botanique national alpin.",
+      note: "Take semi-ripe cuttings in mid or late summer and root them under cover. Or, in spring, mound soil over the base of the plant: the buried stems root and can be cut off as new plants.",
+      basis: "RHS.",
     },
   },
   // ---------------- PERENNIALS ----------------
@@ -862,8 +862,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Blue and hairstreak host relationships: INPN; European butterfly foodplant checklist (Dryad). Host count: 70 Lepidoptera recorded on native Helianthemum in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["cuttings-softwood", "seed-direct"],
-      note: "Soft, non-flowering shoot tips taken in early summer root quickly in gritty compost. Seed collected from the dry capsules can be sown fresh in autumn into a gritty mix left outside for the winter.",
-      basis: "Conservatoire botanique national alpin.",
+      note: "Take soft shoot tips in late spring or early summer and root them. Or sow the seed in autumn.",
+      basis: "RHS.",
     },
   },
   {
@@ -896,9 +896,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Harvesting restrictions: French departmental protection orders (arrêtés préfectoraux) covering wild gentian root. Host count: 21 Lepidoptera recorded on native gentians in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["seed-cold-moist", "seed-surface-light"],
-      note: "Sow the fine seed on the surface of damp gritty compost in autumn and leave the pot outside all winter — it needs a hard, cold, damp spell and light to germinate, and it will take its time. Then be patient: several years to a plant of any size, and a decade to a flower.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["division"],
+      note: "Divide an established clump in spring.",
+      basis: "RHS.",
     },
   },
   {
@@ -931,9 +931,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Globeflower–Chiastocheta fly mutualism: European pollination-ecology literature; INPN. Host count: 5 Lepidoptera recorded on Trollius in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level; included for the mutualism and the meadow, not as caterpillar food.",
     propagation: {
-      methods: ["seed-cold-moist", "division"],
-      note: "Sow the seed fresh in autumn in a pot left outside — it needs a real winter, and stored seed germinates badly. Established clumps can be split in early spring, though they sulk for a year afterwards.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["division"],
+      note: "Divide a clump in spring.",
+      basis: "RHS.",
     },
   },
   {
@@ -966,9 +966,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Nitrogen fixation (actinorhizal symbiosis) and solar-tracking flowers: alpine ecology literature. Host count: 17 Lepidoptera recorded on Dryas in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["cuttings-semi-hardwood", "seed-surface-light"],
-      note: "Firmed-up shoots taken in late summer root in a gritty, limy mix under cover. Seed can be surface-sown fresh in autumn in a gravelly pot left outside — it wants light and a hard winter.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["cuttings-softwood", "seed-direct"],
+      note: "Take soft shoot tips and root them under cover. Seed works too: in tests it germinated well without any cold spell.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1001,9 +1001,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Large blue (Phengaris arion) thyme-and-Myrmica life cycle: INPN; European butterfly foodplant checklist (Dryad). Host count: 94 Lepidoptera recorded on native thymes in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["division", "cuttings-softwood", "layering"],
-      note: "Easiest of all: pull a rooted piece off the edge of a mat in spring and plant it. Soft shoot tips root in two weeks in gritty compost, and any stem lying on the ground will have rooted already.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["division", "cuttings-softwood", "cuttings-semi-hardwood"],
+      note: "Easiest: pull a rooted piece off the edge of a mat in spring and plant it. Shoot tips also root as cuttings, soft ones or half-ripe ones in summer.",
+      basis: "RHS.",
     },
   },
 
@@ -1072,9 +1072,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Toxicity (colchicine) and livestock risk: INPN; European veterinary references. Host count: 1 Lepidoptera recorded on Colchicum in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["division", "seed-cold-moist"],
-      note: "Lift and separate the corms in midsummer while the plant is dormant — wear gloves. From seed it is four or five years to a flower, so almost everyone splits the corms.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["division", "seed-direct"],
+      note: "Lift and separate the corms in summer while the plant is dormant, wearing gloves. Seed can also be sown in a pot outdoors as soon as it ripens.",
+      basis: "RHS.",
     },
   },
   {
@@ -1108,8 +1108,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Orange-tip (Anthocharis cardamines) host relationship and mowing sensitivity: INPN (MNHN); European butterfly foodplant checklist (Dryad). Host count: 23 Lepidoptera recorded on native bittercresses in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["division", "seed-direct"],
-      note: "Split a clump after flowering. Easier still, lay a mature leaf flat on damp compost and weight it down — cuckooflower roots from its own leaflets, which is how a wet meadow fills with it.",
-      basis: "Conservatoire botanique national alpin.",
+      note: "Split a clump, or sow the seed: in tests it germinated well with no special treatment.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   // ---------------- GRASSES & SEDGES ----------------
@@ -1145,8 +1145,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin; treated by some floras within the Festuca rubra aggregate. Host count: 190 Lepidoptera recorded on native fescues in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level, so the figure is the fescue genus's rather than this species' alone. Confidence medium: some floras fold this fescue into the red fescue group, so the genus figure may not be its own.",
     propagation: {
       methods: ["seed-direct", "division"],
-      note: "Strip the ripe seed heads in late summer and sow them straight onto raked soil — no chilling needed, and it comes up readily. Established tufts can also be dug and pulled apart in spring.",
-      basis: "Conservatoire botanique national alpin.",
+      note: "Sow the ripe seed straight onto raked soil — it needs no chilling. Tufts can be dug and split as they come into growth in late winter or early spring.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -1179,9 +1179,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 10 Lepidoptera recorded on Sesleria in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["division", "seed-direct"],
-      note: "Split a clump in early spring into fist-sized pieces with roots on each. Fresh seed sown in autumn on gritty limestone soil germinates with the spring.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["seed-direct"],
+      note: "Sow the seed in pots in a cold frame, in spring or autumn.",
+      basis: "RHS.",
     },
   },
   {
@@ -1214,9 +1214,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 86 Lepidoptera recorded on native sedges in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["division", "seed-direct"],
-      note: "Divide a clump in early spring. Fresh seed sown in autumn in a pot left outdoors germinates after the winter cold.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["division"],
+      note: "Divide a clump as it comes into growth in late winter or early spring.",
+      basis: "RHS.",
     },
   },
 
@@ -1254,9 +1254,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Toxicity of fresh Clematis foliage: INPN. Host count: 47 Lepidoptera recorded on native clematis in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["layering", "seed-cold-moist"],
-      note: "Layering is much the surest: pin a long shoot under soil in spring and cut it free the following year. Seed needs a full cold damp winter outdoors and often a second, so sow it and forget it.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["layering", "cuttings-semi-hardwood", "seed-cold-moist"],
+      note: "Peg a long shoot into the soil in spring and cut it free once it has rooted, usually within a year. Semi-ripe cuttings also root. Seed needs a long cold, damp spell before it sprouts.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -1290,8 +1290,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range and altitude limit: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Autumn nectar importance and the ivy bee (Colletes hederae): INPN; European pollinator literature. Toxicity: ASPCA. Host count: 18 Lepidoptera recorded on ivy in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["cuttings-semi-hardwood", "layering"],
-      note: "Half-ripe shoots root readily in late summer in a shaded gritty mix. A cutting taken from the adult bushy growth makes a free-flowering shrub instead of a climber.",
-      basis: "Conservatoire botanique national alpin.",
+      note: "Take semi-ripe cuttings in summer. A cutting from the adult, bushy growth makes a shrub that doesn't climb. Stems along the ground root on their own, so a rooted piece can be cut free.",
+      basis: "RHS.",
     },
   },
   {
@@ -1324,9 +1324,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Comma (Polygonia c-album) host relationship: INPN (MNHN); European butterfly foodplant checklist (Dryad). Host count: 27 Lepidoptera recorded on hop in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["division", "cuttings-softwood"],
-      note: "Split the rootstock in late winter — each piece with a bud grows away fast. Soft shoots in early summer root under a bag. Buy a named female plant if you want cones.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["cuttings-softwood", "layering"],
+      note: "Soft or semi-ripe shoots root as cuttings. Or lay a long stem along the ground, burying it at a few points: each buried stretch roots into a plant you can cut free.",
+      basis: "RHS.",
     },
   },
 
@@ -1361,9 +1361,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 50 Lepidoptera recorded on wild strawberry in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["runners", "division"],
-      note: "Lift the rooted plantlets off the runners at any point in the growing season and cut the cord — the plant has done the work.",
-      basis: "Conservatoire botanique national alpin.",
+      methods: ["runners"],
+      note: "Lift a rooted plantlet off a runner, cut the cord and replant it — the plant has done the work.",
+      basis: "RHS.",
     },
   },
   {
@@ -1397,8 +1397,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Hawk-moth host relationships (Macroglossum stellatarum, Deilephila elpenor): INPN (MNHN); European foodplant checklists. Host count: 127 Lepidoptera recorded on native bedstraws in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["division", "seed-direct"],
-      note: "Lift a rooted piece of the creeping stem in the cool months. Seed sown fresh in autumn on gritty ground comes up after the winter.",
-      basis: "Conservatoire botanique national alpin.",
+      note: "Lift a rooted piece from the edge of a clump and replant it. Or sow the seed as soon as it ripens.",
+      basis: "RHS.",
     },
   },
 

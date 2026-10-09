@@ -401,7 +401,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     givesNote:
       "Les laîches sont les plantes-hôtes d'un nombre surprenant de petits papillons bruns et de papillons de nuit, et une touffe de laîche à l'ombre est là où ils passent l'année. Les touradons et la litière en dessous sont un abri humide pour les coléoptères, les araignées et les amphibiens pendant les mois où tout le reste sèche.",
     propagationNote:
-      "Divisez une touffe établie au printemps et replantez les éclats aussitôt, en les gardant humides le premier été. Elle se ressème aussi seule dans une ombre qui lui convient.",
+      "Divisez une touffe au printemps, à la reprise de la végétation.",
   },
   "Polystichum aculeatum": {
     nativeNote:
@@ -466,7 +466,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     givesNote:
       "258 espèces de chenilles, c'est-à-dire de la nourriture pour les oiseaux à la saison où elle compte. Ses chatons sont un pollen précoce, son fourré de drageons un abri, et les vieux trembles pourrissent de l'intérieur d'une façon dont profitent les pics, puis les chouettes et les chauves-souris — c'est pourquoi un bosquet de trembles abrite plus de vie que sa taille ne le laisse penser.",
     propagationNote:
-      "Déterrez un drageon enraciné en hiver — l'arbre vous les offre. De courts morceaux de racine couchés dans une caissette de terreau à la fin de l'hiver bourgeonnent aussi sans peine. La graine ne vit que quelques jours et ne sert presque jamais.",
+      "Déterrez un drageon enraciné à l'automne ou en fin d'hiver et replantez-le. Les boutures de bois sec prises en hiver s'enracinent aussi. La graine ne vit que quelques semaines, aussi s'en sert-on rarement.",
     supportNotes: {
       "poplar-hawk-moth":
         "Le tremble est l'un des principaux arbres du sphinx du peuplier ; les chenilles y vivent tout l'été et se nymphosent dans le sol au pied de l'arbre.",
@@ -482,7 +482,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     givesNote:
       "Ses chatons de février sont parmi les tout premiers pollens de l'année, et la graine de ses petits cônes ligneux est ce pour quoi tarins et sizerins se suspendent tête en bas tout l'hiver. Ses racines tiennent une berge et ombragent assez l'eau pour garder un ruisseau frais — l'essentiel de ce dont un petit ruisseau a besoin.",
     propagationNote:
-      "Récoltez les cônes à l'automne, séchez-les jusqu'à ce qu'ils s'ouvrent et pressez la graine ailée sur une terre mouillée — elle a besoin de lumière, ne la couvrez donc pas, et ne laissez jamais le pot sécher.",
+      "Récoltez les cônes à l'automne et séchez-les jusqu'à ce qu'ils libèrent la graine. Semez-la clair au printemps, à peine couverte, et gardez-la humide. Les boutures de bois sec prises en hiver s'enracinent aussi.",
     supportNotes: {
       "conifer-seed-finches":
         "Un bois d'aulnes humide en janvier, c'est un bois de tarins : des bandes qui décortiquent les petits cônes tête en bas, en criant sans arrêt.",
@@ -516,7 +516,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     givesNote:
       "Presque rien ici ne fait plus. Des mois de fleurs butinées par les bourdons, les abeilles solitaires, les syrphes et plus d'espèces de papillons qu'aucune autre plante de la région ; des mûres dès août pour les fauvettes, les grives, les renards et les blaireaux ; un fourré épineux qui est le couvert de nidification le plus sûr qu'un petit oiseau puisse trouver ; et des tiges mortes où nichent les abeilles solitaires.",
     propagationNote:
-      "Elle fait le travail : trouvez en hiver une pointe de tige enracinée, coupez-la et déplacez-la. Les boutures nues d'hiver s'enracinent aussi. La graine, c'est une saison perdue.",
+      "Elle fait le travail seule : les pointes des tiges arquées s'enracinent là où elles touchent le sol. Détachez une pointe enracinée et déplacez-la.",
     supportNotes: {
       "bumble-bees":
         "Des mois de fleurs ouvertes, et une ronce en juillet porte à la fois plus d'insectes que n'importe quoi d'autre au jardin — bourdons, abeilles solitaires, syrphes et coléoptères.",
@@ -538,7 +538,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     givesNote:
       "Elle fleurit de juillet jusqu'en octobre, et c'est tout l'intérêt : la fin de l'été et le début de l'automne sont un creux, au moment où les abeilles cherchent à faire leurs réserves pour l'hiver, et c'est la callune qui leur fait passer ce cap. Abeilles domestiques, bourdons et toute une série d'abeilles solitaires la butinent, et elle nourrit en plus une longue liste de chenilles de papillons de nuit — les papillons de nuit des landes sont ceux de la callune.",
     propagationNote:
-      "Prélevez en fin d'été des pointes de pousses semi-aoûtées et enracinez-les dans un mélange tourbeux, graveleux et sans calcaire. Les branches basses se marcottent aussi là où elles touchent un sol acide — fixez-en une au sol et séparez-la un an plus tard.",
+      "Prélevez en été des extrémités de pousses tendres et faites-les raciner sous abri dans un mélange sableux sans calcaire. Ou bien, en été, fixez une tige basse dans un sol acide et détachez-la une fois enracinée.",
     supportNotes: {
       "silver-studded-blue":
         "L'azuré de l'Ajonc vit dans les landes et nulle part ailleurs, pond sur la callune, et ses chenilles sont soignées sous terre par des fourmis qui les traient pour leur sucre — perdez la lande et vous perdez tout l'arrangement.",
@@ -556,7 +556,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     givesNote:
       "Les graminées portent bien plus de chenilles que les jardiniers ne le pensent, et les myrtils, les tristans et les hespéries d'un pré humide grandissent sur des touffes comme celle-ci. Une grosse touffe est aussi un petit monde à elle seule — là où carabes, araignées et insectes en hivernage attendent la fin du froid, et où un troglodyte ou un campagnol circule à couvert.",
     propagationNote:
-      "Divisez une touffe à la bêche au début du printemps. La graine est fine et a besoin de lumière — répandez-la sur une terre nue et humide et appuyez sans la couvrir.",
+      "Semez la graine là où elle doit pousser, au printemps ou à l'automne. Les touffes se déterrent et se divisent aussi.",
     supportNotes: {
       "grass-skippers":
         "Myrtils, tristans et hespéries élèvent tous leurs chenilles sur des touffes de graminées comme celle-ci, chaque chenille cachée dans une feuille qu'elle a cousue derrière elle.",
@@ -570,7 +570,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     givesNote:
       "La plante d'automne la plus précieuse d'Europe. Ses fleurs s'ouvrent en octobre et novembre, quand tout le reste a fini, et nourrissent syrphes, guêpes, vulcains et citrons tardifs, et la collète du lierre — une abeille solitaire dont toute l'année est bâtie autour de cette seule plante. Puis des baies noires en fin d'hiver pour les fauvettes à tête noire, les grives et les pigeons ramiers, et un couvert persistant où les oiseaux nichent et dorment toute l'année.",
     propagationNote:
-      "Les pousses semi-aoûtées s'enracinent sans peine en fin d'été dans un mélange graveleux, à l'ombre. Une bouture prise sur la partie adulte et buissonnante donne un arbuste qui fleurit bien plutôt qu'une grimpante — un choix à faire exprès.",
+      "Prélevez des boutures semi-aoûtées en été. Une bouture prise sur la partie adulte et buissonnante donne un arbuste qui ne grimpe pas. Les tiges qui courent au sol s'enracinent seules : détachez-en un morceau enraciné.",
     supportNotes: {
       "mason-bees":
         "La collète du lierre est une abeille des sables dont toute l'année est réglée sur cette plante : elle sort en septembre quand le lierre s'ouvre et a fini quand les fleurs ont fini. Rien d'autre qui lui convienne n'est ouvert à ce moment-là.",
@@ -592,7 +592,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     givesNote:
       "Ce sont les chenilles qui comptent : le plantain en nourrit une longue liste, et dans cette région cela inclut la mélitée du Plantain et la mélitée du mélampyre, dont les jeunes passent l'hiver serrés ensemble dans une toile de soie sur ces feuilles. Chardonnerets et linottes dépouillent les épis de graines à partir de la fin de l'été.",
     propagationNote:
-      "Répandez la graine sur une terre nue à l'automne et tassez-la du pied. Les touffes se divisent à tout moment de la saison fraîche.",
+      "Répandez la graine mûre sur une terre nue et griffée ; aucun froid nécessaire.",
     supportNotes: {
       "glanville-fritillary":
         "La mélitée du Plantain pond ses œufs en un seul lot sur le plantain lancéolé, et les chenilles passent tout l'hiver ensemble dans une toile de soie tissée sur la plante — c'est pourquoi une fauche d'automne emporte toute la nichée.",
@@ -608,7 +608,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     givesNote:
       "C'est là que grandit le moro-sphinx : ce papillon de nuit qui vole de jour et qu'on prend pour un minuscule colibri devant les fleurs pond sur le gaillet, tout comme le grand sphinx de la vigne, dont l'énorme chenille grise à faux yeux s'y montre en fin d'été. Les fleurs nourrissent pendant des mois les petites abeilles, les syrphes et les coléoptères.",
     propagationNote:
-      "Déterrez un morceau enraciné de la tige rampante pendant la saison fraîche. La graine semée fraîche à l'automne sur un sol graveleux lève au cours de l'hiver.",
+      "Déterrez un morceau enraciné au bord d'une touffe et replantez-le. Ou semez la graine dès sa maturité.",
     supportNotes: {
       "hummingbird-hawk-moth":
         "Le papillon de nuit qui vole de jour et que tout le monde prend pour un minuscule colibri pond sur le gaillet — une tache dans l'herbe haute fait donc d'un visiteur un résident.",
@@ -624,7 +624,7 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     givesNote:
       "Des fleurs blanches et ouvertes tout au long d'un long printemps pour les petites abeilles solitaires et les syrphes, à qui les fleurs plus profondes ne servent à rien, puis des fruits que prennent oiseaux, mulots et muscardins. Au jardin, c'est le tapis lui-même qui compte : un couvert au ras du sol, là où vivent coléoptères, araignées et insectes en hivernage.",
     propagationNote:
-      "La plante le fait pour vous : pendant la saison fraîche, détachez les petits plants enracinés au bout des stolons et coupez le fil. La graine marche aussi, plus lentement.",
+      "La plante le fait pour vous : détachez un petit plant enraciné au bout d'un stolon, coupez le fil et replantez-le. La graine semée au printemps marche aussi.",
     supportNotes: {
       "mason-bees":
         "Des fleurs blanches ouvertes tout au long d'un long printemps, assez peu profondes pour les plus petites abeilles solitaires et les syrphes — ce que ne sont pas les fleurs profondes des jardins.",

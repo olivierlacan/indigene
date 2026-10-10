@@ -664,6 +664,77 @@ export interface AlternativeLink {
 }
 
 // ---------------------------------------------------------------------------
+// Pavement pioneers: the "it'll take the abuse" layer.
+//
+// Every other layer here assumes a garden. This one assumes a hell strip — the
+// gap between kerb and pavement, a crack in a wall, a car park island, the
+// gravel behind a fence. Those places are where most planting actually happens
+// in a city, and they are *not* the conditions the rest of the catalog is
+// ranked for: the soil is rubble, it was driven over before it was yours, it
+// gets the reflected heat of two walls, and in winter somebody salts it.
+//
+// A plant that is native here and thrives in a woodland loam can still die in
+// that gap. A short list of this region's natives *do not care*, and naming
+// them is a different answer to a different question — which is why this is a
+// side table keyed by region and plant id, not another boolean on `Plant`.
+//
+// The name is this repo's own, and so is the list; the page's closing line
+// nods to Joey Santore's Crime Pays But Botany Doesn't for the enthusiasm, not
+// for the phrase. He didn't coin it and had no part in this.
+//
+// Two rules, the same as the wildlife layer's:
+//
+//   - **A pressure is only claimed when a source says so.** "Looks tough" is
+//     not a qualification. `basis` names who documented it, and
+//     `components/citation.ts` turns the authority into a link.
+//   - **The note describes the real place.** Not "tolerant of urban
+//     conditions" — the railway ballast, the wall top, the salted verge. A
+//     reader recognizes a place; they can't picture a tolerance.
+// ---------------------------------------------------------------------------
+
+/**
+ * One kind of abuse a pavement pioneer shrugs off. A small controlled
+ * vocabulary, so "takes road salt" is said one way across 11 regions and gets
+ * glossed in plain words in exactly one place (`plain.ts`).
+ *
+ * Deliberately about the *ground and air a plant is put into*, not about what
+ * it does afterwards — spread and aggressiveness are `filters.aggressive`'s
+ * job, and staying alive unwatered in an ordinary bed is `noWaterEstablish`'s.
+ *
+ *  - "compaction"      Ground packed airless by feet, tyres or machinery.
+ *  - "salt"            De-icing salt off a road or path, or salt-laden wind.
+ *  - "reflected-heat"  The extra summer heat thrown back by paving and walls.
+ *  - "poor-soil"       Rubble, builders' fill, crushed concrete, limy spoil.
+ *  - "crevice"         A crack: a wall joint, a paving seam, bare rock.
+ *  - "disturbance"     Ground scraped, mown, dug or burned, then left bare.
+ *  - "drought"         A root space the size of a bucket that nobody waters.
+ */
+export type PioneerPressure =
+  | "compaction"
+  | "salt"
+  | "reflected-heat"
+  | "poor-soil"
+  | "crevice"
+  | "disturbance"
+  | "drought";
+
+/**
+ * Why one of a region's natives belongs on its pavement-pioneer list.
+ *
+ * Lives in the region table in `data/pioneers.ts`, keyed by region id then
+ * plant id — a plant can be a pioneer in one region's conditions and merely a
+ * garden plant in another's, exactly as a wildlife tie is regional.
+ */
+export interface PioneerEntry {
+  /** The pressures a source documents it taking, most telling first. */
+  pressures: PioneerPressure[];
+  /** Plain words: the harsh place it actually does this in, here. */
+  note: string;
+  /** A dependable, citable source for the toughness claim. */
+  basis: string;
+}
+
+// ---------------------------------------------------------------------------
 // Registry: the canonical identity layer.
 //
 // The plant lists answer "what should I plant here". The registry answers a

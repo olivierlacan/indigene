@@ -76,8 +76,12 @@ function inRegion(regionId: string, table: ProseTable): ProseTable {
   return out;
 }
 
-/** The paragraphs that describe one region's row of a plant. */
-const ROW_FIELDS = ["nativeNote", "careNote", "givesNote", "propagationNote", "supportNotes", "lookalikeNotes"] as const;
+/** The paragraphs that describe one region's row of a plant.
+ *
+ *  `pioneerNote` is one of them: whether a plant takes packed, salted or rubbly
+ *  ground is a claim about a region's conditions, and the same birch is a
+ *  building-site tree in Brittany and a moraine tree in the Alps. */
+const ROW_FIELDS = ["nativeNote", "careNote", "givesNote", "propagationNote", "supportNotes", "lookalikeNotes", "pioneerNote"] as const;
 
 export const PROSE_FR: ProseTable = {
   ...inRegion("france-atlantic", FRANCE_ATLANTIC),

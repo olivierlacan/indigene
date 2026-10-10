@@ -1103,6 +1103,7 @@ export const fr: Dict = {
   "wip.wildlife": "Les descriptions d'animaux sont encore en anglais — nous traduisons région par région.",
   "wip.alternatives": "Les descriptions des plantes de remplacement sont encore en anglais — nous les traduisons.",
   "wip.invasives": "Les signes pour reconnaître cette plante sont encore en anglais — nous les traduisons.",
+  "wip.pioneers": "Les notes sur ces indigènes coriaces sont encore en anglais — nous traduisons région par région.",
 
   // Le dessin des tailles.
   "sizeViz.you": "Vous",
@@ -1119,12 +1120,14 @@ export const fr: Dict = {
   "badge.stinging": "Urticante",
   "badge.aggressive": "S'étale",
   "badge.deerResistant": "Peu broutée",
+  "badge.pioneer": "Pionnière du bitume",
   "traits.docTitle": "Caractéristiques des plantes — Indigene",
   "traits.title": "Caractéristiques des plantes",
   "traits.lede": "Ce que veut dire chaque étiquette et chaque chiffre de la page d'une plante.",
   "traits.confidenceLink": "À quel point nous sommes sûrs des chiffres de chaque plante",
   "traits.group.water": "💧 Arrosage",
   "traits.group.wildlife": "🦋 Faune",
+  "traits.group.ground": "🧱 Sol ingrat",
   "traits.group.handling": "✋ Précautions",
   "traits.group.figures": "📊 Chiffres",
   "traits.noWater": "Devrait s'installer et survivre à la seule pluie après la plantation, lors d'une année normale.",
@@ -1135,6 +1138,8 @@ export const fr: Dict = {
   "traits.thorny": "Porte des épines ou des aiguillons. Tenez-la à l'écart des allées et des jeux.",
   "traits.stinging": "Les poils de ses feuilles et de ses tiges piquent la peau nue. Portez des gants, et tenez-la à l'écart des allées et des jeux.",
   "traits.spreads": "S'étend par ses racines ou ses graines plus vite que la moyenne. Laissez-lui de la place, ou une bordure qu'elle ne franchira pas.",
+  "traits.pioneer":
+    "Elle pousse là où le sol est tassé, plein de gravats, salé l'hiver ou brûlant contre un mur — un bord de trottoir, un mur, un îlot de parking. Affichée seulement dans les régions où c'est documenté.",
   "match.good": "Bon choix pour ce lieu",
   "match.ok": "Envisageable ici",
   "match.poor": "Mauvais choix — voici pourquoi",
@@ -1570,6 +1575,8 @@ export const fr: Dict = {
   "lookalikes.notFoundTitle": "Nous ne connaissons pas celui-là",
   "lookalikes.notFoundLede": "Aucun sosie ici n'a l'adresse «\u202f{slug}\u202f».",
   "plant.lookalikesTitle": "À ne pas confondre avec : ",
+  // La ligne des pionnières du bitume, sous l'étiquette du même nom.
+  "plant.pioneerTitle": "Elle encaisse : ",
   // ---------------------------------------------------------------------
   // Alternatives natives : « planter ceci plutôt qu'un ornemental courant ».
   // ---------------------------------------------------------------------
@@ -1781,6 +1788,53 @@ export const fr: Dict = {
   "region.emptyCategory":
     "Notre liste {region} ne comporte pas encore de {label} — les listes sont constituées à la main et grandissent prudemment. Essayez une autre catégorie, ou la même catégorie dans une région ci-dessous.",
   "region.allOfRegion": "← Toutes les indigènes de cette région",
+
+  // ---------------------------------------------------------------------
+  // Les pionnières du bitume — la courte liste pour le sol qu'une ville
+  // offre vraiment. Le nom est de nous : Joey Santore ne l'a pas inventé et
+  // n'a pris aucune part à la liste, donc la ligne de fin recommande son
+  // livre sans parler en son nom. Son titre reste en anglais, non traduit.
+  // ---------------------------------------------------------------------
+  "pioneers.title": "Pionnières du bitume",
+  "pioneers.chip": "Pionnières",
+  "pioneers.docTitle": "Les pionnières du bitume de {region}",
+  "pioneers.sectionLede":
+    "Des indigènes pour les endroits ingrats — un bord de trottoir, un mur, un îlot de parking. Touchez une étiquette pour savoir ce qu'elle désigne.",
+  "pioneers.count.one": "{n} indigène qui encaisse les mauvais traitements, pour {reference}.",
+  "pioneers.count.other": "{n} indigènes qui encaissent les mauvais traitements, pour {reference}.",
+  "pioneers.what":
+    "La plupart des indigènes de cette région demandent une terre correcte. Celles-ci poussent là où le sol est tassé, plein de gravats, salé l'hiver ou brûlant contre un mur — autrement dit dans les conditions qu'offre vraiment un trottoir, une cour ou un chantier.",
+  "pioneers.empty":
+    "Nous n'avons pas encore déterminé lesquelles de nos indigènes de {region} supportent ce genre de traitement.",
+  "pioneers.basis": "Source :",
+  "pioneers.credit":
+    "Le nom est de nous. Le sujet, non : {book}, de Joey Santore, est un livre entier sur ce qui pousse encore là où l\'on a saccagé le sol. Il vaut le détour.",
+  "pioneers.creditBook": "Concrete Botany",
+
+  // Ce que chacune encaisse. Le terme tient dans l'étiquette ; les mots
+  // simples s'ouvrent d'une touche, parce que « tassement » est un mot de
+  // rapport de chantier.
+  "pressure.compaction.term": "Sol tassé",
+  "pressure.compaction.plain":
+    "Une terre piétinée, roulée ou damée au point que les racines y trouvent difficilement l'air et l'eau. La bande le long d'un trottoir est presque toujours ainsi.",
+  "pressure.poor-soil.term": "Gravats",
+  "pressure.poor-soil.plain":
+    "Remblai de chantier, béton concassé, déblais de carrière, gravier calcaire — un sol presque sans valeur nourricière, souvent laissé là où l'on a démoli quelque chose.",
+  "pressure.crevice.term": "Fissures",
+  "pressure.crevice.plain":
+    "Un joint de mur, une fente de pavage, la roche nue. Il n'y a pour ainsi dire pas de terre, et la pluie qui tombe s'en va aussitôt.",
+  "pressure.salt.term": "Sel",
+  "pressure.salt.plain":
+    "Le sel répandu l'hiver sur les routes et les trottoirs, ou porté par le vent marin. Il tue la plupart des plantes en asséchant leurs racines.",
+  "pressure.reflected-heat.term": "Chaleur réfléchie",
+  "pressure.reflected-heat.plain":
+    "Le surplus de chaleur d'été renvoyé par le bitume, les murs et les voitures — un bord de trottoir exposé au sud monte bien plus haut que la terre ouverte à côté.",
+  "pressure.drought.term": "Aucun arrosage",
+  "pressure.drought.plain":
+    "Un volume de terre gros comme un seau que personne n'arrosera, quoi que fasse l'été.",
+  "pressure.disturbance.term": "Sol nu",
+  "pressure.disturbance.plain":
+    "Un sol décapé, retourné, fauché ou brûlé, puis laissé à lui-même. Ce sont les plantes qui arrivent les premières et le tiennent jusqu'à ce qu'autre chose puisse.",
   "region.allChip": "Tout ({n})",
   "region.categoriesNav": "Catégories de plantes",
   "region.invasivesChip": "🚩 Envahissantes ({n})",
@@ -2745,6 +2799,13 @@ export const fr: Dict = {
   "emoji.reload": "recharger",
   "emoji.language": "langue",
   "emoji.unfinished": "en chantier",
+  "emoji.hardGround": "sol ingrat",
+  "emoji.packedGround": "sol tassé",
+  "emoji.rubble": "gravats",
+  "emoji.cracks": "fissures",
+  "emoji.roadSalt": "sel de déneigement",
+  "emoji.noWatering": "aucun arrosage",
+  "emoji.bareGround": "sol nu",
   "emoji.lookalike": "sosie",
   "emoji.no": "non",
   "emoji.stop": "stop",

@@ -11,7 +11,8 @@
 // here is a **function**, never a module-level constant. A `Record` built at
 // import time would freeze whatever language happened to be active on the first
 // render and then quietly ignore the switch.
-import type { MoistureBand, PropagationMethod, SizeSnapshot, SupportKind, SupportReliance, WildlifeKind } from "../types";
+import type { MoistureBand, PioneerPressure, PropagationMethod, SizeSnapshot, SupportKind, SupportReliance, WildlifeKind } from "../types";
+import { PRESSURE_ICON } from "../data/pioneers";
 import { monthName, t, tn, tOptional } from "./i18n";
 import { length, temperature } from "./units";
 
@@ -291,6 +292,21 @@ export function relianceLabel(r: SupportReliance): { icon: string; term: string;
     icon: RELIANCE_ICONS[r],
     term: t(`reliance.${r}.term` as const),
     plain: t(`reliance.${r}.plain` as const),
+  };
+}
+
+/**
+ * The abuse a pavement pioneer takes, glossed once. `term` is the one-word
+ * chip; `plain` is what it actually means on the ground, which is the whole
+ * point — "compaction" is engineering jargon, "packed so hard by feet and
+ * tyres that roots can't get air" is a thing a reader can look at and
+ * recognize. The icon comes from the data file, where the vocabulary lives.
+ */
+export function pressureLabel(p: PioneerPressure): { icon: string; term: string; plain: string } {
+  return {
+    icon: PRESSURE_ICON[p],
+    term: t(`pressure.${p}.term` as const),
+    plain: t(`pressure.${p}.plain` as const),
   };
 }
 

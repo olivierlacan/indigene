@@ -11,7 +11,7 @@ import { REGIONS, loadPlants } from "../../lib/plants";
 import { PROSE_FR } from "./index";
 
 /** The fields that describe a plant row, as opposed to a look-alike's blurb. */
-const PLANT_FIELDS = ["nativeNote", "careNote", "givesNote", "propagationNote", "supportNotes", "lookalikeNotes"] as const;
+const PLANT_FIELDS = ["nativeNote", "careNote", "givesNote", "propagationNote", "supportNotes", "lookalikeNotes", "pioneerNote"] as const;
 
 describe("French plant paragraphs", () => {
   it("are never filed under a key that answers for every region", () => {

@@ -1090,6 +1090,7 @@ export const en = {
   "wip.wildlife": "The animal descriptions are still in English — we're translating region by region.",
   "wip.alternatives": "The swap descriptions are still in English — we're translating them.",
   "wip.invasives": "How to spot this plant is still in English — we're translating it.",
+  "wip.pioneers": "The notes on these tough natives are still in English — we're translating region by region.",
 
   // The size drawing.
   "sizeViz.you": "You",
@@ -1106,18 +1107,22 @@ export const en = {
   "badge.stinging": "Stings",
   "badge.aggressive": "Spreads",
   "badge.deerResistant": "Deer-resistant",
+  "badge.pioneer": "Pavement pioneer",
   "traits.docTitle": "Plant traits — Indigene",
   "traits.title": "Plant traits",
   "traits.lede": "What each label and figure on a plant's page means.",
   "traits.confidenceLink": "How sure we are of each plant's figures",
   "traits.group.water": "💧 Watering",
   "traits.group.wildlife": "🦋 Wildlife",
+  "traits.group.ground": "🧱 Hard ground",
   "traits.group.handling": "✋ Handling",
   "traits.group.figures": "📊 Figures",
   "traits.noWater": "Expected to settle in and survive on rain alone after planting, in an average year.",
   "traits.needsWater": "Needs watering after planting, until its roots take hold.",
   "traits.keystone": "Feeds far more kinds of caterpillar than most plants. Ecologists call these keystone plants, after the stone that holds an arch together.",
   "traits.deer": "Deer usually leave it alone. Not a promise: a hungry winter changes what they'll eat.",
+  "traits.pioneer":
+    "It grows where the ground is packed hard, full of rubble, salted in winter or baking against a wall — a kerb gap, a wall, a car park island. Shown only in the regions where that is documented.",
   "traits.toxic": "Not for eating, by people or pets — some part of it can upset a stomach or worse. Plant it where a curious dog or toddler won't graze.",
   "traits.thorny": "Carries thorns, spines or prickles. Keep it back from paths and play areas.",
   "traits.stinging": "Hairs on the leaves and stems sting bare skin. Wear gloves, and keep it back from paths and play areas.",
@@ -1573,6 +1578,8 @@ export const en = {
   "lookalikes.notFoundTitle": "We don't know that one",
   "lookalikes.notFoundLede": "No look-alike here has the address \u201c{slug}\u201d.",
   "plant.lookalikesTitle": "Don't confuse it with: ",
+  // The pavement-pioneer line, under the badge of the same name.
+  "plant.pioneerTitle": "It can take: ",
   // ---------------------------------------------------------------------
   // Native alternatives: "grow this instead of a common ornamental".
   // ---------------------------------------------------------------------
@@ -1790,6 +1797,52 @@ export const en = {
   "region.emptyCategory":
     "Our {region} list has no {label} yet — the seed lists are curated and grow carefully. Try another category, or the same category in a region below.",
   "region.allOfRegion": "← All natives of this region",
+
+  // ---------------------------------------------------------------------
+  // Pavement pioneers — the short list for ground a city actually offers.
+  // The name is this repo's; Joey Santore neither coined it nor had any part
+  // in the list, so the credit line recommends his book and never speaks for
+  // him. Don't let it drift back into claiming he was involved.
+  // ---------------------------------------------------------------------
+  "pioneers.title": "Pavement pioneers",
+  "pioneers.chip": "Pioneers",
+  "pioneers.docTitle": "Pavement pioneers of {region}",
+  "pioneers.sectionLede":
+    "Natives for the hard places — a kerb gap, a wall, a car park island. Tap a tag to see what it means.",
+  "pioneers.count.one": "{n} native that takes a beating in {reference}.",
+  "pioneers.count.other": "{n} natives that take a beating in {reference}.",
+  "pioneers.what":
+    "Most of this region's natives want decent soil. These ones grow where the ground is packed hard, full of rubble, salted in winter or baking against a wall — the conditions a pavement, a yard or a building site actually offers.",
+  "pioneers.empty":
+    "We haven't worked out which of our {region} natives take that kind of punishment yet.",
+  "pioneers.basis": "Source:",
+  "pioneers.credit":
+    "The name is ours. The subject isn't: Joey Santore's {book} is a whole book about what still grows in ground people have wrecked, and it's worth your time.",
+  "pioneers.creditBook": "Concrete Botany",
+
+  // The abuse each one takes. The term is the chip; the plain words open on a
+  // tap, because "compaction" is a word from an engineering report.
+  "pressure.compaction.term": "Packed ground",
+  "pressure.compaction.plain":
+    "Soil trodden, driven or rolled so hard that roots struggle to find air and water in it. The strip beside a pavement is usually like this.",
+  "pressure.poor-soil.term": "Rubble",
+  "pressure.poor-soil.plain":
+    "Builders' fill, broken concrete, quarry spoil, limy grit — ground with almost no feeding value, often left behind where something was knocked down.",
+  "pressure.crevice.term": "Cracks",
+  "pressure.crevice.plain":
+    "A joint in a wall, a seam in paving, bare rock. There is no soil to speak of, and whatever rain falls runs straight off.",
+  "pressure.salt.term": "Salt",
+  "pressure.salt.plain":
+    "The salt thrown onto roads and paths in winter, or carried inland on sea wind. It kills most plants by drying their roots out.",
+  "pressure.reflected-heat.term": "Reflected heat",
+  "pressure.reflected-heat.plain":
+    "The extra summer heat thrown back off paving, walls and cars — a south-facing kerb can run far hotter than the open ground nearby.",
+  "pressure.drought.term": "No watering",
+  "pressure.drought.plain":
+    "A root space the size of a bucket that nobody is going to water, through whatever the summer does.",
+  "pressure.disturbance.term": "Bare ground",
+  "pressure.disturbance.plain":
+    "Ground scraped, dug, mown or burned and then left. These are the plants that arrive first and hold it until something else can.",
   "region.allChip": "All ({n})",
   "region.categoriesNav": "Plant categories",
   "region.invasivesChip": "🚩 Worst invasives ({n})",
@@ -2772,6 +2825,13 @@ export const en = {
   "emoji.reload": "reload",
   "emoji.language": "language",
   "emoji.unfinished": "unfinished",
+  "emoji.hardGround": "hard ground",
+  "emoji.packedGround": "packed ground",
+  "emoji.rubble": "rubble",
+  "emoji.cracks": "cracks",
+  "emoji.roadSalt": "road salt",
+  "emoji.noWatering": "no watering",
+  "emoji.bareGround": "bare ground",
   "emoji.lookalike": "look-alike",
   "emoji.no": "no",
   "emoji.stop": "stop",

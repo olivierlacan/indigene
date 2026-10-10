@@ -48,7 +48,7 @@ const STRENGTH_FLOOR = 45;
 export function plantCard(r: Ranked, weights: Weights, nq = "", regionId?: string): HTMLElement {
   const p = r.plant;
 
-  const badges = traitBadges(p, false);
+  const badges = traitBadges(p, false, regionId);
 
   const names = nameLines(p);
   // The name is the link, and CSS stretches it over the whole card (see

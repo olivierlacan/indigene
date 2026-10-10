@@ -63,6 +63,8 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
       "Récoltez des cônes fermés en fin d'été et laissez-les dans un endroit chaud et sec jusqu'à ce qu'ils s'ouvrent, puis secouez-en la graine ailée. Elle germe volontiers au printemps sans aucun froid — semez en pots profonds, car le jeune plant fait sa racine avant sa tige.",
   },
   "Celtis australis": {
+    pioneerNote:
+      "Il est déjà l'arbre d'ombre des places du Midi, parce qu'il encaisse le sol tassé, la chaleur réfléchie et l'absence d'arrosage — et il se ressème seul dans les murs.",
     nativeNote:
       "L'arbre des places de village du Midi — planté depuis longtemps pour son ombre en Provence et en Languedoc, et indigène sur les pentes rocheuses chaudes de la région.",
     careNote:
@@ -142,6 +144,8 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     },
   },
   "Pistacia lentiscus": {
+    pioneerNote:
+      "Persistant sur des gravats calcaires nus et sous le vent salé, il rejette de la souche après un incendie ou une coupe sévère.",
     nativeNote:
       "L'un des persistants qui font l'ossature du maquis et de la garrigue littorale, de la frontière espagnole à la Riviera et dans toute la Corse.",
     careNote:
@@ -156,6 +160,8 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     },
   },
   "Rhamnus alaternus": {
+    pioneerNote:
+      "Semé par les oiseaux dans les murs et les interstices derrière les bordures, puis persistant là des années avec pour tout bien des gravats et la pluie d'hiver.",
     nativeNote:
       "Un persistant luisant des broussailles, des haies et des pentes rocheuses de toute la France méditerranéenne.",
     careNote:
@@ -172,6 +178,8 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     },
   },
   "Cistus albidus": {
+    pioneerNote:
+      "L'un des premiers arbustes à revenir après un incendie, d'une graine à qui il fallait cette chaleur — feuillage gris et vie brève, sur le caillou le plus nu.",
     nativeNote:
       "Le ciste à fleurs roses de la garrigue calcaire, dans toute la Provence et le Languedoc.",
     careNote:
@@ -298,6 +306,8 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
     },
   },
   "Helichrysum stoechas": {
+    pioneerNote:
+      "Un coussin argenté sur le sable et le gravier nus, qui sent le curry à la chaleur, chez lui sur un bord de route à portée de vue de la mer.",
     supportNotes: {
       "mason-bees":
         "L'immortelle fleurit au pire de la sécheresse estivale, quand presque rien d'autre en garrigue n'a plus rien à donner, et c'est précisément pour cela qu'une longue liste de petites abeilles solitaires la butine.",
@@ -433,6 +443,8 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
       "Le plus simple est de laisser faire : couchez la pointe d'une canne au sol en fin d'été, fixez-la, et elle s'enracine avant l'hiver — coupez alors le lien avec la plante mère. Les graines demandent de passer par un oiseau ou par un long hiver dehors.",
   },
   "Salvia rosmarinus": {
+    pioneerNote:
+      "Il pousse sur un talus de gravats ou au pied d'un mur sans une goutte d'eau en été, et fleurit pendant la partie douce de l'hiver, quand rien d'autre n'est ouvert.",
     supportNotes: {
       "bumble-bees":
         "Le romarin fleurit de novembre à avril — tout l'hiver méditerranéen — si bien qu'un après-midi doux de janvier, c'est à peu près la seule fleur qu'une reine de bourdon puisse trouver.",
@@ -513,6 +525,8 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
       "Bouturez en fin d'été des pousses en voie d'aoûtement de la longueur d'une main, dans un mélange graveleux, à l'ombre. Le marcottage marche aussi : couchez une tige, fixez-la, et détachez-la l'année suivante.",
   },
   "Asplenium ceterach": {
+    pioneerNote:
+      "Elle cuit sur un dessus de mur exposé au sud, s'enroule, brunit, paraît morte tout l'été — et se redéploie verte à la première pluie d'automne.",
     nativeNote:
       "La fougère des vieux murs de pierre sèche et des fissures calcaires de tout le Midi — verte dessus, couverte dessous d'écailles rouillées, d'où lui vient son nom.",
     careNote:
@@ -523,6 +537,8 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
       "Laissez un morceau de fronde mûre une journée dans une enveloppe de papier, éparpillez les spores tombées sur un terreau stérilisé humide, sous couvercle, et gardez-le au frais et à mi-ombre — des mois, pas des semaines. Une touffe établie peut aussi se diviser au printemps.",
   },
   "Asplenium trichomanes": {
+    pioneerNote:
+      "Son nom français dit tout : la capillaire des murailles. C'est l'habitat entier — un joint de mortier à l'ombre, et pas un gramme de terre.",
     nativeNote:
       "La petite fougère à tige noire des joints de mortier de tous les vieux murs et de toutes les parois rocheuses ombragées du Midi — des rangées régulières de folioles rondes sur un pétiole fin comme un fil.",
     careNote:

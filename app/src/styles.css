@@ -152,6 +152,7 @@ a {
 .note a:not(.btn),
 .kv a,
 .step-lede a,
+.pioneers-credit a,
 .region-tag a {
   color: inherit;
   text-decoration: underline;
@@ -159,7 +160,7 @@ a {
   text-underline-offset: 2px;
   text-decoration-color: color-mix(in srgb, var(--focus) 55%, transparent);
 }
-:is(.privacy-page > p, .privacy-page > :is(ul, ol) > li, .note, .kv, .step-lede, .region-tag) a:is(:hover, :focus-visible) {
+:is(.privacy-page > p, .privacy-page > :is(ul, ol) > li, .note, .kv, .step-lede, .pioneers-credit, .region-tag) a:is(:hover, :focus-visible) {
   color: var(--focus);
   text-decoration-color: currentColor;
 }
@@ -2796,6 +2797,14 @@ details.weights {
   background: var(--surface-2);
   color: var(--ink-soft);
 }
+/* Pavement pioneers wear concrete: a slate pill, same fixed pairing in both
+   themes as the tie chips below use, because the colour IS the meaning here —
+   this is the badge for "it'll grow in the hard grey stuff". #fff on #4f5a63
+   is about 7:1, comfortably past AA at this weight and size. */
+.badge.pioneer {
+  background: #4f5a63;
+  color: #fff;
+}
 /* Tap-to-explain tie chips: a colored pill with a white monochrome glyph and a
    one-word label. A real button — the dotted underline under the label marks it
    as "there's more here", and it opens the term dialog. */
@@ -2971,6 +2980,15 @@ details.weights {
 .tag-sole {
   background: #f2c94c;
   color: #3a2c00;
+}
+/* The abuse chips on a pioneer card. One colour for all seven, unlike the
+   support chips above: those name different *kinds* of relationship worth
+   telling apart at a glance, while these are seven faces of one idea ("this
+   ground is hostile"), and seven colours would imply a distinction the data
+   doesn't make. */
+.tag-pressure {
+  background: #4f5a63;
+  color: #fff;
 }
 /* The term dialog's title glyph sits in the ink color beside the word. */
 .term-dialog-title {
@@ -3504,6 +3522,73 @@ details.weights {
    then the impostor) on a phone and pairs up side by side once there's room. */
 .lookalike-line {
   margin-top: 0.4rem;
+}
+
+/* --- Pavement pioneers --- */
+/* The card is NOT a link (its chips are buttons — see components/pioneer-card.ts),
+   so the name carries the only anchor and has to look like one. */
+.pioneer-card {
+  padding: 0.6rem 0.8rem;
+  margin: 0;
+  height: 100%;
+}
+.pioneer-head {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+}
+.pioneer-name {
+  font-weight: 700;
+}
+.pioneer-name a {
+  color: inherit;
+}
+/* The chips wrap as a block of their own under the name. `margin-top` rather
+   than a gap on the card: on the compact card they're the last thing in it. */
+.pioneer-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+}
+.pioneer-note {
+  margin: 0.55rem 0 0;
+}
+.pioneer-basis {
+  margin: 0.4rem 0 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.pioneer-basis-label {
+  font-weight: 650;
+}
+/* The same thing on a plant's page, under the badge that provoked the question.
+   `.kv` gives it the label-then-text shape of the lines around it; the chips
+   and the sentence each need their own line, so this one is a block. */
+.pioneer-line {
+  margin-top: 0.4rem;
+}
+.pioneer-line .pioneer-tags {
+  margin-top: 0.35rem;
+}
+.pioneer-line .pioneer-note {
+  margin-top: 0.4rem;
+}
+/* The credit for the nickname, at the foot of the pioneers page. Quiet, but not
+   hidden — it's an acknowledgement, so it reads as a note rather than a
+   disclaimer. */
+.pioneers-credit {
+  margin: 1.1rem 0 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  border-left: 3px solid #4f5a63;
+  padding-left: 0.7rem;
+}
+/* The book's title sits in running text, so it keeps the text's colour with a
+   soft underline — the quiet-link rule. `cite` is the element for a work's
+   title; browsers italicise it, which is what a title wants anyway. */
+.pioneers-credit cite {
+  font-style: italic;
 }
 .lookalike-card .lookalike-head {
   gap: 0.5rem;

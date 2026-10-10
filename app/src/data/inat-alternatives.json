@@ -8,15 +8,6 @@
     "attribution": "(c) tauntonguy02780, some rights reserved (CC BY-NC), uploaded by tauntonguy02780",
     "color": "#567634"
   },
-  "aesculus-hippocastanum": {
-    "taxonId": 84298,
-    "photoId": 18293649,
-    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/18293649/square.jpg",
-    "observer": "Valeria Pismerova",
-    "license": "cc-by-nc",
-    "attribution": "(c) Valeria Pismerova, some rights reserved (CC BY-NC), uploaded by Valeria Pismerova",
-    "color": "#687d2e"
-  },
   "arbutus-unedo": {
     "taxonId": 82689,
     "photoId": 587076789,
@@ -53,15 +44,6 @@
     "attribution": "(c) aquadragonfly, some rights reserved (CC BY-NC)",
     "color": "#627855"
   },
-  "carpobrotus-edulis": {
-    "taxonId": 49322,
-    "photoId": 176298740,
-    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/176298740/square.jpg",
-    "observer": "Cida Werneck",
-    "license": "cc-by-nc",
-    "attribution": "(c) Cida Werneck, some rights reserved (CC BY-NC), uploaded by Cida Werneck",
-    "color": "#757f57"
-  },
   "chrysanthemum-morifolium": {
     "taxonId": 53806,
     "photoId": 236151541,
@@ -89,32 +71,14 @@
     "attribution": "(c) M a n u e l, some rights reserved (CC BY-SA)",
     "color": "#686449"
   },
-  "crassula-ovata": {
-    "taxonId": 76465,
-    "photoId": 126892897,
-    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/126892897/square.jpeg",
-    "observer": "Adriaan Grobler",
-    "license": "cc-by-nc",
-    "attribution": "(c) Adriaan Grobler, some rights reserved (CC BY-NC), uploaded by Adriaan Grobler",
-    "color": "#5b573d"
-  },
   "cupaniopsis-anacardioides": {
     "taxonId": 161253,
-    "photoId": 1330673,
-    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/1330673/square.jpg",
-    "observer": "Martin LaBar",
+    "photoId": 396715598,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/396715598/square.jpeg",
+    "observer": "cirolana",
     "license": "cc-by-nc",
-    "attribution": "(c) Martin LaBar, some rights reserved (CC BY-NC)",
-    "color": "#a4803b"
-  },
-  "cupressocyparis-leylandii": {
-    "taxonId": 1515671,
-    "photoId": 54146452,
-    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/54146452/square.jpeg",
-    "observer": "David Earl",
-    "license": "cc-by-nc",
-    "attribution": "(c) David Earl, some rights reserved (CC BY-NC), uploaded by David Earl",
-    "color": "#7f9986"
+    "attribution": "(c) cirolana, some rights reserved (CC BY-NC)",
+    "color": "#6f6d1c"
   },
   "cycas-revoluta": {
     "taxonId": 129783,
@@ -143,15 +107,6 @@
     "attribution": "(c) cathytaylormt, some rights reserved (CC BY-NC)",
     "color": "#6b8d46"
   },
-  "fagus-sylvatica": {
-    "taxonId": 54227,
-    "photoId": 335978296,
-    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/335978296/square.jpeg",
-    "observer": "sabine-g",
-    "license": "cc-by-nc",
-    "attribution": "(c) sabine-g, some rights reserved (CC BY-NC)",
-    "color": "#688045"
-  },
   "ginkgo-biloba": {
     "taxonId": 64350,
     "photoId": 397250612,
@@ -178,15 +133,6 @@
     "license": "cc-by-nc",
     "attribution": "(c) Susan Elliott, some rights reserved (CC BY-NC), uploaded by Susan Elliott",
     "color": "#3f2b1c"
-  },
-  "hibiscus-rosa-sinensis": {
-    "taxonId": 62877,
-    "photoId": 154392458,
-    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/154392458/square.jpg",
-    "observer": "Ángel Fernández Cancio",
-    "license": "cc-by-nc",
-    "attribution": "(c) Ángel Fernández Cancio, some rights reserved (CC BY-NC), uploaded by Ángel Fernández Cancio",
-    "color": "#5f4129"
   },
   "hosta": {
     "taxonId": 82095,
@@ -224,15 +170,6 @@
     "attribution": "(c) Joan Septembre, some rights reserved (CC BY-NC), uploaded by Joan Septembre",
     "color": "#606843"
   },
-  "iris-pseudacorus": {
-    "taxonId": 47779,
-    "photoId": 930459,
-    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/930459/square.jpg",
-    "observer": "roy pilcher",
-    "license": "cc-by-nc",
-    "attribution": "(c) roy pilcher, some rights reserved (CC BY-NC), uploaded by roy pilcher",
-    "color": "#8f9048"
-  },
   "lagerstroemia-indica": {
     "taxonId": 135394,
     "photoId": 203337469,
@@ -241,24 +178,6 @@
     "license": "cc-by-nc",
     "attribution": "(c) Rich_Yang, some rights reserved (CC BY-NC), uploaded by Rich_Yang",
     "color": "#574b3d"
-  },
-  "lantana-camara": {
-    "taxonId": 50333,
-    "photoId": 334183965,
-    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/334183965/square.jpeg",
-    "observer": "Dave Brown",
-    "license": "cc0",
-    "attribution": "no rights reserved, uploaded by Dave Brown",
-    "color": "#7f825c"
-  },
-  "lantana-montevidensis": {
-    "taxonId": 77624,
-    "photoId": 106712642,
-    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/106712642/square.png",
-    "observer": "irynaf",
-    "license": "cc-by-nc",
-    "attribution": "(c) irynaf, some rights reserved (CC BY-NC)",
-    "color": "#72795e"
   },
   "ligustrum-sinense": {
     "taxonId": 128769,
@@ -350,15 +269,6 @@
     "attribution": "(c) Algirdas, some rights reserved (CC BY-SA)",
     "color": "#537e34"
   },
-  "paspalum-notatum": {
-    "taxonId": 166188,
-    "photoId": 4257259,
-    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/4257259/square.jpg",
-    "observer": "Alan Weakley",
-    "license": "cc0",
-    "attribution": "no rights reserved, uploaded by Alan Weakley",
-    "color": "#97a85c"
-  },
   "passiflora-caerulea": {
     "taxonId": 51454,
     "photoId": 40082393,
@@ -376,15 +286,6 @@
     "license": "cc-by-nc",
     "attribution": "(c) btburke, some rights reserved (CC BY-NC), uploaded by btburke",
     "color": "#756d51"
-  },
-  "picea-abies": {
-    "taxonId": 63567,
-    "photoId": 547109733,
-    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/547109733/square.jpg",
-    "observer": "Douglas Goldman",
-    "license": "cc-by-sa",
-    "attribution": "(c) Douglas Goldman, some rights reserved (CC BY-SA), uploaded by Douglas Goldman",
-    "color": "#513d1f"
   },
   "picea-pungens": {
     "taxonId": 119092,
@@ -442,12 +343,12 @@
   },
   "prunus-serrulata": {
     "taxonId": 125742,
-    "photoId": 30191276,
-    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/30191276/square.jpeg",
-    "observer": "John Luck",
+    "photoId": 90432717,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/90432717/square.jpeg",
+    "observer": "pigrodri",
     "license": "cc-by-nc",
-    "attribution": "(c) John Luck, some rights reserved (CC BY-NC), uploaded by John Luck",
-    "color": "#638645"
+    "attribution": "(c) pigrodri, some rights reserved (CC BY-NC), uploaded by pigrodri",
+    "color": "#80686f"
   },
   "pyrus-calleryana": {
     "taxonId": 119793,
@@ -457,15 +358,6 @@
     "license": "cc-by",
     "attribution": "(c) Benjamin Smith, some rights reserved (CC BY)",
     "color": "#85867a"
-  },
-  "rhaphiolepis-indica": {
-    "taxonId": 179305,
-    "photoId": 28104711,
-    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/28104711/square.jpeg",
-    "observer": "kuroshio",
-    "license": "cc-by-nc",
-    "attribution": "(c) kuroshio, some rights reserved (CC BY-NC), uploaded by kuroshio",
-    "color": "#6e6d46"
   },
   "rhododendron-ponticum": {
     "taxonId": 60364,
@@ -493,33 +385,6 @@
     "license": "cc-by-nc",
     "attribution": "(c) Carlos Eduardo Simental Crespo, some rights reserved (CC BY-NC), uploaded by Carlos Eduardo Simental Crespo",
     "color": "#8d8b4f"
-  },
-  "salvia-rosmarinus": {
-    "taxonId": 636795,
-    "photoId": 466148684,
-    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/466148684/square.jpg",
-    "observer": "Sergio Ibarra",
-    "license": "cc-by-nc",
-    "attribution": "(c) Sergio Ibarra, some rights reserved (CC BY-NC), uploaded by Sergio Ibarra",
-    "color": "#5b5b50"
-  },
-  "sequoiadendron-giganteum": {
-    "taxonId": 59567,
-    "photoId": 12477000,
-    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/12477000/square.jpeg",
-    "observer": "natomapaul",
-    "license": "cc-by-nc",
-    "attribution": "(c) natomapaul, some rights reserved (CC BY-NC)",
-    "color": "#a08f87"
-  },
-  "spiraea-japonica": {
-    "taxonId": 125790,
-    "photoId": 54692148,
-    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/54692148/square.jpeg",
-    "observer": "reteid",
-    "license": "cc-by-nc",
-    "attribution": "(c) reteid, some rights reserved (CC BY-NC)",
-    "color": "#668058"
   },
   "syagrus-romanzoffiana": {
     "taxonId": 79291,
@@ -556,14 +421,5 @@
     "license": "cc-by-nc",
     "attribution": "(c) Miroslav Marić, some rights reserved (CC BY-NC), uploaded by Miroslav Marić",
     "color": "#64586d"
-  },
-  "wisteria-sinensis": {
-    "taxonId": 127306,
-    "photoId": 481687145,
-    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/481687145/square.jpeg",
-    "observer": "Collin Willson",
-    "license": "cc-by-nc",
-    "attribution": "(c) Collin Willson, bazı hakları saklıdır (CC BY-NC), yükleyen: Collin Willson",
-    "color": "#73635e"
   }
 }

@@ -241,6 +241,20 @@ is a page bug (`overflow-x: clip` on `body` should make it impossible) — if a
 capture comes out wide, find and fix the overflowing element; don't publish
 the shot.
 
+## A photo nobody chose is never silent
+
+A plant or animal's photo is either one a person picked (`hero-photos.json`,
+`wildlife-photos.json`) or the one iNaturalist's own taxon page opens with
+(`inat-heroes.json` and its siblings). Nothing else: `hero:inat` never reaches
+further down a gallery, because the third photo of persimmon is its seeds.
+
+When iNaturalist's pick can't be republished, the subject shows its drawing and
+lands in `docs/hero-photos/needs-review.json`. **A PR that adds to that file
+says so in its description**: name each subject, and either pick its photo
+(`npm run hero:harvest -- --queue`, then `npm run hero:review`) or say it's
+left for review. The `Fill gaps` check pins the same list as a PR comment and
+warns; the description is where a reviewer reads it first.
+
 ## Every PR carries its changelog entry
 
 `CHANGELOG.md` (Keep a Changelog format) is the single source of the public

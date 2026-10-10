@@ -7,6 +7,7 @@
 //   npm run hero:harvest -- --region pnw      # one region
 //   npm run hero:harvest -- --plant acer-circinatum
 //   npm run hero:harvest -- --kind wildlife   # only the animals
+//   npm run hero:harvest -- --queue           # only what needs-review.json lists
 //   npm run hero:harvest -- --limit 5         # a quick sanity run
 //   npm run hero:harvest -- --keep 12         # shortlist size (default 10)
 //   npm run hero:harvest -- --no-angles       # skip the phenology queries
@@ -40,7 +41,7 @@
 // is a good photograph of the thing". Then `_photo-quality.mjs` re-ranks those
 // candidates on the pixels. Neither signal knows what a plant should look like,
 // which is exactly why the output is a shortlist and not a decision.
-import { writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { openLoader } from "./_load-ts.mjs";
@@ -87,6 +88,16 @@ const limit = flag("--limit") ? Number(flag("--limit")) : undefined;
 const dryRun = args.includes("--dry-run");
 const withAngles = !args.includes("--no-angles");
 const keep = Number(flag("--keep", String(DEFAULT_KEEP)));
+// `--queue`: only the subjects `hero:inat` couldn't give a photo anyone chose
+// (docs/hero-photos/needs-review.json) — the ones a reviewer has to look at.
+const QUEUE = resolve(HERE, "../../docs/hero-photos/needs-review.json");
+const queueOnly = args.includes("--queue");
+const queued = queueOnly && existsSync(QUEUE)
+  ? new Set(JSON.parse(readFileSync(QUEUE, "utf8")).subjects.map((q) => `${q.subject}|${q.id}`))
+  : null;
+// A run narrowed by any filter is a top-up, so it merges into the committed
+// shortlists instead of replacing them. Only a full run starts over.
+const partial = Boolean(onlyRegion || onlyPlant || queueOnly || onlyKind !== "both" || limit);
 
 if (!["plants", "wildlife", "both"].includes(onlyKind)) {
   console.error(`--kind must be plants, wildlife or both (got "${onlyKind}").`);
@@ -143,7 +154,8 @@ if (onlyKind !== "plants" && !onlyPlant) {
     }
   }
 }
-const todo = limit ? jobs.slice(0, limit) : jobs;
+const inQueue = (j) => !queued || queued.has(`${j.subject}|${j.id}`);
+const todo = (limit ? jobs.filter(inQueue).slice(0, limit) : jobs.filter(inQueue));
 
 if (!todo.length) {
   console.error("Nothing to harvest — check --region / --plant / --kind.");
@@ -397,10 +409,18 @@ mkdirSync(dirname(OUT), { recursive: true });
 // `generatedAt` is deliberately absent: a timestamp would make every run a diff
 // even when the shortlists are identical, which is noise in a PR whose whole
 // job is "did the candidates change?".
+// A top-up keeps every committed shortlist this run didn't redo.
+const shortKey = (sl) => `${sl.subject ?? "plant"}|${sl.id ?? sl.plantId}|${sl.regionId}`;
+// Replaced in place, new ones appended, so a top-up's diff is only what it redid.
+const fresh = new Map(shortlists.map((sl) => [shortKey(sl), sl]));
+const before = partial && existsSync(OUT) ? JSON.parse(readFileSync(OUT, "utf8")).shortlists ?? [] : [];
+const merged = before.map((sl) => fresh.get(shortKey(sl)) ?? sl);
+const had = new Set(before.map(shortKey));
+for (const sl of shortlists) if (!had.has(shortKey(sl))) merged.push(sl);
 writeFileSync(
   OUT,
   JSON.stringify(
-    { keep, consider: CONSIDER, considerAngle: CONSIDER_ANGLE, angles: withAngles, licences: LICENCES, shortlists, problems },
+    { keep, consider: CONSIDER, considerAngle: CONSIDER_ANGLE, angles: withAngles, licences: LICENCES, shortlists: merged, problems },
     null,
     2,
   ) + "\n",

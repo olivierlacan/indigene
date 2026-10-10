@@ -44,15 +44,16 @@
 // comparison needs both pictures. See `steps/lookalikes.ts`.
 //
 // The licence check is ours, not theirs: iNaturalist happily shows an
-// all-rights-reserved photo on a taxon page, and we can't. So the candidates are
-// walked in iNaturalist's own order — the default photo, then the gallery — and
-// the first one we may republish with its credit wins. A taxon whose whole
-// gallery is all-rights-reserved gets nothing and keeps its drawing.
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+// all-rights-reserved photo on a taxon page, and we can't. Only the photo the
+// taxon page opens with is ever taken; if we can't republish it, the subject
+// keeps its drawing. Why not the next photo in the gallery is in
+// `_inat-hero-pick.mjs` — the short answer is persimmon seeds.
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { openLoader } from "./_load-ts.mjs";
 import { requireProxyAwareFetch } from "./_net.mjs";
+import { choose } from "./_inat-hero-pick.mjs";
 
 requireProxyAwareFetch("hero:inat");
 
@@ -89,11 +90,6 @@ const API = "https://api.inaturalist.org/v1/taxa";
 const UA =
   "IndigeneHeroPhotos/0.1 (https://github.com/olivierlacan/indigene; hi@olivierlacan.com)";
 
-/** Licences we may republish with attribution — the harvester's five, plus the
- *  two public-domain codes iNaturalist uses for photographs nobody holds rights
- *  over (`pd` is how a Wikimedia scan of a 1904 plate comes back). Anything
- *  else, "all rights reserved" above all, is skipped. */
-const LICENCES = ["cc0", "pd", "cc-by", "cc-by-sa", "cc-by-nc", "cc-by-nc-sa"];
 
 /** iNaturalist's taxa endpoint takes a comma-separated list; 30 is its page
  *  size, so a bigger batch would be silently truncated. */
@@ -154,6 +150,48 @@ for (const path of new Set(Object.values(OUT))) {
   stored[path] = existsSync(path) ? readJson(path) : {};
 }
 const storedFor = (job) => stored[OUT[job.subject]];
+// One table per output file, starting from what is already committed there.
+const picks = Object.fromEntries(Object.entries(stored).map(([path, table]) => [path, { ...table }]));
+
+// The subjects whose taxon page opens with a photo we can't republish. Not read
+// by the app: it is the list a person works through, and the list a pull request
+// is loud about (`.github/workflows/inat-heroes.yml`). A subject leaves it the
+// moment it has a picture somebody chose — a reviewed pick, or iNaturalist's own
+// once it becomes republishable.
+const QUEUE = resolve(HERE, "../../docs/hero-photos/needs-review.json");
+const queued = existsSync(QUEUE) ? readJson(QUEUE).subjects ?? [] : [];
+const queueKey = (j) => `${j.subject}|${j.id}`;
+
+/** Rewrite the queue: what this run refused, plus what an earlier run queued
+ *  that this run didn't ask about and that still has no picture. */
+function writeQueue(asked, refusals) {
+  const inCatalog = new Set(jobs.map(queueKey));
+  const next = new Map();
+  for (const q of queued) {
+    const key = queueKey(q);
+    if (!inCatalog.has(key) || asked.has(key)) continue;
+    if (reviewed[q.subject][q.id] || picks[OUT[q.subject]][q.id]) continue;
+    next.set(key, q);
+  }
+  for (const r of refusals) next.set(queueKey(r), r);
+  const subjects = [...next.values()].sort((a, b) => queueKey(a).localeCompare(queueKey(b)));
+  mkdirSync(dirname(QUEUE), { recursive: true });
+  writeFileSync(
+    QUEUE,
+    JSON.stringify(
+      {
+        about:
+          "Subjects with no photo anyone chose: iNaturalist's own pick for the taxon can't be republished, " +
+          "so the app shows the drawing. Pick one on the review page (npm run hero:harvest -- --queue, then " +
+          "npm run hero:review). Written by npm run hero:inat.",
+        subjects,
+      },
+      null,
+      2,
+    ) + "\n",
+  );
+  return subjects;
+}
 
 // One job per subject — not per subject *and region*, which is the whole
 // difference from the harvester. iNaturalist shows one photograph per taxon
@@ -217,6 +255,7 @@ console.log(
     `${skipped.stored} already stored · ${todo.length} to ask about`,
 );
 if (!todo.length) {
+  if (!dryRun) writeQueue(new Set(), []);
   console.log("Nothing to do (--force to refetch what's stored).");
   process.exit(0);
 }
@@ -240,53 +279,35 @@ async function askJson(url) {
 
 const problems = [];
 
+// What this run settled, for the review queue: a refusal is a verdict, a
+// network failure is not, so only the first counts as "asked".
+const asked = new Set();
+const refusals = [];
+const queueEntry = (job, reason) => ({
+  subject: job.subject,
+  id: job.id,
+  name: job.name,
+  taxonId: job.taxonId ?? null,
+  reason,
+  // The gallery a reviewer would pick from, in iNaturalist's own order.
+  gallery: job.taxonId ? `https://www.inaturalist.org/taxa/${job.taxonId}/browse_photos` : null,
+});
+
 // Stage one: give every subject that has only a name a taxon id — the animals
 // and the impostors — the same way the page does.
 for (const job of todo.filter((j) => j.scope)) {
   try {
     const data = await askJson(buildTaxaUrl(job.scope.name, job.scope.iconic));
     job.taxonId = pickTaxon(data?.results, job.scope.name) ?? undefined;
-    if (!job.taxonId) problems.push({ id: job.id, error: `no iNaturalist taxon for "${job.name}"` });
+    if (!job.taxonId) {
+      problems.push({ id: job.id, error: `no iNaturalist taxon for "${job.name}"` });
+      refusals.push(queueEntry(job, `no iNaturalist taxon for "${job.name}"`));
+      asked.add(queueKey(job));
+    }
   } catch (err) {
     problems.push({ id: job.id, error: err.message });
   }
   await sleep(PACE_MS);
-}
-
-/** iNaturalist photo URLs carry the size as the last path segment; everything
- *  downstream derives `medium` and `large` from this one the same way. */
-const squareUrl = (url) =>
-  url.replace(/\/(square|small|medium|large|original)\.(\w+)/, "/square.$2");
-
-/** iNaturalist's own order of preference: the photograph the taxon page opens
- *  with, then the gallery behind it. The first one we may republish wins — so a
- *  species whose chosen photo is all-rights-reserved still gets the best picture
- *  of it we're allowed to show, rather than nothing. */
-function choose(taxon) {
-  const seen = new Set();
-  const gallery = [taxon.default_photo, ...(taxon.taxon_photos ?? []).map((tp) => tp.photo)];
-  for (const photo of gallery) {
-    if (!photo?.id || !photo.url || seen.has(photo.id)) continue;
-    seen.add(photo.id);
-    if (!LICENCES.includes(photo.license_code)) continue;
-    return {
-      taxonId: taxon.id,
-      photoId: photo.id,
-      url: squareUrl(photo.url),
-      // The name to *print*, which iNaturalist gives separately from the login
-      // precisely because the two differ: a photo's rights can belong to
-      // someone who never had an account here.
-      observer: photo.attribution_name ?? null,
-      license: photo.license_code,
-      // Verbatim, always. Nothing in this repo separates a photograph from the
-      // credit iNaturalist states for it.
-      attribution: photo.attribution ?? null,
-      // Which rung of their gallery we landed on — 0 is the photo they show.
-      // Kept out of the committed file; it's a number for this run's report.
-      rank: gallery.indexOf(photo),
-    };
-  }
-  return null;
 }
 
 // Stage two: ask for the taxa themselves, thirty at a time.
@@ -312,10 +333,8 @@ for (let i = 0; i < ids.length; i += BATCH) {
   await sleep(PACE_MS);
 }
 
-// One table per output file, starting from what is already committed there.
-const picks = Object.fromEntries(Object.entries(stored).map(([path, table]) => [path, { ...table }]));
 const touched = new Set();
-const report = { taken: 0, past: 0, none: 0 };
+const report = { taken: 0, cleared: 0, none: 0 };
 for (const [taxonId, jobsForTaxon] of byTaxon) {
   const pick = chosen.get(taxonId);
   // A taxon can be two subjects at once — common ivy is a native in Atlantic
@@ -323,16 +342,28 @@ for (const [taxonId, jobsForTaxon] of byTaxon) {
   // ids, in their own files, from the one request.
   for (const job of jobsForTaxon) {
     const path = OUT[job.subject];
-    if (!pick) {
-      // Either the taxon didn't come back, or nothing in its gallery is
-      // republishable. Both mean the same thing to the app: keep the drawing.
-      if (chosen.has(taxonId)) report.none++;
-      problems.push({ id: job.id, error: `no reusable photo for taxon ${taxonId}` });
+    if (!pick || pick.refused) {
+      // The taxon didn't come back, or the photo its page opens with is one we
+      // can't republish. Both mean the same thing to the app: keep the drawing.
+      if (pick) report.none++;
+      problems.push({ id: job.id, error: pick?.refused ?? `taxon ${taxonId} didn't come back` });
+      // A pick stored by an earlier rule is not grandfathered in: if the answer
+      // today is "nothing", the file says nothing. (A taxon that simply didn't
+      // come back is a network answer, not a verdict, so it keeps its pick.)
+      if (pick) {
+        asked.add(queueKey(job));
+        refusals.push(queueEntry(job, pick.refused));
+      }
+      if (pick && picks[path][job.id]) {
+        delete picks[path][job.id];
+        report.cleared++;
+        touched.add(path);
+      }
       continue;
     }
-    const { rank, ...record } = pick;
+    asked.add(queueKey(job));
+    const record = { ...pick };
     report.taken++;
-    if (rank > 0) report.past++;
     // A colour already computed for this exact photograph is still true.
     const before = stored[path][job.id];
     if (before?.color && before.photoId === record.photoId) record.color = before.color;
@@ -350,9 +381,14 @@ for (const path of touched) {
   console.log(`\nwrote ${path.replace(resolve(HERE, "../.."), ".")} — ${Object.keys(sorted).length} subjects`);
 }
 
+const queue = writeQueue(asked, refusals);
 console.log(
-  `  ${report.taken} photographs · ${report.past} from past their first choice · ` +
-    `${report.none} with nothing republishable`,
+  `  ${report.taken} photographs · ${report.none} whose chosen photo we can't republish` +
+    (report.cleared ? ` · ${report.cleared} earlier picks cleared` : ""),
+);
+console.log(
+  `\n${queue.length} waiting for a person to choose a photo → ` +
+    `${QUEUE.replace(resolve(HERE, "../.."), ".")}`,
 );
 if (problems.length) {
   console.log(`\n${problems.length} without a photograph:`);

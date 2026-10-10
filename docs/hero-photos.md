@@ -41,12 +41,17 @@ changes.
 
 Three details worth knowing:
 
-- **The licence check is ours.** iNaturalist happily shows an all-rights-reserved
-  photo on a taxon page and we can't republish one, so the candidates are walked
-  in their own order — the chosen photo, then the gallery behind it — and the
-  first one we may republish with its credit wins. 36 of 179 subjects needed that
-  step; one (red elderberry) has nothing republishable at all and keeps its
-  drawing.
+- **Only the photo iNaturalist chose.** If the taxon page's own photo is
+  all-rights-reserved, we can't republish it, and the subject keeps its drawing.
+  We used to take the next republishable photo in the gallery instead, which put
+  a close-up of persimmon seeds at the top of its page. A better picture from the
+  gallery is for a person to pick, through the review above. In October 2026 this
+  cleared 130 of 588 subjects.
+  Every one of them is listed, with the reason and a link to its gallery, in
+  `docs/hero-photos/needs-review.json`. The review page puts them first, and
+  `npm run hero:harvest -- --queue` harvests candidates for just those. A PR that
+  adds to the list gets a pinned comment naming each one, and a warning on its
+  `Fill gaps` check.
 - **A taxon photo has no sighting behind it.** No place, no date, no observer
   account — iNaturalist names the photographer, who may never have had one. So
   the lightbox prints the name as plain text and links "View original photo"

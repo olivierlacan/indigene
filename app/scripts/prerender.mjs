@@ -332,6 +332,8 @@ async function collectPages(load) {
     load("/src/data/invasives.ts"),
     load("/src/lib/invasives.ts"),
   ]);
+  // Plant prose marks emphasis with asterisks; a link preview shows them raw.
+  const { plainText } = await load("/src/lib/inline-markdown.ts");
 
   const pages = [];
   const add = (path, title, description, extra) =>
@@ -473,7 +475,7 @@ async function collectPages(load) {
       add(
         `plants/${plant.id}`,
         fill(en["plant.docTitle"], { name: plant.common, latin: plant.latin }),
-        `${plant.nativeNote} ${plant.givesNote}`,
+        plainText(`${plant.nativeNote} ${plant.givesNote}`),
         {
           image: plantCard(plant.id),
           imageAlt: `${plant.common} (${plant.latin}) — a drawing of its form, with what it feeds and how big it grows`,
@@ -520,7 +522,7 @@ async function collectPages(load) {
     add(
       `lookalikes/${row.lookalike.id}`,
       fill(en["lookalikes.docTitle"], { name: row.lookalike.common }),
-      `${row.lookalike.origin} ${row.lookalike.blurb}`,
+      plainText(`${row.lookalike.origin} ${row.lookalike.blurb}`),
       {
         image: lookalikeCard(row.lookalike.id),
         // The card names where it's really from and how many natives it apes,
@@ -537,7 +539,7 @@ async function collectPages(load) {
     add(
       `alternatives/${row.ornamental.id}`,
       fill(en["alternatives.docTitle"], { name: row.ornamental.common }),
-      `${row.ornamental.origin} ${row.ornamental.blurb}`,
+      plainText(`${row.ornamental.origin} ${row.ornamental.blurb}`),
       {
         image: alternativeCard(row.ornamental.id),
         imageAlt: `${row.ornamental.common} (${row.ornamental.latin}) — what it's planted for, and how many native plants do the same job`,

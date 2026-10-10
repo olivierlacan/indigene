@@ -32,6 +32,7 @@ import { mostWantedSection } from "../components/most-wanted";
 import { mostWanted, wantedRegionHref } from "../lib/invasives";
 import { mappedLookalikeIds } from "../lib/lookalikes";
 import { alternativeCountForRegion } from "../lib/alternatives";
+import { richText } from "../components/rich-text";
 
 const FORM_ORDER: PlantForm[] = ["tree", "shrub", "perennial", "annual", "grass", "vine", "groundcover", "fern"];
 /** The category headings. A function, not a record: a record built at import
@@ -378,7 +379,7 @@ function plantRow(p: Plant, regionId: string): { node: HTMLElement; mark: (nq: s
       sub,
       el("div", {
         style: "font-size:0.85rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis",
-      }, prose(p, "givesNote", regionId)),
+      }, richText(prose(p, "givesNote", regionId))),
     ]),
   ]);
   const mark = (nq: string): void => {

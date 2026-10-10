@@ -50,6 +50,7 @@ import type { PlantingSource, Season, Technique, TechniqueFrom } from "../lib/pl
 import { propagationMethod, SOURCES_ROUTE } from "../lib/plain";
 import { t, tn, tx, fmtNumber } from "../lib/i18n";
 import { commonName } from "../lib/names";
+import { richText } from "../components/rich-text";
 
 /** The index's address. One place knows the URL shape. */
 const INDEX_HREF = "#/planting";
@@ -305,7 +306,7 @@ async function renderTechnique(main: HTMLElement, tech: Technique): Promise<void
         ]),
         el("section", { class: "card" }, [
           el("h3", {}, t("planting.timingTitle")),
-          el("p", {}, g.timing),
+          el("p", {}, richText(g.timing)),
           // The one technique the app's warmest region cannot do outdoors at all.
           tech.method === "seed-cold-moist"
             ? el("p", { class: "note info", style: "margin-bottom:0" }, [

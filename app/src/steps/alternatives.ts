@@ -45,6 +45,7 @@ import { NAME_CHOICES } from "../data/name-choices";
 import { wantedLine } from "../components/wanted-line";
 import { alternativeBlurb, alternativeOrigin, alternativeRole, alternativeWhy, alternativeEdges, alternativesUntranslated } from "../lib/prose";
 import { reportUntranslated } from "../components/wip-banner";
+import { richText } from "../components/rich-text";
 
 /** The route prefix that makes `#/alternatives/…` an index filtered to a region
  *  rather than one ornamental's page — the same device the look-alike and
@@ -262,7 +263,7 @@ export async function renderAlternative(main: HTMLElement, param?: string): Prom
         el("span", { class: "k" }, t("alternatives.whereItsFrom")),
         alternativeOrigin(ornamental),
       ]),
-      el("p", {}, alternativeBlurb(ornamental)),
+      el("p", {}, richText(alternativeBlurb(ornamental))),
       // Where it's one of a region's worst invasives, say how high it ranks.
       wantedLine(ornamental.latin),
       // Where it's a native of its own somewhere we cover (English ivy in
@@ -354,11 +355,11 @@ function edgeTable(ornamental: Ornamental, nativeName: string, link: Alternative
       el("div", { class: "tell-feature" }, t(`alternative.axis.${edge.axis}` as const)),
       el("div", { class: "tell-side is-native" }, [
         el("span", { class: "tell-who" }, shortLabel(nativeName)),
-        el("span", {}, edge.native),
+        el("span", {}, richText(edge.native)),
       ]),
       el("div", { class: "tell-side is-impostor" }, [
         el("span", { class: "tell-who" }, shortLabel(commonName(ornamental))),
-        el("span", {}, edge.ornamental),
+        el("span", {}, richText(edge.ornamental)),
       ]),
     ])
   ));

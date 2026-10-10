@@ -2861,6 +2861,62 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "berry-songbirds", support: "berries", note: "Saw palmetto's fall fruit is eaten by many birds; its spring flowers are a legendary nectar and honey source.", basis: "UF/IFAS." },
       { wildlifeId: "gopher-tortoise", support: "shelter", note: "Saw palmetto scrub is core gopher tortoise habitat, and the berries are part of its diet.", basis: "UF/IFAS; Florida gopher tortoise guidance." },
     ],
+    "diospyros-virginiana": [
+      { wildlifeId: "luna-moth", support: "host", note: "Persimmon is one of the luna moth's main caterpillar trees in the Deep South, where it uses persimmon and sweetgum more than the birches it takes up north.", basis: "NWF Native Plant Finder; UF/IFAS." },
+      { wildlifeId: "acorn-mammals", support: "berries", note: "Ripe persimmons drop in late fall and are taken by foxes, raccoons, opossums, deer and black bears.", basis: "USDA PLANTS; UF/IFAS." },
+    ],
+    "celtis-laevigata": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "The small sweet berries hang on into winter, when mockingbirds, robins and woodpeckers work the tree for them.", basis: "Cornell Lab; UF/IFAS." },
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "Wintering waxwing flocks strip sugarberry along with the hollies and cedars.", basis: "Cornell Lab." },
+    ],
+    "magnolia-virginiana": [
+      { wildlifeId: "eastern-tiger-swallowtail", support: "host", note: "Sweetbay is one of the tiger swallowtail's caterpillar trees, and in Florida one of its most used.", basis: "NWF Native Plant Finder; UF/IFAS." },
+    ],
+    "vaccinium-arboreum": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Native bees work the small white bells in spring, including blueberry specialists.", basis: "Xerces Society; Fowler & Droege." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "The black berries ripen in fall and last into winter for thrushes, mockingbirds and bluebirds.", basis: "Cornell Lab; UF/IFAS." },
+    ],
+    "juniperus-virginiana": [
+      { wildlifeId: "juniper-hairstreak", support: "host", reliance: "sole", note: "Florida's juniper hairstreaks raise their caterpillars on red cedar and nothing else.", basis: "BAMONA; UF/IFAS." },
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "The waxwing is named for this tree: flocks strip the blue cones in winter.", basis: "Cornell Lab." },
+      { wildlifeId: "yellow-rumped-warbler", support: "berries", note: "Wintering yellow-rumped warblers take the cones along with wax myrtle berries.", basis: "Cornell Lab." },
+    ],
+    "morella-cerifera": [
+      { wildlifeId: "yellow-rumped-warbler", support: "berries", reliance: "narrow", note: "Yellow-rumped warblers can digest the wax on these berries, which few birds can, and it carries them through the Florida winter.", basis: "Cornell Lab; UF/IFAS." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Tree swallows, bluebirds and catbirds take the waxy berries too.", basis: "Cornell Lab." },
+    ],
+    "cephalanthus-occidentalis": [
+      { wildlifeId: "spicebush-swallowtail", support: "nectar", note: "Big swallowtails feed at it with their wings still beating, working round the sphere as they go.", basis: "GloBI — iNaturalist observation records; Xerces Society." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "It flowers through the hottest months, when little else on a pond edge does.", basis: "GloBI — iNaturalist observation records; Xerces Society." },
+    ],
+    "erythrina-herbacea": [
+      { wildlifeId: "ruby-throated-hummingbird", support: "nectar", note: "Coral bean flowers in spring as ruby-throats come north, and its long red tubes are built for their bills.", basis: "UF/IFAS; Florida Native Plant Society." },
+    ],
+    "rhus-copallinum": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Sumac fruit is a winter fallback for bluebirds, mockingbirds and thrushes when richer berries are gone.", basis: "Cornell Lab; UF/IFAS." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "The small summer flowers are worked by many native bees and wasps.", basis: "Xerces Society." },
+    ],
+    "lobelia-cardinalis": [
+      { wildlifeId: "ruby-throated-hummingbird", support: "nectar", note: "Vivid red tubes are shaped for a hummingbird's bill and are one of its most important native nectar plants.", basis: "LBJ Wildflower Center; Audubon." },
+    ],
+    "rudbeckia-hirta": [
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "A sunflower-family bloom whose pollen feeds specialist bees.", basis: "Fowler & Droege." },
+      { wildlifeId: "american-goldfinch", support: "seeds", note: "Wintering goldfinches pick the seed from the dry cones.", basis: "Cornell Lab." },
+    ],
+    "helianthus-angustifolius": [
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "A true sunflower, and late — a pollen source for specialist bees at the end of the season.", basis: "Fowler & Droege." },
+      { wildlifeId: "monarch", support: "nectar", note: "October bloom feeds monarchs moving south through Florida.", basis: "Xerces Society; UF/IFAS." },
+    ],
+    "gelsemium-sempervirens": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "One of the first flowers of the year, worked by early native bees.", basis: "UF/IFAS; Xerces Society." },
+    ],
+    "lonicera-sempervirens": [
+      { wildlifeId: "ruby-throated-hummingbird", support: "nectar", note: "Coral tubular flowers over a long season make it one of the best hummingbird vines there is.", basis: "LBJ Wildflower Center; Audubon." },
+      { wildlifeId: "hummingbird-clearwing", support: "host", note: "Honeysuckle is a documented caterpillar plant of the hummingbird clearwing moth.", basis: "NWF Native Plant Finder." },
+    ],
+    "bignonia-capreolata": [
+      { wildlifeId: "ruby-throated-hummingbird", support: "nectar", note: "Its orange-red trumpets open as the first ruby-throats arrive in spring.", basis: "UF/IFAS; LBJ Wildflower Center." },
+    ],
   },
 
   "florida-south": {

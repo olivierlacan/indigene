@@ -380,6 +380,181 @@ export const FLORIDA: ProseTable = {
   },
 
   // -------------------------------------------------------------------------
+  // Floride du Nord et du Centre — le deuxième lot, choisi parmi les plantes
+  // que l'Audubon et le Wildflower Center recommandent tous deux.
+  // -------------------------------------------------------------------------
+  "Diospyros virginiana": {
+    nativeNote:
+      "Indigène dans toute la Floride, dans les friches, les collines sableuses et les lisières de hammock.",
+    careNote:
+      "Robuste en sol sableux et pauvre, et insensible à la sécheresse une fois enraciné. Les arbres sont mâles ou femelles et seules les femelles fructifient : plantez-en plusieurs. Laissé libre, il drageonne en petit bosquet.",
+    givesNote:
+      "Ses fruits orange s'adoucissent après les premières nuits fraîches et nourrissent renards, ratons laveurs, opossums et oiseaux. Ses feuilles élèvent le papillon lune et des dizaines d'autres chenilles.",
+    propagationNote:
+      "Pressez les graines de fruits bien mous, lavez la pulpe et semez dehors à l'automne : l'hiver fera le froid. Il descend vite une longue racine pivotante, alors prenez un pot profond ou semez-le à sa place définitive. Un drageon enraciné prélevé près d'un arbre femelle la reproduit, fruits compris.",
+    supportNotes: {
+      "luna-moth":
+        "Dans le Sud profond, le plaqueminier est l'un des principaux arbres du papillon lune, qui s'y sert davantage du plaqueminier et du copalme que des bouleaux qu'il prend plus au nord.",
+      "acorn-mammals":
+        "Les plaquemines mûres tombent à la fin de l'automne et sont emportées par les renards, ratons laveurs, opossums, cerfs et ours noirs.",
+    },
+  },
+  "Celtis laevigata": {
+    nativeNote:
+      "Le micocoulier des plaines inondables et des hammocks de Floride, indigène dans presque tout l'État.",
+    careNote:
+      "Rapide, robuste et peu exigeant — sec ou humide, acide ou calcaire, en ville ou au marais. Donnez-lui de la place : il devient un grand arbre d'ombre à l'écorce grise, lisse et verruqueuse.",
+    givesNote:
+      "Ses baies sucrées rouge orangé restent sur l'arbre jusqu'en hiver pour les moqueurs, les merles et les jaseurs. Ses feuilles élèvent trois papillons qui ne vivent que sur les micocouliers.",
+    propagationNote:
+      "Cueillez les baies à l'automne, faites-les tremper et frottez la mince chair, puis semez dehors : l'hiver fera le froid. Les semis lèvent au printemps et poussent vite.",
+    supportNotes: {
+      "berry-songbirds":
+        "Les petites baies sucrées tiennent jusqu'en hiver, quand moqueurs, merles et pics viennent les chercher.",
+      "cedar-waxwing":
+        "Les bandes de jaseurs en hivernage dépouillent le micocoulier comme les houx et les genévriers.",
+    },
+  },
+  "Magnolia virginiana": {
+    nativeNote:
+      "Indigène des flatwoods humides, des baies boisées et des bords de marécage dans toute la Floride.",
+    careNote:
+      "Fait pour un coin humide et acide où la plupart des arbres dépérissent : il supporte les pieds dans l'eau et la mi-ombre. Presque persistant ici, ses feuilles montrent leur revers argenté au vent.",
+    givesNote:
+      "Des fleurs blanches au parfum citronné tout le printemps, et des graines rouges pour les oiseaux à l'automne. Ses feuilles élèvent le grand porte-queue tigré et un bombyx qui porte son nom.",
+    propagationNote:
+      "Récoltez les cônes quand ils s'ouvrent à l'automne, frottez l'enveloppe rouge des graines et ne les laissez jamais sécher. Semez dehors, ou gardez-les trois mois au frais et humides au réfrigérateur. Une branche basse fixée au sol humide s'enracine d'elle-même.",
+    supportNotes: {
+      "eastern-tiger-swallowtail":
+        "Le magnolia de Virginie est l'un des arbres du grand porte-queue tigré, et en Floride l'un des plus utilisés.",
+    },
+  },
+  "Vaccinium arboreum": {
+    nativeNote:
+      "Un petit arbre indigène des collines sableuses, du scrub et des bois secs de Floride.",
+    careNote:
+      "Il demande un sol sableux, acide et drainé, et rien d'autre — l'un des rares arbres heureux dans le scrub sec. Lent à démarrer, il déteste être déplacé : plantez-le petit. L'écorce s'exfolie en rouge cannelle avec l'âge.",
+    givesNote:
+      "Des nuées de clochettes blanches pour les abeilles indigènes au printemps, et des baies noires pour les oiseaux jusqu'en hiver. Comme tous les myrtilliers, il nourrit un très grand nombre de chenilles.",
+    propagationNote:
+      "Écrasez des baies mûres, rincez les minuscules graines et semez-les en surface sur un terreau acide et humide. La germination est lente et irrégulière : semez large. Les boutures tendres de printemps s'enracinent avec de la patience.",
+    supportNotes: {
+      "mason-bees":
+        "Les abeilles indigènes butinent les petites clochettes blanches au printemps, dont des spécialistes des myrtilliers.",
+      "berry-songbirds":
+        "Les baies noires mûrissent à l'automne et tiennent jusqu'en hiver pour les grives, les moqueurs et les merlebleus.",
+    },
+  },
+  "Juniperus virginiana": {
+    nativeNote:
+      "La forme côtière du genévrier de Virginie, indigène sur les côtes, les falaises fluviales et le calcaire de Floride.",
+    careNote:
+      "Insensible au sel, au vent et à la sécheresse une fois installé : un bon écran persistant près de la côte. Il lui faut le plein soleil ; à l'ombre, il se dégarnit.",
+    givesNote:
+      "Un couvert persistant et dense où les oiseaux nichent et dorment, et des cônes bleus en forme de baie que les jaseurs dépouillent en hiver. C'est la seule nourriture des chenilles du porte-queue des genévriers.",
+    propagationNote:
+      "La graine est lente : il lui faut une période chaude puis un hiver, et elle met souvent un an et demi à lever. Les boutures de pointes prises en hiver s'enracinent plus sûrement. Seuls les arbres femelles portent les cônes bleus.",
+    supportNotes: {
+      "juniper-hairstreak":
+        "En Floride, le porte-queue des genévriers élève ses chenilles sur le genévrier de Virginie et sur rien d'autre.",
+      "cedar-waxwing":
+        "Le jaseur d'Amérique, « cedar waxwing » en anglais, tient son nom de cet arbre : les bandes en dépouillent les cônes bleus en hiver.",
+      "yellow-rumped-warbler":
+        "Les parulines à croupion jaune en hivernage prennent ses cônes avec les baies du myrique cirier.",
+    },
+  },
+  "Morella cerifera": {
+    nativeNote:
+      "Indigène dans chaque comté de Floride, des flatwoods humides aux dunes.",
+    careNote:
+      "Rapide et presque impossible à tuer — soleil ou ombre, sec ou humide, sel et sable. L'écran indigène le plus rapide qui soit. Il drageonne : laissez-lui de la place ou arrachez les rejets. Seuls les pieds femelles portent des baies.",
+    givesNote:
+      "Des baies bleues cireuses dont vivent tout l'hiver les parulines à croupion jaune et les hirondelles bicolores, et un couvert dense pour les oiseaux nicheurs.",
+    propagationNote:
+      "Frottez la cire de la graine et semez-la au chaud. Il s'enracine aussi par boutures semi-aoûtées, et les drageons enracinés au pied se déterrent et se replantent.",
+    supportNotes: {
+      "yellow-rumped-warbler":
+        "La paruline à croupion jaune digère la cire de ces baies, ce que peu d'oiseaux savent faire, et c'est ce qui la porte à travers l'hiver floridien.",
+      "berry-songbirds":
+        "Les hirondelles bicolores, les merlebleus et les moqueurs chats prennent aussi les baies cireuses.",
+    },
+  },
+  "Erythrina herbacea": {
+    nativeNote:
+      "Indigène dans les hammocks, les collines sableuses et les bois côtiers de toute la Floride.",
+    careNote:
+      "Un gel sévère le rabat au sol et il repart de sa grosse racine. Ses tiges sont piquantes et ses graines rouges toxiques : tenez-le loin des jeux des jeunes enfants.",
+    givesNote:
+      "Des épis de fleurs tubulaires écarlates au printemps, au moment où les colibris remontent vers le nord.",
+    propagationNote:
+      "L'enveloppe de la graine est dure : entaillez-la à la lime ou faites tremper les graines une nuit dans l'eau chaude, puis semez au chaud. Portez des gants, les graines sont toxiques. Les boutures de tiges sans feuilles prises en hiver s'enracinent aussi.",
+    supportNotes: {
+      "ruby-throated-hummingbird":
+        "L'Erythrina herbacea fleurit au printemps quand les colibris à gorge rubis remontent, et ses longs tubes rouges sont faits pour leur bec.",
+    },
+  },
+  "Rhus copallinum": {
+    nativeNote:
+      "Indigène des collines sableuses, des friches et des flatwoods à pins de toute la Floride.",
+    careNote:
+      "Il drageonne en colonie — parfait pour tenir un talus sec, pas pour un massif soigné. Il rougit à l'automne, chose rare si loin au sud. Ce n'est pas le sumac à vernis, une plante des marais aux baies blanches.",
+    givesNote:
+      "Ses fleurs d'été bourdonnent d'abeilles et de guêpes. Ses grappes de fruits rouges tiennent tout l'hiver pour les merlebleus, les moqueurs et les colins quand il ne reste presque rien d'autre.",
+    propagationNote:
+      "Le plus simple : des tronçons de racine gros comme un crayon, prélevés en fin d'hiver et couchés dans un sol humide. La graine a une enveloppe dure : versez de l'eau chaude dessus et laissez-la tremper avant de semer.",
+    supportNotes: {
+      "berry-songbirds":
+        "Les fruits du sumac sont un recours d'hiver pour les merlebleus, les moqueurs et les grives quand les baies plus riches sont finies.",
+      "mason-bees":
+        "Ses petites fleurs d'été sont butinées par de nombreuses abeilles et guêpes indigènes.",
+    },
+  },
+  "Helianthus angustifolius": {
+    nativeNote:
+      "Indigène des flatwoods humides, des fossés et des bords de marais dans toute la Floride.",
+    careNote:
+      "Il s'étend en grande touffe en sol frais. Rabattez-le de moitié au début de l'été pour qu'il tienne debout à l'automne au lieu de verser. Il survit aux périodes sèches mais il est plus beau au frais.",
+    givesNote:
+      "Un mur jaune en octobre et en novembre, quand les abeilles et les papillons migrateurs ont le plus besoin de carburant. Des abeilles spécialistes des tournesols dépendent de son pollen, et les oiseaux prennent ses graines.",
+    propagationNote:
+      "Déterrez et divisez la touffe en fin d'hiver, ou bouturez des pointes tendres au printemps. La graine marche aussi, semée dehors à l'automne.",
+    supportNotes: {
+      "sunflower-specialist-bees":
+        "Un vrai tournesol, et tardif — une source de pollen pour les abeilles spécialistes en fin de saison.",
+      monarch:
+        "Sa floraison d'octobre nourrit les monarques qui descendent vers le sud à travers la Floride.",
+    },
+  },
+  "Gelsemium sempervirens": {
+    nativeNote:
+      "Indigène dans les bois, les hammocks et les haies du nord et du centre de la Floride.",
+    careNote:
+      "Persistant et facile sur une clôture, un treillage ou une boîte aux lettres. Il grimpe en s'enroulant et n'abîme donc pas un mur. Toute la plante est toxique : évitez-la là où des enfants ou des animaux mâchonnent les plantes.",
+    givesNote:
+      "Des trompettes jaunes parfumées en janvier et février, la première grande floraison de l'année pour les abeilles indigènes précoces.",
+    propagationNote:
+      "Bouturez en été des pousses de l'année quand elles se raffermissent. Plus simple encore : fixez une longue tige au sol et sevrez-la une fois enracinée.",
+    supportNotes: {
+      "mason-bees":
+        "L'une des premières fleurs de l'année, butinée par les abeilles indigènes précoces.",
+    },
+  },
+  "Bignonia capreolata": {
+    nativeNote:
+      "Indigène dans les hammocks et les bois de plaine inondable du nord et du centre de la Floride.",
+    careNote:
+      "Elle grimpe par des vrilles à ventouses et escalade un mur ou un tronc sans aide. Vigoureuse : donnez-lui un grand support. Persistante, elle vire au pourpre par temps froid.",
+    givesNote:
+      "Des trompettes rouge orangé au début du printemps, juste à l'arrivée des colibris à gorge rubis.",
+    propagationNote:
+      "Les boutures semi-aoûtées d'été s'enracinent bien, et les tiges fixées au sol s'enracinent là où elles le touchent. Les graines plates et ailées se sèment facilement au printemps, sans traitement.",
+    supportNotes: {
+      "ruby-throated-hummingbird":
+        "Ses trompettes rouge orangé s'ouvrent à l'arrivée des premiers colibris à gorge rubis au printemps.",
+    },
+  },
+
+  // -------------------------------------------------------------------------
   // Les taxa dont la clé simple appartient à la liste du Mid-Atlantic : ici,
   // leur fiche floridienne.
   // -------------------------------------------------------------------------
@@ -418,6 +593,68 @@ export const FLORIDA: ProseTable = {
           { feature: "Si vous l'avez déjà", native: "Rien à faire.", lookalike: "Rabattez-la au sol chaque automne, ou remplacez-la par une asclépiade indigène." },
         ],
       },
+    },
+  },
+  "Cephalanthus occidentalis@florida-central": {
+    nativeNote:
+      "Indigène des bords d'étang, des marécages et des fossés dans toute la Floride.",
+    careNote:
+      "Pour un coin qui reste mouillé ou qui inonde — un bord d'étang, un fossé, le point bas d'un jardin de pluie. Pas pour un sol sec.",
+    givesNote:
+      "Ses fleurs blanches en pelote d'épingles grouillent de papillons et d'abeilles tout au long de l'été floridien, et les canards mangent ses graines.",
+    propagationNote:
+      "Il s'enracine très volontiers. En hiver, enfoncez dans un sol mouillé des rameaux sans feuilles gros comme un crayon, ou bouturez des pointes vertes et tendres au début de l'été. Gardez-les mouillés le temps qu'ils s'enracinent, ce qui convient à cet amoureux de l'eau.",
+    supportNotes: {
+      "spicebush-swallowtail":
+        "Les grands porte-queue s'y nourrissent en battant encore des ailes, en faisant le tour de la sphère.",
+      "bumble-bees":
+        "Il fleurit pendant les mois les plus chauds, quand presque rien d'autre ne fleurit au bord de l'étang.",
+    },
+  },
+  "Lobelia cardinalis@florida-central": {
+    nativeNote:
+      "Indigène des berges de ruisseau, des sources et des fossés humides du nord et du centre de la Floride.",
+    careNote:
+      "Il lui faut une humidité constante — un bord d'étang, un ruisseau de source, un jardin de pluie. Elle s'effondre dans un coin sec. De courte vie, mais elle se ressème en sol frais.",
+    givesNote:
+      "Des hampes rouges où les colibris se nourrissent à la fin de l'été et à l'automne, au passage des migrateurs.",
+    propagationNote:
+      "La graine est presque une poussière : répandez-la sur un sol humide sans la couvrir, car elle a besoin de lumière pour germer. Les tiges qui retombent sur un sol mouillé s'enracinent, et ces morceaux enracinés se soulèvent et se déplacent.",
+    supportNotes: {
+      "ruby-throated-hummingbird":
+        "Ses tubes rouge vif sont faits pour le bec d'un colibri, et c'est l'une de ses plantes nectarifères indigènes les plus importantes.",
+    },
+  },
+  "Rudbeckia hirta@florida-central": {
+    nativeNote:
+      "Indigène dans toute la Floride, dans les collines sableuses, les flatwoods et les bords de route.",
+    careNote:
+      "De courte vie, mais elle se ressème abondamment : une touffe se maintient d'elle-même. Elle supporte la chaleur et le sable ; dans l'humidité floridienne, donnez-lui plein soleil et de l'air.",
+    givesNote:
+      "Des mois de marguerites dorées pour les abeilles et les papillons, puis des têtes de graines que les chardonnerets picorent en hiver.",
+    propagationNote:
+      "L'une des plus faciles : répandez à l'automne la graine des cônes secs sur un sol nu. Une fois installée, ses semis spontanés la gardent au jardin.",
+    supportNotes: {
+      "sunflower-specialist-bees":
+        "Une fleur de la famille des tournesols dont le pollen nourrit des abeilles spécialistes.",
+      "american-goldfinch":
+        "Les chardonnerets en hivernage picorent les graines dans les cônes secs.",
+    },
+  },
+  "Lonicera sempervirens@florida-central": {
+    nativeNote:
+      "Indigène dans les hammocks et les bois jusqu'au centre de la Floride — pas l'espèce envahissante.",
+    careNote:
+      "Ici une grimpante persistante et sage, rien à voir avec le chèvrefeuille du Japon envahissant. Donnez-lui un support où s'enrouler : plus de soleil, plus de fleurs.",
+    givesNote:
+      "Des trompettes corail pendant des mois, qui nourrissent les colibris pendant la migration de printemps. Viennent ensuite des baies rouges pour les passereaux.",
+    propagationNote:
+      "Il s'enracine facilement : prenez en été des morceaux de pousses de l'année quand ils se raffermissent, ou des tiges sans feuilles en hiver, et enracinez-les dans un terreau humide.",
+    supportNotes: {
+      "ruby-throated-hummingbird":
+        "Ses fleurs tubulaires corail, sur une longue saison, en font l'une des meilleures grimpantes à colibris qui soient.",
+      "hummingbird-clearwing":
+        "Le chèvrefeuille est une plante hôte documentée du sphinx colibri, Hemaris thysbe.",
     },
   },
 

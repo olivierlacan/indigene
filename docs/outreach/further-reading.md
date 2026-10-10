@@ -32,7 +32,11 @@ they can come back.
 From the research sandbox, 15 of the 73 addresses (picks plus the pages that
 recommend them) could be opened. The rest were blocked by the network, not
 found dead. `npm run reading:check` asks every one, and the **Reading links**
-workflow runs it on every change to the list and monthly. Calscape, Theodore
+workflow runs it on every change to the list and monthly. Its first run from
+CI found four recommendation pages gone (404): Penn State's York County list,
+two Wild Ones River City posts and Laois County Council's page. They were
+removed; every pick they backed kept other evidence except *Gardening for
+Biodiversity*, which was dropped. Calscape, Theodore
 Payne and the Virginia Native Plant Society refuse scripts but open in a
 browser.
 
@@ -53,7 +57,7 @@ browser.
 | Continental France | 3 | — |
 | Mediterranean France | 3 | Filippi's dry-garden books mix in plants from other Mediterranean climates |
 | French Alps | 3 | — |
-| Ireland | 4 | — |
+| Ireland | 3 | *Gardening for Biodiversity* (Heritage Officers, 2020) dropped: the one page recommending it, Laois County Council's, now answers 404 |
 | Auckland & Northland | 3 | *Let's Go Native* (Hessell, 2026) is too new for any recommendation |
 
 ## Notes a reviewer should see

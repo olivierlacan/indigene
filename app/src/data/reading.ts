@@ -139,10 +139,7 @@ const NORTHERN_GARDENERS_GUIDE: Reading = {
   url: "https://press.princeton.edu/books/paperback/9781642832990/a-northern-gardeners-guide-to-native-plants-and-pollinators",
   lang: "en",
   backer: "ecologist",
-  vouched: [
-    { name: "Wild Ones Ann Arbor", url: "https://annarborarea.wildones.org/?p=7547" },
-    { name: "Wild Ones River City", url: "https://rivercitygrandrapids.wildones.org/?p=11454" },
-  ],
+  vouched: [{ name: "Wild Ones Ann Arbor", url: "https://annarborarea.wildones.org/?p=7547" }],
 };
 
 // France's national garden network, the one French pick with an audience.
@@ -206,10 +203,6 @@ export const READING: Record<string, Reading[]> = {
       url: "https://www.hbgacademic.com/titles/larry-weaner/garden-revolution/9781604697490",
       lang: "en",
       backer: "designer",
-      vouched: [{
-        name: "Penn State Extension Master Gardeners",
-        url: "https://abe.psu.edu/programs/master-gardener/counties/york/native-plants/fact-sheets/useful-native-plant-references",
-      }],
       award: { name: "American Horticultural Society Book Award 2017" },
     },
     {
@@ -251,10 +244,7 @@ export const READING: Record<string, Reading[]> = {
       url: "https://quarto.com/books/9780760325384/landscaping-with-native-plants-of-michigan",
       lang: "en",
       backer: "naturalist",
-      vouched: [
-        { name: "Wildflower Association of Michigan", url: "https://wildflowersmich.org/keep-learning/" },
-        { name: "Wild Ones River City", url: "https://rivercitygrandrapids.wildones.org/?p=11609" },
-      ],
+      vouched: [{ name: "Wildflower Association of Michigan", url: "https://wildflowersmich.org/keep-learning/" }],
       award: { name: "Michigan Notable Book 2007" },
     },
     NORTHERN_GARDENERS_GUIDE,
@@ -590,16 +580,6 @@ export const READING: Record<string, Reading[]> = {
       lang: "ga",
       backer: "designer",
       vouched: [{ name: "Irish Wildlife Trust", url: "https://iwt.ie/be-plant-wise-let-nature-lead-plant-native/" }],
-    },
-    {
-      kind: "book",
-      title: "Gardening for Biodiversity",
-      by: "Juanita Browne",
-      year: 2020,
-      url: "https://www.heritagecouncil.ie/publications/education-training",
-      lang: "en",
-      backer: "agency",
-      vouched: [{ name: "Laois County Council", url: "https://laois.ie/departments/heritage/biodiversity/gardening-for-biodiversity" }],
     },
     {
       kind: "book",

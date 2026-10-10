@@ -420,7 +420,7 @@ async function collectPages(load) {
   // The idea the app is built on, and who built it.
   add("homegrown", en["homegrown.docTitle"], en["homegrown.lede"], {
     image: pageCard("homegrown"),
-    imageAlt: "Homegrown National Park — half the lawn given back to native plants, a park made of yards",
+    imageAlt: "Homegrown National Park — a street of yards from above, half of them mown lawn and half native planting",
   });
   add("traits", en["traits.docTitle"], en["traits.lede"], {
     image: pageCard("traits"),

@@ -53,6 +53,7 @@ Both lists recommend several times what we carry, everywhere:
 
 - **North & Central Florida is furthest behind** — 24 rows against 374
   recommendations, 222 of them genera the region has never carried.
+  Fifteen of the consensus picks shipped in #227, taking it to 39.
 - **Central California Coast**: 64 against 300.
 - **Pacific Northwest**: 106 against 228, and this is our longest list.
 - **Mid-Atlantic**: 44 against 212, 98 new genera — hornbeam, hickory,

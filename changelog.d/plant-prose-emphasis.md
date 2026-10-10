@@ -1,9 +1,10 @@
 ### Fixed
 
-- Plants: words a plant's page stresses now show in **bold** or *italic*,
-  not between stray asterisks — like the brimstone line on
-  [alder buckthorn](https://indigene.app/plants/frangula-alnus).
-- Internal: `lib/inline-markdown.ts` reads `**strong**` and `*em*` in plant
-  prose (care, gives, native and propagation notes, and the source line) and
-  `components/rich-text.ts` renders it; link previews strip the marks. A test
-  fails on any unclosed mark, in English or French (#186).
+- Words a page stresses now show in **bold** or *italic*, not between stray
+  asterisks — on plant pages, look-alikes, native swaps and planting guides.
+  The brimstone line on
+  [alder buckthorn](https://indigene.app/plants/frangula-alnus) is one.
+- Internal: `lib/inline-markdown.ts` reads `**strong**` and `*em*` (nothing
+  else) and `components/rich-text.ts` renders it wherever authored prose is
+  printed; link previews strip the marks. A test fails on any unclosed mark in
+  the data or either locale (#186).

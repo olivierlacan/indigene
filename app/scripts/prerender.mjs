@@ -522,7 +522,7 @@ async function collectPages(load) {
     add(
       `lookalikes/${row.lookalike.id}`,
       fill(en["lookalikes.docTitle"], { name: row.lookalike.common }),
-      `${row.lookalike.origin} ${row.lookalike.blurb}`,
+      plainText(`${row.lookalike.origin} ${row.lookalike.blurb}`),
       {
         image: lookalikeCard(row.lookalike.id),
         // The card names where it's really from and how many natives it apes,
@@ -539,7 +539,7 @@ async function collectPages(load) {
     add(
       `alternatives/${row.ornamental.id}`,
       fill(en["alternatives.docTitle"], { name: row.ornamental.common }),
-      `${row.ornamental.origin} ${row.ornamental.blurb}`,
+      plainText(`${row.ornamental.origin} ${row.ornamental.blurb}`),
       {
         image: alternativeCard(row.ornamental.id),
         imageAlt: `${row.ornamental.common} (${row.ornamental.latin}) — what it's planted for, and how many native plants do the same job`,

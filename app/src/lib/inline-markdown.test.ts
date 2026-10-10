@@ -57,6 +57,22 @@ describe("plant prose", () => {
         if (typeof s === "string") texts.push([`fr ${key} ${f}`, s]);
       }
     }
+    // Look-alike, swap and invasive rows, and the interface's own strings.
+    const leaves = (where: string, v: unknown): void => {
+      if (typeof v === "string") texts.push([where, v]);
+      else if (v && typeof v === "object") for (const [k, x] of Object.entries(v)) leaves(`${where}.${k}`, x);
+    };
+    const [{ LOOKALIKES }, { ORNAMENTALS, ALTERNATIVES }, { INVASIVES }, { en }, { fr }] = await Promise.all([
+      import("../data/lookalikes"), import("../data/alternatives"), import("../data/invasives"),
+      import("../locales/en"), import("../locales/fr"),
+    ]);
+    leaves("lookalikes", LOOKALIKES);
+    leaves("ornamentals", ORNAMENTALS);
+    leaves("alternatives", ALTERNATIVES);
+    leaves("invasives", INVASIVES);
+    leaves("en", en);
+    leaves("fr", fr);
+    leaves("prose.fr", PROSE_FR);
     const stray = texts.filter(([, s]) => plainText(s).includes("*")).map(([where]) => where);
     expect(stray).toEqual([]);
   });

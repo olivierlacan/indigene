@@ -1800,8 +1800,9 @@ export const en = {
 
   // ---------------------------------------------------------------------
   // Pavement pioneers — the short list for ground a city actually offers.
-  // The nickname credits Joey Santore (Crime Pays But Botany Doesn't); the
-  // credit line is published prose, not a footnote, so it says why.
+  // The name is this repo's; Joey Santore neither coined it nor had any part
+  // in the list, so the credit line is a nod to the channel, not a claim of
+  // involvement. Don't let it drift back into speaking for him.
   // ---------------------------------------------------------------------
   "pioneers.title": "Pavement pioneers",
   "pioneers.chip": "Pioneers",
@@ -1816,7 +1817,7 @@ export const en = {
     "We haven't worked out which of our {region} natives take that kind of punishment yet.",
   "pioneers.basis": "Source:",
   "pioneers.credit":
-    "Named for Joey Santore, whose Crime Pays But Botany Doesn't has spent years pointing a camera at plants growing out of cracked asphalt. The nickname is his spirit; the list, and any mistake in it, is ours.",
+    "The name is ours. The enthusiasm is borrowed from Joey Santore's Crime Pays But Botany Doesn't — worth your time if a plant growing somewhere it shouldn't is the kind of thing you stop for.",
 
   // The abuse each one takes. The term is the chip; the plain words open on a
   // tap, because "compaction" is a word from an engineering report.

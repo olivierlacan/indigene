@@ -678,9 +678,9 @@ export interface AlternativeLink {
 // them is a different answer to a different question — which is why this is a
 // side table keyed by region and plant id, not another boolean on `Plant`.
 //
-// The nickname is a nod to Joey Santore (Crime Pays But Botany Doesn't), who
-// has spent years pointing a camera at plants growing out of cracked asphalt
-// and making the case that tenacity is worth admiring. Ours are the native ones.
+// The name is this repo's own, and so is the list; the page's closing line
+// nods to Joey Santore's Crime Pays But Botany Doesn't for the enthusiasm, not
+// for the phrase. He didn't coin it and had no part in this.
 //
 // Two rules, the same as the wildlife layer's:
 //

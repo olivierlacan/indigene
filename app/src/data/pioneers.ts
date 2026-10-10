@@ -12,8 +12,10 @@
 //      standing in front of a bad patch of ground — not a second roster. If a
 //      ninth candidate is better than one already here, swap it; don't append.
 //
-// The nickname credits Joey Santore (Crime Pays But Botany Doesn't). The list
-// is ours, and so is any mistake in it.
+// "Pavement pioneers" is this repo's own name — nobody else's phrase to get
+// wrong. The page's closing line nods to Joey Santore's Crime Pays But Botany
+// Doesn't for the enthusiasm; he had no part in the list, and the credit must
+// not drift into implying he did.
 import type { PioneerEntry, PioneerPressure } from "../types";
 
 /**

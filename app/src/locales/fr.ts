@@ -1791,8 +1791,9 @@ export const fr: Dict = {
 
   // ---------------------------------------------------------------------
   // Les pionnières du bitume — la courte liste pour le sol qu'une ville
-  // offre vraiment. Le surnom rend hommage à Joey Santore (Crime Pays But
-  // Botany Doesn't) ; le nom de sa chaîne reste en anglais, c'est un titre.
+  // offre vraiment. Le nom est de nous : Joey Santore ne l'a pas inventé et
+  // n'a pris aucune part à la liste, donc la ligne de fin salue sa chaîne
+  // sans parler en son nom. Le titre de la chaîne reste en anglais.
   // ---------------------------------------------------------------------
   "pioneers.title": "Pionnières du bitume",
   "pioneers.chip": "Pionnières",
@@ -1807,7 +1808,7 @@ export const fr: Dict = {
     "Nous n'avons pas encore déterminé lesquelles de nos indigènes de {region} supportent ce genre de traitement.",
   "pioneers.basis": "Source :",
   "pioneers.credit":
-    "Nommées en hommage à Joey Santore, dont la chaîne Crime Pays But Botany Doesn't filme depuis des années des plantes qui sortent de l'asphalte fendu. L'esprit du surnom est le sien ; la liste, et ses erreurs, sont les nôtres.",
+    "Le nom est de nous. L'enthousiasme, nous l'avons emprunté à Crime Pays But Botany Doesn't, la chaîne de Joey Santore — à voir si une plante qui pousse là où elle ne devrait pas est le genre de chose qui vous arrête.",
 
   // Ce que chacune encaisse. Le terme tient dans l'étiquette ; les mots
   // simples s'ouvrent d'une touche, parce que « tassement » est un mot de

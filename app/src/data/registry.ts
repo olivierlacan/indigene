@@ -2250,6 +2250,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:108626-1",
+    "scientificName": "Bignonia capreolata",
+    "family": "Bignoniaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "108626-1",
+      "wfo": "wfo-0000781348",
+      "gbif": "3172516",
+      "usda": "BICA",
+      "itis": "34307",
+      "inat": "67823",
+      "wikidata": "Q149466",
+      "indigene": "bignonia-capreolata"
+    },
+    "commonNames": [
+      "Crossvine"
+    ],
+    "aliases": [
+      "bignonia capreolata",
+      "crossvine"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:17570940-1",
     "scientificName": "Blechnum novae-zelandiae",
     "family": "Blechnaceae",
@@ -3201,6 +3230,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:836997-1",
+    "scientificName": "Celtis laevigata",
+    "family": "Cannabaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "836997-1",
+      "wfo": "wfo-0000593589",
+      "gbif": "2984491",
+      "usda": "CELA",
+      "itis": "19042",
+      "inat": "81792",
+      "wikidata": "Q1529852",
+      "indigene": "celtis-laevigata"
+    },
+    "commonNames": [
+      "Sugarberry"
+    ],
+    "aliases": [
+      "celtis laevigata",
+      "sugarberry"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:851171-1",
     "scientificName": "Celtis sinensis",
     "family": "Cannabaceae",
@@ -3320,7 +3378,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "st-lawrence"
+      "st-lawrence",
+      "florida-central"
     ]
   },
   {
@@ -4820,6 +4879,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:323180-1",
+    "scientificName": "Diospyros virginiana",
+    "family": "Ebenaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "323180-1",
+      "wfo": "wfo-0000649953",
+      "gbif": "3032986",
+      "usda": "DIVI5",
+      "itis": "23855",
+      "inat": "83435",
+      "wikidata": "Q158356",
+      "indigene": "diospyros-virginiana"
+    },
+    "commonNames": [
+      "Common Persimmon"
+    ],
+    "aliases": [
+      "common persimmon",
+      "diospyros virginiana"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:802107-1",
     "scientificName": "Diplacus aurantiacus",
     "family": "Phrymaceae",
@@ -5522,6 +5610,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:96601-2",
+    "scientificName": "Erythrina herbacea",
+    "family": "Fabaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "96601-2",
+      "wfo": "wfo-0000165896",
+      "gbif": "5349731",
+      "usda": "ERHE4",
+      "itis": "26678",
+      "inat": "128717",
+      "wikidata": "Q5396418",
+      "indigene": "erythrina-herbacea"
+    },
+    "commonNames": [
+      "Coral Bean"
+    ],
+    "aliases": [
+      "coral bean",
+      "erythrina herbacea"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
     ]
   },
   {
@@ -6460,6 +6577,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:60448812-2",
+    "scientificName": "Gelsemium sempervirens",
+    "family": "Gelsemiaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "60448812-2",
+      "wfo": "wfo-0000696053",
+      "gbif": "3169513",
+      "usda": "GESE",
+      "itis": "29932",
+      "inat": "83070",
+      "wikidata": "Q978130",
+      "indigene": "gelsemium-sempervirens"
+    },
+    "commonNames": [
+      "Carolina Jessamine"
+    ],
+    "aliases": [
+      "carolina jessamine",
+      "gelsemium sempervirens"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:496342-1",
     "scientificName": "Genista scorpius",
     "family": "Fabaceae",
@@ -6792,6 +6938,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:315752-2",
+    "scientificName": "Helianthus angustifolius",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "315752-2",
+      "wfo": "wfo-0000066553",
+      "gbif": "3119144",
+      "usda": "HEAN2",
+      "itis": "502919",
+      "inat": "126700",
+      "wikidata": "Q12212025",
+      "indigene": "helianthus-angustifolius"
+    },
+    "commonNames": [
+      "Swamp Sunflower"
+    ],
+    "aliases": [
+      "helianthus angustifolius",
+      "swamp sunflower"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
     ]
   },
   {
@@ -7601,6 +7776,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:132551-2",
+    "scientificName": "Juniperus virginiana",
+    "family": "Cupressaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "132551-2",
+      "wfo": "wfo-0000354923",
+      "gbif": "2684391",
+      "usda": "JUVI",
+      "itis": "18048",
+      "inat": "49399",
+      "wikidata": "Q157522",
+      "indigene": "juniperus-virginiana"
+    },
+    "commonNames": [
+      "Southern Red Cedar"
+    ],
+    "aliases": [
+      "juniperus virginiana",
+      "southern red cedar"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:133347-2",
     "scientificName": "Keckiella cordifolia",
     "family": "Plantaginaceae",
@@ -8150,7 +8354,8 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
-      "st-lawrence"
+      "st-lawrence",
+      "florida-central"
     ]
   },
   {
@@ -8356,7 +8561,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "florida-central"
     ]
   },
   {
@@ -8627,6 +8833,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:30016308-2",
+    "scientificName": "Magnolia virginiana",
+    "family": "Magnoliaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "30016308-2",
+      "wfo": "wfo-0000233456",
+      "gbif": "3153639",
+      "usda": "MAVI2",
+      "itis": "18070",
+      "inat": "127906",
+      "wikidata": "Q1859063",
+      "indigene": "magnolia-virginiana"
+    },
+    "commonNames": [
+      "Sweetbay Magnolia"
+    ],
+    "aliases": [
+      "magnolia virginiana",
+      "sweetbay magnolia"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
     ]
   },
   {
@@ -9095,6 +9330,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "florida-central",
       "florida-south"
     ]
   },
@@ -12175,6 +12411,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:70474-1",
+    "scientificName": "Rhus copallinum",
+    "family": "Anacardiaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "70474-1",
+      "wfo": "wfo-0001049902",
+      "gbif": "3190557",
+      "usda": "RHCO",
+      "itis": "504754",
+      "inat": "126698",
+      "wikidata": "Q7245720",
+      "indigene": "rhus-copallinum"
+    },
+    "commonNames": [
+      "Winged Sumac"
+    ],
+    "aliases": [
+      "rhus copallinum",
+      "winged sumac"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:70615-1",
     "scientificName": "Rhus integrifolia",
     "family": "Anacardiaceae",
@@ -12833,7 +13098,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "north-michigan"
+      "north-michigan",
+      "florida-central"
     ]
   },
   {
@@ -15436,6 +15702,35 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "north-michigan",
       "st-lawrence"
+    ]
+  },
+  {
+    "primaryId": "ipni:317271-2",
+    "scientificName": "Vaccinium arboreum",
+    "family": "Ericaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "317271-2",
+      "wfo": "wfo-0001047661",
+      "gbif": "2882828",
+      "usda": "VAAR",
+      "itis": "23580",
+      "inat": "81818",
+      "wikidata": "Q3249733",
+      "indigene": "vaccinium-arboreum"
+    },
+    "commonNames": [
+      "Sparkleberry"
+    ],
+    "aliases": [
+      "sparkleberry",
+      "vaccinium arboreum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
     ]
   },
   {

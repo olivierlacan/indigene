@@ -503,6 +503,15 @@
     "attribution": "(c) Denys Davydov, some rights reserved (CC BY-NC), uploaded by Denys Davydov",
     "color": "#748072"
   },
+  "bignonia-capreolata": {
+    "taxonId": 67823,
+    "photoId": 255699,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/255699/square.jpg",
+    "observer": "Greg Lasley",
+    "license": "cc-by-nc",
+    "attribution": "(c) Greg Lasley, some rights reserved (CC BY-NC), uploaded by Greg Lasley",
+    "color": "#7f6c38"
+  },
   "black-grouse": {
     "taxonId": 1289697,
     "photoId": 61329120,
@@ -826,6 +835,15 @@
     "license": "cc-by-nc-sa",
     "attribution": "(c) Rob Curtis, some rights reserved (CC BY-NC-SA), uploaded by Rob Curtis",
     "color": "#59774c"
+  },
+  "celtis-laevigata": {
+    "taxonId": 81792,
+    "photoId": 75312504,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/75312504/square.jpg",
+    "observer": "Becky Brenner",
+    "license": "cc-by-nc",
+    "attribution": "(c) Becky Brenner, some rights reserved (CC BY-NC), uploaded by Becky Brenner",
+    "color": "#6a815f"
   },
   "celtis-sinensis": {
     "taxonId": 76204,
@@ -1151,6 +1169,15 @@
     "attribution": "(c) pnorton, some rights reserved (CC BY-NC), uploaded by pnorton",
     "color": "#567d59"
   },
+  "diospyros-virginiana": {
+    "taxonId": 83435,
+    "photoId": 269017054,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/269017054/square.jpg",
+    "observer": "Douglas Goldman",
+    "license": "cc-by-sa",
+    "attribution": "(c) Douglas Goldman, some rights reserved (CC BY-SA), uploaded by Douglas Goldman",
+    "color": "#8c6e4f"
+  },
   "diplacus-aurantiacus": {
     "taxonId": 777371,
     "photoId": 437705146,
@@ -1376,6 +1403,15 @@
     "attribution": "(c) DeeF, some rights reserved (CC BY), uploaded by DeeF",
     "color": "#7e7d15"
   },
+  "erythrina-herbacea": {
+    "taxonId": 128717,
+    "photoId": 39154052,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/39154052/square.jpeg",
+    "observer": "Dwight Bohlmeyer",
+    "license": "cc-by-nc",
+    "attribution": "(c) Dwight Bohlmeyer, some rights reserved (CC BY-NC), uploaded by Dwight Bohlmeyer",
+    "color": "#574f22"
+  },
   "erythronium-oregonum": {
     "taxonId": 59520,
     "photoId": 186145929,
@@ -1556,6 +1592,15 @@
     "attribution": "(c) Dan Fitzgerald (Fitz), some rights reserved (CC BY-NC), uploaded by Dan Fitzgerald (Fitz)",
     "color": "#676248"
   },
+  "gelsemium-sempervirens": {
+    "taxonId": 83070,
+    "photoId": 60591012,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/60591012/square.jpg",
+    "observer": "dogtooth77",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) dogtooth77, some rights reserved (CC BY-NC-SA)",
+    "color": "#5c581e"
+  },
   "genista-scorpius": {
     "taxonId": 328040,
     "photoId": 115340065,
@@ -1663,6 +1708,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Matthieu Gauvain, some rights reserved (CC BY-NC), uploaded by Matthieu Gauvain",
     "color": "#424625"
+  },
+  "helianthus-angustifolius": {
+    "taxonId": 126700,
+    "photoId": 25616982,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/25616982/square.jpeg",
+    "observer": "Devin Moon",
+    "license": "cc-by-nc",
+    "attribution": "(c) Devin Moon, some rights reserved (CC BY-NC), uploaded by Devin Moon",
+    "color": "#4d4108"
   },
   "heracleum-maximum": {
     "taxonId": 53094,
@@ -1852,6 +1906,15 @@
     "license": "cc-by",
     "attribution": "(c) Roberto Daniel Avila, some rights reserved (CC BY), uploaded by Roberto Daniel Avila",
     "color": "#565531"
+  },
+  "juniperus-virginiana": {
+    "taxonId": 49399,
+    "photoId": 165898544,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/165898544/square.jpg",
+    "observer": "Steven Severinghaus",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) Steven Severinghaus, some rights reserved (CC BY-NC-SA)",
+    "color": "#5e6558"
   },
   "karner-blue": {
     "taxonId": 484122,
@@ -2122,6 +2185,15 @@
     "license": "cc-by",
     "attribution": "(c) Timur Kalininsky, some rights reserved (CC BY), uploaded by Timur Kalininsky",
     "color": "#76786b"
+  },
+  "magnolia-virginiana": {
+    "taxonId": 127906,
+    "photoId": 50032286,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/50032286/square.jpeg",
+    "observer": "Patty Mitchum",
+    "license": "cc-by",
+    "attribution": "(c) Patty Mitchum, some rights reserved (CC BY), uploaded by Patty Mitchum",
+    "color": "#5b6a4c"
   },
   "maianthemum-dilatatum": {
     "taxonId": 63939,
@@ -2987,6 +3059,15 @@
     "attribution": "(c) Karla Salp, some rights reserved (CC BY-NC), uploaded by Karla Salp",
     "color": "#5e5c37"
   },
+  "rhus-copallinum": {
+    "taxonId": 126698,
+    "photoId": 149017043,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/149017043/square.jpg",
+    "observer": "Dendroica cerulea",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) Dendroica cerulea, some rights reserved (CC BY-NC-SA)",
+    "color": "#46622c"
+  },
   "rhus-integrifolia": {
     "taxonId": 55009,
     "photoId": 14516370,
@@ -3787,6 +3868,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Anita363, some rights reserved (CC BY-NC)",
     "color": "#78684c"
+  },
+  "vaccinium-arboreum": {
+    "taxonId": 81818,
+    "photoId": 57564353,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/57564353/square.jpeg",
+    "observer": "John C.",
+    "license": "cc-by-nc",
+    "attribution": "(c) John C., some rights reserved (CC BY-NC), uploaded by John C.",
+    "color": "#907c6d"
   },
   "vaccinium-parvifolium": {
     "taxonId": 48354,

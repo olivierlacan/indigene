@@ -5852,5 +5852,115 @@
       "gbif": "2984532",
       "wikidata": "Q920344"
     }
+  },
+  "Diospyros virginiana": {
+    "identifiers": {
+      "ipni": "323180-1",
+      "wfo": "wfo-0000649953",
+      "usda": "DIVI5",
+      "itis": "23855",
+      "inat": "83435",
+      "gbif": "3032986",
+      "wikidata": "Q158356"
+    }
+  },
+  "Celtis laevigata": {
+    "identifiers": {
+      "ipni": "836997-1",
+      "wfo": "wfo-0000593589",
+      "usda": "CELA",
+      "itis": "19042",
+      "inat": "81792",
+      "gbif": "2984491",
+      "wikidata": "Q1529852"
+    }
+  },
+  "Magnolia virginiana": {
+    "identifiers": {
+      "ipni": "30016308-2",
+      "wfo": "wfo-0000233456",
+      "usda": "MAVI2",
+      "itis": "18070",
+      "inat": "127906",
+      "gbif": "3153639",
+      "wikidata": "Q1859063"
+    }
+  },
+  "Vaccinium arboreum": {
+    "identifiers": {
+      "ipni": "317271-2",
+      "wfo": "wfo-0001047661",
+      "usda": "VAAR",
+      "itis": "23580",
+      "inat": "81818",
+      "gbif": "2882828",
+      "wikidata": "Q3249733"
+    }
+  },
+  "Juniperus virginiana": {
+    "identifiers": {
+      "ipni": "132551-2",
+      "wfo": "wfo-0000354923",
+      "usda": "JUVI",
+      "itis": "18048",
+      "inat": "49399",
+      "gbif": "2684391",
+      "wikidata": "Q157522"
+    }
+  },
+  "Erythrina herbacea": {
+    "identifiers": {
+      "ipni": "96601-2",
+      "wfo": "wfo-0000165896",
+      "usda": "ERHE4",
+      "itis": "26678",
+      "inat": "128717",
+      "gbif": "5349731",
+      "wikidata": "Q5396418"
+    }
+  },
+  "Rhus copallinum": {
+    "identifiers": {
+      "ipni": "70474-1",
+      "wfo": "wfo-0001049902",
+      "usda": "RHCO",
+      "itis": "504754",
+      "inat": "126698",
+      "gbif": "3190557",
+      "wikidata": "Q7245720"
+    }
+  },
+  "Helianthus angustifolius": {
+    "identifiers": {
+      "ipni": "315752-2",
+      "wfo": "wfo-0000066553",
+      "usda": "HEAN2",
+      "itis": "502919",
+      "inat": "126700",
+      "gbif": "3119144",
+      "wikidata": "Q12212025"
+    }
+  },
+  "Gelsemium sempervirens": {
+    "identifiers": {
+      "ipni": "60448812-2",
+      "wfo": "wfo-0000696053",
+      "usda": "GESE",
+      "itis": "29932",
+      "inat": "83070",
+      "gbif": "3169513",
+      "wikidata": "Q978130"
+    }
+  },
+  "Bignonia capreolata": {
+    "identifiers": {
+      "ipni": "108626-1",
+      "wfo": "wfo-0000781348",
+      "usda": "BICA",
+      "itis": "34307",
+      "inat": "67823",
+      "gbif": "3172516",
+      "wikidata": "Q149466"
+    }
   }
 }

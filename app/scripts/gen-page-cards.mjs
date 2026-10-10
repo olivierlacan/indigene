@@ -54,7 +54,50 @@ function titleSize(t) {
   return 52;
 }
 
-function cardHtml({ title, subtitle, stat }) {
+/** A small deterministic generator, so the drawing comes out the same on every
+ *  run and the committed card only changes when the code does. */
+function seeded(seed) {
+  let x = seed >>> 0;
+  return () => ((x = (x * 1664525 + 1013904223) >>> 0) / 2 ** 32);
+}
+
+/** Homegrown National Park's picture: a neighborhood from above, five streets
+ *  of five yards, each with its house. Half the yards are still mown lawn; the
+ *  other half are native planting — the idea the page is about, drawn. */
+function yardsSvg() {
+  const rnd = seeded(7);
+  const N = 5, LOT = 70, GAP = 12, S = N * LOT + (N - 1) * GAP;
+  // Which yards went native: about half, scattered the way real streets are.
+  const native = new Set([0, 3, 4, 6, 7, 10, 12, 13, 16, 19, 20, 22, 24]);
+  const greens = ["#2f7d48", "#3f9459", "#5fae73", "#7ec894", "#256b3c"];
+  const blooms = ["#f0c75e", "#d98bd8", "#f2f1e8", "#e98a6b"];
+  let out = "";
+  for (let i = 0; i < N * N; i++) {
+    const x = (i % N) * (LOT + GAP), y = Math.floor(i / N) * (LOT + GAP);
+    const clip = `lot${i}`;
+    out += `<clipPath id="${clip}"><rect x="${x}" y="${y}" width="${LOT}" height="${LOT}" rx="8"/></clipPath>`;
+    if (native.has(i)) {
+      out += `<rect x="${x}" y="${y}" width="${LOT}" height="${LOT}" rx="8" fill="#1b4a2b"/><g clip-path="url(#${clip})">`;
+      for (let k = 0; k < 16; k++) {
+        const r = 6 + rnd() * 9;
+        out += `<circle cx="${(x + rnd() * LOT).toFixed(1)}" cy="${(y + rnd() * LOT).toFixed(1)}" r="${r.toFixed(1)}" fill="${greens[Math.floor(rnd() * greens.length)]}"/>`;
+      }
+      for (let k = 0; k < 7; k++) {
+        out += `<circle cx="${(x + 4 + rnd() * (LOT - 8)).toFixed(1)}" cy="${(y + 4 + rnd() * (LOT - 8)).toFixed(1)}" r="2.6" fill="${blooms[Math.floor(rnd() * blooms.length)]}"/>`;
+      }
+      out += `</g>`;
+    } else {
+      out += `<g clip-path="url(#${clip})"><rect x="${x}" y="${y}" width="${LOT}" height="${LOT}" fill="#3c4733"/>`;
+      for (let k = 0; k < LOT; k += 14) out += `<rect x="${x + k}" y="${y}" width="7" height="${LOT}" fill="#46523b"/>`;
+      out += `</g>`;
+    }
+    // The house, always in the same corner of its lot: the yards are the subject.
+    out += `<rect x="${x + 6}" y="${y + 6}" width="22" height="18" rx="3" fill="#cdc6b0"/><rect x="${x + 6}" y="${y + 6}" width="22" height="7" rx="3" fill="#a89f86"/>`;
+  }
+  return `<svg width="${S}" height="${S}" viewBox="0 0 ${S} ${S}" aria-hidden="true">${out}</svg>`;
+}
+
+function cardHtml({ title, subtitle, stat, art, size }) {
   return `<!doctype html>
 <meta charset="utf-8">
 <style>
@@ -76,8 +119,9 @@ function cardHtml({ title, subtitle, stat }) {
   .wordmark { font-size: 30px; font-weight: 800; letter-spacing: -0.01em; }
   .mid { position: relative; display: flex; align-items: center; gap: 48px; }
   .words { min-width: 0; }
-  h1 { text-wrap: balance; font-weight: 800; letter-spacing: -0.025em; line-height: 1.05; font-size: ${titleSize(title)}px; }
+  h1 { text-wrap: balance; font-weight: 800; letter-spacing: -0.025em; line-height: 1.05; font-size: ${size ?? titleSize(title)}px; }
   .sub { margin-top: 20px; font-size: 31px; line-height: 1.35; color: ${BRAND}; max-width: 22ch; }
+  .art .sub { text-wrap: balance; max-width: 21ch; }
   .emblem { margin-left: auto; flex: none; line-height: 0; opacity: 0.9; }
   .foot { position: relative; display: flex; align-items: baseline; }
   .stat { font-size: 27px; color: #cdcdbd; }
@@ -86,12 +130,12 @@ function cardHtml({ title, subtitle, stat }) {
 </style>
 <div class="wash"></div>
 <header>${wordmarkSvg}<span class="wordmark">Indigene</span></header>
-<div class="mid">
+<div class="mid${art ? " art" : ""}">
   <div class="words">
     <h1>${esc(title)}</h1>
     <div class="sub">${esc(subtitle)}</div>
   </div>
-  <div class="emblem" aria-hidden="true">${emblemSvg}</div>
+  <div class="emblem" aria-hidden="true">${art ?? emblemSvg}</div>
 </div>
 <div class="foot">
   <div class="stat">${stat ?? ""}</div>
@@ -143,7 +187,10 @@ try {
     { slug: "native", title: "Native plants, not nativism", subtitle: "where a plant evolved \u2014 never borders, never people", stat: `<b>${nativeSources}</b> sources \u00b7 both sides of the argument` },
     // The LLM bill's two headline figures, from the same module the page reads.
     { slug: "llm", title: "What building Indigene with an LLM cost", subtitle: "measured, estimated \u2014 and how the design pays it back", stat: `<b>${SNAPSHOT.sessions}</b> sessions \u00b7 <b>\u2248${round2(bill().kWh.mid)} kWh</b>` },
-    { slug: "homegrown", title: "Homegrown National Park", subtitle: "half the lawn back to native plants \u2014 a park made of yards" },
+    // Drawn rather than marked: the idea is a picture — a street where half the
+    // yards went native — and the figures are the page's own (40M acres of US
+    // lawn, half of it habitat).
+    { slug: "homegrown", title: "Homegrown National Park", subtitle: "half the lawn back to native plants \u2014 a park made of yards", stat: `<b>40 million</b> acres of US lawn \u00b7 <b>half</b> could be habitat`, art: yardsSvg(), size: 70 },
     { slug: "crops", title: "Will native plants bring pests to my yard?", subtitle: "no \u2014 and some of them take pests away", stat: `<b>25</b> studies \u00b7 the ones that disagree too` },
   ];
 } finally {

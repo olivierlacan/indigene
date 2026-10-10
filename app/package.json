@@ -59,6 +59,7 @@
     "probe:resolve": "NODE_USE_ENV_PROXY=1 node scripts/probe-resolve.mjs",
     "resolve:fetch": "NODE_USE_ENV_PROXY=1 node --max-old-space-size=6144 scripts/fetch-resolve.mjs",
     "swipe:check": "node scripts/check-lightbox-swipe.mjs",
+    "availability:live": "NODE_USE_ENV_PROXY=1 node scripts/availability-live.mjs",
     "wildlife:taxa": "NODE_USE_ENV_PROXY=1 node scripts/wildlife-taxa.mjs"
   },
   "devDependencies": {

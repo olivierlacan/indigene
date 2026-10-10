@@ -125,13 +125,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:781435-1",
     "scientificName": "Acer palmatum",
     "family": "Sapindaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "781435-1",
+      "wfo": "wfo-0000514777",
+      "gbif": "3189882",
+      "usda": "ACPA2",
+      "itis": "182136",
+      "inat": "63512",
+      "wikidata": "Q269224",
       "indigene": "acer-palmatum"
     },
     "commonNames": [
@@ -478,13 +485,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:106376-1",
     "scientificName": "Akebia quinata",
     "family": "Lardizabalaceae",
     "form": "vine",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "106376-1",
+      "wfo": "wfo-0000524888",
+      "gbif": "3033965",
+      "usda": "AKQU",
+      "itis": "18857",
+      "inat": "126249",
+      "wikidata": "Q1482093",
       "indigene": "akebia-quinata"
     },
     "commonNames": [
@@ -625,13 +639,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:294936-1",
     "scientificName": "Alnus japonica",
     "family": "Betulaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "294936-1",
+      "wfo": "wfo-0000946310",
+      "gbif": "2876196",
+      "usda": "ALJA8",
+      "itis": "845152",
+      "inat": "367784",
+      "wikidata": "Q1196169",
       "indigene": "alnus-japonica"
     },
     "commonNames": [
@@ -1237,13 +1258,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:587115-1",
     "scientificName": "Ardisia japonica",
     "family": "Primulaceae",
     "form": "groundcover",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "587115-1",
+      "wfo": "wfo-0000544471",
+      "gbif": "5558066",
+      "usda": "ARJA4",
+      "itis": "836174",
+      "inat": "158589",
+      "wikidata": "Q858326",
       "indigene": "ardisia-japonica"
     },
     "commonNames": [
@@ -1288,13 +1316,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:92883-1",
     "scientificName": "Aristolochia debilis",
     "family": "Aristolochiaceae",
     "form": "perennial",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "92883-1",
+      "wfo": "wfo-0000547728",
+      "gbif": "3588727",
+      "inat": "371228",
+      "wikidata": "Q11289074",
       "indigene": "aristolochia-debilis"
     },
     "commonNames": [
@@ -1398,13 +1431,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:179985-1",
     "scientificName": "Artemisia princeps",
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "179985-1",
+      "wfo": "wfo-0000005942",
+      "gbif": "3121258",
+      "inat": "452353",
+      "wikidata": "Q1076280",
       "indigene": "artemisia-princeps"
     },
     "commonNames": [
@@ -1863,13 +1901,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:181745-1",
     "scientificName": "Aster microcephalus",
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "181745-1",
+      "wfo": "wfo-0000014412",
+      "gbif": "6063614",
+      "inat": "1433113",
+      "wikidata": "Q21247042",
       "indigene": "aster-microcephalus"
     },
     "commonNames": [
@@ -1885,13 +1928,19 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:17055840-1",
     "scientificName": "Athyrium niponicum",
     "family": "Athyriaceae",
     "form": "fern",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "17055840-1",
+      "wfo": "wfo-0001114565",
+      "gbif": "7125894",
+      "itis": "897585",
+      "inat": "142824",
+      "wikidata": "Q2455938",
       "indigene": "athyrium-niponicum"
     },
     "commonNames": [
@@ -1907,13 +1956,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:271451-1",
     "scientificName": "Aucuba japonica",
     "family": "Garryaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "271451-1",
+      "wfo": "wfo-0000297052",
+      "gbif": "3033077",
+      "usda": "AUJA",
+      "itis": "565023",
+      "inat": "56206",
+      "wikidata": "Q163114",
       "indigene": "aucuba-japonica"
     },
     "commonNames": [
@@ -2340,13 +2396,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:927277-1",
     "scientificName": "Callicarpa japonica",
     "family": "Lamiaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "927277-1",
+      "wfo": "wfo-0000769349",
+      "gbif": "5341134",
+      "usda": "CAJA11",
+      "itis": "506860",
+      "inat": "371978",
+      "wikidata": "Q1152721",
       "indigene": "callicarpa-japonica"
     },
     "commonNames": [
@@ -2457,13 +2520,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:828524-1",
     "scientificName": "Camellia japonica",
     "family": "Theaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "828524-1",
+      "wfo": "wfo-0000582404",
+      "gbif": "3189636",
+      "usda": "CAJA9",
+      "itis": "506117",
+      "inat": "83056",
+      "wikidata": "Q160121",
       "indigene": "camellia-japonica"
     },
     "commonNames": [
@@ -2540,13 +2610,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:299484-1",
     "scientificName": "Carex dispalata",
     "family": "Cyperaceae",
     "form": "grass",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "299484-1",
+      "wfo": "wfo-0000346100",
+      "gbif": "2727349",
+      "inat": "495745",
+      "wikidata": "Q4338348",
       "indigene": "carex-dispalata"
     },
     "commonNames": [
@@ -2593,13 +2668,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:301072-1",
     "scientificName": "Carex morrowii",
     "family": "Cyperaceae",
     "form": "grass",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "301072-1",
+      "wfo": "wfo-0000349019",
+      "gbif": "2722515",
+      "usda": "CAMO31",
+      "itis": "808431",
+      "inat": "468050",
+      "wikidata": "Q2938601",
       "indigene": "carex-morrowii"
     },
     "commonNames": [
@@ -2854,13 +2936,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:295265-1",
     "scientificName": "Carpinus laxiflora",
     "family": "Betulaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "295265-1",
+      "wfo": "wfo-0000805429",
+      "gbif": "2875910",
+      "inat": "438156",
+      "wikidata": "Q4147190",
       "indigene": "carpinus-laxiflora"
     },
     "commonNames": [
@@ -2876,13 +2963,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:30319741-2",
     "scientificName": "Castanea crenata",
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "30319741-2",
+      "wfo": "wfo-0000811268",
+      "gbif": "5333249",
+      "usda": "CACR27",
+      "itis": "506540",
+      "inat": "122786",
+      "wikidata": "Q717827",
       "indigene": "castanea-crenata"
     },
     "commonNames": [
@@ -2898,13 +2992,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:50956789-1",
     "scientificName": "Castanopsis sieboldii",
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "50956789-1",
+      "wfo": "wfo-0000815170",
+      "gbif": "5333015",
+      "inat": "358537",
+      "wikidata": "Q846994",
       "indigene": "castanopsis-sieboldii"
     },
     "commonNames": [
@@ -3042,13 +3141,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:319139-2",
     "scientificName": "Celastrus scandens",
     "family": "Celastraceae",
     "form": "vine",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "319139-2",
+      "wfo": "wfo-0000592929",
+      "gbif": "3169171",
+      "usda": "CESC",
+      "itis": "27974",
+      "inat": "64538",
+      "wikidata": "Q469628",
       "indigene": "celastrus-scandens"
     },
     "commonNames": [
@@ -3095,13 +3201,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:851171-1",
     "scientificName": "Celtis sinensis",
     "family": "Cannabaceae",
     "form": "tree",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "851171-1",
+      "wfo": "wfo-0000593746",
+      "gbif": "4159594",
+      "usda": "CESI8",
+      "itis": "897057",
+      "inat": "76204",
+      "wikidata": "Q706339",
       "indigene": "celtis-sinensis"
     },
     "commonNames": [
@@ -3327,13 +3440,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:195527-1",
     "scientificName": "Cirsium japonicum",
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "195527-1",
+      "wfo": "wfo-0000062624",
+      "gbif": "3112887",
+      "usda": "CIJA2",
+      "itis": "780258",
+      "inat": "354344",
+      "wikidata": "Q5708539",
       "indigene": "cirsium-japonicum"
     },
     "commonNames": [
@@ -3527,13 +3647,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:710188-1",
     "scientificName": "Clematis virginiana",
     "family": "Ranunculaceae",
     "form": "vine",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "710188-1",
+      "wfo": "wfo-0000610908",
+      "gbif": "3033541",
+      "usda": "CLVI5",
+      "itis": "18716",
+      "inat": "62778",
+      "wikidata": "Q4266308",
       "indigene": "clematis-virginiana"
     },
     "commonNames": [
@@ -3901,13 +4028,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:271602-1",
     "scientificName": "Cornus kousa",
     "family": "Cornaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "271602-1",
+      "wfo": "wfo-0000924739",
+      "gbif": "3082274",
+      "usda": "COKO2",
+      "itis": "507498",
+      "inat": "128614",
+      "wikidata": "Q728441",
       "indigene": "cornus-kousa"
     },
     "commonNames": [
@@ -4511,13 +4645,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:153941-1",
     "scientificName": "Dianthus superbus",
     "family": "Caryophyllaceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "153941-1",
+      "wfo": "wfo-0000644338",
+      "gbif": "6363496",
+      "usda": "DISU12",
+      "itis": "823588",
+      "inat": "447244",
+      "wikidata": "Q161878",
       "indigene": "dianthus-superbus"
     },
     "commonNames": [
@@ -4855,13 +4996,19 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:17094660-1",
     "scientificName": "Dryopteris erythrosora",
     "family": "Dryopteridaceae",
     "form": "fern",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "17094660-1",
+      "wfo": "wfo-0001107300",
+      "gbif": "7157952",
+      "itis": "897583",
+      "inat": "137722",
+      "wikidata": "Q846311",
       "indigene": "dryopteris-erythrosora"
     },
     "commonNames": [
@@ -5437,13 +5584,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:30148396-2",
     "scientificName": "Euonymus alatus",
     "family": "Celastraceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "30148396-2",
+      "wfo": "wfo-0000681572",
+      "gbif": "3169120",
+      "usda": "EUAL13",
+      "itis": "27946",
+      "inat": "117433",
+      "wikidata": "Q160578",
       "indigene": "euonymus-alatus"
     },
     "commonNames": [
@@ -5551,13 +5705,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:828738-1",
     "scientificName": "Eurya japonica",
     "family": "Pentaphylacaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "828738-1",
+      "wfo": "wfo-0000683065",
+      "gbif": "7152601",
+      "usda": "EUJA5",
+      "itis": "897022",
+      "inat": "429261",
+      "wikidata": "Q1041681",
       "indigene": "eurya-japonica"
     },
     "commonNames": [
@@ -5724,13 +5885,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:207632-1",
     "scientificName": "Farfugium japonicum",
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "207632-1",
+      "wfo": "wfo-0000134933",
+      "gbif": "3101212",
+      "inat": "322755",
+      "wikidata": "Q1072335",
       "indigene": "farfugium-japonicum"
     },
     "commonNames": [
@@ -6955,13 +7121,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:536636-1",
     "scientificName": "Hosta sieboldii",
     "family": "Asparagaceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "536636-1",
+      "wfo": "wfo-0000663448",
+      "gbif": "2771309",
+      "inat": "426065",
+      "wikidata": "Q2557297",
       "indigene": "hosta-sieboldii"
     },
     "commonNames": [
@@ -7040,13 +7211,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:791637-1",
     "scientificName": "Hydrangea macrophylla",
     "family": "Hydrangeaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "791637-1",
+      "wfo": "wfo-0000726228",
+      "gbif": "2985994",
+      "usda": "HYMA7",
+      "itis": "565616",
+      "inat": "122034",
+      "wikidata": "Q159219",
       "indigene": "hydrangea-macrophylla"
     },
     "commonNames": [
@@ -7181,13 +7359,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:438572-1",
     "scientificName": "Iris ensata",
     "family": "Iridaceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "438572-1",
+      "wfo": "wfo-0000783305",
+      "gbif": "5298900",
+      "usda": "IREN",
+      "itis": "503194",
+      "inat": "164125",
+      "wikidata": "Q674136",
       "indigene": "iris-ensata"
     },
     "commonNames": [
@@ -7652,13 +7837,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:502415-1",
     "scientificName": "Lespedeza bicolor",
     "family": "Fabaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "502415-1",
+      "wfo": "wfo-0000185056",
+      "gbif": "2955759",
+      "usda": "LEBI2",
+      "itis": "25895",
+      "inat": "129677",
+      "wikidata": "Q232652",
       "indigene": "lespedeza-bicolor"
     },
     "commonNames": [
@@ -7821,13 +8013,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:537798-1",
     "scientificName": "Lilium speciosum",
     "family": "Liliaceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "537798-1",
+      "wfo": "wfo-0000680746",
+      "gbif": "2753390",
+      "inat": "437708",
+      "wikidata": "Q2107327",
       "indigene": "lilium-speciosum"
     },
     "commonNames": [
@@ -7843,13 +8040,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:465469-1",
     "scientificName": "Lindera umbellata",
     "family": "Lauraceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "465469-1",
+      "wfo": "wfo-0001070371",
+      "gbif": "7304416",
+      "inat": "428425",
+      "wikidata": "Q5793449",
       "indigene": "lindera-umbellata"
     },
     "commonNames": [
@@ -8068,13 +8270,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:927299-1",
     "scientificName": "Lonicera japonica",
     "family": "Caprifoliaceae",
     "form": "vine",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "927299-1",
+      "wfo": "wfo-0000359579",
+      "gbif": "5334240",
+      "usda": "LOJA",
+      "itis": "35283",
+      "inat": "77835",
+      "wikidata": "Q161083",
       "indigene": "lonicera-japonica"
     },
     "commonNames": [
@@ -8336,13 +8545,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:466273-1",
     "scientificName": "Machilus thunbergii",
     "family": "Lauraceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "466273-1",
+      "wfo": "wfo-0000373778",
+      "gbif": "4177874",
+      "inat": "341952",
+      "wikidata": "Q5792073",
       "indigene": "machilus-thunbergii"
     },
     "commonNames": [
@@ -8387,13 +8601,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:332100-2",
     "scientificName": "Magnolia kobus",
     "family": "Magnoliaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "332100-2",
+      "wfo": "wfo-0000233225",
+      "gbif": "3153260",
+      "usda": "MAKO",
+      "itis": "895295",
+      "inat": "143787",
+      "wikidata": "Q942409",
       "indigene": "magnolia-kobus"
     },
     "commonNames": [
@@ -8698,13 +8919,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:408768-1",
     "scientificName": "Miscanthus sinensis",
     "family": "Poaceae",
     "form": "grass",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "408768-1",
+      "wfo": "wfo-0000880299",
+      "gbif": "2706026",
+      "usda": "MISI",
+      "itis": "41874",
+      "inat": "165474",
+      "wikidata": "Q1073621",
       "indigene": "miscanthus-sinensis"
     },
     "commonNames": [
@@ -9109,13 +9337,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:17166830-1",
     "scientificName": "Onoclea sensibilis",
     "family": "Onocleaceae",
     "form": "fern",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "17166830-1",
+      "wfo": "wfo-0001109206",
+      "gbif": "2650903",
+      "usda": "ONSE",
+      "itis": "17637",
+      "inat": "82576",
+      "wikidata": "Q718312",
       "indigene": "onoclea-sensibilis"
     },
     "commonNames": [
@@ -9131,13 +9366,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:429781-1",
     "scientificName": "Ophiopogon japonicus",
     "family": "Asparagaceae",
     "form": "groundcover",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "429781-1",
+      "wfo": "wfo-0000673577",
+      "gbif": "2774158",
+      "usda": "OPJA",
+      "itis": "506477",
+      "inat": "200061",
+      "wikidata": "Q537448",
       "indigene": "ophiopogon-japonicus"
     },
     "commonNames": [
@@ -9184,13 +9426,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:77117634-1",
     "scientificName": "Osmunda japonica",
     "family": "Osmundaceae",
     "form": "fern",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "77117634-1",
+      "wfo": "wfo-0000750727",
+      "gbif": "3645928",
+      "inat": "461556",
+      "wikidata": "Q23363",
       "indigene": "osmunda-japonica"
     },
     "commonNames": [
@@ -9265,13 +9512,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:353208-1",
     "scientificName": "Pachysandra terminalis",
     "family": "Buxaceae",
     "form": "groundcover",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "353208-1",
+      "wfo": "wfo-0000733029",
+      "gbif": "2984676",
+      "usda": "PATE11",
+      "itis": "504090",
+      "inat": "142928",
+      "wikidata": "Q159315",
       "indigene": "pachysandra-terminalis"
     },
     "commonNames": [
@@ -9404,13 +9658,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:68407-1",
     "scientificName": "Parthenocissus tricuspidata",
     "family": "Vitaceae",
     "form": "vine",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "68407-1",
+      "wfo": "wfo-0000474320",
+      "gbif": "3039209",
+      "usda": "PATR6",
+      "itis": "28604",
+      "inat": "166162",
+      "wikidata": "Q157979",
       "indigene": "parthenocissus-tricuspidata"
     },
     "commonNames": [
@@ -9513,13 +9774,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:859466-1",
     "scientificName": "Patrinia scabiosifolia",
     "family": "Caprifoliaceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "859466-1",
+      "wfo": "wfo-0001225082",
+      "gbif": "7820439",
+      "inat": "447233",
+      "wikidata": "Q851698",
       "indigene": "patrinia-scabiosifolia"
     },
     "commonNames": [
@@ -9943,13 +10209,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:331662-1",
     "scientificName": "Pieris japonica",
     "family": "Ericaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "331662-1",
+      "wfo": "wfo-0001047846",
+      "gbif": "2882631",
+      "usda": "PIJA3",
+      "itis": "565622",
+      "inat": "127181",
+      "wikidata": "Q2333372",
       "indigene": "pieris-japonica"
     },
     "commonNames": [
@@ -10413,13 +10686,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:144523-1",
     "scientificName": "Platycodon grandiflorus",
     "family": "Campanulaceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "144523-1",
+      "wfo": "wfo-0000816758",
+      "gbif": "3164340",
+      "usda": "PLGR7",
+      "itis": "845355",
+      "inat": "141623",
+      "wikidata": "Q805322",
       "indigene": "platycodon-grandiflorus"
     },
     "commonNames": [
@@ -11060,13 +11340,17 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:1006782-1",
     "scientificName": "Prunus jamasakura",
     "family": "Rosaceae",
     "form": "tree",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "1006782-1",
+      "gbif": "3020620",
+      "inat": "547458",
+      "wikidata": "Q17234789",
       "indigene": "prunus-jamasakura"
     },
     "commonNames": [
@@ -11354,13 +11638,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:295743-1",
     "scientificName": "Quercus acutissima",
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "295743-1",
+      "wfo": "wfo-0000289386",
+      "gbif": "2877959",
+      "usda": "QUAC80",
+      "itis": "195162",
+      "inat": "167634",
+      "wikidata": "Q1034859",
       "indigene": "quercus-acutissima"
     },
     "commonNames": [
@@ -11467,13 +11758,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:927477-1",
     "scientificName": "Quercus glauca",
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "927477-1",
+      "wfo": "wfo-0000290946",
+      "gbif": "2876873",
+      "usda": "QUGL2",
+      "itis": "845168",
+      "inat": "191183",
+      "wikidata": "Q714124",
       "indigene": "quercus-glauca"
     },
     "commonNames": [
@@ -11549,13 +11847,19 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:296481-1",
     "scientificName": "Quercus myrsinifolia",
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "296481-1",
+      "wfo": "wfo-0000292104",
+      "gbif": "2878564",
+      "itis": "845175",
+      "inat": "425335",
+      "wikidata": "Q1075985",
       "indigene": "quercus-myrsinifolia"
     },
     "commonNames": [
@@ -11695,13 +11999,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:60444831-2",
     "scientificName": "Quercus serrata",
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "60444831-2",
+      "wfo": "wfo-0000293164",
+      "gbif": "2879649",
+      "usda": "QUSE2",
+      "itis": "845169",
+      "inat": "359972",
+      "wikidata": "Q847209",
       "indigene": "quercus-serrata"
     },
     "commonNames": [
@@ -11808,13 +12119,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:1137397-2",
     "scientificName": "Rhododendron indicum",
     "family": "Ericaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "1137397-2",
+      "wfo": "wfo-0000400687",
+      "gbif": "4173541",
+      "inat": "208830",
+      "wikidata": "Q5366359",
       "indigene": "rhododendron-indicum"
     },
     "commonNames": [
@@ -12132,13 +12448,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:927374-1",
     "scientificName": "Rosa multiflora",
     "family": "Rosaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "927374-1",
+      "wfo": "wfo-0001001254",
+      "gbif": "3003244",
+      "usda": "ROMU",
+      "itis": "24833",
+      "inat": "78882",
+      "wikidata": "Q133617",
       "indigene": "rosa-multiflora"
     },
     "commonNames": [
@@ -12735,13 +13058,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:777701-1",
     "scientificName": "Salix gracilistyla",
     "family": "Salicaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "777701-1",
+      "wfo": "wfo-0000928541",
+      "gbif": "7104103",
+      "usda": "SAGR10",
+      "itis": "837753",
+      "inat": "407120",
+      "wikidata": "Q163109",
       "indigene": "salix-gracilistyla"
     },
     "commonNames": [
@@ -13203,13 +13533,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:741402-1",
     "scientificName": "Sanguisorba officinalis",
     "family": "Rosaceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "741402-1",
+      "wfo": "wfo-0000983287",
+      "gbif": "3029627",
+      "usda": "SAOF3",
+      "itis": "25306",
+      "inat": "64549",
+      "wikidata": "Q157347",
       "indigene": "sanguisorba-officinalis"
     },
     "commonNames": [
@@ -13225,13 +13562,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:420574-1",
     "scientificName": "Sasa veitchii",
     "family": "Poaceae",
     "form": "grass",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "420574-1",
+      "wfo": "wfo-0000897621",
+      "gbif": "4128359",
+      "usda": "SAVE11",
+      "itis": "784871",
+      "inat": "424048",
+      "wikidata": "Q3015670",
       "indigene": "sasa-veitchii"
     },
     "commonNames": [
@@ -13247,13 +13591,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:794584-1",
     "scientificName": "Saxifraga stolonifera",
     "family": "Saxifragaceae",
     "form": "groundcover",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "794584-1",
+      "wfo": "wfo-0000494724",
+      "gbif": "3032762",
+      "usda": "SAST6",
+      "itis": "895013",
+      "inat": "68217",
+      "wikidata": "Q159002",
       "indigene": "saxifraga-stolonifera"
     },
     "commonNames": [
@@ -14011,13 +14362,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:826818-1",
     "scientificName": "Styrax japonicus",
     "family": "Styracaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "826818-1",
+      "wfo": "wfo-0000492190",
+      "gbif": "5371678",
+      "usda": "STJA5",
+      "itis": "505974",
+      "inat": "128570",
+      "wikidata": "Q910419",
       "indigene": "styrax-japonicus"
     },
     "commonNames": [
@@ -14658,13 +15016,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:82528-1",
     "scientificName": "Trachelospermum asiaticum",
     "family": "Apocynaceae",
     "form": "vine",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "82528-1",
+      "wfo": "wfo-0000326442",
+      "gbif": "7317060",
+      "inat": "349229",
+      "wikidata": "Q11238988",
       "indigene": "trachelospermum-asiaticum"
     },
     "commonNames": [
@@ -15287,13 +15650,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:927323-1",
     "scientificName": "Viburnum dilatatum",
     "family": "Viburnaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "927323-1",
+      "wfo": "wfo-0001042018",
+      "gbif": "2888584",
+      "usda": "VIDI80",
+      "itis": "505677",
+      "inat": "170200",
+      "wikidata": "Q5965416",
       "indigene": "viburnum-dilatatum"
     },
     "commonNames": [
@@ -15549,13 +15919,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:868269-1",
     "scientificName": "Viola grypoceras",
     "family": "Violaceae",
     "form": "perennial",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "868269-1",
+      "wfo": "wfo-0001144918",
+      "gbif": "7296559",
+      "inat": "447563",
+      "wikidata": "Q8010145",
       "indigene": "viola-grypoceras"
     },
     "commonNames": [
@@ -15627,13 +16002,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:327401-2",
     "scientificName": "Vitis coignetiae",
     "family": "Vitaceae",
     "form": "vine",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "327401-2",
+      "wfo": "wfo-0000421604",
+      "gbif": "5658476",
+      "inat": "559123",
+      "wikidata": "Q1367334",
       "indigene": "vitis-coignetiae"
     },
     "commonNames": [
@@ -15708,13 +16088,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:525791-1",
     "scientificName": "Wisteria floribunda",
     "family": "Fabaceae",
     "form": "vine",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "525791-1",
+      "wfo": "wfo-0000214069",
+      "gbif": "2977323",
+      "usda": "WIFL",
+      "itis": "27020",
+      "inat": "170331",
+      "wikidata": "Q1329209",
       "indigene": "wisteria-floribunda"
     },
     "commonNames": [
@@ -15790,13 +16177,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:858079-1",
     "scientificName": "Zelkova serrata",
     "family": "Ulmaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "858079-1",
+      "wfo": "wfo-0001143208",
+      "gbif": "2984532",
+      "usda": "ZESE80",
+      "itis": "505790",
+      "inat": "129055",
+      "wikidata": "Q920344",
       "indigene": "zelkova-serrata"
     },
     "commonNames": [

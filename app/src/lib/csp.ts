@@ -33,7 +33,7 @@ export const CONNECT_HOSTS: readonly string[] = [
   "https://api.open-meteo.com", // elevation fallback
   "https://archive-api.open-meteo.com", // rainfall and winter cold
   "https://geocoding-api.open-meteo.com", // a postal code or town, to a point
-  "https://nominatim.openstreetmap.org", // the nearest town's name
+  "https://nominatim.openstreetmap.org", // the nearest town's name; a postal code, to a point
   "https://rest.isric.org", // soil
   "https://epqs.nationalmap.gov", // elevation and slope (USGS)
   "https://gispub.epa.gov", // ecoregion, conterminous US (US EPA)

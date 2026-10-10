@@ -17,7 +17,8 @@ import { wildlifeCountForRegion } from "../lib/wildlife";
 import { plantThumb } from "../components/plant-thumb";
 import { keystoneIcon } from "../components/keystone-icon";
 import { cardStats } from "../components/card-stats";
-import { t, tn, fmtNumber } from "../lib/i18n";
+import { t, tn, tx, fmtNumber } from "../lib/i18n";
+import { ISSUES_URL } from "../lib/plain";
 import { nameLines, regionName, regionReference } from "../lib/names";
 import { flagRow } from "../components/flags";
 
@@ -32,6 +33,10 @@ export function renderExplore(main: HTMLElement): void {
     el("p", { class: "step-lede" },
       t("explore.lede", { plants: fmtNumber(totalPlants), regions: fmtNumber(REGIONS.length) })),
     el("div", { class: "card-grid" }, REGIONS.map(regionCard)),
+    // The map grows one region at a time, by request.
+    el("p", { class: "more-link", style: "margin:0.8rem 0 0" }, tx("explore.missing", {
+      link: el("a", { href: ISSUES_URL, target: "_blank", rel: "noopener" }, t("location.coverageAsk")),
+    })),
     // Deliberately *after* the regions: browsing by animal is a fine way in,
     // but it's the second question. Offering it first asked the reader to
     // choose between two doors before they'd seen what was behind either.

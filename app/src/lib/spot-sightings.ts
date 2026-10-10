@@ -97,9 +97,9 @@ interface Query {
 
 function params(q: Query): URLSearchParams {
   const out = new URLSearchParams({ taxon_id: q.taxonIds.join(",") });
-  // A username and a place never travel together (the privacy page promises
-  // it): the account's own sightings are asked for by name alone, and the ones
-  // near the spot are picked out here, on the device.
+  // A username and a place don't travel together here (only the import sends
+  // both — `lib/inat-import.ts`): the account's own wildlife is asked for by
+  // name alone, and the ones near the spot are picked out here, on the device.
   if (q.login) {
     out.set("user_login", q.login);
   } else {

@@ -48,6 +48,9 @@ export const fr: Dict = {
   "pullToReload.pull": "Tirez pour recharger",
   "pullToReload.release": "Relâchez pour recharger",
   "pullToReload.reloading": "Rechargement…",
+  "loader.loading": "Chargement…",
+  "loader.late": "Ce qui pousse bien prend son temps.",
+  "loader.later": "La connexion semble lente. Ça arrive.",
   "footer.text":
     "Indigene est {repo} et {sources}.",
   "footer.repo": "libre",
@@ -125,11 +128,16 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   "backup.title": "Vos lieux, dans un fichier",
   "backup.lede":
-    "Chaque lieu enregistré, et ce que vous avez planté dans chacun, écrits dans un seul fichier qui vous appartient. Ouvrez ce fichier dans un autre navigateur et les mêmes lieux y sont.",
+    "Vos lieux, ce que vous avez planté, les observations liées et vos réglages, dans un seul fichier qui vous appartient. Ouvrez-le dans un autre navigateur et tout revient.",
   "backup.statSpots.one": "{count} lieu enregistré",
   "backup.statSpots.other": "{count} lieux enregistrés",
   "backup.statPlantings.one": "{count} plantation notée",
   "backup.statPlantings.other": "{count} plantations notées",
+  "backup.lastCopy": "Dernière copie enregistrée le {date}.",
+  "backup.noCopy": "Aucune copie enregistrée depuis ce navigateur pour l'instant.",
+  "backup.kept": "Ce navigateur a accepté de ne pas effacer vos lieux quand la place manque.",
+  "backup.notKept":
+    "Ce navigateur peut effacer vos lieux pour libérer de la place. Une copie les met à l'abri.",
   "backup.empty":
     "Rien d'enregistré pour l'instant — il n'y a donc rien à copier. Un fichier venu d'un autre navigateur peut tout de même entrer.",
   "backup.save": "Enregistrer une copie",
@@ -140,6 +148,28 @@ export const fr: Dict = {
   "backup.readTitle": "Copie lue.",
   "backup.rowSpots": "Lieux ajoutés",
   "backup.rowPlantings": "Plantations ajoutées",
+  "backup.rowSpotsUpdated": "Lieux mis à jour",
+  "backup.rowPlantingsUpdated": "Plantations mises à jour",
+  "backup.rowSightings": "Observations restaurées",
+  "backup.rowSettings": "Réglages restaurés",
+  "backup.iosSafari":
+    "Dans Safari sur iPhone et iPad, un site que vous n'ouvrez pas pendant environ une semaine est effacé. Sur l'écran d'accueil, Indigene garde vos lieux, mais démarre vide : faites-y entrer une copie.",
+  "backup.iosGuide": "Comment le stockage fonctionne",
+  "backup.rowSpotsCombined": "Lieux fusionnés",
+  "backup.askTitle": "Certains lieux ressemblent à des lieux que vous avez déjà.",
+  "backup.askLede": "Choisissez pour chacun. Rien n'entre avant votre choix.",
+  "backup.pairNames": "« {there} » et votre « {here} »",
+  "backup.pairApart": "À {distance} l'un de l'autre",
+  "backup.pairInFile.one": "{count} plantation dans le fichier",
+  "backup.pairInFile.other": "{count} plantations dans le fichier",
+  "backup.pairHere.one": "{count} plantation ici",
+  "backup.pairHere.other": "{count} plantations ici",
+  "backup.combine": "Fusionner",
+  "backup.combineSub": "Ajouter ses plantes et observations à votre « {here} »",
+  "backup.keepBoth": "Garder les deux",
+  "backup.keepBothSub": "Le faire entrer comme un lieu à part",
+  "backup.bringIn": "Faire entrer",
+  "backup.cancel": "Annuler",
   "backup.rowSpotsKnown": "Lieux déjà présents",
   "backup.rowSkipped": "Entrées illisibles",
   "backup.nothingNew": "Tout ce que contenait cette copie était déjà là. Rien n'a changé.",
@@ -224,14 +254,13 @@ export const fr: Dict = {
   "welcome.ratherNotLink": "parcourez sans partager votre position",
   "welcome.whyTitle": "Pourquoi des plantes indigènes ?",
   "welcome.why1":
-    "La plupart des chenilles ne peuvent manger que les plantes avec lesquelles elles ont évolué, et presque tous les oiseaux du jardin élèvent leurs petits avec des chenilles. Pas de plantes indigènes, pas de chenilles, pas d'oisillons.",
+    "La plupart des chenilles ne peuvent manger que les plantes avec lesquelles elles ont évolué, et la plupart des passereaux élèvent leurs petits avec des chenilles. Moins d'indigènes, moins de chenilles, moins d'oisillons.",
   "welcome.why2": "Plantez une indigène, et les insectes qui en ont besoin peuvent la trouver dès la même saison.",
   "welcome.savedTitle": "Vos lieux enregistrés",
   "welcome.openSaved.one": "Ouvrir le lieu enregistré ({n})",
   "welcome.openSaved.other": "Ouvrir les lieux enregistrés ({n})",
   "film.title": "Indigene, le film",
   "film.play": "Voir le film (1 min)",
-  "film.note": "Rien ne se charge depuis l'hébergeur vidéo avant que vous lanciez la lecture.",
   "film.lede": "Ce que fait Indigene, et pour qui, en une minute.",
   "film.share": "Partager le film",
   "film.shareText": "Des plantes indigènes pour l'endroit exact où vous êtes, en un film d'une minute :",
@@ -373,7 +402,7 @@ export const fr: Dict = {
   "spot.obsSighting": "Observation",
   "spot.obsPickTitle": "Vos observations de cette plante",
   "spot.obsPickLabel": "Relier votre observation du {date}",
-  "spot.obsPickNone": "Aucune de vos observations de l'année écoulée ne montre cette plante.",
+  "spot.obsPickNone": "Aucune de vos observations des cinq dernières années près de ce lieu n'est de cette plante.",
   "spot.obsPickSetup": "Choisir parmi vos photos iNaturalist",
   "spot.obsPickOr": "Ou collez n'importe quelle observation :",
   "spot.addSightingTitle": "D'après une observation iNaturalist (facultatif)",
@@ -398,12 +427,12 @@ export const fr: Dict = {
   "inat.privacy": "Votre nom d'utilisateur reste sur cet appareil et n'est jamais envoyé qu'à iNaturalist",
   "import.docTitle": "Importer depuis iNaturalist — Indigene",
   "import.title": "Importer depuis iNaturalist",
-  "import.lede": "Vos observations de plantes de l'année écoulée, triées selon la région de ce lieu. Cochez ce qui y pousse.",
+  "import.lede": "Vos observations de plantes des cinq dernières années près de ce lieu, triées selon sa région. Cochez ce qui y pousse.",
   "import.notLinked": "Reliez d'abord votre nom d'utilisateur iNaturalist dans les Réglages.",
   "import.linkButton": "Relier mon compte",
   "import.noSpots": "Enregistrez d'abord un lieu : les observations vont dans le journal d'un lieu.",
   "import.findSpot": "Trouver mon lieu",
-  "import.privacy": "iNaturalist reçoit votre nom d'utilisateur, jamais l'emplacement de ce lieu",
+  "import.privacy": "iNaturalist reçoit votre nom d'utilisateur et ce lieu, arrondi à environ 1 km",
   "import.whichSpot": "Quel lieu ?",
   "import.noRegion": "Hors des régions d'Indigene",
   "import.changeSpot": "changer",
@@ -412,14 +441,14 @@ export const fr: Dict = {
   "import.add.one": "Ajouter 1 à ce lieu",
   "import.add.other": "Ajouter {n} à ce lieu",
   "import.addNone": "Cochez quoi ajouter",
-  "import.nothing": "Aucune de vos observations de plantes de l'année écoulée ne figure sur les listes de {region}.",
+  "import.nothing": "Aucune de vos observations de plantes des cinq dernières années près de ce lieu ne figure sur les listes de {region}.",
   "import.nativesTitle": "Plantes indigènes photographiées",
   "import.nativesLede": "Cochez celles que vous avez plantées ici. Chacune devient une ligne du journal, datée par la photo.",
   "import.invasivesTitle": "Plantes envahissantes confirmées par d'autres",
   "import.invasivesLede": "D'autres membres d'iNaturalist sont d'accord sur celles-ci. Cochez celles qui poussent ici pour les garder sur la liste de ce lieu.",
   "import.waitingTitle": "Plantes envahissantes pas encore confirmées",
   "import.waitingLede": "Personne d'autre ne les a confirmées, ou elles sont indiquées comme plantées : elles ne peuvent pas encore être ajoutées.",
-  "import.truncated": "Vous avez beaucoup publié cette année : seules vos 600 observations les plus récentes ont été examinées.",
+  "import.truncated": "Vous avez beaucoup publié par ici : seules vos 1 000 observations les plus récentes ont été examinées.",
   "import.added.one": "1 ajout à ce lieu.",
   "import.added.other": "{n} ajouts à ce lieu.",
   "import.seen": "Vue le {date}",
@@ -435,11 +464,75 @@ export const fr: Dict = {
   "spot.invasiveRemoveLabel": "Retirer {name} de cette liste",
   "spot.confirmInvasiveRemove": "Retirer {name} de cette liste ?",
   "spot.invasiveRemoved": "Retirée de la liste.",
+
+  // ---------------------------------------------------------------------
+  // Le plan de saison d'un endroit.
+  // ---------------------------------------------------------------------
+  "grow.title.spring": "À multiplier ce printemps",
+  "grow.title.summer": "À multiplier cet été",
+  "grow.title.fall": "À multiplier cet automne",
+  "grow.title.winter": "À multiplier cet hiver",
+  "grow.lede": "Vos plantes assez âgées pour être multipliées, les plus utiles à la faune d'abord.",
+  "grow.allLede": "Dans tous vos endroits, les plus utiles à la faune d'abord.",
+  "grow.first": "À faire en premier",
+  "grow.window.month": "Graines mûres",
+  "grow.window.season": "Cette saison",
+  "grow.do.seed": "Récolter les graines",
+  "grow.do.seedWoody": "Récolter les graines, s'il y en a",
+  "grow.do.cuttings-softwood": "Faire des boutures herbacées",
+  "grow.do.cuttings-semi-hardwood": "Faire des boutures semi-aoûtées",
+  "grow.do.cuttings-hardwood": "Faire des boutures ligneuses",
+  "grow.do.division": "Diviser la touffe",
+  "grow.do.layering": "Marcotter une branche basse",
+  "grow.do.root-cuttings": "Bouturer des racines",
+  "grow.do.suckers": "Rempoter les drageons",
+  "grow.do.runners": "Rempoter les stolons",
+  "grow.do.spores": "Récolter les spores",
+  "grow.why.sole": "Indispensable : {name}",
+  "grow.why.keystone": "Plante essentielle",
+  "grow.why.host": "Nourrit des chenilles",
+  "grow.why.pollinator": "Nourrit les pollinisateurs",
+  "grow.why.bird": "Nourrit les oiseaux",
+  "grow.why.soil": "Retient le sol et la pluie",
+  "grow.atSpot": "À {spot}",
+  "grow.none": "Rien ici n'est prêt à multiplier pour le moment.",
+  "grow.young.one": "1 plante est encore trop jeune.",
+  "grow.young.other": "{count} plantes sont encore trop jeunes.",
+  "grow.undated.one": "1 plante n'a pas de date de plantation ; elle est laissée de côté.",
+  "grow.undated.other": "{count} plantes n'ont pas de date de plantation ; elles sont laissées de côté.",
+  "grow.agesNote": "Les âges sont approximatifs : une plante qui n'a pas fleuri n'a pas encore de graines à donner.",
+  "grow.leaveSome": "Laissez-en pour les oiseaux",
+  "grow.woody.one": "1 arbre ou arbuste ici ne se multiplie que par graines, et aucun âge publié ne dit quand il en porte.",
+  "grow.woody.other": "{count} arbres ou arbustes ici ne se multiplient que par graines, et aucun âge publié ne dit quand ils en portent.",
+  "grow.sourcesTitle": "D'où viennent ces conseils",
+  "grow.src.ripe": "Les graines mûrissent environ deux mois après la floraison.",
+  "grow.src.divide": "Divisez au printemps ou à l'automne, après la floraison ; la plupart des touffes tous les deux ou trois ans.",
+  "grow.src.woody": "Selon l'espèce, arbres et arbustes portent leurs premières graines entre 3 et 40 ans : le plan attend l'âge publié pour chacun, aux mois où ses fruits mûrissent.",
+  "grow.src.birds": "Les têtes de graines laissées sur pied nourrissent les oiseaux tout l'hiver.",
+  "grow.src.rank": "L'ordre est le nôtre : d'abord les plantes dont un animal ne peut se passer, puis les plantes essentielles et les plantes hôtes des chenilles.",
+  "grow.src.plant": "Les méthodes propres à chaque plante, et leur source, sont sur sa page.",
+  "grow.more": "Voir tout le plan de saison",
+  "grow.docTitle": "{label} — plan de saison",
+  "grow.page.spring": "Plan de printemps",
+  "grow.page.summer": "Plan d'été",
+  "grow.page.fall": "Plan d'automne",
+  "grow.page.winter": "Plan d'hiver",
+  "grow.next.spring": "À venir au printemps",
+  "grow.next.summer": "À venir en été",
+  "grow.next.fall": "À venir en automne",
+  "grow.next.winter": "À venir en hiver",
+  "grow.addTitle": "À planter ensuite, pour la faune",
+  "grow.addLede": "Les animaux photographiés à moins de {distance} pendant les mois de cette saison, toutes années confondues, et les plantes indigènes qui les nourriraient.",
+  "grow.addFor": "Nourrit : {names}",
+  "grow.addNone": "Aucun animal de cette région n'a encore été photographié à moins de {distance} pendant les mois de cette saison.",
+  "grow.addHonest": "Vus près d'ici : un bon pari, pas une promesse.",
+  "grow.addNoRegion": "Cet endroit est hors des régions couvertes par Indigene ; il n'y a pas de liste où choisir.",
   "privacy.inatTitle": "Si vous reliez votre compte iNaturalist",
-  "privacy.inat1": "Votre nom d'utilisateur est gardé dans ce navigateur et nulle part ailleurs. Il ne figure pas non plus dans le fichier où les Réglages enregistrent vos lieux.",
-  "privacy.inat2": "Il n'est envoyé à iNaturalist que lorsque vous le reliez, importez, ou cherchez la faune autour d'un endroit enregistré, pour demander vos observations, déjà publiques sur iNaturalist. Nous n'envoyons jamais de lieu avec.",
+  "privacy.inat1": "Votre nom d'utilisateur est gardé dans ce navigateur et nulle part ailleurs — sauf dans le fichier où les Réglages enregistrent vos lieux, pour qu'une restauration le ramène. Choisissez à qui vous donnez ce fichier.",
+  "privacy.inat2": "Il n'est envoyé à iNaturalist que lorsque vous le reliez, importez, ou cherchez la faune autour d'un endroit enregistré, pour demander vos observations, déjà publiques sur iNaturalist. L'import l'envoie avec le lieu, arrondi à environ 1 km, pour ne recevoir que vos observations à moins de 35 km. Rien d'autre n'envoie de lieu avec.",
   "privacy.inat3": "Il n'apparaît jamais dans l'adresse d'une page : le compteur de visites ne le voit donc jamais. Ni mot de passe ni connexion : Indigene ne peut rien publier ni modifier sur iNaturalist.",
-  "privacy.inat4": "Seul ce que vous cochez est gardé : le numéro de l'observation, sur la ligne qu'elle a créée. Retirez votre nom d'utilisateur dans les Réglages et il disparaît.",
+  "privacy.inat4": "Seul ce que vous cochez est gardé : le numéro de l'observation, sur la ligne qu'elle a créée. {link} et il disparaît.",
+  "privacy.inat4Link": "Retirez votre nom d'utilisateur dans les Réglages",
 
   "planted.button": "🌱 J'en ai planté une",
   "planted.whichSpot": "Dans quel lieu l'avez-vous plantée ?",
@@ -486,6 +579,7 @@ export const fr: Dict = {
   "explore.title": "À la rencontre des indigènes",
   "explore.lede":
     "{plants} plantes indigènes réparties sur les {regions} régions couvertes jusqu'ici. Ouvrez celle où vous vivez pour voir toute sa liste — ou touchez la plante en couverture d'une carte pour faire sa connaissance.",
+  "explore.missing": "Votre région n'y est pas ? {link}.",
   "explore.byWildlife": "Ou parcourir par animal → ",
   "explore.byWildlifeSub":
     "partez du monarque, du colibri ou de la tortue que vous espérez voir, et trouvez les plantes qui le font vivre.",
@@ -503,7 +597,7 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   "location.title": "Où êtes-vous ?",
   "location.lede":
-    "Localisez-vous, puis vérifiez la carte : si le repère n'est pas là où vous êtes vraiment, faites-le glisser ou touchez le bon endroit.",
+    "Localisez-vous, puis vérifiez la carte : si le repère n'est pas là où vous êtes vraiment, faites-le glisser ou touchez le bon endroit. Restez appuyé pour l'ajuster finement.",
   "location.whyTitle": "Pourquoi l'endroit exact compte-t-il ?",
   "location.why":
     "« Indigène » veut toujours dire indigène de quelque part. Vos coordonnées déterminent la liste régionale qui s'applique et vont chercher le sol, le climat et l'écorégion (une zone qui a son propre climat, son sol et ses plantes sauvages) de cet endroit précis — la même espèce peut être essentielle dans une région et une étrangère dans la suivante.",
@@ -532,7 +626,16 @@ export const fr: Dict = {
   "coord.west": "O",
   "coord.near": "près de {place}",
   "location.accuracy": " · précision GPS ±{m} m",
-  "location.nudged": " · déplacé de {m} m",
+  "location.nudged": " · déplacé de {m} m {dir}",
+  // Which way the pin was nudged from the GPS fix (`lib/compass.ts`).
+  "location.dir.n": "vers le nord",
+  "location.dir.ne": "vers le nord-est",
+  "location.dir.e": "vers l'est",
+  "location.dir.se": "vers le sud-est",
+  "location.dir.s": "vers le sud",
+  "location.dir.sw": "vers le sud-ouest",
+  "location.dir.w": "vers l'ouest",
+  "location.dir.nw": "vers le nord-ouest",
   "location.noGeolocation": "Cet appareil ne peut pas partager sa position — essayez la recherche par commune.",
   "location.denied": "Position refusée — essayez la recherche par commune.",
   "location.noFix": "Impossible d'obtenir un point — réessayez, ou passez à la recherche par commune.",
@@ -815,13 +918,13 @@ export const fr: Dict = {
 
   "prop.seed-direct.name": "Semer la graine telle quelle (semis direct)",
   "prop.seed-direct.plain":
-    "Le cas facile : nettoyez la graine, puis semez-la à une profondeur d'environ sa propre largeur, en pot ou sur une planche de terre nette, et gardez humide. Aucune astuce nécessaire.",
+    "Le cas facile : nettoyez la graine, puis semez-la à une profondeur de deux à trois fois sa largeur, en pot ou sur une planche de terre nette, et gardez humide. Aucune astuce nécessaire.",
   "prop.seed-cold-moist.name": "Faire passer un hiver froid et humide à la graine (stratification à froid)",
   "prop.seed-cold-moist.plain":
     "Beaucoup de graines indigènes ne se réveillent qu'après avoir senti un vrai hiver : on leur en fabrique donc un. Mélangez la graine à une poignée de sable humide ou à un essuie-tout mouillé, fermez le tout dans un sachet étiqueté et laissez au réfrigérateur le nombre de semaines indiqué — puis semez. Ou oubliez le réfrigérateur : semez en pot dehors à l'automne et laissez le vrai hiver faire le travail.",
   "prop.seed-double-dormant.name": "Prévoir deux hivers d'attente (double dormance)",
   "prop.seed-double-dormant.plain":
-    "Les têtues : la racine sort après un hiver, mais la tige feuillée en attend un second. Semez en pot dehors, gardez-le à l'ombre et à l'abri, ne renoncez pas si rien ne sort le premier printemps, et prenez patience — le vert apparaît en général la deuxième année.",
+    "Les têtues : la racine pousse pendant une période chaude, et la tige feuillée attend l'hiver suivant. Semez en pot dehors à l'automne, gardez-le à l'ombre et à l'abri, ne renoncez pas si rien ne sort le premier printemps, et prenez patience — le vert apparaît en général au deuxième printemps.",
   "prop.seed-scarify.name": "Entailler ou râper le tégument dur (scarification)",
   "prop.seed-scarify.plain":
     "Certaines graines (celles de la famille des pois surtout) sont enfermées dans une coque imperméable qu'il faut entamer avant que l'eau puisse entrer. Frottez chaque graine quelques coups sur du papier de verre fin, ou entaillez la coque au couteau, jusqu'à apercevoir la couleur plus claire de l'intérieur — puis trempez une nuit et semez. On râpe avec soin, on n'écrase pas.",
@@ -830,25 +933,25 @@ export const fr: Dict = {
     "Des graines fines comme de la poussière, qui doivent voir le jour pour germer : ne les enterrez pas. Répandez-les sur une terre humide, tassez-les pour qu'elles adhèrent, et ne les recouvrez pas. Empêchez la surface de sécher en brumisant ou en couvrant d'un plastique transparent jusqu'à la levée.",
   "prop.seed-warm.name": "Semer frais et tenir au chaud (aucun froid nécessaire)",
   "prop.seed-warm.plain":
-    "Le cas des climats doux : pas besoin de froid hivernal. Semez la graine fraîche et nettoyée, tenez-la au chaud et à l'humide — elle lève en général en quelques semaines. La fraîcheur compte : beaucoup de ces graines perdent leur pouvoir germinatif si elles sèchent et attendent.",
+    "Pas besoin de froid hivernal. Semez la graine fraîche et nettoyée, tenez-la au chaud et à l'humide — elle lève en général en quelques semaines. La fraîcheur compte : beaucoup de ces graines perdent leur pouvoir germinatif si elles sèchent et attendent.",
   "prop.cuttings-softwood.name": "Bouturer une pousse tendre (bouture herbacée)",
   "prop.cuttings-softwood.plain":
-    "À la fin du printemps ou au début de l'été, coupez un morceau long comme la main de pousse tendre et souple, ôtez les feuilles du bas et enfoncez l'extrémité coupée dans un terreau humide ou de la perlite. Gardez humide et à l'abri du soleil dur (un sac ou une bouteille transparente sur le pot aide bien) jusqu'à l'enracinement, en quelques semaines.",
+    "Au printemps ou au début de l'été, coupez un morceau long comme un doigt de pousse tendre et souple, ôtez les feuilles du bas et enfoncez l'extrémité coupée dans un terreau humide ou de la perlite. Gardez humide et à l'abri du soleil dur (un sac ou une bouteille transparente sur le pot aide bien) jusqu'à l'enracinement, en quelques semaines.",
   "prop.cuttings-semi-hardwood.name": "Bouturer une pousse qui durcit (bouture semi-aoûtée)",
   "prop.cuttings-semi-hardwood.plain":
     "Au milieu ou à la fin de l'été, prélevez un morceau long comme la main sur une pousse de l'année qui commence à raidir et à devenir ligneuse à la base. Ôtez les feuilles du bas, plantez l'extrémité coupée dans un mélange humide et gardez une ambiance humide. Plus lente à raciner que la bouture tendre, mais plus solide — parfaite pour beaucoup d'arbustes et de persistants à grandes feuilles.",
   "prop.cuttings-hardwood.name": "Bouturer un rameau nu d'hiver (bouture ligneuse)",
   "prop.cuttings-hardwood.plain":
-    "La bouture la plus simple qui soit pour les saules, les cornouillers et leurs semblables : pendant que la plante est nue et au repos, coupez des morceaux gros comme un crayon et longs comme l'avant-bras, enfoncez-en la moitié inférieure en pleine terre humide ou en pot, et attendez. Beaucoup s'enracinent d'ici au printemps sans le moindre soin.",
+    "La bouture la plus simple qui soit pour les saules, les peupliers et leurs semblables : pendant que la plante est nue et au repos, coupez des morceaux gros comme un crayon et longs comme l'avant-bras, enfoncez-en les deux tiers inférieurs en pleine terre humide ou en pot, et attendez. Beaucoup s'enracinent d'ici au printemps sans le moindre soin.",
   "prop.division.name": "Diviser la touffe (division)",
   "prop.division.plain":
     "Pour les vivaces et les graminées en touffe : au début du printemps ou à l'automne, déterrez la plante entière, puis séparez ou coupez la souche en plusieurs éclats, chacun avec ses propres racines et quelques pousses. Replantez aussitôt à la même profondeur et arrosez. Cela rajeunit au passage une touffe fatiguée et creuse au centre.",
   "prop.layering.name": "Enraciner une branche encore attachée (marcottage)",
   "prop.layering.plain":
-    "Une astuce presque infaillible : courbez une branche basse et souple jusqu'au sol, griffez l'écorce à l'endroit du contact, maintenez-la avec une pierre ou un crochet, et buttez de terre par-dessus. Elle s'enracine là pendant que la plante mère la maintient en vie ; une saison ou deux plus tard, coupez et déterrez votre nouvelle plante.",
+    "Une astuce presque infaillible : courbez une branche basse et souple jusqu'au sol, griffez l'écorce à l'endroit du contact, maintenez-la avec une pierre ou un crochet, et buttez de terre par-dessus. Elle s'enracine là pendant que la plante mère la maintient en vie ; un an environ plus tard, coupez et déterrez votre nouvelle plante.",
   "prop.root-cuttings.name": "Multiplier par morceaux de racine (bouture de racine)",
   "prop.root-cuttings.plain":
-    "Pour les plantes qui repartent volontiers de leurs racines : à la fin de l'automne ou en hiver, déterrez et coupez des morceaux de racine gros comme un crayon et longs comme un doigt, couchez-les à plat dans une caissette de mélange humide sous une fine couche de terre, et tenez au chaud. De nouvelles pousses sortent des morceaux enterrés.",
+    "Pour les plantes qui repartent volontiers de leurs racines : à la fin de l'automne ou au début de l'hiver, déterrez et coupez des morceaux de racine gros comme un crayon et longs comme un doigt, couchez-les à plat dans une caissette de mélange humide sous une fine couche de terre, et placez-les sous châssis froid sans trop arroser. De nouvelles pousses sortent des morceaux enterrés.",
   "prop.suckers.name": "Prélever les rejets qu'elle pousse autour d'elle (drageons)",
   "prop.suckers.plain":
     "Les plantes qui forment des fourrés émettent de nouvelles pousses enracinées à quelque distance du tronc. Au début du printemps, tranchez à la bêche entre le rejet et la plante mère, soulevez le rejet avec ses racines et replantez-le. Des plantes gratuites, et la touffe s'en trouve nettoyée.",
@@ -857,7 +960,7 @@ export const fr: Dict = {
     "Les fraisiers et autres rampantes émettent des tiges horizontales qui enracinent de petits plants le long du chemin. Dès qu'un plant a ses propres racines, coupez le stolon qui le relie à la mère, déterrez-le et déplacez-le — ou fixez-le d'abord dans un petit pot, puis coupez.",
   "prop.spores.name": "Semer la poussière du dos des frondes (spores)",
   "prop.spores.plain":
-    "Les fougères ne font pas de graines — elles répandent des spores fines comme de la poussière depuis les taches brunes sous les frondes mûres. Plus lent et plus délicat, mais faisable : posez une fronde mûre sur du papier une journée pour recueillir la poussière brune, répandez-la à la surface d'un mélange stérile humide, couvrez d'un plastique transparent et gardez clair et humide. Un film vert apparaît d'abord, puis de minuscules fougères au fil des mois. La plupart des jardiniers trouvent bien plus facile de diviser une touffe existante.",
+    "Les fougères ne font pas de graines — elles répandent des spores fines comme de la poussière depuis les taches brunes sous les frondes mûres. Plus lent et plus délicat, mais faisable : posez une fronde mûre sur du papier quelques jours pour recueillir la poussière brune, répandez-la à la surface d'un mélange stérile humide, couvrez d'un plastique transparent et gardez clair et humide. Un film vert apparaît d'abord, puis de minuscules fougères au fil des mois. La plupart des jardiniers trouvent bien plus facile de diviser une touffe existante.",
 
   // -------------------------------------------------------------------------
   // Quand le faire — la couche « calendrier » derrière la page de chaque
@@ -868,32 +971,32 @@ export const fr: Dict = {
   // (.mistake). Jamais de dates : février aux Keys, c'est avril en
   // Pennsylvanie, alors qu'« quand les gousses brunissent » est vrai partout.
   // -------------------------------------------------------------------------
-  "prop.seed-direct.when": "L'automne pour la plupart des graines ; le printemps pour le reste.",
-  "prop.seed-direct.wait": "Levée aux premiers redoux, après son hiver.",
+  "prop.seed-direct.when": "L'automne ou le printemps.",
+  "prop.seed-direct.wait": "Lève au printemps, après son hiver dehors.",
   "prop.seed-direct.timing":
-    "L'automne est le choix naturel parce que c'est ce que fait la plante elle-même : la graine mûrit, tombe, passe l'hiver sous les feuilles et la pluie, et lève quand le sol se réchauffe. Semer à ce moment-là ne vous demande rien — ni réfrigérateur, ni semaines à compter. Le semis de printemps est la solution de repli pour une graine arrivée tard ou conservée au sec : ça marche, vous y gagnez simplement un premier été plus court. La saison à éviter, c'est le plein été, où les premiers centimètres de terre sèchent entre deux arrosages plus vite qu'une jeune racine ne descend.",
+    "L'automne, c'est ce que fait la plante elle-même : la graine mûrit, tombe, passe l'hiver sous les feuilles et la pluie, et lève quand le sol se réchauffe. Semer à ce moment-là ne vous demande rien — ni réfrigérateur, ni semaines à compter. Le printemps marche tout aussi bien, et c'est le moment habituel pour une graine arrivée tard ou conservée au sec.",
   "prop.seed-direct.mistake":
-    "L'enterrer. La règle est : à peu près sa propre largeur de profondeur — une graine fine à peine recouverte, un gland à un doigt sous la surface. La plupart des graines qui ne lèvent jamais étaient simplement trop profondes pour remonter.",
+    "L'enterrer. La règle : deux à trois fois sa propre largeur de profondeur — une graine fine à peine recouverte, un gland à la longueur d'un pouce sous la surface. Plus profond, elle risque de ne jamais lever.",
   "prop.seed-warm.when": "La semaine où elle mûrit — souvent de l'été au début de l'automne.",
   "prop.seed-warm.wait": "Quelques semaines, souvent moins.",
   "prop.seed-warm.timing":
-    "C'est la seule technique dont vous ne choisissez pas le moment : la plante le fixe, et votre rôle est d'être prêt. Surveillez le fruit plutôt que le calendrier — les samares d'un érable qui virent au fauve, le cône d'un magnolia qui s'ouvre sur des graines rouges — et semez dans les jours qui suivent la récolte. Ces graines sont vivantes et à peau fine : c'est le dessèchement qui les tue, et tout le danger est dans « je le ferai ce week-end ». Si vous ne pouvez vraiment pas semer tout de suite, gardez-les à peine humides et au frais dans un sachet de sable, jamais au sec sur un rebord de fenêtre.",
+    "C'est la seule technique dont vous ne choisissez pas le moment : la plante le fixe, et votre rôle est d'être prêt. Surveillez le fruit plutôt que le calendrier — les glands d'un chêne blanc qui tombent — et semez dans les jours qui suivent la récolte. Ces graines ne supportent pas de sécher : tout le danger est dans « je le ferai ce week-end ». Si vous ne pouvez vraiment pas semer tout de suite, gardez-les à peine humides et au frais dans un sac plastique fermé sans serrer, jamais au sec sur un rebord de fenêtre.",
   "prop.seed-warm.mistake":
     "Les traiter comme un sachet du commerce. Une graine fraîche ne se conserve pas — celles qui sèchent le plus dur sont souvent celles qui ne repartent jamais.",
   "prop.seed-cold-moist.when": "Semer dehors à l'automne, ou passer au réfrigérateur en plein hiver.",
-  "prop.seed-cold-moist.wait": "De quatre à douze semaines de froid, puis la levée.",
+  "prop.seed-cold-moist.wait": "D'un à six mois de froid, selon la plante.",
   "prop.seed-cold-moist.timing":
     "Il y a deux chemins, et la question du calendrier est surtout de savoir lequel vous prenez. Dehors : semez le pot en plein automne, posez-le là où il recevra la pluie et la neige, et le vrai hiver compte les semaines à votre place. Au réfrigérateur : comptez à rebours depuis la date où vous voulez des plantules — dix semaines de froid avant un semis de printemps, c'est un sachet mis au frais vers le cœur de l'hiver. Dans les deux cas, la graine doit rester *humide* tout du long. Un froid sec ne fait strictement rien, et c'est pourquoi un sachet glissé au réfrigérateur à l'automne est encore là, inchangé, au printemps.",
   "prop.seed-cold-moist.mistake":
-    "Ne pas regarder. Certaines graines germent dans le sachet avant la fin des semaines prévues, et la petite racine blanche casse si vous les découvrez trop tard — ouvrez le sachet toutes les deux semaines à partir de la moitié.",
+    "Ne pas regarder. Certaines graines germent dans le sachet avant la fin des semaines prévues, et la petite racine blanche casse si vous les découvrez trop tard — ouvrez le sachet tous les deux ou trois jours à partir de la moitié.",
   "prop.seed-scarify.when": "Juste avant de semer, quel que soit le moment.",
-  "prop.seed-scarify.wait": "Des jours plutôt que des semaines, une fois en terre.",
+  "prop.seed-scarify.wait": "Peu après le semis, dès que l'eau entre.",
   "prop.seed-scarify.timing":
     "La scarification n'est pas une saison, c'est la dernière étape avant le semis — la vraie question est donc : quand semez-vous ? Faites-le la veille au soir : entaillez ou râpez le tégument, laissez tremper la nuit, semez au matin. Ce qu'il ne faut surtout pas faire, c'est scarifier un lot en hiver pour semer au printemps. Ouvrir le tégument, c'est retirer son imperméable à la graine : elle peut désormais absorber l'eau, et une graine scarifiée humide au fond d'un bocal va soit pourrir, soit germer dans le noir. Le trempage sert aussi de contrôle — une graine qui a bu gonfle visiblement et paraît plus grosse que ses voisines ; celles qui restent petites et dures méritent un nouveau passage sur le papier de verre.",
   "prop.seed-scarify.mistake":
     "Aller trop loin. Arrêtez dès que la couche plus claire apparaît : on veut le tégument ouvert, pas la graine blessée.",
   "prop.seed-surface-light.when": "De la fin de l'hiver au printemps à l'abri ; à l'automne dehors.",
-  "prop.seed-surface-light.wait": "De deux à quatre semaines, si la surface ne sèche jamais.",
+  "prop.seed-surface-light.wait": "Quelques semaines, tant que la surface ne sèche jamais.",
   "prop.seed-surface-light.timing":
     "Une graine fine comme de la poussière reste posée sur la terre, ce qui en fait la chose la plus fragile que vous sèmerez : la surface qui la porte peut sécher en un après-midi de soleil, et une graine aussi petite n'a aucune réserve pour y survivre. Semez-la donc là où vous pouvez la surveiller — une terrine à l'intérieur ou sous châssis dès la fin de l'hiver, prête à sortir aux beaux jours. Dehors, l'automne convient à celles qui veulent aussi un passage au froid : à la volée sur une planche nette, et on les laisse faire. Couvrez la terrine d'un plastique transparent ou d'une vitre, à la lumière mais hors du soleil de midi.",
   "prop.seed-surface-light.mistake":
@@ -901,63 +1004,60 @@ export const fr: Dict = {
   "prop.seed-double-dormant.when": "Semer à l'automne, et n'attendre rien avant le deuxième printemps.",
   "prop.seed-double-dormant.wait": "Dix-huit mois, à peu de chose près.",
   "prop.seed-double-dormant.timing":
-    "Semez le pot à l'automne, posez-le à l'ombre, à l'abri et franchement hors du passage — derrière la cabane, pas sur la table de la terrasse — et laissez-le un an et demi. Ce qui se passe entre-temps est invisible : après le premier hiver, la racine sort sous la terre, et la tige feuillée attend un second hiver avant de se montrer. Un pot qui semble vide à son premier printemps est presque certainement en train de travailler. Étiquetez-le sérieusement et arrosez-le en cas de sécheresse : ces semis-là se perdent bien plus souvent parce que quelqu'un a fait du rangement que parce que la technique a échoué.",
+    "Semez le pot à l'automne, posez-le à l'ombre, à l'abri et franchement hors du passage — derrière la cabane, pas sur la table de la terrasse — et laissez-le un an et demi. Ce qui se passe entre-temps est invisible : pendant le premier été, la racine pousse sous la terre, et la tige feuillée attend le second hiver avant de se montrer. Un pot qui semble vide à son premier printemps est presque certainement en train de travailler. Étiquetez-le sérieusement et arrosez-le en cas de sécheresse : ces semis-là se perdent bien plus souvent parce que quelqu'un a fait du rangement que parce que la technique a échoué.",
   "prop.seed-double-dormant.mistake":
     "Vider le pot après le premier printemps sans rien. C'est justement l'année où il ne devait rien se passer.",
   "prop.division.when": "Début de printemps ou automne — jamais en pleine floraison.",
-  "prop.division.wait": "Repartie en quelques semaines.",
+  "prop.division.wait": "Arrosez-la le temps qu'elle s'installe.",
   "prop.division.timing":
-    "Divisez quand la plante peut tout mettre dans de nouvelles racines plutôt que dans ses fleurs : au tout début du printemps, quand les pousses percent à peine, ou à l'automne une fois la chaleur passée mais avec encore des semaines de sol tiède pour s'enraciner. La vieille règle est bonne — les plantes à floraison printanière se divisent à l'automne, celles d'automne au printemps — de sorte que vous ne découpez jamais une plante au milieu de sa grande année. Choisissez un jour gris et humide si vous le pouvez : les racines ne sont à l'air que quelques minutes, et ce sont le soleil et le vent qui leur font du mal.",
-  "prop.division.mistake":
-    "Laisser traîner les éclats le temps d'un café. Les racines fines sèchent en quelques minutes — creusez les trous d'abord, et arrosez tout de suite après.",
-  "prop.cuttings-softwood.when": "De la fin du printemps au début de l'été, sur les pousses de l'année.",
-  "prop.cuttings-softwood.wait": "Racines en trois à six semaines.",
+    "Divisez quand la plante peut tout mettre dans de nouvelles racines plutôt que dans ses fleurs : au tout début du printemps, quand les pousses percent à peine, ou à l'automne une fois la chaleur passée mais avec encore des semaines de sol tiède pour s'enraciner. Les plantes qui fleurissent l'été se divisent au printemps ou à l'automne ; celles qui fleurissent au printemps, plutôt en été, après la floraison — de sorte que vous ne découpez jamais une plante au milieu de sa grande année. Travaillez quand le sol est assez sec pour être bêché, et si l'automne est pluvieux, attendez le printemps.",
+  "prop.division.mistake": "Laisser les éclats à l'air pendant qu'on creuse. Préparez les trous d'abord, replantez aussitôt et arrosez.",
+  "prop.cuttings-softwood.when": "Du printemps au début de l'été, sur les pousses de l'année.",
+  "prop.cuttings-softwood.wait": "Racines en deux à quatre semaines.",
   "prop.cuttings-softwood.timing":
-    "La fenêtre est courte — quelques semaines, tant que la pousse est tendre — et vos doigts la trouvent bien mieux que le calendrier. Pliez une extrémité de pousse : si elle retombe mollement, elle est encore trop jeune pour se tenir dans un pot ; si elle casse net, c'est exactement le moment ; si elle plie sans casser, elle s'est déjà lignifiée et il vous faut plutôt la bouture semi-aoûtée. Prélevez tôt le matin, quand les pousses sont gorgées d'eau, et mettez-les en terreau humide dans l'heure : une bouture qui a fané en chemin a déjà dépensé ce qu'il lui fallait pour faire des racines.",
+    "Prélevez-les tant que la pousse est tendre et souple de la base à la pointe ; une fois la base raffermie et la pointe seule encore tendre, il vous faut plutôt la bouture semi-aoûtée. Coupez tôt le matin, quand les pousses sont gorgées d'eau, et mettez-les en sac au fur et à mesure : une pousse tendre perd vite son eau et ne doit pas faner. Si vous ne pouvez pas les mettre en pot tout de suite, le sac attend au réfrigérateur.",
   "prop.cuttings-softwood.mistake":
-    "Couper à midi en plein soleil et les promener dans une poche tiède. Un sac avec un linge humide ne coûte rien et en sauve la plupart.",
+    "Couper à midi en plein soleil et les promener dans une poche tiède. Un sac plastique propre, gardé au frais, ne coûte rien.",
   "prop.cuttings-semi-hardwood.when": "Du milieu de l'été au début de l'automne, quand la pousse durcit.",
-  "prop.cuttings-semi-hardwood.wait": "De six à douze semaines.",
+  "prop.cuttings-semi-hardwood.wait": "Jusqu'au printemps suivant sous châssis froid.",
   "prop.cuttings-semi-hardwood.timing":
-    "Plus tard dans la même pousse de l'année, quand la base a raidi et bruni tandis que la pointe est encore verte — pour la plupart des arbustes, du plein été au début de l'automne. Plus lente à s'enraciner qu'une bouture tendre, et bien plus indulgente : celle-ci tient une semaine sans s'effondrer, ce qui en fait le bon choix pour qui ne peut pas surveiller un pot tous les jours. Enracinez-les sous châssis ombré ou dans un coin abrité, laissez-les y passer l'hiver, et rempotez au printemps suivant.",
+    "Plus tard dans la même pousse de l'année, quand la base s'est raffermie tandis que la pointe est encore tendre — pour la plupart des arbustes, du plein été au début de l'automne. Plus lente à s'enraciner qu'une bouture tendre, mais plus robuste. Mettez-les en sac au fur et à mesure et en pot dans la demi-journée. Enracinez-les sous châssis ou dans un coin abrité et laissez-les y passer l'hiver : sous châssis, elles peuvent ne bien s'enraciner qu'à la fin du printemps suivant.",
   "prop.cuttings-semi-hardwood.mistake":
     "Laisser toutes les feuilles. Une bouture encore sans racines ne peut pas alimenter un feuillage entier — ôtez les feuilles du bas et coupez en deux les grandes qui restent.",
-  "prop.cuttings-hardwood.when": "En plein hiver, quand la plante est nue.",
+  "prop.cuttings-hardwood.when": "Du milieu de l'automne à la fin de l'hiver, plante nue.",
   "prop.cuttings-hardwood.wait": "Enracinée au printemps, plantée l'automne d'après.",
   "prop.cuttings-hardwood.timing":
-    "Après la chute des feuilles et avant que les bourgeons ne gonflent — au cœur de l'hiver, quels que soient ces mois-là chez vous. La plante dort, donc la bouture n'a pas à maintenir un feuillage en vie pendant qu'elle s'enracine : c'est ce qui en fait la bouture la moins exigeante qui soit. Des morceaux gros comme un crayon, longs comme un avant-bras, enfoncés de moitié en terre humide, et on n'y touche plus jusqu'au printemps. Saules et cornouillers reprennent si volontiers qu'on les plante souvent directement à l'endroit voulu.",
+    "Après la chute des feuilles et avant que les bourgeons ne gonflent — du milieu de l'automne à la fin de l'hiver, quels que soient ces mois-là chez vous. Le mieux : juste après la chute des feuilles, ou juste avant le débourrement. La plante dort, donc la bouture n'a pas à maintenir un feuillage en vie pendant qu'elle s'enracine : c'est ce qui en fait la bouture la moins exigeante qui soit. Des morceaux gros comme un crayon, longs comme un avant-bras, enfoncés aux deux tiers en terre humide, et on n'y touche plus jusqu'au printemps.",
   "prop.cuttings-hardwood.mistake":
     "Les planter à l'envers. Un rameau nu se ressemble des deux bouts : marquez le haut en coupant, car les bourgeons pointent vers le haut et c'est ce bout-là qui doit rester en l'air.",
   "prop.layering.when": "Coucher la branche au printemps ; la sevrer un an plus tard.",
   "prop.layering.wait": "Un à deux ans.",
   "prop.layering.timing":
     "Le printemps est le moment de coucher la branche : elle est souple, la plante s'apprête à pousser, et elle a toute la belle saison pour faire des racines au point enterré. Ensuite, on attend. À l'automne suivant, dégagez la terre et regardez — une belle poignée de racines et vous pouvez la séparer du pied mère et la lever ; pas grand-chose et vous la laissez une année de plus, ce qui ne vous coûte rien du tout, puisque la mère continue de la nourrir. Plus lent qu'une bouture, et très difficile à rater, car la nouvelle plante n'est jamais seule un seul instant.",
-  "prop.layering.mistake":
-    "La sevrer dès qu'on aperçoit une racine ou deux. Une fois coupée, tout ce dont elle a besoin doit venir de ce qui a poussé là.",
-  "prop.suckers.when": "De la fin de l'hiver au début du printemps, avant les feuilles.",
-  "prop.suckers.wait": "Reprend et pousse dès sa première saison.",
+  "prop.layering.mistake": "Le détacher dès la première racine. Attendez qu'un bon système racinaire se soit formé.",
+  "prop.suckers.when": "Au printemps, à la reprise.",
+  "prop.suckers.wait": "Demande un arrosage attentif toute sa première saison.",
   "prop.suckers.timing":
-    "Prélevez les rejets pendant que la plante dort, pour qu'elle n'ait pas à maintenir en vie une pousse dont vous venez de couper la moitié de l'alimentation en eau. Choisissez-en un à une paume ou plus du tronc : tout près, un rejet n'est souvent qu'une tige partant d'une grosse racine, sans racines à lui. Tranchez droit entre le rejet et le pied mère d'un coup de bêche, puis levez-le avec sa motte. Là où les hivers sont doux, l'automne fait tout aussi bien. Le pied mère ne le regrettera pas : une plante drageonnante en refait chaque année.",
+    "Prélevez les rejets au printemps, quand la plante repart : c'est là qu'un rejet détaché s'installe le plus vite. Dégagez d'abord la terre et vérifiez qu'il a ses propres radicelles — une tige qui part d'une grosse racine sans radicelles ne reprendra pas. Tranchez à la bêche entre lui et le pied mère, levez le rejet avec ses racines, et raccourcissez de moitié environ les longues pousses feuillées pour qu'il ne se dessèche pas. Le pied mère ne le regrettera pas : une plante drageonnante en refait chaque année.",
   "prop.suckers.mistake":
-    "Tirer au lieu de creuser. Un rejet sans racines à lui est un bâton, et il aura fière allure une quinzaine de jours avant de mourir.",
+    "Tirer au lieu de creuser. Un rejet sans radicelles à lui ne reprendra pas.",
   "prop.runners.when": "De la fin de l'été à l'automne, quand la plantule est enracinée.",
-  "prop.runners.wait": "Déplaçable quelques semaines après l'enracinement.",
+  "prop.runners.wait": "Détachez-le une fois enraciné.",
   "prop.runners.timing":
     "Attendez que le jeune plant s'enracine tout seul, ce qu'il fait partout où il touche la terre pendant l'été ; tirez très doucement dessus, une plantule enracinée résiste. La fin de l'été et l'automne, c'est le moment où la plupart sont prêts, et c'est aussi le plus doux pour les déplacer : sol tiède, air qui fraîchit, et des mois avant qu'on leur demande quoi que ce soit. La version soignée : en plein été, épinglez chaque plantule dans un petit pot de terreau enterré près du pied mère ; au début de l'automne, coupez le stolon et levez un pot déjà plein de racines.",
   "prop.runners.mistake":
     "Couper le stolon d'abord, en espérant. Tant que la plantule n'a pas ses propres racines, c'est le pied mère qui le maintient en vie.",
-  "prop.root-cuttings.when": "De la fin de l'automne au cœur de l'hiver, en pleine dormance.",
+  "prop.root-cuttings.when": "Du milieu de l'automne au début de l'hiver, en dormance.",
   "prop.root-cuttings.wait": "Pousses au printemps.",
   "prop.root-cuttings.timing":
-    "C'est la technique du plein hiver, quand il n'y a plus rien à travailler au-dessus du sol : levez un pied (ou creusez en bordure d'une touffe), prélevez des tronçons de racine longs comme un doigt et gros comme un crayon, et couchez-les dans une caissette de terreau humide, sous abri ou en châssis. Ce sont les réserves de la racine qui poussent les nouvelles tiges dehors, et une racine en contient le plus en hiver — la saison compte donc ici pour de vraies raisons, pas par commodité. Les pousses sortent au printemps, et le tronçon a alors fabriqué ses propres racines.",
+    "C'est la technique de la saison de repos, quand il n'y a plus rien à travailler au-dessus du sol : levez un pied (ou creusez en bordure d'une touffe), prélevez des tronçons de racine longs comme un doigt et gros comme un crayon, et couchez-les dans une caissette de terreau humide, sous châssis froid. Ce sont les réserves de la racine qui poussent les nouvelles tiges dehors : c'est pourquoi les racines fines demandent des tronçons plus longs. Les pousses sortent au printemps, et le tronçon a alors fabriqué ses propres racines.",
   "prop.root-cuttings.mistake":
     "Ne plus savoir quel bout était le plus proche du collet. Couchez les tronçons à plat plutôt qu'à la verticale et la question ne se pose plus.",
   "prop.spores.when": "De l'été à l'automne, quand le dos des frondes brunit.",
-  "prop.spores.wait": "Des mois — un voile vert d'abord, de petites fougères l'année suivante.",
+  "prop.spores.wait": "Des mois — un voile vert en quelques semaines, de petites fougères quelques mois plus tard.",
   "prop.spores.timing":
-    "Les fougères n'ont ni fleur ni graine : il n'y a donc rien à guetter que le dessous des frondes. Les petits amas y sont d'abord verts, mûrissent vers un brun profond, puis se libèrent. Le brun mûr, c'est le moment. Coupez une fronde, posez-la face contre une feuille de papier blanc dans un endroit sans courant d'air, et au matin vous aurez une poussière fine : ce sont les spores, et la balle plus claire à côté n'est que l'emballage. Semez aussitôt sur un terreau stérile humide, couvrez d'un plastique transparent, et installez-vous dans la patience : rien ne ressemble à une fougère pendant le premier semestre.",
-  "prop.spores.mistake":
-    "Récolter une semaine trop tard. Une fois les amas gris et poudreux, qui s'effritent au toucher, la fronde les a déjà lâchés.",
+    "Les fougères n'ont ni fleur ni graine : il n'y a donc rien à guetter que le dessous des frondes. Les petits amas y sont d'abord verts, mûrissent vers un brun profond, puis se libèrent. Le brun mûr, c'est le moment. Coupez une fronde, posez-la face contre une feuille de papier blanc dans un endroit sans courant d'air pendant quelques jours, et vous aurez une poussière fine : ce sont les spores, et la balle plus claire à côté n'est que l'emballage. Semez aussitôt sur un terreau stérile humide, couvrez d'un plastique transparent, et installez-vous dans la patience : rien ne ressemble à une fougère pendant les premiers mois.",
+  "prop.spores.mistake": "Attendre trop longtemps. Cueillez la fronde quand les replis qui couvrent les amas de spores commencent à se soulever et que les spores foncent ; plus tard, elles sont déjà parties.",
 
   "growth.quick": "Vite installée : comptez à peu près sa taille définitive en trois ans.",
   "growth.steady": "Une croissance régulière : proche de sa taille adulte à {year} ans.",
@@ -1022,6 +1122,7 @@ export const fr: Dict = {
   "traits.docTitle": "Caractéristiques des plantes — Indigene",
   "traits.title": "Caractéristiques des plantes",
   "traits.lede": "Ce que veut dire chaque étiquette et chaque chiffre de la page d'une plante.",
+  "traits.confidenceLink": "À quel point nous sommes sûrs des chiffres de chaque plante",
   "traits.group.water": "💧 Arrosage",
   "traits.group.wildlife": "🦋 Faune",
   "traits.group.handling": "✋ Précautions",
@@ -1169,6 +1270,9 @@ export const fr: Dict = {
   "results.title": "Les plantes pour ce lieu",
   "results.regionTag": "📍 {region}",
   "results.regionTagPick": "📍 {region} — votre choix, pas une mesure faite depuis une position",
+  "results.filtersMeaning": "Ce que veulent dire ces étiquettes",
+  "results.alsoHere": "Aussi dans cette région : {wildlife} · {invasives}",
+  "results.alsoHereWildlife": "Aussi dans cette région : {wildlife}",
   "results.count":
     "{n} plantes indigènes {fit} — dont {good} conviennent bien ou passablement. Les meilleures d'abord.",
   "results.fitClimate": "s'accommodent du climat de ce lieu",
@@ -1518,7 +1622,6 @@ export const fr: Dict = {
   "plant.propagationTitle": "🪴 Comment la multiplier",
   "plant.forThisPlant": "Pour cette plante : ",
   "plant.howToSource": "Source du mode d'emploi : ",
-  "plant.usfsLink": "Native Plant Network (USFS) →",
   "plant.savedFit.one":
     "Vous avez enregistré un coin qui lui conviendrait. Ouvrez-le pour voir tout ce qui y prospère.",
   "plant.savedFit.other":
@@ -1743,6 +1846,7 @@ export const fr: Dict = {
     "Aucune plante des listes d'Indigene ne correspond à « {q} ». Les listes sont constituées région par région, elles grandissent donc prudemment — ",
   "plants.noneLink": "parcourez les indigènes que nous connaissons",
   "plants.noneEnd": ".",
+  "plants.otherPages": "Pas une indigène de nos listes, mais elle a sa page :",
   "plants.browseRegions": "Parcourir par région",
 
   // ---------------------------------------------------------------------
@@ -1782,6 +1886,8 @@ export const fr: Dict = {
   "planting.timingTitle": "Reconnaître le moment",
   "planting.howTitle": "Ce que vous faites concrètement",
   "planting.mistakeTitle": "Là où ça rate le plus souvent",
+  "planting.learnTitle": "Pour aller plus loin",
+  "planting.learnAll": "Toute la liste de lecture",
   "planting.allTechniques": "Toutes les façons de multiplier",
   "planting.browsePlants": "Parcourir les plantes",
   "planting.backToIndex": "← Toutes les techniques",
@@ -1800,13 +1906,15 @@ export const fr: Dict = {
 
   "planting.sourcesTitle": "D'où vient le mode d'emploi",
   "planting.sourcesLede":
-    "Rien de tout cela n'est de notre invention. Chaque conseil de multiplication de l'application est écrit avec nos propres mots simples à partir de ces sources, et chacune d'elles est en accès libre et vaut bien un après-midi — ce sont les endroits où aller quand une page ne vous suffit plus.",
+    "Chaque conseil de multiplication de l'application est écrit avec nos propres mots simples à partir de sources publiées, et la page de chaque plante nomme les siennes. Voici celles sur lesquelles nous nous appuyons le plus : toutes en accès libre, et les endroits où aller quand une page ne vous suffit plus.",
   "planting.sourcesAfter":
     "Ce sont les faits qui servent, jamais la prose : un protocole disant qu'une graine réclame dix semaines de froid énonce un fait sur la graine, et nous le disons à notre façon. Le décompte complet de toutes les sources de l'application, et de ce que nous contesterions en premier, est sur la page {sources}.",
   "planting.sourcesLink": "D'où viennent nos chiffres",
   "planting.scope.us": "Amérique du Nord",
   "planting.scope.eu": "Europe",
   "planting.scope.both": "Les deux",
+  "planting.scope.nz": "Nouvelle-Zélande",
+  "planting.scope.world": "Monde entier",
   "planting.src.npn":
     "Celle à ouvrir en premier. Les pépiniéristes de la restauration écologique y consignent exactement comment ils ont élevé une espèce — traitement des graines, semaines de froid, ce qui a échoué — espèce par espèce, en public. Des milliers de protocoles pour les indigènes d'Amérique du Nord.",
   "planting.src.wpsm":
@@ -1818,9 +1926,13 @@ export const fr: Dict = {
   "planting.src.xerces":
     "Des spécialistes de la conservation des invertébrés, et la raison pour laquelle tant de ces notes précisent qui la plante nourrit. Leurs guides régionaux de semences et d'habitats sont gratuits, et remarquablement honnêtes sur ce qui ne s'installe pas.",
   "planting.src.tela":
-    "Le réseau botanique francophone : une flore collaborative avec observations, clés et notes de culture, nourrie par des botanistes comme par des amateurs. La référence derrière la plupart des fiches françaises d'ici.",
+    "Le réseau botanique francophone : une flore collaborative avec observations, clés et notes de culture, nourrie par des botanistes comme par des amateurs. Les fiches françaises s'y appuient pour les noms et l'aire où la plante pousse à l'état sauvage, pas pour sa multiplication.",
   "planting.src.inpn":
     "L'inventaire national, porté par le Muséum national d'Histoire naturelle. Moins un mode d'emploi que l'autorité sur ce qui est réellement indigène et où — le garde-fou qui empêche de prendre pour « indigène » une plante qui pousse simplement bien.",
+  "planting.src.nzpcn":
+    "Le réseau néo-zélandais des botanistes et des pépiniéristes. Chaque fiche d'espèce a une courte note de multiplication ; c'est la source de toutes les plantes d'Auckland ici.",
+  "planting.src.sid":
+    "Les relevés de graines de la banque de graines de Kew et d'études publiées : comment faire germer une espèce, et comment ses graines se conservent. Mondiale, et citée ici par des fiches de la France au Japon.",
   "planting.src.rhs":
     "Des guides clairs et bien illustrés pour chaque technique, publiés par une société d'horticulture bicentenaire. Écrits pour un jardin européen et une année européenne.",
 
@@ -1854,14 +1966,14 @@ export const fr: Dict = {
     "Pour que vous voyiez exactement ce qui se passe : quand une recherche a besoin de votre lieu, votre navigateur s'adresse directement à ces services publics. Chacun ne voit que cette recherche-là, n'obtient ni nom ni compte (il n'y en a pas), et applique sa propre politique de confidentialité à cette requête.",
   "privacy.svc.sentWrap": "(on lui envoie {sent}).",
   "privacy.svc.inat.for":
-    "des photos de plantes et d'animaux observés à proximité, la fréquence à laquelle une espèce y a été relevée, quels animaux d'un endroit enregistré ont été vus autour, toute observation que vous reliez à votre journal de plantation, et vos propres observations si vous les importez",
+    "des photos de plantes et d'animaux observés à proximité, la fréquence à laquelle une espèce y a été relevée, quels animaux ont été vus autour d'un endroit enregistré, et en quelle saison, toute observation que vous reliez à votre journal de plantation, et vos propres observations si vous les importez",
   "privacy.svc.inat.sent":
-    "des coordonnées ou une zone de carte, plus l'espèce recherchée — ou, pour une observation reliée, seulement la référence d'observation que vous avez collée, et pour un import, seulement votre nom d'utilisateur",
+    "des coordonnées ou une zone de carte, plus l'espèce recherchée et, pour un plan de saison, les mois — ou, pour une observation reliée, seulement la référence d'observation que vous avez collée, et pour un import, seulement votre nom d'utilisateur",
   "privacy.svc.meteo.for":
     "votre climat — la pluie et la rigueur des hivers ; et la conversion d'un code postal ou d'une commune en un point sur la carte",
   "privacy.svc.meteo.sent": "des coordonnées, ou le nom de lieu que vous avez saisi",
-  "privacy.svc.osm.for": "le nom de la commune la plus proche (affiché à la place des chiffres bruts), et l'image de la carte",
-  "privacy.svc.osm.sent": "des coordonnées",
+  "privacy.svc.osm.for": "le nom de la commune la plus proche (affiché à la place des chiffres bruts), la recherche d'un code postal, et l'image de la carte",
+  "privacy.svc.osm.sent": "des coordonnées, ou le code postal que vous avez saisi",
   "privacy.svc.soil.for": "le type de votre sol et son acidité",
   "privacy.svc.soil.sent": "des coordonnées",
   "privacy.svc.usgs.for": "votre altitude et votre pente",
@@ -2061,7 +2173,8 @@ export const fr: Dict = {
     "C'est défendable, et nous le défendrions — mais c'est bel et bien une approximation, et elle flatte les membres les plus faibles d'un groupe fort.",
   "sources.chal3": "Les régions ne sont pas également bien sourcées. ",
   "sources.chal3Rest":
-    "Certaines listes reposent sur des décennies de travail botanique régional ; les plus récentes sont plus minces. L'indicateur de fiabilité de chaque plante le montre, plante par plante, selon une seule règle.",
+    "Certaines listes reposent sur des décennies de travail botanique régional ; les plus récentes sont plus minces. L'{link} de chaque plante le montre, plante par plante, selon une seule règle.",
+  "sources.chal3Link": "indicateur de fiabilité",
   "sources.chal4": "Les comptes de chenilles américains reposent sur un terrain moins sûr que les européens. ",
   "sources.chal4Rest":
     "Les chiffres européens viennent d'un jeu de données sous licence ouverte que nous pouvons vous indiquer et recalculer entièrement. Les chiffres américains viennent de travaux publiés dont la base n'a pas de licence ouverte — ils sont donc plus difficiles à vérifier que nous ne le voudrions.",
@@ -2244,7 +2357,8 @@ export const fr: Dict = {
   "wanted.photosLede": "Des photos confirmées sur iNaturalist, prises dans une région où elle figure sur la liste.",
   "wanted.tellApart": "Souvent confondue avec",
   "wanted.noPhotos": "Aucune photo confirmée de cette région sur iNaturalist pour l'instant.",
-  "wanted.onLists": "Parmi les pires : {places}",
+  "wanted.onLists": "Parmi les pires : {places} — {remove}.",
+  "wanted.removeLink": "comment l'arracher",
   "wanted.placeLink": "{region} (n° {n})",
 
   "wlNearby.seeItNear": "Le voir près de chez vous",
@@ -2325,13 +2439,16 @@ export const fr: Dict = {
     "L'estimation du soleil est une fourchette, pas une décimale, parce que les capteurs mentent et que la réponse honnête est une plage. Le relevé de sol est toujours présenté comme « la carte dit ceci — voici un test de soixante secondes pour vérifier si c'est vrai là où vous êtes », parce qu'un carré de carte des sols est plus grand que votre jardin entier. Sur place, vous en savez plus que la carte, et l'application est faite pour vous laisser la contredire.",
   "about.stance.sourced": "Chaque chiffre doit pouvoir être rattaché à quelqu'un d'autre.",
   "about.stance.sourcedBody":
-    "Chaque plante porte ses sources et une note de confiance en mots simples, et quand un chiffre relève de notre jugement plutôt que d'un comptage, la page des sources le dit et nomme ceux que nous contesterions en premier. Rien n'est inventé pour combler un trou — une plante sans nom français affiche son nom scientifique plutôt qu'une invention plausible.",
+    "Chaque plante porte ses sources et une note de confiance en mots simples, et quand un chiffre relève de notre jugement plutôt que d'un comptage, {link} le dit et nomme ceux que nous contesterions en premier. Rien n'est inventé pour combler un trou — une plante sans nom français affiche son nom scientifique plutôt qu'une invention plausible.",
+  "about.stance.sourcedLink": "la page des sources",
   "about.stance.yours": "Indigene n'attend rien de vous.",
   "about.stance.yoursBody":
-    "Pas de compte, pas d'inscription, pas de publicité, rien de vendu. Un compteur de visites note quelle page a été ouverte, et rien sur qui l'a ouverte ; vous pouvez le couper dans les Réglages. Les lieux enregistrés restent dans votre navigateur, sur votre appareil, parce qu'il n'existe aucun serveur où les envoyer. Aucun inconnu ne peut vous contacter par ce biais.",
+    "Pas de compte, pas d'inscription, pas de publicité, rien de vendu. Un compteur de visites note quelle page a été ouverte, et rien sur qui l'a ouverte ; vous pouvez {link}. Les lieux enregistrés restent dans votre navigateur, sur votre appareil, parce qu'il n'existe aucun serveur où les envoyer. Aucun inconnu ne peut vous contacter par ce biais.",
+  "about.stance.yoursLink": "le couper dans les Réglages",
   "about.stance.portable": "Vos données partent avec vous.",
   "about.stance.portableBody":
-    "Les réglages écrivent chaque lieu enregistré et son journal de plantation dans un fichier simple qui vous appartient, et en relisent un dans un autre navigateur. Passer d'un téléphone à un ordinateur demande un fichier, pas un compte — et ce fichier est à vous : à ouvrir, à garder, ou à confier à tout autre outil.",
+    "{link} écrivent chaque lieu enregistré et son journal de plantation dans un fichier simple qui vous appartient, et en relisent un dans un autre navigateur. Passer d'un téléphone à un ordinateur demande un fichier, pas un compte — et ce fichier est à vous : à ouvrir, à garder, ou à confier à tout autre outil.",
+  "about.stance.portableLink": "Les réglages",
   "about.stance.offline": "Indigene fonctionne là où sont les jardins.",
   "about.stance.offlineBody":
     "Conçue pour marcher hors ligne et pour s'installer sur l'écran d'accueil, parce que le fond d'un jardin est précisément l'endroit où le réseau disparaît. Tout sauf les consultations en direct continue de fonctionner sans aucune connexion.",
@@ -2443,7 +2560,8 @@ export const fr: Dict = {
   // --- la moitié de l'argument que personne ne fait ----------------------
   "crops.takeAwayTitle": "Certaines indigènes éloignent les ravageurs",
   "crops.takeAway1":
-    "Voilà la moitié de l'argument que personne n'avance. Dans un jardin, le réservoir à ravageurs est le plus souvent une plante que quelqu'un a achetée, et plusieurs des pires ravageurs d'Amérique du Nord en dépendent. Remplacez cette plante par une indigène et vous coupez la chaîne sous leurs pieds.",
+    "Voilà la moitié de l'argument que personne n'avance. Dans un jardin, le réservoir à ravageurs est le plus souvent une plante que quelqu'un a achetée, et plusieurs des pires ravageurs d'Amérique du Nord en dépendent. {link} et vous coupez la chaîne sous leurs pieds.",
+  "crops.takeAway1Link": "Remplacez cette plante par une indigène",
   "crops.fig.chain.cut": "Changez la plante, coupez la chaîne",
   "crops.fig.chain.ailanthus": "Ailante",
   "crops.fig.chain.lanternfly": "Fulgore tachetée",
@@ -2459,7 +2577,8 @@ export const fr: Dict = {
   "crops.takeAway2":
     "Le cas de l'épine-vinette a été compté. Dans des bois du Connecticut, sous une épine-vinette du Japon intacte, on trouvait environ 280 tiques porteuses de la maladie de Lyme par hectare ; là où l'arbuste avait été coupé, 121 ; là où il n'y en avait jamais eu, 30. Un seul dégagement a tenu six ans avant que l'arbuste ne revienne.",
   "crops.takeAway3":
-    "N'exagérons rien, cependant. Arracher un ailante ne fera pas disparaître la fulgore tachetée — elle se nourrit sur une soixantaine d'autres arbres et lianes. Couper la chaîne réduit un ravageur. Cela ne l'efface pas.",
+    "N'exagérons rien, cependant. Arracher {link} ne fera pas disparaître la fulgore tachetée — elle se nourrit sur une soixantaine d'autres arbres et lianes. Couper la chaîne réduit un ravageur. Cela ne l'efface pas.",
+  "crops.takeAway3Link": "un ailante",
 
   // --- l'affirmation la plus facile à surinterpréter --------------------------
   "crops.redirectTitle": "Iront-ils manger la haie plutôt que mes cerises ?",
@@ -2665,13 +2784,15 @@ export const fr: Dict = {
   "native.short4": "Une plante envahissante pose problème par ce qu'elle fait, pas par son origine. La plupart des plantes transportées ailleurs ne se répandent jamais.",
   "native.speciesTitle": "La coévolution se fait entre espèces, pas entre nations",
   "native.species1": "Une chenille qui ne mange que du chêne ne l'a pas choisi par fidélité. Au fil de milliers de générations, son corps a appris à déjouer les défenses du chêne, et la plupart des insectes herbivores sont spécialisés comme elle. C'est pour cela que la liste de plantes de votre coin compte.",
-  "native.species2": "Cette histoire s'est jouée sur un paysage de climat, de sol et de mer, pas de pays. Les listes d'Indigene suivent donc des régions naturelles, pas des frontières. La liste irlandaise couvre toute l'île, République et Irlande du Nord confondues, et un lieu de la péninsule de Kintyre, en Écosse, la reçoit aussi : la même terre atlantique porte les mêmes plantes.",
+  "native.species2": "Cette histoire s'est jouée sur un paysage de climat, de sol et de mer, pas de pays. Les listes d'Indigene suivent donc des régions naturelles, pas des frontières. {ireland} couvre toute l'île, République et Irlande du Nord confondues, et un lieu de la péninsule de Kintyre, en Écosse, la reçoit aussi : la même terre atlantique porte les mêmes plantes.",
+  "native.species2Link": "La liste irlandaise",
   "native.historyTitle": "L'aire d'origine est une histoire, pas une identité",
   "native.history1": "L'endroit où une plante est indigène tient en partie au hasard de la dernière glaciation. Le hêtre est indigène dans le sud de l'Angleterre mais pas en Irlande : la mer est montée entre les deux avant qu'il n'arrive. Les aires ont toujours bougé, et elles bougent maintenant que le climat se réchauffe.",
   "native.history2": "Beaucoup de paysages indigènes « sauvages » étaient aussi entretenus par des gens. Les brûlis des peuples salish de la côte ont gardé ouvertes pendant des siècles les prairies à chêne de Garry du Nord-Ouest Pacifique, et les Māori plantaient des bosquets de karaka pour leurs fruits. Planter des indigènes prolonge ce soin.",
   "native.behaviorTitle": "« Envahissante » décrit un comportement, pas une origine",
   "native.behavior1": "La plupart des plantes transportées dans un nouveau lieu ne s'y répandent jamais seules. Une règle approximative de l'écologie des invasions : environ une espèce importée sur dix apparaît dans la nature, une sur dix de celles-ci s'y installe, et une sur dix de ces dernières devient nuisible. Les rares qui le deviennent posent problème parce qu'elles étouffent les bois ou engorgent les rivières, pas à cause de leur origine.",
-  "native.behavior2": "Certains écologues mettent en garde contre le fait de juger une espèce sur son origine (Davis et coll., 2011). D'autres répondent qu'arracher une plante pour un dommage mesuré n'a rien de xénophobe (Simberloff, 2003). Indigene donne raison aux deux : chaque envahissante de l'application y figure pour ce qu'elle fait. Vos tomates viennent des Andes, et c'est très bien.",
+  "native.behavior2": "Certains écologues mettent en garde contre le fait de juger une espèce sur son origine (Davis et coll., 2011). D'autres répondent qu'arracher une plante pour un dommage mesuré n'a rien de xénophobe (Simberloff, 2003). Indigene donne raison aux deux : {invasives} y figure pour ce qu'elle fait. Vos tomates viennent des Andes, et c'est très bien.",
+  "native.behavior2Link": "chaque envahissante de l'application",
   "native.whyTitle": "Pourquoi nous le disons tout haut",
   "native.why1": "Ce vocabulaire a déjà été détourné. Dans l'Allemagne nazie, des paysagistes ont lié les plantes « indigènes » à la pureté raciale, et en 1942 un groupe de botanistes a appelé à éradiquer la petite balsamine, une modeste fleur des bois venue d'Asie, en la traitant d'« envahisseur mongol ». L'écologue Jacques Tassin a montré combien le discours sur les espèces envahissantes emprunte encore son vocabulaire à la xénophobie.",
   "native.why2": "Alors quand nous disons indigène, nous parlons du chêne et de ses chenilles, jamais d'une personne.",
@@ -2744,7 +2865,8 @@ export const fr: Dict = {
   "llm.even2": "Nous ne déduisons pas de la facture les jardins qu'Indigene aide à planter. Ce bienfait est réel, mais ce n'est pas un chiffre que nous pouvons garantir.",
   "llm.notTitle": "Ce qui n'est pas compté",
   "llm.not1": "Neuf premières sessions ont enregistré un prix mais pas de tokens. Leur électricité est déduite de ce prix.",
-  "llm.not2": "Le court film sur Indigene a utilisé les modèles Gemini de Google pour sa narration et sa musique. Cet usage n'a pas été mesuré.",
+  "llm.not2": "{link} a utilisé les modèles Gemini de Google pour sa narration et sa musique. Cet usage n'a pas été mesuré.",
+  "llm.not2Link": "Le court film sur Indigene",
   "llm.not3": "Le temps des personnes, et les ordinateurs sur lesquels elles ont travaillé.",
   "llm.sourcesTitle": "D'où cela vient",
   "llm.src.sessions": "les tokens et le prix de chaque session, une ligne chacune",
@@ -2778,4 +2900,39 @@ export const fr: Dict = {
   "about.stance.llm": "Indigene montre sa propre facture.",
   "about.stance.llmBody": "Il a été construit avec un LLM, et les LLM fonctionnent à l'électricité. {link} dit combien, et comment la conception la rembourse.",
   "about.stance.llmLink": "Ce qu'Indigene a coûté en LLM",
+  // ---------------------------------------------------------------------
+  // « Homegrown National Park » (steps/homegrown.ts) — l'idée sur laquelle Indigene repose.
+  // ---------------------------------------------------------------------
+  "steps.homegrown": "Homegrown",
+  "homegrown.docTitle": "Homegrown National Park — Indigene",
+  "homegrown.title": "Homegrown National Park",
+  "homegrown.lede": "L'idée de l'écologue Doug Tallamy : rendre aux plantes indigènes la moitié des pelouses américaines, et les jardins, ensemble, deviennent un parc national. Indigene est fait pour vous aider à planter votre parcelle.",
+  "homegrown.ideaTitle": "Un parc fait de jardins",
+  "homegrown.idea1": "Les États-Unis cultivent environ 16 millions d'hectares de pelouse, plus que n'importe quelle culture irriguée, et la pelouse ne nourrit presque rien. Tallamy, entomologiste à l'université du Delaware, a fait le calcul : la moitié en plantes indigènes donnerait 8 millions d'hectares d'habitat, plus que la plupart des parcs nationaux du pays réunis.",
+  "homegrown.idea2": "Nul besoin de permission ni de grand jardin : une bande le long de l'allée ou un pot sur un balcon comptent. Les jardiniers ajoutent leur parcelle à la {map} du projet, et le parc grandit jardin après jardin.",
+  "homegrown.mapLink": "carte publique",
+  "homegrown.birdsTitle": "Les chenilles nourrissent les oiseaux",
+  "homegrown.birds1": "La plupart des passereaux élèvent leurs petits avec des chenilles, et la plupart des chenilles ne mangent que les plantes avec lesquelles elles ont évolué. Un couple de mésanges de Caroline en a besoin de 6 000 à 9 000 pour élever une seule couvée. Dans une étude menée dans des jardins autour de Washington, les mésanges ne maintenaient pas leurs effectifs là où moins de 70 % de la végétation était indigène.",
+  "homegrown.appTitle": "Là où Indigene suit cette idée",
+  "homegrown.app1": "Le classement met les chenilles en premier. De tout ce qu'une plante offre, le nombre d'espèces de chenilles qu'elle nourrit compte le plus.",
+  "homegrown.app2": "{link} est ce que Tallamy appelle une plante clé de voûte. Aux États-Unis, 14 % des genres de plantes indigènes (des groupes de proches parents, comme les chênes) nourrissent 90 % des espèces de chenilles. Indigene vous les montre en premier.",
+  "homegrown.app2Link": "Une plante « Essentielle »",
+  "homegrown.app3": "Aux États-Unis, le nombre de chenilles vient des {link}, publiées avec la National Wildlife Federation.",
+  "homegrown.app3Link": "données de Tallamy lui-même",
+  "homegrown.app4": "L'idée voyage : pour {ireland}, {nz} ou {japan}, les listes d'Indigene s'appuient sur les études propres à chaque lieu sur qui nourrit qui.",
+  "homegrown.app4Japan": "le Japon",
+  "homegrown.app4Nz": "la Nouvelle-Zélande",
+  "homegrown.app4Ireland": "l'Irlande",
+  "homegrown.authorTitle": "Pourquoi j'ai créé Indigene",
+  "homegrown.author1": "J'ai passé des années à transformer en plantes indigènes le jardin d'une maison neuve du centre de la Floride. En m'installant à Seattle, j'ai tout recommencé, avec bien moins de terrain.",
+  "homegrown.author2": "Les deux fois, le plus dur était de savoir ce qui pousserait dans chaque coin, et ce que cela nourrirait. Indigene est la réponse que j'aurais voulu avoir, et ces deux jardins sont ma parcelle du parc.",
+  "homegrown.authorSign": "— Olivier Lacan",
+  "homegrown.sourcesTitle": "D'où cela vient",
+  "homegrown.src.hnp": "le projet, et la carte des jardins qui le composent",
+  "homegrown.src.book": "le livre qui a lancé Homegrown National Park",
+  "homegrown.src.lawn": "la surface de pelouse aux États-Unis",
+  "homegrown.src.chickadee": "les mésanges, les chenilles et le seuil de 70 %",
+  "homegrown.src.keystone": "les quelques genres de plantes qui nourrissent la plupart des chenilles",
+  "about.whyHomegrown": "L'idée qui le porte est celle de Doug Tallamy : {link}.",
+  "about.homegrownLink": "Homegrown National Park",
 };

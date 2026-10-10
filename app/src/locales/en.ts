@@ -52,6 +52,10 @@ export const en = {
   "pullToReload.pull": "Pull to reload",
   "pullToReload.release": "Release to reload",
   "pullToReload.reloading": "Reloading…",
+  // The page loader: the first line at once, the others only if the wait runs long.
+  "loader.loading": "Loading…",
+  "loader.late": "Good things take time to grow.",
+  "loader.later": "The connection seems slow. Still on its way.",
   "footer.text":
     "Indigene is {repo} and {sources}.",
   "footer.repo": "open source",
@@ -125,11 +129,15 @@ export const en = {
   // write a copy out, read a copy in — and an honest account of what each did.
   // ---------------------------------------------------------------------
   "backup.title": "Your spots, as a file",
-  "backup.lede": "Every spot you've saved, and what you've planted in each, written to one file you keep. Open that file in another browser and the same spots are there.",
+  "backup.lede": "Your spots, what you've planted, the sightings you've linked and your settings, in one file you keep. Open it in another browser and everything comes back.",
   "backup.statSpots.one": "{count} saved spot",
   "backup.statSpots.other": "{count} saved spots",
   "backup.statPlantings.one": "{count} planting logged",
   "backup.statPlantings.other": "{count} plantings logged",
+  "backup.lastCopy": "Last copy saved {date}.",
+  "backup.noCopy": "No copy saved from this browser yet.",
+  "backup.kept": "This browser has agreed not to clear your spots when space runs low.",
+  "backup.notKept": "This browser may clear your spots to free up space. A copy keeps them safe.",
   "backup.empty": "Nothing saved yet — so there's nothing to copy out. A file from another browser can still come in.",
   "backup.save": "Save a copy",
   "backup.open": "Bring a copy in",
@@ -138,6 +146,27 @@ export const en = {
   "backup.readTitle": "Read that copy.",
   "backup.rowSpots": "Spots added",
   "backup.rowPlantings": "Plantings added",
+  "backup.rowSpotsUpdated": "Spots brought up to date",
+  "backup.rowPlantingsUpdated": "Plantings brought up to date",
+  "backup.rowSightings": "Sightings restored",
+  "backup.rowSettings": "Settings restored",
+  "backup.iosSafari": "In Safari on iPhone and iPad, a site you don't open for about a week is cleared. On your Home Screen, Indigene keeps your spots, but starts empty: bring a copy in there.",
+  "backup.iosGuide": "How storage works",
+  "backup.rowSpotsCombined": "Spots combined",
+  "backup.askTitle": "Some spots look like ones you already have.",
+  "backup.askLede": "Choose for each one. Nothing is brought in until you do.",
+  "backup.pairNames": "“{there}” and your “{here}”",
+  "backup.pairApart": "{distance} apart",
+  "backup.pairInFile.one": "{count} planting in the file",
+  "backup.pairInFile.other": "{count} plantings in the file",
+  "backup.pairHere.one": "{count} planting here",
+  "backup.pairHere.other": "{count} plantings here",
+  "backup.combine": "Combine",
+  "backup.combineSub": "Add its plants and sightings to your “{here}”",
+  "backup.keepBoth": "Keep both",
+  "backup.keepBothSub": "Bring it in as a spot of its own",
+  "backup.bringIn": "Bring it in",
+  "backup.cancel": "Cancel",
   "backup.rowSpotsKnown": "Spots already here",
   "backup.rowSkipped": "Entries we couldn't read",
   "backup.nothingNew": "Everything in that copy was already here. Nothing changed.",
@@ -209,14 +238,13 @@ export const en = {
   "welcome.ratherNotLink": "browse without sharing your location",
   "welcome.whyTitle": "Why native plants?",
   "welcome.why1":
-    "Most caterpillars can only eat the plants they evolved with, and nearly every backyard bird raises its chicks on caterpillars. No natives, no caterpillars, no baby birds.",
+    "Most caterpillars can only eat the plants they evolved with, and most songbirds raise their chicks on caterpillars. Fewer natives, fewer caterpillars, fewer baby birds.",
   "welcome.why2": "Plant a native, and the insects that need it can find it that same season.",
   "welcome.savedTitle": "Your saved spots",
   "welcome.openSaved.one": "Open saved spot ({n})",
   "welcome.openSaved.other": "Open saved spots ({n})",
   "film.title": "Indigene, the film",
   "film.play": "Watch the 1-minute film",
-  "film.note": "Nothing loads from the video host until you press play.",
   "film.lede": "What Indigene does and who it's for, in one minute.",
   "film.share": "Share the film",
   "film.shareText": "Native plants for exactly where you stand, in a one-minute film:",
@@ -353,7 +381,7 @@ export const en = {
   "spot.obsSighting": "Sighting",
   "spot.obsPickTitle": "Your sightings of this plant",
   "spot.obsPickLabel": "Link your sighting from {date}",
-  "spot.obsPickNone": "None of your sightings from the past year are of this plant.",
+  "spot.obsPickNone": "None of your sightings near this spot from the past five years are of this plant.",
   "spot.obsPickSetup": "Pick from your iNaturalist photos",
   "spot.obsPickOr": "Or paste any sighting:",
   // The add form's own sighting picker: one tap links it and uses its date.
@@ -379,12 +407,12 @@ export const en = {
   "inat.privacy": "Your username stays on this device and is only ever sent to iNaturalist",
   "import.docTitle": "Import from iNaturalist — Indigene",
   "import.title": "Import from iNaturalist",
-  "import.lede": "Your plant sightings from the past year, sorted against this spot's region. Tick what belongs here.",
+  "import.lede": "Your plant sightings near this spot from the past five years, sorted against its region. Tick what belongs here.",
   "import.notLinked": "Link your iNaturalist username in Settings first.",
   "import.linkButton": "Link my account",
   "import.noSpots": "Save a spot first: sightings go into a spot's log.",
   "import.findSpot": "Find my spot",
-  "import.privacy": "iNaturalist is sent your username, never this spot's location",
+  "import.privacy": "iNaturalist is sent your username and this spot, rounded to about 1 km",
   "import.whichSpot": "Which spot?",
   "import.noRegion": "Outside Indigene's regions",
   "import.changeSpot": "change",
@@ -393,14 +421,14 @@ export const en = {
   "import.add.one": "Add 1 to this spot",
   "import.add.other": "Add {n} to this spot",
   "import.addNone": "Tick what to add",
-  "import.nothing": "None of your plant sightings from the past year are on the lists for {region}.",
+  "import.nothing": "None of your plant sightings near this spot from the past five years are on the lists for {region}.",
   "import.nativesTitle": "Natives you've photographed",
   "import.nativesLede": "Tick the ones you planted here. Each becomes a row in the log, dated by the photo.",
   "import.invasivesTitle": "Invasives, confirmed by others",
   "import.invasivesLede": "Other iNaturalist users agree on these. Tick the ones growing here to keep them on this spot's list.",
   "import.waitingTitle": "Invasives not confirmed yet",
   "import.waitingLede": "Nobody else has confirmed these, or they're marked as planted, so they can't be added yet.",
-  "import.truncated": "You've posted a lot this year, so only your 600 most recent sightings were checked.",
+  "import.truncated": "You've posted a lot around here, so only your 1,000 most recent sightings were checked.",
   "import.added.one": "Added 1 to this spot.",
   "import.added.other": "Added {n} to this spot.",
   "import.seen": "Seen {date}",
@@ -416,11 +444,76 @@ export const en = {
   "spot.invasiveRemoveLabel": "Remove {name} from this list",
   "spot.confirmInvasiveRemove": "Remove {name} from this list?",
   "spot.invasiveRemoved": "Removed from the list.",
+
+  // ---------------------------------------------------------------------
+  // A spot's season plan: what to propagate from it now, and what to add
+  // for the wildlife seen nearby (`components/season-plan.ts`).
+  // ---------------------------------------------------------------------
+  "grow.title.spring": "Grow more this spring",
+  "grow.title.summer": "Grow more this summer",
+  "grow.title.fall": "Grow more this autumn",
+  "grow.title.winter": "Grow more this winter",
+  "grow.lede": "Your plants old enough to share, most useful to wildlife first.",
+  "grow.allLede": "Across your spots, most useful to wildlife first.",
+  "grow.first": "Start here",
+  "grow.window.month": "Seed ripe now",
+  "grow.window.season": "This season",
+  "grow.do.seed": "Collect the seed",
+  "grow.do.seedWoody": "Collect seed, if it set any",
+  "grow.do.cuttings-softwood": "Take softwood cuttings",
+  "grow.do.cuttings-semi-hardwood": "Take semi-hardwood cuttings",
+  "grow.do.cuttings-hardwood": "Take hardwood cuttings",
+  "grow.do.division": "Divide the clump",
+  "grow.do.layering": "Layer a low branch",
+  "grow.do.root-cuttings": "Take root cuttings",
+  "grow.do.suckers": "Pot up the suckers",
+  "grow.do.runners": "Pot up the runners",
+  "grow.do.spores": "Collect the spores",
+  "grow.why.sole": "{name} depends on it",
+  "grow.why.keystone": "Essential plant",
+  "grow.why.host": "Raises caterpillars",
+  "grow.why.pollinator": "Feeds pollinators",
+  "grow.why.bird": "Feeds birds",
+  "grow.why.soil": "Holds soil and rain",
+  "grow.atSpot": "At {spot}",
+  "grow.none": "Nothing here is ready to propagate right now.",
+  "grow.young.one": "1 plant is still too young to share.",
+  "grow.young.other": "{count} plants are still too young to share.",
+  "grow.undated.one": "1 plant has no planting date, so it's left out.",
+  "grow.undated.other": "{count} plants have no planting date, so they're left out.",
+  "grow.agesNote": "Ages are a rule of thumb: a plant that hasn't flowered has no seed to give yet.",
+  "grow.leaveSome": "Leave some for the birds",
+  "grow.woody.one": "1 tree or shrub here grows only from seed, and no published age says when it bears any.",
+  "grow.woody.other": "{count} trees or shrubs here grow only from seed, and no published age says when they bear any.",
+  "grow.sourcesTitle": "Where this comes from",
+  "grow.src.ripe": "Seed ripens about two months after flowering.",
+  "grow.src.divide": "Divide in spring or autumn, after flowering; most clumps every two to three years.",
+  "grow.src.woody": "Trees and shrubs first bear seed at 3 to 40 years old, by species: the plan waits for each one's published age, in the months its fruit ripens.",
+  "grow.src.birds": "Seed heads left standing feed birds through winter.",
+  "grow.src.rank": "The order is ours: plants an animal can't do without, then essential plants and caterpillar hosts.",
+  "grow.src.plant": "Each plant's own methods, and their source, are on its page.",
+  "grow.more": "See the whole season plan",
+  "grow.docTitle": "{label} — season plan",
+  "grow.page.spring": "Spring plan",
+  "grow.page.summer": "Summer plan",
+  "grow.page.fall": "Autumn plan",
+  "grow.page.winter": "Winter plan",
+  "grow.next.spring": "Coming up in spring",
+  "grow.next.summer": "Coming up in summer",
+  "grow.next.fall": "Coming up in autumn",
+  "grow.next.winter": "Coming up in winter",
+  "grow.addTitle": "Plant next, for the wildlife",
+  "grow.addLede": "Animals photographed within {distance} in this season's months, any year, and natives that would feed them.",
+  "grow.addFor": "Feeds {names}",
+  "grow.addNone": "None of this region's animals have been photographed within {distance} in this season's months yet.",
+  "grow.addHonest": "Seen near here, so a good bet — not a promise.",
+  "grow.addNoRegion": "This spot is outside the regions Indigene covers, so there's no list to pick from.",
   "privacy.inatTitle": "If you link your iNaturalist account",
-  "privacy.inat1": "Your username is kept in this browser and nowhere else. It isn't in the file Settings saves your spots to, either.",
-  "privacy.inat2": "It's sent to iNaturalist only when you link it, import, or look for wildlife around a saved spot, to ask for your sightings, which iNaturalist already shows publicly. We never send a place with it.",
+  "privacy.inat1": "Your username is kept in this browser and nowhere else — except the file Settings saves your spots to, so a restore brings it back. Mind who you give that file to.",
+  "privacy.inat2": "It's sent to iNaturalist only when you link it, import, or look for wildlife around a saved spot, to ask for your sightings, which iNaturalist already shows publicly. Importing sends it with the spot, rounded to about 1 km, so only your sightings within 35 km come back. Nothing else sends a place with it.",
   "privacy.inat3": "It never appears in a page's address, so the visit counter never sees it. There's no password or sign-in: Indigene can't post or change anything on iNaturalist.",
-  "privacy.inat4": "Only what you tick is kept: the sighting's number, on the row it made. Remove your username in Settings and it's gone.",
+  "privacy.inat4": "Only what you tick is kept: the sighting's number, on the row it made. {link} and it's gone.",
+  "privacy.inat4Link": "Remove your username in Settings",
 
   // The button on a plant's page that starts a log entry for it.
   "planted.button": "🌱 I planted one",
@@ -466,6 +559,7 @@ export const en = {
   "explore.title": "Meet the natives",
   "explore.lede":
     "{plants} native plants across the {regions} regions Indigene covers so far. Open the one you live in to see its whole roster — or tap the plant on the front of a card to meet it.",
+  "explore.missing": "Don't see your region? {link}.",
   "explore.byWildlife": "Or browse by wildlife → ",
   "explore.byWildlifeSub":
     "start from the monarch, hummingbird, or gopher tortoise you want, and find the plants that support it.",
@@ -483,7 +577,7 @@ export const en = {
   // ---------------------------------------------------------------------
   "location.title": "Where are you standing?",
   "location.lede":
-    "Get your location, then check the map — if the pin isn't where you're really standing, drag or tap to nudge it.",
+    "Get your location, then check the map — if the pin isn't where you're really standing, drag or tap to nudge it. Press and hold to fine-tune.",
   "location.whyTitle": "Why does the exact spot matter?",
   "location.why":
     "“Native” always means native to somewhere. Your coordinates pick which regional plant list applies and pull the soil, climate and ecoregion (an area with its own climate, soil and wild plants) for this exact place — the same species can be essential in one region and a stranger in the next.",
@@ -518,7 +612,16 @@ export const en = {
   // "near", because the name is true of an area, not of the pin.
   "coord.near": "near {place}",
   "location.accuracy": " · GPS accuracy ±{m} m",
-  "location.nudged": " · nudged {m} m",
+  "location.nudged": " · nudged {m} m {dir}",
+  // Which way the pin was nudged from the GPS fix (`lib/compass.ts`).
+  "location.dir.n": "north",
+  "location.dir.ne": "northeast",
+  "location.dir.e": "east",
+  "location.dir.se": "southeast",
+  "location.dir.s": "south",
+  "location.dir.sw": "southwest",
+  "location.dir.w": "west",
+  "location.dir.nw": "northwest",
   "location.noGeolocation": "This device can't share location — try the town search instead.",
   "location.denied": "Location denied — try the town search instead.",
   "location.noFix": "Couldn't get a fix — try again, or switch to the town search.",
@@ -788,13 +891,13 @@ export const en = {
 
   "prop.seed-direct.name": "Sow the seed as-is (direct sowing)",
   "prop.seed-direct.plain":
-    "The easy case: clean the seed, then sow it about as deep as it is wide in a pot or a cleared patch of ground and keep it damp. No tricks needed.",
+    "The easy case: clean the seed, then sow it two or three times as deep as it is wide, in a pot or a cleared patch of ground, and keep it damp. No tricks needed.",
   "prop.seed-cold-moist.name": "Give the seed a cold, damp winter first (cold-moist stratification)",
   "prop.seed-cold-moist.plain":
     "Many native seeds won't wake up until they've felt a real winter, so you fake one. Mix the seed with a handful of damp sand or a moist paper towel, seal it in a labeled zip bag, and leave it in the fridge for the number of weeks noted — then sow. Or skip the fridge entirely: sow it outdoors in a pot in fall and let actual winter do the job.",
   "prop.seed-double-dormant.name": "Expect a two-winter wait (double dormancy)",
   "prop.seed-double-dormant.plain":
-    "The stubborn ones: the root comes out after one winter but the leaf shoot waits for a second. Sow in a pot outdoors, keep it in a shady, protected spot, don't give up when nothing shows the first spring, and stay patient — green usually appears in the second year.",
+    "The stubborn ones: the root grows in a warm spell, and the leaf shoot waits for a winter after that. Sow in a pot outdoors in autumn, keep it in a shady, protected spot, don't give up when nothing shows the first spring, and stay patient — green usually appears in the second spring.",
   "prop.seed-scarify.name": "Nick or scuff the hard seed coat first (scarification)",
   "prop.seed-scarify.plain":
     "Some seeds (beans and their relatives especially) are sealed in a waterproof shell that has to be breached before water can get in. Rub each seed a few strokes on fine sandpaper, or nick the coat with a knife, until you just see the paler inside — then soak overnight and sow. Careful scuffing, not crushing.",
@@ -803,25 +906,25 @@ export const en = {
     "Dust-fine seed that must see daylight to sprout, so don't bury it. Scatter it on top of damp soil, press it down so it makes contact, and don't cover it. Keep the surface from drying out by misting or covering with clear plastic until it germinates.",
   "prop.seed-warm.name": "Sow fresh and keep it warm (no chilling needed)",
   "prop.seed-warm.plain":
-    "The warm-climate case: no winter chill required. Sow the fresh, cleaned seed and keep it warm and damp — it usually sprouts within a few weeks. Fresh matters; many of these lose the ability to sprout if the seed dries out and sits.",
+    "No winter chill required. Sow the fresh, cleaned seed and keep it warm and damp — it usually sprouts within a few weeks. Fresh matters; many of these lose the ability to sprout if the seed dries out and sits.",
   "prop.cuttings-softwood.name": "Root a soft green shoot (softwood cutting)",
   "prop.cuttings-softwood.plain":
-    "In late spring or early summer, snip a hand-length piece of soft, bendy new growth, strip the lower leaves, and push the cut end into damp potting mix or perlite. Keep it humid and out of harsh sun (a clear bag or bottle over the pot helps) until roots form in a few weeks.",
+    "In spring or early summer, snip a finger-length piece of soft, bendy new growth, strip the lower leaves, and push the cut end into damp potting mix or perlite. Keep it humid and out of harsh sun (a clear bag or bottle over the pot helps) until roots form in a few weeks.",
   "prop.cuttings-semi-hardwood.name": "Root a firming-up shoot (semi-hardwood cutting)",
   "prop.cuttings-semi-hardwood.plain":
     "Mid-to-late summer, take a hand-length piece of this year's growth that has started to stiffen and turn woody at the base. Strip the lower leaves, set the cut end in damp mix, and keep it humid. Slower to root than soft cuttings but sturdier — good for many shrubs and broadleaf evergreens.",
   "prop.cuttings-hardwood.name": "Root a bare winter twig (hardwood cutting)",
   "prop.cuttings-hardwood.plain":
-    "The simplest cutting of all for willows, dogwoods and their kind: while the plant is leafless and dormant, cut pencil-thick pieces about a forearm long, push the lower half into damp ground or a pot, and wait. Many root by spring with no fuss at all.",
+    "The simplest cutting of all for willows, poplars and their kind: while the plant is leafless and dormant, cut pencil-thick pieces about a forearm long, push the lower two-thirds into damp ground or a pot, and wait. Many root by spring with no fuss at all.",
   "prop.division.name": "Dig and split the clump (division)",
   "prop.division.plain":
     "For clump-forming perennials and grasses: in early spring or fall, dig up the whole plant, then pull or cut the crown into several pieces, each with its own roots and a few shoots. Replant the pieces right away at the same depth and water them in. Also rejuvenates a tired, hollow-centered clump.",
   "prop.layering.name": "Root a branch while it's still attached (layering)",
   "prop.layering.plain":
-    "A near-foolproof trick: bend a low, flexible branch down to the ground, scratch the bark where it touches, pin it down with a rock or wire, and mound soil over that spot. It grows roots there while the parent keeps it alive; a season or two later, cut it free and dig up your new plant.",
+    "A near-foolproof trick: bend a low, flexible branch down to the ground, scratch the bark where it touches, pin it down with a rock or wire, and mound soil over that spot. It grows roots there while the parent keeps it alive; a year or so later, cut it free and dig up your new plant.",
   "prop.root-cuttings.name": "Grow new plants from root pieces (root cuttings)",
   "prop.root-cuttings.plain":
-    "For plants that sprout readily from their roots: in late fall or winter, dig and cut finger-length pieces of pencil-thick root, lay them horizontally in a tray of damp mix under a shallow layer of soil, and keep them warm. New shoots rise from the buried pieces.",
+    "For plants that sprout readily from their roots: in late fall or early winter, dig and cut finger-length pieces of pencil-thick root, lay them horizontally in a tray of damp mix under a shallow layer of soil, and keep them in a cold frame without overwatering. New shoots rise from the buried pieces.",
   "prop.suckers.name": "Dig up the shoots it sends up around itself (suckers)",
   "prop.suckers.plain":
     "Thicket-formers throw up new rooted shoots a short way from the trunk. In early spring, slice down between a sucker and the parent with a spade, lift the sucker with its own roots attached, and replant it. Free plants, and it tidies the clump.",
@@ -830,7 +933,7 @@ export const en = {
     "Strawberries and other creepers send out horizontal stems that root little plantlets along the way. Once a plantlet has its own roots, snip the runner connecting it to the parent, dig it up, and move it — or pin it into a small pot first, then cut it loose.",
   "prop.spores.name": "Sow the dust from the frond backs (spores)",
   "prop.spores.plain":
-    "Ferns make no seed — they scatter dust-fine spores from brown patches under mature fronds. Slower and fussier, but doable: lay a ripe frond on paper for a day to collect the brown dust, scatter it on the surface of damp sterile mix, cover with clear plastic, and keep it bright and moist. A green film appears first, then tiny ferns over months. Most gardeners find dividing an existing clump far easier.",
+    "Ferns make no seed — they scatter dust-fine spores from brown patches under mature fronds. Slower and fussier, but doable: lay a ripe frond on paper for a few days to collect the brown dust, scatter it on the surface of damp sterile mix, cover with clear plastic, and keep it bright and moist. A green film appears first, then tiny ferns over months. Most gardeners find dividing an existing clump far easier.",
 
   // -------------------------------------------------------------------------
   // When to do it — the timing layer behind each technique's own page
@@ -852,32 +955,32 @@ export const en = {
   //             "when the shoot snaps cleanly" are true everywhere.
   //   .mistake  the one slip that wastes the whole attempt, said plainly.
   // -------------------------------------------------------------------------
-  "prop.seed-direct.when": "Autumn for most seed; spring for what you didn't get to.",
-  "prop.seed-direct.wait": "Up with the first warm spell after its winter.",
+  "prop.seed-direct.when": "Autumn or spring.",
+  "prop.seed-direct.wait": "Comes up in spring, after its winter outdoors.",
   "prop.seed-direct.timing":
-    "Autumn is the default because it is what the plant itself does: seed ripens, falls, lies under leaves and rain all winter, and comes up when the ground warms. Sowing then asks nothing of you — no fridge, no counting weeks. Spring sowing is the fallback for seed that arrived late or was stored dry; it works, you just get a shorter first summer out of it. The season to avoid is high summer, when the top inch of soil dries out between waterings faster than a new root can follow it down.",
+    "Autumn is what the plant itself does: seed ripens, falls, lies under leaves and rain all winter, and comes up when the ground warms. Sowing then asks nothing of you — no fridge, no counting weeks. Spring works just as well, and is the usual time for seed that arrived late or was stored dry.",
   "prop.seed-direct.mistake":
-    "Burying it. The rule is about as deep as the seed is wide — a dust-fine seed barely covered, an acorn a knuckle down — and most seed that never appears was simply too deep to climb out of.",
+    "Burying it. The rule is two or three times as deep as the seed is wide — a dust-fine seed barely covered, an acorn a thumb's length down. Sown deeper, it may never come up.",
   "prop.seed-warm.when": "The week it ripens — usually mid-summer into autumn.",
   "prop.seed-warm.wait": "A few weeks, often less.",
   "prop.seed-warm.timing":
-    "This is the one technique whose timing isn't yours to choose: the plant sets it and your job is to be ready. Watch the fruit rather than the calendar — a maple's keys turning tan, a magnolia's cone splitting to show red seed — and sow within days of collecting. These seeds are alive and thin-skinned, and drying out is what kills them, so “I'll do it on the weekend” is the whole risk. If you truly can't sow at once, hold them barely damp and cool in a bag of moist sand, never dry on a windowsill.",
+    "This is the one technique whose timing isn't yours to choose: the plant sets it and your job is to be ready. Watch the fruit rather than the calendar — a white oak's acorns dropping — and sow within days of collecting. These seeds can't survive drying out, so “I'll do it on the weekend” is the whole risk. If you truly can't sow at once, hold them barely damp and cool in a loosely closed plastic bag, never dry on a windowsill.",
   "prop.seed-warm.mistake":
     "Treating them like a shop-bought packet. Fresh seed doesn't store — the ones that dry hardest are usually the ones that never come back.",
   "prop.seed-cold-moist.when": "Sow outdoors in autumn, or start the fridge in midwinter.",
-  "prop.seed-cold-moist.wait": "Four to twelve weeks of cold, then it sprouts.",
+  "prop.seed-cold-moist.wait": "One to six months of cold, depending on the plant.",
   "prop.seed-cold-moist.timing":
     "There are two routes, and the calendar question is really which one you're on. Outdoors: sow the pot in mid-autumn, stand it somewhere it will be rained and snowed on, and real winter does the counting for you. In the fridge: count backwards from when you want seedlings — ten weeks of cold before a spring sowing means the bag goes in around midwinter. Either way the seed has to stay *damp* the whole time. Dry cold does nothing at all, which is why a packet posted into the fridge in autumn is still sitting there unchanged in spring.",
   "prop.seed-cold-moist.mistake":
-    "Not looking. Some seed sprouts inside the bag before its weeks are up, and the little white root snaps off if you find it late — open it every couple of weeks from halfway on.",
+    "Not looking. Some seed sprouts inside the bag before its weeks are up, and the little white root snaps off if you find it late — open it every few days from halfway on.",
   "prop.seed-scarify.when": "Right before you sow, whenever that is.",
-  "prop.seed-scarify.wait": "Days rather than weeks, once it's in the ground.",
+  "prop.seed-scarify.wait": "Soon after sowing, once water gets in.",
   "prop.seed-scarify.timing":
     "Scarifying isn't a season, it's the last step before sowing — so the real question is when you're sowing, and this follows it. Do it the evening before: scuff or nick the coat, soak overnight, sow in the morning. What you must not do is scarify a batch in winter to sow in spring. Breaching the coat takes away the seed's raincoat; from then on it can take up water, and a damp scarified seed in a jar will either rot or sprout in the dark. The soak doubles as a check — seed that has drunk swells visibly and looks fatter than its neighbors, and the ones still small and hard want another pass on the sandpaper.",
   "prop.seed-scarify.mistake":
     "Going too deep. Stop the moment the paler inside shows: you want the coat breached, not the seed wounded.",
   "prop.seed-surface-light.when": "Late winter to spring under cover; autumn outdoors.",
-  "prop.seed-surface-light.wait": "Two to four weeks, if the surface never dries.",
+  "prop.seed-surface-light.wait": "Weeks, as long as the surface never dries.",
   "prop.seed-surface-light.timing":
     "Dust-fine seed sits on top of the soil, which makes it the most fragile thing you'll sow: the surface it's lying on can dry out in one sunny afternoon, and a seed that small has no reserve to survive that. So sow it where you can watch it — a tray indoors or in a cold frame from late winter, ready to go out when it's warm. Outdoors, autumn suits the ones that want a cold spell as well as light: scatter on a cleared patch and leave them to it. Cover the tray with clear plastic or a sheet of glass and keep it bright but out of the midday sun.",
   "prop.seed-surface-light.mistake":
@@ -885,63 +988,60 @@ export const en = {
   "prop.seed-double-dormant.when": "Sow in autumn, and expect nothing until the second spring.",
   "prop.seed-double-dormant.wait": "Eighteen months, give or take.",
   "prop.seed-double-dormant.timing":
-    "Sow the pot in autumn, stand it somewhere shaded, protected and genuinely out of the way — behind the shed, not on the patio table — and leave it for a year and a half. What happens in between is invisible: after the first winter the root comes out underground, and the leaf shoot waits for a second one before it shows. A pot that looks empty in its first spring is almost certainly working. Label it properly and water it in a drought; these are lost far more often to somebody tidying up than to anything going wrong.",
+    "Sow the pot in autumn, stand it somewhere shaded, protected and genuinely out of the way — behind the shed, not on the patio table — and leave it for a year and a half. What happens in between is invisible: through the first summer the root grows underground, and the leaf shoot waits for the second winter before it shows. A pot that looks empty in its first spring is almost certainly working. Label it properly and water it in a drought; these are lost far more often to somebody tidying up than to anything going wrong.",
   "prop.seed-double-dormant.mistake":
     "Tipping the pot out after the first blank spring. That's the year it was always going to look like nothing.",
   "prop.division.when": "Early spring or autumn — never while it's flowering.",
-  "prop.division.wait": "Back in growth within a few weeks.",
+  "prop.division.wait": "Keep it watered while it settles in.",
   "prop.division.timing":
-    "Divide when the plant can spend everything on new roots instead of on flowers: as the shoots are just breaking in early spring, or in autumn once the heat has gone but with weeks of warm soil left to root into. The old rule is a good one — spring-flowering plants get divided in autumn, autumn-flowering ones in spring — so you're never cutting up a plant in the middle of its big year. Choose a dull, damp day if you can. The roots are only exposed for a few minutes, and sun and wind are what harm them.",
-  "prop.division.mistake":
-    "Letting the pieces sit about while you make tea. Fine roots dry in minutes — have the new holes dug first, and water everything in straight away.",
-  "prop.cuttings-softwood.when": "Late spring into early summer, on this year's shoots.",
-  "prop.cuttings-softwood.wait": "Roots in three to six weeks.",
+    "Divide when the plant can spend everything on new roots instead of on flowers: as the shoots are just breaking in early spring, or in autumn once the heat has gone but with weeks of warm soil left to root into. Summer-flowering plants go in spring or autumn; spring-flowering ones are best split in summer, after they flower — so you're never cutting up a plant in the middle of its big year. Work when the soil is dry enough to dig, and in a wet autumn wait for spring.",
+  "prop.division.mistake": "Leaving the pieces out while you dig. Have the new holes ready, replant at once and water in.",
+  "prop.cuttings-softwood.when": "Spring into early summer, on this year's shoots.",
+  "prop.cuttings-softwood.wait": "Roots in two to four weeks.",
   "prop.cuttings-softwood.timing":
-    "The window is short — a few weeks while the new growth is soft — and your fingers find it far better than the calendar does. Bend a shoot tip: if it flops limply it is still too young to hold itself up in a pot; if it snaps cleanly, that is exactly the moment; if it only bends, it has gone woody and you want semi-hardwood cuttings instead. Take them early in the morning while the shoots are full of water, and get them into damp mix within the hour — a cutting that wilts on the way has already spent what it needed to make roots.",
+    "Take them while the new growth is soft and flexible from base to tip; once the base has firmed up and only the tip is still soft, you want semi-hardwood cuttings instead. Cut early in the morning while the shoots are full of water, and bag them as you go: soft shoots lose water fast and must not wilt. If you can't pot them straight away, the bag can wait in the fridge.",
   "prop.cuttings-softwood.mistake":
-    "Cutting at midday in full sun and carrying them round in a warm pocket. A bag with a damp cloth in it costs nothing and saves most of them.",
+    "Cutting at midday in full sun and carrying them round in a warm pocket. A clean plastic bag, kept cool, costs nothing.",
   "prop.cuttings-semi-hardwood.when": "Mid-summer to early autumn, as the shoots firm up.",
-  "prop.cuttings-semi-hardwood.wait": "Six to twelve weeks.",
+  "prop.cuttings-semi-hardwood.wait": "Up to the following spring in a cold frame.",
   "prop.cuttings-semi-hardwood.timing":
-    "Later in the same year's growth, once the base of a shoot has stiffened and turned woody while the tip is still green — for most shrubs that's midsummer to early autumn. Slower to root than a soft cutting and far more forgiving: this one can sit for a week without collapsing, which makes it the right choice for anyone who can't look at a pot every day. Root them in a shaded frame or a sheltered corner, leave them there over the winter, and move them on the following spring.",
+    "Later in the same year's growth, once the base of a shoot has firmed up while the tip is still soft — for most shrubs that's midsummer to early autumn. Slower to root than a soft cutting, but tougher. Bag them as you cut and pot them up within half a day. Root them in a cold frame or a sheltered corner and leave them there over winter: in a frame they may not root fully until late the following spring.",
   "prop.cuttings-semi-hardwood.mistake":
     "Leaving every leaf on. A cutting with no roots yet can't supply a full head of foliage — strip the lower leaves and cut the remaining big ones in half.",
-  "prop.cuttings-hardwood.when": "Deep winter, while the plant is bare.",
+  "prop.cuttings-hardwood.when": "Mid-autumn to late winter, while it's bare.",
   "prop.cuttings-hardwood.wait": "Rooted by spring; planted out the autumn after.",
   "prop.cuttings-hardwood.timing":
-    "After the leaves are down and before the buds swell — the depth of winter, whichever months that is where you are. The plant is asleep, so the cutting doesn't have to keep a head of leaves alive while it grows roots, and that is what makes this the least demanding cutting there is: pencil-thick pieces about a forearm long, pushed half their length into damp ground, and left alone until spring. Willows and dogwoods root so readily that they're often stuck straight into the spot where the new plant is wanted.",
+    "After the leaves are down and before the buds swell — mid-autumn to late winter, whichever months that is where you are. Just after leaf fall or just before bud burst is best. The plant is asleep, so the cutting doesn't have to keep a head of leaves alive while it grows roots, and that is what makes this the least demanding cutting there is: pencil-thick pieces about a forearm long, pushed two-thirds of their length into damp ground, and left alone until spring.",
   "prop.cuttings-hardwood.mistake":
     "Planting them upside down. A bare twig looks the same both ways, so mark the top as you cut — the buds point up the stem, and that's the end that must stay up.",
   "prop.layering.when": "Pin the branch down in spring; cut it free a year later.",
   "prop.layering.wait": "One to two years.",
   "prop.layering.timing":
     "Spring is the moment to pin: the branch is supple, the plant is about to put on growth, and it has the whole warm season to make roots at the buried point. Then you wait. The following autumn, scrape the soil back and look — a good handful of roots means you can sever it from the parent and lift it; not much means you leave it another year, which costs you nothing at all, because the parent is still feeding it the whole time. Slower than a cutting and very hard to fail at, since the new plant is never once on its own.",
-  "prop.layering.mistake":
-    "Cutting it free as soon as you see a root or two. The moment you sever it, everything it needs has to come from what's grown there.",
-  "prop.suckers.when": "Late winter to early spring, before the leaves come out.",
-  "prop.suckers.wait": "Away and growing in its first season.",
+  "prop.layering.mistake": "Cutting it free at the first root or two. Wait until a good root system has formed.",
+  "prop.suckers.when": "Spring, as growth starts.",
+  "prop.suckers.wait": "Needs careful watering through its first season.",
   "prop.suckers.timing":
-    "Take suckers while the plant is dormant, so it isn't trying to keep a shoot alive that you've just cut half the water supply from. Choose one a hand's span or more out from the trunk: close in, a shoot is often just a stem rising off a thick root with no roots of its own. Slice straight down between it and the parent with a spade, then lift the sucker with its own root ball. In mild-winter places autumn does just as well. The parent won't miss it — a thicket-former makes more every year.",
+    "Take suckers in spring, as the plant comes into growth: that's when a severed sucker settles in fastest. Scrape the soil back first and check it has fibrous roots of its own — a shoot rising straight off a thick root with none won't take. Slice down between it and the parent with a spade, lift the sucker with its roots, and cut long leafy shoots back by about half so it doesn't dry out. The parent won't miss it — a thicket-former makes more every year.",
   "prop.suckers.mistake":
-    "Pulling instead of digging. A sucker without roots of its own is a stick, and it will look perfectly fine for two weeks before it dies.",
+    "Pulling instead of digging. A sucker without fibrous roots of its own won't take.",
   "prop.runners.when": "Late summer into autumn, once the plantlet has roots.",
-  "prop.runners.wait": "Ready to move a few weeks after it roots.",
+  "prop.runners.wait": "Cut it free once it has rooted.",
   "prop.runners.timing":
     "Wait for the baby to root itself, which it does wherever it touches soil over the summer; tug it very gently and a rooted one holds on. Late summer and autumn is when most are ready, and it is also the kindest time to move them — warm soil, cooling air, and months before they're asked to do anything. The tidy version: in midsummer, pin each plantlet into a small pot of compost sunk beside the parent; come early autumn, cut the runner and lift a pot already full of roots.",
   "prop.runners.mistake":
     "Snipping the runner first and hoping. Until the plantlet has roots of its own, the parent is what's keeping it alive.",
-  "prop.root-cuttings.when": "Late autumn to midwinter, while everything is dormant.",
+  "prop.root-cuttings.when": "Mid-autumn to early winter, while it's dormant.",
   "prop.root-cuttings.wait": "Shoots up in spring.",
   "prop.root-cuttings.timing":
-    "This is the technique for the dead of winter, when there's nothing above ground to work with: lift a plant, or dig in at the edge of a clump, take finger-length pieces of root about as thick as a pencil, and lay them in a tray of damp mix in a shed or cold frame. The food stored in the root is what pushes the new shoots out, and a root holds the most of it in winter — which is exactly why the season matters here rather than being a convenience. Shoots appear in spring, by which time the piece has grown roots of its own.",
+    "This is the technique for the dormant season, when there's nothing above ground to work with: lift a plant, or dig in at the edge of a clump, take finger-length pieces of root about as thick as a pencil, and lay them in a tray of damp mix in a cold frame. The food stored in the root is what pushes the new shoots out, which is why thin roots need longer pieces. Shoots appear in spring, by which time the piece has grown roots of its own.",
   "prop.root-cuttings.mistake":
     "Losing track of which end was nearer the crown. Lay the pieces flat instead of upright and the question stops mattering.",
   "prop.spores.when": "Summer into autumn, when the frond backs turn brown.",
-  "prop.spores.wait": "Months — a green film first, small ferns the year after.",
+  "prop.spores.wait": "Months — a green film within weeks, small ferns a few months later.",
   "prop.spores.timing":
-    "Ferns make no flowers and no seed, so there is nothing to watch but the undersides of the fronds: the little patches there start green, ripen to a rich brown, and then shed. Ripe brown is the moment. Cut a frond, lay it face-down on white paper somewhere still overnight, and by morning you'll have a fine dust — those are the spores, and the paler chaff beside them is the packaging. Sow at once on damp sterile compost, cover with clear plastic, and settle in: nothing looks remotely like a fern for the first half-year.",
-  "prop.spores.mistake":
-    "Collecting a week late. Once the patches have gone dusty gray and crumble at a touch, the frond has already let them go.",
+    "Ferns make no flowers and no seed, so there is nothing to watch but the undersides of the fronds: the little patches there start green, ripen to a rich brown, and then shed. Ripe brown is the moment. Cut a frond, lay it face-down on white paper somewhere still for a few days, and you'll have a fine dust — those are the spores, and the paler chaff beside them is the packaging. Sow at once on damp sterile compost, cover with clear plastic, and settle in: nothing looks remotely like a fern for the first few months.",
+  "prop.spores.mistake": "Waiting too long. Pick the frond as the flaps over the spore patches start to lift and the spores turn dark; later, they're already shed.",
 
   "growth.quick": "Quick to settle in: expect close to this full size within about three years.",
   "growth.steady": "A steady grower: close to full size by year {year}.",
@@ -1009,6 +1109,7 @@ export const en = {
   "traits.docTitle": "Plant traits — Indigene",
   "traits.title": "Plant traits",
   "traits.lede": "What each label and figure on a plant's page means.",
+  "traits.confidenceLink": "How sure we are of each plant's figures",
   "traits.group.water": "💧 Watering",
   "traits.group.wildlife": "🦋 Wildlife",
   "traits.group.handling": "✋ Handling",
@@ -1166,6 +1267,9 @@ export const en = {
   "results.title": "Plants for this spot",
   "results.regionTag": "📍 {region}",
   "results.regionTagPick": "📍 {region} — your pick, not measured from a location",
+  "results.filtersMeaning": "What these labels mean",
+  "results.alsoHere": "Also in this region: {wildlife} · {invasives}",
+  "results.alsoHereWildlife": "Also in this region: {wildlife}",
   "results.count": "{n} native plants {fit} — {good} are a good or workable match. Best matches first.",
   "results.fitClimate": "fit this spot's climate",
   "results.fitList": "are in this region's list",
@@ -1527,7 +1631,6 @@ export const en = {
   "plant.propagationTitle": "🪴 How to grow more",
   "plant.forThisPlant": "For this plant: ",
   "plant.howToSource": "How-to source: ",
-  "plant.usfsLink": "USFS Native Plant Network →",
   "plant.savedFit.one":
     "You've saved a spot this would suit. Open it to see everything else that thrives there.",
   "plant.savedFit.other":
@@ -1754,6 +1857,7 @@ export const en = {
     "No plant in Indigene's lists matches “{q}”. The lists are curated per region, so they grow carefully — ",
   "plants.noneLink": "browse the natives we know",
   "plants.noneEnd": ".",
+  "plants.otherPages": "Not a native we list, but it has a page:",
   "plants.browseRegions": "Browse by region",
 
   // ---------------------------------------------------------------------
@@ -1793,6 +1897,8 @@ export const en = {
   "planting.timingTitle": "Knowing the moment",
   "planting.howTitle": "What you actually do",
   "planting.mistakeTitle": "Where it usually goes wrong",
+  "planting.learnTitle": "Learn more",
+  "planting.learnAll": "The full reading list",
   "planting.allTechniques": "All the ways to grow more",
   "planting.browsePlants": "Browse the plants",
   "planting.backToIndex": "← Every technique",
@@ -1811,13 +1917,15 @@ export const en = {
 
   "planting.sourcesTitle": "Where the how-to comes from",
   "planting.sourcesLede":
-    "None of this is our own invention. Every propagation note in the app is written in our own plain words from these, and each of them is free to read and worth an afternoon of anyone's time — they are the places to go when you want more than one page.",
+    "Every propagation note in the app is written in our own plain words from published sources, and each plant's page names its own. These are the ones we lean on most: all free to read, and the places to go when one page isn't enough.",
   "planting.sourcesAfter":
     "The facts are used, never the prose: a protocol saying a seed needs ten weeks of cold is a fact about the seed, and we say it our own way. The full accounting of every source in the app, and what we'd challenge first, is on the {sources} page.",
   "planting.sourcesLink": "Where our numbers come from",
   "planting.scope.us": "North America",
   "planting.scope.eu": "Europe",
   "planting.scope.both": "Both sides",
+  "planting.scope.nz": "New Zealand",
+  "planting.scope.world": "Worldwide",
   "planting.src.npn":
     "The one to open first. Growers at restoration nurseries write up exactly how they raised a species — seed treatment, weeks of chilling, what failed — and file it, species by species, in public. Thousands of protocols for North American natives.",
   "planting.src.wpsm":
@@ -1829,9 +1937,13 @@ export const en = {
   "planting.src.xerces":
     "Invertebrate conservationists, and the reason so many of these notes mention who the plant feeds. Their regional seed and habitat guides are free, and unusually honest about what doesn't establish.",
   "planting.src.tela":
-    "The French botanical network: a collaborative flora with observations, keys and cultivation notes contributed by botanists and amateurs alike. The reference behind most of the French rows here.",
+    "The French botanical network: a collaborative flora with observations, keys and cultivation notes from botanists and amateurs alike. The French rows here lean on it for names and where a plant grows wild, not for how to propagate it.",
   "planting.src.inpn":
     "France's national inventory, run by the natural history museum. Less a how-to than the authority on what is genuinely native where — the check that stops a “native” plant from being one that merely grows well.",
+  "planting.src.nzpcn":
+    "New Zealand's network of botanists and growers. Each species page has a short propagation note, and it's the source behind every Auckland plant here.",
+  "planting.src.sid":
+    "Seed records from Kew's Millennium Seed Bank and published studies: how to germinate a species, and how its seed keeps. Global, and cited by rows from France to Japan here.",
   "planting.src.rhs":
     "Clear, well-illustrated guides to each technique, from a horticultural society two centuries old. Written for a European garden and a European year.",
 
@@ -1863,13 +1975,13 @@ export const en = {
   "privacy.whereLede":
     "So you can see exactly what happens: when a lookup needs your spot, your browser talks directly to these public services. Each sees only that one lookup, gets no name or account (there isn't one), and has its own privacy policy for that request.",
   "privacy.svc.sentWrap": "(it's sent {sent}).",
-  "privacy.svc.inat.for": "photos of plants and animals seen near there, how often one has been recorded there, which of a saved spot's wildlife has been seen around it, any sighting you link to your planting log, and your own sightings if you import them",
+  "privacy.svc.inat.for": "photos of plants and animals seen near there, how often one has been recorded there, which wildlife has been seen around a saved spot, and in which season, any sighting you link to your planting log, and your own sightings if you import them",
   "privacy.svc.inat.sent":
-    "a coordinate or a map area, plus the species being looked up — or, for a linked sighting, only the observation reference you pasted, and for an import, only your username",
+    "a coordinate or a map area, plus the species being looked up and, for a season plan, the months — or, for a linked sighting, only the observation reference you pasted, and for an import, only your username",
   "privacy.svc.meteo.for": "your climate — rainfall and how cold winters get; and turning a postal code or town into a point on the map",
   "privacy.svc.meteo.sent": "a coordinate, or the place name you typed",
-  "privacy.svc.osm.for": "the name of the nearest town (shown instead of raw numbers), and the map picture",
-  "privacy.svc.osm.sent": "a coordinate",
+  "privacy.svc.osm.for": "the name of the nearest town (shown instead of raw numbers), finding a postal code, and the map picture",
+  "privacy.svc.osm.sent": "a coordinate, or the postal code you typed",
   "privacy.svc.soil.for": "your soil type and acidity",
   "privacy.svc.soil.sent": "a coordinate",
   "privacy.svc.usgs.for": "your elevation and slope",
@@ -2063,7 +2175,8 @@ export const en = {
     "Defensible, and we'd defend it — but it is a real approximation, and it flatters the weaker members of a strong group.",
   "sources.chal3": "The regions aren't equally well sourced. ",
   "sources.chal3Rest":
-    "Some plant lists rest on decades of regional botanical work; the newest ones are thinner. Each plant's confidence meter shows it, plant by plant, by one rule.",
+    "Some plant lists rest on decades of regional botanical work; the newest ones are thinner. Each plant's {link} shows it, plant by plant, by one rule.",
+  "sources.chal3Link": "confidence meter",
   "sources.chal4": "The US caterpillar counts sit on shakier ground than the European ones. ",
   "sources.chal4Rest":
     "The European figures come from an openly licensed dataset we can point you at and recompute from scratch. The US figures come from published research whose database has no open license — so they're harder for you to check than we'd like.",
@@ -2257,7 +2370,8 @@ export const en = {
   "wanted.photosLede": "Confirmed iNaturalist photos from a region that lists it.",
   "wanted.tellApart": "Often mistaken for",
   "wanted.noPhotos": "No confirmed photos from this region on iNaturalist yet.",
-  "wanted.onLists": "Among the worst in: {places}",
+  "wanted.onLists": "Among the worst in: {places} — {remove}.",
+  "wanted.removeLink": "how to remove it",
   "wanted.placeLink": "{region} (#{n})",
 
   "wlNearby.seeItNear": "See it near you",
@@ -2340,13 +2454,16 @@ export const en = {
     "The sun estimate is a range, not a decimal, because sensors lie and the honest answer is a band. The soil reading is always framed as “the map says X — here's a 60-second check to see whether that's true where you're standing”, because a soil map square is bigger than your whole garden. Standing there, you know more than the map does, and the app is built to let you overrule it.",
   "about.stance.sourced": "Every number has to be traceable to somebody else.",
   "about.stance.sourcedBody":
-    "Each plant carries its sources and a plain confidence note, and where a figure is our judgment rather than a count, the Sources page says so and names the ones we'd challenge first. Nothing is invented to fill a gap — a plant with no French name shows its scientific name rather than a plausible-sounding guess.",
+    "Each plant carries its sources and a plain confidence note, and where a figure is our judgment rather than a count, {link} says so and names the ones we'd challenge first. Nothing is invented to fill a gap — a plant with no French name shows its scientific name rather than a plausible-sounding guess.",
+  "about.stance.sourcedLink": "the Sources page",
   "about.stance.yours": "Indigene wants nothing from you.",
   "about.stance.yoursBody":
-    "No account, no sign-up, no advertising, nothing sold. A visit counter notes which page was opened and nothing about who opened it; you can switch it off in Settings. Saved spots stay in your browser on your device, because there is no server for them to go to. No stranger can contact you through it.",
+    "No account, no sign-up, no advertising, nothing sold. A visit counter notes which page was opened and nothing about who opened it; you can {link}. Saved spots stay in your browser on your device, because there is no server for them to go to. No stranger can contact you through it.",
+  "about.stance.yoursLink": "switch it off in Settings",
   "about.stance.portable": "Your data leaves with you.",
   "about.stance.portableBody":
-    "Settings writes every saved spot and its planting log to a plain file you keep, and reads one back in another browser. Moving from a phone to a laptop takes a file, not an account — and the file is yours to open, keep or hand to something else entirely.",
+    "{link} writes every saved spot and its planting log to a plain file you keep, and reads one back in another browser. Moving from a phone to a laptop takes a file, not an account — and the file is yours to open, keep or hand to something else entirely.",
+  "about.stance.portableLink": "Settings",
   "about.stance.offline": "Indigene works where gardens are.",
   "about.stance.offlineBody":
     "Offline-first and installable, because the far end of a garden is exactly where a signal disappears. Everything but the live lookups keeps working with no connection at all.",
@@ -2463,7 +2580,8 @@ export const en = {
   // --- the part that goes further than "no harm" -------------------------
   "crops.takeAwayTitle": "Some natives take pests away",
   "crops.takeAway1":
-    "This is the half of the argument nobody makes. The pest reservoir in a yard is usually a plant somebody bought, and several of the worst pests in North America depend on one. Swap that plant for a native and you cut the chain underneath them.",
+    "This is the half of the argument nobody makes. The pest reservoir in a yard is usually a plant somebody bought, and several of the worst pests in North America depend on one. {link} and you cut the chain underneath them.",
+  "crops.takeAway1Link": "Swap that plant for a native",
   "crops.fig.chain.cut": "Swap the plant, break the chain",
   "crops.fig.chain.ailanthus": "Tree-of-heaven",
   "crops.fig.chain.lanternfly": "Spotted lanternfly",
@@ -2479,7 +2597,8 @@ export const en = {
   "crops.takeAway2":
     "The barberry case has been counted. Connecticut woodland under intact Japanese barberry held about 280 Lyme-infected ticks per hectare; where the barberry had been cut back, 121; where there had never been any, 30. One clearing held that down for six years before the shrub came back.",
   "crops.takeAway3":
-    "Don't oversell it, though. Pulling out a tree-of-heaven won't end the spotted lanternfly — it feeds on seventy-odd other trees and vines. Cutting the chain thins a pest. It doesn't erase one.",
+    "Don't oversell it, though. Pulling out {link} won't end the spotted lanternfly — it feeds on seventy-odd other trees and vines. Cutting the chain thins a pest. It doesn't erase one.",
+  "crops.takeAway3Link": "a tree-of-heaven",
 
   // --- the claim most likely to be over-quoted ---------------------------
   "crops.redirectTitle": "Will they eat the hedge instead of my cherries?",
@@ -2696,13 +2815,15 @@ export const en = {
   "native.short4": "An invasive plant is a problem because of what it does, not where it's from. Most plants moved to a new place never spread.",
   "native.speciesTitle": "Co-evolution happens between species, not nations",
   "native.species1": "A caterpillar that eats only oak didn't choose oak out of loyalty. Over thousands of generations its body learned to handle oak's defenses, and most plant-eating insects are specialists like it. That's why the plant list for your spot matters.",
-  "native.species2": "That history played out on a landscape of climate, soil and sea, not of countries. So Indigene's lists follow natural regions, not borders. The Irish list covers the whole island, the Republic and Northern Ireland alike, and a spot on Scotland's Kintyre peninsula gets it too: the same Atlantic ground grows the same plants.",
+  "native.species2": "That history played out on a landscape of climate, soil and sea, not of countries. So Indigene's lists follow natural regions, not borders. {ireland} covers the whole island, the Republic and Northern Ireland alike, and a spot on Scotland's Kintyre peninsula gets it too: the same Atlantic ground grows the same plants.",
+  "native.species2Link": "The Irish list",
   "native.historyTitle": "Native ranges are history, not identity",
   "native.history1": "Where a plant is native is partly an accident of the last ice age. Beech is native to southern England but not to Ireland: the sea rose between them before beech got there. Ranges have always moved, and they're moving now as the climate warms.",
   "native.history2": "Many “wild” native landscapes were tended by people, too. Coast Salish burning kept the Garry oak meadows of the Pacific Northwest open for centuries, and Māori planted groves of karaka for its fruit. Planting natives carries that care on.",
   "native.behaviorTitle": "“Invasive” describes behavior, not origin",
   "native.behavior1": "Most plants moved to a new place never spread on their own. A rough rule from invasion biology: about one in ten imported species turns up in the wild, one in ten of those establishes, and one in ten of those becomes a pest. The few that do are a problem because they smother woods or choke rivers, not because of where they came from.",
-  "native.behavior2": "Some ecologists warn against judging a species by its origin at all (Davis and others, 2011). Others answer that removing a plant for measured harm isn't xenophobia (Simberloff, 2003). Indigene agrees with both: every invasive in the app is there for what it does. Your tomatoes trace back to the Andes, and that's fine.",
+  "native.behavior2": "Some ecologists warn against judging a species by its origin at all (Davis and others, 2011). Others answer that removing a plant for measured harm isn't xenophobia (Simberloff, 2003). Indigene agrees with both: {invasives} is there for what it does. Your tomatoes trace back to the Andes, and that's fine.",
+  "native.behavior2Link": "every invasive in the app",
   "native.whyTitle": "Why we say this out loud",
   "native.why1": "The language has been abused before. In Nazi Germany, garden planners tied “native” plants to racial purity, and in 1942 a group of botanists called for wiping out small balsam, a little Asian woodland flower, as a “Mongolian invader”. The French ecologist Jacques Tassin has shown how talk of invasive species still borrows the vocabulary of xenophobia.",
   "native.why2": "So when we say native, we mean the oak and its caterpillars, never a person.",
@@ -2775,7 +2896,8 @@ export const en = {
   "llm.even2": "We don't count the gardens Indigene helps plant against the bill. That good is real, but it isn't a number we can stand behind.",
   "llm.notTitle": "What isn't counted",
   "llm.not1": "Nine early sessions recorded a price but no tokens. Their electricity is worked out from that price.",
-  "llm.not2": "The short film about Indigene used Google's Gemini models for its narration and music. That use wasn't metered.",
+  "llm.not2": "{link} used Google's Gemini models for its narration and music. That use wasn't metered.",
+  "llm.not2Link": "The short film about Indigene",
   "llm.not3": "The people's time, and the computers they worked on.",
   "llm.sourcesTitle": "Where this comes from",
   "llm.src.sessions": "every session's tokens and price, one row each",
@@ -2809,6 +2931,41 @@ export const en = {
   "about.stance.llm": "Indigene shows its own bill.",
   "about.stance.llmBody": "It was built with an LLM, and LLMs run on electricity. {link} says how much, and how the design pays it back.",
   "about.stance.llmLink": "What building Indigene with an LLM cost",
+  // ---------------------------------------------------------------------
+  // "Homegrown National Park" (steps/homegrown.ts) — the idea Indigene is built on.
+  // ---------------------------------------------------------------------
+  "steps.homegrown": "Homegrown",
+  "homegrown.docTitle": "Homegrown National Park — Indigene",
+  "homegrown.title": "Homegrown National Park",
+  "homegrown.lede": "The ecologist Doug Tallamy's idea: give half of America's lawns back to native plants, and the yards together become a national park. Indigene is built to help you plant your piece of it.",
+  "homegrown.ideaTitle": "A park made of yards",
+  "homegrown.idea1": "The United States grows about 40 million acres (16 million hectares) of lawn, more ground than any irrigated crop, and lawn feeds almost nothing. Tallamy, an entomologist at the University of Delaware, did the sum: half of it in native plants would be 20 million acres of habitat, more than most of the country's national parks put together.",
+  "homegrown.idea2": "Nobody needs permission or a big yard: a strip by the driveway or a pot on a balcony counts. Gardeners add their patch to the project's {map}, and the park grows a yard at a time.",
+  "homegrown.mapLink": "public map",
+  "homegrown.birdsTitle": "Caterpillars feed the birds",
+  "homegrown.birds1": "Most songbirds raise their chicks on caterpillars, and most caterpillars eat only the plants they evolved with. One pair of chickadees needs 6,000 to 9,000 of them to raise a single brood. In a study of yards around Washington, DC, chickadees couldn't keep their numbers up where less than 70% of the greenery was native.",
+  "homegrown.appTitle": "Where Indigene follows the idea",
+  "homegrown.app1": "The ranking puts caterpillars first. Of everything a plant offers, the number of caterpillar kinds it feeds counts the most.",
+  "homegrown.app2": "{link} is what Tallamy calls a keystone plant. Across the US, 14% of native plant genera (groups of close relatives, like the oaks) feed 90% of caterpillar species. Indigene shows you those first.",
+  "homegrown.app2Link": "An “Essential” plant",
+  "homegrown.app3": "In the US, the caterpillar counts come from {link}, published with the National Wildlife Federation.",
+  "homegrown.app3Link": "Tallamy's own data",
+  "homegrown.app4": "The idea travels: Indigene's lists for {ireland}, {nz} or {japan} lean on each place's own studies of what feeds what.",
+  "homegrown.app4Japan": "Japan",
+  "homegrown.app4Nz": "New Zealand",
+  "homegrown.app4Ireland": "Ireland",
+  "homegrown.authorTitle": "Why I built Indigene",
+  "homegrown.author1": "I spent years turning the yard of a newly built house in central Florida into native plants. When I moved to Seattle, I started over, with far less ground to work with.",
+  "homegrown.author2": "Both times, the hard part was knowing what would grow in each corner, and what it would feed. Indigene is the answer I wanted then, and those two yards are my piece of the park.",
+  "homegrown.authorSign": "— Olivier Lacan",
+  "homegrown.sourcesTitle": "Where this comes from",
+  "homegrown.src.hnp": "the project, and the map of yards in it",
+  "homegrown.src.book": "the book that first set out Homegrown National Park",
+  "homegrown.src.lawn": "how much of the United States is lawn",
+  "homegrown.src.chickadee": "chickadees, caterpillars and the 70% line",
+  "homegrown.src.keystone": "the few plant genera that feed most caterpillars",
+  "about.whyHomegrown": "The idea underneath it is Doug Tallamy's {link}.",
+  "about.homegrownLink": "Homegrown National Park",
 } as const;
 
 /** Every valid string key. Derived, so it can never drift from the strings. */

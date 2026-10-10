@@ -19,7 +19,7 @@ import { lookalikesForPlant } from "../lib/lookalikes";
 import { ornamentalsForPlant } from "../lib/alternatives";
 import { latPlain, lonPlain } from "../lib/plain";
 import { wildlifeChips } from "../components/wildlife-chips";
-import { SCORE_KEYS, scoreLabel, propagationMethod, sunLabel, PROPAGATION_SOURCE_URL } from "../lib/plain";
+import { SCORE_KEYS, scoreLabel, propagationMethod, sunLabel } from "../lib/plain";
 import { confidenceMeter, CONFIDENCE_ROUTE } from "../components/confidence-meter";
 import { techniqueFor, techniqueHref } from "../lib/planting";
 import { citation } from "../components/citation";
@@ -43,6 +43,7 @@ import { length, humanHeightLabel } from "../lib/units";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
 import { prose, propagationNote, isUntranslated, lookalikesUntranslated, alternativesUntranslated } from "../lib/prose";
 import { reportUntranslated } from "../components/wip-banner";
+import { richText } from "../components/rich-text";
 
 // The anchorable cards below the profile. Each one's address is a fragment on
 // the plant's own canonical path — `…/plants/<slug>#nearby` — so the link both
@@ -361,7 +362,10 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
               traitBadges(p, true),
             ]),
           ]),
-          el("p", { class: "kv plant-why" }, [el("span", { class: "k" }, t("plant.whyBelongs")), prose(p, "nativeNote", region.meta.id)]),
+          el("p", { class: "kv plant-why" }, [el("span", { class: "k" }, [
+            // "Native" is the app's one load-bearing word; its page says what it means.
+            el("a", { href: "#/native" }, t("plant.whyBelongs").trimEnd()), " ",
+          ]), ...richText(prose(p, "nativeNote", region.meta.id))]),
           // What the assessors say, where they say anything — under the name,
           // because it changes how the plant should be treated rather than
           // whether it suits the spot.
@@ -394,7 +398,7 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
                 confidenceMeter(p.confidence),
                 el("span", { class: "confidence-arrow", "aria-hidden": "true" }, "→"),
               ]),
-              el("p", {}, [t("card.source"), ...citation(p.basis)]),
+              el("p", {}, [t("card.source"), ...richText(p.basis, citation)]),
             ]),
           ]),
         ]),
@@ -755,7 +759,7 @@ async function copyLink(url: string): Promise<void> {
  */
 function needsSection(p: Plant, regionId: string): HTMLElement {
   return sectionCard("needs", t("plant.needsTitle"), [
-    el("p", { class: "section-prose" }, prose(p, "careNote", regionId)),
+    el("p", { class: "section-prose" }, richText(prose(p, "careNote", regionId))),
   ]);
 }
 
@@ -865,7 +869,7 @@ function ecosystemSection(p: Plant, entries: PlantEntry[], regionId: string, exp
     // What it gives, in words, then who it gives it to, then the scores: the
     // prose that used to sit in the profile as "What it does for you &
     // wildlife", a screen above the card that measures exactly that.
-    el("p", { class: "section-prose" }, prose(p, "givesNote", regionId)),
+    el("p", { class: "section-prose" }, richText(prose(p, "givesNote", regionId))),
     ...(feeds ? [feeds] : []),
     el("ul", { class: "score-list score-list-folding" }, scoreParts),
   ]);
@@ -1006,7 +1010,7 @@ function propagationSection(p: Plant, regionId: string): HTMLElement {
   return sectionCard("propagation", t("plant.propagationTitle"), [
     el("p", { class: "kv", style: "margin-top:0.5rem" }, [
       el("span", { class: "k" }, t("plant.forThisPlant")),
-      propagationNote(p, regionId),
+      ...richText(propagationNote(p, regionId)),
     ]),
     el("ul", { class: "score-list" }, methodItems),
     el("p", { class: "prop-all" }, [
@@ -1015,9 +1019,11 @@ function propagationSection(p: Plant, regionId: string): HTMLElement {
     el("p", { class: "confidence", style: "margin-top:0.4rem" }, [
       el("span", {}, [
         t("plant.howToSource"),
-        ...citation(basis),
-        " ",
-        el("a", { href: PROPAGATION_SOURCE_URL, target: "_blank", rel: "noopener" }, t("plant.usfsLink")),
+        // Only the row's own sources. A fixed "USFS Native Plant Network" link
+        // used to follow every row, so a French ivy or a New Zealand flax
+        // seemed to cite a North American database it never came from; the
+        // rows that do use it name it, and `citation` links the name.
+        ...richText(basis, citation),
       ]),
     ]),
   ]);

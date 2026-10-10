@@ -10,10 +10,11 @@
 // education, one metric at a time.
 import type { MoistureBand, Plant } from "../types";
 import { el } from "../ui";
-import { sunLabel, growthPlain, bloomColorWord, DATA_SOURCES_URL, ZONE_INFO_URL, MOISTURE_INFO_URL } from "../lib/plain";
+import { sunLabel, growthPlain, bloomColorWord, SOURCES_ROUTE, ZONE_INFO_URL, MOISTURE_INFO_URL } from "../lib/plain";
 import { t, fmtNumber, monthName } from "../lib/i18n";
 import { lengthTick, temperatureSpan } from "../lib/units";
 import { commonName } from "../lib/names";
+import { richText } from "./rich-text";
 
 let dialogSeq = 0;
 
@@ -73,7 +74,7 @@ export function statTiles(stats: Stat[], ariaLabel: string, opts: TileOptions = 
       el("p", { style: "margin:0.5rem 0 0.9rem" }, s.explain),
     ];
     if (s.source) {
-      parts.push(el("p", { class: "stat-dialog-source" }, [el("strong", {}, t("stat.dialogSource")), s.source]));
+      parts.push(el("p", { class: "stat-dialog-source" }, [el("strong", {}, t("stat.dialogSource")), ...richText(s.source)]));
     }
     if (s.moreUrl && s.moreLabel) {
       parts.push(el("p", { class: "stat-dialog-source" }, [
@@ -82,7 +83,7 @@ export function statTiles(stats: Stat[], ariaLabel: string, opts: TileOptions = 
     }
     parts.push(
       el("p", { class: "stat-dialog-source" }, [
-        el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, t("stat.howSourced")),
+        el("a", { href: SOURCES_ROUTE }, t("stat.howSourced")),
       ]),
       el("button", { class: "btn btn-secondary btn-block", onClick: () => dialog.close() }, t("stat.gotIt"))
     );

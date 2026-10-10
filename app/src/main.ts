@@ -38,10 +38,12 @@ import { renderAbout } from "./steps/about";
 import { renderCrops } from "./steps/crops";
 import { renderNative } from "./steps/native";
 import { renderLlm } from "./steps/llm";
+import { renderHomegrown } from "./steps/homegrown";
 import { renderTraits } from "./steps/traits";
 import { renderImport } from "./steps/import";
 import { initAppMenu, closeAppMenu } from "./components/app-menu";
 import { initPullToReload } from "./components/pull-to-reload";
+import { holdWithLoader } from "./components/page-loader";
 import { watchRestore } from "./lib/restore";
 import { closeTermDialog } from "./components/term-dialog";
 import { closeLightbox } from "./components/lightbox";
@@ -51,6 +53,7 @@ import type { TKey } from "./locales/en";
 import { onUnitsChange } from "./lib/units";
 import { renderChrome } from "./components/chrome";
 import { mountUntranslatedBanner, resetUntranslated } from "./components/wip-banner";
+import { mountLangOffer } from "./components/lang-offer";
 import { loadProse } from "./lib/prose";
 
 // A step may render synchronously, hand back a cleanup function, or do both
@@ -114,6 +117,8 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
   native: { fn: renderNative, labelKey: "steps.native", inFlow: false },
   // What building the app with an LLM used, and how its design pays that back.
   llm: { fn: renderLlm, labelKey: "steps.llm", inFlow: false },
+  // Doug Tallamy's Homegrown National Park, the idea the app is built on.
+  homegrown: { fn: renderHomegrown, labelKey: "steps.homegrown", inFlow: false },
   // What a plant's labels and figures mean. `#/traits/<id>` is the same page
   // opened at one definition — what each label on a plant page links to.
   traits: { fn: renderTraits, labelKey: "steps.traits", inFlow: false },
@@ -411,8 +416,15 @@ async function route(): Promise<void> {
   const result = fn(main, param);
   if (typeof result === "function") cleanup = result;
   else if (result instanceof Promise) {
-    const r = await result;
-    if (typeof r === "function") cleanup = r;
+    // A page that emptied `main` and is now waiting on a fetch shows the
+    // growing seedling until it draws, instead of a blank screen.
+    const release = holdWithLoader(main);
+    try {
+      const r = await result;
+      if (typeof r === "function") cleanup = r;
+    } finally {
+      release();
+    }
   }
   // The loading screen from index.html. Every page clears `main` before it
   // draws, which takes it with it; this is for one that someday doesn't.
@@ -571,6 +583,7 @@ async function boot(): Promise<void> {
   // or for a browser asking not to be tracked, it does nothing whatsoever.
   startAnalytics();
   renderChrome();
+  mountLangOffer(main);
   watchEmoji(onLangChange);
   onLangChange(rerenderAll);
   onUnitsChange(rerenderAll);

@@ -10,7 +10,7 @@
 // Reached from About, beside the stance it backs up.
 import { el, clear } from "../ui";
 import { navigate } from "../state";
-import { t, fmtNumber, fmtDate } from "../lib/i18n";
+import { t, tx, fmtNumber, fmtDate } from "../lib/i18n";
 import { statTiles, type Stat } from "../components/stat-card";
 import { SNAPSHOT, BY_LENGTH, bill, perRequestRatio, round2 } from "../lib/llm-bill";
 import type { TKey } from "../locales/en";
@@ -146,7 +146,11 @@ export function renderLlm(main: HTMLElement): void {
       p("llm.next"),
 
       el("h3", {}, t("llm.notTitle")),
-      el("ul", {}, (["llm.not1", "llm.not2", "llm.not3"] as TKey[]).map((k) => el("li", {}, t(k)))),
+      el("ul", {}, [
+        el("li", {}, t("llm.not1")),
+        el("li", {}, tx("llm.not2", { link: el("a", { href: "#/film" }, t("llm.not2Link")) })),
+        el("li", {}, t("llm.not3")),
+      ]),
 
       el("h3", {}, t("llm.sourcesTitle")),
       el("ul", { class: "who-list" }, SOURCES.map(({ name, url, what }) =>

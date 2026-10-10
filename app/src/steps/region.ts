@@ -30,6 +30,9 @@ import { prose } from "../lib/prose";
 import { reportRosterUntranslated } from "../components/wip-banner";
 import { mostWantedSection } from "../components/most-wanted";
 import { mostWanted, wantedRegionHref } from "../lib/invasives";
+import { mappedLookalikeIds } from "../lib/lookalikes";
+import { alternativeCountForRegion } from "../lib/alternatives";
+import { richText } from "../components/rich-text";
 
 const FORM_ORDER: PlantForm[] = ["tree", "shrub", "perennial", "annual", "grass", "vine", "groundcover", "fern"];
 /** The category headings. A function, not a record: a record built at import
@@ -275,6 +278,19 @@ function categoryChips(region: RegionDef, plants: Plant[], current: PlantForm | 
       href: wantedRegionHref(region.meta.id),
     }, t("region.invasivesChip", { n: fmtNumber(wanted) })));
   }
+  // The region's own slice of the look-alike and swap pages: they exist for
+  // every region with ties, and nothing else on the page reaches them. No count
+  // — the indexes leave out a tie whose native isn't loaded, so a number read
+  // off the tie table could disagree with the page it opens.
+  const id = region.meta.id;
+  if (mappedLookalikeIds(id).size) {
+    chips.push(el("a", { class: "btn btn-secondary", style: chipStyle, href: `#/lookalikes/in/${id}` },
+      `👀 ${t("plants.door.lookalikes")}`));
+  }
+  if (alternativeCountForRegion(id)) {
+    chips.push(el("a", { class: "btn btn-secondary", style: chipStyle, href: `#/alternatives/in/${id}` },
+      `🌿 ${t("plants.door.alternatives")}`));
+  }
   return el("nav", { "aria-label": t("region.categoriesNav"), style: "display:flex;flex-wrap:wrap;gap:0.4rem;margin:0.6rem 0 0.8rem" }, chips);
 }
 
@@ -363,7 +379,7 @@ function plantRow(p: Plant, regionId: string): { node: HTMLElement; mark: (nq: s
       sub,
       el("div", {
         style: "font-size:0.85rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis",
-      }, prose(p, "givesNote", regionId)),
+      }, richText(prose(p, "givesNote", regionId))),
     ]),
   ]);
   const mark = (nq: string): void => {

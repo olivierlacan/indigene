@@ -44,10 +44,13 @@ const STANCES: { title: TKey; body: TKey }[] = [
   { title: "about.stance.llm", body: "about.stance.llmBody" },
 ];
 
-/** The stances with a page of their own behind them: body key → route and link text. */
+/** The stances with a page or a setting behind them: body key → route and link text. */
 const STANCE_LINKS: Partial<Record<TKey, { href: string; text: TKey }>> = {
   "about.stance.nativeBody": { href: "#/native", text: "about.stance.nativeLink" },
   "about.stance.llmBody": { href: "#/llm", text: "about.stance.llmLink" },
+  "about.stance.sourcedBody": { href: "#/sources", text: "about.stance.sourcedLink" },
+  "about.stance.yoursBody": { href: "#/settings/counting", text: "about.stance.yoursLink" },
+  "about.stance.portableBody": { href: "#/settings/spots", text: "about.stance.portableLink" },
 };
 
 export function renderAbout(main: HTMLElement): void {
@@ -64,6 +67,7 @@ export function renderAbout(main: HTMLElement): void {
       // The emphasised word is a real <em>, not markdown asterisks in a string:
       // nothing renders those, and they'd show up literally on the page.
       el("p", {}, tx("about.why2", { here: el("em", {}, t("about.hereEm")) })),
+      el("p", {}, tx("about.whyHomegrown", { link: el("a", { href: "#/homegrown" }, t("about.homegrownLink")) })),
 
       el("h3", {}, t("about.forTitle")),
       el("p", {}, t("about.forLede")),

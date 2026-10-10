@@ -10,7 +10,7 @@ import type { RegionDef } from "../data/region";
 import { el } from "../ui";
 import { wildlifeCountForRegion } from "../lib/wildlife";
 import { keystoneIcon } from "./keystone-icon";
-import { DATA_SOURCES_URL } from "../lib/plain";
+import { SOURCES_ROUTE } from "../lib/plain";
 import { t, fmtNumber } from "../lib/i18n";
 import { commonName, regionName } from "../lib/names";
 
@@ -56,7 +56,7 @@ export function regionStatGrid(region: RegionDef, plants: Plant[]): HTMLElement 
           ])]
         : []),
       el("p", { class: "stat-dialog-source" }, [
-        el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, t("stat.howSourced")),
+        el("a", { href: SOURCES_ROUTE }, t("stat.howSourced")),
       ]),
       el("button", { class: "btn btn-secondary btn-block", onClick: () => dialog.close() }, t("stat.gotIt"))
     );

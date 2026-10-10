@@ -30,7 +30,8 @@
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { SECTIONS, SEGMENT_TO_ID, matchLabels, SECTION_LABELS, APP } from "./guide-catalog.mjs";
+import { SECTIONS, SEGMENT_TO_ID, matchLabels, SECTION_LABELS, APP, PREFIX } from "./guide-catalog.mjs";
+import { autolink } from "./_changelog.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO = resolve(HERE, "../..");
@@ -139,11 +140,6 @@ function parseChangelog(text) {
 
 // ---------- file each bullet under its sections ----------
 
-// The entry's leading prose prefix: the words before its first colon, as long
-// as they're a plain label and not the start of a sentence with a link or
-// emphasis in it. Kept short and bracket-free so a mid-sentence colon can never
-// be read as a prefix. Tolerates a bold wrapper so `**Regions:**` works too.
-const PREFIX = /^(?:\*\*)?\s*([A-Za-z][A-Za-z ,&/-]{0,46}?)\s*:(?:\*\*)?\s+/;
 // Any indigene.app or in-app link, reduced to its first path part. Matches
 // both the shareable path form (indigene.app/wildlife) and the hash form
 // (#/saved) the changelog uses for pages with no file of their own.
@@ -203,10 +199,10 @@ const escapeHtml = (s) =>
 
 const resolveUrl = (url) => (url.startsWith("/") ? APP + url : url);
 
-/** Minimal inline markdown: links, bold, italic, code. Applied post-escape. */
+/** Minimal inline markdown: links (typed-out URLs too), bold, italic, code. Applied post-escape. */
 function inline(md) {
-  return escapeHtml(md)
-    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, text, url) => `<a href="${resolveUrl(url)}">${text}</a>`)
+  return autolink(escapeHtml(md)
+    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, text, url) => `<a href="${resolveUrl(url)}">${text}</a>`))
     .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
     .replace(/\*([^*]+)\*/g, "<em>$1</em>")
     .replace(/`([^`]+)`/g, "<code>$1</code>");
@@ -322,6 +318,14 @@ a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .rel ul { margin: 0.25rem 0 0.5rem; padding-left: 1.2rem; }
 .rel li { margin: 0.45rem 0; color: var(--ink-soft); }
 .rel li strong, .rel li em { color: var(--ink); }
+/* Links inside a note's words are there to follow, not to read past: they
+   keep the text's color with a quiet underline, and take the link color only
+   under a pointer or focus. The page's real ways on stay bright. */
+.rel li a {
+  color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.18em;
+  text-decoration-color: color-mix(in srgb, var(--focus) 50%, transparent);
+}
+.rel li a:hover, .rel li a:focus-visible { color: var(--focus); text-decoration-color: currentColor; }
 .empty { color: var(--ink-soft); font-style: italic; }
 code {
   background: var(--brand-bg); color: var(--brand-ink);

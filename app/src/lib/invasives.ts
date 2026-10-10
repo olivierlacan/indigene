@@ -155,11 +155,11 @@ export function wantedRowsFor(invasiveId: string): { regionId: string; row: Want
 /** Where a plant stands on each list it's on, for the swap and look-alike
  *  pages to link back: "#2 most wanted in the Mid-Atlantic". Matched on the
  *  scientific name, which is what the three catalogs share. */
-export function wantedPlacesFor(latin: string): { regionId: string; rank: number }[] {
+export function wantedPlacesFor(latin: string): { regionId: string; rank: number; invasiveId: string }[] {
   const key = latin.trim().toLowerCase();
   const inv = INVASIVES.find((i) => i.latin.toLowerCase() === key);
   if (!inv) return [];
-  return wantedRowsFor(inv.id).map(({ regionId, row }) => ({ regionId, rank: row.rank }));
+  return wantedRowsFor(inv.id).map(({ regionId, row }) => ({ regionId, rank: row.rank, invasiveId: inv.id }));
 }
 
 /**

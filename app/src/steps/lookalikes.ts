@@ -56,6 +56,7 @@ import { t, tn, tx, fmtNumber } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
 import { wantedLine } from "../components/wanted-line";
 import { lookalikeBlurb, lookalikeOrigin, lookalikeWhy, lookalikeTells } from "../lib/prose";
+import { richText } from "../components/rich-text";
 
 /** The route prefix that makes `#/lookalikes/…` an index filtered to a region
  *  rather than one impostor's page. Same device, and the same reasoning, as the
@@ -324,11 +325,11 @@ export function tellTable(plantLatin: string, nativeName: string, lookalikeName:
       el("div", { class: "tell-feature" }, tell.feature),
       el("div", { class: "tell-side is-native" }, [
         el("span", { class: "tell-who" }, shortLabel(nativeName)),
-        el("span", {}, tell.native),
+        el("span", {}, richText(tell.native)),
       ]),
       el("div", { class: "tell-side is-impostor" }, [
         el("span", { class: "tell-who" }, shortLabel(lookalikeName)),
-        el("span", {}, tell.lookalike),
+        el("span", {}, richText(tell.lookalike)),
       ]),
     ])
   ));
@@ -537,7 +538,7 @@ export async function renderLookalike(main: HTMLElement, param?: string): Promis
         el("span", { class: "k" }, t("lookalikes.whereItsFrom")),
         lookalikeOrigin(lookalike),
       ]),
-      el("p", {}, lookalikeBlurb(lookalike)),
+      el("p", {}, richText(lookalikeBlurb(lookalike))),
       // Where it's a native of its own, say so, and link to the page that says
       // why it's worth planting there. "Not from here" is the whole claim.
       elsewhere
@@ -572,7 +573,7 @@ export async function renderLookalike(main: HTMLElement, param?: string): Promis
       .map((n) => comparisonCard(lookalike, n)),
     el("p", { class: "confidence", style: "margin-top:1rem" }, t("lookalike.coverageNote")),
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
-      el("a", { class: "btn btn-secondary", href: "#/lookalikes" }, t("lookalikes.more")),
+      // "All look-alikes" is the back-trail at the top; this row goes on.
       el("a", { class: "btn btn-secondary", href: "#/plants" }, t("lookalikes.browseNatives")),
     ]),
   );

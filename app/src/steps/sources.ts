@@ -29,6 +29,7 @@ import { DATA_SOURCES_URL, ISSUES_URL } from "../lib/plain";
 import { t, tx } from "../lib/i18n";
 import type { TKey } from "../locales/en";
 import { NAME_SOURCE_INFO } from "../lib/names";
+import { CONFIDENCE_ROUTE } from "../components/confidence-meter";
 import type { ReferenceList } from "../lib/names";
 
 const REPO_URL = "https://github.com/olivierlacan/indigene";
@@ -167,7 +168,8 @@ export function renderSources(main: HTMLElement): void {
       el("ol", {}, [
         boldLead("sources.chal1", "sources.chal1Rest"),
         boldLead("sources.chal2", "sources.chal2Rest"),
-        boldLead("sources.chal3", "sources.chal3Rest"),
+        el("li", {}, [el("strong", {}, t("sources.chal3")),
+          ...tx("sources.chal3Rest", { link: el("a", { href: CONFIDENCE_ROUTE }, t("sources.chal3Link")) })]),
         boldLead("sources.chal4", "sources.chal4Rest"),
         boldLead("sources.chal5", "sources.chal5Rest"),
       ]),

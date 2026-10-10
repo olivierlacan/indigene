@@ -21,10 +21,37 @@
 import { el, toast } from "../ui";
 import { cardStats } from "./card-stats";
 import { privacyNote } from "./privacy-link";
-import { applySpotsFile, collectSpots, downloadSpotsFile, parseSpotsFile } from "../lib/backup";
-import type { ImportTally, ReadFailure } from "../lib/backup";
-import { listPlantings, listSpots } from "../db";
-import { t, tn, fmtNumber } from "../lib/i18n";
+import {
+  applySpotsFile,
+  collectSpots,
+  downloadSpotsFile,
+  lastCopyAt,
+  likelySameSpots,
+  parseSpotsFile,
+  rememberCopy,
+  spotAliases,
+} from "../lib/backup";
+import type { ImportTally, LikelySame, ReadFailure, Restore, SpotsFile } from "../lib/backup";
+import type { Planting } from "../types";
+import { length } from "../lib/units";
+import { listPlantings, listSpots, storageKept } from "../db";
+import { t, tn, fmtDate, fmtNumber } from "../lib/i18n";
+
+/**
+ * Safari on an iPhone or iPad, outside the Home Screen app. That's where a
+ * site's storage is cleared after about a week of Safari use without a visit;
+ * the Home Screen app keeps its own — and starts empty. (iPadOS reports itself
+ * as a Mac, so a touch screen gives it away.)
+ */
+function inIosSafari(): boolean {
+  const ios =
+    /iP(hone|ad|od)/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  const homeScreen =
+    (navigator as Navigator & { standalone?: boolean }).standalone === true ||
+    matchMedia("(display-mode: standalone)").matches;
+  return ios && !homeScreen;
+}
 
 /** Which message a failed read gets. The union lives with the parser. */
 const FAILURE_TEXT: Record<ReadFailure, "backup.errUnreadable" | "backup.errNotOurs" | "backup.errTooNew"> = {
@@ -32,6 +59,13 @@ const FAILURE_TEXT: Record<ReadFailure, "backup.errUnreadable" | "backup.errNotO
   notOurs: "backup.errNotOurs",
   tooNew: "backup.errTooNew",
 };
+
+/**
+ * The last import's figures, kept outside the card. Restoring units or a
+ * language redraws the whole Settings page, so the card that ran the import is
+ * gone by the time it would report; the new one picks the figures up here.
+ */
+let pendingReport: ImportTally | null = null;
 
 /**
  * The card. Async because it opens with a count of what's actually here, and a
@@ -54,6 +88,10 @@ export async function spotsFileCard(): Promise<HTMLElement> {
 
   await refreshHead();
   picker.addEventListener("change", () => void read());
+  if (pendingReport) {
+    report(pendingReport);
+    pendingReport = null;
+  }
 
   return el("div", { class: "card" }, [
     el("h3", {}, t("backup.title")),
@@ -68,6 +106,13 @@ export async function spotsFileCard(): Promise<HTMLElement> {
     ]),
     picker,
     result,
+    inIosSafari()
+      ? el("p", { class: "note warn", style: "margin:1rem 0 0" }, [
+          t("backup.iosSafari"),
+          " ",
+          el("a", { href: "/guide/backup/" }, t("backup.iosGuide")),
+        ])
+      : null,
     privacyNote(t("backup.privacy"), undefined, "saved"),
   ]);
 
@@ -75,11 +120,19 @@ export async function spotsFileCard(): Promise<HTMLElement> {
    *  to write out at all. Nothing saved leaves the Save button in place but
    *  greyed, so the card still shows both halves of what it's for. */
   async function refreshHead(): Promise<void> {
-    const [spots, plantings] = await Promise.all([
+    const [spots, plantings, lastCopy, kept] = await Promise.all([
       listSpots().catch(() => []),
       listPlantings().catch(() => []),
+      lastCopyAt(),
+      storageKept(),
     ]);
     saveBtn.disabled = spots.length === 0;
+    // How safe the spots are right now: when a copy last left this browser,
+    // and whether the browser has agreed not to clear them (`db.ts`).
+    const safety = [
+      lastCopy ? t("backup.lastCopy", { date: fmtDate(lastCopy) }) : t("backup.noCopy"),
+      kept === true ? t("backup.kept") : kept === false ? t("backup.notKept") : "",
+    ].filter(Boolean).join(" ");
     head.replaceChildren(
       spots.length
         ? cardStats([
@@ -98,7 +151,8 @@ export async function spotsFileCard(): Promise<HTMLElement> {
                 }
               : null,
           ])
-        : el("p", { class: "note info", style: "margin-bottom:0" }, t("backup.empty"))
+        : el("p", { class: "note info", style: "margin-bottom:0" }, t("backup.empty")),
+      ...(spots.length ? [el("p", { class: "hint", style: "margin:0.6rem 0 0" }, safety)] : [])
     );
   }
 
@@ -106,6 +160,8 @@ export async function spotsFileCard(): Promise<HTMLElement> {
     try {
       downloadSpotsFile(await collectSpots());
       toast(t("backup.saved"));
+      await rememberCopy();
+      await refreshHead();
     } catch {
       say("warn", t("backup.errStore"));
     }
@@ -129,13 +185,108 @@ export async function spotsFileCard(): Promise<HTMLElement> {
     if (!parsed.ok) return say("warn", t(FAILURE_TEXT[parsed.why]));
     if (!parsed.file.spots.length) return say("warn", t("backup.errEmpty"));
 
-    let tally: ImportTally;
+    let pairs: LikelySame[];
+    let hereLog: Planting[];
     try {
-      tally = await applySpotsFile(parsed.file, parsed.skipped);
+      const [here, log, aliases] = await Promise.all([listSpots(), listPlantings(), spotAliases()]);
+      pairs = likelySameSpots(here, parsed.file, aliases);
+      hereLog = log;
     } catch {
       return say("warn", t("backup.errStore"));
     }
-    report(tally);
+    // Nothing is written until the person has answered: leaving now leaves
+    // this browser exactly as it was, and the file can be brought in again.
+    if (pairs.length) return ask(parsed.file, parsed.skipped, pairs, hereLog);
+    await bringIn(parsed.file, parsed.skipped, {});
+  }
+
+  /**
+   * One choice per spot in the file that looks like one already here, then a
+   * single button that brings the whole file in.
+   */
+  function ask(file: SpotsFile, skipped: number, pairs: LikelySame[], hereLog: Planting[]): void {
+    const combine = new Map(pairs.map((p) => [p.there.id, p.suggest === "combine"]));
+    const plantingsIn = (log: readonly Planting[], spotId: string): number =>
+      log.filter((p) => p.spotId === spotId).length;
+
+    const rows = pairs.map((pair) => {
+      const choice = (value: boolean, title: string, sub: string): HTMLButtonElement => {
+        const btn = el("button", {
+          class: "choice",
+          "aria-pressed": String(combine.get(pair.there.id) === value),
+          onClick: () => {
+            combine.set(pair.there.id, value);
+            for (const b of [yes, no]) b.setAttribute("aria-pressed", String(b === btn));
+          },
+        }, [el("span", { class: "choice-title" }, title), el("span", { class: "choice-sub" }, sub)]);
+        return btn;
+      };
+      const yes = choice(true, t("backup.combine"), t("backup.combineSub", { here: pair.here.label }));
+      const no = choice(false, t("backup.keepBoth"), t("backup.keepBothSub"));
+      const inFile = plantingsIn(file.plantings, pair.there.id);
+      const inHere = plantingsIn(hereLog, pair.here.id);
+      return el("div", { style: "margin-top:1rem" }, [
+        el("strong", {}, pair.sameName
+          ? pair.there.label
+          : t("backup.pairNames", { there: pair.there.label, here: pair.here.label })),
+        cardStats([
+          {
+            icon: "📍",
+            value: length(pair.metres * 3.28084),
+            label: t("backup.pairApart", { distance: length(pair.metres * 3.28084) }),
+          },
+          {
+            icon: "💾",
+            value: fmtNumber(inFile),
+            label: tn("backup.pairInFile", inFile, { count: fmtNumber(inFile) }),
+          },
+          {
+            icon: "🌱",
+            value: fmtNumber(inHere),
+            label: tn("backup.pairHere", inHere, { count: fmtNumber(inHere) }),
+          },
+        ]),
+        yes,
+        no,
+      ]);
+    });
+
+    result.replaceChildren(
+      el("div", { class: "note info", style: "margin:1rem 0 0" }, [
+        el("strong", {}, t("backup.askTitle")),
+        el("p", { style: "margin:0.4rem 0 0" }, t("backup.askLede")),
+        ...rows,
+        el("div", { style: "display:grid;gap:0.6rem;margin-top:1rem" }, [
+          el("button", {
+            class: "btn btn-primary btn-block",
+            onClick: () => {
+              const chosen: Record<string, string> = {};
+              for (const p of pairs) if (combine.get(p.there.id)) chosen[p.there.id] = p.here.id;
+              void bringIn(file, skipped, chosen);
+            },
+          }, t("backup.bringIn")),
+          el("button", {
+            class: "btn btn-secondary btn-block",
+            onClick: () => result.replaceChildren(),
+          }, t("backup.cancel")),
+        ]),
+      ])
+    );
+  }
+
+  async function bringIn(file: SpotsFile, skipped: number, combine: Record<string, string>): Promise<void> {
+    let restore: Restore;
+    try {
+      restore = await applySpotsFile(file, skipped, combine);
+    } catch {
+      return say("warn", t("backup.errStore"));
+    }
+    // Kept first, then the settings that redraw the page; the redrawn card
+    // reports it. With nothing redrawn, this card reports it itself.
+    pendingReport = restore.tally;
+    if (restore.finish()) return;
+    pendingReport = null;
+    report(restore.tally);
     await refreshHead();
   }
 
@@ -148,7 +299,17 @@ export async function spotsFileCard(): Promise<HTMLElement> {
 
   /** What the import did, as figures. */
   function report(tally: ImportTally): void {
-    if (!tally.spotsAdded && !tally.plantingsAdded && !tally.skipped) {
+    if (
+      !tally.spotsAdded &&
+      !tally.spotsUpdated &&
+      !tally.spotsCombined &&
+      !tally.plantingsAdded &&
+      !tally.plantingsUpdated &&
+      !tally.lookupsAdded &&
+      !tally.sightingsAdded &&
+      !tally.settingsRestored &&
+      !tally.skipped
+    ) {
       return say("info", t("backup.nothingNew"));
     }
     result.replaceChildren(
@@ -157,12 +318,19 @@ export async function spotsFileCard(): Promise<HTMLElement> {
         el("dl", { class: "memory-list" }, [
           ...row(t("backup.rowSpots"), tally.spotsAdded),
           ...(tally.plantingsAdded ? row(t("backup.rowPlantings"), tally.plantingsAdded) : []),
+          ...(tally.spotsCombined ? row(t("backup.rowSpotsCombined"), tally.spotsCombined) : []),
+          ...(tally.spotsUpdated ? row(t("backup.rowSpotsUpdated"), tally.spotsUpdated) : []),
+          ...(tally.plantingsUpdated
+            ? row(t("backup.rowPlantingsUpdated"), tally.plantingsUpdated)
+            : []),
+          ...(tally.sightingsAdded ? row(t("backup.rowSightings"), tally.sightingsAdded) : []),
+          ...(tally.settingsRestored ? row(t("backup.rowSettings"), tally.settingsRestored) : []),
           ...(tally.spotsKnown ? row(t("backup.rowSpotsKnown"), tally.spotsKnown) : []),
           ...(tally.skipped ? row(t("backup.rowSkipped"), tally.skipped) : []),
         ]),
       ])
     );
-    if (tally.spotsAdded) {
+    if (tally.spotsAdded || tally.spotsUpdated || tally.spotsCombined || tally.plantingsUpdated) {
       result.append(
         el("p", { style: "margin:0.6rem 0 0" }, [
           el("a", { href: "#/saved" }, t("backup.seeSaved")),

@@ -43,12 +43,14 @@ import {
   plantsUsing,
   techniqueBySlug,
   techniqueHref,
+  techniqueRefs,
   techniquesInSeason,
 } from "../lib/planting";
 import type { PlantingSource, Season, Technique, TechniqueFrom } from "../lib/planting";
 import { propagationMethod, SOURCES_ROUTE } from "../lib/plain";
 import { t, tn, tx, fmtNumber } from "../lib/i18n";
 import { commonName } from "../lib/names";
+import { richText } from "../components/rich-text";
 
 /** The index's address. One place knows the URL shape. */
 const INDEX_HREF = "#/planting";
@@ -151,6 +153,19 @@ function thisSeasonCard(): HTMLElement {
           ]);
         }))
       : el("p", {}, t("planting.nowEmpty")),
+  ]);
+}
+
+/** Pages worth reading next for this technique — only ones checked to cover
+ *  it (`techniqueRefs`) — and the reading list every note is written from. */
+function learnMore(tech: Technique): HTMLElement {
+  return el("section", { class: "card" }, [
+    el("h3", {}, t("planting.learnTitle")),
+    el("ul", { class: "grow-sources" }, [
+      ...techniqueRefs(tech.method).map((ref) =>
+        el("li", {}, el("a", { href: ref.url, target: "_blank", rel: "noopener" }, `${ref.name} ↗`))),
+      el("li", {}, el("a", { href: INDEX_HREF }, t("planting.learnAll"))),
+    ]),
   ]);
 }
 
@@ -291,7 +306,7 @@ async function renderTechnique(main: HTMLElement, tech: Technique): Promise<void
         ]),
         el("section", { class: "card" }, [
           el("h3", {}, t("planting.timingTitle")),
-          el("p", {}, g.timing),
+          el("p", {}, richText(g.timing)),
           // The one technique the app's warmest region cannot do outdoors at all.
           tech.method === "seed-cold-moist"
             ? el("p", { class: "note info", style: "margin-bottom:0" }, [
@@ -304,6 +319,7 @@ async function renderTechnique(main: HTMLElement, tech: Technique): Promise<void
           el("h3", {}, t("planting.mistakeTitle")),
           el("p", { class: "note warn", style: "margin-bottom:0" }, g.mistake),
         ]),
+        learnMore(tech),
       ]),
       el("div", { class: "planting-col" }, [
         await usedBySection(tech),
@@ -311,7 +327,8 @@ async function renderTechnique(main: HTMLElement, tech: Technique): Promise<void
       ]),
     ]),
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
-      el("button", { class: "btn btn-secondary", onClick: () => navigate("planting") }, t("planting.allTechniques")),
+      // "All techniques" is the back-trail at the top; this row goes on.
+      el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("privacy.findPlants")),
     ])
   );
 }

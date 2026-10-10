@@ -142,6 +142,33 @@ a {
   color: var(--focus);
 }
 
+/* Links in running text: there to follow, not to read past. They keep the
+   text's color with a quiet underline and take the link color under a pointer
+   or focus, so a paragraph with three links doesn't read as a paragraph of
+   blue. Buttons, chips, heading links and the contents list keep their own
+   looks; a paragraph that is only a way on (`.more-link`) stays bright. */
+.privacy-page > p a,
+.privacy-page > :is(ul, ol) > li a,
+.note a:not(.btn),
+.kv a,
+.step-lede a,
+.region-tag a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: color-mix(in srgb, var(--focus) 55%, transparent);
+}
+:is(.privacy-page > p, .privacy-page > :is(ul, ol) > li, .note, .kv, .step-lede, .region-tag) a:is(:hover, :focus-visible) {
+  color: var(--focus);
+  text-decoration-color: currentColor;
+}
+.privacy-page > p.more-link a,
+p.more-link a {
+  color: var(--focus);
+  text-decoration-color: currentColor;
+}
+
 /* --- Section headings that lead somewhere -------------------------------
    A roster's category heading, a wildlife group's heading, a region on an
    animal's page: each labels the cards under it *and* is the way into that
@@ -840,6 +867,39 @@ a {
 }
 
 /* --- Layout --- */
+/* The one-line "read this in French?" offer (components/lang-offer.ts): a
+   full-width strip under the header, its row held to the page's width. */
+.lang-offer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 0.5rem 0 1rem;
+  border-bottom: 1px solid var(--line);
+}
+.lang-offer-take,
+.lang-offer-close {
+  min-height: var(--tap);
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.lang-offer-take {
+  padding: 0;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.lang-offer-close {
+  min-width: var(--tap);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
 .app-main {
   max-width: var(--maxw);
   margin: 0 auto;
@@ -866,14 +926,13 @@ a {
   animation: boot-fade 0.6s ease-out 0.1s both;
 }
 .boot-sprout {
-  font-size: 2.75rem;
-  line-height: 1;
   margin-bottom: 0.5rem;
 }
-.boot-sprout span {
-  display: inline-block;
-  transform-origin: 50% 90%;
-  animation: boot-sway 2.4s ease-in-out infinite;
+/* The router's loader (components/page-loader.ts) waits a beat longer before
+   it shows: most pages draw well inside it, and a flash of seedling between
+   two pages would read as a stutter. */
+.page-loader {
+  animation-delay: 0.35s;
 }
 .boot-line {
   margin: 0;
@@ -903,17 +962,119 @@ a {
     transform: none;
   }
 }
-@keyframes boot-sway {
-  0%,
-  100% {
-    transform: rotate(-6deg) scale(1);
+
+/* The growing seedling, shared by the boot screen and the page loader. One
+   3.6 s cycle, in order: the stem rises out of the soil, the leaves unfurl, the
+   coneflower opens, it sways a moment, then it all folds back down. Every part
+   rests fully grown, so with the motion turned off it's simply a plant. */
+.grow {
+  width: 4.5rem;
+  height: 4.5rem;
+  overflow: visible;
+  --grow-t: 3.6s;
+}
+.grow-soil {
+  fill: var(--accent);
+  opacity: 0.55;
+}
+.grow-stem {
+  fill: none;
+  stroke: var(--brand);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  animation: grow-stem var(--grow-t) ease-in-out infinite;
+}
+.grow-leaf {
+  fill: var(--brand);
+  transform-box: fill-box;
+  animation: grow-leaf var(--grow-t) ease-out infinite;
+}
+.grow-leaf-l {
+  transform-origin: 100% 60%;
+  animation-delay: 0.05s;
+}
+.grow-leaf-r {
+  transform-origin: 0% 70%;
+  animation-delay: 0.25s;
+}
+.grow-bloom {
+  fill: #c86aa0; /* purple coneflower */
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: grow-bloom var(--grow-t) cubic-bezier(0.3, 1.5, 0.6, 1) infinite;
+}
+.grow-heart {
+  fill: #c97c1c;
+}
+.grow-plant {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: grow-sway var(--grow-t) ease-in-out infinite;
+}
+@media (prefers-color-scheme: dark) {
+  .grow-bloom {
+    fill: #e39ac3;
   }
-  50% {
-    transform: rotate(6deg) scale(1.06);
+  .grow-heart {
+    fill: #e8a94a;
+  }
+}
+@keyframes grow-stem {
+  0% {
+    stroke-dashoffset: 1;
+  }
+  30%,
+  86% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 1;
+  }
+}
+@keyframes grow-leaf {
+  0%,
+  18% {
+    transform: scale(0) rotate(-25deg);
+  }
+  40%,
+  84% {
+    transform: none;
+  }
+  96%,
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes grow-bloom {
+  0%,
+  36% {
+    transform: scale(0) rotate(-60deg);
+  }
+  56%,
+  82% {
+    transform: none;
+  }
+  94%,
+  100% {
+    transform: scale(0) rotate(30deg);
+  }
+}
+@keyframes grow-sway {
+  0%,
+  56%,
+  100% {
+    transform: none;
+  }
+  66% {
+    transform: rotate(-4deg);
+  }
+  76% {
+    transform: rotate(3deg);
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .boot-sprout span {
+  .grow * {
     animation: none !important;
   }
 }
@@ -1109,6 +1270,54 @@ a {
 }
 .note strong {
   color: inherit;
+}
+
+/* --- "Native means the plant, never the person" (steps/welcome.ts) --------
+   The one stance the home page states outright, so it is built to be seen: a
+   surface card with a thick brand rule, a title of its own and a full-size
+   button into #/native — distinct from the tinted `.note` above it on the same
+   page. Colours are theme tokens, so dark and light both follow. */
+.native-callout {
+  margin: 1.25rem 0 0;
+  padding: 1.1rem 1rem 1.15rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--brand);
+  border-radius: var(--radius);
+}
+.native-callout-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--ink);
+}
+.native-callout-body {
+  margin: 0 0 0.9rem;
+  color: var(--ink-soft);
+}
+/* Full width, like the app's block buttons: the French label ("Plantes
+   indigènes, pas nativisme") needs the card's whole width to stay on one line
+   at 360 px. Below that floor it may wrap rather than push the page sideways. */
+.native-callout-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: var(--tap);
+  padding: 0.35rem 0.5rem;
+  border: 2px solid var(--brand);
+  border-radius: 999px;
+  color: var(--brand);
+  /* The weight of every other button (.btn), a step smaller than its type so
+     the French label holds one line at 360 px (measured: 257 px available for
+     a label that needs 266 at the body size). */
+  font-size: 0.95rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+.native-callout-link:hover {
+  background: var(--brand-bg);
 }
 
 /* --- The "still being translated" banner -------------------------------- */
@@ -1681,6 +1890,10 @@ input[type="range"] {
   border: 1px solid var(--line);
   background: var(--surface-2);
   touch-action: none;
+  /* A held finger on iOS otherwise starts selecting the text round the map. */
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 .map canvas {
   display: block;
@@ -1695,6 +1908,26 @@ input[type="range"] {
   font-size: 2rem;
   pointer-events: none;
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.4));
+}
+/* The loupe a long press opens over the map (steps/location.ts): a round,
+   enlarged view of the pin's few metres, in the corner away from the finger. */
+.map canvas.map-loupe {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+.map canvas.map-loupe-right {
+  left: auto;
+  right: 10px;
+}
+.map canvas.map-loupe[hidden] {
+  display: none;
 }
 .coords {
   font-variant-numeric: tabular-nums;
@@ -5242,6 +5475,33 @@ body[data-layout="profile"] .wip-banner-text {
   min-height: 2.4rem;
   padding: 0.3rem 0.5rem;
 }
+/* A season-plan row (components/season-plan.ts): what to do with the plant,
+   and when — the technique is a link, ripe seed is lit because it won't wait. */
+.grow-do {
+  margin: 0.2rem 0 0.15rem;
+  font-size: 0.95rem;
+}
+.grow-ripe {
+  color: var(--brand-ink);
+  font-weight: 700;
+}
+.grow-leave {
+  margin: 0 0 0.15rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+/* A claim and the page that makes it, one per line. */
+.grow-sources {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+.grow-sources li {
+  margin: 0.3rem 0;
+}
+.badge.grow-first {
+  display: table;
+  margin: 0 0 0.25rem;
+}
 /* What it should be by now. Given the brand tint because it's the one line on
    the row that is the app talking rather than the gardener's own record. */
 .log-growth {
@@ -6014,9 +6274,6 @@ body[data-layout="profile"] .wip-banner-text {
 .film-play:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
-}
-.film figcaption {
-  margin-top: 0.5rem;
 }
 @media (prefers-reduced-motion: reduce) {
   .film-poster {

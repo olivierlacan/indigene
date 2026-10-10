@@ -681,7 +681,7 @@ export interface AlternativeLink {
 // with a bag of cross-reference identifiers alongside it. Those external ids are
 // reconciled in by `scripts/reconcile.mjs` (writing `data/registry.overrides.json`);
 // until then only our own `indigene` id and the accepted name are known, and
-// `primaryId` is null. See `docs/nursery-availability-protocol.md` for why
+// `primaryId` is null. See `docs/nursery-availability.md` for why
 // identity is the foundation of availability and discoverability.
 // ---------------------------------------------------------------------------
 

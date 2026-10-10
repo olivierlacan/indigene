@@ -41,14 +41,14 @@ function row(r: Reading): HTMLElement {
     .join(" · ");
   const proof: string[] = [];
   if (r.vouched?.length) proof.push(t("reading.vouched", { names: fmtList(r.vouched.map((v) => v.name)) }));
+  if (r.award) proof.push(r.award.toAuthor ? t("reading.authorAward", { award: r.award.name }) : r.award.name);
+  if (r.editions && r.editions > 1) proof.push(tn("reading.editions", r.editions));
   if (r.audience) {
-    proof.push(tn(r.kind === "video" ? "reading.subscribers" : "reading.followers", r.audience.count, {
-      n: compact(r.audience.count),
-    }));
+    const { count, unit, asOf } = r.audience;
+    proof.push(`${tn(`reading.audience.${unit}` as const, count, { n: compact(count) })} (${asOf.slice(0, 4)})`);
   }
-  if (r.award) proof.push(r.award);
   return el("li", { class: "reading-row" }, [
-    el("span", { class: "reading-kind", title: t(`reading.kind.${r.kind}` as const) }, KIND_ICON[r.kind]),
+    el("span", { class: "reading-kind", role: "img", "aria-label": t(`reading.kind.${r.kind}` as const) }, KIND_ICON[r.kind]),
     el("div", { class: "reading-body" }, [
       el("a", { href: r.url, target: "_blank", rel: "noopener", class: "reading-title", lang: r.lang }, r.title),
       el("span", { class: "reading-by" }, `${who} — ${t(`reading.backer.${r.backer}` as const)}`),

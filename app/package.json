@@ -52,6 +52,7 @@
     "native:check": "NODE_USE_ENV_PROXY=1 node scripts/check-native.mjs",
     "prose:check": "node scripts/check-prose.mjs",
     "blurbs:check": "node scripts/check-blurbs.mjs",
+    "reading:check": "NODE_USE_ENV_PROXY=1 node scripts/check-reading.mjs",
     "lookalikes:check": "NODE_USE_ENV_PROXY=1 node scripts/check-lookalikes.mjs",
     "listings:check": "NODE_USE_ENV_PROXY=1 node scripts/check-listings.mjs",
     "inat:check": "NODE_USE_ENV_PROXY=1 node scripts/inat-coverage-check.mjs",

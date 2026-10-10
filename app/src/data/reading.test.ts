@@ -22,8 +22,8 @@ describe("further reading", () => {
 
   it("gives every pick evidence that people rely on it", () => {
     for (const { region, r } of entries) {
-      const proven = (r.vouched?.length ?? 0) > 0 || !!r.audience || !!r.award;
-      expect(proven, `${region}: “${r.title}” has no recommendation, audience or award`).toBe(true);
+      const proven = (r.vouched?.length ?? 0) > 0 || !!r.audience || !!r.award || (r.editions ?? 0) > 1;
+      expect(proven, `${region}: “${r.title}” has no recommendation, award, editions or audience`).toBe(true);
     }
   });
 
@@ -34,12 +34,14 @@ describe("further reading", () => {
     }
   });
 
-  it("dates every audience count, and only counts channels", () => {
+  it("dates every audience count, and counts subscribers only on channels", () => {
     for (const { region, r } of entries) {
       if (!r.audience) continue;
-      expect(["video", "social"], `${region}: ${r.title}`).toContain(r.kind);
-      expect(r.audience.asOf, `${region}: ${r.title}`).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(r.audience.asOf, `${region}: ${r.title}`).toMatch(/^\d{4}-\d{2}(-\d{2})?$/);
       expect(r.audience.count).toBeGreaterThan(0);
+      if (r.audience.unit === "subscribers" || r.audience.unit === "followers") {
+        expect(["video", "social"], `${region}: ${r.title}`).toContain(r.kind);
+      }
     }
   });
 

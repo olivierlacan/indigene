@@ -23,6 +23,7 @@ import { getWildlife, wildlifeKindRoute, KIND_ORDER, KIND_SLUGS } from "./wildli
 import { getLookalike, mappedLookalikeIds } from "./lookalikes";
 import { getOrnamental, mappedOrnamentalIds } from "./alternatives";
 import { mappedInvasiveIds, wantedRegionIds, wantedRegionParam, WANTED_REGION_PREFIX } from "./invasives";
+import { readingRegionIds } from "../data/reading";
 import { TECHNIQUES, techniqueBySlug } from "./planting";
 import { WILDLIFE } from "../data/wildlife";
 
@@ -211,6 +212,9 @@ export function canonicalPath(step: string, param?: string): string | null {
     // One propagation technique's how-to and its window in the year.
     case "planting":
       return techniqueBySlug(param) ? at(param) : null;
+    // One region's further reading.
+    case "reading":
+      return readingRegionIds().includes(param) ? at(param) : null;
     case "film":
       return param === "fr" ? at(param) : null;
     default:
@@ -324,6 +328,7 @@ export function shareablePaths(): string[] {
   for (const id of mappedInvasiveIds()) paths.push(`invasives/${id}`);
   for (const id of wantedRegionIds()) paths.push(`invasives/${WANTED_REGION_PREFIX}${id}`);
   for (const tech of TECHNIQUES) paths.push(`planting/${tech.slug}`);
+  for (const id of readingRegionIds()) paths.push(`reading/${id}`);
   paths.push("film/fr");
   return paths;
 }

@@ -332,6 +332,8 @@ async function collectPages(load) {
     load("/src/data/invasives.ts"),
     load("/src/lib/invasives.ts"),
   ]);
+  // Plant prose marks emphasis with asterisks; a link preview shows them raw.
+  const { plainText } = await load("/src/lib/inline-markdown.ts");
 
   const pages = [];
   const add = (path, title, description, extra) =>
@@ -473,7 +475,7 @@ async function collectPages(load) {
       add(
         `plants/${plant.id}`,
         fill(en["plant.docTitle"], { name: plant.common, latin: plant.latin }),
-        `${plant.nativeNote} ${plant.givesNote}`,
+        plainText(`${plant.nativeNote} ${plant.givesNote}`),
         {
           image: plantCard(plant.id),
           imageAlt: `${plant.common} (${plant.latin}) — a drawing of its form, with what it feeds and how big it grows`,

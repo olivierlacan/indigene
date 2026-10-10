@@ -66,6 +66,11 @@ export interface TaxonProse {
   propagationNote?: string;
   /** Wildlife only: the "what it is and why it matters" paragraph. */
   blurb?: string;
+  /** Pavement pioneers: the harsh place this plant shrugs off, here
+   *  (`PioneerEntry.note`). Region-qualified like the rest — coyote brush on a
+   *  Los Angeles freeway bank and on a Monterey building site are two
+   *  sentences, and the qualified key is what keeps them apart. */
+  pioneerNote?: string;
   /** Wildlife ties, keyed by the *other* end of the tie — a plant's entry keys
    *  its notes by `wildlifeId`, so one plant's ties live together. */
   supportNotes?: Record<string, string>;
@@ -240,6 +245,26 @@ export function wildlifeLead(w: Wildlife): string {
 /** The plant-specific "why this animal cares about this plant" line. */
 export function supportNote(plantLatin: string, link: SupportLink, regionId?: string): string {
   return entry(plantLatin, regionId)?.supportNotes?.[link.wildlifeId] ?? link.note;
+}
+
+// ---- Pavement pioneers ----
+// One sentence per row, keyed under the plant's own scientific name and
+// qualified by region, because the row *is* regional: the same birch is a
+// building-site tree in Brittany and a moraine tree in the Alps.
+
+/** The "harsh place it does this in" line, in the reader's language. */
+export function pioneerNote(plantLatin: string, note: string, regionId?: string): string {
+  return entry(plantLatin, regionId)?.pioneerNote ?? note;
+}
+
+/** Is any of the pioneer writing on this page still in the English it was
+ *  authored in? Asked of the whole section at once, like its neighbours. */
+export function pioneersUntranslated(
+  items: { latin: string }[],
+  regionId?: string,
+): boolean {
+  if (getLang() === "en" || !items.length) return false;
+  return items.some((p) => entry(p.latin, regionId)?.pioneerNote === undefined);
 }
 
 // ---- Look-alikes ----

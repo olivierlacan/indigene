@@ -65,6 +65,7 @@ try {
   const REGIONS = await withSeeds(REGIONS_RAW);
   const { WILDLIFE, SUPPORT } = await load("/src/data/wildlife.ts");
   const { LOOKALIKES, CONFUSIONS } = await load("/src/data/lookalikes.ts");
+  const { PIONEERS } = await load("/src/data/pioneers.ts");
 
   // The part files each locale is assembled from, so a collision can name the
   // two files that disagree rather than just the key.
@@ -143,6 +144,13 @@ try {
         }
         if (p.propagation?.note) {
           need(e?.propagationNote !== undefined, `${rid}/${p.latin}.propagationNote`);
+        }
+        // The pavement-pioneer sentence, for the eight-or-so rows per region
+        // that have one. Counted here so a region can't report 100% while its
+        // pioneers page is still showing English — which is exactly what
+        // happened to the Mid-Atlantic the moment that layer landed.
+        if (PIONEERS[rid]?.[p.id]) {
+          need(e?.pioneerNote !== undefined, `${rid}/${p.latin}.pioneerNote`);
         }
         for (const l of SUPPORT[rid]?.[p.id] ?? []) {
           need(e?.supportNotes?.[l.wildlifeId] !== undefined, `${rid}/${p.latin} support:${l.wildlifeId}`);

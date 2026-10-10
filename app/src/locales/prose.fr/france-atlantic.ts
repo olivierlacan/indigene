@@ -28,6 +28,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
     },
   },
   "Betula pendula": {
+    pioneerNote:
+      "L'arbre qui s'installe tout seul dans le ballast d'une voie ferrée, sur un chantier ou sur un toit-terrasse délaissé. Graine légère, sol nu, et il n'a besoin de personne.",
     nativeNote:
       "Un pionnier rapide, au houppier léger, des landes, clairières et sols sableux pauvres de France.",
     careNote:
@@ -46,6 +48,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
     },
   },
   "Salix caprea": {
+    pioneerNote:
+      "Il colonise gravats et déblais de carrière en quelques saisons, et s'enracine d'une bouture enfoncée directement dans la terre. Ses chatons de mars sont le premier vrai repas de l'année pour les reines de bourdons.",
     nativeNote:
       "Le saule des bois frais, des lisières et des friches de France — et, fait rare chez les saules, il accepte un sol plus sec.",
     careNote:
@@ -417,6 +421,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
     },
   },
   "Rubus fruticosus agg.": {
+    pioneerNote:
+      "Elle prend d'elle-même les gravats, les grillages et les recoins abandonnés. Mieux vaut lui choisir sa place que la regretter : elle ne s'arrête pas où on l'a mise.",
     nativeNote:
       "La mûre sauvage de toutes les haies, lisières et friches de France — non pas une espèce mais un essaim de centaines d'espèces quasi identiques, ce que veut dire le « agg. ».",
     careNote:
@@ -631,6 +637,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
     },
   },
   "Artemisia vulgaris": {
+    pioneerNote:
+      "La haute plante gris-vert de tous les terrains vagues et de tous les bords de trottoir d'Europe — c'est en elle que le mot « rudérale » prend tout son sens.",
     nativeNote:
       "La haute plante gris-vert des bords de route, des berges et des friches de France — quelconque à regarder, et l'une des plantes à chenilles les plus fréquentées qui soient.",
     careNote:
@@ -647,6 +655,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
     },
   },
   "Festuca rubra": {
+    pioneerNote:
+      "La graminée fine des accotements salés et des digues, assez tolérante des deux pour entrer d'office dans les mélanges de bord de route et de littoral.",
     nativeNote:
       "La fétuque indigène à feuilles fines des prairies, des dunes, des hauts de falaise et des bords de route de France — et la graminée de presque tous les sachets de gazon vendus dans le pays.",
     careNote:
@@ -716,6 +726,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
     },
   },
   "Hedera helix": {
+    pioneerNote:
+      "Il grimpe un mur nu depuis une fissure à son pied, dans l'ombre sèche où rien d'autre ne pousse, et il fleurit en octobre quand presque tout est fini.",
     // Les signes pour la reconnaître (data/invasives.ts).
     marks: [
       { feature: "Feuilles", text: "Persistantes, lobées sur les tiges qui grimpent, simples ovales sur celles qui fleurissent." },
@@ -794,6 +806,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
     },
   },
   "Plantago lanceolata": {
+    pioneerNote:
+      "Il pousse à plat au milieu d'un sentier piétiné et dressé sur ses bords. L'une des rares plantes à qui le passage des pieds profite vraiment.",
     nativeNote:
       "Le plantain aux feuilles nervurées de toutes les prairies, tous les bords de chemin et toutes les pelouses de France — si ordinaire que presque personne n'y prête attention.",
     careNote:
@@ -838,6 +852,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "On peut l'élever à partir des spores qui mûrissent au dos des frondes, mais c'est lent et délicat. Bien plus facile : déterrez une touffe installée au printemps et séparez la souche en éclats, chacun avec des racines et quelques frondes.",
   },
   "Asplenium scolopendrium": {
+    pioneerNote:
+      "Elle vit dans le mortier d'un mur ombragé, d'un puits ou d'une courette en sous-sol — du calcaire humide, presque pas de terre, et du vert tout l'hiver.",
     nativeNote:
       "La fougère luisante en lanières des talus ombragés, des vieux murs, des puits et des chemins creux de France — persistante, et impossible à confondre avec une autre fougère.",
     careNote:

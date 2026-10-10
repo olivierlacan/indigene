@@ -26,6 +26,9 @@ import { citation } from "../components/citation";
 import { silhouetteFor } from "../components/plant-card";
 import { heroPhotoFor } from "../lib/hero-photo";
 import { conservationNote } from "../components/conservation-note";
+import { pressureTags } from "../components/pioneer-card";
+import { pioneerFor } from "../lib/pioneers";
+import { PIONEER_ICON } from "../data/pioneers";
 import { heroFigure } from "../components/hero-figure";
 import { traitBadges } from "../components/trait-badges";
 import { regionLinks, regionSwitch as switchRow } from "../components/region-list";
@@ -41,7 +44,7 @@ import type { Plant, SiteData, SunEstimate } from "../types";
 import { t, tn, fmtNumber } from "../lib/i18n";
 import { length, humanHeightLabel } from "../lib/units";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
-import { prose, propagationNote, isUntranslated, lookalikesUntranslated, alternativesUntranslated } from "../lib/prose";
+import { prose, propagationNote, pioneerNote, isUntranslated, lookalikesUntranslated, alternativesUntranslated } from "../lib/prose";
 import { reportUntranslated } from "../components/wip-banner";
 import { richText } from "../components/rich-text";
 
@@ -359,7 +362,7 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
               el("h2", { class: "plant-name", style: "margin:0" }, names.title),
               el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" }, names.sub),
               photosLink(p),
-              traitBadges(p, true),
+              traitBadges(p, true, region.meta.id),
             ]),
           ]),
           el("p", { class: "kv plant-why" }, [el("span", { class: "k" }, [
@@ -380,6 +383,10 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
           // Third of the same stack, and the one line on this page that is the
           // same for every plant: the way into `#/crops`.
           cropsLine(),
+          // What the "Pavement pioneer" label above actually means for this
+          // plant, in this region — under the labels, because that is where a
+          // reader who just read one looks next.
+          pioneerLine(p, region.meta.id),
         ]),
         el("div", { class: "plant-col" }, [
           // Which region's figures these are sits directly on top of them. It
@@ -919,6 +926,33 @@ function lookalikeLine(all: PlantEntry[]): HTMLElement | null {
       i > 0 ? " · " : null,
       el("a", { href: `#/lookalikes/${id}` }, name),
     ]),
+  ]);
+}
+
+/**
+ * The pavement-pioneer line: the abuse this plant takes, as self-explaining
+ * chips, and the sentence saying where it really does that.
+ *
+ * Only the *active* region's row, unlike the two lines above it — those name
+ * other catalog entries, which are the same wherever you read them, while this
+ * is a claim about conditions in one place. A plant on two rosters shows the
+ * figures and the paragraphs of the region whose row is on screen
+ * (`activeEntry`), and this follows that, or the page would say "takes salt
+ * here" about somewhere else.
+ *
+ * Null when this region has no row for it, which is the ordinary case — the
+ * list is eight plants out of a roster of forty or more.
+ */
+function pioneerLine(p: Plant, regionId: string): HTMLElement | null {
+  const entry = pioneerFor(regionId, p.id);
+  if (!entry) return null;
+  return el("div", { class: "kv pioneer-line" }, [
+    el("span", { class: "k" }, [
+      el("span", { "aria-hidden": "true" }, `${PIONEER_ICON} `),
+      t("plant.pioneerTitle"),
+    ]),
+    el("div", { class: "pioneer-tags" }, pressureTags({ plant: p, entry })),
+    el("p", { class: "pioneer-note" }, pioneerNote(p.latin, entry.note, regionId)),
   ]);
 }
 

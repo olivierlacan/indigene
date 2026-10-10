@@ -107,6 +107,8 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     },
   },
   "Prunus mahaleb": {
+    pioneerNote:
+      "Il sort des murs calcaires et des gravats de carrière dans tout l'est de la France — semé par un oiseau dans un joint de mortier, puis fleurissant là pendant des décennies.",
     nativeNote:
       "Un petit cerisier sauvage au parfum sucré des pentes calcaires sèches et des broussailles de Bourgogne, du piémont jurassien et de la vallée du Rhône.",
     careNote:
@@ -199,6 +201,8 @@ export const FRANCE_CONTINENTAL: ProseTable = {
   // France continentale — vivaces, graminées et grimpantes.
   // -------------------------------------------------------------------------
   "Origanum vulgare": {
+    pioneerNote:
+      "Un talus sec et calcaire ou un dessus de mur, c'est là qu'il est le plus heureux ; et en août c'est ce qu'il y a de plus fréquenté du jardin, abeilles et papillons mêlés.",
     nativeNote:
       "L'herbe à fleurs roses des talus calcaires secs, des bords de sentier et des pelouses sèches de tout l'est et le centre de la France.",
     careNote:
@@ -281,6 +285,8 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     },
   },
   "Clematis vitalba": {
+    pioneerNote:
+      "Elle recouvre un grillage, un talus de voie ferrée ou un tas de pierres calcaires en une saison. Vigoureuse jusqu'à l'excès : donnez-lui quelque chose que vous voulez cacher.",
     supportNotes: {
       "mason-bees":
         "La clématite fleurit tard et garde son nectar à découvert, si bien que les petites abeilles solitaires encore en vol en septembre l'atteignent toutes.",
@@ -419,6 +425,8 @@ export const FRANCE_CONTINENTAL: ProseTable = {
   // d'après la fiche continentale — chacune est complète pour cette région.
   // -------------------------------------------------------------------------
   "Salix caprea@france-continental": {
+    pioneerNote:
+      "Il démarre sur les déblais de carrière et les remblais de bord de route en deux ou trois saisons, et s'enracine d'une bouture enfoncée directement dans la terre.",
     nativeNote:
       "Le saule qui s'installe tout seul dans chaque trouée humide, chaque lisière et chaque coin abandonné de l'est de la France — celui dont les bourgeons argentés s'ouvrent en chatons jaunes en mars.",
     careNote:
@@ -441,6 +449,8 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     },
   },
   "Betula pendula@france-continental": {
+    pioneerNote:
+      "Il se ressème dans le ballast des voies ferrées, les gravières et le béton fendu d'une cour, et c'est souvent le premier arbre d'un terrain que personne n'a planté.",
     nativeNote:
       "Le pionnier à écorce blanche des sols sableux, acides et pauvres de tout l'est — le premier arbre dans une clairière, et celui qui héberge le plus de chenilles après le saule et le chêne.",
     careNote:
@@ -563,6 +573,8 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     },
   },
   "Hedera helix@france-continental": {
+    pioneerNote:
+      "La seule réponse à un mur nu exposé au nord et à l'ombre sèche sous une haie ; il part d'une fissure et fleurit tard, pour les insectes d'automne.",
     nativeNote:
       "Indigène ici et partout dans l'est — sur le tronc des vieux chênes, par-dessus les murs de jardin, le long du pied ombragé de chaque haie — et la dernière plante de toute la région encore en fleur en novembre.",
     careNote:
@@ -585,6 +597,8 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     },
   },
   "Plantago lanceolata@france-continental": {
+    pioneerNote:
+      "Il tient le sol tassé et fauché d'un accotement ou d'un bord de cour, et il y nourrit les chenilles de plusieurs mélitées.",
     nativeNote:
       "La rosette nervurée de chaque chemin, chaque pelouse et chaque prairie de l'est — si ordinaire que personne ne la plante exprès, et l'une des plantes les plus mangées par les chenilles en Europe.",
     careNote:
@@ -645,6 +659,8 @@ export const FRANCE_CONTINENTAL: ProseTable = {
       "Divisez une vieille souche au printemps, en gardant sur chaque morceau plusieurs frondes et une poignée de racines. Par les spores, laissez un jour un morceau de fronde mûre dans une enveloppe de papier, répandez la poussière tombée sur un terreau stérilisé humide, sous couvercle, et gardez-le au frais et à mi-ombre pendant des mois.",
   },
   "Asplenium scolopendrium@france-continental": {
+    pioneerNote:
+      "Elle pousse dans le vieux mortier à l'ombre — un joint de mur, un puits, le côté ombragé d'un pont — et garde ses frondes en lanières tout l'hiver.",
     nativeNote:
       "La fougère qui ne ressemble à aucune fougère — des frondes entières, luisantes, en forme de lanière, sur le calcaire ombragé, les parois de puits et le pied humide des haies de tout l'est.",
     careNote:

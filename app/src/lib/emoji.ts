@@ -102,6 +102,15 @@ const MEANING: Record<string, TKey> = {
   "🔄": "emoji.reload",
   "🌐": "emoji.language",
   "🚧": "emoji.unfinished",
+  // The pavement-pioneer labels (`data/pioneers.ts`). Each one names the abuse
+  // it stands for, not the picture: 🧂 is "road salt", not "salt shaker".
+  "🧱": "emoji.hardGround",
+  "👣": "emoji.packedGround",
+  "🪨": "emoji.rubble",
+  "🕳": "emoji.cracks",
+  "🧂": "emoji.roadSalt",
+  "🏜": "emoji.noWatering",
+  "🚜": "emoji.bareGround",
   "🕵": "emoji.lookalike",
   "🚫": "emoji.no",
   "🛑": "emoji.poorFit",

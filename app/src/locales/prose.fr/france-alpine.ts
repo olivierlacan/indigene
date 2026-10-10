@@ -118,6 +118,8 @@ export const FRANCE_ALPINE: ProseTable = {
       "Très lent par les deux voies. Prélevez des pousses en voie d'aoûtement en fin d'été et faites-les raciner sous abri dans un mélange de sable et de tourbe sans calcaire, en comptant attendre près d'un an. Les branches basses couchées au sol s'enracinent d'elles-mêmes et se détachent ensuite.",
   },
   "Alnus alnobetula": {
+    pioneerNote:
+      "Il prend les éboulis bruts, les couloirs d'avalanche et les talus de route au-dessus de la limite des arbres, en fixant son propre azote dans un sol qui n'en a pas.",
     nativeNote:
       "L'aulne bas et dense des couloirs d'avalanche, des ravins humides et de la broussaille de la limite des arbres, dans toutes les Alpes. Longtemps connu sous le nom d'Alnus viridis.",
     careNote:
@@ -150,6 +152,8 @@ export const FRANCE_ALPINE: ProseTable = {
   // Les Alpes françaises — vivaces, graminées et couvre-sols.
   // -------------------------------------------------------------------------
   "Anthyllis vulneraria": {
+    pioneerNote:
+      "On s'en sert pour reverdir pistes de ski et accotements dans les Alpes, parce qu'elle s'installe dans le gravier nu et y fabrique son propre azote.",
     nativeNote:
       "Une légumineuse aux feuilles soyeuses des pâturages alpins pierreux, des bords d'éboulis et des pelouses calcaires de toutes les Alpes.",
     careNote:
@@ -206,6 +210,8 @@ export const FRANCE_ALPINE: ProseTable = {
       "Semez la graine fraîche à l'automne en pot laissé dehors — il lui faut un vrai hiver, et une graine conservée germe mal. Les touffes installées se divisent au début du printemps, mais elles boudent un an après.",
   },
   "Dryas octopetala": {
+    pioneerNote:
+      "La pionnière des moraines calcaires brutes — un tapis ras et persistant qui fixe l'azote et retient la pierraille là où il n'y a pas encore de sol.",
     supportNotes: {
       "mason-bees":
         "La dryade tourne sa coupe blanche pour suivre le soleil, et ce creux tiède est là où les abeilles solitaires d'altitude passent une matinée froide.",
@@ -220,6 +226,8 @@ export const FRANCE_ALPINE: ProseTable = {
       "Les pousses en voie d'aoûtement prises en fin d'été s'enracinent sous abri dans un mélange graveleux et calcaire. La graine se sème fraîche en surface à l'automne dans un pot graveleux laissé dehors — il lui faut de la lumière et un hiver rude.",
   },
   "Thymus serpyllum": {
+    pioneerNote:
+      "Un tapis aromatique ras pour une allée de gravier ou un joint de dallage — il supporte qu'on lui marche dessus, et il en sent meilleur.",
     nativeNote:
       "Le serpolet rampant des pelouses alpines sèches, des bords de chemin et des pâturages pierreux de toutes les Alpes.",
     careNote:
@@ -256,6 +264,8 @@ export const FRANCE_ALPINE: ProseTable = {
   // celles-ci, qualifiées par la région, portent la version alpine.
   // -------------------------------------------------------------------------
   "Betula pendula@france-alpine": {
+    pioneerNote:
+      "Il se ressème dans les gravières, les terrassements de pistes de ski et les gravats de fond de vallée — premier arbre sur un sol qui était nu l'année d'avant.",
     nativeNote:
       "Un pionnier des clairières montagnardes, des éboulis et des vieux pâturages de toutes les Alpes, sur les sols acides et pauvres.",
     careNote:
@@ -272,6 +282,8 @@ export const FRANCE_ALPINE: ProseTable = {
     },
   },
   "Salix caprea@france-alpine": {
+    pioneerNote:
+      "Il colonise les crassiers et les graviers de torrent, et ses chatons précoces comptent plus ici qu'en plaine : presque rien d'autre n'est ouvert si tôt dans le froid.",
     nativeNote:
       "Le saule marsault, indigène des vallées jusque dans l'étage subalpin — la première chose à coloniser un glissement de terrain ou une clairière.",
     careNote:
@@ -336,6 +348,8 @@ export const FRANCE_ALPINE: ProseTable = {
     },
   },
   "Lotus corniculatus@france-alpine": {
+    pioneerNote:
+      "La fleur jaune en pois des accotements tassés et des parkings de gravier, fleurissant sur un sol trop pauvre et trop dur pour une pelouse.",
     nativeNote:
       "La petite légumineuse jaune des pâturages alpins, des bords de route et des gazons ras, des vallées jusque bien au-dessus de la limite des arbres.",
     careNote:
@@ -533,6 +547,8 @@ export const FRANCE_ALPINE: ProseTable = {
       "Semez les spores sur un terreau stérilisé humide, sous couvercle, au frais et à mi-ombre ; les fougères suivent des mois plus tard. Une vieille touffe peut aussi se diviser au printemps.",
   },
   "Asplenium viride": {
+    pioneerNote:
+      "Elle s'enracine dans les fissures calcaires humides et le vieux mortier, à l'ombre — un mur ou un joint de rocher est le seul endroit où elle pousse.",
     nativeNote:
       "Une petite fougère délicate des fissures calcaires ombragées d'altitude — comme la capillaire des murailles des vieux murs, mais à pétiole vert au lieu de noir.",
     careNote:

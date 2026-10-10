@@ -1,0 +1,35 @@
+{
+  "source": "National Audubon Society — Plants for Birds",
+  "url": "https://www.audubon.org/native-plants",
+  "note": "curated = Audubon's own picks for the ZIP; full = every species BONAP records as native to that ZIP's county. The two are different kinds of list and must not be pooled.",
+  "hasFloraTier": true,
+  "region": "ca-south-coast",
+  "scope": [
+    "90042",
+    "92103"
+  ],
+  "harvested": "2026-10-10",
+  "counts": {
+    "ours": 64,
+    "theirPicks": 33,
+    "theirFlora": 267,
+    "oursAmongTheirPicks": 13,
+    "theirPicksWeLack": 20,
+    "generaNewToUs": 13
+  },
+  "generaNewToUs": [
+    "abutilon",
+    "alnus",
+    "aristida",
+    "atriplex",
+    "cirsium",
+    "helianthus",
+    "lycium",
+    "peritoma",
+    "phacelia",
+    "prosopis",
+    "scrophularia",
+    "simmondsia",
+    "sphaeralcea"
+  ]
+}

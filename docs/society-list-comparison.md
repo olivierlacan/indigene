@@ -1,7 +1,7 @@
 # What a society's own list says about ours
 
 `npm run harvest:audubon`, `npm run harvest:wildflower`, then `npm run
-societies`. Run 2026-09-20 against two lists: the **National Audubon Society**'s
+societies`. Run 2026-10-10 against two lists: the **National Audubon Society**'s
 Plants for Birds (ZIP-scoped, with a flora tier) and the **Lady Bird Johnson
 Wildflower Center**'s Recommended Species by state (state-scoped, no flora
 tier).
@@ -33,11 +33,11 @@ its source and what that source can be evidence of.
 
 | Region | Ours | Audubon picks | …we lack | Wildflower picks | …we lack | Ours absent from Audubon's flora |
 |---|---|---|---|---|---|---|
-| Mid-Atlantic | 44 | 159 | 124 | 212 | 180 | 2 |
-| Northern Michigan | 46 | 109 | 75 | 157 | 123 | 1 |
+| Mid-Atlantic | 44 | 149 | 114 | 212 | 180 | 3 |
+| Northern Michigan | 46 | 109 | 75 | 156 | 122 | 1 |
 | N & C Florida | 24 | 65 | 52 | **374** | **354** | 4 |
 | South Florida | 21 | 26 | 18 | 118 | 106 | 5 |
-| Pacific Northwest | 85 | 47 | 17 | 228 | 174 | 38 ⚠ |
+| Pacific Northwest | 106 | 47 | 17 | 228 | 166 | 47 ⚠ |
 | Southern California | 64 | 33 | 20 | 219 | 196 | 39 ⚠ |
 | Central California Coast | 64 | 23 | 12 | **300** | **253** | 43 ⚠ |
 
@@ -54,7 +54,7 @@ Both lists recommend several times what we carry, everywhere:
 - **North & Central Florida is furthest behind** — 24 rows against 374
   recommendations, 222 of them genera the region has never carried.
 - **Central California Coast**: 64 against 300.
-- **Pacific Northwest**: 85 against 228, and this is our longest list.
+- **Pacific Northwest**: 106 against 228, and this is our longest list.
 - **Mid-Atlantic**: 44 against 212, 98 new genera — hornbeam, hickory,
   hackberry, buttonbush, chokeberry, turtlehead.
 
@@ -173,7 +173,7 @@ North & Central Florida* — we carry it one region north and not here.
 ### Pacific Northwest and Central California — nearly nothing
 
 3 and 1 new genera respectively, which says more about the sources than about
-the lists. The PNW's 85 rows already cover 29 of the 29 genera both sources
+the lists. The PNW's 106 rows already cover 29 of the 29 genera both sources
 agree on bar three (nodding onion, harebell, rubber rabbitbrush — and the last
 is an east-side plant we exclude). These two regions are the most complete work
 in the catalog and the benchmarks cannot see past them.

@@ -60,7 +60,7 @@ Three, all found by running it, all of which bound what the comparison can claim
 
 1. **Western coverage is much weaker than eastern.** Their flora for Portland
    and Seattle omits Douglas-fir, ponderosa pine, red-flowering currant and
-   red-osier dogwood — 38 of our 85 PNW rows are absent, against 1 of 46 in
+   red-osier dogwood — 47 of our 106 PNW rows are absent, against 1 of 46 in
    northern Michigan. In the West a miss is evidence about their list, not ours.
 2. **The bird groups on a card are capped at five**, so that field is a sample
    and never a count. Anything that sorts on its length is measuring the cap.

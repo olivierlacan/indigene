@@ -7,14 +7,14 @@
   "scope": [
     "MI"
   ],
-  "harvested": "2026-09-20",
+  "harvested": "2026-10-10",
   "counts": {
     "ours": 46,
-    "theirPicks": 157,
+    "theirPicks": 156,
     "theirFlora": null,
     "oursAmongTheirPicks": 34,
-    "theirPicksWeLack": 123,
-    "generaNewToUs": 83
+    "theirPicksWeLack": 122,
+    "generaNewToUs": 82
   },
   "generaNewToUs": [
     "actaea",
@@ -58,7 +58,6 @@
     "heuchera",
     "hydrophyllum",
     "hypericum",
-    "iris",
     "juglans",
     "juniperus",
     "koeleria",

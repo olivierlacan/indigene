@@ -9,7 +9,7 @@
 
 The first one ([`audubon-plants-for-birds/`](../audubon-plants-for-birds/))
 turned out to be trustworthy in the East and unusable in the West: its flora for
-Portland has no Douglas-fir, and 38 of our 85 PNW rows are absent from it. A
+Portland has no Douglas-fir, and 47 of our 106 PNW rows are absent from it. A
 comparison that cannot run where our lists are longest is not much of a
 comparison.
 

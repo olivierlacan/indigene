@@ -9,14 +9,14 @@
     "17601",
     "20910"
   ],
-  "harvested": "2026-09-20",
+  "harvested": "2026-10-10",
   "counts": {
     "ours": 44,
-    "theirPicks": 159,
-    "theirFlora": 652,
+    "theirPicks": 149,
+    "theirFlora": 607,
     "oursAmongTheirPicks": 35,
-    "theirPicksWeLack": 124,
-    "generaNewToUs": 59
+    "theirPicksWeLack": 114,
+    "generaNewToUs": 58
   },
   "generaNewToUs": [
     "achillea",
@@ -73,7 +73,6 @@
     "spartina",
     "sporobolus",
     "symphoricarpos",
-    "taxodium",
     "tripsacum",
     "ulmus",
     "vitis",

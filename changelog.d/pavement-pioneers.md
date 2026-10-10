@@ -9,9 +9,9 @@
   it. Shown only on the regions where it's documented.
 - Internal: `data/pioneers.ts` is a region → plant id side table beside the
   wildlife and look-alike ones; 127 rows across all 15 regions. The page closes
-  with a nod to Joey Santore's Crime Pays But Botany Doesn't — our name, not
-  his phrase. Nine authorities added to `data/sources.ts`, led by the USFS Fire
-  Effects Information System and the MNHN's Sauvages de ma rue.
+  by recommending Joey Santore's *Concrete Botany*, which is about this exact
+  subject — our name, not his. Nine authorities added to `data/sources.ts`, led
+  by the USFS Fire Effects Information System and the MNHN's Sauvages de ma rue.
 - Internal: `lib/traits.ts`'s `traitsFor()` takes an optional region, because
   the pioneer label is a claim about one region's conditions; a caller without
   one never gets it. `check-prose.mjs` counts `pioneerNote`, so a region can no

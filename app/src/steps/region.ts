@@ -22,11 +22,11 @@ import { wildlifeRegionGroups } from "../components/wildlife-chips";
 import { wildlifeIndex } from "../lib/wildlife";
 import { pioneerCard } from "../components/pioneer-card";
 import { pioneersForRegion, pioneerCountForRegion } from "../lib/pioneers";
-import { PIONEER_ICON } from "../data/pioneers";
+import { PIONEER_ICON, CONCRETE_BOTANY_URL } from "../data/pioneers";
 import { regionRefLine, zoneChip } from "../components/zone-chip";
 import { regionBoundaryCard } from "../components/region-boundary";
 import type { Plant, PlantForm } from "../types";
-import { t, tn, fmtNumber, getLang } from "../lib/i18n";
+import { t, tn, tx, fmtNumber, getLang } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionNote, regionReference, localNameCoverage } from "../lib/names";
 import { flagRow } from "../components/flags";
 import { prose } from "../lib/prose";
@@ -248,7 +248,15 @@ function renderPioneers(main: HTMLElement, region: RegionDef, plants: Plant[]): 
     categoryChips(region, plants, PIONEERS_SLUG),
     el("div", { class: "card-grid" },
       picks.map((pick) => pioneerCard(pick, region.meta.id, { full: true }))),
-    el("p", { class: "pioneers-credit" }, t("pioneers.credit")),
+    // The book is a real link, placed by the translator rather than by this
+    // code: `tx` lets French put the title where the sentence wants it.
+    el("p", { class: "pioneers-credit" }, tx("pioneers.credit", {
+      book: el("a", {
+        href: CONCRETE_BOTANY_URL,
+        target: "_blank",
+        rel: "noopener",
+      }, el("cite", {}, t("pioneers.creditBook"))),
+    })),
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate(`regions/${region.meta.id}`) }, t("region.allOfRegion")),
       el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("wildlife.rankForSpot")),

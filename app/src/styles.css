@@ -152,6 +152,7 @@ a {
 .note a:not(.btn),
 .kv a,
 .step-lede a,
+.pioneers-credit a,
 .region-tag a {
   color: inherit;
   text-decoration: underline;
@@ -159,7 +160,7 @@ a {
   text-underline-offset: 2px;
   text-decoration-color: color-mix(in srgb, var(--focus) 55%, transparent);
 }
-:is(.privacy-page > p, .privacy-page > :is(ul, ol) > li, .note, .kv, .step-lede, .region-tag) a:is(:hover, :focus-visible) {
+:is(.privacy-page > p, .privacy-page > :is(ul, ol) > li, .note, .kv, .step-lede, .pioneers-credit, .region-tag) a:is(:hover, :focus-visible) {
   color: var(--focus);
   text-decoration-color: currentColor;
 }
@@ -3582,6 +3583,12 @@ details.weights {
   color: var(--ink-soft);
   border-left: 3px solid #4f5a63;
   padding-left: 0.7rem;
+}
+/* The book's title sits in running text, so it keeps the text's colour with a
+   soft underline — the quiet-link rule. `cite` is the element for a work's
+   title; browsers italicise it, which is what a title wants anyway. */
+.pioneers-credit cite {
+  font-style: italic;
 }
 .lookalike-card .lookalike-head {
   gap: 0.5rem;

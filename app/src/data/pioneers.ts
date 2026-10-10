@@ -13,10 +13,22 @@
 //      ninth candidate is better than one already here, swap it; don't append.
 //
 // "Pavement pioneers" is this repo's own name — nobody else's phrase to get
-// wrong. The page's closing line nods to Joey Santore's Crime Pays But Botany
-// Doesn't for the enthusiasm; he had no part in the list, and the credit must
-// not drift into implying he did.
+// wrong, and deliberately not his book's title, which would be taking
+// something rather than nodding at it.
+//
+// The page's closing line points at that book instead: Joey Santore's
+// `Concrete Botany: The Ecology of Plants in the Age of Human Disturbance`
+// (Cool Springs Press, 2026) is about this layer's exact subject — what still
+// grows in ground people have wrecked. He had no part in this list, so the
+// credit recommends his work and never speaks for him. Keep it that way.
+//
+// Linked to his own site rather than a bookshop: a recommendation should send
+// a reader to the person, not to a retailer.
 import type { PioneerEntry, PioneerPressure } from "../types";
+
+/** Joey Santore's own site, where `Concrete Botany` lives. See the note above
+ *  for why this link is to him and not to a bookshop. */
+export const CONCRETE_BOTANY_URL = "https://www.crimepaysbutbotanydoesnt.com/";
 
 /**
  * The pressures, in the order they're shown wherever several appear together.

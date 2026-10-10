@@ -926,14 +926,13 @@ p.more-link a {
   animation: boot-fade 0.6s ease-out 0.1s both;
 }
 .boot-sprout {
-  font-size: 2.75rem;
-  line-height: 1;
   margin-bottom: 0.5rem;
 }
-.boot-sprout span {
-  display: inline-block;
-  transform-origin: 50% 90%;
-  animation: boot-sway 2.4s ease-in-out infinite;
+/* The router's loader (components/page-loader.ts) waits a beat longer before
+   it shows: most pages draw well inside it, and a flash of seedling between
+   two pages would read as a stutter. */
+.page-loader {
+  animation-delay: 0.35s;
 }
 .boot-line {
   margin: 0;
@@ -963,17 +962,119 @@ p.more-link a {
     transform: none;
   }
 }
-@keyframes boot-sway {
-  0%,
-  100% {
-    transform: rotate(-6deg) scale(1);
+
+/* The growing seedling, shared by the boot screen and the page loader. One
+   3.6 s cycle, in order: the stem rises out of the soil, the leaves unfurl, the
+   coneflower opens, it sways a moment, then it all folds back down. Every part
+   rests fully grown, so with the motion turned off it's simply a plant. */
+.grow {
+  width: 4.5rem;
+  height: 4.5rem;
+  overflow: visible;
+  --grow-t: 3.6s;
+}
+.grow-soil {
+  fill: var(--accent);
+  opacity: 0.55;
+}
+.grow-stem {
+  fill: none;
+  stroke: var(--brand);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  animation: grow-stem var(--grow-t) ease-in-out infinite;
+}
+.grow-leaf {
+  fill: var(--brand);
+  transform-box: fill-box;
+  animation: grow-leaf var(--grow-t) ease-out infinite;
+}
+.grow-leaf-l {
+  transform-origin: 100% 60%;
+  animation-delay: 0.05s;
+}
+.grow-leaf-r {
+  transform-origin: 0% 70%;
+  animation-delay: 0.25s;
+}
+.grow-bloom {
+  fill: #c86aa0; /* purple coneflower */
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: grow-bloom var(--grow-t) cubic-bezier(0.3, 1.5, 0.6, 1) infinite;
+}
+.grow-heart {
+  fill: #c97c1c;
+}
+.grow-plant {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: grow-sway var(--grow-t) ease-in-out infinite;
+}
+@media (prefers-color-scheme: dark) {
+  .grow-bloom {
+    fill: #e39ac3;
   }
-  50% {
-    transform: rotate(6deg) scale(1.06);
+  .grow-heart {
+    fill: #e8a94a;
+  }
+}
+@keyframes grow-stem {
+  0% {
+    stroke-dashoffset: 1;
+  }
+  30%,
+  86% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 1;
+  }
+}
+@keyframes grow-leaf {
+  0%,
+  18% {
+    transform: scale(0) rotate(-25deg);
+  }
+  40%,
+  84% {
+    transform: none;
+  }
+  96%,
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes grow-bloom {
+  0%,
+  36% {
+    transform: scale(0) rotate(-60deg);
+  }
+  56%,
+  82% {
+    transform: none;
+  }
+  94%,
+  100% {
+    transform: scale(0) rotate(30deg);
+  }
+}
+@keyframes grow-sway {
+  0%,
+  56%,
+  100% {
+    transform: none;
+  }
+  66% {
+    transform: rotate(-4deg);
+  }
+  76% {
+    transform: rotate(3deg);
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .boot-sprout span {
+  .grow * {
     animation: none !important;
   }
 }

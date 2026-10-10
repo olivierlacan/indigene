@@ -43,6 +43,7 @@ import { renderTraits } from "./steps/traits";
 import { renderImport } from "./steps/import";
 import { initAppMenu, closeAppMenu } from "./components/app-menu";
 import { initPullToReload } from "./components/pull-to-reload";
+import { holdWithLoader } from "./components/page-loader";
 import { watchRestore } from "./lib/restore";
 import { closeTermDialog } from "./components/term-dialog";
 import { closeLightbox } from "./components/lightbox";
@@ -415,8 +416,15 @@ async function route(): Promise<void> {
   const result = fn(main, param);
   if (typeof result === "function") cleanup = result;
   else if (result instanceof Promise) {
-    const r = await result;
-    if (typeof r === "function") cleanup = r;
+    // A page that emptied `main` and is now waiting on a fetch shows the
+    // growing seedling until it draws, instead of a blank screen.
+    const release = holdWithLoader(main);
+    try {
+      const r = await result;
+      if (typeof r === "function") cleanup = r;
+    } finally {
+      release();
+    }
   }
   // The loading screen from index.html. Every page clears `main` before it
   // draws, which takes it with it; this is for one that someday doesn't.

@@ -48,6 +48,9 @@ export const fr: Dict = {
   "pullToReload.pull": "Tirez pour recharger",
   "pullToReload.release": "Relâchez pour recharger",
   "pullToReload.reloading": "Rechargement…",
+  "loader.loading": "Chargement…",
+  "loader.late": "Ce qui pousse bien prend son temps.",
+  "loader.later": "La connexion semble lente. Ça arrive.",
   "footer.text":
     "Indigene est {repo} et {sources}.",
   "footer.repo": "libre",

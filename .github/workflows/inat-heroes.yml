@@ -37,6 +37,11 @@ on:
       # A reviewed pick removed leaves a gap this tier should fill.
       - app/src/data/hero-photos.json
       - app/src/data/wildlife-photos.json
+      # A change to the rule, or to the queue it writes, is reported too.
+      - app/scripts/inat-heroes.mjs
+      - app/scripts/_inat-hero-pick.mjs
+      - docs/hero-photos/needs-review.json
+      - .github/workflows/inat-heroes.yml
   workflow_dispatch:
   schedule:
     - cron: "0 7 * * 1" # 07:00 UTC Mondays

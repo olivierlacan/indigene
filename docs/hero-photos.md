@@ -47,6 +47,11 @@ Three details worth knowing:
   a close-up of persimmon seeds at the top of its page. A better picture from the
   gallery is for a person to pick, through the review above. In October 2026 this
   cleared 130 of 588 subjects.
+  Every one of them is listed, with the reason and a link to its gallery, in
+  `docs/hero-photos/needs-review.json`. The review page puts them first, and
+  `npm run hero:harvest -- --queue` harvests candidates for just those. A PR that
+  adds to the list gets a pinned comment naming each one, and a warning on its
+  `Fill gaps` check.
 - **A taxon photo has no sighting behind it.** No place, no date, no observer
   account — iNaturalist names the photographer, who may never have had one. So
   the lightbox prints the name as plain text and links "View original photo"

@@ -9,3 +9,8 @@
   picks cleared across the four `inat-*.json` files; 18 swapped to iNaturalist's
   current choice. Rule and test in `_inat-hero-pick.mjs` /
   `inat-hero-pick.test.ts`.
+- Internal: subjects left without a chosen photo are queued in
+  `docs/hero-photos/needs-review.json`. The review page lists them first,
+  `hero:harvest -- --queue` harvests just them (a narrowed harvest now merges
+  instead of overwriting), and `inat-heroes.yml` pins a PR comment and warns
+  whenever a PR adds to the queue.

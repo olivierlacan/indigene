@@ -48,7 +48,7 @@
 // taxon page opens with is ever taken; if we can't republish it, the subject
 // keeps its drawing. Why not the next photo in the gallery is in
 // `_inat-hero-pick.mjs` — the short answer is persimmon seeds.
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { openLoader } from "./_load-ts.mjs";
@@ -150,6 +150,48 @@ for (const path of new Set(Object.values(OUT))) {
   stored[path] = existsSync(path) ? readJson(path) : {};
 }
 const storedFor = (job) => stored[OUT[job.subject]];
+// One table per output file, starting from what is already committed there.
+const picks = Object.fromEntries(Object.entries(stored).map(([path, table]) => [path, { ...table }]));
+
+// The subjects whose taxon page opens with a photo we can't republish. Not read
+// by the app: it is the list a person works through, and the list a pull request
+// is loud about (`.github/workflows/inat-heroes.yml`). A subject leaves it the
+// moment it has a picture somebody chose — a reviewed pick, or iNaturalist's own
+// once it becomes republishable.
+const QUEUE = resolve(HERE, "../../docs/hero-photos/needs-review.json");
+const queued = existsSync(QUEUE) ? readJson(QUEUE).subjects ?? [] : [];
+const queueKey = (j) => `${j.subject}|${j.id}`;
+
+/** Rewrite the queue: what this run refused, plus what an earlier run queued
+ *  that this run didn't ask about and that still has no picture. */
+function writeQueue(asked, refusals) {
+  const inCatalog = new Set(jobs.map(queueKey));
+  const next = new Map();
+  for (const q of queued) {
+    const key = queueKey(q);
+    if (!inCatalog.has(key) || asked.has(key)) continue;
+    if (reviewed[q.subject][q.id] || picks[OUT[q.subject]][q.id]) continue;
+    next.set(key, q);
+  }
+  for (const r of refusals) next.set(queueKey(r), r);
+  const subjects = [...next.values()].sort((a, b) => queueKey(a).localeCompare(queueKey(b)));
+  mkdirSync(dirname(QUEUE), { recursive: true });
+  writeFileSync(
+    QUEUE,
+    JSON.stringify(
+      {
+        about:
+          "Subjects with no photo anyone chose: iNaturalist's own pick for the taxon can't be republished, " +
+          "so the app shows the drawing. Pick one on the review page (npm run hero:harvest -- --queue, then " +
+          "npm run hero:review). Written by npm run hero:inat.",
+        subjects,
+      },
+      null,
+      2,
+    ) + "\n",
+  );
+  return subjects;
+}
 
 // One job per subject — not per subject *and region*, which is the whole
 // difference from the harvester. iNaturalist shows one photograph per taxon
@@ -213,6 +255,7 @@ console.log(
     `${skipped.stored} already stored · ${todo.length} to ask about`,
 );
 if (!todo.length) {
+  if (!dryRun) writeQueue(new Set(), []);
   console.log("Nothing to do (--force to refetch what's stored).");
   process.exit(0);
 }
@@ -236,13 +279,31 @@ async function askJson(url) {
 
 const problems = [];
 
+// What this run settled, for the review queue: a refusal is a verdict, a
+// network failure is not, so only the first counts as "asked".
+const asked = new Set();
+const refusals = [];
+const queueEntry = (job, reason) => ({
+  subject: job.subject,
+  id: job.id,
+  name: job.name,
+  taxonId: job.taxonId ?? null,
+  reason,
+  // The gallery a reviewer would pick from, in iNaturalist's own order.
+  gallery: job.taxonId ? `https://www.inaturalist.org/taxa/${job.taxonId}/browse_photos` : null,
+});
+
 // Stage one: give every subject that has only a name a taxon id — the animals
 // and the impostors — the same way the page does.
 for (const job of todo.filter((j) => j.scope)) {
   try {
     const data = await askJson(buildTaxaUrl(job.scope.name, job.scope.iconic));
     job.taxonId = pickTaxon(data?.results, job.scope.name) ?? undefined;
-    if (!job.taxonId) problems.push({ id: job.id, error: `no iNaturalist taxon for "${job.name}"` });
+    if (!job.taxonId) {
+      problems.push({ id: job.id, error: `no iNaturalist taxon for "${job.name}"` });
+      refusals.push(queueEntry(job, `no iNaturalist taxon for "${job.name}"`));
+      asked.add(queueKey(job));
+    }
   } catch (err) {
     problems.push({ id: job.id, error: err.message });
   }
@@ -272,8 +333,6 @@ for (let i = 0; i < ids.length; i += BATCH) {
   await sleep(PACE_MS);
 }
 
-// One table per output file, starting from what is already committed there.
-const picks = Object.fromEntries(Object.entries(stored).map(([path, table]) => [path, { ...table }]));
 const touched = new Set();
 const report = { taken: 0, cleared: 0, none: 0 };
 for (const [taxonId, jobsForTaxon] of byTaxon) {
@@ -291,6 +350,10 @@ for (const [taxonId, jobsForTaxon] of byTaxon) {
       // A pick stored by an earlier rule is not grandfathered in: if the answer
       // today is "nothing", the file says nothing. (A taxon that simply didn't
       // come back is a network answer, not a verdict, so it keeps its pick.)
+      if (pick) {
+        asked.add(queueKey(job));
+        refusals.push(queueEntry(job, pick.refused));
+      }
       if (pick && picks[path][job.id]) {
         delete picks[path][job.id];
         report.cleared++;
@@ -298,6 +361,7 @@ for (const [taxonId, jobsForTaxon] of byTaxon) {
       }
       continue;
     }
+    asked.add(queueKey(job));
     const record = { ...pick };
     report.taken++;
     // A colour already computed for this exact photograph is still true.
@@ -317,9 +381,14 @@ for (const path of touched) {
   console.log(`\nwrote ${path.replace(resolve(HERE, "../.."), ".")} — ${Object.keys(sorted).length} subjects`);
 }
 
+const queue = writeQueue(asked, refusals);
 console.log(
   `  ${report.taken} photographs · ${report.none} whose chosen photo we can't republish` +
     (report.cleared ? ` · ${report.cleared} earlier picks cleared` : ""),
+);
+console.log(
+  `\n${queue.length} waiting for a person to choose a photo → ` +
+    `${QUEUE.replace(resolve(HERE, "../.."), ".")}`,
 );
 if (problems.length) {
   console.log(`\n${problems.length} without a photograph:`);

@@ -1970,8 +1970,8 @@ export const fr: Dict = {
   "privacy.svc.meteo.for":
     "votre climat — la pluie et la rigueur des hivers ; et la conversion d'un code postal ou d'une commune en un point sur la carte",
   "privacy.svc.meteo.sent": "des coordonnées, ou le nom de lieu que vous avez saisi",
-  "privacy.svc.osm.for": "le nom de la commune la plus proche (affiché à la place des chiffres bruts), et l'image de la carte",
-  "privacy.svc.osm.sent": "des coordonnées",
+  "privacy.svc.osm.for": "le nom de la commune la plus proche (affiché à la place des chiffres bruts), la recherche d'un code postal, et l'image de la carte",
+  "privacy.svc.osm.sent": "des coordonnées, ou le code postal que vous avez saisi",
   "privacy.svc.soil.for": "le type de votre sol et son acidité",
   "privacy.svc.soil.sent": "des coordonnées",
   "privacy.svc.usgs.for": "votre altitude et votre pente",

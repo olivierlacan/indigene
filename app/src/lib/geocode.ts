@@ -1,5 +1,6 @@
 // Place search: town / ZIP / postal code → coordinates, via the Open-Meteo
-// geocoding API (GeoNames-backed). Chosen to match the app's other lookups:
+// geocoding API (GeoNames-backed), with postal codes going to Nominatim first
+// (see `searchPlaces`). Chosen to match the app's other lookups:
 // no API key, CORS-enabled from a static PWA, CC BY 4.0 data, and the same
 // provider we already trust for climate normals. It resolves towns and postal
 // codes — not street addresses — which is exactly the precision the rest of
@@ -30,28 +31,126 @@ export function placeLabel(p: GeoPlace): string {
 /**
  * Search for a place. Resolves to matches (possibly empty); rejects only on
  * network failure, so callers can tell "no such place" from "no signal".
+ *
+ * Postal codes aren't unique worldwide: 33812 is Lakeland, Florida and a
+ * village in Asturias. Open-Meteo matched only the Spanish one — its GeoNames
+ * index is missing many US ZIPs — and listed every village sharing the code.
+ * So a query shaped like a postal code asks Nominatim's postal-code search,
+ * which answers once per country, and falls back to Open-Meteo. Either way the
+ * reader's own country comes first (`rankPlaces`).
  */
 export async function searchPlaces(query: string): Promise<GeoPlace[]> {
+  const q = query.trim();
+  let places: GeoPlace[] = [];
+  if (isPostalQuery(q)) {
+    // Best-effort: on failure or no match, Open-Meteo still gets its turn.
+    places = await searchPostalCode(q).catch(() => []);
+  }
+  if (!places.length) places = await searchOpenMeteo(q);
+  return rankPlaces(places, readerCountry(), -new Date().getTimezoneOffset());
+}
+
+async function searchOpenMeteo(q: string): Promise<GeoPlace[]> {
   const url =
-    `${GEOCODE_URL}?name=${encodeURIComponent(query.trim())}` +
+    `${GEOCODE_URL}?name=${encodeURIComponent(q)}` +
     `&count=6&language=en&format=json`;
+  const data = await getJson(url);
+  const results: any[] = Array.isArray(data?.results) ? data.results : [];
+  return results
+    .filter((r) => typeof r?.latitude === "number" && typeof r?.longitude === "number")
+    .map((r) => ({
+      name: str(r.name) ?? "(unnamed place)",
+      admin1: str(r.admin1),
+      country: str(r.country),
+      countryCode: str(r.country_code)?.toUpperCase() ?? null,
+      lat: r.latitude,
+      lon: r.longitude,
+    }));
+}
+
+// Nominatim's structured postal-code search: one centroid per country that
+// uses the code. One request per explicit search, never autocomplete — within
+// the Nominatim usage policy, like `nearestPlaceName` below.
+const SEARCH_URL = "https://nominatim.openstreetmap.org/search";
+
+async function searchPostalCode(q: string): Promise<GeoPlace[]> {
+  const url =
+    `${SEARCH_URL}?postalcode=${encodeURIComponent(q)}` +
+    `&format=jsonv2&addressdetails=1&limit=10&accept-language=en`;
+  return parsePostalResults(await getJson(url));
+}
+
+/** Nominatim postal-code results → places, named by their town or county. */
+export function parsePostalResults(data: unknown): GeoPlace[] {
+  const rows: any[] = Array.isArray(data) ? data : [];
+  return rows.flatMap((r) => {
+    const lat = Number(r?.lat);
+    const lon = Number(r?.lon);
+    if (!Number.isFinite(lat) || !Number.isFinite(lon)) return [];
+    const a = r?.address ?? {};
+    const town =
+      str(a.city) ?? str(a.town) ?? str(a.village) ?? str(a.suburb) ??
+      str(a.hamlet) ?? str(a.municipality) ?? str(a.county);
+    return [{
+      name: town ?? str(a.postcode) ?? str(r?.name) ?? "(unnamed place)",
+      admin1: str(a.state) ?? str(a.region),
+      country: str(a.country),
+      countryCode: str(a.country_code)?.toUpperCase() ?? null,
+      lat,
+      lon,
+    }];
+  });
+}
+
+/** Short, has a digit, only letters, digits, spaces and dashes: "33812",
+ *  "SW1A 1AA", "H2X 1Y4", "75-011". A town name almost never fits. */
+export function isPostalQuery(q: string): boolean {
+  const t = q.trim();
+  return t.length >= 3 && t.length <= 10 && /\d/.test(t) && /^[A-Za-z0-9][A-Za-z0-9 -]*$/.test(t);
+}
+
+/** The country in the reader's browser language ("en-US" → "US"), if any. */
+export function readerCountry(
+  tags: readonly string[] = typeof navigator === "undefined"
+    ? []
+    : navigator.languages?.length ? navigator.languages : [navigator.language],
+): string | null {
+  for (const tag of tags) {
+    const region = tag?.split("-").slice(1).find((p) => /^[A-Za-z]{2}$/.test(p));
+    if (region) return region.toUpperCase();
+  }
+  return null;
+}
+
+/**
+ * The reader's own country first, then the rest by how close they sit to the
+ * reader's time zone (an hour is 15° of longitude). Both are read on the
+ * device; nothing is looked up. Stable, so equal places keep the service's order.
+ */
+export function rankPlaces(
+  places: GeoPlace[],
+  country: string | null,
+  utcOffsetMinutes: number,
+): GeoPlace[] {
+  const lonGuess = utcOffsetMinutes / 4;
+  const away = (p: GeoPlace) => {
+    const d = Math.abs(p.lon - lonGuess) % 360;
+    return Math.min(d, 360 - d);
+  };
+  const home = (p: GeoPlace) => (country && p.countryCode === country ? 0 : 1);
+  return places
+    .map((p, i) => ({ p, i }))
+    .sort((x, y) => home(x.p) - home(y.p) || away(x.p) - away(y.p) || x.i - y.i)
+    .map(({ p }) => p);
+}
+
+async function getJson(url: string): Promise<any> {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
   try {
     const res = await fetch(url, { signal: ctrl.signal });
     if (!res.ok) throw new Error(`${res.status}`);
-    const data = await res.json();
-    const results: any[] = Array.isArray(data?.results) ? data.results : [];
-    return results
-      .filter((r) => typeof r?.latitude === "number" && typeof r?.longitude === "number")
-      .map((r) => ({
-        name: str(r.name) ?? "(unnamed place)",
-        admin1: str(r.admin1),
-        country: str(r.country),
-        countryCode: str(r.country_code)?.toUpperCase() ?? null,
-        lat: r.latitude,
-        lon: r.longitude,
-      }));
+    return await res.json();
   } finally {
     clearTimeout(timer);
   }

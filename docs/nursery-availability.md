@@ -102,3 +102,9 @@ resolved **none**. Two fixes, both now pinned by tests:
 Ecwid writes its JSON-LD only after the page's script runs, so a plain fetch
 sees nothing; `npm run availability:live` renders pages in Chromium to read a
 real store through the same code.
+
+A 15-page sample on 2026-10-10 resolved 5 with stock and price, refused 2
+cultivars and reported 8 species the registry lacks. Two misses are ours:
+*Mahonia aquifolium* isn't matched to the registry's *Berberis aquifolium*
+(no synonyms yet), and a lowercase genus ("sisyrinchium idahoense") is
+reported as "Idaho blue-eyed".

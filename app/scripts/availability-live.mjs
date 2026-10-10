@@ -9,6 +9,7 @@
 //
 // It renders each page in Chromium because GoNatives, an Ecwid store, only
 // writes its schema.org JSON-LD after the page's script runs.
+import { existsSync } from "node:fs";
 import { chromium } from "playwright";
 import { openLoader } from "./_load-ts.mjs";
 
@@ -55,7 +56,9 @@ const ctx = {
   onUnresolved: (u) => unresolved.push(u),
 };
 
-const browser = await chromium.launch({ headless: true });
+// The container's preinstalled Chromium, as the other browser scripts use it.
+const prebuilt = "/opt/pw-browsers/chromium";
+const browser = await chromium.launch(existsSync(prebuilt) ? { executablePath: prebuilt } : {});
 const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
 const resolved = [];
 let errors = 0;

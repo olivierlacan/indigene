@@ -52,6 +52,10 @@ export const en = {
   "pullToReload.pull": "Pull to reload",
   "pullToReload.release": "Release to reload",
   "pullToReload.reloading": "Reloading…",
+  // The page loader: the first line at once, the others only if the wait runs long.
+  "loader.loading": "Loading…",
+  "loader.late": "Good things take time to grow.",
+  "loader.later": "The connection seems slow. Still on its way.",
   "footer.text":
     "Indigene is {repo} and {sources}.",
   "footer.repo": "open source",

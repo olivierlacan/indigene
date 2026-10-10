@@ -261,7 +261,6 @@ export const fr: Dict = {
   "welcome.openSaved.other": "Ouvrir les lieux enregistrés ({n})",
   "film.title": "Indigene, le film",
   "film.play": "Voir le film (1 min)",
-  "film.note": "Rien ne se charge depuis l'hébergeur vidéo avant que vous lanciez la lecture.",
   "film.lede": "Ce que fait Indigene, et pour qui, en une minute.",
   "film.share": "Partager le film",
   "film.shareText": "Des plantes indigènes pour l'endroit exact où vous êtes, en un film d'une minute :",

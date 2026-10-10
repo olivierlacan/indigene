@@ -6275,9 +6275,6 @@ body[data-layout="profile"] .wip-banner-text {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
 }
-.film figcaption {
-  margin-top: 0.5rem;
-}
 @media (prefers-reduced-motion: reduce) {
   .film-poster {
     transition: none;

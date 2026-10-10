@@ -245,7 +245,6 @@ export const en = {
   "welcome.openSaved.other": "Open saved spots ({n})",
   "film.title": "Indigene, the film",
   "film.play": "Watch the 1-minute film",
-  "film.note": "Nothing loads from the video host until you press play.",
   "film.lede": "What Indigene does and who it's for, in one minute.",
   "film.share": "Share the film",
   "film.shareText": "Native plants for exactly where you stand, in a one-minute film:",

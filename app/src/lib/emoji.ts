@@ -72,6 +72,7 @@ const MEANING: Record<string, TKey> = {
   "🚩": "emoji.invasive",
   "📍": "emoji.place",
   "📚": "emoji.reading",
+  "🌍": "emoji.worldwide",
   "▶": "emoji.video",
   "🗺": "emoji.map",
   "☀": "emoji.sun",

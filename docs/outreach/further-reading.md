@@ -80,6 +80,32 @@ browser.
   would break the second test. Theodore Payne and Wild Ones run channels; add
   them when their counts are confirmed.
 
+## Worldwide: the ideas behind Indigene
+
+`WORLD_READING` opens `#/reading`. It is for casual reading. The studies stay
+on the pages that cite them (Native, Homegrown, Sources), and the list links
+there. Each pick carries one line, in both languages, on what it gives an
+Indigene reader. The test refuses a pick without one.
+
+| Pick | Evidence |
+|---|---|
+| Tallamy, *Nature's Best Hope* | Wild Ones Western PA reading list; AHS B.Y. Morrison Award (author) |
+| Homegrown National Park | Garden Club of America; 52,000 registered gardens (Sept 2026) |
+| Kimmerer, *Braiding Sweetgrass* | Wild Ones Front Range; MacArthur Fellowship (author); 2M+ copies, 20 languages |
+| Goulson, *The Garden Jungle* | Clarivate Award for Communicating Zoology 2020 |
+| Rainer & West, *Planting in a Post-Wild World* | AHS Book Award 2016; Wild Ones Western PA |
+| Thompson, *Where Do Camels Belong?* | RHS Veitch Medal (author). The skeptic's side, on purpose |
+| iNaturalist | 4.48M observers (its own API, 2026-10-10) |
+
+Turned away for the worldwide list: *Wilding* (shortlisted, not awarded; the
+children's edition won), Tassin's *La grande invasion* (its only evidence is a
+critical review, and the Native page already cites it), GBIF (a data portal
+rather than reading, and on the Sources page), Kew's Plants of the World Online
+(no evidence of use found), Tallamy's *The Nature of Oaks* and Xerces'
+*Attracting Native Pollinators* (North America only), and Pollan's "Against
+Nativism" (it treats native gardening itself as suspect). There is no French
+pick yet. Videos are missing for want of a view count we could verify.
+
 ## Turned away
 
 | Candidate | Reason |

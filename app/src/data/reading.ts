@@ -75,7 +75,7 @@ export interface Reading {
 }
 
 /** Translated via `reading.audience.<unit>`. */
-export type AudienceUnit = "subscribers" | "followers" | "members" | "gardens";
+export type AudienceUnit = "subscribers" | "followers" | "members" | "gardens" | "observers";
 
 // --- Shared picks: one book or site that serves several regions is written
 // once, so its evidence can't drift between copies.
@@ -631,7 +631,90 @@ export const READING: Record<string, Reading[]> = {
  *  is built on — native plants feeding native insects, the lawn we could give
  *  back, and the argument over what "native" should mean. Casual reading
  *  first; the studies themselves are cited on the pages that use them. */
-export const WORLD_READING: Reading[] = [];
+export const WORLD_READING: Reading[] = [
+  {
+    kind: "book",
+    title: "Nature's Best Hope",
+    by: "Douglas W. Tallamy",
+    year: 2020,
+    url: "https://www.hachettebookgroup.com/titles/douglas-w-tallamy/natures-best-hope/9781604699005/",
+    lang: "en",
+    backer: "ecologist",
+    why: "naturesBestHope",
+    vouched: [{ name: "Wild Ones Western Pennsylvania", url: "https://westernpa.wildones.org/reading-list/" }],
+    award: { name: "AHS B.Y. Morrison Communication Award 2018", toAuthor: true },
+  },
+  {
+    kind: "site",
+    title: "Homegrown National Park",
+    by: "Douglas W. Tallamy and Michelle Alfandari",
+    url: "https://homegrownnationalpark.org/",
+    lang: "en",
+    backer: "ecologist",
+    why: "homegrown",
+    vouched: [{ name: "Garden Club of America", url: "https://www.gcamerica.org/news/get/id/3427" }],
+    audience: { count: 52000, unit: "gardens", asOf: "2026-09" },
+  },
+  {
+    kind: "book",
+    title: "Braiding Sweetgrass",
+    by: "Robin Wall Kimmerer",
+    year: 2013,
+    url: "https://milkweed.org/braiding",
+    lang: "en",
+    backer: "botanist",
+    why: "sweetgrass",
+    vouched: [{ name: "Wild Ones Front Range", url: "https://frontrange.wildones.org/resources/book-list/" }],
+    award: { name: "MacArthur Fellowship 2022", toAuthor: true },
+  },
+  {
+    kind: "book",
+    title: "The Garden Jungle",
+    by: "Dave Goulson",
+    year: 2019,
+    url: "https://www.penguin.co.uk/books/439007/the-garden-jungle-by-dave-goulson/9781784709914",
+    lang: "en",
+    backer: "ecologist",
+    why: "gardenJungle",
+    award: { name: "Clarivate Award for Communicating Zoology 2020" },
+  },
+  {
+    kind: "book",
+    title: "Planting in a Post-Wild World",
+    by: "Thomas Rainer and Claudia West",
+    year: 2015,
+    url: "https://www.hachettebookgroup.com/titles/thomas-rainer/planting-in-a-post-wild-world/9781604695533/",
+    lang: "en",
+    backer: "designer",
+    why: "postWild",
+    vouched: [{ name: "Wild Ones Western Pennsylvania", url: "https://westernpa.wildones.org/reading-list/" }],
+    award: { name: "American Horticultural Society Book Award 2016" },
+  },
+  // The other side of the argument, on purpose: the reader-facing version of
+  // Davis et al. 2011, which the Native page cites. A list that only agreed
+  // with us would be the advert that page refuses to be.
+  {
+    kind: "book",
+    title: "Where Do Camels Belong?",
+    by: "Ken Thompson",
+    year: 2014,
+    url: "https://en.wikipedia.org/wiki/Where_Do_Camels_Belong%3F",
+    lang: "en",
+    backer: "ecologist",
+    why: "camels",
+    award: { name: "RHS Veitch Memorial Medal 2016", toAuthor: true },
+  },
+  {
+    kind: "site",
+    title: "iNaturalist",
+    by: "iNaturalist",
+    url: "https://www.inaturalist.org/",
+    lang: "en",
+    backer: "naturalist",
+    why: "inaturalist",
+    audience: { count: 4480726, unit: "observers", asOf: "2026-10-10" },
+  },
+];
 
 /** A region's picks, or an empty list where none are researched yet — which is
  *  a missing section, never a heading over nothing. */

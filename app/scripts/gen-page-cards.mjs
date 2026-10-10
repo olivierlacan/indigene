@@ -162,9 +162,9 @@ try {
   const totalPlants = perRegion.reduce((n, list) => n + list.length, 0);
   const nRegions = REGIONS.length;
   const nCreatures = WILDLIFE.length;
-  const { READING, readingRegionIds } = await loader.load("/src/data/reading.ts");
+  const { READING, WORLD_READING, readingRegionIds } = await loader.load("/src/data/reading.ts");
   const nReadingRegions = readingRegionIds().length;
-  const nReading = new Set(Object.values(READING).flat().map((r) => r.url)).size;
+  const nReading = new Set([...WORLD_READING, ...Object.values(READING).flat()].map((r) => r.url)).size;
   // Read as text, not imported: the page module builds DOM. One `{ name: "…" }`
   // row per source in its SOURCES table.
   const nativeSources = (readFileSync(join(root, "src", "steps", "native.ts"), "utf8")
@@ -175,7 +175,7 @@ try {
     { slug: "release-notes", title: "What’s new", subtitle: "every change to Indigene, in plain words" },
     { slug: "about", title: "About Indigene", subtitle: "a native of a place — and what this measures for yours" },
     { slug: "sources", title: "Where our numbers come from", subtitle: "what’s counted, what’s our judgment, and where we’d bet we’re wrong" },
-    { slug: "reading", title: "Further reading", subtitle: "books, websites and channels from people who know each region’s plants", stat: `<b>${nReading}</b> picks · <b>${nReadingRegions}</b> regions` },
+    { slug: "reading", title: "Further reading", subtitle: "the ideas Indigene is built on, and each region’s own books", stat: `<b>${nReading}</b> picks · worldwide & <b>${nReadingRegions}</b> regions` },
     { slug: "confidence", title: "How sure we are", subtitle: "what each confidence level on a plant\u2019s page means" },
     { slug: "privacy", title: "Privacy & safety", subtitle: "what we ask for, what we never do — made safe for everyone" },
     { slug: "plants", title: "Native plants", subtitle: "every plant Indigene knows, from every region", stat: `<b>${totalPlants}</b> native plants · <b>${nRegions}</b> regions` },

@@ -6,7 +6,7 @@ The question: once Indigene says *plant this*, who near the reader has it?
 
 **Short answer: don't build a new system for it.** Mature efforts already
 answer "who sells this plant" in California, Florida, Pennsylvania and
-Alabama, and one of them has an API. Indigene should link and read those, and
+Alabama, and one of them publishes open JSON keyed by scientific name. Indigene should link and read those, and
 offer the one thing they lack — reading whether a plant is **in stock** — to
 the open-source one, rather than run a parallel service.
 
@@ -18,9 +18,9 @@ dropped.
 
 | Effort | Where | Per-plant sellers | In stock? | Open to other apps |
 |---|---|---|---|---|
-| **Retail Plant Catalog** (Plant Agents Collective; runs Choose Native Plants) | PA, AL | ✓ | ✗ name on site only | ✓ keyed API |
-| **Calscape** (California Native Plant Society) | CA | ✓ | as each nursery posts it | no public API found |
-| **PlantRealFlorida** (FANN) | FL | ✓ | ✗ "call for availability" | ✗ |
+| **Retail Plant Catalog** (Plant Agents Collective; runs Choose Native Plants) | PA, AL, and online stores | ✓ | ✗ name on site only | ✓ open JSON, and a keyed API |
+| **Calscape** (California Native Plant Society) | CA | ✓ | as each nursery posts it | ✗ behind a Cloudflare challenge |
+| **PlantRealFlorida** (FANN) | FL | ✓ name, phone, city, pot size | ✗ "call for availability" | ✗ pages by numeric id |
 | **Garden for Wildlife** (NWF, beside Tallamy's Native Plant Finder) | US, ships by ZIP | sells its own | ✓ its own | ✗ |
 | **Xerces Society directory** + Milkweed Finder | Canada, US, Mexico | milkweeds only | ✗ | ✗ |
 | **NYC Greenbelt Native Plant Center** | one nursery | ✓ | ✓ quantity | ✓ open dataset |
@@ -31,10 +31,14 @@ no sourcing tool; he's an audience for this, not prior art.
 
 Two findings change the plan:
 
-- **Retail Plant Catalog already has the read Indigene wants.**
-  `GET /Plant/FindVendorsForPlantName?plantName=&zipCode=&radius=` returns
-  vendors near a ZIP for a common or scientific name, behind an API key
-  (`web/webapi/Controllers/PlantController.cs`). Indigene has both inputs.
+- **Choose Native Plants already has the read Indigene wants, keyed the way
+  we key.** `choosenativeplants.com/api/v1/plants/<scientific name>` is open
+  JSON with the USDA symbol, the local nurseries carrying the plant, and
+  online stores with links to the product page (*Asclepias tuberosa*: 23
+  local, 5 online). The plant page is `/plants/<scientific name>`. It sends no
+  CORS header, so the browser can't call it; a build-time snapshot or
+  `server/` can. Behind it, Retail Plant Catalog's keyed API answers "vendors
+  near this ZIP" (`FindVendorsForPlantName`).
 - **Garden for Wildlife already runs the demand loop.** Fall pre-orders tell
   its regional growers what to grow, so they aren't left with unsold plants.
   It's closed and one retailer's, but it shows the idea works without us.
@@ -58,11 +62,11 @@ Two findings change the plan:
 1. **Link the regional finders.** A "where to buy" line per region, the way
    `data/societies.ts` lists societies: Calscape for the two California
    regions, PlantRealFlorida for Florida, Choose Native Plants for the
-   Mid-Atlantic. Deep-link per plant where the site allows (not yet checked —
-   Calscape answered our probe with 403).
-2. **Read Retail Plant Catalog's API for US regions.** Ask Plant Agents
-   Collective for a key. The call belongs in the optional `server/`, not the
-   client, so the key stays private.
+   Mid-Atlantic. Choose Native Plants deep-links per plant by scientific name;
+   PlantRealFlorida needs a name → id table; Calscape couldn't be checked.
+2. **Read Choose Native Plants for US plants.** Ask Plant Agents Collective
+   first — it's their data and their server. Then snapshot the per-plant
+   record at build time, or call it (or their keyed ZIP API) from `server/`.
 3. **Offer the stock readers upstream.** The prototype below reads stock from
    the structured data storefronts already publish for Google. Ported into
    Retail Plant Catalog's crawler, it would give every app using it "in stock",

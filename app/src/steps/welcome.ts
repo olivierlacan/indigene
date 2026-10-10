@@ -4,6 +4,9 @@ import { listSpots } from "../db";
 import { t, tn, tx } from "../lib/i18n";
 import { filmEmbed, filmLang } from "../components/film";
 import { filmRoute } from "../lib/film";
+import { REGIONS } from "../lib/plants";
+import { wildlifeThumb } from "../components/wildlife-thumb";
+import { plantThumb, invasiveThumb, lookalikeThumb } from "../components/plant-thumb";
 
 export function renderWelcome(main: HTMLElement): void {
   clear(main);
@@ -39,6 +42,9 @@ export function renderWelcome(main: HTMLElement): void {
         link: el("a", { href: "#/browse" }, t("welcome.ratherNotLink")),
       })
     ),
+    // A returning visitor's real starting point, so it sits under the start
+    // button rather than below the whole pitch.
+    savedSection,
   ]);
 
   main.append(
@@ -86,19 +92,53 @@ export function renderWelcome(main: HTMLElement): void {
       ]),
     ]),
 
-    savedSection
+    moreToExplore()
   );
 
   listSpots()
     .then((spots) => {
       if (!spots.length || !savedSection.isConnected) return;
       savedSection.style.display = "";
-      savedSection.style.marginTop = "1.5rem";
+      savedSection.style.marginTop = "1rem";
       savedSection.append(
-        el("h3", {}, t("welcome.savedTitle")),
         el("button", { class: "btn btn-secondary btn-block", onClick: () => navigate("saved") },
           tn("welcome.openSaved", spots.length))
       );
     })
     .catch(() => {});
+}
+
+/**
+ * The rest of the app, one row each: a picture, a name, one line. Below the
+ * pitch so the start button stays the only call to action above the fold; each
+ * row is a link to the page that has the depth.
+ */
+function moreToExplore(): HTMLElement {
+  const way = (href: string, thumb: HTMLElement, title: string, line: string) =>
+    el("a", { class: "card welcome-way", href }, [
+      thumb,
+      el("span", { class: "welcome-way-text" }, [
+        el("strong", {}, title),
+        el("span", {}, line),
+      ]),
+    ]);
+  const thumbAttrs = { attrs: { class: "plant-photo welcome-way-thumb" } };
+  const map = el("span", { class: "plant-photo welcome-way-thumb welcome-way-map", "aria-hidden": "true" }, [
+    el("img", { src: `${import.meta.env.BASE_URL}maps/pnw.svg`, alt: "", loading: "lazy" }),
+  ]);
+  return el("section", { class: "welcome-more" }, [
+    el("h3", {}, t("welcome.moreTitle")),
+    el("div", { class: "welcome-ways" }, [
+      way("#/wildlife", wildlifeThumb("monarch", "butterfly", { px: 56, attrs: { class: "wildlife-photo welcome-way-thumb" } }),
+        t("welcome.way.wildlife"), t("welcome.way.wildlifeLine")),
+      way("#/invasives", invasiveThumb("buddleja-davidii", "shrub", thumbAttrs),
+        t("welcome.way.invasives"), t("welcome.way.invasivesLine")),
+      way("#/lookalikes", lookalikeThumb("pyrus-calleryana", "tree", thumbAttrs),
+        t("welcome.way.lookalikes"), t("welcome.way.lookalikesLine")),
+      way("#/planting", plantThumb("quercus-alba", "tree", thumbAttrs),
+        t("welcome.way.planting"), t("welcome.way.plantingLine")),
+      way("#/regions", map,
+        tn("welcome.way.regions", REGIONS.length), t("welcome.way.regionsLine")),
+    ]),
+  ]);
 }

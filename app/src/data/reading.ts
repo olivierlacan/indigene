@@ -68,6 +68,10 @@ export interface Reading {
   /** Editions published: a book kept in print through revisions is one people
    *  kept buying. */
   editions?: number;
+  /** Worldwide picks only: the key of one plain line saying what it gives a
+   *  reader of Indigene — `reading.why.<why>`. A regional pick's region says
+   *  that already. */
+  why?: string;
 }
 
 /** Translated via `reading.audience.<unit>`. */
@@ -642,6 +646,12 @@ export const READING: Record<string, Reading[]> = {
     },
   ],
 };
+
+/** The worldwide list: the books, sites and talks behind the ideas Indigene
+ *  is built on — native plants feeding native insects, the lawn we could give
+ *  back, and the argument over what "native" should mean. Casual reading
+ *  first; the studies themselves are cited on the pages that use them. */
+export const WORLD_READING: Reading[] = [];
 
 /** A region's picks, or an empty list where none are researched yet — which is
  *  a missing section, never a heading over nothing. */

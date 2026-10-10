@@ -6762,6 +6762,11 @@ body[data-layout="profile"] .wip-banner-text {
   font-weight: 600;
   overflow-wrap: anywhere;
 }
+/* What a worldwide pick gives the reader: the one line in the row written in
+   our voice, so it reads as text, not as metadata. */
+.reading-why {
+  font-size: 0.95rem;
+}
 .reading-by,
 .reading-proof {
   color: var(--ink-soft);

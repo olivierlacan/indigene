@@ -5,11 +5,16 @@
 // an entry with no recommendation, no audience and no award renders perfectly
 // well, as a link we are asking the reader to take on our word. So this does.
 import { describe, it, expect } from "vitest";
-import { READING } from "./reading";
+import { READING, WORLD_READING } from "./reading";
+import { en } from "../locales/en";
+import { fr } from "../locales/fr";
 import { REGIONS } from "./regions";
 
 const regionIds = new Set(REGIONS.map((r) => r.meta.id));
-const entries = Object.entries(READING).flatMap(([region, rows]) => rows.map((r) => ({ region, r })));
+const entries = [
+  ...Object.entries(READING).flatMap(([region, rows]) => rows.map((r) => ({ region, r }))),
+  ...WORLD_READING.map((r) => ({ region: "worldwide", r })),
+];
 
 describe("further reading", () => {
   it("is keyed by regions that exist", () => {
@@ -42,6 +47,15 @@ describe("further reading", () => {
       if (r.audience.unit === "subscribers" || r.audience.unit === "followers") {
         expect(["video", "social"], `${region}: ${r.title}`).toContain(r.kind);
       }
+    }
+  });
+
+  it("says what each worldwide pick gives the reader, in both languages", () => {
+    for (const r of WORLD_READING) {
+      expect(r.why, `worldwide: “${r.title}” has no line saying why`).toBeTruthy();
+      const key = `reading.why.${r.why}`;
+      expect(en, key).toHaveProperty([key]);
+      expect(fr, key).toHaveProperty([key]);
     }
   });
 

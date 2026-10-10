@@ -9,6 +9,7 @@
 import { el } from "../ui";
 import { sectionHeading } from "./section-link";
 import { readingFor, type Reading } from "../data/reading";
+import type { TKey } from "../locales/en";
 import { t, tn, fmtList, fmtNumber, getLang, langTag } from "../lib/i18n";
 
 const KIND_ICON: Record<Reading["kind"], string> = {
@@ -51,6 +52,7 @@ function row(r: Reading): HTMLElement {
     el("span", { class: "reading-kind", role: "img", "aria-label": t(`reading.kind.${r.kind}` as const) }, KIND_ICON[r.kind]),
     el("div", { class: "reading-body" }, [
       el("a", { href: r.url, target: "_blank", rel: "noopener", class: "reading-title", lang: r.lang }, r.title),
+      r.why ? el("span", { class: "reading-why" }, t(`reading.why.${r.why}` as TKey)) : null,
       el("span", { class: "reading-by" }, `${who} — ${t(`reading.backer.${r.backer}` as const)}`),
       proof.length ? el("span", { class: "reading-proof" }, proof.join(" · ")) : null,
     ]),

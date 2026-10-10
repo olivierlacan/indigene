@@ -1,6 +1,7 @@
 // Further reading, as pages.
 //
-//   #/reading          → every region's list, one after the other.
+//   #/reading          → the worldwide list — the ideas Indigene is built on,
+//                        for casual reading — then a row per region.
 //   #/reading/<region> → one region's list alone — the page a region page's
 //                        "Further reading" heading opens, and the one to send
 //                        somebody who asks "what should I read about plants here?".
@@ -9,11 +10,11 @@
 import { el, clear } from "../ui";
 import { REGIONS } from "../lib/plants";
 import type { RegionDef } from "../lib/plants";
-import { readingFor, readingRegionIds } from "../data/reading";
+import { readingFor, readingRegionIds, WORLD_READING } from "../data/reading";
 import { readingList } from "../components/reading-list";
-import { sectionHeading } from "../components/section-link";
+import { sectionHeading, sectionTitle } from "../components/section-link";
 import { regionName, regionShort } from "../lib/names";
-import { t } from "../lib/i18n";
+import { t, tx, fmtNumber } from "../lib/i18n";
 
 /** The line every list ends on: how the picks were chosen, so a count of
  *  followers reads as evidence rather than as an advertisement. */
@@ -32,11 +33,25 @@ export function renderReadingIndex(main: HTMLElement): void {
   main.append(
     el("h2", { class: "step-title" }, t("reading.title")),
     el("p", { class: "step-lede" }, t("reading.lede")),
-    ...regionsWithReading().map((region) =>
-      el("section", { style: "margin-top:1.25rem" }, [
-        sectionHeading(`#/reading/${region.meta.id}`, "📍", regionName(region.meta)),
-        readingList(readingFor(region.meta.id)),
-      ])),
+    ...(WORLD_READING.length ? [el("section", { style: "margin-top:1.25rem" }, [
+      sectionTitle("🌍", t("reading.worldTitle")),
+      readingList(WORLD_READING),
+      // The papers are cited where their numbers are used; this list is for
+      // reading, so it points there rather than repeating them.
+      el("p", { class: "more-link", style: "margin-top:0.75rem" }, tx("reading.studies", {
+        native: el("a", { href: "#/native" }, t("reading.studiesNative")),
+        homegrown: el("a", { href: "#/homegrown" }, t("reading.studiesHomegrown")),
+        sources: el("a", { href: "#/sources" }, t("reading.studiesSources")),
+      })),
+    ])] : []),
+    // Each region is a row that opens its own list — the full lists one after
+    // the other were fifteen screens of links.
+    el("section", { style: "margin-top:1.5rem" }, [
+      sectionTitle("📍", t("reading.byRegion")),
+      ...regionsWithReading().map((region) =>
+        sectionHeading(`#/reading/${region.meta.id}`, null, regionName(region.meta),
+          fmtNumber(readingFor(region.meta.id).length))),
+    ]),
     howChosen(),
   );
 }

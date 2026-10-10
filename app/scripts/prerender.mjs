@@ -332,6 +332,7 @@ async function collectPages(load) {
     load("/src/data/invasives.ts"),
     load("/src/lib/invasives.ts"),
   ]);
+  const { readingFor, readingRegionIds } = await load("/src/data/reading.ts");
   // Plant prose marks emphasis with asterisks; a link preview shows them raw.
   const { plainText } = await load("/src/lib/inline-markdown.ts");
 
@@ -390,6 +391,22 @@ async function collectPages(load) {
     image: pageCard("sources"),
     imageAlt: "Where our numbers come from — what's counted, what's judgment, and where we'd bet we're wrong",
   });
+  add("reading", en["reading.docTitle"], en["reading.lede"], {
+    image: pageCard("reading"),
+    imageAlt: "Further reading — the books, websites and channels to turn to next, region by region",
+  });
+  // One page per region's list: "what should I read about plants here?" is a
+  // question somebody asks a friend. The description names the first few.
+  for (const id of readingRegionIds()) {
+    const region = REGIONS.find((r) => r.meta.id === id);
+    const titles = readingFor(id).slice(0, 4).map((r) => r.title).join(" · ");
+    add(
+      `reading/${id}`,
+      fill(en["reading.regionDocTitle"], { region: region.meta.name }),
+      `${en["reading.regionLede"]} ${titles}.`,
+      { image: pageCard("reading"), imageAlt: `Further reading for ${region.meta.name}` }
+    );
+  }
   add("confidence", en["confidence.docTitle"], en["confidence.lede"], {
     image: pageCard("confidence"),
     imageAlt: "How sure we are — what each confidence level on a plant's page means",

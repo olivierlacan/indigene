@@ -6735,6 +6735,39 @@ body[data-layout="profile"] .wip-banner-text {
   font-size: 0.92rem;
 }
 
+/* --- Further reading: books, websites and channels ----------------------- */
+/* A list of links off the site, like the societies above it: the title carries
+   the weight, who made it and why it was picked sit quietly underneath. The
+   kind (book, website, channel) is an icon in the gutter so the titles align. */
+.reading-list {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+.reading-row {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1.6rem 1fr;
+  align-items: baseline;
+}
+.reading-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+.reading-title {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.reading-by,
+.reading-proof {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
 /* A saved spot's wildlife menu: each animal its plants can feed as a tile —
    the animal's picture in a circle, its name, and the plant of yours it eats.
    Three to a row on a phone; the whole tile is the link to its page. */

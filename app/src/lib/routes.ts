@@ -55,6 +55,7 @@ export const APP_STEPS = [
   "planting",
   "privacy",
   "sources",
+  "reading",
   "confidence",
   "settings",
   "about",
@@ -95,6 +96,8 @@ export const PARAM_STEPS = new Set<string>([
   "planting",
   "settings",
   "privacy",
+  // `reading/<region>` is one region's further reading.
+  "reading",
   // `film/fr` is the French cut: its own file, so its preview is French too.
   "film",
   "traits",
@@ -113,6 +116,7 @@ export const SHAREABLE_INDEXES: readonly string[] = [
   "planting",
   "privacy",
   "sources",
+  "reading",
   "confidence",
   "about",
   "crops",

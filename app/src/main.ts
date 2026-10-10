@@ -24,6 +24,7 @@ import { wildlifeKindRoute } from "./lib/wildlife";
 import { renderLookalikeIndex, renderLookalike, lookalikeRegionParam } from "./steps/lookalikes";
 import { renderAlternativeIndex, renderAlternative, alternativeRegionParam } from "./steps/alternatives";
 import { renderInvasiveIndex, renderInvasive } from "./steps/invasives";
+import { renderReadingIndex, renderReading } from "./steps/reading";
 import { wantedRegionParam } from "./lib/invasives";
 import { renderPlantingIndex, renderPlanting } from "./steps/planting";
 import { techniqueBySlug } from "./lib/planting";
@@ -106,6 +107,8 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
   planting: { fn: renderPlantingIndex, labelKey: "steps.planting", inFlow: false },
   privacy: { fn: renderPrivacy, labelKey: "steps.privacy", inFlow: false },
   sources: { fn: renderSources, labelKey: "steps.sources", inFlow: false },
+  // Further reading: `#/reading` is every region's list, `#/reading/<region>` one.
+  reading: { fn: renderReadingIndex, labelKey: "steps.reading", inFlow: false },
   // What the confidence meter on a plant page means, one level at a time.
   confidence: { fn: renderConfidence, labelKey: "steps.confidence", inFlow: false },
   settings: { fn: renderSettings, labelKey: "steps.settings", inFlow: false },
@@ -143,6 +146,7 @@ const PARAM_RENDERERS: Record<string, StepFn> = {
   lookalikes: renderLookalike,
   alternatives: renderAlternative,
   invasives: renderInvasive,
+  reading: renderReading,
   planting: renderPlanting,
   settings: renderSettings,
   privacy: renderPrivacy,

@@ -2893,7 +2893,7 @@ export const fr: Dict = {
   "native.src.davis": "plaidoyer pour juger une espèce sur ce qu'elle fait, pas sur son origine",
   "native.src.simberloff": "la réponse : gérer les espèces envahissantes n'est pas de la xénophobie",
   "native.src.groening": "les campagnes de « jardin indigène » dans l'Allemagne des années 1930 et 1940",
-  "about.stance.native": "Indigène désigne la plante, jamais la personne.",
+  "about.stance.native": "Indigène : la plante, pas les gens.",
   "about.stance.nativeBody": "Il s'agit de là où une plante a évolué, pas de frontières ni de gens. {link}",
   "about.stance.nativeLink": "Plantes indigènes, pas nativisme",
   // ---------------------------------------------------------------------

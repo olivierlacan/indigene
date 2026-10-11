@@ -2923,7 +2923,7 @@ export const en = {
   "native.src.davis": "the case for judging a species on what it does, not where it's from",
   "native.src.simberloff": "the reply: managing invasive species isn't xenophobia",
   "native.src.groening": "the “native garden” campaigns of 1930s and 1940s Germany",
-  "about.stance.native": "Native means the plant, never the person.",
+  "about.stance.native": "Native means plants, not people.",
   "about.stance.nativeBody": "It's about where a plant evolved, not borders or people. {link}",
   "about.stance.nativeLink": "Native plants, not nativism",
   // ---------------------------------------------------------------------

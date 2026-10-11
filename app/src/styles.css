@@ -1280,7 +1280,7 @@ p.more-link a {
    page. Colours are theme tokens, so dark and light both follow. */
 .native-callout {
   margin: 1.25rem 0 0;
-  padding: 1.1rem 1rem 1.15rem 1.1rem;
+  padding: 1.1rem 0.7rem 1.15rem 0.95rem;
   background: var(--surface);
   border: 1px solid var(--line);
   border-left: 6px solid var(--brand);
@@ -1288,7 +1288,8 @@ p.more-link a {
 }
 .native-callout-title {
   margin: 0 0 0.35rem;
-  font-size: 1.15rem;
+  /* One line at 360 px, in both languages. */
+  font-size: 1.05rem;
   font-weight: 800;
   line-height: 1.3;
   color: var(--ink);

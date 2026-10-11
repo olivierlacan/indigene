@@ -100,6 +100,13 @@ Two of the thirty took a fix to reach at all, both in `pickTaxon`
 | **hero**, unreviewed | anywhere the two above are empty | `app/src/data/inat-heroes.json` |
 | **hero** (impostor) | the look-alikes index, its page, beside the native | `app/src/data/inat-lookalikes.json` |
 
+**Heroes are the default.** The review that actually happens is one photo per
+plant, the one that shows it best in a single shot, so `hero:harvest` keeps the
+top 10 hero candidates and nothing else. The angles below are opt-in
+(`--angles`, or `angles: true` on the workflow), and the review page offers
+their slots only when the candidates file has them. The picks already in
+`plant-photos.json` keep working.
+
 The four angles exist because one photograph answers one question. "Roughly,
 what is this?" is what a hero is for. Standing in front of a shrub with a leaf in
 your hand, the questions are *is this the right leaf, the right flower, the right
@@ -148,8 +155,8 @@ plant is asked for three times over:
 Term 12 is iNaturalist's **Plant Phenology** annotation — a person, usually
 several, saying what an observation shows. That is a far better signal than
 anything we could measure, and it is what files a candidate under "flower" or
-"fruit" on human authority rather than on our guessing. (`--no-angles` skips
-both asks; the caveat is that an annotation describes the *observation*, and a
+"fruit" on human authority rather than on our guessing. (Both asks run only
+with `--angles`; the caveat is that an annotation describes the *observation*, and a
 fruiting observation often carries a habit shot alongside the berries.)
 
 ### Animals

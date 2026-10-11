@@ -1,0 +1,49 @@
+# Checks that every further-reading link still opens.
+#
+# The picks in `app/src/data/reading.ts` link off the site — a publisher's
+# page, a society's reading list, a county's plant guide — and so does every
+# recommendation behind them. A live page is the minimum bar for a link we put
+# in front of a reader (the same bar `data/societies.ts` holds), and those pages
+# move on their own schedule, not ours. So this runs on any change to the list,
+# and once a month to catch the pages that moved while nobody was editing it.
+#
+# A host that refuses scripts (403/406/429) is listed but doesn't fail the job:
+# it usually opens in a browser, and a person should look before a link goes.
+#
+# `npm run reading:check` is the same command locally, from a network that can
+# reach the hosts.
+name: Reading links
+
+on:
+  pull_request:
+    paths:
+      - "app/src/data/reading.ts"
+      - "app/scripts/check-reading.mjs"
+      - ".github/workflows/reading.yml"
+  schedule:
+    - cron: "17 6 3 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Further-reading links open
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      - name: Ask every link
+        working-directory: app
+        run: npm run reading:check

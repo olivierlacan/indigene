@@ -179,6 +179,9 @@ export function renderSources(main: HTMLElement): void {
         repo: el("a", { href: REPO_URL, target: "_blank", rel: "noopener" }, t("privacy.repoLink")),
         issue: el("a", { href: ISSUES_URL, target: "_blank", rel: "noopener" }, t("sources.openIssue")),
       })),
+      el("p", {}, tx("sources.reading", {
+        reading: el("a", { href: "#/reading" }, t("sources.readingLink")),
+      })),
       el("p", {}, tx("sources.fullList", {
         doc: el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, t("sources.dataDoc")),
         matrix: el("a", { href: MATRIX_DOI, target: "_blank", rel: "noopener" }, "Gaytán et al. 2026"),

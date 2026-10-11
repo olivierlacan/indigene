@@ -14,6 +14,7 @@ import { filterField, highlight, norm } from "../components/filter-field";
 import type { FilterRow, FilterSection } from "../components/filter-field";
 import { silhouetteFor } from "../components/plant-card";
 import { plantThumb } from "../components/plant-thumb";
+import { readingSection } from "../components/reading-list";
 import { societiesSection } from "../components/societies-section";
 import { sectionHeading } from "../components/section-link";
 import { keystoneIcon } from "../components/keystone-icon";
@@ -163,6 +164,10 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
     // already knows, which is the question a reader asks after their first
     // six plants go in. Last on the page because that is when it comes up.
     ...societiesSection(region.meta.id),
+    // And what to read. The societies are people to meet; these are the
+    // books and channels those people point to. Three rows, and the heading
+    // opens the region's whole list.
+    ...readingSection(region.meta.id),
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("regions") }, t("region.featured")),
       el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("wildlife.rankForSpot")),

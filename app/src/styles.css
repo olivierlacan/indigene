@@ -6957,6 +6957,7 @@ body[data-layout="profile"] .wip-banner-text {
   margin: 0.25rem 0 0;
   font-size: 0.85rem;
   color: var(--brand-ink);
+}
 /* --- "Says who, and when?" under the native claim ------------------------ */
 /* Quieter than the conservation note beside it: this is provenance, not a
    thing to act on, so it takes the soft ink and no accent bar. */

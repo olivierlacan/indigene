@@ -2,8 +2,8 @@
 
 - [Chicago & the Corn Belt Prairie](https://indigene.app/regions/chicago) is on
   the map: 63 native plants for Chicago, Rockford, Champaign and Springfield,
-  from bur oak to compass plant, rattlesnake master and the wild leek the city
-  is named for.
+  from bur oak to compass plant, rattlesnake master and the wild leek whose
+  Myaamia name the French wrote down as "Chicago".
 - Wildlife: meet the [hackberry emperor](https://indigene.app/wildlife/hackberry-emperor),
   a butterfly that lands on people for the salt in their sweat, and the rare
   [rattlesnake-master borer moth](https://indigene.app/wildlife/rattlesnake-master-borer).

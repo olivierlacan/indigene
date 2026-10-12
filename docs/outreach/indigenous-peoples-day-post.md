@@ -87,7 +87,7 @@ anything on the tech stack.
 ## B. The Constant Variable post
 
 Title: says what it is, no pronoun, no politics in the title (HN flags them).
-*Show HN: Indigene – native plants for the exact spot you're standing*. The day
+*Show HN: Indigene – native plants for where you stand*. The day
 goes in the first line of the body.
 
 1. **Why today (1 paragraph).** Columbus out, Indigenous Peoples' Day in. Native

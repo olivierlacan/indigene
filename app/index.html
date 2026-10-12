@@ -211,7 +211,25 @@
     <main id="main" class="app-main" tabindex="-1">
       <div class="boot-loader" id="boot-loader" role="status">
         <!-- The same seedling as `SEEDLING` in components/page-loader.ts. -->
-        <div class="boot-sprout">main</div>
+        <div class="boot-sprout">
+          <svg class="grow" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+            <path class="grow-soil" d="M14 57c5-4 31-4 36 0z"/>
+            <g class="grow-plant">
+              <path class="grow-stem" pathLength="1" d="M32 56c1-9-2-17 0-29"/>
+              <path class="grow-leaf grow-leaf-l" d="M31.5 44c-4-6-11-7-15-4 4 5 11 6 15 4z"/>
+              <path class="grow-leaf grow-leaf-r" d="M32 37c3-6 10-8 15-5-4 5-11 7-15 5z"/>
+              <g class="grow-bloom">
+                <ellipse cx="32" cy="17" rx="2.6" ry="6"/>
+                <ellipse cx="32" cy="17" rx="2.6" ry="6" transform="rotate(60 32 23)"/>
+                <ellipse cx="32" cy="17" rx="2.6" ry="6" transform="rotate(120 32 23)"/>
+                <ellipse cx="32" cy="17" rx="2.6" ry="6" transform="rotate(180 32 23)"/>
+                <ellipse cx="32" cy="17" rx="2.6" ry="6" transform="rotate(240 32 23)"/>
+                <ellipse cx="32" cy="17" rx="2.6" ry="6" transform="rotate(300 32 23)"/>
+                <circle class="grow-heart" cx="32" cy="23" r="3.6"/>
+              </g>
+            </g>
+          </svg>
+        </div>
         <p class="boot-line">
           <span lang="en">Loading…</span><span lang="fr">Chargement…</span>
         </p>

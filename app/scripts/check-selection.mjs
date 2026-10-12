@@ -78,6 +78,19 @@ const PLACES = [
   { name: "Dublin", lat: 53.3498, lon: -6.2603, region: "ireland", via: "eea-biogeo" },
   { name: "Auckland", lat: -36.8485, lon: 174.7633, region: "nz-auckland", via: "resolve-2017" },
 
+  // --- Central Texas: three EPA codes, and the neighbours it leaves out ---
+  { name: "Austin, TX", lat: 30.2672, lon: -97.7431, region: "central-texas", via: "epa-omernik" },
+  { name: "San Antonio, TX", lat: 29.4241, lon: -98.4936, region: "central-texas", via: "epa-omernik" },
+  { name: "Dallas, TX", lat: 32.7767, lon: -96.797, region: "central-texas", via: "epa-omernik" },
+  { name: "Fort Worth, TX", lat: 32.7555, lon: -97.3308, region: "central-texas", via: "epa-omernik" },
+  { name: "Kerrville, TX (Hill Country)", lat: 30.0474, lon: -99.1403, region: "central-texas", via: "epa-omernik" },
+  // Inside the box, refused by the code: the post-oak sands (33) and the
+  // Rolling Plains (27) are different ground.
+  { name: "Bastrop, TX (post-oak sands)", lat: 30.1105, lon: -97.3153, region: null },
+  { name: "Wichita Falls, TX (Rolling Plains)", lat: 33.9137, lon: -98.4934, region: null },
+  // Outside the box altogether: the Houston coast, a later region.
+  { name: "Houston, TX", lat: 29.7604, lon: -95.3698, region: null },
+
   // --- the Kantō Plain: the first region north of the equator on RESOLVE ---
   // Until this region shipped, `inResolveCoverage` stopped at the equator and
   // every one of these would have come back null.

@@ -85,7 +85,7 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
   scan: { fn: renderScan, labelKey: "steps.sun", inFlow: true },
   confirm: { fn: renderConfirm, labelKey: "steps.soil", inFlow: true },
   priorities: { fn: renderPriorities, labelKey: "steps.goals", inFlow: true },
-  results: { fn: renderResults, labelKey: "steps.results", inFlow: true },
+  results: { fn: renderResults, labelKey: "steps.plants", inFlow: true },
   saved: { fn: renderSaved, labelKey: "steps.saved", inFlow: false },
   browse: { fn: renderBrowse, labelKey: "steps.browse", inFlow: false },
   plants: { fn: renderPlants, labelKey: "steps.plants", inFlow: false },

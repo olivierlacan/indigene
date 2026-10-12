@@ -83,8 +83,6 @@ export const en = {
   "steps.soil": "Soil",
   "steps.goals": "Goals",
   "steps.plants": "Plants",
-  // Step 5 of the walk. The `#/plants` index keeps "steps.plants".
-  "steps.results": "Native plants",
   "steps.saved": "Saved",
   "steps.browse": "Browse",
   "steps.explore": "Explore",
@@ -591,11 +589,10 @@ export const en = {
   // Location (step 1).
   // ---------------------------------------------------------------------
   "location.title": "Where will you plant?",
-  "location.lede":
-    "Your spot sets which native plants we suggest. After it come three quick questions — sun, soil, your goals — then your plant list.",
+  "location.lede": "Your spot sets which native plants we suggest.",
   "location.whyTitle": "Why your spot matters",
   "location.why":
-    "“Native” always means native to somewhere. Your spot picks the regional plant list and looks up the soil, climate and ecoregion — an area with its own climate, soil and wild plants.",
+    "“Native” always means native to somewhere. We look up the soil, climate and ecoregion here: an area with its own climate, soil and wild plants.",
   "location.use": "📍 Use my location",
   "location.update": "📍 Update my location",
   "location.locating": "Locating…",
@@ -605,7 +602,7 @@ export const en = {
   "location.mapHint":
     "Drag or tap the map to put the pin on your spot. Press and hold to fine-tune.",
   "location.mapLabel":
-    "Map. The pin stays in the center. Drag or tap to move the spot under it, or use the arrow keys to nudge it — hold Shift for bigger steps.",
+    "Map. The pin stays in the center. Drag or tap to move the spot under it, or use the arrow keys to nudge it. Hold Shift for bigger steps.",
   "location.osmAttribution": "© OpenStreetMap contributors",
   "location.gpsFix": "GPS fix",
   "location.savedHere": "Saved here",
@@ -639,28 +636,29 @@ export const en = {
   "location.dir.sw": "southwest",
   "location.dir.w": "west",
   "location.dir.nw": "northwest",
-  "location.noGeolocation": "This device can't share location — try the town search instead.",
-  "location.denied": "Location denied — try the town search instead.",
-  "location.noFix": "Couldn't get a fix — try again, or switch to the town search.",
+  "location.noGeolocation": "This device can't share location. Try the town search instead.",
+  "location.denied": "Location denied. Try the town search instead.",
+  "location.noFix": "Couldn't get a fix. Try again, or switch to the town search.",
   "location.searchTitle": "No GPS? Search by town",
   "location.searchLabel": "Your town, city, or postal code",
   "location.searchPlaceholder": "e.g. State College, or 16801",
   "location.search": "Search",
   "location.searching": "Searching…",
   "location.searchNoResults":
-    "Couldn't find that. Try the town with its state or province — like “Springfield Pennsylvania” — or a postal code.",
+    "Couldn't find that. Try the town with its state or province, like “Springfield Pennsylvania”, or a postal code.",
   "location.searchOffline": "The town search needs a signal. Use your location instead, or pick your region.",
   "location.pinSet": "Pin set to the middle of {place}. ",
   "location.pinSetRest":
     "That's enough for your region and plant list. For the soil and slope, drag the pin roughly onto your yard.",
-  "location.pinSetUncovered": "Pin set to the middle of {place} — but we don't have a plant list for this area yet.",
+  "location.pinSetUncovered":
+    "Pin set to the middle of {place}, but we don't have a plant list for this area yet.",
   "location.noListHere": "We don't have a plant list for this area yet.",
   "location.coverage":
     "Indigene's plant lists go region by region, and this spot is outside all of them. The sun and soil readings still work. Meanwhile:",
   "location.coverageBrowse": "Browse the covered regions' native plants",
   "location.coverageBrowseRest": " to see what Indigene suggests.",
   "location.coverageAsk": "Ask for your area on GitHub",
-  "location.coverageAskRest": " with your town or postal code — or add the region yourself.",
+  "location.coverageAskRest": " with your town or postal code, or add the region yourself.",
   "location.regionTitle": "🗺️ Pick your region",
   "location.regionLede":
     "Know your region? Skip the map. Without a point on it we can't look up your soil, rain or winter cold, so the list leans on your answers.",
@@ -668,18 +666,18 @@ export const en = {
   // The three in-flow recall lines. Each is one sentence and a link, because
   // the page that explains what's remembered is one tap away and doesn't need
   // repeating in a garden (see components/memory-controls.ts).
-  "location.spotRemembered": "The pin is where you left it last time — {link}.",
+  "location.spotRemembered": "The pin is where you left it last time ({link}).",
   "location.rememberedLink": "manage what's remembered",
-  "location.regionDefault": "Your starting region — {link}.",
+  "location.regionDefault": "Your starting region ({link}).",
   "location.regionDefaultLink": "change it in Settings",
-  "location.regionRemembered": "The region you picked last time — {link}.",
+  "location.regionRemembered": "The region you picked last time ({link}).",
   "location.switchFromGps": "Don't want to use your location? {a} or {b} instead.",
   "location.switchFromOther": "Changed your mind? {a} or {b} instead.",
   "location.switchZip": "Search by town",
   "location.switchGps": "Use GPS location",
   "location.switchRegion": "pick a region",
   "location.pickFirst": "Pick a region first.",
-  "location.usingList": "Using the {region} list — your pick.",
+  "location.usingList": "Using the {region} list, as you picked.",
   "location.back": "Back",
   "location.next": "Next: measure the sun →",
   "location.moveTitle": "Move {label}",

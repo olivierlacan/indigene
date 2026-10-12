@@ -73,6 +73,43 @@ That is a policy change to `reading.test.ts`; decide it before adding picks.
 Margolin's *The Ohlone Way* (Ohlone criticism of its "vanished people"
 framing), Sturtevant, Herrick, Tantaquidgeon (medicinal by design).
 
+## USDA guide coverage
+
+Of our 291 North American plants, **128 have a USDA plant guide and 109 of
+those say something about Indigenous use**. Each plant's best guide is in
+[`usda-plant-guides.tsv`](usda-plant-guides.tsv), with rough counts of food,
+fibre and medicinal words in that passage and the peoples it names. The counts
+are a triage aid from a keyword scan, not a judgement: a person reads every
+passage before anything is written from it.
+
+| Region | Plants | With a guide | Guide mentions Indigenous use |
+|---|---|---|---|
+| Mid-Atlantic | 44 | 30 | 25 |
+| North Michigan | 46 | 28 | 21 |
+| St Lawrence | 55 | 32 | 26 |
+| Pacific Northwest | 106 | 45 | 39 |
+| Central Coast | 64 | 27 | 25 |
+| Southern California | 64 | 21 | 20 |
+| Florida, north & central | 39 | 25 | 22 |
+| Florida, south | 21 | 6 | 6 |
+
+What the scan shows:
+
+- **Many passages name no people.** Sugar maple's guide has no ethnobotany at
+  all; red oak, Garry oak and western red cedar say "Native Americans". Those
+  need a second source that names the nation.
+- **Some are mostly medicine.** California sagebrush, California fuchsia,
+  mugwort, yarrow, goldenrods, asters: little or no history note.
+- **Old names throughout.** "Diegueño", "Luiseño", "Gabrielino", "Costanoan",
+  "Chippewa", "Thompson" (Nlaka'pamux) need the nation's own name beside or
+  instead.
+- **Guides hide under old names and subspecies.** Camas is filed under
+  *C. quamash* ssp. *quamash* and *breviflora*, chaparral yucca under *Yucca
+  whipplei*, coontie under *Z. pumila*, blue elderberry under *S. nigra* ssp.
+  *cerulea*.
+- **South Florida is thin**: 6 of 21. Austin's *Florida Ethnobotany* is the
+  fallback.
+
 ## Per region
 
 ### Pacific Northwest

@@ -583,7 +583,8 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
     : "gps";
 
   const mapBlock = el("div", {}, [
-    el("div", { style: "margin:0.9rem 0" }, [mapWrap]),
+    el("p", {}, t("location.mapHint")),
+    el("div", { style: "margin:0.5rem 0 0.9rem" }, [mapWrap]),
     status,
     spotNote,
     coverageOut,

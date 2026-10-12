@@ -75,6 +75,11 @@ export const SOCIETIES: Record<string, Society[]> = {
   "ca-central-coast": [
     { name: "California Native Plant Society", url: "https://www.cnps.org/chapters", what: "chapters" },
   ],
+  "central-texas": [
+    { name: "Native Plant Society of Texas", url: "https://www.npsot.org/", what: "chapters" },
+    { name: "Lady Bird Johnson Wildflower Center", url: "https://www.wildflower.org/", what: "advice" },
+    { name: "Texas Master Naturalist", url: "https://txmn.tamu.edu/chapters/", what: "walks" },
+  ],
   "florida-central": [
     { name: "Florida Native Plant Society", url: "https://www.fnps.org/chapters", what: "chapters" },
     { name: "Florida Wildflower Foundation", url: "https://www.flawildflowers.org/", what: "advice" },

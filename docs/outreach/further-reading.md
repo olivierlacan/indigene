@@ -52,6 +52,7 @@ browser.
 | Central Coast | 6 | — |
 | North & Central Florida | 3 | Stibolt & Shropshire: only a publisher blurb |
 | South Florida | 4 | Osorio, *A Gardener's Guide to Florida's Native Plants*: no recommendation found |
+| Central Texas | 2 | The Wildflower Center's plant database and Austin's Grow Green have no voucher page from a Texas body yet. Rowman and Quarto were unreachable, so each book links to the Wildflower Center's or NPSOT's own record of it |
 | Kantō | 2 | Japanese native-garden books are few; Takada's 『雑木の庭』 is not native-only |
 | Atlantic France | 1 | Nothing garden-specific for Brittany beyond the conservatory's maps |
 | Continental France | 3 | — |

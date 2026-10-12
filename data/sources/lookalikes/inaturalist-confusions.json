@@ -1,6 +1,6 @@
 {
   "checkedAt": "2026-10-12",
-  "ties": 45,
+  "ties": 48,
   "backed": [
     {
       "region": "mid-atlantic",
@@ -87,12 +87,6 @@
       "misidentifications": 17
     },
     {
-      "region": "ca-south-coast",
-      "plant": "Muhlenbergia rigens",
-      "lookalike": "Cortaderia selloana",
-      "misidentifications": 6
-    },
-    {
       "region": "florida-central",
       "plant": "Asclepias tuberosa",
       "lookalike": "Asclepias curassavica",
@@ -169,6 +163,30 @@
       "plant": "Lavandula angustifolia",
       "lookalike": "Lavandula × intermedia",
       "misidentifications": 36
+    },
+    {
+      "region": "france-alpine",
+      "plant": "Picea abies",
+      "lookalike": "Pseudotsuga menziesii",
+      "misidentifications": 181
+    },
+    {
+      "region": "central-texas",
+      "plant": "Asclepias asperula",
+      "lookalike": "Asclepias curassavica",
+      "misidentifications": 5
+    },
+    {
+      "region": "central-texas",
+      "plant": "Callicarpa americana",
+      "lookalike": "Callicarpa dichotoma",
+      "misidentifications": 674
+    },
+    {
+      "region": "central-texas",
+      "plant": "Lantana urticoides",
+      "lookalike": "Lantana camara",
+      "misidentifications": 755
     }
   ],
   "unrecorded": [
@@ -241,14 +259,14 @@
       "region": "france-mediterranean",
       "plant": "Viburnum tinus",
       "lookalike": "Prunus laurocerasus"
-    },
-    {
-      "region": "france-alpine",
-      "plant": "Picea abies",
-      "lookalike": "Pseudotsuga menziesii"
     }
   ],
   "unresolved": [
+    {
+      "region": "ca-south-coast",
+      "plant": "Muhlenbergia rigens",
+      "lookalike": "Cortaderia selloana"
+    },
     {
       "region": "florida-central",
       "plant": "Hamelia patens",

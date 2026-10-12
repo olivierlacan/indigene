@@ -1324,6 +1324,43 @@ export const WILDLIFE: Wildlife[] = [
     native: true,
     nativeBasis: "Native bees of the genera Leioproctus, Lasioglossum, Hylaeus and relatives. Donovan, Fauna of New Zealand 57 (Apoidea); Manaaki Whenua – Landcare Research.",
   },
+  // ---------------- Central Texas ----------------
+  {
+    id: "american-snout",
+    common: "American snout",
+    latin: "Libytheana carinenta",
+    kind: "butterfly",
+    icon: "🦋",
+    blurb:
+      "A small brown-and-orange butterfly with a long beak-like snout, which makes a resting one look like a dead leaf. Its caterpillars eat only hackberry, and in a wet year millions stream across Texas at once.",
+    native: true,
+    nativeBasis: "Native to the southern US and south into South America. BAMONA; Texas Parks and Wildlife.",
+    inat: { name: "Libytheana carinenta", iconic: "Insecta" },
+  },
+  {
+    id: "phaon-crescent",
+    common: "Phaon crescent",
+    latin: "Phyciodes phaon",
+    kind: "butterfly",
+    icon: "🦋",
+    blurb:
+      "A small orange-and-black butterfly that skims low over lawns and ditches across the South. Its caterpillars eat frogfruit, so where a lawn is left a little wild, phaons follow.",
+    native: true,
+    nativeBasis: "Native to the southern US, Mexico and the Caribbean. BAMONA.",
+    inat: { name: "Phyciodes phaon", iconic: "Insecta" },
+  },
+  {
+    id: "black-chinned-hummingbird",
+    common: "Black-chinned hummingbird",
+    latin: "Archilochus alexandri",
+    kind: "bird",
+    icon: "🐦",
+    blurb:
+      "The hummingbird that nests in the Texas Hill Country, from March to September, the male flashing a purple band under a black chin. It lives on red and orange tubular flowers and the small insects it catches between them.",
+    native: true,
+    nativeBasis: "Native to western North America, nesting east to the Texas Hill Country. Cornell Lab of Ornithology.",
+    inat: { name: "Archilochus alexandri", iconic: "Aves" },
+  },
 ];
 
 // ---- The ties: region → plant id → the animals that plant supports ----
@@ -4231,6 +4268,160 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "muehlenbeckia-complexa": [
       { wildlifeId: "nz-coppers", support: "host", reliance: "narrow", note: "Pōhuehue and its relatives are the coppers' native caterpillar food plants, so a sunny bank of it is where they breed.", basis: "Manaaki Whenua – Landcare Research." },
+    ],
+  },
+  "central-texas": {
+    "quercus-fusiformis": [
+      { wildlifeId: "acorn-birds", support: "seeds", note: "Live oak acorns are sweet and drop every autumn, feeding jays, turkeys and woodpeckers through winter.", basis: "USDA Silvics of North America; Cornell Lab." },
+      { wildlifeId: "acorn-mammals", support: "seeds", note: "Deer, squirrels and raccoons fatten on the acorns; in the Hill Country they are a mainstay of the whitetail's autumn.", basis: "Texas Parks and Wildlife; USDA Silvics of North America." },
+    ],
+    "quercus-buckleyi": [
+      { wildlifeId: "acorn-birds", support: "seeds", note: "Small bitter acorns that jays and woodpeckers cache and come back to all winter.", basis: "Cornell Lab; Lady Bird Johnson Wildflower Center." },
+    ],
+    "quercus-shumardii": [
+      { wildlifeId: "acorn-birds", support: "seeds", note: "A heavy acorn crop most years, worked by jays, turkeys and red-headed woodpeckers.", basis: "USDA Silvics of North America; Cornell Lab." },
+    ],
+    "quercus-macrocarpa": [
+      { wildlifeId: "acorn-mammals", support: "seeds", note: "The biggest acorns on the continent, a feast for deer and squirrels in autumn.", basis: "USDA Silvics of North America." },
+    ],
+    "quercus-stellata": [
+      { wildlifeId: "acorn-mammals", support: "seeds", note: "Sweet white-oak acorns that deer and squirrels take first, before the bitter red-oak ones.", basis: "USDA Silvics of North America; Texas Parks and Wildlife." },
+    ],
+    "carya-illinoinensis": [
+      { wildlifeId: "luna-moth", support: "host", note: "Pecan and its hickory kin are among the luna moth's main caterpillar trees in Texas.", basis: "NWF Native Plant Finder / Tallamy; BAMONA." },
+      { wildlifeId: "acorn-mammals", support: "seeds", note: "Squirrels, raccoons and foxes harvest the nuts before you can — plant one for them.", basis: "Texas A&M AgriLife Extension; USDA Silvics of North America." },
+    ],
+    "ulmus-crassifolia": [
+      { wildlifeId: "mourning-cloak", support: "host", note: "Elms are core mourning cloak hosts; the caterpillars feed in groups on the leaves.", basis: "NWF Native Plant Finder; BAMONA." },
+    ],
+    "celtis-laevigata": [
+      { wildlifeId: "american-snout", support: "host", reliance: "sole", note: "Hackberries are the snout's only caterpillar food — no hackberry, no snouts.", basis: "BAMONA; Texas Parks and Wildlife." },
+      { wildlifeId: "mourning-cloak", support: "host", note: "Hackberry is one of the trees mourning cloak caterpillars grow up on.", basis: "BAMONA." },
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "Waxwing flocks strip the sweet berries in winter.", basis: "Cornell Lab." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Mockingbirds, robins and cardinals eat the berries from autumn until they are gone.", basis: "Cornell Lab; Lady Bird Johnson Wildflower Center." },
+    ],
+    "salix-nigra": [
+      { wildlifeId: "viceroy", support: "host", reliance: "narrow", note: "Willows are the viceroy's main caterpillar food, so creekside black willow is where they breed.", basis: "NWF Native Plant Finder; BAMONA." },
+      { wildlifeId: "mourning-cloak", support: "host", note: "Willow is a core mourning cloak host.", basis: "NWF Native Plant Finder; BAMONA." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Catkins in March give early solitary bees their first pollen of the year.", basis: "Xerces Society." },
+    ],
+    "prunus-mexicana": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "White blossom in February, when early solitary bees have almost nothing else.", basis: "Xerces Society; Lady Bird Johnson Wildflower Center." },
+      { wildlifeId: "acorn-mammals", support: "berries", note: "Foxes, raccoons and deer take the fallen plums in late summer.", basis: "Lady Bird Johnson Wildflower Center." },
+    ],
+    "cercis-canadensis": [
+      { wildlifeId: "eastern-carpenter-bee", support: "nectar", reliance: "narrow", note: "The pea-shaped flowers open to bees heavy enough to push them apart, and carpenter bees are first in line.", basis: "Xerces Society." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Among the first flowers of the year for small native bees.", basis: "Xerces Society; Lady Bird Johnson Wildflower Center." },
+    ],
+    "ungnadia-speciosa": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Fragrant pink flowers in March that bumble bee queens visit as they start their nests.", basis: "Lady Bird Johnson Wildflower Center; Xerces Society." },
+    ],
+    "dermatophyllum-secundiflorum": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The grape-scented flowers are one of the first big meals for bumble bees in late winter.", basis: "Lady Bird Johnson Wildflower Center." },
+    ],
+    "ilex-decidua": [
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "Red berries that hang on the bare branches into late winter, when waxwings arrive hungry.", basis: "Cornell Lab; Lady Bird Johnson Wildflower Center." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Robins, bluebirds and mockingbirds come for the berries once other fruit is gone.", basis: "Cornell Lab." },
+    ],
+    "ilex-vomitoria": [
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "Winter berries that waxwing flocks strip in a morning.", basis: "Cornell Lab." },
+      { wildlifeId: "berry-songbirds", support: "shelter", note: "Dense evergreen cover where cardinals and mockingbirds nest and roost.", basis: "Lady Bird Johnson Wildflower Center; Cornell Lab." },
+    ],
+    "cornus-drummondii": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "White berries in late summer, eaten by dozens of songbirds fuelling up for migration.", basis: "Lady Bird Johnson Wildflower Center; Cornell Lab." },
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "Waxwings take dogwood fruit wherever they find it.", basis: "Cornell Lab." },
+    ],
+    "callicarpa-americana": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Purple berries eaten by mockingbirds, thrashers and cardinals in autumn and winter.", basis: "Lady Bird Johnson Wildflower Center; Cornell Lab." },
+    ],
+    "berberis-trifoliolata": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Yellow flowers in February, among the first pollen of the Hill Country year.", basis: "Lady Bird Johnson Wildflower Center; Xerces Society." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "The red berries feed mockingbirds and other birds in early summer, under spiny cover.", basis: "Lady Bird Johnson Wildflower Center." },
+    ],
+    "ehretia-anacua": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Mockingbirds, cardinals and thrashers strip the orange fruit as it ripens.", basis: "Lady Bird Johnson Wildflower Center." },
+    ],
+    "rhus-lanceolata": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Red seed clusters that stay on through winter, a reserve birds come back to when food is short.", basis: "Lady Bird Johnson Wildflower Center; Cornell Lab." },
+    ],
+    "parthenocissus-quinquefolia": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Blue berries on red stems in autumn, taken by thrushes, mockingbirds and woodpeckers.", basis: "Cornell Lab." },
+    ],
+    "cephalanthus-occidentalis": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The pincushion flowers hum with bumble bees through the heat of summer.", basis: "Xerces Society." },
+    ],
+    "asclepias-asperula": [
+      { wildlifeId: "monarch", support: "host", reliance: "sole", note: "The milkweed monarchs lay on as they arrive from Mexico each spring; Texas raises the first generation of the year.", basis: "Monarch Watch; Lady Bird Johnson Wildflower Center." },
+      { wildlifeId: "queen-butterfly", support: "host", reliance: "sole", note: "Queen caterpillars also feed only on milkweeds, this one included.", basis: "BAMONA." },
+    ],
+    "helianthus-maximiliani": [
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "Sunflower specialist bees collect only this family's pollen, and autumn sunflowers are a main source.", basis: "Fowler & Droege, Pollen Specialist Bees of the U.S." },
+      { wildlifeId: "monarch", support: "nectar", note: "In flower as monarchs funnel south through Texas in October.", basis: "Monarch Watch; Lady Bird Johnson Wildflower Center." },
+      { wildlifeId: "american-goldfinch", support: "seeds", note: "Goldfinches hang on the heads in winter to pick out the seed.", basis: "Cornell Lab." },
+    ],
+    "verbesina-virginica": [
+      { wildlifeId: "monarch", support: "nectar", note: "One of the main nectar stops for monarchs crossing Texas in autumn.", basis: "Monarch Watch; Lady Bird Johnson Wildflower Center." },
+      { wildlifeId: "queen-butterfly", support: "nectar", note: "Queens crowd the white flower heads alongside the monarchs.", basis: "Lady Bird Johnson Wildflower Center." },
+    ],
+    "symphyotrichum-oblongifolium": [
+      { wildlifeId: "monarch", support: "nectar", note: "Late-autumn flowers for the last monarchs heading south.", basis: "Monarch Watch; Xerces Society." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees work it until the first freeze.", basis: "Xerces Society." },
+    ],
+    "solidago-nemoralis": [
+      { wildlifeId: "monarch", support: "nectar", note: "Goldenrod is a classic autumn nectar plant on the monarch's route.", basis: "Monarch Watch; Xerces Society." },
+    ],
+    "conoclinium-coelestinum": [
+      { wildlifeId: "queen-butterfly", support: "nectar", note: "Queens are drawn to mistflowers more than to almost anything else.", basis: "BAMONA; Lady Bird Johnson Wildflower Center." },
+      { wildlifeId: "monarch", support: "nectar", note: "Autumn flowers on the monarchs' route south.", basis: "Lady Bird Johnson Wildflower Center." },
+    ],
+    "passiflora-incarnata": [
+      { wildlifeId: "gulf-fritillary", support: "host", reliance: "narrow", note: "Gulf fritillary caterpillars eat only passionflower vines, and maypop is the native one here.", basis: "BAMONA; Lady Bird Johnson Wildflower Center." },
+    ],
+    "phyla-nodiflora": [
+      { wildlifeId: "phaon-crescent", support: "host", reliance: "sole", note: "Frogfruit is the phaon crescent's caterpillar food — leave a patch unmown and they will find it.", basis: "BAMONA." },
+    ],
+    "malvaviscus-arboreus": [
+      { wildlifeId: "black-chinned-hummingbird", support: "nectar", note: "Red flowers from May to frost, right through the nesting season.", basis: "Lady Bird Johnson Wildflower Center; Cornell Lab." },
+      { wildlifeId: "ruby-throated-hummingbird", support: "nectar", note: "A fuel stop for ruby-throats passing through in autumn.", basis: "Lady Bird Johnson Wildflower Center." },
+    ],
+    "salvia-greggii": [
+      { wildlifeId: "black-chinned-hummingbird", support: "nectar", note: "Flowers spring to frost, so a nesting pair has food all season.", basis: "Lady Bird Johnson Wildflower Center; Cornell Lab." },
+    ],
+    "salvia-roemeriana": [
+      { wildlifeId: "black-chinned-hummingbird", support: "nectar", note: "Red flowers in shade, timed for the hummingbirds' return in spring.", basis: "Lady Bird Johnson Wildflower Center." },
+    ],
+    "anisacanthus-quadrifidus": [
+      { wildlifeId: "black-chinned-hummingbird", support: "nectar", note: "Orange tubes all through the hottest months, when little else is flowering.", basis: "Lady Bird Johnson Wildflower Center." },
+    ],
+    "bignonia-capreolata": [
+      { wildlifeId: "ruby-throated-hummingbird", support: "nectar", note: "Trumpets that open as ruby-throats arrive back from Mexico in March.", basis: "Lady Bird Johnson Wildflower Center; Cornell Lab." },
+    ],
+    "callirhoe-involucrata": [
+      { wildlifeId: "mallow-specialist-bees", support: "nectar", reliance: "narrow", note: "Winecup is one of the mallows whose pollen these specialist bees collect, and they sleep in the closed cups.", basis: "Fowler & Droege, Pollen Specialist Bees of the U.S.; Xerces Society." },
+    ],
+    "pavonia-lasiopetala": [
+      { wildlifeId: "mallow-specialist-bees", support: "nectar", reliance: "narrow", note: "A mallow, so its pollen feeds the mallow specialists.", basis: "Fowler & Droege, Pollen Specialist Bees of the U.S." },
+    ],
+    "lupinus-texensis": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees are heavy enough to trip the flowers open and reach the pollen.", basis: "Xerces Society; Lady Bird Johnson Wildflower Center." },
+    ],
+    "monarda-citriodora": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees and many smaller bees work the tiered flowers all day.", basis: "Xerces Society." },
+    ],
+    "penstemon-cobaea": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The wide bells are sized for bumble bees, which climb all the way in.", basis: "Lady Bird Johnson Wildflower Center; Xerces Society." },
+    ],
+    "schizachyrium-scoparium": [
+      { wildlifeId: "grass-skippers", support: "host", note: "Several skippers raise their caterpillars on little bluestem's leaves.", basis: "BAMONA; Xerces Society." },
+    ],
+    "bouteloua-curtipendula": [
+      { wildlifeId: "grass-skippers", support: "host", note: "A host for several prairie skippers.", basis: "BAMONA." },
+    ],
+    "chasmanthium-latifolium": [
+      { wildlifeId: "grass-skippers", support: "host", note: "Shade-loving skippers lay on its broad leaves along creeks.", basis: "BAMONA." },
+    ],
+    "prosopis-glandulosa": [
+      { wildlifeId: "acorn-mammals", support: "seeds", note: "Sweet pods that deer, coyotes and other mammals eat in summer.", basis: "USDA PLANTS; Texas Parks and Wildlife." },
     ],
   },
 };

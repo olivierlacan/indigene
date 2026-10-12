@@ -50,6 +50,10 @@ const NAGOYA = [35.1815, 136.9066] as const;
 const OSAKA = [34.6937, 135.5023] as const;
 const SENDAI = [38.2682, 140.8694] as const;
 const NIKKO = [36.7199, 139.6982] as const;
+const AUSTIN = [30.2672, -97.7431] as const;
+const DALLAS = [32.7767, -96.797] as const;
+const BASTROP = [30.1105, -97.3153] as const;
+const HOUSTON = [29.7604, -95.3698] as const;
 
 describe("regionForSite — a live code refines the box", () => {
   it("matches a US point on the region's EPA codes", () => {
@@ -155,6 +159,25 @@ describe("regionForSite — Japan, where one code covers most of a country", () 
     // here, each catching what the other cannot.
     expect(regionForSite(...NIKKO, siteWith(resolve("683", "Taiheiyo montane deciduous forests"))))
       .toBeNull();
+  });
+});
+
+describe("regionForSite — Central Texas, three codes and the ground between them", () => {
+  it("hands the list to the Hill Country, the Blackland and the Cross Timbers", () => {
+    expect(regionForSite(...AUSTIN, siteWith(epa("30", "Edwards Plateau")))?.meta.id).toBe("central-texas");
+    expect(regionForSite(...AUSTIN, siteWith(epa("32", "Texas Blackland Prairies")))?.meta.id).toBe("central-texas");
+    expect(regionForSite(...DALLAS, siteWith(epa("29", "Cross Timbers")))?.meta.id).toBe("central-texas");
+  });
+
+  it("refuses the post-oak sands inside the box on their code", () => {
+    // Bastrop is 30 km from Austin, on acid sand the EPA calls 33. The list is
+    // written for limestone and black clay, so the box alone must not decide.
+    expect(regionForSite(...BASTROP, siteWith(epa("33", "East Central Texas Plains")))).toBeNull();
+  });
+
+  it("leaves Houston to a list of its own", () => {
+    expect(regionForSite(...HOUSTON, siteWith(epa("34", "Western Gulf Coastal Plain")))).toBeNull();
+    expect(regionForSite(...HOUSTON, siteWith(null))).toBeNull();
   });
 });
 

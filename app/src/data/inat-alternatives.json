@@ -305,6 +305,15 @@
     "attribution": "(c) pumpernickel, some rights reserved (CC BY-NC)",
     "color": "#787f59"
   },
+  "pistacia-chinensis": {
+    "taxonId": 143792,
+    "photoId": 171142,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/171142/square.jpg",
+    "observer": "潘立傑 LiChieh Pan",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) 潘立傑 LiChieh Pan, some rights reserved (CC BY-NC-SA)",
+    "color": "#61753c"
+  },
   "pittosporum-tobira": {
     "taxonId": 78592,
     "photoId": 33349195,

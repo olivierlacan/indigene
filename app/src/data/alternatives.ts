@@ -383,6 +383,17 @@ export const ORNAMENTALS: Ornamental[] = [
     originBasis: "Penn State Extension; Morton Arboretum.",
   },
   {
+    id: "pistacia-chinensis",
+    common: "Chinese pistache",
+    latin: "Pistacia chinensis",
+    form: "tree",
+    role: "Fall-color shade tree",
+    origin: "Native to central and western China.",
+    blurb:
+      "The tree Texas nurseries sell for red fall colour in a hot, dry yard, and it delivers. But female trees seed heavily, and around Austin and Dallas its seedlings now come up in creek woods and fencerows. It also feeds almost nothing local.",
+    originBasis: "Missouri Botanical Garden; Texas Invasive Species Institute; Lady Bird Johnson Wildflower Center.",
+  },
+  {
     id: "pyrus-calleryana",
     common: "Callery pear (Bradford pear)",
     latin: "Pyrus calleryana",
@@ -3716,6 +3727,132 @@ export const ALTERNATIVES: Record<string, Record<string, AlternativeLink[]>> = {
           { axis: "disease", native: "A hardy native of cold country.", ornamental: "Greedy, drain-seeking roots; brittle and short-lived." },
         ],
         basis: "INPN; RHS.",
+      },
+    ],
+  },
+  "central-texas": {
+    "cynodon-dactylon": [
+      {
+        plantId: "bouteloua-dactyloides",
+        why: "For a sunny lawn you can walk on, buffalograss makes a soft, fine turf that needs mowing a few times a summer and goes dormant in drought instead of dying.",
+        edges: [
+          { axis: "water", native: "Lives on rain alone in most years; turns tan in a long drought and greens up after.", ornamental: "Needs water every week in a Texas summer to stay green." },
+          { axis: "care", native: "Mowed a few times a summer, never fed.", ornamental: "Weekly mowing and fertiliser, and it runs into every bed." },
+        ],
+        basis: "Texas A&M AgriLife Extension; Lady Bird Johnson Wildflower Center.",
+      },
+      {
+        plantId: "phyla-nodiflora",
+        why: "For a patch that takes foot traffic in sun or part shade, frogfruit makes a low flowering mat that mows like a lawn.",
+        edges: [
+          { axis: "wildlife", native: "Flowers all season for small bees, and the phaon crescent's caterpillar food.", ornamental: "Nothing for pollinators." },
+          { axis: "water", native: "Takes drought and floods.", ornamental: "Browns off without regular watering." },
+        ],
+        basis: "Lady Bird Johnson Wildflower Center; BAMONA.",
+      },
+    ],
+    "lagerstroemia-indica": [
+      {
+        plantId: "diospyros-texana",
+        why: "For smooth, peeling, many-coloured bark on a small multi-trunk tree, Texas persimmon has the crape myrtle's best feature — and fruit the birds eat.",
+        edges: [
+          { axis: "wildlife", native: "Black fruit for birds and foxes, and flowers for bees.", ornamental: "About three kinds of caterpillar, and little a native bird can eat." },
+          { axis: "water", native: "Never needs watering once rooted.", ornamental: "Wants summer water to flower well." },
+          { axis: "disease", native: "No mildew, no scale.", ornamental: "Powdery mildew, and crape myrtle bark scale now spreading across Texas." },
+        ],
+        basis: "Lady Bird Johnson Wildflower Center; Texas A&M AgriLife Extension.",
+      },
+      {
+        plantId: "ungnadia-speciosa",
+        why: "For a small tree that is a cloud of pink, Mexican buckeye flowers in March and colours gold in autumn.",
+        edges: [
+          { axis: "wildlife", native: "Early nectar that bees and butterflies crowd.", ornamental: "Pollen for bees, but almost nothing else lives on it." },
+          { axis: "water", native: "Drought-proof on limestone.", ornamental: "Wants summer water." },
+        ],
+        basis: "Lady Bird Johnson Wildflower Center.",
+      },
+    ],
+    "pistacia-chinensis": [
+      {
+        plantId: "quercus-buckleyi",
+        why: "For a medium shade tree that turns red in autumn on thin, alkaline soil, Texas red oak does the same job and feeds hundreds of caterpillar species.",
+        edges: [
+          { axis: "wildlife", native: "Acorns for jays and deer, and the oak's huge caterpillar crop that songbirds raise their young on.", ornamental: "Berries some birds eat — which is how its seedlings reach the woods." },
+          { axis: "care", native: "Stays where you plant it.", ornamental: "Female trees seed into creeks and fencerows." },
+        ],
+        basis: "Lady Bird Johnson Wildflower Center; Texas A&M Forest Service.",
+      },
+      {
+        plantId: "rhus-lanceolata",
+        why: "For blazing red leaves on a smaller tree, flameleaf sumac colours as hot, and its flowers feed bees in midsummer.",
+        edges: [
+          { axis: "wildlife", native: "Midsummer nectar and winter berries for birds.", ornamental: "Little for local insects." },
+          { axis: "water", native: "Thrives on dry rock.", ornamental: "Tolerates drought too — the case here is wildlife." },
+        ],
+        basis: "Lady Bird Johnson Wildflower Center.",
+      },
+    ],
+    "nandina-domestica": [
+      {
+        plantId: "berberis-trifoliolata",
+        why: "For an evergreen shrub with red winter berries by the house, agarita has the colour and the toughness, and its berries feed birds instead of poisoning them.",
+        edges: [
+          { axis: "wildlife", native: "Early flowers for bees, and berries birds eat safely.", ornamental: "Berries that can kill cedar waxwings, and seed carried into creek woods." },
+          { axis: "water", native: "Lives on rain alone.", ornamental: "Drought-tolerant too — the case is the berries." },
+        ],
+        basis: "Lady Bird Johnson Wildflower Center; Texas Invasive Species Institute.",
+      },
+      {
+        plantId: "callicarpa-americana",
+        why: "For a shady foundation bed with bright autumn fruit, American beautyberry carries clusters of purple berries birds strip by winter.",
+        edges: [
+          { axis: "wildlife", native: "Berries for mockingbirds, cardinals and thrashers.", ornamental: "Toxic berries, and a nuisance in the woods." },
+        ],
+        basis: "Lady Bird Johnson Wildflower Center.",
+      },
+    ],
+    "ligustrum-sinense": [
+      {
+        plantId: "ilex-vomitoria",
+        why: "For a fast evergreen hedge or screen, yaupon clips just as well and holds red berries through winter.",
+        edges: [
+          { axis: "wildlife", native: "Nesting cover and winter berries for native birds.", ornamental: "Berries birds spread into every creek bottom in the region." },
+          { axis: "care", native: "Stays where it's planted; the suckers pull easily.", ornamental: "One of the worst invaders of Texas woods." },
+        ],
+        basis: "Lady Bird Johnson Wildflower Center; Texas Invasive Species Institute.",
+      },
+    ],
+    "lantana-camara": [
+      {
+        plantId: "lantana-urticoides",
+        why: "For a summer-long butterfly shrub, Texas lantana is the native lantana — the same flower heads in yellow and orange, the same heat-proof toughness.",
+        edges: [
+          { axis: "wildlife", native: "A nectar magnet, and native to the insects that visit it.", ornamental: "Seeds into brush and crosses with the native plant." },
+          { axis: "water", native: "Drought-proof once rooted.", ornamental: "Drought-tolerant too — the case is keeping the native plant pure." },
+        ],
+        basis: "Lady Bird Johnson Wildflower Center; Texas A&M AgriLife Extension.",
+      },
+    ],
+    "cortaderia-selloana": [
+      {
+        plantId: "muhlenbergia-lindheimeri",
+        why: "For a big fountain of a grass with tall autumn plumes, Lindheimer muhly is the Hill Country's own — softer, blue-grey, and without the razor leaves.",
+        edges: [
+          { axis: "care", native: "Soft leaves you can cut back by hand, and no seedlings.", ornamental: "Leaves that slice skin, and wind-blown seed." },
+          { axis: "wildlife", native: "Cover and nest material for native birds.", ornamental: "Little for local wildlife." },
+        ],
+        basis: "Lady Bird Johnson Wildflower Center.",
+      },
+    ],
+    "pyrus-calleryana": [
+      {
+        plantId: "prunus-mexicana",
+        why: "For white blossom on bare branches in early spring, Mexican plum flowers first, smells sweet instead of rank, and its branches hold together.",
+        edges: [
+          { axis: "disease", native: "Sound branches.", ornamental: "Splits apart in storms as it ages; fire-blight prone." },
+          { axis: "wildlife", native: "Early nectar, plums for wildlife, and hundreds of caterpillar species.", ornamental: "Thorny seedlings now thicket Texas pastures." },
+        ],
+        basis: "Lady Bird Johnson Wildflower Center; Texas A&M Forest Service.",
       },
     ],
   },

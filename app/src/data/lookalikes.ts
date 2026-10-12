@@ -217,6 +217,16 @@ export const LOOKALIKES: Lookalike[] = [
     originBasis: "Missouri Botanical Garden; UF/IFAS.",
   },
   {
+    id: "lantana-camara",
+    common: "Common lantana",
+    latin: "Lantana camara",
+    form: "shrub",
+    origin: "Native to Central and South America and the Caribbean.",
+    blurb:
+      "The bedding lantana of every garden centre, in more colours than any wild plant. In the warm South it seeds into woods and pastures, its berries poison livestock, and it crosses with the native Texas lantana.",
+    originBasis: "USDA PLANTS; UF/IFAS; Texas Invasive Species Institute.",
+  },
+  {
     id: "hamelia-patens-glabra",
     common: "African firebush (dwarf firebush)",
     latin: "Hamelia patens var. glabra",
@@ -1158,6 +1168,48 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
           { feature: "Where a needle has fallen", native: "It leaves a tiny peg behind, so an old twig feels rough.", lookalike: "It leaves a smooth oval scar, so the twig stays smooth." },
         ],
         basis: "Tela Botanica; INPN; ONF.",
+      },
+    ],
+  },
+  "central-texas": {
+    "asclepias-asperula": [
+      {
+        lookalikeId: "asclepias-curassavica",
+        status: "introduced",
+        why: "Both are sold as milkweed for monarchs, and the tropical one is the one every nursery stocks.",
+        tells: [
+          { feature: "Flowers", native: "Pale green balls with a purple centre, in spring.", lookalike: "Red outer petals around a yellow-orange crown, almost all year." },
+          { feature: "Stance", native: "Low and sprawling, with narrow folded leaves.", lookalike: "Upright, waist high, with smooth pointed leaves." },
+          { feature: "In winter", native: "Often dies back in the summer heat and rests until spring.", lookalike: "Stays green through a mild Texas winter, so monarchs stop to breed instead of flying on to Mexico, and the OE parasite builds up." },
+          { feature: "If you already have it", native: "Nothing to do.", lookalike: "Cut it to the ground every October to February, or replace it with a native milkweed." },
+        ],
+        basis: "Xerces Society; Monarch Joint Venture; LBJ Wildflower Center.",
+      },
+    ],
+    "callicarpa-americana": [
+      {
+        lookalikeId: "callicarpa-dichotoma",
+        status: "introduced",
+        why: "Two beautyberries sold under the same name, both carrying bright purple fruit in autumn.",
+        tells: [
+          { feature: "Where the fruit sits", native: "Packed into fat rings hugging the stem at each pair of leaves.", lookalike: "In small loose bunches held out from the stem on short stalks." },
+          { feature: "Fruit color", native: "Deep magenta.", lookalike: "Lilac to violet." },
+          { feature: "Leaves", native: "Big, soft, felty underneath, coarsely toothed.", lookalike: "Smaller, thinner, smooth, toothed only above the middle." },
+        ],
+        basis: "LBJ Wildflower Center; Missouri Botanical Garden.",
+      },
+    ],
+    "lantana-urticoides": [
+      {
+        lookalikeId: "lantana-camara",
+        status: "introduced",
+        why: "Both are lantanas with the same rough leaves and flat flower heads, and both are sold as \"Texas lantana\".",
+        tells: [
+          { feature: "Flower colors", native: "Yellow at the centre, orange to red at the rim — always that mix.", lookalike: "Any colour: pink, white, lavender, gold, often with a pink or purple centre." },
+          { feature: "Label", native: "Lantana urticoides, sometimes \"Texas\" or \"West Indian\" lantana.", lookalike: "Lantana camara, or a named variety like 'New Gold' or 'Miss Huff'." },
+          { feature: "Where it ends up", native: "Where you planted it.", lookalike: "Seeding into nearby brush, and crossing with the native plant." },
+        ],
+        basis: "LBJ Wildflower Center; Texas A&M AgriLife Extension; UF/IFAS.",
       },
     ],
   },

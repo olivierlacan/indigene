@@ -94,6 +94,11 @@ const UA = "Mozilla/5.0 (indigene region maps; +https://github.com/olivierlacan/
  * already follows for Level III names) — "Marseille" reads the same in both
  * languages this app speaks. Coordinates are town centres to two decimals,
  * which is a few hundred metres: far finer than a dot at this scale.
+ *
+ * An entry with `kind: "area"` names a part of the shading rather than a town —
+ * for a piece of the region that would otherwise look like a stray, such as an
+ * arm cut off from the rest. It has no dot, sits centred on its point, and
+ * never counts toward the three cities a map needs.
  */
 const LANDMARKS = {
   // Hamilton sits just south of the box on purpose: it is the edge a reader in
@@ -169,6 +174,25 @@ const LANDMARKS = {
     { name: "Riverside", lat: 33.95, lon: -117.4 },
     { name: "Palm Springs", lat: 33.83, lon: -116.55 },
     { name: "San Diego", lat: 32.72, lon: -117.16 },
+  ],
+  // Dallas, Fort Worth and Waco fix the north and the Blackland; Austin and San
+  // Antonio the Balcones Escarpment, where the Hill Country meets the prairie;
+  // Junction the western Hill Country. College Station sits east of the shading
+  // on purpose — the post-oak sands, which this list does not claim. (Bastrop
+  // would make the same point closer in, but its label crowds out Austin's.)
+  "central-texas": [
+    { name: "Dallas", lat: 32.78, lon: -96.8 },
+    { name: "Fort Worth", lat: 32.76, lon: -97.33 },
+    { name: "Waco", lat: 31.55, lon: -97.15 },
+    { name: "Junction", lat: 30.49, lon: -99.77 },
+    { name: "Austin", lat: 30.27, lon: -97.74 },
+    { name: "College Station", lat: 30.63, lon: -96.33 },
+    { name: "San Antonio", lat: 29.42, lon: -98.49 },
+    // The Blackland's detached southern arm (EPA 32b), cut off from the main
+    // body by the post-oak sands. Named as a place, not a town, so the strip
+    // reads as part of the region rather than a stray. Set just east of its
+    // middle, in open ground: laid along the strip, it ran into San Antonio's name.
+    { name: "Fayette Prairie", lat: 29.8, lon: -95.6, kind: "area" },
   ],
   "mid-atlantic": [
     { name: "Boston", lat: 42.36, lon: -71.06 },
@@ -484,6 +508,11 @@ const STYLE = `
   .pin-label { font: 600 23px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
                fill: #14140f; stroke: #f7f5ef; stroke-width: 5; paint-order: stroke;
                stroke-linejoin: round; dominant-baseline: central; }
+  /* A part of the region, not a town: italic, in the region's own green and
+     with no dot, so it can't be read as one more city on the map. */
+  .area-label { font: italic 600 19px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+                fill: #0d3d20; stroke: #f7f5ef; stroke-width: 4; paint-order: stroke;
+                stroke-linejoin: round; dominant-baseline: central; letter-spacing: 0.4px; }
   @media (prefers-color-scheme: dark) {
     .land { fill: #2e3325; stroke: #545d43; }
     .admin { stroke: #434b36; }
@@ -491,13 +520,15 @@ const STYLE = `
     .cover-box { fill: #7ec894; fill-opacity: 0.22; stroke: #b9e6c6; }
     .pin { fill: #f2f1e8; stroke: #14160f; }
     .pin-label { fill: #f2f1e8; stroke: #14160f; }
+    .area-label { fill: #b9e6c6; stroke: #14160f; }
   }`;
 
 /** Label metrics, close enough to lay out with: at this weight and size a
  *  character averages a bit over half the font size, which is all the accuracy
  *  a collision test needs. */
 const LABEL_SIZE = 23;
-const labelWidth = (text) => text.length * LABEL_SIZE * 0.56;
+const labelWidth = (text, size = LABEL_SIZE) => text.length * size * 0.56;
+const AREA_SIZE = 19;
 
 const overlaps = (a, b) =>
   a.x1 < b.x2 && a.x2 > b.x1 && a.y1 < b.y2 && a.y2 > b.y1;
@@ -512,7 +543,9 @@ const overlaps = (a, b) =>
  * top of each other are two towns nobody can read. Order matters, so the lists
  * above are written most-recognizable first.
  */
-function landmarks(places, project, height) {
+function landmarks(all, project, height) {
+  const places = all.filter((p) => p.kind !== "area");
+  const areas = all.filter((p) => p.kind === "area");
   const dots = places.map((p) => project([p.lon, p.lat]));
   const out = [];
   // Every dot is an obstacle from the start, so a name can't be laid across a
@@ -547,6 +580,35 @@ function landmarks(places, project, height) {
     out.push(
       `<text class="pin-label" x="${tx}" y="${ty}" text-anchor="${fit.anchor}">` +
       `${escape(place.name)}</text>`
+    );
+  }
+  // Areas go last, so a city always keeps its name: an area label is centred on
+  // its point (or nudged a little sideways or up and down), and dropped if
+  // every position would cover a town.
+  for (const area of areas) {
+    const [x0, y0] = project([area.lon, area.lat]);
+    const w = labelWidth(area.name, AREA_SIZE);
+    const pins = dots.map(([dx, dy]) => ({ x1: dx - 7, x2: dx + 7, y1: dy - 7, y2: dy + 7 }));
+    const boxAt = (cx, cy) => ({ x1: cx - w / 2 - 3, x2: cx + w / 2 + 3, y1: cy - 12, y2: cy + 12 });
+    const clear = (cx, cy) => {
+      const b = boxAt(cx, cy);
+      return b.x1 >= 2 && b.x2 <= WIDTH - 2 && b.y1 >= 2 && b.y2 <= height - 2 &&
+        !taken.some((t) => overlaps(b, t)) && !pins.some((t) => overlaps(b, t));
+    };
+    // On the point first, then nudged sideways, then up or down.
+    const shifts = [[0, 0], [15, 0], [-15, 0], [0, -20], [0, 20]];
+    const hit = shifts.find(([dx, dy]) => clear(x0 + dx, y0 + dy));
+    const at = hit && [x0 + hit[0], y0 + hit[1]];
+    if (!at) {
+      console.warn(`  area label "${area.name}" would cover a town; left off`);
+      continue;
+    }
+    const tx = Math.round(at[0] * 10) / 10;
+    const ty = Math.round(at[1] * 10) / 10;
+    taken.push(boxAt(at[0], at[1]));
+    out.push(
+      `<text class="area-label" x="${tx}" y="${ty}" text-anchor="middle">` +
+      `${escape(area.name)}</text>`
     );
   }
   return out;
@@ -715,7 +777,7 @@ async function buildRegion(meta) {
   // defeats the point of drawing it. Refuse to build one: every region must
   // declare a handful of cities in LANDMARKS above that fix its edges.
   const places = LANDMARKS[meta.id] ?? [];
-  if (places.length < 3) {
+  if (places.filter((p) => p.kind !== "area").length < 3) {
     throw new Error(
       `${meta.id}: a region map needs spatial reference. Add a handful of major ` +
         `cities (ideally four or five, at least three) to the LANDMARKS table in ` +

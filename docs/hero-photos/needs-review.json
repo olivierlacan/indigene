@@ -219,6 +219,14 @@
     },
     {
       "subject": "invasive",
+      "id": "ligustrum-lucidum",
+      "name": "Ligustrum lucidum",
+      "taxonId": 77740,
+      "reason": "chosen photo 42868241 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/77740/browse_photos"
+    },
+    {
+      "subject": "invasive",
       "id": "lythrum-salicaria",
       "name": "Lythrum salicaria",
       "taxonId": 61321,
@@ -232,6 +240,14 @@
       "taxonId": 78258,
       "reason": "chosen photo 8756339 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/78258/browse_photos"
+    },
+    {
+      "subject": "invasive",
+      "id": "rapistrum-rugosum",
+      "name": "Rapistrum rugosum",
+      "taxonId": 78835,
+      "reason": "chosen photo 448747381 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/78835/browse_photos"
     },
     {
       "subject": "invasive",
@@ -272,6 +288,14 @@
       "taxonId": 521976,
       "reason": "chosen photo 28612289 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/521976/browse_photos"
+    },
+    {
+      "subject": "lookalike",
+      "id": "lantana-camara",
+      "name": "Lantana camara",
+      "taxonId": 50333,
+      "reason": "chosen photo 369564698 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/50333/browse_photos"
     },
     {
       "subject": "lookalike",
@@ -320,6 +344,14 @@
       "taxonId": 158286,
       "reason": "chosen photo 209272559 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/158286/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "anisacanthus-quadrifidus",
+      "name": "Anisacanthus quadrifidus",
+      "taxonId": 158386,
+      "reason": "chosen photo 27475973 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/158386/browse_photos"
     },
     {
       "subject": "plant",
@@ -392,6 +424,14 @@
       "taxonId": 371978,
       "reason": "chosen photo 24927452 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/371978/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "callirhoe-involucrata",
+      "name": "Callirhoe involucrata",
+      "taxonId": 127941,
+      "reason": "chosen photo 6099856 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/127941/browse_photos"
     },
     {
       "subject": "plant",
@@ -496,6 +536,14 @@
       "taxonId": 777371,
       "reason": "chosen photo 18817746 is cc-by-nc-nd",
       "gallery": "https://www.inaturalist.org/taxa/777371/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "engelmannia-peristenia",
+      "name": "Engelmannia peristenia",
+      "taxonId": 127943,
+      "reason": "chosen photo 35579085 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/127943/browse_photos"
     },
     {
       "subject": "plant",
@@ -651,6 +699,14 @@
     },
     {
       "subject": "plant",
+      "id": "malvaviscus-arboreus",
+      "name": "Malvaviscus arboreus",
+      "taxonId": 120942,
+      "reason": "chosen photo 57441599 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/120942/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "morella-californica",
       "name": "Morella californica",
       "taxonId": 61039,
@@ -664,6 +720,14 @@
       "taxonId": 78126,
       "reason": "chosen photo 74457 is cc-by-nc-nd",
       "gallery": "https://www.inaturalist.org/taxa/78126/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "muhlenbergia-lindheimeri",
+      "name": "Muhlenbergia lindheimeri",
+      "taxonId": 165559,
+      "reason": "chosen photo 59670856 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/165559/browse_photos"
     },
     {
       "subject": "plant",
@@ -683,6 +747,14 @@
     },
     {
       "subject": "plant",
+      "id": "oenothera-speciosa",
+      "name": "Oenothera speciosa",
+      "taxonId": 48625,
+      "reason": "chosen photo 79516474 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/48625/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "passiflora-suberosa",
       "name": "Passiflora suberosa",
       "taxonId": 129327,
@@ -696,6 +768,14 @@
       "taxonId": 447233,
       "reason": "chosen photo 28503099 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/447233/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "pavonia-lasiopetala",
+      "name": "Pavonia lasiopetala",
+      "taxonId": 166219,
+      "reason": "chosen photo 158207165 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/166219/browse_photos"
     },
     {
       "subject": "plant",
@@ -720,6 +800,14 @@
       "taxonId": 51754,
       "reason": "chosen photo 2920681 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/51754/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "phyla-nodiflora",
+      "name": "Phyla nodiflora",
+      "taxonId": 59040,
+      "reason": "chosen photo 260096290 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/59040/browse_photos"
     },
     {
       "subject": "plant",
@@ -771,11 +859,35 @@
     },
     {
       "subject": "plant",
+      "id": "prunus-mexicana",
+      "name": "Prunus mexicana",
+      "taxonId": 128755,
+      "reason": "chosen photo 519370 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/128755/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "pseudopanax-lessonii",
       "name": "Pseudopanax lessonii",
       "taxonId": 405342,
       "reason": "chosen photo 60114064 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/405342/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "quercus-stellata",
+      "name": "Quercus stellata",
+      "taxonId": 119269,
+      "reason": "chosen photo 1351437 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/119269/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "ratibida-columnifera",
+      "name": "Ratibida columnifera",
+      "taxonId": 78836,
+      "reason": "chosen photo 401477062 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/78836/browse_photos"
     },
     {
       "subject": "plant",
@@ -875,6 +987,14 @@
     },
     {
       "subject": "plant",
+      "id": "styphnolobium-affine",
+      "name": "Styphnolobium affine",
+      "taxonId": 289854,
+      "reason": "chosen photo 356509 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/289854/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "styrax-japonicus",
       "name": "Styrax japonicus",
       "taxonId": 128570,
@@ -888,6 +1008,14 @@
       "taxonId": 53456,
       "reason": "chosen photo 123050688 is cc-by-nc-nd",
       "gallery": "https://www.inaturalist.org/taxa/53456/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "symphyotrichum-oblongifolium",
+      "name": "Symphyotrichum oblongifolium",
+      "taxonId": 119343,
+      "reason": "chosen photo 72715033 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/119343/browse_photos"
     },
     {
       "subject": "plant",
@@ -931,6 +1059,22 @@
     },
     {
       "subject": "plant",
+      "id": "ulmus-crassifolia",
+      "name": "Ulmus crassifolia",
+      "taxonId": 128823,
+      "reason": "chosen photo 10140569 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/128823/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "ungnadia-speciosa",
+      "name": "Ungnadia speciosa",
+      "taxonId": 170070,
+      "reason": "chosen photo 14314283 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/170070/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "urtica-dioica",
       "name": "Urtica dioica",
       "taxonId": 51884,
@@ -952,6 +1096,14 @@
       "taxonId": 60251,
       "reason": "chosen photo 6560152 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/60251/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "viburnum-rufidulum",
+      "name": "Viburnum rufidulum",
+      "taxonId": 81801,
+      "reason": "chosen photo 32886182 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/81801/browse_photos"
     },
     {
       "subject": "plant",
@@ -984,6 +1136,14 @@
       "taxonId": 50075,
       "reason": "chosen photo 357007152 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/50075/browse_photos"
+    },
+    {
+      "subject": "wildlife",
+      "id": "black-chinned-hummingbird",
+      "name": "Archilochus alexandri",
+      "taxonId": 6433,
+      "reason": "chosen photo 743695157 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/6433/browse_photos"
     },
     {
       "subject": "wildlife",

@@ -197,6 +197,44 @@ export const PIONEERS: Record<string, Record<string, PioneerEntry>> = {
     },
   },
 
+  "central-texas": {
+    "prosopis-glandulosa": {
+      pressures: ["disturbance", "drought", "poor-soil", "reflected-heat"],
+      note: "The first tree back on overgrazed pasture and scraped ground, rooting down past anything a summer can dry out.",
+      basis: "USFS Fire Effects Information System; USDA PLANTS.",
+    },
+    "rhus-lanceolata": {
+      pressures: ["disturbance", "poor-soil", "drought"],
+      note: "Colonises fresh highway cuts through the limestone, spreading by root into a thicket within a few years.",
+      basis: "Lady Bird Johnson Wildflower Center; USDA PLANTS.",
+    },
+    "melampodium-leucanthum": {
+      pressures: ["poor-soil", "reflected-heat", "crevice", "drought"],
+      note: "Flowers out of bare caliche and the gravel at a curb's edge, and dies of kindness in good soil.",
+      basis: "Lady Bird Johnson Wildflower Center; Texas A&M AgriLife Extension.",
+    },
+    "pellaea-atropurpurea": {
+      pressures: ["crevice", "drought"],
+      note: "Roots in the mortar joints and cracks of dry limestone walls, out of reach of anything that needs soil.",
+      basis: "Lady Bird Johnson Wildflower Center; USDA PLANTS.",
+    },
+    "bouteloua-curtipendula": {
+      pressures: ["poor-soil", "drought", "disturbance"],
+      note: "Holds the thin, rocky soil of road shoulders and old quarries, where it was sown to stop erosion.",
+      basis: "USDA NRCS Plant Guide; Lady Bird Johnson Wildflower Center.",
+    },
+    "phyla-nodiflora": {
+      pressures: ["compaction", "disturbance"],
+      note: "Creeps over the trodden ground of paths and ballfield edges, and survives mowing and flooding both.",
+      basis: "Lady Bird Johnson Wildflower Center; USDA PLANTS.",
+    },
+    "calyptocarpus-vialis": {
+      pressures: ["compaction", "poor-soil"],
+      note: "Fills the packed, root-bound shade under street trees where lawn grass has given up.",
+      basis: "Lady Bird Johnson Wildflower Center.",
+    },
+  },
+
   pnw: {
     "chamaenerion-angustifolium": {
       pressures: ["disturbance", "poor-soil", "compaction"],

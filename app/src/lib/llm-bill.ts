@@ -37,13 +37,13 @@ export interface Snapshot {
 
 /** The sum of `docs/llm-bill/sessions.csv`, as of `date`. */
 export const SNAPSHOT: Snapshot = {
-  date: "2026-10-07",
-  sessions: 110,
+  date: "2026-10-12",
+  sessions: 139,
   /** Sessions whose record carries token counts; the rest have a price only, or nothing. */
-  sessionsWithTokens: 100,
-  tokens: { input: 4_496_334, output: 17_398_515, cacheRead: 6_539_076_307, cacheWrite: 121_361_548 },
-  /** At Anthropic's API list prices, all 110 sessions. */
-  costUsd: 4516.7,
+  sessionsWithTokens: 130,
+  tokens: { input: 17_382_977, output: 22_846_425, cacheRead: 8_338_075_275, cacheWrite: 147_440_762 },
+  /** At Anthropic's API list prices, all 139 sessions. */
+  costUsd: 5151.47,
   /** The part of `costUsd` from sessions with no token counts. */
   costWithoutTokensUsd: 84.71,
 };
@@ -60,8 +60,8 @@ export interface SessionGroup {
 export const LONG_AFTER_REQUESTS = 10;
 
 export const BY_LENGTH: { long: SessionGroup; short: SessionGroup } = {
-  long: { sessions: 17, tokens: 4_402_764_186, requests: 270 },
-  short: { sessions: 83, tokens: 2_279_568_518, requests: 294 },
+  long: { sessions: 19, tokens: 5_039_179_241, requests: 310 },
+  short: { sessions: 111, tokens: 3_486_566_198, requests: 408 },
 };
 
 /** How many times the tokens a request costs in a long session. */

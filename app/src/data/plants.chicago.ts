@@ -1896,7 +1896,7 @@ export const SEED_RAW: RawPlant[] = [
     latin: "Allium tricoccum",
     family: "Amaryllidaceae",
     form: "perennial",
-    nativeNote: "Šikaakwa in Myaamia, the Miami-Illinois language — the plant Chicago is named for.",
+    nativeNote: "Rich, moist woods across the region. Its Myaamia name, šikaakwa, is the word French explorers wrote down as \"Chicago\".",
     sun: { minHours: 2, maxHours: 5 },
     moisture: ["mesic"],
     ph: { min: 5.5, max: 7.5 },
@@ -1918,7 +1918,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "For rich, moist shade under deciduous trees. Leaves come up in April and are gone by June; the flowers follow on bare stalks. Slow — buy plants, never dig wild ones.",
     givesNote: "Early green in a bare woods, white flower balls for small bees in summer, and a living link to the city's name.",
     hostCountFrom: "none",
-    basis: "Native status: Kew WCVP (TDWG:ILL); Morton Arboretum. Name: Myaamia Center, Miami University (the Myaamia name of Chicago, Šikaakonki, is \"the wild leek place\"). Host count: **not counted** — no published genus figure in hand for Allium.",
+    basis: "Native status: Kew WCVP (TDWG:ILL); Morton Arboretum. Name: Myaamia Center, Miami University — šikaakwa names both the wild leek and the striped skunk, and \"Chicago\" is its French spelling. Host count: **not counted** — no published genus figure in hand for Allium.",
     propagation: {
       methods: ["division", "seed-double-dormant"],
       note: "Split a clump of bulbs just after the leaves die back in early summer. Seed sown in fall takes up to two years to come up and years more to size up.",

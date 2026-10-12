@@ -241,6 +241,22 @@ export const READING: Record<string, Reading[]> = {
       vouched: [{ name: "Virginia Native Plant Society", url: "https://vnps.org/virginia-native-plant-guides/" }],
     },
   ],
+  chicago: [
+    {
+      kind: "site",
+      title: "Illinois Wildflowers",
+      by: "John Hilty",
+      url: "https://www.illinoiswildflowers.info/",
+      lang: "en",
+      backer: "naturalist",
+      vouched: [
+        {
+          name: "University of Illinois Extension",
+          url: "https://extension.illinois.edu/sites/default/files/2021_native-plant-resources.pdf",
+        },
+      ],
+    },
+  ],
   "north-michigan": [
     {
       kind: "book",

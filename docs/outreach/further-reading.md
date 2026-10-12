@@ -45,6 +45,7 @@ browser.
 | Region | Picks | Gap |
 |---|---|---|
 | Mid-Atlantic | 6 | No video channel with a public audience figure |
+| Chicago | 1 | Chicago Botanic Garden's Plant Evaluation reports are mostly cultivars and have no outside recommendation. *Flora of the Chicago Region* (Wilhelm & Rericha, 2017) is on the Illinois Native Plant Society's list, but its site answered 502 when checked |
 | North Michigan | 4 | *The Midwestern Native Garden* dropped: its publisher URL could not be confirmed |
 | St Lawrence | 5 | Espace pour la vie lacks an outside recommendation |
 | Pacific Northwest | 4 | *PNW Native Plant Primer* (2023) has no society recommendation yet |

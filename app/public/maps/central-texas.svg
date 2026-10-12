@@ -41,8 +41,9 @@
 <circle class="pin" cx="164.6" cy="483.4" r="5"/>
 <text class="pin-label" x="175.6" y="483.4" text-anchor="start">Junction</text>
 <circle class="pin" cx="320.8" cy="503" r="5"/>
-<circle class="pin" cx="353.1" cy="517.2" r="5"/>
-<text class="pin-label" x="364.1" y="517.2" text-anchor="start">Bastrop</text>
+<text class="pin-label" x="331.8" y="503" text-anchor="start">Austin</text>
+<circle class="pin" cx="429.2" cy="470.9" r="5"/>
+<text class="pin-label" x="440.2" y="470.9" text-anchor="start">College Station</text>
 <circle class="pin" cx="263.1" cy="578.4" r="5"/>
 <text class="pin-label" x="274.1" y="578.4" text-anchor="start">San Antonio</text>
 </svg>

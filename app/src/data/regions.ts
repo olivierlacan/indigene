@@ -35,6 +35,7 @@ import { REGION as FRANCE_ALPINE } from "./region.france-alpine";
 import { REGION as IRELAND } from "./region.ireland";
 import { REGION as NZ_AUCKLAND } from "./region.nz-auckland";
 import { REGION as KANTO } from "./region.kanto";
+import { REGION as CENTRAL_TEXAS } from "./region.central-texas";
 
 export const REGIONS: RegionDef[] = [
   { meta: MID_ATLANTIC, load: () => import("./plants.mid-atlantic").then((m) => m.SEED_RAW) },
@@ -53,6 +54,11 @@ export const REGIONS: RegionDef[] = [
   // once that exists; the live ecoregion code decides between them, and the
   // tighter box wins offline.
   { meta: CA_CENTRAL_COAST, load: () => import("./plants.ca-central-coast").then((m) => m.SEED_RAW) },
+  // Central Texas — the first list between the Appalachians and the West
+  // Coast: the limestone Hill Country and the blackland prairies, Austin to
+  // Dallas–Fort Worth. The post-oak sands east of it, the brush country south of
+  // San Antonio and the Houston coast are later regions.
+  { meta: CENTRAL_TEXAS, load: () => import("./plants.central-texas").then((m) => m.SEED_RAW) },
   { meta: FLORIDA_CENTRAL, load: () => import("./plants.florida").then((m) => m.SEED_RAW) },
   { meta: FLORIDA_SOUTH, load: () => import("./plants.florida-south").then((m) => m.SEED_RAW) },
   // Metropolitan France, complete: all four of its EEA biogeographical regions.

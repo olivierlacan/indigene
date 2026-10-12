@@ -69,6 +69,10 @@ const COLLECTIONS = {
   "ca-central-coast": ["CA_north"],
   "florida-central": ["FL_central", "FL_north"],
   "florida-south": ["FL_south"],
+  // Their Central list is the Hill Country and Austin–San Antonio; North-Central
+  // is the Dallas–Fort Worth prairies and Cross Timbers. Both reach past us —
+  // west onto the Rolling Plains and east into the post-oak sands.
+  "central-texas": ["TX_central", "TX_northcentral"],
 };
 
 const UA =

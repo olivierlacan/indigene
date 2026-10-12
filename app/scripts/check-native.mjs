@@ -57,6 +57,11 @@ const TDWG_AREA = {
   // sub-national locality (see data/sources/wcvp/README.md), so the box does the
   // narrowing and each row's note says where on the plain the plant grows.
   kanto: { code: "JAP", label: "Japan (TDWG:JAP — the whole country)" },
+  // Texas is one TDWG level-3 area, from the Piney Woods to El Paso, so a "native"
+  // here is coarser than the region. USDA PLANTS and the Wildflower Center's
+  // range notes carry the local detail in each row; this is the national
+  // authority standing behind them.
+  "central-texas": { code: "TEX", label: "Texas (TDWG:TEX — the whole state)" },
 };
 
 const args = process.argv.slice(2);

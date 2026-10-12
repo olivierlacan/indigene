@@ -24,6 +24,7 @@ import { getLookalike, mappedLookalikeIds } from "./lookalikes";
 import { getOrnamental, mappedOrnamentalIds } from "./alternatives";
 import { mappedInvasiveIds, wantedRegionIds, wantedRegionParam, WANTED_REGION_PREFIX } from "./invasives";
 import { readingRegionIds } from "../data/reading";
+import { postSlugs } from "../data/posts";
 import { TECHNIQUES, techniqueBySlug } from "./planting";
 import { WILDLIFE } from "../data/wildlife";
 
@@ -67,6 +68,8 @@ export const APP_STEPS = [
   "traits",
   "import",
   "film",
+  "posts",
+  "people",
 ] as const;
 
 export type AppStep = (typeof APP_STEPS)[number];
@@ -102,6 +105,8 @@ export const PARAM_STEPS = new Set<string>([
   // `film/fr` is the French cut: its own file, so its preview is French too.
   "film",
   "traits",
+  // `posts/<slug>` is one dated post.
+  "posts",
 ]);
 
 /** The index pages that are shareable in their own right. `settings` is absent
@@ -126,6 +131,8 @@ export const SHAREABLE_INDEXES: readonly string[] = [
   "homegrown",
   "film",
   "traits",
+  "posts",
+  "people",
 ];
 
 const STEP_SET = new Set<string>(APP_STEPS);
@@ -217,6 +224,9 @@ export function canonicalPath(step: string, param?: string): string | null {
       return readingRegionIds().includes(param) ? at(param) : null;
     case "film":
       return param === "fr" ? at(param) : null;
+    // One dated post.
+    case "posts":
+      return postSlugs().includes(param) ? at(param) : null;
     default:
       return null;
   }
@@ -329,6 +339,7 @@ export function shareablePaths(): string[] {
   for (const id of wantedRegionIds()) paths.push(`invasives/${WANTED_REGION_PREFIX}${id}`);
   for (const tech of TECHNIQUES) paths.push(`planting/${tech.slug}`);
   for (const id of readingRegionIds()) paths.push(`reading/${id}`);
+  for (const slug of postSlugs()) paths.push(`posts/${slug}`);
   paths.push("film/fr");
   return paths;
 }

@@ -79,7 +79,10 @@ const dist = join(root, "dist");
 const ORIGIN = "https://indigene.app";
 const BASE = process.env.BASE_PATH || "/";
 const CARD = `${ORIGIN}${BASE}og/share-card.png`;
-const CARD_ALT = "Indigene — native plants for exactly where you stand";
+// The site card's alt text is the app's title, from data/brand.json.
+const BRAND = JSON.parse(readFileSync(new URL("../src/data/brand.json", import.meta.url), "utf8"));
+const APP_TITLE = `${BRAND.name} — ${BRAND.tagline.en}`;
+const CARD_ALT = APP_TITLE;
 
 /** A plant's own card, drawn by `scripts/gen-plant-cards.mjs` and committed
  *  under public/og/plants/. */
@@ -430,6 +433,25 @@ async function collectPages(load) {
     image: pageCard("native"),
     imageAlt: "Native plants, not nativism — native is about where a plant evolved, never about borders or people",
   });
+  // The peoples who named and tended these plants, and where to read their
+  // own accounts. The lede is the description: it says what the page won't do.
+  add("people", en["people.docTitle"], en["people.lede"], {
+    image: pageCard("people"),
+    imageAlt: "Peoples and plants — the peoples who named, ate and tended these plants, and their own sources",
+  });
+  // Writing tied to a date. Each post is its own file, so a shared link
+  // previews as the post, with its own lede as the description.
+  const { POSTS } = await load("/src/data/posts.ts");
+  add("posts", en["posts.docTitle"], en["posts.lede"], {
+    image: pageCard("posts"),
+    imageAlt: "Posts — writing about the plants, the places and the people behind Indigene",
+  });
+  for (const post of POSTS) {
+    add(`posts/${post.slug}`, en[`posts.${post.key}.docTitle`], en[`posts.${post.key}.lede`], {
+      image: pageCard("posts"),
+      imageAlt: en[`posts.${post.key}.title`],
+    });
+  }
   // The LLM bill: measured tokens, estimated electricity, and the design that
   // pays it back. The lede is the description, as on the native page.
   add("llm", en["llm.docTitle"], en["llm.lede"], {
@@ -670,8 +692,12 @@ try {
   // 404.html is copied from public/ untouched, so it gets its policy here — the
   // same one, hashed against its own inline script (src/lib/csp.ts).
   const { withCsp } = await loader.load("/src/lib/csp.ts");
+  // Both are copied from public/ verbatim, so the title is filled here.
   const notFound = join(dist, "404.html");
-  writeFileSync(notFound, await withCsp(readFileSync(notFound, "utf8")));
+  const notFoundHtml = readFileSync(notFound, "utf8").replaceAll("%APP_TITLE%", APP_TITLE);
+  writeFileSync(notFound, await withCsp(notFoundHtml));
+  const manifest = join(dist, "manifest.webmanifest");
+  writeFileSync(manifest, readFileSync(manifest, "utf8").replaceAll("%APP_TITLE%", APP_TITLE));
 } finally {
   await loader.close();
 }

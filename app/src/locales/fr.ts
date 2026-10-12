@@ -14,6 +14,7 @@
 // Typography is French: « » for quotes and a narrow no-break space before the
 // double punctuation marks (: ; ! ?) and inside guillemets.
 import type { Dict } from "./en";
+import { appTitle, taglineSentence } from "../lib/brand";
 
 export const fr: Dict = {
   // ---------------------------------------------------------------------
@@ -32,7 +33,7 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   // Habillage de l'application.
   // ---------------------------------------------------------------------
-  "app.title": "Indigene — les plantes indigènes de l'endroit exact où vous êtes",
+  "app.title": appTitle("fr"),
   "app.name": "Indigene",
   "app.skipToContent": "Aller au contenu principal",
   "app.offline": "Hors ligne — données enregistrées",
@@ -58,6 +59,7 @@ export const fr: Dict = {
   "footer.sources": "bâti sur des données publiques",
   "footer.guide": "Guide",
   "footer.reading": "Lectures",
+  "footer.people": "Peuples",
   "footer.releaseNotes": "Nouveautés",
   "footer.privacy": "Vie privée et sécurité",
   // Lu à voix haute à côté du point vert, et intégré au nom accessible de la
@@ -276,7 +278,7 @@ export const fr: Dict = {
   "film.play": "Voir le film (1 min)",
   "film.lede": "Ce que fait Indigene, et pour qui, en une minute.",
   "film.share": "Partager le film",
-  "film.shareText": "Des plantes indigènes pour l'endroit exact où vous êtes, en un film d'une minute :",
+  "film.shareText": `${taglineSentence("fr")}, en un film d'une minute :`,
 
   // ---------------------------------------------------------------------
   // Parcourir.
@@ -2907,6 +2909,58 @@ export const fr: Dict = {
   "names.choice.oriental": "",
 
   // « Plantes indigènes, pas nativisme » (steps/native.ts).
+  "steps.people": "Peuples",
+  "people.docTitle": "Peuples et plantes — Indigene",
+  "people.title": "Peuples et plantes",
+  "people.lede": "Ces plantes ont été nommées, mangées, tissées et entretenues par des peuples qui sont toujours là. Indigene renvoie à leurs savoirs. Il ne parle pas à leur place.",
+  "people.plantsTitle": "Des plantes et leur histoire",
+  "people.plantsLede": "Ces pages de plantes disent qui en prenait soin. D'autres suivront, à mesure que les sources le permettent.",
+  "people.postsTitle": "Articles",
+  "people.sourcesTitle": "Des sources issues des nations",
+  "people.sourcesLede": "Publiées par les peuples eux-mêmes, ou faites avec eux.",
+  "people.src.myaamia": "le travail de la Miami Tribe of Oklahoma sur sa langue et ses plantes, à l'université de Miami",
+  "people.src.glifwc": "un organisme de onze bandes ojibwées, avec un guide des plantes qu'elles utilisent",
+  "people.src.opd": "des mots ojibwés, dont des noms de plantes, dits par des locuteurs ojibwés",
+  "people.src.lenape": "le dictionnaire de la langue lenape de la Delaware Tribe of Indians",
+  "people.src.seminole": "la tribu sur ses propres aliments et sa façon de bâtir",
+  "people.src.amah": "les Mutsun Ohlone, qui entretiennent les plantes indigènes de la côte centrale de Californie",
+  "people.src.haumanu": "le guide de restauration d'Auckland, écrit avec les 19 iwi mana whenua de Tāmaki Makaurau",
+  "people.landTitle": "Sur quelle terre vous êtes",
+  "people.land": "{nativeLand} cartographie les territoires autochtones du monde entier. Le site précise lui-même que ses cartes ne sont pas des frontières légales, et beaucoup se chevauchent. Commencez par là, puis lisez ce que la nation dit d'elle-même.",
+  "people.howTitle": "Comment nous en parlons",
+  "people.how1": "La nation sous son propre nom, au présent. Ce sont des peuples vivants.",
+  "people.how2": "L'alimentation, les fibres, la construction et le feu. La médecine et les cérémonies sont nommées, jamais décrites : une recette pousse les gens à aller déterrer les plantes.",
+  "people.how3": "Chaque fait cite sa source. Un fait sans source reste dehors.",
+  "people.how4": "Quand une nation raconte sa propre histoire, nous y renvoyons plutôt que de la redire.",
+  "people.contact": "Une erreur, ou une source à citer ? Écrivez à {email}.",
+  "people.nativeLink": "Ce que veut dire « indigène » ici, et ce qu'il ne veut jamais dire",
+  "posts.ipd2026.peopleLink": "Peuples et plantes",
+  "steps.posts": "Articles",
+  "posts.docTitle": "Articles — Indigene",
+  "posts.title": "Articles",
+  "posts.lede": "Des textes sur les plantes, les lieux et les peuples derrière Indigene.",
+  "posts.allPosts": "Tous les articles",
+  "posts.ipd2026.docTitle": "Ces plantes qui ont d'abord nourri des peuples — Indigene",
+  "posts.ipd2026.title": "Ces plantes qui ont d'abord nourri des peuples",
+  "posts.ipd2026.when": "Journée des peuples autochtones, 12 octobre 2026",
+  "posts.ipd2026.lede": "Avant d'être des « plantes indigènes », elles ont nourri, lié et vêtu les peuples qui en prenaient soin. Ces peuples sont toujours là. Les plantes aussi, et vous pouvez les cultiver.",
+  "posts.ipd2026.plantsTitle": "Cinq à planter",
+  "posts.ipd2026.camas.where": "Nord-Ouest Pacifique",
+  "posts.ipd2026.camas": "Ses bulbes étaient, et sont toujours, un aliment de base pour les peuples kalapuya et salish de la côte, qui gardaient ses prairies ouvertes par le feu. En chinuk wawa, on la nomme {word}. Ses fleurs bleues du printemps nourrissent les reines de bourdons et les osmies.",
+  "posts.ipd2026.karaka.where": "Auckland et Northland",
+  "posts.ipd2026.karaka": "Les Māori en ont planté des bosquets pour ses amandes, comestibles seulement après une longue cuisson et un long trempage, et l'ont emporté bien au-delà de son aire d'origine. Ses fruits orange nourrissent le kererū, le seul oiseau encore présent sur les grandes îles qui puisse les avaler entiers.",
+  "posts.ipd2026.harakeke.where": "Auckland et Northland",
+  "posts.ipd2026.harakeke": "La plante principale du tissage māori, des kete aux manteaux. Les tūī se disputent ses fleurs rouges gorgées de nectar.",
+  "posts.ipd2026.basswood.where": "Du Mid-Atlantic aux Grands Lacs",
+  "posts.ipd2026.basswood": "Les Ojibwés en détachent l'écorce interne, le {word}, pour en faire des cordes et des sacs tissés. Ses feuilles nourrissent environ 150 espèces de chenilles.",
+  "posts.ipd2026.hollyleaf.where": "Californie du Sud",
+  "posts.ipd2026.hollyleaf": "Les Cahuillas en mangeaient les fruits et en lessivaient les amandes, toxiques crues, pour en faire une bouillie. Des familles tipai de Basse-Californie, de la nation kumeyaay, en récoltent encore. Son autre nom, {word}, vient du salinan en passant par l'espagnol. Les coyotes, les renards et les geais en mangent aussi les cerises.",
+  "posts.ipd2026.landTitle": "Des terres sauvages qui étaient entretenues",
+  "posts.ipd2026.land": "Bien des paysages que les colons disaient sauvages étaient entretenus. Les prairies à chênes du Nord-Ouest Pacifique restaient ouvertes parce que les peuples salish de la côte et kalapuya les brûlaient. Quand les colons ont fait cesser ces feux, les sapins de Douglas les ont envahies. La colonisation a pris les terres et tenté d'effacer les peuples qui en prenaient soin, avec leurs savoirs. En Californie, cela a voulu dire tuer.",
+  "posts.ipd2026.nativeLink": "Pourquoi « indigène » ici ne veut jamais dire « à sa place »",
+  "posts.ipd2026.nextTitle": "Et ensuite",
+  "posts.ipd2026.next": "Pour l'instant, seule une poignée de pages de plantes racontent cette histoire. Nous l'écrivons pour chaque plante dont les sources sont solides, en nommant la nation et en citant d'où vient chaque fait, en commençant par l'Amérique du Nord. Si vous connaissez la bonne source pour les plantes de votre peuple, écrivez à {email} ou {tell} sur GitHub.",
+  "posts.ipd2026.tell": "dites-le-nous",
   "steps.native": "Indigène",
   "native.docTitle": "Plantes indigènes, pas nativisme — Indigene",
   "native.title": "Plantes indigènes, pas nativisme",
@@ -2921,7 +2975,7 @@ export const fr: Dict = {
   "native.species2Link": "La liste irlandaise",
   "native.historyTitle": "L'aire d'origine est une histoire, pas une identité",
   "native.history1": "L'endroit où une plante est indigène tient en partie au hasard de la dernière glaciation. Le hêtre est indigène dans le sud de l'Angleterre mais pas en Irlande : la mer est montée entre les deux avant qu'il n'arrive. Les aires ont toujours bougé, et elles bougent maintenant que le climat se réchauffe.",
-  "native.history2": "Beaucoup de paysages indigènes « sauvages » étaient aussi entretenus par des gens. Les brûlis des peuples salish de la côte ont gardé ouvertes pendant des siècles les prairies à chêne de Garry du Nord-Ouest Pacifique, et les Māori plantaient des bosquets de karaka pour leurs fruits. Planter des indigènes prolonge ce soin.",
+  "native.history2": "Beaucoup de paysages indigènes « sauvages » étaient aussi entretenus par des gens. Les brûlis des peuples salish de la côte ont gardé ouvertes pendant des siècles les prairies à chêne de Garry du Nord-Ouest Pacifique, et les Māori plantaient des bosquets de karaka pour leurs amandes. Planter des indigènes prolonge ce soin.",
   "native.behaviorTitle": "« Envahissante » décrit un comportement, pas une origine",
   "native.behavior1": "La plupart des plantes transportées dans un nouveau lieu ne s'y répandent jamais seules. Une règle approximative de l'écologie des invasions : environ une espèce importée sur dix apparaît dans la nature, une sur dix de celles-ci s'y installe, et une sur dix de ces dernières devient nuisible. Les rares qui le deviennent posent problème parce qu'elles étouffent les bois ou engorgent les rivières, pas à cause de leur origine.",
   "native.behavior2": "Certains écologues mettent en garde contre le fait de juger une espèce sur son origine (Davis et coll., 2011). D'autres répondent qu'arracher une plante pour un dommage mesuré n'a rien de xénophobe (Simberloff, 2003). Indigene donne raison aux deux : {invasives} y figure pour ce qu'elle fait. Vos tomates viennent des Andes, et c'est très bien.",

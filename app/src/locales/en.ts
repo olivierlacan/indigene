@@ -16,6 +16,8 @@
 //  - Units never appear baked into a sentence. "3 ft" comes from `units.ts`,
 //    which the reader can switch independently of the language (see the note
 //    at the top of `lib/units.ts`).
+import { appTitle, taglineSentence } from "../lib/brand";
+
 export const en = {
   // ---------------------------------------------------------------------
   // Unit words. The *system* is the reader's own setting; these are just the
@@ -33,7 +35,7 @@ export const en = {
   // ---------------------------------------------------------------------
   // App chrome: the header, nav, footer and the progress rail.
   // ---------------------------------------------------------------------
-  "app.title": "Indigene — native plants for exactly where you stand",
+  "app.title": appTitle("en"),
   "app.name": "Indigene",
   "app.skipToContent": "Skip to main content",
   "app.offline": "Offline — using saved data",
@@ -63,6 +65,7 @@ export const en = {
   "footer.sources": "built on public data",
   "footer.guide": "Guide",
   "footer.reading": "Reading",
+  "footer.people": "People",
   "footer.releaseNotes": "What's new",
   "footer.privacy": "Privacy & safety",
   // Read out beside the green dot, and folded into the gear's accessible name.
@@ -260,7 +263,7 @@ export const en = {
   "film.play": "Watch the 1-minute film",
   "film.lede": "What Indigene does and who it's for, in one minute.",
   "film.share": "Share the film",
-  "film.shareText": "Native plants for exactly where you stand, in a one-minute film:",
+  "film.shareText": `${taglineSentence("en")}, in a one-minute film:`,
 
   // ---------------------------------------------------------------------
   // Browse (the no-location entrance).
@@ -2939,6 +2942,58 @@ export const en = {
   // ---------------------------------------------------------------------
   // "Native plants, not nativism" (steps/native.ts).
   // ---------------------------------------------------------------------
+  "steps.people": "Peoples",
+  "people.docTitle": "Peoples and plants — Indigene",
+  "people.title": "Peoples and plants",
+  "people.lede": "These plants were named, eaten, woven and tended by peoples who are still here. Indigene points to what they know. It doesn't speak for them.",
+  "people.plantsTitle": "Plants with a history",
+  "people.plantsLede": "These plant pages say who tended the plant. More will follow as each is sourced.",
+  "people.postsTitle": "Posts",
+  "people.sourcesTitle": "Sources from the nations",
+  "people.sourcesLede": "Published by the peoples themselves, or made with them.",
+  "people.src.myaamia": "the Miami Tribe of Oklahoma's language and plant work, at Miami University",
+  "people.src.glifwc": "an agency of eleven Ojibwe bands, with a guide to the plants they use",
+  "people.src.opd": "Ojibwe words, plants among them, in Ojibwe speakers' own voices",
+  "people.src.lenape": "the Delaware Tribe of Indians' dictionary of the Lenape language",
+  "people.src.seminole": "the tribe on its own foods and ways of building",
+  "people.src.amah": "the Mutsun Ohlone, tending native plants on California's Central Coast",
+  "people.src.haumanu": "Auckland's restoration guide, written with the 19 mana whenua iwi of Tāmaki Makaurau",
+  "people.landTitle": "Whose land you're on",
+  "people.land": "{nativeLand} maps Indigenous territories worldwide. It says itself that its maps aren't legal boundaries, and many overlap. Start there, then read the nation's own account.",
+  "people.howTitle": "How we write about it",
+  "people.how1": "The nation by its own name, in the present tense. These are living peoples.",
+  "people.how2": "Food, fibre, building and fire. Medicine and ceremony are named, never described: a recipe sends people out to dig.",
+  "people.how3": "Every fact names its source. A fact without one stays out.",
+  "people.how4": "Where a nation tells its own story, we point to it rather than retell it.",
+  "people.contact": "Something wrong, or a source we should credit? Write to {email}.",
+  "people.nativeLink": "What “native” means here, and what it never means",
+  "posts.ipd2026.peopleLink": "Peoples and plants",
+  "steps.posts": "Posts",
+  "posts.docTitle": "Posts — Indigene",
+  "posts.title": "Posts",
+  "posts.lede": "Writing about the plants, the places and the people behind Indigene.",
+  "posts.allPosts": "All posts",
+  "posts.ipd2026.docTitle": "Plants that fed people first — Indigene",
+  "posts.ipd2026.title": "Plants that fed people first",
+  "posts.ipd2026.when": "Indigenous Peoples' Day, 12 October 2026",
+  "posts.ipd2026.lede": "Before they were “native plants”, these were food, cord and cloth for the peoples who tended them. Those peoples are still here. So are the plants, and you can grow them.",
+  "posts.ipd2026.plantsTitle": "Five to plant",
+  "posts.ipd2026.camas.where": "Pacific Northwest",
+  "posts.ipd2026.camas": "Its bulbs were, and still are, a staple food for Kalapuya and Coast Salish peoples, who kept its prairies open with fire. In Chinuk Wawa it's {word}. Its blue spring flowers feed queen bumblebees and mason bees.",
+  "posts.ipd2026.karaka.where": "Auckland & Northland",
+  "posts.ipd2026.karaka": "Māori planted groves of it for its kernels, a food only after long cooking and soaking, and carried it far beyond where it first grew. Its orange fruit feeds the kererū, the only mainland bird left that can swallow it whole.",
+  "posts.ipd2026.harakeke.where": "Auckland & Northland",
+  "posts.ipd2026.harakeke": "The main plant of Māori weaving, from kete to cloaks. Tūī fight over its red, nectar-dripping flowers.",
+  "posts.ipd2026.basswood.where": "Mid-Atlantic to the Great Lakes",
+  "posts.ipd2026.basswood": "Ojibwe people peel its inner bark, {word}, for cord and woven bags. Its leaves raise about 150 kinds of caterpillar.",
+  "posts.ipd2026.hollyleaf.where": "Southern California",
+  "posts.ipd2026.hollyleaf": "Cahuilla people ate the fruit and leached the kernels, poisonous raw, into a porridge. Tipai families in Baja California, part of the Kumeyaay Nation, still gather it. Its other name, {word}, comes from Salinan by way of Spanish. Coyotes, foxes and jays eat the cherries too.",
+  "posts.ipd2026.landTitle": "Wild land that was tended",
+  "posts.ipd2026.land": "Many landscapes colonists called wilderness were tended. The oak meadows of the Pacific Northwest stayed open because Coast Salish and Kalapuya people burned them. When colonists stopped the burning, firs closed in. Colonization took the land and tried to erase the peoples who cared for it, along with what they knew. In California, that meant killing.",
+  "posts.ipd2026.nativeLink": "Why “native” here never means “belonging”",
+  "posts.ipd2026.nextTitle": "What's next",
+  "posts.ipd2026.next": "Today only a handful of plant pages tell this history. We're writing it for every plant we can source well, naming the nation and crediting where each fact comes from, starting with North America. If you can point us to the right source for your people's plants, write to {email} or {tell} on GitHub.",
+  "posts.ipd2026.tell": "tell us",
   "steps.native": "Native",
   "native.docTitle": "Native plants, not nativism — Indigene",
   "native.title": "Native plants, not nativism",
@@ -2953,7 +3008,7 @@ export const en = {
   "native.species2Link": "The Irish list",
   "native.historyTitle": "Native ranges are history, not identity",
   "native.history1": "Where a plant is native is partly an accident of the last ice age. Beech is native to southern England but not to Ireland: the sea rose between them before beech got there. Ranges have always moved, and they're moving now as the climate warms.",
-  "native.history2": "Many “wild” native landscapes were tended by people, too. Coast Salish burning kept the Garry oak meadows of the Pacific Northwest open for centuries, and Māori planted groves of karaka for its fruit. Planting natives carries that care on.",
+  "native.history2": "Many “wild” native landscapes were tended by people, too. Coast Salish burning kept the Garry oak meadows of the Pacific Northwest open for centuries, and Māori planted groves of karaka for its kernels. Planting natives carries that care on.",
   "native.behaviorTitle": "“Invasive” describes behavior, not origin",
   "native.behavior1": "Most plants moved to a new place never spread on their own. A rough rule from invasion biology: about one in ten imported species turns up in the wild, one in ten of those establishes, and one in ten of those becomes a pest. The few that do are a problem because they smother woods or choke rivers, not because of where they came from.",
   "native.behavior2": "Some ecologists warn against judging a species by its origin at all (Davis and others, 2011). Others answer that removing a plant for measured harm isn't xenophobia (Simberloff, 2003). Indigene agrees with both: {invasives} is there for what it does. Your tomatoes trace back to the Andes, and that's fine.",

@@ -1,0 +1,395 @@
+{
+  "source": "World Checklist of Vascular Plants (WCVP), Royal Botanic Gardens Kew",
+  "license": "CC BY 4.0",
+  "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
+  "area": "Illinois (TDWG:ILL — the whole state)",
+  "region": "chicago",
+  "ranAt": "2026-10-12T02:42:44.628Z",
+  "rows": [
+    {
+      "id": "quercus-macrocarpa",
+      "latin": "Quercus macrocarpa",
+      "asked": "Quercus macrocarpa",
+      "verdict": "error fetch failed",
+      "viaSynonym": null
+    },
+    {
+      "id": "quercus-alba",
+      "latin": "Quercus alba",
+      "asked": "Quercus alba",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "quercus-bicolor",
+      "latin": "Quercus bicolor",
+      "asked": "Quercus bicolor",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "quercus-rubra",
+      "latin": "Quercus rubra",
+      "asked": "Quercus rubra",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "carya-ovata",
+      "latin": "Carya ovata",
+      "asked": "Carya ovata",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "prunus-serotina",
+      "latin": "Prunus serotina",
+      "asked": "Prunus serotina",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "tilia-americana",
+      "latin": "Tilia americana",
+      "asked": "Tilia americana",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "acer-saccharum",
+      "latin": "Acer saccharum",
+      "asked": "Acer saccharum",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "celtis-occidentalis",
+      "latin": "Celtis occidentalis",
+      "asked": "Celtis occidentalis",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "malus-ioensis",
+      "latin": "Malus ioensis",
+      "asked": "Malus ioensis",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "amelanchier-laevis",
+      "latin": "Amelanchier laevis",
+      "asked": "Amelanchier laevis",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "corylus-americana",
+      "latin": "Corylus americana",
+      "asked": "Corylus americana",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "physocarpus-opulifolius",
+      "latin": "Physocarpus opulifolius",
+      "asked": "Physocarpus opulifolius",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "ceanothus-americanus",
+      "latin": "Ceanothus americanus",
+      "asked": "Ceanothus americanus",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "amorpha-canescens",
+      "latin": "Amorpha canescens",
+      "asked": "Amorpha canescens",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "cornus-racemosa",
+      "latin": "Cornus racemosa",
+      "asked": "Cornus racemosa",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "viburnum-lentago",
+      "latin": "Viburnum lentago",
+      "asked": "Viburnum lentago",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "rosa-setigera",
+      "latin": "Rosa setigera",
+      "asked": "Rosa setigera",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "rhus-glabra",
+      "latin": "Rhus glabra",
+      "asked": "Rhus glabra",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "cephalanthus-occidentalis",
+      "latin": "Cephalanthus occidentalis",
+      "asked": "Cephalanthus occidentalis",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "andropogon-gerardii",
+      "latin": "Andropogon gerardii",
+      "asked": "Andropogon gerardii",
+      "verdict": "no-match",
+      "viaSynonym": null
+    },
+    {
+      "id": "schizachyrium-scoparium",
+      "latin": "Schizachyrium scoparium",
+      "asked": "Schizachyrium scoparium",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "sporobolus-heterolepis",
+      "latin": "Sporobolus heterolepis",
+      "asked": "Sporobolus heterolepis",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "sorghastrum-nutans",
+      "latin": "Sorghastrum nutans",
+      "asked": "Sorghastrum nutans",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "panicum-virgatum",
+      "latin": "Panicum virgatum",
+      "asked": "Panicum virgatum",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "carex-pensylvanica",
+      "latin": "Carex pensylvanica",
+      "asked": "Carex pensylvanica",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "silphium-laciniatum",
+      "latin": "Silphium laciniatum",
+      "asked": "Silphium laciniatum",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "silphium-terebinthinaceum",
+      "latin": "Silphium terebinthinaceum",
+      "asked": "Silphium terebinthinaceum",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "eryngium-yuccifolium",
+      "latin": "Eryngium yuccifolium",
+      "asked": "Eryngium yuccifolium",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "echinacea-pallida",
+      "latin": "Echinacea pallida",
+      "asked": "Echinacea pallida",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "liatris-pycnostachya",
+      "latin": "Liatris pycnostachya",
+      "asked": "Liatris pycnostachya",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "asclepias-syriaca",
+      "latin": "Asclepias syriaca",
+      "asked": "Asclepias syriaca",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "asclepias-tuberosa",
+      "latin": "Asclepias tuberosa",
+      "asked": "Asclepias tuberosa",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "asclepias-incarnata",
+      "latin": "Asclepias incarnata",
+      "asked": "Asclepias incarnata",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "monarda-fistulosa",
+      "latin": "Monarda fistulosa",
+      "asked": "Monarda fistulosa",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "baptisia-lactea",
+      "latin": "Baptisia lactea",
+      "asked": "Baptisia lactea",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "dalea-purpurea",
+      "latin": "Dalea purpurea",
+      "asked": "Dalea purpurea",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "ratibida-pinnata",
+      "latin": "Ratibida pinnata",
+      "asked": "Ratibida pinnata",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "solidago-rigida",
+      "latin": "Solidago rigida",
+      "asked": "Solidago rigida",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "symphyotrichum-novae-angliae",
+      "latin": "Symphyotrichum novae-angliae",
+      "asked": "Symphyotrichum novae-angliae",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "symphyotrichum-laeve",
+      "latin": "Symphyotrichum laeve",
+      "asked": "Symphyotrichum laeve",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "pycnanthemum-virginianum",
+      "latin": "Pycnanthemum virginianum",
+      "asked": "Pycnanthemum virginianum",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "zizia-aurea",
+      "latin": "Zizia aurea",
+      "asked": "Zizia aurea",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "rudbeckia-hirta",
+      "latin": "Rudbeckia hirta",
+      "asked": "Rudbeckia hirta",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "penstemon-digitalis",
+      "latin": "Penstemon digitalis",
+      "asked": "Penstemon digitalis",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "tradescantia-ohiensis",
+      "latin": "Tradescantia ohiensis",
+      "asked": "Tradescantia ohiensis",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "primula-meadia",
+      "latin": "Primula meadia",
+      "asked": "Primula meadia",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "verbena-hastata",
+      "latin": "Verbena hastata",
+      "asked": "Verbena hastata",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "lobelia-siphilitica",
+      "latin": "Lobelia siphilitica",
+      "asked": "Lobelia siphilitica",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "eutrochium-maculatum",
+      "latin": "Eutrochium maculatum",
+      "asked": "Eutrochium maculatum",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "geranium-maculatum",
+      "latin": "Geranium maculatum",
+      "asked": "Geranium maculatum",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "aquilegia-canadensis",
+      "latin": "Aquilegia canadensis",
+      "asked": "Aquilegia canadensis",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "allium-tricoccum",
+      "latin": "Allium tricoccum",
+      "asked": "Allium tricoccum",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "fragaria-virginiana",
+      "latin": "Fragaria virginiana",
+      "asked": "Fragaria virginiana",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    },
+    {
+      "id": "parthenocissus-quinquefolia",
+      "latin": "Parthenocissus quinquefolia",
+      "asked": "Parthenocissus quinquefolia",
+      "verdict": "NATIVE",
+      "viaSynonym": null
+    }
+  ]
+}

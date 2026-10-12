@@ -2,7 +2,7 @@
   "asOf": "2026-10-12",
   "counts": {
     "mid-atlantic": {
-      "alliaria-petiolata": 87325,
+      "alliaria-petiolata": 87326,
       "celastrus-orbiculatus": 53808,
       "elaeagnus-umbellata": 47056,
       "reynoutria-japonica": 42839,
@@ -15,11 +15,18 @@
       "lythrum-salicaria": 556,
       "lonicera-morrowii": 442
     },
+    "chicago": {
+      "rhamnus-cathartica": 5210,
+      "lonicera-maackii": 9196,
+      "alliaria-petiolata": 7018,
+      "dipsacus-laciniatus": 3936,
+      "lythrum-salicaria": 3872
+    },
     "pnw": {
-      "cytisus-scoparius": 24764,
-      "geranium-robertianum": 25914,
-      "ilex-aquifolium": 22486,
-      "hedera-helix": 15909,
+      "cytisus-scoparius": 24765,
+      "geranium-robertianum": 25919,
+      "ilex-aquifolium": 22489,
+      "hedera-helix": 15910,
       "jacobaea-vulgaris": 12656
     },
     "ca-south-coast": {
@@ -40,7 +47,7 @@
       "melia-azedarach": 14940,
       "sorghum-halepense": 13994,
       "rapistrum-rugosum": 13176,
-      "ligustrum-lucidum": 12728,
+      "ligustrum-lucidum": 12729,
       "nandina-domestica": 11266
     },
     "florida-central": {

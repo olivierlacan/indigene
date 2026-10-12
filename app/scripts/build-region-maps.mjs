@@ -192,6 +192,18 @@ const LANDMARKS = {
     { name: "Washington", lat: 38.9, lon: -77.04 },
     { name: "Richmond", lat: 37.54, lon: -77.44 },
   ],
+  // Chicago and Rockford fix the north, Springfield the south, Lafayette the
+  // forested Corn Belt to the east. Peoria is deliberately a hole in the shading:
+  // it sits in the Illinois River valley (72), which this list doesn't claim.
+  chicago: [
+    { name: "Rockford", lat: 42.27, lon: -89.09 },
+    { name: "Chicago", lat: 41.88, lon: -87.63 },
+    { name: "Joliet", lat: 41.53, lon: -88.08 },
+    { name: "Peoria", lat: 40.69, lon: -89.59 },
+    { name: "Champaign", lat: 40.12, lon: -88.24 },
+    { name: "Springfield", lat: 39.78, lon: -89.65 },
+    { name: "Lafayette", lat: 40.42, lon: -86.88 },
+  ],
   "north-michigan": [
     { name: "Mackinaw City", lat: 45.78, lon: -84.72 },
     { name: "Petoskey", lat: 45.37, lon: -84.96 },

@@ -1,6 +1,6 @@
 {
   "checkedAt": "2026-10-12",
-  "ties": 41,
+  "ties": 48,
   "backed": [
     {
       "region": "mid-atlantic",
@@ -45,6 +45,24 @@
       "misidentifications": 31
     },
     {
+      "region": "chicago",
+      "plant": "Cornus racemosa",
+      "lookalike": "Lonicera maackii",
+      "misidentifications": 9
+    },
+    {
+      "region": "chicago",
+      "plant": "Asclepias tuberosa",
+      "lookalike": "Asclepias curassavica",
+      "misidentifications": 627
+    },
+    {
+      "region": "chicago",
+      "plant": "Asclepias incarnata",
+      "lookalike": "Asclepias curassavica",
+      "misidentifications": 31
+    },
+    {
       "region": "pnw",
       "plant": "Berberis aquifolium",
       "lookalike": "Ilex aquifolium",
@@ -67,12 +85,6 @@
       "plant": "Asclepias fascicularis",
       "lookalike": "Asclepias curassavica",
       "misidentifications": 17
-    },
-    {
-      "region": "ca-south-coast",
-      "plant": "Muhlenbergia rigens",
-      "lookalike": "Cortaderia selloana",
-      "misidentifications": 6
     },
     {
       "region": "florida-central",
@@ -209,6 +221,26 @@
       "lookalike": "Buddleja davidii"
     },
     {
+      "region": "chicago",
+      "plant": "Acer saccharum",
+      "lookalike": "Acer platanoides"
+    },
+    {
+      "region": "chicago",
+      "plant": "Amelanchier laevis",
+      "lookalike": "Pyrus calleryana"
+    },
+    {
+      "region": "chicago",
+      "plant": "Asclepias tuberosa",
+      "lookalike": "Buddleja davidii"
+    },
+    {
+      "region": "chicago",
+      "plant": "Eutrochium maculatum",
+      "lookalike": "Lythrum salicaria"
+    },
+    {
       "region": "pnw",
       "plant": "Heracleum maximum",
       "lookalike": "Heracleum mantegazzianum"
@@ -230,6 +262,11 @@
     }
   ],
   "unresolved": [
+    {
+      "region": "ca-south-coast",
+      "plant": "Muhlenbergia rigens",
+      "lookalike": "Cortaderia selloana"
+    },
     {
       "region": "florida-central",
       "plant": "Hamelia patens",

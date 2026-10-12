@@ -207,6 +207,62 @@ Nothing found yet for sea grape, Spanish stopper, firebush, coral bean or gumbo
 limbo: Austin's *Florida Ethnobotany* is the likely source. No
 Miccosukee-authored source was reachable.
 
+### Central Texas
+
+Peoples: Tonkawa (Tonkawa Tribe of Oklahoma), Comanche (Nʉmʉnʉʉ; Comanche
+Nation), Lipan Apache (Lipan Apache Tribe of Texas), Wichita and Affiliated
+Tribes (Waco is named for a Wichita band), Coahuiltecan peoples around San
+Antonio and San Marcos (the Miakan-Garza Band, state-recognized), and the Caddo
+Nation on the east. "Coahuiltecan" is a colonial umbrella term: pair it with
+the bands' own names. The Tonkawa were removed to Indian Territory in 1859 and
+1884. The tribe has since bought back Sugarloaf Mountain in Milam County
+*(press, snippet)*.
+
+| Plant | History | Source |
+|---|---|---|
+| Pecan | A staple nut, gathered on the lower Guadalupe when Cabeza de Vaca passed in the 1530s. The word is Algonquian, and people may have widened its range by planting | Wildflower Center (read); Texas Beyond History, AITSCM Foodways *(snippets)*. NRCS CAIL2 has only a medicinal note |
+| Honey mesquite | Pods pounded into flour and drinks | AITSCM Foodways, Texas Beyond History *(snippets)*. NRCS PRGL2 is medicinal only |
+| Sugar hackberry | Fruit pounded with fat (Comanche) | Carlson & Jones 1940 *(unverified)* |
+| Western soapberry | Fruit used as soap | Wildflower Center gives only the names *(use unverified)* |
+| Texas persimmon, Mexican plum | Fruit | *(unverified)*; Tull, *Edible and Useful Plants of the Southwest*, is the likely source |
+| Texas mountain laurel, yaupon | Ceremonial: name it, don't detail it. Mountain laurel seeds are poisonous | *(unverified)* |
+
+Thin: the USDA guides carry only medicinal notes here, the Wildflower Center
+names no nation, and nothing reachable documents Tonkawa plant use. Ask the
+tribe.
+
+### Chicago & the Corn Belt Prairie
+
+Peoples: the Council of Three Fires (Potawatomi, Odawa, Ojibwe), who ceded the
+Chicago area in the 1833 Treaty of Chicago, with the Miami (Myaamia), Peoria,
+Kickapoo, Ho-Chunk, Sauk and Meskwaki. Most were removed, and they live today
+as the Prairie Band, Citizen, Forest County and Pokagon Potawatomi, the Miami
+Tribe of Oklahoma, the Peoria Tribe of Oklahoma, the Kickapoo of Kansas,
+Oklahoma and Texas, the Sac and Fox Nation and the Meskwaki Nation. The
+American Indian Center of Chicago (1953) runs prairie gardens and a
+food-sovereignty project *(snippet)*.
+
+| Plant | History | Source |
+|---|---|---|
+| Wild leek (ramps) | Probably the city's name: Miami-Illinois *šikaakwa* (Joutel, 1687, says wild garlic; "striped skunk" is the rival reading). Overharvested: plant, don't dig | Swenson 1991; McCafferty 2003, via Miami University *(snippet)* |
+| Common milkweed | Myaamia families still harvest the spring shoots, cooked in several changes of water. **Toxic raw: no recipe on our page** | *Ethnobiology Letters* 2019; Myaamia Center database (entries behind a login: ask first) *(snippets)* |
+| Sugar maple | Potawatomi food and wigwam building | Morton Arboretum (read), citing Toupal 2006 |
+| Butterfly weed | Potawatomi food seasoning (medicinal use exists: don't detail) | Morton Arboretum (read), citing Toupal 2006 |
+| Bur oak | Savannas kept open by fire; the Miami burned tallgrass for hunts | Illinois State Archaeological Survey *(snippet)* |
+| Basswood, shagbark hickory | Inner-bark fibre; hickory-nut oil skimmed from boiled nuts | Smith 1933, Potawatomi (Public Domain Mark on archive.org) *(text unverified)* |
+
+**Further reading:** *Braiding Sweetgrass* (Kimmerer, Citizen Potawatomi) is
+already a worldwide pick, and the Morton Arboretum lists it
+(mortonarb.org/blog/what-is-ethnobotany/, read). Kindscher's *Edible Wild
+Plants of the Prairie* (1987) is food-only but has no regional recommendation
+yet. The Myaamia Center database and AITSCM's Foodways series (Coahuiltecan,
+San Antonio) are nations speaking for themselves: more cases for a `nation`
+backer.
+
+Thin: the best regional Potawatomi source, Toupal's *Ethnobotany of Indiana
+Dunes* (2006, made with the Prairie Band), couldn't be opened, and nothing was
+found for the Kickapoo, Peoria, Ho-Chunk, Sauk or Meskwaki.
+
 ## Still to read by hand
 
 These pages hold the remaining evidence and refuse scripts (403s from bot
@@ -217,3 +273,5 @@ protection) or don't resolve. A browser should open them:
 - burkemuseum.org's Native Peoples box: *Cedar*
 - semtribe.com culture pages; espacepourlavie.ca; gg.ca
 - naeb.brit.org (doesn't resolve) and BRIT, for the database's terms
+- Texas and Chicago: tonkawatribe.com, aitscm.org, texasbeyondhistory.net,
+  tshaonline.org, npsot.org, and Toupal's Indiana Dunes report (csu.edu)

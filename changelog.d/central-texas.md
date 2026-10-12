@@ -11,6 +11,10 @@
   nandina, with how to tell each one and how to clear it without chemicals.
 - Native swaps: Chinese pistache gets a native stand-in — Texas red oak or
   flameleaf sumac for the same red autumn.
+- Two books for Central Texas gardeners join [further
+  reading](https://indigene.app/reading), both on the Native Plant Society of
+  Texas's own list: the Wasowskis' *Native Texas Plants* and George Oxford
+  Miller's *Landscaping with Native Plants of Texas*.
 - Internal: the region claims EPA Level III 30, 32 and 29; 33 (post-oak sands),
   31 and 34 are left for their own lists. All 67 rows are WCVP-native in Texas
   (TDWG:TEX, snapshot committed); 54 are on the Wildflower Center's own Central
@@ -18,6 +22,9 @@
   figures recorded as estimated. Reconcile, registry, hero photos and colours,
   record counts (all regions, to 2026-10-12) and share cards generated
   in-branch.
+- Internal: npsot.org was unreachable from the first session, so further reading
+  landed late. Rowman and Quarto still are, so each book links to the
+  Wildflower Center's or NPSOT's own record of it.
 - Internal: `build-region-maps.mjs` landmarks can now be `kind: "area"` — an
   italic, dot-less name for part of the shading. Central Texas uses it for the
   Fayette Prairie, the blackland arm cut off by the post-oak sands.

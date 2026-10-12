@@ -54,10 +54,17 @@ function tiles(): Stat[] {
     },
     {
       icon: "🔤",
-      label: t("llm.tile.tokens.label"),
-      value: t("llm.tile.tokens.value", { n: fmtNumber(b.tokens / 1e9, 1) }),
-      sub: t("llm.tile.tokens.sub"),
-      explain: t("llm.tile.tokens.explain", { share: fmtNumber(b.cacheReadShare * 100) }),
+      label: t("llm.tile.read.label"),
+      value: t("llm.tile.read.value", { n: fmtNumber(b.readTokens / 1e9, 1) }),
+      sub: t("llm.tile.read.sub"),
+      explain: t("llm.tile.read.explain", { share: fmtNumber((100 * SNAPSHOT.tokens.cacheRead) / b.readTokens) }),
+    },
+    {
+      icon: "✍️",
+      label: t("llm.tile.written.label"),
+      value: t("llm.tile.written.value", { n: fmtNumber(b.writtenTokens / 1e6) }),
+      sub: t("llm.tile.written.sub"),
+      explain: t("llm.tile.written.explain"),
     },
     {
       icon: "⚡",

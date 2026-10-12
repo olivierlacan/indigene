@@ -1,19 +1,19 @@
 # Fewer LLM tokens: what the bill shows, and the rules that help
 
 The reader-facing summary is on <https://indigene.app/llm>. This is the
-working version, from `sessions.csv` and `floor.csv` (100 sessions with token
-counts, as of 2026-10-07).
+working version, from `sessions.csv` and `floor.csv` (130 sessions with token
+counts, as of 2026-10-12).
 
 ## What the bill shows
 
 | Finding | Figure |
 |---|---|
-| Re-reading context (cache reads) | 98% of 6.7 billion tokens |
+| Re-reading context (cache reads) | 98% of 8.5 billion tokens |
 | Written by the model (output) | 0.3% |
-| Sessions with more than ten requests | 17 of 100, **66% of tokens** |
-| Tokens per request, long vs short session | 16 M vs 7.8 M (**2.1×**) |
-| Ten biggest sessions | 68% of tokens |
-| Two biggest (ecoregion prioritization, southern hemisphere) | 40% |
+| Sessions with more than ten requests | 19 of 130, **59% of tokens** |
+| Tokens per request, long vs short session | 16 M vs 8.5 M (**1.9×**) |
+| Ten biggest sessions | 62% of tokens |
+| Two biggest (ecoregion prioritization, southern hemisphere) | 31% |
 
 Every request re-reads everything the session holds, so cost tracks
 **session length × context size**, not how much gets written. Shorter replies
@@ -36,7 +36,7 @@ barely move it; shorter sessions and smaller contexts do.
 
 These follow from the figures. None is a rule until it lands in a doc.
 
-1. **One change per session.** Long sessions cost 2.1× per request. Start
+1. **One change per session.** Long sessions cost 1.9× per request. Start
    fresh when a PR is up, rather than carrying the context into the next task.
 2. **Keep `CLAUDE.md` lean.** It is in the context of every request of every
    session (about 3,600 words today). A procedure only one task needs belongs

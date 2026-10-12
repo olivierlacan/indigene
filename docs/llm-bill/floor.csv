@@ -84,13 +84,13 @@ jH5Zz7Yx,2026-08-30,Wildlife open graph card,12,11,1.96,107.95,76.29,107.95,opus
 dUe1EDR7,2026-08-30,Native ornamental alternatives feature,12,12,2.45,145.83,118.93,145.83,opus-4-8
 qs9LRUyy,2026-08-30,Plants page desktop layout,10,10,0.76,28.68,18.33,28.68,opus-4-8
 knzwzYTL,2026-09-07,Southern California cypress trees covera,78,3,3.11,419.89,132.13,419.89,haiku-4-5;opus-5
-WKm6oVEn,2026-09-18,Guerrilla natives by region,0,0,0.0,0.0,0,0.0,
+WKm6oVEn,2026-09-18,Guerrilla natives by region,3,3,0.0,42.49,0,42.49,
 KRSPdan6,2026-09-18,PR #35 merge status,9,7,0.33,12.93,11.88,12.93,opus-5
 urzDv3MF,2026-09-18,Native lookalikes browsing and invasiven,14,14,2.61,149.86,122.94,149.86,haiku-4-5;opus-5
 B6bZneuL,2026-09-19,Ecoregion prioritization strategy,48,24,5.56,1008.91,374.46,1008.91,haiku-4-5;opus-5
 rmsJapbo,2026-09-19,Pollinators and native plants evidence,15,6,1.21,106.96,60.05,106.96,haiku-4-5;opus-5
 yUWQTjXg,2026-09-19,Native fruits in supported ecoregions,4,4,0.05,2.02,2.02,2.02,haiku-4-5;opus-5
-Eoom8CfL,2026-09-20,Native plant society outreach,18,17,2.47,379.02,168.82,379.02,haiku-4-5;opus-5
+Eoom8CfL,2026-09-20,Native plant society outreach,20,19,2.47,401.21,168.82,401.21,haiku-4-5;opus-5
 vvsEh1HU,2026-09-24,Pacific wax myrtle regional coverage,2,2,0.02,1.1,1.13,1.13,haiku-4-5;opus-5-5
 MsBfcE17,2026-09-24,Plant page layout and labeling,4,4,0.33,7.43,7.43,7.43,haiku-4-5;opus-5-5
 dJggKfyw,2026-09-24,Southern hemisphere indigene support,27,15,1.51,408.14,66.91,408.14,haiku-4-5;opus-5-5
@@ -108,4 +108,33 @@ JZ6zwuc5,2026-10-01,Plant pages confidence meter,7,7,0.36,8.47,8.55,8.55,haiku-4
 M5QAR3YJ,2026-10-01,Desktop layout redesigns,3,3,0.25,5.19,5.19,5.19,opus-5-5
 WUHYKHZT,2026-10-01,Wildlife/plant desktop layout,2,2,0.29,5.47,5.51,5.51,opus-5-5
 XnFRXBZY,2026-10-02,Regional UI language design,5,5,0.23,4.22,4.25,4.25,haiku-4-5;opus-5-5
-g82xeyYG,2026-10-04,Homegrown National Park page,3,3,0.5,3.52,8.15,8.15,haiku-4-5;opus-5-5
+g82xeyYG,2026-10-04,Homegrown National Park page,17,12,0.5,135.17,8.15,135.17,haiku-4-5;opus-5-5
+2y46zsLV,2026-10-07,PNW region plant support,8,8,,14.67,,14.67,opus-5-5
+2bwBCNYV,2026-10-08,Map interaction and nudging improvements,5,6,,8.52,,8.52,opus-5-5
+ocJtrfUU,2026-10-08,Native planting ecosystem benefits,2,3,,7.82,,7.82,opus-5-5
+FAV6uugY,2026-10-08,LLM token usage findings,2,2,,3.82,,3.82,opus-5-5
+YMJrNgyC,2026-10-08,PR rebase and changelog system,1,1,,0.73,,0.73,opus-5-5
+mCqbbAS1,2026-10-08,Indigene changelog updates,1,1,,1.14,,1.14,opus-5-5
+fK4QYsxd,2026-10-08,Release notes URL linking,9,6,,13.85,,13.85,opus-5-5
+22JSBmgV,2026-10-08,Native plant propagation guide,26,9,,181.73,,181.73,opus-5-5
+hWeGswMP,2026-10-09,Pull request 210 review,6,3,,1.81,,1.81,opus-5-5
+Gu69Txps,2026-10-09,French language detection feature,3,4,,1.86,,1.86,opus-5-5
+q85o9ekn,2026-10-09,iNaturalist hero images Japan,6,7,,5.63,,5.63,opus-5-5
+4MmVQyTh,2026-10-09,Seek app sightings export,2,2,,0.31,,0.31,opus-5-5
+cLN8USV8,2026-10-09,iNaturalist import time limit,3,3,,2.11,,2.11,opus-5-5
+xTpk7Stu,2026-10-09,Spots backup and export,4,6,,7.91,,7.91,opus-5-5
+KtED5is6,2026-10-10,Florida zipcode misinterpreted as Spain,1,2,,1.81,,1.81,opus-5-5
+7wdL5TeW,2026-10-10,Delightful load indicator,1,1,,1.60,,1.60,opus-5-5
+v5XiTqjG,2026-10-10,OG image for homegrown,1,1,,1.06,,1.06,opus-5-5
+2eBi56FA,2026-10-10,Remove video host loading message,3,3,,1.02,,1.02,opus-5-5
+bDApUFzw,2026-10-10,Issue #186 verification,3,3,,2.98,,2.98,opus-5-5
+YE2hF9Gn,2026-10-10,Indigene PR#23 research,3,4,,4.13,,4.13,opus-5-5
+4WaUb5BS,2026-10-10,Florida natives data refresh,8,8,,21.91,,21.91,opus-5-5
+D7S6t8bc,2026-10-10,Regional bibliography resources,12,4,,26.66,,26.66,opus-5-5
+SpPaNbDB,2026-10-10,Indigene homepage redesign,5,5,,3.49,,3.49,opus-5-5
+Zh9WPZNT,2026-10-11,Native plants sourcing verification,1,1,,0.40,,0.40,opus-5-5
+aEkM3EWj,2026-10-12,Indigenous Peoples Day blog post outline,38,26,,41.74,,41.74,opus-5-5
+F8ZYheWX,2026-10-12,North America expansion regions,12,10,,3.13,,3.13,opus-5-5
+ZkefQJPR,2026-10-12,Add Central Texas region,20,5,,46.01,,46.01,opus-5-5
+bEiHFMzt,2026-10-12,Add Chicago tallgrass prairie region,6,1,,20.12,,20.12,opus-5-5
+GjpQR2P8,2026-10-12,Input/output token metrics on LLM page,7,5,,10.47,,10.47,opus-5-5

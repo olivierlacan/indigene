@@ -152,12 +152,16 @@ Shipped L3 code sets (in the region data files):
   Piedmont (64), North Central Appalachians (62), Middle Atlantic Coastal Plain
   (63), Southeastern Plains (65), Atlantic Coastal Pine Barrens (84), Blue Ridge
   (66) — *excludes* 55, 56, 57, 50 and 71 (see above).
+- **Chicago & the Corn Belt Prairie** (`chicago`): Central Corn Belt Plains (54)
+  only — *excludes* the Interior River Valleys and Hills (72, Peoria) and the
+  Eastern Corn Belt Plains (55, Lafayette) inside its box. 55 stays uncovered:
+  it was beech-maple forest, and this is a prairie list.
 
 ### 3. Fully-offline accurate selection — deferred by decision
 The live query is online-only. Ecoregion-accurate selection with no signal would
 mean bundling a **simplified TopoJSON of the L3 polygons overlapping covered
 regions** and doing point-in-polygon on-device. Even scoped and simplified that
-adds hundreds of KB, against the ~530 KB-gzipped, service-worker-based offline
+adds hundreds of KB, against the ~555 KB-gzipped, service-worker-based offline
 model, and the box fallback already gives correct-enough offline selection. So
 this is **deferred as a deliberate decision**, not pending work — revisit only on
 a concrete need. The shipped product is §1 (labels) + §2 (selection).
@@ -174,7 +178,7 @@ a concrete need. The shipped product is §1 (labels) + §2 (selection).
   split ships. Selection logic is unit-tested (online refine, offline fallback,
   cross-region bleed, the Bend/east-of-Cascades fix, the FL north/south seam).
 - **C — offline polygons:** ⛔ **deferred by decision, not a to-do.** Bundling
-  even simplified L3 polygons adds hundreds of KB, against the ~530 KB-gzipped,
+  even simplified L3 polygons adds hundreds of KB, against the ~555 KB-gzipped,
   service-worker-based offline model. The box fallback already gives correct-
   enough offline selection. Revisit only if a concrete need appears; if so, scope
   it to just the covered regions' polygons, not all 84.

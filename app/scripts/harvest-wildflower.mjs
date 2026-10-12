@@ -63,12 +63,17 @@ const COLLECTIONS = {
   // inflates "we lack" with coastal-plain and New England specialties this
   // Pennsylvania-referenced list never claimed.
   "mid-atlantic": ["PA", "NJ", "MD", "DE", "VA"],
+  chicago: ["IL"], // whole state, incl. the forested south we exclude
   "north-michigan": ["MI"], // whole state, incl. the warmer south we exclude
   pnw: ["WA", "OR"], // both run east of the Cascade crest; we do not
   "ca-south-coast": ["CA_south"],
   "ca-central-coast": ["CA_north"],
   "florida-central": ["FL_central", "FL_north"],
   "florida-south": ["FL_south"],
+  // Their Central list is the Hill Country and Austin–San Antonio; North-Central
+  // is the Dallas–Fort Worth prairies and Cross Timbers. Both reach past us —
+  // west onto the Rolling Plains and east into the post-oak sands.
+  "central-texas": ["TX_central", "TX_northcentral"],
 };
 
 const UA =

@@ -64,6 +64,7 @@ const OUT_DIR = fileURLToPath(
 // resolves a ZIP to one county, and our regions are much bigger than counties.
 const ZIPS = {
   "mid-atlantic": ["19104", "17601", "20910"], // Philadelphia, Lancaster, Silver Spring
+  chicago: ["60614", "61820", "62701"], // Chicago, Champaign, Springfield
   "north-michigan": ["49770", "49684"], // Petoskey, Traverse City
   pnw: ["97212", "98103"], // Portland, Seattle
   "ca-south-coast": ["90042", "92103"], // Los Angeles, San Diego

@@ -80,6 +80,12 @@ export type AudienceUnit = "subscribers" | "followers" | "members" | "gardens" |
 // --- Shared picks: one book or site that serves several regions is written
 // once, so its evidence can't drift between copies.
 
+/** The Native Plant Society of Texas's own reading list. */
+const NPSOT_READING: Voucher = {
+  name: "Native Plant Society of Texas",
+  url: "https://www.npsot.org/resources/recommended-reading/",
+};
+
 const UC_ANR_LIST: Voucher = {
   name: "UC Agriculture and Natural Resources",
   url: "https://ucanr.edu/sites/default/files/2026-04/Habitat_CA_Native_Resources_2026.pdf",
@@ -437,6 +443,30 @@ export const READING: Record<string, Reading[]> = {
       lang: "en",
       backer: "garden",
       vouched: [UC_ANR_LIST],
+    },
+  ],
+  "central-texas": [
+    {
+      kind: "book",
+      title: "Native Texas Plants: Landscaping Region by Region",
+      by: "Sally Wasowski and Andy Wasowski",
+      year: 2002,
+      url: "https://www.wildflower.org/bibliography/show.php?id=318",
+      lang: "en",
+      backer: "designer",
+      vouched: [NPSOT_READING],
+      editions: 2,
+    },
+    {
+      kind: "book",
+      title: "Landscaping with Native Plants of Texas",
+      by: "George Oxford Miller",
+      year: 2013,
+      url: "https://www.npsot.org/posts/books/landscaping-with-native-plants-of-texas-2/",
+      lang: "en",
+      backer: "naturalist",
+      vouched: [NPSOT_READING],
+      editions: 2,
     },
   ],
   "florida-central": [

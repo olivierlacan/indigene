@@ -56,7 +56,15 @@ const TDWG_AREA = {
   // no finer open authority: Japan's own GreenList gives native status without a
   // sub-national locality (see data/sources/wcvp/README.md), so the box does the
   // narrowing and each row's note says where on the plain the plant grows.
+  // Illinois is a TDWG level-3 area of its own, so this claim is state-wide:
+  // finer than any other region's, and the box and code narrow it further.
+  chicago: { code: "ILL", label: "Illinois (TDWG:ILL — the whole state)" },
   kanto: { code: "JAP", label: "Japan (TDWG:JAP — the whole country)" },
+  // Texas is one TDWG level-3 area, from the Piney Woods to El Paso, so a "native"
+  // here is coarser than the region. USDA PLANTS and the Wildflower Center's
+  // range notes carry the local detail in each row; this is the national
+  // authority standing behind them.
+  "central-texas": { code: "TEX", label: "Texas (TDWG:TEX — the whole state)" },
 };
 
 const args = process.argv.slice(2);

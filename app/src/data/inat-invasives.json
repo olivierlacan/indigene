@@ -62,6 +62,15 @@
     "attribution": "(c) Oliver g jones, some rights reserved (CC BY-NC), uploaded by Oliver g jones",
     "color": "#69972c"
   },
+  "dipsacus-laciniatus": {
+    "taxonId": 117438,
+    "photoId": 86037361,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/86037361/square.jpg",
+    "observer": "Lily Rice",
+    "license": "cc-by-nc",
+    "attribution": "(c) Lily Rice, some rights reserved (CC BY-NC), uploaded by Lily Rice",
+    "color": "#687a45"
+  },
   "elaeagnus-umbellata": {
     "taxonId": 64697,
     "photoId": 575611447,
@@ -125,6 +134,15 @@
     "attribution": "(c) Arne Åsnes, some rights reserved (CC BY-NC), uploaded by Arne Åsnes",
     "color": "#777632"
   },
+  "lonicera-maackii": {
+    "taxonId": 82342,
+    "photoId": 277949422,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/277949422/square.jpg",
+    "observer": "Andrew Conboy",
+    "license": "cc-by",
+    "attribution": "(c) Andrew Conboy, some rights reserved (CC BY), uploaded by Andrew Conboy",
+    "color": "#537240"
+  },
   "lonicera-morrowii": {
     "taxonId": 59773,
     "photoId": 334855,
@@ -142,6 +160,24 @@
     "license": "cc-by",
     "attribution": "(c) mfeaver, some rights reserved (CC BY), uploaded by mfeaver",
     "color": "#7e730a"
+  },
+  "melia-azedarach": {
+    "taxonId": 53720,
+    "photoId": 33351307,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/33351307/square.jpeg",
+    "observer": "葉子",
+    "license": "cc0",
+    "attribution": "no rights reserved, uploaded by 葉子",
+    "color": "#717a43"
+  },
+  "nandina-domestica": {
+    "taxonId": 127010,
+    "photoId": 71351881,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/71351881/square.jpg",
+    "observer": "Sam Kieschnick",
+    "license": "cc-by",
+    "attribution": "(c) Sam Kieschnick, some rights reserved (CC BY), uploaded by Sam Kieschnick",
+    "color": "#595d4c"
   },
   "nephrolepis-cordifolia": {
     "taxonId": 48233,
@@ -187,6 +223,15 @@
     "license": "pd",
     "attribution": "AnRo0002, no known copyright restrictions (public domain)",
     "color": "#607983"
+  },
+  "rhamnus-cathartica": {
+    "taxonId": 54811,
+    "photoId": 341888418,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/341888418/square.jpg",
+    "observer": "Robert Flogaus-Faust",
+    "license": "cc-by",
+    "attribution": "(c) Robert Flogaus-Faust, some rights reserved (CC BY)",
+    "color": "#769e3b"
   },
   "rhododendron-ponticum": {
     "taxonId": 60364,
@@ -241,6 +286,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Thorsten Usée, some rights reserved (CC BY-NC), uploaded by Thorsten Usée",
     "color": "#4e6c42"
+  },
+  "sorghum-halepense": {
+    "taxonId": 58387,
+    "photoId": 78416044,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/78416044/square.jpg",
+    "observer": "Harry Rose",
+    "license": "cc-by",
+    "attribution": "(c) Harry Rose, some rights reserved (CC BY)",
+    "color": "#90aa85"
   },
   "urena-lobata": {
     "taxonId": 127638,

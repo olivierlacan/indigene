@@ -116,6 +116,44 @@ export const PIONEERS: Record<string, Record<string, PioneerEntry>> = {
     },
   },
 
+  chicago: {
+    "celtis-occidentalis": {
+      pressures: ["compaction", "salt", "drought", "reflected-heat"],
+      note: "The city's toughest street tree: it takes trampled parkways, winter salt and summer heat off the pavement, which is why so many Chicago blocks are lined with it.",
+      basis: "Morton Arboretum; Chicago Region Trees Initiative; USDA Silvics of North America.",
+    },
+    "rhus-glabra": {
+      pressures: ["disturbance", "poor-soil", "drought"],
+      note: "Moves onto railroad banks and highway cuts from root suckers, holding raw clay and gravel within a few years.",
+      basis: "USFS Fire Effects Information System; Morton Arboretum.",
+    },
+    "schizachyrium-scoparium": {
+      pressures: ["poor-soil", "drought", "reflected-heat"],
+      note: "The grass of gravel hill prairies and old railroad ballast — thin, dry ground is where it beats the bigger grasses.",
+      basis: "USDA PLANTS; Illinois Wildflowers; LBJ Wildflower Center.",
+    },
+    "panicum-virgatum": {
+      pressures: ["salt", "compaction", "disturbance"],
+      note: "Shrugs off the salt spray and plowed slush of a winter road shoulder, so it is a staple of Midwestern roadside plantings.",
+      basis: "USDA NRCS Plant Guide; Morton Arboretum.",
+    },
+    "asclepias-syriaca": {
+      pressures: ["disturbance", "poor-soil", "compaction"],
+      note: "Comes up in vacant lots and along fences from roots that run under the gravel.",
+      basis: "Illinois Wildflowers; Xerces Society.",
+    },
+    "rudbeckia-hirta": {
+      pressures: ["disturbance", "poor-soil", "drought"],
+      note: "One of the first flowers on scraped ground — it seeds into bare fill the season after the bulldozer leaves.",
+      basis: "Illinois Wildflowers; USDA PLANTS.",
+    },
+    "parthenocissus-quinquefolia": {
+      pressures: ["crevice", "poor-soil", "compaction", "drought"],
+      note: "Climbs alley brick and chain-link from a crack at the bottom of a wall, with sticky pads rather than the roots that damage mortar.",
+      basis: "Missouri Botanical Garden; Morton Arboretum.",
+    },
+  },
+
   "north-michigan": {
     "populus-tremuloides": {
       pressures: ["disturbance", "poor-soil", "compaction"],
@@ -156,6 +194,44 @@ export const PIONEERS: Record<string, Record<string, PioneerEntry>> = {
       pressures: ["disturbance", "compaction"],
       note: "Takes the roadside ditch that floods in spring and cracks in August, and roots from a cut twig pushed into wet ground.",
       basis: "USDA PLANTS; USFS Fire Effects Information System.",
+    },
+  },
+
+  "central-texas": {
+    "prosopis-glandulosa": {
+      pressures: ["disturbance", "drought", "poor-soil", "reflected-heat"],
+      note: "The first tree back on overgrazed pasture and scraped ground, rooting down past anything a summer can dry out.",
+      basis: "USFS Fire Effects Information System; USDA PLANTS.",
+    },
+    "rhus-lanceolata": {
+      pressures: ["disturbance", "poor-soil", "drought"],
+      note: "Colonises fresh highway cuts through the limestone, spreading by root into a thicket within a few years.",
+      basis: "Lady Bird Johnson Wildflower Center; USDA PLANTS.",
+    },
+    "melampodium-leucanthum": {
+      pressures: ["poor-soil", "reflected-heat", "crevice", "drought"],
+      note: "Flowers out of bare caliche and the gravel at a curb's edge, and dies of kindness in good soil.",
+      basis: "Lady Bird Johnson Wildflower Center; Texas A&M AgriLife Extension.",
+    },
+    "pellaea-atropurpurea": {
+      pressures: ["crevice", "drought"],
+      note: "Roots in the mortar joints and cracks of dry limestone walls, out of reach of anything that needs soil.",
+      basis: "Lady Bird Johnson Wildflower Center; USDA PLANTS.",
+    },
+    "bouteloua-curtipendula": {
+      pressures: ["poor-soil", "drought", "disturbance"],
+      note: "Holds the thin, rocky soil of road shoulders and old quarries, where it was sown to stop erosion.",
+      basis: "USDA NRCS Plant Guide; Lady Bird Johnson Wildflower Center.",
+    },
+    "phyla-nodiflora": {
+      pressures: ["compaction", "disturbance"],
+      note: "Creeps over the trodden ground of paths and ballfield edges, and survives mowing and flooding both.",
+      basis: "Lady Bird Johnson Wildflower Center; USDA PLANTS.",
+    },
+    "calyptocarpus-vialis": {
+      pressures: ["compaction", "poor-soil"],
+      note: "Fills the packed, root-bound shade under street trees where lawn grass has given up.",
+      basis: "Lady Bird Johnson Wildflower Center.",
     },
   },
 

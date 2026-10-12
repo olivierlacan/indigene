@@ -430,6 +430,19 @@ async function collectPages(load) {
     image: pageCard("native"),
     imageAlt: "Native plants, not nativism — native is about where a plant evolved, never about borders or people",
   });
+  // Writing tied to a date. Each post is its own file, so a shared link
+  // previews as the post, with its own lede as the description.
+  const { POSTS } = await load("/src/data/posts.ts");
+  add("posts", en["posts.docTitle"], en["posts.lede"], {
+    image: pageCard("posts"),
+    imageAlt: "Posts — writing about the plants, the places and the people behind Indigene",
+  });
+  for (const post of POSTS) {
+    add(`posts/${post.slug}`, en[`posts.${post.key}.docTitle`], en[`posts.${post.key}.lede`], {
+      image: pageCard("posts"),
+      imageAlt: en[`posts.${post.key}.title`],
+    });
+  }
   // The LLM bill: measured tokens, estimated electricity, and the design that
   // pays it back. The lede is the description, as on the native page.
   add("llm", en["llm.docTitle"], en["llm.lede"], {

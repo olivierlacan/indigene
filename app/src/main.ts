@@ -38,6 +38,7 @@ import { renderSettings } from "./steps/settings";
 import { renderAbout } from "./steps/about";
 import { renderCrops } from "./steps/crops";
 import { renderNative } from "./steps/native";
+import { renderPostsIndex, renderPost } from "./steps/posts";
 import { renderLlm } from "./steps/llm";
 import { renderHomegrown } from "./steps/homegrown";
 import { renderTraits } from "./steps/traits";
@@ -128,6 +129,8 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
   import: { fn: renderImport, labelKey: "steps.import", inFlow: false },
   // The film on a page of its own, so a shared link previews as the video.
   film: { fn: renderFilm, labelKey: "steps.film", inFlow: false },
+  // Writing tied to a date: `#/posts` lists them, `#/posts/<slug>` is one.
+  posts: { fn: renderPostsIndex, labelKey: "steps.posts", inFlow: false },
 };
 
 /**
@@ -152,6 +155,7 @@ const PARAM_RENDERERS: Record<string, StepFn> = {
   privacy: renderPrivacy,
   film: renderFilm,
   traits: renderTraits,
+  posts: renderPost,
 };
 
 const FLOW: AppStep[] = ["location", "sun", "confirm", "priorities", "results"];

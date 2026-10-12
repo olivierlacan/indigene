@@ -189,6 +189,10 @@ try {
     // Counted from SOURCES in steps/native.ts — like the crops card, the figure
     // says the page brings its evidence, including the side that disagrees.
     { slug: "native", title: "Native plants, not nativism", subtitle: "where a plant evolved \u2014 never borders, never people", stat: `<b>${nativeSources}</b> sources \u00b7 both sides of the argument` },
+    // Dated writing. While there is one post the card names it, because the post
+    // is what gets shared; with a second, posts get cards of their own and this
+    // one says how many there are.
+    { slug: "posts", title: "Plants that fed people first", subtitle: "Indigenous Peoples\u2019 Day \u00b7 12 October 2026" },
     // The LLM bill's two headline figures, from the same module the page reads.
     { slug: "llm", title: "What building Indigene with an LLM cost", subtitle: "measured, estimated \u2014 and how the design pays it back", stat: `<b>${SNAPSHOT.sessions}</b> sessions \u00b7 <b>\u2248${round2(bill().kWh.mid)} kWh</b>` },
     // Drawn rather than marked: the idea is a picture — a street where half the

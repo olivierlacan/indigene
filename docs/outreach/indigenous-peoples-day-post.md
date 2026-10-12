@@ -3,7 +3,7 @@
 Two posts, one launch. Each audience gets the part it came for and a link to
 the other.
 
-| | **A. On Indigene** (`indigene.app/…`) | **B. On Constant Variable** |
+| | **A. On Indigene** (`indigene.app/posts/indigenous-peoples-day-2026`) | **B. On Constant Variable** |
 |---|---|---|
 | Reader | Gardeners, native plant societies, r/NativePlantGardening | HN, r/webdev, people who read about how things get built |
 | Question it answers | *What would I plant, and who ate it before me?* | *Why build this, and what did it take?* |

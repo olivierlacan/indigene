@@ -37,6 +37,7 @@ export const EPA_L3_NAMES: Record<string, string> = {
   "45": "Piedmont",
   "50": "Northern Lakes and Forests",
   "51": "North Central Hardwood Forests",
+  "54": "Central Corn Belt Plains",
   "58": "Northeastern Highlands",
   "59": "Northeastern Coastal Zone",
   "60": "Northern Allegheny Plateau",

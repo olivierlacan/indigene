@@ -106,6 +106,18 @@ export const WILDLIFE: Wildlife[] = [
     inat: { name: "Papilio glaucus", iconic: "Insecta" },
   },
   {
+    id: "hackberry-emperor",
+    common: "Hackberry emperor",
+    latin: "Asterocampa celtis",
+    kind: "butterfly",
+    icon: "🦋",
+    blurb:
+      "A tawny-and-gray butterfly that lands on people to sip the salt in their sweat. Its caterpillars eat hackberry leaves and nothing else, so it lives wherever hackberry does.",
+    native: true,
+    nativeBasis: "Native to the eastern and central US. BAMONA.",
+    inat: { name: "Asterocampa celtis", iconic: "Insecta" },
+  },
+  {
     id: "viceroy",
     common: "Viceroy butterfly",
     latin: "Limenitis archippus",
@@ -720,6 +732,18 @@ export const WILDLIFE: Wildlife[] = [
     native: true,
     nativeBasis: "Native to eastern North America. BAMONA.",
     inat: { name: "Actias luna", iconic: "Insecta" },
+  },
+  {
+    id: "rattlesnake-master-borer",
+    common: "Rattlesnake-master borer moth",
+    latin: "Papaipema eryngii",
+    kind: "moth",
+    icon: "🌙",
+    blurb:
+      "A rare prairie moth whose caterpillars tunnel inside rattlesnake master and eat nothing else. It survives in a handful of old prairies, so every new patch of its plant counts.",
+    native: true,
+    nativeBasis: "Native to tallgrass prairie; endangered in Illinois. Illinois Natural History Survey; Illinois Endangered Species Protection Board.",
+    inat: { name: "Papaipema eryngii", iconic: "Insecta" },
   },
   {
     id: "cecropia-moth",
@@ -1674,6 +1698,241 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "clematis-virginiana": [
       { wildlifeId: "bumble-bees", support: "nectar", note: "A froth of small white flowers in August and September, when the spring shrubs are finished and a late bumble bee queen is still laying in fat for winter.", basis: "Xerces Society." },
+    ],
+  },
+  chicago: {
+    "quercus-macrocarpa": [
+      { wildlifeId: "acorn-birds", support: "seeds", note: "Big fringed acorns that jays, woodpeckers and wild turkeys carry off and cache.", basis: "USDA Silvics of North America; Cornell Lab." },
+      { wildlifeId: "acorn-mammals", support: "seeds", note: "Squirrels and deer fatten on the fall acorn drop; a lone savanna oak feeds a whole neighborhood of them.", basis: "USDA Silvics of North America." },
+    ],
+    "quercus-alba": [
+      { wildlifeId: "acorn-birds", support: "seeds", note: "Sweet white-oak acorns are prime food for wild turkeys, wood ducks, and acorn-caching blue jays.", basis: "USDA Silvics of North America; Cornell Lab." },
+      { wildlifeId: "acorn-mammals", support: "seeds", note: "One of the best mast trees there is — squirrels, deer and wild turkeys fatten on the autumn acorn drop.", basis: "USDA Silvics of North America." },
+      { wildlifeId: "luna-moth", support: "host", note: "Among the oaks' hundreds of caterpillar species are the giant silk moths; oak is a dependable luna host.", basis: "NWF Native Plant Finder / Tallamy." },
+    ],
+    "quercus-bicolor": [
+      { wildlifeId: "acorn-birds", support: "seeds", note: "Sweet acorns that wood ducks, jays and woodpeckers take from the river bottoms.", basis: "USDA Silvics of North America; Cornell Lab." },
+      { wildlifeId: "acorn-mammals", support: "seeds", note: "Low in bitterness, so squirrels and deer eat them early in fall.", basis: "USDA Silvics of North America." },
+    ],
+    "quercus-rubra": [
+      { wildlifeId: "acorn-birds", support: "seeds", note: "Heavy acorn crops feed jays, turkeys and woodpeckers through fall and winter.", basis: "USDA Silvics of North America; Cornell Lab." },
+      { wildlifeId: "acorn-mammals", support: "seeds", note: "Reliable acorn mast for squirrels, deer and other mammals.", basis: "USDA Silvics of North America." },
+      { wildlifeId: "cecropia-moth", support: "host", note: "Among the oaks' hundreds of caterpillar species are the giant silk moths, cecropia among them.", basis: "NWF Native Plant Finder / Tallamy." },
+    ],
+    "carya-ovata": [
+      { wildlifeId: "luna-moth", support: "host", note: "Hickory is one of the luna moth's favored caterpillar trees.", basis: "NWF Native Plant Finder; BAMONA." },
+      { wildlifeId: "acorn-mammals", support: "seeds", note: "Squirrels and chipmunks work the sweet nuts all fall and bury the rest — planting the next hickories.", basis: "USDA Silvics of North America." },
+    ],
+    "prunus-serotina": [
+      { wildlifeId: "eastern-tiger-swallowtail", support: "host", note: "Wild cherry is one of the tiger swallowtail's main larval trees.", basis: "NWF Native Plant Finder; LBJ Wildflower Center." },
+      { wildlifeId: "cecropia-moth", support: "host", note: "A classic host for cecropia and other giant silk moth caterpillars.", basis: "NWF Native Plant Finder / Tallamy." },
+      { wildlifeId: "viceroy", support: "host", reliance: "narrow", note: "Cherries are among the trees the viceroy also uses as a caterpillar host.", basis: "NWF Native Plant Finder." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Summer cherries are devoured by dozens of songbirds, from thrushes to catbirds.", basis: "Cornell Lab." },
+    ],
+    "tilia-americana": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A basswood in full flower in July hums so loudly with bees you can hear it from below — one of the great nectar trees.", basis: "Xerces Society." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "The fragrant cream flowers feed solitary bees as well as bumble bees.", basis: "Xerces Society." },
+    ],
+    "acer-saccharum": [
+      { wildlifeId: "cecropia-moth", support: "host", note: "Maple leaves are a staple food of cecropia caterpillars, the largest moth on the continent.", basis: "NWF Native Plant Finder / Tallamy." },
+    ],
+    "celtis-occidentalis": [
+      { wildlifeId: "hackberry-emperor", support: "host", reliance: "sole", note: "Its caterpillars eat hackberry leaves and nothing else.", basis: "BAMONA; Illinois Natural History Survey." },
+      { wildlifeId: "mourning-cloak", support: "host", note: "Hackberry is one of the trees mourning cloak caterpillars feed on in groups.", basis: "NWF Native Plant Finder; BAMONA." },
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "The sweet, dry berries hang on into winter, when waxwings and robins strip them.", basis: "Cornell Lab." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Mockingbirds, cardinals and thrushes eat the berries through the cold months.", basis: "Cornell Lab; Morton Arboretum." },
+    ],
+    "malus-ioensis": [
+      { wildlifeId: "cecropia-moth", support: "host", note: "Wild crab apple is among the trees cecropia caterpillars feed on.", basis: "NWF Native Plant Finder / Tallamy." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Fragrant pink blossoms in May feed bumble bee queens building their first nests.", basis: "Xerces Society." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Mason and mining bees work the open apple blossoms for pollen.", basis: "Xerces Society." },
+    ],
+    "amelanchier-laevis": [
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "Early-summer serviceberries are a top waxwing food — a flock can strip a tree in a day.", basis: "Cornell Lab; Audubon." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Robins, thrushes, catbirds and cardinals all take the sweet June fruit.", basis: "Cornell Lab." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "One of the first small trees to bloom, feeding early solitary bees.", basis: "Xerces Society." },
+    ],
+    "corylus-americana": [
+      { wildlifeId: "acorn-mammals", support: "seeds", note: "Hazelnuts are sought out by squirrels, chipmunks, and jays in fall.", basis: "USDA PLANTS; Cornell Lab." },
+    ],
+    "physocarpus-opulifolius": [
+      { wildlifeId: "red-admiral", support: "nectar", note: "Ninebark's little domed flower clusters in June draw butterflies, beetles and small bees at once.", basis: "Xerces Society." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Shallow open flowers, so a short-tongued solitary bee reaches the nectar as easily as anything.", basis: "Xerces Society." },
+    ],
+    "ceanothus-americanus": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "New Jersey tea flowers in the heat of early July in froths of white that bees find from far off.", basis: "Xerces Society." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Its nectar sits out in the open, which is why so many small solitary bees and wasps can use it.", basis: "Xerces Society." },
+    ],
+    "amorpha-canescens": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The purple flower spikes draw bumble bees through June and July.", basis: "Illinois Wildflowers; Xerces Society." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Leafcutter and mining bees collect the orange pollen.", basis: "Illinois Wildflowers; Xerces Society." },
+    ],
+    "cornus-racemosa": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "The white berries go fast: thrushes, catbirds and cardinals take them in late summer.", basis: "Cornell Lab; Morton Arboretum." },
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "Waxwings strip the red-stalked clusters in a single visit.", basis: "Cornell Lab." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Flat white flower clusters feed small native bees in June.", basis: "Xerces Society." },
+    ],
+    "viburnum-lentago": [
+      { wildlifeId: "hummingbird-clearwing", support: "host", reliance: "narrow", note: "Viburnums are a documented larval host for the hummingbird clearwing, the bumblebee-sized day-flying moth.", basis: "NWF Native Plant Finder." },
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "Blue-black fall fruit hangs into winter and is a favorite of waxwings and thrushes.", basis: "Cornell Lab." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Robins, thrushes and cardinals take the sweet dark berries.", basis: "Cornell Lab." },
+    ],
+    "rosa-setigera": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees shake pollen from the big single flowers in July, after other roses are done.", basis: "Illinois Wildflowers; Xerces Society." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "The red hips hold into winter for robins, cardinals and mockingbirds.", basis: "Cornell Lab." },
+    ],
+    "rhus-glabra": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "The fuzzy red fruit lasts all winter — a late food when robins and bluebirds return in March.", basis: "Cornell Lab; Morton Arboretum." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Small greenish flowers that native bees crowd in early summer.", basis: "Xerces Society." },
+    ],
+    "salix-discolor": [
+      { wildlifeId: "viceroy", support: "host", reliance: "narrow", note: "Willows are the viceroy's heartland host — the orange monarch-mimic grows up on them.", basis: "NWF Native Plant Finder; BAMONA." },
+      { wildlifeId: "mourning-cloak", support: "host", note: "Willow is a core mourning cloak host, and its early catkins also feed the freshly-woken adults.", basis: "NWF Native Plant Finder; BAMONA." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Pussy willow catkins are the first pollen of the year — a lifeline for bumble bee queens starting a nest in the cold.", basis: "Xerces Society." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Early solitary mining bees crowd the catkins for pollen weeks before most flowers open.", basis: "Xerces Society." },
+    ],
+    "cephalanthus-occidentalis": [
+      { wildlifeId: "silver-spotted-skipper", support: "nectar", note: "Buttonbush's flower is a pincushion of long white tubes, and a skipper can work one sphere for a full minute without moving.", basis: "GloBI — Hale et al. 2024 terrestrial-herbivory food web (Phil. Trans. R. Soc. B), iNaturalist observation records; Xerces Society." },
+      { wildlifeId: "red-admiral", support: "nectar", note: "In July a buttonbush on a pond edge holds more butterflies at once than anything else in a wet garden.", basis: "GloBI — Hale et al. 2024 terrestrial-herbivory food web (Phil. Trans. R. Soc. B), iNaturalist observation records." },
+      { wildlifeId: "spicebush-swallowtail", support: "nectar", note: "Big swallowtails feed at it with their wings still beating, working round the sphere as they go.", basis: "GloBI — iNaturalist observation records; Xerces Society." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "It flowers in the mid-summer gap when spring is over and the goldenrod hasn't started.", basis: "GloBI — iNaturalist observation records; Xerces Society." },
+    ],
+    "andropogon-gerardii": [
+      { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "Big bluestem is the byssus skipper's caterpillar grass — a butterfly that has followed the tallgrass prairie into whatever is left of it.", basis: "GloBI — HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM), Ferrer-Paris et al. 2013; Xerces Society." },
+    ],
+    "schizachyrium-scoparium": [
+      { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "Little bluestem raises the wood nymphs and several skippers, whose caterpillars winter down inside the tussock — so leave it standing until spring.", basis: "NWF Native Plant Finder; Xerces Society." },
+    ],
+    "sorghastrum-nutans": [
+      { wildlifeId: "grass-skippers", support: "host", note: "Indiangrass feeds the caterpillars of several grass skippers and the common wood nymph.", basis: "BAMONA; Xerces Society." },
+    ],
+    "panicum-virgatum": [
+      { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "Switchgrass raises the Delaware skipper — a small orange butterfly whose caterpillars live in a tube of grass blade sewn together with silk.", basis: "GloBI — HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM), Ferrer-Paris et al. 2013; Xerces Society." },
+    ],
+    "carex-pensylvanica": [
+      { wildlifeId: "grass-skippers", support: "host", note: "Woodland sedges are the caterpillar food of many little skippers and the wood-nymph satyrs of shady ground.", basis: "NWF Native Plant Finder; Xerces Society." },
+    ],
+    "silphium-laciniatum": [
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "Long-horned bees that collect only sunflower-family pollen work the big yellow heads.", basis: "Illinois Wildflowers; Fowler & Droege." },
+      { wildlifeId: "american-goldfinch", support: "seeds", note: "Goldfinches pick the flat seeds from the heads in fall.", basis: "Illinois Wildflowers; Cornell Lab." },
+    ],
+    "silphium-terebinthinaceum": [
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "Late yellow heads for the specialist bees that collect only sunflower-family pollen.", basis: "Illinois Wildflowers; Fowler & Droege." },
+      { wildlifeId: "american-goldfinch", support: "seeds", note: "Goldfinches perch on the tall stalks to pull out the seed.", basis: "Illinois Wildflowers." },
+    ],
+    "eryngium-yuccifolium": [
+      { wildlifeId: "rattlesnake-master-borer", support: "host", reliance: "sole", note: "The moth's caterpillars live inside the stem and root of this one plant.", basis: "Illinois Natural History Survey; Illinois Endangered Species Protection Board." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "The white globes are covered in small bees, wasps and beetles in July.", basis: "Illinois Wildflowers." },
+    ],
+    "echinacea-pallida": [
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "An early sunflower-family flower for the specialist bees that need that pollen.", basis: "Fowler & Droege; Illinois Wildflowers." },
+      { wildlifeId: "american-goldfinch", support: "seeds", note: "Goldfinches strip the spiny seed heads from late summer.", basis: "Cornell Lab." },
+    ],
+    "liatris-pycnostachya": [
+      { wildlifeId: "monarch", support: "nectar", note: "Monarchs crowd the purple spikes in July and August.", basis: "Xerces Society; Illinois Wildflowers." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees work each spike from the top down as it opens.", basis: "Illinois Wildflowers." },
+    ],
+    "asclepias-syriaca": [
+      { wildlifeId: "monarch", support: "host", reliance: "sole", note: "The milkweed most Midwestern monarchs grow up on.", basis: "Xerces Society; Monarch Joint Venture." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The scented pink balls hum with bumble bees in June and July.", basis: "Xerces Society." },
+    ],
+    "asclepias-tuberosa": [
+      { wildlifeId: "monarch", support: "host", reliance: "sole", note: "A milkweed — one of the only plants a monarch caterpillar can eat, and a favorite for laying eggs.", basis: "Xerces Society; Monarch Joint Venture." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The blazing orange flowers are a heavy nectar draw for bumble bees and butterflies alike.", basis: "Xerces Society." },
+    ],
+    "asclepias-incarnata": [
+      { wildlifeId: "monarch", support: "host", reliance: "sole", note: "A milkweed of damp ground and a key monarch host and nectar plant.", basis: "Xerces Society; Monarch Joint Venture." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Fragrant pink flower clusters are rich in nectar for bumble bees and butterflies.", basis: "Xerces Society." },
+    ],
+    "monarda-fistulosa": [
+      { wildlifeId: "ruby-throated-hummingbird", support: "nectar", note: "Tubular lavender flowers are a bee and butterfly favorite; hummingbirds visit now and then.", basis: "LBJ Wildflower Center; Audubon." },
+      { wildlifeId: "hummingbird-clearwing", support: "nectar", note: "A top nectar flower for the hummingbird clearwing, which hovers at it like a tiny hummingbird.", basis: "Xerces Society." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Long-tongued bumble bees are among its heaviest visitors.", basis: "Xerces Society." },
+    ],
+    "baptisia-lactea": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Only bumble bees are strong enough to pry open the white pea flowers.", basis: "Illinois Wildflowers." },
+    ],
+    "dalea-purpurea": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "A long list of small native bees visits the purple flower rings.", basis: "Illinois Wildflowers; Xerces Society." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees work the cones through midsummer.", basis: "Xerces Society." },
+    ],
+    "ratibida-pinnata": [
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "Sunflower-family specialist bees collect the pollen from July on.", basis: "Illinois Wildflowers; Fowler & Droege." },
+      { wildlifeId: "american-goldfinch", support: "seeds", note: "Goldfinches eat the seed from the gray cones.", basis: "Illinois Wildflowers." },
+    ],
+    "solidago-rigida": [
+      { wildlifeId: "monarch", support: "nectar", note: "Fall nectar for monarchs heading south.", basis: "Xerces Society." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Late flat-topped flowers that bumble bees fatten on before winter.", basis: "Xerces Society." },
+    ],
+    "symphyotrichum-novae-angliae": [
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "Asters carry a suite of pollen-specialist bees, and this is one of the best of them.", basis: "Fowler & Droege, Pollen Specialist Bees." },
+      { wildlifeId: "monarch", support: "nectar", note: "Late purple bloom is critical fall fuel for monarchs heading south.", basis: "Xerces Society; Monarch Joint Venture." },
+      { wildlifeId: "american-goldfinch", support: "seeds", note: "Fine seed heads feed goldfinches into winter.", basis: "Cornell Lab." },
+    ],
+    "symphyotrichum-laeve": [
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "A late aster whose pollen feeds the specialist bees that can use nothing else.", basis: "Fowler & Droege, Pollen Specialist Bees." },
+      { wildlifeId: "monarch", support: "nectar", note: "Its sky-blue September flowers help fuel the last monarchs of the year.", basis: "Xerces Society." },
+    ],
+    "pycnanthemum-virginianum": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Draws more kinds of small native bees and wasps than almost any garden flower.", basis: "Xerces Society; Illinois Wildflowers." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees work the white flower heads through August.", basis: "Xerces Society." },
+    ],
+    "zizia-aurea": [
+      { wildlifeId: "eastern-black-swallowtail", support: "host", reliance: "narrow", note: "A native carrot-family plant and a true black swallowtail host — not just a nectar stop.", basis: "LBJ Wildflower Center; Xerces." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Early flat-topped yellow flowers are easy nectar for bees emerging in late spring.", basis: "Xerces Society." },
+    ],
+    "rudbeckia-hirta": [
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "A composite whose pollen supports sunflower-family specialist bees.", basis: "Fowler & Droege, Pollen Specialist Bees." },
+      { wildlifeId: "american-goldfinch", support: "seeds", note: "Goldfinches work the dark seed heads through fall and winter.", basis: "Cornell Lab." },
+    ],
+    "penstemon-digitalis": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "White tubular flowers are a strong late-spring nectar and pollen source for bumble bees.", basis: "Xerces Society." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Its bloom overlaps the season solitary mason and mining bees are provisioning nests.", basis: "Xerces Society." },
+    ],
+    "tradescantia-ohiensis": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees gather the golden pollen in the morning, before the flowers close.", basis: "Illinois Wildflowers." },
+    ],
+    "primula-meadia": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bee queens buzz the pollen loose — few other insects can reach it.", basis: "Illinois Wildflowers." },
+    ],
+    "verbena-hastata": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Small native bees, including a vervain specialist, work the spikes from the bottom up.", basis: "Illinois Wildflowers; Xerces Society." },
+    ],
+    "lobelia-siphilitica": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees push into the blue flowers from August to frost.", basis: "Illinois Wildflowers." },
+    ],
+    "eutrochium-maculatum": [
+      { wildlifeId: "hummingbird-clearwing", support: "nectar", note: "Tall mauve flower heads are a magnet for clearwing moths and butterflies.", basis: "Xerces Society; LBJ Wildflower Center." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Big domed clusters are worked hard by bumble bees in late summer.", basis: "Xerces Society." },
+    ],
+    "geranium-maculatum": [
+      { wildlifeId: "mason-bees", support: "nectar", reliance: "narrow", note: "One mining bee, Andrena distans, collects pollen from wild geranium and very little else — it flies for the few weeks the geranium is out, and then it is gone for the year.", basis: "GloBI — Robertson 1929 flower visitors of Carlinville, Snow Entomological Museum (University of Kansas); Fowler & Droege." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "An early woodland-edge flower, out while the trees are still bare and the light still reaches the ground.", basis: "GloBI — Robertson 1929 flower visitors of Carlinville (via Miller); Xerces Society." },
+    ],
+    "aquilegia-canadensis": [
+      { wildlifeId: "ruby-throated-hummingbird", support: "nectar", note: "Red nodding spurs bloom in spring exactly as ruby-throats arrive north; a classic hummingbird flower.", basis: "LBJ Wildflower Center; Audubon." },
+    ],
+    "allium-tricoccum": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Small native bees visit the white flower balls in early summer.", basis: "Illinois Wildflowers." },
+    ],
+    "fragaria-virginiana": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Wild strawberries are tiny and intensely sweet, and robins and thrushes reach almost all of them first.", basis: "Cornell Lab." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "White five-petaled flowers low to the ground open in spring, among the first a bumble bee queen can reach.", basis: "Xerces Society." },
+    ],
+    "packera-aurea": [
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "Golden ragwort is a sunflower-family bloom in April, months before the asters and goldenrods — which makes it one of the few early sources for the bees that can only use that family's pollen.", basis: "GloBI — Robertson 1929 flower visitors of Carlinville (via Miller); Fowler & Droege." },
+      { wildlifeId: "mason-bees", support: "nectar", note: "Small mining and mason bees work the flat yellow heads while they are provisioning their spring nests.", basis: "GloBI — Robertson 1929 flower visitors of Carlinville (via Miller); Xerces Society." },
+    ],
+    "parthenocissus-quinquefolia": [
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "Virginia creeper's blue-black berries hang on scarlet stalks after the leaves drop, and a waxwing flock clears them fast.", basis: "Cornell Lab." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Thrushes, catbirds and woodpeckers take them through fall and into winter.", basis: "Cornell Lab." },
+    ],
+    "clematis-virginiana": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A froth of small white flowers in August and September, when the spring shrubs are finished and a late bumble bee queen is still laying in fat for winter.", basis: "Xerces Society." },
+    ],
+    "vitis-riparia": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Wild grapes are among the most important fall fruits there are — dozens of songbirds and game birds eat them.", basis: "Cornell Lab." },
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "Waxwings and robins strip the small blue grapes from the tangles they climb.", basis: "Cornell Lab." },
     ],
   },
   "north-michigan": {

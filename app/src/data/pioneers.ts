@@ -116,6 +116,44 @@ export const PIONEERS: Record<string, Record<string, PioneerEntry>> = {
     },
   },
 
+  chicago: {
+    "celtis-occidentalis": {
+      pressures: ["compaction", "salt", "drought", "reflected-heat"],
+      note: "The city's toughest street tree: it takes trampled parkways, winter salt and summer heat off the pavement, which is why so many Chicago blocks are lined with it.",
+      basis: "Morton Arboretum; Chicago Region Trees Initiative; USDA Silvics of North America.",
+    },
+    "rhus-glabra": {
+      pressures: ["disturbance", "poor-soil", "drought"],
+      note: "Moves onto railroad banks and highway cuts from root suckers, holding raw clay and gravel within a few years.",
+      basis: "USFS Fire Effects Information System; Morton Arboretum.",
+    },
+    "schizachyrium-scoparium": {
+      pressures: ["poor-soil", "drought", "reflected-heat"],
+      note: "The grass of gravel hill prairies and old railroad ballast — thin, dry ground is where it beats the bigger grasses.",
+      basis: "USDA PLANTS; Illinois Wildflowers; LBJ Wildflower Center.",
+    },
+    "panicum-virgatum": {
+      pressures: ["salt", "compaction", "disturbance"],
+      note: "Shrugs off the salt spray and plowed slush of a winter road shoulder, so it is a staple of Midwestern roadside plantings.",
+      basis: "USDA NRCS Plant Guide; Morton Arboretum.",
+    },
+    "asclepias-syriaca": {
+      pressures: ["disturbance", "poor-soil", "compaction"],
+      note: "Comes up in vacant lots and along fences from roots that run under the gravel.",
+      basis: "Illinois Wildflowers; Xerces Society.",
+    },
+    "rudbeckia-hirta": {
+      pressures: ["disturbance", "poor-soil", "drought"],
+      note: "One of the first flowers on scraped ground — it seeds into bare fill the season after the bulldozer leaves.",
+      basis: "Illinois Wildflowers; USDA PLANTS.",
+    },
+    "parthenocissus-quinquefolia": {
+      pressures: ["crevice", "poor-soil", "compaction", "drought"],
+      note: "Climbs alley brick and chain-link from a crack at the bottom of a wall, with sticky pads rather than the roots that damage mortar.",
+      basis: "Missouri Botanical Garden; Morton Arboretum.",
+    },
+  },
+
   "north-michigan": {
     "populus-tremuloides": {
       pressures: ["disturbance", "poor-soil", "compaction"],

@@ -22,6 +22,7 @@
 import type { RegionDef } from "./region";
 import { REGION as MID_ATLANTIC } from "./region.mid-atlantic";
 import { REGION as NORTH_MICHIGAN } from "./region.north-michigan";
+import { REGION as CHICAGO } from "./region.chicago";
 import { REGION as ST_LAWRENCE } from "./region.st-lawrence";
 import { REGION as PNW } from "./region.pnw";
 import { REGION as CA_SOUTH_COAST } from "./region.ca-south-coast";
@@ -42,6 +43,10 @@ export const REGIONS: RegionDef[] = [
   // tip of the Lower Peninsula (Petoskey / Little Traverse Bay). The temperate
   // south of the state and the boreal Upper Peninsula each want their own list.
   { meta: NORTH_MICHIGAN, load: () => import("./plants.north-michigan").then((m) => m.SEED_RAW) },
+  // Chicago and the tallgrass prairie of northern Illinois — the first list
+  // between the Appalachians and the West Coast. One ecoregion (54); the
+  // forested Corn Belt east of it (55) is left for a list of its own.
+  { meta: CHICAGO, load: () => import("./plants.chicago").then((m) => m.SEED_RAW) },
   { meta: ST_LAWRENCE, load: () => import("./plants.st-lawrence").then((m) => m.SEED_RAW) },
   { meta: PNW, load: () => import("./plants.pnw").then((m) => m.SEED_RAW) },
   // The West Coast, continued southward — see docs/west-coast-plan.md for the

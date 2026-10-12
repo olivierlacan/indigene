@@ -71,6 +71,15 @@ const PLACES = [
   // --- the other regions, so this doesn't only guard the PNW ---
   { name: "Philadelphia, PA", lat: 39.9526, lon: -75.1652, region: "mid-atlantic", via: "epa-omernik" },
   { name: "Miami, FL", lat: 25.7617, lon: -80.1918, region: "florida-south", via: "epa-omernik" },
+  // --- Chicago and the Corn Belt prairie: one code, and the neighbors it refuses ---
+  { name: "Chicago, IL", lat: 41.8781, lon: -87.6298, region: "chicago", via: "epa-omernik" },
+  { name: "Rockford, IL", lat: 42.2711, lon: -89.094, region: "chicago", via: "epa-omernik" },
+  { name: "Champaign, IL", lat: 40.1164, lon: -88.2434, region: "chicago", via: "epa-omernik" },
+  { name: "Springfield, IL", lat: 39.7817, lon: -89.6501, region: "chicago", via: "epa-omernik" },
+  { name: "Gary, IN", lat: 41.5934, lon: -87.3464, region: "chicago", via: "epa-omernik" },
+  { name: "Peoria, IL (Illinois River valley)", lat: 40.6936, lon: -89.589, region: null },
+  { name: "Lafayette, IN (Eastern Corn Belt)", lat: 40.4167, lon: -86.8753, region: null },
+  { name: "Indianapolis, IN", lat: 39.7684, lon: -86.1581, region: null },
   { name: "Traverse City, MI", lat: 44.7631, lon: -85.6206, region: "north-michigan", via: "epa-omernik" },
   { name: "San Francisco, CA", lat: 37.7749, lon: -122.4194, region: "ca-central-coast", via: "epa-omernik" },
   { name: "Marseille", lat: 43.2965, lon: 5.3698, region: "france-mediterranean", via: "eea-biogeo" },

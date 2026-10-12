@@ -296,6 +296,15 @@
     "attribution": "(c) BlueRidgeKitties, some rights reserved (CC BY-NC-SA)",
     "color": "#3f4b42"
   },
+  "asarum-canadense": {
+    "taxonId": 56325,
+    "photoId": 842419,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/842419/square.jpg",
+    "observer": "Susan Elliott",
+    "license": "cc-by-nc",
+    "attribution": "(c) Susan Elliott, some rights reserved (CC BY-NC), uploaded by Susan Elliott",
+    "color": "#7f7b54"
+  },
   "asclepias-fascicularis": {
     "taxonId": 56851,
     "photoId": 514857843,
@@ -304,6 +313,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Thorny Toad Photography, some rights reserved (CC BY-NC), uploaded by Thorny Toad Photography",
     "color": "#6e6855"
+  },
+  "asclepias-syriaca": {
+    "taxonId": 47911,
+    "photoId": 99923276,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/99923276/square.jpg",
+    "observer": "csozanne",
+    "license": "cc-by-nc",
+    "attribution": "(c) csozanne, some rights reserved (CC BY-NC)",
+    "color": "#7f8b5b"
   },
   "asplenium-bulbiferum": {
     "taxonId": 122909,
@@ -629,6 +647,15 @@
     "attribution": "(c) Marco Mussita, some rights reserved (CC BY), uploaded by Marco Mussita",
     "color": "#6f8372"
   },
+  "carya-ovata": {
+    "taxonId": 54791,
+    "photoId": 203172055,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/203172055/square.jpg",
+    "observer": "klalla",
+    "license": "cc-by-nc",
+    "attribution": "(c) klalla, some rights reserved (CC BY-NC)",
+    "color": "#4e6927"
+  },
   "castanea-crenata": {
     "taxonId": 122786,
     "photoId": 18448619,
@@ -700,6 +727,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Becky Brenner, some rights reserved (CC BY-NC), uploaded by Becky Brenner",
     "color": "#6a815f"
+  },
+  "celtis-occidentalis": {
+    "taxonId": 54857,
+    "photoId": 256037606,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/256037606/square.jpg",
+    "observer": "\n\nAyotte, Gilles, 1948-",
+    "license": "cc-by-sa",
+    "attribution": "(c) \n\nAyotte, Gilles, 1948-, some rights reserved (CC BY-SA)",
+    "color": "#63754b"
   },
   "celtis-sinensis": {
     "taxonId": 76204,
@@ -890,6 +926,15 @@
     "attribution": "(c) Jacqui Geux, some rights reserved (CC BY), uploaded by Jacqui Geux",
     "color": "#78734d"
   },
+  "dalea-purpurea": {
+    "taxonId": 63547,
+    "photoId": 20428895,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/20428895/square.jpeg",
+    "observer": "dleaon1",
+    "license": "cc-by-nc",
+    "attribution": "(c) dleaon1, some rights reserved (CC BY-NC), uploaded by dleaon1",
+    "color": "#7d825b"
+  },
   "danthonia-californica": {
     "taxonId": 57165,
     "photoId": 431713,
@@ -1043,6 +1088,15 @@
     "attribution": "(c) David Alan Rogers, some rights reserved (CC BY-NC), uploaded by David Alan Rogers",
     "color": "#837d58"
   },
+  "echinacea-pallida": {
+    "taxonId": 127689,
+    "photoId": 27278434,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/27278434/square.jpeg",
+    "observer": "Joseph D Kurtz",
+    "license": "cc-by-nc",
+    "attribution": "(c) Joseph D Kurtz, some rights reserved (CC BY-NC), uploaded by Joseph D Kurtz",
+    "color": "#9e887e"
+  },
   "elephant-hawk-moth": {
     "taxonId": 55996,
     "photoId": 31525728,
@@ -1123,6 +1177,15 @@
     "license": "cc-by-nc-sa",
     "attribution": "(c) Belinda Lo, some rights reserved (CC BY-NC-SA)",
     "color": "#585a2e"
+  },
+  "eryngium-yuccifolium": {
+    "taxonId": 128695,
+    "photoId": 4979392,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/4979392/square.jpeg",
+    "observer": "Kevin Metcalf",
+    "license": "cc-by-nc",
+    "attribution": "(c) Kevin Metcalf, some rights reserved (CC BY-NC), uploaded by Kevin Metcalf",
+    "color": "#798147"
   },
   "erythrina-herbacea": {
     "taxonId": 128717,
@@ -1691,6 +1754,15 @@
     "attribution": "(c) Li Jianong, some rights reserved (CC BY-NC), uploaded by Li Jianong",
     "color": "#3a4224"
   },
+  "lobelia-siphilitica": {
+    "taxonId": 119806,
+    "photoId": 153600161,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/153600161/square.jpg",
+    "observer": "Annette Seidenglanz",
+    "license": "cc-by-nc",
+    "attribution": "(c) Annette Seidenglanz, some rights reserved (CC BY-NC), uploaded by Annette Seidenglanz",
+    "color": "#5b5c4c"
+  },
   "lonicera-hispidula": {
     "taxonId": 53416,
     "photoId": 91736943,
@@ -1789,6 +1861,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) James Bailey, some rights reserved (CC BY-NC), uploaded by James Bailey",
     "color": "#77775b"
+  },
+  "malus-ioensis": {
+    "taxonId": 165107,
+    "photoId": 14571934,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/14571934/square.jpeg",
+    "observer": "Ron Chang (curated by Cat Chang)",
+    "license": "cc-by-nc",
+    "attribution": "(c) Ron Chang (curated by Cat Chang), some rights reserved (CC BY-NC), uploaded by Ron Chang (curated by Cat Chang)",
+    "color": "#696c56"
   },
   "malus-sylvestris": {
     "taxonId": 61223,
@@ -2267,6 +2348,15 @@
     "attribution": "(c) Nathan Perkins, some rights reserved (CC BY-NC), uploaded by Nathan Perkins",
     "color": "#66803a"
   },
+  "primula-meadia": {
+    "taxonId": 549981,
+    "photoId": 9627914,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/9627914/square.jpg",
+    "observer": "tsc_wis",
+    "license": "cc-by-nc",
+    "attribution": "(c) tsc_wis, some rights reserved (CC BY-NC)",
+    "color": "#51662a"
+  },
   "propertius-duskywing": {
     "taxonId": 59187,
     "photoId": 498945079,
@@ -2321,6 +2411,15 @@
     "attribution": "(c) Luca Boscain, some rights reserved (CC BY-NC), uploaded by Luca Boscain",
     "color": "#546d40"
   },
+  "pycnanthemum-virginianum": {
+    "taxonId": 154473,
+    "photoId": 9055947,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/9055947/square.jpeg",
+    "observer": "Sherrie Snyder",
+    "license": "cc-by-nc",
+    "attribution": "(c) Sherrie Snyder, some rights reserved (CC BY-NC), uploaded by Sherrie Snyder",
+    "color": "#676d44"
+  },
   "pyrus-pyraster": {
     "taxonId": 367265,
     "photoId": 17082711,
@@ -2366,6 +2465,15 @@
     "attribution": "(c) Franco Folini, some rights reserved (CC BY-SA)",
     "color": "#69613d"
   },
+  "quercus-bicolor": {
+    "taxonId": 54780,
+    "photoId": 18737632,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/18737632/square.jpg",
+    "observer": "Jean-Pol GRANDMONT",
+    "license": "cc-by-sa",
+    "attribution": "(c) Jean-Pol GRANDMONT, some rights reserved (CC BY-SA)",
+    "color": "#5c8748"
+  },
   "quercus-glauca": {
     "taxonId": 191183,
     "photoId": 26152644,
@@ -2384,6 +2492,15 @@
     "attribution": "(c) Andrea Kreuzhage, some rights reserved (CC BY-NC), uploaded by Andrea Kreuzhage",
     "color": "#7c7b6d"
   },
+  "quercus-macrocarpa": {
+    "taxonId": 54781,
+    "photoId": 22786993,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/22786993/square.jpeg",
+    "observer": "rayrob",
+    "license": "cc-by-nc",
+    "attribution": "(c) rayrob, some rights reserved (CC BY-NC), uploaded by rayrob",
+    "color": "#4a5f29"
+  },
   "quercus-myrsinifolia": {
     "taxonId": 425335,
     "photoId": 2449415,
@@ -2401,6 +2518,24 @@
     "license": "cc-by-nc",
     "attribution": "(c) yshimada, some rights reserved (CC BY-NC)",
     "color": "#678321"
+  },
+  "ratibida-pinnata": {
+    "taxonId": 85331,
+    "photoId": 148417289,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/148417289/square.jpeg",
+    "observer": "Andy Wilson",
+    "license": "cc0",
+    "attribution": "no rights reserved, uploaded by Andy Wilson",
+    "color": "#ac983b"
+  },
+  "rattlesnake-master-borer": {
+    "taxonId": 226922,
+    "photoId": 337582449,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/337582449/square.jpg",
+    "observer": "Andreas Manz",
+    "license": "cc0",
+    "attribution": "no rights reserved, uploaded by Andreas Manz",
+    "color": "#c0a489"
   },
   "red-admiral": {
     "taxonId": 49133,
@@ -2437,6 +2572,15 @@
     "license": "cc-by-nc-sa",
     "attribution": "(c) Dendroica cerulea, some rights reserved (CC BY-NC-SA)",
     "color": "#46622c"
+  },
+  "rhus-glabra": {
+    "taxonId": 54764,
+    "photoId": 389287395,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/389287395/square.jpg",
+    "observer": "Thomas Shahan",
+    "license": "cc-by-nc",
+    "attribution": "(c) Thomas Shahan, some rights reserved (CC BY-NC), uploaded by Thomas Shahan",
+    "color": "#4c6237"
   },
   "rhus-integrifolia": {
     "taxonId": 55009,
@@ -2762,6 +2906,24 @@
     "attribution": "(c) Tom Hilton, some rights reserved (CC BY)",
     "color": "#856c63"
   },
+  "silphium-laciniatum": {
+    "taxonId": 121976,
+    "photoId": 729226992,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/729226992/square.jpg",
+    "observer": "Werner Tueckmantel",
+    "license": "cc-by-nc",
+    "attribution": "(c) Werner Tueckmantel, some rights reserved (CC BY-NC), uploaded by Werner Tueckmantel",
+    "color": "#5e7a3f"
+  },
+  "silphium-terebinthinaceum": {
+    "taxonId": 121951,
+    "photoId": 71435,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/71435/square.jpg",
+    "observer": "Frank Mayfield",
+    "license": "cc-by-sa",
+    "attribution": "(c) Frank Mayfield, some rights reserved (CC BY-SA)",
+    "color": "#9bbcc5"
+  },
   "silver-spotted-skipper": {
     "taxonId": 81559,
     "photoId": 60570,
@@ -2806,6 +2968,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) scarabaeus_58, some rights reserved (CC BY-NC)",
     "color": "#6c6837"
+  },
+  "solidago-rigida": {
+    "taxonId": 125721,
+    "photoId": 4605521,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/4605521/square.jpg",
+    "observer": "eknuth",
+    "license": "cc-by-nc",
+    "attribution": "(c) eknuth, some rights reserved (CC BY-NC), uploaded by eknuth",
+    "color": "#8d9442"
   },
   "solidago-speciosa": {
     "taxonId": 130376,
@@ -2860,6 +3031,15 @@
     "license": "cc-by",
     "attribution": "(c) Christian Berg, some rights reserved (CC BY), uploaded by Christian Berg",
     "color": "#3d511d"
+  },
+  "sorghastrum-nutans": {
+    "taxonId": 122608,
+    "photoId": 4699574,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/4699574/square.jpg",
+    "observer": "Erica Fraley",
+    "license": "cc-by-nc",
+    "attribution": "(c) Erica Fraley, some rights reserved (CC BY-NC), uploaded by Erica Fraley",
+    "color": "#758c8e"
   },
   "spicebush-swallowtail": {
     "taxonId": 58525,

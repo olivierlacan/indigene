@@ -243,6 +243,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -426,6 +427,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:17012140-1",
+    "scientificName": "Adiantum pedatum",
+    "family": "Pteridaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "17012140-1",
+      "wfo": "wfo-0001107191",
+      "gbif": "2651832",
+      "usda": "ADPE",
+      "itis": "17311",
+      "inat": "48435",
+      "wikidata": "Q1199865",
+      "indigene": "adiantum-pedatum"
+    },
+    "commonNames": [
+      "Maidenhair Fern"
+    ],
+    "aliases": [
+      "adiantum pedatum",
+      "maidenhair fern"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:781583-1",
     "scientificName": "Aesculus californica",
     "family": "Sapindaceae",
@@ -539,6 +569,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:529036-1",
+    "scientificName": "Allium tricoccum",
+    "family": "Amaryllidaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "529036-1",
+      "wfo": "wfo-0000757603",
+      "gbif": "2856301",
+      "usda": "ALTR3",
+      "itis": "42672",
+      "inat": "55634",
+      "wikidata": "Q2714893",
+      "indigene": "allium-tricoccum"
+    },
+    "commonNames": [
+      "Wild Leek"
+    ],
+    "aliases": [
+      "allium tricoccum",
+      "wild leek"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -811,6 +870,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -841,6 +901,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:60431313-2",
+    "scientificName": "Amorpha canescens",
+    "family": "Fabaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "60431313-2",
+      "wfo": "wfo-0000178822",
+      "gbif": "5357388",
+      "usda": "AMCA6",
+      "itis": "25371",
+      "inat": "158286",
+      "wikidata": "Q2074094",
+      "indigene": "amorpha-canescens"
+    },
+    "commonNames": [
+      "Leadplant"
+    ],
+    "aliases": [
+      "amorpha canescens",
+      "leadplant"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -896,6 +985,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -1043,6 +1133,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -1571,6 +1662,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:93467-1",
+    "scientificName": "Asarum canadense",
+    "family": "Aristolochiaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "93467-1",
+      "wfo": "wfo-0000550779",
+      "gbif": "2873947",
+      "usda": "ASCA",
+      "itis": "18353",
+      "inat": "56325",
+      "wikidata": "Q2866323",
+      "indigene": "asarum-canadense"
+    },
+    "commonNames": [
+      "Wild Ginger"
+    ],
+    "aliases": [
+      "asarum canadense",
+      "wild ginger"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:93471-1",
     "scientificName": "Asarum caudatum",
     "family": "Aristolochiaceae",
@@ -1657,6 +1777,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -1691,6 +1812,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:94683-1",
+    "scientificName": "Asclepias syriaca",
+    "family": "Apocynaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "94683-1",
+      "wfo": "wfo-0000551803",
+      "gbif": "3170247",
+      "usda": "ASSY",
+      "itis": "30310",
+      "inat": "47911",
+      "wikidata": "Q158295",
+      "indigene": "asclepias-syriaca"
+    },
+    "commonNames": [
+      "Common Milkweed"
+    ],
+    "aliases": [
+      "asclepias syriaca",
+      "common milkweed"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:94704-1",
     "scientificName": "Asclepias tuberosa",
     "family": "Apocynaceae",
@@ -1718,6 +1868,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence",
       "florida-central"
     ]
@@ -2069,6 +2220,34 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic"
+    ]
+  },
+  {
+    "primaryId": "ipni:29306-2",
+    "scientificName": "Baptisia lactea",
+    "family": "Fabaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "29306-2",
+      "wfo": "wfo-0000164285",
+      "gbif": "2976073",
+      "itis": "26475",
+      "inat": "1609409",
+      "wikidata": "Q17444972",
+      "indigene": "baptisia-lactea"
+    },
+    "commonNames": [
+      "White Wild Indigo"
+    ],
+    "aliases": [
+      "baptisia lactea",
+      "white wild indigo"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -2782,6 +2961,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -2992,6 +3172,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:30122806-2",
+    "scientificName": "Carya ovata",
+    "family": "Juglandaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "30122806-2",
+      "wfo": "wfo-0000588816",
+      "gbif": "3054296",
+      "usda": "CAOV2",
+      "itis": "19242",
+      "inat": "54791",
+      "wikidata": "Q2601238",
+      "indigene": "carya-ovata"
+    },
+    "commonNames": [
+      "Shagbark Hickory"
+    ],
+    "aliases": [
+      "carya ovata",
+      "shagbark hickory"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:30319741-2",
     "scientificName": "Castanea crenata",
     "family": "Fagaceae",
@@ -3075,6 +3284,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -3259,6 +3469,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:301424-2",
+    "scientificName": "Celtis occidentalis",
+    "family": "Cannabaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "301424-2",
+      "wfo": "wfo-0000593651",
+      "gbif": "2984481",
+      "usda": "CEOC",
+      "itis": "19040",
+      "inat": "54857",
+      "wikidata": "Q470006",
+      "indigene": "celtis-occidentalis"
+    },
+    "commonNames": [
+      "Hackberry"
+    ],
+    "aliases": [
+      "celtis occidentalis",
+      "hackberry"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:851171-1",
     "scientificName": "Celtis sinensis",
     "family": "Cannabaceae",
@@ -3378,6 +3617,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "chicago",
       "st-lawrence",
       "florida-central"
     ]
@@ -3731,6 +3971,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -4176,6 +4417,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:271653-1",
+    "scientificName": "Cornus racemosa",
+    "family": "Cornaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "271653-1",
+      "wfo": "wfo-0000924819",
+      "gbif": "3082264",
+      "usda": "CORA6",
+      "itis": "501635",
+      "inat": "320160",
+      "wikidata": "Q1134291",
+      "indigene": "cornus-racemosa"
+    },
+    "commonNames": [
+      "Gray Dogwood"
+    ],
+    "aliases": [
+      "cornus racemosa",
+      "gray dogwood"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:271661-1",
     "scientificName": "Cornus sanguinea",
     "family": "Cornaceae",
@@ -4263,6 +4533,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -4605,6 +4876,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:76326-2",
+    "scientificName": "Dalea purpurea",
+    "family": "Fabaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "76326-2",
+      "wfo": "wfo-0000169115",
+      "gbif": "5353342",
+      "usda": "DAPU5",
+      "itis": "26642",
+      "inat": "63547",
+      "wikidata": "Q5210721",
+      "indigene": "dalea-purpurea"
+    },
+    "commonNames": [
+      "Purple Prairie Clover"
+    ],
+    "aliases": [
+      "dalea purpurea",
+      "purple prairie clover"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -5204,6 +5504,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:202375-1",
+    "scientificName": "Echinacea pallida",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "202375-1",
+      "wfo": "wfo-0000020152",
+      "gbif": "3150919",
+      "usda": "ECPA",
+      "itis": "37279",
+      "inat": "127689",
+      "wikidata": "Q1813728",
+      "indigene": "echinacea-pallida"
+    },
+    "commonNames": [
+      "Pale Purple Coneflower"
+    ],
+    "aliases": [
+      "echinacea pallida",
+      "pale purple coneflower"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:1174497-2",
     "scientificName": "Echinacea purpurea",
     "family": "Asteraceae",
@@ -5613,6 +5942,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:842103-1",
+    "scientificName": "Eryngium yuccifolium",
+    "family": "Apiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "842103-1",
+      "wfo": "wfo-0000678333",
+      "gbif": "3034408",
+      "usda": "ERYU",
+      "itis": "29506",
+      "inat": "128695",
+      "wikidata": "Q3299859",
+      "indigene": "eryngium-yuccifolium"
+    },
+    "commonNames": [
+      "Rattlesnake Master"
+    ],
+    "aliases": [
+      "eryngium yuccifolium",
+      "rattlesnake master"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:96601-2",
     "scientificName": "Erythrina herbacea",
     "family": "Fabaceae",
@@ -5906,6 +6264,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -6329,6 +6688,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -6721,6 +7081,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -8128,6 +8489,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:230623-1",
+    "scientificName": "Liatris pycnostachya",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "230623-1",
+      "wfo": "wfo-0000030984",
+      "gbif": "3104293",
+      "usda": "LIPY",
+      "itis": "37937",
+      "inat": "48691",
+      "wikidata": "Q12061156",
+      "indigene": "liatris-pycnostachya"
+    },
+    "commonNames": [
+      "Prairie Blazing Star"
+    ],
+    "aliases": [
+      "liatris pycnostachya",
+      "prairie blazing star"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:439850-1",
     "scientificName": "Libertia grandiflora",
     "family": "Iridaceae",
@@ -8356,6 +8746,35 @@ export const REGISTRY: RegistryEntry[] = [
       "north-michigan",
       "st-lawrence",
       "florida-central"
+    ]
+  },
+  {
+    "primaryId": "ipni:143920-1",
+    "scientificName": "Lobelia siphilitica",
+    "family": "Campanulaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "143920-1",
+      "wfo": "wfo-0000814885",
+      "gbif": "5409120",
+      "usda": "LOSI",
+      "itis": "34531",
+      "inat": "119806",
+      "wikidata": "Q2720384",
+      "indigene": "lobelia-siphilitica"
+    },
+    "commonNames": [
+      "Great Blue Lobelia"
+    ],
+    "aliases": [
+      "great blue lobelia",
+      "lobelia siphilitica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -8981,6 +9400,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:150119-2",
+    "scientificName": "Malus ioensis",
+    "family": "Rosaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "150119-2",
+      "wfo": "wfo-0001013576",
+      "gbif": "3001596",
+      "usda": "MAIO",
+      "itis": "25259",
+      "inat": "165107",
+      "wikidata": "Q3332919",
+      "indigene": "malus-ioensis"
+    },
+    "commonNames": [
+      "Prairie Crab Apple"
+    ],
+    "aliases": [
+      "malus ioensis",
+      "prairie crab apple"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:726415-1",
     "scientificName": "Malus sylvestris",
     "family": "Rosaceae",
@@ -9239,6 +9687,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -9598,6 +10047,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -9803,6 +10253,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -9833,6 +10284,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -9890,7 +10342,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "chicago"
     ]
   },
   {
@@ -10091,7 +10544,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "chicago"
     ]
   },
   {
@@ -10381,6 +10835,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -11126,6 +11581,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -11429,6 +11885,34 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:60447606-2",
+    "scientificName": "Primula meadia",
+    "family": "Primulaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "60447606-2",
+      "wfo": "wfo-0001280208",
+      "gbif": "5640540",
+      "itis": "836161",
+      "inat": "549981",
+      "wikidata": "Q22108552",
+      "indigene": "primula-meadia"
+    },
+    "commonNames": [
+      "Shooting Star"
+    ],
+    "aliases": [
+      "primula meadia",
+      "shooting star"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:702751-1",
     "scientificName": "Primula veris",
     "family": "Primulaceae",
@@ -11692,6 +12176,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -11814,6 +12299,34 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:1128143-2",
+    "scientificName": "Pycnanthemum virginianum",
+    "family": "Lamiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "1128143-2",
+      "wfo": "wfo-0000289039",
+      "gbif": "2927376",
+      "usda": "PYVI",
+      "inat": "154473",
+      "wikidata": "Q7262902",
+      "indigene": "pycnanthemum-virginianum"
+    },
+    "commonNames": [
+      "Virginia Mountain Mint"
+    ],
+    "aliases": [
+      "pycnanthemum virginianum",
+      "virginia mountain mint"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -11959,7 +12472,37 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "chicago",
       "st-lawrence"
+    ]
+  },
+  {
+    "primaryId": "ipni:295855-1",
+    "scientificName": "Quercus bicolor",
+    "family": "Fagaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "295855-1",
+      "wfo": "wfo-0000289757",
+      "gbif": "2878470",
+      "usda": "QUBI",
+      "itis": "19300",
+      "inat": "54780",
+      "wikidata": "Q142792",
+      "indigene": "quercus-bicolor"
+    },
+    "commonNames": [
+      "Swamp White Oak"
+    ],
+    "aliases": [
+      "quercus bicolor",
+      "swamp white oak"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -12080,6 +12623,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:296423-1",
+    "scientificName": "Quercus macrocarpa",
+    "family": "Fagaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "296423-1",
+      "wfo": "wfo-0000291873",
+      "gbif": "2878213",
+      "usda": "QUMA2",
+      "itis": "19287",
+      "inat": "54781",
+      "wikidata": "Q1082365",
+      "indigene": "quercus-macrocarpa"
+    },
+    "commonNames": [
+      "Bur Oak"
+    ],
+    "aliases": [
+      "bur oak",
+      "quercus macrocarpa"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -12231,6 +12803,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -12291,6 +12864,35 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "florida-central",
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:217881-2",
+    "scientificName": "Ratibida pinnata",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "217881-2",
+      "wfo": "wfo-0000121004",
+      "gbif": "3087184",
+      "usda": "RAPI",
+      "itis": "38343",
+      "inat": "85331",
+      "wikidata": "Q7295700",
+      "indigene": "ratibida-pinnata"
+    },
+    "commonNames": [
+      "Yellow Coneflower"
+    ],
+    "aliases": [
+      "ratibida pinnata",
+      "yellow coneflower"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -12437,6 +13039,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-central"
+    ]
+  },
+  {
+    "primaryId": "ipni:70565-1",
+    "scientificName": "Rhus glabra",
+    "family": "Anacardiaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "70565-1",
+      "wfo": "wfo-0001049359",
+      "gbif": "3190544",
+      "usda": "RHGL",
+      "itis": "28782",
+      "inat": "54764",
+      "wikidata": "Q3177997",
+      "indigene": "rhus-glabra"
+    },
+    "commonNames": [
+      "Smooth Sumac"
+    ],
+    "aliases": [
+      "rhus glabra",
+      "smooth sumac"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -12833,6 +13464,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:734247-1",
+    "scientificName": "Rosa setigera",
+    "family": "Rosaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "734247-1",
+      "wfo": "wfo-0001017675",
+      "gbif": "3004638",
+      "usda": "ROSE2",
+      "itis": "24839",
+      "inat": "128841",
+      "wikidata": "Q3442147",
+      "indigene": "rosa-setigera"
+    },
+    "commonNames": [
+      "Prairie Rose"
+    ],
+    "aliases": [
+      "prairie rose",
+      "rosa setigera"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:324822-2",
     "scientificName": "Rosa spinosissima",
     "family": "Rosaceae",
@@ -13099,6 +13759,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "north-michigan",
+      "chicago",
       "florida-central"
     ]
   },
@@ -13320,6 +13981,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -13944,6 +14606,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -14210,6 +14873,64 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:315757-2",
+    "scientificName": "Silphium laciniatum",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "315757-2",
+      "wfo": "wfo-0000117950",
+      "gbif": "3092583",
+      "usda": "SILA3",
+      "itis": "38401",
+      "inat": "121976",
+      "wikidata": "Q1780806",
+      "indigene": "silphium-laciniatum"
+    },
+    "commonNames": [
+      "Compass Plant"
+    ],
+    "aliases": [
+      "compass plant",
+      "silphium laciniatum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
+    "primaryId": "ipni:30257140-2",
+    "scientificName": "Silphium terebinthinaceum",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "30257140-2",
+      "wfo": "wfo-0000079762",
+      "gbif": "7475866",
+      "usda": "SITE",
+      "itis": "38411",
+      "inat": "121951",
+      "wikidata": "Q15563670",
+      "indigene": "silphium-terebinthinaceum"
+    },
+    "commonNames": [
+      "Prairie Dock"
+    ],
+    "aliases": [
+      "prairie dock",
+      "silphium terebinthinaceum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:1001300-2",
     "scientificName": "Sisyrinchium bellum",
     "family": "Iridaceae",
@@ -14265,6 +14986,34 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:249837-1",
+    "scientificName": "Solidago rigida",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "249837-1",
+      "wfo": "wfo-0000129341",
+      "gbif": "5389156",
+      "itis": "36297",
+      "inat": "125721",
+      "wikidata": "Q15568528",
+      "indigene": "solidago-rigida"
+    },
+    "commonNames": [
+      "Stiff Goldenrod"
+    ],
+    "aliases": [
+      "solidago rigida",
+      "stiff goldenrod"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -14508,6 +15257,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:240823-2",
+    "scientificName": "Sorghastrum nutans",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "240823-2",
+      "wfo": "wfo-0000900100",
+      "gbif": "2704414",
+      "usda": "SONU2",
+      "itis": "42102",
+      "inat": "122608",
+      "wikidata": "Q3046578",
+      "indigene": "sorghastrum-nutans"
+    },
+    "commonNames": [
+      "Indiangrass"
+    ],
+    "aliases": [
+      "indiangrass",
+      "sorghastrum nutans"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:30135991-2",
     "scientificName": "Spiraea douglasii",
     "family": "Rosaceae",
@@ -14536,6 +15314,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:1026241-2",
+    "scientificName": "Sporobolus heterolepis",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "1026241-2",
+      "wfo": "wfo-0000901178",
+      "gbif": "2704766",
+      "usda": "SPHE",
+      "itis": "42119",
+      "inat": "120557",
+      "wikidata": "Q7579245",
+      "indigene": "sporobolus-heterolepis"
+    },
+    "commonNames": [
+      "Prairie Dropseed"
+    ],
+    "aliases": [
+      "prairie dropseed",
+      "sporobolus heterolepis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -14803,7 +15610,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "north-michigan"
+      "north-michigan",
+      "chicago"
     ]
   },
   {
@@ -14834,6 +15642,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -15246,6 +16055,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -15306,6 +16116,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:173408-1",
+    "scientificName": "Tradescantia ohiensis",
+    "family": "Commelinaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "173408-1",
+      "wfo": "wfo-0000589305",
+      "gbif": "2765175",
+      "usda": "TROH",
+      "itis": "39169",
+      "inat": "79383",
+      "wikidata": "Q7832190",
+      "indigene": "tradescantia-ohiensis"
+    },
+    "commonNames": [
+      "Ohio Spiderwort"
+    ],
+    "aliases": [
+      "ohio spiderwort",
+      "tradescantia ohiensis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -15889,6 +16728,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:865207-1",
+    "scientificName": "Verbena hastata",
+    "family": "Verbenaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "865207-1",
+      "wfo": "wfo-0000331939",
+      "gbif": "2925527",
+      "usda": "VEHA2",
+      "itis": "32071",
+      "inat": "60251",
+      "wikidata": "Q384029",
+      "indigene": "verbena-hastata"
+    },
+    "commonNames": [
+      "Blue Vervain"
+    ],
+    "aliases": [
+      "blue vervain",
+      "verbena hastata"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:812694-1",
     "scientificName": "Veronica stricta",
     "family": "Plantaginaceae",
@@ -16031,6 +16899,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -16379,6 +17248,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -16528,6 +17398,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   }

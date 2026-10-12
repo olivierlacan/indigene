@@ -56,6 +56,9 @@ const TDWG_AREA = {
   // no finer open authority: Japan's own GreenList gives native status without a
   // sub-national locality (see data/sources/wcvp/README.md), so the box does the
   // narrowing and each row's note says where on the plain the plant grows.
+  // Illinois is a TDWG level-3 area of its own, so this claim is state-wide:
+  // finer than any other region's, and the box and code narrow it further.
+  chicago: { code: "ILL", label: "Illinois (TDWG:ILL — the whole state)" },
   kanto: { code: "JAP", label: "Japan (TDWG:JAP — the whole country)" },
 };
 

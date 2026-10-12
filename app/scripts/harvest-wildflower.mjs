@@ -63,6 +63,7 @@ const COLLECTIONS = {
   // inflates "we lack" with coastal-plain and New England specialties this
   // Pennsylvania-referenced list never claimed.
   "mid-atlantic": ["PA", "NJ", "MD", "DE", "VA"],
+  chicago: ["IL"], // whole state, incl. the forested south we exclude
   "north-michigan": ["MI"], // whole state, incl. the warmer south we exclude
   pnw: ["WA", "OR"], // both run east of the Cascade crest; we do not
   "ca-south-coast": ["CA_south"],

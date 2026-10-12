@@ -47,6 +47,11 @@ export const SOCIETIES: Record<string, Society[]> = {
     { name: "Virginia Native Plant Society", url: "https://vnps.org/", what: "sales" },
     { name: "Native Plant Trust", url: "https://nativeplanttrust.org/", what: "advice" },
   ],
+  chicago: [
+    { name: "Illinois Native Plant Society", url: "https://www.illinoisplants.org/", what: "chapters" },
+    { name: "Wild Ones (Illinois chapters)", url: "https://wildones.org/chapters/illinois/", what: "chapters" },
+    { name: "The Morton Arboretum", url: "https://mortonarb.org/plant-and-protect/", what: "advice" },
+  ],
   "north-michigan": [
     { name: "Michigan Botanical Society", url: "https://michiganbotanicalsociety.org/", what: "walks" },
     { name: "Wildflower Association of Michigan", url: "https://wildflowersmich.org/", what: "advice" },

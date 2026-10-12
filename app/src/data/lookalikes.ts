@@ -634,6 +634,104 @@ export const CONFUSIONS: Record<string, Record<string, LookalikeLink[]>> = {
     ],
   },
 
+  chicago: {
+    "acer-saccharum": [
+      {
+        lookalikeId: "acer-platanoides",
+        status: "invasive",
+        why: "Two big street maples with the same five-pointed leaf, planted along the same streets — Norway maple was sold for decades as the tougher sugar maple.",
+        tells: [
+          { feature: "Break a leaf stalk", native: "Clear sap.", lookalike: "A bead of milky white sap — no native maple here does this." },
+          { feature: "Buds", native: "Slender, sharp-pointed and brown.", lookalike: "Fat, blunt and maroon-green." },
+          { feature: "Seeds", native: "Paired keys in a horseshoe U.", lookalike: "Paired keys spread almost in a straight line." },
+          { feature: "Autumn", native: "Orange and scarlet in October.", lookalike: "Plain yellow, weeks later, after the natives are bare." },
+        ],
+        basis: "Morton Arboretum; Missouri Botanical Garden; Penn State Extension.",
+      },
+    ],
+    "amelanchier-laevis": [
+      {
+        lookalikeId: "pyrus-calleryana",
+        status: "invasive",
+        why: "Both are small trees smothered in white flowers in the same warm week of early spring, often in the same parking lot.",
+        tells: [
+          { feature: "Smell", native: "Almost none — you have to put your nose right in it.", lookalike: "A strong sour, fishy smell you can catch from across the road." },
+          { feature: "Flowers", native: "Five narrow, strappy petals in a loose airy spray, opening alongside bronze-tinted new leaves.", lookalike: "Five short round petals packed into dense white balls, on bare twigs before any leaves." },
+          { feature: "Thorns", native: "None, ever.", lookalike: "Wild seedlings carry stiff thorns; the grafted street trees don't, but their offspring do." },
+          { feature: "Fruit", native: "Sweet red-to-purple berries in June that birds and people both eat.", lookalike: "Hard brown pellets the size of a pea, hanging on into winter." },
+        ],
+        basis: "Penn State Extension; Missouri Botanical Garden; LBJ Wildflower Center.",
+      },
+    ],
+    "cornus-racemosa": [
+      {
+        lookalikeId: "lonicera-maackii",
+        status: "invasive",
+        why: "Two head-high thicket shrubs with paired leaves, side by side along every forest preserve edge.",
+        tells: [
+          { feature: "Tear a leaf", native: "Gently pulled apart, it hangs together by fine white threads.", lookalike: "Tears clean." },
+          { feature: "Snap a twig", native: "Solid pith inside.", lookalike: "Hollow — a clean brown tube." },
+          { feature: "Berries", native: "White, on bright red stalks, gone by October.", lookalike: "Translucent red, in pairs, hanging into winter." },
+          { feature: "The seasons", native: "Leafs out with the woods and drops with them.", lookalike: "Green weeks before anything else in spring and weeks after in fall." },
+        ],
+        basis: "Morton Arboretum; Chicago Botanic Garden; Ohio State Extension.",
+      },
+    ],
+    "asclepias-tuberosa": [
+      {
+        lookalikeId: "asclepias-curassavica",
+        status: "introduced",
+        why: "Two orange milkweeds sold side by side on the same bench, both labeled for monarchs — but only one of them is native here.",
+        tells: [
+          { feature: "Flower color", native: "One solid orange, sometimes leaning yellow.", lookalike: "Two-tone: red outer petals around a yellow-orange crown." },
+          { feature: "Break a stem", native: "Clear watery sap — the one milkweed that doesn't bleed white.", lookalike: "Thick white latex." },
+          { feature: "Leaves", native: "Narrow and hairy, set alternately up a stiff hairy stem.", lookalike: "Smooth and pointed, in opposite pairs." },
+          { feature: "In winter", native: "Dies to the ground, and comes back later in spring than almost anything — don't dig it up.", lookalike: "Killed by the first hard frost, so it is sold here as an annual — and each spring's plants are bought in again." },
+        ],
+        basis: "Xerces Society; Monarch Joint Venture; LBJ Wildflower Center.",
+      },
+      {
+        lookalikeId: "buddleja-davidii",
+        status: "introduced",
+        why: "One word apart on the label — butterfly weed and butterfly bush — and both sold with a butterfly on the tag.",
+        tells: [
+          { feature: "What it is", native: "A milkweed: knee-high, dying back to the ground each winter.", lookalike: "A big arching shrub, head high in a single season." },
+          { feature: "What it feeds", native: "Nectar for the adults, and leaves that monarch caterpillars can actually eat.", lookalike: "Nectar for the adults only — no caterpillar here can eat its leaves." },
+          { feature: "Flowers", native: "Flat clusters of small orange stars.", lookalike: "Long cones of tiny purple, white or pink flowers." },
+          { feature: "Where it ends up", native: "In its clump, where you planted it.", lookalike: "Seeding into gravel and waste ground in the West, where it is a listed weed." },
+        ],
+        basis: "Xerces Society; Washington State Noxious Weed Control Board; Oregon Dept. of Agriculture.",
+      },
+    ],
+    "asclepias-incarnata": [
+      {
+        lookalikeId: "asclepias-curassavica",
+        status: "introduced",
+        why: "Both are milkweeds sold for monarchs, and in a pot at the nursery they look much the same.",
+        tells: [
+          { feature: "Flower color", native: "Soft pink to mauve, in domed clusters.", lookalike: "Red and yellow, two-tone." },
+          { feature: "Stance", native: "Chest high and straight, standing in wet ground.", lookalike: "Waist high and lax, happy anywhere warm." },
+          { feature: "In winter", native: "Dies to the ground with the first frosts.", lookalike: "Killed by frost here, so it comes back only if somebody buys it again." },
+          { feature: "Leaves", native: "Long and narrow with a pale midrib, in opposite pairs.", lookalike: "Broader and thinner, tapering at both ends." },
+        ],
+        basis: "Xerces Society; Monarch Joint Venture; LBJ Wildflower Center.",
+      },
+    ],
+    "eutrochium-maculatum": [
+      {
+        lookalikeId: "lythrum-salicaria",
+        status: "invasive",
+        why: "Two tall mauve-purple flowers of damp ground, blooming at the same moment in high summer.",
+        tells: [
+          { feature: "Flower head", native: "A wide domed cloud of soft, fuzzy flowers on top of the stem.", lookalike: "A stiff upright spike packed with magenta flowers, each with six crinkled petals." },
+          { feature: "Stem", native: "Round and hollow, usually purple-spotted or purple at the joints.", lookalike: "Square-edged and stiff, going woody at the base." },
+          { feature: "Leaves", native: "In whorls of three to five around the stem, toothed.", lookalike: "In opposite pairs clasping the stem, untoothed." },
+          { feature: "What happens next", native: "Stays roughly where you put it.", lookalike: "One plant can set over a million seeds; a stand of it takes the whole marsh." },
+        ],
+        basis: "USFWS; Missouri Botanical Garden; LBJ Wildflower Center.",
+      },
+    ],
+  },
   pnw: {
     "heracleum-maximum": [
       {

@@ -2,50 +2,51 @@
 
 *Indigenous Peoples' Day, 12 October 2026*
 
-Before they were "native plants", these were bread, rope and fruit for the
-peoples who tended them. Most of those peoples are still here. So are the
-plants, and you can grow them.
+Before they were "native plants", these were food, cord and cloth for the
+peoples who tended them. Those peoples are still here. So are the plants, and
+you can grow them.
 
 ## Five to plant
 
 **[Common camas](https://indigene.app/plants/camassia-quamash)**, Pacific
-Northwest. Its bulbs were a staple food, dug each year from prairies the Kalapuya
-and Coast Salish kept open with fire. In Chinuk Wawa it's *lakamas*. Today its
-blue spring flowers feed queen bumblebees just out of hibernation.
+Northwest. Its bulbs were, and still are, a staple food for Kalapuya and Coast
+Salish peoples, who kept its prairies open with fire. In Chinuk Wawa it's
+*lakamas*. Its blue spring flowers feed queen bumblebees and mason bees.
 
 **[Karaka](https://indigene.app/plants/corynocarpus-laevigatus)**, Auckland &
-Northland. Māori planted groves of it for the fruit, carrying it well beyond
-where it first grew. Its orange fruit is now food for the kererū, the one bird
-left that can swallow it whole.
+Northland. Māori planted groves of it for its kernels, a food only after long
+cooking and soaking, and carried it far beyond where it first grew. Its orange
+fruit feeds the kererū, the only mainland bird left that can swallow it whole.
 
 **[Harakeke](https://indigene.app/plants/phormium-tenax)**, Auckland &
-Northland. The plant Māori weaving is built on, from baskets to cloaks. Tūī fight
-over its red, nectar-dripping flowers.
+Northland. The main plant of Māori weaving, from kete to cloaks. Tūī fight over
+its red, nectar-dripping flowers.
 
 **[American basswood](https://indigene.app/plants/tilia-americana)**,
-Mid-Atlantic to the Great Lakes. Ojibwe and Haudenosaunee people stripped its
-inner bark for cord and bags; in Ojibwe that fibre is *wiigob*. Its leaves raise
-about 150 kinds of caterpillar.
+Mid-Atlantic to the Great Lakes. Ojibwe people peel its inner bark, *wiigob*,
+for cord and woven bags. Its leaves raise about 150 kinds of caterpillar.
 
 **[Hollyleaf cherry](https://indigene.app/plants/prunus-ilicifolia)**, Southern
-California. Kumeyaay and Cahuilla people ate the fruit and ground the kernels.
-Its other name, *islay*, is the Salinan word *slay* by way of Spanish. Coyotes,
-foxes and jays eat the cherries now.
+California. Cahuilla people ate the fruit and leached the kernels, poisonous
+raw, into a porridge. Tipai families in Baja California, part of the Kumeyaay
+Nation, still gather it. Its other name, *islay*, comes from Salinan by way of
+Spanish. Coyotes, foxes and jays eat the cherries too.
 
 ## Wild land that wasn't
 
-Many landscapes the first settlers called wilderness were tended. The Garry oak
-meadows of the Pacific Northwest stayed open because Coast Salish people burned
-them; when the burning was stopped, firs closed in. Colonization took the land,
-and set out to destroy the peoples who cared for it and the knowledge they held.
-Planting these species carries a small part of that care on.
+Many landscapes colonists called wilderness were tended. The oak meadows of the
+Pacific Northwest stayed open because Coast Salish and Kalapuya people burned
+them. When colonists stopped the burning, firs closed in. Colonization took the
+land and tried to erase the peoples who cared for it, along with what they knew.
+In California, that meant killing.
 [Why "native" here never means "belonging"](https://indigene.app/native).
 
 ## What Indigene does
 
 - **Stand in a spot, get plants that will thrive there**, ranked by the
   wildlife they feed.
-- **15 regions on four continents**, drawn by climate and soil, not borders.
+- **15 regions across North America, Europe, Japan and New Zealand**, drawn by
+  climate and soil, not borders.
 - **Free, no account, works offline.**
 - **Names chosen with care.** In Auckland, the everyday name is the Māori one.
 

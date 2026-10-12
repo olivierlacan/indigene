@@ -140,6 +140,7 @@ const MEANING: Record<string, TKey> = {
   "🗂": "emoji.sessions",
   "⚡": "emoji.electricity",
   "🔤": "emoji.text",
+  "✍": "emoji.writing",
   "🌫": "emoji.carbon",
   "💵": "emoji.price",
 };

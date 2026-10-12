@@ -117,6 +117,10 @@ export interface Bill {
   homeDays: number;
   chatbotAnswers: number;
   tokens: number;
+  /** Everything the model took in: fresh input plus cache reads and writes. */
+  readTokens: number;
+  /** What the model wrote. */
+  writtenTokens: number;
   cacheReadShare: number;
 }
 
@@ -130,6 +134,8 @@ export function bill(s: Snapshot = SNAPSHOT): Bill {
     homeDays: kWh.mid / HOME_KWH_PER_DAY,
     chatbotAnswers: (kWh.mid * 1000) / CHATBOT_WH_PER_ANSWER,
     tokens: totalTokens(s.tokens),
+    readTokens: totalTokens(s.tokens) - s.tokens.output,
+    writtenTokens: s.tokens.output,
     cacheReadShare: s.tokens.cacheRead / totalTokens(s.tokens),
   };
 }

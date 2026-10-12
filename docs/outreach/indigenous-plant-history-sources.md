@@ -96,7 +96,8 @@ passage before anything is written from it.
 What the scan shows:
 
 - **Many passages name no people.** Sugar maple's guide has no ethnobotany at
-  all; red oak, Garry oak and western red cedar say "Native Americans". Those
+  all; red oak and Garry oak say "Native Americans", western red cedar
+  "Indians". Those
   need a second source that names the nation.
 - **Some are mostly medicine.** California sagebrush, California fuchsia,
   mugwort, yarrow, goldenrods, asters: little or no history note.

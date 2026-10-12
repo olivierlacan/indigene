@@ -16,6 +16,8 @@
 //  - Units never appear baked into a sentence. "3 ft" comes from `units.ts`,
 //    which the reader can switch independently of the language (see the note
 //    at the top of `lib/units.ts`).
+import { appTitle, taglineSentence } from "../lib/brand";
+
 export const en = {
   // ---------------------------------------------------------------------
   // Unit words. The *system* is the reader's own setting; these are just the
@@ -33,7 +35,7 @@ export const en = {
   // ---------------------------------------------------------------------
   // App chrome: the header, nav, footer and the progress rail.
   // ---------------------------------------------------------------------
-  "app.title": "Indigene — native plants for exactly where you stand",
+  "app.title": appTitle("en"),
   "app.name": "Indigene",
   "app.skipToContent": "Skip to main content",
   "app.offline": "Offline — using saved data",
@@ -261,7 +263,7 @@ export const en = {
   "film.play": "Watch the 1-minute film",
   "film.lede": "What Indigene does and who it's for, in one minute.",
   "film.share": "Share the film",
-  "film.shareText": "Native plants for exactly where you stand, in a one-minute film:",
+  "film.shareText": `${taglineSentence("en")}, in a one-minute film:`,
 
   // ---------------------------------------------------------------------
   // Browse (the no-location entrance).

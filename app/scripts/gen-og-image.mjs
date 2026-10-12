@@ -35,6 +35,11 @@ const mark = readFileSync(join(root, "public", "favicon.svg"), "utf8")
   .replace(/<!--[\s\S]*?-->/g, "")
   .replace("<svg", '<svg width="132" height="132"');
 
+// The headline is the tagline from data/brand.json, with its highlight in green.
+const BRAND = JSON.parse(readFileSync(new URL("../src/data/brand.json", import.meta.url), "utf8"));
+const sentence = BRAND.tagline.en.charAt(0).toUpperCase() + BRAND.tagline.en.slice(1);
+const headline = sentence.replace(BRAND.highlight.en, `<em>${BRAND.highlight.en}</em>`);
+
 const html = `<!doctype html>
 <meta charset="utf-8">
 <style>
@@ -81,8 +86,8 @@ const html = `<!doctype html>
 <div class="wash"></div>
 <div class="row">${mark}<span class="wordmark">Indigene</span></div>
 <div class="mid">
-  <h1>Native plants for <em>exactly</em> where you stand</h1>
-  <p>Point at a spot and see what belongs there — ranked by what it feeds.</p>
+  <h1>${headline}</h1>
+  <p>Point at a spot and see what will thrive there, ranked by what it feeds.</p>
 </div>
 <div class="url">indigene.app</div>
 `;

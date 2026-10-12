@@ -14,6 +14,7 @@
 // Typography is French: « » for quotes and a narrow no-break space before the
 // double punctuation marks (: ; ! ?) and inside guillemets.
 import type { Dict } from "./en";
+import { appTitle, taglineSentence } from "../lib/brand";
 
 export const fr: Dict = {
   // ---------------------------------------------------------------------
@@ -32,7 +33,7 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   // Habillage de l'application.
   // ---------------------------------------------------------------------
-  "app.title": "Indigene — les plantes indigènes de l'endroit exact où vous êtes",
+  "app.title": appTitle("fr"),
   "app.name": "Indigene",
   "app.skipToContent": "Aller au contenu principal",
   "app.offline": "Hors ligne — données enregistrées",
@@ -277,7 +278,7 @@ export const fr: Dict = {
   "film.play": "Voir le film (1 min)",
   "film.lede": "Ce que fait Indigene, et pour qui, en une minute.",
   "film.share": "Partager le film",
-  "film.shareText": "Des plantes indigènes pour l'endroit exact où vous êtes, en un film d'une minute :",
+  "film.shareText": `${taglineSentence("fr")}, en un film d'une minute :`,
 
   // ---------------------------------------------------------------------
   // Parcourir.

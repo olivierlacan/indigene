@@ -1,5 +1,5 @@
 {
-  "name": "Indigene — native plants for where you stand",
+  "name": "%APP_TITLE%",
   "short_name": "Indigene",
   "description": "Stand in a spot and find native plants that will actually thrive there, ranked by what they do for the local ecosystem.",
   "start_url": "./",

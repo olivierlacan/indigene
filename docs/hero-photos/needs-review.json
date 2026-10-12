@@ -299,6 +299,30 @@
     },
     {
       "subject": "plant",
+      "id": "adiantum-pedatum",
+      "name": "Adiantum pedatum",
+      "taxonId": 48435,
+      "reason": "chosen photo 130175468 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/48435/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "allium-tricoccum",
+      "name": "Allium tricoccum",
+      "taxonId": 55634,
+      "reason": "chosen photo 41677 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/55634/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "amorpha-canescens",
+      "name": "Amorpha canescens",
+      "taxonId": 158286,
+      "reason": "chosen photo 209272559 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/158286/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "arctostaphylos-columbiana",
       "name": "Arctostaphylos columbiana",
       "taxonId": 75505,
@@ -344,6 +368,14 @@
       "taxonId": 142824,
       "reason": "chosen photo 18278463 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/142824/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "baptisia-lactea",
+      "name": "Baptisia lactea",
+      "taxonId": 1609409,
+      "reason": "chosen photo 97575 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/1609409/browse_photos"
     },
     {
       "subject": "plant",
@@ -416,6 +448,14 @@
       "taxonId": 50191,
       "reason": "chosen photo 344424234 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/50191/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "cornus-racemosa",
+      "name": "Cornus racemosa",
+      "taxonId": 320160,
+      "reason": "chosen photo 452854 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/320160/browse_photos"
     },
     {
       "subject": "plant",
@@ -536,6 +576,14 @@
       "taxonId": 129677,
       "reason": "chosen photo 71157895 is cc-by-nc-nd",
       "gallery": "https://www.inaturalist.org/taxa/129677/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "liatris-pycnostachya",
+      "name": "Liatris pycnostachya",
+      "taxonId": 48691,
+      "reason": "chosen photo 8775778 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/48691/browse_photos"
     },
     {
       "subject": "plant",
@@ -739,6 +787,14 @@
     },
     {
       "subject": "plant",
+      "id": "rosa-setigera",
+      "name": "Rosa setigera",
+      "taxonId": 128841,
+      "reason": "chosen photo 137275 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/128841/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "rosa-spinosissima",
       "name": "Rosa spinosissima",
       "taxonId": 167993,
@@ -811,6 +867,14 @@
     },
     {
       "subject": "plant",
+      "id": "sporobolus-heterolepis",
+      "name": "Sporobolus heterolepis",
+      "taxonId": 120557,
+      "reason": "chosen photo 158094846 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/120557/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "styrax-japonicus",
       "name": "Styrax japonicus",
       "taxonId": 128570,
@@ -859,6 +923,14 @@
     },
     {
       "subject": "plant",
+      "id": "tradescantia-ohiensis",
+      "name": "Tradescantia ohiensis",
+      "taxonId": 79383,
+      "reason": "chosen photo 100260194 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/79383/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "urtica-dioica",
       "name": "Urtica dioica",
       "taxonId": 51884,
@@ -872,6 +944,14 @@
       "taxonId": 84542,
       "reason": "chosen photo 56287 is cc-by-nc-nd",
       "gallery": "https://www.inaturalist.org/taxa/84542/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "verbena-hastata",
+      "name": "Verbena hastata",
+      "taxonId": 60251,
+      "reason": "chosen photo 6560152 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/60251/browse_photos"
     },
     {
       "subject": "plant",
@@ -960,6 +1040,14 @@
       "taxonId": 60896,
       "reason": "chosen photo 274373277 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/60896/browse_photos"
+    },
+    {
+      "subject": "wildlife",
+      "id": "hackberry-emperor",
+      "name": "Asterocampa celtis",
+      "taxonId": 68264,
+      "reason": "chosen photo 148107524 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/68264/browse_photos"
     },
     {
       "subject": "wildlife",

@@ -617,8 +617,7 @@ export const fr: Dict = {
   "location.update": "📍 Actualiser ma position",
   "location.locating": "Localisation…",
   "location.none": "Pas encore de position.",
-  "location.privacy":
-    "Nous ne demandons que quand vous touchez le bouton, et votre position ne quitte cet appareil que sous forme de requêtes anonymes",
+  "location.privacy": "Envoyée anonymement, seulement quand vous touchez le bouton.",
   "location.mapHint":
     "Faites glisser ou touchez la carte pour placer le repère sur votre lieu. Restez appuyé pour l'ajuster finement.",
   "location.mapLabel":

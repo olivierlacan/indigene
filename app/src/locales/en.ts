@@ -597,8 +597,7 @@ export const en = {
   "location.update": "📍 Update my location",
   "location.locating": "Locating…",
   "location.none": "No location yet.",
-  "location.privacy":
-    "We only ask when you tap, and your location leaves this device only as anonymous lookups",
+  "location.privacy": "Sent anonymously, only when you tap.",
   "location.mapHint":
     "Drag or tap the map to put the pin on your spot. Press and hold to fine-tune.",
   "location.mapLabel":

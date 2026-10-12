@@ -703,7 +703,9 @@ async function buildRegion(meta) {
   // region that declares one of the wider two declared it *because* it crosses a
   // line the narrower ones stop at, so it is the only set that traces it end to
   // end. `components/region-boundary.ts` picks the atlas link the same way.
-  const sets = meta.ecoregion ?? [];
+  // A stand-in set (`RegionMeta.ecoregion`) only covers for an outage of the
+  // primary service, so it never draws.
+  const sets = (meta.ecoregion ?? []).filter((e) => !e.standIn);
   const setFor = (p) => sets.find((e) => e.provider === p);
   const drawn =
     setFor("cec-na") ?? setFor("resolve-2017") ?? setFor("eea-biogeo") ?? setFor("epa-omernik") ?? null;

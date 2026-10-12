@@ -351,7 +351,9 @@ const CEC_ECOREGION_QUERY_URL =
   "https://services7.arcgis.com/oF9CDB4lUYF7Um9q/arcgis/rest/services/" +
   "NA_Terrestrial_Ecoregions_Level_3/FeatureServer/3/query";
 
-async function fetchEcoregionCEC(lat: number, lon: number): Promise<EcoregionInfo | null> {
+/** Exported so `selection:check` can stand in a US place as if the EPA were
+ *  down — the one path the live services won't take on a good day. */
+export async function fetchEcoregionCEC(lat: number, lon: number): Promise<EcoregionInfo | null> {
   const url =
     `${CEC_ECOREGION_QUERY_URL}?geometry=${lon},${lat}&geometryType=esriGeometryPoint` +
     `&inSR=4326&spatialRel=esriSpatialRelIntersects` +

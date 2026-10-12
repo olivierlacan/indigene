@@ -39,6 +39,13 @@ export const REGION: RegionMeta = {
       provider: "epa-omernik",
       codes: ["50", "51"],
     },
+    // The same two in the CEC's numbering, for when the EPA is down and the CEC
+    // answers instead: 5.2.1 Northern Lakes and Forests, 8.1.4 North Central
+    // Hardwood Forests. Inside the US the CEC's Level III is the EPA's,
+    // renumbered, so this set refuses the same neighbours. Its lines are drawn
+    // at 1:10,000,000, so near an edge a point can land either side; a 0.25°
+    // grid over this box found no disagreement (2026-10-12).
+    { provider: "cec-na", standIn: true, codes: ["5.2.1", "8.1.4"] },
   ],
   // Eastern White Pine: Michigan's state tree and the giant that defined the
   // North — a keystone conifer that still towers over these woods and feeds

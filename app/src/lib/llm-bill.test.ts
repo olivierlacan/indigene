@@ -81,9 +81,9 @@ describe("energy", () => {
   });
 
   it("matches the hand sum the page was written from", () => {
-    // 4.50M × 390 + 17.40M × 1,950 + 6,539M × 39 + 121.4M × 487.5 ≈ 349.9 kWh,
-    // × 4516.70 / 4431.99 for the price-only sessions ≈ 356.6 kWh.
-    expect(bill().kWh.mid).toBeCloseTo(356.6, 0);
+    // 17.38M × 390 + 22.85M × 1,950 + 8,338M × 39 + 147.4M × 487.5 ≈ 448.4 kWh,
+    // × 5151.47 / 5066.76 for the price-only sessions ≈ 455.9 kWh.
+    expect(bill().kWh.mid).toBeCloseTo(455.9, 0);
   });
 });
 

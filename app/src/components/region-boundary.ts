@@ -109,7 +109,9 @@ function providerFor(meta: RegionMeta): EcoregionProvider {
   // declared it because it crosses a border the others stop at. Sending a reader
   // in Vancouver to the EPA's atlas to find a shape the EPA's map does not
   // contain is the failure this avoids.
-  const eco = meta.ecoregion ?? [];
+  // A stand-in set only covers for an outage (see `RegionMeta.ecoregion`); it
+  // never drew the map, so it never names the atlas.
+  const eco = (meta.ecoregion ?? []).filter((e) => !e.standIn);
   const declared = (p: EcoregionProvider) => eco.find((e) => e.provider === p)?.provider;
   const drawn = declared("cec-na") ?? declared("resolve-2017") ?? declared("eea-biogeo") ?? declared("epa-omernik");
   if (drawn) return drawn;

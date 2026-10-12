@@ -84,13 +84,13 @@ jH5Zz7Yx,2026-08-30,opus-4-8,Wildlife open graph card,1050,211404,94395073,21162
 dUe1EDR7,2026-08-30,opus-4-8,Native ornamental alternatives feature,3181,267510,122552405,846433,145.83
 qs9LRUyy,2026-08-30,opus-4-8,Plants page desktop layout,618,56501,17461668,293977,28.68
 knzwzYTL,2026-09-07,opus-5,Southern California cypress trees covera,76558,491578,242041549,28653143,419.89
-WKm6oVEn,2026-09-18,opus-5,Guerrilla natives by region,,,,,
+WKm6oVEn,2026-09-18,opus-5,Guerrilla natives by region,81879,167282,61099239,779287,42.49
 KRSPdan6,2026-09-18,opus-5,PR #35 merge status,2760,62571,18835907,193357,12.93
 urzDv3MF,2026-09-18,opus-5,Native lookalikes browsing and invasiven,402669,461150,231639070,2199033,149.86
 B6bZneuL,2026-09-19,opus-5,Ecoregion prioritization strategy,57631,3405293,1388643057,22920544,1008.91
 rmsJapbo,2026-09-19,opus-5,Pollinators and native plants evidence,835162,440927,169214851,1032250,106.96
 yUWQTjXg,2026-09-19,opus-5,Native fruits in supported ecoregions,2458,12858,1859793,76426,2.02
-Eoom8CfL,2026-09-20,opus-5,Native plant society outreach,1712392,1202737,496214115,9887269,379.02
+Eoom8CfL,2026-09-20,opus-5,Native plant society outreach,1715193,1236631,521782687,10742097,401.21
 vvsEh1HU,2026-09-24,opus-5-5,Pacific wax myrtle regional coverage,934,5539,815179,102929,1.10
 MsBfcE17,2026-09-24,opus-5-5,Plant page layout and labeling,2021,63490,22033302,218397,7.43
 dJggKfyw,2026-09-24,opus-5-5,Southern hemisphere indigene support,225440,2264435,1207483213,15116172,408.14
@@ -108,4 +108,33 @@ JZ6zwuc5,2026-10-01,opus-5-5,Plant pages confidence meter,2152,64993,17218935,46
 M5QAR3YJ,2026-10-01,opus-5-5,Desktop layout redesigns,670,45254,13979178,185794,5.19
 WUHYKHZT,2026-10-01,opus-5-5,Wildlife/plant desktop layout,166,58283,13765060,193830,5.47
 XnFRXBZY,2026-10-02,opus-5-5,Regional UI language design,2133,46898,10087950,156798,4.22
-g82xeyYG,2026-10-04,opus-5-5,Homegrown National Park page,62987,30955,5226489,221250,3.52
+g82xeyYG,2026-10-04,opus-5-5,Homegrown National Park page,288390,714200,498903690,3594832,135.17
+2y46zsLV,2026-10-07,opus-5-5,PNW region plant support,3602,108378,39640298,571124,14.67
+2bwBCNYV,2026-10-08,opus-5-5,Map interaction and nudging improvements,1546,71443,19768670,392108,8.52
+ocJtrfUU,2026-10-08,opus-5-5,Native planting ecosystem benefits,1541,85822,21390772,229348,7.82
+FAV6uugY,2026-10-08,opus-5-5,LLM token usage findings,1429,34772,6842638,220712,3.82
+YMJrNgyC,2026-10-08,opus-5-5,PR rebase and changelog system,1237,5281,1400091,43718,0.73
+mCqbbAS1,2026-10-08,opus-5-5,Indigene changelog updates,1275,11323,2461051,53259,1.14
+fK4QYsxd,2026-10-08,opus-5-5,Release notes URL linking,2730,111651,41394209,512233,13.85
+22JSBmgV,2026-10-08,opus-5-5,Native plant propagation guide,4641039,1895530,494970570,8684510,181.73
+hWeGswMP,2026-10-09,opus-5-5,Pull request 210 review,2833,15528,4039535,85914,1.81
+Gu69Txps,2026-10-09,opus-5-5,French language detection feature,1808,18186,4169022,82411,1.86
+q85o9ekn,2026-10-09,opus-5-5,iNaturalist hero images Japan,80178,85159,13992701,243506,5.63
+4MmVQyTh,2026-10-09,opus-5-5,Seek app sightings export,14538,3090,353232,22642,0.31
+cLN8USV8,2026-10-09,opus-5-5,iNaturalist import time limit,1794,22791,4685461,89718,2.11
+xTpk7Stu,2026-10-09,opus-5-5,Spots backup and export,41516,108556,20236346,215719,7.91
+KtED5is6,2026-10-10,opus-5-5,Florida zipcode misinterpreted as Spain,74,21613,3769469,78162,1.81
+7wdL5TeW,2026-10-10,opus-5-5,Delightful load indicator,60,16332,3167042,80514,1.60
+v5XiTqjG,2026-10-10,opus-5-5,OG image for homegrown,46,8821,2084770,58573,1.06
+2eBi56FA,2026-10-10,opus-5-5,Remove video host loading message,556,6184,2180854,57216,1.02
+bDApUFzw,2026-10-10,opus-5-5,Issue #186 verification,1156,26210,8171833,101564,2.98
+YE2hF9Gn,2026-10-10,opus-5-5,Indigene PR#23 research,193506,55163,9549154,149706,4.13
+4WaUb5BS,2026-10-10,opus-5-5,Florida natives data refresh,2720,141248,58425550,924715,21.91
+D7S6t8bc,2026-10-10,opus-5-5,Regional bibliography resources,3237139,428972,48676328,1500673,26.66
+SpPaNbDB,2026-10-10,opus-5-5,Indigene homepage redesign,1850,31265,6608268,192504,3.49
+Zh9WPZNT,2026-10-11,opus-5-5,Native plants sourcing verification,1275,2619,522579,31428,0.40
+aEkM3EWj,2026-10-12,opus-5-5,Indigenous Peoples Day blog post outline,4187005,553838,99719188,1993817,41.74
+F8ZYheWX,2026-10-12,opus-5-5,North America expansion regions,10102,24946,4719925,237676,3.13
+ZkefQJPR,2026-10-12,opus-5-5,Add Central Texas region,60963,224273,121769886,2144785,46.01
+bEiHFMzt,2026-10-12,opus-5-5,Add Chicago tallgrass prairie region,79499,138705,57128582,750358,20.12
+GjpQR2P8,2026-10-12,opus-5-5,Input/output token metrics on LLM page,3543,305790,116815932,1322904,10.47

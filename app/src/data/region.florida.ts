@@ -22,7 +22,16 @@ export const REGION: RegionMeta = {
   // The two temperate EPA Level III ecoregions here: Southeastern Plains (65,
   // panhandle/north interior) and Southern Coastal Plain (75, the peninsula).
   // Box-gated so it never claims the parts of 65/75 that reach into GA/AL.
-  ecoregion: [{ provider: "epa-omernik", codes: ["65", "75"] }],
+  ecoregion: [
+    { provider: "epa-omernik", codes: ["65", "75"] },
+    // The same two in the CEC's numbering, for when the EPA is down and the CEC
+    // answers instead: 8.3.5 Southeastern Plains, 8.5.3 Southern Coastal Plain.
+    // Inside the US the CEC's Level III is the EPA's, renumbered, so this set
+    // refuses the same neighbours. Its lines are drawn at 1:10,000,000, so near
+    // an edge a point can land either side; a 0.25° grid over this box found no
+    // disagreement (2026-10-12).
+    { provider: "cec-na", standIn: true, codes: ["8.3.5", "8.5.3"] },
+  ],
   // American Beautyberry: unmistakable purple fruit, easy in a yard, and a
   // bird buffet — the friendliest door into Florida natives.
   featuredPlantId: "callicarpa-americana",

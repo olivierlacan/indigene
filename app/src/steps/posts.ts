@@ -16,6 +16,9 @@ import { entryForPlant } from "../lib/registry";
 import { POSTS, postBySlug } from "../data/posts";
 import type { TKey } from "../locales/en";
 
+/** Where people without a GitHub account can write. */
+export const CONTACT = "hi@constantvariable.net";
+
 /** `posts.<key>.<field>`, typed loosely: the keys are checked by the locale
  *  tables themselves, which must carry every one in both languages. */
 const pk = (key: string, field: string): TKey => `posts.${key}.${field}` as TKey;
@@ -60,6 +63,7 @@ function ipd2026Body(key: string): HTMLElement[] {
     el("p", { class: "more-link" }, el("a", { href: "#/native" }, t(pk(key, "nativeLink")))),
     el("h3", {}, t(pk(key, "nextTitle"))),
     el("p", {}, tx(pk(key, "next"), {
+      email: el("a", { href: `mailto:${CONTACT}` }, CONTACT),
       tell: el("a", { href: "https://github.com/olivierlacan/indigene/issues", target: "_blank", rel: "noopener" }, t(pk(key, "tell"))),
     })),
     el("p", { class: "more-link" }, el("a", { href: "#/people" }, t(pk(key, "peopleLink")))),

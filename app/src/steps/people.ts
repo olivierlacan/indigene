@@ -16,6 +16,7 @@ import { t, tx } from "../lib/i18n";
 import { commonName } from "../lib/names";
 import { entryForPlant } from "../lib/registry";
 import { POSTS } from "../data/posts";
+import { CONTACT } from "./posts";
 import type { TKey } from "../locales/en";
 
 /** Plant pages whose own text says who ate, wove or tended the plant. Grow
@@ -78,6 +79,8 @@ export function renderPeople(main: HTMLElement): void {
           el("span", { class: "sureness-from" }, ` — ${t(what)}`),
         ])
       )),
+
+      el("p", {}, tx("people.contact", { email: el("a", { href: `mailto:${CONTACT}` }, CONTACT) })),
 
       el("h3", {}, t("people.landTitle")),
       el("p", {}, tx("people.land", { nativeLand: out("https://native-land.ca/", "Native Land Digital") })),

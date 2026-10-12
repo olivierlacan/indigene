@@ -207,3 +207,33 @@ describe("regionForSite — Chicago, one code in a crowded box", () => {
     expect(regionForSite(...MILWAUKEE, siteWith(null))).toBeNull();
   });
 });
+
+describe("regionForSite — the CEC standing in when the EPA is down", () => {
+  // Inside the US the EPA answers first; when it fails, `fetchEcoregion` asks
+  // the CEC instead. A US region that declared only EPA codes couldn't test
+  // that answer, so the box alone decided and the tightest one won: during a
+  // day-long EPA outage Wichita Falls got the Central Texas list. Each row is
+  // one place with both services' real Level III answer, and both must land on
+  // the same list.
+  const PLACES: [string, number, number, EcoregionInfo, EcoregionInfo][] = [
+    ["Wichita Falls, TX", 33.9137, -98.4934, epa("27", "Central Great Plains"), cec("9.4.2", "Central Great Plains")],
+    ["Austin, TX", ...AUSTIN, epa("32", "Texas Blackland Prairies"), cec("9.4.7", "Texas Blackland Prairies")],
+    ["Bastrop, TX", ...BASTROP, epa("33", "East Central Texas Plains"), cec("8.3.8", "East Central Texas Plains")],
+    ["Columbus, OH", 39.9612, -82.9988, epa("55", "Eastern Corn Belt Plains"), cec("8.2.4", "Eastern Corn Belt Plains")],
+    ["Peoria, IL", 40.6936, -89.589, epa("72", "Interior River Valleys and Hills"), cec("8.3.2", "Interior River Valleys and Hills")],
+  ];
+
+  for (const [name, lat, lon, epaAnswer, cecAnswer] of PLACES) {
+    it(`gives ${name} the same answer from either service`, () => {
+      const viaEpa = regionForSite(lat, lon, siteWith(epaAnswer))?.meta.id ?? null;
+      const viaCec = regionForSite(lat, lon, siteWith(cecAnswer))?.meta.id ?? null;
+      expect(viaCec).toBe(viaEpa);
+    });
+  }
+
+  it("refuses Wichita Falls and keeps Austin", () => {
+    expect(regionForSite(33.9137, -98.4934, siteWith(cec("9.4.2", "Central Great Plains")))).toBeNull();
+    expect(regionForSite(...AUSTIN, siteWith(cec("9.4.7", "Texas Blackland Prairies")))?.meta.id)
+      .toBe("central-texas");
+  });
+});

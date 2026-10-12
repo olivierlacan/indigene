@@ -28,6 +28,14 @@
 //               "box" — the lookup gave nothing and the coverage box decided
 //             A row that lands in the right region for the *wrong reason* fails.
 //             That is the whole point: Vancouver via "box" is the bug.
+//
+// ## The second pass: the EPA down
+//
+// Inside the US the EPA answers first and the CEC only stands in when it
+// fails — so on a good day the CEC path is never walked here. It was walked
+// for a whole day on 2026-10-12, when the EPA returned 504s and Wichita Falls
+// got the Central Texas list. So every US row is asked again with the CEC
+// alone, and must land on the same list.
 import { openLoader } from "./_load-ts.mjs";
 import { requireProxyAwareFetch } from "./_net.mjs";
 
@@ -71,6 +79,8 @@ const PLACES = [
   // --- the other regions, so this doesn't only guard the PNW ---
   { name: "Philadelphia, PA", lat: 39.9526, lon: -75.1652, region: "mid-atlantic", via: "epa-omernik" },
   { name: "Miami, FL", lat: 25.7617, lon: -80.1918, region: "florida-south", via: "epa-omernik" },
+  { name: "Orlando, FL", lat: 28.5384, lon: -81.3789, region: "florida-central", via: "epa-omernik" },
+  { name: "Los Angeles, CA", lat: 34.0522, lon: -118.2437, region: "ca-south-coast", via: "epa-omernik" },
   // --- Chicago and the Corn Belt prairie: one code, and the neighbors it refuses ---
   { name: "Chicago, IL", lat: 41.8781, lon: -87.6298, region: "chicago", via: "epa-omernik" },
   { name: "Rockford, IL", lat: 42.2711, lon: -89.094, region: "chicago", via: "epa-omernik" },
@@ -80,6 +90,8 @@ const PLACES = [
   { name: "Peoria, IL (Illinois River valley)", lat: 40.6936, lon: -89.589, region: null },
   { name: "Lafayette, IN (Eastern Corn Belt)", lat: 40.4167, lon: -86.8753, region: null },
   { name: "Indianapolis, IN", lat: 39.7684, lon: -86.1581, region: null },
+  // Inside the Mid-Atlantic box, refused by the code: the forested Corn Belt.
+  { name: "Columbus, OH (Eastern Corn Belt)", lat: 39.9612, lon: -82.9988, region: null },
   { name: "Traverse City, MI", lat: 44.7631, lon: -85.6206, region: "north-michigan", via: "epa-omernik" },
   { name: "San Francisco, CA", lat: 37.7749, lon: -122.4194, region: "ca-central-coast", via: "epa-omernik" },
   { name: "Marseille", lat: 43.2965, lon: 5.3698, region: "france-mediterranean", via: "eea-biogeo" },
@@ -125,9 +137,10 @@ const PLACES = [
 
 const loader = await openLoader();
 let failed = 0;
+let total = PLACES.length;
 
 try {
-  const { fetchSite } = await loader.load("/src/lib/site.ts");
+  const { fetchSite, fetchEcoregionCEC, inConus } = await loader.load("/src/lib/site.ts");
   const { regionForSite } = await loader.load("/src/lib/plants.ts");
 
   console.log(`Standing in ${PLACES.length} places and asking which list the app hands over.\n`);
@@ -158,13 +171,38 @@ try {
         (ok ? "" : `\n        expected ${want}${p.via ? ` via ${p.via}` : ""}, got ${have} via ${gotVia}`)
     );
   }
+
+  // The EPA down: every US place again, with only the CEC's answer.
+  const usRows = PLACES.filter((p) => inConus(p.lat, p.lon) && p.via !== "cec-na");
+  console.log(`\nThe EPA down: ${usRows.length} US places again, with only the CEC answering.\n`);
+  for (const p of usRows) {
+    let info = null;
+    try {
+      info = await fetchEcoregionCEC(p.lat, p.lon);
+    } catch {
+      /* the CEC failing too leaves the box, which the first pass covers */
+    }
+    const got = regionForSite(p.lat, p.lon, { ecoregionInfo: info });
+    const gotId = got?.meta.id ?? null;
+    const want = p.region;
+    // A US row must be decided by a live CEC code, never by the box alone —
+    // the box deciding is exactly how Wichita Falls got the wrong list.
+    const ok = gotId === want && info !== null;
+    if (!ok) failed++;
+    const detail = info ? `cec-na ${info.code} — ${info.name}` : "no live code, box decided";
+    console.log(
+      `  ${ok ? "ok  " : "FAIL"}  ${p.name.padEnd(32)} ${(gotId ?? "no list").padEnd(22)} ${detail}` +
+        (ok ? "" : `\n        expected ${want ?? "no list"} via cec-na, got ${gotId ?? "no list"}`)
+    );
+  }
+  total += usRows.length;
 } finally {
   await loader.close();
 }
 
 console.log("");
 if (failed) {
-  console.log(`selection: ${failed} of ${PLACES.length} places got the wrong answer.`);
+  console.log(`selection: ${failed} of ${total} answers were wrong.`);
   process.exit(1);
 }
-console.log(`selection: all ${PLACES.length} places get the region they should, for the reason they should.`);
+console.log(`selection: all ${total} answers right — every place gets the region it should, for the reason it should, with the EPA up or down.`);

@@ -48,6 +48,14 @@ export const REGION: RegionMeta = {
       provider: "epa-omernik",
       codes: ["30", "32", "29"],
     },
+    // The same three, in the CEC's numbering, for when the EPA is down and the
+    // CEC answers instead: 9.4.6 Edwards Plateau, 9.4.7 Blackland Prairies,
+    // 9.4.5 Cross Timbers. Wichita Falls is 9.4.2, Bastrop 8.3.8. Inside the US
+    // the CEC's Level III is the EPA's, renumbered, so this set refuses the same
+    // neighbours. Its lines are drawn at 1:10,000,000, so near an edge a point
+    // can land either side; a 0.25° grid over this box found no disagreement
+    // (2026-10-12).
+    { provider: "cec-na", standIn: true, codes: ["9.4.6", "9.4.7", "9.4.5"] },
   ],
   // Escarpment live oak: the evergreen oak of the Hill Country and every old
   // Austin street — a keystone that feeds hundreds of caterpillar species.

@@ -40,6 +40,13 @@ export const REGION: RegionMeta = {
       provider: "epa-omernik",
       codes: ["54"],
     },
+    // The same unit in the CEC's numbering, for when the EPA is down and the CEC
+    // answers instead: 8.2.3 Central Corn Belt Plains. Peoria is 8.3.2,
+    // Lafayette 8.2.4. Inside the US the CEC's Level III is the EPA's,
+    // renumbered, so this set refuses the same neighbours. Its lines are drawn
+    // at 1:10,000,000, so near an edge a point can land either side; a 0.25°
+    // grid over this box found no disagreement (2026-10-12).
+    { provider: "cec-na", standIn: true, codes: ["8.2.3"] },
   ],
   // Bur Oak: the oak that stood alone in the tallgrass, its corky bark built to
   // shrug off prairie fire — the savanna tree, and a keystone that feeds

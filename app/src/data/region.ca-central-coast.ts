@@ -27,7 +27,15 @@ export const REGION: RegionMeta = {
   // rather than being handed a coastal list, and it excludes Coast Range (1),
   // so the Sonoma coast north of the Russian River waits for the north-coast
   // list instead of getting a Bay Area one.
-  ecoregion: [{ provider: "epa-omernik", codes: ["6"] }],
+  ecoregion: [
+    { provider: "epa-omernik", codes: ["6"] },
+    // The same unit in the CEC's numbering, for when the EPA is down and the CEC
+    // answers instead: 11.1.1. Inside the US the CEC's Level III is the EPA's,
+    // renumbered, so this set refuses the same neighbours. Its lines are drawn
+    // at 1:10,000,000, so near an edge a point can land either side; a 0.25°
+    // grid over this box found no disagreement (2026-10-12).
+    { provider: "cec-na", standIn: true, codes: ["11.1.1"] },
+  ],
   // Blueblossom: the week the coast ranges turn blue, on a shrub that carries
   // more caterpillars than anything else its size and fixes its own nitrogen.
   featuredPlantId: "ceanothus-thyrsiflorus",

@@ -132,8 +132,16 @@ export interface RegionMeta {
    * southern half and the CEC's for its northern one, because only one of the
    * two services will answer for any given spot. Selection matches whichever
    * provider replied; the others sit unused for that point.
+   *
+   * **`standIn` marks a set that only covers for an outage.** Inside the US
+   * the EPA answers first and the CEC only when the EPA fails. A US region
+   * that declared EPA codes alone couldn't test that answer, so the box
+   * decided — and during a day-long EPA outage Wichita Falls got the Central
+   * Texas list. A stand-in set is the CEC's name for the same ground: it
+   * answers selection, but never draws the region's map or names its atlas,
+   * because the primary set already does that better.
    */
-  ecoregion?: { provider: EcoregionProvider; codes: string[] }[];
+  ecoregion?: { provider: EcoregionProvider; codes: string[]; standIn?: true }[];
 }
 
 /**

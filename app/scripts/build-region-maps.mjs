@@ -172,15 +172,16 @@ const LANDMARKS = {
   ],
   // Dallas, Fort Worth and Waco fix the north and the Blackland; Austin and San
   // Antonio the Balcones Escarpment, where the Hill Country meets the prairie;
-  // Junction the western Hill Country. Bastrop sits just east of the shading on
-  // purpose — the post-oak sands, which this list does not claim.
+  // Junction the western Hill Country. College Station sits east of the shading
+  // on purpose — the post-oak sands, which this list does not claim. (Bastrop
+  // would make the same point closer in, but its label crowds out Austin's.)
   "central-texas": [
     { name: "Dallas", lat: 32.78, lon: -96.8 },
     { name: "Fort Worth", lat: 32.76, lon: -97.33 },
     { name: "Waco", lat: 31.55, lon: -97.15 },
     { name: "Junction", lat: 30.49, lon: -99.77 },
     { name: "Austin", lat: 30.27, lon: -97.74 },
-    { name: "Bastrop", lat: 30.11, lon: -97.32 },
+    { name: "College Station", lat: 30.63, lon: -96.33 },
     { name: "San Antonio", lat: 29.42, lon: -98.49 },
   ],
   "mid-atlantic": [

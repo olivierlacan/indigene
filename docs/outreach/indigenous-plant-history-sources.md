@@ -4,10 +4,10 @@ Research for two things: **Further reading** picks (`app/src/data/reading.ts`)
 and a later PR that adds a short history of each plant among the peoples who
 used and tended it.
 
-**Researched 2026-10-12, from a sandbox that blocked most of these sites.**
-Claims marked *(snippet)* come from search-result text, not a page we read;
-*(unverified)* means nothing backed it. Re-check both from an open network
-before anything ships. Blocked hosts are listed at the end.
+**Researched 2026-10-12**, first from a blocked sandbox, then re-checked once
+most hosts were allowed. Claims marked *(snippet)* come from search-result
+text, not a page we read; *(unverified)* means nothing backed it. A few hosts
+still refuse scripts; they are listed at the end.
 
 ## The rules this research followed
 
@@ -30,18 +30,20 @@ page we could open recommends an Indigenous plant title, except two:
 | Pick | Region | Evidence | Status |
 |---|---|---|---|
 | *Tending the Wild*, M. Kat Anderson (UC Press, 2005) | Central Coast | Listed by CNPS Santa Clara Valley, cnps-scv.org/education/books (read) | **Ready** |
-| *Kumeyaay Ethnobotany*, Michael Wilken-Robertson (Sunbelt, 2017) | Southern California | IBPA Benjamin Franklin Award, gold, Regional *(snippet)*; CNPS San Diego book event, cnpssd.org/events/2017/11/14/… | **Ready once the award is confirmed** |
+| *Kumeyaay Ethnobotany*, Michael Wilken-Robertson (Sunbelt, 2017) | Southern California | IBPA Benjamin Franklin Award, 2019 program. **Medal unclear**: the publisher says Gold (Regional), IBPA's page *(snippet)* says Silver, Regional. CNPS San Diego book event: cnpssd.org/events/2017/11/14/kumeyaay-ethnobotany-shared-heritage-of-the-californias *(blocked)* | **Ready once someone reads IBPA's page by hand**; claim the medal IBPA names |
 
 These pass another way and need a decision:
 
 | Pick | Region | Test 2 via | Catch |
 |---|---|---|---|
-| *Food Plants of Coastal First Peoples*, Nancy J. Turner (Royal BC Museum, 1995) | PNW | Reprinted to 2013; Turner holds the Order of Canada (`award`, `toAuthor`) | Food only, the best fit |
-| *Chumash Ethnobotany*, Jan Timbrook (SB Museum of Natural History, 2nd ed. 2024) | Southern California | `editions: 2` | No `museum` backer key |
+| *Food Plants of Coastal First Peoples*, Nancy J. Turner (Royal BC Museum, 1995) | PNW | On the WNPS Ethnobotany page, wnps.org/ethnobotany *(snippet; blocked)*. Also: 1975 and 1995 editions, reprinted to 2013; Turner is a Member of the Order of Canada (2009) | Food only, the best fit. **Likely ready** once the WNPS page is read |
+| *Chumash Ethnobotany*, Jan Timbrook (SB Museum of Natural History, 2nd ed. 2024) | Southern California | `editions: 2`. No society recommends the book; UC ANR cites her 1990 article | No `museum` backer key |
+| *Cedar*, Hilary Stewart (Douglas & McIntyre, 1984) | PNW | Burke Museum's "Native Peoples & the Environment of Washington" box lists it *(snippet; blocked)*; 1985 BC Book Prize *(snippet)* | Dated subtitle ("Indians") |
+| *Cooking the Native Way*, Chia Café Collective (Heyday, 2018) | Southern California | Named in a CNPS *Flora* profile, cnps.org/flora-magazine/bringing-native-foods-home-with-abe-sanchez/ (read) | A mention, not a recommendation. Indigenous-led (Tongva, Cahuilla) |
 | *Feeding the People, Feeding the Spirit*, Krohn & Segrest (Muckleshoot) (Northwest Indian College, 2010) | PNW | 3,500+ copies to tribal communities, per *Ethnobiology Letters* (undated figure) | Out of print; some medicine |
-| *Saging the World* (film), Rose Ramirez (Chumash descent), Deborah Small, CNPS, 2022 | Southern California | CNPS calls it award-winning; chapters screened it | Award not named |
-| *Florida Ethnobotany*, Daniel F. Austin (CRC, 2004) | Both Florida regions | Society for Economic Botany's Klinger Book Award *(snippet)* | Medicinal entries need filtering |
-| Jardin des Premières-Nations, Espace pour la vie (Montréal) | St Lawrence | Co-designed with a First Nations committee | Needs a voucher (FloraQuebeca?) |
+| *Saging the World* (film), Rose Ramirez (Chumash descent), Deborah Small, with CNPS, 2022 | Southern California | CNPS chapters screened it (South Coast, San Gabriel Mountains) | **No award found** despite "award-winning": IMDb shows one nomination. cnps.org/sagingtheworld is a 404 |
+| *Florida Ethnobotany*, Daniel F. Austin (CRC, 2004) | Both Florida regions | 2005 Klinger Book Award, Society for Economic Botany (publisher and retailers agree; the society's list was blocked). FNPS cites it on its saw palmetto page and runs a Dan Austin Grant for Ethnobotany | Medicinal entries need filtering |
+| Jardin des Premières-Nations, Espace pour la vie (Montréal) | St Lawrence | Designed with First Nations representatives (25th-anniversary release) | No voucher at FloraQuebeca or Fleurbec. 2026 copy calls it "Jardin des Nations-Autochtones": check the name |
 
 Watch: *Plants of the Pacific Coast* (2026), co-written by Leigh Joseph
 (Styawat, Squamish Nation). Too new for evidence; its predecessor had three
@@ -61,11 +63,11 @@ That is a policy change to `reading.test.ts`; decide it before adding picks.
 
 | Source | Use | License |
 |---|---|---|
-| **USDA NRCS Plant Guides** (`plants.usda.gov/DocumentLibrary/plantguide/pdf/pg_<symbol>.pdf`, `cs_<symbol>.pdf`) | The best reusable per-plant source. Many California guides are by M. Kat Anderson. A script can probe which of our species have one. | US federal work, public domain (guides contributed by others, e.g. Santa Barbara Botanic Garden, may not be). Medicinal paragraphs and old names need a person's edit. |
-| **Public-domain ethnographies**: Densmore 1928 (Ojibwe, Smithsonian); Waugh 1916, *Iroquois Foods*; Parker 1910, *Iroquois Uses of Maize*; Smith 1932/1933 (Ojibwe, Potawatomi) *(renewal unverified)*; Gunther 1945 (W. Washington) *(renewal unverified)* | Food, fibre, maple sugar, birchbark | Quotable, but paraphrase anyway: past tense, "primitive", medicine-society material |
-| **Native American Ethnobotany DB** (Moerman, BRIT) | A finder: look a plant up, read the source it cites, cite that | No license found. Half medicinal. Not the authority for any nation. Never "NAEB says". |
-| **Native Land Digital** | A link on region pages: "Whose land is this?" | API needs a key and their Data Sovereignty Treaty (OCAP). They say themselves the maps aren't legal boundaries. Link, don't embed. |
-| **Language resources**: Ojibwe People's Dictionary; Lenape Talking Dictionary; Chinuk Wawa dictionary (Grand Ronde); Lushootseed Plant List (UW) | Plant names in the people's language | Ask each project before showing names at scale |
+| **USDA NRCS Plant Guides** (`plants.usda.gov/DocumentLibrary/plantguide/pdf/pg_<symbol>.pdf`, `cs_<symbol>.pdf`) | The best reusable per-plant source. Many California guides are by M. Kat Anderson. Coverage of our plants: see [USDA guide coverage](#usda-guide-coverage). | "Not copyrighted and free for any use. Please cite the PLANTS Database" (PLANTS Help Document 2022). Guides contributed by others (e.g. Santa Barbara Botanic Garden) may not be. Medicinal paragraphs and old names need a person's edit. |
+| **Public-domain ethnographies** (US): Densmore 1928 (Ojibwe, Smithsonian); Waugh 1916, *Iroquois Foods*; Parker 1910, *Iroquois Uses of Maize*; Smith 1932, Ojibwe (archive.org: not in copyright); Gunther 1945, W. Washington (HathiTrust: public domain in the US; the 1973 revision isn't). Smith 1933, Potawatomi: rights unverified | Food, fibre, maple sugar, birchbark | Quotable, but paraphrase anyway: past tense, "primitive", medicine-society material |
+| **Native American Ethnobotany DB** (Moerman, BRIT) | A finder: look a plant up, read the source it cites, cite that | No license found; naeb.brit.org doesn't answer. Moerman died in January 2026, so ask BRIT. Half medicinal. Not the authority for any nation. Never "NAEB says". |
+| **Native Land Digital** | A link on region pages: "Whose land is this?" | API needs a key since late 2024. Its Data Sovereignty Treaty forbids storing or redistributing API data without permission and requires crediting communities as stewards; an older disclaimer page still says CC0. The stricter one wins: link, don't embed. Maps "do not represent… official or legal boundaries". |
+| **Language resources**: Ojibwe People's Dictionary; Lenape Talking Dictionary; Chinuk Wawa dictionary (Grand Ronde); Lushootseed Plant List (UW) | Plant names in the people's language | Ojibwe People's Dictionary: CC BY-NC-SA 3.0 on its terms page, CC BY-NC-ND 4.0 in its footer; credit and link required. Ask each project before showing names at scale |
 
 **Skip:** Plants For A Future, Dr. Duke's databases (medicinal, no nation),
 Margolin's *The Ohlone Way* (Ohlone criticism of its "vanished people"
@@ -80,7 +82,7 @@ Peoples: Coast Salish (incl. W̱SÁNEĆ, Muckleshoot), Kalapuya and Chinookan
 
 | Plant | History | Source |
 |---|---|---|
-| Common camas | Bulbs a staple; prairies tended with fire. Chinuk Wawa *lakamas* | Deur & Turner, *Keeping It Living* (2005); Turner, *Saanich Ethnobotany*; NRCS |
+| Common camas | Bulbs a staple; prairies tended with fire. Chinuk Wawa *lakamas* | Deur & Turner, *Keeping It Living* (2005); Turner, *Saanich Ethnobotany*; NRCS; *lakamas* from Oregon Dept. of Education's Chinuk Wawa handout |
 | Western red cedar | Planks, canoes, bark clothing and baskets | Stewart, *Cedar* (1984); Turner, *Plant Technology* |
 | Garry oak | Acorns; prairie burning | Deur & Turner; Turner, *Saanich* |
 | Salmonberry, huckleberries, salal, trailing blackberry | Fruit. *samən-ulali*, *shat-ulali* | Turner, *Food Plants*; Grand Ronde foods slideshow (Oregon Dept. of Education) |
@@ -98,7 +100,7 @@ Chumash to the south.
 | Coast live oak, valley oak | Acorns, the staple | Anderson; NRCS QUAG, QULO |
 | California buckeye | Nuts leached as a lean-year food; fire drills | NRCS AECA (read) |
 | California bay | Nuts | NRCS UMCA (read) |
-| Toyon | Fruit. The name may come from an Ohlone word *(unverified)* | NRCS HEAR5 |
+| Toyon | Fruit. The name probably comes from an Ohlone word, through California Spanish *tollon* | NRCS HEAR5; Merriam-Webster etymology (Mutsun *tyoty·oni*, Rumsen *toč·on*) |
 | Blue elderberry | Fruit; flutes, clapper sticks | NRCS SANIC5 |
 | Douglas iris | Fine cordage for nets | NRCS IRDO (Ohlone use unverified) |
 | Purple needlegrass, blue wildrye | Seed from grasslands kept open by fire | Anderson; NRCS ELGL |
@@ -118,9 +120,12 @@ inland.
 | Lemonade berry, walnut, giant wild rye | Drink, nuts, arrow shafts | Timbrook, Wilken-Robertson *(unverified per plant)* |
 
 **White sage needs its own page treatment.** It grows wild only in southern
-California and northern Baja, and most sage sold is poached; CNPS asks people
-to grow it and refuse wild-harvested bundles (cnps.org/conservation/white-sage,
-*snippet*). Tongva, Chumash and Cahuilla voices call the poaching harm to
+California and northern Baja, and most sage sold is poached. CNPS's 2022
+Native Plant Week centred on *Saging the World*, which "examines the cultural
+appropriation and poaching of white sage"
+(cnps.org/news/in-2022-california-native-plant-week-focuses-on-the-plant-people-connection/).
+CNPS's own white-sage page, with the grow-your-own advice, is gone: the old
+URL redirects elsewhere. Tongva, Chumash and Cahuilla voices call the poaching harm to
 their relatives *(press, snippet)*. The page should lead with the ecology,
 name the peoples, say a ceremonial use exists without describing it, and link
 *Saging the World*. No tribal-government resolution was found.
@@ -133,11 +138,11 @@ Wendat, Algonquin. Name each body as it names itself.
 
 | Plant | Regions | History | Source |
 |---|---|---|---|
-| Sugar maple | NM, SL | Spring sugar camps; Kanien'kehá:ka Maple Thanksgiving. Ojibwe *ininaatig* | Densmore 1928; Ojibwe People's Dictionary; Espace pour la vie |
-| Paper birch | NM, SL | Bark for canoes, containers, lodge covers | Densmore; Smith 1932 |
-| White pine | all three | Tree of Peace in the Haudenosaunee Great Law | Parker; Espace pour la vie |
-| Wild strawberry | all three | Strawberry thanksgiving; Ojibwe *ode'imin*, "heart berry" | Waugh; Espace pour la vie |
-| Basswood | all three | Inner-bark fibre for cord and bags | Densmore; Waugh |
+| Sugar maple | NM, SL | Spring sugar camps. Ojibwe *ininaatig* (confirmed). The Haudenosaunee maple ceremony needs a source: Espace pour la vie mentions only sap collection | Densmore 1928; Ojibwe People's Dictionary |
+| Paper birch | NM, SL | Bark (*wiigwaas*) for canoes, containers, lodge covers | Densmore; Smith 1932; Ojibwe People's Dictionary |
+| White pine | all three | Tree of Peace in the Haudenosaunee Great Law; Kondiaronk and the Great Peace of 1701 | Espace pour la vie (25th-anniversary release); Parker |
+| Wild strawberry | all three | Ojibwe *ode'imin*, from *ode'-* "heart" + *-min* "berry" (confirmed). A strawberry ceremony needs a Haudenosaunee source: Espace pour la vie doesn't have one | Ojibwe People's Dictionary; Waugh |
+| Basswood | all three | Inner-bark fibre (*wiigob*) for cord and bags | Densmore; Waugh; Ojibwe People's Dictionary |
 | Eastern white cedar | NM, SL | Canoe ribs, mats | Densmore |
 | Blueberries | all three | Dried for winter, traded | Densmore; GLIFWC (Meeker et al. 1993) |
 | Serviceberry, hazel, beech, oaks, black cherry, riverbank grape | varies | Fruit and nuts; acorns leached | Waugh; Parker; Smith |
@@ -153,22 +158,24 @@ Tequesta, Timucua, Apalachee.
 
 | Plant | History | Source |
 |---|---|---|
-| Coontie | Starch flour for bread and sofkee; over-harvest made it rare | Seminole Tribe (semtribe.com); NRCS. **Calusa use is contested**: the Florida Museum finds no *Zamia* pollen at Calusa sites |
-| Cabbage palm | Chickee thatch; swamp cabbage; Calusa net fibre | Seminole Tribe; Randell Research Center (Florida Museum) |
-| Bald cypress | Chickee frames, dugout canoes | Seminole sources *(snippet)* |
+| Coontie | Root flour, "in the past" in the tribe's words; over-harvest made it rare | Seminole Tribe, semtribe.com/culture/seminole-food *(snippet; blocked)*; NRCS ZAPU. **Calusa use is contested**: no *Zamia* pollen at Calusa sites (Widmer 1988, via Wikipedia; not a Florida Museum page) |
+| Cabbage palm | Swamp cabbage (the heart). Frond thatch per the tribe's tourism site; the tribe's chickee page says *palmetto* thatch. Calusa "palm-fibre" net at Pineland: the museum doesn't name the palm | Seminole Tribe; floridaseminoletourism.com/seminole-spaces-chickees/; Florida Museum RRC blog |
+| Bald cypress | Chickee frames ("palmetto thatch over a cypress log frame"), dugout canoes | semtribe.com/culture/chickee *(snippet)* |
 | Saw palmetto | Berries eaten. The supplement trade is the harvest risk | NRCS |
-| Yaupon | The Apalachee "white drink"; "cassina" from Timucua. Ceremonial: name it, don't detail it | Florida Dept. of State *(snippet)* |
-| Persimmon, maypop | Fruit, found at sites near Lake Monroe | Florida Museum (read) |
+| Yaupon | The "white drink" of the Apalachee, Creek, Seminole and Muskogee; "cassina" borrowed from Timucua. Ceremonial: name it, don't detail it | Florida Dept. of State (read) |
+| Persimmon, maypop | Fruit, at the Hontoon Island and Groves' Orange Midden sites near Lake Monroe | Florida Museum (read) |
 
 Nothing found yet for sea grape, Spanish stopper, firebush, coral bean or gumbo
 limbo: Austin's *Florida Ethnobotany* is the likely source. No
 Miccosukee-authored source was reachable.
 
-## Blocked hosts to re-check
+## Still to read by hand
 
-naeb.brit.org, plants.usda.gov, native-land.ca, archive.org, gutenberg.org,
-hathitrust.org, biodiversitylibrary.org, canadiana.ca, semtribe.com,
-ahtahthiki.com, miccosukee.com, glifwc.org, ojibwe.lib.umn.edu,
-delawaretribe.org, lenape-nation.org, coquilletribe.org, amahmutsun.org,
-sbnature.org, santacruzmuseum.org, arboretum.ucsc.edu, calscape.org,
-npsoregon.org, espacepourlavie.ca, dos.fl.gov, nps.gov.
+These pages hold the remaining evidence and refuse scripts (403s from bot
+protection) or don't resolve. A browser should open them:
+
+- IBPA's 2019 Benjamin Franklin Awards page: Gold or Silver for *Kumeyaay Ethnobotany*
+- wnps.org/ethnobotany: does it list Turner's *Food Plants*?
+- burkemuseum.org's Native Peoples box: *Cedar*
+- semtribe.com culture pages; espacepourlavie.ca; gg.ca
+- naeb.brit.org (doesn't resolve) and BRIT, for the database's terms

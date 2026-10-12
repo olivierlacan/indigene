@@ -54,6 +54,18 @@ export const REGION: RegionMeta = {
       provider: "epa-omernik",
       codes: ["58", "67", "70", "69", "60", "83", "59", "45", "61", "64", "62", "63", "65", "84", "66"],
     },
+    // The same fifteen, in the same order, in the CEC's numbering — for when the
+    // EPA is down and the CEC answers instead. 58 is 5.3.1 and 83 is 8.1.1, both
+    // of which run on into Canada; the box stops them. Columbus (55) is 8.2.4.
+    // Inside the US the CEC's Level III is the EPA's, renumbered, so this set
+    // refuses the same neighbours. Its lines are drawn at 1:10,000,000, so near
+    // an edge a point can land either side; a 0.25° grid over this box found no
+    // disagreement (2026-10-12).
+    {
+      provider: "cec-na",
+      standIn: true,
+      codes: ["5.3.1", "8.4.1", "8.4.3", "8.4.2", "8.1.3", "8.1.1", "8.1.7", "8.3.4", "8.1.10", "8.3.1", "5.3.3", "8.5.1", "8.3.5", "8.5.4", "8.4.4"],
+    },
   ],
   // White Oak: the East's single most consequential wildlife plant, and the
   // clearest possible introduction to what "keystone" means.

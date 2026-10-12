@@ -22,7 +22,16 @@ export const REGION: RegionMeta = {
   // Keys) plus the subtropical end of Southern Coastal Plain (75). Box-gated to
   // the peninsula's south. Ecoregion 76 is the seam that separates this list
   // from the temperate north & central one.
-  ecoregion: [{ provider: "epa-omernik", codes: ["75", "76"] }],
+  ecoregion: [
+    { provider: "epa-omernik", codes: ["75", "76"] },
+    // The same two in the CEC's numbering, for when the EPA is down and the CEC
+    // answers instead: 8.5.3 Southern Coastal Plain, 15.4.1 Southern Florida
+    // Coastal Plain. Inside the US the CEC's Level III is the EPA's, renumbered,
+    // so this set refuses the same neighbours. Its lines are drawn at
+    // 1:10,000,000, so near an edge a point can land either side; a 0.25° grid
+    // over this box found no disagreement (2026-10-12).
+    { provider: "cec-na", standIn: true, codes: ["8.5.3", "15.4.1"] },
+  ],
   // Gumbo Limbo: the signature tree of South Florida hammocks — instantly
   // recognizable by its peeling copper bark.
   featuredPlantId: "bursera-simaruba",

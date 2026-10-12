@@ -143,6 +143,24 @@
     "attribution": "(c) mfeaver, some rights reserved (CC BY), uploaded by mfeaver",
     "color": "#7e730a"
   },
+  "melia-azedarach": {
+    "taxonId": 53720,
+    "photoId": 33351307,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/33351307/square.jpeg",
+    "observer": "葉子",
+    "license": "cc0",
+    "attribution": "no rights reserved, uploaded by 葉子",
+    "color": "#717a43"
+  },
+  "nandina-domestica": {
+    "taxonId": 127010,
+    "photoId": 71351881,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/71351881/square.jpg",
+    "observer": "Sam Kieschnick",
+    "license": "cc-by",
+    "attribution": "(c) Sam Kieschnick, some rights reserved (CC BY), uploaded by Sam Kieschnick",
+    "color": "#595d4c"
+  },
   "nephrolepis-cordifolia": {
     "taxonId": 48233,
     "photoId": 260680022,
@@ -241,6 +259,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Thorsten Usée, some rights reserved (CC BY-NC), uploaded by Thorsten Usée",
     "color": "#4e6c42"
+  },
+  "sorghum-halepense": {
+    "taxonId": 58387,
+    "photoId": 78416044,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/78416044/square.jpg",
+    "observer": "Harry Rose",
+    "license": "cc-by",
+    "attribution": "(c) Harry Rose, some rights reserved (CC BY)",
+    "color": "#90aa85"
   },
   "urena-lobata": {
     "taxonId": 127638,

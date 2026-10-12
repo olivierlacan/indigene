@@ -157,3 +157,30 @@ describe("regionForSite — Japan, where one code covers most of a country", () 
       .toBeNull();
   });
 });
+
+describe("regionForSite — Chicago, one code in a crowded box", () => {
+  // Codes as the EPA's Level III layer has them at each place (checked against
+  // the EPA's own shapefile, us_eco_l3).
+  const CHICAGO = [41.8781, -87.6298] as const;
+  const CHAMPAIGN = [40.1164, -88.2434] as const;
+  const PEORIA = [40.6936, -89.589] as const;
+  const MILWAUKEE = [43.0389, -87.9065] as const;
+  const LAFAYETTE = [40.4167, -86.8753] as const;
+  const INDIANAPOLIS = [39.7684, -86.1581] as const;
+
+  it("claims the Central Corn Belt Plains", () => {
+    expect(regionForSite(...CHICAGO, siteWith(epa("54", "Central Corn Belt Plains")))?.meta.id).toBe("chicago");
+    expect(regionForSite(...CHAMPAIGN, siteWith(epa("54", "Central Corn Belt Plains")))?.meta.id).toBe("chicago");
+  });
+
+  it("refuses the neighboring ecoregions inside its box", () => {
+    expect(regionForSite(...PEORIA, siteWith(epa("72", "Interior River Valleys and Hills")))).toBeNull();
+    expect(regionForSite(...LAFAYETTE, siteWith(epa("55", "Eastern Corn Belt Plains")))).toBeNull();
+  });
+
+  it("leaves the forested Corn Belt and Milwaukee to lists of their own", () => {
+    // Both outside the box, so not even offline does Chicago's list reach them.
+    expect(regionForSite(...INDIANAPOLIS, siteWith(null))).toBeNull();
+    expect(regionForSite(...MILWAUKEE, siteWith(null))).toBeNull();
+  });
+});

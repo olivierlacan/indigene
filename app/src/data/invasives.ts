@@ -31,6 +31,10 @@
 // Irish counts and are left out: native in France, and nobody's target in
 // Ireland.
 //
+// Chicago's five come from Illinois' Exotic Weed Act list. That is a law about
+// sale and planting, not a ranking of harm, so they carry no listing and are
+// ordered by sightings like the others.
+//
 // The counts live in `invasive-counts.json` (`npm run invasives:count`), and
 // `lib/invasives.ts` does the ranking at runtime, so a refreshed count can
 // reorder a list without anybody editing this file. `npm run listings:check`
@@ -172,6 +176,66 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Berried branches go in the bin.",
       basis: "Michigan Natural Features Inventory; Penn State Extension.",
+    },
+  },
+  {
+    id: "rhamnus-cathartica",
+    common: "Common buckthorn",
+    latin: "Rhamnus cathartica",
+    form: "shrub",
+    marks: [
+      { part: "stem", feature: "Inner bark", text: "Scrape a twig: the layer under the bark is orange." },
+      { part: "thorn", feature: "Twig tips", text: "Many end in a short sharp spine, between a pair of buds." },
+      { part: "fruit", feature: "Berries", text: "Black, pea-sized, in clusters along the stems, hanging into winter." },
+    ],
+    removal: {
+      steps: [
+        { method: "pull", text: "Pull seedlings and lever out stems up to thumb-thick with a weed wrench, roots and all." },
+        { method: "cover", text: "Cut bigger stems low and tie a black plastic bag over each stump for a year, so it can't resprout." },
+        { method: "repeat", text: "Seedlings come up for about five years: pull them every spring." },
+      ],
+      dispose: "Berried branches go in the bin; bare wood can be chipped.",
+      basis: "Morton Arboretum; Illinois Natural History Survey; Midwest Invasive Plant Network.",
+    },
+  },
+  {
+    id: "lonicera-maackii",
+    common: "Amur honeysuckle",
+    latin: "Lonicera maackii",
+    form: "shrub",
+    marks: [
+      { part: "stem", feature: "Twigs", text: "Snap one: the middle is hollow. A native honeysuckle's is solid." },
+      { part: "leaf", feature: "Leaves", text: "Pointed tips, in pairs — green before anything else in spring, and after everything else in fall." },
+      { part: "fruit", feature: "Berries", text: "Translucent red, in pairs along the stem, lasting into winter." },
+    ],
+    removal: {
+      steps: [
+        { method: "pull", text: "Pull small shrubs and lever out bigger ones: the roots are shallow." },
+        { method: "timing", text: "Go in early spring or late fall, when it's the only green in the woods." },
+        { method: "repeat", text: "Pull the seedlings that follow for a few years." },
+      ],
+      dispose: "Berried branches go in the bin.",
+      basis: "Morton Arboretum; Ohio State Extension; Midwest Invasive Plant Network.",
+    },
+  },
+  {
+    id: "dipsacus-laciniatus",
+    common: "Cut-leaved teasel",
+    latin: "Dipsacus laciniatus",
+    form: "perennial",
+    marks: [
+      { part: "flower", feature: "Flower heads", text: "Spiny egg-shaped heads with a ring of white flowers, on stalks taller than a person." },
+      { part: "leaf", feature: "Leaves", text: "Deeply cut, in pairs fused around the stem into a cup that holds rainwater." },
+      { part: "stem", feature: "Stems", text: "Ridged with rows of downward prickles." },
+    ],
+    removal: {
+      steps: [
+        { method: "dig", text: "Dig out first-year rosettes with a spade, taking the top of the long taproot." },
+        { method: "cut", text: "Cut flowering stalks at the base before the heads turn brown — later, they ripen seed on the ground." },
+        { method: "repeat", text: "Its seed lasts a few years: keep at it every summer." },
+      ],
+      dispose: "Bag cut flower heads; don't leave them lying.",
+      basis: "Illinois Natural History Survey; Morton Arboretum; Midwest Invasive Plant Network.",
     },
   },
   {
@@ -913,6 +977,7 @@ const waClass = (klass: "B" | "C", slug: string): LookalikeListing => ({
 const VA = "Virginia Natural Heritage, Invasive Plant Species of Virginia (2024).";
 const CAL = "California Invasive Plant Council, Cal-IPC Inventory.";
 const FL = "Florida Invasive Species Council, 2023 plant list (zones C and S).";
+const IL = "Illinois Exotic Weed Act and its official list (Illinois DNR); Morton Arboretum; Midwest Invasive Plant Network.";
 const MI = "Michigan Natural Features Inventory, Invasive Species Best Control Practices; Midwest Invasive Species Information Network.";
 const WA = "Washington State Noxious Weed Control Board.";
 const PACA = "INVMED — CBN Méditerranéen & CBN Alpin, liste des EVEE de Provence-Alpes-Côte d'Azur.";
@@ -929,6 +994,13 @@ export const MOST_WANTED: Record<string, WantedLink[]> = {
     { invasiveId: "elaeagnus-umbellata", listing: VIRGINIA_HIGH, basis: VA },
     { invasiveId: "reynoutria-japonica", listing: VIRGINIA_HIGH, basis: VA },
     { invasiveId: "lythrum-salicaria", listing: VIRGINIA_HIGH, basis: VA },
+  ],
+  chicago: [
+    { invasiveId: "rhamnus-cathartica", basis: IL },
+    { invasiveId: "lonicera-maackii", basis: IL },
+    { invasiveId: "alliaria-petiolata", basis: IL },
+    { invasiveId: "dipsacus-laciniatus", basis: IL },
+    { invasiveId: "lythrum-salicaria", basis: IL },
   ],
   "north-michigan": [
     { invasiveId: "centaurea-stoebe", basis: MI },
